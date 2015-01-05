@@ -202,7 +202,7 @@ void string_shutdown(__attribute__((unused)) magic_api * api)
 
 void string_switchin(__attribute__((unused)) magic_api * api, __attribute__((unused)) int which, __attribute__((unused)) int mode,  SDL_Surface * canvas, __attribute__((unused)) SDL_Surface * snapshot)
 {
-  canvas_backup=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel,
+  canvas_backup=SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h, canvas->format->BitsPerPixel,
 				     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 }
 

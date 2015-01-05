@@ -145,7 +145,7 @@ void puzzle_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 	puzzle_gcd=RATIO*gcd(canvas->w, canvas->h);
 	rects_w=(unsigned int)canvas->w/puzzle_gcd;
 	rects_h=(unsigned int)canvas->h/puzzle_gcd;
-        canvas_backup = SDL_CreateRGBSurface(SDL_ANYFORMAT,canvas->w, canvas->h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+        canvas_backup = SDL_CreateRGBSurface(SDL_SWSURFACE,canvas->w, canvas->h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 }
 
 void puzzle_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)

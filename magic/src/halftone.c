@@ -307,10 +307,10 @@ void halftone_switchin(magic_api * api, int which ATTRIBUTE_UNUSED,
                  int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
 {
   if (canvas_backup == NULL)
-    canvas_backup = SDL_CreateRGBSurface(SDL_ANYFORMAT, api->canvas_w, api->canvas_h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    canvas_backup = SDL_CreateRGBSurface(SDL_SWSURFACE, api->canvas_w, api->canvas_h, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
   if (square == NULL)
-    square = SDL_CreateRGBSurface(SDL_ANYFORMAT, 16, 16, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+    square = SDL_CreateRGBSurface(SDL_SWSURFACE, 16, 16, canvas->format->BitsPerPixel, canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
   /* FIXME: What to do if they come back NULL!? :( */
 

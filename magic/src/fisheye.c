@@ -134,10 +134,10 @@ void fisheye_draw(void * ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, 
 	last_x = x;
 	last_y = y;
 
-	oryg=SDL_CreateRGBSurface(SDL_ANYFORMAT, 80, 80, canvas->format->BitsPerPixel,
+	oryg=SDL_CreateRGBSurface(SDL_SWSURFACE, 80, 80, canvas->format->BitsPerPixel,
 				canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
-	output=SDL_CreateRGBSurface(SDL_ANYFORMAT, 80, 80, canvas->format->BitsPerPixel,
+	output=SDL_CreateRGBSurface(SDL_SWSURFACE, 80, 80, canvas->format->BitsPerPixel,
 				canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 	
 	rect.x=x-40;
@@ -149,7 +149,7 @@ void fisheye_draw(void * ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, 
 	//do vertical fisheye
 	for (i=0; i<40; i++)
 	{	
-		temp_src=SDL_CreateRGBSurface(SDL_ANYFORMAT, 1, 80, canvas->format->BitsPerPixel,
+		temp_src=SDL_CreateRGBSurface(SDL_SWSURFACE, 1, 80, canvas->format->BitsPerPixel,
 				canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 		
 		//let's take a smooth bar of scaled bitmap and copy it to temp
@@ -160,7 +160,7 @@ void fisheye_draw(void * ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, 
 		
 		SDL_BlitSurface(oryg, &rect, temp_src, NULL);	//this bar is copied to temp_src
 		
-		temp_dest=SDL_CreateRGBSurface(SDL_ANYFORMAT, 1, 80+2*i, canvas->format->BitsPerPixel,
+		temp_dest=SDL_CreateRGBSurface(SDL_SWSURFACE, 1, 80+2*i, canvas->format->BitsPerPixel,
 			canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 			
 		temp_dest=api->scale(temp_src, 1, 80+2*i, 0);	//temp_dest stores scaled temp_src
@@ -186,10 +186,10 @@ void fisheye_draw(void * ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, 
 	//do horizontal fisheye
 	for (i=0; i<40; i++)
 	{
-		temp_src=SDL_CreateRGBSurface(SDL_ANYFORMAT, 80, 1, canvas->format->BitsPerPixel,
+		temp_src=SDL_CreateRGBSurface(SDL_SWSURFACE, 80, 1, canvas->format->BitsPerPixel,
 				canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 		
-		temp_dest=SDL_CreateRGBSurface(SDL_ANYFORMAT, 80+2*i, 1, canvas->format->BitsPerPixel,
+		temp_dest=SDL_CreateRGBSurface(SDL_SWSURFACE, 80+2*i, 1, canvas->format->BitsPerPixel,
 			canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 		
 		//upper side first

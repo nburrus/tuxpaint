@@ -217,7 +217,7 @@ void fretwork_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 {
   //we've to compute the quantity of segments in each direction
 
-  canvas_backup=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel,
+  canvas_backup=SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h, canvas->format->BitsPerPixel,
 				     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
   SDL_BlitSurface(canvas, NULL, canvas_backup, NULL);
@@ -466,10 +466,10 @@ static void fretwork_draw(void * ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * 
 
   fretwork_status_of_segments[segment]=image;	//and write it to global table
 	
-  result=SDL_CreateRGBSurface(SDL_ANYFORMAT, img_w, img_h, fretwork_one->format->BitsPerPixel,
+  result=SDL_CreateRGBSurface(SDL_SWSURFACE, img_w, img_h, fretwork_one->format->BitsPerPixel,
 			      fretwork_one->format->Rmask, fretwork_one->format->Gmask, fretwork_one->format->Bmask, fretwork_one->format->Amask);
 
-  temp=SDL_CreateRGBSurface(SDL_ANYFORMAT, img_w, img_h, fretwork_one->format->BitsPerPixel,
+  temp=SDL_CreateRGBSurface(SDL_SWSURFACE, img_w, img_h, fretwork_one->format->BitsPerPixel,
 			    fretwork_one->format->Rmask, fretwork_one->format->Gmask, fretwork_one->format->Bmask, fretwork_one->format->Amask);
 
   SDL_BlitSurface(canvas_backup, &modification_rect, result, NULL);

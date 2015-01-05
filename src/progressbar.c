@@ -62,7 +62,8 @@ void show_progress_bar(SDL_Surface * screen)
 
     prog_bar_ctr++;
 
-    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
+    // FIXME SDL2
+    //    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
   }
   oldtime = newtime;
 

@@ -867,6 +867,7 @@ static void SDL_Flip(SDL_Surface *screen)
   SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, screen);
   SDL_RenderCopy(renderer, texture, NULL, NULL);
   SDL_RenderPresent(renderer);
+SDL_UpdateWindowSurface(window_screen);
 }
 
 static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
@@ -878,6 +879,7 @@ static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, S
   r.h = h;
   SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, screen);
   SDL_RenderCopy(renderer, texture, &r, &r);
+SDL_UpdateWindowSurface(window_screen);
 }
 
  
@@ -7817,8 +7819,9 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
 
   /* Convert to the display format: */
-
-  disp_fmt_s = SDL_DisplayFormatAlpha(s);
+  // FIXME SDL2
+  //disp_fmt_s = SDL_DisplayFormatAlpha(s);
+  disp_fmt_s = s;
   if (disp_fmt_s == NULL)
   {
     if (abort_on_error)
@@ -7829,7 +7832,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 	      "The Simple DirectMedia Layer error that occurred was:\n"
 	      "%s\n\n", fname, SDL_GetError());
 
-      SDL_FreeSurface(s);
+      //      SDL_FreeSurface(s);
       cleanup();
       exit(1);
     }
@@ -7843,7 +7846,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
   /* Free the temp. surface & return the converted one: */
 
-  SDL_FreeSurface(s);
+  //  SDL_FreeSurface(s);
 
   return (disp_fmt_s);
 }
@@ -11253,8 +11256,10 @@ static void load_starter(char *img_id)
 
   if (tmp_surf != NULL)
   {
-    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
-    SDL_FreeSurface(tmp_surf);
+    // FIXME SDL2
+    //    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
+    img_starter = tmp_surf;
+    //    SDL_FreeSurface(tmp_surf);
   }
 
   /* Try to load the a background image: */
@@ -11293,8 +11298,10 @@ static void load_starter(char *img_id)
 
   if (tmp_surf != NULL)
   {
-    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
-    SDL_FreeSurface(tmp_surf);
+    // FIXME SDL2
+    //    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    img_starter_bkgd = tmp_surf;
+    //    SDL_FreeSurface(tmp_surf);
   }
 
 
@@ -11449,8 +11456,10 @@ static void load_template(char *img_id)
 
   if (tmp_surf != NULL)
   {
-    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
-    SDL_FreeSurface(tmp_surf);
+    // FIXME SDL2
+    //    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    img_starter_bkgd = tmp_surf;
+    //SDL_FreeSurface(tmp_surf);
   }
 
 
@@ -11545,7 +11554,9 @@ static void load_current(void)
     }
     else
     {
-      org_surf = SDL_DisplayFormat(tmp);
+    // FIXME SDL2
+      //      org_surf = SDL_DisplayFormat(tmp);
+      org_surf = tmp;
       autoscale_copy_smear_free(tmp, canvas, SDL_BlitSurface);
 
       /* First we run this for compatibility, then we will chek if
@@ -13931,8 +13942,10 @@ static int do_open(void)
               /* Loaded the thumbnail from one or the other location */
               show_progress_bar(screen);
 
-              img1 = SDL_DisplayFormat(img);
-              SDL_FreeSurface(img);
+    // FIXME SDL2
+	      //              img1 = SDL_DisplayFormat(img);
+	      img1 = img;
+	      //              SDL_FreeSurface(img);
 
               /* if too big, or too small in both dimensions, rescale it
                  (for now: using old thumbnail as source for high speed, low quality) */
@@ -13993,14 +14006,18 @@ static int do_open(void)
               {
                 /* Turn it into a thumbnail: */
 
-                img1 = SDL_DisplayFormatAlpha(img);
+    // FIXME SDL2
+		//                img1 = SDL_DisplayFormatAlpha(img);
+		img1 = img;
                 img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-                SDL_FreeSurface(img1);
+                //SDL_FreeSurface(img1);
 
                 show_progress_bar(screen);
 
-                thumbs[num_files] = SDL_DisplayFormat(img2);
-                SDL_FreeSurface(img2);
+    // FIXME SDL2
+		//                thumbs[num_files] = SDL_DisplayFormat(img2);
+		thumbs[num_files] = img2;
+                //SDL_FreeSurface(img2);
                 if (thumbs[num_files] == NULL)
                 {
                   fprintf(stderr,
@@ -14735,8 +14752,10 @@ static int do_open(void)
             starter_flipped = 0;
             starter_personal = 0;
 
-	    org_surf = SDL_DisplayFormat(img);	/* Keep a copy of the original image
-						   unscaled to send to load_embedded_data */
+    // FIXME SDL2
+	    //	    org_surf = SDL_DisplayFormat(img);	/* Keep a copy of the original image
+	    //					   unscaled to send to load_embedded_data */
+	    org_surf =img;
             autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
             cur_undo = 0;
@@ -14985,8 +15004,10 @@ static int do_slideshow(void)
 	    debug("Thumbnail loaded, scaling");
 	    show_progress_bar(screen);
 
-	    img1 = SDL_DisplayFormat(img);
-	    SDL_FreeSurface(img);
+    // FIXME SDL2
+	    //	    img1 = SDL_DisplayFormat(img);
+	    img1 = img;
+	    //	    SDL_FreeSurface(img);
 
 	    if (img1 != NULL)
 	    {
@@ -15045,14 +15066,18 @@ static int do_slideshow(void)
 	    {
 	      /* Turn it into a thumbnail: */
 
-	      img1 = SDL_DisplayFormatAlpha(img);
+    // FIXME SDL2
+	      //	      img1 = SDL_DisplayFormatAlpha(img);
+	      img1 = img;
 	      img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-	      SDL_FreeSurface(img1);
+	      //	      SDL_FreeSurface(img1);
 
 	      show_progress_bar(screen);
 
-	      thumbs[num_files] = SDL_DisplayFormat(img2);
-	      SDL_FreeSurface(img2);
+    // FIXME SDL2
+	      //	      thumbs[num_files] = SDL_DisplayFormat(img2);
+	      thumbs[num_files] = img2;
+	      //SDL_FreeSurface(img2);
 
 	      SDL_FreeSurface(img);
 
@@ -17158,7 +17183,9 @@ static SDL_Surface *duplicate_surface(SDL_Surface * orig)
      amask));
    */
 
-  return (SDL_DisplayFormatAlpha(orig));
+    // FIXME SDL2
+  //  return (SDL_DisplayFormatAlpha(orig));
+  return(orig);
 }
 
 static void mirror_starter(void)
@@ -17475,8 +17502,10 @@ static SDL_Surface * load_svg(char * file)
 
 
   /* Convert the SDL surface to the display format, for faster blitting: */
-  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
-  SDL_FreeSurface(sdl_surface_tmp);
+    // FIXME SDL2
+  //  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
+  sdl_surface = sdl_surface_tmp;
+  //  SDL_FreeSurface(sdl_surface_tmp);
 
   if (sdl_surface == NULL)
   {
@@ -17637,8 +17666,10 @@ static SDL_Surface * load_svg(char * file)
   }
 
   /* Convert the SDL surface to the display format, for faster blitting: */
-  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
-  SDL_FreeSurface(sdl_surface_tmp);
+    // FIXME SDL2
+  //  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
+  sdl_surface = sdl_surface_tmp;
+  //  SDL_FreeSurface(sdl_surface_tmp);
 
   if (sdl_surface == NULL)
   {
@@ -18771,8 +18802,10 @@ static int do_new_dialog(void)
             /* Loaded the thumbnail from one or the other location */
             show_progress_bar(screen);
 
-            img1 = SDL_DisplayFormat(img);
-            SDL_FreeSurface(img);
+    // FIXME SDL2
+	    //            img1 = SDL_DisplayFormat(img);
+	    img1 =img;
+	    //            SDL_FreeSurface(img);
 
             /* if too big, or too small in both dimensions, rescale it
                (for now: using old thumbnail as source for high speed,
@@ -18877,14 +18910,18 @@ static int do_new_dialog(void)
             {
               /* Turn it into a thumbnail: */
 
-              img1 = SDL_DisplayFormatAlpha(img);
+    // FIXME SDL2
+	      //              img1 = SDL_DisplayFormatAlpha(img);
+	      img1 = img;
               img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-              SDL_FreeSurface(img1);
+	      //              SDL_FreeSurface(img1);
 
               show_progress_bar(screen);
 
-              thumbs[num_files] = SDL_DisplayFormat(img2);
-              SDL_FreeSurface(img2);
+    // FIXME SDL2
+	      //              thumbs[num_files] = SDL_DisplayFormat(img2);
+	      thumbs[num_files] = img2;
+              //SDL_FreeSurface(img2);
               if (thumbs[num_files] == NULL)
               {
                 fprintf(stderr,
@@ -23002,7 +23039,7 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
-int TP_EventFilter(const SDL_Event * event, void *data)
+int TP_EventFilter(void *data, const SDL_Event * event)
 {
   if (event->type == SDL_QUIT ||
       event->type == SDL_WINDOWEVENT ||
@@ -23250,20 +23287,26 @@ static void setup(void)
 #ifdef USE_HWSURFACE
     /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 	  VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);*/
-    SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
-						 SDL_WINDOWPOS_UNDEFINED,
-						 SDL_WINDOWPOS_UNDEFINED,
-						 WINDOW_WIDTH, WINDOW_HEIGHT,
-						 SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+    window_screen = SDL_CreateWindow("Tux Paint",
+				     SDL_WINDOWPOS_UNDEFINED,
+				     SDL_WINDOWPOS_UNDEFINED,
+				     WINDOW_WIDTH, WINDOW_HEIGHT,
+				     SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+    printf("1\n");
+  if (window_screen == NULL)
+    printf("window_screen = NULL 1\n");
 
 #else
 /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
       VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);*/
-    SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
-						 SDL_WINDOWPOS_UNDEFINED,
-						 SDL_WINDOWPOS_UNDEFINED,
-						 WINDOW_WIDTH, WINDOW_HEIGHT,
-						 SDL_WINDOW_FULLSCREEN );
+  window_screen = SDL_CreateWindow("Tux Paint",
+				   SDL_WINDOWPOS_UNDEFINED,
+				   SDL_WINDOWPOS_UNDEFINED,
+				   WINDOW_WIDTH, WINDOW_HEIGHT,
+				   SDL_WINDOW_FULLSCREEN );
+    printf("2\n");
+  if (window_screen == NULL)
+    printf("window_screen = NULL 2\n");
 #endif
 
     screen = SDL_GetWindowSurface(window_screen);
@@ -23303,20 +23346,27 @@ static void setup(void)
 #ifdef USE_HWSURFACE
     /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 			      VIDEO_BPP, SDL_HWSURFACE);*/
-SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
-                          SDL_WINDOWPOS_UNDEFINED,
-                          SDL_WINDOWPOS_UNDEFINED,
-                          WINDOW_WIDTH, WINDOW_HEIGHT,
-                          SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+    window_screen = SDL_CreateWindow("Tux Paint",
+				     SDL_WINDOWPOS_UNDEFINED,
+				     SDL_WINDOWPOS_UNDEFINED,
+				     WINDOW_WIDTH, WINDOW_HEIGHT,
+				     SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+    printf("3\n");
+  if (window_screen == NULL)
+    printf("window_screen = NULL 3\n");
 #else
-SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
-                          SDL_WINDOWPOS_UNDEFINED,
-                          SDL_WINDOWPOS_UNDEFINED,
-                          WINDOW_WIDTH, WINDOW_HEIGHT,
-                          SDL_WINDOW_FULLSCREEN);
+  window_screen = SDL_CreateWindow("Tux Paint",
+				   SDL_WINDOWPOS_UNDEFINED,
+				   SDL_WINDOWPOS_UNDEFINED,
+				   WINDOW_WIDTH, WINDOW_HEIGHT,
+				   SDL_WINDOW_FULLSCREEN);
 /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 s
       VIDEO_BPP, SDL_SWSURFACE);*/
+    printf("4\n");
+  if (window_screen == NULL)
+    printf("window_screen = NULL 4\n");
+
 #endif
 
     if (set_window_pos)
@@ -23328,7 +23378,7 @@ s
   if (screen == NULL)
   {
     fprintf(stderr,
-	    "\nError: I could not open the display.\n"
+	    "\nError: 1 I could not open the display.\n"
 	    "The Simple DirectMedia Layer error that occurred was:\n"
 	    "%s\n\n", SDL_GetError());
 

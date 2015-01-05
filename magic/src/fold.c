@@ -129,7 +129,7 @@ void fold_draw(magic_api * api, int which,
   int left_y, right_x;
   float w, h;
   SDL_Surface * temp;
-  temp=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel,
+  temp=SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h, canvas->format->BitsPerPixel,
 			    canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
   SDL_BlitSurface(canvas,0,temp,0);
 
@@ -207,10 +207,10 @@ SDL_Surface * rotate(magic_api * api, SDL_Surface * canvas, int angle)
   int a,b;
 
   if (angle==180)
-    temp=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel,
+    temp=SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h, canvas->format->BitsPerPixel,
 			      canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
   else
-    temp=SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->h, canvas->w, canvas->format->BitsPerPixel,
+    temp=SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->h, canvas->w, canvas->format->BitsPerPixel,
 			      canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
   switch (angle)
