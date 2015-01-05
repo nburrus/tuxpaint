@@ -360,8 +360,8 @@ static void mtw(wchar_t * wtok, char * tok)
 #include <errno.h>
 #include <sys/stat.h>
 
-#include "SDL.h"
-#include "SDL_thread.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_thread.h"
 #if !defined(_SDL_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL from a package, be sure to get"
@@ -370,7 +370,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #error "---------------------------------------------------"
 #endif
 
-#include "SDL_image.h"
+#include "SDL2/SDL_image.h"
 #if !defined(_SDL_IMAGE_H) && !defined(_IMG_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_image from a package, be sure"
@@ -379,7 +379,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #error "---------------------------------------------------"
 #endif
 
-#include "SDL_ttf.h"
+#include "SDL2/SDL_ttf.h"
 #if !defined(_SDL_TTF_H) && !defined(_SDLttf_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_ttf from a package, be sure"
@@ -423,7 +423,7 @@ static void mtw(wchar_t * wtok, char * tok)
 
 
 #ifndef NOSOUND
-#include "SDL_mixer.h"
+#include "SDL2/SDL_mixer.h"
 #if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_mixer from a package, be sure"
@@ -477,7 +477,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #error "---------------------------------------------------"
 #endif
 
-#include "SDL_getenv.h"
+//#include "SDL_getenv.h"
 
 #include "i18n.h"
 #include "cursor.h"
@@ -852,6 +852,8 @@ static void setup_screen_layout(void)
 #endif
 }
 
+static SDL_Window *window_screen;
+static SDL_Renderer *renderer;
 static SDL_Surface *screen = NULL;
 static SDL_Surface *canvas = NULL;
 static SDL_Surface *label = NULL;
@@ -859,6 +861,26 @@ static SDL_Surface *save_canvas = NULL;
 static SDL_Surface *canvas_back = NULL;
 static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
 
+
+static void SDL_Flip(SDL_Surface *screen)
+{
+  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, screen);
+  SDL_RenderCopy(renderer, texture, NULL, NULL);
+  SDL_RenderPresent(renderer);
+}
+
+static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
+{
+  SDL_Rect r;
+  r.x = x;
+  r.y = y;
+  r.w = w;
+  r.h = h;
+  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, screen);
+  SDL_RenderCopy(renderer, texture, &r, &r);
+}
+
+ 
 /* Update a rect. based on two x/y coords (not necessarly in order): */
 static void update_screen(int x1, int y1, int x2, int y2)
 {
@@ -1888,8 +1910,8 @@ static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
-static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2);
-static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
+static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2);
+static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
 static char *remove_slash(char *path);
 /*static char *replace_tilde(const char* const path);*/
@@ -1978,7 +2000,7 @@ static void do_wait(int counter)
 
 	/* FIXME: Handle SDL_Quit better */
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
 	handle_active(&event);
       }
@@ -2019,13 +2041,13 @@ static void eat_sdl_events(void)
       SDL_Quit();
       exit(0);			/* can't safely use do_quit during start-up */
     }
-    else if (event.type == SDL_ACTIVEEVENT)
+    else if (event.type == SDL_WINDOWEVENT)
       handle_active(&event);
     else if (event.type == SDL_KEYDOWN)
       {
-      SDLKey key = event.key.keysym.sym;
-      SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
-      SDLMod alt = event.key.keysym.mod & KMOD_ALT;
+      SDL_Keycode key = event.key.keysym.sym;
+      SDL_Keymod ctrl = event.key.keysym.mod & KMOD_CTRL;
+      SDL_Keymod alt = event.key.keysym.mod & KMOD_ALT;
       if ((key == SDLK_c && ctrl) || (key == SDLK_F4 && alt))
       {
 	SDL_Quit();
@@ -2143,15 +2165,15 @@ static void mainloop(void)
   unsigned int i = 0;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
-  SDLKey key;
-  SDLMod mod;
+  SDL_Keycode key;
+  SDL_Keymod mod;
   Uint32 last_cursor_blink, cur_cursor_blink,
     pre_event_time, current_event_time;
   SDL_Rect update_rect;
   SDL_Rect real_r_tools = r_tools;
 #ifdef DEBUG
   Uint16 key_unicode;
-  SDLKey key_down;
+  SDL_Keycode key_down;
 #endif
   on_screen_keyboard  *new_kbd;
   SDL_Rect kbd_rect;
@@ -2222,13 +2244,14 @@ static void mainloop(void)
 	  }
 	}
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
 	/* Reset Shapes tool and clean the canvas if we lose focus*/
 	if (mouseaccessibility && emulate_button_pressed &&
 	    ((cur_tool == TOOL_SHAPES && shape_tool_mode != SHAPE_TOOL_MODE_DONE) || cur_tool == TOOL_LINES) &&
-	    event.active.state & (SDL_APPINPUTFOCUS|SDL_APPACTIVE) &&
-	    event.active.gain == 0)
+	    event.window.event == SDL_WINDOWEVENT_FOCUS_LOST)
+	  /* event.active.state & (SDL_APPINPUTFOCUS|SDL_APPACTIVE) &&
+	     event.active.gain == 0)*/
 	  {
 	    do_undo();
 	    tool_avail[TOOL_REDO] = 0; /* Don't let them 'redo' to get preview back */
@@ -2604,7 +2627,7 @@ static void mainloop(void)
 	    texttool_str[texttool_len] = L'\0';
 
 	    /* Read IM, remember how many to redraw next iteration */
-	    redraw = im_read(&im_data, event.key.keysym);
+	    redraw = im_read(&im_data, event);
 
 	    /* Korean Hangul needs this to refresh when buffered chars gets emptied */
 	    if (! *im_cp)
@@ -4823,7 +4846,7 @@ static void mainloop(void)
 
 		  shape_radius = sqrt((shape_ctr_x - shape_outer_x) * (shape_ctr_x - shape_outer_x) + (shape_ctr_y - shape_outer_y) * (shape_ctr_y - shape_outer_y));
 
-		  SDL_WarpMouse(shape_outer_x + 96, shape_ctr_y);
+		  SDL_WarpMouseInWindow(window_screen, shape_outer_x + 96, shape_ctr_y);
 		  do_setcursor(cursor_rotate);
 
 
@@ -7689,8 +7712,8 @@ static void seticon(void)
   memset(mask, 0xFF, masklen);
 
   /* Set icon: */
-  SDL_WM_SetIcon(icon, mask);
-
+  //  SDL_WM_SetIcon(icon, mask);
+  SDL_SetWindowIcon(window_screen, icon);
   /* Free icon surface & mask: */
   free(mask);
 #else
@@ -7705,7 +7728,7 @@ static void seticon(void)
   if (grab_input)
   {
     debug("Grabbing input!");
-    SDL_WM_GrabInput(SDL_GRAB_ON);
+    SDL_SetWindowGrab(window_screen, SDL_TRUE);
   }
 }
 
@@ -11345,9 +11368,13 @@ static void load_starter(char *img_id)
 				       tmp_surf->format->Amask);
 
     /* 3rd arg ignored for RGBA surfaces */
-    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+    //    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+    SDL_SetSurfaceBlendMode(tmp_surf, SDL_BLENDMODE_NONE);
+
     autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
-    SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
+    //    SDL_SetAlpha(img_starter, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+    SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_NONE);
+
   }
 
 
@@ -11666,8 +11693,8 @@ static int do_prompt_image_flash_snd(const char *const text,
   SDL_Rect dest;
   int done, ans, w, counter;
   SDL_Color black = { 0, 0, 0, 0 };
-  SDLKey key;
-  SDLKey key_y, key_n;
+  SDL_Keycode key;
+  SDL_Keycode key_y, key_n;
   char *keystr;
   SDL_Surface * backup;
 #ifndef NO_PROMPT_SHADOWS
@@ -11743,7 +11770,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   playsound(screen, 1, snd, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 
 #ifndef NO_PROMPT_SHADOWS
-  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
+  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
 				    (PROMPT_W - 96 * 2) + (w - 4) * 2,
 				    (w - 4) * 2,
 				    screen->format->BitsPerPixel,
@@ -11755,7 +11782,8 @@ static int do_prompt_image_flash_snd(const char *const text,
   if (alpha_surf != NULL)
   {
     SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-    SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
+    SDL_SetSurfaceAlphaMod(alpha_surf, 64);
+
 
     for (i = 8; i > 0; i = i - 2)
     {
@@ -11929,7 +11957,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 	ans = 0;
 	done = 1;
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
 	handle_active(&event);
       }
@@ -12346,7 +12374,8 @@ static void cleanup(void)
 
   /* (Just in case...) */
 
-  SDL_WM_GrabInput(SDL_GRAB_OFF);
+  //  SDL_WM_GrabInput(SDL_GRAB_OFF);
+  SDL_SetWindowGrab(window_screen, SDL_FALSE);
 
 
   /* If we're using a lockfile, we can 'clear' it when we quit
@@ -13701,7 +13730,7 @@ static int do_open(void)
     num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
   SDL_Event event;
-  SDLKey key;
+  SDL_Keycode key;
   Uint32 last_click_time;
   int last_click_which, last_click_button;
   int places_to_look;
@@ -14202,7 +14231,7 @@ static int do_open(void)
 
           /* FIXME: Handle SDL_Quit better */
         }
-        else if (event.type == SDL_ACTIVEEVENT)
+        else if (event.type == SDL_WINDOWEVENT)
         {
           handle_active(&event);
         }
@@ -14812,7 +14841,7 @@ static int do_slideshow(void)
     go_back, found, speed;
   SDL_Rect dest;
   SDL_Event event;
-  SDLKey key;
+  SDL_Keycode key;
   char *freeme;
   int speeds;
   float x_per, y_per;
@@ -15247,7 +15276,7 @@ static int do_slideshow(void)
 
 	/* FIXME: Handle SDL_Quit better */
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
 	handle_active(&event);
       }
@@ -15590,7 +15619,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
   char fname[1024];
   SDL_Event event;
-  SDLKey key;
+  SDL_Keycode key;
   SDL_Rect dest;
   Uint32 last_ticks;
 
@@ -15693,7 +15722,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 	    next = 1;
 	    done = 1;
 	  }
-          else if (event.type == SDL_ACTIVEEVENT)
+          else if (event.type == SDL_WINDOWEVENT)
           {
             handle_active(&event);
           }
@@ -16726,7 +16755,7 @@ static void draw_image_title(int t, SDL_Rect dest)
 /* Handle keyboard events to control the mouse: */
 /* Move as many pixels as bigsteps outside the areas,
    in the areas and 5 pixels around, move 1 pixel at a time */
-static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2)
+static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2)
 {
   int left, right, up, bottom;
   SDL_Event event;
@@ -16816,7 +16845,7 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
     {
       if (key == SDLK_INSERT || key == SDLK_F5 ||
 	  ((cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL) &&
-	   (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP5)))
+	   (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP_5)))
 
       {
 	event.type = SDL_MOUSEBUTTONUP;
@@ -16830,16 +16859,16 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
     else
     {
       if (key == SDLK_LEFT)
-	SDL_WarpMouse(left, oldpos_y);
+	SDL_WarpMouseInWindow(window_screen, left, oldpos_y);
 
       else if (key == SDLK_RIGHT)
-	SDL_WarpMouse(right, oldpos_y);
+	SDL_WarpMouseInWindow(window_screen, right, oldpos_y);
 
       else if (key == SDLK_UP)
-	SDL_WarpMouse(oldpos_x, up);
+	SDL_WarpMouseInWindow(window_screen, oldpos_x, up);
 
       else if (key == SDLK_DOWN)
-	SDL_WarpMouse(oldpos_x, bottom);
+	SDL_WarpMouseInWindow(window_screen, oldpos_x, bottom);
 
       else if ((key == SDLK_INSERT || key == SDLK_F5) && !button_down)
       {
@@ -16853,7 +16882,7 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
       else if(cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL )
       {
 	if (!button_down &&
-	    (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP5))
+	    (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP_5))
         {
 	  event.type = SDL_MOUSEBUTTONDOWN;
 	  event.button.x = oldpos_x;
@@ -16862,44 +16891,44 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
 	  SDL_PushEvent(&event);
 	}
 
-	else if (key == SDLK_1 || key == SDLK_KP1)
-	  SDL_WarpMouse(left, bottom);
+	else if (key == SDLK_1 || key == SDLK_KP_1)
+	  SDL_WarpMouseInWindow(window_screen, left, bottom);
 
-	else if (key  == SDLK_3 || key == SDLK_KP3)
-	  SDL_WarpMouse(right, bottom);
+	else if (key  == SDLK_3 || key == SDLK_KP_3)
+	  SDL_WarpMouseInWindow(window_screen, right, bottom);
 
-	else if (key  == SDLK_7 || key == SDLK_KP7)
-	  SDL_WarpMouse(left, up);
+	else if (key  == SDLK_7 || key == SDLK_KP_7)
+	  SDL_WarpMouseInWindow(window_screen, left, up);
 
-	else if (key  == SDLK_9 || key == SDLK_KP9)
-	  SDL_WarpMouse(right, up);
+	else if (key  == SDLK_9 || key == SDLK_KP_9)
+	  SDL_WarpMouseInWindow(window_screen, right, up);
 
-	else if (key  == SDLK_2 || key == SDLK_KP2)
-	  SDL_WarpMouse(oldpos_x, bottom);
+	else if (key  == SDLK_2 || key == SDLK_KP_2)
+	  SDL_WarpMouseInWindow(window_screen, oldpos_x, bottom);
 
-	else if (key  == SDLK_8 || key == SDLK_KP8)
-	  SDL_WarpMouse(oldpos_x, up);
+	else if (key  == SDLK_8 || key == SDLK_KP_8)
+	  SDL_WarpMouseInWindow(window_screen, oldpos_x, up);
 
-	else if (key  == SDLK_6 || key == SDLK_KP6)
-	  SDL_WarpMouse(right, oldpos_y);
+	else if (key  == SDLK_6 || key == SDLK_KP_6)
+	  SDL_WarpMouseInWindow(window_screen, right, oldpos_y);
 
-	else if (key  == SDLK_4 || key == SDLK_KP4)
-	  SDL_WarpMouse(left, oldpos_y);
+	else if (key  == SDLK_4 || key == SDLK_KP_4)
+	  SDL_WarpMouseInWindow(window_screen, left, oldpos_y);
 
 	/* FIXME: This is qwerty centric and interferes with gettexted reponses for yes/no,
 	   so disabling until either is removed or is configurable. */
 #if 0
 	else if (key == SDLK_s)
-	  SDL_WarpMouse(oldpos_x, bottom);
+	  SDL_WarpMouseInWindow(window_screen, oldpos_x, bottom);
 
 	else if (key == SDLK_w)
-	  SDL_WarpMouse(oldpos_x, up);
+	  SDL_WarpMouseInWindow(window_screen, oldpos_x, up);
 
 	else if (key == SDLK_d)
-	  SDL_WarpMouse(right, oldpos_y);
+	  SDL_WarpMouseInWindow(window_screen, right, oldpos_y);
 
 	else if (key == SDLK_a)
-	  SDL_WarpMouse(left, oldpos_y);
+	  SDL_WarpMouseInWindow(window_screen, left, oldpos_y);
 #endif
 
       }
@@ -16908,7 +16937,7 @@ static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1
 }
 
 /* A subset of keys that will move one button at a time and jump between r_canvas<->r_tools<->r_colors */
-static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools )
+static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, SDL_Rect real_r_tools )
 {
   if (hit_test(&real_r_tools, oldpos_x, oldpos_y) &&
       (key == SDLK_F7 || key == SDLK_F8 || key == SDLK_F11 || key == SDLK_F12))
@@ -16977,7 +17006,7 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
       update_screen_rect(&r_tools);
     }
 
-    SDL_WarpMouse(button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
+    SDL_WarpMouseInWindow(window_screen, button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
   }
 
   else if (key == SDLK_F11 && hit_test(&r_colors,oldpos_x, oldpos_y))
@@ -16986,7 +17015,7 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
     *whichc = *whichc - 1;
     if (*whichc < 0)
       *whichc += NUM_COLORS;
-    SDL_WarpMouse(button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
+    SDL_WarpMouseInWindow(window_screen, button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
   }
 
   else if (key == SDLK_F12 && hit_test(&r_colors,oldpos_x, oldpos_y))
@@ -16994,17 +17023,17 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
     *whichc = grid_hit_gd(&r_colors, oldpos_x, oldpos_y, &gd_colors);
     *whichc = *whichc + 1;
     *whichc = *whichc % NUM_COLORS;
-    SDL_WarpMouse(button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
+    SDL_WarpMouseInWindow(window_screen, button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
   }
 
   else if (key == SDLK_F4)
   {
     if (hit_test(&r_tools, oldpos_x, oldpos_y))
-      SDL_WarpMouse(button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h/2));
+      SDL_WarpMouseInWindow(window_screen, button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h/2));
     else if (hit_test(&r_colors,oldpos_x, oldpos_y))
-      SDL_WarpMouse(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+      SDL_WarpMouseInWindow(window_screen, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
     else
-      SDL_WarpMouse(button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
+      SDL_WarpMouseInWindow(window_screen, button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
 
     /* Play a sound here as there is a big jump */
     playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
@@ -17015,21 +17044,15 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
 
 static void handle_active(SDL_Event * event)
 {
-  if (event->active.state & SDL_APPACTIVE)
+  if (event->window.event == SDL_WINDOWEVENT_EXPOSED)
   {
-    if (event->active.gain == 1)
-    {
       if (fullscreen)
 	SDL_Flip(screen);
-    }
   }
-  if (event->active.state & SDL_APPINPUTFOCUS|SDL_APPACTIVE)
+  if (event->window.event == SDL_WINDOWEVENT_FOCUS_GAINED)
   {
-    if (event->active.gain == 1)
-    {
       if (mouseaccessibility) {
 	magic_switchin(canvas);
-      }
     }
     else if (mouseaccessibility && emulate_button_pressed) {
 	  magic_switchout(canvas);
@@ -18441,7 +18464,7 @@ static int do_new_dialog(void)
     num_files_in_dirs, j;
   SDL_Rect dest;
   SDL_Event event;
-  SDLKey key;
+  SDL_Keycode key;
   Uint32 last_click_time;
   int last_click_which, last_click_button;
   int places_to_look;
@@ -19069,7 +19092,7 @@ static int do_new_dialog(void)
 
 	/* FIXME: Handle SDL_Quit better */
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
 	handle_active(&event);
       }
@@ -19831,7 +19854,7 @@ static int do_color_sel(void)
         chose = 0;
         done = 1;
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
         handle_active(&event);
       }
@@ -20077,7 +20100,7 @@ static int do_color_picker(void)
   double rh, gh, bh;
   int done, chose;
   SDL_Event event;
-  SDLKey key;
+  SDL_Keycode key;
   int color_picker_left, color_picker_top;
   int back_left, back_top;
   SDL_Rect color_example_dest;
@@ -20131,7 +20154,7 @@ static int do_color_picker(void)
   SDL_BlitSurface(backup, NULL, screen, NULL);
 
 #ifndef NO_PROMPT_SHADOWS
-  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
+  alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
                                     (PROMPT_W - 96 * 2) + (w - 4) * 2,
                                     (w - 4) * 2,
                                     screen->format->BitsPerPixel,
@@ -20143,7 +20166,8 @@ static int do_color_picker(void)
   if (alpha_surf != NULL)
   {
     SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-    SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
+    SDL_SetSurfaceAlphaMod(alpha_surf, 64);
+
 
     for (i = 8; i > 0; i = i - 2)
     {
@@ -20276,7 +20300,7 @@ static int do_color_picker(void)
   done = 0;
   chose = 0;
   x = y = 0;
-  SDL_WarpMouse(back_left + button_w / 2, back_top - button_w / 2);
+  SDL_WarpMouseInWindow(window_screen, back_left + button_w / 2, back_top - button_w / 2);
 
   do
   {
@@ -21988,9 +22012,11 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                                                TPAINT_AMASK);
 
 	    /* 3rd arg ignored for RGBA surfaces */
-	    SDL_SetAlpha(aux_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+	    //	    SDL_SetAlpha(aux_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
+	    SDL_SetSurfaceBlendMode(aux_surf, SDL_BLENDMODE_NONE);
 	    autoscale_copy_smear_free(aux_surf, img_starter, NondefectiveBlit);
-	    SDL_SetAlpha(img_starter, SDL_RLEACCEL | SDL_SRCALPHA, SDL_ALPHA_OPAQUE);
+	    //	    SDL_SetAlpha(img_starter, SDL_ALPHA_OPAQUE);
+	    SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_NONE);
 
 	    free(unc_buff);
 	  }
@@ -22976,10 +23002,10 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
-int TP_EventFilter(const SDL_Event * event)
+int TP_EventFilter(const SDL_Event * event, void *data)
 {
   if (event->type == SDL_QUIT ||
-      event->type == SDL_ACTIVEEVENT ||
+      event->type == SDL_WINDOWEVENT ||
       event->type == SDL_JOYAXISMOTION ||
       event->type == SDL_JOYBALLMOTION ||
       event->type == SDL_JOYHATMOTION ||
@@ -23094,7 +23120,7 @@ static void setup(void)
 
   /* Set up event filter */
 
-  SDL_SetEventFilter(TP_EventFilter);
+  SDL_SetEventFilter(TP_EventFilter, NULL);
 
 
   /* Set up joystick */
@@ -23158,7 +23184,7 @@ static void setup(void)
 
 
   /* Set-up Key-Repeat: */
-  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+  //  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 
   /* Init TTF stuff: */
   if (TTF_Init() < 0)
@@ -23180,8 +23206,6 @@ static void setup(void)
 #ifndef __APPLE__
   seticon();
 #endif
-  SDL_WM_SetCaption("Tux Paint", "Tux Paint");
-
   if (hide_cursor)
     SDL_ShowCursor (SDL_DISABLE);
 
@@ -23224,12 +23248,26 @@ static void setup(void)
   if (fullscreen)
   {
 #ifdef USE_HWSURFACE
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);
+    /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+	  VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE);*/
+    SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
+						 SDL_WINDOWPOS_UNDEFINED,
+						 SDL_WINDOWPOS_UNDEFINED,
+						 WINDOW_WIDTH, WINDOW_HEIGHT,
+						 SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+
 #else
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);
+/*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+      VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);*/
+    SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
+						 SDL_WINDOWPOS_UNDEFINED,
+						 SDL_WINDOWPOS_UNDEFINED,
+						 WINDOW_WIDTH, WINDOW_HEIGHT,
+						 SDL_WINDOW_FULLSCREEN );
 #endif
+
+    screen = SDL_GetWindowSurface(window_screen);
+    renderer = SDL_CreateRenderer(window_screen, -1, 0);
 
     if (screen == NULL)
     {
@@ -23263,16 +23301,29 @@ static void setup(void)
     }
 
 #ifdef USE_HWSURFACE
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_HWSURFACE);
+    /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+			      VIDEO_BPP, SDL_HWSURFACE);*/
+SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
+                          SDL_WINDOWPOS_UNDEFINED,
+                          SDL_WINDOWPOS_UNDEFINED,
+                          WINDOW_WIDTH, WINDOW_HEIGHT,
+                          SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
 #else
-    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-			      VIDEO_BPP, SDL_SWSURFACE);
+SDL_Window *window_screen = SDL_CreateWindow("Tux Paint",
+                          SDL_WINDOWPOS_UNDEFINED,
+                          SDL_WINDOWPOS_UNDEFINED,
+                          WINDOW_WIDTH, WINDOW_HEIGHT,
+                          SDL_WINDOW_FULLSCREEN);
+/*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+s
+      VIDEO_BPP, SDL_SWSURFACE);*/
 #endif
 
     if (set_window_pos)
       putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
   }
+
+  screen = SDL_GetWindowSurface(window_screen);
 
   if (screen == NULL)
   {
@@ -23612,7 +23663,7 @@ static void setup(void)
   img_sfx = loadimage(DATA_PREFIX "images/tools/sfx.png");
   img_speak = loadimage(DATA_PREFIX "images/tools/speak.png");
 
-  img_black = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
+  img_black = SDL_CreateRGBSurface(SDL_SWSURFACE,
 				   img_btn_off->w, img_btn_off->h,
 				   img_btn_off->format->BitsPerPixel,
 				   img_btn_off->format->Rmask,
@@ -23621,7 +23672,7 @@ static void setup(void)
 				   img_btn_off->format->Amask);
   SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
 
-  img_grey = SDL_CreateRGBSurface(SDL_SRCALPHA | SDL_SWSURFACE,
+  img_grey = SDL_CreateRGBSurface(SDL_SWSURFACE,
 				  img_btn_off->w, img_btn_off->h,
 				  img_btn_off->format->BitsPerPixel,
 				  img_btn_off->format->Rmask,
@@ -23986,7 +24037,7 @@ static void setup(void)
 
   /* Enable Unicode support in SDL: */
 
-  SDL_EnableUNICODE(1);
+//  SDL_EnableUNICODE(1);
 
 #ifndef _WIN32
   /* Set up signal handler for SIGPIPE (in case printer command dies;
@@ -24073,7 +24124,7 @@ static void claim_to_be_ready(void)
   oldpos_x = WINDOW_WIDTH / 2;
   oldpos_y = WINDOW_HEIGHT / 2;
 
-  SDL_WarpMouse(oldpos_x, oldpos_y);
+  SDL_WarpMouseInWindow(window_screen, oldpos_x, oldpos_y);
 
   eraser_sound = 0;
 
@@ -24446,7 +24497,7 @@ static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y, int
     break;
   }
   if(*valhat_x || *valhat_y)
-    SDL_WarpMouse(oldpos_x + *valhat_x, oldpos_y + *valhat_y);
+    SDL_WarpMouseInWindow(window_screen, oldpos_x + *valhat_x, oldpos_y + *valhat_y);
 
   *old_hat_ticks = SDL_GetTicks();
 }
@@ -24458,7 +24509,7 @@ static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
   /* printf("\n ball movement \n"); */
   val_x = event.jball.xrel;
   val_y = event.jball.yrel;
-  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
+  SDL_WarpMouseInWindow(window_screen, oldpos_x + val_x, oldpos_y + val_y);
 }
 
 
@@ -24478,7 +24529,7 @@ if (ticks - old_hat_ticks > joystick_hat_timeout)
     vx += valhat_x;
     vy += valhat_y;
   }
-SDL_WarpMouse(vx, vy);
+SDL_WarpMouseInWindow(window_screen, vx, vy);
 
 if (motioner && joystick_slowness)
   SDL_Delay(joystick_slowness);

@@ -44,7 +44,7 @@ endif
 endif
 
 # change to sdl-console to build a console version on Windows
-SDL_PCNAME:=sdl
+SDL_PCNAME:=sdl2
 
 WINDRES:=windres
 PKG_CONFIG:=pkg-config
@@ -180,15 +180,15 @@ CURSOR_SHAPES:=LARGE
 # CURSOR_SHAPES:=SMALL
 
 # Libraries, paths, and flags:
-SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf -lz $(PNG)
+SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf -lz $(PNG)
 
 # Sound support
-SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
-NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL_Mixer failed, no sound for you!))
+SDL_MIXER_LIB:=$(call linktest,-lSDL2_mixer,$(SDL_LIBS))
+NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL2_Mixer failed, no sound for you!))
 
 # SDL Pango is needed to render complex scripts like Thai and Arabic
-SDL_PANGO_LIB:=$(call linktest,-lSDL_Pango,$(SDL_LIBS))
-NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL_Pango failed, no scripts for you!))
+SDL_PANGO_LIB:=$(call linktest,-lSDL2_Pango,$(SDL_LIBS))
+NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL2_Pango failed, no scripts for you!))
 
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
 
@@ -981,7 +981,7 @@ install-man:
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o \
-		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
+		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o\
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."

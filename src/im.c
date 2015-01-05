@@ -136,7 +136,7 @@ enum {
 /**
 * All im_event_*() functions have this type.
 */
-typedef int (*IM_EVENT_FN)(IM_DATA*, SDL_keysym);   /* IM_EVENT_FN type */
+typedef int (*IM_EVENT_FN)(IM_DATA*, SDL_Event);   /* IM_EVENT_FN type */
 
 
 /**
@@ -663,8 +663,10 @@ static const wchar_t* charmap_search(CHARMAP* cm, wchar_t* s)
 *
 * @see im_read
 */
-static int im_event_c(IM_DATA* im, SDL_keysym ks)
+static int im_event_c(IM_DATA* im, SDL_Event event)
 {
+  SDL_Keysym ks = event.key.keysym;
+
   /* Handle event requests */
   im->s[0] = L'\0';
   if(im->request != IM_REQ_TRANSLATE) return 0;
@@ -674,7 +676,7 @@ static int im_event_c(IM_DATA* im, SDL_keysym ks)
     case SDLK_BACKSPACE: im->s[0] = L'\b'; break;
     case SDLK_TAB:       im->s[0] = L'\t'; break;
     case SDLK_RETURN:    im->s[0] = L'\r'; break;
-    default:             im->s[0] = ks.unicode;
+    default:             im->s[0] = event.text.text[0];
   }
   im->s[1] = L'\0';
   im->buf[0] = L'\0';
@@ -702,8 +704,10 @@ static int im_event_c(IM_DATA* im, SDL_keysym ks)
 * @see im_event_c()
 * @see im_event_fns
 */
-int im_read(IM_DATA* im, SDL_keysym ks)
+int im_read(IM_DATA* im, SDL_Event event)
 {
+  SDL_Keysym ks = event.key.keysym;
+
   IM_EVENT_FN im_event_fp = NULL;
   int redraw = 0;
 
@@ -717,8 +721,8 @@ int im_read(IM_DATA* im, SDL_keysym ks)
   im_event_fp = im_event_fns[im->lang];
 
   /* Run the language-specific IM or run the default C IM */
-  if(im_event_fp) redraw = (*im_event_fp)(im, ks);
-  else redraw = im_event_c(im, ks);
+  if(im_event_fp) redraw = (*im_event_fp)(im, event);
+  else redraw = im_event_c(im, event);
 
   #ifdef IM_DEBUG
   wprintf(L"* [%8ls] [%8ls] %2d %2d (%2d)\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf), im->redraw);
@@ -737,12 +741,12 @@ int im_read(IM_DATA* im, SDL_keysym ks)
 */
 static void im_event(IM_DATA* im)
 {
-  SDL_keysym ks;
+  SDL_Event event;
 
-  ks.sym = 0;
-  ks.unicode = 0;
+  //  event.key.keysym = 0;
+  event.text.text[0] = '\0';
 
-  im_read(im, ks);
+  im_read(im, event);
 }
 
 
@@ -787,6 +791,11 @@ static void im_fullreset(IM_DATA* im)
 }
 
 
+
+
+
+
+
 /* ***************************************************************************
 * LANGUAGE-SPECIFIC IM FUNCTIONS
 *
@@ -828,8 +837,9 @@ static void im_fullreset(IM_DATA* im)
 *
 * @see im_read
 */
-static int im_event_zh_tw(IM_DATA* im, SDL_keysym ks)
+static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
 {
+  SDL_Keysym ks = event.key.keysym;
   static const char* lang_file = IMDIR "zh_tw.im";
   enum { SEC_ENGLISH, SEC_ZH_TW, SEC_TOTAL };
 
@@ -865,7 +875,7 @@ static int im_event_zh_tw(IM_DATA* im, SDL_keysym ks)
       if(charmap_load(&cm, lang_file)) {
         fprintf(stderr, "Unable to load %s, defaulting to im_event_c\n", lang_file);
         im->lang = LANG_DEFAULT;
-        return im_event_c(im, ks);
+        return im_event_c(im, event);
       }
 
       im_fullreset(im);
@@ -886,12 +896,12 @@ static int im_event_zh_tw(IM_DATA* im, SDL_keysym ks)
   /* Handle keys */
   switch(ks.sym) {
     /* Keys to ignore */
-    case SDLK_NUMLOCK: case SDLK_CAPSLOCK: case SDLK_SCROLLOCK:
+    case SDLK_NUMLOCKCLEAR: case SDLK_CAPSLOCK: case SDLK_SCROLLLOCK:
     case SDLK_LSHIFT:  case SDLK_RSHIFT:
     case SDLK_LCTRL:   case SDLK_RCTRL:
-    case SDLK_LMETA:   case SDLK_RMETA:
-    case SDLK_LSUPER:  case SDLK_RSUPER:
-    case SDLK_MODE:    case SDLK_COMPOSE:
+    case SDLK_LGUI:   case SDLK_RGUI:
+    case SDLK_MENU:
+    case SDLK_MODE:    case SDLK_APPLICATION:
       break;
 
     /* Left-Alt & Right-Alt mapped to mode-switch */
@@ -920,13 +930,13 @@ static int im_event_zh_tw(IM_DATA* im, SDL_keysym ks)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = ks.unicode;
+        im->s[0] = event.text.text[0];
         im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Thai mode */
       else {
-        wchar_t u = ks.unicode;
+        wchar_t u = event.text.text[0];
 
         im->s[0] = L'\0';                     /* Zero-out output string */
         wcsncat(im->buf, &u, 1);              /* Copy new character */
@@ -1013,8 +1023,9 @@ static int im_event_zh_tw(IM_DATA* im, SDL_keysym ks)
 *
 * @see im_read
 */
-static int im_event_th(IM_DATA* im, SDL_keysym ks)
+static int im_event_th(IM_DATA* im, SDL_Event event)
 {
+  SDL_Keysym ks = event.key.keysym;
   static const char* lang_file = IMDIR "th.im";
   enum { SEC_ENGLISH, SEC_THAI, SEC_TOTAL };
 
@@ -1050,7 +1061,7 @@ static int im_event_th(IM_DATA* im, SDL_keysym ks)
       if(charmap_load(&cm, lang_file)) {
         fprintf(stderr, "Unable to load %s, defaulting to im_event_c\n", lang_file);
         im->lang = LANG_DEFAULT;
-        return im_event_c(im, ks);
+        return im_event_c(im, event);
       }
 
       im_fullreset(im);
@@ -1071,13 +1082,13 @@ static int im_event_th(IM_DATA* im, SDL_keysym ks)
   /* Handle keys */
   switch(ks.sym) {
     /* Keys to ignore */
-    case SDLK_NUMLOCK: case SDLK_CAPSLOCK: case SDLK_SCROLLOCK:
+    case SDLK_NUMLOCKCLEAR: case SDLK_CAPSLOCK: case SDLK_SCROLLLOCK:
     case SDLK_LSHIFT:  case SDLK_RSHIFT:
     case SDLK_LCTRL:   case SDLK_RCTRL:
     case SDLK_LALT:
-    case SDLK_LMETA:   case SDLK_RMETA:
-    case SDLK_LSUPER:  case SDLK_RSUPER:
-    case SDLK_MODE:    case SDLK_COMPOSE:
+    case SDLK_LGUI:   case SDLK_RGUI:
+    case SDLK_MENU:
+    case SDLK_MODE:    case SDLK_APPLICATION:
       break;
 
     /* Right-Alt mapped to mode-switch */
@@ -1106,13 +1117,13 @@ static int im_event_th(IM_DATA* im, SDL_keysym ks)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = ks.unicode;
+        im->s[0] = event.text.text[0];
         im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Thai mode */
       else {
-        wchar_t u = ks.unicode;
+        wchar_t u = event.text.text[0];
 
         im->s[0] = L'\0';                     /* Zero-out output string */
         wcsncat(im->buf, &u, 1);              /* Copy new character */
@@ -1199,8 +1210,9 @@ static int im_event_th(IM_DATA* im, SDL_keysym ks)
 *
 * @see im_read
 */
-static int im_event_ja(IM_DATA* im, SDL_keysym ks)
+static int im_event_ja(IM_DATA* im, SDL_Event event)
 {
+  SDL_Keysym ks = event.key.keysym;
   static const char* lang_file = IMDIR "ja.im";
   enum { SEC_ENGLISH, SEC_HIRAGANA, SEC_KATAKANA, SEC_TOTAL };
 
@@ -1236,7 +1248,7 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
       if(charmap_load(&cm, lang_file)) {
         fprintf(stderr, "Unable to load %s, defaulting to im_event_c\n", lang_file);
         im->lang = LANG_DEFAULT;
-        return im_event_c(im, ks);
+        return im_event_c(im, event);
       }
 
       im_fullreset(im);
@@ -1257,13 +1269,13 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
   /* Handle keys */
   switch(ks.sym) {
     /* Keys to ignore */
-    case SDLK_NUMLOCK: case SDLK_CAPSLOCK: case SDLK_SCROLLOCK:
+    case SDLK_NUMLOCKCLEAR: case SDLK_CAPSLOCK: case SDLK_SCROLLLOCK:
     case SDLK_LSHIFT:  case SDLK_RSHIFT:
     case SDLK_LCTRL:   case SDLK_RCTRL:
     case SDLK_LALT:
-    case SDLK_LMETA:   case SDLK_RMETA:
-    case SDLK_LSUPER:  case SDLK_RSUPER:
-    case SDLK_MODE:    case SDLK_COMPOSE:
+    case SDLK_LGUI:   case SDLK_RGUI:
+    case SDLK_MENU:
+    case SDLK_MODE:    case SDLK_APPLICATION:
       break;
 
     /* Right-Alt mapped to mode-switch */
@@ -1293,13 +1305,13 @@ static int im_event_ja(IM_DATA* im, SDL_keysym ks)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = ks.unicode;
+        im->s[0] = event.text.text[0];
         im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Hiragana and Katakana modes */
       else {
-        wchar_t u = ks.unicode;
+        wchar_t u = event.text.text[0];
 
         im->s[0] = L'\0';                     /* Zero-out output string */
         wcsncat(im->buf, &u, 1);              /* Copy new character */
@@ -1410,8 +1422,9 @@ static int im_event_ko_isvowel(CHARMAP* cm, wchar_t c)
 *
 * @see im_read
 */
-static int im_event_ko(IM_DATA* im, SDL_keysym ks)
+static int im_event_ko(IM_DATA* im, SDL_Event event)
 {
+  SDL_Keysym ks = event.key.keysym;
   static const char* lang_file = IMDIR "ko.im";
   enum { SEC_ENGLISH, SEC_HANGUL, SEC_TOTAL };
 
@@ -1447,7 +1460,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
       if(charmap_load(&cm, lang_file)) {
         fprintf(stderr, "Unable to load %s, defaulting to im_event_c\n", lang_file);
         im->lang = LANG_DEFAULT;
-        return im_event_c(im, ks);
+        return im_event_c(im, event);
       }
 
       im_fullreset(im);
@@ -1468,12 +1481,12 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
   /* Handle keys */
   switch(ks.sym) {
     /* Keys to ignore */
-    case SDLK_NUMLOCK: case SDLK_CAPSLOCK: case SDLK_SCROLLOCK:
+    case SDLK_NUMLOCKCLEAR: case SDLK_CAPSLOCK: case SDLK_SCROLLLOCK:
     case SDLK_LSHIFT:  case SDLK_RSHIFT:
     case SDLK_LCTRL:   case SDLK_RCTRL:
-    case SDLK_LMETA:   case SDLK_RMETA:
-    case SDLK_LSUPER:  case SDLK_RSUPER:
-    case SDLK_MODE:    case SDLK_COMPOSE:
+    case SDLK_LGUI:   case SDLK_RGUI:
+    case SDLK_MENU:
+    case SDLK_MODE:    case SDLK_APPLICATION:
       break;
 
     /* Right-Alt mapped to mode-switch */
@@ -1494,7 +1507,7 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
       if(wcslen(im->buf) > 0) {
         wcs_pull(im->buf, 1);
         if(im->redraw > 0) im->redraw--;
-        ks.unicode = L'\0';
+        event.text.text[0] = L'\0';
       }
       /* continue processing: */
 
@@ -1502,13 +1515,13 @@ static int im_event_ko(IM_DATA* im, SDL_keysym ks)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = ks.unicode;
+        im->s[0] = event.text.text[0];
         im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Hangul mode */
       else {
-        wchar_t u = ks.unicode;
+        wchar_t u = event.text.text[0];
         wchar_t* bp = im->buf;
 
         im->s[0] = L'\0';                     /* Zero-out output string */

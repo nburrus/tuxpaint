@@ -51,7 +51,7 @@ typedef struct IM_DATA {
 
 void im_init(IM_DATA* im, int lang);      /* Initialize IM */
 void im_softreset(IM_DATA* im);           /* Soft Reset IM */
-int im_read(IM_DATA* im, SDL_keysym ks);
+int im_read(IM_DATA* im, SDL_Event event);
 
 
 #endif /* TUXPAINT_IM_H */

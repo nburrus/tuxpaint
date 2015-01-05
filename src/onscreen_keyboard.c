@@ -1389,7 +1389,7 @@ static char * find_keysym(osk_key key, on_screen_keyboard *keyboard)
   int keycode;
   char *keysym;
   osk_keymap keysyms;
-  SDLMod modstate;
+  SDL_Keymod modstate;
 
   keycode = key.keycode;
   keysyms = keyboard->layout->keymap[keycode];
@@ -1458,7 +1458,7 @@ static char * find_keysym(osk_key key, on_screen_keyboard *keyboard)
 /* We lose the SDL ModState by leaving and entering the tuxpaint window, so using a custom state */
 static int handle_keymods(char * keysym, osk_key * key, on_screen_keyboard *keyboard)
 {
-  SDLMod mod;
+  SDL_Keymod mod;
   SDL_Event ev;
 
   mod = keyboard->modifiers;
@@ -1482,7 +1482,7 @@ static int handle_keymods(char * keysym, osk_key * key, on_screen_keyboard *keyb
   else if (strncmp("Alt_L", keysym, 5) == 0)
   {
     ev.key.keysym.sym = SDLK_LALT;
-    ev.key.keysym.unicode = 0; // FIXME is 0 the right value here?
+    ev.text.text[0] = '0'; // FIXME is 0 the right value here?
     ev.type = SDL_KEYDOWN;
     SDL_PushEvent(&ev);
     ev.type = SDL_KEYUP;
@@ -1600,7 +1600,7 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 
   event.key.keysym.mod = KMOD_NONE;
   event.key.keysym.sym = 0;
-  event.key.keysym.unicode = 0;
+  event.text.text[0] = 0;
 
   key = find_key(keyboard, x, y);
 
@@ -1729,27 +1729,27 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       if (wcsncmp(L"Return", ks, 6) == 0)
       {
 	event.key.keysym.sym = SDLK_RETURN;
-	event.key.keysym.unicode = '\r';
+	event.text.text[0] = '\r';
       }
       else if (wcsncmp(L"Tab", ks, 3) == 0 ||
 	       wcsncmp(L"ISO_Left_Tab", ks, 12) == 0)
       {
 	event.key.keysym.sym = SDLK_TAB;
-	event.key.keysym.unicode = '\t';
+	event.text.text[0] = '\t';
       }
       else if (wcsncmp(L"BackSpace", ks, 9) == 0)
       {
 	event.key.keysym.sym = SDLK_BACKSPACE;
-	event.key.keysym.unicode = '\b';
+	event.text.text[0] = '\b';
       }
       else if (wcsncmp(L"NoSymbol", ks, 8) == 0)
 	return(keyboard);
 
       else
 	if (keyboard->composed_type == 1)
-	  event.key.keysym.unicode = *keyboard->composed;
+	  event.text.text[0] = *keyboard->composed;
 	else
-	  event.key.keysym.unicode = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
+	  event.text.text[0] = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
 
       clear_dead_sticks(keyboard);
       event.type = SDL_KEYDOWN;
