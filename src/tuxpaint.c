@@ -854,6 +854,7 @@ static void setup_screen_layout(void)
 
 static SDL_Window *window_screen;
 static SDL_Renderer *renderer;
+static SDL_Texture *texture;
 static SDL_Surface *screen = NULL;
 static SDL_Surface *canvas = NULL;
 static SDL_Surface *label = NULL;
@@ -861,13 +862,31 @@ static SDL_Surface *save_canvas = NULL;
 static SDL_Surface *canvas_back = NULL;
 static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
 
+/* This SDL 1.2 <-> 2.0 backward compatibility functions are focused to the main window */
+
+static Uint32 window_format;
+
+static SDL_Surface *SDL_DisplayFormat(SDL_Surface *surface)
+{
+  SDL_Surface *tmp;
+  tmp = SDL_ConvertSurfaceFormat(surface, window_format, 0);
+  return(tmp);
+}
+
+static SDL_Surface *SDL_DisplayFormatAlpha(SDL_Surface *surface)
+{
+  SDL_Surface *tmp;
+  tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_ARGB8888 , 0);
+  return(tmp);
+}
 
 static void SDL_Flip(SDL_Surface *screen)
 {
-  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, screen);
+  //SDL_UpdateWindowSurface(window_screen);
+  SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
+  SDL_RenderClear(renderer);
   SDL_RenderCopy(renderer, texture, NULL, NULL);
   SDL_RenderPresent(renderer);
-SDL_UpdateWindowSurface(window_screen);
 }
 
 static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
@@ -877,9 +896,15 @@ static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, S
   r.y = y;
   r.w = w;
   r.h = h;
-  SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, screen);
+
+  SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
+
+  //  FIXME docs says one should clear the renderer, however this means a refresh of the whole thing.
+  //  SDL_RenderClear(renderer);
+  //  SDL_RenderCopy(renderer, texture, NULL, NULL);
   SDL_RenderCopy(renderer, texture, &r, &r);
-SDL_UpdateWindowSurface(window_screen);
+
+  SDL_RenderPresent(renderer);
 }
 
  
@@ -933,6 +958,7 @@ static void update_screen(int x1, int y1, int x2, int y2)
 static void update_screen_rect(SDL_Rect * r)
 {
   SDL_UpdateRect(screen, r->x, r->y, r->w, r->h);
+  printf("screenrect %d, %d, %d, %d\n", r->x, r->y, r->w, r->h);
 }
 
 static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
@@ -2271,7 +2297,7 @@ static void mainloop(void)
 	handle_keymouse(key, SDL_KEYUP, 16, NULL, NULL);
       }
       
-      else if (event.type == SDL_KEYDOWN)
+      else if (event.type == SDL_KEYDOWN || event.type == SDL_TEXTINPUT)
       {
 	key = event.key.keysym.sym;
 	mod = event.key.keysym.mod;
@@ -3010,7 +3036,7 @@ static void mainloop(void)
 	    cur_tool = whicht;
 	    draw_toolbar();
 	    update_screen_rect(&r_tools);
-
+printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_tools.h);
 	    playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 
 	    /* FIXME: this "if" is just plain gross */
@@ -7819,9 +7845,8 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
 
   /* Convert to the display format: */
-  // FIXME SDL2
-  //disp_fmt_s = SDL_DisplayFormatAlpha(s);
-  disp_fmt_s = s;
+
+  disp_fmt_s = SDL_DisplayFormatAlpha(s);
   if (disp_fmt_s == NULL)
   {
     if (abort_on_error)
@@ -7832,7 +7857,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 	      "The Simple DirectMedia Layer error that occurred was:\n"
 	      "%s\n\n", fname, SDL_GetError());
 
-      //      SDL_FreeSurface(s);
+      SDL_FreeSurface(s);
       cleanup();
       exit(1);
     }
@@ -7846,7 +7871,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error)
 
   /* Free the temp. surface & return the converted one: */
 
-  //  SDL_FreeSurface(s);
+  SDL_FreeSurface(s);
 
   return (disp_fmt_s);
 }
@@ -8139,10 +8164,19 @@ static unsigned draw_colors(unsigned action)
     SDL_BlitSurface((colors_state == COLORSEL_ENABLE)
 		    ? img_color_btns[i + (i == cur_color) * NUM_COLORS]
 		    : img_color_btn_off, NULL, screen, &dest);
+
+    //   SDL_BlitSurface(img_paintwell, NULL, screen, &dest);
+    SDL_Rect rectt;
+    rectt.x = 50;
+    rectt.y = 50;
+    rectt.w = 50;
+    rectt.h = 50;
+    SDL_BlitSurface(img_color_btns[6], NULL, screen, &rectt);
+    rectt.y = 200;
+    SDL_BlitSurface(img_color_btns[6 + NUM_COLORS], NULL, screen, &rectt);
 #else
     dest.w = color_button_w;
     dest.h = color_button_h;
-
     if (colors_state == COLORSEL_ENABLE)
       SDL_FillRect(screen, &dest,
 		   SDL_MapRGB(screen->format,
@@ -11256,10 +11290,8 @@ static void load_starter(char *img_id)
 
   if (tmp_surf != NULL)
   {
-    // FIXME SDL2
-    //    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
-    img_starter = tmp_surf;
-    //    SDL_FreeSurface(tmp_surf);
+    img_starter = SDL_DisplayFormatAlpha(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
   }
 
   /* Try to load the a background image: */
@@ -11298,10 +11330,8 @@ static void load_starter(char *img_id)
 
   if (tmp_surf != NULL)
   {
-    // FIXME SDL2
-    //    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
-    img_starter_bkgd = tmp_surf;
-    //    SDL_FreeSurface(tmp_surf);
+    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
   }
 
 
@@ -11456,10 +11486,8 @@ static void load_template(char *img_id)
 
   if (tmp_surf != NULL)
   {
-    // FIXME SDL2
-    //    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
-    img_starter_bkgd = tmp_surf;
-    //SDL_FreeSurface(tmp_surf);
+    img_starter_bkgd = SDL_DisplayFormat(tmp_surf);
+    SDL_FreeSurface(tmp_surf);
   }
 
 
@@ -11554,9 +11582,7 @@ static void load_current(void)
     }
     else
     {
-    // FIXME SDL2
-      //      org_surf = SDL_DisplayFormat(tmp);
-      org_surf = tmp;
+      org_surf = SDL_DisplayFormat(tmp);
       autoscale_copy_smear_free(tmp, canvas, SDL_BlitSurface);
 
       /* First we run this for compatibility, then we will chek if
@@ -11792,6 +11818,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   if (alpha_surf != NULL)
   {
+
     SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
     SDL_SetSurfaceAlphaMod(alpha_surf, 64);
 
@@ -13942,10 +13969,8 @@ static int do_open(void)
               /* Loaded the thumbnail from one or the other location */
               show_progress_bar(screen);
 
-    // FIXME SDL2
-	      //              img1 = SDL_DisplayFormat(img);
-	      img1 = img;
-	      //              SDL_FreeSurface(img);
+              img1 = SDL_DisplayFormat(img);
+              SDL_FreeSurface(img);
 
               /* if too big, or too small in both dimensions, rescale it
                  (for now: using old thumbnail as source for high speed, low quality) */
@@ -14006,18 +14031,14 @@ static int do_open(void)
               {
                 /* Turn it into a thumbnail: */
 
-    // FIXME SDL2
-		//                img1 = SDL_DisplayFormatAlpha(img);
-		img1 = img;
+                img1 = SDL_DisplayFormatAlpha(img);
                 img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-                //SDL_FreeSurface(img1);
+                SDL_FreeSurface(img1);
 
                 show_progress_bar(screen);
 
-    // FIXME SDL2
-		//                thumbs[num_files] = SDL_DisplayFormat(img2);
-		thumbs[num_files] = img2;
-                //SDL_FreeSurface(img2);
+                thumbs[num_files] = SDL_DisplayFormat(img2);
+                SDL_FreeSurface(img2);
                 if (thumbs[num_files] == NULL)
                 {
                   fprintf(stderr,
@@ -14752,10 +14773,8 @@ static int do_open(void)
             starter_flipped = 0;
             starter_personal = 0;
 
-    // FIXME SDL2
-	    //	    org_surf = SDL_DisplayFormat(img);	/* Keep a copy of the original image
-	    //					   unscaled to send to load_embedded_data */
-	    org_surf =img;
+	    org_surf = SDL_DisplayFormat(img);	/* Keep a copy of the original image
+						   unscaled to send to load_embedded_data */
             autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
             cur_undo = 0;
@@ -15004,10 +15023,8 @@ static int do_slideshow(void)
 	    debug("Thumbnail loaded, scaling");
 	    show_progress_bar(screen);
 
-    // FIXME SDL2
-	    //	    img1 = SDL_DisplayFormat(img);
-	    img1 = img;
-	    //	    SDL_FreeSurface(img);
+	    img1 = SDL_DisplayFormat(img);
+	    SDL_FreeSurface(img);
 
 	    if (img1 != NULL)
 	    {
@@ -15066,18 +15083,14 @@ static int do_slideshow(void)
 	    {
 	      /* Turn it into a thumbnail: */
 
-    // FIXME SDL2
-	      //	      img1 = SDL_DisplayFormatAlpha(img);
-	      img1 = img;
+	      img1 = SDL_DisplayFormatAlpha(img);
 	      img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-	      //	      SDL_FreeSurface(img1);
+	      SDL_FreeSurface(img1);
 
 	      show_progress_bar(screen);
 
-    // FIXME SDL2
-	      //	      thumbs[num_files] = SDL_DisplayFormat(img2);
-	      thumbs[num_files] = img2;
-	      //SDL_FreeSurface(img2);
+	      thumbs[num_files] = SDL_DisplayFormat(img2);
+	      SDL_FreeSurface(img2);
 
 	      SDL_FreeSurface(img);
 
@@ -17183,9 +17196,7 @@ static SDL_Surface *duplicate_surface(SDL_Surface * orig)
      amask));
    */
 
-    // FIXME SDL2
-  //  return (SDL_DisplayFormatAlpha(orig));
-  return(orig);
+  return (SDL_DisplayFormatAlpha(orig));
 }
 
 static void mirror_starter(void)
@@ -17502,10 +17513,8 @@ static SDL_Surface * load_svg(char * file)
 
 
   /* Convert the SDL surface to the display format, for faster blitting: */
-    // FIXME SDL2
-  //  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
-  sdl_surface = sdl_surface_tmp;
-  //  SDL_FreeSurface(sdl_surface_tmp);
+  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
+  SDL_FreeSurface(sdl_surface_tmp);
 
   if (sdl_surface == NULL)
   {
@@ -17666,10 +17675,8 @@ static SDL_Surface * load_svg(char * file)
   }
 
   /* Convert the SDL surface to the display format, for faster blitting: */
-    // FIXME SDL2
-  //  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
-  sdl_surface = sdl_surface_tmp;
-  //  SDL_FreeSurface(sdl_surface_tmp);
+  sdl_surface = SDL_DisplayFormatAlpha(sdl_surface_tmp);
+  SDL_FreeSurface(sdl_surface_tmp);
 
   if (sdl_surface == NULL)
   {
@@ -18802,10 +18809,8 @@ static int do_new_dialog(void)
             /* Loaded the thumbnail from one or the other location */
             show_progress_bar(screen);
 
-    // FIXME SDL2
-	    //            img1 = SDL_DisplayFormat(img);
-	    img1 =img;
-	    //            SDL_FreeSurface(img);
+            img1 = SDL_DisplayFormat(img);
+            SDL_FreeSurface(img);
 
             /* if too big, or too small in both dimensions, rescale it
                (for now: using old thumbnail as source for high speed,
@@ -18910,18 +18915,14 @@ static int do_new_dialog(void)
             {
               /* Turn it into a thumbnail: */
 
-    // FIXME SDL2
-	      //              img1 = SDL_DisplayFormatAlpha(img);
-	      img1 = img;
+              img1 = SDL_DisplayFormatAlpha(img);
               img2 = thumbnail2(img1, THUMB_W - 20, THUMB_H - 20, 0, 0);
-	      //              SDL_FreeSurface(img1);
+              SDL_FreeSurface(img1);
 
               show_progress_bar(screen);
 
-    // FIXME SDL2
-	      //              thumbs[num_files] = SDL_DisplayFormat(img2);
-	      thumbs[num_files] = img2;
-              //SDL_FreeSurface(img2);
+              thumbs[num_files] = SDL_DisplayFormat(img2);
+              SDL_FreeSurface(img2);
               if (thumbs[num_files] == NULL)
               {
                 fprintf(stderr,
@@ -20508,6 +20509,8 @@ static int do_color_picker(void)
     rh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][0]];
     gh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][1]];
     bh = sRGB_to_linear_table[color_hexes[NUM_COLORS - 1][2]];
+    SDL_BlitSurface(tmp_btn_down, NULL, img_color_btns[NUM_COLORS - 1], NULL);
+    SDL_BlitSurface(tmp_btn_up, NULL, img_color_btns[NUM_COLORS - 1 + NUM_COLORS], NULL);
 
     SDL_LockSurface(img_color_btns[NUM_COLORS - 1]);
     SDL_LockSurface(img_color_btns[NUM_COLORS - 1 + NUM_COLORS]);
@@ -23041,6 +23044,12 @@ static void do_lock_file(void)
 
 int TP_EventFilter(void *data, const SDL_Event * event)
 {
+  if (event->type == SDL_TEXTINPUT)
+    printf("Textinput %s\n", event->text.text);
+  if (event->type == SDL_KEYDOWN)
+    printf("Keydown %s\n", event->text.text);
+
+
   if (event->type == SDL_QUIT ||
       event->type == SDL_WINDOWEVENT ||
       event->type == SDL_JOYAXISMOTION ||
@@ -23054,7 +23063,8 @@ int TP_EventFilter(void *data, const SDL_Event * event)
       event->type == SDL_MOUSEBUTTONUP ||
       event->type == SDL_MOUSEMOTION ||
       event->type == SDL_QUIT ||
-      event->type == SDL_USEREVENT)
+      event->type == SDL_USEREVENT ||
+      event->type == SDL_TEXTINPUT)
     return 1;
 
   return 0;
@@ -23309,8 +23319,23 @@ static void setup(void)
     printf("window_screen = NULL 2\n");
 #endif
 
-    screen = SDL_GetWindowSurface(window_screen);
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
+
+    //    screen = SDL_GetWindowSurface(window_screen);
+    int ww, hh;
+    SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
+        texture = SDL_CreateTexture(renderer,
+                               SDL_PIXELFORMAT_RGB888,
+                               SDL_TEXTUREACCESS_STATIC,
+                               ww, hh);
+
+screen = SDL_CreateRGBSurface(0, ww, hh, 32,
+                                        0x00FF0000,
+                                        0x0000FF00,
+			      0x000000FF,0);
+// texture = SDL_CreateTextureFromSurface(renderer, screen);
+
+
 
     if (screen == NULL)
     {
@@ -23350,7 +23375,7 @@ static void setup(void)
 				     SDL_WINDOWPOS_UNDEFINED,
 				     SDL_WINDOWPOS_UNDEFINED,
 				     WINDOW_WIDTH, WINDOW_HEIGHT,
-				     SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+				     SDL_WINDOW_HWSURFACE);
     printf("3\n");
   if (window_screen == NULL)
     printf("window_screen = NULL 3\n");
@@ -23359,10 +23384,10 @@ static void setup(void)
 				   SDL_WINDOWPOS_UNDEFINED,
 				   SDL_WINDOWPOS_UNDEFINED,
 				   WINDOW_WIDTH, WINDOW_HEIGHT,
-				   SDL_WINDOW_FULLSCREEN);
-/*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+				   NULL);
+  /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 s
-      VIDEO_BPP, SDL_SWSURFACE);*/
+VIDEO_BPP, SDL_SWSURFACE);*/
     printf("4\n");
   if (window_screen == NULL)
     printf("window_screen = NULL 4\n");
@@ -23373,7 +23398,33 @@ s
       putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
   }
 
-  screen = SDL_GetWindowSurface(window_screen);
+  // screen = SDL_GetWindowSurface(window_screen);
+
+
+
+
+
+    renderer = SDL_CreateRenderer(window_screen, -1, 0);
+
+    //    screen = SDL_GetWindowSurface(window_screen);
+    int ww, hh;
+    SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
+    texture = SDL_CreateTexture(renderer,
+				SDL_PIXELFORMAT_RGB888,
+				SDL_TEXTUREACCESS_STATIC,
+				ww, hh);
+
+    screen = SDL_CreateRGBSurface(0, ww, hh, 32,
+				  0x00FF0000,
+				  0x0000FF00,
+				  0x000000FF,
+				  0xFF000000);
+	
+
+	//screen = SDL_GetWindowSurface(window_screen);
+
+
+
 
   if (screen == NULL)
   {
@@ -23385,7 +23436,7 @@ s
     cleanup();
     exit(1);
   }
-
+  window_format = SDL_GetWindowPixelFormat(window_screen);
 
   /* (Need to do this after native screen resolution is handled) */
 
@@ -23720,6 +23771,7 @@ s
 				   img_btn_off->format->Gmask,
 				   img_btn_off->format->Bmask,
 				   img_btn_off->format->Amask);
+  SDL_SetSurfaceAlphaMod(img_black, SDL_ALPHA_TRANSPARENT);
   SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
 
   img_grey = SDL_CreateRGBSurface(SDL_SWSURFACE,
@@ -23729,6 +23781,7 @@ s
 				  img_btn_off->format->Gmask,
 				  img_btn_off->format->Bmask,
 				  img_btn_off->format->Amask);
+  SDL_SetSurfaceAlphaMod(img_grey, SDL_ALPHA_TRANSPARENT);
   SDL_FillRect(img_grey, NULL,
 	       SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
 
@@ -23983,7 +24036,7 @@ s
       cleanup();
       exit(1);
     }
-
+    //    SDL_SetSurfaceAlphaMod(img_color_btns[i], SDL_ALPHA_TRANSPARENT);
     SDL_LockSurface(img_color_btns[i]);
   }
 

@@ -676,9 +676,11 @@ static int im_event_c(IM_DATA* im, SDL_Event event)
     case SDLK_BACKSPACE: im->s[0] = L'\b'; break;
     case SDLK_TAB:       im->s[0] = L'\t'; break;
     case SDLK_RETURN:    im->s[0] = L'\r'; break;
-    default:             im->s[0] = event.text.text[0];
+  default:             strncpy(im->s , event.text.text, 16);
   }
-  im->s[1] = L'\0';
+
+  //im->s[1] = L'\0';
+  printf("im->s %s, event.text.text %s\n", im->s, event.text.text);
   im->buf[0] = L'\0';
 
   return 0;
@@ -930,8 +932,9 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = event.text.text[0];
-        im->s[1] = L'\0';
+strncpy(im->s , event.text.text, 16);
+//        im->s[0] = event.text.text[0];
+//        im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Thai mode */
@@ -1117,8 +1120,9 @@ static int im_event_th(IM_DATA* im, SDL_Event event)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = event.text.text[0];
-        im->s[1] = L'\0';
+	//        im->s[0] = event.text.text[0];
+	strncpy(im->s , event.text.text, 16);
+        //im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Thai mode */
@@ -1305,8 +1309,9 @@ static int im_event_ja(IM_DATA* im, SDL_Event event)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = event.text.text[0];
-        im->s[1] = L'\0';
+strncpy(im->s , event.text.text, 16);
+//        im->s[0] = event.text.text[0];
+//      im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Hiragana and Katakana modes */
@@ -1515,8 +1520,9 @@ static int im_event_ko(IM_DATA* im, SDL_Event event)
     default:
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
-        im->s[0] = event.text.text[0];
-        im->s[1] = L'\0';
+strncpy(im->s , event.text.text, 16);
+//        im->s[0] = event.text.text[0];
+//      im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Hangul mode */
