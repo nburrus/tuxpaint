@@ -3,7 +3,7 @@
 #endif
 #include "onscreen_keyboard.h"
 
-//#define DEBUG_OSK_COMPOSEMAP
+#define DEBUG_OSK_COMPOSEMAP
 
 static SDL_Color def_bgcolor = {255, 255, 255, 255};
 static SDL_Color def_fgcolor = {0, 0, 0, 0};

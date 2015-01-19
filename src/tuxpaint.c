@@ -899,7 +899,7 @@ static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, S
 
   SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
 
-  //  FIXME docs says one should clear the renderer, however this means a refresh of the whole thing.
+  //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
   //  SDL_RenderClear(renderer);
   //  SDL_RenderCopy(renderer, texture, NULL, NULL);
   SDL_RenderCopy(renderer, texture, &r, &r);
@@ -8164,16 +8164,6 @@ static unsigned draw_colors(unsigned action)
     SDL_BlitSurface((colors_state == COLORSEL_ENABLE)
 		    ? img_color_btns[i + (i == cur_color) * NUM_COLORS]
 		    : img_color_btn_off, NULL, screen, &dest);
-
-    //   SDL_BlitSurface(img_paintwell, NULL, screen, &dest);
-    SDL_Rect rectt;
-    rectt.x = 50;
-    rectt.y = 50;
-    rectt.w = 50;
-    rectt.h = 50;
-    SDL_BlitSurface(img_color_btns[6], NULL, screen, &rectt);
-    rectt.y = 200;
-    SDL_BlitSurface(img_color_btns[6 + NUM_COLORS], NULL, screen, &rectt);
 #else
     dest.w = color_button_w;
     dest.h = color_button_h;
@@ -17084,7 +17074,7 @@ static void handle_active(SDL_Event * event)
 {
   if (event->window.event == SDL_WINDOWEVENT_EXPOSED)
   {
-      if (fullscreen)
+    //      if (fullscreen)
 	SDL_Flip(screen);
   }
   if (event->window.event == SDL_WINDOWEVENT_FOCUS_GAINED)
