@@ -1746,10 +1746,13 @@ struct osk_keyboard * osk_clicked(on_screen_keyboard *keyboard, int x, int y)
 	return(keyboard);
 
       else
+	//	printf("kcomposed %ls\n", *keyboard->composed);
 	if (keyboard->composed_type == 1)
-	  event.text.text[0] = *keyboard->composed;
+	  wcstombs(event.text.text, keyboard->composed, 16);
+      //	  event.text.text = *keyboard->composed;
 	else
-	  event.text.text[0] = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
+	  snprintf(event.text.text, 16, "%lc", keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard));
+      //event.text.text = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
 
       clear_dead_sticks(keyboard);
       event.type = SDL_KEYDOWN;
