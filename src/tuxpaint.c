@@ -866,10 +866,16 @@ static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
 
 static Uint32 window_format;
 
+static void SDL_WarpMouse(Uint16 x, Uint16 y)
+{
+  SDL_WarpMouseInWindow(window_screen, x, y);
+}
+
 static SDL_Surface *SDL_DisplayFormat(SDL_Surface *surface)
 {
   SDL_Surface *tmp;
-  tmp = SDL_ConvertSurfaceFormat(surface, window_format, 0);
+  //  tmp = SDL_ConvertSurfaceFormat(surface, window_format, 0);
+  tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGB888, 0);
   return(tmp);
 }
 
@@ -9162,7 +9168,7 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
     getpixels[src->format->BytesPerPixel];
 
   /* Determine scale and centering offsets: */
-
+  printf("thumbnail2\n");
   if (!keep_aspect)
   {
     yscale = (float) ((float) src->h / (float) max_y);
@@ -11281,6 +11287,9 @@ static void load_starter(char *img_id)
   if (tmp_surf != NULL)
   {
     img_starter = SDL_DisplayFormatAlpha(tmp_surf);
+    //SDL_SetSurfaceAlphaMod(img_starter, SDL_ALPHA_OPAQUE);
+	//SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_BLEND);
+    printf("QQQQ\n");
     SDL_FreeSurface(tmp_surf);
   }
 
@@ -11396,11 +11405,11 @@ static void load_starter(char *img_id)
 
     /* 3rd arg ignored for RGBA surfaces */
     //    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-    SDL_SetSurfaceBlendMode(tmp_surf, SDL_BLENDMODE_NONE);
+    //SDL_SetSurfaceBlendMode(tmp_surf, SDL_BLENDMODE_BLEND);
 
     autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
     //    SDL_SetAlpha(img_starter, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
-    SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_NONE);
+    SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_BLEND);
 
   }
 
@@ -12449,6 +12458,8 @@ static void cleanup(void)
 //  if (papersize != NULL)
 //    free(papersize);
 #endif
+
+
 
 
   /* Close up! */
@@ -23064,6 +23075,7 @@ int TP_EventFilter(void *data, const SDL_Event * event)
 static void setup(void)
 {
   int i;
+  int ww, hh;
   char *upstr;
   SDL_Color black = { 0, 0, 0, 0 };
   char *homedirdir;
@@ -23290,8 +23302,9 @@ static void setup(void)
     window_screen = SDL_CreateWindow("Tux Paint",
 				     SDL_WINDOWPOS_UNDEFINED,
 				     SDL_WINDOWPOS_UNDEFINED,
-				     WINDOW_WIDTH, WINDOW_HEIGHT,
-				     SDL_WINDOW_FULLSCREEN | SDL_WINDOW_HWSURFACE);
+				     0,0,
+				     //				     WINDOW_WIDTH, WINDOW_HEIGHT,
+				     SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_HWSURFACE);
     printf("1\n");
   if (window_screen == NULL)
     printf("window_screen = NULL 1\n");
@@ -23299,20 +23312,20 @@ static void setup(void)
 #else
 /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
       VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);*/
-  window_screen = SDL_CreateWindow("Tux Paint",
+  window_screen = SDL_CreateWindow(NULL,
+				   //"Tux Paint",
 				   SDL_WINDOWPOS_UNDEFINED,
 				   SDL_WINDOWPOS_UNDEFINED,
-				   WINDOW_WIDTH, WINDOW_HEIGHT,
-				   SDL_WINDOW_FULLSCREEN );
+				   0,0,
+				   //				   WINDOW_WIDTH, WINDOW_HEIGHT,
+				   SDL_WINDOW_FULLSCREEN_DESKTOP );
     printf("2\n");
   if (window_screen == NULL)
     printf("window_screen = NULL 2\n");
 #endif
-
+  
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
 
-    //    screen = SDL_GetWindowSurface(window_screen);
-    int ww, hh;
     SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
         texture = SDL_CreateTexture(renderer,
                                SDL_PIXELFORMAT_RGB888,
@@ -23320,9 +23333,10 @@ static void setup(void)
                                ww, hh);
 
 screen = SDL_CreateRGBSurface(0, ww, hh, 32,
-                                        0x00FF0000,
-                                        0x0000FF00,
-			      0x000000FF,0);
+			      0x00FF0000,
+			      0x0000FF00,
+			      0x000000FF,
+			      0xFF000000);
 // texture = SDL_CreateTextureFromSurface(renderer, screen);
 
 
@@ -23386,18 +23400,14 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 
     if (set_window_pos)
       putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
-  }
-
-  // screen = SDL_GetWindowSurface(window_screen);
 
 
-
+  //  SDL_SetWindowMinimumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
+  //SDL_SetWindowMaximumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
 
 
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
 
-    //    screen = SDL_GetWindowSurface(window_screen);
-    int ww, hh;
     SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
     texture = SDL_CreateTexture(renderer,
 				SDL_PIXELFORMAT_RGB888,
@@ -23425,7 +23435,7 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 
     cleanup();
     exit(1);
-  }
+  }}
   window_format = SDL_GetWindowPixelFormat(window_screen);
 
   /* (Need to do this after native screen resolution is handled) */
