@@ -866,6 +866,9 @@ static SDL_Surface *img_starter = NULL, *img_starter_bkgd = NULL;
 
 static Uint32 window_format;
 
+#define SDLKey SDL_Keycode
+#define SDLMod SDL_Keymod
+
 static void SDL_WarpMouse(Uint16 x, Uint16 y)
 {
   SDL_WarpMouseInWindow(window_screen, x, y);
@@ -964,7 +967,6 @@ static void update_screen(int x1, int y1, int x2, int y2)
 static void update_screen_rect(SDL_Rect * r)
 {
   SDL_UpdateRect(screen, r->x, r->y, r->w, r->h);
-  printf("screenrect %d, %d, %d, %d\n", r->x, r->y, r->w, r->h);
 }
 
 static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
@@ -1944,8 +1946,8 @@ static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
-static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2);
-static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, SDL_Rect real_r_tools);
+static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2);
+static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
 static char *remove_slash(char *path);
 /*static char *replace_tilde(const char* const path);*/
@@ -2079,9 +2081,9 @@ static void eat_sdl_events(void)
       handle_active(&event);
     else if (event.type == SDL_KEYDOWN)
       {
-      SDL_Keycode key = event.key.keysym.sym;
-      SDL_Keymod ctrl = event.key.keysym.mod & KMOD_CTRL;
-      SDL_Keymod alt = event.key.keysym.mod & KMOD_ALT;
+      SDLKey key = event.key.keysym.sym;
+      SDLMod ctrl = event.key.keysym.mod & KMOD_CTRL;
+      SDLMod alt = event.key.keysym.mod & KMOD_ALT;
       if ((key == SDLK_c && ctrl) || (key == SDLK_F4 && alt))
       {
 	SDL_Quit();
@@ -2199,15 +2201,15 @@ static void mainloop(void)
   unsigned int i = 0;
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
-  SDL_Keycode key;
-  SDL_Keymod mod;
+  SDLKey key;
+  SDLMod mod;
   Uint32 last_cursor_blink, cur_cursor_blink,
     pre_event_time, current_event_time;
   SDL_Rect update_rect;
   SDL_Rect real_r_tools = r_tools;
 #ifdef DEBUG
   Uint16 key_unicode;
-  SDL_Keycode key_down;
+  SDLKey key_down;
 #endif
   on_screen_keyboard  *new_kbd;
   SDL_Rect kbd_rect;
@@ -4880,7 +4882,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 
 		  shape_radius = sqrt((shape_ctr_x - shape_outer_x) * (shape_ctr_x - shape_outer_x) + (shape_ctr_y - shape_outer_y) * (shape_ctr_y - shape_outer_y));
 
-		  SDL_WarpMouseInWindow(window_screen, shape_outer_x + 96, shape_ctr_y);
+		  SDL_WarpMouse(shape_outer_x + 96, shape_ctr_y);
 		  do_setcursor(cursor_rotate);
 
 
@@ -9168,7 +9170,6 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
     getpixels[src->format->BytesPerPixel];
 
   /* Determine scale and centering offsets: */
-  printf("thumbnail2\n");
   if (!keep_aspect)
   {
     yscale = (float) ((float) src->h / (float) max_y);
@@ -11729,8 +11730,8 @@ static int do_prompt_image_flash_snd(const char *const text,
   SDL_Rect dest;
   int done, ans, w, counter;
   SDL_Color black = { 0, 0, 0, 0 };
-  SDL_Keycode key;
-  SDL_Keycode key_y, key_n;
+  SDLKey key;
+  SDLKey key_y, key_n;
   char *keystr;
   SDL_Surface * backup;
 #ifndef NO_PROMPT_SHADOWS
@@ -13769,7 +13770,7 @@ static int do_open(void)
     num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
   SDL_Event event;
-  SDL_Keycode key;
+  SDLKey key;
   Uint32 last_click_time;
   int last_click_which, last_click_button;
   int places_to_look;
@@ -14880,7 +14881,7 @@ static int do_slideshow(void)
     go_back, found, speed;
   SDL_Rect dest;
   SDL_Event event;
-  SDL_Keycode key;
+  SDLKey key;
   char *freeme;
   int speeds;
   float x_per, y_per;
@@ -15658,7 +15659,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
   char fname[1024];
   SDL_Event event;
-  SDL_Keycode key;
+  SDLKey key;
   SDL_Rect dest;
   Uint32 last_ticks;
 
@@ -16794,7 +16795,7 @@ static void draw_image_title(int t, SDL_Rect dest)
 /* Handle keyboard events to control the mouse: */
 /* Move as many pixels as bigsteps outside the areas,
    in the areas and 5 pixels around, move 1 pixel at a time */
-static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2)
+static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2)
 {
   int left, right, up, bottom;
   SDL_Event event;
@@ -16898,16 +16899,16 @@ static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *
     else
     {
       if (key == SDLK_LEFT)
-	SDL_WarpMouseInWindow(window_screen, left, oldpos_y);
+	SDL_WarpMouse(left, oldpos_y);
 
       else if (key == SDLK_RIGHT)
-	SDL_WarpMouseInWindow(window_screen, right, oldpos_y);
+	SDL_WarpMouse(right, oldpos_y);
 
       else if (key == SDLK_UP)
-	SDL_WarpMouseInWindow(window_screen, oldpos_x, up);
+	SDL_WarpMouse(oldpos_x, up);
 
       else if (key == SDLK_DOWN)
-	SDL_WarpMouseInWindow(window_screen, oldpos_x, bottom);
+	SDL_WarpMouse(oldpos_x, bottom);
 
       else if ((key == SDLK_INSERT || key == SDLK_F5) && !button_down)
       {
@@ -16931,43 +16932,43 @@ static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *
 	}
 
 	else if (key == SDLK_1 || key == SDLK_KP_1)
-	  SDL_WarpMouseInWindow(window_screen, left, bottom);
+	  SDL_WarpMouse(left, bottom);
 
 	else if (key  == SDLK_3 || key == SDLK_KP_3)
-	  SDL_WarpMouseInWindow(window_screen, right, bottom);
+	  SDL_WarpMouse(right, bottom);
 
 	else if (key  == SDLK_7 || key == SDLK_KP_7)
-	  SDL_WarpMouseInWindow(window_screen, left, up);
+	  SDL_WarpMouse(left, up);
 
 	else if (key  == SDLK_9 || key == SDLK_KP_9)
-	  SDL_WarpMouseInWindow(window_screen, right, up);
+	  SDL_WarpMouse(right, up);
 
 	else if (key  == SDLK_2 || key == SDLK_KP_2)
-	  SDL_WarpMouseInWindow(window_screen, oldpos_x, bottom);
+	  SDL_WarpMouse(oldpos_x, bottom);
 
 	else if (key  == SDLK_8 || key == SDLK_KP_8)
-	  SDL_WarpMouseInWindow(window_screen, oldpos_x, up);
+	  SDL_WarpMouse(oldpos_x, up);
 
 	else if (key  == SDLK_6 || key == SDLK_KP_6)
-	  SDL_WarpMouseInWindow(window_screen, right, oldpos_y);
+	  SDL_WarpMouse(right, oldpos_y);
 
 	else if (key  == SDLK_4 || key == SDLK_KP_4)
-	  SDL_WarpMouseInWindow(window_screen, left, oldpos_y);
+	  SDL_WarpMouse(left, oldpos_y);
 
 	/* FIXME: This is qwerty centric and interferes with gettexted reponses for yes/no,
 	   so disabling until either is removed or is configurable. */
 #if 0
 	else if (key == SDLK_s)
-	  SDL_WarpMouseInWindow(window_screen, oldpos_x, bottom);
+	  SDL_WarpMouse(oldpos_x, bottom);
 
 	else if (key == SDLK_w)
-	  SDL_WarpMouseInWindow(window_screen, oldpos_x, up);
+	  SDL_WarpMouse(oldpos_x, up);
 
 	else if (key == SDLK_d)
-	  SDL_WarpMouseInWindow(window_screen, right, oldpos_y);
+	  SDL_WarpMouse(right, oldpos_y);
 
 	else if (key == SDLK_a)
-	  SDL_WarpMouseInWindow(window_screen, left, oldpos_y);
+	  SDL_WarpMouse(left, oldpos_y);
 #endif
 
       }
@@ -16976,7 +16977,7 @@ static void handle_keymouse(SDL_Keycode key, Uint8 updown, int steps, SDL_Rect *
 }
 
 /* A subset of keys that will move one button at a time and jump between r_canvas<->r_tools<->r_colors */
-static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, SDL_Rect real_r_tools )
+static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools )
 {
   if (hit_test(&real_r_tools, oldpos_x, oldpos_y) &&
       (key == SDLK_F7 || key == SDLK_F8 || key == SDLK_F11 || key == SDLK_F12))
@@ -17045,7 +17046,7 @@ static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, S
       update_screen_rect(&r_tools);
     }
 
-    SDL_WarpMouseInWindow(window_screen, button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
+    SDL_WarpMouse(button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
   }
 
   else if (key == SDLK_F11 && hit_test(&r_colors,oldpos_x, oldpos_y))
@@ -17054,7 +17055,7 @@ static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, S
     *whichc = *whichc - 1;
     if (*whichc < 0)
       *whichc += NUM_COLORS;
-    SDL_WarpMouseInWindow(window_screen, button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
+    SDL_WarpMouse(button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
   }
 
   else if (key == SDLK_F12 && hit_test(&r_colors,oldpos_x, oldpos_y))
@@ -17062,17 +17063,17 @@ static void handle_keymouse_buttons(SDL_Keycode key, int *whicht, int *whichc, S
     *whichc = grid_hit_gd(&r_colors, oldpos_x, oldpos_y, &gd_colors);
     *whichc = *whichc + 1;
     *whichc = *whichc % NUM_COLORS;
-    SDL_WarpMouseInWindow(window_screen, button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
+    SDL_WarpMouse(button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h / 2));
   }
 
   else if (key == SDLK_F4)
   {
     if (hit_test(&r_tools, oldpos_x, oldpos_y))
-      SDL_WarpMouseInWindow(window_screen, button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h/2));
+      SDL_WarpMouse(button_w * 2 + *whichc * color_button_w + 12, r_canvas.h + (r_colors.h/2));
     else if (hit_test(&r_colors,oldpos_x, oldpos_y))
-      SDL_WarpMouseInWindow(window_screen, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+      SDL_WarpMouse(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
     else
-      SDL_WarpMouseInWindow(window_screen, button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
+      SDL_WarpMouse(button_w / 2 + *whicht % 2 * button_w, real_r_tools.y - *whicht % 2 * button_w / 2 + *whicht * button_h / 2 + 10 - tool_scroll * button_h / 2 );
 
     /* Play a sound here as there is a big jump */
     playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
@@ -18503,7 +18504,7 @@ static int do_new_dialog(void)
     num_files_in_dirs, j;
   SDL_Rect dest;
   SDL_Event event;
-  SDL_Keycode key;
+  SDLKey key;
   Uint32 last_click_time;
   int last_click_which, last_click_button;
   int places_to_look;
@@ -20139,7 +20140,7 @@ static int do_color_picker(void)
   double rh, gh, bh;
   int done, chose;
   SDL_Event event;
-  SDL_Keycode key;
+  SDLKey key;
   int color_picker_left, color_picker_top;
   int back_left, back_top;
   SDL_Rect color_example_dest;
@@ -20339,7 +20340,7 @@ static int do_color_picker(void)
   done = 0;
   chose = 0;
   x = y = 0;
-  SDL_WarpMouseInWindow(window_screen, back_left + button_w / 2, back_top - button_w / 2);
+  SDL_WarpMouse(back_left + button_w / 2, back_top - button_w / 2);
 
   do
   {
@@ -23045,12 +23046,6 @@ static void do_lock_file(void)
 
 int TP_EventFilter(void *data, const SDL_Event * event)
 {
-  if (event->type == SDL_TEXTINPUT)
-    printf("Textinput %s\n", event->text.text);
-  if (event->type == SDL_KEYDOWN)
-    printf("Keydown %s\n", event->text.text);
-
-
   if (event->type == SDL_QUIT ||
       event->type == SDL_WINDOWEVENT ||
       event->type == SDL_JOYAXISMOTION ||
@@ -23316,9 +23311,9 @@ static void setup(void)
 				   //"Tux Paint",
 				   SDL_WINDOWPOS_UNDEFINED,
 				   SDL_WINDOWPOS_UNDEFINED,
-				   0,0,
+				   0, 0,
 				   //				   WINDOW_WIDTH, WINDOW_HEIGHT,
-				   SDL_WINDOW_FULLSCREEN_DESKTOP );
+				   SDL_WINDOW_FULLSCREEN_DESKTOP);
     printf("2\n");
   if (window_screen == NULL)
     printf("window_screen = NULL 2\n");
@@ -23401,9 +23396,10 @@ VIDEO_BPP, SDL_SWSURFACE);*/
     if (set_window_pos)
       putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
 
-
-  //  SDL_SetWindowMinimumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
-  //SDL_SetWindowMaximumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
+    /* Note: Seems that this depends on the compliance by the window manager
+       currently this doesn't works under Fvwm */
+    SDL_SetWindowMinimumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
+    SDL_SetWindowMaximumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
 
 
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
@@ -23772,6 +23768,7 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 				   img_btn_off->format->Bmask,
 				   img_btn_off->format->Amask);
   SDL_SetSurfaceAlphaMod(img_black, SDL_ALPHA_TRANSPARENT);
+
   SDL_FillRect(img_black, NULL, SDL_MapRGBA(screen->format, 0, 0, 0, 255));
 
   img_grey = SDL_CreateRGBSurface(SDL_SWSURFACE,
@@ -23782,6 +23779,7 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 				  img_btn_off->format->Bmask,
 				  img_btn_off->format->Amask);
   SDL_SetSurfaceAlphaMod(img_grey, SDL_ALPHA_TRANSPARENT);
+
   SDL_FillRect(img_grey, NULL,
 	       SDL_MapRGBA(screen->format, 0x88, 0x88, 0x88, 255));
 
@@ -24227,7 +24225,7 @@ static void claim_to_be_ready(void)
   oldpos_x = WINDOW_WIDTH / 2;
   oldpos_y = WINDOW_HEIGHT / 2;
 
-  SDL_WarpMouseInWindow(window_screen, oldpos_x, oldpos_y);
+  SDL_WarpMouse(oldpos_x, oldpos_y);
 
   eraser_sound = 0;
 
@@ -24600,7 +24598,7 @@ static void handle_joyhatmotion(SDL_Event event, int oldpos_x, int oldpos_y, int
     break;
   }
   if(*valhat_x || *valhat_y)
-    SDL_WarpMouseInWindow(window_screen, oldpos_x + *valhat_x, oldpos_y + *valhat_y);
+    SDL_WarpMouse(oldpos_x + *valhat_x, oldpos_y + *valhat_y);
 
   *old_hat_ticks = SDL_GetTicks();
 }
@@ -24612,7 +24610,7 @@ static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y) {
   /* printf("\n ball movement \n"); */
   val_x = event.jball.xrel;
   val_y = event.jball.yrel;
-  SDL_WarpMouseInWindow(window_screen, oldpos_x + val_x, oldpos_y + val_y);
+  SDL_WarpMouse(oldpos_x + val_x, oldpos_y + val_y);
 }
 
 
@@ -24632,7 +24630,7 @@ if (ticks - old_hat_ticks > joystick_hat_timeout)
     vx += valhat_x;
     vy += valhat_y;
   }
-SDL_WarpMouseInWindow(window_screen, vx, vy);
+SDL_WarpMouse(vx, vy);
 
 if (motioner && joystick_slowness)
   SDL_Delay(joystick_slowness);
