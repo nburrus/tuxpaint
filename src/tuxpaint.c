@@ -906,7 +906,7 @@ static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, S
   r.w = w;
   r.h = h;
 
-  SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
+  SDL_UpdateTexture(texture, &r, screen->pixels + (y * screen->pitch + x * 4), screen->pitch);
 
   //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
   //  SDL_RenderClear(renderer);
@@ -23297,45 +23297,52 @@ static void setup(void)
     window_screen = SDL_CreateWindow("Tux Paint",
 				     SDL_WINDOWPOS_UNDEFINED,
 				     SDL_WINDOWPOS_UNDEFINED,
-				     0,0,
-				     //				     WINDOW_WIDTH, WINDOW_HEIGHT,
+				     //0,0,
+				     WINDOW_WIDTH, WINDOW_HEIGHT,
 				     SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_HWSURFACE);
     printf("1\n");
-  if (window_screen == NULL)
-    printf("window_screen = NULL 1\n");
+    if (window_screen == NULL)
+      printf("window_screen = NULL 1\n");
 
 #else
 /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
       VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);*/
-  window_screen = SDL_CreateWindow(NULL,
-				   //"Tux Paint",
-				   SDL_WINDOWPOS_UNDEFINED,
-				   SDL_WINDOWPOS_UNDEFINED,
-				   0, 0,
-				   //				   WINDOW_WIDTH, WINDOW_HEIGHT,
-				   SDL_WINDOW_FULLSCREEN_DESKTOP);
+    window_screen = SDL_CreateWindow(NULL,
+				     //"Tux Paint",
+				     SDL_WINDOWPOS_UNDEFINED,
+				     SDL_WINDOWPOS_UNDEFINED,
+				     //0, 0,
+				     WINDOW_WIDTH, WINDOW_HEIGHT,
+				     SDL_WINDOW_FULLSCREEN_DESKTOP);
     printf("2\n");
-  if (window_screen == NULL)
-    printf("window_screen = NULL 2\n");
+    if (window_screen == NULL)
+      printf("window_screen = NULL 2\n");
 #endif
   
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
 
-    SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
-        texture = SDL_CreateTexture(renderer,
-                               SDL_PIXELFORMAT_RGB888,
-                               SDL_TEXTUREACCESS_STATIC,
-                               ww, hh);
+    if ( native_screensize)
+    {
+      SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
+    }
+    else
+    {
+      ww = WINDOW_WIDTH;
+      hh =  WINDOW_HEIGHT;
+    }
 
-screen = SDL_CreateRGBSurface(0, ww, hh, 32,
-			      0x00FF0000,
-			      0x0000FF00,
-			      0x000000FF,
-			      0xFF000000);
-// texture = SDL_CreateTextureFromSurface(renderer, screen);
+    texture = SDL_CreateTexture(renderer,
+				SDL_PIXELFORMAT_RGB888,
+				SDL_TEXTUREACCESS_STATIC,
+				ww, hh);
 
-
-
+    
+    screen = SDL_CreateRGBSurface(0, ww, hh, 32,
+				  0x00FF0000,
+				  0x0000FF00,
+				  0x000000FF,
+				  0xFF000000);
+    
     if (screen == NULL)
     {
       fprintf(stderr,
@@ -23403,7 +23410,6 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 
 
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
-
     SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
     texture = SDL_CreateTexture(renderer,
 				SDL_PIXELFORMAT_RGB888,
@@ -23432,6 +23438,9 @@ VIDEO_BPP, SDL_SWSURFACE);*/
     cleanup();
     exit(1);
   }}
+
+  SDL_RenderSetLogicalSize(renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
+
   window_format = SDL_GetWindowPixelFormat(window_screen);
 
   /* (Need to do this after native screen resolution is handled) */
