@@ -877,7 +877,6 @@ static void SDL_WarpMouse(Uint16 x, Uint16 y)
 static SDL_Surface *SDL_DisplayFormat(SDL_Surface *surface)
 {
   SDL_Surface *tmp;
-  //  tmp = SDL_ConvertSurfaceFormat(surface, window_format, 0);
   tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGB888, 0);
   return(tmp);
 }
@@ -12461,7 +12460,9 @@ static void cleanup(void)
 #endif
 
 
-
+  SDL_DestroyTexture(texture);
+  SDL_DestroyRenderer(renderer);
+  SDL_DestroyWindow(window_screen);
 
   /* Close up! */
 
@@ -23383,20 +23384,20 @@ static void setup(void)
 				     WINDOW_WIDTH, WINDOW_HEIGHT,
 				     SDL_WINDOW_HWSURFACE);
     printf("3\n");
-  if (window_screen == NULL)
-    printf("window_screen = NULL 3\n");
+    if (window_screen == NULL)
+      printf("window_screen = NULL 3\n");
 #else
-  window_screen = SDL_CreateWindow("Tux Paint",
+    window_screen = SDL_CreateWindow("Tux Paint",
 				   SDL_WINDOWPOS_UNDEFINED,
 				   SDL_WINDOWPOS_UNDEFINED,
 				   WINDOW_WIDTH, WINDOW_HEIGHT,
 				   NULL);
-  /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
+    /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
 s
 VIDEO_BPP, SDL_SWSURFACE);*/
     printf("4\n");
-  if (window_screen == NULL)
-    printf("window_screen = NULL 4\n");
+    if (window_screen == NULL)
+      printf("window_screen = NULL 4\n");
 
 #endif
 
@@ -23428,16 +23429,17 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 
 
 
-  if (screen == NULL)
-  {
-    fprintf(stderr,
-	    "\nError: 1 I could not open the display.\n"
-	    "The Simple DirectMedia Layer error that occurred was:\n"
-	    "%s\n\n", SDL_GetError());
+    if (screen == NULL)
+    {
+      fprintf(stderr,
+	      "\nError: 1 I could not open the display.\n"
+	      "The Simple DirectMedia Layer error that occurred was:\n"
+	      "%s\n\n", SDL_GetError());
 
-    cleanup();
-    exit(1);
-  }}
+      cleanup();
+      exit(1);
+    }
+  }
 
   SDL_RenderSetLogicalSize(renderer, WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -24043,7 +24045,7 @@ VIDEO_BPP, SDL_SWSURFACE);*/
       cleanup();
       exit(1);
     }
-    //    SDL_SetSurfaceAlphaMod(img_color_btns[i], SDL_ALPHA_TRANSPARENT);
+
     SDL_LockSurface(img_color_btns[i]);
   }
 
