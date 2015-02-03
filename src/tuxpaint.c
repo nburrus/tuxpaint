@@ -4543,14 +4543,19 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
         }
       }
 	 
-      else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	       wheely && event.button.button >= 4 && event.button.button <= 5)
+      //      else if (event.type == SDL_MOUSEBUTTONDOWN &&
+      //	       wheely && event.button.button >= 4 && event.button.button <= 5)
+      else if (event.type == SDL_MOUSEWHEEL &&
+	       wheely )
       {
 	int most = 14;
 	int num_rows_needed;
+	int xpos, ypos;
 	SDL_Rect r_controls;
 	SDL_Rect r_notcontrols;
 	SDL_Rect r_items;	/* = r_notcontrols; */
+
+	SDL_GetMouseState(&xpos, &ypos);
 
 	/* Scroll wheel code.
 	   WARNING: this must be kept in sync with the mouse-move
@@ -4563,9 +4568,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	{
 
 	  /* Left tools scroll */
-	  if (HIT(r_tools) && NUM_TOOLS > most + TOOLOFFSET)
+	  //	  if (HIT(r_tools) && NUM_TOOLS > most + TOOLOFFSET)
+	  if (hit_test(&r_tools, xpos, ypos) && NUM_TOOLS > most + TOOLOFFSET)
 	    {
-	      int is_upper = (event.button.button == 4);
+	      //	      int is_upper = (event.button.button == 4);
+	      int is_upper = (event.wheel.y > (Sint32)0);
 	      if (is_upper && tool_scroll > 0)
 		{
 		  tool_scroll -= gd_tools.cols;
@@ -4688,7 +4695,9 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	  else
 	  {
 	    /* scroll button */
-	    int is_upper = (event.button.button == 4);
+	    //	    int is_upper = (event.button.button == 4);
+	      int is_upper = (event.wheel.y > (Sint32)0);
+
 	    if ((is_upper && *thing_scroll > 0)	/* upper arrow */
 		|| (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows)	/* lower arrow */
 	      )
@@ -23061,6 +23070,7 @@ int TP_EventFilter(void *data, const SDL_Event * event)
       event->type == SDL_MOUSEMOTION ||
       event->type == SDL_QUIT ||
       event->type == SDL_USEREVENT ||
+      event->type == SDL_MOUSEWHEEL ||
       event->type == SDL_TEXTINPUT)
     return 1;
 
