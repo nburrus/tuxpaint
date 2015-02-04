@@ -4542,9 +4542,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 #endif
         }
       }
-	 
-      //      else if (event.type == SDL_MOUSEBUTTONDOWN &&
-      //	       wheely && event.button.button >= 4 && event.button.button <= 5)
+
       else if (event.type == SDL_MOUSEWHEEL &&
 	       wheely )
       {
@@ -4568,11 +4566,9 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	{
 
 	  /* Left tools scroll */
-	  //	  if (HIT(r_tools) && NUM_TOOLS > most + TOOLOFFSET)
 	  if (hit_test(&r_tools, xpos, ypos) && NUM_TOOLS > most + TOOLOFFSET)
 	    {
-	      //	      int is_upper = (event.button.button == 4);
-	      int is_upper = (event.wheel.y > (Sint32)0);
+	      int is_upper = (event.wheel.y > 0);
 	      if (is_upper && tool_scroll > 0)
 		{
 		  tool_scroll -= gd_tools.cols;
@@ -4695,8 +4691,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	  else
 	  {
 	    /* scroll button */
-	    //	    int is_upper = (event.button.button == 4);
-	      int is_upper = (event.wheel.y > (Sint32)0);
+	    int is_upper = (event.wheel.y > (Sint32)0);
 
 	    if ((is_upper && *thing_scroll > 0)	/* upper arrow */
 		|| (!is_upper && *thing_scroll / gd_items.cols < num_rows_needed - gd_items.rows)	/* lower arrow */
@@ -14498,12 +14493,12 @@ static int do_open(void)
             want_erase = 1;
           }
         }
-        else if (event.type == SDL_MOUSEBUTTONDOWN &&
-            event.button.button >= 4 && event.button.button <= 5 && wheely)
+        else if (event.type == SDL_MOUSEWHEEL &&
+		 wheely)
         {
           /* Scroll wheel! */
 
-          if (event.button.button == 4 && cur > 0)
+          if (event.wheel.y > 0 && cur > 0)
           {
             cur = cur - 4;
             update_list = 1;
@@ -14515,7 +14510,7 @@ static int do_open(void)
             if (which >= cur + 16)
               which = which - 4;
           }
-          else if (event.button.button == 5 && cur < num_files - 16)
+          else if (event.wheel.y < 0 && cur < num_files - 16)
           {
             cur = cur + 4;
             update_list = 1;
@@ -15530,12 +15525,11 @@ static int do_slideshow(void)
 	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 	}
       }
-      else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	       event.button.button >= 4 && event.button.button <= 5 && wheely)
+      else if (event.type == SDL_MOUSEWHEEL && wheely)
       {
 	/* Scroll wheel! */
 
-	if (event.button.button == 4 && cur > 0)
+	if (event.wheel.y > 0 && cur > 0)
 	{
 	  cur = cur - 4;
 	  update_list = 1;
@@ -15547,7 +15541,7 @@ static int do_slideshow(void)
 	  if (which >= cur + 16)
 	    which = which - 4;
 	}
-	else if (event.button.button == 5 && cur < num_files - 16)
+	else if (event.wheel.y < 0 && cur < num_files - 16)
 	{
 	  cur = cur + 4;
 	  update_list = 1;
@@ -19324,12 +19318,11 @@ static int do_new_dialog(void)
 	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 	}
       }
-      else if (event.type == SDL_MOUSEBUTTONDOWN &&
-	       event.button.button >= 4 && event.button.button <= 5 && wheely)
+      else if (event.type == SDL_MOUSEWHEEL && wheely)
       {
 	/* Scroll wheel! */
 
-	if (event.button.button == 4 && cur > 0)
+	if (event.wheel.y > 0 && cur > 0)
 	{
 	  cur = cur - 4;
 	  update_list = 1;
@@ -19341,7 +19334,7 @@ static int do_new_dialog(void)
 	  if (which >= cur + 16)
 	    which = which - 4;
 	}
-	else if (event.button.button == 5 && cur < num_files - 16)
+	else if (event.wheel.y < 0 && cur < num_files - 16)
 	{
 	  cur = cur + 4;
 	  update_list = 1;
