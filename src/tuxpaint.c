@@ -2009,8 +2009,6 @@ int file_exists(char * path);
 #define USEREVENT_TEXT_UPDATE 1
 #define USEREVENT_PLAYDESCSOUND 2
 
-#define TP_SDL_MOUSEBUTTONSCROLL (SDL_USEREVENT + 1)
-
 static int bypass_splash_wait;
 
 /* Wait for a keypress or mouse click.
@@ -2198,6 +2196,8 @@ static void mainloop(void)
   int stamp_xored = 0;
 
   unsigned int i = 0;
+
+  Uint32 TP_SDL_MOUSEBUTTONSCROLL = SDL_RegisterEvents(1);
   SDL_TimerID scrolltimer = NULL;
   SDL_Event event;
   SDLKey key;
