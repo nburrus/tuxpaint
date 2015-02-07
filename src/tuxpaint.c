@@ -1945,7 +1945,7 @@ static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
 static void draw_image_title(int t, SDL_Rect dest);
-static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2);
+static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect *area1, SDL_Rect *area2);
 static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
 static char *remove_slash(char *path);
@@ -2300,10 +2300,8 @@ static void mainloop(void)
       else if (event.type == SDL_KEYUP)
       {
 	key = event.key.keysym.sym;
-
 	handle_keymouse(key, SDL_KEYUP, 16, NULL, NULL);
       }
-      
       else if (event.type == SDL_KEYDOWN || event.type == SDL_TEXTINPUT)
       {
 	key = event.key.keysym.sym;
@@ -16799,7 +16797,7 @@ static void draw_image_title(int t, SDL_Rect dest)
 /* Handle keyboard events to control the mouse: */
 /* Move as many pixels as bigsteps outside the areas,
    in the areas and 5 pixels around, move 1 pixel at a time */
-static void handle_keymouse(SDLKey key, Uint8 updown, int steps, SDL_Rect *area1, SDL_Rect *area2)
+static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect *area1, SDL_Rect *area2)
 {
   int left, right, up, bottom;
   SDL_Event event;
