@@ -40,7 +40,7 @@
 #include "SDL_ttf.h"
 
 #ifndef NO_SDLPANGO
-#include "SDL_Pango.h"
+#include "SDL2_Pango.h"
 #endif
 
 #define PANGO_DEFAULT_FONT "BitStream Vera"
