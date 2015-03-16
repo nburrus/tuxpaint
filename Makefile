@@ -187,10 +187,10 @@ SDL_MIXER_LIB:=$(call linktest,-lSDL2_mixer,$(SDL_LIBS))
 NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL2_Mixer failed, no sound for you!))
 
 # SDL Pango is needed to render complex scripts like Thai and Arabic
-SDL_PANGO_LIB:=$(call linktest,-lSDL2_Pango,$(SDL_LIBS))
-NOPANGOFLAG:=$(if $(SDL_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL2_Pango failed, no scripts for you!))
+SDL2_PANGO_LIB:=$(call linktest,-lSDL2_Pango,$(SDL_LIBS))
+NOPANGOFLAG:=$(if $(SDL2_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL2_Pango failed, no scripts for you!))
 
-SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL_PANGO_LIB)
+SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL2_PANGO_LIB)
 
 SDL_CFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 
@@ -211,7 +211,7 @@ OLDSVGFLAG:=$(if $(filter -lsvg-cairo,$(SVG_LIB)),-DOLD_SVG,)
 
 ifeq ($(hack),1)
 hack:
-	@echo 'SDL_PANGO_LIB is' $(SDL_PANGO_LIB)
+	@echo 'SDL2_PANGO_LIB is' $(SDL2_PANGO_LIB)
 	@echo 'SDL_MIXER_LIB is' $(SDL_MIXER_LIB)
 	@echo 'SVG_LIB       is' $(SVG_LIB)
 	@echo 'SDL_LIBS      is' $(SDL_LIBS)
@@ -225,7 +225,7 @@ endif
 # The entire set of CFLAGS:
 
 #-ffast-math
-OPTFLAGS:=-O2
+OPTFLAGS:=-O0 -g
 CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	$(if $(filter windows,$(OS)),,$(call comptest,-fvisibility=hidden,)) \
 	-Wcast-align -Wredundant-decls \
@@ -862,7 +862,7 @@ install-dlls:
 	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
 	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
 	  cp `which libfontconfig-1.dll` $(BIN_PREFIX); \
-	  cp `which libSDL_Pango-1.dll` $(BIN_PREFIX); \
+	  cp `which libSDL2_Pango-1.dll` $(BIN_PREFIX); \
 	  cp `which libgobject-2.0-0.dll` $(BIN_PREFIX); \
 	  cp `which libgthread-2.0-0.dll` $(BIN_PREFIX); \
 	  cp `which librsvg-2-2.dll` $(BIN_PREFIX); \

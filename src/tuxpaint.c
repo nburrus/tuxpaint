@@ -410,7 +410,7 @@ static void mtw(wchar_t * wtok, char * tok)
  The renaming ends here.
  */
 
-#include "SDL_Pango.h"
+#include "SDL2_Pango.h"
 #if !defined(SDL_PANGO_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL_Pango from a package, be sure"
@@ -1455,7 +1455,7 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 
     SDLPango_SetDefaultColor(font->pango_context, &pango_color);
     SDLPango_SetText(font->pango_context, str, -1);
-    ret = SDLPango_CreateSurfaceDraw(font->pango_context);     
+    ret = SDLPango_CreateSurfaceDraw(font->pango_context);
   }
 #endif
     
@@ -16888,7 +16888,6 @@ static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect *area
       if (key == SDLK_INSERT || key == SDLK_F5 ||
 	  ((cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL) &&
 	   (key == SDLK_SPACE || key == SDLK_5 || key == SDLK_KP_5)))
-
       {
 	event.type = SDL_MOUSEBUTTONUP;
 	event.button.x = oldpos_x;
@@ -23540,7 +23539,7 @@ VIDEO_BPP, SDL_SWSURFACE);*/
   printf("Spawning Pango thread\n"); fflush(stdout);
 #endif
 
-  fontconfig_thread = SDL_CreateThread(generate_fontconfig_cache, NULL);
+  fontconfig_thread = SDL_CreateThread(generate_fontconfig_cache, "fontconfig_thread", NULL);
   if (fontconfig_thread == NULL) {
     fprintf(stderr, "Failed to create Pango setup thread: %s\n", SDL_GetError());
   } else {
@@ -23550,7 +23549,8 @@ VIDEO_BPP, SDL_SWSURFACE);*/
     if (generate_fontconfig_cache_spinner(screen)) /* returns 1 if aborted */
     {
       printf("Pango thread aborted!\n"); fflush(stdout);
-      SDL_KillThread(fontconfig_thread);
+      // FIXME SDL2
+      //      SDL_KillThread(fontconfig_thread);
       SDL_Quit();
       exit(0);
       /* FIXME: Let's be more graceful about exiting (e.g., clean up lockfile!) -bjk 2010.04.27 */
