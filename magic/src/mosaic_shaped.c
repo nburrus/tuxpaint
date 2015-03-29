@@ -400,7 +400,7 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
     int y, x;
     int i, j;
     SDL_Rect  rect;
-    SDL_Surface * surf_aux;
+    SDL_Surface * surf_aux, *tmp, *tmp2;
     Uint32 amask;
     mosaic_shaped_counted = (Uint8 *) malloc(sizeof(Uint8) * (canvas->w * canvas->h));
 
@@ -421,14 +421,18 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
     amask = ~(canvas->format->Rmask |
               canvas->format->Gmask |
               canvas->format->Bmask);
-    canvas_shaped = SDL_CreateRGBSurface(SDL_SWSURFACE,
+
+    tmp = SDL_CreateRGBSurface(SDL_SWSURFACE,
                                          canvas->w,
                                          canvas->h,
                                          canvas->format->BitsPerPixel,
                                          canvas->format->Rmask,
                                          canvas->format->Gmask,
                                          canvas->format->Bmask, amask);
-    surf_aux = SDL_CreateRGBSurface(SDL_SWSURFACE,
+    canvas_shaped = SDL_ConvertSurfaceFormat(tmp, SDL_PIXELFORMAT_RGB888, 0);
+    SDL_FreeSurface(tmp);
+
+    tmp2 = SDL_CreateRGBSurface(SDL_SWSURFACE,
                                     canvas->w + 10,
                                     canvas->h + 10,
                                     canvas->format->BitsPerPixel,
@@ -555,7 +559,7 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
         deform(api, surf_aux);
     }
 
-    SDL_SetAlpha(surf_aux, 0 , SDL_ALPHA_OPAQUE);
+    SDL_SetSurfaceBlendMode (surf_aux, SDL_BLENDMODE_NONE);
     SDL_BlitSurface(surf_aux, NULL, canvas_shaped, NULL);
     SDL_FreeSurface(surf_aux);
     black = SDL_MapRGBA(canvas->format, 0, 0, 0, 0);
@@ -639,7 +643,7 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc, int x, 
 
     /* Abort, if we recurse too deep! -bjk 2014.08.05 */
     scan_fill_count++;
-    if (scan_fill_count > 50000 && 0)
+    if (scan_fill_count > 500 )
     {
         scan_fill_count--;
         return (0);
