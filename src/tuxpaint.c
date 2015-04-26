@@ -6621,6 +6621,7 @@ SDL_Surface *mirror_surface(SDL_Surface * s)
   /* Mirror surface: */
 
   new_surf = duplicate_surface(s);
+  SDL_SetSurfaceBlendMode(s, SDL_BLENDMODE_NONE);
 
   if (new_surf != NULL)
   {
@@ -6657,6 +6658,7 @@ SDL_Surface *flip_surface(SDL_Surface * s)
   /* Flip surface: */
 
   new_surf = duplicate_surface(s);
+  SDL_SetSurfaceBlendMode(s, SDL_BLENDMODE_NONE);
 
   if (new_surf != NULL)
   {
