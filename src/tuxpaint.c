@@ -915,6 +915,11 @@ static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, S
   SDL_RenderPresent(renderer);
 }
 
+static void show_progress_bar(SDL_Surface * screen)
+{
+  show_progress_bar_(screen, texture, renderer);
+}
+
  
 /* Update a rect. based on two x/y coords (not necessarly in order): */
 static void update_screen(int x1, int y1, int x2, int y2)
@@ -3129,7 +3134,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 
 		waiting_for_fonts = 1;
 #ifdef FORKED_FONTS
-		receive_some_font_info(screen);
+		receive_some_font_info(screen, texture, renderer);
 #else
 		while (!font_thread_done && !font_thread_aborted)
 		{
@@ -6608,7 +6613,7 @@ static void load_brush_dir(SDL_Surface * screen, const char *restrict const dir)
   unsigned dirlen = strlen(dir);
 
   memcpy(buf, dir, dirlen);
-  tp_ftw(screen, buf, dirlen, 0, loadbrush_callback, NULL);
+  tp_ftw(screen, texture, renderer, buf, dirlen, 0, loadbrush_callback, NULL);
 }
 
 SDL_Surface *mirror_surface(SDL_Surface * s)
@@ -7538,7 +7543,7 @@ static void load_stamp_dir(SDL_Surface * screen, const char *const dir)
   unsigned dirlen = strlen(dir);
   memcpy(buf, dir, dirlen);
   load_stamp_basedir = dir;
-  tp_ftw(screen, buf, dirlen, 0, loadstamp_callback, NULL);
+  tp_ftw(screen, texture, renderer, buf, dirlen, 0, loadstamp_callback, NULL);
 }
 
 
@@ -7574,7 +7579,7 @@ static void load_stamps(SDL_Surface * screen)
 #ifndef FORKED_FONTS
 static int load_user_fonts_stub(void *vp)
 {
-  return load_user_fonts(screen, vp, NULL);
+  return load_user_fonts(screen, texture, renderer, vp, NULL);
 }
 #endif
 
@@ -23568,7 +23573,7 @@ VIDEO_BPP, SDL_SWSURFACE);*/
 #ifdef DEBUG
   printf("Now running font scanner\n"); fflush(stdout);
 #endif
-  run_font_scanner(screen, lang_prefixes[get_current_language()]);
+  run_font_scanner(screen, texture, renderer, lang_prefixes[get_current_language()]);
 #endif
 
 #endif
@@ -24318,7 +24323,7 @@ int main(int argc, char *argv[])
 #ifdef DEBUG
   printf("Running font scanner\n"); fflush(stdout);
 #endif
-  run_font_scanner(screen, lang_prefixes[get_current_language()]);
+  run_font_scanner(screen, texture, renderer, lang_prefixes[get_current_language()]);
 #else
 #ifdef DEBUG
   printf("NOT running font scanner\n"); fflush(stdout);

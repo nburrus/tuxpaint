@@ -67,7 +67,7 @@
 
 ///////////////// directory walking callers and callbacks //////////////////
 
-void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
+void loadfont_callback(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, const char *restrict const dir,
 		       unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
   dirlen = dirlen;
@@ -76,7 +76,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
   {
     int loadable = 0;
     const char *restrict const cp = strchr(files[i].str, '.');
-    show_progress_bar(screen);
+    show_progress_bar_(screen, texture, renderer);
     if (cp)
     {
       // need gcc 3.4 for the restrict in this location
@@ -261,7 +261,7 @@ int compare_ftw_str(const void *v1, const void *v2)
   return -strcmp(s1, s2); /* FIXME: Should we try strcasecmp, to group things together despite uppercase/lowercase in filenames (e.g., Jigsaw* vs jigsaw* Starters)??? -bjk 2009.10.11 */
 }
 
-void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
+void tp_ftw(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, char *restrict const dir, unsigned dirlen,
 	    int rsrc, void (*fn) (SDL_Surface * screen,
 				  const char *restrict const dir,
 				  unsigned dirlen, tp_ftw_str * files,
@@ -376,7 +376,7 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
   }
 
   closedir(d);
-  show_progress_bar(screen);
+  show_progress_bar_(screen, texture, renderer);
   dir[dirlen] = '\0';		// repair it (clobbered for stat() call above)
 
   if (1 || file_names)  // Now ALWAYS calling callback function, so stamp loader can notice top-level directories (even if there are only subdirs, and no files, inside) -bjk 2007.05.16
@@ -401,7 +401,7 @@ void tp_ftw(SDL_Surface * screen, char *restrict const dir, unsigned dirlen,
     {
       memcpy(dir + dirlen, dir_names[num_dir_names].str,
 	     dir_names[num_dir_names].len + 1);
-      tp_ftw(screen, dir, dirlen + dir_names[num_dir_names].len, rsrc, fn, locale);
+      tp_ftw(screen, texture, renderer, dir, dirlen + dir_names[num_dir_names].len, rsrc, fn, locale);
       free(dir_names[num_dir_names].str);
     }
     free(dir_names);

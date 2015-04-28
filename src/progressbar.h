@@ -36,6 +36,6 @@
 extern SDL_Surface *img_progress;
 extern int progress_bar_disabled, prog_bar_ctr;
 
-void show_progress_bar(SDL_Surface * screen);
+void show_progress_bar_(SDL_Surface * screen, SDL_Texture *texture, SDL_Renderer *renderer);
 
 #endif

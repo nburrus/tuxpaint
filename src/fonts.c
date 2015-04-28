@@ -927,79 +927,79 @@ static void groupfonts(void)
 }
 
 
-static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir, const char *restrict const locale)
+static void loadfonts_locale_filter(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, const char *const dir, const char *restrict const locale)
 {
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
 
   memcpy(buf, dir, dirlen);
-  tp_ftw(screen, buf, dirlen, 1, loadfont_callback, locale);
+  tp_ftw(screen, texture, renderer, buf, dirlen, 1, loadfont_callback, locale);
 }
 
-static void loadfonts(SDL_Surface * screen, const char *const dir)
+static void loadfonts(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, const char *const dir)
 {
-  loadfonts_locale_filter(screen, dir, NULL);
+  loadfonts_locale_filter(screen, texture, renderer, dir, NULL);
 }
 
 
-/* static */ int load_user_fonts(SDL_Surface * screen, void *vp, const char *restrict const locale)
+/* static */ int load_user_fonts(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
 
   (void) vp;			// junk passed by threading library
 
-  loadfonts_locale_filter(screen, DATA_PREFIX "fonts", locale);
+  loadfonts_locale_filter(screen, texture, renderer, DATA_PREFIX "fonts", locale);
 
   if (!no_system_fonts)
   {
 #ifdef WIN32
     homedirdir = GetSystemFontDir();
-    loadfonts(screen, homedirdir);
+    loadfonts(screen, texture, renderer, homedirdir);
     free(homedirdir);
 #elif defined(__BEOS__)
-    loadfonts(screen, "/boot/home/config/font/ttffonts");
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+    loadfonts(screen, texture, renderer, "/boot/home/config/font/ttffonts");
+    loadfonts(screen, texture, renderer, "/usr/share/fonts");
+    loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #elif defined(__HAIKU__)
        dev_t volume = dev_for_path("/boot");
        char buffer[B_PATH_NAME_LENGTH+B_FILE_NAME_LENGTH];
        status_t result;
     result = find_directory(B_SYSTEM_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
-       loadfonts(screen, buffer);
+       loadfonts(screen, texture, renderer, buffer);
     result = find_directory(B_COMMON_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
-       loadfonts(screen, buffer);
+       loadfonts(screen, texture, renderer, buffer);
     result = find_directory(B_USER_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
-       loadfonts(screen, buffer);
+       loadfonts(screen, texture, renderer, buffer);
 #elif defined(__APPLE__)
-    loadfonts(screen, "/System/Library/Fonts");
-    loadfonts(screen, "/Library/Fonts");
-    loadfonts(screen, macosx.fontsPath);
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+    loadfonts(screen, texture, renderer, "/System/Library/Fonts");
+    loadfonts(screen, texture, renderer, "/Library/Fonts");
+    loadfonts(screen, texture, renderer, macosx.fontsPath);
+    loadfonts(screen, texture, renderer, "/usr/share/fonts");
+    loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #elif defined(__sun__)
-    loadfonts(screen, "/usr/openwin/lib/X11/fonts");
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
+    loadfonts(screen, texture, renderer, "/usr/openwin/lib/X11/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/fonts");
+    loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #else
-    loadfonts(screen, "/usr/share/feh/fonts");
-    loadfonts(screen, "/usr/share/fonts");
-    loadfonts(screen, "/usr/X11R6/lib/X11/fonts");
-    loadfonts(screen, "/usr/share/texmf/fonts");
-    loadfonts(screen, "/usr/share/grace/fonts/type1");
-    loadfonts(screen, "/usr/share/hatman/fonts");
-    loadfonts(screen, "/usr/share/icewm/themes/jim-mac");
-    loadfonts(screen, "/usr/share/vlc/skins2/fonts");
-    loadfonts(screen, "/usr/share/xplanet/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/feh/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/fonts");
+    loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/texmf/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/grace/fonts/type1");
+    loadfonts(screen, texture, renderer, "/usr/share/hatman/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/icewm/themes/jim-mac");
+    loadfonts(screen, texture, renderer, "/usr/share/vlc/skins2/fonts");
+    loadfonts(screen, texture, renderer, "/usr/share/xplanet/fonts");
 #endif
   }
 
   homedirdir = get_fname("fonts", DIR_DATA);
-  loadfonts(screen, homedirdir);
+  loadfonts(screen, texture, renderer, homedirdir);
   free(homedirdir);
 
 #ifdef WIN32
   homedirdir = get_fname("data/fonts", DIR_DATA);
-  loadfonts(screen, homedirdir);
+  loadfonts(screen, texture, renderer, homedirdir);
   free(homedirdir);
 #endif
 
@@ -1014,7 +1014,7 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
 
 #ifdef FORKED_FONTS
 
-void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
+void run_font_scanner(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, const char *restrict const locale)
 {
   int sv[2];
   int size, i;
@@ -1044,7 +1044,7 @@ void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
   sched_yield();		// try to let the parent run right now
   SDL_Init(SDL_INIT_NOPARACHUTE);
   TTF_Init();
-  load_user_fonts(screen, NULL, locale);
+  load_user_fonts(screen, texture, renderer, NULL, locale);
 
   size = 0;
   i = num_font_families;
@@ -1144,7 +1144,7 @@ void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
 }
 
 
-void receive_some_font_info(SDL_Surface * screen)
+void receive_some_font_info(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer)
 {
   char *buf = NULL;
   unsigned buf_size = 0;
@@ -1182,7 +1182,7 @@ void receive_some_font_info(SDL_Surface * screen)
 	p = (struct pollfd)
 	{
 	font_socket_fd, POLLIN, 0};
-	show_progress_bar(screen);
+	show_progress_bar_(screen, texture, renderer);
 	poll(&p, 1, 29);	// try not to burn CPU time
 	continue;
       case EINTR:
@@ -1206,7 +1206,7 @@ void receive_some_font_info(SDL_Surface * screen)
     return;
   }
 
-  show_progress_bar(screen);
+  show_progress_bar_(screen, texture, renderer);
   walk = buf;
   num_font_families = *(unsigned char *) walk++;
   num_font_families += *(unsigned char *) walk++ << 8u;

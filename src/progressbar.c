@@ -34,9 +34,9 @@
 SDL_Surface *img_progress;
 int progress_bar_disabled, prog_bar_ctr;
 
-void show_progress_bar(SDL_Surface * screen)
+void show_progress_bar_(SDL_Surface * screen, SDL_Texture *texture, SDL_Renderer *renderer)
 {
-  SDL_Rect dest, src;
+  SDL_Rect dest, src, r;
   int x;
   static Uint32 oldtime;
   Uint32 newtime;
@@ -64,6 +64,19 @@ void show_progress_bar(SDL_Surface * screen)
 
     // FIXME SDL2
     //    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
+    r.x = 0;
+    r.y = screen->h - 24;
+    r.w = screen->w;
+    r.h = 24;
+
+    SDL_UpdateTexture(texture, &r, screen->pixels + ((screen->h - 24) * screen->pitch), screen->pitch);
+
+    //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
+    //  SDL_RenderClear(renderer);
+    //  SDL_RenderCopy(renderer, texture, NULL, NULL);
+    SDL_RenderCopy(renderer, texture, &r, &r);
+
+    SDL_RenderPresent(renderer);
   }
   oldtime = newtime;
 
