@@ -50,6 +50,8 @@ void loadfont_callback(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer
 int compare_ftw_str(const void *v1, const void *v2);
 void tp_ftw(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, char *restrict const dir, unsigned dirlen,
 	    int rsrc, void (*fn) (SDL_Surface * screen,
+				  SDL_Texture * texture,
+				  SDL_Renderer * renderer,
 				  const char *restrict const dir,
 				  unsigned dirlen, tp_ftw_str * files,
 				  unsigned count, const char *restrict const locale),

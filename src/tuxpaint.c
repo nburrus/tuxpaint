@@ -6517,6 +6517,8 @@ static unsigned compute_default_scale_factor(double ratio)
 /* directory walking... */
 
 static void loadbrush_callback(SDL_Surface * screen,
+			       SDL_Texture * texture,
+			       SDL_Renderer * renderer,
 			       const char *restrict const dir,
 			       unsigned dirlen, tp_ftw_str * files,
 			       unsigned i, const char *restrict const locale)
@@ -7408,6 +7410,8 @@ static void get_stamp_thumb(stamp_type * sd)
 
 
 static void loadstamp_callback(SDL_Surface * screen,
+			       SDL_Texture * texture,
+			       SDL_Renderer * renderer,
 			       const char *restrict const dir,
 			       unsigned dirlen, tp_ftw_str * files,
 			       unsigned i, const char *restrict const locale)
