@@ -744,7 +744,7 @@ static void im_event(IM_DATA* im)
 {
   SDL_Event event;
 
-  //  event.key.keysym = 0;
+  event.key.keysym.sym = 0;
   event.text.text[0] = '\0';
 
   im_read(im, event);
@@ -905,6 +905,12 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
     case SDLK_MODE:    case SDLK_APPLICATION:
       break;
 
+    /* This wasn't needed in SDL1.2 */
+    case SDLK_BACKSPACE:
+      im_fullreset(im);
+      im->s[0] = L'\b';
+      break;
+
     /* Left-Alt & Right-Alt mapped to mode-switch */
     case SDLK_RALT:    case SDLK_LALT:
       cm.section = (++cm.section % SEC_TOTAL);   /* Change section */
@@ -929,6 +935,8 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
 
     /* Actual character processing */
     default:
+	if (event.type == SDL_TEXTINPUT)
+	  {
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
 	mbstowcs(im->s , event.text.text, 16);
@@ -936,84 +944,87 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
 //        im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
-      /* Thai mode */
-      else {
-        wchar_t u = event.text.text[0];
+      /* ZH_TW mode */
+      else 
+	{
+	  wchar_t u;
+	  mbtowc(&u, event.text.text, 255);
 
-        im->s[0] = L'\0';                     /* Zero-out output string */
-        wcsncat(im->buf, &u, 1);              /* Copy new character */
+	  im->s[0] = L'\0';                     /* Zero-out output string */
+	  wcsncat(im->buf, &u, 1);              /* Copy new character */
 
-        /* Translate the characters */
-        im->redraw = 0;
-        while(1) {
-          const wchar_t* us = charmap_search(&cm, im->buf);
-          #ifdef IM_DEBUG
-          wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
-          #endif
-
-          /* Match was found? */
-          if(us && wcslen(us)) {
+	  /* Translate the characters */
+	  im->redraw = 0;
+	  while(1) {
+	    const wchar_t* us = charmap_search(&cm, im->buf);
             #ifdef IM_DEBUG
-            wprintf(L"    1\n");
+	    wprintf(L"  [%8ls] [%8ls] %2d %2d\n", im->s, im->buf, wcslen(im->s), wcslen(im->buf));
             #endif
 
-            wcscat(im->s, us);
+	    /* Match was found? */
+	    if(us && wcslen(us)) {
+              #ifdef IM_DEBUG
+	      wprintf(L"    1\n");
+              #endif
 
-            /* Final match */
-            if(cm.match_is_final) {
-              wcs_lshift(im->buf, cm.match_count);
-              cm.match_count = 0;
-              cm.match_is_final = 0;
-            }
-            /* May need to be overwritten next time */
-            else {
-              im->redraw += wcslen(us);
-              break;
-            }
-          }
-          /* No match, but more data is in the buffer */
-          else if(wcslen(im->buf) > 0) {
-            /* If the input character has no state, it's its own state */
-            if(cm.match_count == 0) {
-              #ifdef IM_DEBUG
-              wprintf(L"    2a\n");
-              #endif
-              wcsncat(im->s, im->buf, 1);
-              wcs_lshift(im->buf, 1);
-              cm.match_is_final = 0;
-            }
-            /* If the matched characters didn't consume all, it's own state */
-            else if((size_t)cm.match_count != wcslen(im->buf)) {
-              #ifdef IM_DEBUG
-              wprintf(L"    2b (%2d)\n", cm.match_count);
-              #endif
-              wcsncat(im->s, im->buf, 1);
-              wcs_lshift(im->buf, 1);
-              cm.match_is_final = 0;
-            }
-            /* Otherwise it's just a part of a future input */
-            else {
-              #ifdef IM_DEBUG
-              wprintf(L"    2c (%2d)\n", cm.match_count);
-              #endif
-              wcscat(im->s, im->buf);
-              cm.match_is_final = 0;
-              im->redraw += wcslen(im->buf);
-              break;
-            }
-          }
-          /* No match and no more data in the buffer */
-          else {
-            #ifdef IM_DEBUG
-            wprintf(L"    3\n");
-            #endif
-            break;
-          }
+	      wcscat(im->s, us);
 
-          /* Is this the end? */
-          if(cm.match_is_final) break;
-        }
-      }
+	      /* Final match */
+	      if(cm.match_is_final) {
+		wcs_lshift(im->buf, cm.match_count);
+		cm.match_count = 0;
+		cm.match_is_final = 0;
+	      }
+	      /* May need to be overwritten next time */
+	      else {
+		im->redraw += wcslen(us);
+		break;
+	      }
+	    }
+	    /* No match, but more data is in the buffer */
+	    else if(wcslen(im->buf) > 0) {
+	      /* If the input character has no state, it's its own state */
+	      if(cm.match_count == 0) {
+                #ifdef IM_DEBUG
+		wprintf(L"    2a\n");
+                #endif
+		wcsncat(im->s, im->buf, 1);
+		wcs_lshift(im->buf, 1);
+		cm.match_is_final = 0;
+	      }
+	      /* If the matched characters didn't consume all, it's own state */
+	      else if((size_t)cm.match_count != wcslen(im->buf)) {
+                #ifdef IM_DEBUG
+		wprintf(L"    2b (%2d)\n", cm.match_count);
+                #endif
+		wcsncat(im->s, im->buf, 1);
+		wcs_lshift(im->buf, 1);
+		cm.match_is_final = 0;
+	      }
+	      /* Otherwise it's just a part of a future input */
+	      else {
+                #ifdef IM_DEBUG
+		wprintf(L"    2c (%2d)\n", cm.match_count);
+                #endif
+		wcscat(im->s, im->buf);
+		cm.match_is_final = 0;
+		im->redraw += wcslen(im->buf);
+		break;
+	      }
+	    }
+	    /* No match and no more data in the buffer */
+	    else {
+              #ifdef IM_DEBUG
+	      wprintf(L"    3\n");
+              #endif
+	      break;
+	    }
+
+	    /* Is this the end? */
+	    if(cm.match_is_final) break;
+	  }
+	}
+  }
   }
 
   return im->redraw;
