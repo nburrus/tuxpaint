@@ -2679,7 +2679,7 @@ static void mainloop(void)
 	        if (texttool_len > 0)
 	        {
 	          texttool_len--;
-	          texttool_str[texttool_len] = 0;
+	          texttool_str[texttool_len] = L'\0';
 	          playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER,
 	          	  SNDDIST_NEAR);
 

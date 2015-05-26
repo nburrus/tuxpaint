@@ -712,6 +712,25 @@ int im_read(IM_DATA* im, SDL_Event event)
   IM_EVENT_FN im_event_fp = NULL;
   int redraw = 0;
 
+  /* FIXME SDL2: This adds text to events that are not meant to carry text.
+     Right procedure would be to modify the different im_event_LL() functions,
+     but for now letting as this as it is what the functions expect. */
+  switch (event.key.keysym.sym)
+    {
+    case SDLK_BACKSPACE:
+      event.text.text[0] = L'\b';
+      event.text.text[1] = L'\0';
+      break;
+    case SDLK_RETURN:
+      event.text.text[0] = L'\r';
+      event.text.text[1] = L'\0';
+      break;
+    case SDLK_TAB:
+      event.text.text[0] = L'\t';
+      event.text.text[1] = L'\0';
+      break;
+    }
+
   /* Sanity check */
   if(im->lang < 0 || im->lang >= NUM_LANGS) {
     fprintf(stderr, "im->lang out of range (%d), using default\n", im->lang);
@@ -905,12 +924,6 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
     case SDLK_MODE:    case SDLK_APPLICATION:
       break;
 
-    /* This wasn't needed in SDL1.2 */
-    case SDLK_BACKSPACE:
-      im_fullreset(im);
-      im->s[0] = L'\b';
-      break;
-
     /* Left-Alt & Right-Alt mapped to mode-switch */
     case SDLK_RALT:    case SDLK_LALT:
       cm.section = (++cm.section % SEC_TOTAL);   /* Change section */
@@ -935,7 +948,7 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
 
     /* Actual character processing */
     default:
-	if (event.type == SDL_TEXTINPUT)
+	if (event.type == SDL_TEXTINPUT|| ks.sym == SDLK_BACKSPACE|| ks.sym == SDLK_RETURN || ks.sym == SDLK_TAB)
 	  {
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
@@ -1317,6 +1330,8 @@ static int im_event_ja(IM_DATA* im, SDL_Event event)
 
     /* Actual character processing */
     default:
+      if (event.type == SDL_TEXTINPUT|| ks.sym == SDLK_BACKSPACE|| ks.sym == SDLK_RETURN || ks.sym == SDLK_TAB)
+	{
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
 	mbstowcs(im->s , event.text.text, 16);
@@ -1403,7 +1418,7 @@ static int im_event_ja(IM_DATA* im, SDL_Event event)
         }
       }
   }
-
+  }
   return im->redraw;
 }
 
@@ -1528,11 +1543,11 @@ static int im_event_ko(IM_DATA* im, SDL_Event event)
 
     /* Actual character processing */
     default:
+      if (event.type == SDL_TEXTINPUT|| ks.sym == SDLK_BACKSPACE|| ks.sym == SDLK_RETURN || ks.sym == SDLK_TAB)
+	{
       /* English mode */
       if(cm.section == SEC_ENGLISH) {
 	mbstowcs(im->s , event.text.text, 16);
-//        im->s[0] = event.text.text[0];
-//      im->s[1] = L'\0';
         im->buf[0] = L'\0';
       }
       /* Hangul mode */
@@ -1661,6 +1676,7 @@ static int im_event_ko(IM_DATA* im, SDL_Event event)
           if(cm.match_is_final) break;
         }
       }
+  }
   }
 
   return im->redraw;
