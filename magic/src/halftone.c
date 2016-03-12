@@ -122,7 +122,7 @@ char * halftone_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
   const char * our_name_localized;
 
   our_name_english = names[which];
-  our_name_localized = gettext(our_name_english);
+  our_name_localized = gettext_noop(our_name_english);
 
   return(strdup(our_name_localized));
 }
@@ -133,7 +133,7 @@ char * halftone_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int
   const char * our_desc_localized;
 
   our_desc_english = descs[which];
-  our_desc_localized = gettext(our_desc_english);
+  our_desc_localized = gettext_noop(our_desc_english);
 
   return(strdup(our_desc_localized));
 }

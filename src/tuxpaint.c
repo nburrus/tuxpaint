@@ -66,7 +66,6 @@
 
 #define MAX_PATH 256
 
-
 /* Compile-time options: */
 
 #include "debug.h"
@@ -186,7 +185,12 @@ static scaleparams scaletable[] = {
 /* On Linux, we can use 'wordexp()' to expand env. vars. in settings
    pulled from config. files */
 #ifdef __linux__
+
+/* However, Android has __linux__ macro but does not support 'wordexp()'*/
+#ifndef __ANDROID__
 #include <wordexp.h>
+#endif
+
 #endif
 
 
@@ -238,7 +242,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <FindDirectory.h>
 #include <fs_info.h>
 #endif
-#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__
+#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__ || defined __ANDROID__
 #include <wchar.h>
 #include <stdbool.h>
 #ifndef __HAIKU__
@@ -310,9 +314,17 @@ extern WrapperData macosx;
 
 #else /* __APPLE__ */
 
-/* Not Windows, not BeOS, not Apple */
+#ifdef __ANDROID__
+
+#include "android_print.h"
+
+#else
+
+/* Not Windows, not BeOS, not Apple, not Android */
 
 #include "postscript_print.h"
+
+#endif /* __ANDROID__ */
 
 #endif /* __APPLE__ */
 
@@ -362,6 +374,7 @@ static void mtw(wchar_t * wtok, char * tok)
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_thread.h"
+
 #if !defined(_SDL_H)
 #error "---------------------------------------------------"
 #error "If you installed SDL from a package, be sure to get"
@@ -371,6 +384,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #endif
 
 #include "SDL2/SDL_image.h"
+
 #if !defined(_SDL_IMAGE_H) && !defined(_IMG_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_image from a package, be sure"
@@ -380,6 +394,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #endif
 
 #include "SDL2/SDL_ttf.h"
+
 #if !defined(_SDL_TTF_H) && !defined(_SDLttf_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_ttf from a package, be sure"
@@ -423,7 +438,9 @@ static void mtw(wchar_t * wtok, char * tok)
 
 
 #ifndef NOSOUND
+
 #include "SDL2/SDL_mixer.h"
+
 #if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_mixer from a package, be sure"
@@ -431,6 +448,7 @@ static void mtw(wchar_t * wtok, char * tok)
 #error "(e.g., 'libsdl-mixer1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
+
 #endif
 
 #ifndef NOSVG
@@ -549,7 +567,7 @@ static void mtw(wchar_t * wtok, char * tok)
 
 //#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) // MINGW/MSYS, NetBSD, and MacOSX need it, at least for now
+#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__) // MINGW/MSYS, NetBSD, and MacOSX need it, at least for now
 #define fmemopen_alternative 
 #endif
 
@@ -907,11 +925,15 @@ static void SDL_UpdateRect(SDL_Surface * screen, Sint32 x, Sint32 y, Sint32 w, S
 
   SDL_UpdateTexture(texture, &r, screen->pixels + (y * screen->pitch + x * 4), screen->pitch);
 
+#if !defined (__ANDROID__)
   //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
   //  SDL_RenderClear(renderer);
   //  SDL_RenderCopy(renderer, texture, NULL, NULL);
   SDL_RenderCopy(renderer, texture, &r, &r);
-
+#else
+  SDL_RenderClear(renderer);
+  SDL_RenderCopy(renderer, texture, NULL, NULL);
+#endif
   SDL_RenderPresent(renderer);
 }
 
@@ -1286,6 +1308,11 @@ static void handle_motioners(int oldpos_x, int oldpos_y, int motioner, int hatmo
 
 static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_y, SDL_Rect real_r_tools);
 
+#ifdef __ANDROID__
+static void start_motion_convert (SDL_Event event);
+static void convert_motion_to_wheel(SDL_Event event);
+static void stop_motion_convert (SDL_Event event);
+#endif
 
 /* Magic tools API and tool handles: */
 
@@ -1348,7 +1375,7 @@ enum {
 static magic_api *magic_api_struct; /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -1456,6 +1483,12 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 #ifdef DEBUG
     printf("Calling SDLPango_SetText(\"%s\")\n", str);
     fflush(stdout);
+#endif
+
+#ifdef __ANDROID__
+    /* FIXME This extrange workaround helps in getting the translations working
+       on 4.3 4.4 */
+    SDLPango_SetLanguage(font->pango_context, "ca");
 #endif
 
     SDLPango_SetDefaultColor(font->pango_context, &pango_color);
@@ -2241,7 +2274,6 @@ static void mainloop(void)
   valhat_y = 0;
   done = 0;
   keyglobal = 0;
-  kbd = NULL;
 
   if  (NUM_TOOLS > 14 + TOOLOFFSET)
   {
@@ -2281,6 +2313,11 @@ static void mainloop(void)
 	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 	      update_screen_rect(&kbd_rect);
 	    }
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	  }
 	}
       }
@@ -2314,16 +2351,16 @@ static void mainloop(void)
 
 #ifdef DEBUG
 // FIXME: debug junk
-	    fprintf(stderr,
-	      "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
-	      (unsigned)key,
-	      (unsigned)mod,
-	      (unsigned)event.key.keysym.unicode,
-	      (int)event.key.keysym.unicode,
-	      (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
-              iswprint(key_unicode)?"":"not ",
-              (unsigned)key_down
-            );
+//	    fprintf(stderr,
+//	      "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
+//	      (unsigned)key,
+//	      (unsigned)mod,
+//	      (unsigned)event.key.keysym.unicode,
+//	      (int)event.key.keysym.unicode,
+//	      (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
+//              iswprint(key_unicode)?"":"not ",
+//              (unsigned)key_down
+//            );
 #endif
 	if (cur_tool == TOOL_STAMP)
 	{
@@ -2341,7 +2378,7 @@ static void mainloop(void)
 	handle_keymouse_buttons(key, &whicht, &whichc, real_r_tools);
 
 
-	if (key == SDLK_ESCAPE && !disable_quit)
+	if ((key == SDLK_ESCAPE ||  key == SDLK_AC_BACK) && !disable_quit)
 	{
           magic_switchout(canvas);
 	  done = do_quit(cur_tool);
@@ -2353,8 +2390,13 @@ static void mainloop(void)
 	    {
 	      if (onscreen_keyboard && kbd)
 	      {
-		SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-		update_screen_rect(&kbd_rect);
+	    	  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+	    	  update_screen_rect(&kbd_rect);
+	      }
+
+	      if (onscreen_keyboard && !kbd)
+	      {
+	    	  SDL_StartTextInput ();
 	      }
 	    }
 	  }
@@ -2382,7 +2424,7 @@ static void mainloop(void)
 	  }
 #endif
 	}
-	else if (key == SDLK_ESCAPE &&
+	else if ((key == SDLK_ESCAPE ||  key == SDLK_AC_BACK) &&
 		 (mod & KMOD_SHIFT) && (mod & KMOD_CTRL))
 	{
           magic_switchout(canvas);
@@ -2493,6 +2535,11 @@ static void mainloop(void)
 	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 	      update_screen_rect(&kbd_rect);
 	    }
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	    draw_shapes();
@@ -2548,6 +2595,11 @@ static void mainloop(void)
 	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 	      update_screen_rect(&kbd_rect);
 	    }
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	    draw_shapes();
@@ -2581,6 +2633,11 @@ static void mainloop(void)
 	    {
 	      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 	      update_screen_rect(&kbd_rect);
+	    }
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
 	    }
 	  }
 
@@ -2616,6 +2673,11 @@ static void mainloop(void)
 	    SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 	    update_screen_rect(&kbd_rect);
 	  }
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	}
 
         draw_toolbar();
@@ -2623,7 +2685,11 @@ static void mainloop(void)
         update_screen_rect(&r_tools);
       }
     }
-	else
+	else  if(event.type == SDL_TEXTINPUT ||
+	           (  event.type == SDL_KEYDOWN &&
+	              (  event.key.keysym.sym == SDLK_BACKSPACE ||
+	                  event.key.keysym.sym == SDLK_RETURN  ||
+	                  event.key.keysym.sym == SDLK_TAB)))
 	{
 	  /* Handle key in text tool: */
 
@@ -2634,17 +2700,17 @@ static void mainloop(void)
 	      wchar_t* im_cp = im_data.s;
 
 #ifdef DEBUG
-	    key_down = key;
-	    key_unicode = event.key.keysym.unicode;
-	    printf(
-	      "character 0x%04x %d <%c> is %d pixels, %sprintable, key_down 0x%x\n",
-	      (unsigned)event.key.keysym.unicode,
-	      (int)event.key.keysym.unicode,
-	      (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
-              (int)charsize(event.key.keysym.unicode),
-              iswprint(key_unicode)?"":"not ",
-              (unsigned)key_down
-            );
+//	    key_down = key;
+//	    key_unicode = event.key.keysym.unicode;
+//	    printf(
+//	      "character 0x%04x %d <%c> is %d pixels, %sprintable, key_down 0x%x\n",
+//	      (unsigned)event.key.keysym.unicode,
+//	      (int)event.key.keysym.unicode,
+//	      (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
+//              (int)charsize(event.key.keysym.unicode),
+//              iswprint(key_unicode)?"":"not ",
+//              (unsigned)key_down
+//            );
 #if 0
             /* this doesn't work for some reason */
 	    wprintf(
@@ -2888,15 +2954,19 @@ static void mainloop(void)
 #endif              
 		im_softreset(&im_data);
 	      }
-	      else if (iswprint(*im_cp) && 
-                       (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL))
+	      else if (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL)
 	      {
+	    	  // iswprintf seems not supported well in Android
+#ifndef  __ANDROID__
+	    	  if (!iswprint(*im_cp))
+	    		  break;
+#endif
 	        if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
 	        {
 	          int old_cursor_textwidth = cursor_textwidth;
 #ifdef DEBUG  
-	          wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
-	          	key_down, key_unicode, key_unicode, key_unicode);
+//	          wprintf(L"    key = <%c>\nunicode = <%lc> 0x%04x %d\n\n",
+//	          	key_down, key_unicode, key_unicode, key_unicode);
 #endif
 
 	          texttool_str[texttool_len++] = *im_cp;
@@ -3097,19 +3167,8 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	    }
 	    else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
 	    {
-	      if (onscreen_keyboard)
+	      if (onscreen_keyboard && kbd)
 	      {
-		if (kbd == NULL)
-		{
-		  if (onscreen_keyboard_layout)
-		    kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
-		  else
-		    kbd = osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
-		}
-		if (kbd == NULL)
-		  printf("kbd = NULL\n");
-		else
-		{
 		  kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w)/2;
 		  if(old_y > canvas->h / 2)
 		    kbd_rect.y = 0;
@@ -3119,7 +3178,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  kbd_rect.h = kbd->surface->h;
 		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		  update_screen_rect(&kbd_rect);
-		}
+	      }
+
+	      if (onscreen_keyboard && !kbd)
+	      {
+	    	  SDL_StartTextInput ();
 	      }
 	      if (!font_thread_done)
 	      {
@@ -3265,6 +3328,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		  update_screen_rect(&kbd_rect);
 		}
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	      }
 	      else if (cur_tool == TOOL_SHAPES)
 		draw_shapes();
@@ -3286,6 +3354,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		  update_screen_rect(&kbd_rect);
 		}
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	      }
 
 	      cur_tool = old_tool;
@@ -3333,6 +3406,12 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		  update_screen_rect(&kbd_rect);
 		}
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+
+	    }
 	      }
               else if (cur_tool == TOOL_SHAPES)
                 draw_shapes();
@@ -3354,6 +3433,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		  update_screen_rect(&kbd_rect);
 		}
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	      }
 
 	      cur_tool = old_tool;
@@ -3372,6 +3456,12 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		  update_screen_rect(&kbd_rect);
 		}
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+
+	    }
 	      }
 
 	      cur_tool = old_tool;
@@ -3842,6 +3932,12 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		      update_screen_rect(&kbd_rect);
 		    }
+
+		    if (onscreen_keyboard && !kbd)
+		    {
+		    	SDL_StartTextInput ();
+
+		    }
 		  }
                   else
                   {
@@ -4163,6 +4259,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		    SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		    update_screen_rect(&kbd_rect);
 		  }
+
+		    if (onscreen_keyboard && !kbd)
+		    {
+		    	SDL_StartTextInput ();
+		    }
 	       }
 
               enable_avail_tools();
@@ -4427,7 +4528,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  }
 		  draw_fonts();
 		  update_screen_rect(&r_toolopt);
-		  if (onscreen_keyboard)
+		  if (onscreen_keyboard && kbd)
 		  {
 		    if (old_y < r_canvas.h/2)
 		      kbd_rect.y = r_canvas.h - kbd->surface->h;
@@ -4437,7 +4538,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		    SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 		    update_screen_rect(&kbd_rect);
 		  }
- 
+
+		  if (onscreen_keyboard && !kbd)
+		  {
+			  SDL_StartTextInput ();
+		  }
                   do_render_cur_text(0);
                   draw_colors(COLORSEL_REFRESH);
                   draw_fonts();
@@ -4460,7 +4565,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	         }
 	       */
 	    }
-	    if (onscreen_keyboard && HIT(kbd_rect) && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+	    if (onscreen_keyboard && kbd && HIT(kbd_rect) && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
 	    {
 	      new_kbd = osk_clicked(kbd, old_x - kbd_rect.x + r_canvas.x, old_y - kbd_rect.y + r_canvas.y);
 	      /* keyboard has changed, erase the old, note that the old kbd has yet been freed. */
@@ -4484,7 +4589,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	      cursor_y = old_y;
 	      cursor_left = old_x;
 
-	      if (onscreen_keyboard && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+	      if (onscreen_keyboard && kbd && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
 	      {
 		if (old_y < r_canvas.h/2)
 	        {
@@ -4509,6 +4614,11 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 		  }
 		}
 	      }
+
+		    if (onscreen_keyboard && !kbd)
+		    {
+		    	SDL_StartTextInput ();
+		    }
 	    }
 
 	    do_render_cur_text(0);
@@ -4544,6 +4654,10 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	  }
 #endif
         }
+
+#ifdef __ANDROID__
+	start_motion_convert (event);
+#endif 
       }
 
       else if (event.type == SDL_MOUSEWHEEL &&
@@ -4980,22 +5094,37 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 			    update_rect.y + update_rect.h);
 	    }
 	  }
-	  else if (onscreen_keyboard && 
-		   (cur_tool == TOOL_TEXT ||
-		    (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT)))
+	  else if (cur_tool == TOOL_TEXT ||
+		    (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
 	  {
+		  if (onscreen_keyboard && kbd)
+		  {
 	    osk_released(kbd);
 	    SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
 	    update_screen_rect(&kbd_rect);
 	    //	    SDL_Flip(screen);
+		  }
+
+	    if (onscreen_keyboard && !kbd)
+	    {
+	    	SDL_StartTextInput ();
+	    }
 	  }
         }
 	button_down = 0;
+
+#ifdef __ANDROID__
+	stop_motion_convert (event);
+#endif 
       }
       else if (event.type == SDL_MOUSEMOTION && !ignoring_motion)
       {
 	new_x = event.button.x - r_canvas.x;
 	new_y = event.button.y - r_canvas.y;
+
+#ifdef __ANDROID__
+	convert_motion_to_wheel (event);
+#endif
 
 	oldpos_x = event.motion.x;
 	oldpos_y = event.motion.y;
@@ -5037,6 +5166,7 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	    {
 	      do_setcursor(cursor_arrow);
 	    }
+
 	    }
 
 	  else
@@ -5112,7 +5242,6 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	  if (num_things > max + TOOLOFFSET)
 	  {
 	    /* Are there scroll buttons? */
-
 	    if (event.button.y < 40 + 24)
 	    {
 	      /* Up button; is it available? */
@@ -5227,18 +5356,22 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
 	  {
 		/* Still pushing button, while moving:
 	       Draw XOR where line will go: */
-	    update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);	
+
 	    line_xor(line_start_x, line_start_y, old_x, old_y);
 
 	    line_xor(line_start_x, line_start_y, new_x, new_y);
 
+#ifndef __ANDROID__
 	    update_screen(line_start_x + r_canvas.x,
 			  line_start_y + r_canvas.y, old_x + r_canvas.x,
 			  old_y + r_canvas.y);
 	    update_screen(line_start_x + r_canvas.x,
 			  line_start_y + r_canvas.y, new_x + r_canvas.x,
 			  new_y + r_canvas.y);
-	    update_screen(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);	
+#else
+	    /* Anyway SDL_UpdateRect() backward compatibility function refreshes all the screen on Android */
+	    SDL_UpdateRect(screen, 0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+#endif	
 	  }
 	  else if (cur_tool == TOOL_SHAPES)
 	  {
@@ -5476,6 +5609,14 @@ printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x, r_tools.y, r_tools.w, r_
                     draw_blinking_cursor();
                 }
         }
+
+    if (cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL)
+    {
+    	if (onscreen_keyboard && !kbd)
+    	{
+    		SDL_StopTextInput ();
+    	}
+    }
 
     if (motioner | hatmotioner)
       handle_motioners(oldpos_x, oldpos_y,motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y); 
@@ -6334,6 +6475,8 @@ void show_version(int details)
   printf("  Built for Maemo  (NOKIA_770)\n");
 #elif OLPC_XO
   printf("  Built for XO  (OLPC_XO)\n");
+#elif __ANDROID__
+  printf("  Built for Android  (__ANDROID__)\n");
 #else
   printf("  Built for POSIX\n");
 #endif
@@ -6450,7 +6593,7 @@ void show_usage(int exitcode)
 #endif
 	  "  %s [--printdelay=SECONDS]\n"
 	  "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 	  "  %s [--papersize PAPERSIZE | --papersize help]\n"
 #endif
 	  "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
@@ -6475,7 +6618,7 @@ void show_usage(int exitcode)
 	  blank,
 #endif
 	  blank, blank,
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 	  blank,
 #endif
 	  blank, blank, blank, blank, blank, blank, blank, blank, blank, blank);
@@ -7601,7 +7744,7 @@ int generate_fontconfig_cache_spinner(SDL_Surface * screen)
 
     while (SDL_PollEvent(&event) > 0) {
       if (event.type == SDL_QUIT ||
-          (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE)) {
+          (event.type == SDL_KEYDOWN && (event.key.keysym.sym == SDLK_ESCAPE || event.key.keysym.sym == SDLK_AC_BACK))) {
         printf("Aborting!\n"); fflush(stdout);
         return(1);
       }
@@ -10050,6 +10193,10 @@ static void reset_avail_tools(void)
     disallow_print = disable_print = 1;
 #endif
 
+#if defined __ANDROID__
+  if (!IsPrinterAvailable())
+    disallow_print = disable_print = 1;
+#endif
 
   /* Disable print? */
 
@@ -12033,7 +12180,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 	  ans = 1;
 	  done = 1;
 	}
-	else if (key == key_n || key == SDLK_ESCAPE)
+	else if (key == key_n || key == SDLK_ESCAPE || key == SDLK_AC_BACK)
 	{
 	  /* N or ESCAPE - No! */
 
@@ -12044,7 +12191,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 	  }
 	  else
 	  {
-	    if (key == SDLK_ESCAPE)
+	    if (key == SDLK_ESCAPE ||  key == SDLK_AC_BACK)
 	    {
 	      /* ESCAPE also simply dismisses if there's no Yes/No
 	         choice: */
@@ -12314,6 +12461,11 @@ static void cleanup(void)
     free_surface(&img_oskenter);
     free_surface(&img_oskcapslock);
     free_surface(&img_oskshift);
+
+    if (kbd)
+    	osk_free (kbd);
+    else
+    	SDL_StopTextInput ();
   }
 
   free_surface(&screen);
@@ -12464,10 +12616,7 @@ static void cleanup(void)
     free(lock_fname);
   }
 
-  if (kbd)
-    osk_free(kbd);
-
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__ANDROID__)
 //  if (papersize != NULL)
 //    free(papersize);
 #endif
@@ -13434,6 +13583,13 @@ static void do_png_embed_data(png_structp png_ptr)
 	  conv[0] = '\0';
 	  fprintf(lfi, "%s",  conv2);
 	}
+#elif defined(__ANDROID__)
+	fprintf(lfi, "%u\n", current_node->save_texttool_len);
+
+	for (i = 0; i < current_node->save_texttool_len; i++)
+	{
+	  fprintf(lfi, "%d ", (int) current_node->save_texttool_str[i]);
+	}
 #else
 	fprintf(lfi, "%u\n", current_node->save_texttool_len);
 
@@ -14364,7 +14520,7 @@ static int do_open(void)
             done = 1;
             playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
           }
-          else if (key == SDLK_ESCAPE)
+          else if (key == SDLK_ESCAPE ||  key == SDLK_AC_BACK)
           {
             /* Go back: */
 
@@ -14501,7 +14657,16 @@ static int do_open(void)
 
             want_erase = 1;
           }
+#ifdef __ANDROID__
+	start_motion_convert (event);
+#endif 
         }
+        else if (event.type == SDL_MOUSEBUTTONUP)
+	{
+#ifdef __ANDROID__
+	stop_motion_convert (event);
+#endif
+	}
         else if (event.type == SDL_MOUSEWHEEL &&
 		 wheely)
         {
@@ -14586,6 +14751,11 @@ static int do_open(void)
 
             do_setcursor(cursor_arrow);
           }
+
+#ifdef __ANDROID__
+	convert_motion_to_wheel (event);
+#endif
+
 	  oldpos_x = event.button.x;
 	  oldpos_y = event.button.y;
 	}
@@ -15366,7 +15536,7 @@ static int do_slideshow(void)
 
 
 	}
-	else if (key == SDLK_ESCAPE)
+	else if (key == SDLK_ESCAPE ||  key == SDLK_AC_BACK)
 	{
 	  /* Go back: */
 
@@ -15533,6 +15703,15 @@ static int do_slideshow(void)
 	  done = 1;
 	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 	}
+#ifdef __ANDROID__
+	start_motion_convert (event);
+#endif
+      }
+      else if (event.type == SDL_MOUSEBUTTONUP)
+      {
+#ifdef __ANDROID__
+	stop_motion_convert (event);
+#endif
       }
       else if (event.type == SDL_MOUSEWHEEL && wheely)
       {
@@ -15613,6 +15792,11 @@ static int do_slideshow(void)
 
 	  do_setcursor(cursor_arrow);
 	}
+
+#ifdef __ANDROID__
+	convert_motion_to_wheel (event);
+#endif
+
 	oldpos_x = event.button.x;
 	oldpos_y = event.button.y;
       }
@@ -15804,7 +15988,7 @@ static void play_slideshow(int * selected, int num_selected, char * dirname,
 	      next = 1;
 	      playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 	    }
-            else if (key == SDLK_ESCAPE)
+            else if (key == SDLK_ESCAPE ||  key == SDLK_AC_BACK)
             {
 	      /* Go back: */
 
@@ -16272,7 +16456,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__) && !defined(__ANDROID__)
   const char *pcmd;
   FILE *pi;
 
@@ -16340,7 +16524,38 @@ void do_print(void)
     do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
   }
   
-#endif
+#elif defined(__ANDROID__) 
+
+  int x, y;
+  Uint8 src_r, src_g, src_b, src_a;
+  SDL_Surface * save_canvas_and =  SDL_CreateRGBSurface(0,
+				WINDOW_WIDTH - (96 * 2),
+				(48 * 7) + 40 + HEIGHTOFFSET,
+				screen->format->BitsPerPixel,
+				screen->format->Rmask,
+				screen->format->Gmask,
+				screen->format->Bmask, 0);
+
+
+  for (x = 0; x<save_canvas->w; x++)
+    for (y = 0; y<save_canvas->h; y++)
+      {
+	SDL_GetRGBA(getpixels[save_canvas->format->BytesPerPixel](save_canvas, x, y),
+		    save_canvas->format, &src_r, &src_g, &src_b, &src_a);
+
+	putpixels[save_canvas_and->format->BytesPerPixel](save_canvas_and, x, y,
+					     SDL_MapRGBA(save_canvas_and->format, src_r, src_g, src_b, SDL_ALPHA_OPAQUE));
+      }
+
+  const char *error = SurfacePrint(save_canvas_and);
+
+  if (error)
+  {
+    fprintf(stderr, "Cannot print: %s\n", error);
+    do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
+  }
+  SDL_FreeSurface(save_canvas_and);
+  #endif
 
 #endif
 }
@@ -17096,7 +17311,7 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
 
 static void handle_active(SDL_Event * event)
 {
-  if (event->window.event == SDL_WINDOWEVENT_EXPOSED)
+  if (event->window.event == SDL_WINDOWEVENT_EXPOSED || SDL_WINDOWEVENT_RESTORED)
   {
     //      if (fullscreen)
 	SDL_Flip(screen);
@@ -17615,7 +17830,7 @@ static SDL_Surface * load_svg(char * file)
 #ifdef DEBUG
     fprintf(stderr, "Unable to allocate image buffer\n");
 #endif
-    g_object_unref(rsvg_handle);
+    rsvg_handle_close(rsvg_handle, &gerr);
     return(NULL);
   }
 
@@ -17631,7 +17846,7 @@ static SDL_Surface * load_svg(char * file)
 #ifdef DEBUG
     fprintf(stderr, "cairo_image_surface_create() failed\n");
 #endif
-    g_object_unref(rsvg_handle);
+    rsvg_handle_close(rsvg_handle, &gerr);
     free(image);
     return(NULL);
   }
@@ -17645,7 +17860,7 @@ static SDL_Surface * load_svg(char * file)
 #ifdef DEBUG
     fprintf(stderr, "cairo_create() failed\n");
 #endif
-    g_object_unref(rsvg_handle);
+    rsvg_handle_close(rsvg_handle, &gerr);
     cairo_surface_destroy(cairo_surf);
     free(image);
     return(NULL);
@@ -17681,7 +17896,7 @@ static SDL_Surface * load_svg(char * file)
 #ifdef DEBUG
     fprintf(stderr, "SDL_CreateRGBSurfaceFrom() failed\n");
 #endif
-    g_object_unref(rsvg_handle);
+    rsvg_handle_close(rsvg_handle, &gerr);
     cairo_surface_destroy(cairo_surf);
     free(image);
     cairo_destroy(cr);
@@ -17697,7 +17912,7 @@ static SDL_Surface * load_svg(char * file)
 #ifdef DEBUG
     fprintf(stderr, "SDL_DisplayFormatAlpha() failed\n");
 #endif
-    g_object_unref(rsvg_handle);
+    rsvg_handle_close(rsvg_handle, &gerr);
     cairo_surface_destroy(cairo_surf);
     free(image);
     cairo_destroy(cr);
@@ -17713,7 +17928,7 @@ static SDL_Surface * load_svg(char * file)
 
   /* Clean up: */
 
-  g_object_unref(rsvg_handle);
+  rsvg_handle_close(rsvg_handle, &gerr);
   cairo_surface_destroy(cairo_surf);
   free(image);
   cairo_destroy(cr);
@@ -17972,6 +18187,10 @@ static void load_magic_plugins(void)
 	    strcpy(objname, f->d_name);
             strcpy(strchr(objname, '.'), "");
 
+#if defined(__ANDROID__)
+	    // since Android compiles magic tools with name like "libxxx.so", here we shall exclude the prefix "lib".
+	    strcpy(objname, objname + 3);
+#endif
 
 	    magic_handle[num_plugin_files] = SDL_LoadObject(fname);
 	  
@@ -19223,7 +19442,7 @@ static int do_new_dialog(void)
 	  done = 1;
 	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
 	}
-	else if (key == SDLK_ESCAPE)
+	else if (key == SDLK_ESCAPE ||  key == SDLK_AC_BACK)
 	{
 	  /* Go back: */
 
@@ -19325,6 +19544,15 @@ static int do_new_dialog(void)
 	  done = 1;
 	  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 	}
+#ifdef __ANDROID__
+	start_motion_convert (event);
+#endif
+      }
+      else if (event.type == SDL_MOUSEBUTTONUP)
+      {
+#ifdef __ANDROID__
+	stop_motion_convert (event);
+#endif
       }
       else if (event.type == SDL_MOUSEWHEEL && wheely)
       {
@@ -19409,6 +19637,11 @@ static int do_new_dialog(void)
 
 	  do_setcursor(cursor_arrow);
 	}
+
+#ifdef __ANDROID__
+	convert_motion_to_wheel (event);
+#endif
+
 	oldpos_x = event.button.x;
 	oldpos_y = event.button.y;
       }
@@ -20378,7 +20611,7 @@ static int do_color_picker(void)
 
         handle_keymouse(key, SDL_KEYDOWN, 24, &r_color_picker, NULL);
 
-        if (key == SDLK_ESCAPE)
+        if (key == SDLK_ESCAPE ||  key == SDLK_AC_BACK)
         {
           chose = 0;
           done = 1;
@@ -21185,6 +21418,13 @@ static void load_info_about_label_surface(FILE * lfi)
 		  new_node->save_texttool_str[l] = wtmpstr[l];
 		}
 
+#elif defined(__ANDROID__)
+            for(l = 0; l < new_node->save_texttool_len; l++)
+                {
+                    fscanf(lfi, "%d ", &tmp_char);
+                    new_node->save_texttool_str[l] = tmp_char;
+                }
+            fscanf(lfi, "\n");
 #else
             for(l = 0; l < new_node->save_texttool_len; l++)
                 {
@@ -22085,7 +22325,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /////////////////////////////////////////////////////////////////////////////
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 static void show_available_papersizes(int exitcode)
 {
   FILE *fi = exitcode ? stderr : stdout;
@@ -22259,7 +22499,7 @@ static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 static void setup_config(char *argv[])
 {
   char str[128];
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(__ANDROID__)
   const char *home = getenv("HOME");
 #endif
 
@@ -22283,7 +22523,7 @@ static void setup_config(char *argv[])
         
         /* Set default options: */
 
-#ifndef _WIN32
+#if !defined(_WIN32) && !defined(__ANDROID__)
   if(!home)
   {
     /* Woah, don't know where $HOME is? */
@@ -22309,6 +22549,8 @@ static void setup_config(char *argv[])
     asprintf((char**)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
     savedir = strdup(macosx.preferencesPath);
+#elif __ANDROID__
+    savedir = SDL_AndroidGetExternalStoragePath();
 #else
     asprintf((char**)&savedir, "%s/%s", home, ".tuxpaint");
 #endif
@@ -22325,7 +22567,10 @@ static void setup_config(char *argv[])
 #elif defined(__APPLE__)
   /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
   snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
-
+#elif defined(__ANDROID__)
+  /* Try to find the first config file: /mnt/sdcard/Android/data/org.tuxpaint/files/tuxpaint.cfg */
+  // Donot rely on this file unless you want to override another tuxpaint.cfg in the internal path for debug
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir);
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
   // it should it be "~/.tuxpaint/tuxpaintrc" instead, but too late now
@@ -22352,6 +22597,11 @@ static void setup_config(char *argv[])
           /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint application support folder */
         snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.globalPreferencesPath);
         parse_file_options(&tmpcfg_sys, str);
+#elif defined(__ANDROID__)
+      /* Try to find the second config file:  /data/data/org.tuxpaint/files/tuxpaint.cfg  */
+     /* This file is unzipped from "assets/tuxpaint.zip" and will be modified when users want to set differnt configuraion*/
+    snprintf(str, sizeof(str), "%s/tuxpaint.cfg", SDL_AndroidGetInternalStoragePath());
+    parse_file_options(&tmpcfg_sys, str);
 #else
     // normally /etc/tuxpaint/tuxpaint.conf
     parse_file_options(&tmpcfg_sys, CONFDIR "tuxpaint.conf");
@@ -23336,6 +23586,33 @@ static void setup(void)
     if ( native_screensize)
     {
       SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
+
+      /* Tuxpaint goes wrong under 500x480.
+	 Scale it using SDL2 features */
+      if (ww < 500 || hh < 480)
+      {
+	float window_scale_w = 1.;
+	float window_scale_h = 1.;
+
+	window_scale_w = 501.f/ww;
+	window_scale_h = 481.f/hh;
+
+	if (window_scale_w > window_scale_h)
+        {
+	  /* Keep things squared */
+	  ww = window_scale_w * ww;
+	  hh = window_scale_w * hh;
+
+	  SDL_RenderSetScale(renderer, window_scale_w, window_scale_w);
+	}
+	else
+	{
+	  ww = window_scale_h * ww;
+	  hh = window_scale_h * hh;
+
+	  SDL_RenderSetScale(renderer, window_scale_h, window_scale_h);
+	}
+      }
     }
     else
     {
@@ -23883,7 +24160,20 @@ VIDEO_BPP, SDL_SWSURFACE);*/
     img_oskcapslock = loadimage(DATA_PREFIX "images/ui/osk_capslock.png");
     img_oskshift = loadimage(DATA_PREFIX "images/ui/osk_shift.png");
 
+    if (onscreen_keyboard_layout)
+    {
+        // use platform system onscreen keybord or tuxpaint onscreen keybord
+	  if (strcmp(onscreen_keyboard_layout, "SYSTEM") == 0)
+		  kbd = NULL;
+	  else
+		  kbd = osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
+    }
+    else
+    {
+    	kbd = osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav, img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
+    }
   }
+
   show_progress_bar(screen);
 
 
@@ -24219,8 +24509,9 @@ static void claim_to_be_ready(void)
 
   do_setcursor(cursor_arrow);
   playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+#if !defined (__ANDROID__)
   do_wait(50);			/* about 5 seconds */
-
+#endif
 
   /* Set defaults! */
 
@@ -24305,8 +24596,14 @@ int main(int argc, char *argv[])
   // do not add code (slowness) here unless required for scanning fonts
   progname = argv[0];
         
-#if defined(DEBUG) && defined(__APPLE__)                //EP added block to log messages
+#if defined(DEBUG)            //EP added block to log messages
+
+#if defined(__APPLE__)
   freopen("/tmp/tuxpaint.log", "w", stdout);    // redirect stdout to a file
+#elif defined(__ANDROID__)
+  freopen("/mnt/sdcard/tuxpaint/tuxpaint.log", "w", stdout);    // redirect stdout to a file
+#endif
+
   dup2(fileno(stdout), fileno(stderr));                 // redirect stderr to stdout
   setvbuf(stdout, NULL, _IONBF, 0);     // we don't want buffering to avoid de-sync'ing stdout and stderr
   setvbuf(stderr, NULL, _IONBF, 0);     // we don't want buffering to avoid de-sync'ing stdout and stderr
@@ -24315,7 +24612,7 @@ int main(int argc, char *argv[])
   strftime(logTime, sizeof(logTime), "%A %d/%m/%Y %H:%M:%S", localtime(&t));
   printf("Tux Paint log - %s\n", logTime);
 #endif
-        
+
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
@@ -24841,3 +25138,101 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
   if (!ignore)
     SDL_PushEvent(&ev);
 }
+
+/*
+ * When moving on some cases of supporting scroll wheel, including
+ * the coming SDL_MOUSEMOTION events will be converted to SDL_MOUSEWHEEL
+ *
+ * Currently motion_dx is not used, since only scroll up and down is support.
+ */
+int motion_convert;
+int motion_dx, motion_dy;
+
+static void start_motion_convert (SDL_Event event) {
+	if(event.type != SDL_MOUSEBUTTONDOWN)
+		return;
+
+	int scroll = 0;
+	if (HIT(r_tools))
+		scroll = 1;
+	else if (HIT(r_toolopt) && (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
+			cur_tool == TOOL_LINES || cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
+			cur_tool == TOOL_LABEL || cur_tool == TOOL_MAGIC))
+		scroll = 1;
+	else if ((cur_tool == TOOL_OPEN) && HIT(r_canvas))
+		scroll = 1;
+	else if ((cur_tool == TOOL_NEW) && HIT(r_canvas))
+		scroll = 1;
+
+	if (scroll != 1)
+		return;
+
+	motion_convert = 1;
+	motion_dx = motion_dy = 0;
+}
+
+#ifdef __ANDROID__
+static void stop_motion_convert (SDL_Event event) {
+	if(event.type != SDL_MOUSEBUTTONUP)
+		return;
+
+	motion_convert = 0;
+	motion_dx = motion_dy = 0;
+}
+
+static void convert_motion_to_wheel (SDL_Event event) {
+	if(event.type != SDL_MOUSEMOTION)
+		return;
+
+	if (motion_convert == 0)
+		return;
+
+	int scroll = 0;
+	int high = 0;
+	if (HIT(r_tools))
+	{
+		scroll = 1;
+		high = 48;
+	}
+	else if (HIT(r_toolopt) && (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
+			cur_tool == TOOL_LINES || cur_tool == TOOL_SHAPES || cur_tool == TOOL_TEXT ||
+			cur_tool == TOOL_LABEL || cur_tool == TOOL_MAGIC))
+	{
+		scroll = 1;
+		high = 48;
+	}
+	else if ((cur_tool == TOOL_OPEN) && HIT(r_canvas))
+	{
+		scroll = 1;
+		high = THUMB_H;
+	}
+	else if ((cur_tool == TOOL_NEW) && HIT(r_canvas))
+	{
+		scroll = 1;
+		high = THUMB_H;
+	}
+
+	if (scroll != 1)
+		return;
+
+	motion_dx +=  event.button.x - oldpos_x;
+	motion_dy +=  event.button.y - oldpos_y;
+
+	if (motion_dy > 0)
+	{
+		while (motion_dy - high > 0)
+		{
+			SDL_SendMouseWheel (NULL, event.motion.which, 0, 1);
+			motion_dy -= high;
+		}
+	}
+	else
+	{
+		while (motion_dy + high < 0)
+		{
+			SDL_SendMouseWheel (NULL, event.motion.which, 0, -1);
+			motion_dy += high;
+		}
+	}
+}
+#endif
