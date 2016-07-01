@@ -20028,7 +20028,7 @@ static int do_color_sel(void)
 
 
 #ifndef NO_PROMPT_SHADOWS
-    alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA,
+    alpha_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
 				      r_color_sel.w,
 				      r_color_sel.h,
 				      screen->format->BitsPerPixel,
@@ -20040,7 +20040,7 @@ static int do_color_sel(void)
     if (alpha_surf != NULL)
     {
       SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetAlpha(alpha_surf, SDL_SRCALPHA, 64);
+      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
 
       for (i = 8; i > 0; i = i - 2)
       {
@@ -20595,7 +20595,7 @@ static int do_color_picker(void)
         chose = 0;
         done = 1;
       }
-      else if (event.type == SDL_ACTIVEEVENT)
+      else if (event.type == SDL_WINDOWEVENT)
       {
         handle_active(&event);
       }
