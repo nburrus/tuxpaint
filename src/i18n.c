@@ -47,6 +47,29 @@
 #include <wctype.h>
 #endif
 
+#ifdef __ANDROID__
+#include "SDL2/SDL.h"
+#include "jni.h"
+// since setlocale on the Android is not supported well,
+// setlocale cannot get current default locale of the device.
+// Here, JNI and Java Locale class can get the default locale
+// if user has not set locale and lang in the config file yet.
+static char * android_locale ()
+{
+	static char android_locale_buf[32];
+	JNIEnv *mEnv = Android_JNI_GetEnv();
+    jclass mLocaleClass = (*mEnv)->FindClass(mEnv, "java/util/Locale");
+    jmethodID mGetDefaultMethod = (*mEnv)->GetStaticMethodID(mEnv, mLocaleClass, "getDefault", "()Ljava/util/Locale;");
+    jobject mLocaleObject = (*mEnv)->CallStaticObjectMethod(mEnv, mLocaleClass, mGetDefaultMethod);
+    jmethodID mToStringMethod = (*mEnv)->GetMethodID(mEnv, mLocaleClass, "toString", "()Ljava/lang/String;");
+    jstring mLocaleString = (*mEnv)->CallObjectMethod(mEnv, mLocaleObject, mToStringMethod);
+    const char* locale = (*mEnv)->GetStringUTFChars(mEnv, mLocaleString, 0);
+    strcpy(android_locale_buf, locale);
+    (*mEnv)->ReleaseStringUTFChars(mEnv, mLocaleString, locale);
+    printf("android locale %s\n", android_locale_buf);
+    return android_locale_buf;
+}
+#endif
 
 /* Globals: */
 
@@ -974,7 +997,7 @@ printf ("Locale AFTER is: %s\n", setlocale(LC_ALL,NULL));//EP
   loc = setlocale(LC_MESSAGES, NULL);
 #endif
 
-  if (strcmp(oldloc, "") != 0 && strcmp(loc, oldloc) != 0) {
+  if (oldloc && loc && strcmp(oldloc, "") != 0 && strcmp(loc, oldloc) != 0) {
     /* System doesn't recognize that locale!  Hack, per Albert C., is to set LC_ALL to a valid UTF-8 locale, then set LANGUAGE to the locale we want to force -bjk 2010.10.05 */
 
     /* Albert's comments from December 2009:
@@ -1103,14 +1126,21 @@ int setup_i18n(const char *restrict lang, const char *restrict locale)
       exit(0);
     }
   }
-  else
-    locale = "";
 
   if(lang)
     locale = language_to_locale(lang);
+
 #ifdef __APPLE__
   patch_i18n(locale);   //EP
 #endif
+
+#ifdef __ANDROID__
+  if(locale == NULL)
+	  locale = android_locale();
+#endif
+
+  if(locale == NULL)
+	  locale = "";
   return set_current_language(locale);
 }
 

@@ -20127,14 +20127,17 @@ static int do_color_sel(void)
   done = 0;
   chose = 0;
   x = y = 0;
+#ifndef __ANDROID__
+  /* FIXME: Strangely, this SDL_WarpMouse makes further event.button.x/y to be 0 on Android, thus making the selector unresponsive.
+     Needs testing on other operating sistems with touchscreen.  */
   SDL_WarpMouse(r_color_sel.x + r_color_sel.w / 2, r_color_sel.y + r_color_sel.h / 2);
-
+#endif
   do
   {
     while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
-      {
+	{
         chose = 0;
         done = 1;
       }
@@ -20162,7 +20165,7 @@ static int do_color_sel(void)
       }
       else if (event.type == SDL_MOUSEBUTTONUP &&
 	       valid_click(event.button.button))
-      {
+	{
         if (event.button.x >= r_canvas.x &&
 	    event.button.x < r_canvas.x + r_canvas.w &&
             event.button.y >= r_canvas.y &&

@@ -41,9 +41,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <wchar.h>
-
+#include <assert.h>  
 #include "im.h"
 
+#ifdef __ANDROID__
+#include "android_mbstowcs.h"
+#endif
 
 
 /* ***************************************************************************
@@ -673,9 +676,9 @@ static int im_event_c(IM_DATA* im, SDL_Event event)
 
   /* Handle key stroke */
   switch(ks.sym) {
-    case SDLK_BACKSPACE: im->s[0] = L'\b'; break;
-    case SDLK_TAB:       im->s[0] = L'\t'; break;
-    case SDLK_RETURN:    im->s[0] = L'\r'; break;
+    case SDLK_BACKSPACE: im->s[0] = L'\b'; im->s[1] = L'\0'; break;
+    case SDLK_TAB:       im->s[0] = L'\t'; im->s[1] = L'\0'; break;
+    case SDLK_RETURN:    im->s[0] = L'\r'; im->s[1] = L'\0'; break;
   default:             mbstowcs(im->s , event.text.text, 16);
 	  //default:             wcsncpy(im->s , event.text.text, 16);
   }
@@ -960,8 +963,7 @@ static int im_event_zh_tw(IM_DATA* im, SDL_Event event)
       /* ZH_TW mode */
       else 
 	{
-	  wchar_t u;
-	  mbtowc(&u, event.text.text, 255);
+      wchar_t u = event.text.text[0];
 
 	  im->s[0] = L'\0';                     /* Zero-out output string */
 	  wcsncat(im->buf, &u, 1);              /* Copy new character */
@@ -1717,7 +1719,7 @@ void im_init(IM_DATA* im, int lang)
 
   #ifdef DEBUG
   assert(0 <= im->lang && im->lang < NUM_LANGS);
-  if(im_event_fp) printf("Initializing IM for %s...\n", lang_prefixes[im->lang]);
+  if(im_initialized) printf("Initializing IM for %s...\n", lang_prefixes[im->lang]);
   #endif
 
   /* Initialize the individual IM */
