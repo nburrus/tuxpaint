@@ -1079,6 +1079,11 @@ $Id$
   * OLPC XO-1 laptop
     Albert Cahalan <albert@users.sf.net>
 
+  * SDL2 
+    Pere Pujal i Carabantes
+
+  * Android
+    JianWei Zhang as contribution in the GSoC 2015
 
 * Support / Testers
 
