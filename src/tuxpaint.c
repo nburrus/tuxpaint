@@ -571,7 +571,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #endif
 
 
-int TP_EventFilter(const SDL_Event * event);
+int TP_EventFilter(void *data, const SDL_Event * event);
 
 
 /* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
@@ -2361,9 +2361,9 @@ static void mainloop(void)
                       "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
                       (unsigned)key,
                       (unsigned)mod,
-                      (unsigned)event.key.keysym.unicode,
-                      (int)event.key.keysym.unicode,
-                      (key_unicode > ' ' && key_unicode < 127) ? (char)event.key.keysym.unicode : ' ',
+                      (unsigned)event.text.text,
+                      (int)event.text.text,
+                      (key_unicode > ' ' && key_unicode < 127) ? (char)event.text.text : ' ',
                       iswprint(key_unicode) ? "" : "not ", (unsigned)key_down);
 #endif
               if (cur_tool == TOOL_STAMP)
