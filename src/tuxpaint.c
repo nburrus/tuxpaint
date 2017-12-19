@@ -113,6 +113,7 @@
 
 static unsigned draw_colors(unsigned action);
 
+
 /* hide all scale-related values here */
 typedef struct scaleparams
 {
@@ -568,6 +569,10 @@ static void mtw(wchar_t * wtok, char *tok)
 )
 #endif
 #endif
+
+
+int TP_EventFilter(const SDL_Event * event);
+
 
 /* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
@@ -1852,7 +1857,6 @@ static void rect_xor(int x1, int y1, int x2, int y2);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
 
-static void reset_brush_counter_and_frame(void);
 static void reset_brush_counter(void);
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
@@ -5735,12 +5739,6 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
     {
       update_canvas(orig_x1 - (w >> 1), orig_y1 - (h >> 1), orig_x2 + (w >> 1), orig_y2 + (h >> 1));
     }
-}
-
-void reset_brush_counter_and_frame(void)
-{
-  brush_counter = 999;
-  brush_frame = 0;
 }
 
 void reset_brush_counter(void)
@@ -13209,7 +13207,10 @@ static void do_png_embed_data(png_structp png_ptr)
   unsigned char *chunk_data;
   Bytef *compressed_data;
 
-  char *ldata, *fname;
+#ifdef fmemopen_alternative
+  char *fname;
+#endif
+  char *ldata;
   FILE *lfi;
   int list_ctr = 0;
   Uint32 pix;
@@ -20990,8 +20991,9 @@ static void load_info_about_label_surface(FILE * lfi)
   float new_to_old_ratio;
   int old_pos;
   int new_pos;
-  int x, y, pix_size;
+  int x, y;
   int tmp_fscanf_return;
+  char * tmp_fgets_return;
   Uint8 a;
 
   /* Clear label surface */
@@ -21006,13 +21008,12 @@ static void load_info_about_label_surface(FILE * lfi)
   have_to_rec_label_node = FALSE;
 
 
-
-//    lfi = fopen(lfname, "r");
   if (lfi == NULL)
     return;
   tmp_fscanf_return = fscanf(lfi, "%d\n", &list_ctr);
   tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_scale_w);
   tmp_fscanf_return = fscanf(lfi, "%d\n\n", &tmp_scale_h);
+  (void)tmp_fscanf_return;
 
   old_width = tmp_scale_w;
   old_height = tmp_scale_h;
@@ -21098,7 +21099,8 @@ static void load_info_about_label_surface(FILE * lfi)
       new_node->save_cur_font = 0;
 
       new_node->save_font_type = malloc(64);
-      tmp_fscanf_return = fgets(new_node->save_font_type, 64, lfi);
+      tmp_fgets_return = fgets(new_node->save_font_type, 64, lfi);
+      (void)tmp_fgets_return;
 
       tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
       tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
@@ -21673,7 +21675,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
              blured when scaled one)*/
           for (u = 0; u < num_unknowns; u++)
             {
-              printf("%s, %d\n", unknowns[u].name, unknowns[u].size);
+              printf("%s, %d\n", unknowns[u].name, (int) unknowns[u].size);
 
               if (chunk_is_valid("tpDT", unknowns[u]))
                 {
@@ -21696,6 +21698,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                   CHAR_PTR_TMP = fgets(control, 49, fi);
                   CHAR_PTR_TMP = fgets(control, 49, fi);
                   CHAR_PTR_TMP = fgets(control, 49, fi);
+                  (void)CHAR_PTR_TMP;
                   free(control);
 
                   /* fi will be closed in load_starter_id() */
@@ -22618,7 +22621,6 @@ application support folder */
     }
   if (tmpcfg.joystick_buttons_ignore)
     {
-      int i;
       char *token;
 
       token = strtok(tmpcfg.joystick_buttons_ignore, ",");
@@ -22627,7 +22629,7 @@ application support folder */
           if (strtof(token, NULL) < 0 || strtof(token, NULL) > 254)
             {
               /* FIXME: Find better exit code */
-              printf("Joystick buttons must be between 0 and 254", tmpcfg.joystick_button_print);
+              printf("Joystick buttons must be between 0 and 254 (don't like %s)", tmpcfg.joystick_buttons_ignore);
               exit(1);
             }
           joystick_buttons_ignore[joystick_buttons_ignore_len++] = strtof(token, NULL);
@@ -24181,14 +24183,16 @@ static void claim_to_be_ready(void)
 
 int main(int argc, char *argv[])
 {
-  int i;
+#ifdef DEBUG
   CLOCK_TYPE time1;
   CLOCK_TYPE time2;
-  CLOCK_TYPE time3;
+#endif
 
   (void)argc;
 
+#ifdef DEBUG
   CLOCK_ASM(time1);
+#endif
 
   /* do not add code (slowness) here unless required for scanning fonts */
   progname = argv[0];
@@ -24209,7 +24213,10 @@ int main(int argc, char *argv[])
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
+#ifdef DEBUG
   CLOCK_ASM(time2);
+#endif
+
 #ifdef FORKED_FONTS
   /* must start ASAP, but depends on locale which in turn needs the config */
 #ifdef NO_SDLPANGO
@@ -24244,8 +24251,6 @@ int main(int argc, char *argv[])
 
   /* Set up! */
   setup();
-
-  CLOCK_ASM(time3);
 
 #ifdef DEBUG
   printf("Seconds in early start-up: %.3f\n", (double)(time2 - time1) / CLOCK_SPEED);
@@ -24420,6 +24425,7 @@ static int trash(char *path)
 
   /* FIXME: Is this sufficient to find 'dbus-send' (rely on system to use $PATH?) -bjk 2011.04.18 */
   tmp = system("dbus-send / org.kde.KDirNotify.FilesAdded string:trash:/");
+  (void)tmp;
 
 
   /* Note: GNOME figures out when things change because it asks the Kernel
