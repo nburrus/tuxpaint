@@ -47,21 +47,21 @@
 #endif
 
 #ifndef VIDEO_BPP
-                           /*# define VIDEO_BPP 15 *//* saves memory */
-                           /*# define VIDEO_BPP 16 *//* causes discoloration */
-                           /*# define VIDEO_BPP 24 *//* compromise */
+                                                     /*# define VIDEO_BPP 15 *//* saves memory */
+                                                     /*# define VIDEO_BPP 16 *//* causes discoloration */
+                                                     /*# define VIDEO_BPP 24 *//* compromise */
 #define VIDEO_BPP 32            /* might be fastest, if conversion funcs removed */
 #endif
 
 
-                               /* #define CORNER_SHAPES *//* need major work! */
+                                                          /* #define CORNER_SHAPES *//* need major work! */
 
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS          /* Direct to PostScript */
-                                     /*#define PRINTMETHOD_PNM_PS*//* Output PNM, assuming it gets printed */
-                                     /*#define PRINTMETHOD_PNG_PNM_PS*//* Output PNG, assuming it gets printed */
+                                                                   /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
+                                                                       /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
 
 
 #define MAX_PATH 256
@@ -302,20 +302,6 @@ typedef struct safer_dirent
 
 #else /* __BEOS__ */
 
-/* Not BeOS */
-
-#ifdef __APPLE__
-
-/* Apple */
-
-#include "macosx_print.h"
-#include "message.h"
-#include "speech.h"
-#include "wrapperdata.h"
-extern WrapperData macosx;
-
-#else /* __APPLE__ */
-
 #ifdef __ANDROID__
 
 #define AUTOSAVE_GOING_BACKGROUND
@@ -323,13 +309,11 @@ extern WrapperData macosx;
 
 #else
 
-/* Not Windows, not BeOS, not Apple, not Android */
+/* Not Windows, not BeOS, not Android */
 
 #include "postscript_print.h"
 
 #endif /* __ANDROID__ */
-
-#endif /* __APPLE__ */
 
 #endif /* __BEOS__ */
 
@@ -372,6 +356,10 @@ static void mtw(wchar_t * wtok, char *tok)
 }
 
 #endif /* WIN32 */
+
+#ifdef __APPLE__
+#include "macos.h"
+#endif
 
 #include <errno.h>
 #include <sys/stat.h>
@@ -574,7 +562,7 @@ static void mtw(wchar_t * wtok, char *tok)
 int TP_EventFilter(void *data, const SDL_Event * event);
 
 
-/* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+                                   /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
 #if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
@@ -649,7 +637,7 @@ enum
   LABEL_OFF,
   LABEL_LABEL,
   LABEL_SELECT
-  /* , LABEL_ROTATE */
+    /* , LABEL_ROTATE */
 };
 
 
@@ -688,7 +676,7 @@ typedef struct
   Uint8 rows, cols;
 } grid_dims;
 
-                                /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+                                                               /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
 static SDL_Rect r_canvas;       /* was 448x376 @ 96,0 */
 static SDL_Rect r_tools;        /* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
@@ -713,7 +701,7 @@ static grid_dims gd_tools;      /* was 2x7 */
 static grid_dims gd_sfx;
 static grid_dims gd_toolopt;    /* was 2x7 */
 
-                                  /* static grid_dims gd_open; *//* was 4x4 */
+                                                                 /* static grid_dims gd_open; *//* was 4x4 */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
@@ -1369,7 +1357,7 @@ enum
 static magic_api *magic_api_struct;     /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -2647,14 +2635,6 @@ static void mainloop(void)
 
                   magic_switchin(canvas);
                 }
-#ifdef __APPLE__
-              else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) && !noshortcuts)
-                {
-                  /* Ctrl-Shft-P - Page Setup */
-                  if (!disable_print)
-                    DisplayPageSetup(canvas);
-                }
-#endif
               else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
                 {
                   /* Ctrl-P - Print */
@@ -2810,7 +2790,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -2924,7 +2904,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -3651,11 +3631,9 @@ static void mainloop(void)
                                   old_size = stamp_data[stamp_group][cur_stamp[stamp_group]]->size;
 
                                   stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
-                                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE +
-                                       1
+                                    (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1
                                        /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
-                                       ) * (event.button.x -
-                                            (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
+                                      ) * (event.button.x - (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
 
 #ifdef DEBUG
                                   printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
@@ -4086,11 +4064,11 @@ static void mainloop(void)
 
                           /* FIXME */
                           /*
-                          snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
-                              TTF_FontFaceFamilyName(getfonthandle(cur_font)),
-                              TTF_FontFaceStyleName(getfonthandle(cur_font)));
-                          draw_tux_text(TUX_GREAT, font_tux_text, 1);
-                          */
+                             snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
+                             TTF_FontFaceFamilyName(getfonthandle(cur_font)),
+                             TTF_FontFaceStyleName(getfonthandle(cur_font)));
+                             draw_tux_text(TUX_GREAT, font_tux_text, 1);
+                           */
 
                           if (do_draw)
                             draw_fonts();
@@ -5514,12 +5492,11 @@ static void mainloop(void)
                       w = CUR_STAMP_W;
                       h = CUR_STAMP_H;
 
-                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size =
-                        (((MAX_STAMP_SIZE - MIN_STAMP_SIZE +
-                           1
-                           /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
-                           ) * (event.button.x -
-                                (WINDOW_WIDTH - 96))) / 96) + MIN_STAMP_SIZE;
+                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size = (((MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1
+                                                                                 /* +1 to address lack of ability to get back to max default stamp size (SF Bug #1668235 -bjk 2011.01.08) */
+                                                                                ) * (event.button.x -
+                                                                                     (WINDOW_WIDTH - 96))) / 96) +
+                        MIN_STAMP_SIZE;
 
 #ifdef DEBUG
                       printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
@@ -7586,7 +7563,7 @@ static void loadstamp_callback(SDL_Surface * screen,
       show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
-          && (dotext - files[i].str + 1 + dirlen < (int) (sizeof fname))
+          && (dotext - files[i].str + 1 + dirlen < (int)(sizeof fname))
           && !strcasestr(files[i].str, mirror_ext)
           && !strcasestr(files[i].str, flip_ext) && !strcasestr(files[i].str, mirrorflip_ext))
         {
@@ -7642,6 +7619,7 @@ static void load_stamps(SDL_Surface * screen)
   load_stamp_dir(screen, homedirdir);
   load_stamp_dir(screen, DATA_PREFIX "stamps");
 #ifdef __APPLE__
+  load_stamp_dir(screen, "Resources/stamps");
   load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
 #endif
 #ifdef WIN32
@@ -13509,8 +13487,8 @@ static void do_png_embed_data(png_structp png_ptr)
                 for (y = 0; y < current_node->save_height; y++)
                   {
                     pix =
-                      getpixels[current_node->label_node_surface->format->BytesPerPixel] (current_node->
-                                                                                          label_node_surface, x, y);
+                      getpixels[current_node->label_node_surface->format->
+                                BytesPerPixel] (current_node->label_node_surface, x, y);
                     SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
                     fwrite(&a, alpha_size, 1, lfi);
 
@@ -16256,7 +16234,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
   const char *pcmd;
   FILE *pi;
 
@@ -16308,17 +16286,6 @@ void do_print(void)
   /* BeOS */
 
   SurfacePrint(save_canvas);
-#elif defined(__APPLE__)
-  /* Mac OS X */
-  int show = ((want_alt_printcommand || macosx.menuAction) && !fullscreen);
-
-  const char *error = SurfacePrint(save_canvas, show);
-
-  if (error)
-    {
-      fprintf(stderr, "Cannot print: %s\n", error);
-      do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
-    }
 
 #elif defined(__ANDROID__)
 
@@ -16352,6 +16319,7 @@ void do_print(void)
       do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
     }
   SDL_FreeSurface(save_canvas_and);
+
 #endif
 
 #endif
@@ -20993,7 +20961,7 @@ static void load_info_about_label_surface(FILE * lfi)
   int new_pos;
   int x, y;
   int tmp_fscanf_return;
-  char * tmp_fgets_return;
+  char *tmp_fgets_return;
   Uint8 a;
 
   /* Clear label surface */
@@ -21672,10 +21640,10 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
           /* First we search for the things that usually were in the .dat file, so if a starter or a
              template is found and if it is not modified, we can load it clean (i.e. not rebluring a
-             blured when scaled one)*/
+             blured when scaled one) */
           for (u = 0; u < num_unknowns; u++)
             {
-              printf("%s, %d\n", unknowns[u].name, (int) unknowns[u].size);
+              printf("%s, %d\n", unknowns[u].name, (int)unknowns[u].size);
 
               if (chunk_is_valid("tpDT", unknowns[u]))
                 {
@@ -21946,7 +21914,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /* ================================================================================== */
 
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 static void show_available_papersizes(int exitcode)
 {
   FILE *fi = exitcode ? stderr : stdout;
@@ -22177,11 +22145,12 @@ static void setup_config(char *argv[])
       result = find_directory(B_USER_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
-      savedir = strdup(macosx.preferencesPath);
+      savedir = strdup(macos.preferencesPath());
 #elif __ANDROID__
       savedir = SDL_AndroidGetExternalStoragePath();
 #else
       int tmp;
+
       tmp = asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
       if (tmp < 0)
         {
@@ -22201,7 +22170,7 @@ static void setup_config(char *argv[])
   strcpy(str, "tuxpaint.cfg");
 #elif defined(__APPLE__)
   /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
-  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.preferencesPath);
+  snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos.preferencesPath());
 #elif defined(__ANDROID__)
   /* Try to find the first config file: /mnt/sdcard/Android/data/org.tuxpaint/files/tuxpaint.cfg */
   // Donot rely on this file unless you want to override another tuxpaint.cfg in the internal path for debug
@@ -22234,8 +22203,8 @@ static void setup_config(char *argv[])
       /* EP added this conditional section for Mac to fix
          folder & extension inconsistency with Tux Paint Config application) */
       /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint
-application support folder */
-      snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.globalPreferencesPath);
+         application support folder */
+      snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_globalPreferencesPath());
       parse_file_options(&tmpcfg_sys, str);
 #elif defined(__ANDROID__)
       /* Try to find the second config file:  /data/data/org.tuxpaint/files/tuxpaint.cfg  */
@@ -22350,9 +22319,9 @@ application support folder */
     }
   /* FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button) */
   if (tmpcfg.rotate_orientation)
-    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait"); /* alternative is "landscape" */
+    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait");        /* alternative is "landscape" */
   if (tmpcfg.colorfile)
-    strcpy(colorfile, tmpcfg.colorfile); /* FIXME can overflow */
+    strcpy(colorfile, tmpcfg.colorfile);        /* FIXME can overflow */
   if (tmpcfg.print_delay)
     {
       print_delay = atoi(tmpcfg.print_delay);
@@ -22372,7 +22341,7 @@ application support folder */
       else if (!strcmp(tmpcfg.alt_print_command_default, "never"))
         alt_print_command_default = ALTPRINT_NEVER;
       else
-        alt_print_command_default = ALTPRINT_MOD; /* default ("mod") */
+        alt_print_command_default = ALTPRINT_MOD;       /* default ("mod") */
     }
 #ifdef PAPER_H
   if (tmpcfg.papersize)
@@ -22675,16 +22644,16 @@ application support folder */
 static void chdir_to_binary(char *argv0)
 {
   /*
-  char curdir[256];
-  */
+     char curdir[256];
+   */
   /* EP added this block to print out of current directory */
 
   /*
-  getcwd(curdir, sizeof(curdir));
-#ifdef DEBUG
-  printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
-#endif
-  */
+     getcwd(curdir, sizeof(curdir));
+     #ifdef DEBUG
+     printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
+     #endif
+   */
 
 #if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
@@ -22702,15 +22671,16 @@ static void chdir_to_binary(char *argv0)
       char *slash = strrchr(app_path, '/');
 
 #if defined(__APPLE__)
-      /* EP added to fix 10.9 issue of current directory set by Finder
-         to something else than folder where app bundle resides */
-      /* typical path of app's binary on Mac OS : /Applications/Tux Paint.app/Contents/MacOS/Tux Paint */
-      int levels = 3; /* we need to back up 3 levels */
+      // On macOS, execution is deep inside the app bundle.
+      // E.g., "/Applications/TuxPaint.app/Contents/MacOS/tuxpaint"
+      // But we want to point somewhere higher up, say to "Contents", so we can access
+      // the resources in Resources folder. So move up one level.
+      int levels = 1;           /* we need to back up 1 level */
 
       while ((levels-- > 0) && (slash))
         {
-          *slash = '\0'; /* this overwrites the \0 at end of string */
-          slash = strrchr(app_path, '/'); /* so we can carry on our back-pedaling... */
+          *slash = '\0';        /* this overwrites the \0 at end of string */
+          slash = strrchr(app_path, '/');       /* so we can carry on our back-pedaling... */
         }
 #endif
 
@@ -22725,9 +22695,9 @@ static void chdir_to_binary(char *argv0)
         }
       free(app_path);
       /*
-      getcwd(curdir, sizeof(curdir));
-      printf("New current directory for runtime: %s\n", curdir);
-      */
+         getcwd(curdir, sizeof(curdir));
+         printf("New current directory for runtime: %s\n", curdir);
+       */
     }
 #else
   (void)argv0;

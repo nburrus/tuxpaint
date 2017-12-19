@@ -67,14 +67,13 @@
 #include "win32_print.h"
 #endif
 
+#ifdef __APPLE__
+#include "macos.h"
+#endif
+
 #ifdef __HAIKU__
 #include <FindDirectory.h>
 #include <fs_info.h>
-#endif
-
-#ifdef __APPLE__
-#include "wrapperdata.h"
-extern WrapperData macosx;
 #endif
 
 /* system fonts that cause TTF_OpenFont to crash */
@@ -217,7 +216,7 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
 
       if (!ret)
         {
-          snprintf(str, sizeof(str), "%s/%s.ttf", macosx.fontsPath, lang_prefix);
+          snprintf(str, sizeof(str), "%s/%s.ttf", macos_fontsPath(), lang_prefix);
           ret = TuxPaint_Font_OpenFont("", str, size);
         }
 #endif
@@ -1003,7 +1002,7 @@ static void loadfonts(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer 
 #elif defined(__APPLE__)
       loadfonts(screen, texture, renderer, "/System/Library/Fonts");
       loadfonts(screen, texture, renderer, "/Library/Fonts");
-      loadfonts(screen, texture, renderer, macosx.fontsPath);
+      loadfonts(screen, texture, renderer, macos_fontsPath());
       loadfonts(screen, texture, renderer, "/usr/share/fonts");
       loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #elif defined(__ANDROID__)

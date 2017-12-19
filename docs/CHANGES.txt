@@ -30,6 +30,8 @@ $Id$
     * Made stamp controls (size, flip, mirror) section clearer.
       Fixes https://sourceforge.net/p/tuxpaint/bugs/182/
 
+    * Cleaned up and reorganized docs subdirectory.
+
   * New locales
     -----------
     * Bengali
@@ -57,6 +59,9 @@ $Id$
 
   * Localization Updates:
     ---------------------
+    * Catalan translation
+      Robert Buj Gelonch <rbuj@users.sf.net>
+
     * Danish translation
       Joe Hansen <joedalton2@yahoo.dk>
 
@@ -69,6 +74,9 @@ $Id$
     * French translation
       Chion Jacques <jacques.chion@orange.fr> 
 
+    * Fula translation
+      Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>
+
     * Gaelic (Irish) translation
       Kevin Scannell <kscanne@gmail.com>
 
@@ -80,6 +88,10 @@ $Id$
 
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Indonesian translation
+      Courtesy of SugarLabs and
+      T. Surya Fajri <kilelme@gmail.com>
 
     * Korean translation
       Mark K. Kim <mkkim214@gmail.com>
@@ -96,12 +108,24 @@ $Id$
     * Thai translation
       Nudjaree <poonim_p@hotmail.com>
 
+    * Ukrainian translation
+      yurchor <yurchor@ukr.net> 
+      Sugar Labs i18n team <https://translate.sugarlabs.org/accounts/yurchor/>
+
   * Bug Fixes
     ---------
     * Crash if any "mosaic" magic tool used, Xubuntu 15.10
-      If the PNG patterns used to generate the effect were compressed the wrong(lossy) way,
-      the program will crash
+      If the PNG patterns used to generate the effect were compressed
+      the wrong(lossy) way, the program will crash
       (SF.net Bug #210)
+
+  * Ports
+    -----
+    * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
+      Mark K. Kim <mkkim214@gmail.com>
+
+    * Mac install creates a DMG
+      Robert Buj Gelonch <rbuj@users.sf.net>
 
   * Other Improvements:
     -------------------
@@ -235,14 +259,14 @@ $Id$
         motion.
       * The responsivity of the joystick can be configured via command
         line or config files:
-	* --joystick-slownes sets a delay at each axis motion event.
-	    Allowed values from 0 to 500, defaults to 15.
-	* --joystick-threshold sets the minimum value of axis motion to
-	  begin move the pointer.
-	    Allowed values from 0 to 32766, defaults to 3200.
-	* --joystick_maxsteps sets the maximum number of pixels that
-	  the pointer will move at a time.
-	    Allowed values from 1 to 7, defaults to 7.
+        * --joystick-slownes sets a delay at each axis motion event.
+            Allowed values from 0 to 500, defaults to 15.
+        * --joystick-threshold sets the minimum value of axis motion to
+          begin move the pointer.
+            Allowed values from 0 to 32766, defaults to 3200.
+        * --joystick_maxsteps sets the maximum number of pixels that
+          the pointer will move at a time.
+            Allowed values from 1 to 7, defaults to 7.
       * Joystick buttons can be assigned used to activate certain commands
         in Tux Paint (--joystick-btn-COMMAND options)
 
@@ -1144,7 +1168,7 @@ $Id$
       + Other misc. updates and efficiency improvements
       + Automatic testing for SVG, SDL_Pango, SDL_Mixer and libpng vs libpng12
         libraries; 'oldsvg' and 'nosvg' targets removed; new means for building
-	without sound, etc.
+        without sound, etc.
       Albert Cahalan <albert@users.sf.net>
 
     * Made sure Makefile works with NetBSD again.
