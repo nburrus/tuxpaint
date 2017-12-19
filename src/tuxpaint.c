@@ -2,8 +2,8 @@
   tuxpaint.c
 
   Tux Paint - A simple drawing program for children.
-  
-  Copyright (c) 2002-2014 by Bill Kendrick and others; see AUTHORS.txt
+
+  Copyright (c) 2002-2017 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -21,8 +21,8 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
-  
-  June 14, 2002 - April 16, 2014
+
+  June 14, 2002 - October 15, 2017
 */
 
 
@@ -180,7 +180,7 @@ static scaleparams scaletable[] = {
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
-#include <libgen.h>             //EP added this include for basename()
+#include <libgen.h>             /* EP added this include for basename() */
 
 /* On Linux, we can use 'wordexp()' to expand env. vars. in settings
    pulled from config. files */
@@ -260,7 +260,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #endif
 
 #ifdef DEBUG
-#undef gettext                  //EP to avoid warning on following line
+#undef gettext                  /* EP to avoid warning on following line */
 #define gettext(String) debug_gettext(String)
 #endif
 
@@ -280,7 +280,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <dirent.h>
 #include <signal.h>
 
-#if defined __BEOS__            //|| defined __HAIKU__
+#if defined __BEOS__
 
 /* BeOS */
 
@@ -412,7 +412,7 @@ static void mtw(wchar_t * wtok, char *tok)
 /*
  The following section renames global variables defined in SDL_Pango.h to avoid errors during linking.
  It is okay to rename these variables because they are constants.
- SDL_Pango.h is included by tuxpaint.c.  
+ SDL_Pango.h is included by tuxpaint.c.
  */
 #define _MATRIX_WHITE_BACK _MATRIX_WHITE_BACK0
 #define MATRIX_WHITE_BACK MATRIX_WHITE_BACK0
@@ -486,7 +486,7 @@ static void mtw(wchar_t * wtok, char *tok)
 
 #endif
 
-#include <zlib.h>               //EP added for PNG upgrade from 1.2 to 1.5
+#include <zlib.h>               /* EP added for PNG upgrade from 1.2 to 1.5 */
 #define PNG_INTERNAL
 #include <png.h>
 #define FNAME_EXTENSION ".png"
@@ -532,7 +532,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #include "compiler.h"
 
 
-//EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL
+/* EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL */
 #ifndef __APPLE__
 #if VIDEO_BPP==32
 #ifdef __GNUC__
@@ -569,9 +569,9 @@ static void mtw(wchar_t * wtok, char *tok)
 #endif
 #endif
 
-//#define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+/* #define fmemopen_alternative */ /* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
-#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     // MINGW/MSYS, NetBSD, and MacOSX need it, at least for now
+#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
 #endif
 
@@ -643,8 +643,8 @@ enum
 {
   LABEL_OFF,
   LABEL_LABEL,
-  LABEL_SELECT                  //,
-//  LABEL_ROTATE
+  LABEL_SELECT
+  /* , LABEL_ROTATE */
 };
 
 
@@ -667,18 +667,6 @@ static void debug(const char *const str)
   fflush(stderr);
 #endif
 }
-
-static const char *getfilename(const char *path)
-{
-  char *p;
-
-  if ((p = strrchr(path, '\\')) != NULL)
-    return p + 1;
-  if ((p = strrchr(path, '/')) != NULL)
-    return p + 1;
-  return path;
-}
-
 
 /* sizing */
 
@@ -735,7 +723,7 @@ static grid_dims gd_colors;     /* was 17x1 */
 static int WINDOW_WIDTH = 800;
 static int WINDOW_HEIGHT = 480;
 #elif defined(OLPC_XO)
-// ideally we'd support rotation and 2x scaling
+/* ideally we'd support rotation and 2x scaling */
 static int WINDOW_WIDTH = 1200;
 static int WINDOW_HEIGHT = 900;
 #else
@@ -1080,12 +1068,7 @@ static void update_canvas_ex_r(int x1, int y1, int x2, int y2, int screen_too)
 
       SDL_BlitSurface(img_starter, &dest, canvas, &dest);
     }
-  //  printf("%d\n", canvas );
-  //printf("%d, %d, %d, %d\n", dest.x, dest.y, dest.w, dest.h);
-  //printf("%d\n", screen);
-  //printf("%d, %d, %d, %d\n\n\n", r_canvas.x, r_canvas.y, r_canvas.w, r_canvas.w);
 
-  //  src.x = x1 + 96;
   dest.x = x1 + 96;
 
   SDL_BlitSurface(canvas, &src, screen, &dest);
@@ -1538,7 +1521,7 @@ static Uint16 *wcstou16(const wchar_t * str)
          will cause a change from one utf16 character into two....
          (though at least UTF-8 suffers from this problem) */
 
-      // FIXME: mangles non-BMP characters rather than using UTF-16 surrogates!
+      /* FIXME: mangles non-BMP characters rather than using UTF-16 surrogates! */
       res[i] = (Uint16) str[i];
     }
 
@@ -1976,7 +1959,6 @@ static void draw_image_title(int t, SDL_Rect dest);
 static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * area1, SDL_Rect * area2);
 static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
-static char *remove_slash(char *path);
 
 /*static char *replace_tilde(const char* const path);*/
 #ifdef NO_SDLPANGO
@@ -1989,7 +1971,6 @@ static SDL_Surface *duplicate_surface(SDL_Surface * orig);
 static void mirror_starter(void);
 static void flip_starter(void);
 static int valid_click(Uint8 button);
-static int in_circle(int x, int y);
 static int in_circle_rad(int x, int y, int rad);
 static int paintsound(int size);
 static void load_magic_plugins(void);
@@ -2371,17 +2352,15 @@ static void mainloop(void)
               mod = event.key.keysym.mod;
 
 #ifdef DEBUG
-// FIXME: debug junk
-//          fprintf(stderr,
-//            "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
-//            (unsigned)key,
-//            (unsigned)mod,
-//            (unsigned)event.key.keysym.unicode,
-//            (int)event.key.keysym.unicode,
-//            (key_unicode>' ' && key_unicode<127)?(char)event.key.keysym.unicode:' ',
-//              iswprint(key_unicode)?"":"not ",
-//              (unsigned)key_down
-//            );
+/* FIXME: debug junk */
+              fprintf(stderr,
+                      "key 0x%04x mod 0x%04x character 0x%04x %d <%c> is %sprintable, key_down 0x%x\n",
+                      (unsigned)key,
+                      (unsigned)mod,
+                      (unsigned)event.key.keysym.unicode,
+                      (int)event.key.keysym.unicode,
+                      (key_unicode > ' ' && key_unicode < 127) ? (char)event.key.keysym.unicode : ' ',
+                      iswprint(key_unicode) ? "" : "not ", (unsigned)key_down);
 #endif
               if (cur_tool == TOOL_STAMP)
                 {
@@ -2827,7 +2806,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -2869,7 +2848,6 @@ static void mainloop(void)
                                       cur_font = select_cur_font;
                                       text_state = select_text_state;
                                       text_size = select_text_size;
-                                      // int j;
                                       for (j = 0; j < num_font_families; j++)
                                         {
                                           if (user_font_families[j] && user_font_families[j]->handle)
@@ -2942,7 +2920,7 @@ static void mainloop(void)
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-//                        playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); // FIXME lack of specific sound
+                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); */ /* FIXME lack of specific sound */
 
                                   if (been_saved)
                                     {
@@ -3512,8 +3490,6 @@ static void mainloop(void)
                   /* Options on the right
                      WARNING: this must be kept in sync with the mouse-move
                      code (for cursor changes) and mouse-scroll code. */
-
-                  //          magic_switchout(canvas);
 
                   if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
                       cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
@@ -4099,17 +4075,18 @@ static void mainloop(void)
                         }
                       else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                         {
-                          /* FIXME *//* char font_tux_text[512]; */
+                          /* FIXME */
+                          /* char font_tux_text[512]; */
 
                           cur_font = cur_thing;
 
-/* FIXME */
-/*
-	      snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
-		       TTF_FontFaceFamilyName(getfonthandle(cur_font)),
-		       TTF_FontFaceStyleName(getfonthandle(cur_font)));
-	      draw_tux_text(TUX_GREAT, font_tux_text, 1);
-*/
+                          /* FIXME */
+                          /*
+                          snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
+                              TTF_FontFaceFamilyName(getfonthandle(cur_font)),
+                              TTF_FontFaceStyleName(getfonthandle(cur_font)));
+                          draw_tux_text(TUX_GREAT, font_tux_text, 1);
+                          */
 
                           if (do_draw)
                             draw_fonts();
@@ -6675,23 +6652,24 @@ static void loadbrush_callback(SDL_Surface * screen,
             {
               do
                 {
-                  fgets(buf, sizeof(buf), fi);
-
-                  if (strstr(buf, "frames=") != NULL)
+                  if (fgets(buf, sizeof(buf), fi))
                     {
-                      brushes_frames[num_brushes] = atoi(strstr(buf, "frames=") + 7);
-                    }
-                  else if (strstr(buf, "spacing=") != NULL)
-                    {
-                      brushes_spacing[num_brushes] = atoi(strstr(buf, "spacing=") + 8);
-                    }
-                  else if (strstr(buf, "directional") != NULL)
-                    {
-                      brushes_directional[num_brushes] = 1;
-                    }
-                  else if (strstr(buf, "random") != NULL)
-                    {
-                      want_rand = 1;
+                      if (strstr(buf, "frames=") != NULL)
+                        {
+                          brushes_frames[num_brushes] = atoi(strstr(buf, "frames=") + 7);
+                        }
+                      else if (strstr(buf, "spacing=") != NULL)
+                        {
+                          brushes_spacing[num_brushes] = atoi(strstr(buf, "spacing=") + 8);
+                        }
+                      else if (strstr(buf, "directional") != NULL)
+                        {
+                          brushes_directional[num_brushes] = 1;
+                        }
+                      else if (strstr(buf, "random") != NULL)
+                        {
+                          want_rand = 1;
+                        }
                     }
                 }
               while (!feof(fi));
@@ -7610,7 +7588,7 @@ static void loadstamp_callback(SDL_Surface * screen,
       show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
-          && (dotext - files[i].str + 1 + dirlen < sizeof fname)
+          && (dotext - files[i].str + 1 + dirlen < (int) (sizeof fname))
           && !strcasestr(files[i].str, mirror_ext)
           && !strcasestr(files[i].str, flip_ext) && !strcasestr(files[i].str, mirrorflip_ext))
         {
@@ -7780,8 +7758,8 @@ static int generate_fontconfig_cache(void *vp)
 #endif
 
 #define hex2dec(c) (((c) >= '0' && (c) <= '9') ? ((c) - '0') : \
-		    ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
-		    ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
+  ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
+  ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
 #ifndef WIN32
 static void signal_handler(int sig)
@@ -10877,49 +10855,48 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
           do
             {
-              fgets(buf, sizeof(buf), fi);
-
-              if (!feof(fi))
+              if (fgets(buf, sizeof(buf), fi))
                 {
-                  strip_trailing_whitespace(buf);
-
-                  if (!got_first)
+                  if (!feof(fi))
                     {
-                      /* First one is the default: */
+                      strip_trailing_whitespace(buf);
 
-                      strcpy(def_buf, buf);
-                      got_first = 1;
-                    }
-
-
-                  debug(buf);
-
-
-                  //      lang_prefix = lang_prefixes[langint];
-                  /* See if it's the one for this locale... */
-
-                  if ((char *)strcasestr(buf, wished_langs[i].lang_prefix) == buf)
-                    {
-
-                      debug(buf + strlen(wished_langs[i].lang_prefix));
-                      if ((char *)strcasestr(buf + strlen(wished_langs[i].lang_prefix), ".utf8=") ==
-                          buf + strlen(wished_langs[i].lang_prefix))
+                      if (!got_first)
                         {
-                          lang_prefix = wished_langs[i].lang_prefix;
-                          short_lang_prefix = strdup(lang_prefix);
-                          /* When in doubt, cut off country code */
-                          if (strchr(short_lang_prefix, '_'))
-                            *strchr(short_lang_prefix, '_') = '\0';
+                          /* First one is the default: */
 
-                          need_own_font = wished_langs[i].need_own_font;
-                          need_right_to_left = wished_langs[i].need_right_to_left;
-                          need_right_to_left_word = wished_langs[i].need_right_to_left_word;
+                          strcpy(def_buf, buf);
+                          got_first = 1;
+                        }
 
 
+                      debug(buf);
 
-                          found = 1;
 
-                          debug("...FOUND!");
+                      //      lang_prefix = lang_prefixes[langint];
+                      /* See if it's the one for this locale... */
+
+                      if ((char *)strcasestr(buf, wished_langs[i].lang_prefix) == buf)
+                        {
+
+                          debug(buf + strlen(wished_langs[i].lang_prefix));
+                          if ((char *)strcasestr(buf + strlen(wished_langs[i].lang_prefix), ".utf8=") ==
+                              buf + strlen(wished_langs[i].lang_prefix))
+                            {
+                              lang_prefix = wished_langs[i].lang_prefix;
+                              short_lang_prefix = strdup(lang_prefix);
+                              /* When in doubt, cut off country code */
+                              if (strchr(short_lang_prefix, '_'))
+                                *strchr(short_lang_prefix, '_') = '\0';
+
+                              need_own_font = wished_langs[i].need_own_font;
+                              need_right_to_left = wished_langs[i].need_right_to_left;
+                              need_right_to_left_word = wished_langs[i].need_right_to_left_word;
+
+                              found = 1;
+
+                              debug("...FOUND!");
+                            }
                         }
                     }
                 }
@@ -10972,89 +10949,90 @@ static double loadinfo(const char *const fname, stamp_type * inf)
 
   do
     {
-      fgets(buf, sizeof buf, fi);
-
-      if (!feof(fi))
+      if (fgets(buf, sizeof buf, fi))
         {
-          strip_trailing_whitespace(buf);
-
-          if (strcmp(buf, "colorable") == 0)
-            inf->colorable = 1;
-          else if (strcmp(buf, "tintable") == 0)
-            inf->tintable = 1;
-          else if (!memcmp(buf, "scale", 5) && (isspace(buf[5]) || buf[5] == '='))
+          if (!feof(fi))
             {
-              double tmp, tmp2;
-              char *cp = buf + 6;
+              strip_trailing_whitespace(buf);
 
-              while (isspace(*cp) || *cp == '=')
-                cp++;
-              if (strchr(cp, '%'))
+              if (strcmp(buf, "colorable") == 0)
+                inf->colorable = 1;
+              else if (strcmp(buf, "tintable") == 0)
+                inf->tintable = 1;
+              else if (!memcmp(buf, "scale", 5) && (isspace(buf[5]) || buf[5] == '='))
                 {
-                  tmp = strtod(cp, NULL) / 100.0;
-                  if (tmp > 0.0001 && tmp < 10000.0)
-                    ratio = tmp;
-                }
-              else if (strchr(cp, '/'))
-                {
-                  tmp = strtod(cp, &cp);
-                  while (*cp && !isdigit(*cp))
+                  double tmp, tmp2;
+                  char *cp = buf + 6;
+
+                  while (isspace(*cp) || *cp == '=')
                     cp++;
-                  tmp2 = strtod(cp, NULL);
-                  if (tmp > 0.0001 && tmp < 10000.0 && tmp2 > 0.0001 && tmp2 < 10000.0
-                      && tmp / tmp2 > 0.0001 && tmp / tmp2 < 10000.0)
-                    ratio = tmp / tmp2;
+                  if (strchr(cp, '%'))
+                    {
+                      tmp = strtod(cp, NULL) / 100.0;
+                      if (tmp > 0.0001 && tmp < 10000.0)
+                        ratio = tmp;
+                    }
+                  else if (strchr(cp, '/'))
+                    {
+                      tmp = strtod(cp, &cp);
+                      while (*cp && !isdigit(*cp))
+                        cp++;
+                      tmp2 = strtod(cp, NULL);
+                      if (tmp > 0.0001 && tmp < 10000.0 && tmp2 > 0.0001 && tmp2 < 10000.0
+                          && tmp / tmp2 > 0.0001 && tmp / tmp2 < 10000.0)
+                        ratio = tmp / tmp2;
+                    }
+                  else if (strchr(cp, ':'))
+                    {
+                      tmp = strtod(cp, &cp);
+                      while (*cp && !isdigit(*cp))
+                        cp++;
+                      tmp2 = strtod(cp, NULL);
+                      if (tmp > 0.0001 && tmp < 10000.0 &&
+                          tmp2 > 0.0001 && tmp2 < 10000.0 && tmp2 / tmp > 0.0001 && tmp2 / tmp < 10000.0)
+                        ratio = tmp2 / tmp;
+                    }
+                  else
+                    {
+                      tmp = strtod(cp, NULL);
+                      if (tmp > 0.0001 && tmp < 10000.0)
+                        ratio = 1.0 / tmp;
+                    }
                 }
-              else if (strchr(cp, ':'))
+              else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6] == '='))
                 {
-                  tmp = strtod(cp, &cp);
-                  while (*cp && !isdigit(*cp))
+                  char *cp = buf + 7;
+
+                  while (isspace(*cp) || *cp == '=')
                     cp++;
-                  tmp2 = strtod(cp, NULL);
-                  if (tmp > 0.0001 && tmp < 10000.0 &&
-                      tmp2 > 0.0001 && tmp2 < 10000.0 && tmp2 / tmp > 0.0001 && tmp2 / tmp < 10000.0)
-                    ratio = tmp2 / tmp;
-                }
-              else
-                {
-                  tmp = strtod(cp, NULL);
-                  if (tmp > 0.0001 && tmp < 10000.0)
-                    ratio = 1.0 / tmp;
-                }
-            }
-          else if (!memcmp(buf, "tinter", 6) && (isspace(buf[6]) || buf[6] == '='))
-            {
-              char *cp = buf + 7;
+                  if (!strcmp(cp, "anyhue"))
+                    {
+                      inf->tinter = TINTER_ANYHUE;
+                    }
+                  else if (!strcmp(cp, "narrow"))
+                    {
+                      inf->tinter = TINTER_NARROW;
+                    }
+                  else if (!strcmp(cp, "normal"))
+                    {
+                      inf->tinter = TINTER_NORMAL;
+                    }
+                  else if (!strcmp(cp, "vector"))
+                    {
+                      inf->tinter = TINTER_VECTOR;
+                    }
+                  else
+                    {
+                      debug(cp);
+                    }
 
-              while (isspace(*cp) || *cp == '=')
-                cp++;
-              if (!strcmp(cp, "anyhue"))
-                {
-                  inf->tinter = TINTER_ANYHUE;
+                  /* printf("tinter=%d\n", inf->tinter); */
                 }
-              else if (!strcmp(cp, "narrow"))
-                {
-                  inf->tinter = TINTER_NARROW;
-                }
-              else if (!strcmp(cp, "normal"))
-                {
-                  inf->tinter = TINTER_NORMAL;
-                }
-              else if (!strcmp(cp, "vector"))
-                {
-                  inf->tinter = TINTER_VECTOR;
-                }
-              else
-                {
-                  debug(cp);
-                }
-
-              /* printf("tinter=%d\n", inf->tinter); */
+              else if (strcmp(buf, "nomirror") == 0)
+                inf->mirrorable = 0;
+              else if (strcmp(buf, "noflip") == 0)
+                inf->flipable = 0;
             }
-          else if (strcmp(buf, "nomirror") == 0)
-            inf->mirrorable = 0;
-          else if (strcmp(buf, "noflip") == 0)
-            inf->flipable = 0;
         }
     }
   while (!feof(fi));
@@ -11210,7 +11188,7 @@ static void load_starter_id(char *saved_id, FILE * fil)
   char fname[FILENAME_MAX];
   FILE *fi;
   char color_tag;
-  int r, g, b;
+  int r, g, b, tmp;
 
   rname = NULL;
 
@@ -11229,55 +11207,56 @@ static void load_starter_id(char *saved_id, FILE * fil)
 
   if (fi != NULL)
     {
-      fgets(starter_id, sizeof(starter_id), fi);
-      starter_id[strlen(starter_id) - 1] = '\0';
-
-      fscanf(fi, "%d", &starter_mirrored);
-      fscanf(fi, "%d", &starter_flipped);
-      fscanf(fi, "%d", &starter_personal);
-
-      do
+      if (fgets(starter_id, sizeof(starter_id), fi))
         {
-          color_tag = fgetc(fi);
-        }
-      while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
+          starter_id[strlen(starter_id) - 1] = '\0';
 
-      if (!feof(fi) && color_tag == 'c')
-        {
-          fscanf(fi, "%d", &r);
-          fscanf(fi, "%d", &g);
-          fscanf(fi, "%d", &b);
+          tmp = fscanf(fi, "%d", &starter_mirrored);
+          tmp = fscanf(fi, "%d", &starter_flipped);
+          tmp = fscanf(fi, "%d", &starter_personal);
 
-          canvas_color_r = (Uint8) r;
-          canvas_color_g = (Uint8) g;
-          canvas_color_b = (Uint8) b;
-        }
-      else
-        {
-          canvas_color_r = 255;
-          canvas_color_g = 255;
-          canvas_color_b = 255;
-        }
+          do
+            {
+              color_tag = fgetc(fi);
+            }
+          while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
 
-      do
-        {
-          color_tag = fgetc(fi);
-        }
-      while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
-      {
-        if (!feof(fi) && color_tag == 'T')
-          {
-            fgets(template_id, sizeof(template_id), fi);
-            template_id[strlen(template_id) - 1] = '\0';
-            fscanf(fi, "%d", &template_personal);
-            printf("template = %s\n (Personal=%d)", template_id, template_personal);
-          }
-        if (!feof(fi) && color_tag == 'M')
-          {
-            starter_modified = fgetc(fi);
-          }
-      }
+          if (!feof(fi) && color_tag == 'c')
+            {
+              tmp = fscanf(fi, "%d", &r);
+              tmp = fscanf(fi, "%d", &g);
+              tmp = fscanf(fi, "%d", &b);
 
+              canvas_color_r = (Uint8) r;
+              canvas_color_g = (Uint8) g;
+              canvas_color_b = (Uint8) b;
+            }
+          else
+            {
+              canvas_color_r = 255;
+              canvas_color_g = 255;
+              canvas_color_b = 255;
+            }
+
+          do
+            {
+              color_tag = fgetc(fi);
+            }
+          while ((color_tag == '\n' || color_tag == '\r') && !feof(fi));
+
+          if (!feof(fi) && color_tag == 'T')
+            {
+              tmp = fgets(template_id, sizeof(template_id), fi);
+              template_id[strlen(template_id) - 1] = '\0';
+              tmp = fscanf(fi, "%d", &template_personal);
+              /* FIXME: Debug only? */
+              printf("template = %s\n (Personal=%d)", template_id, template_personal);
+            }
+          if (!feof(fi) && color_tag == 'M')
+            {
+              starter_modified = fgetc(fi);
+            }
+        }
       fclose(fi);
     }
   else
@@ -11601,10 +11580,12 @@ static void determine_id(void)
     }
   else
     {
-      fgets(file_id, sizeof(file_id), fi);
-      if (strlen(file_id) > 0)
+      if (fgets(file_id, sizeof(file_id), fi))
         {
-          file_id[strlen(file_id) - 1] = '\0';
+          if (strlen(file_id) > 0)
+            {
+              file_id[strlen(file_id) - 1] = '\0';
+            }
         }
       fclose(fi);
     }
@@ -12594,37 +12575,6 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
         free_surface(&surface_array[i]);
       }
 }
-
-
-/* Update screen where shape is/was: */
-
-/* FIXME: unused */
-/*
-static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2, int fix)
-{
-  int rx, ry;
-
-  rx = abs(ox1 - cx);
-  if (abs(ox2 - cx) > rx)
-    rx = abs(ox2 - cx);
-
-  ry = abs(oy1 - cy);
-  if (abs(oy2 - cy) > ry)
-    ry = abs(oy2 - cy);
-
-  if (fix)
-    {
-      if (ry > rx)
-	rx = ry;
-      else
-	ry = rx;
-    }
-
-  SDL_UpdateRect(screen, max((cx - rx), 0) + 96, max(cy - ry, 0),
-		 min((cx + rx) + 96, screen->w),
-		 min(cy + ry, screen->h));
-}
-*/
 
 
 /* Draw a shape! */
@@ -15357,7 +15307,7 @@ static int do_slideshow(void)
           update_list = 0;
         }
 
-      /* Was a call to SDL_WaitEvent(&event); before, 
+      /* Was a call to SDL_WaitEvent(&event); before,
          changed to this while loop in order to get joystick working */
       while (SDL_PollEvent(&event))
         {
@@ -17174,46 +17124,6 @@ static void handle_active(SDL_Event * event)
 }
 
 
-/* removes a single '\' or '/' from end of path */
-
-static char *remove_slash(char *path)
-{
-  int len = strlen(path);
-
-  if (!len)
-    return path;
-
-  if (path[len - 1] == '/' || path[len - 1] == '\\')
-    path[len - 1] = 0;
-
-  return path;
-}
-
-/* replace '~' at the beginning of a path with home directory */
-/*
-static char *replace_tilde(const char* const path)
-{
-    char *newpath;
-    int newlen;
-
-    int len = strlen(path);
-    
-    if (!len)
-        return strdup("");
-    
-    if (path[0] == '~')
-    {
-        newlen = strlen(getenv("HOME")) + len;
-        newpath = malloc(sizeof(char)*newlen);
-        sprintf(newpath, "%s%s", getenv("HOME"), path+1);  
-    }
-    else
-        newpath = strdup(path);
-    
-    return newpath;
-}
-*/
-
 /* For right-to-left languages, when word-wrapping, we need to
    make sure the text doesn't end up going from bottom-to-top, too! */
 
@@ -17412,14 +17322,6 @@ static int valid_click(Uint8 button)
 }
 
 
-static int in_circle(int x, int y)
-{
-  if ((x * x) + (y * y) - (16 * 16) < 0)
-    return (1);
-  else
-    return (0);
-}
-
 static int in_circle_rad(int x, int y, int rad)
 {
   if ((x * x) + (y * y) - (rad * rad) < 0)
@@ -17427,6 +17329,7 @@ static int in_circle_rad(int x, int y, int rad)
   else
     return (0);
 }
+
 
 static int paintsound(int size)
 {
@@ -19140,7 +19043,7 @@ static int do_new_dialog(void)
           update_list = 0;
         }
 
-      /* Was a call to SDL_WaitEvent(&event); before, 
+      /* Was a call to SDL_WaitEvent(&event); before,
          changed to this while loop in order to get joystick working */
       while (SDL_PollEvent(&event))
         {
@@ -19734,7 +19637,7 @@ static int do_color_sel(void)
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
 
-  /* FIXME this is the first step to make animated popups optional, 
+  /* FIXME this is the first step to make animated popups optional,
      to be removed from here when implemented in a more general way */
   int want_animated_popups = 1;
 
@@ -21024,7 +20927,7 @@ static void delete_label_list(struct label_node **ref_head)
   *ref_head = NULL;
 }
 
-/* A custom bliter that allows to put two transparent layers toghether without having to deal with colorkeys or SDL_SRCALPHA 
+/* A custom bliter that allows to put two transparent layers toghether without having to deal with colorkeys or SDL_SRCALPHA
    I am always reinventing the wheel. Hope this one is not squared. Pere */
 static void myblit(SDL_Surface * src_surf, SDL_Rect * src_rect, SDL_Surface * dest_surf, SDL_Rect * dest_rect)
 {
@@ -21088,6 +20991,7 @@ static void load_info_about_label_surface(FILE * lfi)
   int old_pos;
   int new_pos;
   int x, y, pix_size;
+  int tmp_fscanf_return;
   Uint8 a;
 
   /* Clear label surface */
@@ -21106,9 +21010,9 @@ static void load_info_about_label_surface(FILE * lfi)
 //    lfi = fopen(lfname, "r");
   if (lfi == NULL)
     return;
-  fscanf(lfi, "%d\n", &list_ctr);
-  fscanf(lfi, "%d\n", &tmp_scale_w);
-  fscanf(lfi, "%d\n\n", &tmp_scale_h);
+  tmp_fscanf_return = fscanf(lfi, "%d\n", &list_ctr);
+  tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_scale_w);
+  tmp_fscanf_return = fscanf(lfi, "%d\n\n", &tmp_scale_h);
 
   old_width = tmp_scale_w;
   old_height = tmp_scale_h;
@@ -21125,7 +21029,7 @@ static void load_info_about_label_surface(FILE * lfi)
     {
       new_node = malloc(sizeof(struct label_node));
 
-      fscanf(lfi, "%u\n", &new_node->save_texttool_len);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
 #ifdef WIN32
       char *tmpstr;
       wchar_t *wtmpstr;
@@ -21149,20 +21053,20 @@ static void load_info_about_label_surface(FILE * lfi)
 #else
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
-          fscanf(lfi, "%lc", &tmp_char);
+          tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
           new_node->save_texttool_str[l] = tmp_char;
         }
-      fscanf(lfi, "\n");
+      tmp_fscanf_return = fscanf(lfi, "\n");
 #endif
-      fscanf(lfi, "%u\n", &l);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.r = (Uint8) l;
-      fscanf(lfi, "%u\n", &l);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.g = (Uint8) l;
-      fscanf(lfi, "%u\n", &l);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.b = (Uint8) l;
-      fscanf(lfi, "%d\n", &new_node->save_width);
-      fscanf(lfi, "%d\n", &new_node->save_height);
-      fscanf(lfi, "%d\n", &tmp_pos);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
       old_pos = (int)tmp_pos;
 
       if (new_ratio < old_ratio)
@@ -21170,7 +21074,7 @@ static void load_info_about_label_surface(FILE * lfi)
           new_pos = (old_pos * new_to_old_ratio);
           tmp_pos = new_pos;
           new_node->save_x = tmp_pos;
-          fscanf(lfi, "%d\n", &tmp_pos);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
           old_pos = (int)tmp_pos;
           new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
           tmp_pos = new_pos;
@@ -21181,7 +21085,7 @@ static void load_info_about_label_surface(FILE * lfi)
           new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
           tmp_pos = new_pos;
           new_node->save_x = tmp_pos;
-          fscanf(lfi, "%d\n", &tmp_pos);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
           old_pos = (int)tmp_pos;
           new_pos = (old_pos * new_to_old_ratio);
           tmp_pos = new_pos;
@@ -21190,14 +21094,14 @@ static void load_info_about_label_surface(FILE * lfi)
 
       printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
 
-      fscanf(lfi, "%d\n", &new_node->save_cur_font);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
       new_node->save_cur_font = 0;
 
       new_node->save_font_type = malloc(64);
-      fgets(new_node->save_font_type, 64, lfi);
+      tmp_fscanf_return = fgets(new_node->save_font_type, 64, lfi);
 
-      fscanf(lfi, "%d\n", &new_node->save_text_state);
-      fscanf(lfi, "%u\n", &new_node->save_text_size);
+      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
+      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
 
       label_node_surface = SDL_CreateRGBSurface(screen->flags,
                                                 new_node->save_width,
@@ -21240,7 +21144,7 @@ static void load_info_about_label_surface(FILE * lfi)
       new_node->disables = NULL;
       new_node->next_to_down_label_node = NULL;
       new_node->next_to_up_label_node = NULL;
-      fscanf(lfi, "\n");
+      tmp_fscanf_return = fscanf(lfi, "\n");
 
       if (current_label_node == NULL)
         {
@@ -21279,7 +21183,7 @@ static void set_label_fonts()
         {
           Uint32 c;
 
-          /* FIXME: 2009/09/13 TTF_FontFaceFamilyName() appends random "\n" at the end 
+          /* FIXME: 2009/09/13 TTF_FontFaceFamilyName() appends random "\n" at the end
              of the returned string.  Should investigate why, and when corrected,
              remove the code that deals whith the ending "\n"s in ttffont */
           ttffont = TTF_FontFaceFamilyName(getfonthandle(i)->ttf_font);
@@ -21690,6 +21594,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 {
   FILE *fi, *fp;
   char *control;
+  char *CHAR_PTR_TMP;
   Bytef *unc_buff;
 
   int unc_size;
@@ -21760,9 +21665,12 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
           have_label_delta = have_label_data = have_background = have_foreground = FALSE;
           ldelta = ldata = fgnd = bgnd = FALSE;
 
-/* Need to get things in order, as we can't enforce any order in custom chunks, we need to go around them 3 times */
+          /* Need to get things in order, as we can't enforce any order in custom chunks,
+             we need to go around them 3 times */
 
-/* First we search for the things that usually were in the .dat file, so if a starter or a template is found and if it is not modified, we can load it clean (i.e. not rebluring a blured when scaled one)*/
+          /* First we search for the things that usually were in the .dat file, so if a starter or a
+             template is found and if it is not modified, we can load it clean (i.e. not rebluring a
+             blured when scaled one)*/
           for (u = 0; u < num_unknowns; u++)
             {
               printf("%s, %d\n", unknowns[u].name, unknowns[u].size);
@@ -21782,15 +21690,16 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                       return;   /* Refusing to go further with the other chunks */
                     }
 
-/* Put fi position at the right place after the chunk headers */
+                  /* Put fi position at the right place after the chunk headers */
                   control = malloc(50);
-                  fgets(control, 49, fi);
-                  fgets(control, 49, fi);
-                  fgets(control, 49, fi);
-                  fgets(control, 49, fi);
+                  CHAR_PTR_TMP = fgets(control, 49, fi);
+                  CHAR_PTR_TMP = fgets(control, 49, fi);
+                  CHAR_PTR_TMP = fgets(control, 49, fi);
+                  CHAR_PTR_TMP = fgets(control, 49, fi);
                   free(control);
 
-                  load_starter_id(NULL, fi);    // fi will be closed in load_starter_id()
+                  /* fi will be closed in load_starter_id() */
+                  load_starter_id(NULL, fi);
                   if (!starter_modified)
                     {
                       /* Code adapted from load_current() */
@@ -22032,7 +21941,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 }
 
 
-/////////////////////////////////////////////////////////////////////////////
+/* ================================================================================== */
 
 #if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 static void show_available_papersizes(int exitcode)
@@ -22067,7 +21976,7 @@ static void show_available_papersizes(int exitcode)
 }
 #endif
 
-/////////////////////////////////////////////////////////////////////////////
+/* ================================================================================== */
 
 static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *filename)
 {
@@ -22096,10 +22005,10 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
       wordfree(&result);
 #endif
 
-      // FIXME: leaking mem here, but the trouble is that these
-      // strings get mixed in with ones from .data and .rodata
-      // and free() isn't smart about the situation -- also some
-      // of the strings end up being kept around
+      /* FIXME: leaking mem here, but the trouble is that these
+         strings get mixed in with ones from .data and .rodata
+         and free() isn't smart about the situation -- also some
+         of the strings end up being kept around */
       parse_one_option(tmpcfg, str, strdup(arg), filename);
 #ifdef __linux__
       free(arg);
@@ -22107,7 +22016,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     }
   fclose(fi);
 
-  // These interact in horrid ways.
+  /* These interact in horrid ways. */
   if (tmpcfg->parsertmp_lang && tmpcfg->parsertmp_locale)
     fprintf(stderr,
             "Warning: option 'lang=%s' overrides option 'locale=%s' in '%s'\n",
@@ -22178,7 +22087,7 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
       exit(1);
     }
 
-  // These interact in horrid ways.
+  /* These interact in horrid ways. */
   if (tmpcfg->parsertmp_lang && tmpcfg->parsertmp_locale)
     {
       fprintf(stderr,
@@ -22192,7 +22101,7 @@ static void parse_argv_options(struct cfginfo *restrict tmpcfg, char *argv[])
     tmpcfg->parsertmp_lang = PARSE_CLOBBER;
 }
 
-// merge two configs, with the winner taking priority
+/* merge two configs, with the winner taking priority */
 static void tmpcfg_merge(struct cfginfo *loser, const struct cfginfo *winner)
 {
   int i = CFGINFO_MAXOFFSET / sizeof(char *);
@@ -22226,7 +22135,9 @@ static void setup_config(char *argv[])
 
   parse_argv_options(&tmpcfg_cmd, argv);
 
-#if defined(__APPLE__)          //EP added this conditional section for Mac to allow for a config in the current directory, that supersedes sys and user configs
+#if defined(__APPLE__)
+  /* EP added this conditional section for Mac to allow for a config in
+     the current directory, that supersedes sys and user configs */
   /* Mac OS X: Use a "tuxpaint.cfg" file in the current folder */
   struct cfginfo tmpcfg_curdir;
 
@@ -22267,7 +22178,13 @@ static void setup_config(char *argv[])
 #elif __ANDROID__
       savedir = SDL_AndroidGetExternalStoragePath();
 #else
-      asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
+      int tmp;
+      tmp = asprintf((char **)&savedir, "%s/%s", home, ".tuxpaint");
+      if (tmp < 0)
+        {
+          fprintf(stderr, "Can't set savedir\n");
+          exit(91);
+        }
 #endif
     }
 
@@ -22288,14 +22205,15 @@ static void setup_config(char *argv[])
   snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir);
 #else
   /* Linux and other Unixes:  Use 'rc' style (~/.tuxpaintrc) */
-  // it should it be "~/.tuxpaint/tuxpaintrc" instead, but too late now
+  /* it should it be "~/.tuxpaint/tuxpaintrc" instead, but too late now */
   snprintf(str, sizeof(str), "%s/.tuxpaintrc", home);
 #endif
   parse_file_options(&tmpcfg_usr, str);
 
 
 
-#if defined(__APPLE__)          //EP added this conditional section for Mac
+#if defined(__APPLE__)
+  /* EP added this conditional section for Mac */
   tmpcfg_merge(&tmpcfg_usr, &tmpcfg_curdir);
 #else
   tmpcfg_merge(&tmpcfg_usr, &tmpcfg_cmd);
@@ -22307,10 +22225,13 @@ static void setup_config(char *argv[])
 
       memset(&tmpcfg_sys, '\0', sizeof tmpcfg_sys);
 #ifdef _WIN32
-      // global config file in the application directory
+      /* global config file in the application directory */
       parse_file_options(&tmpcfg_sys, "tuxpaint.cfg");
-#elif defined(__APPLE__)        //EP added this conditional section for Mac to fix folder&extension inconsistency with Tux Paint Config application)
-      /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint application support folder */
+#elif defined(__APPLE__)
+      /* EP added this conditional section for Mac to fix
+         folder & extension inconsistency with Tux Paint Config application) */
+      /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint
+application support folder */
       snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macosx.globalPreferencesPath);
       parse_file_options(&tmpcfg_sys, str);
 #elif defined(__ANDROID__)
@@ -22319,7 +22240,7 @@ static void setup_config(char *argv[])
       snprintf(str, sizeof(str), "%s/tuxpaint.cfg", SDL_AndroidGetInternalStoragePath());
       parse_file_options(&tmpcfg_sys, str);
 #else
-      // normally /etc/tuxpaint/tuxpaint.conf
+      /* normally /etc/tuxpaint/tuxpaint.conf */
       parse_file_options(&tmpcfg_sys, CONFDIR "tuxpaint.conf");
 #endif
       tmpcfg_merge(&tmpcfg, &tmpcfg_sys);
@@ -22341,7 +22262,7 @@ static void setup_config(char *argv[])
   button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale);
 
 
-  // FIXME: most of this is not required before starting the font scanner
+  /* FIXME: most of this is not required before starting the font scanner */
 
 #ifdef PAPER_H
   if (tmpcfg_cmd.papersize && !strcmp(tmpcfg_cmd.papersize, "help"))
@@ -22407,7 +22328,7 @@ static void setup_config(char *argv[])
     }
   if (tmpcfg.parsertmp_fullscreen_native)
     {
-      // should conflict with other fullscreen/native_screensize setting?
+      /* should conflict with other fullscreen/native_screensize setting? */
       if (!strcmp(tmpcfg.parsertmp_fullscreen_native, "native"))
         native_screensize = 1;
       fullscreen = strcmp(tmpcfg.parsertmp_fullscreen_native, "no");
@@ -22418,17 +22339,17 @@ static void setup_config(char *argv[])
         stamp_size_override = -1;
       else
         {
-          // FIXME: needs to be a scaling factor
+          /* FIXME: needs to be a scaling factor */
           stamp_size_override = atoi(tmpcfg.stamp_size_override);
           if (stamp_size_override > 10)
             stamp_size_override = 10;
         }
     }
-  // FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button)
+  /* FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button) */
   if (tmpcfg.rotate_orientation)
-    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait");        // alternative is "landscape"
+    rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait"); /* alternative is "landscape" */
   if (tmpcfg.colorfile)
-    strcpy(colorfile, tmpcfg.colorfile);        // FIXME can overflow
+    strcpy(colorfile, tmpcfg.colorfile); /* FIXME can overflow */
   if (tmpcfg.print_delay)
     {
       print_delay = atoi(tmpcfg.print_delay);
@@ -22442,13 +22363,13 @@ static void setup_config(char *argv[])
 #endif
   if (tmpcfg.alt_print_command_default)
     {
-      // FIXME: probably need extra variables
+      /* FIXME: probably need extra variables */
       if (!strcmp(tmpcfg.alt_print_command_default, "always"))
         alt_print_command_default = ALTPRINT_ALWAYS;
       else if (!strcmp(tmpcfg.alt_print_command_default, "never"))
         alt_print_command_default = ALTPRINT_NEVER;
       else
-        alt_print_command_default = ALTPRINT_MOD;       // default ("mod")
+        alt_print_command_default = ALTPRINT_MOD; /* default ("mod") */
     }
 #ifdef PAPER_H
   if (tmpcfg.papersize)
@@ -22751,14 +22672,19 @@ static void setup_config(char *argv[])
 
 static void chdir_to_binary(char *argv0)
 {
-  char curdir[256];             //EP added this block to print out of current directory
+  /*
+  char curdir[256];
+  */
+  /* EP added this block to print out of current directory */
 
+  /*
   getcwd(curdir, sizeof(curdir));
 #ifdef DEBUG
   printf("Binary Path: %s\nCurrent directory at launchtime: %s\n", argv0, curdir);
 #endif
+  */
 
-#if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)   //EP added __APPLE__
+#if defined(__BEOS__) || defined(WIN32) || defined(__APPLE__)
   /* if run from gui, like OpenTracker in BeOS or Explorer in Windows,
      find path from which binary was run and change dir to it
      so all files will be local :) */
@@ -22773,14 +22699,16 @@ static void chdir_to_binary(char *argv0)
       char *app_path = strdup(argv0);
       char *slash = strrchr(app_path, '/');
 
-#if defined(__APPLE__)          //EP added to fix 10.9 issue of current directory set by Finder to something else than folder where app bundle resides
-      // typical path of app's binary on Mac OS : /Applications/Tux Paint.app/Contents/MacOS/Tux Paint
-      int levels = 3;           // we need to back up 3 levels
+#if defined(__APPLE__)
+      /* EP added to fix 10.9 issue of current directory set by Finder
+         to something else than folder where app bundle resides */
+      /* typical path of app's binary on Mac OS : /Applications/Tux Paint.app/Contents/MacOS/Tux Paint */
+      int levels = 3; /* we need to back up 3 levels */
 
       while ((levels-- > 0) && (slash))
         {
-          *slash = '\0';        // this overwrites the \0 at end of string
-          slash = strrchr(app_path, '/');       // so we can carry on our back-pedaling...
+          *slash = '\0'; /* this overwrites the \0 at end of string */
+          slash = strrchr(app_path, '/'); /* so we can carry on our back-pedaling... */
         }
 #endif
 
@@ -22794,15 +22722,17 @@ static void chdir_to_binary(char *argv0)
           chdir(app_path);
         }
       free(app_path);
+      /*
       getcwd(curdir, sizeof(curdir));
       printf("New current directory for runtime: %s\n", curdir);
+      */
     }
 #else
   (void)argv0;
 #endif
 }
 
-/////////////////////////////////////////////////////////////////////
+/* ================================================================================== */
 
 static void setup_colors(void)
 {
@@ -22830,64 +22760,65 @@ static void setup_colors(void)
 
           do
             {
-              fgets(str, sizeof(str), fi);
-
-              if (!feof(fi))
+              if (fgets(str, sizeof(str), fi))
                 {
-                  if (NUM_COLORS + 1 > max)
+                  if (!feof(fi))
                     {
-                      color_hexes = realloc(color_hexes, sizeof(Uint8 *) * (max + per));
-                      color_names = realloc(color_names, sizeof(char *) * (max + per));
-
-                      for (i = max; i < max + per; i++)
-                        color_hexes[i] = malloc(sizeof(Uint8) * 3);
-
-                      max = max + per;
-                    }
-
-                  while (str[strlen(str) - 1] == '\n' || str[strlen(str) - 1] == '\r')
-                    str[strlen(str) - 1] = '\0';
-
-                  if (str[0] == '#')
-                    {
-                      /* Hex form */
-
-                      sscanf(str + 1, "%s %n", tmp_str, &count);
-
-                      if (strlen(tmp_str) == 6)
+                      if (NUM_COLORS + 1 > max)
                         {
-                          /* Byte (#rrggbb) form */
+                          color_hexes = realloc(color_hexes, sizeof(Uint8 *) * (max + per));
+                          color_names = realloc(color_names, sizeof(char *) * (max + per));
 
-                          color_hexes[NUM_COLORS][0] = (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
-                          color_hexes[NUM_COLORS][1] = (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
-                          color_hexes[NUM_COLORS][2] = (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
+                          for (i = max; i < max + per; i++)
+                            color_hexes[i] = malloc(sizeof(Uint8) * 3);
 
-                          color_names[NUM_COLORS] = strdup(str + count);
-                          NUM_COLORS++;
+                          max = max + per;
                         }
-                      else if (strlen(tmp_str) == 3)
+
+                      while (str[strlen(str) - 1] == '\n' || str[strlen(str) - 1] == '\r')
+                        str[strlen(str) - 1] = '\0';
+
+                      if (str[0] == '#')
                         {
-                          /* Nybble (#rgb) form */
+                          /* Hex form */
 
-                          color_hexes[NUM_COLORS][0] = (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[0]);
-                          color_hexes[NUM_COLORS][1] = (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
-                          color_hexes[NUM_COLORS][2] = (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
+                          sscanf(str + 1, "%s %n", tmp_str, &count);
 
-                          color_names[NUM_COLORS] = strdup(str + count);
-                          NUM_COLORS++;
+                          if (strlen(tmp_str) == 6)
+                            {
+                              /* Byte (#rrggbb) form */
+
+                              color_hexes[NUM_COLORS][0] = (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
+                              color_hexes[NUM_COLORS][1] = (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
+                              color_hexes[NUM_COLORS][2] = (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
+
+                              color_names[NUM_COLORS] = strdup(str + count);
+                              NUM_COLORS++;
+                            }
+                          else if (strlen(tmp_str) == 3)
+                            {
+                              /* Nybble (#rgb) form */
+
+                              color_hexes[NUM_COLORS][0] = (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[0]);
+                              color_hexes[NUM_COLORS][1] = (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
+                              color_hexes[NUM_COLORS][2] = (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
+
+                              color_names[NUM_COLORS] = strdup(str + count);
+                              NUM_COLORS++;
+                            }
                         }
-                    }
-                  else
-                    {
-                      /* Assume int form */
-
-                      if (sscanf(str, "%hu %hu %hu %n",
-                                 (short unsigned int *)&(color_hexes[NUM_COLORS][0]),
-                                 (short unsigned int *)&(color_hexes[NUM_COLORS][1]),
-                                 (short unsigned int *)&(color_hexes[NUM_COLORS][2]), &count) >= 3)
+                      else
                         {
-                          color_names[NUM_COLORS] = strdup(str + count);
-                          NUM_COLORS++;
+                          /* Assume int form */
+
+                          if (sscanf(str, "%hu %hu %hu %n",
+                                     (short unsigned int *)&(color_hexes[NUM_COLORS][0]),
+                                     (short unsigned int *)&(color_hexes[NUM_COLORS][1]),
+                                     (short unsigned int *)&(color_hexes[NUM_COLORS][2]), &count) >= 3)
+                            {
+                              color_names[NUM_COLORS] = strdup(str + count);
+                              NUM_COLORS++;
+                            }
                         }
                     }
                 }
@@ -22961,7 +22892,7 @@ static void setup_colors(void)
 
 }
 
-//////////////////////////////////////////////////////////////////
+/* ================================================================================== */
 
 static void do_lock_file(void)
 {
@@ -23068,7 +22999,8 @@ int TP_EventFilter(void *data, const SDL_Event * event)
   return 0;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+/* ================================================================================== */
+
 static void setup(void)
 {
   int i;
@@ -24143,22 +24075,9 @@ static void setup(void)
 
   signal(SIGPIPE, signal_handler);
 #endif
-
-  /* Call this once */
-//EP now deprecated
-/*
-#if !defined(NOSVG) && !defined(OLD_SVG)
-#ifdef DEBUG
-  printf("rsvg_init()\n"); fflush(stdout);
-#endif
-  rsvg_init();
-#endif
-*/
 }
 
-
-/////////////////////////////////////////////////////////////////////////////
-
+/* ================================================================================== */
 
 static void claim_to_be_ready(void)
 {
@@ -24258,7 +24177,7 @@ static void claim_to_be_ready(void)
   draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
 }
 
-////////////////////////////////////////////////////////////////////////////
+/* ================================================================================== */
 
 int main(int argc, char *argv[])
 {
@@ -24271,20 +24190,15 @@ int main(int argc, char *argv[])
 
   CLOCK_ASM(time1);
 
-  // do not add code (slowness) here unless required for scanning fonts
+  /* do not add code (slowness) here unless required for scanning fonts */
   progname = argv[0];
 
-#if defined(DEBUG)              //EP added block to log messages
-
-#if defined(__APPLE__)
-  freopen("/tmp/tuxpaint.log", "w", stdout);    // redirect stdout to a file
-#elif defined(__ANDROID__)
-  freopen("/mnt/sdcard/tuxpaint/tuxpaint.log", "w", stdout);    // redirect stdout to a file
-#endif
-
-  dup2(fileno(stdout), fileno(stderr)); // redirect stderr to stdout
-  setvbuf(stdout, NULL, _IONBF, 0);     // we don't want buffering to avoid de-sync'ing stdout and stderr
-  setvbuf(stderr, NULL, _IONBF, 0);     // we don't want buffering to avoid de-sync'ing stdout and stderr
+#if defined(DEBUG) && defined(__APPLE__)
+  /* EP added block to log messages */
+  freopen("/tmp/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
+  dup2(fileno(stdout), fileno(stderr)); /* redirect stderr to stdout */
+  setvbuf(stdout, NULL, _IONBF, 0);     /* we don't want buffering to avoid de-sync'ing stdout and stderr */
+  setvbuf(stderr, NULL, _IONBF, 0);     /* we don't want buffering to avoid de-sync'ing stdout and stderr */
   char logTime[100];
   time_t t = time(NULL);
 
@@ -24297,7 +24211,7 @@ int main(int argc, char *argv[])
 
   CLOCK_ASM(time2);
 #ifdef FORKED_FONTS
-  // must start ASAP, but depends on locale which in turn needs the config
+  /* must start ASAP, but depends on locale which in turn needs the config */
 #ifdef NO_SDLPANGO
   /* Only fork it now if we're not planning on creating a thread to handle fontconfig stuff -bjk 2010.04.27 */
 #ifdef DEBUG
@@ -24365,7 +24279,7 @@ static int trash(char *path)
   char deldate[32];
   struct tm tim;
   time_t now;
-  int cnt;
+  int cnt, tmp;
   FILE *fi, *fo;
   unsigned char buf[1024];
   size_t len;
@@ -24381,7 +24295,7 @@ static int trash(char *path)
       return (unlink(path));
     }
 
-  printf("trash: basename=%s", basename(path)); //EP
+  printf("trash: basename=%s", basename(path)); /* EP */
   strcpy(fname, basename(path));
 
   if (!file_exists(path))
@@ -24505,7 +24419,7 @@ static int trash(char *path)
      -bjk 2011.04.18 */
 
   /* FIXME: Is this sufficient to find 'dbus-send' (rely on system to use $PATH?) -bjk 2011.04.18 */
-  system("dbus-send / org.kde.KDirNotify.FilesAdded string:trash:/");
+  tmp = system("dbus-send / org.kde.KDirNotify.FilesAdded string:trash:/");
 
 
   /* Note: GNOME figures out when things change because it asks the Kernel
@@ -24568,7 +24482,6 @@ static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int
       else
         *val_y = 0;
 
-      //        printf("i %d  valx %d    j %d  val_y %d\n", i, val_x, j, val_y);
       if (*val_x || *val_y)
         {
           *motioner = TRUE;
@@ -24633,7 +24546,7 @@ static void handle_joyballmotion(SDL_Event event, int oldpos_x, int oldpos_y)
 {
   int val_x, val_y;
 
-  /* FIXME: NOT TESTED Should this act like handle_joyaxismotion? 
+  /* FIXME: NOT TESTED Should this act like handle_joyaxismotion?
      in the sense of setting the values for the moving but don't move the mouse here? */
   /* printf("\n ball movement \n"); */
   val_x = event.jball.xrel;
