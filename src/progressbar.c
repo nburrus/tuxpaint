@@ -34,7 +34,7 @@
 SDL_Surface *img_progress;
 int progress_bar_disabled, prog_bar_ctr;
 
-void show_progress_bar_(SDL_Surface * screen, SDL_Texture *texture, SDL_Renderer *renderer)
+void show_progress_bar_(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer)
 {
   SDL_Rect dest, src, r;
   int x;
@@ -45,39 +45,39 @@ void show_progress_bar_(SDL_Surface * screen, SDL_Texture *texture, SDL_Renderer
     return;
 
   newtime = SDL_GetTicks();
-  if (newtime > oldtime + 15)	// trying not to eat some serious CPU time!
-  {
-    for (x = 0; x < screen->w; x = x + 65)
+  if (newtime > oldtime + 15)   // trying not to eat some serious CPU time!
     {
-      src.x = 65 - (prog_bar_ctr % 65);
-      src.y = 0;
-      src.w = 65;
-      src.h = 24;
+      for (x = 0; x < screen->w; x = x + 65)
+        {
+          src.x = 65 - (prog_bar_ctr % 65);
+          src.y = 0;
+          src.w = 65;
+          src.h = 24;
 
-      dest.x = x;
-      dest.y = screen->h - 24;
+          dest.x = x;
+          dest.y = screen->h - 24;
 
-      SDL_BlitSurface(img_progress, &src, screen, &dest);
+          SDL_BlitSurface(img_progress, &src, screen, &dest);
+        }
+
+      prog_bar_ctr++;
+
+      // FIXME SDL2
+      //    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
+      r.x = 0;
+      r.y = screen->h - 24;
+      r.w = screen->w;
+      r.h = 24;
+
+      SDL_UpdateTexture(texture, &r, screen->pixels + ((screen->h - 24) * screen->pitch), screen->pitch);
+
+      //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
+      //  SDL_RenderClear(renderer);
+      //  SDL_RenderCopy(renderer, texture, NULL, NULL);
+      SDL_RenderCopy(renderer, texture, &r, &r);
+
+      SDL_RenderPresent(renderer);
     }
-
-    prog_bar_ctr++;
-
-    // FIXME SDL2
-    //    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
-    r.x = 0;
-    r.y = screen->h - 24;
-    r.w = screen->w;
-    r.h = 24;
-
-    SDL_UpdateTexture(texture, &r, screen->pixels + ((screen->h - 24) * screen->pitch), screen->pitch);
-
-    //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
-    //  SDL_RenderClear(renderer);
-    //  SDL_RenderCopy(renderer, texture, NULL, NULL);
-    SDL_RenderCopy(renderer, texture, &r, &r);
-
-    SDL_RenderPresent(renderer);
-  }
   oldtime = newtime;
 
 
