@@ -2,22 +2,24 @@
 # Copyright (C) 2015 the tuxpaint team.
 # This file is distributed under the same license as the tuxpaint package.
 # Κυριακή Σεραφείμ <pse04178@rhodes.aegean.gr>, 2009. (inactive)
-# Yannis Kaskamanidis <kiolalis@gmail.com>, 2014, 2015.
+# Yannis Kaskamanidis <kiolalis@gmail.com>, 2014, 2015, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 15:48+0200\n"
-"PO-Revision-Date: 2015-10-12 09:31+0300\n"
-"Last-Translator: Yannis Kaskamanidis <kiolalis@gmail.com>\n"
+"PO-Revision-Date: 2017-12-06 07:45+0000\n"
+"Last-Translator: kiolalis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
 "X-Poedit-Bookmarks: 130,170,-1,-1,-1,-1,-1,-1,-1,-1\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-POOTLE-MTIME: 1512546326.000000\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -67,7 +69,7 @@ msgstr "Σκούρο πράσινο!"
 #. Response to "Sky" blue (138, 168, 205) color selected
 #: ../colors.h:113
 msgid "Sky blue!"
-msgstr " Μπλέ του ουρανού!"
+msgstr "Μπλέ του ουρανού!"
 
 #. Response to Blue (50, 100, 255) color selected
 #: ../colors.h:116
@@ -325,15 +327,15 @@ msgstr "Ένα κανονικό οκτάγωνο έχει οκτώ ίσες πλ
 
 #: ../shapes.h:327 ../shapes.h:328
 msgid "A star with 3 points."
-msgstr "Αστέρι με  βαθμούς"
+msgstr "Αστέρι με 3 βαθμούς."
 
 #: ../shapes.h:329 ../shapes.h:330
 msgid "A star with 4 points."
-msgstr "Αστέρι με  βαθμούς"
+msgstr "Αστέρι με 4 βαθμούς."
 
 #: ../shapes.h:331 ../shapes.h:332
 msgid "A star with 5 points."
-msgstr "Αστέρι με βαθμούς"
+msgstr "Αστέρι με 5 βαθμούς."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:56
@@ -447,7 +449,7 @@ msgstr "Έξοδος"
 #. Paint tool instructions
 #: ../tools.h:115
 msgid "Pick a color and a brush shape to draw with."
-msgstr "Διάλεξε  χρώμα και μορφή πινέλου για να ζωγραφίσεις."
+msgstr "Διάλεξε χρώμα και μορφή πινέλου για να ζωγραφίσεις."
 
 #. Stamp tool instructions
 #: ../tools.h:118
@@ -736,7 +738,7 @@ msgstr "Διάλεξε τη ζωγραφιά που θέλεις και μετά
 
 #: ../tuxpaint.c:22873
 msgid "Select a color from your drawing."
-msgstr ""
+msgstr "Επίλεξε ένα χρώμα από τη ζωγραφιά σου."
 
 #: ../tuxpaint.c:22885
 msgid "Pick a color."
@@ -1177,7 +1179,7 @@ msgstr ""
 
 #: ../../magic/src/noise.c:67
 msgid "Click to add noise to your entire picture."
-msgstr "Κάνε κλικ για να προσθέσεις παράσιτα σε ολόκληρη τη ζωραφιά σου. "
+msgstr "Κάνε κλικ για να προσθέσεις παράσιτα σε ολόκληρη τη ζωραφιά σου."
 
 #: ../../magic/src/perspective.c:145
 msgid "Perspective"
@@ -1190,7 +1192,7 @@ msgstr "Εστίαση"
 #: ../../magic/src/perspective.c:151
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
-"Κάνε κλικ στις γωνίες και σύρε το ποντίκι για να επεκτήνεις τη ζωγραφιά. "
+"Κάνε κλικ στις γωνίες και σύρε το ποντίκι για να επεκτήνεις τη ζωγραφιά."
 
 #: ../../magic/src/perspective.c:154
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1307,7 +1309,7 @@ msgstr "Κάνε κλικ για να επισημάνεις τις άκρες �
 #: ../../magic/src/sharpen.c:80
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr ""
-"Κάνε κλικ και κίνησε το ποντίκι για να οξύνεις τμήματα της ζωγραφιάς σου. "
+"Κάνε κλικ και κίνησε το ποντίκι για να οξύνεις τμήματα της ζωγραφιάς σου."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Click to sharpen the entire picture."
@@ -1317,13 +1319,13 @@ msgstr "Κάνε κλικ για να οξύνεις ολόκληρη τη ζω�
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr ""
 "Κάνε κλικ και μετακίνησε το ποντίκι για να δημιουργήσεις ασπρόμαυρο "
-"περίγραμμα. "
+"περίγραμμα."
 
 #: ../../magic/src/sharpen.c:83
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr ""
-"Κάνε κλικ για να δημιουργήσεις  ασπρόμαυρο περίγραμμα ολόκληρης της "
-"ζωγραφιάς σου."
+"Κάνε κλικ για να δημιουργήσεις ασπρόμαυρο περίγραμμα ολόκληρης της ζωγραφιάς "
+"σου."
 
 #: ../../magic/src/shift.c:109
 msgid "Shift"
@@ -1332,7 +1334,7 @@ msgstr "Μετατόπιση"
 #: ../../magic/src/shift.c:115
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr ""
-"Κάνε κλικ και σύρε το ποντίκι για να μετατοπίσεις τη ζωγραφιά σου  πάνω στον "
+"Κάνε κλικ και σύρε το ποντίκι για να μετατοπίσεις τη ζωγραφιά σου πάνω στον "
 "καμβά."
 
 #: ../../magic/src/smudge.c:106
@@ -1425,8 +1427,8 @@ msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
-"Κάνε κλικ και μετακίνησε το ποντίκι για να μετατρέψεις τμήματα  της "
-"ζωγραφιάς σου σε άσπρο και σε ένα χρώμα που επέλεξες."
+"Κάνε κλικ και μετακίνησε το ποντίκι για να μετατρέψεις τμήματα της ζωγραφιάς "
+"σου σε άσπρο και σε ένα χρώμα που επέλεξες."
 
 #: ../../magic/src/tint.c:78
 msgid "Click to turn your entire picture into white and a color you choose."
@@ -1488,7 +1490,7 @@ msgid ""
 msgstr ""
 "Κάνε κλικ για να κάνεις την εικόνα οριζόντια κυματιστή. Κάνε κλικ προς την "
 "κορυφή για κοντύτερα κύματα, προς τη βάση για ψηλότερα, προς τα αριστερά για "
-"μικρά κύματα και προς στα δεξια κύματα μεγάλου μήκους. "
+"μικρά κύματα και προς στα δεξια κύματα μεγάλου μήκους."
 
 #: ../../magic/src/waves.c:112
 msgid ""
@@ -1497,8 +1499,8 @@ msgid ""
 "for long waves."
 msgstr ""
 "Κάνε κλικ για να κάνεις τη ζωγραφιά κατακόρυφα κυματιστή. Κάνε κλικ προς την "
-"κορυφή για κοντύτερα κύματα, προς τη βάση για ψηλότερα κύματα,  προς τα "
-"αριστερά για μικρά κύματα και προς τα δεξια για κύματα μεγάλου μήκους. "
+"κορυφή για κοντύτερα κύματα, προς τη βάση για ψηλότερα κύματα, προς τα "
+"αριστερά για μικρά κύματα και προς τα δεξια για κύματα μεγάλου μήκους."
 
 #: ../../magic/src/xor.c:95
 msgid "Xor Colors"
