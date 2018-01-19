@@ -47,21 +47,21 @@
 #endif
 
 #ifndef VIDEO_BPP
-                                                     /*# define VIDEO_BPP 15 *//* saves memory */
-                                                     /*# define VIDEO_BPP 16 *//* causes discoloration */
-                                                     /*# define VIDEO_BPP 24 *//* compromise */
+                                                                               /*# define VIDEO_BPP 15 *//* saves memory */
+                                                                               /*# define VIDEO_BPP 16 *//* causes discoloration */
+                                                                               /*# define VIDEO_BPP 24 *//* compromise */
 #define VIDEO_BPP 32            /* might be fastest, if conversion funcs removed */
 #endif
 
 
-                                                          /* #define CORNER_SHAPES *//* need major work! */
+                                                                                     /* #define CORNER_SHAPES *//* need major work! */
 
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS          /* Direct to PostScript */
-                                                                   /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
-                                                                       /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
+                                                                                                  /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
+                                                                                                          /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
 
 
 #define MAX_PATH 256
@@ -306,6 +306,7 @@ typedef struct safer_dirent
 
 #define AUTOSAVE_GOING_BACKGROUND
 #include "android_print.h"
+#include "android_assets.h"
 
 #else
 
@@ -562,7 +563,7 @@ static void mtw(wchar_t * wtok, char *tok)
 int TP_EventFilter(void *data, const SDL_Event * event);
 
 
-                                   /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+                                                                     /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 
 #if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
@@ -676,7 +677,7 @@ typedef struct
   Uint8 rows, cols;
 } grid_dims;
 
-                                                               /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+                                                                                              /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
 static SDL_Rect r_canvas;       /* was 448x376 @ 96,0 */
 static SDL_Rect r_tools;        /* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
@@ -688,6 +689,8 @@ static SDL_Rect r_ttoolopt;     /* was 96x40 @ 544,0 (title for tool options) */
 static SDL_Rect r_tuxarea;      /* was 640x56 */
 static SDL_Rect r_label;
 static SDL_Rect old_dest;
+static SDL_Rect r_tir;          /* Text input rectangle */
+static float render_scale;      /* Scale factor for the render */
 
 static int button_w;            /* was 48 */
 static int button_h;            /* was 48 */
@@ -701,7 +704,7 @@ static grid_dims gd_tools;      /* was 2x7 */
 static grid_dims gd_sfx;
 static grid_dims gd_toolopt;    /* was 2x7 */
 
-                                                                 /* static grid_dims gd_open; *//* was 4x4 */
+                                                                                                /* static grid_dims gd_open; *//* was 4x4 */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
@@ -2241,6 +2244,10 @@ static void mainloop(void)
   valhat_y = 0;
   done = 0;
   keyglobal = 0;
+  r_tir.x = 0;
+  r_tir.y = 0;
+  r_tir.w = 0;
+  r_tir.h = 0;
 
   if (NUM_TOOLS > 14 + TOOLOFFSET)
     {
@@ -2703,6 +2710,15 @@ static void mainloop(void)
                               charsize(event.key.keysym.unicode), iswprint(key_unicode) ? L"" : L"not ", key_down);
 #endif
 #endif
+                      /* Set the text input rectangle for system onscreen keyboards */
+                      if (onscreen_keyboard && !kbd)
+                        {
+                          r_tir.y = (float)cursor_y / render_scale;
+                          r_tir.x = (float)cursor_x / render_scale;
+                          SDL_SetTextInputRect(&r_tir);
+                          SDL_StartTextInput();
+                        }
+
 
                       /* Discard previous # of redraw characters */
                       if ((int)texttool_len <= redraw)
@@ -3026,7 +3042,15 @@ static void mainloop(void)
                                         PROMPT_TIP_LEFTCLICK_YES,
                                         "", img_mouse, img_mouse_click, NULL, 1, event.button.x, event.button.y);
                   if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
-                    do_render_cur_text(0);
+                    {
+                      if (onscreen_keyboard && !kbd)
+                        {
+                          r_tir.y = (float)event.button.y / render_scale;
+                          SDL_SetTextInputRect(&r_tir);
+                          SDL_StartTextInput();
+                        }
+                      do_render_cur_text(0);
+                    }
                   draw_tux_text(TUX_BORED, "", 0);
                 }
             }
@@ -3156,6 +3180,8 @@ static void mainloop(void)
 
                               if (onscreen_keyboard && !kbd)
                                 {
+                                  r_tir.y = (float)event.button.y / render_scale;
+                                  SDL_SetTextInputRect(&r_tir);
                                   SDL_StartTextInput();
                                 }
                               if (!font_thread_done)
@@ -4465,6 +4491,13 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                     {
+                      if (onscreen_keyboard && !kbd)
+                        {
+                          r_tir.y = (float)old_y / render_scale;
+                          SDL_SetTextInputRect(&r_tir);
+                          SDL_StartTextInput();
+                        }
+
                       /* Text and Label Tools! */
                       if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
                         {
@@ -4515,6 +4548,8 @@ static void mainloop(void)
 
                               if (onscreen_keyboard && !kbd)
                                 {
+                                  r_tir.y = (float)old_y / render_scale;
+                                  SDL_SetTextInputRect(&r_tir);
                                   SDL_StartTextInput();
                                 }
                               do_render_cur_text(0);
@@ -4595,6 +4630,8 @@ static void mainloop(void)
 
                           if (onscreen_keyboard && !kbd)
                             {
+                              r_tir.y = (float)cursor_y / render_scale;
+                              SDL_SetTextInputRect(&r_tir);
                               SDL_StartTextInput();
                             }
                         }
@@ -7617,7 +7654,11 @@ static void load_stamps(SDL_Surface * screen)
   default_stamp_size = compute_default_scale_factor(1.0);
 
   load_stamp_dir(screen, homedirdir);
+#ifndef __ANDROID__
   load_stamp_dir(screen, DATA_PREFIX "stamps");
+#else
+  load_stamp_dir(screen, ASSETS_STAMPS_DIR);
+#endif
 #ifdef __APPLE__
   load_stamp_dir(screen, "Resources/stamps");
   load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
@@ -13487,8 +13528,8 @@ static void do_png_embed_data(png_structp png_ptr)
                 for (y = 0; y < current_node->save_height; y++)
                   {
                     pix =
-                      getpixels[current_node->label_node_surface->format->
-                                BytesPerPixel] (current_node->label_node_surface, x, y);
+                      getpixels[current_node->label_node_surface->format->BytesPerPixel] (current_node->
+                                                                                          label_node_surface, x, y);
                     SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
                     fwrite(&a, alpha_size, 1, lfi);
 
@@ -16390,6 +16431,8 @@ static void do_render_cur_text(int do_blit)
 
       w = tmp_surf->w;
       h = tmp_surf->h;
+      r_tir.h = (float)tmp_surf->h / render_scale;
+      r_tir.w = (float)tmp_surf->w / render_scale;
 
       cursor_textwidth = w;
     }
@@ -18503,6 +18546,33 @@ static int do_new_dialog(void)
 
           closedir(d);
         }
+#ifdef __ANDROID__
+      else if (dirname[places_to_look][0] != "/")
+        {
+          /* Try inside android assets only if it is a relative path */
+
+          AAssetDir *ad = open_asset_dir(dirname[places_to_look]);
+          const char *afilename = (const char *)NULL;
+
+          while ((afilename = AAssetDir_getNextFileName(ad)) != NULL)
+            {
+              f = malloc(sizeof(struct dirent));
+              strncpy(f->d_name, afilename, sizeof(f->d_name));
+
+              memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
+              fs[num_files_in_dirs].place = places_to_look;
+              free(f);
+              num_files_in_dirs++;
+
+              if (num_files_in_dirs >= things_alloced)
+                {
+                  things_alloced = things_alloced + 32;
+
+                  fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                }
+            }
+        }
+#endif
     }
 
 
@@ -21968,12 +22038,14 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
         *arg++ = '\0';
 
 #ifdef __linux__
+#ifndef __ANDROID__
       /* Perform shell expansion */
       wordexp_t result;
 
       wordexp(arg, &result, 0);
       arg = strdup(result.we_wordv[0]);
       wordfree(&result);
+#endif
 #endif
 
       /* FIXME: leaking mem here, but the trouble is that these
@@ -21982,7 +22054,9 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
          of the strings end up being kept around */
       parse_one_option(tmpcfg, str, strdup(arg), filename);
 #ifdef __linux__
+#ifndef __ANDROID__
       free(arg);
+#endif
 #endif
     }
   fclose(fi);
@@ -23004,6 +23078,7 @@ static void setup(void)
   SDL_Thread *fontconfig_thread;
 #endif
 
+  render_scale = 1.0;
 
 
 #ifdef _WIN32
@@ -23027,9 +23102,7 @@ static void setup(void)
   if (disable_screensaver == 0)
     {
       putenv((char *)"SDL_VIDEO_ALLOW_SCREENSAVER=1");
-      if (SDL_MAJOR_VERSION < 1 ||
-          (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION < 2) ||
-          (SDL_MAJOR_VERSION >= 1 && SDL_MINOR_VERSION >= 2 && SDL_PATCHLEVEL < 12))
+      if (SDL_MAJOR_VERSION < 2 || (SDL_MAJOR_VERSION == 2 && SDL_MINOR_VERSION == 0 && SDL_PATCHLEVEL < 2))
         {
           fprintf(stderr, "Note: 'allowscreensaver' requires SDL 1.2.12 or higher\n");
         }
@@ -23245,6 +23318,7 @@ static void setup(void)
                   /* Keep things squared */
                   ww = window_scale_w * ww;
                   hh = window_scale_w * hh;
+                  render_scale = window_scale_w;
 
                   SDL_RenderSetScale(renderer, window_scale_w, window_scale_w);
                 }
@@ -23252,6 +23326,7 @@ static void setup(void)
                 {
                   ww = window_scale_h * ww;
                   hh = window_scale_h * hh;
+                  render_scale = window_scale_h;
 
                   SDL_RenderSetScale(renderer, window_scale_h, window_scale_h);
                 }
@@ -23267,7 +23342,6 @@ static void setup(void)
 
 
       screen = SDL_CreateRGBSurface(0, ww, hh, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
-
       if (screen == NULL)
         {
           fprintf(stderr,
@@ -24167,9 +24241,14 @@ int main(int argc, char *argv[])
   /* do not add code (slowness) here unless required for scanning fonts */
   progname = argv[0];
 
-#if defined(DEBUG) && defined(__APPLE__)
+#if defined(DEBUG)
+#if defined(__APPLE__)
   /* EP added block to log messages */
   freopen("/tmp/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
+#elif defined (__ANDROID__)
+  freopen("/mnt/sdcard/tuxpaint/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
+#endif
+
   dup2(fileno(stdout), fileno(stderr)); /* redirect stderr to stdout */
   setvbuf(stdout, NULL, _IONBF, 0);     /* we don't want buffering to avoid de-sync'ing stdout and stderr */
   setvbuf(stderr, NULL, _IONBF, 0);     /* we don't want buffering to avoid de-sync'ing stdout and stderr */
@@ -24192,7 +24271,7 @@ int main(int argc, char *argv[])
    * file may not exist on the runtime system, however, so we copy the file
    * into our app bundle at compile time, and tell Fontconfig here to look for
    * the file within the app bundle. */
-  putenv((char*) "FONTCONFIG_PATH=Resources/etc");
+  putenv((char *)"FONTCONFIG_PATH=Resources/etc");
 #endif
 
 #ifdef FORKED_FONTS

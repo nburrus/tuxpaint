@@ -45,7 +45,7 @@ void show_progress_bar_(SDL_Surface * screen, SDL_Texture * texture, SDL_Rendere
     return;
 
   newtime = SDL_GetTicks();
-  if (newtime > oldtime + 15)   // trying not to eat some serious CPU time!
+  if (newtime > oldtime + 15)   /* trying not to eat some serious CPU time! */
     {
       for (x = 0; x < screen->w; x = x + 65)
         {
@@ -62,8 +62,6 @@ void show_progress_bar_(SDL_Surface * screen, SDL_Texture * texture, SDL_Rendere
 
       prog_bar_ctr++;
 
-      // FIXME SDL2
-      //    SDL_UpdateRect(screen, 0, screen->h - 24, screen->w, 24);
       r.x = 0;
       r.y = screen->h - 24;
       r.w = screen->w;
@@ -71,11 +69,9 @@ void show_progress_bar_(SDL_Surface * screen, SDL_Texture * texture, SDL_Rendere
 
       SDL_UpdateTexture(texture, &r, screen->pixels + ((screen->h - 24) * screen->pitch), screen->pitch);
 
-      //  NOTE docs says one should clear the renderer, however this means a refresh of the whole thing.
-      //  SDL_RenderClear(renderer);
-      //  SDL_RenderCopy(renderer, texture, NULL, NULL);
-      SDL_RenderCopy(renderer, texture, &r, &r);
-
+      /* Docs says one should clear the renderer, even if this means a refresh of the whole thing. */
+      SDL_RenderClear(renderer);
+      SDL_RenderCopy(renderer, texture, NULL, NULL);
       SDL_RenderPresent(renderer);
     }
   oldtime = newtime;
