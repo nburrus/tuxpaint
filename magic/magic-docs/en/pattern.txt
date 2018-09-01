@@ -2,6 +2,6 @@
 
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-   This paint brush draws a repeating tile around the image.
+   Draws a tiled pattern around the picture.
 
-   See also: Pattern Pattern
+   See also: Tiles
