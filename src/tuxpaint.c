@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 28, 2018
+  June 14, 2002 - December 18, 2018
 */
 
 
@@ -302,6 +302,17 @@ typedef struct safer_dirent
 
 #else /* __BEOS__ */
 
+/* Not BeOS */
+
+#ifdef __APPLE__
+
+/* Apple */
+
+#include "macos_print.h"
+
+#else /* __APPLE__ */
+
+/* Not Windows, not BeOS, not Apple */
 #ifdef __ANDROID__
 
 #define AUTOSAVE_GOING_BACKGROUND
@@ -310,11 +321,13 @@ typedef struct safer_dirent
 
 #else
 
-/* Not Windows, not BeOS, not Android */
+/* Not Windows, not BeOS, not Apple, not Android*/
 
 #include "postscript_print.h"
 
 #endif /* __ANDROID__ */
+
+#endif /* __APPLE__ */
 
 #endif /* __BEOS__ */
 
@@ -1280,6 +1293,7 @@ static int dont_load_stamps;
 static int mirrorstamps;
 static int disable_stamp_controls;
 static int stamp_size_override = -1;
+static int new_colors_last;
 
 #ifdef NOKIA_770
 static int simple_shapes = 1;
@@ -1450,7 +1464,7 @@ enum
 static magic_api *magic_api_struct;     /* Pointer to our internal functions; passed to shared object's functions when we call them */
 
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 #include <paper.h>
 #if !defined(PAPER_H)
 #error "---------------------------------------------------"
@@ -2046,6 +2060,7 @@ static void get_new_file_id(void);
 static int do_quit(int tool);
 static int do_open(void);
 static int do_new_dialog(void);
+static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette);
 static int do_color_picker(void);
 static int do_color_sel(void);
 static int do_slideshow(void);
@@ -2716,6 +2731,14 @@ static void mainloop(void)
 
                   magic_switchin(canvas);
                 }
+#ifdef __APPLE__
+              else if (key == SDLK_p && (mod & KMOD_CTRL) && (mod & KMOD_SHIFT) && !noshortcuts)
+                {
+                  /* Ctrl-Shft-P - Page Setup */
+                  if (!disable_print)
+                    DisplayPageSetup(canvas);
+                }
+#endif
               else if (key == SDLK_p && (mod & KMOD_CTRL) && !noshortcuts)
                 {
                   /* Ctrl-P - Print */
@@ -6648,80 +6671,92 @@ void show_version(int details)
 void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
-  char *blank;
-  unsigned i;
-
-  blank = strdup(progname);
-
-  for (i = 0; i < strlen(blank); i++)
-    blank[i] = ' ';
 
   fprintf(f,
           "\n"
           "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
           "\n"
-          "  %s [--windowed | --fullscreen]\n"
-          "  %s [--WIDTHxHEIGHT | --native]\n"
-          "  %s [--disablescreensaver | --allowscreensaver ]\n"
-          "  %s [--orient=landscape | --orient=portrait]\n"
-          "  %s [--startblank | --startlast]\n"
-          "  %s [--sound | --nosound]\n"
-          "  %s [--quit | --noquit]\n"
-          "  %s [--print | --noprint]\n"
-          "  %s [--complexshapes | --simpleshapes]\n"
-          "  %s [--mixedcase | --uppercase]\n"
-          "  %s [--fancycursors | --nofancycursors]\n"
-          "  %s [--hidecursor | --showcursor]\n"
-          "  %s [--mouse | --keyboard]\n"
-          "  %s [--dontgrab | --grab]\n"
-          "  %s [--noshortcuts | --shortcuts]\n"
-          "  %s [--wheelmouse | --nowheelmouse]\n"
-          "  %s [--nobuttondistinction | --buttondistinction]\n"
-          "  %s [--outlines | --nooutlines]\n"
-          "  %s [--stamps | --nostamps]\n"
-          "  %s [--sysfonts | --nosysfonts]\n"
-          "  %s [--nostampcontrols | --stampcontrols]\n"
-          "  %s [--nomagiccontrols | --magiccontrols]\n"
-          "  %s [--nolabel | --label]\n"
-          "  %s [--mirrorstamps | --dontmirrorstamps]\n"
-          "  %s [--stampsize=[0-10] | --stampsize=default]\n"
-          "  %s [--saveoverask | --saveover | --saveovernew]\n"
-          "  %s [--nosave | --save]\n"
-          "  %s [--autosave | --noautosave]\n" "  %s [--savedir DIRECTORY]\n" "  %s [--datadir DIRECTORY]\n"
+          " Config:\n"
+          "  [--nosysconfig]\n"
+          "\n"
+          " Video/Sound:\n"
+          "  [--windowed | --fullscreen]\n"
+          "  [--WIDTHxHEIGHT | --native]\n"
+          "  [--orient=landscape | --orient=portrait]\n"
+          "  [--disablescreensaver | --allowscreensaver ]\n"
+          "  [--sound | --nosound]\n"
+          "  [--colorfile FILE]\n"
+          "\n"
+          " Mouse/Keyboard:\n"
+          "  [--fancycursors | --nofancycursors]\n"
+          "  [--hidecursor | --showcursor]\n"
+          "  [--noshortcuts | --shortcuts]\n"
+          "  [--dontgrab | --grab]\n"
+          "  [--wheelmouse | --nowheelmouse]\n"
+          "  [--nobuttondistinction | --buttondistinction]\n"
+          "\n"
+          " Simplification:\n"
+          "  [--complexshapes | --simpleshapes]\n"
+          "  [--outlines | --nooutlines]\n"
+          "  [--mixedcase | --uppercase]\n"
+          "  [--stampsize=[0-10] | --stampsize=default]\n"
+          "  [--quit | --noquit]\n"
+          "  [--stamps | --nostamps]\n"
+          "  [--nostampcontrols | --stampcontrols]\n"
+          "  [--nomagiccontrols | --magiccontrols]\n"
+          "  [--nolabel | --label]\n"
+          "  [--newcolorsfirst | --newcolorslast]\n"
+          "\n"
+          " Languages:\n"
+          "  [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
+          "  [--mirrorstamps | --dontmirrorstamps]\n"
+          "  [--sysfonts | --nosysfonts]\n"
+          "  [--currentlocalefont | --alllocalefonts]\n"
+          "\n"
+          " Printing:\n"
+          "  [--print | --noprint]\n"
+          "  [--printdelay=SECONDS]\n"
+          "  [--altprintmod | --altprintalways | --altprintnever]\n"
 #if defined(WIN32) || defined(__APPLE__)
-          "  %s [--printcfg | --noprintcfg]\n"
+          "  [--printcfg | --noprintcfg]\n"
 #endif
-          "  %s [--printdelay=SECONDS]\n" "  %s [--altprintmod | --altprintalways | --altprintnever]\n"
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
-          "  %s [--papersize PAPERSIZE | --papersize help]\n"
-#endif
-          "  %s [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
-          "  %s [--nosysconfig]\n"
-          "  %s [--nolockfile]\n"
-          "  %s [--colorfile FILE]\n"
-          "  %s [--mouse-accessibility]\n"
-          "  %s [--onscreen-keyboard]\n"
-          "  %s [--joystick-dev N] (default=0)\n"
-          "  %s [--joystick-slowness N] (0-500; default value is 15)\n"
-          "  %s [--joystick-threshold N] (0-32766; default value is 3200)\n"
-          "  %s [--joystick-maxsteps N] (1-7; default value is 7)\n"
-          "\n",
-          progname, progname,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank,
-          blank, blank, blank, blank, blank, blank, blank, blank, blank, blank, blank, blank, blank,
-#ifdef WIN32
-          blank,
-#endif
-          blank, blank,
-#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
-          blank,
-#endif
-          blank, blank, blank, blank, blank, blank, blank, blank, blank, blank);
 
-  free(blank);
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+          "  [--printcommand=COMMAND]\n"
+          "  [--altprintcommand=COMMAND]\n"
+          "  [--papersize PAPERSIZE | --papersize help]\n"
+#endif
+          "\n"
+          " Saving:\n"
+          "  [--saveoverask | --saveover | --saveovernew]\n"
+          "  [--startblank | --startlast]\n"
+          "  [--savedir DIRECTORY]\n"
+          "  [--nosave | --save]\n"
+          "  [--autosave | --noautosave]\n"
+          "\n"
+          " Data:\n"
+          "  [--nolockfile]\n"
+          "  [--datadir DIRECTORY]\n"
+          "\n"
+          " Accessibility:\n"
+          "  [--mouse-accessibility]\n"
+          "  [--mouse | --keyboard]\n"
+          "  [--onscreen-keyboard]\n"
+          "  [--onscreen-keyboard-layout=LAYOUT]\n"
+          "  [--onscreen-keyboard-disable-change]\n"
+          "\n"
+          " Joystick:\n"
+          "  [--joystick-dev N] (default=0)\n"
+          "  [--joystick-slowness N] (0-500; default value is 15)\n"
+          "  [--joystick-threshold N] (0-32766; default value is 3200)\n"
+          "  [--joystick-maxsteps N] (1-7; default value is 7)\n"
+          "  [--joystick-hat-slowness N] (0-500; default value is 15)\n"
+          "  [--joystick-hat-timeout N] (0-3000; default value is 1000)\n"
+          "  [--joystick-buttons-ignore=BUTTON1,BUTTON2,...]\n"
+          "  [--joystick-btn-COMMAND=BUTTON]\n"
+          /* FIXME: "--joystick-btn-help" to list available commands, like "--lang help" */
+          "\n",
+          progname);
 }
 
 
@@ -7698,7 +7733,7 @@ static void loadstamp_callback(SDL_Surface * screen,
   (void)locale;
 #ifdef DEBUG
   /* FIXME: Stderr instead of stdout? */
-  printf("loadstamp_callback: %s\n", dir);
+  printf("loadstamp_callback (%d): %s\n", i, dir);
 #endif
 
   if (num_stamps[stamp_group] > 0)
@@ -7738,7 +7773,6 @@ static void loadstamp_callback(SDL_Surface * screen,
 
 
   /* Sort and iterate the file list: */
-
   qsort(files, i, sizeof *files, compare_ftw_str);
   while (i--)
     {
@@ -7784,7 +7818,11 @@ static void loadstamp_callback(SDL_Surface * screen,
         }
 #endif
 
-      show_progress_bar(screen);
+      /*
+      * Showing the progress bar across the screen can be CPU-intensive, so
+      * update infrequently.
+      */
+      if((i % 32) == 0) show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
           && (dotext - files[i].str + 1 + dirlen < (int)(sizeof fname))
@@ -16686,7 +16724,7 @@ void do_print(void)
   SDL_BlitSurface(canvas, NULL, save_canvas, NULL);
   SDL_BlitSurface(label, NULL, save_canvas, NULL);
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__BEOS__) && !defined(__APPLE__) && !defined(__HAIKU__) && !defined(__ANDROID__)
   const char *pcmd;
   FILE *pi;
 
@@ -16738,6 +16776,17 @@ void do_print(void)
   /* BeOS */
 
   SurfacePrint(save_canvas);
+#elif defined(__APPLE__)
+  /* Mac OS X */
+  int show = (want_alt_printcommand && !fullscreen);
+
+  const char *error = SurfacePrint(save_canvas, show);
+  
+  if (error)
+    {
+      fprintf(stderr, "Cannot print: %s\n", error);
+      do_prompt_snd(error, PROMPT_PRINT_YES, "", SND_TUXOK, 0, 0);
+    }
 
 #elif defined(__ANDROID__)
 
@@ -18969,8 +19018,6 @@ static int do_new_dialog(void)
   int places_to_look;
   int tot;
   int first_starter, first_template;
-  int added;
-  Uint8 r, g, b;
   int white_in_palette;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
@@ -19092,8 +19139,10 @@ static int do_new_dialog(void)
 
 
   /* (Re)allocate space for the information about these files: */
+  tot = num_files_in_dirs;
 
-  tot = num_files_in_dirs + NUM_COLORS;
+  /* And colors... */
+  tot += NUM_COLORS;
 
   thumbs = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * tot);
   d_places = (int *)malloc(sizeof(int) * tot);
@@ -19106,66 +19155,13 @@ static int do_new_dialog(void)
   qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
 
 
-  /* Throw the color palette at the beginning: */
+  /* Throw the color palette at the beginning (default): */
 
   white_in_palette = -1;
 
-  for (j = -1; j < NUM_COLORS; j++)
-    {
-      added = 0;
-
-      if (j < NUM_COLORS - 1)
-        {
-          if (j == -1 ||        /* (short circuit) */
-              color_hexes[j][0] != 255 ||       /* Ignore white, we'll have already added it */
-              color_hexes[j][1] != 255 || color_hexes[j][2] != 255)
-            {
-              /* Palette colors: */
-
-              thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
-                                                       THUMB_W - 20, THUMB_H - 20,
-                                                       screen->format->BitsPerPixel,
-                                                       screen->format->Rmask,
-                                                       screen->format->Gmask, screen->format->Bmask, 0);
-
-              if (thumbs[num_files] != NULL)
-                {
-                  if (j == -1)
-                    {
-                      r = g = b = 255;  /* White */
-                    }
-                  else
-                    {
-                      r = color_hexes[j][0];
-                      g = color_hexes[j][1];
-                      b = color_hexes[j][2];
-                    }
-                  SDL_FillRect(thumbs[num_files], NULL, SDL_MapRGB(thumbs[num_files]->format, r, g, b));
-                  added = 1;
-                }
-            }
-          else
-            {
-              white_in_palette = j;
-            }
-        }
-      else
-        {
-          /* Color picker: */
-
-          thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
-          added = 1;
-        }
-
-      if (added)
-        {
-          d_places[num_files] = PLACE_COLOR_PALETTE;
-          d_names[num_files] = NULL;
-          d_exts[num_files] = NULL;
-
-          num_files++;
-        }
-    }
+  if (!new_colors_last) {
+    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+  }
 
   first_starter = num_files;
   first_template = -1;          /* In case there are none... */
@@ -19468,10 +19464,15 @@ static int do_new_dialog(void)
         }
     }
 
+  /* Throw the color palette at the end (alternative option): */
+
+  if (new_colors_last) {
+    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+  }
 
 
 #ifdef DEBUG
-  printf("%d files were found!\n", num_files);
+  printf("%d files and colors were found!\n", num_files);
 #endif
 
 
@@ -20128,6 +20129,76 @@ static int do_new_dialog(void)
 
   return (which != -1);
 }
+
+/* Add colors to the "New" dialog's list of choices;
+   normally appears at the beginning (above Starts & Templates),
+   but may be placed at the end with the "--newcolorslast" option.
+*/
+static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette) {
+  int j;
+  int added;
+  Uint8 r, g, b;
+
+  for (j = -1; j < NUM_COLORS; j++)
+    {
+      added = 0;
+
+      if (j < NUM_COLORS - 1)
+        {
+          if (j == -1 ||        /* (short circuit) */
+              color_hexes[j][0] != 255 ||       /* Ignore white, we'll have already added it */
+              color_hexes[j][1] != 255 || color_hexes[j][2] != 255)
+            {
+              /* Palette colors: */
+
+              thumbs[num_files] = SDL_CreateRGBSurface(screen->flags,
+                                                       THUMB_W - 20, THUMB_H - 20,
+                                                       screen->format->BitsPerPixel,
+                                                       screen->format->Rmask,
+                                                       screen->format->Gmask, screen->format->Bmask, 0);
+
+              if (thumbs[num_files] != NULL)
+                {
+                  if (j == -1)
+                    {
+                      r = g = b = 255;  /* White */
+                    }
+                  else
+                    {
+                      r = color_hexes[j][0];
+                      g = color_hexes[j][1];
+                      b = color_hexes[j][2];
+                    }
+                  SDL_FillRect(thumbs[num_files], NULL, SDL_MapRGB(thumbs[num_files]->format, r, g, b));
+                  added = 1;
+                }
+            }
+          else
+            {
+              *white_in_palette = j;
+            }
+        }
+      else
+        {
+          /* Color picker: */
+
+          thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
+          added = 1;
+        }
+
+      if (added)
+        {
+          d_places[num_files] = PLACE_COLOR_PALETTE;
+          d_names[num_files] = NULL;
+          d_exts[num_files] = NULL;
+
+          num_files++;
+        }
+    }
+
+  return num_files;
+}
+
 
 /**
  * FIXME
@@ -22582,7 +22653,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
 /* ================================================================================== */
 
-#if !defined(WIN32) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
+#if !defined(WIN32) && !defined(__APPLE__) && !defined(__BEOS__) && !defined(__HAIKU__) && !defined(__ANDROID__)
 /**
  * FIXME
  */
@@ -22946,6 +23017,7 @@ static void setup_config(char *argv[])
   SETBOOL(keymouse);
   SETBOOL(mirrorstamps);
   SETBOOL(native_screensize);
+  SETBOOL(new_colors_last);
   SETBOOL(no_button_distinction);
   SETBOOL(no_fancy_cursors);
   SETBOOL(no_system_fonts);

@@ -4,12 +4,12 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - August 30, 2018
+# June 14, 2002 - December 18, 2018
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.23
+VER_VERSION:=0.9.24
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
 else
@@ -90,7 +90,7 @@ linux_BUNDLE:=
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
-osx_ARCH_LIBS:=obj/postscript_print.o obj/macos.o
+osx_ARCH_LIBS:=src/macos_print.m obj/macos.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
@@ -116,7 +116,7 @@ FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lintl $(PNG) -lzdll -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv
-osx_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
+osx_ARCH_LINKS:=$(FRIBIDI_LIB)
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB)
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB)
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
@@ -877,7 +877,7 @@ install-dlls:
 	@cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX)
 	@cp `which libstdc++-6.dll` $(BIN_PREFIX)
 	@cp `which libfribidi-0.dll` $(BIN_PREFIX)
-	@cp `which libwinpthread-1.dll` $(BIN_PREFIX)
+	@cp `which libpthread-2.dll` $(BIN_PREFIX)
 	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
 	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
 	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
