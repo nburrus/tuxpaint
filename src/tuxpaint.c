@@ -384,7 +384,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_thread.h"
 
-#if !defined(_SDL_H)
+#if !defined(_SDL_H) && !defined(SDL_h_)
 #error "---------------------------------------------------"
 #error "If you installed SDL from a package, be sure to get"
 #error "the development package, as well!"
@@ -394,7 +394,7 @@ static void mtw(wchar_t * wtok, char *tok)
 
 #include "SDL2/SDL_image.h"
 
-#if !defined(_SDL_IMAGE_H) && !defined(_IMG_h)
+#if !defined(_SDL_IMAGE_H) && !defined(_IMG_h) && !defined(SDL_IMAGE_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_image from a package, be sure"
 #error "to get the development package, as well!"
@@ -404,7 +404,7 @@ static void mtw(wchar_t * wtok, char *tok)
 
 #include "SDL2/SDL_ttf.h"
 
-#if !defined(_SDL_TTF_H) && !defined(_SDLttf_h)
+#if !defined(_SDL_TTF_H) && !defined(_SDLttf_h) && !defined(SDL_TTF_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_ttf from a package, be sure"
 #error "to get the development package, as well!"
@@ -450,7 +450,7 @@ static void mtw(wchar_t * wtok, char *tok)
 
 #include "SDL2/SDL_mixer.h"
 
-#if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_)
+#if !defined(_SDL_MIXER_H) && !defined(_MIXER_H_) && !defined(SDL_MIXER_H_)
 #error "---------------------------------------------------"
 #error "If you installed SDL_mixer from a package, be sure"
 #error "to get the development package, as well!"
