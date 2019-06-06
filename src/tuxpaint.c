@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2018
+  Copyright (c) 2002-2019
   by various contributors; see AUTHORS.txt
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 18, 2018
+  June 14, 2002 - April 3, 2019
 */
 
 
@@ -38,6 +38,8 @@
 
 /* Color depth for Tux Paint to run in, and store canvases in: */
 
+/* *INDENT-OFF* */
+
 #if defined(NOKIA_770)
 #define VIDEO_BPP 16
 #endif
@@ -47,22 +49,19 @@
 #endif
 
 #ifndef VIDEO_BPP
-                                                                               /*# define VIDEO_BPP 15 *//* saves memory */
-                                                                               /*# define VIDEO_BPP 16 *//* causes discoloration */
-                                                                               /*# define VIDEO_BPP 24 *//* compromise */
-#define VIDEO_BPP 32            /* might be fastest, if conversion funcs removed */
+    /*# define VIDEO_BPP 15 *//* saves memory */
+    /*# define VIDEO_BPP 16 *//* causes discoloration */
+    /*# define VIDEO_BPP 24 *//* compromise */
+    #define VIDEO_BPP 32      /* might be fastest, if conversion funcs removed */
 #endif
 
-
-                                                                                     /* #define CORNER_SHAPES *//* need major work! */
-
+/* #define CORNER_SHAPES *//* need major work! */
 
 /* Method for printing images: */
 
 #define PRINTMETHOD_PS          /* Direct to PostScript */
-                                                                                                  /*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
-                                                                                                          /*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
-
+/*#define PRINTMETHOD_PNM_PS *//* Output PNM, assuming it gets printed */
+/*#define PRINTMETHOD_PNG_PNM_PS *//* Output PNG, assuming it gets printed */
 
 #define MAX_PATH 256
 
@@ -110,6 +109,8 @@
 #else
 #define TPAINT_AMASK 0x000000ff
 #endif
+
+/* *INDENT-ON* */
 
 static unsigned draw_colors(unsigned action);
 
@@ -579,7 +580,9 @@ static void mtw(wchar_t * wtok, char *tok)
 int TP_EventFilter(void *data, const SDL_Event * event);
 
 
-                                                                     /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+/* *INDENT-OFF* */
+/* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
+/* *INDENT-ON* */
 
 #if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
@@ -707,7 +710,10 @@ typedef struct
   Uint8 rows, cols;
 } grid_dims;
 
-                                                                                              /* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+/* *INDENT-OFF* */
+/* static SDL_Rect r_screen; *//* was 640x480 @ 0,0  -- but this isn't so useful */
+/* *INDENT-ON* */
+
 static SDL_Rect r_canvas;       /* was 448x376 @ 96,0 */
 static SDL_Rect r_tools;        /* was 96x336 @ 0,40 */
 static SDL_Rect r_sfx;
@@ -734,7 +740,9 @@ static grid_dims gd_tools;      /* was 2x7 */
 static grid_dims gd_sfx;
 static grid_dims gd_toolopt;    /* was 2x7 */
 
-                                                                                                /* static grid_dims gd_open; *//* was 4x4 */
+/* *INDENT-OFF* */
+/* static grid_dims gd_open; *//* was 4x4 */
+/* *INDENT-ON* */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / 48) * 48)
@@ -1287,6 +1295,7 @@ static int disable_save;
 static int ok_to_use_lockfile = 1;
 static int start_blank;
 static int autosave_on_quit;
+static int no_prompt_on_quit = 0;
 
 static int dont_do_xor;
 static int dont_load_stamps;
@@ -2060,7 +2069,8 @@ static void get_new_file_id(void);
 static int do_quit(int tool);
 static int do_open(void);
 static int do_new_dialog(void);
-static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette);
+static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d_places, char * *d_names,
+                                    char * *d_exts, int *white_in_palette);
 static int do_color_picker(void);
 static int do_color_sel(void);
 static int do_slideshow(void);
@@ -6672,6 +6682,7 @@ void show_usage(int exitcode)
 {
   FILE *f = exitcode ? stderr : stdout;
 
+  /* *INDENT-OFF* */
   fprintf(f,
           "\n"
           "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
@@ -6757,6 +6768,7 @@ void show_usage(int exitcode)
           /* FIXME: "--joystick-btn-help" to list available commands, like "--lang help" */
           "\n",
           progname);
+  /* *INDENT-ON* */
 }
 
 
@@ -7819,10 +7831,11 @@ static void loadstamp_callback(SDL_Surface * screen,
 #endif
 
       /*
-      * Showing the progress bar across the screen can be CPU-intensive, so
-      * update infrequently.
-      */
-      if((i % 32) == 0) show_progress_bar(screen);
+       * Showing the progress bar across the screen can be CPU-intensive, so
+       * update infrequently.
+       */
+      if ((i % 32) == 0)
+        show_progress_bar(screen);
 
       if (dotext > files[i].str && !strcasecmp(dotext, ext)
           && (dotext - files[i].str + 1 + dirlen < (int)(sizeof fname))
@@ -8019,13 +8032,23 @@ static int generate_fontconfig_cache(void *vp)
   ((c) >= 'a' && (c) <= 'f') ? ((c) - 'a' + 10) : 0)
 
 #ifndef WIN32
-/**
- * FIXME
- */
 static void signal_handler(int sig)
 {
-  (void)sig;
   // It is not legal to call printf or most other functions here!
+  if (sig == SIGUSR1 || sig == SIGUSR2)
+    {
+      autosave_on_quit = 1;
+      no_prompt_on_quit = 1;
+      if (sig == SIGUSR1)
+        {
+          promptless_save = SAVE_OVER_NO;
+        }
+      else
+        {
+          promptless_save = SAVE_OVER_ALWAYS;
+        }
+      raise(SIGTERM);
+    }
 }
 #endif
 
@@ -12218,14 +12241,16 @@ static int do_prompt_image_flash_snd(const char *const text,
   int valhat_x, valhat_y, hatmotioner;
 
 #ifdef DEBUG
-  if(snd >= 0) {
-    printf("Prompt and play sound #%d: %s\n", snd, sound_fnames[snd]);
-    fflush(stdout);
-  }
-  else {
-    printf("Prompt without sound\n");
-    fflush(stdout);
-  }
+  if (snd >= 0)
+    {
+      printf("Prompt and play sound #%d: %s\n", snd, sound_fnames[snd]);
+      fflush(stdout);
+    }
+  else
+    {
+      printf("Prompt without sound\n");
+      fflush(stdout);
+    }
 #endif
 
   val_x = val_y = motioner = 0;
@@ -13939,12 +13964,11 @@ static void do_png_embed_data(png_structp png_ptr)
               for (x = 0; x < current_node->save_width; x++)
                 for (y = 0; y < current_node->save_height; y++)
                   {
-                    pix =
-                      getpixels[current_node->label_node_surface->format->BytesPerPixel] (current_node->
-                                                                                          label_node_surface, x, y);
+                    /* *INDENT-OFF* */
+                    pix = getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
+                    /* *INDENT-ON* */
                     SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
                     fwrite(&a, alpha_size, 1, lfi);
-
                   }
               SDL_UnlockSurface(current_node->label_node_surface);
               fprintf(lfi, "\n\n");
@@ -14179,9 +14203,16 @@ static int do_quit(int tool)
 {
   int done, tmp_tool;
 
-  done = do_prompt_snd(PROMPT_QUIT_TXT,
-                       PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
-                       (TOOL_QUIT % 2) * 48 + 24, (TOOL_QUIT / 2) * 48 + 40 + 24);
+  if (!no_prompt_on_quit)
+    {
+      done = do_prompt_snd(PROMPT_QUIT_TXT,
+                           PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
+                           (TOOL_QUIT % 2) * 48 + 24, (TOOL_QUIT / 2) * 48 + 40 + 24);
+    }
+  else
+    {
+      done = 1;
+    }
 
   if (done && !been_saved && !disable_save)
     {
@@ -19017,7 +19048,7 @@ static int do_new_dialog(void)
   int last_click_which, last_click_button;
   int places_to_look;
   int tot;
-  int first_starter, first_template;
+  int first_color, first_starter, first_template;
   int white_in_palette;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
@@ -19159,9 +19190,11 @@ static int do_new_dialog(void)
 
   white_in_palette = -1;
 
-  if (!new_colors_last) {
-    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
-  }
+  if (!new_colors_last)
+    {
+      first_color = 0;
+      num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+    }
 
   first_starter = num_files;
   first_template = -1;          /* In case there are none... */
@@ -19466,14 +19499,18 @@ static int do_new_dialog(void)
 
   /* Throw the color palette at the end (alternative option): */
 
-  if (new_colors_last) {
-    num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
-  }
+  if (new_colors_last)
+    {
+      first_color = num_files;
+      num_files = do_new_dialog_add_colors(thumbs, num_files, d_places, d_names, d_exts, &white_in_palette);
+    }
 
 
 #ifdef DEBUG
   printf("%d files and colors were found!\n", num_files);
 #endif
+  printf("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n", first_color, first_starter,
+         first_template, num_files);
 
 
   /* Let user choose a color or image: */
@@ -19931,7 +19968,8 @@ static int do_new_dialog(void)
         label_node_to_edit = NULL;
       have_to_rec_label_node = FALSE;
 
-      if (which >= first_starter && (first_template == -1 || which < first_template))
+      if (which >= first_starter && (first_template == -1 || which < first_template)
+          && (!new_colors_last || which < first_color))
         {
           /* Load a starter: */
 
@@ -19990,7 +20028,7 @@ static int do_new_dialog(void)
               SDL_BlitSurface(img_starter, NULL, canvas, NULL);
             }
         }
-      else if (first_template != -1 && which >= first_template)
+      else if (first_template != -1 && which >= first_template && (!new_colors_last || which < first_color))
         {
           /* Load a template: */
 
@@ -20054,6 +20092,8 @@ static int do_new_dialog(void)
           starter_flipped = 0;
           starter_personal = 0;
           starter_modified = 0;
+
+          which = which - first_color;
 
           /* Launch color picker if they chose that: */
 
@@ -20134,7 +20174,9 @@ static int do_new_dialog(void)
    normally appears at the beginning (above Starts & Templates),
    but may be placed at the end with the "--newcolorslast" option.
 */
-static int do_new_dialog_add_colors(SDL_Surface * * thumbs, int num_files, int * d_places, char * * d_names, char * * d_exts, int * white_in_palette) {
+static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d_places, char * *d_names,
+                                    char * *d_exts, int *white_in_palette)
+{
   int j;
   int added;
   Uint8 r, g, b;
@@ -24835,6 +24877,10 @@ static void setup(void)
      instead of 'Ok') */
 
   signal(SIGPIPE, signal_handler);
+
+  /* Set up signal for no-questions-asked remote closing of app */
+  signal(SIGUSR1, signal_handler);
+  signal(SIGUSR2, signal_handler);
 #endif
 }
 

@@ -44,7 +44,6 @@
 #define DEBUG_PRINTF(...)
 #endif
 
-
 #ifdef __ANDROID__
 #include <android/log.h>
 #define  LOG_TAG    "TuxPaint"
