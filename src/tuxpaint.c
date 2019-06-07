@@ -1776,6 +1776,7 @@ typedef struct stamp_type
 #ifndef NOSOUND
   Mix_Chunk *ssnd;
   Mix_Chunk *sdesc;
+  unsigned sound_processed:1;
 #endif
 
   SDL_Surface *thumbnail;
@@ -1807,6 +1808,8 @@ typedef struct stamp_type
 
   unsigned is_svg:1;
 } stamp_type;
+
+static void get_stamp_thumb(stamp_type * sd, int process_sound);
 
 #define MAX_STAMP_GROUPS 256
 
@@ -4229,6 +4232,13 @@ static void mainloop(void)
                           /* Only play when picking a different stamp */
                           if (toolopt_changed && !mute)
                             {
+			      /* If the sound hasn't been loaded yet, do it now */
+
+			      if (!stamp_data[stamp_group][cur_thing]->sound_processed)
+				{
+				  get_stamp_thumb(stamp_data[stamp_group][cur_thing], 1);
+				}
+
                               /* If there's an SFX, play it! */
 
                               if (stamp_data[stamp_group][cur_thing]->ssnd != NULL)
@@ -7386,7 +7396,7 @@ static void set_active_stamp(void)
 /**
  * FIXME
  */
-static void get_stamp_thumb(stamp_type * sd)
+static void get_stamp_thumb(stamp_type * sd, int process_sound)
 {
   SDL_Surface *bigimg = NULL;
   unsigned len = strlen(sd->stampname);
@@ -7436,22 +7446,27 @@ static void get_stamp_thumb(stamp_type * sd)
     }
 
 #ifndef NOSOUND
-  /* good time to load the sound */
-  if (!sd->no_sound && !sd->ssnd && use_sound)
+  if (!sd->sound_processed && process_sound)
     {
-      /* damn thing wants a .png extension; give it one */
-      memcpy(buf + len, ".png", 5);
-      sd->ssnd = loadsound(buf);
-      sd->no_sound = !sd->ssnd;
-    }
+      /* good time to load the sound */
+      if (!sd->no_sound && !sd->ssnd && use_sound)
+	{
+	  /* damn thing wants a .png extension; give it one */
+	  memcpy(buf + len, ".png", 5);
+	  sd->ssnd = loadsound(buf);
+	  sd->no_sound = !sd->ssnd;
+	}
 
-  /* ...and the description */
-  if (!sd->no_descsound && !sd->sdesc && use_sound)
-    {
-      /* damn thing wants a .png extension; give it one */
-      memcpy(buf + len, ".png", 5);
-      sd->sdesc = loaddescsound(buf);
-      sd->no_descsound = !sd->sdesc;
+      /* ...and the description */
+      if (!sd->no_descsound && !sd->sdesc && use_sound)
+	{
+	  /* damn thing wants a .png extension; give it one */
+	  memcpy(buf + len, ".png", 5);
+	  sd->sdesc = loaddescsound(buf);
+	  sd->no_descsound = !sd->sdesc;
+	}
+
+      sd->sound_processed = 1;
     }
 #endif
 
@@ -9121,7 +9136,8 @@ static void draw_stamps(void)
 
       if (stamp < num_stamps[stamp_group])
         {
-          get_stamp_thumb(stamp_data[stamp_group][stamp]);
+	  /* Loads the thumbnail and sounds, the sounds just if this is the current stamp, increasing responsivity for low powered devices */
+	  get_stamp_thumb(stamp_data[stamp_group][stamp], stamp == cur_stamp[stamp_group] ? 1 : 0);
           img = stamp_data[stamp_group][stamp]->thumbnail;
 
           base_x = ((i % 2) * 48) + (WINDOW_WIDTH - 96) + ((48 - (img->w)) / 2);
