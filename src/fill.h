@@ -1,7 +1,16 @@
-/* playsound.h
+/*
+  fill.h
 
-  Copyright (c) 2002-2019
+  Fill tool
+  Tux Paint - A simple drawing program for children.
+
+  Copyright (c) 2002-2019 by Bill Kendrick and others; see AUTHORS.txt
+  bill@newbreedsoftware.com
   http://www.tuxpaint.org/
+
+  Flood fill code based on Wikipedia example:
+  http://www.wikipedia.org/wiki/Flood_fill/C_example
+  by Damian Yerrick - http://www.wikipedia.org/wiki/Damian_Yerrick
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -18,25 +27,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
+  Last updated: September 14, 2019
   $Id$
 */
 
-#ifndef PLAYSOUND_H
-#define PLAYSOUND_H
-
 #include "SDL.h"
-#include "SDL_mixer.h"
-#include "sounds.h"
 
-#define SNDPOS_LEFT -997
-#define SNDPOS_CENTER -998
-#define SNDPOS_RIGHT -999
+int would_flood_fill(SDL_Surface * canvas, Uint32 cur_colr, Uint32 old_colr);
+void do_flood_fill(SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2);
 
-#define SNDDIST_NEAR -999
-
-extern Mix_Chunk *sounds[NUM_SOUNDS];
-extern int mute, use_sound, use_stereo;
-
-void playsound(SDL_Surface * screen, int chan, int s, int override, int x, int y);
-
-#endif

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 3, 2019
+  June 14, 2002 - September 21, 2019
 */
 
 
@@ -478,9 +478,7 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-#include <librsvg/rsvg-cairo.h>
-/* #include "rsvg.h" */
-/* #include "rsvg-cairo.h" */
+
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
 #error "If you installed libRSVG from packages, be sure"
@@ -526,6 +524,8 @@ static void mtw(wchar_t * wtok, char *tok)
 #include "sounds.h"
 #include "tip_tux.h"
 #include "great.h"
+
+#include "fill.h"
 
 #include "im.h"
 
@@ -2144,16 +2144,18 @@ static char *debug_gettext(const char *str);
 static int charsize(Uint16 c);
 #endif
 
-static SDL_Surface *load_kpx(char *file);
+static SDL_Surface *load_kpx(const char *file);
 
 #ifndef NOSVG
-static SDL_Surface *load_svg(char *file);
+static SDL_Surface *load_svg(const char *file);
 static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned int max_w, unsigned int max_h);
 #endif
-static SDL_Surface *myIMG_Load_RWops(char *file);
-static SDL_Surface *myIMG_Load(char *file);
+static SDL_Surface *myIMG_Load_RWops(const char *file);
+static SDL_Surface *myIMG_Load(const char *file);
 static int trash(char *path);
 int file_exists(char *path);
+
+int generate_fontconfig_cache_spinner(SDL_Surface * screen);
 
 
 #define MAX_UTF8_CHAR_LENGTH 6
@@ -3261,6 +3263,12 @@ static void mainloop(void)
                               num_things = num_brushes;
                               thing_scroll = &brush_scroll;
                               draw_brushes();
+                              draw_colors(COLORSEL_ENABLE);
+                            }
+                          else if (cur_tool == TOOL_FILL)
+                            {
+                              keybd_flag = 0;
+                              draw_none();
                               draw_colors(COLORSEL_ENABLE);
                             }
                           else if (cur_tool == TOOL_SHAPES)
@@ -4606,6 +4614,35 @@ static void mainloop(void)
                       if (mouseaccessibility)
                         emulate_button_pressed = !emulate_button_pressed;
                     }
+                  else if (cur_tool == TOOL_FILL)
+                    {
+                      Uint32 draw_color, canv_color;
+
+                      /* Fill */
+
+                      draw_color = SDL_MapRGB(canvas->format,
+                                     color_hexes[cur_color][0],
+                                     color_hexes[cur_color][1],
+                                     color_hexes[cur_color][2]);
+                      canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
+
+                      if (would_flood_fill(canvas, draw_color, canv_color))
+                        {
+                          /* We only bother recording an undo buffer
+                             (which may kill our redos) if we're about
+                             to actually change the picture */
+                          int x1, y1, x2, y2;
+
+                          rec_undo_buffer();
+
+                          x1 = x2 = old_x;
+                          y1 = y2 = old_y;
+
+                          do_flood_fill(canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2);
+
+                          update_canvas(x1, y1, x2, y2);
+                        }
+                    }
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                     {
                       if (onscreen_keyboard && !kbd)
@@ -4807,7 +4844,8 @@ static void mainloop(void)
 
               if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_STAMP ||
                   cur_tool == TOOL_SHAPES || cur_tool == TOOL_LINES ||
-                  cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT || cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
+                  cur_tool == TOOL_MAGIC || cur_tool == TOOL_TEXT ||
+                  cur_tool == TOOL_ERASER || cur_tool == TOOL_LABEL)
                 {
 
                   /* Left tools scroll */
@@ -5424,7 +5462,7 @@ static void mainloop(void)
                     do_setcursor(cursor_brush);
                   else if (cur_tool == TOOL_STAMP)
                     do_setcursor(cursor_tiny);
-                  else if (cur_tool == TOOL_LINES)
+                  else if (cur_tool == TOOL_LINES || cur_tool == TOOL_FILL)
                     do_setcursor(cursor_crosshair);
                   else if (cur_tool == TOOL_SHAPES)
                     {
@@ -5455,7 +5493,6 @@ static void mainloop(void)
                             do_setcursor(cursor_arrow);
                         }
                     }
-
                   else if (cur_tool == TOOL_MAGIC)
                     do_setcursor(cursor_wand);
                   else if (cur_tool == TOOL_ERASER)
@@ -6706,6 +6743,7 @@ void show_usage(int exitcode)
           "  [--orient=landscape | --orient=portrait]\n"
           "  [--disablescreensaver | --allowscreensaver ]\n"
           "  [--sound | --nosound]\n"
+          "  [--stereo | --nostereo]\n"
           "  [--colorfile FILE]\n"
           "\n"
           " Mouse/Keyboard:\n"
@@ -8036,7 +8074,7 @@ static int generate_fontconfig_cache_real(void)
 /**
  * FIXME
  */
-static int generate_fontconfig_cache(void *vp)
+static int generate_fontconfig_cache(__attribute__((unused)) void *vp)
 {
   return generate_fontconfig_cache_real();
 }
@@ -9648,13 +9686,6 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
       for (x = 0; x < max_x; x++)
         {
 #ifndef LOW_QUALITY_THUMBNAILS
-
-#ifdef GAMMA_CORRECTED_THUMBNAILS
-          /* per: http://www.4p8.com/eric.brasseur/gamma.html */
-          float gamma = 2.2;
-          float gamma_invert = 1.0 / gamma;
-#endif
-
           tr = 0;
           tg = 0;
           tb = 0;
@@ -9669,9 +9700,8 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
                   SDL_GetRGBA(getpixel(src, src_x, src_y), src->format, &r, &g, &b, &a);
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-//        tr = tr + pow((float)r, gamma);
-//        tb = tb + pow((float)b, gamma);
-//        tg = tg + pow((float)g, gamma);
+                  /* per: http://www.4p8.com/eric.brasseur/gamma.html */
+
                   tr = tr + sRGB_to_linear_table[r];
                   tg = tg + sRGB_to_linear_table[g];
                   tb = tb + sRGB_to_linear_table[b];
@@ -9694,9 +9724,6 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
               ta = ta / tmp;
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-//      tr = ceil(pow(tr, gamma_invert));
-//      tg = ceil(pow(tg, gamma_invert));
-//      tb = ceil(pow(tb, gamma_invert));
               tr = linear_to_sRGB(tr);
               tg = linear_to_sRGB(tg);
               tb = linear_to_sRGB(tb);
@@ -10423,11 +10450,6 @@ static void reset_avail_tools(void)
 
   if (disable_label)
     tool_avail[TOOL_LABEL] = 0;
-
-
-  /* TBD... */
-
-  tool_avail[TOOL_NA] = 0;
 
 
   /* Disable save? */
@@ -11593,7 +11615,8 @@ static void load_starter_id(char *saved_id, FILE * fil)
   char fname[FILENAME_MAX];
   FILE *fi;
   char color_tag;
-  int r, g, b, tmp;
+  int r, g, b, __attribute__((unused))tmp;
+  char * __attribute__((unused)) tmp_ptr;
 
   rname = NULL;
 
@@ -11651,7 +11674,7 @@ static void load_starter_id(char *saved_id, FILE * fil)
 
           if (!feof(fi) && color_tag == 'T')
             {
-              tmp = fgets(template_id, sizeof(template_id), fi);
+              tmp_ptr = fgets(template_id, sizeof(template_id), fi);
               template_id[strlen(template_id) - 1] = '\0';
               tmp = fscanf(fi, "%d", &template_personal);
               /* FIXME: Debug only? */
@@ -11679,12 +11702,12 @@ static void load_starter_id(char *saved_id, FILE * fil)
 /**
  * FIXME
  */
-static SDL_Surface *load_starter_helper(char *path_and_basename, char *extension, SDL_Surface * (*load_func) (char *))
+static SDL_Surface *load_starter_helper(char *path_and_basename, const char *extension, SDL_Surface * (*load_func) (const char *))
 {
   char *ext;
   char fname[256];
   SDL_Surface *surf;
-  int i;
+  unsigned int i;
 
   ext = strdup(extension);
   snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
@@ -12249,7 +12272,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   int i;
   SDL_Surface *alpha_surf;
 #endif
-  int img1_w, img2_w, img3_w, max_img_w, img_x, img_y, offset;
+  int img1_w, img2_w, img3_w, max_img_w, img_y, offset;
   SDL_Surface *img1b;
   int free_img1b;
   int txt_left, txt_right, img_left, btn_left, txt_btn_left, txt_btn_right;
@@ -12432,7 +12455,6 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   /* Draw the images (if any, and if not animated): */
 
-  img_x = img_left;
   img_y = 100 + PROMPTOFFSETY + 4;
 
   if (img1b != NULL)
@@ -13619,9 +13641,9 @@ static void set_chunk_data(unsigned char **chunk_data, size_t * chunk_data_len, 
 
   strcat(headers, "Tuxpaint\n");
   strcat(headers, "Tuxpaint_" VER_VERSION "\n");
-  sprintf(line, "%d%s", uncompressed_size, "\n");
+  sprintf(line, "%lu%s", uncompressed_size, "\n");
   strcat(headers, line);
-  sprintf(line, "%d%s", dataLen, "\n");
+  sprintf(line, "%lu%s", dataLen, "\n");
   strcat(headers, line);
 
   headersLen = strlen(headers);
@@ -13696,7 +13718,9 @@ static void do_png_embed_data(png_structp png_ptr)
   /* Starter foreground */
   if (img_starter)
     {
+#ifdef DEBUG
       printf("Saving starter... %d\n", (int)(intptr_t) img_starter);    //EP added (intptr_t) to avoid warning on x64
+#endif
       sbk_pixs = malloc(img_starter->h * img_starter->w * 4);
       compressedLen = compressBound(img_starter->h * img_starter->w * 4);
 
@@ -17922,7 +17946,7 @@ static int paintsound(int size)
 /* Old libcairo1, svg and svg-cairo based code
    Based on cairo-demo/sdl/main.c from Cairo (GPL'd, (c) 2004 Eric Windisch):
 */
-static SDL_Surface *load_svg(char *file)
+static SDL_Surface *load_svg(const char *file)
 {
   svg_cairo_t *scr;
   int bpp, btpp, stride;
@@ -18081,7 +18105,7 @@ static SDL_Surface *load_svg(char *file)
  * FIXME
  */
 /* New libcairo2, rsvg and rsvg-cairo based code */
-static SDL_Surface *load_svg(char *file)
+static SDL_Surface *load_svg(const char *file)
 {
   cairo_surface_t *cairo_surf;
   cairo_t *cr;
@@ -18332,7 +18356,7 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned 
  */
 /* FIXME: we can remove this after SDL folks fix their bug at http://bugzilla.libsdl.org/show_bug.cgi?id=1485 */
 /* Try to load an image with IMG_Load(), if it fails, then try with RWops() */
-static SDL_Surface *myIMG_Load_RWops(char *file)
+static SDL_Surface *myIMG_Load_RWops(const char *file)
 {
   SDL_Surface *surf;
   FILE *fi;
@@ -18366,7 +18390,7 @@ static SDL_Surface *myIMG_Load_RWops(char *file)
    if we notice it's an SVG file (if available!);
    call load_kpx() if we notice it's a KPX file (JPEG with wrapper);
    otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
-static SDL_Surface *myIMG_Load(char *file)
+static SDL_Surface *myIMG_Load(const char *file)
 {
   if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0)
     {
@@ -18387,7 +18411,7 @@ static SDL_Surface *myIMG_Load(char *file)
 /**
  * FIXME
  */
-static SDL_Surface *load_kpx(char *file)
+static SDL_Surface *load_kpx(const char *file)
 {
   SDL_RWops *data;
   FILE *fi;
@@ -19000,7 +19024,15 @@ static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
   else if (left_right > 255)
     left_right = 255;
 
-  left = ((255 - dist) * (255 - left_right)) / 255;
+  if (use_stereo)
+    {
+      left = ((255 - dist) * (255 - left_right)) / 255;
+    }
+  else
+    {
+      /* Stereo disabled; no panning (see playsound.c) */
+      left = (255 - dist) / 2;
+    }
 
   Mix_SetPanning(0, left, (255 - dist) - left);
 #endif
@@ -19243,7 +19275,8 @@ static int do_new_dialog(void)
                   /* Support legacy BMP files for load: */
                   || strcasestr(f->d_name, ".bmp") != NULL
                   /* Support for KPX (Kid Pix templates; just a JPEG with resource fork header): */
-                  || strcasestr(f->d_name, ".kpx") != NULL || strcasestr(f->d_name, ".jpg") != NULL
+                  || strcasestr(f->d_name, ".kpx") != NULL
+                  || strcasestr(f->d_name, ".jpg") != NULL
 #ifndef NOSVG
                   || strcasestr(f->d_name, ".svg") != NULL
 #endif
@@ -19366,11 +19399,12 @@ static int do_new_dialog(void)
                         {
                           /* No thumbnail - load original: */
 
-                          /* Make sure we have a ~/.tuxpaint/saved directory: */
-                          if (make_directory("saved", "Can't create user data directory"))
+                          /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
+                          if (make_directory(dirname[d_places[num_files]], "Can't create user data directory"))
                             {
-                              /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                              make_directory("saved/.thumbs", "Can't create user data thumbnail directory");
+                              /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
+                              snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
+                              make_directory(fname, "Can't create user data thumbnail directory");
                             }
 
                           img = NULL;
@@ -19381,8 +19415,6 @@ static int do_new_dialog(void)
                               /* Try to load a starter's background image, first!
                                  If it exists, it should give a better idea of what the
                                  starter looks like, compared to the overlay image... */
-
-                              /* FIXME: Add .jpg support -bjk 2007.03.22 */
 
                               /* (Try JPEG first) */
                               snprintf(fname, sizeof(fname), "%s/%s-back",
@@ -19524,9 +19556,9 @@ static int do_new_dialog(void)
 
 #ifdef DEBUG
   printf("%d files and colors were found!\n", num_files);
-#endif
   printf("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n", first_color, first_starter,
          first_template, num_files);
+#endif
 
 
   /* Let user choose a color or image: */
@@ -20309,7 +20341,8 @@ static int do_color_sel(void)
   int i, dx, dy;
   int done, chose;
   int back_left, back_top;
-  int color_sel_x, color_sel_y;
+  int color_sel_x = 0, color_sel_y = 0;
+  int want_animated_popups = 1;
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
 
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
@@ -20330,7 +20363,6 @@ static int do_color_sel(void)
 
   /* FIXME this is the first step to make animated popups optional,
      to be removed from here when implemented in a more general way */
-  int want_animated_popups = 1;
 
   hide_blinking_cursor();
 
@@ -21626,7 +21658,7 @@ static void render_all_nodes_starting_at(struct label_node **node)
  * FIXME
  */
 /* FIXME: This should search for the top-down of the overlaping labels and only re-render from it */
-static void derender_node(struct label_node **ref_head)
+static void derender_node(__attribute__((unused)) struct label_node **ref_head)
 {
   SDL_Rect r_tmp_derender;
 
@@ -22958,7 +22990,7 @@ static void setup_config(char *argv[])
       char buffer[B_PATH_NAME_LENGTH + B_FILE_NAME_LENGTH];
       status_t result;
 
-      result = find_directory(B_USER_DIRECTORY, volume, false, buffer, sizeof(buffer));
+      result = find_directory(B_USER_SETTINGS_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
       savedir = strdup(macos.preferencesPath());
@@ -23086,6 +23118,7 @@ static void setup_config(char *argv[])
   SETBOOL(start_blank);
   SETBOOL(use_print_config);
   SETBOOL(use_sound);
+  SETBOOL(use_stereo);
   SETBOOL(wheely);
   SETBOOL(mouseaccessibility);
   SETBOOL(onscreen_keyboard);
@@ -23409,7 +23442,7 @@ static void setup_config(char *argv[])
     {
       char *token;
 
-      token = strtok(tmpcfg.joystick_buttons_ignore, ",");
+      token = strtok((char *) tmpcfg.joystick_buttons_ignore, ",");
       while (token != NULL)
         {
           if (strtof(token, NULL) < 0 || strtof(token, NULL) > 254)

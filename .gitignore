@@ -1,8 +1,5 @@
 *~
-.DS_Store
 dummy.o
-*.dylib
-*.dylib.dSYM
 *.o
 obj/parse.c
 obj/parse_step1.c
@@ -13,3 +10,7 @@ trans/
 tuxpaint
 TuxPaint.app
 TuxPaint.dmg
+*.dylib
+*.dylib.dSYM
+.DS_Store
+*.thumbs

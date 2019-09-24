@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2018
+# Copyright (c) 2002-2019
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 18, 2018
+# June 14, 2002 - September 14, 2019
 
 
 # The version number, for release:
@@ -131,7 +131,6 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 # For macOS, the prefix is relative to DESTDIR.
 windows_PREFIX:=/usr/local
 osx_PREFIX:=Resources
-beos_PREFIX=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
 linux_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
@@ -277,6 +276,12 @@ DEBUG_FLAGS:=
 
 MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 
+# On an average-sized screen (e.g., 800x600 window), the thumbnails
+# are 132x80.  On larger screens, they will be bigger (since the New dialog
+# is always 4x4 thumbnails); therefore, generating larger thumbs, which can
+# be still be scaled down fairly quickly (esp. complicated SVG ones).
+CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize !264x160 -background white -interlace none
+
 .SUFFIXES:
 
 #############################################################################
@@ -286,8 +291,7 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # "make" with no arguments builds the program and man page from sources:
 #
 .PHONY: all
-all:	tuxpaint translations magic-plugins tp-magic-config
-# thumb-starters
+all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters thumb-templates
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
@@ -462,7 +466,6 @@ trans:
 
 windows_ARCH_INSTALL:=
 osx_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
-beos_ARCH_INSTALL:=install-haiku
 linux_ARCH_INSTALL:=install-kde install-kde-icons
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
@@ -476,14 +479,14 @@ install:	install-bin install-data install-man install-doc \
 		install-icon install-gettext install-im install-importscript \
 		install-default-config install-example-stamps \
 		install-example-starters install-example-templates \
+		install-thumb-starters install-thumb-templates \
 		install-bash-completion \
 		install-osk \
 		$(ARCH_INSTALL)
-#install-thumb-starters
 	@echo
 	@echo "--------------------------------------------------------------"
 	@echo
-	@if [ "x$(OS)" == "xosx" ]; then \
+	@if [ "x$(OS)" = "xosx" ]; then \
 		echo "All done! Now you can double click $(BUNDLE) to run the"; \
 		echo "program!!! TuxPaint.dmg has also been created for"; \
 		echo "distribution."; \
@@ -692,22 +695,25 @@ INSTALLED_THUMB_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(THUMB_STARTERS))
 
 STARTER_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.svg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.png))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.jpg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=.jpeg))))
 
 STARTER_BACK_NAME=$(or $(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.svg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.png))),\
+		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpg))),\
 		$(wildcard $(subst starters/.thumbs,starters,$(@:-t.png=-back.jpeg))))
 
+# FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
 $(THUMB_STARTERS):
 	@echo -n "."
 	@mkdir -p starters/.thumbs
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
 		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp.png ; \
-		convert -scale !132x80 -background white -alpha Background -alpha Off obj/tmp.png $@ ; \
+		convert $(CONVERT_OPTS) obj/tmp.png $@ ; \
 		rm obj/tmp.png ; \
 	else \
-		convert -scale !132x80 -background white -alpha Background -alpha Off $(STARTER_NAME) $@ ; \
+		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
@@ -749,6 +755,41 @@ echo-install-example-templates:
 # Install example templates
 .PHONY: install-example-templates
 install-example-templates: echo-install-example-templates install-example-template-dirs $(INSTALLED_TEMPLATES)
+
+THUMB_TEMPLATES:=$(sort $(patsubst templates%, templates/.thumbs%-t.png, $(basename $(subst -back.,.,$(TEMPLATES)))))
+INSTALLED_THUMB_TEMPLATES:=$(patsubst %,$(DATA_PREFIX)/%,$(THUMB_TEMPLATES))
+
+TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.svg))),\
+		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.png))),\
+		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.jpg))),\
+		$(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.jpeg))))
+
+# FIXME: Need to be able to update a thumbnail if the source image is modified -bjk 2019.09.14
+$(THUMB_TEMPLATES):
+	@echo -n "."
+	@mkdir -p templates/.thumbs
+	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ ; \
+
+$(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
+	@install -D -m 644 $< $@
+
+.PHONY: echo-thumb-templates
+echo-thumb-templates:
+	@echo
+	@echo "...Generating thumbnails for templates..."
+
+# Create thumbnails for templates
+.PHONY: thumb-templates
+thumb-templates: echo-thumb-templates $(THUMB_TEMPLATES)
+
+.PHONY: echo-install-thumb-templates
+echo-install-thumb-templates:
+	@echo
+	@echo "...Installing thumbnails for templates..."
+
+# Install thumb templates
+.PHONY: install-thumb-templates
+install-thumb-templates: echo-install-thumb-templates $(INSTALLED_THUMB_TEMPLATES)
 
 
 # Install a launcher icon for the Nokia 770.
@@ -878,7 +919,7 @@ install-dlls:
 	@cp `which libstdc++-6.dll` $(BIN_PREFIX)
 	@cp `which libfribidi-0.dll` $(BIN_PREFIX)
 	@cp `which libpthread-2.dll` $(BIN_PREFIX)
-	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
+	@if [ "x$(BDIST_WIN9X)" = "x" ]; then \
 	  cp `which libxml2-2.dll` $(BIN_PREFIX); \
 	  cp `which libcairo-2.dll` $(BIN_PREFIX); \
 	  cp `which libfontconfig-1.dll` $(BIN_PREFIX); \
@@ -900,7 +941,7 @@ install-dlls:
 	  cp `which bz2-1.dll` $(BIN_PREFIX); \
 	fi
 	@strip -s $(BIN_PREFIX)/*.dll
-	@if [ "x$(BDIST_WIN9X)" == "x" ]; then \
+	@if [ "x$(BDIST_WIN9X)" = "x" ]; then \
 	  echo; \
 	  echo "...Installing Configuration Files..."; \
 	  cp -R win32/etc/ $(BIN_PREFIX); \
@@ -1023,8 +1064,8 @@ TuxPaint.dmg:
 # Build the program!
 
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
-		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o \
-		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o\
+		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o obj/fill.o \
+		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
@@ -1039,7 +1080,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 
 obj/tuxpaint.o:	src/tuxpaint.c \
 		src/i18n.h src/im.h src/cursor.h src/pixels.h \
-		src/rgblinear.h src/playsound.h src/fonts.h \
+		src/rgblinear.h src/playsound.h src/fonts.h src/fill.h \
 		src/progressbar.h src/dirwalk.h src/get_fname.h \
 		src/compiler.h src/debug.h \
 		src/tools.h src/titles.h src/colors.h src/shapes.h \
@@ -1058,8 +1099,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		src/$(MOUSEDIR)/watch.xbm src/$(MOUSEDIR)/watch-mask.xbm \
 		src/$(MOUSEDIR)/up.xbm src/$(MOUSEDIR)/up-mask.xbm \
 		src/$(MOUSEDIR)/down.xbm src/$(MOUSEDIR)/down-mask.xbm \
-		$(ARCH_HEADERS) \
-		Makefile
+		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
 	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
@@ -1138,6 +1178,13 @@ obj/playsound.o:	src/playsound.c src/playsound.h \
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/playsound.c -o obj/playsound.o
 
+obj/fill.o:	src/fill.c src/fill.h \
+		src/rgblinear.h src/playsound.h src/pixels.h
+	@echo
+	@echo "...Compiling flood fill tool..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/fill.c -o obj/fill.o
+
 obj/progressbar.o:	src/progressbar.c src/progressbar.h \
 			src/compiler.h src/debug.h
 	@echo
@@ -1165,7 +1212,7 @@ obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
-obj/postscript_print.o:	src/postscript_print.c Makefile \
+obj/postscript_print.o:	src/postscript_print.c \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."
@@ -1196,7 +1243,7 @@ src/tp_magic_api.h:	src/tp_magic_api.h.in
 	@(echo "/*\n\n\n\n\n\n\n\nDO NOT EDIT ME!\n\n\n\n\n\n\n\n*/" ; cat src/tp_magic_api.h.in) | sed -e s/__APIVERSION__/$(MAGIC_API_VERSION)/ > src/tp_magic_api.h
 
 
-tp-magic-config:	src/tp-magic-config.sh.in Makefile
+tp-magic-config:	src/tp-magic-config.sh.in
 	@echo
 	@echo "...Generating 'Magic' tool API configuration script..."
 	@sed -e s/__VERSION__/$(VER_VERSION)/ \
@@ -1228,7 +1275,7 @@ PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
 
 #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
 MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
-SHARED_FLAGS:=-shared -fpic
+SHARED_FLAGS:=-shared -fpic -lm
 
 MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
