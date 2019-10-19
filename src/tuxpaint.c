@@ -24031,14 +24031,6 @@ static void setup(void)
 #endif
   setup_colors();
 
-  /* Set window icon and caption: */
-
-#ifndef __APPLE__
-  seticon();
-#endif
-  if (hide_cursor)
-    SDL_ShowCursor(SDL_DISABLE);
-
 
   /* Deal with orientation rotation option */
 
@@ -24240,6 +24232,14 @@ static void setup(void)
   /* (Need to do this after native screen resolution is handled) */
 
   setup_screen_layout();
+
+  /* Set window icon and caption: */
+
+#ifndef __APPLE__
+  seticon();
+#endif
+  if (hide_cursor)
+    SDL_ShowCursor(SDL_DISABLE);
 
 
   /* quickly: title image, version, progress bar, and watch cursor */
