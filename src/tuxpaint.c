@@ -18105,7 +18105,7 @@ static SDL_Surface *load_svg(const char *file)
  * FIXME
  */
 /* New libcairo2, rsvg and rsvg-cairo based code */
-static SDL_Surface *load_svg(const char *file)
+static SDL_Surface *_load_svg(const char *file)
 {
   cairo_surface_t *cairo_surf;
   cairo_t *cr;
@@ -18270,6 +18270,17 @@ static SDL_Surface *load_svg(const char *file)
   cairo_destroy(cr);
 
   return (sdl_surface);
+}
+
+/* Wraper to fallback to SDL2_Image's nanosvg in case rsvg fails for some reason
+   like in Android builds trying to access starters provided as assets. */
+static SDL_Surface *load_svg(const char *file)
+{
+  SDL_Surface *sdl_surface;
+  sdl_surface = _load_svg(file);
+  if (sdl_surface == NULL)
+    sdl_surface = IMG_Load(file);
+  return(sdl_surface);
 }
 
 #endif
