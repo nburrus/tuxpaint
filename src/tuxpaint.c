@@ -24044,12 +24044,25 @@ static void setup(void)
 
 
   /* Deal with orientation rotation option */
-
+#if defined __ANDROID__
+  SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeRight");
+#endif
+  
   if (rotate_orientation)
     {
       if (native_screensize && fullscreen)
         {
+#if defined __ANDROID__
+	  /* FIXME 2019-11-02: Could this work on every device instead of just Android ones? */
+	  SDL_SetHint(SDL_HINT_ORIENTATIONS, "Portrait");
+	  int tmp;
+
+          tmp = WINDOW_WIDTH;
+          WINDOW_WIDTH = WINDOW_HEIGHT;
+          WINDOW_HEIGHT = tmp;
+#else
           fprintf(stderr, "Warning: Asking for native screen size overrides request to rotate orientation.\n");
+#endif
         }
       else
         {
