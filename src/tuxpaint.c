@@ -24053,13 +24053,7 @@ static void setup(void)
       if (native_screensize && fullscreen)
         {
 #if defined __ANDROID__
-	  /* FIXME 2019-11-02: Could this work on every device instead of just Android ones? */
 	  SDL_SetHint(SDL_HINT_ORIENTATIONS, "Portrait");
-	  int tmp;
-
-          tmp = WINDOW_WIDTH;
-          WINDOW_WIDTH = WINDOW_HEIGHT;
-          WINDOW_HEIGHT = tmp;
 #else
           fprintf(stderr, "Warning: Asking for native screen size overrides request to rotate orientation.\n");
 #endif
@@ -24153,6 +24147,30 @@ static void setup(void)
                   SDL_RenderSetScale(renderer, window_scale_h, window_scale_h);
                 }
             }
+#if defined __ANDROID__
+	  /* Deal with rotate orientation in native screens */
+	   if (rotate_orientation)
+	     {
+	       if (ww > hh)
+		 {
+		   int tmp;
+		   tmp = ww;
+		   ww = hh;
+		   hh = tmp;
+		 }
+	     }
+	   else
+	     {
+	       if (hh > ww)
+		 {
+		   int tmp;
+		   tmp = ww;
+		   ww = hh;
+		   hh = tmp;
+		 }
+	     }
+#endif
+
         }
       else
         {
