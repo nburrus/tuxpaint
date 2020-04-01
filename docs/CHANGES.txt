@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.Mar.25 (0.9.24)
+2020.Mar.30 (0.9.24)
   * New tools
     ---------
     * Fill
@@ -71,6 +71,18 @@ $Id$
     * Documentation on POSIX signals recognized by Tux Paint (e.g.,
       the new "SIGUSR1" & "SIGUSR2") added to a new doc file,
       "SIGNALS.txt".
+
+  * Translation Updates:
+    --------------------
+    * Norwegian Nynorsk translation
+      Karl Ove Hufthammer <karl@huftis.org>
+
+    * Swahili
+      Benson Muite <benson_muite@emailplus.org>
+
+    * Valencian
+      Pilar Embid Giner <embid_mar@gva.es>
+      via Pere Pujal i Carabantes <perepujal@gmail.com>
 
   * Bug Fixes
     ---------
