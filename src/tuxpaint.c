@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 29, 2020
+  June 14, 2002 - August 15, 2020
 */
 
 
@@ -54,8 +54,6 @@
     /*# define VIDEO_BPP 24 *//* compromise */
     #define VIDEO_BPP 32      /* might be fastest, if conversion funcs removed */
 #endif
-
-/* #define CORNER_SHAPES *//* need major work! */
 
 /* Method for printing images: */
 
@@ -1316,6 +1314,9 @@ static int simple_shapes;
 static int only_uppercase;
 
 static int disable_magic_controls;
+static int disable_shape_controls;
+
+static int shape_mode = SHAPEMODE_CENTER;
 
 static int starter_mirrored;
 static int starter_flipped;
@@ -1414,7 +1415,9 @@ static void stop_motion_convert(SDL_Event event);
 #endif
 
 char * get_xdg_user_dir(const char * dir_type, const char * fallback);
-
+#ifdef WIN32
+extern char * GetUserImageDir(void);
+#endif
 
 /* Magic tools API and tool handles: */
 
@@ -1542,6 +1545,7 @@ static SDL_Surface *img_scroll_up, *img_scroll_down;
 static SDL_Surface *img_scroll_up_off, *img_scroll_down_off;
 static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
+static SDL_Surface *img_shapes_corner, *img_shapes_center;
 static SDL_Surface *img_bold, *img_italic;
 static SDL_Surface *img_label, *img_label_select;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell, *img_color_sel;
@@ -2069,7 +2073,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 
 /*static void update_shape(int cx, int ox1, int ox2, int cy, int oy1, int oy2,
                           int fixed); */
-static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush);
+static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush);
 static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results, int autosave);
@@ -2319,7 +2323,7 @@ int cur_thing;
 static void mainloop(void)
 {
   int done, val_x, val_y, valhat_x, valhat_y, new_x, new_y,
-    shape_tool_mode, shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, old_stamp_group, which;
+    shape_tool_mode, shape_start_x, shape_start_y, shape_current_x, shape_current_y, old_stamp_group, which;
   int num_things;
   int *thing_scroll;
   int do_draw, max;
@@ -2365,10 +2369,10 @@ static void mainloop(void)
   old_x = 0;
   old_y = 0;
   which = 0;
-  shape_ctr_x = 0;
-  shape_ctr_y = 0;
-  shape_outer_x = 0;
-  shape_outer_y = 0;
+  shape_start_x = 0;
+  shape_start_y = 0;
+  shape_current_x = 0;
+  shape_current_y = 0;
   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
   button_down = 0;
   last_cursor_blink = cur_toggle_count = 0;
@@ -3722,6 +3726,15 @@ static void mainloop(void)
                             }
                         }
 
+                      else if (cur_tool == TOOL_SHAPES)
+                        {
+                          if (!disable_shape_controls)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
+
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
                       num_rows_needed = (num_things + gd_items.cols - 1) / gd_items.cols;
@@ -3927,6 +3940,17 @@ static void mainloop(void)
                                   update_screen_rect(&r_toolopt);
                                 }
                               /* FIXME: Sfx */
+                            }
+                          else if (cur_tool == TOOL_SHAPES)
+                            {
+                              /* Shape controls! */
+                              shape_mode = which;
+                              draw_shapes();
+			      update_screen_rect(&r_toolopt);
+                              draw_tux_text(TUX_GREAT, shapemode_tips[shape_mode], 1);
+                              playsound(screen, 0, SND_CLICK, 0, SNDPOS_RIGHT, SNDDIST_NEAR);
+                              update_screen_rect(&r_tuxarea);
+                              toolopt_changed = 0;
                             }
                           else if (cur_tool == TOOL_TEXT)
                             {
@@ -4361,8 +4385,8 @@ static void mainloop(void)
                               update_canvas(0, 0, canvas->w, canvas->h);
                             }
 
-
-                          draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
+                          if (toolopt_changed)
+                            draw_tux_text(TUX_GREAT, shape_tips[cur_shape], 1);
 
                           if (do_draw)
                             draw_shapes();
@@ -4551,8 +4575,8 @@ static void mainloop(void)
 
                           rec_undo_buffer();
 
-                          shape_ctr_x = old_x;
-                          shape_ctr_y = old_y;
+                          shape_start_x = old_x;
+                          shape_start_y = old_y;
 
                           shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 
@@ -4573,8 +4597,8 @@ static void mainloop(void)
                               reset_brush_counter();
 
                               playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
-                              do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
-                                       shape_rotation(shape_ctr_x, shape_ctr_y,
+                              do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y,
+                                       shape_rotation(shape_start_x, shape_start_y,
                                                       event.button.x - r_canvas.x, event.button.y - r_canvas.y), 1);
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -4988,6 +5012,14 @@ static void mainloop(void)
                               gd_controls.cols = 2;
                             }
                         }
+                      else if (cur_tool == TOOL_SHAPES)
+                        {
+                          if (!disable_shape_controls)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
 
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
@@ -5204,31 +5236,31 @@ static void mainloop(void)
                             {
                               /* Now we can rotate the shape... */
 
-                              shape_outer_x = event.button.x - r_canvas.x;
-                              shape_outer_y = event.button.y - r_canvas.y;
+                              shape_current_x = event.button.x - r_canvas.x;
+                              shape_current_y = event.button.y - r_canvas.y;
 
                               if (!simple_shapes && !shape_no_rotate[cur_shape])
                                 {
                                   shape_tool_mode = SHAPE_TOOL_MODE_ROTATE;
 
                                   shape_radius =
-                                    sqrt((shape_ctr_x - shape_outer_x) * (shape_ctr_x - shape_outer_x) +
-                                         (shape_ctr_y - shape_outer_y) * (shape_ctr_y - shape_outer_y));
+                                    sqrt((shape_start_x - shape_current_x) * (shape_start_x - shape_current_x) +
+                                         (shape_start_y - shape_current_y) * (shape_start_y - shape_current_y));
 
-                                  SDL_WarpMouse(shape_outer_x + 96, shape_ctr_y);
+                                  SDL_WarpMouse(shape_current_x + 96, shape_start_y);
                                   do_setcursor(cursor_rotate);
 
 
                                   /* Erase stretchy XOR: */
 
-                                  if (abs(shape_ctr_x - shape_outer_x) > 15 || abs(shape_ctr_y - shape_outer_y) > 15)
-                                    do_shape(shape_ctr_x, shape_ctr_y, old_x, old_y, 0, 0);
+                                  if (abs(shape_start_x - shape_current_x) > 15 || abs(shape_start_y - shape_current_y) > 15)
+                                    do_shape(shape_start_x, shape_start_y, old_x, old_y, 0, 0);
 
                                   /* Make an initial rotation XOR to be erased: */
 
-                                  do_shape(shape_ctr_x, shape_ctr_y,
-                                           shape_outer_x, shape_outer_y,
-                                           shape_rotation(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y), 0);
+                                  do_shape(shape_start_x, shape_start_y,
+                                           shape_current_x, shape_current_y,
+                                           shape_rotation(shape_start_x, shape_start_y, shape_current_x, shape_current_y), 0);
 
                                   playsound(screen, 1, SND_LINE_START, 1, event.button.x, SNDDIST_NEAR);
                                   draw_tux_text(TUX_BORED, TIP_SHAPE_NEXT, 1);
@@ -5244,7 +5276,7 @@ static void mainloop(void)
 
 
                                   playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
-                                  do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y, 0, 1);
+                                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, 0, 1);
 
                                   SDL_Flip(screen);
 
@@ -5257,8 +5289,8 @@ static void mainloop(void)
                               reset_brush_counter();
 
                               playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
-                              do_shape(shape_ctr_x, shape_ctr_y, shape_outer_x, shape_outer_y,
-                                       shape_rotation(shape_ctr_x, shape_ctr_y,
+                              do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y,
+                                       shape_rotation(shape_start_x, shape_start_y,
                                                       event.button.x - r_canvas.x, event.button.y - r_canvas.y), 1);
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -5440,6 +5472,8 @@ static void mainloop(void)
                     max = 10;
                   if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
                     max = 12;
+                  if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
+                    max = 12;
 
 
                   if (num_things > max + TOOLOFFSET)
@@ -5576,15 +5610,15 @@ static void mainloop(void)
 
                       if (shape_tool_mode == SHAPE_TOOL_MODE_STRETCH)
                         {
-                          do_shape(shape_ctr_x, shape_ctr_y, old_x, old_y, 0, 0);
+                          do_shape(shape_start_x, shape_start_y, old_x, old_y, 0, 0);
 
-                          do_shape(shape_ctr_x, shape_ctr_y, new_x, new_y, 0, 0);
+                          do_shape(shape_start_x, shape_start_y, new_x, new_y, 0, 0);
 
 
                           /* FIXME: Fix update shape function! */
 
-                          /* update_shape(shape_ctr_x, old_x, new_x,
-                             shape_ctr_y, old_y, new_y,
+                          /* update_shape(shape_start_x, old_x, new_x,
+                             shape_start_y, old_y, new_y,
                              shape_locked[cur_shape]); */
 
                           SDL_Flip(screen);
@@ -5766,12 +5800,12 @@ static void mainloop(void)
                 }
               else if (cur_tool == TOOL_SHAPES && shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
                 {
-                  do_shape(shape_ctr_x, shape_ctr_y,
-                           shape_outer_x, shape_outer_y, shape_rotation(shape_ctr_x, shape_ctr_y, old_x, old_y), 0);
+                  do_shape(shape_start_x, shape_start_y,
+                           shape_current_x, shape_current_y, shape_rotation(shape_start_x, shape_start_y, old_x, old_y), 0);
 
 
-                  do_shape(shape_ctr_x, shape_ctr_y,
-                           shape_outer_x, shape_outer_y, shape_rotation(shape_ctr_x, shape_ctr_y, new_x, new_y), 0);
+                  do_shape(shape_start_x, shape_start_y,
+                           shape_current_x, shape_current_y, shape_rotation(shape_start_x, shape_start_y, new_x, new_y), 0);
 
 
                   /* FIXME: Do something less intensive! */
@@ -6804,6 +6838,7 @@ void show_usage(int exitcode)
           "  [--stamps | --nostamps]\n"
           "  [--nostampcontrols | --stampcontrols]\n"
           "  [--nomagiccontrols | --magiccontrols]\n"
+          "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
           "  [--newcolorsfirst | --newcolorslast]\n"
           "\n"
@@ -8590,7 +8625,7 @@ static void draw_magic(void)
     }
 
 
-  /* Draw text controls: */
+  /* Draw magic controls: */
 
   if (!disable_magic_controls)
     {
@@ -9436,17 +9471,20 @@ static void draw_stamps(void)
 /* Draw the shape selector: */
 static void draw_shapes(void)
 {
-  int i, shape, max, off_y;
+  int i, shape, max, off_y, most;
   SDL_Rect dest;
 
 
   draw_image_title(TITLE_SHAPES, r_ttoolopt);
 
+  most = 12;
+  if (disable_shape_controls)
+    most = 14;
 
-  if (NUM_SHAPES > 14 + TOOLOFFSET)
+  if (NUM_SHAPES > most + TOOLOFFSET)
     {
       off_y = 24;
-      max = 12 + TOOLOFFSET;
+      max = (most - 2) + TOOLOFFSET;
 
       dest.x = WINDOW_WIDTH - 96;
       dest.y = 40;
@@ -9461,9 +9499,9 @@ static void draw_shapes(void)
         }
 
       dest.x = WINDOW_WIDTH - 96;
-      dest.y = 40 + 24 + ((6 + TOOLOFFSET / 2) * 48);
+      dest.y = 40 + 24 + ((((most - 2) / 2) + TOOLOFFSET / 2) * 48);
 
-      if (shape_scroll < NUM_SHAPES - 12 - TOOLOFFSET)
+      if (shape_scroll < NUM_SHAPES - (most - 2) - TOOLOFFSET)
         {
           SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
         }
@@ -9475,7 +9513,7 @@ static void draw_shapes(void)
   else
     {
       off_y = 0;
-      max = 14 + TOOLOFFSET;
+      max = most + TOOLOFFSET;
     }
 
   for (shape = shape_scroll; shape < shape_scroll + max; shape++)
@@ -9511,6 +9549,48 @@ static void draw_shapes(void)
 
           SDL_BlitSurface(img_shape_names[shape], NULL, screen, &dest);
         }
+    }
+
+  /* Draw magic controls: */
+
+  if (!disable_shape_controls)
+    {
+      SDL_Surface *button_color;
+
+      /* Show shape-from-center button: */
+
+      if (shape_mode == SHAPEMODE_CENTER) 
+        button_color = img_btn_down;
+      else
+        button_color = img_btn_up;
+
+      dest.x = WINDOW_WIDTH - 96;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 96 + (48 - img_shapes_center->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_shapes_center->h) / 2);
+
+      SDL_BlitSurface(img_shapes_center, NULL, screen, &dest);
+
+
+      /* Show shape-from-corner button: */
+
+      if (shape_mode == SHAPEMODE_CORNER) 
+        button_color = img_btn_down;
+      else
+        button_color = img_btn_up;
+
+      dest.x = WINDOW_WIDTH - 48;
+      dest.y = 40 + ((6 + TOOLOFFSET / 2) * 48);
+
+      SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - 48 + (48 - img_shapes_corner->w) / 2;
+      dest.y = (40 + ((6 + TOOLOFFSET / 2) * 48) + (48 - img_shapes_corner->h) / 2);
+
+      SDL_BlitSurface(img_shapes_corner, NULL, screen, &dest);
     }
 }
 
@@ -12876,6 +12956,9 @@ static void cleanup(void)
   free_surface(&img_magic_paint);
   free_surface(&img_magic_fullscreen);
 
+  free_surface(&img_shapes_center);
+  free_surface(&img_shapes_corner);
+
   free_surface(&img_bold);
   free_surface(&img_italic);
 
@@ -13113,45 +13196,24 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
  * FIXME
  */
 /* Draw a shape! */
-static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
+static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 {
   int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
   float a1, a2, rotn_rad;
-  int xx, yy;
+  int xx, yy, offx, offy, max_x, max_y;
 
 
   /* Determine radius/shape of the shape to draw: */
 
   old_brush = 0;
 
-#ifdef CORNER_SHAPES
-  int tmp = 0;
-
-  if (cx > ox)
+  rx = abs(nx - sx);
+  ry = abs(ny - sy);
+  if (shape_mode == SHAPEMODE_CORNER)
     {
-      tmp = cx;
-      cx = ox;
-      ox = tmp;
+      rx = sqrt(rx * rx) / 2;
+      ry = sqrt(ry * ry) / 2;
     }
-
-  if (cy > oy)
-    {
-      tmp = cy;
-      cy = oy;
-      oy = tmp;
-    }
-
-  x1 = cx;
-  x2 = ox;
-  y1 = cy;
-  y2 = oy;
-
-  cx += ((x2 - x1) / 2);
-  cy += ((y2 - y1) / 2);
-#endif
-
-  rx = abs(ox - cx);
-  ry = abs(oy - cy);
 
   /* If the shape has a 1:1 ("locked") aspect ratio, use the larger radius: */
 
@@ -13172,6 +13234,11 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
       ry = 15;
     }
 
+  if (rx < 2)
+    rx = 2;
+  if (ry < 2)
+    ry = 2;
+
 
   /* Render a default brush: */
 
@@ -13190,6 +13257,38 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
   init_ang = shape_init_ang[cur_shape];
 
 
+  if (shape_mode == SHAPEMODE_CORNER)
+    {
+      /* Get extent of shape based on it's vertices,
+         and scale up if we need to
+         (e.g., square's points are at 45, 135, 225 & 315 degrees,
+         which do not extend to the full radius).
+
+         This works well for square and rectangle; it mostly
+         works for triangle and 5-pointed star, but it seems
+         sufficient. -bjk 2020.08.15 */
+      max_x = 0;
+      max_y = 0;
+      for (side = 0; side < shape_sides[cur_shape]; side++)
+        {
+          a1 = (angle_skip * side + init_ang) * M_PI / 180;
+          a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
+          x1 = (int)(cos(a1) * rx);
+          y1 = (int)(-sin(a1) * ry);
+
+          if (abs(x1) > max_x)
+            max_x = abs(x1);
+          if (abs(y1) > max_y)
+            max_y = abs(y1);
+        }
+
+      if (max_x < rx)
+        rx = (rx * rx) / max_x;
+      if (max_y < ry)
+        ry = (ry * ry) / max_y;
+    }
+
+
   step = 1;
 
   if (dont_do_xor && !use_brush)
@@ -13201,6 +13300,33 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
         step = (shape_sides[cur_shape] / 8);
     }
 
+
+  /* Where is the object? */
+  if (shape_mode == SHAPEMODE_CENTER) {
+    offx = 0;
+    offy = 0;
+  } else {
+    offx = (nx - sx) / 2;
+    offy = (ny - sy) / 2;
+
+    if (shape_locked[cur_shape])
+      {
+        if (abs(offx) > abs(offy))
+          {
+            if (offy > 0)
+              offy = abs(offx);
+            else
+              offy = -abs(offx);
+          }
+        else
+          {
+            if (offx > 0)
+              offx = abs(offy);
+            else
+              offx = -abs(offy);
+          }
+      }
+  }
 
   for (side = 0; side < shape_sides[cur_shape]; side = side + step)
     {
@@ -13216,43 +13342,40 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
       xv = (int)(cos((a1 + a2) / 2) * rx * shape_valley[cur_shape] / 100);
       yv = (int)(-sin((a1 + a2) / 2) * ry * shape_valley[cur_shape] / 100);
 
-
-
-
       /* Rotate the line: */
 
       if (rotn != 0)
         {
           rotn_rad = rotn * M_PI / 180;
 
-          xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
-          yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
+          xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
+          yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
 
-          x1 = xp;
-          y1 = yp;
+          x1 = xp - offx;
+          y1 = yp - offy;
 
-          xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
-          yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
+          xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
+          yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
 
-          x2 = xp;
-          y2 = yp;
+          x2 = xp - offx;
+          y2 = yp - offy;
 
-          xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
-          yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
+          xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
+          yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
 
-          xv = xp;
-          yv = yp;
+          xv = xp - offx;
+          yv = yp - offy;
         }
 
 
       /* Center the line around the center of the shape: */
 
-      x1 = x1 + cx;
-      y1 = y1 + cy;
-      x2 = x2 + cx;
-      y2 = y2 + cy;
-      xv = xv + cx;
-      yv = yv + cy;
+      x1 = x1 + sx + offx;
+      y1 = y1 + sy + offy;
+      x2 = x2 + sx + offx;
+      y2 = y2 + sy + offy;
+      xv = xv + sx + offx;
+      yv = yv + sy + offy;
 
 
       /* Draw: */
@@ -13325,35 +13448,35 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
               if (rotn != 0)
                 {
                   rotn_rad = rotn * M_PI / 180;
-
-                  xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
-                  yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
-
-                  x1 = xp;
-                  y1 = yp;
-
-                  xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
-                  yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
-
-                  x2 = xp;
-                  y2 = yp;
-
-                  xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
-                  yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
-
-                  xv = xp;
-                  yv = yp;
+        
+                  xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
+                  yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
+        
+                  x1 = xp - offx;
+                  y1 = yp - offy;
+        
+                  xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
+                  yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
+        
+                  x2 = xp - offx;
+                  y2 = yp - offy;
+        
+                  xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
+                  yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
+        
+                  xv = xp - offx;
+                  yv = yp - offy;
                 }
 
 
               /* Center the line around the center of the shape: */
 
-              x1 = x1 + cx;
-              y1 = y1 + cy;
-              x2 = x2 + cx;
-              y2 = y2 + cy;
-              xv = xv + cx;
-              yv = yv + cy;
+              x1 = x1 + sx + offx;
+              y1 = y1 + sy + offy;
+              x2 = x2 + sx + offx;
+              y2 = y2 + sy + offy;
+              xv = xv + sx + offx;
+              yv = yv + sy + offy;
 
 
               /* Draw: */
@@ -13382,7 +13505,7 @@ static void do_shape(int cx, int cy, int ox, int oy, int rotn, int use_brush)
       else
         rmax = abs(ry) + 20;
 
-      update_canvas(cx - rmax, cy - rmax, cx + rmax, cy + rmax);
+      update_canvas(sx - rmax + offx, sy - rmax + offy, sx + rmax + offx, sy + rmax + offy);
     }
 
 
@@ -23259,12 +23382,15 @@ static void setup_config(char *argv[])
   else
     {
       /* FIXME: Need assist for:
-         * _WIN32
          * __BEOS__
          * __HAIKU__
          * __APPLE__
       */
+#ifdef WIN32
+      picturesdir = GetUserImageDir();
+#else
       picturesdir = get_xdg_user_dir("PICTURES", "Pictures");
+#endif
       safe_snprintf(str, sizeof(str), "%s/TuxPaint", picturesdir);
       free(picturesdir);
       exportdir = strdup(str);
@@ -23360,6 +23486,7 @@ static void setup_config(char *argv[])
   SETBOOL(autosave_on_quit);
   SETBOOL(disable_label);
   SETBOOL(disable_magic_controls);
+  SETBOOL(disable_shape_controls);
   SETBOOL(disable_print);
   SETBOOL(disable_quit);
   SETBOOL(disable_save);
@@ -24896,6 +25023,9 @@ static void setup(void)
 
   img_magic_paint = loadimage(DATA_PREFIX "images/ui/magic_paint.png");
   img_magic_fullscreen = loadimage(DATA_PREFIX "images/ui/magic_fullscreen.png");
+
+  img_shapes_center = loadimage(DATA_PREFIX "images/ui/shapes_center.png");
+  img_shapes_corner = loadimage(DATA_PREFIX "images/ui/shapes_corner.png");
 
   img_bold = loadimage(DATA_PREFIX "images/ui/bold.png");
   img_italic = loadimage(DATA_PREFIX "images/ui/italic.png");

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.July.31 (0.9.25)
+2020.August.15 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -27,11 +27,36 @@ $Id$
       * The "--exportdir" option can be used to override the default
         location (but a "TuxPaint" subdir. will NOT be placed there).
 
+    * Shape controls:
+      * Draw shapes from the center (as in previous versions of Tux Paint)
+        or from a corner (similar to the default mode of most other
+        graphics tools).
+      * The controls to modify the drawing behavior can be removed,
+        for simplification of Tux Paint's interface (for younger users).
+
   * Ports & Building
     ----------------
     * Corrections for Haiku not opening saved files.
       (Ref: https://github.com/haikuports/haikuports/issues/3045)
       Gerasim Troeglazov <3dEyes@gmail.com>
+
+  * New Brushes
+    -----------
+    * Footprints
+      * Human feet
+        Based on Openclipart by "netalloy"
+        (https://openclipart.org/artist/netalloy)
+        Creative Commons Zero 1.0 Public Domain License
+
+      * Paw (dog or cat like)
+        Based on Openclipart by "alinager"
+        (https://openclipart.org/artist/alinager)
+        Creative Commons Zero 1.0 Public Domain License
+
+      * Shoes
+        Based on Openclipart by "Tavin"
+        (https://openclipart.org/artist/Tavin)
+        Creative Commons Zero 1.0 Public Domain License
 
   * Documentation updates
     ---------------------
@@ -701,8 +726,8 @@ $Id$
     * Frame - neon
       Made in inkscape and the gimp by Caroline Ford.
 
-  * New Templates
-    -------------
+  * New Templates:
+    --------------
     * Burnt bark
     * Cliff
     * Corn maze
@@ -724,8 +749,8 @@ $Id$
     * Wool mill machine
       Photographed by Bill Kendrick <bill@newbreedsoftware.com>
 
-  * New Brushes
-    ---------
+  * New Brushes:
+    ------------
     * Another flower brush
       Made out of some open clipart by C Ford.
 
