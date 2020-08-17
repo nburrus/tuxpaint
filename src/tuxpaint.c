@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 15, 2020
+  June 14, 2002 - August 16, 2020
 */
 
 
@@ -1903,10 +1903,11 @@ static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
   img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
-#define NUM_ERASERS 12          /* How many sizes of erasers
+#define NUM_ERASERS 16          /* How many sizes of erasers
                                    (from ERASER_MIN to _MAX as squares, then again
-                                   from ERASER_MIN to _MAX as circles) */
-#define ERASER_MIN 13
+                                   from ERASER_MIN to _MAX as circles; best if a
+                                   multiple of 4, since selector is 2 buttons across) */
+#define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
 
@@ -2026,7 +2027,9 @@ static void update_stamp_xor(void);
 
 static void set_active_stamp(void);
 
-static void do_eraser(int x, int y);
+static int calc_eraser_size(int which_eraser);
+static void do_eraser(int x, int y, int update);
+static void eraser_draw(int x1, int y1, int x2, int y2);
 static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
@@ -4668,7 +4671,7 @@ static void mainloop(void)
                       if (!emulate_button_pressed)
                         rec_undo_buffer();
 
-                      do_eraser(old_x, old_y);
+                      do_eraser(old_x, old_y, 1);
 
                       if (mouseaccessibility)
                         emulate_button_pressed = !emulate_button_pressed;
@@ -5657,7 +5660,7 @@ static void mainloop(void)
                     {
                       /* Still pushing, and moving - Erase! */
 
-                      do_eraser(new_x, new_y);
+                      eraser_draw(old_x, old_y, new_x, new_y);
                     }
                 }
 
@@ -10430,22 +10433,30 @@ static void rect_xor(int x1, int y1, int x2, int y2)
 }
 
 
+static int calc_eraser_size(int which_eraser)
+{
+#define NUM_SIZES (NUM_ERASERS / 2)
+  if (which_eraser >= NUM_SIZES)
+    which_eraser -= NUM_SIZES;
+
+  return(((NUM_SIZES - 1 - which_eraser) * ((ERASER_MAX - ERASER_MIN) / (NUM_SIZES - 1))) + ERASER_MIN);
+}
+
 /**
  * FIXME
  */
 /* Erase at the cursor! */
-static void do_eraser(int x, int y)
+static void do_eraser(int x, int y, int update)
 {
   SDL_Rect dest;
   int sz;
   int xx, yy, n, hit;
 
-  if (cur_eraser < NUM_ERASERS / 2)
+  sz = calc_eraser_size(cur_eraser);
+
+  if (cur_eraser < NUM_SIZES)
     {
       /* Square eraser: */
-
-      sz = (ERASER_MIN +
-            (((NUM_ERASERS / 2) - 1 - cur_eraser) * ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
 
       dest.x = x - (sz / 2);
       dest.y = y - (sz / 2);
@@ -10453,28 +10464,20 @@ static void do_eraser(int x, int y)
       dest.h = sz;
 
       if (img_starter_bkgd == NULL)
-        {
-          SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, canvas_color_r, canvas_color_g, canvas_color_b));
-        }
+        SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, canvas_color_r, canvas_color_g, canvas_color_b));
       else
-        {
-          SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
-        }
+        SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
     }
   else
     {
       /* Round eraser: */
 
-      sz = (ERASER_MIN +
-            (((NUM_ERASERS / 2) - 1 - (cur_eraser - (NUM_ERASERS / 2))) *
-             ((ERASER_MAX - ERASER_MIN) / ((NUM_ERASERS / 2) - 1))));
-
-      for (yy = 0; yy < sz; yy++)
+      for (yy = 0; yy <= sz; yy++)
         {
           hit = 0;
           for (xx = 0; xx <= sz && hit == 0; xx++)
             {
-              n = (xx * xx) + (yy * yy) - ((sz / 2) * (sz / 2));
+              n = (xx * xx) + (yy * yy) - ((sz * sz) / 4);
 
               if (n >= -sz && n <= sz)
                 hit = 1;
@@ -10487,14 +10490,10 @@ static void do_eraser(int x, int y)
                   dest.h = 1;
 
                   if (img_starter_bkgd == NULL)
-                    {
-                      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
-                                                             canvas_color_r, canvas_color_g, canvas_color_b));
-                    }
+                    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+                                                           canvas_color_r, canvas_color_g, canvas_color_b));
                   else
-                    {
-                      SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
-                    }
+                    SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
 
 
                   dest.x = x - xx;
@@ -10503,14 +10502,10 @@ static void do_eraser(int x, int y)
                   dest.h = 1;
 
                   if (img_starter_bkgd == NULL)
-                    {
-                      SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
-                                                             canvas_color_r, canvas_color_g, canvas_color_b));
-                    }
+                    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format,
+                                                           canvas_color_r, canvas_color_g, canvas_color_b));
                   else
-                    {
-                      SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
-                    }
+                    SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
                 }
             }
         }
@@ -10529,16 +10524,104 @@ static void do_eraser(int x, int y)
     }
 #endif
 
-  update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+  if (update)
+    {
+      update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
-  rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+      rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
 #ifdef __APPLE__
-  /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
-  update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+      /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
+      update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 #endif
+    }
 }
 
+/**
+ * Draw a line on the canvas using the eraser.
+ *
+ * @param x1 Starting X coordinate
+ * @param y1 Starting Y coordinate
+ * @param x2 Ending X coordinate
+ * @param y2 Ending Y coordinate
+ */
+static void eraser_draw(int x1, int y1, int x2, int y2)
+{
+  int dx, dy, y;
+  int orig_x1, orig_y1, orig_x2, orig_y2, tmp, length;
+  float m, b;
+
+  orig_x1 = x1;
+  orig_y1 = y1;
+
+  orig_x2 = x2;
+  orig_y2 = y2;
+
+
+  dx = x2 - x1;
+  dy = y2 - y1;
+
+  if (dx != 0)
+    {
+      m = ((float)dy) / ((float)dx);
+      b = y1 - m * x1;
+
+      if (x2 >= x1)
+        dx = 1;
+      else
+        dx = -1;
+
+
+      while (x1 != x2)
+        {
+          y1 = m * x1 + b;
+          y2 = m * (x1 + dx) + b;
+
+          if (y1 > y2)
+            {
+              for (y = y1; y >= y2; y--)
+                do_eraser(x1, y, 0);
+            }
+          else
+            {
+              for (y = y1; y <= y2; y++)
+                do_eraser(x1, y, 0);
+            }
+
+          x1 = x1 + dx;
+        }
+    }
+  else
+    {
+      if (y1 > y2)
+        {
+          y = y1;
+          y1 = y2;
+          y2 = y;
+        }
+
+      for (y = y1; y <= y2; y++)
+        do_eraser(x1, y, 0);
+    }
+
+
+  if (orig_x1 > orig_x2)
+    {
+      tmp = orig_x1;
+      orig_x1 = orig_x2;
+      orig_x2 = tmp;
+    }
+
+  if (orig_y1 > orig_y2)
+    {
+      tmp = orig_y1;
+      orig_y1 = orig_y2;
+      orig_y2 = tmp;
+    }
+
+  length = (calc_eraser_size(cur_eraser) >> 1) + 1;
+  update_canvas(orig_x1 - length, orig_y1 - length, orig_x2 + length, orig_y2 + length);
+}
 
 /**
  * FIXME
@@ -26331,7 +26414,9 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   liq_attr *liq_handle;
   liq_image *input_image;
   liq_result *quantization_result;
+#if LIQ_VERSION >= 20800
   liq_error qtiz_status;
+#endif
   const liq_palette *palette;
   int gif_speed;
 
@@ -26436,9 +26521,13 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
           show_progress_bar(screen);
 	  done = export_gif_monitor_events();
 
-          qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
+#if LIQ_VERSION >= 20800
+	  qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
 	  done = (qtiz_status != LIQ_OK);
-
+#else
+	  quantization_result = liq_quantize_image(liq_handle, input_image);
+	  done = (quantization_result == NULL);
+#endif
           if (!done) {
             // Use libimagequant to make new image pixels from the palette
             pixels_size = num_selected * overall_area;
