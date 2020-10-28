@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2020.August.16 (0.9.25)
+2020.October.25 (0.9.25)
   * New Features
     ------------
     * Export drawings:
@@ -19,6 +19,7 @@ $Id$
         * Depends on "libimagequant", from the "pngquant2" project:
           https://github.com/ImageOptim/libimagequant
           (GPL v3 or later, for Free/Libre Open Source Software)
+          (h/t TOYAMA Shin-ichi for adding support for versions < 2.8.0)
       * Single image (PNG) export from the Open dialog.
         (Closes https://sourceforge.net/p/tuxpaint/feature-requests/192/)
       * Both utilize XDG user dirs settings, if available, to determine
@@ -44,11 +45,32 @@ $Id$
       (relative to the eraser size; especially useful for the
       smallest erasers).
 
+    * On-screen keyboard (visible when the feature is enabled, while
+      using the "Text" and "Label" tools) now appears with larger
+      (48x48 pixel, vs 24x24 pixel) buttons, when Tux Paint's window
+      (or fullscreen) size is large enough to fit them with the
+      chosen layout.
+      (h/t Anat & Aviv, who suggested it to help with users of
+      eye-tracking systems)
+
+    * On-screen keyboard buttons use a slightly larger font
+      (16pt vs 12pt, previously seen on the small keyboard;
+      32pt on the large keyboard).
+
   * Ports & Building
     ----------------
     * Corrections for Haiku not opening saved files.
       (Ref: https://github.com/haikuports/haikuports/issues/3045)
       Gerasim Troeglazov <3dEyes@gmail.com>
+
+    * Windows build changes
+      * Enabling PowerTools repositry to install additional SDL* packages
+      * Corrected README launcher for English, after install completes
+      * Updated translation files and ensure license text appears
+      * Support for Mingw64 for 64-bit builds
+      * Ability to find Mingw DLLs by examining EXEs
+        (new shell script replaces hard-coded list in Makefile)
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * New Brushes
     -----------
@@ -68,11 +90,19 @@ $Id$
         (https://openclipart.org/artist/Tavin)
         Creative Commons Zero 1.0 Public Domain License
 
+  * Starter & Template updates
+    --------------------------
+    * Added margins to elephant, fish_icon and frame_hearts
+      starters, to avoid smearing on edges in Tux Paint.
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
   * Documentation updates
     ---------------------
     * Cleaned up HTML code of HTML-based documentation.
 
     * Sub-section links within README's Table of Contents.
+
+    * EXTENDING docs cleaned up and Table of Contents added.
 
   * Bug Fixes
     ---------
@@ -89,11 +119,17 @@ $Id$
     * Basque translation
       Alexander Gabilondo <alexgabi@irakasle.eus>
 
+    * Catalan translation
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
     * Galician translation
       Miguel Bouzada <mbouzada@gmail.com>
 
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Japanese translation & Japanese README documentation
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>

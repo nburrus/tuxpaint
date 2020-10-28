@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 16, 2020
+  June 14, 2002 - October 15, 2020
 */
 
 
@@ -1526,7 +1526,7 @@ static int text_undo[NUM_UNDO_BUFS];
 static int have_to_rec_label_node;
 static int have_to_rec_label_node_back;
 static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
-static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off;
+static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off, *img_btn_hold;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down, *img_btnsm_hold;
 static SDL_Surface *img_btn_nav, *img_btnsm_nav;
 static SDL_Surface *img_prev, *img_next;
@@ -2314,6 +2314,8 @@ enum
   SHAPE_TOOL_MODE_ROTATE,
   SHAPE_TOOL_MODE_DONE
 };
+
+int shape_reverse;
 
 
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
@@ -3328,6 +3330,40 @@ static void mainloop(void)
                             {
                               if (onscreen_keyboard && kbd)
                                 {
+                                  if (kbd == NULL)
+                                    {
+                                      if (onscreen_keyboard_layout)
+                                        kbd =
+                                          osk_create(onscreen_keyboard_layout, screen,
+                                                     img_btn_up, img_btn_down, img_btn_off,
+                                                     img_btn_nav, img_btn_hold,
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+                                                     img_btnsm_up, img_btnsm_down, img_btnsm_off,
+                                                     img_btnsm_nav, img_btnsm_hold,
+                                                     /* FIXME */
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+                                                     onscreen_keyboard_disable_change);
+                                      else
+                                        kbd =
+                                          osk_create(strdup("default.layout"), screen,
+                                                     img_btn_up, img_btn_down, img_btn_off,
+                                                     img_btn_nav, img_btn_hold,
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+                                                     img_btnsm_up, img_btnsm_down, img_btnsm_off,
+                                                     img_btnsm_nav, img_btnsm_hold,
+                                                     /* FIXME */
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+                                                     onscreen_keyboard_disable_change);
+                                    }
+                                  if (kbd == NULL)
+                                    {
+                                      fprintf(stderr, "kbd = NULL\n");
+                                    }
+
                                   kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
                                   if (old_y > canvas->h / 2)
                                     kbd_rect.y = 0;
@@ -5298,6 +5334,10 @@ static void mainloop(void)
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
                               draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+
+                              /* FIXME: Do something less intensive! */
+
+                              SDL_Flip(screen);
                             }
                         }
                     }
@@ -5616,6 +5656,8 @@ static void mainloop(void)
                           do_shape(shape_start_x, shape_start_y, old_x, old_y, 0, 0);
 
                           do_shape(shape_start_x, shape_start_y, new_x, new_y, 0, 0);
+
+                          shape_reverse = (new_x < shape_start_x);
 
 
                           /* FIXME: Fix update shape function! */
@@ -12384,7 +12426,7 @@ static void save_current(void)
   char *fname;
   FILE *fi;
 
-  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory (E001)"))
     {
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
       return;
@@ -13010,6 +13052,7 @@ static void cleanup(void)
   free_surface(&img_btn_up);
   free_surface(&img_btn_down);
   free_surface(&img_btn_off);
+  free_surface(&img_btn_hold);
 
   free_surface(&img_btnsm_up);
   free_surface(&img_btnsm_off);
@@ -13610,8 +13653,11 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
   int deg;
 
-
   deg = (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
+
+  if (shape_reverse) {
+    deg = (deg + 180) % 360;
+  }
 
   if (shape_radius < 50)
     deg = ((deg - 15) / 30) * 30;
@@ -13731,7 +13777,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
       do_setcursor(cursor_watch);
     }
 
-  if (!make_directory(DIR_SAVE, "", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "", "Can't create user data directory (E002)"))
     {
       fprintf(stderr, "Cannot save the any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13746,7 +13792,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
 
   /* Make sure we have a ~/.tuxpaint/saved directory: */
 
-  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+  if (!make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E003)"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13761,7 +13807,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
 
   /* Make sure we have a ~/.tuxpaint/saved/.thumbs/ directory: */
 
-  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory"))
+  if (!make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E004)"))
     {
       fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
@@ -13770,9 +13816,8 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
 
 
 
-      /* Make sure we have a ~/.tuxpaint/saved/.label/ directory: */
-  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory"))
-      {
+  if (!make_directory(DIR_SAVE, "saved/.label", "Can't create label information directory (E005)"))
+    {
       fprintf(stderr, "Cannot save label information! SORRY!\n\n");
       draw_tux_text(TUX_OOPS, strerror(errno), 0);
       return 0;
@@ -14833,10 +14878,10 @@ static int do_open(void)
                           /* No thumbnail - load original: */
 
                           /* Make sure we have a ~/.tuxpaint/saved directory: */
-                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+                          if (make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E006)"))
                             {
                               /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
+                              make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E007)");
                             }
 
 
@@ -15914,10 +15959,10 @@ static int do_slideshow(void)
                       /* No thumbnail - load original: */
 
                       /* Make sure we have a ~/.tuxpaint/saved directory: */
-                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory"))
+                      if (make_directory(DIR_SAVE, "saved", "Can't create user data directory (for saved drawings) (E008)"))
                         {
                           /* (Make sure we have a .../saved/.thumbs/ directory:) */
-                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory");
+                          make_directory(DIR_SAVE, "saved/.thumbs", "Can't create user data thumbnail directory (for saved drawings' thumbnails) (E009)");
                         }
 
                       safe_snprintf(fname, sizeof(fname), "%s/%s", dirname, f->d_name);
@@ -19824,12 +19869,16 @@ static int do_new_dialog(void)
                         {
                           /* No thumbnail - load original: */
 
-                          /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
-                          if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory"))
+                          if (d_places[num_files] == PLACE_PERSONAL_TEMPLATES_DIR ||
+                              d_places[num_files] == PLACE_PERSONAL_STARTERS_DIR)
                             {
-                              /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
-                              safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
-                              make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory");
+                              /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
+                              if (make_directory(DIR_SAVE, dirname[d_places[num_files]], "Can't create user data directory (for starters/templates) (E010)"))
+                                {
+                                  /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
+                                  safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
+                                  make_directory(DIR_SAVE, fname, "Can't create user data thumbnail directory (for starters/templates) (E011)");
+                                }
                             }
 
                           img = NULL;
@@ -19930,10 +19979,10 @@ static int do_new_dialog(void)
                                   safe_snprintf(fname, sizeof(fname), "%s/.thumbs/%s-t.png",
                                            dirname[d_places[num_files]], d_names[num_files]);
 
-                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory") ||
-                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory"))
+                                  if (!make_directory(DIR_SAVE, "starters", "Can't create user data directory (for starters) (E012)") ||
+                                      !make_directory(DIR_SAVE, "templates", "Can't create user data directory (for templates) (E013)") ||
+                                      !make_directory(DIR_SAVE, "starters/.thumbs", "Can't create user data directory (for starters) (E014)") ||
+                                      !make_directory(DIR_SAVE, "templates/.thumbs", "Can't create user data directory (for templates) (E015)"))
                                     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
                                   else
                                     {
@@ -25040,6 +25089,7 @@ static void setup(void)
   img_btn_up = loadimage(DATA_PREFIX "images/ui/btn_up.png");
   img_btn_down = loadimage(DATA_PREFIX "images/ui/btn_down.png");
   img_btn_off = loadimage(DATA_PREFIX "images/ui/btn_off.png");
+  img_btn_hold = loadimage(DATA_PREFIX "images/ui/btn_hold.png");
 
   img_btnsm_up = loadimage(DATA_PREFIX "images/ui/btnsm_up.png");
   img_btnsm_off = loadimage(DATA_PREFIX "images/ui/btnsm_off.png");
@@ -25158,14 +25208,22 @@ static void setup(void)
             kbd = NULL;
           else
             kbd =
-              osk_create(onscreen_keyboard_layout, screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav,
+              osk_create(onscreen_keyboard_layout, screen,                                                      img_btn_up, img_btn_down, img_btn_off,
+                                                     img_btn_nav, img_btn_hold,
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav,
                          img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
                          onscreen_keyboard_disable_change);
         }
       else
         {
           kbd =
-            osk_create(strdup("default.layout"), screen, img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav,
+            osk_create(strdup("default.layout"), screen,                                                      img_btn_up, img_btn_down, img_btn_off,
+                                                     img_btn_nav, img_btn_hold,
+                                                     img_oskdel, img_osktab, img_oskenter,
+                                                     img_oskcapslock, img_oskshift,
+img_btnsm_up, img_btnsm_down, img_btnsm_off, img_btnsm_nav,
                        img_btnsm_hold, img_oskdel, img_osktab, img_oskenter, img_oskcapslock, img_oskshift,
                        onscreen_keyboard_disable_change);
         }
@@ -26733,7 +26791,7 @@ static char * get_export_filepath(const char * ext) {
 
 
   /* Make sure the export dir exists */
-  if (!make_directory(DIR_EXPORT, "", "Can't create export directory"))
+  if (!make_directory(DIR_EXPORT, "", "Can't create export directory (E016)"))
     {
       return NULL;
     }
