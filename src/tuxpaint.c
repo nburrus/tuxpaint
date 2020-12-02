@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 10, 2020
+  June 14, 2002 - November 21, 2020
 */
 
 
@@ -476,7 +476,9 @@ static void mtw(wchar_t * wtok, char *tok)
 #else
 
 #include <librsvg/rsvg.h>
-/* #include <librsvg/rsvg-cairo.h> -- Deprecated */
+#if defined (__MINGW32__) && (__GNUC__ <= 4 )
+#include <librsvg/rsvg-cairo.h>
+#endif
 
 #if !defined(RSVG_H) || !defined(RSVG_CAIRO_H)
 #error "---------------------------------------------------"
@@ -11968,6 +11970,7 @@ static SDL_Surface *load_starter_helper(char *path_and_basename, const char *ext
 
   ext = strdup(extension);
   safe_snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
+
   surf = (*load_func) (fname);
 
   if (surf == NULL)
@@ -16645,6 +16648,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
   SDL_Surface *img;
   char *tmp_starter_id, *tmp_template_id, *tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
+  /* FIXME: Do we want to keep `template_personal` safe, too? */
   char fname[1024];
   SDL_Event event;
   SDLKey key;
@@ -16662,6 +16666,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname, char 
   tmp_starter_mirrored = starter_mirrored;
   tmp_starter_flipped = starter_flipped;
   tmp_starter_personal = starter_personal;
+  /* FIXME: Do we want to keep `template_personal` safe, too? */
 
   do_setcursor(cursor_tiny);
 
@@ -17396,8 +17401,11 @@ static void do_render_cur_text(int do_blit)
     {
 #if defined(_FRIBIDI_H) || defined(FRIBIDI_H)
       //FriBidiCharType baseDir = FRIBIDI_TYPE_LTR;
-      //FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+#if defined (__MINGW32__) && (__GNUC__ <= 4 )
+      FriBidiCharType baseDir = FRIBIDI_TYPE_WL; /* Per: Shai Ayal <shaiay@gmail.com>, 2009-01-14 */
+#else
       FriBidiParType baseDir = FRIBIDI_TYPE_WL; //EP to avoid warning on types in now commented line above
+#endif
       FriBidiChar *unicodeIn, *unicodeOut;
       unsigned int i;
 
@@ -19557,7 +19565,8 @@ static int do_new_dialog(void)
   DIR *d;
   struct dirent *f;
   struct dirent2 *fs;
-  int place, oldplace;
+  struct stat sbuf;
+  int place;
   char *dirname[NUM_PLACES_TO_LOOK];
   char **d_names = NULL, **d_exts = NULL;
   int *d_places;
@@ -19643,18 +19652,22 @@ static int do_new_dialog(void)
             {
               f = readdir(d);
 
-              if (f != NULL)
+              if (f !=NULL)
                 {
-                  memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
-                  fs[num_files_in_dirs].place = places_to_look;
-
-                  num_files_in_dirs++;
-
-                  if (num_files_in_dirs >= things_alloced)
+                  safe_snprintf(fname, sizeof(fname), "%s/%s", dirname[places_to_look], f->d_name);
+                  if (!stat(fname, &sbuf) && S_ISREG(sbuf.st_mode))
                     {
-                      things_alloced = things_alloced + 32;
+                      memcpy(&(fs[num_files_in_dirs].f), f, sizeof(struct dirent));
+                      fs[num_files_in_dirs].place = places_to_look;
 
-                      fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                      num_files_in_dirs++;
+
+                      if (num_files_in_dirs >= things_alloced)
+                        {
+                          things_alloced = things_alloced + 32;
+
+                          fs = (struct dirent2 *)realloc(fs, sizeof(struct dirent2) * things_alloced);
+                        }
                     }
                 }
             }
@@ -19725,18 +19738,13 @@ static int do_new_dialog(void)
 
   /* Read directory of images and build thumbnails: */
 
-  oldplace = -1;
-
   for (j = 0; j < num_files_in_dirs; j++)
     {
       f = &(fs[j].f);
       place = fs[j].place;
 
-      if ((place == PLACE_PERSONAL_TEMPLATES_DIR || place == PLACE_TEMPLATES_DIR) && oldplace != place)
+      if ((place == PLACE_PERSONAL_TEMPLATES_DIR || place == PLACE_TEMPLATES_DIR) && first_template == -1)
         first_template = num_files;
-
-      oldplace = place;
-
 
       show_progress_bar(screen);
 
