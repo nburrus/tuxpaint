@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.25
+                                 version 0.9.26
                            Frequently Asked Questions
 
         Copyright (c) 2002-2020 by various contributors; see AUTHORS.txt
@@ -267,7 +267,7 @@ Saving
                         e.g., C:\Documents and Settings\Username\Application
                         Data\TuxPaint\saved
 
-                Mac OS X
+                macOS
                         In the user's "Application Support" folder:
                         e.g., /Users/Username/Library/Applicaton
                         Support/TuxPaint/saved/
