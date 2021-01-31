@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 21, 2020
+  June 14, 2002 - January 26, 2021
 */
 
 
@@ -825,6 +825,18 @@ static void setup_normal_screen_layout(void)
 
   /* need 56 minimum for the Tux area */
   buttons_tall = (WINDOW_HEIGHT - r_ttoolopt.h - 56 * button_scale - r_colors.h) / button_h;
+  if (buttons_tall < 5) {
+    fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable (not tall enough).\n",
+      button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
+    exit(93);
+  }
+
+  if (r_canvas.w < button_w * 9) {
+    fprintf(stderr, "Button size '%d' with window size '%dx%d' is not reasonable (not wide enough).\n",
+      button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
+    exit(93);
+  }
+
   gd_tools.rows = buttons_tall;
   gd_toolopt.rows = buttons_tall;
 
@@ -1864,7 +1876,7 @@ static int stamp_tintable(int stamp)
 
 #define SHAPE_BRUSH_NAME "aa_round_03.png"
 static int num_brushes, num_brushes_max, shape_brush = 0;
-static SDL_Surface **img_brushes;
+static SDL_Surface **img_brushes, **img_brushes_thumbs;
 static int *brushes_frames = NULL;
 static int *brushes_spacing = NULL;
 static short *brushes_directional = NULL;
@@ -1928,7 +1940,7 @@ static char template_id[FILENAME_MAX];
 static int brush_scroll;
 static int stamp_scroll[MAX_STAMP_GROUPS];
 static int font_scroll, magic_scroll, tool_scroll;
-static int eraser_scroll, shape_scroll; /* dummy variables for now */
+static int eraser_scroll, shape_scroll;
 
 static int eraser_sound;
 
@@ -4250,23 +4262,30 @@ static void mainloop(void)
 
                               if (!scrolling && event.type == SDL_MOUSEBUTTONDOWN)
                                 {
-                                  /* printf("Starting scrolling\n"); */
+                                  DEBUG_PRINTF("Starting scrolling\n");
                                   memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
                                   scrolltimer_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
-                                  scrolling = 1;
+                                  /*
+                                  * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                                  * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                                  * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                                  * energy impact on the Mac.
+                                  */
 
+                                  scrolling = 1;
+                                  SDL_InitSubSystem(SDL_INIT_TIMER);
                                   scrolltimer =
                                     SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void *)&scrolltimer_event);
                                 }
                               else
                                 {
-                                  /* printf("Continuing scrolling\n"); */
+                                  DEBUG_PRINTF("Continuing scrolling\n");
                                   scrolltimer =
                                     SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void *)&scrolltimer_event);
                                 }
 
-                              if (*thing_scroll == 0)
+                              if (*thing_scroll == 0 || *thing_scroll / gd_items.cols ==  num_rows_needed - gd_items.rows)
                                 {
                                   do_setcursor(cursor_arrow);
                                   if (scrolling)
@@ -4277,6 +4296,7 @@ static void mainloop(void)
                                           scrolltimer = NULL;
                                         }
                                       scrolling = 0;
+                                      SDL_QuitSubSystem(SDL_INIT_TIMER);
                                     }
                                 }
                             }
@@ -5208,6 +5228,7 @@ static void mainloop(void)
                       scrolltimer = NULL;
                     }
                   scrolling = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
 
                   /* printf("Killing scrolling\n"); */
                 }
@@ -5504,28 +5525,28 @@ static void mainloop(void)
                     {
                     }
 
-                  max = 14;
+		  int control_rows = 0;
                   if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-                    max = 8;    /* was 10 before left/right group buttons -bjk 2007.05.03 */
+		    control_rows = 3;
                   if (cur_tool == TOOL_LABEL)
                     {
-                      max = 12;
+		      control_rows = 1;
                       if (!disable_stamp_controls)
-                        max = 8;
+			control_rows = 3;
                     }
 
                   if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
-                    max = 10;
+		    control_rows = 2;
                   if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
-                    max = 12;
+		    control_rows = 1;
                   if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
-                    max = 12;
+		    control_rows = 1;
+		  int num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
 
-
-                  if (num_things > max + TOOLOFFSET)
+                  if (num_things > num_places)
                     {
                       /* Are there scroll buttons? */
-
+		      num_places = num_places - gd_toolopt.cols; /* Two scroll buttons occupy one row */
                       if (event.button.y < r_ttoolopt.h + img_scroll_up->h)
                         {
                           /* Up button; is it available? */
@@ -5536,12 +5557,12 @@ static void mainloop(void)
                             do_setcursor(cursor_arrow);
                         }
                       else if (event.button.y >
-                               (button_h * ((max - 2) / 2 + TOOLOFFSET / 2)) + r_ttoolopt.h + img_scroll_up->h
-                               && event.button.y <= (button_h * ((max - 2) / 2 + TOOLOFFSET / 2)) + r_ttoolopt.h + img_scroll_up->h + img_scroll_up->h)
+                               (button_h * (num_places / gd_toolopt.cols) + r_ttoolopt.h + img_scroll_up->h)
+                               && event.button.y <= (button_h * (num_places / gd_toolopt.cols) + r_ttoolopt.h + img_scroll_up->h + img_scroll_up->h))
                         {
                           /* Down button; is it available? */
 
-                          if (*thing_scroll < num_things - (max - 2))
+                          if (*thing_scroll < num_things - num_places)
                             do_setcursor(cursor_down);
                           else
                             do_setcursor(cursor_arrow);
@@ -5704,9 +5725,14 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_ERASER)
                     {
+                      int sz;
+
                       /* Still pushing, and moving - Erase! */
 
                       eraser_draw(old_x, old_y, new_x, new_y);
+
+                      sz = calc_eraser_size(cur_eraser);
+                      rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
                     }
                 }
 
@@ -5894,7 +5920,7 @@ static void mainloop(void)
         handle_motioners(oldpos_x, oldpos_y, motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x, valhat_y);
 
 
-      SDL_Delay(1);
+      SDL_Delay(10);
     }
   while (!done);
 #ifndef FORKED_FONTS && #defined __ANDROID__
@@ -7001,6 +7027,8 @@ static void loadbrush_callback(SDL_Surface * screen,
   FILE *fi;
   char buf[64];
   int want_rand;
+  int brush_w, brush_h;
+  float scale;
 
   (void)dirlen;
   (void)locale;
@@ -7022,12 +7050,12 @@ static void loadbrush_callback(SDL_Surface * screen,
             {
               num_brushes_max = num_brushes_max * 5 / 4 + 4;
               img_brushes = realloc(img_brushes, num_brushes_max * sizeof *img_brushes);
+              img_brushes_thumbs = realloc(img_brushes_thumbs, num_brushes_max * sizeof *img_brushes_thumbs);
               brushes_frames = realloc(brushes_frames, num_brushes_max * sizeof(int));
               brushes_directional = realloc(brushes_directional, num_brushes_max * sizeof(short));
               brushes_spacing = realloc(brushes_spacing, num_brushes_max * sizeof(int));
             }
           img_brushes[num_brushes] = loadimage(fname);
-
 
           /* Load brush metadata, if any: */
 
@@ -7070,6 +7098,30 @@ static void loadbrush_callback(SDL_Surface * screen,
               if (want_rand)
                 brushes_frames[num_brushes] *= -1;
             }
+
+          /* Generate thumbnail */
+          brush_w = ((img_brushes[num_brushes]->w / abs(brushes_frames[num_brushes])) / (brushes_directional[num_brushes] ? 3 : 1));
+          brush_h = (img_brushes[num_brushes]->h / (brushes_directional[num_brushes] ? 3 : 1));
+
+          if (brush_w <= button_w && brush_h <= button_h
+          ) {
+            img_brushes_thumbs[num_brushes] = duplicate_surface(img_brushes[num_brushes]);
+          } else {
+            if (brush_w > brush_h) {
+              scale = (float) ((float)button_w / (float)brush_w);
+            } else {
+              scale = (float) ((float)button_h / (float)brush_h);
+            }
+
+            img_brushes_thumbs[num_brushes] =
+              thumbnail2(
+                img_brushes[num_brushes],
+                img_brushes[num_brushes]->w * scale,
+                img_brushes[num_brushes]->h * scale,
+                0, /* no need to ask to keep aspect; already kept */
+                1  /* keep alpha */
+              );
+          }
 
           num_brushes++;
         }
@@ -8253,7 +8305,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
 
   if (button_w <= ORIGINAL_BUTTON_SIZE)
     myfont = small_font;
-  else if (button_w >= ORIGINAL_BUTTON_SIZE * 2)
+  else if (button_w <= ORIGINAL_BUTTON_SIZE * 3)
     myfont = medium_font;
   else
     myfont = large_font;
@@ -8262,7 +8314,8 @@ static SDL_Surface *do_render_button_label(const char *const label)
     myfont = locale_font;
   tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
-  surf = thumbnail(tmp_surf, min(button_w, tmp_surf->w), min(18 + button_label_y_nudge, tmp_surf->h), 0);
+
+  surf = thumbnail(tmp_surf, min(button_w, tmp_surf->w), min(18 * button_scale + button_label_y_nudge, tmp_surf->h), 0);
   SDL_FreeSurface(tmp_surf);
 
   return surf;
@@ -8924,19 +8977,19 @@ static void draw_brushes(void)
       if (brush < num_brushes)
         {
           if (brushes_directional[brush])
-            src.x = (img_brushes[brush]->w / abs(brushes_frames[brush])) / 3;
+            src.x = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / 3;
           else
             src.x = 0;
 
-          src.y = brushes_directional[brush] ? (img_brushes[brush]->h / 3) : 0;
+          src.y = brushes_directional[brush] ? (img_brushes_thumbs[brush]->h / 3) : 0;
 
-          src.w = (img_brushes[brush]->w / abs(brushes_frames[brush])) / (brushes_directional[brush] ? 3 : 1);
-          src.h = (img_brushes[brush]->h / (brushes_directional[brush] ? 3 : 1));
+          src.w = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / (brushes_directional[brush] ? 3 : 1);
+          src.h = (img_brushes_thumbs[brush]->h / (brushes_directional[brush] ? 3 : 1));
 
           dest.x = ((i % 2) * button_w) + (WINDOW_WIDTH - r_ttoolopt.w) + ((button_w - src.w) >> 1);
           dest.y = ((i / 2) * button_h) + r_ttoolopt.h + ((button_h - src.h) >> 1) + off_y;
 
-          SDL_BlitSurface(img_brushes[brush], &src, screen, &dest);
+          SDL_BlitSurface(img_brushes_thumbs[brush], &src, screen, &dest);
         }
     }
 }
@@ -9538,11 +9591,11 @@ static void draw_stamps(void)
           /* FIXME: Check for NULL! */
 
           dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8;
+          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale;
           SDL_BlitSurface(blnk, NULL, screen, &dest);
 
           dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 - (y_per * i);
+          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale - (y_per * i);
           SDL_BlitSurface(btn, NULL, screen, &dest);
 
           SDL_FreeSurface(btn);
@@ -9692,20 +9745,65 @@ static void draw_shapes(void)
 /* Draw the eraser selector: */
 static void draw_erasers(void)
 {
-  int i, x, y, sz;
+  int i, j, x, y, sz;
   int xx, yy, n;
   void (*putpixel) (SDL_Surface *, int, int, Uint32);
   SDL_Rect dest;
+  int most, off_y, max;
 
   putpixel = putpixels[screen->format->BytesPerPixel];
 
   draw_image_title(TITLE_ERASERS, r_ttoolopt);
 
-  for (i = 0; i < 14 + TOOLOFFSET; i++)
-    {
-      dest.x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w;
-      dest.y = ((i / 2) * button_h) + r_ttoolopt.h;
+  /* Space for buttons, was 14 */
+  most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
 
+
+    /* Do we need scrollbars? */
+
+  if (NUM_ERASERS > most + TOOLOFFSET)
+    {
+      most = most - gd_toolopt.cols; /* was 12 */
+      off_y = img_scroll_up->h;
+      max = most + TOOLOFFSET;
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h;
+
+      if (eraser_scroll > 0)
+        {
+          SDL_BlitSurface(img_scroll_up, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_scroll_up_off, NULL, screen, &dest);
+        }
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h + img_scroll_up->h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+
+      if (eraser_scroll < NUM_ERASERS - most - TOOLOFFSET)
+        {
+          SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
+        }
+      else
+        {
+          SDL_BlitSurface(img_scroll_down_off, NULL, screen, &dest);
+        }
+    }
+  else
+    {
+      off_y = 0;
+      max = most + TOOLOFFSET;
+    }
+
+  for (j = 0; j < most + TOOLOFFSET; j++)
+    {
+      i = j;
+      dest.x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = ((i / 2) * button_h) + r_ttoolopt.h + off_y;
+
+      i = j + eraser_scroll;
 
       if (i == cur_eraser)
         {
@@ -9720,7 +9818,6 @@ static void draw_erasers(void)
           SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
         }
 
-
       if (i < NUM_ERASERS)
         {
           if (i < NUM_ERASERS / 2)
@@ -9730,7 +9827,7 @@ static void draw_erasers(void)
               sz = (2 + (((NUM_ERASERS / 2) - 1 - i) * (38 / ((NUM_ERASERS / 2) - 1)))) * button_scale;
 
               x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
-              y = ((i / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2;
+              y = ((j / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2 + off_y;
 
               dest.x = x;
               dest.y = y;
@@ -9767,7 +9864,7 @@ static void draw_erasers(void)
               sz = (2 + (((NUM_ERASERS / 2) - 1 - (i - NUM_ERASERS / 2)) * (38 / ((NUM_ERASERS / 2) - 1)))) * button_scale;
 
               x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale- sz / 2;
-              y = ((i / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2;
+              y = ((j / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2 + off_y;
 
               for (yy = 0; yy <= sz; yy++)
                 {
@@ -13043,6 +13140,7 @@ static void cleanup(void)
   free_surface(&active_stamp);
 
   free_surface_array(img_brushes, num_brushes);
+  free_surface_array(img_brushes_thumbs, num_brushes);
   free(brushes_frames);
   free(brushes_directional);
   free(brushes_spacing);
@@ -17785,13 +17883,13 @@ static Uint32 scrolltimer_callback(Uint32 interval, void *param)
   /* printf("scrolltimer_callback(%d) -- ", interval); */
   if (scrolling)
     {
-      /* printf("(Still scrolling)\n"); */
+      DEBUG_PRINTF("(Still scrolling)\n");
       SDL_PushEvent((SDL_Event *) param);
       return interval;
     }
   else
     {
-      /* printf("(all done)\n"); */
+      DEBUG_PRINTF("(all done scrolling)\n");
       return 0;
     }
 }
@@ -24515,7 +24613,7 @@ static void setup(void)
   if (joystick_dev != -1)
     do_lock_file();
 
-  init_flags = SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_JOYSTICK;
+  init_flags = SDL_INIT_VIDEO | SDL_INIT_JOYSTICK;
   if (use_sound)
     init_flags |= SDL_INIT_AUDIO;
   if (!fullscreen)
@@ -25677,6 +25775,7 @@ static void claim_to_be_ready(void)
   font_scroll = 0;
   magic_scroll = 0;
   tool_scroll = 0;
+  eraser_scroll = 0;
 
   reset_avail_tools();
 
