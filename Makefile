@@ -131,7 +131,7 @@ FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant
-macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant
+macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -Wl,-framework,Cocoa
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)

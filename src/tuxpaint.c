@@ -23675,7 +23675,7 @@ static void setup_config(char *argv[])
       result = find_directory(B_USER_SETTINGS_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
-      savedir = strdup(macos.preferencesPath());
+      savedir = strdup(macos_preferencesPath());
 #elif __ANDROID__
       savedir = SDL_AndroidGetExternalStoragePath();
 #else
