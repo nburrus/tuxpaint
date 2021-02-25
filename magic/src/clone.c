@@ -93,10 +93,10 @@ int clone_init(magic_api * api)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/clone_start.ogg", api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/clone_start.ogg", api->data_directory);
   clone_start_snd = Mix_LoadWAV(fname);
 
-  snprintf(fname, sizeof(fname), "%s/sounds/magic/clone.ogg", api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/clone.ogg", api->data_directory);
   clone_snd = Mix_LoadWAV(fname);
 
   clone_state = CLONE_READY_TO_START;
@@ -121,7 +121,7 @@ SDL_Surface *clone_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/clone.png", api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/clone.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
@@ -319,7 +319,7 @@ int clone_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
 void clone_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
                      int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
-  clone_last = SDL_CreateRGBSurface(SDL_ANYFORMAT, canvas->w, canvas->h, canvas->format->BitsPerPixel,
+  clone_last = SDL_CreateRGBSurface(0, canvas->w, canvas->h, canvas->format->BitsPerPixel,
                                     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask,
                                     canvas->format->Amask);
 
