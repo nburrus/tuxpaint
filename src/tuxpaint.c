@@ -4819,7 +4819,7 @@ static void mainloop(void)
                           if (cur_fill == FILL_FLOOD)
                             {
                               /* Flood fill a solid color */
-                              do_flood_fill(screen, last, canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+                              do_flood_fill(screen, texture, renderer, last, canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
 
                               update_canvas(x1, y1, x2, y2);
                             }
@@ -4832,7 +4832,7 @@ static void mainloop(void)
                                 canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
                               SDL_BlitSurface(canvas, NULL, tmp_canvas, NULL);
 
-                              simulate_flood_fill(screen, last, tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+                              simulate_flood_fill(screen, texture, renderer, last, tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
                               SDL_FreeSurface(tmp_canvas);
 
                               sim_flood_x1 = x1;

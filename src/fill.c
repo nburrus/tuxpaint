@@ -60,7 +60,7 @@
 
 double colors_close(SDL_Surface * canvas, Uint32 c1, Uint32 c2);
 Uint32 blend(SDL_Surface * canvas, Uint32 draw_colr, Uint32 old_colr, double pct);
-void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched, int y_outside);
+void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched, int y_outside);
 
 
 /* Returns how similar colors 'c1' and 'c2' are */
@@ -107,9 +107,9 @@ int would_flood_fill(SDL_Surface * canvas, Uint32 cur_colr, Uint32 old_colr)
     }
 }
 
-void do_flood_fill(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched)
+void do_flood_fill(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched)
 {
-  simulate_flood_fill(screen, last, canvas, x, y, cur_colr, old_colr, x1, y1, x2, y2, touched);
+  simulate_flood_fill(screen, texture, renderer, last, canvas, x, y, cur_colr, old_colr, x1, y1, x2, y2, touched);
 }
 
 
@@ -127,11 +127,11 @@ Uint32 blend(SDL_Surface * canvas, Uint32 draw_colr, Uint32 old_colr, double pct
   return SDL_MapRGB(canvas->format, new_r, new_g, new_b);
 }
 
-void simulate_flood_fill(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched) {
-  simulate_flood_fill_outside_check(screen, last, canvas, x, y, cur_colr, old_colr, x1, y1, x2, y2, touched, 0);
+void simulate_flood_fill(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched) {
+  simulate_flood_fill_outside_check(screen, texture, renderer, last, canvas, x, y, cur_colr, old_colr, x1, y1, x2, y2, touched, 0);
 }
 
-void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched, int y_outside)
+void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer * renderer, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched, int y_outside)
 {
   int fillL, fillR, narrowFillL, narrowFillR, i, outside;
   double in_line, closeness;
@@ -168,7 +168,7 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
   prog_anim++;
   if ((prog_anim % 4) == 0)
     {
-      show_progress_bar(screen);
+      show_progress_bar_(screen, texture, renderer);
       playsound(canvas, 1, SND_FILL, 1, x, SNDDIST_NEAR);
     }
 
@@ -291,7 +291,7 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
           )
          )
         {
-          simulate_flood_fill_outside_check(screen, last, canvas, i, y - 1, cur_colr, old_colr, x1, y1, x2, y2, touched, y_outside + 1);
+          simulate_flood_fill_outside_check(screen, texture, renderer, last, canvas, i, y - 1, cur_colr, old_colr, x1, y1, x2, y2, touched, y_outside + 1);
         }
 
       px_colr = getpixels[last->format->BytesPerPixel] (last, i, y + 1);
@@ -303,7 +303,7 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last,
           )
          )
         {
-          simulate_flood_fill_outside_check(screen, last, canvas, i, y + 1, cur_colr, old_colr, x1, y1, x2, y2, touched, y_outside + 1);
+          simulate_flood_fill_outside_check(screen, texture, renderer, last, canvas, i, y + 1, cur_colr, old_colr, x1, y1, x2, y2, touched, y_outside + 1);
         }
     }
 }
