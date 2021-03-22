@@ -25,6 +25,7 @@
   June 14, 2002 - March 8, 2021
 */
 
+#include "platform.h"
 
 /* (Note: VER_VERSION and VER_DATE are now handled by Makefile) */
 
@@ -303,15 +304,21 @@ typedef struct safer_dirent
 
 /* Not BeOS */
 
-#ifdef __APPLE__
+#if defined(__MACOS__)
 
-/* Apple */
+/* macOS */
 
 #include "macos_print.h"
 
-#else /* __APPLE__ */
+#elif defined(__IOS__)
 
-/* Not Windows, not BeOS, not Apple */
+/* iOS */
+
+#include "ios_print.h"
+
+#else /* __MACOS__, __IOS__ */
+
+/* Not Windows, not BeOS, not macOS, not iOS */
 #ifdef __ANDROID__
 
 #define AUTOSAVE_GOING_BACKGROUND
@@ -326,7 +333,7 @@ typedef struct safer_dirent
 
 #endif /* __ANDROID__ */
 
-#endif /* __APPLE__ */
+#endif /* __MACOS__, __IOS__ */
 
 #endif /* __BEOS__ */
 
@@ -373,8 +380,10 @@ static void mtw(wchar_t * wtok, char *tok)
 
 #endif /* WIN32 */
 
-#ifdef __APPLE__
+#if defined(__MACOS__)
 #include "macos.h"
+#elif defined(__IOS__)
+#include "ios.h"
 #endif
 
 #include <errno.h>
@@ -17718,7 +17727,7 @@ void do_print(void)
 
   SurfacePrint(save_canvas);
 #elif defined(__APPLE__)
-  /* Mac OS X */
+  /* macOS, iOS */
   int show = (want_alt_printcommand && !fullscreen);
 
   const char *error = SurfacePrint(save_canvas, show);
@@ -23925,7 +23934,7 @@ static void setup_config(char *argv[])
       result = find_directory(B_USER_SETTINGS_DIRECTORY, volume, false, buffer, sizeof(buffer));
       asprintf((char **)&savedir, "%s/%s", buffer, "TuxPaint");
 #elif __APPLE__
-      savedir = strdup(macos_preferencesPath());
+      savedir = strdup(apple_preferencesPath());
 #elif __ANDROID__
       savedir = SDL_AndroidGetExternalStoragePath();
 #else
@@ -23969,8 +23978,8 @@ static void setup_config(char *argv[])
   /* BeOS: Use a "tuxpaint.cfg" file: */
   strcpy(str, "tuxpaint.cfg"); /* safe; sufficient size */
 #elif defined(__APPLE__)
-  /* Mac OS X: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
-  safe_snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_preferencesPath());
+  /* macOS, iOS: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
+  safe_snprintf(str, sizeof(str), "%s/tuxpaint.cfg", apple_preferencesPath());
 #elif defined(__ANDROID__)
   /* Try to find the user's config file */
   /* This file is writed by the tuxpaint config activity when the user runs it */
@@ -24004,9 +24013,9 @@ static void setup_config(char *argv[])
 #elif defined(__APPLE__)
       /* EP added this conditional section for Mac to fix
          folder & extension inconsistency with Tux Paint Config application) */
-      /* Mac OS X: Use a "tuxpaint.cfg" file in the *global* Tux Paint
+      /* macOS, iOS: Use a "tuxpaint.cfg" file in the *global* Tux Paint
          application support folder */
-      safe_snprintf(str, sizeof(str), "%s/tuxpaint.cfg", macos_globalPreferencesPath());
+      safe_snprintf(str, sizeof(str), "%s/tuxpaint.cfg", apple_globalPreferencesPath());
       parse_file_options(&tmpcfg_sys, str);
 #elif defined(__ANDROID__)
       /* Load the config file we provide in assets/etc/tuxpaint.cfg */
@@ -24500,7 +24509,7 @@ static void chdir_to_binary(char *argv0)
       char *app_path = strdup(argv0);
       char *slash = strrchr(app_path, '/');
 
-#if defined(__APPLE__)
+#if defined(__MACOS__)
       // On macOS, execution is deep inside the app bundle.
       // E.g., "/Applications/TuxPaint.app/Contents/MacOS/tuxpaint"
       // But we want to point somewhere higher up, say to "Contents", so we can access
