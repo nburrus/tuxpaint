@@ -8274,7 +8274,7 @@ static void load_stamps(SDL_Surface * screen)
 #else
   load_stamp_dir(screen, ASSETS_STAMPS_DIR);
 #endif
-#ifdef __APPLE__
+#ifdef __MACOS__
   load_stamp_dir(screen, "Resources/stamps");
   load_stamp_dir(screen, "/Library/Application Support/TuxPaint/stamps");
 #endif
@@ -26143,7 +26143,7 @@ int main(int argc, char *argv[])
   CLOCK_ASM(time2);
 #endif
 
-#if defined(__APPLE__)
+#if defined(__MACOS__)
   /* Pango uses Fontconfig which requires /opt/local/etc/fonts/fonts.conf. This
    * file may not exist on the runtime system, however, so we copy the file
    * into our app bundle at compile time, and tell Fontconfig here to look for
