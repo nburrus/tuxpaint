@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年3月 9日
+                                   2021年4月19日
 
      ----------------------------------------------------------------------
 
@@ -102,6 +102,11 @@ Windows のユーザー
 
              SIZE
              の値は24から192までのピクセル値で指定します。ほとんどのボタンは正方形となっており、この設定はボタンの幅と高さの両方に影響します。
+
+             Note: If the chosen button size would cause the buttons to be
+             too large for all required UI elements to appear under Tux
+             Paint's chosen window size, the largest possible button size
+             will be used. (A note will appear in stderr.)
 
      allowscreensaver=yes
 
@@ -321,8 +326,7 @@ Windows のユーザー
 
      onscreen-keyboard=yes
 
-             Presents a clickable on-screen keyboard when using the Text and
-             < b>Label tools.
+             「もじ」ツールと「ラベル」ツールで、画面キーボードを表示します。
 
      onscreen-keyboard-layout=レイアウト名
 
@@ -444,8 +448,7 @@ Windows のユーザー
 
              使用方法：
 
-                * キャンバスエリアでは、通常はなめらかに、default キー（Windows では Shift
-                  キー）を押しながらでは飛び飛びにカーソルが動きます。
+                * キャンバスエリアでは、通常はなめらかに、Shift キーを押しながらでは飛び飛びにカーソルが動きます。
                 * ツールボタンのエリアでは、飛び飛びにカーソルが動きます。
                 * 各キーの動作：
                      * [Left]/[Right]/[Up]/[Down], テンキーの [1] から [9]：
@@ -501,7 +504,11 @@ Windows のユーザー
                   "~/Pictures"）以下の "Pictures" ディレクトリになります。（日本語環境では "画像"）
                   XDGの設定が読み取れない場合や、"XDG_PICTURES_DIR
                   "に何も設定されていない場合は、上記の英語環境で一般的なディレクトリ（~/Pictures）を使用します。
-                * Windows — TBD! 
+                * Windows — 各ユーザーの "ピクチャ" ディレクトリ（通常は
+                  "C:\Users\ユーザー名\Pictures"）。
+                  また、次のようにして、フォルダを直接開くこともできます：
+                     * "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイアログを開く。
+                     * テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
                 * macOS — TBD!
 
              注：標準の設定を用いる場合は、画像用のディレクトリにサブディレクトリ "TuxPaint"
@@ -1393,8 +1400,13 @@ Windows のユーザー
 
          ... この言語指定は、実行したコマンドプロンプトウィンドウが終了するまでの間だけ有効となります。
 
-         恒久的に言語環境を変更したい場合は、Windows の "sysedit" ツールを用いて "autoexec.bat"
-         ファイルを編集する方法があります。
+         常にこの言語設定を有効にするには、以下のようにして、"システムのプロパティ" ダイアログで環境変数を設定します：
+
+           * "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイアログを開く。
+           * テキストボックスに "sysdm.cpl" と入力して "[OK]" ボタンを押し、"システムのプロパティ" ダイアログを開く。
+           * "詳細設定" タブを選択。
+           * "環境変数(N)..." ボタンをクリック。
+           * 環境変数 "LANG" の値を編集。（変数が設定されていなければ新たに作成）
 
   言語固有のフォント
 
