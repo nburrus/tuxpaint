@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.April.19 (0.9.26)
+2021.May.9 (0.9.26)
   * New Features
     ------------
     * Larger UI buttons
@@ -92,8 +92,14 @@ $Id$
     * Albanian
       Besnik Bleta <besnik@programeshqip.org>
 
-    * Galician translation
+    * Catalan
+      Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+    * Galician
       Miguel Bouzada <mbouzada@gmail.com>
+
+    * Icelandic
+      Sveinn í Felli <sv1@fellsnet.is>
 
   * Magic Tool Improvememnts:
     -------------------------
