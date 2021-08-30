@@ -6,7 +6,33 @@ Documentation sur les options
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  août 8, 2021
+                                 août 29, 2021
+
+     ----------------------------------------------------------------------
+
+   +---------------------------------------------------------------------+
+   |Table des matières                                                   |
+   |---------------------------------------------------------------------|
+   |  * Configuration de Tux Paint.                                      |
+   |  * Fichier de configuration                                         |
+   |  * Options disponibles                                              |
+   |       * Video/Sound                                                 |
+   |       * Mouse/Keyboard                                              |
+   |       * Simplification                                              |
+   |       * Languages                                                   |
+   |       * Impression                                                  |
+   |       * Sauvegarde                                                  |
+   |       * Data                                                        |
+   |       * Accessibility                                               |
+   |       * Joystick                                                    |
+   |  * Écrasez des options de System Config                             |
+   |  * Options de ligne de commande                                     |
+   |       * Options d'information en ligne de commande                  |
+   |  * Choisir une autre langue                                         |
+   |       * Langues disponibles                                         |
+   |       * Définition des paramètres régionaux de votre environnement  |
+   |       * Polices spéciales                                           |
+   +---------------------------------------------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -2005,7 +2031,7 @@ Définition des paramètres régionaux de votre environnement
            * Cliquez sur le bouton "Variables d'environnement ...".
            * Édite la valeur du paramètre "LANG" (le crée s'il n'existe pas).
 
-  Polices spéciales
+Polices spéciales
 
        Certaines langues nécessitent l'installation de polices spéciales. Ces
        fichiers de polices (qui sont au format TrueType (TTF)), sont beaucoup

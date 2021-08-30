@@ -6,7 +6,33 @@ Options Documentation
           Copyright © 2002-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 August 8, 2021
+                                August 29, 2021
+
+     ----------------------------------------------------------------------
+
+   +---------------------------------------------+
+   |Table of Contents                            |
+   |---------------------------------------------|
+   |  * Tux Paint Config.                        |
+   |  * Configuration File                       |
+   |  * Available Options                        |
+   |       * Video/Sound                         |
+   |       * Mouse/Keyboard                      |
+   |       * Simplification                      |
+   |       * Languages                           |
+   |       * Printing                            |
+   |       * Saving                              |
+   |       * Data                                |
+   |       * Accessibility                       |
+   |       * Joystick                            |
+   |  * Overriding System Config. Options        |
+   |  * Command-Line Options                     |
+   |       * Command-Line Informational Options  |
+   |  * Choosing a Different Language            |
+   |       * Available Languages                 |
+   |       * Setting Your Environment's Locale   |
+   |       * Special Fonts                       |
+   +---------------------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -1907,7 +1933,7 @@ Setting Your Environment's Locale
            * Edit the value of the parameter "LANG" (create it, if it doesn't
              exists).
 
-  Special Fonts
+Special Fonts
 
        Some languages require special fonts be installed. These font files
        (which are in TrueType format (TTF)), are much too large to include

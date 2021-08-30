@@ -6,7 +6,33 @@ Documentación de opcións
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                              8 de Agosto de 2021
+                              29 de Agosto de 2021
+
+     ----------------------------------------------------------------------
+
+   +----------------------------------------------------+
+   |Índice                                              |
+   |----------------------------------------------------|
+   |  * Tux Paint Config.                               |
+   |  * Ficheiro de configuración                       |
+   |  * Opcións dispoñíbeis                             |
+   |       * Video/Sound                                |
+   |       * Mouse/Keyboard                             |
+   |       * Simplificación                             |
+   |       * Languages                                  |
+   |       * Impresión                                  |
+   |       * Gardar                                     |
+   |       * Data                                       |
+   |       * Accessibility                              |
+   |       * Joystick                                   |
+   |  * Anulación da configuración do sistema. Opcións  |
+   |  * Opcións da liña de ordes                        |
+   |       * Opcións informativas da liña de ordes      |
+   |  * Escoller un idioma diferente                    |
+   |       * Idiomas dispoñíbeis                        |
+   |       * Axustar o idioma do seu contorno           |
+   |       * Tipos de letra especiais                   |
+   +----------------------------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -1960,7 +1986,7 @@ Axustar o idioma do seu contorno
            * Prema no botón «Variábeis de contorno...».
            * Edite o valor do parámetr «LANG») (créeo, se non existe).
 
-  Tipos de letra especiais
+Tipos de letra especiais
 
        Algúns idiomas requiren que se instalen tipos de letra especiais.
        Estes ficheiros de letra (que están en formato TrueType (TTF)), son
