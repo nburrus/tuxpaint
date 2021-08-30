@@ -29,7 +29,7 @@ $Id$
       documentation files (since 0.9.26).
 
     * Added table of contents to some documentation
-      (OPTIONS, "Advanced Stamps 'How-To'").
+      ("Options Documentation", "FAQ", & "Advanced Stamps 'How-To'").
 
 2021.June.28 (0.9.26)
   * New Features

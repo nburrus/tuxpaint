@@ -4,7 +4,22 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  juin 2, 2021
+                                 août 29, 2021
+
+     ----------------------------------------------------------------------
+
+   +-----------------------------------+
+   |Table des matières                 |
+   |-----------------------------------|
+   |  * Liées au dessin                |
+   |  * Problèmes d'interface          |
+   |  * Impression                     |
+   |  * Sauvegarde                     |
+   |  * Problèmes audio                |
+   |  * Problèmes en mode plein écran  |
+   |  * Autres problèmes               |
+   |  * Aide / Contact                 |
+   +-----------------------------------+
 
      ----------------------------------------------------------------------
 
