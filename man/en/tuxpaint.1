@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.08.15
-.TH TUXPAINT 1 "August 15, 2021" "0.9.27" "Tux Paint"
+.\" tuxpaint.1 - 2021.08.29
+.TH TUXPAINT 1 "August 29, 2021" "0.9.27" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -365,7 +365,7 @@ mixed case.
 Overrides the default size of all stamps, relative to their possible sizes
 (determined by Tux Paint, based on the dimensions of both the stamps
 themselves, and the drawing canvas).  Valid values are from 0 (smallest) to
-10 (largest).  Use "--stampsize=default" to let ITux PaintP choose on a
+10 (largest).  Use "--stampsize=default" to let Tux Paint choose on a
 per-stamp basis (this is the default setting).
 
 .SS STARTING OUT
@@ -439,7 +439,8 @@ can be useful on touchscreen devices, such as tablet PCs.
 .SS KEYBOARD
 .TP 8
 .B \-\-noshortcuts \-\-shortcuts
-<? /* --[no]shortcuts */ wordwrap(sprintf(gettext(If \"%s\" mode, keyboard shortcuts (e.g., [Ctrl]+[S] for Save) will be disabled.  Default mode is for shortcuts to be enabled."), "--noshortcuts")) . "\n" ?>
+If "--noshortcuts" mode, keyboard shortcuts (e.g., [Ctrl]+[S] for Save)
+will be disabled.  Default mode is for shortcuts to be enabled.
 
 .SS MOUSE AND ACCESSIBILITY
 .TP 8
@@ -458,7 +459,8 @@ the wheel.
 .TP 8
 .B \-\-mouse-accessibility
 In this mode, instead of clicking, dragging and releasing (e.g., to draw),
-you click, move, and click again to end the motion.
+you click, move, and click again to end the motion. ("Sticky mouse
+clicks.")
 
 .TP 8
 .B \-\-keyboard \-\-mouse
@@ -541,7 +543,10 @@ to various tools within Tux Paint.
 .PD 0
 .TP 2
 -
-brush | Brush
+brush | Paint
+.TP 2
+-
+stamp | Stamp
 .TP 2
 -
 lines | Lines
@@ -680,8 +685,8 @@ test environment.
 
 .TP 8
 .B \-\-autosave \-\-noautosave
-The --autosave option prevents ITux PaintP from asking whether you want
-to save the current picture when quitting, and assumes you do.
+The --autosave option prevents Tux Paint from asking whether you want to
+save the current picture when quitting, and assumes you do.
 
 .SH OPTIONS - DATA FILES
 .l

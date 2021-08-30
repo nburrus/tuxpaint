@@ -1167,7 +1167,7 @@ Accessibility
 
                  Note: If used in a system-wide configuration file, may be
                  overridden by the user's configuration file using
-                 "keyboard=no" or "2$keyboard=no". In both cases, may be
+                 "keyboard=no" or "mouse=yes". In both cases, may be
                  overridden by the command-line option "--mouse".
 
   Onscreen Keyboard
