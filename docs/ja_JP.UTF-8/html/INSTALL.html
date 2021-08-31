@@ -26,15 +26,76 @@
       </p>
 
       <p>
-        2021年3月 9日      </p>
+        2021年8月30日      </p>
     </center>
 
-    <hr>
+    <hr size="2" noshade />
 
-    <h2>Requirements:</h2>
+    <table border="2"
+           cellspacing="0"
+           cellpadding="2"
+           summary="目次">
+      <tr>
+        <th>
+          目次        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <ul>
+            <li>
+              <a href="#requirements">Requirements</a>
+              <ul>
+                <li>
+                  <a href="#req-libsdl">Simple DirectMedia Layer library (libSDL)</a>
+                </li>
+                <li>
+                  <a href="#req-other-libs">Other Libraries</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#compiling">Compiling and Installation</a>
+              <ul>
+                <li>
+                  <a href="#compiling-windows">Windows のユーザー</a>
+                </li>
+                <li>
+                  <a href="#compiling-linux">Linux または Unix のユーザー</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#debugging">Debugging</a>
+            </li>
+            <li>
+              <a href="#uninstalling">Uninstalling Tux Paint</a>
+              <ul>
+                <li>
+                  <a href="#uninstalling-windows">Windows</a>
+                </li>
+                <li>
+                  <a href="#uninstalling-linux">Linux</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <hr size="2" noshade />
+
+    <h2>
+      <a name="requirements" id="requirements">
+        Requirements      </a>
+    </h2>
     <blockquote>
 
-      <h3>libSDL</h3>
+      <h3>
+        <a name="req-libsdl" id="req-libsdl">
+          Simple DirectMedia Layer library (libSDL)        </a>
+      </h3>
       <blockquote>
         <p>
           Tux Paint requires the Simple DirectMedia Layer Library (libSDL), an Open Source multimedia programming library available under the GNU Lesser General Public License (LGPL).        </p>
@@ -62,7 +123,10 @@
         </blockquote>
       </blockquote>
 
-      <h3>Other Libraries</h3>
+      <h3>
+        <a name="req-other-libs" id="req-other-libs">
+          Other Libraries        </a>
+      </h3>
       <blockquote>
         <p>
           Tux Paint also takes advantage of a number of other free, LGPL'd libraries.  Under Linux, just like SDL, they should either already be installed, or are readily available for installation as part of your Linux distribution.        </p>
@@ -155,12 +219,20 @@
       </blockquote>
     </blockquote>
 
-    <h2>Compiling and Installation:</h2>
+    <hr size="2" noshade />
+
+    <h2>
+      <a name="compiling" id="compiling">
+        Compiling and Installation      </a>
+    </h2>
     <blockquote>
       <p>
         Tux Paint is released under the GNU General Public License (GPL) (see "COPYING.txt" for details), and therefore the 'source code' to the program is available freely.      </p>
 
-      <h3>Windows Users:</h3>
+      <h3>
+        <a name="compiling-windows" id="compiling-windows">
+          Windows のユーザー        </a>
+      </h3>
       <blockquote>
         <h4>Compiling:</h4>
         <blockquote>
@@ -277,7 +349,10 @@
         </blockquote>
       </blockquote>
 
-      <h3>Linux/Unix Users:</h3>
+      <h3>
+        <a name="compiling-linux" id="compiling-linux">
+          Linux または Unix のユーザー        </a>
+      </h3>
       <blockquote>
         <h4>Compiling:</h4>
         <blockquote>
@@ -424,13 +499,26 @@
       </blockquote>
     </blockquote>
 
-    <h2>Debugging:</h2>
+    <hr size="2" noshade />
+
+    <h2>
+      <a name="debugging" id="debugging">
+        Debugging      </a>
+    </h2>
     <blockquote>
       Debugging (to "STDOUT", e.g. to the terminal, or to a "<code>stdout.txt</code>" file, on Windows) can be enabled by setting "<code>DEBUG</code>" (and, if verbose logging is wanted, "<code>VERBOSE</code>") <code>#define</code>s in "<code>src/debug.h</code>".    </blockquote>
 
-    <h2>Uninstalling Tux Paint:</h2>
+    <hr size="2" noshade />
+
+    <h2>
+      <a name="uninstalling" id="uninstalling">
+        Uninstalling Tux Paint      </h2>
+    </h2>
     <blockquote>
-      <h3>Windows</h3>
+      <h3>
+        <a name="uninstalling-windows" id="uninstalling-windows">
+          Windows        </a>
+      </h3>
       <blockquote>
         <h4>Using the Uninstaller</h4>
         <blockquote>
@@ -448,7 +536,10 @@
         </blockquote>
       </blockquote>
 
-      <h3>Linux</h3>
+      <h3>
+        <a name="uninstalling-linux" id="uninstalling-linux">
+          Linux        </a>
+      </h3>
       <blockquote>
         <p>
           Within the Tux Paint source directory (where you compiled Tux Paint), you can use the "<code>make uninstall</code>" target to uninstall Tux Paint. By default, this must be done by the "root" user ('superuser'), but if you installed Tux Paint somewhere else (e.g., using a "<code>PREFIX=...</code>" setting to "<code>make</code>" and "<code>make install</code>"), you may not, and will want to provide those same settings here. (See the installation instructions above for further information.)        </p>

@@ -5,13 +5,30 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  mars 9, 2021
+                                 août 30, 2021
 
      ----------------------------------------------------------------------
 
-Exigences :
+   +----------------------------------------------------+
+   |Table des matières                                  |
+   |----------------------------------------------------|
+   |  * Requirements                                    |
+   |       * Simple DirectMedia Layer library (libSDL)  |
+   |       * Autres bibliothèques                       |
+   |  * Compiling and Installation                      |
+   |       * Utilisateurs de Windows                    |
+   |       * Utilisateurs de Linux/Unix                 |
+   |  * Debugging                                       |
+   |  * Uninstalling Tux Paint                          |
+   |       * Windows                                    |
+   |       * Linux                                      |
+   +----------------------------------------------------+
 
-  libSDL
+     ----------------------------------------------------------------------
+
+Requirements
+
+  Simple DirectMedia Layer library (libSDL)
 
        Tux Paint nécessite la bibliothèque de couches DirectMedia simple
        (libSDL), une bibliothèque de programmation multimédia Open Source
@@ -119,13 +136,15 @@ Exigences :
 
          http://netpbm.sourceforge.net/
 
-Compilation et installation :
+     ----------------------------------------------------------------------
+
+Compiling and Installation
 
      Tux Paint est publié sous la licence publique générale GNU (GPL) (voir
      "COPYING.txt" pour plus de détails), et donc le 'code source' du
      programme est disponible gratuitement.
 
-  Utilisateurs de Windows :
+  Utilisateurs de Windows
 
     Compilation :
 
@@ -231,7 +250,7 @@ Compilation et installation :
          incorrecte (majuscule 'Z' à la place de 'z' minuscule) ou un '-'
          (tiret) manquant (en trop).
 
-  Utilisateurs de Linux/Unix :
+  Utilisateurs de Linux/Unix
 
     Compilation :
 
@@ -365,13 +384,17 @@ Compilation et installation :
            Remarque : Cette liste est obsolète. Voir "Makefile" et
            "Makefile-i18n" pour une liste complète.
 
-Débogage :
+     ----------------------------------------------------------------------
+
+Debugging
 
      Le débogage (vers "STDOUT", par exemple le terminal, ou vers un fichier
      "stdout.txt", sous Windows) peut être activé en définissant "DEBUG" (et,
      si un mode verbeux est souhaité, "VERBOSE") # define dans "src/debug.h.
 
-Désinstallation de Tux Paint :
+     ----------------------------------------------------------------------
+
+Uninstalling Tux Paint
 
   Windows
 
