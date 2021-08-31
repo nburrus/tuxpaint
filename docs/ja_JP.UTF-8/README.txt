@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年8月 8日
+                                   2021年8月31日
 
      ----------------------------------------------------------------------
 

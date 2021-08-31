@@ -6,7 +6,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                              8 de Agosto de 2021
+                              31 de Agosto de 2021
 
      ----------------------------------------------------------------------
 
@@ -348,8 +348,8 @@ Ferramentas dispoñíbeis
                  inferior). prema na pantalla e aparecerá un cursor. Escriba
                  un texto e aparecerá na pantalla.
 
-                 Prema [Enter] ou [Return] e o texto será debuxado na imaxe e
-                 o cursor moverase cara abaixo unha liña.
+                 Prema [Intro] ou [Retorno] e o texto será debuxado na imaxe
+                 e o cursor moverase cara abaixo unha liña.
 
                  Como alternativa, prema [Tab] e o texto será debuxado na
                  imaxe, mais o cursor moverase á dereita do texto, no canto

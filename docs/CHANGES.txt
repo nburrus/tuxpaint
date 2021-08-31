@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.August.30 (0.9.27)
+2021.August.31 (0.9.27)
   * Documentation updates
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),
@@ -31,6 +31,10 @@ $Id$
     * Added table of contents to some documentation
       ("Options Documentation", "FAQ", "Installation Documentation",
       and "Advanced Stamps 'How-To'").
+
+    * Moved Windows compilation instructions into main
+      "Installation Documentation".
+
 
 2021.June.28 (0.9.26)
   * New Features

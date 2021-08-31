@@ -6,7 +6,7 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  août 8, 2021
+                                 août 31, 2021
 
      ----------------------------------------------------------------------
 
@@ -367,8 +367,9 @@ Outils disponibles
                  bas). Cliquez sur l'écran et un curseur apparaîtra. Tapez un
                  texte et il apparaîtra à l'écran.
 
-                 Appuyez sur [Enter] ou [Return] et le texte sera inclus dans
-                 l'image et le curseur se déplacera d'une ligne vers le bas.
+                 Appuyez sur [Entrée] ou [Retour] et le texte sera inclus
+                 dans l'image et le curseur se déplacera d'une ligne vers le
+                 bas.
 
                  Sinon, appuyez sur [Tab] et le texte sera inclus dans
                  l'image, mais le curseur se déplacera vers la droite du
