@@ -18,6 +18,7 @@
    |  * Compiling and Installation                      |
    |       * Usuarios de Windows                        |
    |       * Usuarios de Linux/Unix                     |
+   |       * Usuarios de macOS                          |
    |  * Debugging                                       |
    |  * Uninstalling Tux Paint                          |
    |       * Windows                                    |
@@ -181,6 +182,8 @@ Compiling and Installation
        to the "MinGW 32bit (i686) toolchains" section if you need only a
        32bit build environment.
 
+            -------------------------------------------------------
+
     MinGW 64bit (x86_64) toolchains
 
          Within the MSYS2 shell, run the following command to install basic
@@ -251,6 +254,8 @@ Compiling and Installation
        to the "ImageMagick" section if you need only a 64bit build
        environment.
 
+            -------------------------------------------------------
+
     MinGW 32bit (i686) toolchains
 
          Within the MSYS2 shell, run the following command to install basic
@@ -317,6 +322,8 @@ Compiling and Installation
              $ cd SDL-1.2.15
              $ ./configure --prefix=/mingw32 && make && make install
 
+            -------------------------------------------------------
+
     ImageMagick
 
          ImageMagick is a compilation of command line tools to create, edit,
@@ -339,6 +346,8 @@ Compiling and Installation
 
          You can make this permanent by adding the above to your the BASH
          shell configuration file, "~/.bash_profile".
+
+            -------------------------------------------------------
 
     Tux Paint
 
@@ -366,6 +375,8 @@ Compiling and Installation
          directory under "win32". You can start them by double-clicking their
          executable (.exe) files in the "bdist" directory.
 
+            -------------------------------------------------------
+
     Building the Tux Paint Windows Installer:
 
          Inno Setup is used to build executable installer for Tux Paint.
@@ -376,6 +387,8 @@ Compiling and Installation
          "Compile" on the list. It will run for a while, and eventually you
          will find a "tuxpaint-X.Y.Z-win32-installer.exe" file in the same
          directory.
+
+            -------------------------------------------------------
 
     Running the Tux Paint Windows Installer:
 
@@ -395,6 +408,8 @@ Compiling and Installation
          dispoñíbel. Se non, escolla un lugar diferente.
 
          Neste punto, pode premer en «Instalar» para instalar Tux Paint.
+
+            -------------------------------------------------------
 
     Cambiar os axustes usando o acceso directo:
 
@@ -424,6 +439,8 @@ Compiling and Installation
 
          Cando teña rematado, prema en «Aceptar».
 
+            -------------------------------------------------------
+
     Se algo vai mal:
 
          Se ao facer dobre clic no atallo para executar Tux Paint, non ocorre
@@ -434,6 +451,8 @@ Compiling and Installation
          Conterá unha descrición do que estaba mal. Normalmente só se debe a
          maiúsculas e minúsculas incorrectas (maiúsculas «Z» no canto de
          minúsculas «z») ou a falta (ou exceso) de «-» (guións).
+
+     ----------------------------------------------------------------------
 
   Usuarios de Linux/Unix
 
@@ -449,6 +468,8 @@ Compiling and Installation
 
            $ make
 
+            -------------------------------------------------------
+
     Desactivar a compatibilidade de «SVG» (e, polo tanto, as dependencias de
     «Cairo, libSVG, e svg-cairo»:
 
@@ -458,6 +479,8 @@ Compiling and Installation
          «SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG»:
 
            $ make SVG_LIB= SVG_CFLAGS=
+
+            -------------------------------------------------------
 
     Desactivar a compatibilidade de «Pango» (e, polo tanto, as dependencias de
     «Pango, Cairo, etc.»:
@@ -470,6 +493,8 @@ Compiling and Installation
 
            $ make SDL_PANGO_LIB=
 
+            -------------------------------------------------------
+
     Desactivación do son en tempo de compilación:
 
          Se non te unha tarxeta de son ou prefire construír o programa sen
@@ -478,10 +503,14 @@ Compiling and Installation
 
            $ make SDL_MIXER_LIB=
 
+            -------------------------------------------------------
+
     Outras opcións:
 
          Outras opcións (p. ex.: rutas de instalación) poden ser anuladas;
          véxaas en «Makefile» para máis detalles.
+
+            -------------------------------------------------------
 
     Se se producen erros:
 
@@ -491,6 +520,8 @@ Compiling and Installation
          RedHat ou DEB en Debian), asegúrese de obter tamén os
          correspondentes paquetes «-dev» ou «-devel», se non, non poderá
          compilar Tux Paint (e outros programas) dende o código fonte.
+
+            -------------------------------------------------------
 
     Instalar:
 
@@ -572,6 +603,138 @@ Compiling and Installation
 
      ----------------------------------------------------------------------
 
+  Usuarios de macOS
+
+     21 de Setembro de 2021 Mark K. Kim <markuskimius@gmail.com>
+
+       Tux Paint 0.9.22 and earlier required building Tux Paint from the
+       Xcode IDE. Starting with 0.9.23, however, Tux Paint for macOS is built
+       as though it were a Linux application.
+
+    Prerequisites
+
+         Although Tux Paint is built without the Xcode IDE, Xcode itself is
+         still required to build Tux Paint. Download it from the App Store,
+         and launch it once to accept its license agreements. You may also
+         need to install the Xcode command line tools using the command:
+
+           xcode-select --install
+
+         Building Tux Paint also requires various libraries. We install them
+         from MacPorts where possible, source code otherwise. Install
+         MacPorts to the default /opt/local path according to the
+         instructions found on their website: https://www.macports.org/
+           * ImageMagick
+           * cairo
+           * fribidi
+           * lbzip2
+           * libimagequant^*
+           * libpaper
+           * libpng
+           * librsvg
+           * libsdl
+           * libsdl_image
+           * libsdl_mixer
+           * libsdl_pango
+           * libsdl_ttf
+           * pkgconfig
+           * zlib
+         ... but you should install any package that is required by the
+         latest version of Tux Paint.
+
+         ^* Not available from MacPorts as of this writing, see below.
+
+      libimagequant
+
+           libimagequant is not available from MacPorts as of this writing.
+           It can be installed from the source code as follows. It should be
+           installed to /opt/local (same as MacPorts) for the library to be
+           included in TuxPaint.dmg.
+
+             $ git clone https://github.com/ImageOptim/libimagequant.git
+             $ cd libimagequant
+             $ ./configure --prefix=/opt/local
+             $ make
+             $ sudo make install
+
+         WARNING: Having any UNIX-like toolset installed on your Mac besides
+         MacPorts and Xcode, such as Fink or Brew, will prevent your app
+         bundle from being portable. Be sure Fink and Brew are not accessible
+         from your build environment.
+
+            -------------------------------------------------------
+
+    How to Build
+
+         Simply, run:
+
+           % make
+           % make install
+
+         ... to create the TuxPaint.app application bundle that can be run
+         in-place or copied to /Applications. It also creates TuxPaint.dmg
+         for distribution.
+
+            -------------------------------------------------------
+
+    Known Issues
+
+           * A macOS binary built on a specific version of macOS only runs on
+             that version of macOS or later. To ensure Tux Paint can run on
+             the oldest version of macOS possible, build it on the oldest
+             version of macOS available. As of this writing we know Tux Paint
+             cannot be built to run on macOS 10.7 or earlier.
+
+             See "Old Versions of macOS" below for best-effort instructions
+             on how to obtain, install, and build Tux Paint on an old version
+             of macOS.
+
+            -------------------------------------------------------
+
+    Old Versions of macOS
+
+         Some old versions of macOS can be downloaded from Apple's support
+         page: https://support.apple.com/en-us/HT211683
+
+         macOS does allow dual booting of multiple versions of the OS, but
+         it's safer and easier to install the old macOS onto a flash drive.
+         Wherever you're installing it, the target drive's partitioniong
+         scheme and partition type must match what the old macOS expects, so
+         use the Disk Utility to partition and format the flash drive
+         accordingly.
+
+         As of this writing, the oldest version of macOS available on Apple's
+         support site is Yosemite 10.10, which expects "GPT (GUID Partition
+         Table)" partitioning scheme instead of the older MBR scheme, and
+         "Mac OS Extended (Journaled)" as the partition type instead of the
+         newer APFS partition type.
+
+         Upon launching the installer, if you get a popup about macOS being
+         too old or new to be installed, a bootable installer can be created
+         using the instructions found here:
+         https://support.apple.com/en-mide/HT201372
+
+         It has been found that macOS can be installed onto the bootable
+         media itself, so you can make the flash drive into a bootable
+         installer then install the old macOS onto the same flash drive.
+
+         Once the old macOS is installed, you may find the Xcode on the App
+         Store is too new to run on the version of the old macOS. Old
+         versions of Xcode can be downloaded from Apple's Developer site in
+         an area accessible with free registration:
+         https://developer.apple.com/download/more/
+
+         The list of macOS versions and the last version of Xcode compatible
+         with them are laid out nicely on the Wikipedia page on Xcode:
+         https://en.wikipedia.org/wiki/Xcode#Version_comparison_table
+
+         And because Xcode is being installed manually, you can skip the step
+         to install the Xcode command line tools (do not run "xcode-select
+         --install") but otherwise build Tux Paint using the same steps
+         described in the earlier part of this document.
+
+     ----------------------------------------------------------------------
+
 Debugging
 
      A depuración (a «STDOUT», por exemplo, á terminal ou a un ficheiro
@@ -598,6 +761,8 @@ Uninstalling Tux Paint
 
          Tamén é posíbel usar a entrada «TuxPaint (só eliminar)« na sección
          Engadir/Eliminar programas do Panel de control.
+
+     ----------------------------------------------------------------------
 
   Linux
 

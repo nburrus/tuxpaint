@@ -32,8 +32,8 @@ $Id$
       ("Options Documentation", "FAQ", "Installation Documentation",
       and "Advanced Stamps 'How-To'").
 
-    * Moved Windows compilation instructions into main
-      "Installation Documentation".
+    * Moved Windows and macOS compilation instructions into main
+      "Installation Documentation" (docs/.../INSTALL...).
 
 
 2021.June.28 (0.9.26)
