@@ -148,6 +148,9 @@ Compiling and Installation
 
   Usuarios de Windows
 
+     25 de Outubro de 2020 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
+     <shin1@wmail.plala.or.jp>
+
     Compiling Set-Up
 
          A partir de febreiro de 2005 (comezando con Tux Paint 0.9.15), o

@@ -144,6 +144,9 @@ Compiling and Installation
 
   Windows のユーザー
 
+     2020年10月25日 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
+     <shin1@wmail.plala.or.jp>
+
     Compiling Set-Up
 
          As of February 2005 (starting with Tux Paint 0.9.15), the "Makefile"
