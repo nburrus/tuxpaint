@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-13 21:06-0700\n"
-"PO-Revision-Date: 2021-08-18 10:08+0100\n"
+"PO-Revision-Date: 2021-09-02 12:18-0700\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -137,7 +137,7 @@ msgstr "QX"
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 #: ../dirwalk.c:202
 msgid "oO"
-msgstr "oO"
+msgstr "AaBbCcDdEeFfGgHhIiLlMmNnOoPpRrSsTtUuÀàÈèÌìÒòÙù"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:205
