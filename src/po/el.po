@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-13 21:06-0700\n"
-"PO-Revision-Date: 2017-12-06 07:45+0000\n"
+"PO-Revision-Date: 2021-09-02 07:45+0000\n"
 "Last-Translator: kiolalis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
@@ -141,7 +141,7 @@ msgstr "QX"
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 #: ../dirwalk.c:202
 msgid "oO"
-msgstr "οΟ"
+msgstr "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣ/ΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψω"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:205

@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.August.31 (0.9.27)
+2021.September.2 (0.9.27)
   * Documentation updates
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),
@@ -35,6 +35,11 @@ $Id$
     * Moved Windows and macOS compilation instructions into main
       "Installation Documentation" (docs/.../INSTALL...).
 
+  * Translation Updates:
+    --------------------
+    * Ensure some locales have hints to find the best fonts
+      for the Text and Label tools:
+      * Greek
 
 2021.June.28 (0.9.26)
   * New Features
