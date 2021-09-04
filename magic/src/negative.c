@@ -4,7 +4,7 @@
   Negative Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: September 4, 2021
   $Id$
 */
 
@@ -195,6 +195,8 @@ void negative_click(magic_api * api, int which, int mode,
       update_rect->y = 0;
       update_rect->w = canvas->w;
       update_rect->h = canvas->h;
+
+      api->playsound(negative_snd, (x * 255) / canvas->w, 255);
     }
 }
 

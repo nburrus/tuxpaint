@@ -49,6 +49,11 @@ $Id$
       * Greek
       * Scottish Gaelic
 
+  * Bug Fixes:
+    ----------
+    * "Negative" magic tool did not play its sound when using
+      fullscreen (vs painting) mode. Fixed.
+
 2021.June.28 (0.9.26)
   * New Features
     ------------
