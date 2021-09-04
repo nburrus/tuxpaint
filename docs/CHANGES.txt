@@ -8,7 +8,14 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.2 (0.9.27)
+2021.September.4 (0.9.27)
+  * New Magic Tools:
+    ----------------
+    * "Panels" - Convert your picture to 4-panel-comic-style
+      2x2 image, repeating the original.  (Repeat for "compound eye"
+      style effects!)
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/204/)
+
   * Documentation updates
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),

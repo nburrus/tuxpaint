@@ -221,6 +221,10 @@ $tools = array(
    'desc'=>'Add random noise and static to your picture.',
    'author'=>$AUTHOR_ANDREWC),
 
+  array('name'=>'Panels',
+   'desc'=>'Shrink the image and repeat it four times in a 2-by-2 grid. Useful for creating 4-panel comics. Can also be used to create a compound-eye effect.',
+   'author'=>$AUTHOR_KENDRICK),
+
   array('name'=>'Pattern',
    'desc'=>'Draws a tiled pattern around the picture.',
    'author'=>$AUTHOR_PERE,

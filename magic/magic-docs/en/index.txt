@@ -35,6 +35,7 @@
    * Square Mosaic
    * Negative
    * Noise
+   * Panels
    * Pattern
    * Perspective
    * Picasso
