@@ -22,8 +22,8 @@ $Id$
       of Cyan, Magenta, Yellow, and Black, based on the average
       color of the area of the picture being replaced, to give a
       "newsprint" effect.
-      * WIP - Need to make it run against entire image
-      * WIP - It seems to have the "Zoom" tool's icon!?!
+
+    * "Halftone" can now affect the entire image at once.
 
   * Documentation updates
     ---------------------
@@ -64,6 +64,9 @@ $Id$
       fullscreen (vs painting) mode. Fixed.
 
     * "Zoom" magic tool icon had weird artifacting. Mended.
+
+    * WIP - "Halftone" magic tool had the "Zoom" tool's icon.
+
 
 2021.June.28 (0.9.26)
   * New Features

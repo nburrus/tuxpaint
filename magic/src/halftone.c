@@ -139,7 +139,7 @@ int halftone_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBU
 
 int halftone_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return MODE_PAINT;
+  return (MODE_PAINT | MODE_FULLSCREEN);
 }
 
 void halftone_shutdown(magic_api * api ATTRIBUTE_UNUSED)
@@ -156,10 +156,30 @@ void halftone_shutdown(magic_api * api ATTRIBUTE_UNUSED)
   SDL_FreeSurface(square);
 }
 
-void halftone_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
+void halftone_click(magic_api * api, int which, int mode,
                     SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect)
 {
-  halftone_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
+  int full_x, full_y;
+
+  if (mode == MODE_PAINT)
+    {
+      halftone_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
+    }
+  else
+    {
+      for (full_y = 0; full_y < canvas->h; full_y += GRID_SIZE)
+        {
+          for (full_x = 0; full_x < canvas->w; full_x += GRID_SIZE)
+            {
+              halftone_line_callback(api, which, canvas, snapshot, full_x, full_y);
+            }
+        }
+      api->playsound(snd_effect[which], 128, 255);
+      update_rect->x = 0;
+      update_rect->y = 0;
+      update_rect->w = canvas->w;
+      update_rect->h = canvas->h;
+    }
 }
 
 void halftone_drag(magic_api * api, int which, SDL_Surface * canvas,
@@ -291,8 +311,8 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
               ox = xxx + deg_cos(chan_angles[channel]) * OFFSET_RADIUS;
               oy = yyy + deg_sin(chan_angles[channel]) * OFFSET_RADIUS;
 
-              sqx = (GRID_SIZE / 2) + ox;
-              sqy = (GRID_SIZE / 2) + oy;
+              sqx = ((GRID_SIZE / 2) + ox) % GRID_SIZE;
+              sqy = ((GRID_SIZE / 2) + oy) % GRID_SIZE;
 
               /* Use intensity of the CMKY channel in question to decide
                  how big of a circle to paint */
