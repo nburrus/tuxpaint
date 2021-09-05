@@ -65,7 +65,7 @@ $Id$
 
     * "Zoom" magic tool icon had weird artifacting. Mended.
 
-    * WIP - "Halftone" magic tool had the "Zoom" tool's icon.
+    * "Halftone" magic tool had the "Zoom" tool's icon.
 
 
 2021.June.28 (0.9.26)
