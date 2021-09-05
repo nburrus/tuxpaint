@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-05 14:49-0700\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -480,7 +480,7 @@ msgstr "Novea"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8181
 msgid "Open"
 msgstr "Drovi"
 
@@ -772,90 +772,90 @@ msgid "Please wait…"
 msgstr "Tårdjîz ene miete s' i vs plait..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8184
 msgid "Erase"
 msgstr "Disfacer"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Slides"
 msgstr "Diyas"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Back"
 msgstr "En erî"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Play"
 msgstr "Djouwer"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "Next"
 msgstr "Shuvant"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8950
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12591
 msgid "Yes"
 msgstr "Oyi"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12595
 msgid "No"
 msgstr "Neni"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13734
 msgid "Replace the picture with your changes?"
 msgstr "Replaecî l' imådje avou vos candjmints?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13738
 msgid "Yes, replace the old one!"
 msgstr "Oyi, replaecî l' vî!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13742
 msgid "No, save a new file!"
 msgstr "Neni, schaper en on novea fitchî"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15005
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tchoezixhoz l' imådje ki vos vloz, poy clitchîz so «Drovi»."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16431
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24137
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24149
 msgid "Pick a color."
 msgstr ""
 
@@ -1139,11 +1139,11 @@ msgstr ""
 "Clitchîz et s' bodjîz l' sori po dessiner des yerbêyes. Èn rovyîz nén l' "
 "tere!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 #, fuzzy
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
@@ -1334,21 +1334,30 @@ msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådj
 msgid "Click to add noise to your entire picture."
 msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr ""
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr ""
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 #, fuzzy
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#: ../../magic/src/perspective.c:160
 #, fuzzy
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Clitchîz et s' bodjîz l' sori po-z adoûci des bokets d' l' imådje."

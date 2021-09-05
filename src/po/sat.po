@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-05 14:49-0700\n"
 "PO-Revision-Date: 2014-06-16 16:55+0530\n"
 "Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
 "Language-Team: none\n"
@@ -478,7 +478,7 @@ msgstr "नावानाक्"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8181
 msgid "Open"
 msgstr "झिच्"
 
@@ -759,90 +759,90 @@ msgid "Please wait…"
 msgstr "तांगी मे…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8184
 msgid "Erase"
 msgstr "बा़ड़िज"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Slides"
 msgstr "सालाइड"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Back"
 msgstr "तायनोम"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Play"
 msgstr "हा़लका़व"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "Next"
 msgstr "इना़ तायोम"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8950
 msgid "Aa"
 msgstr "आखोर बाछावाक्"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12591
 msgid "Yes"
 msgstr "होय"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12595
 msgid "No"
 msgstr "बाङ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13734
 msgid "Replace the picture with your changes?"
 msgstr "आमाक् बोदोल को सांव चिता़र साहाय मे?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13738
 msgid "Yes, replace the old one!"
 msgstr "होय, मारेयाक् सहाय मे!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13742
 msgid "No, save a new file!"
 msgstr "बाङा, मित् नावा रेत् सांचाव मे!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15005
 msgid "Choose the picture you want, then click “Open”."
 msgstr "आमेम ञाम कान चिता़र बाछाव मे, इना तायोम  “झिज” ओताय मे."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16431
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24137
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24149
 msgid "Pick a color."
 msgstr "मित् रोङ लाटाप् मे."
 
@@ -1109,11 +1109,11 @@ msgstr "घांस"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "घांस गार चिता़र ला़गित् लाड़ाव आर ओता. ओजरा आलोम हिड़िञा!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr "ओरधेक टान"
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "मित् खोबोर कागोज रे आमाक् गार चिता़र आ़चुर ला़गित् ओता आर ओर."
 
@@ -1309,19 +1309,29 @@ msgstr "आमाक् चिता़र रेयाक् हिंस र�
 msgid "Click to add noise to your entire picture."
 msgstr "आमाक् गोटा चिता़र रे आंदोड़ सेलेद ला़गित् ओताय मे."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "ञेल होचो लेकान तेयार"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "हुडिञ माराङ तेयार होचो"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "कोंड रे ओताय मे आर आम ओकारे चिता़र टानाव सानाम काना ओर मे."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "ओना रेयाक् एंडरे रे आमाक् रोङ पेरेच् आ़चुर ला़गित् ओताय मे."
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "चिता़र माराङ होचो आर बाङ माराङ  हुडिञ होचो ला़गित् ओर आंड़गो हाबिच् ओर आर ओताय मे."

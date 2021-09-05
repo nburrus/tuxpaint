@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-05 14:49-0700\n"
 "PO-Revision-Date: 2021-05-08 01:11+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -514,7 +514,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8181
 msgid "Open"
 msgstr "Obre"
 
@@ -778,90 +778,90 @@ msgid "Please wait…"
 msgstr "Espereu, si us plau…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8184
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Export"
 msgstr "Exporta"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Back"
 msgstr "Endarrere"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Play"
 msgstr "Reprodueix"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "GIF Export"
 msgstr "Exporta a GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "Next"
 msgstr "Següent"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8950
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12591
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12595
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13734
 msgid "Replace the picture with your changes?"
 msgstr "Substitueixo el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13738
 msgid "Yes, replace the old one!"
 msgstr "Sí, substitueix l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13742
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15005
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16431
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Seleccioneu 2 o més dibuixos per exportar-los a GIF."
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24137
 msgid "Select a color from your drawing."
 msgstr "Seleccioneu un color del vostre dibuix."
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24149
 msgid "Pick a color."
 msgstr "Trieu un color."
 
@@ -1108,11 +1108,11 @@ msgstr "Herba"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Feu clic i arrossegueu per dibuixar herba. No oblideu la terra."
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr "Semitons"
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Feu clic i arrossegueu per transformar el dibuix com si fos un diari."
 
@@ -1291,19 +1291,29 @@ msgstr "Feu clic i arrossegueu el ratolí per afegir soroll a parts del dibuix."
 msgid "Click to add noise to your entire picture."
 msgstr "Feu clic per afegir soroll al dibuix."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "Perspectiva"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "Zoom"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Feu clic en les cantonades i arrossegueu per estirar la imatge."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "Feu clic per fer el negatiu del dibuix."
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Feu clic i arrossegueu cap amunt per apropar i cap avall per allunyar la "

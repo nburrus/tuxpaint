@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-05 14:49-0700\n"
 "PO-Revision-Date: 2021-06-28 19:40+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -187,7 +187,6 @@ msgid "Solid"
 msgstr "Ensfarget"
 
 #: ../fill_tools.h:50
-#| msgid "Lines"
 msgid "Linear"
 msgstr "Lineær"
 
@@ -196,7 +195,6 @@ msgid "Radial"
 msgstr "Radiell"
 
 #: ../fill_tools.h:55
-#| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
 msgstr "Trykk for å fylle hele området med fargen fra malingbøtta."
 
@@ -205,16 +203,16 @@ msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
 msgstr ""
-"Trykk for å fylle området med en lineær fargeovergang (fra den valgte fargen"
-" til gjennomsiktig)."
+"Trykk for å fylle området med en lineær fargeovergang (fra den valgte fargen "
+"til gjennomsiktig)."
 
 #: ../fill_tools.h:57
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
 msgstr ""
-"Trykk for å fylle området med en radiell fargeovergang (fra den valgte fargen"
-" til gjennomsiktig)."
+"Trykk for å fylle området med en radiell fargeovergang (fra den valgte "
+"fargen til gjennomsiktig)."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -419,7 +417,6 @@ msgstr "Magi"
 
 #. Title of fill selector (buttons down the right for fill tool)
 #: ../titles.h:81
-#| msgid "Fill"
 msgid "Fills"
 msgstr "Bøtte"
 
@@ -476,7 +473,7 @@ msgstr "Ny"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8181
 msgid "Open"
 msgstr "Åpne"
 
@@ -737,91 +734,91 @@ msgid "Please wait…"
 msgstr "Vent litt …"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8184
 msgid "Erase"
 msgstr "Slett"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Slides"
 msgstr "Lysbilder"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Export"
 msgstr "Eksporter"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Back"
 msgstr "Tilbake"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Play"
 msgstr "Kjør"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "GIF Export"
 msgstr "GIF-eksport"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "Next"
 msgstr "Neste"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8950
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12591
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12595
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13734
 msgid "Replace the picture with your changes?"
 msgstr "Vil du bytte ut den gamle tegningen med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13738
 msgid "Yes, replace the old one!"
 msgstr "Ja, bytt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13742
 msgid "No, save a new file!"
 msgstr "Nei, lagre som en ny tegning!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15005
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Velg en tegning og trykk «Åpne»."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16431
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 "Velg to eller flere tegninger for å gjøre de om til en animert GIF-bildefil."
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24137
 msgid "Select a color from your drawing."
 msgstr "Velg en farge fra tegningen."
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24149
 msgid "Pick a color."
 msgstr "Velg en farge."
 
@@ -936,7 +933,6 @@ msgid "Checkerboard"
 msgstr "Sjakkbrett"
 
 #: ../../magic/src/checkerboard.c:106
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "Hold inne knappen og flytt rundt for å tegne et sjakkbrett­mønster."
 
@@ -949,8 +945,8 @@ msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
-"Trykk først for å velge hvor du vil klone fra. Trykk så en annen plass og dra"
-" for å klone tegningen."
+"Trykk først for å velge hvor du vil klone fra. Trykk så en annen plass og "
+"dra for å klone tegningen."
 
 #: ../../magic/src/confetti.c:83
 msgid "Confetti"
@@ -1071,11 +1067,11 @@ msgstr "Gress"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Hold inne knappen og flytt rundt for å tegne gress. Ikke glem jorden!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr "Raster"
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Hold inne knappen og flytt rundt for gjøre tegningen om til en avis."
 
@@ -1253,19 +1249,29 @@ msgstr "Hold inne knappen og flytt rundt for å legge støy på tegningen."
 msgid "Click to add noise to your entire picture."
 msgstr "Trykk for å legge støy på heile tegningen."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "Perspektiv"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "Forstørr"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Trykk i hjørnene og dra der du vil strekke tegningen."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "Trykk for å snu fargene på tegningen."
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Hold inne knappen og flytt oppover for å forstørre tegningen, eller nedover "
@@ -1277,7 +1283,6 @@ msgid "Pixels"
 msgstr "Piksler"
 
 #: ../../magic/src/pixels.c:114
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw large pixels."
 msgstr "Hold inne knappen og flytt rundt for å tegne store piksler."
 

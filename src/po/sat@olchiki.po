@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-05 14:49-0700\n"
 "PO-Revision-Date: 2013-07-27 14:50+0530\n"
 "Last-Translator: Prasanta Hembram <prasantahembram720@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -477,7 +477,7 @@ msgstr "ᱱᱟᱶᱟ"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8181
 msgid "Open"
 msgstr "ᱨᱟᱲᱟ"
 
@@ -738,90 +738,90 @@ msgid "Please wait…"
 msgstr "ᱫᱟᱭᱟᱠᱟᱛᱮ ᱛᱟᱺᱜᱤᱢᱮ ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8184
 msgid "Erase"
 msgstr "ᱵᱟᱹᱲᱤᱡ"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Slides"
 msgstr "ᱥᱟᱞᱟᱤᱰ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Export"
 msgstr "ᱵᱷᱮᱡᱟ"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Back"
 msgstr "ᱛᱟᱭᱚᱢ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Play"
 msgstr "ᱮᱱᱮᱪ"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "GIF Export"
 msgstr "GIF ᱵᱷᱮᱡᱟ"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "Next"
 msgstr "ᱤᱱᱟ ᱛᱟᱭᱚᱢ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8950
 msgid "Aa"
 msgstr "ᱟᱠᱷᱚᱨ ᱵᱟᱪᱷᱟᱣᱟᱠ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12591
 msgid "Yes"
 msgstr "ᱦᱮᱸ"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12595
 msgid "No"
 msgstr "ᱵᱟᱝ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13734
 msgid "Replace the picture with your changes?"
 msgstr "ᱟᱢᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ ᱥᱟᱸᱣ ᱪᱤᱛᱟᱹᱨ ᱥᱟᱦᱟᱭ ᱢᱮ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13738
 msgid "Yes, replace the old one!"
 msgstr "ᱦᱚᱭ, ᱢᱟᱨᱮᱭᱟᱜ ᱥᱦᱟᱭ ᱢᱮ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13742
 msgid "No, save a new file!"
 msgstr "ᱵᱟᱝᱟ, ᱢᱤᱫ ᱱᱟᱣᱟ ᱨᱮᱫ ᱥᱟᱸᱪᱟᱣ ᱢᱮ!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15005
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ᱟᱢᱮᱢ ᱧᱟᱢ ᱠᱟᱱ ᱪᱤᱛᱟᱹᱨ ᱵᱟᱪᱷᱟᱣ ᱢᱮ, ᱤᱱᱟ ᱛᱟᱭᱚᱢ  ᱢᱡᱷᱤᱡ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16431
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "ᱮᱱᱤᱢᱮᱴᱮᱰ GIF ᱞᱟᱹᱜᱤᱫ ᱵᱟᱨᱭᱟ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ ᱛᱮᱭᱟᱨ ᱠᱚ ᱪᱚᱭᱚᱱ ᱢᱮ"
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24137
 msgid "Select a color from your drawing."
 msgstr "ᱟᱢᱟᱜ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱠᱷᱚᱱ ᱨᱚᱝ ᱪᱚᱭᱚᱱ ᱢᱮ ᱾"
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24149
 msgid "Pick a color."
 msgstr "ᱢᱤᱫ ᱨᱚᱝ ᱞᱟᱴᱟᱯ ᱢᱮ ᱾"
 
@@ -1067,11 +1067,11 @@ msgstr "ᱜᱷᱟᱸᱥ"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "ᱜᱷᱟᱸᱥ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱞᱟᱲᱟᱣ ᱟᱨ ᱚᱛᱟ. ᱚᱡᱨᱟ ᱟᱞᱚᱢ ᱦᱤᱲᱤᱧᱟ!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr "ᱦᱟᱯᱷᱴᱚᱱ"
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱠᱚ ᱠᱷᱚᱵᱚᱨ ᱠᱟᱜᱚᱡ ᱛᱮ ᱵᱚᱫᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
@@ -1253,19 +1253,29 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱟᱝᱫᱚᱲ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "ᱵᱟᱵᱚᱛ ᱛᱮᱭᱟᱠ"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "ᱡᱩᱩᱢ"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "ᱠᱚᱸᱰ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ ᱟᱨ ᱟᱢ ᱚᱠᱟᱨᱮ ᱪᱤᱛᱟᱹᱨ ᱴᱟᱱᱟᱣ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱚᱨ ᱢᱮ ᱾"
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱮᱝᱰᱨᱮ ᱨᱮ ᱟᱢᱟᱜ ᱨᱚᱝ ᱯᱮᱨᱮᱪ ᱟᱹᱪᱩᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "ᱪᱤᱛᱟᱹᱨ ᱢᱟᱨᱟᱝ ᱦᱚᱪᱚ ᱟᱨ ᱵᱟᱝ ᱢᱟᱨᱟᱝ  ᱦᱩᱰᱤᱧ ᱦᱚᱪᱚ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱟᱝᱲᱜᱚ ᱦᱟᱵᱤᱪ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ "
