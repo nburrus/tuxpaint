@@ -5,7 +5,7 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 août 31, 2021
+                               septembre 5, 2021
 
      ----------------------------------------------------------------------
 
@@ -22,6 +22,7 @@
    |  * Debugging                                       |
    |  * Uninstalling Tux Paint                          |
    |       * Windows                                    |
+   |       * macOS                                      |
    |       * Linux                                      |
    +----------------------------------------------------+
 
@@ -162,8 +163,7 @@ Compiling and Installation
 
          Download the latest MSYS2 environment from
          https://sourceforge.net/projects/msys2/files/Base/ and install it
-         where you'd like (the default is
-         "https://sourceforge.net/projects/msys2/files/Base/")
+         where you'd like (the default is "C:\msys64")
 
          Open the MSYS2 shell from the "Start Menu" -> "MSYS2 64bit" ->
          "MSYS2 MSYS" and execute following command (press [Entrée] or
@@ -744,9 +744,10 @@ Compiling and Installation
 
 Debugging
 
-     Le débogage (vers "STDOUT", par exemple le terminal, ou vers un fichier
-     "stdout.txt", sous Windows) peut être activé en définissant "DEBUG" (et,
-     si un mode verbeux est souhaité, "VERBOSE") # define dans "src/debug.h.
+     Debugging output — to "STDOUT" on Linux and Unix, to a "stdout.txt" file
+     on Windows, and to the file "/tmp/tuxpaint.log" on macOS — can be
+     enabled by setting "DEBUG" (and, if verbose logging is wanted,
+     "VERBOSE") #defines in "src/debug.h" and (re)compiling Tux Paint.
 
      ----------------------------------------------------------------------
 
@@ -773,13 +774,22 @@ Uninstalling Tux Paint
 
      ----------------------------------------------------------------------
 
+  macOS
+
+       Delete "TuxPaint.app" from the "Applications" folder. Data files,
+       including the configuration files, stamps, and saved pictures, may be
+       found in "Library/Application Support/TuxPaint" (all users) and
+       "/Users/USERNAME/Library/Application Support/TuxPaint" (individual
+       users).
+
+     ----------------------------------------------------------------------
+
   Linux
 
-       Dans le répertoire source de Tux Paint (où vous avez compilé Tux
-       Paint), vous pouvez utiliser une cible "make uninstall" pour
-       désinstaller Tux Paint. Par défaut, cela doit être fait par
-       l'utilisateur "root" ("superutilisateur"), mais si vous avez installé
-       Tux Paint à un autre endroit (par ex. en mettant "PREFIX=..." à "make"
-       et "make install", vous ne pourrez pas, et il faudra fournier les
-       mêmes réglages ici. (Voir les instructions d'installation ci-dessus
-       pour plus d'informations.)
+       Within the Tux Paint source directory (where you compiled Tux Paint),
+       you can use the "make uninstall" target to uninstall Tux Paint. By
+       default, this must be done by the "root" user ('superuser'), but if
+       you installed Tux Paint somewhere else (e.g., using a "PREFIX=..."
+       setting to "make" and "make install"), you may not, and will want to
+       provide those same settings here. (See the installation instructions
+       above for further information.)

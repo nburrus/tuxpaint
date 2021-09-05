@@ -5,7 +5,7 @@
           Copyright © 2002-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                agosto 31, 2021
+                               septiembre 5, 2021
 
      ----------------------------------------------------------------------
 
@@ -22,6 +22,7 @@
    |  * Debugging                                       |
    |  * Uninstalling Tux Paint                          |
    |       * Windows                                    |
+   |       * macOS                                      |
    |       * Linux                                      |
    +----------------------------------------------------+
 
@@ -159,8 +160,7 @@ Compiling and Installation
 
          Download the latest MSYS2 environment from
          https://sourceforge.net/projects/msys2/files/Base/ and install it
-         where you'd like (the default is
-         "https://sourceforge.net/projects/msys2/files/Base/")
+         where you'd like (the default is "C:\msys64")
 
          Open the MSYS2 shell from the "Start Menu" -> "MSYS2 64bit" ->
          "MSYS2 MSYS" and execute following command (press [Enter] or
@@ -730,9 +730,10 @@ Compiling and Installation
 
 Debugging
 
-     Debugging (to "STDOUT", e.g. to the terminal, or to a "stdout.txt" file,
-     on Windows) can be enabled by setting "DEBUG" (and, if verbose logging
-     is wanted, "VERBOSE") #defines in "src/debug.h".
+     Debugging output — to "STDOUT" on Linux and Unix, to a "stdout.txt" file
+     on Windows, and to the file "/tmp/tuxpaint.log" on macOS — can be
+     enabled by setting "DEBUG" (and, if verbose logging is wanted,
+     "VERBOSE") #defines in "src/debug.h" and (re)compiling Tux Paint.
 
      ----------------------------------------------------------------------
 
@@ -754,6 +755,16 @@ Uninstalling Tux Paint
 
          It is also possible to use the entry "TuxPaint (remove only)" in the
          Control Panel Add/Remove programs section.
+
+     ----------------------------------------------------------------------
+
+  macOS
+
+       Delete "TuxPaint.app" from the "Applications" folder. Data files,
+       including the configuration files, stamps, and saved pictures, may be
+       found in "Library/Application Support/TuxPaint" (all users) and
+       "/Users/USERNAME/Library/Application Support/TuxPaint" (individual
+       users).
 
      ----------------------------------------------------------------------
 

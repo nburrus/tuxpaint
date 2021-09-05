@@ -26,7 +26,7 @@
       </p>
 
       <p>
-        agosto 31, 2021      </p>
+        septiembre  5, 2021      </p>
     </center>
 
     <hr size="2" noshade />
@@ -76,6 +76,9 @@
               <ul>
                 <li>
                   <a href="#uninstalling-windows">Windows</a>
+                </li>
+                <li>
+                  <a href="#uninstalling-macOS">macOS</a>
                 </li>
                 <li>
                   <a href="#uninstalling-linux">Linux</a>
@@ -177,7 +180,7 @@
         <h4>SVG graphics support</h4>
         <blockquote>
           <p>
-            As of Tux Paint 0.9.17, Tux Paint can load SVG (Scalable Vector Graphics) images as stamps. Two sets of libraries are supported, and SVG support can be completely disabled (via "<code>make SVG_LIB:=</code>")          </p>
+            As of Tux Paint 0.9.17, Tux Paint can load SVG (Scalable Vector Graphics) images as stamps. Two sets of libraries are supported, and SVG support can be completely disabled (via "<code style="white-space: nowrap;">make SVG_LIB:=</code>")          </p>
 
           <h5>librsvg-2 &amp; libCairo2 (newer libraries)</h5>
           <ul>
@@ -251,7 +254,7 @@
             Many tools and libraries are required to build Tux Paint. The package management system "<code>pacman</code>" helps you install them automatically solving complicated dependencies.          </p>
 
           <p>
-            Download the latest MSYS2 environment from <a href="https://sourceforge.net/projects/msys2/files/Base/">https://sourceforge.net/projects/msys2/files/Base/</a> and install it where you'd like (the default is "<a href="https://sourceforge.net/projects/msys2/files/Base/">https://sourceforge.net/projects/msys2/files/Base/</a>")          </p>
+            Download the latest MSYS2 environment from <a href="https://sourceforge.net/projects/msys2/files/Base/">https://sourceforge.net/projects/msys2/files/Base/</a> and install it where you'd like (the default is "<code>C:\msys64</code>")          </p>
           <p>
             Open the MSYS2 shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MSYS" and execute following command (press <b><code>[Enter]</code></b> or <b><code>[Return]</code></b> to accept the defaults for all questions):
             <blockquote>
@@ -632,7 +635,7 @@
           Disabling SVG support (and hence Cairo, libSVG, and svg-cairo dependencies):        </h4>
         <blockquote>
           <p>
-            To disable SVG support (e.g., if your system is not currently supported by the Cairo library or other SVG-related dependencies), you can run "<code>make</code>" with "<code>SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG</code>" added:
+            To disable SVG support (e.g., if your system is not currently supported by the Cairo library or other SVG-related dependencies), you can run "<code>make</code>" with "<code style="white-space: nowrap;">SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG</code>" added:
           <blockquote>
             <code>
               $ make SVG_LIB= SVG_CFLAGS=
@@ -846,8 +849,7 @@
                 % make install
               </code>
             </blockquote>
-            ... to create the <code>TuxPaint.app</code> application bundle that can be run in-place or
-copied to <code>/Applications</code>. It also creates <code>TuxPaint.dmg</code> for distribution.          </p>
+            ... to create the <code>TuxPaint.app</code> application bundle that can be run in-place or copied to <code>/Applications</code>. It also creates <code>TuxPaint.dmg</code> for distribution.          </p>
         </blockquote>
 
         <hr size="1" noshade width="75%" />
@@ -888,7 +890,7 @@ copied to <code>/Applications</code>. It also creates <code>TuxPaint.dmg</code> 
             The list of macOS versions and the last version of Xcode compatible with them are laid out nicely on the Wikipedia page on Xcode: <a href="https://en.wikipedia.org/wiki/Xcode#Version_comparison_table">https://en.wikipedia.org/wiki/Xcode#Version_comparison_table</a>          </p>
 
           <p>
-            And because Xcode is being installed manually, you can skip the step to install the Xcode command line tools (do not run "<code>xcode-select --install</code>") but otherwise build Tux Paint using the same steps described in the earlier part of this document.          </p>
+            And because Xcode is being installed manually, you can skip the step to install the Xcode command line tools (do not run "<code style="white-space: nowrap;">xcode-select --install</code>") but otherwise build Tux Paint using the same steps described in the earlier part of this document.          </p>
 
         </blockquote>
 
@@ -903,7 +905,7 @@ copied to <code>/Applications</code>. It also creates <code>TuxPaint.dmg</code> 
         Debugging      </a>
     </h2>
     <blockquote>
-      Debugging (to "STDOUT", e.g. to the terminal, or to a "<code>stdout.txt</code>" file, on Windows) can be enabled by setting "<code>DEBUG</code>" (and, if verbose logging is wanted, "<code>VERBOSE</code>") <code>#define</code>s in "<code>src/debug.h</code>".    </blockquote>
+      Debugging output &mdash; to "STDOUT" on Linux and Unix, to a "<code>stdout.txt</code>" file on Windows, and to the file "<code>/tmp/tuxpaint.log</code>" on macOS &mdash; can be enabled by setting "<code>DEBUG</code>" (and, if verbose logging is wanted, "<code>VERBOSE</code>") <code>#define</code>s in "<code>src/debug.h</code>" and (re)compiling Tux Paint.    </blockquote>
 
     <hr size="2" noshade />
 
@@ -936,12 +938,24 @@ copied to <code>/Applications</code>. It also creates <code>TuxPaint.dmg</code> 
       <hr size="1" noshade />
 
       <h3>
+        <a name="uninstalling-macos" id="uninstalling-macos">
+          macOS        </a>
+      </h3>
+
+      <blockquote>
+        <p>
+          Delete "<code>TuxPaint.app</code>" from the "Applications" folder. Data files, including the configuration files, stamps, and saved pictures, may be found in "<code style="white-space: nowrap;">Library/Application Support/TuxPaint</code>" (all users) and "<code style="white-space: nowrap;">/Users/<i>USERNAME</i>/Library/Application Support/TuxPaint</code>" (individual users).        </p>
+      </blockquote>
+
+      <hr size="1" noshade />
+
+      <h3>
         <a name="uninstalling-linux" id="uninstalling-linux">
           Linux        </a>
       </h3>
       <blockquote>
         <p>
-          Within the Tux Paint source directory (where you compiled Tux Paint), you can use the "<code>make uninstall</code>" target to uninstall Tux Paint. By default, this must be done by the "root" user ('superuser'), but if you installed Tux Paint somewhere else (e.g., using a "<code>PREFIX=...</code>" setting to "<code>make</code>" and "<code>make install</code>"), you may not, and will want to provide those same settings here. (See the installation instructions above for further information.)        </p>
+          Within the Tux Paint source directory (where you compiled Tux Paint), you can use the "<code style="white-space: nowrap;">make uninstall</code>" target to uninstall Tux Paint. By default, this must be done by the "root" user ('superuser'), but if you installed Tux Paint somewhere else (e.g., using a "<code>PREFIX=...</code>" setting to "<code>make</code>" and "<code style="white-space: nowrap;">make install</code>"), you may not, and will want to provide those same settings here. (See the <a href="#compiling-linux">installation instructions above</a> for further information.)        </p>
       </blockquote>
     <blockquote>
   </body>

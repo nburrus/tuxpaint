@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.4 (0.9.27)
+2021.September.5 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Panels" - Convert your picture to 4-panel-comic-style
