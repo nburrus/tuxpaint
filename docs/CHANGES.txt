@@ -16,8 +16,8 @@ $Id$
       style effects!)
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/204/)
 
-  * Magic Tool Improvememnts:
-    -------------------------
+  * Magic Tool Improvements:
+    ------------------------
     * "Halftone" works much better, drawing large overlapping circles
       of Cyan, Magenta, Yellow, and Black, based on the average
       color of the area of the picture being replaced, to give a
@@ -25,7 +25,13 @@ $Id$
 
     * "Halftone" can now affect the entire image at once.
 
-  * Documentation updates
+  * Other Improvements:
+    -------------------
+    * Small icons appear on brush selection buttons denoting
+      when the brush is animated and/or directional.
+      (Closes https://sourceforge.net/p/tuxpaint/bugs/183/)
+
+  * Documentation updates:
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),
       Unix manual ("man page"), and command-line option

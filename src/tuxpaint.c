@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 8, 2021
+  June 14, 2002 - September 5, 2021
 */
 
 #include "platform.h"
@@ -1481,6 +1481,7 @@ static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off, *img_btn_hold;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down, *img_btnsm_hold;
 static SDL_Surface *img_btn_nav, *img_btnsm_nav;
+static SDL_Surface *img_brush_anim, *img_brush_dir;
 static SDL_Surface *img_prev, *img_next;
 static SDL_Surface *img_mirror, *img_flip;
 static SDL_Surface *img_dead40x40;
@@ -8819,6 +8820,8 @@ static void draw_brushes(void)
 
       if (brush < num_brushes)
         {
+          int ui_btn_x, ui_btn_y;
+
           if (brushes_directional[brush])
             src.x = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / 3;
           else
@@ -8829,10 +8832,26 @@ static void draw_brushes(void)
           src.w = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / (brushes_directional[brush] ? 3 : 1);
           src.h = (img_brushes_thumbs[brush]->h / (brushes_directional[brush] ? 3 : 1));
 
-          dest.x = ((i % 2) * button_w) + (WINDOW_WIDTH - r_ttoolopt.w) + ((button_w - src.w) >> 1);
-          dest.y = ((i / 2) * button_h) + r_ttoolopt.h + ((button_h - src.h) >> 1) + off_y;
+          ui_btn_x = ((i % 2) * button_w) + (WINDOW_WIDTH - r_ttoolopt.w);
+          ui_btn_y = ((i / 2) * button_h) + r_ttoolopt.h + off_y;
+
+          dest.x = ui_btn_x + ((button_w - src.w) >> 1);
+          dest.y = ui_btn_y + ((button_h - src.h) >> 1);
 
           SDL_BlitSurface(img_brushes_thumbs[brush], &src, screen, &dest);
+
+          if (brushes_directional[brush])
+            {
+              dest.x = ui_btn_x + button_w - img_brush_dir->w;
+              dest.y = ui_btn_y + button_h - img_brush_dir->h;
+              SDL_BlitSurface(img_brush_dir, NULL, screen, &dest);
+            }
+          if (brushes_frames[brush] > 1)
+            {
+              dest.x = ui_btn_x;
+              dest.y = ui_btn_y + button_h - img_brush_anim->h;
+              SDL_BlitSurface(img_brush_anim, NULL, screen, &dest);
+            }
         }
     }
 }
@@ -13097,6 +13116,9 @@ static void cleanup(void)
 
   free_surface(&img_btn_nav);
   free_surface(&img_btnsm_nav);
+
+  free_surface(&img_brush_anim);
+  free_surface(&img_brush_dir);
 
   free_surface(&img_sfx);
   free_surface(&img_speak);
@@ -24883,6 +24905,9 @@ static void setup(void)
 
   img_btn_nav = loadimagerb(DATA_PREFIX "images/ui/btn_nav.png");
   img_btnsm_nav = loadimagerb(DATA_PREFIX "images/ui/btnsm_nav.png");
+
+  img_brush_anim = loadimagerb(DATA_PREFIX "images/ui/brush_anim.png");
+  img_brush_dir = loadimagerb(DATA_PREFIX "images/ui/brush_dir.png");
 
   img_sfx = loadimagerb(DATA_PREFIX "images/tools/sfx.png");
   img_speak = loadimagerb(DATA_PREFIX "images/tools/speak.png");
