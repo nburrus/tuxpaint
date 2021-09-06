@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-06 01:34-0700\n"
-"PO-Revision-Date: 2021-09-06 14:11+0200\n"
+"PO-Revision-Date: 2021-09-06 14:23+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -313,7 +313,7 @@ msgstr "Étoile"
 #. Description of a square
 #: ../shapes.h:289 ../shapes.h:290
 msgid "A square is a rectangle with four equal sides."
-msgstr "Un carré est un rectangle qui a quatre côtés égaux."
+msgstr "Un carré est un rectangle ayant quatre côtés égaux."
 
 #. Description of a rectangle
 #: ../shapes.h:293 ../shapes.h:294
