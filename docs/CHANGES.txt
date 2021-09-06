@@ -74,6 +74,9 @@ $Id$
       * Greek
       * Scottish Gaelic
 
+    * French
+      Jacques Chion <jacques.chion@orange.fr>
+
   * Bug Fixes:
     ----------
     * "Negative" magic tool did not play its sound when using
