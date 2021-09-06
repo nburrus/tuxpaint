@@ -44,10 +44,10 @@
         <td>
           <ul>
             <li>
-              <a href="#requirements">Requirements</a>
+              <a href="#requirements">Exigences </a>
               <ul>
                 <li>
-                  <a href="#req-libsdl">Simple DirectMedia Layer library (libSDL)</a>
+                  <a href="#req-libsdl">Biliothèque Simple DirectMedia Layer (libSDL)</a>
                 </li>
                 <li>
                   <a href="#req-other-libs">Autres bibliothèques</a>
@@ -55,7 +55,7 @@
               </ul>
             </li>
             <li>
-              <a href="#compiling">Compiling and Installation</a>
+              <a href="#compiling">Compilation et installation</a>
               <ul>
                 <li>
                   <a href="#compiling-windows">Utilisateurs de Windows</a>
@@ -69,10 +69,10 @@
               </ul>
             </li>
             <li>
-              <a href="#debugging">Debugging</a>
+              <a href="#debugging">Débogage</a>
             </li>
             <li>
-              <a href="#uninstalling">Uninstalling Tux Paint</a>
+              <a href="#uninstalling">Désinstallation de Tux Paint </a>
               <ul>
                 <li>
                   <a href="#uninstalling-windows">Windows</a>
@@ -94,13 +94,13 @@
 
     <h2>
       <a name="requirements" id="requirements">
-        Requirements      </a>
+        Exigences       </a>
     </h2>
     <blockquote>
 
       <h3>
         <a name="req-libsdl" id="req-libsdl">
-          Simple DirectMedia Layer library (libSDL)        </a>
+          Biliothèque Simple DirectMedia Layer (libSDL)        </a>
       </h3>
       <blockquote>
         <p>
@@ -229,7 +229,7 @@
 
     <h2>
       <a name="compiling" id="compiling">
-        Compiling and Installation      </a>
+        Compilation et installation      </a>
     </h2>
     <blockquote>
       <p>
@@ -245,13 +245,13 @@
         </em>
       </p>
       <blockquote>
-        <h4>Compiling Set-Up</h4>
+        <h4>Réglages pour compilation :</h4>
         <blockquote>
           <p>
             Depuis février 2005 (à partir de Tux Paint 0.9.15), le "<code>Makefile</code>" inclut la prise en charge de la construction sur un système Windows à l'aide de MinGW/MSYS (<a href="https://sourceforge.net/projects/msys2/">https://sourceforge.net/projects/msys2/</a>).          </p>
 
           <p>
-            Many tools and libraries are required to build Tux Paint. The package management system "<code>pacman</code>" helps you install them automatically solving complicated dependencies.          </p>
+            Beaucoup d'outils et de bibliothèques sont nécessaires pour élaborer Tux Paint. Le système de gestion de paquet "<code>pacman</code>" apporte une aide pour installer automatiquement, en résolvant les dépendances nombreuses.          </p>
 
           <p>
             Download the latest MSYS2 environment from <a href="https://sourceforge.net/projects/msys2/files/Base/">https://sourceforge.net/projects/msys2/files/Base/</a> and install it where you'd like (the default is "<code>C:\msys64</code>")          </p>
@@ -268,7 +268,7 @@
             This will update core system and the window will close automatically.  Repeat the steps above one more time to finish the remaining update process.          </p>
 
           <p>
-            Within the MSYS2 shell, run the following command to install basic development tools:            <blockquote>
+            Within the MSYS2 shell, run the following command to install outils basiques pour le développement:            <blockquote>
               <code>
                 pacman -S base-devel msys2-devel git
               </code>
@@ -290,7 +290,7 @@
 
           <blockquote>
             <p>
-              Within the MSYS2 shell, run the following command to install basic 64bit development tools:              <blockquote>
+              Within the MSYS2 shell, run the following command to install outils basiques pour le développement 64bit:              <blockquote>
                 <code>
                   pacman -S mingw-w64-x86_64-toolchain
                 </code>
@@ -343,9 +343,9 @@
                 At first, you have to prepare source tar-ball and a required patch in the same directory.              </p>
               <ul>
                 <li>
-                  Download <a href="https://sourceforge.net/projects/sdlpango/files/SDL_Pango/0.1.2/SDL_Pango-0.1.2.tar.gz/download">source tar-ball of SDL_Pango-0.1.2</a> from <a href="https://sourceforge.net/projects/sdlpango/">SDL_Pango's page on Sourceforge.net</a>.                </li>
+                  Télécharger <a href="https://sourceforge.net/projects/sdlpango/files/SDL_Pango/0.1.2/SDL_Pango-0.1.2.tar.gz/download">fichier source de SDL_Pango-0.1.2</a> depuis <a href="https://sourceforge.net/projects/sdlpango/">la page SDL_Pango sur Sourceforge.net</a>.                </li>
                 <li>
-                  Download <a href="http://johnnypops.co.uk/tuxpaint/SDL_Pango-configure-extra-api.patch">a patch file</a> from <a href="http://www.johnnypops.co.uk/tuxpaint/">John Popplewell's "Tux Paint - MinGW/MSYS build instructions" webpage</a>.                  (This adds some extra (required) functionality to SDL_Pango.)                </li>
+                  Télécharger <a href="http://johnnypops.co.uk/tuxpaint/SDL_Pango-configure-extra-api.patch">un fichier patch</a> depuis <a href="http://www.johnnypops.co.uk/tuxpaint/">John Popplewell's "Tux Paint - MinGW/MSYS build instructions" webpage</a>.                  (This adds some extra (required) functionality to SDL_Pango.)                </li>
               </ul>
               <p>
                 Build and install SDL_Pango as follows.                <blockquote>
@@ -362,9 +362,9 @@
             <h5>SDL</h5>
             <blockquote>
               <p>
-                Download <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">source tar-ball of SDL_1.2.15</a> from <a href="http://www.libsdl.org/">libsdl.org</a>.              </p>
+                Télécharger <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">fichier source de SDL_1.2.15</a> depuis <a href="http://www.libsdl.org/">libsdl.org</a>.              </p>
               <p>
-                Re-install SDL as follows.                <blockquote>
+                Réinstallez SDL comme suit.                <blockquote>
                   <code>
                     $ tar zxvf SDL-1.2.15.tar.gz<br/>
                     $ cd SDL-1.2.15<br/>
@@ -388,7 +388,7 @@
 
           <blockquote>
             <p>
-              Within the MSYS2 shell, run the following command to install basic 32bit development tools:              <blockquote>
+              Within the MSYS2 shell, run the following command to install outils basiques pour le développement 32bit:              <blockquote>
                 <code>
                   pacman -S mingw-w64-i686-toolchain
                 </code>
@@ -441,9 +441,9 @@
                 At first, you have to prepare source tar-ball and a required patch in the same directory.              </p>
               <ul>
                 <li>
-                  Download <a href="https://sourceforge.net/projects/sdlpango/files/SDL_Pango/0.1.2/SDL_Pango-0.1.2.tar.gz/download">source tar-ball of SDL_Pango-0.1.2</a> from <a href="https://sourceforge.net/projects/sdlpango/">SDL_Pango's page on Sourceforge.net</a>.                </li>
+                  Télécharger <a href="https://sourceforge.net/projects/sdlpango/files/SDL_Pango/0.1.2/SDL_Pango-0.1.2.tar.gz/download">fichier source de SDL_Pango-0.1.2</a> depuis <a href="https://sourceforge.net/projects/sdlpango/">la page SDL_Pango sur Sourceforge.net</a>.                </li>
                 <li>
-                  Download <a href="http://johnnypops.co.uk/tuxpaint/SDL_Pango-configure-extra-api.patch">a patch file</a> from <a href="http://www.johnnypops.co.uk/tuxpaint/">John Popplewell's "Tux Paint - MinGW/MSYS build instructions" webpage</a>.                  (This adds some extra (required) functionality to SDL_Pango.)                </li>
+                  Télécharger <a href="http://johnnypops.co.uk/tuxpaint/SDL_Pango-configure-extra-api.patch">un fichier patch</a> depuis <a href="http://www.johnnypops.co.uk/tuxpaint/">John Popplewell's "Tux Paint - MinGW/MSYS build instructions" webpage</a>.                  (This adds some extra (required) functionality to SDL_Pango.)                </li>
               </ul>
               <p>
                 Build and install SDL_Pango as follows.                <blockquote>
@@ -460,9 +460,9 @@
             <h5>SDL</h5>
             <blockquote>
               <p>
-                Download <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">source tar-ball of SDL_1.2.15</a> from <a href="http://www.libsdl.org/">libsdl.org</a>.              </p>
+                Télécharger <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">fichier source de SDL_1.2.15</a> depuis <a href="http://www.libsdl.org/">libsdl.org</a>.              </p>
               <p>
-                Re-install SDL as follows.                <blockquote>
+                Réinstallez SDL comme suit.                <blockquote>
                   <code>
                     $ tar zxvf SDL-1.2.15.tar.gz<br/>
                     $ cd SDL-1.2.15<br/>
@@ -513,7 +513,7 @@
               Select "MSYS2 64bit" -&gt; "MSYS2 MinGW 32-bit" from the "Start Menu" to open the 32bit shell.            </li>
           </ul>
           <p>
-            Compile Tux Paint with the following command:            <blockquote>
+            Compilez Tux Paint avec la commande suivante :            <blockquote>
               <code>
                 $ make bdist-win32
               </code>
@@ -527,7 +527,7 @@
 
         <hr size="1" noshade width="75%" />
 
-        <h4>Building the Tux Paint Windows Installer:</h4>
+        <h4>Construire l'installateur de Tux Paint sous Windows :</h4>
         <blockquote>
 
           <p>
@@ -540,7 +540,7 @@
 
         <hr size="1" noshade width="75%" />
 
-        <h4>Running the Tux Paint Windows Installer:</h4>
+        <h4>Utliser l'installateur de Tux Paint sous Windows :</h4>
         <blockquote>
           <p>
             Double-cliquez sur l'exécutable du programme d'installation de Tux Paint (fichier .EXE) et Suivez les instructions.
@@ -840,10 +840,10 @@
 
         <hr size="1" noshade width="75%" />
 
-        <h4>How to Build</h4>
+        <h4>Comment construire</h4>
         <blockquote>
           <p>
-            Simply, run:            <blockquote>
+            Tapez simplement :            <blockquote>
               <code>
                 % make<br/>
                 % make install
@@ -854,7 +854,7 @@
 
         <hr size="1" noshade width="75%" />
 
-        <h4>Known Issues</h4>
+        <h4>Problèmes connus</h4>
         <blockquote>
           <ul>
             <li>
@@ -866,7 +866,7 @@
 
         <hr size="1" noshade width="75%" />
 
-        <h4>Old Versions of macOS</h4>
+        <h4>Vieilles versions de macOS</h4>
         <blockquote>
           <p>
             Some old versions of macOS can be downloaded from Apple's support page: <a href="https://support.apple.com/en-us/HT211683">https://support.apple.com/en-us/HT211683</a>          </p>
@@ -902,16 +902,16 @@
 
     <h2>
       <a name="debugging" id="debugging">
-        Debugging      </a>
+        Débogage      </a>
     </h2>
     <blockquote>
-      Debugging output &mdash; to "STDOUT" on Linux and Unix, to a "<code>stdout.txt</code>" file on Windows, and to the file "<code>/tmp/tuxpaint.log</code>" on macOS &mdash; can be enabled by setting "<code>DEBUG</code>" (and, if verbose logging is wanted, "<code>VERBOSE</code>") <code>#define</code>s in "<code>src/debug.h</code>" and (re)compiling Tux Paint.    </blockquote>
+      Le débogage &mdash; vers "STDOUT", avec Linux et Unix, vers un fichier "<code>stdout.txt</code>"avec Windows, et vers le fichier "<code>/tmp/tuxpaint.log</code>" avec macOS &mdash; peut être activé en définissant "<code>DEBUG</code>" (et, si un mode verbeux est souhaité, "<code>VERBOSE</code>") <code># define</code> dans "<code>src/debug.h</code>, et en (re)compilant Tux Paint.    </blockquote>
 
     <hr size="2" noshade />
 
     <h2>
       <a name="uninstalling" id="uninstalling">
-        Uninstalling Tux Paint      </h2>
+        Désinstallation de Tux Paint       </h2>
     </h2>
     <blockquote>
       <h3>
@@ -944,7 +944,7 @@
 
       <blockquote>
         <p>
-          Delete "<code>TuxPaint.app</code>" from the "Applications" folder. Data files, including the configuration files, stamps, and saved pictures, may be found in "<code style="white-space: nowrap;">Library/Application Support/TuxPaint</code>" (all users) and "<code style="white-space: nowrap;">/Users/<i>USERNAME</i>/Library/Application Support/TuxPaint</code>" (individual users).        </p>
+          Delete "<code>TuxPaint.app</code>" from the "Applications" folder. Data files, including the configuration files, stamps, and saved pictures, may be found in "<code style="white-space: nowrap;">Bibliothèque/Support d'Application/Tux Paint</code>" (all users) and "<code style="white-space: nowrap;">/Users/<i>USERNAME</i>/Library/Application Support/TuxPaint</code>" (individual users).        </p>
       </blockquote>
 
       <hr size="1" noshade />
@@ -955,7 +955,7 @@
       </h3>
       <blockquote>
         <p>
-          Within the Tux Paint source directory (where you compiled Tux Paint), you can use the "<code style="white-space: nowrap;">make uninstall</code>" target to uninstall Tux Paint. By default, this must be done by the "root" user ('superuser'), but if you installed Tux Paint somewhere else (e.g., using a "<code>PREFIX=...</code>" setting to "<code>make</code>" and "<code style="white-space: nowrap;">make install</code>"), you may not, and will want to provide those same settings here. (See the <a href="#compiling-linux">installation instructions above</a> for further information.)        </p>
+          Dans le répertoire source de Tux Paint (où vous avez compilé Tux Paint), vous pouvez utiliser une cible "<code style="white-space: nowrap;">make uninstall</code>" pour désinstaller Tux Paint. Par défaut, cela doit être fait par l'utilisateur "root" ("superutilisateur"), mais si vous avez installé Tux Paint à un autre endroit (par ex. en mettant "<code>PREFIX=...</code>" à "<code>make</code>" et "<code style="white-space: nowrap;">make install</code>", vous ne pourrez pas, et il faudra fournir les mêmes réglages ici. (Voir <a href="#compiling-linux>les instructions d'installation ci-dessus</a> pour plus d'informations.)        </p>
       </blockquote>
     <blockquote>
   </body>

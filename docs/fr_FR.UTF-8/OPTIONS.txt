@@ -16,14 +16,14 @@ Documentation sur les options
    |  * Configuration de Tux Paint.                                      |
    |  * Fichier de configuration                                         |
    |  * Options disponibles                                              |
-   |       * Video/Sound                                                 |
-   |       * Mouse/Keyboard                                              |
+   |       * Vidéo/Son                                                   |
+   |       * Souris/Clavier                                              |
    |       * Simplification                                              |
-   |       * Languages                                                   |
+   |       * Langues                                                     |
    |       * Impression                                                  |
    |       * Sauvegarde                                                  |
-   |       * Data                                                        |
-   |       * Accessibility                                               |
+   |       * Données                                                     |
+   |       * Accessibilité                                               |
    |       * Joystick                                                    |
    |  * Écrasez des options de System Config                             |
    |  * Options de ligne de commande                                     |
@@ -107,7 +107,7 @@ Utilisateurs de Windows
 
      ----------------------------------------------------------------------
 
-Video/Sound
+Vidéo/Son
 
   Video
 
@@ -180,7 +180,7 @@ Video/Sound
                  cases, may be overridden by the command-line option
                  "--disablescreensaver".
 
-  Sound
+  Son
 
          nosound=yes
 
@@ -205,7 +205,7 @@ Video/Sound
                  "nostereo=no" or "stereo=yes". In both cases, may be
                  overridden by the command-line option "--stereo".
 
-  Interface Size
+  Taille de l'interface
 
          buttonsize=SIZE
 
@@ -236,9 +236,9 @@ Video/Sound
 
      ----------------------------------------------------------------------
 
-Mouse/Keyboard
+Souris/Clavier
 
-  Cursor
+  Curseur
 
          nofancycursors=yes
 
@@ -268,7 +268,7 @@ Mouse/Keyboard
                  "hidecursor=no" or "showcursor=yes". In both cases, may be
                  overridden by the command-line option "--showcursor".
 
-  Keyboard
+  Clavier
 
          noshortcuts=yes
 
@@ -285,7 +285,7 @@ Mouse/Keyboard
                  "noshortcuts=no" or "shortcuts=yes". In both cases, may be
                  overridden by the command-line option "--shortcuts".
 
-  Mouse
+  Souris
 
          grab=yes
 
@@ -339,7 +339,7 @@ Mouse/Keyboard
 
 Simplification
 
-  Interface Simplification
+  Simplification de l'interface
 
          simpleshapes=yes
 
@@ -393,7 +393,7 @@ Simplification
                  Spécifiez "default" pour laisser Tux Paint décider (c'est un
                  comportement standard).
 
-  Control Simplification
+  Simplification du contrôle
 
          noquit=yes
 
@@ -480,9 +480,9 @@ Simplification
 
      ----------------------------------------------------------------------
 
-Languages
+Langues
 
-  Language
+  Langue
 
          lang=LANGUAGE
 
@@ -810,7 +810,7 @@ Languages
 
 Impression
 
-  Print Permissions
+  Permissions pour l'impression
 
          noprint=yes
 
@@ -826,7 +826,7 @@ Impression
                  "printdelay=0". In both cases, may be overridden by the
                  command-line option "--printdelay=0".
 
-  Show Printer Dialog
+  Montrer le menu pour l'impression
 
          altprint=always
 
@@ -854,7 +854,7 @@ Impression
                  sur «Imprimer» sans maintenir [Alt] imprime sans afficher de
                  boîte de dialogue.
 
-  Save Printer Configuration
+  Sauvegarder la configuration d'impression
 
          printcfg=yes
 
@@ -876,7 +876,7 @@ Impression
                  "printcfg=no" or "noprintcfg=yes". In both cases, may be
                  overridden by the command-line option "--noprintcfg".
 
-  Print Commands
+  Commandes d'impression
 
          printcommand=COMMAND
 
@@ -915,7 +915,7 @@ Impression
 
                    kprinter
 
-  Paper Size
+  Format du papier
 
          papersize=PAPERSIZE
 
@@ -939,7 +939,7 @@ Impression
 
 Sauvegarde
 
-  Save Over Earlier Work
+  Écraser le travail précédent
 
          saveover=yes
 
@@ -962,7 +962,7 @@ Sauvegarde
                  vous demandera d'abord si vous voulez écraser l'ancienne
                  version ou non.
 
-  Starting Out
+  Démarrer
 
          startblank=yes
 
@@ -1066,7 +1066,7 @@ Sauvegarde
 
                  Exemple: exportdir=/home/penguin/TuxPaintExports
 
-  More Saving Options
+  Plus d'options de sauvegarde
 
          nosave=yes
 
@@ -1094,7 +1094,7 @@ Sauvegarde
 
      ----------------------------------------------------------------------
 
-Data
+Données
 
   Lockfile
 
@@ -1123,7 +1123,7 @@ Data
                  "nolockfile=no" or "lockfile=yes". In both cases, may be
                  overridden by the command-line option "--lockfile".
 
-  Data Directory
+  Répertoire de données
 
          datadir=DIRECTORY
 
@@ -1200,9 +1200,9 @@ Data
 
      ----------------------------------------------------------------------
 
-Accessibility
+Accessibilité
 
-  Mouse
+  Souris
 
          mouse-accessibility=yes
 
@@ -1210,7 +1210,7 @@ Accessibility
                  relâcher (par exemple, pour dessiner), vous cliquez,
                  déplacez et cliquez à nouveau pour terminer le mouvement.
 
-  Keyboard
+  Clavier
 
          keyboard=yes
 
@@ -1260,7 +1260,7 @@ Accessibility
                  "keyboard=no" or "mouse=yes". In both cases, may be
                  overridden by the command-line option "--mouse".
 
-  Onscreen Keyboard
+  Clavier virtuel sur écran
 
          onscreen-keyboard=yes
 
@@ -1295,7 +1295,7 @@ Accessibility
 
 Joystick
 
-  Main Device
+  Écran principal
 
          joystick-dev=N
 
@@ -1321,7 +1321,7 @@ Joystick
                  déplacera à la fois. Les valeurs autorisées vont de 1 à 7.
                  La valeur par défaut est 7.
 
-  Hat
+  Chapeau
 
          joystick-hat-slowness=SPEED
 
@@ -1336,7 +1336,7 @@ Joystick
                  Les valeurs autorisées sont comprises entre 0 et 3 000. La
                  valeur par défaut est 1 000.
 
-  Buttons to Disable
+  Boutons à désactiver
 
          joystick-buttons-ignore=BUTTON1,BUTTON2,...
 
@@ -1346,7 +1346,7 @@ Joystick
                  les boutons seront considérés comme un clic gauche de la
                  souris.
 
-  Button Shortcuts
+  Boutons pour raccourcis
 
          joystick-btn-escape=BUTTON NUMBER
 

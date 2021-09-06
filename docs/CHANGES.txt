@@ -63,6 +63,10 @@ $Id$
     * Moved Windows and macOS compilation instructions into main
       "Installation Documentation" (docs/.../INSTALL...).
 
+    * Documentation translation updates:
+      + French translation
+        Jacques Chion <jacques.chion@orange.fr>
+
   * Translation Updates:
     --------------------
     * Ensure some locales have hints to find the best fonts

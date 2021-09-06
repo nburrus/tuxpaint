@@ -9,28 +9,28 @@
 
      ----------------------------------------------------------------------
 
-   +----------------------------------------------------+
-   |Table des matières                                  |
-   |----------------------------------------------------|
-   |  * Requirements                                    |
-   |       * Simple DirectMedia Layer library (libSDL)  |
-   |       * Autres bibliothèques                       |
-   |  * Compiling and Installation                      |
-   |       * Utilisateurs de Windows                    |
-   |       * Utilisateurs de Linux/Unix                 |
-   |       * Utilisateurs de macOS                      |
-   |  * Debugging                                       |
-   |  * Uninstalling Tux Paint                          |
-   |       * Windows                                    |
-   |       * macOS                                      |
-   |       * Linux                                      |
-   +----------------------------------------------------+
+   +--------------------------------------------------------+
+   |Table des matières                                      |
+   |--------------------------------------------------------|
+   |  * Exigences                                           |
+   |       * Biliothèque Simple DirectMedia Layer (libSDL)  |
+   |       * Autres bibliothèques                           |
+   |  * Compilation et installation                         |
+   |       * Utilisateurs de Windows                        |
+   |       * Utilisateurs de Linux/Unix                     |
+   |       * Utilisateurs de macOS                          |
+   |  * Débogage                                            |
+   |  * Désinstallation de Tux Paint                        |
+   |       * Windows                                        |
+   |       * macOS                                          |
+   |       * Linux                                          |
+   +--------------------------------------------------------+
 
      ----------------------------------------------------------------------
 
-Requirements
+Exigences
 
-  Simple DirectMedia Layer library (libSDL)
+  Biliothèque Simple DirectMedia Layer (libSDL)
 
        Tux Paint nécessite la bibliothèque de couches DirectMedia simple
        (libSDL), une bibliothèque de programmation multimédia Open Source
@@ -140,7 +140,7 @@ Requirements
 
      ----------------------------------------------------------------------
 
-Compiling and Installation
+Compilation et installation
 
      Tux Paint est publié sous la licence publique générale GNU (GPL) (voir
      "COPYING.txt" pour plus de détails), et donc le 'code source' du
@@ -151,15 +151,16 @@ Compiling and Installation
      octobre 25, 2020 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
      <shin1@wmail.plala.or.jp>
 
-    Compiling Set-Up
+    Réglages pour compilation :
 
          Depuis février 2005 (à partir de Tux Paint 0.9.15), le "Makefile"
          inclut la prise en charge de la construction sur un système Windows
          à l'aide de MinGW/MSYS (https://sourceforge.net/projects/msys2/).
 
-         Many tools and libraries are required to build Tux Paint. The
-         package management system "pacman" helps you install them
-         automatically solving complicated dependencies.
+         Beaucoup d'outils et de bibliothèques sont nécessaires pour élaborer
+         Tux Paint. Le système de gestion de paquet "pacman" apporte une aide
+         pour installer automatiquement, en résolvant les dépendances
+         nombreuses.
 
          Download the latest MSYS2 environment from
          https://sourceforge.net/projects/msys2/files/Base/ and install it
@@ -175,8 +176,8 @@ Compiling and Installation
          automatically. Repeat the steps above one more time to finish the
          remaining update process.
 
-         Within the MSYS2 shell, run the following command to install basic
-         development tools:
+         Within the MSYS2 shell, run the following command to install outils
+         basiques pour le développement:
 
            pacman -S base-devel msys2-devel git
 
@@ -188,8 +189,8 @@ Compiling and Installation
 
     MinGW 64bit (x86_64) toolchains
 
-         Within the MSYS2 shell, run the following command to install basic
-         64bit development tools:
+         Within the MSYS2 shell, run the following command to install outils
+         basiques pour le développement 64bit:
 
            pacman -S mingw-w64-x86_64-toolchain
 
@@ -229,11 +230,11 @@ Compiling and Installation
            At first, you have to prepare source tar-ball and a required patch
            in the same directory.
 
-             * Download source tar-ball of SDL_Pango-0.1.2 from SDL_Pango's
-               page on Sourceforge.net.
-             * Download a patch file from John Popplewell's "Tux Paint -
-               MinGW/MSYS build instructions" webpage. (This adds some extra
-               (required) functionality to SDL_Pango.)
+             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
+               SDL_Pango sur Sourceforge.net.
+             * Télécharger un fichier patch depuis John Popplewell's "Tux
+               Paint - MinGW/MSYS build instructions" webpage. (This adds
+               some extra (required) functionality to SDL_Pango.)
 
            Build and install SDL_Pango as follows.
 
@@ -244,9 +245,9 @@ Compiling and Installation
 
       SDL
 
-           Download source tar-ball of SDL_1.2.15 from libsdl.org.
+           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
 
-           Re-install SDL as follows.
+           Réinstallez SDL comme suit.
 
              $ tar zxvf SDL-1.2.15.tar.gz
              $ cd SDL-1.2.15
@@ -260,8 +261,8 @@ Compiling and Installation
 
     MinGW 32bit (i686) toolchains
 
-         Within the MSYS2 shell, run the following command to install basic
-         32bit development tools:
+         Within the MSYS2 shell, run the following command to install outils
+         basiques pour le développement 32bit:
 
            pacman -S mingw-w64-i686-toolchain
 
@@ -301,11 +302,11 @@ Compiling and Installation
            At first, you have to prepare source tar-ball and a required patch
            in the same directory.
 
-             * Download source tar-ball of SDL_Pango-0.1.2 from SDL_Pango's
-               page on Sourceforge.net.
-             * Download a patch file from John Popplewell's "Tux Paint -
-               MinGW/MSYS build instructions" webpage. (This adds some extra
-               (required) functionality to SDL_Pango.)
+             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
+               SDL_Pango sur Sourceforge.net.
+             * Télécharger un fichier patch depuis John Popplewell's "Tux
+               Paint - MinGW/MSYS build instructions" webpage. (This adds
+               some extra (required) functionality to SDL_Pango.)
 
            Build and install SDL_Pango as follows.
 
@@ -316,9 +317,9 @@ Compiling and Installation
 
       SDL
 
-           Download source tar-ball of SDL_1.2.15 from libsdl.org.
+           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
 
-           Re-install SDL as follows.
+           Réinstallez SDL comme suit.
 
              $ tar zxvf SDL-1.2.15.tar.gz
              $ cd SDL-1.2.15
@@ -361,7 +362,7 @@ Compiling and Installation
            * Select "MSYS2 64bit" -> "MSYS2 MinGW 32-bit" from the "Start
              Menu" to open the 32bit shell.
 
-         Compile Tux Paint with the following command:
+         Compilez Tux Paint avec la commande suivante :
 
            $ make bdist-win32
 
@@ -379,7 +380,7 @@ Compiling and Installation
 
             -------------------------------------------------------
 
-    Building the Tux Paint Windows Installer:
+    Construire l'installateur de Tux Paint sous Windows :
 
          Inno Setup is used to build executable installer for Tux Paint.
          Therefore you have to install it in the first place.
@@ -392,7 +393,7 @@ Compiling and Installation
 
             -------------------------------------------------------
 
-    Running the Tux Paint Windows Installer:
+    Utliser l'installateur de Tux Paint sous Windows :
 
          Double-cliquez sur l'exécutable du programme d'installation de Tux
          Paint (fichier .EXE) et Suivez les instructions.
@@ -671,9 +672,9 @@ Compiling and Installation
 
             -------------------------------------------------------
 
-    How to Build
+    Comment construire
 
-         Simply, run:
+         Tapez simplement :
 
            % make
            % make install
@@ -684,7 +685,7 @@ Compiling and Installation
 
             -------------------------------------------------------
 
-    Known Issues
+    Problèmes connus
 
            * A macOS binary built on a specific version of macOS only runs on
              that version of macOS or later. To ensure Tux Paint can run on
@@ -698,7 +699,7 @@ Compiling and Installation
 
             -------------------------------------------------------
 
-    Old Versions of macOS
+    Vieilles versions de macOS
 
          Some old versions of macOS can be downloaded from Apple's support
          page: https://support.apple.com/en-us/HT211683
@@ -742,16 +743,17 @@ Compiling and Installation
 
      ----------------------------------------------------------------------
 
-Debugging
+Débogage
 
-     Debugging output — to "STDOUT" on Linux and Unix, to a "stdout.txt" file
-     on Windows, and to the file "/tmp/tuxpaint.log" on macOS — can be
-     enabled by setting "DEBUG" (and, if verbose logging is wanted,
-     "VERBOSE") #defines in "src/debug.h" and (re)compiling Tux Paint.
+     Le débogage — vers "STDOUT", avec Linux et Unix, vers un fichier
+     "stdout.txt"avec Windows, et vers le fichier "/tmp/tuxpaint.log" avec
+     macOS — peut être activé en définissant "DEBUG" (et, si un mode verbeux
+     est souhaité, "VERBOSE") # define dans "src/debug.h, et en (re)compilant
+     Tux Paint.
 
      ----------------------------------------------------------------------
 
-Uninstalling Tux Paint
+Désinstallation de Tux Paint
 
   Windows
 
@@ -778,18 +780,19 @@ Uninstalling Tux Paint
 
        Delete "TuxPaint.app" from the "Applications" folder. Data files,
        including the configuration files, stamps, and saved pictures, may be
-       found in "Library/Application Support/TuxPaint" (all users) and
-       "/Users/USERNAME/Library/Application Support/TuxPaint" (individual
+       found in "Bibliothèque/Support d'Application/Tux Paint" (all users)
+       and "/Users/USERNAME/Library/Application Support/TuxPaint" (individual
        users).
 
      ----------------------------------------------------------------------
 
   Linux
 
-       Within the Tux Paint source directory (where you compiled Tux Paint),
-       you can use the "make uninstall" target to uninstall Tux Paint. By
-       default, this must be done by the "root" user ('superuser'), but if
-       you installed Tux Paint somewhere else (e.g., using a "PREFIX=..."
-       setting to "make" and "make install"), you may not, and will want to
-       provide those same settings here. (See the installation instructions
-       above for further information.)
+       Dans le répertoire source de Tux Paint (où vous avez compilé Tux
+       Paint), vous pouvez utiliser une cible "make uninstall" pour
+       désinstaller Tux Paint. Par défaut, cela doit être fait par
+       l'utilisateur "root" ("superutilisateur"), mais si vous avez installé
+       Tux Paint à un autre endroit (par ex. en mettant "PREFIX=..." à "make"
+       et "make install", vous ne pourrez pas, et il faudra fournir les mêmes
+       réglages ici. (Voir <a href="#compiling-linux>les instructions
+       d'installation ci-dessus pour plus d'informations.)

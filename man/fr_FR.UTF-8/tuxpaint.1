@@ -1,7 +1,7 @@
 .\" tuxpaint.1 - 2021.08.29
 .TH TUXPAINT 1 "août 29, 2021" "0.9.27" "Tux Paint"
 .SH NAME
-tuxpaint -- "Tux Paint", a drawing program for young children.
+tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 
 .SH SYNOPSYS
 .B tuxpaint
@@ -85,7 +85,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-onscreen-keyboard-disable-change]
 .br
-[\-\-joystick-dev=\fIDEVICE\fP]
+[\-\-joystick-dev=\fIDISPOSITIF\fP]
 .br
 [\-\-joystick-dev=list]
 .br
@@ -141,11 +141,11 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-alllocalefonts]
 .br
-[\-\-savedir \fIDIR\fP]
+[\-\-savedir \fIRÉPERTOIRE\fP]
 .br
-[\-\-exportdir \fIDIR\fP]
+[\-\-exportdir \fIRÉPERTOIRE\fP]
 .br
-[\-\-datadir \fIDIR\fP]
+[\-\-datadir \fIRÉPERTOIRE\fP]
 .br
 [\-\-saveover]
 .br
@@ -158,7 +158,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-colorfile \fIFILE\fP]
 
 .TP 9
-.B tuxpaint (defaults)
+.B tuxpaint (par défaut)
 [\-\-windowed]
 .br
 [\-\-disablescreensaver]
@@ -257,14 +257,14 @@ Unlike popular drawing programs like "\fIThe GIMP\fP," it has a very
 limited toolset. However, it provides a much simpler interface, and has
 entertaining, child-oriented additions such as sound effects.
 
-.SH OPTIONS - INFORMATIONAL
+.SH OPTIONS - INFORMATIONS
 .l
 \fItuxpaint\fP accepts the following options to emit information about the
 program.  It then exits immediately (without opening a graphical window).
 
 .TP 8
 .B \-\-help
-Display short, helpful information about Tux Paint.
+Affiche une aide sommaire sur l'utilisation de Tux Paint.
 .TP 8
 .B \-\-version
 Output the version info.
@@ -273,7 +273,7 @@ Output the version info.
 Output the version info and compile-time build options.
 .TP 8
 .B \-\-usage
-Display a list of all commandline options.
+Affiche une liste des options disponibles en ligne de commande.
 .TP 8
 .B \-\-copying
 Show the license (GNU GPL) under which Tux Paint is released.
@@ -316,7 +316,7 @@ rotated, e.g. tablet PCs.)
 Normally, \fItuxpaint\fP disables your screensaver. Use
 \-\-allowscreensaver to prevent this from happening.
 
-.SS SOUND
+.SS SON
 .TP 8
 .B \-\-nosound \-\-sound
 Disable or enable (default) sound.
@@ -333,9 +333,10 @@ Disable or enable (default) stereo panning support.
 
 .TP 8
 .B \-\-colorsrows=\fIROWS\fP
-How many rows of color palette buttons to show; useful when using a large
-color palette, and/or for use with coarse input devices (like eyegaze
-trackers).  It can be between 1 (default) and 3.
+Combien de rangées de boutons pour les couleurs peuvent être montrées;
+utile quand on a une grande palette, et/ou pour utiliser avec des
+dispositifs de pointage peu précis (par ex avec des oculomètres). Ce peut
+être entre 1 (par défaut) et 3.
 
 .SS INTERFACE SIMPLIFICATION
 .TP 8
@@ -347,10 +348,10 @@ or disabled children.
 
 .TP 8
 .B \-\-nooutlines \-\-outlines
-With "--nooutlines" enabled, much simpler outlines and 'rubber-band' lines
-are displayed when using the Lines, Shapes, Stamps and Eraser tools. (This
-can help when Tux Paint is run on slower computers, or displayed on a
-remote terminal.)
+Avec "--nooutlines" activé, des contours beaucoup plus simples et des
+lignes «élastiques» sont affichés lors de l'utilisation des outils
+Ligne , Forme, Tampon et Gomme. (Cela peut aider si on utilise un
+ordinateur lent, ou bien avec un écran à distance.)
 
 .TP 8
 .B \-\-uppercase \-\-mixedcase
@@ -415,8 +416,8 @@ initially clicked.
 
 .TP 8
 .B \-\-nolabel \-\-label
-Disable or enable (default) the Label tool, which lets you create text
-which can be altered or moved later.
+Désactive (ou active) l'outil Étiquette, ce qui vous permet de créer un
+texte qui peut être modifié ou déplacé plus tard.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l
@@ -445,8 +446,9 @@ will be disabled.  Default mode is for shortcuts to be enabled.
 .SS MOUSE AND ACCESSIBILITY
 .TP 8
 .B \-\-grab \-\-dontgrab
-Grab the mouse and keyboard input (if possible), so that the mouse is
-confined to the Tux Paint window.  Default is to not grab.
+Tux Paint essaiera de «saisir» la souris et le clavier, en sorte que la
+souris reste confinée dans la fenêtre de Tux Paint. Ce n'est pas le cas
+par défaut.
 
 .TP 8
 .B \-\-nowheelmouse \-\-wheelmouse
@@ -458,9 +460,9 @@ the wheel.
 
 .TP 8
 .B \-\-mouse-accessibility
-In this mode, instead of clicking, dragging and releasing (e.g., to draw),
-you click, move, and click again to end the motion. ("Sticky mouse
-clicks.")
+Dans ce mode, au lieu de cliquer, de faire glisser et de relâcher (par
+exemple, pour dessiner), vous cliquez, déplacez et cliquez à nouveau pour
+terminer le mouvement. ("Clics pesrsistants.")
 
 .TP 8
 .B \-\-keyboard \-\-mouse
@@ -479,8 +481,8 @@ comfortable with the mouse. Default is to only recognize button #1.
 .SS ONSCREEN KEYBOARD
 .TP 8
 .B \-\-onscreen-keyboard
-Presents a clickable on-screen keyboard when using the Text and Label
-tools.
+Présente un clavier sur l'écran, cliquable, lors de l'utilisation des
+outils Texte et Étiquette .
 
 .TP 8
 .B \-\-onscreen-keyboard-layout \fILAYOUT\fP
@@ -493,7 +495,7 @@ which are used to switch between the available on-screen keyboard layouts.
 
 .SS JOYSTICK
 .TP 8
-.B \-\-joystick-dev=\fIDEVICE\fP
+.B \-\-joystick-dev=\fIDISPOSITIF\fP
 Spécifie quel périphérique joystick doit être utilisé par Tux Paint.
 La valeur par défaut est 0 (le premier joystick).
 
@@ -540,33 +542,33 @@ les dialogues et quitter.
 
 .TP 8
 .B \-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
-Selects the joystick button number, as seen by SDL, that will be a shortcut
-to various tools within Tux Paint.
+Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
+un raccourci pour sélectionner différents outils de Tux Paint.
 
 .PP
 .RS
 .PD 0
 .TP 2
 -
-brush | Paint
+brush | Peindre
 .TP 2
 -
-stamp | Stamp
+stamp | Tampon
 .TP 2
 -
-lines | Lines
+lines | Lignes
 .TP 2
 -
-shapes | Shapes
+shapes | Formes
 .TP 2
 -
-text | Text
+text | Texte
 .TP 2
 -
-label | Label
+label | Étiquette
 .TP 2
 -
-magic | Magic
+magic | Magie
 .TP 2
 -
 undo | Défaire
@@ -575,30 +577,31 @@ undo | Défaire
 redo | Refaire
 .TP 2
 -
-eraser | Eraser
+eraser | Gomme
 .TP 2
 -
-new | New
+new | Nouveau
 .TP 2
 -
-open | Open
+open | Ouvrir
 .TP 2
 -
-save | Save
+save | Sauvegarder
 .TP 2
 -
-pgsetup | Print (dialog)
+pgsetup | Boîte de dialogue de l'imprimante
 .TP 2
 -
-print | Print (immediate)
+print | Imprimer (immédiat)
 .RE
 .PD
 
 .TP 8
 .B \-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
-A set of joystick button numbers, as seen by SDL, that should be ignored.
-Otherwise, unless they are used by one of the "--joystick-btn-..." options
-above, buttons will be seen as a mouse left-click.  Comma-separated.
+Un ensemble de numéros de boutons du joystick, comme vu par SDL, qui
+doivent être ignorés. Sinon, à moins qu'ils ne soient utilisés par
+l'une des options "--joystick-btn-..." ci-dessus, les boutons seront
+considérés comme un clic gauche de la souris.
 
 .SH OPTIONS - PRINTING
 .l
@@ -674,24 +677,24 @@ over the old file, or create a new file.  This prompt can be disabled with
 
 .SS SAVE AND EXPORT DIRECTORIES
 .TP 8
-.B \-\-savedir \fIDIR\fP
-Specify where Tux Paint should save and load its drawings.
+.B \-\-savedir \fIRÉPERTOIRE\fP
+La base où Tux Paint sauvegarde et lit les dessins des utilisateurs.
 
 .TP 8
-.B \-\-exportdir \fIDIR\fP
+.B \-\-exportdir \fIRÉPERTOIRE\fP
 Specify where Tux Paint should export drawings and animations.
 
 .SS MORE SAVING OPTIONS
 .TP 8
 .B \-\-nosave \-\-save
-The --nosave option disables Tux Paint's ability to save files. This can be
-used in situations where the program is only being used for fun, or in a
-test environment.
+Cette option --nosave désactive la possibilité de sauvegarder des
+fichiers avec Tux Paint. On peut l'utiliser dans le cas où le programme
+est utilisé juste pour le fun, ou dans un environnement de tests.
 
 .TP 8
 .B \-\-autosave \-\-noautosave
-The --autosave option prevents Tux Paint from asking whether you want to
-save the current picture when quitting, and assumes you do.
+Cette option --autosave empêche Tux Paint de vous demander si vous voulez
+sauvegarder l'image quand vous quittez, et suppose que vous le faites.
 
 .SH OPTIONS - DATA FILES
 .l
@@ -700,9 +703,9 @@ data (stamps, brushes, etc.)  They can be used along with, instead of, or
 to override options set in configuration files. (See below.)
 
 .TP 8
-.B \-\-datadir \fIDIR\fP
-Specify where Tux Paint should look for personal data files (brushes,
-stamps, etc.).
+.B \-\-datadir \fIRÉPERTOIRE\fP
+Spécifie l'endroit où Tux Paint ira rechercher les fichiers de données
+personnelles (pinceaux, tampons, etc ...).
 
 .TP 8
 .B \-\-colorfile \fIFILE\fP
@@ -1136,7 +1139,7 @@ zulu
 
 .TP 8
 .B \-\-lang help
-Display a lists of all supported languages.
+Affiche une liste de toutes les langues supportées.
 
 .TP 8
 .B \-\-mirrorstamps \-\-dontmirrorstamps
@@ -1144,7 +1147,7 @@ With "--mirrorstamps" set, stamps which can be mirrored will appear
 mirrored by default.  This can be useful when used by people who prefer
 things right-to-left over left-to-right.
 
-.SS FONTS
+.SS FONTES
 .TP 8
 .B \-\-nosysfonts \-\-sysfonts
 Tux Paint normally attempts to search for additional TrueType Fonts
@@ -1177,9 +1180,9 @@ By default, Tux Paint uses a lockfile (stored in the user's local Tux Paint dire
 
 .SH ENVIRONMENT
 .ad l
-While Tux Paint may refer to a number of environment variables indirectly
-(e.g., via SDL(3)), it directly accesses the following: (See "FILES" below,
-as well.)
+Alors que Tux Paint interprète plusieurs variables d'environnement
+indirectement (par ex. via SDL(3)), il accède directement aux variables
+suivantes (voir "FILES" ci-dessous) :
 .PP
 .TP 8
 .B HOME
@@ -1188,7 +1191,7 @@ within Tux Paint, to keep track of the current image, when quitting and
 restarting Tux Paint, and to get the user's configuration file.
 
 .TP 8
-.B LANG, LC_ALL, LANGUAGE, and LC_MESSAGES
+.B LANG, LC_ALL, LANGUAGE et LC_MESSAGES
 to determine language to use, if setlocale(3) refers to "LC_MESSAGES".
 
 .TP 8
@@ -1233,9 +1236,10 @@ Paint.  Overridden via the "--savedir" option.
 .RE
 .TP 8
 .B $HOME/.tuxpaint/current_id.txt
-A reference to the image which was being edited when Tux Paint was last
-quit.  (This image is automatically loaded the next time Tux Paint is
-re-run, unless the "--startblank" option is set.)
+Une référence de l'image qui a était éditée quand Tux Paint a été
+fermé la dernière fois.(Cette image sera rechargée automatiquement la
+prochaine fois que vous exécuterez Tux Paint -- à moins que
+l'option"--startblank" ait été activée.)
 .RS
 .PP
 (Created when Tux Paint is Quit.)
@@ -1261,7 +1265,7 @@ named "XDG_PICTURES_DIR" is found, it will be used as the location to
 export images. If all else fails, then "$HOME/Pictures/" will be used.  A
 "TuxPaint" subdirectory will be created.
 .TP 8
-.B $XDG_DATA_HOME/Trash/ or $HOME/.local/share/Trash/
+.B $XDG_DATA_HOME/Trash/ ou $HOME/.local/share/Trash/
 A directory where images are placed when the Erase option is used from the
 Open dialog.
 
@@ -1274,7 +1278,7 @@ any later version.
 .SH OTHER INFO
 See the documentation that comes with Tux Paint for further instructions on using the program's features.
 
-The canonical place to find Tux Paint information is at
+L'endroit normal pour trouver les informations sur Tux Paint se trouve à
 .nh
 http://www.tuxpaint.org/.
 .hy
@@ -1537,7 +1541,7 @@ Martin Zhekov,
 and
 Huang Zuzhen.
 
-.SH SEE ALSO
+.SH VOIR AUSSI
 .BR tuxpaint-import (1),
 .BR tuxpaint-config (1),
 .BR tp-magic-config (1),

@@ -348,7 +348,8 @@ Sauvegarde
            Ou utilisez Tux Paint Config. et assurez-vous que "Demander avant
            d'écraser" (sous "Sauvegarde") est vérifié.
 
-           Also, see "Tux Paint always saves over my old picture!", above.
+           Également voyez "Tux Paint sauvegarde en écrasant toujours mon
+           ancienne image !", ci-dessus.
 
      ----------------------------------------------------------------------
 
