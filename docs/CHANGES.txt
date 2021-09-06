@@ -8,9 +8,15 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.5 (0.9.27)
+2021.September.6 (0.9.27)
   * New Magic Tools:
     ----------------
+    * "Opposite" -- Change parts of the picture to their complementary
+      colors.  (Similar to "Negative", but instead of inverting the
+      Red, Green, and Blue components, it rotates the Hue 180 degrees
+      while leaving Saturation and Lightness alone.)
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/136/)
+
     * "Panels" - Convert your picture to 4-panel-comic-style
       2x2 image, repeating the original.  (Repeat for "compound eye"
       style effects!)

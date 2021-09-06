@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-05 14:49-0700\n"
+"POT-Creation-Date: 2021-09-06 01:34-0700\n"
 "PO-Revision-Date: 2014-06-10 11:45+0100\n"
 "Last-Translator: Solomon Gizaw <solohavi@yahoo.com>\n"
 "Language-Team: none\n"
@@ -476,7 +476,7 @@ msgstr "አዲስ "
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8181
+#: ../tools.h:98 ../tuxpaint.c:8182
 msgid "Open"
 msgstr "ክፈት "
 
@@ -618,227 +618,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "እሺ አሁን... ይህንን መሳል እንቀጥል! "
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../tuxpaint.c:2191
 msgid "Do you really want to quit?"
 msgstr "ጨርሶ ለማቆም በርግጠኝነት ፈልገሃል? "
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../tuxpaint.c:2194
 msgid "Yes, I’m done!"
 msgstr "አዎ ጨርሻለሁ!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../tuxpaint.c:2197 ../tuxpaint.c:2224
 msgid "No, take me back!"
 msgstr "አይ እንደገና መልሰኝ! "
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../tuxpaint.c:2201
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ጨርስህ ከወጣህ ስዕልህን ታጣለህ! ይቀመጥ? "
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
 msgid "Yes, save it!"
 msgstr "አዎ አስቀምጠው! "
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "No, don’t bother saving!"
 msgstr "አይ ለማስቀመጥ አትጨነቅ! "
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2206
 msgid "Save your picture first?"
 msgstr "መጀመሪያ ስዕልህን አሰቀምጥ? "
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../tuxpaint.c:2211
 msgid "Can’t open that picture!"
 msgstr "ያንን ስዕል መክፈት አይቻልም!  "
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2214 ../tuxpaint.c:2219 ../tuxpaint.c:2228 ../tuxpaint.c:2235
+#: ../tuxpaint.c:2244 ../tuxpaint.c:2249
 msgid "OK"
 msgstr "እሺ "
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../tuxpaint.c:2218
 msgid "There are no saved files!"
 msgstr "የተቀመጡ ስዕሎች የሉም! "
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../tuxpaint.c:2222
 msgid "Print your picture now?"
 msgstr "ስዕልህ አሁን ይታተም? "
 
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2223
 msgid "Yes, print it!"
 msgstr "አዎ ይታተም! "
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../tuxpaint.c:2227
 msgid "Your picture has been printed!"
 msgstr "ስዕልህ ታትሞዋል! "
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../tuxpaint.c:2231
 msgid "Sorry! Your picture could not be printed!"
 msgstr "እናዝናለን ስዕልህ ሊታተም አልቻለም! "
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../tuxpaint.c:2234
 msgid "You can’t print yet!"
 msgstr "አሁንም ማተም አትችልም! "
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2238
 msgid "Erase this picture?"
 msgstr "ይህ ስዕል ይጥፋ? "
 
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2239
 msgid "Yes, erase it!"
 msgstr "አዎ አጥፋው! "
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2240
 msgid "No, don’t erase it!"
 msgstr "አይ አታጥፋው! "
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#: ../tuxpaint.c:2243
 msgid "Remember to use the left mouse button!"
 msgstr "የግራ መዳፊት አዝራር መጠቀም አስታውስ!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../tuxpaint.c:2247
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "ስዕልህ ታትሞዋል! "
 
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "ስዕልህ ታትሞዋል! "
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2252
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "እናዝናለን ስዕልህ ሊታተም አልቻለም! "
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "እናዝናለን ስዕልህ ሊታተም አልቻለም! "
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2257
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "የምትፈልገውን ስዕል ምረጥና “ማጫወት” የሚለውን  ጠቅ አድርግ። "
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2466
 msgid "Sound muted."
 msgstr "ድምጹ የጠፋ። "
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2471
 msgid "Sound unmuted."
 msgstr "ድምጹ የሚሰማ። "
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../tuxpaint.c:3248
 msgid "Please wait…"
 msgstr "እባክዎ ይጠብቁ... "
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8184
+#: ../tuxpaint.c:8185
 msgid "Erase"
 msgstr "ማጥፉት "
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8187
+#: ../tuxpaint.c:8188
 msgid "Slides"
 msgstr "ስላይዶች "
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8190
+#: ../tuxpaint.c:8191
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8193
+#: ../tuxpaint.c:8194
 msgid "Back"
 msgstr "ወደኋላ "
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8196
+#: ../tuxpaint.c:8197
 msgid "Play"
 msgstr "ማጫወት "
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8199
+#: ../tuxpaint.c:8200
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8202
+#: ../tuxpaint.c:8203
 msgid "Next"
 msgstr "ቀጥል  "
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8950
+#: ../tuxpaint.c:8969
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12591
+#: ../tuxpaint.c:12610
 msgid "Yes"
 msgstr "አዎ "
 
-#: ../tuxpaint.c:12595
+#: ../tuxpaint.c:12614
 msgid "No"
 msgstr "አይደለም "
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13734
+#: ../tuxpaint.c:13756
 msgid "Replace the picture with your changes?"
 msgstr "ከለውጥህ  ጋር ስዕሉ ይተካ? "
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13738
+#: ../tuxpaint.c:13760
 msgid "Yes, replace the old one!"
 msgstr "አዎ የድሮውን ተካ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13742
+#: ../tuxpaint.c:13764
 msgid "No, save a new file!"
 msgstr "አይ አዲስ ፋይል አስቀምጥ! "
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15005
+#: ../tuxpaint.c:15027
 msgid "Choose the picture you want, then click “Open”."
 msgstr "የምትፈልገውን ስዕል ምረጥና “መክፈት” የሚለውን  ጠቅ አድርግ። "
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16431
+#: ../tuxpaint.c:16453
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24137
+#: ../tuxpaint.c:24159
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24149
+#: ../tuxpaint.c:24171
 msgid "Pick a color."
 msgstr "ቀለም ምረጥ "
 
@@ -1261,19 +1261,39 @@ msgstr "የስዕልህን  የተለያየ ክፍሎች ላይ ያልተስተ�
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "የስዕልህ ሁሉም ክፍል ላይ  ያልተስተካከለ ውሁድ ስዕል ለመጨመር ጠቅ አድርግ። "
 
-#: ../../magic/src/negative.c:94
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "ቅንስ "
 
-#: ../../magic/src/negative.c:101
+#: ../../magic/src/negative.c:73
+msgid "Opposite"
+msgstr ""
+
+#: ../../magic/src/negative.c:78
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "ስእሉን የጠቆረ ፊልም ለማድረግ አዝራሩን ጠቅ አድርገውና  በዙሪያው አንቀሳቅስ። "
 
-#: ../../magic/src/negative.c:103
+#: ../../magic/src/negative.c:79
 msgid "Click to turn your painting into its negative."
 msgstr "ስእሉን ወደ ጠቆረ ፊልም ለመለወጥ አዝራሩን ጠቅ አድርገው። "
+
+#: ../../magic/src/negative.c:82
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
+msgid ""
+"Click and drag the mouse around to change colors to their opposites -- their "
+"complementary colors."
+msgstr "የስዕልህን የተለያዩ ክፍሎች ቀለም ለመለወጥ አዝራሩን ጠቅ አድርግና በዙሪያው አንቀሳቅስ። "
+
+#: ../../magic/src/negative.c:83
+msgid ""
+"Click to turn all colors in your painting into their opposites -- their "
+"complementary colors."
+msgstr ""
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
