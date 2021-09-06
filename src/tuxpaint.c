@@ -8846,7 +8846,7 @@ static void draw_brushes(void)
               dest.y = ui_btn_y + button_h - img_brush_dir->h;
               SDL_BlitSurface(img_brush_dir, NULL, screen, &dest);
             }
-          if (brushes_frames[brush] > 1)
+          if (brushes_frames[brush] != 1)
             {
               dest.x = ui_btn_x;
               dest.y = ui_btn_y + button_h - img_brush_anim->h;
