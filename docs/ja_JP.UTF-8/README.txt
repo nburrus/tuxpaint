@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年8月31日
+                                   2021年9月 5日
 
      ----------------------------------------------------------------------
 
@@ -171,6 +171,22 @@ Tux Paint の起動
                  右側のセレクタから筆の種類を、下のパレットから色を選んで、フリーハンドで描画します。
 
                  ボタンを押したままマウスを動かすと、描画できます。
+
+                 Some brushes are animated — they change their shape as you
+                 draw them. A good example of this is the vines brush that
+                 ships with Tux Paint. These brushes will have a small
+                 "filmstrip" icon drawn on their Selector buttons.
+
+                 Other brushes are directional — they will draw a different
+                 shape depending on what direction you are painting with
+                 them. An example of this is the arrow brush that ships with
+                 Tux Paint. These brushes have a small 8-way arrow icon drawn
+                 on their Selector buttons.
+
+                 Finally, some brushes can be both direction and animated.
+                 Examples of this are the cat and squirrel brushes that ship
+                 with Tux Paint. These brushes will have both the "filmstrip"
+                 and 8-way arrow icons.
 
                  描画中にはサウンドが流れます。筆の大きさが大きいほど、低い音になります。
 

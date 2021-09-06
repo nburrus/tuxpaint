@@ -6,7 +6,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                              31 de Agosto de 2021
+                             5 de Setembro de 2021
 
      ----------------------------------------------------------------------
 
@@ -225,6 +225,22 @@ Ferramentas dispoñíbeis
 
                  Se mantén premido o botón do rato e move o rato, irá
                  debuxando a medida que se move.
+
+                 Some brushes are animated — they change their shape as you
+                 draw them. A good example of this is the vines brush that
+                 ships with Tux Paint. These brushes will have a small
+                 "filmstrip" icon drawn on their Selector buttons.
+
+                 Other brushes are directional — they will draw a different
+                 shape depending on what direction you are painting with
+                 them. An example of this is the arrow brush that ships with
+                 Tux Paint. These brushes have a small 8-way arrow icon drawn
+                 on their Selector buttons.
+
+                 Finally, some brushes can be both direction and animated.
+                 Examples of this are the cat and squirrel brushes that ship
+                 with Tux Paint. These brushes will have both the "filmstrip"
+                 and 8-way arrow icons.
 
                  Mentres debuxa, soa un son. Canto maior sexa o pincel, menor
                  será o ton.

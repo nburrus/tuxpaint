@@ -6,7 +6,7 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 août 31, 2021
+                               septembre 5, 2021
 
      ----------------------------------------------------------------------
 
@@ -234,6 +234,22 @@ Outils disponibles
                  Si vous maintenez le bouton de la souris enfoncé et déplacez
                  la souris, elle dessine au fur et à mesure que vous vous
                  déplacez.
+
+                 Some brushes are animated — they change their shape as you
+                 draw them. A good example of this is the vines brush that
+                 ships with Tux Paint. These brushes will have a small
+                 "filmstrip" icon drawn on their Selector buttons.
+
+                 Other brushes are directional — they will draw a different
+                 shape depending on what direction you are painting with
+                 them. An example of this is the arrow brush that ships with
+                 Tux Paint. These brushes have a small 8-way arrow icon drawn
+                 on their Selector buttons.
+
+                 Finally, some brushes can be both direction and animated.
+                 Examples of this are the cat and squirrel brushes that ship
+                 with Tux Paint. These brushes will have both the "filmstrip"
+                 and 8-way arrow icons.
 
                  Pendant que vous dessinez, un son est joué. Plus la brosse
                  est grosse, plus le son est grave.
