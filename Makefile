@@ -80,37 +80,36 @@ endif
 #   <HOSTROOT>/lib/pkgconfig  *.pc files.
 #
 ifdef HOST
-  ifndef HOSTROOT
-    $(error Must set HOSTROOT to cross compile)
-  endif
-  ifeq ($(wildcard $(HOSTROOT)/.),)
-    $(error Invalid HOSTROOT: $(HOSTROOT))
-  endif
+  ifdef HOSTROOT
+    ifeq ($(wildcard $(HOSTROOT)/.),)
+      $(error Invalid HOSTROOT: $(HOSTROOT))
+    endif
 
-  ifeq ($(HOST),iphoneos)
-    OS:=ios
-    CC:=$(shell xcrun --sdk iphoneos -f clang)
-    SDK:=iphoneos
-    ARCHS:=arm64 armv7s armv7
-    MINVER:=9.0
-    MINVEROPT:=-miphoneos-version-min=$(MINVER)
-    SDKROOT:=$(shell xcrun --sdk iphoneos --show-sdk-path)
-  else ifeq ($(HOST),iphonesimulator)
-    OS:=ios
-    CC:=$(shell xcrun --sdk iphonesimulator -f clang)
-    SDK:=iphonesimulator
-    ARCHS:=$(shell uname -m)
-    MINVER:=9.0
-    MINVEROPT:=-mios-simulator-version-min=$(MINVER)
-    SDKROOT:=$(shell xcrun --sdk iphonesimulator --show-sdk-path)
-  else
-    $(error Invalid HOST: $(HOST))
-  endif
+    ifeq ($(HOST),iphoneos)
+      OS:=ios
+      CC:=$(shell xcrun --sdk iphoneos -f clang)
+      SDK:=iphoneos
+      ARCHS:=arm64 armv7s armv7
+      MINVER:=9.0
+      MINVEROPT:=-miphoneos-version-min=$(MINVER)
+      SDKROOT:=$(shell xcrun --sdk iphoneos --show-sdk-path)
+    else ifeq ($(HOST),iphonesimulator)
+      OS:=ios
+      CC:=$(shell xcrun --sdk iphonesimulator -f clang)
+      SDK:=iphonesimulator
+      ARCHS:=$(shell uname -m)
+      MINVER:=9.0
+      MINVEROPT:=-mios-simulator-version-min=$(MINVER)
+      SDKROOT:=$(shell xcrun --sdk iphonesimulator --show-sdk-path)
+    else
+      $(error Invalid HOST for cross compilation: $(HOST))
+    endif
 
-  # We set PKG_CONFIG_LIBDIR instead of PKG_CONFIG_PATH because we want to
-  # *change* where pkg-config looks for .pc files instead of adding to the
-  # default path which may have libraries that aren't for HOST.
-  export PKG_CONFIG_LIBDIR:=$(HOSTROOT)/lib/pkgconfig
+    # We set PKG_CONFIG_LIBDIR instead of PKG_CONFIG_PATH because we want to
+    # *change* where pkg-config looks for .pc files instead of adding to the
+    # default path which may have libraries that aren't for HOST.
+    export PKG_CONFIG_LIBDIR:=$(HOSTROOT)/lib/pkgconfig
+  endif
 endif
 
 # change to sdl-console to build a console version on Windows
