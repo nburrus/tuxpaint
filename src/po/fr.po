@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-06 01:34-0700\n"
-"PO-Revision-Date: 2021-06-14 11:03+0200\n"
+"PO-Revision-Date: 2021-09-06 14:11+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1263,7 +1263,7 @@ msgstr "Négatif"
 
 #: ../../magic/src/negative.c:73
 msgid "Opposite"
-msgstr ""
+msgstr "Complémentaire"
 
 #: ../../magic/src/negative.c:78
 msgid "Click and drag the mouse around to make your painting negative."
@@ -1277,20 +1277,20 @@ msgstr "Clique pour obtenir tout le dessin en négatif."
 
 #
 #: ../../magic/src/negative.c:82
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
-msgstr "Clique et déplace la souris pour changer la couleur localement."
+msgstr ""
+"Clique et déplace la souris pour convertir les couleurs en leurs "
+"complémentaires."
 
 #: ../../magic/src/negative.c:83
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
 msgstr ""
+"Clique pour que toutes les couleurs soient converties en leur couleurs "
+"complémentaires."
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1312,7 +1312,7 @@ msgstr "Perspective"
 
 #: ../../magic/src/perspective.c:151
 msgid "Panels"
-msgstr ""
+msgstr "Panneaux"
 
 #: ../../magic/src/perspective.c:152
 msgid "Zoom"
@@ -1325,10 +1325,8 @@ msgstr ""
 
 #
 #: ../../magic/src/perspective.c:158
-#, fuzzy
-#| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
-msgstr "Clique pour obtenir tout le dessin en négatif."
+msgstr "Reproduis chaque image en 4 images identiques."
 
 #: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
