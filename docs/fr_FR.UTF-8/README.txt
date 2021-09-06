@@ -317,6 +317,12 @@ Outils disponibles
                  Relâchez la souris pour terminer la ligne. On entend alors
                  le son "sproing !".
 
+                 Some brushes are animated, and will show a pattern of shapes
+                 along the line. Others are directional, and will show a
+                 different shape depending on the angle of the brush. And
+                 finally some are both animated and directional. See "Paint",
+                 above, to learn more.
+
      ----------------------------------------------------------------------
 
          Outil "Formes"

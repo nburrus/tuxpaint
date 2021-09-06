@@ -294,6 +294,12 @@ Available Tools
                  Let go of the mouse to complete the line. A "sproing!" sound
                  will play.
 
+                 Some brushes are animated, and will show a pattern of shapes
+                 along the line. Others are directional, and will show a
+                 different shape depending on the angle of the brush. And
+                 finally some are both animated and directional. See "Paint",
+                 above, to learn more.
+
      ----------------------------------------------------------------------
 
          "Shapes" Tool

@@ -303,6 +303,12 @@ Ferramentas dispoñíbeis
 
                  Solte o rato para completar a liña. Soará un «chimpo».
 
+                 Some brushes are animated, and will show a pattern of shapes
+                 along the line. Others are directional, and will show a
+                 different shape depending on the angle of the brush. And
+                 finally some are both animated and directional. See "Paint",
+                 above, to learn more.
+
      ----------------------------------------------------------------------
 
          Ferramenta «Formas»

@@ -222,6 +222,12 @@ Tux Paint の起動
 
                  マウスを放すと、バネのような効果音とともに線が描画されます。
 
+                 Some brushes are animated, and will show a pattern of shapes
+                 along the line. Others are directional, and will show a
+                 different shape depending on the angle of the brush. And
+                 finally some are both animated and directional. See "Paint",
+                 above, to learn more.
+
      ----------------------------------------------------------------------
 
          「かたち」ツール
