@@ -89,6 +89,14 @@ $Id$
 
     * "Halftone" magic tool had the "Zoom" tool's icon.
 
+  * Ports & Building
+    ----------------
+    * Fix compilation error on Linux with HOST environment variable set.
+      Modifies the Makefile so it attempts to cross compile only when both
+      HOST and HOSTROOT environment variable (which are both required for
+      cross compilation) are set; avoid confusion when an unrelated
+      $HOST env. var. is set.
+      Mark K. Kim <markuskimius@gmail.com>
 
 2021.June.28 (0.9.26)
   * New Features
