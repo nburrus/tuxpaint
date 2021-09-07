@@ -36,10 +36,11 @@ Exigences
        (libSDL), une bibliothèque de programmation multimédia Open Source
        disponible sous la Licence publique générale limitée GNU (LGPL).
 
-       Avec libSDL, Tux Paint dépend d'un certain nombre d'autres
-       bibliothèques SDL : SDL_Image (pour les fichiers graphiques), SDL_TTF
-       et (en option) SDL_Pango (pour la prise en charge des polices True
-       Type) et, éventuellement, SDL_Mixer (pour les effets sonores).
+       Along with libSDL, Tux Paint depends on a number of other SDL 'helper'
+       libraries: SDL_Image (for graphics files), SDL_gfx (for some graphical
+       functions, like rotation), SDL_TTF and (optionally) SDL_Pango (for
+       True Type Font support) and, optionally, SDL_Mixer (for sound
+       effects).
 
     Utilisateurs de Linux/Unix :
 
@@ -49,6 +50,9 @@ Exigences
 
            * libSDL: http://www.libsdl.org/
            * SDL_Image: http://www.libsdl.org/projects/SDL_image/
+           * SDL_gfx:
+             https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
+             (https://sourceforge.net/projects/sdlgfx/)
            * SDL_TTF: http://www.libsdl.org/projects/SDL_ttf/
            * SDL_Pango: http://sourceforge.net/projects/sdlpango/ (optionnel)
            * SDL_Mixer: http://www.libsdl.org/projects/SDL_mixer/ (optionnel)

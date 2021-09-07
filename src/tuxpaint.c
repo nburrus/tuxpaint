@@ -402,6 +402,15 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "---------------------------------------------------"
 #endif
 
+#include "SDL_rotozoom.h"
+#if !defined(_SDL_rotozoom_h)
+#error "---------------------------------------------------"
+#error "If you installed SDL_gfx from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-gfx1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
+
 
 #ifndef NO_SDLPANGO
 
@@ -1810,6 +1819,7 @@ static SDL_Surface **img_brushes, **img_brushes_thumbs;
 static int *brushes_frames = NULL;
 static int *brushes_spacing = NULL;
 static short *brushes_directional = NULL;
+static short *brushes_rotate = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_fills[NUM_FILLS], *img_fill_names[NUM_FILLS];
@@ -1845,7 +1855,8 @@ enum
 
 static SDL_Surface *img_cur_brush;
 static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
-  img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
+  img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_rotate,
+  img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
 #define NUM_ERASERS 16          /* How many sizes of erasers
@@ -1925,7 +1936,7 @@ SDL_Joystick *joystick;
 
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
-static void blit_brush(int x, int y, int direction);
+static void blit_brush(int x, int y, int direction, int rotation, int * w, int * h);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 
@@ -5845,14 +5856,23 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
 
 
   direction = BRUSH_DIRECTION_NONE;
-  if (brushes_directional[cur_brush])
+  r = 0;
+  if (brushes_directional[cur_brush] || brushes_rotate[cur_brush])
     {
-      r = brush_rotation(x1, y1, x2, y2) + 22;
-      if (r < 0)
-        r = r + 360;
+      r = brush_rotation(x1, y1, x2, y2);
 
-      if (x1 != x2 || y1 != y2)
-        direction = (r / 45);
+      if (brushes_directional[cur_brush])
+        {
+          r = r + 22;
+          if (r < 0)
+            r = r + 360;
+          if (x1 != x2 || y1 != y2)
+            direction = (r / 45);
+        }
+      else
+        {
+          r = 270 - r;
+        }
     }
 
 
@@ -5878,12 +5898,12 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
           if (y1 > y2)
             {
               for (y = y1; y >= y2; y--)
-                blit_brush(x1, y, direction);
+                blit_brush(x1, y, direction, r, &w, &h);
             }
           else
             {
               for (y = y1; y <= y2; y++)
-                blit_brush(x1, y, direction);
+                blit_brush(x1, y, direction, r, &w, &h);
             }
 
           x1 = x1 + dx;
@@ -5899,7 +5919,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
         }
 
       for (y = y1; y <= y2; y++)
-        blit_brush(x1, y, direction);
+        blit_brush(x1, y, direction, r, &w, &h);
     }
 
   if (orig_x1 > orig_x2)
@@ -5944,9 +5964,10 @@ void reset_brush_counter(void)
  *
  * @param x X coordinate
  * @param y Y coordinate
- * @param direction BRUSH_DIRECTION_... being drawn
+ * @param direction BRUSH_DIRECTION_... being drawn (for compass direction brushes)
+ * @param rotation angle being drawn (for brushes which may rotate at any angle (0-360 degrees))
  */
-static void blit_brush(int x, int y, int direction)
+static void blit_brush(int x, int y, int direction, int rotation, int * w, int * h)
 {
   SDL_Rect src, dest;
 
@@ -6019,8 +6040,38 @@ static void blit_brush(int x, int y, int direction)
       src.w = img_cur_brush_w;
       src.h = img_cur_brush_h;
 
-      SDL_BlitSurface(img_cur_brush, &src, canvas, &dest);
+      if (img_cur_brush_rotate)
+        {
+          SDL_Surface * rotated_brush;
+
+          /* TODO: Cache these; discard them when the user changes the brush or alters its color */
+          /* FIXME: Account for src being within an animated brush! */
+          rotated_brush = rotozoomSurface(img_cur_brush, rotation, 1.0, SMOOTHING_ON);
+          if (rotated_brush != NULL)
+            {
+              src.x = 0;
+              src.y = 0;
+              src.w = rotated_brush->w;
+              src.h = rotated_brush->h;
+
+              dest.x = dest.x - (img_cur_brush_w >> 1) + (rotated_brush->w >> 1);
+              dest.y = dest.y - (img_cur_brush_h >> 1) + (rotated_brush->h >> 1);
+              dest.w = rotated_brush->w;
+              dest.h = rotated_brush->h;
+   
+              SDL_BlitSurface(rotated_brush, &src, canvas, &dest);
+    
+              SDL_FreeSurface(rotated_brush);
+            }
+        }
+      else
+        {
+          SDL_BlitSurface(img_cur_brush, &src, canvas, &dest);
+        }
     }
+
+    *w = src.w;
+    *h = src.h;
 }
 
 
@@ -6899,6 +6950,7 @@ static void loadbrush_callback(SDL_Surface * screen,
               img_brushes_thumbs = realloc(img_brushes_thumbs, num_brushes_max * sizeof *img_brushes_thumbs);
               brushes_frames = realloc(brushes_frames, num_brushes_max * sizeof(int));
               brushes_directional = realloc(brushes_directional, num_brushes_max * sizeof(short));
+              brushes_rotate = realloc(brushes_rotate, num_brushes_max * sizeof(short));
               brushes_spacing = realloc(brushes_spacing, num_brushes_max * sizeof(int));
             }
           img_brushes[num_brushes] = loadimage(fname);
@@ -6907,6 +6959,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 
           brushes_frames[num_brushes] = 1;
           brushes_directional[num_brushes] = 0;
+          brushes_rotate[num_brushes] = 0;
           brushes_spacing[num_brushes] = img_brushes[num_brushes]->h / 4;
 
           strcpy(strcasestr(fname, ".png"), ".dat"); /* FIXME: Use strncpy (ugh, complicated) */
@@ -6931,6 +6984,10 @@ static void loadbrush_callback(SDL_Surface * screen,
                       else if (strstr(buf, "directional") != NULL)
                         {
                           brushes_directional[num_brushes] = 1;
+                        }
+                      else if (strstr(buf, "rotate") != NULL)
+                        {
+                          brushes_rotate[num_brushes] = 1;
                         }
                       else if (strstr(buf, "random") != NULL)
                         {
@@ -8842,7 +8899,7 @@ static void draw_brushes(void)
 
           SDL_BlitSurface(img_brushes_thumbs[brush], &src, screen, &dest);
 
-          if (brushes_directional[brush])
+          if (brushes_directional[brush] || brushes_rotate[brush])
             {
               dest.x = ui_btn_x + button_w - img_brush_dir->w;
               dest.y = ui_btn_y + button_h - img_brush_dir->h;
@@ -10458,6 +10515,7 @@ static void render_brush(void)
   img_cur_brush_h = img_cur_brush->h / (brushes_directional[cur_brush] ? 3 : 1);
   img_cur_brush_frames = brushes_frames[cur_brush];
   img_cur_brush_directional = brushes_directional[cur_brush];
+  img_cur_brush_rotate = brushes_rotate[cur_brush];
   img_cur_brush_spacing = brushes_spacing[cur_brush];
 
   brush_counter = 0;
@@ -13073,6 +13131,7 @@ static void cleanup(void)
   free_surface_array(img_brushes_thumbs, num_brushes);
   free(brushes_frames);
   free(brushes_directional);
+  free(brushes_rotate);
   free(brushes_spacing);
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);

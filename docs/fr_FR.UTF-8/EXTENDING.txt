@@ -5,7 +5,7 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  mai 31, 2021
+                               septembre 6, 2021
 
      ----------------------------------------------------------------------
 
@@ -230,17 +230,27 @@ Pinceaux
          Ajoute une ligne contenant le mot "directional" au fichier de
          données brosse.
 
-    Pinceaux animés orientables
+    Rotating Brushes
 
-         Vous pouvez mélanger animation et orientation dans un même pinceau.
-         Utilisez les deux options ("frames=N" et "directional") en deux
-         lignes séparées dans le fichier ".dat" qui concerne le pinceau.
+         As of Tux Paint version 0.9.27, you may now create rotating brushes.
+         As the brush is used, it is rotated 360 degrees, depending on the
+         direction the brush is going.
 
-         Disposez le pinceau de manière à ce que chaque ensemble 3x3 de
-         formes orientables soit disposé sur une grande image PNG. Par
-         exemple, si le pinceau mesure 30x30 et qu'il y a 5 cadres, ce sera
-         450x90. (Les 150x90 pixels les plus à gauche de l'image représentent
-         les 9 formes de direction pour la première image, par exemple).
+         Ajoute une ligne contenant le mot "rotate" au fichier de données
+         brosse.
+
+    Animated Directional or Rotating Brushes
+
+         You may mix both animated and either directional or rotating
+         features into one brush. Use both options desired ("frames=N" and
+         "directional" or "rotate"), in separate lines in the brush's ".dat"
+         file.
+
+         For directional brushes, lay the brush out so that each 3x3 set of
+         directional shapes are laid out across a wide PNG image. For
+         example, if the brush is 30x30 and there are 5 frames, it would be
+         450x90. (The leftmost 150x90 pixels of the image represent the 9
+         direction shapes for the first frame, for example.)
 
      Placez les PNG de l'image du pinceau (et tous les fichiers texte de
      données) dans le répertoire "brushes".

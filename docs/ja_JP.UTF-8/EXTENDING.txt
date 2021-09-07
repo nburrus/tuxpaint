@@ -5,7 +5,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年5月31日
+                                   2021年9月 6日
 
      ----------------------------------------------------------------------
 
@@ -212,17 +212,26 @@ Brushes
          Add a line containing the word "directional" to the brush's data
          file.
 
-    Animated Directional Brushes
+    Rotating Brushes
 
-         You may mix both animated and directional features into one brush.
-         Use both options ("frames=N" and "directional"), in separate lines
-         in the brush's ".dat" file.
+         As of Tux Paint version 0.9.27, you may now create rotating brushes.
+         As the brush is used, it is rotated 360 degrees, depending on the
+         direction the brush is going.
 
-         Lay the brush out so that each 3x3 set of directional shapes are
-         laid out across a wide PNG image. For example, if the brush is 30x30
-         and there are 5 frames, it would be 450x90. (The leftmost 150x90
-         pixels of the image represent the 9 direction shapes for the first
-         frame, for example.)
+         Add a line containing the word "rotate" to the brush's data file.
+
+    Animated Directional or Rotating Brushes
+
+         You may mix both animated and either directional or rotating
+         features into one brush. Use both options desired ("frames=N" and
+         "directional" or "rotate"), in separate lines in the brush's ".dat"
+         file.
+
+         For directional brushes, lay the brush out so that each 3x3 set of
+         directional shapes are laid out across a wide PNG image. For
+         example, if the brush is 30x30 and there are 5 frames, it would be
+         450x90. (The leftmost 150x90 pixels of the image represent the 9
+         direction shapes for the first frame, for example.)
 
      Place the brush image PNGs (and any data text files) in the "brushes"
      directory.

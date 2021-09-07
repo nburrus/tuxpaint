@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - August 14, 2021
+# June 14, 2002 - September 6, 2021
 
 
 # The version number, for release:
@@ -285,6 +285,7 @@ CURSOR_SHAPES:=LARGE
 SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs)
 SDL_LIBS+=$(call linktest,SDL_image,-lSDL_image,$(SDL_LIBS))
 SDL_LIBS+=$(call linktest,SDL_ttf,-lSDL_ttf,$(SDL_LIBS))
+SDL_LIBS+=$(call linktest,SDL_gfx,-lSDL_gfx,$(SDL_LIBS))
 SDL_LIBS+=$(call linktest,zlib,-lz,)
 SDL_LIBS+=$(call linktest,libpng,$(PNG),)
 
@@ -965,6 +966,7 @@ install-dlls:
 	  cp $(MINGW_DIR)/bin/libpng12.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL_image.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_gfx.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL_mixer.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL_ttf.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/libfreetype-6.dll $(BIN_PREFIX); \
@@ -1352,6 +1354,7 @@ obj:
 
 MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 
+# FIXME: Expose SDL_rotozoom to Magic API? -bjk 2021.09.06
 windows_MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
