@@ -1,6 +1,6 @@
                      Creating Tux Paint Magic Tool Plugins
 
-          Copyright 2007-2018 by various contributors; see AUTHORS.txt
+          Copyright 2007-2021 by various contributors; see AUTHORS.txt
                             http://www.tuxpaint.org/
 
                         July 5, 2007 - February 20, 2021

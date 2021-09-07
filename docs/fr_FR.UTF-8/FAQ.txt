@@ -1,10 +1,25 @@
                                    Tux Paint
-                  version 0.9.26 Questions fréquemment posées
+                  version 0.9.27 Questions fréquemment posées
 
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  juin 2, 2021
+                                 août 29, 2021
+
+     ----------------------------------------------------------------------
+
+   +-----------------------------------+
+   |Table des matières                 |
+   |-----------------------------------|
+   |  * Liées au dessin                |
+   |  * Problèmes d'interface          |
+   |  * Impression                     |
+   |  * Sauvegarde                     |
+   |  * Problèmes audio                |
+   |  * Problèmes en mode plein écran  |
+   |  * Autres problèmes               |
+   |  * Aide / Contact                 |
+   +-----------------------------------+
 
      ----------------------------------------------------------------------
 
@@ -333,7 +348,8 @@ Sauvegarde
            Ou utilisez Tux Paint Config. et assurez-vous que "Demander avant
            d'écraser" (sous "Sauvegarde") est vérifié.
 
-           Also, see "Tux Paint always saves over my old picture!", above.
+           Également voyez "Tux Paint sauvegarde en écrasant toujours mon
+           ancienne image !", ci-dessus.
 
      ----------------------------------------------------------------------
 

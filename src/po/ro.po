@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "Language: ro\n"
@@ -271,112 +271,138 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "Pătrat"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "Dreptunghi"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "Cerc"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "Elipsă"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "Triunghi"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "Pentagon"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "Romb"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "Octagon"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "Un pătrat este un dreptunghi cu patru laturi egale."
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un dreptunghi are patru laturi şi patru unghiuri drepte."
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "Cercul este o linie curbă ale cărei puncte sunt egal depărtate de centru."
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "O elipsă este un cerc întins."
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "Un triunghi are trei laturi."
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "Un pentagon are cinci laturi."
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Un romb are patru laturi egale, iar laturile opuse sunt paralele."
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "Un octogon are opt laturi egale."
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"Alege o formă. Fă Click pentru a alege centrul, apoi dă-i drumul când va  "
+"avea dimensiunea dorită. Mişcă mouse-ul pentru a o roti şi fă Click pentru a "
+"o desena."
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"Alege o formă. Fă Click pentru a alege centrul, apoi dă-i drumul când va  "
+"avea dimensiunea dorită. Mişcă mouse-ul pentru a o roti şi fă Click pentru a "
+"o desena."
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -482,7 +508,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "Deschide"
 
@@ -516,20 +542,7 @@ msgstr "Alege o imagine pe care să o ştampilezi în jurul desenului."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Fă Click să începi trasarea liniei. Dă drumul pentru a o termina."
 
-#: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Alege o formă. Fă Click pentru a alege centrul, apoi dă-i drumul când va  "
-"avea dimensiunea dorită. Mişcă mouse-ul pentru a o roti şi fă Click pentru a "
-"o desena."
-
-#: ../tools.h:129
+#: ../tools.h:128
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -537,7 +550,7 @@ msgstr ""
 "Alege un stil de text. Fă Click pe desen apoi începe să tastezi.Apasă "
 "[Enter] sau [Tab] pentru a completa textul."
 
-#: ../tools.h:133
+#: ../tools.h:132
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
@@ -555,299 +568,294 @@ msgstr ""
 "şi făcând click pe o etichetă existentă, o poţi muta, edita şi schimba "
 "stilul său de text."
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "Click în desen pentru a umple acea zonă cu o culoare."
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Alege un efect magic pe care vrei să-l foloseşti în desen!"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "Înapoi!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "Refă!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "Radieră!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Alege o culoare sau o imagine cu care să începi un desen nou."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "Deschide…"
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "Imaginea ta a fost salvată!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "Imprim…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "La revedere!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "Ridică mâna de pe buton pentru a termina linia."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "Ţine apăsat butonul pentru a întinde forma."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mişcă mouse-ul pentru a roti forma. Fă Click pentru a o desena."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 #, fuzzy
 #| msgid "OK then… Let's keep drawing this one!"
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bine atunci… Hai să continuăm să o desenăm pe aceasta!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "Eşti sigur că vrei să părăseşti programul?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../tuxpaint.c:2195
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Da, am terminat!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "Nu, du-mă înapoi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../tuxpaint.c:2202
 #, fuzzy
 #| msgid "If you quit, you'll lose your picture! Save it?"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Dacă închizi, vei pierde pictura! Vrei să o salvezi?"
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "Da, salveaz-o!"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Nu, nu salva!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "Salvezi pictura mai întâi?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../tuxpaint.c:2212
 #, fuzzy
 #| msgid "Can't open that picture!"
 msgid "Can’t open that picture!"
 msgstr "Nu pot deschide acea pictură!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "Nu sunt fişiere salvate!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "Imprimi pictura acum?"
 
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "Da, imprim-o!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "Pictura ta a fost tipărită!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Imi pare rau! Pictura nu a putut fi imprimată!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../tuxpaint.c:2235
 #, fuzzy
 #| msgid "You can't print yet!"
 msgid "You can’t print yet!"
 msgstr "Nu poţi încă imprima!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "Ştergi pictura?"
 
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "Da, şterege-o!"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2241
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Nu, nu o şterge!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "Nu uita să foloseşti butonul din stânga al mouse-ului!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Pictura ta a fost tipărită!"
 
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Pictura ta a fost tipărită!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Imi pare rau! Pictura nu a putut fi imprimată!"
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Imi pare rau! Pictura nu a putut fi imprimată!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2258
 #, fuzzy
 #| msgid "Choose the pictures you want, then click 'Play'."
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Alege imaginile dorite, apoi fă Click pe 'Rulează'."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "Sunet oprit."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "Sunet pornit."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "Aşteaptă, te rog…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "Şterge"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "Diapozitive"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "Înapoi"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "Rulează"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "Următoroul"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "Da"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "Nu"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "Înlocuieşti pictura cu modificările tale?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "Da, înlocuieşte-o pe cea veche!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "Nu, salveaz-o ca fişier nou!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15053
 #, fuzzy
 #| msgid "Choose the picture you want, then click 'Open'."
 msgid "Choose the picture you want, then click “Open”."
@@ -856,15 +864,15 @@ msgstr "Alege imaginea dorită, apoi fă Click pe 'Deschide'."
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "Alege o culoare."
 
@@ -1142,11 +1150,11 @@ msgstr "Iarbă"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Click şi mişcă pentru a desena iarbă. Nu uita de murdărie!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
@@ -1322,19 +1330,39 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Click pentru a adăuga efect de mozaic neregulat întregii picturi."
 
-#: ../../magic/src/negative.c:94
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Negativ"
 
-#: ../../magic/src/negative.c:101
+#: ../../magic/src/negative.c:73
+msgid "Opposite"
+msgstr ""
+
+#: ../../magic/src/negative.c:78
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Click şi mişcă mouse-ul pentru a face pictura negativă."
 
-#: ../../magic/src/negative.c:103
+#: ../../magic/src/negative.c:79
 msgid "Click to turn your painting into its negative."
 msgstr "Click pentru a transforma imaginea ta în negativul ei."
+
+#: ../../magic/src/negative.c:82
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
+msgid ""
+"Click and drag the mouse around to change colors to their opposites -- their "
+"complementary colors."
+msgstr "Click și mișcă mausul pentru a schimba culoarea unor părți"
+
+#: ../../magic/src/negative.c:83
+msgid ""
+"Click to turn all colors in your painting into their opposites -- their "
+"complementary colors."
+msgstr ""
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1352,19 +1380,29 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Click pentru a adăuga efect de tumult întregii picturi."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "Perspectivă"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "Apropiere"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Click pe colţuri şi trage mouse-ul unde doreşti să întinzi pictura."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "Click pentru a transforma imaginea ta în negativul ei."
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Faceţi clic şi glisaţi în sus pentru a mări sau trageţi în jos pentru a "
@@ -1696,6 +1734,9 @@ msgstr "Click şi trage mouse-ul pentru a trasa săgeţi de artă stridentă."
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Click pentru a adăuga efect de mozaic întregii picturi."
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "Click în desen pentru a umple acea zonă cu o culoare."
 
 #~ msgid ""
 #~ "Click and drag to draw the blind, move left or right to open or close."

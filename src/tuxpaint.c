@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 19, 2021
+  June 14, 2002 - September 6, 2021
 */
 
 #include "platform.h"
@@ -417,6 +417,15 @@ static void mtw(wchar_t * wtok, char *tok)
 #error "If you installed SDL_ttf from a package, be sure"
 #error "to get the development package, as well!"
 #error "(e.g., 'libsdl-ttf1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
+
+#include "SDL2_rotozoom.h"
+#if !defined(_SDL2_rotozoom_h)
+#error "---------------------------------------------------"
+#error "If you installed SDL_gfx from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-gfx1.2-devel.rpm')"
 #error "---------------------------------------------------"
 #endif
 
@@ -1577,6 +1586,7 @@ static SDL_Surface *img_title, *img_title_credits, *img_title_tuxpaint;
 static SDL_Surface *img_btn_up, *img_btn_down, *img_btn_off, *img_btn_hold;
 static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down, *img_btnsm_hold;
 static SDL_Surface *img_btn_nav, *img_btnsm_nav;
+static SDL_Surface *img_brush_anim, *img_brush_dir;
 static SDL_Surface *img_prev, *img_next;
 static SDL_Surface *img_mirror, *img_flip;
 static SDL_Surface *img_dead40x40;
@@ -1914,6 +1924,7 @@ static SDL_Surface **img_brushes, **img_brushes_thumbs;
 static int *brushes_frames = NULL;
 static int *brushes_spacing = NULL;
 static short *brushes_directional = NULL;
+static short *brushes_rotate = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_fills[NUM_FILLS], *img_fill_names[NUM_FILLS];
@@ -1949,7 +1960,8 @@ enum
 
 static SDL_Surface *img_cur_brush;
 static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
-  img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_spacing;
+  img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_rotate,
+  img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
 #define NUM_ERASERS 16          /* How many sizes of erasers
@@ -2029,7 +2041,7 @@ SDL_Joystick *joystick;
 
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
-static void blit_brush(int x, int y, int direction);
+static void blit_brush(int x, int y, int direction, int rotation, int * w, int * h);
 static void stamp_draw(int x, int y);
 static void rec_undo_buffer(void);
 
@@ -2088,6 +2100,7 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2);
 static void redraw_tux_text(void);
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left);
 static void draw_tux_text_ex(int which_tux, const char *const str, int want_right_to_left, Uint8 locale_text);
+static void draw_cur_tool_tip(void);
 static void wordwrap_text(const char *const str, SDL_Color color, int left, int top, int right, int want_right_to_left);
 static void wordwrap_text_ex(const char *const str, SDL_Color color,
                              int left, int top, int right, int want_right_to_left, Uint8 locale_text);
@@ -2747,10 +2760,11 @@ static void mainloop(void)
                   else if (cur_tool == TOOL_FILL)
                     draw_fills();
 
-                  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+                  draw_cur_tool_tip();
 
                   /* FIXME: Make delay configurable: */
                   control_drawtext_timer(1000, tool_tips[cur_tool], 0);
+                  /* FIXME: May need to use draw_cur_tool_tip() here? -bjk 2021.09.06 */
 
                   magic_switchin(canvas);
                 }
@@ -3332,7 +3346,7 @@ static void mainloop(void)
 
                           /* FIXME: this "if" is just plain gross */
                           if (cur_tool != TOOL_TEXT)
-                            draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+                            draw_cur_tool_tip();
 
                           /* Draw items for this tool: */
 
@@ -3466,7 +3480,7 @@ static void mainloop(void)
                                   SDL_SetTextInputRect(&r_tir);
                                   SDL_StartTextInput();
                                 }
-                              draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+                              draw_cur_tool_tip();
 
                               if (num_font_families > 0)
                                 {
@@ -3573,7 +3587,7 @@ static void mainloop(void)
                               draw_toolbar();
                               update_screen_rect(&r_tools);
 
-                              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+                              draw_cur_tool_tip();
 
                               draw_colors(COLORSEL_REFRESH);
 
@@ -4592,7 +4606,7 @@ static void mainloop(void)
                               draw_toolbar();
                               update_screen_rect(&r_tools);
 
-                              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+                              draw_cur_tool_tip();
 
                               draw_colors(COLORSEL_FORCE_REDRAW);
 
@@ -4732,7 +4746,7 @@ static void mainloop(void)
                                                       event.button.x - r_canvas.x, event.button.y - r_canvas.y), 1);
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+                              draw_tux_text(TUX_GREAT, shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
                             }
                         }
                       else if (shape_tool_mode == SHAPE_TOOL_MODE_STRETCH)
@@ -4817,13 +4831,13 @@ static void mainloop(void)
 
                       fill_x = old_x;
                       fill_y = old_y;
-    
+
                       if (would_flood_fill(canvas, draw_color, canv_color))
                         {
                           int x1, y1, x2, y2;
                           SDL_Surface * last;
                           int undo_ctr;
-    
+
                           /* We only bother recording an undo buffer
                              (which may kill our redos) if we're about
                              to actually change the picture */
@@ -5474,7 +5488,7 @@ static void mainloop(void)
                                   SDL_Flip(screen);
 
                                   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-                                  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+                                  draw_tux_text(TUX_GREAT, shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
                                 }
                             }
                           else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
@@ -5487,7 +5501,7 @@ static void mainloop(void)
                                                       event.button.x - r_canvas.x, event.button.y - r_canvas.y), 1);
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+                              draw_tux_text(TUX_GREAT, shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
 
                               /* FIXME: Do something less intensive! */
 
@@ -5877,7 +5891,7 @@ static void mainloop(void)
                         undo_ctr = cur_undo - 1;
                       else
                         undo_ctr = NUM_UNDO_BUFS - 1;
-        
+
                       last = undo_bufs[undo_ctr];
 
                       /* Pushing button and moving: Update the gradient: */
@@ -6153,14 +6167,23 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
 
 
   direction = BRUSH_DIRECTION_NONE;
-  if (brushes_directional[cur_brush])
+  r = 0;
+  if (brushes_directional[cur_brush] || brushes_rotate[cur_brush])
     {
-      r = brush_rotation(x1, y1, x2, y2) + 22;
-      if (r < 0)
-        r = r + 360;
+      r = brush_rotation(x1, y1, x2, y2);
 
-      if (x1 != x2 || y1 != y2)
-        direction = (r / 45);
+      if (brushes_directional[cur_brush])
+        {
+          r = r + 22;
+          if (r < 0)
+            r = r + 360;
+          if (x1 != x2 || y1 != y2)
+            direction = (r / 45);
+        }
+      else
+        {
+          r = 270 - r;
+        }
     }
 
 
@@ -6186,12 +6209,12 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
           if (y1 > y2)
             {
               for (y = y1; y >= y2; y--)
-                blit_brush(x1, y, direction);
+                blit_brush(x1, y, direction, r, &w, &h);
             }
           else
             {
               for (y = y1; y <= y2; y++)
-                blit_brush(x1, y, direction);
+                blit_brush(x1, y, direction, r, &w, &h);
             }
 
           x1 = x1 + dx;
@@ -6207,7 +6230,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
         }
 
       for (y = y1; y <= y2; y++)
-        blit_brush(x1, y, direction);
+        blit_brush(x1, y, direction, r, &w, &h);
     }
 
   if (orig_x1 > orig_x2)
@@ -6252,9 +6275,10 @@ void reset_brush_counter(void)
  *
  * @param x X coordinate
  * @param y Y coordinate
- * @param direction BRUSH_DIRECTION_... being drawn
+ * @param direction BRUSH_DIRECTION_... being drawn (for compass direction brushes)
+ * @param rotation angle being drawn (for brushes which may rotate at any angle (0-360 degrees))
  */
-static void blit_brush(int x, int y, int direction)
+static void blit_brush(int x, int y, int direction, int rotation, int * w, int * h)
 {
   SDL_Rect src, dest;
 
@@ -6327,8 +6351,38 @@ static void blit_brush(int x, int y, int direction)
       src.w = img_cur_brush_w;
       src.h = img_cur_brush_h;
 
-      SDL_BlitSurface(img_cur_brush, &src, canvas, &dest);
+      if (img_cur_brush_rotate)
+        {
+          SDL_Surface * rotated_brush;
+
+          /* TODO: Cache these; discard them when the user changes the brush or alters its color */
+          /* FIXME: Account for src being within an animated brush! */
+          rotated_brush = rotozoomSurface(img_cur_brush, rotation, 1.0, SMOOTHING_ON);
+          if (rotated_brush != NULL)
+            {
+              src.x = 0;
+              src.y = 0;
+              src.w = rotated_brush->w;
+              src.h = rotated_brush->h;
+
+              dest.x = dest.x - (img_cur_brush_w >> 1) + (rotated_brush->w >> 1);
+              dest.y = dest.y - (img_cur_brush_h >> 1) + (rotated_brush->h >> 1);
+              dest.w = rotated_brush->w;
+              dest.h = rotated_brush->h;
+   
+              SDL_BlitSurface(rotated_brush, &src, canvas, &dest);
+    
+              SDL_FreeSurface(rotated_brush);
+            }
+        }
+      else
+        {
+          SDL_BlitSurface(img_cur_brush, &src, canvas, &dest);
+        }
     }
+
+    *w = src.w;
+    *h = src.h;
 }
 
 
@@ -7051,6 +7105,8 @@ void show_usage(int exitcode)
           "  [--disablescreensaver | --allowscreensaver ]\n"
           "  [--sound | --nosound]\n"
           "  [--stereo | --nostereo]\n"
+          "  [--buttonsize=N] (24-192; default=48)\n"
+          "  [--colorsrows=N] (1-3; default=1)\n"
           "  [--colorfile FILE]\n"
           "\n"
           " Mouse/Keyboard:\n"
@@ -7210,6 +7266,7 @@ static void loadbrush_callback(SDL_Surface * screen,
               img_brushes_thumbs = realloc(img_brushes_thumbs, num_brushes_max * sizeof *img_brushes_thumbs);
               brushes_frames = realloc(brushes_frames, num_brushes_max * sizeof(int));
               brushes_directional = realloc(brushes_directional, num_brushes_max * sizeof(short));
+              brushes_rotate = realloc(brushes_rotate, num_brushes_max * sizeof(short));
               brushes_spacing = realloc(brushes_spacing, num_brushes_max * sizeof(int));
             }
           img_brushes[num_brushes] = loadimage(fname);
@@ -7218,6 +7275,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 
           brushes_frames[num_brushes] = 1;
           brushes_directional[num_brushes] = 0;
+          brushes_rotate[num_brushes] = 0;
           brushes_spacing[num_brushes] = img_brushes[num_brushes]->h / 4;
 
           strcpy(strcasestr(fname, ".png"), ".dat"); /* FIXME: Use strncpy (ugh, complicated) */
@@ -7242,6 +7300,10 @@ static void loadbrush_callback(SDL_Surface * screen,
                       else if (strstr(buf, "directional") != NULL)
                         {
                           brushes_directional[num_brushes] = 1;
+                        }
+                      else if (strstr(buf, "rotate") != NULL)
+                        {
+                          brushes_rotate[num_brushes] = 1;
                         }
                       else if (strstr(buf, "random") != NULL)
                         {
@@ -9147,6 +9209,8 @@ static void draw_brushes(void)
 
       if (brush < num_brushes)
         {
+          int ui_btn_x, ui_btn_y;
+
           if (brushes_directional[brush])
             src.x = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / 3;
           else
@@ -9157,10 +9221,26 @@ static void draw_brushes(void)
           src.w = (img_brushes_thumbs[brush]->w / abs(brushes_frames[brush])) / (brushes_directional[brush] ? 3 : 1);
           src.h = (img_brushes_thumbs[brush]->h / (brushes_directional[brush] ? 3 : 1));
 
-          dest.x = ((i % 2) * button_w) + (WINDOW_WIDTH - r_ttoolopt.w) + ((button_w - src.w) >> 1);
-          dest.y = ((i / 2) * button_h) + r_ttoolopt.h + ((button_h - src.h) >> 1) + off_y;
+          ui_btn_x = ((i % 2) * button_w) + (WINDOW_WIDTH - r_ttoolopt.w);
+          ui_btn_y = ((i / 2) * button_h) + r_ttoolopt.h + off_y;
+
+          dest.x = ui_btn_x + ((button_w - src.w) >> 1);
+          dest.y = ui_btn_y + ((button_h - src.h) >> 1);
 
           SDL_BlitSurface(img_brushes_thumbs[brush], &src, screen, &dest);
+
+          if (brushes_directional[brush] || brushes_rotate[brush])
+            {
+              dest.x = ui_btn_x + button_w - img_brush_dir->w;
+              dest.y = ui_btn_y + button_h - img_brush_dir->h;
+              SDL_BlitSurface(img_brush_dir, NULL, screen, &dest);
+            }
+          if (brushes_frames[brush] != 1)
+            {
+              dest.x = ui_btn_x;
+              dest.y = ui_btn_y + button_h - img_brush_anim->h;
+              SDL_BlitSurface(img_brush_anim, NULL, screen, &dest);
+            }
         }
     }
 }
@@ -10765,6 +10845,7 @@ static void render_brush(void)
   img_cur_brush_h = img_cur_brush->h / (brushes_directional[cur_brush] ? 3 : 1);
   img_cur_brush_frames = brushes_frames[cur_brush];
   img_cur_brush_directional = brushes_directional[cur_brush];
+  img_cur_brush_rotate = brushes_rotate[cur_brush];
   img_cur_brush_spacing = brushes_spacing[cur_brush];
 
   brush_counter = 0;
@@ -11316,6 +11397,30 @@ static void draw_tux_text_ex(int which_tux, const char *const str, int want_righ
   update_screen_rect(&r_tuxarea);
 }
 
+
+/**
+ * Draw the current tool's tool tip.
+ * Mostly this comes from `tool_tips[]`, based on the current
+ * tool (`cur_tool`).  However, some tools have various
+ * context-specific strings to show:
+ *  - Fill: Describe the currently-selected fill mode (`fill_tips[]` from `fill_tools.h`)
+ *  - Shapes: Depends on "simple" vs "complex" shapes option (`shape_tool_tips[]` from `shapes.h`)
+ */
+static void draw_cur_tool_tip(void)
+{
+  if (cur_tool == TOOL_FILL)
+    {
+      draw_tux_text(tool_tux[cur_tool], fill_tips[cur_fill], 1);
+    }
+  else if (cur_tool == TOOL_SHAPES)
+    {
+      draw_tux_text(tool_tux[cur_tool], shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
+    }
+  else
+    {
+      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+    }
+}
 
 /**
  * FIXME
@@ -13413,6 +13518,7 @@ static void cleanup(void)
   free_surface_array(img_brushes_thumbs, num_brushes);
   free(brushes_frames);
   free(brushes_directional);
+  free(brushes_rotate);
   free(brushes_spacing);
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
@@ -13482,6 +13588,9 @@ static void cleanup(void)
 
   free_surface(&img_btn_nav);
   free_surface(&img_btnsm_nav);
+
+  free_surface(&img_brush_anim);
+  free_surface(&img_brush_dir);
 
   free_surface(&img_sfx);
   free_surface(&img_speak);
@@ -25595,6 +25704,9 @@ static void setup(void)
   img_btn_nav = loadimagerb(DATA_PREFIX "images/ui/btn_nav.png");
   img_btnsm_nav = loadimagerb(DATA_PREFIX "images/ui/btnsm_nav.png");
 
+  img_brush_anim = loadimagerb(DATA_PREFIX "images/ui/brush_anim.png");
+  img_brush_dir = loadimagerb(DATA_PREFIX "images/ui/brush_dir.png");
+
   img_sfx = loadimagerb(DATA_PREFIX "images/tools/sfx.png");
   img_speak = loadimagerb(DATA_PREFIX "images/tools/speak.png");
 
@@ -26118,7 +26230,7 @@ static void claim_to_be_ready(void)
 
   SDL_Flip(screen);
 
-  draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+  draw_cur_tool_tip();
 }
 
 /* ================================================================================== */

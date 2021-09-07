@@ -1,11 +1,11 @@
                                     Ampliar
                                    Tux Paint
-                                 versión 0.9.26
+                                 versión 0.9.27
 
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                               31 de Maio de 2021
+                             6 de Setembro de 2021
 
      ----------------------------------------------------------------------
 
@@ -221,17 +221,27 @@ Pinceis
          Engada unha liña que conteña a palabra «directional» ao ficheiro de
          datos debrush's.
 
-    Pinceis direccionais animados
+    Rotating Brushes
 
-         Pode mesturar funcións animadas e direccionais nun pincel. Use ambas
-         as opcións («frames=N» e «directional»), en liñas separadas no
-         ficheiro «.dat» do pincel.
+         As of Tux Paint version 0.9.27, you may now create rotating brushes.
+         As the brush is used, it is rotated 360 degrees, depending on the
+         direction the brush is going.
 
-         Coloque o pincel de xeito que cada conxunto de formas 3x3 de
-         dirección estea distribuído nunha ampla imaxe PNG. Por exemplo, se o
-         pincel ten 30x30 e hai 5 fotogramas, sería de 450x90. (Os píxeles
-         máis a esquerda de 150x90 da imaxe representan as 9 formas de
-         dirección do primeiro cadro, por exemplo).
+         Engada unha liña que conteña a palabra «rotate» ao ficheiro de datos
+         debrush's.
+
+    Animated Directional or Rotating Brushes
+
+         You may mix both animated and either directional or rotating
+         features into one brush. Use both options desired ("frames=N" and
+         "directional" or "rotate"), in separate lines in the brush's ".dat"
+         file.
+
+         For directional brushes, lay the brush out so that each 3x3 set of
+         directional shapes are laid out across a wide PNG image. For
+         example, if the brush is 30x30 and there are 5 frames, it would be
+         450x90. (The leftmost 150x90 pixels of the image represent the 9
+         direction shapes for the first frame, for example.)
 
      Coloque os ficheiros PNG de pincel (e calquera ficheiro de texto de
      datos) no directorio «brushes».

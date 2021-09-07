@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -262,65 +262,65 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "Cuadradu"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "Retàngulu"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "Tzircu"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "Ellisse"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "Triàngulu"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "Pentàgonu"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "Rombu"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "Otàgonu"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr "Istella"
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "Unu cuadradu est unu retàngulu cun lados uguales."
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "Unu retàngulu tenet bator lados e bator àngulos retos."
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -328,47 +328,73 @@ msgstr ""
 "dae su tzentru."
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "Un'ellisse est unu tzircu iscrefadu."
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "Unu triàngulu tenet tres lados."
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "Unu pentàgonu tenet chimbe lados."
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Unu rombu tenet bator lados uguales e parallelos a duos a duos."
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "Un'otàgonu tenet oto lados uguales."
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr "Un'istella a 3 puntas."
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr "Un'istella a 4 puntas."
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr "Un'istella a 5 puntas."
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"Sèbera una forma. Incarca pro cumintzare a disinnare, traga e iscapa cando "
+"bides sa mannària chi boles. Move su cursore pro rodeare e incarca pro "
+"disinnare."
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"Sèbera una forma. Incarca pro cumintzare a disinnare, traga e iscapa cando "
+"bides sa mannària chi boles. Move su cursore pro rodeare e incarca pro "
+"disinnare."
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr "Disinna formas dae su tzentru."
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr "Disinna formas dae un'àngulu."
 
@@ -474,7 +500,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "Aberi"
 
@@ -508,16 +534,7 @@ msgstr "Sèbera un'immagine pro timbrare su disinnu."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Incarca pro marcare una lìnia. Iscapa pro dda acabbare."
 
-#: ../tools.h:125
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Sèbera una forma. Incarca pro cumintzare a disinnare, traga e iscapa cando "
-"bides sa mannària chi boles. Move su cursore pro rodeare e incarca pro "
-"disinnare."
-
-#: ../tools.h:129
+#: ../tools.h:128
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
@@ -529,7 +546,7 @@ msgstr ""
 "Sèbera un'istile de testu. Incarca subra su disinnu pro cumintzare a "
 "digitare. Incarca [Bae] o [Tab] pro cumpletare su testu."
 
-#: ../tools.h:133
+#: ../tools.h:132
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -541,290 +558,285 @@ msgstr ""
 "de seletzione e incarchende subra un'eticheta chi esistet, dda podes mòvere, "
 "modificare e cambiare s'istile suo de testu."
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "Incarca subra s'immàgine pro colorare s'àrea."
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Sèbera un'efetu màgicu de impreare in su disinnu!"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "Iscontza!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "Torra·ddu a fàghere!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "Gomma!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Sèbera unu colore o un'immàgine pro cumintzare unu disinnu nou."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "Aberi..."
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "S'immàgine tua est sarvada!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "Imprentende..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "A si bìdere!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "Iscapa su butone pro cumpletare sa lìnia."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "Mantene incarcadu su butone pro allonghiare sa forma."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move su cursore pro rodeare sa forma. Incarca pro ddu disinnare."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Andat bene... Sighimus a disinnare custu!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "A beru boles essire?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../tuxpaint.c:2195
 msgid "Yes, I’m done!"
 msgstr "Eja, apo fatu!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "No, torra in segus!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si essis, as a pèrdere s'immàgine tua! Boles sarvare?"
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "Eja, sarva!"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 msgid "No, don’t bother saving!"
 msgstr "No, non bògio sarvare!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "Boles sarvare s'immàgine, prima?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "Impossìbile abèrrere s'immàgine!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "AB"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "Perunu archìviu sarvadu!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "Boles imprentare s'immàgine immoe?"
 
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "Eja, imprenta!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "Immàgine imprentada!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Impossìbile imprentare s'immàgine!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "Non podes ancora imprentare!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "Boles cantzellare s'immàgine?"
 
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "Eja, cantzella!"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2241
 msgid "No, don’t erase it!"
 msgstr "No, non bògio cantzellare!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "Regorda·ti de impreare su butone de manca de su cursore!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../tuxpaint.c:2248
 msgid "Your picture has been exported!"
 msgstr "Immàgine esportada!"
 
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2249
 msgid "Your slideshow GIF has been exported!"
 msgstr "GIF de presentatzione esportada!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2253
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Impossìbile esportare s'immàgine!"
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2254
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Impossìbile esportare sa GIF de presentatzione!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Sèbera is immàgines chi boles, poi incarca “Reprodue”."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "A sa muda."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "Sonu ativu."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "Iseta…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "Cantzella"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "Diapositivas"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr "Esporta"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "In segus"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "Reprodue"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr "Esporta GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "Sighi"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "Eja"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "Nono"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "Boles cambiare s'immàgine cun is mudas noas?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "Eja, càmbia dae sa de in antis!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "No, sarva un'archìviu nou!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Sèbera s'immàgine chi boles, poi incarca “Aberi”."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Seletziona duos o prus disinnos pro nde fàghere una GIF."
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr "Seletziona unu colore dae su disinnu."
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "Sèbera unu colore."
 
@@ -1069,11 +1081,11 @@ msgstr "Erba"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Incarca e traga pro disinnare s'erba. Regorda·ti sa terra!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr "Retinadura"
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Incarca e traga pro furriare su disinnu in unu giornale."
 
@@ -1227,18 +1239,40 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Incarca pro ddi agiùnghere unu mosàicu irregulare a totu s'immàgine."
 
-#: ../../magic/src/negative.c:94
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "Negativu"
 
-#: ../../magic/src/negative.c:101
+#: ../../magic/src/negative.c:73
+msgid "Opposite"
+msgstr ""
+
+#: ../../magic/src/negative.c:78
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Incarca e traga su cursore in tundu pro fàghere s'immàgine in negativu."
 
-#: ../../magic/src/negative.c:103
+#: ../../magic/src/negative.c:79
 msgid "Click to turn your painting into its negative."
 msgstr "Incarca pro furriare sa pintura a su negativu suo."
+
+#: ../../magic/src/negative.c:82
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to change the color of parts of your "
+#| "picture."
+msgid ""
+"Click and drag the mouse around to change colors to their opposites -- their "
+"complementary colors."
+msgstr ""
+"Incarca e traga su cursore in tundu pro modificare su colore de partes de "
+"s'immàgine."
+
+#: ../../magic/src/negative.c:83
+msgid ""
+"Click to turn all colors in your painting into their opposites -- their "
+"complementary colors."
+msgstr ""
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1254,20 +1288,30 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Incarca pro ddi agiùnghere unu remore a totu s'immàgine."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "Prospetiva"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "Ingrandimentu"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "Incarca subra de is àngulos e disinna in ue boles pro tirare s'immàgine."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "Incarca pro furriare sa pintura a su negativu suo."
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Incarca e traga a susu pro ingrandire o pro fàghere prus minore s'immàgine."
@@ -1578,3 +1622,6 @@ msgstr "Incarca e traga pro disinnare un'efetu XOR"
 #: ../../magic/src/xor.c:101
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Incarca pro disinnare un'efetu XOR in totu s'immàgine"
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "Incarca subra s'immàgine pro colorare s'àrea."

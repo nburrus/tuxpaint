@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2014-05-19 23:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -267,111 +267,135 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "चवकोन"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "समकोन"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "वाटकूळ"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "इलिप्सी (तांतया आकार)"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "त्रिकोण"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "पंचकोन"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "समभुज चवकोन"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "अश्टकोन"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "चवकोन हो चार समान बाजू आशिल्लो समकोन आसा"
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "समकोनाक चार बाजू आनी चार उजवे कोन आसात"
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "वाटकूळ हें वर्तूळ आसा जाचे सगळे बिंदू केंद्रा कडल्यान समान अंतराचेर आसतात."
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "इलिप्सी हें तांतया आकाराचें अशें ओडिल्लें वाटकूळ."
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "त्रिकोणाक तीन बाजू आसात."
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "पंचकोनाक पांच बाजू आसात."
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "समभुज चवकोनाक चार समान बाजू आसतात आनी सामकाराक आशिल्ल्यो बाजू समांतर आसतात."
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "अश्टकोनाक समान आठ बाजू आसतात."
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"एक आकार वींच. केंद्र वेंचूंक क्लिक करचें, ओडचें आनी मागीर तुमकां जाय तो आकार मेळ्ळ्या उपरांत तें "
+"सोडून दिवचें. तो घुंवडावूंक भोंवतणी व्हरचो आनी पिंतरांवक क्लिक करचें."
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"एक आकार वींच. केंद्र वेंचूंक क्लिक करचें, ओडचें आनी मागीर तुमकां जाय तो आकार मेळ्ळ्या उपरांत तें "
+"सोडून दिवचें. तो घुंवडावूंक भोंवतणी व्हरचो आनी पिंतरांवक क्लिक करचें."
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -477,7 +501,7 @@ msgstr "नवें"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "उगड"
 
@@ -511,19 +535,7 @@ msgstr "तुमच्या पिंत्रवणे भोंवतणी 
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "एक वळ पिंत्रांवक सुरवात करूंक क्लिक करचें. तें पूर्ण करूंक वचुंया."
 
-#: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"एक आकार वींच. केंद्र वेंचूंक क्लिक करचें, ओडचें आनी मागीर तुमकां जाय तो आकार मेळ्ळ्या उपरांत तें "
-"सोडून दिवचें. तो घुंवडावूंक भोंवतणी व्हरचो आनी पिंतरांवक क्लिक करचें."
-
-#: ../tools.h:129
+#: ../tools.h:128
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -531,7 +543,7 @@ msgstr ""
 "मजकुराची शैली निवडची. तुमच्या पिंतरावणेचेर क्लिक करचें आनी तुमी टंक करूंक सुरू करूं येता. मजकूर "
 "पूर्ण करूंक [समावेश] वा [टॅब] दामचो."
 
-#: ../tools.h:133
+#: ../tools.h:132
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
@@ -549,298 +561,293 @@ msgstr ""
 "केल्ल्यान, तुमी तो दुसरे कडेन व्हरूंक शकतात, संपादीत करूंक शकतात आनी ताच्या मजकुराची शैली "
 "बदलूंक शकतात."
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "पिंतुर रंगान भरूंक, ताच्या क्षेत्राचेर क्लिक करचें."
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "तुमच्या पिंतरावणेचेर वापरूंक जादवाचो प्रभाव वेंचचो."
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "रद्द कर !"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "परत करचें !"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "खोडरबर !"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "नवी पिंत्रावणी सुरू करूंक एक रंग वा पिंतुर वींच."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "उगड..."
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "तुमची प्रतिमा जगयल्या !"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "मुद्रण जावन आसा..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "बाय-बाय !"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "वळ पूर्ण करूंक बुतांवा वयल्यान कुशीक सरचें."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "आकार वाडोवंक बुतांवाक धरून रावचें."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "आकार घुंवडावूंक मावस दुसरे कडेन व्हरचो. पिंत्रावणी करूंक तो क्लिक करचो."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "जायत तर...आतां ही पिंत्रावणी करूयां"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "तुमी खऱ्यांनीच सोडून वचूंक सोदतात ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../tuxpaint.c:2195
 msgid "Yes, I’m done!"
 msgstr "हय, म्हजें काम  जालें !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "ना, म्हाका परत फाटीं व्हर !"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "तुमी सोडून गेल्यार, तुमचें पिंतुर तुमी होगडायतले! तें जगंव?"
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "हय, तें जगय !"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 msgid "No, don’t bother saving!"
 msgstr "ना, जगंवक सोधिनाका!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "तुमचें पिंतुर पयलें जगंव ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "तें पिंतुर उगडूंक शकना !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "जायत तर"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "थंय सांबाळिल्ल्यो फायली नात !"
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "तुमच्या पिंतुराचें आतां मुद्रण करूं ?"
 
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "हय, मुद्रण कर !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "तुमच्या पिंतुराचें मुद्रण केलां !"
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "माफ करचें, तुमच्या पिंतुराचें मुद्रण करूंक जालें ना !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "तुमी आजून मेरेन मुद्रण करूंक शकनात !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "हें पिंतुर फासूं येता ?"
 
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "हय, तें फासचें !"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2241
 msgid "No, don’t erase it!"
 msgstr "ना, तें फासचें न्हय !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "मावसाचो दावो बुतांव वापरूंक याद धरची !"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "तुमच्या पिंतुराचें मुद्रण केलां !"
 
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "तुमच्या पिंतुराचें मुद्रण केलां !"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "माफ करचें, तुमच्या पिंतुराचें मुद्रण करूंक जालें ना !"
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "माफ करचें, तुमच्या पिंतुराचें मुद्रण करूंक जालें ना !"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "तुमकां जाय आशिल्लीं पिंतुरां निवडचीं, आनी मागीर “चालू करचें” क्लिक करचें."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "आवाज मूक केला."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "आवाज परत सुरू केला."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "मात्शें रावचें..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "फासचें"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "स्लायडी"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "फाटीं"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "चालू करचें"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "फुडें"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "आ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "हय"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "ना"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "तुमी केल्ल्या बदला वरवीं पिंतुराचो बदल करूं ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "हय, पोरणें बदलचें !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "ना, एक नवी फायल सुरक्षित करची !"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "तुमकां जाय आशिल्लें पिंतुर निवडचें, आनी मागीर “उगडचें” क्लिक करचें."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "एक रंग वेंचचो."
 
@@ -1109,11 +1116,11 @@ msgstr "तण"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "तण पिंतरांवक क्लिक करून ओडचें. धुल्लाक विसरचे न्हय !"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
@@ -1279,19 +1286,39 @@ msgstr "तुमच्या पिंतुराच्या भागां�
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "तुमच्या पुराय पिंतुराक विशम कपयाळें जोडूंक क्लिक करचें."
 
-#: ../../magic/src/negative.c:94
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "नकारात्मक"
 
-#: ../../magic/src/negative.c:101
+#: ../../magic/src/negative.c:73
+msgid "Opposite"
+msgstr ""
+
+#: ../../magic/src/negative.c:78
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "तुमचें रंगवणी नकारात्मक करूंक, मावस क्लिक करून भोंवतणी व्हरचो."
 
-#: ../../magic/src/negative.c:103
+#: ../../magic/src/negative.c:79
 msgid "Click to turn your painting into its negative."
 msgstr "तुमचें रंगवणी नकारात्मक रुपांत बदलूंक क्लिक करचें."
+
+#: ../../magic/src/negative.c:82
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
+msgid ""
+"Click and drag the mouse around to change colors to their opposites -- their "
+"complementary colors."
+msgstr "तुमच्या पिंतुराच्या भागांचो रंग बदलूंक, मावस क्लिक करून भोंवतणी व्हरचो."
+
+#: ../../magic/src/negative.c:83
+msgid ""
+"Click to turn all colors in your painting into their opposites -- their "
+"complementary colors."
+msgstr ""
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1307,19 +1334,29 @@ msgstr "तुमच्या पिंतुराच्या भागां�
 msgid "Click to add noise to your entire picture."
 msgstr "तुमच्या पुराय पिंतुराक आवाज जोडूंक क्लिक करचें."
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "दृश्टीकोण"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "झूम"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "कोनश्यांचेर क्लिक करचें आनी तुमी पिंतुर खंय मेरेन वाडोवंक सोदतात थंय मेरेन ओडचें."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "तुमचें रंगवणी नकारात्मक रुपांत बदलूंक क्लिक करचें."
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "पिंतुर झूम इन करूंक वयर ओडचें आनी झूम आवट करूंक सकयल मेरेन ओडचें आनी क्लिक करचें."
 
@@ -1642,3 +1679,6 @@ msgstr "स्ट्रिंग कले वरवीं केल्ले �
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "तुमच्या पुराय पिंतुराक कपयाळ्याचो प्रभाव जोडूंक क्लिक करचें."
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "पिंतुर रंगान भरूंक, ताच्या क्षेत्राचेर क्लिक करचें."

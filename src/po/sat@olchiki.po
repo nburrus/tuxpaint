@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2013-07-27 14:50+0530\n"
 "Last-Translator: Prasanta Hembram <prasantahembram720@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -261,67 +261,67 @@ msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "ᱯᱩᱱ ᱥᱚᱢᱟᱱ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ, ᱯᱩᱱ ᱥᱤᱨᱟ"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "ᱟᱭᱟᱛ, ᱵᱟᱵᱟᱨ ᱥᱚᱢᱟᱱ ᱯᱩᱱ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "ᱜᱩᱞᱟᱸᱲ ᱛᱮᱭᱟᱨ"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "ᱢᱟᱨᱟᱝ ᱜᱩᱞᱟᱸᱲ ᱛᱮᱭᱟᱨ"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "ᱯᱮ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱛ ᱛᱮᱭᱟᱨ ᱠᱚᱸᱰ"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "ᱢᱚᱸᱲᱮ ᱜᱟᱨ ᱛᱮ ᱛᱮᱭᱟᱨ ᱮᱥᱮᱫ"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "ᱯᱩᱱ ᱜᱟᱨ ᱛᱮ ᱛᱮᱭᱟᱨᱟᱜ ᱛᱩᱨᱩᱭ ᱯᱟᱴ"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "ᱤᱨᱟᱹᱞ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱛ ᱛᱮᱭᱟᱨ ᱠᱷᱚᱸᱰ"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr "ᱤᱯᱤᱞ"
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "ᱯᱩᱱ ᱥᱚᱢᱟᱱ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ ᱫᱚ ᱯᱩᱱ ᱥᱚᱢᱟᱱ ᱥᱤᱨᱟᱹᱣᱟᱜ ᱟᱭᱟᱛ ᱠᱟᱱᱟ ᱾"
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr ""
 "ᱵᱟᱵᱟᱨ ᱥᱚᱢᱟᱱ ᱡᱤᱞᱤᱧ ᱜᱟᱫ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ ᱨᱮᱫᱚ ᱯᱩᱱ ᱫᱷᱟᱨᱮ ᱟᱨ ᱯᱩᱱᱭᱟ ᱡᱚᱡᱚᱢ ᱥᱮᱫᱟᱜ ᱠᱚᱸᱰ "
 "ᱠᱚ ᱢᱮᱱᱟᱜ ᱟ ᱾"
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -329,49 +329,61 @@ msgstr ""
 "ᱢᱮᱱᱟᱜ ᱟ ᱾"
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "ᱢᱟᱨᱟᱝ ᱜᱩᱞᱟᱸᱲ ᱛᱮᱭᱟᱨ ᱫᱚ ᱴᱟᱱᱟᱜᱟᱜ ᱜᱩᱞᱟᱸᱲ ᱠᱟᱱᱟ ᱾"
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "ᱯᱮ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱛᱮᱭᱟᱨ ᱮᱥᱮᱛ ᱨᱮᱫᱚ ᱯᱮᱭᱟ ᱫᱷᱟᱨᱮ ᱢᱮᱱᱟᱜ ᱟ ᱾"
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "ᱢᱚᱸᱲᱮ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱛᱮᱭᱟᱨ ᱮᱥᱮᱫ ᱨᱮᱫᱚ ᱢᱚᱲᱮ ᱫᱷᱟᱨᱮ ᱢᱮᱱᱟᱜ ᱟ ᱾"
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "ᱯᱩᱱ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨᱟᱜ ᱛᱩᱨᱩᱭ ᱯᱟᱴ ᱨᱮᱫᱚ ᱯᱩᱱ ᱥᱚᱢᱟᱱ ᱫᱷᱟᱨᱮ, ᱟᱨ ᱩᱞᱴᱟ ᱫᱷᱟᱨᱮ ᱥᱮᱫ "
 "ᱥᱚᱢᱟᱱ ᱥᱚᱢᱟᱱᱟ ᱾"
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "ᱤᱨᱟᱹᱞ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ ᱨᱮᱫᱚ ᱤᱨᱟᱹᱞ ᱥᱚᱢᱟᱱ ᱫᱷᱟᱨᱮ ᱢᱮᱱᱟᱜ ᱟ ᱾"
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr "ᱢᱤᱫᱴᱟᱹᱝ ᱤᱯᱤᱞ ᱥᱟᱞᱟᱜ ᱓ ᱴᱩᱰᱟᱹᱜ ᱠᱚ ᱾"
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr "ᱢᱤᱫᱴᱟᱹᱝ ᱤᱯᱤᱞ ᱥᱟᱞᱟᱜ ᱔ ᱴᱩᱰᱟᱹᱜ ᱠᱚ ᱾"
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr "ᱢᱤᱫᱴᱟᱹᱝ ᱤᱯᱤᱞ ᱥᱟᱞᱟᱜ ᱕ ᱴᱩᱰᱟᱹᱜ ᱠᱚ ᱾"
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+
+#: ../shapes.h:386
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -477,7 +489,7 @@ msgstr "ᱱᱟᱶᱟ"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "ᱨᱟᱲᱟ"
 
@@ -511,13 +523,7 @@ msgstr " ᱾ᱟᱢᱟᱜ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱵᱮᱦᱟᱭ ᱛᱮ ᱪ
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱜᱟᱨ ᱮᱦᱚᱵ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ. ᱪᱚᱞᱚ ᱱᱚᱣᱟ ᱯᱩᱨᱟᱹᱣ ᱞᱮᱜᱮ ᱾"
 
-#: ../tools.h:125
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-
-#: ../tools.h:129
+#: ../tools.h:128
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -525,7 +531,7 @@ msgstr ""
 "ᱚᱱᱚᱞ ᱨᱮᱭᱟᱜ ᱦᱩᱱᱟᱹᱨ ᱵᱟᱪᱷᱟᱣ ᱢᱮ ᱾ ᱟᱢᱟᱜ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ ᱟᱨ ᱟᱢ ᱴᱟᱤᱯ ᱮᱢ ᱮᱦᱚᱵ "
 "ᱫᱟᱲᱮᱭᱟᱜ ᱟ ᱾ ᱚᱱᱚᱞ ᱯᱩᱨᱟᱹᱣ ᱞᱟᱹᱜᱤᱫ  [Enter] ᱟᱨ ᱵᱟᱝ [Tab] ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../tools.h:133
+#: ../tools.h:132
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -537,291 +543,286 @@ msgstr ""
 "ᱵᱩᱛᱟᱹᱢ ᱵᱮᱵᱚᱦᱟᱨᱟᱛᱮ ᱟᱨ ᱢᱮᱱᱟᱜ ᱪᱤᱠᱷᱱᱟ ᱚᱛᱟᱣᱟᱛᱮ, ᱟᱢ ᱱᱚᱣᱟᱢ ᱞᱟᱲᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱟ, ᱱᱚᱣᱟ "
 "ᱥᱟᱥᱟᱯᱲᱟᱣ ᱢᱮ ᱟᱨ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱚᱱᱚᱞ ᱦᱩᱱᱟᱹᱨ ᱵᱚᱫᱚᱞ ᱢᱮ ᱾"
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "ᱚᱱᱟ ᱡᱟᱭᱜᱟ ᱨᱚᱝ ᱛᱮ ᱯᱮᱨᱮᱡ ᱞᱟᱹᱜᱤᱫ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ ᱾"
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "ᱟᱢᱟᱜ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱵᱮᱵᱚᱦᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱵᱷᱤᱞᱠᱤ ᱯᱚᱨᱵᱷᱟᱣ ᱞᱟᱴᱟᱯ ᱢᱮ!"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "ᱛᱟᱭᱚᱢ ᱥᱮᱫᱟᱜ ᱠᱟᱹᱢᱤ ᱧᱟᱢ ᱨᱩᱣᱟᱲ!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "ᱵᱟᱝ ᱯᱩᱨᱟᱹᱣᱟᱜ ᱫᱚᱦᱲᱟ ᱛᱮ ᱠᱟᱹᱢᱤ!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "ᱵᱟᱲᱤᱡᱟᱠ!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "ᱨᱚᱝ ᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱞᱟᱴᱟᱯ ᱢᱮ ᱚᱠᱟ ᱥᱟᱸᱣ ᱛᱮ ᱱᱟᱣᱟ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱮᱦᱚᱵ ᱞᱟᱹᱜᱤᱫ ᱾"
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "ᱡᱷᱤᱪ…"
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "ᱟᱢᱟᱜ ᱟᱦᱞᱟ ᱪᱤᱛᱟᱹᱨ ᱥᱟᱸᱪᱟᱣᱟᱠᱟ ᱛᱟᱦᱮᱱ ᱠᱟᱱᱟ!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "ᱪᱷᱟᱯᱟᱜ ᱠᱟᱱᱟᱟ…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "ᱵᱤᱫᱟᱹᱭ ᱪᱟᱞᱟᱣ!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "ᱪᱚᱞᱚ ᱜᱟᱨ ᱯᱩᱨᱟᱹᱣ ᱞᱟᱹᱜᱤᱫ ᱵᱩᱛᱟᱹᱢ ᱨᱮᱭᱟᱜ ᱨᱮ ᱾"
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "ᱵᱮᱱᱟᱣ ᱴᱟᱱᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱵᱩᱛᱟᱹᱢ ᱥᱟᱵ ᱢᱮ ᱾"
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr ""
 "ᱵᱮᱱᱟᱣ ᱜᱷᱩᱨᱱᱤ ᱟᱹᱪᱩᱨ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱞᱟᱲᱟᱣ ᱢᱮ ᱾ ᱱᱚᱣᱟ ᱜᱟᱨ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "ᱦᱚᱭ ᱛᱚᱵᱮᱮ ᱱᱚᱣᱟ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱫᱚᱦᱚᱭᱟ!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "ᱪᱮᱫ ᱟᱢ ᱥᱟᱨᱤ ᱜᱮ ᱵᱚᱱᱫᱚ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../tuxpaint.c:2195
 msgid "Yes, I’m done!"
 msgstr "ᱦᱚᱭ , ᱤᱧᱤᱧ ᱠᱟᱹᱢᱤ ᱠᱮᱫ ᱟ!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "ᱵᱟᱝᱟ, ᱛᱟᱭᱚᱢ ᱤᱫᱤᱧᱤᱧ ᱢᱮ!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ᱡᱩᱫᱤ ᱟᱢᱮᱢ ᱵᱚᱱᱫᱚ ᱭᱟ, ᱟᱢ ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨᱮᱢ ᱟᱫᱟ! ᱱᱚᱣᱟ ᱥᱟᱸᱪᱟᱣ ᱢᱮ?"
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "ᱦᱚᱭ, ᱱᱚᱣᱟ ᱥᱟᱸᱪᱟᱣ ᱢᱮ!"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 msgid "No, don’t bother saving!"
 msgstr "ᱵᱟᱝ, ᱥᱟᱸᱪᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱞᱚᱢ ᱫᱤᱠᱚᱜ ᱟ!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱯᱟᱹᱦᱤᱞ ᱥᱟᱸᱪᱟᱣ ᱢᱮ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "ᱚᱱᱟ ᱪᱤᱛᱟᱹᱨ ᱵᱟᱢ ᱡᱷᱤᱪ ᱫᱟᱲᱮᱭᱟᱜ ᱟ!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "ᱴᱷᱤᱠ"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "ᱱᱚᱰᱮ ᱡᱟᱦᱟᱱ ᱥᱟᱸᱪᱟᱣ ᱨᱮ ᱠᱚ ᱵᱟᱹᱱᱩᱜ ᱟ!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱱᱤᱛᱚᱜ ᱪᱷᱟᱯᱟᱭ ᱟᱢ ᱥᱮ?"
 
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "ᱦᱚᱭ, ᱱᱚᱣᱟ ᱪᱷᱟᱯᱟᱭ ᱢᱮ!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱪᱷᱟᱯᱟᱭᱮᱛ ᱠᱟᱱᱟ!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "ᱦᱟᱨᱩᱝ! ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱵᱟᱝ ᱪᱷᱟᱯᱟ ᱫᱟᱲᱮᱭᱟᱜ ᱟ!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "ᱟᱢ ᱱᱤᱫ ᱦᱟᱵᱤᱪ ᱵᱟᱢ ᱪᱷᱟᱯᱟ ᱫᱟᱲᱮᱭᱟᱜ ᱱᱟ!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "ᱱᱚᱣᱟ ᱪᱤᱛᱟᱹᱨ ᱵᱟᱹᱲᱤᱡ ᱢᱮ?"
 
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "ᱦᱚᱭ, ᱱᱚᱣᱟ ᱵᱟᱹᱲᱤᱡ ᱢᱮ!"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2241
 msgid "No, don’t erase it!"
 msgstr "ᱵᱟᱝᱟ, ᱱᱚᱣᱟ ᱟᱞᱚᱢ ᱵᱟᱹᱲᱤᱡᱟ!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "ᱞᱮᱸᱜᱟ ᱢᱟᱩᱥ ᱵᱩᱛᱟᱹᱢ ᱵᱮᱵᱚᱦᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱩᱭᱦᱟᱹᱨ ᱢᱮ!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../tuxpaint.c:2248
 msgid "Your picture has been exported!"
 msgstr ""
 
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2249
 msgid "Your slideshow GIF has been exported!"
 msgstr ""
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2253
 msgid "Sorry! Your picture could not be exported!"
 msgstr ""
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2254
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr ""
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ᱟᱢᱮᱢ ᱧᱟᱢ ᱠᱟᱱ ᱪᱤᱛᱟᱹᱨ ᱠᱚ ᱵᱟᱪᱷᱟᱣ ᱢᱮ, ᱤᱱᱟ ᱛᱟᱭᱚᱢ ᱢᱮᱱᱮᱪ ᱚᱛᱟᱭ ᱢᱮ ᱾ "
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "ᱥᱟᱰᱮ ᱛᱷᱤᱨ ᱦᱟᱱᱛᱟᱲ ᱾"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "ᱥᱟᱰᱮ ᱥᱟᱰᱮ ᱦᱚᱪᱚ ᱾"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "ᱫᱟᱭᱟᱠᱟᱛᱮ ᱛᱟᱺᱜᱤᱢᱮ ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "ᱵᱟᱹᱲᱤᱡ"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "ᱥᱟᱞᱟᱤᱰ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr "ᱵᱷᱮᱡᱟ"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "ᱛᱟᱭᱚᱢ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "ᱮᱱᱮᱪ"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr "GIF ᱵᱷᱮᱡᱟ"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "ᱤᱱᱟ ᱛᱟᱭᱚᱢ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "ᱟᱠᱷᱚᱨ ᱵᱟᱪᱷᱟᱣᱟᱠ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "ᱦᱮᱸ"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "ᱵᱟᱝ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "ᱟᱢᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ ᱥᱟᱸᱣ ᱪᱤᱛᱟᱹᱨ ᱥᱟᱦᱟᱭ ᱢᱮ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "ᱦᱚᱭ, ᱢᱟᱨᱮᱭᱟᱜ ᱥᱦᱟᱭ ᱢᱮ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "ᱵᱟᱝᱟ, ᱢᱤᱫ ᱱᱟᱣᱟ ᱨᱮᱫ ᱥᱟᱸᱪᱟᱣ ᱢᱮ!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ᱟᱢᱮᱢ ᱧᱟᱢ ᱠᱟᱱ ᱪᱤᱛᱟᱹᱨ ᱵᱟᱪᱷᱟᱣ ᱢᱮ, ᱤᱱᱟ ᱛᱟᱭᱚᱢ  ᱢᱡᱷᱤᱡ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "ᱮᱱᱤᱢᱮᱴᱮᱰ GIF ᱞᱟᱹᱜᱤᱫ ᱵᱟᱨᱭᱟ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ ᱛᱮᱭᱟᱨ ᱠᱚ ᱪᱚᱭᱚᱱ ᱢᱮ"
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr "ᱟᱢᱟᱜ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱠᱷᱚᱱ ᱨᱚᱝ ᱪᱚᱭᱚᱱ ᱢᱮ ᱾"
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "ᱢᱤᱫ ᱨᱚᱝ ᱞᱟᱴᱟᱯ ᱢᱮ ᱾"
 
@@ -1067,11 +1068,11 @@ msgstr "ᱜᱷᱟᱸᱥ"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "ᱜᱷᱟᱸᱥ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱞᱟᱲᱟᱣ ᱟᱨ ᱚᱛᱟ. ᱚᱡᱨᱟ ᱟᱞᱚᱢ ᱦᱤᱲᱤᱧᱟ!"
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr "ᱦᱟᱯᱷᱴᱚᱱ"
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱠᱚ ᱠᱷᱚᱵᱚᱨ ᱠᱟᱜᱚᱡ ᱛᱮ ᱵᱚᱫᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
@@ -1226,19 +1227,40 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱟᱯᱟᱵᱟᱹᱲᱤᱭᱟ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/negative.c:94
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "ᱮᱝᱰᱨᱮ, ᱵᱟᱝ"
 
-#: ../../magic/src/negative.c:101
+#: ../../magic/src/negative.c:73
+msgid "Opposite"
+msgstr ""
+
+#: ../../magic/src/negative.c:78
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "ᱟᱢᱟᱜ ᱨᱚᱝ ᱯᱮᱨᱮᱪ ᱮᱝᱰᱨᱮ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤ ᱫ ᱢᱟᱩᱥ ᱫᱷᱟᱨᱮ ᱫᱷᱟᱨᱮ ᱥᱮᱫ ᱛᱮ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ "
 "ᱢᱮ ᱾"
 
-#: ../../magic/src/negative.c:103
+#: ../../magic/src/negative.c:79
 msgid "Click to turn your painting into its negative."
 msgstr "ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱮᱝᱰᱨᱮ ᱨᱮ ᱟᱢᱟᱜ ᱨᱚᱝ ᱯᱮᱨᱮᱪ ᱟᱹᱪᱩᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
+
+#: ../../magic/src/negative.c:82
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to change the color of parts of your "
+#| "picture."
+msgid ""
+"Click and drag the mouse around to change colors to their opposites -- their "
+"complementary colors."
+msgstr ""
+"ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱦᱤᱸᱥ ᱨᱮᱭᱟᱜ ᱨᱚᱝ ᱵᱚᱫᱚᱞ ᱞᱟᱹᱜᱤᱫ ᱜᱚᱴᱟ ᱥᱮᱫ ᱢᱟᱩᱥ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
+
+#: ../../magic/src/negative.c:83
+msgid ""
+"Click to turn all colors in your painting into their opposites -- their "
+"complementary colors."
+msgstr ""
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1253,19 +1275,29 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱟᱝᱫᱚᱲ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "ᱵᱟᱵᱚᱛ ᱛᱮᱭᱟᱠ"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "ᱡᱩᱩᱢ"
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "ᱠᱚᱸᱰ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ ᱟᱨ ᱟᱢ ᱚᱠᱟᱨᱮ ᱪᱤᱛᱟᱹᱨ ᱴᱟᱱᱟᱣ ᱥᱟᱱᱟᱢ ᱠᱟᱱᱟ ᱚᱨ ᱢᱮ ᱾"
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱮᱝᱰᱨᱮ ᱨᱮ ᱟᱢᱟᱜ ᱨᱚᱝ ᱯᱮᱨᱮᱪ ᱟᱹᱪᱩᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "ᱪᱤᱛᱟᱹᱨ ᱢᱟᱨᱟᱝ ᱦᱚᱪᱚ ᱟᱨ ᱵᱟᱝ ᱢᱟᱨᱟᱝ  ᱦᱩᱰᱤᱧ ᱦᱚᱪᱚ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱟᱝᱲᱜᱚ ᱦᱟᱵᱤᱪ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ "
@@ -1572,3 +1604,6 @@ msgstr "XOR ᱯᱚᱨᱵᱷᱟᱣ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩ�
 #: ../../magic/src/xor.c:101
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "ᱯᱩᱨᱟᱹ ᱪᱤᱛᱟᱹᱨ ᱠᱚᱨᱮ XOR ᱯᱚᱨᱵᱷᱟᱣ ᱟᱹᱜᱩ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ"
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "ᱚᱱᱟ ᱡᱟᱭᱜᱟ ᱨᱚᱝ ᱛᱮ ᱯᱮᱨᱮᱡ ᱞᱟᱹᱜᱤᱫ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ ᱾"

@@ -1,11 +1,11 @@
                                    Extension
                                    Tux Paint
-                                 version 0.9.26
+                                 version 0.9.27
 
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                  mai 31, 2021
+                               septembre 6, 2021
 
      ----------------------------------------------------------------------
 
@@ -173,9 +173,9 @@ Pinceaux
 
   Options de pinceau
 
-       Outre une a graphical shape, les brushes peuvent également recevoir
+       Outre une une forme graphique, les pinceaux peuvent également recevoir
        d'autres attributs. Pour ce faire, vous devez créer un «fichier de
-       données» pour brush.
+       données» pour brosse.
 
        Un fichier de données de brush's est simplement un fichier texte ASCII
        contenant les options pour le brush.
@@ -228,24 +228,34 @@ Pinceaux
          ...
 
          Ajoute une ligne contenant le mot "directional" au fichier de
-         données brush's.
+         données brosse.
 
-    Pinceaux animés orientables
+    Rotating Brushes
 
-         Vous pouvez mélanger animation et orientation dans un même pinceau.
-         Utilisez les deux options ("frames=N" et "directional") en deux
-         lignes séparées dans le fichier ".dat" qui concerne le pinceau.
+         As of Tux Paint version 0.9.27, you may now create rotating brushes.
+         As the brush is used, it is rotated 360 degrees, depending on the
+         direction the brush is going.
 
-         Disposez le pinceau de manière à ce que chaque ensemble 3x3 de
-         formes orientables soit disposé sur une grande image PNG. Par
-         exemple, si le pinceau mesure 30x30 et qu'il y a 5 cadres, ce sera
-         450x90. (Les 150x90 pixels les plus à gauche de l'image représentent
-         les 9 formes de direction pour la première image, par exemple).
+         Ajoute une ligne contenant le mot "rotate" au fichier de données
+         brosse.
+
+    Animated Directional or Rotating Brushes
+
+         You may mix both animated and either directional or rotating
+         features into one brush. Use both options desired ("frames=N" and
+         "directional" or "rotate"), in separate lines in the brush's ".dat"
+         file.
+
+         For directional brushes, lay the brush out so that each 3x3 set of
+         directional shapes are laid out across a wide PNG image. For
+         example, if the brush is 30x30 and there are 5 frames, it would be
+         450x90. (The leftmost 150x90 pixels of the image represent the 9
+         direction shapes for the first frame, for example.)
 
      Placez les PNG de l'image du pinceau (et tous les fichiers texte de
      données) dans le répertoire "brushes".
 
-     Remarque: si vos nouveaux brushes se présentent tous sous forme de
+     Remarque: si vos nouveaux pinceaux se présentent tous sous forme de
      carrés ou de rectangles pleins, c'est que vous avez oublié d'utiliser la
      transparence alpha ! Consultez le fichier de documentation "PNG" pour
      plus d'informations et de conseils.
@@ -276,8 +286,8 @@ Tampons
        permettre à l'utilisateur d'ajuster le tampon vers le haut (plus
        grand) et vers le bas (plus petit).
 
-       Les SVG sont basés sur des vecteurs et seront mis à l'échelle de
-       manière adéquate pour le canevas utilisé.
+       SVGs are vector-based, and will be scaled appropriately for the canvas
+       size being used in Tux Paint.
 
        Remarque: si vos nouveaux PNG-based stamps se présentent tous sous
        forme de carrés ou de rectangles pleins, c'est que vous avez oublié
@@ -399,15 +409,15 @@ Tampons
 
   Options des tampons
 
-       Outre une a graphical shape, a textual description, a sound effect,
-       and a descriptive sound, les stamps peuvent également recevoir
-       d'autres attributs. Pour ce faire, vous devez créer un «fichier de
-       données» pour stamp.
+       Outre une une forme graphique, un texte de description, un effet
+       sonore et une description orale, les tampons peuvent également
+       recevoir d'autres attributs. Pour ce faire, vous devez créer un
+       «fichier de données» pour tampon.
 
-       Un fichier de données de stamp's est simplement un fichier texte ASCII
-       contenant les options pour le stamp.
+       Un fichier de données de tampon est simplement un fichier texte ASCII
+       contenant les options pour le tampon.
 
-       Le fichier porte le même nom que l'image PNG or SVG , mais une
+       Le fichier porte le même nom que l'image PNG ou SVG , mais une
        extension ".dat". (par exemple, le fichier de données "stamp.png" est
        le fichier texte "stamp.dat" qui se trouve dans le même répertoire.)
 
@@ -427,7 +437,7 @@ Tampons
            unie.
 
            Ajoute une ligne contenant le mot "colorable" au fichier de
-           données stamp's.
+           données tampon.
 
       Teinté
 
@@ -437,7 +447,7 @@ Tampons
            est modifiée en fonction de la couleur actuellement sélectionnée.)
 
            Ajoute une ligne contenant le mot "tintable" au fichier de données
-           stamp's.
+           tampon.
 
         Options de teinture :
 
@@ -474,11 +484,11 @@ Tampons
          Parfois, les tampons sont symétriques, il n'est donc pas utile de
          laisser l'utilisateur les retourner ou les refléter.
 
-         Pour empêcher un tampon d'être from being flipped vertically,
+         Pour empêcher un tampon d'être qui a été inversé verticalement,
          ajoutez une ligne contenant le mot «noflip» au fichier de données du
          tampon.
 
-         Pour empêcher un tampon d'être from being mirrored horizontally,
+         Pour empêcher un tampon d'être qui a été inversé horizontalement,
          ajoutez une ligne contenant le mot «nomirror» au fichier de données
          du tampon.
 
@@ -795,8 +805,8 @@ Méthodes alternatives de saisie
      "src/im.c". Par exemple, "b" est utilisé en coréen pour gérer Batchim,
      qui peut être reporté au caractère suivant.
 
-     Remarque : la prise en charge de nouveaux input methods nécessite des
-     ajouts au code source de Tux Paint ( "/src/im.c"), et nécessite des
+     Remarque : la prise en charge de nouveaux méthodes de saisie nécessite
+     des ajouts au code source de Tux Paint ( "/src/im.c"), et nécessite des
      mises à jour de Makefile, pour s'assurer que les fichiers ".im" sont
      disponibles pour être utilisés lors de l'exécution du programme.
 

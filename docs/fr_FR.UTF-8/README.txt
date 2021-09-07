@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 version 0.9.26
+                                 version 0.9.27
 
   Un programme simple pour les enfants
 
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 juin 28, 2021
+                               septembre 5, 2021
 
      ----------------------------------------------------------------------
 
@@ -136,7 +136,7 @@ Lancement de Tux Paint
 
      ----------------------------------------------------------------------
 
-  Utilisateurs de macOS
+  macOS Users
 
          Double-cliquez simplement sur l'icône "Tux Paint".
 
@@ -235,6 +235,22 @@ Outils disponibles
                  la souris, elle dessine au fur et à mesure que vous vous
                  déplacez.
 
+                 Some brushes are animated — they change their shape as you
+                 draw them. A good example of this is the vines brush that
+                 ships with Tux Paint. These brushes will have a small
+                 "filmstrip" icon drawn on their Selector buttons.
+
+                 Other brushes are directional — they will draw a different
+                 shape depending on what direction you are painting with
+                 them. An example of this is the arrow brush that ships with
+                 Tux Paint. These brushes have a small 8-way arrow icon drawn
+                 on their Selector buttons.
+
+                 Finally, some brushes can be both direction and animated.
+                 Examples of this are the cat and squirrel brushes that ship
+                 with Tux Paint. These brushes will have both the "filmstrip"
+                 and 8-way arrow icons.
+
                  Pendant que vous dessinez, un son est joué. Plus la brosse
                  est grosse, plus le son est grave.
 
@@ -300,6 +316,12 @@ Outils disponibles
 
                  Relâchez la souris pour terminer la ligne. On entend alors
                  le son "sproing !".
+
+                 Some brushes are animated, and will show a pattern of shapes
+                 along the line. Others are directional, and will show a
+                 different shape depending on the angle of the brush. And
+                 finally some are both animated and directional. See "Paint",
+                 above, to learn more.
 
      ----------------------------------------------------------------------
 
@@ -367,8 +389,9 @@ Outils disponibles
                  bas). Cliquez sur l'écran et un curseur apparaîtra. Tapez un
                  texte et il apparaîtra à l'écran.
 
-                 Appuyez sur [Enter] ou [Return] et le texte sera inclus dans
-                 l'image et le curseur se déplacera d'une ligne vers le bas.
+                 Appuyez sur [Entrée] ou [Retour] et le texte sera inclus
+                 dans l'image et le curseur se déplacera d'une ligne vers le
+                 bas.
 
                  Sinon, appuyez sur [Tab] et le texte sera inclus dans
                  l'image, mais le curseur se déplacera vers la droite du

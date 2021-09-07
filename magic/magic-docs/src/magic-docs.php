@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* Oct. 8, 2009 - February 15, 2020 */
+/* Oct. 8, 2009 - September 6, 2021 */
 
 
 /* Authors of the Magic tools: */
@@ -214,12 +214,20 @@ $tools = array(
                )),
 
   array('name'=>'Negative',
-   'desc'=>'This inverts the colors wherever you drag the mouse.  (e.g., white becomes black, and vice versa.)',
+   'desc'=>'This inverts the colors wherever you drag the mouse.  (e.g., white becomes black, and vice versa.)  It inverts the values of the Red, Green, and Blue components of the pixels.',
    'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Noise',
    'desc'=>'Add random noise and static to your picture.',
    'author'=>$AUTHOR_ANDREWC),
+
+  array('name'=>'Opposite',
+   'desc'=>'This converts the colors wherever you drag the mouse into their complementary (opposite) colors.  (e.g., blue becomes orange, and vice versa.)  It changes the Hue compoment of the pixels, without affecting the Saturation or Lightness.',
+   'author'=>$AUTHOR_KENDRICK),
+
+  array('name'=>'Panels',
+   'desc'=>'Shrink the image and repeat it four times in a 2-by-2 grid. Useful for creating 4-panel comics. Can also be used to create a compound-eye effect.',
+   'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Pattern',
    'desc'=>'Draws a tiled pattern around the picture.',

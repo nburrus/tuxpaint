@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-13 21:06-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2012-04-05 20:08+0530\n"
 "Last-Translator: Ekanta <ekanta@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -265,111 +265,135 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "ବର୍ଗକ୍ଷେତ୍ର"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "ଆୟତକ୍ଷେତ୍ର"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "ବୃତ୍ତ"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "ଦୀର୍ଘବୃତ୍ତ"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "ତ୍ରିଭୁଜ"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "ପଞ୍ଚଭୁଜ"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "ରମ୍ବସ/ସମଚତୁରଭୁଜ"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "ଅଷ୍ଟଭୁଜ"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "ବର୍ଗକ୍ଷେତ୍ର ହେଉଛି ଚାରି ସମାନ ପାର୍ଶ୍ବ ବିଶିଷ୍ଟ ଏକ ଆୟତକ୍ଷେତ୍ର ୤"
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "ଏକ ଆୟତକ୍ଷେତ୍ରର ଚାରି ପାର୍ଶ୍ବ ଏବଂ ଚାରି ସମକୋଣ ଥାଏ ୤ "
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "ବୃତ୍ତ ହେଉଛି ଏକ ବକ୍ରରେଖା ଯାହାର ସମସ୍ତ ବିନ୍ଦୁ କେନ୍ଦ୍ର ଠାରୁ ସମଦୂରବର୍ତ୍ତୀ ୤ "
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "ଦୀର୍ଘବୃତ୍ତ ହେଉଛି ଏକ ବିସ୍ତାରିତ ବୃତ୍ତ ୤"
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "ଏକ ତ୍ରିଭୁଜର ତିନି ପାର୍ଶ୍ବ ଥାଏ ୤ "
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "ଏକ ପଞ୍ଚଭୁଜର ପାଞ୍ଚ ପାର୍ଶ୍ବ ଥାଏ ୤ "
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "ରମ୍ବସର ଚାରି ସମାନ ପାର୍ଶ୍ବ ଥାଏ, ଏବଂ ବିପରୀତ ପାର୍ଶ୍ବଗୁଡିକ ସମାନ୍ତର ୤ "
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "ଏକ ଅଷ୍ଟଭୁଜର ଆଠ ସମାନ ପାର୍ଶ୍ବ ଥାଏ ୤ "
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"ଏକ ଆକାର ଚୟନ କରନ୍ତୁ ୤ କେନ୍ଦ୍ରକୁ ପାଇବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ, ଟାଣନ୍ତୁ, ତାପରେ ଆପଣ ଚାହୁଁଥିବା ଆକାର "
+"ହୋଇଗଲେ ଛାଡି ଦିଅନ୍ତୁ ୤ ଏହାକୁ ଘୂରାଇବା ପାଇଁ ଚାରିପଟେ ବୁଲାନ୍ତୁ, ଏବଂ ଅଙ୍କନ କରିବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ ୤ "
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"ଏକ ଆକାର ଚୟନ କରନ୍ତୁ ୤ କେନ୍ଦ୍ରକୁ ପାଇବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ, ଟାଣନ୍ତୁ, ତାପରେ ଆପଣ ଚାହୁଁଥିବା ଆକାର "
+"ହୋଇଗଲେ ଛାଡି ଦିଅନ୍ତୁ ୤ ଏହାକୁ ଘୂରାଇବା ପାଇଁ ଚାରିପଟେ ବୁଲାନ୍ତୁ, ଏବଂ ଅଙ୍କନ କରିବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ ୤ "
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -475,7 +499,7 @@ msgstr "ନୂତନ"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8179
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "ଖୋଲିବା"
 
@@ -510,19 +534,7 @@ msgid "Click to start drawing a line. Let go to complete it."
 msgstr ""
 "ଏକ ରେଖା ଅଙ୍କନ କରିବା ଆରମ୍ଭ କରିବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ ୤ ଏହାକୁ ସଂପୂର୍ଣ୍ଣ କରିବା ପାଇଁ ଚାଲୁ ରଖନ୍ତୁ ୤  "
 
-#: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"ଏକ ଆକାର ଚୟନ କରନ୍ତୁ ୤ କେନ୍ଦ୍ରକୁ ପାଇବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ, ଟାଣନ୍ତୁ, ତାପରେ ଆପଣ ଚାହୁଁଥିବା ଆକାର "
-"ହୋଇଗଲେ ଛାଡି ଦିଅନ୍ତୁ ୤ ଏହାକୁ ଘୂରାଇବା ପାଇଁ ଚାରିପଟେ ବୁଲାନ୍ତୁ, ଏବଂ ଅଙ୍କନ କରିବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ ୤ "
-
-#: ../tools.h:129
+#: ../tools.h:128
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -530,7 +542,7 @@ msgstr ""
 "ପାଠ୍ୟର ଏକ ଶୈଳୀ ଚୟନ କରନ୍ତୁ ୤ ଆପଣଙ୍କ ଡ୍ରଇଂ ଉପରେ କ୍ଲିକ କରନ୍ତୁ ଏବଂ ଟାଇପ କରିବା ଆରମ୍ଭ କରିପାରନ୍ତି "
 "୤ ପାଠ୍ୟକୁ ସଂପୂର୍ଣ୍ଣ କରିବା ପାଇଁ [ପ୍ରବିଷ୍ଟ] କିମ୍ବା [ଟ୍ୟାବ] କୁ ଦବାନ୍ତୁ ୤ "
 
-#: ../tools.h:133
+#: ../tools.h:132
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
@@ -548,298 +560,293 @@ msgstr ""
 "ଏବଂ ଏକ ବିଦ୍ୟମାନ ନାମରେ କ୍ଲିକ କରି, ଆପଣ ଏହାକୁ ଘୁଞ୍ଚାଇ ପାରନ୍ତି, ସଂପାଦନା କରି ପାରନ୍ତି ଏବଂ ଏହାର "
 "ପାଠ୍ୟ ଶୈଳୀକୁ ପରିବର୍ତ୍ତନ କରିପାରନ୍ତି ୤ "
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "ଚିତ୍ରର ସେହି କ୍ଷେତ୍ରରେ ରଙ୍ଗ ଭର୍ତ୍ତି କରିବାକୁ ତା' ଭିତରେ କ୍ଲିକ କରନ୍ତୁ ୤ "
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "ଆପଣଙ୍ର ଡ୍ରଇଂରେ ବ୍ୟବହାର କରିବା ପାଇଁ ଏକ ଜାଦୁ ପ୍ରଭାବ ଚୟନ କରନ୍ତୁ !"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "ପୂରବାବସ୍ଥାରେ ଆଣନ୍ତୁ!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "ପୁନରାବୃତ୍ତି କରନ୍ତୁ!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "ରବର!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "ଏକ ରଙ୍ଗ କିମ୍ବା ଚିତ୍ର ନିଅନ୍ତୁ ଯାହାଦ୍ବାରା ଏକ ନୂତନ ଡ୍ରଇଂ ଆରମ୍ଭ କରିପାରିବେ ୤  "
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "ଖୋଲନ୍ତୁ..."
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "ଆପଣଙ୍କ ଚିତ୍ର ସଂଚିତ ହୋଇଅଛି !"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "ପ୍ରିଣ୍ଟ ହେଉଛି..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "ବାଏ ବାଏ!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "ରେଖାକୁ ସଂପୂର୍ଣ୍ଣ କରିବାକୁ ବଟନକୁ ଛାଡି ଦିଅନ୍ତୁ ୤ "
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "ଆକାରକୁ ଟାଣିବା ପାଇଁ ବଟନକୁ ଧରି ରଖନ୍ତୁ ୤"
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "ଆକାରକୁ ଘୂରାଇବା ପାଇଁ ମାଉସ କୁ ଘୂରାନ୍ତୁ ୤ ଏହାକୁ ଅଙ୍କନ କରିବାକୁ କ୍ଲିକ କରନ୍ତୁ ୤ "
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK ତାହେଲେ...ଏହାକୁ ଅଙ୍କନ କରିବା ଚାଲୁ ରଖିବା !"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2190
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "ଆପଣ ପ୍ରକୃତରେ ଛାଡିବା ପାଇଁ ଚାହାନ୍ତି କି ? "
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2193
+#: ../tuxpaint.c:2195
 msgid "Yes, I’m done!"
 msgstr "ହଁ, ମୋର ହୋଇଗଲା!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2196 ../tuxpaint.c:2223
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "ନା, ମୋତେ ପଛକୁ ନିଅନ୍ତୁ!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2200
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ଯଦି ଆପଣ ଛାଡନ୍ତି, ଆପଣ ଆପଣଙ୍କ ଚିତ୍ରକୁ ହରାଇବେ! ସଂଚିତ  କରିବେ ? "
 
-#: ../tuxpaint.c:2201 ../tuxpaint.c:2206
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "ହଁ, ଏହାକୁ ସଂଚିତ କରନ୍ତୁ!"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 msgid "No, don’t bother saving!"
 msgstr "ନା, ସଂଚୟ କରିବା ପାଇଁ ବ୍ୟସ୍ତ ହୁଅନ୍ତୁ ନାହିଁ!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "ଆପଣଙ୍କ ଚିତ୍ରକୁ ପ୍ରଥମେ ସଂଚୟ କରିବେ କି ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2210
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "ସେହି ଚିତ୍ରକୁ ଖୋଲି ପାରିବେ ନାହିଁ !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2213 ../tuxpaint.c:2218 ../tuxpaint.c:2227 ../tuxpaint.c:2234
-#: ../tuxpaint.c:2243 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2217
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "ସେଠାରେ ସଂଚିତ ଫାଇଲଗୁଡିକ ନାହିଁ!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2221
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ଚିତ୍ର ପ୍ରିଣ୍ଟ କରିବେ କି ?"
 
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "ହଁ, ଏହାକୁ ପ୍ରିଣ୍ଟ କରନ୍ତୁ !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2226
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "ଆପଣଙ୍କ ଚିତ୍ର ମୁଦ୍ରିତ ହୋଇଅଛି!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2230
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "ଦୁଃଖିତ! ଆପଣଙ୍କ ଚିତ୍ର ପ୍ରିଣ୍ଟ ହୋଇ ପାରିଲା ନାହିଁ! "
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2233
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "ଆପଣ ଏବେ ପର୍ଯ୍ୟନ୍ତ ପ୍ରିଣ୍ଟ କରିପାରିବେ ନାହିଁ !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "ଏହି ଚିତ୍ରକୁ ଲିଭାଇବେ? "
 
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "ହଁ, ଏହାକୁ ଲିଭାନ୍ତୁ!"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2241
 msgid "No, don’t erase it!"
 msgstr "ନା, ଏହାକୁ ଲିଭାନ୍ତୁ ନାହିଁ !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2242
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "ବାମ ମାଉସ ବଟନ ବ୍ୟବହାର କରିବା ମନେ ରଖନ୍ତୁ!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2246
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "ଆପଣଙ୍କ ଚିତ୍ର ମୁଦ୍ରିତ ହୋଇଅଛି!"
 
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "ଆପଣଙ୍କ ଚିତ୍ର ମୁଦ୍ରିତ ହୋଇଅଛି!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "ଦୁଃଖିତ! ଆପଣଙ୍କ ଚିତ୍ର ପ୍ରିଣ୍ଟ ହୋଇ ପାରିଲା ନାହିଁ! "
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "ଦୁଃଖିତ! ଆପଣଙ୍କ ଚିତ୍ର ପ୍ରିଣ୍ଟ ହୋଇ ପାରିଲା ନାହିଁ! "
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ଆପଣ ଚାହୁଁଥିବା ଚିତ୍ରଗୁଡିକୁ ଚୟନ କରନ୍ତୁ, ତାପରେ “ଚଳାନ୍ତୁ” ରେ କ୍ଲିକ କରନ୍ତୁ ୤ "
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "ଧ୍ବନି ନିଃଶବ୍ଦ କରାହୋଇଛି ୤ "
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "ଧ୍ବନି ଅନିଃଶବ୍ଦ କରାହୋଇଛି ୤ "
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3247
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8182
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "ଲିଭାଅ"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "ସ୍ଲାଇଡଗୁଡିକ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "ପଛ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "ଚଳାନ୍ତୁ"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "ପରବର୍ତ୍ତୀ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8948
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12589
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "ହଁ"
 
-#: ../tuxpaint.c:12593
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "ନାହିଁ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13732
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "ଚିତ୍ର ସ୍ଥାନରେ ଆପଣଙ୍କ ପରିବର୍ତ୍ତନଗୁଡିକୁ ପ୍ରତିସ୍ଥାପିତ କରିବେ ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13736
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "ହଁ, ପୁରୁଣା ଚିତ୍ରଟି ବଦଳାନ୍ତୁ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13740
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "ନା, ଏକ ନୂତନ ଫାଇଲ ସଂଚୟ କରନ୍ତୁ!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15003
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ଆପଣ ଚାହୁଁଥିବା ଚିତ୍ର ଚୟନ କରନ୍ତୁ, ତାପରେ “ଖୋଲନ୍ତୁ” ରେ କ୍ଲିକ କରନ୍ତୁ ୤ "
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16429
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24135
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24147
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "ଏକ ରଙ୍ଗ ବାଛନ୍ତୁ ୤ "
 
@@ -1109,11 +1116,11 @@ msgstr "ଘାସ"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "ଘାସ ଅଙ୍କନ କରିବା ପାଇଁ କ୍ଲିକ କରି ବୁଲାନ୍ତୁ ୤ ମଇଳା କୁ ଭୁଲନ୍ତୁ ନାହିଁ ! "
 
-#: ../../magic/src/halftone.c:35
+#: ../../magic/src/halftone.c:41
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:39
+#: ../../magic/src/halftone.c:45
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
@@ -1279,19 +1286,39 @@ msgstr "ଆପଣଙ୍କ ଚିତ୍ରର ଅଂଶଗୁଡିକରେ ଅ
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "ଆପଣଙ୍କ ସମଗ୍ର ଚିତ୍ରରେ ଅନିୟମିତ ମୋଜାଇକ ଯୁକ୍ତ କରିବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ ୤ "
 
-#: ../../magic/src/negative.c:94
+#: ../../magic/src/negative.c:72
 msgid "Negative"
 msgstr "ନାକାରାତ୍ମକ"
 
-#: ../../magic/src/negative.c:101
+#: ../../magic/src/negative.c:73
+msgid "Opposite"
+msgstr ""
+
+#: ../../magic/src/negative.c:78
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "ଆପଣଙ୍କ ପେଣ୍ଟିଙ୍ଗକୁ ନେଗେଟିଭ କରିବା ପାଇଁ ମାଉସକୁ କ୍ଲିକ କରି ଚାରିପଟେ ବୁଲାନ୍ତୁ ୤ "
 
-#: ../../magic/src/negative.c:103
+#: ../../magic/src/negative.c:79
 msgid "Click to turn your painting into its negative."
 msgstr "ଆପଣଙ୍କ ପେଣ୍ଟିଙ୍ଗକୁ ନେଗେଟିଭରେ ପରିବର୍ତ୍ତନ କରିବାକୁ କ୍ଲିକ କରନ୍ତୁ ୤"
+
+#: ../../magic/src/negative.c:82
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to change the color of parts of your "
+#| "picture."
+msgid ""
+"Click and drag the mouse around to change colors to their opposites -- their "
+"complementary colors."
+msgstr "ଆପଣଙ୍କ ଚିତ୍ରର ଅଂଶଗୁଡିକର ରଙ୍ଗ ପରିବର୍ତ୍ତନ କରିବା ପାଇଁ ମାଉସକୁ କ୍ଲିକ କରି ଚାରିଆଡେ ବୁଲାନ୍ତୁ ୤  "
+
+#: ../../magic/src/negative.c:83
+msgid ""
+"Click to turn all colors in your painting into their opposites -- their "
+"complementary colors."
+msgstr ""
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1307,20 +1334,30 @@ msgstr "ଆପଣଙ୍କ ଚିତ୍ରର ଅଂଶଗୁଡିକରେ କ
 msgid "Click to add noise to your entire picture."
 msgstr "ଆପଣଙ୍କ ସମଗ୍ର ଚିତ୍ରରେ କୋଳାହଳ ଯୁକ୍ତ କରିବା ପାଇଁ କ୍ଲିକ କରନ୍ତୁ ୤ "
 
-#: ../../magic/src/perspective.c:147
+#: ../../magic/src/perspective.c:150
 msgid "Perspective"
 msgstr "ଦୃଷ୍ଟିକୋଣ"
 
-#: ../../magic/src/perspective.c:148
+#: ../../magic/src/perspective.c:151
+msgid "Panels"
+msgstr ""
+
+#: ../../magic/src/perspective.c:152
 msgid "Zoom"
 msgstr "ଜୁମ "
 
-#: ../../magic/src/perspective.c:153
+#: ../../magic/src/perspective.c:156
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "କୋଣଗୁଡିକରେ କ୍ଲିକ କରନ୍ତୁ ଏବଂ ଚିତ୍ରର ଯେଉଁ ଅଂଶ ଆପଣ ଟାଣିବା ପାଇଁ ଚାହାନ୍ତି ତାକୁ ଡ୍ରାଗ କରନ୍ତୁ ୤ "
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:158
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your picture into 2-by-2 panels."
+msgstr "ଆପଣଙ୍କ ପେଣ୍ଟିଙ୍ଗକୁ ନେଗେଟିଭରେ ପରିବର୍ତ୍ତନ କରିବାକୁ କ୍ଲିକ କରନ୍ତୁ ୤"
+
+#: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "କ୍ଲିକ କରନ୍ତୁ ଏବଂ ଚିତ୍ରକୁ ଜୁମ ଇନ କରିବାକୁ ଉପରକୁ ଡ୍ରାଗ କରନ୍ତୁ କିମ୍ବା ଜୁମ ଆଉଟ କରିବାକୁ ତଳକୁ ଡ୍ରାଗ କରନ୍ତୁ "
@@ -1645,3 +1682,6 @@ msgstr "ଷ୍ଟ୍ରିଙ୍ଗ କଳାରେ ତିଆରି ତୀରଗ
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "ଆପଣଙ୍କ ସମଗ୍ର ଚିତ୍ରରେ ମୋଜାଇକ ପ୍ରଭାବ ଯୁକ୍ତ କରିବା ପାଇଁ ମାଉସକୁ କ୍ଲିକ କରନ୍ତୁ ୤ "
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "ଚିତ୍ରର ସେହି କ୍ଷେତ୍ରରେ ରଙ୍ଗ ଭର୍ତ୍ତି କରିବାକୁ ତା' ଭିତରେ କ୍ଲିକ କରନ୍ତୁ ୤ "

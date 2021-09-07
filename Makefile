@@ -4,12 +4,12 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - June 28, 2021
+# June 14, 2002 - September 6, 2021
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.26
+VER_VERSION:=0.9.27
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
 else
@@ -80,37 +80,36 @@ endif
 #   <HOSTROOT>/lib/pkgconfig  *.pc files.
 #
 ifdef HOST
-  ifndef HOSTROOT
-    $(error Must set HOSTROOT to cross compile)
-  endif
-  ifeq ($(wildcard $(HOSTROOT)/.),)
-    $(error Invalid HOSTROOT: $(HOSTROOT))
-  endif
+  ifdef HOSTROOT
+    ifeq ($(wildcard $(HOSTROOT)/.),)
+      $(error Invalid HOSTROOT: $(HOSTROOT))
+    endif
 
-  ifeq ($(HOST),iphoneos)
-    OS:=ios
-    CC:=$(shell xcrun --sdk iphoneos -f clang)
-    SDK:=iphoneos
-    ARCHS:=arm64 armv7s armv7
-    MINVER:=9.0
-    MINVEROPT:=-miphoneos-version-min=$(MINVER)
-    SDKROOT:=$(shell xcrun --sdk iphoneos --show-sdk-path)
-  else ifeq ($(HOST),iphonesimulator)
-    OS:=ios
-    CC:=$(shell xcrun --sdk iphonesimulator -f clang)
-    SDK:=iphonesimulator
-    ARCHS:=$(shell uname -m)
-    MINVER:=9.0
-    MINVEROPT:=-mios-simulator-version-min=$(MINVER)
-    SDKROOT:=$(shell xcrun --sdk iphonesimulator --show-sdk-path)
-  else
-    $(error Invalid HOST: $(HOST))
-  endif
+    ifeq ($(HOST),iphoneos)
+      OS:=ios
+      CC:=$(shell xcrun --sdk iphoneos -f clang)
+      SDK:=iphoneos
+      ARCHS:=arm64 armv7s armv7
+      MINVER:=9.0
+      MINVEROPT:=-miphoneos-version-min=$(MINVER)
+      SDKROOT:=$(shell xcrun --sdk iphoneos --show-sdk-path)
+    else ifeq ($(HOST),iphonesimulator)
+      OS:=ios
+      CC:=$(shell xcrun --sdk iphonesimulator -f clang)
+      SDK:=iphonesimulator
+      ARCHS:=$(shell uname -m)
+      MINVER:=9.0
+      MINVEROPT:=-mios-simulator-version-min=$(MINVER)
+      SDKROOT:=$(shell xcrun --sdk iphonesimulator --show-sdk-path)
+    else
+      $(error Invalid HOST for cross compilation: $(HOST))
+    endif
 
-  # We set PKG_CONFIG_LIBDIR instead of PKG_CONFIG_PATH because we want to
-  # *change* where pkg-config looks for .pc files instead of adding to the
-  # default path which may have libraries that aren't for HOST.
-  export PKG_CONFIG_LIBDIR:=$(HOSTROOT)/lib/pkgconfig
+    # We set PKG_CONFIG_LIBDIR instead of PKG_CONFIG_PATH because we want to
+    # *change* where pkg-config looks for .pc files instead of adding to the
+    # default path which may have libraries that aren't for HOST.
+    export PKG_CONFIG_LIBDIR:=$(HOSTROOT)/lib/pkgconfig
+  endif
 endif
 
 # change to sdl-console to build a console version on Windows
@@ -286,6 +285,7 @@ CURSOR_SHAPES:=LARGE
 SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs)
 SDL_LIBS+=$(call linktest,SDL2_image,-lSDL2_image,$(SDL_LIBS))
 SDL_LIBS+=$(call linktest,SDL2_ttf,-lSDL2_ttf,$(SDL_LIBS))
+SDL_LIBS+=$(call linktest,SDL2_gfx,-lSDL2_gfx,$(SDL_LIBS))
 SDL_LIBS+=$(call linktest,zlib,-lz,)
 SDL_LIBS+=$(call linktest,libpng,$(PNG),)
 
@@ -699,9 +699,11 @@ uninstall:	uninstall-i18n
 	-rm -r $(DATA_PREFIX)
 	-rm -r $(DOC_PREFIX)
 	-rm $(MAN_PREFIX)/man1/tuxpaint.1.gz
-	-rm $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
+	-rm $(MAN_PREFIX)/*/man1/tuxpaint.1.gz
 	-rm $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
+	-rm $(MAN_PREFIX)/*/man1/tuxpaint-import.1.gz
 	-rm $(MAN_PREFIX)/man1/tp-magic-config.1.gz
+	-rm $(MAN_PREFIX)/*/man1/tp-magic-config.1.gz
 	-rm -f -r $(CONFDIR)
 	-rm $(COMPLETIONDIR)/tuxpaint-completion.bash
 	-rm -r $(MAGIC_PREFIX)
@@ -964,6 +966,7 @@ install-dlls:
 	  cp $(MINGW_DIR)/bin/libpng12.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL_image.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/SDL_gfx.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL_mixer.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/SDL_ttf.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/libfreetype-6.dll $(BIN_PREFIX); \
@@ -1070,28 +1073,31 @@ install-doc:
 .PHONY: install-man
 install-man:
 	@echo
-	@echo "...Installing man pages..."
+	@echo "...Installing English man pages..."
 	@# man1 directory...
 	@install -d $(MAN_PREFIX)/man1
 	@# tuxpaint.1
-	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
+	@cp man/en/tuxpaint.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
-	@# pl/man1 directory...
-	@install -d $(MAN_PREFIX)/pl/man1/
-	@# tuxpaint-pl.1
-	@cp src/manpage/tuxpaint-pl.1 $(MAN_PREFIX)/pl/man1/tuxpaint.1
-	@gzip -f $(MAN_PREFIX)/pl/man1/tuxpaint.1
-	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
 	@# tuxpaint-import.1
-	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+	@cp man/en/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
 	@# tp-magic-config.1
-	@cp src/manpage/tp-magic-config.1 $(MAN_PREFIX)/man1/
+	@cp man/en/tp-magic-config.1 $(MAN_PREFIX)/man1/
 	@gzip -f $(MAN_PREFIX)/man1/tp-magic-config.1
 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tp-magic-config.1.gz
-
+	@echo
+	for l in `ls -d man/*.UTF-8 | cut -d '/' -f 2`; do \
+		DEST=$(MAN_PREFIX)/$$l/man1 ; \
+		echo "...Installing $$l man pages into $$DEST..." ; \
+		install -d $$DEST ; \
+		cp man/$$l/tuxpaint.1 $$DEST ; \
+		gzip -f $$DEST/tuxpaint.1 ; \
+		chmod a+rx,g-w,o-w $$DEST/tuxpaint.1.gz ; \
+	done
+	@# FIXME: The other man pages aren't localizable yet -bjk 2021.08.14
 
 # Install the support files for macOS application bundle
 .PHONY: install-macbundle
@@ -1348,6 +1354,7 @@ obj:
 
 MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 
+# FIXME: Expose SDL_rotozoom to Magic API? -bjk 2021.09.06
 windows_MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
 ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
