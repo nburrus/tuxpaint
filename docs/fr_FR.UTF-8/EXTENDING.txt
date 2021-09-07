@@ -286,12 +286,12 @@ Tampons
        permettre à l'utilisateur d'ajuster le tampon vers le haut (plus
        grand) et vers le bas (plus petit).
 
-       Les SVG sont basés sur des vecteurs et seront mis à l'échelle de
-       manière adéquate pour le canevas utilisé.
+       SVGs are vector-based, and will be scaled appropriately for the canvas
+       size being used in Tux Paint.
 
-       Remarque: si vos nouveaux des tampons basé sur PNG se présentent tous
-       sous forme de carrés ou de rectangles pleins, c'est que vous avez
-       oublié d'utiliser la transparence alpha ! Consultez le fichier de
+       Remarque: si vos nouveaux PNG-based stamps se présentent tous sous
+       forme de carrés ou de rectangles pleins, c'est que vous avez oublié
+       d'utiliser la transparence alpha ! Consultez le fichier de
        documentation "PNG" pour plus d'informations et de conseils.
 
        Remarque: si vos nouveaux tampons SVG semblent avoir beaucoup de zones

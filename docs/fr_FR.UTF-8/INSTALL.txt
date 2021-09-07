@@ -18,7 +18,7 @@
    |  * Compilation et installation                         |
    |       * Utilisateurs de Windows                        |
    |       * Utilisateurs de Linux/Unix                     |
-   |       * Utilisateurs de macOS                          |
+   |       * macOS Users                                    |
    |  * Débogage                                            |
    |  * Désinstallation de Tux Paint                        |
    |       * Windows                                        |
@@ -155,7 +155,7 @@ Compilation et installation
      octobre 25, 2020 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
      <shin1@wmail.plala.or.jp>
 
-    Réglages pour compilation :
+    Réglages pour compilation
 
          Depuis février 2005 (à partir de Tux Paint 0.9.15), le "Makefile"
          inclut la prise en charge de la construction sur un système Windows
@@ -166,50 +166,52 @@ Compilation et installation
          pour installer automatiquement, en résolvant les dépendances
          nombreuses.
 
-         Download the latest MSYS2 environment from
-         https://sourceforge.net/projects/msys2/files/Base/ and install it
-         where you'd like (the default is "C:\msys64")
+         Téléchargez le dernier environnement MSYS2 à partir de
+         https://sourceforge.net/projects/msys2/files/Base/ et installez-le
+         où vous voulez (par défaut "C:\msys64")
 
-         Open the MSYS2 shell from the "Start Menu" -> "MSYS2 64bit" ->
-         "MSYS2 MSYS" and execute following command (press [Entrée] or
-         [Retour] to accept the defaults for all questions):
+         Ouvrez le shell MSYS2 via le "Menu de Démarrage" ->"MSYS2 64bit" ->
+         "MSTS2 MSYS" et exécutez la commande suivante (pressez [Entrée] ou
+         [Retour] pour accepter par défaut toutes les questions) :
 
            pacman -Syu
 
-         This will update core system and the window will close
-         automatically. Repeat the steps above one more time to finish the
-         remaining update process.
+         Ceci mettra à jour tout le système et la fenêtre de se fermera
+         automatiquement. Répétez les étapes précédentes encore une fois pour
+         finaliser le process restant de mise à jour.
 
-         Within the MSYS2 shell, run the following command to install outils
-         basiques pour le développement:
+         Sous le shell MSYS2, exécutez la commande suivante pour installer
+         outils basiques pour le développement :
 
            pacman -S base-devel msys2-devel git
 
-       Proceed to the next "MinGW 64bit (x86_64) toolchains" section, or skip
-       to the "MinGW 32bit (i686) toolchains" section if you need only a
-       32bit build environment.
+       Allez à la prochaine section "chaînes d'outils MinGW 64bit (x86_64) ",
+       ou bien à la section "chaînes d'outils MinGW 32bit (i686)" si vous ne
+       voulez qu'un environnement de travail 32bit.
 
             -------------------------------------------------------
 
-    MinGW 64bit (x86_64) toolchains
+    Chaînes d'outils MinGW 64bit (x86_64)
 
-         Within the MSYS2 shell, run the following command to install outils
-         basiques pour le développement 64bit:
+         Sous le shell MSYS2, exécutez la commande suivante pour installer
+         outils basiques pour le développement 64bit :
 
            pacman -S mingw-w64-x86_64-toolchain
 
-    64bit (x86_64) dependency libraries for Tux Paint
+    bibliothèques de dépendance 64bit (x86_64) pour Tux Paint
 
-         You can install tools and libraries required for compiling Tux Paint
-         on MSYS2/MINGW using "pacman" except for SDL_Pango.
+         Vous pouvez installer les outils et bibliothèques nécessaires pour
+         la compilation de Tux Paint sur MSYS2 en utilisant "pacman", sauf
+         pour SDL_Pango.
 
-         "ntldd" is a small tool which examine windows executable files to
-         list Dynamic Link Library (.dll) files they depends on. Tux Paint's
-         packaging process for binary distribution uses it to find required
-         .dll files.
+         "ntldd" est un petit outil qui examine les fichiers exécutables de
+         windows en vue de lister les fichiers DLL (.dll) qui leur sont
+         nécessaires. Le process de fabrication de Tux Paint pour fournir des
+         fichiers binaires s'en sert pour trouver les fichiers .dll requis.
 
-         FLTK is a cross-platform GUI toolkit used by "Tux Paint Config.".
-         You can skip installing it if you are only building "Tux Paint".
+         FLTK est un ensemble d'outils multiplateforme utilisé par "Tux Paint
+         Config.". Vous pouvez en pas l'installer si vous compilez seulement
+         "Tux Paint".
 
            $ pacman -S mingw-w64-x86_64-SDL_{image,mixer,ttf}
            $ pacman -S mingw-w64-x86_64-librsvg
@@ -218,29 +220,31 @@ Compilation et installation
            $ pacman -S mingw-w64-x86_64-fltk
            $ pacman -S mingw64/mingw-w64-x86_64-ntldd-git
 
-         Note: Close the shell before proceeding to the remaining process.
+         Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Install SDL_Pango and re-install SDL on the 64bit environment
+    Installe SDL_Pango et réinstalle SDL sur l'environnement 64bit
 
-         SDL_Pango should be installed manually. In addition, you have to
-         re-install SDL from the source code or you will see unnecessary
-         blank window opens when starting Tux Paint.
+         SDL_Pango doit être installé manuellement. De plus, vous devez
+         réinstaller SDL à partir du code source, sinon vous verrez s'ouvrir
+         une fenêtre blanche inutile au démarrage de Tux Paint.
 
-         This time, use the MinGW "64bit" shell. Open the shell from the
-         "Start Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 64-bit"
+         Cette fois-ci, utilisez le shell MinGW "64bit". Ouvrez le shell
+         depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
+         64-bit"
 
       SDL_Pango
 
-           At first, you have to prepare source tar-ball and a required patch
-           in the same directory.
+           Tout d'abord, vous devrez préparer l'archive source et un patch
+           qui est requis, dans le même répertoire.
 
-             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
-               SDL_Pango sur Sourceforge.net.
-             * Télécharger un fichier patch depuis John Popplewell's "Tux
-               Paint - MinGW/MSYS build instructions" webpage. (This adds
-               some extra (required) functionality to SDL_Pango.)
+             * Télécharger source tar-ball of SDL_Pango-0.1.2 depuis
+               SDL_Pango's page on Sourceforge.net.
+             * Télécharger un fichier patch depuis La page web de John
+               Popplewell traitant des "instructions pour la compilation de
+               Tux Paint - MinGW/MSYS". (Ceci ajoute une fonctionnalité
+               supplémentaire (requise) à SDL_Pango.)
 
-           Build and install SDL_Pango as follows.
+           Compiler et installer SDL_Pango comme suit.
 
              $ tar zxvf SDL_Pango-0.1.2.tar.gz
              $ cd SDL_Pango-0.1.2/
@@ -249,7 +253,7 @@ Compilation et installation
 
       SDL
 
-           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
+           Télécharger source tar-ball of SDL_1.2.15 depuis libsdl.org.
 
            Réinstallez SDL comme suit.
 
@@ -257,31 +261,33 @@ Compilation et installation
              $ cd SDL-1.2.15
              $ ./configure --prefix=/mingw64 && make && make install
 
-       Proceed to the next "MinGW 32bit (i686) toolchains" section, or skip
-       to the "ImageMagick" section if you need only a 64bit build
-       environment.
+       Aller à la prochaine section "chaines d'outils MinGW 32bit (i686)", ou
+       bien aller directement à la section "ImageMagick" si vous n'avez
+       besoin que d'un environnement de travail 64bit.
 
             -------------------------------------------------------
 
-    MinGW 32bit (i686) toolchains
+    Chaînes d'outils MinGW 32bit (i686)
 
-         Within the MSYS2 shell, run the following command to install outils
-         basiques pour le développement 32bit:
+         Sous le shell MSYS2, exécutez la commande suivante pour installer
+         outils basiques pour le développement 32bit :
 
            pacman -S mingw-w64-i686-toolchain
 
-    32bit (i686) dependency libraries for Tux Paint
+    bibliothèques de dépendance 32bit (i686) pour Tux Paint
 
-         You can install tools and libraries required for compiling Tux Paint
-         on MSYS2/MINGW using "pacman" except for SDL_Pango.
+         Vous pouvez installer les outils et bibliothèques nécessaires pour
+         la compilation de Tux Paint sur MSYS2 en utilisant "pacman", sauf
+         pour SDL_Pango.
 
-         "ntldd" is a small tool which examine windows executable files to
-         list Dynamic Link Library (.dll) files they depends on. Tux Paint's
-         packaging process for binary distribution uses it to find required
-         .dll files.
+         "ntldd" est un petit outil qui examine les fichiers exécutables de
+         windows en vue de lister les fichiers DLL (.dll) qui leur sont
+         nécessaires. Le process de fabrication de Tux Paint pour fournir des
+         fichiers binaires s'en sert pour trouver les fichiers .dll requis.
 
-         FLTK is a cross-platform GUI toolkit used by "Tux Paint Config.".
-         You can skip installing it if you are only building "Tux Paint".
+         FLTK est un ensemble d'outils multiplateforme utilisé par "Tux Paint
+         Config.". Vous pouvez en pas l'installer si vous compilez seulement
+         "Tux Paint".
 
            $ pacman -S mingw-w64-i686-SDL_{image,mixer,ttf}
            $ pacman -S mingw-w64-i686-librsvg
@@ -290,29 +296,31 @@ Compilation et installation
            $ pacman -S mingw-w64-i686-fltk
            $ pacman -S mingw-w64-i686-ntldd-git
 
-         Note: Close the shell before proceeding to the remaining process.
+         Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Install SDL_Pango and re-install SDL on the 32bit environment
+    Installe SDL_Pango et réinstalle SDL sur l'environnement 32bit
 
-         SDL_Pango should be installed manually. In addition, you have to
-         re-install SDL from the source code or you will see unnecessary
-         blank window opens when starting Tux Paint.
+         SDL_Pango doit être installé manuellement. De plus, vous devez
+         réinstaller SDL à partir du code source, sinon vous verrez s'ouvrir
+         une fenêtre blanche inutile au démarrage de Tux Paint.
 
-         This time, use the MinGW "32bit" shell. Open the shell from the
-         "Start Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 32-bit"
+         Cette fois-ci, utilisez le shell MinGW "32bit". Ouvrez le shell
+         depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
+         32-bit"
 
       SDL_Pango
 
-           At first, you have to prepare source tar-ball and a required patch
-           in the same directory.
+           Tout d'abord, vous devrez préparer l'archive source et un patch
+           qui est requis, dans le même répertoire.
 
-             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
-               SDL_Pango sur Sourceforge.net.
-             * Télécharger un fichier patch depuis John Popplewell's "Tux
-               Paint - MinGW/MSYS build instructions" webpage. (This adds
-               some extra (required) functionality to SDL_Pango.)
+             * Télécharger source tar-ball of SDL_Pango-0.1.2 depuis
+               SDL_Pango's page on Sourceforge.net.
+             * Télécharger un fichier patch depuis La page web de John
+               Popplewell traitant des "instructions pour la compilation de
+               Tux Paint - MinGW/MSYS". (Ceci ajoute une fonctionnalité
+               supplémentaire (requise) à SDL_Pango.)
 
-           Build and install SDL_Pango as follows.
+           Compiler et installer SDL_Pango comme suit.
 
              $ tar zxvf SDL_Pango-0.1.2.tar.gz
              $ cd SDL_Pango-0.1.2/
@@ -321,7 +329,7 @@ Compilation et installation
 
       SDL
 
-           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
+           Télécharger source tar-ball of SDL_1.2.15 depuis libsdl.org.
 
            Réinstallez SDL comme suit.
 
@@ -333,38 +341,40 @@ Compilation et installation
 
     ImageMagick
 
-         ImageMagick is a compilation of command line tools to create, edit,
-         compose, or convert bitmap images supporting quite a large number of
-         image formats. Tux Paint uses two functions ("convert" and
-         "composite") in it to generate thumbnails for startar images and
-         templates during the build process.
+         ImageMagick est un ensemble d'outils en ligne de commande pour
+         créer, éditer, composer ou convertir des images bitmap, et qui
+         soupporte un grand nombre de formats d'image.Tux Paint utilise deux
+         fonctions ("convert" and "composite") pour générer des vignettes
+         pour les images de démarrage et des modèles durant le process de
+         compiltaion.
 
-         Using official binary release available from "Windows Binary
-         Release" is recommended, due to the commands installed with "pacman"
-         on MinGW/MSYS not working as expected!
+         L'utilisation des binaires officiels tirés de "Versions binaires
+         pour Windows" est recommandée car les commandes installées avec
+         "pacman" sur MinGW/MSYS ne fonctionnent pas comme elles devraient !
 
-         Do not forget to enable "Install legacy utilities (e.g. convert)"
-         while installing it, because Tux Paint's build process uses them.
+         N'oubliez pas de cocher "Installer les utilitaires hérités (par ex.
+         convert)" pour l'installation, car le processus de compilation de
+         Tux Paint les utilise.
 
-         Add the path to the directory in which ImageMagick is installed at
-         the top of your "PATH" environment variable. For example:
+         Ajoutez le chemin où ImageMagick est installé au début de votre
+         variable d'environnement "PATH". Par exemple :
 
            $ export PATH=/c/Program\ Files/ImageMagick-7.0.10-Q16-HDRI:$PATH
 
-         You can make this permanent by adding the above to your the BASH
-         shell configuration file, "~/.bash_profile".
+         Vous pouvez rendre ceci permanent en ajoutant ce qui précède à votre
+         fichier de configuration du shell BASH, "~/.bash_profile".
 
             -------------------------------------------------------
 
     Tux Paint
 
-         You can compile 64bit binaries using MSYS2 64bit shell, and 32bit
-         binaries using MSYS2 32bit shell, respectively.
+         Vous pouvez compiler des binaires 64bit en utilisant le shell MSYS2
+         64bit, et des binaires 32bit en utilisant le shell MSYS2 32bit.
 
-           * Select "MSYS2 64bit" -> "MSYS2 MinGW 64-bit" from the "Start
-             Menu" to open the 64bit shell.
-           * Select "MSYS2 64bit" -> "MSYS2 MinGW 32-bit" from the "Start
-             Menu" to open the 32bit shell.
+           * Choisissez "MSYS2 64bit" -> "MSYS2 MinGW 64-bit" dans le "Menu
+             de Démarrage" pour ouvrir le shell 64bit
+           * Choisissez "MSYS2 64bit" -> "MSYS2 MinGW 32-bit" dans le "Menu
+             de Démarrage" pour ouvrir le shell 32bit
 
          Compilez Tux Paint avec la commande suivante :
 
@@ -615,7 +625,7 @@ Compilation et installation
 
      ----------------------------------------------------------------------
 
-  Utilisateurs de macOS
+  macOS Users
 
      septembre 21, 2021 Mark K. Kim <markuskimius@gmail.com>
 
@@ -623,7 +633,7 @@ Compilation et installation
        Xcode IDE. Starting with 0.9.23, however, Tux Paint for macOS is built
        as though it were a Linux application.
 
-    Prerequisites
+    Prérequis
 
          Although Tux Paint is built without the Xcode IDE, Xcode itself is
          still required to build Tux Paint. Download it from the App Store,
@@ -651,10 +661,10 @@ Compilation et installation
            * libsdl_ttf
            * pkgconfig
            * zlib
-         ... but you should install any package that is required by the
-         latest version of Tux Paint.
+         ... mais vous devriez installer tout paquet requis par la dernière
+         version de Tux Paint.
 
-         ^* Not available from MacPorts as of this writing, see below.
+         ^* Non disponible depuis MacPorts à ce moment, voir ci-dessous.
 
       libimagequant
 

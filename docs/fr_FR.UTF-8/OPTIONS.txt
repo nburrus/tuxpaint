@@ -74,7 +74,7 @@ Utilisateurs de Linux et Unix
 
            --nosysconfig
 
-Utilisateurs de macOS
+macOS Users
 
        Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
        être placé dans votre dossier de départ, sous le sous-dossier :
@@ -1096,7 +1096,7 @@ Sauvegarde
 
 Données
 
-  Lockfile
+  Fichier de verouillage
 
          nolockfile=yes
 
@@ -1162,7 +1162,7 @@ Données
 
                  Exemple: datadir=/home/johnny/tuxpaint-data/
 
-  Color Palette File
+  Fichier de palette de couleur
 
          colorfile=FILENAME
 

@@ -136,7 +136,7 @@ Lancement de Tux Paint
 
      ----------------------------------------------------------------------
 
-  Utilisateurs de macOS
+  macOS Users
 
          Double-cliquez simplement sur l'icône "Tux Paint".
 
