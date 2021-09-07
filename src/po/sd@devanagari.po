@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-06 01:34-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2013-01-19 23:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sindhi-DV\n"
@@ -265,111 +265,135 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "चौरसि"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "गूनी कुंड चौकुंडो"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "गोलु"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "बैज़्वी"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "टिकुंडो"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "पंजकुंडो"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "मुईनु"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "अठ कुंडो"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "चौरसि चौतरफ़ि समानु पासनि सां गूनी कुंड चौकुंडो आहे."
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "गूनी कुंड चौकुंडे जा चारि पासा ऐं चारि गूनी कुंड आहिनि."
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "गोलु हिकु मोड़ु आहे जंहिं जा सभु नुक़्ता मर्कज़ खां समानु दूरीअ ते आहिनि."
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "बेज़्वी शिकिलि डिघेड़ियलु गोलु आहे."
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "टिकुंडे जे टे पासा आहिनि."
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "पंज कुंडे जा पंज पासा आहिनि."
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "मुईनु जा चारि समानु पासा ऐं उन्हनि जे साम्हूं पूर विछोट लीकूं आहिनि."
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "अठ कुंडे जा समानु अठ पासा आहिनि."
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"आकारु चूंडियो. कर्कज़ु चूंडण लाइक्लिक करियो, गिहिलियो, उन बैदि तव्हां खे जेको आकारु घुरिजे उन "
+"खे गोल घुमण लाइ उन मथां घुमायो, उहो नक़्शु रचण लाइ क्लिक करियो."
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"आकारु चूंडियो. कर्कज़ु चूंडण लाइक्लिक करियो, गिहिलियो, उन बैदि तव्हां खे जेको आकारु घुरिजे उन "
+"खे गोल घुमण लाइ उन मथां घुमायो, उहो नक़्शु रचण लाइ क्लिक करियो."
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -475,7 +499,7 @@ msgstr "नओं"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8182
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "खोलियो"
 
@@ -509,19 +533,7 @@ msgstr "पंहिंजे नक्श जे चौतरफ़ि ठपो �
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "नक़्श जी लीक शुरू करण लाइ क्लिक करियो. उन खे पूरो थियणु ॾियो."
 
-#: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"आकारु चूंडियो. कर्कज़ु चूंडण लाइक्लिक करियो, गिहिलियो, उन बैदि तव्हां खे जेको आकारु घुरिजे उन "
-"खे गोल घुमण लाइ उन मथां घुमायो, उहो नक़्शु रचण लाइ क्लिक करियो."
-
-#: ../tools.h:129
+#: ../tools.h:128
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -529,7 +541,7 @@ msgstr ""
 "मतन जो नमूनो चूंडियो. पंहिंजे नक़्श ते क्लिक करियो ऐं तव्हीं टाईप करणु शुरू करे सघो था. मतन "
 "पूरो करण लाइ [दाख़िलु करियो]  या [टेब]  दॿायो."
 
-#: ../tools.h:133
+#: ../tools.h:132
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
@@ -546,300 +558,295 @@ msgstr ""
 "पूरो करण लाइ [दाख़िलु करियो]  या [टेब]  दॿायो. चूंड जो बटणु इस्तेमालु करण ऐं निकिरी "
 "वञण. जे चुटिकीअ ते क्लिक करे तव्हीं उन खे हलाए, संपादित करे ऐं उन जो मतनु बदिलाए सघो था."
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "रंग सां उहो हिसो भरण लाइ तस्वीर  में क्लिक करियो."
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "पंहिंजे नक़्श ते इस्तेमालु करण लाइ जादूई असरु चूंडियो"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "कयल कार्यु रदी करियो!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "वरी करियो!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "डाहींदड़ु!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "को रंगु या का तस्वीर चूंडियो जंहिं सां नओं नक्शु शुरू करणु चाहियो था."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "खोलियो..."
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "तव्हां जो अक्सु चूंडियो वियो आहे."
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "छापे पियो..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "अलविदा!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "लीक पूरी थियण लाइ बटणु वञणु ॾियो."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "आकारु फहिलाइण लाइ बटणु झलियो."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "आकारु गोलु घुमाइण लाइ माऊसु हलायो. उहो नक़्शु कढण लाइ क्लिक करियो."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "ठीक पोइ... असीं नक़्श रखूं!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2191
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "छा तव्हीं सचुपचु छॾे निकिरी वञणु चाहियो था?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2194
+#: ../tuxpaint.c:2195
 msgid "Yes, I’m done!"
 msgstr "हा, मुंहिंजो थी वियो!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2197 ../tuxpaint.c:2224
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "न, मूंखे वापसि खणो!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2201
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 "अगरि तव्हीं छॾे निकिरी वेंदा त तव्हीं छॾे निकिरी वेंदा त पंहिंजी तस्वीर विञाए छॾींदा "
 "सांढींदा?"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "हा, इहा सांढियो!"
 
-#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 msgid "No, don’t bother saving!"
 msgstr "न, मूंखे सांढण जी परवाह नाहे!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2206
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "पहिरीं पंहिंजी तस्वीर सांढींदा?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2211
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "उहा तस्वीर नथा खोले सघो!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2214 ../tuxpaint.c:2219 ../tuxpaint.c:2228 ../tuxpaint.c:2235
-#: ../tuxpaint.c:2244 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2218
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "फ़ाइलूं सांढियल नाहिनि!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "पंहिंजी तस्वीर छापींदा?"
 
-#: ../tuxpaint.c:2223
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "हा, उहा छापियो!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2227
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "तव्हांजी तस्वीर छापी वेई आहे!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2231
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "माफ़ु कजो! तव्हां जी तस्वीर न छपिजी सघी!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2234
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "अञा तव्हीं नथा छापे सघो!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "इहा तस्वीर मेसारे छॾींदा?"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "हा, इहा मेसारे छॾियो!"
 
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2241
 msgid "No, don’t erase it!"
 msgstr "न, इहा न मेसारियो!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2243
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "माऊस जो खाॿो बटणु इस्तेमालु करणु यादि रखो!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "तव्हांजी तस्वीर छापी वेई आहे!"
 
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "तव्हांजी तस्वीर छापी वेई आहे!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "माफ़ु कजो! तव्हां जी तस्वीर न छपिजी सघी!"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "माफ़ु कजो! तव्हां जी तस्वीर न छपिजी सघी!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "तव्हां खे जेका तस्वीर खपे उहा चूंडियो, उन बैदि ''हलायो'' ते क्लिक करियो."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2466
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "आवाज़ु अण उचारियलु कयो वियो."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "आवाज़ु उचारियलु कयो वियो."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3248
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "महिरबानी करे तरिसो..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "मेसारे छॾियो"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "स्लाइड"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "पुठिते"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "हलायो"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8203
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "अॻिते"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8969
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "हा"
 
-#: ../tuxpaint.c:12614
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "न"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13756
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "पंहिंजे तब्दीलियुनि सां तस्वीर मटाईंदा?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13760
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "हा, पुराणी मटायो!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13764
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "न, नईं फ़ाइल सांढियो!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15027
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "तव्हां खे जेका तस्वीर खपे उहा चूंडियो, उन बैदि 'खोलियो' क्लिक करियो."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16453
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24159
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24171
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "रंगु चूंडियो"
 
@@ -1683,3 +1690,6 @@ msgstr "पोइण जे कला सां तीर रचण लाइ �
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "पंहिंजे समूरीअ तस्वीर में टुकिरियुनि जे जड़तकारीअ असरु शामिलु करण लाइ क्लिक करियो."
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "रंग सां उहो हिसो भरण लाइ तस्वीर  में क्लिक करियो."

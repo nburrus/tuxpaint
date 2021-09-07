@@ -37,6 +37,12 @@ $Id$
       when the brush is animated and/or directional.
       (Closes https://sourceforge.net/p/tuxpaint/bugs/183/)
 
+    * Always show the appropriate instructions at the bottom when the
+      "Fill" (depends on which sub-tool chosen) and "Shapes" (depends
+      on whether "simpleshapes" option is set) tools are selected
+      (e.g., when returning from the "Open" dialog).
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/186/)
+
   * Documentation updates:
     ---------------------
     * Ensured Tux Paint's built-in help ("tuxpaint --help"),

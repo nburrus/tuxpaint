@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-06 01:34-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2010-10-04 17:44+0200\n"
 "Last-Translator: Pheledi <pheledi@mosekolatranslation.co.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -265,65 +265,65 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "Sekwere"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "Khutlonnethwii"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "Kgokolo"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "Sekalee"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "Khutlotharo"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "Khutlohlano"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "Rompase"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Octagon"
 msgstr "Okthakone"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "Sekwere ke khutlonnethwii yeo e nago le mahlakore a mane a go lekana."
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "Khutlonnethwii e na le mahlakore a mane le dikhutlotsepa tše nne."
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -331,49 +331,75 @@ msgstr ""
 "go tloga bogareng."
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "Sekalee ke kgokolo yeo e hlaramolotšwego."
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "Khutlotharo e na le mahlakore a mararo."
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "Khutlohlano e na le mahlakore a mahlano."
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Rompase e na le mahlakore a mane a go lekana, gomme mahlakore ao a lebanego "
 "a bapile."
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 msgid "An octagon has eight equal sides."
 msgstr "Okthakone e na le mahlakore a seswai a go lekana."
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"Kgetha sebopego. Kgotla gore o kgethe bogare, bo goge, ke moka o se tlogele "
+"ge se le bogolo bjo o bo nyakago. Šutha gore o se dikologe, gomme o kgotle "
+"gore o se thale."
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"Kgetha sebopego. Kgotla gore o kgethe bogare, bo goge, ke moka o se tlogele "
+"ge se le bogolo bjo o bo nyakago. Šutha gore o se dikologe, gomme o kgotle "
+"gore o se thale."
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -479,7 +505,7 @@ msgstr "Mpsha"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8182
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "Bula"
 
@@ -513,20 +539,7 @@ msgstr "Kgetha seswantšho seo o tla se tempago go dikologa sethalwa sa gago."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Kgotla gore o thome go thala mothaladi. Tlogela gore o se fetše."
 
-#: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Kgetha sebopego. Kgotla gore o kgethe bogare, bo goge, ke moka o se tlogele "
-"ge se le bogolo bjo o bo nyakago. Šutha gore o se dikologe, gomme o kgotle "
-"gore o se thale."
-
-#: ../tools.h:129
+#: ../tools.h:128
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
@@ -534,7 +547,7 @@ msgstr ""
 "Kgetha setaele sa mongwalo. Kgotla godimo ga sethalwa sa gago gomme o ka "
 "thoma go tlanya. Kgotla [Enter] goba [Tab] gore o fetše mongwalo."
 
-#: ../tools.h:133
+#: ../tools.h:132
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
@@ -552,299 +565,294 @@ msgstr ""
 "diriša konope ya go kgetha le ka go kgotla leipole yeo e šetšego e le gona, "
 "o ka e šuthiša, wa e lokiša le go fetoša setaele sa yona sa mongwalo."
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "Kgotla seswantšhong gore o tlatše lefelong leo ka mmala."
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Kgetha tiragalo ya maleatlana yeo o tla e dirišago sethalweng sa gago!"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "Dirolla!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "Diragape!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "Sephumodi!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr ""
 "Kgetha mmala le seswantšho tšeo o tla thomago sethalwa se seswa ka tšona."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "Bula…"
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "Seswantšho sa gago se bolokilwe!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "Go gatiša…"
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "Sepela gabotse!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "Tlogela konope gore o fetše mothaladi."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "Swara konope gore o hlaramolle sebopego."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Šuthiša mause gore o dikološe sebopego. Kgotla gore o se thale."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Go lokile ge… A re tšwele pele re thala se!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2191
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "Na ruri o nyaka go tlogela?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2194
+#: ../tuxpaint.c:2195
 msgid "Yes, I’m done!"
 msgstr "Ee, ke feditše!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2197 ../tuxpaint.c:2224
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "Aowa, mpušetše morago!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2201
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ge eba o tlogela, o tla lahlegelwa ke seswantšho sa gago! Se bolokwe?"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "Ee, se boloke!"
 
-#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 msgid "No, don’t bother saving!"
 msgstr "Aowa, o se ke wa itshwenya ka go se boloka!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2206
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "O thoma ka go boloka seswantšho sa gago?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2211
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "Seswantšho seo ga se bulege!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2214 ../tuxpaint.c:2219 ../tuxpaint.c:2228 ../tuxpaint.c:2235
-#: ../tuxpaint.c:2244 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "Go lokile"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2218
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "Ga go na difaele tšeo di bolokilwego!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "Gatiša seswantšho sa gago gona bjale?"
 
-#: ../tuxpaint.c:2223
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "Ee, se gatiše!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2227
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "Seswantšho sa gago se gatišitšwe!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2231
+#: ../tuxpaint.c:2232
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tshwarelo! Seswantšho sa gago ga se a gatišwa!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2234
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "O ka se thome go gatiša!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "Phumola seswantšho se?"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "Ee, se phumole!"
 
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2241
 msgid "No, don’t erase it!"
 msgstr "Aowa, o seke wa se phumola!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2243
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "Gopola go diriša konope ya go lanngele la mause!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Seswantšho sa gago se gatišitšwe!"
 
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Seswantšho sa gago se gatišitšwe!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Tshwarelo! Seswantšho sa gago ga se a gatišwa!"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Tshwarelo! Seswantšho sa gago ga se a gatišwa!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Kgetha seswantšho seo o se nyakago, ke moka o kgotle \"Bapala\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2466
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr "Modumo o tswaletšwe."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr "Modumo o butšwe."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3248
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "Hle leta…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "Phumola"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "Diselaete"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "Morago"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "Bapala"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8203
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "Latelago"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8969
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "Ee"
 
-#: ../tuxpaint.c:12614
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "Aowa"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13756
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "Tšeela seswantšho legato ka diphetošo tša gago?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13760
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "Ee, tšeela sa kgale legato!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13764
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "Aowa, boloka faele e mpsha!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15027
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kgetha seswantšho seo o se nyakago, ke moka o kgotle \"Bula\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16453
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24159
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24171
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr "Kgetha mmala."
 
@@ -1739,3 +1747,6 @@ msgstr ""
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Kgotla gore o tsenye dipataka seswantšhong sa gago ka moka."
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "Kgotla seswantšhong gore o tlatše lefelong leo ka mmala."

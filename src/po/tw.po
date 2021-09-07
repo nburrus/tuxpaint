@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-06 01:34-0700\n"
+"POT-Creation-Date: 2021-09-06 22:05-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -265,42 +265,42 @@ msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:234 ../shapes.h:235
+#: ../shapes.h:238 ../shapes.h:239
 msgid "Square"
 msgstr "Nhyinan"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:242 ../shapes.h:243
 msgid "Rectangle"
 msgstr "Nhyinanfea"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:246 ../shapes.h:247
 msgid "Circle"
 msgstr "Kurukuruwa"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:250 ../shapes.h:251
 msgid "Ellipse"
 msgstr "Kurukuruwa-fea"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:254 ../shapes.h:255
 msgid "Triangle"
 msgstr "Nhyiasa"
 
 #. Pentagone shape tool (5 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:258 ../shapes.h:259
 msgid "Pentagon"
 msgstr "Nhyianum"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:262 ../shapes.h:263
 msgid "Rhombus"
 msgstr "Nhyianankyeae"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:266 ../shapes.h:267
 #, fuzzy
 msgid "Octagon"
 msgstr "Nhyianum"
@@ -308,71 +308,95 @@ msgstr "Nhyianum"
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:266 ../shapes.h:269 ../shapes.h:272 ../shapes.h:275
-#: ../shapes.h:278 ../shapes.h:281
+#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
+#: ../shapes.h:282 ../shapes.h:285
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:289 ../shapes.h:290
+#: ../shapes.h:293 ../shapes.h:294
 msgid "A square is a rectangle with four equal sides."
 msgstr "Nhyianan yɛ nhyiae a ɛwɔ apɔw anan na ne nyinaa tenten yɛ pɛ."
 
 #. Description of a rectangle
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:297 ../shapes.h:298
 msgid "A rectangle has four sides and four right angles."
 msgstr "Nhyiananfea wɔ apɔw anan ne nhyianan a emu abien biara tenten yɛ pɛ."
 
 #. Description of a circle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:301 ../shapes.h:302
 #, fuzzy
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Kurukuruwa yɛ kanko a efi mfinimfini dekɔ pɔw biara so tenten yɛ pɛ."
 
 #. Description of an ellipse
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:305 ../shapes.h:306
 msgid "An ellipse is a stretched circle."
 msgstr "Kurukuruwa-fea yɛ kurukuruwa a wɔayɛ no fea kakra."
 
 #. Description of a triangle
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:309 ../shapes.h:310
 msgid "A triangle has three sides."
 msgstr "Wei yɛ nsensaeɛ mmiensa a ahyia."
 
 #. Description of a pentagon
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "A pentagon has five sides."
 msgstr "Wei yɛ nsensaeɛ nnum a ahyia."
 
 #. Description of a rhombus
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:317 ../shapes.h:318
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Wei yɛ nsensaeɛ nnan a ahyia, nsensaeɛ a ɛhwɛ anim no nyianaa yɛ pɛ."
 
 #. Description of an octagon
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:321 ../shapes.h:322
 #, fuzzy
 msgid "An octagon has eight equal sides."
 msgstr "Wei yɛ nsensaeɛ nnum a ahyia."
 
-#: ../shapes.h:320 ../shapes.h:321
+#: ../shapes.h:324 ../shapes.h:325
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:322 ../shapes.h:323
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:328 ../shapes.h:329
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:372
+#: ../shapes.h:385
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want. Move around to rotate it, and click again to draw it."
+msgstr ""
+"Fa esu bi. Mia so wɔ nfinfin na kora mu, twe na se, sɛ ne kɛseɛ no yɛ sɛ nea "
+"wo pɛ a, gyae mu."
+
+#: ../shapes.h:386
+#, fuzzy
+#| msgid ""
+#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
+#| "size you want. Move around to rotate it, and click to draw it."
+msgid ""
+"Pick a shape. Click to start drawing, drag, and let go when it is the size "
+"and shape you want."
+msgstr ""
+"Fa esu bi. Mia so wɔ nfinfin na kora mu, twe na se, sɛ ne kɛseɛ no yɛ sɛ nea "
+"wo pɛ a, gyae mu."
+
+#: ../shapes.h:392
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:373
+#: ../shapes.h:393
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -478,7 +502,7 @@ msgstr "Foforo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8182
+#: ../tools.h:98 ../tuxpaint.c:8184
 msgid "Open"
 msgstr "Bue"
 
@@ -512,19 +536,7 @@ msgstr "Fa mfoni a wode betintim nea wadorɔ no ho."
 msgid "Click to start drawing a line. Let go to complete it."
 msgstr "Click to start drawing a line. Let go to complete it."
 
-#: ../tools.h:125
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
-msgid ""
-"Pick a shape. Click to start drawing, drag, and let go when it is the size "
-"you want. Move around to rotate it, and click to draw it."
-msgstr ""
-"Fa esu bi. Mia so wɔ nfinfin na kora mu, twe na se, sɛ ne kɛseɛ no yɛ sɛ nea "
-"wo pɛ a, gyae mu."
-
-#: ../tools.h:129
+#: ../tools.h:128
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -534,7 +546,7 @@ msgid ""
 msgstr ""
 "Atwerɛdeɛ su biara a wopɛ sɛ wotwerɛ gu mfoni ho no, wotumi fa de twerɛ."
 
-#: ../tools.h:133
+#: ../tools.h:132
 #, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing."
@@ -546,307 +558,302 @@ msgid ""
 msgstr ""
 "Atwerɛdeɛ su biara a wopɛ sɛ wotwerɛ gu mfoni ho no, wotumi fa de twerɛ."
 
-#. Fill tool instructions
-#: ../tools.h:136
-msgid "Click in the picture to fill that area with color."
-msgstr "Mia mfoni no so na ma no fa ahosuo."
-
 #. Magic tool instruction
-#: ../tools.h:139
+#: ../tools.h:138
 msgid "Pick a magical effect to use on your drawing!"
 msgstr "Fa biribi nwanwaso bi yɛ nea woredrɔ no!"
 
 #. Response to 'undo' action
-#: ../tools.h:142
+#: ../tools.h:141
 msgid "Undo!"
 msgstr "Pepa!"
 
 #. Response to 'redo' action
-#: ../tools.h:145
+#: ../tools.h:144
 msgid "Redo!"
 msgstr "San yɛ!"
 
 #. Eraser tool
-#: ../tools.h:148
+#: ../tools.h:147
 msgid "Eraser!"
 msgstr "Apepade!"
 
 #. Response to 'start a new image' action
-#: ../tools.h:151
+#: ../tools.h:150
 #, fuzzy
 msgid "Pick a color or picture with which to start a new drawing."
 msgstr "Fa mfoni a wode betintim nea wadorɔ no ho."
 
 #. Response to 'open' action (while file dialog is being constructed)
-#: ../tools.h:154
+#: ../tools.h:153
 msgid "Open…"
 msgstr "Bue..."
 
 #. Response to 'save' action
-#: ../tools.h:157
+#: ../tools.h:156
 msgid "Your image has been saved!"
 msgstr "Yɛde wo mfoni no asie!"
 
 #. Response to 'print' action (while printing, or print dialog is being used)
-#: ../tools.h:160
+#: ../tools.h:159
 msgid "Printing…"
 msgstr "Ɛretintim..."
 
 #. Response to 'quit' (exit) action
-#: ../tools.h:163
+#: ../tools.h:162
 msgid "Bye bye!"
 msgstr "Nantew yiye!"
 
 #. Instruction while using Line tool (after click, before release)
-#: ../tools.h:167
+#: ../tools.h:166
 msgid "Let go of the button to complete the line."
 msgstr "Kɔ so na nsensan no nsi."
 
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:170
+#: ../tools.h:169
 msgid "Hold the button to stretch the shape."
 msgstr "So mu na emmue mu."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:172
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Mia akura no so wɔ adeɛ no so ma no ntwa ne ho."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:176
+#: ../tools.h:175
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Afei eye... Ma yɛnkɔso ndorɔ eyi!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2191
+#: ../tuxpaint.c:2192
 msgid "Do you really want to quit?"
 msgstr "Wopɛ sɛ wofi ha?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2194
+#: ../tuxpaint.c:2195
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Yiw, mawie!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2197 ../tuxpaint.c:2224
+#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
 msgid "No, take me back!"
 msgstr "Daabi, fa me kɔ akyi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2201
+#: ../tuxpaint.c:2202
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Sɛ wofi ha a, wo mfoni no bɛyera! Wode besie?"
 
-#: ../tuxpaint.c:2202 ../tuxpaint.c:2207
+#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
 msgid "Yes, save it!"
 msgstr "Yiw, fa sie!"
 
-#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
+#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Daabi, mfa nsie!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2206
+#: ../tuxpaint.c:2207
 msgid "Save your picture first?"
 msgstr "Wobedi kan de wo mfoni no asie?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2211
+#: ../tuxpaint.c:2212
 msgid "Can’t open that picture!"
 msgstr "Worentumi mmue saa mfoni no!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2214 ../tuxpaint.c:2219 ../tuxpaint.c:2228 ../tuxpaint.c:2235
-#: ../tuxpaint.c:2244 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "OK"
 msgstr "Eye"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2218
+#: ../tuxpaint.c:2219
 msgid "There are no saved files!"
 msgstr "Womfaa biribi nsieɛ!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2222
+#: ../tuxpaint.c:2223
 msgid "Print your picture now?"
 msgstr "Afei wopɛ sɛ wode mfoni no to krataa so?"
 
-#: ../tuxpaint.c:2223
+#: ../tuxpaint.c:2224
 msgid "Yes, print it!"
 msgstr "Aane, tintim!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2227
+#: ../tuxpaint.c:2228
 msgid "Your picture has been printed!"
 msgstr "Woatim wo mfoni no!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2231
+#: ../tuxpaint.c:2232
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Woatim wo mfoni no!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2234
+#: ../tuxpaint.c:2235
 msgid "You can’t print yet!"
 msgstr "Wontumi ntintim seesie!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2238
+#: ../tuxpaint.c:2239
 msgid "Erase this picture?"
 msgstr "Wopɛ sɛ wo saa mfoni yi?"
 
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2240
 msgid "Yes, erase it!"
 msgstr "Aane, pepa no!"
 
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2241
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Daabi, mpepa no!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2243
+#: ../tuxpaint.c:2244
 msgid "Remember to use the left mouse button!"
 msgstr "Kae na mia akura no benkum so!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Woatim wo mfoni no!"
 
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Woatim wo mfoni no!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Woatim wo mfoni no!"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Woatim wo mfoni no!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2258
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Fa mfoni a wopɛ, na mia di so ma no nyi."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2466
+#: ../tuxpaint.c:2467
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2472
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3248
+#: ../tuxpaint.c:3250
 msgid "Please wait…"
 msgstr "Mepawokyɛw twɛn..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8185
+#: ../tuxpaint.c:8187
 msgid "Erase"
 msgstr "Pepa"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8188
+#: ../tuxpaint.c:8190
 msgid "Slides"
 msgstr "Mfoni a edi hɔ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8191
+#: ../tuxpaint.c:8193
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8194
+#: ../tuxpaint.c:8196
 msgid "Back"
 msgstr "Kɔ wakyi"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8197
+#: ../tuxpaint.c:8199
 msgid "Play"
 msgstr "Di agorɔ"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8200
+#: ../tuxpaint.c:8202
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8203
+#: ../tuxpaint.c:8205
 msgid "Next"
 msgstr "Deɛ edi hɔ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8969
+#: ../tuxpaint.c:8971
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12610
+#: ../tuxpaint.c:12636
 msgid "Yes"
 msgstr "Aane"
 
-#: ../tuxpaint.c:12614
+#: ../tuxpaint.c:12640
 msgid "No"
 msgstr "Daabi"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13756
+#: ../tuxpaint.c:13782
 msgid "Replace the picture with your changes?"
 msgstr "Wopɛ sɛ wosesa mfoni no?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13760
+#: ../tuxpaint.c:13786
 msgid "Yes, replace the old one!"
 msgstr "Aane, sesa dada no!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13764
+#: ../tuxpaint.c:13790
 msgid "No, save a new file!"
 msgstr "Daabi, fa foforɔ no sie!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15027
+#: ../tuxpaint.c:15053
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wofa mfoni a wopɛ wia a, mia \"bue\" so."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16453
+#: ../tuxpaint.c:16479
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24159
+#: ../tuxpaint.c:24185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24171
+#: ../tuxpaint.c:24197
 msgid "Pick a color."
 msgstr ""
 
@@ -1676,6 +1683,9 @@ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 #, fuzzy
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "Mia mfoni no so na ma no fa ahosuo."
 
 #, fuzzy
 #~ msgid ""

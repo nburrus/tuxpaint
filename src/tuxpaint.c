@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 5, 2021
+  June 14, 2002 - September 6, 2021
 */
 
 #include "platform.h"
@@ -1984,6 +1984,7 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2);
 static void redraw_tux_text(void);
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left);
 static void draw_tux_text_ex(int which_tux, const char *const str, int want_right_to_left, Uint8 locale_text);
+static void draw_cur_tool_tip(void);
 static void wordwrap_text(const char *const str, SDL_Color color, int left, int top, int right, int want_right_to_left);
 static void wordwrap_text_ex(const char *const str, SDL_Color color,
                              int left, int top, int right, int want_right_to_left, Uint8 locale_text);
@@ -2591,10 +2592,11 @@ static void mainloop(void)
                   else if (cur_tool == TOOL_FILL)
                     draw_fills();
 
-                  draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+                  draw_cur_tool_tip();
 
                   /* FIXME: Make delay configurable: */
                   control_drawtext_timer(1000, tool_tips[cur_tool], 0);
+                  /* FIXME: May need to use draw_cur_tool_tip() here? -bjk 2021.09.06 */
 
                   magic_switchin(canvas);
                 }
@@ -3133,7 +3135,7 @@ static void mainloop(void)
 
                           /* FIXME: this "if" is just plain gross */
                           if (cur_tool != TOOL_TEXT)
-                            draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+                            draw_cur_tool_tip();
 
                           /* Draw items for this tool: */
 
@@ -3263,7 +3265,7 @@ static void mainloop(void)
                                   set_label_fonts();
                                   do_setcursor(cursor_arrow);
                                 }
-                              draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+                              draw_cur_tool_tip();
 
                               if (num_font_families > 0)
                                 {
@@ -3370,7 +3372,7 @@ static void mainloop(void)
                               draw_toolbar();
                               update_screen_rect(&r_tools);
 
-                              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+                              draw_cur_tool_tip();
 
                               draw_colors(COLORSEL_REFRESH);
 
@@ -4344,7 +4346,7 @@ static void mainloop(void)
                               draw_toolbar();
                               update_screen_rect(&r_tools);
 
-                              draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+                              draw_cur_tool_tip();
 
                               draw_colors(COLORSEL_FORCE_REDRAW);
 
@@ -4484,7 +4486,7 @@ static void mainloop(void)
                                                       event.button.x - r_canvas.x, event.button.y - r_canvas.y), 1);
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+                              draw_tux_text(TUX_GREAT, shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
                             }
                         }
                       else if (shape_tool_mode == SHAPE_TOOL_MODE_STRETCH)
@@ -4569,13 +4571,13 @@ static void mainloop(void)
 
                       fill_x = old_x;
                       fill_y = old_y;
-    
+
                       if (would_flood_fill(canvas, draw_color, canv_color))
                         {
                           int x1, y1, x2, y2;
                           SDL_Surface * last;
                           int undo_ctr;
-    
+
                           /* We only bother recording an undo buffer
                              (which may kill our redos) if we're about
                              to actually change the picture */
@@ -5198,7 +5200,7 @@ static void mainloop(void)
                                   SDL_Flip(screen);
 
                                   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-                                  draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+                                  draw_tux_text(TUX_GREAT, shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
                                 }
                             }
                           else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
@@ -5211,7 +5213,7 @@ static void mainloop(void)
                                                       event.button.x - r_canvas.x, event.button.y - r_canvas.y), 1);
 
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
-                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_SHAPES], 1);
+                              draw_tux_text(TUX_GREAT, shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
 
                               /* FIXME: Do something less intensive! */
 
@@ -5581,7 +5583,7 @@ static void mainloop(void)
                         undo_ctr = cur_undo - 1;
                       else
                         undo_ctr = NUM_UNDO_BUFS - 1;
-        
+
                       last = undo_bufs[undo_ctr];
 
                       /* Pushing button and moving: Update the gradient: */
@@ -11003,6 +11005,30 @@ static void draw_tux_text_ex(int which_tux, const char *const str, int want_righ
   update_screen_rect(&r_tuxarea);
 }
 
+
+/**
+ * Draw the current tool's tool tip.
+ * Mostly this comes from `tool_tips[]`, based on the current
+ * tool (`cur_tool`).  However, some tools have various
+ * context-specific strings to show:
+ *  - Fill: Describe the currently-selected fill mode (`fill_tips[]` from `fill_tools.h`)
+ *  - Shapes: Depends on "simple" vs "complex" shapes option (`shape_tool_tips[]` from `shapes.h`)
+ */
+static void draw_cur_tool_tip(void)
+{
+  if (cur_tool == TOOL_FILL)
+    {
+      draw_tux_text(tool_tux[cur_tool], fill_tips[cur_fill], 1);
+    }
+  else if (cur_tool == TOOL_SHAPES)
+    {
+      draw_tux_text(tool_tux[cur_tool], shape_tool_tips[simple_shapes ? SHAPE_COMPLEXITY_SIMPLE : SHAPE_COMPLEXITY_NORMAL], 1);
+    }
+  else
+    {
+      draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+    }
+}
 
 /**
  * FIXME
@@ -25403,7 +25429,7 @@ static void claim_to_be_ready(void)
 
   SDL_Flip(screen);
 
-  draw_tux_text(tool_tux[cur_tool], tool_tips[cur_tool], 1);
+  draw_cur_tool_tip();
 }
 
 /* ================================================================================== */
