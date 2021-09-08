@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.6 (0.9.27)
+2021.September.8 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -33,17 +33,16 @@ $Id$
 
   * Other Improvements:
     -------------------
-    * WIP Rotational brushes now supported.  Unlike "directional"
+    * Rotational brushes now supported.  Unlike "directional"
       brushes, in which a 3x3 grid representing the 8 cardinal
       directions (45 degree steps) is used, only a single brush image
       is required, and Tux Paint will rotate it between 0 and 360 degrees,
       depending on the direction the mouse is going.  The brush's ".dat"
       file should contain a line consisting of the word "rotate".
-      * FIXME: WIP -- Doesn't handle animated brushes correctly!
       * Note: This adds a dependency on "SDL_gfx" library
         (Homepage: https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
         SourceForge project page: https://sourceforge.net/projects/sdlgfx/)
-        as this feature use it's "rotozoom" functionality.
+        as this feature use it's "rotozoomSurface()" and "SDL_gfxBlitRGBA()".
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/122/)
 
     * Replaced the "arrow_compass_points" brush with a single

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 6, 2021
+  June 14, 2002 - September 8, 2021
 */
 
 #include "platform.h"
@@ -6045,8 +6045,32 @@ static void blit_brush(int x, int y, int direction, int rotation, int * w, int *
           SDL_Surface * rotated_brush;
 
           /* TODO: Cache these; discard them when the user changes the brush or alters its color */
-          /* FIXME: Account for src being within an animated brush! */
-          rotated_brush = rotozoomSurface(img_cur_brush, rotation, 1.0, SMOOTHING_ON);
+
+          rotated_brush = NULL;
+
+          if (img_cur_brush_frames != 1)
+            {
+              SDL_Surface * brush_frame_surf;
+
+              brush_frame_surf =
+                SDL_CreateRGBSurface(img_cur_brush->flags,
+                                     src.w,
+                                     src.h,
+                                     img_cur_brush->format->BitsPerPixel,
+                                     img_cur_brush->format->Rmask, img_cur_brush->format->Gmask, img_cur_brush->format->Bmask,
+                                     img_cur_brush->format->Amask);
+              if (brush_frame_surf != NULL)
+                {
+                  SDL_gfxBlitRGBA(img_cur_brush, &src, brush_frame_surf, NULL);
+                  rotated_brush = rotozoomSurface(brush_frame_surf, rotation, 1.0, SMOOTHING_ON);
+                  SDL_FreeSurface(brush_frame_surf);
+                }
+            }
+          else
+            {
+              rotated_brush = rotozoomSurface(img_cur_brush, rotation, 1.0, SMOOTHING_ON);
+            }
+
           if (rotated_brush != NULL)
             {
               src.x = 0;
