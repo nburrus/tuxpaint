@@ -372,38 +372,39 @@ Compilation et installation
          64bit, et des binaires 32bit en utilisant le shell MSYS2 32bit.
 
            * Choisissez "MSYS2 64bit" -> "MSYS2 MinGW 64-bit" dans le "Menu
-             de Démarrage" pour ouvrir le shell 64bit
+             de Démarrage" pour ouvrir le shell 64bit.
            * Choisissez "MSYS2 64bit" -> "MSYS2 MinGW 32-bit" dans le "Menu
-             de Démarrage" pour ouvrir le shell 32bit
+             de Démarrage" pour ouvrir le shell 32bit.
 
          Compilez Tux Paint avec la commande suivante :
 
            $ make bdist-win32
 
-         Note: At this point, you will want to build "Tux Paint Config." for
-         Windows, so it can be included along with "Tux Paint", if you're
-         making an official (or test) release. The build process will look
-         for it in a directory named "tuxpaint-config" (with no version
-         number, e.g., "tuxpaint-config-X.Y.Z"). See "Tux Paint Config."'s
-         INSTALL.txt documentation for details.
+         Nota : À ce stade, vous voudrez compiler "Tux Paint Config". Pour
+         Windows, il peut être ainsi inclus avec "Tux Paint", si vous faites
+         une version officielle (ou de test).La compilation ira chercher un
+         répertoire nommé "tuxpaint-config" (sans numéro de version, par ex
+         voir "tuxpaint-config-X.Y.Z"). Voir le fichier INSTALL.txt de "Tux
+         Paint Config" pour les détails.
 
-         All the files needed for starting Tux Paint (and Tux Paint Config.)
-         are collected in the directory for binary distribution "bdist"
-         directory under "win32". You can start them by double-clicking their
-         executable (.exe) files in the "bdist" directory.
+         Tous les fichiers nécessaires pour démarrer Tux Paint (et Tux Paint
+         Config) sont rassemblés dans le répertoire de la distribution
+         binaire "bdist", répertoire situé sous "win323. Vous pouvez les
+         démarrer en double-cliquant leurs fichiers exéctutables (.exe) dans
+         le répertoire "bdist".
 
             -------------------------------------------------------
 
     Construire l'installateur de Tux Paint sous Windows :
 
-         Inno Setup is used to build executable installer for Tux Paint.
-         Therefore you have to install it in the first place.
+         Inno Setup est utilisé pour construire l'installeur exécutable de
+         Tux Paint. Vous devez donc l'installer en premier.
 
-         Then, you can easily build an executable installer by right-clicking
-         on the "tuxpaint.iss" icon in the "win32" directory and selecting
-         "Compile" on the list. It will run for a while, and eventually you
-         will find a "tuxpaint-X.Y.Z-win32-installer.exe" file in the same
-         directory.
+         Alors, vous pouvez facilement construire un installateur exécutable
+         en cliquant-droit sur l'icône "tuxpaint.iss" du répertoires "win32"
+         et sélectionner "Compile" dans la liste. Cela prendra un certain
+         temps, et éventuellement vous obtiendrez un fichier
+         "tuxpaint-X.Y.Z-win32-installer.exe" dans le même répertoire.
 
             -------------------------------------------------------
 
