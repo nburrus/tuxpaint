@@ -996,6 +996,7 @@ install-dlls:
 	  cp $(MINGW_DIR)/bin/libgio-2.0-0.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/bz2-1.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/libimagequant.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libSDL_gfx-15.dll $(BIN_PREFIX); \
 	  cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX); \
 	  cp `which libstdc++-6.dll` $(BIN_PREFIX); \
 	  cp `which libpthread-2.dll` $(BIN_PREFIX); \
