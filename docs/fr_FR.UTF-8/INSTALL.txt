@@ -5,7 +5,7 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                               septembre 5, 2021
+                               septembre 12, 2021
 
      ----------------------------------------------------------------------
 

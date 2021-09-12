@@ -5,7 +5,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                             5 de Setembro de 2021
+                             12 de Setembro de 2021
 
      ----------------------------------------------------------------------
 
