@@ -666,6 +666,7 @@ Compiling and Installation
            * libsdl_mixer
            * libsdl_pango
            * libsdl_ttf
+           * libsdl_gfx
            * pkgconfig
            * zlib
          ... but you should install any package that is required by the
