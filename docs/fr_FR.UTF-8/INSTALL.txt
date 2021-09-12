@@ -200,9 +200,8 @@ Compilation et installation
 
     bibliothèques de dépendance 64bit (x86_64) pour Tux Paint
 
-         Vous pouvez installer les outils et bibliothèques nécessaires pour
-         la compilation de Tux Paint sur MSYS2 en utilisant "pacman", sauf
-         pour SDL_Pango.
+         You can install tools and libraries required for compiling Tux Paint
+         on MSYS2/MINGW using "pacman" except for SDL_Pango and SDL_gfx.
 
          "ntldd" est un petit outil qui examine les fichiers exécutables de
          windows en vue de lister les fichiers DLL (.dll) qui leur sont
@@ -222,11 +221,11 @@ Compilation et installation
 
          Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Installe SDL_Pango et réinstalle SDL sur l'environnement 64bit
+    Install SDL_Pango and SDL_gfx. Re-install SDL on the 64bit environment
 
-         SDL_Pango doit être installé manuellement. De plus, vous devez
-         réinstaller SDL à partir du code source, sinon vous verrez s'ouvrir
-         une fenêtre blanche inutile au démarrage de Tux Paint.
+         SDL_Pango and SDL_gfx should be installed manually. In addition, you
+         have to re-install SDL from the source code or you will see
+         unnecessary blank window opens when starting Tux Paint.
 
          Cette fois-ci, utilisez le shell MinGW "64bit". Ouvrez le shell
          depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
@@ -249,6 +248,17 @@ Compilation et installation
              $ tar zxvf SDL_Pango-0.1.2.tar.gz
              $ cd SDL_Pango-0.1.2/
              $ patch -p0 < ../SDL_Pango-configure-extra-api.patch
+             $ ./configure --prefix=/mingw64 && make && make install
+
+      SDL_gfx
+
+           Télécharger source tar-ball of SDL_gfx-2.0.25 depuis SDL_gfx's
+           page on Sourceforge.net.
+
+           Install SDL_gfx as follows.
+
+             $ tar zxvf SDL_gfx-2.0.25.tar.gz
+             $ cd SDL_gfx-2.0.25
              $ ./configure --prefix=/mingw64 && make && make install
 
       SDL
@@ -276,9 +286,8 @@ Compilation et installation
 
     bibliothèques de dépendance 32bit (i686) pour Tux Paint
 
-         Vous pouvez installer les outils et bibliothèques nécessaires pour
-         la compilation de Tux Paint sur MSYS2 en utilisant "pacman", sauf
-         pour SDL_Pango.
+         You can install tools and libraries required for compiling Tux Paint
+         on MSYS2/MINGW using "pacman" except for SDL_Pango and SDL_gfx.
 
          "ntldd" est un petit outil qui examine les fichiers exécutables de
          windows en vue de lister les fichiers DLL (.dll) qui leur sont
@@ -298,11 +307,11 @@ Compilation et installation
 
          Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Installe SDL_Pango et réinstalle SDL sur l'environnement 32bit
+    Install SDL_Pango and SDL_gfx. Re-install SDL on the 32bit environment
 
-         SDL_Pango doit être installé manuellement. De plus, vous devez
-         réinstaller SDL à partir du code source, sinon vous verrez s'ouvrir
-         une fenêtre blanche inutile au démarrage de Tux Paint.
+         SDL_Pango and SDL_gfx should be installed manually. In addition, you
+         have to re-install SDL from the source code or you will see
+         unnecessary blank window opens when starting Tux Paint.
 
          Cette fois-ci, utilisez le shell MinGW "32bit". Ouvrez le shell
          depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
@@ -325,6 +334,17 @@ Compilation et installation
              $ tar zxvf SDL_Pango-0.1.2.tar.gz
              $ cd SDL_Pango-0.1.2/
              $ patch -p0 < ../SDL_Pango-configure-extra-api.patch
+             $ ./configure --prefix=/mingw32 && make && make install
+
+      SDL_gfx
+
+           Télécharger source tar-ball of SDL_gfx-2.0.25 depuis SDL_gfx's
+           page on Sourceforge.net.
+
+           Install SDL_gfx as follows.
+
+             $ tar zxvf SDL_gfx-2.0.25.tar.gz
+             $ cd SDL_gfx-2.0.25
              $ ./configure --prefix=/mingw32 && make && make install
 
       SDL
@@ -722,42 +742,43 @@ Compilation et installation
          Quelques vieilles versions de macOS peuvent être téléchargées sur la
          page d'aide d'Apple : https://support.apple.com/en-us/HT211683
 
-         macOS does allow dual booting of multiple versions of the OS, but
-         it's safer and easier to install the old macOS onto a flash drive.
-         Wherever you're installing it, the target drive's partitioniong
-         scheme and partition type must match what the old macOS expects, so
-         use the Disk Utility to partition and format the flash drive
-         accordingly.
+         macOS permet de booter sur plusieurs versions de l'OS, mais c'est
+         préférable et plus facile d'installer le vieux macOS sur une clé.
+         Quelque soit la l'endroit où vous l'installer, le partionnement du
+         disque et le type de partition doivent correspondre à ce qu'attend
+         l'ancien macOS, dès lors utilisez l'utilitaire de partionnement et
+         le format de la clé en accord avec ceci.
 
-         As of this writing, the oldest version of macOS available on Apple's
-         support site is Yosemite 10.10, which expects "GPT (GUID Partition
-         Table)" partitioning scheme instead of the older MBR scheme, and
-         "Mac OS Extended (Journaled)" as the partition type instead of the
-         newer APFS partition type.
+         À ce moment, l'ancienne version de macOS disponible sur le site
+         d'Apple est la Yosemite 10.10, qui un partionnement "GPT (GUID
+         Partition Table)" au lieu de MBR, et "Mac OS Extended (Journalisé)"
+         comme type de partition au lieu du nouveau type APFS.
 
-         Upon launching the installer, if you get a popup about macOS being
-         too old or new to be installed, a bootable installer can be created
-         using the instructions found here:
-         https://support.apple.com/en-mide/HT201372
+         Au lancement de l'installateur, si vous avez un message disant que
+         macOD est trop vieux ou trop récent pour être installé, un
+         installateur bootable peut être créé en suivant les instructions
+         données ici : https://support.apple.com/en-mide/HT201372
 
-         It has been found that macOS can be installed onto the bootable
-         media itself, so you can make the flash drive into a bootable
-         installer then install the old macOS onto the same flash drive.
+         Il apparaît que macOS peut être installé sur le media bootable
+         lui-même, dès lors vous pouvez flasher l'installeur bootable et
+         mettre le vieux macOS sur ce même média.
 
-         Once the old macOS is installed, you may find the Xcode on the App
-         Store is too new to run on the version of the old macOS. Old
-         versions of Xcode can be downloaded from Apple's Developer site in
-         an area accessible with free registration:
+         Une fois l'ancienne version de macOS installée, vous pouvez trouver
+         que le Xcode du App Store est trop récent pour tourner sur la
+         version du vieux macOS. Des anciennes versions de Xcode peuvent être
+         téléchargées sur le site des développeurs d'Apple dans une zone
+         accessible après enregistrement gratuit :
          https://developer.apple.com/download/more/
 
-         The list of macOS versions and the last version of Xcode compatible
-         with them are laid out nicely on the Wikipedia page on Xcode:
-         https://en.wikipedia.org/wiki/Xcode#Version_comparison_table
+         La liste des versions de macOS et de la dernière version de Xcode
+         compatible avec celle-ci a été gentiment mise sur la page Wikipedia
+         sur Xcode : https://en.wikipedia.org/wiki/Xcode#Table de comparaison
+         des versions
 
-         And because Xcode is being installed manually, you can skip the step
-         to install the Xcode command line tools (do not run "xcode-select
-         --install") but otherwise build Tux Paint using the same steps
-         described in the earlier part of this document.
+         Comme Xcode a été installé manuellement, vous pouvez sauter l'étape
+         d'installation des outils de commande en terminal (ne pas exécuter
+         "xcode-select --install") mais alors vous compilez Tux Paint en
+         utilisant les mêmes étapes décrites auparavent dans ce document.
 
      ----------------------------------------------------------------------
 
@@ -796,11 +817,12 @@ Désinstallation de Tux Paint
 
   macOS
 
-       Delete "TuxPaint.app" from the "Applications" folder. Data files,
-       including the configuration files, stamps, and saved pictures, may be
-       found in "Bibliothèque/Support d'Application/Tux Paint" (all users)
-       and "/Users/USERNAME/Library/Application Support/TuxPaint" (individual
-       users).
+       Enlevez "TuxPaint.app" du dossier "Applications". Les fichiers de
+       données les fichiers de configuration, les tampons et les images
+       sauvegardées peuvent être trouvées dans "Bibliothèque/Support
+       d'Application/Tux Paint" (pour tous les utilisateurs) et
+       "/Users/USERNAME/Library/Application Support/TuxPaint" pour les
+       utilisateurs individurls.
 
      ----------------------------------------------------------------------
 

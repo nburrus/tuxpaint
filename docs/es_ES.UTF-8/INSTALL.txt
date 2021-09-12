@@ -197,7 +197,7 @@ Compiling and Installation
     64bit (x86_64) dependency libraries for Tux Paint
 
          You can install tools and libraries required for compiling Tux Paint
-         on MSYS2/MINGW using "pacman" except for SDL_Pango.
+         on MSYS2/MINGW using "pacman" except for SDL_Pango and SDL_gfx.
 
          "ntldd" is a small tool which examine windows executable files to
          list Dynamic Link Library (.dll) files they depends on. Tux Paint's
@@ -216,11 +216,11 @@ Compiling and Installation
 
          Note: Close the shell before proceeding to the remaining process.
 
-    Install SDL_Pango and re-install SDL on the 64bit environment
+    Install SDL_Pango and SDL_gfx. Re-install SDL on the 64bit environment
 
-         SDL_Pango should be installed manually. In addition, you have to
-         re-install SDL from the source code or you will see unnecessary
-         blank window opens when starting Tux Paint.
+         SDL_Pango and SDL_gfx should be installed manually. In addition, you
+         have to re-install SDL from the source code or you will see
+         unnecessary blank window opens when starting Tux Paint.
 
          This time, use the MinGW "64bit" shell. Open the shell from the
          "Start Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 64-bit"
@@ -241,6 +241,17 @@ Compiling and Installation
              $ tar zxvf SDL_Pango-0.1.2.tar.gz
              $ cd SDL_Pango-0.1.2/
              $ patch -p0 < ../SDL_Pango-configure-extra-api.patch
+             $ ./configure --prefix=/mingw64 && make && make install
+
+      SDL_gfx
+
+           Download source tar-ball of SDL_gfx-2.0.25 from SDL_gfx's page on
+           Sourceforge.net.
+
+           Install SDL_gfx as follows.
+
+             $ tar zxvf SDL_gfx-2.0.25.tar.gz
+             $ cd SDL_gfx-2.0.25
              $ ./configure --prefix=/mingw64 && make && make install
 
       SDL
@@ -269,7 +280,7 @@ Compiling and Installation
     32bit (i686) dependency libraries for Tux Paint
 
          You can install tools and libraries required for compiling Tux Paint
-         on MSYS2/MINGW using "pacman" except for SDL_Pango.
+         on MSYS2/MINGW using "pacman" except for SDL_Pango and SDL_gfx.
 
          "ntldd" is a small tool which examine windows executable files to
          list Dynamic Link Library (.dll) files they depends on. Tux Paint's
@@ -288,11 +299,11 @@ Compiling and Installation
 
          Note: Close the shell before proceeding to the remaining process.
 
-    Install SDL_Pango and re-install SDL on the 32bit environment
+    Install SDL_Pango and SDL_gfx. Re-install SDL on the 32bit environment
 
-         SDL_Pango should be installed manually. In addition, you have to
-         re-install SDL from the source code or you will see unnecessary
-         blank window opens when starting Tux Paint.
+         SDL_Pango and SDL_gfx should be installed manually. In addition, you
+         have to re-install SDL from the source code or you will see
+         unnecessary blank window opens when starting Tux Paint.
 
          This time, use the MinGW "32bit" shell. Open the shell from the
          "Start Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 32-bit"
@@ -313,6 +324,17 @@ Compiling and Installation
              $ tar zxvf SDL_Pango-0.1.2.tar.gz
              $ cd SDL_Pango-0.1.2/
              $ patch -p0 < ../SDL_Pango-configure-extra-api.patch
+             $ ./configure --prefix=/mingw32 && make && make install
+
+      SDL_gfx
+
+           Download source tar-ball of SDL_gfx-2.0.25 from SDL_gfx's page on
+           Sourceforge.net.
+
+           Install SDL_gfx as follows.
+
+             $ tar zxvf SDL_gfx-2.0.25.tar.gz
+             $ cd SDL_gfx-2.0.25
              $ ./configure --prefix=/mingw32 && make && make install
 
       SDL
