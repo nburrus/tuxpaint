@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.8 (0.9.27)
+2021.September.12 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -39,7 +39,7 @@ $Id$
       is required, and Tux Paint will rotate it between 0 and 360 degrees,
       depending on the direction the mouse is going.  The brush's ".dat"
       file should contain a line consisting of the word "rotate".
-      * Note: This adds a dependency on "SDL_gfx" library
+      + Note: This adds a dependency on "SDL_gfx" library
         (Homepage: https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
         SourceForge project page: https://sourceforge.net/projects/sdlgfx/)
         as this feature use it's "rotozoomSurface()" and "SDL_gfxBlitRGBA()".
@@ -93,14 +93,17 @@ $Id$
     --------------------
     * Ensure some locales have hints to find the best fonts
       for the Text and Label tools:
-      * Greek
-      * Scottish Gaelic
+      + Greek
+      + Scottish Gaelic
 
     * French
       Jacques Chion <jacques.chion@orange.fr>
 
     * Icelandic
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Japanese
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Bug Fixes:
     ----------
