@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-06 22:05-0700\n"
-"PO-Revision-Date: 2021-05-04 13:29+0900\n"
+"PO-Revision-Date: 2021-09-13 10:52+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -369,28 +369,21 @@ msgid "A star with 5 points."
 msgstr "とんがりが　５つの　ほし。"
 
 #: ../shapes.h:385
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
-"かたちをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
-"て、クリックしたら できあがり。"
+"まず、すきなかたちをえらんで かきたいばしょでクリック。 ドラッグして、おおき"
+"さとかたちがきまったらボタンをはなす。マウスをうごかしてすきなむきにまわし"
+"て、さいごに クリックしたら、できあがり。"
 
 #: ../shapes.h:386
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
 msgstr ""
-"かたちをえらんでクリックしたら、ドラッグして すきなおおきさにしよう。まわし"
-"て、クリックしたら できあがり。"
+"まず、すきなかたちをえらんで かきたいばしょでクリック。 ドラッグして、おおき"
+"さとかたちがきまったらボタンをはなして、できあがり。"
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
@@ -1253,7 +1246,7 @@ msgstr "ネガ"
 
 #: ../../magic/src/negative.c:73
 msgid "Opposite"
-msgstr ""
+msgstr "いろはんてん"
 
 #: ../../magic/src/negative.c:78
 msgid "Click and drag the mouse around to make your painting negative."
@@ -1264,20 +1257,20 @@ msgid "Click to turn your painting into its negative."
 msgstr "えを　クリックして　ぜんたいを　ネガポジにしよう。"
 
 #: ../../magic/src/negative.c:82
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
-msgstr "クリックしたまま マウスをうごかして えの　いろを　かえよう。"
+msgstr ""
+"クリックしたまま マウスをうごかして はんたいのいろにかえよう。（はんたいのい"
+"ろのことを、むずかしいことばでは「ほしょく」といいます）"
 
 #: ../../magic/src/negative.c:83
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
 msgstr ""
+"クリックして えのなかの ぜんぶのいろを はんたいのいろに かえよう。（はんたい"
+"のいろのことを、むずかしいことばで「ほしょく」といいます）"
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1297,7 +1290,7 @@ msgstr "とうしほう"
 
 #: ../../magic/src/perspective.c:151
 msgid "Panels"
-msgstr ""
+msgstr "パネル"
 
 #: ../../magic/src/perspective.c:152
 msgid "Zoom"
@@ -1309,10 +1302,8 @@ msgstr ""
 "のびちぢみ させたい ばしょの かどを クリックしたまま マウスをうごかそう。"
 
 #: ../../magic/src/perspective.c:158
-#, fuzzy
-#| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
-msgstr "えを　クリックして　ぜんたいを　ネガポジにしよう。"
+msgstr "クリックして えを ４まいのパネルにかえよう。"
 
 #: ../../magic/src/perspective.c:160
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1612,11 +1603,11 @@ msgstr ""
 
 #: ../../magic/src/xor.c:93
 msgid "Xor Colors"
-msgstr "いろはんてん"
+msgstr "ちゃくしょく"
 
 #: ../../magic/src/xor.c:99
 msgid "Click and drag to draw a XOR effect"
-msgstr "クリックしたまま マウスをうごかして いろを はんてんさせよう"
+msgstr "クリックしたまま マウスをうごかして カラフルなもようを かこう"
 
 #: ../../magic/src/xor.c:101
 msgid "Click to draw a XOR effect on the whole picture"
