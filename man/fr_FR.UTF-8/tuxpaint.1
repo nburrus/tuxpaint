@@ -399,28 +399,29 @@ titre, la combinaison [Alt]+[F4], ou la combinaison
 
 .TP 8
 .B \-\-nostamps \-\-stamps
-With "--nostamps" set, Rubber Stamp images are not loaded, so the Stamps
-tool will not be available.  This option can be used to reduce the time Tux
-Paint takes to load, and reduce the amount of RAM it requires.
+Avec l'option "--nostamps", les images de tampons ne sont chargées, dès
+lors l'outil tampon n'est pas disponible. Cette option peut être utilisée
+pour réduire le temps de chargement de Tux Paint, et réduire la quantité
+de RAM nécessaire.
 
 .TP 8
 .B \-\-nostampcontrols \-\-stampcontrols
-Disable or enable (default) buttons to control stamps.  Controls include
-mirror, flip, shrink and grow.  (Note: Not all stamps will be controllable
-in all ways.)
+Désactive ou active (par défaut) les boutons pour contrôler les tampons.
+Ces contrôles sont miroir, renverser, réduire et grossir (Note : tous les
+tampons ne sont pas forcément contrôlables.)
 
 .TP 8
 .B \-\-nomagiccontrols \-\-magiccontrols
-Disable or enable (default) buttons to control Magic tools.  Controls
-include controlling whether a Magic tool is used like a paint brush, or if
-it affects the entire image at once.  (Note: Not all Magic tools will be
-controllable.)
+Désactive ou active (par défaut) les boutons pour contrôler les outils
+Magie. Les contrôles incluent soit un outil Magie est utilisé comme un
+pinceau, soit il affecte l'ensemble de l'image en une seule fois. (Note :
+tous les outils ne sont pas forcément contrôlables.)
 
 .TP 8
 .B \-\-noshapecontrols \-\-shapecontrols
-Disable or enable (default) buttons to change the Shape tool's behavior --
-shapes expanding from the center, or from a corner, where the mouse is
-initially clicked.
+Déactive ou active (par défaut) les boutons pour changer le comportement
+des outils Forme -- les formes s'expansent à partir du centre, ou à
+partir d'un coin, là où la souris a cliqué en premier.
 
 .TP 8
 .B \-\-nolabel \-\-label
@@ -429,27 +430,30 @@ texte qui peut être modifié ou déplacé plus tard.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l
-\fItuxpaint\fP accepts the following options to alter how you control Tux
-Paint.  They can be used along with, instead of, or to override options set
-in configuration files. (See below.)
+\fItuxpaint\fP accepte les options suivantes pour modifier la manière dont
+vous le contrôler. Elles peuvent être utilisées en même temps, à la
+place ou pour remplacer des options définies dans la configuration (voir
+ci-dessous.)
 
 .SS CURSOR
 .TP 8
 .B \-\-nofancycursors \-\-fancycursors
-Disable or enable (default) the 'fancy' mouse pointer shapes in Tux Paint.
-While the shapes are larger, and context sensitive, some environments have
-trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
+Déactive ou active (par défaut) les formes de pointeur de souris
+'fantaisistes'. Quand les formes sont plus grandes, et dépendent du
+contexte, quelques environnements ont des problèmes pour afficher le
+pointeur, et/ou laissent des trainées sur l'écran.
 
 .TP 8
 .B \-\-hidecursor \-\-showcursor
-Completely hide, or enable (default) the mouse pointer in Tux Paint. This
-can be useful on touchscreen devices, such as tablet PCs.
+Cache complètement, ou active (par défaut) le pointeur de souris. Cela
+peut être utile pour des écrans tactiles, comme les tablettes.
 
 .SS KEYBOARD
 .TP 8
 .B \-\-noshortcuts \-\-shortcuts
-If "--noshortcuts" mode, keyboard shortcuts (e.g., [Ctrl]+[S] for Save)
-will be disabled.  Default mode is for shortcuts to be enabled.
+Avec le mode "--noshortcuts", les raccourcis clavier (par ex. [Ctrl]+[S]
+pour sauvegarder) seront désactivés. Le mode par défaut est d'activer
+les raccourcis clavier.
 
 .SS MOUSE AND ACCESSIBILITY
 .TP 8
@@ -460,11 +464,11 @@ par défaut.
 
 .TP 8
 .B \-\-nowheelmouse \-\-wheelmouse
-By default, the wheel (jog dial) on a mouse will be used to scroll the
-'selector' on the right of the screen.  This can be disabled, and the wheel
-completely ignored, with the "--nowheelmouse" option. This is useful for
-children who aren't yet comfortable with the mouse. Default is to support
-the wheel.
+Par défaut, la roulette d'une souris peut être utilisée pour faire
+défiler le 'sélecteur' sur la partie droite de l'écran. Ceci peut être
+désactivé, et la roulette ignorée, avec l'option "--nowheelmouse". Utile
+pour les enfants qui ont du mal à se servir de la roulette. Par défaut la
+roulette est activée.
 
 .TP 8
 .B \-\-mouse-accessibility
@@ -474,17 +478,17 @@ terminer le mouvement. ("Clics pesrsistants.")
 
 .TP 8
 .B \-\-keyboard \-\-mouse
-The "--keyboard" option lets the mouse pointer in Tux Paint be controlled
-with the keyboard.  The [Up], [Down], [Left], and [Right] arrow keys move
-the pointer. [Spacebar] acts as the mouse button.
+L'option "--keyboard" permet au pointeur de souris d'être contrôlé par
+le clavier. Les flèches [haut], [bas], [gauche] et [droit] servent à
+déplacer le pointeur. La [barre d'espace] remplace le bouton de souris.
 
 .TP 8
 .B \-\-nobuttondistinction \-\-buttondistinction
-By default, only mouse button #1 (typically the leftmost mouse button on
-mice with more than one button) can be used for interacting with Tux Paint.
- With the "--nobuttondistinction" option, mouse buttons #2 (middle) and #3
-(right) can be used, as well. This is useful for children who aren't yet
-comfortable with the mouse. Default is to only recognize button #1.
+Par défaut, seul le bouton #1 (en principe le bouton gauche sur les souris
+ayant plusieurs boutons) peut être utilisé avec Tux Paint. Avec l'option
+"--nobuttondistinction", le bouton #2 (milieu) et #3 (droit) peut être
+utilisé également. Utile pour les enfants n'étant pas à l'aise avec la
+souris. La valeur par défaut n'active que le bouton gauche #1.
 
 .SS ONSCREEN KEYBOARD
 .TP 8
@@ -499,8 +503,9 @@ ci-dessus).
 
 .TP 8
 .B \-\-onscreen-keyboard-disable-change
-Disables the left/right arrow buttons visible on the on-screen keyboard,
-which are used to switch between the available on-screen keyboard layouts.
+Désactive les boutons flèche droite/gauche visibles sur le clavier
+virtuel, qui sont utilisés pour permuter les différentes dispositions
+disponibles  de clavier virtuel.
 
 .SS JOYSTICK
 .TP 8
@@ -510,8 +515,7 @@ La valeur par défaut est 0 (le premier joystick).
 
 .TP 8
 .B \-\-joystick-dev=list
-List the system's available joysticks and exit. (Does not launch Tux
-Paint.)
+Liste les joysticks disponibles sur le système (ne démarre pas Tux Paint)
 
 .TP 8
 .B \-\-joystick-slowness=\fISPEED\fP
@@ -614,9 +618,10 @@ considérés comme un clic gauche de la souris.
 
 .SH OPTIONS - PRINTING
 .l
-\fItuxpaint\fP accepts the following options to alter how Tux Paint handles
-printing.  They can be used along with, instead of, or to override options
-set in configuration files. (See below.)
+\fItuxpaint\fP accepte les options suivantes pour modifier la manière
+d'imprimer. Elles peuvent être utilisées en même temps que, à la place
+de ou pour remplacer les options écrites dans les fichiers de
+configuration (voir ci-dessous)
 
 .SS PRINT PERMISSIONS
 .TP 8
@@ -631,58 +636,64 @@ secondes. La valeur par défaut est 0 (pas de limitation).
 .SS SHOW PRINTER DIALOG
 .TP 8
 .B \-\-altprintmod \-\-altprintnever \-\-altprintalways
-These options control whether an system printer dialog appears when the
-user clicks the Print button.  By default ("--altprintmod"), pressing [Alt]
-while clicking Print will bring up a dialog (unless you're in fullscreen
-mode).  With "--altprintalways", the dialog will always appear, even if
-[Alt] is not being held.  With "--altprintnever", the dialog will never
-appear, even if [Alt] is being held.
+Ces options vérifient qu'une boîte de dialogue pour apparaît quand
+l'utilisateur clique sur le bouton Imprimer. Par défaut ("--altprintmod")
+presser [Alt] en même temps que cliquer sur Imprimer fait apparaître une
+boîte de dialogue (sauf si vous êtres en mode plein écran). Avec
+"--altprintalways" la boîte apparaît même si [Alt] n'est pas pressé.
+Avec "--altprintnever" la boîte n'apparaît jamais, même si [Alt] est
+pressé.
 
 .SS SAVE PRINTER CONFIGURATION
 .TP 8
 .B \-\-printcfg \-\-noprintcfg
-(Windows and Mac OS X only.)  Enable or disable loading and saving of
-printer settings.  By default, Tux Paint will print to the default printer
-with default settings.  Pressing [Alt] while pushing the Print button will
-cause a printer dialog to appear (as long as you're not in fullscreen mode;
-see also "--altprintalways" and "--altprintnever", below.)  Unless
-"--noprintcfg" is used, your previous settings will be loaded when Tux
-Paint starts up, and setting changes will be saved for next time.
+(Windows et Mac OS X uniquement). Active ou désactive le chargement ou la
+sauvegarde des réglages d'impression. Par défaut, Tux Paint imprime sur
+l'imprimante pas défaut avec les réglages par défaut. En pressant [Alt]
+en même temps que cliquer sur le bouton Imprimer fera apparaître une
+boîte de dialogue (pour autant que vous ne soyez pas en plein écran; voir
+aussi "--altprintalways" et "--altprintnever" ci-dessous). À moins que
+"--noprintcfg" soit utilisé, vos réglages précédents seront chargés au
+démarrage de Tux Paint, et les changements seront sauvegardés pour la
+prochaine fois.
 
 .SS PRINT COMMANDS
 .TP 8
 .B \-\-printcommand \fICOMMAND\fP
-(Only when PostScript printing is used.) Have Tux Paint print via an
-alternate command, rather than lpr(1).
+(Seulement quand l'impression PostScript est utilisée). Fait que Tux Paint
+imprime via une commande alternative, plutôt que lpr(1).
 
 .TP 8
 .B \-\-altprintcommand \fICOMMAND\fP
-(Only when PostScript printing is used.) Have Tux Paint print via an
-alternate command, when a dialog is expect (e.g., when holding [Alt] while
-clicking Print; see above), rather than kprinter.
+(Seulement quand l'impression PostScript est utilisée). Fait que Tux Paint
+imprime via une commande alternative, quand une boîte de dialogue est
+attendue (par ex. en appuyant sur [Alt] en même temps que cliquer sur
+Imprimer; voir ci-dessus), plutôt que kprinter.
 
 .SS PAPER SIZE
 .TP 8
 .B \-\-papersize \fIPAPERSIZE\fP
-(Only when PostScript printing is used.) Ask Tux Paint to generate
-PostScript of a particular paper size. Valid sizes are those supported by
-libpaper.  See papersize(5).
+(Seulement quand l'impression PostScript est utilisée). Demande à Tux
+Paint de générer du PostScript pour une taille particulière de papier.
+Les tailles valides sont celles supportées par libpaper. Voir
+papersize(5).
 
 .SH OPTIONS - SAVING
 .l
-\fItuxpaint\fP accepts the following options to alter how Tux Paint
-operates when saving or exporting drawings.  They can be used along with,
-instead of, or to override options set in configuration files. (See below.)
+\fItuxpaint\fP accepte les options suivantes pour modifier la manière
+d'opérer pour sauvegarder ou exporter les dessins. Elles peuvent être
+utilisées en même temps, à la place de, ou bien écraser les options
+définies dans les fichiers de configuration (Voir ci-dessous).
 
 .SS SAVE OVER EARLIER WORK
 .TP 8
 .B \-\-saveover \-\-saveovernew \-\-saveoverask
-If, when saving a picture, an older version of the file will be
-overwritten, Tux Paint will, by default, ask for confirmation: either save
-over the old file, or create a new file.  This prompt can be disabled with
-"--saveover" (which always saves over older versions of pictures) or
-"--saveovernew" (which always saves a new file). The default is to prompt
-("--saveoverask").
+Si, quand on sauvegarde une image, une version plus ancienne du fichier va
+être écrasée, Tux Paint, par défaut, demandera une confirmation : soit
+on écrase l'ancien fichier, soit on crée un nouveau fichier. Cette
+demande peut être désactivée avec "--saveover" (qui écrase toujours les
+anciennes versions) ou "--saveovernew" (qui crée toujours un nouveau
+fichier). La valeur par défaut est de demander ("--saveoverask").
 
 .SS SAVE AND EXPORT DIRECTORIES
 .TP 8
@@ -691,7 +702,7 @@ La base où Tux Paint sauvegarde et lit les dessins des utilisateurs.
 
 .TP 8
 .B \-\-exportdir \fIRÉPERTOIRE\fP
-Specify where Tux Paint should export drawings and animations.
+Spécifie l'endroit où Tux Paint exporte les dessins ou les animations.
 
 .SS MORE SAVING OPTIONS
 .TP 8
@@ -707,9 +718,10 @@ sauvegarder l'image quand vous quittez, et suppose que vous le faites.
 
 .SH OPTIONS - DATA FILES
 .l
-\fItuxpaint\fP accepts the following options to alter where Tux Paint loads
-data (stamps, brushes, etc.)  They can be used along with, instead of, or
-to override options set in configuration files. (See below.)
+\fItuxpaint\fP accepte les options suivantes pour modifier la façon dont
+il charge les données (tampons, pinceaux, etc ...). Elles peuvent être
+utilisées en même temps, à la place de, en écrasant les options
+définies dans les fichiers de configuration (voir ci-dessous).
 
 .TP 8
 .B \-\-datadir \fIRÉPERTOIRE\fP
@@ -718,41 +730,44 @@ personnelles (pinceaux, tampons, etc ...).
 
 .TP 8
 .B \-\-colorfile \fIFILE\fP
-This option allows you to override the default color palette in Tux Paint
-and replace it with your own. The file should be a plain ASCII text file
-containing one color description per line. Colors may be in decimal or 6-
-or 3-digit hexadecimal, and followed by a description. (For example,
-"\fI#000 Black\fP" and "\fI255 192 64 Orange\fP".)
+Cette option vous permet de remplacer la palette de couleur de Tux Paint
+par une qui vous est propre. Le fichier doit en simple ASCII contenant une
+description de couleur par ligne. Les couleurs peuvent être en décimal,
+ou hexadécima à 3 ou 6 chiffres, et suivies par une description (pae ex.
+"\fI#000 Black\fP" et "\fI255 192 64 Orange\fP").
 
 .SH OPTIONS - LANGUAGE
 .l
-\fItuxpaint\fP accepts the following options to alter the language used by
-Tux Paint's interface, and other related settings.  They can be used along
-with, instead of, or to override options set in configuration files. (See
-below.)
+\fItuxpaint\fP accept les options suivantes pour modifier la langue
+utilisée par l'interface, et d'autres réglages en relation. Elles peuvent
+être utilisées en parallèle, à la place ou pour écraser les options
+définies dans les fichiers de configuration (voir ci-dessous).
 
 .l
-Various parts of Tux Paint have been translated into numerous languages.
-Tux Paint will try its best to honor your locale setting (i.e., the "LANG"
-environment variable), if possible. You can also specifically set the
-language using options on the command-line or in a configuration file.
+Différents composants de Tux Paint ont été traduits dans de nombreuses
+langues. Tux Paint fera le maximum pour prendre en considération votre
+réglage régional (càd la variable d'environnement "LANG") si possible.
+Vous pouvez également régler spécifiquement la langue en utilisant les
+options en ligne de commande ou via le fichier de configuration.
 
 .TP 8
 .B \-\-locale \fILOCALE\fP
-Specify the language to use, based on locale name (which is typically of
-the form "language[_territory][.codeset][@modifier], where "language" is an
-ISO 639 language code, "territory" is an ISO 3166 country code, and
-"codeset" is a character set or encoding identifier like "ISO-8859-1" or
-"UTF-8".)
+Spécifie la langue à utiliser, en se basant sur le nom de la variable
+locale (qui est typiquement de la forme
+"langue[_territoire][.codeset][@modifier], où "langue est un code ISO 639,
+"territoire" est code pays ISO 3166, et "codeset" est caractère ou un code
+comme "ISO-8859-1" ou "UTF-8").
 .PP
 .RS
-For example, "de_DE@euro" for German, or "pt_BR" for Brazilian Portuguese.
+Par exemple "de_DE@euro" pour l'allemand, ou "pt_BR" pour le portugais
+brésilien.
 .RE
 
 .TP 8
 .B \-\-lang \fILANGUAGE\fP
-Specify the language to use, based on the language's name (as recognized by
-Tux Paint).  Choose one of the language names listed below:
+Spécifie la langue à utiliser, en se basant sur le nom de la langue
+(telle que reconnue par Tux Paint). Choisissez l'une des langues listées
+ci-dessous :
 .PP
 .RS
 .PD 0
@@ -1152,40 +1167,43 @@ Affiche une liste de toutes les langues supportées.
 
 .TP 8
 .B \-\-mirrorstamps \-\-dontmirrorstamps
-With "--mirrorstamps" set, stamps which can be mirrored will appear
-mirrored by default.  This can be useful when used by people who prefer
-things right-to-left over left-to-right.
+Avec le réglage "--mirrorstamps", les tampons pouvant être symétrisés
+(en miroir) le seront par défaut. Ceci peut être utile pour les gens qui
+préfèrent les choses droite-gauche plutôt que gauche-droite.
 
 .SS FONTES
 .TP 8
 .B \-\-nosysfonts \-\-sysfonts
-Tux Paint normally attempts to search for additional TrueType Fonts
-installed in common places on your system.  If this causes trouble, or
-you'd prefer to only make fonts installed in Tux Paint's directory
-available, use the "--nosysfonts" option to disable this feature.
+Tux Paint recherche normalement des fontes TrueType additionnelles
+installée aux endroits habituels sur votre système. Si cela cause
+problème, ou su vous préférez n'utiliser que des fontes installées dans
+le répertoire de Tux Paint, utilisez l'option "--nosysfonts" pour
+désactiver cette fonction.
 
 .TP 8
 .B \-\-alllocalefonts \-\-currentlocalefont
-Tux Paint avoids loading any fonts found in its "locale" font subdirectory,
-except any that match the current locale Tux Paint is running under. Use
-the "--alllocalefonts" option to load all such fonts, for use in the Text
-and Label tools. (This was the default behavior, prior to version 0.9.21.)
+Tux Paint évite de charger des fontes trouvées dans sosu-répertoire
+"locale", sauf celles qui correspondent à la locale définie dans laquelle
+fonctionne Tux Paint. Utilisez l'option "--alllocalefonts" pour charger de
+telles fontes, pour les outils Texte et Étiquette. (C'était le
+comportement par défaut pour les versions antérieures à la 0.9.21).
 
 .SH OPTIONS - MISCELLANEOUS
 .l
-\fItuxpaint\fP accepts the following options to alter its behavior. They
-can be used along with, instead of, or to override options set in
-configuration files. (See below.)
+\fItuxpaint\fP accepte les options suivantes pour modifier son
+comportement. Elles peuvent être utilisées en même temps, à la place de
+ou pour écraser les options définies dans les fichiers de configuration.
+(Voir ci-dessous).
 
 .TP 8
 .B \-\-nosysconfig
-With this option, Tux Paint will not attempt to read the system-wide
-configuration file (typically "/etc/tuxpaint/tuxpaint.conf" or
+Avec cette option, Tux Paint ne lira pas le fichier de configuration
+général (typiquement "/etc/tuxpaint/tuxpaint.conf" ou
 "/usr/local/etc/tuxpaint/tuxpaint.conf").
 
 .TP 8
 .B \-\-nolockfile
-By default, Tux Paint uses a lockfile (stored in the user's local Tux Paint directory) which prevents it from being launched more than once in 30 seconds. (Sometimes children get too eager, or user interfaces only require one click, but users think they need to double-click.) This option makes Tux Paint ignore the current lockfile.
+Par défaut Tux Paint utilise un fichier de verrouillage (stocké dans le répertoire personnel de l'utilisateur) qui l'empêche  d'être chargé plus d'une fois pendant 30 secondes. (Parfois des enfants sont trop impatients, ou l'interface ne réclame qu'un seul clic mais l'utilisateur pense qu'il faut deux clics). Cette option fait que Tux Paint ignore le fichier de verrouillage.
 
 .SH ENVIRONMENT
 .ad l
@@ -1195,40 +1213,44 @@ suivantes (voir "FILES" ci-dessous) :
 .PP
 .TP 8
 .B HOME
-to determine where picture files go when using the Save and Open commands
-within Tux Paint, to keep track of the current image, when quitting and
-restarting Tux Paint, and to get the user's configuration file.
+pour déterminer où vont les fichiers images quand on utilise les
+commandes Sauvegarder et Ouvrir, pour garder trace de l'image en cours,
+quand on quitte ou redémarre Tux Paint, et pour obtenir le fichier de
+configuration de l'utilisateur.
 
 .TP 8
 .B LANG, LC_ALL, LANGUAGE et LC_MESSAGES
-to determine language to use, if setlocale(3) refers to "LC_MESSAGES".
+pour déterminer la langue à utiliser, si setlocale(3) se réfère à
+"LC_MESSAGES".
 
 .TP 8
 .B SDL_VIDEO_ALLOW_SCREENSAVER
-Set this environment variable to '1' to allow a screensaver to appear while
-Tux Paint is running. This can also be done via the "--allowscreensaver"
-option.
+Régler cette variable à '1' pour permettre un économiseur d'écran
+pendant que Tux Paint tourne. Cela peut être fait avec l'option
+"--allowscreensaver".
 
 .TP 8
 .B SDL_VIDEO_WINDOW_POS
-If this is NOT set, Tux Paint will set it to "center", to attempt to place
-the Tux Paint window in the center of a display. If it IS set (e.g., to
-"nopref", meaning "no preference"), Tux Paint will not override it.
+Si ce N'EST PAS défini, Tux Paint le mettra à "center", pour essayer de
+positionner la fenêtre de Tux Paint au centre de l'écran. Si C'EST
+défini (par ex. à "nopref" signifiant "pas de préférence"), Tux Paint
+ne l'écrasera pas.
 
 .SH FILES
 .TP 8
 .B [/usr/local/]/etc/tuxpaint/tuxpaint.conf
-System-wide configuration file.  It is read first (unless the
-"--nosysconfig" option was given on the command-line).
+Fichier de configuration pour l'ensemble du système. Lu en premier (sauf
+si l'option "--nosysconfig" a été donnée en ligne de commande).
 .RS
 .PP
 (Créé durant l'installation.)
 .RE
 .TP 8
 .B $HOME/.tuxpaintrc
-User's configuration file.  It can be used to set default options (rather
-than setting them on the command-line every time), and/or to override any
-settings in the system-wide configuration file.
+Fichier de configuration utilisateur. Il peut être utilisé pour définir
+les options par défaut (plutôt que de les définir en ligne de commande
+à chaque fois), et/ou écraser les réglages définis dans le fichier
+global.
 .RS
 .PP
 (Non créé ou édité automatiquement; doit être créé manuellement.
@@ -1236,9 +1258,9 @@ Vous pouvez le faire vous-mêmes, ou utiliser tuxpaint-config(1).)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/saved/
-A directory of previously-saved images (and thumbnails).  Only files in
-this directory will be made available using the Open command within Tux
-Paint.  Overridden via the "--savedir" option.
+Un répertoire avec les images déjà sauvegardées (et les vignettes).
+Seuls les fichiers de ce répertoire sont disponibles pour la commande
+Ouvrir de Tux Paint. Outrepassé avec l'option "--savedir".
 .RS
 .PP
 (Créé quand la commande Sauvegarder est utilisée.)
@@ -1255,34 +1277,34 @@ l'option"--startblank" ait été activée.)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/lockfile.dat
-A lockfile that prevents Tux Paint from being launched more than once every
-30 seconds.  Disable checking the lockfile by using the "--nolockfile"
-option.
+Un fichier de verrouillage qui empêche Tux Paint d'être lancé plus d'une
+fois pendant 30 secondes. On désactive cette vérification en utilisant
+l'option "--nolockfile".
 .RS
 .PP
-(There's no reason to delete the lockfile, as it contains a timestamp
-inside which causes it to expire after 30 seconds.)
+(Il n'y a pas de raisons d'effacer le fichier de verrouillage, car il
+contient un horodatage qui fait qu'il expirera après 30 secondes).
 .RE
 .TP 8
 .B $XDG_CONFIG_HOME[XDG_PICTURES_DIR]/TuxPaint/
-A directory where images and animations should be exported (via options
-found in Tux Paint's Open dialog), if the "--exportdir" option is not used
-to override it.  If "$XDG_CONFIG_HOME" is set, a configuration file
-"user-dirs.dirs" will be scanned within the directory it points to; if not,
-Tux Paint will attempt to do so within "$HOME/.config/".  If a setting
-named "XDG_PICTURES_DIR" is found, it will be used as the location to
-export images. If all else fails, then "$HOME/Pictures/" will be used.  A
-"TuxPaint" subdirectory will be created.
+Un répertoire où les images et les animations sont exportées (via les
+options de la boîte de dialogue Ouvrir), si l'option "--exportdir" n'est
+pas utilisée pour passer outre. Si "$XDG_CONFIG_HOME" est défini, un
+fichier de configuration "user-dirs.dirs" est balayé dans le répertoire
+qui est pointé; si non, Tux Paint essayera "$HOME/.config/". Si un
+réglage nommé "XDG_PICTURES_DIR" est trouvé, il sera utilisé pour
+l'export des images. Si tout échoue, alors "$HOME/Pictures/" sera
+utilisé. Un sous-répertoire "TuxPaint" sera créé.
 .TP 8
 .B $XDG_DATA_HOME/Trash/ ou $HOME/.local/share/Trash/
-A directory where images are placed when the Erase option is used from the
-Open dialog.
+Un répertoire où les images sont  placées quand l'option Effacer est
+utilisée depuis la boîte de dialogue.
 
 .SH COPYRIGHT
-This program is free software; you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published by the Free
-Software Foundation; either version 2 of the License, or (at your option)
-any later version.
+Ce programme est un logiciel libre; vous pouvez le redistribuer et/ou le
+modifier selon les termes de Licence Publique Générale (GPL) telle que
+fournie par la  Free Software Foundation; soit la version 2 de la Licence
+soit une version ultérieure (à votre convenance).
 
 .SH OTHER INFO
 Voyez la documentation venant avec Tux Paint pour d'autres instructions concernant les possibilités du programme.
