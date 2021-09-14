@@ -230,27 +230,29 @@ Pinceaux
          Ajoute une ligne contenant le mot "directional" au fichier de
          données brosse.
 
-    Rotating Brushes
+    Pinceaux tournants
 
-         As of Tux Paint version 0.9.27, you may now create rotating brushes.
-         As the brush is used, it is rotated 360 degrees, depending on the
-         direction the brush is going.
+         Depuis la version 0.9.27 de Tux Paint , vous pouvez désormais créer
+         des pinceaux tournants. Au fur et à mesure que le pinceau est
+         utilisé, il tourne de 360 degrés, en fonction de la direction du
+         pinceau.
 
          Ajoute une ligne contenant le mot "rotate" au fichier de données
          brosse.
 
-    Animated Directional or Rotating Brushes
+    Pinceaux animés orientables ou tournants
 
-         You may mix both animated and either directional or rotating
-         features into one brush. Use both options desired ("frames=N" and
-         "directional" or "rotate"), in separate lines in the brush's ".dat"
-         file.
+         Vous pouvez mélanger animation et orientation (ou rotation) dans un
+         même pinceau. Utilisez les deux options ("frames=N" et "directional"
+         ou "rotate) en deux lignes séparées dans le fichier ".dat" qui
+         concerne le pinceau.
 
-         For directional brushes, lay the brush out so that each 3x3 set of
-         directional shapes are laid out across a wide PNG image. For
-         example, if the brush is 30x30 and there are 5 frames, it would be
-         450x90. (The leftmost 150x90 pixels of the image represent the 9
-         direction shapes for the first frame, for example.)
+         Pour les pinceaux directionnels, disposez le pinceau de manière à ce
+         que chaque ensemble 3x3 de formes orientables soit disposé sur une
+         grande image PNG. Par exemple, si le pinceau mesure 30x30 et qu'il y
+         a 5 cadres, ce sera 450x90. (Les 150x90 pixels les plus à gauche de
+         l'image représentent les 9 formes de direction pour la première
+         image, par exemple).
 
      Placez les PNG de l'image du pinceau (et tous les fichiers texte de
      données) dans le répertoire "brushes".
@@ -286,12 +288,12 @@ Tampons
        permettre à l'utilisateur d'ajuster le tampon vers le haut (plus
        grand) et vers le bas (plus petit).
 
-       SVGs are vector-based, and will be scaled appropriately for the canvas
-       size being used in Tux Paint.
+       Les SVG sont basés sur des vecteurs et seront mis à l'échelle de
+       manière adéquate pour le canevas utilisé.
 
-       Remarque: si vos nouveaux PNG-based stamps se présentent tous sous
-       forme de carrés ou de rectangles pleins, c'est que vous avez oublié
-       d'utiliser la transparence alpha ! Consultez le fichier de
+       Remarque: si vos nouveaux des tampons basés sur PNG se présentent tous
+       sous forme de carrés ou de rectangles pleins, c'est que vous avez
+       oublié d'utiliser la transparence alpha ! Consultez le fichier de
        documentation "PNG" pour plus d'informations et de conseils.
 
        Remarque: si vos nouveaux tampons SVG semblent avoir beaucoup de zones

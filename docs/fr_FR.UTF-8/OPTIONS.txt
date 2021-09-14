@@ -74,7 +74,7 @@ Utilisateurs de Linux et Unix
 
            --nosysconfig
 
-macOS Users
+Utilisateurs de macOS
 
        Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
        être placé dans votre dossier de départ, sous le sous-dossier :

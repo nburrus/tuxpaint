@@ -136,7 +136,7 @@ Lancement de Tux Paint
 
      ----------------------------------------------------------------------
 
-  macOS Users
+  Utilisateurs de macOS
 
          Double-cliquez simplement sur l'icône "Tux Paint".
 
@@ -318,11 +318,11 @@ Outils disponibles
                  Relâchez la souris pour terminer la ligne. On entend alors
                  le son "sproing !".
 
-                 Some brushes are animated, and will show a pattern of shapes
-                 along the line. Others are directional, and will show a
-                 different shape depending on the angle of the brush. And
-                 finally some are both animated and directional. See "Paint",
-                 above, to learn more.
+                 Certains pinceaux sont animés, et montre un ensemble formes
+                 le long d'une ligne. D'autres sont directionnels et montre
+                 des formes différentes suivant l'angle du pinceau. Et enfin
+                 certains sont à la fois animés et directionnels. Voir
+                 "Paint", au-dessus, pour en savoir plus.
 
      ----------------------------------------------------------------------
 

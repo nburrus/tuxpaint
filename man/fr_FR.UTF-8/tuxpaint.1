@@ -248,19 +248,22 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 
 .SH DESCRIPTION
 .PP
-\fITux Paint\fP is a drawing program for young children.  It is meant to be
-easy and fun to use.  It provides a simple interface and fixed canvas size,
-and provides access to previous images using a thumbnail browser (i.e., no
-access to the underlying filesystem).
+\fITux Paint\fP est un programme de dessin pour les jeunes enfants. Cela
+signifie qu'il d'usage simple et amusant. Il est fourni avec une interface
+simple et un canevas de taille fixe, et on peut accéder aux images
+précédentes en utilisant un navigateur de vignettes (ced, sans accès au
+système de fichiers sous-jacent).
 
-Unlike popular drawing programs like "\fIThe GIMP\fP," it has a very
-limited toolset. However, it provides a much simpler interface, and has
-entertaining, child-oriented additions such as sound effects.
+À la différence de programmes de dessin répandus comme "\fIThe GIMP\fP",
+il a un ensemble d'outils très limité. En revanche, il a une interface
+beaucoup plus simple, et possède des suppléments amusants pour les
+enfnts, comme les effets sonores.
 
 .SH OPTIONS - INFORMATIONS
 .l
-\fItuxpaint\fP accepts the following options to emit information about the
-program.  It then exits immediately (without opening a graphical window).
+\fItuxpaint\fP accepte les options suivantes pour donner des informations
+sur le programme. Il se ferme ensuite immédiatement (sans ouvrir de
+fenêtre graphique).
 
 .TP 8
 .B \-\-help
@@ -280,17 +283,18 @@ Montre la licence (GNU GPL) sous laquelle Tux Paint est distribué.
 
 .SH OPTIONS - INTERFACE
 .l
-\fItuxpaint\fP accepts the following options to alter the interface.  They
-can be used along with, instead of, or to override options set in
-configuration files. (See below.)
+\fItuxpaint\fP accepte les options suivantes pour modifier l'interface.
+Elles peuvent être utilisées en même temps, à la place de, ou bien pour
+remplacer les options des fichiers de configuration (voir ci-dessous)
 
 .SS VIDEO
 .TP 8
 .B \-\-fullscreen=yes \-\-fullscreen=native \-\-fullscreen=no \-\-windowed
-Run \fITux Paint\fP in full-screen mode at its default -- or a specified --
-screen resolution ("--fullscreen=yes"); or in full-screen mode at the
-system's native resolution ("--fullscreen=native"); or run in a window
-("--fullscreen=no" or "--windowed") (default).
+Fait tourner \fITux Paint\fP en mode plein écran à la résolution
+("--fullscreen=yes"), valeur par défaut ou valeur spécifiée; ou bien em
+mode plein écran avec la résolution du système ("--fullscreen=native");
+ou bien dans une fenêtre ("--fullscreen=no" ou "--windowed") (valeur par
+défaut).
 
 .TP 8
 .B \-\-native
@@ -298,23 +302,24 @@ En mode plein écran, utilise la résolution de l'écran par défaut.
 
 .TP 8
 .B \-\-WIDTHxHEIGHT
-Run \fITux Paint\fP in a particularly-sized window, or at a particular
-fullscreen resolution (if \-\-native is not used).  Default is 800x600. 
-Minimum width is 640.  Minimum height is 480.  Portrait and landscape
-orientations are both supported.  (Also see \-\-orient, below.)
+Fait tourner \fITux Paint\fP dans une fenêtre de dimensions
+particulières, ou dans une résolution plein écran particulière (si
+\-\-native n'est pas utilisé). Valeur par défaut 800x600. Largeur minimum
+640. Hauteur minimum 480. Les orientations portrait et paysage sont toutes
+supportées. (Voir aussi \-\-orient ci-dessous)
 
 .TP 8
 .B \-\-orient=landscape \-\-orient=portrait
-If \-\-orient=portrait is set, asks \fITux Paint\fP to swap the WIDTH and
-HEIGHT values it uses for windowed or fullscreen mode, without having to
-actually change the WIDTH and HEIGHT values in the configuration file or on
-the command-line. (This is useful on devices where the screen can be
-rotated, e.g. tablet PCs.)
+Si \-\-orient=portrait est activé, demande à \fITux Paint\fP de permuter
+les valeurs de WIDTH et HEIGHT qu'il utilise en mode fenêtré ou plein
+écran, sans avoir à changer réellement les valeurs dans le fichier de
+configuration ou donnée en ligne de commande. (Ceci est utilise quand
+l'écran peut être tourné, par ex. pour une tablette)
 
 .TP 8
 .B \-\-allowscreensaver \-\-disablescreensaver
-Normally, \fItuxpaint\fP disables your screensaver. Use
-\-\-allowscreensaver to prevent this from happening.
+Normalement, \fItuxpaint\fP désactive votre économiseur d'écran.
+Utilisez \-\-allowscreensaver pour éviter que cela arrive.
 
 .SS SON
 .TP 8
@@ -327,9 +332,9 @@ Désactive ou active (défaut) le support pour stéréo.
 
 .SS INTERFACE SIZE
 .TP 8
-.B \-\-buttonsize SIZEAdjust the size of the buttons in \fITux Paint\fP's user interface, between
-24 and 192 pixels (48 is the default, and suitable for displays with 96 to
-120dpi pixel density).
+.B \-\-buttonsize SIZEAjuste la taille des boutons de l'interface utilisateur de \fITux Paint\fP,
+entre 24 et 192 pixels (48 par défaut, et qui convient pour des affichages
+avec 96 à 120 dpi).
 
 .TP 8
 .B \-\-colorsrows=\fIROWS\fP
@@ -341,10 +346,11 @@ dispositifs de pointage peu précis (par ex avec des oculomètres). Ce peut
 .SS INTERFACE SIMPLIFICATION
 .TP 8
 .B \-\-simpleshapes \-\-complexshapes
-Disable or enable (default) the rotation step when using the Shape tool
-within Tux Paint.  When disabled, shapes cannot be rotated; however, the
-interface is easier (click, drag, release), which can be useful for younger
-or disabled children.
+Active ou désactive (par défaut) les pas de rotation quand quand on
+utilise l'outil Forme dans Tux Paint. Quand il est désactivé, les formes
+ne peuvent être tournées; par contre, l'interface est plus aisée (clic,
+faire glisser et relâcher), ce qui peut être utile pour les enfanfants
+plus jeunes, ou bien handicapés.
 
 .TP 8
 .B \-\-nooutlines \-\-outlines
@@ -355,39 +361,41 @@ ordinateur lent, ou bien avec un écran à distance.)
 
 .TP 8
 .B \-\-uppercase \-\-mixedcase
-With "--uppercase" enabled, all text prompts and the Text and Label drawing
-tools will display only uppercase letters.  This is useful for children who
-are not yet comfortable with the lowercase characterset.  Default mode is
-mixed case.
+Avec "--uppercase" activé, tous les textes et les outils Texte et
+Étiquette seront en lettre capitales. Ce peut être utile pour les enfants
+qui ne pas habitués aux lettres minuscules. En mode par défaut la casse
+est mixte.
 
 .SS INITIAL STAMP SIZE
 .TP 8
 .B \-\-stampsize=\fISIZE\fP \-\-stampsize=default
-Overrides the default size of all stamps, relative to their possible sizes
-(determined by Tux Paint, based on the dimensions of both the stamps
-themselves, and the drawing canvas).  Valid values are from 0 (smallest) to
-10 (largest).  Use "--stampsize=default" to let Tux Paint choose on a
-per-stamp basis (this is the default setting).
+Modifie la taille par défaut de tous les tampons, relativement à leurs
+tailles possibles (déterminées par Tux Paint, basées sur les dimensions
+respectives des tampons eux-mêmes et du canevas). Les valeurs admises vont
+de 0 (le plus petit) à 10 (le plus grand). Utilisez "--stampsize=default"
+pour laisser Tux Paint choisir en fonction du tampon (c'est le comportement
+par défaut).
 
 .SS STARTING OUT
 .TP 8
 .B \-\-startblank \-\-startlast
-When you start Tux Paint, it loads the last image that was being worked on.
- The "\-\-startblank" option disables this, so it always starts with a
-blank canvas.  The default behavior is "\-\-startlast".
+Quand Tux Paint démarre, il charge la dernier image de travail. L'option
+"\-\-startblank" désactive ceci, de telle sorte qu'il démarre toujours
+avec un canevas vide. Le comportement par défaut est "\-\-startlast".
 
 .TP 8
 .B \-\-newcolorslast \-\-newcolorsfirst
-List solid (blank) colors at the end, or beginning (default) of the options
-displayed when using the New tool to start a new picture.
+Met la liste des couleurs unies à la fin, ou au début (par défaut), des
+choix possibles affichés lorsque l'on utilise l'outil Nouveau pour
+démarrer une nouvelle oeuvre.
 
 .SS CONTROL SIMPLIFICATION
 .TP 8
 .B \-\-noquit \-\-quit
-Disable or enable (default) the on-screen Quit button and [Escape] key for
-quitting Tux Paint.  Instead, use the window close button in the titlebar,
-the [Alt]+[F4] key sequence, or the [Shift]+[Control]+[Escape] key
-sequence.
+Désactive ou active (par défaut) le bouton Quitte et la touche Échap.
+pour quitter Tux Paint. Sinon, utilisez le bouton 'fermer' de la barre de
+titre, la combinaison [Alt]+[F4], ou la combinaison
+[Shift]+[Control]+[Échap.].
 
 .TP 8
 .B \-\-nostamps \-\-stamps

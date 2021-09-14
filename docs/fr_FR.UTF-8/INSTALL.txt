@@ -18,7 +18,7 @@
    |  * Compilation et installation                         |
    |       * Utilisateurs de Windows                        |
    |       * Utilisateurs de Linux/Unix                     |
-   |       * macOS Users                                    |
+   |       * Utilisateurs de macOS                          |
    |  * Débogage                                            |
    |  * Désinstallation de Tux Paint                        |
    |       * Windows                                        |
@@ -36,11 +36,11 @@ Exigences
        (libSDL), une bibliothèque de programmation multimédia Open Source
        disponible sous la Licence publique générale limitée GNU (LGPL).
 
-       Along with libSDL, Tux Paint depends on a number of other SDL 'helper'
-       libraries: SDL_Image (for graphics files), SDL_gfx (for some graphical
-       functions, like rotation), SDL_TTF and (optionally) SDL_Pango (for
-       True Type Font support) and, optionally, SDL_Mixer (for sound
-       effects).
+       Avec libSDL, Tux Paint dépend d'un certain nombre d'autres
+       bibliothèques 'd'aide' SDL : SDL_Image (pour les fichiers graphiques),
+       SDL_gfx (pour certaines fonctions graphiques, comme la rotation),
+       SDL_TTF et (en option) SDL_Pango (pour la prise en charge des polices
+       True Type) et, éventuellement, SDL_Mixer (pour les effets sonores).
 
     Utilisateurs de Linux/Unix :
 
@@ -200,8 +200,9 @@ Compilation et installation
 
     bibliothèques de dépendance 64bit (x86_64) pour Tux Paint
 
-         You can install tools and libraries required for compiling Tux Paint
-         on MSYS2/MINGW using "pacman" except for SDL_Pango and SDL_gfx.
+         Vous pouvez installer les outils et bibliothèques nécessaires pour
+         la compilation de Tux Paint sur MSYS2/MINGW en utilisant "pacman",
+         sauf pour SDL_Pango et SDL_gfx.
 
          "ntldd" est un petit outil qui examine les fichiers exécutables de
          windows en vue de lister les fichiers DLL (.dll) qui leur sont
@@ -221,11 +222,11 @@ Compilation et installation
 
          Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Install SDL_Pango and SDL_gfx. Re-install SDL on the 64bit environment
+    Installe SDL_Pango et SDL_gfx. Réinstalle SDL sur l'environnement 64bit
 
-         SDL_Pango and SDL_gfx should be installed manually. In addition, you
-         have to re-install SDL from the source code or you will see
-         unnecessary blank window opens when starting Tux Paint.
+         SDL_Pango et SDL_gfx doit être installé manuellement. De plus, vous
+         devez réinstaller SDL à partir du code source, sinon vous verrez
+         s'ouvrir une fenêtre blanche inutile au démarrage de Tux Paint.
 
          Cette fois-ci, utilisez le shell MinGW "64bit". Ouvrez le shell
          depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
@@ -236,8 +237,8 @@ Compilation et installation
            Tout d'abord, vous devrez préparer l'archive source et un patch
            qui est requis, dans le même répertoire.
 
-             * Télécharger source tar-ball of SDL_Pango-0.1.2 depuis
-               SDL_Pango's page on Sourceforge.net.
+             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
+               SDL_Pango sur Sourceforge.net.
              * Télécharger un fichier patch depuis La page web de John
                Popplewell traitant des "instructions pour la compilation de
                Tux Paint - MinGW/MSYS". (Ceci ajoute une fonctionnalité
@@ -252,10 +253,10 @@ Compilation et installation
 
       SDL_gfx
 
-           Télécharger source tar-ball of SDL_gfx-2.0.25 depuis SDL_gfx's
-           page on Sourceforge.net.
+           Télécharger fichier source de SDL_gfx-2.0.25 depuis la page
+           SDL_gfx sur Sourceforge.net.
 
-           Install SDL_gfx as follows.
+           Réinstallez SDL_gfx comme suit.
 
              $ tar zxvf SDL_gfx-2.0.25.tar.gz
              $ cd SDL_gfx-2.0.25
@@ -263,7 +264,7 @@ Compilation et installation
 
       SDL
 
-           Télécharger source tar-ball of SDL_1.2.15 depuis libsdl.org.
+           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
 
            Réinstallez SDL comme suit.
 
@@ -286,8 +287,9 @@ Compilation et installation
 
     bibliothèques de dépendance 32bit (i686) pour Tux Paint
 
-         You can install tools and libraries required for compiling Tux Paint
-         on MSYS2/MINGW using "pacman" except for SDL_Pango and SDL_gfx.
+         Vous pouvez installer les outils et bibliothèques nécessaires pour
+         la compilation de Tux Paint sur MSYS2/MINGW en utilisant "pacman",
+         sauf pour SDL_Pango et SDL_gfx.
 
          "ntldd" est un petit outil qui examine les fichiers exécutables de
          windows en vue de lister les fichiers DLL (.dll) qui leur sont
@@ -307,11 +309,11 @@ Compilation et installation
 
          Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Install SDL_Pango and SDL_gfx. Re-install SDL on the 32bit environment
+    Installe SDL_Pango et SDL_gfx. Réinstalle SDL sur l'environnement 32bit
 
-         SDL_Pango and SDL_gfx should be installed manually. In addition, you
-         have to re-install SDL from the source code or you will see
-         unnecessary blank window opens when starting Tux Paint.
+         SDL_Pango et SDL_gfx doit être installé manuellement. De plus, vous
+         devez réinstaller SDL à partir du code source, sinon vous verrez
+         s'ouvrir une fenêtre blanche inutile au démarrage de Tux Paint.
 
          Cette fois-ci, utilisez le shell MinGW "32bit". Ouvrez le shell
          depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
@@ -322,8 +324,8 @@ Compilation et installation
            Tout d'abord, vous devrez préparer l'archive source et un patch
            qui est requis, dans le même répertoire.
 
-             * Télécharger source tar-ball of SDL_Pango-0.1.2 depuis
-               SDL_Pango's page on Sourceforge.net.
+             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
+               SDL_Pango sur Sourceforge.net.
              * Télécharger un fichier patch depuis La page web de John
                Popplewell traitant des "instructions pour la compilation de
                Tux Paint - MinGW/MSYS". (Ceci ajoute une fonctionnalité
@@ -338,10 +340,10 @@ Compilation et installation
 
       SDL_gfx
 
-           Télécharger source tar-ball of SDL_gfx-2.0.25 depuis SDL_gfx's
-           page on Sourceforge.net.
+           Télécharger fichier source de SDL_gfx-2.0.25 depuis la page
+           SDL_gfx sur Sourceforge.net.
 
-           Install SDL_gfx as follows.
+           Réinstallez SDL_gfx comme suit.
 
              $ tar zxvf SDL_gfx-2.0.25.tar.gz
              $ cd SDL_gfx-2.0.25
@@ -349,7 +351,7 @@ Compilation et installation
 
       SDL
 
-           Télécharger source tar-ball of SDL_1.2.15 depuis libsdl.org.
+           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
 
            Réinstallez SDL comme suit.
 
@@ -646,7 +648,7 @@ Compilation et installation
 
      ----------------------------------------------------------------------
 
-  macOS Users
+  Utilisateurs de macOS
 
      septembre 21, 2021 Mark K. Kim <markuskimius@gmail.com>
 
@@ -823,7 +825,7 @@ Désinstallation de Tux Paint
        sauvegardées peuvent être trouvées dans "Bibliothèque/Support
        d'Application/Tux Paint" (pour tous les utilisateurs) et
        "/Users/USERNAME/Library/Application Support/TuxPaint" pour les
-       utilisateurs individurls.
+       utilisateurs individuels.
 
      ----------------------------------------------------------------------
 
