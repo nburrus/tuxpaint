@@ -220,11 +220,9 @@ Compiling and Installation
 
          Note: Close the shell before proceeding to the remaining process.
 
-    Install SDL_Pango and SDL_gfx. Re-install SDL on the 64bit environment
+    Install SDL_Pango and SDL_gfx on the 64bit environment
 
-         SDL_Pango and SDL_gfx should be installed manually. In addition, you
-         have to re-install SDL from the source code or you will see
-         unnecessary blank window opens when starting Tux Paint.
+         SDL_Pango and SDL_gfx should be installed manually.
 
          This time, use the MinGW "64bit" shell. Open the shell from the
          "Start Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 64-bit"
@@ -236,9 +234,9 @@ Compiling and Installation
 
              * Download source tar-ball of SDL_Pango-0.1.2 from SDL_Pango's
                page on Sourceforge.net.
-             * Download a patch file from John Popplewell's "Tux Paint -
-               MinGW/MSYS build instructions" webpage. (This adds some extra
-               (required) functionality to SDL_Pango.)
+             * Download a patch file from "Compiling Tux Paint using
+               MinGW/MSYS2" webpage. (This adds some extra (required)
+               functionality to SDL_Pango.)
 
            Build and install SDL_Pango as follows.
 
@@ -303,11 +301,9 @@ Compiling and Installation
 
          Note: Close the shell before proceeding to the remaining process.
 
-    Install SDL_Pango and SDL_gfx. Re-install SDL on the 32bit environment
+    Install SDL_Pango and SDL_gfx on the 32bit environment
 
-         SDL_Pango and SDL_gfx should be installed manually. In addition, you
-         have to re-install SDL from the source code or you will see
-         unnecessary blank window opens when starting Tux Paint.
+         SDL_Pango and SDL_gfx should be installed manually.
 
          This time, use the MinGW "32bit" shell. Open the shell from the
          "Start Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 32-bit"
@@ -319,9 +315,9 @@ Compiling and Installation
 
              * Download source tar-ball of SDL_Pango-0.1.2 from SDL_Pango's
                page on Sourceforge.net.
-             * Download a patch file from John Popplewell's "Tux Paint -
-               MinGW/MSYS build instructions" webpage. (This adds some extra
-               (required) functionality to SDL_Pango.)
+             * Download a patch file from "Compiling Tux Paint using
+               MinGW/MSYS2" webpage. (This adds some extra (required)
+               functionality to SDL_Pango.)
 
            Build and install SDL_Pango as follows.
 
