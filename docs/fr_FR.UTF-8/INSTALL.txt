@@ -222,9 +222,9 @@ Compilation et installation
 
          Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Install SDL_Pango and SDL_gfx on the 64bit environment
+    Installe SDL_Pango et SDL_gfx sur l'environnement 64bit
 
-         SDL_Pango and SDL_gfx should be installed manually.
+         SDL_Pango et SDL_gfx doivent être installés manuellement.
 
          Cette fois-ci, utilisez le shell MinGW "64bit". Ouvrez le shell
          depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
@@ -237,9 +237,9 @@ Compilation et installation
 
              * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
                SDL_Pango sur Sourceforge.net.
-             * Télécharger un fichier patch depuis "Compiling Tux Paint using
-               MinGW/MSYS2" webpage. (Ceci ajoute une fonctionnalité
-               supplémentaire (requise) à SDL_Pango.)
+             * Télécharger un fichier patch depuis Page web "Compiler Tux
+               Paint en utilisant MinGW/MSY2". (Ceci ajoute une
+               fonctionnalité supplémentaire (requise) à SDL_Pango.)
 
            Compiler et installer SDL_Pango comme suit.
 
@@ -306,9 +306,9 @@ Compilation et installation
 
          Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
 
-    Install SDL_Pango and SDL_gfx on the 32bit environment
+    Installe SDL_Pango et SDL_gfx sur l'environnement 32bit
 
-         SDL_Pango and SDL_gfx should be installed manually.
+         SDL_Pango et SDL_gfx doivent être installés manuellement.
 
          Cette fois-ci, utilisez le shell MinGW "32bit". Ouvrez le shell
          depuis le "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW
@@ -321,9 +321,9 @@ Compilation et installation
 
              * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
                SDL_Pango sur Sourceforge.net.
-             * Télécharger un fichier patch depuis "Compiling Tux Paint using
-               MinGW/MSYS2" webpage. (Ceci ajoute une fonctionnalité
-               supplémentaire (requise) à SDL_Pango.)
+             * Télécharger un fichier patch depuis Page web "Compiler Tux
+               Paint en utilisant MinGW/MSY2". (Ceci ajoute une
+               fonctionnalité supplémentaire (requise) à SDL_Pango.)
 
            Compiler et installer SDL_Pango comme suit.
 
@@ -741,13 +741,13 @@ Compilation et installation
 
          macOS permet de booter sur plusieurs versions de l'OS, mais c'est
          préférable et plus facile d'installer le vieux macOS sur une clé.
-         Quelque soit la l'endroit où vous l'installer, le partionnement du
+         Quelque soit la l'endroit où vous l'installer, le partitionnement du
          disque et le type de partition doivent correspondre à ce qu'attend
-         l'ancien macOS, dès lors utilisez l'utilitaire de partionnement et
+         l'ancien macOS, dès lors utilisez l'utilitaire de partitionnement et
          le format de la clé en accord avec ceci.
 
          À ce moment, l'ancienne version de macOS disponible sur le site
-         d'Apple est la Yosemite 10.10, qui un partionnement "GPT (GUID
+         d'Apple est la Yosemite 10.10, qui un partitionnement "GPT (GUID
          Partition Table)" au lieu de MBR, et "Mac OS Extended (Journalisé)"
          comme type de partition au lieu du nouveau type APFS.
 
@@ -775,7 +775,7 @@ Compilation et installation
          Comme Xcode a été installé manuellement, vous pouvez sauter l'étape
          d'installation des outils de commande en terminal (ne pas exécuter
          "xcode-select --install") mais alors vous compilez Tux Paint en
-         utilisant les mêmes étapes décrites auparavent dans ce document.
+         utilisant les mêmes étapes décrites auparavant dans ce document.
 
      ----------------------------------------------------------------------
 

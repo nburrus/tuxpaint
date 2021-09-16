@@ -52,7 +52,7 @@ Où vont les fichiers
   Fichiers standards
 
        Tux Paint recherche ses différents fichiers de données dans son
-       répertoire ' data'.
+       répertoire 'data'.
 
     Linux et Unix
 
@@ -88,7 +88,7 @@ Où vont les fichiers
              (Si vous avez une souris avec plus d'un bouton, vous pouvez
              simplement cliquer avec le bouton droit de la souris sur
              l'icône.)
-          2. Sélectionnez " Afficher le contenu " dans le menu qui apparaît.
+          2. Sélectionnez "Afficher le contenu" dans le menu qui apparaît.
              Une nouvelle fenêtre du Finder apparaîtra avec un dossier à
              l'intérieur appelé " Contents".
           3. Ouvrez le dossier "Contents " et ouvrez le dossier "Resources"
@@ -118,14 +118,14 @@ Où vont les fichiers
 
   Fichiers personnels
 
-       Vous pouvez également créer des pinceaux, des tampons, des polices des
-       images de démarrage, des modèles et des polices dans votre propre
-       répertoire où Tux Paint les retrouvera.
+       Vous pouvez également créer des pinceaux, des images de démarrage, des
+       modèles et des polices dans votre propre répertoire où Tux Paint les
+       retrouvera.
 
     Windows
 
          Votre dossier personnel Tux Paint est stocké dans votre dossier
-         "Application Data". Par exemple, sur Windows plus récent :
+         "Application Data". Par exemple, sur un Windows plus récent :
 
            C:\Documents and Settings\(nom d'utilisateur)\Application
            Data\TuxPaint\
@@ -140,8 +140,8 @@ Où vont les fichiers
     Linux et Unix
 
          Vos fichiers personnels Tux Paint vont dans un 'répertoire caché'
-         que l'on trouve dans votre répertoire personnel "
-         $(HOME)/.tuxpaint/" (également appelé "~/.tuxpaint/".
+         que l'on trouve dans votre répertoire personnel "$(HOME)/.tuxpaint/"
+         (également appelé "~/.tuxpaint/".
 
          Autrement dit, si votre répertoire personnel est "/home/tux", alors
          votre répertoire Tux Paint est "/home/tux/.tuxpaint/".

@@ -25,7 +25,7 @@ Documentation sur les options
    |       * Données                                                     |
    |       * Accessibilité                                               |
    |       * Joystick                                                    |
-   |  * Écrasez des options de System Config                             |
+   |  * Écraser des options de System Config                             |
    |  * Options de ligne de commande                                     |
    |       * Options d'information en ligne de commande                  |
    |  * Choisir une autre langue                                         |
@@ -1258,10 +1258,10 @@ Accessibilité
                     * Mouvement rapide dans la zone des boutons d'outils.
                     * Touches de contrôle :
                          * [Left]/[Right]/[Up]/[Down], pavé numérique [1]
-                           thru [9] : déplace la souris
+                           jusqu'à [9] : déplace la souris
                          * [Space]/[5] : Clic de la souris (sauf quand on
-                           uilise les outils "Texte" ou "Étiquette")
-                         * [Insert]/[F5]: Clicc de la souris (toujours)
+                           utilise les outils "Texte" ou "Étiquette")
+                         * [Insert]/[F5]: Clic de la souris (toujours)
                          * [F4] fait naviguer la souris entre "Outils",
                            "Couleurs" et les zones de dessin
                          * Si la souris se trouve dans la section "Outils" à
@@ -1282,10 +1282,10 @@ Accessibilité
                            commencer à cliquer, des touches de mouvement pour
                            se déplacer (qui dessinera) et une autre touche
                            "clic" pour terminer le clic (arrêt du dessin).
-                    * Une souris et / ou un joystick standard peuvent
-                      toujours être utilisés (vous pouvez donc, par exemple,
-                      vous déplacer avec la souris et cliquer avec le
-                      clavier, ou vice-versa)
+                    * Une souris et/ou un joystick standard peuvent toujours
+                      être utilisés (vous pouvez donc, par exemple, vous
+                      déplacer avec la souris et cliquer avec le clavier, ou
+                      vice-versa)
 
                  Note : si utilisé dans un fichier de configuration pour tout
                  le monde, il peut être remplacé par le fichier de
@@ -1376,7 +1376,7 @@ Joystick
 
                  Un ensemble de numéros de boutons du joystick, comme vu par
                  SDL, qui doit être ignoré. Sinon, à moins qu'ils ne soient
-                 utilisés par l'une des joptions "joystick-btn-" ci-dessus,
+                 utilisés par l'une des options "joystick-btn-" ci-dessus,
                  les boutons seront considérés comme un clic gauche de la
                  souris.
 
@@ -1477,7 +1477,7 @@ Joystick
 
      ----------------------------------------------------------------------
 
-                      Écrasez des options de System Config
+                      Écraser des options de System Config
 
      (Pour les utilisateurs Linux et Unix)
 
