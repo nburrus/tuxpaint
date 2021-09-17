@@ -5,7 +5,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年9月12日
+                                   2021年9月17日
 
      ----------------------------------------------------------------------
 
@@ -230,9 +230,9 @@ Compiling and Installation
 
              * Download source tar-ball of SDL_Pango-0.1.2 from SDL_Pango's
                page on Sourceforge.net.
-             * Download a patch file from "Compiling Tux Paint using
-               MinGW/MSYS2" webpage. (This adds some extra (required)
-               functionality to SDL_Pango.)
+             * Download a patch file from John Popplewell's "Tux Paint -
+               MinGW/MSYS build instructions" webpage. (This adds some extra
+               (required) functionality to SDL_Pango.)
 
            Build and install SDL_Pango as follows.
 
@@ -250,16 +250,6 @@ Compiling and Installation
 
              $ tar zxvf SDL_gfx-2.0.25.tar.gz
              $ cd SDL_gfx-2.0.25
-             $ ./configure --prefix=/mingw64 && make && make install
-
-      SDL
-
-           Download source tar-ball of SDL_1.2.15 from libsdl.org.
-
-           Re-install SDL as follows.
-
-             $ tar zxvf SDL-1.2.15.tar.gz
-             $ cd SDL-1.2.15
              $ ./configure --prefix=/mingw64 && make && make install
 
        Proceed to the next "MinGW 32bit (i686) toolchains" section, or skip
@@ -311,9 +301,9 @@ Compiling and Installation
 
              * Download source tar-ball of SDL_Pango-0.1.2 from SDL_Pango's
                page on Sourceforge.net.
-             * Download a patch file from "Compiling Tux Paint using
-               MinGW/MSYS2" webpage. (This adds some extra (required)
-               functionality to SDL_Pango.)
+             * Download a patch file from John Popplewell's "Tux Paint -
+               MinGW/MSYS build instructions" webpage. (This adds some extra
+               (required) functionality to SDL_Pango.)
 
            Build and install SDL_Pango as follows.
 
@@ -331,16 +321,6 @@ Compiling and Installation
 
              $ tar zxvf SDL_gfx-2.0.25.tar.gz
              $ cd SDL_gfx-2.0.25
-             $ ./configure --prefix=/mingw32 && make && make install
-
-      SDL
-
-           Download source tar-ball of SDL_1.2.15 from libsdl.org.
-
-           Re-install SDL as follows.
-
-             $ tar zxvf SDL-1.2.15.tar.gz
-             $ cd SDL-1.2.15
              $ ./configure --prefix=/mingw32 && make && make install
 
             -------------------------------------------------------

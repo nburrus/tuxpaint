@@ -368,7 +368,7 @@ Tampons
          "stamp_LOCALE.EXT"
 
          "effet sonore" de "stamp.png", lorsque Tux Paint est exécuté en mode
-         espagnol, serait «stamp.png". En mode français, "stamp_es.wav". En
+         espagnol, serait "stamp.png". En mode français, "stamp_es.wav". En
          mode portugais brésilien, "stamp_fr.wav". Etc...
 
          Si aucun effet sonore localisé ne peut être chargé, Tux Paint
@@ -399,7 +399,7 @@ Tampons
          "stamp_desc_LOCALE.EXT"
 
          "son descriptif" de "stamp.png", lorsque Tux Paint est exécuté en
-         mode espagnol, serait «stamp_desc_es.wav". En mode français,
+         mode espagnol, serait "stamp_desc_es.wav". En mode français,
          "stamp_desc_fr.wav". En mode portugais brésilien,
          "stamp_desc_pt_BR.wav". Etc...
 
@@ -710,7 +710,7 @@ Traductions
        msgid "Click and drag to draw large bricks."
        msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
 
-     DE nombreux outils existent pour gérer les catalogues de traduction
+     De nombreux outils existent pour gérer les catalogues de traduction
      'gettext', vous n'avez donc pas besoin de les éditer avec un éditeur de
      texte. En voici quelques uns :
 
@@ -979,6 +979,6 @@ Clavier virtuel sur écran
        Remarque : Ce fichier n'est pas compilé avec Tux Paint, mais il est lu
        et analysé durant l'exécution de celui-ci.
 
-       Il est peu probable qu'une modification soit requise de ce fichier.
+       Il est peu probable qu'une modification de ce fichier soit requise.
 
      ----------------------------------------------------------------------

@@ -5,7 +5,7 @@
       Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
                             http://www.tuxpaint.org/
 
-                               septembre 12, 2021
+                               septembre 17, 2021
 
      ----------------------------------------------------------------------
 
@@ -237,9 +237,10 @@ Compilation et installation
 
              * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
                SDL_Pango sur Sourceforge.net.
-             * Télécharger un fichier patch depuis Page web "Compiler Tux
-               Paint en utilisant MinGW/MSY2". (Ceci ajoute une
-               fonctionnalité supplémentaire (requise) à SDL_Pango.)
+             * Télécharger un fichier patch depuis La page web de John
+               Popplewell traitant des "instructions pour la compilation de
+               Tux Paint - MinGW/MSYS". (Ceci ajoute une fonctionnalité
+               supplémentaire (requise) à SDL_Pango.)
 
            Compiler et installer SDL_Pango comme suit.
 
@@ -257,16 +258,6 @@ Compilation et installation
 
              $ tar zxvf SDL_gfx-2.0.25.tar.gz
              $ cd SDL_gfx-2.0.25
-             $ ./configure --prefix=/mingw64 && make && make install
-
-      SDL
-
-           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
-
-           Réinstallez SDL comme suit.
-
-             $ tar zxvf SDL-1.2.15.tar.gz
-             $ cd SDL-1.2.15
              $ ./configure --prefix=/mingw64 && make && make install
 
        Aller à la prochaine section "chaines d'outils MinGW 32bit (i686)", ou
@@ -321,9 +312,10 @@ Compilation et installation
 
              * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
                SDL_Pango sur Sourceforge.net.
-             * Télécharger un fichier patch depuis Page web "Compiler Tux
-               Paint en utilisant MinGW/MSY2". (Ceci ajoute une
-               fonctionnalité supplémentaire (requise) à SDL_Pango.)
+             * Télécharger un fichier patch depuis La page web de John
+               Popplewell traitant des "instructions pour la compilation de
+               Tux Paint - MinGW/MSYS". (Ceci ajoute une fonctionnalité
+               supplémentaire (requise) à SDL_Pango.)
 
            Compiler et installer SDL_Pango comme suit.
 
@@ -341,16 +333,6 @@ Compilation et installation
 
              $ tar zxvf SDL_gfx-2.0.25.tar.gz
              $ cd SDL_gfx-2.0.25
-             $ ./configure --prefix=/mingw32 && make && make install
-
-      SDL
-
-           Télécharger fichier source de SDL_1.2.15 depuis libsdl.org.
-
-           Réinstallez SDL comme suit.
-
-             $ tar zxvf SDL-1.2.15.tar.gz
-             $ cd SDL-1.2.15
              $ ./configure --prefix=/mingw32 && make && make install
 
             -------------------------------------------------------
