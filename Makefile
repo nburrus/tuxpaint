@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 6, 2021
+# June 14, 2002 - September 17, 2021
 
 
 # The version number, for release:
@@ -1064,7 +1064,8 @@ install-doc:
 	@echo "...Installing documentation..."
 	@install -d $(DOC_PREFIX)
 	@cp -R docs/* $(DOC_PREFIX)
-	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
+	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
+	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
 	@install -d $(DOC_PREFIX)/en/magic-docs
 	@cp -R magic/magic-docs/en/* $(DOC_PREFIX)/en/magic-docs/
 	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
