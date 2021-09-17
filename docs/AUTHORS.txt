@@ -7,7 +7,7 @@ Various contributors (see below, and CHANGES.txt)
 http://www.tuxpaint.org/
 
 
-June 17, 2002 - June 6, 2021
+June 17, 2002 - September 17, 2021
 
 $Id$
 
@@ -900,6 +900,7 @@ $Id$
     Silvio Faria <sirofa2003@yahoo.com.br>
     Adorilson Bezerra de Araujo <adorilson@gmail.com>
     Frederico Goncalves Guimaraes <frederico@teia.bio.br>
+    Hugo Carvalho <hugokarvalho@hotmail.com>
 
   * Portuguese (Portugal)
     Sergio Marques <smarquespt@gmail.com>

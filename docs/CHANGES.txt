@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.16 (0.9.27)
+2021.September.17 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -104,6 +104,9 @@ $Id$
 
     * Japanese
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Portuguese (Portugal) translation
+      Hugo Carvalho <hugokarvalho@hotmail.com>
 
   * Bug Fixes:
     ----------
