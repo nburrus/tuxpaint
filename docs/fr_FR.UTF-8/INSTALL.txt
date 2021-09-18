@@ -235,7 +235,7 @@ Compilation et installation
            Tout d'abord, vous devrez préparer l'archive source et un patch
            qui est requis, dans le même répertoire.
 
-             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
+             * Télécharger fichier source de SDL_Pango-0.1.2 depuis La page
                SDL_Pango sur Sourceforge.net.
              * Télécharger un fichier patch depuis La page web de John
                Popplewell traitant des "instructions pour la compilation de
@@ -251,7 +251,7 @@ Compilation et installation
 
       SDL_gfx
 
-           Télécharger fichier source de SDL_gfx-2.0.25 depuis la page
+           Télécharger fichier source de SDL_gfx-2.0.25 depuis La page
            SDL_gfx sur Sourceforge.net.
 
            Réinstallez SDL_gfx comme suit.
@@ -310,7 +310,7 @@ Compilation et installation
            Tout d'abord, vous devrez préparer l'archive source et un patch
            qui est requis, dans le même répertoire.
 
-             * Télécharger fichier source de SDL_Pango-0.1.2 depuis la page
+             * Télécharger fichier source de SDL_Pango-0.1.2 depuis La page
                SDL_Pango sur Sourceforge.net.
              * Télécharger un fichier patch depuis La page web de John
                Popplewell traitant des "instructions pour la compilation de
@@ -326,7 +326,7 @@ Compilation et installation
 
       SDL_gfx
 
-           Télécharger fichier source de SDL_gfx-2.0.25 depuis la page
+           Télécharger fichier source de SDL_gfx-2.0.25 depuis La page
            SDL_gfx sur Sourceforge.net.
 
            Réinstallez SDL_gfx comme suit.
