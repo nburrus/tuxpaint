@@ -1,11 +1,11 @@
                                    Tux Paint
-                                 versión 0.9.27
+                                 version 0.9.27
                                PNG Documentation
 
           Copyright © 2007-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 marzo 9, 2021
+                                 March 9, 2021
 
      ----------------------------------------------------------------------
 

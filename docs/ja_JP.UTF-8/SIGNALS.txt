@@ -1,11 +1,11 @@
                                    Tux Paint
-                                  バージョン 0.9.27
+                                 version 0.9.27
                              Signals Documentation
 
-          Copyright © 2019-2021 by various contributors; "AUTHORS" 参照.
+          Copyright © 2019-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                   2021年3月 9日
+                                 March 9, 2021
 
      ----------------------------------------------------------------------
 
@@ -32,7 +32,7 @@
            back to the main interface), as if a "Back" button in Tux Paint
            were clicked, or the [Esc] was key pressed.
 
-           例：killall tuxpaint
+           Example: killall tuxpaint
 
    SIGUSR1 & SIGUSR2
 
@@ -52,4 +52,4 @@
            it may be necessary to send this signal to Tux Paint a few times,
            for it to quit completely.
 
-           例：killall -s SIGUSR1 tuxpaint
+           Example: killall -s SIGUSR1 tuxpaint

@@ -1,11 +1,11 @@
                                    Tux Paint
-                                 versión 0.9.27
+                                 version 0.9.27
                            Installation Documentation
 
           Copyright © 2002-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                              septiembre 17, 2021
+                               September 17, 2021
 
      ----------------------------------------------------------------------
 
@@ -149,7 +149,7 @@ Compiling and Installation
 
   Windows Users
 
-     octubre 25, 2020 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
+     October 25, 2020 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
      <shin1@wmail.plala.or.jp>
 
     Compiling Set-Up
@@ -600,7 +600,7 @@ Compiling and Installation
 
   macOS Users
 
-     septiembre 21, 2021 Mark K. Kim <markuskimius@gmail.com>
+     September 21, 2021 Mark K. Kim <markuskimius@gmail.com>
 
        Tux Paint 0.9.22 and earlier required building Tux Paint from the
        Xcode IDE. Starting with 0.9.23, however, Tux Paint for macOS is built

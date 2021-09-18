@@ -1,38 +1,35 @@
                                    Tux Paint
-                                 versión 0.9.27
-                     Documentación de variábeis de contorno
+                                 version 0.9.27
+                      Environment Variables Documentation
 
-    Copyright © 2021-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
+          Copyright © 2021-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                              8 de Agosto de 2021
+                                 August 8, 2021
 
      ----------------------------------------------------------------------
 
-   Tux Paint comprende unha serie de variábeis de contorno, ben directamente
-   ou indirectamente polas bibliotecas que emprega.
+   Tux Paint understands a number of environment variables, either directly,
+   or indirectly by the libraries that it utilizes.
 
-Variábeis de contorno relacionadas co almacenamento
+Storage-related environment variables
 
    HOME
 
-           Especifica o «directorio persoal» do usuario, que se usa para
-           localizar outros ficheiros ou directorios. Nalgúns casos, úsase
-           como parte dunha situación alternativa, cando non se configuran
-           outras variábeis de contorno (noutros lugares desta
-           documentación). Ás veces, a localización a empregar pode ser
-           anulada polas opcións fornecidas na liña de ordes ou a través do
-           ficheiro de configuración de Tux Paint. Consulte a documentación
-           de «OPCIÓNS» (OPTIONS) para máis detalles.
+           Specifies the user's "home directory", which is used to locate
+           numerous other files or directories. In some cases, it is utilized
+           as part of a fall-back location, when other environment variables
+           (elsewhere in this documentation) are not set. Sometimes, the
+           location to use can be overridden by options provided on the
+           command-line or via Tux Paint's configuration file. See the
+           "OPTIONS" documentation for details.
 
-           Algúns exemplos de onde se usa «$HOME» inclúen:
+           A few examples of where "$HOME" is used include:
 
-              * A localización do ficheiro de configuración de Tux Paint
-              * A base de onde Tux Paint garda e carga os debuxos dos
-                usuarios
-              * A localización da colección privada de ficheiros de datos dun
-                usuario — selos, pinceis, etc. — (fronte aos dispoñíbeis no
-                sistema)
+              * The location of Tux Paint's configuration file
+              * The basis of where Tux Paint saves and loads users' drawings
+              * The location of a user's private collection of data files —
+                stamps, brushes, etc. — (versus those available system wide)
 
    XDG_CONFIG_HOME
 
@@ -56,11 +53,11 @@ Variábeis de contorno relacionadas co almacenamento
 
    TEMP
 
-           Especifica a localización onde se poden crear ficheiros temporais.
-           Só o usa Tux Paint nos sistemas operativos Microsoft Windows.
-           Emprega «userdata» se non se define.
+           Specifies the location where temporary files may be created. Only
+           used by Tux Paint on Microsoft Windows OSes. Uses "userdata" if
+           not set.
 
-Variábeis de contorno relacionadas co idioma
+Language-related environment variables
 
    LANG
 
@@ -76,19 +73,19 @@ Variábeis de contorno relacionadas co idioma
            environment variable is used, if set. If not, "LC_ALL" is used as
            a fallback. Then "LC_MESSAGES", and finally "LANG".
 
-Variábeisbles de contorno relacionadas co que se amosa
+Display-related environment variables
 
-   A seguir amósanse algunhas das variábeis de contorno compatíbeis con
-   Simple DirectMedia Layer (libSD) — que Tux Paint utiliza para amosar
-   gráficos, reproducir sons e recibir entrada do rato, teclado e joystick —
-   e que poden ser útiles para os usuarios de Tux Paint.
+   The following are a few of the environment variables supported by Simple
+   DirectMedia Layer (libSD) — which Tux Paint utilizes for displaying
+   graphics, playing sounds, and receiving mouse, keyboard, and joystick
+   input — and which may be useful to users of Tux Paint.
 
    SDL_VIDEO_ALLOW_SCREENSAVER
 
-           Especifica se Tux Paint debería permitir a execución dun protector
-           de pantalla. Pode ser definido como «1» (verdadeiro) polo propio
-           Tux Paint emitindo a opción de liña de ordes «--allowscreensaver»
-           ou o seu equivaente no ficheiro de configuración.
+           Specifies whether Tux Paint should allow a screensaver to run. Can
+           be set to '1' (true) by Tux Paint itself by issuing the
+           command-line option "--allowscreensaver" or its configuration file
+           counterpart.
 
    SDL_VIDEO_WINDOW_POS
 

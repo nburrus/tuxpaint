@@ -1,11 +1,11 @@
                                    Tux Paint
-                                  バージョン 0.9.27
+                                 version 0.9.27
                                SVG Documentation
 
-          Copyright © 2007-2021 by various contributors; "AUTHORS" 参照.
+          Copyright © 2007-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                   2021年3月 9日
+                                 March 9, 2021
 
      ----------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 .\" tuxpaint.1 - 2021.09.14
-.TH TUXPAINT 1 "2021年9月14日" "0.9.27" "Tux Paint"
+.TH TUXPAINT 1 "September 14, 2021" "0.9.27" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -495,8 +495,8 @@ which are used to switch between the available on-screen keyboard layouts.
 .SS JOYSTICK
 .TP 8
 .B \-\-joystick-dev=\fIDEVICE\fP
-何番目のジョイスティックデバイスを使うかを設定します。標準では
-0 （最初のジョイスティック）
+Specify which joystick device should be used by Tux Paint. Default value is
+0 (the first joystick).
 
 .TP 8
 .B \-\-joystick-dev=list
@@ -505,37 +505,34 @@ Paint.)
 
 .TP 8
 .B \-\-joystick-slowness=\fISPEED\fP
-ジョイスティックの感度を SPEED の値で設定します。0
-から 500 までの値が設定できます。標準の値は 15 です。
+Sets a delay at each axis motion, allowing to slow the joystick. Allowed
+values are from 0 to 500. Default value is 15.
 
 .TP 8
 .B \-\-joystick-threshold=\fITHRESHOLD\fP
-ジョイスティックでポインターを動かし始めるためのしきい値を
-THRESHOLD の値で設定します。0 から 32766
-までの値が設定できます。標準の値は 3200 です。
+Sets the minimum level of axis motion to start moving the pointer. Allowed
+values are from 0 to 32766. Default value is 3200.
 
 .TP 8
 .B \-\-joystick-maxsteps=\fISTEPS\fP
-ポインターの移動速度の上限を STEPS
-にピクセル単位で設定します。1 から 7
-までの値が設定可能で、標準の値は 7 です。
+Sets the maximum pixels the pointer will move at once. Allowed values are
+from 1 to 7. Default value is 7.
 
 .TP 8
 .B \-\-joystick-hat-timeout=\fIMILLISECONDS\fP
-ジョイスティックのハットスイッチを押し続けたときに、ポインターが連続して動き始めるまでの時間を
-MILLISECONDS にミリ秒単位で設定します。0 から 3000
-までの値が設定可能で、標準の設定は 1000 です。
+Sets the delay after wich the pointer will start moving automatically if
+the hat is keeped pushed. Allowed values are from 0 to 3000. Default value
+is 1000.
 
 .TP 8
 .B \-\-joystick-hat-slowness=\fISPEED\fP
-ハットスイッチの感度を設定します。設定可能な値は 0
-から 500 で、標準の値は 15 です。
+Sets a delay at each automatic motion, allowing to slow the speed of the
+hat. Allowed values are from 0 to 500. Default value is 15.
 
 .TP 8
 .B \-\-joystick-btn-escape=\fIBUTTON\fP
-ジョイスティックの BUTTON NUMBER で設定したボタンに "ESC"
-キーの機能を割り当てます。（ダイアログの "もどる"
-や "やめる" で使います）
+Selects the joystick button number, as seen by SDL, that will be used to
+generate a escape event. Useful to dismiss dialogs and quit.
 
 .TP 8
 .B \-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
@@ -568,10 +565,10 @@ label | Label
 magic | Magic
 .TP 2
 -
-undo | 取り消し
+undo | Undo
 .TP 2
 -
-redo | やりなおし
+redo | Redo
 .TP 2
 -
 eraser | Eraser

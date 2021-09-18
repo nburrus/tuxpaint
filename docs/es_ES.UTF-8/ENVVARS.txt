@@ -1,11 +1,11 @@
                                    Tux Paint
-                                 versión 0.9.27
+                                 version 0.9.27
                       Environment Variables Documentation
 
           Copyright © 2021-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                                 agosto 8, 2021
+                                 August 8, 2021
 
      ----------------------------------------------------------------------
 
