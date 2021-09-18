@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Tux Paint Options Documentation    </title>
+      Documentación de opcións de Tux Paint    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
   </head>
@@ -14,18 +14,18 @@
     <center>
       <h1>
         <span style="white-space: nowrap;">Tux Paint</span><br>
-        version 0.9.27      </h1>
+        versión 0.9.27      </h1>
 
       <h2>
-        Options Documentation      </h2>
+        Documentación de opcións      </h2>
 
       <p>
-        Copyright &copy; 2002-2021 by various contributors; see AUTHORS.<br>
+        Copyright &copy; 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).<br>
         <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
       </p>
 
       <p>
-        August 29, 2021      </p>
+        29 de Agosto de 2021      </p>
     </center>
 
     <hr size="2"
@@ -34,10 +34,10 @@
     <table border="2"
            cellspacing="0"
            cellpadding="2"
-           summary="Table of Contents">
+           summary="Índice">
       <tr>
         <th>
-          Table of Contents        </th>
+          Índice        </th>
       </tr>
 
       <tr>
@@ -47,10 +47,10 @@
               <a href="#tpc">Tux Paint Config.</a>
             </li>
             <li>
-              <a href="#cfg-file">Configuration File</a>
+              <a href="#cfg-file">Ficheiro de configuración</a>
             </li>
             <li>
-              <a href="#available">Available Options</a>
+              <a href="#available">Opcións dispoñíbeis</a>
               <ul>
                 <li>
                   <a href="#video_sound">Video/Sound</a>
@@ -59,16 +59,16 @@
                   <a href="#mouse_keyboard">Mouse/Keyboard</a>
                 </li>
                 <li>
-                  <a href="#simplification">Simplification</a>
+                  <a href="#simplification">Simplificación</a>
                 </li>
                 <li>
                   <a href="#languages">Languages</a>
                 </li>
                 <li>
-                  <a href="#printing">Printing</a>
+                  <a href="#printing">Impresión</a>
                 </li>
                 <li>
-                  <a href="#saving">Saving</a>
+                  <a href="#saving">Gardar</a>
                 </li>
                 <li>
                   <a href="#data">Data</a>
@@ -82,27 +82,27 @@
               </ul>
             </li>
             <li>
-              <a href="#overriding">Overriding System Config. Options</a>
+              <a href="#overriding">Anulación da configuración do sistema. Opcións</a>
             </li>
             <li>
-              <a href="#command_line">Command-Line Options</a>
+              <a href="#command_line">Opcións da liña de ordes</a>
               <ul>
                 <li>
-                  <a href="#info-cmd">Command-Line Informational Options</a>
+                  <a href="#info-cmd">Opcións informativas da liña de ordes</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="#different_language">Choosing a Different Language</a>
+              <a href="#different_language">Escoller un idioma diferente</a>
               <ul>
                 <li>
-                  <a href="#available_languages">Available Languages</a>
+                  <a href="#available_languages">Idiomas dispoñíbeis</a>
                 </li>
                 <li>
-                  <a href="#env_locale">Setting Your Environment's Locale</a>
+                  <a href="#env_locale">Axustar o idioma do seu contorno</a>
                 </li>
                 <li>
-                  <a href="#special_fonts">Special Fonts</a>
+                  <a href="#special_fonts">Tipos de letra especiais</a>
                 </li>
               </ul>
             </li>
@@ -122,7 +122,7 @@
 
     <blockquote>
       <p>
-        A graphical tool is available that allows you to change Tux Paint's behavior. However, if you'd rather not install and use this tool, or want a better understanding of the available options, please continue reading.      </p>
+        Está dispoñíbel unha ferramenta gráfica que lle permite cambiar o comportamento de Tux Paint. Non obstante, se prefire non instalar e usar esta ferramenta, ou quere comprender mellor as opcións dispoñíbeis, siga lendo.      </p>
     </blockquote>
 
     <hr size="2"
@@ -130,36 +130,36 @@
 
     <h1>
       <a name="cfg-file" id="cfg-file">
-        Configuration File      </a>
+        Ficheiro de configuración      </a>
     </h1>
 
     <blockquote>
       <p>
-        You can create a simple configuration file for Tux Paint, which it will read each time you start it up.      </p>
+        Pode crear un ficheiro de configuración sinxelo para Tux Paint, que lerá cada vez que o inicie.      </p>
 
       <p>
-        The file is simply a plain text file containing the options you want enabled:      </p>
+        O ficheiro é simplemente un ficheiro de texto sinxelo que contén as opcións que quere activar habilitar:      </p>
 
       <h2>
-        Linux and Unix Users      </h2>
+        Usuarios de Linux e Unix      </h2>
 
       <blockquote>
         <p>
-          The file you should create is called "<code><b>.tuxpaintrc</b></code>" and it should be placed in your home directory. (a.k.a. "<code>~/.tuxpaintrc</code>" or "<code>$HOME/.tuxpaintrc</code>")        </p>
+          O ficheiro que debe crear chámase «<code><b>.tuxpaintrc</b></code>» e debería colocarse no seu directorio persoal. (tamén coñecido como «<code>~/.tuxpaintrc</code>» ou «<code>$HOME/.tuxpaintrc</code>»)        </p>
 
         <h3>
-          System-Wide Configuration File        </h3>
+          Ficheiro de configuración de todo o sistema        </h3>
 
         <blockquote>
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is located at:          </p>
+            Antes de ler este ficheiro, le un ficheiro de configuración en todo o sistema. (De xeito predeterminado, esta configuración non ten axustes activados.) Atópase en:          </p>
 
           <blockquote>
             <code>/etc/tuxpaint/tuxpaint.conf</code>
           </blockquote>
 
           <p>
-            You can disable reading of this file altogether, leaving the settings as defaults (which can then be overridden by your "<code>.tuxpaintrc</code>" file and/or command-line arguments) by using the command-line option:          </p>
+            Pode desactivar a lectura deste ficheiro por completo, deixando os axustes como predeterminados (que poden ser substituídos polo seu ficheiro «<code>.tuxpaintrc</code>»  e/ou argumentos da liña de ordes) usando a opción da liña de ordes:          </p>
 
           <blockquote>
             <code>--nosysconfig</code>
@@ -168,18 +168,18 @@
       </blockquote>
 
       <h2>
-        macOS Users      </h2>
+        Usuarios de macOS      </h2>
 
       <blockquote>
         <p>
-          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in your home folder, under the sub-folder: <code>Library/Application Support/TuxPaint</code>        </p>
+          O ficheiro que debe crear chámase «<code><b>tuxpaint.cfg</b></code>» e debería colocalo no seu cartafol persoal, baixo o subcartafol: <code>Library/Application Support/TuxPaint</code>        </p>
 
         <h3>
-          System-Wide Configuration File        </h3>
+          Ficheiro de configuración de todo o sistema        </h3>
 
         <blockquote>
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is located at:          </p>
+            Antes de ler este ficheiro, le un ficheiro de configuración en todo o sistema. (De xeito predeterminado, esta configuración non ten axustes activados.) Atópase en:          </p>
 
           <blockquote>
             <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
@@ -188,14 +188,14 @@
       </blockquote>
 
       <h2>
-        Windows Users      </h2>
+        Usuarios de Windows      </h2>
 
       <blockquote>
         <p>
-          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in Tux Paint's folder.        </p>
+          O ficheiro que debe crear chámase «<code><b>tuxpaint.cfg</b></code>» e debería colocarse no cartafol de Tux Paint.        </p>
 
         <p>
-          You can use NotePad or WordPad to create this file. Be sure to save it as Plain Text, and make sure the filename doesn't have ".txt" at the end...        </p>
+          Pode usar NotePad ou WordPad para crear este ficheiro. Asegúrese de gardalo como texto simple e asegúrese de que o nome do ficheiro non teña «.txt» ao final...        </p>
       </blockquote>
     </blockquote>
 
@@ -204,12 +204,12 @@
 
     <h1>
       <a name="available" id="available">
-        Available Options      </a>
+        Opcións dispoñíbeis      </a>
     </h1>
 
     <blockquote>
       <p>
-        The following settings can be set in the configuration file. (Command-line settings will override these. See the "<a href="#command_line"><i>Command-Line Options</i></a>" section, below.)      </p>
+        Os seguintes axustes pódense estabelecer no ficheiro de configuración. (A configuración da liña de ordes substituirá estes. Vexa a sección «<a href="#command_line"><i>Opcións da liña de ordes</i></a>», a continuación.)      </p>
 
       <hr/>
       <h2>
@@ -228,7 +228,7 @@
   
     <dd>
       <p>
-        Run the program in full screen mode, rather than in a window.      </p>
+        Executar o programa en modo de pantalla completa en vez de nunha xanela.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>fullscreen=no</code>". In both cases, may be overridden by the command-line option "<code>--windowed</code>".      </p>
     </dd>
@@ -239,22 +239,22 @@
   
     <dd>
       <p>
-        Run the program in full screen mode. Additionally, assume the screen's current resolution (set by the operating system).      </p>
+        Executar o programa en modo de pantalla completa. Ademais, asume a resolución actual da pantalla (estabelecida polo sistema operativo).      </p>
     </dd>
   
     <dt>
-      <code><b>windowsize=<i>SIZE</i></b></code>
+      <code><b>windowsize=<i>TAMAÑO</i></b></code>
     </dt>
   
     <dd>
       <p>
-        Run the program at a different size (in windowed mode) or at a different screen resolution (in fullscreen mode), rather than the default (usually 800x600).      </p>
+        Executar o programa a un tamaño diferente (en modo xanela) ou a unha resolución de pantalla diferente (en modo de pantalla completa), en lugar do predeterminado (normalmente 800x600).      </p>
   
       <p>
-        The <i>SIZE</i> value should be presented in pixels, in 'width-by-height' format, with an "x" (lowercase X) between the values. The size can be anything that's at least 640 wide, and at least 480 tall.      </p>
+        O valor <i>TAMAÑO</i> debería presentarse en píxeles, en formato «largo por alto», cun «x» (X minúsculo) entre os valores. O tamaño pode ser calquera que teña polo menos 640 de largo e polo menos 480 de alto.      </p>
   
       <p>
-        Some examples:      </p>
+        Algúns exemplos:      </p>
   
       <ul>
         <li>640x480
@@ -277,7 +277,7 @@
   
     <dd>
       <p>
-        Swaps the width/height options given to Tux Paint, useful for rotating the window on portait displays, such as a tablet PC that's in tablet orientation.      </p>
+        Cambia as opcións de largo/alto dadas a Tux Paint, útiles para xirar a xanela nas pantallas verticais, como unha tableta que está en orientación de tableta.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>orient=landscape</code>". In both cases, may be overridden by the command-line option "<code>--orient=landscape</code>".      </p>
     </dd>
@@ -288,7 +288,7 @@
   
     <dd>
       <p>
-        When running Tux Paint in fullscreen mode, this assumes the screen's current resolution (overriding any "<code>windowsize</code>" option), as set by the operating system.      </p>
+        Ao executar Tux Paint en modo de pantalla completa, isto asume a resolución actual da pantalla (anulando calquera opción «<code>windowsize</code>»), segundo o estabelecido polo sistema operativo.      </p>
     </dd>
   
     <dt>
@@ -297,7 +297,7 @@
   
     <dd>
       <p>
-        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. Note: This requires version 1.2.12 or higher of the SDL library. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
+        De xeito predeterminado, Tux Paint impide que o protector de pantalla do seu sistema se inicie. Pode anular isto empregando a opción «<code>allowscreensaver</code>». Nota: Isto require a versión 1.2.12 ou superior da biblioteca SDL. (Tamén pode facelo configurando a variábel de contorno «<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>» do seu sistema en «<code>1</code>».)      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>allowscreensaver=no</code>" or "<code>disablescreensaver=yes</code>". In both cases, may be overridden by the command-line option "<code>--disablescreensaver</code>".      </p>
     </dd>
@@ -314,7 +314,7 @@
   
     <dd>
       <p>
-        Disable sound effects. (Note: Pressing <b>[Alt]</b> + <b>[S]</b> cannot be used to reenable sounds if they were disabled using this option.)      </p>
+        Desactivar os efectos de son. (Nota: Ao premer <b>[Alt]</b> + <b>[S]</b> non se poden  volver activar os sons se se desactivaron usando esta opción).      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosound=no</code>" or "<code>sound=yes</code>". In both cases, may be overridden by the command-line option "<code>--sound</code>".      </p>
     </dd>
@@ -325,7 +325,7 @@
   
     <dd>
       <p>
-        Disable stereo panning support. (Useful for users with hearing impairment in one ear, or places where a single speaker or headphone is being used.)      </p>
+        Desactivar a compatibilidade con panorama estéreo. (Útil para usuarios con discapacidade auditiva nun oído ou lugares onde se está a empregar un só altofalante ou auricular.)      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostereo=no</code>" or "<code>stereo=yes</code>". In both cases, may be overridden by the command-line option "<code>--stereo</code>".      </p>
     </dd>
@@ -337,27 +337,27 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>buttonsize=<i>SIZE</i></b></code>
+      <code><b>buttonsize=<i>TAMAÑO</i></b></code>
     </dt>
   
     <dd>
       <p>
-        Set the pixel size of buttons in Tux Paint's user interface (overriding the default of "48"). Useful when using very high-density displays or coarse input devices, such as eye gaze trackers.      </p>
+        Estabeleza o tamaño dos píxeles dos botóns na interface de usuario de Tux Paint (substituíndo o predeterminado de «48»). Útil cando se usan pantallas de alta densidade ou dispositivos de entrada groseiros, como rastrexadores de ollos.      </p>
   
       <p>
-        The <i>SIZE</i> value should be presented in pixels, and can be anything between 24 and 192, inclusive. Most buttons are square, and this will affect their width and height.      </p>
+        O valor <i>TAMAÑO</i> debería presentarse en píxeles e pode estar entre 24 e 192, inclusive. A maioría dos botóns son cadrados e isto afectará ao seu largo e alto.      </p>
   
       <p>
-        Note: If the chosen button size would cause the buttons to be too large for all required UI elements to appear under Tux Paint's chosen window size, the largest possible button size will be used. (A note will appear in <code>stderr</code>.)      </p>
+        Nota: Se o tamaño do botón escollido fai que os botóns sexan demasiado grandes para que aparezan todos os elementos da interface de usuario requiridos dentro do tamaño de xanela escollido por Tux Paint, empregarase o tamaño de botón  máis grande posíbel. (Aparecerá unha nota en <code>stderr</code>.)      </p>
     </dd>
   
     <dt>
-      <code><b>colorsrows=<i>ROWS</i></b></code>
+      <code><b>colorsrows=<i>FILAS</i></b></code>
     </dt>
   
     <dd>
       <p>
-        How many rows of color palette buttons to show; useful when using a large color palette (see "<code>colorfile</code>", above), and/or for use with coarse input devices (like eyegaze trackers).  "<code>ROWS</code>" may be between "1" (the default) and "3".      </p>
+        Cantas filas de botóns da paleta de cores amosar; útil cando se usa unha gran paleta de cores (ver «<code>colorfile</code>», arriba) e/ou para usar con dispositivos de entrada groseiros (como os rastrexadores de ollos). «<code>FILAS</code>» pode estar entre «1» (o predeterminado) e «3».      </p>
     </dd>
   </dl>
 </blockquote>
@@ -380,10 +380,10 @@
 
     <dd>
       <p>
-        This disables the fancy mouse pointer shapes in Tux Paint, and uses your environment's normal mouse pointer.      </p>
+        Isto desactiva as fantásticas formas do punteiro do rato en Tux Paint e usa o punteiro normal do seu contorno.      </p>
 
       <p>
-        In some enviornments, the fancy cursors cause problems. Use this option to avoid them.      </p>
+        Nalgúns contornos, os cursores de fantasía causan problemas. Use esta opción para evitalos.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nofancycursors=no</code>" or "<code>fancycursors=yes</code>". In both cases, may be overridden by the command-line option "<code>--fancycursors</code>".      </p>
     </dd>
@@ -394,10 +394,10 @@
 
     <dd>
       <p>
-        This completely hides the mouse pointer shapes in Tux Paint.      </p>
+        Isto agocha completamente as formas do punteiro do rato en Tux Paint.      </p>
 
       <p>
-        This is useful for touchscreen devices, such as tablet PCs.      </p>
+        Isto é útil para dispositivos con pantalla táctil, como as tabletas.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>hidecursor=no</code>" or "<code>showcursor=yes</code>". In both cases, may be overridden by the command-line option "<code>--showcursor</code>".      </p>
     </dd>
@@ -415,10 +415,10 @@
 
     <dd>
       <p>
-        This disable keyboard shortcuts (e.g., <b>[Ctrl]-[S]</b> for save, <b>[Ctrl]-[N]</b> for a new image, etc.)      </p>
+        Isto desactiva os atallos de teclado (por exemplo,<b>[Ctrl]-[S]</b> para gardar, <b>[Ctrl]-[N]</b> para unha nova imaxe, etc.)      </p>
 
       <p>
-        This is useful to prevent unwanted commands from being activated by children who aren't experienced with keyboards.      </p>
+        Isto é útil para evitar que ordes non desexadas sexan activadas por cativos que non teñen experiencia con teclados.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshortcuts=no</code>" or "<code>shortcuts=yes</code>". In both cases, may be overridden by the command-line option "<code>--shortcuts</code>".      </p>
     </dd>
@@ -436,10 +436,10 @@
 
     <dd>
       <p>
-        Tux Paint will attempt to 'grab' the mouse and keyboard, so that the mouse is confined to Tux Paint's window, and nearly all keyboard input is passed directly to it.      </p>
+        Tux Paint tentará «amarrar» o rato e o teclado, de xeito que o rato estea confinado na xanela de Tux Paint e case toda a entrada do teclado se lle pase directamente.      </p>
 
       <p>
-        This is useful to disable operating system actions that could get the user out of Tux Paint <b>[Alt]-[Tab]</b> window cycling, <b>[Ctrl]-[Escape]</b>, etc. This is especially useful in fullscreen mode.      </p>
+        Isto é útil para desactivar as accións do sistema operativo que poidan sacar ao usuario de Tux Pain do ciclo de xanelast <b>[Alt]-[Tab]</b>, <b>[Ctrl]-[Escape]</b>, etc. Isto é especialmente útil no modo de pantalla completa.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>grab=no</code>" or "<code>dontgrab=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontgrab</code>".      </p>
     </dd>
@@ -450,7 +450,7 @@
 
     <dd>
       <p>
-        This disables support for the wheel on mice that have it. (Normally, the wheel will scroll the selector menu on the right.)      </p>
+        Isto desactiva a compatibilidade para a roda dos ratos que a teñen. (Normalmente, a roda desprazará o menú do selector á dereita.)      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nowheelmouse=no</code>" or "<code>wheelmouse=yes</code>". In both cases, may be overridden by the command-line option "<code>--wheelmouse</code>".      </p>
     </dd>
@@ -461,10 +461,10 @@
 
     <dd>
       <p>
-        Prior to Tux Paint 0.9.15, the middle and right buttons on a mouse could also be used for clicking. In version 0.9.15, it was changed so that <i>only</i> the left mouse button worked, so as to not train children to use the wrong button.      </p>
+        Antes do Tux Paint 0.9.15, tamén se podían empregar os botóns medio e dereito do rato para premer. Na versión 0.9.15, cambiouse para que <i>só</i> funcionase o botón esquerdo do rato para non adestrar aos cativos a usar o botón incorrecto.      </p>
 
       <p>
-        However, for children who have trouble with the mouse, this distinction between the two or three buttons on a mouse can be disabled (returning Tux Paint to its old behavior) by using this option.      </p>
+        Porén, para os cativos que teñen problemas co rato, pódese desactivar esta distinción entre os dous ou tres botóns do rato (devolvendo Tux Paint ao seu antigo comportamento) usando esta opción.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nobuttondistinction=no</code>" or "<code>buttondistinction=yes</code>". In both cases, may be overridden by the command-line option "<code>--buttondistinction</code>".      </p>
     </dd>
@@ -475,7 +475,7 @@
       <hr/>
       <h2>
         <a name="simplification" id="simplification">
-          Simplification        </a>
+          Simplificación        </a>
       </h2>
       <blockquote>
         <h3>
@@ -489,7 +489,7 @@
 
     <dd>
       <p>
-        Disable the rotation step of the 'Shape' tool. Click, drag and release is all that will be needed to draw a shape.      </p>
+        Desactive o paso de rotación da ferramenta «Forma». Prema, arrastra e solte é todo o que se necesita para debuxar unha forma.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>simpleshapes=no</code>" or "<code>complexshapes=yes</code>". In both cases, may be overridden by the command-line option "<code>--complexshapes</code>".      </p>
     </dd>
@@ -500,10 +500,10 @@
 
     <dd>
       <p>
-        In this mode, much simpler outlines and 'rubber-band' lines are displayed when using the <b>Lines</b>, <b>Shapes</b>, <b>Stamps</b> and <b>Eraser</b> tools.      </p>
+        Neste modo, amósanse contornos e liñas «elásticas» moito máis sinxelas cando se usan as ferramentas <b>Liñas</b>, <b>Formas</b>, <b>Selos</b> e <b>Goma</b>.      </p>
 
       <p>
-        This can help when Tux Paint is run on very slow computers, or displayed on a remote X-Window display.      </p>
+        Isto pode axudar cando Tux Paint se executa en computadores moi lentos ou se amosa nunha pantalla remota de X-Window.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nooutlines=no</code>" or "<code>outlines=yes</code>". In both cases, may be overridden by the command-line option "<code>--outlines</code>".      </p>
     </dd>
@@ -514,7 +514,7 @@
 
     <dd>
       <p>
-        All text will be rendered only in uppercase (e.g., "Brush" will be "BRUSH"). Useful for children who can read, but who have only learned uppercase letters so far.      </p>
+        Todo o texto renderizarase só con maiúscula (por exemplo, «Pincel» será «PINCEL»). Útil para os cativos que saben ler, pero que ata agora só aprenderon maiúsculas.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>uppercase=no</code>" or "<code>mixedcase=yes</code>". In both cases, may be overridden by the command-line option "<code>--mixedcase</code>".      </p>
     </dd>
@@ -522,20 +522,20 @@
 </blockquote>
 
 <h3>
-  Initial Stamp Size</h3>
+  Tamaño inicial do selo</h3>
 
 <blockquote>
   <dl>
     <dt>
-      <code><b>stampsize=<i>SIZE</i></b></code>
+      <code><b>stampsize=<i>TAMAÑO</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Use this option to force Tux Paint to set the starting size of all stamps. The <code>SIZE</code> value should be between 0 (smallest) and 10 (largest). The size is relative to the available sizes of the stamp, which depends on the stamp itself, and Tux Paint's current canvas size.      </p>
+        Use esta opción para forzar a Tux Paint a estabelecer o tamaño inicial de todos os selos. O valor <code>TAMAÑO</code> debería estar entre 0 (máis pequeno) e 10 (máis grande). O tamaño é relativo aos tamaños dispoñíbeis do selo, que depende do selo en si, e do tamaño actual do lenzo de Tux Paint.      </p>
 
       <p>
-        Specify "<code>default</code>" to let Tux Paint decide (its standard behavior).      </p>
+        Especifique «<code>default</code>» para que Tux Paint decida (o seu comportamento estándar).      </p>
     </dd>
   </dl>
 </blockquote>
@@ -551,13 +551,13 @@
 
     <dd>
       <p>
-        Disable the on-screen "Quit" button and prevent the <b>[Escape]</b> key from quitting Tux Paint.      </p>
+        Desactivar o botón «Saír» na pantalla e evitar saír de Tux Paint coa tecla <b>[Escape]</b>.      </p>
 
       <p>
-        Using the <b>[Alt]</b> + <b>[F4]</b> keyboard combination or clicking the window's close button (assuming you're not in fullscreen mode) still works to quit Tux Paint.      </p>
+        Usar a combinación de teclado <b>[Alt]</b> + <b>[F4]</b> ou premer no botón de peche da xanela (asumindo que non está en modo de pantalla completa) segue a funcionar para saír de Tux Paint.      </p>
 
       <p>
-        You can also use the following keyboard combination to quit: <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b>.      </p>
+        Tamén pode usar a seguinte combinación de teclado para saír: <b>[Maiúsculas]</b> + <b>[Control]</b> + <b>[Escape]</b>.      </p>
 
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noquit=no</code>" or "<code>quit=yes</code>". In both cases, may be overridden by the command-line option "<code>--quit</code>".      </p>
@@ -569,10 +569,10 @@
 
     <dd>
       <p>
-        This option tells Tux Paint to not load any rubber stamp images, which in turn ends up disabling the <b>Stamps</b> tool.      </p>
+        Esta opción dille a Tux Paint que non cargue ningunha imaxe de selo de caucho, o que á súa vez acaba desactivando a ferramenta <b>Selos</b>.      </p>
 
       <p>
-        This can speed up Tux Paint when it first loads up, and reduce memory usage while it's running. Of course, no stamps will be available at all.      </p>
+        Isto pode acelerar Tux Paint cando se carga por primeira vez e reducir o uso de memoria mentres se está a executar. Por suposto, ningún selo estará dispoñíbel.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostamps=no</code>" or "<code>stamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--stamps</code>".      </p>
     </dd>
@@ -583,7 +583,7 @@
 
     <dd>
       <p>
-        Some images in the <b>Stamps</b> tool can be mirrored, flipped, and/or have their size changed. This option disables the controls, and only provides the basic stamps.      </p>
+        Algunhas imaxes da ferramenta <b>Selos</b> pódense reflectir, inverter e/ou cambiar o seu tamaño. Esta opción desactiva os controis e só fornece os selos básicos.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostampcontrols=no</code>" or "<code>stampcontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--stampcontrols</code>".      </p>
     </dd>
@@ -594,7 +594,7 @@
 
     <dd>
       <p>
-        Some <b>Magic</b> tools have the option of acting like a paintbrush, or affecting the entire canvas at once. This option disables the controls, and only provides the default functionality (usually paint-mode).      </p>
+        Algunhas ferramentas de <b>Maxia</b> teñen a opción de actuar coma un pincel ou afectar todo o lenzo á vez. Esta opción desactiva os controis e só fornece a funcionalidade predeterminada (normalmente en modo pintura).      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nomagiccontrols=no</code>" or "<code>magiccontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--magiccontrols</code>".      </p>
     </dd>
@@ -605,7 +605,7 @@
 
     <dd>
       <p>
-        Disable the control buttons shown when using the <b>Shapes</b> tool that allow changing how shapes are drawn — centered around the initial mouse click, or with a corner at the initial mouse click.      </p>
+        Desactivar os botóns de control que se amosan cando se usa a ferramenta <b>Formas</b> que permiten cambiar como se debuxan as formas: centradas arredor do clic inicial do rato ou cun canto co clic inicial do rato.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshapecontrols=no</code>" or "<code>shapecontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--shapecontrols</code>".      </p>
     </dd>
@@ -616,7 +616,7 @@
 
     <dd>
       <p>
-        Disables the <b>Label</b> tool: the tool that allows text entry which can be edited later.      </p>
+        Desactiva a ferramenta <b>Etiqueta</b>: a ferramenta que permite a entrada de texto que se pode editar máis tarde.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolabel=no</code>" or "<code>label=yes</code>". In both cases, may be overridden by the command-line option "<code>--label</code>".      </p>
     </dd>
@@ -636,12 +636,12 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>lang=<i>LANGUAGE</i></b></code>
+      <code><b>lang=<i>IDIOMA</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Run Tux Paint in one of the supported languages. Possible choice for <i>LANGUAGE</i> currently include:      </p>
+        Executa Tux Paint nun dos idiomas compatíbeis. A opción posíbel para <i>IDIOMA</i> inclúe actualmente:      </p>
 
       
       <blockquote>
@@ -649,7 +649,7 @@
                cellspacing="0"
                cellpadding="2"
                summary=
-               "Possible values for 'lang' language setting">
+               "Valores posíbeis para o axuste de idioma «lang»">
           <tr>
             <td>
               <code>english</code>
@@ -2179,15 +2179,15 @@
 
     <dt>
       <code><b><a name="locale"
-         id="locale">--locale LOCALE</a></b></code>
+         id="locale">--locale IDIOMA</a></b></code>
     </dt>
 
     <dd>
       <p>
-        Run Tux Paint in one of the support languages. See the "<i><a href="#different_language">Choosing a Different Language</a></i>" section below for the locale strings (e.g., "<code>de_DE</code>" for German) to use.      </p>
+        Execute Tux Paint nun dos idiomas compatíbeis. Vexa a sección «<i><a href="#different_language">Escoller un idioma diferente</a></i>» a continuación para ver as cadeas de configuración local (por exemplo, «<code>de_DE</code>» para o alemán) que debe usar.      </p>
 
       <p>
-        (If your locale is already set, e.g. with the "<code>$LANG</code>" environment variable, this option is not necessary, since Tux Paint honors your environment's setting, if possible.)      </p>
+        (Se a súa configuración local xa está configurada, por exemplo, coa variábel de contorno «<code>$LANG</code>», esta opción non é necesaria, xa que Tux Paint respecta a configuración do seu contorno, se é posíbel).      </p>
     </dd>
 
     <dt>
@@ -2196,10 +2196,10 @@
 
     <dd>
       <p>
-        For stamps that can be mirrored, this option sets them to their mirrored shape by default.      </p>
+        Para os selos que se poden reflectir, esta opción estabeléceos de xeito predeterminado na súa forma reflectida.      </p>
 
       <p>
-        This can be useful for people who prefer things right-to-left, rather than left-to-right.      </p>
+        Isto pode ser útil para as persoas que prefiren as cousas de dereita a esquerda no canto de de esquerda a dereita.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>mirrorstamps=no</code>" or "<code>dontmirrorstamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontmirrorstamps</code>".      </p>
     </dd>
@@ -2207,7 +2207,7 @@
 </blockquote>
 
 <h3>
-  Fonts</h3>
+  Tipos de letra</h3>
 
 <blockquote>
   <dl>
@@ -2217,7 +2217,7 @@
 
     <dd>
       <p>
-        This option causes Tux Paint to attempt to load fonts (for use in the <b>Text</b> tool) from your operating system. Normally, Tux Paint will only load the ones that came bundled with Tux Paint.      </p>
+        Esta opción fai que Tux Paint tente cargar tipos de letra (para usalos na ferramenta <b>Texto</b>) dende o seu sistema operativo. Normalmente, Tux Paint só cargará os que foron incluídos con Tux Paint.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>sysfonts=no</code>" or "<code>nosysfonts=yes</code>". In both cases, may be overridden by the command-line option "<code>--nosysfonts</code>".      </p>
     </dd>
@@ -2228,10 +2228,10 @@
 
     <dd>
       <p>
-        Prior to version 0.9.21, Tux Paint loaded all fonts in its own fonts directory, including locale-specific ones (e.g., the one for Tibetan, which had no latin characters). As of 0.9.21, the only font loaded from the locale-specific subdirectory, if any, is one matching the locale Tux Paint is running on.      </p>
+        Antes da versión 0.9.21, Tux Paint cargaba todos os tipos de letra no seu propio directorio de tipos de letra, incluídos os específicos da configuración local (por exemplo, o tibetano, que non tiña caracteres latinos). A partir doa 0.9.21, o único tipo de letra cargado dende o subdirectorio específico da configuración local, se o hai, é o que coincide coa configuración local en que se está a executar Tux Paint.      </p>
 
       <p>
-        To load all locale-specific fonts (the old behavior), set this option.      </p>
+        Para cargar todos os tipos de letra específicos das configuracións locais (o comportamento antigo), configure esta opción.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>alllocalefonts=no</code>" or "<code>currentlocalefont=yes</code>". In both cases, may be overridden by the command-line option "<code>--currentlocalefont</code>".      </p>
     </dd>
@@ -2242,7 +2242,7 @@
       <hr/>
       <h2>
         <a name="printing" id="printing">
-          Printing        </a>
+          Impresión        </a>
       </h2>
       <blockquote>
         <h3>
@@ -2256,16 +2256,16 @@
 
     <dd>
       <p>
-        Disable the printing feature.      </p>
+        Desactivar a función de impresión.      </p>
     </dd>
 
     <dt>
-        <code><b>printdelay=<i>SECONDS</i></b></code>
+        <code><b>printdelay=<i>SEGUNDOS</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Restrict printing so that printing can occur only once every <i>SECONDS</i> seconds.      </p>
+        Restrinxir a impresión para que só poida producirse unha vez cada <i>SEGUNDOS</i> segundos.      </p>
 
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printdelay=0</code>". In both cases, may be overridden by the command-line option "<code>--printdelay=0</code>".      </p>
@@ -2284,7 +2284,7 @@
 
     <dd>
       <p>
-        This causes Tux Paint to always show the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it's like clicking 'Print' while holding <b>[Alt]</b>, except you don't need to hold <b>[Alt]</b> every time.      </p>
+        Isto fai que Tux Paint amose sempre o diálogo da impresora (ou, en Linux/Unix, execute a orde «altprint») cando se preme no botón «Imprimir». Noutras palabras, é como premer en «Imprimir» mentres mantén premido <b>[Alt]</b>, agás que non precisa manter premida <b>[Alt]</b> cada vez.      </p>
     </dd>
 
     <dt>
@@ -2293,7 +2293,7 @@
 
     <dd>
       <p>
-        This prevents Tux Paint from <i>ever</i> showing the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it makes the <b>[Alt]</b> key have no effect when clicking the 'Print' button.      </p>
+        Isto evita que Tux Paint <i>nunca</i> amose o diálogo da impresora (ou, en Linux/Unix, execute «altprintcommand») cando se preme no botón «Imprimir». Noutras palabras, fai que a tecla <b>[Alt]</b> non teña efecto ao premer no botón «Imprimir».      </p>
     </dd>
 
     <dt>
@@ -2302,7 +2302,7 @@
 
     <dd>
       <p>
-        This is the normal, default behavior. Tux Paint shows a printer dialog (or, on Linux/Unix, runs the "altprintcommand"), when the <b>[Alt]</b> key is pressed while the 'Print' button is clicked. Clicking 'Print' without holding <b>[Alt]</b> prints without showing a dialog.      </p>
+        Este é o comportamento normal e predeterminado. Tux Paint amosa un diálogo de impresora (ou, en Linux/Unix, executa a orde «altprint»), cando se preme a tecla <b>[Alt]</b> mentres se preme no botón «Imprimir». Premer en «Imprimir» sen manter premida <b>[Alt]</b> imprime sen amosar un diálogo.      </p>
     </dd>
 
   </dl>
@@ -2319,14 +2319,14 @@
 
     <dd>
       <p>
-        <i>(Windows and macOS only)</i>
+        <i>(Só Windows e macOS)</i>
       </p>
 
       <p>
-        Tux Paint will use a printer configuration file when printing. Push the <b>[Alt]</b> key while clicking the 'Print' button in Tux Paint to cause a Windows print dialog window to appear.      </p>
+        Tux Paint empregará un ficheiro de configuración da impresora cando imprima. Prema a tecla <b>[Alt]</b> mentres fai clic no botón «Imprimir» en Tux Paint para que apareza unha xanela de diálogo de impresión de Windows.      </p>
 
       <p>
-        (Note: This only works when not running Tux Paint in fullscreen mode.) Any configuration changes made in this dialog will be saved to the file "<code>userdata/print.cfg</code>" , and used again, as long as the "printcfg" option is set.      </p>
+        (Nota: Isto só funciona cando non se está a executar Tux Paint en modo de pantalla completa.) Calquera cambio de configuración feito neste diálogo gardarase no ficheiro «<code>userdata/print.cfg</code>» e volverase a usar, sempre que estea configurada a opción «printcfg».      </p>
 
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printcfg=no</code>" or "<code>noprintcfg=yes</code>". In both cases, may be overridden by the command-line option "<code>--noprintcfg</code>".      </p>
@@ -2341,42 +2341,42 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>printcommand=<i>COMMAND</i></b></code>
+      <code><b>printcommand=<i>ORDE</i></b></code>
     </dt>
 
     <dd>
       <p>
-        <i>(Linux and Unix only)</i>
+        <i>(Só Linux e Unix)</i>
       </p>
 
       <p>
-        Use the command <i>COMMAND</i> to print a PostScript format file when the 'Print' button is clicked. If this option is not specifically not set, the default command is:      </p>
+        Use a orde <i>ORDE</i> para imprimir un ficheiro en formato PostScript cando se preme no botón «Imprimir». Se esta opción non está especificamente definida, a orde predeterminada é:      </p>
 
       <blockquote>
         <code>lpr</code>
       </blockquote>
 
       <p>
-        <b>Note:</b> Versions of Tux Paint prior to 0.9.15 sent PNG format data to the print command (which defaulted to "<code>pngtopnm | pnmtops | lpr</code>").      </p>
+        <b>Nota:</b> As versións de Tux Paint anteriores ao 0.9.15 enviaban datos en formato PNG á orde de impresión (de xeito predeterminado era «<code>pngtopnm | pnmtops | lpr</code>»).      </p>
 
       <p>
-        If you set an alternative <code><b>printcommand</b></code> in the configuration file prior to version 0.9.15, you will need to change it.      </p>
+        Se estabeleceu unha alternativa <code><b>printcommand</b></code> no ficheiro de configuración antes da versión 0.9.15, terá que cambiala.      </p>
     </dd>
 
     <dt>
-      <code><b>altprintcommand=<i>COMMAND</i></b></code>
+      <code><b>altprintcommand=<i>ORDE</i></b></code>
     </dt>
 
     <dd>
       <p>
-        <i>(Linux and Unix only)</i>
+        <i>(Só Linux e Unix)</i>
       </p>
 
       <p>
-        Use the command <i>COMMAND</i> to print a PostScript format file when the 'Print' button is clicked while the <b>[Alt]</b> modifier key is being held. (This is typically used for providing a print dialog, similar to when pressing <b>[Alt]</b>+'Print' in Windows and macOS.)      </p>
+        Use a orde <i>ORDE</i> para imprimir un ficheiro en formato PostScript cando se preme no botón «Imprimir» mentres se mantén premida a tecla modificadora <b>[Alt]</b>. (Iso utilizase normalmente para fornecer un diálogo de impresión, semellante a cando se preme <b>[Alt]</b>+«Imprimir» en Windows e macOS.)      </p>
 
       <p>
-        If this option is not specifically not set, the default command is KDE's graphical print dialog:      </p>
+        Se esta opción non está especificamente definida, a orde predeterminada é o diálogo gráfico de impresión de KDE:      </p>
 
       <blockquote>
         <code>kprinter</code>
@@ -2392,19 +2392,19 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>papersize=<i>PAPERSIZE</i></b></code>
+      <code><b>papersize=<i>TAMAÑO_DO_PAPEL</i></b></code>
     </dt>
 
     <dd>
       <p>
-        <i>(Platforms that use Tux Paint's internal PostScript generator — not Windows, macOS, BeOS, or Haiku.)</i>
+        <i>(Plataformas que usan o xerador interno PostScript de Tux Paint; non Windows, macOS, BeOS ou Haiku).</i>
       </p>
 
       <p>
-        Tell Tux Paint what size PostScript to generate. If none is specified, Tux Paint first checks your <code>$PAPER</code> environment variable, then the file <code>/etc/papersize</code>, then uses the the 'libpaper' library's default paper size.      </p>
+        Indica a Tux Paint que tamaño de PostScript debe xerar. Se non se especifica ningún, Tux Paint comproba primeiro a súa variábel de contorno <code>$PAPER</code>, após o ficheiro <code>/etc/papersize</code> e após usa o tamaño de papel predeterminado da biblioteca «libpaper».      </p>
 
       <p>
-        Valid paper sizes include: letter, legal, tabloid, executive, note, statement, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive, halfnote, folio, quarto, ledger, archA, archB, archC, archD, archE, flsa, flse, csheet, dsheet, esheet.      </p>
+        Os tamaños de papel válidos inclúen: letter, legal, tabloid, executive, note, statement, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive, halfnote, folio, quarto, ledger, archA, archB, archC, archD, archE, flsa, flse, csheet, dsheet, esheet.      </p>
     </dd>
 
   </dl>
@@ -2414,7 +2414,7 @@
       <hr/>
       <h2>
         <a name="saving" id="saving">
-          Saving        </a>
+          Gardar        </a>
       </h2>
       <blockquote>
         <h3>
@@ -2428,7 +2428,7 @@
 
     <dd>
       <p>
-        This disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. With this option, the older version will always be replaced by the new version, automatically.      </p>
+        Isto desactiva a pregunta «<i>Gardar sobre a versión antiga...?</i>» ao gardar un ficheiro existente. Con esta opción, a versión anterior sempre será substituída pola nova versión automaticamente.      </p>
     </dd>
 
     <dt>
@@ -2437,7 +2437,7 @@
 
     <dd>
       <p>
-        This also disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. This option, however, will always save a new file, rather than overwrite the older version.      </p>
+        Isto tamén desactiva a pregunta «<i>Gardar sobre a versión antiga...?</i>» cando garda un ficheiro existente. Non obstante, esta opción sempre gardará un novo ficheiro no canto de sobrescribir a versión anterior.      </p>
     </dd>
 
     <dt>
@@ -2446,8 +2446,8 @@
 
     <dd>
       <p>
-        <i>(This option is redundant, since this is the default.)</i>
-      When saving an existing drawing, you will be first asked whether to save over the older version or not.      </p>
+        <i>(Esta opción é redundante, xa que esta é a opción predeterminada.)</i>
+      Ao gardar un debuxo existente, primeiro preguntaráselle se quere gardar sobre a versión anterior ou non.      </p>
     </dd>
   </dl>
 </blockquote>
@@ -2463,7 +2463,7 @@
 
     <dd>
       <p>
-        This causes Tux Paint to display a blank canvas when it first starts up, rather than loading the last image that was being edited.      </p>
+        Isto fai que Tux Paint amose un lenzo en branco cando se inicia por vez primeira, no canto de cargar a última imaxe que se estaba a editar.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>startblank=no</code>" or "<code>startlast=yes</code>". In both cases, may be overridden by the command-line option "<code>--startlast</code>".      </p>
     </dd>
@@ -2474,7 +2474,7 @@
 
     <dd>
       <p>
-        Places the blank color options in the <b>New</b> dialog at the end, so that any Starters and/or Templates are shown first.      </p>
+        Coloca as opcións de cor en branco no diálogo <b>Novo</b> ao final, de xeito que se amosen primeiro os iniciadores e/ou modelos.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>newcolorslast=no</code>" or "<code>newcolorsfirst=yes</code>". In both cases, may be overridden by the command-line option "<code>--newcolorsfirst</code>".      </p>
     </dd>
@@ -2488,56 +2488,56 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>savedir=<i>DIRECTORY</i></b></code>
+      <code><b>savedir=<i>DIRECTORIO</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Use this option to change where Tux Paint's "<code>saved</code>" directory/folder is located, which is where Tux Paint saves and opens pictures.      </p>
+        Use esta opción para cambiar onde se atopa o directorio/cartafol «<code>saved</code>» de Tux Paint, que é onde Tux Paint garda e abre imaxes.      </p>
 
       <p>
-        If you do not override it, the <b><i>default</i></b> location is:      </p>
+        Se non o anula, a ubicación <b><i>predeterminada</i></b> é:      </p>
 
       <ul>
-        <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>~</code>" or "<code>$HOME</code>")<br>
-            Example: <code>/home/<i>username</i>/.tuxpaint/saved/</code>        </li>
+        <li>Linux e Unix: baixo un directorio agochado chamado «<code>.tuxpaint</code>» no seu directorio persoal (tamén coñecido como «<code>~</code>» ou «<code>$HOME</code>»)<br>
+            Exemplo: <code>/home/<i>username</i>/.tuxpaint/saved/</code>        </li>
 
-        <li>Windows — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Data</code>" folder.<br>
-            Example: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\saved\</code>          <br>
+        <li>Windows: Dentro un cartafol chamado «<code>TuxPaint</code>» no seu cartafol «<code>Application Data</code>».<br>
+            Exemplo: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\saved\</code>          <br>
         </li>
 
-        <li>macOS — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Support</code>" folder.<br>
-            Example: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/saved/</code>        </li>
+        <li>macOS: Dentro un cartafol chamado «<code>TuxPaint</code>» no seu cartafol «<code>Application Support</code>».<br>
+            Exemplo: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/saved/</code>        </li>
       </ul>
 
       <p>
-        <b>Note:</b> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>
+        <b>Nota:</b> Ao especificar unha unidade de Windows (por exemplo, «<code>H:\</code>»), tamén debe especificar un subdirectorio.      </p>
 
       <p>
-        <b>Note:</b> Prior to version 0.9.18, Tux Paint would also use the setting or default for "<code>savedir</code>" as the place to search for personal data files (brushes, stamps, starters and fonts). As of version 0.9.18, they may be specified separately (see the "<code>datadir</code>" option, below).      </p>
+        <b>Nota:</b> Antes da versión 0.9.18, Tux Paint tamén usaba a configuración ou o valor predeterminado para «<code>savedir</code>» como o lugar onde buscar ficheiros de datos persoais (pinceis, selos, imaxes de comezo e tipos de letra) . A partir da versión 0.9.18, pódense especificar por separado (consulte a opción «<code>datadir</code>», a continuación).      </p>
 
       <p>
-        Example: <code>savedir=Z:\tuxpaint\</code>      </p>
+        Exemplo: <code>savedir=Z:\tuxpaint\</code>      </p>
     </dd>
 
     <dt>
-      <code><b>exportdir=<i>DIRECTORY</i></b></code>
+      <code><b>exportdir=<i>DIRECTORIO</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Use this option to change where Tux Paint exports files — single images, or animated GIF slideshows — for external use.      </p>
+        Use esta opción para cambiar onde Tux Paint exporta ficheiros —imaxes individuais ou diaporamasositivas GIF animadas— uso externo.      </p>
 
       <p>
-        If you do not override it, the <b><i>default</i></b> location is:      </p>
+        Se non o anula, a ubicación <b><i>predeterminada</i></b> é:      </p>
 
       <ul>
-        <li>Linux &amp; Unix — If available, wherever your desktop environment is configured for pictures to be stored, based on your XDG (X Desktop Group) configuration. (Try running the command-line "<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>" to find out.)<br>
-          Typically (in an English locale), this will be a "<code>Pictures</code>" subdirectory in your home directory (i.e., "<code>$HOME/Pictures</code>" aka "<code>~/Pictures</code>").<br>
-          Tux Paint will fall back to using that typical directory, of no XDG configuration can be read, or nothing is set for "<code>XDG_PICTURES_DIR</code>".        </li>
-        <li>Windows - "My Pictures" directory for each user (normaly "c:\Users\<i>USERNAME</i>\Pictures").<br>You can directly open the folder as follows:          <ul>
-            <li>Press "[Windows]+[R]" key to open "Run ..." dialogue.</li>
-            <li>Enter "Shell:My Pictures" in the text box and push [OK].</li>
+        <li>Linux e Unix: se está dispoñíbel, onde queira que o seu contorno de escritorio estea configurado para que se almacenen imaxes, en función da configuración XDG (X Desktop Group). (Probe a executar a liña de ordes «<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>» para descubrilo.)<br>
+          Normalmente (na configuración local inglesa), este será un subdirectorio «<code>Imaxes</code>» no seu directorio persoal (é dicir, «<code>$HOME/Imaxes</code>» tamén coñecido como «<code>~/Imaxes</code>»).<br>
+          Tux Paint volverá usar ese directorio habitual, se non se pode ler a configuración XDG, ou non se estabelece nada «<code>XDG_PICTURES_DIR</code>».        </li>
+        <li>Windows: Directorio «As miñas imaxes» para cada usuario (normalmente «c:\Users\<i>NOME_DE_USUARIO</i>\Pictures»). <br>Pode abrir directamente o cartafol do seguinte xeito:          <ul>
+            <li>Prema a tecla «[Windows]+[R]» para abrir o diálogo «Executar...».</li>
+            <li>Escriba «Shell: As miñas imaxes« na caixa de texto e prema en [Aceptar.]</li>
           </ul>
         </li>
 
@@ -2546,14 +2546,14 @@
       </ul>
 
       <p>
-        <b>Note:</b> When the defaults are used, a new "<code>TuxPaint</code>" subdirectory will be created and used. (e.g., "<code>~/Pictures/TuxPaint</code>") When the "<code>--exportdir</code>" option is used, the exact path specified will be used (no "<code>TuxPaint</code>" subdirectory is created).      </p>
+        <b>Nota:</b> Cando se empregan os valores predeterminados, crearase e usarase un novo subdirectorio «<code>TuxPaint</code>». (p. ex.: «<code>~/Imaxes/TuxPaint</code>») Cando se usa a opción «<code>--exportdir</code>», empregarase a ruta exacta especificada (non se crea ningún subdirectorio «<code>TuxPaint</code>»).      </p>
       <p>
-        The directory itself (e.g., "<code>~/Pictures/TuxPaint</code>") will be created, if it doesn't exist.      </p>
+        O directorio en si (p. ex.: «<code>~/Imaxes/TuxPaint</code>») crearase, se non existe.      </p>
       <p>
-        If the <em>parent</em> directory (e.g., "<code>~/Pictures/TuxPaint</code>") also does not exist, Tux Paint will attempt to create it as well (but not any directories higher than that).      </p>
+        Se o directorio <em>pai</em> (por exemplo, «<code>~/Imaxes/TuxPaint</code>») tampouco existe, Tux Paint tentará crealo tamén (pero non ningún directorio superior a ese).      </p>
 
       <p>
-        Example: <code>exportdir=/home/penguin/TuxPaintExports</code>      </p>
+        Exemplo: <code>exportdir=/home/penguin/TuxPaintExports</code>      </p>
     </dd>
 
   </dl>
@@ -2570,7 +2570,7 @@
 
     <dd>
       <p>
-        This disables Tux Paint's ability to save files (and therefore disables the on-screen "Save" button). It can be used in situations where the program is only being used for fun, or in a test environment.      </p>
+        Isto desactiva a capacidade de Tux Paint para gardar ficheiros (e, polo tanto, desactiva o botón «Gardar» na pantalla). Pode usarse en situacións nas que o programa só se usa para divertirse ou nun contorno de proba.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosave=no</code>" or "<code>save=yes</code>". In both cases, may be overridden by the command-line option "<code>--save</code>".      </p>
     </dd>
@@ -2581,7 +2581,7 @@
 
     <dd>
       <p>
-        This prevents Tux Paint from asking whether you want to save the current picture when quitting, and assumes you do.      </p>
+        Isto impide a Tux Paint preguntar se quere gardar a imaxe actual ao saír e supón que si.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>autosave=no</code>" or "<code>noautosave=yes</code>". In both cases, may be overridden by the command-line option "<code>--noautosave</code>".      </p>
     </dd>
@@ -2607,13 +2607,13 @@
 
     <dd>
       <p>
-        By default, Tux Paint uses what's known as a 'lockfile' to prevent it from being launched more than once in 30 seconds. (This is to avoid accidentally running multiple copies; for example, by double-clicking a single-click launcher, or simply impatiently clicking the icon multiple times.)      </p>
+        De xeito predeterminado, Tux Paint usa o que se coñece como «ficheiro de bloqueo» para evitar que se inicie máis dunha vez en 30 segundos. (Isto é para evitar executar accidentalmente varias copias; por exemplo, premendo dúas veces nun iniciador dun só clic ou simplemente premendo impacientemente na icona varias veces.)      </p>
 
       <p>
-        To make Tux Paint ignore the lockfile, allowing it to run again, even if it was just launched less than 30 seconds ago, enable this setting in the configuration file, or run Tux Paint with the <code>--nolockfile</code> option on the command-line.      </p>
+        Para facer que Tux Paint ignore o ficheiro de bloqueo, permitindo que se execute de novo, aínda que se lanzase hai menos de 30 segundos, active este axuste no ficheiro de configuración ou execute Tux Paint coa opción <code>--nolockfile</code> na liña de ordes.      </p>
 
       <p>
-        By default, the lockfile is stored in "<code>~/.tuxpaint/</code>" under Linux and Unix, and "<code>userdata\</code>" under Windows.      </p>
+        De xeito predeterminado, o ficheiro de bloqueo almacénase en «<code>~/.tuxpaint/</code>» en Linux e Unix e en «<code>userdata\</code>» en Windows.      </p>
 
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolockfile=no</code>" or "<code>lockfile=yes</code>". In both cases, may be overridden by the command-line option "<code>--lockfile</code>".      </p>
@@ -2628,38 +2628,38 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>datadir=<i>DIRECTORY</i></b></code>
+      <code><b>datadir=<i>DIRECTORIO</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Use this option to change where Tux Paint looks for personal data files (brushes, stamps, starters, templates, and fonts specific to the current user).      </p>
+        Use esta opción para cambiar onde Tux Paint busca ficheiros de datos persoais (pinceis, selos, imaxes de comezo, modelos e tipos de letra específicos do usuario actual).      </p>
 
       <p>
-        Tux Paint will search for subdirectories/subfolders named "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>", and "<code>fonts</code>" under the specified data directory.      </p>
+        Tux Paint buscará subdirectorios/subcartafoles chamados «<code>brushes</code>», «<code>stamps</code>», «<code>starters</code>», «<code>templates</code>», «<code>fonts</code>» no directorio de datos especificado.      </p>
 
       <p>
-        If you do not override it, the <b><i>default</i></b> location is:      </p>
+        Se non o anula, a ubicación <b><i>predeterminada</i></b> é:      </p>
 
       <ul>
-        <li>Linux &amp; Unix — Under a hidden directory named "<code>.tuxpaint</code>" in your home directory (aka "<code>~</code>" or "<code>$HOME</code>")<br>
-            Example: <code>/home/<i>username</i>/.tuxpaint/brushes/</code>        </li>
+        <li>Linux e Unix: baixo un directorio agochado chamado «<code>.tuxpaint</code>» no seu directorio persoal (tamén coñecido como «<code>~</code>» ou «<code>$HOME</code>»)<br>
+            Exemplo: <code>/home/<i>username</i>/.tuxpaint/brushes/</code>        </li>
 
-        <li>Windows — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Data</code>" folder.<br>
-            Example: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\brushes\</code>        </li>
+        <li>Windows: Dentro un cartafol chamado «<code>TuxPaint</code>» no seu cartafol «<code>Application Data</code>».<br>
+            Exemplo: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\brushes\</code>        </li>
 
-        <li>macOS — Inside a folder named "<code>TuxPaint</code>" in your "<code>Application Support</code>" folder.<br>
-            Example: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/brushes/</code>        </li>
+        <li>macOS: Dentro un cartafol chamado «<code>TuxPaint</code>» no seu cartafol «<code>Application Support</code>».<br>
+            Exemplo: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/brushes/</code>        </li>
       </ul>
 
       <p>
-        <b>Note:</b> Prior to version 0.9.18, Tux Paint would use the same setting or default as for "<code>savedir</code>" to search for data files. As of version 0.9.18, they may be specified separately.      </p>
+        <b>Nota:</b> Antes da versión 0.9.18, Tux Paint usaba o mesmo axuste ou predeterminado que para «<code>savedir</code>» para buscar ficheiros de datos. A partir da versión 0.9.18, pódense especificar por separado.      </p>
 
       <p>
-        <b>Note:</b> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>
+        <b>Nota:</b> Ao especificar unha unidade de Windows (por exemplo, «<code>H:\</code>»), tamén debe especificar un subdirectorio.      </p>
 
       <p>
-        Example: <code>datadir=/home/johnny/tuxpaint-data/</code>      </p>
+        Exemplo: <code>datadir=/home/johnny/tuxpaint-data/</code>      </p>
     </dd>
 
   </dl>
@@ -2671,27 +2671,27 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>colorfile=<i>FILENAME</i></b></code>
+      <code><b>colorfile=<i>NOME_DE_FICHEIRO</i></b></code>
     </dt>
 
     <dd>
       <p>
-        You may override Tux Paint's default color palette by creating a plain ASCII text file that describes the colors you want, and pointing to that file using the "<code>colorfile</code>" option.      </p>
+        Pode anular a paleta de cores predeterminada de Tux Paint creando un ficheiro de texto ASCII simple que describa as cores que quere e apuntando a ese ficheiro usando a opción «<code>colorfile</code>».      </p>
 
       <p>
-        The file should list one color per line. Colors are defined in terms of their Red, Green and Blue values, each from 0 (off) to 255 (brightest). (For more information, try Wikipedia's "<a href="http://en.wikipedia.org/wiki/Rgb">RGB color model</a>" article.)      </p>
+        O ficheiro debería incluír unha cor por liña. As cores defínense en función dos seus valores vermello, verde e azul, cada un de 0 (apagado) a 255 (máis brillante). (Para obter máis información, vexa o artigo «<a href="http://en.wikipedia.org/wiki/Rgb">Modelo de cor RGB (en inglés)</a> de Wikipedia).      </p>
 
       <p>
-        Colors may be listed using three decimal numbers (e.g., "<code>255 68 136</code>") or a 6- or 3-digit-long hexadecimal 'triplet' (e.g., "<code>#ff4488</code>" or "<code>#F48</code>").      </p>
+        As cores pódense enumerar usando tres números decimais (por exemplo, «<code>255 68 136</code>») ou un «triplete» hexadecimal de 6 ou 3 díxitos de longo (por exemplo, «<code>#ff4488</code>» ou «<code>#F48</code>»).      </p>
 
       <p>
-        After the color definition (on the same line) you may enter text to describe the color. Tux will display this text when the color is clicked. (For example, "<code>#FFF White as snow.</code>")      </p>
+        Após a definición da cor (na mesma liña) pode introducir texto para describir a cor. Tux amosará este texto cando se prema na cor. (Por exemplo, «<code>#FFF Branco coma a neve.</code>»)      </p>
 
       <p>
-        As an example, you can see the default colors currently used in Tux Paint in: "<a href="../../default_colors.txt"><code>default_colors.txt</code></a>".      </p>
+        Como exemplo, pode ver as cores predeterminadas empregadas actualmente en Tux Paint en: «<a href="../../default_colors.txt"><code>default_colors.txt</code></a>».      </p>
 
       <p>
-        NOTES: You must separate decimal values with spaces, and begin hexadecimal values with a pound/number-sign character ("<code>#</code>"). In 3-digit hexadecimal, each digit is used for both the high and low halves of the byte, so "<code>#FFF</code>" is the same as "<code>#FFFFFF</code>", not "<code>#F0F0F0</code>".      </p>
+        NOTAS: Debe separar os valores decimais con espazos e comezar os valores hexadecimais cun carácter de libra/signo de númeral («<code>#</code>»). En hexadecimais de 3 díxitos, cada díxito úsase tanto para a metade alta como para a baixa do byte, polo que «<code>#FFF</code>» é o mesmo que «<code>#FFFFFF</code>» e non que «<code>#F0F0F0</code>».      </p>
     </dd>
   </dl>
 </blockquote>
@@ -2714,7 +2714,7 @@
 
     <dd>
       <p>
-        In this mode, instead of clicking, dragging and releasing (e.g., to draw), you click, move, and click again to end the motion.      </p>
+        Neste modo, no canto de premer, arrastrar e soltar (por exemplo, para debuxar), premese, móvese e premese  de novo para rematar o movemento.      </p>
           </dd>
   </dl>
 </blockquote>
@@ -2730,40 +2730,40 @@
 
     <dd>
       <p>
-        This allows the keyboard arrow keys to be used to control the mouse pointer. (e.g., for mouseless environments, or handicapped/accessibility purposes)      </p>
+        Isto permite empregar as teclas de frecha do teclado para controlar o punteiro do rato. (por exemplo, para contornos sen rato ou persoas con discapacidade ou problemas de accesibilidade)      </p>
 
       <p>
-        Features:      </p>
+        Funcionalidades:      </p>
 
       <ul>
-        <li>Fine movement within canvas, or coarse movement if <code>Shift</code> is held.        </li>
+        <li>Movemento fino dentro do lenzo ou movemento groseiro se se mantén premida <code>Shift</code>.        </li>
 
-        <li>Coarse movement within tool button areas.        </li>
+        <li>Movemento groseiro dentro das áreas dos botóns da ferramenta.        </li>
 
-        <li>Key controls:          <ul>
-            <li>[Left]/[Right]/[Up]/[Down], numpad <b>[1]</b> thru <b>[9]</b>: Move mouse            </li>
+        <li>Principais controis:          <ul>
+            <li>[Left]/[Right]/[Up]/[Down], teclado numérico <b>[1]</b> ata <b>[9]</b>: mover o rato            </li>
 
-            <li>[Space]/<b>[5]</b>: Click mouse (except when using "Text" or "Label" tools)            </li>
+            <li>[Space]/<b>[5]</b>: premer co rato (agás cando se empregan as ferramentas de «Texto» ou de «Etiqueta»)            </li>
 
-            <li>[Insert]/<b>[F5]</b>: Click mouse (always)            </li>
+            <li>[Insert]/<b>[F5]</b>: premer co rato (sempre)            </li>
 
-            <li><b>[F4]</b> jump mouse between "Tools", "Colors" and canvas areas            </li>
+            <li><b>[F4]</b> fai saltar o rato entre as «Ferramentas», «Cores» e as áreas do lenzo            </li>
 
-            <li>If mouse is within "Tools" section on the left, or "Colors" section at the bottom:              <ul>
-                <li><b>[F7]</b>, <b>[F8]</b>: Move down/up between buttons, respectively (Tools section, only)                </li>
+            <li>Se o rato está dentro da sección «Ferramentas» á esquerda ou na sección «Cores» na parte inferior:              <ul>
+                <li><b>[F7]</b>/<b>[F8]</b>: mover cara abaixo/arriba entre os botóns, respectivamente (só sección de ferramentas)                </li>
 
-                <li><b>[F11]</b>, <b>[F12]</b>: Move to previous/next button, respectively                </li>
+                <li><b>[F11]</b>/<b>[F12]</b>: mover ao botón anterior/seguinte, respectivamente                </li>
               </ul>
             </li>
           </ul>
         </li>
 
-        <li>To click-and-drag, hold one of the 'click' keys (e.g., [Insert]), and use the movement keys (e.g., [Left]).          <ul>
-            <li>Note: The "mouse accessibility" feature works with the keyboard mouse controls. With both options enabled, painting tools can be used to draw by pressing a 'click' key to start clicking, movement keys to move around (which will draw), and another 'click' key to end the click (stop drawing).            </li>
+        <li>Para premer e arrastrar, manteña premida unha das teclas de «clic» (p. ex.: [Insert]) e use as teclas de movemento (p. ex.: [Left]).          <ul>
+            <li>Nota: a función de «accesibilidade do rato» funciona cos controis do rato do teclado. Con ambas as opcións activadas, as ferramentas de pintura pódense empregar para debuxar premendo unha tecla «clic» para comezar a premer, as teclas de movemento para moverse (que debuxará) e outra tecla «clic» para deixar de premer (deixar de debuxar).            </li>
           </ul>
         </li>
 
-        <li>A regular mouse and/or joystick may still be used (so you can, e.g., move with the mouse, and click with the keyboard, or vice-versa)        </li>
+        <li>Aínda se pode usar un rato e/ou unha panca de mando (joystick) normais (para que poida, por exemplo, moverse co rato e premer co teclado ou viceversa)        </li>
       </ul>
 
       <p>
@@ -2783,16 +2783,16 @@
 
     <dd>
       <p>
-        Presents a clickable on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.      </p>
+        Presenta un teclado en pantalla sobre que se pode premer cando empregan as ferramentas <b>Texto</b> e <b>Etiqueta</b>.      </p>
           </dd>
 
     <dt>
-      <code><b>onscreen-keyboard-layout=<i>LAYOUTNAME</i></b></code>
+      <code><b>onscreen-keyboard-layout=<i>NOME DA DISPOSICIÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the initial layout for the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.<br> Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.      </p>
+        Selecciona o deseño inicial para o teclado en pantalla cando usa as ferramentas <b>Texto</b> e <b>Etiqueta</b>.<br> Nota: Usar esta opción implica <b>onscreen-keyboard=yes</b> automaticamente, polo que configurar ambas as cousas é redundante .      </p>
     </dd>
 
     <dt>
@@ -2801,8 +2801,8 @@
 
     <dd>
       <p>
-        Disables the possibility for changing the layout of the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools, useful for simplifying things for the small children.<br>
-      Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.      </p>
+        Desactiva a posibilidade de cambiar o deseño do teclado en pantalla cando se usan as ferramentas <b>Texto</b> e <b>Etiqueta</b>, útil para simplificar as cousas para os máis pequechos.<br>
+      Nota: Usar esta opción implica automaticamente <b>onscreen-keyboard=yes</b>, polo que estabelecer ambas as cousas é redundante.      </p>
       <p>
         Note: If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>onscreen-keyboard-disable-change=no</code>". In both cases, may be overridden by the command-line option "<code>--onscreen-keyboard-disable-change=no</code>".      </p>
     </dd>
@@ -2827,34 +2827,34 @@
 
     <dd>
       <p>
-        Specify which joystick device should be used by Tux Paint. Default value is 0 (the first joystick).      </p>
+        Especifica que dispositivo de mando debe ser usado por Tux Paint. O valor predeterminado é 0 (a primeira panca de mando — joystick).      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-slowness=<i>SPEED</i></b></code>
+      <code><b>joystick-slowness=<i>VELOCIDADE</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Sets a delay at each axis motion, allowing to slow the joystick. Allowed values are from 0 to 500. Default value is 15.      </p>
+        Estabelece un atraso en cada movemento do eixo, permitindo atrasar a panca de mando (joystick). Os valores permitidos van de 0 a 500. O valor predeterminado é 15.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-threshold=<i>THRESHOLD</i></b></code>
+      <code><b>joystick-threshold=<i>LIMIAR</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Sets the minimum level of axis motion to start moving the pointer. Allowed values are from 0 to 32766. Default value is 3200.      </p>
+        Estabelece o nivel mínimo de movemento do eixe para comezar a mover o punteiro. Os valores permitidos son de 0 a 32766. O valor predeterminado é 3200.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-maxsteps=<i>STEPS</i></b></code>
+      <code><b>joystick-maxsteps=<i>PASOS</i></b></code>
     </dt>
 
     <dd>
       <p>
-      Sets the maximum pixels the pointer will move at once. Allowed values are from 1 to 7. Default value is 7.      </p>
+      Define os píxeles máximos que moverá o punteiro á vez. Os valores permitidos van do 1 ao 7. O valor predeterminado é 7.      </p>
     </dd>
 
   </dl>
@@ -2866,21 +2866,21 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>joystick-hat-slowness=<i>SPEED</i></b></code>
+      <code><b>joystick-hat-slowness=<i>VELOCIDADE</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Sets a delay at each automatic motion, allowing to slow the speed of the hat. Allowed values are from 0 to 500. Default value is 15.      </p>
+        Estabelece un atraso en cada movemento automático, o que permite diminuír a velocidade do sombreiro. Os valores permitidos van de 0 a 500. O valor predeterminado é 15.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-hat-timeout=<i>MILLISECONDS</i></b></code>
+      <code><b>joystick-hat-timeout=<i>MILISEGUNDOS</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed. Allowed values are from 0 to 3000. Default value is 1000.      </p>
+        Estabelece o atraso após de que o punteiro comezará a moverse automaticamente se se mantén premido o sombreiro. Os valores permitidos van de 0 a 3000. O valor predeterminado é 1000.      </p>
     </dd>
   </dl>
 </blockquote>
@@ -2891,12 +2891,12 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>joystick-buttons-ignore=<i>BUTTON1,BUTTON2,...</i></b></code>
+      <code><b>joystick-buttons-ignore=<i>BOTÓN1,BOTÓN2,...</i></b></code>
     </dt>
 
     <dd>
       <p>
-        A set of joystick button numbers, as seen by SDL, that should be ignored. Otherwise, unless they are used by one of the "<code>joystick-btn-</code>" options above, buttons will be seen as a mouse left-click.      </p>
+        Un conxunto de números de botóns do mando (joystick), como se ve en SDL, que deben ignorarse. Se non, a menos que sexan utilizados por unha das opcións «<code>joystick-btn-</code>» anteriores, os botóns veranse como un botón esquerdo do rato.      </p>
     </dd>
   </dl>
 </blockquote>
@@ -2907,147 +2907,147 @@
 <blockquote>
   <dl>
     <dt>
-      <code><b>joystick-btn-escape=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-escape=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be used to generate a escape event. Useful to dismiss dialogs and quit.      </p>
+        Selecciona o número do botón da panca de control (joystick), tal e como o ve SDL, que se usará para xerar un evento de escape. Útil para desactivar os diálogos e saír.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-brush=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-brush=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the brush tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de pinceis.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-stamp=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-stamp=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the stamp tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de selos.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-lines=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-lines=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the lines tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de liñas.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-shapes=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-shapes=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the shapes tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de formas.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-text=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-text=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the text tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de texto.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-label=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-label=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the label tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de etiquetas.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-magic=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-magic=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the magic tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a seleccionar a ferramenta de máxia.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-undo=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-undo=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to invoke the undo tool.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a invocar a ferramenta de desfacer.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-redo=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-redo=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select redo tool.      </p>
+        Selecciona o número do botón da panca de mando (joystick), tal e como o ve SDL, que será un atallo para seleccionar ferramenta de refacer.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-eraser=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-eraser=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select eraser tool.      </p>
+        Selecciona o número do botón da panca de mando (joystick), tal e como o ve SDL, que será un atallo para seleccionar ferramenta de goma de borrar.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-new=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-new=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the dialog for creating a new drawing.      </p>
+        Selecciona o número do botón da panca de mando (joystick), como o ve SDL, que será un atallo para iniciar o diálogo para crear un novo debuxo.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-open=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-open=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the dialog for opening an existing drawing.      </p>
+        Selecciona o número do botón da panca de mando (joystick), como o ve SDL, que será un atallo para iniciar o diálogo para abrir un debuxo existente.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-save=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-save=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-      Selects the joystick button number, as seen by SDL, that will be a shortcut to save the drawing.      </p>
+      Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a garda o debuxo.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-pgsetup=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-pgsetup=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the page setup dialog for printing.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a inicia o diálogo de configuración da páxina para imprimir.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-print=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-print=<i>NÚMERO DE BOTÓN</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to print.      </p>
+        Selecciona o número do botón do joystick, como o ve SDL, que será un atallo a imprimir.      </p>
     </dd>
   </dl>
 </blockquote>
@@ -3060,19 +3060,19 @@
 
     <h1>
       <a name="overriding" id="overriding">
-        Overriding System Config. Options      </a>
+        Anulación da configuración do sistema. Opcións      </a>
     </h1>
 
     <blockquote>
       <p>
-        <i>(For Linux and Unix users)</i>
+        <i>(Para usuarios de Linux e Unix)</i>
       </p>
 
       <p>
-        If any of the above options are set in "<code>/etc/tuxpaint/tuxpaint.config</code>", you can override them in your own "<code>~/.tuxpaintrc</code>" file.      </p>
+        Se algunha das opcións anteriores está estabelecida en «<code>/etc/tuxpaint/tuxpaint.config</code>», pode anulala no seu propio ficheiro «<code>~/.tuxpaintrc</code>».      </p>
 
       <p>
-        For true/false options, like "<code>noprint</code>" and "<code>grab</code>", you can simply say they equal 'no' in your "<code>~/.tuxpaintrc</code>" file:      </p>
+        Para opcións verdadeiro/falso, como «<code>noprint</code>» e «<code>grab</code>», pode simplemente dicir que son iguais a «no» no seu ficheiro «<code>~/.tuxpaintrc</code>»:      </p>
 
       <blockquote>
         <code>noprint=no<br>
@@ -3080,7 +3080,7 @@
       </blockquote>
 
       <p>
-        Or, you can use options similar to the command-line override options described below. For example:      </p>
+        Ou pode usar opcións semellantes ás opcións de anulación da liña de ordes que se describen a continuación. Por exemplo:      </p>
 
       <blockquote>
         <code>print=yes<br>
@@ -3093,17 +3093,17 @@
 
     <h1>
       <a name="command_line"
-          id="command_line">Command-Line Options</a>
+          id="command_line">Opcións da liña de ordes</a>
     </h1>
 
     <blockquote>
-      Options can also be issued on the command-line when you start Tux Paint.      <blockquote>
+      As opcións tamén se poden indicar na liña de ordes cando se inicia Tux Paint.      <blockquote>
         <dl>
           <dt>
             <code><b>--fullscreen<br>
-            --<i>WIDTH</i>x<i>HEIGHT</i><br>
-            --buttonsize=<i>SIZE</i><br>
-            --colorsrows=<i>ROWS</i><br>
+            --<i>LARGO</i>x<i>ALTO</i><br>
+            --buttonsize=<i>TAMAÑO</i><br>
+            --colorsrows=<i>FILAS</i><br>
             --orient=portrait<br>
             --native<br>
             --allowscreensaver<br>
@@ -3112,13 +3112,13 @@
             --nostereo<br>
             --noquit<br>
             --noprint<br>
-            --printdelay=<i>SECONDS</i><br>
+            --printdelay=<i>SEGUNDOS</i><br>
             --printcfg<br>
             --altprintnever<br>
             --altprintalways<br>
-            --papersize=<i>PAPERSIZE</i><br>
-            --printcommand=<i>COMMAND</i><br>
-            --altprintcommand=<i>COMMAND</i><br>
+            --papersize=<i>TAMAÑO_DO_PAPEL</i><br>
+            --printcommand=<i>ORDE</i><br>
+            --altprintcommand=<i>ORDE</i><br>
             --nolockfile<br>
             --simpleshapes<br>
             --uppercase<br>
@@ -3165,22 +3165,22 @@
             --sysfonts<br>
             --alllocalefonts<br>
             --mirrorstamps<br>
-            --stampsize=<i>SIZE</i><br>
+            --stampsize=<i>TAMAÑO</i><br>
             --keyboard<br>
-            --savedir <i>DIRECTORY</i><br>
-            --datadir <i>DIRECTORY</i><br>
-            --exportdir <i>DIRECTORY</i><br>
+            --savedir <i>DIRECTORIO</i><br>
+            --datadir <i>DIRECTORIO</i><br>
+            --exportdir <i>DIRECTORIO</i><br>
             --saveover<br>
             --saveovernew<br>
             --nosave<br>
             --autosave<br>
-            --lang <i>LANGUAGE</i><br>
-            --colorfile <i>FILE</i><br></b></code>
+            --lang <i>IDIOMA</i><br>
+            --colorfile <i>FICHEIRO</i><br></b></code>
           </dt>
 
           <dd>
           <p>
-            These enable or correspond to the configuration file options described above.          </p>
+            Estas activan ou corresponden ás opcións do ficheiro de configuración descritas anteriormente.          </p>
 
             <hr size="1"
                 noshade
@@ -3228,7 +3228,7 @@
 
           <dd>
             <p>
-              These options can be used to override any settings made in the configuration file. (If the option isn't set in the configuration file(s), no overriding option is necessary.)            </p>
+              Estas opcións pódense usar para anular calquera axuste feito no ficheiro de configuración. (Se a opción non está configurada no(s) ficheiro(s) de configuración, non será necesaria ningunha opción de anulación.)            </p>
 
             <hr size="1"
                 noshade
@@ -3241,10 +3241,10 @@
 
           <dd>
             <p>
-              Under Linux and Unix, this prevents the system-wide configuration file, "<code>/etc/tuxpaint/tuxpaint.conf</code>", from being read.            </p>
+              En Linux e Unix, isto evita ler o ficheiro de configuración de todo o sistema, «<code>/etc/tuxpaint/tuxpaint.conf</code>».            </p>
 
             <p>
-              Only your own configuration file, "<code>~/.tuxpaintrc</code>", if it exists, will be used.            </p>
+              Só se empregará o seu propio ficheiro de configuración, «<code>~/.tuxpaintrc</code>», se existe.            </p>
           </dd>
         </dl>
       </blockquote>
@@ -3254,12 +3254,12 @@
 
       <h2>
         <a name="info-cmd" id="info-cmd">
-          Command-Line Informational Options        </a>
+          Opcións informativas da liña de ordes        </a>
       </h2>
 
       <blockquote>
         <p>
-          The following options display some informative text on the screen. Tux Paint doesn't actually start up and run afterwards, however.        </p>
+          As seguintes opcións amosan un texto informativo na pantalla. Non obstante, Tux Paint non se inicia nin se executa despois.        </p>
 
         <blockquote>
           <dl>
@@ -3270,7 +3270,7 @@
 
             <dd>
               <p>
-                Display the version number and date of the copy of Tux Paint you are running. The "--verbose-version" also lists what compile-time options were set. (See INSTALL and FAQ).              </p>
+                Amosa o número de versión e a data da copia de Tux Paint que está a executar. O «--verbose-version» tamén lista as opcións de tempo de compilación definidas. (Vexa INSTALL [INSTALAR] e FAQ [Preguntas frecuentes] ).              </p>
             </dd>
 
             <dt>
@@ -3279,7 +3279,7 @@
 
             <dd>
               <p>
-                Show brief license information about copying Tux Paint.              </p>
+                Amosa información breve sobre a licenza para copiar Tux Paint.              </p>
             </dd>
 
             <dt>
@@ -3288,7 +3288,7 @@
 
             <dd>
               <p>
-                Display the list of available command-line options.              </p>
+                Amosa a lista de opcións de liña de ordes dispoñíbeis.              </p>
             </dd>
 
             <dt>
@@ -3297,7 +3297,7 @@
 
             <dd>
               <p>
-                Display brief help on using Tux Paint.              </p>
+                Amosa unha breve axuda sobre o uso de Tux Paint.              </p>
             </dd>
 
             <dt>
@@ -3306,7 +3306,7 @@
 
             <dd>
               <p>
-                Display a list of available languages in Tux Paint.              </p>
+                Amosa unha lista de idiomas dispoñíbeis en Tux Paint.              </p>
             </dd>
 
             <dt>
@@ -3315,7 +3315,7 @@
 
             <dd>
               <p>
-                Display list of attached joysticks available to Tux Paint.              </p>
+                Amosa a lista de pancas de mando (joysticks) conectados dispoñíbeis para Tux Paint.              </p>
             </dd>
           </dl>
         </blockquote>
@@ -3327,22 +3327,22 @@
 
     <h1>
       <a name="different_language"
-          id="different_language">Choosing a Different Language</a>
+          id="different_language">Escoller un idioma diferente</a>
     </h1>
 
     <blockquote>
       <p>
-        Tux Paint has been translated into a number of languages. To access the translations, you can use the "<code>--lang</code>" option on the command-line to set the language (e.g. "<code>--lang spanish</code>") or use the "<code>lang=</code>" setting in the configuration file (e.g., "<code>lang=spanish</code>").      </p>
+        Tux Paint foi traducido a varios idiomas. Para acceder ás traducións, pode usar a opción «<code>--lang</code>» na liña de ordes para estabelecer o idioma (por exemplo, «<code>--lang spanish</code>») ou usar o axuste «<code>lang=</code>» no ficheiro de configuración (p. ex.: «<code>lang=spanish</code>»).      </p>
 
       <p>
-        Tux Paint also honors your environment's current locale. (You can override it on the command-line using the "<code>--locale</code>" option; see <a href="#locale">above</a>.)      </p>
+        Tux Paint tamén respecta o contorno local actual. (Pode anulalo na liña de ordes usando a opción «<code>--locale</code>»; vexa consulta <a href="#locale">arriba</a>).      </p>
 
       <p>
-        Use the option "<code>--lang help</code>" to list the available language options available.      </p>
+        Use a opción «<code>--lang help</code>» para listar as opcións de idioma dispoñíbeis.      </p>
 
       <h2>
         <a name="available_languages" id="available_languages">
-          Available Languages        </a>
+          Idiomas dispoñíbeis        </a>
       </h2>
 
       
@@ -3351,16 +3351,16 @@
                cellspacing="0"
                cellpadding="2"
                summary=
-               "Locale values and the languages they represent.">
+               "Valores locais e os idiomas que representan.">
           <tr>
             <th>
-              Locale Code            </th>
+              Código do idioma            </th>
             <th>
-              Language<br>(native name)            </th>
+              Idioma<br>(nome nativo)            </th>
             <th>
-              Language<br>(English name)            </th>
+              Idioma<br>(nome en inglés)            </th>
             <th>
-              Input Method Cycle Key Combination            </th>
+              Combinación de teclas de ciclo de método de entrada            </th>
           </tr>
 
           <tr>
@@ -5300,42 +5300,42 @@
         </table>
 
         <p>
-          <b>(*)</b> - These languages require their own fonts, since they are not represented using a Latin character set, like the others. See the "<a href="#special_fonts"><i>Special Fonts</i></a>" section, below.        </p>
+          <b>(*)</b> - Estes idiomas requiren os seus propios tipos de letra, xa que non se representan usando un conxunto de caracteres latinos, como os demais. Vexa a sección «<a href="#special_fonts"><i>Tipos de letra especiais</i></a>», a continuación.        </p>
 
         <p>
-          <i>Note:</i> Tux Paint provides an alternative input method for entering characters with the <b>Text</b> tool in some locales. The key comibation(s) listed can be used to cycle through the supported input methods while the <b>Text</b> tool is active.        </p>
+          <i>Nota:</i> Tux Paint fornece un método de entrada alternativo para introducir caracteres coa ferramenta <b>Texto</b> nalgunhas configuracións locais. A(s) combinación(s) de teclas indicada(s) pode usarse para percorrer os métodos de entrada admitidos mentres a ferramenta <b>Texto</b> está activa.        </p>
       </blockquote>
 
       <h2>
         <a name="env_locale" id="env_locale">
-          Setting Your Environment's Locale        </a>
+          Axustar o idioma do seu contorno        </a>
       </h2>
 
       <blockquote>
         <p>
-          Changing your locale will affect much of your environment.        </p>
+          Cambiar a súa configuración local afectará a gran parte do seu contorno.        </p>
 
         <p>
-          As stated above, along with letting you choose the language at runtime using command-line options ("<code>--lang</code>" and "<code>--locale</code>"), Tux Paint honors the global locale setting in your environment.        </p>
+          Como se indicou anteriormente, ademais de permitirche escoller o idioma en tempo de execución empregando opcións de liña de ordes («<code>--lang</code>» e «<code>--locale</code>»), Tux Paint respecta o axuste da configuración local do seu contorno.        </p>
 
         <p>
-          If you haven't already set your environment's locale, the following will briefly explain how:        </p>
+          Se aínda non estabeleceu a configuración local do seu contorno, o seguinte explicará brevemente como:        </p>
 
         <h3>
-          Linux/Unix Users        </h3>
+          Usuarios de Linux/Unix        </h3>
 
         <blockquote>
           <p>
-            First, be sure the locale you want to use is enabled by editing the file "<code>/etc/locale.gen</code>" on your system and then running the program "<code>locale-gen</code>" as root.          </p>
+            Primeiro, asegúrese de que a configuración local que quere usar está activada editando o ficheiro «<code>/etc/locale.gen</code>» no seu sistema e logo executando o programa «<code>locale-gen</code>» como superusuario «root».          </p>
 
           <p>
-            <i>Note: Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>/var/lib/locales/supported.d/local</code>" first, and add locales they want, from the list found in "<code>/usr/share/i18n/SUPPORTED</code>".</i>          </p>
+            <i>Nota: os usuarios de Debian poden executar a orde «<code>dpkg-reconfigure locales</code>» como superusuario (root) para abrir un diálogo de configuración. Os usuarios de Ubuntu poden executar «<code>sudo dpkg-reconfigure localeconf</code>» (é posíbel que teña que instalar antes o paquete «localeconf») ou pode que teña que editar primeiro o ficheiro «<code>/var/lib/locales/supported.d/local</code>» e engadir as configuracións locais que queiran, da lista que se atopa en «<code>/usr/share/i18n/SUPPORTED</code>».</i>          </p>
 
           <p>
-            Then, before running Tux Paint, set your "<code>$LANG</code>" environment variable to one of the locales listed above. (If you want all programs that can be translated to be, you may wish to place the following in your login script; e.g. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc.)          </p>
+            Após, antes de executar Tux Paint, configure a súa variábel de contorno «<code>$LANG</code>» a unha das configuracións locais mencionadas anteriormente. (Se quere que todos os programas que se poidan traducir o sexan, pode que queira colocar o seguinte no seu script de inicio de sesión; por exemplo, «<code>~/.profile</code>», «<code>~/.bashrc</code>», «<code>~/.cshrc</code>», etc.)          </p>
 
           <p>
-            For example, in a Bourne Shell (like BASH):          </p>
+            Por exemplo, nunha consola Bourne (como BASH):          </p>
 
           <blockquote>
             <code>export LANG=es_ES ; \<br>
@@ -5343,7 +5343,7 @@
           </blockquote>
 
           <p>
-            And in a C Shell (like TCSH):          </p>
+            E nunha consola C (como TCSH):          </p>
 
           <blockquote>
             <code>setenv LANG es_ES ; \<br>
@@ -5355,51 +5355,51 @@
             noshade>
 
         <h3>
-          Windows Users        </h3>
+          Usuarios de Windows        </h3>
 
         <blockquote>
           <p>
-            Tux Paint will recognize the current locale and use the appropriate files by default. So this section is only for people trying different languages.          </p>
+            Tux Paint recoñecerá a configuración local actual e empregará de xeito predeterminado os ficheiros apropiados. Polo tanto, esta sección é só para persoas que proban idiomas diferentes.          </p>
 
           <p>
-            The simplest thing to do is to use the "<code>--lang</code>" switch in the shortcut (see "INSTALL"). However, by using an MSDOS Prompt window, it is also possible to issue a command like this:          </p>
+            O máis sinxelo é empregar o interruptor «<code>--lang</code>» no atallo (ver «INSTALL [INSTALAR]»). Non obstante, usando unha xanela de indicador do sistema de MSDOS, tamén é posíbel emitir unha orde coma esta:          </p>
 
           <blockquote>
             <code>set LANG=es_ES</code>
           </blockquote>
 
           <p>
-            ...which will set the language for the lifetime of that DOS window.          </p>
+            ...que estabelecerá o idioma para toda a vida desa xanela DOS.          </p>
 
           <p>
-            For something more permanent, you can set an 'environment variable' using the "System properties" dialogue as follows:          </p>
+            Para obter algo máis permanente, pode estabelecer unha «variábel de contorno» usando o diálogo «Propiedades do sistema» do seguinte xeito:          </p>
           <ul>
-            <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "Run ..." dialogue.</li>
-            <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "System properties" dialogue.</li>
-            <li>Select the "Advanced" tab.</li>
-            <li>Click the "Environment Variables..." button.</li>
-            <li>Edit the value of the parameter "<code>LANG</code>" (create it, if it doesn't exists).</li>
+            <li>Prema a combinación de teclas «<b>[Windows]+[R]</b>» para abrir o diálogo «Executar...».</li>
+            <li>Escriba «<code>sysdm.cpl</code>» na caixa de texto e prema no botón «<b>[OK]</b>» para abrir o diálogo «Propiedades do sistema».</li>
+            <li>Seleccione a lapela «Avanzado».</li>
+            <li>Prema no botón «Variábeis de contorno...».</li>
+            <li>Edite o valor do parámetr «<code>LANG</code>») (créeo, se non existe).</li>
           </ul>
         </blockquote>
       </blockquote>
 
       <h2>
         <a name="special_fonts"
-            id="special_fonts">Special Fonts</a>
+            id="special_fonts">Tipos de letra especiais</a>
       </h2>
 
       <blockquote>
         <p>
-          Some languages require special fonts be installed. These font files (which are in TrueType format (TTF)), are much too large to include with the Tux Paint download, and are available separately. (See the table above, under the "<a href="#different_language"><i>Choosing a Different Language</i></a>" section.)        </p>
+          Algúns idiomas requiren que se instalen tipos de letra especiais. Estes ficheiros de letra (que están en formato TrueType (TTF)), son demasiado grandes para incluílos coa descarga de Tux Paint e están dispoñíbeis por separado. (Vexa a táboa anterior, na sección «<a href="#different_language"><i>Escoller un idioma diferente</i></a>»).        </p>
 
         <p>
-          <b>Note:</b> As of version 0.9.18, Tux Paint uses the "SDL_Pango" library, which utilizes the "Pango" library to render text in the user interface, rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was built without Pango support, special fonts should <b><i>no longer be necessary</i></b>.        </p>
+          <b>Nota:</b> A partir da versión 0.9.18, Tux Paint usa a biblioteca «SDL_Pango», que utiliza a biblioteca «Pango» para renderizar texto na interface de usuario, no canto de usar directamente «SDL_ttf». A non ser que a súa copia de Tux Paint se construíse sen compatibilidade con Pango, os tipos de letra especiais <b><i>xa non deberían ser necesarios</i> </b>.        </p>
 
         <p>
-          When running Tux Paint in a language that requires its own font, Tux Paint will try to load the font file from its system-wide "<code><b>fonts</b></code>" directory (under a "<code><b>locale</b></code>" subdirectory). The name of the file corresponds to the first two letters in the 'locale' code of the language (e.g., "ko" for Korean, "ja" for Japanese, "zh_tw" for Traditional Chinese).        </p>
+          Cando se executa Tux Paint nun idioma que require o seu propio tipo de letra, Tux Paint tentará cargar o ficheiro de letra dende o directorio «<code><b>fonts</b></code>» do sistema (nun subdirectorio «<code><b>locale</b></code>»). O nome do ficheiro corresponde ás dúas primeiras letras do código «local» do idioma (por exemplo, «ko» para coreano, «ja» para xaponés, «zh_tw» para chinés tradicional).        </p>
 
         <p>
-          For example, under Linux or Unix, when Tux Paint is run in Korean (e.g., with the option "<code>--lang korean</code>"), Tux Paint will attempt to load the following font file:        </p>
+          Por exemplo, en Linux ou Unix, cando Tux Paint se executa en coreano (é dicir, coa opción «<code>--lang korean</code>»), Tux Paint tentará cargar o seguinte ficheiro de tipo de letra:        </p>
 
         <blockquote>
           <p>
@@ -5408,10 +5408,10 @@
         </blockquote>
 
         <p>
-          You can download fonts for supported languages from Tux Paint's website, <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>. (Look in the 'Fonts' section under 'Download.')        </p>
+          Pode descargar os tipos de letra para os idiomas compatíbeis dende o sitio web de Tux Paint, <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>.. (Mire na sección «Tipos de letra» en «Descargas»).        </p>
 
         <p>
-          Under Unix and Linux, you can use the <code>Makefile</code> that comes with the font to install the font in the appropriate location.        </p>
+          En Unix e Linux, pode usar o <code>Makefile</code> que vén co tipo de letra para instalalo no lugar adecuado.        </p>
       </blockquote>
     </blockquote>
 

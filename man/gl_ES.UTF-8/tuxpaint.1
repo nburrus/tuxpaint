@@ -1,5 +1,5 @@
 .\" tuxpaint.1 - 2021.09.14
-.TH TUXPAINT 1 "September 14, 2021" "0.9.27" "Tux Paint"
+.TH TUXPAINT 1 "14 de Setembro de 2021" "0.9.27" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -19,7 +19,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-orient=portrait]
 .br
-[\-\-buttonsize SIZE]
+[\-\-buttonsize TAMAÑO]
 .br
 [\-\-startblank]
 .br
@@ -31,17 +31,17 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-noprint]
 .br
-[\-\-printdelay=\fISECONDS\fP]
+[\-\-printdelay=\fISEGUNDOS\fP]
 .br
 [\-\-printcfg]
 .br
 [\-\-altprintalways | \-\-altprintnever]
 .br
-[\-\-papersize \fIPAPERSIZE\fP | \-\-papersize help]
+[\-\-papersize \fITAMAÑO_DO_PAPEL\fP | \-\-papersize help]
 .br
-[\-\-printcommand \fICOMMAND\fP]
+[\-\-printcommand \fIORDE\fP]
 .br
-[\-\-altprintcommand \fICOMMAND\fP]
+[\-\-altprintcommand \fIORDE\fP]
 .br
 [\-\-simpleshapes]
 .br
@@ -75,7 +75,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-mirrorstamps]
 .br
-[\-\-colorsrows=\fIROWS\fP]
+[\-\-colorsrows=\fIFILAS\fP]
 .br
 [\-\-mouse-accessibility]
 .br
@@ -89,15 +89,15 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-joystick-dev=list]
 .br
-[\-\-joystick-slowness=\fISPEED\fP]
+[\-\-joystick-slowness=\fIVELOCIDADE\fP]
 .br
-[\-\-joystick-threshold=\fITHRESHOLD\fP]
+[\-\-joystick-threshold=\fILIMIAR\fP]
 .br
-[\-\-joystick-maxsteps=\fISTEPS\fP]
+[\-\-joystick-maxsteps=\fIPASOS\fP]
 .br
-[\-\-joystick-hat-timeout=\fIMILLISECONDS\fP]
+[\-\-joystick-hat-timeout=\fIMILISEGUNDOS\fP]
 .br
-[\-\-joystick-hat-slowness=\fISPEED\fP]
+[\-\-joystick-hat-slowness=\fIVELOCIDADE\fP]
 .br
 [\-\-joystick-btn-escape=\fIBUTTON\fP]
 .br
@@ -131,9 +131,9 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-joystick-btn-print=\fIBUTTON\fP]
 .br
-[\-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP]
+[\-\-joystick-buttons-ignore=\fIBOTÓN1,BOTÓN2,...\fP]
 .br
-[\-\-stampsize=\fISIZE\fP]
+[\-\-stampsize=\fITAMAÑO\fP]
 .br
 [\-\-keyboard]
 .br
@@ -155,7 +155,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-autosave]
 .br
-[\-\-colorfile \fIFILE\fP]
+[\-\-colorfile \fIFICHEIRO\fP]
 
 .TP 9
 .B tuxpaint (defaults)
@@ -234,11 +234,11 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 
 .TP 9
 .B tuxpaint
-[\-\-locale \fILOCALE\fP]
+[\-\-locale \fIIDIOMA\fP]
 
 .TP 9
 .B tuxpaint
-[\-\-lang \fILANGUAGE\fP | \-\-lang help]
+[\-\-lang \fIIDIOMA\fP | \-\-lang help]
 
 .TP 9
 .B tuxpaint
@@ -327,13 +327,13 @@ Disable or enable (default) stereo panning support.
 
 .SS INTERFACE SIZE
 .TP 8
-.B \-\-buttonsize \fISIZE\fP
+.B \-\-buttonsize \fITAMAÑO\fP
 Adjust the size of the buttons in \fITux Paint\fP's user interface, between
 24 and 192 pixels (48 is the default, and suitable for displays with 96 to
 120dpi pixel density).
 
 .TP 8
-.B \-\-colorsrows=\fIROWS\fP
+.B \-\-colorsrows=\fIFILAS\fP
 How many rows of color palette buttons to show; useful when using a large
 color palette, and/or for use with coarse input devices (like eyegaze
 trackers).  It can be between 1 (default) and 3.
@@ -362,7 +362,7 @@ mixed case.
 
 .SS INITIAL STAMP SIZE
 .TP 8
-.B \-\-stampsize=\fISIZE\fP \-\-stampsize=default
+.B \-\-stampsize=\fITAMAÑO\fP \-\-stampsize=default
 Overrides the default size of all stamps, relative to their possible sizes
 (determined by Tux Paint, based on the dimensions of both the stamps
 themselves, and the drawing canvas).  Valid values are from 0 (smallest) to
@@ -495,8 +495,8 @@ which are used to switch between the available on-screen keyboard layouts.
 .SS JOYSTICK
 .TP 8
 .B \-\-joystick-dev=\fIDEVICE\fP
-Specify which joystick device should be used by Tux Paint. Default value is
-0 (the first joystick).
+Especifica que dispositivo de mando debe ser usado por Tux Paint. O valor
+predeterminado é 0 (a primeira panca de mando — joystick).
 
 .TP 8
 .B \-\-joystick-dev=list
@@ -504,38 +504,42 @@ List the system's available joysticks and exit. (Does not launch Tux
 Paint.)
 
 .TP 8
-.B \-\-joystick-slowness=\fISPEED\fP
-Sets a delay at each axis motion, allowing to slow the joystick. Allowed
-values are from 0 to 500. Default value is 15.
+.B \-\-joystick-slowness=\fIVELOCIDADE\fP
+Estabelece un atraso en cada movemento do eixo, permitindo atrasar a panca
+de mando (joystick). Os valores permitidos van de 0 a 500. O valor
+predeterminado é 15.
 
 .TP 8
-.B \-\-joystick-threshold=\fITHRESHOLD\fP
-Sets the minimum level of axis motion to start moving the pointer. Allowed
-values are from 0 to 32766. Default value is 3200.
+.B \-\-joystick-threshold=\fILIMIAR\fP
+Estabelece o nivel mínimo de movemento do eixe para comezar a mover o
+punteiro. Os valores permitidos son de 0 a 32766. O valor predeterminado é
+3200.
 
 .TP 8
-.B \-\-joystick-maxsteps=\fISTEPS\fP
-Sets the maximum pixels the pointer will move at once. Allowed values are
-from 1 to 7. Default value is 7.
+.B \-\-joystick-maxsteps=\fIPASOS\fP
+Define os píxeles máximos que moverá o punteiro á vez. Os valores
+permitidos van do 1 ao 7. O valor predeterminado é 7.
 
 .TP 8
-.B \-\-joystick-hat-timeout=\fIMILLISECONDS\fP
-Sets the delay after wich the pointer will start moving automatically if
-the hat is keeped pushed. Allowed values are from 0 to 3000. Default value
-is 1000.
+.B \-\-joystick-hat-timeout=\fIMILISEGUNDOS\fP
+Estabelece o atraso após de que o punteiro comezará a moverse
+automaticamente se se mantén premido o sombreiro. Os valores permitidos
+van de 0 a 3000. O valor predeterminado é 1000.
 
 .TP 8
-.B \-\-joystick-hat-slowness=\fISPEED\fP
-Sets a delay at each automatic motion, allowing to slow the speed of the
-hat. Allowed values are from 0 to 500. Default value is 15.
+.B \-\-joystick-hat-slowness=\fIVELOCIDADE\fP
+Estabelece un atraso en cada movemento automático, o que permite diminuír
+a velocidade do sombreiro. Os valores permitidos van de 0 a 500. O valor
+predeterminado é 15.
 
 .TP 8
 .B \-\-joystick-btn-escape=\fIBUTTON\fP
-Selects the joystick button number, as seen by SDL, that will be used to
-generate a escape event. Useful to dismiss dialogs and quit.
+Selecciona o número do botón da panca de control (joystick), tal e como o
+ve SDL, que se usará para xerar un evento de escape. Útil para desactivar
+os diálogos e saír.
 
 .TP 8
-.B \-\-joystick-btn-\fICOMMAND\fP=\fIBUTTON\fP
+.B \-\-joystick-btn-\fIORDE\fP=\fIBUTTON\fP
 Selects the joystick button number, as seen by SDL, that will be a shortcut
 to various tools within Tux Paint.
 
@@ -565,10 +569,10 @@ label | Label
 magic | Magic
 .TP 2
 -
-undo | Undo
+undo | Desfacer
 .TP 2
 -
-redo | Redo
+redo | Refacer
 .TP 2
 -
 eraser | Eraser
@@ -591,7 +595,7 @@ print | Print (immediate)
 .PD
 
 .TP 8
-.B \-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
+.B \-\-joystick-buttons-ignore=\fIBOTÓN1,BOTÓN2,...\fP
 A set of joystick button numbers, as seen by SDL, that should be ignored.
 Otherwise, unless they are used by one of the "--joystick-btn-..." options
 above, buttons will be seen as a mouse left-click.  Comma-separated.
@@ -608,7 +612,7 @@ set in configuration files. (See below.)
 Disable or enable (default) the Print command within Tux Paint.
 
 .TP 8
-.B \-\-printdelay=\fISECONDS\fP \-\-printdelay=0
+.B \-\-printdelay=\fISEGUNDOS\fP \-\-printdelay=0
 Only allow printing (via the Print command) once every SECONDS seconds. 
 Default is 0 (no limitation).
 
@@ -635,19 +639,19 @@ Paint starts up, and setting changes will be saved for next time.
 
 .SS PRINT COMMANDS
 .TP 8
-.B \-\-printcommand \fICOMMAND\fP
+.B \-\-printcommand \fIORDE\fP
 (Only when PostScript printing is used.) Have Tux Paint print via an
 alternate command, rather than lpr(1).
 
 .TP 8
-.B \-\-altprintcommand \fICOMMAND\fP
+.B \-\-altprintcommand \fIORDE\fP
 (Only when PostScript printing is used.) Have Tux Paint print via an
 alternate command, when a dialog is expect (e.g., when holding [Alt] while
 clicking Print; see above), rather than kprinter.
 
 .SS PAPER SIZE
 .TP 8
-.B \-\-papersize \fIPAPERSIZE\fP
+.B \-\-papersize \fITAMAÑO_DO_PAPEL\fP
 (Only when PostScript printing is used.) Ask Tux Paint to generate
 PostScript of a particular paper size. Valid sizes are those supported by
 libpaper.  See papersize(5).
@@ -701,7 +705,7 @@ Specify where Tux Paint should look for personal data files (brushes,
 stamps, etc.).
 
 .TP 8
-.B \-\-colorfile \fIFILE\fP
+.B \-\-colorfile \fIFICHEIRO\fP
 This option allows you to override the default color palette in Tux Paint
 and replace it with your own. The file should be a plain ASCII text file
 containing one color description per line. Colors may be in decimal or 6-
@@ -722,7 +726,7 @@ environment variable), if possible. You can also specifically set the
 language using options on the command-line or in a configuration file.
 
 .TP 8
-.B \-\-locale \fILOCALE\fP
+.B \-\-locale \fIIDIOMA\fP
 Specify the language to use, based on locale name (which is typically of
 the form "language[_territory][.codeset][@modifier], where "language" is an
 ISO 639 language code, "territory" is an ISO 3166 country code, and
@@ -734,7 +738,7 @@ For example, "de_DE@euro" for German, or "pt_BR" for Brazilian Portuguese.
 .RE
 
 .TP 8
-.B \-\-lang \fILANGUAGE\fP
+.B \-\-lang \fIIDIOMA\fP
 Specify the language to use, based on the language's name (as recognized by
 Tux Paint).  Choose one of the language names listed below:
 .PP

@@ -1,296 +1,307 @@
                                    Tux Paint
-                    version 0.9.27 Advanced Stamps 'How-To'
+                 versión 0.9.27 «Como facer» os selos avanzados
 
-        Copyright © 2006-2021 by Albert Cahalan and others; see AUTHORS.
+   Copyright © 2006-2021 por Albert Cahalan e outros; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                                August 29, 2021
+                              29 de Agosto de 2021
 
      ----------------------------------------------------------------------
 
-   +----------------------------------------+
-   |Table of Contents                       |
-   |----------------------------------------|
-   |  * About this 'How-To'                 |
-   |  * Image choice is crucial             |
-   |  * Prepare the mask                    |
-   |  * Replace the fringe and junk pixels  |
-   |  * Save the image for Tux Paint        |
-   +----------------------------------------+
+   +-------------------------------------------+
+   |Índice                                     |
+   |-------------------------------------------|
+   |  * Sobre este «Como facelo»               |
+   |  * A elección da imaxe é crucial          |
+   |  * Preparar a máscara                     |
+   |  * Substituír a franxa e os píxeles lixo  |
+   |  * Gardar a imaxe para Tux Paint          |
+   +-------------------------------------------+
 
      ----------------------------------------------------------------------
 
      ----------------------------------------------------------------------
 
-About this 'How-To'
+Sobre este «Como facelo»
 
-     This 'How-To' assumes that you want to make an excellent Tux Paint
-     stamp, in PNG bitmapped format, from a JPEG image (e.g., a digital
-     photograph). There are easier and faster methods that produce lower
-     quality.
+     Este «Como facelo» supón que quere facer un excelente selo de Tux Paint,
+     en formato PNG con mapa de bits, a partir dunha imaxe JPEG (p. ex.: unha
+     fotografía dixital). Hai métodos máis sinxelos e rápidos que producen
+     unha calidade inferior.
 
-     This 'How-To' assumes you are dealing with normal opaque objects.
-     Dealing with semi-transparent objects (fire, moving fan blade, kid's
-     balloon) or light-giving objects (fire, lightbulb, sun) is best done
-     with custom software. Images with perfect solid-color backgrounds are
-     also best done with custom software, but are not troublesome to do as
-     follows.
-
-     ----------------------------------------------------------------------
-
-Image choice is crucial
-
-  License
-
-       If you wish to submit artwork to the Tux Paint developers for
-       consideration for inclusion in the official project, or if you wish to
-       release your own copy of Tux Paint, bundled with your own graphics,
-       you need an image that is compatible with the GNU General Public
-       License used by Tux Paint.
-
-       Images produced by the US government are Public Domain, but be aware
-       that the US government sometimes uses other images on the web. Google
-       image queries including either site:gov or site:mil will supply many
-       suitable images. (Note: the *.mil sites include non-military content,
-       too!)
-
-       Your own images can be placed in the Public Domain or a suitable
-       license, such as the Creative Commons CC0 by declaring it so. (Hire a
-       lawyer if you feel the need for legal advice.)
-
-       For personal use, any image you can legitimately modify and use for
-       your own personal use should be fine.
-
-  Image Size and Orientation
-
-       You need an image that has a useful orientation. Perspective is an
-       enemy. Images that show an object from the corner are difficult to fit
-       into a nice drawing. As a general rule, telephoto side views are the
-       best. The impossible ideal is that, for example, two wheels of a car
-       are perfectly hidden behind the other two.
-
-       Rotating an image can make it blurry, especially if you only rotate by
-       a few degrees. Images that don't need rotation are best, images that
-       need lots of rotation (30 to 60 degrees) are next best, and images
-       that need just a few degrees are worst. Rotation will also make an
-       image darker because most image editing software is very bad about
-       gamma handling. (Rotation is only legitimate for gamma=1.0 images.)
-
-       Very large images are more forgiving of mistakes, and thus easier to
-       work with. Choose an image with an object that is over 1000 pixels
-       across if you can. You can shrink this later to hide your mistakes.
-
-       Be sure that the image is not too grainy, dim, or washed out.
-
-       Pay attention to feet and wheels. If they are buried in something, you
-       will need to draw new ones. If only one is buried, you might be able
-       to copy the other one as a replacement.
+     Este «Como facelo» supón que está a tratar con obxectos opacos normais.
+     O tratamento de obxectos semitransparentes (lume, ventilador en
+     movemento, globo infantil) ou obxectos que dan luz (lume, bombilla, sol)
+     faise mellor cun software personalizado. As imaxes con fondos de cor
+     sólida perfectos tamén se fan mellor con software personalizado, pero
+     non son difíciles de facer do seguinte xeito.
 
      ----------------------------------------------------------------------
 
-Prepare the image
+A elección da imaxe é crucial
 
-     First of all, be sure to avoid re-saving the image as a JPEG. This
-     causes quality loss. There is a special tool called jpegtran that lets
-     you crop an image without the normal quality loss.
+  Licenza
+
+       Se quere enviar ilustracións aos desenvolvedores de Tux Paint para a
+       súa inclusión no proxecto oficial, ou se quere publicar a súa propia
+       copia de Tux Paint, xunto cos seus propios gráficos, precisa unha
+       imaxe que sexa compatíbel coa Licenza Pública Xeral GNU empregada por
+       Tux Paint.
+
+       As imaxes producidas polo goberno dos Estados Unidos son de dominio
+       público, pero teña en conta que o goberno dos Estados Unidos ás veces
+       usa outras imaxes na web. As consultas de Google image incluíndo
+       site:gov or site:mil proporcionarán moitas imaxes axeitadas. (Nota: os
+       sitios *.mil tamén inclúen contido non militar.)
+
+       As súas propias imaxes pódense poñer no dominio público ou nunha
+       licenza axeitada, como o Creative Commons CC0 declarándoas así .
+       (Consulte cun avogado se considera a necesidade dun asesoramento
+       xurídico.)
+
+       Para uso persoal, calquera imaxe que lexitimamente poida modificar e
+       usar para o seu uso persoal debería estar ben.
+
+  Tamaño e orientación da imaxe
+
+       Precisa unha imaxe que teña unha orientación útil. A perspectiva é un
+       inimigo. As imaxes que obxecto un obxecto dende un canto son difíciles
+       de encaixar nun bo debuxo. Como regra xeral, as vistas laterais con
+       teleobxectivo son as mellores. O ideal imposíbel é que, por exemplo,
+       dúas rodas dun coche estean perfectamente agochadas tras as outras
+       dúas.
+
+       Rotar unha imaxe pode facela borrosa, especialmente se só rota uns
+       graos. As imaxes que non precisan rotación son as mellores, as imaxes
+       que precisan moita rotación (30 a 60 graos) son as seguintes mellores
+       e as que precisan uns poucos graos as peores. A rotación tamén fará
+       que a imaxe sexa máis escura porque a maioría do software de edición
+       de imaxes é moi malo na manipulación da gamma. (A rotación só é
+       lexítima para imaxes gamma = 1,0.)
+
+       As imaxes moi grandes son máis indulxentes cos erros e, polo tanto,
+       son máis doadas de traballar. Escolla unha imaxe cun obxecto de máis
+       de 1000 píxeles se pode. Pode reducilo máis tarde para agochar os seus
+       erros.
+
+       Asegúrese de que a imaxe non está demasiado granulada, tenue ou
+       lavada.
+
+       Preste atención aos pés e ás rodas. Se están enterrados en algo, terá
+       que debuxar outros novos. Se só un está enterrado, pode que poida
+       copiar o outro como substituto.
+
+     ----------------------------------------------------------------------
+
+Preparar a imaxe
+
+     Primeiro de todo, asegúrese de evitar gardar de novo a imaxe como JPEG.
+     Isto provoca unha perda de calidade. Hai unha ferramenta especial
+     chamada jpegtran que permite recortar unha imaxe sen perder a calidade
+     normal.
 
        jpegtran -trim -copy none -crop 512x1728+160+128 < src.jpg >
        cropped.jpg
 
-     Bring that image up in your image editor. If you didn't crop it yet, you
-     may find that your image editor is very slow. Rotate and crop the image
-     as needed. Save the image — choose whatever native format supports
-     layers, masks, alpha, etc. GIMP users should choose "XCF", and Adobe
-     Photoshop users should choose "PSD", for example.
+     Cargue esa imaxe para o seu editor de imaxes. Se aínda non a cortou,
+     pode que o seu editor de imaxes sexa moi lento. Rote e recorte a imaxe
+     segundo sexa necesario. Garde a imaxe, escolla o formato nativo que
+     admita capas, máscaras, alfa, etc. Os usuarios de GIMP deberían escoller
+     «XCF» e os usuarios de Adobe Photoshop debería escoller «PSD», por
+     exemplo.
 
-     If you have rotated or cropped the image in your image editor, flatten
-     it now. You need to have just one RGB layer without mask or alpha.
+     Se rotou ou recortou a imaxe no seu editor de imaxes, aplánea agora.
+     Debe ter só unha capa RGB sen máscara nin alfa.
 
-     Open the layers dialog box. Replicate the one layer several times. From
-     top to bottom you will need something like this:
+     Abra o cadro de diálogo de capas. Replique a capa varias veces. De
+     arriba abaixo necesitará algo así:
 
-      1. unmodified image (write-protect this if you can)
-      2. an image you will modify — the "work in progress" layer
-      3. solid green (write-protect this if you can)
-      4. solid magenta (write-protect this if you can)
-      5. unmodified image (write-protect this if you can)
+      1. imaxe sen modificar (protexa isto contra escritura se pode)
+      2. unha imaxe que modificar: a capa de «traballo en ptoceso»
+      3. verde sólido (protexa isto contra escritura se pode)
+      4. maxenta sólido (protexa isto contra escritura se pode)
+      5. imaxe sen modificar (protexa isto contra escritura se pode)
 
-     Give the work in progress (WIP) layer a rough initial mask. You might
-     start with a selection, or by using the grayscale value of the WIP
-     layer. You might invert the mask.
+     Delle á capa Traballo en proceso (WIP — «work in progress» ) unha
+     máscara inicial aproximada. Pode comezar cunha selección ou empregando o
+     valor de escala de grises da capa WIP. Pode inverter a máscara.
 
-     Warning: once you have the mask, you may not rotate or scale the image
-     normally. This would cause data loss. You will be given special scaling
-     instructions later.
-
-     ----------------------------------------------------------------------
-
-Prepare the mask
-
-     Get used to doing [Ctrl]-click and [Alt]-click on the thumbnail images
-     in the layers dialog. You will need this to control what you are looking
-     at and what you are editing. Sometimes you will be editing things you
-     can't see. For example, you might edit the mask of the WIP layer while
-     looking at the unmodified image. Pay attention so you don't screw up.
-     Always verify that you are editing the right thing.
-
-     Set an unmodified image as what you will view (the top one is easiest).
-     Set the WIP mask as what you will edit. At some point, perhaps not
-     immediately, you should magnify the image to about 400% (each pixel of
-     the image is seen and edited as a 4x4 block of pixels on your screen).
-
-     Select parts of the image that need to be 100% opaque or 0% opaque. If
-     you can select the object or background somewhat accurately by color, do
-     so. As needed to avoid selecting any pixels that should be partially
-     opaque (generally at the edge of the object) you should grow, shrink,
-     and invert the selection.
-
-     Fill the 100% opaque areas with white, and the 0% opaque areas with
-     black. This is most easily done by drag-and-drop from the
-     foreground/background color indicator. You should not see anything
-     happen, because you are viewing the unmodified image layer while editing
-     the mask of the WIP layer. Large changes might be noticable in the
-     thumbnail.
-
-     Now you must be zoomed in.
-
-     Check your work. Hide the top unmodified image layer. Display just the
-     mask, which should be a white object on a black background (probably
-     with unedited grey at the edge). Now display the WIP layer normally, so
-     that the mask is active. This should show your object over top of the
-     next highest enabled layer, which should be green or magenta as needed
-     for maximum contrast. You might wish to flip back and forth between
-     those backgrounds by repeatedly clicking to enable/disable the green
-     layer. Fix any obvious and easy problems by editing the mask while
-     viewing the mask.
-
-     Go back to viewing the top unmodified layer while editing the WIP mask.
-     Set your drawing tool the paintbrush. For the brush, choose a small
-     fuzzy circle. The 5x5 size is good for most uses.
-
-     With a steady hand, trace around the image. Use black around the
-     outside, and white around the inside. Avoid making more than one pass
-     without switching colors (and thus sides).
-
-     Flip views a bit, checking to see that the mask is working well. When
-     the WIP layer is composited over the green or magenta, you should see a
-     tiny bit of the original background as an ugly fringe around the edge.
-     If this fringe is missing, then you made the object mask too small. The
-     fringe consists of pixels that are neither 100% object nor 0% object.
-     For them, the mask should be neither 100% nor 0%. The fringe gets
-     removed soon.
-
-     View and edit the mask. Select by color, choosing either black or white.
-     Most likely you will see unselected specks that are not quite the
-     expected color. Invert the selection, then paint these away using the
-     pencil tool. Do this operation for both white and black.
+     Advertencia: unha vez que teña a máscara, non pode rotar nin escalar a
+     imaxe normalmente. Isto provocaría a perda de datos. Máis adiante se lle
+     darán instrucións especiais de escalado.
 
      ----------------------------------------------------------------------
 
-Replace the fringe and junk pixels
+Preparar a máscara
 
-     Still viewing the mask, select by color. Choose black. Shrink the
-     selection by several pixels, being sure to NOT shrink from the edges of
-     the mask (the shrink helps you avoid and recover from mistakes).
+     Acostúmese a facer [Ctrl]-premer e [Alt]-premer nas imaxes en miniatura
+     no diálogo de capas. Necesitará isto para controlar o que está a ver e o
+     que está a editar. Ás veces estará editando cousas que non pode ver. Por
+     exemplo, pode editar a máscara da capa WIP mentres mira a imaxe sen
+     modificar. Preste atención para non meter a pata. Verifica sempre que
+     está a editar o correcto.
 
-     Now disable the mask. View and edit the unmasked WIP layer. Using the
-     color picker tool, choose a color that is average for the object.
-     Drag-and-drop this color into the selection, thus removing most of the
-     non-object pixels.
+     Estabeleza unha imaxe sen modificar como a que vai ver (a superior é a
+     máis doada). Estabeleza a máscara WIP como o que vai editar. Nalgún
+     momento, quizais non de inmediato, debería aumentar a imaxe ata
+     aproximadamente o 400% (cada píxel da imaxe vese e edítase como un
+     bloque de píxeles 4x4 na súa pantalla).
 
-     This solid color will compress well and will help prevent ugly color
-     fringes when Tux Paint scales the image down. If the edge of the object
-     has multiple colors that are very different, you should split up your
-     selection so that you can color the nearby background to be similar.
+     Seleccione partes da imaxe que deben ser 100% opacas ou 0% opacas. Se
+     pode seleccionar o obxecto ou o fondo con certa precisión por cor,
+     fágao. Se é necesario para evitar seleccionar píxeles que deben ser
+     parcialmente opacos (xeralmente no bordo do obxecto), debe aumentar,
+     diminuír e inverter a selección.
 
-     Now you will paint away the existing edge fringe. Be sure that you are
-     editing and viewing the WIP image. Frequent layer visibility changes
-     will help you to see what you are doing. You are likely to use all of:
+     Encha as áreas 100% opacas con branco e as áreas 0% opacas con negro.
+     Isto faise máis facilmente arrastrando e soltando dende o indicador de
+     cor de primeiro plano/fondo. Non debería ver ocorrer nada porque está a
+     ver a capa de imaxe sen modificar mentres edita a máscara da capa WIP. É
+     posíbel que se poidan notar grandes cambios na miniatura.
 
-       * composited over green (mask enabled)
-       * composited over magenta (mask enabled)
-       * original (the top or bottom layer)
-       * composited over the original (mask enabled)
-       * raw WIP layer (mask disabled)
+     Agora debe ampliala.
 
-     To reduce accidents, you may wish to select only those pixels that are
-     not grey in the mask. (Select by color from the mask, choose black, add
-     mode, choose white, invert. Alternately: Select all, select by color
-     from the mask, subtract mode, choose black, choose white.) If you do
-     this, you'll probably want to expand the selection a bit and/or hide the
-     "crawling ants" line that marks the selection.
+     Comprobe o seu traballo. Agoche a capa superior da imaxe sen modificar.
+     Amose só a máscara, que debería ser un obxecto branco sobre un fondo
+     negro (probabelmente cun gris sen editar no bordo). Agora amose
+     normalmente a capa WIP para que a máscara estea activa. Isto debería
+     amosar o seu obxecto sobre a seguinte capa máis alta activada, que
+     debería ser verde ou maxenta segundo sexa necesario para obter o máximo
+     contraste. Quizais queira alternar entre eses fondos premendo varias
+     veces para activar/desactivar a capa verde. Corrixa os problemas obvios
+     e sinxelos editando a máscara mentres a ve.
 
-     Use the clone tool and the brush tool. Vary the opacity as needed. Use
-     small round brushes mostly, perhaps 3x3 or 5x5, fuzzy or not. (It is
-     generally nice to pair up fuzzy brushes with 100% opacity and non-fuzzy
-     brushes with about 70% opacity.) Unusual drawing modes can be helpful
-     with semi-transparent objects.
+     Volva ver a capa superior sen modificar mentres edita a máscara WIP.
+     Estabeleza a súa ferramenta de debuxo co pincel. Para o pincel, escolla
+     un pequeno círculo difuso. O tamaño 5x5 é bo para a maioría dos usos.
 
-     The goal is to remove the edge fringe, both inside and outside of the
-     object. The inside fringe, visible when the object is composited over
-     magenta or green, must be removed for obvious reasons. The outside
-     fringe must also be removed because it will become visible when the
-     image is scaled down. As an example, consider a 2x2 region of pixels at
-     the edge of a sharp-edged object. The left half is black and 0% opaque.
-     The right half is white and 100% opaque. That is, we have a white object
-     on a black background. When Tux Paint scales this to 50% (a 1x1 pixel
-     area), the result will be a grey 50% opaque pixel. The correct result
-     would be a white 50% opaque pixel. To get this result, we would paint
-     away the black pixels. They matter, despite being 0% opaque.
+     Con man firme, faga un trazo arredor da imaxe. Use negro polo exterior e
+     branco polo interior. Evite facer máis dun pase sen cambiar de cor (e,
+     polo tanto, de lado).
 
-     Tux Paint can scale images down by a very large factor, so it is
-     important to extend the edge of your object outward by a great deal.
-     Right at the edge of your object, you should be very accurate about
-     this. As you go outward away from the object, you can get a bit sloppy.
-     It is reasonable to paint outward by a dozen pixels or more. The farther
-     you go, the more Tux Paint can scale down without creating ugly color
-     fringes. For areas that are more than a few pixels away from the object
-     edge, you should use the pencil tool (or sloppy select with
-     drag-and-drop color) to ensure that the result will compress well.
+     Vire un pouco as vistas, comprobando que a máscara funciona ben. Cando a
+     capa WIP se compón sobre o verde ou o maxenta, debería ver un pouco do
+     fondo orixinal como unha franxa fea ao redor do bordo. Se falta esta
+     franxa, fixo a máscara de obxectos demasiado pequena. A franxa consta de
+     píxeles que non son nin 100% obxecto nin 0% obxecto. Para eles, a
+     máscara non debería ser nin do 100% nin do 0%. A franxa retirase pronto.
+
+     Ver e editar a máscara. Seleccione por cor, escollendo negro ou branco.
+     O máis probábel é que vexa pintas non seleccionadas que non son da cor
+     agardada. Inverta a selección e logo pínteas coa ferramenta de lapis.
+     Faga esta operación tanto para branco como para negro.
 
      ----------------------------------------------------------------------
 
-Save the image for Tux Paint
+Substituír a franxa e os píxeles lixo
 
-     It is very easy to ruin your hard work. Image editors can silently
-     destroy pixels in 0% opaque areas. The conditions under which this
-     happens may vary from version to version. If you are very trusting, you
-     can try saving your image directly as a PNG. Be sure to read it back in
-     again to verify that the 0% opaque areas didn't turn black or white,
-     which would create fringes when Tux Paint scales the image down. If you
-     need to scale your image to save space (and hide your mistakes), you are
-     almost certain to destroy all the 0% opaque areas. So here is a better
-     way...
+     Se sigue a ver a máscara, seleccione por cor. Escolla o negro. Reduza a
+     selección en varios píxeles, asegurándose de NON reducir os bordos da
+     máscara (a contracción axúdalle a evitar e recuperar os erros).
 
-  A Safer Way to Save
+     Agora desactive a máscara. Vexa e edite a capa WIP sen máscara. Usando a
+     ferramenta de selección de cores, escolla unha cor termo medio para o
+     obxecto. Arrastre e solte esta cor na selección, eliminando así a
+     maioría dos píxeles que non son do obxecto.
 
-       Drag the mask from the layers dialog to the unused portion of the
-       toolbar (right after the last drawing tool). This will create a new
-       image consisting of one layer that contains the mask data. Scale this
-       as desired, remembering the settings you use. Often you should start
-       with an image that is about 700 to 1500 pixels across, and end up with
-       one that is 300 to 400.
+     Esta cor sólida comprimirase ben e axudará a evitar franxas de cor feas
+     cando Tux Paint reduza a imaxe. Se o bordo do obxecto ten varias cores
+     moi diferentes, debe dividir a selección para que poida colorar o fondo
+     próximo para que sexa semellante.
 
-       Save the mask image as a NetPBM portable greymap (".pgm") file. (If
-       you are using an old release of The GIMP, you might need to convert
-       the image to greyscale before you can save it.) Choose the more
-       compact "RAW PGM" format. (The second character of the file should be
-       the ASCII digit "5", hex byte 0x35.)
+     Agora pintará a franxa de bordo existente. Asegúrese de que está
+     editando e vendo a imaxe WIP. Os cambios frecuentes na visibilidade das
+     capas axudaranlle a ver o que fai. É probábel que empregue todos os:
 
-       You may close the mask image.
+       * composto sobre verde (máscara activada)
+       * composto sobre maxenta (máscara activada)
+       * orixinal (a capa superior ou inferior)
+       * composto sobre o orixinal (máscara activada)
+       * capa WIP en bruto (máscara desactivada)
 
-       Going back to the multi-layer image, now select the WIP layer. As you
-       did with the mask, drag this from the layers dialog to the toolbar.
-       You should get a single-layer image of your WIP data. If the mask came
-       along too, get rid of it. You should be seeing the object and the
-       painted-away surroundings, without any mask thumbnail in the layers
-       dialog. If you scaled the mask, then scale this image in exactly the
-       same way. Save this image as a NetPBM portable pixmap (".ppm") file.
-       (Note: .ppm, not .pgm.) (If you choose the RAW PPM format, the second
-       byte of the file should be the ASCII digit "6", hex byte 0x36.)
+     Para reducir os accidentes, pode que queira seleccionar só os píxeles
+     que non estean grises na máscara. (Seleccione por cor na máscara,
+     escolla negro, engada o modo, escolla o branco, inverter.
+     Alternativamente: seleccione todo, seleccione por cor da máscara, modo
+     de subtracción, escolla o negro, escolla o branco.) Se fai isto,
+     probabelmente queira expandir un pouco a selección e/ou agochar a
+     ringleira de «formigas» que marca a selección.
 
-       Now you need to merge the two files into one. Do that with the
-       pnmtopng command, like this:
+     Use a ferramenta de clonación e a de pincel. Varíe a opacidade segundo
+     sexa necesario. Empregue principalmente pinceis redondos pequenos,
+     quizais 3x3 ou 5x5, difusos ou non. (Xeralmente é bo emparellar pinceis
+     difusos cun 100% de opacidade e pinceis non difusos cun 70% de
+     opacidade.) Os modos de debuxo pouco comúns poden ser útiles con
+     obxectos semitransparentes.
+
+     O obxectivo é eliminar a franxa do bordo, tanto dentro como fóra do
+     obxecto. A franxa interior, visíbel cando o obxecto está composto sobre
+     maxenta ou verde, debe eliminarse por razóns obvias. Tamén hai que
+     eliminar a franxa exterior porque se fará visíbel cando a imaxe se
+     reduza. Como exemplo, considere unha rexión de 2x2 de píxeles no bordo
+     dun obxecto de bordos afiados. A metade esquerda é negra e 0% opaca. A
+     metade dereita é branca e 100% opaca. É dicir, temos un obxecto branco
+     sobre fondo negro. Cando Tux Paint escala este ao 50% (unha área de 1x1
+     píxeles), o resultado será un píxel gris opaco do 50%. O resultado
+     correcto sería un píxel branco ao 50% opaco. Para obter este resultado,
+     pintaríamos os píxeles negros. Estes iImportan, a pesar de ser 0%
+     opacos.
+
+     Tux Paint pode reducir a escala das imaxes nun factor moi grande, polo
+     que é importante estender moito o bordo do obxecto cara a fóra. Xusto no
+     bordo do obxecto, debe ser moi preciso respecto diso. A medida que se
+     afasta do o, pode ser un pouco desleixado. É razoábel pintar cara a fóra
+     unha ducia de píxeles ou máis. Canto máis lonxe vaia, máis pode Tux
+     Paint reducir sen crear franxas de cor feas. Para as áreas que están a
+     máis duns poucos píxeles de distancia do bordo do obxecto, debería
+     empregar a ferramenta de lapis (ou seleccionar arrastrar e soltar cor)
+     para garantir que o resultado se comprime ben.
+
+     ----------------------------------------------------------------------
+
+Gardar a imaxe para Tux Paint
+
+     É moi doado esnaquizar un traballo arreo. Os editores de imaxes poden
+     esnaquizar silenciosamente píxeles en áreas 0% opacas. As condicións nas
+     que isto ocorre poden variar dunha versión a outra. Se confía moito,
+     pode tentar gardar a súa imaxe directamente como PNG. Asegúrese de vela
+     de novo para verificar que as áreas 0% opacas non se volveron negras ou
+     brancas, o que crearía franxas cando Tux Paint reduza a imaxe. Se
+     precisa escalar a súa imaxe para aforrar espazo (e agochar os seus
+     erros), é case seguro que destruirá todas as áreas 0% opacas. Velaquí
+     unha mellor forma...
+
+  Un xeito máis seguro de gardar
+
+       Arrastre a máscara desde o diálogo de capas ata a parte non utilizada
+       da barra de ferramentas (xusto após a última ferramenta de debuxo).
+       Isto creará unha nova imaxe composta por unha capa que contén os datos
+       da máscara. Escale isto como queira, lembrando os axustes que utiliza.
+       Moitas veces debe comezar cunha imaxe de entre 700 e 1500 píxeles de
+       largo e acabar cunha de 300 a 400.
+
+       Garde a imaxe da máscara como un ficheiro de mapa de grises portátil
+       NetPBM («.pgm»). (Se está a usar unha versión antiga de The GIMP, é
+       posíbel que deba converter a imaxe en escala de grises antes de
+       gardala.) Escolla o formato máis compacto «RAW PGM». (O segundo
+       carácter do ficheiro debe ser o díxito ASCII «5», byte hexadecimal
+       0x35.)
+
+       Pode pechar a imaxe da máscara.
+
+       Volvendo á imaxe multicapa, agora seleccione a capa WIP. Como fixo coa
+       máscara, arrastre isto dende o diálogo de capas ata a barra de
+       ferramentas. Debería obter unha imaxe dunha soa capa dos seus datos
+       WIP. Se tamén apareceu a máscara, desfágase dela. Debería ver o
+       obxecto e o contorno pintado sen ningunha miniatura de máscara no
+       diálogo de capas. Se escalou a máscara, entón escale esta imaxe
+       exactamente do mesmo xeito. Garde esta imaxe como un ficheiro de
+       pixmap portátil NetPBM («.ppm»). (Nota: .ppm, non .pgm.) (Se escolle o
+       formato RAW PPM, o segundo byte do ficheiro debería ser o díxito ASCII
+       «6», o byte hexadecimal 0x36.)
+
+       Agora cómpre fusionar os dous ficheiros nun só. Fagao coa orde
+       pnmtopng, así:
 
          pnmtopng -force -compression 9 -alpha mask.pgm fg.ppm >
          final-stamp.png

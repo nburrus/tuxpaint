@@ -1,223 +1,176 @@
                                    Tux Paint
-                                 version 0.9.27
+                                  バージョン 0.9.27
 
-  A simple drawing program for children
+  子供向けのシンプルなお絵かきプログラム
 
-          Copyright © 2002-2021 by various contributors; see AUTHORS.
+          Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                               September 5, 2021
+                                   2021年9月 5日
 
      ----------------------------------------------------------------------
 
-   +-------------------------------------------+
-   |Table of Contents                          |
-   |-------------------------------------------|
-   |  * About Tux Paint                        |
-   |  * Using Tux Paint                        |
-   |       * Launching Tux Paint               |
-   |       * Title Screen                      |
-   |       * Main Screen                       |
-   |       * Available Tools                   |
-   |            * Drawing Tools                |
-   |            * Other Controls               |
-   |  * Loading Other Pictures into Tux Paint  |
-   |  * Further Reading                        |
-   |  * How to Get Help                        |
-   |  * How to Participate                     |
-   +-------------------------------------------+
+   +----------------------------+
+   |目次                          |
+   |----------------------------|
+   |  * Tux Paint について          |
+   |  * Tux Paint の使い方          |
+   |       * Tux Paint の起動      |
+   |       * 起動画面               |
+   |       * メインの画面             |
+   |       * 各種のツール             |
+   |            * 描画ツール         |
+   |            * そのほかの操作       |
+   |  * 他の画像の Tux Paint への読み込み  |
+   |  * その他のドキュメント              |
+   |  * お問い合わせ先                 |
+   |  * プロジェクトへの参加              |
+   +----------------------------+
 
      ----------------------------------------------------------------------
 
-                                About Tux Paint
+                                 Tux Paint について
 
-What Is "Tux Paint"?
+"Tux Paint" とは？
 
-       Tux Paint is a free drawing program designed for young children (kids
-       ages 3 and up). It has a simple, easy-to-use interface, fun sound
-       effects, and an encouraging cartoon mascot who helps guide children as
-       they use the program. It provides a blank canvas and a variety of
-       drawing tools to help your child be creative.
+       Tux Paint
+       は、３歳以上の小さな子供向けにデザインされたフリーのお絵かきソフトです。シンプルで使いやすい操作方法と楽しい効果音を備え、マスコットキャラクターが子供たちの案内役を務めます。空っぽのキャンバスと様々な描画ツールが、子供たちの創造力をかき立てます。
 
-License:
+ライセンス:
 
-       Tux Paint is an Open Source project, Free Software released under the
-       GNU General Public License (GPL). It is free, and the 'source code'
-       behind the program is available. (This allows others to add features,
-       fix bugs, and use parts of the program in their own GPL'd software.)
+       Tux Paint
+       は、オープンソースのプロジェクトで、GNUの一般公衆利用許諾（GPL）基づき公開されているフリーソフトウェアです。このソフトウェアは無料で、プログラムのソースコードが利用可能です。（これにより、誰でも、機能を追加したり、不具合を修正したり、プログラムの一部を自分のGPLソフトウェアに使用することができます。）
 
-       See COPYING.txt for the full text of the GPL license.
+       ライセンスの全文は、COPYING.txtをお読みください。
 
-Objectives:
+目指していること:
 
-       Easy and Fun
-               Tux Paint is meant to be a simple drawing program for young
-               children. It is not meant as a general-purpose drawing tool.
-               It is meant to be fun and easy to use. Sound effects and a
-               cartoon character help let the user know what's going on, and
-               keeps them entertained. There are also extra-large
-               cartoon-style mouse pointer shapes.
+       簡単に、そして楽しく
+               Tux Paint
+               は、一般向けの描画ツールではなく、小さな子供のためのシンプルなお絵かきソフトとなることを目指して、楽しく容易に使えるように作られています。効果音とマスコットキャラクターが、プログラムの操作をわかりやすく教えてくれるとともに、ユーザーを楽しませてくれます。また、大きくて見やすいイラスト調のマウスポインターを採用しています。
 
-       Extensibility
-               Tux Paint is extensible. Brushes and 'rubber stamp' shapes can
-               be dropped in and pulled out. For example, a teacher can drop
-               in a collection of animal shapes and ask their students to
-               draw an ecosystem. Each shape can have a sound which is
-               played, and textual facts which are displayed, when the child
-               selects the shape.
+       拡張性
+               Tux Paint
+               は、機能を拡張することができます。「ふで」や「はんこ」は、追加や削除が可能です。例えば、授業では、様々な生き物の画像を追加しておいて、生徒に生態系を描かせるといったことができます。それぞれの「はんこ」には、選択時に流れる音声、表示される説明文を設定できます。
 
-       Portability
-               Tux Paint is portable among various computer platforms:
-               Windows, Macintosh, Linux, etc. The interface looks the same
-               among them all. Tux Paint runs suitably well on older systems,
-               and can be built to run better on slow systems.
+       移植性
+               Tux Paint は、Windows, Macintosh, Linux
+               など、様々なプラットフォームに移植されており、どのプラットフォームでも見た目や使い方は変わりません。Tux Paint
+               は、Pentium
+               133のような旧式のシステムでもうまく動作し、さらに遅いシステムでも動作するように構築することもできます。
 
-       Simplicity
-               There is no direct access to the computer's underlying
-               intricacies. The current image is kept when the program quits,
-               and reappears when it is restarted. Saving images requires no
-               need to create filenames or use the keyboard. Opening an image
-               is done by selecting it from a collection of thumbnails.
-               Access to other files on the computer is restricted.
+       簡単な操作
+               ユーザーは、コンピューターの複雑な機能に直接触れる必要がありません。描画中の作品は、プログラム終了時に保存され、再開時に表示されます。作品を保存するために、ファイル名をつけたりキーボードを使う必要はありません。保存された作品は、縮小画像の一覧から選択するだけで読み込むことができ、コンピューターの他のファイルにアクセスすることはありません。
 
      ----------------------------------------------------------------------
 
-                                Using Tux Paint
+                                 Tux Paint の使い方
 
-Launching Tux Paint
+Tux Paint の起動
 
-  Linux/Unix Users
+  Linux または Unix のユーザー
 
-         Tux Paint should have placed a laucher icon in your KDE and/or GNOME
-         menus, under 'Graphics.'
+         KDE あるいは GNOME のメニューの「グラフィックス」以下に、起動アイコンが設定されているはずです。
 
-         Alternatively, you can run the following command at a shell prompt
-         (e.g., "$"):
+         その他、シェルプロンプト（例："$"）で次のコマンドを実行する方法があります：
 
            $ tuxpaint
 
-         If any errors occur, they will be displayed on the terminal (to
-         STDERR).
+         エラーが発生した場合は、端末にその内容が表示されます。（標準エラー出力）
 
      ----------------------------------------------------------------------
 
-  Windows Users
+  Windows のユーザー
 
-                                                            [Tux Paint Icon]  
+                                                            [Tux Paint アイコン]  
                                                                Tux Paint      
 
-         If you installed Tux Paint on your computer using the 'Tux Paint
-         Installer,' it will have asked you whether you wanted a 'Start' menu
-         short-cut, and/or a desktop shortcut. If you agreed, you can simply
-         run Tux Paint from the 'Tux Paint' section of your 'Start' menu
-         (e.g., under 'All Programs'), or by double-clicking the 'Tux Paint'
-         icon on your desktop, if you had the installer place one there.
+         インストーラーを用いて Tux Paint
+         をインストールする際、スタート・メニューやデスクトップにショートカットを作成するかどうかが選択できます。ショートカットを作成していれば、これらのアイコンから簡単に
+         Tux Paint を起動できます。
 
-         If you're using the 'portable' (ZIP-file) version of Tux Paint, or
-         if you used the 'Tux Paint Installer,' but chose not to have
-         shortcuts installed, you'll need to double-click the "tuxpaint.exe"
-         icon in the "Tux Paint" folder on your computer.
+         ポータブル版（ZIPファイル版）をダウンロードして Tux Paint
+         をインストールした場合や、インストーラーでショートカットを作成しなかった場合は、"Tux Paint"のフォルダにある
+         "tuxpaint.exe" のアイコンをダブルクリックします。
 
-         By default, the 'Tux Paint Installer' will put Tux Paint's folder in
-         "C:\Program Files\", though you may have changed this when you ran
-         the installer.
+         インストーラーを用いた場合、「Tux Paint」のフォルダは、通常、"C:\Program Files\"
+         に配置されます。（インストール時に、これを変更することもできます）
 
-         If you used the 'ZIP-file' download, Tux Paint's folder will be
-         wherever you extracted the contents of the ZIP file.
+         ZIP ファイルを用いた場合、「Tux Paint」のフォルダは、任意の場所に配置できます。
 
      ----------------------------------------------------------------------
 
-  macOS Users
+  macOS のユーザー
 
-         Simply double-click the "Tux Paint" icon.
-
-     ----------------------------------------------------------------------
-
-Title Screen
-
-       When Tux Paint first loads, a title/credits screen will appear.
-
-                                 [Title screen]
-
-       Once loading is complete, press a key or click or tap in the Tux Paint
-       window to continue. (Or, after about 5 seconds, the title screen will
-       go away automatically.)
+         "Tux Paint" のアイコンをダブルクリックします。
 
      ----------------------------------------------------------------------
 
-Main Screen
+起動画面
 
-       The main screen is divided into the following sections:
+       Tux Paint を起動すると、タイトル画面が表示されます。
 
-       Left Side: Toolbar
+                                     [起動画面]
 
-               The toolbar contains the drawing and editing controls.
-
-  [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo, Eraser,
-                         New, Open, Save, Print, Quit]
-
-       Middle: Drawing Canvas
-
-               The largest part of the screen, in the center, is the drawing
-               canvas. This is, obviously, where you draw!
-
-                                    [Canvas]
-
-               Note: The size of the drawing canvas depends on the size of
-               Tux Paint. You can change the size of Tux Paint using the Tux
-               Paint Config. configuration tool, or by other means. See the
-               Options documentation for more details.
-
-       Right Side: Selector
-
-               Depending on the current tool, the selector shows different
-               things. e.g., when the Paint Brush or Line tool is selected,
-               it shows the various brushes available. When the Rubber Stamp
-               tool is selected, it shows the different shapes you can use.
-               When the Text or Label tool is selected, it shows various
-               fonts.
-
-                 [Selectors - Brushes, Letters, Shapes, Stamps]
-
-       Lower: Colors
-
-               A palette of available colors are shown near the bottom of the
-               screen.
-
- [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
-                                  Brown, Grey]
-
-               On the far right are two special color options, the "color
-               picker", which has an outline of an eye-dropper, and allows
-               you to pick a color found within your drawing, and the rainbow
-               palette, which allows you to pick a color from within a box
-               containing thousands of colors.
-
-               (Note: You can define your own colors for Tux Paint. See the
-               "Options" documentation.)
-
-       Bottom: Help Area
-
-               At the very bottom of the screen, Tux, the Linux Penguin,
-               provides tips and other information while you use Tux Paint.
-
-(Example tip: 'Pick a shape. Click to pick the center, drag, then let go when it
-    is the size you want. Move around to rotate it, and click to draw it.')
+       プログラムの読み込みが完了すると、何かキーを押すかマウスのクリックにより次に進みます。（タイトル画面は、約5秒後に自動的に閉じます）
 
      ----------------------------------------------------------------------
 
-Available Tools
+メインの画面
 
-  Drawing Tools
+       メインの画面は、次の各部に分けられます：
 
-         "Paint" Tool (Brush)
+       左側: ツールバー「どうぐ」
 
-                 The Paint Brush tool lets you draw freehand, using various
-                 brushes (chosen in the Selector on the right) and colors
-                 (chosen in the Color palette towards the bottom).
+               ツールバーには、描画や編集を行うためのアイコンがあります。
 
-                 If you hold the mouse button down, and move the mouse, it
-                 will draw as you move.
+[どうぐ: ふで, はんこ, せん, かたち, もじ, まほう, ラベル, とりけし, やりなおし, けしゴム, さいしょから, ひらく, セーブ, いんさつ,
+                                      やめる]
+
+       中央部: 描画キャンバス
+
+               中央部の最も広い領域が描画キャンバスです。ここが絵を描く部分になります！
+
+                                   [描画キャンバス]
+
+               注: 描画キャンバスのサイズは、Tux Paint のウィンドウサイズに応じて変わります。Tux Paint
+               のウィンドウサイズは、Tux Paint
+               設定ツールを用いて変更できます。その他の方法については、各種設定についてのドキュメントを参照してください。
+
+       右側: セレクタ
+
+               セレクタに表示される内容は、使用しているツールに応じて変わります。例えば、「ふで」ツールでは、様々な種類の筆が表示され、「はんこ」ツールでは、はんこの画像が表示されます。
+
+                             [セレクタ - ふで、もじ、かたち、はんこ]
+
+       下部: カラーパレット「いろ」
+
+               キャンバスの下側には、描画色を選択するためのカラーパレットがあります。
+
+          [いろ - いろ - くろ、しろ、あか、ぴんく、おれんじ、きいろ、みどり、みずいろ、あお、むらさき、ちゃいろ、はいいろ]
+
+               右端には色についての２つの特別なオプションがあります。スポイトの形をした「カラーピッカー」は描いている絵の中から色を選ぶことができます。また、「レインボーパレット」では、何千もの色から描画色を選ぶことができます。
+
+               （注:
+               カラーパレットの色は好みに応じて変更できます。変更方法については、"各種設定について"のドキュメントを参照してください。）
+
+       最下部: ヘルプエリア
+
+               画面の一番下の部分では、Linux ペンギンの Tux が、様々なヒントや関連情報をご提供します。
+
+                             (「かたち」ツールの使い方を説明している例)
+
+     ----------------------------------------------------------------------
+
+各種のツール
+
+  描画ツール
+
+         ペイントブラシ「ふで」
+
+                 右側のセレクタから筆の種類を、下のパレットから色を選んで、フリーハンドで描画します。
+
+                 ボタンを押したままマウスを動かすと、描画できます。
 
                  Some brushes are animated — they change their shape as you
                  draw them. A good example of this is the vines brush that
@@ -235,64 +188,39 @@ Available Tools
                  with Tux Paint. These brushes will have both the "filmstrip"
                  and 8-way arrow icons.
 
-                 As you draw, a sound is played. The bigger the brush, the
-                 lower the pitch.
+                 描画中にはサウンドが流れます。筆の大きさが大きいほど、低い音になります。
 
      ----------------------------------------------------------------------
 
-         "Stamp" Tool (Rubber Stamps)
+         「はんこ」ツール
 
-                 The Stamp tool is like a set of rubber stamps or stickers.
-                 It lets you paste pre-drawn or photographic images (like a
-                 picture of a horse, or a tree, or the moon) in your picture.
+                 「はんこ」ツールは、スタンプやステッカーを集めたようなものです。馬や木、月など、あらかじめ用意された様々な写真やイラストを絵に貼り付けることができます。
 
-                 As you move the mouse around the canvas, an outline follows
-                 the mouse, showing where the stamp will be placed, and how
-                 big it will be. Click to place the stamp.
+                 マウスのカーソル動きに応じて画像の輪郭が表示され、貼り付け位置と大きさがわかります。
 
-                 There can be numerous categories of stamps (e.g., animals,
-                 plants, outer space, vehicles, people, etc.). Use the Left
-                 and Right arrows near the bottom of the Selector to cycle
-                 through the collections.
+                 スタンプは、動物、植物、宇宙、乗り物、人物といった多くのカテゴリに分類されています。セレクタの左右の矢印のボタンを使ってカテゴリを切り替えることができます。
 
-                 Prior to 'stamping' an image onto your drawing, various
-                 effects can sometimes be applied (depending on the stamp):
+                 スタンプを絵に貼り付ける前に、以下の様々な効果を適用することができます（スタンプの種類によって異なります）：
 
-                    * Some stamps can be colored or tinted. If the color
-                      palette below the canvas is activated, you can click
-                      the colors to change the tint or color of the stamp
-                      before placing it in the picture.
-                    * Stamps can be shrunk and expanded, by clicking within
-                      the triangular-shaped series of bars at the bottom
-                      right; the larger the bar, the larger the stamp will
-                      appear in your picture.
-                    * Many stamps may be flipped vertically, or displayed as
-                      a mirror-image, using the control buttons at the bottom
-                      right.
+                    * スタンプには色をつけることができるものがあります。その場合、カラーパレットが有効になり、スタンプを絵に貼り付ける前に色を選ぶことができます。
+                    * スタンプは、右下の三角形のバーの中をクリックすることで、縮小・拡大することができます。
+                    * 多くのスタンプは、右下の操作ボタンを使って、上下・左右に反転させることができます。
 
-                 Different stamps can have different sound effects and/or
-                 descriptive (spoken) sounds. Buttons in the Help Area at the
-                 lower left (near Tux, the Linux penguin) allow you to
-                 re-play the sound effects and descriptive sounds for the
-                 currently-selected stamp.
+                 個々のスタンプごとに効果音を設定することができます。画面下部の左側のヘルプエリア（Linux ペンギン
+                 "Tux"の近く）にあるボタンを押すと、効果音を再生することができます。
 
-                 (Note: If the "nostampcontrols" option is set, Tux Paint
-                 won't display the Mirror, Flip, Shrink and Grow controls for
-                 stamps. See the "Options" documentation.)
+                 （注: "nostampcontrols"
+                 オプションが設定されると、スタンプの拡大・縮小、反転が無効になります。詳しくは"各種設定について"のドキュメントを参照してください。）
 
      ----------------------------------------------------------------------
 
-         "Lines" Tool
+         「せん」ツール
 
-                 This tool lets you draw straight lines using the various
-                 brushes and colors you normally use with the Paint Brush.
+                 様々な種類の筆と好きな色を使って直線を描くツールです。
 
-                 Click the mouse and hold it to choose the starting point of
-                 the line. As you move the mouse around, a thin 'rubber-band'
-                 line will show where the line will be drawn.
+                 直線を描き始める位置でマウスをクリックして、そのままマウスを動かすと、描かれる直線が、「ゴム紐」のような薄い色の線で表示されます。
 
-                 Let go of the mouse to complete the line. A "sproing!" sound
-                 will play.
+                 マウスを放すと、バネのような効果音とともに線が描画されます。
 
                  Some brushes are animated, and will show a pattern of shapes
                  along the line. Others are directional, and will show a
@@ -302,657 +230,454 @@ Available Tools
 
      ----------------------------------------------------------------------
 
-         "Shapes" Tool
+         「かたち」ツール
 
-                 This tool lets you draw some simple filled, and un-filled
-                 shapes.
+                 簡単な図形を描きます。
 
-                 Select a shape from the selector on the right (circle,
-                 square, oval, etc.).
+                 まず、円、正方形、楕円など、描きたい図形を、右側のセレクタから選択します。
 
-                 Use the options at the bottom right to choose the shape
-                 tool's behavior:
+                 右下のオプションボタンで「かたち」ツールの動作を選択します：
 
-                      Shapes from center
-                              The shape will expand from where you initially
-                              clicked, and will be centered around that
-                              position. (This was Tux Paint's only behavior
-                              through version 0.9.24.)
+                      真ん中から広げる
+                              最初にクリックした位置を中心として図形を拡大します。（Tux Paint バージョン
+                              0.9.24 までは、この動作しかありませんでした。）
 
-                      Shapes from corner
-                              The shape will extend with one corner starting
-                              from where you initially clicked. This is the
-                              default method of most other traditional
-                              drawing software. (This option was added
-                              starting with Tux Paint version 0.9.25.)
+                      角から広げる
+                              最初にクリックした位置を左上の角として図形を拡大します。これは、他の多くのお絵かきソフトの標準的な動作です。（Tux
+                              Paint バージョン 0.9.25 以降で追加されたオプション）
 
-                 Note: If shape controls are disabled (e.g., with the
-                 "noshapecontrols" option), the controls will not be
-                 presented, and the "shapes from center" method will be used.
+                 注: "noshapecontrols"
+                 オプションをつけて起動するなどして、「かたち」ツールの動作の制御を無効にした場合、オプションボタンは表示されず、真ん中から図形を広げる動作になります。
 
-                 In the canvas, click the mouse and hold it to stretch the
-                 shape out from where you clicked. Some shapes can change
-                 proportion (e.g., rectangle and oval may be wider than tall,
-                 or taller than wide), others cannot (e.g., square and
-                 circle).
+                 図形を描くには、キャンバス上でマウスをクリックし、そのままマウスを動かして図形を広げます。楕円や長方形のように縦横比を変えられる図形と、正方形や円のように縦横比を変えられない図形があります。
 
-                 Let go of the mouse when you're done stretching.
+                 図形を広げ終わったらマウスを放します。
 
-                      Normal Shapes Mode
+                      通常の動作
 
-                              Now you can move the mouse around the canvas to
-                              rotate the shape.
+                              通常の動作では、上記の後、マウスを動かして図形を回転させます。
 
-                              Click the mouse button again and the shape will
-                              be drawn in the current color.
+                              最後にもう一度マウスをクリックして、図形が完成します。
 
-                      Simple Shapes Mode
-                              If simple shapes are enabled (e.g., with the
-                              "simpleshapes" option), the shape will be drawn
-                              on the canvas when you let go of the mouse
-                              button. (There's no rotation step.)
+                      簡易描画モード
+                              簡易図形モード("simpleshapes"
+                              オプション)が設定されている場合、図形を回転させる手順は省略され、マウスを放した時点で図形が描画されます。
 
      ----------------------------------------------------------------------
 
-         "Text" and "Label" Tools
+         「もじ」ツール、「ラベル」ツール
 
-                 Choose a font (from the 'Letters' available on the right)
-                 and a color (from the color palette near the bottom). Click
-                 on the screen and a cursor will appear. Type text and it
-                 will show up on the screen.
+                 まず、右側のセレクタからフォントを、下部のパレットから色を選択します。画面をクリックするとカーソルが表示され、文字を入力することができます。
 
-                 Press [Enter] or [Return] and the text will be drawn onto
-                 the picture and the cursor will move down one line.
+                 [Enter]キー、または[Return]キーを押すと文字が描画され、カーソルが次の行に下がります。
 
-                 Alternatively, press [Tab] and the text will be drawn onto
-                 the picture, but the cursor will move to the right of the
-                 text, rather than down a line, and to the left. (This can be
-                 useful to create a line of text with mixed colors, fonts,
-                 styles and sizes.)
+                 また、[Tab]キーを押すと、文字が描画された後、カーソルは、次の行ではなく、右側に移動します。これは、１行の中で異なったフォント、字体、フォントサイズ、色などを混在させたい場合に便利な方法です。
 
-                 Clicking elsewhere in the picture while the text entry is
-                 still active causes the current line of text to move to that
-                 location (where you can continue editing it).
+                 文字の入力中に別の場所をクリックすると、入力内容を維持したまま、文字を貼り付ける位置をクリックした位置に移動させ、文字入力を続けることができます。
 
-                      "Text" versus "Label"
+                      「もじ」ツールと「ラベル」ツールの違い
 
-                              The Text tool is the original text-entry tool
-                              in Tux Paint. Text entered using this tool
-                              can't be modified or moved later, since it
-                              becomes part of the drawing. However, because
-                              the text becomes part of the picture, it can be
-                              drawn over or modified using Magic tool effects
-                              (e.g., smudged, tinted, embossed, etc.)
+                              「もじ」ツールは、Tux Paint
+                              に以前からある文字入力ツールです。このツールで入力した文字列は絵と一体化するため、後から文字列の内容を編集したり、動かしたりすることはできません。一方、絵と一体化することで、上から塗りつぶしたり、「よごす」「そめる」「うきぼり」といった「まほう」ツールの効果で修正を加えることができます。
 
-                              When using the Label tool (which was added to
-                              Tux Paint in version 0.9.22), the text 'floats'
-                              over the image, and the details of the label
-                              (the text, the position of the label, the font
-                              choice and the color) get stored separately.
-                              This allows the label to be repositioned or
-                              edited later.
+                              Tux Paint バージョン 0.9.22
+                              で追加された「ラベル」ツールでは、文字は絵から「浮いて」おり、文字列の内容、位置、フォント、色などの情報は個別に記録されます。これにより、「ラベル」は後から移動や編集が可能です。
 
-                              The Label tool can be disabled (e.g., by
-                              selecting "Disable 'Label' Tool" in Tux Paint
-                              Config. or running Tux Paint with the "nolabel"
-                              option).
+                              「ラベル」ツールは、Tux Paint
+                              設定ツールや、"nolabel"オプションにより、無効にすることができます。
 
-                      International Character Input
+                      多言語文字入力
 
-                              Tux Paint allows inputting characters in
-                              different languages. Most Latin characters
-                              (A-Z, ñ, è, etc.) can by entered directly. Some
-                              languages require that Tux Paint be switched
-                              into an alternate input mode before entering,
-                              and some characters must be composed using
-                              numerous keypresses.
+                              Tux Paint
+                              では、様々な言語の文字を入力することができます。たいていのラテン文字（A-Z, ñ, è
+                              など）は、直接入力できます。また、いくつかの言語では、入力モードを切り替えて、複数のキーの組み合わせを用いて文字を入力する必要があります。
 
-                              When Tux Paint's locale is set to one of the
-                              languages that provide alternate input modes, a
-                              key is used to cycle through normal (Latin
-                              character) and locale-specific mode or modes.
+                              Tux Paint
+                              が、個別の入力モードがサポートされている言語に設定されている場合、特定のキーを押下することで、入力モードを切り替えることができます。
 
-                              Currently supported locales, the input methods
-                              available, and the key to toggle or cycle
-                              modes, are listed below. Note: Many fonts do
-                              not include all characters for all languages,
-                              so sometimes you'll need to change fonts to see
-                              the characters you're trying to type.
+                              個別の入力モードがサポートされている言語と、入力モード切替キーは以下のとおりです。注：
+                              大抵のフォントには全ての言語の全ての文字は含まれていません。このため、入力したい文字が含まれるフォントに変更する必要がある場合があります。
 
-                                 * Japanese — Romanized Hiragana and
-                                   Romanized Katakana — right [Alt] key
-                                 * Korean — Hangul 2-Bul — right [Alt] key or
-                                   left [Alt] key
-                                 * Traditional Chinese — right [Alt] key or
-                                   left [Alt] key
-                                 * Thai — right [Alt] key
+                                 * 日本語— ローマ字入力方式のひらがな、カタカナ— 右[Alt] キー
+                                 * ハングル— 2-Bul入力方式— 右[Alt] キー または 左[Alt] キー
+                                 * 繁体中文— 右[Alt] キー または 左[Alt] キー キー
+                                 * タイ語— 右[Alt] キー
 
                       On-screen Keyboard
 
-                              An optional on-screen keyboard is available for
-                              the Text and Label tools, which can provide a
-                              variety of layouts and character composition
-                              (e.g., composing "a" and "e" into "æ"). See the
-                              "Options" and "Extending Tux Paint"
-                              documentation for more information.
+                              テキストツールやラベルツールで使えるオプションの「スクリーンキーボード」では、キーボードレイアウトを変えたり、文字の合成（例："a
+                              "と "e "を "æ
+                              "に合成）を行うことができます。詳細については、「各種設定について」と「Tux
+                              Paintの拡張」のドキュメントを参照してください。
 
      ----------------------------------------------------------------------
 
-         "Fill" Tool
+         「ぬる」ツール
 
-                 The 'Fill' tool 'flood-fills' a contiguous area of your
-                 drawing with a color of your choice. Three fill options are
-                 offered:
-                    * Solid — click once to fill an area with a solid color.
-                    * Linear — click and then drag to fill the area with
-                      color that fades away (a gradient) towards where you
-                      drag the mouse.
-                    * Radial — click once to fill an area with a color that
-                      fades away (a gradient) radially, centered on where you
-                      clicked.
+                 「ぬる」ツールは、描画の連続した領域を好きな色で塗りつぶします。以下の3 つの塗りつぶしオプションが用意されています：
+                    * たんしょく — 領域を一つの色で塗りつぶします。
+                    * せんけい —
+                      領域をクリックしてからドラッグすると、ドラッグした方向に向かって色が薄くなるようにグラデーションをつけて塗りつぶします。
+                    * ほうしゃ —
+                      クリックした場所を中心に周りに向かって放射状に色が薄くなるようにグラデーションをつけて塗りつぶします。
 
-                 Note: Prior to Tux Paint 0.9.24, this was a Magic tool (see
-                 below). Note: Prior to Tux Paint 0.9.26, this tool only
-                 offered the 'Solid' method of filling.
+                 注: Tux Paint 0.9.24
+                 より前のバージョンでは、このツールは「まほう」ツールのひとつでした。（「まほう」ツールについては、以下をご覧ください）
+                 注: Tux Paint 0.9.26 より前のバージョンでは、「たんしょく」の塗りつぶし方法しかありませんでした。
 
      ----------------------------------------------------------------------
 
-         "Magic" Tool (Special Effects)
+         「まほう」ツール（特殊効果）
 
-                 The Magic tool is actually a set of special tools. Select
-                 one of the 'magic' effects from the selector on the right.
-                 Then, depending on the tool, you can either click and drag
-                 around the picture, and/or simply click the picture once, to
-                 apply the effect.
+                 「まほう」ツールは、様々な特殊なツールを集めたものです。右側のセレクタで、「まほう」の効果を選択することができます。効果を適用する方法は、クリック＋ドラッグ、単なるクリックなど、ツールごとに様々です。
 
-                 If the tool can be used by clicking and dragging, a
-                 'painting' button will be available on the left, below the
-                 list of Magic tools on the right side of the screen. If the
-                 tool can affect the entire picture at once, an 'entire
-                 picture' button will be available on the right.
+                 クリック＋ドラッグを使用するツールの場合、右側のセレクタの下部左側にある「描画」を表すボタンが有効になります。１クリックで画面全体に効果を及ぼすツールの場合、右側の「画面全体」を表すボタンが有効になります。
 
-                 See the instructions for each Magic tool (in the
-                 'magic-docs' folder).
+                 「magic-docs」フォルダ内のドキュメント「まほう」ツールの一覧もお読みください。
 
      ----------------------------------------------------------------------
 
-         "Eraser" Tool
+         けしゴム
 
-                 This tool is similar to the Paint Brush. Wherever you click
-                 (or click and drag), the picture will be erased. (This may
-                 be white, some other color, or to a background picture,
-                 depending on the picture.)
+                 このツールは「ふで」ツールに似ています。クリック（または、クリック＋ドラッグ）をした部分が消されます。（消した部分は、白あるいはその他の色、また、レイヤーキャンバスなど、絵によって異なる状態に戻ります。）
 
-                 A number of eraser sizes are available, both round and
-                 square.
+                 いくつもの大きさの正方形と円形の消しゴムがあります。
 
-                 As you move the mouse around, a square outline follows the
-                 pointer, showing what part of the picture will be erased to
-                 white.
+                 正方形の輪郭がマウスカーソルの位置に表示され、絵のどの部分が消されるかを示します。
 
-                 As you erase, a 'squeaky clean' eraser wiping sound is
-                 played.
+                 消している間、「キュッキュッ」と擦って消す効果音が流れます。
 
      ----------------------------------------------------------------------
 
-  Other Controls
+  そのほかの操作
 
-         "Undo" Command
+         「とりけし」
 
-                 Clicking this tool will undo the last drawing action. You
-                 can even undo more than once!
+                 このツールをクリックすると、直前に行った操作が取り消されます。いくつもの操作をさかのぼって取り消すことができます！
 
-                 Note: You can also press [Control] + [Z] on the keyboard to
-                 Undo.
+                 注: キーボードで [Control] + [Z] を押しても取り消しできます。
 
      ----------------------------------------------------------------------
 
-         "Redo" Command
+         「やりなおし」
 
-                 Clicking this tool will redo the drawing action you just
-                 un-did with the 'Undo' button.
+                 このツールをクリックすると、「とりけし」ボタンで取り消した操作を元に戻すことができます。
 
-                 As long as you don't draw again, you can redo as many times
-                 as you had undone!
+                 「とりけし」操作の後、描画を行っていなければ、取り消した全ての操作を元に戻せます！
 
-                 Note: You can also press [Control] + [R] on the keyboard to
-                 Redo.
+                 注: キーボードで [Control] + [R] を押してもやりなおしできます。
 
      ----------------------------------------------------------------------
 
-         "New" Command
+         「さいしょから」
 
-                 Clicking the 'New' button will start a new drawing. A dialog
-                 will appear where you may choose to start a new picture
-                 using a solid background color, or using a 'Starter' or
-                 'Template' image (see below). You will first be asked
-                 whether you really want to do this.
+                 「さいしょから」のボタンを押すと、新規に絵を描き始めることができます。ダイアログ画面が表示され、キャンバスの背景色やレイヤー画像（後述）を選べます。
 
-                 Note: You can also press [Control] + [N] on the keyboard to
-                 start a new drawing.
+                 注: キーボードで [Control] + [N] を押しても新規作成ができます。
 
-                 'Starter' & Template Images
+                 レイヤー画像
 
-                   'Starters' can behave like a page from a coloring book — a
-                   black-and-white outline of a picture, which you can then
-                   color in, and the black outline remains intact — or like a
-                   3D photograph, where you draw in between a foreground and
-                   background layer.
+                   レイヤー画像には、塗り絵のページのようなもの（白黒の線で描かれ、色を塗ることができる）や、前景レイヤーと背景レイヤーに挟まれた部分に絵を描ける３Ｄ画像のようなものがあります。
 
-                   'Templates' are similar, but simply provide a background
-                   drawing to work off of. Unlike 'Starters', there is no
-                   layer that remains in the foreground of anything you draw
-                   in the picture.
+                   また、このほかに、背景レイヤーだけの画像も用意されています。
 
-                   When using the 'Eraser' tool, the original image from the
-                   'Starter' or 'Template' will reappear. The 'Flip' and
-                   'Mirror' Magic tools affect the orientation of the
-                   'Starter' or 'Template', as well.
+                   「消しゴム」ツールを使用すると、元のレイヤー画像が消されずに残ります。また、マジックツールの「反転」と「ミラー」は、レイヤー画像も反転させます。
 
-                   When you load a 'Starter' or 'Template', draw on it, and
-                   then click 'Save,' it creates a new picture file — it
-                   doesn't overwrite the original, so you can use it again
-                   later (by accessing it from the 'New' dialog).
+                   レイヤー画像は、その上に絵を描いて保存すると新しい絵として保存され、元々のレイヤー画像自体は上書きされないので、後で（「さいしょから」ダイアログからアクセスして）何度でも使うことができます。
 
      ----------------------------------------------------------------------
 
-         "Open" Command
+         「ひらく」
 
-                 This shows you a list of all of the pictures you've saved.
-                 If there are more than can fit on the screen, use the up and
-                 down arrows at the top and bottom of the list to scroll
-                 through the list of pictures.
+                 「ひらく」をクリックすると、保存されている全ての作品のリストが表示されます。リストが画面に収まりきらない場合は、上下の矢印のボタンでリストをスクロールできます。
 
-                 Click a picture to select it, and then...
+                 まず、絵をクリックして選択します…
 
-                      * Click the green 'Open' button at the lower left of
-                        the list to load the selected picture.
+                      * 左下にある緑色の「ひらく」ボタンで、選択した作品を読み込みます。
 
-                        (Alternatively, you can double-click a picture's icon
-                        to load it.)
+                        (または、開きたい作品をダブルクリックします）
 
-                      * Click the brown 'Erase' (trash can) button at the
-                        lower right of the list to erase the selected
-                        picture. (You will be asked to confirm.)
+                      * 右下にある茶色の「けす」(ゴミ箱)
+                        ボタンで、選択した作品を削除します。(本当に削除して良いか確認されます)
 
-                        Note: As of version 0.9.22, the picture will be
-                        placed in your desktop's trash can, on Linux only.
+                        注: バージョン 0.9.22
+                        以降では、削除した作品は、デスクトップのゴミ箱に移動します（Linuxのみ）
 
-                      * Click the 'Export' button near the lower right to
-                        export the image to your export folder. (e.g.,
-                        "~/Pictures/TuxPaint/")
+                      * 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例："~/Pictures/TuxPaint/")に画像を出力します。
 
-                      * Click the blue 'Slides' (slide projector) button at
-                        the lower left to go to slideshow mode. See "Slides",
-                        below, for details.
+                      * 左側の一番下にある青色の「スライドショー」のボタンを押すと、スライドショーモードになります。詳しくは「スライドショー」の項をごらん下さい。
 
-                      * Click the red 'Back' arrow button at the lower right
-                        of the list to cancel and return to the picture you
-                        were drawing.
+                      * 右下にある赤色の「もどる」ボタンを押すと、絵を描く画面に戻ります。
 
-                 If choose to open a picture, and your current drawing hasn't
-                 been saved, you will be prompted as to whether you want to
-                 save it or not. (See "Save," below.)
+                 絵を開く時に、それまで描いていた絵が保存されていなければ、保存するかどうかを確認します。(「セーブ」の項を参照。)
 
-                 Note: You can also press [Control] + [O] on the keyboard to
-                 bring up the 'Open' dialog.
+                 注: キーボードで [Control] + [O] を押しても「ひらく」ダイアログを表示できます。
 
      ----------------------------------------------------------------------
 
-         "Save" Command
+         「セーブ」
 
-                 This saves your current picture.
+                 描画中の作品を保存します。
 
-                 If you haven't saved it before, it will create a new entry
-                 in the list of saved images. (i.e., it will create a new
-                 file)
+                 一度も保存していない作品の場合、作品のリストに新しく追加されます。(つまり、新しいファイルを作成します)
 
-                 Note: It won't ask you anything (e.g., for a filename). It
-                 will simply save the picture, and play a "camera shutter"
-                 sound effect.
+                 注: ファイル名の入力などを求めることはなく、カメラのシャッター音の効果音とともに、単に作品を保存します。
 
-                 If you have saved the picture before, or this is a picture
-                 you just loaded using the "Open" command, you will first be
-                 asked whether you want to save over the old version, or
-                 create a new entry (a new file).
+                 一度保存操作をした後や、「ひらく」コマンドで読みこんだ作品の場合、以前のバージョンを上書きするか、新しく追加して保存するかを確認します。
 
-                 Note: If either the "saveover" or "saveovernew" options are
-                 set, it won't ask before saving over. See the "Options"
-                 documentation.
+                 注: "saveover" オプション、または "saveovernew"
+                 オプションのどちらかが設定されている場合は、確認なしに保存されます。詳しくは"各種設定について"のドキュメントを参照してください。)
 
-                 Note: You can also press [Control] + [S] on the keyboard to
-                 save.
+                 注: キーボードで [Control] + [S] を押しても作品を保存できます。
 
      ----------------------------------------------------------------------
 
-         "Print" Command
+         「いんさつ」
 
-                 Click this button and your picture will be printed!
+                 このボタンを押して作品を印刷します！
 
-                 On most platforms, you can also hold the [Alt] key (called
-                 [Option] on Macs) while clicking the 'Print' button to get a
-                 printer dialog. Note that this may not work if you're
-                 running Tux Paint in fullscreen mode. See below.
+                 多くのプラットフォームでは、[Alt] key (Mac では [Option] キー)
+                 を押しながら「いんさつ」ボタンを押すと、プリンターの設定画面が開きます。この機能は、フルスクリーンモードでは動作しない点に注意して下さい。
 
-                      Disabling Printing
+                      印刷の無効化
 
-                              The "noprint" option can be set, which will
-                              disable Tux Paint's 'Print' button.
+                              オプションで "noprint"
+                              を設定すれば、「いんさつ」のボタンを無効にすることができます。
 
-                              See the "Options" documentation.
+                              詳細は "各種設定について" のドキュメントを参照して下さい。
 
-                      Restricting Printing
+                      印刷機能の制限
 
-                              The "printdelay" option can be set, which will
-                              only allow occasional printing — once every so
-                              many seconds, as configured by you.
+                              オプションで "printdelay"
+                              を設定すれば、設定に応じた一定の時間ごとに１回だけしか印刷できなくなります。
 
-                              For example, with "printdelay=60" in Tux
-                              Paint's configuration file, printing can only
-                              occur once per minute (60 seconds).
+                              例えば、設定ファイルで "printdelay=602"
+                              と設定すれば、1分間に1回だけ印刷ができます。
 
-                              See the "Options" documentation.
+                              詳細は "各種設定について" のドキュメントを参照して下さい。
 
-                      Printing Commands
+                      印刷コマンド
 
-                              (Linux and Unix only)
+                              (Linux 及び Unix の場合のみ)
 
-                              Tux Paint prints by generating a PostScript
-                              representation of the drawing and sending it to
-                              an external program. By default, the program
-                              is:
+                              Tux Paint は、PostScript
+                              形式の印刷データを作成し、外部プログラムに渡して印刷を行います。標準の設定では、以下のコマンドが使用されます：
 
                                 lpr
 
-                              This command can be changed by setting a
-                              "printcommand" option in Tux Paint's
-                              configuration file.
+                              このコマンドは、設定ファイルの "printcommand"
+                              オプションを設定することで変更できます。
 
-                              An alternative print command can be invoked by
-                              holding the "[Alt]" key on the keyboard while
-                              clicking clicking the 'Print' button, as long
-                              as you're not in fullscreen mode, an
-                              alternative program is run. By default, the
-                              program is KDE's graphical print dialog:
+                              フルスクリーンモードでなければ "[Alt]"
+                              キーを押しながら「いんさつ」ボタンを押すと、別の印刷プログラムを起動することができます。標準の設定では、KDE
+                              のグラフィカルな印刷ダイアログである、以下のプログラムが使用されます：
 
                                 kprinter
 
-                              This command can be changed by setting a
-                              "altprintcommand" option in Tux Paint's
-                              configuration file.
+                              このコマンドは、設定ファイルの "altprintcommand"
+                              オプションを設定することで変更できます。
 
-                              See the "Options" documentation.
+                              詳細は "各種設定について" のドキュメントを参照して下さい。
 
-                      Printer Settings
+                      プリンターの設定
 
-                              (Windows and macOS)
+                              (Windows 及び macOS)
 
-                              By default, Tux Paint simply prints to the
-                              default printer with default settings when the
-                              'Print' button is pushed.
+                              標準の設定では、「いんさつ」ボタンを押すと、通常使うプリンターに出力されます。
 
-                              However, if you hold the [Alt] (or [Option])
-                              key on the keyboard while clicking the 'Print'
-                              button, as long as you're not in fullscreen
-                              mode, your operating system's printer dialog
-                              will appear, where you can change the settings.
+                              フルスクリーンモードでなければ、[Alt] (または [Option])
+                              キーを押しながら「いんさつ」ボタンを押すと、オペレーションシステム標準の印刷ダイアログが表示され、出力先などの設定を変更することができます。
 
-                              You can have the printer configuration changes
-                              stored between Tux Paint sessions by setting
-                              the "printcfg" option.
+                              "printcfg" オプションを設定すれば、プリンターの設定の変更を保存することができます。
 
-                              If the "printcfg" option is used, printer
-                              settings will be loaded from the file
-                              "printcfg.cfg" in your personal folder (see
-                              below). Any changes will be saved there as
-                              well.
+                              "printcfg" オプションを設定すると、プリンターの設定は、ユーザーの個人フォルダの
+                              "printcfg.cfg" から読み込まれ、変更した設定はこのファイルに保存されます。
 
-                              See the "Options" documentation.
+                              詳細は "各種設定について" のドキュメントを参照して下さい。
 
-                      Printer Dialog Options
+                      印刷ダイアログのオプション
 
-                              By default, Tux Paint only shows the printer
-                              dialog (or, on Linux/Unix, runs the
-                              "altprintcommand"; e.g., "kprinter" instead of
-                              "lpr") if the [Alt] (or [Option]) key is held
-                              while clicking the 'Print' button.
+                              標準の設定では、印刷ダイアログは、[Alt] (または [Option])
+                              キーを押しながら「いんさつ」ボタンを押した場合にのみ表示されます（Linux/Unixでは、"lpr"
+                              の代わりに "altprintcommand"; すなわち "kprinter"
+                              が起動します。）
 
-                              However, this behavior can be changed. You can
-                              have the printer dialog always appear by using
-                              "--altprintalways" on the command-line, or
-                              "altprint=always" in Tux Paint's configuration
-                              file. Conversely, you can prevent the
-                              [Alt]/[Option] key from having any effect by
-                              using "--altprintnever", or "altprint=never".
+                              この印刷ダイアログの動作は、設定により変更できます。毎回必ず印刷ダイアログを表示させるには、コマンドラインで
+                              "--altprintalways" を指定するか、設定ファイルで
+                              "altprint=always" を指定します。反対に、"--altprintnever"
+                              または "altprint=never" を指定することで、"[Alt]" (または
+                              "[Option]2) キーの効果を無効にできます。
 
-                              See the "Options" documentation.
+                              詳細は "各種設定について" のドキュメントを参照して下さい。
 
      ----------------------------------------------------------------------
 
-         "Slides" Command (under "Open")
+         「スライドショー」
 
-                 The 'Slides' button is available in the 'Open' dialog. It
-                 can be used to play a simple animation within Tux Paint, or
-                 a slideshow of pictures. It can also export an animated GIF
-                 based on the chosen images.
+                 「スライドショー」の機能は、「ひらく」ダイアログから利用できます。タックスペイントの中で、簡単なアニメーションや画像のスライドショーを再生することができます。また、選択した画像を元にアニメーションGIFを書き出すこともできます。
 
-                      Chosing pictures
+                      画像を選ぶ
 
-                              When you enter the 'Slides' section of Tux
-                              Paint, it displays a list of your saved files,
-                              just like the 'Open' dialog.
+                              「スライド」セクションに入ると、「ひらく」ダイアログと同じように、保存したファイルの一覧が表示されます。
 
-                              Click each of the images you wish to display in
-                              a slideshow-style presentation, one by one. A
-                              digit will appear over each image, letting you
-                              know in which order they will be displayed.
+                              次に、スライドショーで表示したい作品を、一つずつクリックして選択します。それぞれの画像の上に、スライドショーで表示される順番を表す数字が示されます。
 
-                              You can click a selected image to unselect it
-                              (take it out of your slideshow). Click it again
-                              if you wish to add it to the end of the list.
+                              選択された画像をもう一度クリックすると、選択を解除し、スライドショーから除外します。同じ画像もう一度クリックすると、をリストの最後に追加できます。
 
-                      Set playback speed
+                      再生スピードの設定
 
-                              A sliding scale at the lower left of the screen
-                              (next to the 'Play' button) can be used to
-                              adjust the speed of the slideshow or animated
-                              GIF, from slowest to fastest. Choose the
-                              leftmost setting to disable automatic
-                              advancement during playback within Tux Paint —
-                              you will need to press a key or click to go to
-                              the next slide (see below).
+                              画面左下「かいし」の隣にあるのスライドバーで、スライドショーやアニメーションGIFのスピードを調節できます。
+                              スライドバーを一番左に設定すると、スライドショーの自動進行が無効になり、次のスライドに進むにはクリックが必要になります。（以下をご確認下さい）
 
-                              Note: The slowest setting does not
-                              automatically advance through the slides. Use
-                              it for when you want to step through them
-                              manually. (This does not apply to an exported
-                              animated GIF.)
+                              注:
+                              最も遅いスピードに設定するとスライドの自動進行が無効になります。１枚ずつ手動でスライドを進めたい場合に、この設定を用いてください。（この動作はアニメーションGIFには適用されません）
 
-                      Playback in Tux Paint
+                      Tux Paint 上での再生
 
-                              To play a slideshow within Tux Paint, click the
-                              'Play' button. (Note: If you hadn't selected
-                              ANY images, then ALL of your saved images will
-                              be played in the slideshow!)
+                              Tux
+                              Paint上でスライドショーを再生するには、「かいし」ボタンをクリックして下さい。(注:
+                              作品を一つも選択していない場合、全ての作品が表示されます。)
 
-                              During the slideshow, press [Space], [Enter] or
-                              [Return], or the [Right arrow] — or click the
-                              'Next' button at the lower left — to manually
-                              advance to the next slide. Press [Left arrow]
-                              to go back to the previous slide.
+                              スライドショーの実行中は、[Space] キー、[Enter] キー、[Return]
+                              キー、[右矢印] キーのいずれかを押すか、または、画面左下の "つぎへ"
+                              ボタンのクリックすれば、手動で次のスライドに進みます。[左矢印]
+                              キーを押すと前のスライドに戻ります。
 
-                              Press [Escape], or click the 'Back' button at
-                              the lower right, to exit the slideshow and
-                              return to the slideshow image selection screen.
+                              [Escape]
+                              キーを押すか、右下の「もどる」ボタンをクリックすると、スライドショーを終了し、作品選択の画面に戻ります。
 
-                      Exporting an animated GIF
+                      アニメーションGIFの書き出し
 
-                              Click the 'GIF Export' button near the lower
-                              right to have Tux Paint generate an animated
-                              GIF file based on the selected images.
+                              右下の「かきだす」ボタンをクリックすると、選択した画像を元にアニメーションGIFファイルを生成します。
 
-                              Note: At least two images must be selected. (To
-                              export a single image, use the 'Export' option
-                              from the main 'Open' dialog.) If no images are
-                              selected, Tux Paint will NOT attempt to
-                              generate a GIF based on all saved images.
+                              注:
+                              少なくとも２つの画像を選択する必要があります。（画像を１枚だけ書き出す場合は、「ひらく」ダイアログの「かきだす」オプションを用います）。１枚も画像を選択していない場合は、アニメーションGIFは生成されません。
 
-                              Pressing [Escape] during the export process
-                              will abort the process, and return you to the
-                              'Slideshow' dialog.
+                              アニメーションGIFの生成中に [Escape]
+                              キーを押すと、処理を中断して「スライドショー」ダイアログに戻ります。
 
-                 Click 'Back' in the slideshow image selection screen to
-                 return to the 'Open' dialog.
+                 さらに「もどる」ボタンをクリックすれば、「ひらく」ダイアログに戻ります。
 
      ----------------------------------------------------------------------
 
-         "Quit" Command
+         プログラムの終了
 
-                 Clicking the 'Quit' button, closing the Tux Paint window, or
-                 pushing the [Escape] key will quit Tux Paint.
+                 「やめる」ボタンを押すか、Tux Paint のウィンドウを閉じるか、[Escape] キーを押せば、Tux Paint
+                 が終了します。
 
-                 You will first be prompted as to whether you really want to
-                 quit.
+                 その際、本当に終了するかどうかを確認されます。
 
-                 If you choose to quit, and you haven't saved the current
-                 picture, you will first be asked if wish to save it. If it's
-                 not a new image, you will then be asked if you want to save
-                 over the old version, or create a new entry. (See "Save"
-                 above.)
+                 作品を保存していない状態で終了しようとした場合は、絵を保存するかどうかを訪ねられます。さらに、新規に作成した作品でなければ、以前のバージョンを上書きするかどうかを確認されます。(上記の
+                 「セーブ」の項をご覧下さい。)
 
-                 Note: If the image is saved, it will be reloaded
-                 automatically the next time you run Tux Paint -- unless the
-                 "startblank" option is set.
+                 注: "startblank" オプションが設定されている場合を除き、終了時に保存した作品は、次に Tux Paint
+                 を起動するときに自動的に読み込まれます。
 
-                 Note: The 'Quit' button within Tux Paint, and quitting via
-                 the [Escape] key, may be disabled, via the "noquit" option.
+                 注: 「やめる」ボタンと [Escape] キーによるプログラム終了は、"noquit" オプションで無効にできます。
 
-                 In that case, the "window close" button on Tux Paint's title
-                 bar (if not in fullscreen mode) or the [Alt] + [F4] key
-                 sequence may be used to quit.
+                 この場合、タイトルバーの「閉じる」ボタンか、[Alt] + [F4] キーで終了することができます。
 
-                 If neither of those are possible, the key sequence of
-                 [Shift] + [Control] + [Escape] may be used to quit.
+                 また、上記のどちらの方法も使えない場合、[Shift] + [Control] + [Escape]
+                 のキーの組み合わせで終了できます。
 
-                 See the "Options" documentation.
+                 詳細は "各種設定について" のドキュメントを参照して下さい。
 
      ----------------------------------------------------------------------
 
-         Sound Muting
+         効果音を消すには
 
-                 There is no on-screen control button at this time, but by
-                 using the [Alt] + [S] keyboard sequence, sound effects can
-                 be disabled and re-enabled (muted and unmuted) while the
-                 program is running.
+                 今のところ画面上には消音のためのボタンはありませんが、[Alt] + [S]
+                 キーを押すと効果音は無効になり、もう一度押すと有効になります。
 
-                 Note that if sounds are completely disabled via the
-                 "nosound" option, the [Alt] + [S] key combination has no
-                 effect. (i.e., it cannot be used to turn on sounds when the
-                 parent/teacher wants them disabled.)
+                 なお、"nosound" オプションによって効果音が無効にされている場合は、[Alt] + [S]
+                 キーによる効果音の操作はできません。（親や先生が効果音を無効にすれば、この操作で音を出すことはできないということです）
 
      ----------------------------------------------------------------------
 
-                     Loading Other Pictures into Tux Paint
+                             他の画像の Tux Paint への読み込み
 
-     Tux Paint's 'Open' dialog only displays pictures you created with Tux
-     Paint. So what do you do if you want to load some other drawinng or even
-     a photograph into Tux Paint, so you can edit or draw on it?
+     Tux Paint の「ひらく」ダイアログでは、Tux Paint
+     で作成した画像だけが表示されます。その他の画像や写真を読み込んで編集するにはどのようにすれば良いでしょうか？
 
-     You can simply convert the picture to the format Tux Paint uses — PNG
-     (Portable Network Graphic) — and place it in Tux Paint's "saved"
-     directory/folder. Here is where to find it (by default):
+     そのための方法は簡単で、画像ファイルを PNG (Portable Network Graphic) 形式に変換して、Tux Paint
+     で作成した画像が保存されている "saved" フォルダにコピーします。（標準では以下のフォルダ）：
 
      Windows 10, 8, 7, Vista
-             Inside the user's "AppData" folder, e.g.:
-             "C:\Users\username\AppData\Roaming\TuxPaint\saved\".
+             各ユーザーの "AppData" フォルダ。例:
+             "C:\Users\username\AppData\Roaming\TuxPaint\saved\"。
 
      Windows 2000, XP
-             Inside the user's "Application Data" folder, e.g.: "C:\Documents
-             and Settings\username\Application Data\TuxPaint\saved\".
+             各ユーザーの "Application Data" フォルダ。例: "C:\Documents and
+             Settings\username\Application Data\TuxPaint\saved\"。
 
      macOS
-             Inside the user's "Library" folder, e.g.:
-             "/Users/username/Library/Application Support/Tux Paint/saved/".
+             各ユーザーの "Library" フォルダ。例: "/Users/username/Library/Application
+             Support/Tux Paint/saved/"。
 
      Linux/Unix
-             Inside a hidden ".tuxpaint" directory, in the user's home
-             directory ("$HOME"), e.g. "/home/username/.tuxpaint/saved/".
+             各ユーザーのホームディレクトリ("$HOME")の隠しディレクトリ ".tuxpaint" 以下 ― 例:
+             "/home/username/.tuxpaint/saved/"。
 
-     Note: It is also from this folder that you can copy or open pictures
-     drawn in Tux Paint using other applications, though the 'Export' option
-     from Tux Paint's 'Open' dialog can be used to copy them to a location
-     that's easier and safer to access.
+     注: Tux Paint
+     で作成した画像を他のアプリケーションを使って開く場合も、これらのフォルダからになります。しかしながら、「ひらく」ダイアログの「かきだす」の機能を使えば、Tux
+     Paint で作成した画像を、もっと簡単で安全にアクセスできるフォルダにコピーすることができます。
 
-Using the import script, "tuxpaint-import"
+"tuxpaint-import" スクリプトを使う
 
-       Linux and Unix users can use the "tuxpaint-import" shell script which
-       gets installed when you install Tux Paint. It uses some NetPBM tools
-       to convert the image ("anytopnm"), resize it so that it will fit in
-       Tux Paint's canvas ("pnmscale"), and convert it to a PNG ("pnmtopng").
+       Linux と Unix では、Tux Paint と同時に、シェルスクリプト "tuxpaint-import"
+       がインストールされています。このスクリプトは、NetPBM のツール ("anytopnm") を用いて画像を変換し、 Tux Paint
+       のキャンバスに合うように画像サイズを変更 ("pnmscale") し、PNG 形式に変換 ("pnmtopng") します。
 
-       It also uses the "date" command to get the current time and date,
-       which is the file-naming convention Tux Paint uses for saved files.
-       (Remember, you are never asked for a 'filename' when you go to save or
-       open pictures!)
+       また、このスクリプトは、"date" コマンドを使用して、Tux Paint
+       が保存するファイル名に用いる日付と時刻を取得します。(作品を保存したり開いたりするときに、ファイル名を聞かれることはない、ということを思い出してください！)
 
-       To use this script, simply run it from a command-line prompt, and
-       provide it the name(s) of the file(s) you wish to convert.
+       スクリプトの使用法は簡単で、コマンドプロンプトで、取り込みたい画像のファイル名を引数として実行するだけです。
 
-       They will be converted and placed in your Tux Paint "saved" directory.
-       (Note: If you're doing this for a different user (e.g., your child)
-       you'll need to make sure to run the command under their account.)
+       画像は変換された後、Tux Paint の "saved" フォルダにコピーされます。(注:
+       例えばお子さんなど、他のユーザーのために変換作業を行う場合は、そのユーザーのアカウントでコマンドを実行する必要があります。)
 
        Example:
 
-         $ tuxpaint-import grandma.jpg
-         grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
+         $ tuxpaint-import おばあちゃん.jpg
+         おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
          jpegtopnm: WRITING A PPM FILE
 
-       The first line ("tuxpaint-import grandma.jpg") is the command to run.
-       The following two lines are output from the program while it's
-       working.
+       1行目 ("tuxpaint-import おばあちゃん.jpg") が実行するコマンドで、続く2行がプログラムの実行中の出力です。
 
-       Now you can load Tux Paint, and a version of that original picture
-       will be available under the 'Open' dialog. Just double-click its icon!
+       これで、Tux Paint
+       を起動して、「ひらく」ダイアログから変換した画像を開くことができます。後は、アイコンをダブルクリックするだけです！
 
-Importing Pictures Manually
+手動での取り込み
 
-       Windows, macOS, and Haiku users who wish to import arbitrary images
-       into Tux Paint must do so via a manual process.
+       Windows、MacOS、BeOS、そして Haiku のユーザーは、手動で変換作業を行う必要があります。
 
-       Load a graphics program that is capable of both loading your picture
-       and saving a PNG format file. (See the documentation file "PNG.html"
-       for a list of suggested software, and other references.)
+       変換したい画像ファイルの読み込み、PNG
+       形式ファイルでの保存に対応した画像処理プログラムを起動します。(推奨されるソフトウェア、その他の情報については、"PNG.html"
+       をお読みください。)
 
-       When Tux Paint loads an image that's not the same size as its drawing
-       canvas, it scales (and sometimes smears the edges of) the image so
-       that it fits within the canvas.
+       Tux Paint で、描画キャンパスと異なる大きさの画像を読み込む場合、キャンバスに合うように拡大・縮小されます。
 
-       To avoid having the image stretched or smeared, you can resize it to
-       Tux Paint's canvas size. This size depends on the size of the Tux
-       Paint window, or resolution at which Tux Paint is run, if in
-       fullscreen. (Note: The default resolution is 800x600.) See
-       "Calculating Image Dimensions", below.
+       画像が引き伸ばされたりぼやけたりしないようにするには、キャンパスの大きさに合うようにサイズを変更します。キャンパスの大きさは、Tux
+       Paint のウィンドウサイズや、フルスクリーン動作時の画面解像度に依存します。(注: 標準の解像度は 800x600 です)。 以下の
+       "イメージサイズの計算方法" をごらんください。
 
-       Save the picture in PNG format. It is highly recommended that you name
-       the filename using the current date and time, since that's the
-       convention Tux Paint uses:
+       画像は PNG 形式で保存してください。また、以下のように、Tux Paint
+       における命名規則である、現在の日付と時刻を用いたファイル名を使用することを強くお勧めします。
 
          YYYYMMDDhhmmss.png
 
-         * YYYY = Year
-         * MM = Month (two digits, "01"-"12")
-         * DD = Day of month (two digits, "01"-"31")
-         * HH = Hour (two digits, in 24-hour format, "00"-"23")
-         * mm = Minute (two digits, "00"-"59")
-         * ss = Seconds (two digits, "00"-"59")
+         * YYYY = 年
+         * MM = 月 (2桁, "01"-"12")
+         * DD = 日 (2桁, "01"-"31")
+         * HH = 時 (2桁, 24時間表示, "00"-"23")
+         * mm = 分 (2桁, "00"-"59")
+         * ss = 秒 (2桁, "00"-"59")
 
-       Example: "20210731110500.png", for July 31, 2021 at 11:05am.
+       例：2021年7月31日 午前11時5分であれば、20210731110500.png のようになります。
 
-       Place this PNG file in your Tux Paint "saved" directory/folder. (See
-       above.)
+       PNG ファイルを Tux Paint の "saved" ディレクトリにコピーします。（上記参照）
 
-  Calculating Image Dimensions
+  イメージサイズの計算方法
 
          This part of the documentation needs to be rewritten, since the new
          "buttonsize" option was added. For now, try drawing and saving an
@@ -962,66 +687,57 @@ Importing Pictures Manually
 
      ----------------------------------------------------------------------
 
-                                Further Reading
+                                   その他のドキュメント
 
-     Other documentation included with Tux Paint (found in the "docs"
-     folder/directory) includes:
-       * 'Magic' Tool Documentation ("magic-docs")
-         Documentation for each of the currently-installed 'Magic' tools.
+     このドキュメントの他、"docs" フォルダには、次のようなドキュメントがあります：
+       * 「まほう」ツールに関するドキュメント ("magic-docs")
+         インストールされている、それぞれの「まほう」ツールに関する説明。
        * AUTHORS.txt
-         List of authors and contributors.
+         作者と協力者のリスト.
        * CHANGES.txt
-         Summary of what has changed between releases of Tux Paint.
+         リリース毎の変更点の概要.
        * COPYING.txt
-         Tux Paint's software license, the GNU General Public License (GPL)
+         Tux Paint ソフトウェアのライセンス GNU 一般公衆利用許諾 (GPL)
        * INSTALL.html
-         Instructions for compiling and installing Tux Paint, when
-         applicable.
+         コンパイル、インストールの手順.
        * EXTENDING.html
-         Detailed instructions on extending Tux Paint: creating brushes,
-         stamps, starters, and templates; adding fonts; and creating new
-         on-screen keyboard layouts and input methods.
+         ブラシ、はんこ、背景画像の作成方法、フォントを追加する方法、追加のスクリーンキーボードの作成、言語入力の追加など、Tux Paint
+         の拡張についての詳細説明。
        * OPTIONS.html
-         Detailed instructions on command-line and configuration-file
-         options, for those who don't want to use the Tux Paint Config. tool
-         to manage Tux Paint's configuration.
+         コマンドライン、設定ファイルのオプションに関する詳細な情報。Tux Paint Config を使用したくない人向け。
        * PNG.html
-         Notes on creating PNG format bitmapped (raster) images for use in
-         Tux Paint.
+         PNG 形式の画像を作成する方法。
        * SVG.html
-         Notes on creating SVG format vector images for use in Tux Paint.
+         SVG 形式のヴェクタ画像を作成する方法。
        * SIGNALS.html
-         Information about the POSIX signals that Tux Paint responds to.
+         Tux Paint が応答する POSIX シグナルに関する情報。
 
      ----------------------------------------------------------------------
 
-                                How to Get Help
+                                    お問い合わせ先
 
-     If you need help, there are numerous ways to interact with Tux Paint
-     developers and other users.
+     お困りのことがある場合、Tux Paint の開発者や他のユーザーとコミュニケーションをとるための多くの方法があります。
 
-       * Report bugs or request new features via the project's bug-tracking
-         system
-       * Participate in the various project mailing lists
-       * Chat with developers and other users over IRC
-       * Contact the developers directly
+       * バグを発見した場合や機能追加の要望については、プロジェクトの バグトラッキングシステムから報告できます
+       * プロジェクトに関する様々なメーリングリストに参加できます
+       * IRCで、開発者や他のユーザーとチャットできます
+       * 開発者へ直接連絡することもできます
 
-     To learn more, visit the "Contact" page of the official Tux Paint
-     website: http://tuxpaint.org/contact/
+     もっとお知りになりたい場合、Tux Paint のウェブサイト の "連絡先" のページ
+     (http://tuxpaint.org/contact/) をごらん下さい
 
      ----------------------------------------------------------------------
 
-                               How to Participate
+                                   プロジェクトへの参加
 
-     Tux Paint is a volunteer-driven project, and we're happy to accept your
-     help in a variety of ways.
+     タックスペイントはボランティア主導のプロジェクトであり、様々な形でのご協力を受け付けています。
 
-       * Translate Tux Paint to another language
-       * Improve existing translations
-       * Create artwork (stamps, starters, templates, brushes)
-       * Add or improve features or magic tools
-       * Create classroom curriculum
-       * Promote or help support others using Tux Paint
+       * Tux Paint の翻訳の作成
+       * 既存の翻訳の改善
+       * アートワークの作成 (スタンプ、背景画像、ペイントブラシなど)
+       * 機能の追加や改良、「まほう」ツールの作成
+       * 学習教材の作成
+       * 宣伝や、他の Tux Paint ユーザーのサポート
 
-     To learn more, visit the "Help Us" page of the official Tux Paint
-     website: http://tuxpaint.org/help/
+     もっとお知りになりたい場合、Tux Paint のウェブサイト の "私たちにご協力を" のページ
+     (http://tuxpaint.org/help/) をごらん下さい

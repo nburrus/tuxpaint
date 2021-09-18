@@ -1,16 +1,16 @@
                                    Extending
                                    Tux Paint
-                                 version 0.9.27
+                                  バージョン 0.9.27
 
-          Copyright © 2002-2021 by various contributors; see AUTHORS.
+          Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                               September 6, 2021
+                                   2021年9月 6日
 
      ----------------------------------------------------------------------
 
    +------------------------------------------+
-   |Table of Contents                         |
+   |目次                                        |
    |------------------------------------------|
    |  * Where Files Go                        |
    |       * Standard Files                   |
@@ -313,7 +313,7 @@ Stamps
          If no translation is available for the language Tux Paint is
          currently running in, the US English text is used.
 
-    Windows Users
+    Windows のユーザー
 
          Use NotePad or WordPad to edit/create these files. Be sure to save
          them as plain-text, and make sure they have a ".txt" extension at
@@ -473,7 +473,7 @@ Stamps
            * "scale 2.5"
            * "scale 2:5"
 
-    Windows Users
+    Windows のユーザー
 
          Use NotePad or WordPad to edit/create these files. Be sure to save
          them as plain-text, and make sure they have a ".txt" extension at

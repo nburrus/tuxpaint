@@ -1,216 +1,225 @@
-                                   Extending
+                                    Ampliar
                                    Tux Paint
-                                 version 0.9.27
+                                 versión 0.9.27
 
-          Copyright © 2002-2021 by various contributors; see AUTHORS.
+    Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                               September 6, 2021
+                             6 de Setembro de 2021
 
      ----------------------------------------------------------------------
 
-   +------------------------------------------+
-   |Table of Contents                         |
-   |------------------------------------------|
-   |  * Where Files Go                        |
-   |       * Standard Files                   |
-   |       * Personal Files                   |
-   |  * Brushes                               |
-   |       * Brush Options                    |
-   |  * Stamps                                |
-   |       * Stamp Images                     |
-   |       * Stamp Descriptive Text           |
-   |       * Stamp Sound Effects              |
-   |       * Stamp Descriptive Sound          |
-   |       * Stamp Options                    |
-   |       * Pre-Mirrored and Flipped Stamps  |
-   |  * Fonts                                 |
-   |  * 'Starters'                            |
-   |       * Coloring-Book Style Starters     |
-   |       * Scene-Style Starters             |
-   |  * 'Templates'                           |
-   |  * Translations                          |
-   |  * Alternative Input Methods             |
-   |  * On-screen Keyboard                    |
-   +------------------------------------------+
+   +--------------------------------------------------------------+
+   |Índice                                                        |
+   |--------------------------------------------------------------|
+   |  * Onde van os ficheiros                                     |
+   |       * Ficheiros estándar                                   |
+   |       * Ficheiros persoais                                   |
+   |  * Pinceis                                                   |
+   |       * Opcións de pinceis                                   |
+   |  * Selos                                                     |
+   |       * Imaxes de selos                                      |
+   |       * Texto descritivo do selo                             |
+   |       * Efectos de son dos selos                             |
+   |       * Son descritivo do selo                               |
+   |       * Opcións de selos                                     |
+   |       * Selos prereflectidos e invertidos                    |
+   |  * Tipos de letra                                            |
+   |  * «Imaxes de comezo»                                        |
+   |       * Imaxes «de comezo» ao estilo dun libro para colorar  |
+   |       * Imaxes «de comezo» ao estilo dunha escena            |
+   |  * «Modelos»                                                 |
+   |  * Traducións                                                |
+   |  * Métodos de entrada alternativos                           |
+   |  * Teclado en pantalla                                       |
+   +--------------------------------------------------------------+
 
      ----------------------------------------------------------------------
 
-   If you wish to add or change things like Brushes, Starters, Rubber Stamps,
-   and other content used by Tux Paint, you can do so fairly easily by simply
-   adding, changing, or removing files where Tux Paint looks for them.
+   Se quere engadir ou cambiar cousas como pinceis, imaxes de comezo, selos
+   de goma e outros contidos empregados por Tux Paint, pode facelo con
+   bastante facilidade simplemente engadindo, cambiando ou eliminando
+   ficheiros onde os busque Tux Paint.
 
-   Note: You'll need to re-launch Tux Paint for the changes to take effect.
+   Nota: Deberá reiniciar Tux Paint para que os cambios teñan efecto.
 
      ----------------------------------------------------------------------
 
-Where Files Go
+Onde van os ficheiros
 
-  Standard Files
+  Ficheiros estándar
 
-       Tux Paint looks for its various data files in its 'data' directory.
+       Tux Paint busca os seus diferentes ficheiros de datos no directorio
+       «data».
 
-    Linux and Unix
+    Linux e Unix
 
-         Where this directory goes depends on what value was set for
-         "DATA_PREFIX" when Tux Paint was built. See 'Install documentation'
-         for details.
+         Onde vai este directorio depende do valor estabelecido para
+         «DATA_PREFIX» cando se construíu Tux Paint. Vexa a «Documentación de
+         instalación» para máis detalles.
 
-         By default, though, the directory is:
+         De xeito predeterminado, o directorio é:
 
            /usr/local/share/tuxpaint/
 
-         If you installed from a package, it is more likely to be:
+         Se instalou dende un paquete, o máis probábel é que sexa:
 
            /usr/share/tuxpaint/
 
     Windows
 
-         Tux Paint looks for a directory called 'data' in the same directory
-         as the executable. This is the directory that the installer used
-         when installing Tux Paint e.g.:
+         Tux Paint busca un directorio chamado «data» no mesmo directorio que
+         o executábel. Este é o directorio que utilizou o instalador ao
+         instalar Tux Paint p. ex.:
 
            C:\Program Files\TuxPaint\data
 
     macOS
 
-         Tux Paint stores its data files inside the "Tux Paint" application
-         icon (which is actually a special kind of folder on macOS & Mac OS X
-         before it). The following steps explain how to get to the folders
-         within it:
+         Tux Paint almacena os seus ficheiros de datos dentro da icona da
+         aplicación «Tux Paint» (que en realidade é un tipo de cartafol
+         especial en macOS e Mac OS X antes). Os seguintes pasos explican
+         como chegar aos cartafoles dentro del:
 
-          1. Bring up a 'context' menu by holding the [Control] key and
-             clicking the Tux Paint icon the in Finder. (If you have a mouse
-             with more than one button, you can simply right-click the icon.)
-          2. Select "Show Contents" from the menu that appears. A new Finder
-             window will appear with a folder inside called "Contents".
-          3. Open the "Contents" folder and open the "Resources" folder found
-             inside.
-          4. There, you will find various sub-folders, such as "starters",
-             "stamps", "brushes", etc. Adding new content to these folders
-             will make the content available to any user that launches this
-             copy (icon) of Tux Paint.
+          1. Abra un menú «contextual» mantendo premida a tecla [Control] e
+             premendo na icona de Tux Paint no Finder (buscador). (Se ten un
+             rato con máis dun botón, pode simplemente premer co botón
+             dereito na icona.)
+          2. Seleccione «Amosar contido» no menú que aparece. Aparecerá unha
+             nova xanela Finder cun cartafol dentro chamado «Contido».
+          3. Abra o cartafol «Contido» e abra o cartafol «Recursos» que se
+             atopa dentro.
+          4. Alí atoparás varios subcartafoles, como «imaxes de comezo»,
+             «selos», «pinceis», etc. Engadindo novo contido a estes
+             cartafoles fará que o contido estea dispoñíbel para calquera
+             usuario que inicia copia (icona) de Tux Paint .
 
-         Note: If you install a newer version of Tux Paint and replace or
-         discard the old version, you will lose changes made by following the
-         instructions above, so keep backups of your new content (stamps,
-         brushes, etc.).
+         Nota: Se instala unha versión máis recente de Tux Paint e substitúe
+         ou desbota a versión antiga, perderá os cambios feitos seguindo as
+         instrucións anteriores, así que garde as copias de seguridade do seu
+         novo contido (selos, pinceis, etc.) .
 
-         Tux Paint also looks for files in a "TuxPaint" folder that you can
-         place in your system's "Application Support" folder (found under
-         "Library" at the root of your filesystem):
+         Tux Paint tamén busca ficheiros nun cartafol «TuxPaint» que pode
+         colocar no seu sistema no cartafol «Application Support» (atópase en
+         «Library» na raíz do seu sistema de ficheiros):
 
            /Library/Application Support/TuxPaint/
 
-         When you upgrade to a newer version of Tux Paint, the contents of
-         this "TuxPaint" folder will stay the same, and remain accessible by
-         all users of Tux Paint.
+         Cando actualice a unha versión máis recente de Tux Paint, o contido
+         deste cartafol «TuxPaint» seguirá sendo o mesmo e permanecerá
+         accesíbel por todos os usuarios de Tux Paint.
 
      ----------------------------------------------------------------------
 
-  Personal Files
+  Ficheiros persoais
 
-       You can also create brushes, stamps, 'starters', templates, and fonts
-       in your own user account directory (folder) for Tux Paint to find.
+       Tamén pode crear pinceis, selos, «imaxes de comezo», modelos e tipos
+       de letra no directorio da súa propia conta de usuario (cartafol) para
+       que Tux Paint poida atopalos.
 
     Windows
 
-         Your personal Tux Paint folder is stored in your personal
-         "Application Data". For example, on newer Windows:
+         O seu cartafol persoal de Tux Paint almacénase nos seus «Datos da
+         aplicación» persoais. Por exemplo, nos Windows máis recentes:
 
-           C:\Documents and Settings\(username)\Application Data\TuxPaint\
+           C:\Documentos e axustes\(nome de usuario)\Datos da
+           aplicación\TuxPaint\
 
     macOS
 
-         Your personal Tux Paint folder is stored in your personal
-         "Application Support" folder:
+         O seu cartafol persoal de Tux Paint almacénase no cartafol persoal
+         «Application Support»:
 
-           /Users/(username)/Library/Application Support/TuxPaint/
+           /Users/(nome de usuario)/Library/Application Support/TuxPaint/
 
-    Linux and Unix
+    Linux e Unix
 
-         Your personal Tux Paint files go into a 'hidden directory' found in
-         your account's home directory: "$(HOME)/.tuxpaint/" (also known as
-         "~/.tuxpaint/").
+         Os seus ficheiros persoais de Tux Paint van a un «directorio
+         agochado» que se atopa no directorio persoal da súa conta:
+         «$(HOME)/.tuxpaint/» (tamén coñecido como «~/.tuxpaint/»).
 
-         That is, if your home directory is "/home/tux", then your personal
-         Tux Paint files go in "/home/tux/.tuxpaint/".
+         É dicir, se o seu directorio persoal é «/home/tux», entón os
+         ficheiros persoais de Tux Paint entrarán en «/home/tux/.tuxpaint/».
 
-         Don't forget the period (".") before the "tuxpaint"!
+         Non esqueza o punto («.») antes de «tuxpaint»!
 
-       To add your own brushes, stamps, 'starters,' templates, and fonts,
-       create subdirectories under your personal Tux Paint directory named
-       "brushes", "stamps", "starters", "templates", "fonts", respectively.
+       Para engadir os seus propios pinceis, selos, «imaxes de comezo»,
+       modelos e tipos de letra, cree subdirectorios no seu directorio
+       persoal de Tux Paint chamados «brushes», «stamps», «starters»,
+       «templates», «fonts», , respectivamente.
 
-       (For example, if you created a brush named "flower.png", you would put
-       it in "~/.tuxpaint/brushes/" under Linux or Unix.)
+       (Por exemplo, se creou un pincel chamado «flor.png», poñeríao en
+       «~/.tuxpaint/brushes/» en Linux ou Unix.)
 
      ----------------------------------------------------------------------
 
-Brushes
+Pinceis
 
-     The brushes used for drawing with the 'Brush' and 'Lines' tools in Tux
-     Paint are simply PNG image files.
+     Os pinceis empregados para debuxar coas ferramentas «Pincel» e «Liñas»
+     en Tux Paint son simplemente ficheiros de imaxe PNG.
 
-     The alpha (transparency) of the PNG image is used to determine the shape
-     of the brush, which means that the shape can be 'anti-aliased' and even
-     partially-transparent!
+     A alfa (transparencia) da imaxe PNG úsase para determinar a forma do
+     pincel, o que significa que a forma pode ser «alisado» e incluso
+     parcialmente transparente.
 
-     Greyscale pixels in the brush PNG will be drawn using the
-     currently-selected color in Tux Paint. Color pixels will be tinted.
+     Os píxeles de escala de grises no pincel PNG debuxaranse empregando a
+     cor seleccionada actualmente en Tux Paint. Os píxeles de cor
+     tinguiranse.
 
-  Brush Options
+  Opcións de pinceis
 
-       Aside from a graphical shape, brushes can also be given other
-       attributes. To do this, you need to create a 'data file' for the
+       Ademais de a graphical shape, a brushes tamén se lle poden dar outros
+       atributos. Para facelo, cómpre crear un «ficheiro de datos» para
        brush.
 
-       A brush's data file is simply a plain ASCII text file containing the
-       options for the brush.
+       Un ficheiro de datos de brush's é simplemente un ficheiro de texto
+       ASCII simple que contén as opcións de brush.
 
-       The file has the same name as the PNG image, but a ".dat" extension.
-       (e.g., "brush.png"'s data file is the text file "brush.dat", found in
-       the same directory.)
+       O ficheiro ten o mesmo nome que a imaxe PNG, pero unha extensión
+       «.dat». (p. ex.: o ficheiro de datos de «pincel.png» é o ficheiro de
+       texto «pincel.dat», que se atopa no mesmo directorio.)
 
-    Brush Spacing
+    Espazado do pincel
 
-         As of Tux Paint version 0.9.16, you can now specify the spacing for
-         brushes (that is, how often they are drawn). By default, the spacing
-         will be the brush's height, divided by 4.
+         A partir da versión 0.9.16 de Tux Paint, agora pode especificar o
+         espazado para os pinceis (é dicir, a frecuencia coa que se debuxan).
+         De xeito predeterminado, o espazado será a altura do pincel,
+         dividido por 4.
 
-         Add a line containing the line "spacing=N" to the brush's data file,
-         where "N" is the spacing you want for the brush. (The lower the
-         number, the more often the brush is drawn.)
+         Engada unha liña que conteña a liña «spacing=N» ao ficheiro de datos
+         do pincel, onde «N» é o espazado que quere para o pincel. (Canto
+         menor sexa o número, máis veces se debuxa o pincel.)
 
-    Animated Brushes
+    Pinceis animados
 
-         As of Tux Paint version 0.9.16, you may now create animated brushes.
-         As the brush is used, each frame of the animation is drawn.
+         A partir da versión 0.9.16 de Tux Paint, pode crear pinceis
+         animados. A medida que se usa o pincel, debúxase cada cadro da
+         animación.
 
-         Lay each frame out across a wide PNG image. For example, if your
-         brush is 30x30 and you have 5 frames, the image should be 150x30.
+         Coloca cada cadro nunha ampla imaxe PNG. Por exemplo, se o pincel
+         ten 30x30 e ten 5 fotogramas, a imaxe debería ser 150x30.
 
-         Add a line containing the line "frames=N" to the brush's data file,
-         where "N" is the number of frames in the brush.
+         Engada unha liña que conteña a liña «frames=N» ao ficheiro de datos
+         do pincel, onde «N» é o número de fotogramas do pincel.
 
-         Note: If you'd rather the frames be flipped through randomly, rather
-         than sequentially, also add a line containing "random" to the
-         brush's data file.
+         Nota: Se prefire que os fotogramas se pasen ao chou, no canto de
+         secuencialmente, engada tamén unha liña que conteña «random» ao
+         ficheiro de datos do pincel.
 
-    Directional Brushes
+    Pinceis direccionais
 
-         As of Tux Paint version 0.9.16, you may now create directional
-         brushes. As the brush is used, different shapes are drawn, depending
-         on the direction the brush is going.
+         A partir da versión 0.9.16 de Tux Paint, pode crear pinceis
+         direccionais. A medida que se usa o pincel, debúxanse diferentes
+         formas, dependendo da dirección na que vaia.
 
-         The directional shapes are divided into a 3x3 square in a PNG image.
-         For example, if your brush is 30x30, the image should be 90x90, and
-         each of the direction's shapes placed in a 3x3 grid. The center
-         region is used for no motion. The top right is used for motion
-         that's both up, and to the right. And so on.
+         As formas direccionais divídense nun cadrado de 3x3 nunha imaxe PNG.
+         Por exemplo, se o pincel ten 30x30, a imaxe debería ser 90x90 e cada
+         unha das formas da dirección colocadas nunha grade 3x3. A rexión
+         central úsase sen movemento. A parte superior dereita úsase para o
+         movemento cara arriba e á dereita. E así sucesivamente.
 
-         Add a line containing the word "directional" to the brush's data
-         file.
+         Engada unha liña que conteña a palabra «directional» ao ficheiro de
+         datos debrush's.
 
     Rotating Brushes
 
@@ -218,7 +227,8 @@ Brushes
          As the brush is used, it is rotated 360 degrees, depending on the
          direction the brush is going.
 
-         Add a line containing the word "rotate" to the brush's data file.
+         Engada unha liña que conteña a palabra «rotate» ao ficheiro de datos
+         debrush's.
 
     Animated Directional or Rotating Brushes
 
@@ -233,417 +243,428 @@ Brushes
          450x90. (The leftmost 150x90 pixels of the image represent the 9
          direction shapes for the first frame, for example.)
 
-     Place the brush image PNGs (and any data text files) in the "brushes"
-     directory.
+     Coloque os ficheiros PNG de pincel (e calquera ficheiro de texto de
+     datos) no directorio «brushes».
 
-     Note: If your new brushes all come out as solid squares or rectangles,
-     it's because you forgot to use alpha transparency! See the 'PNG
-     documentation' in Tux Paint for more information and tips.
-
-     ----------------------------------------------------------------------
-
-Stamps
-
-     All stamp-related files go in the "stamps" directory. It's useful to
-     create subdirectories and sub-subdirectories there to organize the
-     stamps. (For example, you can have a "holidays" folder with "halloween"
-     and "christmas" sub-folders.)
-
-  Stamp Images
-
-       Rubber Stamps in Tux Paint can be made up of a number of separate
-       files. The one file that is required is, of course, the picture
-       itself.
-
-       As of Tux Paint version 0.9.17, Stamps may be either PNG bitmap images
-       or SVG vector images. They can be full-color or greyscale. The alpha
-       (transparency) channel of PNGs is used to determine the actual shape
-       of the picture (otherwise you'll stamp a large rectangle on your
-       drawings).
-
-       PNGs can be any size, and Tux Paint (by default) provides a set of
-       sizing buttons to let the user scale the stamp up (larger) and down
-       (smaller).
-
-       SVGs are vector-based, and will be scaled appropriately for the canvas
-       size being used in Tux Paint.
-
-       Note: If your new PNG-based stamps all come out as solid squares or
-       rectangles, it's because you forgot to use alpha transparency! See the
-       'PNG documentation' in Tux Paint for more information and tips.
-
-       Note: If your new SVG stamps seem to have a lot of whitespace, make
-       sure the SVG 'document' is no larger than the shape(s) within. If they
-       are being clipped, make sure the 'document' is large enough to contain
-       the shape(s). See the 'SVG documentation' in Tux Paint for more
-       information and tips.
-
-       Advanced Users: The 'Advanced Stamps How-To' document describes, in
-       detail, how to make PNG images which will scale perfectly when used as
-       stamps in Tux Paint.
+     Nota: Se o seu novo brushes sae como cadrados ou rectángulos sólidos, é
+     porque esqueceu usar a transparencia alfa. Vexa a «Documentación PNG» en
+     Tux Paint para obter máis información e consellos.
 
      ----------------------------------------------------------------------
 
-  Stamp Descriptive Text
+Selos
 
-       Tux Paint will display descriptive text when a stamp is selected.
-       These are placed in plain text files with the same name as the PNG or
-       SVG, but with a ".txt" filename extension. (e.g., "stamp.png"'s
-       description is stored in "stamp.txt" in the same directory.)
+     Todos os ficheiros relacionados co selo van no directorio «stamps». É
+     útil crear alí subdirectorios e subsubdirectorios para organizar os
+     selos. (Por exemplo, pode ter un cartafol «vacacións» con subcartafoles
+     «samaín» e «nadal»).
 
-       The first line of the text file will be used as the US English
-       description of the stamp's image. It must be encoded in UTF-8.
+  Imaxes de selos
 
-    Localization Support
+       Os selos de caucho en Tux Paint poden estar formados por varios
+       ficheiros separados. O único ficheiro necesario é, por suposto, a
+       imaxe en si.
 
-         Additional lines can be added to the text file to provide
-         translations of the description, to be displayed when Tux Paint is
-         running in a different locale (like French or Spanish).
+       A partir da versión 0.9.17 de Tux Paint, os selos poden ser imaxes de
+       mapa de bits PNG ou imaxes vectoriais SVG. Poden ser a toda cor ou en
+       escala de grises. A canle alfa (transparencia) dos PNG utilízase para
+       determinar a forma real da imaxe (se non, marcará un rectángulo grande
+       nos seus debuxos).
 
-         The beginning of the line should correspond to the language code of
-         the language in question (e.g., "fr" for French, and "zh_TW" for
-         Traditional Chinese), followed by ".utf8=" and the translated
-         description (Unicode, encoded in UTF-8).
+       Os PNG poden ter calquera tamaño e Tux Paint (de xeito predeterminado)
+       ofrece un conxunto de botóns de tamaño para que o usuario poida
+       escalar o selo cara arriba (máis grande) e cara abaixo (máis pequeno).
 
-         For Tux Paint developers: There are scripts in the "po" directory
-         for converting the text files to PO format (and back) for easy
-         translation to different languages. Therefore you should never add
-         or change translations in the ".txt" files directly.
+       Os SVG están baseados en vectores e escalaranse axeitadamente para o
+       tamaño do lenzo que se use en Tux Paint.
 
-         If no translation is available for the language Tux Paint is
-         currently running in, the US English text is used.
+       Nota: Se o seu novo PNG-based stamps sae como cadrados ou rectángulos
+       sólidos, é porque esqueceu usar a transparencia alfa. Vexa a
+       «Documentación PNG» en Tux Paint para obter máis información e
+       consellos.
 
-    Windows Users
+       Nota: Se os seus novos selos SVG parecen ter moito espazo en branco,
+       asegúrese de que o «documento» SVG non sexa maior que a(s) forma(s)
+       que contén. Se se están recortando, asegúrese de que o «documento» é
+       grande de abondo como para conter a(s) forma(s). Vexa a «Documentación
+       SVG» en Tux Paint para obter máis información e consellos.
 
-         Use NotePad or WordPad to edit/create these files. Be sure to save
-         them as plain-text, and make sure they have a ".txt" extension at
-         the end of the filename.
-
-     ----------------------------------------------------------------------
-
-  Stamp Sound Effects
-
-       Tux Paint can play a sound effect when a stamp is selected. For
-       example, the sound of a duck quaking when selecting a duck, or a brief
-       piece of music when a musical instrument is chosen. Files may be in
-       "WAVE (".wav")" or "OGG Vorbis (".ogg")" formats, and are given same
-       name as the PNG or SVG image. (e.g., "stamp.svg"'s sound effect is the
-       sound file "stamp.ogg" in the same directory.)
-
-    Localization Support
-
-         For sounds for different locales (e.g., if the sound is someone
-         saying a word, and you want translated versions of the word said),
-         also create WAV or OGG files with the locale's label in the
-         filename, in the form: "stamp_LOCALE.EXT"
-
-         "stamp.png"'s sound effect, when Tux Paint is run in Spanish mode,
-         would be "stamp.png". In French mode, "stamp_es.wav". In Brazilian
-         Portuguese mode, "stamp_fr.wav". And so on...
-
-         If no localized sound effect can be loaded, Tux Paint will attempt
-         to load the 'default' sound file. (e.g., "stamp.wav")
-
-       Note: For descriptive sounds (not sound effects, like a bang or a bird
-       chirping), consider using descriptive sounds; see 'Stamp Descriptive
-       Sound', below.
+       Usuarios avanzados: O documento «Como facer os selos avanzados»
+       describe detalladamente como facer imaxes PNG que se adaptarán
+       perfectamente cando se usen como selos en Tux Paint.
 
      ----------------------------------------------------------------------
 
-  Stamp Descriptive Sound
+  Texto descritivo do selo
 
-       Tux Paint can also play a descriptive sound when a stamp is selected.
-       For example, the sound of someone saying the word "duck" when
-       selecting a duck, or the name of a musical instrument when one is
-       chosen. Files may be in "WAVE (".wav")" or "OGG Vorbis (".ogg")"
-       formats, and are given same name as the PNG or SVG image, with "_desc"
-       at the end. (e.g., "stamp.svg"'s descriptive sound is the sound file
-       "stamp_desc.ogg" in the same directory.)
+       Tux Paint amosará texto descritivo cando se seleccione un selo. Estes
+       colócanse en ficheiros de texto sinxelo co mesmo nome que PNG ou SVG,
+       pero cunha extensión de nome de ficheiro «.txt». (p. ex.: a descrición
+       de «selo.png» almacénase en «selo.txt» no mesmo directorio.)
 
-    Localization Support
+       A primeira liña do ficheiro de texto usarase como a descrición da
+       imaxe do selo en inglés dos EUA. Debe estar codificado en UTF-8.
 
-         For descriptive sounds for different locales, also create WAV or OGG
-         files with both "_desc" and the locale's label in the filename, in
-         the form: "stamp_desc_LOCALE.EXT"
+    Compatibilidade da localización
 
-         "stamp.png"'s descriptive sound, when Tux Paint is run in Spanish
-         mode, would be "stamp_desc_es.wav". In French mode,
-         "stamp_desc_fr.wav". In Brazilian Portuguese mode,
-         "stamp_desc_pt_BR.wav". And so on...
+         Pódense engadir liñas adicionais ao ficheiro de texto para fornecer
+         traducións da descrición, que se amosarán cando Tux Paint estea a
+         executarse nun idioma diferente (como o francés ou o español).
 
-         If no localized descriptive sound can be loaded, Tux Paint will
-         attempt to load the 'default' sound file. (e.g., "stamp_desc.wav")
+         O comezo da liña debería corresponder ao código de idioma do idioma
+         en cuestión (por exemplo, «fr» para o francés e «zh_TW» para o
+         chinés tradicional), seguido de «.utf8=» e a descrición traducida
+         (Unicode, codificado en UTF-8).
+
+         Para os desenvolvedores de Tux Paint: Hai scripts no directorio «po»
+         para converter os ficheiros de texto ao formato PO (e posterior)
+         para facilitar a tradución a diferentes idiomas. Polo tanto, nunca
+         debería engadir nin cambiar traducións directamente nos ficheiros
+         «.txt».
+
+         Se non hai tradución dispoñíbel para o idioma en que se está a
+         executar Tux Paint, utilízase o texto en inglés dos EUA.
+
+    Usuarios de Windows
+
+         Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese
+         de gardalos como texto simple e asegúrese de que teñen unha
+         extensión «.txt» ao final do nome do ficheiro.
 
      ----------------------------------------------------------------------
 
-  Stamp Options
+  Efectos de son dos selos
 
-       Aside from a graphical shape, a textual description, a sound effect,
-       and a descriptive sound, stamps can also be given other attributes. To
-       do this, you need to create a 'data file' for the stamp.
+       Tux Paint pode reproducir un efecto de son cando se selecciona un
+       selo. Por exemplo, o son dun pato tremendo cando se selecciona un pato
+       ou unha breve peza musical cando se escolle un instrumento musical. Os
+       ficheiros poden estar en formatos «WAVE (".wav")» ou «OGG Vorbis
+       (".ogg")» e reciben o mesmo nome que a imaxe PNG ou SVG. (p. ex.: o
+       efecto de son de «selo.svg» é o ficheiro de son «selo.ogg» no mesmo
+       directorio.)
 
-       A stamp's data file is simply a plain ASCII text file containing the
-       options for the stamp.
+    Compatibilidade da localización
 
-       The file has the same name as the PNG or SVG image, but a ".dat"
-       extension. (e.g., "stamp.png"'s data file is the text file
-       "stamp.dat", found in the same directory.)
+         Para sons para distintos idiomas (p. ex.: se o son é alguén que di
+         unha palabra e quere versións traducidas da palabra dita), cree
+         tamén ficheiros WAV ou OGG coa etiqueta de idioma no nome do
+         ficheiro, na forma: «selo_IDIOMA.EXT»
 
-    Colored Stamps
+         O efecto de son de «selo.png», cando Tux Paint se executa en modo
+         español, sería «selo.png». En modo francés, «selo_es.wav». No modo
+         portugués brasileiro, «selo_fr.wav». Etcétera...
 
-         Stamps can be made to be either "colorable" or "tintable."
+         Se non se pode cargar efecto de son localizado, Tux Paint tentará
+         cargar o ficheiro de son «predeterminado». (por exemplo, «selo.wav»)
 
-      Colorable
+       Nota: para sons descritivos (non efectos de son, como un estrondo ou o
+       chío dun paxaro), considere o uso de sons descritivos; vexa «Son
+       descritivo do selo», a continuación.
 
-           "Colorable" stamps they work much like brushes - you pick the
-           stamp to get the shape, and then pick the color you want it to be.
-           (Symbol stamps, like the mathematical and musical ones, are an
-           example.)
+     ----------------------------------------------------------------------
 
-           Nothing about the original image is used except the transparency
-           (from "alpha" channel). The color of the stamp comes out solid.
+  Son descritivo do selo
 
-           Add a line containing the word "colorable" to the stamp's data
-           file.
+       Tux Paint tamén pode reproducir un son descritivo cando se selecciona
+       un selo. Por exemplo, o son de alguén que di a palabra «pato» cando
+       selecciona un pato ou o nome dun instrumento musical cando se elixe
+       un. Os ficheiros poden estar en formatos «WAVE (".wav")» ou «OGG
+       Vorbis (".ogg")» e reciben o mesmo nome que a imaxe PNG ou SVG, con
+       «_desc» ao final. (p. ex.: o son descritivo de «selo.svg» é o ficheiro
+       de son «selo_desc.ogg» no mesmo directorio.)
 
-      Tinted
+    Compatibilidade da localización
 
-           "Tinted" stamps are similar to "colorable" ones, except the
-           details of the original image are kept. (To put it technically,
-           the original image is used, but its hue is changed, based on the
-           currently-selected color.)
+         Para sons descritivos de diferentes idiomas, cree tamén ficheiros
+         WAV ou OGG con ambos «_desc» e a etiqueta local no nome do ficheiro,
+         na forma: «selo_desc_IDIOMA.EXT»
 
-           Add a line containing the word "tintable" to the stamp's data
-           file.
+         O son descritivo de «selo.png», cando Tux Paint se executa en modo
+         español, sería «selo_desc_es.wav». En modo francés,
+         «selo_desc_fr.wav». No modo portugués brasileiro,
+         «selo_desc_pt_BR.wav». Etcétera...
 
-        Tinting Options:
+         Se non se pode cargar son descritivo localizado, Tux Paint tentará
+         cargar o ficheiro de son «predeterminado». (por exemplo,
+         «selo_desc.wav»)
 
-             Depending on the contents of your stamp, you might want to have
-             Tux Paint use one of a number of methods when tinting it. Add
-             one of the following lines to the stamp's data file:
+     ----------------------------------------------------------------------
 
-             Normal tinter — "tinter=normal" (the default)
-                     This is the normal tinting mode. (Hue range is ±18°, 27
-                     replace.)
+  Opcións de selos
 
-             'Any hue' tinter — "tinter=anyhue"
-                     This remaps all hues in the stamp. (Hue range is ±180°.)
+       Ademais de a graphical shape, a textual description, a sound effect,
+       and a descriptive sound, a stamps tamén se lle poden dar outros
+       atributos. Para facelo, cómpre crear un «ficheiro de datos» para
+       stamp.
 
-             Narrow tinter — "tinter=narrow"
-                     This like the "anyhue" option, but with a narrower hue
-                     angle. (Hue range is ±6°, 9 replace.)
+       Un ficheiro de datos de stamp's é simplemente un ficheiro de texto
+       ASCII simple que contén as opcións de stamp.
 
-             Vector tinter — "tinter=vector"
-                     This maps 'black through white' to 'black through
-                     destination'.
+       O ficheiro ten o mesmo nome que a imaxe PNG or SVG, pero unha
+       extensión «.dat». (p. ex.: o ficheiro de datos de «selo.png» é o
+       ficheiro de texto «selo.dat», que se atopa no mesmo directorio.)
 
-    Unalterable Stamps
+    Selos de cores
 
-         By default, a stamp can be flipped upside down, shown as a mirror
-         image, or both. This is done using the control buttons below the
-         stamp selector, at the lower right side of the screen in Tux Paint.
+         Os selos pódense facer «colorábeis» ou «tinguíbeis».
 
-         Sometimes, it doesn't make sense for a stamp to be flippable or
-         mirrored; for example, stamps of letters or numbers. Sometimes
-         stamps are symmetrical, so letting the user flip or mirror them
-         isn't useful.
+      Colorábel
 
-         To prevent a stamp from being flipped vertically, add the option
-         "noflip" to the stamp's data file.
+           Os selos «colorábeis» funcionan como os pinceis: escolla o selo
+           para obter a forma e logo escolla a cor que quere que sexa. (Os
+           selos de símbolos, como os matemáticos e os musicais, son un
+           exemplo).
 
-         To prevent a stamp from being mirrored horizontally, add the option
-         "nomirror" to the stamp's data file.
+           Non se usa nada sobre a imaxe orixinal agás a transparencia (da
+           canle «alfa»). A cor do selo sae sólida.
 
-    Initial Stamp Size
+           Engada unha liña que conteña a palabra «colorable» ao ficheiro de
+           datos destamp's.
 
-         By default, Tux Paint assumes that your stamp is sized appropriately
-         for unscaled display on a 608x472 canvas. This was the original Tux
-         Paint canvas size, provided by a 640x480 screen. Tux Paint will then
-         adjust the stamp according to the current canvas size and, if
-         enabled, the user's stamp size controls.
+      Tinguido
 
-         If your stamp would be too big or too small, you can specify a scale
-         factor. If your stamp would be 2.5 times as wide (or tall) as it
-         should be, add one of the following options, which represent the
-         same adjustment, to the stamp's data file. (An equals sign, "=", may
-         be included after the word "scale".)
+           Os selos «tinguidos» son semellantes aos «colorábeis», agás que se
+           conservan os detalles da imaxe orixinal. (Para dicilo
+           tecnicamente, úsase a imaxe orixinal, pero a súa tonalidade
+           cambia, en función da cor seleccionada actualmente).
+
+           Engada unha liña que conteña a palabra «tintable» ao ficheiro de
+           datos destamp's.
+
+        Opcións de tintura:
+
+             Dependendo do contido do seu selo, é posíbel que queira que Tux
+             Paint use un dos varios métodos para tinguilo. Engada unha das
+             seguintes liñas ao ficheiro de datos do selo:
+
+             Tinguido normal — "tinter=normal" (o predeterminado)
+                     Este é o modo normal de tinguido. (O rango de tonalidade
+                     é de ± 18 °, 27 como substituto).
+
+             Tinguir de «calquera tonalidade» — "tinter=anyhue"
+                     Isto volve asignar todas as tonalidades do selo. (O
+                     rango de tonalidades é de ± 180°).
+
+             Tinguido estreito — "tinter=narrow"
+                     Isto é como a opción «anyhue», pero cun ángulo de
+                     tonalidade máis reducido. (O intervalo de tonalidade é
+                     de ± 6 °, 9 como substituto).
+
+             Tinguido vectorial — "tinter=vector"
+                     Isto asigna de «negro a través branco» a «negro a través
+                     do destino».
+
+    Selos inalterábeis
+
+         De xeito predeterminado, un selo pode inverter (poñer do revés),
+         amosarse como unha imaxe reflectida ou ámbalas dúas cousas. Isto
+         faise usando os botóns de control situados baixo o selector de
+         selos, na parte inferior dereita da pantalla en Tux Paint.
+
+         Ás veces, non ten sentido que un selo poida ser invertido ou
+         reflectido; por exemplo, selos de letras ou números. Ás veces, os
+         selos son simétricos, polo que non é útil deixar que os usuarios os
+         invertan ou reflictan.
+
+         Para evitar que un selo sexa from being flipped vertically, engada a
+         opción «noflip» no ficheiro de datos do selo.
+
+         Para evitar que un selo sexa from being mirrored horizontally,
+         engada a opción «nomirror» no ficheiro de datos do selo.
+
+    Tamaño inicial do selo
+
+         De xeito predeterminado, Tux Paint asume que o seu selo ten o tamaño
+         axeitado para ser visto sen escala nun lenzo de 608x472. Este era o
+         tamaño orixinal do lenzo de Tux Paint, fornecido por unha pantalla
+         de 640x480. Tux Paint axustará o selo segundo o tamaño actual do
+         lenzo e, se está activado, os controis do tamaño do selo do usuario.
+
+         Se o seu selo fose demasiado grande ou moi pequeno, pode especificar
+         un factor de escala. Se o seu selo fose 2,5 veces máis largo (ou
+         alto) do que debería ser, engada unha das seguintes opcións, que
+         representan o mesmo axuste, ao ficheiro de datos do selo. (Pódese
+         incluír un signo igual, «=» após a palabra «scale».)
 
            * "scale 40%"
            * "scale 5/2"
            * "scale 2.5"
            * "scale 2:5"
 
-    Windows Users
+    Usuarios de Windows
 
-         Use NotePad or WordPad to edit/create these files. Be sure to save
-         them as plain-text, and make sure they have a ".txt" extension at
-         the end of the filename.
+         Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese
+         de gardalos como texto simple e asegúrese de que teñen unha
+         extensión «.txt» ao final do nome do ficheiro.
 
-  Pre-Mirrored and Flipped Stamps
+  Selos prereflectidos e invertidos
 
-       In some cases, you may wish to provide a pre-drawn version of a
-       stamp's mirror-image, flipped image, or even both. For example,
-       imagine a picture of a fire truck with the words "Fire Department"
-       written across the side. You probably do not want that text to appear
-       backwards when the image is flipped!
+       Nalgúns casos, pode que queira fornecer unha versión deseñada
+       previamente da imaxe reflectida, da imaxe invertida ou incluso de
+       ámbalas dúas. Por exemplo, imaxine unha foto dun camión de bombeiros
+       coa palabra «Bombeiros» escritas á beira. Probabelmente non quererá
+       que o texto apareza cara atrás cando se reflicte a imaxe.
 
-       To create a mirrored version of a stamp that you want Tux Paint to
-       use, rather than mirroring one on its own, simply create a second
-       ".png" or ".svg" graphics file with the same name, except with
-       "_mirror" before the filename extension.
+       Para crear unha versión reflectida dun selo que quere que use Tux
+       Paint, no canto de reflectila vostede mesmo, simplemente cree un
+       segundo ficheiro gráfico «.png» ou «.svg» co mesmo nome, agás con con
+       «_mirror» antes da extensión do nome do ficheiro.
 
-       For example, for the stamp "stamp.png" you would create another file
-       named "stamp_mirror.png", which will be used when the stamp is
-       mirrored (rather than using a backwards version of "stamp.png").
+       Por exemplo, para o selo «selo.png» crearíase outro ficheiro chamado
+       «selo_mirror.png», que se usará cando o selo se reflicta (no canto de
+       usar unha versión ao revés de «selo.png».
 
-       As of Tux Paint 0.9.18, you may similarly provide a pre-flipped image
-       with "_flip" in the name, and/or an image that is both mirrored and
-       flipped, by naming it "_mirror_flip".
+       A partir de Tux Paint 0.9.18, de xeito similar pode fornecer unha
+       imaxe previamente invertida con «_flip» no nome e/ou unha imaxe que se
+       reflicta e inverta, denominándoa «_mirror_flip».
 
-       Note: If the user flips and mirrors an image, and a pre-drawn
-       "_mirror_flip" doesn't exist, but either "_flip" or "_mirror" does, it
-       will be used, and mirrored or flipped, respectively.
-
-     ----------------------------------------------------------------------
-
-Fonts
-
-     The fonts used by Tux Paint are TrueType Fonts (TTF).
-
-     Simply place them in the "fonts" directory. Tux Paint will load the font
-     and provide four different sizes in the 'Letters' selector when using
-     the 'Text' and 'Label' tools.
+       Nota: Se o usuario inverte e reflicte unha imaxe e non existe un
+       «_mirror_flip» deseñado previamente, mais si un «_flip» ou un
+       «_mirror» , usarase e reflectirase ou inverterase, respectivamente.
 
      ----------------------------------------------------------------------
 
-'Starters'
+Tipos de letra
 
-     'Starter' images appear in the 'New' dialog, along with solid color
-     background choices.
+     Os tipos de letra empregados por Tux Paint son TrueType Fonts (TTF).
 
-     When you use a 'starter' image, make modifications, and save it, the
-     original 'starter' image is not overwritten. Additionally, as you edit
-     your new picture, the contents of the original 'starter' can affect it.
-
-  Coloring-Book Style Starters
-
-       The most basic kind of 'starter' is similar to a picture in a coloring
-       book. It's an outline of a shape which you can then color in and add
-       details to. In Tux Paint, as you draw, type text, or stamp stamps, the
-       outline remains 'above' what you draw. You can erase the parts of the
-       drawing you made, but you can't erase the outline.
-
-       To create this kind of 'starter' image, simply create an outlined
-       black and white picture in a paint program, and save it as a raster
-       PNG file, or vector SVG. If saving as a PNG, you may optionally render
-       the image as black-and-transparent, rather than black-and-white, but
-       (as of Tux Paint 0.9.21) this is not required.
-
-  Scene-Style Starters
-
-       Along with the 'coloring-book' style overlay, you can also provide a
-       separate background image as part of a 'starter' picture. The overlay
-       acts the same: it can't be drawn over, erased, or affected by 'Magic'
-       tools. However, the background can be!
-
-       When the 'Eraser' tool is used on a picture based on this kind of
-       'starter' image, rather than turning the canvas to a solid color, such
-       as white, it returns that part of the canvas to the original
-       background picture from the 'starter' image.
-
-       By creating both an overlay and a background, you can create a
-       'starter' which simulates depth. Imagine a background that shows the
-       ocean, and an overlay that's a picture of a reef. You can then draw
-       (or stamp) fish in the picture. They'll appear in the ocean, but never
-       'in front of' the reef.
-
-       To create this kind of 'starter' picture, simply create an overlay
-       (with transparency) and save it as a PNG. Then create another image
-       (without transparency), and save it with the same filename, but with
-       "-back" (short for 'background') appended to the name. (e.g.,
-       "starter-back.png" would be the background ocean picture that
-       corresponds to the overlay, or foreground.)
-
-     For best results, 'starter' images should be at least the same size as
-     Tux Paint's drawing canvas. (See the "Loading Other Pictures into Tux
-     Paint" section of Tux Paint's main documentation (README) for details on
-     sizing.) If they are not, they will be stretched or scaled. This is done
-     without affecting the shape ("aspect ratio"); however some smudging may
-     be applied to the edges.
-
-     Place them in the "starters" directory. When the 'New' dialog is
-     accessed in Tux Paint, the 'starter' images will appear in the screen
-     that appears, after the various solid color choices.
-
-     Note: 'Starters' are 'attached' to saved pictures, via a small text file
-     that has the same name as the saved file, but with ".dat" as the
-     extension. This allows it to continue to affect the drawing even after
-     Tux Paint has been quit, or another picture is loaded or a new image is
-     created. (In other words, if you base a drawing on a 'starter' image, it
-     will always be affected by it.)
+     Simplemente colóqueas no directorio «fonts». Tux Paint cargará o tipo de
+     letra e fornecerá catro tamaños diferentes no selector de «Letras» cando
+     empregue as ferramentas «Texto» e «Etiqueta».
 
      ----------------------------------------------------------------------
 
-'Templates'
+«Imaxes de comezo»
 
-     'Template' images also appear in the 'New' dialog, along with solid
-     color background choices and 'Starters'. (Note: Tux Paint prior to
-     version 0.9.22 did not have the 'Template' feature.)
+     As imaxes « de inicio» aparecen no diálogo «Novo», xunto con opcións de
+     fondo de cor sólida.
 
-     Unlike pictures drawn in Tux Paint by users and then opened later,
-     opening a 'template' creates a new drawing. When you save, the
-     'template' image is not overwritten. Unlike 'starters', there is no
-     immutable 'layer' above the canvas. You may draw over any part of it.
+     Cando usa unha imaxe «de inicio», fai modificacións e a garda, a imaxe
+     «de inicio» orixinal non se sobreescribe. Ademais, ao editar a súa nova
+     imaxe, o contido da imaxe «de inicio» orixinal pode afectala.
 
-     When the 'Eraser' tool is used on a picture based on this kind of
-     'template' image, rather than turning the canvas to a solid color, such
-     as white, it returns that part of the canvas to the original background
-     picture from the 'template' image.
+  Imaxes «de comezo» ao estilo dun libro para colorar
 
-     'Templates' are simply image files (in PNG, JPEG, SVG, or KPX (KidPix)
-     format). No preparation or conversion should be required.
+       O tipo máis básico de imaxe «de inicio» é semellante a unha imaxe dun
+       libro para colorar. É un esquema dunha forma que logo pode colorar e
+       engadir detalles. En Tux Paint, mentre debuxa, escribe texto ou
+       estampa selos, o contorno segue «por riba» do que debuxa. Pode borrar
+       as partes do debuxo que fixo, mais non pode borrar o contorno.
 
-     For best results, 'template' images should be at least the same size as
-     Tux Paint's drawing canvas. (See the "Loading Other Pictures into Tux
-     Paint" section of Tux Paint's main documentation (README) for details on
-     sizing.) If they are not, they will be stretched or scaled. This is done
-     without affecting the shape ("aspect ratio"); however some smudging may
-     be applied to the edges.
+       Para crear este tipo de imaxe «de inicio», simplemente cree unha imaxe
+       en branco e negro nun programa de pintura e gárdea como ficheiro PNG
+       rasterizado ou SVG vectorial. Se o garda como PNG, opcionalmente pode
+       renderizar a imaxe en negro e transparente no canto de en branco e
+       negro, mais (a partir do Tux Paint 0.9.21) isto non é necesario.
 
-     Place them in the "templates" directory. When the 'New' dialog is
-     accessed in Tux Paint, the 'template' images will appear in the screen
-     that appears, after the various solid color choices.
+  Imaxes «de comezo» ao estilo dunha escena
 
-     Note: 'Templates' are 'attached' to saved pictures, via a small text
-     file that has the same name as the saved file, but with ".dat" as the
-     extension. This allows it to continue to affect the drawing even after
-     Tux Paint has been quit, or another picture is loaded or a new image is
-     created. (In other words, if you base a drawing on a 'template' image,
-     it will always be affected by it.)
+       Xunto coa superposición de estilo «libro para colorar», tamén pode
+       fornecer unha imaxe de fondo separada como parte dunha imaxe «de
+       inicio». A superposición actúa igual: non pode ser debuxada, borrada
+       nin afectada polas ferramentas de «Maxia». Porén, o fondo pode si o
+       pode ser ser.
+
+       Cando a ferramenta «Goma» se usa nunha imaxe baseada neste tipo de
+       imaxe «de comezo», no canto de converter o lenzo a unha cor sólida,
+       como o branco, devolve esa parte do lenzo á imaxe de fondo orixinal
+       dende o imaxe «de comezo».
+
+       Ao crear unha superposición e un fondo, pode crear unha imaxe «de
+       inicio» que simule a profundidade. Imaxine un fondo que amosa o océano
+       e unha capa que representa a imaxe dun arrecife. Após pode debuxar (ou
+       estampar) peixes na imaxe. Aparecerán no océano, pero nunca «diante»
+       do arrecife.
+
+       Para crear este tipo de imaxe «de inicio», simplemente cree unha
+       superposición (con transparencia) e gárdea como PNG. A continuación,
+       cree outra imaxe (sen transparencia) e gárdea co mesmo nome de
+       ficheiro, pero con «-back» (abreviatura de «fondo») engadido ao nome.
+       (p. ex.: «imaxe-de-comezo-back.png» sería a imaxe de fondo do océano
+       que corresponde á superposición ou primeiro plano.)
+
+     Para obter os mellores resultados, imaxes «de comezo» debería ter polo
+     menos o mesmo tamaño que o lenzo de debuxo de Tux Paint. (Vexa a sección
+     «Cargar outras imaxes en Tux Paint» da documentación principal de Tux
+     Paint (README – LÉAME) para os detalles sobre o tamaño.) Se non o son,
+     estiraranse ou escalaranse. Isto faise sen afectar a forma («relación de
+     aspecto»); con todo pódense aplicar algunhas manchas nos bordos.
+
+     Colóqueas no directorio de «starters». Cando se accede ao diálogo «Novo»
+     en Tux Paint, as imaxes «de comezo» veranse na pantalla que aparece,
+     após as distintas opcións de cor sólida.
+
+     Nota: As «Imaxes de comezo» están «anexadas» ás imaxes gardadas, a
+     través dun pequeno ficheiro de texto que leva o mesmo nome que o
+     ficheiro gardado, pero con «.dat» como extensión. Isto permítelle seguir
+     afectando ao debuxo incluso após saír de Tux Paint, ou se cargue outra
+     imaxe ou se cree unha nova imaxe. (Noutras palabras, se un debuxo se
+     basea nun imaxe «de comezo», sempre se verá afectado por el.)
 
      ----------------------------------------------------------------------
 
-Translations
+«Modelos»
 
-     Tux Paint supports numerous languages, thanks to use of the "gettext"
-     localization library. (See "Options documentation" for how to change
-     locales in Tux Paint.)
+     As imaxes «modelo» tamén aparecen no diálogo «Novo», xunto coas opcións
+     de fondo de cor sólida e «imaxes de comezo». (Nota: Tux Paint antes da
+     versión 0.9.22 non tiña a función «Modelo»).
 
-     To translate Tux Paint to a new language, copy the translation template
-     file, "tuxpaint.pot" (found in Tux Paint's source code, in the folder
-     "src/po/"). Rename the copy as a ".po" file, with an appropriate name
-     for the locale you're translating to (e.g., "es.po" for Spanish; or
-     "pt_BR.po" for Brazilian Portuguese, versus "pt.po" or "pt_PT.po" for
-     Portuguese spoken in Portugal.)
+     A diferenza das imaxes debuxadas en Tux Paint polos usuarios e abertas
+     despois, a apertura dun «modelo» crea un novo debuxo. Cando garda, a
+     imaxe «modelo» non se sobreescribe. A diferenza das «imaxes de comezo»,
+     non hai unha «capa» inmutábel por riba do lenzo. Pode debuxar sobre
+     calquera parte del.
 
-     Open the newly-created ".po" file — you can edit in a plain text edtior,
-     such as Emacs, Pico or VI on Linux, or NotePad on Windows. The original
-     English text used in Tux Paint is listed in lines starting with "msgid".
-     Enter your translations of each of these pieces of text in the empty
-     "msgstr" lines directly below the corresponding "msgid" lines. (Note: Do
-     not remove the quotes.)
+     Cando a ferramenta «Goma» se usa nunha imaxe baseada neste tipo de imaxe
+     «modelo», no canto de converter o lenzo a unha cor sólida, como o
+     branco, devolve esa parte do lenzo á imaxe de fondo orixinal dende o
+     imaxe «modelo».
 
-     Example:
+     Os «modelos» son simplemente ficheiros de imaxe (en formato PNG, JPEG,
+     SVG ou KPX (KidPix)). Non debe ser necesaria ningunha preparación nin
+     conversión.
+
+     Para obter os mellores resultados, imaxes «modelo» debería ter polo
+     menos o mesmo tamaño que o lenzo de debuxo de Tux Paint. (Vexa a sección
+     «Cargar outras imaxes en Tux Paint» da documentación principal de Tux
+     Paint (README – LÉAME) para os detalles sobre o tamaño.) Se non o son,
+     estiraranse ou escalaranse. Isto faise sen afectar a forma («relación de
+     aspecto»); con todo pódense aplicar algunhas manchas nos bordos.
+
+     Colóqueas no directorio de «templates». Cando se accede ao diálogo
+     «Novo» en Tux Paint, as imaxes «modelo» veranse na pantalla que aparece,
+     após as distintas opcións de cor sólida.
+
+     Nota: As «Modelos» están «anexadas» ás imaxes gardadas, a través dun
+     pequeno ficheiro de texto que leva o mesmo nome que o ficheiro gardado,
+     pero con «.dat» como extensión. Isto permítelle seguir afectando ao
+     debuxo incluso após saír de Tux Paint, ou se cargue outra imaxe ou se
+     cree unha nova imaxe. (Noutras palabras, se un debuxo se basea nun imaxe
+     «modelo», sempre se verá afectado por el.)
+
+     ----------------------------------------------------------------------
+
+Traducións
+
+     Tux Paint admite numerosos idiomas grazas ao uso da biblioteca de
+     localización «gettext». (Vexa a «Documentación de opcións» para saber
+     como cambiar a configuración local en Tux Paint.)
+
+     Para traducir Tux Paint a un novo idioma, copie o ficheiro de modelo de
+     tradución, «tuxpaint.pot» (atopado no código fonte de Tux Paint, no
+     cartafol «src/po/»). Cambie o nome da copia como un ficheiro «.po», cun
+     nome apropiado para o idioma ao que está a traducir (p. ex.: «es.po»
+     para o español; ou «pt_BR.po» para o portugués brasileiro fronte a
+     «pt.po» ou «pt_PT.po» para o portugués falado en Portugal.)
+
+     Abra o ficheiro «.po» creado recentemente: pode editar nun editor de
+     texto simple, como Emacs, Pico ou VI en Linux ou NotePad en Windows. O
+     texto orixinal en inglés usado en Tux Paint está coutado en liñas que
+     comezan por «msgid». Introduza as traducións de cada un destes anacos de
+     texto nas liñas baleiras «msgstr» directamente baixo as liñas
+     correspondentes «msgid». (Nota: Non elimine as comiñas.)
+
+     Exemplo:
 
        msgid "Smudge"
        msgstr "Manchar"
@@ -651,73 +672,78 @@ Translations
        msgid "Click and drag to draw large bricks."
        msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
 
-     Various tools exist to manage gettext translation catalogs, so you don't
-     have to edit them by hand in a text editor. Here are a few:
+     Existen varias ferramentas para xestionar os catálogos de tradución de
+     gettext, polo que non ten que editalos a man nun editor de texto. Aquí
+     ten algúns:
 
        * Poedit
        * Gtranslator (GNOME Translator)
        * Virtraal
        * Lokalize
 
-     Note: It is best to always work off of the latest Tux Paint text catalog
-     template ("tuxpaint.pot"), since new text is added, and old text is
-     occasionally changed. The text catalog for the upcoming, unreleased
-     version of Tux Paint can be found in Tux Paint's Git repository (see:
-     http://www.tuxpaint.org/download/source/git/), and on the Tux Paint
-     website at http://www.tuxpaint.org/help/po/.
+     Nota: É mellor traballar sempre co último modelo de catálogo de texto
+     Tux Paint («tuxpaint.pot»), xa que se engade n novos textos e o texto
+     antigo cambia ocasionalmente. O catálogo de texto para a próxima versión
+     inédita de Tux Paint pódese atopar no repositorio Git de Tux Paint (ver:
+     http://www.tuxpaint.org/download/source/git/) e no sitio web de Tux
+     Paint en http://www.tuxpaint.org/help/po/.
 
-     To edit an existing translation, download the latest ".po" file for that
-     language, and edit it as described above.
+     Para editar unha tradución existente, descargue o último ficheiro «.po»
+     para ese idioma e edíteo como se describe anteriormente.
 
-     You may send new or edited translation files to Bill Kendrick, lead
-     developer of Tux Paint, at: bill@newbreedsoftware.com, or post them to
-     the "tuxpaint-i18n" mailing list (see: http://www.tuxpaint.org/lists/).
+     Pode enviar ficheiros de tradución novos ou editados a Bill Kendrick,
+     responsábel do desenvolvemento de Tux Paint, a:
+     bill@newbreedsoftware.com, ou publicalos na lista de correo
+     «tuxpaint-i18n» (vexa: http://www.tuxpaint.org/lists/).
 
-     Alternatively, if you have an account with SourceForge.net, you can
-     request to be added to the "tuxpaint" project and receive write-access
-     to the Git source code repository so that you may commit your changes
-     directly.
+     Como alternativa, se te unha conta con SourceForge.net, pode solicitar
+     que o engadan ao proxecto «tuxpaint» e recibir acceso de escritura ao
+     repositorio de código fonte de Git para que poida enviar os seus cambios
+     directamente.
 
-     Note: Support for new locales requires making additions to Tux Paint's
-     source code ("/src/i18n.h" and "/src/i18n.c"), and requires updates to
-     the Makefile, to ensure the ".po" files are compiled into ".mo" files,
-     and available for use at runtime.
+     Nota: A compatibilidade cos novo configuracións locais require facer
+     adicións ao código fonte de Tux Paint («/src/i18n.h» e «/src/i18n.c»), e
+     require actualizacións dos Makefile, para asegurarse de que os ficheiros
+     «.po» están compilados en ficheiros «.mo» e están dispoñíbeis para o seu
+     uso en tempo de execución.
 
      ----------------------------------------------------------------------
 
-Alternative Input Methods
+Métodos de entrada alternativos
 
-     Tux Paint's 'Text' and 'Label' tools can provide alternative input
-     methods for some languages. For example, when Tux Paint is running with
-     a Japanese locale, the right [Alt] key can be pressed to cycle between
-     Latin, Romanized Hiragana and Romanized Katakana modes. This allows
-     native characters and words to be entered into the 'Text' and 'Label'
-     tools by typing one or more keys on a keyboard with Latin characters
-     (e.g., a US QWERTY keyboard).
+     As ferramentas «Texto» e «Etiqueta» de Tux Paint poden fornecer métodos
+     alternativos de entrada para algúns idiomas. Por exemplo, cando Tux
+     Paint está a executarse co idioma xaponés, pódese premer a tecla [Alt]
+     da dereita para alternar entre os modos latino, hiragana romanizado e
+     Katakana romanizado. Isto permite introducir palabras e caracteres
+     nativos nas ferramentas «Texto» e «Etiqueta» escribindo unha ou máis
+     teclas dun teclado con caracteres latinos (por exemplo, un teclado US
+     QWERTY).
 
-     To create an input method for a new locale, create a text file with a
-     name based on the locale (e.g., "ja" for Japanese), with ".im" as the
-     extension (e.g., "ja.im").
+     Para crear un método de entrada para un idioma novo, cree un ficheiro de
+     texto cun nome baseado no idioma (por exemplo, «ja» para xaponés), con
+     «.im» como extensión (por exemplo, «ja.im»).
 
-     The ".im" file can have multiple character mapping sections for
-     different character mapping modes. For example, on a Japanese typing
-     system, typing [K] [A] in Hiragana mode generates a different Unicode
-     character ("か") than typing [K] [A] in Katakana mode ("カ").
+     O ficheiro «.im» pode ter varias seccións de asignación de caracteres
+     para diferentes modos de asignación de caracteres. Por exemplo, nun
+     sistema de escritura de xaponés, escribir [K] [A] no modo Hiragana xera
+     un carácter Unicode diferente ("か") que escribir [K] [A] no modo
+     Katakana ("カ").
 
-     List the character mappings in this file, one per line. Each line should
-     contain (separated by whitespace):
+     Enumere as asignacións de caracteres neste ficheiro, unha por liña. Cada
+     liña debe conter (separada por espazos en branco):
 
-       * the Unicode value of the character, in hexadecimal (more than one
-         character can be listed, separated by a colon (':'), this allowing
-         some sequences to map to words)
-       * the keycode sequence (the ASCII characters that must be entered to
-         generate the Unicode character)
-       * a flag (or "-" if none)
+       * o valor Unicode do carácter, en hexadecimal (pode enumerar máis dun
+         carácter, separados por dous puntos («:»), permitindo que algunhas
+         secuencias se asignen a palabras)
+       * a secuencia de código de teclas (os caracteres ASCII que se deben
+         introducir para xerar o carácter Unicode)
+       * un sinalador (ou «-» se non hai ningún)
 
-     Start additional character mapping sections with a line containign the
-     word "section".
+     Inicie seccións adicionais de asignación de caracteres cunha liña que
+     conteña a palabra «section».
 
-     Example:
+     Exemplo:
 
        # Hiragana
        304B ka -
@@ -734,36 +760,38 @@ Alternative Input Methods
        30AD ki -
        30AE gi -
 
-     Note: Blank lines within the ".im" file will be ignored, as will any
-     text following a "#" (pound/hash) character — it can be used to denote
-     comments, as seen in the example above.
+     Nota: Ignoraranse as liñas en branco dentro do ficheiro «.im», así como
+     calquera texto que teña un carácter «#» (grella). Isto pódese usar para
+     denotar comentarios , como se ve no exemplo anterior.
 
-     Note: Meanings of the flags are locale-specific, and are processed by
-     the language-specific source code in "src/im.c". For example, "b" is
-     used in Korean to handle Batchim, which may carry over to the next
-     character.
+     Nota: Os significados dos sinaladores son específicos da configuración
+     local e son procesados ​​polo código fonte específico do idioma en
+     «src/im.c». Por exemplo, «b» úsase en coreano para tratar Batchim, que
+     pode pasar ao seguinte carácter.
 
-     Note: Support for new input methods requires making additions to Tux
-     Paint's source code ("/src/im.c"), and requires updates to the Makefile,
-     to ensure the ".im" files are available for use at runtime.
+     Nota: A compatibilidade cos novo input methods require facer adicións ao
+     código fonte de Tux Paint ("/src/im.c"), e require actualizacións dos
+     Makefile, para asegurarse de que os ficheiros «.im» están dispoñíbeis
+     para o seu uso en tempo de execución.
 
      ----------------------------------------------------------------------
 
-On-screen Keyboard
+Teclado en pantalla
 
-     As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present
-     an on-screen keyboard that allows the pointer (via a mouse, eye-tracking
-     systems, etc.) to be used to input characters. Files that describe the
-     layout and available keys are stored in Tux Paint "osk" directory. Each
-     keyboard layout is defined by a number of files (some of which may be
-     shared by different layouts).
+     A partir da versión 0.9.22, as ferramentas «Texto» e «Etiqueta» de Tux
+     Paint poden presentar un teclado en pantalla que permite utilizar o
+     punteiro (mediante un rato, sistemas de seguimento de ollos, etc.) para
+     introducir caracteres. Os ficheiros que describen o deseño e as claves
+     dispoñíbeis almacénanse no directorio «osk» de Tux Paint. Cada deseño de
+     teclado está definido por varios ficheiros (algúns dos cales poden ser
+     compartidos por diferentes deseños).
 
-     We'll use the QWERTY keyboard as an example:
+     Usaremos o teclado QWERTY como exemplo:
 
-  Layout overview file ("qwerty.layout")
+  Ficheiro de visión xeral da disposición («qwerty.layout»)
 
-       This is a text file that specifies the other files used to describe
-       the layout and key mappings.
+       Este é un ficheiro de texto que especifica os outros ficheiros
+       empregados para describir a disposición e as asignacións de teclas.
 
          layout qwerty.h_layout
          keymap us-intl-altgr-dead-keys.keymap
@@ -771,24 +799,26 @@ On-screen Keyboard
          keysymdefs keysymdef.h
          keyboardlist qwerty.layout default.layout
 
-       Note: Blank lines within the ".layout" file will be ignored, as will
-       any text following a "#" (pound/hash) character — it can be used to
-       denote comments, as seen in the example above.
+       Nota: Ignoraranse as liñas en branco dentro do ficheiro «.layout», así
+       como calquera texto que teña un carácter «#» (grella). Isto pódese
+       usar para denotar comentarios , como se ve no exemplo anterior.
 
-       The "keyboardlist" line describes which layouts to switch to, when the
-       user clicks the left and right buttons on the keyboard. (See below.)
+       A liña «keyboardlist» describe a que esquemas cambiar, cando o usuario
+       preme nos botóns esquerdo e dereito do teclado. (Ver máis abaixo.)
 
-  Keyboard layout file ("qwerty.h_layout")
+  Ficheiro de disposición do teclado («qwerty.h_layout»)
 
-       This describes how big the keyboard is (as a "width × height" grid),
-       and lists each key with its numeric keycode (see the "keymap" file,
-       below), the width it should be drawn at (typically "1.0", to take one
-       space on the keyboard, but in the example below, notice the "TAB" and
-       "SPACE" keys are much wider), the character or text to display on the
-       key, depending on which modifier keys have been pressed (one each for:
-       no modifiers, [Shift], [AltGr], and [Shift] + [AltGr]), and finally
-       whether or not the key is affected by the [CapsLock] key (use "1") or
-       [AltGr] (alternate graphics) key (use "2"), or not at all (use "0").
+       Isto describe o tamaño do teclado (como unha reixa de «largo × alto»)
+       e lista cada tecla co seu código numérico (ver o ficheiro «keymap»,
+       máis abaixo), o largo no que debería debuxarse ​​(normalmente «1.0»,
+       para ocupar un espazo no teclado, pero no seguinte exemplo, teña en
+       conta que as teclas «TAB» e «SPACE» son moito máis largas), o carácter
+       ou o texto que se amosará na tecla, dependendo das teclas
+       modificadoras premido (unha para cada unha: sen
+       modificadores,[Maiúsculas],[AltGr] e [Maiúsculas] + [AltGr]) e,
+       finalmente, se a tecla está afectada ou non pola tecla [BloqMaiús]
+       (use «1») ou a tecla [AltGr] (gráficos alternativos) ( use «2»), ou
+       non (use «0»).
 
          WIDTH 15
          HEIGHT 5
@@ -815,44 +845,48 @@ On-screen Keyboard
 
          NEWLINE
 
-         # Arrow to left will change to the previous keyboard
+         # A frecha cara á esquerda cambiará ao teclado anterior
          KEY 2 1.0 <- <- <- <- 0
 
          KEY 133 2.0 Cmp Cmp Cmp Cmp 0
 
-         # The ALT or ALTGR keys are used in im to switch the input mode
+         # As teclas ALT ou ALTGR úsanse no método de entrada (im) para
+         cambiar o modo de entrada
          KEY 64 2.0 Alt Alt Alt Alt 0
 
-         # Space
+         # Espazo
          KEY 65 7.0 SPACE SPACE SPACE SPACE 0
 
          KEY 108 2.0 AltGr AltGr AltGr AltGr 0
 
-         # Arrow to right will change to the next keyboard
+         # A frecha cara á dereita cambiará ao seguinte teclado
          KEY 1 1.0 -> -> -> -> 0
 
-       Notice here that alphabetic keys ([Q], [W], etc.) will be affected by
-       [CapsLock], while numeric keys ([1], [2], etc.), [Space], and so on,
-       will not.
+       Teña en conta aquí que as teclas alfabéticas ([Q],[W], etc.) serán
+       afectadas por [BloqMaiús], mentres as teclas numéricas ([1], [2],
+       etc.), [Espazo], etc., non o farán.
 
-       Keycodes up to "8" are reserved for internal use. The ones currently
-       used are described below.
+       Os códigos de tecla ata «8» están reservados para uso interno. Os que
+       se usan actualmente descríbense a continuación.
 
-         * 0 — empty button
-         * 1 — next layout (per the layout file's "keyboardlist" setting)
-         * 2 — previous layout (per the layout file's "keyboardlist" setting)
+         * 0 — botón baleiro
+         * 1 — seguinte disposición (segundo o axuste «keyboardlist» do
+           ficheiro de disposición)
+         * 2 — disposición anterior (segundo o axuste «keyboardlist» do
+           ficheiro de disposición)
 
-  Keymap file ("us-intl-altgr-dead-keys.keymap")
+  Ficheiro do mapa do teclado («us-intl-altgr-dead-keys.keymap»)
 
-       This file defines which numeric keycodes (seen in the keyboard layout
-       files, such as "qwerty.h_layout" described above) should be mapped to
-       which actual characters that an application such as Tux Paint expects
-       to receive when keys (e.g., on a real keyboard) are pressed.
+       Este ficheiro define que códigos das teclas numéricas (vistos nos
+       ficheiros de disposición de teclado, como «qwerty.h_layout» descrito
+       anteriormente) deben asignarse a que caracteres reais que unha
+       aplicación como Tux Paint agarda recibir cando se premen as teclas
+       (por exemplo, nun teclado real).
 
-       If you're using an operating system such as Linux, which runs X-Window
-       and has the "xmodmap" command-line tool available, you can run it with
-       the ("print keymap expressions" option, "-pke", to generate a keymap
-       file.
+       Se está a usar un sistema operativo como Linux, que executa X-Window e
+       ten dispoñíbel a ferramenta de liña de ordes «xmodmap», pode executala
+       coa opción «print keymap expressions», «-pke», para xerar un ficheiro
+       de mapa de teclas.
 
          keycode 9 = Escape NoSymbol Escape Escape
          keycode 10 = 1 exclam exclamdown onesuperior 1 exclam 1 exclam
@@ -884,27 +918,27 @@ On-screen Keyboard
          keycode 62 = Shift_R NoSymbol Shift_R Shift_R
          ...
 
-  Composemap file ("en_US.UTF-8_Compose")
+  Ficheiro do mapa de composición («en_US.UTF-8_Compose»)
 
-       This file describes single characters that can be composed by multiple
-       inputs. For example, "[Compose]" followed by "[A]" and "[E]" can be
-       used to create the "æ" character.
+       Este ficheiro describe caracteres individuais que poden ser compostos
+       por varias entradas. Por exemplo, pódese usar «[Composición]» seguido
+       de «[A]» e «[E]» para crear o carácter «æ».
 
-       The file that comes with Tux Paint is based on the US English UTF-8
-       (Unicode) composemap that comes with X.Org's X Window system. The
-       current version from the Xlib library has a web located page at
+       O ficheiro que vén con Tux Paint está baseado no mapa de composición
+       UTF-8 (Unicode) en inglés dos EUA que vén co Sistema X Window de
+       X.Org. A versión actual da biblioteca Xlib dispón dunha páxina en
        https://www.x.org/releases/current/doc/libX11/i18n/compose/en_US.UTF-8.html.
 
-  Keysym definitions file ("keysymdef.h")
+  Ficheiro de definición Keysym («keysymdef.h»)
 
-       This file (which is a C programming language header file) is also from
-       the X Window System. It defines the Unicode values of each keycap
-       (e.g., "XK_equal" corresponds to "U+003D", for the character "="
-       ("EQUALS SIGN").
+       Este ficheiro (que é un ficheiro de cabeceira da linguaxe de
+       programación C) tamén é do Sistema X Window. Define os valores Unicode
+       de cada tecla (p. ex.: «XK_equal» corresponde a «U+003D», para o
+       carácter «=» («EQUALS SIGN»).
 
-       Note: This file is not compiled into Tux Paint, but is read and parsed
-       at runtime.
+       Nota: este ficheiro non se compila en Tux Paint, senón que se le e
+       analiza no tempo de execución.
 
-       It is unlikely that any modification will be required of this file.
+       É pouco probábel que se precise algunha modificación neste ficheiro.
 
      ----------------------------------------------------------------------

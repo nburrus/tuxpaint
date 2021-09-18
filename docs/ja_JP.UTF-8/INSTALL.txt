@@ -1,24 +1,24 @@
                                    Tux Paint
-                                 version 0.9.27
+                                  バージョン 0.9.27
                            Installation Documentation
 
-          Copyright © 2002-2021 by various contributors; see AUTHORS.
+          Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                               September 17, 2021
+                                   2021年9月17日
 
      ----------------------------------------------------------------------
 
    +----------------------------------------------------+
-   |Table of Contents                                   |
+   |目次                                                  |
    |----------------------------------------------------|
    |  * Requirements                                    |
    |       * Simple DirectMedia Layer library (libSDL)  |
    |       * Other Libraries                            |
    |  * Compiling and Installation                      |
-   |       * Windows Users                              |
-   |       * Linux/Unix Users                           |
-   |       * macOS Users                                |
+   |       * Windows のユーザー                              |
+   |       * Linux または Unix のユーザー                       |
+   |       * macOS のユーザー                                |
    |  * Debugging                                       |
    |  * Uninstalling Tux Paint                          |
    |       * Windows                                    |
@@ -147,9 +147,9 @@ Compiling and Installation
      "COPYING.txt" for details), and therefore the 'source code' to the
      program is available freely.
 
-  Windows Users
+  Windows のユーザー
 
-     October 25, 2020 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
+     2020年10月25日 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
      <shin1@wmail.plala.or.jp>
 
     Compiling Set-Up
@@ -455,7 +455,7 @@ Compiling and Installation
 
      ----------------------------------------------------------------------
 
-  Linux/Unix Users
+  Linux または Unix のユーザー
 
     Compiling:
 
@@ -598,9 +598,9 @@ Compiling and Installation
 
      ----------------------------------------------------------------------
 
-  macOS Users
+  macOS のユーザー
 
-     September 21, 2021 Mark K. Kim <markuskimius@gmail.com>
+     2021年9月21日 Mark K. Kim <markuskimius@gmail.com>
 
        Tux Paint 0.9.22 and earlier required building Tux Paint from the
        Xcode IDE. Starting with 0.9.23, however, Tux Paint for macOS is built
