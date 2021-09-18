@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-06 22:05-0700\n"
-"PO-Revision-Date: 2021-09-06 14:23+0200\n"
+"PO-Revision-Date: 2021-09-18 11:00+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -366,30 +366,21 @@ msgid "A star with 5 points."
 msgstr "Étoile à 5 branches."
 
 #: ../shapes.h:385
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
 "Choisis une forme. Clique pour démarrer le dessin, fais glisser, et continue "
-"jusqu'à la taille désirée. Déplace-toi pour la faire tourner, et clique pour "
-"dessiner."
+"jusqu'à la taille et la forme désirées. Déplace-toi pour la faire tourner, "
+"et clique de nouveau pour dessiner."
 
 #: ../shapes.h:386
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
 msgstr ""
 "Choisis une forme. Clique pour démarrer le dessin, fais glisser, et continue "
-"jusqu'à la taille désirée. Déplace-toi pour la faire tourner, et clique pour "
-"dessiner."
+"jusqu'à la taille et la forme désirées."
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
