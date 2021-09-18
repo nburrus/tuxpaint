@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.17 (0.9.27)
+2021.September.18 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -29,7 +29,7 @@ $Id$
       color of the area of the picture being replaced, to give a
       "newsprint" effect.
 
-    * "Halftone" can now affect the entire image at once.
+    * "Halftone" and "Emboss" can now affect the entire image at once.
 
   * Other Improvements:
     -------------------
