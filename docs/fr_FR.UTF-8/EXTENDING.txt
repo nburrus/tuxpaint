@@ -367,9 +367,11 @@ Tampons
          l'étiquette de la locale dans le nom de fichier, sous la forme :
          "stamp_LOCALE.EXT"
 
-         "effet sonore" de "stamp.png", lorsque Tux Paint est exécuté en mode
-         espagnol, serait "stamp.png". En mode français, "stamp_es.wav". En
-         mode portugais brésilien, "stamp_fr.wav". Etc...
+         The effet sonore that will be played when the stamp corresponding to
+         the image file "stamp.png" is selected, and when Tux Paint is using
+         the Spanish locale, would be "stamp_es.wav". Under the French
+         locale, it would be "stamp_fr.wav". Under the Brazilian Portuguese
+         locale, "stamp_pt_BR.wav". And so on...
 
          Si aucun effet sonore localisé ne peut être chargé, Tux Paint
          tentera de charger le fichier son «par défaut». (par exemple,
@@ -398,10 +400,11 @@ Tampons
          paramètres régionaux dans le nom de fichier, sous la forme :
          "stamp_desc_LOCALE.EXT"
 
-         "son descriptif" de "stamp.png", lorsque Tux Paint est exécuté en
-         mode espagnol, serait "stamp_desc_es.wav". En mode français,
-         "stamp_desc_fr.wav". En mode portugais brésilien,
-         "stamp_desc_pt_BR.wav". Etc...
+         The son descriptif that will be played when the stamp corresponding
+         to the image file "stamp.png" is selected, and when Tux Paint is
+         using the Spanish locale, would be "stamp_desc_es.wav". Under the
+         French locale, it would be "stamp_desc_fr.wav". Under the Brazilian
+         Portuguese locale, "stamp_desc_pt_BR.wav". And so on...
 
          Si aucun son descriptif localisé ne peut être chargé, Tux Paint
          tentera de charger le fichier son «par défaut». (par exemple,

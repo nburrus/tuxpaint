@@ -337,9 +337,11 @@ Stamps
          also create WAV or OGG files with the locale's label in the
          filename, in the form: "stamp_LOCALE.EXT"
 
-         "stamp.png"'s sound effect, when Tux Paint is run in Spanish mode,
-         would be "stamp.png". In French mode, "stamp_es.wav". In Brazilian
-         Portuguese mode, "stamp_fr.wav". And so on...
+         The sound effect that will be played when the stamp corresponding to
+         the image file "stamp.png" is selected, and when Tux Paint is using
+         the Spanish locale, would be "stamp_es.wav". Under the French
+         locale, it would be "stamp_fr.wav". Under the Brazilian Portuguese
+         locale, "stamp_pt_BR.wav". And so on...
 
          If no localized sound effect can be loaded, Tux Paint will attempt
          to load the 'default' sound file. (e.g., "stamp.wav")
@@ -366,10 +368,11 @@ Stamps
          files with both "_desc" and the locale's label in the filename, in
          the form: "stamp_desc_LOCALE.EXT"
 
-         "stamp.png"'s descriptive sound, when Tux Paint is run in Spanish
-         mode, would be "stamp_desc_es.wav". In French mode,
-         "stamp_desc_fr.wav". In Brazilian Portuguese mode,
-         "stamp_desc_pt_BR.wav". And so on...
+         The descriptive sound that will be played when the stamp
+         corresponding to the image file "stamp.png" is selected, and when
+         Tux Paint is using the Spanish locale, would be "stamp_desc_es.wav".
+         Under the French locale, it would be "stamp_desc_fr.wav". Under the
+         Brazilian Portuguese locale, "stamp_desc_pt_BR.wav". And so on...
 
          If no localized descriptive sound can be loaded, Tux Paint will
          attempt to load the 'default' sound file. (e.g., "stamp_desc.wav")

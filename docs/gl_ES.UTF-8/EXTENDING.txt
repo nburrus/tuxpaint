@@ -350,9 +350,11 @@ Selos
          tamén ficheiros WAV ou OGG coa etiqueta de idioma no nome do
          ficheiro, na forma: «selo_IDIOMA.EXT»
 
-         O efecto de son de «selo.png», cando Tux Paint se executa en modo
-         español, sería «selo.png». En modo francés, «selo_es.wav». No modo
-         portugués brasileiro, «selo_fr.wav». Etcétera...
+         The efecto de son that will be played when the stamp corresponding
+         to the image file "selo.png" is selected, and when Tux Paint is
+         using the Spanish locale, would be "selo_es.wav". Under the French
+         locale, it would be "selo_fr.wav". Under the Brazilian Portuguese
+         locale, "selo_pt_BR.wav". And so on...
 
          Se non se pode cargar efecto de son localizado, Tux Paint tentará
          cargar o ficheiro de son «predeterminado». (por exemplo, «selo.wav»)
@@ -379,10 +381,11 @@ Selos
          WAV ou OGG con ambos «_desc» e a etiqueta local no nome do ficheiro,
          na forma: «selo_desc_IDIOMA.EXT»
 
-         O son descritivo de «selo.png», cando Tux Paint se executa en modo
-         español, sería «selo_desc_es.wav». En modo francés,
-         «selo_desc_fr.wav». No modo portugués brasileiro,
-         «selo_desc_pt_BR.wav». Etcétera...
+         The son descritivo that will be played when the stamp corresponding
+         to the image file "selo.png" is selected, and when Tux Paint is
+         using the Spanish locale, would be "selo_desc_es.wav". Under the
+         French locale, it would be "selo_desc_fr.wav". Under the Brazilian
+         Portuguese locale, "selo_desc_pt_BR.wav". And so on...
 
          Se non se pode cargar son descritivo localizado, Tux Paint tentará
          cargar o ficheiro de son «predeterminado». (por exemplo,
