@@ -26,7 +26,7 @@
       </p>
 
       <p>
-        septiembre  6, 2021      </p>
+        septiembre 19, 2021      </p>
     </center>
 
     <hr size="2"
@@ -612,21 +612,21 @@
                   Normal tinter &mdash; "<code><b>tinter=normal</b></code>" (the default)                </dt>
 
                 <dd>
-                  This is the normal tinting mode. (Hue range is ±18°, 27 replace.)                </dd>
-
-                <dt>
-                  'Any hue' tinter &mdash; "<code><b>tinter=anyhue</b></code>"
-                </dt>
-
-                <dd>
-                  This remaps all hues in the stamp. (Hue range is ±180°.)                </dd>
+                  This is the normal tinting mode. First, the primary hue of the stamp is determined. (For example, a picture of a flower with a stem will have the petal color seen as the primary hue of the overall image.) Next, the most highly saturated part of the picture is found. With "normal tinter", the range of hue used to do this starts out within ±18° of the pimary hue found in step 1. (If none can be found, it widens the range by 50% and tries again.)  Finally, the image is tinted.  Anything falling within 50% of the range (e.g., ±27°) is altered to have the hue of the color chosen by the user.                </dd>
 
                 <dt>
                   Narrow tinter &mdash; "<code><b>tinter=narrow</b></code>"
                 </dt>
 
                 <dd>
-                  This like the "<code>anyhue</code>" option, but with a narrower hue angle. (Hue range is ±6°, 9 replace.)                </dd>
+                  This like the "<code>normal</code>" option described above, but starts a narrower hue range of ±6°. Anything found within 50% of the range (e.g. ±9°) is tinted. If too much of your stamp is being tinted, try this option.                </dd>
+
+                <dt>
+                  'Any hue' tinter &mdash; "<code><b>tinter=anyhue</b></code>"
+                </dt>
+
+                <dd>
+                  This remaps <em>all</em> hues in the stamp. It works similarly to the "<code>anyhue</code>" and "<code>narrow</code>" options described above, but the hue range is ±180°.                </dd>
 
                 <dt>
                   Vector tinter &mdash; "<code><b>tinter=vector</b></code>"

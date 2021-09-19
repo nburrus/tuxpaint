@@ -26,7 +26,7 @@
       </p>
 
       <p>
-        septembre  6, 2021      </p>
+        septembre 19, 2021      </p>
     </center>
 
     <hr size="2"
@@ -612,21 +612,21 @@
                   Coloriage normal &mdash; "<code><b>tinter=normal</b></code>" (par défaut)                </dt>
 
                 <dd>
-                  C'est le mode normal pour teinter. (La gamme de teinte est de +/- 18°)                </dd>
-
-                <dt>
-                  Coloriage 'toutes tonalités' &mdash; "<code><b>tinter=anyhue</b></code>"
-                </dt>
-
-                <dd>
-                  Cela remappe toutes les teintes du tampon. (La plage de teinte est de ± 180°.)                </dd>
+                  This is the normal tinting mode. First, the primary hue of the stamp is determined. (For example, a picture of a flower with a stem will have the petal color seen as the primary hue of the overall image.) Next, the most highly saturated part of the picture is found. With "normal tinter", the range of hue used to do this starts out within ±18° of the pimary hue found in step 1. (If none can be found, it widens the range by 50% and tries again.)  Finally, the image is tinted.  Anything falling within 50% of the range (e.g., ±27°) is altered to have the hue of the color chosen by the user.                </dd>
 
                 <dt>
                   Coloriage étroit &mdash; "<code><b>tinter=narrow</b></code>"
                 </dt>
 
                 <dd>
-                  Cela ressemble à "<code>anyhue</code>", mais avec un angle de teinte plus étroit. (La gamme de teinte est de ± 6 °, 9 remplacer.)                </dd>
+                  This like the "<code>normal</code>" option described above, but starts a narrower hue range of ±6°. Anything found within 50% of the range (e.g. ±9°) is tinted. If too much of your stamp is being tinted, try this option.                </dd>
+
+                <dt>
+                  Coloriage 'toutes tonalités' &mdash; "<code><b>tinter=anyhue</b></code>"
+                </dt>
+
+                <dd>
+                  This remaps <em>all</em> hues in the stamp. It works similarly to the "<code>anyhue</code>" and "<code>narrow</code>" options described above, but the hue range is ±180°.                </dd>
 
                 <dt>
                   Coloriage vectoriel &mdash; "<code><b>tinter=vector</b></code>"

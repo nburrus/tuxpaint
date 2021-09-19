@@ -5,7 +5,7 @@
           Copyright © 2002-2021 by various contributors; see AUTHORS.
                             http://www.tuxpaint.org/
 
-                               septiembre 6, 2021
+                              septiembre 19, 2021
 
      ----------------------------------------------------------------------
 
@@ -426,15 +426,28 @@ Stamps
              one of the following lines to the stamp's data file:
 
              Normal tinter — "tinter=normal" (the default)
-                     This is the normal tinting mode. (Hue range is ±18°, 27
-                     replace.)
-
-             'Any hue' tinter — "tinter=anyhue"
-                     This remaps all hues in the stamp. (Hue range is ±180°.)
+                     This is the normal tinting mode. First, the primary hue
+                     of the stamp is determined. (For example, a picture of a
+                     flower with a stem will have the petal color seen as the
+                     primary hue of the overall image.) Next, the most highly
+                     saturated part of the picture is found. With "normal
+                     tinter", the range of hue used to do this starts out
+                     within ±18° of the pimary hue found in step 1. (If none
+                     can be found, it widens the range by 50% and tries
+                     again.) Finally, the image is tinted. Anything falling
+                     within 50% of the range (e.g., ±27°) is altered to have
+                     the hue of the color chosen by the user.
 
              Narrow tinter — "tinter=narrow"
-                     This like the "anyhue" option, but with a narrower hue
-                     angle. (Hue range is ±6°, 9 replace.)
+                     This like the "normal" option described above, but
+                     starts a narrower hue range of ±6°. Anything found
+                     within 50% of the range (e.g. ±9°) is tinted. If too
+                     much of your stamp is being tinted, try this option.
+
+             'Any hue' tinter — "tinter=anyhue"
+                     This remaps all hues in the stamp. It works similarly to
+                     the "anyhue" and "narrow" options described above, but
+                     the hue range is ±180°.)
 
              Vector tinter — "tinter=vector"
                      This maps 'black through white' to 'black through

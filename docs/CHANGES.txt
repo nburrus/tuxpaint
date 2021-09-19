@@ -85,6 +85,9 @@ $Id$
     * Moved Windows and macOS compilation instructions into main
       "Installation Documentation" (docs/.../INSTALL...).
 
+    * Expanded explanation of how stamp tinting modes work
+      in "Extending Tux Paint" documentation.
+
     * Documentation translation updates:
       + French translation
         Jacques Chion <jacques.chion@orange.fr>
