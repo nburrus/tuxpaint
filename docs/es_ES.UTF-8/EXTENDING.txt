@@ -447,7 +447,7 @@ Stamps
              'Any hue' tinter — "tinter=anyhue"
                      This remaps all hues in the stamp. It works similarly to
                      the "anyhue" and "narrow" options described above, but
-                     the hue range is ±180°.)
+                     the hue range is ±180°.
 
              Vector tinter — "tinter=vector"
                      This maps 'black through white' to 'black through
