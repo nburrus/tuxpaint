@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* Oct. 8, 2009 - September 6, 2021 */
+/* Oct. 8, 2009 - September 20, 2021 */
 
 
 /* Authors of the Magic tools: */
@@ -144,6 +144,10 @@ $tools = array(
   array('name'=>'Fold',
    'desc'=>'Click a corner of your picture and drag towards the center to fold it up like a piece of paper.',
    'author'=>array($AUTHOR_ADAMR, $AUTHOR_KENDRICK, $AUTHOR_PERE)),
+
+  array('name'=>'Fretwork',
+   'desc'=>'Draw an interlaced decorative design that looks like wooden fretwork.',
+   'author'=>$AUTHOR_PERE),
 
   array('name'=>'Glass Tile',
    'desc'=>'Click and drag over your picture to make it look like it\'s being seen through glass tiles.',
