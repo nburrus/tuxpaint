@@ -1,0 +1,5 @@
+                        Tux Paint "Magic" Tool: Fretwork
+
+               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+   Draw an interlaced decorative design that looks like wooden fretwork.

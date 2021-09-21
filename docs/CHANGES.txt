@@ -36,6 +36,10 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * WIP - Group Magic tools into sub-sections.
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/201/)
+      Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000005.
+
     * Rotational brushes now supported.  Unlike "directional"
       brushes, in which a 3x3 grid representing the 8 cardinal
       directions (45 degree steps) is used, only a single brush image

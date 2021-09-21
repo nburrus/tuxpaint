@@ -22,6 +22,7 @@
    * Flower
    * Foam
    * Fold
+   * Fretwork
    * Glass Tile
    * Grass
    * Halftone
