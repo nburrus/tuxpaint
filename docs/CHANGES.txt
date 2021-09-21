@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.18 (0.9.27)
+2021.September.20 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -119,6 +119,10 @@ $Id$
     * "Zoom" magic tool icon had weird artifacting. Mended.
 
     * "Halftone" magic tool had the "Zoom" tool's icon.
+
+    * Undo buffer canvases were not always the same dimensions
+      as the drawing surface, if buttonsize was adjusted.
+      (Adversely affected "Shift" magic tool.)
 
   * Ports & Building
     ----------------

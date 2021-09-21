@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 8, 2021
+  June 14, 2002 - September 20, 2021
 */
 
 #include "platform.h"
@@ -24408,6 +24408,7 @@ static void setup(void)
   SDL_Surface *tmp_surf;
   SDL_Rect dest;
   int scale;
+  int canvas_width, canvas_height;
 
 #ifndef LOW_QUALITY_COLOR_SELECTOR
   int x, y;
@@ -24899,18 +24900,20 @@ static void setup(void)
   cursor_tiny = get_cursor(tiny_bits, tiny_mask_bits, tiny_width, tiny_height, 3, 3);   /* Exactly the same in SMALL (16x16) size! */
 
 
-  //button_h * buttons_tall + r_ttools.h
   /* Create drawing canvas: */
 
-  canvas = SDL_CreateRGBSurface(screen->flags,
-                                WINDOW_WIDTH - r_ttools.w - r_ttoolopt.w,
-                                (button_h * buttons_tall) + r_ttools.h,
+  canvas_width = WINDOW_WIDTH - r_ttools.w - r_ttoolopt.w;
+  canvas_height = (button_h * buttons_tall) + r_ttools.h;
+
+#ifdef DEBUG
+  printf("Canvas size is %d x %d\n", canvas_width, canvas_height);
+#endif
+
+  canvas = SDL_CreateRGBSurface(screen->flags, canvas_width, canvas_height,
                                 screen->format->BitsPerPixel,
                                 screen->format->Rmask, screen->format->Gmask, screen->format->Bmask, 0);
 
-  save_canvas = SDL_CreateRGBSurface(screen->flags,
-                                     WINDOW_WIDTH - r_ttools.w - r_ttoolopt.w,
-                                     (button_h * buttons_tall) + r_ttools.h,
+  save_canvas = SDL_CreateRGBSurface(screen->flags, canvas_width, canvas_height,
                                      screen->format->BitsPerPixel,
                                      screen->format->Rmask, screen->format->Gmask, screen->format->Bmask, 0);
 
@@ -24970,9 +24973,7 @@ static void setup(void)
 
   for (i = 0; i < NUM_UNDO_BUFS; i++)
     {
-      undo_bufs[i] = SDL_CreateRGBSurface(screen->flags,
-                                          WINDOW_WIDTH - (r_ttools.w * 2),
-                                          (button_h * 7) + 40 + HEIGHTOFFSET,
+      undo_bufs[i] = SDL_CreateRGBSurface(screen->flags, canvas_width, canvas_height,
                                           screen->format->BitsPerPixel,
                                           screen->format->Rmask, screen->format->Gmask, screen->format->Bmask, 0);
 
