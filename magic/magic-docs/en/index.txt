@@ -35,6 +35,7 @@
    * Square Mosaic
    * Negative
    * Noise
+   * Opposite
    * Panels
    * Pattern
    * Perspective
