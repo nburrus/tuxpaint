@@ -4,7 +4,7 @@
   Rainbow Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2008 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: July 8, 2008
+  Last updated: September 21, 2021
   $Id$
 */
 
@@ -72,6 +72,7 @@ Uint32 rainbow_api_version(void);
 int rainbow_get_tool_count(magic_api * api);
 SDL_Surface *rainbow_get_icon(magic_api * api, int which);
 char *rainbow_get_name(magic_api * api, int which);
+int rainbow_get_group(magic_api * api, int which);
 char *rainbow_get_description(magic_api * api, int which, int mode);
 static void rainbow_linecb(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 
@@ -131,6 +132,12 @@ SDL_Surface *rainbow_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 char *rainbow_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Rainbow")));
+}
+
+// Return our group:
+int rainbow_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+{
+  return MAGIC_TYPE_PAINTING;
 }
 
 // Return our descriptions, localized:
