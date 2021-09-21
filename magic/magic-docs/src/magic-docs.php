@@ -154,6 +154,10 @@ $tools = array(
    'author'=>$AUTHOR_ALBERT,
    'see'=>'Flower'),
 
+  array('name'=>'Halftone',
+   'desc'=>'This makes parts of your picture look like newsprint. Different sizes of cyan, magenta, yellow, and black "ink" will appear in place of your picture.',
+   'author'=>$AUTHOR_KENDRICK),
+
   array('name'=>'Kaleidoscope',
    'desc'=>'This paint brush draws in four places at the same time, mirroring symmetrically, both horizontally and vertically.  It uses the currently selected color.',
    'author'=>$AUTHOR_KENDRICK,

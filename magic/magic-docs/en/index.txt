@@ -24,6 +24,7 @@
    * Fold
    * Glass Tile
    * Grass
+   * Halftone
    * Kaleidoscope
    * Light
    * Lighten
