@@ -29,6 +29,9 @@ $Id$
       color of the area of the picture being replaced, to give a
       "newsprint" effect.
 
+    * "TV" now breaks pixels into red/green/blue components,
+      rather than merely adding a 'scanline' effect.
+
     * "Halftone" and "Emboss" can now affect the entire image at once.
 
   * Other Improvements:
