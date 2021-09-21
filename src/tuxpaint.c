@@ -1390,6 +1390,7 @@ static void special_notify(int flags);
 typedef struct magic_funcs_s
 {
   int (*get_tool_count) (magic_api *);
+  int (*get_group) (magic_api *, int);
   char *(*get_name) (magic_api *, int);
   SDL_Surface *(*get_icon) (magic_api *, int);
   char *(*get_description) (magic_api *, int, int);
@@ -1415,6 +1416,7 @@ typedef struct magic_s
   int mode;                     /* Current mode (paint or fullscreen) */
   int avail_modes;              /* Available modes (paint &/or fullscreen) */
   int colors;                   /* Whether magic tool accepts colors */
+  int group;                    /* Which group of magic tools this lives in */
   char *name;                   /* Name of magic tool */
   char *tip[MAX_MODES];         /* Description of magic tool, in each possible mode */
   SDL_Surface *img_icon;
@@ -19106,6 +19108,10 @@ static void load_magic_plugins(void)
                           magic_funcs[num_plugin_files].get_tool_count =
                             SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
+                          safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname, "get_group");
+                          magic_funcs[num_plugin_files].get_group =
+                            SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
                           safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname, "get_name");
                           magic_funcs[num_plugin_files].get_name =
                             SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
@@ -19166,6 +19172,7 @@ static void load_magic_plugins(void)
                           //EP added (intptr_t) to avoid warning on x64 on all lines below
                           printf("get_tool_count = 0x%x\n",
                                  (int)(intptr_t) magic_funcs[num_plugin_files].get_tool_count);
+                          printf("get_group = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_group);
                           printf("get_name = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_name);
                           printf("get_icon = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_icon);
                           printf("get_description = 0x%x\n",
@@ -19189,6 +19196,11 @@ static void load_magic_plugins(void)
                           if (magic_funcs[num_plugin_files].get_tool_count == NULL)
                             {
                               fprintf(stderr, "Error: plugin %s is missing get_tool_count\n", fname);
+                              err = 1;
+                            }
+                          if (magic_funcs[num_plugin_files].get_group == NULL)
+                            {
+                              fprintf(stderr, "Error: plugin %s is missing get_group\n", fname);
                               err = 1;
                             }
                           if (magic_funcs[num_plugin_files].get_name == NULL)
@@ -19303,6 +19315,8 @@ static void load_magic_plugins(void)
                                       magics[num_magics].idx = i;
                                       magics[num_magics].place = plc;
                                       magics[num_magics].handle_idx = num_plugin_files;
+                                      magics[num_magics].group =
+                                        magic_funcs[num_plugin_files].get_group(magic_api_struct, i);
                                       magics[num_magics].name =
                                         magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
 
