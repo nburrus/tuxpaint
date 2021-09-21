@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-06 22:05-0700\n"
+"POT-Creation-Date: 2021-09-20 23:36-0700\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -509,7 +509,7 @@ msgstr "പുതിയ ചിത്രം"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8184
+#: ../tools.h:98 ../tuxpaint.c:8285
 msgid "Open"
 msgstr "തുറക്കുക"
 
@@ -633,227 +633,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "ശരി ഇനി. . .ഇതു തന്നെ വരയ്ക്കാം."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2192
+#: ../tuxpaint.c:2205
 msgid "Do you really want to quit?"
 msgstr "നിങ്ങള്‍ തീര്‍ച്ചയായും പോകാന്‍ ആഗ്രഹിക്കുന്നുവോ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2195
+#: ../tuxpaint.c:2208
 msgid "Yes, I’m done!"
 msgstr "ചെയ്തുകഴിഞ്ഞു!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
+#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
 msgid "No, take me back!"
 msgstr "തിരിച്ചുപോകൂ"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2202
+#: ../tuxpaint.c:2215
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ഇപ്പോള്‍ പുറത്തുപോയാല്‍ വരച്ചത് നഷ്ടപ്പെടും! സൂക്ഷിക്കണോ?"
 
-#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
+#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
 msgid "Yes, save it!"
 msgstr "ശരി, സൂക്ഷിയ്ക്കാം"
 
-#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
+#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
 msgid "No, don’t bother saving!"
 msgstr "ഇതിനെ സൂക്ഷിക്കേണ്ട."
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2207
+#: ../tuxpaint.c:2220
 msgid "Save your picture first?"
 msgstr "ആദ്യം നിങ്ങളുടെ ചിത്രം സൂക്ഷിയ്ക്കണോ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2212
+#: ../tuxpaint.c:2225
 msgid "Can’t open that picture!"
 msgstr "ചിത്രം തുറക്കാന്‍ സാധിക്കുന്നില്ല!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
-#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
+#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
 msgid "OK"
 msgstr "ശരി"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2219
+#: ../tuxpaint.c:2232
 msgid "There are no saved files!"
 msgstr "സംരക്ഷിച്ച ഫയലുകള്‍ ഇവിടെ ഇല്ല."
 
 #. Verification of print action
-#: ../tuxpaint.c:2223
+#: ../tuxpaint.c:2236
 msgid "Print your picture now?"
 msgstr "നിങ്ങളുടെ ചിത്രം ഇപ്പോള്‍ അച്ചടിക്കണോ?"
 
-#: ../tuxpaint.c:2224
+#: ../tuxpaint.c:2237
 msgid "Yes, print it!"
 msgstr "ശരി അച്ചടിച്ചു കൊള്ളു."
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2228
+#: ../tuxpaint.c:2241
 msgid "Your picture has been printed!"
 msgstr "നിങ്ങളുടെ ചിത്രം അച്ചടിച്ചുകഴിഞ്ഞു!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2232
+#: ../tuxpaint.c:2245
 msgid "Sorry! Your picture could not be printed!"
 msgstr "ക്ഷമിക്കണം. നിങ്ങളുടെ  ചിത്രം അച്ചടിക്കാനായില്ല."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2235
+#: ../tuxpaint.c:2248
 msgid "You can’t print yet!"
 msgstr "താങ്കള്‍ക്ക്  ഇപ്പോഴും അച്ചടിക്കാനാവില്ല"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2252
 msgid "Erase this picture?"
 msgstr "ഈ ചിത്രം മായ്ക്കണോ?"
 
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2253
 msgid "Yes, erase it!"
 msgstr "ശരി, മായ്ചുകോള്ളു!"
 
-#: ../tuxpaint.c:2241
+#: ../tuxpaint.c:2254
 msgid "No, don’t erase it!"
 msgstr "വേണ്ട, മായ്കേണ്ട!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2257
 msgid "Remember to use the left mouse button!"
 msgstr "മൗസിന്റെ ഇടത്തേ ബട്ടണ്‍ ഉപയോഗിക്കാന്‍ ഓര്‍മ്മിക്കണേ!."
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2261
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "നിങ്ങളുടെ ചിത്രം അച്ചടിച്ചുകഴിഞ്ഞു!"
 
-#: ../tuxpaint.c:2249
+#: ../tuxpaint.c:2262
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "നിങ്ങളുടെ ചിത്രം അച്ചടിച്ചുകഴിഞ്ഞു!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "ക്ഷമിക്കണം. നിങ്ങളുടെ  ചിത്രം അച്ചടിക്കാനായില്ല."
 
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2267
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "ക്ഷമിക്കണം. നിങ്ങളുടെ  ചിത്രം അച്ചടിക്കാനായില്ല."
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2271
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "നിങ്ങള്‍ക്ക് ഉചിതമായ ചിത്രം ലഭിയ്ക്കാന്‍ “പ്രദര്‍ശനം” അമര്‍ത്തുക "
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2467
+#: ../tuxpaint.c:2480
 msgid "Sound muted."
 msgstr "ശബ്ദം പോയി."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2472
+#: ../tuxpaint.c:2485
 msgid "Sound unmuted."
 msgstr "ശബ്ദം വരുത്തി"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3250
+#: ../tuxpaint.c:3263
 msgid "Please wait…"
 msgstr "അല്പനേരം ക്ഷമിക്കൂ. . ."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8187
+#: ../tuxpaint.c:8288
 msgid "Erase"
 msgstr "മായ്ക്കാം"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8190
+#: ../tuxpaint.c:8291
 msgid "Slides"
 msgstr "സ്ലൈഡുകള്‍"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8193
+#: ../tuxpaint.c:8294
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8196
+#: ../tuxpaint.c:8297
 msgid "Back"
 msgstr "തിരികെ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8199
+#: ../tuxpaint.c:8300
 msgid "Play"
 msgstr "പ്രദര്‍ശനം"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8202
+#: ../tuxpaint.c:8303
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8205
+#: ../tuxpaint.c:8306
 msgid "Next"
 msgstr "അടുത്തത്"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8971
+#: ../tuxpaint.c:9109
 msgid "Aa"
 msgstr "അആ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12636
+#: ../tuxpaint.c:12775
 msgid "Yes"
 msgstr "വേണം"
 
-#: ../tuxpaint.c:12640
+#: ../tuxpaint.c:12779
 msgid "No"
 msgstr "വേണ്ട"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13782
+#: ../tuxpaint.c:13922
 msgid "Replace the picture with your changes?"
 msgstr "നിങ്ങള്‍ വരച്ച ഈ ചിത്രം മാറ്റങ്ങളോടെ പകരം വെക്കുന്നോ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13786
+#: ../tuxpaint.c:13926
 msgid "Yes, replace the old one!"
 msgstr "ശരി, പകരം വച്ചുകോള്ളു!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13790
+#: ../tuxpaint.c:13930
 msgid "No, save a new file!"
 msgstr "വേണ്ട, പുതിയ ഒരു ഫയലായി സൂക്ഷിച്ചുകൊള്ളൂ."
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15053
+#: ../tuxpaint.c:15193
 msgid "Choose the picture you want, then click “Open”."
 msgstr "നിങ്ങള്‍ക്കു വേണ്ട ചിത്രം തിരഞ്ഞടുത്ത്  “തുറക്കുക”"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16479
+#: ../tuxpaint.c:16619
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24185
+#: ../tuxpaint.c:24337
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24197
+#: ../tuxpaint.c:24349
 msgid "Pick a color."
 msgstr "ഒരു നിറം തിരഞ്ഞെടുക്കൂ."
 
@@ -896,25 +896,25 @@ msgstr ""
 "ജനല്‍പ്പാളിക്കായി ചിത്രത്തിന്റെ വക്കില്‍ ക്ലിക്കുചെയ്യുക. പാളി തുറക്കാന്‍ മുകളിലേക്കോ താഴേക്കോ "
 "നീക്കുക"
 
-#: ../../magic/src/blocks_chalk_drip.c:129
+#: ../../magic/src/blocks_chalk_drip.c:130
 msgid "Blocks"
 msgstr "കട്ടകള്‍"
 
-#: ../../magic/src/blocks_chalk_drip.c:131
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Chalk"
 msgstr "വെണ്മയാര്‍ന്ന"
 
-#: ../../magic/src/blocks_chalk_drip.c:133
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Drip"
 msgstr "ഇറ്റിറ്റു വീഴുക"
 
-#: ../../magic/src/blocks_chalk_drip.c:142
+#: ../../magic/src/blocks_chalk_drip.c:149
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തില്‍ കട്ടകള്‍ വരയ്ക്കാനാവും."
 
-#: ../../magic/src/blocks_chalk_drip.c:144
+#: ../../magic/src/blocks_chalk_drip.c:151
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -922,7 +922,7 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "ചിത്രത്തെ വെണ്മയുള്ളതാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ മതി."
 
-#: ../../magic/src/blocks_chalk_drip.c:146
+#: ../../magic/src/blocks_chalk_drip.c:153
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
@@ -1024,31 +1024,31 @@ msgstr "എംബോസ് "
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "ചിത്രം എംബോസ് ചെയ്യുന്നതിനായി മൗസ് വലിച്ചമര്‍ത്തുക."
 
-#: ../../magic/src/fade_darken.c:114
+#: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
 msgstr "ഇളം നിറം"
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:117
 msgid "Darken"
 msgstr "കടും നിറം"
 
-#: ../../magic/src/fade_darken.c:127
+#: ../../magic/src/fade_darken.c:134
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "ചിത്രത്തെ ഇളം നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക.."
 
-#: ../../magic/src/fade_darken.c:129
+#: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ ഇളം നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/fade_darken.c:134
+#: ../../magic/src/fade_darken.c:141
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "ചിത്രത്തെ കടും നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക."
 
-#: ../../magic/src/fade_darken.c:136
+#: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ കടും നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
@@ -1085,15 +1085,17 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "ഒരു പശ്ചാത്തല നിറം തിരഞ്ഞടുത്ത് അമര്‍ത്തിയാല്‍ പേജിന്റെ മൂല ഉയര്‍ന്നു വരും."
 
-#: ../../magic/src/fretwork.c:176
+#: ../../magic/src/fretwork.c:182
 msgid "Fretwork"
 msgstr "Fretwork"
 
-#: ../../magic/src/fretwork.c:182
-msgid "Click and drag to draw repetitive patterns. "
+#: ../../magic/src/fretwork.c:188
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns. "
+msgid "Click and drag to draw repetitive patterns."
 msgstr "ഒരേപോലുള്ള പാറ്റേൺ ലഭിക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
-#: ../../magic/src/fretwork.c:184
+#: ../../magic/src/fretwork.c:190
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "മഴത്തുള്ളികള്‍ കൊണ്ട് മൂടാന്‍ അമര്‍ത്തുക"
 
@@ -1203,19 +1205,19 @@ msgstr "ലോഹപെയിന്റ്"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "ചിത്രത്തില്‍ ലോഹപെയിന്റ് കൊണ്ട് നിറം നല്‍കാനായി മൗസ് അമര്‍ത്തിവലിക്കുക."
 
-#: ../../magic/src/mirror_flip.c:110
+#: ../../magic/src/mirror_flip.c:111
 msgid "Mirror"
 msgstr "കണ്ണാടി"
 
-#: ../../magic/src/mirror_flip.c:112
+#: ../../magic/src/mirror_flip.c:113
 msgid "Flip"
 msgstr "തിരിക്കുക"
 
-#: ../../magic/src/mirror_flip.c:121
+#: ../../magic/src/mirror_flip.c:128
 msgid "Click to make a mirror image."
 msgstr "ബിംബചിത്ര നിര്‍മാണത്തിന് അമര്‍ത്തുക."
 
-#: ../../magic/src/mirror_flip.c:123
+#: ../../magic/src/mirror_flip.c:130
 msgid "Click to flip the picture upside-down."
 msgstr "ചിത്രത്തെ തലകീഴായി മറിക്കുന്നതിന് അമര്‍ത്തുക"
 
@@ -1334,29 +1336,29 @@ msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലി�
 msgid "Click to add noise to your entire picture."
 msgstr "ചിത്രത്തില്‍ ശബ്ദം നല്‍കുന്നതിന് അമര്‍ത്തുക."
 
-#: ../../magic/src/perspective.c:150
+#: ../../magic/src/perspective.c:151
 msgid "Perspective"
 msgstr "ദൃശ്യം"
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:152
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:153
 msgid "Zoom"
 msgstr "വലുതാക്കുക."
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:157
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "ചിത്രത്തിന്റെ മൂലകളില്‍ അമര്‍ത്തിവലിച്ചാല്‍ അതിനെ വലുതാക്കാനാവും."
 
-#: ../../magic/src/perspective.c:158
+#: ../../magic/src/perspective.c:159
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "ചിത്രത്തെ വിപരീതരൂപത്തിലാക്കാനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/perspective.c:160
+#: ../../magic/src/perspective.c:161
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രം വലുതാക്കുകയും ചെറുതാക്കുകയും ചെയ്യാം."
@@ -1619,17 +1621,17 @@ msgstr "ചുഴലിക്കാറ്റ്"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "ചിത്രത്തില്‍ ചുഴലിക്കാറ്റ് വരയ്ക്കാന്‍ ക്ലിക്ക് ചെയ്ത് വലിയ്ക്കുക"
 
-#: ../../magic/src/tv.c:96
+#: ../../magic/src/tv.c:98
 msgid "TV"
 msgstr "ടി.വി"
 
-#: ../../magic/src/tv.c:102
+#: ../../magic/src/tv.c:104
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr "ടെലിവിഷനില്‍ കാണുന്നതുപോലെ നിങ്ങളുടെ ചിത്രത്തെ മാറ്റാന്‍ മൗസിലമര്‍ത്തി വലിക്കുക."
 
-#: ../../magic/src/tv.c:105
+#: ../../magic/src/tv.c:107
 msgid "Click to make your picture look like it's on television."
 msgstr "നിങ്ങളുടെ ചിത്രം ടി. വിയില്‍ കാണുന്നതുപോലെയാക്കാന്‍ ക്ലിക്കുചെയ്യുക"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-06 22:05-0700\n"
+"POT-Creation-Date: 2021-09-20 23:36-0700\n"
 "PO-Revision-Date: 2017-12-19 06:38+0000\n"
 "Last-Translator: OdettePretorius <odettepret@gmail.com>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
@@ -503,7 +503,7 @@ msgstr "Nuwe"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8184
+#: ../tools.h:98 ../tuxpaint.c:8285
 msgid "Open"
 msgstr "Maak oop"
 
@@ -623,227 +623,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK... Kom ons teken verder op hierdie een!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2192
+#: ../tuxpaint.c:2205
 msgid "Do you really want to quit?"
 msgstr "Wil jy werklik afsluit?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2195
+#: ../tuxpaint.c:2208
 msgid "Yes, I’m done!"
 msgstr "Ja, ek is klaar!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2198 ../tuxpaint.c:2225
+#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
 msgid "No, take me back!"
 msgstr "Nee, vat my terug!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2202
+#: ../tuxpaint.c:2215
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "As jy ophou, sal jy die prent verloor. Wil jy dit eers bêre?"
 
-#: ../tuxpaint.c:2203 ../tuxpaint.c:2208
+#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
 msgid "Yes, save it!"
 msgstr "Ja, stoor dit!"
 
-#: ../tuxpaint.c:2204 ../tuxpaint.c:2209
+#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
 msgid "No, don’t bother saving!"
 msgstr "Nee, moenie stoor nie!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2207
+#: ../tuxpaint.c:2220
 msgid "Save your picture first?"
 msgstr "Wil jy eers die prent stoor?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2212
+#: ../tuxpaint.c:2225
 msgid "Can’t open that picture!"
 msgstr "Kan nie daardie prent oopmaak nie!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2215 ../tuxpaint.c:2220 ../tuxpaint.c:2229 ../tuxpaint.c:2236
-#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
+#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
 msgid "OK"
 msgstr "Goedso"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2219
+#: ../tuxpaint.c:2232
 msgid "There are no saved files!"
 msgstr "Daar is geen gestoorde lêers nie!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2223
+#: ../tuxpaint.c:2236
 msgid "Print your picture now?"
 msgstr "Wil jy nou die prent laat druk?"
 
-#: ../tuxpaint.c:2224
+#: ../tuxpaint.c:2237
 msgid "Yes, print it!"
 msgstr "Ja, laat dit druk!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2228
+#: ../tuxpaint.c:2241
 msgid "Your picture has been printed!"
 msgstr "Die prent is gedruk!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2232
+#: ../tuxpaint.c:2245
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Jammer, die prent kon nie gedruk word nie!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2235
+#: ../tuxpaint.c:2248
 msgid "You can’t print yet!"
 msgstr "Jy kan nog nie druk nie!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2239
+#: ../tuxpaint.c:2252
 msgid "Erase this picture?"
 msgstr "Vee hierdie prent uit?"
 
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2253
 msgid "Yes, erase it!"
 msgstr "Ja, vee dit uit!"
 
-#: ../tuxpaint.c:2241
+#: ../tuxpaint.c:2254
 msgid "No, don’t erase it!"
 msgstr "Nee, moenie dit uitvee nie!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2257
 msgid "Remember to use the left mouse button!"
 msgstr "Onthou om die linker-muisknoppie te gebruik!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2261
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Die prent is gedruk!"
 
-#: ../tuxpaint.c:2249
+#: ../tuxpaint.c:2262
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Die prent is gedruk!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Jammer, die prent kon nie gedruk word nie!"
 
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2267
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Jammer, die prent kon nie gedruk word nie!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2271
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Kies die prente wat jy wil hê en klik “Maak oop”."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2467
+#: ../tuxpaint.c:2480
 msgid "Sound muted."
 msgstr "Klank af."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2472
+#: ../tuxpaint.c:2485
 msgid "Sound unmuted."
 msgstr "Klank aan."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3250
+#: ../tuxpaint.c:3263
 msgid "Please wait…"
 msgstr "Wag asseblief…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8187
+#: ../tuxpaint.c:8288
 msgid "Erase"
 msgstr "Vee uit"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8190
+#: ../tuxpaint.c:8291
 msgid "Slides"
 msgstr "Skyfies"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8193
+#: ../tuxpaint.c:8294
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8196
+#: ../tuxpaint.c:8297
 msgid "Back"
 msgstr "Terug"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8199
+#: ../tuxpaint.c:8300
 msgid "Play"
 msgstr "Speel"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8202
+#: ../tuxpaint.c:8303
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8205
+#: ../tuxpaint.c:8306
 msgid "Next"
 msgstr "Volgende"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:8971
+#: ../tuxpaint.c:9109
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12636
+#: ../tuxpaint.c:12775
 msgid "Yes"
 msgstr "Ja"
 
-#: ../tuxpaint.c:12640
+#: ../tuxpaint.c:12779
 msgid "No"
 msgstr "Nee"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13782
+#: ../tuxpaint.c:13922
 msgid "Replace the picture with your changes?"
 msgstr "Vervang die prent met jou veranderinge?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13786
+#: ../tuxpaint.c:13926
 msgid "Yes, replace the old one!"
 msgstr "Ja, vervang die ou een!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13790
+#: ../tuxpaint.c:13930
 msgid "No, save a new file!"
 msgstr "Nee, stoor 'n nuwe lêer!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15053
+#: ../tuxpaint.c:15193
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies die prent wat jy wil hê en klik “Maak oop”."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16479
+#: ../tuxpaint.c:16619
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24185
+#: ../tuxpaint.c:24337
 msgid "Select a color from your drawing."
 msgstr "Kies 'n kleur van jou prentjie af."
 
-#: ../tuxpaint.c:24197
+#: ../tuxpaint.c:24349
 msgid "Pick a color."
 msgstr "Kies 'n kleur."
 
@@ -885,29 +885,29 @@ msgstr ""
 "Klik na aan die rand van die prent om vensterblindings oor dit te trek. "
 "Beweeg loodreg om die blindings oop of toe te maak."
 
-#: ../../magic/src/blocks_chalk_drip.c:129
+#: ../../magic/src/blocks_chalk_drip.c:130
 msgid "Blocks"
 msgstr "Blokke"
 
-#: ../../magic/src/blocks_chalk_drip.c:131
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Chalk"
 msgstr "Bordkryt"
 
-#: ../../magic/src/blocks_chalk_drip.c:133
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Drip"
 msgstr "Drup"
 
-#: ../../magic/src/blocks_chalk_drip.c:142
+#: ../../magic/src/blocks_chalk_drip.c:149
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Klik en beweeg die muis om die prent blokkerig te maak."
 
-#: ../../magic/src/blocks_chalk_drip.c:144
+#: ../../magic/src/blocks_chalk_drip.c:151
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg die muis om die prent na 'n bordkryt-tekening te verander."
 
-#: ../../magic/src/blocks_chalk_drip.c:146
+#: ../../magic/src/blocks_chalk_drip.c:153
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik en beweeg die muis om die prent te laat afdrup."
 
@@ -996,27 +996,27 @@ msgstr "Embosseer"
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik en sleep die muis om die prent te embosseer."
 
-#: ../../magic/src/fade_darken.c:114
+#: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
 msgstr "Maak ligter"
 
-#: ../../magic/src/fade_darken.c:116
+#: ../../magic/src/fade_darken.c:117
 msgid "Darken"
 msgstr "Maak donkerder"
 
-#: ../../magic/src/fade_darken.c:127
+#: ../../magic/src/fade_darken.c:134
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klik en beweeg die muis om gedeeltes van die prent ligter te maak."
 
-#: ../../magic/src/fade_darken.c:129
+#: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
 msgstr "Klik om die hele prent ligter te maak."
 
-#: ../../magic/src/fade_darken.c:134
+#: ../../magic/src/fade_darken.c:141
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klik en beweeg die muis om gedeeltes van die prent donkerder te maak."
 
-#: ../../magic/src/fade_darken.c:136
+#: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
 msgstr "Klik om die hele prent donkerder te maak."
 
@@ -1055,15 +1055,17 @@ msgid ""
 msgstr ""
 "Kies 'n agtergrondkleur en klik dan om die hoek van die bladsy om te vou."
 
-#: ../../magic/src/fretwork.c:176
+#: ../../magic/src/fretwork.c:182
 msgid "Fretwork"
 msgstr "Lys werk"
 
-#: ../../magic/src/fretwork.c:182
-msgid "Click and drag to draw repetitive patterns. "
+#: ../../magic/src/fretwork.c:188
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns. "
+msgid "Click and drag to draw repetitive patterns."
 msgstr "Klik en sleep om herhalende patrone te teken. "
 
-#: ../../magic/src/fretwork.c:184
+#: ../../magic/src/fretwork.c:190
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klik om herhalende patrone om die prent te maak."
 
@@ -1166,19 +1168,19 @@ msgstr "Metaalverf"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klik en sleep die muis om met metaalverf te verf."
 
-#: ../../magic/src/mirror_flip.c:110
+#: ../../magic/src/mirror_flip.c:111
 msgid "Mirror"
 msgstr "Spieël"
 
-#: ../../magic/src/mirror_flip.c:112
+#: ../../magic/src/mirror_flip.c:113
 msgid "Flip"
 msgstr "Keer om"
 
-#: ../../magic/src/mirror_flip.c:121
+#: ../../magic/src/mirror_flip.c:128
 msgid "Click to make a mirror image."
 msgstr "Klik om 'n spieëlbeeld te maak."
 
-#: ../../magic/src/mirror_flip.c:123
+#: ../../magic/src/mirror_flip.c:130
 msgid "Click to flip the picture upside-down."
 msgstr "Klik om die prent onderstebo te swaai."
 
@@ -1288,29 +1290,29 @@ msgstr ""
 msgid "Click to add noise to your entire picture."
 msgstr "Klik om geraas (spikkels) op die hele prent te maak."
 
-#: ../../magic/src/perspective.c:150
+#: ../../magic/src/perspective.c:151
 msgid "Perspective"
 msgstr "Perspektief"
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:152
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:153
 msgid "Zoom"
 msgstr "Zoem"
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:157
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klik op die hoeke en sleep na waar jy die prent wil rek."
 
-#: ../../magic/src/perspective.c:158
+#: ../../magic/src/perspective.c:159
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klik om die prent na sy negatief te verander."
 
-#: ../../magic/src/perspective.c:160
+#: ../../magic/src/perspective.c:161
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Klik en sleep die muis op om die prent in te zoem en sleep af om uit te zoem."
@@ -1562,18 +1564,18 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klik en sleep om 'n tornadotregter op die prent te teken."
 
-#: ../../magic/src/tv.c:96
+#: ../../magic/src/tv.c:98
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:102
+#: ../../magic/src/tv.c:104
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "Klik en sleep die muis dele van die prent te laat lyk asof dit op TV is."
 
-#: ../../magic/src/tv.c:105
+#: ../../magic/src/tv.c:107
 msgid "Click to make your picture look like it's on television."
 msgstr "Klik om die prent te laat lyk asof dit op TV is."
 
