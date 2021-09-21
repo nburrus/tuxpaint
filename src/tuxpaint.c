@@ -3618,6 +3618,11 @@ static void mainloop(void)
                         {
                           if (!disable_magic_controls)
                             {
+                              gd_controls.rows = 2;
+                              gd_controls.cols = 2;
+                            }
+                          else
+                            {
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3803,8 +3808,12 @@ static void mainloop(void)
                             }
                           else if (cur_tool == TOOL_MAGIC)
                             {
+                              /* Magic pagination */
+                              if (which == 0 || which == 1)
+                                printf("FIXME: Paginate!\n");
+
                               /* Magic controls! */
-                              if (which == 1 && magics[cur_magic].avail_modes & MODE_FULLSCREEN)
+                              if (which == 3 && magics[cur_magic].avail_modes & MODE_FULLSCREEN)
                                 {
                                   magic_switchout(canvas);
                                   magics[cur_magic].mode = MODE_FULLSCREEN;
@@ -3812,7 +3821,7 @@ static void mainloop(void)
                                   draw_magic();
                                   update_screen_rect(&r_toolopt);
                                 }
-                              else if (which == 0 && magics[cur_magic].avail_modes & MODE_PAINT)
+                              else if (which == 2 && magics[cur_magic].avail_modes & MODE_PAINT)
                                 {
                                   magic_switchout(canvas);
                                   magics[cur_magic].mode = MODE_PAINT;
@@ -3820,7 +3829,7 @@ static void mainloop(void)
                                   draw_magic();
                                   update_screen_rect(&r_toolopt);
                                 }
-                              else if (which == 0 && magics[cur_magic].avail_modes & MODE_PAINT_WITH_PREVIEW)
+                              else if (which == 2 && magics[cur_magic].avail_modes & MODE_PAINT_WITH_PREVIEW)
                                 {
                                   magic_switchout(canvas);
                                   magics[cur_magic].mode = MODE_PAINT_WITH_PREVIEW;
@@ -3828,7 +3837,7 @@ static void mainloop(void)
                                   draw_magic();
                                   update_screen_rect(&r_toolopt);
                                 }
-                              else if (which == 0 && magics[cur_magic].avail_modes & MODE_ONECLICK)
+                              else if (which == 2 && magics[cur_magic].avail_modes & MODE_ONECLICK)
                                 {
                                   magic_switchout(canvas);
                                   magics[cur_magic].mode = MODE_ONECLICK;
@@ -4934,6 +4943,11 @@ static void mainloop(void)
                         {
                           if (!disable_magic_controls)
                             {
+                              gd_controls.rows = 2;
+                              gd_controls.cols = 2;
+                            }
+                          else
+                            {
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -5394,8 +5408,12 @@ static void mainloop(void)
 
                   if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
 		    control_rows = 2;
-                  if (cur_tool == TOOL_MAGIC && !disable_magic_controls)
-		    control_rows = 1;
+                  if (cur_tool == TOOL_MAGIC)
+                    {
+		      control_rows = 1;
+                      if (!disable_magic_controls)
+                        control_rows = 2;
+                    }
                   if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
 		    control_rows = 1;
 		  int num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
@@ -8605,14 +8623,16 @@ static void draw_magic(void)
   int magic, i, max, off_y;
   SDL_Rect dest;
   int most;
+  SDL_Surface *button_color;
+  SDL_Surface *button_body;
 
   draw_image_title(TITLE_MAGIC, r_ttoolopt);
 
   /* How many can we show? */
 
-  most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - TOOLOFFSET; /* was 12 */
+  most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - TOOLOFFSET - 2;
   if (disable_magic_controls)
-    most = most + gd_toolopt.cols; /* was 14 */
+    most = most + gd_toolopt.cols;
 
   if (num_magics > most + TOOLOFFSET)
     {
@@ -8686,6 +8706,41 @@ static void draw_magic(void)
     }
 
 
+  /* Draw group pagination buttons: */
+
+  /* Show prev button: */
+
+  button_color = img_black;
+  button_body = img_btn_nav;
+
+  dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+  dest.y = r_ttoolopt.h + (((most + TOOLOFFSET) / 2) * button_h);
+
+  SDL_BlitSurface(button_body, NULL, screen, &dest);
+
+  dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_prev->w) / 2;
+  dest.y = (r_ttoolopt.h + (((most + TOOLOFFSET) / 2) * button_h) + (button_h - img_prev->h) / 2);
+
+  SDL_BlitSurface(button_color, NULL, img_prev, NULL);
+  SDL_BlitSurface(img_prev, NULL, screen, &dest);
+
+  /* Show next button: */
+
+  button_color = img_black;
+  button_body = img_btn_nav;
+
+  dest.x = WINDOW_WIDTH - button_w;
+  dest.y = r_ttoolopt.h + (((most + TOOLOFFSET) / gd_toolopt.cols) * button_h);
+
+  SDL_BlitSurface(button_body, NULL, screen, &dest);
+
+  dest.x = WINDOW_WIDTH - button_w + (button_w - img_next->w) / 2;
+  dest.y = (r_ttoolopt.h + (((most + TOOLOFFSET) / gd_toolopt.cols) * button_h) + (button_h - img_next->h) / 2);
+
+  SDL_BlitSurface(button_color, NULL, img_next, NULL);
+  SDL_BlitSurface(img_next, NULL, screen, &dest);
+
+
   /* Draw magic controls: */
 
   if (!disable_magic_controls)
@@ -8704,12 +8759,12 @@ static void draw_magic(void)
         button_color = img_btn_off;     /* Unavailable */
 
       dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h);
 
       SDL_BlitSurface(button_color, NULL, screen, &dest);
 
       dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_magic_paint->w) / 2;
-      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_magic_paint->h) / 2);
+      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h) + (button_h - img_magic_paint->h) / 2);
 
       SDL_BlitSurface(img_magic_paint, NULL, screen, &dest);
 
@@ -8724,12 +8779,12 @@ static void draw_magic(void)
         button_color = img_btn_off;     /* Unavailable */
 
       dest.x = WINDOW_WIDTH - button_w;
-      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h);
 
       SDL_BlitSurface(button_color, NULL, screen, &dest);
 
       dest.x = WINDOW_WIDTH - button_w + (button_w - img_magic_fullscreen->w) / 2;
-      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_magic_fullscreen->h) / 2);
+      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h) + (button_h - img_magic_fullscreen->h) / 2);
 
       SDL_BlitSurface(img_magic_fullscreen, NULL, screen, &dest);
     }
