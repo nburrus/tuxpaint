@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 18, 2021
+  Last updated: September 20, 2021
   $Id$
 */
 
@@ -43,6 +43,7 @@ int emboss_init(magic_api * api);
 int emboss_get_tool_count(magic_api * api);
 SDL_Surface *emboss_get_icon(magic_api * api, int which);
 char *emboss_get_name(magic_api * api, int which);
+int emboss_get_group(magic_api * api, int which);
 char *emboss_get_description(magic_api * api, int which, int mode);
 
 void emboss_drag(magic_api * api, int which, SDL_Surface * canvas,
@@ -99,6 +100,12 @@ SDL_Surface *emboss_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 char *emboss_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Emboss")));
+}
+
+// Return our groups:
+int emboss_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+{
+  return MAGIC_TYPE_DISTORTS;
 }
 
 // Return our descriptions, localized:

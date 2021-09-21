@@ -42,6 +42,7 @@ int tv_init(magic_api * api);
 int tv_get_tool_count(magic_api * api);
 SDL_Surface *tv_get_icon(magic_api * api, int which);
 char *tv_get_name(magic_api * api, int which);
+int tv_get_group(magic_api * api, int which);
 char *tv_get_description(magic_api * api, int which, int mode);
 int tv_requires_colors(magic_api * api, int which);
 void tv_release(magic_api * api, int which,
@@ -96,6 +97,11 @@ SDL_Surface *tv_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 char *tv_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return strdup(gettext_noop("TV"));
+}
+
+int tv_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+{
+  return MAGIC_TYPE_DISTORTS;
 }
 
 char *tv_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
