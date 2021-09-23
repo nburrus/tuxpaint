@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 20, 2021
+  June 14, 2002 - September 23, 2021
 */
 
 #include "platform.h"
@@ -3818,44 +3818,86 @@ static void mainloop(void)
                               grp = magic_group;
                               cur = cur_magic[grp];
 
-                              /* Magic pagination */
                               if (which == 0 || which == 1)
-                                printf("FIXME: Paginate!\n");
+                                {
+                                  int tries = 0;
 
-                              /* Magic controls! */
-                              if (which == 3 && magics[grp][cur].avail_modes & MODE_FULLSCREEN)
-                                {
-                                  magic_switchout(canvas);
-                                  magics[grp][cur].mode = MODE_FULLSCREEN;
-                                  magic_switchin(canvas);
+                                  /* Magic pagination */
+                                  do
+                                    {
+                                      tries++;
+
+                                      if (which == 0)
+                                        {
+                                          magic_group--;
+                                          if (magic_group < 0)
+                                            magic_group = MAX_MAGIC_GROUPS - 1;
+                                        }
+                                      else if (which == 1)
+                                        {
+                                          magic_group++;
+                                          if (magic_group >= MAX_MAGIC_GROUPS)
+                                            magic_group = 0;
+                                        }
+                                    }
+                                  while (num_magics[magic_group] == 0 && tries < MAX_MAGIC_GROUPS);
+
+                                  keybd_flag = 0;
+                                  cur_thing = cur_magic[magic_group];
+                                  num_things = num_magics[magic_group];
+                                  thing_scroll = &(magic_scroll[magic_group]);
+                                  magic_current_snd_ptr = NULL;
+
                                   draw_magic();
                                   update_screen_rect(&r_toolopt);
+
+                                  draw_colors(magics[magic_group][cur_thing].colors);
+    
+                                  if (magics[magic_group][cur_thing].colors)
+                                    magic_funcs[magics[magic_group][cur_thing].handle_idx].set_color(magic_api_struct,
+                                                                                                     color_hexes[cur_color][0],
+                                                                                                     color_hexes[cur_color][1],
+                                                                                                     color_hexes[cur_color][2]);
+
+                                  playsound(screen, 0, SND_CLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                                 }
-                              else if (which == 2 && magics[grp][cur].avail_modes & MODE_PAINT)
-                                {
-                                  magic_switchout(canvas);
-                                  magics[grp][cur].mode = MODE_PAINT;
-                                  magic_switchin(canvas);
-                                  draw_magic();
-                                  update_screen_rect(&r_toolopt);
+                              else
+                                { 
+                                  /* Magic controls! */
+                                  if (which == 3 && magics[grp][cur].avail_modes & MODE_FULLSCREEN)
+                                    {
+                                      magic_switchout(canvas);
+                                      magics[grp][cur].mode = MODE_FULLSCREEN;
+                                      magic_switchin(canvas);
+                                      draw_magic();
+                                      update_screen_rect(&r_toolopt);
+                                    }
+                                  else if (which == 2 && magics[grp][cur].avail_modes & MODE_PAINT)
+                                    {
+                                      magic_switchout(canvas);
+                                      magics[grp][cur].mode = MODE_PAINT;
+                                      magic_switchin(canvas);
+                                      draw_magic();
+                                      update_screen_rect(&r_toolopt);
+                                    }
+                                  else if (which == 2 && magics[grp][cur].avail_modes & MODE_PAINT_WITH_PREVIEW)
+                                    {
+                                      magic_switchout(canvas);
+                                      magics[grp][cur].mode = MODE_PAINT_WITH_PREVIEW;
+                                      magic_switchin(canvas);
+                                      draw_magic();
+                                      update_screen_rect(&r_toolopt);
+                                    }
+                                  else if (which == 2 && magics[grp][cur].avail_modes & MODE_ONECLICK)
+                                    {
+                                      magic_switchout(canvas);
+                                      magics[grp][cur].mode = MODE_ONECLICK;
+                                      magic_switchin(canvas);
+                                      draw_magic();
+                                      update_screen_rect(&r_toolopt);
+                                    }
+                                  /* FIXME: Sfx */
                                 }
-                              else if (which == 2 && magics[grp][cur].avail_modes & MODE_PAINT_WITH_PREVIEW)
-                                {
-                                  magic_switchout(canvas);
-                                  magics[grp][cur].mode = MODE_PAINT_WITH_PREVIEW;
-                                  magic_switchin(canvas);
-                                  draw_magic();
-                                  update_screen_rect(&r_toolopt);
-                                }
-                              else if (which == 2 && magics[grp][cur].avail_modes & MODE_ONECLICK)
-                                {
-                                  magic_switchout(canvas);
-                                  magics[grp][cur].mode = MODE_ONECLICK;
-                                  magic_switchin(canvas);
-                                  draw_magic();
-                                  update_screen_rect(&r_toolopt);
-                                }
-                              /* FIXME: Sfx */
                             }
                           else if (cur_tool == TOOL_SHAPES)
                             {

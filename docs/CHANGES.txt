@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.22 (0.9.27)
+2021.September.23 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -39,8 +39,15 @@ $Id$
 
   * Other Improvements:
     -------------------
-    * WIP - Group Magic tools into sub-sections.
-      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/201/)
+    * Grouped similar Magic tools into sections.
+      (e.g., all of the distortions, versus painting tools, versus
+      full-image effects, etc.)
+
+      Use the left/right pagination buttons that now appear at the
+      bottom of the selector (similar to those used with Stamps tool)
+      to switch between groups.
+
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/201/
       Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000005.
 
     * Rotational brushes now supported.  Unlike "directional"
