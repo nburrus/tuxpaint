@@ -4362,6 +4362,7 @@ static void mainloop(void)
 
                           if (cur_thing != cur)
                             {
+                              cur = cur_thing;
                               magic_switchout(canvas);
 
                               cur_magic[grp] = cur_thing;
