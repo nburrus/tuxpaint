@@ -54,6 +54,7 @@
    * Sharpen
    * Shift
    * Silhouette
+   * Smooth Rainbow
    * Smudge
    * Snow Ball
    * Snow Flake

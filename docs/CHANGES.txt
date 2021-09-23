@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.20 (0.9.27)
+2021.September.22 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Opposite" -- Change parts of the picture to their complementary
@@ -21,6 +21,9 @@ $Id$
       2x2 image, repeating the original.  (Repeat for "compound eye"
       style effects!)
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/204/)
+
+    * "Smooth Rainbow" - A smooth, gradient variation of the classic
+      "Rainbow" Magic tool.
 
   * Magic Tool Improvements:
     ------------------------

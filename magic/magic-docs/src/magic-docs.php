@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* Oct. 8, 2009 - September 20, 2021 */
+/* Oct. 8, 2009 - September 22, 2021 */
 
 
 /* Authors of the Magic tools: */
@@ -271,7 +271,8 @@ $tools = array(
 
   array('name'=>'Rainbow',
    'desc'=>'This is similar to the paint brush, but as you move the mouse around, it cycles through a spectrum of bright colors.',
-   'author'=>$AUTHOR_KENDRICK),
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>array('Smooth Rainbow')),
 
   array('name'=>'Real Rainbow',
    'desc'=>'Draw a transparent arc that looks like a real rainbow.',
@@ -303,6 +304,11 @@ $tools = array(
    'desc'=>'Trace the edges in your picture, over a black background.',
    'author'=>$AUTHOR_ANDREWC,
    'see'=>array('Edges', 'Emboss')),
+
+  array('name'=>'Smooth Rainbow',
+   'desc'=>'This is similar to Rainbow magic tool &mdash; as you move the mouse around, it cycles through a spectrum of colors &mdash; except the colors blend smoothly as you draw.',
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>array('Rainbow')),
 
   array('name'=>'Smudge',
    'desc'=>'This pushes the colors around under the mouse, like finger painting with wet paint.',
