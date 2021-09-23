@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 23:36-0700\n"
+"POT-Creation-Date: 2021-09-23 00:17-0700\n"
 "PO-Revision-Date: 2014-06-16 16:00+0000\n"
 "Last-Translator: Nuno MAGALHÃES <nunomagalhaes@eu.ipp.pt>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -499,7 +499,7 @@ msgstr "Nova"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8285
+#: ../tools.h:98 ../tuxpaint.c:8364
 msgid "Open"
 msgstr "Malfermi"
 
@@ -619,227 +619,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Bone… Ni plu desegnu ĉi tiun!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2209
 msgid "Do you really want to quit?"
 msgstr "Ĉu vi vere volas eliri?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2208
+#: ../tuxpaint.c:2212
 msgid "Yes, I’m done!"
 msgstr "Jes, mi finis!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2242
 msgid "No, take me back!"
 msgstr "Ne, mi volas daŭrigi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2215
+#: ../tuxpaint.c:2219
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Se vi eliros, via bildo perdiĝos! Ĉu vi volas konservi ĝin?"
 
-#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
+#: ../tuxpaint.c:2220 ../tuxpaint.c:2225
 msgid "Yes, save it!"
 msgstr "Jes, konservu ĝin!"
 
-#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
+#: ../tuxpaint.c:2221 ../tuxpaint.c:2226
 msgid "No, don’t bother saving!"
 msgstr "Ne, ne indas konservi ĝin!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2220
+#: ../tuxpaint.c:2224
 msgid "Save your picture first?"
 msgstr "Ĉu vi volas unue konservi vian nunan bildon?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2225
+#: ../tuxpaint.c:2229
 msgid "Can’t open that picture!"
 msgstr "Ne eblas malfermi tiun bildon!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
-#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
+#: ../tuxpaint.c:2232 ../tuxpaint.c:2237 ../tuxpaint.c:2246 ../tuxpaint.c:2253
+#: ../tuxpaint.c:2262 ../tuxpaint.c:2267
 msgid "OK"
 msgstr "Bone"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2232
+#: ../tuxpaint.c:2236
 msgid "There are no saved files!"
 msgstr "Ne estas konservitaj dosieroj!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2240
 msgid "Print your picture now?"
 msgstr "Ĉu printi vian bildon nun?"
 
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2241
 msgid "Yes, print it!"
 msgstr "Jes, printu ĝin!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2241
+#: ../tuxpaint.c:2245
 msgid "Your picture has been printed!"
 msgstr "Via bildo estis printita!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2245
+#: ../tuxpaint.c:2249
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Pardonon! Via bildo ne estis printita!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2252
 msgid "You can’t print yet!"
 msgstr "Vi ankoraŭ ne povas printi!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2256
 msgid "Erase this picture?"
 msgstr "Ĉu forviŝi ĉi tiun bildon?"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2257
 msgid "Yes, erase it!"
 msgstr "Jes, forviŝu ĝin!"
 
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2258
 msgid "No, don’t erase it!"
 msgstr "Ne, ne forviŝu ĝin!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2261
 msgid "Remember to use the left mouse button!"
 msgstr "Memoru uzi la maldekstran musbutonon!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2265
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Via bildo estis printita!"
 
-#: ../tuxpaint.c:2262
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Via bildo estis printita!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2270
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Pardonon! Via bildo ne estis printita!"
 
-#: ../tuxpaint.c:2267
+#: ../tuxpaint.c:2271
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Pardonon! Via bildo ne estis printita!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2271
+#: ../tuxpaint.c:2275
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku “Ludi”."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2484
 msgid "Sound muted."
 msgstr "Sono malŝaltita."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2489
 msgid "Sound unmuted."
 msgstr "Sono ŝaltita."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3263
+#: ../tuxpaint.c:3267
 msgid "Please wait…"
 msgstr "Bonvolu atendi…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8288
+#: ../tuxpaint.c:8367
 msgid "Erase"
 msgstr "Forviŝi"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8291
+#: ../tuxpaint.c:8370
 msgid "Slides"
 msgstr "Lumbildoj"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8294
+#: ../tuxpaint.c:8373
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8297
+#: ../tuxpaint.c:8376
 msgid "Back"
 msgstr "Reen"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8300
+#: ../tuxpaint.c:8379
 msgid "Play"
 msgstr "Ludi"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8303
+#: ../tuxpaint.c:8382
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8306
+#: ../tuxpaint.c:8385
 msgid "Next"
 msgstr "Sekva"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9109
+#: ../tuxpaint.c:9193
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12775
+#: ../tuxpaint.c:12859
 msgid "Yes"
 msgstr "Jes"
 
-#: ../tuxpaint.c:12779
+#: ../tuxpaint.c:12863
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13922
+#: ../tuxpaint.c:14009
 msgid "Replace the picture with your changes?"
 msgstr "Ĉu anstataŭigi la bildon per viaj ŝanĝoj?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13926
+#: ../tuxpaint.c:14013
 msgid "Yes, replace the old one!"
 msgstr "Jes, anstataŭigu la malnovan!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13930
+#: ../tuxpaint.c:14017
 msgid "No, save a new file!"
 msgstr "Ne, konservu je nova dosiero!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15193
+#: ../tuxpaint.c:15280
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Elektu la bildon, kiun vi volas, kaj alklaku “Malfermi”."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16619
+#: ../tuxpaint.c:16706
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24337
+#: ../tuxpaint.c:24450
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24349
+#: ../tuxpaint.c:24462
 msgid "Pick a color."
 msgstr "Elektu koloron."
 
@@ -860,22 +860,22 @@ msgstr "Desegnoprogramo por infanoj."
 msgid "Color Shift"
 msgstr "Kolorŝovo"
 
-#: ../../magic/src/alien.c:72
+#: ../../magic/src/alien.c:76
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la koloron en partoj de via bildo."
 
-#: ../../magic/src/alien.c:73
+#: ../../magic/src/alien.c:77
 msgid "Click to change the colors in your entire picture."
 msgstr "Alklaku por ŝanĝi la kolorojn je via tuta bildo."
 
-#: ../../magic/src/blind.c:115
+#: ../../magic/src/blind.c:116
 msgid "Blind"
 msgstr "Rulŝutro"
 
-#: ../../magic/src/blind.c:122
+#: ../../magic/src/blind.c:128
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -915,98 +915,98 @@ msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon en kretodesegnaĵon."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Alklaku kaj movu la muson por gutigi la bildon."
 
-#: ../../magic/src/blur.c:80
+#: ../../magic/src/blur.c:81
 msgid "Blur"
 msgstr "Ŝmiri"
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:89
 #, fuzzy
 #| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Alklaku kaj movu la muson por ŝmiri la bildon."
 
-#: ../../magic/src/blur.c:85
+#: ../../magic/src/blur.c:90
 msgid "Click to blur the entire image."
 msgstr "Klaku por ŝmiri la tutan bildon."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:120
+#: ../../magic/src/bricks.c:121
 msgid "Bricks"
 msgstr "Brikoj"
 
-#: ../../magic/src/bricks.c:127
+#: ../../magic/src/bricks.c:134
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Alklaku kaj movu por desegni brikegojn."
 
-#: ../../magic/src/bricks.c:129
+#: ../../magic/src/bricks.c:136
 #, fuzzy
 #| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Alklaku kaj movu por desegni briketojn."
 
-#: ../../magic/src/calligraphy.c:124
+#: ../../magic/src/calligraphy.c:125
 msgid "Calligraphy"
 msgstr "Kaligrafio"
 
-#: ../../magic/src/calligraphy.c:131
+#: ../../magic/src/calligraphy.c:138
 #, fuzzy
 #| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Alklaku kaj movu la muson por desegni kaligrafie."
 
-#: ../../magic/src/cartoon.c:103
+#: ../../magic/src/cartoon.c:104
 msgid "Cartoon"
 msgstr "Karikaturigi"
 
-#: ../../magic/src/cartoon.c:109
+#: ../../magic/src/cartoon.c:116
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Alklaku kaj movu la muson por ŝanĝi la bildon al karikaturo."
 
-#: ../../magic/src/checkerboard.c:99
+#: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:106
+#: ../../magic/src/checkerboard.c:112
 #, fuzzy
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "Alklaku kaj tiru por desegni ripetivajn figurojn."
 
-#: ../../magic/src/clone.c:132
+#: ../../magic/src/clone.c:133
 msgid "Clone"
 msgstr ""
 
-#: ../../magic/src/clone.c:138
+#: ../../magic/src/clone.c:145
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/confetti.c:83
+#: ../../magic/src/confetti.c:86
 msgid "Confetti"
 msgstr "Konfeto"
 
-#: ../../magic/src/confetti.c:88
+#: ../../magic/src/confetti.c:96
 msgid "Click to throw confetti!"
 msgstr "Alklaku por ĵeti konfeton!"
 
-#: ../../magic/src/distortion.c:134
+#: ../../magic/src/distortion.c:135
 msgid "Distortion"
 msgstr "Distordo"
 
-#: ../../magic/src/distortion.c:143
+#: ../../magic/src/distortion.c:152
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Alklaku kaj movu la muson por distordi vian bildon."
 
-#: ../../magic/src/emboss.c:101
+#: ../../magic/src/emboss.c:102
 #, fuzzy
 msgid "Emboss"
 msgstr "Bosado"
 
-#: ../../magic/src/emboss.c:107
+#: ../../magic/src/emboss.c:114
 #, fuzzy
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Alklaku kaj movu la muson por bosi la bildon."
@@ -1039,39 +1039,39 @@ msgstr "Alklaku kaj movu la muson por malheligi partojn de via bildo."
 msgid "Click to darken your entire picture."
 msgstr "Klaku  por malheligi vian tutan bildon."
 
-#: ../../magic/src/fisheye.c:101
+#: ../../magic/src/fisheye.c:102
 #, fuzzy
 msgid "Fisheye"
 msgstr "Fiŝokula"
 
-#: ../../magic/src/fisheye.c:106
+#: ../../magic/src/fisheye.c:112
 #, fuzzy
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Alklaku sur parto de via bildo por krei fiŝokulan efekton."
 
-#: ../../magic/src/flower.c:144
+#: ../../magic/src/flower.c:146
 msgid "Flower"
 msgstr "Floro"
 
-#: ../../magic/src/flower.c:150
+#: ../../magic/src/flower.c:158
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Alklaku kaj tiru la muson por desegni la tigon de floro. Ellasu por fini la "
 "floron."
 
-#: ../../magic/src/foam.c:114
+#: ../../magic/src/foam.c:115
 msgid "Foam"
 msgstr "Ŝaŭmo"
 
-#: ../../magic/src/foam.c:120
+#: ../../magic/src/foam.c:127
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Alklaku kaj movu la muson por kovri areon per ŝaŭmaj bobeloj."
 
-#: ../../magic/src/fold.c:103
+#: ../../magic/src/fold.c:104
 msgid "Fold"
 msgstr "Faldi"
 
-#: ../../magic/src/fold.c:108
+#: ../../magic/src/fold.c:114
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Elektu fonkoloron kaj alklaku por surfaldi paĝangulon."
@@ -1091,23 +1091,23 @@ msgstr "Alklaku kaj tiru por desegni ripetivajn figurojn."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klaku por kadrigi vian bildon per ripetivaj figuroj."
 
-#: ../../magic/src/glasstile.c:104
+#: ../../magic/src/glasstile.c:105
 msgid "Glass Tile"
 msgstr "Vitra Kaĥelo"
 
-#: ../../magic/src/glasstile.c:111
+#: ../../magic/src/glasstile.c:118
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Alklaku kaj movu la muson por surmeti vitrajn kaĥelojn sur via bildo."
 
-#: ../../magic/src/glasstile.c:113
+#: ../../magic/src/glasstile.c:120
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Alklaku la muson por kovri la tutan bildon per vitraj kaĥeloj."
 
-#: ../../magic/src/grass.c:107
+#: ../../magic/src/grass.c:108
 msgid "Grass"
 msgstr "Herbo"
 
-#: ../../magic/src/grass.c:113
+#: ../../magic/src/grass.c:120
 #, fuzzy
 #| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
@@ -1117,32 +1117,32 @@ msgstr "Alklaku kaj movu la muson por desegni herbon. Ne forgesu la teron!"
 msgid "Halftone"
 msgstr "Duontona"
 
-#: ../../magic/src/halftone.c:45
+#: ../../magic/src/halftone.c:49
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Klaku kaj tiru por ŝanĝi vian bildon al ĵurnalo."
 
-#: ../../magic/src/kalidescope.c:119
+#: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
 msgstr "Simetrie Maldekstre/Dekstre"
 
-#: ../../magic/src/kalidescope.c:123
+#: ../../magic/src/kalidescope.c:124
 msgid "Symmetric Up/Down"
 msgstr "Simetrie Supre/Malsupre"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Pattern"
 msgstr "Ŝablono"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Tiles"
 msgstr "Tegoloj"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Kaleidoscope"
 msgstr "Kalejdoskopo"
 
-#: ../../magic/src/kalidescope.c:146
+#: ../../magic/src/kalidescope.c:154
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -1150,7 +1150,7 @@ msgstr ""
 "Alklaku kaj movu la muson por desegni per simetriaj penikoj laŭ la flankoj "
 "de via bildo."
 
-#: ../../magic/src/kalidescope.c:152
+#: ../../magic/src/kalidescope.c:160
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -1158,12 +1158,12 @@ msgstr ""
 "Alklaku kaj movu la muson por desegni per du penikoj kiuj simetrias laŭ "
 "supra kaj malsupra parto de via bildo."
 
-#: ../../magic/src/kalidescope.c:156
+#: ../../magic/src/kalidescope.c:164
 #, fuzzy
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Alklaku kaj movu la muson desegni ŝablonon laŭ la bildo."
 
-#: ../../magic/src/kalidescope.c:160
+#: ../../magic/src/kalidescope.c:168
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw a pattern plus its symmetric across the "
@@ -1176,25 +1176,25 @@ msgstr ""
 "bildo."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:164
+#: ../../magic/src/kalidescope.c:172
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Alklaku kaj movu la muson por desegni per simetriaj penikoj (kalejdoskopo)."
 
-#: ../../magic/src/light.c:103
+#: ../../magic/src/light.c:104
 msgid "Light"
 msgstr "Lumo"
 
-#: ../../magic/src/light.c:109
+#: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Alklaku kaj movu la muson por desegni lumradion sur via bildo."
 
-#: ../../magic/src/metalpaint.c:98
+#: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
 msgstr "Metala farbo"
 
-#: ../../magic/src/metalpaint.c:105
+#: ../../magic/src/metalpaint.c:112
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Alklaku kaj movu la muson por farbi per metaleca koloro."
 
@@ -1214,11 +1214,11 @@ msgstr "Klaku por fari spegulbildon."
 msgid "Click to flip the picture upside-down."
 msgstr "Klaku por renversi la bildon."
 
-#: ../../magic/src/mosaic.c:96
+#: ../../magic/src/mosaic.c:97
 msgid "Mosaic"
 msgstr "Mozaiko"
 
-#: ../../magic/src/mosaic.c:100
+#: ../../magic/src/mosaic.c:105
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1227,23 +1227,23 @@ msgid ""
 msgstr ""
 "Klaku kaj tiru la muson por aldoni mozaikefekton al partoj de via bildo."
 
-#: ../../magic/src/mosaic.c:101
+#: ../../magic/src/mosaic.c:106
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Klaku kaj tiru la muson por aldoni mozaikefekton al la tuta bildo."
 
-#: ../../magic/src/mosaic_shaped.c:132
+#: ../../magic/src/mosaic_shaped.c:133
 msgid "Square Mosaic"
 msgstr "Kvadrata Mozaiko"
 
-#: ../../magic/src/mosaic_shaped.c:133
+#: ../../magic/src/mosaic_shaped.c:134
 msgid "Hexagon Mosaic"
 msgstr "Sesangula Mozaiko"
 
-#: ../../magic/src/mosaic_shaped.c:134
+#: ../../magic/src/mosaic_shaped.c:135
 msgid "Irregular Mosaic"
 msgstr "Meregula Mozaiko"
 
-#: ../../magic/src/mosaic_shaped.c:140
+#: ../../magic/src/mosaic_shaped.c:141
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -1252,11 +1252,11 @@ msgid ""
 msgstr ""
 "Klaku kaj tiru la muson por aldoni kvadratan mozaikon al partoj de via bildo."
 
-#: ../../magic/src/mosaic_shaped.c:141
+#: ../../magic/src/mosaic_shaped.c:142
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klaku por aldoni kvadratan mozaikon al la tuta bildo."
 
-#: ../../magic/src/mosaic_shaped.c:145
+#: ../../magic/src/mosaic_shaped.c:146
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -1267,12 +1267,12 @@ msgstr ""
 "Klaku kaj tiru la muson por aldoni sesangulan mozaikon al partoj de via "
 "bildo."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:147
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "Klaku kaj tiru la muson por aldoni sesangulan mozaikon al la tuta bildo."
 
-#: ../../magic/src/mosaic_shaped.c:150
+#: ../../magic/src/mosaic_shaped.c:151
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -1282,29 +1282,29 @@ msgid ""
 msgstr ""
 "Klaku kaj tiru la muson por aldoni neregulan mozaikon al partoj de via bildo."
 
-#: ../../magic/src/mosaic_shaped.c:151
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klaku por aldoni neregulan mozaikon al via tuta bildo."
 
-#: ../../magic/src/negative.c:72
+#: ../../magic/src/negative.c:73
 msgid "Negative"
 msgstr "Kliŝo"
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:74
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Alklaku kaj movu la muson por fari kliŝigi vian bildon."
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Click to turn your painting into its negative."
 msgstr "Klaku por ŝanĝi la bildon al sia kliŝo."
 
-#: ../../magic/src/negative.c:82
+#: ../../magic/src/negative.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -1314,7 +1314,7 @@ msgid ""
 "complementary colors."
 msgstr "Alklaku kaj movu la muson por ŝanĝi kolorojn de partoj de via bildo."
 
-#: ../../magic/src/negative.c:83
+#: ../../magic/src/negative.c:84
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -1324,13 +1324,13 @@ msgstr ""
 msgid "Noise"
 msgstr "Bruo"
 
-#: ../../magic/src/noise.c:70
+#: ../../magic/src/noise.c:74
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Alklaku kaj movu la muson por aldoni bruon al partoj de via bildon."
 
-#: ../../magic/src/noise.c:71
+#: ../../magic/src/noise.c:75
 msgid "Click to add noise to your entire picture."
 msgstr "Klaku bruigi la tutan bildo."
 
@@ -1360,42 +1360,47 @@ msgstr "Klaku por ŝanĝi la bildon al sia kliŝo."
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Alklaku kaj tiru supren por enzomi aŭ malsupren por elzomi la bildon."
 
-#. Both are named "Pixels", at the moment:
-#: ../../magic/src/pixels.c:108
+#: ../../magic/src/pixels.c:107
 msgid "Pixels"
 msgstr ""
 
-#: ../../magic/src/pixels.c:114
+#: ../../magic/src/pixels.c:119
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large pixels."
 msgstr "Alklaku kaj movu por desegni brikegojn."
 
-#: ../../magic/src/puzzle.c:103
+#: ../../magic/src/puzzle.c:106
 msgid "Puzzle"
 msgstr "Puzlo"
 
-#: ../../magic/src/puzzle.c:110
+#: ../../magic/src/puzzle.c:118
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "Alklaku la parton de via bildo kie vi deziras la puzlon."
 
-#: ../../magic/src/puzzle.c:111
+#: ../../magic/src/puzzle.c:119
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Klaku por fari puzlon tutekrane."
 
-#: ../../magic/src/rails.c:129
+#: ../../magic/src/rails.c:131
 msgid "Rails"
 msgstr "Reloj"
 
-#: ../../magic/src/rails.c:134
+#: ../../magic/src/rails.c:141
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Alklaku kaj movu la muson por desegni trajnrelojn en via bildo."
 
-#: ../../magic/src/rainbow.c:133
+#: ../../magic/src/rainbow.c:138
 msgid "Rainbow"
 msgstr "Ĉielarko"
 
-#: ../../magic/src/rainbow.c:139
+#: ../../magic/src/rainbow.c:140
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Smooth Rainbow"
+msgstr "Ĉielarko"
+
+#: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
 msgstr "Vi povas desegni per ĉielarkaj koloroj!"
 
@@ -1403,23 +1408,23 @@ msgstr "Vi povas desegni per ĉielarkaj koloroj!"
 msgid "Rain"
 msgstr "Pluvo"
 
-#: ../../magic/src/rain.c:72
+#: ../../magic/src/rain.c:76
 msgid "Click to place a rain drop onto your picture."
 msgstr "Klaku por aldoni pluvguton al via bildo."
 
-#: ../../magic/src/rain.c:73
+#: ../../magic/src/rain.c:77
 msgid "Click to cover your picture with rain drops."
 msgstr "Klaku por plenigi vian bildon je pluvgutoj."
 
-#: ../../magic/src/realrainbow.c:98
+#: ../../magic/src/realrainbow.c:99
 msgid "Real Rainbow"
 msgstr "Vera ĉielarko"
 
-#: ../../magic/src/realrainbow.c:100
+#: ../../magic/src/realrainbow.c:101
 msgid "ROYGBIV Rainbow"
 msgstr "ROFVBIV-a ĉielarko"
 
-#: ../../magic/src/realrainbow.c:108
+#: ../../magic/src/realrainbow.c:114
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -1427,27 +1432,27 @@ msgstr ""
 "Alklaku tie, kie vo volas ke la ĉielarko komencu, tiru la muson ĝis tie, kie "
 "vi volas ke ĝi finu, kaj ellasu por desegni ĉielarkon."
 
-#: ../../magic/src/ripples.c:102
+#: ../../magic/src/ripples.c:103
 msgid "Ripples"
 msgstr "Ondetoj"
 
-#: ../../magic/src/ripples.c:108
+#: ../../magic/src/ripples.c:115
 msgid "Click to make ripples appear over your picture."
 msgstr "Alklaku por aperigi ondetojn sur via bildo."
 
-#: ../../magic/src/rosette.c:115
+#: ../../magic/src/rosette.c:118
 msgid "Rosette"
 msgstr "Rozeto"
 
-#: ../../magic/src/rosette.c:117
+#: ../../magic/src/rosette.c:120
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:123
+#: ../../magic/src/rosette.c:131
 msgid "Click and start drawing your rosette."
 msgstr "Klaku kaj ekdesegnu vian rozeton."
 
-#: ../../magic/src/rosette.c:125
+#: ../../magic/src/rosette.c:133
 msgid "You can draw just like Picasso!"
 msgstr "Vi povas desegni tiel, kiel Picasso!"
 
@@ -1493,31 +1498,31 @@ msgstr "Alklaku kaj movu la muson por krei nigroblankan silueton."
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Alklaku la muson por krei nigroblankan silueton de la tuta bildo."
 
-#: ../../magic/src/shift.c:106
+#: ../../magic/src/shift.c:107
 msgid "Shift"
 msgstr "Ŝovi"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:119
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Alklaku kaj movu la muson por ŝovi vian bildon sur la tolo."
 
-#: ../../magic/src/smudge.c:102
+#: ../../magic/src/smudge.c:103
 msgid "Smudge"
 msgstr "Stompi"
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:104
+#: ../../magic/src/smudge.c:105
 msgid "Wet Paint"
 msgstr "Mokra farbo."
 
-#: ../../magic/src/smudge.c:111
+#: ../../magic/src/smudge.c:121
 #, fuzzy
 #| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Alklaku kaj movu la muson por stompi la bildon."
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:113
+#: ../../magic/src/smudge.c:123
 #, fuzzy
 #| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
@@ -1551,7 +1556,7 @@ msgstr "Fadena angulo"
 msgid "String 'V'"
 msgstr "Fadena 'V'"
 
-#: ../../magic/src/string.c:147
+#: ../../magic/src/string.c:151
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -1559,11 +1564,11 @@ msgstr ""
 "Alklaku kaj tiru por desengi fadenarton. Tiru supr-malsupren por desegni pli "
 "aŭ malpli da fadenoj, desktr-maldekstren por grandigi truon."
 
-#: ../../magic/src/string.c:150
+#: ../../magic/src/string.c:154
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Alklaku kaj movu la muson por desegni sagojn per fadenarto."
 
-#: ../../magic/src/string.c:153
+#: ../../magic/src/string.c:157
 msgid "Draw string art arrows with free angles."
 msgstr "Desegnu fadenartajn sagojn per liberaj anguloj."
 
@@ -1609,42 +1614,42 @@ msgstr "Alklaku por ŝanĝi la tutan bildon al blanka kaj koloro kiun vi elektu.
 msgid "Toothpaste"
 msgstr "Dentopasto"
 
-#: ../../magic/src/toothpaste.c:72
+#: ../../magic/src/toothpaste.c:76
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Alklaku kaj movu la muson por ĵeti dentopaston al via bildo."
 
-#: ../../magic/src/tornado.c:153
+#: ../../magic/src/tornado.c:154
 msgid "Tornado"
 msgstr "Tornado"
 
-#: ../../magic/src/tornado.c:159
+#: ../../magic/src/tornado.c:166
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Alklaku kaj movu la muson por desegni tornadan funelon sur via bildo."
 
-#: ../../magic/src/tv.c:98
+#: ../../magic/src/tv.c:99
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:104
+#: ../../magic/src/tv.c:110
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "Alklaku kaj movu la muson por ŝajnigi partojn de via bildo kvazaŭ televide."
 
-#: ../../magic/src/tv.c:107
+#: ../../magic/src/tv.c:113
 msgid "Click to make your picture look like it's on television."
 msgstr "Alklaku por Ŝajnigi vian bildon kvazaŭ ĝi estu televide."
 
-#: ../../magic/src/waves.c:104
+#: ../../magic/src/waves.c:111
 msgid "Waves"
 msgstr "Ondoj"
 
-#: ../../magic/src/waves.c:106
+#: ../../magic/src/waves.c:113
 msgid "Wavelets"
 msgstr "Ondetoj"
 
-#: ../../magic/src/waves.c:115
+#: ../../magic/src/waves.c:122
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -1654,7 +1659,7 @@ msgstr ""
 "ondoj, malsupren por pli altaj ondoj, maldekstren por ondetoj, dekstren por "
 "longaj ondoj."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -1664,17 +1669,17 @@ msgstr ""
 "malsupren por pli altaj ondoj, maldekstren por ondetoj, dekstren por longaj "
 "ondoj."
 
-#: ../../magic/src/xor.c:93
+#: ../../magic/src/xor.c:92
 #, fuzzy
 msgid "Xor Colors"
 msgstr "Xor-aj Koloroj"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:103
 #, fuzzy
 msgid "Click and drag to draw a XOR effect"
 msgstr "Alklaku kaj movu la muson por desegni XOR-an efekton."
 
-#: ../../magic/src/xor.c:101
+#: ../../magic/src/xor.c:105
 #, fuzzy
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Klaku por desengi XOR-an efekton je la tuta bildo."

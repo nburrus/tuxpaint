@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 23:36-0700\n"
+"POT-Creation-Date: 2021-09-23 00:17-0700\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -480,7 +480,7 @@ msgstr "Oshki"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8285
+#: ../tools.h:98 ../tuxpaint.c:8364
 msgid "Open"
 msgstr "Nasaakose"
 
@@ -594,235 +594,235 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2209
 msgid "Do you really want to quit?"
 msgstr "Boonitaan?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2208
+#: ../tuxpaint.c:2212
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Eha!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2242
 msgid "No, take me back!"
 msgstr "Gaawin!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2215
+#: ../tuxpaint.c:2219
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Maawanjitoon?"
 
-#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
+#: ../tuxpaint.c:2220 ../tuxpaint.c:2225
 msgid "Yes, save it!"
 msgstr "Eha, maawanjitoon!"
 
-#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
+#: ../tuxpaint.c:2221 ../tuxpaint.c:2226
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Gaawin!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2220
+#: ../tuxpaint.c:2224
 msgid "Save your picture first?"
 msgstr "Maawanjitoon?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2225
+#: ../tuxpaint.c:2229
 msgid "Can’t open that picture!"
 msgstr ""
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
-#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
+#: ../tuxpaint.c:2232 ../tuxpaint.c:2237 ../tuxpaint.c:2246 ../tuxpaint.c:2253
+#: ../tuxpaint.c:2262 ../tuxpaint.c:2267
 msgid "OK"
 msgstr "Haaw"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2232
+#: ../tuxpaint.c:2236
 msgid "There are no saved files!"
 msgstr ""
 
 #. Verification of print action
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2240
 msgid "Print your picture now?"
 msgstr "Mazinaakizan?"
 
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2241
 msgid "Yes, print it!"
 msgstr "Eha, mazinaakizan!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2241
+#: ../tuxpaint.c:2245
 msgid "Your picture has been printed!"
 msgstr "Mazinaakizigewin"
 
 #. We got an error printing
-#: ../tuxpaint.c:2245
+#: ../tuxpaint.c:2249
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Mazinaakizigewin"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2252
 msgid "You can’t print yet!"
 msgstr ""
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2256
 msgid "Erase this picture?"
 msgstr "Gaasiibii'an?"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2257
 msgid "Yes, erase it!"
 msgstr "Eha, gaasiibii'an!"
 
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2258
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Gaawin!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2261
 msgid "Remember to use the left mouse button!"
 msgstr ""
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2265
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Mazinaakizigewin"
 
-#: ../tuxpaint.c:2262
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Mazinaakizigewin"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2270
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Mazinaakizigewin"
 
-#: ../tuxpaint.c:2267
+#: ../tuxpaint.c:2271
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Mazinaakizigewin"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2271
+#: ../tuxpaint.c:2275
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2484
 msgid "Sound muted."
 msgstr "Bizaanabi'win"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2489
 msgid "Sound unmuted."
 msgstr "Madwewechigewin"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3263
+#: ../tuxpaint.c:3267
 msgid "Please wait…"
 msgstr "Bekaa akawe"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8288
+#: ../tuxpaint.c:8367
 msgid "Erase"
 msgstr "Gaasiibii'an"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8291
+#: ../tuxpaint.c:8370
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8294
+#: ../tuxpaint.c:8373
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8297
+#: ../tuxpaint.c:8376
 msgid "Back"
 msgstr "Neyaab"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8300
+#: ../tuxpaint.c:8379
 msgid "Play"
 msgstr "Mamaanjinojin"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8303
+#: ../tuxpaint.c:8382
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8306
+#: ../tuxpaint.c:8385
 msgid "Next"
 msgstr "Mii dash"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9109
+#: ../tuxpaint.c:9193
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12775
+#: ../tuxpaint.c:12859
 msgid "Yes"
 msgstr "Haaw"
 
-#: ../tuxpaint.c:12779
+#: ../tuxpaint.c:12863
 msgid "No"
 msgstr "Gaawin"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:13922
+#: ../tuxpaint.c:14009
 msgid "Replace the picture with your changes?"
 msgstr "Naabishkaw"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:13926
+#: ../tuxpaint.c:14013
 msgid "Yes, replace the old one!"
 msgstr "Haaw, naabishkaw"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:13930
+#: ../tuxpaint.c:14017
 msgid "No, save a new file!"
 msgstr "Gaawin, oshki!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15193
+#: ../tuxpaint.c:15280
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16619
+#: ../tuxpaint.c:16706
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24337
+#: ../tuxpaint.c:24450
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24349
+#: ../tuxpaint.c:24462
 msgid "Pick a color."
 msgstr "Onaabandan"
 
@@ -844,21 +844,21 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Mamaajii"
 
-#: ../../magic/src/alien.c:72
+#: ../../magic/src/alien.c:76
 #, fuzzy
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/alien.c:73
+#: ../../magic/src/alien.c:77
 #, fuzzy
 msgid "Click to change the colors in your entire picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/blind.c:115
+#: ../../magic/src/blind.c:116
 msgid "Blind"
 msgstr ""
 
-#: ../../magic/src/blind.c:122
+#: ../../magic/src/blind.c:128
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -892,94 +892,94 @@ msgstr "Waabizo"
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Waabizo"
 
-#: ../../magic/src/blur.c:80
+#: ../../magic/src/blur.c:81
 msgid "Blur"
 msgstr "Biigizawinam"
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:89
 #, fuzzy
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Waabizo"
 
-#: ../../magic/src/blur.c:85
+#: ../../magic/src/blur.c:90
 #, fuzzy
 msgid "Click to blur the entire image."
 msgstr "Waabimoojichaagwaazo"
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:120
+#: ../../magic/src/bricks.c:121
 msgid "Bricks"
 msgstr "Miskwaasinike"
 
-#: ../../magic/src/bricks.c:127
+#: ../../magic/src/bricks.c:134
 #, fuzzy
 msgid "Click and drag to draw large bricks."
 msgstr "Waabizo"
 
-#: ../../magic/src/bricks.c:129
+#: ../../magic/src/bricks.c:136
 #, fuzzy
 msgid "Click and drag to draw small bricks."
 msgstr "Waabizo"
 
-#: ../../magic/src/calligraphy.c:124
+#: ../../magic/src/calligraphy.c:125
 msgid "Calligraphy"
 msgstr "Ozhibii'igewin"
 
-#: ../../magic/src/calligraphy.c:131
+#: ../../magic/src/calligraphy.c:138
 #, fuzzy
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Waabizo"
 
-#: ../../magic/src/cartoon.c:103
+#: ../../magic/src/cartoon.c:104
 msgid "Cartoon"
 msgstr ""
 
-#: ../../magic/src/cartoon.c:109
+#: ../../magic/src/cartoon.c:116
 #, fuzzy
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Waabizo"
 
-#: ../../magic/src/checkerboard.c:99
+#: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:106
+#: ../../magic/src/checkerboard.c:112
 #, fuzzy
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "Waabizo"
 
-#: ../../magic/src/clone.c:132
+#: ../../magic/src/clone.c:133
 msgid "Clone"
 msgstr ""
 
-#: ../../magic/src/clone.c:138
+#: ../../magic/src/clone.c:145
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/confetti.c:83
+#: ../../magic/src/confetti.c:86
 msgid "Confetti"
 msgstr ""
 
-#: ../../magic/src/confetti.c:88
+#: ../../magic/src/confetti.c:96
 msgid "Click to throw confetti!"
 msgstr ""
 
-#: ../../magic/src/distortion.c:134
+#: ../../magic/src/distortion.c:135
 msgid "Distortion"
 msgstr ""
 
-#: ../../magic/src/distortion.c:143
+#: ../../magic/src/distortion.c:152
 #, fuzzy
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/emboss.c:101
+#: ../../magic/src/emboss.c:102
 msgid "Emboss"
 msgstr "Mazinikiwaga'igan"
 
-#: ../../magic/src/emboss.c:107
+#: ../../magic/src/emboss.c:114
 msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 
@@ -1011,35 +1011,35 @@ msgstr "Waabizo"
 msgid "Click to darken your entire picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/fisheye.c:101
+#: ../../magic/src/fisheye.c:102
 msgid "Fisheye"
 msgstr ""
 
-#: ../../magic/src/fisheye.c:106
+#: ../../magic/src/fisheye.c:112
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
 
-#: ../../magic/src/flower.c:144
+#: ../../magic/src/flower.c:146
 msgid "Flower"
 msgstr "Waabigwan"
 
-#: ../../magic/src/flower.c:150
+#: ../../magic/src/flower.c:158
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 
-#: ../../magic/src/foam.c:114
+#: ../../magic/src/foam.c:115
 msgid "Foam"
 msgstr "Biite"
 
-#: ../../magic/src/foam.c:120
+#: ../../magic/src/foam.c:127
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 
-#: ../../magic/src/fold.c:103
+#: ../../magic/src/fold.c:104
 msgid "Fold"
 msgstr ""
 
-#: ../../magic/src/fold.c:108
+#: ../../magic/src/fold.c:114
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
@@ -1058,23 +1058,23 @@ msgstr "Waabizo"
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/glasstile.c:104
+#: ../../magic/src/glasstile.c:105
 msgid "Glass Tile"
 msgstr "Omoodayaabik"
 
-#: ../../magic/src/glasstile.c:111
+#: ../../magic/src/glasstile.c:118
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 
-#: ../../magic/src/glasstile.c:113
+#: ../../magic/src/glasstile.c:120
 msgid "Click to cover your entire picture in glass tiles."
 msgstr ""
 
-#: ../../magic/src/grass.c:107
+#: ../../magic/src/grass.c:108
 msgid "Grass"
 msgstr "Mashkosi"
 
-#: ../../magic/src/grass.c:113
+#: ../../magic/src/grass.c:120
 #, fuzzy
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Waabizo"
@@ -1083,52 +1083,52 @@ msgstr "Waabizo"
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:45
+#: ../../magic/src/halftone.c:49
 #, fuzzy
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/kalidescope.c:119
+#: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:123
+#: ../../magic/src/kalidescope.c:124
 msgid "Symmetric Up/Down"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Kaleidoscope"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:146
+#: ../../magic/src/kalidescope.c:154
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/kalidescope.c:152
+#: ../../magic/src/kalidescope.c:160
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/kalidescope.c:156
+#: ../../magic/src/kalidescope.c:164
 #, fuzzy
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/kalidescope.c:160
+#: ../../magic/src/kalidescope.c:168
 #, fuzzy
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
@@ -1136,24 +1136,24 @@ msgid ""
 msgstr "Waabizo"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:164
+#: ../../magic/src/kalidescope.c:172
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 
-#: ../../magic/src/light.c:103
+#: ../../magic/src/light.c:104
 msgid "Light"
 msgstr "Zakizan"
 
-#: ../../magic/src/light.c:109
+#: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr ""
 
-#: ../../magic/src/metalpaint.c:98
+#: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
 msgstr ""
 
-#: ../../magic/src/metalpaint.c:105
+#: ../../magic/src/metalpaint.c:112
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr ""
 
@@ -1173,96 +1173,96 @@ msgstr "Waabimoojichaagwaazo"
 msgid "Click to flip the picture upside-down."
 msgstr "Ajidagoojin"
 
-#: ../../magic/src/mosaic.c:96
+#: ../../magic/src/mosaic.c:97
 #, fuzzy
 msgid "Mosaic"
 msgstr "Mamaanjinowin"
 
-#: ../../magic/src/mosaic.c:100
+#: ../../magic/src/mosaic.c:105
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic.c:101
+#: ../../magic/src/mosaic.c:106
 #, fuzzy
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic_shaped.c:132
+#: ../../magic/src/mosaic_shaped.c:133
 #, fuzzy
 #| msgid "Square"
 msgid "Square Mosaic"
 msgstr "Zhashaweyaa"
 
-#: ../../magic/src/mosaic_shaped.c:133
+#: ../../magic/src/mosaic_shaped.c:134
 #, fuzzy
 msgid "Hexagon Mosaic"
 msgstr "Mamaanjinowin"
 
-#: ../../magic/src/mosaic_shaped.c:134
+#: ../../magic/src/mosaic_shaped.c:135
 msgid "Irregular Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:140
+#: ../../magic/src/mosaic_shaped.c:141
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic_shaped.c:141
+#: ../../magic/src/mosaic_shaped.c:142
 #, fuzzy
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic_shaped.c:145
+#: ../../magic/src/mosaic_shaped.c:146
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:147
 #, fuzzy
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic_shaped.c:150
+#: ../../magic/src/mosaic_shaped.c:151
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/mosaic_shaped.c:151
+#: ../../magic/src/mosaic_shaped.c:152
 #, fuzzy
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/negative.c:72
+#: ../../magic/src/negative.c:73
 msgid "Negative"
 msgstr ""
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:74
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 #, fuzzy
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Waabizo"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 #, fuzzy
 msgid "Click to turn your painting into its negative."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/negative.c:82
+#: ../../magic/src/negative.c:83
 #, fuzzy
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
 msgstr "Waabizo"
 
-#: ../../magic/src/negative.c:83
+#: ../../magic/src/negative.c:84
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -1272,12 +1272,12 @@ msgstr ""
 msgid "Noise"
 msgstr ""
 
-#: ../../magic/src/noise.c:70
+#: ../../magic/src/noise.c:74
 #, fuzzy
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/noise.c:71
+#: ../../magic/src/noise.c:75
 #, fuzzy
 msgid "Click to add noise to your entire picture."
 msgstr "Waabimoojichaagwaazo"
@@ -1309,46 +1309,51 @@ msgstr "Waabimoojichaagwaazo"
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Waabizo"
 
-#. Both are named "Pixels", at the moment:
-#: ../../magic/src/pixels.c:108
+#: ../../magic/src/pixels.c:107
 msgid "Pixels"
 msgstr ""
 
-#: ../../magic/src/pixels.c:114
+#: ../../magic/src/pixels.c:119
 #, fuzzy
 msgid "Click and drag to draw large pixels."
 msgstr "Waabizo"
 
-#: ../../magic/src/puzzle.c:103
+#: ../../magic/src/puzzle.c:106
 #, fuzzy
 msgid "Puzzle"
 msgstr "Miining-izinaagazozi"
 
-#: ../../magic/src/puzzle.c:110
+#: ../../magic/src/puzzle.c:118
 #, fuzzy
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "Waabizo"
 
-#: ../../magic/src/puzzle.c:111
+#: ../../magic/src/puzzle.c:119
 #, fuzzy
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/rails.c:129
+#: ../../magic/src/rails.c:131
 #, fuzzy
 msgid "Rails"
 msgstr "Zaasijiwan"
 
-#: ../../magic/src/rails.c:134
+#: ../../magic/src/rails.c:141
 #, fuzzy
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/rainbow.c:133
+#: ../../magic/src/rainbow.c:138
 msgid "Rainbow"
 msgstr "Nagweyaab"
 
-#: ../../magic/src/rainbow.c:139
+#: ../../magic/src/rainbow.c:140
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Smooth Rainbow"
+msgstr "Nagweyaab"
+
+#: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
 msgstr ""
 
@@ -1357,56 +1362,56 @@ msgstr ""
 msgid "Rain"
 msgstr "Nagweyaab"
 
-#: ../../magic/src/rain.c:72
+#: ../../magic/src/rain.c:76
 #, fuzzy
 msgid "Click to place a rain drop onto your picture."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/rain.c:73
+#: ../../magic/src/rain.c:77
 #, fuzzy
 msgid "Click to cover your picture with rain drops."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/realrainbow.c:98
+#: ../../magic/src/realrainbow.c:99
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Real Rainbow"
 msgstr "Nagweyaab"
 
-#: ../../magic/src/realrainbow.c:100
+#: ../../magic/src/realrainbow.c:101
 #, fuzzy
 #| msgid "Rainbow"
 msgid "ROYGBIV Rainbow"
 msgstr "Nagweyaab"
 
-#: ../../magic/src/realrainbow.c:108
+#: ../../magic/src/realrainbow.c:114
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
 
-#: ../../magic/src/ripples.c:102
+#: ../../magic/src/ripples.c:103
 msgid "Ripples"
 msgstr "Zaasijiwan"
 
-#: ../../magic/src/ripples.c:108
+#: ../../magic/src/ripples.c:115
 msgid "Click to make ripples appear over your picture."
 msgstr ""
 
-#: ../../magic/src/rosette.c:115
+#: ../../magic/src/rosette.c:118
 msgid "Rosette"
 msgstr ""
 
-#: ../../magic/src/rosette.c:117
+#: ../../magic/src/rosette.c:120
 msgid "Picasso"
 msgstr ""
 
-#: ../../magic/src/rosette.c:123
+#: ../../magic/src/rosette.c:131
 #, fuzzy
 msgid "Click and start drawing your rosette."
 msgstr "Waabimoojichaagwaazo"
 
-#: ../../magic/src/rosette.c:125
+#: ../../magic/src/rosette.c:133
 msgid "You can draw just like Picasso!"
 msgstr ""
 
@@ -1453,32 +1458,32 @@ msgstr "Waabizo"
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/shift.c:106
+#: ../../magic/src/shift.c:107
 msgid "Shift"
 msgstr "Mamaajii"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:119
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr ""
 
-#: ../../magic/src/smudge.c:102
+#: ../../magic/src/smudge.c:103
 msgid "Smudge"
 msgstr "Nookwezigan"
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:104
+#: ../../magic/src/smudge.c:105
 #, fuzzy
 #| msgid "Paint"
 msgid "Wet Paint"
 msgstr "Mazinichigan ozhibii"
 
-#: ../../magic/src/smudge.c:111
+#: ../../magic/src/smudge.c:121
 #, fuzzy
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Waabizo"
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:113
+#: ../../magic/src/smudge.c:123
 #, fuzzy
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "Waabizo"
@@ -1513,18 +1518,18 @@ msgstr ""
 msgid "String 'V'"
 msgstr ""
 
-#: ../../magic/src/string.c:147
+#: ../../magic/src/string.c:151
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
 
-#: ../../magic/src/string.c:150
+#: ../../magic/src/string.c:154
 #, fuzzy
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Waabizo"
 
-#: ../../magic/src/string.c:153
+#: ../../magic/src/string.c:157
 msgid "Draw string art arrows with free angles."
 msgstr ""
 
@@ -1563,70 +1568,70 @@ msgstr "Waabizo"
 msgid "Toothpaste"
 msgstr ""
 
-#: ../../magic/src/toothpaste.c:72
+#: ../../magic/src/toothpaste.c:76
 #, fuzzy
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/tornado.c:153
+#: ../../magic/src/tornado.c:154
 msgid "Tornado"
 msgstr ""
 
-#: ../../magic/src/tornado.c:159
+#: ../../magic/src/tornado.c:166
 #, fuzzy
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Waabizo"
 
-#: ../../magic/src/tv.c:98
+#: ../../magic/src/tv.c:99
 msgid "TV"
 msgstr ""
 
-#: ../../magic/src/tv.c:104
+#: ../../magic/src/tv.c:110
 #, fuzzy
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr "Waabizo"
 
-#: ../../magic/src/tv.c:107
+#: ../../magic/src/tv.c:113
 msgid "Click to make your picture look like it's on television."
 msgstr ""
 
-#: ../../magic/src/waves.c:104
+#: ../../magic/src/waves.c:111
 msgid "Waves"
 msgstr "Bikwaashkaa"
 
-#: ../../magic/src/waves.c:106
+#: ../../magic/src/waves.c:113
 #, fuzzy
 msgid "Wavelets"
 msgstr "Bikwaashkaa"
 
-#: ../../magic/src/waves.c:115
+#: ../../magic/src/waves.c:122
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
 "the right for long waves."
 msgstr ""
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
 
-#: ../../magic/src/xor.c:93
+#: ../../magic/src/xor.c:92
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "Atiso"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:103
 #, fuzzy
 msgid "Click and drag to draw a XOR effect"
 msgstr "Waabizo"
 
-#: ../../magic/src/xor.c:101
+#: ../../magic/src/xor.c:105
 #, fuzzy
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Waabimoojichaagwaazo"
