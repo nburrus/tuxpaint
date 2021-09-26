@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 23, 2021
+  June 14, 2002 - September 25, 2021
 */
 
 #include "platform.h"
@@ -19454,6 +19454,7 @@ static void load_magic_plugins(void)
                               else
                                 {
                                   int j, group, idx;
+                                  SDL_Surface * icon_tmp;
 
                                   for (i = 0; i < n; i++)
                                     {
@@ -19509,17 +19510,27 @@ static void load_magic_plugins(void)
                                             magics[group][idx].mode = MODE_PAINT_WITH_PREVIEW;
                                           else
                                             magics[group][idx].mode = MODE_FULLSCREEN;
+   
+                                          icon_tmp = magic_funcs[num_plugin_files].get_icon(magic_api_struct, i);
+                                          if (icon_tmp != NULL)
+                                            { 
+                                              magics[group][idx].img_icon = thumbnail(icon_tmp, 40 * button_w / ORIGINAL_BUTTON_SIZE, 30 * button_h / ORIGINAL_BUTTON_SIZE, 1);
+                                              SDL_FreeSurface(icon_tmp);
     
-                                          magics[group][idx].img_icon =
-    					thumbnail(magic_funcs[num_plugin_files].get_icon(magic_api_struct, i), 40 * button_w / ORIGINAL_BUTTON_SIZE, 30 * button_h / ORIGINAL_BUTTON_SIZE, 1);
-    
-    #ifdef DEBUG
-                                          printf("-- %s\n", magics[group][idx].name);
-                                          printf("avail_modes = %d\n", magics[group][idx].avail_modes);
-    #endif
-    
-                                          num_magics[group]++;
-                                          num_magics_total++;
+#ifdef DEBUG
+                                              printf("-- %s\n", magics[group][idx].name);
+                                              printf("avail_modes = %d\n", magics[group][idx].avail_modes);
+#endif
+        
+                                              num_magics[group]++;
+                                              num_magics_total++;
+                                            }
+                                          else
+                                            {
+                                              fprintf(stderr, "Error: plugin %s mode # %d failed to load an icon\n",
+                                                fname, i, group);
+                                              fflush(stderr);
+                                            }
                                         }
                                       else
                                         {
@@ -25666,10 +25677,14 @@ static void claim_to_be_ready(void)
   for (i = 0; i < MAX_STAMP_GROUPS; i++)
     {
       stamp_scroll[i] = 0;
+    }
+  stamp_group = 0;              /* reset! */
+
+  for (i = 0; i < MAX_MAGIC_GROUPS; i++)
+    {
       magic_scroll[i] = 0;
       cur_magic[i] = 0;
     }
-  stamp_group = 0;              /* reset! */
   font_scroll = 0;
   tool_scroll = 0;
   eraser_scroll = 0;
