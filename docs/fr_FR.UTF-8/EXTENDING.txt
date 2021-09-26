@@ -286,7 +286,7 @@ Tampons
        Les fichiers PNG peuvent être de n'importe quelle taille, et Tux Paint
        (par défaut) fournit un ensemble de boutons de redimensionnement pour
        permettre à l'utilisateur d'ajuster le tampon vers le haut (plus
-       grand) et vers le bas (plus petit).
+       grand) et vers le bas (plus petits).
 
        Les SVG sont basés sur des vecteurs et seront mis à l'échelle de
        manière adéquate pour le canevas utilisé.

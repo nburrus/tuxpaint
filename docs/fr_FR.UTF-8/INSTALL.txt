@@ -133,7 +133,7 @@ Exigences
 
          https://github.com/ImageOptim/libimagequant
 
-    Outils NetPBM (optionnel) Ne sont plus utilisés, par défaut
+    Outils NetPBM (optionnel) ne sont plus utilisés par défaut
 
          Sous Linux et Unix, les anciennes versions de Tux Paint utilisaient
          les outils NetPBM comme aide à l'impression. (Un PNG est généré par
@@ -210,7 +210,7 @@ Compilation et installation
          fichiers binaires s'en sert pour trouver les fichiers .dll requis.
 
          FLTK est un ensemble d'outils multiplateforme utilisé par "Tux Paint
-         Config.". Vous pouvez en pas l'installer si vous compilez seulement
+         Config.". Vous pouvez ne pas l'installer si vous compilez seulement
          "Tux Paint".
 
            $ pacman -S mingw-w64-x86_64-SDL_{image,mixer,ttf}
@@ -220,9 +220,10 @@ Compilation et installation
            $ pacman -S mingw-w64-x86_64-fltk
            $ pacman -S mingw64/mingw-w64-x86_64-ntldd-git
 
-         Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
+         Nota : Fermez l'interpréteur de commandes avant de passer à la
+         suite.
 
-    Installe SDL_Pango et SDL_gfx sur l'environnement 64bit
+    Installer SDL_Pango et SDL_gfx pour l'environnement 64bit
 
          SDL_Pango et SDL_gfx doivent être installés manuellement.
 
@@ -285,7 +286,7 @@ Compilation et installation
          fichiers binaires s'en sert pour trouver les fichiers .dll requis.
 
          FLTK est un ensemble d'outils multiplateforme utilisé par "Tux Paint
-         Config.". Vous pouvez en pas l'installer si vous compilez seulement
+         Config.". Vous pouvez ne pas l'installer si vous compilez seulement
          "Tux Paint".
 
            $ pacman -S mingw-w64-i686-SDL_{image,mixer,ttf}
@@ -295,9 +296,10 @@ Compilation et installation
            $ pacman -S mingw-w64-i686-fltk
            $ pacman -S mingw-w64-i686-ntldd-git
 
-         Nota !Fermez l'interpréteur de commandes avant de passer à la suite.
+         Nota : Fermez l'interpréteur de commandes avant de passer à la
+         suite.
 
-    Installe SDL_Pango et SDL_gfx sur l'environnement 32bit
+    Installer SDL_Pango et SDL_gfx pour l'environnement 32bit
 
          SDL_Pango et SDL_gfx doivent être installés manuellement.
 
@@ -341,10 +343,10 @@ Compilation et installation
 
          ImageMagick est un ensemble d'outils en ligne de commande pour
          créer, éditer, composer ou convertir des images bitmap, et qui
-         soupporte un grand nombre de formats d'image.Tux Paint utilise deux
-         fonctions ("convert" and "composite") pour générer des vignettes
-         pour les images de démarrage et des modèles durant le process de
-         compiltaion.
+         supporte un grand nombre de formats d'image. Tux Paint utilise deux
+         fonctions ("convert" et "composite") pour générer des vignettes pour
+         les images de démarrage et des modèles durant le process de
+         compilation.
 
          L'utilisation des binaires officiels tirés de "Versions binaires
          pour Windows" est recommandée car les commandes installées avec
@@ -406,10 +408,10 @@ Compilation et installation
 
             -------------------------------------------------------
 
-    Utliser l'installateur de Tux Paint sous Windows :
+    Utiliser l'installateur de Tux Paint sous Windows :
 
          Double-cliquez sur l'exécutable du programme d'installation de Tux
-         Paint (fichier .EXE) et Suivez les instructions.
+         Paint (fichier .EXE) et suivez les instructions.
 
          Tout d'abord, il vous sera demandé d'accepter la licence. (Il s'agit
          de la licence publique générale GNU (GPL), qui est également
@@ -496,9 +498,9 @@ Compilation et installation
     svg-cairo)
 
          Pour désactiver le support de SVG (par ex. si votre système n'a pas
-         de bibliothèque Cairo, ou d'autres choses dont SVG est dépendan),
-         vous pouvez exécuter "make" avec SVG_LIB= SVG_CFLAGS=
-         NOSVGFLAG=NOSVG :
+         de bibliothèque Cairo, ou d'autres choses dont SVG est dépendant),
+         vous pouvez exécuter "make" avec "SVG_LIB= SVG_CFLAGS=
+         NOSVGFLAG=NOSVG" :
 
            $ make SVG_LIB= SVG_CFLAGS=
 
@@ -548,11 +550,11 @@ Compilation et installation
 
     Installation :
 
-         En supposant qu'aucune erreur fatale ne s'est produite, vous pouvez
-         maintenant installer le programme afin qu'il puisse être exécuté par
-         les utilisateurs du système. Par défaut, cela doit être effectué par
-         l'utilisateur "root" ("superutilisateur"). Passer à "root" en tapant
-         la commande :
+         En supposant qu'aucune erreur fatale ne se soit produite, vous
+         pouvez maintenant installer le programme afin qu'il puisse être
+         exécuté par les utilisateurs du système. Par défaut, cela doit être
+         effectué par l'utilisateur "root" ("superutilisateur"). Passer à
+         "root" en tapant la commande :
 
            $ su
 
