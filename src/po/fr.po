@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 00:17-0700\n"
-"PO-Revision-Date: 2021-09-18 11:00+0200\n"
+"PO-Revision-Date: 2021-09-23 11:33+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1054,8 +1054,6 @@ msgid "Fretwork"
 msgstr "Frise"
 
 #: ../../magic/src/fretwork.c:188
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Clique et promène la souris pour dessiner des motifs répétitifs."
 
@@ -1374,10 +1372,8 @@ msgid "Rainbow"
 msgstr "Arc-en-ciel"
 
 #: ../../magic/src/rainbow.c:140
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Smooth Rainbow"
-msgstr "Arc-en-ciel"
+msgstr "Arc-en-ciel lent"
 
 #: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
@@ -1401,11 +1397,11 @@ msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
 #: ../../magic/src/realrainbow.c:99
 msgid "Real Rainbow"
-msgstr "Vrai arc-en-ciel réel"
+msgstr "Arc-en-ciel réel"
 
 #: ../../magic/src/realrainbow.c:101
 msgid "ROYGBIV Rainbow"
-msgstr "arc-en-ciel réel"
+msgstr "Arc-en-ciel simple"
 
 #: ../../magic/src/realrainbow.c:114
 msgid ""
