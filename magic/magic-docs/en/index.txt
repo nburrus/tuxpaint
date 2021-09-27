@@ -29,6 +29,7 @@
    * Kaleidoscope
    * Light
    * Lighten
+   * Lightning
    * Metal Paint
    * Mirror
    * Mosaic

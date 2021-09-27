@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* Oct. 8, 2009 - September 22, 2021 */
+/* Oct. 8, 2009 - September 27, 2021 */
 
 
 /* Authors of the Magic tools: */
@@ -175,6 +175,10 @@ $tools = array(
    'desc'=>'This fades the colors wherever you drag the mouse.  (Do it to the same spot many times, and it will eventually become white.)',
    'author'=>$AUTHOR_KENDRICK,
    'see'=>array('Darken', 'Tint')),
+
+  array('name'=>'Lightning',
+   'desc'=>'Draws a lightning bolt between two points on the picture.',
+   'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Metal Paint',
    'desc'=>'Click and drag to draw shiny metal using the current color.',
