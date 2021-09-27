@@ -3,7 +3,7 @@
    Draws a lightning strike between the click
    and drag+release positions.
 
-   Last modified: 2021.09.26
+   Last modified: 2021.09.27
 */
 
 #include <stdio.h>
@@ -16,13 +16,14 @@
 #include "SDL_mixer.h"
 
 Mix_Chunk *snd_effect;
-Uint8 lightning_r, lightning_g, lightning_b;
+float lightning_h, lightning_s, lightning_v;
 int sx, sy;
 
 
 void lightning_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void lightning_line_callback_drag(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+void lightning_draw_bolt(void * ptr, SDL_Surface * canvas, SDL_Surface * snapshot, float sx, float sy, float angle, float len, int thickness);
 
 
 Uint32 lightning_api_version(void)
@@ -121,6 +122,7 @@ lightning_release(magic_api * api, int which,
                 SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect)
 {
   float a, b, len, angle;
+  int thickness;
 
   /* FIXME: This could be made more efficient
      (only blit and update between (sx,sy) and (x,y), though
@@ -138,25 +140,125 @@ lightning_release(magic_api * api, int which,
 
   a = (x - sx);
   b = (y - sy);
-  len = sqrt((a * a) + (b * b));
-  angle = acos((x - sx) / len);
 
+  len = sqrt((a * a) + (b * b));
+  if (len < 100)
+    len = 100;
+
+  angle = acos((x - sx) / len) * 180.0 / M_PI;
   if (y < sy)
     angle = -angle;
 
 #ifdef DEBUG
   printf("(%d,%d)->(%d,%d) => a = %.2f, b = %.2f, c (len) = %.2f; angle = %.2f degrees\n",
-         sx, sy, x, y, a, b, len, (angle * 180.0) / M_PI);
+         sx, sy, x, y, a, b, len, angle);
+  fflush(stdout);
 #endif
 
-  // FIXME: Do something
+  thickness = len / 50;
+  if (thickness < 4)
+    thickness = 4;
+
+  lightning_draw_bolt((void *) api, canvas, snapshot, (float) sx, (float) sy, angle, len, thickness);
 }
+
+void lightning_draw_bolt(void * ptr, SDL_Surface * canvas, SDL_Surface * snapshot, float sx, float sy, float angle, float len, int thickness)
+{
+  magic_api *api = (magic_api *) ptr;
+  float i;
+  float x, y, orig_angle, pct;
+  int xx, yy, t;
+  Uint8 r, g, b, or, og, ob;
+  float h, s, v, new_h, new_s, new_v;
+  float adj;
+
+  x = sx;
+  y = sy;
+
+  orig_angle = angle;
+  t = thickness / 3;
+  if (t < 1)
+    t = 1;
+
+  for (i = 0; i < len; i++)
+    {
+      x = x + cos(angle * M_PI / 180.0);
+      y = y + sin(angle * M_PI / 180.0);
+
+      angle = angle + ((float) (rand() % 15) - 7.5);
+      if (angle < orig_angle - 10.0)
+        angle = orig_angle - 10.0;
+      else if (angle > orig_angle + 10.0)
+        angle = orig_angle + 10.0;
+
+      for (yy = -t; yy <= t; yy++)
+        {
+          for (xx = -t; xx <= t; xx++)
+            {
+              if (api->in_circle(xx, yy, t))
+                {
+                  float light_h, light_s, light_v;
+
+                  light_h = lightning_h;
+                  light_s = lightning_s;
+                  light_v = lightning_v;
+
+                  SDL_GetRGB(api->getpixel(canvas, x + xx, y + yy), canvas->format, &r, &g, &b);
+                  api->rgbtohsv(r, g, b, &h, &s, &v);
+
+                  adj = 1.0 - (sqrt((xx * xx) + (yy * yy)) / t);
+
+                  new_v = v + adj;
+                  if (new_v > 1.0)
+                    {
+                      light_s = light_s / (new_v * 2);
+                      new_v = 1.0;
+                    }
+
+                  if (light_h == -1)
+                    {
+                      new_h = h;
+                      new_s = (s * 25) / 100;
+                    }
+                  else
+                    {
+                      new_h = ((light_h * 75) + (h * 25)) / 100;
+                      new_s = ((light_s * 75) + (s * 25)) / 100;
+                    }
+
+                  api->hsvtorgb(new_h, new_s, new_v, &r, &g, &b);
+
+                  api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
+                }
+            }
+        }
+
+      if (((rand() % 50) == 0 || (int) i == (int) (len / 2)) && thickness > 1 && len >= 4)
+        {
+          float new_angle;
+
+          if ((rand() % 10) == 0)
+            {
+              new_angle = angle + ((float) (rand() % 180) - 90.0);
+            }
+          else
+            {
+              new_angle = angle + ((float) (rand() % 90) - 45.0);
+            }
+
+          lightning_draw_bolt((void *) api, canvas, snapshot, x, y,
+                              new_angle,
+                              ((len / 8) + (rand() % (int) (len / 4))),
+                              thickness - 1
+                             );
+        }
+    }
+}
+
 
 void lightning_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 {
-  lightning_r = r;
-  lightning_g = g;
-  lightning_b = b;
+  api->rgbtohsv(r, g, b, &lightning_h, &lightning_s, &lightning_v);
 }
 
 

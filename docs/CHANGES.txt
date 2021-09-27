@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.26 (0.9.27)
+2021.September.27 (0.9.27)
   * New Magic Tools:
     ----------------
     * WIP "Lightning" - Draws a bolt of lightning striking between
