@@ -11,7 +11,7 @@ $Id$
 2021.September.27 (0.9.27)
   * New Magic Tools:
     ----------------
-    * WIP "Lightning" - Draws a bolt of lightning striking between
+    * "Lightning" - Draws a bolt of lightning striking between
       the start and end positions of a line.
 
     * "Opposite" -- Change parts of the picture to their complementary
