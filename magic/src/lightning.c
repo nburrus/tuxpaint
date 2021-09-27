@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
+#include <math.h>
 
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -22,7 +23,6 @@ int sx, sy;
 void lightning_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void lightning_line_callback_drag(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
-void lightning_line_callback_release(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
 
 
 Uint32 lightning_api_version(void)
@@ -120,6 +120,8 @@ void
 lightning_release(magic_api * api, int which,
                 SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect)
 {
+  float a, b, len, angle;
+
   /* FIXME: This could be made more efficient
      (only blit and update between (sx,sy) and (x,y), though
      it should also cover the area extending to (ox,oy),
@@ -131,9 +133,23 @@ lightning_release(magic_api * api, int which,
 
   SDL_BlitSurface(snapshot, update_rect, canvas, update_rect);
 
-  api->line((void *)api, which, canvas, snapshot, sx, sy, x, y, 1, lightning_line_callback_release);
   api->stopsound();
   api->playsound(snd_effect, (x * 255) / canvas->w, 255);
+
+  a = (x - sx);
+  b = (y - sy);
+  len = sqrt((a * a) + (b * b));
+  angle = acos((x - sx) / len);
+
+  if (y < sy)
+    angle = -angle;
+
+#ifdef DEBUG
+  printf("(%d,%d)->(%d,%d) => a = %.2f, b = %.2f, c (len) = %.2f; angle = %.2f degrees\n",
+         sx, sy, x, y, a, b, len, (angle * 180.0) / M_PI);
+#endif
+
+  // FIXME: Do something
 }
 
 void lightning_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
@@ -149,14 +165,6 @@ void lightning_line_callback_drag(void *ptr, int which, SDL_Surface * canvas, SD
   magic_api *api = (magic_api *) ptr;
 
   api->xorpixel(canvas, x, y);
-}
-
-void lightning_line_callback_release(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
-{
-  magic_api *api = (magic_api *) ptr;
-
-  // FIXME
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, lightning_r, lightning_g, lightning_b));
 }
 
 void lightning_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
