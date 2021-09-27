@@ -11,6 +11,9 @@ $Id$
 2021.September.26 (0.9.27)
   * New Magic Tools:
     ----------------
+    * WIP "Lightning" - Draws a bolt of lightning striking between
+      the start and end positions of a line.
+
     * "Opposite" -- Change parts of the picture to their complementary
       colors.  (Similar to "Negative", but instead of inverting the
       Red, Green, and Blue components, it rotates the Hue 180 degrees
