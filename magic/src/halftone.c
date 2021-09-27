@@ -1,6 +1,6 @@
 /* halftone.c
 
-   Last modified: 2021.09.04
+   Last modified: 2021.09.21
 */
 
 
@@ -41,6 +41,10 @@ const char *names[NUM_TOOLS] = {
   gettext_noop("Halftone"),
 };
 
+const int groups[NUM_TOOLS] = {
+  MAGIC_TYPE_DISTORTS,
+};
+
 const char *descs[NUM_TOOLS] = {
   gettext_noop("Click and drag to turn your drawing into a newspaper."),
 };
@@ -59,6 +63,7 @@ int halftone_init(magic_api * api);
 int halftone_get_tool_count(magic_api * api);
 SDL_Surface *halftone_get_icon(magic_api * api, int which);
 char *halftone_get_name(magic_api * api, int which);
+int halftone_get_group(magic_api * api, int which);
 char *halftone_get_description(magic_api * api, int which, int mode);
 int halftone_requires_colors(magic_api * api, int which);
 int halftone_modes(magic_api * api, int which);
@@ -119,6 +124,11 @@ char *halftone_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
   our_name_localized = gettext_noop(our_name_english);
 
   return (strdup(our_name_localized));
+}
+
+int halftone_get_group(magic_api * api ATTRIBUTE_UNUSED, int which)
+{
+  return groups[which];
 }
 
 char *halftone_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)

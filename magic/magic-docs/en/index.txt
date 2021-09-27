@@ -22,11 +22,14 @@
    * Flower
    * Foam
    * Fold
+   * Fretwork
    * Glass Tile
    * Grass
+   * Halftone
    * Kaleidoscope
    * Light
    * Lighten
+   * Lightning
    * Metal Paint
    * Mirror
    * Mosaic
@@ -35,6 +38,7 @@
    * Square Mosaic
    * Negative
    * Noise
+   * Opposite
    * Panels
    * Pattern
    * Perspective
@@ -51,6 +55,7 @@
    * Sharpen
    * Shift
    * Silhouette
+   * Smooth Rainbow
    * Smudge
    * Snow Ball
    * Snow Flake

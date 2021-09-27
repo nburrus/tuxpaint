@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 6, 2021
+# June 14, 2002 - September 20, 2021
 
 
 # The version number, for release:
@@ -15,7 +15,7 @@ ifdef SOURCE_DATE_EPOCH
 else
   VER_DATE=$(shell date "+%Y-%m-%d")
 endif
-MAGIC_API_VERSION:=0x00000004
+MAGIC_API_VERSION:=0x00000005
 
 # Need to know the OS
 
@@ -192,7 +192,7 @@ PNG:=$(if $(PNG),$(PNG),$(call linktest,,-lpng12,))
 FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
-windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant
+windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant -mwindows
 macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -Wl,-framework,Cocoa
 ios_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
@@ -996,6 +996,7 @@ install-dlls:
 	  cp $(MINGW_DIR)/bin/libgio-2.0-0.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/bz2-1.dll $(BIN_PREFIX); \
 	  cp $(MINGW_DIR)/bin/libimagequant.dll $(BIN_PREFIX); \
+	  cp $(MINGW_DIR)/bin/libSDL_gfx-15.dll $(BIN_PREFIX); \
 	  cp `which libgcc_s_dw2-1.dll` $(BIN_PREFIX); \
 	  cp `which libstdc++-6.dll` $(BIN_PREFIX); \
 	  cp `which libpthread-2.dll` $(BIN_PREFIX); \
@@ -1063,7 +1064,8 @@ install-doc:
 	@echo "...Installing documentation..."
 	@install -d $(DOC_PREFIX)
 	@cp -R docs/* $(DOC_PREFIX)
-	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
+	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
+	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
 	@install -d $(DOC_PREFIX)/en/magic-docs
 	@cp -R magic/magic-docs/en/* $(DOC_PREFIX)/en/magic-docs/
 	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)

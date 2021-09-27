@@ -8,9 +8,12 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.6 (0.9.27)
+2021.September.27 (0.9.27)
   * New Magic Tools:
     ----------------
+    * "Lightning" - Draws a bolt of lightning striking between
+      the start and end positions of a line.
+
     * "Opposite" -- Change parts of the picture to their complementary
       colors.  (Similar to "Negative", but instead of inverting the
       Red, Green, and Blue components, it rotates the Hue 180 degrees
@@ -22,6 +25,9 @@ $Id$
       style effects!)
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/204/)
 
+    * "Smooth Rainbow" - A smooth, gradient variation of the classic
+      "Rainbow" Magic tool.
+
   * Magic Tool Improvements:
     ------------------------
     * "Halftone" works much better, drawing large overlapping circles
@@ -29,21 +35,34 @@ $Id$
       color of the area of the picture being replaced, to give a
       "newsprint" effect.
 
-    * "Halftone" can now affect the entire image at once.
+    * "TV" now breaks pixels into red/green/blue components,
+      rather than merely adding a 'scanline' effect.
+
+    * "Halftone" and "Emboss" can now affect the entire image at once.
 
   * Other Improvements:
     -------------------
-    * WIP Rotational brushes now supported.  Unlike "directional"
+    * Grouped similar Magic tools into sections.
+      (e.g., all of the distortions, versus painting tools, versus
+      full-image effects, etc.)
+
+      Use the left/right pagination buttons that now appear at the
+      bottom of the selector (similar to those used with Stamps tool)
+      to switch between groups.
+
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/201/
+      Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000005.
+
+    * Rotational brushes now supported.  Unlike "directional"
       brushes, in which a 3x3 grid representing the 8 cardinal
       directions (45 degree steps) is used, only a single brush image
       is required, and Tux Paint will rotate it between 0 and 360 degrees,
       depending on the direction the mouse is going.  The brush's ".dat"
       file should contain a line consisting of the word "rotate".
-      * FIXME: WIP -- Doesn't handle animated brushes correctly!
-      * Note: This adds a dependency on "SDL_gfx" library
+      + Note: This adds a dependency on "SDL_gfx" library
         (Homepage: https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
         SourceForge project page: https://sourceforge.net/projects/sdlgfx/)
-        as this feature use it's "rotozoom" functionality.
+        as this feature use it's "rotozoomSurface()" and "SDL_gfxBlitRGBA()".
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/122/)
 
     * Replaced the "arrow_compass_points" brush with a single
@@ -86,6 +105,9 @@ $Id$
     * Moved Windows and macOS compilation instructions into main
       "Installation Documentation" (docs/.../INSTALL...).
 
+    * Expanded explanation of how stamp tinting modes work
+      in "Extending Tux Paint" documentation.
+
     * Documentation translation updates:
       + French translation
         Jacques Chion <jacques.chion@orange.fr>
@@ -94,14 +116,20 @@ $Id$
     --------------------
     * Ensure some locales have hints to find the best fonts
       for the Text and Label tools:
-      * Greek
-      * Scottish Gaelic
+      + Greek
+      + Scottish Gaelic
 
     * French
       Jacques Chion <jacques.chion@orange.fr>
 
     * Icelandic
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Japanese
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Portuguese (Portugal) translation
+      Hugo Carvalho <hugokarvalho@hotmail.com>
 
   * Bug Fixes:
     ----------
@@ -111,6 +139,10 @@ $Id$
     * "Zoom" magic tool icon had weird artifacting. Mended.
 
     * "Halftone" magic tool had the "Zoom" tool's icon.
+
+    * Undo buffer canvases were not always the same dimensions
+      as the drawing surface, if buttonsize was adjusted.
+      (Adversely affected "Shift" magic tool.)
 
   * Ports & Building
     ----------------

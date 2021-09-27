@@ -25,7 +25,7 @@ Documentation sur les options
    |       * Données                                                     |
    |       * Accessibilité                                               |
    |       * Joystick                                                    |
-   |  * Écrasez des options de System Config                             |
+   |  * Écraser des options de System Config                             |
    |  * Options de ligne de commande                                     |
    |       * Options d'information en ligne de commande                  |
    |  * Choisir une autre langue                                         |
@@ -74,7 +74,7 @@ Utilisateurs de Linux et Unix
 
            --nosysconfig
 
-macOS Users
+Utilisateurs de macOS
 
        Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
        être placé dans votre dossier de départ, sous le sous-dossier :
@@ -116,10 +116,11 @@ Vidéo/Son
                  Le programme tourne en plein écran plutôt que dans une
                  fenêtre.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "fullscreen=no". In both cases, may be overridden by the
-                 command-line option "--windowed".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "fullscreen=no".
+                 Dans les deux cas, il peut être remplacé avec l'option en
+                 ligne de commande "--windowed".
 
          fullscreen=native
 
@@ -152,10 +153,11 @@ Vidéo/Son
                  affichages de portait, comme un écran PC orientée comme une
                  tablette.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "orient=landscape". In both cases, may be overridden by the
-                 command-line option "--orient=landscape".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "orient=landscape". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--orient=landscape".
 
          native=yes
 
@@ -174,11 +176,12 @@ Vidéo/Son
                  d'environnement "SDL_VIDEO_ALLOW_SCREENSAVER" de votre
                  système égale à "1".)
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "allowscreensaver=no" or "disablescreensaver=yes". In both
-                 cases, may be overridden by the command-line option
-                 "--disablescreensaver".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "allowscreensaver=no" ou "disablescreensaver=yes". Dans les
+                 deux cas, il peut être remplacé avec l'option en ligne de
+                 commande "--disablescreensaver".
 
   Son
 
@@ -188,10 +191,11 @@ Vidéo/Son
                  sur [Alt] + [S] ne peut pas être utilisé pour réactiver les
                  sons s'ils ont été désactivés à l'aide de cette option.)
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nosound=no" or "sound=yes". In both cases, may be
-                 overridden by the command-line option "--sound".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nosound=no" ou
+                 "sound=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--sound".
 
          nostereo=yes
 
@@ -200,10 +204,11 @@ Vidéo/Son
                  ou dans les endroits où un seul haut-parleur ou casque est
                  utilisé.)
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nostereo=no" or "stereo=yes". In both cases, may be
-                 overridden by the command-line option "--stereo".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nostereo=no" ou
+                 "stereo=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--stereo".
 
   Taille de l'interface
 
@@ -249,11 +254,12 @@ Souris/Clavier
                  Dans certains environnements, les curseurs sophistiqués
                  posent des problèmes. Utilisez cette option pour les éviter.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nofancycursors=no" or "fancycursors=yes". In both cases,
-                 may be overridden by the command-line option
-                 "--fancycursors".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "nofancycursors=no" ou "fancycursors=yes". Dans les deux
+                 cas, il peut être remplacé avec l'option en ligne de
+                 commande "--fancycursors".
 
          hidecursor=yes
 
@@ -263,10 +269,11 @@ Souris/Clavier
                  Ceci est utile pour les appareils à écran tactile, tels que
                  les tablettes PC.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "hidecursor=no" or "showcursor=yes". In both cases, may be
-                 overridden by the command-line option "--showcursor".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "hidecursor=no"
+                 ou "showcursor=yes". Dans les deux cas, il peut être
+                 remplacé avec l'option en ligne de commande "--showcursor".
 
   Clavier
 
@@ -280,10 +287,11 @@ Souris/Clavier
                  soient activées par des enfants qui n'ont pas d'expérience
                  avec les claviers.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "noshortcuts=no" or "shortcuts=yes". In both cases, may be
-                 overridden by the command-line option "--shortcuts".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "noshortcuts=no"
+                 ou "shortcuts=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--shortcuts".
 
   Souris
 
@@ -300,10 +308,11 @@ Souris/Clavier
                  [Ctrl]-[Escape], etc. Ceci est particulièrement utile en
                  mode plein écran.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using "grab=no"
-                 or "dontgrab=yes". In both cases, may be overridden by the
-                 command-line option "--dontgrab".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "grab=no" ou
+                 "dontgrab=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--dontgrab".
 
          nowheelmouse=yes
 
@@ -311,10 +320,12 @@ Souris/Clavier
                  souris qui en ont. (Normalement, la molette fait défiler le
                  menu du sélecteur sur la droite.)
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nowheelmouse=no" or "wheelmouse=yes". In both cases, may be
-                 overridden by the command-line option "--wheelmouse".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "nowheelmouse=no" ou "wheelmouse=yes". Dans les deux cas, il
+                 peut être remplacé avec l'option en ligne de commande
+                 "--wheelmouse".
 
          nobuttondistinction=yes
 
@@ -329,11 +340,12 @@ Souris/Clavier
                  d'une souris peut être désactivée (ramenant Tux Paint à son
                  ancien comportement) grâce à cette option.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nobuttondistinction=no" or "buttondistinction=yes". In both
-                 cases, may be overridden by the command-line option
-                 "--buttondistinction".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "nobuttondistinction=no" ou "buttondistinction=yes". Dans
+                 les deux cas, il peut être remplacé avec l'option en ligne
+                 de commande "--buttondistinction".
 
      ----------------------------------------------------------------------
 
@@ -347,10 +359,12 @@ Simplification
                  Cliquer, faire glisser et relâcher, voilà tout ce qui sera
                  possible pour dessiner une forme.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "simpleshapes=no" or "complexshapes=yes". In both cases, may
-                 be overridden by the command-line option "--complexshapes".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "simpleshapes=no" ou "complexshapes=yes". Dans les deux cas,
+                 il peut être remplacé avec l'option en ligne de commande
+                 "--complexshapes".
 
          nooutlines=yes
 
@@ -362,10 +376,11 @@ Simplification
                  ordinateurs très lents ou affiché sur un écran X-Window
                  distant.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nooutlines=no" or "outlines=yes". In both cases, may be
-                 overridden by the command-line option "--outlines".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nooutlines=no"
+                 ou "outlines=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--outlines".
 
          uppercase=yes
 
@@ -374,10 +389,11 @@ Simplification
                  qui savent lire, mais qui n'ont appris que les majuscules
                  jusqu'à présent.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "uppercase=no" or "mixedcase=yes". In both cases, may be
-                 overridden by the command-line option "--mixedcase".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "uppercase=no"
+                 ou "mixedcase=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--mixedcase".
 
   Taille initiale du tampon
 
@@ -408,10 +424,11 @@ Simplification
                  Vous pouvez également utiliser la combinaison de touches
                  suivante pour quitter : [Shift] + [Control] + [Escape].
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "noquit=no" or "quit=yes". In both cases, may be overridden
-                 by the command-line option "--quit".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "noquit=no" ou
+                 "quit=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--quit".
 
          nostamps=yes
 
@@ -423,10 +440,11 @@ Simplification
                  l'utilisation de la mémoire pendant son exécution. Bien
                  entendu, aucun timbre ne sera disponible.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nostamps=no" or "stamps=yes". In both cases, may be
-                 overridden by the command-line option "--stamps".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nostamps=no" ou
+                 "stamps=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--stamps".
 
          nostampcontrols=yes
 
@@ -435,11 +453,12 @@ Simplification
                  option désactive ces contrôles et ne fournit que les tampons
                  de base.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nostampcontrols=no" or "stampcontrols=yes". In both cases,
-                 may be overridden by the command-line option
-                 "--stampcontrols".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "nostampcontrols=no" ou "stampcontrols=yes". Dans les deux
+                 cas, il peut être remplacé avec l'option en ligne de
+                 commande "--stampcontrols".
 
          nomagiccontrols=yes
 
@@ -448,11 +467,12 @@ Simplification
                  désactive les contrôles et ne fournit que la fonctionnalité
                  par défaut (généralement en mode peinture).
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nomagiccontrols=no" or "magiccontrols=yes". In both cases,
-                 may be overridden by the command-line option
-                 "--magiccontrols".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "nomagiccontrols=no" ou "magiccontrols=yes". Dans les deux
+                 cas, il peut être remplacé avec l'option en ligne de
+                 commande "--magiccontrols".
 
          noshapecontrols=yes
 
@@ -462,21 +482,23 @@ Simplification
                  clic initial de la souris ou à partir d'un coin au clic de
                  la souris.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "noshapecontrols=no" or "shapecontrols=yes". In both cases,
-                 may be overridden by the command-line option
-                 "--shapecontrols".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "noshapecontrols=no" ou "shapecontrols=yes". Dans les deux
+                 cas, il peut être remplacé avec l'option en ligne de
+                 commande "--shapecontrols".
 
          nolabel=yes
 
                  Désactive l'outil Étiquette : l'outil qui permet la saisie
                  de texte pouvant être édité plus tard.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nolabel=no" or "label=yes". In both cases, may be
-                 overridden by the command-line option "--label".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nolabel=no" ou
+                 "label=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--label".
 
      ----------------------------------------------------------------------
 
@@ -766,11 +788,12 @@ Langues
                  Cela peut être utile pour les personnes qui préfèrent voir
                  les choses de droite à gauche plutôt que de gauche à droite.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "mirrorstamps=no" or "dontmirrorstamps=yes". In both cases,
-                 may be overridden by the command-line option
-                 "--dontmirrorstamps".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "mirrorstamps=no" ou "dontmirrorstamps=yes". Dans les deux
+                 cas, il peut être remplacé avec l'option en ligne de
+                 commande "--dontmirrorstamps".
 
   Polices
 
@@ -781,10 +804,11 @@ Langues
                  système d'exploitation. Normalement, Tux Paint ne chargera
                  que ceux fournis avec Tux Paint.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "sysfonts=no" or "nosysfonts=yes". In both cases, may be
-                 overridden by the command-line option "--nosysfonts".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "sysfonts=no" ou
+                 "nosysfonts=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--nosysfonts".
 
          alllocalefonts=yes
 
@@ -800,11 +824,12 @@ Langues
                  Pour charger toutes les polices spécifiques aux paramètres
                  régionaux (l'ancien comportement), utilisez cette option.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "alllocalefonts=no" or "currentlocalefont=yes". In both
-                 cases, may be overridden by the command-line option
-                 "--currentlocalefont".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "alllocalefonts=no" ou "currentlocalefont=yes". Dans les
+                 deux cas, il peut être remplacé avec l'option en ligne de
+                 commande "--currentlocalefont".
 
      ----------------------------------------------------------------------
 
@@ -821,10 +846,11 @@ Impression
                  Limite l'impression afin que l'impression ne puisse avoir
                  lieu qu'une fois toutes les SECONDES secondes.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "printdelay=0". In both cases, may be overridden by the
-                 command-line option "--printdelay=0".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "printdelay=0".
+                 Dans les deux cas, il peut être remplacé avec l'option en
+                 ligne de commande "--printdelay=0".
 
   Montrer le menu pour l'impression
 
@@ -871,10 +897,11 @@ Impression
                  enregistrées dans le fichier "userdata/print.cfg", et
                  réutilisées, tant que l'option "printcfg" reste définie.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "printcfg=no" or "noprintcfg=yes". In both cases, may be
-                 overridden by the command-line option "--noprintcfg".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "printcfg=no" ou
+                 "noprintcfg=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--noprintcfg".
 
   Commandes d'impression
 
@@ -969,10 +996,11 @@ Sauvegarde
                  Ceci oblige Tux Paint à afficher une toile vide au
                  démarrage, plutôt que la dernière image qui a été éditée.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "startblank=no" or "startlast=yes". In both cases, may be
-                 overridden by the command-line option "--startlast".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "startblank=no"
+                 ou "startlast=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--startlast".
 
          newcolorslast=yes
 
@@ -980,13 +1008,14 @@ Sauvegarde
                  Nouveau en dernier, ainsi tous les démarreurs et / ou
                  modèles seront affichés en premier.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "newcolorslast=no" or "newcolorsfirst=yes". In both cases,
-                 may be overridden by the command-line option
-                 "--newcolorsfirst".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "newcolorslast=no" ou "newcolorsfirst=yes". Dans les deux
+                 cas, il peut être remplacé avec l'option en ligne de
+                 commande "--newcolorsfirst".
 
-  Save and Export Directories
+  Répertoires de sauvegarde et d'export
 
          savedir=DIRECTORY
 
@@ -1076,10 +1105,11 @@ Sauvegarde
                  est utilisé juste pour le fun, ou dans un environnement de
                  tests.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nosave=no" or "save=yes". In both cases, may be overridden
-                 by the command-line option "--save".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nosave=no" ou
+                 "save=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--save".
 
          autosave=yes
 
@@ -1087,10 +1117,11 @@ Sauvegarde
                  sauvegarder l'image quand vous quittez, et suppose que vous
                  le faites.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "autosave=no" or "noautosave=yes". In both cases, may be
-                 overridden by the command-line option "--noautosave".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "autosave=no" ou
+                 "noautosave=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--noautosave".
 
      ----------------------------------------------------------------------
 
@@ -1118,10 +1149,11 @@ Données
                  "~/.tuxpaint/" sous Linux et Unix, et "userdata\" sous
                  Windows.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "nolockfile=no" or "lockfile=yes". In both cases, may be
-                 overridden by the command-line option "--lockfile".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "nolockfile=no"
+                 ou "lockfile=yes". Dans les deux cas, il peut être remplacé
+                 avec l'option en ligne de commande "--lockfile".
 
   Répertoire de données
 
@@ -1226,10 +1258,10 @@ Accessibilité
                     * Mouvement rapide dans la zone des boutons d'outils.
                     * Touches de contrôle :
                          * [Left]/[Right]/[Up]/[Down], pavé numérique [1]
-                           thru [9] : déplace la souris
+                           jusqu'à [9] : déplace la souris
                          * [Space]/[5] : Clic de la souris (sauf quand on
-                           uilise les outils "Texte" ou "Étiquette")
-                         * [Insert]/[F5]: Clicc de la souris (toujours)
+                           utilise les outils "Texte" ou "Étiquette")
+                         * [Insert]/[F5]: Clic de la souris (toujours)
                          * [F4] fait naviguer la souris entre "Outils",
                            "Couleurs" et les zones de dessin
                          * Si la souris se trouve dans la section "Outils" à
@@ -1250,15 +1282,16 @@ Accessibilité
                            commencer à cliquer, des touches de mouvement pour
                            se déplacer (qui dessinera) et une autre touche
                            "clic" pour terminer le clic (arrêt du dessin).
-                    * Une souris et / ou un joystick standard peuvent
-                      toujours être utilisés (vous pouvez donc, par exemple,
-                      vous déplacer avec la souris et cliquer avec le
-                      clavier, ou vice-versa)
+                    * Une souris et/ou un joystick standard peuvent toujours
+                      être utilisés (vous pouvez donc, par exemple, vous
+                      déplacer avec la souris et cliquer avec le clavier, ou
+                      vice-versa)
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "keyboard=no" or "mouse=yes". In both cases, may be
-                 overridden by the command-line option "--mouse".
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant "keyboard=no" ou
+                 "mouse=yes". Dans les deux cas, il peut être remplacé avec
+                 l'option en ligne de commande "--mouse".
 
   Clavier virtuel sur écran
 
@@ -1285,10 +1318,11 @@ Accessibilité
                  automatiquement onscreen-keyboard=yes , la configuration des
                  deux est donc redondante.
 
-                 Note: If used in a system-wide configuration file, may be
-                 overridden by the user's configuration file using
-                 "onscreen-keyboard-disable-change=no". In both cases, may be
-                 overridden by the command-line option
+                 Note : si utilisé dans un fichier de configuration pour tout
+                 le monde, il peut être remplacé par le fichier de
+                 configuration de l(utilisateur en utilisant
+                 "onscreen-keyboard-disable-change=no". Dans les deux cas, il
+                 peut être remplacé avec l'option en ligne de commande
                  "--onscreen-keyboard-disable-change=no".
 
      ----------------------------------------------------------------------
@@ -1342,7 +1376,7 @@ Joystick
 
                  Un ensemble de numéros de boutons du joystick, comme vu par
                  SDL, qui doit être ignoré. Sinon, à moins qu'ils ne soient
-                 utilisés par l'une des joptions "joystick-btn-" ci-dessus,
+                 utilisés par l'une des options "joystick-btn-" ci-dessus,
                  les boutons seront considérés comme un clic gauche de la
                  souris.
 
@@ -1443,7 +1477,7 @@ Joystick
 
      ----------------------------------------------------------------------
 
-                      Écrasez des options de System Config
+                      Écraser des options de System Config
 
      (Pour les utilisateurs Linux et Unix)
 

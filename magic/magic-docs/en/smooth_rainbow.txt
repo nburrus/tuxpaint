@@ -1,0 +1,9 @@
+                     Tux Paint "Magic" Tool: Smooth Rainbow
+
+                  By Bill Kendrick <bill@newbreedsoftware.com>
+
+   This is similar to Rainbow magic tool — as you move the mouse around, it
+   cycles through a spectrum of colors — except the colors blend smoothly as
+   you draw.
+
+   See also: Rainbow

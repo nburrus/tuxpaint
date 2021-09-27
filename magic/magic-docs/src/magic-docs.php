@@ -5,7 +5,7 @@ individual HTML files for each of them, and an index.html that links to
 them all. */
 
 /* Bill Kendrick <bill@newbreedsoftware.com> */
-/* Oct. 8, 2009 - September 6, 2021 */
+/* Oct. 8, 2009 - September 27, 2021 */
 
 
 /* Authors of the Magic tools: */
@@ -145,6 +145,10 @@ $tools = array(
    'desc'=>'Click a corner of your picture and drag towards the center to fold it up like a piece of paper.',
    'author'=>array($AUTHOR_ADAMR, $AUTHOR_KENDRICK, $AUTHOR_PERE)),
 
+  array('name'=>'Fretwork',
+   'desc'=>'Draw an interlaced decorative design that looks like wooden fretwork.',
+   'author'=>$AUTHOR_PERE),
+
   array('name'=>'Glass Tile',
    'desc'=>'Click and drag over your picture to make it look like it\'s being seen through glass tiles.',
    'author'=>$AUTHOR_KENDRICK),
@@ -153,6 +157,10 @@ $tools = array(
    'desc'=>'This paints grass on the image. The higher up the canvas, the smaller the grass is drawn, giving an illusion of perspective.  The grass can be tinted various greenish hues by selecting different colors in the color palette.',
    'author'=>$AUTHOR_ALBERT,
    'see'=>'Flower'),
+
+  array('name'=>'Halftone',
+   'desc'=>'This makes parts of your picture look like newsprint. Different sizes of cyan, magenta, yellow, and black "ink" will appear in place of your picture.',
+   'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Kaleidoscope',
    'desc'=>'This paint brush draws in four places at the same time, mirroring symmetrically, both horizontally and vertically.  It uses the currently selected color.',
@@ -167,6 +175,10 @@ $tools = array(
    'desc'=>'This fades the colors wherever you drag the mouse.  (Do it to the same spot many times, and it will eventually become white.)',
    'author'=>$AUTHOR_KENDRICK,
    'see'=>array('Darken', 'Tint')),
+
+  array('name'=>'Lightning',
+   'desc'=>'Draws a lightning bolt between two points on the picture.',
+   'author'=>$AUTHOR_KENDRICK),
 
   array('name'=>'Metal Paint',
    'desc'=>'Click and drag to draw shiny metal using the current color.',
@@ -263,7 +275,8 @@ $tools = array(
 
   array('name'=>'Rainbow',
    'desc'=>'This is similar to the paint brush, but as you move the mouse around, it cycles through a spectrum of bright colors.',
-   'author'=>$AUTHOR_KENDRICK),
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>array('Smooth Rainbow')),
 
   array('name'=>'Real Rainbow',
    'desc'=>'Draw a transparent arc that looks like a real rainbow.',
@@ -295,6 +308,11 @@ $tools = array(
    'desc'=>'Trace the edges in your picture, over a black background.',
    'author'=>$AUTHOR_ANDREWC,
    'see'=>array('Edges', 'Emboss')),
+
+  array('name'=>'Smooth Rainbow',
+   'desc'=>'This is similar to Rainbow magic tool &mdash; as you move the mouse around, it cycles through a spectrum of colors &mdash; except the colors blend smoothly as you draw.',
+   'author'=>$AUTHOR_KENDRICK,
+   'see'=>array('Rainbow')),
 
   array('name'=>'Smudge',
    'desc'=>'This pushes the colors around under the mouse, like finger painting with wet paint.',

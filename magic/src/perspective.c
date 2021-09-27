@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 4, 2021
+  Last updated: September 20, 2021
   $Id$
 */
 
@@ -54,6 +54,7 @@ int perspective_init(magic_api * api);
 int perspective_get_tool_count(magic_api * api);
 SDL_Surface *perspective_get_icon(magic_api * api, int which);
 char *perspective_get_name(magic_api * api, int which);
+int perspective_get_group(magic_api * api, int which);
 
 char *perspective_get_description(magic_api * api, int which, int mode);
 
@@ -197,6 +198,12 @@ SDL_Surface *perspective_get_icon(magic_api * api, int which)
 char *perspective_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   return (strdup(gettext_noop(perspective_names[which])));
+}
+
+// Return our group (the same):
+int perspective_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+{
+  return MAGIC_TYPE_PICTURE_WARPS;
 }
 
 // Return our descriptions, localized:

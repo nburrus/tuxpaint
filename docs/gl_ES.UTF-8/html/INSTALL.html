@@ -26,7 +26,7 @@
       </p>
 
       <p>
-         5 de Setembro de 2021      </p>
+        17 de Setembro de 2021      </p>
     </center>
 
     <hr size="2" noshade />
@@ -305,7 +305,7 @@
 
           <blockquote>
             <p>
-              You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "<code>pacman</code>" except for SDL_Pango.            </p>
+              You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "<code>pacman</code>" except for SDL_Pango and SDL_gfx.            </p>
             <p>
               "<code>ntldd</code>" is a small tool which examine windows executable files to list Dynamic Link Library (<code>.dll</code>) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required <code>.dll</code> files.            </p>
             <p>
@@ -328,11 +328,11 @@
           </blockquote>
 
           <h4>
-            Install SDL_Pango and re-install SDL on the 64bit environment          </h4>
+            Install SDL_Pango and SDL_gfx on the 64bit environment          </h4>
 
           <blockquote>
             <p>
-              SDL_Pango should be installed manually. In addition, you have to re-install SDL from the source code or you will see unnecessary blank window opens when starting Tux Paint.            </p>
+              SDL_Pango and SDL_gfx should be installed manually.            </p>
             <p>
               This time, use the MinGW "64bit" shell. Open the shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MinGW 64-bit"            </p>
 
@@ -360,15 +360,15 @@
               </p>
             </blockquote>
 
-            <h5>SDL</h5>
+            <h5>SDL_gfx</h5>
             <blockquote>
               <p>
-                Download <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">source tar-ball of SDL_1.2.15</a> from <a href="http://www.libsdl.org/">libsdl.org</a>.              </p>
+                  Download <a href="https://sourceforge.net/projects/sdlgfx/files/SDL_gfx-2.0.25.tar.gz/download">source tar-ball of SDL_gfx-2.0.25</a> from <a href="https://sourceforge.net/projects/sdlgfx/">SDL_gfx's page on Sourceforge.net</a>.              </p>
               <p>
-                Re-install SDL as follows.                <blockquote>
+                Install SDL_gfx as follows.                <blockquote>
                   <code>
-                    $ tar zxvf SDL-1.2.15.tar.gz<br/>
-                    $ cd SDL-1.2.15<br/>
+                    $ tar zxvf SDL_gfx-2.0.25.tar.gz<br/>
+                    $ cd SDL_gfx-2.0.25<br/>
                     $ ./configure --prefix=/mingw64 &amp;&amp; make &amp;&amp; make install
                   </code>
                 </blockquote>
@@ -403,7 +403,7 @@
 
           <blockquote>
             <p>
-              You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "<code>pacman</code>" except for SDL_Pango.            </p>
+              You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "<code>pacman</code>" except for SDL_Pango and SDL_gfx.            </p>
             <p>
               "<code>ntldd</code>" is a small tool which examine windows executable files to list Dynamic Link Library (<code>.dll</code>) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required <code>.dll</code> files.            </p>
             <p>
@@ -426,11 +426,11 @@
           </blockquote>
 
           <h4>
-            Install SDL_Pango and re-install SDL on the 32bit environment          </h4>
+            Install SDL_Pango and SDL_gfx on the 32bit environment          </h4>
 
           <blockquote>
             <p>
-              SDL_Pango should be installed manually. In addition, you have to re-install SDL from the source code or you will see unnecessary blank window opens when starting Tux Paint.            </p>
+              SDL_Pango and SDL_gfx should be installed manually.            </p>
             <p>
               This time, use the MinGW "32bit" shell. Open the shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MinGW 32-bit"            </p>
 
@@ -458,15 +458,15 @@
               </p>
             </blockquote>
 
-            <h5>SDL</h5>
+            <h5>SDL_gfx</h5>
             <blockquote>
               <p>
-                Download <a href="http://www.libsdl.org/release/SDL-1.2.15.tar.gz">source tar-ball of SDL_1.2.15</a> from <a href="http://www.libsdl.org/">libsdl.org</a>.              </p>
+                  Download <a href="https://sourceforge.net/projects/sdlgfx/files/SDL_gfx-2.0.25.tar.gz/download">source tar-ball of SDL_gfx-2.0.25</a> from <a href="https://sourceforge.net/projects/sdlgfx/">SDL_gfx's page on Sourceforge.net</a>.              </p>
               <p>
-                Re-install SDL as follows.                <blockquote>
+                Install SDL_gfx as follows.                <blockquote>
                   <code>
-                    $ tar zxvf SDL-1.2.15.tar.gz<br/>
-                    $ cd SDL-1.2.15<br/>
+                    $ tar zxvf SDL_gfx-2.0.25.tar.gz<br/>
+                    $ cd SDL_gfx-2.0.25<br/>
                     $ ./configure --prefix=/mingw32 &amp;&amp; make &amp;&amp; make install
                   </code>
                 </blockquote>
@@ -812,6 +812,7 @@
               <li><code>libsdl_mixer</code></li>
               <li><code>libsdl_pango</code></li>
               <li><code>libsdl_ttf</code></li>
+              <li><code>libsdl_gfx</code></li>
               <li><code>pkgconfig</code></li>
               <li><code>zlib</code></li>
             </ul>

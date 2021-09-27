@@ -136,7 +136,7 @@ Lancement de Tux Paint
 
      ----------------------------------------------------------------------
 
-  macOS Users
+  Utilisateurs de macOS
 
          Double-cliquez simplement sur l'icône "Tux Paint".
 
@@ -235,21 +235,22 @@ Outils disponibles
                  la souris, elle dessine au fur et à mesure que vous vous
                  déplacez.
 
-                 Some brushes are animated — they change their shape as you
-                 draw them. A good example of this is the vines brush that
-                 ships with Tux Paint. These brushes will have a small
-                 "filmstrip" icon drawn on their Selector buttons.
+                 Cerains pinceaux sont animés — ils changent de forme lorsque
+                 vous dessinez. Un bon exemple est le pinceau 'grappe' livré
+                 avec Tux Paint. Ces pinceaux ont une icône avec une petite
+                 pellicule dessinée sur le bouton de sélection.
 
-                 Other brushes are directional — they will draw a different
-                 shape depending on what direction you are painting with
-                 them. An example of this is the arrow brush that ships with
-                 Tux Paint. These brushes have a small 8-way arrow icon drawn
-                 on their Selector buttons.
+                 D'autres pinceaux sont directionnels — leur forme dépend de
+                 la direction dans laquelle vous dessinez. Un exemple est le
+                 pinceau flèche livré avec Tux Paint. Ces pinceaux ont une
+                 petite étoile à 8 branches sur leur icône du bouton de
+                 sékection.
 
-                 Finally, some brushes can be both direction and animated.
-                 Examples of this are the cat and squirrel brushes that ship
-                 with Tux Paint. These brushes will have both the "filmstrip"
-                 and 8-way arrow icons.
+                 Et enfin, certains pinceaux peuvent être = la fois
+                 directionnels et animés. Des exemples sont les pinceaux
+                 'chat' et 'écureuil' livrés avec Tux Paint. Ces pinceaux ont
+                 à la fois une pellicule et une étoile à 8 branches sur leur
+                 icône.
 
                  Pendant que vous dessinez, un son est joué. Plus la brosse
                  est grosse, plus le son est grave.
@@ -317,11 +318,11 @@ Outils disponibles
                  Relâchez la souris pour terminer la ligne. On entend alors
                  le son "sproing !".
 
-                 Some brushes are animated, and will show a pattern of shapes
-                 along the line. Others are directional, and will show a
-                 different shape depending on the angle of the brush. And
-                 finally some are both animated and directional. See "Paint",
-                 above, to learn more.
+                 Certains pinceaux sont animés, et montre un ensemble formes
+                 le long d'une ligne. D'autres sont directionnels et montre
+                 des formes différentes suivant l'angle du pinceau. Et enfin
+                 certains sont à la fois animés et directionnels. Voir
+                 "Paint", au-dessus, pour en savoir plus.
 
      ----------------------------------------------------------------------
 
