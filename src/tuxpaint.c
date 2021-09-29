@@ -8725,10 +8725,8 @@ static void create_button_labels(void)
  */
 static void seticon(void)
 {
-#ifndef WIN32
   int masklen;
   Uint8 *mask;
-#endif
   SDL_Surface *icon;
 
   /* Load icon into a surface: */
@@ -8749,7 +8747,6 @@ static void seticon(void)
     }
 
 
-#ifndef WIN32
   /* Create mask: */
   masklen = (((icon->w) + 7) / 8) * (icon->h);
   mask = malloc(masklen * sizeof(Uint8));
@@ -8760,10 +8757,6 @@ static void seticon(void)
   SDL_SetWindowIcon(window_screen, icon);
   /* Free icon surface & mask: */
   free(mask);
-#else
-  /* Set icon: */
-  SDL_WM_SetIcon(icon, NULL);
-#endif
   SDL_FreeSurface(icon);
 
 
@@ -18020,7 +18013,7 @@ void do_print(void)
   safe_snprintf(f, sizeof(f), "%s/%s", savedir, "print.cfg");        /* FIXME */
 
   {
-    const char *error = SurfacePrint(save_canvas, use_print_config ? f : NULL, show);
+    const char *error = SurfacePrint(window_screen, save_canvas, use_print_config ? f : NULL, show);
 
     if (error)
       fprintf(stderr, "%s\n", error);
@@ -18879,7 +18872,7 @@ static void handle_active(SDL_Event * event)
         }
 
 #ifdef _WIN32
-      SetActivationState(event->active.gain);
+      SetActivationState(1);
 #endif
     }
 }
