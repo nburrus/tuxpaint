@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 20, 2021
+# June 14, 2002 - September 28, 2021
 
 
 # The version number, for release:
@@ -1066,8 +1066,17 @@ install-doc:
 	@cp -R docs/* $(DOC_PREFIX)
 	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
 	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
+	@echo
+	@echo "...Installing English Magic tool docs..."
 	@install -d $(DOC_PREFIX)/en/magic-docs
 	@cp -R magic/magic-docs/en/* $(DOC_PREFIX)/en/magic-docs/
+	@echo
+	for l in `ls -d man/*.UTF-8 | cut -d '/' -f 2`; do \
+		DEST=$(DOC_PREFIX)/$$l/magic-docs ; \
+		echo "...Installing $$l Magic tool docs into $$DEST..." ; \
+		install -d $$DEST ; \
+		cp -R magic/magic-docs/$$l/* $$DEST/ ; \
+	done
 	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
 
 

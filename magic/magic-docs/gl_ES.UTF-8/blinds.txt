@@ -1,0 +1,12 @@
+                         Tux Paint "Magic" Tool: Blinds
+
+                           Group: Picture Decorations
+
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+   Click towards the edge of your picture to pull window blinds over it. Move
+   perpendicularly to open or close the blinds.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

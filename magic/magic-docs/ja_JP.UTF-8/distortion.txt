@@ -1,0 +1,11 @@
+                       Tux Paint "Magic" Tool: Distortion
+
+                                Group: Distorts
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   This slightly distorts the picture wherever you move the mouse.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

@@ -1,0 +1,11 @@
+                      Tux Paint "Magic" Tool: Real Rainbow
+
+                                Group: Artistic
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   Draw a transparent arc that looks like a real rainbow.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

@@ -1,0 +1,14 @@
+                          Tux Paint "Magic" Tool: Tint
+
+                              Group: Color Filters
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   This changes the color (or hue) of the parts of the picture to the
+   selected color.
+
+   See also: lighten darken
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

@@ -1,0 +1,13 @@
+                        Tux Paint "Magic" Tool: Sharpen
+
+                                Group: Distorts
+
+                 Author: Andrew Corcoran <akanewbie@gmail.com>
+
+   Sharpen the focus of the picture.
+
+   See also: blur
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

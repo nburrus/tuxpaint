@@ -1,0 +1,13 @@
+                     Tux Paint "Magic" Tool: Square Mosaic
+
+                                Group: Distorts
+
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+   Converts parts of your picture into a mosaic of square cells.
+
+   See also: hexagon_mosaic irregular_mosaic mosaic
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

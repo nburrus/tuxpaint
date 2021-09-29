@@ -1,0 +1,13 @@
+                          Tux Paint "Magic" Tool: Rain
+
+                                Group: Painting
+
+                 Author: Andrew Corcoran <akanewbie@gmail.com>
+
+   Paint raindrops on your picture.
+
+   See also: snow_ball snow_flake
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

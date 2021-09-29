@@ -1,0 +1,12 @@
+                        Tux Paint "Magic" Tool: Cartoon
+
+                              Group: Color Filters
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   This makes the picture look like a cartoon — with thick outlines and
+   bright, solid colors — wherever you move the mouse.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

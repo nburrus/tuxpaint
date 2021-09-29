@@ -1,0 +1,13 @@
+                  Tux Paint "Magic" Tool: Symmetry Left/Right
+
+                            Group: Pattern Painting
+
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+   Paint with relfective symmetry across the horizontal center of the image.
+
+   See also: kaleidoscope pattern symmetry_up_down tiles
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

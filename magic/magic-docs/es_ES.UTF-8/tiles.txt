@@ -1,0 +1,13 @@
+                         Tux Paint "Magic" Tool: Tiles
+
+                            Group: Pattern Painting
+
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+
+   Draws a symettric pattern around the picture.
+
+   See also: pattern
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

@@ -1,0 +1,13 @@
+                        Tux Paint "Magic" Tool: Ripples
+
+                                Group: Distorts
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   Click in your picture to make water ripple distortions appear over it.
+
+   See also: fisheye
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

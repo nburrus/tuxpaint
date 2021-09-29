@@ -1,0 +1,14 @@
+                         Tux Paint "Magic" Tool: Smudge
+
+                                Group: Distorts
+
+                  Author: Albert Cahalan <albert@users.sf.net>
+
+   This pushes the colors around under the mouse, like finger painting with
+   wet paint.
+
+   See also: blur wet paint
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

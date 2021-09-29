@@ -1,0 +1,11 @@
+                         Tux Paint "Magic" Tool: Puzzle
+
+                                Group: Distorts
+
+                    Author: Adam Rakowski <foo-script@o2.pl>
+
+   Slide parts of your picture around like a sliding puzzle.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27
