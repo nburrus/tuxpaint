@@ -1,5 +1,7 @@
                   Tux Paint "Magic" Tool: Symmetry Left/Right
 
+                            Group: Pattern Painting
+
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Paint with relfective symmetry across the horizontal center of the image.

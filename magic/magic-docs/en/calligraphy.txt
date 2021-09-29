@@ -1,5 +1,7 @@
                       Tux Paint "Magic" Tool: Calligraphy
 
+                                Group: Painting
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This paints on the canvas with a calligraphy pen. The quicker you move,

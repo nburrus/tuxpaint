@@ -1,5 +1,7 @@
                       Tux Paint "Magic" Tool: Checkerboard
 
+                           Group: Picture Decorations
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This covers the entire canvas with a checkboard pattern using the current

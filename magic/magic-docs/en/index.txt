@@ -1,76 +1,96 @@
                   Tux Paint "Magic" Tool: List of Magic Tools
 
-   * Blinds
-   * Blocks
-   * Blur
-   * Bricks
-   * Calligraphy
-   * Cartoon
-   * Chalk
-   * Checkerboard
-   * Clone
-   * Color and White
-   * Color Shift
-   * Confetti
-   * Darken
-   * Distortion
-   * Drip
-   * Edges
-   * Emboss
-   * Fisheye
-   * Flip
-   * Flower
-   * Foam
-   * Fold
-   * Fretwork
-   * Glass Tile
-   * Grass
-   * Halftone
-   * Kaleidoscope
-   * Light
-   * Lighten
-   * Lightning
-   * Metal Paint
-   * Mirror
-   * Mosaic
-   * Hexagon Mosaic
-   * Irregular Mosaic
-   * Square Mosaic
-   * Negative
-   * Noise
-   * Opposite
-   * Panels
-   * Pattern
-   * Perspective
-   * Picasso
-   * Pixels
-   * Puzzle
-   * Rails
-   * Rain
-   * Rainbow
-   * Real Rainbow
-   * ROYGBIV Rainbow
-   * Ripples
-   * Rosette
-   * Sharpen
-   * Shift
-   * Silhouette
-   * Smooth Rainbow
-   * Smudge
-   * Snow Ball
-   * Snow Flake
-   * String V
-   * String Corner
-   * String Edges
-   * Symmetry Left/Right
-   * Symmetry Up/Down
-   * Tiles
-   * Tint
-   * TV
-   * Toothpaste
-   * Tornado
-   * Waves
-   * Wavelets
-   * Wet Paint
-   * Xor Colors
-   * Zoom
+Distorts
+
+     * Blocks
+     * Blur
+     * Chalk
+     * Clone
+     * Distortion
+     * Drip
+     * Edges
+     * Emboss
+     * Fisheye
+     * Glass Tile
+     * Halftone
+     * Mosaic
+     * Hexagon Mosaic
+     * Irregular Mosaic
+     * Square Mosaic
+     * Noise
+     * Puzzle
+     * Ripples
+     * Sharpen
+     * Silhouette
+     * Smudge
+     * TV
+
+Color Filters
+
+     * Cartoon
+     * Color Shift
+     * Color and White
+     * Darken
+     * Lighten
+     * Negative
+     * Opposite
+     * Tint
+     * Xor Colors
+
+Picture Warps
+
+     * Flip
+     * Fold
+     * Mirror
+     * Panels
+     * Perspective
+     * Shift
+     * Waves
+     * Wavelets
+     * Zoom
+
+Painting
+
+     * Bricks
+     * Calligraphy
+     * Confetti
+     * Foam
+     * Fretwork
+     * Grass
+     * Light
+     * Metal Paint
+     * Pixels
+     * Rails
+     * Rain
+     * Rainbow
+     * Smooth Rainbow
+     * Toothpaste
+     * Wet Paint
+
+Pattern Painting
+
+     * Kaleidoscope
+     * Pattern
+     * Picasso
+     * Rosette
+     * Symmetry Left/Right
+     * Symmetry Up/Down
+     * Tiles
+
+Picture Decorations
+
+     * Blinds
+     * Checkerboard
+     * Snow Ball
+     * Snow Flake
+
+Artistic
+
+     * Flower
+     * Lightning
+     * Real Rainbow
+     * ROYGBIV Rainbow
+     * String V
+     * String Corner
+     * String Edges
+     * Tornado

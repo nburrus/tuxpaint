@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Smudge
 
+                                Group: Distorts
+
                     By Albert Cahalan <albert@users.sf.net>
 
    This pushes the colors around under the mouse, like finger painting with

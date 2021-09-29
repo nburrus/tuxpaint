@@ -1,5 +1,7 @@
                           Tux Paint "Magic" Tool: Zoom
 
+                              Group: Picture Warps
+
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Click and drag up to zoom in, or down to zoom out.

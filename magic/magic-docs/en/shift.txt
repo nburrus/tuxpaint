@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Shift
 
+                              Group: Picture Warps
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This shifts your picture around the canvas. Anything that gets shifts off

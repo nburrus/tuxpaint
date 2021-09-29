@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Clone
 
+                                Group: Distorts
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    Clone (copy, via painting) part of the picture. Click ones to choose the

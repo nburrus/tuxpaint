@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: Rainbow
 
+                                Group: Painting
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This is similar to the paint brush, but as you move the mouse around, it

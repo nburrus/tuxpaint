@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: Opposite
 
+                              Group: Color Filters
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This converts the colors wherever you drag the mouse into their

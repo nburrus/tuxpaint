@@ -1,5 +1,7 @@
                     Tux Paint "Magic" Tool: Color and White
 
+                              Group: Color Filters
+
                     By Andrew Corcoran <akanewbie@gmail.com>
 
    This makes parts of your picture two colors: white, and the color chosen

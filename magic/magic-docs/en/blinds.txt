@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Blinds
 
+                           Group: Picture Decorations
+
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Click towards the edge of your picture to pull window blinds over it. Move

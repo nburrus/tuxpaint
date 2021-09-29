@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: String V
 
+                                Group: Artistic
+
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draw V-shaped string art at any angle.

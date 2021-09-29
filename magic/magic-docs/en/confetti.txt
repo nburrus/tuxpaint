@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: Confetti
 
+                                Group: Painting
+
                       By Adam Rakowski <foo-script@o2.pl>
 
    Throw confetti around your picture!

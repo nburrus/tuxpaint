@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: Tornado
 
+                                Group: Artistic
+
                By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draws a tornado effect onto the picture.

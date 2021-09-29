@@ -1,5 +1,7 @@
                      Tux Paint "Magic" Tool: Smooth Rainbow
 
+                                Group: Painting
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This is similar to Rainbow magic tool — as you move the mouse around, it

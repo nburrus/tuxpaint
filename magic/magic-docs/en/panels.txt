@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Panels
 
+                              Group: Picture Warps
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    Shrink the image and repeat it four times in a 2-by-2 grid. Useful for

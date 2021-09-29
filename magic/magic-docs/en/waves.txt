@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Waves
 
+                              Group: Picture Warps
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    Click to make the entire picture wavy, side-to-side. Drag the mouse up and

@@ -1,5 +1,7 @@
                        Tux Paint "Magic" Tool: Wet Paint
 
+                                Group: Painting
+
                     By Albert Cahalan <albert@users.sf.net>
                    Bill Kendrick <bill@newbreedsoftware.com>
 

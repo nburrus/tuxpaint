@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Chalk
 
+                                Group: Distorts
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This makes parts of the picture (where you move the mouse) look like a

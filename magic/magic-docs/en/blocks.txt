@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Blocks
 
+                                Group: Distorts
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
                       Albert Cahalan <albert@users.sf.net>
 

@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: Wavelets
 
+                              Group: Picture Warps
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
                         Adam Rakowski <foo-script@o2.pl>
 

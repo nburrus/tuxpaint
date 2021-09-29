@@ -1,5 +1,7 @@
                         Tux Paint "Magic" Tool: Halftone
 
+                                Group: Distorts
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This makes parts of your picture look like newsprint. Different sizes of

@@ -1,5 +1,7 @@
                        Tux Paint "Magic" Tool: Silhouette
 
+                                Group: Distorts
+
                     By Andrew Corcoran <akanewbie@gmail.com>
 
    Trace the edges in your picture, over a black background.

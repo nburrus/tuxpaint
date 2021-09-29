@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Darken
 
+                              Group: Color Filters
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This dakrens the colors wherever you drag the mouse. (Do it to the same

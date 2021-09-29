@@ -1,5 +1,7 @@
                           Tux Paint "Magic" Tool: Drip
 
+                                Group: Distorts
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This makes the paint "drip" wherever you move the mouse.

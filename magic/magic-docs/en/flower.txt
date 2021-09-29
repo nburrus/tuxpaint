@@ -1,5 +1,7 @@
                          Tux Paint "Magic" Tool: Flower
 
+                                Group: Artistic
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    This tool draws small flowers, with leafy bases and stalks. Click to set

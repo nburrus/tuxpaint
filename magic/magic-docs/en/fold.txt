@@ -1,5 +1,7 @@
                           Tux Paint "Magic" Tool: Fold
 
+                              Group: Picture Warps
+
                       By Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>

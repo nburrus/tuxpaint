@@ -1,5 +1,7 @@
                           Tux Paint "Magic" Tool: Foam
 
+                                Group: Painting
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    Click and drag the mouse to draw foamy bubbles. The more you drag the

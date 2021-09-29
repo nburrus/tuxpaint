@@ -1,5 +1,7 @@
                        Tux Paint "Magic" Tool: Lightning
 
+                                Group: Artistic
+
                   By Bill Kendrick <bill@newbreedsoftware.com>
 
    Draws a lightning bolt between two points on the picture.
