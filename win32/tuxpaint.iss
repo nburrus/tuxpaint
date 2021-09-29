@@ -65,6 +65,7 @@ AppPublisher={#PublisherName}
 AppPublisherURL={#PublisherURL}
 AppSupportURL={#PublisherURL}
 AppUpdatesURL={#PublisherURL}
+AppVersion={#AppVersion}
 DefaultDirName={pf}\{#AppDirName}
 DefaultGroupName={#AppGroupName}
 OutputDir=.\
