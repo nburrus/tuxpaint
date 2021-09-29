@@ -94,3 +94,7 @@ Artistic
      * String Corner
      * String Edges
      * Tornado
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

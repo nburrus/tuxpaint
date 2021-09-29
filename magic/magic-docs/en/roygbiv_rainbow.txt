@@ -2,6 +2,10 @@
 
                                 Group: Artistic
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    Draw a rainbow arc of red, orange, yellow, green, blue, indigo and violet.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

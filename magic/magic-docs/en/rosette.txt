@@ -2,8 +2,12 @@
 
                             Group: Pattern Painting
 
-                      By Adam Rakowski <foo-script@o2.pl>
+                    Author: Adam Rakowski <foo-script@o2.pl>
 
    Draw three brushes at once, in a rosette shape.
 
-   See also: Kaleidoscope Picasso
+   See also: kaleidoscope picasso
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

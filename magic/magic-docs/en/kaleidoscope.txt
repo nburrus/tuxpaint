@@ -2,10 +2,14 @@
 
                             Group: Pattern Painting
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This paint brush draws in four places at the same time, mirroring
    symmetrically, both horizontally and vertically. It uses the currently
    selected color.
 
-   See also: Picasso
+   See also: picasso rosette
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

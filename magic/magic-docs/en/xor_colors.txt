@@ -2,6 +2,10 @@
 
                               Group: Color Filters
 
-               By Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
+            Author: Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
 
    Colors based on the position drawn on the picture.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

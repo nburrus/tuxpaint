@@ -2,8 +2,12 @@
 
                             Group: Pattern Painting
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draws a tiled pattern around the picture.
 
-   See also: Tiles
+   See also: tiles
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

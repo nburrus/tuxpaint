@@ -2,8 +2,12 @@
 
                                 Group: Artistic
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draw V-shaped string art at any angle.
 
-   See also: String Corner String Edges
+   See also: string_corner string_edges
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

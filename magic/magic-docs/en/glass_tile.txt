@@ -2,7 +2,11 @@
 
                                 Group: Distorts
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    Click and drag over your picture to make it look like it's being seen
    through glass tiles.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

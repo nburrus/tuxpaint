@@ -2,8 +2,12 @@
 
                                 Group: Distorts
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Converts parts of your picture into a mosaic of square cells.
 
-   See also: Hexagon Mosaic Irregular Mosaic Mosaic
+   See also: hexagon_mosaic irregular_mosaic mosaic
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

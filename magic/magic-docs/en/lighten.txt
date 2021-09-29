@@ -2,9 +2,13 @@
 
                               Group: Color Filters
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This fades the colors wherever you drag the mouse. (Do it to the same spot
    many times, and it will eventually become white.)
 
-   See also: Darken Tint
+   See also: darken tint
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

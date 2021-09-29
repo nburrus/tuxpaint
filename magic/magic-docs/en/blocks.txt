@@ -2,8 +2,12 @@
 
                                 Group: Distorts
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Authors: Bill Kendrick <bill@newbreedsoftware.com>
                       Albert Cahalan <albert@users.sf.net>
 
    This makes the picture blocky looking ("pixelated") wherever you drag the
    mouse.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

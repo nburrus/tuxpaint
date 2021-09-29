@@ -2,8 +2,12 @@
 
                                 Group: Artistic
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draw string art around the edges of your picture.
 
-   See also: String V String Corner
+   See also: string_v string_corner
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

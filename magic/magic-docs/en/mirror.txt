@@ -2,10 +2,14 @@
 
                               Group: Picture Warps
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    When you click the mouse in your picture with the "Mirror" magic effect
    selected, the entire image will be reversed, turning it into a mirror
    image.
 
-   See also: Flip
+   See also: flip
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

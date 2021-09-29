@@ -2,6 +2,10 @@
 
                                 Group: Painting
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draw an interlaced decorative design that looks like wooden fretwork.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

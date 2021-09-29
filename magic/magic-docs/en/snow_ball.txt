@@ -2,8 +2,12 @@
 
                            Group: Picture Decorations
 
-                    By Andrew Corcoran <akanewbie@gmail.com>
+                 Author: Andrew Corcoran <akanewbie@gmail.com>
 
    Fill the picture with snowballs.
 
-   See also: Rain Snow Flake
+   See also: rain snow_flake
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

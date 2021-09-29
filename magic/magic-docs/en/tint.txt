@@ -2,9 +2,13 @@
 
                               Group: Color Filters
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This changes the color (or hue) of the parts of the picture to the
    selected color.
 
-   See also: Lighten Darken
+   See also: lighten darken
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

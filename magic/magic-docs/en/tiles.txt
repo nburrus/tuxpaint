@@ -2,8 +2,12 @@
 
                             Group: Pattern Painting
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draws a symettric pattern around the picture.
 
-   See also: Pattern
+   See also: pattern
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

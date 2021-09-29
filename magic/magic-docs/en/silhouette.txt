@@ -2,8 +2,12 @@
 
                                 Group: Distorts
 
-                    By Andrew Corcoran <akanewbie@gmail.com>
+                 Author: Andrew Corcoran <akanewbie@gmail.com>
 
    Trace the edges in your picture, over a black background.
 
-   See also: Edges Emboss
+   See also: edges emboss
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

@@ -2,10 +2,14 @@
 
                                 Group: Painting
 
-                    By Albert Cahalan <albert@users.sf.net>
+                  Author: Albert Cahalan <albert@users.sf.net>
 
    These two tools intelligently paint large and small brick patterns on the
    canvas. The bricks can be tinted various redish hues by selecting
    different colors in the color palette.
 
-   See also: Pixels
+   See also: pixels
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

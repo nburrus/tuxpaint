@@ -2,6 +2,10 @@
 
                                 Group: Artistic
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Draws a tornado effect onto the picture.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

@@ -2,10 +2,14 @@
 
                                 Group: Distorts
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This makes parts of your picture look "embossed." Wherever there are sharp
    edges in your picture, the picture will look raised like it was stamped in
    metal.
 
-   See also: Edges Silhouette
+   See also: edges silhouette
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

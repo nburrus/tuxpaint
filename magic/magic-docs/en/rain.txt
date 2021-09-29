@@ -2,8 +2,12 @@
 
                                 Group: Painting
 
-                    By Andrew Corcoran <akanewbie@gmail.com>
+                 Author: Andrew Corcoran <akanewbie@gmail.com>
 
    Paint raindrops on your picture.
 
-   See also: Snow Ball Snow Flake
+   See also: snow_ball snow_flake
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

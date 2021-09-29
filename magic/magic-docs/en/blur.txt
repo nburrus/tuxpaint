@@ -2,9 +2,13 @@
 
                                 Group: Distorts
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Authors: Bill Kendrick <bill@newbreedsoftware.com>
                       Albert Cahalan <albert@users.sf.net>
 
    This makes the picture fuzzy wherever you drag the mouse.
 
-   See also: Sharpen Smudge
+   See also: sharpen smudge
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

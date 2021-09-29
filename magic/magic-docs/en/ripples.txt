@@ -2,8 +2,12 @@
 
                                 Group: Distorts
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    Click in your picture to make water ripple distortions appear over it.
 
-   See also: Fisheye
+   See also: fisheye
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

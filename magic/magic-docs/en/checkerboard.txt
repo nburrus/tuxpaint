@@ -2,7 +2,11 @@
 
                            Group: Picture Decorations
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This covers the entire canvas with a checkboard pattern using the current
    color. Drag to change the size of the squares.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

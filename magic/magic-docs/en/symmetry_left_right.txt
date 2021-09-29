@@ -2,8 +2,12 @@
 
                             Group: Pattern Painting
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Paint with relfective symmetry across the horizontal center of the image.
 
-   See also: Kaleidoscope Pattern Symmetry Up/Down Tiles
+   See also: kaleidoscope pattern symmetry_up_down tiles
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

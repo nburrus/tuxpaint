@@ -2,7 +2,7 @@
 
                                 Group: Artistic
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This tool draws small flowers, with leafy bases and stalks. Click to set
    the base, then drag the mouse upwards to drawe the stalk, and finally
@@ -10,4 +10,8 @@
    currently-selected color. The shape and length of the stalk depends on how
    you move the mouse while you drag.
 
-   See also: Grass
+   See also: grass
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

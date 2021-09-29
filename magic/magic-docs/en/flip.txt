@@ -2,9 +2,13 @@
 
                               Group: Picture Warps
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    Similar to "Mirror." Click and the entire image will be turned
    upside-down.
 
-   See also: Mirror
+   See also: mirror
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

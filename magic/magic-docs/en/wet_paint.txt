@@ -2,9 +2,13 @@
 
                                 Group: Painting
 
-                    By Albert Cahalan <albert@users.sf.net>
+                 Authors: Albert Cahalan <albert@users.sf.net>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
    This draws a light, smudgy coat of paint on the picture.
 
-   See also: Smudge
+   See also: smudge
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

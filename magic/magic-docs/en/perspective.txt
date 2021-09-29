@@ -2,6 +2,10 @@
 
                               Group: Picture Warps
 
-               By Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
    Click and drag from the corners to change the perspective of your picture.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

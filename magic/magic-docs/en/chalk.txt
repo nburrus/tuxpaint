@@ -2,7 +2,11 @@
 
                                 Group: Distorts
 
-                  By Bill Kendrick <bill@newbreedsoftware.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
    This makes parts of the picture (where you move the mouse) look like a
    chalk drawing.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27

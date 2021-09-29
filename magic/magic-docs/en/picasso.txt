@@ -2,8 +2,12 @@
 
                             Group: Pattern Painting
 
-                      By Adam Rakowski <foo-script@o2.pl>
+                    Author: Adam Rakowski <foo-script@o2.pl>
 
    Draw three swirling brushes at once, in a Picasso style.
 
-   See also: Rosette
+   See also: rosette kaleidoscope
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.27
