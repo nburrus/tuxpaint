@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.27 (0.9.28)
+2021.September.29 (0.9.28)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -155,6 +155,9 @@ $Id$
       cross compilation) are set; avoid confusion when an unrelated
       $HOST env. var. is set.
       Mark K. Kim <markuskimius@gmail.com>
+
+    * Include "AppVersion" directive to Windows installer ISS file.
+      Easton Pillay <https://sourceforge.net/u/jedieaston/profile/>
 
 2021.June.28 (0.9.26)
   * New Features
