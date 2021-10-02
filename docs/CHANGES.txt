@@ -122,6 +122,9 @@ $Id$
       + Greek
       + Scottish Gaelic
 
+    * Catalan
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
     * French
       Jacques Chion <jacques.chion@orange.fr>
 

@@ -2,7 +2,7 @@
 # Traducció al català del Tuxpaint.
 # Copyright (C) 2002-2009
 # This file is distributed under the same license as the Tuxpaint package.
-# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2015, 2020.
+# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2015, 2020, 2021.
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2018.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
 #
@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-23 00:17-0700\n"
-"PO-Revision-Date: 2021-05-08 01:11+0200\n"
+"PO-Revision-Date: 2021-10-03 00:11+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -406,30 +406,16 @@ msgid "A star with 5 points."
 msgstr "Una estrela de cinc puntes."
 
 #: ../shapes.h:385
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
-msgstr ""
-"Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors "
-"deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per "
-"girar-la i feu clic per dibuixar-la."
+msgstr "Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors deixeu anar el botó quan sigui de la mida i forma que voleu. Moveu el ratolí per girar-la i feu clic per dibuixar-la."
 
 #: ../shapes.h:386
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
-msgstr ""
-"Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors "
-"deixeu anar el botó quan sigui de la mida que voleu. Moveu el ratolí per "
-"girar-la i feu clic per dibuixar-la."
+msgstr "Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors deixeu anar el botó quan sigui de la mida i forma que voleu."
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
@@ -1092,8 +1078,6 @@ msgid "Fretwork"
 msgstr "Sanefa"
 
 #: ../../magic/src/fretwork.c:188
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
 
@@ -1287,7 +1271,7 @@ msgstr "Negatiu"
 
 #: ../../magic/src/negative.c:74
 msgid "Opposite"
-msgstr ""
+msgstr "Oposat"
 
 #: ../../magic/src/negative.c:79
 msgid "Click and drag the mouse around to make your painting negative."
@@ -1298,21 +1282,16 @@ msgid "Click to turn your painting into its negative."
 msgstr "Feu clic per fer el negatiu del dibuix."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per canviar el color de parts del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per canviar els colors de parts del dibuix en els seus complementaris."
 
 #: ../../magic/src/negative.c:84
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
-msgstr ""
+msgstr "Feu clic per canviar tots els colors en els seus complementaris."
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1343,10 +1322,8 @@ msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Feu clic en les cantonades i arrossegueu per estirar la imatge."
 
 #: ../../magic/src/perspective.c:159
-#, fuzzy
-#| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
-msgstr "Feu clic per fer el negatiu del dibuix."
+msgstr "Feu clic per fer reduir i quadriplicar, 2 per 2 el dibuix."
 
 #: ../../magic/src/perspective.c:161
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1387,10 +1364,8 @@ msgid "Rainbow"
 msgstr "Colors de l'arc"
 
 #: ../../magic/src/rainbow.c:140
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Smooth Rainbow"
-msgstr "Colors de l'arc"
+msgstr "Colors suaus"
 
 #: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
