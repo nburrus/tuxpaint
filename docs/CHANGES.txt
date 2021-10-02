@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.27 (0.9.27)
+2021.September.29 (0.9.28)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -98,6 +98,9 @@ $Id$
       'tuxpaint-docs' project, just like the HTML & plaintext
       documentation files (since 0.9.26).
 
+    * Documentation to the various Magic tools are also now
+      managed & translatable via the 'tuxpaint-docs' project.
+
     * Added table of contents to some documentation
       ("Options Documentation", "FAQ", "Installation Documentation",
       and "Advanced Stamps 'How-To'").
@@ -118,6 +121,9 @@ $Id$
       for the Text and Label tools:
       + Greek
       + Scottish Gaelic
+
+    * Catalan
+      Pere Pujal i Carabantes <perepujal@gmail.com>
 
     * French
       Jacques Chion <jacques.chion@orange.fr>
@@ -152,6 +158,9 @@ $Id$
       cross compilation) are set; avoid confusion when an unrelated
       $HOST env. var. is set.
       Mark K. Kim <markuskimius@gmail.com>
+
+    * Include "AppVersion" directive to Windows installer ISS file.
+      Easton Pillay <https://sourceforge.net/u/jedieaston/profile/>
 
 2021.June.28 (0.9.26)
   * New Features
