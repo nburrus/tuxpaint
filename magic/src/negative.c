@@ -112,7 +112,7 @@ SDL_Surface *negative_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/%s", api->data_directory, negative_icon_filenames[which]);
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, negative_icon_filenames[which]);
   return (IMG_Load(fname));
 }
 
