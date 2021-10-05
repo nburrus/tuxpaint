@@ -45,8 +45,11 @@ const int groups[NUM_TOOLS] = {
   MAGIC_TYPE_DISTORTS,
 };
 
-const char *descs[NUM_TOOLS] = {
-  gettext_noop("Click and drag to turn your drawing into a newspaper."),
+const char *descs[NUM_TOOLS][2] = {
+  {
+    gettext_noop("Click and drag to turn your drawing into a newspaper."),
+    gettext_noop("Click to turn your drawing into a newspaper."),
+  },
 };
 
 Mix_Chunk *snd_effect[NUM_TOOLS];
@@ -131,12 +134,12 @@ int halftone_get_group(magic_api * api ATTRIBUTE_UNUSED, int which)
   return groups[which];
 }
 
-char *halftone_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
+char *halftone_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   const char *our_desc_english;
   const char *our_desc_localized;
 
-  our_desc_english = descs[which];
+  our_desc_english = descs[which][mode - 1];
   our_desc_localized = gettext(our_desc_english);
 
   return (strdup(our_desc_localized));
