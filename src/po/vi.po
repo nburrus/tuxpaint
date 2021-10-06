@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 00:17-0700\n"
+"POT-Creation-Date: 2021-10-06 23:04+0200\n"
 "PO-Revision-Date: 2010-03-27 15:12+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -236,32 +236,32 @@ msgid "Good job!"
 msgstr "Tốt rồi !"
 
 #. Input Method: English mode
-#: ../im.c:74
+#: ../im.c:80
 msgid "English"
 msgstr "Tiếng Anh"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:77
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:80
+#: ../im.c:86
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:83
+#: ../im.c:89
 msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#: ../im.c:86
+#: ../im.c:92
 msgid "Thai"
 msgstr "Tiếng Thái"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:89
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "Tiếng Trung ở Đài Loan"
 
@@ -501,7 +501,7 @@ msgstr "Mới"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8364
+#: ../tools.h:98 ../tuxpaint.c:8365
 msgid "Open"
 msgstr "Mở"
 
@@ -764,90 +764,90 @@ msgid "Please wait…"
 msgstr "Hãy đợi..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8367
+#: ../tuxpaint.c:8368
 msgid "Erase"
 msgstr "Xoá"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8370
+#: ../tuxpaint.c:8371
 msgid "Slides"
 msgstr "Ảnh chiếu"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8373
+#: ../tuxpaint.c:8374
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8376
+#: ../tuxpaint.c:8377
 msgid "Back"
 msgstr "Lùi"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8379
+#: ../tuxpaint.c:8380
 msgid "Play"
 msgstr "Chạy"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8382
+#: ../tuxpaint.c:8383
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8385
+#: ../tuxpaint.c:8386
 msgid "Next"
 msgstr "Tiếp"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9193
+#: ../tuxpaint.c:9194
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12859
+#: ../tuxpaint.c:12860
 msgid "Yes"
 msgstr "Có"
 
-#: ../tuxpaint.c:12863
+#: ../tuxpaint.c:12864
 msgid "No"
 msgstr "Không"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14009
+#: ../tuxpaint.c:14010
 msgid "Replace the picture with your changes?"
 msgstr "Thay hình ảnh bằng các thay đổi của cháu không?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14013
+#: ../tuxpaint.c:14014
 msgid "Yes, replace the old one!"
 msgstr "Thay thế cái cũ !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14017
+#: ../tuxpaint.c:14018
 msgid "No, save a new file!"
 msgstr "Không, lưu một tập tin mới."
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15280
+#: ../tuxpaint.c:15281
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Chọn hình ảnh mà cháu muốn, sau đó bấm nút « Mở »."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16706
+#: ../tuxpaint.c:16707
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24450
+#: ../tuxpaint.c:24462
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24474
 msgid "Pick a color."
 msgstr "Kén một màu."
 
@@ -1126,10 +1126,16 @@ msgstr "Ấn và di chuyển chuột để vẽ cỏ. Đừng quên vẽ đất 
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:49
+#: ../../magic/src/halftone.c:50
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
+msgstr "Nhấn vào để chuyển đổi bức sơn sang bản âm."
+
+#: ../../magic/src/halftone.c:51
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your drawing into a newspaper."
 msgstr "Nhấn vào để chuyển đổi bức sơn sang bản âm."
 
 #: ../../magic/src/kalidescope.c:120
@@ -1199,6 +1205,16 @@ msgstr "Ánh sáng"
 #: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Ấn và kéo để vẽ một tia ánh sáng trên hình ảnh."
+
+#: ../../magic/src/lightning.c:61
+#, fuzzy
+#| msgid "Lighten"
+msgid "Lightning"
+msgstr "Nhạt hơn"
+
+#: ../../magic/src/lightning.c:71
+msgid "Click, drag, and release to a lightning bolt between two points."
+msgstr ""
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"

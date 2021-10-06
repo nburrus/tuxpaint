@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 00:17-0700\n"
+"POT-Creation-Date: 2021-10-06 23:04+0200\n"
 "PO-Revision-Date: 2014-06-09 08:08+0530\n"
 "Last-Translator: Khagen Sarma <khagen.sharma@gmail.com>\n"
 "Language-Team: none\n"
@@ -235,32 +235,32 @@ msgid "Good job!"
 msgstr "राम्रो काम!"
 
 #. Input Method: English mode
-#: ../im.c:74
+#: ../im.c:80
 msgid "English"
 msgstr "अङ्ग्रेजी"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:77
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "हिरागन"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:80
+#: ../im.c:86
 msgid "Katakana"
 msgstr "कटाकन"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:83
+#: ../im.c:89
 msgid "Hangul"
 msgstr "ह्याङगल्"
 
 #. Input Method: Thai mode
-#: ../im.c:86
+#: ../im.c:92
 msgid "Thai"
 msgstr "थाइ"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:89
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "ZH_TW"
 
@@ -499,7 +499,7 @@ msgstr "नयाँ"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8364
+#: ../tools.h:98 ../tuxpaint.c:8365
 msgid "Open"
 msgstr "खोल्नुहोस्"
 
@@ -762,90 +762,90 @@ msgid "Please wait…"
 msgstr "कृपया पर्खनुहोस्......"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8367
+#: ../tuxpaint.c:8368
 msgid "Erase"
 msgstr "मेटाउनुहोस्"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8370
+#: ../tuxpaint.c:8371
 msgid "Slides"
 msgstr "स्लाइडहरू"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8373
+#: ../tuxpaint.c:8374
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8376
+#: ../tuxpaint.c:8377
 msgid "Back"
 msgstr "पछि"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8379
+#: ../tuxpaint.c:8380
 msgid "Play"
 msgstr "प्ले गर्नुहोस्"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8382
+#: ../tuxpaint.c:8383
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8385
+#: ../tuxpaint.c:8386
 msgid "Next"
 msgstr "अघिल्लो"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9193
+#: ../tuxpaint.c:9194
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12859
+#: ../tuxpaint.c:12860
 msgid "Yes"
 msgstr "ज्यू"
 
-#: ../tuxpaint.c:12863
+#: ../tuxpaint.c:12864
 msgid "No"
 msgstr "होइन"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14009
+#: ../tuxpaint.c:14010
 msgid "Replace the picture with your changes?"
 msgstr "तपाईँको प्रतिस्थापन चित्र परिवर्तन गर्नू?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14013
+#: ../tuxpaint.c:14014
 msgid "Yes, replace the old one!"
 msgstr "ज्यू, पुरानोलाई प्रतिस्थापन गर्नुहोस्!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14017
+#: ../tuxpaint.c:14018
 msgid "No, save a new file!"
 msgstr "होइन, एउटा नयाँ फाइल संरक्षण गर्नुहोस्!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15280
+#: ../tuxpaint.c:15281
 msgid "Choose the picture you want, then click “Open”."
 msgstr "तपाईँले चाहनुभएको चित्र चुन्नुहोस्, “Open”.मा क्लिक गर्नुहोस्।"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16706
+#: ../tuxpaint.c:16707
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24450
+#: ../tuxpaint.c:24462
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24474
 msgid "Pick a color."
 msgstr "रङ्ग लिनुहोस्"
 
@@ -1117,8 +1117,14 @@ msgstr "ग्रास बनाउका लागि  क्लिग गर�
 msgid "Halftone"
 msgstr "हाफ्टन"
 
-#: ../../magic/src/halftone.c:49
+#: ../../magic/src/halftone.c:50
 msgid "Click and drag to turn your drawing into a newspaper."
+msgstr "तपाईँको पेन्टिङलाई फिल्सको आकारमा परिणत गर्न क्लिक गर्नुहोस्।"
+
+#: ../../magic/src/halftone.c:51
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click to turn your drawing into a newspaper."
 msgstr "तपाईँको पेन्टिङलाई फिल्सको आकारमा परिणत गर्न क्लिक गर्नुहोस्।"
 
 #: ../../magic/src/kalidescope.c:120
@@ -1187,6 +1193,16 @@ msgstr "प्रकाश"
 #: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "तपाईँको चित्रमा प्रकाशको लहर बनाउन क्लिक अनि ड्र्याग गर्नुहोस्"
+
+#: ../../magic/src/lightning.c:61
+#, fuzzy
+#| msgid "Lighten"
+msgid "Lightning"
+msgstr "उज्यालो पार्नु"
+
+#: ../../magic/src/lightning.c:71
+msgid "Click, drag, and release to a lightning bolt between two points."
+msgstr ""
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"

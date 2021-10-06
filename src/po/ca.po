@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 00:17-0700\n"
-"PO-Revision-Date: 2021-10-03 00:11+0200\n"
+"POT-Creation-Date: 2021-10-06 23:04+0200\n"
+"PO-Revision-Date: 2021-10-06 23:33+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -273,32 +273,32 @@ msgid "Good job!"
 msgstr "Bona feina!"
 
 #. Input Method: English mode
-#: ../im.c:74
+#: ../im.c:80
 msgid "English"
 msgstr "Anglès"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:77
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:80
+#: ../im.c:86
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:83
+#: ../im.c:89
 msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#: ../im.c:86
+#: ../im.c:92
 msgid "Thai"
 msgstr "Tailandès"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:89
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "Xinès tradicional"
 
@@ -409,13 +409,18 @@ msgstr "Una estrela de cinc puntes."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
-msgstr "Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors deixeu anar el botó quan sigui de la mida i forma que voleu. Moveu el ratolí per girar-la i feu clic per dibuixar-la."
+msgstr ""
+"Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors "
+"deixeu anar el botó quan sigui de la mida i forma que voleu. Moveu el ratolí "
+"per girar-la i feu clic per dibuixar-la."
 
 #: ../shapes.h:386
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
-msgstr "Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors deixeu anar el botó quan sigui de la mida i forma que voleu."
+msgstr ""
+"Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors "
+"deixeu anar el botó quan sigui de la mida i forma que voleu."
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
@@ -526,7 +531,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8364
+#: ../tools.h:98 ../tuxpaint.c:8365
 msgid "Open"
 msgstr "Obre"
 
@@ -776,90 +781,90 @@ msgid "Please wait…"
 msgstr "Espereu, si us plau…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8367
+#: ../tuxpaint.c:8368
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8370
+#: ../tuxpaint.c:8371
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8373
+#: ../tuxpaint.c:8374
 msgid "Export"
 msgstr "Exporta"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8376
+#: ../tuxpaint.c:8377
 msgid "Back"
 msgstr "Endarrere"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8379
+#: ../tuxpaint.c:8380
 msgid "Play"
 msgstr "Reprodueix"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8382
+#: ../tuxpaint.c:8383
 msgid "GIF Export"
 msgstr "Exporta a GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8385
+#: ../tuxpaint.c:8386
 msgid "Next"
 msgstr "Següent"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9193
+#: ../tuxpaint.c:9194
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12859
+#: ../tuxpaint.c:12860
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:12863
+#: ../tuxpaint.c:12864
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14009
+#: ../tuxpaint.c:14010
 msgid "Replace the picture with your changes?"
 msgstr "Substitueixo el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14013
+#: ../tuxpaint.c:14014
 msgid "Yes, replace the old one!"
 msgstr "Sí, substitueix l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14017
+#: ../tuxpaint.c:14018
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15280
+#: ../tuxpaint.c:15281
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16706
+#: ../tuxpaint.c:16707
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Seleccioneu 2 o més dibuixos per exportar-los a GIF."
 
-#: ../tuxpaint.c:24450
+#: ../tuxpaint.c:24462
 msgid "Select a color from your drawing."
 msgstr "Seleccioneu un color del vostre dibuix."
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24474
 msgid "Pick a color."
 msgstr "Trieu un color."
 
@@ -1110,9 +1115,13 @@ msgstr "Feu clic i arrossegueu per dibuixar herba. No oblideu la terra."
 msgid "Halftone"
 msgstr "Semitons"
 
-#: ../../magic/src/halftone.c:49
+#: ../../magic/src/halftone.c:50
 msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Feu clic i arrossegueu per transformar el dibuix com si fos un diari."
+
+#: ../../magic/src/halftone.c:51
+msgid "Click to turn your drawing into a newspaper."
+msgstr "Feu clic per transformar el dibuix com si fos un diari."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -1177,6 +1186,14 @@ msgstr "Llum"
 #: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+
+#: ../../magic/src/lightning.c:61
+msgid "Lightning"
+msgstr "Llamp"
+
+#: ../../magic/src/lightning.c:71
+msgid "Click, drag, and release to a lightning bolt between two points."
+msgstr "Feu clic i arrossegueu per dibuixar un llamp."
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
@@ -1285,7 +1302,9 @@ msgstr "Feu clic per fer el negatiu del dibuix."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
-msgstr "Feu clic i arrossegueu el ratolí per canviar els colors de parts del dibuix en els seus complementaris."
+msgstr ""
+"Feu clic i arrossegueu el ratolí per canviar els colors de parts del dibuix "
+"en els seus complementaris."
 
 #: ../../magic/src/negative.c:84
 msgid ""
@@ -1311,7 +1330,7 @@ msgstr "Perspectiva"
 
 #: ../../magic/src/perspective.c:152
 msgid "Panels"
-msgstr ""
+msgstr "Panells"
 
 #: ../../magic/src/perspective.c:153
 msgid "Zoom"
