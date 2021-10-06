@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 00:17-0700\n"
+"POT-Creation-Date: 2021-10-06 23:04+0200\n"
 "PO-Revision-Date: 2012-12-21 11:04+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-DV\n"
@@ -235,32 +235,32 @@ msgid "Good job!"
 msgstr "असोल कॊम!"
 
 #. Input Method: English mode
-#: ../im.c:74
+#: ../im.c:80
 msgid "English"
 msgstr "अंगरॊज़"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:77
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "हिरागाना"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:80
+#: ../im.c:86
 msgid "Katakana"
 msgstr "काटाकाना"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:83
+#: ../im.c:89
 msgid "Hangul"
 msgstr "हांगुल"
 
 #. Input Method: Thai mode
-#: ../im.c:86
+#: ../im.c:92
 msgid "Thai"
 msgstr "थाय"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:89
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "ZH_TW"
 
@@ -501,7 +501,7 @@ msgstr "नूव"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8364
+#: ../tools.h:98 ../tuxpaint.c:8365
 msgid "Open"
 msgstr "खूलीव"
 
@@ -765,90 +765,90 @@ msgid "Please wait…"
 msgstr "मॊहरबिनी  कॊरीथ पिरीव…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8367
+#: ../tuxpaint.c:8368
 msgid "Erase"
 msgstr "ईरिज़"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8370
+#: ../tuxpaint.c:8371
 msgid "Slides"
 msgstr "सोलायडे"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8373
+#: ../tuxpaint.c:8374
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8376
+#: ../tuxpaint.c:8377
 msgid "Back"
 msgstr "वापस"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8379
+#: ../tuxpaint.c:8380
 msgid "Play"
 msgstr "पेली"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8382
+#: ../tuxpaint.c:8383
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8385
+#: ../tuxpaint.c:8386
 msgid "Next"
 msgstr "बयाख"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9193
+#: ../tuxpaint.c:9194
 msgid "Aa"
 msgstr "आ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12859
+#: ../tuxpaint.c:12860
 msgid "Yes"
 msgstr "आ"
 
-#: ../tuxpaint.c:12863
+#: ../tuxpaint.c:12864
 msgid "No"
 msgstr "ना"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14009
+#: ../tuxpaint.c:14010
 msgid "Replace the picture with your changes?"
 msgstr "तुहॊंज़न तबदिलयन सान बदलाववाह तसविर ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14013
+#: ../tuxpaint.c:14014
 msgid "Yes, replace the old one!"
 msgstr "आ, परॊन अख बदलॊयोव!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14017
+#: ../tuxpaint.c:14018
 msgid "No, save a new file!"
 msgstr "ना, मोहफूज़ कॊरीव अख नॊव फायोल!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15280
+#: ../tuxpaint.c:15281
 msgid "Choose the picture you want, then click “Open”."
 msgstr "च़ॊरीव तसविर युस तुहयो ज़रूरत छॊ, पतॊ कॊरीव कोलोक “खूलोव”."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16706
+#: ../tuxpaint.c:16707
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24450
+#: ../tuxpaint.c:24462
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24474
 msgid "Pick a color."
 msgstr "अख रंग तुलीव."
 
@@ -1124,10 +1124,16 @@ msgstr "कोलोक कॊरीव तॊ पकनॊयीव गोल�
 msgid "Halftone"
 msgstr ""
 
-#: ../../magic/src/halftone.c:49
+#: ../../magic/src/halftone.c:50
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click and drag to turn your drawing into a newspaper."
+msgstr "कोलोक कॊरीव पनॊन पिंटींग अमकोस नगिटोवस मंज़ तबदिल करनॊ बापत."
+
+#: ../../magic/src/halftone.c:51
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click to turn your drawing into a newspaper."
 msgstr "कोलोक कॊरीव पनॊन पिंटींग अमकोस नगिटोवस मंज़ तबदिल करनॊ बापत."
 
 #: ../../magic/src/kalidescope.c:120
@@ -1198,6 +1204,16 @@ msgstr "हलको"
 #: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "कोलोक कॊरीव तॊ डरिग कॊरीव पननॊ तसविर पयॊठ अख गाछोच लय डरा करनो बापत."
+
+#: ../../magic/src/lightning.c:61
+#, fuzzy
+#| msgid "Lighten"
+msgid "Lightning"
+msgstr "हलको करुन"
+
+#: ../../magic/src/lightning.c:71
+msgid "Click, drag, and release to a lightning bolt between two points."
+msgstr ""
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
