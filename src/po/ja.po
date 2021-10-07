@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-06 23:04+0200\n"
-"PO-Revision-Date: 2021-09-13 10:52+0900\n"
+"PO-Revision-Date: 2021-10-07 13:06+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1057,10 +1057,8 @@ msgstr "らいもん もよう"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/fretwork.c:188
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。 "
+msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
 
 #: ../../magic/src/fretwork.c:190
 msgid "Click to surround your picture with repetitive patterns."
@@ -1096,10 +1094,8 @@ msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "クリックしたまま マウスをうごかして しんぶん みたいに しよう。"
 
 #: ../../magic/src/halftone.c:51
-#, fuzzy
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
-msgstr "クリックしたまま マウスをうごかして しんぶん みたいに しよう。"
+msgstr "えをクリックして しんぶんみたいに しよう。"
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -1168,14 +1164,12 @@ msgstr ""
 "クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう。"
 
 #: ../../magic/src/lightning.c:61
-#, fuzzy
-#| msgid "Lighten"
 msgid "Lightning"
-msgstr "うすく"
+msgstr "いなずま"
 
 #: ../../magic/src/lightning.c:71
 msgid "Click, drag, and release to a lightning bolt between two points."
-msgstr ""
+msgstr "クリックしたあとドラッグして いなずまを かこう。"
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
@@ -1362,10 +1356,8 @@ msgid "Rainbow"
 msgstr "にじ"
 
 #: ../../magic/src/rainbow.c:140
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Smooth Rainbow"
-msgstr "にじ"
+msgstr "なめらかなにじ"
 
 #: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
