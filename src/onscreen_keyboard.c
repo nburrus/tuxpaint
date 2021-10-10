@@ -51,38 +51,6 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
 static void print_composemap(osk_composenode * composemap, char *sp);
 #endif
 
-#ifdef WIN32
-#include <iconv.h>
-#define wcstok(line, delim, pointer)  wcstok(line, delim)
-#define strtok_r(line, delim, pointer) strtok(line, delim)
-
-static void mtw(wchar_t * wtok, char *tok);
-
-static void mtw(wchar_t * wtok, char *tok)
-{
-  /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
-  Uint16 *ui16;
-  char *wrptr;
-  size_t n, in, out;
-  iconv_t trans;
-
-  n = 255;
-  in = 250;
-  out = 250;
-  ui16 = malloc(sizeof(Uint16) * 255);
-  wrptr = (char *)ui16;
-
-  trans = iconv_open("WCHAR_T", "UTF-8");
-  iconv(trans, (const char **)&tok, &in, &wrptr, &out);
-  *((wchar_t *) wrptr) = L'\0';
-  swprintf(wtok, L"%ls", ui16);
-  free(ui16);
-  iconv_close(trans);
-}
-
-#define mbstowcs(wtok, tok, size) mtw(wtok, tok)
-#endif
-
 struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
                                 SDL_Surface * LG_button_up, SDL_Surface * LG_button_down,
                                 SDL_Surface * LG_button_off, SDL_Surface * LG_button_nav,
