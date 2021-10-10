@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.September.29 (0.9.28)
+2021.October.10 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -149,6 +149,16 @@ $Id$
     * Undo buffer canvases were not always the same dimensions
       as the drawing surface, if buttonsize was adjusted.
       (Adversely affected "Shift" magic tool.)
+
+    * Remove some old Win32-specific code to handle multibyte
+      characters, which could cause a crash bug when using the
+      on-screen keyboard under Windows.  (Older mingw/msys did
+      not supply a needed function.)
+      * h/t @Miyagi_Andel on Twitter for reporting the crash
+      * h/t Pere Pujal i Carabantes for confirming how to reproduce it
+      * TOYAMA Shin-ichi <shin1@wmail.plala.or.jp> dropped the old
+        code and rebuilt Tux Paint 0.9.26 for Win32 as 0.9.26-1
+      * Note: This means dropping support for Windows 2000 & XP 
 
   * Ports & Building
     ----------------
