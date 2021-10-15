@@ -1405,7 +1405,6 @@ static int im_event_ja(IM_DATA * im, SDL_keysym ks)
     case SDLK_RSHIFT:
     case SDLK_LCTRL:
     case SDLK_RCTRL:
-    case SDLK_LALT:
     case SDLK_LMETA:
     case SDLK_RMETA:
     case SDLK_LSUPER:
@@ -1414,8 +1413,9 @@ static int im_event_ja(IM_DATA * im, SDL_keysym ks)
     case SDLK_COMPOSE:
       break;
 
-      /* Right-Alt mapped to mode-switch */
+      /* Left-Alt & Right-Alt mapped to mode-switch */
     case SDLK_RALT:
+    case SDLK_LALT:
       cm.section = ((cm.section + 1) % SEC_TOTAL);      /* Change section */
       im_softreset(im);         /* Soft reset */
 
@@ -1660,7 +1660,7 @@ static int im_event_ko(IM_DATA * im, SDL_keysym ks)
     case SDLK_COMPOSE:
       break;
 
-      /* Right-Alt mapped to mode-switch */
+      /* Left-Alt & Right-Alt mapped to mode-switch */
     case SDLK_LALT:
     case SDLK_RALT:
       cm.section = ((cm.section + 1) % SEC_TOTAL);      /* Change section */
