@@ -336,6 +336,27 @@ typedef struct safer_dirent
 
 #define mkdir(path,access)    _mkdir(path)
 
+static void mtw(wchar_t * wtok, char *tok, size_t size)
+{
+  /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
+  Uint16 *ui16;
+
+  ui16 = malloc(size);
+  char *wrptr = (char *)ui16;
+  size_t in, out;
+  iconv_t trans;
+
+  in = size;
+  out = size;
+  
+  trans = iconv_open("WCHAR_T", "UTF-8");
+  iconv(trans, (const char **)&tok, &in, &wrptr, &out);
+  *((wchar_t *) wrptr) = L'\0';
+  swprintf(wtok, size, ui16);
+  free(ui16);
+  iconv_close(trans);
+}
+
 #endif /* WIN32 */
 
 #if defined(__MACOS__)
@@ -22491,12 +22512,26 @@ static void load_info_about_label_surface(FILE * lfi)
       new_node = malloc(sizeof(struct label_node));
 
       tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
+#ifdef WIN32
+      char *tmpstr;
+      wchar_t *wtmpstr;
+
+      tmpstr = malloc(1024);
+      wtmpstr = malloc(1024);
+      fgets(tmpstr, 1024, lfi);
+      mtw(wtmpstr, tmpstr, 1024);
+      for (l = 0; l < new_node->save_texttool_len; l++)
+        {
+          new_node->save_texttool_str[l] = wtmpstr[l];
+        }
+#else
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
           tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
           new_node->save_texttool_str[l] = tmp_char;
         }
       tmp_fscanf_return = fscanf(lfi, "\n");
+#endif
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.r = (Uint8) l;
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);

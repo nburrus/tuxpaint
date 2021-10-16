@@ -51,6 +51,11 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
 static void print_composemap(osk_composenode * composemap, char *sp);
 #endif
 
+#ifdef WIN32
+#include <windows.h>
+#define mbstowcs(wtok, tok, size) MultiByteToWideChar(CP_UTF8,MB_COMPOSITE,tok,-1,wtok,size)
+#endif
+
 struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
                                 SDL_Surface * LG_button_up, SDL_Surface * LG_button_down,
                                 SDL_Surface * LG_button_off, SDL_Surface * LG_button_nav,
