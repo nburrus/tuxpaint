@@ -343,16 +343,17 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
 
   ui16 = malloc(size);
   char *wrptr = (char *)ui16;
-  size_t in, out;
+  size_t in, out, n;
   iconv_t trans;
 
   in = size;
   out = size;
+  n = size / sizeof(wchar_t);
   
   trans = iconv_open("WCHAR_T", "UTF-8");
-  iconv(trans, (const char **)&tok, &in, &wrptr, &out);
+  iconv(trans, (char **)&tok, &in, &wrptr, &out);
   *((wchar_t *) wrptr) = L'\0';
-  swprintf(wtok, size, ui16);
+  swprintf(wtok, n, L"%ls", ui16);
   free(ui16);
   iconv_close(trans);
 }
