@@ -38,6 +38,7 @@ DefaultDirName={pf}\{#AppDirName}
 DefaultGroupName={#AppGroupName}
 OutputDir=.\
 OutputBaseFilename={#AppPrefix}-{#AppVersion}-windows-installer
+InfoBeforeFile={#BdistDir}\{#AppLicense}
 SetupIconFile={#BdistDir}\data\images\tuxpaint-installer.ico
 WizardStyle=modern
 Compression=lzma2
@@ -243,7 +244,7 @@ var
   Page: TWizardPage;
   Enabled, InstallAllUsers: Boolean;
 begin
-  Page := CreateCustomPage(wpLicense, 'Choose Installation Type', 'Who do you want to be able to use this program?');
+  Page := CreateCustomPage(wpInfoBefore, 'Choose Installation Type', 'Who do you want to be able to use this program?');
   InstallTypePageID := Page.ID;
   Enabled := NotRestricted();
   InstallAllUsers := NotRestricted();
