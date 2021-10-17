@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.10 (0.9.27)
+2021.October.17 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -78,6 +78,9 @@ $Id$
       on whether "simpleshapes" option is set) tools are selected
       (e.g., when returning from the "Open" dialog).
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/186/)
+
+    * Allowing Left [Alt] key for switching to Japanese input method.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Documentation updates:
     ---------------------
@@ -157,7 +160,7 @@ $Id$
       * h/t @Miyagi_Andel on Twitter for reporting the crash
       * h/t Pere Pujal i Carabantes for confirming how to reproduce it
       * TOYAMA Shin-ichi <shin1@wmail.plala.or.jp> dropped the old
-        code and rebuilt Tux Paint 0.9.26 for Win32 as 0.9.26-1
+        code and rebuilt Tux Paint 0.9.26 for Win32 as 0.9.26-5
       * Note: This means dropping support for Windows 2000 & XP 
 
   * Ports & Building
@@ -169,8 +172,15 @@ $Id$
       $HOST env. var. is set.
       Mark K. Kim <markuskimius@gmail.com>
 
-    * Include "AppVersion" directive to Windows installer ISS file.
+    * Include "AppVersion" directive to Windows installer Inno Setup
+      recipe file (.iss).
       Easton Pillay <https://sourceforge.net/u/jedieaston/profile/>
+
+    * Remove old OpenCandy stuff from Windows .iss file.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Added shell script to build windows installer and portable zip archive.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
 2021.June.28 (0.9.26)
   * New Features
