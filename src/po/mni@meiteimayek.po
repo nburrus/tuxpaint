@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 23:04+0200\n"
+"POT-Creation-Date: 2021-10-19 00:42-0700\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,33 +181,45 @@ msgstr "<9>spare-9a"
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
-#: ../fill_tools.h:49
+#: ../fill_tools.h:50
 msgid "Solid"
 msgstr ""
 
-#: ../fill_tools.h:50
+#: ../fill_tools.h:51
+#, fuzzy
+#| msgid "Brushes"
+msgid "Brush"
+msgstr "ꯕ꯭ꯔꯁꯁꯤꯡ"
+
+#: ../fill_tools.h:52
 #, fuzzy
 #| msgid "Lines"
 msgid "Linear"
 msgstr "ꯂꯥꯏꯟꯁꯤꯡ"
 
-#: ../fill_tools.h:51
+#: ../fill_tools.h:53
 msgid "Radial"
 msgstr ""
 
-#: ../fill_tools.h:55
+#: ../fill_tools.h:57
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
 msgstr "ꯃꯐꯝ ꯑꯗꯨ ꯃꯆꯨ ꯑꯃꯅ ꯃꯦꯟꯁꯤꯟꯅꯕ ꯂꯥꯏ ꯑꯗꯨꯗ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ."
 
-#: ../fill_tools.h:56
+#: ../fill_tools.h:58
+#, fuzzy
+#| msgid "Click in the picture to fill that area with color."
+msgid "Click to fill an by hand, using a brush."
+msgstr "ꯃꯐꯝ ꯑꯗꯨ ꯃꯆꯨ ꯑꯃꯅ ꯃꯦꯟꯁꯤꯟꯅꯕ ꯂꯥꯏ ꯑꯗꯨꯗ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ."
+
+#: ../fill_tools.h:59
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
 msgstr ""
 
-#: ../fill_tools.h:57
+#: ../fill_tools.h:60
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
@@ -498,7 +510,7 @@ msgstr "ꯑꯅꯧꯕ"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8365
+#: ../tools.h:98 ../tuxpaint.c:8383
 msgid "Open"
 msgstr "ꯍꯥꯡꯗꯣꯛꯄ"
 
@@ -623,227 +635,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "ꯃꯗꯨ ꯌꯥꯔꯦ... ꯑꯗꯨꯒ ꯃꯁꯤ ꯌꯦꯛꯈꯤꯁꯤ!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2209
+#: ../tuxpaint.c:2204
 msgid "Do you really want to quit?"
 msgstr "ꯑꯗꯣꯝ ꯇꯁꯦꯡꯅ ꯊꯥꯗꯣꯛꯄ ꯄꯥꯝꯂꯕ꯭ꯔꯥ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2212
+#: ../tuxpaint.c:2207
 msgid "Yes, I’m done!"
 msgstr "ꯍꯦꯌ, ꯑꯩ ꯇꯧꯔꯦ!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2215 ../tuxpaint.c:2242
+#: ../tuxpaint.c:2210 ../tuxpaint.c:2237
 msgid "No, take me back!"
 msgstr "ꯅꯠꯇꯦ, ꯑꯩꯕꯨ ꯍꯥꯟꯅꯒꯤ ꯃꯐꯝꯗ ꯄꯨꯕꯤꯔꯣ!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2219
+#: ../tuxpaint.c:2214
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ꯑꯗꯣꯝꯅ ꯊꯥꯗꯣꯛꯂꯕꯗꯤ, ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏ ꯃꯥꯡꯈ꯭ꯔꯒꯅꯤ! ꯃꯁꯤ ꯁꯦꯚ ꯇꯧꯒꯗ꯭ꯔꯥ?"
 
-#: ../tuxpaint.c:2220 ../tuxpaint.c:2225
+#: ../tuxpaint.c:2215 ../tuxpaint.c:2220
 msgid "Yes, save it!"
 msgstr "ꯍꯧꯌ, ꯃꯁꯤ ꯁꯦꯚ ꯇꯧꯔꯣ!"
 
-#: ../tuxpaint.c:2221 ../tuxpaint.c:2226
+#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
 msgid "No, don’t bother saving!"
 msgstr "ꯅꯠꯇꯦ, ꯁꯦꯚ ꯇꯧꯕꯒꯤꯗꯃꯛ ꯀꯔꯤꯁꯨ ꯈꯜꯂꯨꯅꯨ!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2224
+#: ../tuxpaint.c:2219
 msgid "Save your picture first?"
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏꯗꯨ ꯍꯥꯟꯅ ꯁꯦꯚ ꯇꯧꯒꯗ꯭ꯔꯥ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2229
+#: ../tuxpaint.c:2224
 msgid "Can’t open that picture!"
 msgstr "ꯂꯥꯏ ꯑꯗꯨ ꯍꯥꯡꯗꯣꯛꯄ ꯉꯝꯗꯦ!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2232 ../tuxpaint.c:2237 ../tuxpaint.c:2246 ../tuxpaint.c:2253
-#: ../tuxpaint.c:2262 ../tuxpaint.c:2267
+#: ../tuxpaint.c:2227 ../tuxpaint.c:2232 ../tuxpaint.c:2241 ../tuxpaint.c:2248
+#: ../tuxpaint.c:2257 ../tuxpaint.c:2262
 msgid "OK"
 msgstr "ꯌꯥꯔꯦ"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2231
 msgid "There are no saved files!"
 msgstr "ꯁꯦꯚ ꯇꯧꯕ ꯐꯥꯏꯜ ꯑꯃꯠꯇ ꯂꯩꯇꯦ!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2235
 msgid "Print your picture now?"
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏ ꯍꯧꯖꯤꯛ ꯅꯝꯊꯣꯛꯀꯗ꯭ꯔꯥ?"
 
-#: ../tuxpaint.c:2241
+#: ../tuxpaint.c:2236
 msgid "Yes, print it!"
 msgstr "ꯍꯣꯌ, ꯃꯁꯤ ꯅꯝꯊꯣꯛꯎ!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2245
+#: ../tuxpaint.c:2240
 msgid "Your picture has been printed!"
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏꯗꯨ ꯅꯝꯊꯣꯛꯂꯦ!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2249
+#: ../tuxpaint.c:2244
 msgid "Sorry! Your picture could not be printed!"
 msgstr "ꯉꯥꯛꯄꯤꯒꯅꯤ! ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏ ꯑꯗꯨ ꯅꯝꯊꯣꯛꯄ ꯌꯥꯔꯔꯣꯏ!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2247
 msgid "You can’t print yet!"
 msgstr "ꯑꯗꯣꯝꯅ ꯍꯧꯖꯤꯛꯁꯨ ꯅꯝꯊꯣꯛꯄ ꯌꯥꯔꯣꯏ!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2251
 msgid "Erase this picture?"
 msgstr "ꯂꯥꯏ ꯑꯁꯤ ꯃꯨꯠꯊꯠꯀꯗ꯭ꯔꯥ?"
 
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2252
 msgid "Yes, erase it!"
 msgstr "ꯍꯧꯌ, ꯃꯁꯤ ꯃꯨꯠꯊꯠꯄꯤꯔꯣ!"
 
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2253
 msgid "No, don’t erase it!"
 msgstr "ꯅꯠꯇꯦ, ꯃꯁꯤ ꯃꯨꯠꯊꯠꯄꯤꯒꯅꯨ!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2256
 msgid "Remember to use the left mouse button!"
 msgstr "ꯑꯣꯏꯊꯪꯕ ꯃꯥꯎꯁꯀꯤ ꯕꯇꯟ ꯁꯤꯖꯤꯟꯅꯕ ꯅꯤꯡꯁꯤꯡꯕꯤꯌꯨ!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2265
+#: ../tuxpaint.c:2260
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏꯗꯨ ꯅꯝꯊꯣꯛꯂꯦ!"
 
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2261
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏꯗꯨ ꯅꯝꯊꯣꯛꯂꯦ!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2265
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "ꯉꯥꯛꯄꯤꯒꯅꯤ! ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏ ꯑꯗꯨ ꯅꯝꯊꯣꯛꯄ ꯌꯥꯔꯔꯣꯏ!"
 
-#: ../tuxpaint.c:2271
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "ꯉꯥꯛꯄꯤꯒꯅꯤ! ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏ ꯑꯗꯨ ꯅꯝꯊꯣꯛꯄ ꯌꯥꯔꯔꯣꯏ!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2275
+#: ../tuxpaint.c:2270
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ꯑꯗꯣꯝꯅ ꯄꯥꯝꯕ ꯂꯥꯏꯗꯨ ꯈꯜꯂꯣ, ꯑꯗꯨꯒ “ꯄ꯭ꯂꯦ” ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2484
+#: ../tuxpaint.c:2479
 msgid "Sound muted."
 msgstr "ꯈꯣꯟꯖꯦꯜ ꯊꯣꯛꯇ꯭ꯔꯦ."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2489
+#: ../tuxpaint.c:2484
 msgid "Sound unmuted."
 msgstr "ꯈꯣꯟꯖꯦꯜ ꯊꯣꯛꯑꯦ."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3267
+#: ../tuxpaint.c:3262
 msgid "Please wait…"
 msgstr "ꯉꯥꯏꯍꯥꯛꯇꯪ ꯉꯥꯏꯕꯤꯌꯨ…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8368
+#: ../tuxpaint.c:8386
 msgid "Erase"
 msgstr "ꯃꯨꯠꯊꯠꯂꯣ"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8371
+#: ../tuxpaint.c:8389
 msgid "Slides"
 msgstr "ꯁꯥꯏꯗꯁꯤꯡ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8374
+#: ../tuxpaint.c:8392
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8377
+#: ../tuxpaint.c:8395
 msgid "Back"
 msgstr "ꯃꯇꯨꯡ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8380
+#: ../tuxpaint.c:8398
 msgid "Play"
 msgstr "ꯄ꯭ꯂꯦ"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8383
+#: ../tuxpaint.c:8401
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8386
+#: ../tuxpaint.c:8404
 msgid "Next"
 msgstr "ꯃꯊꯪ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9194
+#: ../tuxpaint.c:9212
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12860
+#: ../tuxpaint.c:12878
 msgid "Yes"
 msgstr "ꯍꯣꯌ"
 
-#: ../tuxpaint.c:12864
+#: ../tuxpaint.c:12882
 msgid "No"
 msgstr "ꯅꯠꯇꯦ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14010
+#: ../tuxpaint.c:14028
 msgid "Replace the picture with your changes?"
 msgstr "ꯂꯥꯏ ꯑꯗꯨ ꯑꯗꯣꯝꯒꯤ ꯑꯍꯣꯡꯕ ꯑꯗꯨꯅ ꯃꯍꯨꯠ ꯁꯤꯟꯗꯣꯛꯀꯗ꯭ꯔꯥ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14014
+#: ../tuxpaint.c:14032
 msgid "Yes, replace the old one!"
 msgstr "ꯍꯣꯌ, ꯑꯔꯤꯕ ꯑꯗꯨ ꯃꯍꯨꯠ ꯁꯤꯟꯗꯣꯛꯎ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14018
+#: ../tuxpaint.c:14036
 msgid "No, save a new file!"
 msgstr "ꯅꯠꯇꯦ, ꯑꯅꯧꯕ ꯐꯥꯏꯜ ꯑꯃ ꯁꯦꯚ ꯇꯧꯔꯣ!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15281
+#: ../tuxpaint.c:15299
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ꯑꯗꯣꯝꯅ ꯄꯥꯝꯕ ꯂꯥꯏ ꯑꯗꯨ ꯈꯜꯂꯣ, ꯑꯗꯨꯒ “ꯍꯥꯡꯗꯣꯛꯄ” ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16707
+#: ../tuxpaint.c:16725
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24479
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24474
+#: ../tuxpaint.c:24491
 msgid "Pick a color."
 msgstr "ꯃꯆꯨ ꯑꯃ ꯈꯜꯂꯣ."
 
