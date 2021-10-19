@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 25, 2021
+  June 14, 2002 - October 18, 2021
 */
 
 #include "platform.h"
@@ -4719,6 +4719,12 @@ static void mainloop(void)
                                     fill_x, fill_y, old_x, old_y + 1, draw_color, sim_flood_touched);
                                   fill_drag_started = 1;
                                 }
+                              else if (cur_fill == FILL_BRUSH)
+                                {
+                                  /* Start painting within the fill area */
+                                  draw_brush_fill(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
+                                    fill_x, fill_y, old_x, old_y, draw_color, sim_flood_touched, &x1, &x2, &y1, &y2);
+                                }
 
                               update_canvas(x1, y1, x2, y2);
                             }
@@ -5676,7 +5682,7 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_FILL && cur_fill == FILL_GRADIENT_LINEAR && fill_drag_started)
                     {
-                      Uint32 draw_color, canv_color;
+                      Uint32 draw_color;
                       int undo_ctr;
                       SDL_Surface * last;
 
@@ -5697,6 +5703,23 @@ static void mainloop(void)
                         fill_x, fill_y, new_x, new_y, draw_color, sim_flood_touched);
 
                       update_canvas(sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2);
+                    }
+                  else if (cur_tool == TOOL_FILL && cur_fill == FILL_BRUSH)
+                    {
+                      Uint32 draw_color;
+                      int x1, y1, x2, y2;
+
+                      /* Pushing button and moving: Paint more within the fill area: */
+
+                      draw_color = SDL_MapRGB(canvas->format,
+                                     color_hexes[cur_color][0],
+                                     color_hexes[cur_color][1],
+                                     color_hexes[cur_color][2]);
+
+                      draw_brush_fill(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
+                        old_x, old_y, new_x, new_y, draw_color, sim_flood_touched, &x1, &y1, &x2, &y2);
+
+                      update_canvas(x1, y1, x2, y2);
                     }
                 }
 

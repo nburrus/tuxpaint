@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 5, 2021
+  Last updated: October 18, 2021
   $Id$
 */
 
@@ -378,6 +378,102 @@ void draw_linear_gradient(SDL_Surface * canvas, SDL_Surface * last,
       }
     }
   }
+}
+
+void draw_brush_fill_single(SDL_Surface * canvas, int x, int y, Uint32 draw_color, Uint8 * touched) {
+  int xx, yy;
+
+  for (yy = -16; yy < 16; yy++)
+    {
+      for (xx = -16; xx < 16; xx++)
+        {
+          if ((xx * xx) + (yy * yy) < (16 * 16) &&
+              touched[((y + yy) * canvas->w) + (x + xx)])
+            {
+              putpixels[canvas->format->BytesPerPixel] (canvas, x + xx, y + yy, draw_color);
+            }
+        }
+    }
+}
+
+void draw_brush_fill(SDL_Surface * canvas,
+  int x_left, int y_top, int x_right, int y_bottom,
+  int x1, int y1, int x2, int y2, Uint32 draw_color, Uint8 * touched,
+  int * up_x1, int * up_y1, int * up_x2, int * up_y2
+) {
+  int xx, yy, x, y, dx, dy;
+  int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
+  float m, b;
+
+  orig_x1 = x1;
+  orig_y1 = y1;
+
+  orig_x2 = x2;
+  orig_y2 = y2;
+
+  dx = x2 - x1;
+  dy = y2 - y1;
+
+  if (dx != 0)
+    {
+      m = ((float)dy) / ((float)dx);
+      b = y1 - m * x1;
+
+      if (x2 >= x1)
+        dx = 1;
+      else
+        dx = -1;
+
+      while (x1 != x2)
+        {
+          y1 = m * x1 + b;
+          y2 = m * (x1 + dx) + b;
+
+          if (y1 > y2)
+            {
+              for (y = y1; y >= y2; y--)
+                draw_brush_fill_single(canvas, x1, y, draw_color, touched);
+            }
+          else
+            {
+              for (y = y1; y <= y2; y++)
+                draw_brush_fill_single(canvas, x1, y, draw_color, touched);
+            }
+
+          x1 = x1 + dx;
+        }
+    }
+  else
+    {
+      if (y1 > y2)
+        {
+          y = y1;
+          y1 = y2;
+          y2 = y;
+        }
+
+      for (y = y1; y <= y2; y++)
+        draw_brush_fill_single(canvas, x1, y, draw_color, touched);
+    }
+
+  if (orig_x1 > orig_x2)
+    {
+      tmp = orig_x1;
+      orig_x1 = orig_x2;
+      orig_x2 = tmp;
+    }
+
+  if (orig_y1 > orig_y2)
+    {
+      tmp = orig_y1;
+      orig_y1 = orig_y2;
+      orig_y2 = tmp;
+    }
+
+  *up_x1 = orig_x1 - 16;
+  *up_y1 = orig_y1 - 16;
+  *up_x2 = orig_x2 + 16;
+  *up_y2 = orig_y2 + 16;
 }
 
 void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top, int x_right, int y_bottom,

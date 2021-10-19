@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.17 (0.9.27)
+2021.October.19 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -42,6 +42,10 @@ $Id$
 
   * Other Improvements:
     -------------------
+    * New "Fill" tool mode: "Brush".  Similar to classic flood fill,
+      but only fills as you move the brush within the area to be
+      filled.
+
     * Grouped similar Magic tools into sections.
       (e.g., all of the distortions, versus painting tools, versus
       full-image effects, etc.)

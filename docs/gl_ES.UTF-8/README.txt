@@ -461,6 +461,8 @@ Ferramentas dispoñíbeis
                  recheo:
                     * Sólida: prema unha vez para encher unha área cunha cor
                       sólida.
+                    * Brush — click and drag to fill an area with a solid
+                      color using freehand painting.
                     * Lineal: prema e arrastra para encher a área cunha cor
                       que se esvae (un gradiente) cara a onde arrastra o
                       rato.
