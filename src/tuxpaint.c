@@ -4723,7 +4723,7 @@ static void mainloop(void)
                                 {
                                   /* Start painting within the fill area */
                                   draw_brush_fill(canvas, sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2,
-                                    fill_x, fill_y, old_x, old_y, draw_color, sim_flood_touched, &x1, &x2, &y1, &y2);
+                                    fill_x, fill_y, old_x, old_y, draw_color, sim_flood_touched, &x1, &y1, &x2, &y2);
                                 }
 
                               update_canvas(x1, y1, x2, y2);
