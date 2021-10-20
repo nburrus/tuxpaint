@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2010-12-12 00:00+0100\n"
 "Last-Translator: Ivana <reci.ne.silvesteru@gmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -223,7 +223,7 @@ msgstr "Кликни у слику да би попунио ту област б
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Кликни у слику да би попунио ту област бојом."
 
 #: ../fill_tools.h:59

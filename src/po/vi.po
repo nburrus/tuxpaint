@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2010-03-27 15:12+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -212,7 +212,7 @@ msgstr "Nhấn vào hình ảnh để tô đầy vùng đó bằng màu."
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Nhấn vào hình ảnh để tô đầy vùng đó bằng màu."
 
 #: ../fill_tools.h:59

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -203,7 +203,7 @@ msgid "Click to fill an area with a solid color."
 msgstr ""
 
 #: ../fill_tools.h:58
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr ""
 
 #: ../fill_tools.h:59

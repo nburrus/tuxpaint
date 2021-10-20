@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2014-03-22 11:39+0400\n"
 "Last-Translator: Aram Palyan <ararat.info@gmail.com>\n"
 "Language-Team: Armenian <ararat.info@gmail.com>\n"
@@ -213,7 +213,7 @@ msgstr "Սեղմիր նկարի վրա, այդ հատվածը գույնով լ�
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Սեղմիր նկարի վրա, այդ հատվածը գույնով լցնելու համար:"
 
 #: ../fill_tools.h:59

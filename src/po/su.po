@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2011-05-27 06:24+0200\n"
 "Last-Translator: kumincir <ia.adnan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -206,8 +206,9 @@ msgid "Click to fill an area with a solid color."
 msgstr ""
 
 #: ../fill_tools.h:58
-msgid "Click to fill an by hand, using a brush."
-msgstr ""
+#, fuzzy
+msgid "Click and drag to fill an area by hand, using a brush."
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../fill_tools.h:59
 msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2021-09-02 07:45+0000\n"
 "Last-Translator: kiolalis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
@@ -213,7 +213,7 @@ msgstr "Κάνε κλικ στη ζωγραφιά για να γεμίσεις �
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Κάνε κλικ στη ζωγραφιά για να γεμίσεις μια περιοχή με χρώμα."
 
 #: ../fill_tools.h:59

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2017-12-23 23:11+0100\n"
 "Last-Translator: Yacine Bouklif <yacine_tizi2003@yahoo.fr>\n"
 "Language-Team: \n"
@@ -209,7 +209,7 @@ msgstr "Ssed ɣef tugna iwakken ad taččareḍ tamnaḍt-nni s yini."
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Ssed ɣef tugna iwakken ad taččareḍ tamnaḍt-nni s yini."
 
 #: ../fill_tools.h:59

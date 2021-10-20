@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2021-09-23 11:33+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
@@ -205,7 +205,7 @@ msgstr "Clique pour remplir une surface avec une couleur unie."
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click to fill an area with a solid color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Clique pour remplir une surface avec une couleur unie."
 
 #: ../fill_tools.h:59

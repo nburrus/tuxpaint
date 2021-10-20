@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2021-06-28 19:38+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -204,7 +204,7 @@ msgstr "Trykk for å fylla heile området med fargen frå målingbøtta."
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click to fill an area with a solid color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Trykk for å fylla heile området med fargen frå målingbøtta."
 
 #: ../fill_tools.h:59

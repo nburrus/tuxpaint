@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2013-07-27 14:50+0530\n"
 "Last-Translator: Prasanta Hembram <prasantahembram720@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -207,7 +207,7 @@ msgstr "ᱚᱱᱟ ᱡᱟᱭᱜᱟ ᱨᱚᱝ ᱛᱮ ᱯᱮᱨᱮᱡ ᱞᱟᱹᱜ�
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "ᱚᱱᱟ ᱡᱟᱭᱜᱟ ᱨᱚᱝ ᱛᱮ ᱯᱮᱨᱮᱡ ᱞᱟᱹᱜᱤᱫ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
 #: ../fill_tools.h:59

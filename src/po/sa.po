@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2011-11-19 07:03+0530\n"
 "Last-Translator: Aarathi Bala\n"
 "Language-Team: \n"
@@ -211,7 +211,7 @@ msgstr "वर्णेन तत् क्षेत्रं पूरयित
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "वर्णेन तत् क्षेत्रं पूरयितुं चित्रे क्लिक् कुरु"
 
 #: ../fill_tools.h:59

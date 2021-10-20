@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 00:42-0700\n"
+"POT-Creation-Date: 2021-10-19 21:32-0700\n"
 "PO-Revision-Date: 2013-01-09 14:39+0530\n"
 "Last-Translator: Chandrakant Dhutadmal\n"
 "Language-Team: Sindhi-PA\n"
@@ -211,7 +211,7 @@ msgstr "رنگ سان اُهو حصا ڀرڻ لاءِ تصوير ۾ ڪلڪ ڪر�
 #: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
-msgid "Click to fill an by hand, using a brush."
+msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "رنگ سان اُهو حصا ڀرڻ لاءِ تصوير ۾ ڪلڪ ڪريو۔"
 
 #: ../fill_tools.h:59
