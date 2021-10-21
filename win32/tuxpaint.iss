@@ -244,13 +244,17 @@ end;
 
 Procedure ForceUninstallPreviousX86Install();
 var
-  Version: String;
+  ResultCode: Integer;
 begin
-  if RegQueryStringValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\WOW6432Node\TuxPaint',
-     'Version', Version) then
+  if FileExists('C:\Program Files (x86)\TuxPaint\unins000.exe') then
   begin
-    MsgBox('Please uninstall previous version.', mbInformation, MB_OK);
-    Abort;
+    if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+    begin
+      Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+    end
+    else begin
+      Abort;
+    end;
   end;
 end;
 
