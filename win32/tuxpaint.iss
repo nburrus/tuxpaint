@@ -242,6 +242,18 @@ begin
   Result := Path;
 end;
 
+Procedure ForceUninstallPreviousX86Install();
+var
+  Version: String;
+begin
+  if RegQueryStringValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\WOW6432Node\TuxPaint',
+     'Version', Version) then
+  begin
+    MsgBox('Please uninstall previous version.', mbInformation, MB_OK);
+    Abort;
+  end;
+end;
+
 procedure CreateTheWizardPages;
 var
   Page: TWizardPage;
@@ -530,6 +542,7 @@ end;
 procedure InitializeWizard();
 begin
   begin
+    ForceUninstallPreviousX86Install();
     CreateTheWizardPages;  
   end
 end;
