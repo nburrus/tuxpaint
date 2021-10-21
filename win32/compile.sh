@@ -11,7 +11,7 @@ else
 fi
 
 echo "Building installer ... "
-result=`/C/Program\ Files\ \(x86\)/Inno\ Setup\ 5/ISCC tuxpaint.iss | grep installer.exe`
+result=`/C/Program\ Files\ \(x86\)/Inno\ Setup\ 6/ISCC tuxpaint.iss | grep installer.exe`
 if [ "x$result" != "x" ]; then
   installer=`basename $result`
 fi
@@ -22,6 +22,7 @@ zip=`echo $installer | sed 's/installer.exe//'`$arch.zip
 if [ -d TuxPaint ]; then
   rm -rf TuxPaint
 fi
-mv bdist TuxPaint
+cp -a bdist TuxPaint
+cp -a libdocs TuxPaint/docs/
 zip -qr -9 $zip TuxPaint
 cd ..

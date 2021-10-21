@@ -1,4 +1,3 @@
-;
 ; This script needs the InnoSetup PreProcessor (ISPP) to compile correctly. 
 ; I downloaded a combined 'QuickStart Pack' from here:
 ; http://www.jrsoftware.org/isdl.php#qsp
@@ -44,12 +43,14 @@ WizardStyle=modern
 Compression=lzma2
 SolidCompression=yes
 PrivilegesRequired=admin
+ArchitecturesInstallIn64BitMode=x64
+ArchitecturesAllowed=x86 x64
 
 [Languages]
 Name: "afr"; MessagesFile: "compiler:Languages\Afrikaans.isl"
 Name: "alb"; MessagesFile: "compiler:Languages\Albanian.isl"
 Name: "ara"; MessagesFile: "compiler:Languages\Arabic.isl"
-Name: "arm"; MessagesFile: "compiler:Languages\Armenian.islu"
+Name: "arm"; MessagesFile: "compiler:Languages\Armenian.isl"
 Name: "ast"; MessagesFile: "compiler:Languages\Asturian.isl"
 Name: "baq"; MessagesFile: "compiler:Languages\Basque.isl"
 Name: "bel"; MessagesFile: "compiler:Languages\Belarusian.isl"
@@ -60,7 +61,7 @@ Name: "bul"; MessagesFile: "compiler:Languages\Bulgarian.isl"
 Name: "cat"; MessagesFile: "compiler:Languages\Catalan.isl"
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 Name: "cht"; MessagesFile: "compiler:Languages\ChineseTraditional.isl"
-Name: "cnr"; MessagesFile: "compiler:Languages\Montenegrian.isl"
+Name: "cnr"; MessagesFile: "compiler:Languages\Montenegrin.isl"
 Name: "cos"; MessagesFile: "compiler:Languages\Corsican.isl"
 Name: "cze"; MessagesFile: "compiler:Languages\Czech.isl"
 Name: "dan"; MessagesFile: "compiler:Languages\Danish.isl"
@@ -74,7 +75,7 @@ Name: "fas"; MessagesFile: "compiler:Languages\Farsi.isl"
 Name: "fin"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "fre"; MessagesFile: "compiler:Languages\French.isl"
 Name: "gal"; MessagesFile: "compiler:Languages\Galician.isl"
-Name: "geo"; MessagesFile: "compiler:Languages\Georgian.islu"
+Name: "geo"; MessagesFile: "compiler:Languages\Georgian.isl"
 Name: "ger"; MessagesFile: "compiler:Languages\German.isl"
 Name: "gla"; MessagesFile: "compiler:Languages\ScottishGaelic.isl"
 Name: "gre"; MessagesFile: "compiler:Languages\Greek.isl"
@@ -116,8 +117,10 @@ Name: "tat"; MessagesFile: "compiler:Languages\Tatar.isl"
 Name: "tur"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "uig"; MessagesFile: "compiler:Languages\Uyghur.islu"
 Name: "ukr"; MessagesFile: "compiler:Languages\Ukrainian.isl"        
+Name: "urd"; MessagesFile: "compiler:Languages\Urdu.isl"
 Name: "uzb"; MessagesFile: "compiler:Languages\Uzbek.isl"
 Name: "vie"; MessagesFile: "compiler:Languages\Vietnamese.isl"
+Name: "vlca";MessagesFile: "compiler:Languages\valencian.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
@@ -546,24 +549,24 @@ begin
   if lang = 'gl' then
     readme := 'gl_GL.UTF-8\html\README.html'
   else
-  if lang = 'it' then
-    readme := 'it\html\README.html'
-  else
+//  if lang = 'it' then
+//    readme := 'it\html\README.html'
+//  else
   if lang = 'ja' then
     readme := 'ja_JP.UTF-8\html\README.html'
   else
-  if lang = 'nl' then
-    readme := 'nl\html\README.html'
-  else
-  if lang = 'ru' then
-    readme := 'ru\html\README.html'
-  else
-  if lang = 'zh_cn' then
-    readme := 'zh_cn\html\README.html'
-  else
-  if lang = 'zh_tw' then
-    readme := 'zh_tw\html\README.html'
-  else
+//  if lang = 'nl' then
+//    readme := 'nl\html\README.html'
+//  else
+//  if lang = 'ru' then
+//    readme := 'ru\html\README.html'
+//  else
+//  if lang = 'zh_cn' then
+//    readme := 'zh_cn\html\README.html'
+//  else
+//  if lang = 'zh_tw' then
+//    readme := 'zh_tw\html\README.html'
+//  else
     readme := 'en\html\README.html';
 
   Result := 'docs\'+readme
@@ -596,17 +599,35 @@ begin
   if lang = 'fre' then
     lang := 'fr_FR'
   else
+  if lang = 'gal' then
+    lang := 'gl_ES'
+  else
   if lang = 'geo' then
     lang := 'ka_GE'
   else
+  if lang = 'ger' then
+    lang := 'de_DE'
+  else
+  if lang = 'gla' then
+    lang := 'gd_GB'
+  else
   if lang = 'gre' then
     lang := 'el_GR'
+  else
+  if lang = 'hin' then
+    lang := 'hi_IN'
+  else
+  if lang = 'ice' then
+    lang := 'is_IS'
   else
   if lang = 'ita' then
     lang := 'it_IT'
   else
   if lang = 'jpn' then
     lang := 'ja_JP'
+  else
+  if lang = 'may' then
+    lang := 'ms_MY'
   else
   if lang = 'mon' then
     lang := 'mn_MN'
@@ -621,7 +642,19 @@ begin
     lang := 'pl_PL'
   else
   if lang = 'rus' then
-    lang := 'ru_RU';
+    lang := 'ru_RU'
+  else
+  if lang = 'slv' then
+    lang := 'sl_SI'
+  else
+  if lang = 'swe' then
+    lang := 'sv_SE'
+  else
+  if lang = 'ukr' then
+    lang := 'uk_UA'
+  else
+  if lang = 'vie' then
+    lang := 'vi_VN';
 
   Result := 'http://www.tuxpaint.org/?lang='+lang
 end;
