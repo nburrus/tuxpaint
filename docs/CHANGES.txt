@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.19 (0.9.27)
+2021.October.20 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -180,11 +180,22 @@ $Id$
       recipe file (.iss).
       Easton Pillay <https://sourceforge.net/u/jedieaston/profile/>
 
-    * Remove old OpenCandy stuff from Windows .iss file.
+    * Other Windows installer updates:
+      + Remove old OpenCandy stuff from Windows .iss file.
+      + Updated to Inno Setup 6
+      + Updated translation files for the installer
+      + 64-bit version now to be installed in the standard "Program Files"
+        folder instead of "Program Files (x86)" as before Current 64bit
+        users are recommended to uninstall previous version of TuxPaint
+        before updating to 0.9.27.
+      + Disabled start menu shortcut to outdated translations for readme.html.
+      + Added language specification to start menu shorcuts for which
+        translation is supported both for the web site and installer.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
     * Added shell script to build windows installer and portable zip archive.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
 
 2021.June.28 (0.9.26)
   * New Features
