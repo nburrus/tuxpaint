@@ -28,6 +28,9 @@ $Id$
     * "Smooth Rainbow" - A smooth, gradient variation of the classic
       "Rainbow" Magic tool.
 
+    * "Stretch" - Squish and stretch parts of your picture, giving a
+      fun-house mirror effect.
+
   * Magic Tool Improvements:
     ------------------------
     * "Halftone" works much better, drawing large overlapping circles
