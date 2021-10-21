@@ -45,6 +45,7 @@ Picture Warps
      * Panels
      * Perspective
      * Shift
+     * Stretch
      * Waves
      * Wavelets
      * Zoom
