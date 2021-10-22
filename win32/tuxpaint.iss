@@ -5,6 +5,14 @@
 ; The version string is extracted from the executable.
 ;
 ; Should we change this to Tux4Kids? -bjk 2011.06.15
+
+; Fixme: /D option for iscc.exe seems to work only on windows command prompt.
+; You should manually edit the following lines to specify the build target
+#ifndef BuildTarget
+;#define BuildTarget   "i686"
+#define BuildTarget   "x86_64"
+#endif
+
 #define PublisherName "New Breed Software"
 #define PublisherURL  "{code:MyPublisherURL}"
 
@@ -36,15 +44,20 @@ AppVersion={#AppVersion}
 DefaultDirName={pf}\{#AppDirName}
 DefaultGroupName={#AppGroupName}
 OutputDir=.\
-OutputBaseFilename={#AppPrefix}-{#AppVersion}-windows-installer
+OutputBaseFilename={#AppPrefix}-{#AppVersion}-windows-{#BuildTarget}-installer
 InfoBeforeFile={#BdistDir}\{#AppLicense}
 SetupIconFile={#BdistDir}\data\images\tuxpaint-installer.ico
 WizardStyle=modern
 Compression=lzma2
 SolidCompression=yes
 PrivilegesRequired=admin
-ArchitecturesInstallIn64BitMode=x64
-ArchitecturesAllowed=x86 x64
+
+#if BuildTarget =="x86_64"
+  ArchitecturesInstallIn64BitMode=x64
+  ArchitecturesAllowed=x64
+#else
+  ArchitecturesAllowed=x86 x64
+#endif
 
 [Languages]
 Name: "afr"; MessagesFile: "compiler:Languages\Afrikaans.isl"
@@ -246,14 +259,17 @@ Procedure ForceUninstallPreviousX86Install();
 var
   ResultCode: Integer;
 begin
-  if FileExists('C:\Program Files (x86)\TuxPaint\unins000.exe') then
+  if Is64BitInstallMode then
   begin
-    if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+    if FileExists('C:\Program Files (x86)\TuxPaint\unins000.exe') then
     begin
-      Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
-    end
-    else begin
-      Abort;
+      if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+      begin
+        Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+      end
+      else begin
+        Abort;
+      end;
     end;
   end;
 end;
