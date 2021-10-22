@@ -11,9 +11,11 @@ else
 fi
 
 echo "Building installer ... "
-result=`/C/Program\ Files\ \(x86\)/Inno\ Setup\ 6/ISCC tuxpaint-${arch}.iss | grep installer.exe`
+result=`/C/Program\ Files\ \(x86\)/Inno\ Setup\ 6/ISCC -DBuildTarget=${arch} tuxpaint.iss | grep installer.exe`
 if [ "x$result" != "x" ]; then
   installer=`basename $result`
+else
+  exit
 fi
 
 echo "Building portable zip archive ... "

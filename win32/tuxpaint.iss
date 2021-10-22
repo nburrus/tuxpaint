@@ -6,8 +6,7 @@
 ;
 ; Should we change this to Tux4Kids? -bjk 2011.06.15
 
-; Fixme: /D option for iscc.exe seems to work only on windows command prompt.
-; You should manually edit the following lines to specify the build target
+; Edit the following lines or use -D (or /D) option for iscc.exe to specify the build target.
 #ifndef BuildTarget
 ;#define BuildTarget   "i686"
 #define BuildTarget   "x86_64"
