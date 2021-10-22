@@ -186,8 +186,9 @@ $Id$
     * Other Windows installer updates:
       + Updated to Inno Setup 6
       + 64-bit version now to be installed in the standard "Program Files"
-        folder instead of "Program Files (x86)" as before.
-        Installer will invoke uninstaller for existing Tux Paint, if found.
+        folder on 64-bit architecture instead of "Program Files (x86)" as before.
+      + 64-bit installer will invoke uninstaller for existing old x86 mode
+        installation, if found.
       + Updated translation files for the installer
       + Added language specification to start menu shorcuts for which
         translation is supported both for the web site and installer.
