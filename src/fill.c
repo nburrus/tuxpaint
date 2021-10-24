@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: October 18, 2021
+  Last updated: October 24, 2021
   $Id$
 */
 
@@ -45,6 +45,10 @@
 #include "pixels.h"
 #include "progressbar.h"
 
+#ifndef ATTRIBUTE_UNUSED
+#define ATTRIBUTE_UNUSED __attribute__ ((__unused__))
+#endif /* ATTRIBUTE_UNUSED */
+
 
 /* How close colors need to be to match all the time */
 #define COLOR_MATCH_NARROW 0.04
@@ -61,6 +65,7 @@
 double colors_close(SDL_Surface * canvas, Uint32 c1, Uint32 c2);
 Uint32 blend(SDL_Surface * canvas, Uint32 draw_colr, Uint32 old_colr, double pct);
 void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched, int y_outside);
+void draw_brush_fill_single(SDL_Surface * canvas, int x, int y, Uint32 draw_color, Uint8 * touched);
 
 
 /* Returns how similar colors 'c1' and 'c2' are */
@@ -397,11 +402,12 @@ void draw_brush_fill_single(SDL_Surface * canvas, int x, int y, Uint32 draw_colo
 }
 
 void draw_brush_fill(SDL_Surface * canvas,
-  int x_left, int y_top, int x_right, int y_bottom,
+  int x_left ATTRIBUTE_UNUSED, int y_top ATTRIBUTE_UNUSED, int x_right ATTRIBUTE_UNUSED, int y_bottom ATTRIBUTE_UNUSED,
   int x1, int y1, int x2, int y2, Uint32 draw_color, Uint8 * touched,
   int * up_x1, int * up_y1, int * up_x2, int * up_y2
 ) {
-  int xx, yy, x, y, dx, dy;
+  int dx, dy;
+  int y;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
   float m, b;
 
@@ -485,8 +491,6 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top, int x_rig
   Uint8 draw_r, draw_g, draw_b, old_r, old_g, old_b, new_r, new_g, new_b;
 
   /* Calculate the max radius of the filled area */
-  //xd = (x_right - x_left + 1);
-  //yd = (y_bottom - y_top + 1);
   xd = max(abs(x - x_right), abs(x - x_left));
   yd = max(abs(y - y_bottom), abs(y - y_top));
   rad = sqrt(xd * xd + yd * yd);
@@ -503,8 +507,8 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top, int x_rig
       /* Only alter the pixels within the flood itself */
       if (touched[(yy * canvas->w) + xx]) {
         /* Determine the distance from the click point */
-        xd = (float) abs(xx - x);
-        yd = (float) abs(yy - y);
+        xd = fabs(xx - x);
+        yd = fabs(yy - y);
         dist = sqrt(xd * xd + yd * yd);
         if (dist < rad) {
           ratio = (dist / rad);
