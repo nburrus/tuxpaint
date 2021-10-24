@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-24 12:30+0200\n"
-"PO-Revision-Date: 2021-10-06 23:33+0200\n"
+"PO-Revision-Date: 2021-10-24 12:36+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -226,9 +226,8 @@ msgstr "Sòlid"
 
 #: ../fill_tools.h:51
 #, fuzzy
-#| msgid "Brushes"
 msgid "Brush"
-msgstr "Pinzells"
+msgstr "Pinzell"
 
 #: ../fill_tools.h:52
 msgid "Linear"
@@ -243,10 +242,8 @@ msgid "Click to fill an area with a solid color."
 msgstr "Feu clic per omplir una àrea amb un color sòlid."
 
 #: ../fill_tools.h:58
-#, fuzzy
-#| msgid "Click to fill an area with a solid color."
 msgid "Click and drag to fill an area by hand, using a brush."
-msgstr "Feu clic per omplir una àrea amb un color sòlid."
+msgstr "Feu clic i arrossegueu per pintar una àrea amb un color sòlid."
 
 #: ../fill_tools.h:59
 msgid ""
@@ -1537,18 +1534,12 @@ msgstr "Feu clic per afegir flocs de neu al dibuix."
 
 #: ../../magic/src/stretch.c:107
 msgid "Stretch"
-msgstr ""
+msgstr "Estira"
 
 #: ../../magic/src/stretch.c:119
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
-msgstr ""
-"Feu clic i arrossegueu per pintar parts de la imatge com si estès en el "
-"televisor."
+msgstr "Feu clic i arrossegueu per estirar el dibuix."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"
