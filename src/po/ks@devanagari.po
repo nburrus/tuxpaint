@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 21:32-0700\n"
+"POT-Creation-Date: 2021-10-24 12:25+0200\n"
 "PO-Revision-Date: 2012-12-21 11:04+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-DV\n"
@@ -513,7 +513,7 @@ msgstr "नूव"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8383
+#: ../tools.h:98 ../tuxpaint.c:8375
 msgid "Open"
 msgstr "खूलीव"
 
@@ -640,227 +640,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "OK तॊलो… पकॊव यॊ डरायींग रूज़व करान!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2204
+#: ../tuxpaint.c:2205
 msgid "Do you really want to quit?"
 msgstr "कयाह तुहयो छॊव पॊज़ पॊठ रुकुन यछ़ान?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2207
+#: ../tuxpaint.c:2208
 msgid "Yes, I’m done!"
 msgstr "आ, मॊ मकलूव!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2210 ../tuxpaint.c:2237
+#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
 msgid "No, take me back!"
 msgstr "ना,मॊ नॊयीव वापस!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2214
+#: ../tuxpaint.c:2215
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "अगर तुहयॊ रुकोव, तुहॊंज़ तसविर रावो!यो कॊरवाह मोहफूज़?"
 
-#: ../tuxpaint.c:2215 ../tuxpaint.c:2220
+#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
 msgid "Yes, save it!"
 msgstr "आ, यॊ कॊरहून मोहफूज़!"
 
-#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
+#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
 msgid "No, don’t bother saving!"
 msgstr "ना, मोहफूज़ करनुक गम मॊ बॊरीव!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2219
+#: ../tuxpaint.c:2220
 msgid "Save your picture first?"
 msgstr "गुडे कॊरवा तसविर मॆहफूज़?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2224
+#: ../tuxpaint.c:2225
 msgid "Can’t open that picture!"
 msgstr "छु नॊ हिकान हु तसविर खूलीथ!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2227 ../tuxpaint.c:2232 ../tuxpaint.c:2241 ../tuxpaint.c:2248
-#: ../tuxpaint.c:2257 ../tuxpaint.c:2262
+#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2231
+#: ../tuxpaint.c:2232
 msgid "There are no saved files!"
 msgstr "अतो छॊ नॊ मोहफूज़  करनॊ आमोच़ फायलो?"
 
 #. Verification of print action
-#: ../tuxpaint.c:2235
+#: ../tuxpaint.c:2236
 msgid "Print your picture now?"
 msgstr "पननॊन तसविर कॊरीवो परोंट वॊन?"
 
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2237
 msgid "Yes, print it!"
 msgstr "आ, कॊरीव परींट!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2241
 msgid "Your picture has been printed!"
 msgstr "तुहॊंज़ तसविर छॊ परींट करनॊ आमोच़!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2245
 msgid "Sorry! Your picture could not be printed!"
 msgstr "मॊफी दीयोव!तुहॊंज़ तसविर हयोच नॊ परींट कॊरीथ!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 msgid "You can’t print yet!"
 msgstr "वॊन हयीकीव नॊ परींट कॊरीथ!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2252
 msgid "Erase this picture?"
 msgstr "तसविर कॊरीव ईरिज़?"
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 msgid "Yes, erase it!"
 msgstr "आ, कॊरीव ईरिज़!"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2254
 msgid "No, don’t erase it!"
 msgstr "ना, यॊ मो कॊरीव ईरिज़!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2257
 msgid "Remember to use the left mouse button!"
 msgstr "खुफुर मावुस बुटन ईसतिमाल करुन थियज़ोव याद!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2260
+#: ../tuxpaint.c:2261
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "तुहॊंज़ तसविर छॊ परींट करनॊ आमोच़!"
 
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2262
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "तुहॊंज़ तसविर छॊ परींट करनॊ आमोच़!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2265
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "मॊफी दीयोव!तुहॊंज़ तसविर हयोच नॊ परींट कॊरीथ!"
 
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2267
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "मॊफी दीयोव!तुहॊंज़ तसविर हयोच नॊ परींट कॊरीथ!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2271
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "च़ॊरीव तसविर योम तुहयो ज़रूरत छॊ, पतॊ कॊरीव कोलोक “पेलि”."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2479
+#: ../tuxpaint.c:2480
 msgid "Sound muted."
 msgstr "मयूट करनॊ आमोच़ आवाज़"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2484
+#: ../tuxpaint.c:2485
 msgid "Sound unmuted."
 msgstr "अनयूट करनॊ आमोच़ आवाज़"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3262
+#: ../tuxpaint.c:3263
 msgid "Please wait…"
 msgstr "मॊहरबिनी  कॊरीथ पिरीव…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8386
+#: ../tuxpaint.c:8378
 msgid "Erase"
 msgstr "ईरिज़"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8389
+#: ../tuxpaint.c:8381
 msgid "Slides"
 msgstr "सोलायडे"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8392
+#: ../tuxpaint.c:8384
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8395
+#: ../tuxpaint.c:8387
 msgid "Back"
 msgstr "वापस"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8398
+#: ../tuxpaint.c:8390
 msgid "Play"
 msgstr "पेली"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8401
+#: ../tuxpaint.c:8393
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8404
+#: ../tuxpaint.c:8396
 msgid "Next"
 msgstr "बयाख"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9212
+#: ../tuxpaint.c:9204
 msgid "Aa"
 msgstr "आ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12878
+#: ../tuxpaint.c:12864
 msgid "Yes"
 msgstr "आ"
 
-#: ../tuxpaint.c:12882
+#: ../tuxpaint.c:12868
 msgid "No"
 msgstr "ना"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14028
+#: ../tuxpaint.c:14014
 msgid "Replace the picture with your changes?"
 msgstr "तुहॊंज़न तबदिलयन सान बदलाववाह तसविर ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14032
+#: ../tuxpaint.c:14018
 msgid "Yes, replace the old one!"
 msgstr "आ, परॊन अख बदलॊयोव!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14036
+#: ../tuxpaint.c:14022
 msgid "No, save a new file!"
 msgstr "ना, मोहफूज़ कॊरीव अख नॊव फायोल!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15299
+#: ../tuxpaint.c:15285
 msgid "Choose the picture you want, then click “Open”."
 msgstr "च़ॊरीव तसविर युस तुहयो ज़रूरत छॊ, पतॊ कॊरीव कोलोक “खूलोव”."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16725
+#: ../tuxpaint.c:16711
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24479
+#: ../tuxpaint.c:24462
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24491
+#: ../tuxpaint.c:24474
 msgid "Pick a color."
 msgstr "अख रंग तुलीव."
 
@@ -1217,13 +1217,13 @@ msgstr "हलको"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "कोलोक कॊरीव तॊ डरिग कॊरीव पननॊ तसविर पयॊठ अख गाछोच लय डरा करनो बापत."
 
-#: ../../magic/src/lightning.c:61
+#: ../../magic/src/lightning.c:78
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "हलको करुन"
 
-#: ../../magic/src/lightning.c:71
+#: ../../magic/src/lightning.c:88
 msgid "Click, drag, and release to a lightning bolt between two points."
 msgstr ""
 
@@ -1584,6 +1584,21 @@ msgstr "पननॊ तसविर पयॊठ अख शोनो बाल 
 #: ../../magic/src/snow.c:77
 msgid "Click to add snow flakes to your picture."
 msgstr "पननॊ तसविर पयॊठ अख शोनो थुस हूररावनो बापत कॊरीव कोलोक."
+
+#: ../../magic/src/stretch.c:107
+msgid "Stretch"
+msgstr ""
+
+#: ../../magic/src/stretch.c:119
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to stretch part of your picture vertically or horizontally."
+msgstr ""
+"कोलोक कॊरीव तॊ डरिग कॊरीव पननॊ तसविर हॊंद होसो तॊथ बासनावनॊ बापत ज़न तॊ तॊम "
+"टोलो वीजनस पयॊठ आसन."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"

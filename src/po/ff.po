@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 21:32-0700\n"
+"POT-Creation-Date: 2021-10-24 12:25+0200\n"
 "PO-Revision-Date: 2017-12-03 10:35+0200\n"
 "Last-Translator: Ibrahima SARR <ibrahima.sarr@pulaagu.com>\n"
 "Language-Team: FULAH LOCALIZATION\n"
@@ -509,7 +509,7 @@ msgstr "Fuɗɗo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8383
+#: ../tools.h:98 ../tuxpaint.c:8375
 msgid "Open"
 msgstr "Uddit"
 
@@ -629,227 +629,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Eey wadde… Njokken e natde ngoo-ɗoo!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2204
+#: ../tuxpaint.c:2205
 msgid "Do you really want to quit?"
 msgstr "Aɗa teeŋtini yiɗde yaltude?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2207
+#: ../tuxpaint.c:2208
 msgid "Yes, I’m done!"
 msgstr "Eey, mi gaynii!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2210 ../tuxpaint.c:2237
+#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
 msgid "No, take me back!"
 msgstr "Alaa, ndutto-ɗen!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2214
+#: ../tuxpaint.c:2215
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "So a yaltii jooni, ko nat-ɗaa fof mototo! Aɗa yiɗi danndude?"
 
-#: ../tuxpaint.c:2215 ../tuxpaint.c:2220
+#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
 msgid "Yes, save it!"
 msgstr "Eey ndannden tawo!"
 
-#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
+#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
 msgid "No, don’t bother saving!"
 msgstr "Alaa, soklaani danndude!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2219
+#: ../tuxpaint.c:2220
 msgid "Save your picture first?"
 msgstr "Ndannden natngo maa tawo?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2224
+#: ../tuxpaint.c:2225
 msgid "Can’t open that picture!"
 msgstr "Ngal natal jaɓaani udditaade!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2227 ../tuxpaint.c:2232 ../tuxpaint.c:2241 ../tuxpaint.c:2248
-#: ../tuxpaint.c:2257 ../tuxpaint.c:2262
+#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
 msgid "OK"
 msgstr "AWA"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2231
+#: ../tuxpaint.c:2232
 msgid "There are no saved files!"
 msgstr "Hay piilol gootol danndaaka!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2235
+#: ../tuxpaint.c:2236
 msgid "Print your picture now?"
 msgstr "Aɗa winnditoo natal maa jooni?"
 
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2237
 msgid "Yes, print it!"
 msgstr "Eey, winndito!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2241
 msgid "Your picture has been printed!"
 msgstr "Natal maa winnditaama!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2245
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Njaafo-ɗaa, natal maa horiima winnditeede."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 msgid "You can’t print yet!"
 msgstr "A waawaa winnditaade tawo!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2252
 msgid "Erase this picture?"
 msgstr "Aɗa momta natal ngal??"
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 msgid "Yes, erase it!"
 msgstr "Eey, momtu ngal!"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2254
 msgid "No, don’t erase it!"
 msgstr "Alaa, hoto momtu!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2257
 msgid "Remember to use the left mouse button!"
 msgstr "Hoto yejjit huutoraade uure nanre doombel ngel!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2260
+#: ../tuxpaint.c:2261
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Natal maa winnditaama!"
 
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2262
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Natal maa winnditaama!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2265
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Njaafo-ɗaa, natal maa horiima winnditeede."
 
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2267
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Njaafo-ɗaa, natal maa horiima winnditeede."
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2271
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Suɓo nate njiɗ-ɗaa, ndobo-ɗaa \"Dognu\""
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2479
+#: ../tuxpaint.c:2480
 msgid "Sound muted."
 msgstr "Hito muumɗinaama."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2484
+#: ../tuxpaint.c:2485
 msgid "Sound unmuted."
 msgstr "Hito muuɗitii."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3262
+#: ../tuxpaint.c:3263
 msgid "Please wait…"
 msgstr "Tiiɗno abbo seeɗa…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8386
+#: ../tuxpaint.c:8378
 msgid "Erase"
 msgstr "Momtu"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8389
+#: ../tuxpaint.c:8381
 msgid "Slides"
 msgstr "Japooje"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8392
+#: ../tuxpaint.c:8384
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8395
+#: ../tuxpaint.c:8387
 msgid "Back"
 msgstr "Rutto"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8398
+#: ../tuxpaint.c:8390
 msgid "Play"
 msgstr "Dognu"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8401
+#: ../tuxpaint.c:8393
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8404
+#: ../tuxpaint.c:8396
 msgid "Next"
 msgstr "Dewwo"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9212
+#: ../tuxpaint.c:9204
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12878
+#: ../tuxpaint.c:12864
 msgid "Yes"
 msgstr "Eey"
 
-#: ../tuxpaint.c:12882
+#: ../tuxpaint.c:12868
 msgid "No"
 msgstr "Alaa"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14028
+#: ../tuxpaint.c:14014
 msgid "Replace the picture with your changes?"
 msgstr "Lomtin natal ngal ko mbayluɗaa koo?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14032
+#: ../tuxpaint.c:14018
 msgid "Yes, replace the old one!"
 msgstr "Eey, lomtin natal ɓooyngal ngal!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14036
+#: ../tuxpaint.c:14022
 msgid "No, save a new file!"
 msgstr "Alaa, danndu natal kesal!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15299
+#: ../tuxpaint.c:15285
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Suɓo natal njiɗ-ɗaa, ndobo-ɗaa \"Uddit\""
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16725
+#: ../tuxpaint.c:16711
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24479
+#: ../tuxpaint.c:24462
 msgid "Select a color from your drawing."
 msgstr "Labo goobol iwde e natol maa."
 
-#: ../tuxpaint.c:24491
+#: ../tuxpaint.c:24474
 msgid "Pick a color."
 msgstr "Suɓo goobol."
 
@@ -1166,13 +1166,13 @@ msgstr "Fooyre"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Dobo, ndaasaa doombel ngam natde loocol fooyre e natal maa."
 
-#: ../../magic/src/lightning.c:61
+#: ../../magic/src/lightning.c:78
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "Fooyin"
 
-#: ../../magic/src/lightning.c:71
+#: ../../magic/src/lightning.c:88
 msgid "Click, drag, and release to a lightning bolt between two points."
 msgstr ""
 
@@ -1504,6 +1504,19 @@ msgstr "Dobo ngam ɓeydude baluuji nees e natal maa."
 #: ../../magic/src/snow.c:77
 msgid "Click to add snow flakes to your picture."
 msgstr "Dobo ngam ɓeydude ñaaƴe nees e natal maa."
+
+#: ../../magic/src/stretch.c:107
+msgid "Stretch"
+msgstr ""
+
+#: ../../magic/src/stretch.c:119
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to stretch part of your picture vertically or horizontally."
+msgstr "Dobo, ndaasaa ngam nanndidne bannge e natal maa e yaynirde tele."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"
