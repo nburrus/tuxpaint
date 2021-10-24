@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 20, 2021
+  June 14, 2002 - October 24, 2021
 */
 
 #include "platform.h"
@@ -398,7 +398,8 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
 #endif
 
 #include "SDL_rotozoom.h"
-#if !defined(_SDL_rotozoom_h)
+#include "SDL_gfxBlitFunc.h"
+#if !defined(_SDL_rotozoom_h) || !defined(_SDL_gfxBlitFunc_h)
 #error "---------------------------------------------------"
 #error "If you installed SDL_gfx from a package, be sure"
 #error "to get the development package, as well!"
@@ -743,10 +744,10 @@ static grid_dims gd_toolopt;    /* was 2x7 */
 static grid_dims gd_colors;     /* was 17x1 */
 
 #define ORIGINAL_BUTTON_SIZE 48 /* Original Button Size */
-#define HEIGHTOFFSET (((WINDOW_HEIGHT - 480) / button_h) * button_h)
-#define TOOLOFFSET (HEIGHTOFFSET / button_h * 2)
-#define PROMPTOFFSETX (WINDOW_WIDTH - 640) / 2
-#define PROMPTOFFSETY (HEIGHTOFFSET / 2)
+#define HEIGHTOFFSET ((Sint16) (((WINDOW_HEIGHT - 480) / button_h) * button_h))
+#define TOOLOFFSET ((Sint16) (HEIGHTOFFSET / button_h * 2))
+#define PROMPTOFFSETX ((Sint16) (WINDOW_WIDTH - 640) / 2)
+#define PROMPTOFFSETY ((Sint16) (HEIGHTOFFSET / 2))
 
 #define THUMB_W ((WINDOW_WIDTH - r_ttools.w - r_ttoolopt.w) / 4)
 #define THUMB_H (((button_h * buttons_tall + r_ttools.h) - button_h - button_h / 2) / 4)
@@ -2293,7 +2294,7 @@ static void mainloop(void)
     shape_tool_mode, shape_start_x, shape_start_y, shape_current_x, shape_current_y, old_stamp_group, which;
   int num_things;
   int *thing_scroll;
-  int do_draw, max;
+  int do_draw;
   int ignoring_motion;
   int motioner = 0;
   int hatmotioner = 0;
@@ -8334,7 +8335,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
   tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
 
-  surf = thumbnail(tmp_surf, min(button_w, tmp_surf->w), min(18 * button_scale + button_label_y_nudge, tmp_surf->h), 0);
+  surf = thumbnail(tmp_surf, min(button_w, tmp_surf->w), min((int) (18 * button_scale + button_label_y_nudge), tmp_surf->h), 0);
   SDL_FreeSurface(tmp_surf);
 
   return surf;
@@ -9845,7 +9846,7 @@ static void draw_erasers(void)
   int xx, yy, n;
   void (*putpixel) (SDL_Surface *, int, int, Uint32);
   SDL_Rect dest;
-  int most, off_y, max;
+  int most, off_y;
 
   putpixel = putpixels[screen->format->BytesPerPixel];
 
@@ -9860,7 +9861,6 @@ static void draw_erasers(void)
     {
       most = most - gd_toolopt.cols; /* was 12 */
       off_y = img_scroll_up->h;
-      max = most + TOOLOFFSET;
 
       dest.x = WINDOW_WIDTH - r_ttoolopt.w;
       dest.y = r_ttoolopt.h;
@@ -9889,7 +9889,6 @@ static void draw_erasers(void)
   else
     {
       off_y = 0;
-      max = most + TOOLOFFSET;
     }
 
   for (j = 0; j < most + TOOLOFFSET; j++)
@@ -10011,11 +10010,9 @@ static void draw_none(void)
 /* Draw Fill sub-tools */
 static void draw_fills(void)
 {
-  int i, j, x, y, sz;
-  int xx, yy, n;
-  void (*putpixel) (SDL_Surface *, int, int, Uint32);
+  int i, j;
   SDL_Rect dest;
-  int most, off_y, max;
+  int most, off_y;
 
   draw_image_title(TITLE_FILLS, r_ttoolopt);
 
@@ -10029,7 +10026,6 @@ static void draw_fills(void)
     {
       most = most - gd_toolopt.cols; /* was 12 */
       off_y = img_scroll_up->h;
-      max = most + TOOLOFFSET;
 
       dest.x = WINDOW_WIDTH - r_ttoolopt.w;
       dest.y = r_ttoolopt.h;
@@ -10058,7 +10054,6 @@ static void draw_fills(void)
   else
     {
       off_y = 0;
-      max = most + TOOLOFFSET;
     }
 
   for (j = 0; j < most + TOOLOFFSET; j++)
@@ -12812,8 +12807,8 @@ static int do_prompt_image_flash(const char *const text,
   return (do_prompt_image_flash_snd(text, btn_yes, btn_no, img1, img2, img3, animate, SND_NONE, ox, oy));
 }
 
-#define PROMPT_W (min(canvas->w, 440 * button_scale))
-#define PROMPT_LEFT (r_tools.w - PROMPTOFFSETX + canvas->w / 2 - PROMPT_W / 2 - 4)
+#define PROMPT_W (min(canvas->w, ((int) (440 * button_scale))))
+#define PROMPT_LEFT ((Sint16) (r_tools.w - PROMPTOFFSETX + canvas->w / 2 - PROMPT_W / 2 - 4))
 
 /**
  * FIXME
@@ -19537,7 +19532,7 @@ static void load_magic_plugins(void)
                                           else
                                             {
                                               fprintf(stderr, "Error: plugin %s mode # %d failed to load an icon\n",
-                                                fname, i, group);
+                                                fname, i);
                                               fflush(stderr);
                                             }
                                         }
@@ -21454,7 +21449,7 @@ static int do_color_picker(void)
 #endif
   SDL_Rect dest;
   int x, y, w;
-  int ox, oy, oox, ooy, nx, ny;
+  int ox, oy;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
@@ -21469,7 +21464,7 @@ static int do_color_picker(void)
   int done, chose;
   SDL_Event event;
   SDLKey key;
-  int color_picker_left, color_picker_top, color_picker_width, color_picker_height;
+  int color_picker_left, color_picker_top;
   int back_left, back_top;
   SDL_Rect color_example_dest;
   SDL_Surface *backup;
@@ -21505,9 +21500,6 @@ static int do_color_picker(void)
 
   for (w = 0; w <= stop; w = w + 4)
     {
-      nx = PROMPT_LEFT + r_tools.w - w + PROMPTOFFSETX;
-      ny = 2 + canvas->h / 2 - w;
-
       dest.x = ox - ((ox -r_final.x) * w) / stop;
       dest.y = oy - ((oy -r_final.y) * w) / stop;
       dest.w = w * 4;
@@ -25451,7 +25443,7 @@ static void setup(void)
           free(td_str);
           tmp_surf = render_text(myfont, upstr, black);
           free(upstr);
-          img_title_names[i] = thumbnail(tmp_surf, min(84 * button_scale, tmp_surf->w), tmp_surf->h, 0);
+          img_title_names[i] = thumbnail(tmp_surf, min((int) (84 * button_scale), tmp_surf->w), tmp_surf->h, 0);
           SDL_FreeSurface(tmp_surf);
         }
       else
@@ -26831,7 +26823,7 @@ char * safe_strncat(char *dest, const char *src, size_t n) {
 
 char * safe_strncpy(char *dest, const char *src, size_t n) {
   char * ptr;
-  ptr = strncpy(dest, src, n - 1);
+  ptr = strncpy(dest, src, n - 1); /* FIXME: Clean up, and keep safe, to avoid compiler warning (e.g., "output may be truncated copying 255 bytes from a string of length 255") */
   dest[n - 1] = '\0';
   return ptr;
 }

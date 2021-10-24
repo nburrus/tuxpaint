@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.21 (0.9.27)
+2021.October.24 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -198,6 +198,8 @@ $Id$
 
     * Added shell script to build windows installer and portable zip archive.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Further work to remove compiler warnings.
 
 
 2021.June.28 (0.9.26)
