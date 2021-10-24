@@ -2906,7 +2906,8 @@ static void mainloop(void)
               else if (event.type == SDL_TEXTINPUT ||
                        (event.type == SDL_KEYDOWN &&
                         (event.key.keysym.sym == SDLK_BACKSPACE ||
-                         event.key.keysym.sym == SDLK_RETURN || event.key.keysym.sym == SDLK_TAB)))
+                         event.key.keysym.sym == SDLK_RETURN || event.key.keysym.sym == SDLK_TAB ||
+			 event.key.keysym.sym == SDLK_LALT || event.key.keysym.sym == SDLK_RALT)))
                 {
                   /* Handle key in text tool: */
 
