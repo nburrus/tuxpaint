@@ -444,6 +444,8 @@ Available Tools
                  drawing with a color of your choice. Three fill options are
                  offered:
                     * Solid — click once to fill an area with a solid color.
+                    * Brush — click and drag to fill an area with a solid
+                      color using freehand painting.
                     * Linear — click and then drag to fill the area with
                       color that fades away (a gradient) towards where you
                       drag the mouse.

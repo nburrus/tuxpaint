@@ -485,6 +485,8 @@ Outils disponibles
                  de remplissage sont offertes :
                     * Solide — cliquez une fois pour remplir une zone avec
                       une couleur unie.
+                    * Brush — click and drag to fill an area with a solid
+                      color using freehand painting.
                     * Linéaire—cliquez et faites glisser pour remplir une
                       zone avec une couleur qui s'atténue au fur et à mesure
                       dans la direction où vous déplacez la souris.
