@@ -507,8 +507,8 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top, int x_rig
       /* Only alter the pixels within the flood itself */
       if (touched[(yy * canvas->w) + xx]) {
         /* Determine the distance from the click point */
-        xd = fabs(xx - x);
-        yd = fabs(yy - y);
+        xd = fabs((float) (xx - x));
+        yd = fabs((float) (yy - y));
         dist = sqrt(xd * xd + yd * yd);
         if (dist < rad) {
           ratio = (dist / rad);
