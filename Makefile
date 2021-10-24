@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - September 28, 2021
+# June 14, 2002 - October 24, 2021
 
 
 # The version number, for release:
@@ -1100,7 +1100,7 @@ TuxPaint.dmg:
 tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		obj/rgblinear.o obj/playsound.o obj/fonts.o obj/parse.o obj/fill.o \
 		obj/progressbar.o obj/dirwalk.o obj/get_fname.o obj/onscreen_keyboard.o \
-		obj/gifenc.o \
+		obj/gifenc.o obj/sounds.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
@@ -1242,6 +1242,12 @@ obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h \
 	@echo "...Compiling RGB to Linear functions..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/rgblinear.c -o obj/rgblinear.o
+
+obj/sounds.o:	src/sounds.c src/sounds.h
+	@echo
+	@echo "...Compiling sound effect list..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/sounds.c -o obj/sounds.o
 
 
 obj/BeOS_print.o:	src/BeOS_print.cpp src/BeOS_print.h
