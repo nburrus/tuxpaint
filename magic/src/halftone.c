@@ -1,6 +1,6 @@
 /* halftone.c
 
-   Last modified: 2021.09.21
+   Last modified: 2021.10.24
 */
 
 
@@ -340,7 +340,11 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
                      'square' buffer (which starts as white)
                      (since the target is RGB, we use `min()`) */
                   SDL_GetRGB(api->getpixel(square, sqx, sqy), square->format, &or, &og, &ob);
-                  pixel = SDL_MapRGB(square->format, min(r * 1.2, or), min(g * 1.2, og), min(b * 1.2, ob));
+                  pixel = SDL_MapRGB(square->format,
+                    min((Uint8) (r * 1.2), or),
+                    min((Uint8) (g * 1.2), og),
+                    min((Uint8) (b * 1.2), ob)
+                  );
                   api->putpixel(square, sqx, sqy, pixel);
                 }
             }
