@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - July 26, 2020
+  June 14, 2002 - October 25, 2021
 */
 
 #include <stdio.h>
@@ -966,14 +966,26 @@ static void set_langint_from_locale_string(const char *restrict loc)
 static void mysetenv(const char *name, const char *value)
 {
 #ifdef HAVE_SETENV
-  setenv(name, value, 1);
-#else
-  int len = strlen(name) + 1 + strlen(value) + 1;
-  char *str = malloc(len);
-
-  sprintf(str, "%s=%s", name, value);
-  putenv(str);
+  int len;
+  char *str;
 #endif
+
+  if (name != NULL && value != NULL) {
+#ifdef HAVE_SETENV
+    setenv(name, value, 1);
+#else
+    len = strlen(name) + 1 + strlen(value) + 1;
+    str = malloc(len);
+
+    sprintf(str, "%s=%s", name, value);
+    putenv(str);
+#endif
+  } else {
+    fprintf(stderr, "WARNING: mysetenv() received a null pointer. name=%s, value=%s\n",
+      (name == NULL ? "NULL" : name),
+      (value == NULL ? "NULL" : value)
+    );
+  }
 }
 
 
