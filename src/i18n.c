@@ -965,7 +965,7 @@ static void set_langint_from_locale_string(const char *restrict loc)
  */
 static void mysetenv(const char *name, const char *value)
 {
-#ifdef HAVE_SETENV
+#ifndef HAVE_SETENV
   int len;
   char *str;
 #endif
@@ -1077,14 +1077,9 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 #endif
   textdomain("tuxpaint");
 
-#ifdef _WIN32
-  if (!*loc)
-    loc = _nl_locale_name(LC_MESSAGES, "");
-#else
   // NULL: Used to direct setlocale() to query the current
   // internationalised environment and return the name of the locale().
   loc = setlocale(LC_MESSAGES, NULL);
-#endif
 
   if (strcmp(oldloc, "") != 0 && strcmp(loc, oldloc) != 0)
     {
