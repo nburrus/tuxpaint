@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.25 (0.9.27)
+2021.October.26 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -171,7 +171,10 @@ $Id$
       * h/t Pere Pujal i Carabantes for confirming how to reproduce it
       * TOYAMA Shin-ichi <shin1@wmail.plala.or.jp> dropped the old
         code and rebuilt Tux Paint 0.9.26 for Win32 as 0.9.26-5
-      * Note: This means dropping support for Windows 2000 & XP 
+      * Note: This means dropping support for Windows 2000 & XP
+      * (Also, remove Windows-only call to `_nl_locale_name()`,
+        and avoid crashing if our `mysetenv()` receives any NULL pointers.
+        T. Shin-Ichi & Bill K.)
 
   * Ports & Building
     ----------------
