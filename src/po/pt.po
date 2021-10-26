@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-25 23:22-0700\n"
-"PO-Revision-Date: 2021-09-17 11:49+0100\n"
+"PO-Revision-Date: 2021-10-26 11:43+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -189,10 +189,8 @@ msgid "Solid"
 msgstr "Sólida"
 
 #: ../fill_tools.h:51
-#, fuzzy
-#| msgid "Brushes"
 msgid "Brush"
-msgstr "Pincéis"
+msgstr "Pincel"
 
 #: ../fill_tools.h:52
 msgid "Linear"
@@ -207,10 +205,8 @@ msgid "Click to fill an area with a solid color."
 msgstr "Clica para preencher uma área com uma cor sólida."
 
 #: ../fill_tools.h:58
-#, fuzzy
-#| msgid "Click to fill an area with a solid color."
 msgid "Click and drag to fill an area by hand, using a brush."
-msgstr "Clica para preencher uma área com uma cor sólida."
+msgstr "Clica e arrasta para preencher uma área à mão, usando um pincel."
 
 #: ../fill_tools.h:59
 msgid ""
@@ -385,33 +381,24 @@ msgstr "Uma estrela com 5 pontos."
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
 #: ../shapes.h:385
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
 "Escolhe uma forma. Clica para começar a desenhar, arrasta e larga quando "
-"estiver do tamanho que queres. Move o rato para a rodares e clica para "
-"desenhar."
+"tiver o tamanho e a forma que queres. Move o rato para a rodares e clica "
+"novamente para a desenhar."
 
 # #: tools.h:65
 # msgid "Pick a shape to draw.  Click once to pick the center of the shape, #click again to draw it."
 # msgstr "Escolha uma forma para desenhar. Clique uma vez para definir o centro da imagem. Clique de novo para desenhá-la."
 #: ../shapes.h:386
-#, fuzzy
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
 msgstr ""
 "Escolhe uma forma. Clica para começar a desenhar, arrasta e larga quando "
-"estiver do tamanho que queres. Move o rato para a rodares e clica para "
-"desenhar."
+"tiver o tamanho e a forma que queres."
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
@@ -625,12 +612,13 @@ msgid "Let go of the button to complete the line."
 msgstr "Solta o botão para completares a linha."
 
 #: ../tools.h:167
-#, fuzzy, c-format
-#| msgid "Let go of the button to complete the line."
+#, c-format
 msgid ""
 "Let go of the button to complete the line. (Your line's angle is %.0f "
 "degrees.)"
-msgstr "Solta o botão para completares a linha."
+msgstr ""
+"Larga o botão para completares a linha. (O ângulo da sua linha é de %.0f "
+"graus)."
 
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:170
@@ -643,12 +631,12 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move o rato para rodares a forma. Clica para desenhares."
 
 #: ../tools.h:174
-#, fuzzy, c-format
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
+#, c-format
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr "Move o rato para rodares a forma. Clica para desenhares."
+msgstr ""
+"Move o rato para rodares a forma. Clica para desenhares. (É rodado %d graus)."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
@@ -1085,10 +1073,8 @@ msgid "Fretwork"
 msgstr "Ornamento"
 
 #: ../../magic/src/fretwork.c:188
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
-msgstr "Clica e arrasta para desenhar padrões repetitivos. "
+msgstr "Clica e arrasta para desenhar padrões repetitivos."
 
 #: ../../magic/src/fretwork.c:190
 msgid "Click to surround your picture with repetitive patterns."
@@ -1125,10 +1111,8 @@ msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Clica para converter o desenho num jornal."
 
 #: ../../magic/src/halftone.c:51
-#, fuzzy
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
-msgstr "Clica para converter o desenho num jornal."
+msgstr "Clica para transformar o desenho num jornal."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -1194,14 +1178,12 @@ msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Clica e arrasta para desenhar um feixe de luz na imagem."
 
 #: ../../magic/src/lightning.c:78
-#, fuzzy
-#| msgid "Lighten"
 msgid "Lightning"
-msgstr "Clarear"
+msgstr "Luminoso"
 
 #: ../../magic/src/lightning.c:88
 msgid "Click, drag, and release to a lightning bolt between two points."
-msgstr ""
+msgstr "Clica, arrasta e larga para um relâmpago entre dois pontos."
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
@@ -1293,7 +1275,7 @@ msgstr "Negativizar"
 
 #: ../../magic/src/negative.c:74
 msgid "Opposite"
-msgstr ""
+msgstr "Oposto"
 
 #: ../../magic/src/negative.c:79
 msgid "Click and drag the mouse around to make your painting negative."
@@ -1304,21 +1286,20 @@ msgid "Click to turn your painting into its negative."
 msgstr "Clica para negativizar o desenho."
 
 #: ../../magic/src/negative.c:83
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
 msgstr ""
-"Clica e arrasta o rato para alterar as cores de algumas partes do desenho."
+"Clica e arrasta o rato para alterar as cores para os seus opostos -- as suas "
+"cores complementares."
 
 #: ../../magic/src/negative.c:84
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
 msgstr ""
+"Clica para transformar todas as cores da pintura em seus opostos -- as suas "
+"cores complementares."
 
 #: ../../magic/src/noise.c:66
 msgid "Noise"
@@ -1339,7 +1320,7 @@ msgstr "Perspetiva"
 
 #: ../../magic/src/perspective.c:152
 msgid "Panels"
-msgstr ""
+msgstr "Painéis"
 
 #: ../../magic/src/perspective.c:153
 msgid "Zoom"
@@ -1351,10 +1332,8 @@ msgstr ""
 "Clica nos cantos e arrasta até ao ponto em que pretendes ajustar o desenho."
 
 #: ../../magic/src/perspective.c:159
-#, fuzzy
-#| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
-msgstr "Clica para negativizar o desenho."
+msgstr "Clica para transformar a imagem em painéis 2 por 2."
 
 #: ../../magic/src/perspective.c:161
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1390,17 +1369,15 @@ msgstr "Clica e arrasta para desenhar carris na imagem."
 
 #: ../../magic/src/rainbow.c:138
 msgid "Rainbow"
-msgstr "Arco íris"
+msgstr "Arco-íris"
 
 #: ../../magic/src/rainbow.c:140
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Smooth Rainbow"
-msgstr "Arco íris"
+msgstr "Arco-íris suave"
 
 #: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
-msgstr "Podes desenhar com as cores do arco íris!"
+msgstr "Podes desenhar com as cores do arco-íris!"
 
 #: ../../magic/src/rain.c:68
 msgid "Rain"
@@ -1416,18 +1393,18 @@ msgstr "Clica para cobrir o desenho com gotas de chuva."
 
 #: ../../magic/src/realrainbow.c:99
 msgid "Real Rainbow"
-msgstr "Arco íris real"
+msgstr "Arco-íris real"
 
 #: ../../magic/src/realrainbow.c:101
 msgid "ROYGBIV Rainbow"
-msgstr "Arco íris ROYGBIV"
+msgstr "Arco-íris ROYGBIV"
 
 #: ../../magic/src/realrainbow.c:114
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
-"Clica onde queres começar o arco íris, arrasta-o para onde queres que acabe "
+"Clica onde queres começar o arco-íris, arrasta-o para onde queres que acabe "
 "e larga para desenhar."
 
 #: ../../magic/src/ripples.c:103
@@ -1537,18 +1514,14 @@ msgstr "Clica para adicionar flocos de neve ao desenho."
 
 #: ../../magic/src/stretch.c:107
 msgid "Stretch"
-msgstr ""
+msgstr "Esticar"
 
 #: ../../magic/src/stretch.c:119
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
-"Clica e arrasta para fazer com que algumas partes do desenho apareçam como "
-"se estivessem na televisão."
+"Clica e arrasta para esticar parte da imagem verticalmente ou "
+"horizontalmente."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"
