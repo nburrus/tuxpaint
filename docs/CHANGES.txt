@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.24 (0.9.27)
+2021.October.25 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -85,6 +85,9 @@ $Id$
       on whether "simpleshapes" option is set) tools are selected
       (e.g., when returning from the "Open" dialog).
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/186/)
+
+    * When drawing lines or rotating a shape, the angle of rotation
+      is shown (in the instructions at the bottom).
 
     * Allowing Left [Alt] key for switching to Japanese input method.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>

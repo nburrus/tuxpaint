@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-24 12:25+0200\n"
+"POT-Creation-Date: 2021-10-25 23:22-0700\n"
 "PO-Revision-Date: 2021-09-17 11:49+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -521,7 +521,7 @@ msgstr "Novo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8375
+#: ../tools.h:98 ../tuxpaint.c:8398
 msgid "Open"
 msgstr "Abrir"
 
@@ -624,18 +624,34 @@ msgstr "Adeus!"
 msgid "Let go of the button to complete the line."
 msgstr "Solta o botão para completares a linha."
 
+#: ../tools.h:167
+#, fuzzy, c-format
+#| msgid "Let go of the button to complete the line."
+msgid ""
+"Let go of the button to complete the line. (Your line's angle is %.0f "
+"degrees.)"
+msgstr "Solta o botão para completares a linha."
+
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:169
+#: ../tools.h:170
 msgid "Hold the button to stretch the shape."
 msgstr "Mantém o botão pressionado para esticar a forma."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:172
+#: ../tools.h:173
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Move o rato para rodares a forma. Clica para desenhares."
 
+#: ../tools.h:174
+#, fuzzy, c-format
+#| msgid "Move the mouse to rotate the shape. Click to draw it."
+msgid ""
+"Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
+"degrees.)"
+msgstr "Move o rato para rodares a forma. Clica para desenhares."
+
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:175
+#: ../tools.h:177
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Então está bem… Vamos continuar com este desenho!"
 
@@ -756,105 +772,105 @@ msgid "Choose the pictures you want, then click “Play”."
 msgstr "Escolhe os desenhos e clica em \"Mostrar\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2483
 msgid "Sound muted."
 msgstr "Som desligado."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2488
 msgid "Sound unmuted."
 msgstr "Som ligado."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3263
+#: ../tuxpaint.c:3267
 msgid "Please wait…"
 msgstr "Por favor aguarde…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8378
+#: ../tuxpaint.c:8401
 msgid "Erase"
 msgstr "Apagar"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8381
+#: ../tuxpaint.c:8404
 msgid "Slides"
 msgstr "Diapositivos"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8384
+#: ../tuxpaint.c:8407
 msgid "Export"
 msgstr "Exportar"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8387
+#: ../tuxpaint.c:8410
 msgid "Back"
 msgstr "Recuar"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8390
+#: ../tuxpaint.c:8413
 msgid "Play"
 msgstr "Mostrar"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8393
+#: ../tuxpaint.c:8416
 msgid "GIF Export"
 msgstr "Exportar GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8396
+#: ../tuxpaint.c:8419
 msgid "Next"
 msgstr "Avançar"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9204
+#: ../tuxpaint.c:9227
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12864
+#: ../tuxpaint.c:12887
 msgid "Yes"
 msgstr "Sim"
 
-#: ../tuxpaint.c:12868
+#: ../tuxpaint.c:12891
 msgid "No"
 msgstr "Não"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14014
+#: ../tuxpaint.c:14037
 msgid "Replace the picture with your changes?"
 msgstr "Substituir o desenho original?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14018
+#: ../tuxpaint.c:14041
 msgid "Yes, replace the old one!"
 msgstr "Sim, substituir!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14022
+#: ../tuxpaint.c:14045
 msgid "No, save a new file!"
 msgstr "Não, gravar como novo!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15285
+#: ../tuxpaint.c:15308
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolhe o desenho e clica em \"Abrir\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16711
+#: ../tuxpaint.c:16734
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Selecione 2 ou mais desenhos para se tornar num GIF animado."
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24485
 msgid "Select a color from your drawing."
 msgstr "Seleciona uma cor do teu desenho."
 
-#: ../tuxpaint.c:24474
+#: ../tuxpaint.c:24497
 msgid "Pick a color."
 msgstr "Escolhe uma cor."
 

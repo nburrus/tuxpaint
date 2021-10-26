@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 24, 2021
+  June 14, 2002 - October 25, 2021
 */
 
 #include "platform.h"
@@ -2322,6 +2322,10 @@ static void mainloop(void)
   on_screen_keyboard *new_kbd;
   SDL_Rect kbd_rect;
 
+  float angle;
+  char angle_tool_text[256]; // FIXME Consider malloc'ing
+
+
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
   cur_thing = 0;
@@ -2367,8 +2371,9 @@ static void mainloop(void)
           /* To avoid getting stuck in a 'catching up with mouse motion' interface lock-up */
           /* FIXME: Another thing we could do here is peek into events, and 'skip' to the last motion...? Or something... -bjk 2011.04.26 */
           if (current_event_time > pre_event_time + 500 && event.type == SDL_MOUSEMOTION)
-            ignoring_motion = (ignoring_motion + 1) % 3;        /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
-
+            {
+              ignoring_motion = (ignoring_motion + 1) % 3;        /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
+            }
 
           if (event.type == SDL_QUIT)
             {
@@ -2402,7 +2407,6 @@ static void mainloop(void)
                   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
                 }
               handle_active(&event);
-
             }
           else if (event.type == SDL_KEYUP)
             {
@@ -2410,7 +2414,6 @@ static void mainloop(void)
 
               handle_keymouse(key, SDL_KEYUP, 16, NULL, NULL);
             }
-
           else if (event.type == SDL_KEYDOWN)
             {
               key = event.key.keysym.sym;
@@ -3046,19 +3049,22 @@ static void mainloop(void)
                     }
                 }
             }
-
           else if (event.type == SDL_JOYAXISMOTION)
-            handle_joyaxismotion(event, &motioner, &val_x, &val_y);
-
+            {
+              handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+            }
           else if (event.type == SDL_JOYHATMOTION)
-            handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
-
+            {
+              handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
+            }
           else if (event.type == SDL_JOYBALLMOTION)
-            handle_joyballmotion(event, oldpos_x, oldpos_y);
-
+            {
+              handle_joyballmotion(event, oldpos_x, oldpos_y);
+            }
           else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
-            handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, real_r_tools);
-
+            {
+              handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, real_r_tools);
+            }
           else if (event.type == SDL_MOUSEBUTTONDOWN &&
                    event.button.button >= 2 &&
                    event.button.button <= 3 &&
@@ -3085,8 +3091,6 @@ static void mainloop(void)
           else if ((event.type == SDL_MOUSEBUTTONDOWN ||
                     event.type == TP_SDL_MOUSEBUTTONSCROLL) && event.button.button <= 3)
             {
-
-
               if (HIT(r_tools))
                 {
 
@@ -4881,7 +4885,6 @@ static void mainloop(void)
 #endif
                 }
             }
-
           else if (event.type == SDL_MOUSEBUTTONDOWN && wheely && event.button.button >= 4 && event.button.button <= 5)
             {
               int most = 14;
@@ -5601,11 +5604,24 @@ static void mainloop(void)
 
                       line_xor(line_start_x, line_start_y, new_x, new_y);
 
+                      if (new_y != line_start_y)
+                        angle = (atan2f((new_x - line_start_x), (new_y - line_start_y)) * 180 / M_PI) - 90.0; // we want straight line to the right to be 0 degrees
+                      else if (new_x >= line_start_x)
+                        angle = 0.0;
+                      else
+                        angle = 180.0;
+
+                      if (angle < 0.0)
+                        angle += 360.0;
+
                       update_screen(line_start_x + r_canvas.x,
                                     line_start_y + r_canvas.y, old_x + r_canvas.x, old_y + r_canvas.y);
                       update_screen(line_start_x + r_canvas.x,
                                     line_start_y + r_canvas.y, new_x + r_canvas.x, new_y + r_canvas.y);
                       update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+                      snprintf(angle_tool_text, sizeof(angle_tool_text), TIP_LINE_MOVING, angle);
+                      draw_tux_text(TUX_BORED, angle_tool_text, 1);
                     }
                   else if (cur_tool == TOOL_SHAPES)
                     {
@@ -5854,13 +5870,20 @@ static void mainloop(void)
                 }
               else if (cur_tool == TOOL_SHAPES && shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
                 {
-                  do_shape(shape_start_x, shape_start_y,
-                           shape_current_x, shape_current_y, shape_rotation(shape_start_x, shape_start_y, old_x, old_y), 0);
+                  int deg;
 
+                  deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
+                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
 
-                  do_shape(shape_start_x, shape_start_y,
-                           shape_current_x, shape_current_y, shape_rotation(shape_start_x, shape_start_y, new_x, new_y), 0);
+                  deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
+                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
 
+                  deg = -deg;
+                  if (deg < 0)
+                    deg += 360;
+
+                  snprintf(angle_tool_text, sizeof(angle_tool_text), TIP_SHAPE_ROTATING, deg);
+                  draw_tux_text(TUX_BORED, angle_tool_text, 1);
 
                   /* FIXME: Do something less intensive! */
                   SDL_Flip(screen);

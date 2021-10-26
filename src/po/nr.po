@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-24 12:25+0200\n"
+"POT-Creation-Date: 2021-10-25 23:22-0700\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -518,7 +518,7 @@ msgstr "Etjha"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8375
+#: ../tools.h:98 ../tuxpaint.c:8398
 msgid "Open"
 msgstr "Vula"
 
@@ -627,18 +627,34 @@ msgstr "Sala kuhle!"
 msgid "Let go of the button to complete the line."
 msgstr "Ikunubhe ekhambisako ukuqedelela umuda."
 
+#: ../tools.h:167
+#, fuzzy, c-format
+#| msgid "Let go of the button to complete the line."
+msgid ""
+"Let go of the button to complete the line. (Your line's angle is %.0f "
+"degrees.)"
+msgstr "Ikunubhe ekhambisako ukuqedelela umuda."
+
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:169
+#: ../tools.h:170
 msgid "Hold the button to stretch the shape."
 msgstr "Kakarela ikunubhe ukwelula ubujamo."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:172
+#: ../tools.h:173
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Khambisa iKhondlwana ukujikeleza ubujamo. Qhwarhaza bese uyayidweba."
 
+#: ../tools.h:174
+#, fuzzy, c-format
+#| msgid "Move the mouse to rotate the shape. Click to draw it."
+msgid ""
+"Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
+"degrees.)"
+msgstr "Khambisa iKhondlwana ukujikeleza ubujamo. Qhwarhaza bese uyayidweba."
+
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:175
+#: ../tools.h:177
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Kulungile ke...Asiragele phambili ngokudweba le!"
 
@@ -773,105 +789,105 @@ msgid "Choose the pictures you want, then click “Play”."
 msgstr "Khetha iithombe ozifunako, bese uqhwarhaza u\"Dlala\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2483
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2488
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3263
+#: ../tuxpaint.c:3267
 msgid "Please wait…"
 msgstr "Ngibawa ujame..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8378
+#: ../tuxpaint.c:8401
 msgid "Erase"
 msgstr "Sula"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8381
+#: ../tuxpaint.c:8404
 msgid "Slides"
 msgstr "Amaslayidi"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8384
+#: ../tuxpaint.c:8407
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8387
+#: ../tuxpaint.c:8410
 msgid "Back"
 msgstr "Emuva"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8390
+#: ../tuxpaint.c:8413
 msgid "Play"
 msgstr "Dlala"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8393
+#: ../tuxpaint.c:8416
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8396
+#: ../tuxpaint.c:8419
 msgid "Next"
 msgstr "Okulandelako"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9204
+#: ../tuxpaint.c:9227
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12864
+#: ../tuxpaint.c:12887
 msgid "Yes"
 msgstr "Iye"
 
-#: ../tuxpaint.c:12868
+#: ../tuxpaint.c:12891
 msgid "No"
 msgstr "Awa"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14014
+#: ../tuxpaint.c:14037
 msgid "Replace the picture with your changes?"
 msgstr "Ujamiselela isithombe sakho ngamatjhugululo owenzileko na?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14018
+#: ../tuxpaint.c:14041
 msgid "Yes, replace the old one!"
 msgstr "Iye, jamiselela sakade!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14022
+#: ../tuxpaint.c:14045
 msgid "No, save a new file!"
 msgstr "Awa, bulunga ifayili etjha!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15285
+#: ../tuxpaint.c:15308
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Khetha isithombe osifunako bese uqhwarhaza u\"Vula\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16711
+#: ../tuxpaint.c:16734
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24462
+#: ../tuxpaint.c:24485
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24474
+#: ../tuxpaint.c:24497
 msgid "Pick a color."
 msgstr ""
 
