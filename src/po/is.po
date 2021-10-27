@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-25 23:22-0700\n"
-"PO-Revision-Date: 2021-09-06 09:58+0000\n"
+"PO-Revision-Date: 2021-10-26 09:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -188,10 +188,9 @@ msgid "Solid"
 msgstr "Einlitt"
 
 #: ../fill_tools.h:51
-#, fuzzy
 #| msgid "Brushes"
 msgid "Brush"
-msgstr "Penslar"
+msgstr "Pensill"
 
 #: ../fill_tools.h:52
 msgid "Linear"
@@ -206,10 +205,9 @@ msgid "Click to fill an area with a solid color."
 msgstr "Smelltu til að fylla svæðið með lit."
 
 #: ../fill_tools.h:58
-#, fuzzy
 #| msgid "Click to fill an area with a solid color."
 msgid "Click and drag to fill an area by hand, using a brush."
-msgstr "Smelltu til að fylla svæðið með lit."
+msgstr "Smelltu og dragðu til að fylla svæðið handvirkt með pensli."
 
 #: ../fill_tools.h:59
 msgid ""
@@ -380,7 +378,6 @@ msgid "A star with 5 points."
 msgstr "Stjarna með 5 arma."
 
 #: ../shapes.h:385
-#, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to start drawing, drag, and let go when it is the "
 #| "size you want. Move around to rotate it, and click to draw it."
@@ -388,12 +385,11 @@ msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
-"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar "
-"það er af réttri stærð. Hreyfðu til að snúa forminu, og smelltu til að "
-"teikna það."
+"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar"
+" það er af réttri stærð og lögun. Hreyfðu til að snúa forminu, og smelltu"
+" aftur til að teikna það."
 
 #: ../shapes.h:386
-#, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to start drawing, drag, and let go when it is the "
 #| "size you want. Move around to rotate it, and click to draw it."
@@ -401,9 +397,8 @@ msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
 msgstr ""
-"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar "
-"það er af réttri stærð. Hreyfðu til að snúa forminu, og smelltu til að "
-"teikna það."
+"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar"
+" það er af réttri stærð og lögun."
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
@@ -619,12 +614,12 @@ msgid "Let go of the button to complete the line."
 msgstr "Slepptu hnappnum til að enda línuna."
 
 #: ../tools.h:167
-#, fuzzy, c-format
+#, c-format
 #| msgid "Let go of the button to complete the line."
 msgid ""
 "Let go of the button to complete the line. (Your line's angle is %.0f "
 "degrees.)"
-msgstr "Slepptu hnappnum til að enda línuna."
+msgstr "Slepptu hnappnum til að enda línuna. (Horn línunnar er %.0f gráður.)"
 
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:170
@@ -637,12 +632,14 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Hreyfðu músina til að snúa forminu. Smelltu til að teikna það."
 
 #: ../tools.h:174
-#, fuzzy, c-format
+#, c-format
 #| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr "Hreyfðu músina til að snúa forminu. Smelltu til að teikna það."
+msgstr ""
+"Hreyfðu músina til að snúa forminu. Smelltu til að teikna það. (Það er snúið"
+" um %d gráður.)"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
@@ -1074,10 +1071,9 @@ msgid "Fretwork"
 msgstr "Mynstur"
 
 #: ../../magic/src/fretwork.c:188
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
-msgstr "Smelltu og dragðu músina til að búa til endurtekin mynstur. "
+msgstr "Smelltu og dragðu músina til að teikna endurtekin mynstur."
 
 #: ../../magic/src/fretwork.c:190
 msgid "Click to surround your picture with repetitive patterns."
@@ -1113,10 +1109,9 @@ msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Smelltu og dragðu músina til að breyta myndinni þinni í dagblað."
 
 #: ../../magic/src/halftone.c:51
-#, fuzzy
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
-msgstr "Smelltu og dragðu músina til að breyta myndinni þinni í dagblað."
+msgstr "Smelltu til að breyta myndinni þinni í dagblað."
 
 #: ../../magic/src/kalidescope.c:120
 msgid "Symmetric Left/Right"
@@ -1181,14 +1176,14 @@ msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Smelltu og dragðu til að teikna ljósgeisla á myndina þína."
 
 #: ../../magic/src/lightning.c:78
-#, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
-msgstr "Lýsa"
+msgstr "Elding"
 
 #: ../../magic/src/lightning.c:88
 msgid "Click, drag, and release to a lightning bolt between two points."
 msgstr ""
+"Smelltu, dragðu og slepptu til að teikna eldingu á milli tveggja punkta."
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
@@ -1382,10 +1377,9 @@ msgid "Rainbow"
 msgstr "Regnbogi"
 
 #: ../../magic/src/rainbow.c:140
-#, fuzzy
 #| msgid "Rainbow"
 msgid "Smooth Rainbow"
-msgstr "Regnbogi"
+msgstr "Mjúkur regnbogi"
 
 #: ../../magic/src/rainbow.c:153
 msgid "You can draw in rainbow colors!"
@@ -1525,18 +1519,16 @@ msgstr "Smelltu til bæta snjókornum við myndina þína."
 
 #: ../../magic/src/stretch.c:107
 msgid "Stretch"
-msgstr ""
+msgstr "Teygja"
 
 #: ../../magic/src/stretch.c:119
-#, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
-"Smelltu og dragðu músina til að láta hluta myndarinnar líta út eins og þeir "
-"séu í sjónvarpi."
+"Smelltu og dragðu músina til að teygja hluta myndarinnar lárétt eða lóðrétt."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"
