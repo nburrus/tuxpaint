@@ -238,19 +238,13 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
                 }
               else
                 {
-#if 0
-// THREADED_FONTS
-                  printf("Font is too defective: %s, %s, %s\n", files[i].str, family, style);
-#endif
+                  fprintf(stderr, "Font is too defective: %s, %s, %s\n", files[i].str, family, style);
                 }
               TuxPaint_Font_CloseFont(font);
             }
           else
             {
-#if 0
-// THREADED_FONTS
-              printf("could not open %s\n", files[i].str);
-#endif
+              fprintf(stderr, "could not open %s\n", files[i].str);
             }
         }
       free(files[i].str);
