@@ -1,7 +1,7 @@
 /*
   fonts.c
 
-  Copyright (c) 2009-2020
+  Copyright (c) 2009-2021
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,8 +19,10 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  $Id$
+  Last modified: 2021.10.26
 */
+
+// #define DEBUG
 
 #include <stdio.h>
 #ifndef __USE_GNU
@@ -201,30 +203,11 @@ TuxPaint_Font *load_locale_font(TuxPaint_Font * fallback, int size)
         }
 #endif
 
-/* Not sure why this is like this; we're in a function that's not
-   even defined, unless NO_SDLPANGO is set, so this can't happen
-   -bjk 2017.10.15 */
-/*
-#ifndef NO_SDLPANGO
-      if (!ret)
-        {
-          ret = try_alternate_font(size);
-          if (!ret)
-            {
-              fprintf(stderr,
-                      "\nWarning: Can't load font for this locale:\n"
-                      "%s\n"
-                      "The Simple DirectMedia Layer error that occurred was:\n"
-                      "%s\n\n" "Will use default (American English) instead.\n\n", str, SDL_GetError());
-              button_label_y_nudge = smash_i18n();
-            }
-        }
-#endif
-*/
       return ret ? ret : fallback;
     }
 }
-#endif
+#endif // ifdef NO_SDLPANGO
+
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 {
@@ -272,6 +255,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
 {
   TTF_Font *ttf_font;
   TuxPaint_Font *tpf = NULL;
+  char * familyname;
   int i;
 
 #ifndef NO_SDLPANGO
@@ -283,7 +267,6 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
 #endif
 
 #ifndef NO_SDLPANGO
-
   if (pangodesc != NULL && pangodesc[0] != '\0')
     {
       tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
@@ -292,7 +275,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       tpf->desc = strdup(desc);
 
 #ifdef DEBUG
-      printf("Creating context: \"%s\"\n", desc);
+      printf("Creating Pango context: \"%s\"\n", desc);
 #endif
 
       tpf->pango_context = SDLPango_CreateContext_GivenFontDesc(desc);
@@ -308,18 +291,21 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         tpf->height = size;     /* FIXME: Is this accurate!? -bjk 2007.07.12 */
 
 #ifdef DEBUG
-      printf("TuxPaint_Font_OpenFont() done\n");
+      printf("TuxPaint_Font_OpenFont() done (SDL_Pango)\n\n");
       fflush(stdout);
 #endif
 
       return (tpf);
     }
-#endif
+#endif // #ifndef NO_SDLPANGO
+
+
+  /* -- Did not, at this point, load the font using SDL_Pango -- */
 
   if (ttffilename != NULL && ttffilename[0] != '\0')
     {
 #ifdef DEBUG
-      printf("Opening TTF\n");
+      printf("Considering loading TTF \"%s\"\n", ttffilename);
       fflush(stdout);
 #endif
 
@@ -327,14 +313,20 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       while (problemFonts[i] != NULL)
         {
           if (!strcmp(ttffilename, problemFonts[i++]))
-            return NULL;        /* bail on known problematic fonts that cause TTF_OpenFont to crash */
+            {
+              fprintf(stderr, "Notice: Skipping problematic font: \"%s\"\n", ttffilename);
+              return NULL;        /* bail on known problematic fonts that cause TTF_OpenFont to crash */
+            }
         }
 
       i = 0;
       while (problemFontExtensions[i] != NULL)
         {
           if (strstr(ttffilename, problemFontExtensions[i++]))
-            return NULL;        /* bail on known problematic font types that cause TTF_OpenFont to crash */
+            {
+              fprintf(stderr, "Notice: Skipping font with problematic extension: \"%s\"\n", ttffilename);
+              return NULL;        /* bail on known problematic font types that cause TTF_OpenFont to crash */
+            }
         }
 
       ttf_font = TTF_OpenFont(ttffilename, size);
@@ -344,28 +336,52 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         return NULL;
       }
 
+      familyname = TTF_FontFaceFamilyName(ttf_font); /* N.B.: I don't believe we're supposed to free() this... -bjk 2021.10.26 */
+
+#ifdef DEBUG
+      printf("Loaded %s (\"%s\")\n", ttffilename, (familyname != NULL ? familyname : "<NULL>"));
+      fflush(stdout);
+#endif
+
+#if 0
+#ifndef NO_SDLPANGO
+      /* -- Try loading the font with Pango, instead! */
+      tpf = TuxPaint_Font_OpenFont(familyname, "", size);
+      if (tpf != NULL) {
+        /* Success! Clean up and return the TuxPaint_Font that we got back */
+#ifdef DEBUG
+        printf("Loaded via SDL_Pango!\n");
+        printf("TuxPaint_Font_OpenFont() done (SDL_ttf -> SDL_Pango)\n\n");
+        fflush(stdout);
+#endif
+        TTF_CloseFont(ttf_font);
+        return(tpf);
+      }
+#endif // #ifndef NO_SDLPANGO
+#endif
+
+      /* -- Proceed with loading the TTF font file using SDL_ttf */
+
       tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
       tpf->typ = FONT_TYPE_TTF;
       tpf->ttf_font = ttf_font;
       tpf->desc = strdup(ttffilename);
 
 #ifdef DEBUG
-      printf("Loaded %s: %d->%d\n", ttffilename, tpf, tpf->ttf_font);
+      printf("Succeeded loading %s via SDL_ttf\n", ttffilename);
+#endif
+      tpf->height = TTF_FontHeight(tpf->ttf_font);
+
+#ifdef DEBUG
+      printf("TuxPaint_Font_OpenFont() done (SDL_ttf)\n\n");
       fflush(stdout);
 #endif
 
-#ifdef DEBUG
-      printf("Succeeded loading %s\n", ttffilename);
-#endif
-      tpf->height = TTF_FontHeight(tpf->ttf_font);
+      return (tpf);
     }
 
-#ifdef DEBUG
-  printf("TuxPaint_Font_OpenFont() done\n");
-  fflush(stdout);
-#endif
-
-  return (tpf);
+  fprintf(stderr, "TuxPaint_Font_OpenFont() called with no loadable font\n");
+  return NULL;
 }
 
 
