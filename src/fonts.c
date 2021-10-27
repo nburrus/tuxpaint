@@ -22,8 +22,6 @@
   Last modified: 2021.10.26
 */
 
-// #define DEBUG
-
 #include <stdio.h>
 #ifndef __USE_GNU
 #define __USE_GNU               /* for strcasestr() */
@@ -345,6 +343,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       fflush(stdout);
 #endif
 
+/* FIXME: This is currently crashing ("child killed by signal 11") -bjk 2021.10.26 */
 #if 0
 #ifndef NO_SDLPANGO
       /* -- Try loading the font with Pango, instead! */
