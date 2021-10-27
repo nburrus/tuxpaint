@@ -143,7 +143,9 @@ int all_locale_fonts;
 volatile long font_thread_done;
 volatile long font_thread_aborted;
 volatile long waiting_for_fonts;
+#ifdef FORKED_FONTS
 static int font_scanner_pid;
+#endif
 int font_socket_fd;
 
 TuxPaint_Font *medium_font, *small_font, *large_font, *locale_font;
@@ -291,7 +293,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         tpf->height = size;     /* FIXME: Is this accurate!? -bjk 2007.07.12 */
 
 #ifdef DEBUG
-      printf("TuxPaint_Font_OpenFont() done (SDL_Pango)\n\n");
+      printf("TuxPaint_Font_OpenFont(\"%s\", \"%s\", %d) done (SDL_Pango)\n\n", pangodesc, ttffilename, size);
       fflush(stdout);
 #endif
 
@@ -351,7 +353,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         /* Success! Clean up and return the TuxPaint_Font that we got back */
 #ifdef DEBUG
         printf("Loaded via SDL_Pango!\n");
-        printf("TuxPaint_Font_OpenFont() done (SDL_ttf -> SDL_Pango)\n\n");
+        printf("TuxPaint_Font_OpenFont(\"%s\", \"%s\", %d) done (SDL_ttf -> SDL_Pango)\n\n", pangodesc, ttffilename, size);
         fflush(stdout);
 #endif
         TTF_CloseFont(ttf_font);
@@ -373,7 +375,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       tpf->height = TTF_FontHeight(tpf->ttf_font);
 
 #ifdef DEBUG
-      printf("TuxPaint_Font_OpenFont() done (SDL_ttf)\n\n");
+      printf("TuxPaint_Font_OpenFont(\"%s\", \"%s\", %d) done (SDL_ttf)\n\n", pangodesc, ttffilename, size);
       fflush(stdout);
 #endif
 
