@@ -270,6 +270,7 @@ void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 
 TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffilename, int size)
 {
+  TTF_Font *ttf_font;
   TuxPaint_Font *tpf = NULL;
   int i;
 
@@ -336,9 +337,16 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
             return NULL;        /* bail on known problematic font types that cause TTF_OpenFont to crash */
         }
 
+      ttf_font = TTF_OpenFont(ttffilename, size);
+
+      if (ttf_font == NULL) {
+        fprintf(stderr, "Cannot open TTF font '%s' (size %d)\n", ttffilename, size);
+        return NULL;
+      }
+
       tpf = (TuxPaint_Font *) malloc(sizeof(TuxPaint_Font));
       tpf->typ = FONT_TYPE_TTF;
-      tpf->ttf_font = TTF_OpenFont(ttffilename, size);
+      tpf->ttf_font = ttf_font;
       tpf->desc = strdup(ttffilename);
 
 #ifdef DEBUG
@@ -346,21 +354,10 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       fflush(stdout);
 #endif
 
-      if (tpf->ttf_font == NULL)
-        {
 #ifdef DEBUG
-          printf("Failed to load %s: %s\n", ttffilename, SDL_GetError());
+      printf("Succeeded loading %s\n", ttffilename);
 #endif
-          free(tpf);
-          tpf = NULL;
-        }
-      else
-        {
-#ifdef DEBUG
-          printf("Succeeded loading %s\n", ttffilename);
-#endif
-          tpf->height = TTF_FontHeight(tpf->ttf_font);
-        }
+      tpf->height = TTF_FontHeight(tpf->ttf_font);
     }
 
 #ifdef DEBUG
