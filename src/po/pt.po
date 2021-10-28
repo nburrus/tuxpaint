@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 22:57-0700\n"
-"PO-Revision-Date: 2021-10-26 11:43+0100\n"
+"PO-Revision-Date: 2021-10-28 17:49+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -916,10 +916,8 @@ msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Clica e arrasta o rato para converter o desenho em blocos."
 
 #: ../../magic/src/blocks_chalk_drip.c:158
-#, fuzzy
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture blocky."
-msgstr "Clica para melhorar o desenho."
+msgstr "Clica para tornar a imagem inteira em blocos."
 
 #: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
@@ -927,11 +925,8 @@ msgid ""
 msgstr "Clica e arrasta o rato para converter em desenho de giz."
 
 #: ../../magic/src/blocks_chalk_drip.c:169
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a chalk drawing."
-msgstr "Clica e arrasta o rato para converter em desenho de giz."
+msgstr "Clique para transformar a imagem inteira num desenho a giz."
 
 #: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
@@ -979,11 +974,8 @@ msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Clica e arrasta o rato para converter a imagem num desenho animado."
 
 #: ../../magic/src/cartoon.c:125
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a cartoon."
-msgstr "Clica e arrasta o rato para converter em desenho de giz."
+msgstr "Clica para transformar a imagem inteira num desenho animado."
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
