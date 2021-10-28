@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 22:23-0700\n"
+"POT-Creation-Date: 2021-10-27 22:57-0700\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -511,7 +511,7 @@ msgstr "புதிது"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8398
+#: ../tools.h:98 ../tuxpaint.c:8402
 msgid "Open"
 msgstr "திற"
 
@@ -794,91 +794,91 @@ msgstr "கொஞ்சம் காத்திருங்க..."
 
 #  'Erase' label:
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8401
+#: ../tuxpaint.c:8405
 msgid "Erase"
 msgstr "அழி"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8404
+#: ../tuxpaint.c:8408
 msgid "Slides"
 msgstr "வில்லைகள்"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8407
+#: ../tuxpaint.c:8411
 msgid "Export"
 msgstr ""
 
 #  'Back' label:
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8410
+#: ../tuxpaint.c:8414
 msgid "Back"
 msgstr "திரும்பு"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8413
+#: ../tuxpaint.c:8417
 msgid "Play"
 msgstr "காட்டு"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8416
+#: ../tuxpaint.c:8420
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8419
+#: ../tuxpaint.c:8423
 msgid "Next"
 msgstr "அடுத்து"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9227
+#: ../tuxpaint.c:9231
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12887
+#: ../tuxpaint.c:12891
 msgid "Yes"
 msgstr "ஆம்"
 
-#: ../tuxpaint.c:12891
+#: ../tuxpaint.c:12895
 msgid "No"
 msgstr "இல்லை"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14037
+#: ../tuxpaint.c:14041
 msgid "Replace the picture with your changes?"
 msgstr "படத்தில் செய்த மாற்றங்களோடு சேமிக்கவா?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14041
+#: ../tuxpaint.c:14045
 msgid "Yes, replace the old one!"
 msgstr "ஆம், ஏற்கனவே உள்ளதை மாற்று!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14045
+#: ../tuxpaint.c:14049
 msgid "No, save a new file!"
 msgstr "இல்லை, புதிய படம் ஒன்றைச் சேமி!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15308
+#: ../tuxpaint.c:15312
 msgid "Choose the picture you want, then click “Open”."
 msgstr "வேண்டிய படத்தைத் தெரிவு செய்த பிறகு, \"திற\" பொத்தானைச் சொடுக்குங்க."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16734
+#: ../tuxpaint.c:16738
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24485
+#: ../tuxpaint.c:24489
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24497
+#: ../tuxpaint.c:24501
 msgid "Pick a color."
 msgstr "ஒரு நிறத்தைத் தேர்ந்தெடுங்க."
 
@@ -1009,15 +1009,24 @@ msgstr "பட எழுத்து"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "சொடுக்கி நகர்த்தினால், பட எழுத்துகளை வரையலாம்."
 
-#: ../../magic/src/cartoon.c:104
+#: ../../magic/src/cartoon.c:107
 msgid "Cartoon"
 msgstr "கேலிப்படம்"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:121
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தை ஒரு கேலிப்படம் போல மாற்றலாம்."
+
+#: ../../magic/src/cartoon.c:125
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a cartoon."
+msgstr ""
+"ஏதேனும் ஒரு இடத்தில் சொடுக்கி இழுத்தால், படம் சுண்ணாம்புக் கட்டி கொண்டு வரைந்தது போல் "
+"மாறும்."
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"

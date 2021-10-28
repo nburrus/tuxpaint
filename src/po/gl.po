@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 22:23-0700\n"
+"POT-Creation-Date: 2021-10-27 22:57-0700\n"
 "PO-Revision-Date: 2021-03-03 10:01+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
@@ -513,7 +513,7 @@ msgstr "Novo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8398
+#: ../tools.h:98 ../tuxpaint.c:8402
 msgid "Open"
 msgstr "Abrir"
 
@@ -778,90 +778,90 @@ msgid "Please wait…"
 msgstr "Agarda un chisco…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8401
+#: ../tuxpaint.c:8405
 msgid "Erase"
 msgstr "Borrar"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8404
+#: ../tuxpaint.c:8408
 msgid "Slides"
 msgstr "Diapositivas"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8407
+#: ../tuxpaint.c:8411
 msgid "Export"
 msgstr "Exportar"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8410
+#: ../tuxpaint.c:8414
 msgid "Back"
 msgstr "Atrás"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8413
+#: ../tuxpaint.c:8417
 msgid "Play"
 msgstr "Reproducir"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8416
+#: ../tuxpaint.c:8420
 msgid "GIF Export"
 msgstr "Exportar o GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8419
+#: ../tuxpaint.c:8423
 msgid "Next"
 msgstr "Seguinte"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9227
+#: ../tuxpaint.c:9231
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12887
+#: ../tuxpaint.c:12891
 msgid "Yes"
 msgstr "Si"
 
-#: ../tuxpaint.c:12891
+#: ../tuxpaint.c:12895
 msgid "No"
 msgstr "Non"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14037
+#: ../tuxpaint.c:14041
 msgid "Replace the picture with your changes?"
 msgstr "Queres substituír o debuxo cos teus cambios?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14041
+#: ../tuxpaint.c:14045
 msgid "Yes, replace the old one!"
 msgstr "Si, substitúe o antigo!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14045
+#: ../tuxpaint.c:14049
 msgid "No, save a new file!"
 msgstr "Non, gárdao nun novo ficheiro!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15308
+#: ../tuxpaint.c:15312
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolle o debuxo que queiras, e após preme en «Abrir»."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16734
+#: ../tuxpaint.c:16738
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Selecciona 2 ou máis debuxos para convertelos nun GIF animado."
 
-#: ../tuxpaint.c:24485
+#: ../tuxpaint.c:24489
 msgid "Select a color from your drawing."
 msgstr "Selecciona unha cor do teu debuxo."
 
-#: ../tuxpaint.c:24497
+#: ../tuxpaint.c:24501
 msgid "Pick a color."
 msgstr "Escolle unha cor."
 
@@ -977,15 +977,24 @@ msgstr "Caligrafía"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Preme e arrastra o rato arredor para debuxar estilo caligrafía."
 
-#: ../../magic/src/cartoon.c:104
+#: ../../magic/src/cartoon.c:107
 msgid "Cartoon"
 msgstr "Cómic"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:121
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Preme e arrastra o rato arredor para para converter o debuxo nun debuxo de "
 "cómic."
+
+#: ../../magic/src/cartoon.c:125
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a cartoon."
+msgstr ""
+"Preme e arrastra o rato arredor para para converter o debuxo nun debuxo "
+"feito con xiz."
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 22:23-0700\n"
+"POT-Creation-Date: 2021-10-27 22:57-0700\n"
 "PO-Revision-Date: 2012-01-02 11:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-PA\n"
@@ -513,7 +513,7 @@ msgstr "نو"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8398
+#: ../tools.h:98 ../tuxpaint.c:8402
 msgid "Open"
 msgstr "کھولِو"
 
@@ -792,90 +792,90 @@ msgid "Please wait…"
 msgstr "ہَنا کٔریو سبر…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8401
+#: ../tuxpaint.c:8405
 msgid "Erase"
 msgstr "مِٹٲیو"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8404
+#: ../tuxpaint.c:8408
 msgid "Slides"
 msgstr "سلائڈ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8407
+#: ../tuxpaint.c:8411
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8410
+#: ../tuxpaint.c:8414
 msgid "Back"
 msgstr "پَتھ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8413
+#: ../tuxpaint.c:8417
 msgid "Play"
 msgstr "چَلٲیو"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8416
+#: ../tuxpaint.c:8420
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8419
+#: ../tuxpaint.c:8423
 msgid "Next"
 msgstr "بیاکھ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9227
+#: ../tuxpaint.c:9231
 msgid "Aa"
 msgstr "آ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12887
+#: ../tuxpaint.c:12891
 msgid "Yes"
 msgstr "اوا"
 
-#: ../tuxpaint.c:12891
+#: ../tuxpaint.c:12895
 msgid "No"
 msgstr "نَہ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14037
+#: ../tuxpaint.c:14041
 msgid "Replace the picture with your changes?"
 msgstr "شکل بدلاوا تُنٛہزو تبدیلِیو ست۪ی؟"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14041
+#: ../tuxpaint.c:14045
 msgid "Yes, replace the old one!"
 msgstr "اوا، بَدلٲیو پرٚین۪ی اَکھ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14045
+#: ../tuxpaint.c:14049
 msgid "No, save a new file!"
 msgstr "نَہ نٔو فائل کٔریو محفوظ!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15308
+#: ../tuxpaint.c:15312
 msgid "Choose the picture you want, then click “Open”."
 msgstr "شکل ژٲرِو یۄس تُہِۍ یژھان چھو، تہٕ پَتہٕ کٔریو کلِک “کھولِو“۔"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16734
+#: ../tuxpaint.c:16738
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24485
+#: ../tuxpaint.c:24489
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24497
+#: ../tuxpaint.c:24501
 msgid "Pick a color."
 msgstr "اَکھ رنٛگ تُلِو۔"
 
@@ -1006,15 +1006,23 @@ msgstr "خوش نویسی"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "کلِک کٔریو تہٕ أند۪ی أند۪ی ڈٲلیو ماوس  خوش نویسی منٛز بناونہٕ خٲطرٕ "
 
-#: ../../magic/src/cartoon.c:104
+#: ../../magic/src/cartoon.c:107
 msgid "Cartoon"
 msgstr "کارٹون"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:121
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "کلِک کٔریو تہٕ أند۪ی أند۪ی ڈٲلیو ماوس تصویر کارٹونَس منٛز تبدیل کرنہٕ خٲطرٕ۔"
+
+#: ../../magic/src/cartoon.c:125
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a cartoon."
+msgstr ""
+"کلِک کٔریو تہٕ أند۪ی أند۪ی ڈٲلیو ماوس تصویر چاک ڈرائنگ  منٛز تبدیل کرنہٕ خٲطرٕ۔"
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
