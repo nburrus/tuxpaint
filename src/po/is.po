@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 22:57-0700\n"
-"PO-Revision-Date: 2021-10-26 09:09+0000\n"
+"PO-Revision-Date: 2021-10-28 08:50+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -906,10 +906,9 @@ msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Smelltu og dragðu músina til að gera myndina alla í blokkum."
 
 #: ../../magic/src/blocks_chalk_drip.c:158
-#, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture blocky."
-msgstr "Smelltu til að skerpa alla myndina."
+msgstr "Smelltu til að gera myndina alla í blokkum."
 
 #: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
@@ -917,11 +916,10 @@ msgid ""
 msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
 
 #: ../../magic/src/blocks_chalk_drip.c:169
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a chalk drawing."
-msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
+msgstr "Smelltu til að breyta myndinni í krítarmynd."
 
 #: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
@@ -969,11 +967,10 @@ msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Smelltu og dragðu músina til að breyta myndinni í teiknimynd."
 
 #: ../../magic/src/cartoon.c:125
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a cartoon."
-msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
+msgstr "Smelltu til að breyta myndinni í teiknimynd."
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
