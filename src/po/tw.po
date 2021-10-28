@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -921,25 +921,30 @@ msgid ""
 "perpendicularly to open or close the blinds."
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Ntayaa"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Hyirew"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Ma no nwin"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Fa akura no fa mfoni no so ma no nyɛ keseɛ."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+msgid "Click to make the entire picture blocky."
+msgstr "Mia akura no so ma mfoni no baako mmɛka ho."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -947,7 +952,14 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Fa akura no fa mfoni no so ma no nyɛ sɛ hyirew."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "Fa akura no fa mfoni no so ma no nyɛ sɛ hyirew."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."

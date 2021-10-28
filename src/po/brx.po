@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2011-09-14 13:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: Bodo\n"
@@ -918,25 +918,31 @@ msgstr ""
 "नोंथांनि सावगारिनि सायाव उइन्ड' ब्लाइन्डखौ बोख'नो बेनि रुगुंथिं क्लिक खालाम। ब्लाइन्डखौ "
 "खेवनो एबा बन्द खालामनो थोंगोरै लोरिहो।"
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "सावगारि ब्लक"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "सक"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "ड्रिप"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "सावगारिखौ ब्लक बाइदि बानायनो माउसखौ क्लिक खालाम आरो लोरिहो।"
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "आबुं सावगारिखौ गोफार खालामनो क्लिक खालाम।"
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -944,7 +950,14 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "सावगारिखौ सक आखिनायाव सोलायहोनो माउसखौ क्लिक खालाम आरो लोरिहो।"
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "सावगारिखौ सक आखिनायाव सोलायहोनो माउसखौ क्लिक खालाम आरो लोरिहो।"
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."

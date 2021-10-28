@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2021-10-26 09:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -188,7 +188,6 @@ msgid "Solid"
 msgstr "Einlitt"
 
 #: ../fill_tools.h:51
-#| msgid "Brushes"
 msgid "Brush"
 msgstr "Pensill"
 
@@ -205,7 +204,6 @@ msgid "Click to fill an area with a solid color."
 msgstr "Smelltu til að fylla svæðið með lit."
 
 #: ../fill_tools.h:58
-#| msgid "Click to fill an area with a solid color."
 msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Smelltu og dragðu til að fylla svæðið handvirkt með pensli."
 
@@ -378,27 +376,21 @@ msgid "A star with 5 points."
 msgstr "Stjarna með 5 arma."
 
 #: ../shapes.h:385
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
-"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar"
-" það er af réttri stærð og lögun. Hreyfðu til að snúa forminu, og smelltu"
-" aftur til að teikna það."
+"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar "
+"það er af réttri stærð og lögun. Hreyfðu til að snúa forminu, og smelltu "
+"aftur til að teikna það."
 
 #: ../shapes.h:386
-#| msgid ""
-#| "Pick a shape. Click to start drawing, drag, and let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
 msgstr ""
-"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar"
-" það er af réttri stærð og lögun."
+"Veldu form. Smelltu til að byrja að teikna, dragðu músina til, slepptu þegar "
+"það er af réttri stærð og lögun."
 
 #: ../shapes.h:392
 msgid "Draw shapes from the center."
@@ -615,7 +607,6 @@ msgstr "Slepptu hnappnum til að enda línuna."
 
 #: ../tools.h:167
 #, c-format
-#| msgid "Let go of the button to complete the line."
 msgid ""
 "Let go of the button to complete the line. (Your line's angle is %.0f "
 "degrees.)"
@@ -633,13 +624,12 @@ msgstr "Hreyfðu músina til að snúa forminu. Smelltu til að teikna það."
 
 #: ../tools.h:174
 #, c-format
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
 msgstr ""
-"Hreyfðu músina til að snúa forminu. Smelltu til að teikna það. (Það er snúið"
-" um %d gráður.)"
+"Hreyfðu músina til að snúa forminu. Smelltu til að teikna það. (Það er snúið "
+"um %d gráður.)"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
@@ -899,28 +889,41 @@ msgstr ""
 "Smelltu við jaðar myndarinnar til að draga strimlagluggatjöld fyrir myndina. "
 "Færðu músina þvert til að opna og loka gluggatjöldunum."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blokkir"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Krít"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Leka"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Smelltu og dragðu músina til að gera myndina alla í blokkum."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "Smelltu til að skerpa alla myndina."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Smelltu og dragðu músina til að láta myndina leka."
 
@@ -1071,7 +1074,6 @@ msgid "Fretwork"
 msgstr "Mynstur"
 
 #: ../../magic/src/fretwork.c:188
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Smelltu og dragðu músina til að teikna endurtekin mynstur."
 
@@ -1109,7 +1111,6 @@ msgid "Click and drag to turn your drawing into a newspaper."
 msgstr "Smelltu og dragðu músina til að breyta myndinni þinni í dagblað."
 
 #: ../../magic/src/halftone.c:51
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Smelltu til að breyta myndinni þinni í dagblað."
 
@@ -1176,7 +1177,6 @@ msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Smelltu og dragðu til að teikna ljósgeisla á myndina þína."
 
 #: ../../magic/src/lightning.c:78
-#| msgid "Lighten"
 msgid "Lightning"
 msgstr "Elding"
 
@@ -1377,7 +1377,6 @@ msgid "Rainbow"
 msgstr "Regnbogi"
 
 #: ../../magic/src/rainbow.c:140
-#| msgid "Rainbow"
 msgid "Smooth Rainbow"
 msgstr "Mjúkur regnbogi"
 
@@ -1522,9 +1521,6 @@ msgid "Stretch"
 msgstr "Teygja"
 
 #: ../../magic/src/stretch.c:119
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""

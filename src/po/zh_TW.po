@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2014-06-24 14:46+0800\n"
 "Last-Translator: Song Huang <song@song.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -1089,25 +1089,31 @@ msgid ""
 "perpendicularly to open or close the blinds."
 msgstr "在圖片上拉出一個百葉窗。垂直移動可以打開或關上百葉。"
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "馬賽克"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "粉筆"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "水滴"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "按著並移動滑鼠來使圖畫有馬賽克效果。"
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "按一下來使整張圖畫變清晰。"
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1115,7 +1121,14 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "按著並移動滑鼠來產生粉筆的痕跡。"
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."

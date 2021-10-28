@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -926,25 +926,30 @@ msgid ""
 "perpendicularly to open or close the blinds."
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Mozaika"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Təbaşir"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Damcılamaq"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Kərpicləri düzmək üçün mausun düyməsini bas və mausu hərəkətə gətir."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+msgid "Click to make the entire picture blocky."
+msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -954,7 +959,16 @@ msgstr ""
 "Şəkili tabaşir ilə çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə "
 "gətir."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"Şəkili tabaşir ilə çəkmək üçün mausun sol düyməsini bas və mausu hərəkətə "
+"gətir."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."

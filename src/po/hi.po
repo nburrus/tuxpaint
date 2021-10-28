@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2014-08-09 02:17+1000\n"
 "Last-Translator: Ashish Arora <ashish.arora13@gmail.com>\n"
 "Language-Team: Hindi\n"
@@ -916,25 +916,31 @@ msgstr ""
 "परदे को खींचने के लिए अपनी छवि की भुजा पर क्लिक करें| परदे खोलने या बंद करने के लिए "
 "लम्ब्वात रूप से स्थानांतरित करें|"
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "ब्लाक्स"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "चाक"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "गिरता हुआ"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "चित्र को blocky करने के लिए उसपर क्लिक करें और माउस को चारों ओर घुमाये"
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "पूरे चित्र में पैनापन लाने के लिए क्लिक करें|"
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -943,7 +949,15 @@ msgid ""
 msgstr ""
 "चित्र को chalk drawing के रूप मे करने के लिए उसपर क्लिक करें और माउस को चारों ओर घुमाये"
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"चित्र को chalk drawing के रूप मे करने के लिए उसपर क्लिक करें और माउस को चारों ओर घुमाये"
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."

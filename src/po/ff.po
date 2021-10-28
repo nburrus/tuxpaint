@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2017-12-03 10:35+0200\n"
 "Last-Translator: Ibrahima SARR <ibrahima.sarr@pulaagu.com>\n"
 "Language-Team: FULAH LOCALIZATION\n"
@@ -905,28 +905,41 @@ msgstr ""
 "Dobo e saraaji natal maa ngam fooɗde ridooji e dow maggal. Dirtin fayde les "
 "walla dow ngam udditde walla uddude."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Urtule"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Kere"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Waadere"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natngo tuufeewo."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "Dobo ngam seeɓnude natal ngal fof."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno kereewo."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno kereewo."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno baade."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2021-09-23 11:33+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
@@ -894,31 +894,46 @@ msgstr ""
 "Clique à côté d'un bord du dessin pour fermer le store. Déplace-toi "
 "perpendiculairement pour l'ouvrir ou le fermer."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blocs"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Craie"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Goutte"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Clique et déplace la souris pour transformer l'image en un ensemble de "
 "petits blocs."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "Clique pour affiner tout le dessin."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Clique et déplace la souris pour transformer l'image en dessin à la craie."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"Clique et déplace la souris pour transformer l'image en dessin à la craie."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Clique et déplace la souris pour rendre l'image dégoulinante."
 

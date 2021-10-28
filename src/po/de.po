@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2017-12-25 21:13+0200\n"
 "Last-Translator: Holger Wansing <hwansing@mailbox.org>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
@@ -921,30 +921,44 @@ msgstr ""
 "Verschiebe die Maus senkrecht dazu, um die Jalousien zu öffnen oder zu "
 "schließen."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Pixel"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Kreide"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Tropfen"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr ""
 "Klicke und ziehe die Maus, um dein Bild in groben Blöcken darzustellen."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "Klicke, um das gesamte Bild schärfer zu machen."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Klicke und ziehe die Maus, um dein Bild in ein Kreidebild zu verwandeln."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"Klicke und ziehe die Maus, um dein Bild in ein Kreidebild zu verwandeln."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klicke und ziehe die Maus, um das Bild tröpfelig zu machen."
 

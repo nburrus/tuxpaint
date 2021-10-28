@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2017-12-18 09:15+0000\n"
 "Last-Translator: Flavio Pastore <ironbishop@fsfe.org>\n"
 "Language-Team: Italian\n"
@@ -957,30 +957,45 @@ msgstr ""
 "Fai clic verso il bordo del tuo disegno per far scendere delle tendine su di "
 "esso. Spostati perpendicolarmente per aprirle o chiuderle."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Blocchi"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Gesso"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Gocciola"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Fai clic e trascina il mouse per per rendere il disegno a blocchi."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "Fai clic per far risaltare tutto il disegno."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Fai clic e trascina il mouse per trasformare il disegno in uno fatto a "
 "gessetto."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"Fai clic e trascina il mouse per trasformare il disegno in uno fatto a "
+"gessetto."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Fai clic e trascina il mouse per far gocciolare il disegno."
 

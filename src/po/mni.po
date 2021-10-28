@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -916,25 +916,31 @@ msgstr ""
 "ৱিন্দো মসিদা ব্লাইন্দ ওইনবা অদোমগী লাইগী মপান্দা ক্লিক তৌরো. ব্লাইন্দ অসি হাংদোক্নবা "
 "অমসুং খুমজিন্নবা পার্পেন্দিকুলার ওইনা  লেংঙো."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "ব্লোকস"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "চোক"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "দ্রিপ"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "লাই অদু ব্লোক মওংদা শেম্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "অদোমগী লাই অপুম্বদু হেন্না ময়েক শেংহন্নবা ক্লিক তৌরো."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -942,7 +948,14 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "লাই অদু চোক দ্রোইং অমদা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "লাই অদু চোক দ্রোইং অমদা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."

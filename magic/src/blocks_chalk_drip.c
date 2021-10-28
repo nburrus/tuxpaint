@@ -145,14 +145,34 @@ int blocks_chalk_drip_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTR
 }
 
 // Return our descriptions, localized:
-char *blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
+char *blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   if (which == TOOL_BLOCKS)
-    return (strdup(gettext_noop("Click and drag the mouse around to make the picture blocky.")));
+    {
+      if (mode == MODE_PAINT)
+        {
+          return (strdup(gettext_noop("Click and drag the mouse around to make the picture blocky.")));
+        }
+      else
+        {
+          return (strdup(gettext_noop("Click to make the entire picture blocky.")));
+        }
+    }
   else if (which == TOOL_CHALK)
-    return (strdup(gettext_noop("Click and drag the mouse around to turn the picture into a chalk drawing.")));
+    {
+      if (mode == MODE_PAINT)
+        {
+          return (strdup(gettext_noop("Click and drag the mouse around to turn the picture into a chalk drawing.")));
+        }
+      else
+        {
+          return (strdup(gettext_noop("Click to turn the entire picture into a chalk drawing.")));
+        }
+    }
   else if (which == TOOL_DRIP)
-    return (strdup(gettext_noop("Click and drag the mouse around to make the picture drip.")));
+    {
+      return (strdup(gettext_noop("Click and drag the mouse around to make the picture drip.")));
+    }
 
   return (NULL);
 }

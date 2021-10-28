@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2021-09-02 07:45+0000\n"
 "Last-Translator: kiolalis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
@@ -925,30 +925,45 @@ msgstr ""
 "Κάντε κλικ στα όρια της εικόνας για να την καλύψετε με το σκίαστρο. "
 "Μετακινήστε κάθετα για να ανοίξετε ή να κλείσετε τα σκίαστρα."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "Κομμάτια"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "Κιμωλία"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "Στάξιμο"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Κάνε κλικ και σύρε το ποντίκι για να κάνεις τη ζωγραφιά κοντόχοντρη."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "Κάνε κλικ για να οξύνεις ολόκληρη τη ζωγραφιά σου."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις τη ζωγραφιά σε σχέδιο με "
 "κιμωλία."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις τη ζωγραφιά σε σχέδιο με "
+"κιμωλία."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι γύρω για να κάνεις τη ζωγραφιά να στάζει."

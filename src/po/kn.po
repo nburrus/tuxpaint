@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 23:22-0700\n"
+"POT-Creation-Date: 2021-10-27 22:23-0700\n"
 "PO-Revision-Date: 2014-06-08 23:43+0630\n"
 "Last-Translator: Savitha <savithasprasad@yahoo.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -925,25 +925,31 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಮೇಲೆ ಬ್ಲೈಂಡ್‌ಗಳನ್ನು ಎಳೆಯಲು ಚಿತ್ರದ ಅಂಚಿನತ್ತ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ. ಬ್ಲೈಂಡ್‌ಗಳನ್ನು "
 "ತೆರೆಯಲು ಹಾಗು ಮುಚ್ಚಲು ಲಂಬವಾಗಿ ಸ್ಥಳಾಂತರಿಸಿ."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "ಖಂಡಗಳು"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "ಸೀಮೆಸುಣ್ಣ"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "ತೊಟ್ಟಿಕ್ಕು"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಖಂಡವಾಗಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಮೌಸ್‌ ಅನ್ನು ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "ಸಂಪೂರ್ಣ ಚಿತ್ರವನ್ನು ಮೊನಚುಗೊಳಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -953,7 +959,16 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಸೀಮೆಸುಣ್ಣದಲ್ಲಿ ರಚಿಸಲಾಗಿರುವಂತೆ ಬದಲಾಯಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr ""
+"ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಸೀಮೆಸುಣ್ಣದಲ್ಲಿ ರಚಿಸಲಾಗಿರುವಂತೆ ಬದಲಾಯಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
+"ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
