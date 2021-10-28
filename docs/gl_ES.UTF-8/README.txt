@@ -6,7 +6,7 @@
     Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
 
-                             5 de Setembro de 2021
+                             27 de Outubro de 2021
 
      ----------------------------------------------------------------------
 
@@ -297,9 +297,13 @@ Ferramentas dispoñíbeis
                  os diversos pinceis e cores que normalmente emprega co
                  pincel.
 
-                 Prema co rato e manteña o botón premido para escoller o
-                 punto de inicio da liña. Ao mover o rato, unha delgada liña
-                 |elástica» amosará onde se trazará a liña.
+                 Click the mouse and hold it to choose the starting point of
+                 the line. As you move the mouse around, a thin 'rubber-band'
+                 line will show where the line will be drawn. At the bottom,
+                 you'll see the angle of your line, in degrees. A line going
+                 straight to the right is 0°, a line going straight up is
+                 90°, a line going straight left is 180°, a line going
+                 straight down is 270°, and so on.
 
                  Solte o rato para completar a liña. Soará un «chimpo».
 
@@ -349,8 +353,10 @@ Ferramentas dispoñíbeis
 
                       Modo de formas normais
 
-                              Agora pode mover o rato arredor do lenzo para
-                              xirar a forma.
+                              Now you can move the mouse around the canvas to
+                              rotate the shape. The angle your shape is
+                              rotated will be shown at the bottom, in degrees
+                              (similar to the "Lines" tool, described above).
 
                               Prema de novo no botón do rato e a forma
                               debuxarase na cor actual.

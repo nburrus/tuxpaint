@@ -6,7 +6,7 @@
           Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
                             http://www.tuxpaint.org/
 
-                                   2021年9月 5日
+                                  2021年10月27日
 
      ----------------------------------------------------------------------
 
@@ -218,7 +218,13 @@ Tux Paint の起動
 
                  様々な種類の筆と好きな色を使って直線を描くツールです。
 
-                 直線を描き始める位置でマウスをクリックして、そのままマウスを動かすと、描かれる直線が、「ゴム紐」のような薄い色の線で表示されます。
+                 Click the mouse and hold it to choose the starting point of
+                 the line. As you move the mouse around, a thin 'rubber-band'
+                 line will show where the line will be drawn. At the bottom,
+                 you'll see the angle of your line, in degrees. A line going
+                 straight to the right is 0°, a line going straight up is
+                 90°, a line going straight left is 180°, a line going
+                 straight down is 270°, and so on.
 
                  マウスを放すと、バネのような効果音とともに線が描画されます。
 
@@ -255,7 +261,10 @@ Tux Paint の起動
 
                       通常の動作
 
-                              通常の動作では、上記の後、マウスを動かして図形を回転させます。
+                              Now you can move the mouse around the canvas to
+                              rotate the shape. The angle your shape is
+                              rotated will be shown at the bottom, in degrees
+                              (similar to the "Lines" tool, described above).
 
                               最後にもう一度マウスをクリックして、図形が完成します。
 
