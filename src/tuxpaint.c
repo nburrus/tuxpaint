@@ -2137,7 +2137,14 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned 
 #endif
 static SDL_Surface *myIMG_Load_RWops(const char *file);
 static SDL_Surface *myIMG_Load(const char *file);
+#ifndef WIN32
 static int trash(char *path);
+#else
+#ifndef UNLINK_ONLY
+static int win32_trash(char *path);
+#define trash(file) win32_trash(file)
+#endif
+#endif
 int file_exists(char *path);
 
 int generate_fontconfig_cache_spinner(SDL_Surface * screen);
@@ -25851,6 +25858,7 @@ int main(int argc, char *argv[])
 /**
  * FIXME
  */
+#ifndef WIN32
 static int trash(char *path)
 {
 #ifdef UNLINK_ONLY
@@ -26023,6 +26031,7 @@ static int trash(char *path)
   return (0);
 #endif /* UNLINK_ONLY */
 }
+#endif
 
 /**
  * FIXME
