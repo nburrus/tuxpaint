@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.October.26 (0.9.27)
+2021.October.27 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -41,7 +41,8 @@ $Id$
     * "TV" now breaks pixels into red/green/blue components,
       rather than merely adding a 'scanline' effect.
 
-    * "Halftone" and "Emboss" can now affect the entire image at once.
+    * "Blocks", "Chalk", "Emboss", and "Halftone" can all now affect
+       the entire image at once.
 
   * Other Improvements:
     -------------------
