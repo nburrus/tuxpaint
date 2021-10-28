@@ -158,7 +158,7 @@ macos_BUNDLE:=./TuxPaint.app
 ios_BUNDLE:=./TuxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 
-windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
+windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o obj/win32_trash.o
 macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
 ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
@@ -1261,6 +1261,12 @@ obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo "...Compiling win32 print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
+
+obj/win32_trash.o:	src/win32_trash.c src/debug.h
+	@echo
+	@echo "...Compiling win32 trash support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/win32_trash.c -o obj/win32_trash.o
 
 obj/postscript_print.o:	src/postscript_print.c \
 			src/postscript_print.h src/debug.h
