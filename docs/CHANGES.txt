@@ -41,8 +41,8 @@ $Id$
     * "TV" now breaks pixels into red/green/blue components,
       rather than merely adding a 'scanline' effect.
 
-    * "Blocks", "Chalk", "Emboss", and "Halftone" can all now affect
-       the entire image at once.
+    * "Blocks", "Cartoon", "Chalk", "Emboss", and "Halftone" can all now
+       affect the entire image at once.
 
   * Other Improvements:
     -------------------

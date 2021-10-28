@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 25, 2021
+  June 14, 2002 - October 27, 2021
 */
 
 #include "platform.h"
@@ -3813,6 +3813,8 @@ static void mainloop(void)
                                 {
                                   int tries = 0;
 
+                                  magic_switchout(canvas);
+
                                   /* Magic pagination */
                                   do
                                     {
@@ -3849,6 +3851,8 @@ static void mainloop(void)
                                                                                                      color_hexes[cur_color][0],
                                                                                                      color_hexes[cur_color][1],
                                                                                                      color_hexes[cur_color][2]);
+
+                                  magic_switchin(canvas);
 
                                   playsound(screen, 0, SND_CLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                                 }
