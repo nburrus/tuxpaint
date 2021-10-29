@@ -1,6 +1,4 @@
 #include <windows.h>
-#include <string.h>
-#include <stdlib.h>
 
 int win32_trash(char *path);
 int win32_trash(char *path)

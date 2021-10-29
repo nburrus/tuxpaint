@@ -358,6 +358,8 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
   iconv_close(trans);
 }
 
+extern int win32_trash(char *path);
+
 #endif /* WIN32 */
 
 #if defined(__MACOS__)
@@ -2137,16 +2139,7 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned 
 #endif
 static SDL_Surface *myIMG_Load_RWops(const char *file);
 static SDL_Surface *myIMG_Load(const char *file);
-#ifndef WIN32
 static int trash(char *path);
-#else
-#ifndef UNLINK_ONLY
-extern int win32_trash(char *path);
-#define trash(file) win32_trash(file)
-#else
-static int trash(char *path);
-#endif
-#endif
 int file_exists(char *path);
 
 int generate_fontconfig_cache_spinner(SDL_Surface * screen);
@@ -25860,11 +25853,13 @@ int main(int argc, char *argv[])
 /**
  * FIXME
  */
-#ifndef WIN32
 static int trash(char *path)
 {
 #ifdef UNLINK_ONLY
   return (unlink(path));
+#else
+#ifdef WIN32
+  return win32_trash(path);
 #else
   char fname[MAX_PATH], trashpath[MAX_PATH], dest[MAX_PATH], infoname[MAX_PATH], bname[MAX_PATH], ext[MAX_PATH];
   char deldate[32];
@@ -26031,9 +26026,9 @@ static int trash(char *path)
   /* FIXME: Haiku */
 
   return (0);
+#endif /* WIN32 */
 #endif /* UNLINK_ONLY */
 }
-#endif
 
 /**
  * FIXME
