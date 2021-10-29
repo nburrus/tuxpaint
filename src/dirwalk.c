@@ -1,7 +1,7 @@
 /*
   dirwalk.c
 
-  Copyright (c) 2009-2014
+  Copyright (c) 2009-2021
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  $Id$
+  Last modified: 2021.10.28
 */
 
 #include <stdio.h>
@@ -117,7 +117,8 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 
           snprintf(fname, sizeof fname, "%s/%s", dir, files[i].str);
 #ifdef DEBUG
-          printf("Loading font: %s  (locale is: %s)\n", fname, (locale ? locale : "NULL"));     //EP
+          printf("%s:%d - Loading font: %s  (locale is: %s)\n", __FILE__, __LINE__, fname, (locale ? locale : "NULL"));     //EP
+fflush(stdout);
 #endif
           if (locale && strstr(fname, "locale") && !all_locale_fonts)
             {
@@ -126,7 +127,7 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
               /* We're (probably) loading from our locale fonts folder; ONLY load our locale's font */
               snprintf(fname_check, sizeof fname_check, "%s/%s.ttf", dir, locale);
 #ifdef DEBUG
-              printf("checking \"%s\" vs \"%s\"\n", fname_check, fname);        //EP
+              printf("%s:%d - checking \"%s\" vs \"%s\"\n", __FILE__, __LINE__, fname_check, fname);        //EP
 #endif
               if (strcmp(fname, fname_check) == 0)
                 font = TuxPaint_Font_OpenFont("", fname, text_sizes[text_size]);
@@ -144,12 +145,19 @@ void loadfont_callback(SDL_Surface * screen, const char *restrict const dir,
 
 
 #ifdef DEBUG
-              int numfaces = TTF_FontFaces(font->ttf_font);
+              if (font->typ == FONT_TYPE_TTF)
+                {
+                  int numfaces = TTF_FontFaces(font->ttf_font);
 
-              if (numfaces != 1)
-                printf("Found %d faces in %s, %s, %s\n", numfaces, files[i].str, family, style);
+                  if (numfaces != 1)
+                    printf("%s:%d - Found %d faces in %s, %s, %s\n", __FILE__, __LINE__, numfaces, files[i].str, family, style);
 
-              printf("success: tpf: 0x%x tpf->ttf_font: 0x%x\n", (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->ttf_font);       //EP added (intptr_t) to avoid warning on x64
+                  printf("%s:%d - success: tpf: 0x%x tpf->ttf_font: 0x%x\n", __FILE__, __LINE__, (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->ttf_font);       //EP added (intptr_t) to avoid warning on x64
+                }
+#ifndef NO_SDLPANGO
+              else
+                printf("%s:%d - success: tpf: 0x%x tpf->pango_context: 0x%x\n", __FILE__, __LINE__, (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->pango_context);
+#endif
 #endif
 
               // These fonts crash Tux Paint via a library bug.
