@@ -2141,8 +2141,10 @@ static SDL_Surface *myIMG_Load(const char *file);
 static int trash(char *path);
 #else
 #ifndef UNLINK_ONLY
-static int win32_trash(char *path);
+extern int win32_trash(char *path);
 #define trash(file) win32_trash(file)
+#else
+static int trash(char *path);
 #endif
 #endif
 int file_exists(char *path);
