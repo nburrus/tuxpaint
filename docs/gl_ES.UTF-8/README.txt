@@ -597,8 +597,10 @@ Ferramentas dispoñíbeis
                         parte inferior dereita da lista para borrar a imaxe
                         seleccionada. (Pediráselle que o confirme).
 
-                        Nota: A partir da versión 0.9.22, a imaxe colocarase
-                        no cesto do lixo do seu escritorio, só en Linux.
+                        Note: On Linux (as of version 0.9.22) and Windows (as
+                        of version 0.9.27), the picture will be placed in
+                        your desktop's trash can / recycle bin (where you may
+                        recover and restore it, if you change your mind).
 
                       * Prema no botón «Exportar» preto da parte inferior
                         dereita para exportar a imaxe ao cartafol de

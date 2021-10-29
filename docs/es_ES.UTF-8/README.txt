@@ -583,8 +583,10 @@ Available Tools
                         lower right of the list to erase the selected
                         picture. (You will be asked to confirm.)
 
-                        Note: As of version 0.9.22, the picture will be
-                        placed in your desktop's trash can, on Linux only.
+                        Note: On Linux (as of version 0.9.22) and Windows (as
+                        of version 0.9.27), the picture will be placed in
+                        your desktop's trash can / recycle bin (where you may
+                        recover and restore it, if you change your mind).
 
                       * Click the 'Export' button near the lower right to
                         export the image to your export folder. (e.g.,

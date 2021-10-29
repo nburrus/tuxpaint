@@ -627,9 +627,10 @@ Outils disponibles
                         bas à droite de la liste pour effacer l'image
                         sélectionnée. (Il vous sera demandé de confirmer.)
 
-                        Remarque : à partir de la version 0.9.22, l'image
-                        sera placée dans la corbeille de votre bureau,
-                        uniquement sous Linux.
+                        Note: On Linux (as of version 0.9.22) and Windows (as
+                        of version 0.9.27), the picture will be placed in
+                        your desktop's trash can / recycle bin (where you may
+                        recover and restore it, if you change your mind).
 
                       * Cliquez sur le bouton "Exporter" près du coin
                         inférieur droit pour exporter l'image vers votre

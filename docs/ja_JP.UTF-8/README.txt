@@ -411,8 +411,10 @@ Tux Paint の起動
                       * 右下にある茶色の「けす」(ゴミ箱)
                         ボタンで、選択した作品を削除します。(本当に削除して良いか確認されます)
 
-                        注: バージョン 0.9.22
-                        以降では、削除した作品は、デスクトップのゴミ箱に移動します（Linuxのみ）
+                        Note: On Linux (as of version 0.9.22) and Windows (as
+                        of version 0.9.27), the picture will be placed in
+                        your desktop's trash can / recycle bin (where you may
+                        recover and restore it, if you change your mind).
 
                       * 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例："~/Pictures/TuxPaint/")に画像を出力します。
 
