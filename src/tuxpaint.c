@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 27, 2021
+  June 14, 2002 - October 29, 2021
 */
 
 #include "platform.h"
@@ -26018,8 +26018,6 @@ static int trash(char *path)
      -bjk 2011.04.18 */
 
   /* FIXME: xcfe and elsewhere: Anything to do? */
-
-  /* FIXME: Windows */
 
   /* FIXME: Mac OS X */
 
