@@ -358,7 +358,10 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
   iconv_close(trans);
 }
 
+//#define USE_WINDOWS_RECYCLE_BIN
+#ifdef USE_WINDOWS_RECYCLE_BIN
 extern int win32_trash(char *path);
+#endif
 
 #endif /* WIN32 */
 
@@ -25858,7 +25861,7 @@ static int trash(char *path)
 #ifdef UNLINK_ONLY
   return (unlink(path));
 #else
-#ifdef WIN32
+#ifdef USE_WINDOWS_RECYCLE_BIN
   return win32_trash(path);
 #else
   char fname[MAX_PATH], trashpath[MAX_PATH], dest[MAX_PATH], infoname[MAX_PATH], bname[MAX_PATH], ext[MAX_PATH];
