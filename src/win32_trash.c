@@ -24,14 +24,11 @@ int MoveFileToRecycleBin(const TCHAR *fullPathName)
 int win32_trash(const char *path)
 {
   char *p, *src;
-  int ret;
   
   src = p = strdup(path);
   while(*p != '\0'){
     if (*p == '/') *p = '\\';
     p++;
   }
-  ret = MoveFileToRecycleBin(src);
-  free(p);
-  return ret;
+  return MoveFileToRecycleBin(src);
 }

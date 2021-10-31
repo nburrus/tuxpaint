@@ -358,9 +358,9 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
   iconv_close(trans);
 }
 
-//#define USE_WINDOWS_RECYCLE_BIN
+#define USE_WINDOWS_RECYCLE_BIN
 #ifdef USE_WINDOWS_RECYCLE_BIN
-extern int win32_trash(char *path);
+extern int win32_trash(const char *path);
 #endif
 
 #endif /* WIN32 */
