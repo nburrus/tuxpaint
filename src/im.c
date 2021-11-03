@@ -618,10 +618,10 @@ static int charmap_load(CHARMAP * cm, const char *path)
         default:
           if (charmap_add(cm, section, buf, unicode, flag))
             {
-              size_t i = 0;
-
 #ifndef __BEOS__
 #if defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >=2 || __GLIBC__ > 2 || __APPLE__
+              size_t i = 0;
+
               fwprintf(stderr, L"Unable to add sequence '%ls', unicode ", buf);
               for (i = 0; i < wcslen(unicode); i++)
                 fwprintf(stderr, L"%04X ", (int)unicode[i]);

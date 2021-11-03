@@ -198,6 +198,8 @@ static scaleparams scaletable[] = {
 #if !defined(__USE_GNU) && !defined(HAVE_STRCASESTR)
 #warning "Attempting to define strcasestr(); if errors, build with -DHAVE_STRCASESTR"
 
+char *strcasestr(const char *haystack, const char *needle);
+
 char *strcasestr(const char *haystack, const char *needle)
 {
   char *uphaystack, *upneedle, *result;
@@ -22501,7 +22503,6 @@ static void load_info_about_label_surface(FILE * lfi)
   int k;
   unsigned l;
   unsigned tmp_pos;
-  wchar_t tmp_char;
   int old_width;
   int old_height;
   int new_width;
@@ -22564,6 +22565,7 @@ static void load_info_about_label_surface(FILE * lfi)
           new_node->save_texttool_str[l] = wtmpstr[l];
         }
 #else
+      wchar_t tmp_char;
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
           tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
