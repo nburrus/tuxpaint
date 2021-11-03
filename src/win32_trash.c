@@ -24,7 +24,7 @@ int MoveFileToRecycleBin(const TCHAR *fullPathName)
 int win32_trash(const char *path)
 {
   char *p, *src;
-  
+
   src = p = strdup(path);
   while(*p != '\0'){
     if (*p == '/') *p = '\\';
