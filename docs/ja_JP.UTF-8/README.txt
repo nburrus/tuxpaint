@@ -172,21 +172,13 @@ Tux Paint の起動
 
                  ボタンを押したままマウスを動かすと、描画できます。
 
-                 Some brushes are animated — they change their shape as you
-                 draw them. A good example of this is the vines brush that
-                 ships with Tux Paint. These brushes will have a small
-                 "filmstrip" icon drawn on their Selector buttons.
+                 アニメーションブラシ —
+                 描画中に形状が変化します。例として、ブドウ形のブラシが挙げられます。このタイプのブラシの選択ボタンには、小さなフィルムのアイコンが付いています。
 
-                 Other brushes are directional — they will draw a different
-                 shape depending on what direction you are painting with
-                 them. An example of this is the arrow brush that ships with
-                 Tux Paint. These brushes have a small 8-way arrow icon drawn
-                 on their Selector buttons.
+                 向きのあるブラシ — 描いている方向によって異なる形を描きます。 例として、Tux Paint
+                 に含まれる矢印ブラシがあります。 これらのブラシの選択ボタンには、小さな8方向の矢印のアイコンが付いています。
 
-                 Finally, some brushes can be both direction and animated.
-                 Examples of this are the cat and squirrel brushes that ship
-                 with Tux Paint. These brushes will have both the "filmstrip"
-                 and 8-way arrow icons.
+                 また、いくつかのブラシは、方向とアニメーションを併せ持ちます。例として、猫やリスのブラシがあります。このタイプのブラシの選択ボタンには、小さなフィルムと８方向の矢印のアイコンが付いています。
 
                  描画中にはサウンドが流れます。筆の大きさが大きいほど、低い音になります。
 
@@ -218,21 +210,12 @@ Tux Paint の起動
 
                  様々な種類の筆と好きな色を使って直線を描くツールです。
 
-                 Click the mouse and hold it to choose the starting point of
-                 the line. As you move the mouse around, a thin 'rubber-band'
-                 line will show where the line will be drawn. At the bottom,
-                 you'll see the angle of your line, in degrees. A line going
-                 straight to the right is 0°, a line going straight up is
-                 90°, a line going straight left is 180°, a line going
-                 straight down is 270°, and so on.
+                 線を引き始めたい場所でクリックして、そのままマウスを動かすと、描かれる線の位置が細い「ゴムバンド」のような線で示され、画面の下には、線の角度が表示されます。右にまっすぐ伸びる線は0度、上にまっすぐ伸びる線は90度、左にまっすぐ伸びる線は180度、下にまっすぐ伸びる線は270度、という具合です。
 
                  マウスを放すと、バネのような効果音とともに線が描画されます。
 
-                 Some brushes are animated, and will show a pattern of shapes
-                 along the line. Others are directional, and will show a
-                 different shape depending on the angle of the brush. And
-                 finally some are both animated and directional. See "Paint",
-                 above, to learn more.
+                 アニメーション対応のブラシでは、線に沿って形が変化します。 指向性のブラシでは、線の角度に応じて異なる形状を表示します。
+                 さらに、アニメーションと指向性の両方を備えたブラシもあります。 詳しくは、上記の「ふで」の項をご覧ください。
 
      ----------------------------------------------------------------------
 
@@ -261,10 +244,7 @@ Tux Paint の起動
 
                       通常の動作
 
-                              Now you can move the mouse around the canvas to
-                              rotate the shape. The angle your shape is
-                              rotated will be shown at the bottom, in degrees
-                              (similar to the "Lines" tool, described above).
+                              ここで、キャンバス上でマウスを動かして図形を回転させることができます。回転した図形の角度は画面の下に表示されます（「せん」ツールと同様）。
 
                               最後にもう一度マウスをクリックして、図形が完成します。
 
@@ -312,7 +292,7 @@ Tux Paint の起動
                                  * 繁体中文— 右[Alt] キー または 左[Alt] キー キー
                                  * タイ語— 右[Alt] キー
 
-                      On-screen Keyboard
+                      画面キーボード
 
                               テキストツールやラベルツールで使えるオプションの「スクリーンキーボード」では、キーボードレイアウトを変えたり、文字の合成（例："a
                               "と "e "を "æ
@@ -325,8 +305,7 @@ Tux Paint の起動
 
                  「ぬる」ツールは、描画の連続した領域を好きな色で塗りつぶします。以下の3 つの塗りつぶしオプションが用意されています：
                     * たんしょく — 領域を一つの色で塗りつぶします。
-                    * Brush — click and drag to fill an area with a solid
-                      color using freehand painting.
+                    * ふで — フリーハンドでドラッグして、領域を一つの色で塗りつぶします。
                     * せんけい —
                       領域をクリックしてからドラッグすると、ドラッグした方向に向かって色が薄くなるようにグラデーションをつけて塗りつぶします。
                     * ほうしゃ —
@@ -411,10 +390,8 @@ Tux Paint の起動
                       * 右下にある茶色の「けす」(ゴミ箱)
                         ボタンで、選択した作品を削除します。(本当に削除して良いか確認されます)
 
-                        Note: On Linux (as of version 0.9.22) and Windows (as
-                        of version 0.9.27), the picture will be placed in
-                        your desktop's trash can / recycle bin (where you may
-                        recover and restore it, if you change your mind).
+                        注: Linux（バージョン 0.9.22以降）、Windows（バージョン
+                        0.9.27以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
 
                       * 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例："~/Pictures/TuxPaint/")に画像を出力します。
 
