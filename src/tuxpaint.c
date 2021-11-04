@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 29, 2021
+  June 14, 2002 - November 3, 2021
 */
 
 #include "platform.h"
@@ -1665,54 +1665,58 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
         {
           if (str[i] <= 0x0000007F)
             {
-              /* 0x00000000 - 0x0000007F:
-                 0xxxxxxx */
+              /* Range: 0x00000000 - 0x0000007F:
+
+                 In:  00abcdef
+                 Out: 00abcdef */
 
               utfstr[j++] = (str[i] & 0x7F);
             }
           else if (str[i] <= 0x000007FF)
             {
-              /* 0x00000080 - 0x000007FF:
+              /* Range: 0x00000080 - 0x000007FF:
 
-                 00000abc defghijk
-                 110abcde 10fghijk */
+                 In:  00000abc defghijk
+                 Out: 110abcde 10fghijk */
 
               utfstr[j++] = (((str[i] & 0x0700) >> 6) | /* -----abc -------- to ---abc-- */
                              ((str[i] & 0x00C0) >> 6) | /* -------- de------ to ------de */
-                             (0xC0));   /*                  add 110----- */
+                             (0xC0));                   /*                  add 110----- */
 
               utfstr[j++] = (((str[i] & 0x003F)) |      /* -------- --fghijk to --fghijk */
-                             (0x80));   /*                  add 10------ */
+                             (0x80));                   /*                  add 10------ */
             }
           else if (str[i] <= 0x0000FFFF)
             {
-              /* 0x00000800 - 0x0000FFFF:
+              /* Range: 0x00000800 - 0x0000FFFF:
 
-                 abcdefgh ijklmnop
-                 1110abcd 10efghij 10klmnop */
+                 In:  abcdefgh ijklmnop
+                 Out: 1110abcd 10efghij 10klmnop */
 
-              utfstr[j++] = (((str[i] & 0xF000) >> 12) |        /* abcd---- -------- to ----abcd */
-                             (0xE0));   /*                  add 1110---- */
-              utfstr[j++] = (((str[i] & 0x0FC0) >> 6) | /* ----efgh ij------ to --efghij */
-                             (0x80));   /*                  add 10------ */
-              utfstr[j++] = (((str[i] & 0x003F)) |      /* -------- --klmnop to --klmnop */
-                             (0x80));   /*                  add 10------ */
+              utfstr[j++] = (((str[i] & 0xF000) >> 12) | /* abcd---- -------- to ----abcd */
+                             (0xE0));                    /*                  add 1110---- */
+              utfstr[j++] = (((str[i] & 0x0FC0) >> 6) |  /* ----efgh ij------ to --efghij */
+                             (0x80));                    /*                  add 10------ */
+              utfstr[j++] = (((str[i] & 0x003F)) |       /* -------- --klmnop to --klmnop */
+                             (0x80));                    /*                  add 10------ */
             }
           else
             {
-              /* 0x00010000 - 0x001FFFFF:
-                 11110abc 10defghi 10jklmno 10pqrstu */
+              /* Range: 0x00010000 - 0x001FFFFF:
 
-              utfstr[j++] = (((str[i] & 0x1C0000) >> 18) |      /* ---abc-- -------- --------  to -----abc */
-                             (0xF0));   /*                            add 11110000 */
-              utfstr[j++] = (((str[i] & 0x030000) >> 12) |      /* ------de -------- --------  to --de---- */
-                             ((str[i] & 0x00F000) >> 12) |      /* -------- fghi---- --------  to ----fghi */
-                             (0x80));   /*                            add 10------ */
-              utfstr[j++] = (((str[i] & 0x000F00) >> 6) |       /* -------- ----jklm --------  to --jklm-- */
-                             ((str[i] & 0x0000C0) >> 6) |       /* -------- -------- no------  to ------no */
-                             (0x80));   /*                            add 10------ */
-              utfstr[j++] = ((str[i] & 0x00003F) |      /* -------- -------- --pqrstu  to --prqstu */
-                             (0x80));   /*                            add 10------ */
+                 In:  000abcde fghijklm nopqrstu
+                 Out: 11110abc 10defghi 10jklmno 10pqrstu */
+
+              utfstr[j++] = (((str[i] & 0x1C0000) >> 18) | /* ---abc-- -------- --------  to -----abc */
+                             (0xF0));                      /*                            add 11110000 */
+              utfstr[j++] = (((str[i] & 0x030000) >> 12) | /* ------de -------- --------  to --de---- */
+                             ((str[i] & 0x00F000) >> 12) | /* -------- fghi---- --------  to ----fghi */
+                             (0x80));                      /*                            add 10------ */
+              utfstr[j++] = (((str[i] & 0x000F00) >> 6) |  /* -------- ----jklm --------  to --jklm-- */
+                             ((str[i] & 0x0000C0) >> 6) |  /* -------- -------- no------  to ------no */
+                             (0x80));                      /*                            add 10------ */
+              utfstr[j++] = ((str[i] & 0x00003F) |         /* -------- -------- --pqrstu  to --prqstu */
+                             (0x80));                      /*                            add 10------ */
             }
         }
       utfstr[j] = '\0';
