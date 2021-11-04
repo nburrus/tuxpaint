@@ -1686,7 +1686,14 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
               utfstr[j++] = (((str[i] & 0x003F)) |      /* -------- --fghijk to --fghijk */
                              (0x80));                   /*                  add 10------ */
             }
+#ifndef WIN32
           else if (str[i] <= 0x0000FFFF)
+#else
+          /* str[i] is a wchar_t, which is only 16-bit on Windows, so
+             avoiding a "comparison is always true due to limited range
+             of data type" compile-time warning */
+          else
+#endif
             {
               /* Range: 0x00000800 - 0x0000FFFF:
 
@@ -1700,12 +1707,14 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
               utfstr[j++] = (((str[i] & 0x003F)) |       /* -------- --klmnop to --klmnop */
                              (0x80));                    /*                  add 10------ */
             }
+#ifndef WIN32
           else
             {
               /* Range: 0x00010000 - 0x001FFFFF:
 
                  In:  000abcde fghijklm nopqrstu
-                 Out: 11110abc 10defghi 10jklmno 10pqrstu */
+                 Out: 11110abc 10defghi 10jklmno 10pqrstu
+              */
 
               utfstr[j++] = (((str[i] & 0x1C0000) >> 18) | /* ---abc-- -------- --------  to -----abc */
                              (0xF0));                      /*                            add 11110000 */
@@ -1718,6 +1727,7 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
               utfstr[j++] = ((str[i] & 0x00003F) |         /* -------- -------- --pqrstu  to --prqstu */
                              (0x80));                      /*                            add 10------ */
             }
+#endif
         }
       utfstr[j] = '\0';
 
