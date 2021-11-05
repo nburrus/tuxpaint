@@ -328,6 +328,7 @@ typedef struct safer_dirent
 
 /* Windows */
 
+#include <windows.h>
 #include <unistd.h>
 #include <dirent.h>
 #include <malloc.h>
@@ -335,6 +336,9 @@ typedef struct safer_dirent
 #include <io.h>
 #include <direct.h>
 #include <iconv.h>
+
+#undef min
+#undef max
 
 #define mkdir(path,access)    _mkdir(path)
 
@@ -364,6 +368,14 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
 #ifdef USE_WINDOWS_RECYCLE_BIN
 extern int win32_trash(const char *path);
 #endif
+
+#undef iswprint
+int iswprint(wchar_t wc)
+{
+	WORD t;
+	GetStringTypeW(CT_CTYPE1, &wc, 1, &t);
+	return (t & C1_DEFINED) && !(t & C1_CNTRL);
+}
 
 #endif /* WIN32 */
 
