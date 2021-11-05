@@ -23568,18 +23568,43 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
   char str[256];
   char *arg;
   FILE *fi = fopen(filename, "r");
+  int line;
 
   if (!fi)
     return;
 
+  line = 0;
+
   while (fgets(str, sizeof(str), fi))
     {
-      if (!isalnum(*str))
-        continue;
+      line++;
+
       strip_trailing_whitespace(str);
+
+      /* Comments and blank lines can be safely ignored */
+      if (str[0] == '#' || str[0] == '\0')
+        continue;
+
+      /* Expecting alphanumeric at the beginning of a line; ignore (and complain about) the rest */
+      if (!isalnum(*str))
+        {
+          fprintf(stderr,
+                  "Warning: do not understand '%s' on line %d of '%s'\n", str, line, filename);
+          continue;
+        }
+
+      /* Expecting to be in the form of OPTION=ARG; ignore (and complain about) the rest */
       arg = strchr(str, '=');
       if (arg)
-        *arg++ = '\0';
+        {
+          *arg++ = '\0';
+        }
+      else
+        {
+          fprintf(stderr,
+                  "Warning: do not understand '%s' on line %d of '%s'\n", str, line, filename);
+          continue;
+        }
 
 #ifdef __linux__
       /* Perform shell expansion */
@@ -23595,6 +23620,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
          and free() isn't smart about the situation -- also some
          of the strings end up being kept around */
       parse_one_option(tmpcfg, str, strdup(arg), filename);
+
 #ifdef __linux__
       free(arg);
 #endif
