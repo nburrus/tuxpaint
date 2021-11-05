@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: October 27, 2021
+  Last updated: November 4, 2021
   $Id$
 */
 
@@ -175,7 +175,7 @@ void cartoon_apply_outline(magic_api * api, int xx, int yy) {
 }
 
 
-static void do_cartoon(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
+static void do_cartoon(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
