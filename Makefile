@@ -543,23 +543,22 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=
-macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
-ios_ARCH_INSTALL:=install-iosbundle
-linux_ARCH_INSTALL:=install-xdg
+macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg install-man install-importscript install-bash-completion
+ios_ARCH_INSTALL:=install-iosbundle install-man install-importscript install-bash-completion
+linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
 # to do this as superuser ("root"))
 .PHONY: install
-install:	install-bin install-data install-man install-doc \
+install:	install-bin install-data install-doc \
 		install-magic-plugins \
 		install-magic-plugin-dev \
-		install-icon install-gettext install-im install-importscript \
+		install-icon install-gettext install-im \
 		install-default-config install-example-stamps \
 		install-example-starters install-example-templates \
 		install-thumb-starters install-thumb-templates \
-		install-bash-completion \
 		install-osk \
 		$(ARCH_INSTALL)
 	@echo
