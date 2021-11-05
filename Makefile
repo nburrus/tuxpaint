@@ -677,6 +677,8 @@ clean:
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
 	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
+	@-rm -f dlllist a.exe
+	@-rm -f win32/Preprocessed.iss win32/tuxpaint-*.zip win32/tuxpaint-*.exe
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -1147,7 +1149,7 @@ obj/parse.c:	obj/parse_step1.c
 	@echo
 	@echo "...Generating the command-line and config file parser (STEP 2)..."
 	@sed -e 's/^const struct/static const struct/' -e 's/_GNU/_TUX/' obj/parse_step1.c > obj/parse.c
-	
+
 obj/parse_step1.c:	src/parse.gperf
 	@echo
 	@echo "...Generating the command-line and config file parser (STEP 1)..."
