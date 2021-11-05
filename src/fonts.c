@@ -66,6 +66,7 @@
 
 #ifdef WIN32
 #include "win32_print.h"
+extern char *strcasestr(const char *haystack, const char *needle);
 #endif
 
 #if defined(__MACOS__)

@@ -14611,10 +14611,10 @@ static void do_png_embed_data(png_structp png_ptr)
 #ifdef WIN32
               iconv_t trans;
               wchar_t *wch;
+	      char *ch;
               char *conv, *conv2;
               size_t in, out;
 
-              in = out = 1;
               conv = malloc(255);
               trans = iconv_open("UTF-8", "WCHAR_T");
 
@@ -14625,7 +14625,8 @@ static void do_png_embed_data(png_structp png_ptr)
                   in = 2;
                   out = 10;
                   wch = &current_node->save_texttool_str[i];
-                  iconv(trans, (char **)&wch, &in, &conv, &out);
+		  ch = (char *)wch;
+                  iconv(trans, &ch, &in, &conv, &out);
                   conv[0] = '\0';
                   fprintf(lfi, "%s", conv2);
                 }

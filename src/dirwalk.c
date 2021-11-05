@@ -64,6 +64,9 @@
 #include "debug.h"
 
 
+#ifdef WIN32
+extern char *strcasestr(const char *haystack, const char *needle);
+#endif
 
 /* Directory walking callers and callbacks */
 
