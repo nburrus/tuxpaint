@@ -158,7 +158,7 @@ macos_BUNDLE:=./TuxPaint.app
 ios_BUNDLE:=./TuxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 
-windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o
+windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o obj/win32_trash.o
 macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
 ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
@@ -543,23 +543,22 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=
-macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
-ios_ARCH_INSTALL:=install-iosbundle
-linux_ARCH_INSTALL:=install-xdg
+macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg install-man install-importscript install-bash-completion
+ios_ARCH_INSTALL:=install-iosbundle install-man install-importscript install-bash-completion
+linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
 # "make install" installs all of the various parts
 # (depending on the *PREFIX variables at the top, you probably need
 # to do this as superuser ("root"))
 .PHONY: install
-install:	install-bin install-data install-man install-doc \
+install:	install-bin install-data install-doc \
 		install-magic-plugins \
 		install-magic-plugin-dev \
-		install-icon install-gettext install-im install-importscript \
+		install-icon install-gettext install-im \
 		install-default-config install-example-stamps \
 		install-example-starters install-example-templates \
 		install-thumb-starters install-thumb-templates \
-		install-bash-completion \
 		install-osk \
 		$(ARCH_INSTALL)
 	@echo
@@ -678,6 +677,8 @@ clean:
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
 	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
+	@-rm -f dlllist a.exe
+	@-rm -f win32/Preprocessed.iss win32/tuxpaint-*.zip win32/tuxpaint-*.exe
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -1261,6 +1262,12 @@ obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo "...Compiling win32 print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
+
+obj/win32_trash.o:	src/win32_trash.c src/debug.h
+	@echo
+	@echo "...Compiling win32 trash support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/win32_trash.c -o obj/win32_trash.o
 
 obj/postscript_print.o:	src/postscript_print.c \
 			src/postscript_print.h src/debug.h

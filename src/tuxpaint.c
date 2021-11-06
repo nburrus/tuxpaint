@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 24, 2021
+  June 14, 2002 - November 3, 2021
 */
 
 #include "platform.h"
@@ -202,6 +202,8 @@ static scaleparams scaletable[] = {
 #if !defined(__USE_GNU) && !defined(HAVE_STRCASESTR)
 #warning "Attempting to define strcasestr(); if errors, build with -DHAVE_STRCASESTR"
 
+char *strcasestr(const char *haystack, const char *needle);
+
 char *strcasestr(const char *haystack, const char *needle)
 {
   char *uphaystack, *upneedle, *result;
@@ -341,6 +343,7 @@ typedef struct safer_dirent
 
 /* Windows */
 
+#include <windows.h>
 #include <unistd.h>
 #include <dirent.h>
 #include <malloc.h>
@@ -349,6 +352,8 @@ typedef struct safer_dirent
 #include <direct.h>
 #include <iconv.h>
 
+#undef min
+#undef max
 #define mkdir(path,access)    _mkdir(path)
 
 static void mtw(wchar_t * wtok, char *tok, size_t size)
@@ -364,13 +369,23 @@ static void mtw(wchar_t * wtok, char *tok, size_t size)
   in = size;
   out = size;
   n = size / sizeof(wchar_t);
-  
+
   trans = iconv_open("WCHAR_T", "UTF-8");
   iconv(trans, (char **)&tok, &in, &wrptr, &out);
   *((wchar_t *) wrptr) = L'\0';
   swprintf(wtok, n, L"%ls", ui16);
   free(ui16);
   iconv_close(trans);
+}
+
+extern int win32_trash(const char *path);
+
+#undef iswprint
+int iswprint(wchar_t wc)
+{
+	WORD t;
+	GetStringTypeW(CT_CTYPE1, &wc, 1, &t);
+	return (t & C1_DEFINED) && !(t & C1_CNTRL);
 }
 
 #endif /* WIN32 */
@@ -1759,55 +1774,69 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
         {
           if (str[i] <= 0x0000007F)
             {
-              /* 0x00000000 - 0x0000007F:
-                 0xxxxxxx */
+              /* Range: 0x00000000 - 0x0000007F:
+
+                 In:  00abcdef
+                 Out: 00abcdef */
 
               utfstr[j++] = (str[i] & 0x7F);
             }
           else if (str[i] <= 0x000007FF)
             {
-              /* 0x00000080 - 0x000007FF:
+              /* Range: 0x00000080 - 0x000007FF:
 
-                 00000abc defghijk
-                 110abcde 10fghijk */
+                 In:  00000abc defghijk
+                 Out: 110abcde 10fghijk */
 
               utfstr[j++] = (((str[i] & 0x0700) >> 6) | /* -----abc -------- to ---abc-- */
                              ((str[i] & 0x00C0) >> 6) | /* -------- de------ to ------de */
-                             (0xC0));   /*                  add 110----- */
+                             (0xC0));                   /*                  add 110----- */
 
               utfstr[j++] = (((str[i] & 0x003F)) |      /* -------- --fghijk to --fghijk */
-                             (0x80));   /*                  add 10------ */
+                             (0x80));                   /*                  add 10------ */
             }
+#ifndef WIN32
           else if (str[i] <= 0x0000FFFF)
+#else
+          /* str[i] is a wchar_t, which is only 16-bit on Windows, so
+             avoiding a "comparison is always true due to limited range
+             of data type" compile-time warning */
+          else
+#endif
             {
-              /* 0x00000800 - 0x0000FFFF:
+              /* Range: 0x00000800 - 0x0000FFFF:
 
-                 abcdefgh ijklmnop
-                 1110abcd 10efghij 10klmnop */
+                 In:  abcdefgh ijklmnop
+                 Out: 1110abcd 10efghij 10klmnop */
 
-              utfstr[j++] = (((str[i] & 0xF000) >> 12) |        /* abcd---- -------- to ----abcd */
-                             (0xE0));   /*                  add 1110---- */
-              utfstr[j++] = (((str[i] & 0x0FC0) >> 6) | /* ----efgh ij------ to --efghij */
-                             (0x80));   /*                  add 10------ */
-              utfstr[j++] = (((str[i] & 0x003F)) |      /* -------- --klmnop to --klmnop */
-                             (0x80));   /*                  add 10------ */
+              utfstr[j++] = (((str[i] & 0xF000) >> 12) | /* abcd---- -------- to ----abcd */
+                             (0xE0));                    /*                  add 1110---- */
+              utfstr[j++] = (((str[i] & 0x0FC0) >> 6) |  /* ----efgh ij------ to --efghij */
+                             (0x80));                    /*                  add 10------ */
+              utfstr[j++] = (((str[i] & 0x003F)) |       /* -------- --klmnop to --klmnop */
+                             (0x80));                    /*                  add 10------ */
             }
+#ifndef WIN32
           else
             {
-              /* 0x00010000 - 0x001FFFFF:
-                 11110abc 10defghi 10jklmno 10pqrstu */
+              /* Range: 0x00010000 - 0x001FFFFF:
 
-              utfstr[j++] = (((str[i] & 0x1C0000) >> 18) |      /* ---abc-- -------- --------  to -----abc */
-                             (0xF0));   /*                            add 11110000 */
-              utfstr[j++] = (((str[i] & 0x030000) >> 12) |      /* ------de -------- --------  to --de---- */
-                             ((str[i] & 0x00F000) >> 12) |      /* -------- fghi---- --------  to ----fghi */
-                             (0x80));   /*                            add 10------ */
-              utfstr[j++] = (((str[i] & 0x000F00) >> 6) |       /* -------- ----jklm --------  to --jklm-- */
-                             ((str[i] & 0x0000C0) >> 6) |       /* -------- -------- no------  to ------no */
-                             (0x80));   /*                            add 10------ */
-              utfstr[j++] = ((str[i] & 0x00003F) |      /* -------- -------- --pqrstu  to --prqstu */
-                             (0x80));   /*                            add 10------ */
+                 In:  000abcde fghijklm nopqrstu
+                 Out: 11110abc 10defghi 10jklmno 10pqrstu
+              */
+
+              utfstr[j++] = (((str[i] & 0x1C0000) >> 18) | /* ---abc-- -------- --------  to -----abc */
+                             (0xF0));                      /*                            add 11110000 */
+              utfstr[j++] = (((str[i] & 0x030000) >> 12) | /* ------de -------- --------  to --de---- */
+                             ((str[i] & 0x00F000) >> 12) | /* -------- fghi---- --------  to ----fghi */
+                             (0x80));                      /*                            add 10------ */
+              utfstr[j++] = (((str[i] & 0x000F00) >> 6) |  /* -------- ----jklm --------  to --jklm-- */
+                             ((str[i] & 0x0000C0) >> 6) |  /* -------- -------- no------  to ------no */
+                             (0x80));                      /*                            add 10------ */
+              utfstr[j++] = ((str[i] & 0x00003F) |         /* -------- -------- --pqrstu  to --prqstu */
+                             (0x80));                      /*                            add 10------ */
             }
+#endif
         }
       utfstr[j] = '\0';
 
@@ -2432,6 +2461,10 @@ static void mainloop(void)
   on_screen_keyboard *new_kbd;
   SDL_Rect kbd_rect;
 
+  float angle;
+  char angle_tool_text[256]; // FIXME Consider malloc'ing
+
+
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
   cur_thing = 0;
@@ -2480,8 +2513,9 @@ static void mainloop(void)
           /* To avoid getting stuck in a 'catching up with mouse motion' interface lock-up */
           /* FIXME: Another thing we could do here is peek into events, and 'skip' to the last motion...? Or something... -bjk 2011.04.26 */
           if (current_event_time > pre_event_time + 500 && event.type == SDL_MOUSEMOTION)
-            ignoring_motion = (ignoring_motion + 1) % 3;        /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
-
+            {
+              ignoring_motion = (ignoring_motion + 1) % 3;        /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
+            }
 
           if (event.type == SDL_QUIT)
             {
@@ -2550,7 +2584,6 @@ static void mainloop(void)
                   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
                 }
               handle_active(&event);
-
             }
           else if (event.type == SDL_KEYUP)
             {
@@ -3238,19 +3271,22 @@ static void mainloop(void)
                     }
                 }
             }
-
           else if (event.type == SDL_JOYAXISMOTION)
-            handle_joyaxismotion(event, &motioner, &val_x, &val_y);
-
+            {
+              handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+            }
           else if (event.type == SDL_JOYHATMOTION)
-            handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
-
+            {
+              handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y, &hatmotioner, &old_hat_ticks);
+            }
           else if (event.type == SDL_JOYBALLMOTION)
-            handle_joyballmotion(event, oldpos_x, oldpos_y);
-
+            {
+              handle_joyballmotion(event, oldpos_x, oldpos_y);
+            }
           else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
-            handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, real_r_tools);
-
+            {
+              handle_joybuttonupdownscl(event, oldpos_x, oldpos_y, real_r_tools);
+            }
           else if (event.type == SDL_MOUSEBUTTONDOWN &&
                    event.button.button >= 2 &&
                    event.button.button <= 3 &&
@@ -3285,8 +3321,6 @@ static void mainloop(void)
           else if ((event.type == SDL_MOUSEBUTTONDOWN ||
                     event.type == TP_SDL_MOUSEBUTTONSCROLL) && event.button.button <= 3)
             {
-
-
               if (HIT(r_tools))
                 {
 
@@ -4040,6 +4074,8 @@ static void mainloop(void)
                                 {
                                   int tries = 0;
 
+                                  magic_switchout(canvas);
+
                                   /* Magic pagination */
                                   do
                                     {
@@ -4076,6 +4112,8 @@ static void mainloop(void)
                                                                                                      color_hexes[cur_color][0],
                                                                                                      color_hexes[cur_color][1],
                                                                                                      color_hexes[cur_color][2]);
+
+                                  magic_switchin(canvas);
 
                                   playsound(screen, 0, SND_CLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                                 }
@@ -5894,15 +5932,29 @@ static void mainloop(void)
 
                       line_xor(line_start_x, line_start_y, new_x, new_y);
 
+                      if (new_y != line_start_y)
+                        angle = (atan2f((new_x - line_start_x), (new_y - line_start_y)) * 180 / M_PI) - 90.0; // we want straight line to the right to be 0 degrees
+                      else if (new_x >= line_start_x)
+                        angle = 0.0;
+                      else
+                        angle = 180.0;
+
+                      if (angle < 0.0)
+                        angle += 360.0;
+
 #ifndef __ANDROID__
                       update_screen(line_start_x + r_canvas.x,
                                     line_start_y + r_canvas.y, old_x + r_canvas.x, old_y + r_canvas.y);
                       update_screen(line_start_x + r_canvas.x,
                                     line_start_y + r_canvas.y, new_x + r_canvas.x, new_y + r_canvas.y);
+                      update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 #else
                       /* Anyway SDL_UpdateRect() backward compatibility function refreshes all the screen on Android */
                       SDL_UpdateRect(screen, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 #endif
+
+                      snprintf(angle_tool_text, sizeof(angle_tool_text), TIP_LINE_MOVING, angle);
+                      draw_tux_text(TUX_BORED, angle_tool_text, 1);
                     }
                   else if (cur_tool == TOOL_SHAPES)
                     {
@@ -6151,13 +6203,20 @@ static void mainloop(void)
                 }
               else if (cur_tool == TOOL_SHAPES && shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
                 {
-                  do_shape(shape_start_x, shape_start_y,
-                           shape_current_x, shape_current_y, shape_rotation(shape_start_x, shape_start_y, old_x, old_y), 0);
+                  int deg;
 
+                  deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
+                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
 
-                  do_shape(shape_start_x, shape_start_y,
-                           shape_current_x, shape_current_y, shape_rotation(shape_start_x, shape_start_y, new_x, new_y), 0);
+                  deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
+                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
 
+                  deg = -deg;
+                  if (deg < 0)
+                    deg += 360;
+
+                  snprintf(angle_tool_text, sizeof(angle_tool_text), TIP_SHAPE_ROTATING, deg);
+                  draw_tux_text(TUX_BORED, angle_tool_text, 1);
 
                   /* FIXME: Do something less intensive! */
                   SDL_Flip(screen);
@@ -14976,10 +15035,10 @@ static void do_png_embed_data(png_structp png_ptr)
 #ifdef WIN32
               iconv_t trans;
               wchar_t *wch;
+	      char *ch;
               char *conv, *conv2;
               size_t in, out;
 
-              in = out = 1;
               conv = malloc(255);
               trans = iconv_open("UTF-8", "WCHAR_T");
 
@@ -14990,7 +15049,8 @@ static void do_png_embed_data(png_structp png_ptr)
                   in = 2;
                   out = 10;
                   wch = &current_node->save_texttool_str[i];
-                  iconv(trans, (char **)&wch, &in, &conv, &out);
+		  ch = (char *)wch;
+                  iconv(trans, &ch, &in, &conv, &out);
                   conv[0] = '\0';
                   fprintf(lfi, "%s", conv2);
                 }
@@ -23014,7 +23074,6 @@ static void load_info_about_label_surface(FILE * lfi)
   int k;
   unsigned l;
   unsigned tmp_pos;
-  wchar_t tmp_char;
   int old_width;
   int old_height;
   int new_width;
@@ -23085,6 +23144,7 @@ static void load_info_about_label_surface(FILE * lfi)
         }
       fscanf(lfi, "\n");
 #else
+      wchar_t tmp_char;
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
           tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
@@ -24074,18 +24134,43 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
   char str[256];
   char *arg;
   FILE *fi = fopen(filename, "r");
+  int line;
 
   if (!fi)
     return;
 
+  line = 0;
+
   while (fgets(str, sizeof(str), fi))
     {
-      if (!isalnum(*str))
-        continue;
+      line++;
+
       strip_trailing_whitespace(str);
+
+      /* Comments and blank lines can be safely ignored */
+      if (str[0] == '#' || str[0] == '\0')
+        continue;
+
+      /* Expecting alphanumeric at the beginning of a line; ignore (and complain about) the rest */
+      if (!isalnum(*str))
+        {
+          fprintf(stderr,
+                  "Warning: do not understand '%s' on line %d of '%s'\n", str, line, filename);
+          continue;
+        }
+
+      /* Expecting to be in the form of OPTION=ARG; ignore (and complain about) the rest */
       arg = strchr(str, '=');
       if (arg)
-        *arg++ = '\0';
+        {
+          *arg++ = '\0';
+        }
+      else
+        {
+          fprintf(stderr,
+                  "Warning: do not understand '%s' on line %d of '%s'\n", str, line, filename);
+          continue;
+        }
 
 #ifdef __linux__
 #ifndef __ANDROID__
@@ -24103,6 +24188,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
          and free() isn't smart about the situation -- also some
          of the strings end up being kept around */
       parse_one_option(tmpcfg, str, strdup(arg), filename);
+
 #ifdef __linux__
 #ifndef __ANDROID__
       free(arg);
@@ -26572,6 +26658,9 @@ static int trash(char *path)
 #ifdef UNLINK_ONLY
   return (unlink(path));
 #else
+#ifdef WIN32
+  return win32_trash(path);
+#else
   char fname[MAX_PATH], trashpath[MAX_PATH], dest[MAX_PATH], infoname[MAX_PATH], bname[MAX_PATH], ext[MAX_PATH];
   char deldate[32];
   struct tm tim;
@@ -26730,13 +26819,12 @@ static int trash(char *path)
 
   /* FIXME: xcfe and elsewhere: Anything to do? */
 
-  /* FIXME: Windows */
-
   /* FIXME: Mac OS X */
 
   /* FIXME: Haiku */
 
   return (0);
+#endif /* WIN32 */
 #endif /* UNLINK_ONLY */
 }
 

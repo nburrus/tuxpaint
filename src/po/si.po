@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-19 21:32-0700\n"
+"POT-Creation-Date: 2021-10-27 22:57-0700\n"
 "PO-Revision-Date: 2010-05-14 11:37-0000\n"
 "Last-Translator: Menik Prasantha <manikprasantha@gmail.com>\n"
 "Language-Team: none\n"
@@ -515,7 +515,7 @@ msgstr "නව ඇරඹුමක්"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8383
+#: ../tools.h:98 ../tuxpaint.c:8402
 msgid "Open"
 msgstr "විවෘත කරන්න"
 
@@ -628,246 +628,262 @@ msgstr "සුභ දවසක්\t!"
 msgid "Let go of the button to complete the line."
 msgstr "රේඛාව සම්පූර්ණ කිරීමට බොත්තම අතහරින්න."
 
+#: ../tools.h:167
+#, fuzzy, c-format
+#| msgid "Let go of the button to complete the line."
+msgid ""
+"Let go of the button to complete the line. (Your line's angle is %.0f "
+"degrees.)"
+msgstr "රේඛාව සම්පූර්ණ කිරීමට බොත්තම අතහරින්න."
+
 #. Instruction while using Shape tool (after first click, before release)
-#: ../tools.h:169
+#: ../tools.h:170
 msgid "Hold the button to stretch the shape."
 msgstr "හැඩය පැතිරීම සඳහා බොත්තම තදකර සිටින්න."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:172
+#: ../tools.h:173
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "හැඩය භ්‍රමණය කිරීමට මූසිකය චලනය කරන්න. ඇඳීමට මූසික ක්ලිකය කරන්න."
 
+#: ../tools.h:174
+#, fuzzy, c-format
+#| msgid "Move the mouse to rotate the shape. Click to draw it."
+msgid ""
+"Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
+"degrees.)"
+msgstr "හැඩය භ්‍රමණය කිරීමට මූසිකය චලනය කරන්න. ඇඳීමට මූසික ක්ලිකය කරන්න."
+
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:175
+#: ../tools.h:177
 #, fuzzy
 #| msgid "OK thenâ€¦ Letâ€™s keep drawing this one!"
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Oඔව් එසේ නම් නැවතත් මෙය අඳිමු!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2204
+#: ../tuxpaint.c:2205
 msgid "Do you really want to quit?"
 msgstr "ඔබට ඇත්තටම ඉවත්වීමට අවශ්‍යද ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2207
+#: ../tuxpaint.c:2208
 #, fuzzy
 #| msgid "Yes, Iâ€™m done!"
 msgid "Yes, I’m done!"
 msgstr "ඔව්, Iâ€™m ස්ථිර කරන ලදී! "
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2210 ../tuxpaint.c:2237
+#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
 msgid "No, take me back!"
 msgstr "නැහැ.  නැවත මාව කැඳවන්න!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2214
+#: ../tuxpaint.c:2215
 #, fuzzy
 #| msgid "If you quit, youâ€™ll lose your picture! Save it?"
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ඔබ ඉවත් වුවොත්, ඔබගේ පින්තූරය අහිමි වේ! සුරැකීමට අවශ්‍යද ?â€™"
 
-#: ../tuxpaint.c:2215 ../tuxpaint.c:2220
+#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
 msgid "Yes, save it!"
 msgstr "ඔව්, සුරකින්න.!"
 
-#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
+#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
 #, fuzzy
 #| msgid "No, donâ€™t bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "නැහැ, සුරැකීමට බධා කිරීමෙන් වළකින්න!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2219
+#: ../tuxpaint.c:2220
 msgid "Save your picture first?"
 msgstr "ප්‍රථමයෙන් ඔබගේ පින්තූරය සුරකින්නද?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2224
+#: ../tuxpaint.c:2225
 #, fuzzy
 #| msgid "Canâ€™t open that picture!"
 msgid "Can’t open that picture!"
 msgstr "එම පින්තූරය විවෘත කිරීමට නොහැක !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2227 ../tuxpaint.c:2232 ../tuxpaint.c:2241 ../tuxpaint.c:2248
-#: ../tuxpaint.c:2257 ../tuxpaint.c:2262
+#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
+#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
 msgid "OK"
 msgstr "හරි"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2231
+#: ../tuxpaint.c:2232
 msgid "There are no saved files!"
 msgstr "සුරකින ලද ගොනු නොමැත!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2235
+#: ../tuxpaint.c:2236
 msgid "Print your picture now?"
 msgstr "ඔබගේ පින්තූරය දැන් මුද්‍රණය කරන්නද?"
 
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2237
 msgid "Yes, print it!"
 msgstr "ඔව්, මුද්‍රණය කරන්න!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2240
+#: ../tuxpaint.c:2241
 msgid "Your picture has been printed!"
 msgstr "ඔබගේ පින්තූරය මුද්‍රණය කරන ලදී!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2245
 msgid "Sorry! Your picture could not be printed!"
 msgstr "සමාවන්න! ඔබගේ පින්තූරය මුද්‍රණය කිරීමට නොහැක!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2248
 #, fuzzy
 #| msgid "You canâ€™t print yet!"
 msgid "You can’t print yet!"
 msgstr "ඔබට තවම මුද්‍රණය කිරීමට නොහැක!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2251
+#: ../tuxpaint.c:2252
 msgid "Erase this picture?"
 msgstr "මෙම පින්තූරය මකන්නද?"
 
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2253
 msgid "Yes, erase it!"
 msgstr "ඔව්, මකන්න!"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2254
 #, fuzzy
 #| msgid "No, donâ€™t erase it!"
 msgid "No, don’t erase it!"
 msgstr "නැහැ, මකන්න එපා!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2256
+#: ../tuxpaint.c:2257
 msgid "Remember to use the left mouse button!"
 msgstr "වාම මූසික බොත්තම භාවිතා කිරීමට මතක තබා ගන්න!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2260
+#: ../tuxpaint.c:2261
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "ඔබගේ පින්තූරය මුද්‍රණය කරන ලදී!"
 
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2262
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "ඔබගේ පින්තූරය මුද්‍රණය කරන ලදී!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2265
+#: ../tuxpaint.c:2266
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "සමාවන්න! ඔබගේ පින්තූරය මුද්‍රණය කිරීමට නොහැක!"
 
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2267
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "සමාවන්න! ඔබගේ පින්තූරය මුද්‍රණය කිරීමට නොහැක!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2271
 #, fuzzy
 #| msgid "Choose the pictures you want, then click â€œPlayâ€."
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ඔබට අවශ්‍ය පින්තූර තොරන්න, ඉන්පසු ක්‍රියා කරවන්න මත මූසික ක්ලිකය කරන්න."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2479
+#: ../tuxpaint.c:2483
 msgid "Sound muted."
 msgstr "ශබ්දය ඉවත් කරන ලදී."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2484
+#: ../tuxpaint.c:2488
 msgid "Sound unmuted."
 msgstr "ශබ්දය නැවත ඇති කරන ලදී."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3262
+#: ../tuxpaint.c:3267
 #, fuzzy
 #| msgid "Please waitâ€¦"
 msgid "Please wait…"
 msgstr "කරුණාකර රැඳී සිටින්න!"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8386
+#: ../tuxpaint.c:8405
 msgid "Erase"
 msgstr "මකන්න"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8389
+#: ../tuxpaint.c:8408
 msgid "Slides"
 msgstr "ස්ලයිඩ"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8392
+#: ../tuxpaint.c:8411
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8395
+#: ../tuxpaint.c:8414
 msgid "Back"
 msgstr "ආපසු"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8398
+#: ../tuxpaint.c:8417
 msgid "Play"
 msgstr "ක්‍රියා කරවන්න"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8401
+#: ../tuxpaint.c:8420
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8404
+#: ../tuxpaint.c:8423
 msgid "Next"
 msgstr "ඉදිරියට"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9212
+#: ../tuxpaint.c:9231
 msgid "Aa"
 msgstr "අකුරු"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12878
+#: ../tuxpaint.c:12891
 msgid "Yes"
 msgstr "ඔව් "
 
-#: ../tuxpaint.c:12882
+#: ../tuxpaint.c:12895
 msgid "No"
 msgstr "නැහැ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14028
+#: ../tuxpaint.c:14041
 msgid "Replace the picture with your changes?"
 msgstr "ඔබගේ වෙනස් කිරීම් සමඟින් පින්තූරය ප්‍රතිස්ථාපනය කරන්නද?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14032
+#: ../tuxpaint.c:14045
 msgid "Yes, replace the old one!"
 msgstr "ඔව්, පරණ පින්තූරය ප්‍රතිස්ථාපනය කරන්න!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14036
+#: ../tuxpaint.c:14049
 msgid "No, save a new file!"
 msgstr "නැහැ, අලුත් ගොනුවක් සුරකින්න!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15299
+#: ../tuxpaint.c:15312
 #, fuzzy
 #| msgid "Choose the picture you want, then click â€œOpenâ€."
 msgid "Choose the picture you want, then click “Open”."
@@ -876,15 +892,15 @@ msgstr "ඔබට අවශ්‍ය පින්තූරය තොරන්න
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16725
+#: ../tuxpaint.c:16738
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24479
+#: ../tuxpaint.c:24489
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24491
+#: ../tuxpaint.c:24501
 msgid "Pick a color."
 msgstr "පාටක් තෝරන්න."
 
@@ -927,25 +943,31 @@ msgstr ""
 "පින්තූරයේ මායිම දක්වා ජනේලයේ වැස්ම වැටීමට සලස්වන්න.වැස්ම ඇරීමට හෝ වැසීමට ලම්භකව එහා මෙහා "
 "ගෙන යන්න."
 
-#: ../../magic/src/blocks_chalk_drip.c:130
+#: ../../magic/src/blocks_chalk_drip.c:132
 msgid "Blocks"
 msgstr "අච්චු"
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:134
 msgid "Chalk"
 msgstr "පාට කූරු"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:136
 msgid "Drip"
 msgstr "ස්‍රාවය"
 
-#: ../../magic/src/blocks_chalk_drip.c:149
+#: ../../magic/src/blocks_chalk_drip.c:154
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "පින්තූරය ඒකඝන කිරීමට මවුසය ක්ලික් කර එහා මෙහා ගෙන යන්න."
 
-#: ../../magic/src/blocks_chalk_drip.c:151
+#: ../../magic/src/blocks_chalk_drip.c:158
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture blocky."
+msgstr "මුලු පින්තුරයම මුවහත් කිරීමට තද කරන්න."
+
+#: ../../magic/src/blocks_chalk_drip.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -953,7 +975,14 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "පින්තූරය පාට කූරු මගින් ඇඳීම සඳහා මූසික ක්ලිකය කර එය චලනය කරන්න."
 
-#: ../../magic/src/blocks_chalk_drip.c:153
+#: ../../magic/src/blocks_chalk_drip.c:169
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a chalk drawing."
+msgstr "පින්තූරය පාට කූරු මගින් ඇඳීම සඳහා මූසික ක්ලිකය කර එය චලනය කරන්න."
+
+#: ../../magic/src/blocks_chalk_drip.c:174
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
@@ -1000,15 +1029,22 @@ msgstr "විචිත්‍ර අක්ෂර කලාව"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "විචිත්‍ර අක්ෂර කලාවෙන් ඇඳීමට මූසික ක්ලිකය කර එහා මෙහා චලනය කරන්න."
 
-#: ../../magic/src/cartoon.c:104
+#: ../../magic/src/cartoon.c:107
 msgid "Cartoon"
 msgstr "කාටූනය"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:121
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "පින්තූරය කාටූනයක් බවට පත්කිරීමට මූසික ක්ලිකය කර එහා මෙහා චලනය කරන්න."
+
+#: ../../magic/src/cartoon.c:125
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn the entire picture into a cartoon."
+msgstr "පින්තූරය පාට කූරු මගින් ඇඳීම සඳහා මූසික ක්ලිකය කර එය චලනය කරන්න."
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
@@ -1237,13 +1273,13 @@ msgstr "ආලෝකය"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "ඔබේ පින්තුරයේ ප්‍රකාශ ආලෝක දණ්ඩක් ඇදිමට තද කරගෙන එහා මෙහා ගෙනයන්න."
 
-#: ../../magic/src/lightning.c:61
+#: ../../magic/src/lightning.c:78
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "එළිය කරන්න"
 
-#: ../../magic/src/lightning.c:71
+#: ../../magic/src/lightning.c:88
 msgid "Click, drag, and release to a lightning bolt between two points."
 msgstr ""
 
@@ -1594,6 +1630,19 @@ msgstr "හිම බෝල ඔබගේ පින්තුරයට එකත�
 #: ../../magic/src/snow.c:77
 msgid "Click to add snow flakes to your picture."
 msgstr "හිම පතුරු ඔබගේ පින්තුරයට එකතු කිරීමට තද කරන්න."
+
+#: ../../magic/src/stretch.c:107
+msgid "Stretch"
+msgstr ""
+
+#: ../../magic/src/stretch.c:119
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to stretch part of your picture vertically or horizontally."
+msgstr "එබීමෙන් ඔබගේ පින්තුරයේ කොටසක්  පෙනෙන ආකාරයරුපවහිනයේ."
 
 #: ../../magic/src/string.c:129
 msgid "String edges"
