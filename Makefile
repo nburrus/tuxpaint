@@ -542,7 +542,7 @@ trans:
 
 ######
 
-windows_ARCH_INSTALL:=
+windows_ARCH_INSTALL:=install-dlls install-tpconf-i18n
 macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg install-man install-importscript install-bash-completion
 ios_ARCH_INSTALL:=install-iosbundle install-man install-importscript install-bash-completion
 linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
@@ -644,8 +644,7 @@ bdist-win32:
 		CONFDIR:=./win32/bdist \
 		COMPLETIONDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
-		MAGIC_PREFIX:=./win32/bdist/plugins \
-		windows_ARCH_INSTALL:=install-dlls install-tpconf-i18n
+		MAGIC_PREFIX:=./win32/bdist/plugins
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean

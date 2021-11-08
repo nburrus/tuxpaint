@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 22:57-0700\n"
+"POT-Creation-Date: 2021-11-07 20:32-0800\n"
 "PO-Revision-Date: 2011-09-14 13:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: Bodo\n"
@@ -121,11 +121,11 @@ msgstr "बेइज!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:177
+#: ../dirwalk.c:188
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:177
+#: ../dirwalk.c:188
 msgid "QX"
 msgstr "QX"
 
@@ -135,50 +135,50 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:202
+#: ../dirwalk.c:213
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:205
+#: ../dirwalk.c:216
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:208
+#: ../dirwalk.c:219
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:211
+#: ../dirwalk.c:222
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:214
+#: ../dirwalk.c:225
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:217
+#: ../dirwalk.c:228
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:221
+#: ../dirwalk.c:232
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:222
+#: ../dirwalk.c:233
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:223
+#: ../dirwalk.c:234
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:224
+#: ../dirwalk.c:235
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
@@ -512,7 +512,7 @@ msgstr "गोदान"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8402
+#: ../tools.h:98 ../tuxpaint.c:8431
 msgid "Open"
 msgstr "खेव"
 
@@ -654,227 +654,227 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "जागोन अब्ला... बेखौ आखिबाय थानि!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2205
+#: ../tuxpaint.c:2234
 msgid "Do you really want to quit?"
 msgstr "नोंथाङा थारैनो नागारनो लुबैयो नामा?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2208
+#: ../tuxpaint.c:2237
 msgid "Yes, I’m done!"
 msgstr "नंगौ, आं मावखांबाय!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2211 ../tuxpaint.c:2238
+#: ../tuxpaint.c:2240 ../tuxpaint.c:2267
 msgid "No, take me back!"
 msgstr "नङा, आंखौ लाफिन!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2215
+#: ../tuxpaint.c:2244
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "नोंथाङा नागारोब्ला नोंथांनि सावगारिआ गोमागोन! बेखौ थिना दोन?"
 
-#: ../tuxpaint.c:2216 ../tuxpaint.c:2221
+#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
 msgid "Yes, save it!"
 msgstr "नंगौ, बेखौ थिना दोन!"
 
-#: ../tuxpaint.c:2217 ../tuxpaint.c:2222
+#: ../tuxpaint.c:2246 ../tuxpaint.c:2251
 msgid "No, don’t bother saving!"
 msgstr "नङा, थिना दोननो जिंगा सिनाङा!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2220
+#: ../tuxpaint.c:2249
 msgid "Save your picture first?"
 msgstr "सिगाङाव नोंथांनि सावगारिखौ थिना दोन?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2225
+#: ../tuxpaint.c:2254
 msgid "Can’t open that picture!"
 msgstr "बै सावगारिखौ खेवनो हाया!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2228 ../tuxpaint.c:2233 ../tuxpaint.c:2242 ../tuxpaint.c:2249
-#: ../tuxpaint.c:2258 ../tuxpaint.c:2263
+#: ../tuxpaint.c:2257 ../tuxpaint.c:2262 ../tuxpaint.c:2271 ../tuxpaint.c:2278
+#: ../tuxpaint.c:2287 ../tuxpaint.c:2292
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2232
+#: ../tuxpaint.c:2261
 msgid "There are no saved files!"
 msgstr "थिना दोनखानाय फाइल गैया!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2236
+#: ../tuxpaint.c:2265
 msgid "Print your picture now?"
 msgstr "नोंथांनि सावगारिखौ दानो साफाय?"
 
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2266
 msgid "Yes, print it!"
 msgstr "नंगौ, बेखौ साफाय!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2241
+#: ../tuxpaint.c:2270
 msgid "Your picture has been printed!"
 msgstr "नोंथांनि सावगारिखौ साफायनाय जाबाय!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2245
+#: ../tuxpaint.c:2274
 msgid "Sorry! Your picture could not be printed!"
 msgstr "निमाहा हो! नोंथांनि सावगारिखौ साफायनो हायाखै!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2248
+#: ../tuxpaint.c:2277
 msgid "You can’t print yet!"
 msgstr "नोंथाङा थेवबो साफायनो हाया!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2252
+#: ../tuxpaint.c:2281
 msgid "Erase this picture?"
 msgstr "बे सावगारिखौ फुगार?"
 
-#: ../tuxpaint.c:2253
+#: ../tuxpaint.c:2282
 msgid "Yes, erase it!"
 msgstr "नंगौ, बेखौ फुगार!"
 
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2283
 msgid "No, don’t erase it!"
 msgstr "नङा, बेखौ फुगारनो नाङा!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2257
+#: ../tuxpaint.c:2286
 msgid "Remember to use the left mouse button!"
 msgstr "आगसि माउस बुथामखौ बाहायनो गोसोखां!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2290
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "नोंथांनि सावगारिखौ साफायनाय जाबाय!"
 
-#: ../tuxpaint.c:2262
+#: ../tuxpaint.c:2291
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "नोंथांनि सावगारिखौ साफायनाय जाबाय!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2295
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "निमाहा हो! नोंथांनि सावगारिखौ साफायनो हायाखै!"
 
-#: ../tuxpaint.c:2267
+#: ../tuxpaint.c:2296
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "निमाहा हो! नोंथांनि सावगारिखौ साफायनो हायाखै!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2271
+#: ../tuxpaint.c:2300
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "नोंथाङा लुबैनाय सावगारिखौ बासिख, बेनि उनाव “दाम” खौ क्लिक खालाम"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2483
+#: ../tuxpaint.c:2512
 msgid "Sound muted."
 msgstr "आवाजगैयै खालामदों"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2488
+#: ../tuxpaint.c:2517
 msgid "Sound unmuted."
 msgstr "आवाजगोनां खालामदों"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3267
+#: ../tuxpaint.c:3296
 msgid "Please wait…"
 msgstr "अननानै नेथ'..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8405
+#: ../tuxpaint.c:8434
 msgid "Erase"
 msgstr "फुगार"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8408
+#: ../tuxpaint.c:8437
 msgid "Slides"
 msgstr "स्लाइडफोर"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8411
+#: ../tuxpaint.c:8440
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8414
+#: ../tuxpaint.c:8443
 msgid "Back"
 msgstr "उनथिं"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8417
+#: ../tuxpaint.c:8446
 msgid "Play"
 msgstr "दाम"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8420
+#: ../tuxpaint.c:8449
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8423
+#: ../tuxpaint.c:8452
 msgid "Next"
 msgstr "उननि"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9231
+#: ../tuxpaint.c:9260
 msgid "Aa"
 msgstr "औ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12891
+#: ../tuxpaint.c:12920
 msgid "Yes"
 msgstr "नंगौ"
 
-#: ../tuxpaint.c:12895
+#: ../tuxpaint.c:12924
 msgid "No"
 msgstr "नङा"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14041
+#: ../tuxpaint.c:14070
 msgid "Replace the picture with your changes?"
 msgstr "सावगारिखौ नोंथांनि सोलायनायफोरजों सोलायना फजफिन?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14045
+#: ../tuxpaint.c:14074
 msgid "Yes, replace the old one!"
 msgstr "नगौ, गोजामखौ सोलायना फजफिन!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14049
+#: ../tuxpaint.c:14078
 msgid "No, save a new file!"
 msgstr "नङै, गोदान फाइलखौ थिना दोन!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15312
+#: ../tuxpaint.c:15342
 msgid "Choose the picture you want, then click “Open”."
 msgstr "नोंथाङा लुबैनाय सावगारिखौ बासिख, बेनि उनाव “खेव” खौ क्लिक खालाम"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16738
+#: ../tuxpaint.c:16768
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24489
+#: ../tuxpaint.c:24545
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24501
+#: ../tuxpaint.c:24557
 msgid "Pick a color."
 msgstr "मोनसे गाब ला।"
 
@@ -1257,8 +1257,10 @@ msgid "Lightning"
 msgstr "गोजों खालाम"
 
 #: ../../magic/src/lightning.c:88
-msgid "Click, drag, and release to a lightning bolt between two points."
-msgstr ""
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click, drag, and release to draw a lightning bolt between two points."
+msgstr "नोंथांनि सावगारिआव सोरांनि रोदा आखिनो क्लिक खालाम आरो बोबो।"
 
 #: ../../magic/src/metalpaint.c:99
 msgid "Metal Paint"
@@ -1506,6 +1508,19 @@ msgid ""
 msgstr ""
 "नोंथाङा नोंथांनि जायख्लंखौ जागायनो लुबैनाय जायगायाव क्लिक खालाम, नोंथाङा फोजोबनो "
 "लुबैनाय जायगायाव बोबो आरो बेनि उनाव मोनसे जायख्लं आखिनो थाखाय थांहो।"
+
+#: ../../magic/src/reflection.c:110
+msgid "Reflection"
+msgstr ""
+
+#: ../../magic/src/reflection.c:120
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse to add a mosaic effect to parts of your picture."
+msgid "Click and drag the mouse around to add a reflection to your picture."
+msgstr ""
+"नोंथांनि सावगारिनि बाहागोआव मजेक गोहोम दाजाबदेरनो थाखाय माउसखौ क्लिक खालाम आरो "
+"लोरिहो।"
 
 #: ../../magic/src/ripples.c:103
 msgid "Ripples"

@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: 2021.10.28
+  Last modified: 2021.11.08
 */
 
 #include <stdio.h>
@@ -315,7 +315,9 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         {
           if (!strcmp(ttffilename, problemFonts[i++]))
             {
+#ifdef DEBUG
               fprintf(stderr, "Notice: Skipping problematic font: \"%s\"\n", ttffilename);
+#endif
               return NULL;        /* bail on known problematic fonts that cause TTF_OpenFont to crash */
             }
         }
@@ -325,7 +327,9 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
         {
           if (strstr(ttffilename, problemFontExtensions[i++]))
             {
+#ifdef DEBUG
               fprintf(stderr, "Notice: Skipping font with problematic extension: \"%s\"\n", ttffilename);
+#endif
               return NULL;        /* bail on known problematic font types that cause TTF_OpenFont to crash */
             }
         }

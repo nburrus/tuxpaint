@@ -40,7 +40,8 @@ make PREFIX=%{_prefix} DOC_PREFIX=%{_docdir}/tuxpaint/en linux_ARCH_CFLAGS=-I/us
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make ARCH_INSTALL="" PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT \
+make ARCH_INSTALL="install-man install-importscript install-bash-completion" \
+     PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT \
      DOC_PREFIX=$RPM_BUILD_ROOT%{_docdir}/tuxpaint \
      DEVDOC_PREFIX=$RPM_BUILD_ROOT%{_docdir}/tuxpaint/devel \
      install

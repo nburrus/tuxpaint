@@ -3,7 +3,7 @@
    Draws a lightning strike between the click
    and drag+release positions.
 
-   Last modified: 2021.10.24
+   Last modified: 2021.11.07
 */
 
 #include <stdio.h>
@@ -85,7 +85,7 @@ int lightning_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UN
 
 char *lightning_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext("Click, drag, and release to a lightning bolt between two points."));
+  return strdup(gettext("Click, drag, and release to draw a lightning bolt between two points."));
 }
 
 int lightning_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

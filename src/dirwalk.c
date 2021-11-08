@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: 2021.10.28
+  Last modified: 2021.11.08
 */
 
 #include <stdio.h>
@@ -257,13 +257,17 @@ fflush(stdout);
                 }
               else
                 {
+#ifdef DEBUG
                   fprintf(stderr, "Font is too defective: %s, %s, %s\n", files[i].str, family, style);
+#endif
                 }
               TuxPaint_Font_CloseFont(font);
             }
           else
             {
+#ifdef DEBUG
               fprintf(stderr, "could not open %s\n", files[i].str);
+#endif
             }
         }
       free(files[i].str);
