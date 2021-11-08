@@ -1,6 +1,6 @@
 /* halftone.c
 
-   Last modified: 2021.10.24
+   Last modified: 2021.11.07
 */
 
 
@@ -304,9 +304,9 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
         }
     }
 
-  total_r /= (GRID_SIZE * GRID_SIZE);
-  total_g /= (GRID_SIZE * GRID_SIZE);
-  total_b /= (GRID_SIZE * GRID_SIZE);
+  total_r /= px_cnt;
+  total_g /= px_cnt;
+  total_b /= px_cnt;
 
 
   /* Convert the average color from RGB to CMYK values, for 'painting' later */
@@ -341,9 +341,9 @@ void halftone_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
                      (since the target is RGB, we use `min()`) */
                   SDL_GetRGB(api->getpixel(square, sqx, sqy), square->format, &or, &og, &ob);
                   pixel = SDL_MapRGB(square->format,
-                    min((Uint8) (r * 1.2), or),
-                    min((Uint8) (g * 1.2), og),
-                    min((Uint8) (b * 1.2), ob)
+                    min((Uint8) (r * 2.0), or),
+                    min((Uint8) (g * 2.0), og),
+                    min((Uint8) (b * 2.0), ob)
                   );
                   api->putpixel(square, sqx, sqy, pixel);
                 }
