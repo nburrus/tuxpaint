@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-07 20:32-0800\n"
-"PO-Revision-Date: 2021-10-24 12:36+0200\n"
+"PO-Revision-Date: 2021-11-08 20:32+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -225,7 +225,6 @@ msgid "Solid"
 msgstr "Sòlid"
 
 #: ../fill_tools.h:51
-#, fuzzy
 msgid "Brush"
 msgstr "Pinzell"
 
@@ -646,12 +645,11 @@ msgid "Let go of the button to complete the line."
 msgstr "Deixeu anar el botó per acabar la línia."
 
 #: ../tools.h:167
-#, fuzzy, c-format
-#| msgid "Let go of the button to complete the line."
+#, c-format
 msgid ""
 "Let go of the button to complete the line. (Your line's angle is %.0f "
 "degrees.)"
-msgstr "Deixeu anar el botó per acabar la línia."
+msgstr "Deixeu anar el botó per acabar la línia. (l'angle de la línia és de %.0f graus.)"
 
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:170
@@ -664,12 +662,11 @@ msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
 
 #: ../tools.h:174
-#, fuzzy, c-format
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
+#, c-format
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
+msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la. (Està girada %d graus.)"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
@@ -947,10 +944,8 @@ msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Feu clic i arrossegueu el ratolí per fer-ne quadrets de la imatge."
 
 #: ../../magic/src/blocks_chalk_drip.c:158
-#, fuzzy
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture blocky."
-msgstr "Feu clic per afilar el dibuix."
+msgstr "Feu clic per fer-ne quadrets del dibuix."
 
 #: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
@@ -960,13 +955,8 @@ msgstr ""
 "amb guix."
 
 #: ../../magic/src/blocks_chalk_drip.c:169
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a chalk drawing."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per convertir la imatge en un dibuix fet "
-"amb guix."
+msgstr "Feu clic per convertir la imatge en un dibuix fet amb guix."
 
 #: ../../magic/src/blocks_chalk_drip.c:174
 msgid "Click and drag the mouse around to make the picture drip."
@@ -1015,13 +1005,8 @@ msgstr ""
 "Feu clic i arrossegueu el ratolí per convertir la imatge a colors sòlids."
 
 #: ../../magic/src/cartoon.c:125
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a cartoon."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per convertir la imatge en un dibuix fet "
-"amb guix."
+msgstr "Feu clic per convertir la imatge a colors sòlids."
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
@@ -1241,8 +1226,6 @@ msgid "Lightning"
 msgstr "Llamp"
 
 #: ../../magic/src/lightning.c:88
-#, fuzzy
-#| msgid "Click, drag, and release to a lightning bolt between two points."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "Feu clic i arrossegueu per dibuixar un llamp."
 
@@ -1471,16 +1454,11 @@ msgstr ""
 
 #: ../../magic/src/reflection.c:110
 msgid "Reflection"
-msgstr ""
+msgstr "Reflexió"
 
 #: ../../magic/src/reflection.c:120
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgid "Click and drag the mouse around to add a reflection to your picture."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per afegir un efecte de mosaic a parts del "
-"dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per reflectir una part del dibuix."
 
 #: ../../magic/src/ripples.c:103
 msgid "Ripples"
