@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-07 20:32-0800\n"
-"PO-Revision-Date: 2021-11-08 20:32+0100\n"
+"PO-Revision-Date: 2021-11-08 23:18+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -649,7 +649,7 @@ msgstr "Deixeu anar el botó per acabar la línia."
 msgid ""
 "Let go of the button to complete the line. (Your line's angle is %.0f "
 "degrees.)"
-msgstr "Deixeu anar el botó per acabar la línia. (l'angle de la línia és de %.0f graus.)"
+msgstr "Deixeu anar el botó per acabar la línia. (l'angle en graus de la línia és %.0f.)"
 
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:170
@@ -666,7 +666,7 @@ msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la. (Està girada %d graus.)"
+msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la. (Angle en graus %d.)"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
