@@ -192,6 +192,11 @@ $Id$
       (e.g., when returning from the "Open" dialog).
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/186/)
 
+    * Attempt to void crashing (by blowing up the stack) when doing
+      a flood-fill of a complicated shape on a large canvas
+      (e.g., `tuxpaint --3000x2000` with `starters/mosaic.svg`).
+      (h/t Yang for reporting, and Pere for confirming)
+
   * Ports & Building
     ----------------
     * Fix compilation error on Linux with HOST environment variable set.
