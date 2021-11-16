@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 8, 2021
+  June 14, 2002 - November 15, 2021
 */
 
 #include "platform.h"
@@ -5993,7 +5993,7 @@ static void draw_blinking_cursor(void)
  */
 static void brush_draw(int x1, int y1, int x2, int y2, int update)
 {
-  int dx, dy, y, frame_w, w, h;
+  int dx, dy, y, frame_w, w, h, sz;
   int orig_x1, orig_y1, orig_x2, orig_y2, tmp;
   int direction, r;
   float m, b;
@@ -6100,7 +6100,8 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
 
   if (update)
     {
-      update_canvas(orig_x1 - (w >> 1), orig_y1 - (h >> 1), orig_x2 + (w >> 1), orig_y2 + (h >> 1));
+      sz = max(w,h);
+      update_canvas(orig_x1 - sz, orig_y1 - sz, orig_x2 + sz, orig_y2 + sz);
     }
 }
 
