@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 16, 2021
+  Last updated: November 17, 2021
   $Id$
 */
 
@@ -60,12 +60,101 @@
 #define WIDE_MATCH_THRESHOLD 3
 
 
+// #define USE_QUEUE
+
+#ifdef USE_QUEUE
+
+/* Queue for span filling
+   (https://en.wikipedia.org/wiki/Flood_fill#Span_Filling)
+*/
+
+#define QUEUE_SIZE_CHUNK 1024
+
+typedef struct queue_s {
+  int x1, x2, y, yd;
+} queue_t;
+
+queue_t * queue = NULL;
+int queue_size = 0, queue_start = 0, queue_end = 0;
+
+#endif
+
 /* Local function prototypes: */
 
 double colors_close(SDL_Surface * canvas, Uint32 c1, Uint32 c2);
 Uint32 blend(SDL_Surface * canvas, Uint32 draw_colr, Uint32 old_colr, double pct);
 void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * x1, int * y1, int * x2, int * y2, Uint8 * touched, int y_outside);
 void draw_brush_fill_single(SDL_Surface * canvas, int x, int y, Uint32 draw_color, Uint8 * touched);
+#ifdef USE_QUEUE
+void init_queue(void);
+void add_to_queue(int x1, int x2, int y, int yd);
+int remove_from_queue(int * x1, int * x2, int * y, int * yd);
+void cleanup_queue(void);
+#endif
+
+#ifdef USE_QUEUE
+void init_queue(void) {
+  queue_size = 0;
+  queue_start = 0;
+  queue_end = 0;
+
+  queue = (queue_t *) realloc(queue, sizeof(queue_t) * QUEUE_SIZE_CHUNK);
+  if (queue == NULL)
+    {
+      fprintf(stderr, "Fill queue cannot be malloc()'d\n");
+      return;
+    }
+
+  queue_size = QUEUE_SIZE_CHUNK;
+}
+
+void add_to_queue(int x1, int x2, int y, int yd) {
+  /* Reallocate if we need more space */
+  if (queue_end + 1 > queue_size)
+    {
+      queue_t * tmp;
+      tmp = (queue_t *) realloc(queue, sizeof(queue_t) * (queue_size + QUEUE_SIZE_CHUNK));
+      if (tmp == NULL)
+        {
+          fprintf(stderr, "Fill queue cannot be realloc()'d\n");
+          return;
+        }
+      queue_size += QUEUE_SIZE_CHUNK;
+      queue = tmp;
+    }
+
+  queue[queue_end].x1 = x1;
+  queue[queue_end].x2 = x2;
+  queue[queue_end].y = y;
+  queue[queue_end].yd = yd;
+
+  queue_end++;
+}
+
+int remove_from_queue(int * x1, int * x2, int * y, int * yd) {
+  if (queue_start == queue_end)
+    return 0;
+
+  *x1 = queue[queue_start].x1;
+  *x2 = queue[queue_start].x2;
+  *y = queue[queue_start].y;
+  *yd = queue[queue_start].yd;
+
+  queue_start++;
+
+  return 1;
+}
+
+void cleanup_queue(void) {
+  if (queue != NULL)
+    free(queue);
+
+  queue_size = 0;
+  queue_start = 0;
+  queue_end = 0;
+}
+
+#endif
 
 
 /* Returns how similar colors 'c1' and 'c2' are */
