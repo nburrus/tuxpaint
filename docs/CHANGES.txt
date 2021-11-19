@@ -8,7 +8,7 @@ http://www.tuxpaint.org/
 
 $Id$
 
-2021.November.16 (0.9.27)
+2021.November.19 (0.9.27)
   * New Magic Tools:
     ----------------
     * "Lightning" - Draws a bolt of lightning striking between
@@ -24,6 +24,9 @@ $Id$
       2x2 image, repeating the original.  (Repeat for "compound eye"
       style effects!)
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/204/)
+
+    * "Reflection" - Create a reflection of part of the image,
+      below (as in a lake reflection), above, to the left, or to the right.
 
     * "Smooth Rainbow" - A smooth, gradient variation of the classic
       "Rainbow" Magic tool.
