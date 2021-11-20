@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 17, 2021
+  Last updated: November 20, 2021
   $Id$
 */
 
@@ -92,6 +92,7 @@ void add_to_queue(int x1, int x2, int y, int yd);
 int remove_from_queue(int * x1, int * x2, int * y, int * yd);
 void cleanup_queue(void);
 void track_extents_and_progbar(int x, int y, int * extent_x1, int * extent_y1, int * extent_x2, int * extent_y2, SDL_Surface * screen, SDL_Surface * canvas);
+double Inside(SDL_Surface * last, SDL_Surface * canvas, Uint32 old_colr, int x, int y, int * outside, double * in_line, Uint32 * px_colr);
 #endif
 
 #ifdef USE_QUEUE
@@ -242,9 +243,24 @@ Uint32 blend(SDL_Surface * canvas, Uint32 draw_colr, Uint32 old_colr, double pct
   return SDL_MapRGB(canvas->format, new_r, new_g, new_b);
 }
 
+#ifdef USE_QUEUE
+double Inside(SDL_Surface * last, SDL_Surface * canvas, Uint32 old_colr, int x, int y, int * outside, double * in_line, Uint32 * px_colr) {
+  *px_colr = getpixels[last->format->BytesPerPixel] (last, x, y);
+  *in_line = colors_close(canvas, *px_colr, old_colr);
+
+  if (*in_line < COLOR_MATCH_WIDE && *outside < WIDE_MATCH_THRESHOLD) {
+    *outside = (*outside + 1);
+    return(1);
+  }
+  return(0);
+}
+#endif
+
 void simulate_flood_fill(SDL_Surface * screen, SDL_Surface * last, SDL_Surface * canvas, int x, int y, Uint32 cur_colr, Uint32 old_colr, int * extent_x1, int * extent_y1, int * extent_x2, int * extent_y2, Uint8 * touched) {
 #ifdef USE_QUEUE
-  int x1, x2, dy;
+  int x1, x2, dy, outside;
+  double in_line;
+  Uint32 px_colr;
 
   /* "Same" color?  No need to fill */
   if (!would_flood_fill(canvas, cur_colr, old_colr))
@@ -266,13 +282,15 @@ void simulate_flood_fill(SDL_Surface * screen, SDL_Surface * last, SDL_Surface *
   /* Do the work (possibly queuing more, as we go) */
   while (remove_from_queue(&x1, &x2, &y, &dy))
     {
+      printf("From queue: (%d -> %d, %d) %d\n", x1, x2, y, dy);
       x = x1;
 
-      if (Inside(x, y))
+      outside = 0;
+      if (Inside(last, canvas, old_colr, x, y, &outside, &in_line, &px_colr))
         {
-          while (Inside(x - 1, y))
+          while (Inside(last, canvas, old_colr, x - 1, y, &outside, &in_line, &px_colr))
             {
-              Set(x - 1, y);
+              putpixels[canvas->format->BytesPerPixel] (canvas, x - 1, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
               track_extents_and_progbar(x - 1, y, extent_x1, extent_y1, extent_x2, extent_y2, screen, canvas);
 
               x = x - 1;
@@ -282,9 +300,10 @@ void simulate_flood_fill(SDL_Surface * screen, SDL_Surface * last, SDL_Surface *
       if (x < x1)
         add_to_queue(x, x1 - 1, y - dy, -dy);
 
+      outside = 0;
       while (x1 < x2)
         {
-          Set(x1, y);
+          putpixels[canvas->format->BytesPerPixel] (canvas, x1, y, blend(canvas, cur_colr, px_colr, (1.0 - in_line)));
           track_extents_and_progbar(x1, y, extent_x1, extent_y1, extent_x2, extent_y2, screen, canvas);
 
           x1 = x1 + 1;
@@ -295,7 +314,8 @@ void simulate_flood_fill(SDL_Surface * screen, SDL_Surface * last, SDL_Surface *
       if (x1 - 1 > x2)
         add_to_queue(x2 + 1, x1 - 1, y - dy, -dy);
 
-      while (x1 < x2 && !Inside(x1, y))
+      outside = 0;
+      while (x1 < x2 && !Inside(last, canvas, old_colr, x1, y, &outside, &in_line, &px_colr))
         x1++;
 
       x = x1;
