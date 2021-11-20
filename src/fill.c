@@ -60,6 +60,7 @@
 #define WIDE_MATCH_THRESHOLD 3
 
 // #define DEBUG
+// #define DEBUG_WATCH
 
 #define QUEUE_SIZE_CHUNK 1024
 
@@ -68,7 +69,7 @@ typedef struct queue_s {
 } queue_t;
 
 queue_t * queue;
-int queue_size = 0, queue_start = 0, queue_end = 0;
+int queue_size = 0, queue_end = 0;
 
 /* Local function prototypes: */
 
@@ -90,7 +91,6 @@ void cleanup_queue(void);
 
 void init_queue(void) {
   queue_size = 0;
-  queue_start = 0;
   queue_end = 0;
 
   queue = (queue_t *) malloc(sizeof(queue_t) * QUEUE_SIZE_CHUNK);
@@ -138,19 +138,19 @@ void add_to_queue(int x, int y, int y_outside) {
 }
 
 int remove_from_queue(int * x, int * y, int * y_outside) {
-  if (queue_start == queue_end)
+  if (queue_end == 0)
     return 0;
 
-  *x = queue[queue_start].x;
-  *y = queue[queue_start].y;
-  *y_outside = queue[queue_start].y_outside;
+  queue_end--;
 
-  queue_start++;
+  *x = queue[queue_end].x;
+  *y = queue[queue_end].y;
+  *y_outside = queue[queue_end].y_outside;
 
 #ifdef DEBUG
-  if (queue_start % 100 == 0)
+  if (queue_end % 100 == 0)
     {
-      printf("queue_start = %d\n", queue_start);
+      printf("queue_end = %d\n", queue_end);
       fflush(stdout);
     }
 #endif
@@ -162,8 +162,11 @@ void cleanup_queue(void) {
   if (queue != NULL)
     free(queue);
 
+#ifdef DEBUG
+  printf("Final size was %d\n", queue_size);
+#endif
+
   queue_size = 0;
-  queue_start = 0;
   queue_end = 0;
 }
 
@@ -308,7 +311,7 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen, SDL_Texture * textu
   if ((global_prog_anim % 800) == 1) /* Always lay sound _once_ */
     playsound(global_canvas, 1, SND_FILL, 1, x, SNDDIST_NEAR);
 
-#ifdef DEBUG
+#ifdef DEBUG_WATCH
   if (global_prog_anim % 100 == 0)
     {
       SDL_BlitSurface(global_canvas, NULL, global_screen, NULL);
