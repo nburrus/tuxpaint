@@ -60,6 +60,7 @@
 #define WIDE_MATCH_THRESHOLD 3
 
 // #define DEBUG
+// #define DEBUG_WATCH
 
 #define QUEUE_SIZE_CHUNK 1024
 
@@ -161,6 +162,10 @@ int remove_from_queue(int * x, int * y, int * y_outside) {
 void cleanup_queue(void) {
   if (queue != NULL)
     free(queue);
+
+#ifdef DEBUG
+  printf("queue_size = %d\n\n", queue_size);
+#endif
 
   queue_size = 0;
   queue_start = 0;
@@ -308,7 +313,7 @@ void simulate_flood_fill_outside_check(int x, int y, int y_outside)
   if ((global_prog_anim % 800) == 1) /* Always lay sound _once_ */
     playsound(global_canvas, 1, SND_FILL, 1, x, SNDDIST_NEAR);
 
-#ifdef DEBUG
+#ifdef DEBUG_WATCH
   if (global_prog_anim % 100 == 0)
     {
       SDL_BlitSurface(global_canvas, NULL, global_screen, NULL);
