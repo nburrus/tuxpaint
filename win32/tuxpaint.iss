@@ -140,6 +140,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "{#BdistDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\*.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BdistDir}\tuxpaint.conf"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BdistDir}\data\*"; DestDir: "{app}\data"; Excludes: "CVS"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\docs\*"; DestDir: "{app}\docs"; Excludes: "CVS,Makefile,*~"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BdistDir}\etc\*"; DestDir: "{app}\etc"; Flags: skipifsourcedoesntexist ignoreversion recursesubdirs createallsubdirs
