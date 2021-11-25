@@ -55,7 +55,7 @@ PrivilegesRequired=admin
   ArchitecturesInstallIn64BitMode=x64
   ArchitecturesAllowed=x64
 #else
-  ArchitecturesAllowed=x86 x64
+  ArchitecturesAllowed=x86
 #endif
 
 [Languages]
