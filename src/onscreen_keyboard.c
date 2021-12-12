@@ -214,6 +214,18 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
 
   layout = malloc(sizeof(osk_layout));
   layout->name = NULL;
+  layout->rows = NULL;
+  layout->width = 0;
+  layout->height = 0;
+  layout->fontpath = NULL;
+  layout->keys = NULL;
+  layout->keymap = NULL;
+  layout->composemap = NULL;
+  layout->keysymdefs = NULL;
+  layout->sizeofkeysymdefs = 0;
+  layout->bgcolor = def_bgcolor;
+  layout->fgcolor = def_fgcolor;
+  
   hlayout_loaded = 0;
 #ifdef DEBUG
   printf("load_layout %s\n", layout_name);
