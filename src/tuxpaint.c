@@ -6239,7 +6239,8 @@ static void mainloop(void)
       SDL_Delay(10);
     }
   while (!done);
-#ifndef FORKED_FONTS && #defined __ANDROID__
+
+#if defined (__ANDROID__)
   /* Closing Tux Paint before the end of font scanning resulted in crashes in the Android port */
   /* This is an abuse of font_thread_aborted, maybe it is better to use a new, more descriptive marker? */
   if(!font_thread_done)
