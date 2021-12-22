@@ -1192,7 +1192,7 @@ void run_font_scanner(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer 
       *walk++ = '\0';
     }
   reliable_write(font_socket_fd, buf, size);
-  exit(0);
+  _exit(0);
 }
 
 
