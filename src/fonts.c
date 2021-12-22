@@ -1186,7 +1186,7 @@ void run_font_scanner(SDL_Surface * screen, const char *restrict const locale)
       *walk++ = '\0';
     }
   reliable_write(font_socket_fd, buf, size);
-  exit(0);
+  _exit(0);
 }
 
 
