@@ -18376,7 +18376,7 @@ static char *uppercase(const char *restrict const str)
       dest[i] = towupper(dest[i]);
     }
   while (dest[i++]);
-  wcstombs(ustr, dest, n);      /* at most n bytes written */
+  wcstombs(ustr, dest, n * 2);      /* at most n * 2 bytes written */
 
 #ifdef DEBUG
   printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
