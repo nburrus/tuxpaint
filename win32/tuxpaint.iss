@@ -255,6 +255,19 @@ begin
   Result := Path;
 end;
 
+function CmdLineParamExists(const Value: string): Boolean;
+var
+  I: Integer;
+begin
+  Result := False;
+  for I := 1 to ParamCount do
+    if CompareText(ParamStr(I), Value) = 0 then
+    begin
+      Result := True;
+      Exit;
+    end;
+end;
+
 Procedure ForceUninstallPreviousX86Install();
 var
   ResultCode: Integer;
@@ -263,12 +276,18 @@ begin
   begin
     if FileExists('C:\Program Files (x86)\TuxPaint\unins000.exe') then
     begin
-      if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+      if CmdLineParamExists('/VERYSILENT') = False then
       begin
-        Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+        if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+        begin
+          Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+        end
+        else begin
+          Abort;
+        end;
       end
       else begin
-        Abort;
+        Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/VERYSILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
       end;
     end;
   end;
