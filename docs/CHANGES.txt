@@ -20,6 +20,12 @@ $Id$
     * Updated `src/po/check_translations.sh` sanity-checking script
       so it properly finds the updated docs & other changes.
 
+  * Ports & Building
+    ----------------
+    * Windows installer does not show a dialogue to inform uninstallation
+      when "/VERYSILANT" switch is specified.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
 2021.November.25 (0.9.27)
   * New Magic Tools:
     ----------------
