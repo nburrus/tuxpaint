@@ -255,20 +255,71 @@ begin
   Result := Path;
 end;
 
-Procedure ForceUninstallPreviousX86Install();
+function GetInstalledVersionString(): String;
+var
+  InstalledVersionString: String;
+begin
+  InstalledVersionString := '';
+  if not RegQueryStringValue(HKLM, 'SOFTWARE\TuxPaint', 'Version', InstalledVersionString) then
+    if not RegQueryStringValue(HKCU, 'SOFTWARE\TuxPaint', 'Version', InstalledVersionString) then
+      if not RegQueryStringValue(HKLM, 'SOFTWARE\WOW6432Node\TuxPaint', 'Version', InstalledVersionString) then
+        RegQueryStringValue(HKCU, 'SOFTWARE\WOW6432Node\TuxPaint', 'Version', InstalledVersionString);
+  Result := InstalledVersionString;
+end;
+
+function GetUninstallString(): String;
+var
+  UninstallCmdStr: String;
+  UninstallRegStr: String;
+  UninstallRegStrWow6432: String;
+begin
+  UninstallRegStr := 'SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tux Paint_is1';
+  UninstallRegStrWow6432 := 'SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Tux Paint_is1';
+  UninstallCmdStr := '';
+  if not RegQueryStringValue(HKLM, UninstallRegStr, 'UninstallString', UninstallCmdStr) then
+    if not RegQueryStringValue(HKCU, UninstallRegStr, 'UninstallString', UninstallCmdStr) then
+      if not RegQueryStringValue(HKLM, UninstallRegStrWow6432, 'UninstallString', UninstallCmdStr) then
+        RegQueryStringValue(HKCU, UninstallRegStrWow6432, 'UninstallString', UninstallCmdStr);
+  Result := RemoveQuotes(UninstallCmdStr);
+end;
+
+function CmdLineParamExists(const Value: string): Boolean;
+var
+  I: Integer;
+begin
+  Result := False;
+  for I := 1 to ParamCount do
+    if CompareText(ParamStr(I), Value) = 0 then
+    begin
+      Result := True;
+      Exit;
+    end;
+end;
+
+Procedure ForceUninstallOldInstallation();
 var
   ResultCode: Integer;
+  InstalledVersion: String;
+  UninstallCmd: String;
 begin
-  if Is64BitInstallMode then
+  InstalledVersion := GetInstalledVersionString();
+  if InstalledVersion <> '' then
   begin
-    if FileExists('C:\Program Files (x86)\TuxPaint\unins000.exe') then
+    if CompareText(InstalledVersion, '0.9.28') < 0 then
     begin
-      if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+      UninstallCmd := GetUninstallString();
+      if CmdLineParamExists('/VERYSILENT') = False then
       begin
-        Exec('C:\Program Files (x86)\TuxPaint\unins000.exe', '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+        if MsgBox('Old version will be uninstalled automatically.', mbInformation, MB_OKCANCEL) = IDOK then
+        begin
+          Exec(UninstallCmd, '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+        end
+        else begin
+          Abort;
+        end;
       end
       else begin
-        Abort;
+        Exec(UninstallCmd, '/VERYSILENT', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
       end;
     end;
   end;
@@ -562,7 +613,7 @@ end;
 procedure InitializeWizard();
 begin
   begin
-    ForceUninstallPreviousX86Install();
+    ForceUninstallOldInstallation();
     CreateTheWizardPages;  
   end
 end;
