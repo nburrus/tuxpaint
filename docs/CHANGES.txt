@@ -2,13 +2,13 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2021
+Copyright (c) 2002-2022
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 $Id$
 
-2021.December.1 (0.9.28)
+2022.January.11 (0.9.28)
   * Localization Updates:
     ---------------------
     * Albanian translation
@@ -22,8 +22,9 @@ $Id$
 
   * Ports & Building
     ----------------
-    * Windows installer does not show a dialogue to inform uninstallation
-      when "/VERYSILANT" switch is specified.
+    * Windows installer will no nlonger show a dialogue to inform
+      user of uninstallation when "/VERYSILENT" switch is specified
+      (useful for automated installation/uninstallation processes).
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
 2021.November.25 (0.9.27)
