@@ -34,7 +34,7 @@ dylib="$BINARY $LIBS"
 count=0; last=-1
 echo "   * Copying Shared Libraries..."
 while [ $count -ne $last ]; do
-	cp -p `otool -L $dylib | grep '^\t[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/' | sort | uniq` $LIBDIR
+	cp -p `otool -L $dylib | grep '^[[:space:]]*[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/' | sort | uniq` $LIBDIR
 	dylib="$LIBDIR/*"
 
 	last=$count
@@ -48,7 +48,7 @@ echo "     -> Copied" $count "files to $LIBDIR"
 echo "   * Fixing Shared Library References..."
 for i in "$BINARY" $LIBS $LIBDIR/*; do
 	echo "     -> $i..."
-	for j in `otool -L $dylib | grep '^\t[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/'`; do
+	for j in `otool -L $dylib | grep '^[[:space:]]*[/]opt[/]local[/]' | sed -e 's/^[[:space:]]*\([^[:space:]]*\)[[:space:]].*/\1/'`; do
 		n=`echo "$j" | sed 's/^[/]opt[/]local[/]/@executable_path\/..\//'`
 		install_name_tool -change "$j" "$n" "$i"
 	done
@@ -62,7 +62,7 @@ for i in "$BINARY" $LIBS $LIBDIR/*; do
     #
     # https://stackoverflow.com/questions/20206985/xcode-linking-against-applicationservices-framework-with-sdk-10-9-causes-10-7
     #
-    if [ `otool -L "$i" | grep -c '^\t\/System\/Library\/Frameworks\/CoreGraphics\.framework\/Versions\/A\/CoreGraphics'` -gt 0 ]; then
+    if [ `otool -L "$i" | grep -c '^[[:space:]]*\/System\/Library\/Frameworks\/CoreGraphics\.framework\/Versions\/A\/CoreGraphics'` -gt 0 ]; then
         defaultlib="/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
         compatlib="/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
 		install_name_tool -change "$defaultlib" "$compatlib" "$i"
