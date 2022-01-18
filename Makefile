@@ -543,8 +543,8 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=install-dlls install-tpconf-i18n
-macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg install-man install-importscript install-bash-completion
-ios_ARCH_INSTALL:=install-iosbundle install-man install-importscript install-bash-completion
+macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
+ios_ARCH_INSTALL:=install-iosbundle
 linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
