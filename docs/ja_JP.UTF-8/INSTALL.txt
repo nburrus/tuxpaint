@@ -637,11 +637,11 @@ Compiling and Installation
            installed to /opt/local (same as MacPorts) for the library to be
            included in TuxPaint.dmg.
 
+             $ sudo port install rust cargo
              $ git clone https://github.com/ImageOptim/libimagequant.git
-             $ cd libimagequant
-             $ ./configure --prefix=/opt/local
-             $ make
-             $ sudo make install
+             $ cd libimagequant/imagequant-sys
+             $ cargo build --release
+             $ sudo make PREFIX=/opt/local install
 
          WARNING: Having any UNIX-like toolset installed on your Mac besides
          MacPorts and Xcode, such as Fink or Brew, will prevent your app

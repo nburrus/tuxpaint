@@ -797,11 +797,11 @@
             <p>
               <code>libimagequant</code> n'est pas disponible sur MacPorts à cette heure. Il peut être installé sur <code>/opt/local</code> (comme pour MacPorts) pour la bibliothèque devant être incluse dans <code>TuxPaint.dmg</code>.              <blockquote>
                 <code>
+                  $ sudo port install rust cargo<br/>
                   $ git clone https://github.com/ImageOptim/libimagequant.git<br/>
-                  $ cd libimagequant<br/>
-                  $ ./configure --prefix=/opt/local<br/>
-                  $ make<br/>
-                  $ sudo make install
+                  $ cd libimagequant/imagequant-sys<br/>
+                  $ cargo build --release<br/>
+                  $ sudo make PREFIX=/opt/local install
                 </code>
               </blockquote>
             </p>
