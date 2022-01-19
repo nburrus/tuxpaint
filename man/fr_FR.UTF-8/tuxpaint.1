@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.11.25
-.TH TUXPAINT 1 "novembre 25, 2021" "0.9.28" "Tux Paint"
+.\" tuxpaint.1 - 2022.01.18
+.TH TUXPAINT 1 "janvier 18, 2022" "0.9.28" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 
@@ -70,6 +70,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 [\-\-noshapecontrols]
 .br
 [\-\-nolabel]
+.br
+[\-\-nobrushspacing]
 .br
 [\-\-newcolorslast]
 .br
@@ -212,6 +214,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 [\-\-shapecontrols]
 .br
 [\-\-label]
+.br
+[\-\-brushspacing]
 .br
 [\-\-newcolorsfirst]
 .br
@@ -428,6 +432,11 @@ partir d'un coin, là où la souris a cliqué en premier.
 .B \-\-nolabel \-\-label
 Désactive (ou active) l'outil Étiquette, ce qui vous permet de créer un
 texte qui peut être modifié ou déplacé plus tard.
+
+.TP 8
+.B \-\-nobrushspacing \-\-brushspacing
+Disable or enable (default) the brush spacing option of the Paint and Lines
+tools, which allows you to override the default spacing of a brush.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l

@@ -454,6 +454,21 @@ Simplification
                  "nolabel=no" or "label=yes". In both cases, may be
                  overridden by the command-line option "--label".
 
+         nobrushspacing=yes
+
+                 Disables the brush spacing option of the Paint and Lines
+                 tools. The brushes' default spacings will be used.
+
+                 Note: The brush spacing option was added to Tux Paint's user
+                 interface in version 0.9.28. For more information on brush
+                 spacing, see EXTENDING.html
+
+                 Note: If used in a system-wide configuration file, may be
+                 overridden by the user's configuration file using
+                 "nobrushspacing=no" or "brushspacing=yes". In both cases,
+                 may be overridden by the command-line option
+                 "--brushspacing".
+
      ----------------------------------------------------------------------
 
 Languages

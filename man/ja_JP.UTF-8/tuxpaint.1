@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.11.25
-.TH TUXPAINT 1 "2021年11月25日" "0.9.28" "Tux Paint"
+.\" tuxpaint.1 - 2022.01.18
+.TH TUXPAINT 1 "2022年1月18日" "0.9.28" "Tux Paint"
 .SH NAME
 tuxpaint -- 小さな子供向けのお絵かきプログラム
 
@@ -70,6 +70,8 @@ tuxpaint -- 小さな子供向けのお絵かきプログラム
 [\-\-noshapecontrols]
 .br
 [\-\-nolabel]
+.br
+[\-\-nobrushspacing]
 .br
 [\-\-newcolorslast]
 .br
@@ -212,6 +214,8 @@ tuxpaint -- 小さな子供向けのお絵かきプログラム
 [\-\-shapecontrols]
 .br
 [\-\-label]
+.br
+[\-\-brushspacing]
 .br
 [\-\-newcolorsfirst]
 .br
@@ -418,6 +422,11 @@ initially clicked.
 .B \-\-nolabel \-\-label
 Disable or enable (default) the Label tool, which lets you create text
 which can be altered or moved later.
+
+.TP 8
+.B \-\-nobrushspacing \-\-brushspacing
+Disable or enable (default) the brush spacing option of the Paint and Lines
+tools, which allows you to override the default spacing of a brush.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l
