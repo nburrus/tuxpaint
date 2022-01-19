@@ -5575,6 +5575,8 @@ static void mainloop(void)
                         {
                           /* One of the selectors: */
 
+                          /* FIXME: Also show "cursor_hand" when touching controls (stamp size, brush spacing, etc.!) (See below) -bjk 2022.01.19 */
+
                           which = ((event.button.y - r_ttoolopt.h - img_scroll_up->h) / button_h) * 2 + (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w)) / button_w;
 
                           if (which < num_things)
@@ -5586,6 +5588,8 @@ static void mainloop(void)
                   else
                     {
                       /* No scroll buttons - must be a selector: */
+
+                      /* FIXME: Also show "cursor_hand" when touching controls (stamp size, brush spacing, etc.!) (See above) -bjk 2022.01.19 */
 
                       which = ((event.button.y - r_ttoolopt.h) / button_h) * 2 + (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w)) / button_w;
 
