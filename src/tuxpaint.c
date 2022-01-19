@@ -3667,6 +3667,15 @@ static void mainloop(void)
                             }
                         }
 
+                      else if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                        {
+                          if (!disable_brushspacing)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
+
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
                       num_rows_needed = (num_things + gd_items.cols - 1) / gd_items.cols;
@@ -5061,6 +5070,14 @@ static void mainloop(void)
                               gd_controls.cols = 2;
                             }
                         }
+                      else if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                        {
+                          if (!disable_brushspacing)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
 
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
@@ -5504,6 +5521,7 @@ static void mainloop(void)
                     {
                     }
 
+                  /* This if/if/if block is awful -bjk 2022.01.19 */
 		  int control_rows = 0;
                   if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
 		    control_rows = 3;
@@ -5524,6 +5542,9 @@ static void mainloop(void)
                     }
                   if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
 		    control_rows = 1;
+                  if ((cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES) && !disable_brushspacing)
+		    control_rows = 1;
+
 		  int num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
 
                   if (num_things > num_places)
