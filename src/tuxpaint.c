@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 18, 2022
+  June 14, 2002 - January 19, 2022
 */
 
 #include "platform.h"
@@ -1298,6 +1298,8 @@ static int starter_flipped;
 static int starter_personal;
 static int template_personal;
 static int starter_modified;
+
+static int disable_brushspacing;
 
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static Uint8 *touched;
@@ -7036,6 +7038,7 @@ void show_usage(int exitcode)
           "  [--nomagiccontrols | --magiccontrols]\n"
           "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
+          "  [--nobrushspacing | --brushspacing]\n"
           "  [--newcolorsfirst | --newcolorslast]\n"
           "\n"
           " Languages:\n"
@@ -9076,6 +9079,8 @@ static void draw_brushes(void)
   int i, off_y, max, brush;
   SDL_Rect src, dest;
   int most;
+
+printf("Disable brush spacing: %d\n", disable_brushspacing);
 
   /* Draw the title: */
   draw_image_title(TITLE_BRUSHES, r_ttoolopt);
@@ -23992,6 +23997,7 @@ static void setup_config(char *argv[])
   SETBOOL(all_locale_fonts);
   SETBOOL(autosave_on_quit);
   SETBOOL(disable_label);
+  SETBOOL(disable_brushspacing);
   SETBOOL(disable_magic_controls);
   SETBOOL(disable_shape_controls);
   SETBOOL(disable_print);
