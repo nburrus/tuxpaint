@@ -1897,6 +1897,9 @@ static int brush_counter, brush_frame;
 #define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
+#define BRUSH_SPACING_SIZES 12  /* How many brush spacing options to provide
+                                   (max will represent ~2x the max dimension of the brush;
+                                   min will represent 1 pixel) */
 
 static unsigned cur_color;
 static int cur_tool, cur_brush, old_tool;
@@ -9079,7 +9082,7 @@ static void draw_brushes(void)
   int i, off_y, max, brush;
   SDL_Rect src, dest;
   int most;
-  int sizes, size_at;
+  int frame_w, w, h, size_at;
   float x_per, y_per;
   int xx, yy;
   SDL_Surface *btn, *blnk;
@@ -9196,13 +9199,18 @@ static void draw_brushes(void)
 
   if (!disable_brushspacing)
     {
-      sizes = 12;
-      size_at = 5; /* FIXME  (stamp_data[stamp_group][cur_stamp[stamp_group]]->size - MIN_STAMP_SIZE); */
+      frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
+      w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
+      h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
 
-      x_per = (float)r_ttoolopt.w / sizes;
-      y_per = (float)button_h / sizes;
+      /* Spacing ranges from 0px to "2x the max dimension of the brush"
+         (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
+      size_at = (BRUSH_SPACING_SIZES * brushes_spacing[cur_brush]) / (max(w, h) * 2);
 
-      for (i = 0; i < sizes; i++)
+      x_per = (float)r_ttoolopt.w / BRUSH_SPACING_SIZES;
+      y_per = (float)button_h / BRUSH_SPACING_SIZES;
+
+      for (i = 0; i < BRUSH_SPACING_SIZES; i++)
         {
           xx = ceil(x_per);
           yy = ceil(y_per * i);
