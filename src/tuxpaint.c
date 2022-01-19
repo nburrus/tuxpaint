@@ -9079,14 +9079,21 @@ static void draw_brushes(void)
   int i, off_y, max, brush;
   SDL_Rect src, dest;
   int most;
-
-printf("Disable brush spacing: %d\n", disable_brushspacing);
+  int sizes, size_at;
+  float x_per, y_per;
+  int xx, yy;
+  SDL_Surface *btn, *blnk;
 
   /* Draw the title: */
   draw_image_title(TITLE_BRUSHES, r_ttoolopt);
 
   /* Space for buttons, was 14 */
   most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
+  if (!disable_brushspacing)
+    {
+      /* Make room for spacing controls */
+      most -= 2;
+    }
 
   /* Do we need scrollbars? */
 
@@ -9184,6 +9191,41 @@ printf("Disable brush spacing: %d\n", disable_brushspacing);
               dest.y = ui_btn_y + button_h - img_brush_anim->h;
               SDL_BlitSurface(img_brush_anim, NULL, screen, &dest);
             }
+        }
+    }
+
+  if (!disable_brushspacing)
+    {
+      sizes = 12;
+      size_at = 5; /* FIXME  (stamp_data[stamp_group][cur_stamp[stamp_group]]->size - MIN_STAMP_SIZE); */
+
+      x_per = (float)r_ttoolopt.w / sizes;
+      y_per = (float)button_h / sizes;
+
+      for (i = 0; i < sizes; i++)
+        {
+          xx = ceil(x_per);
+          yy = ceil(y_per * i);
+
+          if (i <= size_at)
+            btn = thumbnail(img_btn_down, xx, yy, 0);
+          else
+            btn = thumbnail(img_btn_up, xx, yy, 0);
+
+          blnk = thumbnail(img_btn_off, xx, button_h - yy, 0);
+
+          /* FIXME: Check for NULL! */
+
+          dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale;
+          SDL_BlitSurface(blnk, NULL, screen, &dest);
+
+          dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale - (y_per * i);
+          SDL_BlitSurface(btn, NULL, screen, &dest);
+
+          SDL_FreeSurface(btn);
+          SDL_FreeSurface(blnk);
         }
     }
 }
