@@ -8,6 +8,12 @@ http://www.tuxpaint.org/
 
 
 2022.January.18 (0.9.28)
+  * Other Improvements:
+    -------------------
+    * Outline for circle-shaped erasers is now also circular.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/244/
+      (h/t Areti Tsolakidou for the suggestion)
+
   * Localization Updates:
     ---------------------
     * Albanian translation

@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2021
+  Copyright (c) 2002-2022
   by various contributors; see AUTHORS.txt
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 15, 2021
+  June 14, 2002 - January 18, 2022
 */
 
 #include "platform.h"
@@ -1996,6 +1996,7 @@ static void render_brush(void);
 static void _xorpixel(SDL_Surface * surf, int x, int y);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
+static void circle_xor(int x, int y, int sz);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
 
@@ -5719,7 +5720,16 @@ static void mainloop(void)
                       eraser_draw(old_x, old_y, new_x, new_y);
 
                       sz = calc_eraser_size(cur_eraser);
-                      rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
+                      if (cur_eraser >= NUM_ERASERS / 2)
+                        {
+                          /* Circle eraser */
+                          circle_xor(new_x, new_y, sz / 2);
+                        }
+                      else
+                        {
+                          /* Square eraser */
+                          rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
+                        }
                     }
                   else if (cur_tool == TOOL_FILL && cur_fill == FILL_GRADIENT_LINEAR && fill_drag_started)
                     {
@@ -5774,7 +5784,6 @@ static void mainloop(void)
 
                   /* Moving: Draw XOR where stamp/eraser will apply: */
 
-
                   if (cur_tool == TOOL_STAMP)
                     {
                       w = active_stamp->w;
@@ -5802,6 +5811,7 @@ static void mainloop(void)
                     {
                       if (cur_tool == TOOL_STAMP)
                         {
+                          /* Stamp */
                           stamp_xor(old_x, old_y);
 
                           update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
@@ -5809,10 +5819,18 @@ static void mainloop(void)
                                         old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
                                         old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
                         }
-
                       else
                         {
-                          rect_xor(old_x - w / 2, old_y - h / 2, old_x + w / 2, old_y + h / 2);
+                          if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
+                            {
+                              /* Circle eraser */
+                              circle_xor(old_x, old_y, calc_eraser_size(cur_eraser) / 2);
+                            }
+                          else
+                            {
+                              /* Otherwise (square eraser) */
+                              rect_xor(old_x - w / 2, old_y - h / 2, old_x + w / 2, old_y + h / 2);
+                            }
 
                           update_screen(old_x - w / 2 + r_canvas.x,
                                         old_y - h / 2 + r_canvas.y,
@@ -5824,6 +5842,7 @@ static void mainloop(void)
                     {
                       if (cur_tool == TOOL_STAMP)
                         {
+                          /* Stamp */
                           stamp_xor(new_x, new_y);
 
                           update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
@@ -5833,13 +5852,23 @@ static void mainloop(void)
                         }
                       else
                         {
-                          rect_xor(new_x - w / 2, new_y - h / 2, new_x + w / 2, new_y + h / 2);
+                          if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
+                            {
+                              /* Circle eraser */
+                              circle_xor(new_x, new_y, calc_eraser_size(cur_eraser) / 2);
+                            }
+                          else
+                            {
+                              /* Otherwise (square eraser) */
+                              rect_xor(new_x - w / 2, new_y - h / 2, new_x + w / 2, new_y + h / 2);
+                            }
 
                           update_screen(new_x - w / 2 + r_canvas.x,
                                         new_y - h / 2 + r_canvas.y,
                                         new_x + w / 2 + r_canvas.x, new_y + h / 2 + r_canvas.y);
                         }
                     }
+
                   if (cur_tool == TOOL_STAMP && HIT(r_toolopt) && event.motion.y > r_toolopt.h
                       && event.motion.state == SDL_PRESSED && stamp_size_selector_clicked)
                     {
@@ -10836,9 +10865,12 @@ static void line_xor(int x1, int y1, int x2, int y2)
 
 
 /**
- * FIXME
+ * Draw a XOR rectangle on the canvas.
+ * @param x1 left edge
+ * @param y1 top edge
+ * @param x2 right edge
+ * @param y2 bottom edge
  */
-/* Draw a XOR rectangle: */
 static void rect_xor(int x1, int y1, int x2, int y2)
 {
   if (x1 < 0)
@@ -10869,6 +10901,33 @@ static void rect_xor(int x1, int y1, int x2, int y2)
   line_xor(x2, y1, x2, y2);
   line_xor(x2, y2, x1, y2);
   line_xor(x1, y2, x1, y1);
+}
+
+
+/**
+ * Draw a XOR circle on the canvas.
+ * @param x center x position
+ * @param y center y position
+ * @param sz size (radius)
+ */
+static void circle_xor(int x, int y, int sz)
+{
+  int xx, yy, sz2;
+
+  /* h/t http://groups.csail.mit.edu/graphics/classes/6.837/F98/Lecture6/circle.html */
+
+  sz2 = sz * sz;
+
+  xorpixel(x, y + sz);
+  xorpixel(x, y - sz);
+
+  for (xx = 1; xx < sz; xx++) {
+    yy = sqrt(sz2 - (xx * xx) + 0.5);
+    xorpixel(x + xx, y + yy);
+    xorpixel(x + xx, y - yy);
+    xorpixel(x - xx, y + yy);
+    xorpixel(x - xx, y - yy);
+  }
 }
 
 
@@ -10967,7 +11026,16 @@ static void do_eraser(int x, int y, int update)
     {
       update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
-      rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+      if (cur_eraser >= NUM_ERASERS / 2)
+        {
+          /* Circle eraser */
+          circle_xor(x, y, sz / 2);
+        }
+      else
+        {
+          /* Square eraser */
+          rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+        }
 
 #ifdef __APPLE__
       /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
