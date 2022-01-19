@@ -15,7 +15,7 @@ http://www.tuxpaint.org/
         disable this feature; Tux Paint will continue using the brushes'
         default spacings.
 
-    * WIP: Many brushes have been given more reasonable default spacing
+    * Many brushes have been given more reasonable default spacing
       settings (e.g., star brush's new default spacing causes
       individual stars to appear, rather than a 'smear').
       Closes https://sourceforge.net/p/tuxpaint/bugs/243/
