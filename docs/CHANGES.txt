@@ -6,9 +6,8 @@ Copyright (c) 2002-2022
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
-$Id$
 
-2022.January.11 (0.9.28)
+2022.January.18 (0.9.28)
   * Localization Updates:
     ---------------------
     * Albanian translation
@@ -20,12 +19,26 @@ $Id$
     * Updated `src/po/check_translations.sh` sanity-checking script
       so it properly finds the updated docs & other changes.
 
-  * Ports & Building
-    ----------------
+  * Bug Fixes:
+    ----------
+    * Fixed abnormal exit of threaded font scan which prevented enabling
+      text/label tools on some environment such as Rocky Linux 8.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  * Ports & Building:
+    -----------------
     * Windows installer will no nlonger show a dialogue to inform
       user of uninstallation when "/VERYSILENT" switch is specified
-      (useful for automated installation/uninstallation processes).
+      (useful for automated installation/uninsta$llation processes).
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Use character class in macOS build script
+      (It appears \t is not compatible with certain versions of grep.)
+      Mark K. Kim <markuskimius@gmail.com>
+
+    * Remove install stages not needed on macOS
+      Mark K. Kim <markuskimius@gmail.com>
+
 
 2021.November.25 (0.9.27)
   * New Magic Tools:
