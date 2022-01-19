@@ -9245,12 +9245,13 @@ static void draw_brushes(void)
 
           /* FIXME: Check for NULL! */
 
+
           dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale;
+          dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
           SDL_BlitSurface(blnk, NULL, screen, &dest);
 
           dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale - (y_per * i);
+          dest.y = (button_h * buttons_tall + r_ttools.h) - (y_per * i);
           SDL_BlitSurface(btn, NULL, screen, &dest);
 
           SDL_FreeSurface(btn);
