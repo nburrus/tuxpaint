@@ -3,11 +3,11 @@
 
   Un sinxelo programa de debuxo para cativos
 
-    Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
+    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
                             http://www.tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             25 de Novembro de 2021
+                             20 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -246,6 +246,25 @@ Ferramentas dispoñíbeis
                  Mentres debuxa, soa un son. Canto maior sexa o pincel, menor
                  será o ton.
 
+                 Espazado do pincel
+
+                   The space between each position where a brush is applied
+                   to the canvas can vary. Some brushes (such as the
+                   footprints and flower) are spaced, by default, far enough
+                   apart that they don't overlap. Other brushes (such as the
+                   basic circular ones) are spaced closely, so they make a
+                   continuous stroke.
+
+                   The default spacing of brushes may be overridden using by
+                   clicking within the triangular-shaped series of bars at
+                   the bottom right; the larger the bar, the wider the
+                   spacing. Brush spacing affects both tools that use the
+                   brushes: the "Paint" tool and the "Lines" tool.
+
+                   (Note: If the "nobrushspacing" option is set, Tux Paint
+                   won't display the brush spacing controls. See the
+                   "Options" documentation.)
+
      ----------------------------------------------------------------------
 
          Ferramenta «Selo» (selos de caucho)
@@ -312,6 +331,11 @@ Ferramentas dispoñíbeis
                  along the line. Others are directional, and will show a
                  different shape depending on the angle of the brush. And
                  finally some are both animated and directional. See "Paint",
+                 above, to learn more.
+
+                 Different brushes have different spacing, leaving either a
+                 series of individual shapes, or a continuous stroke of the
+                 brush shape. Brush spacing may be adjusted. See "Paint",
                  above, to learn more.
 
      ----------------------------------------------------------------------
