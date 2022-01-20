@@ -2,10 +2,10 @@
                                  versión 0.9.28
                           Documentación da instalación
 
-    Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+                             https://tuxpaint.org/
 
-                             17 de Setembro de 2021
+                             20 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 

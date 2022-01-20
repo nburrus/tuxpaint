@@ -4,7 +4,7 @@
   Un programme simple pour les enfants
 
       Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+                             https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
                                 janvier 20, 2022
@@ -1133,7 +1133,7 @@ Importer des images manuellement
        * Contacter les développeurs directement
 
      Pour en savoir plus, visitez la page "Contact" du site officiel de Tux
-     Paint : http://tuxpaint.org/contact/
+     Paint : https://tuxpaint.org/contact/
 
      ----------------------------------------------------------------------
 
@@ -1150,4 +1150,4 @@ Importer des images manuellement
        * Promouvoir ou aider ceux qui utilisent Tux Paint
 
      Pour en savoir plus, visitez la page "Nous aider" du site officiel de
-     Tux Paint : http://tuxpaint.org/help/
+     Tux Paint : https://tuxpaint.org/help/

@@ -2,10 +2,10 @@
                                  versión 0.9.28
                             Documentación de sinais
 
-    Copyright © 2019-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+    Copyright © 2019-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+                             https://tuxpaint.org/
 
-                               9 de Marzo de 2021
+                             20 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 

@@ -4,7 +4,7 @@
   子供向けのシンプルなお絵かきプログラム
 
           Copyright © 2002-2022 by various contributors; "AUTHORS" 参照.
-                            http://www.tuxpaint.org/
+                             https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
                                    2022年1月20日
@@ -743,7 +743,7 @@ Tux Paint の起動
        * 開発者へ直接連絡することもできます
 
      もっとお知りになりたい場合、Tux Paint のウェブサイト の "連絡先" のページ
-     (http://tuxpaint.org/contact/) をごらん下さい
+     (https://tuxpaint.org/contact/) をごらん下さい
 
      ----------------------------------------------------------------------
 
@@ -759,4 +759,4 @@ Tux Paint の起動
        * 宣伝や、他の Tux Paint ユーザーのサポート
 
      もっとお知りになりたい場合、Tux Paint のウェブサイト の "私たちにご協力を" のページ
-     (http://tuxpaint.org/help/) をごらん下さい
+     (https://tuxpaint.org/help/) をごらん下さい

@@ -1,10 +1,10 @@
                                    Tux Paint
                     versión 0.9.28 Preguntas máis frecuentes
 
-    Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+                             https://tuxpaint.org/
 
-                              29 de Agosto de 2021
+                             20 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -181,7 +181,7 @@ Problemas de interface
                 Os tipos de letra axeitados para estas configuracións locais
                 pódense descargar dende o sitio web de Tux Paint:
 
-                  http://www.tuxpaint.org/download/fonts/
+                  https://tuxpaint.org/download/fonts/
 
      ----------------------------------------------------------------------
 
@@ -666,7 +666,7 @@ Axuda / Contacto
    Para elo, pode subscribirse e publicar na nosa lista de correo
    «tuxpaint-users»:
 
-     http://www.tuxpaint.org/lists/
+     https://tuxpaint.org/lists/
 
    Ou ,póñase en contacto directamente co responsábel do desenvolvemento Bill
    Kendrick:

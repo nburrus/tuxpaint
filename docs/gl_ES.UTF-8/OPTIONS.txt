@@ -3,10 +3,10 @@
 
 Documentación de opcións
 
-    Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+                             https://tuxpaint.org/
 
-                              29 de Agosto de 2021
+                             20 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -2028,9 +2028,9 @@ Tipos de letra especiais
 
          /usr/share/tuxpaint/fonts/locale/ko.ttf
 
-       Pode descargar os tipos de letra para os idiomas compatíbeis dende o
-       sitio web de Tux Paint, http://www.tuxpaint.org/.. (Mire na sección
-       «Tipos de letra» en «Descargas»).
+       You can download fonts for supported languages from Tux Paint's
+       website, https://tuxpaint.org/. (Look in the 'Fonts' section under
+       'Download.')
 
        En Unix e Linux, pode usar o Makefile que vén co tipo de letra para
        instalalo no lugar adecuado.

@@ -4,7 +4,7 @@
   Un sinxelo programa de debuxo para cativos
 
     Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+                             https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
                              20 de Xaneiro de 2022
@@ -1080,7 +1080,7 @@ Importar imaxes manualmente
        * Ou póñase en contacto directamente cos desenvolvedores
 
      Para obter máis información, visite a páxina «Contacto» do sitio web
-     oficial de Tux Paint: http://tuxpaint.org/contact/
+     oficial de Tux Paint: https://tuxpaint.org/contact/
 
      ----------------------------------------------------------------------
 
@@ -1097,4 +1097,4 @@ Importar imaxes manualmente
        * Promover ou axudar a outras persoas a usar Tux Paint
 
      Para obter máis información, visite a páxina «Colabora connosco» do
-     sitio web oficial de Tux Paint: http://tuxpaint.org/help/
+     sitio web oficial de Tux Paint: https://tuxpaint.org/help/

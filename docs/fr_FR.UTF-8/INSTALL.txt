@@ -2,10 +2,10 @@
                                  version 0.9.28
                         Documentation sur l'installation
 
-      Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+      Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.
+                             https://tuxpaint.org/
 
-                               septembre 17, 2021
+                                janvier 20, 2022
 
      ----------------------------------------------------------------------
 

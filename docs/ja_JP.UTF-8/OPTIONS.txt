@@ -3,10 +3,10 @@
 
 各種設定について
 
-          Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
-                            http://www.tuxpaint.org/
+          Copyright © 2002-2022 by various contributors; "AUTHORS" 参照.
+                             https://tuxpaint.org/
 
-                                   2021年8月29日
+                                   2022年1月20日
 
      ----------------------------------------------------------------------
 
@@ -1726,8 +1726,9 @@ Windows のユーザー
 
          /usr/share/tuxpaint/fonts/locale/ko.ttf
 
-       サポートされる言語用のフォントファイルは、Tux Paint のウェブサイト http://www.tuxpaint.org/
-       からダウンロードできます。（'ダウンロード' ページの 'フォント' セクションにあります）
+       You can download fonts for supported languages from Tux Paint's
+       website, https://tuxpaint.org/. (Look in the 'Fonts' section under
+       'Download.')
 
        Unix や Linux では、同梱の Makefile を使って、適切な場所にフォントをインストールすることができます。
 

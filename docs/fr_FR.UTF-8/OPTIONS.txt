@@ -3,10 +3,10 @@
 
 Documentation sur les options
 
-      Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+      Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.
+                             https://tuxpaint.org/
 
-                                 août 29, 2021
+                                janvier 20, 2022
 
      ----------------------------------------------------------------------
 
@@ -2109,9 +2109,9 @@ Polices spéciales
 
          /usr/share/tuxpaint/fonts/locale/ko.ttf
 
-       Vous pouvez télécharger des polices pour les langues prises en charge
-       sur le site Web de Tux Paint, http://www.tuxpaint.org/ . (Regardez
-       dans la section "Polices" sous "Télécharger".)
+       You can download fonts for supported languages from Tux Paint's
+       website, https://tuxpaint.org/. (Look in the 'Fonts' section under
+       'Download.')
 
        Sous Unix et Linux, vous pouvez utiliser le Makefile qui est fourni
        avec la police pour installer la police à l'emplacement approprié.
