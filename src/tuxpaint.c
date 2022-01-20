@@ -1898,8 +1898,11 @@ static int brush_counter, brush_frame;
 #define ERASER_MAX 128
 
 #define BRUSH_SPACING_SIZES 12  /* How many brush spacing options to provide
-                                   (max will represent ~2x the max dimension of the brush;
-                                   min will represent 1 pixel) */
+                                   (max will represent BRUSH_SPACING_MAX_MULTIPLIER times the
+                                   max dimension of the brush; min will represent 1 pixel) */
+#define BRUSH_SPACING_MAX_MULTIPLIER 5 /* How far apart (in terms of a multiplier of a 
+                                          brush's dimensions) the max brush spacing setting
+                                          represents */
 
 static unsigned cur_color;
 static int cur_tool, cur_brush, old_tool;
@@ -1988,6 +1991,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error);
 static void draw_toolbar(void);
 static void draw_magic(void);
 static void draw_brushes(void);
+static void draw_brushes_spacing(void);
 static void draw_stamps(void);
 static void draw_shapes(void);
 static void draw_erasers(void);
@@ -3559,6 +3563,7 @@ static void mainloop(void)
                     }
                   else if ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0)
                     {
+                      /* Tool up scroll button */
                       tool_scroll -= gd_tools.cols;
                       playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
@@ -3569,6 +3574,7 @@ static void mainloop(void)
                   else if ((event.button.y > real_r_tools.y + real_r_tools.h)
                            && (tool_scroll < NUM_TOOLS - buttons_tall * gd_tools.cols + gd_tools.cols))
                     {
+                      /* Tool down scroll button */
                       tool_scroll += gd_tools.cols;
                       draw_toolbar();
                       playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
@@ -3611,13 +3617,13 @@ static void mainloop(void)
                         {
                           if (!disable_stamp_controls)
                             {
-                              /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
+                              /* Account for stamp controls and group changing (left/right) buttons */
                               gd_controls.rows = 3;
                               gd_controls.cols = 2;
                             }
                           else
                             {
-                              /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
+                              /* Stamp controls are disabled; account for group changing (left/right) buttons */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3626,6 +3632,7 @@ static void mainloop(void)
                         {
                           if (!disable_stamp_controls)
                             {
+                              /* Account for text controls */
                               gd_controls.rows = 2;
                               gd_controls.cols = 2;
                             }
@@ -3634,11 +3641,13 @@ static void mainloop(void)
                         {
                           if (!disable_stamp_controls)
                             {
+                              /* Account for text controls and label selection button */
                               gd_controls.rows = 3;
                               gd_controls.cols = 2;
                             }
                           else
                             {
+                              /* Text controls disabled; only account for label selection button */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3648,11 +3657,13 @@ static void mainloop(void)
                         {
                           if (!disable_magic_controls)
                             {
+                              /* Account for magic controls and group changing (left/right) buttons */
                               gd_controls.rows = 2;
                               gd_controls.cols = 2;
                             }
                           else
                             {
+                              /* Magic controls are disabled; account for group changing (left/right) buttons */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3662,6 +3673,7 @@ static void mainloop(void)
                         {
                           if (!disable_shape_controls)
                             {
+                              /* Account for shape controls (corner- vs center-based expansion) */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3671,6 +3683,7 @@ static void mainloop(void)
                         {
                           if (!disable_brushspacing)
                             {
+                              /* Account for brush spacing */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3709,10 +3722,12 @@ static void mainloop(void)
 
                       if (HIT(r_items))
                         {
+                          /* A selection button was clicked... */
                           which = GRIDHIT_GD(r_items, gd_items) + *thing_scroll;
 
                           if (which < num_things)
                             {
+                              /* ...and there was something there to click */
                               toolopt_changed = 1;
 #ifndef NOSOUND
                               if (cur_tool != TOOL_STAMP || stamp_data[stamp_group][which]->ssnd == NULL)
@@ -3726,7 +3741,10 @@ static void mainloop(void)
                         }
                       else if (HIT(r_controls))
                         {
+                          /* Controls were clicked */
+
                           which = GRIDHIT_GD(r_controls, gd_controls);
+
                           if (cur_tool == TOOL_STAMP)
                             {
                               /* Stamp controls! */
@@ -3847,6 +3865,8 @@ static void mainloop(void)
                             }
                           else if (cur_tool == TOOL_MAGIC)
                             {
+                              /* Magic controls */
+
                               int grp;
                               int cur;
 
@@ -4035,10 +4055,9 @@ static void mainloop(void)
                                     }
                                 }
                             }
-
-                          /* Label controls! */
                           else if (cur_tool == TOOL_LABEL)
                             {
+                              /* Label controls! */
                               int control_sound = -1;
 
                               if (which & 4)
@@ -4175,12 +4194,42 @@ static void mainloop(void)
                                 }
                               draw_fonts();
                               update_screen_rect(&r_toolopt);
+                            }
+                          else if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                            {
+                              /* Brush spacing */
 
+                              int prev_size, chosen, new_size, frame_w, w, h, control_sound;
+
+                              prev_size = brushes_spacing[cur_brush];
+                              chosen = ((BRUSH_SPACING_SIZES + 1) * (event.button.x - r_ttoolopt.x)) / r_ttoolopt.w;
+
+                              frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
+                              w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
+                              h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
+
+                              /* Spacing ranges from 0px to "N x the max dimension of the brush"
+                                 (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
+                              new_size = (chosen * max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER) / BRUSH_SPACING_SIZES;
+
+                              if (new_size != prev_size)
+                                {
+                                  brushes_spacing[cur_brush] = new_size;
+                                  draw_brushes_spacing();
+                                  update_screen_rect(&r_toolopt);
+
+                                  if (new_size < prev_size)
+                                    control_sound = SND_SHRINK;
+                                  else
+                                    control_sound = SND_GROW;
+
+                                  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+                                }
                             }
                         }
                       else
                         {
-                          /* scroll button */
+                          /* Scroll buttons */
                           int is_upper = event.button.y < r_toolopt.y + button_h / 2;
 
                           if ((is_upper && *thing_scroll > 0)   /* upper arrow */
@@ -9107,10 +9156,6 @@ static void draw_brushes(void)
   int i, off_y, max, brush;
   SDL_Rect src, dest;
   int most;
-  int frame_w, w, h, size_at;
-  float x_per, y_per;
-  int xx, yy;
-  SDL_Surface *btn, *blnk;
 
   /* Draw the title: */
   draw_image_title(TITLE_BRUSHES, r_ttoolopt);
@@ -9223,47 +9268,55 @@ static void draw_brushes(void)
     }
 
   if (!disable_brushspacing)
-    {
-      frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
-      w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
-      h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
-
-      /* Spacing ranges from 0px to "2x the max dimension of the brush"
-         (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
-      size_at = (BRUSH_SPACING_SIZES * brushes_spacing[cur_brush]) / (max(w, h) * 2);
-
-      x_per = (float)r_ttoolopt.w / BRUSH_SPACING_SIZES;
-      y_per = (float)button_h / BRUSH_SPACING_SIZES;
-
-      for (i = 0; i < BRUSH_SPACING_SIZES; i++)
-        {
-          xx = ceil(x_per);
-          yy = ceil(y_per * i);
-
-          if (i <= size_at)
-            btn = thumbnail(img_btn_down, xx, yy, 0);
-          else
-            btn = thumbnail(img_btn_up, xx, yy, 0);
-
-          blnk = thumbnail(img_btn_off, xx, button_h - yy, 0);
-
-          /* FIXME: Check for NULL! */
-
-
-          dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
-          SDL_BlitSurface(blnk, NULL, screen, &dest);
-
-          dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
-          dest.y = (button_h * buttons_tall + r_ttools.h) - (y_per * i);
-          SDL_BlitSurface(btn, NULL, screen, &dest);
-
-          SDL_FreeSurface(btn);
-          SDL_FreeSurface(blnk);
-        }
-    }
+    draw_brushes_spacing();
 }
 
+static void draw_brushes_spacing(void)
+{
+  int i, frame_w, w, h, size_at;
+  float x_per, y_per;
+  int xx, yy;
+  SDL_Surface *btn, *blnk;
+  SDL_Rect dest;
+
+  frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
+  w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
+  h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
+
+  /* Spacing ranges from 0px to "N x the max dimension of the brush"
+     (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
+  size_at = (BRUSH_SPACING_SIZES * brushes_spacing[cur_brush]) / (max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER);
+
+  x_per = (float)r_ttoolopt.w / BRUSH_SPACING_SIZES;
+  y_per = (float)button_h / BRUSH_SPACING_SIZES;
+
+  for (i = 0; i < BRUSH_SPACING_SIZES; i++)
+    {
+      xx = ceil(x_per);
+      yy = ceil(y_per * i);
+
+      if (i <= size_at)
+        btn = thumbnail(img_btn_down, xx, yy, 0);
+      else
+        btn = thumbnail(img_btn_up, xx, yy, 0);
+
+      blnk = thumbnail(img_btn_off, xx, button_h - yy, 0);
+
+      /* FIXME: Check for NULL! */
+
+
+      dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+      dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+      SDL_BlitSurface(blnk, NULL, screen, &dest);
+
+      dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+      dest.y = (button_h * buttons_tall + r_ttools.h) - (y_per * i);
+      SDL_BlitSurface(btn, NULL, screen, &dest);
+
+      SDL_FreeSurface(btn);
+      SDL_FreeSurface(blnk);
+    }
+}
 
 /**
  * FIXME

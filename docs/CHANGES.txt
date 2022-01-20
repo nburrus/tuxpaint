@@ -7,10 +7,10 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.January.18 (0.9.28)
+2022.January.20 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
-    * WIP: Brush spacing may now be altered within Tux Paint.
+    * Brush spacing may now be altered within Tux Paint.
       + Note: A "nobrushspacing" simplifcation option is provided to
         disable this feature; Tux Paint will continue using the brushes'
         default spacings.
