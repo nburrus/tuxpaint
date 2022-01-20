@@ -3,10 +3,10 @@
 
 Options Documentation
 
-          Copyright © 2002-2021 by various contributors; see AUTHORS.
-                            http://www.tuxpaint.org/
+          Copyright © 2002-2022 by various contributors; see AUTHORS.
+                             https://tuxpaint.org/
 
-                                August 29, 2021
+                                January 20, 2022
 
      ----------------------------------------------------------------------
 
@@ -453,6 +453,21 @@ Simplification
                  overridden by the user's configuration file using
                  "nolabel=no" or "label=yes". In both cases, may be
                  overridden by the command-line option "--label".
+
+         nobrushspacing=yes
+
+                 Disables the brush spacing option of the Paint and Lines
+                 tools. The brushes' default spacings will be used.
+
+                 Note: The brush spacing option was added to Tux Paint's user
+                 interface in version 0.9.28. For more information on brush
+                 spacing, see EXTENDING.html
+
+                 Note: If used in a system-wide configuration file, may be
+                 overridden by the user's configuration file using
+                 "nobrushspacing=no" or "brushspacing=yes". In both cases,
+                 may be overridden by the command-line option
+                 "--brushspacing".
 
      ----------------------------------------------------------------------
 
@@ -1960,7 +1975,7 @@ Special Fonts
          /usr/share/tuxpaint/fonts/locale/ko.ttf
 
        You can download fonts for supported languages from Tux Paint's
-       website, http://www.tuxpaint.org/. (Look in the 'Fonts' section under
+       website, https://tuxpaint.org/. (Look in the 'Fonts' section under
        'Download.')
 
        Under Unix and Linux, you can use the Makefile that comes with the

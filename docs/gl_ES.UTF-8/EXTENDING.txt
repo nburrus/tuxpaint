@@ -2,10 +2,10 @@
                                    Tux Paint
                                  versión 0.9.28
 
-    Copyright © 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).
-                            http://www.tuxpaint.org/
+    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+                             https://tuxpaint.org/
 
-                             19 de Setembro de 2021
+                             20 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -699,8 +699,8 @@ Traducións
      Tux Paint («tuxpaint.pot»), xa que se engade n novos textos e o texto
      antigo cambia ocasionalmente. O catálogo de texto para a próxima versión
      inédita de Tux Paint pódese atopar no repositorio Git de Tux Paint (ver:
-     http://www.tuxpaint.org/download/source/git/) e no sitio web de Tux
-     Paint en http://www.tuxpaint.org/help/po/.
+     https://tuxpaint.org/download/source/git/) e no sitio web de Tux Paint
+     en https://tuxpaint.org/help/po/.
 
      Para editar unha tradución existente, descargue o último ficheiro «.po»
      para ese idioma e edíteo como se describe anteriormente.
@@ -708,7 +708,7 @@ Traducións
      Pode enviar ficheiros de tradución novos ou editados a Bill Kendrick,
      responsábel do desenvolvemento de Tux Paint, a:
      bill@newbreedsoftware.com, ou publicalos na lista de correo
-     «tuxpaint-i18n» (vexa: http://www.tuxpaint.org/lists/).
+     «tuxpaint-i18n» (vexa: https://tuxpaint.org/lists/).
 
      Como alternativa, se te unha conta con SourceForge.net, pode solicitar
      que o engadan ao proxecto «tuxpaint» e recibir acceso de escritura ao

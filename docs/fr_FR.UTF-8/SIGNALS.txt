@@ -2,10 +2,10 @@
                                  version 0.9.28
                          Documentation sur les signaux
 
-      Copyright &copie; 2019-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+      Copyright &copie; 2019-2022 par divers contributeurs; voir AUTHORS.
+                             https://tuxpaint.org/
 
-                                  mars 9, 2021
+                                janvier 20, 2022
 
      ----------------------------------------------------------------------
 

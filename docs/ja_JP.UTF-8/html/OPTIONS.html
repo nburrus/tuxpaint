@@ -20,12 +20,12 @@
         各種設定について      </h2>
 
       <p>
-        Copyright &copy; 2002-2021 by various contributors; "AUTHORS" 参照.<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        Copyright &copy; 2002-2022 by various contributors; "AUTHORS" 参照.<br>
+        <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
       </p>
 
       <p>
-        2021年8月29日      </p>
+        2022年1月20日      </p>
     </center>
 
     <hr size="2"
@@ -619,6 +619,19 @@
         「ラベル」ツールを無効にします。      </p>
       <p>
         注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>nolabel=no</code>" または "<code>label=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--label</code>" で変更できます。      </p>
+    </dd>
+
+    <dt>
+      <code><b>nobrushspacing=yes</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        Disables the brush spacing option of the <b>Paint</b> and <b>Lines</b> tools. The brushes' default spacings will be used.      </p>
+      <p>
+        Note: The brush spacing option was added to Tux Paint's user interface in version 0.9.28. For more information on brush spacing, see <a href="EXTENDING.html">EXTENDING.html</a>      </p>
+      <p>
+        注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>nobrushspacing=no</code>" または "<code>brushspacing=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--brushspacing</code>" で変更できます。      </p>
     </dd>
   </dl>
 </blockquote>
@@ -5408,7 +5421,7 @@
         </blockquote>
 
         <p>
-          サポートされる言語用のフォントファイルは、Tux Paint のウェブサイト <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a> からダウンロードできます。（'ダウンロード' ページの 'フォント' セクションにあります）        </p>
+          You can download fonts for supported languages from Tux Paint's website, <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>. (Look in the 'Fonts' section under 'Download.')        </p>
 
         <p>
           Unix や Linux では、同梱の Makefile を使って、適切な場所にフォントをインストールすることができます。        </p>

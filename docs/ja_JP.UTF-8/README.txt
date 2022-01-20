@@ -3,11 +3,11 @@
 
   子供向けのシンプルなお絵かきプログラム
 
-          Copyright © 2002-2021 by various contributors; "AUTHORS" 参照.
-                            http://www.tuxpaint.org/
+          Copyright © 2002-2022 by various contributors; "AUTHORS" 参照.
+                             https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                  2021年11月25日
+                                   2022年1月20日
 
      ----------------------------------------------------------------------
 
@@ -183,6 +183,25 @@ Tux Paint の起動
 
                  描画中にはサウンドが流れます。筆の大きさが大きいほど、低い音になります。
 
+                 Brush Spacing
+
+                   The space between each position where a brush is applied
+                   to the canvas can vary. Some brushes (such as the
+                   footprints and flower) are spaced, by default, far enough
+                   apart that they don't overlap. Other brushes (such as the
+                   basic circular ones) are spaced closely, so they make a
+                   continuous stroke.
+
+                   The default spacing of brushes may be overridden using by
+                   clicking within the triangular-shaped series of bars at
+                   the bottom right; the larger the bar, the wider the
+                   spacing. Brush spacing affects both tools that use the
+                   brushes: the "Paint" tool and the "Lines" tool.
+
+                   (Note: If the "nobrushspacing" option is set, Tux Paint
+                   won't display the brush spacing controls. See the
+                   "Options" documentation.)
+
      ----------------------------------------------------------------------
 
          「はんこ」ツール
@@ -217,6 +236,11 @@ Tux Paint の起動
 
                  アニメーション対応のブラシでは、線に沿って形が変化します。 指向性のブラシでは、線の角度に応じて異なる形状を表示します。
                  さらに、アニメーションと指向性の両方を備えたブラシもあります。 詳しくは、上記の「ふで」の項をご覧ください。
+
+                 Different brushes have different spacing, leaving either a
+                 series of individual shapes, or a continuous stroke of the
+                 brush shape. Brush spacing may be adjusted. See "Paint",
+                 above, to learn more.
 
      ----------------------------------------------------------------------
 
@@ -719,7 +743,7 @@ Tux Paint の起動
        * 開発者へ直接連絡することもできます
 
      もっとお知りになりたい場合、Tux Paint のウェブサイト の "連絡先" のページ
-     (http://tuxpaint.org/contact/) をごらん下さい
+     (https://tuxpaint.org/contact/) をごらん下さい
 
      ----------------------------------------------------------------------
 
@@ -735,4 +759,4 @@ Tux Paint の起動
        * 宣伝や、他の Tux Paint ユーザーのサポート
 
      もっとお知りになりたい場合、Tux Paint のウェブサイト の "私たちにご協力を" のページ
-     (http://tuxpaint.org/help/) をごらん下さい
+     (https://tuxpaint.org/help/) をごらん下さい

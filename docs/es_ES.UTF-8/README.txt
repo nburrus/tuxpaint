@@ -3,11 +3,11 @@
 
   A simple drawing program for children
 
-          Copyright © 2002-2021 by various contributors; see AUTHORS.
-                            http://www.tuxpaint.org/
+          Copyright © 2002-2022 by various contributors; see AUTHORS.
+                             https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                               noviembre 25, 2021
+                                 enero 20, 2022
 
      ----------------------------------------------------------------------
 
@@ -239,6 +239,25 @@ Available Tools
                  As you draw, a sound is played. The bigger the brush, the
                  lower the pitch.
 
+                 Brush Spacing
+
+                   The space between each position where a brush is applied
+                   to the canvas can vary. Some brushes (such as the
+                   footprints and flower) are spaced, by default, far enough
+                   apart that they don't overlap. Other brushes (such as the
+                   basic circular ones) are spaced closely, so they make a
+                   continuous stroke.
+
+                   The default spacing of brushes may be overridden using by
+                   clicking within the triangular-shaped series of bars at
+                   the bottom right; the larger the bar, the wider the
+                   spacing. Brush spacing affects both tools that use the
+                   brushes: the "Paint" tool and the "Lines" tool.
+
+                   (Note: If the "nobrushspacing" option is set, Tux Paint
+                   won't display the brush spacing controls. See the
+                   "Options" documentation.)
+
      ----------------------------------------------------------------------
 
          "Stamp" Tool (Rubber Stamps)
@@ -303,6 +322,11 @@ Available Tools
                  along the line. Others are directional, and will show a
                  different shape depending on the angle of the brush. And
                  finally some are both animated and directional. See "Paint",
+                 above, to learn more.
+
+                 Different brushes have different spacing, leaving either a
+                 series of individual shapes, or a continuous stroke of the
+                 brush shape. Brush spacing may be adjusted. See "Paint",
                  above, to learn more.
 
      ----------------------------------------------------------------------
@@ -1024,7 +1048,7 @@ Importing Pictures Manually
        * Contact the developers directly
 
      To learn more, visit the "Contact" page of the official Tux Paint
-     website: http://tuxpaint.org/contact/
+     website: https://tuxpaint.org/contact/
 
      ----------------------------------------------------------------------
 
@@ -1041,4 +1065,4 @@ Importing Pictures Manually
        * Promote or help support others using Tux Paint
 
      To learn more, visit the "Help Us" page of the official Tux Paint
-     website: http://tuxpaint.org/help/
+     website: https://tuxpaint.org/help/

@@ -2,13 +2,31 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2021
+Copyright (c) 2002-2022
 Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
-$Id$
 
-2021.December.1 (0.9.28)
+2022.January.20 (0.9.28)
+  * Improvements to "Paint" and "Lines" tools:
+    ------------------------------------------
+    * Brush spacing may now be altered within Tux Paint.
+      + Note: A "nobrushspacing" simplifcation option is provided to
+        disable this feature; Tux Paint will continue using the brushes'
+        default spacings.
+
+    * Many brushes have been given more reasonable default spacing
+      settings (e.g., star brush's new default spacing causes
+      individual stars to appear, rather than a 'smear').
+      Closes https://sourceforge.net/p/tuxpaint/bugs/243/
+      (h/t Areti Tsolakidou for the suggestion)
+
+  * Improvements to "Eraser" tool:
+    ------------------------------
+    * Outline for circle-shaped erasers is now also circular.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/244/
+      (h/t Areti Tsolakidou for the suggestion)
+
   * Localization Updates:
     ---------------------
     * Albanian translation
@@ -20,13 +38,29 @@ $Id$
     * Updated `src/po/check_translations.sh` sanity-checking script
       so it properly finds the updated docs & other changes.
 
-  * Ports & Building
-    ----------------
+  * Bug Fixes:
+    ----------
+    * Fixed abnormal exit of threaded font scan which prevented enabling
+      text/label tools on some environment such as Rocky Linux 8.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+  * Ports & Building:
+    -----------------
     * Windows installer forces to uninstall before the installation if
       version 0.9.27 and older is found.
-    * Windows installer does not show a dialogue to inform uninstallation
-      when "/VERYSILANT" switch is specified.
+
+    * Windows installer will no longer show a dialogue to inform
+      user of uninstallation when "/VERYSILENT" switch is specified
+      (useful for automated installation/uninsta$llation processes).
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Use character class in macOS build script
+      (It appears \t is not compatible with certain versions of grep.)
+      Mark K. Kim <markuskimius@gmail.com>
+
+    * Remove install stages not needed on macOS
+      Mark K. Kim <markuskimius@gmail.com>
+
 
 2021.November.25 (0.9.27)
   * New Magic Tools:

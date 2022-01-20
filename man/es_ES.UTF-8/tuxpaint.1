@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2021.11.25
-.TH TUXPAINT 1 "noviembre 25, 2021" "0.9.28" "Tux Paint"
+.\" tuxpaint.1 - 2022.01.20
+.TH TUXPAINT 1 "enero 20, 2022" "0.9.28" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -70,6 +70,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-noshapecontrols]
 .br
 [\-\-nolabel]
+.br
+[\-\-nobrushspacing]
 .br
 [\-\-newcolorslast]
 .br
@@ -212,6 +214,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-shapecontrols]
 .br
 [\-\-label]
+.br
+[\-\-brushspacing]
 .br
 [\-\-newcolorsfirst]
 .br
@@ -418,6 +422,11 @@ initially clicked.
 .B \-\-nolabel \-\-label
 Disable or enable (default) the Label tool, which lets you create text
 which can be altered or moved later.
+
+.TP 8
+.B \-\-nobrushspacing \-\-brushspacing
+Disable or enable (default) the brush spacing option of the Paint and Lines
+tools, which allows you to override the default spacing of a brush.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l
@@ -1272,7 +1281,7 @@ See the documentation that comes with Tux Paint for further instructions on usin
 
 The canonical place to find Tux Paint information is at
 .nh
-http://www.tuxpaint.org/.
+https://tuxpaint.org/.
 .hy
 
 .SH AUTHORS

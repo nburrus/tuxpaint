@@ -21,12 +21,12 @@
         Documentación da instalación      </h1>
 
       <p>
-        Copyright &copy; 2002-2021 por varios colaboradores; vexa AUTHORS (AUTORES).<br>
-        <a href="http://www.tuxpaint.org/">http://www.tuxpaint.org/</a>
+        Copyright &copy; 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).<br>
+        <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
       </p>
 
       <p>
-        17 de Setembro de 2021      </p>
+        20 de Xaneiro de 2022      </p>
     </center>
 
     <hr size="2" noshade />
@@ -797,11 +797,11 @@
             <p>
               <code>libimagequant</code> is not available from MacPorts as of this writing. It can be installed from the source code as follows. It should be installed to <code>/opt/local</code> (same as MacPorts) for the library to be included in <code>TuxPaint.dmg</code>.              <blockquote>
                 <code>
+                  $ sudo port install rust cargo<br/>
                   $ git clone https://github.com/ImageOptim/libimagequant.git<br/>
-                  $ cd libimagequant<br/>
-                  $ ./configure --prefix=/opt/local<br/>
-                  $ make<br/>
-                  $ sudo make install
+                  $ cd libimagequant/imagequant-sys<br/>
+                  $ cargo build --release<br/>
+                  $ sudo make PREFIX=/opt/local install
                 </code>
               </blockquote>
             </p>

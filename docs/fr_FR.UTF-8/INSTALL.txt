@@ -2,10 +2,10 @@
                                  version 0.9.28
                         Documentation sur l'installation
 
-      Copyright &copie; 2002-2021 par divers contributeurs; voir AUTHORS.
-                            http://www.tuxpaint.org/
+      Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.
+                             https://tuxpaint.org/
 
-                               septembre 17, 2021
+                                janvier 20, 2022
 
      ----------------------------------------------------------------------
 
@@ -666,11 +666,11 @@ Compilation et installation
            peut être installé sur /opt/local (comme pour MacPorts) pour la
            bibliothèque devant être incluse dans TuxPaint.dmg.
 
+             $ sudo port install rust cargo
              $ git clone https://github.com/ImageOptim/libimagequant.git
-             $ cd libimagequant
-             $ ./configure --prefix=/opt/local
-             $ make
-             $ sudo make install
+             $ cd libimagequant/imagequant-sys
+             $ cargo build --release
+             $ sudo make PREFIX=/opt/local install
 
          ATTENTION :Posséder des outils Unix à côté de MacPorts et Xcode,
          tels que Fink ou Brew, vous empêchera de créer un programme

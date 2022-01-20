@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2021
+  Copyright (c) 2002-2022
   by various contributors; see AUTHORS.txt
   http://www.tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 15, 2021
+  June 14, 2002 - January 19, 2022
 */
 
 #include "platform.h"
@@ -1369,6 +1369,8 @@ static int starter_personal;
 static int template_personal;
 static int starter_modified;
 
+static int disable_brushspacing;
+
 static Uint8 canvas_color_r, canvas_color_g, canvas_color_b;
 static Uint8 *touched;
 static Uint8 *sim_flood_touched;
@@ -1980,6 +1982,12 @@ static int brush_counter, brush_frame;
 #define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
+#define BRUSH_SPACING_SIZES 12  /* How many brush spacing options to provide
+                                   (max will represent BRUSH_SPACING_MAX_MULTIPLIER times the
+                                   max dimension of the brush; min will represent 1 pixel) */
+#define BRUSH_SPACING_MAX_MULTIPLIER 5 /* How far apart (in terms of a multiplier of a 
+                                          brush's dimensions) the max brush spacing setting
+                                          represents */
 
 static unsigned cur_color;
 static int cur_tool, cur_brush, old_tool;
@@ -2068,6 +2076,7 @@ static SDL_Surface *do_loadimage(const char *const fname, int abort_on_error);
 static void draw_toolbar(void);
 static void draw_magic(void);
 static void draw_brushes(void);
+static void draw_brushes_spacing(void);
 static void draw_stamps(void);
 static void draw_shapes(void);
 static void draw_erasers(void);
@@ -2081,6 +2090,7 @@ static void render_brush(void);
 static void _xorpixel(SDL_Surface * surf, int x, int y);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
+static void circle_xor(int x, int y, int sz);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
 
@@ -3766,6 +3776,7 @@ static void mainloop(void)
                     }
                   else if ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0)
                     {
+                      /* Tool up scroll button */
                       tool_scroll -= gd_tools.cols;
                       playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
@@ -3776,6 +3787,7 @@ static void mainloop(void)
                   else if ((event.button.y > real_r_tools.y + real_r_tools.h)
                            && (tool_scroll < NUM_TOOLS - buttons_tall * gd_tools.cols + gd_tools.cols))
                     {
+                      /* Tool down scroll button */
                       tool_scroll += gd_tools.cols;
                       draw_toolbar();
                       playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
@@ -3818,13 +3830,13 @@ static void mainloop(void)
                         {
                           if (!disable_stamp_controls)
                             {
-                              /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
+                              /* Account for stamp controls and group changing (left/right) buttons */
                               gd_controls.rows = 3;
                               gd_controls.cols = 2;
                             }
                           else
                             {
-                              /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
+                              /* Stamp controls are disabled; account for group changing (left/right) buttons */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3833,6 +3845,7 @@ static void mainloop(void)
                         {
                           if (!disable_stamp_controls)
                             {
+                              /* Account for text controls */
                               gd_controls.rows = 2;
                               gd_controls.cols = 2;
                             }
@@ -3841,11 +3854,13 @@ static void mainloop(void)
                         {
                           if (!disable_stamp_controls)
                             {
+                              /* Account for text controls and label selection button */
                               gd_controls.rows = 3;
                               gd_controls.cols = 2;
                             }
                           else
                             {
+                              /* Text controls disabled; only account for label selection button */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3855,11 +3870,13 @@ static void mainloop(void)
                         {
                           if (!disable_magic_controls)
                             {
+                              /* Account for magic controls and group changing (left/right) buttons */
                               gd_controls.rows = 2;
                               gd_controls.cols = 2;
                             }
                           else
                             {
+                              /* Magic controls are disabled; account for group changing (left/right) buttons */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3869,6 +3886,17 @@ static void mainloop(void)
                         {
                           if (!disable_shape_controls)
                             {
+                              /* Account for shape controls (corner- vs center-based expansion) */
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
+
+                      else if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                        {
+                          if (!disable_brushspacing)
+                            {
+                              /* Account for brush spacing */
                               gd_controls.rows = 1;
                               gd_controls.cols = 2;
                             }
@@ -3907,10 +3935,12 @@ static void mainloop(void)
 
                       if (HIT(r_items))
                         {
+                          /* A selection button was clicked... */
                           which = GRIDHIT_GD(r_items, gd_items) + *thing_scroll;
 
                           if (which < num_things)
                             {
+                              /* ...and there was something there to click */
                               toolopt_changed = 1;
 #ifndef NOSOUND
                               if (cur_tool != TOOL_STAMP || stamp_data[stamp_group][which]->ssnd == NULL)
@@ -3924,7 +3954,10 @@ static void mainloop(void)
                         }
                       else if (HIT(r_controls))
                         {
+                          /* Controls were clicked */
+
                           which = GRIDHIT_GD(r_controls, gd_controls);
+
                           if (cur_tool == TOOL_STAMP)
                             {
                               /* Stamp controls! */
@@ -4045,6 +4078,8 @@ static void mainloop(void)
                             }
                           else if (cur_tool == TOOL_MAGIC)
                             {
+                              /* Magic controls */
+
                               int grp;
                               int cur;
 
@@ -4233,10 +4268,9 @@ static void mainloop(void)
                                     }
                                 }
                             }
-
-                          /* Label controls! */
                           else if (cur_tool == TOOL_LABEL)
                             {
+                              /* Label controls! */
                               int control_sound = -1;
 
                               if (which & 4)
@@ -4379,12 +4413,42 @@ static void mainloop(void)
                                 }
                               draw_fonts();
                               update_screen_rect(&r_toolopt);
+                            }
+                          else if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                            {
+                              /* Brush spacing */
 
+                              int prev_size, chosen, new_size, frame_w, w, h, control_sound;
+
+                              prev_size = brushes_spacing[cur_brush];
+                              chosen = ((BRUSH_SPACING_SIZES + 1) * (event.button.x - r_ttoolopt.x)) / r_ttoolopt.w;
+
+                              frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
+                              w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
+                              h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
+
+                              /* Spacing ranges from 0px to "N x the max dimension of the brush"
+                                 (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
+                              new_size = (chosen * max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER) / BRUSH_SPACING_SIZES;
+
+                              if (new_size != prev_size)
+                                {
+                                  brushes_spacing[cur_brush] = new_size;
+                                  draw_brushes_spacing();
+                                  update_screen_rect(&r_toolopt);
+
+                                  if (new_size < prev_size)
+                                    control_sound = SND_SHRINK;
+                                  else
+                                    control_sound = SND_GROW;
+
+                                  playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+                                }
                             }
                         }
                       else
                         {
-                          /* scroll button */
+                          /* Scroll buttons */
                           int is_upper = event.button.y < r_toolopt.y + button_h / 2;
 
                           if ((is_upper && *thing_scroll > 0)   /* upper arrow */
@@ -5315,6 +5379,14 @@ static void mainloop(void)
                               gd_controls.cols = 2;
                             }
                         }
+                      else if (cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
+                        {
+                          if (!disable_brushspacing)
+                            {
+                              gd_controls.rows = 1;
+                              gd_controls.cols = 2;
+                            }
+                        }
 
                       /* number of whole or partial rows that will be needed
                          (can make this per-tool if variable columns needed) */
@@ -5774,6 +5846,7 @@ static void mainloop(void)
                     {
                     }
 
+                  /* This if/if/if block is awful -bjk 2022.01.19 */
 		  int control_rows = 0;
                   if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
 		    control_rows = 3;
@@ -5794,6 +5867,9 @@ static void mainloop(void)
                     }
                   if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
 		    control_rows = 1;
+                  if ((cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES) && !disable_brushspacing)
+		    control_rows = 1;
+
 		  int num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
 
                   if (num_things > num_places)
@@ -5824,6 +5900,8 @@ static void mainloop(void)
                         {
                           /* One of the selectors: */
 
+                          /* FIXME: Also show "cursor_hand" when touching controls (stamp size, brush spacing, etc.!) (See below) -bjk 2022.01.19 */
+
                           which = ((event.button.y - r_ttoolopt.h - img_scroll_up->h) / button_h) * 2 + (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w)) / button_w;
 
                           if (which < num_things)
@@ -5835,6 +5913,8 @@ static void mainloop(void)
                   else
                     {
                       /* No scroll buttons - must be a selector: */
+
+                      /* FIXME: Also show "cursor_hand" when touching controls (stamp size, brush spacing, etc.!) (See above) -bjk 2022.01.19 */
 
                       which = ((event.button.y - r_ttoolopt.h) / button_h) * 2 + (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w)) / button_w;
 
@@ -6000,7 +6080,16 @@ static void mainloop(void)
                       eraser_draw(old_x, old_y, new_x, new_y);
 
                       sz = calc_eraser_size(cur_eraser);
-                      rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
+                      if (cur_eraser >= NUM_ERASERS / 2)
+                        {
+                          /* Circle eraser */
+                          circle_xor(new_x, new_y, sz / 2);
+                        }
+                      else
+                        {
+                          /* Square eraser */
+                          rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
+                        }
                     }
                   else if (cur_tool == TOOL_FILL && cur_fill == FILL_GRADIENT_LINEAR && fill_drag_started)
                     {
@@ -6055,7 +6144,6 @@ static void mainloop(void)
 
                   /* Moving: Draw XOR where stamp/eraser will apply: */
 
-
                   if (cur_tool == TOOL_STAMP)
                     {
                       w = active_stamp->w;
@@ -6083,6 +6171,7 @@ static void mainloop(void)
                     {
                       if (cur_tool == TOOL_STAMP)
                         {
+                          /* Stamp */
                           stamp_xor(old_x, old_y);
 
                           update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
@@ -6090,10 +6179,18 @@ static void mainloop(void)
                                         old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
                                         old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
                         }
-
                       else
                         {
-                          rect_xor(old_x - w / 2, old_y - h / 2, old_x + w / 2, old_y + h / 2);
+                          if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
+                            {
+                              /* Circle eraser */
+                              circle_xor(old_x, old_y, calc_eraser_size(cur_eraser) / 2);
+                            }
+                          else
+                            {
+                              /* Otherwise (square eraser) */
+                              rect_xor(old_x - w / 2, old_y - h / 2, old_x + w / 2, old_y + h / 2);
+                            }
 
                           update_screen(old_x - w / 2 + r_canvas.x,
                                         old_y - h / 2 + r_canvas.y,
@@ -6105,6 +6202,7 @@ static void mainloop(void)
                     {
                       if (cur_tool == TOOL_STAMP)
                         {
+                          /* Stamp */
                           stamp_xor(new_x, new_y);
 
                           update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
@@ -6114,13 +6212,23 @@ static void mainloop(void)
                         }
                       else
                         {
-                          rect_xor(new_x - w / 2, new_y - h / 2, new_x + w / 2, new_y + h / 2);
+                          if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
+                            {
+                              /* Circle eraser */
+                              circle_xor(new_x, new_y, calc_eraser_size(cur_eraser) / 2);
+                            }
+                          else
+                            {
+                              /* Otherwise (square eraser) */
+                              rect_xor(new_x - w / 2, new_y - h / 2, new_x + w / 2, new_y + h / 2);
+                            }
 
                           update_screen(new_x - w / 2 + r_canvas.x,
                                         new_y - h / 2 + r_canvas.y,
                                         new_x + w / 2 + r_canvas.x, new_y + h / 2 + r_canvas.y);
                         }
                     }
+
                   if (cur_tool == TOOL_STAMP && HIT(r_toolopt) && event.motion.y > r_toolopt.h
                       && event.motion.state == SDL_PRESSED && stamp_size_selector_clicked)
                     {
@@ -7307,6 +7415,7 @@ void show_usage(int exitcode)
           "  [--nomagiccontrols | --magiccontrols]\n"
           "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
+          "  [--nobrushspacing | --brushspacing]\n"
           "  [--newcolorsfirst | --newcolorslast]\n"
           "\n"
           " Languages:\n"
@@ -9363,6 +9472,11 @@ static void draw_brushes(void)
 
   /* Space for buttons, was 14 */
   most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
+  if (!disable_brushspacing)
+    {
+      /* Make room for spacing controls */
+      most -= 2;
+    }
 
   /* Do we need scrollbars? */
 
@@ -9462,8 +9576,57 @@ static void draw_brushes(void)
             }
         }
     }
+
+  if (!disable_brushspacing)
+    draw_brushes_spacing();
 }
 
+static void draw_brushes_spacing(void)
+{
+  int i, frame_w, w, h, size_at;
+  float x_per, y_per;
+  int xx, yy;
+  SDL_Surface *btn, *blnk;
+  SDL_Rect dest;
+
+  frame_w = img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
+  w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
+  h = img_brushes[cur_brush]->h / (brushes_directional[cur_brush] ? 3 : 1);
+
+  /* Spacing ranges from 0px to "N x the max dimension of the brush"
+     (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
+  size_at = (BRUSH_SPACING_SIZES * brushes_spacing[cur_brush]) / (max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER);
+
+  x_per = (float)r_ttoolopt.w / BRUSH_SPACING_SIZES;
+  y_per = (float)button_h / BRUSH_SPACING_SIZES;
+
+  for (i = 0; i < BRUSH_SPACING_SIZES; i++)
+    {
+      xx = ceil(x_per);
+      yy = ceil(y_per * i);
+
+      if (i <= size_at)
+        btn = thumbnail(img_btn_down, xx, yy, 0);
+      else
+        btn = thumbnail(img_btn_up, xx, yy, 0);
+
+      blnk = thumbnail(img_btn_off, xx, button_h - yy, 0);
+
+      /* FIXME: Check for NULL! */
+
+
+      dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+      dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+      SDL_BlitSurface(blnk, NULL, screen, &dest);
+
+      dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+      dest.y = (button_h * buttons_tall + r_ttools.h) - (y_per * i);
+      SDL_BlitSurface(btn, NULL, screen, &dest);
+
+      SDL_FreeSurface(btn);
+      SDL_FreeSurface(blnk);
+    }
+}
 
 /**
  * FIXME
@@ -11146,9 +11309,12 @@ static void line_xor(int x1, int y1, int x2, int y2)
 
 
 /**
- * FIXME
+ * Draw a XOR rectangle on the canvas.
+ * @param x1 left edge
+ * @param y1 top edge
+ * @param x2 right edge
+ * @param y2 bottom edge
  */
-/* Draw a XOR rectangle: */
 static void rect_xor(int x1, int y1, int x2, int y2)
 {
   if (x1 < 0)
@@ -11179,6 +11345,33 @@ static void rect_xor(int x1, int y1, int x2, int y2)
   line_xor(x2, y1, x2, y2);
   line_xor(x2, y2, x1, y2);
   line_xor(x1, y2, x1, y1);
+}
+
+
+/**
+ * Draw a XOR circle on the canvas.
+ * @param x center x position
+ * @param y center y position
+ * @param sz size (radius)
+ */
+static void circle_xor(int x, int y, int sz)
+{
+  int xx, yy, sz2;
+
+  /* h/t http://groups.csail.mit.edu/graphics/classes/6.837/F98/Lecture6/circle.html */
+
+  sz2 = sz * sz;
+
+  xorpixel(x, y + sz);
+  xorpixel(x, y - sz);
+
+  for (xx = 1; xx < sz; xx++) {
+    yy = sqrt(sz2 - (xx * xx) + 0.5);
+    xorpixel(x + xx, y + yy);
+    xorpixel(x + xx, y - yy);
+    xorpixel(x - xx, y + yy);
+    xorpixel(x - xx, y - yy);
+  }
 }
 
 
@@ -11277,7 +11470,16 @@ static void do_eraser(int x, int y, int update)
     {
       update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
-      rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+      if (cur_eraser >= NUM_ERASERS / 2)
+        {
+          /* Circle eraser */
+          circle_xor(x, y, sz / 2);
+        }
+      else
+        {
+          /* Square eraser */
+          rect_xor(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+        }
 
 #ifdef __APPLE__
       /* Prevent ghosted eraser outlines from remaining on the screen in windowed mode */
@@ -24481,6 +24683,7 @@ static void setup_config(char *argv[])
   SETBOOL(all_locale_fonts);
   SETBOOL(autosave_on_quit);
   SETBOOL(disable_label);
+  SETBOOL(disable_brushspacing);
   SETBOOL(disable_magic_controls);
   SETBOOL(disable_shape_controls);
   SETBOOL(disable_print);
