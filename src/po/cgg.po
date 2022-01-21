@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-21 00:34-0800\n"
+"POT-Creation-Date: 2022-01-21 01:33-0800\n"
 "PO-Revision-Date: 2010-09-17 16:19+0200fu\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -543,7 +543,7 @@ msgstr "Ekisya"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8547
+#: ../tools.h:98 ../tuxpaint.c:8576
 msgid "Open"
 msgstr "Iguraho"
 
@@ -655,7 +655,7 @@ msgstr "Reka eipesha kumarayo omusitaari."
 #, fuzzy, c-format
 #| msgid "Let go of the button to complete the line."
 msgid ""
-"Let go of the button to complete the line. (Your line's angle is %.0f "
+"Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
 msgstr "Reka eipesha kumarayo omusitaari."
 
@@ -664,12 +664,19 @@ msgstr "Reka eipesha kumarayo omusitaari."
 msgid "Hold the button to stretch the shape."
 msgstr "Guumizamu okwimata obone okuhangusya endebeka."
 
+#: ../tools.h:171
+#, fuzzy, c-format
+#| msgid "Hold the button to stretch the shape."
+msgid ""
+"Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
+msgstr "Guumizamu okwimata obone okuhangusya endebeka."
+
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:174
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Sindika mawusi okwetoroza ekyakorwa. Imata okukiteera."
 
-#: ../tools.h:174
+#: ../tools.h:175
 #, fuzzy, c-format
 #| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid ""
@@ -678,7 +685,7 @@ msgid ""
 msgstr "Sindika mawusi okwetoroza ekyakorwa. Imata okukiteera."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:177
+#: ../tools.h:178
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Kale mbwenu... Reka tugumizemu okuteera ekyi!"
 
@@ -820,90 +827,90 @@ msgid "Please wait…"
 msgstr "Orikazaara we, rindaho..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8550
+#: ../tuxpaint.c:8579
 msgid "Erase"
 msgstr "Sangura"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8553
+#: ../tuxpaint.c:8582
 msgid "Slides"
 msgstr "Filiimu"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8556
+#: ../tuxpaint.c:8585
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8559
+#: ../tuxpaint.c:8588
 msgid "Back"
 msgstr "Enyima"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8562
+#: ../tuxpaint.c:8591
 msgid "Play"
 msgstr "Zaana"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8565
+#: ../tuxpaint.c:8594
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8568
+#: ../tuxpaint.c:8597
 msgid "Next"
 msgstr "Ekindi"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9430
+#: ../tuxpaint.c:9459
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13129
+#: ../tuxpaint.c:13158
 msgid "Yes"
 msgstr "Yeego"
 
-#: ../tuxpaint.c:13133
+#: ../tuxpaint.c:13162
 msgid "No"
 msgstr "Apana"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14279
+#: ../tuxpaint.c:14308
 msgid "Replace the picture with your changes?"
 msgstr "Omumwanya gwekishushani tamu ebiwahindura?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14283
+#: ../tuxpaint.c:14312
 msgid "Yes, replace the old one!"
 msgstr "Yeego, chusa ekikuru!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14287
+#: ../tuxpaint.c:14316
 msgid "No, save a new file!"
 msgstr "Apaana, biika fayiro ensya!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15551
+#: ../tuxpaint.c:15580
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Torana ekishushani kyorikwenda reero onyige \"Iguraho\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16977
+#: ../tuxpaint.c:17006
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24755
+#: ../tuxpaint.c:24784
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24767
+#: ../tuxpaint.c:24796
 msgid "Pick a color."
 msgstr "Ihamu erangi."
 

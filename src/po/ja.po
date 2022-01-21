@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-21 00:34-0800\n"
+"POT-Creation-Date: 2022-01-21 01:33-0800\n"
 "PO-Revision-Date: 2021-11-09 23:01+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
@@ -530,7 +530,7 @@ msgstr "さいしょから"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8547
+#: ../tools.h:98 ../tuxpaint.c:8576
 msgid "Open"
 msgstr "ひらく"
 
@@ -641,9 +641,12 @@ msgid "Let go of the button to complete the line."
 msgstr "ボタンをはなすと せんを ひきおわるよ。"
 
 #: ../tools.h:167
-#, c-format
+#, fuzzy, c-format
+#| msgid ""
+#| "Let go of the button to complete the line. (Your line's angle is %.0f "
+#| "degrees.)"
 msgid ""
-"Let go of the button to complete the line. (Your line's angle is %.0f "
+"Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
 msgstr "ボタンをはなすと せんを ひきおわるよ。（せんの いまの かくど：%.0f °）"
 
@@ -652,12 +655,19 @@ msgstr "ボタンをはなすと せんを ひきおわるよ。（せんの い
 msgid "Hold the button to stretch the shape."
 msgstr "ボタンをおしたまま かたちを ひろげよう。"
 
+#: ../tools.h:171
+#, fuzzy, c-format
+#| msgid "Hold the button to stretch the shape."
+msgid ""
+"Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
+msgstr "ボタンをおしたまま かたちを ひろげよう。"
+
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:174
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "マウスをうごかして かたちをまわそう。クリックしたら できあがり。"
 
-#: ../tools.h:174
+#: ../tools.h:175
 #, c-format
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
@@ -667,7 +677,7 @@ msgstr ""
 "ど： %d °）"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:177
+#: ../tools.h:178
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "オッケー。 じゃあ このままつづけよう！"
 
@@ -805,91 +815,91 @@ msgid "Please wait…"
 msgstr "もうちょっと まってね…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8550
+#: ../tuxpaint.c:8579
 msgid "Erase"
 msgstr "けす"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8553
+#: ../tuxpaint.c:8582
 msgid "Slides"
 msgstr "スライド"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8556
+#: ../tuxpaint.c:8585
 msgid "Export"
 msgstr "かきだす"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8559
+#: ../tuxpaint.c:8588
 msgid "Back"
 msgstr "もどる"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8562
+#: ../tuxpaint.c:8591
 msgid "Play"
 msgstr "かいし"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8565
+#: ../tuxpaint.c:8594
 msgid "GIF Export"
 msgstr "かきだす"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8568
+#: ../tuxpaint.c:8597
 msgid "Next"
 msgstr "つぎ"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9430
+#: ../tuxpaint.c:9459
 msgid "Aa"
 msgstr "Aa"
 
 #  FIXME: Move elsewhere! Or not?!
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13129
+#: ../tuxpaint.c:13158
 msgid "Yes"
 msgstr "はい"
 
-#: ../tuxpaint.c:13133
+#: ../tuxpaint.c:13162
 msgid "No"
 msgstr "いいえ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14279
+#: ../tuxpaint.c:14308
 msgid "Replace the picture with your changes?"
 msgstr "いまかいたえと まえのえを いれかえる？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14283
+#: ../tuxpaint.c:14312
 msgid "Yes, replace the old one!"
 msgstr "はい、まえのえと いれかえます！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14287
+#: ../tuxpaint.c:14316
 msgid "No, save a new file!"
 msgstr "いいえ、あたらしく セーブします！"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15551
+#: ../tuxpaint.c:15580
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えを えらんでから 「ひらく」をクリックしてね。"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16977
+#: ../tuxpaint.c:17006
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "２ついじょうのえをえらんで GIFアニメをかきだします。"
 
-#: ../tuxpaint.c:24755
+#: ../tuxpaint.c:24784
 msgid "Select a color from your drawing."
 msgstr "えの なかから いろを えらぼう。"
 
-#: ../tuxpaint.c:24767
+#: ../tuxpaint.c:24796
 msgid "Pick a color."
 msgstr "いろを えらんでね。"
 
