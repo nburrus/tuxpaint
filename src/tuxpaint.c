@@ -2363,7 +2363,7 @@ static void mainloop(void)
 
   float angle;
   char angle_tool_text[256]; // FIXME Consider malloc'ing
-
+  char stretch_tool_text[256]; // FIXME Consider malloc'ing
 
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
@@ -6009,25 +6009,54 @@ static void mainloop(void)
                         }
                     }
                 }
-              else if (cur_tool == TOOL_SHAPES && shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
+              else if (cur_tool == TOOL_SHAPES)
                 {
-                  int deg;
+                  if (shape_tool_mode == SHAPE_TOOL_MODE_STRETCH && !shape_locked[cur_shape])
+                    {
+                      float aspect;
+                      int w, h;
 
-                  deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
-                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
+                      w = abs(shape_start_x - new_x);
+                      h = abs(shape_start_y - new_y);
 
-                  deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
-                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
 
-                  deg = -deg;
-                  if (deg < 0)
-                    deg += 360;
+                      if (w < 2 || h < 2)
+                        aspect = 0;
+                      else if (w > h)
+                        aspect = (float) w / (float) h;
+                      else
+                        aspect = (float) h / (float) w;
 
-                  snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_SHAPE_ROTATING), deg);
-                  draw_tux_text(TUX_BORED, angle_tool_text, 1);
-
-                  /* FIXME: Do something less intensive! */
-                  SDL_Flip(screen);
+                      if (aspect == 0 || aspect >= 100)
+                        {
+                          draw_tux_text(TUX_BORED, TIP_SHAPE_START, 1);
+                        }
+                      else
+                        {
+                          snprintf(stretch_tool_text, sizeof(stretch_tool_text), gettext(TIP_SHAPE_STRETCHING_UNLOCKED), aspect);
+                          draw_tux_text(TUX_BORED, stretch_tool_text, 1);
+                        }
+                    }
+                  else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
+                    {
+                      int deg;
+    
+                      deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
+                      do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
+    
+                      deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
+                      do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
+    
+                      deg = -deg;
+                      if (deg < 0)
+                        deg += 360;
+    
+                      snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_SHAPE_ROTATING), deg);
+                      draw_tux_text(TUX_BORED, angle_tool_text, 1);
+    
+                      /* FIXME: Do something less intensive! */
+                      SDL_Flip(screen);
+                    }
                 }
 
               old_x = new_x;
