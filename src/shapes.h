@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - August 15, 2021
+  June 14, 2002 - January 20, 2022
   $Id$
 */
 
@@ -49,6 +49,8 @@ enum
   SHAPE_TRIANGLE_FILL,
   SHAPE_PENTAGON,
   SHAPE_PENTAGON_FILL,
+  SHAPE_HEXAGON,
+  SHAPE_HEXAGON_FILL,
   SHAPE_RHOMBUS,
   SHAPE_RHOMBUS_FILL,
   SHAPE_OCTAGON,
@@ -78,6 +80,8 @@ const int shape_sides[NUM_SHAPES] = {
   3,                            /* Triangle */
   5,                            /* Pentagon */
   5,                            /* Pentagon */
+  6,                            /* Hexagon */
+  6,                            /* Hexagon */
   4,                            /* Rhombus */
   4,                            /* Rhombus */
   8,                            /* Octagon */
@@ -106,6 +110,8 @@ const int shape_locked[NUM_SHAPES] = {
   0,                            /* Triangle */
   0,                            /* Pentagon */
   0,                            /* Pentagon */
+  0,                            /* Hexagon */
+  0,                            /* Hexagon */
   0,                            /* Rhombus */
   0,                            /* Rhombus */
   1,                            /* Octagon */
@@ -163,6 +169,8 @@ const int shape_init_ang[NUM_SHAPES] = {
   210,                          /* Triangle */
   162,                          /* Pentagon */
   162,                          /* Pentagon */
+  150,                          /* Hexagon */
+  150,                          /* Hexagon */
   0,                            /* Rhombus */
   0,                            /* Rhombus */
   22,                           /* Octagon */
@@ -191,6 +199,8 @@ const int shape_no_rotate[NUM_SHAPES] = {
   0,                            /* Triangle */
   0,                            /* Pentagon */
   0,                            /* Pentagon */
+  0,                            /* Hexagon */
+  0,                            /* Hexagon */
   0,                            /* Rhombus */
   0,                            /* Rhombus */
   0,                            /* Octagon */
@@ -218,6 +228,8 @@ const int shape_valley[NUM_SHAPES] = {
   100,                          /* Triangle */
   100,                          /* Pentagon */
   100,                          /* Pentagon */
+  100,                          /* Hexagon */
+  100,                          /* Hexagon */
   100,                          /* Rhombus */
   100,                          /* Rhombus */
   100,                          /* Octagon */
@@ -254,9 +266,13 @@ const char *const shape_names[NUM_SHAPES] = {
   gettext_noop("Triangle"),
   gettext_noop("Triangle"),
 
-  // Pentagone shape tool (5 sides)
+  // Pentagon shape tool (5 sides)
   gettext_noop("Pentagon"),
   gettext_noop("Pentagon"),
+
+  // Hexagon shape tool (6 sides)
+  gettext_noop("Hexagon"),
+  gettext_noop("Hexagon"),
 
   // Rhombus shape tool (4 sides, not at right angles)
   gettext_noop("Rhombus"),
@@ -313,6 +329,10 @@ const char *const shape_tips[NUM_SHAPES] = {
   gettext_noop("A pentagon has five sides."),
   gettext_noop("A pentagon has five sides."),
 
+  // Description of a hexagon
+  gettext_noop("A hexagon has six sides."),
+  gettext_noop("A hexagon has six sides."),
+
   // Description of a rhombus
   gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
   gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
@@ -345,6 +365,8 @@ const char *const shape_img_fnames[NUM_SHAPES] = {
   DATA_PREFIX "images/shapes/triangle_f.png",
   DATA_PREFIX "images/shapes/pentagon.png",
   DATA_PREFIX "images/shapes/pentagon_f.png",
+  DATA_PREFIX "images/shapes/hexagon.png",
+  DATA_PREFIX "images/shapes/hexagon_f.png",
   DATA_PREFIX "images/shapes/diamond.png",
   DATA_PREFIX "images/shapes/diamond_f.png",
   DATA_PREFIX "images/shapes/octagon.png",

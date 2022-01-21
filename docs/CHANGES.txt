@@ -27,6 +27,10 @@ http://www.tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/244/
       (h/t Areti Tsolakidou for the suggestion)
 
+  * Improvements to "Shapes" tool:
+    ------------------------------
+    * Added hexagon (6-sided polygon) shape.
+
   * Localization Updates:
     ---------------------
     * Albanian translation
