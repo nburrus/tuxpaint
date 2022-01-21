@@ -23,7 +23,7 @@
 #define __MACOS_H__
 
 
-#define KMOD_CTRL   KMOD_META   /* Anywhere Linux/Windows uses CTRL, also allow CMD on macOS */
+#define KMOD_CTRL   KMOD_META   /* Anywhere Linux/Windows uses CTRL, use CMD on macOS */
 
 
 const char *apple_fontsPath(void);
