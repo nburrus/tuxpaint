@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             20 de Xaneiro de 2022
+                             21 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -373,6 +373,12 @@ Ferramentas dispoñíbeis
                  cambiar a proporción (por exemplo, o rectángulo e o óvalo
                  poden ser máis largos que altos ou máis altos que largos),
                  outros non (por exemplo, cadrados e círculos).
+
+                 For shapes that can change proportion, the aspect ratio of
+                 the shape will be shown at the bottom. For example: "1:1"
+                 will be shown if it is "square" (as tall as it is wide);
+                 "2:1" if it is either twice as wide as it is tall, or twice
+                 as tall as it is wide; and so on.
 
                  Solte o rato cando remate de estirar.
 

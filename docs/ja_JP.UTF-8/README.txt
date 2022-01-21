@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                   2022年1月20日
+                                   2022年1月21日
 
      ----------------------------------------------------------------------
 
@@ -264,6 +264,12 @@ Tux Paint の起動
                  オプションをつけて起動するなどして、「かたち」ツールの動作の制御を無効にした場合、オプションボタンは表示されず、真ん中から図形を広げる動作になります。
 
                  図形を描くには、キャンバス上でマウスをクリックし、そのままマウスを動かして図形を広げます。楕円や長方形のように縦横比を変えられる図形と、正方形や円のように縦横比を変えられない図形があります。
+
+                 For shapes that can change proportion, the aspect ratio of
+                 the shape will be shown at the bottom. For example: "1:1"
+                 will be shown if it is "square" (as tall as it is wide);
+                 "2:1" if it is either twice as wide as it is tall, or twice
+                 as tall as it is wide; and so on.
 
                  図形を広げ終わったらマウスを放します。
 

@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                janvier 20, 2022
+                                janvier 21, 2022
 
      ----------------------------------------------------------------------
 
@@ -391,6 +391,12 @@ Outils disponibles
                  le rectangle et l'ovale peuvent être plus larges que hauts
                  ou plus hauts que larges), d'autres pas (par exemple, carré
                  et cercle).
+
+                 For shapes that can change proportion, the aspect ratio of
+                 the shape will be shown at the bottom. For example: "1:1"
+                 will be shown if it is "square" (as tall as it is wide);
+                 "2:1" if it is either twice as wide as it is tall, or twice
+                 as tall as it is wide; and so on.
 
                  Relâchez la souris lorsque vous avez terminé l'étirement.
 

@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                January 20, 2022
+                                January 21, 2022
 
      ----------------------------------------------------------------------
 
@@ -364,6 +364,12 @@ Available Tools
                  proportion (e.g., rectangle and oval may be wider than tall,
                  or taller than wide), others cannot (e.g., square and
                  circle).
+
+                 For shapes that can change proportion, the aspect ratio of
+                 the shape will be shown at the bottom. For example: "1:1"
+                 will be shown if it is "square" (as tall as it is wide);
+                 "2:1" if it is either twice as wide as it is tall, or twice
+                 as tall as it is wide; and so on.
 
                  Let go of the mouse when you're done stretching.
 
