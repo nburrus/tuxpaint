@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 19, 2022
+  June 14, 2002 - January 21, 2022
 */
 
 #include "platform.h"
@@ -13904,8 +13904,8 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
 /* Draw a shape! */
 static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 {
-  int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
-  float a1, a2, rotn_rad;
+  int side, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
+  float a1, a2, rotn_rad, init_ang, angle_skip;
   int xx, yy, offx, offy, max_x, max_y;
 
 
@@ -13958,7 +13958,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 
   /* Draw the shape: */
 
-  angle_skip = 360 / shape_sides[cur_shape];
+  angle_skip = 360.0 / (float) shape_sides[cur_shape];
 
   init_ang = shape_init_ang[cur_shape];
 
@@ -13977,8 +13977,8 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
       max_y = 0;
       for (side = 0; side < shape_sides[cur_shape]; side++)
         {
-          a1 = (angle_skip * side + init_ang) * M_PI / 180;
-          a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
+          a1 = (angle_skip * side + init_ang) * M_PI / 180.0;
+          a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180.0;
           x1 = (int)(cos(a1) * rx);
           y1 = (int)(-sin(a1) * ry);
 

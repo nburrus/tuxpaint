@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.January.20 (0.9.28)
+2022.January.21 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -29,7 +29,10 @@ http://www.tuxpaint.org/
 
   * Improvements to "Shapes" tool:
     ------------------------------
-    * Added hexagon (6-sided polygon) shape.
+    * Added hexagon (6-sided polygon) and heptagon (7-sided) shapes.
+
+    * Using floats more, allowing for proper heptagon support, as
+      well as a non-skewed starting angle for octagons (22.5 degrees).
 
   * Localization Updates:
     ---------------------

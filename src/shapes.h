@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 20, 2022
+  June 14, 2002 - January 21, 2022
   $Id$
 */
 
@@ -51,10 +51,12 @@ enum
   SHAPE_PENTAGON_FILL,
   SHAPE_HEXAGON,
   SHAPE_HEXAGON_FILL,
-  SHAPE_RHOMBUS,
-  SHAPE_RHOMBUS_FILL,
+  SHAPE_HEPTAGON,
+  SHAPE_HEPTAGON_FILL,
   SHAPE_OCTAGON,
   SHAPE_OCTAGON_FILL,
+  SHAPE_RHOMBUS,
+  SHAPE_RHOMBUS_FILL,
   SHAPE_TRIANGLE_STAR,
   SHAPE_TRIANGLE_STAR_FILL,
   SHAPE_RHOMBUS_STAR,
@@ -82,10 +84,12 @@ const int shape_sides[NUM_SHAPES] = {
   5,                            /* Pentagon */
   6,                            /* Hexagon */
   6,                            /* Hexagon */
-  4,                            /* Rhombus */
-  4,                            /* Rhombus */
+  7,                            /* Heptagon */
+  7,                            /* Heptagon */
   8,                            /* Octagon */
   8,                            /* Octagon */
+  4,                            /* Rhombus */
+  4,                            /* Rhombus */
   3,                            /* 3 points star */
   3,                            /* 3 points star */
   4,                            /* 4 points star */
@@ -112,10 +116,12 @@ const int shape_locked[NUM_SHAPES] = {
   0,                            /* Pentagon */
   0,                            /* Hexagon */
   0,                            /* Hexagon */
+  0,                            /* Heptagon */
+  0,                            /* Heptagon */
+  1,                            /* Octagon */ /* FIXME: Consider unlocking? -bjk 2022.01.21 */
+  1,                            /* Octagon */ /* FIXME: Consider unlocking? -bjk 2022.01.21 */
   0,                            /* Rhombus */
   0,                            /* Rhombus */
-  1,                            /* Octagon */
-  1,                            /* Octagon */
   0,                            /* 3 points star */
   0,                            /* 3 points star */
   0,                            /* 4 points star */
@@ -140,10 +146,12 @@ const int shape_filled[NUM_SHAPES] = {
   1,                            /* Triangle */
   0,                            /* Pentagon */
   1,                            /* Pentagon */
-  0,                            /* Rhombus */
-  1,                            /* Rhombus */
+  0,                            /* Heptagon */
+  1,                            /* Heptagon */
   0,                            /* Octagon */
   1,                            /* Octagon */
+  0,                            /* Rhombus */
+  1,                            /* Rhombus */
   0,                            /* 3 points star */
   1,                            /* 3 points star */
   0,                            /* 4 points star */
@@ -156,31 +164,33 @@ const int shape_filled[NUM_SHAPES] = {
 
 /* Initial angles for shapes: */
 
-const int shape_init_ang[NUM_SHAPES] = {
-  45,                           /* Square */
-  45,                           /* Square */
-  45,                           /* Rectangle */
-  45,                           /* Rectangle */
-  0,                            /* Circle */
-  0,                            /* Circle */
-  0,                            /* Ellipse */
-  0,                            /* Ellipse */
-  210,                          /* Triangle */
-  210,                          /* Triangle */
-  162,                          /* Pentagon */
-  162,                          /* Pentagon */
-  150,                          /* Hexagon */
-  150,                          /* Hexagon */
-  0,                            /* Rhombus */
-  0,                            /* Rhombus */
-  22,                           /* Octagon */
-  22,                           /* Octagon */
-  210,                          /* 3 points star */
-  210,                          /* 3 points star */
-  0,                            /* 4 points star */
-  0,                            /* 4 points star */
-  162,                          /* 5 points star */
-  162                           /* 5 points star */
+const float shape_init_ang[NUM_SHAPES] = {
+  45.0,                         /* Square */
+  45.0,                         /* Square */
+  45.0,                         /* Rectangle */
+  45.0,                         /* Rectangle */
+  0.0,                          /* Circle */
+  0.0,                          /* Circle */
+  0.0,                          /* Ellipse */
+  0.0,                          /* Ellipse */
+  210.0,                        /* Triangle ((360/3)+90) */
+  210.0,                        /* Triangle ((360/3)+90) */
+  162.0,                        /* Pentagon ((360/5)+90) */
+  162.0,                        /* Pentagon ((360/5)+90) */
+  150.0,                        /* Hexagon ((360/6)+90) */
+  150.0,                        /* Hexagon ((360/6)+90) */
+  141.42857143,                 /* Heptagon ((360/7)+90) */
+  141.42857143,                 /* Heptagon ((360/7)+90) */
+  22.5,                         /* Octagon ((360/8)/2 = 22.5) */
+  22.5,                         /* Octagon ((360/8)/2 = 22.5) */
+  0.0,                          /* Rhombus */
+  0.0,                          /* Rhombus */
+  210.0,                        /* 3 points star ((360/3)+90) */
+  210.0,                        /* 3 points star ((360/3)+90) */
+  0.0,                          /* 4 points star */
+  0.0,                          /* 4 points star */
+  162.0,                        /* 5 points star ((360/5)+90) */
+  162.0                         /* 5 points star ((360/5)+90) */
 };
 
 
@@ -201,10 +211,12 @@ const int shape_no_rotate[NUM_SHAPES] = {
   0,                            /* Pentagon */
   0,                            /* Hexagon */
   0,                            /* Hexagon */
-  0,                            /* Rhombus */
-  0,                            /* Rhombus */
+  0,                            /* Heptagon */
+  0,                            /* Heptagon */
   0,                            /* Octagon */
   0,                            /* Octagon */
+  0,                            /* Rhombus */
+  0,                            /* Rhombus */
   0,                            /* 3 points star */
   0,                            /* 3 points star */
   0,                            /* 4 points star */
@@ -230,10 +242,12 @@ const int shape_valley[NUM_SHAPES] = {
   100,                          /* Pentagon */
   100,                          /* Hexagon */
   100,                          /* Hexagon */
-  100,                          /* Rhombus */
-  100,                          /* Rhombus */
+  100,                          /* Heptagon */
+  100,                          /* Heptagon */
   100,                          /* Octagon */
   100,                          /* Octagon */
+  100,                          /* Rhombus */
+  100,                          /* Rhombus */
   20,                           /* 3 points star */
   20,                           /* 3 points star */
   30,                           /* 4 points star */
@@ -274,13 +288,17 @@ const char *const shape_names[NUM_SHAPES] = {
   gettext_noop("Hexagon"),
   gettext_noop("Hexagon"),
 
-  // Rhombus shape tool (4 sides, not at right angles)
-  gettext_noop("Rhombus"),
-  gettext_noop("Rhombus"),
+  // Heptagon (aka septagon) shape tool (7 sides)
+  gettext_noop("Heptagon"),
+  gettext_noop("Heptagon"),
 
   // Octagon shape tool (8 sides)
   gettext_noop("Octagon"),
   gettext_noop("Octagon"),
+
+  // Rhombus shape tool (4 sides, not at right angles)
+  gettext_noop("Rhombus"),
+  gettext_noop("Rhombus"),
 
   // Triangle star (3 points star)
   gettext_noop("Star"),
@@ -333,13 +351,17 @@ const char *const shape_tips[NUM_SHAPES] = {
   gettext_noop("A hexagon has six sides."),
   gettext_noop("A hexagon has six sides."),
 
-  // Description of a rhombus
-  gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
-  gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
+  // Description of a heptagon
+  gettext_noop("A heptagon has seven sides."),
+  gettext_noop("A heptagon has seven sides."),
 
   // Description of an octagon
   gettext_noop("An octagon has eight equal sides."),
   gettext_noop("An octagon has eight equal sides."),
+
+  // Description of a rhombus
+  gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
+  gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
 
   gettext_noop("A star with 3 points."),
   gettext_noop("A star with 3 points."),
@@ -367,10 +389,12 @@ const char *const shape_img_fnames[NUM_SHAPES] = {
   DATA_PREFIX "images/shapes/pentagon_f.png",
   DATA_PREFIX "images/shapes/hexagon.png",
   DATA_PREFIX "images/shapes/hexagon_f.png",
-  DATA_PREFIX "images/shapes/diamond.png",
-  DATA_PREFIX "images/shapes/diamond_f.png",
+  DATA_PREFIX "images/shapes/heptagon.png",
+  DATA_PREFIX "images/shapes/heptagon_f.png",
   DATA_PREFIX "images/shapes/octagon.png",
   DATA_PREFIX "images/shapes/octagon_f.png",
+  DATA_PREFIX "images/shapes/diamond.png",
+  DATA_PREFIX "images/shapes/diamond_f.png",
   DATA_PREFIX "images/shapes/star3p.png",
   DATA_PREFIX "images/shapes/star3p_f.png",
   DATA_PREFIX "images/shapes/star4p.png",
