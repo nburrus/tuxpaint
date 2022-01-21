@@ -146,6 +146,8 @@ const int shape_filled[NUM_SHAPES] = {
   1,                            /* Triangle */
   0,                            /* Pentagon */
   1,                            /* Pentagon */
+  0,                            /* Hexagon */
+  1,                            /* Hexagon */
   0,                            /* Heptagon */
   1,                            /* Heptagon */
   0,                            /* Octagon */
