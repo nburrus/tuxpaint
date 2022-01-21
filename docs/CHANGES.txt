@@ -14,27 +14,33 @@ http://www.tuxpaint.org/
       + Note: A "nobrushspacing" simplifcation option is provided to
         disable this feature; Tux Paint will continue using the brushes'
         default spacings.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Many brushes have been given more reasonable default spacing
       settings (e.g., star brush's new default spacing causes
       individual stars to appear, rather than a 'smear').
       Closes https://sourceforge.net/p/tuxpaint/bugs/243/
       (h/t Areti Tsolakidou for the suggestion)
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to "Eraser" tool:
     ------------------------------
     * Outline for circle-shaped erasers is now also circular.
       Closes https://sourceforge.net/p/tuxpaint/bugs/244/
       (h/t Areti Tsolakidou for the suggestion)
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to "Shapes" tool:
     ------------------------------
     * Added hexagon (6-sided polygon) and heptagon (7-sided) shapes.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Showing aspect ratio of shapes when stretching them.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Using floats more, allowing for proper heptagon support, as
       well as a non-skewed starting angle for octagons (22.5 degrees).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
     ---------------------
@@ -46,6 +52,7 @@ http://www.tuxpaint.org/
 
     * Updated `src/po/check_translations.sh` sanity-checking script
       so it properly finds the updated docs & other changes.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Bug Fixes:
     ----------
@@ -62,10 +69,15 @@ http://www.tuxpaint.org/
 
     * Use character class in macOS build script
       (It appears \t is not compatible with certain versions of grep.)
-      Mark K. Kim <markuskimius@gmail.com>
+      Mark Kim <markuskimius@gmail.com>
 
     * Remove install stages not needed on macOS
-      Mark K. Kim <markuskimius@gmail.com>
+      Mark Kim <markuskimius@gmail.com>
+
+  * Documentation updates:
+    ---------------------
+    * macOS Apple Silicon and Universal Binary build instructions
+      Mark Kim <markuskimius@gmail.com>
 
 
 2021.November.25 (0.9.27)
