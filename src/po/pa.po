@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-21 00:02-0800\n"
+"POT-Creation-Date: 2022-01-21 00:34-0800\n"
 "PO-Revision-Date: 2013-02-04 21:03+0200\n"
 "Last-Translator: Arshpreet singh <EMAIL@ADDRESS>\n"
 "Language-Team: none>\n"
@@ -274,121 +274,135 @@ msgid "ZH_TW"
 msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:264 ../shapes.h:265
 msgid "Square"
 msgstr "ਵਰਗ "
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:268 ../shapes.h:269
 msgid "Rectangle"
 msgstr "ਆਇਤ"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:272 ../shapes.h:273
 msgid "Circle"
 msgstr "ਚਕਰ "
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:276 ../shapes.h:277
 msgid "Ellipse"
 msgstr "ਅੰਡਾਕਾਰ"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:266 ../shapes.h:267
+#: ../shapes.h:280 ../shapes.h:281
 msgid "Triangle"
 msgstr "ਤਿਕੋਣ "
 
 #. Pentagon shape tool (5 sides)
-#: ../shapes.h:270 ../shapes.h:271
+#: ../shapes.h:284 ../shapes.h:285
 msgid "Pentagon"
 msgstr "ਪੰਜਭੁਜ"
 
 #. Hexagon shape tool (6 sides)
-#: ../shapes.h:274 ../shapes.h:275
+#: ../shapes.h:288 ../shapes.h:289
 #, fuzzy
 #| msgid "Pentagon"
 msgid "Hexagon"
 msgstr "ਪੰਜਭੁਜ"
 
-#. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:278 ../shapes.h:279
-msgid "Rhombus"
-msgstr "ਸਮ ਚੁਤਰਭੁਜ "
+#. Heptagon (aka septagon) shape tool (7 sides)
+#: ../shapes.h:292 ../shapes.h:293
+#, fuzzy
+#| msgid "Pentagon"
+msgid "Heptagon"
+msgstr "ਪੰਜਭੁਜ"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:282 ../shapes.h:283
+#: ../shapes.h:296 ../shapes.h:297
 msgid "Octagon"
 msgstr "ਅਠਭੁਜਾ"
+
+#. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:300 ../shapes.h:301
+msgid "Rhombus"
+msgstr "ਸਮ ਚੁਤਰਭੁਜ "
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:286 ../shapes.h:289 ../shapes.h:292 ../shapes.h:295
-#: ../shapes.h:298 ../shapes.h:301
+#: ../shapes.h:304 ../shapes.h:307 ../shapes.h:310 ../shapes.h:313
+#: ../shapes.h:316 ../shapes.h:319
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:327 ../shapes.h:328
 msgid "A square is a rectangle with four equal sides."
 msgstr "ਵਰਗ ਇੱਕ ਆਇਤ ਹੁੰਦਾ ਹੈ ਜਿਸਦੀਆਂ ਸਾਰੀਆ ਭੁਜਾਵਾਂ ਬਰਾਬਰ ਹੁੰਦੀਆ ਹਨ "
 
 #. Description of a rectangle
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:331 ../shapes.h:332
 msgid "A rectangle has four sides and four right angles."
 msgstr "ਆਇਤ ਦੀਆਂ ਚਾਰ ਭੁਜਾਵਾਂ ਅਤੇ ਚਾਰ ਸਮਕੋਣ ਹੁੰਦੇ ਹਨ "
 
 #. Description of a circle
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:335 ../shapes.h:336
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "ਚੱਕਰ ਇੱਕ ਅਜੇਹਾ ਬਿੰਦੁ ਹੁੰਦਾ ਹੈ ਜਿਸਦਾ ਵਿਆਸ ਜ਼ੀਰੋ ਤੋਂ ਜ਼ਿਆਦਾ ਹੁੰਦਾ ਹੈ "
 
 #. Description of an ellipse
-#: ../shapes.h:321 ../shapes.h:322
+#: ../shapes.h:339 ../shapes.h:340
 msgid "An ellipse is a stretched circle."
 msgstr "ਅੰਡਾਕਾਰ ਸ਼ਕਲ ਅੰਡੇ ਦੀ ਤਰਾਂ ਗੋਲ ਹੁੰਦੀ ਹੈ "
 
 #. Description of a triangle
-#: ../shapes.h:325 ../shapes.h:326
+#: ../shapes.h:343 ../shapes.h:344
 msgid "A triangle has three sides."
 msgstr "ਤਿਕੋਣ ਦੀਆਂ ਤਿੰਨ  ਭੁਜਾਵਾਂ ਹੁੰਦੀਆਂ ਹਨ "
 
 #. Description of a pentagon
-#: ../shapes.h:329 ../shapes.h:330
+#: ../shapes.h:347 ../shapes.h:348
 msgid "A pentagon has five sides."
 msgstr "ਪੰਜਭੁਜ ਦੀਆਂ ਪੰਜ ਭੁਜਾਵਾਂ ਹੁੰਦੀਆ ਹਨ "
 
 #. Description of a hexagon
-#: ../shapes.h:333 ../shapes.h:334
+#: ../shapes.h:351 ../shapes.h:352
 #, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
 msgstr "ਪੰਜਭੁਜ ਦੀਆਂ ਪੰਜ ਭੁਜਾਵਾਂ ਹੁੰਦੀਆ ਹਨ "
 
-#. Description of a rhombus
-#: ../shapes.h:337 ../shapes.h:338
-msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "ਸਮਚੁਤਰਭੁਜ ਦੀਆਂ ਚਾਰੇ ਭੁਜਾਵਾਂ ਬਰਾਬਰ ਹੁੰਦੀਆ ਹਨ"
+#. Description of a heptagon
+#: ../shapes.h:355 ../shapes.h:356
+#, fuzzy
+#| msgid "A pentagon has five sides."
+msgid "A heptagon has seven sides."
+msgstr "ਪੰਜਭੁਜ ਦੀਆਂ ਪੰਜ ਭੁਜਾਵਾਂ ਹੁੰਦੀਆ ਹਨ "
 
 #. Description of an octagon
-#: ../shapes.h:341 ../shapes.h:342
+#: ../shapes.h:359 ../shapes.h:360
 msgid "An octagon has eight equal sides."
 msgstr "ਅਠਭੁਜ ਦੀਆਂ ਅਠ ਭੁਜਾਵਾਂ ਹੁੰਦੀਆ ਹਨ "
 
-#: ../shapes.h:344 ../shapes.h:345
+#. Description of a rhombus
+#: ../shapes.h:363 ../shapes.h:364
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "ਸਮਚੁਤਰਭੁਜ ਦੀਆਂ ਚਾਰੇ ਭੁਜਾਵਾਂ ਬਰਾਬਰ ਹੁੰਦੀਆ ਹਨ"
+
+#: ../shapes.h:366 ../shapes.h:367
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:346 ../shapes.h:347
+#: ../shapes.h:368 ../shapes.h:369
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:348 ../shapes.h:349
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:407
+#: ../shapes.h:431
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -400,7 +414,7 @@ msgstr ""
 "ਇਕ ਸੇਪ ਚੁਣੋ ਅਤੇ ਉਸਨੁੰ ਆਪਣੀ ਜਰੂਰਤ ਅਨੁਸਾਰ ਮਾਓਸ ਕਲਿਕ ਦਾ ਪਰਜੋਗ ਕਰਕੇ ਪੇਜ ਤੇ ਬਨਾਓ ਸੇਪ ਦਾ ਮਾਪ ਵੀ "
 "ਤੁਸੀਂ ਮਾਓਸ ਦੀ ਮਦਦ ਨਾਲ ਕਰ ਸਕਦੇ ਓ "
 
-#: ../shapes.h:408
+#: ../shapes.h:432
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -412,11 +426,11 @@ msgstr ""
 "ਇਕ ਸੇਪ ਚੁਣੋ ਅਤੇ ਉਸਨੁੰ ਆਪਣੀ ਜਰੂਰਤ ਅਨੁਸਾਰ ਮਾਓਸ ਕਲਿਕ ਦਾ ਪਰਜੋਗ ਕਰਕੇ ਪੇਜ ਤੇ ਬਨਾਓ ਸੇਪ ਦਾ ਮਾਪ ਵੀ "
 "ਤੁਸੀਂ ਮਾਓਸ ਦੀ ਮਦਦ ਨਾਲ ਕਰ ਸਕਦੇ ਓ "
 
-#: ../shapes.h:414
+#: ../shapes.h:438
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:415
+#: ../shapes.h:439
 msgid "Draw shapes from a corner."
 msgstr ""
 

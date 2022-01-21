@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-21 00:02-0800\n"
+"POT-Creation-Date: 2022-01-21 00:34-0800\n"
 "PO-Revision-Date: 2012-01-02 11:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-PA\n"
@@ -276,122 +276,136 @@ msgid "ZH_TW"
 msgstr " ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:264 ../shapes.h:265
 msgid "Square"
 msgstr " مۄربعہٕ"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:268 ../shapes.h:269
 msgid "Rectangle"
 msgstr " ژٕکوٗنجل"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:258 ../shapes.h:259
+#: ../shapes.h:272 ../shapes.h:273
 msgid "Circle"
 msgstr " گوٗل"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:262 ../shapes.h:263
+#: ../shapes.h:276 ../shapes.h:277
 msgid "Ellipse"
 msgstr "ٹھولہٕ شکلہِ"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:266 ../shapes.h:267
+#: ../shapes.h:280 ../shapes.h:281
 msgid "Triangle"
 msgstr " تِکوٗن "
 
 #. Pentagon shape tool (5 sides)
-#: ../shapes.h:270 ../shapes.h:271
+#: ../shapes.h:284 ../shapes.h:285
 msgid "Pentagon"
 msgstr "پانٛژکونَل"
 
 #. Hexagon shape tool (6 sides)
-#: ../shapes.h:274 ../shapes.h:275
+#: ../shapes.h:288 ../shapes.h:289
 #, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Hexagon"
 msgstr "شَہ کوٗنَل موزیک"
 
-#. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:278 ../shapes.h:279
-msgid "Rhombus"
-msgstr "معین"
+#. Heptagon (aka septagon) shape tool (7 sides)
+#: ../shapes.h:292 ../shapes.h:293
+#, fuzzy
+#| msgid "Hexagon Mosaic"
+msgid "Heptagon"
+msgstr "شَہ کوٗنَل موزیک"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:282 ../shapes.h:283
+#: ../shapes.h:296 ../shapes.h:297
 msgid "Octagon"
 msgstr " ٲٹھ کونَل"
+
+#. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:300 ../shapes.h:301
+msgid "Rhombus"
+msgstr "معین"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:286 ../shapes.h:289 ../shapes.h:292 ../shapes.h:295
-#: ../shapes.h:298 ../shapes.h:301
+#: ../shapes.h:304 ../shapes.h:307 ../shapes.h:310 ../shapes.h:313
+#: ../shapes.h:316 ../shapes.h:319
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:327 ../shapes.h:328
 msgid "A square is a rectangle with four equal sides."
 msgstr "اَکھ مۄربعہٕ چھُہ  سُہ   ژٕکوٗنجل یَتھ ژۄنوٲی انٛد برابر آسد۪ن"
 
 #. Description of a rectangle
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:331 ../shapes.h:332
 msgid "A rectangle has four sides and four right angles."
 msgstr "أکِس ژٕکوٗنجلَس ژور انٛد تہٕ ژور عمودی زٲوِیہٕ آسان"
 
 #. Description of a circle
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:335 ../shapes.h:336
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
 "گوٗل چھُہ اَکھ گُماو دار شکل یَتھ منٛز سٲری نۄختہٕ  مرکز پد۪ٹھ برابر دوری پد۪ٹھ آسد۪ن"
 
 #. Description of an ellipse
-#: ../shapes.h:321 ../shapes.h:322
+#: ../shapes.h:339 ../shapes.h:340
 msgid "An ellipse is a stretched circle."
 msgstr "ٹھولہٕ شکل چھہ اَکھ زیٹھرٲیِتھ گوٗل آسان"
 
 #. Description of a triangle
-#: ../shapes.h:325 ../shapes.h:326
+#: ../shapes.h:343 ../shapes.h:344
 msgid "A triangle has three sides."
 msgstr "  تِکوٗنَس چھہ ترٚے انٛد آسان"
 
 #. Description of a pentagon
-#: ../shapes.h:329 ../shapes.h:330
+#: ../shapes.h:347 ../shapes.h:348
 msgid "A pentagon has five sides."
 msgstr "پانٛژ کونَس چھہ پانٛژ انٛد آسان"
 
 #. Description of a hexagon
-#: ../shapes.h:333 ../shapes.h:334
+#: ../shapes.h:351 ../shapes.h:352
 #, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
 msgstr "پانٛژ کونَس چھہ پانٛژ انٛد آسان"
 
-#. Description of a rhombus
-#: ../shapes.h:337 ../shapes.h:338
-msgid "A rhombus has four equal sides, and opposite sides are parallel."
-msgstr "معینَس چھہٕ ژور برابرانٛد آسان تہم مدِمقابل انٛد متوازی آسان"
+#. Description of a heptagon
+#: ../shapes.h:355 ../shapes.h:356
+#, fuzzy
+#| msgid "A pentagon has five sides."
+msgid "A heptagon has seven sides."
+msgstr "پانٛژ کونَس چھہ پانٛژ انٛد آسان"
 
 #. Description of an octagon
-#: ../shapes.h:341 ../shapes.h:342
+#: ../shapes.h:359 ../shapes.h:360
 msgid "An octagon has eight equal sides."
 msgstr "ٲٹھ کوٗنلَس چھہ ٲٹھ برابر انٛد آسان"
 
-#: ../shapes.h:344 ../shapes.h:345
+#. Description of a rhombus
+#: ../shapes.h:363 ../shapes.h:364
+msgid "A rhombus has four equal sides, and opposite sides are parallel."
+msgstr "معینَس چھہٕ ژور برابرانٛد آسان تہم مدِمقابل انٛد متوازی آسان"
+
+#: ../shapes.h:366 ../shapes.h:367
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:346 ../shapes.h:347
+#: ../shapes.h:368 ../shapes.h:369
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:348 ../shapes.h:349
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:407
+#: ../shapes.h:431
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -404,7 +418,7 @@ msgstr ""
 "مرضی ہِنٛد۪ی سائزٕ حساب گَسہِ۔ أند۪ی أند۪ی ڈٲلیو نَژناونہٕ خٲطرٕ  تہٕ کلِک کٔریو بناونہٕ "
 "خٲطرٕ۔"
 
-#: ../shapes.h:408
+#: ../shapes.h:432
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -417,11 +431,11 @@ msgstr ""
 "مرضی ہِنٛد۪ی سائزٕ حساب گَسہِ۔ أند۪ی أند۪ی ڈٲلیو نَژناونہٕ خٲطرٕ  تہٕ کلِک کٔریو بناونہٕ "
 "خٲطرٕ۔"
 
-#: ../shapes.h:414
+#: ../shapes.h:438
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:415
+#: ../shapes.h:439
 msgid "Draw shapes from a corner."
 msgstr ""
 
