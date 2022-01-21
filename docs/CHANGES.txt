@@ -67,6 +67,9 @@ http://www.tuxpaint.org/
       (useful for automated installation/uninsta$llation processes).
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+    * On macOS, use the CMD (⌘) key wherever CTRL is used on other OSes
+      Mark Kim <markuskimius@gmail.com>
+
     * Use character class in macOS build script
       (It appears \t is not compatible with certain versions of grep.)
       Mark Kim <markuskimius@gmail.com>

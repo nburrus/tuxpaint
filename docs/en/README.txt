@@ -541,8 +541,8 @@ Available Tools
                  Clicking this tool will undo the last drawing action. You
                  can even undo more than once!
 
-                 Note: You can also press [Control] + [Z] on the keyboard to
-                 Undo.
+                 Note: You can also press [Control / ⌘] + [Z] on the keyboard
+                 to Undo.
 
      ----------------------------------------------------------------------
 
@@ -554,8 +554,8 @@ Available Tools
                  As long as you don't draw again, you can redo as many times
                  as you had undone!
 
-                 Note: You can also press [Control] + [R] on the keyboard to
-                 Redo.
+                 Note: You can also press [Control / ⌘] + [R] on the keyboard
+                 to Redo.
 
      ----------------------------------------------------------------------
 
@@ -567,8 +567,8 @@ Available Tools
                  'Template' image (see below). You will first be asked
                  whether you really want to do this.
 
-                 Note: You can also press [Control] + [N] on the keyboard to
-                 start a new drawing.
+                 Note: You can also press [Control / ⌘] + [N] on the keyboard
+                 to start a new drawing.
 
                  'Starter' & Template Images
 
@@ -635,8 +635,8 @@ Available Tools
                  been saved, you will be prompted as to whether you want to
                  save it or not. (See "Save," below.)
 
-                 Note: You can also press [Control] + [O] on the keyboard to
-                 bring up the 'Open' dialog.
+                 Note: You can also press [Control / ⌘] + [O] on the keyboard
+                 to bring up the 'Open' dialog.
 
      ----------------------------------------------------------------------
 
@@ -661,8 +661,8 @@ Available Tools
                  set, it won't ask before saving over. See the "Options"
                  documentation.
 
-                 Note: You can also press [Control] + [S] on the keyboard to
-                 save.
+                 Note: You can also press [Control / ⌘] + [S] on the keyboard
+                 to save.
 
      ----------------------------------------------------------------------
 
@@ -873,7 +873,7 @@ Available Tools
                  sequence may be used to quit.
 
                  If neither of those are possible, the key sequence of
-                 [Shift] + [Control] + [Escape] may be used to quit.
+                 [Shift] + [Control / ⌘] + [Escape] may be used to quit.
 
                  See the "Options" documentation.
 

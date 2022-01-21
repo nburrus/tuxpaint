@@ -581,8 +581,8 @@ Outils disponibles
                  En cliquant cet outil annulera la dernière action. Vous
                  pouvez même annuler plus d'une fois !
 
-                 Remarque : vous pouvez également appuyer [Control] + [Z] sur
-                 le clavier pour Défaire.
+                 Remarque : vous pouvez également appuyer [Control / ⌘] + [Z]
+                 sur le clavier pour Défaire.
 
      ----------------------------------------------------------------------
 
@@ -594,8 +594,8 @@ Outils disponibles
                  Tant que vous ne dessinez plus, vous pouvez refaire autant
                  de fois que vous avez défait !
 
-                 Remarque : vous pouvez également appuyer [Control] + [R] sur
-                 le clavier pour Refaire.
+                 Remarque : vous pouvez également appuyer [Control / ⌘] + [R]
+                 sur le clavier pour Refaire.
 
      ----------------------------------------------------------------------
 
@@ -608,8 +608,8 @@ Outils disponibles
                  'Starter' ou 'Template' (voir ci-dessous). On vous demandera
                  d'abord si vous voulez vraiment faire cela.
 
-                 Remarque : vous pouvez également appuyer [Control] + [N] sur
-                 le clavier pour commencer un nouveau dessin.
+                 Remarque : vous pouvez également appuyer [Control / ⌘] + [N]
+                 sur le clavier pour commencer un nouveau dessin.
 
                  Images de "Démarrage" et images "Modèle"
 
@@ -682,8 +682,8 @@ Outils disponibles
                  souhaitez l'enregistrer ou non. (Voir "Enregistrer,"
                  ci-dessous.)
 
-                 Remarque : vous pouvez également appuyer [Control] + [O] sur
-                 le clavier pour afficher la boîte de dialogue "Ouvrir".
+                 Remarque : vous pouvez également appuyer [Control / ⌘] + [O]
+                 sur le clavier pour afficher la boîte de dialogue "Ouvrir".
 
      ----------------------------------------------------------------------
 
@@ -709,8 +709,8 @@ Outils disponibles
                  déjà définies, il ne sera rien demandé avant de sauvegarder.
                  Voir la documentation Options.
 
-                 Remarque : vous pouvez également appuyer [Control] + [S] sur
-                 le clavier pour sauvegarde.
+                 Remarque : vous pouvez également appuyer [Control / ⌘] + [S]
+                 sur le clavier pour sauvegarde.
 
      ----------------------------------------------------------------------
 
@@ -941,8 +941,8 @@ Outils disponibles
                  ou la touche [Alt] + [F4] peut être utilisée pour quitter.
 
                  Si aucune de ces options n'est possible, la séquence de
-                 touches [Shift] + [Control] + [Escape] peut être utilisée
-                 pour quitter.
+                 touches [Shift] + [Control / ⌘] + [Escape] peut être
+                 utilisée pour quitter.
 
                  Voir la documentation sur "Options".
 
