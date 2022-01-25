@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 21, 2022
+  June 14, 2002 - January 25, 2022
 */
 
 #include "platform.h"
@@ -3252,27 +3252,17 @@ static void mainloop(void)
                                     {
                                       if (onscreen_keyboard_layout)
                                         kbd =
-                                          osk_create(onscreen_keyboard_layout, screen,
+                                          osk_create(onscreen_keyboard_layout, canvas,
                                                      img_btn_up, img_btn_down, img_btn_off,
                                                      img_btn_nav, img_btn_hold,
-                                                     img_oskdel, img_osktab, img_oskenter,
-                                                     img_oskcapslock, img_oskshift,
-                                                     img_btnsm_up, img_btnsm_down, img_btnsm_off,
-                                                     img_btnsm_nav, img_btnsm_hold,
-                                                     /* FIXME */
                                                      img_oskdel, img_osktab, img_oskenter,
                                                      img_oskcapslock, img_oskshift,
                                                      onscreen_keyboard_disable_change);
                                       else
                                         kbd =
-                                          osk_create(strdup("default.layout"), screen,
+                                          osk_create(strdup("default.layout"), canvas,
                                                      img_btn_up, img_btn_down, img_btn_off,
                                                      img_btn_nav, img_btn_hold,
-                                                     img_oskdel, img_osktab, img_oskenter,
-                                                     img_oskcapslock, img_oskshift,
-                                                     img_btnsm_up, img_btnsm_down, img_btnsm_off,
-                                                     img_btnsm_nav, img_btnsm_hold,
-                                                     /* FIXME */
                                                      img_oskdel, img_osktab, img_oskenter,
                                                      img_oskcapslock, img_oskshift,
                                                      onscreen_keyboard_disable_change);

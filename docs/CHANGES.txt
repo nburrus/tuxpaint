@@ -42,6 +42,17 @@ http://www.tuxpaint.org/
       well as a non-skewed starting angle for octagons (22.5 degrees).
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * Improvements to "Text" & "Label" tools:
+    ---------------------------------------
+    * Onscreen keyboard button sizes no longer restricted to
+      "the same size as other UI buttons" or "1/4th the size...",
+      and will now scale down from the full-size buttons to whatever
+      allows the full layout to fit within 90% of the canvas width
+      and 50% of the canvas height (picking the smallest size, to keep
+      square buttons for letters/numbers/symbols).
+      + Closes https://sourceforge.net/p/tuxpaint/feature-requests/212/
+        (h/t Anat Caspi)
+
   * Localization Updates:
     ---------------------
     * Albanian translation
