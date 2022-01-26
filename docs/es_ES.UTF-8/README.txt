@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                 enero 21, 2022
+                                 enero 26, 2022
 
      ----------------------------------------------------------------------
 
@@ -193,6 +193,18 @@ Main Screen
                you to pick a color found within your drawing, and the rainbow
                palette, which allows you to pick a color from within a box
                containing thousands of colors.
+
+               When the active tool supports colors, a shortcut may be used
+               to access the "color picker" option more quickly. Hold the
+               [Control] key while clicking, and the color under the mouse
+               cursor will be shown at the bottom. You may drag around to
+               canvas to find the color you want. When you release the mouse
+               button, the color under the cursor will be selected. If you
+               release the mouse outside of the canvas (e.g., over the
+               "Tools" area), the color selection will be left unchanged.
+               (This is similar to clicking the"Back" button that's available
+               when bringing up the "color picker" option via its button the
+               color palette.)
 
                (Note: You can define your own colors for Tux Paint. See the
                "Options" documentation.)
