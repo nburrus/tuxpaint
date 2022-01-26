@@ -1904,6 +1904,7 @@ static int max_stamps[MAX_STAMP_GROUPS];
 static stamp_type **stamp_data[MAX_STAMP_GROUPS];
 
 static SDL_Surface *active_stamp;
+static SDL_Surface * current_stamp_cached = NULL;
 
 
 /**
@@ -2110,6 +2111,7 @@ static void update_stamp_xor(void);
 #endif
 
 static void set_active_stamp(void);
+static void clear_cached_stamp(void);
 
 static int calc_eraser_size(int which_eraser);
 static void do_eraser(int x, int y, int update);
@@ -4777,6 +4779,8 @@ static void mainloop(void)
                               color_hexes[cur_color][0],
                               color_hexes[cur_color][1],
                               color_hexes[cur_color][2]);
+                          else if (cur_tool == TOOL_STAMP)
+                            clear_cached_stamp();
                         }
                     }
                 }
@@ -7074,7 +7078,6 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 }
 
 
-
 /**
  * Draw the current stamp onto the canvas.
  *
@@ -7084,101 +7087,119 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
 static void stamp_draw(int x, int y)
 {
   SDL_Rect dest;
-  SDL_Surface *tmp_surf, *surf_ptr, *final_surf;
+  SDL_Surface *scaled_surf, *tmp_surf, *surf_ptr;
   Uint32 amask;
   Uint8 r, g, b, a;
-  int xx, yy, dont_free_tmp_surf, base_x, base_y;
+  int xx, yy, base_x, base_y;
+  int dont_free_tmp_surf, dont_free_scaled_surf;
 
-  Uint32(*getpixel) (SDL_Surface *, int, int);
-  void (*putpixel) (SDL_Surface *, int, int, Uint32);
-
-  surf_ptr = active_stamp;
-
-  getpixel = getpixels[surf_ptr->format->BytesPerPixel];
-
-
-  /* Create a temp surface to play with: */
-
-  if (stamp_colorable(cur_stamp[stamp_group]) || stamp_tintable(cur_stamp[stamp_group]))
+  if (current_stamp_cached == NULL)
     {
-      amask = ~(surf_ptr->format->Rmask | surf_ptr->format->Gmask | surf_ptr->format->Bmask);
+      printf("Generating stamp image\n");
 
-      tmp_surf =
-        SDL_CreateRGBSurface(SDL_SWSURFACE,
-                             surf_ptr->w,
-                             surf_ptr->h,
-                             surf_ptr->format->BitsPerPixel,
-                             surf_ptr->format->Rmask, surf_ptr->format->Gmask, surf_ptr->format->Bmask, amask);
-
-      if (tmp_surf == NULL)
+      Uint32(*getpixel) (SDL_Surface *, int, int);
+      void (*putpixel) (SDL_Surface *, int, int, Uint32);
+    
+      /* Shrink or grow it! */
+      scaled_surf = thumbnail(active_stamp, CUR_STAMP_W, CUR_STAMP_H, 0);
+      dont_free_scaled_surf = 0;
+    
+    
+      surf_ptr = scaled_surf;
+    
+      getpixel = getpixels[surf_ptr->format->BytesPerPixel];
+    
+      /* Create a temp surface to play with: */
+      if (stamp_colorable(cur_stamp[stamp_group]) || stamp_tintable(cur_stamp[stamp_group]))
         {
-          fprintf(stderr, "\nError: Can't render the colored stamp!\n"
-                  "The Simple DirectMedia Layer error that occurred was:\n" "%s\n\n", SDL_GetError());
-
-          cleanup();
-          exit(1);
-        }
-
-      dont_free_tmp_surf = 0;
-    }
-  else
-    {
-      /* Not altering color; no need to create temp surf if we don't use it! */
-
-      tmp_surf = NULL;
-      dont_free_tmp_surf = 1;
-    }
-
-  if (tmp_surf != NULL)
-    putpixel = putpixels[tmp_surf->format->BytesPerPixel];
-  else
-    putpixel = NULL;
-
-
-  /* Alter the stamp's color, if needed: */
-
-  if (stamp_colorable(cur_stamp[stamp_group]) && tmp_surf != NULL)
-    {
-      /* Render the stamp in the chosen color: */
-
-      /* FIXME: It sucks to render this EVERY TIME.  Why not just when
-         they pick the color, or pick the stamp, like with brushes? */
-
-      /* Render the stamp: */
-
-      SDL_LockSurface(surf_ptr);
-      SDL_LockSurface(tmp_surf);
-
-      for (yy = 0; yy < surf_ptr->h; yy++)
-        {
-          for (xx = 0; xx < surf_ptr->w; xx++)
+          amask = ~(surf_ptr->format->Rmask | surf_ptr->format->Gmask | surf_ptr->format->Bmask);
+    
+          tmp_surf =
+            SDL_CreateRGBSurface(SDL_SWSURFACE,
+                                 surf_ptr->w,
+                                 surf_ptr->h,
+                                 surf_ptr->format->BitsPerPixel,
+                                 surf_ptr->format->Rmask, surf_ptr->format->Gmask, surf_ptr->format->Bmask, amask);
+    
+          if (tmp_surf == NULL)
             {
-              SDL_GetRGBA(getpixel(surf_ptr, xx, yy), surf_ptr->format, &r, &g, &b, &a);
-
-              putpixel(tmp_surf, xx, yy,
-                       SDL_MapRGBA(tmp_surf->format,
-                                   color_hexes[cur_color][0], color_hexes[cur_color][1], color_hexes[cur_color][2], a));
+              fprintf(stderr, "\nError: Can't render the colored stamp!\n"
+                      "The Simple DirectMedia Layer error that occurred was:\n" "%s\n\n", SDL_GetError());
+    
+              cleanup();
+              exit(1);
             }
+    
+          dont_free_tmp_surf = 0;
+        }
+      else
+        {
+          /* Not altering color; no need to create temp surf if we don't use it! */
+    
+          tmp_surf = NULL;
+          dont_free_tmp_surf = 1;
+        }
+    
+      if (tmp_surf != NULL)
+        putpixel = putpixels[tmp_surf->format->BytesPerPixel];
+      else
+        putpixel = NULL;
+    
+    
+      /* Alter the stamp's color, if needed: */
+    
+      if (stamp_colorable(cur_stamp[stamp_group]) && tmp_surf != NULL)
+        {
+          /* Render the stamp in the chosen color: */
+    
+          /* FIXME: It sucks to render this EVERY TIME.  Why not just when
+             they pick the color, or pick the stamp, like with brushes? */
+    
+          /* Render the stamp: */
+    
+          SDL_LockSurface(surf_ptr);
+          SDL_LockSurface(tmp_surf);
+    
+          for (yy = 0; yy < surf_ptr->h; yy++)
+            {
+              for (xx = 0; xx < surf_ptr->w; xx++)
+                {
+                  SDL_GetRGBA(getpixel(surf_ptr, xx, yy), surf_ptr->format, &r, &g, &b, &a);
+    
+                  putpixel(tmp_surf, xx, yy,
+                           SDL_MapRGBA(tmp_surf->format,
+                                       color_hexes[cur_color][0], color_hexes[cur_color][1], color_hexes[cur_color][2], a));
+                }
+            }
+    
+          SDL_UnlockSurface(tmp_surf);
+          SDL_UnlockSurface(surf_ptr);
+        }
+      else if (stamp_tintable(cur_stamp[stamp_group]))
+        {
+          /* Tintable */
+          if (stamp_data[stamp_group][cur_stamp[stamp_group]]->tinter == TINTER_VECTOR)
+            vector_tint_surface(tmp_surf, surf_ptr);
+          else
+            tint_surface(tmp_surf, surf_ptr);
+        }
+      else
+        {
+          /* No color change, just use it! */
+          tmp_surf = surf_ptr;
         }
 
-      SDL_UnlockSurface(tmp_surf);
-      SDL_UnlockSurface(surf_ptr);
-    }
-  else if (stamp_tintable(cur_stamp[stamp_group]))
-    {
-      if (stamp_data[stamp_group][cur_stamp[stamp_group]]->tinter == TINTER_VECTOR)
-        vector_tint_surface(tmp_surf, surf_ptr);
-      else
-        tint_surface(tmp_surf, surf_ptr);
+      printf("Caching stamp\n");
+      current_stamp_cached = SDL_DisplayFormatAlpha(tmp_surf);
     }
   else
     {
-      /* No color change, just use it! */
-      tmp_surf = surf_ptr;
-    }
+      printf("Using cached stamp!\n");
 
-  /* Shrink or grow it! */
-  final_surf = thumbnail(tmp_surf, CUR_STAMP_W, CUR_STAMP_H, 0);
+      tmp_surf = current_stamp_cached;
+      dont_free_tmp_surf = 1;
+      dont_free_scaled_surf = 1;
+    }
 
   /* Where it will go? */
   base_x = x - (CUR_STAMP_W + 1) / 2;
@@ -7187,7 +7208,7 @@ static void stamp_draw(int x, int y)
   /* And blit it! */
   dest.x = base_x;
   dest.y = base_y;
-  SDL_BlitSurface(final_surf, NULL, canvas, &dest);     /* FIXME: Conditional jump or move depends on uninitialised value(s) */
+  SDL_BlitSurface(tmp_surf, NULL, canvas, &dest);     /* FIXME: Conditional jump or move depends on uninitialised value(s) */
 
   update_canvas(x - (CUR_STAMP_W + 1) / 2,
                 y - (CUR_STAMP_H + 1) / 2, x + (CUR_STAMP_W + 1) / 2, y + (CUR_STAMP_H + 1) / 2);
@@ -7197,7 +7218,8 @@ static void stamp_draw(int x, int y)
   if (!dont_free_tmp_surf)
     SDL_FreeSurface(tmp_surf);
 
-  SDL_FreeSurface(final_surf);
+  if (!dont_free_scaled_surf)
+    SDL_FreeSurface(scaled_surf);
 }
 
 
@@ -7891,6 +7913,28 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h, double r
 
 
 /**
+ * Clear the currently-cached stamp image
+ * (what we blit to the canvas, so the stamp in its
+ * current orientation, scale, and color), since we'll
+ * need to generate something new based on a change
+ * (a new size, color, orientation, or a completely
+ * different stamp)
+ */
+static void clear_cached_stamp(void)
+{
+  if (current_stamp_cached != NULL)
+    {
+      printf("Clearing cached stamp\n");
+      SDL_FreeSurface(current_stamp_cached);
+      current_stamp_cached = NULL;
+    }
+  else
+    {
+      printf("No cached stamp to clear\n");
+    }
+}
+
+/**
  * FIXME
  */
 /* Note: must have read the *.dat file before calling this */
@@ -8135,6 +8179,8 @@ static void set_active_stamp(void)
 #ifdef DEBUG
   printf("\n\n");
 #endif
+
+  clear_cached_stamp();
 }
 
 /**
@@ -13947,6 +13993,7 @@ static void cleanup(void)
       free(stamp_data[j]);
     }
   free_surface(&active_stamp);
+  free_surface(&current_stamp_cached);
 
   free_surface_array(img_brushes, num_brushes);
   free_surface_array(img_brushes_thumbs, num_brushes);

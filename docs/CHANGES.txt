@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.January.24 (0.9.28)
+2022.January.25 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -22,6 +22,18 @@ http://www.tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/243/
       (h/t Areti Tsolakidou for the suggestion)
       Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Improvements to "Stamp" tool:
+    -----------------------------
+    * Stamp performance improvements
+      + Stamps are scaled before they are colorized or tinted,
+        to increase performance.
+      + The current stamp (in its current form: size, orientation,
+        and color) is cached, so it may be applied to the canvas
+        many times without having to re-render.
+        (No longer scaling and tinting every time you click.)
+      Closes https://sourceforge.net/p/tuxpaint/bugs/147/
+      (h/t Andre Anckaert)
 
   * Improvements to "Eraser" tool:
     ------------------------------
