@@ -14228,6 +14228,7 @@ static void cleanup(void)
   free_cursor(&cursor_wand);
   free_cursor(&cursor_insertion);
   free_cursor(&cursor_rotate);
+  free_cursor(&cursor_pipette);
 
   for (i = 0; i < NUM_COLORS; i++)
     {
@@ -22145,7 +22146,7 @@ static int do_color_sel(void)
                 {
                   /* Hovering over the colors! */
 
-                  do_setcursor(cursor_hand);
+                  do_setcursor(cursor_pipette);
 
 
                   /* Show a big solid example of the color: */
@@ -22583,7 +22584,7 @@ static int do_color_picker(void)
                 {
                   /* Hovering over the colors! */
 
-                  do_setcursor(cursor_hand);
+                  do_setcursor(cursor_pipette);
 
 
                   /* Show a big solid example of the color: */
@@ -26128,6 +26129,8 @@ static void setup(void)
 #endif
 
   cursor_hand = get_cursor(hand_bits, hand_mask_bits, hand_width, hand_height, 12 / scale, 1 / scale);
+
+  cursor_pipette = get_cursor(pipette_bits, pipette_mask_bits, pipette_width, pipette_height, 2 / scale, 20 / scale);
 
   cursor_wand = get_cursor(wand_bits, wand_mask_bits, wand_width, wand_height, 4 / scale, 4 / scale);
 
