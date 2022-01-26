@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                   2022年1月21日
+                                   2022年1月26日
 
      ----------------------------------------------------------------------
 
@@ -151,6 +151,18 @@ Tux Paint の起動
           [いろ - いろ - くろ、しろ、あか、ぴんく、おれんじ、きいろ、みどり、みずいろ、あお、むらさき、ちゃいろ、はいいろ]
 
                右端には色についての２つの特別なオプションがあります。スポイトの形をした「カラーピッカー」は描いている絵の中から色を選ぶことができます。また、「レインボーパレット」では、何千もの色から描画色を選ぶことができます。
+
+               When the active tool supports colors, a shortcut may be used
+               to access the "color picker" option more quickly. Hold the
+               [Control] key while clicking, and the color under the mouse
+               cursor will be shown at the bottom. You may drag around to
+               canvas to find the color you want. When you release the mouse
+               button, the color under the cursor will be selected. If you
+               release the mouse outside of the canvas (e.g., over the
+               "Tools" area), the color selection will be left unchanged.
+               (This is similar to clicking the"Back" button that's available
+               when bringing up the "color picker" option via its button the
+               color palette.)
 
                （注:
                カラーパレットの色は好みに応じて変更できます。変更方法については、"各種設定について"のドキュメントを参照してください。）

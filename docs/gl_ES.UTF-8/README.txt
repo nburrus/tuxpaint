@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             21 de Xaneiro de 2022
+                             26 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -199,6 +199,18 @@ Pantalla principal
                permite recoller unha cor que se atopa dentro do debuxo e a
                paleta do arco da vella, que lle permite recoller unha cor
                dede dentro dunha caixa que contén milleiros de cores.
+
+               When the active tool supports colors, a shortcut may be used
+               to access the "color picker" option more quickly. Hold the
+               [Control] key while clicking, and the color under the mouse
+               cursor will be shown at the bottom. You may drag around to
+               canvas to find the color you want. When you release the mouse
+               button, the color under the cursor will be selected. If you
+               release the mouse outside of the canvas (e.g., over the
+               "Tools" area), the color selection will be left unchanged.
+               (This is similar to clicking the"Back" button that's available
+               when bringing up the "color picker" option via its button the
+               color palette.)
 
                (Nota: Pode definir as súas propias cores para Tux Paint.
                Consulte a documentación de «Opcións»).
