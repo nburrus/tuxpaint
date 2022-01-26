@@ -70,6 +70,10 @@ http://www.tuxpaint.org/
     * Show a "pipette"-shaped mouse pointer when selecting a
       color from the color palette, or the picture.
 
+    * WIP Provide a keyboard shortcut for picking colors from
+      the canvas more quickly.
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/209/
+
   * Localization Updates:
     ---------------------
     * Albanian translation

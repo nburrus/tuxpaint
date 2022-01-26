@@ -2094,7 +2094,7 @@ static int do_new_dialog(void);
 static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d_places, char * *d_names,
                                     char * *d_exts, int *white_in_palette);
 static int do_color_picker(void);
-static int do_color_sel(void);
+static int do_color_sel(int temp_mode);
 
 static int do_slideshow(void);
 static void play_slideshow(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
@@ -4492,7 +4492,7 @@ static void mainloop(void)
                               if (cur_color == (unsigned)(NUM_COLORS - 1))
                                 do_color_picker();
                               else
-                                do_color_sel();
+                                do_color_sel(0);
 
                               if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                                 {
@@ -21361,9 +21361,17 @@ static Uint8 magic_touched(int x, int y)
 }
 
 /**
- * FIXME
+ * Allow the user to select a color from one of the
+ * pixels within their picture.
+ *
+ * @param boolean temp_mode - whether to only appear
+ *   while a shortcut key is being held
+ *   (if not, the mouse will be positioned at the bottom
+ *   center, the UI will show a "Back" button, and wait
+ *   for a color to be clicked in the canvas, or the "Back"
+ *   button to be clicked)
  */
-static int do_color_sel(void)
+static int do_color_sel(int temp_mode)
 {
 #ifndef NO_PROMPT_SHADOWS
   SDL_Surface *alpha_surf;
@@ -21379,8 +21387,17 @@ static int do_color_sel(void)
   int done, chose;
   int back_left, back_top;
   int color_sel_x = 0, color_sel_y = 0;
-  int want_animated_popups = 1;
+  int want_animated_popups;
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
+
+  if (!temp_mode)
+    {
+      want_animated_popups = 1;
+    }
+  else
+    {
+      want_animated_popups = 0;
+    }
 
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
@@ -21398,8 +21415,6 @@ static int do_color_sel(void)
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
 
-  /* FIXME this is the first step to make animated popups optional,
-     to be removed from here when implemented in a more general way */
 
   hide_blinking_cursor();
 
@@ -21492,12 +21507,10 @@ static int do_color_sel(void)
 
   /* Determine spot for example color: */
 
-
   color_example_dest.x = r_color_sel.x + 2;
   color_example_dest.y = r_color_sel.y + 2;
   color_example_dest.w = r_color_sel.w - button_w - 8;
   color_example_dest.h = r_color_sel.h - 4;
-
 
   SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, 0, 0, 0));
 
@@ -21515,29 +21528,38 @@ static int do_color_sel(void)
 
 
 
-  /* Draw current color picker color: */
+  if (!temp_mode)
+    {
+      /* Draw current color picker color: */
+    
+      SDL_FillRect(screen, &color_example_dest,
+                   SDL_MapRGB(screen->format,
+                              color_hexes[NUM_COLORS - 2][0],
+                              color_hexes[NUM_COLORS - 2][1], color_hexes[NUM_COLORS - 2][2]));
 
-  SDL_FillRect(screen, &color_example_dest,
-               SDL_MapRGB(screen->format,
-                          color_hexes[NUM_COLORS - 2][0],
-                          color_hexes[NUM_COLORS - 2][1], color_hexes[NUM_COLORS - 2][2]));
+      /* Show "Back" button */
+      back_left = r_color_sel.x + r_color_sel.w - button_w - 4;
+      back_top = r_color_sel.y;
+    
+      dest.x = back_left;
+      dest.y = back_top;
+    
+      SDL_BlitSurface(img_back, NULL, screen, &dest);
+    
+      dest.x = back_left + (img_back->w - img_openlabels_back->w) / 2;
+      dest.y = back_top + img_back->h - img_openlabels_back->h;
+      SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
+    }
+  else
+    {
+      int mx, my;
 
-
-
-  /* Show "Back" button */
-
-  back_left = r_color_sel.x + r_color_sel.w - button_w - 4;
-  back_top = r_color_sel.y;
-
-  dest.x = back_left;
-  dest.y = back_top;
-
-  SDL_BlitSurface(img_back, NULL, screen, &dest);
-
-  dest.x = back_left + (img_back->w - img_openlabels_back->w) / 2;
-  dest.y = back_top + img_back->h - img_openlabels_back->h;
-  SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
-
+      /* Temp mode: Grab color from canvas under the mouse immediately
+         (let the motion-handling code in the loop below do it for us!) */
+      SDL_GetMouseState(&mx, &my);
+      SDL_WarpMouse(mx - 1, my); /* Need to move to a different spot, or no events occur */
+      SDL_WarpMouse(mx, my);
+    }
 
 
   /* Blit canvas on screen */
@@ -21551,7 +21573,8 @@ static int do_color_sel(void)
   done = 0;
   chose = 0;
   x = y = 0;
-  SDL_WarpMouse(r_color_sel.x + r_color_sel.w / 2, r_color_sel.y + r_color_sel.h / 2);
+  if (!temp_mode)
+    SDL_WarpMouse(r_color_sel.x + r_color_sel.w / 2, r_color_sel.y + r_color_sel.h / 2);
 
   do
     {
@@ -21580,6 +21603,7 @@ static int do_color_sel(void)
 
               if (key == SDLK_ESCAPE)
                 {
+                  /* Hit [Escape]; abort (in either full UI or temporary mode) */
                   chose = 0;
                   done = 1;
                 }
@@ -21590,7 +21614,7 @@ static int do_color_sel(void)
                   event.button.x < r_canvas.x + r_canvas.w &&
                   event.button.y >= r_canvas.y && event.button.y < r_canvas.y + r_canvas.h)
                 {
-                  /* Picked a color! */
+                  /* Picked a color in the canvas, and released! */
 
                   chose = 1;
                   done = 1;
@@ -21601,14 +21625,26 @@ static int do_color_sel(void)
                   color_sel_x = x;
                   color_sel_y = y;
                 }
-              else if (event.button.x >= back_left &&
-                       event.button.x < back_left + img_back->w &&
-                       event.button.y >= back_top && event.button.y < back_top + img_back->h)
+              else
                 {
-                  /* Decided to go Back */
-
-                  chose = 0;
-                  done = 1;
+                  if (!temp_mode)
+                    {
+                      if (event.button.x >= back_left &&
+                          event.button.x < back_left + img_back->w &&
+                          event.button.y >= back_top && event.button.y < back_top + img_back->h)
+                        {
+                          /* Full UI mode: Decided to go Back; abort */
+        
+                          chose = 0;
+                          done = 1;
+                        }
+                    }
+                  else
+                    {
+                      /* Temp mode: Released outside of canvas; abort */
+                      chose = 0;
+                      done = 1;
+                    }
                 }
             }
           else if (event.type == SDL_MOUSEMOTION)
@@ -21617,7 +21653,7 @@ static int do_color_sel(void)
                   event.button.x < r_canvas.x + r_canvas.w &&
                   event.button.y >= r_canvas.y && event.button.y < r_canvas.y + r_canvas.h)
                 {
-                  /* Hovering over the colors! */
+                  /* Hovering over the canvas! */
 
                   do_setcursor(cursor_pipette);
 
@@ -21638,27 +21674,32 @@ static int do_color_sel(void)
                 }
               else
                 {
-                  /* Revert to current color picker color, so we know what it was,
-                     and what we'll get if we go Back: */
+                  /* Outside the canvas... */
 
-                  SDL_FillRect(screen, &color_example_dest,
-                               SDL_MapRGB(screen->format,
-                                          color_hexes[NUM_COLORS - 2][0],
-                                          color_hexes[NUM_COLORS - 2][1], color_hexes[NUM_COLORS - 2][2]));
-
-                  SDL_UpdateRect(screen,
-                                 color_example_dest.x,
-                                 color_example_dest.y, color_example_dest.w, color_example_dest.h);
-
-
-                  /* Change cursor to arrow (or hand, if over Back): */
-
-                  if (event.button.x >= back_left &&
-                      event.button.x < back_left + img_back->w &&
-                      event.button.y >= back_top && event.button.y < back_top + img_back->h)
-                    do_setcursor(cursor_hand);
-                  else
-                    do_setcursor(cursor_arrow);
+                  if (!temp_mode)
+                    {
+                      /* Revert to current color picker color, so we know what it was,
+                         and what we'll get if we go Back: */
+    
+                      SDL_FillRect(screen, &color_example_dest,
+                                   SDL_MapRGB(screen->format,
+                                              color_hexes[NUM_COLORS - 2][0],
+                                              color_hexes[NUM_COLORS - 2][1], color_hexes[NUM_COLORS - 2][2]));
+    
+                      SDL_UpdateRect(screen,
+                                     color_example_dest.x,
+                                     color_example_dest.y, color_example_dest.w, color_example_dest.h);
+    
+    
+                      /* Change cursor to arrow (or hand, if over Back): */
+    
+                      if (event.button.x >= back_left &&
+                          event.button.x < back_left + img_back->w &&
+                          event.button.y >= back_top && event.button.y < back_top + img_back->h)
+                        do_setcursor(cursor_hand);
+                      else
+                        do_setcursor(cursor_arrow);
+                    }
                 }
 
               oldpos_x = event.motion.x;
@@ -21772,7 +21813,11 @@ static int do_color_sel(void)
 }
 
 /**
- * FIXME
+ * Display a large prompt, allowing the user to pick a
+ * color from a large palette.
+ *
+ * FIXME: Various options here would be helpful
+ * (RGB, HSV, color wheel, etc.) -bjk 2022.01.25
  */
 static int do_color_picker(void)
 {
