@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 25, 2022
+  June 14, 2002 - January 26, 2022
 */
 
 #include "platform.h"
@@ -691,8 +691,9 @@ static int NUM_COLORS;
 static Uint8 **color_hexes;
 static char **color_names;
 
-#define COLOR_SELECTOR (NUM_COLORS - 2)
-#define COLOR_PICKER (NUM_COLORS - 1)
+#define COLOR_MIXER (NUM_COLORS - 1) /* Mix colors together */
+#define COLOR_SELECTOR (NUM_COLORS - 3) /* Pick a color from the canvas */
+#define COLOR_PICKER (NUM_COLORS - 2) /* Pick a color from a palette */
 
 /* Show debugging stuff: */
 
@@ -1605,7 +1606,7 @@ static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
 static SDL_Surface *img_shapes_corner, *img_shapes_center;
 static SDL_Surface *img_bold, *img_italic;
 static SDL_Surface *img_label, *img_label_select;
-static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell, *img_color_sel;
+static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell, *img_color_sel, *img_color_mix;
 static int color_picker_x, color_picker_y;
 
 static SDL_Surface *img_title_on, *img_title_off, *img_title_large_on, *img_title_large_off;
@@ -2182,6 +2183,8 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
                                     char * *d_exts, int *white_in_palette);
 static int do_color_picker(void);
 static int do_color_sel(int temp_mode);
+static int do_color_mix(void);
+static void render_color_button(int color, SDL_Surface * decoration);
 static void handle_color_changed(void);
 
 static int do_slideshow(void);
@@ -4712,7 +4715,7 @@ static void mainloop(void)
                           cur_color = whichc;
                           draw_tux_text(TUX_KISS, color_names[cur_color], 1);
 
-                          if (cur_color == (unsigned) COLOR_PICKER || cur_color == (unsigned) COLOR_SELECTOR)
+                          if (cur_color == (unsigned) COLOR_PICKER || cur_color == (unsigned) COLOR_SELECTOR || cur_color == (unsigned) COLOR_MIXER)
                             {
                               int chose_color;
 
@@ -4723,8 +4726,10 @@ static void mainloop(void)
 
                               if (cur_color == (unsigned) COLOR_PICKER)
                                 chose_color = do_color_picker();
-                              else
+                              else if (cur_color == (unsigned) COLOR_SELECTOR)
                                 chose_color = do_color_sel(0);
+                              else if (cur_color == (unsigned) COLOR_MIXER)
+                                chose_color = do_color_picker(); // FIXME: mix();
 
                               if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                                 {
@@ -21931,7 +21936,14 @@ static int do_color_sel(int temp_mode)
   int back_left, back_top;
   int color_sel_x = 0, color_sel_y = 0;
   int want_animated_popups;
-  SDL_Surface *tmp_btn_up, *tmp_btn_down;
+  Uint8 r, g, b;
+  SDL_Event event;
+  SDLKey key;
+  SDL_Rect r_color_sel;
+  SDL_Rect color_example_dest;
+  SDL_Surface *backup;
+  SDL_Rect r_color_picker;
+  Uint32(*getpixel_img_color_picker) (SDL_Surface *, int, int);
 
   if (!temp_mode)
     {
@@ -21941,19 +21953,6 @@ static int do_color_sel(int temp_mode)
     {
       want_animated_popups = 0;
     }
-
-  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
-  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img_color_picker) (SDL_Surface *, int, int);
-  Uint8 r, g, b;
-  double rh, gh, bh;
-  SDL_Event event;
-  SDLKey key;
-  SDL_Rect r_color_sel;
-  SDL_Rect color_example_dest;
-  SDL_Surface *backup;
-  SDL_Rect r_color_picker;
 
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
@@ -22290,67 +22289,10 @@ static int do_color_sel(int temp_mode)
       color_hexes[COLOR_SELECTOR][1] = g;
       color_hexes[COLOR_SELECTOR][2] = b;
 
+      /* Re-render color selector to show the current color it contains: */
+      render_color_button(COLOR_SELECTOR, NULL);
 
-      /* Re-render color picker to show the current color it contains: */
-
-      tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
-      tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
-      img_color_btn_off = thumbnail(img_btn_off, color_button_w, color_button_h, 0);
-
-      getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
-      getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
-      getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
-
-      rh = sRGB_to_linear_table[color_hexes[COLOR_SELECTOR][0]];
-      gh = sRGB_to_linear_table[color_hexes[COLOR_SELECTOR][1]];
-      bh = sRGB_to_linear_table[color_hexes[COLOR_SELECTOR][2]];
-
-
-
-      SDL_LockSurface(img_color_btns[COLOR_SELECTOR]);
-      SDL_LockSurface(img_color_btns[COLOR_SELECTOR + NUM_COLORS]);
-
-      for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
-        {
-          for (x = 0; x < tmp_btn_up->w; x++)
-            {
-              double ru, gu, bu, rd, gd, bd, aa;
-              Uint8 a;
-
-              SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
-
-              ru = sRGB_to_linear_table[r];
-              gu = sRGB_to_linear_table[g];
-              bu = sRGB_to_linear_table[b];
-              SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
-
-              rd = sRGB_to_linear_table[r];
-              gd = sRGB_to_linear_table[g];
-              bd = sRGB_to_linear_table[b];
-              SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y), img_paintwell->format, &r, &g, &b, &a);
-
-              aa = a / 255.0;
-
-              if (a == 255)
-                {
-                  putpixels[img_color_btns[COLOR_SELECTOR]->format->BytesPerPixel]
-                    (img_color_btns[COLOR_SELECTOR], x, y,
-                     SDL_MapRGB(img_color_btns[i]->format,
-                                linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
-                                linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
-
-                  putpixels[img_color_btns[COLOR_SELECTOR + NUM_COLORS]->format->BytesPerPixel]
-                    (img_color_btns[COLOR_SELECTOR + NUM_COLORS], x, y,
-                     SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
-                                linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
-                                linear_to_sRGB(gh * aa + gd * (1.0 - aa)), linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
-                }
-            }
-        }
-
-      SDL_UnlockSurface(img_color_btns[COLOR_SELECTOR]);
-      SDL_UnlockSurface(img_color_btns[COLOR_SELECTOR + NUM_COLORS]);
-
+      /* Apply pipette to color selector entries */
       dest.x = (img_color_btns[COLOR_SELECTOR]->w - img_color_sel->w) / 2;
       dest.y = (img_color_btns[COLOR_SELECTOR]->h - img_color_sel->h) / 2;
       dest.w = img_color_sel->w;
@@ -22383,15 +22325,9 @@ static int do_color_picker(void)
   int ox, oy;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
-  SDL_Surface *tmp_btn_up, *tmp_btn_down;
   int stop;
-
-  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
-  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
-  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
   Uint32(*getpixel_img_color_picker) (SDL_Surface *, int, int);
   Uint8 r, g, b;
-  double rh, gh, bh;
   int done, chose;
   SDL_Event event;
   SDLKey key;
@@ -22736,71 +22672,7 @@ static int do_color_picker(void)
 
 
       /* Re-render color picker to show the current color it contains: */
-
-      tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
-      tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
-      img_color_btn_off = thumbnail(img_btn_off, color_button_w, color_button_h, 0);
-
-      getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
-      getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
-      getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
-
-      rh = sRGB_to_linear_table[color_hexes[COLOR_PICKER][0]];
-      gh = sRGB_to_linear_table[color_hexes[COLOR_PICKER][1]];
-      bh = sRGB_to_linear_table[color_hexes[COLOR_PICKER][2]];
-      SDL_BlitSurface(tmp_btn_down, NULL, img_color_btns[NUM_COLORS - 1], NULL);
-      SDL_BlitSurface(tmp_btn_up, NULL, img_color_btns[NUM_COLORS - 1 + NUM_COLORS], NULL);
-
-      SDL_LockSurface(img_color_btns[COLOR_PICKER]);
-      SDL_LockSurface(img_color_btns[COLOR_PICKER + NUM_COLORS]);
-
-      for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
-        {
-          for (x = 0; x < tmp_btn_up->w; x++)
-            {
-              double ru, gu, bu, rd, gd, bd, aa;
-              Uint8 a;
-
-              SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
-
-              ru = sRGB_to_linear_table[r];
-              gu = sRGB_to_linear_table[g];
-              bu = sRGB_to_linear_table[b];
-              SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
-
-              rd = sRGB_to_linear_table[r];
-              gd = sRGB_to_linear_table[g];
-              bd = sRGB_to_linear_table[b];
-              SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y), img_paintwell->format, &r, &g, &b, &a);
-
-              aa = a / 255.0;
-
-              putpixels[img_color_btns[COLOR_PICKER]->format->BytesPerPixel]
-                (img_color_btns[COLOR_PICKER], x, y,
-                 getpixels[img_color_picker_thumb->format->BytesPerPixel] (img_color_picker_thumb, x, y));
-              putpixels[img_color_btns[COLOR_PICKER + NUM_COLORS]->format->BytesPerPixel]
-                (img_color_btns[COLOR_PICKER + NUM_COLORS], x, y,
-                 getpixels[img_color_picker_thumb->format->BytesPerPixel] (img_color_picker_thumb, x, y));
-
-              if (a == 255)
-                {
-                  putpixels[img_color_btns[COLOR_PICKER]->format->BytesPerPixel]
-                    (img_color_btns[COLOR_PICKER], x, y,
-                     SDL_MapRGB(img_color_btns[i]->format,
-                                linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
-                                linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
-
-                  putpixels[img_color_btns[COLOR_PICKER + NUM_COLORS]->format->BytesPerPixel]
-                    (img_color_btns[COLOR_PICKER + NUM_COLORS], x, y,
-                     SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
-                                linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
-                                linear_to_sRGB(gh * aa + gd * (1.0 - aa)), linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
-                }
-            }
-        }
-
-      SDL_UnlockSurface(img_color_btns[COLOR_PICKER]);
-      SDL_UnlockSurface(img_color_btns[COLOR_PICKER + NUM_COLORS]);
+      render_color_button(COLOR_PICKER, img_color_picker_thumb);
     }
 
 
@@ -22811,6 +22683,110 @@ static int do_color_picker(void)
 
   return (chose);
 }
+
+/**
+ * Display a large prompt, allowing the user to mix
+ * colors together from hues and black/grey/white.
+ */
+static int do_color_mix(void)
+{
+#ifndef NO_PROMPT_SHADOWS
+  int i;
+  SDL_Surface *alpha_surf;
+#endif
+  SDL_Rect dest;
+
+  /* FIXME: Do it */
+
+  return 0;
+}
+
+
+/**
+ * Render an interactive color button (selector, picker, mixer)
+ * with their current color.
+ *
+ * @param int the_color - the color within the palette (e.g., COLOR_PICKER) (its RGB values will be grabbed via global color_hexes[], and the new button will be rendered into the appropriate img_color_btns[])
+ * @param SDL_Surface * decoration - a decoration bitmap to be applied to the button (or NULL if none) (e.g., the color picker rainbow that appears around the color picker button's paintwell)
+ */
+static void render_color_button(int the_color, SDL_Surface * decoration) {
+  SDL_Surface *tmp_btn_up, *tmp_btn_down;
+  double rh, gh, bh;
+  int x, y;
+  Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
+  Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
+  Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
+
+  tmp_btn_up = thumbnail(img_btn_up, color_button_w, color_button_h, 0);
+  tmp_btn_down = thumbnail(img_btn_down, color_button_w, color_button_h, 0);
+  img_color_btn_off = thumbnail(img_btn_off, color_button_w, color_button_h, 0); /* FIXME: Need to free? */
+
+  getpixel_tmp_btn_up = getpixels[tmp_btn_up->format->BytesPerPixel];
+  getpixel_tmp_btn_down = getpixels[tmp_btn_down->format->BytesPerPixel];
+  getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
+
+  rh = sRGB_to_linear_table[color_hexes[the_color][0]];
+  gh = sRGB_to_linear_table[color_hexes[the_color][1]];
+  bh = sRGB_to_linear_table[color_hexes[the_color][2]];
+
+  SDL_LockSurface(img_color_btns[the_color]);
+  SDL_LockSurface(img_color_btns[the_color + NUM_COLORS]);
+
+  for (y = 0; y < tmp_btn_up->h; y++)
+    {
+      for (x = 0; x < tmp_btn_up->w; x++)
+        {
+          double ru, gu, bu, rd, gd, bd, aa;
+          Uint8 a, r, g, b;
+
+          SDL_GetRGB(getpixel_tmp_btn_up(tmp_btn_up, x, y), tmp_btn_up->format, &r, &g, &b);
+
+          ru = sRGB_to_linear_table[r];
+          gu = sRGB_to_linear_table[g];
+          bu = sRGB_to_linear_table[b];
+          SDL_GetRGB(getpixel_tmp_btn_down(tmp_btn_down, x, y), tmp_btn_down->format, &r, &g, &b);
+
+          rd = sRGB_to_linear_table[r];
+          gd = sRGB_to_linear_table[g];
+          bd = sRGB_to_linear_table[b];
+          SDL_GetRGBA(getpixel_img_paintwell(img_paintwell, x, y), img_paintwell->format, &r, &g, &b, &a);
+
+          aa = a / 255.0;
+
+          if (decoration != NULL)
+            {
+              putpixels[img_color_btns[the_color]->format->BytesPerPixel]
+                (img_color_btns[the_color], x, y,
+                 getpixels[decoration->format->BytesPerPixel] (decoration, x, y));
+              putpixels[img_color_btns[the_color + NUM_COLORS]->format->BytesPerPixel]
+                (img_color_btns[the_color + NUM_COLORS], x, y,
+                 getpixels[decoration->format->BytesPerPixel] (decoration, x, y));
+            }
+
+          if (a == 255)
+            {
+              putpixels[img_color_btns[the_color]->format->BytesPerPixel]
+                (img_color_btns[the_color], x, y,
+                 SDL_MapRGB(img_color_btns[i]->format,
+                            linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
+                            linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
+
+              putpixels[img_color_btns[the_color + NUM_COLORS]->format->BytesPerPixel]
+                (img_color_btns[the_color + NUM_COLORS], x, y,
+                 SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
+                            linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
+                            linear_to_sRGB(gh * aa + gd * (1.0 - aa)), linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
+            }
+        }
+    }
+
+  SDL_UnlockSurface(img_color_btns[the_color]);
+  SDL_UnlockSurface(img_color_btns[the_color + NUM_COLORS]);
+
+  SDL_FreeSurface(tmp_btn_up);
+  SDL_FreeSurface(tmp_btn_down);
+}
+
 
 /**
  * Things to do whenever a color is changed
@@ -25465,11 +25441,13 @@ static void setup_colors(void)
     }
 
 
+  /* Add room for dynamic color options at the end of the list: */
+
+  color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 3));
+  color_names = (char **)realloc(color_names, sizeof(char *) * (NUM_COLORS + 3));
+
   /* Add "Color Select" color: */
 
-  color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 1));
-
-  color_names = (char **)realloc(color_names, sizeof(char *) * (NUM_COLORS + 1));
   color_names[NUM_COLORS] = strdup(gettext("Select a color from your drawing."));
   color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
   color_hexes[NUM_COLORS][0] = 0;
@@ -25479,9 +25457,6 @@ static void setup_colors(void)
 
   /* Add "Color Picker" color: */
 
-  color_hexes = (Uint8 **) realloc(color_hexes, sizeof(Uint8 *) * (NUM_COLORS + 1));
-
-  color_names = (char **)realloc(color_names, sizeof(char *) * (NUM_COLORS + 1));
   color_names[NUM_COLORS] = strdup(gettext("Pick a color."));
   color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
   color_hexes[NUM_COLORS][0] = 0;
@@ -25491,6 +25466,16 @@ static void setup_colors(void)
   color_picker_y = 0;
   NUM_COLORS++;
 
+  /* Add "Color Mixer" color */
+
+  color_names[NUM_COLORS] = strdup(gettext("Mix colors together."));
+  color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
+  color_hexes[NUM_COLORS][0] = 255;
+  color_hexes[NUM_COLORS][1] = 255;
+  color_hexes[NUM_COLORS][2] = 255;
+  NUM_COLORS++;
+
+printf("NUM_COLORS = %d\n", NUM_COLORS);
 }
 
 /* ================================================================================== */
@@ -26453,6 +26438,7 @@ static void setup(void)
   img_scroll_up_off = loadimagerb(DATA_PREFIX "images/ui/scroll_up_off.png");
   img_scroll_down_off = loadimagerb(DATA_PREFIX "images/ui/scroll_down_off.png");
   img_color_sel = loadimagerb(DATA_PREFIX "images/ui/csel.png");
+  img_color_mix = loadimagerb(DATA_PREFIX "images/ui/cmix.png");
 
 #ifdef LOW_QUALITY_COLOR_SELECTOR
   img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
@@ -26737,13 +26723,23 @@ static void setup(void)
   for (i = 0; i < NUM_COLORS * 2; i++)
     {
       SDL_UnlockSurface(img_color_btns[i]);
-      if (i == COLOR_SELECTOR || i == 2 * COLOR_SELECTOR)
+      if (i == COLOR_SELECTOR || i == COLOR_SELECTOR + NUM_COLORS)
         {
+          /* Color selector; draw pipette */
           dest.x = (img_color_btns[i]->w - img_color_sel->w) / 2;
           dest.y = (img_color_btns[i]->h - img_color_sel->h) / 2;
           dest.w = img_color_sel->w;
           dest.h = img_color_sel->h;
           SDL_BlitSurface(img_color_sel, NULL, img_color_btns[i], &dest);
+        }
+      else if (i == COLOR_MIXER || i == COLOR_MIXER + NUM_COLORS)
+        {
+          /* Color mixer; draw palette */
+          dest.x = (img_color_btns[i]->w - img_color_mix->w) / 2;
+          dest.y = (img_color_btns[i]->h - img_color_mix->h) / 2;
+          dest.w = img_color_mix->w;
+          dest.h = img_color_mix->h;
+          SDL_BlitSurface(img_color_mix, NULL, img_color_btns[i], &dest);
         }
     }
 
