@@ -74,7 +74,11 @@ http://www.tuxpaint.org/
       (or outside the canvas to abort).
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/209/
 
-    * WIP: A new color mixer has been added.  WORK IN PROGRESS
+    * A new color mixer has been added, allowing red (magenta-ish),
+      yellow, and blue (cyan-ish), along with white ("tint"),
+      grey ("tone"), and black ("shade") to be added together to
+      form a desired color.
+      + WIP: I'd like to add Undo/Redo options to the dialog. -bjk 2021.01.27
 
     * Show a "pipette"-shaped mouse pointer when selecting a
       color from the color palette, or the picture.
