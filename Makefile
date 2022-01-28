@@ -547,7 +547,7 @@ trans:
 
 ######
 
-windows_ARCH_INSTALL:=install-dlls install-tpconf-i18n
+windows_ARCH_INSTALL:=
 macos_ARCH_INSTALL:=install-macbundle
 ios_ARCH_INSTALL:=install-iosbundle
 linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
@@ -669,6 +669,7 @@ bdist-win32:
 		COMPLETIONDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
 		MAGIC_PREFIX:=./win32/bdist/plugins
+	make install-dlls install-tpconf-i18n
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
