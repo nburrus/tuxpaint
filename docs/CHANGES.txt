@@ -77,8 +77,7 @@ http://www.tuxpaint.org/
     * A new color mixer has been added, allowing red (magenta-ish),
       yellow, and blue (cyan-ish) primary colors, along with white
       ("tint"), grey ("tone"), and black ("shade") to be added together to
-      form a desired color.
-      + WIP: Undo/Redo options
+      form a desired color.  Undo/Redo is available!
 
     * Show a "pipette"-shaped mouse pointer when selecting a
       color from the color palette, or the picture.
