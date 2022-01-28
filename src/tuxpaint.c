@@ -22946,7 +22946,7 @@ static void draw_color_mix_undo_redo(void) {
 static void draw_color_mixer_tooltip(void) {
   int i, num_colors_used, tot_count;
   char tip_txt[1024];
-  char tip_txt_proportions[NUM_MIXER_COLORS][12];
+  char tip_txt_proportions[NUM_MIXER_COLORS][64];
   int used_colors_color[NUM_MIXER_COLORS], used_colors_amount[NUM_MIXER_COLORS];
 
   num_colors_used = 0;
@@ -22965,18 +22965,49 @@ static void draw_color_mixer_tooltip(void) {
 
   if (num_colors_used == 1)
     {
-      snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
-               /* Color mixer; e.g., "Your color is entirely grey." */ gettext("entirely"),
-               gettext(color_mixer_color_names[used_colors_color[0]]));
+      if (used_colors_amount[0] == 1)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+                   /* Color mixer; e.g., "Your color is entirely grey." */ gettext("entirely"),
+                   gettext(color_mixer_color_names[used_colors_color[0]]));
+        }
+      else
+        {
+          snprintf(tip_txt_proportions[0], sizeof(tip_txt_proportions[0]),
+                   "%1$s (%2$d/%3$d)",
+                   gettext("entirely"),
+                   used_colors_amount[0], used_colors_amount[0]);
+
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+                   tip_txt_proportions[0],
+                   gettext(color_mixer_color_names[used_colors_color[0]]));
+        }
     }
   else
     {
       for (i = 0; i < num_colors_used; i++)
         {
-          snprintf(tip_txt_proportions[i], sizeof(tip_txt_proportions[i]),
-                   "%d/%d", used_colors_amount[i], tot_count);
-          /* FIXME: We could instead (or as well as) show simplified fractions;
-             e.g. for "2/10" show "1/5" or "2/10 (aka 1/5)", perhaps? -bjk 2022.01.27 */
+          int factor, best_factor;
+
+          best_factor = 0;
+          for (factor = 2; factor <= used_colors_amount[i]; factor++)
+            {
+              if ((used_colors_amount[i] % factor) == 0 && (tot_count % factor) == 0)
+                best_factor = factor;
+            }
+
+          if (best_factor)
+            {
+              snprintf(tip_txt_proportions[i], sizeof(tip_txt_proportions[i]),
+                       "%d/%d (%d/%d)",
+                       used_colors_amount[i], tot_count,
+                       (int) (used_colors_amount[i] / best_factor), (int) (tot_count / best_factor));
+            }
+          else
+            {
+              snprintf(tip_txt_proportions[i], sizeof(tip_txt_proportions[i]),
+                       "%d/%d", used_colors_amount[i], tot_count);
+            }
         }
 
       tip_txt[0] = '\0'; /* Just in case! */
