@@ -22170,9 +22170,9 @@ int color_mix_btn_lefts[NUM_COLOR_MIXER_BTNS], color_mix_btn_tops[NUM_COLOR_MIXE
 
 /* Hue (degrees 0-360, or -1 for N/A), Saturation (0.0-1.0), Value (0.0-1.0) */
 float mixer_hsv[NUM_MIXER_COLORS][3] = {
-  { 330.0, 1.0, 0.9 }, /* Red (Magenta-ish) */
-  { 60.0, 1.0, 0.9 }, /* Yellow */
-  { 210.0, 1.0, 0.9 }, /* Blue (Cyan-ish) */
+  { 330.0, 1.0, 1.0 }, /* Red (Magenta-ish) */
+  { 60.0, 1.0, 1.0 }, /* Yellow */
+  { 210.0, 1.0, 1.0 }, /* Blue (Cyan-ish) */
   { -1, 0.0, 1.0 }, /* White */
   { -1, 0.0, 0.5 }, /* Grey */
   { -1, 0.0, 0.0 } /* Black */
@@ -22360,7 +22360,11 @@ static int do_color_mix(void)
       dest.w = cell_w - 2;
       dest.h = cell_h - 2;
 
-      hsvtorgb(mixer_hsv[i][0], mixer_hsv[i][1], mixer_hsv[i][2], &r, &g, &b);
+      v = mixer_hsv[i][2];
+      if (v >= 0.05)
+        v -= 0.05;
+
+      hsvtorgb(mixer_hsv[i][0], mixer_hsv[i][1], v, &r, &g, &b);
       SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
     }
 
@@ -22677,41 +22681,70 @@ static int do_color_mix(void)
  */
 static void draw_color_mix_undo_redo(void) {
   SDL_Rect dest;
+  SDL_Surface * icon_label_color, * tmp_surf;
 
   /* Show "Undo" button */
 
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO];
   dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO];
-  if (1) /* FIXME */
-    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+
+  if (0) /* FIXME */
+    {
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      icon_label_color = img_black;
+    }
   else
-    SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+      icon_label_color = img_grey;
+    }
  
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] + (img_back->w - img_tools[TOOL_UNDO]->w) / 2;
   dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO];
-  SDL_BlitSurface(img_tools[TOOL_UNDO], NULL, screen, &dest);
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tools[TOOL_UNDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
 
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] + (img_back->w - img_tool_names[TOOL_UNDO]->w) / 2;
   dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO] + img_back->h - img_tool_names[TOOL_UNDO]->h;
-  SDL_BlitSurface(img_tool_names[TOOL_UNDO], NULL, screen, &dest);
 
+  tmp_surf = SDL_DisplayFormatAlpha(img_tool_names[TOOL_UNDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
 
   /* Show "Redo" button */
 
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO];
   dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO];
   if (0) /* FIXME */
-    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+    {
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      icon_label_color = img_black;
+    }
   else
-    SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+      icon_label_color = img_grey;
+    }
 
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] + (img_back->w - img_tools[TOOL_REDO]->w) / 2;
   dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO];
-  SDL_BlitSurface(img_tools[TOOL_REDO], NULL, screen, &dest);
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tools[TOOL_REDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
 
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] + (img_back->w - img_tool_names[TOOL_REDO]->w) / 2;
   dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO] + img_back->h - img_tool_names[TOOL_REDO]->h;
-  SDL_BlitSurface(img_tool_names[TOOL_REDO], NULL, screen, &dest);
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tool_names[TOOL_REDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
 }
 
 
