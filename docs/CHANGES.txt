@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.January.27 (0.9.28)
+2022.January.28 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -75,10 +75,10 @@ http://www.tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/209/
 
     * A new color mixer has been added, allowing red (magenta-ish),
-      yellow, and blue (cyan-ish), along with white ("tint"),
-      grey ("tone"), and black ("shade") to be added together to
+      yellow, and blue (cyan-ish) primary colors, along with white
+      ("tint"), grey ("tone"), and black ("shade") to be added together to
       form a desired color.
-      + WIP: I'd like to add Undo/Redo options to the dialog. -bjk 2021.01.27
+      + WIP: Undo/Redo options
 
     * Show a "pipette"-shaped mouse pointer when selecting a
       color from the color palette, or the picture.
