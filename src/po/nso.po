@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-21 01:33-0800\n"
+"POT-Creation-Date: 2022-01-27 22:54-0800\n"
 "PO-Revision-Date: 2010-10-04 17:44+0200\n"
 "Last-Translator: Pheledi <pheledi@mosekolatranslation.co.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -277,79 +277,79 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:264 ../shapes.h:265
+#: ../shapes.h:266 ../shapes.h:267
 msgid "Square"
 msgstr "Sekwere"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:268 ../shapes.h:269
+#: ../shapes.h:270 ../shapes.h:271
 msgid "Rectangle"
 msgstr "Khutlonnethwii"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:272 ../shapes.h:273
+#: ../shapes.h:274 ../shapes.h:275
 msgid "Circle"
 msgstr "Kgokolo"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:276 ../shapes.h:277
+#: ../shapes.h:278 ../shapes.h:279
 msgid "Ellipse"
 msgstr "Sekalee"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:280 ../shapes.h:281
+#: ../shapes.h:282 ../shapes.h:283
 msgid "Triangle"
 msgstr "Khutlotharo"
 
 #. Pentagon shape tool (5 sides)
-#: ../shapes.h:284 ../shapes.h:285
+#: ../shapes.h:286 ../shapes.h:287
 msgid "Pentagon"
 msgstr "Khutlohlano"
 
 #. Hexagon shape tool (6 sides)
-#: ../shapes.h:288 ../shapes.h:289
+#: ../shapes.h:290 ../shapes.h:291
 #, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Hexagon"
 msgstr "Dipataka tša heksakone"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
-#: ../shapes.h:292 ../shapes.h:293
+#: ../shapes.h:294 ../shapes.h:295
 #, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Heptagon"
 msgstr "Dipataka tša heksakone"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:296 ../shapes.h:297
+#: ../shapes.h:298 ../shapes.h:299
 msgid "Octagon"
 msgstr "Okthakone"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:300 ../shapes.h:301
+#: ../shapes.h:302 ../shapes.h:303
 msgid "Rhombus"
 msgstr "Rompase"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:304 ../shapes.h:307 ../shapes.h:310 ../shapes.h:313
-#: ../shapes.h:316 ../shapes.h:319
+#: ../shapes.h:306 ../shapes.h:309 ../shapes.h:312 ../shapes.h:315
+#: ../shapes.h:318 ../shapes.h:321
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:327 ../shapes.h:328
+#: ../shapes.h:329 ../shapes.h:330
 msgid "A square is a rectangle with four equal sides."
 msgstr "Sekwere ke khutlonnethwii yeo e nago le mahlakore a mane a go lekana."
 
 #. Description of a rectangle
-#: ../shapes.h:331 ../shapes.h:332
+#: ../shapes.h:333 ../shapes.h:334
 msgid "A rectangle has four sides and four right angles."
 msgstr "Khutlonnethwii e na le mahlakore a mane le dikhutlotsepa tše nne."
 
 #. Description of a circle
-#: ../shapes.h:335 ../shapes.h:336
+#: ../shapes.h:337 ../shapes.h:338
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -357,59 +357,59 @@ msgstr ""
 "go tloga bogareng."
 
 #. Description of an ellipse
-#: ../shapes.h:339 ../shapes.h:340
+#: ../shapes.h:341 ../shapes.h:342
 msgid "An ellipse is a stretched circle."
 msgstr "Sekalee ke kgokolo yeo e hlaramolotšwego."
 
 #. Description of a triangle
-#: ../shapes.h:343 ../shapes.h:344
+#: ../shapes.h:345 ../shapes.h:346
 msgid "A triangle has three sides."
 msgstr "Khutlotharo e na le mahlakore a mararo."
 
 #. Description of a pentagon
-#: ../shapes.h:347 ../shapes.h:348
+#: ../shapes.h:349 ../shapes.h:350
 msgid "A pentagon has five sides."
 msgstr "Khutlohlano e na le mahlakore a mahlano."
 
 #. Description of a hexagon
-#: ../shapes.h:351 ../shapes.h:352
+#: ../shapes.h:353 ../shapes.h:354
 #, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
 msgstr "Khutlohlano e na le mahlakore a mahlano."
 
 #. Description of a heptagon
-#: ../shapes.h:355 ../shapes.h:356
+#: ../shapes.h:357 ../shapes.h:358
 #, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
 msgstr "Khutlohlano e na le mahlakore a mahlano."
 
 #. Description of an octagon
-#: ../shapes.h:359 ../shapes.h:360
+#: ../shapes.h:361 ../shapes.h:362
 msgid "An octagon has eight equal sides."
 msgstr "Okthakone e na le mahlakore a seswai a go lekana."
 
 #. Description of a rhombus
-#: ../shapes.h:363 ../shapes.h:364
+#: ../shapes.h:365 ../shapes.h:366
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Rompase e na le mahlakore a mane a go lekana, gomme mahlakore ao a lebanego "
 "a bapile."
 
-#: ../shapes.h:366 ../shapes.h:367
+#: ../shapes.h:368 ../shapes.h:369
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:368 ../shapes.h:369
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:370 ../shapes.h:371
+#: ../shapes.h:372 ../shapes.h:373
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:431
+#: ../shapes.h:433
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -422,7 +422,7 @@ msgstr ""
 "ge se le bogolo bjo o bo nyakago. Šutha gore o se dikologe, gomme o kgotle "
 "gore o se thale."
 
-#: ../shapes.h:432
+#: ../shapes.h:434
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -435,11 +435,11 @@ msgstr ""
 "ge se le bogolo bjo o bo nyakago. Šutha gore o se dikologe, gomme o kgotle "
 "gore o se thale."
 
-#: ../shapes.h:438
+#: ../shapes.h:440
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:439
+#: ../shapes.h:441
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -545,7 +545,7 @@ msgstr "Mpsha"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8576
+#: ../tools.h:98 ../tuxpaint.c:8643
 msgid "Open"
 msgstr "Bula"
 
@@ -695,229 +695,316 @@ msgid "OK then… Let’s keep drawing this one!"
 msgstr "Go lokile ge… A re tšwele pele re thala se!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2255
 msgid "Do you really want to quit?"
 msgstr "Na ruri o nyaka go tlogela?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2247
+#: ../tuxpaint.c:2258
 msgid "Yes, I’m done!"
 msgstr "Ee, ke feditše!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2250 ../tuxpaint.c:2277
+#: ../tuxpaint.c:2261 ../tuxpaint.c:2288
 msgid "No, take me back!"
 msgstr "Aowa, mpušetše morago!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2265
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ge eba o tlogela, o tla lahlegelwa ke seswantšho sa gago! Se bolokwe?"
 
-#: ../tuxpaint.c:2255 ../tuxpaint.c:2260
+#: ../tuxpaint.c:2266 ../tuxpaint.c:2271
 msgid "Yes, save it!"
 msgstr "Ee, se boloke!"
 
-#: ../tuxpaint.c:2256 ../tuxpaint.c:2261
+#: ../tuxpaint.c:2267 ../tuxpaint.c:2272
 msgid "No, don’t bother saving!"
 msgstr "Aowa, o se ke wa itshwenya ka go se boloka!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2259
+#: ../tuxpaint.c:2270
 msgid "Save your picture first?"
 msgstr "O thoma ka go boloka seswantšho sa gago?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2264
+#: ../tuxpaint.c:2275
 msgid "Can’t open that picture!"
 msgstr "Seswantšho seo ga se bulege!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2267 ../tuxpaint.c:2272 ../tuxpaint.c:2281 ../tuxpaint.c:2288
-#: ../tuxpaint.c:2297 ../tuxpaint.c:2302
+#: ../tuxpaint.c:2278 ../tuxpaint.c:2283 ../tuxpaint.c:2292 ../tuxpaint.c:2299
+#: ../tuxpaint.c:2308 ../tuxpaint.c:2313
 msgid "OK"
 msgstr "Go lokile"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2271
+#: ../tuxpaint.c:2282
 msgid "There are no saved files!"
 msgstr "Ga go na difaele tšeo di bolokilwego!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2275
+#: ../tuxpaint.c:2286
 msgid "Print your picture now?"
 msgstr "Gatiša seswantšho sa gago gona bjale?"
 
-#: ../tuxpaint.c:2276
+#: ../tuxpaint.c:2287
 msgid "Yes, print it!"
 msgstr "Ee, se gatiše!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2280
+#: ../tuxpaint.c:2291
 msgid "Your picture has been printed!"
 msgstr "Seswantšho sa gago se gatišitšwe!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2284
+#: ../tuxpaint.c:2295
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tshwarelo! Seswantšho sa gago ga se a gatišwa!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2287
+#: ../tuxpaint.c:2298
 msgid "You can’t print yet!"
 msgstr "O ka se thome go gatiša!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2291
+#: ../tuxpaint.c:2302
 msgid "Erase this picture?"
 msgstr "Phumola seswantšho se?"
 
-#: ../tuxpaint.c:2292
+#: ../tuxpaint.c:2303
 msgid "Yes, erase it!"
 msgstr "Ee, se phumole!"
 
-#: ../tuxpaint.c:2293
+#: ../tuxpaint.c:2304
 msgid "No, don’t erase it!"
 msgstr "Aowa, o seke wa se phumola!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2296
+#: ../tuxpaint.c:2307
 msgid "Remember to use the left mouse button!"
 msgstr "Gopola go diriša konope ya go lanngele la mause!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2311
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Seswantšho sa gago se gatišitšwe!"
 
-#: ../tuxpaint.c:2301
+#: ../tuxpaint.c:2312
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Seswantšho sa gago se gatišitšwe!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2316
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Tshwarelo! Seswantšho sa gago ga se a gatišwa!"
 
-#: ../tuxpaint.c:2306
+#: ../tuxpaint.c:2317
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Tshwarelo! Seswantšho sa gago ga se a gatišwa!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2310
+#: ../tuxpaint.c:2321
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Kgetha seswantšho seo o se nyakago, ke moka o kgotle \"Bapala\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2522
+#: ../tuxpaint.c:2534
 msgid "Sound muted."
 msgstr "Modumo o tswaletšwe."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2527
+#: ../tuxpaint.c:2539
 msgid "Sound unmuted."
 msgstr "Modumo o butšwe."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3306
+#: ../tuxpaint.c:3308
 msgid "Please wait…"
 msgstr "Hle leta…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8579
+#: ../tuxpaint.c:8646
 msgid "Erase"
 msgstr "Phumola"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8582
+#: ../tuxpaint.c:8649
 msgid "Slides"
 msgstr "Diselaete"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8585
+#: ../tuxpaint.c:8652
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8588
+#: ../tuxpaint.c:8655
 msgid "Back"
 msgstr "Morago"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8591
+#: ../tuxpaint.c:8658
 msgid "Play"
 msgstr "Bapala"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8594
+#: ../tuxpaint.c:8661
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8597
+#: ../tuxpaint.c:8664
 msgid "Next"
 msgstr "Latelago"
 
+#. Color mixer dialog: 'Clear' button, to reset the mixed color
+#: ../tuxpaint.c:8667
+msgid "Clear"
+msgstr ""
+
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9459
+#: ../tuxpaint.c:9529
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13158
+#: ../tuxpaint.c:13228
 msgid "Yes"
 msgstr "Ee"
 
-#: ../tuxpaint.c:13162
+#: ../tuxpaint.c:13232
 msgid "No"
 msgstr "Aowa"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14308
+#: ../tuxpaint.c:14382
 msgid "Replace the picture with your changes?"
 msgstr "Tšeela seswantšho legato ka diphetošo tša gago?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14312
+#: ../tuxpaint.c:14386
 msgid "Yes, replace the old one!"
 msgstr "Ee, tšeela sa kgale legato!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14316
+#: ../tuxpaint.c:14390
 msgid "No, save a new file!"
 msgstr "Aowa, boloka faele e mpsha!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15580
+#: ../tuxpaint.c:15654
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kgetha seswantšho seo o se nyakago, ke moka o kgotle \"Bula\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17006
+#: ../tuxpaint.c:17080
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24784
+#. Descriptions (names) of the color mixer tool's primary colors and shades
+#: ../tuxpaint.c:22189
+msgid "red"
+msgstr ""
+
+#: ../tuxpaint.c:22190
+#, fuzzy
+#| msgid "Yellow!"
+msgid "yellow"
+msgstr "Serolwana!"
+
+#: ../tuxpaint.c:22191
+#, fuzzy
+#| msgid "Sky blue!"
+msgid "blue"
+msgstr "Talalerata!"
+
+#: ../tuxpaint.c:22192
+#, fuzzy
+#| msgid "White!"
+msgid "white"
+msgstr "Tšhweu!"
+
+#: ../tuxpaint.c:22193
+msgid "grey"
+msgstr ""
+
+#: ../tuxpaint.c:22194
+#, fuzzy
+#| msgid "Black!"
+msgid "black"
+msgstr "Ntsho!"
+
+#. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
+#: ../tuxpaint.c:22199
+#, c-format
+msgid "Your color is %1$s %2$s."
+msgstr ""
+
+#: ../tuxpaint.c:22200
+#, c-format
+msgid "Your color is %1$s %2$s and %3$s %4$s."
+msgstr ""
+
+#: ../tuxpaint.c:22201
+#, c-format
+msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
+msgstr ""
+
+#: ../tuxpaint.c:22202
+#, c-format
+msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
+msgstr ""
+
+#: ../tuxpaint.c:22203
+#, c-format
+msgid ""
+"Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
+msgstr ""
+
+#: ../tuxpaint.c:22204
+#, c-format
+msgid ""
+"Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
+"%11$s %12$s."
+msgstr ""
+
+#. Color mixer; e.g., "Your color is entirely grey."
+#: ../tuxpaint.c:22634
+msgid "entirely"
+msgstr ""
+
+#. Add "Color Select" color:
+#: ../tuxpaint.c:25618
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24796
+#. Add "Color Picker" color:
+#: ../tuxpaint.c:25627
 msgid "Pick a color."
 msgstr "Kgetha mmala."
+
+#. Add "Color Mixer" color:
+#. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
+#: ../tuxpaint.c:25638
+msgid ""
+"Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
+"tone), and black (to shade), to mix together a new color."
+msgstr ""
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "Tux Paint"

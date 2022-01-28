@@ -22185,7 +22185,7 @@ float mixer_hsv[NUM_MIXER_COLORS][3] = {
 };
 
 const char * color_mixer_color_names[NUM_MIXER_COLORS] = {
-  /* Descriptins of the color mixer tool's primary colors and shades */
+  /* Descriptions (names) of the color mixer tool's primary colors and shades */
   gettext_noop("red"),
   gettext_noop("yellow"),
   gettext_noop("blue"),
@@ -25633,8 +25633,8 @@ static void setup_colors(void)
   color_picker_y = 0;
   NUM_COLORS++;
 
-  /* Add "Color Mixer" color */
-
+  /* Add "Color Mixer" color: */
+  /* (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color) */
   color_names[NUM_COLORS] = strdup(gettext("Click the primary colors (red, yellow, and blue), white (to tint), grey (to tone), and black (to shade), to mix together a new color."));
   color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
   color_hexes[NUM_COLORS][0] = 255;
