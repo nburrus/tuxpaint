@@ -22175,13 +22175,15 @@ enum {
 int color_mix_btn_lefts[NUM_COLOR_MIXER_BTNS], color_mix_btn_tops[NUM_COLOR_MIXER_BTNS];
 
 /* Hue (degrees 0-360, or -1 for N/A), Saturation (0.0-1.0), Value (0.0-1.0) */
+/* (We keep the Red/Yellow/Blue hues close to 120 degrees apart, to gain more even mixing) */
+/* (Taken from https://en.wikipedia.org/wiki/CMYK_color_model#/media/File:CMYK_color_swatches.svg) */
 float mixer_hsv[NUM_MIXER_COLORS][3] = {
-  {   0.0, 1.0, 1.00 }, /* Red */
-  {  60.0, 1.0, 1.00 }, /* Yellow */
-  { 240.0, 1.0, 1.00 }, /* Blue */
-  {    -1, 0.0, 1.00 }, /* White */
-  {    -1, 0.0, 0.50 }, /* Grey */
-  {    -1, 0.0, 0.00 }  /* Black */
+  { 328.5, 1.00, 0.80 }, /* "Red" (subtractive primary magenta; https://en.wikipedia.org/wiki/Magenta) */
+  {  56.5, 0.95, 1.00 }, /* Yellow */
+  { 198.2, 1.00, 0.83 }, /* "Blue" (subtractive primary cyan; https://en.wikipedia.org/wiki/Cyan) */
+  {    -1, 0.00, 1.00 }, /* White */
+  {    -1, 0.00, 0.50 }, /* Grey */
+  {    -1, 0.00, 0.00 }  /* Black */
 };
 
 const char * color_mixer_color_names[NUM_MIXER_COLORS] = {
