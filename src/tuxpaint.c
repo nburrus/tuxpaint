@@ -2100,6 +2100,7 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
 static int do_color_picker(void);
 static int do_color_sel(int temp_mode);
 static int do_color_mix(void);
+static void draw_color_mix_undo_redo(void);
 static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Surface * icon);
 static void handle_color_changed(void);
 
@@ -22165,6 +22166,8 @@ enum {
   NUM_COLOR_MIXER_BTNS
 };
 
+int color_mix_btn_lefts[NUM_COLOR_MIXER_BTNS], color_mix_btn_tops[NUM_COLOR_MIXER_BTNS];
+
 /* Hue (degrees 0-360, or -1 for N/A), Saturation (0.0-1.0), Value (0.0-1.0) */
 float mixer_hsv[NUM_MIXER_COLORS][3] = {
   { 330.0, 1.0, 0.9 }, /* Red (Magenta-ish) */
@@ -22199,10 +22202,8 @@ static int do_color_mix(void)
   int done, chose;
   SDL_Event event;
   SDLKey key;
-  int btn_lefts[NUM_COLOR_MIXER_BTNS], btn_tops[NUM_COLOR_MIXER_BTNS];
   SDL_Rect color_example_dest;
   SDL_Surface *backup;
-  SDL_Rect r_color_picker;
   SDL_Rect r_final;
   int old_color_mixer_reset;
 
@@ -22351,11 +22352,11 @@ static int do_color_mix(void)
   /* Draw colors */
   for (i = 0; i < NUM_MIXER_COLORS; i++)
     {
-      btn_lefts[i] = r_final.x + ((i % 3) * cell_w) + 2;
-      btn_tops[i] = r_final.y + ((i / 3) * cell_h) + 2;
+      color_mix_btn_lefts[i] = r_final.x + ((i % 3) * cell_w) + 2;
+      color_mix_btn_tops[i] = r_final.y + ((i / 3) * cell_h) + 2;
 
-      dest.x = btn_lefts[i];
-      dest.y = btn_tops[i];
+      dest.x = color_mix_btn_lefts[i];
+      dest.y = color_mix_btn_tops[i];
       dest.w = cell_w - 2;
       dest.h = cell_h - 2;
 
@@ -22364,45 +22365,56 @@ static int do_color_mix(void)
     }
 
 
+  /* Draw "Undo" & "Redo" buttons */
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] = r_final.x + (cell_w * 0) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_UNDO] = r_final.y + (cell_h * 3) + 2;
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] = r_final.x + (cell_w * 1) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_REDO] = r_final.y + (cell_h * 3) + 2;
+
+  draw_color_mix_undo_redo();
+
+
   /* Show "Clear" button */
 
-  btn_lefts[COLOR_MIXER_BTN_CLEAR] = r_final.x + (cell_w * 2) + 2;
-  btn_tops[COLOR_MIXER_BTN_CLEAR] = r_final.y + (cell_h * 3) + 2;
+  color_mix_btn_lefts[COLOR_MIXER_BTN_CLEAR] = r_final.x + (cell_w * 2) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR] = r_final.y + (cell_h * 3) + 2;
 
-  dest.x = btn_lefts[COLOR_MIXER_BTN_CLEAR];
-  dest.y = btn_tops[COLOR_MIXER_BTN_CLEAR];
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_CLEAR];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR];
   SDL_BlitSurface(img_erase, NULL, screen, &dest);
 
 /* FIXME */
 /*
-  dest.x = btn_lefts[COLOR_MIXER_BTN_CLEAR] + (img_back->w - img_openlabels_back->w) / 2;
-  dest.y = btn_tops[COLOR_MIXER_BTN_CLEAR] + img_back->h - img_openlabels_back->h;
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_CLEAR] + (img_back->w - img_openlabels_back->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR] + img_back->h - img_openlabels_back->h;
   SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 */
 
   /* Show "Back" button */
 
-  btn_lefts[COLOR_MIXER_BTN_BACK] = r_final.x + (cell_w * 4) + 2;
-  btn_tops[COLOR_MIXER_BTN_BACK] = r_final.y + (cell_h * 3) + 2;
+  color_mix_btn_lefts[COLOR_MIXER_BTN_BACK] = r_final.x + (cell_w * 4) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_BACK] = r_final.y + (cell_h * 3) + 2;
 
-  dest.x = btn_lefts[COLOR_MIXER_BTN_BACK];
-  dest.y = btn_tops[COLOR_MIXER_BTN_BACK];
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_BACK];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_BACK];
   SDL_BlitSurface(img_back, NULL, screen, &dest);
 
-  dest.x = btn_lefts[COLOR_MIXER_BTN_BACK] + (img_back->w - img_openlabels_back->w) / 2;
-  dest.y = btn_tops[COLOR_MIXER_BTN_BACK] + img_back->h - img_openlabels_back->h;
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_BACK] + (img_back->w - img_openlabels_back->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_BACK] + img_back->h - img_openlabels_back->h;
   SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
   /* Show "OK" button */
 
-  btn_lefts[COLOR_MIXER_BTN_USE] = r_final.x + (cell_w * 5) + 2;
-  btn_tops[COLOR_MIXER_BTN_USE] = r_final.y + (cell_h * 3) + 2;
+  color_mix_btn_lefts[COLOR_MIXER_BTN_USE] = r_final.x + (cell_w * 5) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_USE] = r_final.y + (cell_h * 3) + 2;
 
   if (!color_mixer_reset)
     {
       /* Only draw "OK" button when we can accept! */
-      dest.x = btn_lefts[COLOR_MIXER_BTN_USE];
-      dest.y = btn_tops[COLOR_MIXER_BTN_USE];
+      dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+      dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
       SDL_BlitSurface(img_yes, NULL, screen, &dest);
     }
 
@@ -22438,7 +22450,7 @@ static int do_color_mix(void)
             {
               key = event.key.keysym.sym;
 
-              handle_keymouse(key, SDL_KEYDOWN, 24, &r_color_picker, NULL);
+              handle_keymouse(key, SDL_KEYDOWN, 24, NULL, NULL);
 
               if (key == SDLK_ESCAPE)
                 {
@@ -22446,15 +22458,43 @@ static int do_color_mix(void)
                   done = 1;
                 }
             }
+          else if (event.type == SDL_MOUSEMOTION)
+            {
+              btn_clicked = -1;
+              for (i = 0; i < NUM_COLOR_MIXER_BTNS && btn_clicked == -1; i++)
+                {
+                  if (event.button.x >= color_mix_btn_lefts[i] &&
+                      event.button.x < color_mix_btn_lefts[i] + img_back->w &&
+                      event.button.y >= color_mix_btn_tops[i] &&
+                      event.button.y < color_mix_btn_tops[i] + img_back->h)
+                    {
+                      btn_clicked = i;
+                    }
+                }
+
+              if ((btn_clicked >= 0 && btn_clicked < NUM_MIXER_COLORS) ||
+                  btn_clicked == COLOR_MIXER_BTN_CLEAR ||
+                  (btn_clicked == COLOR_MIXER_BTN_USE && !color_mixer_reset) ||
+                  btn_clicked == COLOR_MIXER_BTN_BACK
+                  /* FIXME: Handle Undo & Redo */
+                 )
+                {
+                  do_setcursor(cursor_hand);
+                }
+              else
+                {
+                  do_setcursor(cursor_arrow);
+                }
+            }
           else if (event.type == SDL_MOUSEBUTTONUP && valid_click(event.button.button))
             {
               btn_clicked = -1;
               for (i = 0; i < NUM_COLOR_MIXER_BTNS && btn_clicked == -1; i++)
                 {
-                  if (event.button.x >= btn_lefts[i] &&
-                      event.button.x < btn_lefts[i] + img_back->w &&
-                      event.button.y >= btn_tops[i] &&
-                      event.button.y < btn_tops[i] + img_back->h)
+                  if (event.button.x >= color_mix_btn_lefts[i] &&
+                      event.button.x < color_mix_btn_lefts[i] + img_back->w &&
+                      event.button.y >= color_mix_btn_tops[i] &&
+                      event.button.y < color_mix_btn_tops[i] + img_back->h)
                     {
                       btn_clicked = i;
                     }
@@ -22472,8 +22512,8 @@ static int do_color_mix(void)
                       color_mixer_reset = 0;
 
                       /* We can draw the "OK" button now! */
-                      dest.x = btn_lefts[COLOR_MIXER_BTN_USE];
-                      dest.y = btn_tops[COLOR_MIXER_BTN_USE];
+                      dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+                      dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
                       dest.w = cell_w;
                       dest.h = cell_h;
                       SDL_BlitSurface(img_yes, NULL, screen, &dest);
@@ -22544,8 +22584,8 @@ static int do_color_mix(void)
                   color_mixer_reset = 1;
 
                   /* Erase the "OK" button! */
-                  dest.x = btn_lefts[COLOR_MIXER_BTN_USE];
-                  dest.y = btn_tops[COLOR_MIXER_BTN_USE];
+                  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+                  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
                   dest.w = cell_w;
                   dest.h = cell_h;
 
@@ -22627,6 +22667,51 @@ static int do_color_mix(void)
 
 
   return (chose);
+}
+
+
+/**
+ * Draw the undo & redo buttons of the color mixer,
+ * making the buttons appear clickable ("up") or not ("off"),
+ * depending on the state of the color mixer's undo buffer
+ */
+static void draw_color_mix_undo_redo(void) {
+  SDL_Rect dest;
+
+  /* Show "Undo" button */
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO];
+  if (1) /* FIXME */
+    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+  else
+    SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+ 
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] + (img_back->w - img_tools[TOOL_UNDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO];
+  SDL_BlitSurface(img_tools[TOOL_UNDO], NULL, screen, &dest);
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] + (img_back->w - img_tool_names[TOOL_UNDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO] + img_back->h - img_tool_names[TOOL_UNDO]->h;
+  SDL_BlitSurface(img_tool_names[TOOL_UNDO], NULL, screen, &dest);
+
+
+  /* Show "Redo" button */
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO];
+  if (0) /* FIXME */
+    SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+  else
+    SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] + (img_back->w - img_tools[TOOL_REDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO];
+  SDL_BlitSurface(img_tools[TOOL_REDO], NULL, screen, &dest);
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] + (img_back->w - img_tool_names[TOOL_REDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO] + img_back->h - img_tool_names[TOOL_REDO]->h;
+  SDL_BlitSurface(img_tool_names[TOOL_REDO], NULL, screen, &dest);
 }
 
 
