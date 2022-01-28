@@ -19,11 +19,11 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Copyright (c) 2002-2021 by Bill Kendrick
+  Copyright (c) 2002-2022 by Bill Kendrick
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
-  June 14, 2002 - October 25, 2021
+  June 14, 2002 - January 21, 2022
   $Id$
 */
 
@@ -164,10 +164,11 @@ const char *const tool_tips[NUM_TOOLS] = {
 
 // Instruction while using Line tool (after click, before release)
 #define TIP_LINE_START gettext_noop("Let go of the button to complete the line.")
-#define TIP_LINE_MOVING gettext_noop("Let go of the button to complete the line. (Your line's angle is %.0f degrees.)")
+#define TIP_LINE_MOVING gettext_noop("Let go of the button to complete the line. (Your line’s angle is %.0f degrees.)")
 
 // Instruction while using Shape tool (after first click, before release)
 #define TIP_SHAPE_START gettext_noop("Hold the button to stretch the shape.")
+#define TIP_SHAPE_STRETCHING_UNLOCKED gettext_noop("Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)")
 
 // Instruction while finishing Shape tool (after release, during rotation step before second click)
 #define TIP_SHAPE_NEXT gettext_noop("Move the mouse to rotate the shape. Click to draw it.")

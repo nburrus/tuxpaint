@@ -1,7 +1,7 @@
 /*
   macos.h
 
-  Copyright (c) 2021
+  Copyright (c) 2021-2022
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -21,6 +21,10 @@
 */
 #ifndef __MACOS_H__
 #define __MACOS_H__
+
+
+#define KMOD_CTRL   KMOD_META   /* Anywhere Linux/Windows uses CTRL, use CMD on macOS */
+
 
 const char *apple_fontsPath(void);
 const char *apple_preferencesPath(void);

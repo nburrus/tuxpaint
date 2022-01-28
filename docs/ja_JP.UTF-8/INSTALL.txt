@@ -590,7 +590,7 @@ Compiling and Installation
 
   macOS のユーザー
 
-     2021年9月21日 Mark K. Kim <markuskimius@gmail.com>
+     2022年1月20日 Mark Kim <markuskimius@gmail.com>
 
        Tux Paint 0.9.22 and earlier required building Tux Paint from the
        Xcode IDE. Starting with 0.9.23, however, Tux Paint for macOS is built
@@ -640,7 +640,7 @@ Compiling and Installation
              $ sudo port install rust cargo
              $ git clone https://github.com/ImageOptim/libimagequant.git
              $ cd libimagequant/imagequant-sys
-             $ cargo build --release
+             $ cargo build --release # Must use cargo from MacPorts
              $ sudo make PREFIX=/opt/local install
 
          WARNING: Having any UNIX-like toolset installed on your Mac besides
@@ -658,8 +658,11 @@ Compiling and Installation
            % make install
 
          ... to create the TuxPaint.app application bundle that can be run
-         in-place or copied to /Applications. It also creates TuxPaint.dmg
-         for distribution.
+         in-place or copied to /Applications. To create the DMG file for
+         distribution, use 'make TuxPaint.dmg'.
+
+         Additional steps may be required when building for the Apple
+         Silicon. See "Building for Apple Silicon" below.
 
             -------------------------------------------------------
 
@@ -675,6 +678,12 @@ Compiling and Installation
              on how to obtain, install, and build Tux Paint on an old version
              of macOS.
 
+             Alternatively, Tux Paint and all of its library dependencies may
+             be compiled with appropriate options to be runnable on older
+             versions of macOS. These options are already set on Tux Paint,
+             so only its dependencies (from MacPorts) need to be recompiled.
+             See "Recompiling MacPorts" below for the instructions.
+
             -------------------------------------------------------
 
     Old Versions of macOS
@@ -682,12 +691,19 @@ Compiling and Installation
          Some old versions of macOS can be downloaded from Apple's support
          page: https://support.apple.com/en-us/HT211683
 
-         macOS does allow dual booting of multiple versions of the OS, but
-         it's safer and easier to install the old macOS onto a flash drive.
-         Wherever you're installing it, the target drive's partitioniong
-         scheme and partition type must match what the old macOS expects, so
-         use the Disk Utility to partition and format the flash drive
-         accordingly.
+         macOS for Intel CPU does allow dual booting of multiple versions of
+         the OS, but it's safer and easier to install the old macOS onto a
+         flash drive. Wherever you're installing it, the target drive's
+         partitioniong scheme and partition type must match what the old
+         macOS expects, so use the Disk Utility to partition and format the
+         flash drive accordingly.
+
+         Dual booting multiple versions of macOS for Apple Silicon has been
+         so far unsuccessful. Instead of installing an older version of macOS
+         for Apple Silicon to build Tux Paint to run on the old version of
+         macOS for Apple Silicon, use the instructions found in the
+         "Recompiling MacPorts" section to build Tux Paint to run on older
+         versions of macOS for Apple Silicon.
 
          As of this writing, the oldest version of macOS available on Apple's
          support site is Yosemite 10.10, which expects "GPT (GUID Partition
@@ -699,10 +715,6 @@ Compiling and Installation
          too old or new to be installed, a bootable installer can be created
          using the instructions found here:
          https://support.apple.com/en-mide/HT201372
-
-         It has been found that macOS can be installed onto the bootable
-         media itself, so you can make the flash drive into a bootable
-         installer then install the old macOS onto the same flash drive.
 
          Once the old macOS is installed, you may find the Xcode on the App
          Store is too new to run on the version of the old macOS. Old
@@ -718,6 +730,79 @@ Compiling and Installation
          to install the Xcode command line tools (do not run "xcode-select
          --install") but otherwise build Tux Paint using the same steps
          described in the earlier part of this document.
+
+    Recompiling MacPorts
+
+         To recompile MacPorts to be usable on older versions of macOS, set
+         the following options in /opt/local/etc/macports/macports.conf:
+
+           buildfromsource always
+           macosx_deployment_target 10.10
+
+         Then uninstall all MacPorts packages:
+
+           $ sudo port -fp uninstall installed
+
+         Then reinstall all MacPorts packages needed by Tux Paint. Also
+         rebuild libimagequant using the updated Cargo package from MacPorts.
+
+         As of this writing, all libraries Tux Paint requires from MacPorts
+         can be recompiled in this manner to run on macOS 10.10 Yosemite and
+         later on Intel CPUs, and macOS 11.0 Big Sur and later on Apple
+         Silicon. Unfortunately, although MacPorts has the option to enable
+         the building of universal libraries, several libraries Tux Paint
+         require cannot be built as universal libraries so they can only be
+         built to run natively on the hardware on which they were built. See
+         "Building a Universal Binary" below for instructions on how to build
+         Tux Paint as a Universal Binary.
+
+    Building for Apple Silicon
+
+         macOS for Applie Silicon requires all native Apple Silicon
+         applications be signed, even if it is signed "ad-hoc" (anonymously).
+         Because of this, compilers that produce native Apple Silicon
+         applications sign all produced binaries and libraries as a part of
+         the compilation process.^* However, the Tux Paint compilation
+         process modifies the libraries to be modular (using
+         install_name_tool) so they can be added into the application bundle,
+         which has the unfortunate side effect of breaking the signature.
+         This can be addressed by signing the application bundle ad-hoc
+         (example below) or using your own Apple Developer Identity if you
+         have one. The DMG file, if needed, must be created after signing the
+         App Bundle so the DMG file is created with signed App Bundle:
+
+           $ codesign -s - TuxPaint.app
+           $ make TuxPaint.dmg
+
+         ^* For more information on the code signing requirements on the
+         Apple Silicon, see
+         https://developer.apple.com/documentation/macos-release-notes/macos-big-sur-11_0_1-universal-apps-release-notes#:~:text=New%20in%20macOS,pass%20through%20Gatekeeper.
+
+         If you get an error that the application bundle is already signed,
+         remove it before signing::
+
+           $ codesign --remove-signature TuxPaint.app
+
+         If you plan to combine the Apple Silicon bundle with the Intel CPU
+         bundle to produce the Universal bundle, the code signing must be
+         done after they are combined. See "Building a Universal Binary"
+         below.
+
+    Building a Universal Binary
+
+         To build Tux Paint as a Universal Binary, compile Tux Paint for the
+         Intel CPU and the Apple Silicon separately first. Then rename the
+         app bundle for the Intel CPU to TuxPaint-x86_64.app, and the bundle
+         for the Apple Silicon to TuxPaint-arm64.app, copy the app bundle
+         from the Intel machine to the Apple Silicon machine, then use the
+         provided build-universal.sh script to combine the two application
+         bundles as below. The produced bundle must be signed (see "Building
+         for Apple Silicon" above for more details). The DMG file, if
+         required, must be built after the signing:
+
+           $ macos/build-universal.sh
+           $ codesign -s - TuxPaint.app
+           $ make TuxPaint.dmg
 
      ----------------------------------------------------------------------
 

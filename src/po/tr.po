@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-25 01:12-0800\n"
+"POT-Creation-Date: 2022-01-21 01:33-0800\n"
 "PO-Revision-Date: 2012-01-02 22:41+0200\n"
 "Last-Translator: gvhı <asd@gmail.com>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -276,109 +276,137 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:238 ../shapes.h:239
+#: ../shapes.h:264 ../shapes.h:265
 msgid "Square"
 msgstr "Kare"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:242 ../shapes.h:243
+#: ../shapes.h:268 ../shapes.h:269
 msgid "Rectangle"
 msgstr "Dikdörtgen"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:246 ../shapes.h:247
+#: ../shapes.h:272 ../shapes.h:273
 msgid "Circle"
 msgstr "Daire"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:250 ../shapes.h:251
+#: ../shapes.h:276 ../shapes.h:277
 msgid "Ellipse"
 msgstr "Elips"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:254 ../shapes.h:255
+#: ../shapes.h:280 ../shapes.h:281
 msgid "Triangle"
 msgstr "Üçgen"
 
-#. Pentagone shape tool (5 sides)
-#: ../shapes.h:258 ../shapes.h:259
+#. Pentagon shape tool (5 sides)
+#: ../shapes.h:284 ../shapes.h:285
 msgid "Pentagon"
 msgstr "Beşgen"
 
-#. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:262 ../shapes.h:263
-msgid "Rhombus"
-msgstr "Eşkenar dörtgen"
+#. Hexagon shape tool (6 sides)
+#: ../shapes.h:288 ../shapes.h:289
+#, fuzzy
+#| msgid "Hexagon Mosaic"
+msgid "Hexagon"
+msgstr "Sekizgen Mozaik"
+
+#. Heptagon (aka septagon) shape tool (7 sides)
+#: ../shapes.h:292 ../shapes.h:293
+#, fuzzy
+#| msgid "Hexagon Mosaic"
+msgid "Heptagon"
+msgstr "Sekizgen Mozaik"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:266 ../shapes.h:267
+#: ../shapes.h:296 ../shapes.h:297
 msgid "Octagon"
 msgstr "Sekizgen"
+
+#. Rhombus shape tool (4 sides, not at right angles)
+#: ../shapes.h:300 ../shapes.h:301
+msgid "Rhombus"
+msgstr "Eşkenar dörtgen"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
 #. Pentagone star (5 points star)
-#: ../shapes.h:270 ../shapes.h:273 ../shapes.h:276 ../shapes.h:279
-#: ../shapes.h:282 ../shapes.h:285
+#: ../shapes.h:304 ../shapes.h:307 ../shapes.h:310 ../shapes.h:313
+#: ../shapes.h:316 ../shapes.h:319
 msgid "Star"
 msgstr ""
 
 #. Description of a square
-#: ../shapes.h:293 ../shapes.h:294
+#: ../shapes.h:327 ../shapes.h:328
 msgid "A square is a rectangle with four equal sides."
 msgstr "Bir kare dört eşit kenarı olan bir dikdörtgendir."
 
 #. Description of a rectangle
-#: ../shapes.h:297 ../shapes.h:298
+#: ../shapes.h:331 ../shapes.h:332
 msgid "A rectangle has four sides and four right angles."
 msgstr "Bir dikdörtgenin dört kenarı ve dört dik açısı vardır."
 
 #. Description of a circle
-#: ../shapes.h:301 ../shapes.h:302
+#: ../shapes.h:335 ../shapes.h:336
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Çember tüm noktalarının merkeze eşit uzaklıkta olduğu bir eğridir."
 
 #. Description of an ellipse
-#: ../shapes.h:305 ../shapes.h:306
+#: ../shapes.h:339 ../shapes.h:340
 msgid "An ellipse is a stretched circle."
 msgstr "Bir elips gerilmiş bir çemberdir."
 
 #. Description of a triangle
-#: ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:343 ../shapes.h:344
 msgid "A triangle has three sides."
 msgstr "Bir üçgenin üç kenarı vardır."
 
 #. Description of a pentagon
-#: ../shapes.h:313 ../shapes.h:314
+#: ../shapes.h:347 ../shapes.h:348
 msgid "A pentagon has five sides."
 msgstr "Bir beşgenin beş kenarı vardır."
 
+#. Description of a hexagon
+#: ../shapes.h:351 ../shapes.h:352
+#, fuzzy
+#| msgid "A pentagon has five sides."
+msgid "A hexagon has six sides."
+msgstr "Bir beşgenin beş kenarı vardır."
+
+#. Description of a heptagon
+#: ../shapes.h:355 ../shapes.h:356
+#, fuzzy
+#| msgid "A pentagon has five sides."
+msgid "A heptagon has seven sides."
+msgstr "Bir beşgenin beş kenarı vardır."
+
+#. Description of an octagon
+#: ../shapes.h:359 ../shapes.h:360
+msgid "An octagon has eight equal sides."
+msgstr "Bir sekizgenin sekiz eş kenarı vardır."
+
 #. Description of a rhombus
-#: ../shapes.h:317 ../shapes.h:318
+#: ../shapes.h:363 ../shapes.h:364
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "Bir eşkenar dörtgenin dört eşit kenarı vardır ve karşılıklı kenarları "
 "paraleldir."
 
-#. Description of an octagon
-#: ../shapes.h:321 ../shapes.h:322
-msgid "An octagon has eight equal sides."
-msgstr "Bir sekizgenin sekiz eş kenarı vardır."
-
-#: ../shapes.h:324 ../shapes.h:325
+#: ../shapes.h:366 ../shapes.h:367
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:326 ../shapes.h:327
+#: ../shapes.h:368 ../shapes.h:369
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:328 ../shapes.h:329
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:385
+#: ../shapes.h:431
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -391,7 +419,7 @@ msgstr ""
 "geldiği zaman fareyi bırak. Döndürmek için fareyi şeklin etrafında dolaştır "
 "ve çizmek için tıkla."
 
-#: ../shapes.h:386
+#: ../shapes.h:432
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -404,11 +432,11 @@ msgstr ""
 "geldiği zaman fareyi bırak. Döndürmek için fareyi şeklin etrafında dolaştır "
 "ve çizmek için tıkla."
 
-#: ../shapes.h:392
+#: ../shapes.h:438
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:393
+#: ../shapes.h:439
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -514,7 +542,7 @@ msgstr "Yeni"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8438
+#: ../tools.h:98 ../tuxpaint.c:8576
 msgid "Open"
 msgstr "Aç"
 
@@ -629,7 +657,7 @@ msgstr "Doğruyu tamamlamak için farenin tuşunu bırak."
 #, fuzzy, c-format
 #| msgid "Let go of the button to complete the line."
 msgid ""
-"Let go of the button to complete the line. (Your line's angle is %.0f "
+"Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
 msgstr "Doğruyu tamamlamak için farenin tuşunu bırak."
 
@@ -638,12 +666,19 @@ msgstr "Doğruyu tamamlamak için farenin tuşunu bırak."
 msgid "Hold the button to stretch the shape."
 msgstr "Şekli çekip uzatmak için farenin tuşuna basılı tut."
 
+#: ../tools.h:171
+#, fuzzy, c-format
+#| msgid "Hold the button to stretch the shape."
+msgid ""
+"Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
+msgstr "Şekli çekip uzatmak için farenin tuşuna basılı tut."
+
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
-#: ../tools.h:173
+#: ../tools.h:174
 msgid "Move the mouse to rotate the shape. Click to draw it."
 msgstr "Şekli döndürmek için fareyi hareket ettir. Çizmek için tıkla."
 
-#: ../tools.h:174
+#: ../tools.h:175
 #, fuzzy, c-format
 #| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid ""
@@ -652,232 +687,232 @@ msgid ""
 msgstr "Şekli döndürmek için fareyi hareket ettir. Çizmek için tıkla."
 
 #. Notification that 'New' action was aborted (current image would have been lost)
-#: ../tools.h:177
+#: ../tools.h:178
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "Tamam o zaman... Bunu çizmeye devam edelim!"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2234
+#: ../tuxpaint.c:2244
 msgid "Do you really want to quit?"
 msgstr "Gerçekten çıkmak istiyor musun?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2237
+#: ../tuxpaint.c:2247
 msgid "Yes, I’m done!"
 msgstr "Evet, işim bitti!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2240 ../tuxpaint.c:2267
+#: ../tuxpaint.c:2250 ../tuxpaint.c:2277
 msgid "No, take me back!"
 msgstr "Hayır, geri götür beni!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2244
+#: ../tuxpaint.c:2254
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Eğer çıkarsan, resmini kaybedeceksin! Kaydedeyim mi?"
 
-#: ../tuxpaint.c:2245 ../tuxpaint.c:2250
+#: ../tuxpaint.c:2255 ../tuxpaint.c:2260
 msgid "Yes, save it!"
 msgstr "Evet, kaydet!"
 
-#: ../tuxpaint.c:2246 ../tuxpaint.c:2251
+#: ../tuxpaint.c:2256 ../tuxpaint.c:2261
 msgid "No, don’t bother saving!"
 msgstr "Hayır, kaydetmeye zahmet etme!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2249
+#: ../tuxpaint.c:2259
 msgid "Save your picture first?"
 msgstr "İlk önce resmini kaydetmek ister misin?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2254
+#: ../tuxpaint.c:2264
 msgid "Can’t open that picture!"
 msgstr "O resmi açamıyorum!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2257 ../tuxpaint.c:2262 ../tuxpaint.c:2271 ../tuxpaint.c:2278
-#: ../tuxpaint.c:2287 ../tuxpaint.c:2292
+#: ../tuxpaint.c:2267 ../tuxpaint.c:2272 ../tuxpaint.c:2281 ../tuxpaint.c:2288
+#: ../tuxpaint.c:2297 ../tuxpaint.c:2302
 msgid "OK"
 msgstr "Tamam"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2271
 msgid "There are no saved files!"
 msgstr "Kaydedilmiş hiç dosya yok!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2265
+#: ../tuxpaint.c:2275
 msgid "Print your picture now?"
 msgstr "Resmini şimdi yazdırayım mı?"
 
-#: ../tuxpaint.c:2266
+#: ../tuxpaint.c:2276
 msgid "Yes, print it!"
 msgstr "Evet, yazdır!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2280
 msgid "Your picture has been printed!"
 msgstr "Resmin yazdırıldı!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2274
+#: ../tuxpaint.c:2284
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Üzgünüm! Remin yazdırılamadı!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2277
+#: ../tuxpaint.c:2287
 msgid "You can’t print yet!"
 msgstr "Henüz yazdıramazsın!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2281
+#: ../tuxpaint.c:2291
 msgid "Erase this picture?"
 msgstr "Bu resmi sileyim mi?"
 
-#: ../tuxpaint.c:2282
+#: ../tuxpaint.c:2292
 msgid "Yes, erase it!"
 msgstr "Evet, sil onu!"
 
-#: ../tuxpaint.c:2283
+#: ../tuxpaint.c:2293
 msgid "No, don’t erase it!"
 msgstr "Hayır, silme onu!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2286
+#: ../tuxpaint.c:2296
 msgid "Remember to use the left mouse button!"
 msgstr "Sol fare tuşunu kullanmayı hatırlayın!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2290
+#: ../tuxpaint.c:2300
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Resmin yazdırıldı!"
 
-#: ../tuxpaint.c:2291
+#: ../tuxpaint.c:2301
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Resmin yazdırıldı!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2295
+#: ../tuxpaint.c:2305
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Üzgünüm! Remin yazdırılamadı!"
 
-#: ../tuxpaint.c:2296
+#: ../tuxpaint.c:2306
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Üzgünüm! Remin yazdırılamadı!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2310
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "İstediğin resmi seç, sonra \"Çal\" seçeneğine tıkla"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2522
 msgid "Sound muted."
 msgstr "Ses kapalı."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2517
+#: ../tuxpaint.c:2527
 msgid "Sound unmuted."
 msgstr "Ses kapalı değil."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3296
+#: ../tuxpaint.c:3306
 msgid "Please wait…"
 msgstr "Lütfen bekleyin..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8441
+#: ../tuxpaint.c:8579
 msgid "Erase"
 msgstr "Sil"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8444
+#: ../tuxpaint.c:8582
 msgid "Slides"
 msgstr "Slaytlar"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8447
+#: ../tuxpaint.c:8585
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8450
+#: ../tuxpaint.c:8588
 msgid "Back"
 msgstr "Geri"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8453
+#: ../tuxpaint.c:8591
 msgid "Play"
 msgstr "Çal"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8456
+#: ../tuxpaint.c:8594
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8459
+#: ../tuxpaint.c:8597
 msgid "Next"
 msgstr "İleri"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9267
+#: ../tuxpaint.c:9459
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:12927
+#: ../tuxpaint.c:13158
 msgid "Yes"
 msgstr "Evet"
 
-#: ../tuxpaint.c:12931
+#: ../tuxpaint.c:13162
 msgid "No"
 msgstr "Hayır"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14077
+#: ../tuxpaint.c:14308
 msgid "Replace the picture with your changes?"
 msgstr "Resmi sizin değişikliklerinizle değiştirelim mi?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14081
+#: ../tuxpaint.c:14312
 msgid "Yes, replace the old one!"
 msgstr "Evet, eskisini yenile!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14085
+#: ../tuxpaint.c:14316
 msgid "No, save a new file!"
 msgstr "Hayır, yeni bir dosyaya kaydet"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15349
+#: ../tuxpaint.c:15580
 msgid "Choose the picture you want, then click “Open”."
 msgstr "İstediğin resmi seç, sonra \"Aç\" seçeneğine tıkla"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:16775
+#: ../tuxpaint.c:17006
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
-#: ../tuxpaint.c:24552
+#: ../tuxpaint.c:24784
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:24564
+#: ../tuxpaint.c:24796
 msgid "Pick a color."
 msgstr "Renk seç."
 

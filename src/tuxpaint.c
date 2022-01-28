@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 19, 2022
+  June 14, 2002 - January 21, 2022
 */
 
 #include "platform.h"
@@ -2454,7 +2454,7 @@ static void mainloop(void)
 
   float angle;
   char angle_tool_text[256]; // FIXME Consider malloc'ing
-
+  char stretch_tool_text[256]; // FIXME Consider malloc'ing
 
   num_things = num_brushes;
   thing_scroll = &brush_scroll;
@@ -6290,25 +6290,54 @@ static void mainloop(void)
                         }
                     }
                 }
-              else if (cur_tool == TOOL_SHAPES && shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
+              else if (cur_tool == TOOL_SHAPES)
                 {
-                  int deg;
+                  if (shape_tool_mode == SHAPE_TOOL_MODE_STRETCH && !shape_locked[cur_shape])
+                    {
+                      float aspect;
+                      int w, h;
 
-                  deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
-                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
+                      w = abs(shape_start_x - new_x);
+                      h = abs(shape_start_y - new_y);
 
-                  deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
-                  do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
 
-                  deg = -deg;
-                  if (deg < 0)
-                    deg += 360;
+                      if (w < 2 || h < 2)
+                        aspect = 0;
+                      else if (w > h)
+                        aspect = (float) w / (float) h;
+                      else
+                        aspect = (float) h / (float) w;
 
-                  snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_SHAPE_ROTATING), deg);
-                  draw_tux_text(TUX_BORED, angle_tool_text, 1);
-
-                  /* FIXME: Do something less intensive! */
-                  SDL_Flip(screen);
+                      if (aspect == 0 || aspect >= 100)
+                        {
+                          draw_tux_text(TUX_BORED, TIP_SHAPE_START, 1);
+                        }
+                      else
+                        {
+                          snprintf(stretch_tool_text, sizeof(stretch_tool_text), gettext(TIP_SHAPE_STRETCHING_UNLOCKED), aspect);
+                          draw_tux_text(TUX_BORED, stretch_tool_text, 1);
+                        }
+                    }
+                  else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
+                    {
+                      int deg;
+    
+                      deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
+                      do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
+    
+                      deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
+                      do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, deg, 0);
+    
+                      deg = -deg;
+                      if (deg < 0)
+                        deg += 360;
+    
+                      snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_SHAPE_ROTATING), deg);
+                      draw_tux_text(TUX_BORED, angle_tool_text, 1);
+    
+                      /* FIXME: Do something less intensive! */
+                      SDL_Flip(screen);
+                    }
                 }
 
               old_x = new_x;
@@ -14278,8 +14307,8 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
 /* Draw a shape! */
 static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 {
-  int side, angle_skip, init_ang, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
-  float a1, a2, rotn_rad;
+  int side, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
+  float a1, a2, rotn_rad, init_ang, angle_skip;
   int xx, yy, offx, offy, max_x, max_y;
 
 
@@ -14332,7 +14361,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 
   /* Draw the shape: */
 
-  angle_skip = 360 / shape_sides[cur_shape];
+  angle_skip = 360.0 / (float) shape_sides[cur_shape];
 
   init_ang = shape_init_ang[cur_shape];
 
@@ -14351,8 +14380,8 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
       max_y = 0;
       for (side = 0; side < shape_sides[cur_shape]; side++)
         {
-          a1 = (angle_skip * side + init_ang) * M_PI / 180;
-          a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
+          a1 = (angle_skip * side + init_ang) * M_PI / 180.0;
+          a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180.0;
           x1 = (int)(cos(a1) * rx);
           y1 = (int)(-sin(a1) * ry);
 

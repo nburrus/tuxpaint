@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             20 de Xaneiro de 2022
+                             21 de Xaneiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -374,6 +374,12 @@ Ferramentas dispoñíbeis
                  poden ser máis largos que altos ou máis altos que largos),
                  outros non (por exemplo, cadrados e círculos).
 
+                 For shapes that can change proportion, the aspect ratio of
+                 the shape will be shown at the bottom. For example: "1:1"
+                 will be shown if it is "square" (as tall as it is wide);
+                 "2:1" if it is either twice as wide as it is tall, or twice
+                 as tall as it is wide; and so on.
+
                  Solte o rato cando remate de estirar.
 
                       Modo de formas normais
@@ -549,7 +555,7 @@ Ferramentas dispoñíbeis
                  Ao premer nesta ferramenta desfarase a última acción de
                  debuxo. Vostede pode incluso desfacer máis dunha vez.
 
-                 Nota: Tamén pode premer [Control] + [Z] no teclado para
+                 Nota: Tamén pode premer [Control / ⌘] + [Z] no teclado para
                  Desfacer.
 
      ----------------------------------------------------------------------
@@ -562,7 +568,7 @@ Ferramentas dispoñíbeis
                  Mentres non volva debuxar, pode refacer tantas veces como
                  teña desfeito.
 
-                 Nota: Tamén pode premer [Control] + [R] no teclado para
+                 Nota: Tamén pode premer [Control / ⌘] + [R] no teclado para
                  Refacer.
 
      ----------------------------------------------------------------------
@@ -575,7 +581,7 @@ Ferramentas dispoñíbeis
                  Inicio» ou «modelo» (ver máis abaixo). Primeiro
                  preguntaráselle se realmente quere facelo.
 
-                 Nota: Tamén pode premer [Control] + [N] no teclado para
+                 Nota: Tamén pode premer [Control / ⌘] + [N] no teclado para
                  iniciar un novo debuxo.
 
                  Imaxes «de comezo» e de «modelo»
@@ -644,7 +650,7 @@ Ferramentas dispoñíbeis
                  gardado, preguntaráselle se quere gardala ou non. (Vexa
                  «Gardar» a continuación).
 
-                 Nota: Tamén pode premer [Control] + [O] no teclado para
+                 Nota: Tamén pode premer [Control / ⌘] + [O] no teclado para
                  activar o diálogo «Abrir».
 
      ----------------------------------------------------------------------
@@ -669,7 +675,7 @@ Ferramentas dispoñíbeis
                  «saveovernew», non preguntará antes de gardar. Vexa a
                  documentación de «Opcións».
 
-                 Nota: Tamén pode premer [Control] + [S] no teclado para
+                 Nota: Tamén pode premer [Control / ⌘] + [S] no teclado para
                  gardar.
 
      ----------------------------------------------------------------------
@@ -892,7 +898,7 @@ Ferramentas dispoñíbeis
                  ou a secuencia de teclas [Alt] + [F4] para saír.
 
                  Se ningún das dúas é posíbel, pódese usar a secuencia de
-                 teclas [Maiúsculas] + [Control] + [Escape] para saír.
+                 teclas [Maiúsculas] + [Control / ⌘] + [Escape] para saír.
 
                  Vexa a documentación de «Opcións.
 

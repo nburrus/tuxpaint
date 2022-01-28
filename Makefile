@@ -375,14 +375,19 @@ all:	tuxpaint translations magic-plugins tp-magic-config thumb-starters thumb-te
 	@echo
 	@echo "Done compiling."
 	@echo
-	@echo "Now run 'make install' with any options you ran 'make' with."
-	@echo "to install Tux Paint."
-	@echo
-	@echo "You may need superuser ('root') privileges, depending on"
-	@echo "where you're installing."
-	@echo "(Depending on your system, you either need to 'su' first,"
-	@echo "or run 'sudo make install'.)"
-	@echo
+	@if [ "x$(OS)" = "xmacos" ]; then \
+	    echo "Now run 'make install' to create the App Bundle ($(BUNDLE))."; \
+        echo; \
+    else \
+	    echo "Now run 'make install' with any options you ran 'make' with."; \
+	    echo "to install Tux Paint."; \
+	    echo; \
+	    echo "You may need superuser ('root') privileges, depending on"; \
+	    echo "where you're installing."; \
+	    echo "(Depending on your system, you either need to 'su' first,"; \
+	    echo "or run 'sudo make install'.)"; \
+	    echo; \
+    fi
 
 .PHONY: releaseclean
 releaseclean:
@@ -543,7 +548,7 @@ trans:
 ######
 
 windows_ARCH_INSTALL:=install-dlls install-tpconf-i18n
-macos_ARCH_INSTALL:=install-macbundle TuxPaint.dmg
+macos_ARCH_INSTALL:=install-macbundle
 ios_ARCH_INSTALL:=install-iosbundle
 linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
@@ -565,11 +570,30 @@ install:	install-bin install-data install-doc \
 	@echo "--------------------------------------------------------------"
 	@echo
 	@if [ "x$(OS)" = "xmacos" ]; then \
-		echo "All done! Now you can double click $(BUNDLE) to run the"; \
-		echo "program!!! TuxPaint.dmg has also been created for"; \
-		echo "distribution."; \
-		echo; \
-		echo "For more information, see $(DOC_PREFIX)/README.txt"; \
+        echo "The App Bundle has been created as $(BUNDLE)!  Now you can:"; \
+        echo; \
+        echo "  * Double click $(BUNDLE) to run the application."; \
+        echo "  * Sign the App Bundle."; \
+        echo "  * Run 'make TuxPaint.dmg' to create the DMG file for distribution."; \
+        echo; \
+        echo "Signing is optional for the Intel CPU build, or for the Apple Silicon build if"; \
+        echo "it is to be run only on the system on which it was built (e.g., for"; \
+        echo "development.)  The App Bundle must be signed if it is built to run natively on"; \
+        echo "the Apple Silicon and is distributed."; \
+        echo; \
+        echo "To sign the App Bundle, use the following command, where IDENTITY is your Apple"; \
+        echo "Developer ID if you have one, or a hyphen (-) to sign it ad-hoc:"; \
+        echo; \
+        echo "  codesign -s IDENTITY $(BUNDLE)"; \
+        echo; \
+        echo "If you are signing the App Bundle *and* creating the DMG, the DMG must be"; \
+        echo "created after signing to ensure the signed App Bundle is used to create the"; \
+        echo "DMG."; \
+        echo; \
+        echo "For the instruction on how to create the App Bundle as Universal, see"; \
+        echo "$(DOC_PREFIX)/[locale]/INSTALL.txt"; \
+        echo; \
+        echo "For usage, see $(DOC_PREFIX)/[locale]/README.txt"; \
 	else \
 		echo "All done! Now (preferably NOT as 'root' superuser),"; \
 		echo "you can type the command 'tuxpaint' to run the program!!!"; \
