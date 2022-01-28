@@ -2101,6 +2101,7 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
 static int do_color_picker(void);
 static int do_color_sel(int temp_mode);
 static int do_color_mix(void);
+static void calc_color_mixer_average(float * out_h, float * out_s, float * out_v);
 static void draw_color_mixer_tooltip(void);
 static void draw_color_mix_undo_redo(void);
 static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Surface * icon);
@@ -22242,7 +22243,6 @@ static int do_color_mix(void)
   SDL_Surface *backup;
   SDL_Rect r_final;
   int old_color_mixer_reset;
-  int tot_count;
 
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
@@ -22575,54 +22575,9 @@ static int do_color_mix(void)
                     {
                       /* Blending in some color */
 
-                      float circ_mean_avg_sin, circ_mean_avg_cos;
-                      int tot_count_hue;
-                      float sat, val;
-
                       color_mixer_color_counts[btn_clicked]++;
 
-                      tot_count = tot_count_hue = 0;
-                      circ_mean_avg_sin = circ_mean_avg_cos = 0.0;
-                      sat = val = 0.0;
-
-                      for (i = 0; i < NUM_MIXER_COLORS; i++)
-                        {
-                          tot_count += color_mixer_color_counts[i];
-
-                          if (mixer_hsv[i][0] != -1)
-                            {
-                              tot_count_hue += color_mixer_color_counts[i];
-
-                              circ_mean_avg_sin += (sin(mixer_hsv[i][0] * M_PI / 180.0) * color_mixer_color_counts[i]);
-                              circ_mean_avg_cos += (cos(mixer_hsv[i][0] * M_PI / 180.0) * color_mixer_color_counts[i]);
-                            }
-
-                           sat += mixer_hsv[i][1] * (color_mixer_color_counts[i]);
-                           val += mixer_hsv[i][2] * (color_mixer_color_counts[i]);
-                        }
-
-                      if (tot_count_hue == 0)
-                        {
-                          /* None of the colors we mixed has any hue! */
-                          h = -1;
-                        }
-                      else
-                        {
-                          /* Average all the hues we have */
-                          circ_mean_avg_sin /= tot_count_hue;
-                          circ_mean_avg_cos /= tot_count_hue;
-
-                          h = atan2(circ_mean_avg_sin, circ_mean_avg_cos) * 180.0 / M_PI;
-                          if (h < 0.0)
-                            h += 360.0;
-                          else if (h >= 360.0)
-                            h -= 360.0;
-                        }
-
-                      /* Average the saturation and values */
-
-                      s = sat / tot_count;
-                      v = val / tot_count;
+                      calc_color_mixer_average(&h, &s, &v);
                     }
 
                   /* Record undo buffer */
@@ -22782,6 +22737,65 @@ static int do_color_mix(void)
   return (chose);
 }
 
+
+/**
+ * Take the colors chosen in the mixer, in their various
+ * proportions, and calculate an HSV value for the
+ * final color
+ */
+static void calc_color_mixer_average(float * out_h, float * out_s, float * out_v) {
+  float h, s, v;
+  float circ_mean_avg_sin, circ_mean_avg_cos;
+  int i, tot_count, tot_count_hue;
+  float sat, val;
+
+  tot_count = tot_count_hue = 0;
+  circ_mean_avg_sin = circ_mean_avg_cos = 0.0;
+  sat = val = 0.0;
+
+  for (i = 0; i < NUM_MIXER_COLORS; i++)
+    {
+      tot_count += color_mixer_color_counts[i];
+
+      if (mixer_hsv[i][0] != -1)
+        {
+          tot_count_hue += color_mixer_color_counts[i];
+
+          circ_mean_avg_sin += (sin(mixer_hsv[i][0] * M_PI / 180.0) * color_mixer_color_counts[i]);
+          circ_mean_avg_cos += (cos(mixer_hsv[i][0] * M_PI / 180.0) * color_mixer_color_counts[i]);
+        }
+
+       sat += mixer_hsv[i][1] * (color_mixer_color_counts[i]);
+       val += mixer_hsv[i][2] * (color_mixer_color_counts[i]);
+    }
+
+  if (tot_count_hue == 0)
+    {
+      /* None of the colors we mixed has any hue! */
+      h = -1;
+    }
+  else
+    {
+      /* Average all the hues we have */
+      circ_mean_avg_sin /= tot_count_hue;
+      circ_mean_avg_cos /= tot_count_hue;
+
+      h = atan2(circ_mean_avg_sin, circ_mean_avg_cos) * 180.0 / M_PI;
+      if (h < 0.0)
+        h += 360.0;
+      else if (h >= 360.0)
+        h -= 360.0;
+    }
+
+  /* Average the saturation and values */
+
+  s = sat / tot_count;
+  v = val / tot_count;
+
+  *out_h = h;
+  *out_s = s;
+  *out_v = v;
+}
 
 /**
  * Draw the undo & redo buttons of the color mixer,
