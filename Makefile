@@ -669,7 +669,9 @@ bdist-win32:
 		COMPLETIONDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
 		MAGIC_PREFIX:=./win32/bdist/plugins
-	make install-dlls install-tpconf-i18n
+	make install-dlls install-tpconf-i18n \
+		BIN_PREFIX:=./win32/bdist \
+		LOCALE_PREFIX:=./win32/bdist/locale
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
