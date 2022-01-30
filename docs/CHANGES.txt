@@ -85,6 +85,11 @@ http://www.tuxpaint.org/
     * Don't play 'bubble' paint sound when color picker or selector
       (or new mixer) are aborted (via their "Back" buttons or [Esc] key).
 
+  * New Magic Tools:
+    ----------------
+    * "Tile Zoom"; like the regular "Zoom", but tiles the results when
+      you scale down (similar to "Panels", but with non-integer scaling).
+
   * Localization Updates:
     ---------------------
     * Albanian translation
