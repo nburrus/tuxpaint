@@ -47,6 +47,7 @@ Picture Warps
      * Reflection
      * Shift
      * Stretch
+     * Zoom
      * Waves
      * Wavelets
      * Zoom
