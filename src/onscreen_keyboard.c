@@ -1,7 +1,7 @@
 /*
   onscreen_keyboard.c
 
-  Copyright (c) 2020
+  Copyright (c) 2022
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -23,6 +23,16 @@
 #include "onscreen_keyboard.h"
 
 #define DEBUG_OSK_COMPOSEMAP
+
+#include "SDL2_rotozoom.h"
+
+#if !defined(_SDL2_rotozoom_h)
+#error "---------------------------------------------------"
+#error "If you installed SDL_gfx from a package, be sure"
+#error "to get the development package, as well!"
+#error "(e.g., 'libsdl-gfx1.2-devel.rpm')"
+#error "---------------------------------------------------"
+#endif
 
 static SDL_Color def_bgcolor = { 255, 255, 255, 255 };
 static SDL_Color def_fgcolor = { 0, 0, 0, 0 };
@@ -57,17 +67,20 @@ static void print_composemap(osk_composenode * composemap, char *sp);
 #define wcstombs(tok, wtok, size) WideCharToMultiByte(CP_UTF8,0,wtok,-1,tok,size,NULL,NULL)
 #endif
 
+static SDL_Surface *SDL_DisplayFormatAlpha(SDL_Surface * surface)
+{
+  SDL_Surface *tmp;
+
+  tmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_ARGB8888, 0);
+  return (tmp);
+}
+
 struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
-                                SDL_Surface * LG_button_up, SDL_Surface * LG_button_down,
-                                SDL_Surface * LG_button_off, SDL_Surface * LG_button_nav,
-                                SDL_Surface * LG_button_hold,
-                                SDL_Surface * LG_oskdel, SDL_Surface * LG_osktab, SDL_Surface * LG_oskenter,
-                                SDL_Surface * LG_oskcapslock, SDL_Surface * LG_oskshift,
-                                SDL_Surface * SM_button_up, SDL_Surface * SM_button_down,
-                                SDL_Surface * SM_button_off, SDL_Surface * SM_button_nav,
-                                SDL_Surface * SM_button_hold,
-                                SDL_Surface * SM_oskdel, SDL_Surface * SM_osktab, SDL_Surface * SM_oskenter,
-                                SDL_Surface * SM_oskcapslock, SDL_Surface * SM_oskshift,
+                                SDL_Surface * BLANK_button_up, SDL_Surface * BLANK_button_down,
+                                SDL_Surface * BLANK_button_off, SDL_Surface * BLANK_button_nav,
+                                SDL_Surface * BLANK_button_hold,
+                                SDL_Surface * BLANK_oskdel, SDL_Surface * BLANK_osktab, SDL_Surface * BLANK_oskenter,
+                                SDL_Surface * BLANK_oskcapslock, SDL_Surface * BLANK_oskshift,
                                 int disable_change)
 {
   SDL_Surface * surface;
@@ -78,6 +91,7 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
   SDL_Surface * oskcapslock, * oskshift;
   osk_layout * layout;
   on_screen_keyboard * keyboard;
+  int layout_avail_width, layout_avail_height;
 
   keyboard = malloc(sizeof(on_screen_keyboard));
 
@@ -101,30 +115,66 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
   printf("w %i, h %i\n", layout->width, layout->height);
 #endif
 
-  if (layout->width * LG_button_up->w >= (canvas->w - 48 * 4) * 0.9 ||
-      layout->height * LG_button_up->h >= canvas->h * 0.5) {
-      /* Full-size buttons too large, use small buttons */
-      button_up = SM_button_up;
-      button_down = SM_button_down;
-      button_off = SM_button_off;
-      button_nav = SM_button_nav;
-      button_hold = SM_button_hold;
-      oskdel = SM_oskdel;
-      osktab = SM_osktab;
-      oskenter = SM_oskenter;
-      oskcapslock = SM_oskcapslock;
-      oskshift = SM_oskshift;
+  layout_avail_width = (canvas->w * 0.9);
+  layout_avail_height = (canvas->h * 0.5);
+
+  if (layout->width * BLANK_button_up->w >= layout_avail_width || /* Don't allow it to be > 90% of the width of the canvas */
+      layout->height * BLANK_button_up->h >= layout_avail_height /* Don't allow it to be > 50% of the height of the canvas */) {
+      /* Full-size buttons too large, resize to fit */
+      float max_w, max_h;
+      float scale_w, scale_h;
+
+#ifdef DEBUG
+      printf("%d x %d layout of %d x %d buttons won't fit within %d x %d pixel area...\n",
+        layout->width, layout->height,
+        BLANK_button_up->w, BLANK_button_up->h,
+        layout_avail_width, layout_avail_height);
+#endif
+
+      max_w = (float) layout_avail_width / (float) layout->width;
+      max_h = (float) layout_avail_height / (float) layout->height;
+
+#ifdef DEBUG
+      printf("...want (%d / %d) x (%d x %d) = %.2f x %.2f buttons...\n",
+        layout_avail_width, layout->width,
+        layout_avail_height, layout->height,
+        max_w, max_h);
+#endif
+
+      if (max_w > max_h)
+        max_w = max_h;
+      if (max_h > max_w)
+        max_h = max_w;
+
+      scale_w = (float) max_w / (float) BLANK_button_up->w;
+      scale_h = (float) max_h / (float) BLANK_button_up->h;
+
+#ifdef DEBUG
+      printf("...so scaling by w=%.2f & h=%.2f\n",
+        scale_w, scale_h);
+#endif
+
+      button_up = zoomSurface(BLANK_button_up, scale_w, scale_h, 1);
+      button_down = zoomSurface(BLANK_button_down, scale_w, scale_h, 1);
+      button_off = zoomSurface(BLANK_button_off, scale_w, scale_h, 1);
+      button_nav = zoomSurface(BLANK_button_nav, scale_w, scale_h, 1);
+      button_hold = zoomSurface(BLANK_button_hold, scale_w, scale_h, 1);
+      oskdel = zoomSurface(BLANK_oskdel, scale_w, scale_h, 1);
+      osktab = zoomSurface(BLANK_osktab, scale_w, scale_h, 1);
+      oskenter = zoomSurface(BLANK_oskenter, scale_w, scale_h, 1);
+      oskcapslock = zoomSurface(BLANK_oskcapslock, scale_w, scale_h, 1);
+      oskshift = zoomSurface(BLANK_oskshift, scale_w, scale_h, 1);
   } else {
-      button_up = LG_button_up;
-      button_down = LG_button_down;
-      button_off = LG_button_off;
-      button_nav = LG_button_nav;
-      button_hold = LG_button_hold;
-      oskdel = LG_oskdel;
-      osktab = LG_osktab;
-      oskenter = LG_oskenter;
-      oskcapslock = LG_oskcapslock;
-      oskshift = LG_oskshift;
+      button_up = SDL_DisplayFormatAlpha(BLANK_button_up);
+      button_down = SDL_DisplayFormatAlpha(BLANK_button_down);
+      button_off = SDL_DisplayFormatAlpha(BLANK_button_off);
+      button_nav = SDL_DisplayFormatAlpha(BLANK_button_nav);
+      button_hold = SDL_DisplayFormatAlpha(BLANK_button_hold);
+      oskdel = SDL_DisplayFormatAlpha(BLANK_oskdel);
+      osktab = SDL_DisplayFormatAlpha(BLANK_osktab);
+      oskenter = SDL_DisplayFormatAlpha(BLANK_oskenter);
+      oskcapslock = SDL_DisplayFormatAlpha(BLANK_oskcapslock);
+      oskshift = SDL_DisplayFormatAlpha(BLANK_oskshift);
   }
 
   surface = SDL_CreateRGBSurface(canvas->flags,
@@ -172,26 +222,16 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
   keyboard->kmdf.dead3 = NULL;
   keyboard->kmdf.dead4 = NULL;
 
-  keyboard->LG_button_up = LG_button_up;
-  keyboard->LG_button_down = LG_button_down;
-  keyboard->LG_button_off = LG_button_off;
-  keyboard->LG_button_nav = LG_button_nav;
-  keyboard->LG_button_hold = LG_button_hold;
-  keyboard->LG_oskdel = LG_oskdel;
-  keyboard->LG_osktab = LG_osktab;
-  keyboard->LG_oskenter = LG_oskenter;
-  keyboard->LG_oskcapslock = LG_oskcapslock;
-  keyboard->LG_oskshift = LG_oskshift;
-  keyboard->SM_button_up = SM_button_up;
-  keyboard->SM_button_down = SM_button_down;
-  keyboard->SM_button_off = SM_button_off;
-  keyboard->SM_button_nav = SM_button_nav;
-  keyboard->SM_button_hold = SM_button_hold;
-  keyboard->SM_oskdel = SM_oskdel;
-  keyboard->SM_osktab = SM_osktab;
-  keyboard->SM_oskenter = SM_oskenter;
-  keyboard->SM_oskcapslock = SM_oskcapslock;
-  keyboard->SM_oskshift = SM_oskshift;
+  keyboard->BLANK_button_up = BLANK_button_up;
+  keyboard->BLANK_button_down = BLANK_button_down;
+  keyboard->BLANK_button_off = BLANK_button_off;
+  keyboard->BLANK_button_nav = BLANK_button_nav;
+  keyboard->BLANK_button_hold = BLANK_button_hold;
+  keyboard->BLANK_oskdel = BLANK_oskdel;
+  keyboard->BLANK_osktab = BLANK_osktab;
+  keyboard->BLANK_oskenter = BLANK_oskenter;
+  keyboard->BLANK_oskcapslock = BLANK_oskcapslock;
+  keyboard->BLANK_oskshift = BLANK_oskshift;
 
   SDL_FillRect(surface, NULL,
                SDL_MapRGB(surface->format, keyboard->layout->bgcolor.r, keyboard->layout->bgcolor.g,
@@ -1738,18 +1778,12 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
 
           new_keyboard =
             osk_create(name, keyboard->canvas_ptr,
-                       keyboard->LG_button_up, keyboard->LG_button_down,
-                       keyboard->LG_button_off, keyboard->LG_button_nav,
-                       keyboard->LG_button_hold,
-                       keyboard->LG_oskdel, keyboard->LG_osktab,
-                       keyboard->LG_oskenter, keyboard->LG_oskcapslock,
-                       keyboard->LG_oskshift,
-                       keyboard->SM_button_up, keyboard->SM_button_down,
-                       keyboard->SM_button_off, keyboard->SM_button_nav,
-                       keyboard->SM_button_hold,
-                       keyboard->SM_oskdel, keyboard->SM_osktab,
-                       keyboard->SM_oskenter, keyboard->SM_oskcapslock,
-                       keyboard->SM_oskshift,
+                       keyboard->BLANK_button_up, keyboard->BLANK_button_down,
+                       keyboard->BLANK_button_off, keyboard->BLANK_button_nav,
+                       keyboard->BLANK_button_hold,
+                       keyboard->BLANK_oskdel, keyboard->BLANK_osktab,
+                       keyboard->BLANK_oskenter, keyboard->BLANK_oskcapslock,
+                       keyboard->BLANK_oskshift,
                        keyboard->disable_change);
 
           free(aux_list_ptr);
