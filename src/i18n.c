@@ -1070,7 +1070,24 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 
   DEBUG_PRINTF("Locale AFTER is: %s\n", setlocale(LC_ALL, NULL));     //EP
 
+#ifdef WIN32
+  // FIXME: After the update of MinGW/MSYS2 in January 2022, gettext() no longer find
+  //        translation (.mo) files unless dirname is specified by full path.
+  //
+  //                      -- 2022/02/02: Shin-ichi TOYAMA & Pere Pujal i Carabantes
+  char curdir[256];
+  char f[512];
+  getcwd(curdir, sizeof(curdir));
+  snprintf(f, sizeof(f), "%s%s", curdir, "\\locale");
+#ifdef DEBUG
+  printf("Current directory at launchtime: %s\n", curdir);
+  printf("Localedir is set to: %s\n", f);
+#endif
+  bindtextdomain("tuxpaint", f);
+#else
   bindtextdomain("tuxpaint", LOCALEDIR);
+#endif
+
   /* Old version of glibc does not have bind_textdomain_codeset() */
 #if defined(_WIN32) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 2) || __GLIBC__ > 2 || defined(__NetBSD__) || __APPLE__
   bind_textdomain_codeset("tuxpaint", "UTF-8");
