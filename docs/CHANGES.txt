@@ -119,6 +119,13 @@ http://www.tuxpaint.org/
       files after the update of MinGW/MSYS2 in January 2022.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+    * Initializing layout of onscreen keyboard (osk) to avoid undefined
+      behavior when changing keyboards.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Address issue with uppercase-only mode in Turkish locale.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
   * Ports & Building:
     -----------------
     * Windows installer will no nlonger show a dialogue to inform
