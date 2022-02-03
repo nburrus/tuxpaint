@@ -64,6 +64,7 @@ http://www.tuxpaint.org/
       square buttons for letters/numbers/symbols).
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/212/
         (h/t Anat Caspi)
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Color Picking:
     ------------------------------
@@ -73,22 +74,27 @@ http://www.tuxpaint.org/
       Release the mouse button over a color on the canvas to choose it
       (or outside the canvas to abort).
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/209/
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * A new color mixer has been added, allowing red (magenta-ish),
       yellow, and blue (cyan-ish) primary colors, along with white
       ("tint"), grey ("tone"), and black ("shade") to be added together to
       form a desired color.  Undo/Redo is available!
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Show a "pipette"-shaped mouse pointer when selecting a
       color from the color palette, or the picture.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Don't play 'bubble' paint sound when color picker or selector
       (or new mixer) are aborted (via their "Back" buttons or [Esc] key).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * New Magic Tools:
     ----------------
     * "Tile Zoom"; like the regular "Zoom", but tiles the results when
       you scale down (similar to "Panels", but with non-integer scaling).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
     ---------------------
