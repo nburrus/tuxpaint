@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.January.28 (0.9.28)
+2022.February.3 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -106,6 +106,11 @@ http://www.tuxpaint.org/
     ----------
     * Fixed abnormal exit of threaded font scan which prevented enabling
       text/label tools on some environment such as Rocky Linux 8.
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Pass the full path of locale directory to bindtextdomain().
+      Workaround to the issue that gettext() can not find translation
+      files after the update of MinGW/MSYS2 in January 2022.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
   * Ports & Building:
