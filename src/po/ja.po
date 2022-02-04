@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-28 02:17-0800\n"
-"PO-Revision-Date: 2022-02-04 08:51+0900\n"
+"PO-Revision-Date: 2022-02-04 11:10+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -841,7 +841,7 @@ msgstr "つぎ"
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
 #: ../tuxpaint.c:8670
 msgid "Clear"
-msgstr ""
+msgstr "さいしょから"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:9532
@@ -892,7 +892,7 @@ msgstr "２ついじょうのえをえらんで GIFアニメをかきだしま�
 #. Descriptions (names) of the color mixer tool's primary colors and shades
 #: ../tuxpaint.c:22195
 msgid "red"
-msgstr ""
+msgstr "あか"
 
 #: ../tuxpaint.c:22196
 msgid "yellow"
@@ -908,7 +908,7 @@ msgstr "しろ"
 
 #: ../tuxpaint.c:22199
 msgid "grey"
-msgstr ""
+msgstr "はいいろ"
 
 #: ../tuxpaint.c:22200
 msgid "black"
@@ -918,28 +918,31 @@ msgstr "くろ"
 #: ../tuxpaint.c:22205
 #, c-format
 msgid "Your color is %1$s %2$s."
-msgstr ""
+msgstr "%2$s が %1$s の いろです"
 
 #: ../tuxpaint.c:22206
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
-msgstr ""
+msgstr "%2$s が %1$s で %4$s が %3$s の いろです"
 
 #: ../tuxpaint.c:22207
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
-msgstr ""
+msgstr "%2$s が %1$s で %4$s が %3$s で %6$s が %5$s の いろです"
 
 #: ../tuxpaint.c:22208
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
+"%2$s が %1$s で %4$s が %3$s で %6$s が %5$s で %8$s が %7$s の いろです"
 
 #: ../tuxpaint.c:22209
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
+"%2$s が %1$s で %4$s が %3$s で %6$s が %5$s で %8$s が %7$s で %10$s が "
+"%9$s の いろです"
 
 #: ../tuxpaint.c:22210
 #, c-format
@@ -947,11 +950,13 @@ msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
 msgstr ""
+"%2$s が %1$s で %4$s が %3$s で %6$s が %5$s で %8$s が %7$s で %10$s が "
+"%9$s で %12$s が %11$s の いろです"
 
 #. Color mixer; e.g., "Your color is entirely grey."
 #: ../tuxpaint.c:22971 ../tuxpaint.c:22978
 msgid "entirely"
-msgstr ""
+msgstr "かんぜんな"
 
 #. Add "Color Select" color:
 #: ../tuxpaint.c:25793
@@ -970,6 +975,8 @@ msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
+"もとになる いろ（あか、きいろ、あお）に、しろ、はいいろ、くろ をまぜて あたら"
+"しい いろを つくろう"
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "Tux Paint"
