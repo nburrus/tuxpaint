@@ -23053,8 +23053,6 @@ static void draw_color_mixer_tooltip(void) {
         }
     }
 
-printf("%s\n", tip_txt);
-
   draw_tux_text(TUX_GREAT, tip_txt, 1);
 }
 
