@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-28 02:17-0800\n"
-"PO-Revision-Date: 2022-02-04 11:10+0900\n"
+"PO-Revision-Date: 2022-02-04 17:06+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
 "Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -918,31 +918,28 @@ msgstr "くろ"
 #: ../tuxpaint.c:22205
 #, c-format
 msgid "Your color is %1$s %2$s."
-msgstr "%2$s が %1$s の いろです"
+msgstr "%1$s %2$s です"
 
 #: ../tuxpaint.c:22206
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
-msgstr "%2$s が %1$s で %4$s が %3$s の いろです"
+msgstr "%2$sが%1$sで %4$sが%3$sの いろ"
 
 #: ../tuxpaint.c:22207
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
-msgstr "%2$s が %1$s で %4$s が %3$s で %6$s が %5$s の いろです"
+msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sの いろ"
 
 #: ../tuxpaint.c:22208
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
-msgstr ""
-"%2$s が %1$s で %4$s が %3$s で %6$s が %5$s で %8$s が %7$s の いろです"
+msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sの いろ"
 
 #: ../tuxpaint.c:22209
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
-msgstr ""
-"%2$s が %1$s で %4$s が %3$s で %6$s が %5$s で %8$s が %7$s で %10$s が "
-"%9$s の いろです"
+msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sで %10$sが%9$sの いろ"
 
 #: ../tuxpaint.c:22210
 #, c-format
@@ -950,8 +947,8 @@ msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
 msgstr ""
-"%2$s が %1$s で %4$s が %3$s で %6$s が %5$s で %8$s が %7$s で %10$s が "
-"%9$s で %12$s が %11$s の いろです"
+"%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sで %10$sが%9$sで %12$s"
+"が%11$sの いろ"
 
 #. Color mixer; e.g., "Your color is entirely grey."
 #: ../tuxpaint.c:22971 ../tuxpaint.c:22978
