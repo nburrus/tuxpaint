@@ -22967,7 +22967,7 @@ static void draw_color_mixer_tooltip(void) {
     {
       if (used_colors_amount[0] == 1)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[0]),
                    /* Color mixer; e.g., "Your color is entirely grey." */ gettext("entirely"),
                    gettext(color_mixer_color_names[used_colors_color[0]]));
         }
@@ -22978,7 +22978,7 @@ static void draw_color_mixer_tooltip(void) {
                    gettext("entirely"),
                    used_colors_amount[0], used_colors_amount[0]);
 
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[0]),
                    tip_txt_proportions[0],
                    gettext(color_mixer_color_names[used_colors_color[0]]));
         }
@@ -23013,20 +23013,20 @@ static void draw_color_mixer_tooltip(void) {
       tip_txt[0] = '\0'; /* Just in case! */
       if (num_colors_used == 2)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]));
         }
       else if (num_colors_used == 3)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]));
         }
       else if (num_colors_used == 4)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
@@ -23034,7 +23034,7 @@ static void draw_color_mixer_tooltip(void) {
         }
       else if (num_colors_used == 5)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
@@ -23043,7 +23043,7 @@ static void draw_color_mixer_tooltip(void) {
         }
       else if (num_colors_used == 6)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
@@ -23052,6 +23052,8 @@ static void draw_color_mixer_tooltip(void) {
                    tip_txt_proportions[5], gettext(color_mixer_color_names[used_colors_color[5]]));
         }
     }
+
+printf("%s\n", tip_txt);
 
   draw_tux_text(TUX_GREAT, tip_txt, 1);
 }
