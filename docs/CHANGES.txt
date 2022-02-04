@@ -101,6 +101,9 @@ http://www.tuxpaint.org/
     * Albanian translation
       Besnik Bleta <besnik@programeshqip.org>
 
+    * Japanese translation
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
 
