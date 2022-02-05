@@ -159,7 +159,7 @@ ios_BUNDLE:=./TuxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o obj/win32_trash.o
-macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
+macos_ARCH_LIBS:=src/macos_print.m obj/macos.o obj/macosm.o
 ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
@@ -1304,9 +1304,15 @@ obj/postscript_print.o:	src/postscript_print.c \
 
 obj/macos.o: src/macos.c src/macos.h src/platform.h src/debug.h
 	@echo
-	@echo "...Compiling macOS support..."
+	@echo "...Compiling macOS support (Part 1)..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/macos.c -o obj/macos.o
+
+obj/macosm.o: src/macos.m src/macos.h src/platform.h src/debug.h
+	@echo
+	@echo "...Compiling macOS support (Part 2)..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+		-c src/macos.m -o obj/macosm.o
 
 obj/ios.o: src/ios.c src/ios.h src/platform.h src/debug.h
 	@echo

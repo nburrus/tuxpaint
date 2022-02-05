@@ -25971,6 +25971,10 @@ static void setup(void)
     }
 #endif
 
+#ifdef __APPLE__
+  apple_init();
+#endif
+
   im_init(&im_data, get_current_language());
 
 #ifndef NO_SDLPANGO
