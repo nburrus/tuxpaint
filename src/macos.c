@@ -1,7 +1,7 @@
 /*
   macos.c
 
-  Copyright (c) 2021
+  Copyright (c) 2021-2022
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -35,11 +35,11 @@ const char *apple_fontsPath(void)
     static char *p = NULL;
 
     if(!p) {
-        const char *home = getenv("HOME");
+        const char *home = getenv("HOME") ? getenv("HOME") : "";
 
         p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
 
-        if(p) sprintf(p, MACOS_FONTS_PATH, getenv("HOME"));
+        if(p) sprintf(p, MACOS_FONTS_PATH, home);
         else perror("apple_fontsPath");
     }
 
@@ -52,11 +52,11 @@ const char *apple_preferencesPath(void)
     static char *p = NULL;
 
     if(!p) {
-        const char *home = getenv("HOME");
+        const char *home = getenv("HOME") ? getenv("HOME") : "";
 
         p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
 
-        if(p) sprintf(p, MACOS_PREFERENCES_PATH, getenv("HOME"));
+        if(p) sprintf(p, MACOS_PREFERENCES_PATH, home);
         else perror("apple_preferencesPath");
     }
 
@@ -75,11 +75,11 @@ const char *apple_picturesPath(void)
     static char *p = NULL;
 
     if(!p) {
-        const char *home = getenv("HOME");
+        const char *home = getenv("HOME") ? getenv("HOME") : "";
 
         p = malloc(strlen(home) + strlen(MACOS_PICTURES_PATH) + 1);
 
-        if(p) sprintf(p, MACOS_PICTURES_PATH, getenv("HOME"));
+        if(p) sprintf(p, MACOS_PICTURES_PATH, home);
         else perror("apple_picturesPath");
     }
 
