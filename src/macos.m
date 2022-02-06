@@ -1,7 +1,7 @@
 /*
   macos.m
 
-  Copyright (c) 2022
+  Copyright (c) 2021-2022
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -20,9 +20,18 @@
   (See COPYING.txt)
 */
 
-#import <Cocoa/Cocoa.h>
+#import <stdio.h>
+#import <stdlib.h>
+#import <string.h>
 #import <libintl.h>
+#import <Cocoa/Cocoa.h>
 #import "macos.h"
+#import "debug.h"
+
+#define MACOS_FONTS_PATH              "%s/Library/Fonts"
+#define MACOS_PREFERENCES_PATH        "%s/Library/Application Support/TuxPaint"
+#define MACOS_GLOBAL_PREFERENCES_PATH "/Library/Application Support/TuxPaint"
+#define MACOS_PICTURES_PATH           "%s/Pictures"
 
 
 static void setupApplicationMenu(void)
@@ -126,3 +135,61 @@ void apple_init(void)
     setupWindowMenu();
     removeSdlMenu();
 }
+
+
+const char *apple_fontsPath(void)
+{
+    static char *p = NULL;
+
+    if(!p) {
+        const char *home = getenv("HOME") ? getenv("HOME") : "";
+
+        p = malloc(strlen(home) + strlen(MACOS_FONTS_PATH) + 1);
+
+        if(p) sprintf(p, MACOS_FONTS_PATH, home);
+        else perror("apple_fontsPath");
+    }
+
+    return p;
+}
+
+
+const char *apple_preferencesPath(void)
+{
+    static char *p = NULL;
+
+    if(!p) {
+        const char *home = getenv("HOME") ? getenv("HOME") : "";
+
+        p = malloc(strlen(home) + strlen(MACOS_PREFERENCES_PATH) + 1);
+
+        if(p) sprintf(p, MACOS_PREFERENCES_PATH, home);
+        else perror("apple_preferencesPath");
+    }
+
+    return p;
+}
+
+
+const char *apple_globalPreferencesPath(void)
+{
+    return MACOS_GLOBAL_PREFERENCES_PATH;
+}
+
+
+const char *apple_picturesPath(void)
+{
+    static char *p = NULL;
+
+    if(!p) {
+        const char *home = getenv("HOME") ? getenv("HOME") : "";
+
+        p = malloc(strlen(home) + strlen(MACOS_PICTURES_PATH) + 1);
+
+        if(p) sprintf(p, MACOS_PICTURES_PATH, home);
+        else perror("apple_picturesPath");
+    }
+
+    return p;
+}
+

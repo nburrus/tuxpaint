@@ -159,7 +159,7 @@ ios_BUNDLE:=./TuxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 
 windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o obj/win32_trash.o
-macos_ARCH_LIBS:=src/macos_print.m obj/macos.o obj/macosm.o
+macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
 ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
 beos_ARCH_LIBS:=obj/BeOS_print.o
 linux_ARCH_LIBS:=obj/postscript_print.o
@@ -1302,23 +1302,17 @@ obj/postscript_print.o:	src/postscript_print.c \
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
 		-c src/postscript_print.c -o obj/postscript_print.o
 
-obj/macos.o: src/macos.c src/macos.h src/platform.h src/debug.h
+obj/macos.o: src/macos.m src/macos.h src/platform.h src/debug.h
 	@echo
-	@echo "...Compiling macOS support (Part 1)..."
+	@echo "...Compiling macOS support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-c src/macos.c -o obj/macos.o
+		-c src/macos.m -o obj/macos.o
 
-obj/macosm.o: src/macos.m src/macos.h src/platform.h src/debug.h
-	@echo
-	@echo "...Compiling macOS support (Part 2)..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-c src/macos.m -o obj/macosm.o
-
-obj/ios.o: src/ios.c src/ios.h src/platform.h src/debug.h
+obj/ios.o: src/ios.m src/ios.h src/platform.h src/debug.h
 	@echo
 	@echo "...Compiling iOS support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-c src/ios.c -o obj/ios.o
+		-c src/ios.m -o obj/ios.o
 
 obj/resource.o:	win32/resources.rc win32/resource.h
 	@echo
