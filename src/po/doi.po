@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 02:17-0800\n"
+"POT-Creation-Date: 2022-02-05 16:41-0800\n"
 "PO-Revision-Date: 2013-09-04 10:23+0530\n"
 "Last-Translator:  <b>\n"
 "Language-Team: Dogri\n"
@@ -275,6 +275,43 @@ msgstr "थाई"
 #: ../im.c:95
 msgid "ZH_TW"
 msgstr "ZH_TW"
+
+#. Add menu items
+#: ../macos.m:44
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "About Tux Paint"
+msgstr "टक्स पेंट"
+
+#: ../macos.m:49
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Hide Tux Paint"
+msgstr "टक्स पेंट"
+
+#: ../macos.m:52
+msgid "Hide Others"
+msgstr ""
+
+#: ../macos.m:55
+msgid "Show All"
+msgstr ""
+
+#: ../macos.m:59
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Quit Tux Paint"
+msgstr "टक्स पेंट"
+
+#. Put menu into the menubar
+#: ../macos.m:89 ../macos.m:97
+msgid "Window"
+msgstr ""
+
+#. "Minimize" item
+#: ../macos.m:92
+msgid "Minimize"
+msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -1520,30 +1557,36 @@ msgstr "अपनी तस्वीरा दे हिस्सें च न�
 msgid "Click to add noise to your entire picture."
 msgstr "अपनी सबूरी तस्वीरा च  नॉइज़ जोड़ने आस्तै क्लिक करो ."
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:154
 msgid "Perspective"
 msgstr "परिद्रिश्श"
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:155
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:153
-msgid "Zoom"
+#: ../../magic/src/perspective.c:156
+#, fuzzy
+#| msgid "Zoom"
+msgid "Tile Zoom"
 msgstr "ज़ूम करो"
 
 #: ../../magic/src/perspective.c:157
+msgid "Zoom"
+msgstr "ज़ूम करो"
+
+#: ../../magic/src/perspective.c:161
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "कोनें पर क्लिक करो ते जित्थूं तगर अपनी तस्वीरा गी खिच्चना चांह्‌दे ओ उत्थूं तगर खिच्चो. "
 
-#: ../../magic/src/perspective.c:159
+#: ../../magic/src/perspective.c:163
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "अपनी पेंटिङ गी इसदे नैगटिव च बदलने आस्तै क्लिक करो."
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "तस्वीरा गी ज़ूम इन करने आस्तै क्लिक करो ते उप्परे गी खिच्चो जां  तस्वीरा गी ज़ूम आउट करने "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 02:17-0800\n"
+"POT-Creation-Date: 2022-02-05 16:41-0800\n"
 "PO-Revision-Date: 2011-01-07 15:08+0530\n"
 "Last-Translator: saikumar <ramukiashc@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -273,6 +273,43 @@ msgstr "తాయీ"
 #: ../im.c:95
 msgid "ZH_TW"
 msgstr "జ్హ్_త్వ్"
+
+#. Add menu items
+#: ../macos.m:44
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "About Tux Paint"
+msgstr "టక్స పెయింట్"
+
+#: ../macos.m:49
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Hide Tux Paint"
+msgstr "టక్స పెయింట్"
+
+#: ../macos.m:52
+msgid "Hide Others"
+msgstr ""
+
+#: ../macos.m:55
+msgid "Show All"
+msgstr ""
+
+#: ../macos.m:59
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Quit Tux Paint"
+msgstr "టక్స పెయింట్"
+
+#. Put menu into the menubar
+#: ../macos.m:89 ../macos.m:97
+msgid "Window"
+msgstr ""
+
+#. "Minimize" item
+#: ../macos.m:92
+msgid "Minimize"
+msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -1522,29 +1559,35 @@ msgstr "చిత్రంలో మీకు కావలిసిన ప్ర
 msgid "Click to add noise to your entire picture."
 msgstr "చిత్రం మొత్తానికి శబ్దమ ప్రభావాన్ని అమద్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:154
 msgid "Perspective"
 msgstr "దృష్టి "
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:155
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:153
-msgid "Zoom"
+#: ../../magic/src/perspective.c:156
+#, fuzzy
+#| msgid "Zoom"
+msgid "Tile Zoom"
 msgstr "సమీప వీక్షణం"
 
 #: ../../magic/src/perspective.c:157
+msgid "Zoom"
+msgstr "సమీప వీక్షణం"
+
+#: ../../magic/src/perspective.c:161
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "చిత్రాని సాగదియుటకు మూలల వద్ద క్లిక్ చేసి లాగుము"
 
-#: ../../magic/src/perspective.c:159
+#: ../../magic/src/perspective.c:163
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "మీ చిత్రానికి  వ్యతిరేక గుణం అమద్చడానికి వేయడానికి మౌస్ ని క్లిక్ చేయండి."
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "క్లిక్ చేసే,సమీప వీక్షణ చేయడానికి బయటకు లాగండి నిరసమీప వీక్షణ చేయడానికి  లోపటికి లాగండి."
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 02:17-0800\n"
+"POT-Creation-Date: 2022-02-05 16:41-0800\n"
 "PO-Revision-Date: 2014-06-16 16:00+0000\n"
 "Last-Translator: Nuno MAGALHÃES <nunomagalhaes@eu.ipp.pt>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -273,6 +273,43 @@ msgstr "Taja"
 #: ../im.c:95
 msgid "ZH_TW"
 msgstr "ZH_TW (tradicia ĉina)"
+
+#. Add menu items
+#: ../macos.m:44
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "About Tux Paint"
+msgstr "Tux Desegnilo"
+
+#: ../macos.m:49
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Hide Tux Paint"
+msgstr "Tux Desegnilo"
+
+#: ../macos.m:52
+msgid "Hide Others"
+msgstr ""
+
+#: ../macos.m:55
+msgid "Show All"
+msgstr ""
+
+#: ../macos.m:59
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Quit Tux Paint"
+msgstr "Tux Desegnilo"
+
+#. Put menu into the menubar
+#: ../macos.m:89 ../macos.m:97
+msgid "Window"
+msgstr ""
+
+#. "Minimize" item
+#: ../macos.m:92
+msgid "Minimize"
+msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -1522,29 +1559,35 @@ msgstr "Alklaku kaj movu la muson por aldoni bruon al partoj de via bildon."
 msgid "Click to add noise to your entire picture."
 msgstr "Klaku bruigi la tutan bildo."
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:154
 msgid "Perspective"
 msgstr "Perspektivo"
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:155
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:153
-msgid "Zoom"
+#: ../../magic/src/perspective.c:156
+#, fuzzy
+#| msgid "Zoom"
+msgid "Tile Zoom"
 msgstr "Zomi"
 
 #: ../../magic/src/perspective.c:157
+msgid "Zoom"
+msgstr "Zomi"
+
+#: ../../magic/src/perspective.c:161
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Alklaku la angulojn kaj tiru ĝis tie, kien vi volas streĉi la bildon."
 
-#: ../../magic/src/perspective.c:159
+#: ../../magic/src/perspective.c:163
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klaku por ŝanĝi la bildon al sia kliŝo."
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Alklaku kaj tiru supren por enzomi aŭ malsupren por elzomi la bildon."
 

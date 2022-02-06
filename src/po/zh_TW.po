@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 02:17-0800\n"
+"POT-Creation-Date: 2022-02-05 16:41-0800\n"
 "PO-Revision-Date: 2014-06-24 14:46+0800\n"
 "Last-Translator: Song Huang <song@song.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -336,6 +336,43 @@ msgstr "泰文"
 #: ../im.c:95
 msgid "ZH_TW"
 msgstr "繁體中文"
+
+#. Add menu items
+#: ../macos.m:44
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "About Tux Paint"
+msgstr "企鵝小畫家"
+
+#: ../macos.m:49
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Hide Tux Paint"
+msgstr "企鵝小畫家"
+
+#: ../macos.m:52
+msgid "Hide Others"
+msgstr ""
+
+#: ../macos.m:55
+msgid "Show All"
+msgstr ""
+
+#: ../macos.m:59
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Quit Tux Paint"
+msgstr "企鵝小畫家"
+
+#. Put menu into the menubar
+#: ../macos.m:89 ../macos.m:97
+msgid "Window"
+msgstr ""
+
+#. "Minimize" item
+#: ../macos.m:92
+msgid "Minimize"
+msgstr ""
 
 #  Square shape tool (4 equally-lengthed sides at right angles)
 #. Square shape tool (4 equally-lengthed sides at right angles)
@@ -1696,29 +1733,35 @@ msgstr "按著並移動滑鼠來使經過的圖畫產生雜訊。"
 msgid "Click to add noise to your entire picture."
 msgstr "按一下來使整張圖畫產生雜訊。"
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:154
 msgid "Perspective"
 msgstr "視角"
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:155
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:153
-msgid "Zoom"
+#: ../../magic/src/perspective.c:156
+#, fuzzy
+#| msgid "Zoom"
+msgid "Tile Zoom"
 msgstr "變焦"
 
 #: ../../magic/src/perspective.c:157
+msgid "Zoom"
+msgstr "變焦"
+
+#: ../../magic/src/perspective.c:161
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "按著並移動滑鼠來使圖畫變成浮雕。"
 
-#: ../../magic/src/perspective.c:159
+#: ../../magic/src/perspective.c:163
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "按一下來使畫筆的顏色轉變成相反顏色。"
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "按著並往上移動滑鼠來拉近圖案，或往下移動來拉遠圖案。"
 

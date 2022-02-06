@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 02:17-0800\n"
+"POT-Creation-Date: 2022-02-05 16:41-0800\n"
 "PO-Revision-Date: 2021-11-30 10:29+0100\n"
 "Last-Translator: Jozef Říha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -275,6 +275,43 @@ msgstr "Thajsky"
 #: ../im.c:95
 msgid "ZH_TW"
 msgstr "Tradičnou čínštinou"
+
+#. Add menu items
+#: ../macos.m:44
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "About Tux Paint"
+msgstr "Kreslenie s Tuxom"
+
+#: ../macos.m:49
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Hide Tux Paint"
+msgstr "Kreslenie s Tuxom"
+
+#: ../macos.m:52
+msgid "Hide Others"
+msgstr ""
+
+#: ../macos.m:55
+msgid "Show All"
+msgstr ""
+
+#: ../macos.m:59
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Quit Tux Paint"
+msgstr "Kreslenie s Tuxom"
+
+#. Put menu into the menubar
+#: ../macos.m:89 ../macos.m:97
+msgid "Window"
+msgstr ""
+
+#. "Minimize" item
+#: ../macos.m:92
+msgid "Minimize"
+msgstr ""
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -1442,27 +1479,33 @@ msgstr "Kliknutím a ťahaním myši pridáš do častí obrázka šum."
 msgid "Click to add noise to your entire picture."
 msgstr "Kliknutím pridáš šum do celého obrázka."
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:154
 msgid "Perspective"
 msgstr "Otáčanie"
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:155
 msgid "Panels"
 msgstr "Panely"
 
-#: ../../magic/src/perspective.c:153
-msgid "Zoom"
+#: ../../magic/src/perspective.c:156
+#, fuzzy
+#| msgid "Zoom"
+msgid "Tile Zoom"
 msgstr "Lupa"
 
 #: ../../magic/src/perspective.c:157
+msgid "Zoom"
+msgstr "Lupa"
+
+#: ../../magic/src/perspective.c:161
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klikni do rohov obrázka a ťahaj myš tam, kde chceš obrázok roztiahnuť."
 
-#: ../../magic/src/perspective.c:159
+#: ../../magic/src/perspective.c:163
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Kliknutím zmeníš svoj obrázok na panely 2x2."
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Kliknutím a ťahaním myši hore alebo dole obrázok zväčšíš alebo zmenšíš."
