@@ -23122,13 +23122,13 @@ static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Sur
             {
               putpixels[img_color_btns[the_color]->format->BytesPerPixel]
                 (img_color_btns[the_color], x, y,
-                 SDL_MapRGB(img_color_btns[i]->format,
+                 SDL_MapRGB(img_color_btns[the_color]->format,
                             linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
                             linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
 
               putpixels[img_color_btns[the_color + NUM_COLORS]->format->BytesPerPixel]
                 (img_color_btns[the_color + NUM_COLORS], x, y,
-                 SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
+                 SDL_MapRGB(img_color_btns[the_color + NUM_COLORS]->format,
                             linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
                             linear_to_sRGB(gh * aa + gd * (1.0 - aa)), linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
             }
