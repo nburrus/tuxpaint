@@ -276,40 +276,34 @@ msgstr "중국어"
 
 #. Add menu items
 #: ../macos.m:44
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "About Tux Paint"
-msgstr "턱스페인트"
+msgstr "턱스페인트에 대하여"
 
 #: ../macos.m:49
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Hide Tux Paint"
-msgstr "턱스페인트"
+msgstr "턱스페인트 감추기"
 
 #: ../macos.m:52
 msgid "Hide Others"
-msgstr ""
+msgstr "다른 윈도우 감추기"
 
 #: ../macos.m:55
 msgid "Show All"
-msgstr ""
+msgstr "다 보이기"
 
 #: ../macos.m:59
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Quit Tux Paint"
-msgstr "턱스페인트"
+msgstr "그만두기"
 
 #. Put menu into the menubar
 #: ../macos.m:89 ../macos.m:97
 msgid "Window"
-msgstr ""
+msgstr "윈도우"
 
 #. "Minimize" item
 #: ../macos.m:92
 msgid "Minimize"
-msgstr ""
+msgstr "최소화"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -343,17 +337,13 @@ msgstr "5각형"
 
 #. Hexagon shape tool (6 sides)
 #: ../shapes.h:290 ../shapes.h:291
-#, fuzzy
-#| msgid "Hexagon Mosaic"
 msgid "Hexagon"
-msgstr "6각형 모자이크"
+msgstr "6각형"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
 #: ../shapes.h:294 ../shapes.h:295
-#, fuzzy
-#| msgid "Hexagon Mosaic"
 msgid "Heptagon"
-msgstr "6각형 모자이크"
+msgstr "7각형"
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:298 ../shapes.h:299
@@ -406,17 +396,13 @@ msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
 
 #. Description of a hexagon
 #: ../shapes.h:353 ../shapes.h:354
-#, fuzzy
-#| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
-msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
+msgstr "6개의 면이 있는 모양이 '6각형' 입니다."
 
 #. Description of a heptagon
 #: ../shapes.h:357 ../shapes.h:358
-#, fuzzy
-#| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
-msgstr "5개의 면이 있는 모양이 '5각형' 입니다."
+msgstr "7개의 면이 있는 모양이 '7각형' 입니다."
 
 #. Description of an octagon
 #: ../shapes.h:361 ../shapes.h:362

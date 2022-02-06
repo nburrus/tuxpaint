@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.5 (0.9.28)
+2022.February.6 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -106,6 +106,9 @@ http://www.tuxpaint.org/
 
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
+
+    * Korean translation
+      Mark Kim <markuskimius@gmail.com>
 
     * Tux Paint for macOS can now localize the macOS menubar.
       Mark Kim <markuskimius@gmail.com>
