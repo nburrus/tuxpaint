@@ -134,20 +134,28 @@ http://www.tuxpaint.org/
 
   * Ports & Building:
     -----------------
-    * Windows installer will no nlonger show a dialogue to inform
-      user of uninstallation when "/VERYSILENT" switch is specified
-      (useful for automated installation/uninsta$llation processes).
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    * Windows
+      * Windows installer will no nlonger show a dialogue to inform
+        user of uninstallation when "/VERYSILENT" switch is specified
+        (useful for automated installation/uninsta$llation processes).
+        TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-    * On macOS, use the CMD (⌘) key wherever CTRL is used on other OSes
+    * macOS
       Mark Kim <markuskimius@gmail.com>
 
-    * Use character class in macOS build script
-      (It appears \t is not compatible with certain versions of grep.)
-      Mark Kim <markuskimius@gmail.com>
+      * On macOS, use the CMD (⌘) key wherever CTRL is used on other OSes
 
-    * Remove install stages not needed on macOS
-      Mark Kim <markuskimius@gmail.com>
+      * Use character class in macOS build script
+        (It appears \t is not compatible with certain versions of grep.)
+
+      * Remove install stages not needed on macOS
+
+      * When looking up paths of fonts, preferences, etc., macOS searches
+        two places, the system paths and the user paths under $HOME.
+        Now handling rare scenario where HOME is not set; if so,
+        now just searching the system path twice instead of searching the
+        system path followed by going into an undefined behavior
+        (possibly segfault crash).
 
   * Documentation updates:
     ---------------------
