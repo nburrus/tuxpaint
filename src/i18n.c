@@ -33,6 +33,7 @@
 #include <string.h>
 #include <libintl.h>
 #include <locale.h>
+#include "platform.h"
 #include "i18n.h"
 #include "debug.h"
 
@@ -47,7 +48,7 @@
 #include <wctype.h>
 #endif
 
-#if defined(__APPLE__)
+#if defined(__MACOS__)
 #include "macos.h"
 #elif defined(__IOS__)
 #include "ios.h"
