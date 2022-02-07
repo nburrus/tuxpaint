@@ -113,6 +113,9 @@ http://www.tuxpaint.org/
     * Tux Paint for macOS can now localize the macOS menubar.
       Mark Kim <markuskimius@gmail.com>
 
+    * Tux Paint for macOS can now detect the system language.
+      Mark Kim <markuskimius@gmail.com>
+
     * Updated `src/po/check_translations.sh` sanity-checking script
       so it properly finds the updated docs & other changes.
       Bill Kendrick <bill@newbreedsoftware.com>

@@ -34,6 +34,9 @@
 #define MACOS_PICTURES_PATH           "%s/Pictures"
 
 
+static char *APPLE_LOCALE = NULL;
+
+
 static void setupApplicationMenu(void)
 {
     /*
@@ -130,10 +133,35 @@ static void removeSdlMenu(void)
 void apple_init(void)
 {
     /* Override SDL's default menu with our gettext-translatable menu.  We do
-     * this by adding our menus, then removing the menus installed by SDL. */
+     * this by removing the menus added by SDL, then adding ours. */
+    removeSdlMenu();
     setupApplicationMenu();
     setupWindowMenu();
-    removeSdlMenu();
+}
+
+
+const char *apple_locale(void)
+{
+    if(!APPLE_LOCALE) {
+        const char *locale = [[[NSLocale preferredLanguages] firstObject] UTF8String];
+
+        /* Copy to writable memory */
+        APPLE_LOCALE = strdup(locale);
+
+        if(!APPLE_LOCALE) {
+            perror("apple_locale");
+            return "C";  /* Default to C */
+        }
+
+        /* Change the locale hyphen separator to underscore (e.g., en-US to en_US) */
+        if(APPLE_LOCALE[2] == '-') {
+            APPLE_LOCALE[2] = '_';
+        }
+    }
+
+    DEBUG_PRINTF("locale=%s\n", APPLE_LOCALE);
+
+    return APPLE_LOCALE;
 }
 
 

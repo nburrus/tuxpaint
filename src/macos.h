@@ -27,6 +27,7 @@
 
 
 void apple_init(void);
+const char *apple_locale(void);
 const char *apple_fontsPath(void);
 const char *apple_preferencesPath(void);
 const char *apple_globalPreferencesPath(void);

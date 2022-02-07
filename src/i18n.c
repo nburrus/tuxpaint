@@ -47,6 +47,12 @@
 #include <wctype.h>
 #endif
 
+#if defined(__APPLE__)
+#include "macos.h"
+#elif defined(__IOS__)
+#include "ios.h"
+#endif
+
 
 /* Globals: */
 
@@ -790,7 +796,7 @@ static void ctype_utf8(void)
 }
 
 /**
- * For a given language, return its local, or exit with a usage error.
+ * For a given language, return its locale, or exit with a usage error.
  *
  * @param langstr Name of language (e.g., "german")
  * @return Locale (e.g., "de_DE.UTF-8")
@@ -809,6 +815,47 @@ static const char *language_to_locale(const char *langstr)
   fprintf(stderr, "%s is an invalid language\n", langstr);
   show_lang_usage(59);
   return NULL;
+}
+
+/**
+ * For a given locale, return the known locale that matches it closest, or exit
+ * with a usage error.
+ *
+ * @param  inlocale       Name of some locale (e.g., "ko_US")
+ * @return Known locale.  (e.g., "ko_KR.UTF-8")
+ */
+static const char *locale_to_closest_locale(const char *inlocale)
+{
+  const int numlocale = sizeof(language_to_locale_array) / sizeof(language_to_locale_array[0]);
+  const char* outlocale = NULL;
+  int outlocale_score = 0;
+  int i = 0;
+  int j = 0;
+
+  /* find the locale with the longest string match */
+  for (i=0; i<numlocale; i++)
+    {
+      const char* candidate = language_to_locale_array[i].locale;
+
+      for (j=0; j<strlen(inlocale) && j<strlen(candidate); j++)
+        {
+          if(inlocale[j] != candidate[j]) break;
+        }
+
+      if (j > outlocale_score)
+        {
+          outlocale = candidate;
+          outlocale_score = j;
+        }
+    }
+
+  /* locale must match at least three characters */
+  if (outlocale_score < 3)
+    {
+      outlocale = NULL;
+    }
+
+  return outlocale;
 }
 
 /**
@@ -1225,7 +1272,13 @@ int setup_i18n(const char *restrict lang, const char *restrict locale, int * num
         }
     }
   else
-    locale = "";
+    {
+      #if defined(__APPLE__)
+        locale = locale_to_closest_locale(apple_locale());
+      #else
+        locale = "";
+      #endif
+    }
 
   if (lang)
     locale = language_to_locale(lang);

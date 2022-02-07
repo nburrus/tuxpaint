@@ -49,6 +49,12 @@ void apple_init(void)
 }
 
 
+const char *apple_locale(void)
+{
+    return ""
+}
+
+
 const char *apple_fontsPath(void)
 {
     return IOS_FONTS_PATH;
