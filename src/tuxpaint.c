@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 28, 2022
+  June 14, 2002 - February 7, 2022
 */
 
 #include "platform.h"
@@ -2963,6 +2963,9 @@ static void mainloop(void)
 
                                       draw_colors(COLORSEL_REFRESH);
                                       draw_fonts();
+
+                                      draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_LABEL_CHOSEN, 1);
+                                      playsound(screen, 1, SND_TUXOK, 1, cursor_x, SNDDIST_NEAR);
                                     }
 
 
@@ -4096,7 +4099,7 @@ static void mainloop(void)
                                       /* One of the middle buttons: */
                                       if (which & 1)
                                         {
-                                          /*  right button: Italic: */
+                                          /* right button: Italic: */
                                           if (text_state & TTF_STYLE_ITALIC)
                                             {
                                               text_state &= ~TTF_STYLE_ITALIC;
@@ -4130,9 +4133,10 @@ static void mainloop(void)
                                       /* One of the top buttons: */
                                       if (which & 1)
                                         {
-                                          /* Select button: */
+                                          /* Top right: Select button: */
                                           if (cur_label == LABEL_SELECT)
                                             {
+                                              /* Already in label select mode; turn it off */
                                               cur_label = LABEL_LABEL;
                                               update_canvas(0, 0, WINDOW_WIDTH - r_ttoolopt.w, (button_h * buttons_tall) + r_ttoolopt.h);
                                               if (onscreen_keyboard)
@@ -4140,9 +4144,13 @@ static void mainloop(void)
                                                   SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                                                   update_screen_rect(&kbd_rect);
                                                 }
+
+                                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_LABEL], 1);
+                                              playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                             }
                                           else
                                             {
+                                              /* Want to select a label */
                                               if (are_labels())
                                                 {
                                                   update_canvas_ex_r(kbd_rect.x - r_ttools.w, kbd_rect.y,
@@ -4167,9 +4175,17 @@ static void mainloop(void)
 
                                                   cur_label = LABEL_SELECT;
                                                   highlight_label_nodes();
+
+                                                  draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_ENABLED, 1);
+                                                  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                                 }
                                             }
                                           toolopt_changed = 1;
+                                        }
+                                      else
+                                        {
+                                          /* Top left: "Flatten" label */
+                                          /* FIXME: https://sourceforge.net/p/tuxpaint/feature-requests/213/ */
                                         }
                                     }
                                 }
@@ -4915,6 +4931,9 @@ static void mainloop(void)
                                   do_render_cur_text(0);
                                   draw_colors(COLORSEL_REFRESH);
                                   draw_fonts();
+
+                                  draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_LABEL_CHOSEN, 1);
+                                  playsound(screen, 1, SND_TUXOK, 1, select_x, SNDDIST_NEAR);
                                 }
 
                             }

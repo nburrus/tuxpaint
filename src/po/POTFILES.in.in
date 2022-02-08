@@ -5,7 +5,6 @@ fill_tools.h
 fonts.c
 great.h
 im.c
-macos.c
 macos.h
 macos.m
 shapes.h

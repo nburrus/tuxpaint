@@ -23,7 +23,7 @@
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
-  June 14, 2002 - January 21, 2022
+  June 14, 2002 - February 7, 2022
   $Id$
 */
 
@@ -129,7 +129,7 @@ const char *const tool_tips[NUM_TOOLS] = {
 
   // Label tool instructions
   gettext_noop
-    ("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an existing label, you can move it, edit it and change its text style."),
+    ("Choose a style of text. Click on your drawing and you can start typing. Press [Enter] or [Tab] to complete the text. By using the selector button and clicking an existing label, you can move it, edit it, and change its text style."),
 
   // Fill tool instructions (defined in "fill_tools.h")
   "",
@@ -176,6 +176,12 @@ const char *const tool_tips[NUM_TOOLS] = {
 
 // Notification that 'New' action was aborted (current image would have been lost)
 #define TIP_NEW_ABORT gettext_noop("OK then… Let’s keep drawing this one!")
+
+// Instructions to show when the Label tool's selector mode is activated
+#define TIP_LABEL_SELECTOR_ENABLED gettext_noop("Clicking an existing label. Then, you can move it, edit it, and change its text style. Click the selector button to go back.")
+
+// Instructions to show when a Label has been chosen with the selector
+#define TIP_LABEL_SELECTOR_LABEL_CHOSEN gettext_noop("Click in your picture if you wish to reposition this label, type to change the text, and use the options to change its text style. Press [Enter] or [Tab] when you're finished.")
 
 
 /* Tool icon filenames: */

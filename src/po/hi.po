@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-05 16:41-0800\n"
+"POT-Creation-Date: 2022-02-07 23:56-0800\n"
 "PO-Revision-Date: 2014-08-09 02:17+1000\n"
 "Last-Translator: Ashish Arora <ashish.arora13@gmail.com>\n"
 "Language-Team: Hindi\n"
@@ -278,39 +278,39 @@ msgid "ZH_TW"
 msgstr "ZH_TW"
 
 #. Add menu items
-#: ../macos.m:44
+#: ../macos.m:56
 #, fuzzy
 #| msgid "Tux Paint"
 msgid "About Tux Paint"
 msgstr "Tux Paint"
 
-#: ../macos.m:49
+#: ../macos.m:61
 #, fuzzy
 #| msgid "Tux Paint"
 msgid "Hide Tux Paint"
 msgstr "Tux Paint"
 
-#: ../macos.m:52
+#: ../macos.m:64
 msgid "Hide Others"
 msgstr ""
 
-#: ../macos.m:55
+#: ../macos.m:67
 msgid "Show All"
 msgstr ""
 
-#: ../macos.m:59
+#: ../macos.m:71
 #, fuzzy
 #| msgid "Tux Paint"
 msgid "Quit Tux Paint"
 msgstr "Tux Paint"
 
 #. Put menu into the menubar
-#: ../macos.m:89 ../macos.m:97
+#: ../macos.m:101 ../macos.m:109
 msgid "Window"
 msgstr ""
 
 #. "Minimize" item
-#: ../macos.m:92
+#: ../macos.m:104
 msgid "Minimize"
 msgstr ""
 
@@ -577,7 +577,7 @@ msgstr "नया काम"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8646
+#: ../tools.h:98 ../tuxpaint.c:8665
 msgid "Open"
 msgstr "खोलो"
 
@@ -724,6 +724,21 @@ msgstr "आकार को घुमाने के लिए mouse घुम�
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "चलो ड्राइंग को जारी रखते है "
 
+#. Instructions to show when the Label tool's selector mode is activated
+#: ../tools.h:181
+msgid ""
+"Clicking an existing label. Then, you can move it, edit it and change its "
+"text style. Click the selector button to go back."
+msgstr ""
+
+#. Instructions to show when a Label has been chosen with the selector
+#: ../tools.h:184
+msgid ""
+"Click in your picture if you wish to reposition this label, type to change "
+"the text, and use the options to change its text style. Press [Enter] or "
+"[Tab] when you're finished."
+msgstr ""
+
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2258
 msgid "Do you really want to quit?"
@@ -857,156 +872,156 @@ msgid "Sound unmuted."
 msgstr "आवाज शुरू किया गया|"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3311
+#: ../tuxpaint.c:3314
 msgid "Please wait…"
 msgstr "कृपया प्रतीक्षा करें..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8649
+#: ../tuxpaint.c:8668
 msgid "Erase"
 msgstr "नष्ट कर"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8652
+#: ../tuxpaint.c:8671
 msgid "Slides"
 msgstr "स्लाइड"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8655
+#: ../tuxpaint.c:8674
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8658
+#: ../tuxpaint.c:8677
 msgid "Back"
 msgstr "पीछे"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8661
+#: ../tuxpaint.c:8680
 msgid "Play"
 msgstr "चलायें"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8664
+#: ../tuxpaint.c:8683
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8667
+#: ../tuxpaint.c:8686
 msgid "Next"
 msgstr "अगला"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8670
+#: ../tuxpaint.c:8689
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9532
+#: ../tuxpaint.c:9551
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13231
+#: ../tuxpaint.c:13250
 msgid "Yes"
 msgstr "हॉं"
 
-#: ../tuxpaint.c:13235
+#: ../tuxpaint.c:13254
 msgid "No"
 msgstr "नहीं"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14385
+#: ../tuxpaint.c:14404
 msgid "Replace the picture with your changes?"
 msgstr "आपके परिवर्तनों के साथ चित्र बदलें?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14389
+#: ../tuxpaint.c:14408
 msgid "Yes, replace the old one!"
 msgstr "हाँ, पुराने को बदलें!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14393
+#: ../tuxpaint.c:14412
 msgid "No, save a new file!"
 msgstr "नहीं, नयी फाइल सुरक्षित करें|"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15657
+#: ../tuxpaint.c:15676
 msgid "Choose the picture you want, then click “Open”."
 msgstr "काम को चुन कर ‘खोलो’।"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17083
+#: ../tuxpaint.c:17102
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22195
+#: ../tuxpaint.c:22214
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:22196
+#: ../tuxpaint.c:22215
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "पीला"
 
-#: ../tuxpaint.c:22197
+#: ../tuxpaint.c:22216
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "आसमानी नीला!"
 
-#: ../tuxpaint.c:22198
+#: ../tuxpaint.c:22217
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "सफ्ेद"
 
-#: ../tuxpaint.c:22199
+#: ../tuxpaint.c:22218
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:22200
+#: ../tuxpaint.c:22219
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "काला!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22205
+#: ../tuxpaint.c:22224
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:22206
+#: ../tuxpaint.c:22225
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:22207
+#: ../tuxpaint.c:22226
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:22208
+#: ../tuxpaint.c:22227
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:22209
+#: ../tuxpaint.c:22228
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:22210
+#: ../tuxpaint.c:22229
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1014,23 +1029,23 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:22971 ../tuxpaint.c:22978
+#: ../tuxpaint.c:22990 ../tuxpaint.c:22997
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:25793
+#: ../tuxpaint.c:25812
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
-#: ../tuxpaint.c:25802
+#: ../tuxpaint.c:25821
 msgid "Pick a color."
 msgstr "एक रंग चुनें|"
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:25813
+#: ../tuxpaint.c:25832
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
