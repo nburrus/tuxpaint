@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 7, 2022
+  June 14, 2002 - February 9, 2022
 */
 
 #include "platform.h"
@@ -549,6 +549,13 @@ int iswprint(wchar_t wc)
 #include "parse.h"
 
 #include "compiler.h"
+
+
+/* Convert floats to fractions between (min/max) and ((max-min)/max)
+   (anything with smaller resolution will round up or down) */
+#define SLOPPY_FRAC_MIN (float) 1
+#define SLOPPY_FRAC_MAX (float) 10
+static void sloppy_frac(float f, int * numer, int * denom);
 
 
 /* EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL */
@@ -2008,6 +2015,7 @@ static void draw_none(void);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
+static void show_brush_tip(void);
 static void _xorpixel(SDL_Surface * surf, int x, int y);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
@@ -4235,6 +4243,9 @@ static void mainloop(void)
 
                               if (new_size != prev_size)
                                 {
+                                  char tmp_tip[256];
+                                  int numer, denom;
+
                                   brushes_spacing[cur_brush] = new_size;
                                   draw_brushes_spacing();
                                   update_screen_rect(&r_toolopt);
@@ -4243,6 +4254,51 @@ static void mainloop(void)
                                     control_sound = SND_SHRINK;
                                   else
                                     control_sound = SND_GROW;
+
+                                  if (new_size == 0)
+                                    {
+                                      draw_tux_text(TUX_GREAT, TIP_BRUSH_SPACING_ZERO, 1);
+                                    }
+                                  else if (new_size / max(w, h) == 1)
+                                    {
+                                      draw_tux_text(TUX_GREAT, TIP_BRUSH_SPACING_SAME, 1);
+                                    }
+                                  else if (new_size > max(w, h))
+                                    {
+                                      double ratio, i, f;
+
+                                      ratio = (float) new_size / (float) max(w, h);
+                                      f = modf(ratio, &i);
+
+                                      if (f > (SLOPPY_FRAC_MAX - SLOPPY_FRAC_MIN) / SLOPPY_FRAC_MAX)
+                                        {
+                                          i++;
+                                          f = 0.0;
+                                        }
+                                      else if (f < SLOPPY_FRAC_MIN / SLOPPY_FRAC_MAX)
+                                        {
+                                          f = 0.0;
+                                        }
+
+                                      if (f == 0.0)
+                                        {
+                                          snprintf(tmp_tip, sizeof(tmp_tip), gettext(TIP_BRUSH_SPACING_MORE), (int) i);
+                                        }
+                                      else
+                                        {
+                                          sloppy_frac(f, &numer, &denom);
+
+                                          snprintf(tmp_tip, sizeof(tmp_tip), gettext(TIP_BRUSH_SPACING_MORE_FRAC), (int) i, numer, denom);
+                                        }
+
+                                      draw_tux_text(TUX_GREAT, tmp_tip, 1);
+                                    }
+                                  else if (new_size < max(w, h))
+                                    {
+                                      sloppy_frac((float) new_size / (float) max(w, h), &numer, &denom);
+                                      snprintf(tmp_tip, sizeof(tmp_tip), gettext(TIP_BRUSH_SPACING_LESS), numer, denom);
+                                      draw_tux_text(TUX_GREAT, tmp_tip, 1);
+                                    }
 
                                   playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                                 }
@@ -4318,7 +4374,10 @@ static void mainloop(void)
                           render_brush();
 
                           if (do_draw)
-                            draw_brushes();
+                            {
+                              draw_brushes();
+                              show_brush_tip();
+                            }
                         }
                       else if (cur_tool == TOOL_ERASER)
                         {
@@ -11040,6 +11099,32 @@ static void render_brush(void)
 
 
 /**
+ * Show a tool tip, for when the brush choice has changed
+ */
+static void show_brush_tip(void) {
+  if (img_cur_brush_rotate || img_cur_brush_directional)
+    {
+      if (abs(img_cur_brush_frames) > 1)
+        {
+          draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM_DIR, 1);
+        }
+      else
+        {
+          draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_DIR, 1);
+        }
+    }
+  else if (abs(img_cur_brush_frames) > 1)
+    {
+      draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM, 1);
+    }
+  else
+    {
+      draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+    }
+}
+
+
+/**
  * FIXME
  */
 /* Draw a XOR line: */
@@ -14076,7 +14161,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
   if (use_brush)
     {
       old_brush = cur_brush;
-      cur_brush = shape_brush;  /* Now only semi-ludgy! */
+      cur_brush = shape_brush;  /* Now only semi-kludgy! */
       render_brush();
     }
 
@@ -14346,6 +14431,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     {
       cur_brush = old_brush;
       render_brush();
+      show_brush_tip();
     }
 }
 
@@ -28215,5 +28301,38 @@ int safe_snprintf(char *str, size_t size, const char *format, ...) {
 
   str[size - 1] = '\0';
   return r;
+}
+
+static void sloppy_frac(float f, int * numer, int * denom) {
+  int n, d, fr, i, gcd, n_over_d_100;
+
+  fr = round(f * 100.0);
+
+  *numer = 0;
+  *denom = 1;
+
+  for (d = SLOPPY_FRAC_MIN; d <= SLOPPY_FRAC_MAX; d++)
+    {
+      for (n = 1; n < d; n++)
+        {
+          n_over_d_100 = ((n * 100) / d);
+          if (n_over_d_100 >= fr &&
+              n_over_d_100 < (fr + ((SLOPPY_FRAC_MIN * 100) / SLOPPY_FRAC_MAX)))
+            {
+              *numer = n;
+              *denom = d;
+            }
+        }
+    }
+
+  gcd = 1;
+  for (i = 1; i <= *numer && i <= *denom; i++)
+    {
+      if ((*numer % i) == 0 && (*denom % i) == 0)
+        gcd = i;
+    }
+
+  *numer /= gcd;
+  *denom /= gcd;
 }
 

@@ -23,7 +23,7 @@
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
-  June 14, 2002 - February 7, 2022
+  June 14, 2002 - February 9, 2022
   $Id$
 */
 
@@ -182,6 +182,17 @@ const char *const tool_tips[NUM_TOOLS] = {
 
 // Instructions to show when a Label has been chosen with the selector
 #define TIP_LABEL_SELECTOR_LABEL_CHOSEN gettext_noop("Click in your picture if you wish to reposition this label, type to change the text, and use the options to change its text style. Press [Enter] or [Tab] when you're finished.")
+
+// Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
+#define TIP_BRUSH_CHOICE_ANM gettext_noop("This brush is animated; its shape changes as you draw!")
+#define TIP_BRUSH_CHOICE_DIR gettext_noop("This brush changes depending on the angle.")
+#define TIP_BRUSH_CHOICE_ANM_DIR gettext_noop("This brush changes depending on the angle, and is animated; its shape changes as you draw!")
+
+#define TIP_BRUSH_SPACING_ZERO gettext_noop("This brush's spacing is now 1 pixel!")
+#define TIP_BRUSH_SPACING_LESS gettext_noop("This brush's spacing is now about %1$d/%2$d the size of the brush shape.")
+#define TIP_BRUSH_SPACING_SAME gettext_noop("This brush's spacing is now about the size of the brush shape.")
+#define TIP_BRUSH_SPACING_MORE gettext_noop("This brush's spacing is now about %d times as big as the brush shape.")
+#define TIP_BRUSH_SPACING_MORE_FRAC gettext_noop("This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush shape.")
 
 
 /* Tool icon filenames: */

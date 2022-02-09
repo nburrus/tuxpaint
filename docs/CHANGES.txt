@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.7 (0.9.28)
+2022.February.9 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -21,6 +21,10 @@ http://www.tuxpaint.org/
       individual stars to appear, rather than a 'smear').
       Closes https://sourceforge.net/p/tuxpaint/bugs/243/
       (h/t Areti Tsolakidou for the suggestion)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Instructions at the bottom note when a brush is directional,
+      animated, or both, when chosing a new brush.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to "Stamp" tool:
