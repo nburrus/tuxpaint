@@ -1118,7 +1118,7 @@ static int set_current_language(const char *restrict loc, int * ptr_num_wished_l
 
   DEBUG_PRINTF("Locale AFTER is: %s\n", setlocale(LC_ALL, NULL));     //EP
 
-#ifdef WIN32
+#ifdef BDIST_WIN32
   // FIXME: After the update of MinGW/MSYS2 in January 2022, gettext() no longer find
   //        translation (.mo) files unless dirname is specified by full path.
   //
