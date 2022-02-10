@@ -178,10 +178,13 @@ const char *const tool_tips[NUM_TOOLS] = {
 #define TIP_NEW_ABORT gettext_noop("OK then… Let’s keep drawing this one!")
 
 // Instructions to show when the Label tool's selector mode is activated
-#define TIP_LABEL_SELECTOR_ENABLED gettext_noop("Clicking an existing label (or press [Tab] to cycle through them). Then, you can move it, edit it, and change its text style. Click the selector button to go back.")
+#define TIP_LABEL_SELECTOR_ENABLED gettext_noop("Clicking an existing label (or press [Tab] to cycle through them and [Enter] to choose). Then, you can move it, edit it, and change its text style.")
 
 // Instructions to show when a Label has been chosen with the selector
 #define TIP_LABEL_SELECTOR_LABEL_CHOSEN gettext_noop("Click in your picture if you wish to reposition this label, type to change the text, and use the options to change its text style. Press [Enter] or [Tab] when you're finished.")
+
+// Instructions to show when the Label tool's apply mode is activated
+#define TIP_LABEL_APPLIER_ENABLED gettext_noop("Clicking an existing label (or press [Tab] to cycle through them and [Enter] to choose) to permanently apply the text to the canvas.")
 
 // Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #define TIP_BRUSH_CHOICE_ANM gettext_noop("This brush is animated; its shape changes as you draw!")
