@@ -27214,6 +27214,16 @@ int main(int argc, char *argv[])
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
+#ifdef WIN32
+#ifndef DEBUG
+  char stdout_win32[255], stderr_win32[255];
+  safe_snprintf(stdout_win32, 255, "%s/stdout.txt", savedir);
+  safe_snprintf(stderr_win32, 255, "%s/stderr.txt", savedir);
+  freopen(stdout_win32, "w", stdout);    /* redirect stdout to a file */
+  freopen(stderr_win32, "w", stderr);    /* redirect stderr to a file */
+#endif
+#endif
+
 #ifdef DEBUG
   CLOCK_ASM(time2);
 #endif
