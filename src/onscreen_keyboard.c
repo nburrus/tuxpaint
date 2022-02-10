@@ -63,7 +63,7 @@ static void print_composemap(osk_composenode * composemap, char *sp);
 
 #ifdef WIN32
 #include <windows.h>
-#define mbstowcs(wtok, tok, size) MultiByteToWideChar(CP_UTF8,0,tok,-1,wtok,size)
+#define mbstowcs(wtok, tok, size) MultiByteToWideChar(CP_UTF8,MB_COMPOSITE,tok,-1,wtok,size)
 #endif
 
 struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
