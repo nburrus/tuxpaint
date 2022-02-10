@@ -4785,9 +4785,9 @@ static void mainloop(void)
                 {
                   Uint8 * kbd_state;
 
-                  kbd_state = SDL_GetKeyState(NULL);
+                  kbd_state = SDL_GetKeyboardState(NULL);
 
-                  if ((kbd_state[SDLK_LCTRL] || kbd_state[SDLK_RCTRL]) && colors_are_selectable)
+                  if ((kbd_state[SDL_SCANCODE_LCTRL] || kbd_state[SDL_SCANCODE_RCTRL]) && colors_are_selectable)
                     {
                       int chose_color;
 
@@ -5027,7 +5027,7 @@ static void mainloop(void)
                               if (cur_fill == FILL_FLOOD)
                                 {
                                   /* Flood fill a solid color */
-                                  do_flood_fill(screen, last, canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+                                  do_flood_fill(screen, texture, renderer, last, canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
 
                                   update_canvas(x1, y1, x2, y2);
                                 }
@@ -5040,7 +5040,7 @@ static void mainloop(void)
                                     canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
                                   SDL_BlitSurface(canvas, NULL, tmp_canvas, NULL);
 
-                                  simulate_flood_fill(screen, last, tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
+                                  simulate_flood_fill(screen, texture, renderer, last, tmp_canvas, old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
                                   SDL_FreeSurface(tmp_canvas);
 
                                   sim_flood_x1 = x1;
@@ -5074,7 +5074,7 @@ static void mainloop(void)
                                 draw_tux_text(TUX_GREAT, fill_tips[cur_fill], 1);
                             }
                         }
-                    }
+                    
                   else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                     {
                       if (onscreen_keyboard && !kbd)
@@ -5223,14 +5223,14 @@ static void mainloop(void)
                               SDL_SetTextInputRect(&r_tir);
                               SDL_StartTextInput();
                             }
-                        }
+                        
 
                           do_render_cur_text(0);
                         }
-
+		    }
                       button_down = 1;
                    }
-                }
+	    }
               else if (HIT(r_sfx) && valid_click(event.button.button))
                 {
                   /* A sound player button on the lower left has been pressed! */
@@ -5260,7 +5260,7 @@ static void mainloop(void)
 #ifdef __ANDROID__
               start_motion_convert(event);
 #endif
-            }
+            
 
           else if (event.type == SDL_MOUSEWHEEL && wheely)
             {
