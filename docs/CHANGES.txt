@@ -70,6 +70,12 @@ http://www.tuxpaint.org/
         (h/t Anat Caspi)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * WIP "Label" tool now offers a way to "apply" a label to the
+      canvas (as if it were 'painted' onto the drawing with the "Text"
+      tool).
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/213/ 
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * More instruction text are shown (and sound effects play) when
       using the Label tool.
       Bill Kendrick <bill@newbreedsoftware.com>

@@ -685,7 +685,6 @@ enum
   LABEL_OFF,
   LABEL_LABEL,
   LABEL_SELECT
-    /* , LABEL_ROTATE */
 };
 
 
@@ -1536,7 +1535,7 @@ static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
 static SDL_Surface *img_shapes_corner, *img_shapes_center;
 static SDL_Surface *img_bold, *img_italic;
-static SDL_Surface *img_label, *img_label_select;
+static SDL_Surface *img_label_select, *img_label_apply;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell, *img_color_sel, *img_color_mix;
 static int color_picker_x, color_picker_y;
 static int color_mixer_reset;
@@ -9657,50 +9656,49 @@ static void draw_fonts(void)
 
   /* Draw text controls: */
 
+  /* Label controls, if in label tool (always!) */
+
+  if (cur_tool == TOOL_LABEL)
+    {
+      /* "Apply Label" button */
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+
+      /* FIXME: Draw img_label_apply -bjk 2022.02.09 */
+
+
+      /* "Select Label" button */
+      dest.x = WINDOW_WIDTH - button_w;
+      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+
+      if (cur_label == LABEL_SELECT)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+
+      else
+        {
+          if (are_labels())
+            SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+          else
+            SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        }
+
+
+      dest.x = WINDOW_WIDTH - button_w + (button_w - img_label_select->w) / 2;
+      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
+
+      SDL_BlitSurface(img_label_select, NULL, screen, &dest);
+      most = most + gd_toolopt.cols;
+    }
+
+
+  /* Size, italic, and bold, only appear when not UI is not being simplified */
   if (!disable_stamp_controls)
     {
       SDL_Surface *button_color;
       SDL_Surface *button_body;
 
-      if (cur_tool == TOOL_LABEL)
-        {
-
-          /* disabling rotation as I am not sure how this should be implemented */
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-          SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-
-          /* if(cur_label == LABEL_ROTATE) */
-          /*   SDL_BlitSurface(img_btn_down, NULL, screen, &dest); */
-          /* else */
-          /*   SDL_BlitSurface(img_btn_up, NULL, screen, &dest); */
-
-          /* dest.x = WINDOW_WIDTH - r_ttoolopt.w + (48 - img_label->w) / 2; */
-          /* dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_label->h) / 2); */
-
-          /* SDL_BlitSurface(img_label, NULL, screen, &dest); */
-
-          dest.x = WINDOW_WIDTH - button_w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-
-          if (cur_label == LABEL_SELECT)
-            SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-
-          else
-            {
-              if (are_labels())
-                SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-              else
-                SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-            }
-
-
-          dest.x = WINDOW_WIDTH - button_w + (button_w - img_label_select->w) / 2;
-          dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
-
-          SDL_BlitSurface(img_label_select, NULL, screen, &dest);
-	  most = most + gd_toolopt.cols;
-        }
+      // label_ctrl_y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
 
       /* Show bold button: */
 
@@ -9734,7 +9732,7 @@ static void draw_fonts(void)
       SDL_BlitSurface(img_italic, NULL, screen, &dest);
 
       most = most + gd_toolopt.cols;
-      // printf("most %d\n", most);
+
 
       /* Show shrink button: */
 
@@ -9782,31 +9780,6 @@ static void draw_fonts(void)
 
       SDL_BlitSurface(button_color, NULL, img_grow, NULL);
       SDL_BlitSurface(img_grow, NULL, screen, &dest);
-    }
-  else
-    {
-      if (cur_tool == TOOL_LABEL)
-        {
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-
-          SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_label->w) / 2;
-          dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label->h) / 2);
-
-          SDL_BlitSurface(img_label, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - button_w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-
-          SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - button_w + (button_w - img_label_select->w) / 2;
-          dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
-
-          SDL_BlitSurface(img_label_select, NULL, screen, &dest);
-        }
     }
 }
 
@@ -13877,6 +13850,9 @@ static void cleanup(void)
 
   free_surface(&img_bold);
   free_surface(&img_italic);
+
+  free_surface(&img_label_select);
+  free_surface(&img_label_apply);
 
   free_surface_array(undo_bufs, NUM_UNDO_BUFS);
 
@@ -26721,8 +26697,8 @@ static void setup(void)
   img_bold = loadimagerb(DATA_PREFIX "images/ui/bold.png");
   img_italic = loadimagerb(DATA_PREFIX "images/ui/italic.png");
 
-  img_label = loadimagerb(DATA_PREFIX "images/tools/label.png");
   img_label_select = loadimagerb(DATA_PREFIX "images/tools/label_select.png");
+  img_label_apply = loadimagerb(DATA_PREFIX "images/tools/label_apply.png");
 
   show_progress_bar(screen);
 
