@@ -683,9 +683,8 @@ enum
 /* Modes of the "Label" tool */
 enum
 {
-  LABEL_LABEL,  /* Adding new label(s) */
-  LABEL_SELECT, /* "Select" button clicked; user is selecting a label to edit */
-  LABEL_APPLY   /* "Apply" button clicked; user is selecting a label to apply permanently to the canvas */
+  LABEL_LABEL, /* Adding new label(s) */
+  LABEL_SELECT /* "Select" button clicked; user is selecting a label to edit */
 };
 
 
@@ -9681,9 +9680,15 @@ static void draw_fonts(void)
       /* "Apply Label" button */
       dest.x = WINDOW_WIDTH - r_ttoolopt.w;
       dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+      if (are_labels())
+        SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      else
+        SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
 
-      /* FIXME: Draw img_label_apply -bjk 2022.02.09 */
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_label_apply->w) / 2;
+      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_apply->h) / 2);
+
+      SDL_BlitSurface(img_label_apply, NULL, screen, &dest);
 
 
       /* "Select Label" button */
@@ -9692,7 +9697,6 @@ static void draw_fonts(void)
 
       if (cur_label == LABEL_SELECT)
         SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-
       else
         {
           if (are_labels())
@@ -9706,6 +9710,7 @@ static void draw_fonts(void)
       dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
 
       SDL_BlitSurface(img_label_select, NULL, screen, &dest);
+
       most = most + gd_toolopt.cols;
     }
 
