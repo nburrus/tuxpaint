@@ -341,29 +341,10 @@ typedef struct safer_dirent
 #undef max
 #define mkdir(path,access)    _mkdir(path)
 
-static void mtw(wchar_t * wtok, char *tok, size_t size)
-{
-  /* workaround using iconv to get a functionallity somewhat approximate as mbstowcs() */
-  Uint16 *ui16;
-
-  ui16 = malloc(size);
-  char *wrptr = (char *)ui16;
-  size_t in, out, n;
-  iconv_t trans;
-
-  in = size;
-  out = size;
-  n = size / sizeof(wchar_t);
-
-  trans = iconv_open("WCHAR_T", "UTF-8");
-  iconv(trans, (char **)&tok, &in, &wrptr, &out);
-  *((wchar_t *) wrptr) = L'\0';
-  swprintf(wtok, n, L"%ls", ui16);
-  free(ui16);
-  iconv_close(trans);
-}
-
 extern int win32_trash(const char *path);
+
+#define mbstowcs(wtok, tok, size) MultiByteToWideChar(CP_UTF8,0,tok,-1,wtok,size)
+#define wcstombs(tok, wtok, size) WideCharToMultiByte(CP_UTF8,0,wtok,-1,tok,size,NULL,NULL)
 
 #undef iswprint
 int iswprint(wchar_t wc)
@@ -23890,20 +23871,6 @@ static void load_info_about_label_surface(FILE * lfi)
 
       // printf("Reading %d wide chars\n", new_node->save_texttool_len); fflush(stdout);
 
-#ifdef WIN32
-      char *tmpstr;
-      wchar_t *wtmpstr;
-
-      tmpstr = malloc(1024);
-      wtmpstr = malloc(1024);
-      fgets(tmpstr, 1024, lfi);
-      mtw(wtmpstr, tmpstr, 1024);
-      for (l = 0; l < new_node->save_texttool_len; l++)
-        {
-          new_node->save_texttool_str[l] = wtmpstr[l];
-        }
-      new_node->save_texttool_str[l] = L'\0';
-#else
 /*
       // Use of fscanf() around here seems to be be causing
       // things to go amiss when a string begins with a space!
@@ -23952,7 +23919,6 @@ static void load_info_about_label_surface(FILE * lfi)
 
           // printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
         }
-#endif
 
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.r = (Uint8) l;
