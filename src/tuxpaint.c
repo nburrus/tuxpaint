@@ -23358,6 +23358,9 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface * label
       new_node->save_texttool_str[i] = texttool_str[i];
       i = i + 1;
     }
+  new_node->save_texttool_str[i] = L'\0';
+  // printf("New node's text is: \"%ls\"\n", new_node->save_texttool_str);
+
   new_node->save_color.r = color_hexes[cur_color][0];
   new_node->save_color.g = color_hexes[cur_color][1];
   new_node->save_color.b = color_hexes[cur_color][2];
@@ -23473,6 +23476,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
           select_texttool_str[u] = tmp_node->save_texttool_str[u];
           u = u + 1;
         }
+      select_texttool_str[u] = L'\0';
 
       for (k = 0; k < NUM_COLORS; k++)
         {
@@ -23831,7 +23835,6 @@ static void load_info_about_label_surface(FILE * lfi)
   int tmp_scale_h;
   SDL_Surface *label_node_surface, *label_node_surface_aux;
   float new_text_size;
-
   int k;
   unsigned l;
   unsigned tmp_pos;
@@ -23884,6 +23887,9 @@ static void load_info_about_label_surface(FILE * lfi)
       new_node = malloc(sizeof(struct label_node));
 
       tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
+
+      // printf("Reading %d wide chars\n", new_node->save_texttool_len); fflush(stdout);
+
 #ifdef WIN32
       char *tmpstr;
       wchar_t *wtmpstr;
@@ -23896,15 +23902,58 @@ static void load_info_about_label_surface(FILE * lfi)
         {
           new_node->save_texttool_str[l] = wtmpstr[l];
         }
+      new_node->save_texttool_str[l] = L'\0';
 #else
+/*
+      // Use of fscanf() around here seems to be be causing
+      // things to go amiss when a string begins with a space!
+      // See https://sourceforge.net/p/tuxpaint/bugs/247/
+      // (N.B. We cannot use simply fgetwc(), as it crashes when
+      // accessing an fmemopen()-ed stream;
+      // see https://www.thecodingforums.com/threads/strange-problem-with-fmemopen-and-fgetwc.679781/)
+      // -bjk 2022.02.10
+
       wchar_t tmp_char;
+
       for (l = 0; l < new_node->save_texttool_len; l++)
         {
           tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
           new_node->save_texttool_str[l] = tmp_char;
         }
+      new_node->save_texttool_str[l] = L'\0';
+
       tmp_fscanf_return = fscanf(lfi, "\n");
+
+*/
+
+      /* Using fancy "%[]" operator to scan until the end of a line */
+      tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
+
+      // printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+
+      /* If the string is shorter than what we expect (new_node->save_texttool_len),
+         then it must have been prefixed with spaces that we lost. */
+      if (wcslen(new_node->save_texttool_str) < new_node->save_texttool_len)
+        {
+          wchar_t *wtmpstr;
+          size_t diff, i;
+
+          wtmpstr = malloc(1024);
+          diff = new_node->save_texttool_len - wcslen(new_node->save_texttool_str);
+
+          for (i = 0; i < diff; i++)
+            wtmpstr[i] = L' ';
+
+          for (i = 0; i <= wcslen(new_node->save_texttool_str); i++)
+            wtmpstr[i + diff] = new_node->save_texttool_str[i];
+
+          memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
+          free(wtmpstr);
+
+          // printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+        }
 #endif
+
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.r = (Uint8) l;
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
@@ -28315,12 +28364,17 @@ static void select_label_node(int * old_x, int * old_y) {
   unsigned int i;
   int j;
 
+  /* Switch back into label entry mode */
   cur_label = LABEL_LABEL;
+
+  /* Set font selector to the font used by this label */
   cur_thing = label_node_to_edit->save_cur_font;
-  do_setcursor(cursor_insertion);
+
+  /* Disable the label node; we'll be replacing it (or removing it) */
   label_node_to_edit->is_enabled = FALSE;
   derender_node(&label_node_to_edit);
 
+  /* Copy the label's text into the active text input */
   i = 0;
   texttool_len = select_texttool_len;
   while (i < texttool_len)
@@ -28329,12 +28383,19 @@ static void select_label_node(int * old_x, int * old_y) {
       i = i + 1;
     }
   texttool_str[i] = L'\0';
+
   cur_color = select_color;
+
+  /* Send back the position of the selected label */
   *old_x = select_x;
   *old_y = select_y;
+
+  /* Set active text input's attributes (font, italic/bold, size) */
   cur_font = select_cur_font;
   text_state = select_text_state;
   text_size = select_text_size;
+
+  /* ??? */
   for (j = 0; j < num_font_families; j++)
     {
       if (user_font_families[j] && user_font_families[j]->handle)
@@ -28345,11 +28406,17 @@ static void select_label_node(int * old_x, int * old_y) {
     }
 
   update_screen_rect(&r_toolopt);
-
   do_render_cur_text(0);
+
+  /* Redraw color palette, fonts, and text controls */
   draw_colors(COLORSEL_REFRESH);
   draw_fonts();
 
+  /* Set mouse pointer (cursor) shape to the text insertion bar */
+  do_setcursor(cursor_insertion);
+
+  /* We have chosen a label; show some instructional text (Tux tip)
+     and play a success sound */
   draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_LABEL_CHOSEN, 1);
   playsound(screen, 1, SND_TUXOK, 1, select_x, SNDDIST_NEAR);
 }
