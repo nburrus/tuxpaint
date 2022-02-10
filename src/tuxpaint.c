@@ -680,11 +680,12 @@ enum
   STARTER_SCENE
 };
 
+/* Modes of the "Label" tool */
 enum
 {
-  LABEL_OFF,
-  LABEL_LABEL,
-  LABEL_SELECT
+  LABEL_LABEL,  /* Adding new label(s) */
+  LABEL_SELECT, /* "Select" button clicked; user is selecting a label to edit */
+  LABEL_APPLY   /* "Apply" button clicked; user is selecting a label to apply permanently to the canvas */
 };
 
 
@@ -2844,6 +2845,7 @@ static void mainloop(void)
                         {
                           if (*im_cp == L'\b')
                             {
+                              /* [Backspace] */
                               hide_blinking_cursor();
                               if (texttool_len > 0)
                                 {
@@ -2868,6 +2870,8 @@ static void mainloop(void)
                             }
                           else if (*im_cp == L'\r')
                             {
+                              /* [Enter]... */
+
                               int font_height;
 
                               font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
@@ -2875,6 +2879,8 @@ static void mainloop(void)
                               hide_blinking_cursor();
                               if (texttool_len > 0)
                                 {
+                                  /* [Enter] to finish entering text */
+
                                   rec_undo_buffer();
                                   do_render_cur_text(1);
                                   label_node_to_edit = NULL;
@@ -2906,12 +2912,14 @@ static void mainloop(void)
                                 }
                               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                                 {
+                                  /* [Enter] to finish erasing text from a pre-existing Label */
+
                                   rec_undo_buffer();
                                   have_to_rec_label_node = TRUE;
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
+                                  playsound(screen, 0, SND_LINE_END, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
                                   if (been_saved)
                                     {
@@ -2925,9 +2933,10 @@ static void mainloop(void)
                                     }
                                 }
 
-                              /* Select a node to edit */
                               else if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
                                 {
+                                  /* [Enter] to select a node to edit */
+
                                   label_node_to_edit =
                                     search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3,
                                                       highlighted_label_node->save_y + 3, 0);
@@ -2981,6 +2990,8 @@ static void mainloop(void)
                                 }
                               else
                                 {
+                                  /* [Enter] with no text; just move insertion cursor down to the next 'line' */
+
                                   cursor_x = cursor_left;
                                   cursor_y = min(cursor_y + font_height, canvas->h - font_height);
                                 }
@@ -2995,9 +3006,12 @@ static void mainloop(void)
                             }
                           else if (*im_cp == L'\t')
                             {
+                              /* [Tab]... */
 
                               if (texttool_len > 0)
                                 {
+                                  /* [Tab] to finish entering text */
+
                                   rec_undo_buffer();
                                   do_render_cur_text(1);
                                   label_node_to_edit = NULL;
@@ -3023,12 +3037,15 @@ static void mainloop(void)
                                 }
                               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                                 {
+                                  /* [Tab] to finish erasing text from a pre-existing Label */
+
                                   rec_undo_buffer();
                                   have_to_rec_label_node = TRUE;
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
+
+                                  playsound(screen, 0, SND_LINE_END, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
                                   if (been_saved)
                                     {
@@ -3041,14 +3058,13 @@ static void mainloop(void)
                                       update_screen_rect(&r_tools);
                                     }
                                 }
-                              /* Cycle accross the nodes */
                               else if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
                                 {
+                                  /* [Tab] to cycle between the Labels (nodes) */
+
                                   cycle_highlighted_label_node();
                                   highlight_label_nodes();
                                 }
-
-
 
 #ifdef SPEECH
 #ifdef __APPLE__
@@ -3060,6 +3076,8 @@ static void mainloop(void)
                             }
                           else if (iswprint(*im_cp) && (cur_tool == TOOL_TEXT || cur_label == LABEL_LABEL))
                             {
+                              /* Printable characters... */
+
                               if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
                                 {
                                   int old_cursor_textwidth = cursor_textwidth;
