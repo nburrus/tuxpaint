@@ -158,6 +158,11 @@ http://www.tuxpaint.org/
         (useful for automated installation/uninsta$llation processes).
         TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
+      * Standard output and standard error are now redirected to the
+        files in User's save directory for example:
+
+              C:\Users\<username>\AppData\Roaming\TuxPaint
+
     * macOS
       Mark Kim <markuskimius@gmail.com>
 
