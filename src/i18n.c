@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2020 by Bill Kendrick and others
+  Copyright (c) 2002-2022 by Bill Kendrick and others
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - October 25, 2021
+  June 14, 2002 - February 9, 2022
 */
 
 #include <stdio.h>
@@ -818,6 +818,9 @@ static const char *language_to_locale(const char *langstr)
   return NULL;
 }
 
+
+#if defined(__APPLE__)
+
 /**
  * For a given locale, return the known locale that matches it closest, or exit
  * with a usage error.
@@ -834,11 +837,11 @@ static const char *locale_to_closest_locale(const char *inlocale)
   int j = 0;
 
   /* find the locale with the longest string match */
-  for (i=0; i<numlocale; i++)
+  for (i = 0; i < numlocale; i++)
     {
       const char* candidate = language_to_locale_array[i].locale;
 
-      for (j=0; j<strlen(inlocale) && j<strlen(candidate); j++)
+      for (j = 0; j < (int) strlen(inlocale) && j < (int) strlen(candidate); j++)
         {
           if(inlocale[j] != candidate[j]) break;
         }
@@ -858,6 +861,9 @@ static const char *locale_to_closest_locale(const char *inlocale)
 
   return outlocale;
 }
+
+#endif
+
 
 /**
  * Set language ("langint" global) based on a given locale;
