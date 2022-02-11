@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.9 (0.9.28)
+2022.February.11 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -155,6 +155,10 @@ http://www.tuxpaint.org/
     * Fixed a bug that can randomly crash Tux Paint when started in a language
       with a input method map (*.im).
       Mark Kim <markuskimius@gmail.com>
+
+    * Avoid leaking memory when loading Label text strings from a
+      saved drawing. (Affected Windows only.)
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:
     -----------------
