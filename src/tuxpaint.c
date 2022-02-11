@@ -23880,6 +23880,8 @@ static void load_info_about_label_surface(FILE * lfi)
 
   /* Read the labels' text: */
 
+  size_t nwchar;
+
 #ifdef WIN32
   tmpstr = malloc(1024);
   wtmpstr = malloc(1024);
@@ -23897,13 +23899,25 @@ static void load_info_about_label_surface(FILE * lfi)
 
 #ifdef WIN32
       fgets(tmpstr, 1024, lfi);
-      mbstowcs(wtmpstr, tmpstr, 1024);
+      nwchar = mbstowcs(wtmpstr, tmpstr, 1024) - 2;
+      /* FIXME: */
+      /* 
+	 According to the document, return value of MultiByteToWideChar() is the number of
+	 characters written to the buffer.
+
+	 https://docs.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar
+
+	 However, it seems to return a value 2 larger here.
+
+	 2022/02/11 Shin-ichi TOYAMA
+      */
       for (l = 0; l < new_node->save_texttool_len; l++)
         new_node->save_texttool_str[l] = wtmpstr[l];
       new_node->save_texttool_str[l] = L'\0';
 #else
       /* Using fancy "%[]" operator to scan until the end of a line */
       tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
+      nwchar = wcslen(new_node->save_texttool_str);
 #endif
 
 #ifdef DEBUG
@@ -23912,18 +23926,18 @@ static void load_info_about_label_surface(FILE * lfi)
 
       /* If the string is shorter than what we expect (new_node->save_texttool_len),
          then it must have been prefixed with spaces that we lost. */
-      if (wcslen(new_node->save_texttool_str) < new_node->save_texttool_len)
+      if (nwchar < new_node->save_texttool_len)
         {
           wchar_t *wtmpstr;
           size_t diff, i;
 
           wtmpstr = malloc(1024);
-          diff = new_node->save_texttool_len - wcslen(new_node->save_texttool_str);
+	  diff = new_node->save_texttool_len - nwchar;
 
           for (i = 0; i < diff; i++)
             wtmpstr[i] = L' ';
 
-          for (i = 0; i <= wcslen(new_node->save_texttool_str); i++)
+	  for (i = 0; i <= nwchar; i++)
             wtmpstr[i + diff] = new_node->save_texttool_str[i];
 
           memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
