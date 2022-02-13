@@ -199,6 +199,12 @@ http://www.tuxpaint.org/
       * Fonts are now also looked for in the system preferences path,
         /Library/Application Support/TuxPaint/fonts
 
+      * Fixed the issue with the backspace not working in text and label tools
+        when in certain language modes in macOS.  Mac keyboards have the DELETE
+        key where PC keyboards have the BACKSPACE key, and the two keys have
+        different keycodes, so the backspace requires special handling on the
+        macOS in programs writtens for the PC.
+
   * Documentation updates:
     ---------------------
     * macOS Apple Silicon and Universal Binary build instructions

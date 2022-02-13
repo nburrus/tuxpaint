@@ -2825,6 +2825,11 @@ static void mainloop(void)
                       /* Queue each character to be displayed */
                       while (*im_cp)
                         {
+#ifdef __APPLE__
+                          /* Apple uses DEL for BACKSPACE */
+                          if (*im_cp == SDLK_DELETE) *im_cp = L'\b';
+#endif
+
                           if (*im_cp == L'\b')
                             {
                               /* [Backspace] */
