@@ -960,6 +960,8 @@ static void loadfonts_locale_filter(SDL_Surface * screen, const char *const dir,
   char buf[TP_FTW_PATHSIZE];
   unsigned dirlen = strlen(dir);
 
+  DEBUG_PRINTF("Loading fonts from [%s]\n", dir);
+
   memcpy(buf, dir, dirlen);
   tp_ftw(screen, buf, dirlen, 1, loadfont_callback, locale);
 }
@@ -1032,6 +1034,15 @@ static void loadfonts(SDL_Surface * screen, const char *const dir)
   homedirdir = get_fname("data/fonts", DIR_DATA);
   loadfonts(screen, homedirdir);
   free(homedirdir);
+#endif
+
+#ifdef __APPLE__
+  homedirdir = malloc(snprintf(NULL, 0, "%s/fonts", apple_globalPreferencesPath()) + 1);
+  if(homedirdir) {
+    sprintf(homedirdir, "%s/fonts", apple_globalPreferencesPath());
+    loadfonts(screen, homedirdir);
+    free(homedirdir);
+  }
 #endif
 
 #ifdef DEBUG
