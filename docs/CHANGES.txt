@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.7 (0.9.28)
+2022.February.11 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -21,6 +21,10 @@ http://www.tuxpaint.org/
       individual stars to appear, rather than a 'smear').
       Closes https://sourceforge.net/p/tuxpaint/bugs/243/
       (h/t Areti Tsolakidou for the suggestion)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Instructions at the bottom note when a brush is directional,
+      animated, or both, when chosing a new brush.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to "Stamp" tool:
@@ -64,6 +68,12 @@ http://www.tuxpaint.org/
       square buttons for letters/numbers/symbols).
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/212/
         (h/t Anat Caspi)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * WIP "Label" tool now offers a way to "apply" a label to the
+      canvas (as if it were 'painted' onto the drawing with the "Text"
+      tool).
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/213/ 
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * More instruction text are shown (and sound effects play) when
@@ -146,6 +156,10 @@ http://www.tuxpaint.org/
       with a input method map (*.im).
       Mark Kim <markuskimius@gmail.com>
 
+    * Avoid leaking memory when loading Label text strings from a
+      saved drawing. (Affected Windows only.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Ports & Building:
     -----------------
     * Windows
@@ -153,6 +167,11 @@ http://www.tuxpaint.org/
         user of uninstallation when "/VERYSILENT" switch is specified
         (useful for automated installation/uninsta$llation processes).
         TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+      * Standard output and standard error are now redirected to the
+        files in User's save directory for example:
+
+              C:\Users\<username>\AppData\Roaming\TuxPaint
 
     * macOS
       Mark Kim <markuskimius@gmail.com>

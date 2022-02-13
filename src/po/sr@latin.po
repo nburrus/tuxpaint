@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 23:56-0800\n"
+"POT-Creation-Date: 2022-02-10 01:02-0800\n"
 "PO-Revision-Date: 2010-12-12 00:00+0100\n"
 "Last-Translator: Ivana <reci.ne.silvesteru@gmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -631,7 +631,7 @@ msgstr "Novi"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8665
+#: ../tools.h:98 ../tuxpaint.c:8695
 msgid "Open"
 msgstr "Otvori"
 
@@ -691,8 +691,8 @@ msgstr ""
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an existing label, you can move it, edit it and change its text "
-"style."
+"and clicking an existing label, you can move it, edit it, and change its "
+"text style."
 msgstr ""
 "Izaberi vrstu slova teksta. Klikni na crtež i počni da kucaš. Pritisni "
 "[Enter] ili [Tab] kad završiš. Koristeći izabrano dugme ili postojeće slovo, "
@@ -805,8 +805,8 @@ msgstr "Dobro onda… Hajde da nastavimo sa crtanjem!"
 #. Instructions to show when the Label tool's selector mode is activated
 #: ../tools.h:181
 msgid ""
-"Clicking an existing label. Then, you can move it, edit it and change its "
-"text style. Click the selector button to go back."
+"Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
+"to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
 
 #. Instructions to show when a Label has been chosen with the selector
@@ -817,118 +817,166 @@ msgid ""
 "[Tab] when you're finished."
 msgstr ""
 
+#. Instructions to show when the Label tool's apply mode is activated
+#: ../tools.h:187
+msgid ""
+"Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
+"to choose) to permanently apply the text to the canvas."
+msgstr ""
+
+#. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
+#: ../tools.h:190
+msgid "This brush is animated; its shape changes as you draw!"
+msgstr ""
+
+#: ../tools.h:191
+msgid "This brush changes depending on the angle."
+msgstr ""
+
+#: ../tools.h:192
+msgid ""
+"This brush changes depending on the angle, and is animated; its shape "
+"changes as you draw!"
+msgstr ""
+
+#: ../tools.h:194
+msgid "This brush's spacing is now 1 pixel!"
+msgstr ""
+
+#: ../tools.h:195
+#, c-format
+msgid ""
+"This brush's spacing is now about %1$d/%2$d the size of the brush shape."
+msgstr ""
+
+#: ../tools.h:196
+msgid "This brush's spacing is now about the size of the brush shape."
+msgstr ""
+
+#: ../tools.h:197
+#, c-format
+msgid "This brush's spacing is now about %d times as big as the brush shape."
+msgstr ""
+
+#: ../tools.h:198
+#, c-format
+msgid ""
+"This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
+"shape."
+msgstr ""
+
 #
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2271
 msgid "Do you really want to quit?"
 msgstr "Stvarno želiš da završiš?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2274
 msgid "Yes, I’m done!"
 msgstr "Da, završeno je!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2264 ../tuxpaint.c:2291
+#: ../tuxpaint.c:2277 ../tuxpaint.c:2304
 msgid "No, take me back!"
 msgstr "Ne, vrati me!"
 
 #
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2268
+#: ../tuxpaint.c:2281
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Izgubićeš sliku ako završiš! Da se sačuva?"
 
-#: ../tuxpaint.c:2269 ../tuxpaint.c:2274
+#: ../tuxpaint.c:2282 ../tuxpaint.c:2287
 msgid "Yes, save it!"
 msgstr "Da, sačuvaj je!"
 
-#: ../tuxpaint.c:2270 ../tuxpaint.c:2275
+#: ../tuxpaint.c:2283 ../tuxpaint.c:2288
 msgid "No, don’t bother saving!"
 msgstr "Ne, ne želim da sačuvam!"
 
 #
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2273
+#: ../tuxpaint.c:2286
 msgid "Save your picture first?"
 msgstr "Prvo da sačuvaš svoju sliku?"
 
 #
 #. Error opening picture
-#: ../tuxpaint.c:2278
+#: ../tuxpaint.c:2291
 msgid "Can’t open that picture!"
 msgstr "Ne mogu da otvorim tu sliku!"
 
 #
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2281 ../tuxpaint.c:2286 ../tuxpaint.c:2295 ../tuxpaint.c:2302
-#: ../tuxpaint.c:2311 ../tuxpaint.c:2316
+#: ../tuxpaint.c:2294 ../tuxpaint.c:2299 ../tuxpaint.c:2308 ../tuxpaint.c:2315
+#: ../tuxpaint.c:2324 ../tuxpaint.c:2329
 msgid "OK"
 msgstr "U redu"
 
 #
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2285
+#: ../tuxpaint.c:2298
 msgid "There are no saved files!"
 msgstr "Nema sačuvanih datoteka!"
 
 #
 #. Verification of print action
-#: ../tuxpaint.c:2289
+#: ../tuxpaint.c:2302
 msgid "Print your picture now?"
 msgstr "Sada štampaš svoju sliku?"
 
-#: ../tuxpaint.c:2290
+#: ../tuxpaint.c:2303
 msgid "Yes, print it!"
 msgstr "Da, odštampaj!"
 
 #
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2294
+#: ../tuxpaint.c:2307
 msgid "Your picture has been printed!"
 msgstr "Tvoje slika je odštampana!"
 
 #
 #. We got an error printing
-#: ../tuxpaint.c:2298
+#: ../tuxpaint.c:2311
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Izvini! Tvoja slika ne može da se odštampa!"
 
 #
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2301
+#: ../tuxpaint.c:2314
 msgid "You can’t print yet!"
 msgstr "Ne možeš još da štampaš!"
 
 #
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2318
 msgid "Erase this picture?"
 msgstr "Obrisati ovu sliku?"
 
-#: ../tuxpaint.c:2306
+#: ../tuxpaint.c:2319
 msgid "Yes, erase it!"
 msgstr "Da, obriši je!"
 
-#: ../tuxpaint.c:2307
+#: ../tuxpaint.c:2320
 msgid "No, don’t erase it!"
 msgstr "Ne, ne briši je!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2310
+#: ../tuxpaint.c:2323
 msgid "Remember to use the left mouse button!"
 msgstr "Zapamti da koristiš levo dugme miša!"
 
 #
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2314
+#: ../tuxpaint.c:2327
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Tvoje slika je odštampana!"
 
 #
-#: ../tuxpaint.c:2315
+#: ../tuxpaint.c:2328
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
@@ -936,14 +984,14 @@ msgstr "Tvoje slika je odštampana!"
 
 #
 #. We got an error exporting
-#: ../tuxpaint.c:2319
+#: ../tuxpaint.c:2332
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Izvini! Tvoja slika ne može da se odštampa!"
 
 #
-#: ../tuxpaint.c:2320
+#: ../tuxpaint.c:2333
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
@@ -951,181 +999,181 @@ msgstr "Izvini! Tvoja slika ne može da se odštampa!"
 
 #
 #. Slideshow instructions
-#: ../tuxpaint.c:2324
+#: ../tuxpaint.c:2337
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Izaberi sliku koju želiš, zatim klikni „Igraj“."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2537
+#: ../tuxpaint.c:2547
 msgid "Sound muted."
 msgstr "Utišan zvuk"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2542
+#: ../tuxpaint.c:2552
 msgid "Sound unmuted."
 msgstr "Uključen zvuk."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3314
+#: ../tuxpaint.c:3304
 msgid "Please wait…"
 msgstr "Molim te, sačekaj..."
 
 #
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8668
+#: ../tuxpaint.c:8698
 msgid "Erase"
 msgstr "Briši"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8671
+#: ../tuxpaint.c:8701
 msgid "Slides"
 msgstr "Niz"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8674
+#: ../tuxpaint.c:8704
 msgid "Export"
 msgstr ""
 
 #
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8677
+#: ../tuxpaint.c:8707
 msgid "Back"
 msgstr "Nazad"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8680
+#: ../tuxpaint.c:8710
 msgid "Play"
 msgstr "Igraj"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8683
+#: ../tuxpaint.c:8713
 msgid "GIF Export"
 msgstr ""
 
 #
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8686
+#: ../tuxpaint.c:8716
 msgid "Next"
 msgstr "Sledeće"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8689
+#: ../tuxpaint.c:8719
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9551
+#: ../tuxpaint.c:9581
 msgid "Aa"
 msgstr "Aa"
 
 #
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13250
+#: ../tuxpaint.c:13291
 msgid "Yes"
 msgstr "Da"
 
 #
-#: ../tuxpaint.c:13254
+#: ../tuxpaint.c:13295
 msgid "No"
 msgstr "Ne"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14404
+#: ../tuxpaint.c:14449
 msgid "Replace the picture with your changes?"
 msgstr "Zameni prethodnu sliku izmenjenom?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14408
+#: ../tuxpaint.c:14453
 msgid "Yes, replace the old one!"
 msgstr "Da, zameni prethodnu!"
 
 #
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14412
+#: ../tuxpaint.c:14457
 msgid "No, save a new file!"
 msgstr "Ne, sačuvaj u novu datoteku!"
 
 #
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15676
+#: ../tuxpaint.c:15721
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Izaberi sliku koju želiš, zatim klikni „Otvori“."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17102
+#: ../tuxpaint.c:17147
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22214
+#: ../tuxpaint.c:22259
 msgid "red"
 msgstr ""
 
 #
-#: ../tuxpaint.c:22215
+#: ../tuxpaint.c:22260
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Žuta!"
 
-#: ../tuxpaint.c:22216
+#: ../tuxpaint.c:22261
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Neboplava!"
 
 #
-#: ../tuxpaint.c:22217
+#: ../tuxpaint.c:22262
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Bela!"
 
-#: ../tuxpaint.c:22218
+#: ../tuxpaint.c:22263
 msgid "grey"
 msgstr ""
 
 #
-#: ../tuxpaint.c:22219
+#: ../tuxpaint.c:22264
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Crna!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22224
+#: ../tuxpaint.c:22269
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:22225
+#: ../tuxpaint.c:22270
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:22226
+#: ../tuxpaint.c:22271
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:22227
+#: ../tuxpaint.c:22272
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:22228
+#: ../tuxpaint.c:22273
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:22229
+#: ../tuxpaint.c:22274
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1133,23 +1181,23 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:22990 ../tuxpaint.c:22997
+#: ../tuxpaint.c:23035 ../tuxpaint.c:23042
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:25812
+#: ../tuxpaint.c:25857
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
-#: ../tuxpaint.c:25821
+#: ../tuxpaint.c:25866
 msgid "Pick a color."
 msgstr "Izaberi boju."
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:25832
+#: ../tuxpaint.c:25877
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
