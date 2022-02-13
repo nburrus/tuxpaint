@@ -190,6 +190,9 @@ http://www.tuxpaint.org/
         system path followed by going into an undefined behavior
         (possibly segfault crash).
 
+      * Fonts are now also looked for in the system preferences path,
+        /Library/Application Support/TuxPaint/fonts
+
   * Documentation updates:
     ---------------------
     * macOS Apple Silicon and Universal Binary build instructions
