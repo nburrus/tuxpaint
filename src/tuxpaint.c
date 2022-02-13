@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 27, 2022
+  June 14, 2002 - January 28, 2022
 */
 
 #include "platform.h"
@@ -1946,7 +1946,8 @@ static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_fills[NUM_FILLS], *img_fill_names[NUM_FILLS];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
   *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
-  *img_openlabels_gif_export, *img_openlabels_pict_export, *img_openlabels_next;
+  *img_openlabels_gif_export, *img_openlabels_pict_export, *img_openlabels_next,
+  *img_mixerlabel_clear;
 
 static SDL_Surface *img_tux[NUM_TIP_TUX];
 
@@ -2185,6 +2186,10 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
 static int do_color_picker(void);
 static int do_color_sel(int temp_mode);
 static int do_color_mix(void);
+static void draw_color_mixer_blank_example(void);
+static void calc_color_mixer_average(float * out_h, float * out_s, float * out_v);
+static void draw_color_mixer_tooltip(void);
+static void draw_color_mix_undo_redo(void);
 static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Surface * icon);
 static void handle_color_changed(void);
 
@@ -8982,6 +8987,9 @@ static void create_button_labels(void)
 
   /* Slideshow: 'Next' button, to load next slide (image) */
   img_openlabels_next = do_render_button_label(gettext_noop("Next"));
+
+  /* Color mixer dialog: 'Clear' button, to reset the mixed color */
+  img_mixerlabel_clear = do_render_button_label(gettext_noop("Clear"));
 }
 
 
@@ -14059,6 +14067,8 @@ static void cleanup(void)
   free_surface(&img_openlabels_next);
   free_surface(&img_openlabels_play);
   free_surface(&img_openlabels_gif_export);
+
+  free_surface(&img_mixerlabel_clear);
 
   free_surface(&img_progress);
 
@@ -22699,6 +22709,9 @@ enum {
   NUM_COLOR_MIXER_BTNS
 };
 
+SDL_Rect color_example_dest;
+int color_mix_btn_lefts[NUM_COLOR_MIXER_BTNS], color_mix_btn_tops[NUM_COLOR_MIXER_BTNS];
+
 /* Hue (degrees 0-360, or -1 for N/A), Saturation (0.0-1.0), Value (0.0-1.0) */
 float mixer_hsv[NUM_MIXER_COLORS][3] = {
   { 330.0, 1.0, 0.9 }, /* Red (Magenta-ish) */
@@ -22709,6 +22722,33 @@ float mixer_hsv[NUM_MIXER_COLORS][3] = {
   { -1, 0.0, 0.0 } /* Black */
 };
 
+
+const char * color_mixer_color_names[NUM_MIXER_COLORS] = {
+  /* Descriptions (names) of the color mixer tool's primary colors and shades */
+  gettext_noop("red"),
+  gettext_noop("yellow"),
+  gettext_noop("blue"),
+  gettext_noop("white"),
+  gettext_noop("grey"),
+  gettext_noop("black")
+};
+
+const char * color_mixer_color_tips[] = {
+  /* Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.) */
+  gettext_noop("Your color is %1$s %2$s."),
+  gettext_noop("Your color is %1$s %2$s and %3$s %4$s."),
+  gettext_noop("Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."),
+  gettext_noop("Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."),
+  gettext_noop("Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."),
+  gettext_noop("Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and %11$s %12$s.")
+};
+
+
+int color_mixer_color_counts[NUM_MIXER_COLORS];
+
+#define NUM_COLOR_MIX_UNDO_BUFS 20
+int color_mix_cur_undo, color_mix_oldest_undo, color_mix_newest_undo;
+int mixer_undo_buf[NUM_COLOR_MIX_UNDO_BUFS];
 
 /**
  * Display a large prompt, allowing the user to mix
@@ -22733,13 +22773,9 @@ static int do_color_mix(void)
   int done, chose;
   SDL_Event event;
   SDLKey key;
-  int btn_lefts[NUM_COLOR_MIXER_BTNS], btn_tops[NUM_COLOR_MIXER_BTNS];
-  SDL_Rect color_example_dest;
   SDL_Surface *backup;
-  SDL_Rect r_color_picker;
   SDL_Rect r_final;
   int old_color_mixer_reset;
-
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
   hide_blinking_cursor();
@@ -22764,7 +22800,7 @@ static int do_color_mix(void)
   cell_w = img_back->w + 2;
   cell_h = img_back->h + 2;
 
-  /* FIXME */
+  /* Area for the dialog window */
   r_final.x = r_canvas.x + (r_canvas.w - (cell_w * 6)) / 2 - 4;
   r_final.y = ((r_canvas.h - (cell_w * 4)) / 2) - 2;
   r_final.w = (cell_w * 6);
@@ -22851,20 +22887,7 @@ static int do_color_mix(void)
   /* Draw current color mixer color: */
   if (color_mixer_reset)
     {
-      /* FIXME: Modularize; duplicated below! */
-      SDL_FillRect(screen, &color_example_dest,
-                   SDL_MapRGB(screen->format, 192, 192, 192));
-
-      for (w = 0; w < color_example_dest.w; w += 4)
-        {
-          dest.x = color_example_dest.x + w;
-          dest.y = color_example_dest.y;
-          dest.w = 2;
-          dest.h = color_example_dest.h;
-
-          SDL_FillRect(screen, &dest,
-                       SDL_MapRGB(screen->format, 128, 128, 128));
-        }
+      draw_color_mixer_blank_example();
     }
   else
     {
@@ -22885,70 +22908,91 @@ static int do_color_mix(void)
   /* Draw colors */
   for (i = 0; i < NUM_MIXER_COLORS; i++)
     {
-      btn_lefts[i] = r_final.x + ((i % 3) * cell_w) + 2;
-      btn_tops[i] = r_final.y + ((i / 3) * cell_h) + 2;
+      float tmp_v;
 
-      dest.x = btn_lefts[i];
-      dest.y = btn_tops[i];
+      color_mix_btn_lefts[i] = r_final.x + ((i % 3) * cell_w) + 2;
+      color_mix_btn_tops[i] = r_final.y + ((i / 3) * cell_h) + 2;
+
+      dest.x = color_mix_btn_lefts[i];
+      dest.y = color_mix_btn_tops[i];
       dest.w = cell_w - 2;
       dest.h = cell_h - 2;
 
-      hsvtorgb(mixer_hsv[i][0], mixer_hsv[i][1], mixer_hsv[i][2], &r, &g, &b);
+      tmp_v = mixer_hsv[i][2];
+      if (tmp_v >= 0.05)
+        tmp_v -= 0.05;
+
+      hsvtorgb(mixer_hsv[i][0], mixer_hsv[i][1], tmp_v, &r, &g, &b);
       SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
     }
+
+  /* Draw "Undo" & "Redo" buttons */
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] = r_final.x + (cell_w * 0) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_UNDO] = r_final.y + (cell_h * 3) + 2;
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] = r_final.x + (cell_w * 1) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_REDO] = r_final.y + (cell_h * 3) + 2;
+
+  draw_color_mix_undo_redo();
+
 
 
   /* Show "Clear" button */
 
-  btn_lefts[COLOR_MIXER_BTN_CLEAR] = r_final.x + (cell_w * 2) + 2;
-  btn_tops[COLOR_MIXER_BTN_CLEAR] = r_final.y + (cell_h * 3) + 2;
+  color_mix_btn_lefts[COLOR_MIXER_BTN_CLEAR] = r_final.x + (cell_w * 2) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR] = r_final.y + (cell_h * 3) + 2;
 
-  dest.x = btn_lefts[COLOR_MIXER_BTN_CLEAR];
-  dest.y = btn_tops[COLOR_MIXER_BTN_CLEAR];
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_CLEAR];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR];
   SDL_BlitSurface(img_erase, NULL, screen, &dest);
 
-/* FIXME */
-/*
-  dest.x = btn_lefts[COLOR_MIXER_BTN_CLEAR] + (img_back->w - img_openlabels_back->w) / 2;
-  dest.y = btn_tops[COLOR_MIXER_BTN_CLEAR] + img_back->h - img_openlabels_back->h;
-  SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
-*/
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_CLEAR] + (img_back->w - img_mixerlabel_clear->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR] + img_back->h - img_mixerlabel_clear->h;
+  SDL_BlitSurface(img_mixerlabel_clear, NULL, screen, &dest);
+
 
   /* Show "Back" button */
 
-  btn_lefts[COLOR_MIXER_BTN_BACK] = r_final.x + (cell_w * 4) + 2;
-  btn_tops[COLOR_MIXER_BTN_BACK] = r_final.y + (cell_h * 3) + 2;
+  color_mix_btn_lefts[COLOR_MIXER_BTN_BACK] = r_final.x + (cell_w * 4) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_BACK] = r_final.y + (cell_h * 3) + 2;
 
-  dest.x = btn_lefts[COLOR_MIXER_BTN_BACK];
-  dest.y = btn_tops[COLOR_MIXER_BTN_BACK];
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_BACK];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_BACK];
   SDL_BlitSurface(img_back, NULL, screen, &dest);
 
-  dest.x = btn_lefts[COLOR_MIXER_BTN_BACK] + (img_back->w - img_openlabels_back->w) / 2;
-  dest.y = btn_tops[COLOR_MIXER_BTN_BACK] + img_back->h - img_openlabels_back->h;
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_BACK] + (img_back->w - img_openlabels_back->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_BACK] + img_back->h - img_openlabels_back->h;
   SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
   /* Show "OK" button */
 
-  btn_lefts[COLOR_MIXER_BTN_USE] = r_final.x + (cell_w * 5) + 2;
-  btn_tops[COLOR_MIXER_BTN_USE] = r_final.y + (cell_h * 3) + 2;
+  color_mix_btn_lefts[COLOR_MIXER_BTN_USE] = r_final.x + (cell_w * 5) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_USE] = r_final.y + (cell_h * 3) + 2;
 
   if (!color_mixer_reset)
     {
       /* Only draw "OK" button when we can accept! */
-      dest.x = btn_lefts[COLOR_MIXER_BTN_USE];
-      dest.y = btn_tops[COLOR_MIXER_BTN_USE];
+      dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+      dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
       SDL_BlitSurface(img_yes, NULL, screen, &dest);
     }
 
   SDL_Flip(screen);
 
-
-  /* Let the user pick a color, or go back: */
+  if (color_mixer_reset)
+    {
+      for (i = 0; i < NUM_MIXER_COLORS; i++)
+        color_mixer_color_counts[i] = 0;
+    }
 
   done = 0;
   chose = 0;
   old_color_mixer_reset = color_mixer_reset;
 
+
+
+  /* Let the user pick a color, or go back: */
   do
     {
       while (SDL_PollEvent(&event))
@@ -22972,7 +23016,7 @@ static int do_color_mix(void)
             {
               key = event.key.keysym.sym;
 
-              handle_keymouse(key, SDL_KEYDOWN, 24, &r_color_picker, NULL);
+              handle_keymouse(key, SDL_KEYDOWN, 24, NULL, NULL);
 
               if (key == SDLK_ESCAPE)
                 {
@@ -22980,15 +23024,49 @@ static int do_color_mix(void)
                   done = 1;
                 }
             }
-          else if (event.type == SDL_MOUSEBUTTONUP && valid_click(event.button.button))
+          else if (event.type == SDL_MOUSEMOTION)
             {
+              /* Motion; change mouse pointer shape based on active UI buttons */
+
               btn_clicked = -1;
               for (i = 0; i < NUM_COLOR_MIXER_BTNS && btn_clicked == -1; i++)
                 {
-                  if (event.button.x >= btn_lefts[i] &&
-                      event.button.x < btn_lefts[i] + img_back->w &&
-                      event.button.y >= btn_tops[i] &&
-                      event.button.y < btn_tops[i] + img_back->h)
+                  if (event.button.x >= color_mix_btn_lefts[i] &&
+                      event.button.x < color_mix_btn_lefts[i] + img_back->w &&
+                      event.button.y >= color_mix_btn_tops[i] &&
+                      event.button.y < color_mix_btn_tops[i] + img_back->h)
+                    {
+                      btn_clicked = i;
+                    }
+                }
+
+              if ((btn_clicked >= 0 && btn_clicked < NUM_MIXER_COLORS) ||
+                  btn_clicked == COLOR_MIXER_BTN_CLEAR ||
+                  (btn_clicked == COLOR_MIXER_BTN_USE && !color_mixer_reset) ||
+                  btn_clicked == COLOR_MIXER_BTN_BACK ||
+                  (btn_clicked == COLOR_MIXER_BTN_UNDO && color_mix_cur_undo != color_mix_oldest_undo) ||
+                  (btn_clicked == COLOR_MIXER_BTN_REDO && color_mix_cur_undo != color_mix_newest_undo)
+                 )
+                {
+                  do_setcursor(cursor_hand);
+                }
+              else
+                {
+                  do_setcursor(cursor_arrow);
+                }
+            }
+          else if (event.type == SDL_MOUSEBUTTONUP && valid_click(event.button.button))
+            {
+              /* Released a click, determine what action to take! */
+
+              /* Did they click any of the actual buttons? */
+              btn_clicked = -1;
+              for (i = 0; i < NUM_COLOR_MIXER_BTNS && btn_clicked == -1; i++)
+                {
+                  if (event.button.x >= color_mix_btn_lefts[i] &&
+                      event.button.x < color_mix_btn_lefts[i] + img_back->w &&
+                      event.button.y >= color_mix_btn_tops[i] &&
+                      event.button.y < color_mix_btn_tops[i] + img_back->h)
                     {
                       btn_clicked = i;
                     }
@@ -22996,6 +23074,8 @@ static int do_color_mix(void)
 
               if (btn_clicked >= 0 && btn_clicked < NUM_MIXER_COLORS)
                 {
+                  /* Clicked a color! */
+
                   if (color_mixer_reset)
                     {
                       /* Starting fresh; add the chosen paint 100% */
@@ -23006,55 +23086,44 @@ static int do_color_mix(void)
                       color_mixer_reset = 0;
 
                       /* We can draw the "OK" button now! */
-                      dest.x = btn_lefts[COLOR_MIXER_BTN_USE];
-                      dest.y = btn_tops[COLOR_MIXER_BTN_USE];
+                      dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+                      dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
                       dest.w = cell_w;
                       dest.h = cell_h;
                       SDL_BlitSurface(img_yes, NULL, screen, &dest);
                       SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+                      color_mixer_color_counts[btn_clicked]++;
                     }
                   else
                     {
-                      if (mixer_hsv[btn_clicked][0] != -1)
-                        {
-                          /* Paint we're adding has a hue */
-    
-                          if (h == -1)
-                            {
-                              /* Current color has no hue yet; pick it all up */
-    			      h = mixer_hsv[btn_clicked][0];
-                            }
-                          else
-                            {
-                              /* Blend the hues */
-                              float new_h, circ_mean_avg_sin, circ_mean_avg_cos;
+                      /* Blending in some color */
 
-                              new_h = mixer_hsv[btn_clicked][0];
+                      color_mixer_color_counts[btn_clicked]++;
 
-                              circ_mean_avg_sin = (sin(h * M_PI / 180.0) * 2.0);
-                              circ_mean_avg_sin += sin(new_h * M_PI / 180.0);
-                              circ_mean_avg_sin /= 3.0;
-
-                              circ_mean_avg_cos = (cos(h * M_PI / 180.0) * 2.0);
-                              circ_mean_avg_cos += cos(new_h * M_PI / 180.0);
-                              circ_mean_avg_cos /= 3.0;
-
-                              h = atan2(circ_mean_avg_sin, circ_mean_avg_cos) * 180.0 / M_PI;
-                              if (h < 0.0)
-                                h += 360.0;
-                              else if (h >= 360.0)
-                                h -= 360.0;
-                            }
-                        }
-
-                      s = (s * 2.0 + mixer_hsv[btn_clicked][1]) / 3.0;
-                      v = (v * 2.0 + mixer_hsv[btn_clicked][2]) / 3.0;
+                      calc_color_mixer_average(&h, &s, &v);
                     }
+
+                  /* Record into undo buffer */
+
+                  mixer_undo_buf[color_mix_cur_undo] = btn_clicked;
+                  color_mix_cur_undo = (color_mix_cur_undo + 1) % NUM_COLOR_MIX_UNDO_BUFS;
+                  if (color_mix_cur_undo == color_mix_oldest_undo)
+                    color_mix_oldest_undo = (color_mix_oldest_undo + 1) % NUM_COLOR_MIX_UNDO_BUFS;
+                  color_mix_newest_undo = color_mix_cur_undo;
+
+                  draw_color_mix_undo_redo();
+
+
+                  /* Show the new color */
 
                   hsvtorgb(h, s, v, &new_r, &new_g, &new_b);
 
                   SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, new_r, new_g, new_b));
                   SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+
+                  /* Draw the tooltip and play a sound */
+                  draw_color_mixer_tooltip();
 
                   playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
                 }
@@ -23077,31 +23146,26 @@ static int do_color_mix(void)
 
                   color_mixer_reset = 1;
 
+                  /* Wipe undo buffer */
+                  color_mix_cur_undo = color_mix_oldest_undo = color_mix_newest_undo = 0;
+                  draw_color_mix_undo_redo();
+
+                  /* Clear color usage counts */
+                  for (i = 0; i < NUM_MIXER_COLORS; i++)
+                    color_mixer_color_counts[i] = 0;
+
+                  draw_tux_text(TUX_BORED, color_names[COLOR_MIXER], 1);
+
                   /* Erase the "OK" button! */
-                  dest.x = btn_lefts[COLOR_MIXER_BTN_USE];
-                  dest.y = btn_tops[COLOR_MIXER_BTN_USE];
+                  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+                  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
                   dest.w = cell_w;
                   dest.h = cell_h;
 
                   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
                   SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
 
-                  /* FIXME: Modularize; duplicated above! */
-                  SDL_FillRect(screen, &color_example_dest,
-                               SDL_MapRGB(screen->format, 192, 192, 192));
-            
-                  for (w = 0; w < color_example_dest.w; w += 4)
-                    {
-                      dest.x = color_example_dest.x + w;
-                      dest.y = color_example_dest.y;
-                      dest.w = 2;
-                      dest.h = color_example_dest.h;
-            
-                      SDL_FillRect(screen, &dest,
-                                   SDL_MapRGB(screen->format, 128, 128, 128));
-                    }
-
-                  SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+                  draw_color_mixer_blank_example();
 
 #ifndef NOSOUND
                   if (!mute && use_sound)
@@ -23109,13 +23173,93 @@ static int do_color_mix(void)
                       if (!Mix_Playing(0))
                         {
                           eraser_sound = (eraser_sound + 1) % 2;
-                
+     
                           playsound(screen, 0, SND_ERASER1 + eraser_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                         }
                     }
 #endif
                 }
-              /* FIXME - All the other controls */
+              else if (btn_clicked == COLOR_MIXER_BTN_UNDO && color_mix_cur_undo != color_mix_oldest_undo)
+                {
+                  int tot_count;
+
+                  /* Undo! */
+                  color_mix_cur_undo--;
+                  if (color_mix_cur_undo < 0)
+                    color_mix_cur_undo = NUM_COLOR_MIX_UNDO_BUFS - 1;
+
+                  color_mixer_color_counts[mixer_undo_buf[color_mix_cur_undo]]--;
+
+                  tot_count = 0;
+                  for (i = 0; i < NUM_MIXER_COLORS; i++)
+                    tot_count += color_mixer_color_counts[i];
+
+                  if (tot_count > 0)
+                    {
+                      /* Still have some paint on there */
+                      calc_color_mixer_average(&h, &s, &v);
+
+                      hsvtorgb(h, s, v, &new_r, &new_g, &new_b);
+
+                      SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, new_r, new_g, new_b));
+                      SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+
+                      draw_color_mixer_tooltip();
+                    }
+                  else
+                    {
+                      /* Back to the very beginning; show blank */
+                      color_mixer_reset = 1;
+                      draw_color_mixer_blank_example();
+
+                      /* Erase the "OK" button! */
+                      dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+                      dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
+                      dest.w = cell_w;
+                      dest.h = cell_h;
+
+                      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+                      SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+                      draw_tux_text(TUX_BORED, color_names[COLOR_MIXER], 1);
+                    }
+
+                  playsound(screen, 1, SND_CLICK, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                  draw_color_mix_undo_redo();
+                }
+              else if (btn_clicked == COLOR_MIXER_BTN_REDO && color_mix_cur_undo != color_mix_newest_undo)
+                {
+                  /* Redo! */
+                  color_mixer_color_counts[mixer_undo_buf[color_mix_cur_undo]]++;
+
+                  calc_color_mixer_average(&h, &s, &v);
+
+                  hsvtorgb(h, s, v, &new_r, &new_g, &new_b);
+
+                  SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, new_r, new_g, new_b));
+                  SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+
+                  if (color_mixer_reset == 1)
+                    {
+                      /* Bringing back the first color */
+                      color_mixer_reset = 0;
+
+                      /* Draw "OK" */
+                      dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_USE];
+                      dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_USE];
+                      dest.w = cell_w;
+                      dest.h = cell_h;
+                      SDL_BlitSurface(img_yes, NULL, screen, &dest);
+                      SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+                    }
+
+                  color_mix_cur_undo = (color_mix_cur_undo + 1) % NUM_COLOR_MIX_UNDO_BUFS;
+
+                  playsound(screen, 1, SND_CLICK, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                  draw_color_mix_undo_redo();
+
+                  draw_color_mixer_tooltip();
+                }
             }
           else if (event.type == SDL_JOYAXISMOTION)
             handle_joyaxismotion(event, &motioner, &val_x, &val_y);
@@ -23163,6 +23307,289 @@ static int do_color_mix(void)
   return (chose);
 }
 
+
+
+
+/**
+ * Draw a pattern over the color mixer sample,
+ * for when no color has been chosen.
+ */
+static void draw_color_mixer_blank_example(void) {
+  int w;
+  SDL_Rect dest;
+
+  SDL_FillRect(screen, &color_example_dest,
+               SDL_MapRGB(screen->format, 192, 192, 192));
+
+  for (w = 0; w < color_example_dest.w; w += 4)
+    {
+      dest.x = color_example_dest.x + w;
+      dest.y = color_example_dest.y;
+      dest.w = 2;
+      dest.h = color_example_dest.h;
+
+      SDL_FillRect(screen, &dest,
+                   SDL_MapRGB(screen->format, 128, 128, 128));
+    }
+
+  SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+}
+
+
+/**
+ * Take the colors chosen in the mixer, in their various
+ * proportions, and calculate an HSV value for the
+ * final color
+ */
+static void calc_color_mixer_average(float * out_h, float * out_s, float * out_v) {
+  float h, s, v;
+  float circ_mean_avg_sin, circ_mean_avg_cos;
+  int i, tot_count, tot_count_hue;
+  float sat, val;
+
+  tot_count = tot_count_hue = 0;
+  circ_mean_avg_sin = circ_mean_avg_cos = 0.0;
+  sat = val = 0.0;
+
+  for (i = 0; i < NUM_MIXER_COLORS; i++)
+    {
+      tot_count += color_mixer_color_counts[i];
+
+      if (mixer_hsv[i][0] != -1)
+        {
+          tot_count_hue += color_mixer_color_counts[i];
+
+          circ_mean_avg_sin += (sin(mixer_hsv[i][0] * M_PI / 180.0) * color_mixer_color_counts[i]);
+          circ_mean_avg_cos += (cos(mixer_hsv[i][0] * M_PI / 180.0) * color_mixer_color_counts[i]);
+        }
+
+       sat += mixer_hsv[i][1] * (color_mixer_color_counts[i]);
+       val += mixer_hsv[i][2] * (color_mixer_color_counts[i]);
+    }
+
+  if (tot_count_hue == 0)
+    {
+      /* None of the colors we mixed has any hue! */
+      h = -1;
+    }
+  else
+    {
+      /* Average all the hues we have */
+      circ_mean_avg_sin /= tot_count_hue;
+      circ_mean_avg_cos /= tot_count_hue;
+
+      h = atan2(circ_mean_avg_sin, circ_mean_avg_cos) * 180.0 / M_PI;
+      if (h < 0.0)
+        h += 360.0;
+      else if (h >= 360.0)
+        h -= 360.0;
+    }
+
+  /* Average the saturation and values */
+
+  s = sat / tot_count;
+  v = val / tot_count;
+
+  *out_h = h;
+  *out_s = s;
+  *out_v = v;
+}
+
+/**
+ * Draw the undo & redo buttons of the color mixer,
+ * making the buttons appear clickable ("up") or not ("off"),
+ * depending on the state of the color mixer's undo buffer
+ */
+static void draw_color_mix_undo_redo(void) {
+  SDL_Rect dest;
+  SDL_Surface * icon_label_color, * tmp_surf;
+
+  /* Show "Undo" button */
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO];
+
+  if (color_mix_cur_undo != color_mix_oldest_undo)
+    {
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      icon_label_color = img_black;
+    }
+  else
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+      icon_label_color = img_grey;
+    }
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] + (img_back->w - img_tools[TOOL_UNDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO];
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tools[TOOL_UNDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO] + (img_back->w - img_tool_names[TOOL_UNDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_UNDO] + img_back->h - img_tool_names[TOOL_UNDO]->h;
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tool_names[TOOL_UNDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
+  SDL_UpdateRect(screen, color_mix_btn_lefts[COLOR_MIXER_BTN_UNDO], color_mix_btn_tops[COLOR_MIXER_BTN_UNDO], img_back->w, img_back->h);
+
+
+  /* Show "Redo" button */
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO];
+
+  if (color_mix_cur_undo != color_mix_newest_undo)
+    {
+      SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+      icon_label_color = img_black;
+    }
+  else
+    {
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+      icon_label_color = img_grey;
+    }
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] + (img_back->w - img_tools[TOOL_REDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO];
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tools[TOOL_REDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_REDO] + (img_back->w - img_tool_names[TOOL_REDO]->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_REDO] + img_back->h - img_tool_names[TOOL_REDO]->h;
+
+  tmp_surf = SDL_DisplayFormatAlpha(img_tool_names[TOOL_REDO]);
+  SDL_BlitSurface(icon_label_color, NULL, tmp_surf, NULL);
+  SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
+  SDL_FreeSurface(tmp_surf);
+
+  SDL_UpdateRect(screen, color_mix_btn_lefts[COLOR_MIXER_BTN_REDO], color_mix_btn_tops[COLOR_MIXER_BTN_REDO], img_back->w, img_back->h);
+}
+
+
+/**
+ * Show a tooltip describing the color the user has mixed
+ */
+static void draw_color_mixer_tooltip(void) {
+  int i, num_colors_used, tot_count;
+  char tip_txt[1024];
+  char tip_txt_proportions[NUM_MIXER_COLORS][64];
+  int used_colors_color[NUM_MIXER_COLORS], used_colors_amount[NUM_MIXER_COLORS];
+
+  num_colors_used = 0;
+  tot_count = 0;
+  for (i = 0; i < NUM_MIXER_COLORS; i++)
+    {
+      if (color_mixer_color_counts[i])
+        {
+          used_colors_color[num_colors_used] = i;
+          used_colors_amount[num_colors_used] = color_mixer_color_counts[i];
+          num_colors_used++;
+
+          tot_count += color_mixer_color_counts[i];
+        }
+    }
+
+  if (num_colors_used == 1)
+    {
+      if (used_colors_amount[0] == 1)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+                   /* Color mixer; e.g., "Your color is entirely grey." */ gettext("entirely"),
+                   gettext(color_mixer_color_names[used_colors_color[0]]));
+        }
+      else
+        {
+          snprintf(tip_txt_proportions[0], sizeof(tip_txt_proportions[0]),
+                   "%1$s (%2$d/%3$d)",
+                   gettext("entirely"),
+                   used_colors_amount[0], used_colors_amount[0]);
+
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+                   tip_txt_proportions[0],
+                   gettext(color_mixer_color_names[used_colors_color[0]]));
+        }
+    }
+  else
+    {
+      for (i = 0; i < num_colors_used; i++)
+        {
+          int factor, best_factor;
+
+          best_factor = 0;
+          for (factor = 2; factor <= used_colors_amount[i]; factor++)
+            {
+              if ((used_colors_amount[i] % factor) == 0 && (tot_count % factor) == 0)
+                best_factor = factor;
+            }
+
+          if (best_factor)
+            {
+              snprintf(tip_txt_proportions[i], sizeof(tip_txt_proportions[i]),
+                       "%d/%d (%d/%d)",
+                       used_colors_amount[i], tot_count,
+                       (int) (used_colors_amount[i] / best_factor), (int) (tot_count / best_factor));
+            }
+          else
+            {
+              snprintf(tip_txt_proportions[i], sizeof(tip_txt_proportions[i]),
+                       "%d/%d", used_colors_amount[i], tot_count);
+            }
+        }
+
+      tip_txt[0] = '\0'; /* Just in case! */
+      if (num_colors_used == 2)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+                   tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
+                   tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]));
+        }
+      else if (num_colors_used == 3)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+                   tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
+                   tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
+                   tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]));
+        }
+      else if (num_colors_used == 4)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+                   tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
+                   tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
+                   tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
+                   tip_txt_proportions[3], gettext(color_mixer_color_names[used_colors_color[3]]));
+        }
+      else if (num_colors_used == 5)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+                   tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
+                   tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
+                   tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
+                   tip_txt_proportions[3], gettext(color_mixer_color_names[used_colors_color[3]]),
+                   tip_txt_proportions[4], gettext(color_mixer_color_names[used_colors_color[4]]));
+        }
+      else if (num_colors_used == 6)
+        {
+          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+                   tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
+                   tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
+                   tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
+                   tip_txt_proportions[3], gettext(color_mixer_color_names[used_colors_color[3]]),
+                   tip_txt_proportions[4], gettext(color_mixer_color_names[used_colors_color[4]]),
+                   tip_txt_proportions[5], gettext(color_mixer_color_names[used_colors_color[5]]));
+        }
+    }
+
+  draw_tux_text(TUX_GREAT, tip_txt, 1);
+}
 
 /**
  * Render an interactive color button (selector, picker, mixer)
@@ -25943,8 +26370,8 @@ static void setup_colors(void)
   color_picker_y = 0;
   NUM_COLORS++;
 
-  /* Add "Color Mixer" color */
-
+  /* Add "Color Mixer" color: */
+  /* (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color) */
   color_names[NUM_COLORS] = strdup(gettext("Click the primary colors (red, yellow, and blue), white (to tint), grey (to tone), and black (to shade), to mix together a new color."));
   color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
   color_hexes[NUM_COLORS][0] = 255;
@@ -27295,6 +27722,8 @@ static void claim_to_be_ready(void)
   cur_undo = 0;
   oldest_undo = 0;
   newest_undo = 0;
+
+  color_mix_cur_undo = color_mix_oldest_undo = color_mix_newest_undo = 0;
 
   cur_tool = TOOL_BRUSH;
   cur_color = COLOR_BLACK;
