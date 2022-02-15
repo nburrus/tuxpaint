@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.13 (0.9.28)
+2022.February.14 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -114,6 +114,9 @@ http://www.tuxpaint.org/
     ---------------------
     * Albanian translation
       Besnik Bleta <besnik@programeshqip.org>
+
+    * Icelandic translation
+      Sveinn í Felli <sv1@fellsnet.is>
 
     * Japanese translation
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
