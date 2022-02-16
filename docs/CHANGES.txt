@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.14 (0.9.28)
+2022.February.16 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -212,6 +212,8 @@ http://www.tuxpaint.org/
     ---------------------
     * macOS Apple Silicon and Universal Binary build instructions
       Mark Kim <markuskimius@gmail.com>
+
+    * Compressed PNG images in documentation.
 
 
 2021.November.25 (0.9.27)
