@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.11 (0.9.28)
+2022.February.16 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -115,14 +115,23 @@ http://www.tuxpaint.org/
     * Albanian translation
       Besnik Bleta <besnik@programeshqip.org>
 
+    * Icelandic translation
+      Sveinn í Felli <sv1@fellsnet.is>
+
     * Japanese translation
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+    * Santali translation (Ol-Chiki)
+      Prasanta Hembram <prasantahembram720@gmail.com>
 
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
 
     * Korean translation
       Mark Kim <markuskimius@gmail.com>
+
+    * Updated the Chinese (Traditional) subset font file that ships
+      with Tux Paint, based on the current translation strings.
 
     * Tux Paint for macOS can now localize the macOS menubar.
       Mark Kim <markuskimius@gmail.com>
@@ -198,10 +207,21 @@ http://www.tuxpaint.org/
         system path followed by going into an undefined behavior
         (possibly segfault crash).
 
+      * Fonts are now also looked for in the system preferences path,
+        /Library/Application Support/TuxPaint/fonts
+
+      * Fixed the issue with the backspace not working in text and label tools
+        when in certain language modes in macOS.  Mac keyboards have the DELETE
+        key where PC keyboards have the BACKSPACE key, and the two keys have
+        different keycodes, so the backspace requires special handling on the
+        macOS in programs writtens for the PC.
+
   * Documentation updates:
     ---------------------
     * macOS Apple Silicon and Universal Binary build instructions
       Mark Kim <markuskimius@gmail.com>
+
+    * Compressed PNG images in documentation.
 
 
 2021.November.25 (0.9.27)

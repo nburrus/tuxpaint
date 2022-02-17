@@ -350,7 +350,6 @@ typedef struct safer_dirent
 #include "win32_print.h"
 #include <io.h>
 #include <direct.h>
-#include <iconv.h>
 
 #undef min
 #undef max
@@ -3016,6 +3015,11 @@ static void mainloop(void)
                       /* Queue each character to be displayed */
                       while (*im_cp)
                         {
+#ifdef __APPLE__
+                          /* Apple uses DEL for BACKSPACE */
+                          if (*im_cp == SDLK_DELETE) *im_cp = L'\b';
+#endif
+
                           if (*im_cp == L'\b')
                             {
                               /* [Backspace] */
@@ -15163,7 +15167,11 @@ static void do_png_embed_data(png_structp png_ptr)
   struct label_node *current_node;
   char *char_stream, *line;
   size_t dat_size, char_stream_sz, line_sz;
-
+#ifdef WIN32
+  wchar_t wtmpchar;
+  char tmpstr[16];
+  size_t nbtmpstr;
+#endif
 
   /* Starter foreground */
   if (img_starter)
@@ -15390,29 +15398,14 @@ static void do_png_embed_data(png_structp png_ptr)
         {
           if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
             {
-
-#ifdef WIN32
-              iconv_t trans;
-              wchar_t *wch;
-	      char *ch;
-              char *conv, *conv2;
-              size_t in, out;
-
-              conv = malloc(255);
-              trans = iconv_open("UTF-8", "WCHAR_T");
-
               fprintf(lfi, "%u\n", current_node->save_texttool_len);
               for (i = 0; i < current_node->save_texttool_len; i++)
                 {
-                  conv2 = conv;
-                  in = 2;
-                  out = 10;
-                  wch = &current_node->save_texttool_str[i];
-		  ch = (char *)wch;
-                  iconv(trans, &ch, &in, &conv, &out);
-                  conv[0] = '\0';
-                  fprintf(lfi, "%s", conv2);
-                }
+#ifdef WIN32
+                  wtmpchar = current_node->save_texttool_str[i];
+		  nbtmpstr = WideCharToMultiByte(CP_UTF8, 0, &wtmpchar, 1, tmpstr, 16, NULL, NULL);
+		  tmpstr[nbtmpstr] = '\0';
+                  fprintf(lfi, "%s", tmpstr);
 #elif defined(__ANDROID__)
               fprintf(lfi, "%u\n", current_node->save_texttool_len);
 
@@ -15421,16 +15414,10 @@ static void do_png_embed_data(png_structp png_ptr)
                   fprintf(lfi, "%d ", (int)current_node->save_texttool_str[i]);
                 }
 #else
-              fprintf(lfi, "%u\n", current_node->save_texttool_len);
-
-              for (i = 0; i < current_node->save_texttool_len; i++)
-                {
-                  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
-                }
+		  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
 #endif
-
+                }
               fprintf(lfi, "\n");
-
 
               fprintf(lfi, "%u\n", current_node->save_color.r);
               fprintf(lfi, "%u\n", current_node->save_color.g);

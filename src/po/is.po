@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the tuxpaint package.
 #
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2002, 2003, 2004, 2014.
-# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017, 2020, 2021.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2017, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-10 01:02-0800\n"
-"PO-Revision-Date: 2021-11-19 08:50+0000\n"
+"PO-Revision-Date: 2022-02-14 13:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -275,40 +275,37 @@ msgstr "ZH_TW kínverska"
 
 #. Add menu items
 #: ../macos.m:56
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "About Tux Paint"
-msgstr "Tux Paint"
+msgstr "Um Tux Paint"
 
 #: ../macos.m:61
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "Hide Tux Paint"
-msgstr "Tux Paint"
+msgstr "Fela Tux Paint"
 
 #: ../macos.m:64
 msgid "Hide Others"
-msgstr ""
+msgstr "Fela annað"
 
 #: ../macos.m:67
 msgid "Show All"
-msgstr ""
+msgstr "Sýna allt"
 
 #: ../macos.m:71
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "Quit Tux Paint"
-msgstr "Tux Paint"
+msgstr "Hætta í Tux Paint"
 
 #. Put menu into the menubar
 #: ../macos.m:101 ../macos.m:109
 msgid "Window"
-msgstr ""
+msgstr "Gluggi"
 
 #. "Minimize" item
 #: ../macos.m:104
 msgid "Minimize"
-msgstr ""
+msgstr "Lágmarka"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -342,17 +339,15 @@ msgstr "Fimmhyrningur"
 
 #. Hexagon shape tool (6 sides)
 #: ../shapes.h:290 ../shapes.h:291
-#, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Hexagon"
-msgstr "Sexhyrndur tígulsteinn"
+msgstr "Sexhyrningur"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
 #: ../shapes.h:294 ../shapes.h:295
-#, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Heptagon"
-msgstr "Sexhyrndur tígulsteinn"
+msgstr "Sjöhyrningur"
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:298 ../shapes.h:299
@@ -405,17 +400,15 @@ msgstr "Fimmhyrningur hefur fimm hliðar."
 
 #. Description of a hexagon
 #: ../shapes.h:353 ../shapes.h:354
-#, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
-msgstr "Fimmhyrningur hefur fimm hliðar."
+msgstr "Sexhyrningur hefur sex hliðar."
 
 #. Description of a heptagon
 #: ../shapes.h:357 ../shapes.h:358
-#, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
-msgstr "Fimmhyrningur hefur fimm hliðar."
+msgstr "Sjöhyrningur hefur sjö hliðar."
 
 #. Description of an octagon
 #: ../shapes.h:361 ../shapes.h:362
@@ -609,7 +602,6 @@ msgstr ""
 "eða [Tab] til að ljúka texta."
 
 #: ../tools.h:132
-#, fuzzy
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -621,10 +613,10 @@ msgid ""
 "and clicking an existing label, you can move it, edit it, and change its "
 "text style."
 msgstr ""
-"Veldu stíl á letur. Smelltu á myndina og þú getur byrjað að skrifa. Ýttu á "
-"[Enter] eða [Tab] til að ljúka texta. Með því að nota valhnappinn og smella "
-"á texta sem fyrir er, þá getur þú fært textann, breytt honum og breytt "
-"útliti og stíl."
+"Veldu stíl á texta. Smelltu á myndina og þú getur byrjað að skrifa. Ýttu á"
+" [Enter] eða [Tab] til að ljúka texta. Með því að nota valhnappinn og smella"
+" á texta sem fyrir er, þá getur þú fært textann, breytt honum og breytt"
+" útliti og stíl."
 
 #. Magic tool instruction
 #: ../tools.h:138
@@ -677,7 +669,7 @@ msgid "Let go of the button to complete the line."
 msgstr "Slepptu hnappnum til að enda línuna."
 
 #: ../tools.h:167
-#, fuzzy, c-format
+#, c-format
 #| msgid ""
 #| "Let go of the button to complete the line. (Your line's angle is %.0f "
 #| "degrees.)"
@@ -692,11 +684,13 @@ msgid "Hold the button to stretch the shape."
 msgstr "Haltu hnappnum niðri til að teygja formið."
 
 #: ../tools.h:171
-#, fuzzy, c-format
+#, c-format
 #| msgid "Hold the button to stretch the shape."
 msgid ""
 "Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
-msgstr "Haltu hnappnum niðri til að teygja formið."
+msgstr ""
+"Haltu hnappnum niðri til að teygja formið. (Það er með stærðarhlutföllin \""
+"%.2g:1\".)"
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:174
@@ -723,6 +717,9 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
+"Smelltu á fyrirliggjandi merkingu (eða ýttu á [Tab] til að fletta í gegnum"
+" þær og á [Enter] "
+"til að velja). Þá geturðu fært hana, breytt henni og breytt stíl textans."
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:184
@@ -731,6 +728,9 @@ msgid ""
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
 msgstr ""
+"Smelltu á myndina ef þú vilt færa til þessa merkingu, skrifaðu til að breyta"
+" textanum og notaðu valkostina til að breyta stíl textans. Ýttu á [Tab] eða"
+" [Enter] þegar þú hefur klárað."
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:187
@@ -738,40 +738,46 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
 msgstr ""
+"Smelltu á fyrirliggjandi merkingu (eða ýttu á [Tab] til að fletta í gegnum"
+" þær og á [Enter] "
+"til að velja) til að setja textann endanlega á myndflötinn."
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:190
 msgid "This brush is animated; its shape changes as you draw!"
-msgstr ""
+msgstr "Þessi pensill er hreyfanlegur; lögun hans breytist þegar þú teiknar!"
 
 #: ../tools.h:191
 msgid "This brush changes depending on the angle."
-msgstr ""
+msgstr "Þessi pensill breytist miðað við hornið."
 
 #: ../tools.h:192
 msgid ""
 "This brush changes depending on the angle, and is animated; its shape "
 "changes as you draw!"
 msgstr ""
+"Þessi pensill breytist miðað við hornið og hann er hreyfanlegur; lögun hans"
+" breytist þegar þú teiknar!"
 
 #: ../tools.h:194
 msgid "This brush's spacing is now 1 pixel!"
-msgstr ""
+msgstr "Millibil pensilsins er núna 1 mynddíll!"
 
 #: ../tools.h:195
 #, c-format
 msgid ""
 "This brush's spacing is now about %1$d/%2$d the size of the brush shape."
 msgstr ""
+"Millibil pensilsins er núna um það bil %1$d/%2$d af stærð pensilformsins."
 
 #: ../tools.h:196
 msgid "This brush's spacing is now about the size of the brush shape."
-msgstr ""
+msgstr "Millibil pensilsins er núna um það bil jafnt stærð pensilformsins."
 
 #: ../tools.h:197
 #, c-format
 msgid "This brush's spacing is now about %d times as big as the brush shape."
-msgstr ""
+msgstr "Millibil pensilsins er núna um það bil %d stærra en pensilformið."
 
 #: ../tools.h:198
 #, c-format
@@ -779,11 +785,12 @@ msgid ""
 "This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
 "shape."
 msgstr ""
+"Millibil pensilsins er núna um það bil %1$d %2$d/%3$d stærra en pensilformið."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2271
 msgid "Do you really want to quit?"
-msgstr "Viltu í alvöru hætta?"
+msgstr "Viltu í alvörunni hætta?"
 
 #. Quit prompt positive response (quit)
 #: ../tuxpaint.c:2274
@@ -947,7 +954,7 @@ msgstr "Áfram"
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
 #: ../tuxpaint.c:8719
 msgid "Clear"
-msgstr ""
+msgstr "Hreinsa"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:9581
@@ -997,62 +1004,59 @@ msgstr "Veldu 2 eða fleiri teikningar sem á að breyta í GIF-hreyfimynd."
 #. Descriptions (names) of the color mixer tool's primary colors and shades
 #: ../tuxpaint.c:22259
 msgid "red"
-msgstr ""
+msgstr "rautt"
 
 #: ../tuxpaint.c:22260
-#, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
-msgstr "Gult!"
+msgstr "gult"
 
 #: ../tuxpaint.c:22261
-#, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
-msgstr "Himinblátt"
+msgstr "blátt"
 
 #: ../tuxpaint.c:22262
-#, fuzzy
 #| msgid "White!"
 msgid "white"
-msgstr "Hvítt!"
+msgstr "hvítt"
 
 #: ../tuxpaint.c:22263
 msgid "grey"
-msgstr ""
+msgstr "grátt"
 
 #: ../tuxpaint.c:22264
-#, fuzzy
 #| msgid "Black!"
 msgid "black"
-msgstr "Svart!"
+msgstr "svart"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
 #: ../tuxpaint.c:22269
 #, c-format
 msgid "Your color is %1$s %2$s."
-msgstr ""
+msgstr "Liturinn þinn er %1$s %2$s."
 
 #: ../tuxpaint.c:22270
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
-msgstr ""
+msgstr "Liturinn þinn er %1$s %2$s og %3$s %4$s."
 
 #: ../tuxpaint.c:22271
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
-msgstr ""
+msgstr "Liturinn þinn er %1$s %2$s, %3$s %4$s, og %5$s %6$s."
 
 #: ../tuxpaint.c:22272
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
-msgstr ""
+msgstr "Liturinn þinn er %1$s %2$s, %3$s %4$s, %5$s %6$s, og %7$s %8$s."
 
 #: ../tuxpaint.c:22273
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
+"Liturinn þinn er %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, og %9$s %10$s."
 
 #: ../tuxpaint.c:22274
 #, c-format
@@ -1060,11 +1064,13 @@ msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
 msgstr ""
+"Liturinn þinn er %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, og "
+"%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
 #: ../tuxpaint.c:23035 ../tuxpaint.c:23042
 msgid "entirely"
-msgstr ""
+msgstr "algerlega"
 
 #. Add "Color Select" color:
 #: ../tuxpaint.c:25857
@@ -1083,6 +1089,8 @@ msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
+"Smelltu á frumlitina (rautt, gult og blátt), hvítt (til að lita), grátt (til"
+" að tóna) og svart (til að skyggja) til að blanda nýjan lit."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "Tux Paint"
@@ -1555,10 +1563,9 @@ msgid "Panels"
 msgstr "Spjöld"
 
 #: ../../magic/src/perspective.c:156
-#, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
-msgstr "Renna"
+msgstr "Tíglaður aðdráttur"
 
 #: ../../magic/src/perspective.c:157
 msgid "Zoom"

@@ -877,10 +877,10 @@ static const char *locale_to_closest_locale(const char *inlocale)
         }
     }
 
-  /* locale must match at least three characters */
-  if (outlocale_score < 3)
+  /* locale must match at least two characters */
+  if (outlocale_score < 2)
     {
-      outlocale = NULL;
+      outlocale = "";
     }
 
   return outlocale;
