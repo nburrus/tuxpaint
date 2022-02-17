@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.January.28 (0.9.28)
+2022.February.11 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -21,6 +21,10 @@ http://www.tuxpaint.org/
       individual stars to appear, rather than a 'smear').
       Closes https://sourceforge.net/p/tuxpaint/bugs/243/
       (h/t Areti Tsolakidou for the suggestion)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Instructions at the bottom note when a brush is directional,
+      animated, or both, when chosing a new brush.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to "Stamp" tool:
@@ -64,6 +68,17 @@ http://www.tuxpaint.org/
       square buttons for letters/numbers/symbols).
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/212/
         (h/t Anat Caspi)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * WIP "Label" tool now offers a way to "apply" a label to the
+      canvas (as if it were 'painted' onto the drawing with the "Text"
+      tool).
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/213/ 
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * More instruction text are shown (and sound effects play) when
+      using the Label tool.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Color Picking:
     ------------------------------
@@ -73,30 +88,47 @@ http://www.tuxpaint.org/
       Release the mouse button over a color on the canvas to choose it
       (or outside the canvas to abort).
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/209/
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * A new color mixer has been added, allowing red (magenta-ish),
       yellow, and blue (cyan-ish) primary colors, along with white
       ("tint"), grey ("tone"), and black ("shade") to be added together to
       form a desired color.  Undo/Redo is available!
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Show a "pipette"-shaped mouse pointer when selecting a
       color from the color palette, or the picture.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Don't play 'bubble' paint sound when color picker or selector
       (or new mixer) are aborted (via their "Back" buttons or [Esc] key).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * New Magic Tools:
     ----------------
     * "Tile Zoom"; like the regular "Zoom", but tiles the results when
       you scale down (similar to "Panels", but with non-integer scaling).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
     ---------------------
     * Albanian translation
       Besnik Bleta <besnik@programeshqip.org>
 
+    * Japanese translation
+      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
+
+    * Korean translation
+      Mark Kim <markuskimius@gmail.com>
+
+    * Tux Paint for macOS can now localize the macOS menubar.
+      Mark Kim <markuskimius@gmail.com>
+
+    * Tux Paint for macOS can now detect the system language.
+      Mark Kim <markuskimius@gmail.com>
 
     * Updated `src/po/check_translations.sh` sanity-checking script
       so it properly finds the updated docs & other changes.
@@ -116,17 +148,55 @@ http://www.tuxpaint.org/
     * Windows installer will no longer show a dialogue to inform
       user of uninstallation when "/VERYSILENT" switch is specified
       (useful for automated installation/uninsta$llation processes).
+    * Pass the full path of locale directory to bindtextdomain().
+      Workaround to the issue that gettext() can not find translation
+      files after the update of MinGW/MSYS2 in January 2022.
       TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
 
-    * On macOS, use the CMD (⌘) key wherever CTRL is used on other OSes
+    * Initializing layout of onscreen keyboard (osk) to avoid undefined
+      behavior when changing keyboards.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Address issue with uppercase-only mode in Turkish locale.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Fixed a bug that can randomly crash Tux Paint when started in a language
+      with a input method map (*.im).
       Mark Kim <markuskimius@gmail.com>
 
-    * Use character class in macOS build script
-      (It appears \t is not compatible with certain versions of grep.)
+    * Avoid leaking memory when loading Label text strings from a
+      saved drawing. (Affected Windows only.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Ports & Building:
+    -----------------
+    * Windows
+      * Windows installer will no nlonger show a dialogue to inform
+        user of uninstallation when "/VERYSILENT" switch is specified
+        (useful for automated installation/uninsta$llation processes).
+        TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+
+      * Standard output and standard error are now redirected to the
+        files in User's save directory for example:
+
+              C:\Users\<username>\AppData\Roaming\TuxPaint
+
+    * macOS
       Mark Kim <markuskimius@gmail.com>
 
-    * Remove install stages not needed on macOS
-      Mark Kim <markuskimius@gmail.com>
+      * On macOS, use the CMD (⌘) key wherever CTRL is used on other OSes
+
+      * Use character class in macOS build script
+        (It appears \t is not compatible with certain versions of grep.)
+
+      * Remove install stages not needed on macOS
+
+      * When looking up paths of fonts, preferences, etc., macOS searches
+        two places, the system paths and the user paths under $HOME.
+        Now handling rare scenario where HOME is not set; if so,
+        now just searching the system path twice instead of searching the
+        system path followed by going into an undefined behavior
+        (possibly segfault crash).
 
   * Documentation updates:
     ---------------------

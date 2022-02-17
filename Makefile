@@ -651,12 +651,12 @@ bdist-win32:
 		PREFIX:=./win32/bdist \
 		DATA_PREFIX:=data \
 		DOC_PREFIX:=docs \
-		LOCALE_PREFIX:=locale \
 		IM_PREFIX:=im \
 		CONFDIR:=. \
 		COMPLETIONDIR:=. \
 		INCLUDE_PREFIX:=plugins/include \
-		MAGIC_PREFIX:=plugins
+		MAGIC_PREFIX:=plugins \
+		ARCH_DEFS:=-DBDIST_WIN32
 	strip -s tuxpaint.exe
 	make install \
 		PREFIX:=./win32/bdist \
@@ -668,10 +668,8 @@ bdist-win32:
 		CONFDIR:=./win32/bdist \
 		COMPLETIONDIR:=./win32/bdist \
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
-		MAGIC_PREFIX:=./win32/bdist/plugins
-	make install-dlls install-tpconf-i18n \
-		BIN_PREFIX:=./win32/bdist \
-		LOCALE_PREFIX:=./win32/bdist/locale
+		MAGIC_PREFIX:=./win32/bdist/plugins \
+		ARCH_INSTALL:=install-dlls install-tpconf-i18n
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
@@ -1131,7 +1129,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
+	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-o tuxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 	@$(RAD_CMD)
@@ -1167,7 +1165,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 # Broke gperf|sed up into two steps so that it will fail properly if gperf is not installed; there's probably a more elegant solution -bjk 2009.11.20
@@ -1189,130 +1187,130 @@ obj/parse_step1.c:	src/parse.gperf
 obj/parse.o:	obj/parse.c src/parse.h src/compiler.h
 	@echo
 	@echo "...Compiling the command-line and config file parser..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c obj/parse.c -o obj/parse.o
 
 obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
-	@echo
-	@echo "...Compiling i18n support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+	echo
+	echo "...Compiling i18n support..."
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/i18n.c -o obj/i18n.o
 
 obj/im.o:	src/im.c src/im.h src/debug.h
 	@echo
 	@echo "...Compiling IM support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/im.c -o obj/im.o
 
 obj/get_fname.o:	src/get_fname.c src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling filename support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/get_fname.c -o obj/get_fname.o
 
 obj/fonts.o:	src/fonts.c src/fonts.h src/dirwalk.h src/progressbar.h \
 		src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling font support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/fonts.c -o obj/fonts.o
 
 obj/dirwalk.o:	src/dirwalk.c src/dirwalk.h src/progressbar.h src/fonts.h \
 		src/debug.h
 	@echo
 	@echo "...Compiling directory-walking support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/dirwalk.c -o obj/dirwalk.o
 
 obj/cursor.o:	src/cursor.c src/cursor.h src/debug.h
 	@echo
 	@echo "...Compiling cursor support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/cursor.c -o obj/cursor.o
 
 obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling pixel functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/pixels.c -o obj/pixels.o
 
 obj/gifenc.o:	src/gifenc.c src/gifenc.h
 	@echo
 	@echo "...Compiling animated GIF export libary..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/gifenc.c -o obj/gifenc.o
 
 obj/playsound.o:	src/playsound.c src/playsound.h \
 			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling sound playback functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/playsound.c -o obj/playsound.o
 
 obj/fill.o:	src/fill.c src/fill.h \
 		src/rgblinear.h src/playsound.h src/pixels.h
 	@echo
 	@echo "...Compiling flood fill tool..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/fill.c -o obj/fill.o
 
 obj/progressbar.o:	src/progressbar.c src/progressbar.h \
 			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling progress bar functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/progressbar.c -o obj/progressbar.o
 
 obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h \
 			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling RGB to Linear functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/rgblinear.c -o obj/rgblinear.o
 
 obj/sounds.o:	src/sounds.c src/sounds.h
 	@echo
 	@echo "...Compiling sound effect list..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/sounds.c -o obj/sounds.o
 
 
 obj/BeOS_print.o:	src/BeOS_print.cpp src/BeOS_print.h
 	@echo
 	@echo "...Compiling BeOS print support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
 obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo
 	@echo "...Compiling win32 print support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
 obj/win32_trash.o:	src/win32_trash.c src/debug.h
 	@echo
 	@echo "...Compiling win32 trash support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/win32_trash.c -o obj/win32_trash.o
 
 obj/postscript_print.o:	src/postscript_print.c \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/postscript_print.c -o obj/postscript_print.o
 
-obj/macos.o: src/macos.c src/macos.h src/platform.h src/debug.h
+obj/macos.o: src/macos.m src/macos.h src/platform.h src/debug.h
 	@echo
 	@echo "...Compiling macOS support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-c src/macos.c -o obj/macos.o
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+		-c src/macos.m -o obj/macos.o
 
-obj/ios.o: src/ios.c src/ios.h src/platform.h src/debug.h
+obj/ios.o: src/ios.m src/ios.h src/platform.h src/debug.h
 	@echo
 	@echo "...Compiling iOS support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
-		-c src/ios.c -o obj/ios.o
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+		-c src/ios.m -o obj/ios.o
 
 obj/resource.o:	win32/resources.rc win32/resource.h
 	@echo
@@ -1323,7 +1321,7 @@ obj/onscreen_keyboard.o:	src/onscreen_keyboard.c src/onscreen_keyboard.h src/dir
 		src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling on screen keyboard support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/onscreen_keyboard.c -o obj/onscreen_keyboard.o
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in

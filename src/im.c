@@ -455,6 +455,7 @@ static int sm_add(STATE_MACHINE * sm, char *seq, const wchar_t * unicode, char f
           return 1;
         }
       sm_init(next->state);
+      sm_found = next->state;
 
       /* Increase store for next time, if necessary */
       if (++(sm->next_size) >= sm->next_maxsize)
@@ -465,8 +466,6 @@ static int sm_add(STATE_MACHINE * sm, char *seq, const wchar_t * unicode, char f
               return 1;
             }
         }
-
-      sm_found = next->state;
     }
 
   /* Recurse */

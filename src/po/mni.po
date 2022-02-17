@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-28 02:17-0800\n"
+"POT-Creation-Date: 2022-02-10 01:02-0800\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -275,6 +275,43 @@ msgstr "থাই"
 msgid "ZH_TW"
 msgstr "ZH_TW"
 
+#. Add menu items
+#: ../macos.m:56
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "About Tux Paint"
+msgstr "তক্স পেইন্ত"
+
+#: ../macos.m:61
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Hide Tux Paint"
+msgstr "তক্স পেইন্ত"
+
+#: ../macos.m:64
+msgid "Hide Others"
+msgstr ""
+
+#: ../macos.m:67
+msgid "Show All"
+msgstr ""
+
+#: ../macos.m:71
+#, fuzzy
+#| msgid "Tux Paint"
+msgid "Quit Tux Paint"
+msgstr "তক্স পেইন্ত"
+
+#. Put menu into the menubar
+#: ../macos.m:101 ../macos.m:109
+msgid "Window"
+msgstr ""
+
+#. "Minimize" item
+#: ../macos.m:104
+msgid "Minimize"
+msgstr ""
+
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
 msgid "Square"
@@ -539,7 +576,7 @@ msgstr "অনৌবা"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8646
+#: ../tools.h:98 ../tuxpaint.c:8695
 msgid "Open"
 msgstr "হাংদোকপা"
 
@@ -591,8 +628,8 @@ msgstr ""
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
-"and clicking an existing label, you can move it, edit it and change its text "
-"style."
+"and clicking an existing label, you can move it, edit it, and change its "
+"text style."
 msgstr ""
 "তেক্সকী স্তাইল অমা খল্লো. অদোমগী দ্রোইংদা ক্লিক তৌরো অদুগা তাইপ তৌবা হৌবা য়ারগনি. "
 "তেক্স অসি মপুং ফানবা [Enter] নত্রগা [Tab] নম্মো. সেলেক্তর বতন শিজিন্নদুনা অমসুং "
@@ -687,289 +724,352 @@ msgstr "মওং ‍(শেপ) অসি কোয়না লৈনবা ম�
 msgid "OK then… Let’s keep drawing this one!"
 msgstr "মদু য়ারে... অদুগা মসি য়েকখিসি!"
 
+#. Instructions to show when the Label tool's selector mode is activated
+#: ../tools.h:181
+msgid ""
+"Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
+"to choose). Then, you can move it, edit it, and change its text style."
+msgstr ""
+
+#. Instructions to show when a Label has been chosen with the selector
+#: ../tools.h:184
+msgid ""
+"Click in your picture if you wish to reposition this label, type to change "
+"the text, and use the options to change its text style. Press [Enter] or "
+"[Tab] when you're finished."
+msgstr ""
+
+#. Instructions to show when the Label tool's apply mode is activated
+#: ../tools.h:187
+msgid ""
+"Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
+"to choose) to permanently apply the text to the canvas."
+msgstr ""
+
+#. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
+#: ../tools.h:190
+msgid "This brush is animated; its shape changes as you draw!"
+msgstr ""
+
+#: ../tools.h:191
+msgid "This brush changes depending on the angle."
+msgstr ""
+
+#: ../tools.h:192
+msgid ""
+"This brush changes depending on the angle, and is animated; its shape "
+"changes as you draw!"
+msgstr ""
+
+#: ../tools.h:194
+msgid "This brush's spacing is now 1 pixel!"
+msgstr ""
+
+#: ../tools.h:195
+#, c-format
+msgid ""
+"This brush's spacing is now about %1$d/%2$d the size of the brush shape."
+msgstr ""
+
+#: ../tools.h:196
+msgid "This brush's spacing is now about the size of the brush shape."
+msgstr ""
+
+#: ../tools.h:197
+#, c-format
+msgid "This brush's spacing is now about %d times as big as the brush shape."
+msgstr ""
+
+#: ../tools.h:198
+#, c-format
+msgid ""
+"This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
+"shape."
+msgstr ""
+
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2271
 msgid "Do you really want to quit?"
 msgstr "অদোম তশেংনা থাদোকপা পামলব্রা?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2274
 msgid "Yes, I’m done!"
 msgstr "হোয়, ঐ তৌরে!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2264 ../tuxpaint.c:2291
+#: ../tuxpaint.c:2277 ../tuxpaint.c:2304
 msgid "No, take me back!"
 msgstr "নত্তে, ঐবু হান্নগী মফমদা পুবীরো!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2268
+#: ../tuxpaint.c:2281
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "অদোম্না থাদোক্লবদি, অদোমগী লাই মাংখ্রগনি! মসি সেভ তৌগদ্রা?"
 
-#: ../tuxpaint.c:2269 ../tuxpaint.c:2274
+#: ../tuxpaint.c:2282 ../tuxpaint.c:2287
 msgid "Yes, save it!"
 msgstr "হোয়, মসি সেভ তৌরো!"
 
-#: ../tuxpaint.c:2270 ../tuxpaint.c:2275
+#: ../tuxpaint.c:2283 ../tuxpaint.c:2288
 msgid "No, don’t bother saving!"
 msgstr "নত্তে, সেভ তৌবগীদমক করিসু খল্লুনু!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2273
+#: ../tuxpaint.c:2286
 msgid "Save your picture first?"
 msgstr "অদোমগী লাইদু হান্না সেভ তৌগদ্রা?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2278
+#: ../tuxpaint.c:2291
 msgid "Can’t open that picture!"
 msgstr "লাই অদু হাংদোকপা ঙমদে!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2281 ../tuxpaint.c:2286 ../tuxpaint.c:2295 ../tuxpaint.c:2302
-#: ../tuxpaint.c:2311 ../tuxpaint.c:2316
+#: ../tuxpaint.c:2294 ../tuxpaint.c:2299 ../tuxpaint.c:2308 ../tuxpaint.c:2315
+#: ../tuxpaint.c:2324 ../tuxpaint.c:2329
 msgid "OK"
 msgstr "য়ারে"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2285
+#: ../tuxpaint.c:2298
 msgid "There are no saved files!"
 msgstr "সেভ তৌবা ফাইল অমত্তা লৈতে!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2289
+#: ../tuxpaint.c:2302
 msgid "Print your picture now?"
 msgstr "অদোমগী লাই হৌজিক নমথোক্কদ্রা?"
 
-#: ../tuxpaint.c:2290
+#: ../tuxpaint.c:2303
 msgid "Yes, print it!"
 msgstr "হোয়, মসি নমথোকউ!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2294
+#: ../tuxpaint.c:2307
 msgid "Your picture has been printed!"
 msgstr "অদোমগী লাইদু নমথোক্লে!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2298
+#: ../tuxpaint.c:2311
 msgid "Sorry! Your picture could not be printed!"
 msgstr "ঙাকপিগনি! অদোমগী লাই অদু নমথোকপা য়াররোই!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2301
+#: ../tuxpaint.c:2314
 msgid "You can’t print yet!"
 msgstr "অদোম্না হৌজিকসু নমথোকপা য়ারোই!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2318
 msgid "Erase this picture?"
 msgstr "লাই অসি মুত্থৎকদ্রা?"
 
-#: ../tuxpaint.c:2306
+#: ../tuxpaint.c:2319
 msgid "Yes, erase it!"
 msgstr "হোয়, মসি মুত্থৎপিরো!"
 
-#: ../tuxpaint.c:2307
+#: ../tuxpaint.c:2320
 msgid "No, don’t erase it!"
 msgstr "নত্তে, মসি মুত্থৎপিগনু!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2310
+#: ../tuxpaint.c:2323
 msgid "Remember to use the left mouse button!"
 msgstr "ওইথংবা মাউসকী বতন শিজিন্নবা নিংশিংনবিয়ু!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2314
+#: ../tuxpaint.c:2327
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "অদোমগী লাইদু নমথোক্লে!"
 
-#: ../tuxpaint.c:2315
+#: ../tuxpaint.c:2328
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "অদোমগী লাইদু নমথোক্লে!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2319
+#: ../tuxpaint.c:2332
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "ঙাকপিগনি! অদোমগী লাই অদু নমথোকপা য়াররোই!"
 
-#: ../tuxpaint.c:2320
+#: ../tuxpaint.c:2333
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "ঙাকপিগনি! অদোমগী লাই অদু নমথোকপা য়াররোই!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2324
+#: ../tuxpaint.c:2337
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "অদোম্না পাম্বা লাইদু খল্লো, অদুগা “প্লে” ক্লিক তৌরো."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2537
+#: ../tuxpaint.c:2547
 msgid "Sound muted."
 msgstr "খোনজেল থোক্ত্রে."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2542
+#: ../tuxpaint.c:2552
 msgid "Sound unmuted."
 msgstr "খোনজেল থোকএ."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3311
+#: ../tuxpaint.c:3304
 msgid "Please wait…"
 msgstr "ঙাইহাক্তং ঙাইবিয়ু..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8649
+#: ../tuxpaint.c:8698
 msgid "Erase"
 msgstr "মুত্থৎলো"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8652
+#: ../tuxpaint.c:8701
 msgid "Slides"
 msgstr "স্লাইদশিং"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8655
+#: ../tuxpaint.c:8704
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8658
+#: ../tuxpaint.c:8707
 msgid "Back"
 msgstr "মতুং"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8661
+#: ../tuxpaint.c:8710
 msgid "Play"
 msgstr "প্লে"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8664
+#: ../tuxpaint.c:8713
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8667
+#: ../tuxpaint.c:8716
 msgid "Next"
 msgstr "মথং"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8670
+#: ../tuxpaint.c:8719
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9532
+#: ../tuxpaint.c:9581
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13231
+#: ../tuxpaint.c:13291
 msgid "Yes"
 msgstr "হোয়"
 
-#: ../tuxpaint.c:13235
+#: ../tuxpaint.c:13295
 msgid "No"
 msgstr "নত্তে"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14385
+#: ../tuxpaint.c:14449
 msgid "Replace the picture with your changes?"
 msgstr "লাই অদু অদোমগী অহোংবা অদুনা মহুৎ শিন্দোক্কদ্রা?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14389
+#: ../tuxpaint.c:14453
 msgid "Yes, replace the old one!"
 msgstr "হোয়, অরিবা অদু মহুৎ শিন্দোকউ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14393
+#: ../tuxpaint.c:14457
 msgid "No, save a new file!"
 msgstr "নত্তে, অনৌবা ফাইল অমা সেভ তৌরো!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15657
+#: ../tuxpaint.c:15721
 msgid "Choose the picture you want, then click “Open”."
 msgstr "অদোম্না পাম্বা লাই অদু খল্লো, অদুগা “হাংদোকপা” ক্লিক তৌরো."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17083
+#: ../tuxpaint.c:17147
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22195
+#: ../tuxpaint.c:22259
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:22196
+#: ../tuxpaint.c:22260
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "হঙ্গাম্পাল মচু!"
 
-#: ../tuxpaint.c:22197
+#: ../tuxpaint.c:22261
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "অতিয়া মচু!"
 
-#: ../tuxpaint.c:22198
+#: ../tuxpaint.c:22262
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "অঙৌবা!"
 
-#: ../tuxpaint.c:22199
+#: ../tuxpaint.c:22263
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:22200
+#: ../tuxpaint.c:22264
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "অমুবা!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22205
+#: ../tuxpaint.c:22269
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:22206
+#: ../tuxpaint.c:22270
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:22207
+#: ../tuxpaint.c:22271
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:22208
+#: ../tuxpaint.c:22272
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:22209
+#: ../tuxpaint.c:22273
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:22210
+#: ../tuxpaint.c:22274
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -977,23 +1077,23 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:22971 ../tuxpaint.c:22978
+#: ../tuxpaint.c:23035 ../tuxpaint.c:23042
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:25793
+#: ../tuxpaint.c:25857
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
-#: ../tuxpaint.c:25802
+#: ../tuxpaint.c:25866
 msgid "Pick a color."
 msgstr "মচু অমা খল্লো."
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:25813
+#: ../tuxpaint.c:25877
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1522,29 +1622,35 @@ msgstr "অদোমগী লাইগী শরুক্তা খোনজে
 msgid "Click to add noise to your entire picture."
 msgstr "অদোমগী লাই অপুম্বদা অরাংবা খোনজেল হাপচিন্নবা ক্লিক তৌরো"
 
-#: ../../magic/src/perspective.c:151
+#: ../../magic/src/perspective.c:154
 msgid "Perspective"
 msgstr "পর্সপেক্তিভ"
 
-#: ../../magic/src/perspective.c:152
+#: ../../magic/src/perspective.c:155
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:153
-msgid "Zoom"
+#: ../../magic/src/perspective.c:156
+#, fuzzy
+#| msgid "Zoom"
+msgid "Tile Zoom"
 msgstr "জুম"
 
 #: ../../magic/src/perspective.c:157
+msgid "Zoom"
+msgstr "জুম"
+
+#: ../../magic/src/perspective.c:161
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "চুথেক্তা ক্লিক তৌরো অদুগা অদোম্না লাই অদু শাংদোকপা পাম্বা মফমদা চিংঙো."
 
-#: ../../magic/src/perspective.c:159
+#: ../../magic/src/perspective.c:163
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "অদোমগী পেইন্তিং অসি নেগেতিভ ওন্থোক্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "লাই অদু জুম ইন তৌনবা ক্লিক তৌরো অদুগা চিংখৎলো নত্রগা জুম আউত তৌনবা চিংথরো."
 

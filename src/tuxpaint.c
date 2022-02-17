@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 28, 2022
+  June 14, 2002 - February 11, 2022
 */
 
 #include "platform.h"
@@ -553,6 +553,18 @@ int iswprint(wchar_t wc)
 #include "compiler.h"
 
 
+/* Convert floats to fractions between (min/max) and ((max-min)/max)
+   (anything with smaller resolution will round up or down) */
+#define SLOPPY_FRAC_MIN (float) 1
+#define SLOPPY_FRAC_MAX (float) 10
+static void sloppy_frac(float f, int * numer, int * denom);
+
+
+static void select_label_node(int * old_x, int * old_y);
+static void apply_label_node(int old_x, int old_y);
+static void reposition_onscreen_keyboard(int y);
+
+
 /* EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL */
 #ifndef __APPLE__
 #if VIDEO_BPP==32
@@ -675,12 +687,12 @@ enum
   STARTER_SCENE
 };
 
+/* Modes of the "Label" tool */
 enum
 {
-  LABEL_OFF,
-  LABEL_LABEL,
-  LABEL_SELECT
-    /* , LABEL_ROTATE */
+  LABEL_LABEL,  /* Adding new label(s) */
+  LABEL_SELECT, /* "Select" button clicked; user is selecting a label to edit */
+  LABEL_APPLY   /* "Apply" button clicked; user is selecting a label to apply permanently to the canvas */
 };
 
 
@@ -1605,7 +1617,7 @@ static SDL_Surface *img_grow, *img_shrink;
 static SDL_Surface *img_magic_paint, *img_magic_fullscreen;
 static SDL_Surface *img_shapes_corner, *img_shapes_center;
 static SDL_Surface *img_bold, *img_italic;
-static SDL_Surface *img_label, *img_label_select;
+static SDL_Surface *img_label_select, *img_label_apply;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_paintwell, *img_color_sel, *img_color_mix;
 static int color_picker_x, color_picker_y;
 static int color_mixer_reset;
@@ -2093,6 +2105,7 @@ static void draw_none(void);
 static void do_undo(void);
 static void do_redo(void);
 static void render_brush(void);
+static void show_brush_tip(void);
 static void _xorpixel(SDL_Surface * surf, int x, int y);
 static void line_xor(int x1, int y1, int x2, int y2);
 static void rect_xor(int x1, int y1, int x2, int y2);
@@ -2416,6 +2429,8 @@ enum
 
 int shape_reverse;
 
+on_screen_keyboard *new_kbd;
+SDL_Rect kbd_rect;
 
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
@@ -2438,7 +2453,6 @@ static void mainloop(void)
   int whicht = 0;
   int line_start_x = 0;
   int line_start_y = 0;
-  int j = 0;
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
 
@@ -2463,8 +2477,6 @@ static void mainloop(void)
   Uint16 key_unicode;
   SDLKey key_down;
 #endif
-  on_screen_keyboard *new_kbd;
-  SDL_Rect kbd_rect;
 
   float angle;
   char angle_tool_text[256]; // FIXME Consider malloc'ing
@@ -2951,7 +2963,7 @@ static void mainloop(void)
                   /* Handle key in text tool: */
 
                   if (((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) && cursor_x != -1 && cursor_y != -1) ||
-                      (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+                      (cur_tool == TOOL_LABEL && (cur_label == LABEL_SELECT || cur_label == LABEL_APPLY)))
                     {
                       static int redraw = 0;
                       wchar_t *im_cp = im_data.s;
@@ -3006,6 +3018,7 @@ static void mainloop(void)
                         {
                           if (*im_cp == L'\b')
                             {
+                              /* [Backspace] */
                               hide_blinking_cursor();
                               if (texttool_len > 0)
                                 {
@@ -3030,6 +3043,8 @@ static void mainloop(void)
                             }
                           else if (*im_cp == L'\r')
                             {
+                              /* [Enter]... */
+
                               int font_height;
 
                               font_height = TuxPaint_Font_FontHeight(getfonthandle(cur_font));
@@ -3037,6 +3052,8 @@ static void mainloop(void)
                               hide_blinking_cursor();
                               if (texttool_len > 0)
                                 {
+                                  /* [Enter] to finish entering text */
+
                                   rec_undo_buffer();
                                   do_render_cur_text(1);
                                   label_node_to_edit = NULL;
@@ -3068,12 +3085,15 @@ static void mainloop(void)
                                 }
                               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                                 {
+                                  /* [Enter] to finish erasing text from a pre-existing Label */
+
                                   rec_undo_buffer();
                                   have_to_rec_label_node = TRUE;
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
+
+                                  playsound(screen, 0, SND_LINE_END, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
                                   if (been_saved)
                                     {
@@ -3087,59 +3107,38 @@ static void mainloop(void)
                                     }
                                 }
 
-                              /* Select a node to edit */
                               else if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
                                 {
+                                  /* [Enter] to select a node to edit */
+
                                   label_node_to_edit =
                                     search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3,
                                                       highlighted_label_node->save_y + 3, 0);
+
                                   if (label_node_to_edit)
-                                    {
-                                      cur_label = LABEL_LABEL;
-                                      cur_thing = label_node_to_edit->save_cur_font;
-                                      do_setcursor(cursor_insertion);
-                                      i = 0;
-                                      label_node_to_edit->is_enabled = FALSE;
-                                      derender_node(&label_node_to_edit);
-
-                                      texttool_len = select_texttool_len;
-                                      while (i < texttool_len)
-                                        {
-                                          texttool_str[i] = select_texttool_str[i];
-                                          i = i + 1;
-                                        }
-                                      texttool_str[i] = L'\0';
-                                      cur_color = select_color;
-                                      old_x = select_x;
-                                      old_y = select_y;
-                                      cur_font = select_cur_font;
-                                      text_state = select_text_state;
-                                      text_size = select_text_size;
-                                      for (j = 0; j < num_font_families; j++)
-                                        {
-                                          if (user_font_families[j] && user_font_families[j]->handle)
-                                            {
-                                              TuxPaint_Font_CloseFont(user_font_families[j]->handle);
-                                              user_font_families[j]->handle = NULL;
-                                            }
-                                        }
-                                      draw_fonts();
-                                      update_screen_rect(&r_toolopt);
-
-                                      cursor_x = old_x;
-                                      cursor_y = old_y;
-                                      cursor_left = old_x;
-
-                                      draw_colors(COLORSEL_REFRESH);
-                                      draw_fonts();
-                                    }
-
+                                    select_label_node(&old_x, &old_y);
 
                                   do_render_cur_text(0);
+                                }
 
+                              else if (cur_tool == TOOL_LABEL && cur_label == LABEL_APPLY)
+                                {
+                                  /* [Enter] to select a node to apply it to the canvas */
+
+                                  label_node_to_edit =
+                                    search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3,
+                                                      highlighted_label_node->save_y + 3, 0);
+
+                                  if (label_node_to_edit)
+                                    {
+                                      apply_label_node(old_x, old_y);
+                                      reposition_onscreen_keyboard(old_y);
+                                    }
                                 }
                               else
                                 {
+                                  /* [Enter] with no text; just move insertion cursor down to the next 'line' */
+
                                   cursor_x = cursor_left;
                                   cursor_y = min(cursor_y + font_height, canvas->h - font_height);
                                 }
@@ -3154,9 +3153,12 @@ static void mainloop(void)
                             }
                           else if (*im_cp == L'\t')
                             {
+                              /* [Tab]... */
 
                               if (texttool_len > 0)
                                 {
+                                  /* [Tab] to finish entering text */
+
                                   rec_undo_buffer();
                                   do_render_cur_text(1);
                                   label_node_to_edit = NULL;
@@ -3182,12 +3184,15 @@ static void mainloop(void)
                                 }
                               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                                 {
+                                  /* [Tab] to finish erasing text from a pre-existing Label */
+
                                   rec_undo_buffer();
                                   have_to_rec_label_node = TRUE;
                                   add_label_node(0, 0, 0, 0, NULL);
                                   derender_node(&label_node_to_edit);
                                   label_node_to_edit = NULL;
-                                  /* playsound(screen, 0, SND_DELETE_LABEL, 0, SNDPOS_CENTER); *//* FIXME lack of specific sound */
+
+                                  playsound(screen, 0, SND_LINE_END, 0, SNDPOS_CENTER, SNDDIST_NEAR);
 
                                   if (been_saved)
                                     {
@@ -3200,14 +3205,13 @@ static void mainloop(void)
                                       update_screen_rect(&r_tools);
                                     }
                                 }
-                              /* Cycle accross the nodes */
-                              else if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
+                              else if (cur_tool == TOOL_LABEL && (cur_label == LABEL_SELECT || cur_label == LABEL_APPLY))
                                 {
+                                  /* [Tab] to cycle between the Labels (nodes) */
+
                                   cycle_highlighted_label_node();
                                   highlight_label_nodes();
                                 }
-
-
 
 #ifdef SPEECH
 #ifdef __APPLE__
@@ -3224,6 +3228,8 @@ static void mainloop(void)
                               if (!iswprint(*im_cp))
                                 break;
 #endif
+                              /* Printable characters... */
+
                               if (texttool_len < (sizeof(texttool_str) / sizeof(wchar_t)) - 1)
                                 {
                                   int old_cursor_textwidth = cursor_textwidth;
@@ -3464,20 +3470,11 @@ static void mainloop(void)
                                                      img_oskcapslock, img_oskshift,
                                                      onscreen_keyboard_disable_change);
                                     }
-                                  if (kbd == NULL)
-                                    {
-                                      fprintf(stderr, "kbd = NULL\n");
-                                    }
 
-                                  kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
-                                  if (old_y > canvas->h / 2)
-                                    kbd_rect.y = 0;
+                                  if (kbd == NULL)
+                                    fprintf(stderr, "kbd = NULL\n");
                                   else
-                                    kbd_rect.y = canvas->h - kbd->surface->h;
-                                  kbd_rect.w = kbd->surface->w;
-                                  kbd_rect.h = kbd->surface->h;
-                                  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-                                  update_screen_rect(&kbd_rect);
+                                    reposition_onscreen_keyboard(0);
                                 }
                               if (!font_thread_done)
                                 {
@@ -4309,7 +4306,7 @@ static void mainloop(void)
                                       /* One of the middle buttons: */
                                       if (which & 1)
                                         {
-                                          /*  right button: Italic: */
+                                          /* right button: Italic: */
                                           if (text_state & TTF_STYLE_ITALIC)
                                             {
                                               text_state &= ~TTF_STYLE_ITALIC;
@@ -4343,9 +4340,10 @@ static void mainloop(void)
                                       /* One of the top buttons: */
                                       if (which & 1)
                                         {
-                                          /* Select button: */
+                                          /* Top right: Select button: */
                                           if (cur_label == LABEL_SELECT)
                                             {
+                                              /* Already in label select mode; turn it off */
                                               cur_label = LABEL_LABEL;
                                               update_canvas(0, 0, WINDOW_WIDTH - r_ttoolopt.w, (button_h * buttons_tall) + r_ttoolopt.h);
                                               if (onscreen_keyboard)
@@ -4359,9 +4357,12 @@ static void mainloop(void)
                                                   SDL_StartTextInput();
 
                                                 }
+                                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_LABEL], 1);
+                                              playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                             }
                                           else
                                             {
+                                              /* Want to select a label */
                                               if (are_labels())
                                                 {
                                                   update_canvas_ex_r(kbd_rect.x - r_ttools.w, kbd_rect.y,
@@ -4386,8 +4387,63 @@ static void mainloop(void)
 
                                                   cur_label = LABEL_SELECT;
                                                   highlight_label_nodes();
+
+                                                  draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_ENABLED, 1);
+                                                  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                                 }
                                             }
+                                          toolopt_changed = 1;
+                                        }
+                                      else
+                                        {
+                                          /* Top left: "Apply" label */
+                                          if (cur_label == LABEL_APPLY)
+                                            {
+                                              /* Already in label apply mode; turn it off */
+                                              cur_label = LABEL_LABEL;
+                                              update_canvas(0, 0, WINDOW_WIDTH - r_ttoolopt.w, (button_h * buttons_tall) + r_ttoolopt.h);
+                                              if (onscreen_keyboard)
+                                                {
+                                                  SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+                                                  update_screen_rect(&kbd_rect);
+                                                }
+
+                                              draw_tux_text(TUX_GREAT, tool_tips[TOOL_LABEL], 1);
+                                              playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+                                            }
+                                          else
+                                            {
+                                              /* Want to apply a label */
+                                              if (are_labels())
+                                                {
+                                                  update_canvas_ex_r(kbd_rect.x - r_ttools.w, kbd_rect.y,
+                                                                     kbd_rect.x + kbd_rect.w, kbd_rect.y + kbd_rect.h,
+                                                                     1);
+                                                  if (texttool_len > 0)
+                                                    {
+                                                      rec_undo_buffer();
+                                                      do_render_cur_text(1);
+                                                      texttool_len = 0;
+                                                      cursor_textwidth = 0;
+                                                      label_node_to_edit = NULL;
+                                                    }
+                                                  else if (label_node_to_edit)
+                                                    {
+                                                      rec_undo_buffer();
+                                                      have_to_rec_label_node = TRUE;
+                                                      add_label_node(0, 0, 0, 0, NULL);
+                                                      label_node_to_edit = NULL;
+
+                                                    }
+
+                                                  cur_label = LABEL_APPLY;
+                                                  highlight_label_nodes();
+
+                                                  draw_tux_text(TUX_GREAT, TIP_LABEL_APPLIER_ENABLED, 1);
+                                                  playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+                                                }
+                                            }
+
                                           toolopt_changed = 1;
                                         }
                                     }
@@ -4438,6 +4494,9 @@ static void mainloop(void)
 
                               if (new_size != prev_size)
                                 {
+                                  char tmp_tip[256];
+                                  int numer, denom;
+
                                   brushes_spacing[cur_brush] = new_size;
                                   draw_brushes_spacing();
                                   update_screen_rect(&r_toolopt);
@@ -4446,6 +4505,51 @@ static void mainloop(void)
                                     control_sound = SND_SHRINK;
                                   else
                                     control_sound = SND_GROW;
+
+                                  if (new_size == 0)
+                                    {
+                                      draw_tux_text(TUX_GREAT, TIP_BRUSH_SPACING_ZERO, 1);
+                                    }
+                                  else if (new_size / max(w, h) == 1)
+                                    {
+                                      draw_tux_text(TUX_GREAT, TIP_BRUSH_SPACING_SAME, 1);
+                                    }
+                                  else if (new_size > max(w, h))
+                                    {
+                                      double ratio, i, f;
+
+                                      ratio = (float) new_size / (float) max(w, h);
+                                      f = modf(ratio, &i);
+
+                                      if (f > (SLOPPY_FRAC_MAX - SLOPPY_FRAC_MIN) / SLOPPY_FRAC_MAX)
+                                        {
+                                          i++;
+                                          f = 0.0;
+                                        }
+                                      else if (f < SLOPPY_FRAC_MIN / SLOPPY_FRAC_MAX)
+                                        {
+                                          f = 0.0;
+                                        }
+
+                                      if (f == 0.0)
+                                        {
+                                          snprintf(tmp_tip, sizeof(tmp_tip), gettext(TIP_BRUSH_SPACING_MORE), (int) i);
+                                        }
+                                      else
+                                        {
+                                          sloppy_frac(f, &numer, &denom);
+
+                                          snprintf(tmp_tip, sizeof(tmp_tip), gettext(TIP_BRUSH_SPACING_MORE_FRAC), (int) i, numer, denom);
+                                        }
+
+                                      draw_tux_text(TUX_GREAT, tmp_tip, 1);
+                                    }
+                                  else if (new_size < max(w, h))
+                                    {
+                                      sloppy_frac((float) new_size / (float) max(w, h), &numer, &denom);
+                                      snprintf(tmp_tip, sizeof(tmp_tip), gettext(TIP_BRUSH_SPACING_LESS), numer, denom);
+                                      draw_tux_text(TUX_GREAT, tmp_tip, 1);
+                                    }
 
                                   playsound(screen, 0, control_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                                 }
@@ -4521,7 +4625,10 @@ static void mainloop(void)
                           render_brush();
 
                           if (do_draw)
-                            draw_brushes();
+                            {
+                              draw_brushes();
+                              show_brush_tip();
+                            }
                         }
                       else if (cur_tool == TOOL_ERASER)
                         {
@@ -5106,65 +5213,22 @@ static void mainloop(void)
                       /* Text and Label Tools! */
                       if (cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT)
                         {
+                              /* Click to select a node to edit */
+
+                              label_node_to_edit = search_label_list(&highlighted_label_node, old_x, old_y, 0);
+
+                              if (label_node_to_edit)
+                                select_label_node(&old_x, &old_y);
+
+                              do_render_cur_text(0);
+                            }
+                          else if (cur_tool == TOOL_LABEL && cur_label == LABEL_APPLY)
+                            {
+                              /* Click to select a node to apply it to the canvas */
+
                               label_node_to_edit = search_label_list(&highlighted_label_node, old_x, old_y, 0);
                               if (label_node_to_edit)
-                                {
-                                  cur_label = LABEL_LABEL;
-                                  cur_thing = label_node_to_edit->save_cur_font;
-                                  do_setcursor(cursor_insertion);
-                                  i = 0;
-                                  label_node_to_edit->is_enabled = FALSE;
-                                  derender_node(&label_node_to_edit);
-
-                                  texttool_len = select_texttool_len;
-                                  while (i < texttool_len)
-                                    {
-                                      texttool_str[i] = select_texttool_str[i];
-                                      i = i + 1;
-                                    }
-                                  texttool_str[i] = L'\0';
-                                  cur_color = select_color;
-                                  old_x = select_x;
-                                  old_y = select_y;
-                                  cur_font = select_cur_font;
-                                  text_state = select_text_state;
-                                  text_size = select_text_size;
-                                  // int j;
-                                  for (j = 0; j < num_font_families; j++)
-                                    {
-                                      if (user_font_families[j] && user_font_families[j]->handle)
-                                        {
-                                          TuxPaint_Font_CloseFont(user_font_families[j]->handle);
-                                          user_font_families[j]->handle = NULL;
-                                        }
-                                    }
-                                  draw_fonts();
-                                  update_screen_rect(&r_toolopt);
-                                  if (onscreen_keyboard)
-                                    {
-                                      if (old_y < r_canvas.h / 2)
-                                        kbd_rect.y = r_canvas.h - kbd->surface->h;
-                                      else
-                                        kbd_rect.y = 0;
-
-                                      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-                                      update_screen_rect(&kbd_rect);
-                                    }
-
-                                  do_render_cur_text(0);
-                                  draw_colors(COLORSEL_REFRESH);
-                                  draw_fonts();
-                                }
-
-                              if (onscreen_keyboard && !kbd)
-                                {
-                                  r_tir.y = (float)old_y / render_scale;
-                                  SDL_SetTextInputRect(&r_tir);
-                                  SDL_StartTextInput();
-                                }
-                              do_render_cur_text(0);
-                              draw_colors(COLORSEL_REFRESH);
-                              draw_fonts();
+                                apply_label_node(old_x, old_y);
                             }
                           else
                             hide_blinking_cursor();
@@ -5182,7 +5246,7 @@ static void mainloop(void)
                                  }
                                */
                             }
-                          if (onscreen_keyboard && kbd && HIT(kbd_rect) && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+                          if (onscreen_keyboard && kbd && HIT(kbd_rect) && !(cur_tool == TOOL_LABEL && (cur_label == LABEL_SELECT || cur_label == LABEL_APPLY)))
                             {
                               new_kbd = osk_clicked(kbd, old_x - kbd_rect.x + r_canvas.x, old_y - kbd_rect.y + r_canvas.y);
                               /* keyboard has changed, erase the old, note that the old kbd has yet been freed. */
@@ -5192,11 +5256,7 @@ static void mainloop(void)
                                   update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w, kbd_rect.y + kbd_rect.h,
                                                    0);
                                   /* set kbd_rect dimensions according to the new keyboard */
-                                  kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
-                                  if (kbd_rect.y != 0)
-                                    kbd_rect.y = canvas->h - kbd->surface->h;
-                                  kbd_rect.w = kbd->surface->w;
-                                  kbd_rect.h = kbd->surface->h;
+                                  reposition_onscreen_keyboard(-1);
                                 }
                               SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
                               update_screen_rect(&kbd_rect);
@@ -5207,32 +5267,12 @@ static void mainloop(void)
                               cursor_y = old_y;
                               cursor_left = old_x;
 
-                              if (onscreen_keyboard && !(cur_tool == TOOL_LABEL && cur_label == LABEL_SELECT))
+                              if (onscreen_keyboard && !(cur_tool == TOOL_LABEL && (cur_label == LABEL_SELECT || cur_label == LABEL_APPLY)))
                                 {
-                                  if (old_y < r_canvas.h / 2)
-                                    {
-                                      if (kbd_rect.y != r_canvas.h - kbd->surface->h)
-                                        {
-                                          update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w,
-                                                           kbd_rect.y + kbd_rect.h, 0);
-                                          update_screen_rect(&kbd_rect);
-                                          kbd_rect.y = r_canvas.h - kbd->surface->h;
-                                          SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-                                          update_screen_rect(&kbd_rect);
-                                        }
-                                    }
-                                  else
-                                    {
-                                      if (kbd_rect.y != 0)
-                                        {
-                                          update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w,
-                                                           kbd_rect.y + kbd_rect.h, 0);
-                                          update_screen_rect(&kbd_rect);
-                                          kbd_rect.y = 0;
-                                          SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
-                                          update_screen_rect(&kbd_rect);
-                                        }
-                                    }
+                                  update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w,
+                                                   kbd_rect.y + kbd_rect.h, 0);
+                                  update_screen_rect(&kbd_rect);
+                                  reposition_onscreen_keyboard(old_y);
                                 }
                             }
 
@@ -5757,7 +5797,8 @@ static void mainloop(void)
                                         update_rect.x + update_rect.w, update_rect.y + update_rect.h);
                         }
                     }
-                  else if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
+                  else if (onscreen_keyboard &&
+                           (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT && cur_label != LABEL_APPLY)))
                     {
                       if (onscreen_keyboard && kbd)
                         {
@@ -5993,11 +6034,13 @@ static void mainloop(void)
                   else if (cur_tool == TOOL_LABEL)
                     {
                       if (cur_label == LABEL_LABEL)
-                        if (onscreen_keyboard && HIT(kbd_rect))
-                          do_setcursor(cursor_hand);
-                        else
-                          do_setcursor(cursor_insertion);
-                      else if (cur_label == LABEL_SELECT)
+                        {
+                          if (onscreen_keyboard && HIT(kbd_rect))
+                            do_setcursor(cursor_hand);
+                          else
+                            do_setcursor(cursor_insertion);
+                        }
+                      else if (cur_label == LABEL_SELECT || cur_label == LABEL_APPLY)
                         {
                           if (search_label_list(&current_label_node, event.button.x - r_ttools.w, event.button.y, 1))
                             do_setcursor(cursor_hand);
@@ -6389,7 +6432,7 @@ static void mainloop(void)
             }
         }
 
-      if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT))
+      if (cur_tool == TOOL_TEXT || (cur_tool == TOOL_LABEL && cur_label != LABEL_SELECT && cur_label != LABEL_APPLY))
         {
           /* if (onscreen_keyboard) */
           /*   osk_clicked(kbd, old_x, old_y); */
@@ -9893,50 +9936,60 @@ static void draw_fonts(void)
 
   /* Draw text controls: */
 
+  /* Label controls, if in label tool (always!) */
+
+  if (cur_tool == TOOL_LABEL)
+    {
+      /* "Apply Label" button */
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+      if (cur_label == LABEL_APPLY)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        {
+          if (are_labels())
+            SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+          else
+            SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        }
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_label_apply->w) / 2;
+      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_apply->h) / 2);
+
+      SDL_BlitSurface(img_label_apply, NULL, screen, &dest);
+
+
+      /* "Select Label" button */
+      dest.x = WINDOW_WIDTH - button_w;
+      dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+
+      if (cur_label == LABEL_SELECT)
+        SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
+      else
+        {
+          if (are_labels())
+            SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+          else
+            SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+        }
+
+
+      dest.x = WINDOW_WIDTH - button_w + (button_w - img_label_select->w) / 2;
+      dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
+
+      SDL_BlitSurface(img_label_select, NULL, screen, &dest);
+
+      most = most + gd_toolopt.cols;
+    }
+
+
+  /* Size, italic, and bold, only appear when not UI is not being simplified */
   if (!disable_stamp_controls)
     {
       SDL_Surface *button_color;
       SDL_Surface *button_body;
 
-      if (cur_tool == TOOL_LABEL)
-        {
-
-          /* disabling rotation as I am not sure how this should be implemented */
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-          SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-
-          /* if(cur_label == LABEL_ROTATE) */
-          /*   SDL_BlitSurface(img_btn_down, NULL, screen, &dest); */
-          /* else */
-          /*   SDL_BlitSurface(img_btn_up, NULL, screen, &dest); */
-
-          /* dest.x = WINDOW_WIDTH - r_ttoolopt.w + (48 - img_label->w) / 2; */
-          /* dest.y = (40 + ((4 + TOOLOFFSET / 2) * 48) + (48 - img_label->h) / 2); */
-
-          /* SDL_BlitSurface(img_label, NULL, screen, &dest); */
-
-          dest.x = WINDOW_WIDTH - button_w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-
-          if (cur_label == LABEL_SELECT)
-            SDL_BlitSurface(img_btn_down, NULL, screen, &dest);
-
-          else
-            {
-              if (are_labels())
-                SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-              else
-                SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-            }
-
-
-          dest.x = WINDOW_WIDTH - button_w + (button_w - img_label_select->w) / 2;
-          dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
-
-          SDL_BlitSurface(img_label_select, NULL, screen, &dest);
-	  most = most + gd_toolopt.cols;
-        }
+      // label_ctrl_y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
 
       /* Show bold button: */
 
@@ -9970,7 +10023,7 @@ static void draw_fonts(void)
       SDL_BlitSurface(img_italic, NULL, screen, &dest);
 
       most = most + gd_toolopt.cols;
-      // printf("most %d\n", most);
+
 
       /* Show shrink button: */
 
@@ -10018,31 +10071,6 @@ static void draw_fonts(void)
 
       SDL_BlitSurface(button_color, NULL, img_grow, NULL);
       SDL_BlitSurface(img_grow, NULL, screen, &dest);
-    }
-  else
-    {
-      if (cur_tool == TOOL_LABEL)
-        {
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-
-          SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_label->w) / 2;
-          dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label->h) / 2);
-
-          SDL_BlitSurface(img_label, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - button_w;
-          dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
-
-          SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - button_w + (button_w - img_label_select->w) / 2;
-          dest.y = (r_ttoolopt.h + ((most / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h) + (button_h - img_label_select->h) / 2);
-
-          SDL_BlitSurface(img_label_select, NULL, screen, &dest);
-        }
     }
 }
 
@@ -11331,6 +11359,32 @@ static void render_brush(void)
   img_cur_brush_spacing = brushes_spacing[cur_brush];
 
   brush_counter = 0;
+}
+
+
+/**
+ * Show a tool tip, for when the brush choice has changed
+ */
+static void show_brush_tip(void) {
+  if (img_cur_brush_rotate || img_cur_brush_directional)
+    {
+      if (abs(img_cur_brush_frames) > 1)
+        {
+          draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM_DIR, 1);
+        }
+      else
+        {
+          draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_DIR, 1);
+        }
+    }
+  else if (abs(img_cur_brush_frames) > 1)
+    {
+      draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM, 1);
+    }
+  else
+    {
+      draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+    }
 }
 
 
@@ -14145,6 +14199,9 @@ static void cleanup(void)
   free_surface(&img_bold);
   free_surface(&img_italic);
 
+  free_surface(&img_label_select);
+  free_surface(&img_label_apply);
+
   free_surface_array(undo_bufs, NUM_UNDO_BUFS);
 
 #ifdef LOW_QUALITY_COLOR_SELECTOR
@@ -14435,7 +14492,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
   if (use_brush)
     {
       old_brush = cur_brush;
-      cur_brush = shape_brush;  /* Now only semi-ludgy! */
+      cur_brush = shape_brush;  /* Now only semi-kludgy! */
       render_brush();
     }
 
@@ -14705,6 +14762,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     {
       cur_brush = old_brush;
       render_brush();
+      show_brush_tip();
     }
 }
 
@@ -18515,7 +18573,7 @@ static void do_render_cur_text(int do_blit)
     }
   else                          /* Erase the stalle letter . */
     {
-      if (cur_label != LABEL_SELECT)
+      if (cur_label != LABEL_SELECT && cur_label != LABEL_APPLY)
         {
           update_canvas_ex_r(old_dest.x - r_ttools.w, old_dest.y, old_dest.x + old_dest.w, old_dest.y + old_dest.h, 0);
           old_dest.x = old_dest.y = old_dest.w = old_dest.h = 0;
@@ -23502,7 +23560,7 @@ static void draw_color_mixer_tooltip(void) {
     {
       if (used_colors_amount[0] == 1)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[0]),
                    /* Color mixer; e.g., "Your color is entirely grey." */ gettext("entirely"),
                    gettext(color_mixer_color_names[used_colors_color[0]]));
         }
@@ -23513,7 +23571,7 @@ static void draw_color_mixer_tooltip(void) {
                    gettext("entirely"),
                    used_colors_amount[0], used_colors_amount[0]);
 
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[0],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[0]),
                    tip_txt_proportions[0],
                    gettext(color_mixer_color_names[used_colors_color[0]]));
         }
@@ -23548,20 +23606,20 @@ static void draw_color_mixer_tooltip(void) {
       tip_txt[0] = '\0'; /* Just in case! */
       if (num_colors_used == 2)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]));
         }
       else if (num_colors_used == 3)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]));
         }
       else if (num_colors_used == 4)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
@@ -23569,7 +23627,7 @@ static void draw_color_mixer_tooltip(void) {
         }
       else if (num_colors_used == 5)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
@@ -23578,7 +23636,7 @@ static void draw_color_mixer_tooltip(void) {
         }
       else if (num_colors_used == 6)
         {
-          snprintf(tip_txt, sizeof(tip_txt), color_mixer_color_tips[num_colors_used - 1],
+          snprintf(tip_txt, sizeof(tip_txt), gettext(color_mixer_color_tips[num_colors_used - 1]),
                    tip_txt_proportions[0], gettext(color_mixer_color_names[used_colors_color[0]]),
                    tip_txt_proportions[1], gettext(color_mixer_color_names[used_colors_color[1]]),
                    tip_txt_proportions[2], gettext(color_mixer_color_names[used_colors_color[2]]),
@@ -23657,13 +23715,13 @@ static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Sur
             {
               putpixels[img_color_btns[the_color]->format->BytesPerPixel]
                 (img_color_btns[the_color], x, y,
-                 SDL_MapRGB(img_color_btns[i]->format,
+                 SDL_MapRGB(img_color_btns[the_color]->format,
                             linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
                             linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
 
               putpixels[img_color_btns[the_color + NUM_COLORS]->format->BytesPerPixel]
                 (img_color_btns[the_color + NUM_COLORS], x, y,
-                 SDL_MapRGB(img_color_btns[i + NUM_COLORS]->format,
+                 SDL_MapRGB(img_color_btns[the_color + NUM_COLORS]->format,
                             linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
                             linear_to_sRGB(gh * aa + gd * (1.0 - aa)), linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
             }
@@ -23829,6 +23887,9 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface * label
       new_node->save_texttool_str[i] = texttool_str[i];
       i = i + 1;
     }
+  new_node->save_texttool_str[i] = L'\0';
+  // printf("New node's text is: \"%ls\"\n", new_node->save_texttool_str);
+
   new_node->save_color.r = color_hexes[cur_color][0];
   new_node->save_color.g = color_hexes[cur_color][1];
   new_node->save_color.b = color_hexes[cur_color][2];
@@ -23944,6 +24005,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
           select_texttool_str[u] = tmp_node->save_texttool_str[u];
           u = u + 1;
         }
+      select_texttool_str[u] = L'\0';
 
       for (k = 0; k < NUM_COLORS; k++)
         {
@@ -24302,7 +24364,6 @@ static void load_info_about_label_surface(FILE * lfi)
   int tmp_scale_h;
   SDL_Surface *label_node_surface, *label_node_surface_aux;
   float new_text_size;
-
   int k;
   unsigned l;
   unsigned tmp_pos;
@@ -24319,10 +24380,16 @@ static void load_info_about_label_surface(FILE * lfi)
   int tmp_fscanf_return;
   char *tmp_fgets_return;
   Uint8 a;
+#ifdef WIN32
+  char *tmpstr;
+  wchar_t *wtmpstr;
+#endif
+
 
   /* Clear label surface */
 
   SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
+
 
   /* Clear all info related to label surface */
 
@@ -24334,11 +24401,19 @@ static void load_info_about_label_surface(FILE * lfi)
 
   if (lfi == NULL)
     return;
+
+
+  /* Read count of label nodes: */
   tmp_fscanf_return = fscanf(lfi, "%d\n", &list_ctr);
+
+  /* Read saved canvas width/height, so we can scale to the current canvas
+     (in case it changed due to window size / fullscreen resolution changes,
+     larger UI button size, etc. */
   tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_scale_w);
   tmp_fscanf_return = fscanf(lfi, "%d\n\n", &tmp_scale_h);
   (void)tmp_fscanf_return;
 
+  /* Calculate canvas aspect ratios & such */
   old_width = tmp_scale_w;
   old_height = tmp_scale_h;
   new_width = r_canvas.w;
@@ -24350,24 +24425,33 @@ static void load_info_about_label_surface(FILE * lfi)
   else
     new_to_old_ratio = (float)new_height / old_height;
 
+
+  /* Read the labels' text: */
+
+  size_t nwchar;
+
+#ifdef WIN32
+  tmpstr = malloc(1024);
+  wtmpstr = malloc(1024);
+#endif
+
   for (k = 0; k < list_ctr; k++)
     {
       new_node = malloc(sizeof(struct label_node));
 
       tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
-#ifdef WIN32
-      char *tmpstr;
-      wchar_t *wtmpstr;
 
-      tmpstr = malloc(1024);
-      wtmpstr = malloc(1024);
-      fgets(tmpstr, 1024, lfi);
+#ifdef DEBUG
+      printf("Reading %d wide chars\n", new_node->save_texttool_len); fflush(stdout);
+#endif
+
+#ifdef WIN32
+      /* Using fancy "%[]" operator to scan until the end of a line */
+      tmp_fscanf_return = fscanf(lfi, "%[^\n]\n", tmpstr);
       mbstowcs(wtmpstr, tmpstr, 1024);
       for (l = 0; l < new_node->save_texttool_len; l++)
-        {
-          new_node->save_texttool_str[l] = wtmpstr[l];
-        }
-
+        new_node->save_texttool_str[l] = wtmpstr[l];
+      new_node->save_texttool_str[l] = L'\0';
 #elif defined(__ANDROID__)
       wchar_t tmp_char;
       for (l = 0; l < new_node->save_texttool_len; l++)
@@ -24377,20 +24461,48 @@ static void load_info_about_label_surface(FILE * lfi)
         }
       fscanf(lfi, "\n");
 #else
-      wchar_t tmp_char;
-      for (l = 0; l < new_node->save_texttool_len; l++)
-        {
-          tmp_fscanf_return = fscanf(lfi, "%lc", &tmp_char);
-          new_node->save_texttool_str[l] = tmp_char;
-        }
-      tmp_fscanf_return = fscanf(lfi, "\n");
+      /* Using fancy "%[]" operator to scan until the end of a line */
+      tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
 #endif
+
+#ifdef DEBUG
+      printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+#endif
+
+      /* If the string is shorter than what we expect (new_node->save_texttool_len),
+         then it must have been prefixed with spaces that we lost. */
+      nwchar = wcslen(new_node->save_texttool_str);
+      if (nwchar < new_node->save_texttool_len)
+        {
+          wchar_t *wtmpstr;
+          size_t diff, i;
+
+          wtmpstr = malloc(1024);
+	  diff = new_node->save_texttool_len - nwchar;
+
+          for (i = 0; i < diff; i++)
+            wtmpstr[i] = L' ';
+
+	  for (i = 0; i <= nwchar; i++)
+            wtmpstr[i + diff] = new_node->save_texttool_str[i];
+
+          memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
+          free(wtmpstr);
+
+#ifdef DEBUG
+          printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+#endif
+        }
+
+      /* Read the label's color (RGB) */
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.r = (Uint8) l;
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.g = (Uint8) l;
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
       new_node->save_color.b = (Uint8) l;
+
+      /* Read the label's position */
       tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
       tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
       tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
@@ -24423,6 +24535,7 @@ static void load_info_about_label_surface(FILE * lfi)
       printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
 #endif
 
+      /* Read the label's font */
       tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
       new_node->save_cur_font = 0;
 
@@ -24430,9 +24543,14 @@ static void load_info_about_label_surface(FILE * lfi)
       tmp_fgets_return = fgets(new_node->save_font_type, 64, lfi);
       (void)tmp_fgets_return;
 
+      /* Read the label's state (italic &/or bold), and size */
       tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
       tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
 
+      /* Read the bitmap data stored under the label */
+      /* (The final PNG, when saved, includes the labels, as applied
+         to the canvas. But we need to be able to edit/move/remove them,
+         so we need to know what went _behind_ them) */
       label_node_surface = SDL_CreateRGBSurface(screen->flags,
                                                 new_node->save_width,
                                                 new_node->save_height,
@@ -24453,7 +24571,10 @@ static void load_info_about_label_surface(FILE * lfi)
           }
       SDL_UnlockSurface(label_node_surface);
 
+      /* Set the label's size, in proportion to any canvas size differences */
       new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
+
+      /* Scale the backbuffer, in proportion... */
       label_node_surface_aux =
         zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
       SDL_FreeSurface(label_node_surface);
@@ -24468,7 +24589,6 @@ static void load_info_about_label_surface(FILE * lfi)
       else
         new_node->save_text_size = MIN_TEXT_SIZE;
 
-
       new_node->save_undoid = 255;      /* A value that cur_undo will likely never reach */
       new_node->is_enabled = TRUE;
       new_node->disables = NULL;
@@ -24476,6 +24596,7 @@ static void load_info_about_label_surface(FILE * lfi)
       new_node->next_to_up_label_node = NULL;
       tmp_fscanf_return = fscanf(lfi, "\n");
 
+      /* Link the labels together, for navigating between them */
       if (current_label_node == NULL)
         {
           current_label_node = new_node;
@@ -24490,10 +24611,16 @@ static void load_info_about_label_surface(FILE * lfi)
 
       highlighted_label_node = current_label_node;
       simply_render_node(current_label_node);
-
     }
+
   first_label_node_in_redo_stack = NULL;
   fclose(lfi);
+
+
+#ifdef WIN32
+  free(tmpstr);
+  free(wtmpstr);
+#endif
 
   if (font_thread_done)
     set_label_fonts();
@@ -26542,6 +26669,10 @@ static void setup(void)
     }
 #endif
 
+#ifdef __APPLE__
+  apple_init();
+#endif
+
   im_init(&im_data, get_current_language());
 
 #ifndef NO_SDLPANGO
@@ -27316,8 +27447,8 @@ static void setup(void)
   img_bold = loadimagerb(DATA_PREFIX "images/ui/bold.png");
   img_italic = loadimagerb(DATA_PREFIX "images/ui/italic.png");
 
-  img_label = loadimagerb(DATA_PREFIX "images/tools/label.png");
   img_label_select = loadimagerb(DATA_PREFIX "images/tools/label_select.png");
+  img_label_apply = loadimagerb(DATA_PREFIX "images/tools/label_apply.png");
 
   show_progress_bar(screen);
 
@@ -27834,6 +27965,16 @@ int main(int argc, char *argv[])
 
   chdir_to_binary(argv[0]);
   setup_config(argv);
+
+#ifdef WIN32
+#ifndef DEBUG
+  char stdout_win32[255], stderr_win32[255];
+  safe_snprintf(stdout_win32, 255, "%s/stdout.txt", savedir);
+  safe_snprintf(stderr_win32, 255, "%s/stderr.txt", savedir);
+  freopen(stdout_win32, "w", stdout);    /* redirect stdout to a file */
+  freopen(stderr_win32, "w", stderr);    /* redirect stderr to a file */
+#endif
+#endif
 
 #ifdef DEBUG
   CLOCK_ASM(time2);
@@ -29026,3 +29167,189 @@ int safe_snprintf(char *str, size_t size, const char *format, ...) {
   str[size - 1] = '\0';
   return r;
 }
+
+static void sloppy_frac(float f, int * numer, int * denom) {
+  int n, d, fr, i, gcd, n_over_d_100;
+
+  fr = round(f * 100.0);
+
+  *numer = 0;
+  *denom = 1;
+
+  for (d = SLOPPY_FRAC_MIN; d <= SLOPPY_FRAC_MAX; d++)
+    {
+      for (n = 1; n < d; n++)
+        {
+          n_over_d_100 = ((n * 100) / d);
+          if (n_over_d_100 >= fr &&
+              n_over_d_100 < (fr + ((SLOPPY_FRAC_MIN * 100) / SLOPPY_FRAC_MAX)))
+            {
+              *numer = n;
+              *denom = d;
+            }
+        }
+    }
+
+  gcd = 1;
+  for (i = 1; i <= *numer && i <= *denom; i++)
+    {
+      if ((*numer % i) == 0 && (*denom % i) == 0)
+        gcd = i;
+    }
+
+  *numer /= gcd;
+  *denom /= gcd;
+}
+
+
+/**
+ * Selet a chosen Label node.
+ *
+ * @param int * old_x, old_y -- Pointers to feed the osition of the chosen label
+ */
+static void select_label_node(int * old_x, int * old_y) {
+  unsigned int i;
+  int j;
+
+  /* Switch back into label entry mode */
+  cur_label = LABEL_LABEL;
+
+  /* Set font selector to the font used by this label */
+  cur_thing = label_node_to_edit->save_cur_font;
+
+  /* Disable the label node; we'll be replacing it (or removing it) */
+  label_node_to_edit->is_enabled = FALSE;
+  derender_node(&label_node_to_edit);
+
+  /* Copy the label's text into the active text input */
+  i = 0;
+  texttool_len = select_texttool_len;
+  while (i < texttool_len)
+    {
+      texttool_str[i] = select_texttool_str[i];
+      i = i + 1;
+    }
+  texttool_str[i] = L'\0';
+
+  cur_color = select_color;
+
+  /* Send back the position of the selected label */
+  *old_x = select_x;
+  *old_y = select_y;
+
+  /* Set active text input's attributes (font, italic/bold, size) */
+  cur_font = select_cur_font;
+  text_state = select_text_state;
+  text_size = select_text_size;
+
+  /* ??? */
+  for (j = 0; j < num_font_families; j++)
+    {
+      if (user_font_families[j] && user_font_families[j]->handle)
+        {
+          TuxPaint_Font_CloseFont(user_font_families[j]->handle);
+          user_font_families[j]->handle = NULL;
+        }
+    }
+
+  update_screen_rect(&r_toolopt);
+  do_render_cur_text(0);
+
+  /* Redraw color palette, fonts, and text controls */
+  draw_colors(COLORSEL_REFRESH);
+  draw_fonts();
+
+  /* Set mouse pointer (cursor) shape to the text insertion bar */
+  do_setcursor(cursor_insertion);
+
+  /* We have chosen a label; show some instructional text (Tux tip)
+     and play a success sound */
+  draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_LABEL_CHOSEN, 1);
+  playsound(screen, 1, SND_TUXOK, 1, select_x, SNDDIST_NEAR);
+}
+
+
+/**
+ * Apply a Label node to the canvas, and remove the node.
+ *
+ * FIXME: WIP
+ *
+ * @param int old_x, old_y - For insertion point cursor positioning
+ *
+ * Side effects:
+ *  * Unsets `label_node_to_edit`
+ *  * Sets Label tool mode back to `LABEL_LABEL`
+ *  * Sets `have_to_rec_label_node`
+ *  * Clears `been_saved` & sets `tool_avail[TOOL_SAVE]` (unless `disable_save` was set)
+ *  * Redraws toolbar
+ *  * Redraws fonts & text controls
+ *  * Redraws color palette
+ *  * Sets insertion point cursor location (`cursor_x`, `cursor_y`)
+ *  * Displays Label tool's main instructions (Tux tip)
+ */
+static void apply_label_node(int old_x, int old_y) {
+  cursor_x = old_x;
+  cursor_y = old_y;
+  cursor_left = old_x;
+
+  rec_undo_buffer();
+  do_render_cur_text(1);
+
+  draw_fonts();
+  update_screen_rect(&r_toolopt);
+
+  cur_label = LABEL_LABEL;
+  draw_colors(COLORSEL_REFRESH);
+  draw_fonts();
+
+  have_to_rec_label_node = TRUE;
+  add_label_node(0, 0, 0, 0, NULL);
+  derender_node(&label_node_to_edit);
+  label_node_to_edit = NULL;
+
+  texttool_len = 0;
+  cursor_textwidth = 0;
+
+  if (been_saved)
+    {
+      been_saved = 0;
+
+      if (!disable_save)
+        tool_avail[TOOL_SAVE] = 1;
+
+      draw_toolbar();
+      update_screen_rect(&r_tools);
+    }
+
+  draw_tux_text(TUX_GREAT, tool_tips[TOOL_LABEL], 1);
+  playsound(screen, 1, SND_RETURN, 1, cursor_x, SNDDIST_NEAR);
+}
+
+
+/**
+ * Size & position the onscreen keyboard.
+ *
+ * @param int y -- If -1, don't reposition vertically; otherwise, if y
+ *   is in top half of canvas, put keyboard on bottom & vice-versa
+ */
+static void reposition_onscreen_keyboard(int y) {
+  if (onscreen_keyboard)
+    {
+      kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
+
+      if (y != -1)
+        {
+          if (y < r_canvas.h / 2)
+            kbd_rect.y = r_canvas.h - kbd->surface->h;
+          else
+            kbd_rect.y = 0;
+        }
+
+      kbd_rect.w = kbd->surface->w;
+      kbd_rect.h = kbd->surface->h;
+
+      SDL_BlitSurface(kbd->surface, &kbd->rect, screen, &kbd_rect);
+      update_screen_rect(&kbd_rect);
+    }
+}
+

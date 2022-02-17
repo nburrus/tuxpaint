@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 25, 2022
+  June 14, 2002 - February 5, 2022
   $Id$
 */
 
@@ -82,6 +82,8 @@ void do_setcursor(SDL_Cursor * c)
   UNUSED(tiny_mask_bits);
   UNUSED(arrow_bits);
   UNUSED(arrow_mask_bits);
+  UNUSED(pipette_bits);
+  UNUSED(pipette_mask_bits);
 
   if (!hide_cursor && !no_fancy_cursors)
     SDL_SetCursor(c);
