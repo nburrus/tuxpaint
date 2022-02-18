@@ -5306,7 +5306,6 @@ static void mainloop(void)
 		    }
                       button_down = 1;
                    }
-	    }
               else if (HIT(r_sfx) && valid_click(event.button.button))
                 {
                   /* A sound player button on the lower left has been pressed! */
@@ -5337,7 +5336,7 @@ static void mainloop(void)
               start_motion_convert(event);
 #endif
             
-
+	}
           else if (event.type == SDL_MOUSEWHEEL && wheely)
             {
               int most = 14;
@@ -15420,12 +15419,7 @@ static void do_png_embed_data(png_structp png_ptr)
 		  tmpstr[nbtmpstr] = '\0';
                   fprintf(lfi, "%s", tmpstr);
 #elif defined(__ANDROID__)
-              fprintf(lfi, "%u\n", current_node->save_texttool_len);
-
-              for (i = 0; i < current_node->save_texttool_len; i++)
-                {
                   fprintf(lfi, "%d ", (int)current_node->save_texttool_str[i]);
-                }
 #else
 		  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
 #endif
@@ -29335,7 +29329,7 @@ static void apply_label_node(int old_x, int old_y) {
  *   is in top half of canvas, put keyboard on bottom & vice-versa
  */
 static void reposition_onscreen_keyboard(int y) {
-  if (onscreen_keyboard)
+  if (onscreen_keyboard && kbd)
     {
       kbd_rect.x = button_w * 2 + (canvas->w - kbd->surface->w) / 2;
 
