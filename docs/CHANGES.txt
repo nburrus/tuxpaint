@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.16 (0.9.28)
+2022.February.17 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -76,7 +76,11 @@ http://www.tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/213/ 
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * More instruction text are shown (and sound effects play) when
+    * Bugfix: Onscreen keyboard repositions itself to the top if you
+      use [Enter] to move the cursor down, and it begins overlapping
+      the keyboard.
+
+    * More instructional text is shown (and sound effects play) when
       using the Label tool.
       Bill Kendrick <bill@newbreedsoftware.com>
 
