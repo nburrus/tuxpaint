@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 11, 2022
+  June 14, 2002 - February 17, 2022
 */
 
 #include "platform.h"
@@ -3084,8 +3084,13 @@ static void mainloop(void)
                                   cursor_x = cursor_left;
                                   cursor_y = min(cursor_y + font_height, canvas->h - font_height);
 
-                                  playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+                                  /* Reposition the on-screen keyboard if we begin typing over it */
+                                  update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w,
+                                                   kbd_rect.y + kbd_rect.h, 0);
+                                  update_screen_rect(&kbd_rect);
+                                  reposition_onscreen_keyboard(cursor_y);
 
+                                  playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                 }
                               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                                 {
@@ -3145,6 +3150,14 @@ static void mainloop(void)
 
                                   cursor_x = cursor_left;
                                   cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+
+                                  /* Reposition the on-screen keyboard if we begin typing over it */
+                                  update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w,
+                                                   kbd_rect.y + kbd_rect.h, 0);
+                                  update_screen_rect(&kbd_rect);
+                                  reposition_onscreen_keyboard(cursor_y);
+
+                                  playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                 }
 
 #ifdef SPEECH
