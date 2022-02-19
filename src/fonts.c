@@ -1045,7 +1045,7 @@ static void loadfonts(SDL_Surface * screen, SDL_Texture * texture, SDL_Renderer 
   homedirdir = malloc(snprintf(NULL, 0, "%s/fonts", apple_globalPreferencesPath()) + 1);
   if(homedirdir) {
     sprintf(homedirdir, "%s/fonts", apple_globalPreferencesPath());
-    loadfonts(screen, homedirdir);
+    loadfonts(screen, texture, renderer, homedirdir);
     free(homedirdir);
   }
 #endif
