@@ -2936,8 +2936,6 @@ static void mainloop(void)
 
                                   if (label_node_to_edit)
                                     select_label_node(&old_x, &old_y);
-
-                                  do_render_cur_text(0);
                                 }
 
                               else if (cur_tool == TOOL_LABEL && cur_label == LABEL_APPLY)
@@ -4975,8 +4973,6 @@ static void mainloop(void)
 
                               if (label_node_to_edit)
                                 select_label_node(&old_x, &old_y);
-
-                              do_render_cur_text(0);
                             }
                           else if (cur_tool == TOOL_LABEL && cur_label == LABEL_APPLY)
                             {
@@ -28408,7 +28404,6 @@ static void select_label_node(int * old_x, int * old_y) {
     }
 
   update_screen_rect(&r_toolopt);
-  do_render_cur_text(0);
 
   /* Redraw color palette, fonts, and text controls */
   draw_colors(COLORSEL_REFRESH);
