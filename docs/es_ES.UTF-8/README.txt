@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                 enero 26, 2022
+                                febrero 21, 2022
 
      ----------------------------------------------------------------------
 
@@ -406,9 +406,12 @@ Available Tools
          "Text" and "Label" Tools
 
                  Choose a font (from the 'Letters' available on the right)
-                 and a color (from the color palette near the bottom). Click
-                 on the screen and a cursor will appear. Type text and it
-                 will show up on the screen.
+                 and a color (from the color palette near the bottom). You
+                 may also apply a bold, and/or an italic styling effect to
+                 the text. Click on the screen and a cursor will appear. Type
+                 text and it will show up on the screen. (You can change the
+                 font, color, and styling while entering the text, before it
+                 is applied to the canvas.)
 
                  Press [Enter] or [Return] and the text will be drawn onto
                  the picture and the cursor will move down one line.
@@ -440,6 +443,29 @@ Available Tools
                               choice and the color) get stored separately.
                               This allows the label to be repositioned or
                               edited later.
+
+                              To edit a label, click the label selection
+                              button. All labels in the drawing will appear
+                              highlighted. Click one — or use the [Tab] key
+                              to cycle through all the labels, and the
+                              [Enter] or [Return] key to select one — and you
+                              may then edit the label. (Use they [Backspace]
+                              key to erase characters, and other keys to add
+                              text to the label; click in the canvas to
+                              reposition the label; click in the palette to
+                              change the color of the text in the label;
+                              etc.)
+
+                              You may "apply" a label to the canvas, painting
+                              the text into the picture as if it had been
+                              added using the Text tool, by clicking the
+                              label application button. (This feature was
+                              added in Tux Paint version 0.9.28.) All labels
+                              in the drawing will appear highlighted, and you
+                              select one just as you do when selecting a
+                              label to edit. The chosen label will be
+                              removed, and the text will be added directly to
+                              the canvas.
 
                               The Label tool can be disabled (e.g., by
                               selecting "Disable 'Label' Tool" in Tux Paint

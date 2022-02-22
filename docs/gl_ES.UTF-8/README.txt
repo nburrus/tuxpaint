@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             26 de Xaneiro de 2022
+                             21 de Febreiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -414,10 +414,13 @@ Ferramentas dispoñíbeis
 
          Ferramentas «Texto» e «Etiquetas»
 
-                 Escolla un tipo de letra (entre as «Letras» dispoñíbeis á
-                 dereita) e unha cor (na paleta de cores preto da parte
-                 inferior). prema na pantalla e aparecerá un cursor. Escriba
-                 un texto e aparecerá na pantalla.
+                 Choose a font (from the 'Letters' available on the right)
+                 and a color (from the color palette near the bottom). You
+                 may also apply a bold, and/or an italic styling effect to
+                 the text. Click on the screen and a cursor will appear. Type
+                 text and it will show up on the screen. (You can change the
+                 font, color, and styling while entering the text, before it
+                 is applied to the canvas.)
 
                  Prema [Intro] ou [Retorno] e o texto será debuxado na imaxe
                  e o cursor moverase cara abaixo unha liña.
@@ -451,6 +454,29 @@ Ferramentas dispoñíbeis
                               letra e a cor) almacénanse por separado. Isto
                               permite recolocar ou editar a etiqueta máis
                               adiante.
+
+                              To edit a label, click the label selection
+                              button. All labels in the drawing will appear
+                              highlighted. Click one — or use the [Tab] key
+                              to cycle through all the labels, and the
+                              [Intro] or [Retorno] key to select one — and
+                              you may then edit the label. (Use they
+                              [Backspace] key to erase characters, and other
+                              keys to add text to the label; click in the
+                              canvas to reposition the label; click in the
+                              palette to change the color of the text in the
+                              label; etc.)
+
+                              You may "apply" a label to the canvas, painting
+                              the text into the picture as if it had been
+                              added using the Text tool, by clicking the
+                              label application button. (This feature was
+                              added in Tux Paint version 0.9.28.) All labels
+                              in the drawing will appear highlighted, and you
+                              select one just as you do when selecting a
+                              label to edit. The chosen label will be
+                              removed, and the text will be added directly to
+                              the canvas.
 
                               A ferramenta Etiqueta pódese desactivar (p.
                               ex.: seleccionando «Desactivar a ferramenta
