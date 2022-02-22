@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                   2022年1月26日
+                                   2022年2月21日
 
      ----------------------------------------------------------------------
 
@@ -299,7 +299,13 @@ Tux Paint の起動
 
          「もじ」ツール、「ラベル」ツール
 
-                 まず、右側のセレクタからフォントを、下部のパレットから色を選択します。画面をクリックするとカーソルが表示され、文字を入力することができます。
+                 Choose a font (from the 'Letters' available on the right)
+                 and a color (from the color palette near the bottom). You
+                 may also apply a bold, and/or an italic styling effect to
+                 the text. Click on the screen and a cursor will appear. Type
+                 text and it will show up on the screen. (You can change the
+                 font, color, and styling while entering the text, before it
+                 is applied to the canvas.)
 
                  [Enter]キー、または[Return]キーを押すと文字が描画され、カーソルが次の行に下がります。
 
@@ -314,6 +320,29 @@ Tux Paint の起動
 
                               Tux Paint バージョン 0.9.22
                               で追加された「ラベル」ツールでは、文字は絵から「浮いて」おり、文字列の内容、位置、フォント、色などの情報は個別に記録されます。これにより、「ラベル」は後から移動や編集が可能です。
+
+                              To edit a label, click the label selection
+                              button. All labels in the drawing will appear
+                              highlighted. Click one — or use the [Tab] key
+                              to cycle through all the labels, and the
+                              [Enter] or [Return] key to select one — and you
+                              may then edit the label. (Use they [Backspace]
+                              key to erase characters, and other keys to add
+                              text to the label; click in the canvas to
+                              reposition the label; click in the palette to
+                              change the color of the text in the label;
+                              etc.)
+
+                              You may "apply" a label to the canvas, painting
+                              the text into the picture as if it had been
+                              added using the Text tool, by clicking the
+                              label application button. (This feature was
+                              added in Tux Paint version 0.9.28.) All labels
+                              in the drawing will appear highlighted, and you
+                              select one just as you do when selecting a
+                              label to edit. The chosen label will be
+                              removed, and the text will be added directly to
+                              the canvas.
 
                               「ラベル」ツールは、Tux Paint
                               設定ツールや、"nolabel"オプションにより、無効にすることができます。

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2022
+  June 14, 2002 - February 22, 2022
 */
 
 #include "platform.h"
@@ -3120,12 +3120,28 @@ static void mainloop(void)
                                 {
                                   /* [Enter] to select a node to edit */
 
+                                  DEBUG_PRINTF("Searching for label @ (%d+3,%d+3)\n",
+                                               highlighted_label_node->save_x,
+                                               highlighted_label_node->save_y);
+
                                   label_node_to_edit =
                                     search_label_list(&highlighted_label_node, highlighted_label_node->save_x + 3,
                                                       highlighted_label_node->save_y + 3, 0);
 
                                   if (label_node_to_edit)
-                                    select_label_node(&old_x, &old_y);
+                                    {
+                                      select_label_node(&old_x, &old_y);
+                                      DEBUG_PRINTF("Got a label: \"%ls\" @ (%d,%d)\n",
+                                                   label_node_to_edit->save_texttool_str, old_x, old_y);
+                                      DEBUG_PRINTF("Cursor now @ (%d,%d); width = %d\n",
+                                                   cursor_x, cursor_y, cursor_textwidth);
+                                      cursor_x = label_node_to_edit->save_x;
+                                      cursor_y = label_node_to_edit->save_y;
+                                      cursor_left = cursor_x;
+                                      DEBUG_PRINTF("Cursor now @ (%d,%d)\n", cursor_x, cursor_y);
+                                    }
+
+                                  do_render_cur_text(0);
                                 }
 
                               else if (cur_tool == TOOL_LABEL && cur_label == LABEL_APPLY)
@@ -3140,6 +3156,7 @@ static void mainloop(void)
                                     {
                                       apply_label_node(old_x, old_y);
                                       reposition_onscreen_keyboard(old_y);
+                                      apply_label_node(highlighted_label_node->save_x, highlighted_label_node->save_y);
                                     }
                                 }
                               else
@@ -3196,6 +3213,8 @@ static void mainloop(void)
                                       draw_toolbar();
                                       update_screen_rect(&r_tools);
                                     }
+
+                                  playsound(screen, 0, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                                 }
                               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                                 {
@@ -4397,7 +4416,6 @@ static void mainloop(void)
                                                       have_to_rec_label_node = TRUE;
                                                       add_label_node(0, 0, 0, 0, NULL);
                                                       label_node_to_edit = NULL;
-
                                                     }
 
                                                   cur_label = LABEL_SELECT;
@@ -4448,7 +4466,6 @@ static void mainloop(void)
                                                       have_to_rec_label_node = TRUE;
                                                       add_label_node(0, 0, 0, 0, NULL);
                                                       label_node_to_edit = NULL;
-
                                                     }
 
                                                   cur_label = LABEL_APPLY;
@@ -5230,10 +5247,18 @@ static void mainloop(void)
                         {
                               /* Click to select a node to edit */
 
+                              DEBUG_PRINTF("Searching for label @ (%d,%d)\n", old_x, old_y);
+
                               label_node_to_edit = search_label_list(&highlighted_label_node, old_x, old_y, 0);
 
                               if (label_node_to_edit)
-                                select_label_node(&old_x, &old_y);
+                                {
+                                  DEBUG_PRINTF("Got a label: \"%ls\" @ (%d,%d)\n",
+                                               label_node_to_edit->save_texttool_str, old_x, old_y);
+                                  DEBUG_PRINTF("Cursor now @ (%d,%d); width = %d\n",
+                                               cursor_x, cursor_y, cursor_textwidth);
+                                  select_label_node(&old_x, &old_y);
+                                }
                             }
                           else if (cur_tool == TOOL_LABEL && cur_label == LABEL_APPLY)
                             {
@@ -24849,20 +24874,26 @@ static void cycle_highlighted_label_node()
     {
       aux_node = highlighted_label_node->next_to_down_label_node;
       if (aux_node == NULL)
-        aux_node = current_label_node;
-      if (aux_node->is_enabled)
-        highlighted_label_node = aux_node;
-      else
-        while (aux_node->is_enabled == FALSE && aux_node != highlighted_label_node)
-          {
-            aux_node = aux_node->next_to_down_label_node;
-            if (aux_node == NULL)
-              aux_node = current_label_node;
-            if (aux_node->is_enabled)
-              highlighted_label_node = aux_node;
-          }
-    }
+        {
+          aux_node = current_label_node;
+        }
 
+      if (aux_node->is_enabled)
+        {
+          highlighted_label_node = aux_node;
+        }
+      else
+        {
+          while (aux_node->is_enabled == FALSE && aux_node != highlighted_label_node)
+            {
+              aux_node = aux_node->next_to_down_label_node;
+              if (aux_node == NULL)
+                aux_node = current_label_node;
+              if (aux_node->is_enabled)
+                highlighted_label_node = aux_node;
+            }
+        }
+    }
 }
 
 /**
@@ -29197,7 +29228,7 @@ static void sloppy_frac(float f, int * numer, int * denom) {
 /**
  * Selet a chosen Label node.
  *
- * @param int * old_x, old_y -- Pointers to feed the osition of the chosen label
+ * @param int * old_x, old_y -- Pointers to feed the position of the chosen label
  */
 static void select_label_node(int * old_x, int * old_y) {
   unsigned int i;
@@ -29253,6 +29284,8 @@ static void select_label_node(int * old_x, int * old_y) {
   /* Set mouse pointer (cursor) shape to the text insertion bar */
   do_setcursor(cursor_insertion);
 
+  update_canvas_ex_r(0, 0, canvas->w, canvas->h, 1);
+
   /* We have chosen a label; show some instructional text (Tux tip)
      and play a success sound */
   draw_tux_text(TUX_GREAT, TIP_LABEL_SELECTOR_LABEL_CHOSEN, 1);
@@ -29282,25 +29315,42 @@ static void apply_label_node(int old_x, int old_y) {
   cursor_x = old_x;
   cursor_y = old_y;
   cursor_left = old_x;
+  SDL_Rect rect;
 
+  /* Capture into Undo buffer */
   rec_undo_buffer();
+
+  /* Apply the text the canvas */
   do_render_cur_text(1);
 
-  draw_fonts();
-  update_screen_rect(&r_toolopt);
-
+  /* Switch to normal label adding mode;
+     Update label control buttons */
   cur_label = LABEL_LABEL;
   draw_colors(COLORSEL_REFRESH);
   draw_fonts();
+  update_screen_rect(&r_toolopt);
 
   have_to_rec_label_node = TRUE;
+
+  /* [Best way to explain this?] */
+  rect.x = label_node_to_edit->save_x;
+  rect.y = label_node_to_edit->save_y;
+  rect.w = label_node_to_edit->save_width;
+  rect.h = label_node_to_edit->save_height;
+
+  SDL_BlitSurface(label_node_to_edit->label_node_surface, NULL, canvas, &rect);
+  label_node_to_edit->is_enabled = FALSE;
+
+  /* [Best way to explain this?] */
   add_label_node(0, 0, 0, 0, NULL);
   derender_node(&label_node_to_edit);
   label_node_to_edit = NULL;
 
+  /* [Best way to explain this?] */
   texttool_len = 0;
   cursor_textwidth = 0;
 
+  /* Make "Save" button available after this change (if appropriate) */
   if (been_saved)
     {
       been_saved = 0;
@@ -29311,6 +29361,9 @@ static void apply_label_node(int old_x, int old_y) {
       draw_toolbar();
       update_screen_rect(&r_tools);
     }
+
+  /* Back to normal "how to use Label tool" tip; play sound */
+  update_canvas_ex_r(rect.x, rect.y, rect.w, rect.h, 1);
 
   draw_tux_text(TUX_GREAT, tool_tips[TOOL_LABEL], 1);
   playsound(screen, 1, SND_RETURN, 1, cursor_x, SNDDIST_NEAR);
