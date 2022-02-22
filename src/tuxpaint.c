@@ -24299,20 +24299,26 @@ static void cycle_highlighted_label_node()
     {
       aux_node = highlighted_label_node->next_to_down_label_node;
       if (aux_node == NULL)
-        aux_node = current_label_node;
-      if (aux_node->is_enabled)
-        highlighted_label_node = aux_node;
-      else
-        while (aux_node->is_enabled == FALSE && aux_node != highlighted_label_node)
-          {
-            aux_node = aux_node->next_to_down_label_node;
-            if (aux_node == NULL)
-              aux_node = current_label_node;
-            if (aux_node->is_enabled)
-              highlighted_label_node = aux_node;
-          }
-    }
+        {
+          aux_node = current_label_node;
+        }
 
+      if (aux_node->is_enabled)
+        {
+          highlighted_label_node = aux_node;
+        }
+      else
+        {
+          while (aux_node->is_enabled == FALSE && aux_node != highlighted_label_node)
+            {
+              aux_node = aux_node->next_to_down_label_node;
+              if (aux_node == NULL)
+                aux_node = current_label_node;
+              if (aux_node->is_enabled)
+                highlighted_label_node = aux_node;
+            }
+        }
+    }
 }
 
 /**
@@ -28443,33 +28449,40 @@ static void apply_label_node(int old_x, int old_y) {
   cursor_left = old_x;
   SDL_Rect rect;
 
+  /* Capture into Undo buffer */
   rec_undo_buffer();
+
+  /* Apply the text the canvas */
   do_render_cur_text(1);
 
-  draw_fonts();
-  update_screen_rect(&r_toolopt);
-
+  /* Switch to normal label adding mode;
+     Update label control buttons */
   cur_label = LABEL_LABEL;
   draw_colors(COLORSEL_REFRESH);
   draw_fonts();
+  update_screen_rect(&r_toolopt);
 
   have_to_rec_label_node = TRUE;
 
+  /* [Best way to explain this?] */
   rect.x = label_node_to_edit->save_x;
   rect.y = label_node_to_edit->save_y;
   rect.w = label_node_to_edit->save_width;
-  rect.w = label_node_to_edit->save_height;
+  rect.h = label_node_to_edit->save_height;
 
-  SDL_BlitSurface( label_node_to_edit->label_node_surface, NULL, canvas, &rect);
+  SDL_BlitSurface(label_node_to_edit->label_node_surface, NULL, canvas, &rect);
   label_node_to_edit->is_enabled = FALSE;
 
+  /* [Best way to explain this?] */
   add_label_node(0, 0, 0, 0, NULL);
   derender_node(&label_node_to_edit);
   label_node_to_edit = NULL;
 
+  /* [Best way to explain this?] */
   texttool_len = 0;
   cursor_textwidth = 0;
 
+  /* Make "Save" button available after this change (if appropriate) */
   if (been_saved)
     {
       been_saved = 0;
@@ -28480,6 +28493,9 @@ static void apply_label_node(int old_x, int old_y) {
       draw_toolbar();
       update_screen_rect(&r_tools);
     }
+
+  /* Back to normal "how to use Label tool" tip; play sound */
+  update_canvas_ex_r(rect.x, rect.y, rect.w, rect.h, 1);
 
   draw_tux_text(TUX_GREAT, tool_tips[TOOL_LABEL], 1);
   playsound(screen, 1, SND_RETURN, 1, cursor_x, SNDDIST_NEAR);
