@@ -80,6 +80,9 @@ http://www.tuxpaint.org/
       use [Enter] to move the cursor down, and it begins overlapping
       the keyboard.
 
+    * Bugfix: Positioning and rendering of labels selected for editing
+      via [Tab] cycling & the [Enter] key now works as expected.
+
     * More instructional text is shown (and sound effects play) when
       using the Label tool.
       Bill Kendrick <bill@newbreedsoftware.com>
