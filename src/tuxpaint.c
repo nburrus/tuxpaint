@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 17, 2022
+  June 14, 2002 - February 21, 2022
 */
 
 #include "platform.h"
@@ -28441,6 +28441,7 @@ static void apply_label_node(int old_x, int old_y) {
   cursor_x = old_x;
   cursor_y = old_y;
   cursor_left = old_x;
+  SDL_Rect rect;
 
   rec_undo_buffer();
   do_render_cur_text(1);
@@ -28453,6 +28454,15 @@ static void apply_label_node(int old_x, int old_y) {
   draw_fonts();
 
   have_to_rec_label_node = TRUE;
+
+  rect.x = label_node_to_edit->save_x;
+  rect.y = label_node_to_edit->save_y;
+  rect.w = label_node_to_edit->save_width;
+  rect.w = label_node_to_edit->save_height;
+
+  SDL_BlitSurface( label_node_to_edit->label_node_surface, NULL, canvas, &rect);
+  label_node_to_edit->is_enabled = FALSE;
+
   add_label_node(0, 0, 0, 0, NULL);
   derender_node(&label_node_to_edit);
   label_node_to_edit = NULL;
