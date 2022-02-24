@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             21 de Febreiro de 2022
+                             23 de Febreiro de 2022
 
      ----------------------------------------------------------------------
 
@@ -629,6 +629,15 @@ Ferramentas dispoñíbeis
 
                  Nota: Tamén pode premer [Control / ⌘] + [N] no teclado para
                  iniciar un novo debuxo.
+
+                 Special Solid Background Color Choices
+
+                   Along with the preset solid colors, you can also choose
+                   colors using a rainbow palette or a "color mixer". These
+                   operate identically to the options found in the color
+                   palette shown below the canvas when drawing a picture. See
+                   Main Screen > Lower: Colors > Special color options for
+                   details.
 
                  Imaxes «de comezo» e de «modelo»
 

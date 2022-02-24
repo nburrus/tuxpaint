@@ -7,7 +7,7 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                   2022年2月21日
+                                   2022年2月23日
 
      ----------------------------------------------------------------------
 
@@ -448,6 +448,15 @@ Tux Paint の起動
                  「さいしょから」のボタンを押すと、新規に絵を描き始めることができます。ダイアログ画面が表示され、キャンバスの背景色やレイヤー画像（後述）を選べます。
 
                  注: キーボードで [Control / ⌘] + [N] を押しても新規作成ができます。
+
+                 Special Solid Background Color Choices
+
+                   Along with the preset solid colors, you can also choose
+                   colors using a rainbow palette or a "color mixer". These
+                   operate identically to the options found in the color
+                   palette shown below the canvas when drawing a picture. See
+                   Main Screen > Lower: Colors > Special color options for
+                   details.
 
                  レイヤー画像
 

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 22, 2022
+  June 14, 2002 - February 23, 2022
 */
 
 #include "platform.h"
@@ -681,9 +681,10 @@ static int NUM_COLORS;
 static Uint8 **color_hexes;
 static char **color_names;
 
-#define COLOR_MIXER (NUM_COLORS - 1) /* Mix colors together */
+/* Special color options (from left-to-right (very last entry)) */
 #define COLOR_SELECTOR (NUM_COLORS - 3) /* Pick a color from the canvas */
 #define COLOR_PICKER (NUM_COLORS - 2) /* Pick a color from a palette */
+#define COLOR_MIXER (NUM_COLORS - 1) /* Mix colors together */
 
 /* Show debugging stuff: */
 
@@ -21292,6 +21293,11 @@ static int do_new_dialog(void)
               if (do_color_picker() == 0)
                 return (0);
             }
+          else if (which == COLOR_MIXER)
+            {
+              if (do_color_mix() == 0)
+                return (0);
+            }
 
           /* FIXME: Don't do anything and go back to Open dialog if they
              hit BACK in color picker! */
@@ -21410,11 +21416,18 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
               *white_in_palette = j;
             }
         }
-      else
+      else if (j == COLOR_PICKER)
         {
           /* Color picker: */
 
           thumbs[num_files] = thumbnail(img_color_picker, THUMB_W - 20, THUMB_H - 20, 0);
+          added = 1;
+        }
+      else if (j == COLOR_MIXER)
+        {
+          /* Color mixer: */
+
+          thumbs[num_files] = thumbnail(img_color_mix, THUMB_W - 20, THUMB_H - 20, 0);
           added = 1;
         }
 
