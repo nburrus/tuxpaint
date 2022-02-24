@@ -200,12 +200,19 @@ Lancement de Tux Paint
 [Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan, Bleu, Pourpre,
                                   Brun, Gris]
 
-               À l'extrême droite se trouvent deux options de choix de
-               couleur, le "sélecteur de couleurs", qui a le contour d'un
-               compte-gouttes, et vous permet de choisir une couleur trouvée
-               dans votre dessin, et la palette arc-en-ciel, qui vous permet
-               de choisir une couleur dans une boîte contenant des milliers
-               de couleurs.
+               On the far right are three special color options:
+                  * The "color picker" (which has an outline of an
+                    eye-dropper) allows you to pick a color found within your
+                    drawing. A shortcut key is available to access this
+                    feature quickly; see below.
+                  * The rainbow palette allows you to pick a color from
+                    within a box containing thousands of colors.
+                  * The "color mixer" (which has silhouette of a paint
+                    palette) allows you to create colors by blending primary
+                    additive colors — red, yellow, and blue — along with
+                    white (to "tint"), grey (to "tone"), and black (to
+                    "shade"). The ratios of colors added are shown at the
+                    bottom.
 
                When the active tool supports colors, a shortcut may be used
                to access the "color picker" option more quickly. Hold the
