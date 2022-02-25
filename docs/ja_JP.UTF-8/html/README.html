@@ -8,7 +8,15 @@
     <style>
       body { font-size: large; }
       table { font-size: large; }
-      div.screenshot { text-align: center; }
+      div.screenshot-center {
+        text-align: center;
+      }
+      div.screenshot-right {
+        float: right;
+      }
+      div.screenshot-right-after {
+        clear: both;
+      }
       div.keeptogether { page-break-inside: avoid; }
       h1, h2, h3, h4 { font-family: sans; }
       h1 { color: #800; page-break-before: always; break-before: always; }
@@ -36,6 +44,7 @@
         background-color: #eee;
         border-radius: 0.5em;
         padding: 0.5em;
+        display: inline-block;
       }
 
       @media print {
@@ -63,7 +72,7 @@
         子供向けのシンプルなお絵かきプログラム      </h3>
 
       <p>
-        Copyright &copy; 2002-2022 by various contributors; "AUTHORS" 参照.<br/>
+        Copyright &copy; 2002-2022 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br/>
         <a href="https://tuxpaint.org/">https://tuxpaint.org/</a><br/>
         <a href="https://twitter.com/TuxPaintTweets">@TuxPaintTweets on Twitter</a>
       </p>
@@ -289,39 +298,53 @@
     </blockquote>
 
     <hr size="1"
-        noshade>
+        noshade />
 
-    <h2>
-      <a name="using_title"
-          id="using_title">起動画面</a>
-    </h2>
-
-    <p>
-      Tux Paint を起動すると、タイトル画面が表示されます。    </p>
-
-    <div class="screenshot">
+    <div class="screenshot-right">
       <img src="../../html/images/tuxpaint-title.jpg"
          width="324"
          height="254"
          alt="[起動画面]">
     </div>
 
+    <div class="keeptogether">
+      <h2>
+        <a name="using_title"
+            id="using_title">起動画面</a>
+      </h2>
+
+      <p>
+        Tux Paint を起動すると、タイトル画面が表示されます。      </p>
+    </div>
+
     <p>
       プログラムの読み込みが完了すると、何かキーを押すかマウスのクリックにより次に進みます。（タイトル画面は、約5秒後に自動的に閉じます）    </p>
+
+    <div class="screenshot-right-after"></div>
 
     <hr size="1"
         noshade>
 
-    <h2>
-      <a name="using_main"
-          id="using_main">メインの画面</a>
-    </h2>
+    <div class="keeptogether">
+      <h2>
+        <a name="using_main"
+            id="using_main">メインの画面</a>
+      </h2>
 
-    <p>
-      メインの画面は、次の各部に分けられます：    </p>
+      <p>
+        メインの画面は、次の各部に分けられます：      </p>
+    </div>
 
     <dl>
       <div class="keeptogether">
+        <!-- FIXME: Update screenshot to add "Fill" tool -->
+        <div class="screenshot-right">
+          <img src="../../html/images/tools.jpg"
+             width="324"
+             height="254"
+             alt=
+             "[どうぐ: ふで, はんこ, せん, かたち, もじ, まほう, ラベル, とりけし, やりなおし, けしゴム, さいしょから, ひらく, セーブ, いんさつ, やめる]">
+        </div>
         <dt>
           <strong>左側: ツールバー「どうぐ」</strong>
         </dt>
@@ -329,19 +352,19 @@
         <dd>
           <p>
             ツールバーには、描画や編集を行うためのアイコンがあります。          </p>
-          <!-- FIXME: Update screenshot to add "Fill" tool -->
-
-          <div class="screenshot">
-            <img src="../../html/images/tools.jpg"
-               width="324"
-               height="254"
-               alt=
-               "[どうぐ: ふで, はんこ, せん, かたち, もじ, まほう, ラベル, とりけし, やりなおし, けしゴム, さいしょから, ひらく, セーブ, いんさつ, やめる]">
-          </div>
         </dd>
       </div>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/canvas.jpg"
+             width="324"
+             height="254"
+             alt="[描画キャンバス]">
+        </div>
+
         <dt>
           <strong>中央部: 描画キャンバス</strong>
         </dt>
@@ -350,18 +373,21 @@
           <p>
             中央部の最も広い領域が描画キャンバスです。ここが絵を描く部分になります！          </p>
 
-          <div class="screenshot">
-            <img src="../../html/images/canvas.jpg"
-               width="324"
-               height="254"
-               alt="[描画キャンバス]">
-          </div>
-
           <p class="note">
             <span title="Information">&#128161;</span>            <strong>注:</strong> 描画キャンバスのサイズは、Tux Paint のウィンドウサイズに応じて変わります。Tux Paint のウィンドウサイズは、<em>Tux Paint 設定ツール</em>を用いて変更できます。その他の方法については、<a href="OPTIONS.html"><em>各種設定について</em></a>のドキュメントを参照してください。          </p>
         </dd>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/selector.jpg"
+             width="324"
+             height="254"
+             alt=
+             "[セレクタ - ふで、もじ、かたち、はんこ]">
+        </div>
+
         <dt>
           <strong>右側: セレクタ</strong>
         </dt>
@@ -369,17 +395,19 @@
         <dd>
           <p>
             セレクタに表示される内容は、使用しているツールに応じて変わります。例えば、「ふで」ツールでは、様々な種類の筆が表示され、「はんこ」ツールでは、はんこの画像が表示されます。          </p>
-
-          <div class="screenshot">
-            <img src="../../html/images/selector.jpg"
-               width="324"
-               height="254"
-               alt=
-               "[セレクタ - ふで、もじ、かたち、はんこ]">
-          </div>
         </dd>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/colors.jpg"
+             width="324"
+             height="254"
+             alt=
+             "[いろ - いろ - くろ、しろ、あか、ぴんく、おれんじ、きいろ、みどり、みずいろ、あお、むらさき、ちゃいろ、はいいろ]">
+        </div>
+
         <dt>
           <strong>下部: カラーパレット「いろ」</strong>
         </dt>
@@ -387,14 +415,6 @@
         <dd>
           <p>
             キャンバスの下側には、描画色を選択するためのカラーパレットがあります。          </p>
-
-          <div class="screenshot">
-            <img src="../../html/images/colors.jpg"
-               width="324"
-               height="254"
-               alt=
-               "[いろ - いろ - くろ、しろ、あか、ぴんく、おれんじ、きいろ、みどり、みずいろ、あお、むらさき、ちゃいろ、はいいろ]">
-          </div>
 
           <p id="special_color_options">
             On the far right are three special color options:            <ul>
@@ -411,7 +431,17 @@
         </dd>
       </div>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/tips.jpg"
+             width="324"
+             height="254"
+             alt=
+             "(「かたち」ツールの使い方を説明している例)">
+        </div>
+
         <dt>
           <strong>最下部: ヘルプエリア</strong>
         </dt>
@@ -419,16 +449,10 @@
         <dd>
           <p>
             画面の一番下の部分では、Linux ペンギンの <em>Tux</em> が、様々なヒントや関連情報をご提供します。          </p>
-
-          <div class="screenshot">
-            <img src="../../html/images/tips.jpg"
-               width="324"
-               height="254"
-               alt=
-               "(「かたち」ツールの使い方を説明している例)">
-          </div>
         </dd>
       </div>
+
+      <div class="screenshot-right-after"></div>
     </dl>
 
     <hr size="1"
@@ -473,7 +497,7 @@
         <p>
           描画中にはサウンドが流れます。筆の大きさが大きいほど、低い音になります。        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_paint.png"
              width="120"
              height="95"
@@ -486,7 +510,7 @@
             The space between each position where a brush is applied to the canvas can vary.  Some brushes (such as the footprints and flower) are spaced, by default, far enough apart that they don't overlap.  Other brushes (such as the basic circular ones) are spaced closely, so they make a continuous stroke.          </p>
           <p>
             The default spacing of brushes may be overridden using by clicking within the triangular-shaped series of bars at the bottom right; the larger the bar, the wider the spacing. Brush spacing affects both tools that use the brushes: the "Paint" tool and the "Lines" tool.          </p>
-          <div class="screenshot">
+          <div class="screenshot-center">
             <img src=
             "../../html/images/tool_slider.png"
                width="96"
@@ -516,7 +540,7 @@
         <p>
           マウスのカーソル動きに応じて画像の輪郭が表示され、貼り付け位置と大きさがわかります。        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_stamps.png"
              width="182"
              height="156"
@@ -542,7 +566,7 @@
           <li>多くのスタンプは、右下の操作ボタンを使って、上下・左右に反転させることができます。          </li>
         </ul>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src=
           "../../html/images/tool_stamp_controls.png"
              width="96"
@@ -588,7 +612,7 @@
         <p>
           Different brushes have different spacing, leaving either a series of individual shapes, or a continuous stroke of the brush shape. Brush spacing may be adjusted. See "Paint", above, to learn more.        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_lines.png"
              width="76"
              height="103"
@@ -623,7 +647,8 @@
           </dt>
 
           <dd>
-            The shape will expand from where you initially clicked, and will be centered around that position.            <p class="note">
+            The shape will expand from where you initially clicked, and will be centered around that position.            <br/>
+            <p class="note">
               <span title="Version variation">&#128220;</span>              This was Tux Paint's only behavior through version 0.9.24.)            </p>
           </dd>
 
@@ -672,7 +697,7 @@
           </dd>
         </dl>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_shapes.png"
              width="177"
              height="104"
@@ -704,7 +729,7 @@
         <p>
           文字の入力中に別の場所をクリックすると、入力内容を維持したまま、文字を貼り付ける位置をクリックした位置に移動させ、文字入力を続けることができます。        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_text.png"
              width="139"
              height="69"
@@ -953,7 +978,7 @@
         <p>
           「ひらく」をクリックすると、保存されている全ての作品のリストが表示されます。リストが画面に収まりきらない場合は、上下の矢印のボタンでリストをスクロールできます。        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/open_dialog.jpg"
              width="194"
              height="152"
@@ -976,6 +1001,7 @@
 
               <p>
                 (または、開きたい作品をダブルクリックします）              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
             <li>
@@ -989,9 +1015,10 @@
 
               <p class="note">
                 <span title="Version variation">&#128220;</span>                <strong>注:</strong> Linux（バージョン 0.9.22以降）、Windows（バージョン 0.9.27以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
-            <li>
+            <li clear="all">
               <img src="../../html/images/open_export.png"
                   width="48"
                   height="48"
@@ -999,6 +1026,7 @@
                   align="right">
               <p>
                 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例："<code>~/Pictures/TuxPaint/</code>")に画像を出力します。              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
             <li>
@@ -1009,6 +1037,7 @@
                   align="right">
               <p>
                 左側の一番下にある青色の「スライドショー」のボタンを押すと、スライドショーモードになります。詳しくは「<a href="#slides">スライドショー</a>」の項をごらん下さい。              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
             <li>
@@ -1019,6 +1048,7 @@
                   align="right">
               <p>
                 右下にある赤色の「もどる」ボタンを押すと、絵を描く画面に戻ります。              </p>
+              <div class="screenshot-right-after"></div>
             </li>
           </ul>
         </blockquote>
@@ -1055,7 +1085,7 @@
         <p>
           一度保存操作をした後や、「ひらく」コマンドで読みこんだ作品の場合、以前のバージョンを上書きするか、新しく追加して保存するかを確認します。        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/saveover.png"
              width="177"
              height="110"
@@ -1233,7 +1263,7 @@
             <p class="note">
               <span title="Information">&#128161;</span>              <strong>注:</strong> 最も遅いスピードに設定するとスライドの自動進行が無効になります。１枚ずつ手動でスライドを進めたい場合に、この設定を用いてください。（この動作はアニメーションGIFには適用されません）            </p>
 
-            <div class="screenshot">
+            <div class="screenshot-center">
               <img src=
               "../../html/images/tool_slider.png"
                  width="96"

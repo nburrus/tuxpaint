@@ -3,7 +3,7 @@
 
   Un sinxelo programa de debuxo para cativos
 
-    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+        Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
@@ -132,12 +132,12 @@ Inicio de Tux Paint
 
      ----------------------------------------------------------------------
 
+   [Pantalla de título]
+
 Pantalla de título
 
    Cando se cargue por primeira vez Tux Paint, aparecerá unha pantalla de
    título/recoñecementos.
-
-   [Pantalla de título]
 
    Unha vez completada a carga, prema unha tecla, faga clic ou toque na
    xanela de Tux Paint para continuar. (Ou, após aproximadamente 5 segundos,
@@ -149,24 +149,26 @@ Pantalla principal
 
    A pantalla principal divídese nas seguintes seccións:
 
+   [Ferramentas: Pintar, Selo, Liñas, Formas, Texto, Maxia, Etiqueta,
+   Desfacer, Refacer, Borrador, Novo, Abrir, Gardar, Imprimir, Saír]
+
    Lado esquerdo: Barra de Ferramentas
 
            A barra de ferramentas contén os controis de debuxo e edición.
 
-           [Ferramentas: Pintar, Selo, Liñas, Formas, Texto, Maxia, Etiqueta,
-           Desfacer, Refacer, Borrador, Novo, Abrir, Gardar, Imprimir, Saír]
+           [Lenzo]
 
    Medio: Lenzo de debuxo
 
            A parte máis grande da pantalla, no centro, é o lenzo de debuxo.
            Aquí é, obviamente, onde debuxa.
 
-           [Lenzo]
-
            💡 Nota: O tamaño do lenzo de debuxo depende do tamaño de Tux
            Paint. Pode cambiar o tamaño de Tux Paint empregando a ferramenta
            de configuración Tux Paint Config. ou por outros medios. Consulte
            a documentación das Opcións para obter máis detalles.
+
+           [Selectores: pinceis, letras, formas, selos]
 
    Lado dereito: Selector
 
@@ -177,15 +179,13 @@ Pantalla principal
            usar. Cando se selecciona a ferramenta Texto ou Etiqueta, amosa
            varios tipos de letra.
 
-           [Selectores: pinceis, letras, formas, selos]
+           [Cores: negro, branco, vermello, rosa, laranxa, amarelo, verde,
+           cian, azul, roxo, marrón, gris]
 
    Máis abaixo: Cores
 
            Amosarase unha paleta de cores dispoñíbeis preto da parte inferior
            da pantalla.
-
-           [Cores: negro, branco, vermello, rosa, laranxa, amarelo, verde,
-           cian, azul, roxo, marrón, gris]
 
            On the far right are three special color options:
               * The "color picker" (which has an outline of an eye-dropper)
@@ -214,14 +214,14 @@ Pantalla principal
            ⚙ Note: You can define your own colors for Tux Paint. See the
            "Options" documentation.
 
+           (Consello de exemplo: «Escolle unha figura. Preme para marcar o
+           centro, arrastra e solta cando teña o tamaño que queiras. Move
+           arredor para invertela, e preme para debuxala.»)
+
    Abaixo de todo: Área de axuda
 
            Na parte inferior da pantalla, Tux, o pingüín de Linux, ofrece
            consellos e outra información mentres usa Tux Paint.
-
-           (Consello de exemplo: «Escolle unha figura. Preme para marcar o
-           centro, arrastra e solta cando teña o tamaño que queiras. Move
-           arredor para invertela, e preme para debuxala.»)
 
      ----------------------------------------------------------------------
 

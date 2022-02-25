@@ -3,7 +3,7 @@
 
   A simple drawing program for children
 
-          Copyright © 2002-2022 by various contributors; see AUTHORS.
+        Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
@@ -131,11 +131,11 @@ Launching Tux Paint
 
      ----------------------------------------------------------------------
 
+   [Title screen]
+
 Title Screen
 
    When Tux Paint first loads, a title/credits screen will appear.
-
-   [Title screen]
 
    Once loading is complete, press a key or click or tap in the Tux Paint
    window to continue. (Or, after about 5 seconds, the title screen will go
@@ -147,24 +147,26 @@ Main Screen
 
    The main screen is divided into the following sections:
 
+   [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo,
+   Eraser, New, Open, Save, Print, Quit]
+
    Left Side: Toolbar
 
            The toolbar contains the drawing and editing controls.
 
-           [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo,
-           Redo, Eraser, New, Open, Save, Print, Quit]
+           [Canvas]
 
    Middle: Drawing Canvas
 
            The largest part of the screen, in the center, is the drawing
            canvas. This is, obviously, where you draw!
 
-           [Canvas]
-
            💡 Note: The size of the drawing canvas depends on the size of Tux
            Paint. You can change the size of Tux Paint using the Tux Paint
            Config. configuration tool, or by other means. See the Options
            documentation for more details.
+
+           [Selectors - Brushes, Letters, Shapes, Stamps]
 
    Right Side: Selector
 
@@ -174,15 +176,13 @@ Main Screen
            selected, it shows the different shapes you can use. When the Text
            or Label tool is selected, it shows various fonts.
 
-           [Selectors - Brushes, Letters, Shapes, Stamps]
+           [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,
+           Blue, Purple, Brown, Grey]
 
    Lower: Colors
 
            A palette of available colors are shown near the bottom of the
            screen.
-
-           [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan,
-           Blue, Purple, Brown, Grey]
 
            On the far right are three special color options:
               * The "color picker" (which has an outline of an eye-dropper)
@@ -211,14 +211,14 @@ Main Screen
            ⚙ Note: You can define your own colors for Tux Paint. See the
            "Options" documentation.
 
+           (Example tip: 'Pick a shape. Click to pick the center, drag, then
+           let go when it is the size you want. Move around to rotate it, and
+           click to draw it.')
+
    Bottom: Help Area
 
            At the very bottom of the screen, Tux, the Linux Penguin, provides
            tips and other information while you use Tux Paint.
-
-           (Example tip: 'Pick a shape. Click to pick the center, drag, then
-           let go when it is the size you want. Move around to rotate it, and
-           click to draw it.')
 
      ----------------------------------------------------------------------
 

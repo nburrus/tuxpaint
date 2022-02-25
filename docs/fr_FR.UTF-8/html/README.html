@@ -8,7 +8,15 @@
     <style>
       body { font-size: large; }
       table { font-size: large; }
-      div.screenshot { text-align: center; }
+      div.screenshot-center {
+        text-align: center;
+      }
+      div.screenshot-right {
+        float: right;
+      }
+      div.screenshot-right-after {
+        clear: both;
+      }
       div.keeptogether { page-break-inside: avoid; }
       h1, h2, h3, h4 { font-family: sans; }
       h1 { color: #800; page-break-before: always; break-before: always; }
@@ -36,6 +44,7 @@
         background-color: #eee;
         border-radius: 0.5em;
         padding: 0.5em;
+        display: inline-block;
       }
 
       @media print {
@@ -63,7 +72,7 @@
         Un programme simple pour les enfants      </h3>
 
       <p>
-        Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.<br/>
+        Copyright &copy; 2002-2022 by divers contributeurs; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br/>
         <a href="https://tuxpaint.org/">https://tuxpaint.org/</a><br/>
         <a href="https://twitter.com/TuxPaintTweets">@TuxPaintTweets on Twitter</a>
       </p>
@@ -289,39 +298,53 @@
     </blockquote>
 
     <hr size="1"
-        noshade>
+        noshade />
 
-    <h2>
-      <a name="using_title"
-          id="using_title">Écran titre</a>
-    </h2>
-
-    <p>
-      Lors du premier chargement de Tux Paint, un écran avec titre et crédits apparaîtra.    </p>
-
-    <div class="screenshot">
+    <div class="screenshot-right">
       <img src="../../html/images/tuxpaint-title.jpg"
          width="324"
          height="254"
          alt="[Écran-titre]">
     </div>
 
+    <div class="keeptogether">
+      <h2>
+        <a name="using_title"
+            id="using_title">Écran titre</a>
+      </h2>
+
+      <p>
+        Lors du premier chargement de Tux Paint, un écran avec titre et crédits apparaîtra.      </p>
+    </div>
+
     <p>
       Une fois le chargement terminé, appuyez sur une touche ou cliquez sur la souris  pour continuer. (Ou, après environ 30 secondes, l'écran-titre disparaîtra automatiquement.)    </p>
+
+    <div class="screenshot-right-after"></div>
 
     <hr size="1"
         noshade>
 
-    <h2>
-      <a name="using_main"
-          id="using_main">Écran principal</a>
-    </h2>
+    <div class="keeptogether">
+      <h2>
+        <a name="using_main"
+            id="using_main">Écran principal</a>
+      </h2>
 
-    <p>
-      L'écran principal est divisé en plusieurs sections :    </p>
+      <p>
+        L'écran principal est divisé en plusieurs sections :      </p>
+    </div>
 
     <dl>
       <div class="keeptogether">
+        <!-- FIXME: Update screenshot to add "Fill" tool -->
+        <div class="screenshot-right">
+          <img src="../../html/images/tools.jpg"
+             width="324"
+             height="254"
+             alt=
+             "[Outils : Peindre, Tampon, Lignes, Formes, Texte, Magie, Étiquette, Défaire, Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder, Imprimer, Quitter]">
+        </div>
         <dt>
           <strong>Côté gauche : la barre d'outils</strong>
         </dt>
@@ -329,19 +352,19 @@
         <dd>
           <p>
             La barre d'outils contient les commandes pour dessiner et éditer.          </p>
-          <!-- FIXME: Update screenshot to add "Fill" tool -->
-
-          <div class="screenshot">
-            <img src="../../html/images/tools.jpg"
-               width="324"
-               height="254"
-               alt=
-               "[Outils : Peindre, Tampon, Lignes, Formes, Texte, Magie, Étiquette, Défaire, Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder, Imprimer, Quitter]">
-          </div>
         </dd>
       </div>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/canvas.jpg"
+             width="324"
+             height="254"
+             alt="[Toile]">
+        </div>
+
         <dt>
           <strong>Milieu : Toile pour Dessiner</strong>
         </dt>
@@ -350,18 +373,21 @@
           <p>
             La plus grande partie de l'écran, au centre, est la toile de dessin. C'est évidemment là que vous dessinerez !          </p>
 
-          <div class="screenshot">
-            <img src="../../html/images/canvas.jpg"
-               width="324"
-               height="254"
-               alt="[Toile]">
-          </div>
-
           <p class="note">
             <span title="Information">&#128161;</span>            Remarque: la taille de la toile de dessin dépend de la taille de Tux Paint. Vous pouvez modifier la taille de Tux Paint à l'aide de l'outil de configuration tuxpaint-config, ou par d’autres moyens. Consultez la documentation OPTIONS pour plus de détails.          </p>
         </dd>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/selector.jpg"
+             width="324"
+             height="254"
+             alt=
+             "[Sélecteurs - Pinceaux, Lettres, Formes, Tampons]">
+        </div>
+
         <dt>
           <strong>Côté droit : sélecteur</strong>
         </dt>
@@ -369,17 +395,19 @@
         <dd>
           <p>
             En fonction de l'outil en cours d'utilisation, le sélecteur affiche différentes choses. Par exemple, lorsque l'outil Pinceau est sélectionné, il affiche les différents pinceaux disponibles. Lorsque l'outil Tampon en caoutchouc est sélectionné, il affiche les différentes formes que vous pouvez utiliser.          </p>
-
-          <div class="screenshot">
-            <img src="../../html/images/selector.jpg"
-               width="324"
-               height="254"
-               alt=
-               "[Sélecteurs - Pinceaux, Lettres, Formes, Tampons]">
-          </div>
         </dd>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/colors.jpg"
+             width="324"
+             height="254"
+             alt=
+             "[Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan, Bleu, Pourpre, Brun, Gris]">
+        </div>
+
         <dt>
           <strong>En bas : couleurs</strong>
         </dt>
@@ -387,14 +415,6 @@
         <dd>
           <p>
             Une palette de couleurs disponibles s'affiche en bas de l'écran.          </p>
-
-          <div class="screenshot">
-            <img src="../../html/images/colors.jpg"
-               width="324"
-               height="254"
-               alt=
-               "[Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan, Bleu, Pourpre, Brun, Gris]">
-          </div>
 
           <p id="special_color_options">
             On the far right are three special color options:            <ul>
@@ -411,7 +431,17 @@
         </dd>
       </div>
 
+      <div class="screenshot-right-after"></div>
+
       <div class="keeptogether">
+        <div class="screenshot-right">
+          <img src="../../html/images/tips.jpg"
+             width="324"
+             height="254"
+             alt=
+             "(Par exemple : Choisis une forme. Clique pour démarrer le dessin , fais glisser et continue jusqu'à la taille désirée. Déplace-toi pour la faire tourner, et clique pour dessiner.)">
+        </div>
+
         <dt>
           <strong>En bas : zone d'aide</strong>
         </dt>
@@ -419,16 +449,10 @@
         <dd>
           <p>
             Tout en bas de l'écran, Tux, le pingouin Linux, fournit des conseils et d'autres informations pendant que vous dessinez.          </p>
-
-          <div class="screenshot">
-            <img src="../../html/images/tips.jpg"
-               width="324"
-               height="254"
-               alt=
-               "(Par exemple : Choisis une forme. Clique pour démarrer le dessin , fais glisser et continue jusqu'à la taille désirée. Déplace-toi pour la faire tourner, et clique pour dessiner.)">
-          </div>
         </dd>
       </div>
+
+      <div class="screenshot-right-after"></div>
     </dl>
 
     <hr size="1"
@@ -473,7 +497,7 @@
         <p>
           Pendant que vous dessinez, un son est joué. Plus la brosse est grosse, plus le son est grave.        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_paint.png"
              width="120"
              height="95"
@@ -486,7 +510,7 @@
             The space between each position where a brush is applied to the canvas can vary.  Some brushes (such as the footprints and flower) are spaced, by default, far enough apart that they don't overlap.  Other brushes (such as the basic circular ones) are spaced closely, so they make a continuous stroke.          </p>
           <p>
             The default spacing of brushes may be overridden using by clicking within the triangular-shaped series of bars at the bottom right; the larger the bar, the wider the spacing. Brush spacing affects both tools that use the brushes: the "Paint" tool and the "Lines" tool.          </p>
-          <div class="screenshot">
+          <div class="screenshot-center">
             <img src=
             "../../html/images/tool_slider.png"
                width="96"
@@ -516,7 +540,7 @@
         <p>
           Lorsque vous déplacez la souris sur le canevas, une forme suit la souris, indiquant où le tampon sera placé, ainsi que sa taille.        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_stamps.png"
              width="182"
              height="156"
@@ -542,7 +566,7 @@
           <li>De nombreux tampons peuvent être retournés verticalement ou affichés sous forme d'image miroir à l'aide des boutons de commande en bas à droite.          </li>
         </ul>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src=
           "../../html/images/tool_stamp_controls.png"
              width="96"
@@ -588,7 +612,7 @@
         <p>
           Different brushes have different spacing, leaving either a series of individual shapes, or a continuous stroke of the brush shape. Brush spacing may be adjusted. See "Paint", above, to learn more.        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_lines.png"
              width="76"
              height="103"
@@ -623,7 +647,8 @@
           </dt>
 
           <dd>
-            The shape will expand from where you initially clicked, and will be centered around that position.            <p class="note">
+            The shape will expand from where you initially clicked, and will be centered around that position.            <br/>
+            <p class="note">
               <span title="Version variation">&#128220;</span>              This was Tux Paint's only behavior through version 0.9.24.)            </p>
           </dd>
 
@@ -672,7 +697,7 @@
           </dd>
         </dl>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_shapes.png"
              width="177"
              height="104"
@@ -704,7 +729,7 @@
         <p>
           Cliquer ailleurs dans l'image alors que l'entrée de texte est toujours active entraîne le déplacement de la ligne de texte actuelle vers cet emplacement (et vous pouvez continuer à la modifier).        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/ex_text.png"
              width="139"
              height="69"
@@ -953,7 +978,7 @@
         <p>
           Cela vous montre une liste de toutes les images que vous avez enregistrées. S'il y en a plus que ce que peut contenir l'écran, utilisez les flèches «Haut» et «Bas» en haut et en bas de la liste pour faire défiler la liste des images.        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/open_dialog.jpg"
              width="194"
              height="152"
@@ -976,6 +1001,7 @@
 
               <p>
                 (Vous pouvez également double-cliquer sur l'icône d'une image pour la charger.)              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
             <li>
@@ -989,9 +1015,10 @@
 
               <p class="note">
                 <span title="Version variation">&#128220;</span>                <strong>Note:</strong> On Linux (as of version 0.9.22) and Windows (as of version 0.9.27), the picture will be placed in your desktop's trash can / recycle bin (where you may recover and restore it, if you change your mind).              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
-            <li>
+            <li clear="all">
               <img src="../../html/images/open_export.png"
                   width="48"
                   height="48"
@@ -999,6 +1026,7 @@
                   align="right">
               <p>
                 Cliquez sur le bouton "Exporter" près du coin inférieur droit pour exporter l'image vers votre dossier d'exportation. (par exemple, "<code>~/Pictures/TuxPaint/</code>")              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
             <li>
@@ -1009,6 +1037,7 @@
                   align="right">
               <p>
                 Cliquez sur le bouton bleu "Diapositives" (projecteur de diapositives) en bas à gauche pour passer en mode diaporama. Voir «Diapositives », ci-dessous, pour plus de détails.              </p>
+              <div class="screenshot-right-after"></div>
             </li>
 
             <li>
@@ -1019,6 +1048,7 @@
                   align="right">
               <p>
                 Ou cliquez sur le bouton fléché rouge «Retour» en bas à droite de la liste pour annuler et revenir à l'image que vous étiez en train de dessiner.              </p>
+              <div class="screenshot-right-after"></div>
             </li>
           </ul>
         </blockquote>
@@ -1055,7 +1085,7 @@
         <p>
           Si vous <em>avez</em> déjà enregistré l'image, ou s'il s'agit d'une image que vous venez de charger à l'aide de la commande "Ouvrir", il vous sera d'abord demandé si vous voulez écraser l'ancienne version ou bien créer une nouvelle entrée (un nouveau fichier).        </p>
 
-        <div class="screenshot">
+        <div class="screenshot-center">
           <img src="../../html/images/saveover.png"
              width="177"
              height="110"
@@ -1233,7 +1263,7 @@
             <p class="note">
               <span title="Information">&#128161;</span>              <strong>Remarque :</strong> le paramètre le plus lent ne fait pas automatiquement avancer les diapositives. Utilisez-le lorsque vous souhaitez les parcourir manuellement. (Cela ne s'applique pas à un GIF animé exporté.)            </p>
 
-            <div class="screenshot">
+            <div class="screenshot-center">
               <img src=
               "../../html/images/tool_slider.png"
                  width="96"

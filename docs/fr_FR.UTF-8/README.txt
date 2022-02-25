@@ -3,7 +3,7 @@
 
   Un programme simple pour les enfants
 
-      Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.
+        Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
@@ -140,12 +140,12 @@ Lancement de Tux Paint
 
      ----------------------------------------------------------------------
 
+   [Écran-titre]
+
 Écran titre
 
    Lors du premier chargement de Tux Paint, un écran avec titre et crédits
    apparaîtra.
-
-   [Écran-titre]
 
    Une fois le chargement terminé, appuyez sur une touche ou cliquez sur la
    souris pour continuer. (Ou, après environ 30 secondes, l'écran-titre
@@ -157,25 +157,26 @@ Lancement de Tux Paint
 
    L'écran principal est divisé en plusieurs sections :
 
+   [Outils : Peindre, Tampon, Lignes, Formes, Texte, Magie, Étiquette,
+   Défaire, Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder, Imprimer, Quitter]
+
    Côté gauche : la barre d'outils
 
            La barre d'outils contient les commandes pour dessiner et éditer.
 
-           [Outils : Peindre, Tampon, Lignes, Formes, Texte, Magie,
-           Étiquette, Défaire, Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder,
-           Imprimer, Quitter]
+           [Toile]
 
    Milieu : Toile pour Dessiner
 
            La plus grande partie de l'écran, au centre, est la toile de
            dessin. C'est évidemment là que vous dessinerez !
 
-           [Toile]
-
            💡 Remarque: la taille de la toile de dessin dépend de la taille de
            Tux Paint. Vous pouvez modifier la taille de Tux Paint à l'aide de
            l'outil de configuration tuxpaint-config, ou par d’autres moyens.
            Consultez la documentation OPTIONS pour plus de détails.
+
+           [Sélecteurs - Pinceaux, Lettres, Formes, Tampons]
 
    Côté droit : sélecteur
 
@@ -185,14 +186,12 @@ Lancement de Tux Paint
            Lorsque l'outil Tampon en caoutchouc est sélectionné, il affiche
            les différentes formes que vous pouvez utiliser.
 
-           [Sélecteurs - Pinceaux, Lettres, Formes, Tampons]
+           [Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan,
+           Bleu, Pourpre, Brun, Gris]
 
    En bas : couleurs
 
            Une palette de couleurs disponibles s'affiche en bas de l'écran.
-
-           [Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan,
-           Bleu, Pourpre, Brun, Gris]
 
            On the far right are three special color options:
               * The "color picker" (which has an outline of an eye-dropper)
@@ -221,14 +220,14 @@ Lancement de Tux Paint
            ⚙ Note: You can define your own colors for Tux Paint. See the
            "Options" documentation.
 
+           (Par exemple : Choisis une forme. Clique pour démarrer le dessin ,
+           fais glisser et continue jusqu'à la taille désirée. Déplace-toi
+           pour la faire tourner, et clique pour dessiner.)
+
    En bas : zone d'aide
 
            Tout en bas de l'écran, Tux, le pingouin Linux, fournit des
            conseils et d'autres informations pendant que vous dessinez.
-
-           (Par exemple : Choisis une forme. Clique pour démarrer le dessin ,
-           fais glisser et continue jusqu'à la taille désirée. Déplace-toi
-           pour la faire tourner, et clique pour dessiner.)
 
      ----------------------------------------------------------------------
 
