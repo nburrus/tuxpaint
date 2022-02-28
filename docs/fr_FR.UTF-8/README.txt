@@ -7,26 +7,40 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                février 24, 2022
+                                février 27, 2022
 
-               +-----------------------------------------------+
-               |Table des matières                             |
-               |-----------------------------------------------|
-               |  * À propos de Tux Paint                      |
-               |  * Utiliser Tux Paint                         |
-               |       * Lancement de Tux Paint                |
-               |       * Écran titre                           |
-               |       * Écran principal                       |
-               |       * Outils disponibles                    |
-               |            * Outils de dessin                 |
-               |            * Autres contrôles                 |
-               |  * Chargement d'autres images dans Tux Paint  |
-               |  * Lectures complémentaires                   |
-               |  * Comment obtenir de l'aide                  |
-               |  * Comment participer                         |
-               +-----------------------------------------------+
-
-     ----------------------------------------------------------------------
+          +----------------------------------------------------------+
+          |Table des matières                                        |
+          |----------------------------------------------------------|
+          |  * À propos de Tux Paint                                 |
+          |  * Utiliser Tux Paint                                    |
+          |       * Lancement de Tux Paint                           |
+          |       * Écran titre                                      |
+          |       * Écran principal                                  |
+          |       * Outils disponibles                               |
+          |            * Outils de dessin                            |
+          |                 * Outil "Peinture" (pinceau)             |
+          |                 * Outil "Tampon" (tampon de caoutchouc)  |
+          |                 * Outil "Lignes"                         |
+          |                 * Outil "Formes"                         |
+          |                 * Outils "Texte" et "Étiquette"          |
+          |                 * Outil "Remplir"                        |
+          |                 * Outil "Magie" (Effets spéciaux)        |
+          |                 * Outil "Gomme"                          |
+          |            * Autres contrôles                            |
+          |                 * "Undo" and "Redo" Commands             |
+          |                 * Commande "Nouveau"                     |
+          |                 * Commande "Ouvrir"                      |
+          |                 * Commande "Sauvegarder"                 |
+          |                 * Commande "Imprimer"                    |
+          |                 * Commande "Diapos" (sous "Ouvrir")      |
+          |                 * Commande "Quitter"                     |
+          |                 * Coupure du son                         |
+          |  * Chargement d'autres images dans Tux Paint             |
+          |  * Lectures complémentaires                              |
+          |  * Comment obtenir de l'aide                             |
+          |  * Comment participer                                    |
+          +----------------------------------------------------------+
 
                              À propos de Tux Paint
 
@@ -84,8 +98,6 @@ Objectives
            dans une collection de vignettes. L'accès à d'autres fichiers sur
            l'ordinateur est restreint.
 
-     ----------------------------------------------------------------------
-
                                Utiliser Tux Paint
 
 Lancement de Tux Paint
@@ -102,8 +114,6 @@ Lancement de Tux Paint
 
      Si des erreurs se produisent, elles seront affichées sur le terminal
      ("stderr").
-
-     ----------------------------------------------------------------------
 
   Utilisateurs de Windows
 
@@ -132,13 +142,9 @@ Lancement de Tux Paint
      Paint sera là où vous l'avez placé lorsque vous avez décompressé le
      fichier ZIP.
 
-     ----------------------------------------------------------------------
-
   Utilisateurs de macOS
 
      Double-cliquez simplement sur l'icône "Tux Paint".
-
-     ----------------------------------------------------------------------
 
    [Écran-titre]
 
@@ -150,8 +156,6 @@ Lancement de Tux Paint
    Une fois le chargement terminé, appuyez sur une touche ou cliquez sur la
    souris pour continuer. (Ou, après environ 30 secondes, l'écran-titre
    disparaîtra automatiquement.)
-
-     ----------------------------------------------------------------------
 
 Écran principal
 
@@ -191,7 +195,12 @@ Lancement de Tux Paint
 
    En bas : couleurs
 
-           Une palette de couleurs disponibles s'affiche en bas de l'écran.
+           When the active tool supports colors, a palette of colors choices
+           will be shown near the bottom of the screen. Click one to choose a
+           color, and it will be used by the active tool. (For example, the
+           "Paint" tool will use it as the color to draw with the chosen
+           brush, and the "Fill" tool will use it as the color to use when
+           flood-filling an area of the picture.)
 
            On the far right are three special color options:
               * The "color picker" (which has an outline of an eye-dropper)
@@ -228,8 +237,6 @@ Lancement de Tux Paint
 
            Tout en bas de l'écran, Tux, le pingouin Linux, fournit des
            conseils et d'autres informations pendant que vous dessinez.
-
-     ----------------------------------------------------------------------
 
 Outils disponibles
 
@@ -280,8 +287,6 @@ Outils disponibles
              display the brush spacing controls. See the "Options"
              documentation.
 
-     ----------------------------------------------------------------------
-
    Outil "Tampon" (tampon de caoutchouc)
 
            L'outil Tampon montre un ensemble de tampons en caoutchouc ou
@@ -321,8 +326,6 @@ Outils disponibles
            display the Mirror, Flip, Shrink and Grow controls for stamps. See
            the "Options" documentation.
 
-     ----------------------------------------------------------------------
-
    Outil "Lignes"
 
            Cet outil vous permet de dessiner des lignes droites à l'aide des
@@ -347,8 +350,6 @@ Outils disponibles
            Different brushes have different spacing, leaving either a series
            of individual shapes, or a continuous stroke of the brush shape.
            Brush spacing may be adjusted. See "Paint", above, to learn more.
-
-     ----------------------------------------------------------------------
 
    Outil "Formes"
 
@@ -411,8 +412,6 @@ Outils disponibles
 
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
-
-     ----------------------------------------------------------------------
 
    Outils "Texte" et "Étiquette"
 
@@ -524,8 +523,6 @@ Outils disponibles
                         ⚙ See the "Options" and "Extending Tux Paint"
                         documentation for more information.
 
-     ----------------------------------------------------------------------
-
    Outil "Remplir"
 
            L'outil «Remplir» «remplit» une zone contiguë de votre dessin avec
@@ -546,8 +543,6 @@ Outils disponibles
            below). Prior to Tux Paint 0.9.26, the "Fill" tool only offered
            the 'Solid' method of filling.
 
-     ----------------------------------------------------------------------
-
    Outil "Magie" (Effets spéciaux)
 
            L'outil «Magie» est en fait un ensemble d'outils spéciaux.
@@ -565,8 +560,6 @@ Outils disponibles
            Voir les instructions pour chaque outil 'Magie' (dans le dossier
            'magic-docs').
 
-     ----------------------------------------------------------------------
-
    Outil "Gomme"
 
            Cet outil est similaire au pinceau. Partout où vous cliquez (ou
@@ -583,32 +576,24 @@ Outils disponibles
 
            Au fur et à mesure que vous effacez, un grincement est émis.
 
-     ----------------------------------------------------------------------
-
   Autres contrôles
 
-   Commande "Défaire"
+   "Undo" and "Redo" Commands
 
-           En cliquant cet outil annulera la dernière action. Vous pouvez
-           même annuler plus d'une fois !
+           Clicking the "Undo" button will undo (revert) the last drawing
+           action. You can even undo more than once!
 
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [Z] sur
            le clavier pour Défaire.
 
-     ----------------------------------------------------------------------
-
-   Commande "Refaire"
-
-           Cliquez sur cet outil pour refaire l'action de dessin que vous
-           venez de «annuler» avec le bouton «Défaire».
+           Clicking the "Redo" button will redo the drawing action you just
+           un-did via the "Undo" command.
 
            Tant que vous ne dessinez plus, vous pouvez refaire autant de fois
            que vous avez défait !
 
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [R] sur
            le clavier pour Refaire.
-
-     ----------------------------------------------------------------------
 
    Commande "Nouveau"
 
@@ -654,8 +639,6 @@ Outils disponibles
              donc l'utiliser à nouveau plus tard (en y accédant depuis la
              boîte de dialogue 'Nouveau').
 
-     ----------------------------------------------------------------------
-
    Commande "Ouvrir"
 
            Cela vous montre une liste de toutes les images que vous avez
@@ -664,43 +647,40 @@ Outils disponibles
            pour faire défiler la liste des images.
 
            Cliquez sur une image pour la sélectionner, puis ...
+              * Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la
+                liste pour charger l'image sélectionnée.
 
-                * Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la
-                  liste pour charger l'image sélectionnée.
+                (Vous pouvez également double-cliquer sur l'icône d'une image
+                pour la charger.)
 
-                  (Vous pouvez également double-cliquer sur l'icône d'une
-                  image pour la charger.)
+                💡 If choose to open a picture, and your current drawing
+                hasn't been saved, you will be prompted as to whether you
+                want to save it or not. (See "Save," below.)
 
-                * Cliquez sur le bouton marron "Effacer" (poubelle) en bas à
-                  droite de la liste pour effacer l'image sélectionnée. (Il
-                  vous sera demandé de confirmer.)
+              * Cliquez sur le bouton marron "Effacer" (poubelle) en bas à
+                droite de la liste pour effacer l'image sélectionnée. (Il
+                vous sera demandé de confirmer.)
 
-                  📜 Note: On Linux (as of version 0.9.22) and Windows (as of
-                  version 0.9.27), the picture will be placed in your
-                  desktop's trash can / recycle bin (where you may recover
-                  and restore it, if you change your mind).
+                📜 Note: On Linux (as of version 0.9.22) and Windows (as of
+                version 0.9.27), the picture will be placed in your desktop's
+                trash can / recycle bin (where you may recover and restore
+                it, if you change your mind).
 
-                * Cliquez sur le bouton "Exporter" près du coin inférieur
-                  droit pour exporter l'image vers votre dossier
-                  d'exportation. (par exemple, "~/Pictures/TuxPaint/")
+              * Cliquez sur le bouton "Exporter" près du coin inférieur droit
+                pour exporter l'image vers votre dossier d'exportation. (par
+                exemple, "~/Pictures/TuxPaint/")
 
-                * Cliquez sur le bouton bleu "Diapositives" (projecteur de
-                  diapositives) en bas à gauche pour passer en mode
-                  diaporama. Voir «Diapositives », ci-dessous, pour plus de
-                  détails.
+           From the "Open" screen you can also:
+              * Click the blue 'Slides' (slide projector) button at the lower
+                left to go to slideshow mode. See "Slides", below, for
+                details.
 
-                * Ou cliquez sur le bouton fléché rouge «Retour» en bas à
-                  droite de la liste pour annuler et revenir à l'image que
-                  vous étiez en train de dessiner.
-
-           Si vous choisissez d'ouvrir une image et que votre dessin actuel
-           n'a pas été enregistré, il vous sera demandé si vous souhaitez
-           l'enregistrer ou non. (Voir "Enregistrer," ci-dessous.)
+              * Ou cliquez sur le bouton fléché rouge «Retour» en bas à
+                droite de la liste pour annuler et revenir à l'image que vous
+                étiez en train de dessiner.
 
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [O] sur
            le clavier pour afficher la boîte de dialogue "Ouvrir".
-
-     ----------------------------------------------------------------------
 
    Commande "Sauvegarder"
 
@@ -725,8 +705,6 @@ Outils disponibles
 
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [S] sur
            le clavier pour sauvegarde.
-
-     ----------------------------------------------------------------------
 
    Commande "Imprimer"
 
@@ -831,8 +809,6 @@ Outils disponibles
 
                         ⚙ Voir la documentation sur "Options".
 
-     ----------------------------------------------------------------------
-
    Commande "Diapos" (sous "Ouvrir")
 
            Le bouton "Diapositives" est disponible dans la boîte de dialogue
@@ -913,8 +889,6 @@ Outils disponibles
            Cliquez sur "Retour" dans l'écran de sélection d'image du
            diaporama pour revenir à la boîte de dialogue "Ouvrir".
 
-     ----------------------------------------------------------------------
-
    Commande "Quitter"
 
            Cliquez sur le bouton "Quitter", fermez la fenêtre de Tux Paint ou
@@ -922,12 +896,10 @@ Outils disponibles
 
            On vous demandera d'abord si vous voulez vraiment arrêter.
 
-           Si vous choisissez de quitter et que vous n'avez pas enregistré
-           l'image actuelle, il vous sera d'abord demandé si vous souhaitez
-           l'enregistrer. S'il ne s'agit pas d'une nouvelle image, il vous
-           sera alors demandé si vous souhaitez enregistrer sur l'ancienne
-           version ou créer une nouvelle entrée. (Voir Sauvegarder
-           ci-dessus.)
+           If you choose to quit, and you haven't saved the current picture,
+           you will first be asked if wish to save it. If it's not a new
+           image, you will then be asked if you want to save over the old
+           version, or create a new entry. (See "Save" above.)
 
            ⚙ Remarque :: Si l'image est enregistrée, elle sera rechargée
            automatiquement la prochaine fois que vous exécuterez Tux Paint --
@@ -946,8 +918,6 @@ Outils disponibles
 
            ⚙ Voir la documentation sur "Options".
 
-     ----------------------------------------------------------------------
-
    Coupure du son
 
            Il n'y a pas de bouton de commande à l'écran pour le moment, mais
@@ -961,8 +931,6 @@ Outils disponibles
            lorsque le parent / enseignant veut qu'ils soient désactivés.)
 
            ⚙ Voir la documentation sur "Options".
-
-     ----------------------------------------------------------------------
 
                    Chargement d'autres images dans Tux Paint
 
@@ -1084,8 +1052,6 @@ Importer des images manuellement
        taille (largeur et hauteur en pixels) elle possède, et essayez de
        l'adapter lors de la mise à l'échelle en l'important dans Tux Paint.
 
-     ----------------------------------------------------------------------
-
                             Lectures complémentaires
 
    Les autres documents inclus avec Tux Paint (dans le répertoire "docs")
@@ -1125,13 +1091,10 @@ Importer des images manuellement
             Tux Paint's software license, the GNU General Public License
             (GPL)
 
-     ----------------------------------------------------------------------
-
                            Comment obtenir de l'aide
 
-   Si vous avez besoin d'aide, il existe de nombreux moyens d'interagir avec
-   les développeurs de Tux Paint et les autres utilisateurs.
-
+   If you need help, there are numerous ways to interact with Tux Paint
+   developers and other users:
      * Mentionner des bogues, ou demander de nouvelles fonctionnalités via le
        système de suivi des bogues
      * Participer aux nombreuses listes de diffusion de Tux Paint
@@ -1140,13 +1103,10 @@ Importer des images manuellement
    Pour en savoir plus, visitez la page "Contact" du site officiel de Tux
    Paint : https://tuxpaint.org/contact/
 
-     ----------------------------------------------------------------------
-
                                Comment participer
 
-   Tux Paint est un projet mené par des volontaires, et nous serions heureux
-   d'accepter votre aide dans des tas de domaines.
-
+   Tux Paint is a volunteer-driven project, and we're happy to accept your
+   help in a variety of ways:
      * Traduire Tux Paint dans une autre langue
      * Améliorer les traductions existantes
      * Créer des oeuvres (tampons, images de démarrage, modèles, pinceaux)
@@ -1157,6 +1117,9 @@ Importer des images manuellement
    Pour en savoir plus, visitez la page "Nous aider" du site officiel de Tux
    Paint : https://tuxpaint.org/help/
 
-     ----------------------------------------------------------------------
+                               Trademark notices
 
-                                      ###
+     * "Linux" is a registered trademark of Linus Torvalds.
+     * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
+     * "Apple" and "macOS" are registered trademarks of Apple Inc.
+     * "Twitter" is a registered trademark of Twitter, Inc.

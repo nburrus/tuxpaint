@@ -2,7 +2,7 @@
                                  version 0.9.28
                 Documentation sur les variables d'environnement
 
-      Copyright &copie; 2021-2022 par divers contributeurs; voir AUTHORS.
+        Copyright © 2021-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                                 janvier 20, 2022

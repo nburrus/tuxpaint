@@ -7,26 +7,40 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                                febrero 24, 2022
+                                febrero 27, 2022
 
-                 +-------------------------------------------+
-                 |Table of Contents                          |
-                 |-------------------------------------------|
-                 |  * About Tux Paint                        |
-                 |  * Using Tux Paint                        |
-                 |       * Launching Tux Paint               |
-                 |       * Title Screen                      |
-                 |       * Main Screen                       |
-                 |       * Available Tools                   |
-                 |            * Drawing Tools                |
-                 |            * Other Controls               |
-                 |  * Loading Other Pictures into Tux Paint  |
-                 |  * Further Reading                        |
-                 |  * How to Get Help                        |
-                 |  * How to Participate                     |
-                 +-------------------------------------------+
-
-     ----------------------------------------------------------------------
+             +----------------------------------------------------+
+             |Table of Contents                                   |
+             |----------------------------------------------------|
+             |  * About Tux Paint                                 |
+             |  * Using Tux Paint                                 |
+             |       * Launching Tux Paint                        |
+             |       * Title Screen                               |
+             |       * Main Screen                                |
+             |       * Available Tools                            |
+             |            * Drawing Tools                         |
+             |                 * "Paint" Tool (Brush)             |
+             |                 * "Stamp" Tool (Rubber Stamps)     |
+             |                 * "Lines" Tool                     |
+             |                 * "Shapes" Tool                    |
+             |                 * "Text" and "Label" Tools         |
+             |                 * "Fill" Tool                      |
+             |                 * "Magic" Tool (Special Effects)   |
+             |                 * "Eraser" Tool                    |
+             |            * Other Controls                        |
+             |                 * "Undo" and "Redo" Commands       |
+             |                 * "New" Command                    |
+             |                 * "Open" Command                   |
+             |                 * "Save" Command                   |
+             |                 * "Print" Command                  |
+             |                 * "Slides" Command (under "Open")  |
+             |                 * "Quit" Command                   |
+             |                 * Sound Muting                     |
+             |  * Loading Other Pictures into Tux Paint           |
+             |  * Further Reading                                 |
+             |  * How to Get Help                                 |
+             |  * How to Participate                              |
+             +----------------------------------------------------+
 
                                 About Tux Paint
 
@@ -79,8 +93,6 @@ Objectives
            selecting it from a collection of thumbnails. Access to other
            files on the computer is restricted.
 
-     ----------------------------------------------------------------------
-
                                 Using Tux Paint
 
 Launching Tux Paint
@@ -96,8 +108,6 @@ Launching Tux Paint
        $ tuxpaint
 
      If any errors occur, they will be displayed on the terminal (to STDERR).
-
-     ----------------------------------------------------------------------
 
   Windows Users
 
@@ -123,13 +133,9 @@ Launching Tux Paint
      If you used the 'ZIP-file' download, Tux Paint's folder will be wherever
      you extracted the contents of the ZIP file.
 
-     ----------------------------------------------------------------------
-
   macOS Users
 
      Simply double-click the "Tux Paint" icon.
-
-     ----------------------------------------------------------------------
 
    [Title screen]
 
@@ -140,8 +146,6 @@ Title Screen
    Once loading is complete, press a key or click or tap in the Tux Paint
    window to continue. (Or, after about 5 seconds, the title screen will go
    away automatically.)
-
-     ----------------------------------------------------------------------
 
 Main Screen
 
@@ -181,8 +185,12 @@ Main Screen
 
    Lower: Colors
 
-           A palette of available colors are shown near the bottom of the
-           screen.
+           When the active tool supports colors, a palette of colors choices
+           will be shown near the bottom of the screen. Click one to choose a
+           color, and it will be used by the active tool. (For example, the
+           "Paint" tool will use it as the color to draw with the chosen
+           brush, and the "Fill" tool will use it as the color to use when
+           flood-filling an area of the picture.)
 
            On the far right are three special color options:
               * The "color picker" (which has an outline of an eye-dropper)
@@ -219,8 +227,6 @@ Main Screen
 
            At the very bottom of the screen, Tux, the Linux Penguin, provides
            tips and other information while you use Tux Paint.
-
-     ----------------------------------------------------------------------
 
 Available Tools
 
@@ -272,8 +278,6 @@ Available Tools
              display the brush spacing controls. See the "Options"
              documentation.
 
-     ----------------------------------------------------------------------
-
    "Stamp" Tool (Rubber Stamps)
 
            The Stamp tool is like a set of rubber stamps or stickers. It lets
@@ -312,8 +316,6 @@ Available Tools
            display the Mirror, Flip, Shrink and Grow controls for stamps. See
            the "Options" documentation.
 
-     ----------------------------------------------------------------------
-
    "Lines" Tool
 
            This tool lets you draw straight lines using the various brushes
@@ -337,8 +339,6 @@ Available Tools
            Different brushes have different spacing, leaving either a series
            of individual shapes, or a continuous stroke of the brush shape.
            Brush spacing may be adjusted. See "Paint", above, to learn more.
-
-     ----------------------------------------------------------------------
 
    "Shapes" Tool
 
@@ -399,8 +399,6 @@ Available Tools
 
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
-
-     ----------------------------------------------------------------------
 
    "Text" and "Label" Tools
 
@@ -503,8 +501,6 @@ Available Tools
                         ⚙ See the "Options" and "Extending Tux Paint"
                         documentation for more information.
 
-     ----------------------------------------------------------------------
-
    "Fill" Tool
 
            The 'Fill' tool 'flood-fills' a contiguous area of your drawing
@@ -520,8 +516,6 @@ Available Tools
            📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see
            below). Prior to Tux Paint 0.9.26, the "Fill" tool only offered
            the 'Solid' method of filling.
-
-     ----------------------------------------------------------------------
 
    "Magic" Tool (Special Effects)
 
@@ -540,8 +534,6 @@ Available Tools
            See the instructions for each Magic tool (in the 'magic-docs'
            folder).
 
-     ----------------------------------------------------------------------
-
    "Eraser" Tool
 
            This tool is similar to the Paint Brush. Wherever you click (or
@@ -556,32 +548,24 @@ Available Tools
 
            As you erase, a 'squeaky clean' eraser wiping sound is played.
 
-     ----------------------------------------------------------------------
-
   Other Controls
 
-   "Undo" Command
+   "Undo" and "Redo" Commands
 
-           Clicking this tool will undo the last drawing action. You can even
-           undo more than once!
+           Clicking the "Undo" button will undo (revert) the last drawing
+           action. You can even undo more than once!
 
            ⌨ Note: You can also press [Control / ⌘] + [Z] on the keyboard to
            Undo.
 
-     ----------------------------------------------------------------------
-
-   "Redo" Command
-
-           Clicking this tool will redo the drawing action you just un-did
-           with the 'Undo' button.
+           Clicking the "Redo" button will redo the drawing action you just
+           un-did via the "Undo" command.
 
            As long as you don't draw again, you can redo as many times as you
            had undone!
 
            ⌨ Note: You can also press [Control / ⌘] + [R] on the keyboard to
            Redo.
-
-     ----------------------------------------------------------------------
 
    "New" Command
 
@@ -624,8 +608,6 @@ Available Tools
              overwrite the original, so you can use it again later (by
              accessing it from the 'New' dialog).
 
-     ----------------------------------------------------------------------
-
    "Open" Command
 
            This shows you a list of all of the pictures you've saved. If
@@ -634,41 +616,38 @@ Available Tools
            list of pictures.
 
            Click a picture to select it, and then...
+              * Click the green 'Open' button at the lower left of the list
+                to load the selected picture.
 
-                * Click the green 'Open' button at the lower left of the list
-                  to load the selected picture.
+                (Alternatively, you can double-click a picture's icon to load
+                it.)
 
-                  (Alternatively, you can double-click a picture's icon to
-                  load it.)
+                💡 If choose to open a picture, and your current drawing
+                hasn't been saved, you will be prompted as to whether you
+                want to save it or not. (See "Save," below.)
 
-                * Click the brown 'Erase' (trash can) button at the lower
-                  right of the list to erase the selected picture. (You will
-                  be asked to confirm.)
+              * Click the brown 'Erase' (trash can) button at the lower right
+                of the list to erase the selected picture. (You will be asked
+                to confirm.)
 
-                  📜 Note: On Linux (as of version 0.9.22) and Windows (as of
-                  version 0.9.27), the picture will be placed in your
-                  desktop's trash can / recycle bin (where you may recover
-                  and restore it, if you change your mind).
+                📜 Note: On Linux (as of version 0.9.22) and Windows (as of
+                version 0.9.27), the picture will be placed in your desktop's
+                trash can / recycle bin (where you may recover and restore
+                it, if you change your mind).
 
-                * Click the 'Export' button near the lower right to export
-                  the image to your export folder. (e.g.,
-                  "~/Pictures/TuxPaint/")
+              * Click the 'Export' button near the lower right to export the
+                image to your export folder. (e.g., "~/Pictures/TuxPaint/")
 
-                * Click the blue 'Slides' (slide projector) button at the
-                  lower left to go to slideshow mode. See "Slides", below,
-                  for details.
+           From the "Open" screen you can also:
+              * Click the blue 'Slides' (slide projector) button at the lower
+                left to go to slideshow mode. See "Slides", below, for
+                details.
 
-                * Click the red 'Back' arrow button at the lower right of the
-                  list to cancel and return to the picture you were drawing.
-
-           If choose to open a picture, and your current drawing hasn't been
-           saved, you will be prompted as to whether you want to save it or
-           not. (See "Save," below.)
+              * Click the red 'Back' arrow button at the lower right of the
+                list to cancel and return to the picture you were drawing.
 
            ⌨ Note: You can also press [Control / ⌘] + [O] on the keyboard to
            bring up the 'Open' dialog.
-
-     ----------------------------------------------------------------------
 
    "Save" Command
 
@@ -690,8 +669,6 @@ Available Tools
 
            ⌨ Note: You can also press [Control / ⌘] + [S] on the keyboard to
            save.
-
-     ----------------------------------------------------------------------
 
    "Print" Command
 
@@ -793,8 +770,6 @@ Available Tools
 
                         ⚙ See the "Options" documentation.
 
-     ----------------------------------------------------------------------
-
    "Slides" Command (under "Open")
 
            The 'Slides' button is available in the 'Open' dialog. It can be
@@ -869,8 +844,6 @@ Available Tools
            Click 'Back' in the slideshow image selection screen to return to
            the 'Open' dialog.
 
-     ----------------------------------------------------------------------
-
    "Quit" Command
 
            Clicking the 'Quit' button, closing the Tux Paint window, or
@@ -899,8 +872,6 @@ Available Tools
 
            ⚙ See the "Options" documentation.
 
-     ----------------------------------------------------------------------
-
    Sound Muting
 
            There is no on-screen control button at this time, but by using
@@ -913,8 +884,6 @@ Available Tools
            them disabled.)
 
            ⚙ See the "Options" documentation.
-
-     ----------------------------------------------------------------------
 
                      Loading Other Pictures into Tux Paint
 
@@ -1024,8 +993,6 @@ Importing Pictures Manually
        height) it came out to, and try to match that when scaling the
        picture(s) you're importing into Tux Paint.
 
-     ----------------------------------------------------------------------
-
                                 Further Reading
 
    Other documentation included with Tux Paint (found in the "docs"
@@ -1062,13 +1029,10 @@ Importing Pictures Manually
             Tux Paint's software license, the GNU General Public License
             (GPL)
 
-     ----------------------------------------------------------------------
-
                                 How to Get Help
 
    If you need help, there are numerous ways to interact with Tux Paint
-   developers and other users.
-
+   developers and other users:
      * Report bugs or request new features via the project's bug-tracking
        system
      * Participate in the various project mailing lists
@@ -1077,13 +1041,10 @@ Importing Pictures Manually
    To learn more, visit the "Contact" page of the official Tux Paint website:
    https://tuxpaint.org/contact/
 
-     ----------------------------------------------------------------------
-
                                How to Participate
 
    Tux Paint is a volunteer-driven project, and we're happy to accept your
-   help in a variety of ways.
-
+   help in a variety of ways:
      * Translate Tux Paint to another language
      * Improve existing translations
      * Create artwork (stamps, starters, templates, brushes)
@@ -1094,6 +1055,9 @@ Importing Pictures Manually
    To learn more, visit the "Help Us" page of the official Tux Paint website:
    https://tuxpaint.org/help/
 
-     ----------------------------------------------------------------------
+                               Trademark notices
 
-                                      ###
+     * "Linux" is a registered trademark of Linus Torvalds.
+     * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
+     * "Apple" and "macOS" are registered trademarks of Apple Inc.
+     * "Twitter" is a registered trademark of Twitter, Inc.

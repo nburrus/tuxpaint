@@ -3,7 +3,7 @@
 
 Documentación de opcións
 
-    Copyright © 2002-2022 por varios colaboradores; vexa AUTHORS (AUTORES).
+        Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                              20 de Xaneiro de 2022

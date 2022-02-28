@@ -3,7 +3,7 @@
 
 Options Documentation
 
-          Copyright © 2002-2022 by various contributors; see AUTHORS.
+        Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                                  enero 20, 2022

@@ -7,26 +7,40 @@
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             24 de Febreiro de 2022
+                             27 de Febreiro de 2022
 
-                   +---------------------------------------+
-                   |Índice                                 |
-                   |---------------------------------------|
-                   |  * Sobre Tux Paint                    |
-                   |  * Uso de Tux Paint                   |
-                   |       * Inicio de Tux Paint           |
-                   |       * Pantalla de título            |
-                   |       * Pantalla principal            |
-                   |       * Ferramentas dispoñíbeis       |
-                   |            * Ferramentas de debuxo    |
-                   |            * Outros controis          |
-                   |  * Carga doutras imaxes en Tux Paint  |
-                   |  * Máis información                   |
-                   |  * Como obter axuda                   |
-                   |  * Como participar                    |
-                   +---------------------------------------+
-
-     ----------------------------------------------------------------------
+         +-----------------------------------------------------------+
+         |Índice                                                     |
+         |-----------------------------------------------------------|
+         |  * Sobre Tux Paint                                        |
+         |  * Uso de Tux Paint                                       |
+         |       * Inicio de Tux Paint                               |
+         |       * Pantalla de título                                |
+         |       * Pantalla principal                                |
+         |       * Ferramentas dispoñíbeis                           |
+         |            * Ferramentas de debuxo                        |
+         |                 * Ferramenta «Pintar» (pinceis)           |
+         |                 * Ferramenta «Selo» (selos de caucho)     |
+         |                 * Ferramenta «Liñas»                      |
+         |                 * Ferramenta «Formas»                     |
+         |                 * Ferramentas «Texto» e «Etiquetas»       |
+         |                 * Ferramenta «Encher»                     |
+         |                 * Ferramenta «Maxia» (efectos especiais)  |
+         |                 * Ferramenta de «Goma» (de borrar)        |
+         |            * Outros controis                              |
+         |                 * "Undo" and "Redo" Commands              |
+         |                 * Orde «Novo»                             |
+         |                 * Orde «Abrir»                            |
+         |                 * Orde «Gardar»                           |
+         |                 * Orde «Imprimir»                         |
+         |                 * Orde «Diapositivas» (en «Abrir»)        |
+         |                 * Orde «Saír»                             |
+         |                 * Silenciar o son                         |
+         |  * Carga doutras imaxes en Tux Paint                      |
+         |  * Máis información                                       |
+         |  * Como obter axuda                                       |
+         |  * Como participar                                        |
+         +-----------------------------------------------------------+
 
                                 Sobre Tux Paint
 
@@ -80,8 +94,6 @@ Objectives
            faise seleccionándoa nunha colección de miniaturas. O acceso a
            outros ficheiros da computadora está restrinxido.
 
-     ----------------------------------------------------------------------
-
                                 Uso de Tux Paint
 
 Inicio de Tux Paint
@@ -97,8 +109,6 @@ Inicio de Tux Paint
        $ tuxpaint
 
      Se se producen erros, amosaranse no terminal (en STDERR).
-
-     ----------------------------------------------------------------------
 
   Usuarios de Windows
 
@@ -124,13 +134,9 @@ Inicio de Tux Paint
      Se usou a descarga de «ficheiro ZIP», o cartafol de Tux Paint estará
      onde teña extraído o contido do ficheiro ZIP.
 
-     ----------------------------------------------------------------------
-
   Usuarios de macOS
 
      Simplemente fai dobre clic na icona «Tux Paint».
-
-     ----------------------------------------------------------------------
 
    [Pantalla de título]
 
@@ -142,8 +148,6 @@ Pantalla de título
    Unha vez completada a carga, prema unha tecla, faga clic ou toque na
    xanela de Tux Paint para continuar. (Ou, após aproximadamente 5 segundos,
    a pantalla do título desaparecerá automaticamente.)
-
-     ----------------------------------------------------------------------
 
 Pantalla principal
 
@@ -184,8 +188,12 @@ Pantalla principal
 
    Máis abaixo: Cores
 
-           Amosarase unha paleta de cores dispoñíbeis preto da parte inferior
-           da pantalla.
+           When the active tool supports colors, a palette of colors choices
+           will be shown near the bottom of the screen. Click one to choose a
+           color, and it will be used by the active tool. (For example, the
+           "Paint" tool will use it as the color to draw with the chosen
+           brush, and the "Fill" tool will use it as the color to use when
+           flood-filling an area of the picture.)
 
            On the far right are three special color options:
               * The "color picker" (which has an outline of an eye-dropper)
@@ -222,8 +230,6 @@ Pantalla principal
 
            Na parte inferior da pantalla, Tux, o pingüín de Linux, ofrece
            consellos e outra información mentres usa Tux Paint.
-
-     ----------------------------------------------------------------------
 
 Ferramentas dispoñíbeis
 
@@ -275,8 +281,6 @@ Ferramentas dispoñíbeis
              display the brush spacing controls. See the "Options"
              documentation.
 
-     ----------------------------------------------------------------------
-
    Ferramenta «Selo» (selos de caucho)
 
            A ferramenta Selo é como un conxunto de selos de cacho ou
@@ -317,8 +321,6 @@ Ferramentas dispoñíbeis
            display the Mirror, Flip, Shrink and Grow controls for stamps. See
            the "Options" documentation.
 
-     ----------------------------------------------------------------------
-
    Ferramenta «Liñas»
 
            Esta ferramenta permítelle debuxar liñas rectas empregando os
@@ -341,8 +343,6 @@ Ferramentas dispoñíbeis
            Different brushes have different spacing, leaving either a series
            of individual shapes, or a continuous stroke of the brush shape.
            Brush spacing may be adjusted. See "Paint", above, to learn more.
-
-     ----------------------------------------------------------------------
 
    Ferramenta «Formas»
 
@@ -405,8 +405,6 @@ Ferramentas dispoñíbeis
 
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
-
-     ----------------------------------------------------------------------
 
    Ferramentas «Texto» e «Etiquetas»
 
@@ -513,8 +511,6 @@ Ferramentas dispoñíbeis
                         ⚙ See the "Options" and "Extending Tux Paint"
                         documentation for more information.
 
-     ----------------------------------------------------------------------
-
    Ferramenta «Encher»
 
            A ferramenta «Encher» inunda unha área contigua do seu debuxo
@@ -533,8 +529,6 @@ Ferramentas dispoñíbeis
            below). Prior to Tux Paint 0.9.26, the "Fill" tool only offered
            the 'Solid' method of filling.
 
-     ----------------------------------------------------------------------
-
    Ferramenta «Maxia» (efectos especiais)
 
            A ferramenta Maxia é realmente un conxunto de ferramentas
@@ -552,8 +546,6 @@ Ferramentas dispoñíbeis
            Consulte as instrucións de cada ferramenta Máxica (no cartafol
            «magic-docs»).
 
-     ----------------------------------------------------------------------
-
    Ferramenta de «Goma» (de borrar)
 
            Esta ferramenta é similar ao pincel. Onde queira que prema (ou
@@ -568,32 +560,24 @@ Ferramentas dispoñíbeis
 
            Ao borralo, reprodúcese un son de borrado «rechiante».
 
-     ----------------------------------------------------------------------
-
   Outros controis
 
-   Orde «Desfacer»
+   "Undo" and "Redo" Commands
 
-           Ao premer nesta ferramenta desfarase a última acción de debuxo.
-           Vostede pode incluso desfacer máis dunha vez.
+           Clicking the "Undo" button will undo (revert) the last drawing
+           action. You can even undo more than once!
 
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [Z] no teclado para
            Desfacer.
 
-     ----------------------------------------------------------------------
-
-   Orde «refacer»
-
-           Ao premer nesta ferramenta refarase a acción de debuxo que ven de
-           facer co botón «Desfacer».
+           Clicking the "Redo" button will redo the drawing action you just
+           un-did via the "Undo" command.
 
            Mentres non volva debuxar, pode refacer tantas veces como teña
            desfeito.
 
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [R] no teclado para
            Refacer.
-
-     ----------------------------------------------------------------------
 
    Orde «Novo»
 
@@ -636,8 +620,6 @@ Ferramentas dispoñíbeis
              sobrescribe o orixinal, polo que pode usalo de novo máis adiante
              (accedendo a el dende o diálogo «Novo»).
 
-     ----------------------------------------------------------------------
-
    Orde «Abrir»
 
            Isto amosa unha lista de todas as imaxes que gardou. Se hai máis
@@ -646,43 +628,40 @@ Ferramentas dispoñíbeis
            imaxes.
 
            Prema nunha imaxe para seleccionala e logo...
+              * Prema no botón verde «Abrir» na parte inferior esquerda da
+                lista para cargar a imaxe seleccionada.
 
-                * Prema no botón verde «Abrir» na parte inferior esquerda da
-                  lista para cargar a imaxe seleccionada.
+                (Como alternativa, pode facer dobre clic na icona dunha imaxe
+                para cargala.)
 
-                  (Como alternativa, pode facer dobre clic na icona dunha
-                  imaxe para cargala.)
+                💡 If choose to open a picture, and your current drawing
+                hasn't been saved, you will be prompted as to whether you
+                want to save it or not. (See "Save," below.)
 
-                * Prema no botón marrón «Borrar» (cesta do lixo) na parte
-                  inferior dereita da lista para borrar a imaxe seleccionada.
-                  (Pediráselle que o confirme).
+              * Prema no botón marrón «Borrar» (cesta do lixo) na parte
+                inferior dereita da lista para borrar a imaxe seleccionada.
+                (Pediráselle que o confirme).
 
-                  📜 Note: On Linux (as of version 0.9.22) and Windows (as of
-                  version 0.9.27), the picture will be placed in your
-                  desktop's trash can / recycle bin (where you may recover
-                  and restore it, if you change your mind).
+                📜 Note: On Linux (as of version 0.9.22) and Windows (as of
+                version 0.9.27), the picture will be placed in your desktop's
+                trash can / recycle bin (where you may recover and restore
+                it, if you change your mind).
 
-                * Prema no botón «Exportar» preto da parte inferior dereita
-                  para exportar a imaxe ao cartafol de exportación. (p. ex.:
-                  «~/Pictures/TuxPaint/»)
+              * Prema no botón «Exportar» preto da parte inferior dereita
+                para exportar a imaxe ao cartafol de exportación. (p. ex.:
+                «~/Pictures/TuxPaint/»)
 
-                * Prema no botón azul «Diapositivas» (proxector de
-                  diapositivas) situado na parte inferior esquerda para ir ao
-                  modo de presentación de diapositivas. Vexa «Diapositivas»,
-                  a continuación, para máis detalles.
+           From the "Open" screen you can also:
+              * Click the blue 'Slides' (slide projector) button at the lower
+                left to go to slideshow mode. See "Slides", below, for
+                details.
 
-                * Prema no botón de frecha vermello «Atrás» situado na parte
-                  inferior dereita da lista para cancelar e volver á imaxe
-                  que debuxaba.
-
-           Se escolle abrir unha imaxe e o seu debuxo actual non foi gardado,
-           preguntaráselle se quere gardala ou non. (Vexa «Gardar» a
-           continuación).
+              * Prema no botón de frecha vermello «Atrás» situado na parte
+                inferior dereita da lista para cancelar e volver á imaxe que
+                debuxaba.
 
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [O] no teclado para
            activar o diálogo «Abrir».
-
-     ----------------------------------------------------------------------
 
    Orde «Gardar»
 
@@ -706,8 +685,6 @@ Ferramentas dispoñíbeis
 
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [S] no teclado para
            gardar.
-
-     ----------------------------------------------------------------------
 
    Orde «Imprimir»
 
@@ -810,8 +787,6 @@ Ferramentas dispoñíbeis
 
                         ⚙ Vexa a documentación de «Opcións.
 
-     ----------------------------------------------------------------------
-
    Orde «Diapositivas» (en «Abrir»)
 
            O botón «Diapositivas» está dispoñíbel no diálogo «Abrir». Pode
@@ -887,8 +862,6 @@ Ferramentas dispoñíbeis
            Prema en «Atrás» na pantalla de selección de imaxes de
            diapositivas para volver ao diálogo «Abrir».
 
-     ----------------------------------------------------------------------
-
    Orde «Saír»
 
            Ao premer no botón «Saír», pechando a xanela de Tux Paint ou
@@ -896,10 +869,10 @@ Ferramentas dispoñíbeis
 
            Primeiro preguntaráselle se realmente quere saír.
 
-           Se elixe saír e non gardou a imaxe actual, primeiro
-           preguntaráselle se quere gardala. Se non é unha nova imaxe,
-           preguntaráselle se quere gardar sobre a versión antiga ou crear
-           unha nova entrada. (Vexa «Gardar» máis arriba).
+           If you choose to quit, and you haven't saved the current picture,
+           you will first be asked if wish to save it. If it's not a new
+           image, you will then be asked if you want to save over the old
+           version, or create a new entry. (See "Save" above.)
 
            ⚙ Nota: Se se garda a imaxe, volverá cargarse automaticamente a
            próxima vez que execute Tux Paint, a non ser que estea configurada
@@ -917,8 +890,6 @@ Ferramentas dispoñíbeis
 
            ⚙ Vexa a documentación de «Opcións.
 
-     ----------------------------------------------------------------------
-
    Silenciar o son
 
            Non hai ningún botón de control na pantalla neste momento, pero ao
@@ -932,8 +903,6 @@ Ferramentas dispoñíbeis
            cando o pai ou o profesor quere que estean desactivados).
 
            ⚙ Vexa a documentación de «Opcións.
-
-     ----------------------------------------------------------------------
 
                        Carga doutras imaxes en Tux Paint
 
@@ -1048,8 +1017,6 @@ Importar imaxes manualmente
        píxeles) que obtivo e tente igualar iso ao escalar a(s) imaxe(s) que
        está a importar en Tux Paint.
 
-     ----------------------------------------------------------------------
-
                                 Máis información
 
    Outra documentación incluída con Tux Paint (que se atopa no
@@ -1088,13 +1055,10 @@ Importar imaxes manualmente
             Tux Paint's software license, the GNU General Public License
             (GPL)
 
-     ----------------------------------------------------------------------
-
                                 Como obter axuda
 
-   Se precisa axuda, hai moitas formas de interactuar cos desenvolvedores de
-   Tux Paint e outros usuarios.
-
+   If you need help, there are numerous ways to interact with Tux Paint
+   developers and other users:
      * Informar dos erros ou solicitar novas funcións a través do sistema de
        seguimento de erros do proxecto
      * Participe nas distintas listas de correo do proxecto
@@ -1103,13 +1067,10 @@ Importar imaxes manualmente
    Para obter máis información, visite a páxina «Contacto» do sitio web
    oficial de Tux Paint: https://tuxpaint.org/contact/
 
-     ----------------------------------------------------------------------
-
                                 Como participar
 
-   Tux Paint é un proxecto impulsado por voluntarios e estamos encantados de
-   aceptar a súa axuda de diversas maneiras.
-
+   Tux Paint is a volunteer-driven project, and we're happy to accept your
+   help in a variety of ways:
      * Traducir Tux Paint a outro idioma
      * Mellorar as traducións existentes
      * Crear ilustracións (selos, imaxes de inicio, modelos, pinceis)
@@ -1120,6 +1081,9 @@ Importar imaxes manualmente
    Para obter máis información, visite a páxina «Colabora connosco» do sitio
    web oficial de Tux Paint: https://tuxpaint.org/help/
 
-     ----------------------------------------------------------------------
+                               Trademark notices
 
-                                      ###
+     * "Linux" is a registered trademark of Linus Torvalds.
+     * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
+     * "Apple" and "macOS" are registered trademarks of Apple Inc.
+     * "Twitter" is a registered trademark of Twitter, Inc.
