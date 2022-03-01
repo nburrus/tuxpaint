@@ -1,13 +1,13 @@
                                    Tux Paint
                                  versión 0.9.28
 
-  Un sinxelo programa de debuxo para cativos
+                   Un sinxelo programa de debuxo para cativos
 
         Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
 
-                             27 de Febreiro de 2022
+                               1 de Marzo de 2022
 
          +-----------------------------------------------------------+
          |Índice                                                     |
@@ -46,22 +46,21 @@
 
 Que é «Tux Paint»?
 
-     Tux Paint é un programa de debuxo libre e de balde deseñado para cativos
-     (3 ou máis anos). Ten unha interface sinxela e doada de usar, divertidos
-     efectos de son e unha mascota de debuxos animados que axuda a guiar aos
-     cativos mentres usan o programa. Ofrece un lenzo en branco e unha ampla
-     variedade de ferramentas de debuxo para axudar ao seu cativo a ser
-     creativo.
+   Tux Paint é un programa de debuxo libre e de balde deseñado para cativos
+   (3 ou máis anos). Ten unha interface sinxela e doada de usar, divertidos
+   efectos de son e unha mascota de debuxos animados que axuda a guiar aos
+   cativos mentres usan o programa. Ofrece un lenzo en branco e unha ampla
+   variedade de ferramentas de debuxo para axudar ao seu cativo a ser
+   creativo.
 
 Licenza
 
-     Tux Paint é un proxecto de código aberto, software libre publicado baixo
-     a licenza pública xeral GNU (GPL). É de balde e o «código fonte» detrás
-     do programa está dispoñíbel. (Isto permite a outras persoas engadir
-     funcións, corrixir erros e usar partes do programa no seu propio
-     software GPL).
+   Tux Paint é un proxecto de código aberto, software libre publicado baixo a
+   licenza pública xeral GNU (GPL). É de balde e o «código fonte» detrás do
+   programa está dispoñíbel. (Isto permite a outras persoas engadir funcións,
+   corrixir erros e usar partes do programa no seu propio software GPL).
 
-     Consulte o texto completo da licenza GPL en COPYING.txt.
+   Consulte o texto completo da licenza GPL en COPYING.txt.
 
 Objectives
 
@@ -100,43 +99,43 @@ Inicio de Tux Paint
 
   Usuarios de Linux/Unix
 
-     Tux Paint debería ter colocado unha icona iniciadora nos seus menús KDE
-     e/ou GNOME, en «Gráficos».
+   Tux Paint debería ter colocado unha icona iniciadora nos seus menús KDE
+   e/ou GNOME, en «Gráficos».
 
-     Como alternativa, pode executar a seguinte orde nun indicador do sistema
-     (e dicir, «$»):
+   Como alternativa, pode executar a seguinte orde nun indicador do sistema
+   (e dicir, «$»):
 
-       $ tuxpaint
+     $ tuxpaint
 
-     Se se producen erros, amosaranse no terminal (en STDERR).
+   Se se producen erros, amosaranse no terminal (en STDERR).
 
   Usuarios de Windows
 
                                                         [Icona de Tux Paint]  
                                                              Tux Paint        
 
-     Se instalou Tux Paint no seu computador usando o «Instalador de Tux
-     Paint», teralle preguntado se quería un atallo no menú «Inicio» e/ou un
-     atallo de escritorio. Se aceptou, pode executar Tux Paint dende a
-     sección «Tux Paint» do menú «Inicio» (p. ex.: en «Todos os programas»)
-     ou premendo dúas veces na icona «Tux Paint» do seu escritorio. se fixo
-     que o instalador colocara un alí.
+   Se instalou Tux Paint no seu computador usando o «Instalador de Tux
+   Paint», teralle preguntado se quería un atallo no menú «Inicio» e/ou un
+   atallo de escritorio. Se aceptou, pode executar Tux Paint dende a sección
+   «Tux Paint» do menú «Inicio» (p. ex.: en «Todos os programas») ou premendo
+   dúas veces na icona «Tux Paint» do seu escritorio. se fixo que o
+   instalador colocara un alí.
 
-     Se está a usar a versión «portátil» (ficheiro ZIP) de Tux Paint ou se
-     usou o «Instalador de Tux Paint», pero escolleu non ter instalados
-     atallos, terá que facer dobre clic na icona «tuxpaint.exe» no cartafol
-     «Tux Paint» do seu computador.
+   Se está a usar a versión «portátil» (ficheiro ZIP) de Tux Paint ou se usou
+   o «Instalador de Tux Paint», pero escolleu non ter instalados atallos,
+   terá que facer dobre clic na icona «tuxpaint.exe» no cartafol «Tux Paint»
+   do seu computador.
 
-     De xeito predeterminado, o «Instalador de Tux Paint» colocará o cartafol
-     de Tux Paint en «C:\Program Files\», aínda que é posíbel que o teña
-     cambiado vostede cando executou o instalador.
+   De xeito predeterminado, o «Instalador de Tux Paint» colocará o cartafol
+   de Tux Paint en «C:\Program Files\», aínda que é posíbel que o teña
+   cambiado vostede cando executou o instalador.
 
-     Se usou a descarga de «ficheiro ZIP», o cartafol de Tux Paint estará
-     onde teña extraído o contido do ficheiro ZIP.
+   Se usou a descarga de «ficheiro ZIP», o cartafol de Tux Paint estará onde
+   teña extraído o contido do ficheiro ZIP.
 
   Usuarios de macOS
 
-     Simplemente fai dobre clic na icona «Tux Paint».
+   Simplemente fai dobre clic na icona «Tux Paint».
 
    [Pantalla de título]
 
@@ -405,111 +404,6 @@ Ferramentas dispoñíbeis
 
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
-
-   Ferramentas «Texto» e «Etiquetas»
-
-           Choose a font (from the 'Letters' available on the right) and a
-           color (from the color palette near the bottom). You may also apply
-           a bold, and/or an italic styling effect to the text. Click on the
-           screen and a cursor will appear. Type text and it will show up on
-           the screen. (You can change the font, color, and styling while
-           entering the text, before it is applied to the canvas.)
-
-           Prema [Intro] ou [Retorno] e o texto será debuxado na imaxe e o
-           cursor moverase cara abaixo unha liña.
-
-           Como alternativa, prema [Tab] e o texto será debuxado na imaxe,
-           mais o cursor moverase á dereita do texto, no canto de baixar unha
-           liña e á esquerda. (Isto pode ser útil para crear unha liña de
-           texto con cores, tipos de letra, estilos e tamaños mesturados.)
-
-           Ao premer noutro lugar da imaxe mentres a entrada de texto aínda
-           está activa, a liña de texto actual moverase a esa posición (onde
-           pode continuar editándoa).
-
-                Comparación de «Texto» con «Etiqueta»
-
-                        A ferramenta Texto é a ferramenta de entrada de texto
-                        orixinal en Tux Paint. O texto introducido usando
-                        esta ferramenta non se pode modificar nin mover máis
-                        tarde, xa que pasa a formar parte do debuxo. Non
-                        obstante, por mor de que o texto pasa a formar parte
-                        da imaxe, pódese debuxar ou modificar empregando os
-                        efectos da ferramenta Maxia (p. ex.: luxado,
-                        tinguido, realce, etc.)
-
-                        Ao usar a ferramenta Etiqueta (que foi engadida a Tux
-                        Paint na versión 0.9.22), o texto «flota» sobre a
-                        imaxe e os detalles da etiqueta (o texto, a posición
-                        da etiqueta , a opción de letra e a cor) almacénanse
-                        por separado. Isto permite recolocar ou editar a
-                        etiqueta máis adiante.
-
-                        To edit a label, click the label selection button.
-                        All labels in the drawing will appear highlighted.
-                        Click one — or use the [Tab] key to cycle through all
-                        the labels, and the [Intro] or [Retorno] key to
-                        select one — and you may then edit the label. (Use
-                        they [Backspace] key to erase characters, and other
-                        keys to add text to the label; click in the canvas to
-                        reposition the label; click in the palette to change
-                        the color of the text in the label; etc.)
-
-                        You may "apply" a label to the canvas, painting the
-                        text into the picture as if it had been added using
-                        the Text tool, by clicking the label application
-                        button. (This feature was added in Tux Paint version
-                        0.9.28.) All labels in the drawing will appear
-                        highlighted, and you select one just as you do when
-                        selecting a label to edit. The chosen label will be
-                        removed, and the text will be added directly to the
-                        canvas.
-
-                        ⚙ A ferramenta Etiqueta pódese desactivar (p. ex.:
-                        seleccionando «Desactivar a ferramenta "Etiqueta"» en
-                        Tux Paint Config. ou executando Tux Paint coa opción
-                        «nolabel»).
-
-                Introdución de caracteres internacionais
-
-                        Tux Paint permite introducir caracteres en diferentes
-                        idiomas. A maioría dos caracteres latinos (A-Z, ñ, è,
-                        etc.) poden introducirse directamente. Algúns idiomas
-                        requiren que Tux Paint pase a un modo de entrada
-                        alternativo antes de introducilos e algúns caracteres
-                        deben compoñerse premendo varias teclas.
-
-                        Cando a configuración local de Tux Paint está
-                        estabelecida nun dos idiomas que fornecen modos de
-                        entrada alternativos, úsase unha tecla para pasar do
-                        modo normal (caracteres latinos) ao modo ou modos
-                        específicos da configuración local.
-
-                        Currently supported locales, the input methods
-                        available, and the key to toggle or cycle modes, are
-                        listed below.
-
-                           * Xaponés — Hiragana romanizado e Katakana
-                             romanizado — tecla [Alt] da dereita
-                           * Coreano — Hangul 2-Bul — tecla [Alt] da dereita
-                             or tecla [Alt] da esquerda
-                           * Chinés tradicional — tecla [Alt] da dereita ou
-                             tecla [Alt] da esquerda
-                           * Tailandés — tecla [Alt] da dereita
-
-                        💡 Note: Many fonts do not include all characters for
-                        all languages, so sometimes you'll need to change
-                        fonts to see the characters you're trying to type.
-
-                Teclado en pantalla
-
-                        An optional on-screen keyboard is available for the
-                        Text and Label tools, which can provide a variety of
-                        layouts and character composition (e.g., composing
-                        "a" and "e" into "æ").
-
-                        ⚙ See the "Options" and "Extending Tux Paint"
-                        documentation for more information.
 
    Ferramenta «Encher»
 
@@ -1021,39 +915,45 @@ Importar imaxes manualmente
 
    Outra documentación incluída con Tux Paint (que se atopa no
    cartafol/directorio «docs») inclúe:
-     * Using Tux Paint:
-          * OPTIONS.html
-            Instrucións detalladas sobre a liña de ordes e as opcións do
-            ficheiro de configuración para aqueles que non queiran usar a
-            ferramenta Tux Paint Config. para xestionar a configuración de
-            Tux Paint.
-          * Documentación da ferramenta «Maxia» («magic-docs»)
-            Documentación para cada unha das ferramentas de «Maxia»
-            instaladas actualmente.
-     * How to extend Tux Paint:
-          * EXTENDING.html
-            Instrucións detalladas sobre a ampliación de Tux Paint: creación
-            de pinceis, selos, imaxes de inicio e modelos; engadir fontes; e
-            crear novos deseños de teclado en pantalla e métodos de entrada.
-          * PNG.html
-            Notas sobre a creación de imaxes de mapa de bits (ráster) en
-            formato PNG para usar en Tux Paint.
-          * SVG.html
-            Notas sobre a creación de imaxes vectoriais en formato SVG para
-            usar en Tux Paint.
-     * Technical information:
-          * INSTALL.html
-            Instrucións para compilar e instalar Tux Paint, cando proceda.
-          * SIGNALS.html
-            Información sobre os sinais POSIX aos que responde Tux Paint.
-     * Development history and license:
-          * AUTHORS.txt
-            Lista de autores e colaboradores.
-          * CHANGES.txt
-            Resumo do que cambiou entre as versións de Tux Paint.
-          * COPYING.txt
-            Tux Paint's software license, the GNU General Public License
-            (GPL)
+
+   Using Tux Paint:
+              * OPTIONS.html
+                Instrucións detalladas sobre a liña de ordes e as opcións do
+                ficheiro de configuración para aqueles que non queiran usar a
+                ferramenta Tux Paint Config. para xestionar a configuración
+                de Tux Paint.
+              * Documentación da ferramenta «Maxia» («magic-docs»)
+                Documentación para cada unha das ferramentas de «Maxia»
+                instaladas actualmente.
+
+   How to extend Tux Paint:
+              * EXTENDING.html
+                Instrucións detalladas sobre a ampliación de Tux Paint:
+                creación de pinceis, selos, imaxes de inicio e modelos;
+                engadir fontes; e crear novos deseños de teclado en pantalla
+                e métodos de entrada.
+              * PNG.html
+                Notas sobre a creación de imaxes de mapa de bits (ráster) en
+                formato PNG para usar en Tux Paint.
+              * SVG.html
+                Notas sobre a creación de imaxes vectoriais en formato SVG
+                para usar en Tux Paint.
+
+   Technical information:
+              * INSTALL.html
+                Instrucións para compilar e instalar Tux Paint, cando
+                proceda.
+              * SIGNALS.html
+                Información sobre os sinais POSIX aos que responde Tux Paint.
+
+   Development history and license:
+              * AUTHORS.txt
+                Lista de autores e colaboradores.
+              * CHANGES.txt
+                Resumo do que cambiou entre as versións de Tux Paint.
+              * COPYING.txt
+                Tux Paint's software license, the GNU General Public License
+                (GPL)
 
                                 Como obter axuda
 
