@@ -400,6 +400,107 @@ Available Tools
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
+   "Text" and "Label" Tools
+
+           Choose a font (from the 'Letters' available on the right) and a
+           color (from the color palette near the bottom). You may also apply
+           a bold, and/or an italic styling effect to the text. Click on the
+           screen and a cursor will appear. Type text and it will show up on
+           the screen. (You can change the font, color, and styling while
+           entering the text, before it is applied to the canvas.)
+
+           Press [Enter] or [Return] and the text will be drawn onto the
+           picture and the cursor will move down one line.
+
+           Alternatively, press [Tab] and the text will be drawn onto the
+           picture, but the cursor will move to the right of the text, rather
+           than down a line, and to the left. (This can be useful to create a
+           line of text with mixed colors, fonts, styles and sizes.)
+
+           Clicking elsewhere in the picture while the text entry is still
+           active causes the current line of text to move to that location
+           (where you can continue editing it).
+
+                "Text" versus "Label"
+
+                        The Text tool is the original text-entry tool in Tux
+                        Paint. Text entered using this tool can't be modified
+                        or moved later, since it becomes part of the drawing.
+                        However, because the text becomes part of the
+                        picture, it can be drawn over or modified using Magic
+                        tool effects (e.g., smudged, tinted, embossed, etc.)
+
+                        When using the Label tool (which was added to Tux
+                        Paint in version 0.9.22), the text 'floats' over the
+                        image, and the details of the label (the text, the
+                        position of the label, the font choice and the color)
+                        get stored separately. This allows the label to be
+                        repositioned or edited later.
+
+                        To edit a label, click the label selection button.
+                        All labels in the drawing will appear highlighted.
+                        Click one — or use the [Tab] key to cycle through all
+                        the labels, and the [Enter] or [Return] key to select
+                        one — and you may then edit the label. (Use they
+                        [Backspace] key to erase characters, and other keys
+                        to add text to the label; click in the canvas to
+                        reposition the label; click in the palette to change
+                        the color of the text in the label; etc.)
+
+                        You may "apply" a label to the canvas, painting the
+                        text into the picture as if it had been added using
+                        the Text tool, by clicking the label application
+                        button. (This feature was added in Tux Paint version
+                        0.9.28.) All labels in the drawing will appear
+                        highlighted, and you select one just as you do when
+                        selecting a label to edit. The chosen label will be
+                        removed, and the text will be added directly to the
+                        canvas.
+
+                        ⚙ The Label tool can be disabled (e.g., by selecting
+                        "Disable 'Label' Tool" in Tux Paint Config. or
+                        running Tux Paint with the "nolabel" option).
+
+                International Character Input
+
+                        Tux Paint allows inputting characters in different
+                        languages. Most Latin characters (A-Z, ñ, è, etc.)
+                        can by entered directly. Some languages require that
+                        Tux Paint be switched into an alternate input mode
+                        before entering, and some characters must be composed
+                        using numerous keypresses.
+
+                        When Tux Paint's locale is set to one of the
+                        languages that provide alternate input modes, a key
+                        is used to cycle through normal (Latin character) and
+                        locale-specific mode or modes.
+
+                        Currently supported locales, the input methods
+                        available, and the key to toggle or cycle modes, are
+                        listed below.
+
+                           * Japanese — Romanized Hiragana and Romanized
+                             Katakana — right [Alt] key
+                           * Korean — Hangul 2-Bul — right [Alt] key or left
+                             [Alt] key
+                           * Traditional Chinese — right [Alt] key or left
+                             [Alt] key
+                           * Thai — right [Alt] key
+
+                        💡 Note: Many fonts do not include all characters for
+                        all languages, so sometimes you'll need to change
+                        fonts to see the characters you're trying to type.
+
+                On-screen Keyboard
+
+                        An optional on-screen keyboard is available for the
+                        Text and Label tools, which can provide a variety of
+                        layouts and character composition (e.g., composing
+                        "a" and "e" into "æ").
+
+                        ⚙ See the "Options" and "Extending Tux Paint"
+                        documentation for more information.
+
    "Fill" Tool
 
            The 'Fill' tool 'flood-fills' a contiguous area of your drawing

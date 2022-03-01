@@ -686,7 +686,99 @@
        alt="">
   </div>
 </dd>
-                        <dt id="using_tools_drawing_fill">
+            <dt id="using_tools_drawing_text_and_label">
+  <strong>Ferramentas «Texto» e «Etiquetas»</strong>
+</dt>
+
+<dd>
+  <img src="../../html/images/tool_text.png"
+      width="48"
+      height="48"
+      alt=""
+      align="right">
+  <p>
+    Choose a font (from the 'Letters' available on the right) and a color (from the color palette near the bottom). You may also apply a bold, and/or an italic styling effect to the text. Click on the screen and a cursor will appear. Type text and it will show up on the screen. (You can change the font, color, and styling while entering the text, before it is applied to the canvas.)  </p>
+
+  <p>
+    Prema <b><code>[Intro]</code></b> ou <b><code>[Retorno]</code></b> e o texto será debuxado na imaxe e o cursor moverase cara abaixo unha liña.  </p>
+
+  <p>
+    Como alternativa, prema <strong><code>[Tab]</code></strong> e o texto será debuxado na imaxe, mais o cursor moverase á dereita do texto, no canto  de baixar unha liña e á esquerda. (Isto pode ser útil para crear unha liña de texto con cores, tipos de letra, estilos e tamaños mesturados.)  </p>
+
+  <p>
+    Ao premer noutro lugar da imaxe mentres a entrada de texto aínda está activa, a liña de texto actual moverase a esa posición (onde pode continuar editándoa).  </p>
+
+  <div class="screenshot-center">
+    <img src="../../html/images/ex_text.png"
+       width="139"
+       height="69"
+       alt="">
+  </div>
+
+  <dl>
+    <dt>
+      <strong>Comparación de «Texto» con «Etiqueta»</strong>
+    </dt>
+
+    <dd>
+      <p>
+        A ferramenta <strong>Texto</strong> é a ferramenta de entrada de texto orixinal en Tux Paint. O texto introducido usando esta ferramenta non se pode modificar nin mover máis tarde, xa que pasa a formar parte do debuxo. Non obstante, por mor de que o texto pasa a formar parte da imaxe, pódese debuxar ou modificar empregando os efectos da ferramenta <strong>Maxia</strong> (p. ex.: luxado, tinguido, realce, etc.)      </p>
+
+      <p>
+        Ao usar a ferramenta <strong>Etiqueta</strong> (que foi engadida a Tux Paint na versión 0.9.22), o texto «flota» sobre a imaxe e os detalles da etiqueta (o texto, a posición da etiqueta , a opción de letra e a cor) almacénanse por separado. Isto permite recolocar ou editar a etiqueta  máis adiante.      </p>
+
+      <p>
+        To edit a label, click the label selection button. All labels in the drawing will appear highlighted. Click one &mdash; or use the <strong><code>[Tab]</code></strong> key to cycle through all the labels, and the <strong><code>[Intro]</code></strong> or <strong><code>[Retorno]</code></strong> key to select one &mdash; and you may then edit the label. (Use they <strong><code>[Backspace]</code></strong> key to erase characters, and other keys to add text to the label; click in the canvas to reposition the label; click in the palette to change the color of the text in the label; etc.)      </p>
+
+      <p>
+        You may "apply" a label to the canvas, painting the text into the picture as if it had been added using the <strong>Text</strong> tool, by clicking the label application button. (This feature was added in Tux Paint version 0.9.28.) All labels in the drawing will appear highlighted, and you select one just as you do when selecting a label to edit. The chosen label will be removed, and the text will be added directly to the canvas.      </p>
+
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        A ferramenta <strong>Etiqueta</strong> pódese desactivar (p. ex.: seleccionando «Desactivar a ferramenta "Etiqueta"» en <em>Tux Paint Config.</em> ou executando <em>Tux Paint</em> coa opción «<code>nolabel</code>»).      </p>
+    </dd>
+
+    <dt>
+      <strong>Introdución de caracteres internacionais</strong>
+    </dt>
+
+    <dd>
+      <p>
+        Tux Paint permite introducir caracteres en diferentes idiomas. A maioría dos caracteres latinos (<em>A</em>-<em>Z</em>, <em>ñ</em>, <em>è</em>, etc.) poden introducirse directamente. Algúns idiomas requiren que Tux Paint pase a un modo de entrada alternativo antes de introducilos e algúns caracteres deben compoñerse premendo varias teclas.      </p>
+
+      <p>
+        Cando a configuración local de Tux Paint está estabelecida nun dos idiomas que fornecen modos de entrada alternativos, úsase unha tecla para pasar do modo normal (caracteres latinos) ao modo ou modos específicos da configuración local.      </p>
+
+      <p>
+        Currently supported locales, the input methods available, and the key to toggle or cycle modes, are listed below.      </p>
+
+      <ul>
+        <li>Xaponés — Hiragana romanizado e Katakana romanizado — tecla <code><b>[Alt]</b></code> da dereita        </li>
+
+        <li>Coreano — Hangul 2-Bul — tecla <code><b>[Alt]</b></code> da dereita or tecla <code><b>[Alt]</b></code> da esquerda        </li>
+
+        <li>Chinés tradicional — tecla <code><b>[Alt]</b></code> da dereita ou tecla <code><b>[Alt]</b></code> da esquerda        </li>
+
+        <li>Tailandés — tecla <code><b>[Alt]</b></code> da dereita        </li>
+      </ul>
+
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Many fonts do not include all characters for all languages, so sometimes you'll need to change fonts to see the characters you're trying to type.      </p>
+
+    </dd>
+
+    <dt>
+      <strong>Teclado en pantalla</strong>
+    </dt>
+
+    <dd>
+      <p>
+        An optional on-screen keyboard is available for the Text and Label tools, which can provide a variety of layouts and character composition (e.g., composing "a" and "e" into "æ").      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        See the "<a href="OPTIONS.html"><em>Options</em></a>" and "<a href="EXTENDING.html"><em>Extending Tux Paint</em></a>" documentation for more information.      </p>
+    </dd>
+  </dl>
+</dd>
+            <dt id="using_tools_drawing_fill">
   <strong>Ferramenta «Encher»</strong>
 </dt>
 

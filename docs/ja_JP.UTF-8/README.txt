@@ -313,6 +313,84 @@ Tux Paint の起動
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
+   「もじ」ツール、「ラベル」ツール
+
+           Choose a font (from the 'Letters' available on the right) and a
+           color (from the color palette near the bottom). You may also apply
+           a bold, and/or an italic styling effect to the text. Click on the
+           screen and a cursor will appear. Type text and it will show up on
+           the screen. (You can change the font, color, and styling while
+           entering the text, before it is applied to the canvas.)
+
+           [Enter]キー、または[Return]キーを押すと文字が描画され、カーソルが次の行に下がります。
+
+           また、[Tab]キーを押すと、文字が描画された後、カーソルは、次の行ではなく、右側に移動します。これは、１行の中で異なったフォント、字体、フォントサイズ、色などを混在させたい場合に便利な方法です。
+
+           文字の入力中に別の場所をクリックすると、入力内容を維持したまま、文字を貼り付ける位置をクリックした位置に移動させ、文字入力を続けることができます。
+
+                「もじ」ツールと「ラベル」ツールの違い
+
+                        「もじ」ツールは、Tux Paint
+                        に以前からある文字入力ツールです。このツールで入力した文字列は絵と一体化するため、後から文字列の内容を編集したり、動かしたりすることはできません。一方、絵と一体化することで、上から塗りつぶしたり、「よごす」「そめる」「うきぼり」といった「まほう」ツールの効果で修正を加えることができます。
+
+                        Tux Paint バージョン 0.9.22
+                        で追加された「ラベル」ツールでは、文字は絵から「浮いて」おり、文字列の内容、位置、フォント、色などの情報は個別に記録されます。これにより、「ラベル」は後から移動や編集が可能です。
+
+                        To edit a label, click the label selection button.
+                        All labels in the drawing will appear highlighted.
+                        Click one — or use the [Tab] key to cycle through all
+                        the labels, and the [Enter] or [Return] key to select
+                        one — and you may then edit the label. (Use they
+                        [Backspace] key to erase characters, and other keys
+                        to add text to the label; click in the canvas to
+                        reposition the label; click in the palette to change
+                        the color of the text in the label; etc.)
+
+                        You may "apply" a label to the canvas, painting the
+                        text into the picture as if it had been added using
+                        the Text tool, by clicking the label application
+                        button. (This feature was added in Tux Paint version
+                        0.9.28.) All labels in the drawing will appear
+                        highlighted, and you select one just as you do when
+                        selecting a label to edit. The chosen label will be
+                        removed, and the text will be added directly to the
+                        canvas.
+
+                        ⚙ 「ラベル」ツールは、Tux Paint
+                        設定ツールや、"nolabel"オプションにより、無効にすることができます。
+
+                多言語文字入力
+
+                        Tux Paint では、様々な言語の文字を入力することができます。たいていのラテン文字（A-Z, ñ,
+                        è
+                        など）は、直接入力できます。また、いくつかの言語では、入力モードを切り替えて、複数のキーの組み合わせを用いて文字を入力する必要があります。
+
+                        Tux Paint
+                        が、個別の入力モードがサポートされている言語に設定されている場合、特定のキーを押下することで、入力モードを切り替えることができます。
+
+                        Currently supported locales, the input methods
+                        available, and the key to toggle or cycle modes, are
+                        listed below.
+
+                           * 日本語— ローマ字入力方式のひらがな、カタカナ— 右[Alt] キー
+                           * ハングル— 2-Bul入力方式— 右[Alt] キー または 左[Alt] キー
+                           * 繁体中文— 右[Alt] キー または 左[Alt] キー キー
+                           * タイ語— 右[Alt] キー
+
+                        💡 Note: Many fonts do not include all characters for
+                        all languages, so sometimes you'll need to change
+                        fonts to see the characters you're trying to type.
+
+                画面キーボード
+
+                        An optional on-screen keyboard is available for the
+                        Text and Label tools, which can provide a variety of
+                        layouts and character composition (e.g., composing
+                        "a" and "e" into "æ").
+
+                        ⚙ See the "Options" and "Extending Tux Paint"
+                        documentation for more information.
+
    「ぬる」ツール
 
            「ぬる」ツールは、描画の連続した領域を好きな色で塗りつぶします。以下の3 つの塗りつぶしオプションが用意されています：

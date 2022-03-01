@@ -412,6 +412,116 @@ Outils disponibles
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
+   Outils "Texte" et "Étiquette"
+
+           Choose a font (from the 'Letters' available on the right) and a
+           color (from the color palette near the bottom). You may also apply
+           a bold, and/or an italic styling effect to the text. Click on the
+           screen and a cursor will appear. Type text and it will show up on
+           the screen. (You can change the font, color, and styling while
+           entering the text, before it is applied to the canvas.)
+
+           Appuyez sur [Entrée] ou [Retour] et le texte sera inclus dans
+           l'image et le curseur se déplacera d'une ligne vers le bas.
+
+           Sinon, appuyez sur [Tab] et le texte sera inclus dans l'image,
+           mais le curseur se déplacera vers la droite du texte, plutôt que
+           vers le bas d'une ligne et vers la gauche. (Cela peut être utile
+           pour créer une ligne de texte avec des couleurs, des polices, des
+           styles et des tailles variés.)
+
+           Cliquer ailleurs dans l'image alors que l'entrée de texte est
+           toujours active entraîne le déplacement de la ligne de texte
+           actuelle vers cet emplacement (et vous pouvez continuer à la
+           modifier).
+
+                "Texte" par rapport à "Étiquette"
+
+                        L' outil Texte est l'outil de saisie de texte
+                        original de Tux Paint. Le texte saisi à l'aide de cet
+                        outil ne peut pas être modifié ou déplacé
+                        ultérieurement, car il fait partie du dessin.
+                        Cependant, comme le texte fait partie de l'image, il
+                        peut être dessiné ou modifié à l'aide des effets de
+                        l'outil Magie (par exemple, taché, teinté, gaufré,
+                        etc.)
+
+                        Lors de l'utilisation de l' outil Étiquette (qui a
+                        été ajouté à Tux Paint dans la version 0.9.22), le
+                        texte `` flotte '' sur l'image, et les détails de
+                        l'étiquette (le texte, la position de l'étiquette, le
+                        choix de la police et la couleur ) sont stockés
+                        séparément. Cela permet à l'étiquette d'être
+                        repositionnée ou modifiée ultérieurement.
+
+                        To edit a label, click the label selection button.
+                        All labels in the drawing will appear highlighted.
+                        Click one — or use the [Tab] key to cycle through all
+                        the labels, and the [Entrée] or [Retour] key to
+                        select one — and you may then edit the label. (Use
+                        they [Backspace] key to erase characters, and other
+                        keys to add text to the label; click in the canvas to
+                        reposition the label; click in the palette to change
+                        the color of the text in the label; etc.)
+
+                        You may "apply" a label to the canvas, painting the
+                        text into the picture as if it had been added using
+                        the Text tool, by clicking the label application
+                        button. (This feature was added in Tux Paint version
+                        0.9.28.) All labels in the drawing will appear
+                        highlighted, and you select one just as you do when
+                        selecting a label to edit. The chosen label will be
+                        removed, and the text will be added directly to the
+                        canvas.
+
+                        ⚙ L' outil Étiquette peut être désactivé (par
+                        exemple, en sélectionnant "Désactiver l'outil
+                        'Label'" dans Tux Paint Config ou bien en exécutant
+                        Tux Paint en ligne de commande avec l'option
+                        "nolabel").
+
+                Saisie de caractères internationaux
+
+                        Tux Paint permet de saisir des caractères dans
+                        différentes langues. La plupart des caractères latins
+                        ( A - Z , ñ , è , etc...) peuvent être saisis
+                        directement. Certaines langues exigent que Tux Paint
+                        soit commuté dans un mode d'entrée alternatif avant
+                        la saisie, et certains caractères doivent être
+                        composés en utilisant plusieurs touches.
+
+                        Lorsque les paramètres régionaux de Tux Paint sont
+                        définis sur l'une des langues fournissant des modes
+                        de saisie alternatifs, une touche est utilisée pour
+                        parcourir le ou les modes soit normaux (caractère
+                        latin) soit spécifiques aux paramètres régionaux.
+
+                        Currently supported locales, the input methods
+                        available, and the key to toggle or cycle modes, are
+                        listed below.
+
+                           * Japonais -- Hiragana romanisé et Katakana
+                             romanisé -- touche [Alt] droite
+                           * Korean — Hangul 2-Bul — touche [Alt] droite or
+                             touche [Alt] gauche
+                           * Chinois traditionnel — touche [Alt] droite or
+                             touche [Alt] gauche
+                           * Thai — touche [Alt] droite
+
+                        💡 Note: Many fonts do not include all characters for
+                        all languages, so sometimes you'll need to change
+                        fonts to see the characters you're trying to type.
+
+                Clavier virtuel sur écran
+
+                        An optional on-screen keyboard is available for the
+                        Text and Label tools, which can provide a variety of
+                        layouts and character composition (e.g., composing
+                        "a" and "e" into "æ").
+
+                        ⚙ See the "Options" and "Extending Tux Paint"
+                        documentation for more information.
+
    Outil "Remplir"
 
            L'outil «Remplir» «remplit» une zone contiguë de votre dessin avec

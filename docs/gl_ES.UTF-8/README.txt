@@ -405,6 +405,111 @@ Ferramentas dispoñíbeis
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
+   Ferramentas «Texto» e «Etiquetas»
+
+           Choose a font (from the 'Letters' available on the right) and a
+           color (from the color palette near the bottom). You may also apply
+           a bold, and/or an italic styling effect to the text. Click on the
+           screen and a cursor will appear. Type text and it will show up on
+           the screen. (You can change the font, color, and styling while
+           entering the text, before it is applied to the canvas.)
+
+           Prema [Intro] ou [Retorno] e o texto será debuxado na imaxe e o
+           cursor moverase cara abaixo unha liña.
+
+           Como alternativa, prema [Tab] e o texto será debuxado na imaxe,
+           mais o cursor moverase á dereita do texto, no canto de baixar unha
+           liña e á esquerda. (Isto pode ser útil para crear unha liña de
+           texto con cores, tipos de letra, estilos e tamaños mesturados.)
+
+           Ao premer noutro lugar da imaxe mentres a entrada de texto aínda
+           está activa, a liña de texto actual moverase a esa posición (onde
+           pode continuar editándoa).
+
+                Comparación de «Texto» con «Etiqueta»
+
+                        A ferramenta Texto é a ferramenta de entrada de texto
+                        orixinal en Tux Paint. O texto introducido usando
+                        esta ferramenta non se pode modificar nin mover máis
+                        tarde, xa que pasa a formar parte do debuxo. Non
+                        obstante, por mor de que o texto pasa a formar parte
+                        da imaxe, pódese debuxar ou modificar empregando os
+                        efectos da ferramenta Maxia (p. ex.: luxado,
+                        tinguido, realce, etc.)
+
+                        Ao usar a ferramenta Etiqueta (que foi engadida a Tux
+                        Paint na versión 0.9.22), o texto «flota» sobre a
+                        imaxe e os detalles da etiqueta (o texto, a posición
+                        da etiqueta , a opción de letra e a cor) almacénanse
+                        por separado. Isto permite recolocar ou editar a
+                        etiqueta máis adiante.
+
+                        To edit a label, click the label selection button.
+                        All labels in the drawing will appear highlighted.
+                        Click one — or use the [Tab] key to cycle through all
+                        the labels, and the [Intro] or [Retorno] key to
+                        select one — and you may then edit the label. (Use
+                        they [Backspace] key to erase characters, and other
+                        keys to add text to the label; click in the canvas to
+                        reposition the label; click in the palette to change
+                        the color of the text in the label; etc.)
+
+                        You may "apply" a label to the canvas, painting the
+                        text into the picture as if it had been added using
+                        the Text tool, by clicking the label application
+                        button. (This feature was added in Tux Paint version
+                        0.9.28.) All labels in the drawing will appear
+                        highlighted, and you select one just as you do when
+                        selecting a label to edit. The chosen label will be
+                        removed, and the text will be added directly to the
+                        canvas.
+
+                        ⚙ A ferramenta Etiqueta pódese desactivar (p. ex.:
+                        seleccionando «Desactivar a ferramenta "Etiqueta"» en
+                        Tux Paint Config. ou executando Tux Paint coa opción
+                        «nolabel»).
+
+                Introdución de caracteres internacionais
+
+                        Tux Paint permite introducir caracteres en diferentes
+                        idiomas. A maioría dos caracteres latinos (A-Z, ñ, è,
+                        etc.) poden introducirse directamente. Algúns idiomas
+                        requiren que Tux Paint pase a un modo de entrada
+                        alternativo antes de introducilos e algúns caracteres
+                        deben compoñerse premendo varias teclas.
+
+                        Cando a configuración local de Tux Paint está
+                        estabelecida nun dos idiomas que fornecen modos de
+                        entrada alternativos, úsase unha tecla para pasar do
+                        modo normal (caracteres latinos) ao modo ou modos
+                        específicos da configuración local.
+
+                        Currently supported locales, the input methods
+                        available, and the key to toggle or cycle modes, are
+                        listed below.
+
+                           * Xaponés — Hiragana romanizado e Katakana
+                             romanizado — tecla [Alt] da dereita
+                           * Coreano — Hangul 2-Bul — tecla [Alt] da dereita
+                             or tecla [Alt] da esquerda
+                           * Chinés tradicional — tecla [Alt] da dereita ou
+                             tecla [Alt] da esquerda
+                           * Tailandés — tecla [Alt] da dereita
+
+                        💡 Note: Many fonts do not include all characters for
+                        all languages, so sometimes you'll need to change
+                        fonts to see the characters you're trying to type.
+
+                Teclado en pantalla
+
+                        An optional on-screen keyboard is available for the
+                        Text and Label tools, which can provide a variety of
+                        layouts and character composition (e.g., composing
+                        "a" and "e" into "æ").
+
+                        ⚙ See the "Options" and "Extending Tux Paint"
+                        documentation for more information.
+
    Ferramenta «Encher»
 
            A ferramenta «Encher» inunda unha área contigua do seu debuxo

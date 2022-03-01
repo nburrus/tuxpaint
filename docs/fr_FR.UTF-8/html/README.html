@@ -686,7 +686,99 @@
        alt="">
   </div>
 </dd>
-                        <dt id="using_tools_drawing_fill">
+            <dt id="using_tools_drawing_text_and_label">
+  <strong>Outils "Texte" et "Étiquette"</strong>
+</dt>
+
+<dd>
+  <img src="../../html/images/tool_text.png"
+      width="48"
+      height="48"
+      alt=""
+      align="right">
+  <p>
+    Choose a font (from the 'Letters' available on the right) and a color (from the color palette near the bottom). You may also apply a bold, and/or an italic styling effect to the text. Click on the screen and a cursor will appear. Type text and it will show up on the screen. (You can change the font, color, and styling while entering the text, before it is applied to the canvas.)  </p>
+
+  <p>
+    Appuyez sur <b><code>[Entrée]</code></b> ou <b><code>[Retour]</code></b> et le texte sera inclus dans l'image et le curseur se déplacera d'une ligne vers le bas.  </p>
+
+  <p>
+    Sinon, appuyez sur <strong><code>[Tab]</code></strong> et le texte sera inclus dans l'image, mais le curseur se déplacera vers la droite du texte, plutôt que vers le bas d'une ligne et vers la gauche. (Cela peut être utile pour créer une ligne de texte avec des couleurs, des polices, des styles et des tailles variés.)  </p>
+
+  <p>
+    Cliquer ailleurs dans l'image alors que l'entrée de texte est toujours active entraîne le déplacement de la ligne de texte actuelle vers cet emplacement (et vous pouvez continuer à la modifier).  </p>
+
+  <div class="screenshot-center">
+    <img src="../../html/images/ex_text.png"
+       width="139"
+       height="69"
+       alt="">
+  </div>
+
+  <dl>
+    <dt>
+      <strong>"Texte" par rapport à  "Étiquette"</strong>
+    </dt>
+
+    <dd>
+      <p>
+        L' outil <strong>Texte</strong> est l'outil de saisie de texte original de Tux Paint. Le texte saisi à l'aide de cet outil ne peut pas être modifié ou déplacé ultérieurement, car il fait partie du dessin. Cependant, comme le texte fait partie de l'image, il peut être dessiné ou modifié à l'aide des effets de l'outil <strong>Magie</strong> (par exemple, taché, teinté, gaufré, etc.)      </p>
+
+      <p>
+        Lors de l'utilisation de l' outil <strong>Étiquette</strong> (qui a été ajouté à Tux Paint dans la version 0.9.22), le texte `` flotte '' sur l'image, et les détails de l'étiquette (le texte, la position de l'étiquette, le choix de la police et la couleur ) sont stockés séparément. Cela permet à l'étiquette d'être repositionnée ou modifiée ultérieurement.      </p>
+
+      <p>
+        To edit a label, click the label selection button. All labels in the drawing will appear highlighted. Click one &mdash; or use the <strong><code>[Tab]</code></strong> key to cycle through all the labels, and the <strong><code>[Entrée]</code></strong> or <strong><code>[Retour]</code></strong> key to select one &mdash; and you may then edit the label. (Use they <strong><code>[Backspace]</code></strong> key to erase characters, and other keys to add text to the label; click in the canvas to reposition the label; click in the palette to change the color of the text in the label; etc.)      </p>
+
+      <p>
+        You may "apply" a label to the canvas, painting the text into the picture as if it had been added using the <strong>Text</strong> tool, by clicking the label application button. (This feature was added in Tux Paint version 0.9.28.) All labels in the drawing will appear highlighted, and you select one just as you do when selecting a label to edit. The chosen label will be removed, and the text will be added directly to the canvas.      </p>
+
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        L' outil <strong>Étiquette</strong> peut être désactivé (par exemple, en sélectionnant "Désactiver l'outil 'Label'" dans Tux Paint Config ou bien en exécutant Tux Paint en ligne de commande avec l'option  "<code>nolabel</code>").      </p>
+    </dd>
+
+    <dt>
+      <strong>Saisie de caractères internationaux</strong>
+    </dt>
+
+    <dd>
+      <p>
+        Tux Paint permet de saisir des caractères dans différentes langues. La plupart des caractères latins ( A - Z , ñ , è , etc...) peuvent être saisis directement. Certaines langues exigent que Tux Paint soit commuté dans un mode d'entrée alternatif avant la saisie, et certains caractères doivent être composés en utilisant plusieurs touches.      </p>
+
+      <p>
+        Lorsque les paramètres régionaux de Tux Paint sont définis sur l'une des langues  fournissant des modes de saisie alternatifs, une touche est utilisée pour parcourir le ou les modes soit normaux (caractère latin) soit spécifiques aux paramètres régionaux.      </p>
+
+      <p>
+        Currently supported locales, the input methods available, and the key to toggle or cycle modes, are listed below.      </p>
+
+      <ul>
+        <li>Japonais -- Hiragana romanisé et Katakana romanisé -- touche <code><b>[Alt]</b></code> droite        </li>
+
+        <li>Korean — Hangul 2-Bul — touche <code><b>[Alt]</b></code> droite or touche <code><b>[Alt]</b></code> gauche        </li>
+
+        <li>Chinois traditionnel — touche <code><b>[Alt]</b></code> droite or touche <code><b>[Alt]</b></code> gauche        </li>
+
+        <li>Thai — touche <code><b>[Alt]</b></code> droite        </li>
+      </ul>
+
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Many fonts do not include all characters for all languages, so sometimes you'll need to change fonts to see the characters you're trying to type.      </p>
+
+    </dd>
+
+    <dt>
+      <strong>Clavier virtuel sur écran</strong>
+    </dt>
+
+    <dd>
+      <p>
+        An optional on-screen keyboard is available for the Text and Label tools, which can provide a variety of layouts and character composition (e.g., composing "a" and "e" into "æ").      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        See the "<a href="OPTIONS.html"><em>Options</em></a>" and "<a href="EXTENDING.html"><em>Extending Tux Paint</em></a>" documentation for more information.      </p>
+    </dd>
+  </dl>
+</dd>
+            <dt id="using_tools_drawing_fill">
   <strong>Outil "Remplir"</strong>
 </dt>
 
