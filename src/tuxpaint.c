@@ -21898,6 +21898,13 @@ static int do_color_picker(void)
   SDL_Rect r_final;
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
+  int old_cp_x, old_cp_y, old_cp_v;
+
+  /* Remember old choices, in case we hit [Back] */
+  old_cp_x = color_picker_x;
+  old_cp_y = color_picker_y;
+  old_cp_v = color_picker_v;
+
   hide_blinking_cursor();
 
 
@@ -22284,10 +22291,9 @@ static int do_color_picker(void)
   while (!done);
 
 
-  /* Set the new color: */
-
   if (chose)
     {
+      /* Set the new color: */
       SDL_GetRGB(getpixel_img_color_picker(img_color_picker, color_picker_x, color_picker_y), img_color_picker->format, &r, &g, &b);
 
       color_hexes[COLOR_PICKER][0] = r;
@@ -22297,6 +22303,13 @@ static int do_color_picker(void)
 
       /* Re-render color picker to show the current color it contains: */
       render_color_button(COLOR_PICKER, img_color_picker_thumb, NULL);
+    }
+  else
+    {
+      /* Set crosshairs to the existing color */
+      color_picker_x = old_cp_x;
+      color_picker_y = old_cp_y;
+      color_picker_v = old_cp_v;
     }
 
 
