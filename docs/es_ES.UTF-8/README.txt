@@ -198,7 +198,8 @@ Main Screen
                 shortcut key is available to access this feature quickly; see
                 below.
               * The rainbow palette allows you to pick a color from within a
-                box containing thousands of colors.
+                box containing various saturations of every hue, along with a
+                value level.
               * The "color mixer" (which has silhouette of a paint palette)
                 allows you to create colors by blending primary additive
                 colors — red, yellow, and blue — along with white (to
