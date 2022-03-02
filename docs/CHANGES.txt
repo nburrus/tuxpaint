@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.February.27 (0.9.28)
+2022.March.2 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -104,6 +104,10 @@ http://www.tuxpaint.org/
       yellow, and blue (cyan-ish) primary colors, along with white
       ("tint"), grey ("tone"), and black ("shade") to be added together to
       form a desired color.  Undo/Redo is available!
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * The rainbow palette color picker now acts as a true
+      Hue/Saturation/Value picker, with the addition of a "value" slider.
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Show a "pipette"-shaped mouse pointer when selecting a
