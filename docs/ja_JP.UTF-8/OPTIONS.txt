@@ -3,7 +3,7 @@
 
 各種設定について
 
-          Copyright © 2002-2022 by various contributors; "AUTHORS" 参照.
+        Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                                    2022年1月20日

@@ -1,7 +1,7 @@
                                    Tux Paint
                   version 0.9.28 Questions fréquemment posées
 
-      Copyright &copie; 2002-2022 par divers contributeurs; voir AUTHORS.
+        Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                                 janvier 20, 2022

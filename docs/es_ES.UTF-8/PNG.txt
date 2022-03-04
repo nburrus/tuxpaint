@@ -2,7 +2,7 @@
                                  versión 0.9.28
                                PNG Documentation
 
-          Copyright © 2007-2022 by various contributors; see AUTHORS.
+        Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                                  enero 20, 2022
