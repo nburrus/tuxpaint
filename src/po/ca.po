@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-10 01:02-0800\n"
-"PO-Revision-Date: 2021-11-08 23:18+0100\n"
+"PO-Revision-Date: 2022-03-08 00:46+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -312,40 +312,34 @@ msgstr "Xinès tradicional"
 
 #. Add menu items
 #: ../macos.m:56
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "About Tux Paint"
-msgstr "Tux Paint"
+msgstr "Quant al Tux Paint"
 
 #: ../macos.m:61
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Hide Tux Paint"
-msgstr "Tux Paint"
+msgstr "Amaga el Tux Paint"
 
 #: ../macos.m:64
 msgid "Hide Others"
-msgstr ""
+msgstr "Amaga els altres"
 
 #: ../macos.m:67
 msgid "Show All"
-msgstr ""
+msgstr "Mostra tots"
 
 #: ../macos.m:71
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Quit Tux Paint"
-msgstr "Tux Paint"
+msgstr "Surt del Tux Paint"
 
 #. Put menu into the menubar
 #: ../macos.m:101 ../macos.m:109
 msgid "Window"
-msgstr ""
+msgstr "Finestra"
 
 #. "Minimize" item
 #: ../macos.m:104
 msgid "Minimize"
-msgstr ""
+msgstr "Minimitza"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -379,17 +373,13 @@ msgstr "Pentàgon"
 
 #. Hexagon shape tool (6 sides)
 #: ../shapes.h:290 ../shapes.h:291
-#, fuzzy
-#| msgid "Hexagon Mosaic"
 msgid "Hexagon"
-msgstr "Mosaic hexagonal"
+msgstr "Hexàgon"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
 #: ../shapes.h:294 ../shapes.h:295
-#, fuzzy
-#| msgid "Hexagon Mosaic"
 msgid "Heptagon"
-msgstr "Mosaic hexagonal"
+msgstr "Heptàgon"
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:298 ../shapes.h:299
@@ -444,17 +434,13 @@ msgstr "Un pentàgon té cinc cares."
 
 #. Description of a hexagon
 #: ../shapes.h:353 ../shapes.h:354
-#, fuzzy
-#| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
-msgstr "Un pentàgon té cinc cares."
+msgstr "Un hexàgon té sis cares."
 
 #. Description of a heptagon
 #: ../shapes.h:357 ../shapes.h:358
-#, fuzzy
-#| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
-msgstr "Un pentàgon té cinc cares."
+msgstr "Un heptàgon té set cares."
 
 #. Description of an octagon
 #: ../shapes.h:361 ../shapes.h:362
@@ -649,21 +635,12 @@ msgstr ""
 "escriure. Premeu [Enter] o [Tab] per aplicar el text."
 
 #: ../tools.h:132
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it and change its "
-#| "text style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
 "and clicking an existing label, you can move it, edit it, and change its "
 "text style."
-msgstr ""
-"Trieu una lletra. Feu clic en el vostre dibuix i ja podeu començar a "
-"escriure. Premeu [Enter] o [Tab] per aplicar el text. Si feu clic en el botó "
-"de selecció, podreu modificar les etiquetes."
+msgstr "Trieu un tipus de lletra. Feu clic en el vostre dibuix i ja podeu començar a escriure. Premeu [Enter] o [Tab] per aplicar el text. Si feu clic en el botó de selecció, podreu moure les etiquetes, editar-les, esborrar-les i canviar-ne el tipus de lletra."
 
 #. Magic tool instruction
 #: ../tools.h:138
@@ -716,10 +693,7 @@ msgid "Let go of the button to complete the line."
 msgstr "Deixeu anar el botó per acabar la línia."
 
 #: ../tools.h:167
-#, fuzzy, c-format
-#| msgid ""
-#| "Let go of the button to complete the line. (Your line's angle is %.0f "
-#| "degrees.)"
+#, c-format
 msgid ""
 "Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
@@ -733,11 +707,10 @@ msgid "Hold the button to stretch the shape."
 msgstr "Manteniu el botó premut per estirar la figura."
 
 #: ../tools.h:171
-#, fuzzy, c-format
-#| msgid "Hold the button to stretch the shape."
+#, c-format
 msgid ""
 "Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
-msgstr "Manteniu el botó premut per estirar la figura."
+msgstr "Manteniu el botó premut per estirar la figura. Té una proporció de \"%.2g:1\"."
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:174
@@ -763,7 +736,7 @@ msgstr "D'acord, llavors… Seguirem dibuixant en aquest!"
 msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
-msgstr ""
+msgstr "Feu clic en una etiqueta (o premeu [Tab] per resaltar-la seguit de [Enter] per sel·lecionar-la). Llavors podeu moure-la, esborrar-la, editar-la i canviar-ne el tipus de lletra."
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:184
@@ -771,55 +744,55 @@ msgid ""
 "Click in your picture if you wish to reposition this label, type to change "
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
-msgstr ""
+msgstr "Feu clic en el dibuix per reposicionar la etiqueta, teclegeu per canviar-ne el text o esborrar-la, també podeu modificar el tipus de lletra. Premeu [Enter] o [Tab] quan hagueu acabat."
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:187
 msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
-msgstr ""
+msgstr "Feu clic en una etiqueta (o premeu [Tab] per ressaltar-la i [Enter] per sel·leccionar-la) si la voleu aplicar definitivament al dibuix."
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:190
 msgid "This brush is animated; its shape changes as you draw!"
-msgstr ""
+msgstr "Aquest pinzell està animat, la seva forma canvia quan dibuixeu!"
 
 #: ../tools.h:191
 msgid "This brush changes depending on the angle."
-msgstr ""
+msgstr "Aquest pinzell canvia segons l'angle."
 
 #: ../tools.h:192
 msgid ""
 "This brush changes depending on the angle, and is animated; its shape "
 "changes as you draw!"
-msgstr ""
+msgstr "Aquest pinzell canvia segons l'angle, i a més la seva forma canvia quan dibuixeu."
 
 #: ../tools.h:194
 msgid "This brush's spacing is now 1 pixel!"
-msgstr ""
+msgstr "L'espaiat d'aquest pinzell és de 1 pixel!"
 
 #: ../tools.h:195
 #, c-format
 msgid ""
 "This brush's spacing is now about %1$d/%2$d the size of the brush shape."
-msgstr ""
+msgstr "L'espaiat d'aquest pinzell és de %1$d/%2$d de la seva mida."
 
 #: ../tools.h:196
 msgid "This brush's spacing is now about the size of the brush shape."
-msgstr ""
+msgstr "L'espaiat d'aquest pinzell és aproximadament el mateix que la seva mida."
 
 #: ../tools.h:197
 #, c-format
 msgid "This brush's spacing is now about %d times as big as the brush shape."
-msgstr ""
+msgstr "L'espaiat d'aquest pinzell és de %d vegades la seva mida."
 
 #: ../tools.h:198
 #, c-format
 msgid ""
 "This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
 "shape."
-msgstr ""
+msgstr "L'espaiat d'aquest pinzell és de %1$d %2$d/%3$d vegades la seva mida."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2271
@@ -988,7 +961,7 @@ msgstr "Següent"
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
 #: ../tuxpaint.c:8719
 msgid "Clear"
-msgstr ""
+msgstr "Re-comença"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:9581
@@ -1038,74 +1011,66 @@ msgstr "Seleccioneu 2 o més dibuixos per exportar-los a GIF."
 #. Descriptions (names) of the color mixer tool's primary colors and shades
 #: ../tuxpaint.c:22259
 msgid "red"
-msgstr ""
+msgstr "magenta"
 
 #: ../tuxpaint.c:22260
-#, fuzzy
-#| msgid "Yellow!"
 msgid "yellow"
-msgstr "Groc!"
+msgstr "groc"
 
 #: ../tuxpaint.c:22261
-#, fuzzy
-#| msgid "Sky blue!"
 msgid "blue"
-msgstr "Blau cel!"
+msgstr "cian"
 
 #: ../tuxpaint.c:22262
-#, fuzzy
-#| msgid "White!"
 msgid "white"
-msgstr "Blanc!"
+msgstr "blanc"
 
 #: ../tuxpaint.c:22263
 msgid "grey"
-msgstr ""
+msgstr "gris"
 
 #: ../tuxpaint.c:22264
-#, fuzzy
-#| msgid "Black!"
 msgid "black"
-msgstr "Negre!"
+msgstr "negre"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
 #: ../tuxpaint.c:22269
 #, c-format
 msgid "Your color is %1$s %2$s."
-msgstr ""
+msgstr "El vostre color és %1$s %2$s."
 
 #: ../tuxpaint.c:22270
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
-msgstr ""
+msgstr "El vostre color és %1$s %2$s i %3$s %4$s."
 
 #: ../tuxpaint.c:22271
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
-msgstr ""
+msgstr "El vostre color és %1$s %2$s, %3$s %4$s i %5$s %6$s."
 
 #: ../tuxpaint.c:22272
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
-msgstr ""
+msgstr "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s i %7$s %8$s."
 
 #: ../tuxpaint.c:22273
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
-msgstr ""
+msgstr "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s i %9$s %10$s."
 
 #: ../tuxpaint.c:22274
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
-msgstr ""
+msgstr "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s i %11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
 #: ../tuxpaint.c:23035 ../tuxpaint.c:23042
 msgid "entirely"
-msgstr ""
+msgstr "totalment"
 
 #. Add "Color Select" color:
 #: ../tuxpaint.c:25857
@@ -1123,7 +1088,7 @@ msgstr "Trieu un color."
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
-msgstr ""
+msgstr "Feu clic en els colors primaris(magenta, groc i cian), blanc (per aclarir), gris, o negre(per enfosquir), per barrejar-los en un color nou."
 
 #: ../tuxpaint.desktop.in.h:1
 msgid "Tux Paint"
@@ -1602,10 +1567,8 @@ msgid "Panels"
 msgstr "Panells"
 
 #: ../../magic/src/perspective.c:156
-#, fuzzy
-#| msgid "Zoom"
 msgid "Tile Zoom"
-msgstr "Zoom"
+msgstr "Zoom mosaic"
 
 #: ../../magic/src/perspective.c:157
 msgid "Zoom"
