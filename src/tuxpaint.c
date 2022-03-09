@@ -1763,83 +1763,12 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
 
       SDLPango_SetDefaultColor(font->pango_context, &pango_color);
 
-      /* Convert from 16-bit UNICODE to UTF-8 encoded for SDL_Pango: */
+/* Convert from 16-bit UNICODE to UTF-8 encoded for SDL_Pango: */
 
-      utfstr_max = (sizeof(char) * 4 * (wcslen(str) + 1));
-      utfstr = (char *)malloc(utfstr_max);
-      memset(utfstr, 0, utfstr_max);
+utfstr_max = (sizeof(char) * 4 * (wcslen(str) + 1));
+utfstr = (char *)malloc(utfstr_max);
 
-      j = 0;
-      for (i = 0; i < wcslen(str); i++)
-        {
-          if (str[i] <= 0x0000007F)
-            {
-              /* Range: 0x00000000 - 0x0000007F:
-
-                 In:  00abcdef
-                 Out: 00abcdef */
-
-              utfstr[j++] = (str[i] & 0x7F);
-            }
-          else if (str[i] <= 0x000007FF)
-            {
-              /* Range: 0x00000080 - 0x000007FF:
-
-                 In:  00000abc defghijk
-                 Out: 110abcde 10fghijk */
-
-              utfstr[j++] = (((str[i] & 0x0700) >> 6) | /* -----abc -------- to ---abc-- */
-                             ((str[i] & 0x00C0) >> 6) | /* -------- de------ to ------de */
-                             (0xC0));                   /*                  add 110----- */
-
-              utfstr[j++] = (((str[i] & 0x003F)) |      /* -------- --fghijk to --fghijk */
-                             (0x80));                   /*                  add 10------ */
-            }
-#ifndef WIN32
-          else if (str[i] <= 0x0000FFFF)
-#else
-          /* str[i] is a wchar_t, which is only 16-bit on Windows, so
-             avoiding a "comparison is always true due to limited range
-             of data type" compile-time warning */
-          else
-#endif
-            {
-              /* Range: 0x00000800 - 0x0000FFFF:
-
-                 In:  abcdefgh ijklmnop
-                 Out: 1110abcd 10efghij 10klmnop */
-
-              utfstr[j++] = (((str[i] & 0xF000) >> 12) | /* abcd---- -------- to ----abcd */
-                             (0xE0));                    /*                  add 1110---- */
-              utfstr[j++] = (((str[i] & 0x0FC0) >> 6) |  /* ----efgh ij------ to --efghij */
-                             (0x80));                    /*                  add 10------ */
-              utfstr[j++] = (((str[i] & 0x003F)) |       /* -------- --klmnop to --klmnop */
-                             (0x80));                    /*                  add 10------ */
-            }
-#ifndef WIN32
-          else
-            {
-              /* Range: 0x00010000 - 0x001FFFFF:
-
-                 In:  000abcde fghijklm nopqrstu
-                 Out: 11110abc 10defghi 10jklmno 10pqrstu
-              */
-
-              utfstr[j++] = (((str[i] & 0x1C0000) >> 18) | /* ---abc-- -------- --------  to -----abc */
-                             (0xF0));                      /*                            add 11110000 */
-              utfstr[j++] = (((str[i] & 0x030000) >> 12) | /* ------de -------- --------  to --de---- */
-                             ((str[i] & 0x00F000) >> 12) | /* -------- fghi---- --------  to ----fghi */
-                             (0x80));                      /*                            add 10------ */
-              utfstr[j++] = (((str[i] & 0x000F00) >> 6) |  /* -------- ----jklm --------  to --jklm-- */
-                             ((str[i] & 0x0000C0) >> 6) |  /* -------- -------- no------  to ------no */
-                             (0x80));                      /*                            add 10------ */
-              utfstr[j++] = ((str[i] & 0x00003F) |         /* -------- -------- --pqrstu  to --prqstu */
-                             (0x80));                      /*                            add 10------ */
-            }
-#endif
-        }
-      utfstr[j] = '\0';
-
+wcstombs(utfstr, str, utfstr_max);
 
       SDLPango_SetText(font->pango_context, utfstr, -1);
       ret = SDLPango_CreateSurfaceDraw(font->pango_context);
