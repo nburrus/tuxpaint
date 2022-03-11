@@ -153,8 +153,8 @@ Compiling and Installation
 
   Usuarios de Windows
 
-     3 de Novembro de 2021 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
-     <shin1@wmail.plala.or.jp>
+     3 de Novembro de 2021 Shin-ichi TOYAMA dolphin6k@wmail.plala.or.jp
+     <dolphin6k@wmail.plala.or.jp>
 
     Compiling Set-Up
 

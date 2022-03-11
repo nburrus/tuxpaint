@@ -152,8 +152,8 @@ Compilation et installation
 
   Utilisateurs de Windows
 
-     novembre 3, 2021 Shin-ichi TOYAMA shin1@wmail.plala.or.jp
-     <shin1@wmail.plala.or.jp>
+     novembre 3, 2021 Shin-ichi TOYAMA dolphin6k@wmail.plala.or.jp
+     <dolphin6k@wmail.plala.or.jp>
 
     Réglages pour compilation
 

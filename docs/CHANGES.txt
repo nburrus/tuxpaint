@@ -133,7 +133,7 @@ http://www.tuxpaint.org/
       Sveinn í Felli <sv1@fellsnet.is>
 
     * Japanese translation
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Santali translation (Ol-Chiki)
       Prasanta Hembram <prasantahembram720@gmail.com>
@@ -162,12 +162,12 @@ http://www.tuxpaint.org/
     ----------
     * Fixed abnormal exit of threaded font scan which prevented enabling
       text/label tools on some environment such as Rocky Linux 8.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Pass the full path of locale directory to bindtextdomain().
       Workaround to the issue that gettext() can not find translation
       files after the update of MinGW/MSYS2 in January 2022.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Initializing layout of onscreen keyboard (osk) to avoid undefined
       behavior when changing keyboards.
@@ -190,12 +190,12 @@ http://www.tuxpaint.org/
       * Windows installer will no nlonger show a dialogue to inform
         user of uninstallation when "/VERYSILENT" switch is specified
         (useful for automated installation/uninsta$llation processes).
-        TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+        TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
       * Standard output and standard error are now redirected to the
         files in User's save directory for example:
         "C:\Users\<username>\AppData\Roaming\TuxPaint"
-        TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+        TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * macOS
       Mark Kim <markuskimius@gmail.com>
@@ -371,7 +371,7 @@ http://www.tuxpaint.org/
     ---------------------
     * Allowing Left [Alt] key for switching to Japanese input method
       (for keyboards that lack a Right [Alt] key).
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Catalan translation
       Pere Pujal i Carabantes <perepujal@gmail.com>
@@ -383,7 +383,7 @@ http://www.tuxpaint.org/
       Sveinn í Felli <sv1@fellsnet.is>
 
     * Japanese translation
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
@@ -412,7 +412,7 @@ http://www.tuxpaint.org/
       not supply a needed function.)
       * h/t @Miyagi_Andel on Twitter for reporting the crash
       * h/t Pere Pujal i Carabantes for confirming how to reproduce it
-      * TOYAMA Shin-ichi <shin1@wmail.plala.or.jp> dropped the old
+      * TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp> dropped the old
         code and rebuilt Tux Paint 0.9.26 for Win32 as 0.9.26-5
       * Note: This means dropping support for Windows 2000 & XP
       * (Also, remove Windows-only call to `_nl_locale_name()`,
@@ -457,10 +457,10 @@ http://www.tuxpaint.org/
         translation is supported both for the web site and installer.
       + Disabled start menu shortcut to outdated translations of README.html.
       + Remove old OpenCandy stuff from Windows .iss file.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Added shell script to build windows installer and portable zip archive.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Further work to remove compiler warnings.
 
@@ -517,7 +517,7 @@ http://www.tuxpaint.org/
         Miguel Anxo Bouzada <mbouzada@gmail.com>
 
       + Japanese
-        TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+        TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Adding documentation that covers some of the
       environment variables that Tux Paint utilizes.
@@ -644,7 +644,7 @@ http://www.tuxpaint.org/
       * Support for Mingw64 for 64-bit builds
       * Ability to find Mingw DLLs by examining EXEs
         (new shell script replaces hard-coded list in Makefile)
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * New Brushes
     -----------
@@ -717,7 +717,7 @@ http://www.tuxpaint.org/
       Sveinn í Felli <sv1@fellsnet.is>
 
     * Japanese translation & Japanese README documentation
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Norwegian Bokmål translation
       Karl Ove Hufthammer <karl@huftis.org>
@@ -761,10 +761,10 @@ http://www.tuxpaint.org/
       STDERR, rather than STDOUT.
 
     * Updates to build for Windows (using mingw/msys)
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Updates to 'spec' file for Linux RPM builds
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Other Improvements
     ------------------
@@ -971,7 +971,7 @@ http://www.tuxpaint.org/
       Flavio Pastore <ironbishop@fsfe.org>
 
     * Japanese translation
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Korean translation
       Mark K. Kim <mkkim214@gmail.com>
@@ -2069,7 +2069,7 @@ http://www.tuxpaint.org/
       + Plugin .so files were missing.
       + Separated devel packages in RPM spec.
       + Added dependency on SDL_Pango.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Placing Tux Paint launcher icon ("tuxpaint.desktop") in
       'applications', rather than 'gnome/apps/Graphics', per Freedesktop.org
@@ -2157,7 +2157,7 @@ http://www.tuxpaint.org/
 
     * Fixed issues where some strings not appearing under 'nopango'
       (at least on older Fedora CORE and RedHat).
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
 * New Starters:
     -------------
@@ -2525,7 +2525,7 @@ http://www.tuxpaint.org/
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
     * Japanese translation
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Mexican Spanish translation
       Ignacio Tike <itike0100@gmail.com>
@@ -2868,7 +2868,7 @@ http://www.tuxpaint.org/
       Kevin Patrick Scannell <kscanne@gmail.com>
     
     * Japanese
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Lithuanian
       Gintaras Gostautas <gintaras@nes.lt>
@@ -3084,7 +3084,7 @@ http://www.tuxpaint.org/
       Flavio "Iron Bishop" Pastore <ironbishop@fsfe.org>
 
     * Japanese
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Japanese font shipped in Tux Paint now includes common educational Kanji
 
@@ -3121,7 +3121,7 @@ http://www.tuxpaint.org/
     * Including a scaled down version of the Japanese TrueType font (ja.ttf),
       that includes only the characters uses by Tux Paint.
       For info, see: fonts/locale/ja_docs/
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Documentation Improvements:
     ---------------------------
@@ -3136,7 +3136,7 @@ http://www.tuxpaint.org/
     * Ran source code through "indent -nbfda -npcs -npsl -bli0".
 
     * "DESTDIR" patch is no longer needed.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
       
     * Split parts of "tuxpaint.c" into separate source files:
       + "compiler.h": Compiler-version-specific definitions.
@@ -3329,7 +3329,7 @@ http://www.tuxpaint.org/
     ----------------------------
     * Added larger screen size support:
       1024x768, 1280x1024, 1400x1050, 1600x1200
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Arbitrary window sizes allowed (--XXXXxYYYY); useful for more modern
       displays (e.g., Mac monitors)
@@ -3493,12 +3493,12 @@ http://www.tuxpaint.org/
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * There's no longer a need to remove CVS-related things in 'tuxpaint.spec'.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Added "test-option.sh" shell script, which can be used in Makefile
       for basic compiler option tests
       (e.g., is "-Wdeclaration-after-statement" available?)
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Created 'release' Makefile target, which generates a .tar.gz
       (sans CVS-related files) based on the clean source directory.
@@ -3562,13 +3562,13 @@ http://www.tuxpaint.org/
     
     * Added "PKG_ROOT" variable to Makefile, and "tuxpaint.spec" file,
       for Tux Paint RPM building ease.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Fixed to compile on old GLIBC system (such as RedHat-6.2)
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Fixes to RPM spec file
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
   
     * Enabled more compiler warnings, and updated code to prevent them.
       Albert Cahalan <albert@users.sf.net>
@@ -3675,7 +3675,7 @@ http://www.tuxpaint.org/
       Tedi Heriyanto <tedi_h@gmx.net>
       
     * Japanese
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Korean
       Mark K. Kim <mkkim214@gmail.com>
@@ -3870,7 +3870,7 @@ http://www.tuxpaint.org/
       Flavio Pastor <flavio.pastore@zonaitalia.it>
 
     * Updated Japanese translation.
-      TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Updated Korean translation.
       Mark K. Kim <mkkim214@gmail.com>
@@ -4150,7 +4150,7 @@ http://www.tuxpaint.org/
     and you went to the 'Open' dialog.
   
   * Fixed prompt bug for larger window sizes
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
 
 2003.Jun.17 (0.9.11)
@@ -4178,7 +4178,7 @@ http://www.tuxpaint.org/
     Mantas Kriauciunas <monte@mail.lt>
 
   * Set $OUTPUT_CHARSET for Japanese locale, to fix Win32 issue.
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Lithuanian translation.
     Mantas Kriauciunas <monte@mail.lt>,
@@ -4276,7 +4276,7 @@ http://www.tuxpaint.org/
     Karl Ove Hufthammer <karl@huftis.org>
 
   * Added Japanese translation to Tux Paint icon (tuxpaint.desktop)
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Moved Makefile.beos into src/, to keep root directory less cluttered.
 
@@ -4297,7 +4297,7 @@ http://www.tuxpaint.org/
   * Removed some debugging output that shouldn't have been kept in.
 
   * Locale-detection code made more robust.  (Check LC_MESSAGES, not LC_ALL)
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Added support for some useful HTML escape sequences in stamp descriptions
     (e.g., "&acute;" for "�" ("a" with "'" over it))
@@ -4333,7 +4333,7 @@ http://www.tuxpaint.org/
     selector on the right.
 
   * Fixed Japanese locale detection.
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Stamp description translations can be encoded using UTF-8.
     Append ".utf8" to the locale code (e.g., "fr.utf8=...")
@@ -4345,7 +4345,7 @@ http://www.tuxpaint.org/
 
 2003.January.26 (0.9.7)
   * Translated to Japanese!
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Fixed translation bugs with some save-related prompts.
 
@@ -4369,10 +4369,10 @@ http://www.tuxpaint.org/
     if it doesn't exist
 
   * Initial support for arbitrary window sizes.  (#define SVGA for 800x600)
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Added a few new colors, renamed some old ones.
-    TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Fixed text tool bug when hitting [Enter]/[Return] past bottom of canvas
 
