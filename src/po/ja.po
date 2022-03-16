@@ -1,7 +1,7 @@
 # Tuxpaint japanese translation.
 # Copyright (C) 2017 Bill Kendrick
 # This file is distributed under the same license as the Tuxpaint package.
-# TOYAMA Shin-ichi <shin1@wmail.plala.or.jp>, 2005-2017.
+# TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>, 2005-2017.
 #
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-10 01:02-0800\n"
 "PO-Revision-Date: 2022-02-04 17:06+0900\n"
-"Last-Translator: Shin-ichi TOYAMA <shin1@wmail.plala.or.jp>\n"
-"Language-Team: japanese <shin1@wmail.plala.or.jp>\n"
+"Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
+"Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
