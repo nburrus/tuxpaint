@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 2, 2022
+  June 14, 2002 - March 16, 2022
 */
 
 #include "platform.h"
@@ -2096,6 +2096,7 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
 static int do_color_picker(void);
 static void draw_color_picker_crosshairs(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top);
 static void draw_color_picker_values(int l, int t);
+static void draw_color_picker_palette_and_values(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top);
 static void render_color_picker_palette(void);
 static int do_color_sel(int temp_mode);
 static int do_color_mix(void);
@@ -21868,9 +21869,6 @@ static int do_color_sel(int temp_mode)
 /**
  * Display a large prompt, allowing the user to pick a
  * color from a large palette.
- *
- * FIXME: Various options here would be helpful
- * (RGB, HSV, color wheel, etc.) -bjk 2022.01.25
  */
 static int do_color_picker(void)
 {
@@ -21899,6 +21897,7 @@ static int do_color_picker(void)
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
   int old_cp_x, old_cp_y, old_cp_v;
+  int last_motion_within_val_slider;
 
   /* Remember old choices, in case we hit [Back] */
   old_cp_x = color_picker_x;
@@ -22084,7 +22083,7 @@ static int do_color_picker(void)
   done = 0;
   chose = 0;
   x = y = 0;
-  SDL_WarpMouse(back_left + button_w / 2, back_top - button_w / 2);
+  last_motion_within_val_slider = 0;
 
   do
     {
@@ -22155,7 +22154,7 @@ static int do_color_picker(void)
                        event.button.y <= color_picker_val_top + img_color_picker_val->h)
                 {
                   /* Picked a value from the slider */
-                  
+
                   y = event.button.y - color_picker_val_top;
                   color_picker_v = y;
 
@@ -22173,26 +22172,7 @@ static int do_color_picker(void)
 
 
                   /* Redraw hue/sat palette, and val slider, and redraw crosshairs */
-                  draw_color_picker_values(color_picker_val_left, color_picker_val_top);
-
-                  dest.x = color_picker_left;
-                  dest.y = color_picker_top;
-                  SDL_BlitSurface(img_color_picker, NULL, screen, &dest);
-                  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
-
-                  draw_color_picker_crosshairs(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
-
-                  dest.x = color_picker_val_left;
-                  dest.y = color_picker_val_top;
-                  dest.w = img_back->w;
-                  dest.h = img_color_picker_val->h;
-                  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
-
-                  dest.x = color_picker_left;
-                  dest.y = color_picker_top;
-                  dest.w = img_color_picker->w;
-                  dest.h = img_color_picker->h;
-                  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+                  draw_color_picker_palette_and_values(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
                 }
               else if (event.button.x >= done_left &&
                        event.button.x < done_left + img_yes->w &&
@@ -22215,21 +22195,29 @@ static int do_color_picker(void)
             }
           else if (event.type == SDL_MOUSEMOTION)
             {
-              if (event.button.x >= color_picker_left &&
-                  event.button.x < color_picker_left + img_color_picker->w &&
-                  event.button.y >= color_picker_top && event.button.y < color_picker_top + img_color_picker->h)
+              if (event.button.x >= color_picker_val_left &&
+                       event.button.y >= color_picker_val_top &&
+                       event.button.x <= color_picker_val_left + img_back->w &&
+                       event.button.y <= color_picker_val_top + img_color_picker_val->h)
                 {
-                  /* Hovering over the colors! */
+                  int tmp_color_picker_v;
 
-                  do_setcursor(cursor_pipette);
+                  /* Hovering over a value from the slider */
 
+                  y = event.button.y - color_picker_val_top;
+                  tmp_color_picker_v = color_picker_v;
+                  color_picker_v = y;
+
+                  /* Re-render the palette with the new value */
+                  render_color_picker_palette();
+                  color_picker_v = tmp_color_picker_v;
 
                   /* Show a big solid example of the color: */
 
                   x = event.button.x - color_picker_left;
                   y = event.button.y - color_picker_top;
 
-                  SDL_GetRGB(getpixel_img_color_picker(img_color_picker, x, y), img_color_picker->format, &r, &g, &b);
+                  SDL_GetRGB(getpixel_img_color_picker(img_color_picker, color_picker_x, color_picker_y), img_color_picker->format, &r, &g, &b);
 
                   dest.x = color_example_dest.x + color_example_dest.w / 4;
                   dest.y = color_example_dest.y + color_example_dest.h / 4;
@@ -22239,32 +22227,73 @@ static int do_color_picker(void)
                   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
 
                   SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+
+                  /* Redraw hue/sat palette, and val slider, and redraw crosshairs */
+                  draw_color_picker_palette_and_values(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
+
+                  last_motion_within_val_slider = 1;
                 }
               else
                 {
-                  /* Revert to current color picker color */
+                  if (last_motion_within_val_slider)
+                    {
+                      render_color_picker_palette();
+                      draw_color_picker_palette_and_values(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
+                      last_motion_within_val_slider = 0;
+                    }
 
-                  SDL_GetRGB(getpixel_img_color_picker(img_color_picker, color_picker_x, color_picker_y),
-                             img_color_picker->format, &r, &g, &b);
+                  if (event.button.x >= color_picker_left &&
+                      event.button.x < color_picker_left + img_color_picker->w &&
+                      event.button.y >= color_picker_top && event.button.y < color_picker_top + img_color_picker->h)
+                    {
+                      /* Hovering over the colors! */
 
-                  SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, r, g, b));
+                      do_setcursor(cursor_pipette);
 
-                  SDL_UpdateRect(screen,
-                                 color_example_dest.x, color_example_dest.y,
-                                 color_example_dest.w, color_example_dest.h);
 
-                  /* Change cursor to arrow (or hand, if over Back or Done): */
+                      /* Show a big solid example of the color: */
 
-                  if (event.button.x >= back_left &&
-                      event.button.x < back_left + img_back->w &&
-                      event.button.y >= back_top && event.button.y < back_top + img_back->h)
-                    do_setcursor(cursor_hand);
-                  else if (event.button.x >= done_left &&
-                           event.button.x < done_left + img_yes->w &&
-                           event.button.y >= done_top && event.button.y < done_top + img_yes->h)
-                    do_setcursor(cursor_hand);
+                      x = event.button.x - color_picker_left;
+                      y = event.button.y - color_picker_top;
+
+                      SDL_GetRGB(getpixel_img_color_picker(img_color_picker, x, y), img_color_picker->format, &r, &g, &b);
+
+                      dest.x = color_example_dest.x + color_example_dest.w / 4;
+                      dest.y = color_example_dest.y + color_example_dest.h / 4;
+                      dest.w = color_example_dest.w / 2;
+                      dest.h = color_example_dest.h / 2;
+
+                      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
+
+                      SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+                    }
                   else
-                    do_setcursor(cursor_arrow);
+                    {
+                      /* Revert to current color picker color */
+
+                      SDL_GetRGB(getpixel_img_color_picker(img_color_picker, color_picker_x, color_picker_y),
+                                 img_color_picker->format, &r, &g, &b);
+
+                      SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, r, g, b));
+
+                      SDL_UpdateRect(screen,
+                                     color_example_dest.x, color_example_dest.y,
+                                     color_example_dest.w, color_example_dest.h);
+
+                      /* Change cursor to arrow (or hand, if over Back or Done): */
+
+                      if (event.button.x >= back_left &&
+                          event.button.x < back_left + img_back->w &&
+                          event.button.y >= back_top && event.button.y < back_top + img_back->h)
+                        do_setcursor(cursor_hand);
+                      else if (event.button.x >= done_left &&
+                               event.button.x < done_left + img_yes->w &&
+                               event.button.y >= done_top && event.button.y < done_top + img_yes->h)
+                        do_setcursor(cursor_hand);
+                      else
+                        do_setcursor(cursor_arrow);
+                    }
                 }
 
               oldpos_x = event.motion.x;
@@ -22322,6 +22351,31 @@ static int do_color_picker(void)
 }
 
 
+static void draw_color_picker_palette_and_values(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top) {
+  SDL_Rect dest;
+
+  draw_color_picker_values(color_picker_val_left, color_picker_val_top);
+
+  dest.x = color_picker_left;
+  dest.y = color_picker_top;
+  SDL_BlitSurface(img_color_picker, NULL, screen, &dest);
+  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+  draw_color_picker_crosshairs(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
+
+  dest.x = color_picker_val_left;
+  dest.y = color_picker_val_top;
+  dest.w = img_back->w;
+  dest.h = img_color_picker_val->h;
+  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+  dest.x = color_picker_left;
+  dest.y = color_picker_top;
+  dest.w = img_color_picker->w;
+  dest.h = img_color_picker->h;
+  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+}
+
 static void render_color_picker_palette(void)
 {
   int x, y;
@@ -22337,7 +22391,7 @@ static void render_color_picker_palette(void)
                    ((float) x / ((float) img_color_picker->w)),
                    1.0 - (((float) color_picker_v) / ((float) img_color_picker_val->h)),
                    &r, &g, &b);
-          putpixel(img_color_picker, x, y, 
+          putpixel(img_color_picker, x, y,
                    SDL_MapRGBA(img_color_picker->format, r, g, b, 255));
         }
     }
@@ -22910,7 +22964,7 @@ static int do_color_mix(void)
                       if (!Mix_Playing(0))
                         {
                           eraser_sound = (eraser_sound + 1) % 2;
-     
+
                           playsound(screen, 0, SND_ERASER1 + eraser_sound, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                         }
                     }
