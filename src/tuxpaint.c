@@ -348,9 +348,9 @@ extern int win32_trash(const char *path);
 #undef iswprint
 int iswprint(wchar_t wc)
 {
-	WORD t;
-	GetStringTypeW(CT_CTYPE1, &wc, 1, &t);
-	return (t & C1_DEFINED) && !(t & C1_CNTRL);
+  WORD t;
+  GetStringTypeW(CT_CTYPE1, &wc, 1, &t);
+  return (t & C1_DEFINED) && !(t & C1_CNTRL);
 }
 
 #endif /* WIN32 */
@@ -3982,7 +3982,7 @@ static void mainloop(void)
                               /* Shape controls! */
                               shape_mode = which;
                               draw_shapes();
-			      update_screen_rect(&r_toolopt);
+                              update_screen_rect(&r_toolopt);
                               draw_tux_text(TUX_GREAT, shapemode_tips[shape_mode], 1);
                               playsound(screen, 0, SND_CLICK, 0, SNDPOS_RIGHT, SNDDIST_NEAR);
                               update_screen_rect(&r_tuxarea);
@@ -5667,6 +5667,8 @@ static void mainloop(void)
                 }
               else if (HIT(r_toolopt))
                 {
+                  int control_rows = 0, num_places;
+
                   /* mouse cursor code
                      WARNING: this must be kept in sync with the mouse-click
                      and mouse-click code. (it isn't, currently!) */
@@ -5681,35 +5683,35 @@ static void mainloop(void)
                     }
 
                   /* This if/if/if block is awful -bjk 2022.01.19 */
-		  int control_rows = 0;
                   if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-		    control_rows = 3;
+                    control_rows = 3;
+
                   if (cur_tool == TOOL_LABEL)
                     {
-		      control_rows = 1;
+                      control_rows = 1;
                       if (!disable_stamp_controls)
-			control_rows = 3;
+                        control_rows = 3;
                     }
 
                   if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
-		    control_rows = 2;
+                    control_rows = 2;
                   if (cur_tool == TOOL_MAGIC)
                     {
-		      control_rows = 1;
+                      control_rows = 1;
                       if (!disable_magic_controls)
                         control_rows = 2;
                     }
                   if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
-		    control_rows = 1;
+                    control_rows = 1;
                   if ((cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES) && !disable_brushspacing)
-		    control_rows = 1;
+                    control_rows = 1;
 
-		  int num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
+                  num_places = buttons_tall * gd_toolopt.cols - control_rows * gd_toolopt.cols;
 
                   if (num_things > num_places)
                     {
                       /* Are there scroll buttons? */
-		      num_places = num_places - gd_toolopt.cols; /* Two scroll buttons occupy one row */
+                      num_places = num_places - gd_toolopt.cols; /* Two scroll buttons occupy one row */
                       if (event.button.y < r_ttoolopt.h + img_scroll_up->h)
                         {
                           /* Up button; is it available? */
@@ -9553,9 +9555,6 @@ static void draw_fonts(void)
       dest.x = WINDOW_WIDTH - r_ttoolopt.w;
       dest.y = r_ttoolopt.h + off_y + (((most - gd_toolopt.cols) / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
 
-      /*      if (!disable_stamp_controls)
-	      dest.y = dest.y - (button_h * 2); */
-
       if (font_scroll < num_font_families - (most - gd_toolopt.cols) - TOOLOFFSET)
         {
           SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
@@ -10173,7 +10172,7 @@ static void draw_shapes(void)
           SDL_BlitSurface(img_shapes[shape], NULL, screen, &dest);
 
           dest.x = ((i % 2) * button_w) + (4 * button_w) / ORIGINAL_BUTTON_SIZE + WINDOW_WIDTH - r_ttoolopt.w + ((40 * button_w) / ORIGINAL_BUTTON_SIZE - img_shape_names[shape]->w) / 2;
-	  dest.y = ((i / 2) * button_h) + r_ttoolopt.h + (4 * button_h) / ORIGINAL_BUTTON_SIZE + ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_shape_names[shape]->h) + off_y;
+          dest.y = ((i / 2) * button_h) + r_ttoolopt.h + (4 * button_h) / ORIGINAL_BUTTON_SIZE + ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_shape_names[shape]->h) + off_y;
 
           SDL_BlitSurface(img_shape_names[shape], NULL, screen, &dest);
         }
@@ -10472,7 +10471,7 @@ static void draw_fills(void)
           SDL_BlitSurface(img_fills[i], NULL, screen, &dest);
 
           dest.x = ((i % 2) * button_w) + (4 * button_w) / ORIGINAL_BUTTON_SIZE + WINDOW_WIDTH - r_ttoolopt.w + ((40 * button_w) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->w) / 2;
-	  dest.y = ((i / 2) * button_h) + r_ttoolopt.h + (4 * button_h) / ORIGINAL_BUTTON_SIZE + ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->h) + off_y;
+          dest.y = ((i / 2) * button_h) + r_ttoolopt.h + (4 * button_h) / ORIGINAL_BUTTON_SIZE + ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->h) + off_y;
 
           SDL_BlitSurface(img_fill_names[i], NULL, screen, &dest);
         }
@@ -13356,9 +13355,7 @@ static int do_prompt_image_flash_snd(const char *const text,
         SDL_Delay(1);
 
       if (w == r_ttools.w - 2)
-	{
         SDL_BlitSurface(backup, NULL, screen, NULL);
-	}
     }
 
   SDL_FreeSurface(backup);
@@ -13385,7 +13382,7 @@ static int do_prompt_image_flash_snd(const char *const text,
           dest.y = 94 / button_scale + r_ttools.w / button_scale - (w - 4) + i + PROMPTOFFSETY;
           dest.w = (PROMPT_W - r_ttools.w * 2) + (w - 4) * 2;
           dest.h = (w - 4) * 2;
-	  dest.y = canvas->h / 2 - dest.h / 2 + i + 2;
+          dest.y = canvas->h / 2 - dest.h / 2 + i + 2;
           SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
         }
 
@@ -13600,14 +13597,14 @@ static int do_prompt_image_flash_snd(const char *const text,
               if (event.button.x >= btn_left && event.button.x < btn_left + img_yes->w)
                 {
                   if (event.button.y >= dest_back.y + dest_back.h - 4 - button_h - 4 - button_h &&
-		      event.button.y < dest_back.y + dest_back.h - 4 - button_h - 4 - button_h + img_yes->h)
+                      event.button.y < dest_back.y + dest_back.h - 4 - button_h - 4 - button_h + img_yes->h)
                     {
                       ans = 1;
                       done = 1;
                     }
                   else if (strlen(btn_no) != 0 &&
                            event.button.y >= dest_back.y + dest_back.h - 4 - button_h &&
-			   event.button.y < dest_back.y + dest_back.h - 4 - button_h + img_no->h)
+                           event.button.y < dest_back.y + dest_back.h - 4 - button_h + img_no->h)
                     {
                       ans = 0;
                       done = 1;
@@ -13622,7 +13619,7 @@ static int do_prompt_image_flash_snd(const char *const text,
                     event.button.y < dest_back.y + dest_back.h - 4 - button_h - 4 - button_h + img_yes->h) ||
                    (strlen(btn_no) != 0 &&
                     event.button.y >=  dest_back.y + dest_back.h - 4 - button_h &&
-		    event.button.y < dest_back.y + dest_back.h - 4 - button_h + img_no->h)))
+                    event.button.y < dest_back.y + dest_back.h - 4 - button_h + img_no->h)))
                 {
                   do_setcursor(cursor_hand);
                 }
@@ -14524,7 +14521,7 @@ static int do_save(int tool, int dont_show_success_results)
                                   PROMPT_SAVE_OVER_NO,
                                   img_save_over, NULL, NULL, SND_AREYOUSURE,
                                   (TOOL_SAVE % 2) * button_w + button_w / 2,
-				  (TOOL_SAVE / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll) == 0)
+                                  (TOOL_SAVE / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll) == 0)
             {
               /* No - Let's save a new picture! */
 
@@ -15028,11 +15025,11 @@ static void do_png_embed_data(png_structp png_ptr)
                 {
 #ifdef WIN32
                   wtmpchar = current_node->save_texttool_str[i];
-		  nbtmpstr = WideCharToMultiByte(CP_UTF8, 0, &wtmpchar, 1, tmpstr, 16, NULL, NULL);
-		  tmpstr[nbtmpstr] = '\0';
+                  nbtmpstr = WideCharToMultiByte(CP_UTF8, 0, &wtmpchar, 1, tmpstr, 16, NULL, NULL);
+                  tmpstr[nbtmpstr] = '\0';
                   fprintf(lfi, "%s", tmpstr);
 #else
-		  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
+                  fprintf(lfi, "%lc", (wint_t) current_node->save_texttool_str[i]);
 #endif
                 }
               fprintf(lfi, "\n");
@@ -15313,7 +15310,7 @@ static int do_quit(int tool)
       done = do_prompt_snd(PROMPT_QUIT_TXT,
                            PROMPT_QUIT_YES, PROMPT_QUIT_NO, SND_AREYOUSURE,
                            (TOOL_QUIT % 2) * button_w + button_w / 2,
-			   (TOOL_QUIT / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll);
+                           (TOOL_QUIT / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll);
     }
   else
     {
@@ -15718,8 +15715,8 @@ static int do_open(void)
         {
           do_prompt_snd(PROMPT_OPEN_NOFILES_TXT, PROMPT_OPEN_NOFILES_YES, "",
                         SND_YOUCANNOT,
-			(TOOL_OPEN % 2) * button_w + button_w / 2,
-			(TOOL_OPEN / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols);
+                        (TOOL_OPEN % 2) * button_w + button_w / 2,
+                        (TOOL_OPEN / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols);
         }
       else
         {
@@ -16171,7 +16168,7 @@ static int do_open(void)
                                  event.button.x < (WINDOW_WIDTH - r_ttoolopt.w)) ||
                                 (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w - button_w) &&
                                  event.button.x < (WINDOW_WIDTH - button_w - r_ttoolopt.w) &&
-				 /* Both "Erase" and "Export" only work on our own files... */
+                                /* Both "Erase" and "Export" only work on our own files... */
                                  d_places[which] != PLACE_STARTERS_DIR &&
                                  d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
                                event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
@@ -16342,7 +16339,7 @@ static int do_open(void)
                     do_prompt_snd(PROMPT_PICT_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES, "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
 
                   draw_tux_text(TUX_BORED, instructions, 1);
-		  update_list = 1;
+                  update_list = 1;
                 }
             }
           while (!done);
@@ -17148,18 +17145,18 @@ static int do_slideshow(void)
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 
                   if (num_selected < 2)
-		    {
-	              /* None selected? Too dangerous to automatically select all (like we do for slideshow playback).
-		         Only 1 selected?  No point in saving as GIF.
+                    {
+                      /* None selected? Too dangerous to automatically select all (like we do for slideshow playback).
+                         Only 1 selected?  No point in saving as GIF.
                       */
                       freeme = textdir(gettext_noop("Select 2 or more drawings to turn into an animated GIF."));
                       draw_tux_text(TUX_BORED, freeme, 1);
                       free(freeme);
 
                       control_drawtext_timer(2000, instructions, 0); /* N.B. It will draw instructions, regardless */
-		    }
-		  else
-		    {
+                    }
+                  else
+                    {
                       export_successful = export_gif(selected, num_selected, dirname, d_names, d_exts, speed);
 
                       /* Redraw entire screen, after export: */
@@ -17181,7 +17178,7 @@ static int do_slideshow(void)
                       SDL_Flip(screen);
 
                       update_list = 1;
-		    }
+                    }
                 }
               else if (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w) &&
                        event.button.x < (WINDOW_WIDTH - r_ttoolopt.w) &&
@@ -17295,8 +17292,8 @@ static int do_slideshow(void)
                     {
                       draw_tux_text(TUX_BORED, instructions, 1);
                     }
-		}
-	    }
+                }
+            }
         }
 
       if (motioner | hatmotioner)
@@ -17948,7 +17945,7 @@ static void print_image(void)
                               PROMPT_PRINT_NOW_NO,
                               img_printer, NULL, NULL, SND_AREYOUSURE,
                               (TOOL_PRINT % 2) * button_w + button_w / 2,
-			      (TOOL_PRINT / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll))
+                              (TOOL_PRINT / 2) * button_h + r_ttools.h + button_h / 2 - tool_scroll * button_h / gd_tools.cols + scroll))
         {
           do_print();
 
@@ -21964,7 +21961,7 @@ static int do_color_picker(void)
       for (i = 8; i > 0; i = i - 2)
         {
           dest.x = r_final.x + i - 4;
-	  dest.y = r_final.y + i - 4;
+          dest.y = r_final.y + i - 4;
           dest.w = r_final.w + 8;
           dest.h = r_final.h + 16;
 
@@ -22632,7 +22629,7 @@ static int do_color_mix(void)
       for (i = 8; i > 0; i = i - 2)
         {
           dest.x = r_final.x + i - 4;
-	  dest.y = r_final.y + i - 4;
+          dest.y = r_final.y + i - 4;
           dest.w = r_final.w + 8;
           dest.h = r_final.h + 16;
 
@@ -24200,12 +24197,12 @@ static void load_info_about_label_surface(FILE * lfi)
           size_t diff, i;
 
           wtmpstr = malloc(1024);
-	  diff = new_node->save_texttool_len - nwchar;
+          diff = new_node->save_texttool_len - nwchar;
 
           for (i = 0; i < diff; i++)
             wtmpstr[i] = L' ';
 
-	  for (i = 0; i <= nwchar; i++)
+          for (i = 0; i <= nwchar; i++)
             wtmpstr[i + diff] = new_node->save_texttool_str[i];
 
           memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
@@ -28322,7 +28319,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
               /* FIXME Abort? */
             }
 
-	  /* Record the raw RGB into a big strip, to be quantized and sliced later */
+          /* Record the raw RGB into a big strip, to be quantized and sliced later */
           for (y = 0; y < overall_h; y++) {
             for (x = 0; x < overall_w; x++) {
               SDL_GetRGBA(getpixels[screen->format->BytesPerPixel](screen, x, y), screen->format, &r, &g, &b, &a);
@@ -28335,7 +28332,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
           }
 
           SDL_Flip(screen);
-	  done = export_gif_monitor_events();
+          done = export_gif_monitor_events();
         }
 
 
@@ -28344,17 +28341,17 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
           /* Quantize to max 256 (8bpp) colors and generate a suitable palette */
           liq_handle = liq_attr_create();
           input_image = liq_image_create_rgba(liq_handle, bitmap, overall_w, num_selected * overall_h, 0);
-	  liq_set_max_colors(liq_handle, 256);
+          liq_set_max_colors(liq_handle, 256);
 
           show_progress_bar(screen);
-	  done = export_gif_monitor_events();
+          done = export_gif_monitor_events();
 
 #if LIQ_VERSION >= 20800
-	  qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
-	  done = (qtiz_status != LIQ_OK);
+          qtiz_status = liq_image_quantize(input_image, liq_handle, &quantization_result);
+          done = (qtiz_status != LIQ_OK);
 #else
-	  quantization_result = liq_quantize_image(liq_handle, input_image);
-	  done = (quantization_result == NULL);
+          quantization_result = liq_quantize_image(liq_handle, input_image);
+          done = (quantization_result == NULL);
 #endif
           if (!done) {
             // Use libimagequant to make new image pixels from the palette
@@ -28366,7 +28363,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
             palette = liq_get_palette(quantization_result);
             free(bitmap);
 
-	    for (j = 0; j < (int) palette->count; j++) {
+            for (j = 0; j < (int) palette->count; j++) {
               gif_palette[j * 3 + 0] = palette->entries[j].r;
               gif_palette[j * 3 + 1] = palette->entries[j].g;
               gif_palette[j * 3 + 2] = palette->entries[j].b;
@@ -28388,22 +28385,22 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
                 ge_add_frame(gif, gif_speed);
 
                 show_progress_bar(screen);
-	        done = export_gif_monitor_events();
+                done = export_gif_monitor_events();
               }
 
             /* Close the GIF */
             ge_close_gif(gif);
           } else {
             fprintf(stderr, "Quantization failed\n");
-	    done = 1;
-	  }
+            done = 1;
+          }
 
           if (done)
             {
               /* Aborted; discard the partially-saved GIF */
               unlink(gif_fname);
-	    }
-	}
+            }
+        }
     }
   else
     {
