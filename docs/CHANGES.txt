@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.March.16 (0.9.28)
+2022.March.17 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -108,6 +108,10 @@ http://www.tuxpaint.org/
 
     * The rainbow palette color picker now acts as a true
       Hue/Saturation/Value picker, with the addition of a "value" slider.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * The crosshairs on the rainbow palette color picker are larger,
+      and scale up (or down) based on the UI size (--buttonsize setting).
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Show a "pipette"-shaped mouse pointer when selecting a

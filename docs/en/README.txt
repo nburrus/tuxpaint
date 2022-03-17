@@ -193,20 +193,40 @@ Main Screen
            flood-filling an area of the picture.)
 
            On the far right are three special color options:
-              * The "color picker" (which has an outline of an eye-dropper)
-                allows you to pick a color found within your drawing. A
-                shortcut key is available to access this feature quickly; see
-                below.
-              * The rainbow palette allows you to pick a color from within a
-                box containing various saturations of every hue, along with a
-                value level.
-              * The "color mixer" (which has silhouette of a paint palette)
+              * Color Picker
+                The "color picker" (which has an outline of an eye-dropper)
+                allows you to pick a color found within your drawing.
+                (A shortcut key is available to access this feature quickly;
+                see below.)
+              * Rainbow Palette
+                The rainbow palette allows you to pick any color by choosing
+                the hue, saturation, and value of the color you want. A box
+                on the left displays hundreds of hues — from red at the top
+                through to violet at the bottom — at hundreds of
+                saturation/intensity levels — from pale & washed-out on the
+                left through to pure on the right. A grey vertical bar
+                provides access to hundreds of value levels — from lighest at
+                the top through to darkest at the bottom.
+                Click the green checkbox button to select the color, or the
+                "Back" button to dismiss the pop-up without picking a new
+                color.
+              * Color Mixer
+                The "color mixer" (which has silhouette of a paint palette)
                 allows you to create colors by blending primary additive
                 colors — red, yellow, and blue — along with white (to
-                "tint"), grey (to "tone"), and black (to "shade"). The ratios
-                of colors added are shown at the bottom.
+                "tint"), grey (to "tone"), and black (to "shade").
+                You may click any button multiple times (for example, red +
+                red + yellow results in a red-orange color). The ratios of
+                colors added are shown at the bottom.
+                You can start over (reset to no colors in your picture) by
+                clicking the "Clear" button. You can also undo or redo
+                multiple steps of mixing, in case you made a mistake (without
+                having to start over).
+                Click the green checkbox button to select the color, or the
+                "Back" button to dismiss the pop-up without picking a new
+                color.
 
-           When the active tool supports colors, a shortcut may be used to
+           ⌨ When the active tool supports colors, a shortcut may be used to
            access the "color picker" option more quickly. Hold the [Control]
            key while clicking, and the color under the mouse cursor will be
            shown at the bottom. You may drag around to canvas to find the
