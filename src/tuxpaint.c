@@ -22010,12 +22010,6 @@ static int do_color_picker(void)
   draw_color_picker_values(color_picker_val_left, color_picker_val_top);
 
 
-  /* Draw crosshairs */
-
-  draw_color_picker_crosshairs(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
-
-
-
   /* Determine spot for example color: */
 
   color_example_dest.x = color_picker_left + img_color_picker->w + 2 + img_back->w + 2;
@@ -22074,6 +22068,27 @@ static int do_color_picker(void)
   SDL_BlitSurface(img_yes, NULL, screen, &dest);
 
   SDL_Flip(screen);
+
+
+  /* Draw crosshairs */
+
+  /* (N.B. - We do this the first time _after_ flipping the entire screen,
+     so we avoid updating parts of the screen where the crosshairs
+     extend past the rainbow rectangle or value slider, since this
+     function does not (yet) do any clipping) */
+  draw_color_picker_crosshairs(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
+
+  dest.x = color_picker_left;
+  dest.y = color_picker_top;
+  dest.w = img_color_picker->w;
+  dest.h = img_color_picker->h;
+  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+  dest.x = color_picker_val_left;
+  dest.y = color_picker_val_top;
+  dest.w = img_back->w;
+  dest.h = img_color_picker_val->h;
+  SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
 
 
   /* Let the user pick a color, or go back: */
