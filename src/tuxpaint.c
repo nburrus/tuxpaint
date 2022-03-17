@@ -22381,6 +22381,7 @@ static void render_color_picker_palette(void)
   int x, y;
   Uint8 r, g, b;
   void (*putpixel) (SDL_Surface *, int, int, Uint32);
+  SDL_Event event;
 
   putpixel = putpixels[img_color_picker->format->BytesPerPixel];
   for (y = 0; y < img_color_picker->h; y++)
@@ -22395,6 +22396,17 @@ static void render_color_picker_palette(void)
                    SDL_MapRGBA(img_color_picker->format, r, g, b, 255));
         }
     }
+
+  while (SDL_PollEvent(&event) && event.type == SDL_MOUSEMOTION)
+    {
+      /* Eat further motion events that may've been generated while
+         we re-rendered the palette (so we don't spin tons of cycles
+         rendering it more than we really need) */
+    }
+
+  SDL_PushEvent(&event);
+
+  printf("\n");
 }
 
 
@@ -22424,8 +22436,8 @@ static void set_color_picker_crosshair_size(void) {
   if (CROSSHAIR_BORDER < 1)
     CROSSHAIR_BORDER = 1;
 
-  printf("Crosshair will be %d in size, with %d thickness, and a %d border\n",
-         CROSSHAIR_LENGTH, CROSSHAIR_THICKNESS, CROSSHAIR_BORDER);
+  DEBUG_PRINTF("Crosshair will be %d in size, with %d thickness, and a %d border\n",
+               CROSSHAIR_LENGTH, CROSSHAIR_THICKNESS, CROSSHAIR_BORDER);
 }
 
 static void draw_color_picker_crosshairs(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top)
