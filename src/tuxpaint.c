@@ -22420,8 +22420,6 @@ static void render_color_picker_palette(void)
     }
 
   SDL_PushEvent(&event);
-
-  printf("\n");
 }
 
 
@@ -26257,8 +26255,8 @@ static void setup_colors(void)
   NUM_COLORS++;
 
   /* Add "Color Picker" color: */
-
-  color_names[NUM_COLORS] = strdup(gettext("Pick a color. The square shows all hues at varying levels of saturation. Use the slider to change the value."));
+  /* (This is an attempt to describe an HSV color picker in extremely basic terms!) */
+  color_names[NUM_COLORS] = strdup(gettext("Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) to right (pure). Value (lightness/darkness): grey bar."));
   color_hexes[NUM_COLORS] = (Uint8 *) malloc(sizeof(Uint8) * 3);
   color_hexes[NUM_COLORS][0] = 255;
   color_hexes[NUM_COLORS][1] = 255;
