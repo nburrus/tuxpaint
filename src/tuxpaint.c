@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 16, 2022
+  June 14, 2002 - March 17, 2022
 */
 
 #include "platform.h"
@@ -2095,6 +2095,7 @@ static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files, int *d
                                     char * *d_exts, int *white_in_palette);
 static int do_color_picker(void);
 static void draw_color_picker_crosshairs(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top);
+static void set_color_picker_crosshair_size(void);
 static void draw_color_picker_values(int l, int t);
 static void draw_color_picker_palette_and_values(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top);
 static void render_color_picker_palette(void);
@@ -22201,6 +22202,8 @@ static int do_color_picker(void)
 
                   /* Hovering over a value from the slider */
 
+                  do_setcursor(cursor_hand);
+
                   y = event.button.y - color_picker_val_top;
                   tmp_color_picker_v = color_picker_v;
                   color_picker_v = y;
@@ -22395,6 +22398,36 @@ static void render_color_picker_palette(void)
 }
 
 
+/* Length & thickness should be odd numbers, so the
+   center of the crosshair is positioned precisely */
+int CROSSHAIR_LENGTH, CROSSHAIR_THICKNESS, CROSSHAIR_BORDER;
+
+static void set_color_picker_crosshair_size(void) {
+  CROSSHAIR_LENGTH = (int) (11 * button_scale);
+  CROSSHAIR_LENGTH /= 2;
+  CROSSHAIR_LENGTH *= 2;
+  CROSSHAIR_LENGTH++;
+
+  if (CROSSHAIR_LENGTH < 3)
+    CROSSHAIR_LENGTH = 3;
+
+
+  CROSSHAIR_THICKNESS = (int) (button_scale);
+  CROSSHAIR_THICKNESS /= 2;
+  CROSSHAIR_THICKNESS *= 2;
+  CROSSHAIR_THICKNESS++;
+
+  if (CROSSHAIR_THICKNESS < 1)
+    CROSSHAIR_THICKNESS = 1;
+
+  CROSSHAIR_BORDER = CROSSHAIR_THICKNESS / 2;
+  if (CROSSHAIR_BORDER < 1)
+    CROSSHAIR_BORDER = 1;
+
+  printf("Crosshair will be %d in size, with %d thickness, and a %d border\n",
+         CROSSHAIR_LENGTH, CROSSHAIR_THICKNESS, CROSSHAIR_BORDER);
+}
+
 static void draw_color_picker_crosshairs(int color_picker_left, int color_picker_top, int color_picker_val_left, int color_picker_val_top)
 {
   SDL_Rect dest;
@@ -22402,64 +22435,67 @@ static void draw_color_picker_crosshairs(int color_picker_left, int color_picker
 
   /* Hue/Saturation (the big rectangle) */
 
-  dest.x = color_picker_x + color_picker_left - 3;
-  dest.y = color_picker_y + color_picker_top - 1;
-  dest.w = 7;
-  dest.h = 3;
+  dest.x = color_picker_x + color_picker_left - (CROSSHAIR_LENGTH - 1) / 2 - CROSSHAIR_BORDER;
+  dest.y = color_picker_y + color_picker_top - (CROSSHAIR_THICKNESS - 1) / 2 - CROSSHAIR_BORDER;
+  dest.w = CROSSHAIR_LENGTH + CROSSHAIR_BORDER * 2;
+  dest.h = CROSSHAIR_THICKNESS + CROSSHAIR_BORDER * 2;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
 
-  dest.x = color_picker_x + color_picker_left - 1;
-  dest.y = color_picker_y + color_picker_top - 3;
-  dest.w = 3;
-  dest.h = 7;
+  dest.x = color_picker_x + color_picker_left - (CROSSHAIR_THICKNESS - 1) / 2 - CROSSHAIR_BORDER;
+  dest.y = color_picker_y + color_picker_top - (CROSSHAIR_LENGTH - 1) / 2 - CROSSHAIR_BORDER;
+  dest.w = CROSSHAIR_THICKNESS + CROSSHAIR_BORDER * 2;
+  dest.h = CROSSHAIR_LENGTH + CROSSHAIR_BORDER * 2;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
 
-  dest.x = color_picker_x + color_picker_left - 2;
-  dest.y = color_picker_y + color_picker_top;
-  dest.w = 5;
-  dest.h = 1;
+
+  dest.x = color_picker_x + color_picker_left - (CROSSHAIR_LENGTH - 1) / 2;
+  dest.y = color_picker_y + color_picker_top - (CROSSHAIR_THICKNESS - 1) / 2;
+  dest.w = CROSSHAIR_LENGTH;
+  dest.h = CROSSHAIR_THICKNESS;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
-  dest.x = color_picker_x + color_picker_left;
-  dest.y = color_picker_y + color_picker_top - 2;
-  dest.w = 1;
-  dest.h = 5;
+  dest.x = color_picker_x + color_picker_left - (CROSSHAIR_THICKNESS - 1) / 2;
+  dest.y = color_picker_y + color_picker_top - (CROSSHAIR_LENGTH - 1) / 2;
+  dest.w = CROSSHAIR_THICKNESS;
+  dest.h = CROSSHAIR_LENGTH;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
+
 
 
   /* Value (the slider) */
 
   ctr_x = color_picker_val_left + img_back->w / 2;
 
-  dest.x = ctr_x - 3;
-  dest.y = color_picker_v + color_picker_val_top - 1;
-  dest.w = 7;
-  dest.h = 3;
+  dest.x = ctr_x - (CROSSHAIR_LENGTH - 1) / 2 - CROSSHAIR_BORDER;
+  dest.y = color_picker_v + color_picker_val_top - (CROSSHAIR_THICKNESS - 1) / 2 - CROSSHAIR_BORDER;
+  dest.w = CROSSHAIR_LENGTH + CROSSHAIR_BORDER * 2;
+  dest.h = CROSSHAIR_THICKNESS + CROSSHAIR_BORDER * 2;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
 
-  dest.x = ctr_x - 1;
-  dest.y = color_picker_v + color_picker_val_top - 3;
-  dest.w = 3;
-  dest.h = 7;
+  dest.x = ctr_x - (CROSSHAIR_THICKNESS - 1) / 2 - CROSSHAIR_BORDER;
+  dest.y = color_picker_v + color_picker_val_top - (CROSSHAIR_LENGTH - 1) / 2 - CROSSHAIR_BORDER;
+  dest.w = CROSSHAIR_THICKNESS + CROSSHAIR_BORDER * 2;
+  dest.h = CROSSHAIR_LENGTH + CROSSHAIR_BORDER * 2;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
 
-  dest.x = ctr_x - 2;
-  dest.y = color_picker_v + color_picker_val_top;
-  dest.w = 5;
-  dest.h = 1;
+
+  dest.x = ctr_x - (CROSSHAIR_LENGTH - 1) / 2;
+  dest.y = color_picker_v + color_picker_val_top - (CROSSHAIR_THICKNESS - 1) / 2;
+  dest.w = CROSSHAIR_LENGTH;
+  dest.h = CROSSHAIR_THICKNESS;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 
-  dest.x = ctr_x;
-  dest.y = color_picker_v + color_picker_val_top - 2;
-  dest.w = 1;
-  dest.h = 5;
+  dest.x = ctr_x - (CROSSHAIR_THICKNESS - 1) / 2;
+  dest.y = color_picker_v + color_picker_val_top - (CROSSHAIR_LENGTH - 1) / 2;
+  dest.w = CROSSHAIR_THICKNESS;
+  dest.h = CROSSHAIR_LENGTH;
 
   SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
 }
@@ -26637,6 +26673,7 @@ static void setup(void)
   /* (Need to do this after native screen resolution is handled) */
 
   setup_screen_layout();
+  set_color_picker_crosshair_size();
 
 
   /* quickly: title image, version, progress bar, and watch cursor */
