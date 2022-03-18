@@ -6,8 +6,9 @@
         Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
+                              Tux Paint on Tumblr
 
-                                  mars 1, 2022
+                                 mars 18, 2022
 
           +----------------------------------------------------------+
           |Table des matières                                        |
@@ -1147,3 +1148,4 @@ Importer des images manuellement
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
      * "Apple" and "macOS" are registered trademarks of Apple Inc.
      * "Twitter" is a registered trademark of Twitter, Inc.
+     * "Tumblr" is a registered trademark of Tumblr, Inc.
