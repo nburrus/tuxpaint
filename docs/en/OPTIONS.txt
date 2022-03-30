@@ -6,106 +6,90 @@ Options Documentation
         Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                January 20, 2022
+                                 March 22, 2022
 
-     ----------------------------------------------------------------------
-
-   +---------------------------------------------+
-   |Table of Contents                            |
-   |---------------------------------------------|
-   |  * Tux Paint Config.                        |
-   |  * Configuration File                       |
-   |  * Available Options                        |
-   |       * Video/Sound                         |
-   |       * Mouse/Keyboard                      |
-   |       * Simplification                      |
-   |       * Languages                           |
-   |       * Printing                            |
-   |       * Saving                              |
-   |       * Data                                |
-   |       * Accessibility                       |
-   |       * Joystick                            |
-   |  * Overriding System Config. Options        |
-   |  * Command-Line Options                     |
-   |       * Command-Line Informational Options  |
-   |  * Choosing a Different Language            |
-   |       * Available Languages                 |
-   |       * Setting Your Environment's Locale   |
-   |       * Special Fonts                       |
-   +---------------------------------------------+
-
-     ----------------------------------------------------------------------
+                +---------------------------------------------+
+                |Table of Contents                            |
+                |---------------------------------------------|
+                |  * Tux Paint Config.                        |
+                |  * Configuration File                       |
+                |  * Available Options                        |
+                |       * Video/Sound                         |
+                |       * Mouse/Keyboard                      |
+                |       * Simplification                      |
+                |       * Languages                           |
+                |       * Printing                            |
+                |       * Saving                              |
+                |       * Data                                |
+                |       * Accessibility                       |
+                |       * Joystick                            |
+                |  * Overriding System Config. Options        |
+                |  * Command-Line Options                     |
+                |       * Command-Line Informational Options  |
+                |  * Choosing a Different Language            |
+                |       * Available Languages                 |
+                |       * Setting Your Environment's Locale   |
+                |       * Special Fonts                       |
+                +---------------------------------------------+
 
                                Tux Paint Config.
 
-     A graphical tool is available that allows you to change Tux Paint's
-     behavior. However, if you'd rather not install and use this tool, or
-     want a better understanding of the available options, please continue
-     reading.
-
-     ----------------------------------------------------------------------
+   A graphical tool is available that allows you to change Tux Paint's
+   behavior. However, if you'd rather not install and use this tool, or want
+   a better understanding of the available options, please continue reading.
 
                                Configuration File
 
-     You can create a simple configuration file for Tux Paint, which it will
-     read each time you start it up.
+   You can create a simple configuration file for Tux Paint, which it will
+   read each time you start it up.
 
-     The file is simply a plain text file containing the options you want
-     enabled:
+   The file is simply a plain text file containing the options you want
+   enabled:
 
 Linux and Unix Users
 
-       The file you should create is called ".tuxpaintrc" and it should be
-       placed in your home directory. (a.k.a. "~/.tuxpaintrc" or
-       "$HOME/.tuxpaintrc")
+   The file you should create is called ".tuxpaintrc" and it should be placed
+   in your home directory. (a.k.a. "~/.tuxpaintrc" or "$HOME/.tuxpaintrc")
 
   System-Wide Configuration File
 
-         Before this file is read, a system-wide configuration file is read.
-         (By default, this configuration has no settings enabled.) It is
-         located at:
+   Before this file is read, a system-wide configuration file is read. (By
+   default, this configuration has no settings enabled.) It is located at:
 
-           /etc/tuxpaint/tuxpaint.conf
+     /etc/tuxpaint/tuxpaint.conf
 
-         You can disable reading of this file altogether, leaving the
-         settings as defaults (which can then be overridden by your
-         ".tuxpaintrc" file and/or command-line arguments) by using the
-         command-line option:
+   You can disable reading of this file altogether, leaving the settings as
+   defaults (which can then be overridden by your ".tuxpaintrc" file and/or
+   command-line arguments) by using the command-line option:
 
-           --nosysconfig
+     --nosysconfig
 
 macOS Users
 
-       The file you should create is called "tuxpaint.cfg" and it should be
-       placed in your home folder, under the sub-folder: Library/Application
-       Support/TuxPaint
+   The file you should create is called "tuxpaint.cfg" and it should be
+   placed in your home folder, under the sub-folder: Library/Application
+   Support/TuxPaint
 
   System-Wide Configuration File
 
-         Before this file is read, a system-wide configuration file is read.
-         (By default, this configuration has no settings enabled.) It is
-         located at:
+   Before this file is read, a system-wide configuration file is read. (By
+   default, this configuration has no settings enabled.) It is located at:
 
-           /Library/Application Support/TuxPaint/tuxpaint.cfg
+     /Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Windows Users
 
-       The file you should create is called "tuxpaint.cfg" and it should be
-       placed in Tux Paint's folder.
+   The file you should create is called "tuxpaint.cfg" and it should be
+   placed in Tux Paint's folder.
 
-       You can use NotePad or WordPad to create this file. Be sure to save it
-       as Plain Text, and make sure the filename doesn't have ".txt" at the
-       end...
-
-     ----------------------------------------------------------------------
+   You can use NotePad or WordPad to create this file. Be sure to save it as
+   Plain Text, and make sure the filename doesn't have ".txt" at the end...
 
                                Available Options
 
      The following settings can be set in the configuration file.
      (Command-line settings will override these. See the "Command-Line
      Options" section, below.)
-
-     ----------------------------------------------------------------------
 
 Video/Sound
 
@@ -226,8 +210,6 @@ Video/Sound
                  for use with coarse input devices (like eyegaze trackers).
                  "ROWS" may be between "1" (the default) and "3".
 
-     ----------------------------------------------------------------------
-
 Mouse/Keyboard
 
   Cursor
@@ -318,8 +300,6 @@ Mouse/Keyboard
                  "nobuttondistinction=no" or "buttondistinction=yes". In both
                  cases, may be overridden by the command-line option
                  "--buttondistinction".
-
-     ----------------------------------------------------------------------
 
 Simplification
 
@@ -468,8 +448,6 @@ Simplification
                  "nobrushspacing=no" or "brushspacing=yes". In both cases,
                  may be overridden by the command-line option
                  "--brushspacing".
-
-     ----------------------------------------------------------------------
 
 Languages
 
@@ -792,8 +770,6 @@ Languages
                  cases, may be overridden by the command-line option
                  "--currentlocalefont".
 
-     ----------------------------------------------------------------------
-
 Printing
 
   Print Permissions
@@ -910,8 +886,6 @@ Printing
                  halfexecutive, halfnote, folio, quarto, ledger, archA,
                  archB, archC, archD, archE, flsa, flse, csheet, dsheet,
                  esheet.
-
-     ----------------------------------------------------------------------
 
 Saving
 
@@ -1061,8 +1035,6 @@ Saving
                  "autosave=no" or "noautosave=yes". In both cases, may be
                  overridden by the command-line option "--noautosave".
 
-     ----------------------------------------------------------------------
-
 Data
 
   Lockfile
@@ -1155,8 +1127,6 @@ Data
                  the high and low halves of the byte, so "#FFF" is the same
                  as "#FFFFFF", not "#F0F0F0".
 
-     ----------------------------------------------------------------------
-
 Accessibility
 
   Mouse
@@ -1238,8 +1208,6 @@ Accessibility
                  "onscreen-keyboard-disable-change=no". In both cases, may be
                  overridden by the command-line option
                  "--onscreen-keyboard-disable-change=no".
-
-     ----------------------------------------------------------------------
 
 Joystick
 
@@ -1376,8 +1344,6 @@ Joystick
                  Selects the joystick button number, as seen by SDL, that
                  will be a shortcut to print.
 
-     ----------------------------------------------------------------------
-
                        Overriding System Config. Options
 
      (For Linux and Unix users)
@@ -1396,8 +1362,6 @@ Joystick
 
        print=yes
        mixedcase=yes
-
-     ----------------------------------------------------------------------
 
                               Command-Line Options
 
@@ -1483,8 +1447,6 @@ Joystick
                These enable or correspond to the configuration file options
                described above.
 
-                     -------------------------------------
-
        --windowed
        --800x600
        --orient=landscape
@@ -1526,8 +1488,6 @@ Joystick
                configuration file. (If the option isn't set in the
                configuration file(s), no overriding option is necessary.)
 
-                     -------------------------------------
-
        --nosysconfig
 
                Under Linux and Unix, this prevents the system-wide
@@ -1536,8 +1496,6 @@ Joystick
 
                Only your own configuration file, "~/.tuxpaintrc", if it
                exists, will be used.
-
-     ----------------------------------------------------------------------
 
 Command-Line Informational Options
 
@@ -1571,8 +1529,6 @@ Command-Line Informational Options
 
                  Display list of attached joysticks available to Tux Paint.
 
-     ----------------------------------------------------------------------
-
                          Choosing a Different Language
 
      Tux Paint has been translated into a number of languages. To access the
@@ -1583,8 +1539,7 @@ Command-Line Informational Options
      Tux Paint also honors your environment's current locale. (You can
      override it on the command-line using the "--locale" option; see above.)
 
-     Use the option "--lang help" to list the available language options
-     available.
+     Use the option "--lang help" to list the llanguage options available.
 
 Available Languages
 
@@ -1773,11 +1728,11 @@ Available Languages
        |----------------+-------------------+----------------+--------------|
        |oc_FR           |                   |Occitan         |              |
        |----------------+-------------------+----------------+--------------|
-       |oj_CA           |                   |Ojibwe          |Ojibway       |
+       |oj_CA           |Ojibwe             |Ojibway         |              |
        |----------------+-------------------+----------------+--------------|
        |pa_IN           |                   |Punjabi         |              |
        |----------------+-------------------+----------------+--------------|
-       |or_IN           |                   |Odia            |Oriya         |
+       |or_IN           |Odia               |Oriya           |              |
        |----------------+-------------------+----------------+--------------|
        |pl_PL           |Polski             |Polish          |              |
        |----------------+-------------------+----------------+--------------|
@@ -1920,8 +1875,6 @@ Setting Your Environment's Locale
            setenv LANG es_ES ; \
            tuxpaint
 
-     ----------------------------------------------------------------------
-
   Windows Users
 
          Tux Paint will recognize the current locale and use the appropriate
@@ -1980,5 +1933,3 @@ Special Fonts
 
        Under Unix and Linux, you can use the Makefile that comes with the
        font to install the font in the appropriate location.
-
-     ----------------------------------------------------------------------

@@ -6,106 +6,96 @@ Documentación de opcións
         Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                             20 de Xaneiro de 2022
+                              22 de Marzo de 2022
 
-     ----------------------------------------------------------------------
-
-   +----------------------------------------------------+
-   |Índice                                              |
-   |----------------------------------------------------|
-   |  * Tux Paint Config.                               |
-   |  * Ficheiro de configuración                       |
-   |  * Opcións dispoñíbeis                             |
-   |       * Video/Sound                                |
-   |       * Mouse/Keyboard                             |
-   |       * Simplificación                             |
-   |       * Languages                                  |
-   |       * Impresión                                  |
-   |       * Gardar                                     |
-   |       * Data                                       |
-   |       * Accessibility                              |
-   |       * Joystick                                   |
-   |  * Anulación da configuración do sistema. Opcións  |
-   |  * Opcións da liña de ordes                        |
-   |       * Opcións informativas da liña de ordes      |
-   |  * Escoller un idioma diferente                    |
-   |       * Idiomas dispoñíbeis                        |
-   |       * Axustar o idioma do seu contorno           |
-   |       * Tipos de letra especiais                   |
-   +----------------------------------------------------+
-
-     ----------------------------------------------------------------------
+             +----------------------------------------------------+
+             |Índice                                              |
+             |----------------------------------------------------|
+             |  * Tux Paint Config.                               |
+             |  * Ficheiro de configuración                       |
+             |  * Opcións dispoñíbeis                             |
+             |       * Video/Sound                                |
+             |       * Mouse/Keyboard                             |
+             |       * Simplificación                             |
+             |       * Languages                                  |
+             |       * Impresión                                  |
+             |       * Gardar                                     |
+             |       * Data                                       |
+             |       * Accessibility                              |
+             |       * Joystick                                   |
+             |  * Anulación da configuración do sistema. Opcións  |
+             |  * Opcións da liña de ordes                        |
+             |       * Opcións informativas da liña de ordes      |
+             |  * Escoller un idioma diferente                    |
+             |       * Idiomas dispoñíbeis                        |
+             |       * Axustar o idioma do seu contorno           |
+             |       * Tipos de letra especiais                   |
+             +----------------------------------------------------+
 
                                Tux Paint Config.
 
-     Está dispoñíbel unha ferramenta gráfica que lle permite cambiar o
-     comportamento de Tux Paint. Non obstante, se prefire non instalar e usar
-     esta ferramenta, ou quere comprender mellor as opcións dispoñíbeis, siga
-     lendo.
-
-     ----------------------------------------------------------------------
+   Está dispoñíbel unha ferramenta gráfica que lle permite cambiar o
+   comportamento de Tux Paint. Non obstante, se prefire non instalar e usar
+   esta ferramenta, ou quere comprender mellor as opcións dispoñíbeis, siga
+   lendo.
 
                            Ficheiro de configuración
 
-     Pode crear un ficheiro de configuración sinxelo para Tux Paint, que lerá
-     cada vez que o inicie.
+   Pode crear un ficheiro de configuración sinxelo para Tux Paint, que lerá
+   cada vez que o inicie.
 
-     O ficheiro é simplemente un ficheiro de texto sinxelo que contén as
-     opcións que quere activar habilitar:
+   O ficheiro é simplemente un ficheiro de texto sinxelo que contén as
+   opcións que quere activar habilitar:
 
 Usuarios de Linux e Unix
 
-       O ficheiro que debe crear chámase «.tuxpaintrc» e debería colocarse no
-       seu directorio persoal. (tamén coñecido como «~/.tuxpaintrc» ou
-       «$HOME/.tuxpaintrc»)
+   O ficheiro que debe crear chámase «.tuxpaintrc» e debería colocarse no seu
+   directorio persoal. (tamén coñecido como «~/.tuxpaintrc» ou
+   «$HOME/.tuxpaintrc»)
 
   Ficheiro de configuración de todo o sistema
 
-         Antes de ler este ficheiro, le un ficheiro de configuración en todo
-         o sistema. (De xeito predeterminado, esta configuración non ten
-         axustes activados.) Atópase en:
+   Antes de ler este ficheiro, le un ficheiro de configuración en todo o
+   sistema. (De xeito predeterminado, esta configuración non ten axustes
+   activados.) Atópase en:
 
-           /etc/tuxpaint/tuxpaint.conf
+     /etc/tuxpaint/tuxpaint.conf
 
-         Pode desactivar a lectura deste ficheiro por completo, deixando os
-         axustes como predeterminados (que poden ser substituídos polo seu
-         ficheiro «.tuxpaintrc» e/ou argumentos da liña de ordes) usando a
-         opción da liña de ordes:
+   Pode desactivar a lectura deste ficheiro por completo, deixando os axustes
+   como predeterminados (que poden ser substituídos polo seu ficheiro
+   «.tuxpaintrc» e/ou argumentos da liña de ordes) usando a opción da liña de
+   ordes:
 
-           --nosysconfig
+     --nosysconfig
 
 Usuarios de macOS
 
-       O ficheiro que debe crear chámase «tuxpaint.cfg» e debería colocalo no
-       seu cartafol persoal, baixo o subcartafol: Library/Application
-       Support/TuxPaint
+   O ficheiro que debe crear chámase «tuxpaint.cfg» e debería colocalo no seu
+   cartafol persoal, baixo o subcartafol: Library/Application
+   Support/TuxPaint
 
   Ficheiro de configuración de todo o sistema
 
-         Antes de ler este ficheiro, le un ficheiro de configuración en todo
-         o sistema. (De xeito predeterminado, esta configuración non ten
-         axustes activados.) Atópase en:
+   Antes de ler este ficheiro, le un ficheiro de configuración en todo o
+   sistema. (De xeito predeterminado, esta configuración non ten axustes
+   activados.) Atópase en:
 
-           /Library/Application Support/TuxPaint/tuxpaint.cfg
+     /Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Usuarios de Windows
 
-       O ficheiro que debe crear chámase «tuxpaint.cfg» e debería colocarse
-       no cartafol de Tux Paint.
+   O ficheiro que debe crear chámase «tuxpaint.cfg» e debería colocarse no
+   cartafol de Tux Paint.
 
-       Pode usar NotePad ou WordPad para crear este ficheiro. Asegúrese de
-       gardalo como texto simple e asegúrese de que o nome do ficheiro non
-       teña «.txt» ao final...
-
-     ----------------------------------------------------------------------
+   Pode usar NotePad ou WordPad para crear este ficheiro. Asegúrese de
+   gardalo como texto simple e asegúrese de que o nome do ficheiro non teña
+   «.txt» ao final...
 
                               Opcións dispoñíbeis
 
      Os seguintes axustes pódense estabelecer no ficheiro de configuración.
      (A configuración da liña de ordes substituirá estes. Vexa a sección
      «Opcións da liña de ordes», a continuación.)
-
-     ----------------------------------------------------------------------
 
 Video/Sound
 
@@ -231,8 +221,6 @@ Video/Sound
                  os rastrexadores de ollos). «FILAS» pode estar entre «1» (o
                  predeterminado) e «3».
 
-     ----------------------------------------------------------------------
-
 Mouse/Keyboard
 
   Cursor
@@ -327,8 +315,6 @@ Mouse/Keyboard
                  "nobuttondistinction=no" or "buttondistinction=yes". In both
                  cases, may be overridden by the command-line option
                  "--buttondistinction".
-
-     ----------------------------------------------------------------------
 
 Simplificación
 
@@ -479,8 +465,6 @@ Simplificación
                  "nobrushspacing=no" or "brushspacing=yes". In both cases,
                  may be overridden by the command-line option
                  "--brushspacing".
-
-     ----------------------------------------------------------------------
 
 Languages
 
@@ -809,8 +793,6 @@ Languages
                  cases, may be overridden by the command-line option
                  "--currentlocalefont".
 
-     ----------------------------------------------------------------------
-
 Impresión
 
   Print Permissions
@@ -931,8 +913,6 @@ Impresión
                  halfexecutive, halfnote, folio, quarto, ledger, archA,
                  archB, archC, archD, archE, flsa, flse, csheet, dsheet,
                  esheet.
-
-     ----------------------------------------------------------------------
 
 Gardar
 
@@ -1085,8 +1065,6 @@ Gardar
                  "autosave=no" or "noautosave=yes". In both cases, may be
                  overridden by the command-line option "--noautosave".
 
-     ----------------------------------------------------------------------
-
 Data
 
   Lockfile
@@ -1183,8 +1161,6 @@ Data
                  úsase tanto para a metade alta como para a baixa do byte,
                  polo que «#FFF» é o mesmo que «#FFFFFF» e non que «#F0F0F0».
 
-     ----------------------------------------------------------------------
-
 Accessibility
 
   Mouse
@@ -1275,8 +1251,6 @@ Accessibility
                  "onscreen-keyboard-disable-change=no". In both cases, may be
                  overridden by the command-line option
                  "--onscreen-keyboard-disable-change=no".
-
-     ----------------------------------------------------------------------
 
 Joystick
 
@@ -1418,8 +1392,6 @@ Joystick
                  Selecciona o número do botón do joystick, como o ve SDL, que
                  será un atallo a imprimir.
 
-     ----------------------------------------------------------------------
-
                  Anulación da configuración do sistema. Opcións
 
      (Para usuarios de Linux e Unix)
@@ -1439,8 +1411,6 @@ Joystick
 
        print=yes
        mixedcase=yes
-
-     ----------------------------------------------------------------------
 
                             Opcións da liña de ordes
 
@@ -1527,8 +1497,6 @@ Joystick
                Estas activan ou corresponden ás opcións do ficheiro de
                configuración descritas anteriormente.
 
-                     -------------------------------------
-
        --windowed
        --800x600
        --orient=landscape
@@ -1571,8 +1539,6 @@ Joystick
                configurada no(s) ficheiro(s) de configuración, non será
                necesaria ningunha opción de anulación.)
 
-                     -------------------------------------
-
        --nosysconfig
 
                En Linux e Unix, isto evita ler o ficheiro de configuración de
@@ -1580,8 +1546,6 @@ Joystick
 
                Só se empregará o seu propio ficheiro de configuración,
                «~/.tuxpaintrc», se existe.
-
-     ----------------------------------------------------------------------
 
 Opcións informativas da liña de ordes
 
@@ -1618,8 +1582,6 @@ Opcións informativas da liña de ordes
                  Amosa a lista de pancas de mando (joysticks) conectados
                  dispoñíbeis para Tux Paint.
 
-     ----------------------------------------------------------------------
-
                           Escoller un idioma diferente
 
      Tux Paint foi traducido a varios idiomas. Para acceder ás traducións,
@@ -1630,7 +1592,7 @@ Opcións informativas da liña de ordes
      Tux Paint tamén respecta o contorno local actual. (Pode anulalo na liña
      de ordes usando a opción «--locale»; vexa consulta arriba).
 
-     Use a opción «--lang help» para listar as opcións de idioma dispoñíbeis.
+     Use the option "--lang help" to list the llanguage options available.
 
 Idiomas dispoñíbeis
 
@@ -1821,11 +1783,11 @@ Idiomas dispoñíbeis
        |----------------+-------------------+----------------+--------------|
        |oc_FR           |                   |Occitan         |              |
        |----------------+-------------------+----------------+--------------|
-       |oj_CA           |                   |Ojibwe          |Ojibway       |
+       |oj_CA           |Ojibwe             |Ojibway         |              |
        |----------------+-------------------+----------------+--------------|
        |pa_IN           |                   |Punjabi         |              |
        |----------------+-------------------+----------------+--------------|
-       |or_IN           |                   |Odia            |Oriya         |
+       |or_IN           |Odia               |Oriya           |              |
        |----------------+-------------------+----------------+--------------|
        |pl_PL           |Polski             |Polish          |              |
        |----------------+-------------------+----------------+--------------|
@@ -1973,8 +1935,6 @@ Axustar o idioma do seu contorno
            setenv LANG es_ES ; \
            tuxpaint
 
-     ----------------------------------------------------------------------
-
   Usuarios de Windows
 
          Tux Paint recoñecerá a configuración local actual e empregará de
@@ -2034,5 +1994,3 @@ Tipos de letra especiais
 
        En Unix e Linux, pode usar o Makefile que vén co tipo de letra para
        instalalo no lugar adecuado.
-
-     ----------------------------------------------------------------------

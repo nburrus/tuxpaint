@@ -6,106 +6,96 @@ Documentation sur les options
         Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janvier 20, 2022
+                                 mars 22, 2022
 
-     ----------------------------------------------------------------------
-
-   +---------------------------------------------------------------------+
-   |Table des matières                                                   |
-   |---------------------------------------------------------------------|
-   |  * Configuration de Tux Paint.                                      |
-   |  * Fichier de configuration                                         |
-   |  * Options disponibles                                              |
-   |       * Vidéo/Son                                                   |
-   |       * Souris/Clavier                                              |
-   |       * Simplification                                              |
-   |       * Langues                                                     |
-   |       * Impression                                                  |
-   |       * Sauvegarde                                                  |
-   |       * Données                                                     |
-   |       * Accessibilité                                               |
-   |       * Joystick                                                    |
-   |  * Écraser des options de System Config                             |
-   |  * Options de ligne de commande                                     |
-   |       * Options d'information en ligne de commande                  |
-   |  * Choisir une autre langue                                         |
-   |       * Langues disponibles                                         |
-   |       * Définition des paramètres régionaux de votre environnement  |
-   |       * Polices spéciales                                           |
-   +---------------------------------------------------------------------+
-
-     ----------------------------------------------------------------------
+    +---------------------------------------------------------------------+
+    |Table des matières                                                   |
+    |---------------------------------------------------------------------|
+    |  * Configuration de Tux Paint.                                      |
+    |  * Fichier de configuration                                         |
+    |  * Options disponibles                                              |
+    |       * Vidéo/Son                                                   |
+    |       * Souris/Clavier                                              |
+    |       * Simplification                                              |
+    |       * Langues                                                     |
+    |       * Impression                                                  |
+    |       * Sauvegarde                                                  |
+    |       * Données                                                     |
+    |       * Accessibilité                                               |
+    |       * Joystick                                                    |
+    |  * Écraser des options de System Config                             |
+    |  * Options de ligne de commande                                     |
+    |       * Options d'information en ligne de commande                  |
+    |  * Choisir une autre langue                                         |
+    |       * Langues disponibles                                         |
+    |       * Définition des paramètres régionaux de votre environnement  |
+    |       * Polices spéciales                                           |
+    +---------------------------------------------------------------------+
 
                           Configuration de Tux Paint.
 
-     Un outil graphique est disponible qui vous permet de changer le
-     comportement de Tux Paint. Cependant, si vous préférez ne pas installer
-     et utiliser cet outil, ou si vous souhaitez mieux comprendre les options
-     disponibles, poursuivez la lecture.
-
-     ----------------------------------------------------------------------
+   Un outil graphique est disponible qui vous permet de changer le
+   comportement de Tux Paint. Cependant, si vous préférez ne pas installer et
+   utiliser cet outil, ou si vous souhaitez mieux comprendre les options
+   disponibles, poursuivez la lecture.
 
                             Fichier de configuration
 
-     Vous pouvez créer un fichier de configuration simple pour Tux Paint,
-     qu'il lira à chaque démarrage.
+   Vous pouvez créer un fichier de configuration simple pour Tux Paint, qu'il
+   lira à chaque démarrage.
 
-     Le fichier est simplement un fichier texte contenant les options que
-     vous souhaitez activer :
+   Le fichier est simplement un fichier texte contenant les options que vous
+   souhaitez activer :
 
 Utilisateurs de Linux et Unix
 
-       Le fichier que vous devez créer s'appelle ".tuxpaintrc" et il doit
-       être placé dans votre répertoire personnel. (aka "~/.tuxpaintrc" ou
-       "$HOME/.tuxpaintrc")
+   Le fichier que vous devez créer s'appelle ".tuxpaintrc" et il doit être
+   placé dans votre répertoire personnel. (aka "~/.tuxpaintrc" ou
+   "$HOME/.tuxpaintrc")
 
   Fichier de configuration pour l'ensemble du système
 
-         Avant la lecture de ce fichier, un fichier de configuration à
-         l'échelle du système est lu. (Par défaut, cette configuration n'a
-         pas de paramètres activés.) Il se trouve ici :
+   Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
+   système est lu. (Par défaut, cette configuration n'a pas de paramètres
+   activés.) Il se trouve ici :
 
-           /etc/tuxpaint/tuxpaint.conf
+     /etc/tuxpaint/tuxpaint.conf
 
-         Vous pouvez désactiver complètement la lecture de ce fichier, en
-         laissant les paramètres par défaut (qui peuvent ensuite être
-         remplacés par votre fichier ".tuxpaintrc" et / ou vos arguments de
-         ligne de commande) en utilisant l'option de ligne de commande :
+   Vous pouvez désactiver complètement la lecture de ce fichier, en laissant
+   les paramètres par défaut (qui peuvent ensuite être remplacés par votre
+   fichier ".tuxpaintrc" et / ou vos arguments de ligne de commande) en
+   utilisant l'option de ligne de commande :
 
-           --nosysconfig
+     --nosysconfig
 
 Utilisateurs de macOS
 
-       Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
-       être placé dans votre dossier de départ, sous le sous-dossier :
-       Library/Application Support/TuxPaint
+   Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit être
+   placé dans votre dossier de départ, sous le sous-dossier :
+   Library/Application Support/TuxPaint
 
   Fichier de configuration pour l'ensemble du système
 
-         Avant la lecture de ce fichier, un fichier de configuration à
-         l'échelle du système est lu. (Par défaut, cette configuration n'a
-         pas de paramètres activés.) Il se trouve ici :
+   Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
+   système est lu. (Par défaut, cette configuration n'a pas de paramètres
+   activés.) Il se trouve ici :
 
-           /Library/Application Support/TuxPaint/tuxpaint.cfg
+     /Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Utilisateurs de Windows
 
-       Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit
-       être placé dans dans le dossier de Tux Paint.
+   Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et il doit être
+   placé dans dans le dossier de Tux Paint.
 
-       Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier.
-       Assurez-vous de l'enregistrer en tant que texte brut et assurez-vous
-       que le nom de fichier ne contient pas ".txt" à la fin ...
-
-     ----------------------------------------------------------------------
+   Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier.
+   Assurez-vous de l'enregistrer en tant que texte brut et assurez-vous que
+   le nom de fichier ne contient pas ".txt" à la fin ...
 
                               Options disponibles
 
      Les paramètres suivants peuvent être définis dans le fichier de
      configuration. (Les paramètres de ligne de commande les remplaceront.
      Reportez-vous à la section "Options de ligne de commande " ci-dessous.)
-
-     ----------------------------------------------------------------------
 
 Vidéo/Son
 
@@ -239,8 +229,6 @@ Vidéo/Son
                  oculomètres). "ROWS" peut être entre "1" (par défaut) et
                  "3".
 
-     ----------------------------------------------------------------------
-
 Souris/Clavier
 
   Curseur
@@ -346,8 +334,6 @@ Souris/Clavier
                  "nobuttondistinction=no" ou "buttondistinction=yes". Dans
                  les deux cas, il peut être remplacé avec l'option en ligne
                  de commande "--buttondistinction".
-
-     ----------------------------------------------------------------------
 
 Simplification
 
@@ -515,8 +501,6 @@ Simplification
                  "nobrushspacing=no" ou "brushspacing=yes". Dans les deux
                  cas, il peut être remplacé avec l'option en ligne de
                  commande "--brushspacing".
-
-     ----------------------------------------------------------------------
 
 Langues
 
@@ -847,8 +831,6 @@ Langues
                  deux cas, il peut être remplacé avec l'option en ligne de
                  commande "--currentlocalefont".
 
-     ----------------------------------------------------------------------
-
 Impression
 
   Permissions pour l'impression
@@ -977,8 +959,6 @@ Impression
                  halfexecutive, halfnote, folio, quarto, ledger, archA,
                  archB, archC, archD, archE, flsa, flse, csheet, dsheet,
                  esheet.
-
-     ----------------------------------------------------------------------
 
 Sauvegarde
 
@@ -1139,8 +1119,6 @@ Sauvegarde
                  "noautosave=yes". Dans les deux cas, il peut être remplacé
                  avec l'option en ligne de commande "--noautosave".
 
-     ----------------------------------------------------------------------
-
 Données
 
   Fichier de verouillage
@@ -1246,8 +1224,6 @@ Données
                  moitiés haute et basse de l'octet, donc "#FFF" est identique
                  à " #FFFFFF", mais pas à "#F0F0F0".
 
-     ----------------------------------------------------------------------
-
 Accessibilité
 
   Souris
@@ -1340,8 +1316,6 @@ Accessibilité
                  "onscreen-keyboard-disable-change=no". Dans les deux cas, il
                  peut être remplacé avec l'option en ligne de commande
                  "--onscreen-keyboard-disable-change=no".
-
-     ----------------------------------------------------------------------
 
 Joystick
 
@@ -1491,8 +1465,6 @@ Joystick
                  Sélectionne le numéro du bouton du joystick, comme vu par
                  SDL, qui sera un raccourci pour sélectionner print.
 
-     ----------------------------------------------------------------------
-
                       Écraser des options de System Config
 
      (Pour les utilisateurs Linux et Unix)
@@ -1513,8 +1485,6 @@ Joystick
 
        print=yes
        mixedcase=yes
-
-     ----------------------------------------------------------------------
 
                           Options de ligne de commande
 
@@ -1601,8 +1571,6 @@ Joystick
                Celles-ci activent ou correspondent aux options du fichier de
                configuration décrites ci-dessus.
 
-                     -------------------------------------
-
        --windowed
        --800x600
        --orient=landscape
@@ -1646,8 +1614,6 @@ Joystick
                configuration, aucune option de remplacement n'est
                nécessaire.)
 
-                     -------------------------------------
-
        --nosysconfig
 
                Sous Linux et Unix, cela empêche la lecture du fichier de
@@ -1655,8 +1621,6 @@ Joystick
 
                Seul votre propre fichier de configuration, "~/.tuxpaintrc",
                s'il existe, sera utilisé.
-
-     ----------------------------------------------------------------------
 
 Options d'information en ligne de commande
 
@@ -1694,8 +1658,6 @@ Options d'information en ligne de commande
                  Afficher la liste des joysticks branchés qui sont
                  disponibles pour Tux Paint.
 
-     ----------------------------------------------------------------------
-
                             Choisir une autre langue
 
      Tux Paint a été traduit en plusieurs langues. Pour accéder aux
@@ -1708,8 +1670,7 @@ Options d'information en ligne de commande
      environnement. (Vous pouvez les remplacer en ligne de commande en
      utilisant l'option "--locale"; voir ci - dessus)
 
-     Utilisez l'option "--lang help" pour lister les options disponibles pour
-     les langues disponibles.
+     Use the option "--lang help" to list the llanguage options available.
 
 Langues disponibles
 
@@ -1896,11 +1857,11 @@ Langues disponibles
        |----------------+-------------------+-----------------+-------------|
        |oc_FR           |                   |Occitan          |             |
        |----------------+-------------------+-----------------+-------------|
-       |oj_CA           |                   |Ojibwe           |Ojibway      |
+       |oj_CA           |Ojibwe             |Ojibway          |             |
        |----------------+-------------------+-----------------+-------------|
        |pa_IN           |                   |Punjabi          |             |
        |----------------+-------------------+-----------------+-------------|
-       |or_IN           |                   |Odia             |Oriya        |
+       |or_IN           |Odia               |Oriya            |             |
        |----------------+-------------------+-----------------+-------------|
        |pl_PL           |Polski             |Polish           |             |
        |----------------+-------------------+-----------------+-------------|
@@ -2050,8 +2011,6 @@ Définition des paramètres régionaux de votre environnement
            setenv LANG es_ES ; \
            tuxpaint
 
-     ----------------------------------------------------------------------
-
   Utilisateurs de Windows
 
          Tux Paint reconnaîtra les paramètres régionaux en cours et utilisera
@@ -2115,5 +2074,3 @@ Polices spéciales
 
        Sous Unix et Linux, vous pouvez utiliser le Makefile qui est fourni
        avec la police pour installer la police à l'emplacement approprié.
-
-     ----------------------------------------------------------------------
