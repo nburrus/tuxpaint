@@ -37,7 +37,7 @@
    bastante facilidade simplemente engadindo, cambiando ou eliminando
    ficheiros onde os busque Tux Paint.
 
-   Nota: Deberá reiniciar Tux Paint para que os cambios teñan efecto.
+   💡 Note: You'll need to re-launch Tux Paint for the changes to take effect.
 
                              Onde van os ficheiros
 
@@ -89,7 +89,7 @@ Ficheiros estándar
                 cartafoles fará que o contido estea dispoñíbel para calquera
                 usuario que inicia copia (icona) de Tux Paint .
 
-           Nota: Se instala unha versión máis recente de Tux Paint e
+           💡 Nota: Se instala unha versión máis recente de Tux Paint e
            substitúe ou desbota a versión antiga, perderá os cambios feitos
            seguindo as instrucións anteriores, así que garde as copias de
            seguridade do seu novo contido (selos, pinceis, etc.) .
@@ -192,9 +192,9 @@ Opcións de pinceis
            Engada unha liña que conteña a liña «frames=N» ao ficheiro de
            datos do pincel, onde «N» é o número de fotogramas do pincel.
 
-           Nota: Se prefire que os fotogramas se pasen ao chou, no canto de
-           secuencialmente, engada tamén unha liña que conteña «random» ao
-           ficheiro de datos do pincel.
+           ⚙ Note: If you'd rather the frames be flipped through randomly,
+           rather than sequentially, also add a line containing "random" to
+           the brush's data file.
 
    Pinceis direccionais
 
@@ -236,9 +236,9 @@ Opcións de pinceis
    Coloque os ficheiros PNG de pincel (e calquera ficheiro de texto de datos)
    no directorio «brushes».
 
-   Nota: Se o seu novo brushes sae como cadrados ou rectángulos sólidos, é
-   porque esqueceu usar a transparencia alfa. Vexa a «Documentación PNG» en
-   Tux Paint para obter máis información e consellos.
+   💡 Note: If your new brushes all come out as solid squares or rectangles,
+   it's because you forgot to use alpha transparency! See the 'PNG
+   documentation' in Tux Paint for more information and tips.
 
                                      Selos
 
@@ -265,17 +265,17 @@ Imaxes de selos
    Os SVG están baseados en vectores e escalaranse axeitadamente para o
    tamaño do lenzo que se use en Tux Paint.
 
-   Nota: Se o seu novo PNG-based stamps sae como cadrados ou rectángulos
-   sólidos, é porque esqueceu usar a transparencia alfa. Vexa a
-   «Documentación PNG» en Tux Paint para obter máis información e consellos.
+   💡 Note: If your new PNG-based stamps all come out as solid squares or
+   rectangles, it's because you forgot to use alpha transparency! See the
+   'PNG documentation' in Tux Paint for more information and tips.
 
-   Nota: Se os seus novos selos SVG parecen ter moito espazo en branco,
-   asegúrese de que o «documento» SVG non sexa maior que a(s) forma(s) que
-   contén. Se se están recortando, asegúrese de que o «documento» é grande de
-   abondo como para conter a(s) forma(s). Vexa a «Documentación SVG» en Tux
-   Paint para obter máis información e consellos.
+   💡 Note: If your new SVG stamps seem to have a lot of whitespace, make sure
+   the SVG 'document' is no larger than the shape(s) within. If they are
+   being clipped, make sure the 'document' is large enough to contain the
+   shape(s). See the 'SVG documentation' in Tux Paint for more information
+   and tips.
 
-   Usuarios avanzados: O documento «Como facer os selos avanzados» describe
+   ⚙ Usuarios avanzados: O documento «Como facer os selos avanzados» describe
    detalladamente como facer imaxes PNG que se adaptarán perfectamente cando
    se usen como selos en Tux Paint.
 
@@ -342,7 +342,7 @@ Efectos de son dos selos
            cargar o ficheiro de son «predeterminado». (por exemplo,
            «selo.wav»)
 
-   Note: Also consider using descriptive sounds; see 'Son descritivo do
+   💡 Note: Also consider using descriptive sounds; see 'Son descritivo do
    selo', below.
 
 Son descritivo do selo
@@ -524,9 +524,9 @@ Selos prereflectidos e invertidos
    previamente invertida con «_flip» no nome e/ou unha imaxe que se reflicta
    e inverta, denominándoa «_mirror_flip».
 
-   Nota: Se o usuario inverte e reflicte unha imaxe e non existe un
-   «_mirror_flip» deseñado previamente, mais si un «_flip» ou un «_mirror» ,
-   usarase e reflectirase ou inverterase, respectivamente.
+   💡 Note: If the user flips and mirrors an image, and a pre-drawn
+   "_mirror_flip" doesn't exist, but either "_flip" or "_mirror" does, it
+   will be used, and mirrored or flipped, respectively.
 
                                  Tipos de letra
 
@@ -594,12 +594,12 @@ Imaxes «de comezo» ao estilo dunha escena
    en Tux Paint, as imaxes «de comezo» veranse na pantalla que aparece, após
    as distintas opcións de cor sólida.
 
-   Nota: As «Imaxes de comezo» están «anexadas» ás imaxes gardadas, a través
-   dun pequeno ficheiro de texto que leva o mesmo nome que o ficheiro
-   gardado, pero con «.dat» como extensión. Isto permítelle seguir afectando
-   ao debuxo incluso após saír de Tux Paint, ou se cargue outra imaxe ou se
-   cree unha nova imaxe. (Noutras palabras, se un debuxo se basea nun imaxe
-   «de comezo», sempre se verá afectado por el.)
+   💡 Note: «Imaxes de comezo» are 'attached' to saved pictures, via a small
+   text file that has the same name as the saved file, but with ".dat" as the
+   extension. This allows it to continue to affect the drawing even after Tux
+   Paint has been quit, or another picture is loaded or a new image is
+   created. (In other words, if you base a drawing on a imaxe «de comezo», it
+   will always be affected by it.)
 
                                    «Modelos»
 
@@ -633,12 +633,12 @@ Imaxes «de comezo» ao estilo dunha escena
    en Tux Paint, as imaxes «modelo» veranse na pantalla que aparece, após as
    distintas opcións de cor sólida.
 
-   Nota: As «Modelos» están «anexadas» ás imaxes gardadas, a través dun
-   pequeno ficheiro de texto que leva o mesmo nome que o ficheiro gardado,
-   pero con «.dat» como extensión. Isto permítelle seguir afectando ao debuxo
-   incluso após saír de Tux Paint, ou se cargue outra imaxe ou se cree unha
-   nova imaxe. (Noutras palabras, se un debuxo se basea nun imaxe «modelo»,
-   sempre se verá afectado por el.)
+   💡 Note: «Modelos» are 'attached' to saved pictures, via a small text file
+   that has the same name as the saved file, but with ".dat" as the
+   extension. This allows it to continue to affect the drawing even after Tux
+   Paint has been quit, or another picture is loaded or a new image is
+   created. (In other words, if you base a drawing on a imaxe «modelo», it
+   will always be affected by it.)
 
                                    Traducións
 
@@ -676,12 +676,12 @@ Imaxes «de comezo» ao estilo dunha escena
      * Virtraal
      * Lokalize
 
-   Nota: É mellor traballar sempre co último modelo de catálogo de texto Tux
-   Paint («tuxpaint.pot»), xa que se engade n novos textos e o texto antigo
-   cambia ocasionalmente. O catálogo de texto para a próxima versión inédita
-   de Tux Paint pódese atopar no repositorio Git de Tux Paint (ver:
-   https://tuxpaint.org/download/source/git/) e no sitio web de Tux Paint en
-   https://tuxpaint.org/help/po/.
+   💡 Note: It is best to always work off of the latest Tux Paint text catalog
+   template ("tuxpaint.pot"), since new text is added, and old text is
+   occasionally changed. The text catalog for the upcoming, unreleased
+   version of Tux Paint can be found in Tux Paint's Git repository (see:
+   https://tuxpaint.org/download/source/git/), and on the Tux Paint website
+   at https://tuxpaint.org/help/po/.
 
    Para editar unha tradución existente, descargue o último ficheiro «.po»
    para ese idioma e edíteo como se describe anteriormente.
@@ -696,11 +696,11 @@ Imaxes «de comezo» ao estilo dunha escena
    repositorio de código fonte de Git para que poida enviar os seus cambios
    directamente.
 
-   Nota: A compatibilidade cos novo configuracións locais require facer
-   adicións ao código fonte de Tux Paint («/src/i18n.h» e «/src/i18n.c»), e
-   require actualizacións dos Makefile, para asegurarse de que os ficheiros
-   «.po» están compilados en ficheiros «.mo» e están dispoñíbeis para o seu
-   uso en tempo de execución.
+   💡 Note: Support for new configuracións locais requires making additions to
+   Tux Paint's source code («/src/i18n.h» e «/src/i18n.c»), and requires
+   updates to the Makefile, para asegurarse de que os ficheiros «.po» están
+   compilados en ficheiros «.mo» e están dispoñíbeis para o seu uso en tempo
+   de execución.
 
                         Métodos de entrada alternativos
 
@@ -751,19 +751,18 @@ Imaxes «de comezo» ao estilo dunha escena
      30AD ki -
      30AE gi -
 
-   Nota: Ignoraranse as liñas en branco dentro do ficheiro «.im», así como
-   calquera texto que teña un carácter «#» (grella). Isto pódese usar para
-   denotar comentarios , como se ve no exemplo anterior.
+   ⚙ Note: Blank lines within the ".im" file will be ignored, as will any
+   text following a "#" (pound/hash) character — it can be used to denote
+   comments, as seen in the example above.
 
-   Nota: Os significados dos sinaladores son específicos da configuración
-   local e son procesados ​​polo código fonte específico do idioma en
-   «src/im.c». Por exemplo, «b» úsase en coreano para tratar Batchim, que
-   pode pasar ao seguinte carácter.
+   💡 Note: Meanings of the flags are locale-specific, and are processed by
+   the language-specific source code in "src/im.c". For example, "b" is used
+   in Korean to handle Batchim, which may carry over to the next character.
 
-   Nota: A compatibilidade cos novo input methods require facer adicións ao
-   código fonte de Tux Paint ("/src/im.c"), e require actualizacións dos
-   Makefile, para asegurarse de que os ficheiros «.im» están dispoñíbeis para
-   o seu uso en tempo de execución.
+   💡 Note: Support for new input methods requires making additions to Tux
+   Paint's source code ("/src/im.c"), and requires updates to the Makefile,
+   para asegurarse de que os ficheiros «.im» están dispoñíbeis para o seu uso
+   en tempo de execución.
 
                               Teclado en pantalla
 
@@ -788,9 +787,9 @@ Ficheiro de visión xeral da disposición («qwerty.layout»)
      keysymdefs keysymdef.h
      keyboardlist qwerty.layout default.layout
 
-   Nota: Ignoraranse as liñas en branco dentro do ficheiro «.layout», así
-   como calquera texto que teña un carácter «#» (grella). Isto pódese usar
-   para denotar comentarios , como se ve no exemplo anterior.
+   ⚙ Note: Blank lines within the ".layout" file will be ignored, as will any
+   text following a "#" (pound/hash) character — it can be used to denote
+   comments, as seen in the example above.
 
    A liña «keyboardlist» describe a que esquemas cambiar, cando o usuario
    preme nos botóns esquerdo e dereito do teclado. (Ver máis abaixo.)
@@ -923,7 +922,7 @@ Ficheiro de definición Keysym («keysymdef.h»)
    (p. ex.: «XK_equal» corresponde a «U+003D», para o carácter «=» («EQUALS
    SIGN»).
 
-   Nota: este ficheiro non se compila en Tux Paint, senón que se le e analiza
-   no tempo de execución.
+   💡 Note: This file is not compiled into Tux Paint, but is read and parsed
+   at runtime.
 
    É pouco probábel que se precise algunha modificación neste ficheiro.

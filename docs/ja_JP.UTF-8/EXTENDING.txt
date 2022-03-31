@@ -36,7 +36,7 @@
    and other content used by Tux Paint, you can do so fairly easily by simply
    adding, changing, or removing files where Tux Paint looks for them.
 
-   Note: You'll need to re-launch Tux Paint for the changes to take effect.
+   💡 Note: You'll need to re-launch Tux Paint for the changes to take effect.
 
                                  Where Files Go
 
@@ -87,7 +87,7 @@ Standard Files
                 will make the content available to any user that launches
                 this copy (icon) of Tux Paint.
 
-           Note: If you install a newer version of Tux Paint and replace or
+           💡 Note: If you install a newer version of Tux Paint and replace or
            discard the old version, you will lose changes made by following
            the instructions above, so keep backups of your new content
            (stamps, brushes, etc.).
@@ -185,7 +185,7 @@ Brush Options
            Add a line containing the line "frames=N" to the brush's data
            file, where "N" is the number of frames in the brush.
 
-           Note: If you'd rather the frames be flipped through randomly,
+           ⚙ Note: If you'd rather the frames be flipped through randomly,
            rather than sequentially, also add a line containing "random" to
            the brush's data file.
 
@@ -228,7 +228,7 @@ Brush Options
    Place the brush image PNGs (and any data text files) in the "brushes"
    directory.
 
-   Note: If your new brushes all come out as solid squares or rectangles,
+   💡 Note: If your new brushes all come out as solid squares or rectangles,
    it's because you forgot to use alpha transparency! See the 'PNG
    documentation' in Tux Paint for more information and tips.
 
@@ -255,17 +255,17 @@ Stamp Images
    SVGs are vector-based, and will be scaled appropriately for the canvas
    size being used in Tux Paint.
 
-   Note: If your new PNG-based stamps all come out as solid squares or
+   💡 Note: If your new PNG-based stamps all come out as solid squares or
    rectangles, it's because you forgot to use alpha transparency! See the
    'PNG documentation' in Tux Paint for more information and tips.
 
-   Note: If your new SVG stamps seem to have a lot of whitespace, make sure
+   💡 Note: If your new SVG stamps seem to have a lot of whitespace, make sure
    the SVG 'document' is no larger than the shape(s) within. If they are
    being clipped, make sure the 'document' is large enough to contain the
    shape(s). See the 'SVG documentation' in Tux Paint for more information
    and tips.
 
-   Advanced Users: The 'Advanced Stamps How-To' document describes, in
+   ⚙ Advanced Users: The 'Advanced Stamps How-To' document describes, in
    detail, how to make PNG images which will scale perfectly when used as
    stamps in Tux Paint.
 
@@ -329,7 +329,7 @@ Stamp Sound Effects
            If no localized sound effect can be loaded, Tux Paint will attempt
            to load the 'default' sound file. (e.g., "stamp.wav")
 
-   Note: Also consider using descriptive sounds; see 'Stamp Descriptive
+   💡 Note: Also consider using descriptive sounds; see 'Stamp Descriptive
    Sound', below.
 
 Stamp Descriptive Sound
@@ -507,7 +507,7 @@ Pre-Mirrored and Flipped Stamps
    "_flip" in the name, and/or an image that is both mirrored and flipped, by
    naming it "_mirror_flip".
 
-   Note: If the user flips and mirrors an image, and a pre-drawn
+   💡 Note: If the user flips and mirrors an image, and a pre-drawn
    "_mirror_flip" doesn't exist, but either "_flip" or "_mirror" does, it
    will be used, and mirrored or flipped, respectively.
 
@@ -578,7 +578,7 @@ Scene-Style Starters
    in Tux Paint, the 'starter' images will appear in the screen that appears,
    after the various solid color choices.
 
-   Note: 'Starters' are 'attached' to saved pictures, via a small text file
+   💡 Note: 'Starters' are 'attached' to saved pictures, via a small text file
    that has the same name as the saved file, but with ".dat" as the
    extension. This allows it to continue to affect the drawing even after Tux
    Paint has been quit, or another picture is loaded or a new image is
@@ -615,8 +615,8 @@ Scene-Style Starters
    in Tux Paint, the 'template' images will appear in the screen that
    appears, after the various solid color choices.
 
-   Note: 'Templates' are 'attached' to saved pictures, via a small text file
-   that has the same name as the saved file, but with ".dat" as the
+   💡 Note: 'Templates' are 'attached' to saved pictures, via a small text
+   file that has the same name as the saved file, but with ".dat" as the
    extension. This allows it to continue to affect the drawing even after Tux
    Paint has been quit, or another picture is loaded or a new image is
    created. (In other words, if you base a drawing on a 'template' image, it
@@ -657,7 +657,7 @@ Scene-Style Starters
      * Virtraal
      * Lokalize
 
-   Note: It is best to always work off of the latest Tux Paint text catalog
+   💡 Note: It is best to always work off of the latest Tux Paint text catalog
    template ("tuxpaint.pot"), since new text is added, and old text is
    occasionally changed. The text catalog for the upcoming, unreleased
    version of Tux Paint can be found in Tux Paint's Git repository (see:
@@ -676,7 +676,7 @@ Scene-Style Starters
    the Git source code repository so that you may commit your changes
    directly.
 
-   Note: Support for new locales requires making additions to Tux Paint's
+   💡 Note: Support for new locales requires making additions to Tux Paint's
    source code ("/src/i18n.h" and "/src/i18n.c"), and requires updates to the
    Makefile, to ensure the ".po" files are compiled into ".mo" files, and
    available for use at runtime.
@@ -730,15 +730,15 @@ Scene-Style Starters
      30AD ki -
      30AE gi -
 
-   Note: Blank lines within the ".im" file will be ignored, as will any text
-   following a "#" (pound/hash) character — it can be used to denote
+   ⚙ Note: Blank lines within the ".im" file will be ignored, as will any
+   text following a "#" (pound/hash) character — it can be used to denote
    comments, as seen in the example above.
 
-   Note: Meanings of the flags are locale-specific, and are processed by the
-   language-specific source code in "src/im.c". For example, "b" is used in
-   Korean to handle Batchim, which may carry over to the next character.
+   💡 Note: Meanings of the flags are locale-specific, and are processed by
+   the language-specific source code in "src/im.c". For example, "b" is used
+   in Korean to handle Batchim, which may carry over to the next character.
 
-   Note: Support for new input methods requires making additions to Tux
+   💡 Note: Support for new input methods requires making additions to Tux
    Paint's source code ("/src/im.c"), and requires updates to the Makefile,
    to ensure the ".im" files are available for use at runtime.
 
@@ -764,7 +764,7 @@ Layout overview file ("qwerty.layout")
      keysymdefs keysymdef.h
      keyboardlist qwerty.layout default.layout
 
-   Note: Blank lines within the ".layout" file will be ignored, as will any
+   ⚙ Note: Blank lines within the ".layout" file will be ignored, as will any
    text following a "#" (pound/hash) character — it can be used to denote
    comments, as seen in the example above.
 
@@ -892,7 +892,7 @@ Keysym definitions file ("keysymdef.h")
    X Window System. It defines the Unicode values of each keycap (e.g.,
    "XK_equal" corresponds to "U+003D", for the character "=" ("EQUALS SIGN").
 
-   Note: This file is not compiled into Tux Paint, but is read and parsed at
-   runtime.
+   💡 Note: This file is not compiled into Tux Paint, but is read and parsed
+   at runtime.
 
    It is unlikely that any modification will be required of this file.

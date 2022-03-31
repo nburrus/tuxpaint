@@ -54,7 +54,7 @@
     padding-bottom: 1em;
     border-bottom: 2px solid #000;
   }
-  section.indent p,dl {
+  section.indent p,dl,ul {
     margin-left: 2em;
   }
   section.indent dl p {
@@ -128,12 +128,12 @@
       </table>
     </section>
 
-    <section>
+    <section class="outer">
       <p>
         Si vous souhaitez ajouter ou modifier des éléments tels que des pinceaux, des images de démarrage, des tampons en caoutchouc et d'autres contenus utilisés par Tux Paint , vous pouvez le faire assez facilement en ajoutant, modifiant ou supprimant simplement des fichiers là où Tux Paint les recherche.      </p>
   
-      <p>
-        Remarque: vous devrez redémarrer Tux Paint pour que les modifications prennent effet.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> You'll need to re-launch Tux Paint for the changes to take effect.      </p>
     </section>
 
     <section class="indent outer"><!-- H1: Where Files Go -->
@@ -195,8 +195,8 @@
               <li>
                 Vous y trouverez divers sous-dossiers, tels que " starters", "stamps", " brushes", etc.  Ajouter du nouveau contenu à ces dossiers rendra celui-ci disponible pour tout utilisateur qui lance cette copie (icône) de Tux Paint .              </li>
             </ol>
-            <p>
-              <em>Remarque :</em> Si vous installez une version plus récente de Tux Paint et remplacez ou supprimez l'ancienne version, vous perdrez les modifications apportées avec les instructions ci-dessus, faites donc des sauvegardes de votre nouveau contenu (tampons,pinceaux, etc.).            </p>
+            <p class="note">
+              <span title="Information">&#128161;</span>              <em>Remarque :</em> Si vous installez une version plus récente de Tux Paint et remplacez ou supprimez l'ancienne version, vous perdrez les modifications apportées avec les instructions ci-dessus, faites donc des sauvegardes de votre nouveau contenu (tampons,pinceaux, etc.).            </p>
             <p>
               Tux Paint recherche également les fichiers dans un dossier "Tux Paint" que vous pouvez placer dans votre dossier système "Application Support" (situé sous "Library" à la racine de votre système de fichiers) :              <blockquote>
                 <code style="white-space: nowrap;">/Library/Application Support/TuxPaint/</code>
@@ -313,8 +313,8 @@
               Disposez chaque trame sur une grande image PNG. Par exemple, si votre pinceau mesure 30x30 et que vous avez 5 trames, l'image doit être 150x30.            </p>
             <p>
               Ajoutez une ligne contenant la ligne "<code><b>frames=<i>N</i></b></code>" au fichier de données du pinceau, où"<i>N</i>" est le nombre d'images dans le pinceau.            </p>
-            <p>
-              <b>Remarque :</b> si vous préférez que les images apparaissent de manière aléatoire plutôt que séquentielle, ajoutez en plus une ligne contenant "<code><b>random</b></code>" au fichier de données du pinceau.            </p>
+            <p class="note">
+              <span title="Configuration option">&#9881;</span>              <strong>Note:</strong> If you'd rather the frames be flipped through randomly, rather than sequentially, also add a line containing "<code><b>random</b></code>" to the brush's data file.            </p>
           </dd>
 
           <dt><strong>Pinceaux directionnels</strong></dt>
@@ -348,8 +348,8 @@
       <p>
         Placez les PNG de l'image du pinceau (et tous les fichiers texte de données) dans le répertoire "<code><b>brushes</b></code>".      </p>
 
-      <p>
-        Remarque: si vos nouveaux pinceaux se présentent tous sous forme de carrés ou de rectangles pleins, c'est que vous avez oublié d'utiliser la transparence alpha ! Consultez le fichier de documentation "PNG" pour plus d'informations et de conseils.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> If your new pinceaux all come out as solid squares or rectangles, it's because you forgot to use alpha transparency! See the 'PNG documentation' in Tux Paint for more information and tips.      </p>
     </section><!-- H1: Brushes -->
 
     <section class="indent outer"><!-- H1: Stamps -->
@@ -387,14 +387,14 @@
         <p>
           Les SVG sont basés sur des vecteurs et seront mis à l'échelle de manière adéquate pour le canevas utilisé.        </p>
 
-        <p>
-          Remarque: si vos nouveaux des tampons basés sur PNG se présentent tous sous forme de carrés ou de rectangles pleins, c'est que vous avez oublié d'utiliser la transparence alpha ! Consultez le fichier de documentation "PNG" pour plus d'informations et de conseils.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> If your new des tampons basés sur PNG all come out as solid squares or rectangles, it's because you forgot to use alpha transparency! See the 'PNG documentation' in Tux Paint for more information and tips.        </p>
 
-        <p>
-          Remarque: si vos nouveaux tampons SVG semblent avoir beaucoup de zones vides, assurez-vous que le «document» SVG n'est pas plus grand que la ou les formes qu'il contient. S'ils sont coupés, assurez-vous que le «document» est suffisamment grand pour contenir la ou les formes. Voir le fichier de documentation " SVG" pour plus d'informations et de conseils.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> If your new SVG stamps seem to have a lot of whitespace, make sure the SVG 'document' is no larger than the shape(s) within. If they are being clipped, make sure the 'document' is large enough to contain the shape(s). See the 'SVG documentation' in Tux Paint for more information and tips.        </p>
 
-        <p>
-          <b>Utilisateurs avancés :</b> Le HOWTO Advanced Stamps décrit, en détail, comment créer des images PNG qui seront parfaitement mises à l'échelle lorsqu'elles seront utilisées comme tampons dans Tux Paint .        </p>
+        <p class="note">
+          <span title="Configuration option">&#9881;</span>          <b>Utilisateurs avancés :</b> Le HOWTO Advanced Stamps décrit, en détail, comment créer des images PNG qui seront parfaitement mises à l'échelle lorsqu'elles seront utilisées comme tampons dans Tux Paint .        </p>
       </section><!-- H2: Stamp Images -->
 
       <section><!-- H2: Stamp Descriptive Text -->
@@ -455,8 +455,8 @@
           </dd>
         </dl>
 
-        <p>
-          Note: Also consider using descriptive sounds; see 'Son descriptif du tampon', below.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> Also consider using descriptive sounds; see 'Son descriptif du tampon', below.        </p>
       </section><!-- H2: Stamp Sound Effects -->
 
       <section><!-- H2: Stamp Descriptive Sound -->
@@ -619,8 +619,8 @@
         <p>
           Depuis Tux Paint 0.9.18, vous pouvez également fournir une image pré-retournée avec "<code><b>_flip</b></code>" dans le nom, et / ou une image qui est à la fois en miroir et retournée, en la nommant " <code><b>_mirror_flip</b></code>".        </p>
 
-        <p>
-          <b>Remarque :</b> Si l'utilisateur retourne et reflète une image, et qu'un "<code>_mirror_flip</code>" pré-dessiné n'existe pas, mais que "<code>_flip</code>" ou "<code>_mirror</code>" existe , il sera utilisé, et reflété ou retourné, selon le cas.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> If the user flips and mirrors an image, and a pre-drawn "<code>_mirror_flip</code>" doesn't exist, but either "<code>_flip</code>" or "<code>_mirror</code>" does, it will be used, and mirrored or flipped, respectively.        </p>
       </section><!-- H2: Pre-Mirrored and Flipped Stamps -->
     </section><!-- H1: Stamps -->
 
@@ -705,8 +705,8 @@
       <p>
         Placez-les dans le répertoire "<code><b>starters</b></code>". Lorsque la boîte de dialogue «Nouveau» est accessible dans Tux Paint , les images de démarrage  apparaîtront avec l'écran qui apparaît, suivant les différents choix de couleurs unies.      </p>
 
-      <p>
-        <b>Remarque :</b>'Images de démarrage' sont 'attachés' aux images sauvegardées, via un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec "<code>.dat</code>" comme extension. Ceci permet de continuer de s'occuper du dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un image de démarrage, il sera toujours changé par lui).      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> 'Images de démarrage' are 'attached' to saved pictures, via a small text file that has the same name as the saved file, but with "<code>.dat</code>" as the extension. This allows it to continue to affect the drawing even after Tux Paint has been quit, or another picture is loaded or a new image is created. (In other words, if you base a drawing on a image de démarrage, it will always be affected by it.)      </p>
     </section><!-- H1: Starters -->
 
     <section class="indent outer"><!-- H1: 'Templates' -->
@@ -740,8 +740,8 @@
       <p>
         Placez-les dans le répertoire "<code><b>templates</b></code>". Lorsque la boîte de dialogue «Nouveau» est accessible dans Tux Paint , les images 'modèle'  apparaîtront avec l'écran qui apparaît, suivant les différents choix de couleurs unies.      </p>
 
-      <p>
-        <b>Remarque :</b>'Modèles' sont 'attachés' aux images sauvegardées, via un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec "<code>.dat</code>" comme extension. Ceci permet de continuer de s'occuper du dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un image 'modèle', il sera toujours changé par lui).      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> 'Modèles' are 'attached' to saved pictures, via a small text file that has the same name as the saved file, but with "<code>.dat</code>" as the extension. This allows it to continue to affect the drawing even after Tux Paint has been quit, or another picture is loaded or a new image is created. (In other words, if you base a drawing on a image 'modèle', it will always be affected by it.)      </p>
       <br clear="all">
     </section><!-- H1: 'Templates' -->
 
@@ -782,8 +782,8 @@
         </ul>
       </p>
 
-      <p>
-        Remarque: Il est préférable de toujours travailler avec le <i>dernier</i> modèle de catalogue de texte Tux Paint ("<code>tuxpaint.pot</code>"), car un nouveau texte est ajouté et l'ancien texte est parfois modifié. Le catalogue de textes de la prochaine version inédite de Tux Paint se trouve dans le référentiel Git de Tux Paint (voir : <a href="https://tuxpaint.org/download/source/git/">https://tuxpaint.org/download/source/git/</a> ), et sur le site Web de Tux Paint à <a href="https://tuxpaint.org/help/po/">https://tuxpaint.org/help/po/</a>.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> It is best to always work off of the <i>latest</i> Tux Paint text catalog template ("<code>tuxpaint.pot</code>"), since new text is added, and old text is occasionally changed. The text catalog for the upcoming, unreleased version of Tux Paint can be found in Tux Paint's Git repository (see: <a href="https://tuxpaint.org/download/source/git/">https://tuxpaint.org/download/source/git/</a>), and on the Tux Paint website at <a href="https://tuxpaint.org/help/po/">https://tuxpaint.org/help/po/</a>.      </p>
 
       <p>
         Pour modifier une traduction existante, téléchargez le dernier fichier "<code>.po</code>" pour cette langue et modifiez-le comme décrit ci-dessus.      </p>
@@ -794,8 +794,8 @@
       <p>
         Autrement, si vous avez un compte chez <a href="http://www.sourceforge.net/">SourceForge.net</a> , vous pouvez demander à être ajouté au projet "<code>tuxpaint</code>" et obtenir un accès en écriture au référentiel de code source Git afin que vous puissiez valider vos modifications directement.      </p>
 
-      <p>
-        <i>Remarque :</i> la prise en charge de nouveaux locales nécessite des ajouts au code source de Tux Paint ( "<code>/src/i18n.h</code>" et "<code>/src/i18n.c</code>"), et nécessite des mises à jour de <code>Makefile</code>, pour s'assurer que les fichiers "<code>.po</code>" sont compilés en fichiers "<code>.mo</code>", et utilisables pendant l'exécution.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Support for new locales requires making additions to Tux Paint's source code ("<code>/src/i18n.h</code>" et "<code>/src/i18n.c</code>"), and requires updates to the <code>Makefile</code>, pour s'assurer que les fichiers "<code>.po</code>" sont compilés en fichiers "<code>.mo</code>", et utilisables pendant l'exécution.      </p>
     </section><!-- H1: Translations -->
 
     <section class="indent outer"><!-- H1: Alternative Input Methods -->
@@ -849,14 +849,14 @@
         </blockquote>
       </p>
 
-      <p>
-        <i>Remarque</i>Les lignes vides du fichier "<code>.im</code>" sont ignorées, aussi bien que les lignes commençant par "<code>#</code>" -- ce peut être utilisé pour ajouter des commentaires, comme dans l'exemple ci-dessus.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> Blank lines within the "<code>.im</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example above.      </p>
 
-      <p>
-        <i>Remarque :</i> Les significations des indicateurs sont spécifiques à la langue et sont traitées par le code source spécifique à la langue dans "<code>src/im.c</code>". Par exemple, "<code>b</code>" est utilisé en coréen pour gérer Batchim, qui peut être reporté au caractère suivant.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Meanings of the flags are locale-specific, and are processed by the language-specific source code in "<code>src/im.c</code>". For example, "<code>b</code>" is used in Korean to handle Batchim, which may carry over to the next character.      </p>
 
-      <p>
-        <i>Remarque :</i> la prise en charge de nouveaux méthodes de saisie nécessite des ajouts au code source de Tux Paint ( "<code>/src/im.c</code>"), et nécessite des mises à jour de <code>Makefile</code>, pour s'assurer que les fichiers "<code>.im</code>" sont disponibles pour être utilisés lors de l'exécution du programme.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Support for new méthodes de saisie requires making additions to Tux Paint's source code ("<code>/src/im.c</code>"), and requires updates to the <code>Makefile</code>, pour s'assurer que les fichiers "<code>.im</code>" sont disponibles pour être utilisés lors de l'exécution du programme.      </p>
     </section><!-- H1: Alternative Input Methods -->
 
     <section class="indent outer"><!-- H1: On-screen Keyboard -->
@@ -891,8 +891,8 @@
           </p>
         </blockquote>
 
-        <p>
-          <i>Remarque</i>Les lignes vides du fichier "<code>.layout</code>" sont ignorées, aussi bien que les lignes commençant par "<code>#</code>" -- ce peut être utilisé pour ajouter des commentaires, comme dans l'exemple ci-dessus.        </p>
+        <p class="note">
+          <span title="Configuration option">&#9881;</span>          <strong>Note:</strong> Blank lines within the "<code>.layout</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example above.        </p>
 
         <p>
           La ligne "<code>keyboardlist</code>" décrit les dispositions vers lesquelles on bascule lorsque l'utilisateur clique sur les boutons gauche et droit du clavier. (Voir ci-dessous.)        </p>
@@ -1046,8 +1046,8 @@
         <p>
           Ce fichier (qui est un fichier d'en-tête du langage de programmation <cite>C</cite> ) provient également du <cite>système X Window</cite> . Il définit les valeurs Unicode de chaque keycap (par exemple, "<code>XK_equal</code>" correspond à "<code>U+003D</code>", pour le caractère "<code>=</code>" ("<code>EQUALS SIGN</code>").        </p>
 
-        <p>
-          <b>Remarque :</b> Ce fichier n'est pas compilé avec Tux Paint, mais il est lu et analysé durant l'exécution de celui-ci.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> This file is not compiled into Tux Paint, but is read and parsed at runtime.        </p>
 
         <p>
           Il est peu probable qu'une modification de ce fichier soit requise.        </p>

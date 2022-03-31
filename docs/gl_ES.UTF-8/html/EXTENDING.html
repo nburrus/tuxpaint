@@ -54,7 +54,7 @@
     padding-bottom: 1em;
     border-bottom: 2px solid #000;
   }
-  section.indent p,dl {
+  section.indent p,dl,ul {
     margin-left: 2em;
   }
   section.indent dl p {
@@ -128,12 +128,12 @@
       </table>
     </section>
 
-    <section>
+    <section class="outer">
       <p>
         Se quere engadir ou cambiar cousas como pinceis, imaxes de comezo, selos de goma e outros contidos empregados por Tux Paint, pode facelo con bastante facilidade simplemente engadindo, cambiando ou eliminando ficheiros onde os busque Tux Paint.      </p>
   
-      <p>
-        Nota: Deberá reiniciar Tux Paint para que os cambios teñan efecto.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> You'll need to re-launch Tux Paint for the changes to take effect.      </p>
     </section>
 
     <section class="indent outer"><!-- H1: Where Files Go -->
@@ -195,8 +195,8 @@
               <li>
                 Alí atoparás varios subcartafoles, como «imaxes de comezo», «selos», «pinceis», etc. Engadindo novo contido a estes cartafoles fará que o contido estea dispoñíbel para calquera usuario que inicia copia (icona) de Tux Paint .              </li>
             </ol>
-            <p>
-              <em>Nota:</em> Se instala unha versión máis recente de Tux Paint e substitúe ou desbota a versión antiga, perderá os cambios feitos seguindo as instrucións anteriores, así que garde as copias de seguridade do seu novo contido (selos, pinceis, etc.) .            </p>
+            <p class="note">
+              <span title="Information">&#128161;</span>              <em>Nota:</em> Se instala unha versión máis recente de Tux Paint e substitúe ou desbota a versión antiga, perderá os cambios feitos seguindo as instrucións anteriores, así que garde as copias de seguridade do seu novo contido (selos, pinceis, etc.) .            </p>
             <p>
               Tux Paint tamén busca ficheiros nun cartafol «TuxPaint» que pode colocar no seu sistema no cartafol «Application Support» (atópase en «Library» na raíz do seu sistema de ficheiros):              <blockquote>
                 <code style="white-space: nowrap;">/Library/Application Support/TuxPaint/</code>
@@ -313,8 +313,8 @@
               Coloca cada cadro nunha ampla imaxe PNG. Por exemplo, se o pincel ten 30x30 e ten 5 fotogramas, a imaxe debería ser 150x30.            </p>
             <p>
               Engada unha liña que conteña a liña «<code><b>frames=<i>N</i></b></code>» ao ficheiro de datos do pincel, onde «<i>N</i>» é o número de fotogramas do pincel.            </p>
-            <p>
-              <b>Nota:</b> Se prefire que os fotogramas se pasen ao chou, no canto de secuencialmente, engada tamén unha liña que conteña «<code><b>random</b></code>» ao ficheiro de datos do pincel.            </p>
+            <p class="note">
+              <span title="Configuration option">&#9881;</span>              <strong>Note:</strong> If you'd rather the frames be flipped through randomly, rather than sequentially, also add a line containing "<code><b>random</b></code>" to the brush's data file.            </p>
           </dd>
 
           <dt><strong>Pinceis direccionais</strong></dt>
@@ -348,8 +348,8 @@
       <p>
         Coloque os ficheiros PNG de pincel (e calquera ficheiro de texto de datos) no directorio «<code><b>brushes</b></code>».      </p>
 
-      <p>
-        Nota: Se o seu novo brushes sae como cadrados ou rectángulos sólidos, é porque esqueceu usar a transparencia alfa. Vexa a «Documentación PNG» en Tux Paint para obter máis información e consellos.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> If your new brushes all come out as solid squares or rectangles, it's because you forgot to use alpha transparency! See the 'PNG documentation' in Tux Paint for more information and tips.      </p>
     </section><!-- H1: Brushes -->
 
     <section class="indent outer"><!-- H1: Stamps -->
@@ -387,14 +387,14 @@
         <p>
           Os SVG están baseados en vectores e escalaranse axeitadamente para o tamaño do lenzo que se use en Tux Paint.        </p>
 
-        <p>
-          Nota: Se o seu novo PNG-based stamps sae como cadrados ou rectángulos sólidos, é porque esqueceu usar a transparencia alfa. Vexa a «Documentación PNG» en Tux Paint para obter máis información e consellos.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> If your new PNG-based stamps all come out as solid squares or rectangles, it's because you forgot to use alpha transparency! See the 'PNG documentation' in Tux Paint for more information and tips.        </p>
 
-        <p>
-          Nota: Se os seus novos selos SVG parecen ter moito espazo en branco, asegúrese de que o «documento» SVG non sexa maior que a(s) forma(s) que contén. Se se están recortando, asegúrese de que o «documento» é grande de abondo como para conter a(s) forma(s). Vexa a «Documentación SVG» en Tux Paint para obter máis información e consellos.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> If your new SVG stamps seem to have a lot of whitespace, make sure the SVG 'document' is no larger than the shape(s) within. If they are being clipped, make sure the 'document' is large enough to contain the shape(s). See the 'SVG documentation' in Tux Paint for more information and tips.        </p>
 
-        <p>
-          <b>Usuarios avanzados:</b> O documento «Como facer os selos avanzados» describe detalladamente como facer imaxes PNG que se adaptarán perfectamente cando se usen como selos en Tux Paint.        </p>
+        <p class="note">
+          <span title="Configuration option">&#9881;</span>          <b>Usuarios avanzados:</b> O documento «Como facer os selos avanzados» describe detalladamente como facer imaxes PNG que se adaptarán perfectamente cando se usen como selos en Tux Paint.        </p>
       </section><!-- H2: Stamp Images -->
 
       <section><!-- H2: Stamp Descriptive Text -->
@@ -455,8 +455,8 @@
           </dd>
         </dl>
 
-        <p>
-          Note: Also consider using descriptive sounds; see 'Son descritivo do selo', below.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> Also consider using descriptive sounds; see 'Son descritivo do selo', below.        </p>
       </section><!-- H2: Stamp Sound Effects -->
 
       <section><!-- H2: Stamp Descriptive Sound -->
@@ -619,8 +619,8 @@
         <p>
           A partir de Tux Paint 0.9.18, de xeito similar pode fornecer unha imaxe previamente invertida con «<code><b>_flip</b></code>» no nome e/ou unha imaxe que se reflicta e inverta, denominándoa «<code><b>_mirror_flip</b></code>».        </p>
 
-        <p>
-          <b>Nota:</b> Se o usuario inverte e reflicte unha imaxe e non existe un «<code>_mirror_flip</code>» deseñado previamente, mais si un «<code>_flip</code>» ou un «<code>_mirror</code>» , usarase e reflectirase ou inverterase, respectivamente.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> If the user flips and mirrors an image, and a pre-drawn "<code>_mirror_flip</code>" doesn't exist, but either "<code>_flip</code>" or "<code>_mirror</code>" does, it will be used, and mirrored or flipped, respectively.        </p>
       </section><!-- H2: Pre-Mirrored and Flipped Stamps -->
     </section><!-- H1: Stamps -->
 
@@ -705,8 +705,8 @@
       <p>
         Colóqueas no directorio  de «<code><b>starters</b></code>». Cando se accede ao diálogo «Novo» en Tux Paint, as imaxes «de comezo» veranse na pantalla que aparece, após as distintas opcións de cor sólida.      </p>
 
-      <p>
-        <b>Nota:</b> As «Imaxes de comezo» están «anexadas» ás imaxes gardadas, a través dun pequeno ficheiro de texto que leva o mesmo nome que o ficheiro gardado, pero con «<code>.dat</code>» como extensión. Isto permítelle seguir afectando ao debuxo incluso após saír de Tux Paint, ou se cargue outra imaxe ou se cree unha nova imaxe. (Noutras palabras, se un debuxo se basea nun imaxe «de comezo», sempre se verá afectado por el.)      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> «Imaxes de comezo» are 'attached' to saved pictures, via a small text file that has the same name as the saved file, but with "<code>.dat</code>" as the extension. This allows it to continue to affect the drawing even after Tux Paint has been quit, or another picture is loaded or a new image is created. (In other words, if you base a drawing on a imaxe «de comezo», it will always be affected by it.)      </p>
     </section><!-- H1: Starters -->
 
     <section class="indent outer"><!-- H1: 'Templates' -->
@@ -740,8 +740,8 @@
       <p>
         Colóqueas no directorio  de «<code><b>templates</b></code>». Cando se accede ao diálogo «Novo» en Tux Paint, as imaxes «modelo» veranse na pantalla que aparece, após as distintas opcións de cor sólida.      </p>
 
-      <p>
-        <b>Nota:</b> As «Modelos» están «anexadas» ás imaxes gardadas, a través dun pequeno ficheiro de texto que leva o mesmo nome que o ficheiro gardado, pero con «<code>.dat</code>» como extensión. Isto permítelle seguir afectando ao debuxo incluso após saír de Tux Paint, ou se cargue outra imaxe ou se cree unha nova imaxe. (Noutras palabras, se un debuxo se basea nun imaxe «modelo», sempre se verá afectado por el.)      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> «Modelos» are 'attached' to saved pictures, via a small text file that has the same name as the saved file, but with "<code>.dat</code>" as the extension. This allows it to continue to affect the drawing even after Tux Paint has been quit, or another picture is loaded or a new image is created. (In other words, if you base a drawing on a imaxe «modelo», it will always be affected by it.)      </p>
       <br clear="all">
     </section><!-- H1: 'Templates' -->
 
@@ -782,8 +782,8 @@
         </ul>
       </p>
 
-      <p>
-        <i>Nota:</i> É mellor traballar sempre co <i>último</i> modelo de catálogo de texto Tux Paint («<code>tuxpaint.pot</code>»), xa que se engade n novos textos e o texto antigo cambia ocasionalmente. O catálogo de texto para a próxima versión inédita de Tux Paint pódese atopar no repositorio Git de Tux Paint (ver: <a href="https://tuxpaint.org/download/source/git/">https://tuxpaint.org/download/source/git/</a>) e no sitio web de Tux Paint en <a href="https://tuxpaint.org/help/po/">https://tuxpaint.org/help/po/</a>.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> It is best to always work off of the <i>latest</i> Tux Paint text catalog template ("<code>tuxpaint.pot</code>"), since new text is added, and old text is occasionally changed. The text catalog for the upcoming, unreleased version of Tux Paint can be found in Tux Paint's Git repository (see: <a href="https://tuxpaint.org/download/source/git/">https://tuxpaint.org/download/source/git/</a>), and on the Tux Paint website at <a href="https://tuxpaint.org/help/po/">https://tuxpaint.org/help/po/</a>.      </p>
 
       <p>
         Para editar unha tradución existente, descargue o último ficheiro «<code>.po</code>» para ese idioma e edíteo como se describe anteriormente.      </p>
@@ -794,8 +794,8 @@
       <p>
         Como alternativa, se te unha conta con <a href="http://www.sourceforge.net/">SourceForge.net</a>, pode solicitar que o engadan ao proxecto «<code>tuxpaint</code>» e recibir acceso de escritura ao repositorio de código fonte de Git para que poida enviar os seus cambios directamente.      </p>
 
-      <p>
-        <i>Nota:</i> A compatibilidade cos novo configuracións locais require facer adicións ao código fonte de Tux Paint («<code>/src/i18n.h</code>» e «<code>/src/i18n.c</code>»), e require actualizacións dos <code>Makefile</code>, para asegurarse de que os ficheiros «<code>.po</code>» están compilados en ficheiros «<code>.mo</code>» e están dispoñíbeis para o seu uso en tempo de execución.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Support for new configuracións locais requires making additions to Tux Paint's source code («<code>/src/i18n.h</code>» e «<code>/src/i18n.c</code>»), and requires updates to the <code>Makefile</code>, para asegurarse de que os ficheiros «<code>.po</code>» están compilados en ficheiros «<code>.mo</code>» e están dispoñíbeis para o seu uso en tempo de execución.      </p>
     </section><!-- H1: Translations -->
 
     <section class="indent outer"><!-- H1: Alternative Input Methods -->
@@ -849,14 +849,14 @@
         </blockquote>
       </p>
 
-      <p>
-        <i>Nota:</i> Ignoraranse as liñas en branco dentro do ficheiro «<code>.im</code>», así como calquera texto que teña un carácter «<code>#</code>» (grella). Isto pódese usar para denotar comentarios , como se ve no exemplo anterior.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> Blank lines within the "<code>.im</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example above.      </p>
 
-      <p>
-        <i>Nota:</i> Os significados dos sinaladores son específicos da configuración local e son procesados ​​polo código fonte específico do idioma en «<code>src/im.c</code>». Por exemplo, «<code>b</code>» úsase en coreano para tratar Batchim, que pode pasar ao seguinte carácter.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Meanings of the flags are locale-specific, and are processed by the language-specific source code in "<code>src/im.c</code>". For example, "<code>b</code>" is used in Korean to handle Batchim, which may carry over to the next character.      </p>
 
-      <p>
-        <i>Nota:</i> A compatibilidade cos novo input methods require facer adicións ao código fonte de Tux Paint ("<code>/src/im.c</code>"), e require actualizacións dos <code>Makefile</code>, para asegurarse de que os ficheiros «<code>.im</code>» están dispoñíbeis para o seu uso en tempo de execución.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> Support for new input methods requires making additions to Tux Paint's source code ("<code>/src/im.c</code>"), and requires updates to the <code>Makefile</code>, para asegurarse de que os ficheiros «<code>.im</code>» están dispoñíbeis para o seu uso en tempo de execución.      </p>
     </section><!-- H1: Alternative Input Methods -->
 
     <section class="indent outer"><!-- H1: On-screen Keyboard -->
@@ -891,8 +891,8 @@
           </p>
         </blockquote>
 
-        <p>
-          <i>Nota:</i> Ignoraranse as liñas en branco dentro do ficheiro «<code>.layout</code>», así como calquera texto que teña un carácter «<code>#</code>» (grella). Isto pódese usar para denotar comentarios , como se ve no exemplo anterior.        </p>
+        <p class="note">
+          <span title="Configuration option">&#9881;</span>          <strong>Note:</strong> Blank lines within the "<code>.layout</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example above.        </p>
 
         <p>
           A liña «<code>keyboardlist</code>» describe a que esquemas cambiar, cando o usuario preme nos botóns esquerdo e dereito do teclado. (Ver máis abaixo.)        </p>
@@ -1046,8 +1046,8 @@
         <p>
           Este ficheiro (que é un ficheiro de cabeceira da linguaxe de programación <cite>C</cite>) tamén é do <cite>Sistema X Window</cite>. Define os valores Unicode de cada tecla (p. ex.: «<code>XK_equal</code>» corresponde a «<code>U+003D</code>», para o carácter «<code>=</code>» («<code>EQUALS SIGN</code>»).        </p>
 
-        <p>
-          <b>Nota:</b> este ficheiro non se compila en Tux Paint, senón que se le e analiza no tempo de execución.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> This file is not compiled into Tux Paint, but is read and parsed at runtime.        </p>
 
         <p>
           É pouco probábel que se precise algunha modificación neste ficheiro.        </p>

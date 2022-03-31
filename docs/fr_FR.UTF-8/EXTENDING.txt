@@ -38,8 +38,7 @@
    ajoutant, modifiant ou supprimant simplement des fichiers là où Tux Paint
    les recherche.
 
-   Remarque: vous devrez redémarrer Tux Paint pour que les modifications
-   prennent effet.
+   💡 Note: You'll need to re-launch Tux Paint for the changes to take effect.
 
                               Où vont les fichiers
 
@@ -93,11 +92,11 @@ Fichiers standards
                 dossiers rendra celui-ci disponible pour tout utilisateur qui
                 lance cette copie (icône) de Tux Paint .
 
-           Remarque : Si vous installez une version plus récente de Tux Paint
-           et remplacez ou supprimez l'ancienne version, vous perdrez les
-           modifications apportées avec les instructions ci-dessus, faites
-           donc des sauvegardes de votre nouveau contenu (tampons,pinceaux,
-           etc.).
+           💡 Remarque : Si vous installez une version plus récente de Tux
+           Paint et remplacez ou supprimez l'ancienne version, vous perdrez
+           les modifications apportées avec les instructions ci-dessus,
+           faites donc des sauvegardes de votre nouveau contenu
+           (tampons,pinceaux, etc.).
 
            Tux Paint recherche également les fichiers dans un dossier "Tux
            Paint" que vous pouvez placer dans votre dossier système
@@ -201,9 +200,9 @@ Options de pinceau
            Ajoutez une ligne contenant la ligne "frames=N" au fichier de
            données du pinceau, où"N" est le nombre d'images dans le pinceau.
 
-           Remarque : si vous préférez que les images apparaissent de manière
-           aléatoire plutôt que séquentielle, ajoutez en plus une ligne
-           contenant "random" au fichier de données du pinceau.
+           ⚙ Note: If you'd rather the frames be flipped through randomly,
+           rather than sequentially, also add a line containing "random" to
+           the brush's data file.
 
    Pinceaux directionnels
 
@@ -249,10 +248,9 @@ Options de pinceau
    Placez les PNG de l'image du pinceau (et tous les fichiers texte de
    données) dans le répertoire "brushes".
 
-   Remarque: si vos nouveaux pinceaux se présentent tous sous forme de carrés
-   ou de rectangles pleins, c'est que vous avez oublié d'utiliser la
-   transparence alpha ! Consultez le fichier de documentation "PNG" pour plus
-   d'informations et de conseils.
+   💡 Note: If your new pinceaux all come out as solid squares or rectangles,
+   it's because you forgot to use alpha transparency! See the 'PNG
+   documentation' in Tux Paint for more information and tips.
 
                                     Tampons
 
@@ -281,19 +279,18 @@ Images des tampons
    Les SVG sont basés sur des vecteurs et seront mis à l'échelle de manière
    adéquate pour le canevas utilisé.
 
-   Remarque: si vos nouveaux des tampons basés sur PNG se présentent tous
-   sous forme de carrés ou de rectangles pleins, c'est que vous avez oublié
-   d'utiliser la transparence alpha ! Consultez le fichier de documentation
-   "PNG" pour plus d'informations et de conseils.
+   💡 Note: If your new des tampons basés sur PNG all come out as solid
+   squares or rectangles, it's because you forgot to use alpha transparency!
+   See the 'PNG documentation' in Tux Paint for more information and tips.
 
-   Remarque: si vos nouveaux tampons SVG semblent avoir beaucoup de zones
-   vides, assurez-vous que le «document» SVG n'est pas plus grand que la ou
-   les formes qu'il contient. S'ils sont coupés, assurez-vous que le
-   «document» est suffisamment grand pour contenir la ou les formes. Voir le
-   fichier de documentation " SVG" pour plus d'informations et de conseils.
+   💡 Note: If your new SVG stamps seem to have a lot of whitespace, make sure
+   the SVG 'document' is no larger than the shape(s) within. If they are
+   being clipped, make sure the 'document' is large enough to contain the
+   shape(s). See the 'SVG documentation' in Tux Paint for more information
+   and tips.
 
-   Utilisateurs avancés : Le HOWTO Advanced Stamps décrit, en détail, comment
-   créer des images PNG qui seront parfaitement mises à l'échelle
+   ⚙ Utilisateurs avancés : Le HOWTO Advanced Stamps décrit, en détail,
+   comment créer des images PNG qui seront parfaitement mises à l'échelle
    lorsqu'elles seront utilisées comme tampons dans Tux Paint .
 
 Texte de description des tampons
@@ -361,7 +358,7 @@ Effets sonores des tampons
            tentera de charger le fichier son «par défaut». (par exemple,
            "stamp.wav")
 
-   Note: Also consider using descriptive sounds; see 'Son descriptif du
+   💡 Note: Also consider using descriptive sounds; see 'Son descriptif du
    tampon', below.
 
 Son descriptif du tampon
@@ -551,9 +548,9 @@ Mise en miroir et retournement
    pré-retournée avec "_flip" dans le nom, et / ou une image qui est à la
    fois en miroir et retournée, en la nommant " _mirror_flip".
 
-   Remarque : Si l'utilisateur retourne et reflète une image, et qu'un
-   "_mirror_flip" pré-dessiné n'existe pas, mais que "_flip" ou "_mirror"
-   existe , il sera utilisé, et reflété ou retourné, selon le cas.
+   💡 Note: If the user flips and mirrors an image, and a pre-drawn
+   "_mirror_flip" doesn't exist, but either "_flip" or "_mirror" does, it
+   will be used, and mirrored or flipped, respectively.
 
                                     Polices
 
@@ -626,13 +623,12 @@ Images de démarrage avec 'style scénique'
    apparaîtront avec l'écran qui apparaît, suivant les différents choix de
    couleurs unies.
 
-   Remarque :'Images de démarrage' sont 'attachés' aux images sauvegardées,
-   via un petit fichier texte qui a le même nom que le fichier sauvegardé,
-   mais avec ".dat" comme extension. Ceci permet de continuer de s'occuper du
-   dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été
-   chargée, ou bien une nouvelle image a été créée (En d'autres termes, si
-   vous basez un dessin sur un image de démarrage, il sera toujours changé
-   par lui).
+   💡 Note: 'Images de démarrage' are 'attached' to saved pictures, via a
+   small text file that has the same name as the saved file, but with ".dat"
+   as the extension. This allows it to continue to affect the drawing even
+   after Tux Paint has been quit, or another picture is loaded or a new image
+   is created. (In other words, if you base a drawing on a image de
+   démarrage, it will always be affected by it.)
 
                                    'Modèles'
 
@@ -667,12 +663,12 @@ Images de démarrage avec 'style scénique'
    «Nouveau» est accessible dans Tux Paint , les images 'modèle' apparaîtront
    avec l'écran qui apparaît, suivant les différents choix de couleurs unies.
 
-   Remarque :'Modèles' sont 'attachés' aux images sauvegardées, via un petit
-   fichier texte qui a le même nom que le fichier sauvegardé, mais avec
-   ".dat" comme extension. Ceci permet de continuer de s'occuper du dessin,
-   mais après avoir quitté Tux Paint, oi bien une autre image a été chargée,
-   ou bien une nouvelle image a été créée (En d'autres termes, si vous basez
-   un dessin sur un image 'modèle', il sera toujours changé par lui).
+   💡 Note: 'Modèles' are 'attached' to saved pictures, via a small text file
+   that has the same name as the saved file, but with ".dat" as the
+   extension. This allows it to continue to affect the drawing even after Tux
+   Paint has been quit, or another picture is loaded or a new image is
+   created. (In other words, if you base a drawing on a image 'modèle', it
+   will always be affected by it.)
 
                                   Traductions
 
@@ -712,12 +708,12 @@ Images de démarrage avec 'style scénique'
      * Virtraal
      * Lokalize
 
-   Remarque: Il est préférable de toujours travailler avec le dernier modèle
-   de catalogue de texte Tux Paint ("tuxpaint.pot"), car un nouveau texte est
-   ajouté et l'ancien texte est parfois modifié. Le catalogue de textes de la
-   prochaine version inédite de Tux Paint se trouve dans le référentiel Git
-   de Tux Paint (voir : https://tuxpaint.org/download/source/git/ ), et sur
-   le site Web de Tux Paint à https://tuxpaint.org/help/po/.
+   💡 Note: It is best to always work off of the latest Tux Paint text catalog
+   template ("tuxpaint.pot"), since new text is added, and old text is
+   occasionally changed. The text catalog for the upcoming, unreleased
+   version of Tux Paint can be found in Tux Paint's Git repository (see:
+   https://tuxpaint.org/download/source/git/), and on the Tux Paint website
+   at https://tuxpaint.org/help/po/.
 
    Pour modifier une traduction existante, téléchargez le dernier fichier
    ".po" pour cette langue et modifiez-le comme décrit ci-dessus.
@@ -732,10 +728,10 @@ Images de démarrage avec 'style scénique'
    écriture au référentiel de code source Git afin que vous puissiez valider
    vos modifications directement.
 
-   Remarque : la prise en charge de nouveaux locales nécessite des ajouts au
-   code source de Tux Paint ( "/src/i18n.h" et "/src/i18n.c"), et nécessite
-   des mises à jour de Makefile, pour s'assurer que les fichiers ".po" sont
-   compilés en fichiers ".mo", et utilisables pendant l'exécution.
+   💡 Note: Support for new locales requires making additions to Tux Paint's
+   source code ("/src/i18n.h" et "/src/i18n.c"), and requires updates to the
+   Makefile, pour s'assurer que les fichiers ".po" sont compilés en fichiers
+   ".mo", et utilisables pendant l'exécution.
 
                         Méthodes alternatives de saisie
 
@@ -787,19 +783,18 @@ Images de démarrage avec 'style scénique'
      30AD ki -
      30AE gi -
 
-   RemarqueLes lignes vides du fichier ".im" sont ignorées, aussi bien que
-   les lignes commençant par "#" -- ce peut être utilisé pour ajouter des
-   commentaires, comme dans l'exemple ci-dessus.
+   ⚙ Note: Blank lines within the ".im" file will be ignored, as will any
+   text following a "#" (pound/hash) character — it can be used to denote
+   comments, as seen in the example above.
 
-   Remarque : Les significations des indicateurs sont spécifiques à la langue
-   et sont traitées par le code source spécifique à la langue dans
-   "src/im.c". Par exemple, "b" est utilisé en coréen pour gérer Batchim, qui
-   peut être reporté au caractère suivant.
+   💡 Note: Meanings of the flags are locale-specific, and are processed by
+   the language-specific source code in "src/im.c". For example, "b" is used
+   in Korean to handle Batchim, which may carry over to the next character.
 
-   Remarque : la prise en charge de nouveaux méthodes de saisie nécessite des
-   ajouts au code source de Tux Paint ( "/src/im.c"), et nécessite des mises
-   à jour de Makefile, pour s'assurer que les fichiers ".im" sont disponibles
-   pour être utilisés lors de l'exécution du programme.
+   💡 Note: Support for new méthodes de saisie requires making additions to
+   Tux Paint's source code ("/src/im.c"), and requires updates to the
+   Makefile, pour s'assurer que les fichiers ".im" sont disponibles pour être
+   utilisés lors de l'exécution du programme.
 
                            Clavier virtuel sur écran
 
@@ -824,9 +819,9 @@ Fichier d'aperçu de la disposition ("qwerty.layout")
      keysymdefs keysymdef.h
      keyboardlist qwerty.layout default.layout
 
-   RemarqueLes lignes vides du fichier ".layout" sont ignorées, aussi bien
-   que les lignes commençant par "#" -- ce peut être utilisé pour ajouter des
-   commentaires, comme dans l'exemple ci-dessus.
+   ⚙ Note: Blank lines within the ".layout" file will be ignored, as will any
+   text following a "#" (pound/hash) character — it can be used to denote
+   comments, as seen in the example above.
 
    La ligne "keyboardlist" décrit les dispositions vers lesquelles on bascule
    lorsque l'utilisateur clique sur les boutons gauche et droit du clavier.
@@ -962,7 +957,7 @@ Fichier de définitions des Keysim ("keysymdef.h")
    chaque keycap (par exemple, "XK_equal" correspond à "U+003D", pour le
    caractère "=" ("EQUALS SIGN").
 
-   Remarque : Ce fichier n'est pas compilé avec Tux Paint, mais il est lu et
-   analysé durant l'exécution de celui-ci.
+   💡 Note: This file is not compiled into Tux Paint, but is read and parsed
+   at runtime.
 
    Il est peu probable qu'une modification de ce fichier soit requise.
