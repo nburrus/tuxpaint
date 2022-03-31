@@ -89,8 +89,10 @@ Windows のユーザー
 
            プログラムを、ウィンドウ内ではなく、フルスクリーンモードで起動します。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "fullscreen=no"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--windowed" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "fullscreen=no".
+           In both cases, may be overridden by the command-line option
+           "--windowed".
 
    fullscreen=native
 
@@ -115,9 +117,10 @@ Windows のユーザー
 
            ウィンドウの幅と高さの設定を入れ替えます。これは、タブレットパソコンのような縦型のディスプレイでウィンドウを回転させる際に便利なオプションです。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "orient=landscape"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--orient=landscape"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "orient=landscape". In both cases, may be overridden by the
+           command-line option "--orient=landscape".
 
    native=yes
 
@@ -131,10 +134,11 @@ Windows のユーザー
            以降の場合に有効なオプションであることに注意して下さい。（環境変数 "SDL_VIDEO_ALLOW_SCREENSAVER"
            の値を "1" に設定しても、同様のことができます）
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "allowscreensaver=no" または
-           "disablescreensaver=yes"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--disablescreensaver" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "allowscreensaver=no" or "disablescreensaver=yes". In both cases,
+           may be overridden by the command-line option
+           "--disablescreensaver".
 
   音声
 
@@ -142,17 +146,19 @@ Windows のユーザー
 
            効果音を無効にします。（注：このオプションを設定すると、[Alt] + [S] を押しても、効果音を有効化することはできません
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nosound=no" または
-           "sound=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--sound"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "nosound=no" or
+           "sound=yes". In both cases, may be overridden by the command-line
+           option "--sound".
 
    nostereo=yes
 
            ステレオの効果音を無効にする。（片耳イヤホンや１台のスピーカーで使用する場合に役に立ちます）
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nostereo=no" または
-           "stereo=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--stereo" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "nostereo=no" or
+           "stereo=yes". In both cases, may be overridden by the command-line
+           option "--stereo".
 
   インターフェースサイズ
 
@@ -164,7 +170,10 @@ Windows のユーザー
            SIZE
            の値は24から192までのピクセル値で指定します。ほとんどのボタンは正方形となっており、この設定はボタンの幅と高さの両方に影響します。
 
-           注：選択されたボタンのサイズが大きすぎて画面内に必要なすべてのインターフェースが表示しきれない場合は、できる限り大きなボタンサイズが使用されます。(stderrにメモが表示されます。)
+           💡 Note: If the chosen button size would cause the buttons to be
+           too large for all required UI elements to appear under Tux Paint's
+           chosen window size, the largest possible button size will be used.
+           (A note will appear in stderr.)
 
    colorsrows=ROWS
 
@@ -183,9 +192,10 @@ Windows のユーザー
            環境によっては Tux Paint
            のマウスカーソルが原因で不具合が起こることがあります。そういった場合にこのオプションを有効にして下さい。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nofancycursors=no" または
-           "fancycursors=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--fancycursors" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nofancycursors=no" or "fancycursors=yes". In both cases, may be
+           overridden by the command-line option "--fancycursors".
 
    hidecursor=yes
 
@@ -193,9 +203,10 @@ Windows のユーザー
 
            タブレットＰＣなどのタッチスクリーンを用いるデバイスのためのオプションです。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "hidecursor=no" または
-           "showcursor=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--showcursor" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "hidecursor=no"
+           or "showcursor=yes". In both cases, may be overridden by the
+           command-line option "--showcursor".
 
   キーボード
 
@@ -205,9 +216,10 @@ Windows のユーザー
 
            これは、キーボードの操作に慣れていない子供が不用意にコマンドを実行してしまうことを防ぐために有効です。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "noshortcuts=no" または
-           "shortcuts=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--shortcuts" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "noshortcuts=no"
+           or "shortcuts=yes". In both cases, may be overridden by the
+           command-line option "--shortcuts".
 
   マウス
 
@@ -219,17 +231,19 @@ Windows のユーザー
            によるウィンドウの切り替えや、[Ctrl]-[Escape]
            キーによる操作が無効になります。このオプションは、特にフルスクリーンモード時に有効です。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "grab=no" または
-           "dontgrab=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--dontgrab" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "grab=no" or
+           "dontgrab=yes". In both cases, may be overridden by the
+           command-line option "--dontgrab".
 
    nowheelmouse=yes
 
            マウスでのホイールによる操作が無効になります。(通常、ホイールは右のセレクターメニューをスクロールします)。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nowheelmouse=no" または
-           "wheelmouse=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--wheelmouse" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nowheelmouse=no" or "wheelmouse=yes". In both cases, may be
+           overridden by the command-line option "--wheelmouse".
 
    nobuttondistinction=yes
 
@@ -238,10 +252,11 @@ Windows のユーザー
 
            マウス操作が苦手なお子さんの場合、このオプションを使用することで、マウスの2つまたは3つのボタンの区別を無効にすることができます。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nobuttondistinction=no"
-           または "buttondistinction=yes"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--buttondistinction"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nobuttondistinction=no" or "buttondistinction=yes". In both
+           cases, may be overridden by the command-line option
+           "--buttondistinction".
 
 単純化
 
@@ -251,9 +266,10 @@ Windows のユーザー
 
            「ずけい」ツールで、形を決めたあとに回転させるステップを省略します。クリックして、ドラッグして、ボタンを離すだけで、図形を描くことができます。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "simpleshapes=no" または
-           "complexshapes=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--complexshapes" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "simpleshapes=no" or "complexshapes=yes". In both cases, may be
+           overridden by the command-line option "--complexshapes".
 
    nooutlines=yes
 
@@ -261,17 +277,19 @@ Windows のユーザー
 
            Tux Paint を非常に遅いパソコンで使いたい場合や、リモートの X-Window ディスプレイで使う場合に、速度を改善します。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nooutlines=no" または
-           "outlines=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--outlines" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "nooutlines=no"
+           or "outlines=yes". In both cases, may be overridden by the
+           command-line option "--outlines".
 
    uppercase=yes
 
            すべてのテキストが大文字で表記されます（例：「Brush」は「BRUSH」）。まだ大文字しか習っていない子供たちにとって役に立つオプションです。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "uppercase=no" または
-           "mixedcase=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--mixedcase" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "uppercase=no"
+           or "mixedcase=yes". In both cases, may be overridden by the
+           command-line option "--mixedcase".
 
   スタンプサイズ
 
@@ -293,8 +311,10 @@ Windows のユーザー
 
            また、[Shift] + [Control] + [Escape]. というキーの組み合わせでもプログラムを終了することができます。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "noquit=no" または "quit=yes"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--quit" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "noquit=no" or
+           "quit=yes". In both cases, may be overridden by the command-line
+           option "--quit".
 
    nostamps=yes
 
@@ -302,54 +322,60 @@ Windows のユーザー
 
            これによって、初回起動時のプログラムの読み込みが高速になります。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nostamps=no" または
-           "stamps=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--stamps" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "nostamps=no" or
+           "stamps=yes". In both cases, may be overridden by the command-line
+           option "--stamps".
 
    nostampcontrols=yes
 
            「はんこ」ツールの画像には、上下または左右に反転できたり、大きさを変更したりできるものがあります。このオプションを設定すると、このような操作を無効にします。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nostampcontrols=no" または
-           "stampcontrols=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--stampcontrols" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nostampcontrols=no" or "stampcontrols=yes". In both cases, may be
+           overridden by the command-line option "--stampcontrols".
 
    nomagiccontrols=yes
 
            「まほう」ツールの中には、「ふで」ツールのように画像の一部分だけに効果を及ぼすか、キャンバス全体に効果を及ぼすかを選択できるものがあります。このオプションを設定すると、「まほう」ツールの動作の選択を無効にして、ツールごとに標準の動作だけをするようにします。（たいていは「ふで」のような動作になります）
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nomagiccontrols=no" または
-           "magiccontrols=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--magiccontrols" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nomagiccontrols=no" or "magiccontrols=yes". In both cases, may be
+           overridden by the command-line option "--magiccontrols".
 
    noshapecontrols=yes
 
            「かたち」ツールでの２つの動作モード－マウスをクリックした箇所を中心として図形を拡大するか、マウスをクリックした箇所をコーナーとして図形を拡大するか－を選択するボタンを無効にします。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "noshapecontrols=no" または
-           "shapecontrols=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--shapecontrols" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "noshapecontrols=no" or "shapecontrols=yes". In both cases, may be
+           overridden by the command-line option "--shapecontrols".
 
    nolabel=yes
 
            「ラベル」ツールを無効にします。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nolabel=no" または
-           "label=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--label"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "nolabel=no" or
+           "label=yes". In both cases, may be overridden by the command-line
+           option "--label".
 
    nobrushspacing=yes
 
            Disables the brush spacing option of the Paint and Lines tools.
            The brushes' default spacings will be used.
 
-           Note: The brush spacing option was added to Tux Paint's user
+           📜 Note: The brush spacing option was added to Tux Paint's user
            interface in version 0.9.28. For more information on brush
            spacing, see EXTENDING.html
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nobrushspacing=no" または
-           "brushspacing=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--brushspacing" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nobrushspacing=no" or "brushspacing=yes". In both cases, may be
+           overridden by the command-line option "--brushspacing".
 
 言語関連
 
@@ -630,10 +656,10 @@ Windows のユーザー
 
            左から右ではなく右から左に向かって描き進むことを好むユーザーに役に立つオプションです。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "mirrorstamps=no" または
-           "dontmirrorstamps=yes"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--dontmirrorstamps"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "mirrorstamps=no" or "dontmirrorstamps=yes". In both cases, may be
+           overridden by the command-line option "--dontmirrorstamps".
 
   フォント
 
@@ -642,9 +668,10 @@ Windows のユーザー
            もじツールで、オペレーティングシステムのフォントを使用します。通常では、Tux Paint
            はパッケージに付属するフォントだけを使用します。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "sysfonts=no" または
-           "nosysfonts=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-           "--nosysfonts" で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "sysfonts=no" or
+           "nosysfonts=yes". In both cases, may be overridden by the
+           command-line option "--nosysfonts".
 
    alllocalefonts=yes
 
@@ -655,10 +682,10 @@ Windows のユーザー
 
            以前のバージョンのように全てのフォントを読み込むようにするには、このオプションを有効にします。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "alllocalefonts=no" または
-           "currentlocalefont=yes"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--currentlocalefont"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "alllocalefonts=no" or "currentlocalefont=yes". In both cases, may
+           be overridden by the command-line option "--currentlocalefont".
 
 印刷
 
@@ -672,9 +699,10 @@ Windows のユーザー
 
            SECONDS で設定した秒数ごとに１回だけしか印刷できなくなります。
 
-           注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "printdelay=0"
-           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--printdelay=0"
-           で変更できます。
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "printdelay=0".
+           In both cases, may be overridden by the command-line option
+           "--printdelay=0".
 
   印刷ダイアログの表示
 
@@ -703,14 +731,17 @@ Windows のユーザー
              印刷の設定をファイルから読み込みます。[Alt] キーを押しながら "いんさつ" ボタンを押すと、Windows
              の印刷ダイアログが起動します。
 
-             （注：これは、Tux Paint
-             をフルスクリーンモードで起動している場合にのみ有効であることに注意してください。）"printcfg"
-             オプションが設定されていれば、変更した印刷の設定は "userdata/print.cfg"
-             ファイルに記録され、再利用されます。
+             Any configuration changes made in this dialog will be saved to
+             the file "userdata/print.cfg" , and used again, as long as the
+             "printcfg" option is set.
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "printcfg=no" または
-             "noprintcfg=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-             "--noprintcfg" で変更できます。
+             💡 Note: This only works when not running Tux Paint in fullscreen
+             mode.
+
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "printcfg=no"
+             or "noprintcfg=yes". In both cases, may be overridden by the
+             command-line option "--noprintcfg".
 
   印刷コマンド
 
@@ -723,8 +754,8 @@ Windows のユーザー
 
                lpr
 
-             注： バージョン 0.9.15 より前までは、印刷コマンド（標準では "pngtopnm | pnmtops | lpr"）に
-             PNG 形式のデータを送信していました。
+             📜 注： バージョン 0.9.15 より前までは、印刷コマンド（標準では "pngtopnm | pnmtops |
+             lpr"）に PNG 形式のデータを送信していました。
 
              このため、バージョン 0.9.15 以前で printcommand を lpr
              以外に設定していた場合は、この設定を変更する必要があります。
@@ -781,18 +812,19 @@ Windows のユーザー
 
              Tux Paint を起動する際、前回最後に開いていた絵を読み込む代わりに、毎回、空のキャンバスで開始します。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "startblank=no" または
-             "startlast=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-             "--startlast" で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "startblank=no" or "startlast=yes". In both cases, may be
+             overridden by the command-line option "--startlast".
 
      newcolorslast=yes
 
              「さいしょから」でキャンバスを選択する際、単色のキャンバスが末尾に、スターター画像やテンプレートが先頭になるよう、表示順序を変更します。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "newcolorslast=no" または
-             "newcolorsfirst=yes"
-             を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--newcolorsfirst"
-             で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "newcolorslast=no" or "newcolorsfirst=yes". In both cases, may
+             be overridden by the command-line option "--newcolorsfirst".
 
   保存・書き出し先のディレクトリ
 
@@ -814,12 +846,14 @@ Windows のユーザー
                   例：/Users/Username/Library/Application
                   Support/TuxPaint/saved/
 
-             注：Windowsのドライブ（例："H:\"）を指定する際は、サブディレクトリも指定する必要があります。
+             💡 Note: When specifying a Windows drive (e.g., "H:\"), you must
+             also specify a subdirectory.
 
-             注：バージョン 0.9.18
-             以前は、作品データ以外に、個人用データファイル（ペイントブラシ、スタンプ、スターター、フォント）を検索する場所としても、"savedir"
-             の設定を使用していました。バージョン 0.9.18 からは、これらのディレクトリの場所を別途指定することができます（後述の
-             "datadir" オプションを参照）。
+             📜 Note: Prior to version 0.9.18, Tux Paint would also use the
+             setting or default for "savedir" as the place to search for
+             personal data files (brushes, stamps, starters and fonts). As of
+             version 0.9.18, they may be specified separately (see the
+             "datadir" option, below).
 
              例：savedir=Z:\tuxpaint\
 
@@ -843,9 +877,11 @@ Windows のユーザー
                      * テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
                 * macOS — TBD!
 
-             注：標準の設定を用いる場合は、画像用のディレクトリにサブディレクトリ "TuxPaint"
-             が作成されます。（例："~/Pictures/TuxPaint"）一方、"--exportdir"
-             オプションを用いると、指定されたパスがそのまま使用されます（サブディレクトリ "TuxPaint" は作成されません）。
+             💡 Note: When the defaults are used, a new "TuxPaint"
+             subdirectory will be created and used. (e.g.,
+             "~/Pictures/TuxPaint") When the "--exportdir" option is used,
+             the exact path specified will be used (no "TuxPaint"
+             subdirectory is created).
 
              ディレクトリ（例: "~/Pictures/TuxPaint"）が存在しない場合は新たに作成されます。
 
@@ -860,17 +896,19 @@ Windows のユーザー
              絵の保存ができないようにします（"セーブ"
              ボタンも無効になります）。一時的なお遊びに使う場合や、テスト環境で使えるオプションです。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nosave=no" または
-             "save=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--save"
-             で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "nosave=no" or
+             "save=yes". In both cases, may be overridden by the command-line
+             option "--save".
 
      autosave=yes
 
              プログラムを終了するときに、絵を保存するかどうか尋ねずに、自動的に保存します。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "autosave=no" または
-             "noautosave=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-             "--noautosave" で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "autosave=no"
+             or "noautosave=yes". In both cases, may be overridden by the
+             command-line option "--noautosave".
 
 データ
 
@@ -886,9 +924,10 @@ Windows のユーザー
              標準では、Linux および Unix では "~/.tuxpaint/" に、Windows では "userdata\"
              にロックファイルが保存されます。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nolockfile=no" または
-             "lockfile=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-             "--lockfile" で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "nolockfile=no" or "lockfile=yes". In both cases, may be
+             overridden by the command-line option "--lockfile".
 
   データ・ディレクトリ
 
@@ -913,10 +952,12 @@ Windows のユーザー
                   例：/Users/Username/Library/Application
                   Support/TuxPaint/brushes/
 
-             注：バージョン 0.9.18 以前は "savedir" の指定と同じディレクトリを使用していました。0.9.18
-             以降では個別に設定できるようになりました。
+             📜 Note: Prior to version 0.9.18, Tux Paint would use the same
+             setting or default as for "savedir" to search for data files. As
+             of version 0.9.18, they may be specified separately.
 
-             注：Windowsのドライブ（例："H:\"）を指定する際は、サブディレクトリも指定する必要があります。
+             💡 Note: When specifying a Windows drive (e.g., "H:\"), you must
+             also specify a subdirectory.
 
              例：datadir=/home/johnny/tuxpaint-data/
 
@@ -971,12 +1012,20 @@ Windows のユーザー
                           * [F11]（[F12]）： 前のボタン（次のボタン）に移動
                 * クリック＆ドラッグの操作は、クリックキーのどちらか（例えば [Insert]）を押しながら、マウス移動のキー（例えば
                   [Left]）を押します。
-                     * 注：「mouse-accessibility」オプションの機能は、キーボードの操作にも連動します。両方のオプションを有効にした場合、例えば線を引く場合は、「クリック」のキーを一度押してから「移動」のキーで描画し、最後にもう一度「クリック」キーを押して描画を完了します。
+
+                  💡 >Note: The "mouse accessibility" feature works with the
+                  keyboard mouse controls. With both options enabled,
+                  painting tools can be used to draw by pressing a 'click'
+                  key to start clicking, movement keys to move around (which
+                  will draw), and another 'click' key to end the click (stop
+                  drawing).
+
                 * 通常のマウスやジョイスティックも同時に使用することができます（例えば、マウスで移動してキーボードでクリックしたり、その逆も可能です）。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "keyboard=no" または
-             "mouse=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-             "--mouse" で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using "keyboard=no"
+             or "mouse=yes". In both cases, may be overridden by the
+             command-line option "--mouse".
 
   画面キーボード
 
@@ -986,18 +1035,20 @@ Windows のユーザー
 
      onscreen-keyboard-layout=レイアウト名
 
-             画面キーボードの初期レイアウトを設定します。
-             注：このオプションが設定されると、onscreen-keyboard=yes も設定されているとみなします。
+             Selects the initial layout for the on-screen keyboard when using
+             the Text and Label tools.
+             このオプションが設定されると onscreen-keyboard=yes も設定されているとみなします。
 
      onscreen-keyboard-disable-change=yes
 
              画面キーボードの変更をできないようにします。小さな子供向けにシンプルにしたい場合に設定します。
              このオプションが設定されると onscreen-keyboard=yes も設定されているとみなします。
 
-             注：システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで
-             "onscreen-keyboard-disable-change=no"
-             を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
-             "--onscreen-keyboard-disable-change=no" で変更できます。
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "onscreen-keyboard-disable-change=no". In both cases, may be
+             overridden by the command-line option
+             "--onscreen-keyboard-disable-change=no".
 
 ジョイスティック
 
@@ -1576,7 +1627,10 @@ Windows のユーザー
 
      (*) - これらの原語では専用のフォントが必要です。以下の"言語固有のフォント"の項をごらんください。
 
-     注：いくつかの言語では、もじツールやラベルツールで、その言語用の入力方式が利用できます。もじツールやラベルツールを使っているときに利用可能な入力方式を順に切り替えるためのキーの組み合わせが上の表の最後の列に示されています。
+     💡 Note: Tux Paint provides an alternative input method for entering
+     characters with the Text tool in some locales. The key comibation(s)
+     listed can be used to cycle through the supported input methods while
+     the Text tool is active.
 
 環境で使用する言語の設定
 
@@ -1592,11 +1646,12 @@ Windows のユーザー
      まず最初に、使用したい言語が有効になるように "/etc/locale.gen" ファイルを確認、編集した後、管理者権限で
      "locale-gen" コマンドを実行します。
 
-     注：Debian Linux のユーザーは、"dpkg-reconfigure locales"
-     というコマンドを管理者権限で実行すれば、ダイアログ形式で設定を行えます。。Ubuntu では、"localeconf"
-     パッケージがインストールされていれば "sudo dpkg-reconfigure localeconf"
-     というコマンドが使えます。また、"/usr/share/i18n/SUPPORTED" ファイルにある言語のリストの中から、使用したい言語を
-     "/var/lib/locales/supported.d/local" ファイルに追加するという方法もあります。
+     💡 Note: Debian users may be able to simply run the command
+     "dpkg-reconfigure locales" as root to bring up a configuration dialog.
+     Ubuntu users may be able to run "sudo dpkg-reconfigure localeconf" (the
+     "localeconf" package may need to be installed first), or you may need to
+     edit the file "/var/lib/locales/supported.d/local" first, and add
+     locales they want, from the list found in "/usr/share/i18n/SUPPORTED".
 
      次に、Tux Paint を起動する前に、環境変数 "$LANG"
      を上記のリストの言語コードのいずれかに設定します。（言語の設定を、全てのプログラムに適用したい場合は、以下の設定をログインスクリプト（"~/.profile",
@@ -1636,9 +1691,11 @@ Windows のユーザー
      いくつかの言語では、専用のフォントが必要になります。TrueType（TTF）形式のフォントファイルは、サイズが非常に大きいので、Tux
      Paint のダウンロードファイルには含めず、個別にダウンロードできるようにしています。（"使用する言語の選択"の項の表を参照してください）
 
-     注：バージョン 0.9.18 の時点で、Tux Paint では SDL_ttf ライブラリを直接には使わず、テキストレンダリングライブラリ
-     "Pango" をSDL経由で使うための "SDL_Pango" ライブラリを用いています。お使いの Tux Paint が Pango
-     のサポートを無効にしてコンパイルされていない限り、言語固有のフォントは必要ありません
+     📜 Note: As of version 0.9.18, Tux Paint uses the "SDL_Pango" library,
+     which utilizes the "Pango" library to render text in the user interface,
+     rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was
+     built without Pango support, special fonts should no longer be
+     necessary.
 
      固有のフォントを必要とする言語で Tux Paint を使用する場合、システム全体の "fonts" ディレクトリ（"locale"
      以下にあります）からフォントファイルを読み込みます。フォントファイルのファイル名は、言語コードの最初の2文字と対応します（例えば、韓国語では

@@ -106,7 +106,7 @@ Video/Sound
            Executar o programa en modo de pantalla completa en vez de nunha
            xanela.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "fullscreen=no".
            In both cases, may be overridden by the command-line option
            "--windowed".
@@ -141,7 +141,7 @@ Video/Sound
            xirar a xanela nas pantallas verticais, como unha tableta que está
            en orientación de tableta.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "orient=landscape". In both cases, may be overridden by the
            command-line option "--orient=landscape".
@@ -161,7 +161,7 @@ Video/Sound
            variábel de contorno «SDL_VIDEO_ALLOW_SCREENSAVER» do seu sistema
            en «1».)
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "allowscreensaver=no" or "disablescreensaver=yes". In both cases,
            may be overridden by the command-line option
@@ -175,7 +175,7 @@ Video/Sound
            poden volver activar os sons se se desactivaron usando esta
            opción).
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "nosound=no" or
            "sound=yes". In both cases, may be overridden by the command-line
            option "--sound".
@@ -186,7 +186,7 @@ Video/Sound
            usuarios con discapacidade auditiva nun oído ou lugares onde se
            está a empregar un só altofalante ou auricular.)
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "nostereo=no" or
            "stereo=yes". In both cases, may be overridden by the command-line
            option "--stereo".
@@ -204,11 +204,10 @@ Video/Sound
            24 e 192, inclusive. A maioría dos botóns son cadrados e isto
            afectará ao seu largo e alto.
 
-           Nota: Se o tamaño do botón escollido fai que os botóns sexan
-           demasiado grandes para que aparezan todos os elementos da
-           interface de usuario requiridos dentro do tamaño de xanela
-           escollido por Tux Paint, empregarase o tamaño de botón máis grande
-           posíbel. (Aparecerá unha nota en stderr.)
+           💡 Note: If the chosen button size would cause the buttons to be
+           too large for all required UI elements to appear under Tux Paint's
+           chosen window size, the largest possible button size will be used.
+           (A note will appear in stderr.)
 
    colorsrows=FILAS
 
@@ -229,7 +228,7 @@ Mouse/Keyboard
            Nalgúns contornos, os cursores de fantasía causan problemas. Use
            esta opción para evitalos.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "nofancycursors=no" or "fancycursors=yes". In both cases, may be
            overridden by the command-line option "--fancycursors".
@@ -242,7 +241,7 @@ Mouse/Keyboard
            Isto é útil para dispositivos con pantalla táctil, como as
            tabletas.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "hidecursor=no"
            or "showcursor=yes". In both cases, may be overridden by the
            command-line option "--showcursor".
@@ -257,7 +256,7 @@ Mouse/Keyboard
            Isto é útil para evitar que ordes non desexadas sexan activadas
            por cativos que non teñen experiencia con teclados.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "noshortcuts=no"
            or "shortcuts=yes". In both cases, may be overridden by the
            command-line option "--shortcuts".
@@ -275,7 +274,7 @@ Mouse/Keyboard
            [Alt]-[Tab], [Ctrl]-[Escape], etc. Isto é especialmente útil no
            modo de pantalla completa.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "grab=no" or
            "dontgrab=yes". In both cases, may be overridden by the
            command-line option "--dontgrab".
@@ -286,7 +285,7 @@ Mouse/Keyboard
            teñen. (Normalmente, a roda desprazará o menú do selector á
            dereita.)
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "nowheelmouse=no" or "wheelmouse=yes". In both cases, may be
            overridden by the command-line option "--wheelmouse".
@@ -303,7 +302,7 @@ Mouse/Keyboard
            (devolvendo Tux Paint ao seu antigo comportamento) usando esta
            opción.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "nobuttondistinction=no" or "buttondistinction=yes". In both
            cases, may be overridden by the command-line option
@@ -318,7 +317,7 @@ Simplificación
            Desactive o paso de rotación da ferramenta «Forma». Prema,
            arrastra e solte é todo o que se necesita para debuxar unha forma.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "simpleshapes=no" or "complexshapes=yes". In both cases, may be
            overridden by the command-line option "--complexshapes".
@@ -331,7 +330,7 @@ Simplificación
            Isto pode axudar cando Tux Paint se executa en computadores moi
            lentos ou se amosa nunha pantalla remota de X-Window.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "nooutlines=no"
            or "outlines=yes". In both cases, may be overridden by the
            command-line option "--outlines".
@@ -342,7 +341,7 @@ Simplificación
            será «PINCEL»). Útil para os cativos que saben ler, pero que ata
            agora só aprenderon maiúsculas.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "uppercase=no"
            or "mixedcase=yes". In both cases, may be overridden by the
            command-line option "--mixedcase".
@@ -374,7 +373,7 @@ Simplificación
            Tamén pode usar a seguinte combinación de teclado para saír:
            [Maiúsculas] + [Control] + [Escape].
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "noquit=no" or
            "quit=yes". In both cases, may be overridden by the command-line
            option "--quit".
@@ -389,7 +388,7 @@ Simplificación
            reducir o uso de memoria mentres se está a executar. Por suposto,
            ningún selo estará dispoñíbel.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "nostamps=no" or
            "stamps=yes". In both cases, may be overridden by the command-line
            option "--stamps".
@@ -400,7 +399,7 @@ Simplificación
            e/ou cambiar o seu tamaño. Esta opción desactiva os controis e só
            fornece os selos básicos.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "nostampcontrols=no" or "stampcontrols=yes". In both cases, may be
            overridden by the command-line option "--stampcontrols".
@@ -412,7 +411,7 @@ Simplificación
            controis e só fornece a funcionalidade predeterminada (normalmente
            en modo pintura).
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "nomagiccontrols=no" or "magiccontrols=yes". In both cases, may be
            overridden by the command-line option "--magiccontrols".
@@ -424,7 +423,7 @@ Simplificación
            centradas arredor do clic inicial do rato ou cun canto co clic
            inicial do rato.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "noshapecontrols=no" or "shapecontrols=yes". In both cases, may be
            overridden by the command-line option "--shapecontrols".
@@ -434,7 +433,7 @@ Simplificación
            Desactiva a ferramenta Etiqueta: a ferramenta que permite a
            entrada de texto que se pode editar máis tarde.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "nolabel=no" or
            "label=yes". In both cases, may be overridden by the command-line
            option "--label".
@@ -444,11 +443,11 @@ Simplificación
            Disables the brush spacing option of the Paint and Lines tools.
            The brushes' default spacings will be used.
 
-           Note: The brush spacing option was added to Tux Paint's user
+           📜 Note: The brush spacing option was added to Tux Paint's user
            interface in version 0.9.28. For more information on brush
            spacing, see EXTENDING.html
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "nobrushspacing=no" or "brushspacing=yes". In both cases, may be
            overridden by the command-line option "--brushspacing".
@@ -738,7 +737,7 @@ Languages
            Isto pode ser útil para as persoas que prefiren as cousas de
            dereita a esquerda no canto de de esquerda a dereita.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "mirrorstamps=no" or "dontmirrorstamps=yes". In both cases, may be
            overridden by the command-line option "--dontmirrorstamps".
@@ -752,7 +751,7 @@ Languages
            Normalmente, Tux Paint só cargará os que foron incluídos con Tux
            Paint.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "sysfonts=no" or
            "nosysfonts=yes". In both cases, may be overridden by the
            command-line option "--nosysfonts".
@@ -770,7 +769,7 @@ Languages
            Para cargar todos os tipos de letra específicos das configuracións
            locais (o comportamento antigo), configure esta opción.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
            "alllocalefonts=no" or "currentlocalefont=yes". In both cases, may
            be overridden by the command-line option "--currentlocalefont".
@@ -788,7 +787,7 @@ Impresión
            Restrinxir a impresión para que só poida producirse unha vez cada
            SEGUNDOS segundos.
 
-           Note: If used in a system-wide configuration file, may be
+           ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using "printdelay=0".
            In both cases, may be overridden by the command-line option
            "--printdelay=0".
@@ -829,13 +828,14 @@ Impresión
              «Imprimir» en Tux Paint para que apareza unha xanela de diálogo
              de impresión de Windows.
 
-             (Nota: Isto só funciona cando non se está a executar Tux Paint
-             en modo de pantalla completa.) Calquera cambio de configuración
-             feito neste diálogo gardarase no ficheiro «userdata/print.cfg» e
-             volverase a usar, sempre que estea configurada a opción
-             «printcfg».
+             Any configuration changes made in this dialog will be saved to
+             the file "userdata/print.cfg" , and used again, as long as the
+             "printcfg" option is set.
 
-             Note: If used in a system-wide configuration file, may be
+             💡 Note: This only works when not running Tux Paint in fullscreen
+             mode.
+
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using "printcfg=no"
              or "noprintcfg=yes". In both cases, may be overridden by the
              command-line option "--noprintcfg".
@@ -852,7 +852,7 @@ Impresión
 
                lpr
 
-             Nota: As versións de Tux Paint anteriores ao 0.9.15 enviaban
+             📜 Nota: As versións de Tux Paint anteriores ao 0.9.15 enviaban
              datos en formato PNG á orde de impresión (de xeito
              predeterminado era «pngtopnm | pnmtops | lpr»).
 
@@ -924,7 +924,7 @@ Gardar
              por vez primeira, no canto de cargar a última imaxe que se
              estaba a editar.
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using
              "startblank=no" or "startlast=yes". In both cases, may be
              overridden by the command-line option "--startlast".
@@ -934,7 +934,7 @@ Gardar
              Coloca as opcións de cor en branco no diálogo Novo ao final, de
              xeito que se amosen primeiro os iniciadores e/ou modelos.
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using
              "newcolorslast=no" or "newcolorsfirst=yes". In both cases, may
              be overridden by the command-line option "--newcolorsfirst".
@@ -961,15 +961,14 @@ Gardar
                   Exemplo: /Users/Username/Library/Application
                   Support/TuxPaint/saved/
 
-             Nota: Ao especificar unha unidade de Windows (por exemplo,
-             «H:\»), tamén debe especificar un subdirectorio.
+             💡 Note: When specifying a Windows drive (e.g., "H:\"), you must
+             also specify a subdirectory.
 
-             Nota: Antes da versión 0.9.18, Tux Paint tamén usaba a
-             configuración ou o valor predeterminado para «savedir» como o
-             lugar onde buscar ficheiros de datos persoais (pinceis, selos,
-             imaxes de comezo e tipos de letra) . A partir da versión 0.9.18,
-             pódense especificar por separado (consulte a opción «datadir», a
-             continuación).
+             📜 Note: Prior to version 0.9.18, Tux Paint would also use the
+             setting or default for "savedir" as the place to search for
+             personal data files (brushes, stamps, starters and fonts). As of
+             version 0.9.18, they may be specified separately (see the
+             "datadir" option, below).
 
              Exemplo: savedir=Z:\tuxpaint\
 
@@ -1001,11 +1000,11 @@ Gardar
                        prema en [Aceptar.]
                 * macOS — TBD!
 
-             Nota: Cando se empregan os valores predeterminados, crearase e
-             usarase un novo subdirectorio «TuxPaint». (p. ex.:
-             «~/Imaxes/TuxPaint») Cando se usa a opción «--exportdir»,
-             empregarase a ruta exacta especificada (non se crea ningún
-             subdirectorio «TuxPaint»).
+             💡 Note: When the defaults are used, a new "TuxPaint"
+             subdirectory will be created and used. (e.g.,
+             "~/Imaxes/TuxPaint") When the "--exportdir" option is used, the
+             exact path specified will be used (no "TuxPaint" subdirectory is
+             created).
 
              O directorio en si (p. ex.: «~/Imaxes/TuxPaint») crearase, se
              non existe.
@@ -1025,7 +1024,7 @@ Gardar
              usarse en situacións nas que o programa só se usa para
              divertirse ou nun contorno de proba.
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using "nosave=no" or
              "save=yes". In both cases, may be overridden by the command-line
              option "--save".
@@ -1035,7 +1034,7 @@ Gardar
              Isto impide a Tux Paint preguntar se quere gardar a imaxe actual
              ao saír e supón que si.
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using "autosave=no"
              or "noautosave=yes". In both cases, may be overridden by the
              command-line option "--noautosave".
@@ -1062,7 +1061,7 @@ Data
              De xeito predeterminado, o ficheiro de bloqueo almacénase en
              «~/.tuxpaint/» en Linux e Unix e en «userdata\» en Windows.
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using
              "nolockfile=no" or "lockfile=yes". In both cases, may be
              overridden by the command-line option "--lockfile".
@@ -1094,13 +1093,12 @@ Data
                   Exemplo: /Users/Username/Library/Application
                   Support/TuxPaint/brushes/
 
-             Nota: Antes da versión 0.9.18, Tux Paint usaba o mesmo axuste ou
-             predeterminado que para «savedir» para buscar ficheiros de
-             datos. A partir da versión 0.9.18, pódense especificar por
-             separado.
+             📜 Note: Prior to version 0.9.18, Tux Paint would use the same
+             setting or default as for "savedir" to search for data files. As
+             of version 0.9.18, they may be specified separately.
 
-             Nota: Ao especificar unha unidade de Windows (por exemplo,
-             «H:\»), tamén debe especificar un subdirectorio.
+             💡 Note: When specifying a Windows drive (e.g., "H:\"), you must
+             also specify a subdirectory.
 
              Exemplo: datadir=/home/johnny/tuxpaint-data/
 
@@ -1178,18 +1176,19 @@ Accessibility
                 * Para premer e arrastrar, manteña premida unha das teclas de
                   «clic» (p. ex.: [Insert]) e use as teclas de movemento (p.
                   ex.: [Left]).
-                     * Nota: a función de «accesibilidade do rato» funciona
-                       cos controis do rato do teclado. Con ambas as opcións
-                       activadas, as ferramentas de pintura pódense empregar
-                       para debuxar premendo unha tecla «clic» para comezar a
-                       premer, as teclas de movemento para moverse (que
-                       debuxará) e outra tecla «clic» para deixar de premer
-                       (deixar de debuxar).
+
+                  💡 >Note: The "mouse accessibility" feature works with the
+                  keyboard mouse controls. With both options enabled,
+                  painting tools can be used to draw by pressing a 'click'
+                  key to start clicking, movement keys to move around (which
+                  will draw), and another 'click' key to end the click (stop
+                  drawing).
+
                 * Aínda se pode usar un rato e/ou unha panca de mando
                   (joystick) normais (para que poida, por exemplo, moverse co
                   rato e premer co teclado ou viceversa)
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using "keyboard=no"
              or "mouse=yes". In both cases, may be overridden by the
              command-line option "--mouse".
@@ -1203,11 +1202,11 @@ Accessibility
 
      onscreen-keyboard-layout=NOME DA DISPOSICIÓN
 
-             Selecciona o deseño inicial para o teclado en pantalla cando usa
-             as ferramentas Texto e Etiqueta.
-             Nota: Usar esta opción implica onscreen-keyboard=yes
-             automaticamente, polo que configurar ambas as cousas é
-             redundante .
+             Selects the initial layout for the on-screen keyboard when using
+             the Text and Label tools.
+             Nota: Usar esta opción implica automaticamente
+             onscreen-keyboard=yes, polo que estabelecer ambas as cousas é
+             redundante.
 
      onscreen-keyboard-disable-change=yes
 
@@ -1218,7 +1217,7 @@ Accessibility
              onscreen-keyboard=yes, polo que estabelecer ambas as cousas é
              redundante.
 
-             Note: If used in a system-wide configuration file, may be
+             ⚙ Note: If used in a system-wide configuration file, may be
              overridden by the user's configuration file using
              "onscreen-keyboard-disable-change=no". In both cases, may be
              overridden by the command-line option
@@ -1851,10 +1850,10 @@ Idiomas dispoñíbeis
      se representan usando un conxunto de caracteres latinos, como os demais.
      Vexa a sección «Tipos de letra especiais», a continuación.
 
-     Nota: Tux Paint fornece un método de entrada alternativo para introducir
-     caracteres coa ferramenta Texto nalgunhas configuracións locais. A(s)
-     combinación(s) de teclas indicada(s) pode usarse para percorrer os
-     métodos de entrada admitidos mentres a ferramenta Texto está activa.
+     💡 Note: Tux Paint provides an alternative input method for entering
+     characters with the Text tool in some locales. The key comibation(s)
+     listed can be used to cycle through the supported input methods while
+     the Text tool is active.
 
 Axustar o idioma do seu contorno
 
@@ -1874,13 +1873,12 @@ Axustar o idioma do seu contorno
      activada editando o ficheiro «/etc/locale.gen» no seu sistema e logo
      executando o programa «locale-gen» como superusuario «root».
 
-     Nota: os usuarios de Debian poden executar a orde «dpkg-reconfigure
-     locales» como superusuario (root) para abrir un diálogo de
-     configuración. Os usuarios de Ubuntu poden executar «sudo
-     dpkg-reconfigure localeconf» (é posíbel que teña que instalar antes o
-     paquete «localeconf») ou pode que teña que editar primeiro o ficheiro
-     «/var/lib/locales/supported.d/local» e engadir as configuracións locais
-     que queiran, da lista que se atopa en «/usr/share/i18n/SUPPORTED».
+     💡 Note: Debian users may be able to simply run the command
+     "dpkg-reconfigure locales" as root to bring up a configuration dialog.
+     Ubuntu users may be able to run "sudo dpkg-reconfigure localeconf" (the
+     "localeconf" package may need to be installed first), or you may need to
+     edit the file "/var/lib/locales/supported.d/local" first, and add
+     locales they want, from the list found in "/usr/share/i18n/SUPPORTED".
 
      Após, antes de executar Tux Paint, configure a súa variábel de contorno
      «$LANG» a unha das configuracións locais mencionadas anteriormente. (Se
@@ -1931,11 +1929,11 @@ Tipos de letra especiais
      separado. (Vexa a táboa anterior, na sección «Escoller un idioma
      diferente»).
 
-     Nota: A partir da versión 0.9.18, Tux Paint usa a biblioteca
-     «SDL_Pango», que utiliza a biblioteca «Pango» para renderizar texto na
-     interface de usuario, no canto de usar directamente «SDL_ttf». A non ser
-     que a súa copia de Tux Paint se construíse sen compatibilidade con
-     Pango, os tipos de letra especiais xa non deberían ser necesarios .
+     📜 Note: As of version 0.9.18, Tux Paint uses the "SDL_Pango" library,
+     which utilizes the "Pango" library to render text in the user interface,
+     rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was
+     built without Pango support, special fonts should no longer be
+     necessary.
 
      Cando se executa Tux Paint nun idioma que require o seu propio tipo de
      letra, Tux Paint tentará cargar o ficheiro de letra dende o directorio

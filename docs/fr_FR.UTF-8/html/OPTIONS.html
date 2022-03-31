@@ -256,8 +256,8 @@
     <dd>
       <p>
         Le programme tourne en plein écran plutôt que dans une fenêtre.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>fullscreen=no</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--windowed</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>fullscreen=no</code>". In both cases, may be overridden by the command-line option "<code>--windowed</code>".      </p>
     </dd>
 
     <dt>
@@ -305,8 +305,8 @@
     <dd>
       <p>
         Permute les options de largeur / hauteur données à Tux Paint, utile pour faire pivoter la fenêtre pour les affichages de portait, comme un écran PC orientée comme une tablette.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>orient=landscape</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--orient=landscape</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>orient=landscape</code>". In both cases, may be overridden by the command-line option "<code>--orient=landscape</code>".      </p>
     </dd>
 
     <dt>
@@ -325,8 +325,8 @@
     <dd>
       <p>
         Par défaut, Tux Paint empêche l'économiseur d'écran de votre système de démarrer. Vous pouvez remplacer cela en utilisant l'option "<code>allowscreensaver</code>". Remarque : Cela nécessite la version 1.2.12 ou supérieure de la bibliothèque SDL. (Vous pouvez également le faire en définissant la variable d'environnement "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" de votre système égale à "<code>1</code>".)      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>allowscreensaver=no</code>" ou "<code>disablescreensaver=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--disablescreensaver</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>allowscreensaver=no</code>" or "<code>disablescreensaver=yes</code>". In both cases, may be overridden by the command-line option "<code>--disablescreensaver</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -344,8 +344,8 @@
     <dd>
       <p>
         Désactive les effets sonores. (Remarque: le fait d'appuyer sur <b>[Alt]</b> + <b>[S]</b> ne peut pas être utilisé pour réactiver les sons s'ils ont été désactivés à l'aide de cette option.)      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nosound=no</code>" ou "<code>sound=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--sound</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosound=no</code>" or "<code>sound=yes</code>". In both cases, may be overridden by the command-line option "<code>--sound</code>".      </p>
     </dd>
 
     <dt>
@@ -355,8 +355,8 @@
     <dd>
       <p>
         Désactive la prise en charge de la stéréo. (Utile pour les utilisateurs ayant une déficience auditive avec une oreille ou dans les endroits où un seul haut-parleur ou casque est utilisé.)      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nostereo=no</code>" ou "<code>stereo=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--stereo</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostereo=no</code>" or "<code>stereo=yes</code>". In both cases, may be overridden by the command-line option "<code>--stereo</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -378,8 +378,8 @@
       <p>
         La valeur de <i>SIZE</i> doit être exprimée en pixels, et peut être comprise entre 24 et 192, inclusivement. La plupart des boutons sont carrés, et cela affecte leur largeur et hauteur.      </p>
 
-      <p>
-        Remarque : si la taille des boutons fait que ceux-ci sont trop grands pour qu'ils apparaissent tous, la taille la plus grande possible sera utilisée. (Une remarque apparaîtra sur le terminal en <code>stderr</code>.)      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> If the chosen button size would cause the buttons to be too large for all required UI elements to appear under Tux Paint's chosen window size, the largest possible button size will be used. (A note will appear in <code>stderr</code>.)      </p>
     </dd>
 
     <dt>
@@ -413,8 +413,8 @@
 
       <p>
         Dans certains environnements, les curseurs sophistiqués posent des problèmes. Utilisez cette option pour les éviter.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nofancycursors=no</code>" ou "<code>fancycursors=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--fancycursors</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nofancycursors=no</code>" or "<code>fancycursors=yes</code>". In both cases, may be overridden by the command-line option "<code>--fancycursors</code>".      </p>
     </dd>
 
     <dt>
@@ -427,8 +427,8 @@
 
       <p>
         Ceci est utile pour les appareils à écran tactile, tels que les tablettes PC.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>hidecursor=no</code>" ou "<code>showcursor=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--showcursor</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>hidecursor=no</code>" or "<code>showcursor=yes</code>". In both cases, may be overridden by the command-line option "<code>--showcursor</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -449,8 +449,8 @@
 
       <p>
         Ceci est utile pour éviter que des commandes indésirables ne soient activées par des enfants qui n'ont pas d'expérience avec les claviers.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>noshortcuts=no</code>" ou "<code>shortcuts=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--shortcuts</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshortcuts=no</code>" or "<code>shortcuts=yes</code>". In both cases, may be overridden by the command-line option "<code>--shortcuts</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -471,8 +471,8 @@
 
       <p>
         Ceci est utile pour désactiver les actions du système d'exploitation qui pourraient faire sortir l'utilisateur de Tux Paint <b>[Alt]-[Tab]</b> (changement  de fenêtre), <b>[Ctrl]-[Escape]</b>, etc. Ceci est particulièrement utile en mode plein écran.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>grab=no</code>" ou "<code>dontgrab=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--dontgrab</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>grab=no</code>" or "<code>dontgrab=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontgrab</code>".      </p>
     </dd>
 
     <dt>
@@ -482,8 +482,8 @@
     <dd>
       <p>
         Cela désactive la prise en charge de la molette pour les souris qui en ont. (Normalement, la molette fait défiler le menu du sélecteur sur la droite.)      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nowheelmouse=no</code>" ou "<code>wheelmouse=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--wheelmouse</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nowheelmouse=no</code>" or "<code>wheelmouse=yes</code>". In both cases, may be overridden by the command-line option "<code>--wheelmouse</code>".      </p>
     </dd>
 
     <dt>
@@ -496,8 +496,8 @@
 
       <p>
         Cependant, pour les enfants qui ont des problèmes avec la souris, cette distinction entre les deux ou trois boutons d'une souris peut être désactivée (ramenant Tux Paint à son ancien comportement) grâce à cette option.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nobuttondistinction=no</code>" ou "<code>buttondistinction=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--buttondistinction</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nobuttondistinction=no</code>" or "<code>buttondistinction=yes</code>". In both cases, may be overridden by the command-line option "<code>--buttondistinction</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -519,8 +519,8 @@
     <dd>
       <p>
         Désactive la possibilité de rotation avec l'outil «Forme». Cliquer, faire glisser et relâcher, voilà tout ce qui sera possible pour dessiner une forme.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>simpleshapes=no</code>" ou "<code>complexshapes=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--complexshapes</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>simpleshapes=no</code>" or "<code>complexshapes=yes</code>". In both cases, may be overridden by the command-line option "<code>--complexshapes</code>".      </p>
     </dd>
 
     <dt>
@@ -533,8 +533,8 @@
 
       <p>
         Cela peut aider lorsque Tux Paint est exécuté sur des ordinateurs très lents ou affiché sur un écran X-Window distant.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nooutlines=no</code>" ou "<code>outlines=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--outlines</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nooutlines=no</code>" or "<code>outlines=yes</code>". In both cases, may be overridden by the command-line option "<code>--outlines</code>".      </p>
     </dd>
 
     <dt>
@@ -544,8 +544,8 @@
     <dd>
       <p>
         Tout le texte sera rendu uniquement en majuscules (par exemple, "Boule" deviendra "BOULE"). Utile pour les enfants qui savent lire, mais qui n'ont appris que les majuscules jusqu'à présent.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>uppercase=no</code>" ou "<code>mixedcase=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--mixedcase</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>uppercase=no</code>" or "<code>mixedcase=yes</code>". In both cases, may be overridden by the command-line option "<code>--mixedcase</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -590,8 +590,8 @@
       <p>
         Vous pouvez également utiliser la combinaison de touches suivante pour quitter : <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b>.      </p>
 
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>noquit=no</code>" ou "<code>quit=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--quit</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noquit=no</code>" or "<code>quit=yes</code>". In both cases, may be overridden by the command-line option "<code>--quit</code>".      </p>
     </dd>
 
     <dt>
@@ -604,8 +604,8 @@
 
       <p>
         Cela peut accélérer Tux Paint au démarrage et réduire l'utilisation de la mémoire pendant son exécution. Bien entendu, aucun timbre ne sera disponible.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nostamps=no</code>" ou "<code>stamps=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--stamps</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostamps=no</code>" or "<code>stamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--stamps</code>".      </p>
     </dd>
 
     <dt>
@@ -615,8 +615,8 @@
     <dd>
       <p>
         Certaines images de l' outil <b>Tampon</b> peuvent être mises en miroir, inversées et / ou voir leur taille modifiée. Cette option désactive ces contrôles et ne fournit que les tampons de base.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nostampcontrols=no</code>" ou "<code>stampcontrols=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--stampcontrols</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostampcontrols=no</code>" or "<code>stampcontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--stampcontrols</code>".      </p>
     </dd>
 
     <dt>
@@ -626,8 +626,8 @@
     <dd>
       <p>
         Certains outils <b>Magie</b> ont la possibilité d'agir comme un pinceau ou d'affecter la toile entière. Cette option désactive les contrôles et ne fournit que la fonctionnalité par défaut (généralement en mode peinture).      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nomagiccontrols=no</code>" ou "<code>magiccontrols=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--magiccontrols</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nomagiccontrols=no</code>" or "<code>magiccontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--magiccontrols</code>".      </p>
     </dd>
 
     <dt>
@@ -637,8 +637,8 @@
     <dd>
       <p>
         Désactive les boutons de contrôle affichés lors de l'utilisation de l' outil <b>Formes</b> qui permettent de modifier la façon dont les formes sont dessinées - centrées autour du clic initial de la souris ou à partir d'un coin au clic de la souris.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>noshapecontrols=no</code>" ou "<code>shapecontrols=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--shapecontrols</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshapecontrols=no</code>" or "<code>shapecontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--shapecontrols</code>".      </p>
     </dd>
 
     <dt>
@@ -648,8 +648,8 @@
     <dd>
       <p>
         Désactive l'outil Étiquette : l'outil qui permet la saisie de texte pouvant être édité plus tard.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nolabel=no</code>" ou "<code>label=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--label</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolabel=no</code>" or "<code>label=yes</code>". In both cases, may be overridden by the command-line option "<code>--label</code>".      </p>
     </dd>
 
     <dt>
@@ -659,10 +659,10 @@
     <dd>
       <p>
         Disables the brush spacing option of the <b>Paint</b> and <b>Lines</b> tools. The brushes' default spacings will be used.      </p>
-      <p>
-        Note: The brush spacing option was added to Tux Paint's user interface in version 0.9.28. For more information on brush spacing, see <a href="EXTENDING.html">EXTENDING.html</a>      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nobrushspacing=no</code>" ou "<code>brushspacing=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--brushspacing</code>".      </p>
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The brush spacing option was added to Tux Paint's user interface in version 0.9.28. For more information on brush spacing, see <a href="EXTENDING.html">EXTENDING.html</a>      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nobrushspacing=no</code>" or "<code>brushspacing=yes</code>". In both cases, may be overridden by the command-line option "<code>--brushspacing</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -1353,8 +1353,8 @@
 
       <p>
         Cela peut être utile pour les personnes qui préfèrent voir les choses de droite à gauche plutôt que de gauche à droite.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>mirrorstamps=no</code>" ou "<code>dontmirrorstamps=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--dontmirrorstamps</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>mirrorstamps=no</code>" or "<code>dontmirrorstamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontmirrorstamps</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -1372,8 +1372,8 @@
     <dd>
       <p>
         Cette option oblige Tux Paint à essayer de charger des polices (à utiliser dans l'outil Texte ) à partir de votre système d'exploitation. Normalement, Tux Paint ne chargera que ceux fournis avec Tux Paint.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>sysfonts=no</code>" ou "<code>nosysfonts=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--nosysfonts</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>sysfonts=no</code>" or "<code>nosysfonts=yes</code>". In both cases, may be overridden by the command-line option "<code>--nosysfonts</code>".      </p>
     </dd>
 
     <dt>
@@ -1386,8 +1386,8 @@
 
       <p>
         Pour charger toutes les polices spécifiques aux paramètres régionaux (l'ancien comportement), utilisez cette option.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>alllocalefonts=no</code>" ou "<code>currentlocalefont=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--currentlocalefont</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>alllocalefonts=no</code>" or "<code>currentlocalefont=yes</code>". In both cases, may be overridden by the command-line option "<code>--currentlocalefont</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -1419,8 +1419,8 @@
       <p>
         Limite l'impression afin que l'impression ne puisse avoir lieu qu'une fois toutes les <i>SECONDES</i> secondes.      </p>
 
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>printdelay=0</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--printdelay=0</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printdelay=0</code>". In both cases, may be overridden by the command-line option "<code>--printdelay=0</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -1479,10 +1479,13 @@
         Tux Paint utilisera un fichier de configuration d'imprimante lors de l'impression. Appuyez sur la touche <b>[Alt]</b> tout en cliquant sur le bouton «Imprimer» dans Tux Paint pour faire apparaître une fenêtre de dialogue d'impression Windows.      </p>
 
       <p>
-        (Remarque : cela ne fonctionne que si vous n'exécutez pas Tux Paint en mode plein écran.) Toutes les modifications de configuration apportées dans cette boîte de dialogue seront enregistrées dans le fichier "<code>userdata/print.cfg</code>", et réutilisées, tant que l'option "printcfg" reste définie.      </p>
+        Any configuration changes made in this dialog will be saved to the file "<code>userdata/print.cfg</code>" , and used again, as long as the "printcfg" option is set.      </p>
 
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>printcfg=no</code>" ou "<code>noprintcfg=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--noprintcfg</code>".      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> This only works when not running Tux Paint in fullscreen mode.      </p>
+
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printcfg=no</code>" or "<code>noprintcfg=yes</code>". In both cases, may be overridden by the command-line option "<code>--noprintcfg</code>".      </p>
     </dd>
 
   </dl>
@@ -1510,8 +1513,8 @@
         <code>lpr</code>
       </blockquote>
 
-      <p>
-        <b>Remarque :</b> les versions de Tux Paint antérieures à 0.9.15 envoyaient des données au format PNG à la commande d'impression (qui par défaut était "<code>pngtopnm | pnmtops | lpr</code>").      </p>
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        <b>Remarque :</b> les versions de Tux Paint antérieures à 0.9.15 envoyaient des données au format PNG à la commande d'impression (qui par défaut était "<code>pngtopnm | pnmtops | lpr</code>").      </p>
 
       <p>
         Si vous définissez une autre commande <code><b>printcommand</b></code> dans le fichier de configuration avant la version 0.9.15, vous devrez la modifier.      </p>
@@ -1618,8 +1621,8 @@
     <dd>
       <p>
         Ceci oblige Tux Paint à afficher une toile vide au démarrage, plutôt que la dernière image qui a été éditée.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>startblank=no</code>" ou "<code>startlast=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--startlast</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>startblank=no</code>" or "<code>startlast=yes</code>". In both cases, may be overridden by the command-line option "<code>--startlast</code>".      </p>
     </dd>
 
     <dt>
@@ -1629,8 +1632,8 @@
     <dd>
       <p>
         Place les options de couleur dans la boîte de dialogue <b>Nouveau</b> en dernier, ainsi tous les démarreurs et / ou modèles seront affichés en premier.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>newcolorslast=no</code>" ou "<code>newcolorsfirst=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--newcolorsfirst</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>newcolorslast=no</code>" or "<code>newcolorsfirst=yes</code>". In both cases, may be overridden by the command-line option "<code>--newcolorsfirst</code>".      </p>
     </dd>
 
   </dl>
@@ -1665,11 +1668,11 @@
             Exemple: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/saved/</code>        </li>
       </ul>
 
-      <p>
-        <b>Remarque :</b> lorsque vous spécifiez un lecteur Windows (par ex. "<code>H:\</code>"), vous devez également spécifier un sous-répertoire.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>
 
-      <p>
-        <b>Remarque :</b> Avant la version 0.9.18, Tux Paint utilisait également le réglage "<code>savedir</code>" comme emplacement pour rechercher des fichiers de données personnelles (pinceaux, tampons, images de démarrages et polices). À partir de la version 0.9.18, ils peuvent être spécifiés séparément (voir l'option "<code>datadir</code>" ci-dessous).      </p>
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> Prior to version 0.9.18, Tux Paint would also use the setting or default for "<code>savedir</code>" as the place to search for personal data files (brushes, stamps, starters and fonts). As of version 0.9.18, they may be specified separately (see the "<code>datadir</code>" option, below).      </p>
 
       <p>
         Exemple: <code>savedir=Z:\tuxpaint\</code>      </p>
@@ -1700,8 +1703,8 @@
         </li>
       </ul>
 
-      <p>
-        <b>Remarque :</b>Quand les réglages par défaut sont utilisés, un nouveau sous-répertoire "<code>TuxPaint</code>" sera créé puis utilisé(par ex "<code>~/Images/TuxPaint</code>"). Quand l'option "<code>--exportdir</code>" est utilisée, le chemin exact qui a été spécifié sera utilisé (pas sous-répertoire "<code>TuxPaint</code>" créé).      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> When the defaults are used, a new "<code>TuxPaint</code>" subdirectory will be created and used. (e.g., "<code>~/Images/TuxPaint</code>") When the "<code>--exportdir</code>" option is used, the exact path specified will be used (no "<code>TuxPaint</code>" subdirectory is created).      </p>
       <p>
         Le répertoire lui-même (par ex. "<code>~/Images/TuxPaint</code>") sera créé, s'il n'existe pas.      </p>
       <p>
@@ -1727,8 +1730,8 @@
     <dd>
       <p>
         Ceci désactive la possibilité de sauvegarder les fichiers par Tux Paint (et par conséquent ôte le bouton "Sauvegarder" sur l'écran). On peut l'utiliser dans le cas où le programme est utilisé juste pour le fun, ou dans un environnement de tests.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nosave=no</code>" ou "<code>save=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--save</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosave=no</code>" or "<code>save=yes</code>". In both cases, may be overridden by the command-line option "<code>--save</code>".      </p>
     </dd>
 
     <dt>
@@ -1738,8 +1741,8 @@
     <dd>
       <p>
         Ceci empêche Tux Paint de vous demander si vous voulez sauvegarder l'image quand vous quittez, et suppose que vous le faites.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>autosave=no</code>" ou "<code>noautosave=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--noautosave</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>autosave=no</code>" or "<code>noautosave=yes</code>". In both cases, may be overridden by the command-line option "<code>--noautosave</code>".      </p>
     </dd>
 
   </dl>
@@ -1769,8 +1772,8 @@
       <p>
         Par défaut, le fichier de verrouillage est stocké dans "<code>~/.tuxpaint/</code>" sous Linux et Unix, et "<code>userdata\</code>" sous Windows.      </p>
 
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>nolockfile=no</code>" ou "<code>lockfile=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--lockfile</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolockfile=no</code>" or "<code>lockfile=yes</code>". In both cases, may be overridden by the command-line option "<code>--lockfile</code>".      </p>
     </dd>
 
   </dl>
@@ -1807,11 +1810,11 @@
             Exemple: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/brushes/</code>        </li>
       </ul>
 
-      <p>
-        <b>Remarque :</b>Avant la version 0.9.18, Tux Paint utlisait les mêmes réglages que "<code>savedir</code>" pour chercher les fichiers de données. Depuis la version 0.9.18, ils peuvent être spécifiés séparément.      </p>
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> Prior to version 0.9.18, Tux Paint would use the same setting or default as for "<code>savedir</code>" to search for data files. As of version 0.9.18, they may be specified separately.      </p>
 
-      <p>
-        <b>Remarque :</b> lorsque vous spécifiez un lecteur Windows (par ex. "<code>H:\</code>"), vous devez également spécifier un sous-répertoire.      </p>
+      <p class="note">
+        <span title="Information">&#128161;</span>        <strong>Note:</strong> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>
 
       <p>
         Exemple: <code>datadir=/home/johnny/tuxpaint-data/</code>      </p>
@@ -1913,16 +1916,15 @@
           </ul>
         </li>
 
-        <li>Pour cliquer et faire glisser, maintenez l'une des touches «clic» (par exemple [Insert]), et utilisez les touches de déplacement (par exemple [Left]).          <ul>
-            <li>Remarque : la fonction «accessibilité de la souris» fonctionne avec les commandes de la souris via le clavier. Avec les deux options activées, les outils de peinture peuvent être utilisés pour dessiner en appuyant sur une touche "clic" pour commencer à cliquer, des touches de mouvement pour se déplacer (qui dessinera) et une autre touche "clic" pour terminer le clic (arrêt du dessin).            </li>
-          </ul>
+        <li>Pour cliquer et faire glisser, maintenez l'une des touches «clic» (par exemple [Insert]), et utilisez les touches de déplacement (par exemple [Left]).          <p class="note">
+            <span title="Information">&#128161;</span>            ><strong>Note:</strong> The "mouse accessibility" feature works with the keyboard mouse controls. With both options enabled, painting tools can be used to draw by pressing a 'click' key to start clicking, movement keys to move around (which will draw), and another 'click' key to end the click (stop drawing).          </p>
         </li>
 
         <li>Une souris et/ou un joystick standard peuvent toujours être utilisés (vous pouvez donc, par exemple, vous déplacer avec la souris et cliquer avec le clavier, ou vice-versa)        </li>
       </ul>
 
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>keyboard=no</code>" ou "<code>mouse=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--mouse</code>".      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>keyboard=no</code>" or "<code>mouse=yes</code>". In both cases, may be overridden by the command-line option "<code>--mouse</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -1948,7 +1950,8 @@
 
     <dd>
       <p>
-        Sélectionne la disposition initiale du clavier visuel lors de l'utilisation des outils <b>Texte</b> et <b>Étiquette</b>. Remarque: l'utilisation de cette option implique automatiquement <b>onscreen-keyboard=yes</b> , la configuration des deux est donc redondante.      </p>
+        Selects the initial layout for the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.<br/>
+        Remarque: l'utilisation de cette option implique automatiquement <b>onscreen-keyboard=yes</b> , la configuration des deux est donc redondante.      </p>
     </dd>
 
     <dt>
@@ -1957,10 +1960,10 @@
 
     <dd>
       <p>
-        Désactive la possibilité de modifier la disposition du clavier à l'écran lors de l'utilisation des outils <b>Texte</b> et <b>Étiquette</b> , utile pour simplifier les choses pour les petits enfants.<br>
-      Remarque: l'utilisation de cette option implique automatiquement <b>onscreen-keyboard=yes</b> , la configuration des deux est donc redondante.      </p>
-      <p>
-        Note : si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l(utilisateur en utilisant "<code>onscreen-keyboard-disable-change=no</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--onscreen-keyboard-disable-change=no</code>".      </p>
+        Désactive la possibilité de modifier la disposition du clavier à l'écran lors de l'utilisation des outils <b>Texte</b> et <b>Étiquette</b> , utile pour simplifier les choses pour les petits enfants.<br/>
+        Remarque: l'utilisation de cette option implique automatiquement <b>onscreen-keyboard=yes</b> , la configuration des deux est donc redondante.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>onscreen-keyboard-disable-change=no</code>". In both cases, may be overridden by the command-line option "<code>--onscreen-keyboard-disable-change=no</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -3270,8 +3273,8 @@
         <p>
           <b>(*)</b> - Ces langues nécessitent leurs propres polices, car elles ne sont pas représentées à l'aide d'un jeu de caractères latins, comme les autres. Consultez la section "<a href="#special_fonts"><i>Polices spéciales</i></a> " ci-dessous.        </p>
 
-        <p>
-          <i>Remarque :</i> Tux Paint fournit une méthode de saisie alternative pour saisir des caractères avec l' outil <b>Texte</b> avec certaines langues. Les combinaisons de touches répertoriées peuvent être utilisées pour parcourir les méthodes de saisie prises en charge lorsque l' outil <b>Texte</b> est actif.        </p>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> Tux Paint provides an alternative input method for entering characters with the <b>Text</b> tool in some locales. The key comibation(s) listed can be used to cycle through the supported input methods while the <b>Text</b> tool is active.        </p>
       </section><!-- H2: Available Languages -->
 
       <section><!-- H2: Setting Your Environment's Locale -->
@@ -3297,8 +3300,8 @@
           <p>
             Tout d'abord, assurez-vous que les paramètres régionaux que vous souhaitez utiliser sont activés en éditant le fichier "<code>/etc/locale.gen</code>" sur votre système, puis en exécutant le programme "<code>locale-gen</code>" en tant que root.          </p>
 
-          <p>
-            <i>Remarque: les utilisateurs Debian peuvent simplement exécuter la commande "<code>dpkg-reconfigure locales</code>" en tant que root pour afficher une boîte de dialogue de configuration. Les utilisateurs d'Ubuntu peuvent exécuter "<code>sudo dpkg-reconfigure localeconf</code>" (le package "localeconf" peut avoir besoin d'être installé en premier), ou bien peuvent avoir besoin d'éditer le fichier "<code>/var/lib/locales/supported.d/local</code>" d'abord, et d'ajouter les paramètres régionaux qu'ils veulent, à partir de la liste trouvée dans "<code>/usr/share/i18n/SUPPORTED</code>"</i>          </p>
+          <p class="note">
+            <span title="Information">&#128161;</span>            <strong>Note:</strong> Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>/var/lib/locales/supported.d/local</code>" first, and add locales they want, from the list found in "<code>/usr/share/i18n/SUPPORTED</code>".          </p>
 
           <p>
             Ensuite, avant d'exécuter Tux Paint, définissez votre variable d'environnement "<code>$LANG</code>" sur l'un des paramètres régionaux répertoriés ci-dessus. (Si vous voulez que tous les programmes qui peuvent être traduits le soient, vous voudrez peut - être placer les éléments suivants dans script de connexion, par ex. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc...)          </p>
@@ -3360,8 +3363,8 @@
         <p>
           Certaines langues nécessitent l'installation de polices spéciales. Ces fichiers de polices (qui sont au format TrueType (TTF)), sont beaucoup trop volumineux pour être inclus avec le téléchargement de Tux Paint et sont disponibles séparément. (Voir le tableau ci-dessus, dans la section « Choisir une autre langue ».)        </p>
 
-        <p>
-          Remarque: Depuis la version 0.9.18, Tux Paint utilise la bibliothèque "SDL_Pango", qui utilise la bibliothèque "Pango" pour afficher le texte dans l'interface utilisateur, plutôt que d'utiliser directement "SDL_ttf". À moins que votre copie de Tux Paint n'ait été construite sans le support de Pango, les polices spéciales <b><i>ne devraient plus être nécessaires</i></b> .        </p>
+        <p class="note">
+          <span title="Version variation">&#128220;</span>          <strong>Note:</strong> As of version 0.9.18, Tux Paint uses the "SDL_Pango" library, which utilizes the "Pango" library to render text in the user interface, rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was built without Pango support, special fonts should <b><i>no longer be necessary</i></b>.        </p>
 
         <p>
           Lors de l'exécution de Tux Paint dans une langue nécessitant sa propre police, Tux Paint essaiera de charger le fichier de police à partir de son répertoire système "<code><b>fonts</b></code>" (sous un sous- répertoire "<code><b>locale</b></code>"). Le nom du fichier correspond aux deux premières lettres du code 'locale' de la langue (par exemple, "ko" pour le coréen, "ja" pour le japonais, "zh_tw" pour le chinois traditionnel).        </p>
