@@ -5,9 +5,7 @@
         Copyright © 2019-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                   2022年1月20日
-
-     ----------------------------------------------------------------------
+                                   2022年3月31日
 
    Tux Paint responds to the following signals (which can be sent to the
    program's process via `kill` or `killall`, for example).
@@ -27,12 +25,12 @@
            respectively), whether or not to overwrite the existing drawing,
            or save to a new file.
 
-           Note: From other parts of the interface, the signal is currently
+           例：killall tuxpaint
+
+           💡 Note: From other parts of the interface, the signal is currently
            interpreted as a request to go back (e.g., from the "New" dialog
            back to the main interface), as if a "Back" button in Tux Paint
            were clicked, or the [Esc] was key pressed.
-
-           例：killall tuxpaint
 
    SIGUSR1 & SIGUSR2
 
@@ -47,9 +45,9 @@
            So, from the main interface, Tux Paint should quit almost
            immediately, with no questions asked.
 
-           Note: From other parts of the interface, unfortunately, Tux Paint
-           will go back one level in the interface. Therefore, at this time,
-           it may be necessary to send this signal to Tux Paint a few times,
-           for it to quit completely.
-
            例：killall -s SIGUSR1 tuxpaint
+
+           💡 Note: From other parts of the interface, unfortunately, Tux
+           Paint will go back one level in the interface. Therefore, at this
+           time, it may be necessary to send this signal to Tux Paint a few
+           times, for it to quit completely.
