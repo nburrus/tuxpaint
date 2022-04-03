@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 17, 2022
+  June 14, 2002 - April 2, 2022
 */
 
 #include "platform.h"
@@ -24168,11 +24168,11 @@ static void load_info_about_label_surface(FILE * lfi)
   int tmp_fscanf_return;
   char *tmp_fgets_return;
   Uint8 a;
+  wchar_t *wtmpstr;
+  size_t nwchar;
 #ifdef WIN32
   char *tmpstr;
-  wchar_t *wtmpstr;
 #endif
-
 
   /* Clear label surface */
 
@@ -24194,12 +24194,26 @@ static void load_info_about_label_surface(FILE * lfi)
   /* Read count of label nodes: */
   tmp_fscanf_return = fscanf(lfi, "%d\n", &list_ctr);
 
+  if (list_ctr <= 0)
+    {
+      fprintf(stderr, "Unexpected! Count of label notes is <= 0 (%d)!\n", list_ctr);
+      fclose(lfi);
+      return;
+    }
+
   /* Read saved canvas width/height, so we can scale to the current canvas
      (in case it changed due to window size / fullscreen resolution changes,
      larger UI button size, etc. */
   tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_scale_w);
   tmp_fscanf_return = fscanf(lfi, "%d\n\n", &tmp_scale_h);
   (void)tmp_fscanf_return;
+
+  if (tmp_scale_w <= 0 || tmp_scale_h <= 0)
+    {
+      fprintf(stderr, "Unexpected! Saved canvas dimensions %d x %d!\n", tmp_scale_w, tmp_scale_h);
+      fclose(lfi);
+      return;
+    }
 
   /* Calculate canvas aspect ratios & such */
   old_width = tmp_scale_w;
@@ -24214,14 +24228,15 @@ static void load_info_about_label_surface(FILE * lfi)
     new_to_old_ratio = (float)new_height / old_height;
 
 
-  /* Read the labels' text: */
-
-  size_t nwchar;
+  wtmpstr = malloc(1024);
 
 #ifdef WIN32
   tmpstr = malloc(1024);
-  wtmpstr = malloc(1024);
 #endif
+
+
+
+  /* Read the labels' text: */
 
   for (k = 0; k < list_ctr; k++)
     {
@@ -24233,174 +24248,188 @@ static void load_info_about_label_surface(FILE * lfi)
       printf("Reading %d wide chars\n", new_node->save_texttool_len); fflush(stdout);
 #endif
 
-#ifdef WIN32
-      /* Using fancy "%[]" operator to scan until the end of a line */
-      tmp_fscanf_return = fscanf(lfi, "%[^\n]\n", tmpstr);
-      mbstowcs(wtmpstr, tmpstr, 1024);
-      for (l = 0; l < new_node->save_texttool_len; l++)
-        new_node->save_texttool_str[l] = wtmpstr[l];
-      new_node->save_texttool_str[l] = L'\0';
-#else
-      /* Using fancy "%[]" operator to scan until the end of a line */
-      tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
-#endif
-
-#ifdef DEBUG
-      printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
-#endif
-
-      /* If the string is shorter than what we expect (new_node->save_texttool_len),
-         then it must have been prefixed with spaces that we lost. */
-      nwchar = wcslen(new_node->save_texttool_str);
-      if (nwchar < new_node->save_texttool_len)
+      if (new_node->save_texttool_len >= 1024)
         {
-          wchar_t *wtmpstr;
-          size_t diff, i;
-
-          wtmpstr = malloc(1024);
-          diff = new_node->save_texttool_len - nwchar;
-
-          for (i = 0; i < diff; i++)
-            wtmpstr[i] = L' ';
-
-          for (i = 0; i <= nwchar; i++)
-            wtmpstr[i + diff] = new_node->save_texttool_str[i];
-
-          memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
+          fprintf(stderr, "Unexpected! Saved text length is >= 1024 (%u!)\n", new_node->save_texttool_len);
+          free(new_node);
           free(wtmpstr);
-
-#ifdef DEBUG
-          printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+#ifdef WIN32
+          free(tmpstr);
 #endif
-        }
-
-      /* Read the label's color (RGB) */
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
-      new_node->save_color.r = (Uint8) l;
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
-      new_node->save_color.g = (Uint8) l;
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
-      new_node->save_color.b = (Uint8) l;
-
-      /* Read the label's position */
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
-      old_pos = (int)tmp_pos;
-
-      if (new_ratio < old_ratio)
-        {
-          new_pos = (old_pos * new_to_old_ratio);
-          tmp_pos = new_pos;
-          new_node->save_x = tmp_pos;
-          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
-          old_pos = (int)tmp_pos;
-          new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
-          tmp_pos = new_pos;
-          new_node->save_y = tmp_pos;
+          fclose(lfi);
+          return;
         }
       else
         {
-          new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
-          tmp_pos = new_pos;
-          new_node->save_x = tmp_pos;
-          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
-          old_pos = (int)tmp_pos;
-          new_pos = (old_pos * new_to_old_ratio);
-          tmp_pos = new_pos;
-          new_node->save_y = tmp_pos;
-        }
-
-#ifdef DEBUG
-      printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
+#ifdef WIN32
+          /* Using fancy "%[]" operator to scan until the end of a line */
+          tmp_fscanf_return = fscanf(lfi, "%[^\n]\n", tmpstr);
+          mbstowcs(wtmpstr, tmpstr, 1024);
+          for (l = 0; l < new_node->save_texttool_len; l++)
+            new_node->save_texttool_str[l] = wtmpstr[l];
+          new_node->save_texttool_str[l] = L'\0';
+#else
+          /* Using fancy "%[]" operator to scan until the end of a line */
+          tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
 #endif
 
-      /* Read the label's font */
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
-      new_node->save_cur_font = 0;
+#ifdef DEBUG
+          printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+#endif
 
-      new_node->save_font_type = malloc(64);
-      tmp_fgets_return = fgets(new_node->save_font_type, 64, lfi);
-      (void)tmp_fgets_return;
+          /* If the string is shorter than what we expect (new_node->save_texttool_len),
+             then it must have been prefixed with spaces that we lost. */
+          nwchar = wcslen(new_node->save_texttool_str);
+          if (nwchar < new_node->save_texttool_len)
+            {
+              size_t diff, i;
 
-      /* Read the label's state (italic &/or bold), and size */
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
+              diff = new_node->save_texttool_len - nwchar;
 
-      /* Read the bitmap data stored under the label */
-      /* (The final PNG, when saved, includes the labels, as applied
-         to the canvas. But we need to be able to edit/move/remove them,
-         so we need to know what went _behind_ them) */
-      label_node_surface = SDL_CreateRGBSurface(screen->flags,
-                                                new_node->save_width,
-                                                new_node->save_height,
-                                                screen->format->BitsPerPixel,
-                                                screen->format->Rmask,
-                                                screen->format->Gmask, screen->format->Bmask, TPAINT_AMASK);
+printf("diff = %d\n", diff); fflush(stdout);
 
-      SDL_LockSurface(label_node_surface);
-      for (x = 0; x < new_node->save_width; x++)
-        for (y = 0; y < new_node->save_height; y++)
-          {
-            a = fgetc(lfi);
-            putpixels[label_node_surface->format->BytesPerPixel] (label_node_surface, x, y,
-                                                                  SDL_MapRGBA(label_node_surface->format,
-                                                                              new_node->save_color.r,
-                                                                              new_node->save_color.g,
-                                                                              new_node->save_color.b, a));
-          }
-      SDL_UnlockSurface(label_node_surface);
+              for (i = 0; i < diff; i++)
+                wtmpstr[i] = L' ';
 
-      /* Set the label's size, in proportion to any canvas size differences */
-      new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
+              for (i = 0; i <= nwchar; i++)
+                wtmpstr[i + diff] = new_node->save_texttool_str[i];
 
-      /* Scale the backbuffer, in proportion... */
-      label_node_surface_aux =
-        zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
-      SDL_FreeSurface(label_node_surface);
-      new_node->label_node_surface = label_node_surface_aux;
-      new_node->label_node_surface->refcount++;
-      SDL_FreeSurface(label_node_surface_aux);
+              memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
 
-      if ((unsigned)new_text_size > MAX_TEXT_SIZE)      /* Here we reach the limits when scaling the font size */
-        new_node->save_text_size = MAX_TEXT_SIZE;
-      else if ((unsigned)new_text_size > MIN_TEXT_SIZE)
-        new_node->save_text_size = floor(new_text_size + 0.5);
-      else
-        new_node->save_text_size = MIN_TEXT_SIZE;
+#ifdef DEBUG
+              printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+#endif
+            }
 
-      new_node->save_undoid = 255;      /* A value that cur_undo will likely never reach */
-      new_node->is_enabled = TRUE;
-      new_node->disables = NULL;
-      new_node->next_to_down_label_node = NULL;
-      new_node->next_to_up_label_node = NULL;
-      tmp_fscanf_return = fscanf(lfi, "\n");
+          /* Read the label's color (RGB) */
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
+          new_node->save_color.r = (Uint8) l;
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
+          new_node->save_color.g = (Uint8) l;
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
+          new_node->save_color.b = (Uint8) l;
 
-      /* Link the labels together, for navigating between them */
-      if (current_label_node == NULL)
-        {
-          current_label_node = new_node;
-          start_label_node = current_label_node;
+          /* Read the label's position */
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
+          old_pos = (int)tmp_pos;
+
+          if (new_ratio < old_ratio)
+            {
+              new_pos = (old_pos * new_to_old_ratio);
+              tmp_pos = new_pos;
+              new_node->save_x = tmp_pos;
+              tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
+              old_pos = (int)tmp_pos;
+              new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
+              tmp_pos = new_pos;
+              new_node->save_y = tmp_pos;
+            }
+          else
+            {
+              new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
+              tmp_pos = new_pos;
+              new_node->save_x = tmp_pos;
+              tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
+              old_pos = (int)tmp_pos;
+              new_pos = (old_pos * new_to_old_ratio);
+              tmp_pos = new_pos;
+              new_node->save_y = tmp_pos;
+            }
+
+#ifdef DEBUG
+          printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
+#endif
+
+          /* Read the label's font */
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
+          /* FIXME: This seems wrong! -bjk 2022.04.02 */
+          new_node->save_cur_font = 0;
+
+          new_node->save_font_type = malloc(64);
+          tmp_fgets_return = fgets(new_node->save_font_type, 64, lfi);
+          (void)tmp_fgets_return;
+
+          /* Read the label's state (italic &/or bold), and size */
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
+
+          /* Read the bitmap data stored under the label */
+          /* (The final PNG, when saved, includes the labels, as applied
+             to the canvas. But we need to be able to edit/move/remove them,
+             so we need to know what went _behind_ them) */
+          label_node_surface = SDL_CreateRGBSurface(screen->flags,
+                                                    new_node->save_width,
+                                                    new_node->save_height,
+                                                    screen->format->BitsPerPixel,
+                                                    screen->format->Rmask,
+                                                    screen->format->Gmask, screen->format->Bmask, TPAINT_AMASK);
+
+          SDL_LockSurface(label_node_surface);
+          for (x = 0; x < new_node->save_width; x++)
+            for (y = 0; y < new_node->save_height; y++)
+              {
+                a = fgetc(lfi);
+                putpixels[label_node_surface->format->BytesPerPixel] (label_node_surface, x, y,
+                                                                      SDL_MapRGBA(label_node_surface->format,
+                                                                                  new_node->save_color.r,
+                                                                                  new_node->save_color.g,
+                                                                                  new_node->save_color.b, a));
+              }
+          SDL_UnlockSurface(label_node_surface);
+
+          /* Set the label's size, in proportion to any canvas size differences */
+          new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
+
+          /* Scale the backbuffer, in proportion... */
+          label_node_surface_aux =
+            zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
+          SDL_FreeSurface(label_node_surface);
+          new_node->label_node_surface = label_node_surface_aux;
+          new_node->label_node_surface->refcount++;
+          SDL_FreeSurface(label_node_surface_aux);
+
+          if ((unsigned)new_text_size > MAX_TEXT_SIZE)      /* Here we reach the limits when scaling the font size */
+            new_node->save_text_size = MAX_TEXT_SIZE;
+          else if ((unsigned)new_text_size > MIN_TEXT_SIZE)
+            new_node->save_text_size = floor(new_text_size + 0.5);
+          else
+            new_node->save_text_size = MIN_TEXT_SIZE;
+
+          new_node->save_undoid = 255;      /* A value that cur_undo will likely never reach */
+          new_node->is_enabled = TRUE;
+          new_node->disables = NULL;
+          new_node->next_to_down_label_node = NULL;
+          new_node->next_to_up_label_node = NULL;
+          tmp_fscanf_return = fscanf(lfi, "\n");
+
+          /* Link the labels together, for navigating between them */
+          if (current_label_node == NULL)
+            {
+              current_label_node = new_node;
+              start_label_node = current_label_node;
+            }
+          else
+            {
+              new_node->next_to_down_label_node = current_label_node;
+              current_label_node->next_to_up_label_node = new_node;
+              current_label_node = new_node;
+            }
+
+          highlighted_label_node = current_label_node;
+          simply_render_node(current_label_node);
         }
-      else
-        {
-          new_node->next_to_down_label_node = current_label_node;
-          current_label_node->next_to_up_label_node = new_node;
-          current_label_node = new_node;
-        }
-
-      highlighted_label_node = current_label_node;
-      simply_render_node(current_label_node);
     }
 
   first_label_node_in_redo_stack = NULL;
   fclose(lfi);
 
-
+  free(wtmpstr);
 #ifdef WIN32
   free(tmpstr);
-  free(wtmpstr);
 #endif
+
 
   if (font_thread_done)
     set_label_fonts();
