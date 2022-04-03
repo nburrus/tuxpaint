@@ -128,6 +128,13 @@ http://www.tuxpaint.org/
       you scale down (similar to "Panels", but with non-integer scaling).
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * Other Improvements:
+    -------------------
+    * The "Tools" section's up & down scroll buttons auto-repeat if
+      you click/tap and hold them.
+      For https://sourceforge.net/p/tuxpaint/feature-requests/173/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Albanian translation

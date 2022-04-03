@@ -1257,7 +1257,7 @@ static int wheely = 1;
 static int keymouse = 0;
 static int no_button_distinction;
 static int button_down;
-static int scrolling;
+static int scrolling_selector, scrolling_tool;
 
 static int promptless_save = SAVE_OVER_UNSET;
 static int _promptless_save_over, _promptless_save_over_ask, _promptless_save_over_new;
@@ -1958,7 +1958,7 @@ typedef enum
 
 #define NUM_EDGES 4
 
-static SDL_Event scrolltimer_event;
+static SDL_Event scrolltimer_selector_event, scrolltimer_tool_event;
 
 int non_left_click_count = 0;
 
@@ -2133,7 +2133,8 @@ static wchar_t *uppercase_w(const wchar_t * restrict const str);
 static char *textdir(const char *const str);
 static SDL_Surface *do_render_button_label(const char *const label);
 static void create_button_labels(void);
-static Uint32 scrolltimer_callback(Uint32 interval, void *param);
+static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param);
+static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
@@ -2359,7 +2360,7 @@ static void mainloop(void)
   int line_start_y = 0;
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
-  SDL_TimerID scrolltimer = NULL;
+  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL;
   SDL_Event event;
   SDLKey key;
   SDLMod mod;
@@ -2391,8 +2392,10 @@ static void mainloop(void)
   button_down = 0;
   last_cursor_blink = cur_toggle_count = 0;
   texttool_len = 0;
-  scrolling = 0;
-  scrolltimer = 0;
+  scrolling_selector = 0;
+  scrolltimer_selector = 0;
+  scrolling_tool = 0;
+  scrolltimer_tool = 0;
   val_x = 0;
   val_y = 0;
   valhat_x = 0;
@@ -3173,8 +3176,6 @@ static void mainloop(void)
             {
               if (HIT(r_tools))
                 {
-
-
                   if (HIT(real_r_tools))
                     {
                       /* A tool on the left has been pressed! */
@@ -3581,26 +3582,55 @@ static void mainloop(void)
                       if (!done)
                         magic_switchin(canvas);
                     }
-                  else if ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0)
-                    {
-                      /* Tool up scroll button */
-                      tool_scroll -= gd_tools.cols;
-                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                      draw_toolbar();
-                      update_screen_rect(&r_tools);
-
-                    }
-                  else if ((event.button.y > real_r_tools.y + real_r_tools.h)
+                  else if (
+                    ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0) ||
+                    ((event.button.y > real_r_tools.y + real_r_tools.h)
                            && (tool_scroll < NUM_TOOLS - buttons_tall * gd_tools.cols + gd_tools.cols))
-                    {
-                      /* Tool down scroll button */
-                      tool_scroll += gd_tools.cols;
-                      draw_toolbar();
-                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                  ) {
+                      /* Tool up or down scroll buttons */
 
-                      update_screen_rect(&r_tools);
+                      if (event.button.y < r_tools.y + button_h / 2)
+                        {
+                          tool_scroll -= gd_tools.cols;
+                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                        }
+                      else
+                        {
+                          /* Tool down scroll button */
+                          tool_scroll += gd_tools.cols;
+                          draw_toolbar();
+                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    
+                          update_screen_rect(&r_tools);
+                        }
 
+                      if (!scrolling_tool && event.type == SDL_MOUSEBUTTONDOWN)
+                        {
+                          DEBUG_PRINTF("Starting scrolling\n");
+                          memcpy(&scrolltimer_tool_event, &event, sizeof(SDL_Event));
+                          scrolltimer_tool_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                          /*
+                          * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                          * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                          * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                          * energy impact on the Mac.
+                          */
+
+                          scrolling_tool = 1;
+                          SDL_InitSubSystem(SDL_INIT_TIMER);
+                          scrolltimer_tool =
+                            SDL_AddTimer(REPEAT_SPEED, scrolltimer_tool_callback, (void *)&scrolltimer_tool_event);
+                        }
+                      else
+                        {
+                          DEBUG_PRINTF("Continuing scrolling\n");
+                          scrolltimer_tool =
+                            SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_tool_callback, (void *)&scrolltimer_tool_event);
+                        }
                     }
                 }
 
@@ -4366,17 +4396,17 @@ static void mainloop(void)
                               do_draw = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 
-                              if (scrolltimer != NULL)
+                              if (scrolltimer_selector != NULL)
                                 {
-                                  SDL_RemoveTimer(scrolltimer);
-                                  scrolltimer = NULL;
+                                  SDL_RemoveTimer(scrolltimer_selector);
+                                  scrolltimer_selector = NULL;
                                 }
 
-                              if (!scrolling && event.type == SDL_MOUSEBUTTONDOWN)
+                              if (!scrolling_selector && event.type == SDL_MOUSEBUTTONDOWN)
                                 {
                                   DEBUG_PRINTF("Starting scrolling\n");
-                                  memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
-                                  scrolltimer_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+                                  memcpy(&scrolltimer_selector_event, &event, sizeof(SDL_Event));
+                                  scrolltimer_selector_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
                                   /*
                                   * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
@@ -4385,29 +4415,29 @@ static void mainloop(void)
                                   * energy impact on the Mac.
                                   */
 
-                                  scrolling = 1;
+                                  scrolling_selector = 1;
                                   SDL_InitSubSystem(SDL_INIT_TIMER);
-                                  scrolltimer =
-                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void *)&scrolltimer_event);
+                                  scrolltimer_selector =
+                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_selector_callback, (void *)&scrolltimer_selector_event);
                                 }
                               else
                                 {
                                   DEBUG_PRINTF("Continuing scrolling\n");
-                                  scrolltimer =
-                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void *)&scrolltimer_event);
+                                  scrolltimer_selector =
+                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_selector_callback, (void *)&scrolltimer_selector_event);
                                 }
 
                               if (*thing_scroll == 0 || *thing_scroll / gd_items.cols ==  num_rows_needed - gd_items.rows)
                                 {
                                   do_setcursor(cursor_arrow);
-                                  if (scrolling)
+                                  if (scrolling_selector)
                                     {
-                                      if (scrolltimer != NULL)
+                                      if (scrolltimer_selector != NULL)
                                         {
-                                          SDL_RemoveTimer(scrolltimer);
-                                          scrolltimer = NULL;
+                                          SDL_RemoveTimer(scrolltimer_selector);
+                                          scrolltimer_selector = NULL;
                                         }
-                                      scrolling = 0;
+                                      scrolling_selector = 0;
                                       SDL_QuitSubSystem(SDL_INIT_TIMER);
                                     }
                                 }
@@ -4537,7 +4567,7 @@ static void mainloop(void)
                           /* Enable or disable color selector: */
                           draw_colors(stamp_colorable(cur_stamp[stamp_group])
                                       || stamp_tintable(cur_stamp[stamp_group]));
-                          if (!scrolling)
+                          if (!scrolling_selector)
                             {
                               stamp_xor(canvas->w / 2, canvas->h / 2);
                               stamp_xored = 1;
@@ -5381,18 +5411,32 @@ static void mainloop(void)
             }
           else if (event.type == SDL_MOUSEBUTTONUP)
             {
-              if (scrolling)
+              if (scrolling_selector)
                 {
-                  if (scrolltimer != NULL)
+                  if (scrolltimer_selector != NULL)
                     {
-                      SDL_RemoveTimer(scrolltimer);
-                      scrolltimer = NULL;
+                      SDL_RemoveTimer(scrolltimer_selector);
+                      scrolltimer_selector = NULL;
                     }
-                  scrolling = 0;
+                  scrolling_selector = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
 
-                  /* printf("Killing scrolling\n"); */
+                  DEBUG_PRINTF("Killing selector srolling\n");
                 }
+
+              else if (scrolling_tool)
+                {
+                  if (scrolltimer_tool != NULL)
+                    {
+                      SDL_RemoveTimer(scrolltimer_tool);
+                      scrolltimer_tool = NULL;
+                    }
+                  scrolling_tool = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
+
+                  DEBUG_PRINTF("Killing tool srolling\n");
+                }
+
               /* Erase the xor drawed at click */
               else if (cur_tool == TOOL_STAMP && stamp_xored && event.button.button < 4)
                 {
@@ -18392,19 +18436,39 @@ static char *textdir(const char *const str)
 /**
  * FIXME
  */
-/* Scroll Timer */
-static Uint32 scrolltimer_callback(Uint32 interval, void *param)
+/* Scroll Timer for Tools */
+static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param)
 {
-  /* printf("scrolltimer_callback(%d) -- ", interval); */
-  if (scrolling)
+  /* printf("scrolltimer_selector_callback(%d) -- ", interval); */
+  if (scrolling_selector)
     {
-      DEBUG_PRINTF("(Still scrolling)\n");
+      DEBUG_PRINTF("(Still scrolling selector)\n");
       SDL_PushEvent((SDL_Event *) param);
       return interval;
     }
   else
     {
-      DEBUG_PRINTF("(all done scrolling)\n");
+      DEBUG_PRINTF("(all done scrolling selector)\n");
+      return 0;
+    }
+}
+
+/**
+ * FIXME
+ */
+/* Scroll Timer for Selector */
+static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param)
+{
+  /* printf("scrolltimer_tool_callback(%d) -- ", interval); */
+  if (scrolling_tool)
+    {
+      DEBUG_PRINTF("(Still scrolling tool)\n");
+      SDL_PushEvent((SDL_Event *) param);
+      return interval;
+    }
+  else
+    {
+      DEBUG_PRINTF("(all done scrolling tool)\n");
       return 0;
     }
 }
