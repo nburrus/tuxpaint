@@ -24286,8 +24286,6 @@ static void load_info_about_label_surface(FILE * lfi)
 
               diff = new_node->save_texttool_len - nwchar;
 
-printf("diff = %d\n", diff); fflush(stdout);
-
               for (i = 0; i < diff; i++)
                 wtmpstr[i] = L' ';
 
