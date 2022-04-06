@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 2, 2022
+  June 14, 2002 - April 6, 2022
 */
 
 #include "platform.h"
@@ -24403,6 +24403,17 @@ static void load_info_about_label_surface(FILE * lfi)
 #ifdef DEBUG
           printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
 #endif
+          if (new_node->save_width > 8192 || new_node->save_height > 8192)
+            {
+              fprintf(stderr, "Unexpected! Save dimensions are (%u x %u!)\n", new_node->save_width, new_node->save_height);
+              free(new_node);
+              free(wtmpstr);
+#ifdef WIN32
+              free(tmpstr);
+#endif
+              fclose(lfi);
+              return;
+           }
 
           /* Read the label's font */
           tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
