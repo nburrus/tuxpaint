@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 6, 2022
+  June 14, 2002 - April 7, 2022
 */
 
 #include "platform.h"
@@ -1257,7 +1257,7 @@ static int wheely = 1;
 static int keymouse = 0;
 static int no_button_distinction;
 static int button_down;
-static int scrolling_selector, scrolling_tool;
+static int scrolling_selector, scrolling_tool, scrolling_dialog;
 
 static int promptless_save = SAVE_OVER_UNSET;
 static int _promptless_save_over, _promptless_save_over_ask, _promptless_save_over_new;
@@ -1958,7 +1958,7 @@ typedef enum
 
 #define NUM_EDGES 4
 
-static SDL_Event scrolltimer_selector_event, scrolltimer_tool_event;
+static SDL_Event scrolltimer_selector_event, scrolltimer_tool_event, scrolltimer_dialog_event;
 
 int non_left_click_count = 0;
 
@@ -2135,6 +2135,7 @@ static SDL_Surface *do_render_button_label(const char *const label);
 static void create_button_labels(void);
 static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param);
 static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param);
+static Uint32 scrolltimer_dialog_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
@@ -2360,7 +2361,7 @@ static void mainloop(void)
   int line_start_y = 0;
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
-  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL;
+  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL, scrolltimer_dialog = NULL;
   SDL_Event event;
   SDLKey key;
   SDLMod mod;
@@ -2396,6 +2397,8 @@ static void mainloop(void)
   scrolltimer_selector = 0;
   scrolling_tool = 0;
   scrolltimer_tool = 0;
+  scrolling_dialog = 0;
+  scrolltimer_dialog = 0;
   val_x = 0;
   val_y = 0;
   valhat_x = 0;
@@ -5421,7 +5424,7 @@ static void mainloop(void)
                   scrolling_selector = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
 
-                  DEBUG_PRINTF("Killing selector srolling\n");
+                  DEBUG_PRINTF("Killing selector scrolling\n");
                 }
 
               else if (scrolling_tool)
@@ -5434,7 +5437,7 @@ static void mainloop(void)
                   scrolling_tool = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
 
-                  DEBUG_PRINTF("Killing tool srolling\n");
+                  DEBUG_PRINTF("Killing tool scrolling\n");
                 }
 
               /* Erase the xor drawed at click */
@@ -18469,6 +18472,27 @@ static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param)
   else
     {
       DEBUG_PRINTF("(all done scrolling tool)\n");
+      return 0;
+    }
+}
+
+
+/**
+ * FIXME
+ */
+/* Scroll Timer for Dialogs (Open & New) */
+static Uint32 scrolltimer_dialog_callback(Uint32 interval, void *param)
+{
+  /* printf("scrolltimer_dialog_callback(%d) -- ", interval); */
+  if (scrolling_dialog)
+    {
+      DEBUG_PRINTF("(Still scrolling dialog)\n");
+      SDL_PushEvent((SDL_Event *) param);
+      return interval;
+    }
+  else
+    {
+      DEBUG_PRINTF("(all done scrolling dialog)\n");
       return 0;
     }
 }

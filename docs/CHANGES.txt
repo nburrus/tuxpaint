@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.April.6 (0.9.28)
+2022.April.7 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -130,8 +130,8 @@ http://www.tuxpaint.org/
 
   * Other Improvements:
     -------------------
-    * The "Tools" section's up & down scroll buttons auto-repeat if
-      you click/tap and hold them.
+    * The "Tools" section's, [WIP] "Open" dialog's, and [WIP] "New" dialogs'
+      up & down scroll buttons auto-repeat if you click/tap and hold them.
       For https://sourceforge.net/p/tuxpaint/feature-requests/173/
       Bill Kendrick <bill@newbreedsoftware.com>
 
