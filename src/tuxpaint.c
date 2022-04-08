@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 7, 2022
+  June 14, 2002 - April 8, 2022
 */
 
 #include "platform.h"
@@ -2341,6 +2341,7 @@ SDL_Rect kbd_rect;
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
 int cur_thing;
+SDL_TimerID scrolltimer_dialog = NULL; /* Used by both Open and New dialogs */
 
 /**
  * --- MAIN LOOP! ---
@@ -2361,7 +2362,7 @@ static void mainloop(void)
   int line_start_y = 0;
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
-  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL, scrolltimer_dialog = NULL;
+  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL;
   SDL_Event event;
   SDLKey key;
   SDLMod mod;
@@ -3594,6 +3595,7 @@ static void mainloop(void)
 
                       if (event.button.y < r_tools.y + button_h / 2)
                         {
+                          /* Tool up scroll button */
                           tool_scroll -= gd_tools.cols;
                           playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
     
@@ -5145,7 +5147,7 @@ static void mainloop(void)
                   cur_tool == TOOL_FILL)
                 {
 
-                  /* Left tools scroll */
+                  /* Left tools scroll (via scroll wheel) */
                   if (HIT(r_tools) && NUM_TOOLS > most + TOOLOFFSET)
                     {
                       int is_upper = (event.button.button == 4);
@@ -5192,7 +5194,7 @@ static void mainloop(void)
                       update_screen_rect(&r_tools);
                     }
 
-                  /* Right tool options scroll */
+                  /* Right tool options scroll (via scroll wheel) */
                   else
                     {
                       grid_dims gd_controls;    /* might become 2-by-2 */
@@ -16038,7 +16040,8 @@ static int do_open(void)
                           want_erase = 1;
                         }
                     }
-                  else if (event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button))
+                  else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
+                            event.type == TP_SDL_MOUSEBUTTONSCROLL)
                     {
                       if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                           event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h) - button_h)
@@ -16073,40 +16076,78 @@ static int do_open(void)
                       else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
                                event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
                         {
-                          if (event.button.y < img_scroll_up->h)
+                          if (event.button.y < img_scroll_up->h ||
+                              (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h))
                             {
-                              /* Up scroll button: */
+                              /* Up or down scroll button in Open dialog: */
 
-                              if (cur > 0)
+                              if (event.button.y < img_scroll_up->h)
                                 {
-                                  cur = cur - 4;
-                                  update_list = 1;
-                                  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                                  if (cur == 0)
-                                    do_setcursor(cursor_arrow);
+                                  /* Up scroll button in Open dialog: */
+    
+                                  if (cur > 0)
+                                    {
+                                      cur = cur - 4;
+                                      update_list = 1;
+                                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    
+                                      if (cur == 0)
+                                        do_setcursor(cursor_arrow);
+                                    }
+    
+                                  if (which >= cur + 16)
+                                    which = which - 4;
+                                }
+                              else if (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
+                                       event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h)
+                                {
+                                  /* Down scroll button in Open dialog: */
+    
+                                  if (cur < num_files - 16)
+                                    {
+                                      cur = cur + 4;
+                                      update_list = 1;
+                                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    
+                                      if (cur >= num_files - 16)
+                                        do_setcursor(cursor_arrow);
+                                    }
+    
+                                  if (which < cur)
+                                    which = which + 4;
                                 }
 
-                              if (which >= cur + 16)
-                                which = which - 4;
-                            }
-                          else if (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
-                                   event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h)
-                            {
-                              /* Down scroll button: */
-
-                              if (cur < num_files - 16)
+                              if (scrolltimer_dialog != NULL)
                                 {
-                                  cur = cur + 4;
-                                  update_list = 1;
-                                  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                                  if (cur >= num_files - 16)
-                                    do_setcursor(cursor_arrow);
+                                  SDL_RemoveTimer(scrolltimer_dialog);
+                                  scrolltimer_dialog = NULL;
                                 }
 
-                              if (which < cur)
-                                which = which + 4;
+                              if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                                {
+                                  DEBUG_PRINTF("Starting scrolling\n");
+                                  memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                                  scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                                  /*
+                                  * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                                  * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                                  * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                                  * energy impact on the Mac.
+                                  */
+
+                                  scrolling_dialog = 1;
+                                  SDL_InitSubSystem(SDL_INIT_TIMER);
+                                  scrolltimer_dialog =
+                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                }
+                              else
+                                {
+                                  DEBUG_PRINTF("Continuing scrolling\n");
+                                  scrolltimer_dialog =
+                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                }
                             }
                         }
                       else if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + button_w &&
@@ -16246,6 +16287,24 @@ static int do_open(void)
                       oldpos_y = event.button.y;
                     }
 
+                  else if (event.type == SDL_MOUSEBUTTONUP)
+                    {
+/*
+                      if (scrolling_dialog)
+                        {
+                          if (scrolltimer_dialog != NULL)
+                            {
+                              SDL_RemoveTimer(scrolltimer_dialog);
+                              scrolltimer_dialog = NULL;
+                            }
+                          scrolling_dialog = 0;
+                          SDL_QuitSubSystem(SDL_INIT_TIMER);
+        
+                          DEBUG_PRINTF("Killing dialog scrolling\n");
+                        }
+*/
+                    }
+
                   else if (event.type == SDL_JOYAXISMOTION)
                     handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
@@ -16257,6 +16316,12 @@ static int do_open(void)
 
                   else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
                     handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+                } /* while (SDL_PollEvent(&event)) */
+
+              if (scrolltimer_dialog != NULL)
+                {
+                  SDL_RemoveTimer(scrolltimer_dialog);
+                  scrolltimer_dialog = NULL;
                 }
 
               if (motioner | hatmotioner)
@@ -18462,7 +18527,7 @@ static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param)
 /* Scroll Timer for Selector */
 static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param)
 {
-  /* printf("scrolltimer_tool_callback(%d) -- ", interval); */
+  /* printf("scrolltimer_tool_callback(%d)\n", interval); */
   if (scrolling_tool)
     {
       DEBUG_PRINTF("(Still scrolling tool)\n");
@@ -18483,7 +18548,7 @@ static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param)
 /* Scroll Timer for Dialogs (Open & New) */
 static Uint32 scrolltimer_dialog_callback(Uint32 interval, void *param)
 {
-  /* printf("scrolltimer_dialog_callback(%d) -- ", interval); */
+  printf("scrolltimer_dialog_callback(%d)\n", interval);
   if (scrolling_dialog)
     {
       DEBUG_PRINTF("(Still scrolling dialog)\n");
