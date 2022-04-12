@@ -24322,10 +24322,7 @@ static void load_info_about_label_surface(FILE * lfi)
   char *tmp_fgets_return;
   Uint8 a;
   wchar_t *wtmpstr;
-  size_t nwchar;
-#ifdef WIN32
   char *tmpstr;
-#endif
 
   /* Clear label surface */
 
@@ -24380,14 +24377,8 @@ static void load_info_about_label_surface(FILE * lfi)
   else
     new_to_old_ratio = (float)new_height / old_height;
 
-
   wtmpstr = malloc(1024);
-
-#ifdef WIN32
   tmpstr = malloc(1024);
-#endif
-
-
 
   /* Read the labels' text: */
 
@@ -24395,7 +24386,7 @@ static void load_info_about_label_surface(FILE * lfi)
     {
       new_node = malloc(sizeof(struct label_node));
 
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
+      new_node->save_texttool_len = atoi(fgets(tmpstr, 5, lfi));
 
 #ifdef DEBUG
       printf("Reading %d wide chars\n", new_node->save_texttool_len); fflush(stdout);
@@ -24429,28 +24420,6 @@ static void load_info_about_label_surface(FILE * lfi)
 #ifdef DEBUG
           printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
 #endif
-
-          /* If the string is shorter than what we expect (new_node->save_texttool_len),
-             then it must have been prefixed with spaces that we lost. */
-          nwchar = wcslen(new_node->save_texttool_str);
-          if (nwchar < new_node->save_texttool_len)
-            {
-              size_t diff, i;
-
-              diff = new_node->save_texttool_len - nwchar;
-
-              for (i = 0; i < diff; i++)
-                wtmpstr[i] = L' ';
-
-              for (i = 0; i <= nwchar; i++)
-                wtmpstr[i + diff] = new_node->save_texttool_str[i];
-
-              memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
-
-#ifdef DEBUG
-              printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
-#endif
-            }
 
           /* Read the label's color (RGB) */
           tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
