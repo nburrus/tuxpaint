@@ -24321,7 +24321,9 @@ static void load_info_about_label_surface(FILE * lfi)
   int tmp_fscanf_return;
   char *tmp_fgets_return;
   Uint8 a;
+#ifdef WIN32
   wchar_t *wtmpstr;
+#endif
   char *tmpstr;
 
   /* Clear label surface */
@@ -24377,7 +24379,9 @@ static void load_info_about_label_surface(FILE * lfi)
   else
     new_to_old_ratio = (float)new_height / old_height;
 
+#ifdef WIN32
   wtmpstr = malloc(1024);
+#endif
   tmpstr = malloc(1024);
 
   /* Read the labels' text: */
@@ -24396,10 +24400,10 @@ static void load_info_about_label_surface(FILE * lfi)
         {
           fprintf(stderr, "Unexpected! Saved text length is >= 1024 (%u!)\n", new_node->save_texttool_len);
           free(new_node);
-          free(wtmpstr);
 #ifdef WIN32
-          free(tmpstr);
+          free(wtmpstr);
 #endif
+          free(tmpstr);
           fclose(lfi);
           return;
         }
@@ -24465,9 +24469,9 @@ static void load_info_about_label_surface(FILE * lfi)
             {
               fprintf(stderr, "Unexpected! Save dimensions are (%u x %u!)\n", new_node->save_width, new_node->save_height);
               free(new_node);
-              free(wtmpstr);
-#ifdef WIN32
               free(tmpstr);
+#ifdef WIN32
+              free(wtmpstr);
 #endif
               fclose(lfi);
               return;
@@ -24556,9 +24560,9 @@ static void load_info_about_label_surface(FILE * lfi)
   first_label_node_in_redo_stack = NULL;
   fclose(lfi);
 
-  free(wtmpstr);
-#ifdef WIN32
   free(tmpstr);
+#ifdef WIN32
+  free(wtmpstr);
 #endif
 
 
