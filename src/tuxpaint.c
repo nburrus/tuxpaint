@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 8, 2022
+  June 14, 2002 - April 18, 2022
 */
 
 #include "platform.h"
@@ -2341,7 +2341,7 @@ SDL_Rect kbd_rect;
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
 int cur_thing;
-SDL_TimerID scrolltimer_dialog = NULL; /* Used by both Open and New dialogs */
+SDL_TimerID scrolltimer_dialog = NULL; /* Used by Open, Open->Slideshow, and New dialogs */
 
 /**
  * --- MAIN LOOP! ---
@@ -3598,7 +3598,7 @@ static void mainloop(void)
                           /* Tool up scroll button */
                           tool_scroll -= gd_tools.cols;
                           playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    
+
                           draw_toolbar();
                           update_screen_rect(&r_tools);
                         }
@@ -3608,7 +3608,7 @@ static void mainloop(void)
                           tool_scroll += gd_tools.cols;
                           draw_toolbar();
                           playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    
+
                           update_screen_rect(&r_tools);
                         }
 
@@ -16041,7 +16041,7 @@ static int do_open(void)
                         }
                     }
                   else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
-                            event.type == TP_SDL_MOUSEBUTTONSCROLL)
+                           event.type == TP_SDL_MOUSEBUTTONSCROLL)
                     {
                       if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                           event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h) - button_h)
@@ -16085,17 +16085,17 @@ static int do_open(void)
                               if (event.button.y < img_scroll_up->h)
                                 {
                                   /* Up scroll button in Open dialog: */
-    
+
                                   if (cur > 0)
                                     {
                                       cur = cur - 4;
                                       update_list = 1;
                                       playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    
+
                                       if (cur == 0)
                                         do_setcursor(cursor_arrow);
                                     }
-    
+
                                   if (which >= cur + 16)
                                     which = which - 4;
                                 }
@@ -16103,23 +16103,24 @@ static int do_open(void)
                                        event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h)
                                 {
                                   /* Down scroll button in Open dialog: */
-    
+
                                   if (cur < num_files - 16)
                                     {
                                       cur = cur + 4;
                                       update_list = 1;
                                       playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    
+
                                       if (cur >= num_files - 16)
                                         do_setcursor(cursor_arrow);
                                     }
-    
+
                                   if (which < cur)
                                     which = which + 4;
                                 }
 
                               if (scrolltimer_dialog != NULL)
                                 {
+printf("SDL_RemoveTimer(scrolltimer_dialog);\n");
                                   SDL_RemoveTimer(scrolltimer_dialog);
                                   scrolltimer_dialog = NULL;
                                 }
@@ -16138,15 +16139,18 @@ static int do_open(void)
                                   */
 
                                   scrolling_dialog = 1;
-                                  SDL_InitSubSystem(SDL_INIT_TIMER);
+                                  //SDL_InitSubSystem(SDL_INIT_TIMER);
+                                  printf("SDL_InitSubSystem(SDL_INIT_TIMER) = %d\n", SDL_InitSubSystem(SDL_INIT_TIMER));
                                   scrolltimer_dialog =
-                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                    SDL_AddTimer(1/*REPEAT_SPEED*/, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+printf("SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);\n");
                                 }
                               else
                                 {
                                   DEBUG_PRINTF("Continuing scrolling\n");
                                   scrolltimer_dialog =
-                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                    SDL_AddTimer(1/*REPEAT_SPEED / 3*/, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+printf("SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);\n");
                                 }
                             }
                         }
@@ -16289,20 +16293,20 @@ static int do_open(void)
 
                   else if (event.type == SDL_MOUSEBUTTONUP)
                     {
-/*
                       if (scrolling_dialog)
                         {
                           if (scrolltimer_dialog != NULL)
                             {
                               SDL_RemoveTimer(scrolltimer_dialog);
+printf("SDL_RemoveTimer(scrolltimer_dialog);\n");
                               scrolltimer_dialog = NULL;
                             }
                           scrolling_dialog = 0;
                           SDL_QuitSubSystem(SDL_INIT_TIMER);
-        
+printf("SDL_QuitSubSystem(SDL_INIT_TIMER);\n");
+
                           DEBUG_PRINTF("Killing dialog scrolling\n");
                         }
-*/
                     }
 
                   else if (event.type == SDL_JOYAXISMOTION)
@@ -21096,7 +21100,8 @@ static int do_new_dialog(void)
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                 }
             }
-          else if (event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button))
+          else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
+                   event.type == TP_SDL_MOUSEBUTTONSCROLL)
             {
               if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                   event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h - button_h))
@@ -21127,40 +21132,79 @@ static int do_new_dialog(void)
               else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
                        event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
                 {
-                  if (event.button.y < img_scroll_up->h)
+                  if (event.button.y < img_scroll_up->h ||
+                      (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                       event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_up->h))
+                     )
                     {
-                      /* Up scroll button: */
+                      /* Up or Down scroll button in New dialog: */
 
-                      if (cur > 0)
+                      if (event.button.y < img_scroll_up->h)
                         {
-                          cur = cur - 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                          /* Up scroll button: */
 
-                          if (cur == 0)
-                            do_setcursor(cursor_arrow);
+                          if (cur > 0)
+                            {
+                              cur = cur - 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                              if (cur == 0)
+                                do_setcursor(cursor_arrow);
+                            }
+
+                          if (which >= cur + 16)
+                            which = which - 4;
+                        }
+                      else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_up->h))
+                        {
+                          /* Down scroll button: */
+
+                          if (cur < num_files - 16)
+                            {
+                              cur = cur + 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                              if (cur >= num_files - 16)
+                                do_setcursor(cursor_arrow);
+                            }
+
+                          if (which < cur)
+                            which = which + 4;
                         }
 
-                      if (which >= cur + 16)
-                        which = which - 4;
-                    }
-                  else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
-                           event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_up->h))
-                    {
-                      /* Down scroll button: */
+                        if (scrolltimer_dialog != NULL)
+                          {
+                            SDL_RemoveTimer(scrolltimer_dialog);
+                            scrolltimer_dialog = NULL;
+                          }
 
-                      if (cur < num_files - 16)
-                        {
-                          cur = cur + 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                        if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                          {
+                            DEBUG_PRINTF("Starting scrolling\n");
+                            memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                            scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
-                          if (cur >= num_files - 16)
-                            do_setcursor(cursor_arrow);
+                            /*
+                            * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                            * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                            * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                            * energy impact on the Mac.
+                            */
+
+                            scrolling_dialog = 1;
+                            SDL_InitSubSystem(SDL_INIT_TIMER);
+                            scrolltimer_dialog =
+                              SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                }
+                        else
+                          {
+                            DEBUG_PRINTF("Continuing scrolling\n");
+                            scrolltimer_dialog =
+                              SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
                         }
-
-                      if (which < cur)
-                        which = which + 4;
                     }
                 }
               else if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + button_w &&
@@ -21264,6 +21308,21 @@ static int do_new_dialog(void)
                 }
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
+            }
+
+          else if (event.type == SDL_MOUSEBUTTONUP)
+            {
+              if (scrolling_dialog)
+                {
+                  if (scrolltimer_dialog != NULL)
+                    {
+                      SDL_RemoveTimer(scrolltimer_dialog);
+                      scrolltimer_dialog = NULL;
+                    }
+                  scrolling_dialog = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
+                  DEBUG_PRINTF("Killing dialog scrolling\n");
+                }
             }
 
           else if (event.type == SDL_JOYAXISMOTION)
