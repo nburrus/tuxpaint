@@ -16120,7 +16120,6 @@ static int do_open(void)
 
                               if (scrolltimer_dialog != NULL)
                                 {
-printf("SDL_RemoveTimer(scrolltimer_dialog);\n");
                                   SDL_RemoveTimer(scrolltimer_dialog);
                                   scrolltimer_dialog = NULL;
                                 }
@@ -16139,18 +16138,15 @@ printf("SDL_RemoveTimer(scrolltimer_dialog);\n");
                                   */
 
                                   scrolling_dialog = 1;
-                                  //SDL_InitSubSystem(SDL_INIT_TIMER);
-                                  printf("SDL_InitSubSystem(SDL_INIT_TIMER) = %d\n", SDL_InitSubSystem(SDL_INIT_TIMER));
+                                  SDL_InitSubSystem(SDL_INIT_TIMER);
                                   scrolltimer_dialog =
                                     SDL_AddTimer(1/*REPEAT_SPEED*/, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
-printf("SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);\n");
                                 }
                               else
                                 {
                                   DEBUG_PRINTF("Continuing scrolling\n");
                                   scrolltimer_dialog =
                                     SDL_AddTimer(1/*REPEAT_SPEED / 3*/, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
-printf("SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);\n");
                                 }
                             }
                         }
@@ -16298,13 +16294,10 @@ printf("SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scr
                           if (scrolltimer_dialog != NULL)
                             {
                               SDL_RemoveTimer(scrolltimer_dialog);
-printf("SDL_RemoveTimer(scrolltimer_dialog);\n");
                               scrolltimer_dialog = NULL;
                             }
                           scrolling_dialog = 0;
                           SDL_QuitSubSystem(SDL_INIT_TIMER);
-printf("SDL_QuitSubSystem(SDL_INIT_TIMER);\n");
-
                           DEBUG_PRINTF("Killing dialog scrolling\n");
                         }
                     }
