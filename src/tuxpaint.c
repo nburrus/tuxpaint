@@ -17108,7 +17108,8 @@ static int do_slideshow(void)
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                 }
             }
-          else if (event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button))
+          else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
+                   event.type == TP_SDL_MOUSEBUTTONSCROLL)
             {
               if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                   event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h - button_h))
@@ -17152,41 +17153,80 @@ static int do_slideshow(void)
               else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
                        event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
                 {
-                  if (event.button.y < img_scroll_up->h)
+                  if (event.button.y < img_scroll_up->h ||
+                      (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
+                     )
                     {
-                      /* Up scroll button: */
+                      /* Up or Down scroll button in Slideshow dialog: */
 
-                      if (cur > 0)
+                      if (event.button.y < img_scroll_up->h)
                         {
-                          cur = cur - 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                          if (cur == 0)
-                            do_setcursor(cursor_arrow);
+                          /* Up scroll button: */
+    
+                          if (cur > 0)
+                            {
+                              cur = cur - 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    
+                              if (cur == 0)
+                                do_setcursor(cursor_arrow);
+                            }
+    
+                          if (which >= cur + 16)
+                            which = which - 4;
                         }
-
-                      if (which >= cur + 16)
-                        which = which - 4;
+                      else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
+                        {
+                          /* Down scroll button: */
+    
+                          if (cur < num_files - 16)
+                            {
+                              cur = cur + 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+    
+                              if (cur >= num_files - 16)
+                                do_setcursor(cursor_arrow);
+                            }
+    
+                          if (which < cur)
+                            which = which + 4;
+                        }
                     }
-                  else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
-                           event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
+
+                  if (scrolltimer_dialog != NULL)
                     {
-                      /* Down scroll button: */
-
-                      if (cur < num_files - 16)
-                        {
-                          cur = cur + 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                          if (cur >= num_files - 16)
-                            do_setcursor(cursor_arrow);
-                        }
-
-                      if (which < cur)
-                        which = which + 4;
+                      SDL_RemoveTimer(scrolltimer_dialog);
+                      scrolltimer_dialog = NULL;
                     }
+
+                  if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                    {
+                      DEBUG_PRINTF("Starting scrolling\n");
+                      memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                      scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                      /*
+                      * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                      * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                      * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                      * energy impact on the Mac.
+                      */
+
+                      scrolling_dialog = 1;
+                      SDL_InitSubSystem(SDL_INIT_TIMER);
+                      scrolltimer_dialog =
+                        SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                          }
+                  else
+                    {
+                      DEBUG_PRINTF("Continuing scrolling\n");
+                      scrolltimer_dialog =
+                        SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                  }
                 }
               else if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + button_w &&
                        event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
@@ -17389,6 +17429,23 @@ static int do_slideshow(void)
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
             }
+
+
+          else if (event.type == SDL_MOUSEBUTTONUP)
+            {
+              if (scrolling_dialog)
+                {
+                  if (scrolltimer_dialog != NULL)
+                    {
+                      SDL_RemoveTimer(scrolltimer_dialog);
+                      scrolltimer_dialog = NULL;
+                    }
+                  scrolling_dialog = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
+                  DEBUG_PRINTF("Killing dialog scrolling\n");
+                }
+            }
+
           else if (event.type == SDL_JOYAXISMOTION)
             handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
@@ -18552,7 +18609,6 @@ static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param)
 /* Scroll Timer for Dialogs (Open & New) */
 static Uint32 scrolltimer_dialog_callback(Uint32 interval, void *param)
 {
-  printf("scrolltimer_dialog_callback(%d)\n", interval);
   if (scrolling_dialog)
     {
       DEBUG_PRINTF("(Still scrolling dialog)\n");
@@ -21175,35 +21231,35 @@ static int do_new_dialog(void)
                             which = which + 4;
                         }
 
-                        if (scrolltimer_dialog != NULL)
-                          {
-                            SDL_RemoveTimer(scrolltimer_dialog);
-                            scrolltimer_dialog = NULL;
-                          }
+                      if (scrolltimer_dialog != NULL)
+                        {
+                          SDL_RemoveTimer(scrolltimer_dialog);
+                          scrolltimer_dialog = NULL;
+                        }
 
-                        if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
-                          {
-                            DEBUG_PRINTF("Starting scrolling\n");
-                            memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
-                            scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+                      if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                        {
+                          DEBUG_PRINTF("Starting scrolling\n");
+                          memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                          scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
-                            /*
-                            * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
-                            * for scrolling) then disable it immediately after (e.g., after the timer has fired or
-                            * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
-                            * energy impact on the Mac.
-                            */
+                          /*
+                          * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                          * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                          * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                          * energy impact on the Mac.
+                          */
 
-                            scrolling_dialog = 1;
-                            SDL_InitSubSystem(SDL_INIT_TIMER);
-                            scrolltimer_dialog =
-                              SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
-                                }
-                        else
-                          {
-                            DEBUG_PRINTF("Continuing scrolling\n");
-                            scrolltimer_dialog =
-                              SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                          scrolling_dialog = 1;
+                          SDL_InitSubSystem(SDL_INIT_TIMER);
+                          scrolltimer_dialog =
+                            SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                              }
+                      else
+                        {
+                          DEBUG_PRINTF("Continuing scrolling\n");
+                          scrolltimer_dialog =
+                            SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
                         }
                     }
                 }

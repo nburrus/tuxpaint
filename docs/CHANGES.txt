@@ -132,7 +132,7 @@ http://www.tuxpaint.org/
     -------------------
     * The up & down scroll buttons now auto-repeat if you click/tap and
       hold them in the "Tools" section, [WIP] the "Open" dialog,
-      the "New" dialog, and the [WIP] "Slideshow" dialog.
+      the "New" dialog, and the "Slideshow" dialog.
       For https://sourceforge.net/p/tuxpaint/feature-requests/173/
       Bill Kendrick <bill@newbreedsoftware.com>
 
