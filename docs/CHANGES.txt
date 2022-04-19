@@ -128,12 +128,18 @@ http://www.tuxpaint.org/
       you scale down (similar to "Panels", but with non-integer scaling).
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * New Brushes:
+    ------------
+    * "Dog" animated directional brush.
+      (Modified version of art from the "oneko" package by Tatsuya Kato.
+      https://github.com/tie/oneko)
+      Brushified by Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * The up & down scroll buttons now auto-repeat if you click/tap and
-      hold them in the "Tools" section, [WIP] the "Open" dialog,
-      the "New" dialog, and the "Slideshow" dialog.
-      For https://sourceforge.net/p/tuxpaint/feature-requests/173/
+      hold them in the "Tools" section, and "Open", "New", and "Slideshow"
+      dialogs.  (For https://sourceforge.net/p/tuxpaint/feature-requests/173/)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:

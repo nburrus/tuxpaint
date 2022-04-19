@@ -16140,13 +16140,13 @@ static int do_open(void)
                                   scrolling_dialog = 1;
                                   SDL_InitSubSystem(SDL_INIT_TIMER);
                                   scrolltimer_dialog =
-                                    SDL_AddTimer(1/*REPEAT_SPEED*/, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
                                 }
                               else
                                 {
                                   DEBUG_PRINTF("Continuing scrolling\n");
                                   scrolltimer_dialog =
-                                    SDL_AddTimer(1/*REPEAT_SPEED / 3*/, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
                                 }
                             }
                         }
@@ -16314,12 +16314,6 @@ static int do_open(void)
                   else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
                     handle_joybuttonupdown(event, oldpos_x, oldpos_y);
                 } /* while (SDL_PollEvent(&event)) */
-
-              if (scrolltimer_dialog != NULL)
-                {
-                  SDL_RemoveTimer(scrolltimer_dialog);
-                  scrolltimer_dialog = NULL;
-                }
 
               if (motioner | hatmotioner)
                 handle_motioners(oldpos_x, oldpos_y, motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x,
