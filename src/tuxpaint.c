@@ -17163,17 +17163,17 @@ static int do_slideshow(void)
                       if (event.button.y < img_scroll_up->h)
                         {
                           /* Up scroll button: */
-    
+
                           if (cur > 0)
                             {
                               cur = cur - 4;
                               update_list = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    
+
                               if (cur == 0)
                                 do_setcursor(cursor_arrow);
                             }
-    
+
                           if (which >= cur + 16)
                             which = which - 4;
                         }
@@ -17181,17 +17181,17 @@ static int do_slideshow(void)
                                event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
                         {
                           /* Down scroll button: */
-    
+
                           if (cur < num_files - 16)
                             {
                               cur = cur + 4;
                               update_list = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-    
+
                               if (cur >= num_files - 16)
                                 do_setcursor(cursor_arrow);
                             }
-    
+
                           if (which < cur)
                             which = which + 4;
                         }
@@ -17220,7 +17220,7 @@ static int do_slideshow(void)
                       SDL_InitSubSystem(SDL_INIT_TIMER);
                       scrolltimer_dialog =
                         SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
-                          }
+                    }
                   else
                     {
                       DEBUG_PRINTF("Continuing scrolling\n");
@@ -17429,7 +17429,6 @@ static int do_slideshow(void)
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
             }
-
 
           else if (event.type == SDL_MOUSEBUTTONUP)
             {
