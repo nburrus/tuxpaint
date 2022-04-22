@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-17 01:28-0700\n"
-"PO-Revision-Date: 2022-02-04 17:06+0900\n"
+"PO-Revision-Date: 2022-04-22 15:51+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -272,40 +272,34 @@ msgstr "ちゅうごくご"
 
 #. Add menu items
 #: ../macos.m:56
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "About Tux Paint"
-msgstr "タックスペイント"
+msgstr "タックスペイントについて"
 
 #: ../macos.m:61
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Hide Tux Paint"
-msgstr "タックスペイント"
+msgstr "タックスペイントを隠す"
 
 #: ../macos.m:64
 msgid "Hide Others"
-msgstr ""
+msgstr "ほかを隠す"
 
 #: ../macos.m:67
 msgid "Show All"
-msgstr ""
+msgstr "全て表示"
 
 #: ../macos.m:71
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Quit Tux Paint"
-msgstr "タックスペイント"
+msgstr "タックスペイントを終了"
 
 #. Put menu into the menubar
 #: ../macos.m:101 ../macos.m:109
 msgid "Window"
-msgstr ""
+msgstr "ウインドウ"
 
 #. "Minimize" item
 #: ../macos.m:104
 msgid "Minimize"
-msgstr ""
+msgstr "最小化"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -602,12 +596,6 @@ msgstr ""
 "[Tab] をおせば かきおわり。"
 
 #: ../tools.h:132
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it and change its "
-#| "text style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -615,8 +603,8 @@ msgid ""
 "text style."
 msgstr ""
 "じのかたちをえらんで、クリックしたあと キーをおして じをかこう。 [Enter] か "
-"[Tab] をおせば かきおわり。 ゆびのマークの せんたくボタンを おして もじを ク"
-"リックすれば うごかしたり じのかたちを かえたり できるよ。"
+"[Tab] をおせば かきおわり。 ゆびのマークの せんたくボタンを おしてから ラベル"
+"を クリックすれば うごかしたり かきなおしたり かたちを かえたり できるよ。"
 
 #. Magic tool instruction
 #: ../tools.h:138
@@ -719,6 +707,8 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
+"ラベルを クリックすれば うごかしたり かきなおしたり かたちを かえたり できる"
+"よ。[Tab] キーを おして ラベルを えらんでから [Enter] をおしても いいよ。"
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:184
@@ -727,6 +717,9 @@ msgid ""
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
 msgstr ""
+"ラベルの ばしょを かえるには うごかしたいところを クリックします。ラベルを か"
+"きかえるには キーボードで にゅうりょくします。また、ボタンで えらんで じの か"
+"たちを かえることも できます。さいごに [Enter] か [Tab] をおして できあがり。"
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:187
@@ -734,40 +727,42 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
 msgstr ""
+"ラベルを クリックすると えに はりつけられるよ。[Tab] キーを おして はりつけ"
+"る ラベルを えらんでから [Enter] をおしても いいよ。"
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:190
 msgid "This brush is animated; its shape changes as you draw!"
-msgstr ""
+msgstr "アニメーションする ふで; せんを かく あいだに かたちがかわるよ。"
 
 #: ../tools.h:191
 msgid "This brush changes depending on the angle."
-msgstr ""
+msgstr "このふでは せんのむきにあわせて かたちがかわるよ。"
 
 #: ../tools.h:192
 msgid ""
 "This brush changes depending on the angle, and is animated; its shape "
 "changes as you draw!"
-msgstr ""
+msgstr "このふでは せんのむきにあわせて アニメーションしながら へんかするよ。"
 
 #: ../tools.h:194
 msgid "This brush's spacing is now 1 pixel!"
-msgstr ""
+msgstr "あいだの おおきさは 1 ピクセル だよ！"
 
 #: ../tools.h:195
 #, c-format
 msgid ""
 "This brush's spacing is now about %1$d/%2$d the size of the brush shape."
-msgstr ""
+msgstr "あいだの おおきさは ふでのおおきさの %2$d ぶんの %1$d ぐらいだよ。"
 
 #: ../tools.h:196
 msgid "This brush's spacing is now about the size of the brush shape."
-msgstr ""
+msgstr "あいだの おおきさは ふでのおおきさと おなじぐらいだよ。"
 
 #: ../tools.h:197
 #, c-format
 msgid "This brush's spacing is now about %d times as big as the brush shape."
-msgstr ""
+msgstr "あいだの おおきさは ふでのおおきさの %d ばい ぐらいだよ。"
 
 #: ../tools.h:198
 #, c-format
@@ -775,6 +770,7 @@ msgid ""
 "This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
 "shape."
 msgstr ""
+"あいだの おおきさは ふでのおおきさの %1$d と %3$d ぶんの %2$d ぐらいだよ。"
 
 #  FIXME: Move elsewhere!!!
 #. Prompt to confirm user wishes to quit
@@ -1073,6 +1069,8 @@ msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
+"いろの えらびかた：いろあいは うえから したへ、あざやかさは ひだり（あわい い"
+"ろ）から みぎ（あざやかな いろ）へ。みぎの バーで あかるさを えらびます。"
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
@@ -1562,10 +1560,8 @@ msgid "Panels"
 msgstr "パネル"
 
 #: ../../magic/src/perspective.c:156
-#, fuzzy
-#| msgid "Zoom"
 msgid "Tile Zoom"
-msgstr "ズーム"
+msgstr "タイルズーム"
 
 #: ../../magic/src/perspective.c:157
 msgid "Zoom"
