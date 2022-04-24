@@ -2,7 +2,7 @@
                                    Tux Paint
                                   バージョン 0.9.28
 
-        Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
+         Copyright © 2002-2022 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
                                    2022年3月30日
@@ -461,7 +461,7 @@ Stamp Options
            To prevent a stamp from being mirrored horizontally, add the
            option "nomirror" to the stamp's data file.
 
-   スタンプサイズ
+   スタンプの初期サイズ
 
            By default, Tux Paint assumes that your stamp is sized
            appropriately for unscaled display on a 608x472 canvas. This was

@@ -510,10 +510,8 @@ Ferramentas dispoñíbeis
                         available, and the key to toggle or cycle modes, are
                         listed below.
 
-                           * Xaponés — Hiragana romanizado e Katakana
-                             romanizado — tecla [Alt] da dereita
-                           * Coreano — Hangul 2-Bul — tecla [Alt] da dereita
-                             or tecla [Alt] da esquerda
+                           * * Coreano — Hangul 2-Bul — tecla [Alt] da
+                             dereita or tecla [Alt] da esquerda
                            * Chinés tradicional — tecla [Alt] da dereita ou
                              tecla [Alt] da esquerda
                            * Tailandés — tecla [Alt] da dereita

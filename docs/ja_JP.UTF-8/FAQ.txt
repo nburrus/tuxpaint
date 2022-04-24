@@ -1,7 +1,7 @@
                                    Tux Paint
                     バージョン 0.9.28 Frequently Asked Questions
 
-        Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
+         Copyright © 2002-2022 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
                                    2022年1月20日
@@ -410,7 +410,7 @@ Audio Problems
                      Documentation" for details) and add a line containing
                      "nosound=yes".
                    * Or use Tux Paint Config. and make sure "Enable Sound
-                     Effects" (under "画面 & 音声") is not checked.
+                     Effects" (under "Video & Sound") is not checked.
                    * Alternatively, recompile Tux Paint with sound support
                      disabled. (See above, and the 'Install' documentation.
 
@@ -425,7 +425,7 @@ Audio Problems
                 Documentation" for details) and add a line containing
                 "nostereo=yes".
               * Or use Tux Paint Config. and make sure "Enable Stereo
-                Effects" (under "画面 & 音声") is not checked.
+                Effects" (under "Video & Sound") is not checked.
 
    The sound effects sound strange
 
@@ -492,8 +492,8 @@ Fullscreen Mode Problems
            command-line argument: "--windowed", which will override the
            configuration file's setting.
 
-           Or use Tux Paint Config. and make sure "Fullscreen" (under "画面 &
-           音声") is not checked.
+           Or use Tux Paint Config. and make sure "Fullscreen" (under "Video
+           & Sound") is not checked.
 
      ----------------------------------------------------------------------
 

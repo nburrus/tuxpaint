@@ -2,7 +2,7 @@
                                   バージョン 0.9.28
                                SVG Documentation
 
-        Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
+         Copyright © 2007-2022 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
                                    2022年1月20日

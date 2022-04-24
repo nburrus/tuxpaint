@@ -91,7 +91,7 @@
             Signals Documentation          </h1>
 
           <p>
-            Copyright &copy; 2019-2022 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2019-2022 by various contributors; <a href="../../AUTHORS.txt">AUTHORS.txt</a> 参照.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
     
@@ -118,7 +118,7 @@
             From the main interface, Tux Paint will prompt whether or not you wish to quit, and (unless overridden by the auto-save option, e.g. "<code>--autosave</code>") if you'd like to save the current drawing (if unsaved), and if so, and it's a modified version of an existing drawing (unless overridden by the options to save over old images, or always save new images; e.g. "<code>--saveover</code>" and "<code>--saveovernew</code>", respectively), whether or not to overwrite the existing drawing, or save to a new file.          </p>
   
           <p>
-            例：<code>killall tuxpaint</code>          </p>
+            例: <code>killall tuxpaint</code>          </p>
   
           <p class="note">
             <span title="Information">&#128161;</span>            <strong>Note:</strong> From other parts of the interface, the signal is currently interpreted as a request to go back (e.g., from the "New" dialog back to the main interface), as if a "Back" button in Tux Paint were clicked, or the <b><code>[Esc]</code></b> was key pressed.          </p>
@@ -136,7 +136,7 @@
             So, from the main interface, Tux Paint should quit almost immediately, with no questions asked.          </p>
   
           <p>
-            例：<code>killall -s SIGUSR1 tuxpaint</code>          </p>
+            例: <code>killall -s SIGUSR1 tuxpaint</code>          </p>
   
           <p class="note">
             <span title="Information">&#128161;</span>            <strong>Note:</strong> From other parts of the interface, unfortunately, Tux Paint will go back one level in the interface.  Therefore, at this time, it may be necessary to send this signal to Tux Paint a few times, for it to quit completely.          </p>

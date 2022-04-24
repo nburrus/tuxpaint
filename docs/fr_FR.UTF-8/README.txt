@@ -522,9 +522,7 @@ Outils disponibles
                         available, and the key to toggle or cycle modes, are
                         listed below.
 
-                           * Japonais -- Hiragana romanisé et Katakana
-                             romanisé -- touche [Alt] droite
-                           * Korean — Hangul 2-Bul — touche [Alt] droite or
+                           * * Korean — Hangul 2-Bul — touche [Alt] droite or
                              touche [Alt] gauche
                            * Chinois traditionnel — touche [Alt] droite or
                              touche [Alt] gauche

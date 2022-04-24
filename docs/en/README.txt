@@ -501,10 +501,8 @@ Available Tools
                         available, and the key to toggle or cycle modes, are
                         listed below.
 
-                           * Japanese — Romanized Hiragana and Romanized
-                             Katakana — right [Alt] key
-                           * Korean — Hangul 2-Bul — right [Alt] key or left
-                             [Alt] key
+                           * * Korean — Hangul 2-Bul — right [Alt] key or
+                             left [Alt] key
                            * Traditional Chinese — right [Alt] key or left
                              [Alt] key
                            * Thai — right [Alt] key
