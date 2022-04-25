@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 17, 2022
+  June 14, 2002 - April 18, 2022
 */
 
 #include "platform.h"
@@ -1346,7 +1346,7 @@ static int wheely = 1;
 static int keymouse = 0;
 static int no_button_distinction;
 static int button_down;
-static int scrolling;
+static int scrolling_selector, scrolling_tool, scrolling_dialog;
 
 static int promptless_save = SAVE_OVER_UNSET;
 static int _promptless_save_over, _promptless_save_over_ask, _promptless_save_over_new;
@@ -1991,7 +1991,7 @@ typedef enum
 
 #define NUM_EDGES 4
 
-static SDL_Event scrolltimer_event;
+static SDL_Event scrolltimer_selector_event, scrolltimer_tool_event, scrolltimer_dialog_event;
 
 int non_left_click_count = 0;
 
@@ -2166,7 +2166,9 @@ static wchar_t *uppercase_w(const wchar_t * restrict const str);
 static char *textdir(const char *const str);
 static SDL_Surface *do_render_button_label(const char *const label);
 static void create_button_labels(void);
-static Uint32 scrolltimer_callback(Uint32 interval, void *param);
+static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param);
+static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param);
+static Uint32 scrolltimer_dialog_callback(Uint32 interval, void *param);
 static Uint32 drawtext_callback(Uint32 interval, void *param);
 static void control_drawtext_timer(Uint32 interval, const char *const text, Uint8 locale_text);
 static const char *great_str(void);
@@ -2370,7 +2372,8 @@ SDL_Rect kbd_rect;
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
 int cur_thing;
-
+SDL_TimerID scrolltimer_dialog = NULL; /* Used by Open, Open->Slideshow, and New dialogs */
+Uint32 TP_SDL_MOUSEBUTTONSCROLL;
 /**
  * --- MAIN LOOP! ---
  */
@@ -2399,8 +2402,8 @@ static void mainloop(void)
   FILE *fi;
 #endif
 
-  Uint32 TP_SDL_MOUSEBUTTONSCROLL = SDL_RegisterEvents(1);
-  SDL_TimerID scrolltimer = NULL;
+  TP_SDL_MOUSEBUTTONSCROLL = SDL_RegisterEvents(1);
+  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL;
   SDL_Event event;
   SDLKey key;
   SDLMod mod;
@@ -2432,8 +2435,12 @@ static void mainloop(void)
   button_down = 0;
   last_cursor_blink = cur_toggle_count = 0;
   texttool_len = 0;
-  scrolling = 0;
-  scrolltimer = 0;
+  scrolling_selector = 0;
+  scrolltimer_selector = 0;
+  scrolling_tool = 0;
+  scrolltimer_tool = 0;
+  scrolling_dialog = 0;
+  scrolltimer_dialog = 0;
   val_x = 0;
   val_y = 0;
   valhat_x = 0;
@@ -3305,8 +3312,6 @@ static void mainloop(void)
             {
               if (HIT(r_tools))
                 {
-
-
                   if (HIT(real_r_tools))
                     {
                       /* A tool on the left has been pressed! */
@@ -3746,26 +3751,56 @@ static void mainloop(void)
                       if (!done)
                         magic_switchin(canvas);
                     }
-                  else if ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0)
-                    {
-                      /* Tool up scroll button */
-                      tool_scroll -= gd_tools.cols;
-                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                      draw_toolbar();
-                      update_screen_rect(&r_tools);
-
-                    }
-                  else if ((event.button.y > real_r_tools.y + real_r_tools.h)
+                  else if (
+                    ((event.button.y < r_tools.y + button_h / 2) && tool_scroll > 0) ||
+                    ((event.button.y > real_r_tools.y + real_r_tools.h)
                            && (tool_scroll < NUM_TOOLS - buttons_tall * gd_tools.cols + gd_tools.cols))
-                    {
-                      /* Tool down scroll button */
-                      tool_scroll += gd_tools.cols;
-                      draw_toolbar();
-                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                  ) {
+                      /* Tool up or down scroll buttons */
 
-                      update_screen_rect(&r_tools);
+                      if (event.button.y < r_tools.y + button_h / 2)
+                        {
+                          /* Tool up scroll button */
+                          tool_scroll -= gd_tools.cols;
+                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
+                          draw_toolbar();
+                          update_screen_rect(&r_tools);
+                        }
+                      else
+                        {
+                          /* Tool down scroll button */
+                          tool_scroll += gd_tools.cols;
+                          draw_toolbar();
+                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                          update_screen_rect(&r_tools);
+                        }
+
+                      if (!scrolling_tool && event.type == SDL_MOUSEBUTTONDOWN)
+                        {
+                          DEBUG_PRINTF("Starting scrolling\n");
+                          memcpy(&scrolltimer_tool_event, &event, sizeof(SDL_Event));
+                          scrolltimer_tool_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                          /*
+                          * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                          * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                          * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                          * energy impact on the Mac.
+                          */
+
+                          scrolling_tool = 1;
+                          SDL_InitSubSystem(SDL_INIT_TIMER);
+                          scrolltimer_tool =
+                            SDL_AddTimer(REPEAT_SPEED, scrolltimer_tool_callback, (void *)&scrolltimer_tool_event);
+                        }
+                      else
+                        {
+                          DEBUG_PRINTF("Continuing scrolling\n");
+                          scrolltimer_tool =
+                            SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_tool_callback, (void *)&scrolltimer_tool_event);
+                        }
                     }
                 }
 
@@ -4536,17 +4571,17 @@ static void mainloop(void)
                               do_draw = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 
-                              if (scrolltimer != NULL)
+                              if (scrolltimer_selector != NULL)
                                 {
-                                  SDL_RemoveTimer(scrolltimer);
-                                  scrolltimer = NULL;
+                                  SDL_RemoveTimer(scrolltimer_selector);
+                                  scrolltimer_selector = NULL;
                                 }
 
-                              if (!scrolling && event.type == SDL_MOUSEBUTTONDOWN)
+                              if (!scrolling_selector && event.type == SDL_MOUSEBUTTONDOWN)
                                 {
                                   DEBUG_PRINTF("Starting scrolling\n");
-                                  memcpy(&scrolltimer_event, &event, sizeof(SDL_Event));
-                                  scrolltimer_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+                                  memcpy(&scrolltimer_selector_event, &event, sizeof(SDL_Event));
+                                  scrolltimer_selector_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
                                   /*
                                   * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
@@ -4555,29 +4590,29 @@ static void mainloop(void)
                                   * energy impact on the Mac.
                                   */
 
-                                  scrolling = 1;
+                                  scrolling_selector = 1;
                                   SDL_InitSubSystem(SDL_INIT_TIMER);
-                                  scrolltimer =
-                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_callback, (void *)&scrolltimer_event);
+                                  scrolltimer_selector =
+                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_selector_callback, (void *)&scrolltimer_selector_event);
                                 }
                               else
                                 {
                                   DEBUG_PRINTF("Continuing scrolling\n");
-                                  scrolltimer =
-                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_callback, (void *)&scrolltimer_event);
+                                  scrolltimer_selector =
+                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_selector_callback, (void *)&scrolltimer_selector_event);
                                 }
 
                               if (*thing_scroll == 0 || *thing_scroll / gd_items.cols ==  num_rows_needed - gd_items.rows)
                                 {
                                   do_setcursor(cursor_arrow);
-                                  if (scrolling)
+                                  if (scrolling_selector)
                                     {
-                                      if (scrolltimer != NULL)
+                                      if (scrolltimer_selector != NULL)
                                         {
-                                          SDL_RemoveTimer(scrolltimer);
-                                          scrolltimer = NULL;
+                                          SDL_RemoveTimer(scrolltimer_selector);
+                                          scrolltimer_selector = NULL;
                                         }
-                                      scrolling = 0;
+                                      scrolling_selector = 0;
                                       SDL_QuitSubSystem(SDL_INIT_TIMER);
                                     }
                                 }
@@ -4714,7 +4749,7 @@ static void mainloop(void)
                           /* Enable or disable color selector: */
                           draw_colors(stamp_colorable(cur_stamp[stamp_group])
                                       || stamp_tintable(cur_stamp[stamp_group]));
-                          if (!scrolling)
+                          if (!scrolling_selector)
                             {
                               stamp_xor(canvas->w / 2, canvas->h / 2);
                               stamp_xored = 1;
@@ -5316,7 +5351,7 @@ static void mainloop(void)
                   cur_tool == TOOL_FILL)
                 {
 
-                  /* Left tools scroll */
+                  /* Left tools scroll (via scroll wheel) */
                   if (hit_test(&r_tools, xpos, ypos) && NUM_TOOLS > most + TOOLOFFSET)
                     {
                       int is_upper = (event.wheel.y > 0);
@@ -5363,7 +5398,7 @@ static void mainloop(void)
                       update_screen_rect(&r_tools);
                     }
 
-                  /* Right tool options scroll */
+                  /* Right tool options scroll (via scroll wheel) */
                   else
                     {
                       grid_dims gd_controls;    /* might become 2-by-2 */
@@ -5585,18 +5620,32 @@ static void mainloop(void)
             }
           else if (event.type == SDL_MOUSEBUTTONUP)
             {
-              if (scrolling)
+              if (scrolling_selector)
                 {
-                  if (scrolltimer != NULL)
+                  if (scrolltimer_selector != NULL)
                     {
-                      SDL_RemoveTimer(scrolltimer);
-                      scrolltimer = NULL;
+                      SDL_RemoveTimer(scrolltimer_selector);
+                      scrolltimer_selector = NULL;
                     }
-                  scrolling = 0;
+                  scrolling_selector = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
 
-                  /* printf("Killing scrolling\n"); */
+                  DEBUG_PRINTF("Killing selector scrolling\n");
                 }
+
+              else if (scrolling_tool)
+                {
+                  if (scrolltimer_tool != NULL)
+                    {
+                      SDL_RemoveTimer(scrolltimer_tool);
+                      scrolltimer_tool = NULL;
+                    }
+                  scrolling_tool = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
+
+                  DEBUG_PRINTF("Killing tool scrolling\n");
+                }
+
               /* Erase the xor drawed at click */
               else if (cur_tool == TOOL_STAMP && stamp_xored && event.button.button < 4)
                 {
@@ -16336,7 +16385,8 @@ static int do_open(void)
                           want_erase = 1;
                         }
                     }
-                  else if (event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button))
+                  else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
+                           event.type == TP_SDL_MOUSEBUTTONSCROLL)
                     {
                       if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                           event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h) - button_h)
@@ -16371,40 +16421,78 @@ static int do_open(void)
                       else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
                                event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
                         {
-                          if (event.button.y < img_scroll_up->h)
+                          if (event.button.y < img_scroll_up->h ||
+                              (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h))
                             {
-                              /* Up scroll button: */
+                              /* Up or down scroll button in Open dialog: */
 
-                              if (cur > 0)
+                              if (event.button.y < img_scroll_up->h)
                                 {
-                                  cur = cur - 4;
-                                  update_list = 1;
-                                  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                                  /* Up scroll button in Open dialog: */
 
-                                  if (cur == 0)
-                                    do_setcursor(cursor_arrow);
+                                  if (cur > 0)
+                                    {
+                                      cur = cur - 4;
+                                      update_list = 1;
+                                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                                      if (cur == 0)
+                                        do_setcursor(cursor_arrow);
+                                    }
+
+                                  if (which >= cur + 16)
+                                    which = which - 4;
+                                }
+                              else if (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
+                                       event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h)
+                                {
+                                  /* Down scroll button in Open dialog: */
+
+                                  if (cur < num_files - 16)
+                                    {
+                                      cur = cur + 4;
+                                      update_list = 1;
+                                      playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                                      if (cur >= num_files - 16)
+                                        do_setcursor(cursor_arrow);
+                                    }
+
+                                  if (which < cur)
+                                    which = which + 4;
                                 }
 
-                              if (which >= cur + 16)
-                                which = which - 4;
-                            }
-                          else if (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
-                                   event.button.y < (button_h * buttons_tall + r_ttools.h) - img_scroll_up->h)
-                            {
-                              /* Down scroll button: */
-
-                              if (cur < num_files - 16)
+                              if (scrolltimer_dialog != NULL)
                                 {
-                                  cur = cur + 4;
-                                  update_list = 1;
-                                  playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                                  if (cur >= num_files - 16)
-                                    do_setcursor(cursor_arrow);
+                                  SDL_RemoveTimer(scrolltimer_dialog);
+                                  scrolltimer_dialog = NULL;
                                 }
 
-                              if (which < cur)
-                                which = which + 4;
+                              if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                                {
+                                  DEBUG_PRINTF("Starting scrolling\n");
+                                  memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                                  scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                                  /*
+                                  * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                                  * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                                  * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                                  * energy impact on the Mac.
+                                  */
+
+                                  scrolling_dialog = 1;
+                                  SDL_InitSubSystem(SDL_INIT_TIMER);
+                                  scrolltimer_dialog =
+                                    SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                }
+                              else
+                                {
+                                  DEBUG_PRINTF("Continuing scrolling\n");
+                                  scrolltimer_dialog =
+                                    SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                                }
                             }
                         }
                       else if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + button_w &&
@@ -16460,12 +16548,6 @@ static int do_open(void)
 #ifdef __ANDROID__
                       start_motion_convert(event);
 #endif	      
-                    }
-                  else if (event.type == SDL_MOUSEBUTTONUP)
-                    {
-#ifdef __ANDROID__
-                      stop_motion_convert(event);
-#endif
                     }
                   else if (event.type == SDL_MOUSEWHEEL && wheely)
                     {
@@ -16557,6 +16639,24 @@ static int do_open(void)
                       oldpos_y = event.button.y;
                     }
 
+                  else if (event.type == SDL_MOUSEBUTTONUP)
+                    {
+#ifdef __ANDROID__
+                      stop_motion_convert(event);
+#endif
+                      if (scrolling_dialog)
+                        {
+                          if (scrolltimer_dialog != NULL)
+                            {
+                              SDL_RemoveTimer(scrolltimer_dialog);
+                              scrolltimer_dialog = NULL;
+                            }
+                          scrolling_dialog = 0;
+                          SDL_QuitSubSystem(SDL_INIT_TIMER);
+                          DEBUG_PRINTF("Killing dialog scrolling\n");
+                        }
+                    }
+
                   else if (event.type == SDL_JOYAXISMOTION)
                     handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
@@ -16568,7 +16668,7 @@ static int do_open(void)
 
                   else if (event.type == SDL_JOYBUTTONDOWN || event.type == SDL_JOYBUTTONUP)
                     handle_joybuttonupdown(event, oldpos_x, oldpos_y);
-                }
+                } /* while (SDL_PollEvent(&event)) */
 
               if (motioner | hatmotioner)
                 handle_motioners(oldpos_x, oldpos_y, motioner, hatmotioner, old_hat_ticks, val_x, val_y, valhat_x,
@@ -17350,7 +17450,8 @@ static int do_slideshow(void)
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                 }
             }
-          else if (event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button))
+          else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
+                   event.type == TP_SDL_MOUSEBUTTONSCROLL)
             {
               if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                   event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h - button_h))
@@ -17394,41 +17495,80 @@ static int do_slideshow(void)
               else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
                        event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
                 {
-                  if (event.button.y < img_scroll_up->h)
+                  if (event.button.y < img_scroll_up->h ||
+                      (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
+                     )
                     {
-                      /* Up scroll button: */
+                      /* Up or Down scroll button in Slideshow dialog: */
 
-                      if (cur > 0)
+                      if (event.button.y < img_scroll_up->h)
                         {
-                          cur = cur - 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                          /* Up scroll button: */
 
-                          if (cur == 0)
-                            do_setcursor(cursor_arrow);
+                          if (cur > 0)
+                            {
+                              cur = cur - 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                              if (cur == 0)
+                                do_setcursor(cursor_arrow);
+                            }
+
+                          if (which >= cur + 16)
+                            which = which - 4;
                         }
+                      else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
+                        {
+                          /* Down scroll button: */
 
-                      if (which >= cur + 16)
-                        which = which - 4;
+                          if (cur < num_files - 16)
+                            {
+                              cur = cur + 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                              if (cur >= num_files - 16)
+                                do_setcursor(cursor_arrow);
+                            }
+
+                          if (which < cur)
+                            which = which + 4;
+                        }
                     }
-                  else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
-                           event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_down->h))
+
+                  if (scrolltimer_dialog != NULL)
                     {
-                      /* Down scroll button: */
-
-                      if (cur < num_files - 16)
-                        {
-                          cur = cur + 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                          if (cur >= num_files - 16)
-                            do_setcursor(cursor_arrow);
-                        }
-
-                      if (which < cur)
-                        which = which + 4;
+                      SDL_RemoveTimer(scrolltimer_dialog);
+                      scrolltimer_dialog = NULL;
                     }
+
+                  if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                    {
+                      DEBUG_PRINTF("Starting scrolling\n");
+                      memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                      scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                      /*
+                      * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                      * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                      * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                      * energy impact on the Mac.
+                      */
+
+                      scrolling_dialog = 1;
+                      SDL_InitSubSystem(SDL_INIT_TIMER);
+                      scrolltimer_dialog =
+                        SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                    }
+                  else
+                    {
+                      DEBUG_PRINTF("Continuing scrolling\n");
+                      scrolltimer_dialog =
+                        SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                  }
                 }
               else if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + button_w &&
                        event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h &&
@@ -17554,12 +17694,6 @@ static int do_slideshow(void)
               start_motion_convert(event);
 #endif
             }
-          else if (event.type == SDL_MOUSEBUTTONUP)
-            {
-#ifdef __ANDROID__
-              stop_motion_convert(event);
-#endif
-            }
           else if (event.type == SDL_MOUSEWHEEL && wheely)
             {
               /* Scroll wheel! */
@@ -17645,6 +17779,26 @@ static int do_slideshow(void)
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
             }
+
+          else if (event.type == SDL_MOUSEBUTTONUP)
+            {
+#ifdef __ANDROID__
+              stop_motion_convert(event);
+#endif
+
+              if (scrolling_dialog)
+                {
+                  if (scrolltimer_dialog != NULL)
+                    {
+                      SDL_RemoveTimer(scrolltimer_dialog);
+                      scrolltimer_dialog = NULL;
+                    }
+                  scrolling_dialog = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
+                  DEBUG_PRINTF("Killing dialog scrolling\n");
+                }
+            }
+
           else if (event.type == SDL_JOYAXISMOTION)
             handle_joyaxismotion(event, &motioner, &val_x, &val_y);
 
@@ -18799,19 +18953,59 @@ static char *textdir(const char *const str)
 /**
  * FIXME
  */
-/* Scroll Timer */
-static Uint32 scrolltimer_callback(Uint32 interval, void *param)
+/* Scroll Timer for Tools */
+static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param)
 {
-  /* printf("scrolltimer_callback(%d) -- ", interval); */
-  if (scrolling)
+  /* printf("scrolltimer_selector_callback(%d) -- ", interval); */
+  if (scrolling_selector)
     {
-      DEBUG_PRINTF("(Still scrolling)\n");
+      DEBUG_PRINTF("(Still scrolling selector)\n");
       SDL_PushEvent((SDL_Event *) param);
       return interval;
     }
   else
     {
-      DEBUG_PRINTF("(all done scrolling)\n");
+      DEBUG_PRINTF("(all done scrolling selector)\n");
+      return 0;
+    }
+}
+
+/**
+ * FIXME
+ */
+/* Scroll Timer for Selector */
+static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param)
+{
+  /* printf("scrolltimer_tool_callback(%d)\n", interval); */
+  if (scrolling_tool)
+    {
+      DEBUG_PRINTF("(Still scrolling tool)\n");
+      SDL_PushEvent((SDL_Event *) param);
+      return interval;
+    }
+  else
+    {
+      DEBUG_PRINTF("(all done scrolling tool)\n");
+      return 0;
+    }
+}
+
+
+/**
+ * FIXME
+ */
+/* Scroll Timer for Dialogs (Open & New) */
+static Uint32 scrolltimer_dialog_callback(Uint32 interval, void *param)
+{
+  if (scrolling_dialog)
+    {
+      DEBUG_PRINTF("(Still scrolling dialog)\n");
+      SDL_PushEvent((SDL_Event *) param);
+      return interval;
+    }
+  else
+    {
+      DEBUG_PRINTF("(all done scrolling dialog)\n");
       return 0;
     }
 }
@@ -21393,7 +21587,8 @@ static int do_new_dialog(void)
                   playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
                 }
             }
-          else if (event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button))
+          else if ((event.type == SDL_MOUSEBUTTONDOWN && valid_click(event.button.button)) ||
+                   event.type == TP_SDL_MOUSEBUTTONSCROLL)
             {
               if (event.button.x >= r_ttools.w && event.button.x < WINDOW_WIDTH - r_ttoolopt.w &&
                   event.button.y >= img_scroll_up->h && event.button.y < (button_h * buttons_tall + r_ttools.h - button_h))
@@ -21424,40 +21619,79 @@ static int do_new_dialog(void)
               else if (event.button.x >= (WINDOW_WIDTH - img_scroll_up->w) / 2 &&
                        event.button.x <= (WINDOW_WIDTH + img_scroll_up->w) / 2)
                 {
-                  if (event.button.y < img_scroll_up->h)
+                  if (event.button.y < img_scroll_up->h ||
+                      (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                       event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_up->h))
+                     )
                     {
-                      /* Up scroll button: */
+                      /* Up or Down scroll button in New dialog: */
 
-                      if (cur > 0)
+                      if (event.button.y < img_scroll_up->h)
                         {
-                          cur = cur - 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+                          /* Up scroll button: */
 
-                          if (cur == 0)
-                            do_setcursor(cursor_arrow);
+                          if (cur > 0)
+                            {
+                              cur = cur - 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                              if (cur == 0)
+                                do_setcursor(cursor_arrow);
+                            }
+
+                          if (which >= cur + 16)
+                            which = which - 4;
+                        }
+                      else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
+                               event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_up->h))
+                        {
+                          /* Down scroll button: */
+
+                          if (cur < num_files - 16)
+                            {
+                              cur = cur + 4;
+                              update_list = 1;
+                              playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                              if (cur >= num_files - 16)
+                                do_setcursor(cursor_arrow);
+                            }
+
+                          if (which < cur)
+                            which = which + 4;
                         }
 
-                      if (which >= cur + 16)
-                        which = which - 4;
-                    }
-                  else if (event.button.y >= (button_h * buttons_tall + r_ttools.h - button_h) &&
-                           event.button.y < (button_h * buttons_tall + r_ttools.h - img_scroll_up->h))
-                    {
-                      /* Down scroll button: */
-
-                      if (cur < num_files - 16)
+                      if (scrolltimer_dialog != NULL)
                         {
-                          cur = cur + 4;
-                          update_list = 1;
-                          playsound(screen, 1, SND_SCROLL, 1, SNDPOS_CENTER, SNDDIST_NEAR);
-
-                          if (cur >= num_files - 16)
-                            do_setcursor(cursor_arrow);
+                          SDL_RemoveTimer(scrolltimer_dialog);
+                          scrolltimer_dialog = NULL;
                         }
 
-                      if (which < cur)
-                        which = which + 4;
+                      if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
+                        {
+                          DEBUG_PRINTF("Starting scrolling\n");
+                          memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
+                          scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
+
+                          /*
+                          * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
+                          * for scrolling) then disable it immediately after (e.g., after the timer has fired or
+                          * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
+                          * energy impact on the Mac.
+                          */
+
+                          scrolling_dialog = 1;
+                          SDL_InitSubSystem(SDL_INIT_TIMER);
+                          scrolltimer_dialog =
+                            SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                              }
+                      else
+                        {
+                          DEBUG_PRINTF("Continuing scrolling\n");
+                          scrolltimer_dialog =
+                            SDL_AddTimer(REPEAT_SPEED / 3, scrolltimer_dialog_callback, (void *)&scrolltimer_dialog_event);
+                        }
                     }
                 }
               else if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + button_w &&
@@ -21482,12 +21716,6 @@ static int do_new_dialog(void)
                 }
 #ifdef __ANDROID__
               start_motion_convert(event);
-#endif
-            }
-          else if (event.type == SDL_MOUSEBUTTONUP)
-            {
-#ifdef __ANDROID__
-              stop_motion_convert(event);
 #endif
             }
           else if (event.type == SDL_MOUSEWHEEL && wheely)
@@ -21575,6 +21803,25 @@ static int do_new_dialog(void)
 
               oldpos_x = event.button.x;
               oldpos_y = event.button.y;
+            }
+
+          else if (event.type == SDL_MOUSEBUTTONUP)
+            {
+#ifdef __ANDROID__
+              stop_motion_convert(event);
+#endif
+
+              if (scrolling_dialog)
+                {
+                  if (scrolltimer_dialog != NULL)
+                    {
+                      SDL_RemoveTimer(scrolltimer_dialog);
+                      scrolltimer_dialog = NULL;
+                    }
+                  scrolling_dialog = 0;
+                  SDL_QuitSubSystem(SDL_INIT_TIMER);
+                  DEBUG_PRINTF("Killing dialog scrolling\n");
+                }
             }
 
           else if (event.type == SDL_JOYAXISMOTION)
@@ -24640,10 +24887,9 @@ static void load_info_about_label_surface(FILE * lfi)
   char *tmp_fgets_return;
   Uint8 a;
 #ifdef WIN32
-  char *tmpstr;
   wchar_t *wtmpstr;
 #endif
-
+  char *tmpstr;
 
   /* Clear label surface */
 
@@ -24665,12 +24911,26 @@ static void load_info_about_label_surface(FILE * lfi)
   /* Read count of label nodes: */
   tmp_fscanf_return = fscanf(lfi, "%d\n", &list_ctr);
 
+  if (list_ctr <= 0)
+    {
+      fprintf(stderr, "Unexpected! Count of label notes is <= 0 (%d)!\n", list_ctr);
+      fclose(lfi);
+      return;
+    }
+
   /* Read saved canvas width/height, so we can scale to the current canvas
      (in case it changed due to window size / fullscreen resolution changes,
      larger UI button size, etc. */
   tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_scale_w);
   tmp_fscanf_return = fscanf(lfi, "%d\n\n", &tmp_scale_h);
   (void)tmp_fscanf_return;
+
+  if (tmp_scale_w <= 0 || tmp_scale_h <= 0)
+    {
+      fprintf(stderr, "Unexpected! Saved canvas dimensions %d x %d!\n", tmp_scale_w, tmp_scale_h);
+      fclose(lfi);
+      return;
+    }
 
   /* Calculate canvas aspect ratios & such */
   old_width = tmp_scale_w;
@@ -24684,26 +24944,27 @@ static void load_info_about_label_surface(FILE * lfi)
   else
     new_to_old_ratio = (float)new_height / old_height;
 
-
-  /* Read the labels' text: */
-
-  size_t nwchar;
-
 #ifdef WIN32
-  tmpstr = malloc(1024);
   wtmpstr = malloc(1024);
 #endif
+  tmpstr = malloc(1024);
+
+  /* Read the labels' text: */
 
   for (k = 0; k < list_ctr; k++)
     {
       new_node = malloc(sizeof(struct label_node));
 
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_texttool_len);
+      new_node->save_texttool_len = atoi(fgets(tmpstr, 5, lfi));
 
 #ifdef DEBUG
       printf("Reading %d wide chars\n", new_node->save_texttool_len); fflush(stdout);
 #endif
 
+      if (new_node->save_texttool_len >= 1024)
+        {
+          fprintf(stderr, "Unexpected! Saved text length is >= 1024 (%u!)\n", new_node->save_texttool_len);
+          free(new_node);
 #ifdef WIN32
       /* Using fancy "%[]" operator to scan until the end of a line */
       tmp_fscanf_return = fscanf(lfi, "%[^\n]\n", tmpstr);
@@ -24711,6 +24972,8 @@ static void load_info_about_label_surface(FILE * lfi)
       for (l = 0; l < new_node->save_texttool_len; l++)
         new_node->save_texttool_str[l] = wtmpstr[l];
       new_node->save_texttool_str[l] = L'\0';
+      free(tmpstr);
+      free(wtmpstr);
 #elif defined(__ANDROID__)
       wchar_t tmp_char;
       for (l = 0; l < new_node->save_texttool_len; l++)
@@ -24727,159 +24990,167 @@ static void load_info_about_label_surface(FILE * lfi)
 #ifdef DEBUG
       printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
 #endif
-
-      /* If the string is shorter than what we expect (new_node->save_texttool_len),
-         then it must have been prefixed with spaces that we lost. */
-      nwchar = wcslen(new_node->save_texttool_str);
-      if (nwchar < new_node->save_texttool_len)
-        {
-          wchar_t *wtmpstr;
-          size_t diff, i;
-
-          wtmpstr = malloc(1024);
-          diff = new_node->save_texttool_len - nwchar;
-
-          for (i = 0; i < diff; i++)
-            wtmpstr[i] = L' ';
-
-          for (i = 0; i <= nwchar; i++)
-            wtmpstr[i + diff] = new_node->save_texttool_str[i];
-
-          memcpy(new_node->save_texttool_str, wtmpstr, sizeof(wchar_t) * (new_node->save_texttool_len + 1));
-          free(wtmpstr);
-
-#ifdef DEBUG
-          printf("Fixed \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
-#endif
-        }
-
-      /* Read the label's color (RGB) */
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
-      new_node->save_color.r = (Uint8) l;
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
-      new_node->save_color.g = (Uint8) l;
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
-      new_node->save_color.b = (Uint8) l;
-
-      /* Read the label's position */
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
-      old_pos = (int)tmp_pos;
-
-      if (new_ratio < old_ratio)
-        {
-          new_pos = (old_pos * new_to_old_ratio);
-          tmp_pos = new_pos;
-          new_node->save_x = tmp_pos;
-          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
-          old_pos = (int)tmp_pos;
-          new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
-          tmp_pos = new_pos;
-          new_node->save_y = tmp_pos;
+          fclose(lfi);
+          return;
         }
       else
         {
-          new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
-          tmp_pos = new_pos;
-          new_node->save_x = tmp_pos;
-          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
-          old_pos = (int)tmp_pos;
-          new_pos = (old_pos * new_to_old_ratio);
-          tmp_pos = new_pos;
-          new_node->save_y = tmp_pos;
-        }
-
-#ifdef DEBUG
-      printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
+#ifdef WIN32
+          /* Using fancy "%[]" operator to scan until the end of a line */
+          tmp_fscanf_return = fscanf(lfi, "%[^\n]\n", tmpstr);
+          mbstowcs(wtmpstr, tmpstr, 1024);
+          for (l = 0; l < new_node->save_texttool_len; l++)
+            new_node->save_texttool_str[l] = wtmpstr[l];
+          new_node->save_texttool_str[l] = L'\0';
+#else
+          /* Using fancy "%[]" operator to scan until the end of a line */
+          tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
 #endif
 
-      /* Read the label's font */
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
-      new_node->save_cur_font = 0;
+#ifdef DEBUG
+          printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
+#endif
 
-      new_node->save_font_type = malloc(64);
-      tmp_fgets_return = fgets(new_node->save_font_type, 64, lfi);
-      (void)tmp_fgets_return;
+          /* Read the label's color (RGB) */
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
+          new_node->save_color.r = (Uint8) l;
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
+          new_node->save_color.g = (Uint8) l;
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
+          new_node->save_color.b = (Uint8) l;
 
-      /* Read the label's state (italic &/or bold), and size */
-      tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
-      tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
+          /* Read the label's position */
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_width);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_height);
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
+          old_pos = (int)tmp_pos;
 
-      /* Read the bitmap data stored under the label */
-      /* (The final PNG, when saved, includes the labels, as applied
-         to the canvas. But we need to be able to edit/move/remove them,
-         so we need to know what went _behind_ them) */
-      label_node_surface = SDL_CreateRGBSurface(screen->flags,
-                                                new_node->save_width,
-                                                new_node->save_height,
-                                                screen->format->BitsPerPixel,
-                                                screen->format->Rmask,
-                                                screen->format->Gmask, screen->format->Bmask, TPAINT_AMASK);
+          if (new_ratio < old_ratio)
+            {
+              new_pos = (old_pos * new_to_old_ratio);
+              tmp_pos = new_pos;
+              new_node->save_x = tmp_pos;
+              tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
+              old_pos = (int)tmp_pos;
+              new_pos = old_pos * new_to_old_ratio + (new_height - old_height * new_to_old_ratio) / 2;
+              tmp_pos = new_pos;
+              new_node->save_y = tmp_pos;
+            }
+          else
+            {
+              new_pos = (old_pos * new_to_old_ratio) + (new_width - old_width * new_to_old_ratio) / 2;
+              tmp_pos = new_pos;
+              new_node->save_x = tmp_pos;
+              tmp_fscanf_return = fscanf(lfi, "%d\n", &tmp_pos);
+              old_pos = (int)tmp_pos;
+              new_pos = (old_pos * new_to_old_ratio);
+              tmp_pos = new_pos;
+              new_node->save_y = tmp_pos;
+            }
 
-      SDL_LockSurface(label_node_surface);
-      for (x = 0; x < new_node->save_width; x++)
-        for (y = 0; y < new_node->save_height; y++)
-          {
-            a = fgetc(lfi);
-            putpixels[label_node_surface->format->BytesPerPixel] (label_node_surface, x, y,
-                                                                  SDL_MapRGBA(label_node_surface->format,
-                                                                              new_node->save_color.r,
-                                                                              new_node->save_color.g,
-                                                                              new_node->save_color.b, a));
-          }
-      SDL_UnlockSurface(label_node_surface);
+#ifdef DEBUG
+          printf("Original label size %dx%d\n", new_node->save_width, new_node->save_height);
+#endif
+          if (new_node->save_width > 8192 || new_node->save_height > 8192)
+            {
+              fprintf(stderr, "Unexpected! Save dimensions are (%u x %u!)\n", new_node->save_width, new_node->save_height);
+              free(new_node);
+              free(tmpstr);
+#ifdef WIN32
+              free(wtmpstr);
+#endif
+              fclose(lfi);
+              return;
+           }
 
-      /* Set the label's size, in proportion to any canvas size differences */
-      new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
+          /* Read the label's font */
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_cur_font);
+          /* FIXME: This seems wrong! -bjk 2022.04.02 */
+          new_node->save_cur_font = 0;
 
-      /* Scale the backbuffer, in proportion... */
-      label_node_surface_aux =
-        zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
-      SDL_FreeSurface(label_node_surface);
-      new_node->label_node_surface = label_node_surface_aux;
-      new_node->label_node_surface->refcount++;
-      SDL_FreeSurface(label_node_surface_aux);
+          new_node->save_font_type = malloc(64);
+          tmp_fgets_return = fgets(new_node->save_font_type, 64, lfi);
+          (void)tmp_fgets_return;
 
-      if ((unsigned)new_text_size > MAX_TEXT_SIZE)      /* Here we reach the limits when scaling the font size */
-        new_node->save_text_size = MAX_TEXT_SIZE;
-      else if ((unsigned)new_text_size > MIN_TEXT_SIZE)
-        new_node->save_text_size = floor(new_text_size + 0.5);
-      else
-        new_node->save_text_size = MIN_TEXT_SIZE;
+          /* Read the label's state (italic &/or bold), and size */
+          tmp_fscanf_return = fscanf(lfi, "%d\n", &new_node->save_text_state);
+          tmp_fscanf_return = fscanf(lfi, "%u\n", &new_node->save_text_size);
 
-      new_node->save_undoid = 255;      /* A value that cur_undo will likely never reach */
-      new_node->is_enabled = TRUE;
-      new_node->disables = NULL;
-      new_node->next_to_down_label_node = NULL;
-      new_node->next_to_up_label_node = NULL;
-      tmp_fscanf_return = fscanf(lfi, "\n");
+          /* Read the bitmap data stored under the label */
+          /* (The final PNG, when saved, includes the labels, as applied
+             to the canvas. But we need to be able to edit/move/remove them,
+             so we need to know what went _behind_ them) */
+          label_node_surface = SDL_CreateRGBSurface(screen->flags,
+                                                    new_node->save_width,
+                                                    new_node->save_height,
+                                                    screen->format->BitsPerPixel,
+                                                    screen->format->Rmask,
+                                                    screen->format->Gmask, screen->format->Bmask, TPAINT_AMASK);
 
-      /* Link the labels together, for navigating between them */
-      if (current_label_node == NULL)
-        {
-          current_label_node = new_node;
-          start_label_node = current_label_node;
+          SDL_LockSurface(label_node_surface);
+          for (x = 0; x < new_node->save_width; x++)
+            for (y = 0; y < new_node->save_height; y++)
+              {
+                a = fgetc(lfi);
+                putpixels[label_node_surface->format->BytesPerPixel] (label_node_surface, x, y,
+                                                                      SDL_MapRGBA(label_node_surface->format,
+                                                                                  new_node->save_color.r,
+                                                                                  new_node->save_color.g,
+                                                                                  new_node->save_color.b, a));
+              }
+          SDL_UnlockSurface(label_node_surface);
+
+          /* Set the label's size, in proportion to any canvas size differences */
+          new_text_size = (float)new_node->save_text_size * new_to_old_ratio;
+
+          /* Scale the backbuffer, in proportion... */
+          label_node_surface_aux =
+            zoom(label_node_surface, label_node_surface->w * new_to_old_ratio, label_node_surface->h * new_to_old_ratio);
+          SDL_FreeSurface(label_node_surface);
+          new_node->label_node_surface = label_node_surface_aux;
+          new_node->label_node_surface->refcount++;
+          SDL_FreeSurface(label_node_surface_aux);
+
+          if ((unsigned)new_text_size > MAX_TEXT_SIZE)      /* Here we reach the limits when scaling the font size */
+            new_node->save_text_size = MAX_TEXT_SIZE;
+          else if ((unsigned)new_text_size > MIN_TEXT_SIZE)
+            new_node->save_text_size = floor(new_text_size + 0.5);
+          else
+            new_node->save_text_size = MIN_TEXT_SIZE;
+
+          new_node->save_undoid = 255;      /* A value that cur_undo will likely never reach */
+          new_node->is_enabled = TRUE;
+          new_node->disables = NULL;
+          new_node->next_to_down_label_node = NULL;
+          new_node->next_to_up_label_node = NULL;
+          tmp_fscanf_return = fscanf(lfi, "\n");
+
+          /* Link the labels together, for navigating between them */
+          if (current_label_node == NULL)
+            {
+              current_label_node = new_node;
+              start_label_node = current_label_node;
+            }
+          else
+            {
+              new_node->next_to_down_label_node = current_label_node;
+              current_label_node->next_to_up_label_node = new_node;
+              current_label_node = new_node;
+            }
+
+          highlighted_label_node = current_label_node;
+          simply_render_node(current_label_node);
         }
-      else
-        {
-          new_node->next_to_down_label_node = current_label_node;
-          current_label_node->next_to_up_label_node = new_node;
-          current_label_node = new_node;
-        }
-
-      highlighted_label_node = current_label_node;
-      simply_render_node(current_label_node);
     }
 
   first_label_node_in_redo_stack = NULL;
   fclose(lfi);
 
-
-#ifdef WIN32
   free(tmpstr);
+#ifdef WIN32
   free(wtmpstr);
 #endif
+
 
   if (font_thread_done)
     set_label_fonts();

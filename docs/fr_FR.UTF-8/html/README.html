@@ -21,15 +21,17 @@
   }
   div.keeptogether { page-break-inside: avoid; }
   section h1 { font-size: 2em; }
-  h1, h2, h3, h4 { font-family: sans; }
+  h1, h2, h3, h4, h5 { font-family: sans; }
   h1 { color: #800; page-break-before: always; break-before: always; }
   h2 { color: #440; page-break-after: avoid; break-after: avoid; }
   h3 { color: #080; page-break-after: avoid; break-after: avoid; }
   h4 { color: #008; page-break-after: avoid; break-after: avoid; }
+  h5 { color: #808; page-break-after: avoid; break-after: avoid; }
   h1 + p { page-break-inside: avoid; }
   h2 + p { page-break-inside: avoid; }
   h3 + p { page-break-inside: avoid; }
   h4 + p { page-break-inside: avoid; }
+  h5 + p { page-break-inside: avoid; }
   dt {
     font-size: large;
     color: #404;
@@ -59,6 +61,9 @@
   }
   section.indent dl p {
     margin-left: 0;
+  }
+  p + ul {
+    margin-left: 2em;
   }
 
   @media print {
@@ -92,11 +97,12 @@
           <p>
             Copyright &copy; 2002-2022 by divers contributeurs; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br/>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a><br/>
-            <a href="https://twitter.com/TuxPaintTweets">@TuxPaintTweets on Twitter</a>
+            <a href="https://twitter.com/TuxPaintTweets">@TuxPaintTweets on Twitter</a><br/>
+            <a href="https://tuxpaint.tumblr.com/">Tux Paint on Tumblr</a>
           </p>
 
           <p>
-            mars  1, 2022          </p>
+            mars 18, 2022          </p>
         </center>
       </header>
       <table border="2"
@@ -113,7 +119,7 @@
   <tr>
     <td>
       <ul>
-        <li><a href="#about">À propos de Tux Paint</a></li>          <li><a href="#using">Utiliser Tux Paint</a>          <ul>
+        <li><a href="#about">À propos de Tux Paint</a></li>        <li><a href="#using">Utiliser Tux Paint</a>          <ul>
             <li><a href="#using_loading">Lancement de Tux Paint</a></li>            <li><a href="#using_title">Écran titre</a></li>            <li><a href="#using_main">Écran principal</a></li>            <li><a href="#using_tools">Outils disponibles</a>              <ul>
                 <li><a href="#using_tools_drawing">Outils de dessin</a>                  <ul>
                     <li><a href="#using_tools_drawing_paint">Outil "Peinture" (pinceau)</a></li>                    <li><a href="#using_tools_drawing_stamp">Outil "Tampon" (tampon de caoutchouc)</a></li>                    <li><a href="#using_tools_drawing_lines">Outil "Lignes"</a></li>                    <li><a href="#using_tools_drawing_shapes">Outil "Formes"</a></li>                    <li><a href="#using_tools_drawing_text_and_label">Outils "Texte" et "Étiquette"</a></li>                    <li><a href="#using_tools_drawing_fill">Outil "Remplir"</a></li>                    <li><a href="#using_tools_drawing_magic">Outil "Magie" (Effets spéciaux)</a></li>                    <li><a href="#using_tools_drawing_eraser">Outil "Gomme"</a></li>                  </ul>
@@ -1602,6 +1608,7 @@
           <li>"Microsoft" and "Windows" are registered trademarks of Microsoft Corp.</li>
           <li>"Apple" and "macOS" are registered trademarks of Apple Inc.</li>
           <li>"Twitter" is a registered trademark of Twitter, Inc.</li>
+          <li>"Tumblr" is a registered trademark of Tumblr, Inc.</li>
         </ul>
       </section>
     </footer>

@@ -6,8 +6,9 @@
         Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
+                              Tux Paint on Tumblr
 
-                                   2022年3月 1日
+                                   2022年3月18日
 
                +-----------------------------------------------+
                |目次                                             |
@@ -841,3 +842,4 @@ Tux Paint の起動
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
      * "Apple" and "macOS" are registered trademarks of Apple Inc.
      * "Twitter" is a registered trademark of Twitter, Inc.
+     * "Tumblr" is a registered trademark of Tumblr, Inc.
