@@ -8,7 +8,7 @@
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                                 March 18, 2022
+                                 April 24, 2022
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -501,8 +501,10 @@ Available Tools
                         available, and the key to toggle or cycle modes, are
                         listed below.
 
-                           * * Korean — Hangul 2-Bul — right [Alt] key or
-                             left [Alt] key
+                           * Japanese — Romanized Hiragana and Romanized
+                             Katakana — right [Alt] key or left [Alt] key
+                           * Korean — Hangul 2-Bul — right [Alt] key or left
+                             [Alt] key
                            * Traditional Chinese — right [Alt] key or left
                              [Alt] key
                            * Thai — right [Alt] key
