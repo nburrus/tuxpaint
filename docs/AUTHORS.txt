@@ -6,7 +6,7 @@ Copyright (c) 2002-2021
 Various contributors (see below, and CHANGES.txt)
 http://www.tuxpaint.org/
 
-June 17, 2002 - December 1, 2021
+June 17, 2002 - April 29, 2022
 
 * Design and Coding:
 
@@ -190,6 +190,8 @@ June 17, 2002 - December 1, 2021
     by Bill Kendrick
 
   * Neko cat brushes based on XNeko by Masayuki Koba
+
+  * Dog brushes based on Oneko by Tatsuya Kato
 
   * Real Rainbow colors/alpha based on:
     http://www.flickr.com/photos/nicholas_t/281820290/

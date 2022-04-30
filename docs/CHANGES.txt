@@ -208,6 +208,10 @@ http://www.tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com> and
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
+    * Adjust where libpaper gets init'd.
+      Reuben Thomas <https://sourceforge.net/u/rrt/>
+      (https://sourceforge.net/p/tuxpaint/bugs/250/)
+
   * Ports & Building:
     -----------------
     * Windows
