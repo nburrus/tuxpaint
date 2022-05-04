@@ -28,7 +28,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 30, 2022
+  Last updated: May 4, 2022
   $Id$
 */
 
@@ -435,85 +435,88 @@ void perspective_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 void perspective_release(magic_api * api, int which,
                          SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
-  switch (which)
+  if (which == TOOL_PANELS)
+    return;
+
+  update_rect->x = update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
+
+  if (which != TOOL_TILEZOOM)
+    SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
+
+  if (which == TOOL_PERSPECTIVE)
     {
-    case TOOL_PERSPECTIVE:
-      {
-        perspective_preview(api, which, canvas, last, x, y, update_rect, 0.5);
-      }
-      break;
+      perspective_preview(api, which, canvas, last, x, y, update_rect, 0.5);
+    }
+  else
+    {
+      SDL_Surface *aux_surf;
+      SDL_Surface *scaled_surf;
 
-    case TOOL_ZOOM:
-    case TOOL_TILEZOOM:
-      {
-        SDL_Surface *aux_surf;
-        SDL_Surface *scaled_surf;
+      update_rect->x = update_rect->y = 0;
+      update_rect->w = canvas->w;
+      update_rect->h = canvas->h;
 
-        update_rect->x = update_rect->y = 0;
-        update_rect->w = canvas->w;
-        update_rect->h = canvas->h;
-
-        if (which == TOOL_ZOOM)
-          SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
+      if (which == TOOL_ZOOM)
+        SDL_FillRect(canvas, update_rect, SDL_MapRGB(canvas->format, perspective_r, perspective_g, perspective_b));
 
 
-        if (new_h < canvas->h)
-          {
-            int xx, yy, x_span, y_span;
+      if (new_h < canvas->h)
+        {
+          int xx, yy, x_span, y_span;
 
-            scaled_surf = api->scale(canvas_back, new_w, new_h, 0);
+          scaled_surf = api->scale(canvas_back, new_w, new_h, 0);
 
-            if (which == TOOL_TILEZOOM && (new_w < canvas->w || new_h < canvas->h))
-              {
-                x_span = ceil(canvas->w / new_w);
-                y_span = ceil(canvas->h / new_h);
-              }
-            else
-              x_span = y_span = 0;
+          if (which == TOOL_TILEZOOM && (new_w < canvas->w || new_h < canvas->h))
+            {
+              x_span = ceil(canvas->w / new_w);
+              y_span = ceil(canvas->h / new_h);
+            }
+          else
+            x_span = y_span = 0;
 
-            for (yy = -y_span; yy <= y_span; yy++)
-              {
-                for (xx = -x_span; xx <= x_span; xx++)
-                  {
-                    update_rect->x = ((canvas->w - new_w) / 2) + (new_w * xx);
-                    update_rect->y = ((canvas->h - new_h) / 2) + (new_h * yy);
-                    update_rect->w = new_w;
-                    update_rect->h = new_h;
-                    SDL_BlitSurface(scaled_surf, NULL, canvas, update_rect);
-                  }
-              }
-          }
-        else
-          {
-            int aux_h, aux_w;
+          for (yy = -y_span; yy <= y_span; yy++)
+            {
+              for (xx = -x_span; xx <= x_span; xx++)
+                {
+                  update_rect->x = ((canvas->w - new_w) / 2) + (new_w * xx);
+                  update_rect->y = ((canvas->h - new_h) / 2) + (new_h * yy);
+                  update_rect->w = new_w;
+                  update_rect->h = new_h;
+                  SDL_BlitSurface(scaled_surf, NULL, canvas, update_rect);
+                }
+            }
+        }
+      else
+        {
+          int aux_h, aux_w;
 
-            aux_h = canvas->h * canvas->h / new_h;
-            aux_w = canvas->w * aux_h / canvas->h;
+          aux_h = canvas->h * canvas->h / new_h;
+          aux_w = canvas->w * aux_h / canvas->h;
 
-            update_rect->x = canvas->w / 2 - aux_w / 2;
-            update_rect->y = canvas->h / 2 - aux_h / 2;
-            update_rect->w = aux_w;
-            update_rect->h = aux_h;
+          update_rect->x = canvas->w / 2 - aux_w / 2;
+          update_rect->y = canvas->h / 2 - aux_h / 2;
+          update_rect->w = aux_w;
+          update_rect->h = aux_h;
 
-            aux_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                            aux_w,
-                                            aux_h,
-                                            canvas->format->BitsPerPixel,
-                                            canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, 0);
+          aux_surf = SDL_CreateRGBSurface(SDL_SWSURFACE,
+                                          aux_w,
+                                          aux_h,
+                                          canvas->format->BitsPerPixel,
+                                          canvas->format->Rmask, canvas->format->Gmask, canvas->format->Bmask, 0);
 
-            SDL_BlitSurface(canvas_back, update_rect, aux_surf, NULL);
-            scaled_surf = api->scale(aux_surf, canvas->w, canvas->h, 0);
-            SDL_BlitSurface(scaled_surf, NULL, canvas, NULL);
-            SDL_FreeSurface(aux_surf);
-          }
-        SDL_FreeSurface(scaled_surf);
+          SDL_BlitSurface(canvas_back, update_rect, aux_surf, NULL);
+          scaled_surf = api->scale(aux_surf, canvas->w, canvas->h, 0);
+          SDL_BlitSurface(scaled_surf, NULL, canvas, NULL);
+          SDL_FreeSurface(aux_surf);
+        }
+      SDL_FreeSurface(scaled_surf);
 
-        update_rect->x = update_rect->y = 0;
-        update_rect->w = canvas->w;
-        update_rect->h = canvas->h;
+      update_rect->x = update_rect->y = 0;
+      update_rect->w = canvas->w;
+      update_rect->h = canvas->h;
 
-      }
-      break;
     }
 }
 
