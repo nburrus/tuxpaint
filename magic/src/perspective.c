@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 6, 2022
+  Last updated: May 7, 2022
   $Id$
 */
 
@@ -154,7 +154,7 @@ const char *perspective_icon_filenames[perspective_NUM_TOOLS] = {
   "panels.png",
   "tilezoom.png",
   "zoom.png",
-  "zoom.png", /* FIXME */
+  "rush.png",
 };
 
 const char *perspective_names[perspective_NUM_TOOLS] = {
