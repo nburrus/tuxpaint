@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.May.6 (0.9.28)
+2022.May.7 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -259,6 +259,11 @@ http://www.tuxpaint.org/
     * Added some styling, use of HTML semantic tags, call-outs for notes,
       improved printed output, and other improvements to the README and
       OPTIONS docs.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Magic Tool docs sort tools by localized names, include full
+      localized names in the "See also" references, corrected HTML docs
+      (and subsequent TXT conversions) character encoding (us-ascii -> UTF-8).
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * macOS Apple Silicon and Universal Binary build instructions
