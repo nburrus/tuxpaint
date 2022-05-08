@@ -8,7 +8,7 @@
    Click and drag up to zoom in, or down to zoom out. The results will be
    blurred/smeared.
 
-   See also: rush tilezoom zoom
+   See also: Rush, Tile Zoom, & Zoom.
 
      ----------------------------------------------------------------------
 

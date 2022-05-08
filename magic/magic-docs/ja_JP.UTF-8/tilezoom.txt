@@ -8,7 +8,7 @@
    Click and drag up to zoom in, or down to zoom out. When scaling down, your
    image will be tiled across the canvas.
 
-   See also: panels rush zoom
+   See also: Panels, Rush, & Zoom.
 
      ----------------------------------------------------------------------
 
