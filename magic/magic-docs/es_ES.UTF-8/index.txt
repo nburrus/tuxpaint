@@ -13,23 +13,23 @@ Distorts
      * Fisheye
      * Glass Tile
      * Halftone
-     * Mosaic
      * Hexagon Mosaic
      * Irregular Mosaic
-     * Square Mosaic
+     * Mosaic
      * Noise
      * Puzzle
      * Ripples
      * Sharpen
      * Silhouette
      * Smudge
+     * Square Mosaic
      * TV
 
 Color Filters
 
      * Cartoon
-     * Color Shift
      * Color and White
+     * Color Shift
      * Darken
      * Lighten
      * Negative
@@ -49,8 +49,8 @@ Picture Warps
      * Shift
      * Stretch
      * Tile Zoom
-     * Waves
      * Wavelets
+     * Waves
      * Zoom
 
 Painting
@@ -83,7 +83,7 @@ Pattern Painting
 
 Picture Decorations
 
-     * Blinds
+     * Blind
      * Checkerboard
      * Snow Ball
      * Snow Flake
@@ -94,9 +94,9 @@ Artistic
      * Lightning
      * Real Rainbow
      * ROYGBIV Rainbow
-     * String V
      * String Corner
      * String Edges
+     * String V
      * Tornado
 
      ----------------------------------------------------------------------

@@ -1,4 +1,4 @@
-                      Tux Paint "Magic" Tool: Kaleidoscope
+                      Tux Paint "Magic" Tool: Kaléidoscope
 
                             Group: Pattern Painting
 
@@ -8,7 +8,7 @@
    symmetrically, both horizontally and vertically. It uses the currently
    selected color.
 
-   See also: Picasso & Rosette.
+   See also: Picasso & Rosace.
 
      ----------------------------------------------------------------------
 

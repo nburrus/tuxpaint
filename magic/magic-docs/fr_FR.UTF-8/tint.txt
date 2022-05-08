@@ -7,7 +7,7 @@
    This changes the color (or hue) of the parts of the picture to the
    selected color.
 
-   See also: Lighten & Darken.
+   See also: Éclaircir & Assombrir.
 
      ----------------------------------------------------------------------
 

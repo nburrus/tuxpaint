@@ -6,7 +6,7 @@
 
    Draw large square "pixels" on the canvas.
 
-   See also: Bricks.
+   See also: Briques.
 
      ----------------------------------------------------------------------
 

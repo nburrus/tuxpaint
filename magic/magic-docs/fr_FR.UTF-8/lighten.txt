@@ -1,4 +1,4 @@
-                        Tux Paint "Magic" Tool: Lighten
+                       Tux Paint "Magic" Tool: Éclaircir
 
                               Group: Color Filters
 
@@ -7,7 +7,7 @@
    This fades the colors wherever you drag the mouse. (Do it to the same spot
    many times, and it will eventually become white.)
 
-   See also: Darken & Tint.
+   See also: Assombrir & Tint.
 
      ----------------------------------------------------------------------
 
