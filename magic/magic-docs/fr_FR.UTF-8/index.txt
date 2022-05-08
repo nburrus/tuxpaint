@@ -45,9 +45,10 @@ Picture Warps
      * Panels
      * Perspective
      * Reflection
+     * Rush
      * Shift
      * Stretch
-     * Zoom
+     * Tile Zoom
      * Waves
      * Wavelets
      * Zoom

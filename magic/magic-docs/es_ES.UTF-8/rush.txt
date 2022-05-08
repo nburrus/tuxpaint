@@ -1,14 +1,14 @@
-                       Tux Paint "Magic" Tool: Tile Zoom
+                          Tux Paint "Magic" Tool: Rush
 
                               Group: Picture Warps
 
             Authors: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
-   Click and drag up to zoom in, or down to zoom out. When scaling down, your
-   image will be tiled across the canvas.
+   Click and drag up to zoom in, or down to zoom out. The results will be
+   blurred/smeared.
 
-   See also: panels rush zoom
+   See also: rush tilezoom zoom
 
      ----------------------------------------------------------------------
 

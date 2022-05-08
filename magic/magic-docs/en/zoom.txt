@@ -7,7 +7,7 @@
    Click and drag up to zoom in, or down to zoom out. (When scaling down,
    your chosen color will be used as a background color.)
 
-   See also: tilezoom
+   See also: rush tilezoom
 
      ----------------------------------------------------------------------
 
