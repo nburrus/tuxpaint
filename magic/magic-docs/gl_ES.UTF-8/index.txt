@@ -46,7 +46,7 @@ Picture Warps
      * Perspective
      * Reflection
      * Rush
-     * Mai**sculas
+     * Maiúsculas
      * Stretch
      * Tile Zoom
      * Waves
