@@ -8,7 +8,7 @@
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                                 marzo 18, 2022
+                                 abril 24, 2022
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -502,7 +502,7 @@ Available Tools
                         listed below.
 
                            * Japanese — Romanized Hiragana and Romanized
-                             Katakana — right [Alt] key
+                             Katakana — right [Alt] key or left [Alt] key
                            * Korean — Hangul 2-Bul — right [Alt] key or left
                              [Alt] key
                            * Traditional Chinese — right [Alt] key or left

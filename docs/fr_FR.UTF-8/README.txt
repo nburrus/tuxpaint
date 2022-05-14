@@ -8,7 +8,7 @@
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                                 mars 18, 2022
+                                 avril 24, 2022
 
           +----------------------------------------------------------+
           |Table des matières                                        |
@@ -522,8 +522,9 @@ Outils disponibles
                         available, and the key to toggle or cycle modes, are
                         listed below.
 
-                           * Japonais -- Hiragana romanisé et Katakana
-                             romanisé -- touche [Alt] droite
+                           * Japanese — Romanized Hiragana and Romanized
+                             Katakana — touche [Alt] droite or touche [Alt]
+                             gauche
                            * Korean — Hangul 2-Bul — touche [Alt] droite or
                              touche [Alt] gauche
                            * Chinois traditionnel — touche [Alt] droite or

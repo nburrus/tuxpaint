@@ -6,7 +6,7 @@
 
    Draw a rainbow arc of red, orange, yellow, green, blue, indigo and violet.
 
-   See also: roygbiv_rainbow
+   See also: ROYGBIV Rainbow.
 
      ----------------------------------------------------------------------
 

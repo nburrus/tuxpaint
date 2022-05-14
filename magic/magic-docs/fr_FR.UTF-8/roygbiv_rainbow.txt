@@ -1,4 +1,4 @@
-                    Tux Paint "Magic" Tool: ROYGBIV Rainbow
+                   Tux Paint "Magic" Tool: Arc-en-ciel simple
 
                                 Group: Artistic
 
@@ -6,7 +6,7 @@
 
    Draw a rainbow arc of red, orange, yellow, green, blue, indigo and violet.
 
-   See also: roygbiv_rainbow
+   See also: Arc-en-ciel simple.
 
      ----------------------------------------------------------------------
 

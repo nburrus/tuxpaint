@@ -1,4 +1,4 @@
-                      Tux Paint "Magic" Tool: Real Rainbow
+                    Tux Paint "Magic" Tool: Arc-en-ciel réel
 
                                 Group: Artistic
 
@@ -6,7 +6,7 @@
 
    Draw a transparent arc that looks like a real rainbow.
 
-   See also: real_rainbow
+   See also: Arc-en-ciel réel.
 
      ----------------------------------------------------------------------
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 01:28-0700\n"
-"PO-Revision-Date: 2022-02-04 17:06+0900\n"
+"POT-Creation-Date: 2022-05-07 18:10-0700\n"
+"PO-Revision-Date: 2022-04-22 15:51+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -272,40 +272,34 @@ msgstr "ちゅうごくご"
 
 #. Add menu items
 #: ../macos.m:56
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "About Tux Paint"
-msgstr "タックスペイント"
+msgstr "タックスペイントについて"
 
 #: ../macos.m:61
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Hide Tux Paint"
-msgstr "タックスペイント"
+msgstr "タックスペイントを隠す"
 
 #: ../macos.m:64
 msgid "Hide Others"
-msgstr ""
+msgstr "ほかを隠す"
 
 #: ../macos.m:67
 msgid "Show All"
-msgstr ""
+msgstr "全て表示"
 
 #: ../macos.m:71
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "Quit Tux Paint"
-msgstr "タックスペイント"
+msgstr "タックスペイントを終了"
 
 #. Put menu into the menubar
 #: ../macos.m:101 ../macos.m:109
 msgid "Window"
-msgstr ""
+msgstr "ウインドウ"
 
 #. "Minimize" item
 #: ../macos.m:104
 msgid "Minimize"
-msgstr ""
+msgstr "最小化"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -559,7 +553,7 @@ msgstr "さいしょから"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8723
+#: ../tools.h:98 ../tuxpaint.c:8772
 msgid "Open"
 msgstr "ひらく"
 
@@ -602,12 +596,6 @@ msgstr ""
 "[Tab] をおせば かきおわり。"
 
 #: ../tools.h:132
-#, fuzzy
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it and change its "
-#| "text style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -615,8 +603,8 @@ msgid ""
 "text style."
 msgstr ""
 "じのかたちをえらんで、クリックしたあと キーをおして じをかこう。 [Enter] か "
-"[Tab] をおせば かきおわり。 ゆびのマークの せんたくボタンを おして もじを ク"
-"リックすれば うごかしたり じのかたちを かえたり できるよ。"
+"[Tab] をおせば かきおわり。 ゆびのマークの せんたくボタンを おしてから ラベル"
+"を クリックすれば うごかしたり かきなおしたり かたちを かえたり できるよ。"
 
 #. Magic tool instruction
 #: ../tools.h:138
@@ -719,6 +707,8 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
+"ラベルを クリックすれば うごかしたり かきなおしたり かたちを かえたり できる"
+"よ。[Tab] キーを おして ラベルを えらんでから [Enter] をおしても いいよ。"
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:184
@@ -727,6 +717,9 @@ msgid ""
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
 msgstr ""
+"ラベルの ばしょを かえるには うごかしたいところを クリックします。ラベルを か"
+"きかえるには キーボードで にゅうりょくします。また、ボタンで えらんで じの か"
+"たちを かえることも できます。さいごに [Enter] か [Tab] をおして できあがり。"
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:187
@@ -734,40 +727,42 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
 msgstr ""
+"ラベルを クリックすると えに はりつけられるよ。[Tab] キーを おして はりつけ"
+"る ラベルを えらんでから [Enter] をおしても いいよ。"
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:190
 msgid "This brush is animated; its shape changes as you draw!"
-msgstr ""
+msgstr "アニメーションする ふで; せんを かく あいだに かたちがかわるよ。"
 
 #: ../tools.h:191
 msgid "This brush changes depending on the angle."
-msgstr ""
+msgstr "このふでは せんのむきにあわせて かたちがかわるよ。"
 
 #: ../tools.h:192
 msgid ""
 "This brush changes depending on the angle, and is animated; its shape "
 "changes as you draw!"
-msgstr ""
+msgstr "このふでは せんのむきにあわせて アニメーションしながら へんかするよ。"
 
 #: ../tools.h:194
 msgid "This brush's spacing is now 1 pixel!"
-msgstr ""
+msgstr "あいだの おおきさは 1 ピクセル だよ！"
 
 #: ../tools.h:195
 #, c-format
 msgid ""
 "This brush's spacing is now about %1$d/%2$d the size of the brush shape."
-msgstr ""
+msgstr "あいだの おおきさは ふでのおおきさの %2$d ぶんの %1$d ぐらいだよ。"
 
 #: ../tools.h:196
 msgid "This brush's spacing is now about the size of the brush shape."
-msgstr ""
+msgstr "あいだの おおきさは ふでのおおきさと おなじぐらいだよ。"
 
 #: ../tools.h:197
 #, c-format
 msgid "This brush's spacing is now about %d times as big as the brush shape."
-msgstr ""
+msgstr "あいだの おおきさは ふでのおおきさの %d ばい ぐらいだよ。"
 
 #: ../tools.h:198
 #, c-format
@@ -775,279 +770,280 @@ msgid ""
 "This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
 "shape."
 msgstr ""
+"あいだの おおきさは ふでのおおきさの %1$d と %3$d ぶんの %2$d ぐらいだよ。"
 
 #  FIXME: Move elsewhere!!!
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2260
 msgid "Do you really want to quit?"
 msgstr "ほんとうにやめる？"
 
 #  msgid "Yes, I'm done!"
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2263
 msgid "Yes, I’m done!"
 msgstr "はい、やめます！"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2264 ../tuxpaint.c:2291
+#: ../tuxpaint.c:2266 ../tuxpaint.c:2293
 msgid "No, take me back!"
 msgstr "いいえ、まえに もどります！"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2268
+#: ../tuxpaint.c:2270
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "やめると えがきえちゃうよ！ セーブする？"
 
-#: ../tuxpaint.c:2269 ../tuxpaint.c:2274
+#: ../tuxpaint.c:2271 ../tuxpaint.c:2276
 msgid "Yes, save it!"
 msgstr "はい、セーブします！"
 
 #  msgid "No, don't bother saving!"
-#: ../tuxpaint.c:2270 ../tuxpaint.c:2275
+#: ../tuxpaint.c:2272 ../tuxpaint.c:2277
 msgid "No, don’t bother saving!"
 msgstr "いいえ、セーブしなくても いいです！"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2273
+#: ../tuxpaint.c:2275
 msgid "Save your picture first?"
 msgstr "そのまえに いまのえを セーブする？"
 
 #. Error opening picture
-#: ../tuxpaint.c:2278
+#: ../tuxpaint.c:2280
 msgid "Can’t open that picture!"
 msgstr "そのえはひらけないよ！"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2281 ../tuxpaint.c:2286 ../tuxpaint.c:2295 ../tuxpaint.c:2302
-#: ../tuxpaint.c:2311 ../tuxpaint.c:2316
+#: ../tuxpaint.c:2283 ../tuxpaint.c:2288 ../tuxpaint.c:2297 ../tuxpaint.c:2304
+#: ../tuxpaint.c:2313 ../tuxpaint.c:2318
 msgid "OK"
 msgstr "オッケー"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2285
+#: ../tuxpaint.c:2287
 msgid "There are no saved files!"
 msgstr "セーブされた えは なかったよ！"
 
 #. Verification of print action
-#: ../tuxpaint.c:2289
+#: ../tuxpaint.c:2291
 msgid "Print your picture now?"
 msgstr "いんさつする？"
 
-#: ../tuxpaint.c:2290
+#: ../tuxpaint.c:2292
 msgid "Yes, print it!"
 msgstr "はい、いんさつします！"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2294
+#: ../tuxpaint.c:2296
 msgid "Your picture has been printed!"
 msgstr "えを いんさつしたよ！"
 
 #. We got an error printing
-#: ../tuxpaint.c:2298
+#: ../tuxpaint.c:2300
 msgid "Sorry! Your picture could not be printed!"
 msgstr "いんさつ できませんでした！"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2301
+#: ../tuxpaint.c:2303
 msgid "You can’t print yet!"
 msgstr "まだ いんさつは できないよ！"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2307
 msgid "Erase this picture?"
 msgstr "このえを けす？"
 
-#: ../tuxpaint.c:2306
+#: ../tuxpaint.c:2308
 msgid "Yes, erase it!"
 msgstr "はい、けします！"
 
 #  msgid "No, don't erase it!"
-#: ../tuxpaint.c:2307
+#: ../tuxpaint.c:2309
 msgid "No, don’t erase it!"
 msgstr "いいえ、けしません！"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2310
+#: ../tuxpaint.c:2312
 msgid "Remember to use the left mouse button!"
 msgstr "マウスの ひだりのボタンを つかってね！"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2314
+#: ../tuxpaint.c:2316
 msgid "Your picture has been exported!"
 msgstr "えを かきだしたよ！"
 
-#: ../tuxpaint.c:2315
+#: ../tuxpaint.c:2317
 msgid "Your slideshow GIF has been exported!"
 msgstr "スライドショーを GIF アニメに かきだしたよ！"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2319
+#: ../tuxpaint.c:2321
 msgid "Sorry! Your picture could not be exported!"
 msgstr "かきだしできませんでした！"
 
-#: ../tuxpaint.c:2320
+#: ../tuxpaint.c:2322
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "かきだしできませんでした！"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2324
+#: ../tuxpaint.c:2326
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "えを えらんでから 「かいし」をクリックしてね。"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2534
+#: ../tuxpaint.c:2541
 msgid "Sound muted."
 msgstr "おとが ならないように しました。"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2539
+#: ../tuxpaint.c:2546
 msgid "Sound unmuted."
 msgstr "おとが なるように しました。"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3326
+#: ../tuxpaint.c:3331
 msgid "Please wait…"
 msgstr "もうちょっと まってね…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8726
+#: ../tuxpaint.c:8775
 msgid "Erase"
 msgstr "けす"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8729
+#: ../tuxpaint.c:8778
 msgid "Slides"
 msgstr "スライド"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8732
+#: ../tuxpaint.c:8781
 msgid "Export"
 msgstr "かきだす"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8735
+#: ../tuxpaint.c:8784
 msgid "Back"
 msgstr "もどる"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8738
+#: ../tuxpaint.c:8787
 msgid "Play"
 msgstr "かいし"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8741
+#: ../tuxpaint.c:8790
 msgid "GIF Export"
 msgstr "かきだす"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8744
+#: ../tuxpaint.c:8793
 msgid "Next"
 msgstr "つぎ"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8747
+#: ../tuxpaint.c:8796
 msgid "Clear"
 msgstr "さいしょから"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9606
+#: ../tuxpaint.c:9655
 msgid "Aa"
 msgstr "Aa"
 
 #  FIXME: Move elsewhere! Or not?!
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13316
+#: ../tuxpaint.c:13365
 msgid "Yes"
 msgstr "はい"
 
-#: ../tuxpaint.c:13320
+#: ../tuxpaint.c:13369
 msgid "No"
 msgstr "いいえ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14472
+#: ../tuxpaint.c:14521
 msgid "Replace the picture with your changes?"
 msgstr "いまかいたえと まえのえを いれかえる？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14476
+#: ../tuxpaint.c:14525
 msgid "Yes, replace the old one!"
 msgstr "はい、まえのえと いれかえます！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14480
+#: ../tuxpaint.c:14529
 msgid "No, save a new file!"
 msgstr "いいえ、あたらしく セーブします！"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15727
+#: ../tuxpaint.c:15776
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えを えらんでから 「ひらく」をクリックしてね。"
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17153
+#: ../tuxpaint.c:17296
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "２ついじょうのえをえらんで GIFアニメをかきだします。"
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22576
+#: ../tuxpaint.c:22830
 msgid "red"
 msgstr "あか"
 
-#: ../tuxpaint.c:22577
+#: ../tuxpaint.c:22831
 msgid "yellow"
 msgstr "きいろ"
 
-#: ../tuxpaint.c:22578
+#: ../tuxpaint.c:22832
 msgid "blue"
 msgstr "あお"
 
-#: ../tuxpaint.c:22579
+#: ../tuxpaint.c:22833
 msgid "white"
 msgstr "しろ"
 
-#: ../tuxpaint.c:22580
+#: ../tuxpaint.c:22834
 msgid "grey"
 msgstr "はいいろ"
 
-#: ../tuxpaint.c:22581
+#: ../tuxpaint.c:22835
 msgid "black"
 msgstr "くろ"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22586
+#: ../tuxpaint.c:22840
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "%1$s %2$s です"
 
-#: ../tuxpaint.c:22587
+#: ../tuxpaint.c:22841
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "%2$sが%1$sで %4$sが%3$sの いろ"
 
-#: ../tuxpaint.c:22588
+#: ../tuxpaint.c:22842
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sの いろ"
 
-#: ../tuxpaint.c:22589
+#: ../tuxpaint.c:22843
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sの いろ"
 
-#: ../tuxpaint.c:22590
+#: ../tuxpaint.c:22844
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sで %10$sが%9$sの いろ"
 
-#: ../tuxpaint.c:22591
+#: ../tuxpaint.c:22845
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1057,26 +1053,28 @@ msgstr ""
 "が%11$sの いろ"
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:23352 ../tuxpaint.c:23359
+#: ../tuxpaint.c:23606 ../tuxpaint.c:23613
 msgid "entirely"
 msgstr "かんぜんな"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:26250
+#: ../tuxpaint.c:26517
 msgid "Select a color from your drawing."
 msgstr "えの なかから いろを えらぼう。"
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:26259
+#: ../tuxpaint.c:26526
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
+"いろの えらびかた：いろあいは うえから したへ、あざやかさは ひだり（あわい い"
+"ろ）から みぎ（あざやかな いろ）へ。みぎの バーで あかるさを えらびます。"
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:26271
+#: ../tuxpaint.c:26538
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1553,35 +1551,45 @@ msgstr "クリックしたまま マウスをうごかして えを ざらざら
 msgid "Click to add noise to your entire picture."
 msgstr "えを クリックして ぜんたいを ざらざらに しよう。"
 
-#: ../../magic/src/perspective.c:154
+#: ../../magic/src/perspective.c:161
 msgid "Perspective"
 msgstr "とうしほう"
 
-#: ../../magic/src/perspective.c:155
+#: ../../magic/src/perspective.c:162
 msgid "Panels"
 msgstr "パネル"
 
-#: ../../magic/src/perspective.c:156
-#, fuzzy
-#| msgid "Zoom"
+#: ../../magic/src/perspective.c:163
 msgid "Tile Zoom"
-msgstr "ズーム"
+msgstr "タイルズーム"
 
-#: ../../magic/src/perspective.c:157
+#: ../../magic/src/perspective.c:164
 msgid "Zoom"
 msgstr "ズーム"
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165
+msgid "Rush"
+msgstr ""
+
+#: ../../magic/src/perspective.c:169
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "のびちぢみ させたい ばしょの かどを クリックしたまま マウスをうごかそう。"
 
-#: ../../magic/src/perspective.c:163
+#: ../../magic/src/perspective.c:171
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "クリックして えを ４まいのパネルにかえよう。"
 
-#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:173 ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
+msgstr ""
+"クリックしたまま マウスを うえに うごかせば ズームイン。 マウスを したに うご"
+"かせば ズームアウト。"
+
+#: ../../magic/src/perspective.c:177
+#, fuzzy
+#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
+msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
 "クリックしたまま マウスを うえに うごかせば ズームイン。 マウスを したに うご"
 "かせば ズームアウト。"

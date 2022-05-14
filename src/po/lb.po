@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 01:28-0700\n"
+"POT-Creation-Date: 2022-05-07 18:10-0700\n"
 "PO-Revision-Date: 2010-02-16 21:10+0100\n"
 "Last-Translator: René Brandenburger <rene@brandenburger.lu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -578,7 +578,7 @@ msgstr "Nei"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8723
+#: ../tools.h:98 ../tuxpaint.c:8772
 msgid "Open"
 msgstr "Opmaachen"
 
@@ -778,288 +778,288 @@ msgid ""
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2258
+#: ../tuxpaint.c:2260
 msgid "Do you really want to quit?"
 msgstr "Wëllst du wierklech ophalen?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2261
+#: ../tuxpaint.c:2263
 msgid "Yes, I’m done!"
 msgstr "Jo, ech si fäerdeg!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2264 ../tuxpaint.c:2291
+#: ../tuxpaint.c:2266 ../tuxpaint.c:2293
 msgid "No, take me back!"
 msgstr "Nee, looss mech weidermolen"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2268
+#: ../tuxpaint.c:2270
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Wann's du ophäls geet Bild verluer! Soll et gespäichert ginn?"
 
-#: ../tuxpaint.c:2269 ../tuxpaint.c:2274
+#: ../tuxpaint.c:2271 ../tuxpaint.c:2276
 msgid "Yes, save it!"
 msgstr "Jo, späicher et!"
 
-#: ../tuxpaint.c:2270 ../tuxpaint.c:2275
+#: ../tuxpaint.c:2272 ../tuxpaint.c:2277
 msgid "No, don’t bother saving!"
 msgstr "Nee, dat brauch net gespäichert ze ginn!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2273
+#: ../tuxpaint.c:2275
 msgid "Save your picture first?"
 msgstr "Däin Bild  fir d'éischt späicheren?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2278
+#: ../tuxpaint.c:2280
 msgid "Can’t open that picture!"
 msgstr "Oh, dat do Bild kann ech net opmaachen!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2281 ../tuxpaint.c:2286 ../tuxpaint.c:2295 ../tuxpaint.c:2302
-#: ../tuxpaint.c:2311 ../tuxpaint.c:2316
+#: ../tuxpaint.c:2283 ../tuxpaint.c:2288 ../tuxpaint.c:2297 ../tuxpaint.c:2304
+#: ../tuxpaint.c:2313 ../tuxpaint.c:2318
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2285
+#: ../tuxpaint.c:2287
 msgid "There are no saved files!"
 msgstr "Et gëtt keng gespäichert Biller!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2289
+#: ../tuxpaint.c:2291
 msgid "Print your picture now?"
 msgstr "Däi Bild elo drécken?"
 
-#: ../tuxpaint.c:2290
+#: ../tuxpaint.c:2292
 msgid "Yes, print it!"
 msgstr "Jo, dréck et!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2294
+#: ../tuxpaint.c:2296
 msgid "Your picture has been printed!"
 msgstr "Däi Bild gouf gedréckt!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2298
+#: ../tuxpaint.c:2300
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Et deet mer Leed, awer däi Bild konnt net gedréckt ginn!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2301
+#: ../tuxpaint.c:2303
 msgid "You can’t print yet!"
 msgstr "Du kanns nach net drécken!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2305
+#: ../tuxpaint.c:2307
 msgid "Erase this picture?"
 msgstr "Dëst Bild läschen?"
 
-#: ../tuxpaint.c:2306
+#: ../tuxpaint.c:2308
 msgid "Yes, erase it!"
 msgstr "Jo, läsch et!"
 
-#: ../tuxpaint.c:2307
+#: ../tuxpaint.c:2309
 msgid "No, don’t erase it!"
 msgstr "Nee, net läschen!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2310
+#: ../tuxpaint.c:2312
 msgid "Remember to use the left mouse button!"
 msgstr "Denk drun de lénke Knäppche vun der Maus ze benotzen!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2314
+#: ../tuxpaint.c:2316
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Däi Bild gouf gedréckt!"
 
-#: ../tuxpaint.c:2315
+#: ../tuxpaint.c:2317
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Däi Bild gouf gedréckt!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2319
+#: ../tuxpaint.c:2321
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Et deet mer Leed, awer däi Bild konnt net gedréckt ginn!"
 
-#: ../tuxpaint.c:2320
+#: ../tuxpaint.c:2322
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Et deet mer Leed, awer däi Bild konnt net gedréckt ginn!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2324
+#: ../tuxpaint.c:2326
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Wiel d'Biller aus déi du kucke wëlls, da klick \"Ofspillen\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2534
+#: ../tuxpaint.c:2541
 msgid "Sound muted."
 msgstr "Toun ausgeschalt."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2539
+#: ../tuxpaint.c:2546
 msgid "Sound unmuted."
 msgstr "Toun ageschalt."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3326
+#: ../tuxpaint.c:3331
 msgid "Please wait…"
 msgstr "Waart wann ech gelift…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8726
+#: ../tuxpaint.c:8775
 msgid "Erase"
 msgstr "Läschen"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8729
+#: ../tuxpaint.c:8778
 msgid "Slides"
 msgstr "Diashow"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8732
+#: ../tuxpaint.c:8781
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8735
+#: ../tuxpaint.c:8784
 msgid "Back"
 msgstr "Zeréck"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8738
+#: ../tuxpaint.c:8787
 msgid "Play"
 msgstr "Ofspillen"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8741
+#: ../tuxpaint.c:8790
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8744
+#: ../tuxpaint.c:8793
 msgid "Next"
 msgstr "Weider"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8747
+#: ../tuxpaint.c:8796
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9606
+#: ../tuxpaint.c:9655
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13316
+#: ../tuxpaint.c:13365
 msgid "Yes"
 msgstr "Jo"
 
-#: ../tuxpaint.c:13320
+#: ../tuxpaint.c:13369
 msgid "No"
 msgstr "Nee"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14472
+#: ../tuxpaint.c:14521
 msgid "Replace the picture with your changes?"
 msgstr "D'Bild mat dénge Ännerungen iwwerschreiwen?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14476
+#: ../tuxpaint.c:14525
 msgid "Yes, replace the old one!"
 msgstr "Jo, iwwerschreiw dat aalt Bild!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14480
+#: ../tuxpaint.c:14529
 msgid "No, save a new file!"
 msgstr "Nee, als neit Bild späicheren"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15727
+#: ../tuxpaint.c:15776
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Wiel d'Bild aus, da klick \"Opmaachen\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17153
+#: ../tuxpaint.c:17296
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22576
+#: ../tuxpaint.c:22830
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:22577
+#: ../tuxpaint.c:22831
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Giel!"
 
-#: ../tuxpaint.c:22578
+#: ../tuxpaint.c:22832
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Himmelblo!"
 
-#: ../tuxpaint.c:22579
+#: ../tuxpaint.c:22833
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Wäiss!"
 
-#: ../tuxpaint.c:22580
+#: ../tuxpaint.c:22834
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:22581
+#: ../tuxpaint.c:22835
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Schwaarz!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22586
+#: ../tuxpaint.c:22840
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:22587
+#: ../tuxpaint.c:22841
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:22588
+#: ../tuxpaint.c:22842
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:22589
+#: ../tuxpaint.c:22843
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:22590
+#: ../tuxpaint.c:22844
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:22591
+#: ../tuxpaint.c:22845
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1067,18 +1067,18 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:23352 ../tuxpaint.c:23359
+#: ../tuxpaint.c:23606 ../tuxpaint.c:23613
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:26250
+#: ../tuxpaint.c:26517
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:26259
+#: ../tuxpaint.c:26526
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1086,7 +1086,7 @@ msgstr ""
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:26271
+#: ../tuxpaint.c:26538
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1629,36 +1629,48 @@ msgstr "Klick a beweeg d'Maus fir Deeler vun déngem Bild ze verrauschen."
 msgid "Click to add noise to your entire picture."
 msgstr "Klick fir d'ganz Bild donkel ze verrauschen."
 
-#: ../../magic/src/perspective.c:154
+#: ../../magic/src/perspective.c:161
 msgid "Perspective"
 msgstr "Perspective"
 
-#: ../../magic/src/perspective.c:155
+#: ../../magic/src/perspective.c:162
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:156
+#: ../../magic/src/perspective.c:163
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Zoom"
 
-#: ../../magic/src/perspective.c:157
+#: ../../magic/src/perspective.c:164
 msgid "Zoom"
 msgstr "Zoom"
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:165
+msgid "Rush"
+msgstr ""
+
+#: ../../magic/src/perspective.c:169
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klick an d'Ecken an beweeg d'Maus wou's du d'Bild wells zeien."
 
-#: ../../magic/src/perspective.c:163
+#: ../../magic/src/perspective.c:171
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klick fir däi ganzt Bild als Negativ ze maachen."
 
-#: ../../magic/src/perspective.c:165 ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:173 ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
+msgstr ""
+"Klick a beweeg d'Maus no uewen fir d'Bild méi grouss ze maachen, no ennen "
+"for d'Bild méi kleng ze maachen."
+
+#: ../../magic/src/perspective.c:177
+#, fuzzy
+#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
+msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
 "Klick a beweeg d'Maus no uewen fir d'Bild méi grouss ze maachen, no ennen "
 "for d'Bild méi kleng ze maachen."

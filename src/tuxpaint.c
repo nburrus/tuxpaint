@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 18, 2022
+  June 14, 2002 - April 29, 2022
 */
 
 #include "platform.h"
@@ -3097,9 +3097,9 @@ static void mainloop(void)
 
                                   if (label_node_to_edit)
                                     {
-                                      apply_label_node(old_x, old_y);
                                       reposition_onscreen_keyboard(old_y);
                                       apply_label_node(highlighted_label_node->save_x, highlighted_label_node->save_y);
+                                      do_render_cur_text(0);
                                     }
                                 }
                               else
@@ -26379,6 +26379,8 @@ static void setup_config(char *argv[])
   /* FIXME: most of this is not required before starting the font scanner */
 
 #ifdef PAPER_H
+  paperinit();
+
   if (tmpcfg_cmd.papersize && !strcmp(tmpcfg_cmd.papersize, "help"))
     show_available_papersizes(0);
 #endif
