@@ -4,7 +4,7 @@
         Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                             20 de Xaneiro de 2022
+                               15 de Maio de 2022
 
      ----------------------------------------------------------------------
 
@@ -467,8 +467,8 @@ Problemas no modo de pantalla completa
            configurado coa capacidade de cambiar á resolución desexada:
            800×600. (ou a resolución que teña configurada para Tux Paint para
            que funcione.) (Normalmente faise manualmente no servidor X-Window
-           premendo [Ctrl] + [Alt] + [Máis (+) no teclado numérico] e [Ctrl]
-           + [Alt] + [Menos (-) no teclado numérico].)
+           premendo [Control] + [Alt] + [Keypad Plus (+)] e [Control] + [Alt]
+           + [Keypad Minus (-)].)
 
            Para que isto funcione, o monitor debe admitir esa resolución e
            cómpre que apareza na súa configuración do servidor X.

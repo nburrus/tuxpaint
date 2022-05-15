@@ -5,12 +5,12 @@
         Copyright © 2019-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              31 de Marzo de 2022
+                               15 de Maio de 2022
 
    Tux Paint responde aos seguintes sinais (que poden enviarse ao proceso do
    programa a través de «kill» ou «killall», por exemplo).
 
-   SIGTERM (tamén, [Ctrl] + [C] dende un terminal executando «tuxpaint»)
+   SIGTERM (tamén, [Control] + [C] dende un terminal executando «tuxpaint»)
 
            Tux Paint responde coma se se premese o botón «Saír» ou se lle
            dixera ao contorno de escritorio que peche Tux Paint (por exemplo,

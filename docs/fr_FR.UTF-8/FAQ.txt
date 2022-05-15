@@ -4,7 +4,7 @@
         Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janvier 20, 2022
+                                  mai 15, 2022
 
      ----------------------------------------------------------------------
 
@@ -484,8 +484,8 @@ Problèmes en mode plein écran
            configuré avec la possibilité de passer à la résolution souhaitée
            : 800 × 600. (ou quelle que soit la résolution à laquelle Tux
            Paint doit s'exécuter.) (Cela se fait généralement manuellement
-           sous le serveur X-Window en appuyant sur [Ctrl] + [Alt] + [Keypad
-           Plus] et [Ctrl] + [Alt] + [Keypad Minus].)
+           sous le serveur X-Window en appuyant sur [Control] + [Alt] +
+           [Keypad Plus (+)] et [Control] + [Alt] + [Keypad Minus (-)].)
 
            Pour que cela fonctionne, votre moniteur doit prendre en charge
            cette résolution et elle doit être répertoriée dans la

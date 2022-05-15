@@ -5,7 +5,7 @@
         Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              31 de Marzo de 2022
+                               15 de Maio de 2022
 
              +----------------------------------------------------+
              |Índice                                              |
@@ -405,7 +405,7 @@ Windows
    (Vexa a documentación principal para obter unha lista completa das opcións
    dispoñíbeis da liña de ordes.)
 
-   Se se trabuca ou desaparece todo, use [Ctrl] + [Z] para desfacer ou só
+   Se se trabuca ou desaparece todo, use [Control] + [Z] para desfacer ou só
    prema a tecla [Esc] e a caixa pecharase sen facer cambios (a non ser que
    premera o botón «Aplicar»).
 
