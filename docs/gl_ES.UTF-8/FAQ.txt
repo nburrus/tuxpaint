@@ -265,15 +265,10 @@ Gardar
            específico (usando a opción «savedir»), Tux Paint garda nun lugar
            estándar na súa unidade local:
 
-                Windows Vista, Windows 8, Windows 10
+                Windows Vista, Windows 8, Windows 10, Windows 11
                         No cartafol «AppData» do usuario:
                         p. ex.: C:\Users\nome de
                         usuario\AppData\Roaming\TuxPaint\saved
-
-                Windows 95, 98, ME, 2000, XP
-                        No cartafol «Datos da aplicación» do usuario:
-                        p. ex.: C:\Documents and Settings\nome de
-                        usuario\Application Darta\TuxPaint\ saved
 
                 macOS
                         No cartafol «Asistencia de aplicacións» do usuario::

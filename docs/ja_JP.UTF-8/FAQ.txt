@@ -253,15 +253,10 @@ Interface Problems
            the "savedir" option), Tux Paint saves into a standard location on
            your local drive:
 
-                Windows Vista, Windows 8, Windows 10
+                Windows Vista, Windows 8, Windows 10, Windows 11
                         In the user's "AppData" folder:
                         e.g.,
                         C:\Users\Username\AppData\Roaming\TuxPaint\saved
-
-                Windows 95, 98, ME, 2000, XP
-                        In the user's "Application Data" folder:
-                        e.g., C:\Documents and Settings\Username\Application
-                        Data\TuxPaint\saved
 
                 macOS
                         In the user's "Application Support" folder:

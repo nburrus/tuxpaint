@@ -274,15 +274,10 @@ Sauvegarde
            Paint enregistre dans un emplacement standard sur votre disque
            local :
 
-                Windows Vista, Windows 8, Windows 10
+                Windows Vista, Windows 8, Windows 10, Windows 11
                         Dans le dossier "AppData" de l'utilisateur :
                         par ex..,
                         C:\Users\Username\AppData\Roaming\TuxPaint\saved
-
-                Windows 95, 98, ME, 2000, XP
-                        Dans le dossier "Application Data" de l'utilisateur :
-                        par ex., C:\Documents and
-                        Settings\Username\Application Data\TuxPaint\saved
 
                 macOS
                         Dans le dossier "Application Support" de
