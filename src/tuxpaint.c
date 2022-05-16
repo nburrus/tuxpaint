@@ -16892,13 +16892,24 @@ static int do_slideshow(void)
   instructions = textdir(TUX_TIP_SLIDESHOW);
   draw_tux_text(TUX_BORED, instructions, 1);
 
-  /* Default towards the bottom, as it's highly likely the
-     user wants to make a slideshow out of more recent images
-     (vs. very old ones) */
-  which = num_files - 1;
-  cur = ((num_files - 16) / 4) * 4;
-  if (cur < 0)
-    cur = 0;
+  /* Focus us around the newest images, as it's highly likely the
+     user wants to make a slideshow out of more recent images (vs. very
+     old ones) */
+  if (!reversesort)
+    {
+      /* Default sort puts newest at the top, oldest at the bottom,
+         so start at the end */
+      which = num_files - 1;
+      cur = ((num_files - 16) / 4) * 4;
+      if (cur < 0)
+        cur = 0;
+    }
+  else
+    {
+      /* "reversesort" option puts oldest at the top, so start there */
+      which = 0;
+      cur = 0;
+    }
 
   update_list = 1;
 
