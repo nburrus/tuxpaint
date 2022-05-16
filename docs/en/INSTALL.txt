@@ -5,7 +5,7 @@
         Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 March 31, 2022
+                                  May 15, 2022
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -402,7 +402,7 @@ Windows
    (See the main documentation for a full list of available command-line
    options.)
 
-   If you make a mistake or it all disappears use [Ctrl] + [Z] to undo or
+   If you make a mistake or it all disappears use [Control] + [Z] to undo or
    just hit the [Esc] key and the box will close with no changes made (unless
    you pushed the "Apply" button!).
 

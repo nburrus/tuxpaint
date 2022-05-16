@@ -100,7 +100,7 @@
           </p>
 
           <p>
-            marzo 30, 2022          </p>
+            mayo 15, 2022          </p>
         </center>
       </header>
 
@@ -345,7 +345,7 @@
 
     <dd>
       <p>
-        Disable sound effects. (Note: Pressing <b>[Alt]</b> + <b>[S]</b> cannot be used to reenable sounds if they were disabled using this option.)      </p>
+        Disable sound effects. (Note: Pressing <code><b>[Alt]</b></code> + <b>[S]</b> cannot be used to reenable sounds if they were disabled using this option.)      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosound=no</code>" or "<code>sound=yes</code>". In both cases, may be overridden by the command-line option "<code>--sound</code>".      </p>
     </dd>
@@ -587,7 +587,7 @@
         Disable the on-screen "Quit" button and prevent the <b>[Escape]</b> key from quitting Tux Paint.      </p>
 
       <p>
-        Using the <b>[Alt]</b> + <b>[F4]</b> keyboard combination or clicking the window's close button (assuming you're not in fullscreen mode) still works to quit Tux Paint.      </p>
+        Using the <code><b>[Alt]</b></code> + <code><b>[F4]</b></code> keyboard combination or clicking the window's close button (assuming you're not in fullscreen mode) still works to quit Tux Paint.      </p>
 
       <p>
         You can also use the following keyboard combination to quit: <b>[Shift]</b> + <b>[Control]</b> + <b>[Escape]</b>.      </p>
@@ -1439,7 +1439,7 @@
 
     <dd>
       <p>
-        This causes Tux Paint to always show the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it's like clicking 'Print' while holding <b>[Alt]</b>, except you don't need to hold <b>[Alt]</b> every time.      </p>
+        This causes Tux Paint to always show the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it's like clicking 'Print' while holding <code><b>[Alt]</b></code>, except you don't need to hold <code><b>[Alt]</b></code> every time.      </p>
     </dd>
 
     <dt>
@@ -1448,7 +1448,7 @@
 
     <dd>
       <p>
-        This prevents Tux Paint from <i>ever</i> showing the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it makes the <b>[Alt]</b> key have no effect when clicking the 'Print' button.      </p>
+        This prevents Tux Paint from <i>ever</i> showing the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it makes the <code><b>[Alt]</b></code> key have no effect when clicking the 'Print' button.      </p>
     </dd>
 
     <dt>
@@ -1457,7 +1457,7 @@
 
     <dd>
       <p>
-        This is the normal, default behavior. Tux Paint shows a printer dialog (or, on Linux/Unix, runs the "altprintcommand"), when the <b>[Alt]</b> key is pressed while the 'Print' button is clicked. Clicking 'Print' without holding <b>[Alt]</b> prints without showing a dialog.      </p>
+        This is the normal, default behavior. Tux Paint shows a printer dialog (or, on Linux/Unix, runs the "altprintcommand"), when the <code><b>[Alt]</b></code> key is pressed while the 'Print' button is clicked. Clicking 'Print' without holding <code><b>[Alt]</b></code> prints without showing a dialog.      </p>
     </dd>
 
   </dl>
@@ -1478,7 +1478,7 @@
       </p>
 
       <p>
-        Tux Paint will use a printer configuration file when printing. Push the <b>[Alt]</b> key while clicking the 'Print' button in Tux Paint to cause a Windows print dialog window to appear.      </p>
+        Tux Paint will use a printer configuration file when printing. Push the <code><b>[Alt]</b></code> key while clicking the 'Print' button in Tux Paint to cause a Windows print dialog window to appear.      </p>
 
       <p>
         Any configuration changes made in this dialog will be saved to the file "<code>userdata/print.cfg</code>" , and used again, as long as the "printcfg" option is set.      </p>
@@ -1532,7 +1532,7 @@
       </p>
 
       <p>
-        Use the command <i>COMMAND</i> to print a PostScript format file when the 'Print' button is clicked while the <b>[Alt]</b> modifier key is being held. (This is typically used for providing a print dialog, similar to when pressing <b>[Alt]</b>+'Print' in Windows and macOS.)      </p>
+        Use the command <i>COMMAND</i> to print a PostScript format file when the 'Print' button is clicked while the <code><b>[Alt]</b></code> modifier key is being held. (This is typically used for providing a print dialog, similar to when pressing <code><b>[Alt]</b></code>+'Print' in Windows and macOS.)      </p>
 
       <p>
         If this option is not specifically not set, the default command is KDE's graphical print dialog:      </p>
@@ -1745,6 +1745,17 @@
         This prevents Tux Paint from asking whether you want to save the current picture when quitting, and assumes you do.      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>autosave=no</code>" or "<code>noautosave=yes</code>". In both cases, may be overridden by the command-line option "<code>--noautosave</code>".      </p>
+    </dd>
+
+    <dt>
+      <code><b>reversesort=yes</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        This reverses the sorting of the Open and Slideshow dialogs, placing the newest images at the top of the list.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>reversesort=no</code>" or "<code>noreversesort=yes</code>". In both cases, may be overridden by the command-line option "<code>--noreversesort</code>".      </p>
     </dd>
 
   </dl>
@@ -2329,6 +2340,7 @@
           --saveovernew<br>
           --nosave<br>
           --autosave<br>
+          --reversesort<br>
           --lang <i>LANGUAGE</i><br>
           --colorfile <i>FILE</i><br></b></code>
         </dt>
@@ -2374,7 +2386,9 @@
           --mouse<br>
           --saveoverask<br>
           --save<br>
-          --noautosave<br></b></code>
+          --noautosave<br>
+          --noreversesort<br>
+          </b></code>
         </dt>
 
         <dd>

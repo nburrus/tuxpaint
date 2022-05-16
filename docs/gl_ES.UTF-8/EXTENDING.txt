@@ -5,7 +5,7 @@
         Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              30 de Marzo de 2022
+                               15 de Maio de 2022
 
         +--------------------------------------------------------------+
         |Índice                                                        |

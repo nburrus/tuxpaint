@@ -5,7 +5,7 @@
         Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 mars 31, 2022
+                                  mai 15, 2022
 
            +--------------------------------------------------------+
            |Table des matières                                      |
@@ -417,7 +417,7 @@ Windows
    (Voir «README.txt» pour une liste complète des options de ligne de
    commande disponibles.)
 
-   Si vous faites une erreur ou que tout disparaît, utilisez [Ctrl] + [Z]
+   Si vous faites une erreur ou que tout disparaît, utilisez [Control] + [Z]
    pour annuler ou appuyez simplement sur la touche [Esc] et la boîte se
    fermera sans aucune modification (sauf si vous avez appuyé sur le bouton
    "Appliquer" !).

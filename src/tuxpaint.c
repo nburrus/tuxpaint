@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 29, 2022
+  June 14, 2002 - May 15, 2022
 */
 
 #include "platform.h"
@@ -1358,6 +1358,7 @@ static int ok_to_use_lockfile = 1;
 static int start_blank;
 static int autosave_on_quit;
 static int no_prompt_on_quit = 0;
+static int reversesort = 0;
 
 static int dont_do_xor;
 static int dont_load_stamps;
@@ -2068,6 +2069,7 @@ static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
 static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2);
+static int compare_dirent2s_invert(struct dirent2 *f1, struct dirent2 *f2);
 static void redraw_tux_text(void);
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left);
 static void draw_tux_text_ex(int which_tux, const char *const str, int want_right_to_left, Uint8 locale_text);
@@ -7595,6 +7597,7 @@ void show_usage(int exitcode)
           "  [--savedir DIRECTORY]\n"
           "  [--nosave | --save]\n"
           "  [--autosave | --noautosave]\n"
+          "  [--reversesort | --noreversesort]\n"
           "\n"
           " Data:\n"
           "  [--nolockfile]\n"
@@ -11886,6 +11889,16 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 /**
  * FIXME
  */
+/* For qsort() call in do_open()... */
+static int compare_dirent2s_invert(struct dirent2 *f1, struct dirent2 *f2)
+{
+  return compare_dirent2s(f2, f1);
+}
+
+
+/**
+ * FIXME
+ */
 /* Draw tux's text on the screen: */
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left)
 {
@@ -15899,7 +15912,10 @@ static int do_open(void)
 
       /* Sort: */
 
-      qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+      if (!reversesort)
+        qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+      else
+        qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s_invert);
 
 
       /* Read directory of images and build thumbnails: */
@@ -17047,7 +17063,10 @@ static int do_slideshow(void)
 
   /* Sort: */
 
-  qsort(fs, num_files_in_dir, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+  if (!reversesort)
+    qsort(fs, num_files_in_dir, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+  else
+    qsort(fs, num_files_in_dir, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s_invert);
 
 
   /* Read directory of images and build thumbnails: */
@@ -17228,8 +17247,24 @@ static int do_slideshow(void)
   instructions = textdir(TUX_TIP_SLIDESHOW);
   draw_tux_text(TUX_BORED, instructions, 1);
 
-  /* NOTE: cur is now set above; if file_id'th file is found, it's
-     set to that file's index; otherwise, we default to '0' */
+  /* Focus us around the newest images, as it's highly likely the
+     user wants to make a slideshow out of more recent images (vs. very
+     old ones) */
+  if (!reversesort)
+    {
+      /* Default sort puts newest at the top, oldest at the bottom,
+         so start at the end */
+      which = num_files - 1;
+      cur = ((num_files - 16) / 4) * 4;
+      if (cur < 0)
+        cur = 0;
+    }
+  else
+    {
+      /* "reversesort" option puts oldest at the top, so start there */
+      which = 0;
+      cur = 0;
+    }
 
   update_list = 1;
 
@@ -17241,7 +17276,6 @@ static int do_slideshow(void)
   speed = 5;
 
   do_setcursor(cursor_arrow);
-
 
   do
     {
@@ -21038,6 +21072,7 @@ static int do_new_dialog(void)
 
   /* Sort: */
 
+  /* (N.B. "New" dialog not affected by 'reversesort' option) */
   qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
 
 
@@ -26388,6 +26423,7 @@ static void setup_config(char *argv[])
 #define SETBOOL(x) do{ if(tmpcfg.x) x = (tmpcfg.x==PARSE_YES); }while(0)
   SETBOOL(all_locale_fonts);
   SETBOOL(autosave_on_quit);
+  SETBOOL(reversesort);
   SETBOOL(disable_label);
   SETBOOL(disable_brushspacing);
   SETBOOL(disable_magic_controls);
