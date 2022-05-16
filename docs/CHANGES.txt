@@ -145,6 +145,11 @@ http://www.tuxpaint.org/
       dialogs.  (For https://sourceforge.net/p/tuxpaint/feature-requests/173/)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * The "Slideshow" now begins by showing the most recent images
+      (the bottom of the list of saved images) rather than the oldest
+      (the top of the list).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Albanian translation

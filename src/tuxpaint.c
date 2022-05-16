@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 29, 2022
+  June 14, 2002 - May 15, 2022
 */
 
 #include "platform.h"
@@ -16873,8 +16873,13 @@ static int do_slideshow(void)
   instructions = textdir(TUX_TIP_SLIDESHOW);
   draw_tux_text(TUX_BORED, instructions, 1);
 
-  /* NOTE: cur is now set above; if file_id'th file is found, it's
-     set to that file's index; otherwise, we default to '0' */
+  /* Default towards the bottom, as it's highly likely the
+     user wants to make a slideshow out of more recent images
+     (vs. very old ones) */
+  which = num_files - 1;
+  cur = ((num_files - 16) / 4) * 4;
+  if (cur < 0)
+    cur = 0;
 
   update_list = 1;
 
@@ -16886,7 +16891,6 @@ static int do_slideshow(void)
   speed = 5;
 
   do_setcursor(cursor_arrow);
-
 
   do
     {
