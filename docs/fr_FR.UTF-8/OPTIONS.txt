@@ -1054,6 +1054,16 @@ Sauvegarde
              or "noautosave=yes". In both cases, may be overridden by the
              command-line option "--noautosave".
 
+     reversesort=yes
+
+             This reverses the sorting of the Open and Slideshow dialogs,
+             placing the newest images at the top of the list.
+
+             ⚙ Note: If used in a system-wide configuration file, may be
+             overridden by the user's configuration file using
+             "reversesort=no" or "noreversesort=yes". In both cases, may be
+             overridden by the command-line option "--noreversesort".
+
 Données
 
   Fichier de verouillage
@@ -1486,6 +1496,7 @@ Joystick
      --saveovernew
      --nosave
      --autosave
+     --reversesort
      --lang LANGUAGE
      --colorfile FILE
 
@@ -1528,6 +1539,7 @@ Joystick
      --saveoverask
      --save
      --noautosave
+     --noreversesort
 
              Ces options peuvent être utilisées pour remplacer les paramètres
              définis dans le fichier de configuration. (Si l'option n'est pas

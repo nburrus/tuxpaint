@@ -157,6 +157,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 .br
 [\-\-autosave]
 .br
+[\-\-reversesort]
+.br
 [\-\-colorfile \fIFILE\fP]
 
 .TP 9
@@ -234,6 +236,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 [\-\-save]
 .br
 [\-\-noautosave]
+.br
+[\-\-noreversesort]
 .br
 
 .TP 9
@@ -725,6 +729,12 @@ est utilisé juste pour le fun, ou dans un environnement de tests.
 .B \-\-autosave \-\-noautosave
 Cette option --autosave empêche Tux Paint de vous demander si vous voulez
 sauvegarder l'image quand vous quittez, et suppose que vous le faites.
+
+.TP 8
+.B \-\-reversesort \-\-noautosave
+The --reversesort option causes Tux Paint's Open and Slideshow dialogs to
+display the oldest images at the top of the list (normally the newest
+appear at the top, and the oldest at the bottom.
 
 .SH OPTIONS - DATA FILES
 .l

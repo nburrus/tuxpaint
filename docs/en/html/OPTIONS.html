@@ -1747,6 +1747,17 @@
         <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>autosave=no</code>" or "<code>noautosave=yes</code>". In both cases, may be overridden by the command-line option "<code>--noautosave</code>".      </p>
     </dd>
 
+    <dt>
+      <code><b>reversesort=yes</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        This reverses the sorting of the Open and Slideshow dialogs, placing the newest images at the top of the list.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>reversesort=no</code>" or "<code>noreversesort=yes</code>". In both cases, may be overridden by the command-line option "<code>--noreversesort</code>".      </p>
+    </dd>
+
   </dl>
 </section>
   </section>
@@ -2329,6 +2340,7 @@
           --saveovernew<br>
           --nosave<br>
           --autosave<br>
+          --reversesort<br>
           --lang <i>LANGUAGE</i><br>
           --colorfile <i>FILE</i><br></b></code>
         </dt>
@@ -2374,7 +2386,9 @@
           --mouse<br>
           --saveoverask<br>
           --save<br>
-          --noautosave<br></b></code>
+          --noautosave<br>
+          --noreversesort<br>
+          </b></code>
         </dt>
 
         <dd>

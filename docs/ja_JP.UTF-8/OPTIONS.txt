@@ -877,6 +877,15 @@ Windows のユーザー
              "noautosave=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
              "--noautosave" で変更できます。
 
+     reversesort=yes
+
+             This reverses the sorting of the Open and Slideshow dialogs,
+             placing the newest images at the top of the list.
+
+             ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "reversesort=no" または
+             "noreversesort=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
+             "--noreversesort" で変更できます。
+
 データ
 
   ロックファイル
@@ -1209,6 +1218,7 @@ Windows のユーザー
      --saveovernew
      --nosave
      --autosave
+     --reversesort
      --lang LANGUAGE
      --colorfile FILE
 
@@ -1250,6 +1260,7 @@ Windows のユーザー
      --saveoverask
      --save
      --noautosave
+     --noreversesort
 
              以上のオプションは、設定ファイルでの設定を上書きするために用いられます。（オプションが設定ファイルで指定されていない場合、設定を上書きしないというオプションが必要です）
 
