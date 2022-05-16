@@ -150,6 +150,12 @@ http://www.tuxpaint.org/
       (the top of the list).
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * WIP Added an option to sort the "Open" and "Slideshow" dialogs
+      by newest-images-first, rather than the default oldest-first.
+      (For https://sourceforge.net/p/tuxpaint/feature-requests/206/)
+      Pere Pujal i Carabantes <perepujal@gmail.com> and
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Albanian translation

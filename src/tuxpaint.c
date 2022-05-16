@@ -1269,6 +1269,7 @@ static int ok_to_use_lockfile = 1;
 static int start_blank;
 static int autosave_on_quit;
 static int no_prompt_on_quit = 0;
+static int reversesort = 0;
 
 static int dont_do_xor;
 static int dont_load_stamps;
@@ -2035,6 +2036,7 @@ static void disable_avail_tools(void);
 static void enable_avail_tools(void);
 static void reset_avail_tools(void);
 static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2);
+static int compare_dirent2s_invert(struct dirent2 *f1, struct dirent2 *f2);
 static void redraw_tux_text(void);
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left);
 static void draw_tux_text_ex(int which_tux, const char *const str, int want_right_to_left, Uint8 locale_text);
@@ -7349,6 +7351,7 @@ void show_usage(int exitcode)
           "  [--savedir DIRECTORY]\n"
           "  [--nosave | --save]\n"
           "  [--autosave | --noautosave]\n"
+          "  [--reversesort | --noreversesort]\n"
           "\n"
           " Data:\n"
           "  [--nolockfile]\n"
@@ -11627,6 +11630,16 @@ static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 /**
  * FIXME
  */
+/* For qsort() call in do_open()... */
+static int compare_dirent2s_invert(struct dirent2 *f1, struct dirent2 *f2)
+{
+  return compare_dirent2s(f2, f1);
+}
+
+
+/**
+ * FIXME
+ */
 /* Draw tux's text on the screen: */
 static void draw_tux_text(int which_tux, const char *const str, int want_right_to_left)
 {
@@ -15554,7 +15567,10 @@ static int do_open(void)
 
       /* Sort: */
 
-      qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+      if (!reversesort)
+        qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+      else
+        qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s_invert);
 
 
       /* Read directory of images and build thumbnails: */
@@ -16692,7 +16708,10 @@ static int do_slideshow(void)
 
   /* Sort: */
 
-  qsort(fs, num_files_in_dir, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+  if (!reversesort)
+    qsort(fs, num_files_in_dir, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
+  else
+    qsort(fs, num_files_in_dir, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s_invert);
 
 
   /* Read directory of images and build thumbnails: */
@@ -20597,6 +20616,7 @@ static int do_new_dialog(void)
 
   /* Sort: */
 
+  /* (N.B. "New" dialog not affected by 'reversesort' option) */
   qsort(fs, num_files_in_dirs, sizeof(struct dirent2), (int (*)(const void *, const void *))compare_dirent2s);
 
 
@@ -25889,6 +25909,7 @@ static void setup_config(char *argv[])
 #define SETBOOL(x) do{ if(tmpcfg.x) x = (tmpcfg.x==PARSE_YES); }while(0)
   SETBOOL(all_locale_fonts);
   SETBOOL(autosave_on_quit);
+  SETBOOL(reversesort);
   SETBOOL(disable_label);
   SETBOOL(disable_brushspacing);
   SETBOOL(disable_magic_controls);

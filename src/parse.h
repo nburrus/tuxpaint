@@ -48,6 +48,7 @@ struct cfginfo
   const char *colors_rows;
   const char *print_delay;
   const char *printcommand;
+  const char *reversesort;
 //  const char *promptless_save;
   const char *_promptless_save_over;
   const char *_promptless_save_over_new;

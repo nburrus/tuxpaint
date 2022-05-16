@@ -3,7 +3,7 @@
 # Bill Kendrick <bill@newbreedsoftware.com>; http://www.tuxpaint.org/
 # Based on inkscape's completion file, by allali@univ-mlv.fr
 #
-# Last modified 2022-01-18
+# Last modified 2022-05-15
 #
 # $Id$
 
@@ -67,6 +67,7 @@ _tuxpaint()
 			--nosave --save \
 			--autosave --noautosave \
 			--savedir --datadir --exportdir \
+			--reversesort --noreversesort \
 			--printdelay= \
 			--altprintmod --altprintalways --altprintnever \
 			--printcommand --altprintcommand \
