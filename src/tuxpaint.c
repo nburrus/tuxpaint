@@ -580,8 +580,13 @@ static void reposition_onscreen_keyboard(int y);
 #endif
 #endif
 
+#if (SDL_MAJOR_VERSION < 2)
+  #define EVENT_FILTER_EVENT_TYPE const SDL_Event
+#else
+  #define EVENT_FILTER_EVENT_TYPE union SDL_Event
+#endif
 
-int TP_EventFilter(const SDL_Event * event);
+int TP_EventFilter(EVENT_FILTER_EVENT_TYPE * event);
 
 
 /* *INDENT-OFF* */
@@ -26674,7 +26679,7 @@ static void do_lock_file(void)
 /**
  * FIXME
  */
-int TP_EventFilter(const SDL_Event * event)
+int TP_EventFilter(EVENT_FILTER_EVENT_TYPE * event)
 {
   if (event->type == SDL_QUIT ||
       event->type == SDL_ACTIVEEVENT ||
