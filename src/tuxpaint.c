@@ -2341,9 +2341,9 @@ on_screen_keyboard *new_kbd;
 SDL_Rect kbd_rect;
 
 #if (SDL_MAJOR_VERSION < 2)
-  #define TIMERID_NONE 0
-#else
   #define TIMERID_NONE NULL
+#else
+  #define TIMERID_NONE 0
 #endif
 
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
