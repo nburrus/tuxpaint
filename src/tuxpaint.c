@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 18, 2022
+  June 14, 2002 - May 19, 2022
 */
 
 #include "platform.h"
@@ -1050,7 +1050,7 @@ static void update_screen_rect(SDL_Rect * r)
 static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 {
   /* note the use of unsigned math: no need to check for negative */
-  return x - r->x < r->w && y - r->y < r->h;
+  return (x - (unsigned) r->x < (unsigned) r->w) && (y - (unsigned) r->y < (unsigned) r->h);
 }
 
 #define HIT(r) hit_test(&(r), event.button.x, event.button.y)
@@ -14551,7 +14551,7 @@ static int do_save(int tool, int dont_show_success_results)
 {
   int scroll;
   char *fname;
-  char tmp[1024];
+  char tmp[FILENAME_MAX + 16];
   SDL_Surface *thm;
   FILE *fi;
 
