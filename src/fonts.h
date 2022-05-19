@@ -67,8 +67,12 @@
 #define SDL_mutex int
 #define SDL_CreateMutex() 0     // creates in released state
 #define SDL_DestroyMutex(lock)
+#ifndef SDL_mutexP
 #define SDL_mutexP(lock)        // take lock
+#endif
+#ifndef SDL_mutexV
 #define SDL_mutexV(lock)        // release lock
+#endif
 #endif
 
 #endif

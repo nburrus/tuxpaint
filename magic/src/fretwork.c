@@ -1,7 +1,7 @@
 /*
  * Draws fretwork
  *
- * Last updated: 2021-09-20
+ * Last updated: 2022-05-19
  */
 
 #include "tp_magic_api.h"
@@ -70,7 +70,7 @@ void fretwork_release(magic_api * api, int which,
 void fretwork_shutdown(magic_api * api);
 void fretwork_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot);
 void fretwork_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot);
-inline void fretwork_extract_coords_from_segment(unsigned int segment, Sint16 * x, Sint16 * y);
+inline void fretwork_extract_coords_from_segment(unsigned int segment, int * x, int * y);
 void fretwork_click(magic_api * api, int which, int mode,
                     SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect);
 
@@ -278,7 +278,7 @@ inline unsigned int fretwork_get_segment(int x, int y)
   return (yy - 1) * fretwork_segments_x + xx;
 }
 
-inline void fretwork_extract_coords_from_segment(unsigned int segment, Sint16 * x, Sint16 * y)
+inline void fretwork_extract_coords_from_segment(unsigned int segment, int * x, int * y)
 {
   *x = ((segment % fretwork_segments_x) - 1) * img_w;   //useful to set update_rect as small as possible
   *y = (int)(segment / fretwork_segments_x) * img_h;

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 18, 2022
+  June 14, 2002 - May 19, 2022
 */
 
 #include "platform.h"
@@ -602,7 +602,7 @@ static void reposition_onscreen_keyboard(int y);
 #endif
 
 
-int TP_EventFilter(void *data, const SDL_Event * event);
+int TP_EventFilter(void *data, union SDL_Event * event);
 
 
 /* *INDENT-OFF* */
@@ -1139,7 +1139,7 @@ static void update_screen_rect(SDL_Rect * r)
 static int hit_test(const SDL_Rect * const r, unsigned x, unsigned y)
 {
   /* note the use of unsigned math: no need to check for negative */
-  return x - r->x < r->w && y - r->y < r->h;
+  return (x - (unsigned) r->x < (unsigned) r->w) && (y - (unsigned) r->y < (unsigned) r->h);
 }
 
 #define HIT(r) hit_test(&(r), event.button.x, event.button.y)
@@ -2374,7 +2374,7 @@ SDL_Rect kbd_rect;
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
 int cur_thing;
-SDL_TimerID scrolltimer_dialog = NULL; /* Used by Open, Open->Slideshow, and New dialogs */
+SDL_TimerID scrolltimer_dialog = 0; /* Used by Open, Open->Slideshow, and New dialogs */
 Uint32 TP_SDL_MOUSEBUTTONSCROLL;
 /**
  * --- MAIN LOOP! ---
@@ -2396,8 +2396,6 @@ static void mainloop(void)
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
 
-  unsigned int i = 0;
-
 #ifdef AUTOSAVE_GOING_BACKGROUND
   char *fname;
   char tmp[1024];
@@ -2405,7 +2403,7 @@ static void mainloop(void)
 #endif
 
   TP_SDL_MOUSEBUTTONSCROLL = SDL_RegisterEvents(1);
-  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL;
+  SDL_TimerID scrolltimer_selector = 0, scrolltimer_tool = 0;
   SDL_Event event;
   SDLKey key;
   SDLMod mod;
@@ -4573,10 +4571,10 @@ static void mainloop(void)
                               do_draw = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 
-                              if (scrolltimer_selector != NULL)
+                              if (scrolltimer_selector != 0)
                                 {
                                   SDL_RemoveTimer(scrolltimer_selector);
-                                  scrolltimer_selector = NULL;
+                                  scrolltimer_selector = 0;
                                 }
 
                               if (!scrolling_selector && event.type == SDL_MOUSEBUTTONDOWN)
@@ -4609,10 +4607,10 @@ static void mainloop(void)
                                   do_setcursor(cursor_arrow);
                                   if (scrolling_selector)
                                     {
-                                      if (scrolltimer_selector != NULL)
+                                      if (scrolltimer_selector != 0)
                                         {
                                           SDL_RemoveTimer(scrolltimer_selector);
-                                          scrolltimer_selector = NULL;
+                                          scrolltimer_selector = 0;
                                         }
                                       scrolling_selector = 0;
                                       SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -4914,7 +4912,7 @@ static void mainloop(void)
                 }
               else if (HIT(r_canvas) && valid_click(event.button.button) && keyglobal == 0)
                 {
-                  Uint8 * kbd_state;
+                  const Uint8 * kbd_state;
 
                   kbd_state = SDL_GetKeyboardState(NULL);
 
@@ -5624,10 +5622,10 @@ static void mainloop(void)
             {
               if (scrolling_selector)
                 {
-                  if (scrolltimer_selector != NULL)
+                  if (scrolltimer_selector != 0)
                     {
                       SDL_RemoveTimer(scrolltimer_selector);
-                      scrolltimer_selector = NULL;
+                      scrolltimer_selector = 0;
                     }
                   scrolling_selector = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -5637,10 +5635,10 @@ static void mainloop(void)
 
               else if (scrolling_tool)
                 {
-                  if (scrolltimer_tool != NULL)
+                  if (scrolltimer_tool != 0)
                     {
                       SDL_RemoveTimer(scrolltimer_tool);
-                      scrolltimer_tool = NULL;
+                      scrolltimer_tool = 0;
                     }
                   scrolling_tool = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -7674,8 +7672,8 @@ static unsigned compute_default_scale_factor(double ratio)
  * @param locale UI's locale, for loading localized text (ignored)
  */
 static void loadbrush_callback(SDL_Surface * screen,
-                               SDL_Texture * texture,
-                               SDL_Renderer * renderer,
+                               __attribute__((unused)) SDL_Texture * texture,
+                               __attribute__((unused)) SDL_Renderer * renderer,
                                const char *restrict const dir,
                                unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
@@ -8654,8 +8652,8 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
  * @param locale UI's locale, for loading localized text (ignored)
  */
 static void loadstamp_callback(SDL_Surface * screen,
-                               SDL_Texture * texture,
-                               SDL_Renderer * renderer,
+                               __attribute__((unused)) SDL_Texture * texture,
+                               __attribute__((unused)) SDL_Renderer * renderer,
                                const char *restrict const dir,
                                unsigned dirlen, tp_ftw_str * files, unsigned i, const char *restrict const locale)
 {
@@ -13422,7 +13420,9 @@ static void load_current(void)
   SDL_Surface *tmp, *org_surf;
   char *fname;
   char ftmp[1024];
+#ifdef AUTOSAVE_GOING_BACKGROUND
   FILE *fi;
+#endif
 
   int found_autosaved = 0;
 
@@ -14872,7 +14872,7 @@ static int do_save(int tool, int dont_show_success_results, int autosave)
 {
   int scroll;
   char *fname;
-  char tmp[1024];
+  char tmp[FILENAME_MAX + 16];
   SDL_Surface *thm;
   FILE *fi;
 
@@ -16480,10 +16480,10 @@ static int do_open(void)
                                     which = which + 4;
                                 }
 
-                              if (scrolltimer_dialog != NULL)
+                              if (scrolltimer_dialog != 0)
                                 {
                                   SDL_RemoveTimer(scrolltimer_dialog);
-                                  scrolltimer_dialog = NULL;
+                                  scrolltimer_dialog = 0;
                                 }
 
                               if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
@@ -16663,10 +16663,10 @@ static int do_open(void)
 #endif
                       if (scrolling_dialog)
                         {
-                          if (scrolltimer_dialog != NULL)
+                          if (scrolltimer_dialog != 0)
                             {
                               SDL_RemoveTimer(scrolltimer_dialog);
-                              scrolltimer_dialog = NULL;
+                              scrolltimer_dialog = 0;
                             }
                           scrolling_dialog = 0;
                           SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -17574,10 +17574,10 @@ static int do_slideshow(void)
                         }
                     }
 
-                  if (scrolltimer_dialog != NULL)
+                  if (scrolltimer_dialog != 0)
                     {
                       SDL_RemoveTimer(scrolltimer_dialog);
-                      scrolltimer_dialog = NULL;
+                      scrolltimer_dialog = 0;
                     }
 
                   if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
@@ -17823,10 +17823,10 @@ static int do_slideshow(void)
 
               if (scrolling_dialog)
                 {
-                  if (scrolltimer_dialog != NULL)
+                  if (scrolltimer_dialog != 0)
                     {
                       SDL_RemoveTimer(scrolltimer_dialog);
-                      scrolltimer_dialog = NULL;
+                      scrolltimer_dialog = 0;
                     }
                   scrolling_dialog = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -21698,10 +21698,10 @@ static int do_new_dialog(void)
                             which = which + 4;
                         }
 
-                      if (scrolltimer_dialog != NULL)
+                      if (scrolltimer_dialog != 0)
                         {
                           SDL_RemoveTimer(scrolltimer_dialog);
-                          scrolltimer_dialog = NULL;
+                          scrolltimer_dialog = 0;
                         }
 
                       if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
@@ -21849,10 +21849,10 @@ static int do_new_dialog(void)
 
               if (scrolling_dialog)
                 {
-                  if (scrolltimer_dialog != NULL)
+                  if (scrolltimer_dialog != 0)
                     {
                       SDL_RemoveTimer(scrolltimer_dialog);
-                      scrolltimer_dialog = NULL;
+                      scrolltimer_dialog = 0;
                     }
                   scrolling_dialog = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -27168,7 +27168,7 @@ static void do_lock_file(void)
   free(lock_fname);
 }
 
-int TP_EventFilter(void *data, const SDL_Event * event)
+int TP_EventFilter(__attribute__((unused)) void *data, union SDL_Event * event)
 /**
  * FIXME
  */
@@ -27316,7 +27316,9 @@ static void setup(void)
 
       for (i = 0; i < SDL_NumJoysticks(); i++)
         {
-          fprintf(stderr, " %d: %s\n", i, SDL_JoystickName(i));
+          SDL_Joystick *joystick = SDL_JoystickOpen(i);
+
+          fprintf(stderr, " %d: %s\n", i, SDL_JoystickName(joystick));
         }
 
       SDL_Quit();
@@ -27585,7 +27587,7 @@ static void setup(void)
 #else
       window_screen = SDL_CreateWindow("Tux Paint",
                                        SDL_WINDOWPOS_UNDEFINED,
-                                       SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, NULL);
+                                       SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, 0 /* no flags */);
       /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
          s
          VIDEO_BPP, SDL_SWSURFACE); */
@@ -29149,6 +29151,7 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x, int oldpos_
     SDL_PushEvent(&ev);
 }
 
+#ifdef __ANDROID__
 /*
  * When moving on some cases of supporting scroll wheel, including
  * the coming SDL_MOUSEMOTION events will be converted to SDL_MOUSEWHEEL
@@ -29183,7 +29186,6 @@ static void start_motion_convert(SDL_Event event)
   motion_dx = motion_dy = 0;
 }
 
-#ifdef __ANDROID__
 static void stop_motion_convert(SDL_Event event)
 {
   if (event.type != SDL_MOUSEBUTTONUP)
