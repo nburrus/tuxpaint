@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 15, 2022
+  June 14, 2002 - May 18, 2022
 */
 
 #include "platform.h"
@@ -13706,6 +13706,7 @@ static int do_prompt_image_flash_snd(const char *const text,
                                 screen->format->Rmask,
                                 screen->format->Gmask, screen->format->Bmask, screen->format->Amask);
 
+  SDL_FillRect(backup, NULL, SDL_MapRGBA(backup->format, 255, 255, 255, 255));
   SDL_BlitSurface(screen, NULL, backup, NULL);
 
   for (w = 0; w <= r_ttools.w; w = w + 2)
