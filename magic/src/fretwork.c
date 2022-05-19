@@ -66,7 +66,8 @@ void fretwork_release(magic_api * api, int which,
 void fretwork_shutdown(magic_api * api);
 void fretwork_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot);
 void fretwork_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot);
-inline void fretwork_extract_coords_from_segment(unsigned int segment, Sint16 * x, Sint16 * y);
+#define POINT_TYPE typeof(((SDL_Rect *)NULL)->x)
+inline void fretwork_extract_coords_from_segment(unsigned int segment, POINT_TYPE * x, POINT_TYPE * y);
 void fretwork_click(magic_api * api, int which, int mode,
                     SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect);
 
@@ -274,7 +275,7 @@ inline unsigned int fretwork_get_segment(int x, int y)
   return (yy - 1) * fretwork_segments_x + xx;
 }
 
-inline void fretwork_extract_coords_from_segment(unsigned int segment, Sint16 * x, Sint16 * y)
+inline void fretwork_extract_coords_from_segment(unsigned int segment, POINT_TYPE * x, POINT_TYPE * y)
 {
   *x = ((segment % fretwork_segments_x) - 1) * img_w;   //useful to set update_rect as small as possible
   *y = (int)(segment / fretwork_segments_x) * img_h;
@@ -284,7 +285,7 @@ inline void fretwork_extract_coords_from_segment(unsigned int segment, Sint16 * 
 /* { */
 /*   magic_api * api = (magic_api *) ptr; */
 
-/*   Sint16 x, y; */
+/*   POINT_TYPE x, y; */
 
 /*   for (x=0; x<dest->w; x++) */
 /*     for (y=0; y<dest->h; y++) */
@@ -294,7 +295,7 @@ inline void fretwork_extract_coords_from_segment(unsigned int segment, Sint16 * 
 static void fretwork_flip_flop(void *ptr, SDL_Surface * dest, SDL_Surface * src)
 {
   magic_api *api = (magic_api *) ptr;
-  Sint16 x, y;
+  POINT_TYPE x, y;
 
   for (x = 0; x < dest->w; x++)
     for (y = 0; y < dest->h; y++)
@@ -305,7 +306,7 @@ static void fretwork_rotate(void *ptr, SDL_Surface * dest, SDL_Surface * src, _B
      //src and dest must have same size
 {
   magic_api *api = (magic_api *) ptr;
-  Sint16 x, y;
+  POINT_TYPE x, y;
 
   if (direction)                //rotate -90 degs
     {
