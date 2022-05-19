@@ -2340,10 +2340,16 @@ int shape_reverse;
 on_screen_keyboard *new_kbd;
 SDL_Rect kbd_rect;
 
+#if (SDL_MAJOR_VERSION < 2)
+  #define TIMERID_NONE 0
+#else
+  #define TIMERID_NONE NULL
+#endif
+
 int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_position, keyglobal, initial_y, gen_key_flag,
   ide, activeflag, old_x, old_y;
 int cur_thing;
-SDL_TimerID scrolltimer_dialog = NULL; /* Used by Open, Open->Slideshow, and New dialogs */
+SDL_TimerID scrolltimer_dialog = TIMERID_NONE; /* Used by Open, Open->Slideshow, and New dialogs */
 
 /**
  * --- MAIN LOOP! ---
@@ -2364,7 +2370,7 @@ static void mainloop(void)
   int line_start_y = 0;
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
-  SDL_TimerID scrolltimer_selector = NULL, scrolltimer_tool = NULL;
+  SDL_TimerID scrolltimer_selector = TIMERID_NONE, scrolltimer_tool = TIMERID_NONE;
   SDL_Event event;
   SDLKey key;
   SDLMod mod;
@@ -2397,9 +2403,9 @@ static void mainloop(void)
   last_cursor_blink = cur_toggle_count = 0;
   texttool_len = 0;
   scrolling_selector = 0;
-  scrolltimer_selector = 0;
+  scrolltimer_selector = TIMERID_NONE;
   scrolling_tool = 0;
-  scrolltimer_tool = 0;
+  scrolltimer_tool = TIMERID_NONE;
   scrolling_dialog = 0;
   scrolltimer_dialog = 0;
   val_x = 0;
@@ -4403,10 +4409,10 @@ static void mainloop(void)
                               do_draw = 1;
                               playsound(screen, 1, SND_SCROLL, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
 
-                              if (scrolltimer_selector != NULL)
+                              if (scrolltimer_selector != TIMERID_NONE)
                                 {
                                   SDL_RemoveTimer(scrolltimer_selector);
-                                  scrolltimer_selector = NULL;
+                                  scrolltimer_selector = TIMERID_NONE;
                                 }
 
                               if (!scrolling_selector && event.type == SDL_MOUSEBUTTONDOWN)
@@ -4439,10 +4445,10 @@ static void mainloop(void)
                                   do_setcursor(cursor_arrow);
                                   if (scrolling_selector)
                                     {
-                                      if (scrolltimer_selector != NULL)
+                                      if (scrolltimer_selector != TIMERID_NONE)
                                         {
                                           SDL_RemoveTimer(scrolltimer_selector);
-                                          scrolltimer_selector = NULL;
+                                          scrolltimer_selector = TIMERID_NONE;
                                         }
                                       scrolling_selector = 0;
                                       SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -5420,10 +5426,10 @@ static void mainloop(void)
             {
               if (scrolling_selector)
                 {
-                  if (scrolltimer_selector != NULL)
+                  if (scrolltimer_selector != TIMERID_NONE)
                     {
                       SDL_RemoveTimer(scrolltimer_selector);
-                      scrolltimer_selector = NULL;
+                      scrolltimer_selector = TIMERID_NONE;
                     }
                   scrolling_selector = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -5433,10 +5439,10 @@ static void mainloop(void)
 
               else if (scrolling_tool)
                 {
-                  if (scrolltimer_tool != NULL)
+                  if (scrolltimer_tool != TIMERID_NONE)
                     {
                       SDL_RemoveTimer(scrolltimer_tool);
-                      scrolltimer_tool = NULL;
+                      scrolltimer_tool = TIMERID_NONE;
                     }
                   scrolling_tool = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -16135,10 +16141,10 @@ static int do_open(void)
                                     which = which + 4;
                                 }
 
-                              if (scrolltimer_dialog != NULL)
+                              if (scrolltimer_dialog != TIMERID_NONE)
                                 {
                                   SDL_RemoveTimer(scrolltimer_dialog);
-                                  scrolltimer_dialog = NULL;
+                                  scrolltimer_dialog = TIMERID_NONE;
                                 }
 
                               if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
@@ -16308,10 +16314,10 @@ static int do_open(void)
                     {
                       if (scrolling_dialog)
                         {
-                          if (scrolltimer_dialog != NULL)
+                          if (scrolltimer_dialog != TIMERID_NONE)
                             {
                               SDL_RemoveTimer(scrolltimer_dialog);
-                              scrolltimer_dialog = NULL;
+                              scrolltimer_dialog = TIMERID_NONE;
                             }
                           scrolling_dialog = 0;
                           SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -17219,10 +17225,10 @@ static int do_slideshow(void)
                         }
                     }
 
-                  if (scrolltimer_dialog != NULL)
+                  if (scrolltimer_dialog != TIMERID_NONE)
                     {
                       SDL_RemoveTimer(scrolltimer_dialog);
-                      scrolltimer_dialog = NULL;
+                      scrolltimer_dialog = TIMERID_NONE;
                     }
 
                   if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
@@ -17456,10 +17462,10 @@ static int do_slideshow(void)
             {
               if (scrolling_dialog)
                 {
-                  if (scrolltimer_dialog != NULL)
+                  if (scrolltimer_dialog != TIMERID_NONE)
                     {
                       SDL_RemoveTimer(scrolltimer_dialog);
-                      scrolltimer_dialog = NULL;
+                      scrolltimer_dialog = TIMERID_NONE;
                     }
                   scrolling_dialog = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
@@ -21253,10 +21259,10 @@ static int do_new_dialog(void)
                             which = which + 4;
                         }
 
-                      if (scrolltimer_dialog != NULL)
+                      if (scrolltimer_dialog != TIMERID_NONE)
                         {
                           SDL_RemoveTimer(scrolltimer_dialog);
-                          scrolltimer_dialog = NULL;
+                          scrolltimer_dialog = TIMERID_NONE;
                         }
 
                       if (!scrolling_dialog && event.type == SDL_MOUSEBUTTONDOWN)
@@ -21392,10 +21398,10 @@ static int do_new_dialog(void)
             {
               if (scrolling_dialog)
                 {
-                  if (scrolltimer_dialog != NULL)
+                  if (scrolltimer_dialog != TIMERID_NONE)
                     {
                       SDL_RemoveTimer(scrolltimer_dialog);
-                      scrolltimer_dialog = NULL;
+                      scrolltimer_dialog = TIMERID_NONE;
                     }
                   scrolling_dialog = 0;
                   SDL_QuitSubSystem(SDL_INIT_TIMER);
