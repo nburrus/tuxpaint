@@ -20,9 +20,14 @@
   (See COPYING.txt)
 */
 
+#include "debug.h"
 #include "onscreen_keyboard.h"
 
 #define DEBUG_OSK_COMPOSEMAP
+
+//#ifdef DEBUG
+#define OSK_DEBUG
+//#endif
 
 #include "SDL2_rotozoom.h"
 
@@ -57,7 +62,7 @@ static void set_key(osk_key * orig, osk_key * dest, int firsttime);
 static void load_keysymdefs(osk_layout * layout, char *keysymdefs_name);
 static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layout_name);
 
-#ifdef DEBUG_OSK_COMPOSEMAP
+#ifdef OSK_DEBUG_OSK_COMPOSEMAP
 static void print_composemap(osk_composenode * composemap, char *sp);
 #endif
 
@@ -111,7 +116,7 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
       fprintf(stderr, "Loaded the default layout instead.\n");
     }
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
   printf("w %i, h %i\n", layout->width, layout->height);
 #endif
 
@@ -124,7 +129,7 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
       float max_w, max_h;
       float scale_w, scale_h;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
       printf("%d x %d layout of %d x %d buttons won't fit within %d x %d pixel area...\n",
         layout->width, layout->height,
         BLANK_button_up->w, BLANK_button_up->h,
@@ -134,7 +139,7 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
       max_w = (float) layout_avail_width / (float) layout->width;
       max_h = (float) layout_avail_height / (float) layout->height;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
       printf("...want (%d / %d) x (%d x %d) = %.2f x %.2f buttons...\n",
         layout_avail_width, layout->width,
         layout_avail_height, layout->height,
@@ -149,7 +154,7 @@ struct osk_keyboard *osk_create(char * layout_name, SDL_Surface * canvas,
       scale_w = (float) max_w / (float) BLANK_button_up->w;
       scale_h = (float) max_h / (float) BLANK_button_up->h;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
       printf("...so scaling by w=%.2f & h=%.2f\n",
         scale_w, scale_h);
 #endif
@@ -268,7 +273,7 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
   layout->fgcolor = def_fgcolor;
   
   hlayout_loaded = 0;
-#ifdef DEBUG
+#ifdef OSK_DEBUG
   printf("load_layout %s\n", layout_name);
 #endif
   filename = malloc(sizeof(char) * 255);
@@ -322,7 +327,7 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
       sscanf(line, "%s %s", key, value);
       if (strcmp("layout", key) == 0 && !hlayout_loaded)
         {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("layout found: %s\n", value);
 #endif
 
@@ -331,14 +336,14 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
         }
       else if (strncmp("keymap", key, 6) == 0)
         {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("keymap found: %s\n", value);
 #endif
           load_keymap(layout, value);
         }
       else if (strncmp("composemap", key, 10) == 0)
         {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("composemap found: %s\n", value);
 #endif
           load_composemap(layout, value);
@@ -353,7 +358,7 @@ static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layou
           keyboard->keyboard_list = strdup(value);
         }
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
       printf("key %s, value %s\n", key, value);
 #endif
       key[0] = '\0';
@@ -446,7 +451,7 @@ void load_hlayout(osk_layout * layout, char *hlayout_name)
           layout->width = width;
           layout->height = height;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("w %i, h %i\n", layout->width, layout->height);
 #endif
           allocated = 1;
@@ -465,7 +470,7 @@ void load_hlayout(osk_layout * layout, char *hlayout_name)
 
       else if (strncmp(line, "FONTPATH", 8) == 0)
         {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("linefont %s\n", line);
 #endif
           sscanf(line, "%s %s", key, fontpath);
@@ -474,7 +479,7 @@ void load_hlayout(osk_layout * layout, char *hlayout_name)
         }
       else if (strncmp(line, "FGCOLOR", 5) == 0)
         {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("linefont %s\n", line);
 #endif
           sscanf(line, "%s %i %i %i", key, &r, &g, &b);
@@ -488,7 +493,7 @@ void load_hlayout(osk_layout * layout, char *hlayout_name)
         }
       else if (strncmp(line, "BGCOLOR", 5) == 0)
         {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("linefont %s\n", line);
 #endif
           sscanf(line, "%s %i %i %i", key, &r, &g, &b);
@@ -807,12 +812,12 @@ static void load_composemap(osk_layout * layout, char *composemap_name)
   fclose(fi);
   free(line);
   free(pointer);
-#ifdef DEBUG_OSK_COMPOSEMAP
+#ifdef OSK_DEBUG_OSK_COMPOSEMAP
   print_composemap(layout->composemap, NULL);
 #endif
 }
 
-#ifdef DEBUG_OSK_COMPOSEMAP
+#ifdef OSK_DEBUG_OSK_COMPOSEMAP
 static void print_composemap(osk_composenode * composemap, char *sp)
 {
   int i;
@@ -820,13 +825,13 @@ static void print_composemap(osk_composenode * composemap, char *sp)
 
   space = malloc(sizeof(char) * 255);
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
   printf("%ls, ", composemap->keysym);
   printf("%d ==> ", composemap->size);
 #endif
   if (composemap->size == 0)
     {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
       printf("result %ls\n", composemap->result);
 #endif
       return;
@@ -839,7 +844,7 @@ static void print_composemap(osk_composenode * composemap, char *sp)
     {
       sprintf(space, " ");
     }
-#ifdef DEBUG
+#ifdef OSK_DEBUG
   printf("%s", space);
 #endif
 
@@ -1592,7 +1597,7 @@ static int handle_keymods(char *keysym, osk_key * key, on_screen_keyboard * keyb
   else if (strncmp("Alt_L", keysym, 5) == 0)
     {
       ev.key.keysym.sym = SDLK_LALT;
-      ev.text.text[0] = '0';    // FIXME is 0 the right value here?
+      ev.text.text[0] = 0;    // FIXME is 0 the right value here?
       ev.type = SDL_KEYDOWN;
       SDL_PushEvent(&ev);
       ev.type = SDL_KEYUP;
@@ -1703,7 +1708,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
   wchar_t *ks;
   on_screen_keyboard *new_keyboard;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
   printf("list: %s\n", keyboard->keyboard_list);
 #endif
 
@@ -1728,7 +1733,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
           aux_list = strdup(keyboard->keyboard_list);
           aux_list_ptr = aux_list;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("auxlist: %s\n", aux_list);
           printf("kn %s\n", keyboard->name);
 #endif
@@ -1821,7 +1826,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
 
       mbsrtowcs(wkeysym, (const char **)&keysym, strlen(keysym) + 1, NULL);
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
       printf("wkeysym %ls %i\n\n", wkeysym, (int)wcslen(wkeysym));
 #endif
 
@@ -1834,7 +1839,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
           set_key(NULL, &keyboard->keymodifiers.compose, 0);
           ks = keyboard->composed;
 
-#ifdef DEBUG
+#ifdef OSK_DEBUG
           printf("keysym found %ls\n", ks);
 #endif
 
@@ -1845,31 +1850,55 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
             {
               event.key.keysym.sym = SDLK_RETURN;
               event.text.text[0] = '\r';
+              event.text.text[1] = '\0';
             }
           else if (wcsncmp(L"Tab", ks, 3) == 0 || wcsncmp(L"ISO_Left_Tab", ks, 12) == 0)
             {
               event.key.keysym.sym = SDLK_TAB;
               event.text.text[0] = '\t';
+              event.text.text[1] = '\0';
             }
           else if (wcsncmp(L"BackSpace", ks, 9) == 0)
             {
               event.key.keysym.sym = SDLK_BACKSPACE;
               event.text.text[0] = '\b';
+              event.text.text[1] = '\0';
             }
           else if (wcsncmp(L"NoSymbol", ks, 8) == 0)
-            return (keyboard);
-
+            {
+              return (keyboard);
+            }
           else
-            //      printf("kcomposed %ls\n", *keyboard->composed);
-          if (keyboard->composed_type == 1)
-            wcstombs(event.text.text, keyboard->composed, 16);
-          //          event.text.text = *keyboard->composed;
-          else{
-            //snprintf(event.text.text, 16, "%lc", keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard));
-	    int iwc = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
-	    wcstombs(event.text.text, (wchar_t *) &iwc, 16);
-          //event.text.text = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
-	  }
+            {
+              int len;
+
+              if (keyboard->composed_type == 1)
+                {
+#ifdef OSK_DEBUG
+                  printf("Composed_type = 1: \"%ls\"\n", keyboard->composed);
+#endif
+                  len = wcstombs(event.text.text, keyboard->composed, 16);
+                }
+              else
+                {
+                  int iwc;
+                  wchar_t buf[2];
+
+                  iwc = keysym2unicode(mnemo2keysym(mnemo, keyboard), keyboard);
+                  buf[0] = (wchar_t) iwc;
+                  buf[1] = L'\0';
+
+#ifdef OSK_DEBUG
+                  printf("iwc as buf = \"%ls\"\n", buf);
+#endif
+                  len = wcstombs(event.text.text, buf, 16);
+                }
+
+#ifdef OSK_DEBUG
+              printf("len = %d\n", len);
+              printf("event.text.text = \"%s\"\n", event.text.text);
+#endif
+            }
 
           clear_dead_sticks(keyboard);
           event.type = SDL_TEXTINPUT;
@@ -1880,7 +1909,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
         {
           if (keyboard->composing == keyboard->layout->composemap)
             {
-#ifdef DEBUG
+#ifdef OSK_DEBUG
               printf("compose sequence resetted\n");
 #endif
               set_key(NULL, &keyboard->keymodifiers.compose, 0);
@@ -1890,7 +1919,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
           else
             {
               set_key(key, &keyboard->keymodifiers.compose, 0);
-#ifdef DEBUG
+#ifdef OSK_DEBUG
               printf("still composing\n");
 #endif
               set_dead_sticks(key, keyboard);
