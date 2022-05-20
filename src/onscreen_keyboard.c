@@ -62,7 +62,7 @@ static void set_key(osk_key * orig, osk_key * dest, int firsttime);
 static void load_keysymdefs(osk_layout * layout, char *keysymdefs_name);
 static struct osk_layout *load_layout(on_screen_keyboard * keyboard, char *layout_name);
 
-#ifdef OSK_DEBUG_OSK_COMPOSEMAP
+#ifdef DEBUG_OSK_COMPOSEMAP
 static void print_composemap(osk_composenode * composemap, char *sp);
 #endif
 
@@ -812,12 +812,12 @@ static void load_composemap(osk_layout * layout, char *composemap_name)
   fclose(fi);
   free(line);
   free(pointer);
-#ifdef OSK_DEBUG_OSK_COMPOSEMAP
+#ifdef DEBUG_OSK_COMPOSEMAP
   print_composemap(layout->composemap, NULL);
 #endif
 }
 
-#ifdef OSK_DEBUG_OSK_COMPOSEMAP
+#ifdef DEBUG_OSK_COMPOSEMAP
 static void print_composemap(osk_composenode * composemap, char *sp)
 {
   int i;
