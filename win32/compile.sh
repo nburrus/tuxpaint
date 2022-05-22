@@ -10,8 +10,10 @@ else
   exit
 fi
 
+rm -f  tuxpaint-*-${arch}-installer.exe tuxpaint-*-${arch}.zip
+
 echo "Building installer ... "
-result=`/C/Program\ Files\ \(x86\)/Inno\ Setup\ 6/ISCC -DBuildTarget=${arch} tuxpaint.iss | grep installer.exe`
+result=`/C/Program\ Files\ \(x86\)/Inno\ Setup\ 6/ISCC -DBuildTarget=${arch} tuxpaint.iss | grep ${arch}-installer.exe`
 if [ "x$result" != "x" ]; then
   installer=`basename $result`
 else
