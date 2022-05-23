@@ -105,8 +105,8 @@ Lancement de Tux Paint
 
   Utilisateurs de Linux/Unix
 
-   Tux Paint devrait avoir mis une icône de lanceur dans vos menus KDE et /
-   ou GNOME, sous «Graphiques».
+   Tux Paint should have placed a launcher icon in your KDE and/or GNOME
+   menus, under 'Graphics.'
 
    Autrement, vous pouvez exécuter la commande suivante à une invite du shell
    (par exemple, "$") :

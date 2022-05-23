@@ -81,7 +81,8 @@ Tux Paint の起動
 
   Linux または Unix のユーザー
 
-   KDE あるいは GNOME のメニューの「グラフィックス」以下に、起動アイコンが設定されているはずです。
+   Tux Paint should have placed a launcher icon in your KDE and/or GNOME
+   menus, under 'Graphics.'
 
    その他、シェルプロンプト（例: "$"）で次のコマンドを実行する方法があります:
 
