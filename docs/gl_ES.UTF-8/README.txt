@@ -100,8 +100,8 @@ Inicio de Tux Paint
 
   Usuarios de Linux/Unix
 
-   Tux Paint debería ter colocado unha icona iniciadora nos seus menús KDE
-   e/ou GNOME, en «Gráficos».
+   Tux Paint should have placed a launcher icon in your KDE and/or GNOME
+   menus, under 'Graphics.'
 
    Como alternativa, pode executar a seguinte orde nun indicador do sistema
    (e dicir, «$»):

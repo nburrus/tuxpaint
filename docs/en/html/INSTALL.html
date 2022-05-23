@@ -301,7 +301,7 @@
 
           <p style="font-size: small;">
             <em>
-              November  3, 2021              Shin-ichi TOYAMA dolphin6k@wmail.plala.or.jp &lt;<a href="mailto:dolphin6k@wmail.plala.or.jp">dolphin6k@wmail.plala.or.jp</a>&gt;
+              May 16, 2022              Shin-ichi TOYAMA dolphin6k@wmail.plala.or.jp &lt;<a href="mailto:dolphin6k@wmail.plala.or.jp">dolphin6k@wmail.plala.or.jp</a>&gt;
             </em>
           </p>
         </header>
@@ -334,7 +334,7 @@
           <p>
             Within the MSYS2 shell, run the following command to install basic development tools:            <blockquote>
               <code>
-                pacman -S base-devel msys2-devel git
+                pacman -S make automake-wrapper autoconf-wrapper libtool git zip patch gperf
               </code>
             </blockquote>
           </p>
@@ -345,44 +345,44 @@
           </p>
 
                       <hr size="1" noshade width="75%" />
-            <section class="indent"><!-- H4: MinGW...toolchains -->
+            <section class="indent"><!-- H4: MinGW...compiler and tools -->
               <header>
                 <h4>
                   <a name="64bit" id="64bit">
-                    MinGW 64bit (x86_64) toolchains                  </a>
+                    MinGW 64bit (x86_64) compiler and tools                  </a>
                 </h4>
               </header>
 
               <p>
-                Within the MSYS2 shell, run the following command to install basic 64bit development tools:                <blockquote>
+                Within the MSYS2 shell, run the following command to install 64bit compiler and basic development tools:                <blockquote>
                   <code>
-                    pacman -S mingw-w64-x86_64-toolchain
+                    pacman -S mingw-w64-x86_64-{gcc,pkgconf,ntldd-git}
                   </code>
                 </blockquote>
               </p>
+              <p>
+                "<code>ntldd</code>" is a small tool which examine windows executable files to list Dynamic Link Library (<code>.dll</code>) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required <code>.dll</code> files.              </p>
             </section><!-- H4: MinGW...toolchains -->
 
             <section class="indent"><!-- H4: ...dependency libraries for Tux Paint -->
               <header>
                 <h4>
-                  64bit (x86_64) dependency libraries for Tux Paint                </h4>
+                  64bit (x86_64) dependency libraries for Tux Paint and Tux Paint Config                </h4>
               </header>
 
               <p>
-                You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "<code>pacman</code>" except for SDL_Pango.              </p>
+                You can install tools and libraries required for compiling Tux Paint and Tux Paint Config on MSYS2/MINGW using "<code>pacman</code>" except for SDL_mixer, SDL_Pango and libunibreak.              </p>
               <p>
-                "<code>ntldd</code>" is a small tool which examine windows executable files to list Dynamic Link Library (<code>.dll</code>) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required <code>.dll</code> files.              </p>
-              <p>
-                FLTK is a cross-platform GUI toolkit used by "Tux Paint Config.". You can skip installing it if you are <em>only</em> building "Tux Paint".              </p>
+                FLTK is a cross-platform GUI toolkit used by "Tux Paint Config". You can skip installing it if you are <em>only</em> building "Tux Paint".              </p>
               <p>
                 <blockquote>
                   <code>
-                    $ pacman -S mingw-w64-x86_64-SDL_{image,mixer,ttf,gfx}<br/>
+                    $ pacman -S mingw-w64-x86_64-SDL_{image,ttf,gfx}<br/>
+                    $ pacman -S mingw-w64-x86_64-libvorbis<br/>
                     $ pacman -S mingw-w64-x86_64-librsvg<br/>
                     $ pacman -S mingw-w64-x86_64-fribidi<br/>
                     $ pacman -S mingw-w64-x86_64-libimagequant<br/>
                     $ pacman -S mingw-w64-x86_64-fltk<br/>
-                    $ pacman -S mingw-w64-x86_64-ntldd-git
                   </code>
                 </blockquote>
               </p>
@@ -393,13 +393,31 @@
             <section class="indent"><!-- H4: Install SDL_Pango... -->
               <header>
                 <h4>
-                  Install SDL_Pango on the 64bit environment                </h4>
+                  Install SDL_mixer, SDL_Pango and libunibreak on the 64bit environment                </h4>
               </header>
 
               <p>
-                SDL_Pango should be installed manually.              </p>
+                SDL_mixer, SDL_Pango and libunibreak should be installed manually.              </p>
               <p>
                 This time, use the MinGW "64bit" shell. Open the shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MinGW 64-bit"              </p>
+
+              <section class="indent"><!-- H5: SDL_mixer -->
+                <header>
+                  <h5>SDL_mixer</h5>
+                </header>
+
+                <p>
+                  Download <a href="https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz">source tar-ball of SDL_mixer-1.2.12</a> from <a href="https://www.libsdl.org/projects/SDL_mixer/">SDL_mixer's page</a>.                </p>
+                <p>
+                  Build and install SDL_mixer as follows.                  <blockquote>
+                    <code>
+                      $ tar zxvf SDL_mixer-1.2.12.tar.gz<br/>
+                      $ cd SDL_mixer-1.2.12/<br/>
+                      $ ./configure --prefix=/mingw64  &amp;&amp; make &amp;&amp; make install
+                    </code>
+                  </blockquote>
+                </p>
+              </section><!-- H5: SDL_mixer -->
 
               <section class="indent"><!-- H5: SDL_Pango -->
                 <header>
@@ -426,6 +444,24 @@
                 </p>
               </section><!-- H5: SDL_Pango -->
 
+              <section class="indent"><!-- H5: libunibreak -->
+                <header>
+                  <h5>libunibreak</h5>
+                </header>
+
+                <p>
+                  libunibreak is required for compiling Tux Paint Config. You can skip installing it if you are <em>only</em> building "Tux Paint".                </p>
+                <p>
+                  You can fetch the source code from the git repositry and compile it as follows.                  <blockquote>
+                    <code>
+                      $ git clone https://github.com/adah1972/libunibreak libunibreak<br/>
+                      $ cd libunibreak<br/>
+                      $ ./augogen.sh --prefix=/mingw64  &amp;&amp; make &amp;&amp; make install
+                    </code>
+                  </blockquote>
+                </p>
+              </section><!-- H5: libunibreak -->
+
                               <p>
                   <i>
                     Proceed to the next "<a href="#32bit">MinGW 32bit (i686) toolchains</a>" section, or skip to the "<a href="#imagemagick">ImageMagick</a>" section if you need only a 64bit build environment.                  </i>
@@ -434,44 +470,44 @@
             </section><!-- H4: Install SDL_Pango... -->
 
                         <hr size="1" noshade width="75%" />
-            <section class="indent"><!-- H4: MinGW...toolchains -->
+            <section class="indent"><!-- H4: MinGW...compiler and tools -->
               <header>
                 <h4>
                   <a name="32bit" id="32bit">
-                    MinGW 32bit (i686) toolchains                  </a>
+                    MinGW 32bit (i686) compiler and tools                  </a>
                 </h4>
               </header>
 
               <p>
-                Within the MSYS2 shell, run the following command to install basic 32bit development tools:                <blockquote>
+                Within the MSYS2 shell, run the following command to install 32bit compiler and basic development tools:                <blockquote>
                   <code>
-                    pacman -S mingw-w64-i686-toolchain
+                    pacman -S mingw-w64-i686-{gcc,pkgconf,ntldd-git}
                   </code>
                 </blockquote>
               </p>
+              <p>
+                "<code>ntldd</code>" is a small tool which examine windows executable files to list Dynamic Link Library (<code>.dll</code>) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required <code>.dll</code> files.              </p>
             </section><!-- H4: MinGW...toolchains -->
 
             <section class="indent"><!-- H4: ...dependency libraries for Tux Paint -->
               <header>
                 <h4>
-                  32bit (i686) dependency libraries for Tux Paint                </h4>
+                  32bit (i686) dependency libraries for Tux Paint and Tux Paint Config                </h4>
               </header>
 
               <p>
-                You can install tools and libraries required for compiling Tux Paint on MSYS2/MINGW using "<code>pacman</code>" except for SDL_Pango.              </p>
+                You can install tools and libraries required for compiling Tux Paint and Tux Paint Config on MSYS2/MINGW using "<code>pacman</code>" except for SDL_mixer, SDL_Pango and libunibreak.              </p>
               <p>
-                "<code>ntldd</code>" is a small tool which examine windows executable files to list Dynamic Link Library (<code>.dll</code>) files they depends on. Tux Paint's packaging process for binary distribution uses it to find required <code>.dll</code> files.              </p>
-              <p>
-                FLTK is a cross-platform GUI toolkit used by "Tux Paint Config.". You can skip installing it if you are <em>only</em> building "Tux Paint".              </p>
+                FLTK is a cross-platform GUI toolkit used by "Tux Paint Config". You can skip installing it if you are <em>only</em> building "Tux Paint".              </p>
               <p>
                 <blockquote>
                   <code>
-                    $ pacman -S mingw-w64-i686-SDL_{image,mixer,ttf,gfx}<br/>
+                    $ pacman -S mingw-w64-i686-SDL_{image,ttf,gfx}<br/>
+                    $ pacman -S mingw-w64-i686-libvorbis<br/>
                     $ pacman -S mingw-w64-i686-librsvg<br/>
                     $ pacman -S mingw-w64-i686-fribidi<br/>
                     $ pacman -S mingw-w64-i686-libimagequant<br/>
                     $ pacman -S mingw-w64-i686-fltk<br/>
-                    $ pacman -S mingw-w64-i686-ntldd-git
                   </code>
                 </blockquote>
               </p>
@@ -482,13 +518,31 @@
             <section class="indent"><!-- H4: Install SDL_Pango... -->
               <header>
                 <h4>
-                  Install SDL_Pango on the 32bit environment                </h4>
+                  Install SDL_mixer, SDL_Pango and libunibreak on the 32bit environment                </h4>
               </header>
 
               <p>
-                SDL_Pango should be installed manually.              </p>
+                SDL_mixer, SDL_Pango and libunibreak should be installed manually.              </p>
               <p>
                 This time, use the MinGW "32bit" shell. Open the shell from the "Start Menu" -&gt; "MSYS2 64bit" -&gt; "MSYS2 MinGW 32-bit"              </p>
+
+              <section class="indent"><!-- H5: SDL_mixer -->
+                <header>
+                  <h5>SDL_mixer</h5>
+                </header>
+
+                <p>
+                  Download <a href="https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz">source tar-ball of SDL_mixer-1.2.12</a> from <a href="https://www.libsdl.org/projects/SDL_mixer/">SDL_mixer's page</a>.                </p>
+                <p>
+                  Build and install SDL_mixer as follows.                  <blockquote>
+                    <code>
+                      $ tar zxvf SDL_mixer-1.2.12.tar.gz<br/>
+                      $ cd SDL_mixer-1.2.12/<br/>
+                      $ ./configure --prefix=/mingw32  &amp;&amp; make &amp;&amp; make install
+                    </code>
+                  </blockquote>
+                </p>
+              </section><!-- H5: SDL_mixer -->
 
               <section class="indent"><!-- H5: SDL_Pango -->
                 <header>
@@ -514,6 +568,24 @@
                   </blockquote>
                 </p>
               </section><!-- H5: SDL_Pango -->
+
+              <section class="indent"><!-- H5: libunibreak -->
+                <header>
+                  <h5>libunibreak</h5>
+                </header>
+
+                <p>
+                  libunibreak is required for compiling Tux Paint Config. You can skip installing it if you are <em>only</em> building "Tux Paint".                </p>
+                <p>
+                  You can fetch the source code from the git repositry and compile it as follows.                  <blockquote>
+                    <code>
+                      $ git clone https://github.com/adah1972/libunibreak libunibreak<br/>
+                      $ cd libunibreak<br/>
+                      $ ./augogen.sh --prefix=/mingw32  &amp;&amp; make &amp;&amp; make install
+                    </code>
+                  </blockquote>
+                </p>
+              </section><!-- H5: libunibreak -->
 
               
             </section><!-- H4: Install SDL_Pango... -->
