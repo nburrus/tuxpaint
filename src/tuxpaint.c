@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 19, 2022
+  June 14, 2002 - May 22, 2022
 */
 
 #include "platform.h"
@@ -7411,6 +7411,7 @@ void show_version(int details)
 
   printf("\nBuilt with these options:\n");
 
+  printf("  SDL version %d.%d.%d\n", SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL);
 
   /* Quality reductions: */
 
