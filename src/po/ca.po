@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-07 18:10-0700\n"
-"PO-Revision-Date: 2022-03-08 00:46+0100\n"
+"PO-Revision-Date: 2022-05-30 23:42+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -1103,7 +1103,7 @@ msgstr "Seleccioneu un color del vostre dibuix."
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
-msgstr ""
+msgstr "Trieu un color. Al quadre de colors, els valors van de dalt a baix i la saturació o intensitat, d'esquerra(pàlid) a dreta(pur), trieu el valor (lluminositat/foscor) a la barra de grisos."
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
@@ -1601,7 +1601,7 @@ msgstr "Zoom"
 
 #: ../../magic/src/perspective.c:165
 msgid "Rush"
-msgstr ""
+msgstr "Zoom lliscat"
 
 #: ../../magic/src/perspective.c:169
 msgid "Click on the corners and drag where you want to stretch the picture."
@@ -1618,12 +1618,8 @@ msgstr ""
 "imatge."
 
 #: ../../magic/src/perspective.c:177
-#, fuzzy
-#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
-msgstr ""
-"Feu clic i arrossegueu cap amunt per apropar i cap avall per allunyar la "
-"imatge."
+msgstr "Feu clic i arrossegueu cap amunt per apropar la imatge o arrossegueu cap a baix per allunyar-la."
 
 #: ../../magic/src/pixels.c:107
 msgid "Pixels"
