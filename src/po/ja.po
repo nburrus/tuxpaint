@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-07 18:10-0700\n"
-"PO-Revision-Date: 2022-04-22 15:51+0900\n"
+"PO-Revision-Date: 2022-05-28 18:05+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1569,7 +1569,7 @@ msgstr "ズーム"
 
 #: ../../magic/src/perspective.c:165
 msgid "Rush"
-msgstr ""
+msgstr "ワープ"
 
 #: ../../magic/src/perspective.c:169
 msgid "Click on the corners and drag where you want to stretch the picture."
@@ -1587,12 +1587,10 @@ msgstr ""
 "かせば ズームアウト。"
 
 #: ../../magic/src/perspective.c:177
-#, fuzzy
-#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
-"クリックしたまま マウスを うえに うごかせば ズームイン。 マウスを したに うご"
-"かせば ズームアウト。"
+"クリックしたままマウスを うえにドラッグしてワープイン、したにドラッグしてワー"
+"プアウト！"
 
 #: ../../magic/src/pixels.c:107
 msgid "Pixels"

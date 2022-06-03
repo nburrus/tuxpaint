@@ -238,7 +238,6 @@ inline void rails_extract_coords_from_segment(unsigned int segment, POINT_TYPE *
 static void rails_flip(void *ptr, SDL_Surface * dest, SDL_Surface * src)
 {
   magic_api *api = (magic_api *) ptr;
-
   POINT_TYPE x, y;
 
   for (x = 0; x < dest->w; x++)

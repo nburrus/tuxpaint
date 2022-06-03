@@ -23,11 +23,10 @@
 #include "debug.h"
 #include "onscreen_keyboard.h"
 
-#define DEBUG_OSK_COMPOSEMAP
-
-//#ifdef DEBUG
+#ifdef DEBUG
 #define OSK_DEBUG
-//#endif
+#define DEBUG_OSK_COMPOSEMAP
+#endif
 
 #include "SDL2_rotozoom.h"
 

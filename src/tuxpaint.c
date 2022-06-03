@@ -2387,6 +2387,7 @@ int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag, keybd_posit
 int cur_thing;
 SDL_TimerID scrolltimer_dialog = TIMERID_NONE; /* Used by Open, Open->Slideshow, and New dialogs */
 Uint32 TP_SDL_MOUSEBUTTONSCROLL;
+
 /**
  * --- MAIN LOOP! ---
  */
