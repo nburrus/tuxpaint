@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-07 18:10-0700\n"
+"POT-Creation-Date: 2022-06-02 21:16-0700\n"
 "PO-Revision-Date: 2010-12-09 09:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -577,7 +577,7 @@ msgstr "Nyen"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8772
+#: ../tools.h:98 ../tuxpaint.c:8787
 msgid "Open"
 msgstr "Yabi"
 
@@ -789,288 +789,288 @@ msgid ""
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2260
+#: ../tuxpaint.c:2267
 msgid "Do you really want to quit?"
 msgstr "Adaa imito aao?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2263
+#: ../tuxpaint.c:2270
 msgid "Yes, I’m done!"
 msgstr "Eyo,dong atyeko oo!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2266 ../tuxpaint.c:2293
+#: ../tuxpaint.c:2273 ../tuxpaint.c:2300
 msgid "No, take me back!"
 msgstr "Ku, dwoka dok cen!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2277
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ka i aao, ibino rwenyo cal mamegi woko! Imito gwoko ne?"
 
-#: ../tuxpaint.c:2271 ../tuxpaint.c:2276
+#: ../tuxpaint.c:2278 ../tuxpaint.c:2283
 msgid "Yes, save it!"
 msgstr "Eyo, gwoki!"
 
-#: ../tuxpaint.c:2272 ../tuxpaint.c:2277
+#: ../tuxpaint.c:2279 ../tuxpaint.c:2284
 msgid "No, don’t bother saving!"
 msgstr "Ku, pe iyele me gwoko ne!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2275
+#: ../tuxpaint.c:2282
 msgid "Save your picture first?"
 msgstr "Kong ki gwok cali maenini?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2280
+#: ../tuxpaint.c:2287
 msgid "Can’t open that picture!"
 msgstr "Yabo cal eno ni oloya woko!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2283 ../tuxpaint.c:2288 ../tuxpaint.c:2297 ../tuxpaint.c:2304
-#: ../tuxpaint.c:2313 ../tuxpaint.c:2318
+#: ../tuxpaint.c:2290 ../tuxpaint.c:2295 ../tuxpaint.c:2304 ../tuxpaint.c:2311
+#: ../tuxpaint.c:2320 ../tuxpaint.c:2325
 msgid "OK"
 msgstr "Aya do."
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2287
+#: ../tuxpaint.c:2294
 msgid "There are no saved files!"
 msgstr "Pe tye fayil mo keken ma onongo kigwoko."
 
 #. Verification of print action
-#: ../tuxpaint.c:2291
+#: ../tuxpaint.c:2298
 msgid "Print your picture now?"
 msgstr "Ki go cal mamegi ni dong ikaratac?"
 
-#: ../tuxpaint.c:2292
+#: ../tuxpaint.c:2299
 msgid "Yes, print it!"
 msgstr "Eyo, go ne!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2296
+#: ../tuxpaint.c:2303
 msgid "Your picture has been printed!"
 msgstr "Kityeko dong goyo cal mamegi woko! "
 
 #. We got an error printing
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2307
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tim wa kica! Pe wa goyo cal mamegi!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2303
+#: ../tuxpaint.c:2310
 msgid "You can’t print yet!"
 msgstr "Pwod pe iromo goyo cal mamegi"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2307
+#: ../tuxpaint.c:2314
 msgid "Erase this picture?"
 msgstr "Duny cal eni woko?"
 
-#: ../tuxpaint.c:2308
+#: ../tuxpaint.c:2315
 msgid "Yes, erase it!"
 msgstr "Eyo,duny oo!"
 
-#: ../tuxpaint.c:2309
+#: ../tuxpaint.c:2316
 msgid "No, don’t erase it!"
 msgstr "Ku, pe iduny!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2312
+#: ../tuxpaint.c:2319
 msgid "Remember to use the left mouse button!"
 msgstr "Po me tic ki mapeca tung acam me oyo/ladic!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2316
+#: ../tuxpaint.c:2323
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Kityeko dong goyo cal mamegi woko! "
 
-#: ../tuxpaint.c:2317
+#: ../tuxpaint.c:2324
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Kityeko dong goyo cal mamegi woko! "
 
 #. We got an error exporting
-#: ../tuxpaint.c:2321
+#: ../tuxpaint.c:2328
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Tim wa kica! Pe wa goyo cal mamegi!"
 
-#: ../tuxpaint.c:2322
+#: ../tuxpaint.c:2329
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Tim wa kica! Pe wa goyo cal mamegi!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2326
+#: ../tuxpaint.c:2333
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Yer cal ma imito, ci idi \"Tuki\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2541
+#: ../tuxpaint.c:2554
 msgid "Sound muted."
 msgstr "Dwon kineko oo weng."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2546
+#: ../tuxpaint.c:2559
 msgid "Sound unmuted."
 msgstr "Dwon kiyabu."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3331
+#: ../tuxpaint.c:3344
 msgid "Please wait…"
 msgstr "Tim ber ikur..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8775
+#: ../tuxpaint.c:8790
 msgid "Erase"
 msgstr "Duny"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8778
+#: ../tuxpaint.c:8793
 msgid "Slides"
 msgstr "cale macer malube aluba "
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8781
+#: ../tuxpaint.c:8796
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8784
+#: ../tuxpaint.c:8799
 msgid "Back"
 msgstr "Cen"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8787
+#: ../tuxpaint.c:8802
 msgid "Play"
 msgstr "Tuki"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8790
+#: ../tuxpaint.c:8805
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8793
+#: ../tuxpaint.c:8808
 msgid "Next"
 msgstr "Mede anyim"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8796
+#: ../tuxpaint.c:8811
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9655
+#: ../tuxpaint.c:9670
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13365
+#: ../tuxpaint.c:13390
 msgid "Yes"
 msgstr "Eyo"
 
-#: ../tuxpaint.c:13369
+#: ../tuxpaint.c:13394
 msgid "No"
 msgstr "Ku"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14521
+#: ../tuxpaint.c:14547
 msgid "Replace the picture with your changes?"
 msgstr "Kilok cal malube ki alokaloka itici manyeni?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14525
+#: ../tuxpaint.c:14551
 msgid "Yes, replace the old one!"
 msgstr "Eyo,lok kun ileyo maconi oo!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14529
+#: ../tuxpaint.c:14555
 msgid "No, save a new file!"
 msgstr "Ku, gwok fayil manyen!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15776
+#: ../tuxpaint.c:15805
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Yer cal ma imito, ci idi \"Yabi\""
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17296
+#: ../tuxpaint.c:17343
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22830
+#: ../tuxpaint.c:22878
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:22831
+#: ../tuxpaint.c:22879
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Yelo!"
 
-#: ../tuxpaint.c:22832
+#: ../tuxpaint.c:22880
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Bululu calo pol!"
 
-#: ../tuxpaint.c:22833
+#: ../tuxpaint.c:22881
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Tar!"
 
-#: ../tuxpaint.c:22834
+#: ../tuxpaint.c:22882
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:22835
+#: ../tuxpaint.c:22883
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Col!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22840
+#: ../tuxpaint.c:22888
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:22841
+#: ../tuxpaint.c:22889
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:22842
+#: ../tuxpaint.c:22890
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:22843
+#: ../tuxpaint.c:22891
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:22844
+#: ../tuxpaint.c:22892
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:22845
+#: ../tuxpaint.c:22893
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1078,18 +1078,18 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:23606 ../tuxpaint.c:23613
+#: ../tuxpaint.c:23654 ../tuxpaint.c:23661
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:26517
+#: ../tuxpaint.c:26566
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:26526
+#: ../tuxpaint.c:26575
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1097,7 +1097,7 @@ msgstr ""
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:26538
+#: ../tuxpaint.c:26587
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1351,17 +1351,17 @@ msgid ""
 msgstr ""
 "Yer rangi pa ka maneno calu bor ki dii wek owir  gwic pa pot katatac iwiye. "
 
-#: ../../magic/src/fretwork.c:182
+#: ../../magic/src/fretwork.c:183
 msgid "Fretwork"
 msgstr ""
 
-#: ../../magic/src/fretwork.c:188
+#: ../../magic/src/fretwork.c:189
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Dii ki iywa wek igoo latero ma gitiyo ki cale me toltol."
 
-#: ../../magic/src/fretwork.c:190
+#: ../../magic/src/fretwork.c:191
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
@@ -1671,7 +1671,15 @@ msgstr "Dii ikom itwoketwoke ite ywayo kama imito ryeyone cal mamegi."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
 
-#: ../../magic/src/perspective.c:173 ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:173
+#, fuzzy
+#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
+msgid ""
+"Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
+"picture."
+msgstr "Dii ki iywa lamal wek onya onyo ywa lapiny wek irid cal woko."
+
+#: ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Dii ki iywa lamal wek onya onyo ywa lapiny wek irid cal woko."
 
@@ -1703,11 +1711,11 @@ msgstr "Dii dul ikom cal mamegi ka ma imaro laruc wic iye."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Dii wek iyik laruc wic malac iwang kompiuta."
 
-#: ../../magic/src/rails.c:131
+#: ../../magic/src/rails.c:132
 msgid "Rails"
 msgstr "Tyen-gar"
 
-#: ../../magic/src/rails.c:141
+#: ../../magic/src/rails.c:142
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Dii ki iywa wek igo yoo tyen gar ikom cal mamegi."
 
