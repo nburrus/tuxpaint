@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 7, 2022
+  Last updated: June 2, 2022
   $Id$
 */
 
@@ -170,7 +170,7 @@ const char *perspective_descs[perspective_NUM_TOOLS] = {
 
   gettext_noop("Click to turn your picture into 2-by-2 panels."),
 
-  gettext_noop("Click and drag up to zoom in or drag down to zoom out the picture."),
+  gettext_noop("Click and drag up to zoom in the picture. Drag down to zoom out and tile the picture."),
 
   gettext_noop("Click and drag up to zoom in or drag down to zoom out the picture."),
 

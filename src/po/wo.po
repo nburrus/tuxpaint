@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-07 18:10-0700\n"
+"POT-Creation-Date: 2022-06-02 21:08-0700\n"
 "PO-Revision-Date: 2014-08-09 13:24-0000\n"
 "Last-Translator: Haby Diallo <haby42@yahoo.fr>\n"
 "Language-Team: \n"
@@ -121,11 +121,11 @@ msgstr "Xaal!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:188
+#: ../dirwalk.c:196
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:188
+#: ../dirwalk.c:196
 msgid "QX"
 msgstr "QX"
 
@@ -135,50 +135,50 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:213
+#: ../dirwalk.c:221
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:216
+#: ../dirwalk.c:224
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:219
+#: ../dirwalk.c:227
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:222
+#: ../dirwalk.c:230
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:225
+#: ../dirwalk.c:233
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:228
+#: ../dirwalk.c:236
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:232
+#: ../dirwalk.c:240
 msgid "<1>spare-1a"
 msgstr "<1>wutu-1a"
 
-#: ../dirwalk.c:233
+#: ../dirwalk.c:241
 msgid "<1>spare-1b"
 msgstr "<1>wutu-1b"
 
-#: ../dirwalk.c:234
+#: ../dirwalk.c:242
 msgid "<9>spare-9a"
 msgstr "<9>wutu-9a"
 
-#: ../dirwalk.c:235
+#: ../dirwalk.c:243
 msgid "<9>spare-9b"
 msgstr "<9>wutu-9b"
 
@@ -247,32 +247,32 @@ msgid "Good job!"
 msgstr "Sa ligeey rafet na !"
 
 #. Input Method: English mode
-#: ../im.c:80
+#: ../im.c:88
 msgid "English"
 msgstr "Angale"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:83
+#: ../im.c:91
 msgid "Hiragana"
 msgstr "Xiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:86
+#: ../im.c:94
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:89
+#: ../im.c:97
 msgid "Hangul"
 msgstr "Angul"
 
 #. Input Method: Thai mode
-#: ../im.c:92
+#: ../im.c:100
 msgid "Thai"
 msgstr "Laaku taylande"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:95
+#: ../im.c:103
 msgid "ZH_TW"
 msgstr "ZH_TW"
 
@@ -578,7 +578,7 @@ msgstr "Bees"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:8772
+#: ../tools.h:98 ../tuxpaint.c:9049
 msgid "Open"
 msgstr "Ubbi"
 
@@ -789,288 +789,288 @@ msgid ""
 msgstr ""
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2260
+#: ../tuxpaint.c:2298
 msgid "Do you really want to quit?"
 msgstr "Da nga bëgg bayi?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2263
+#: ../tuxpaint.c:2301
 msgid "Yes, I’m done!"
 msgstr "Waaw, def na ko!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2266 ../tuxpaint.c:2293
+#: ../tuxpaint.c:2304 ../tuxpaint.c:2331
 msgid "No, take me back!"
 msgstr "Deedeet, ñu delu ci!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2270
+#: ../tuxpaint.c:2308
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Soy bayi, di ñak sa naatal! Ñu deñc ko?"
 
-#: ../tuxpaint.c:2271 ../tuxpaint.c:2276
+#: ../tuxpaint.c:2309 ../tuxpaint.c:2314
 msgid "Yes, save it!"
 msgstr "Waaw, ñu deñc ko!"
 
-#: ../tuxpaint.c:2272 ../tuxpaint.c:2277
+#: ../tuxpaint.c:2310 ../tuxpaint.c:2315
 msgid "No, don’t bother saving!"
 msgstr "Deet, jarul sakanal!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2275
+#: ../tuxpaint.c:2313
 msgid "Save your picture first?"
 msgstr "Da ngay deñc lu sa natal ba pare?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2280
+#: ../tuxpaint.c:2318
 msgid "Can’t open that picture!"
 msgstr "Mënuñu ubbi natal bi!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2283 ../tuxpaint.c:2288 ../tuxpaint.c:2297 ../tuxpaint.c:2304
-#: ../tuxpaint.c:2313 ../tuxpaint.c:2318
+#: ../tuxpaint.c:2321 ../tuxpaint.c:2326 ../tuxpaint.c:2335 ../tuxpaint.c:2342
+#: ../tuxpaint.c:2351 ../tuxpaint.c:2356
 msgid "OK"
 msgstr "Deegë na"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2287
+#: ../tuxpaint.c:2325
 msgid "There are no saved files!"
 msgstr "Amul fisie buñ fi mana deñc!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2291
+#: ../tuxpaint.c:2329
 msgid "Print your picture now?"
 msgstr "Sotilu leeggi natal bi?"
 
-#: ../tuxpaint.c:2292
+#: ../tuxpaint.c:2330
 msgid "Yes, print it!"
 msgstr "Waaw,ñu sotilu ko!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2296
+#: ../tuxpaint.c:2334
 msgid "Your picture has been printed!"
 msgstr "Sotilu nañu sa natal!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2300
+#: ../tuxpaint.c:2338
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Jëgëli! Mënuñu sotilu sa naatal bi!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2303
+#: ../tuxpaint.c:2341
 msgid "You can’t print yet!"
 msgstr "Mënogoko sotilu leeggi!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2307
+#: ../tuxpaint.c:2345
 msgid "Erase this picture?"
 msgstr "Ñu dindi natal bi?"
 
-#: ../tuxpaint.c:2308
+#: ../tuxpaint.c:2346
 msgid "Yes, erase it!"
 msgstr "Waaw, dindi ko !"
 
-#: ../tuxpaint.c:2309
+#: ../tuxpaint.c:2347
 msgid "No, don’t erase it!"
 msgstr "Deedeet, buko dindi!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2312
+#: ../tuxpaint.c:2350
 msgid "Remember to use the left mouse button!"
 msgstr "Bul fate jëffandiku ciammoñu butoŋ jinax bi !"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2316
+#: ../tuxpaint.c:2354
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Sotilu nañu sa natal!"
 
-#: ../tuxpaint.c:2317
+#: ../tuxpaint.c:2355
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Sotilu nañu sa natal!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2321
+#: ../tuxpaint.c:2359
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Jëgëli! Mënuñu sotilu sa naatal bi!"
 
-#: ../tuxpaint.c:2322
+#: ../tuxpaint.c:2360
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Jëgëli! Mënuñu sotilu sa naatal bi!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2326
+#: ../tuxpaint.c:2364
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Tanal naatal yu la nex , te nga bëss ci “Ñu dor“."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2541
+#: ../tuxpaint.c:2636
 msgid "Sound muted."
 msgstr "Son bu ñu dag"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2546
+#: ../tuxpaint.c:2641
 msgid "Sound unmuted."
 msgstr "son bu suffe"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3331
+#: ../tuxpaint.c:3475
 msgid "Please wait…"
 msgstr "Balma te xar..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:8775
+#: ../tuxpaint.c:9052
 msgid "Erase"
 msgstr "Dindil"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:8778
+#: ../tuxpaint.c:9055
 msgid "Slides"
 msgstr "Japo"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:8781
+#: ../tuxpaint.c:9058
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:8784
+#: ../tuxpaint.c:9061
 msgid "Back"
 msgstr "Dellu"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:8787
+#: ../tuxpaint.c:9064
 msgid "Play"
 msgstr "Ñu dor"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:8790
+#: ../tuxpaint.c:9067
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:8793
+#: ../tuxpaint.c:9070
 msgid "Next"
 msgstr "Li ci topp"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:8796
+#: ../tuxpaint.c:9073
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:9655
+#: ../tuxpaint.c:9924
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13365
+#: ../tuxpaint.c:13701
 msgid "Yes"
 msgstr "Waaw"
 
-#: ../tuxpaint.c:13369
+#: ../tuxpaint.c:13705
 msgid "No"
 msgstr "Deedeet"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:14521
+#: ../tuxpaint.c:14867
 msgid "Replace the picture with your changes?"
 msgstr "Ñu deñca tal natal bi ak sopitem yi ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:14525
+#: ../tuxpaint.c:14871
 msgid "Yes, replace the old one!"
 msgstr "Waaw, ñu sopi bu magat bi !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:14529
+#: ../tuxpaint.c:14875
 msgid "No, save a new file!"
 msgstr "Deedeet, natal bu bees la !"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:15776
+#: ../tuxpaint.c:16151
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Tannal naatal yu la nex, te nga bëss ci “Ubbi“."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17296
+#: ../tuxpaint.c:17699
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:22830
+#: ../tuxpaint.c:23341
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:22831
+#: ../tuxpaint.c:23342
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Mboq!"
 
-#: ../tuxpaint.c:22832
+#: ../tuxpaint.c:23343
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Bulo baxa!"
 
-#: ../tuxpaint.c:22833
+#: ../tuxpaint.c:23344
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Weex!"
 
-#: ../tuxpaint.c:22834
+#: ../tuxpaint.c:23345
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:22835
+#: ../tuxpaint.c:23346
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Ñuul!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:22840
+#: ../tuxpaint.c:23351
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:22841
+#: ../tuxpaint.c:23352
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:22842
+#: ../tuxpaint.c:23353
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:22843
+#: ../tuxpaint.c:23354
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:22844
+#: ../tuxpaint.c:23355
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:22845
+#: ../tuxpaint.c:23356
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1078,18 +1078,18 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:23606 ../tuxpaint.c:23613
+#: ../tuxpaint.c:24119 ../tuxpaint.c:24126
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:26517
+#: ../tuxpaint.c:27070
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:26526
+#: ../tuxpaint.c:27079
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1097,7 +1097,7 @@ msgstr ""
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:26538
+#: ../tuxpaint.c:27091
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1264,11 +1264,11 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/confetti.c:86
+#: ../../magic/src/confetti.c:90
 msgid "Confetti"
 msgstr "Ay kulor"
 
-#: ../../magic/src/confetti.c:96
+#: ../../magic/src/confetti.c:100
 msgid "Click to throw confetti!"
 msgstr "Bëssël ngir sandi ay kulor!"
 
@@ -1342,26 +1342,26 @@ msgstr "Xubbit"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Bëssël te nga diri ak jinax bi ngir yok furit ci sa naatal bi."
 
-#: ../../magic/src/fold.c:104
+#: ../../magic/src/fold.c:108
 msgid "Fold"
 msgstr "Lem"
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:118
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Tanal ap kulor buy jiitu te nga bëss ngir turne buru kaït bi ci."
 
-#: ../../magic/src/fretwork.c:182
+#: ../../magic/src/fretwork.c:187
 msgid "Fretwork"
 msgstr "Melo bant"
 
-#: ../../magic/src/fretwork.c:188
+#: ../../magic/src/fretwork.c:193
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Bëssël te nga diri ngir rëd ak melo yiy ñëwat."
 
-#: ../../magic/src/fretwork.c:190
+#: ../../magic/src/fretwork.c:195
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Bëssël ngir wërële sa naatal bi ak ay melo yi ñëwat."
 
@@ -1650,7 +1650,17 @@ msgstr ""
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Bëssël ngir guis natal bi ci negatif fam."
 
-#: ../../magic/src/perspective.c:173 ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:173
+#, fuzzy
+#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
+msgid ""
+"Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
+"picture."
+msgstr ""
+"Bëssël te diri ba ci zumu bu yaatu  wala ci suuf ngir am zum bu tuti ci sa "
+"natal bi."
+
+#: ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Bëssël te diri ba ci zumu bu yaatu  wala ci suuf ngir am zum bu tuti ci sa "
@@ -1686,11 +1696,11 @@ msgstr "Bëssël fen ci sa naatal fi nga bëgë def ay lënt lënt."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Bëssël ngir guis natal bi ci tele."
 
-#: ../../magic/src/rails.c:131
+#: ../../magic/src/rails.c:136
 msgid "Rails"
 msgstr "Ray"
 
-#: ../../magic/src/rails.c:141
+#: ../../magic/src/rails.c:146
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Bëssël tediri ngir rëdë ay rayu oto ray ci sa natal bi."
 
