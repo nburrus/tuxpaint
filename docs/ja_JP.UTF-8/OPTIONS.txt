@@ -879,8 +879,7 @@ Windows のユーザー
 
      reversesort=yes
 
-             This reverses the sorting of the Open and Slideshow dialogs,
-             placing the newest images at the top of the list.
+             「ひらく」と「スライド」のダイアログで、先頭から新しい順に、作品を表示します。
 
              ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "reversesort=no" または
              "noreversesort=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
