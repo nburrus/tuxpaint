@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-02 21:16-0700\n"
-"PO-Revision-Date: 2022-05-28 18:05+0900\n"
+"PO-Revision-Date: 2022-06-03 14:09+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1581,14 +1581,12 @@ msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "クリックして えを ４まいのパネルにかえよう。"
 
 #: ../../magic/src/perspective.c:173
-#, fuzzy
-#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
 msgstr ""
 "クリックしたまま マウスを うえに うごかせば ズームイン。 マウスを したに うご"
-"かせば ズームアウト。"
+"かせば ズームアウトして、えを ならべて ひょうじします。"
 
 #: ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
