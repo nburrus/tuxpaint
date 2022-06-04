@@ -1,15 +1,16 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2021
+# Copyright (c) 2002-2022
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - December 1, 2021
+# June 14, 2002 - June 4, 2022
 
 
 # The version number, for release:
 
 VER_VERSION:=0.9.28
+VER_FLAVOR:="-sdl1"
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
 else
@@ -394,21 +395,21 @@ releaseclean:
 	@echo
 	@echo "Cleaning release directory"
 	@echo
-	@rm -rf "build/tuxpaint-$(VER_VERSION)" "build/tuxpaint-$(VER_VERSION).tar.gz"
+	@rm -rf "build/tuxpaint-$(VER_VERSION)$(VER_FLAVOR)" "build/tuxpaint-$(VER_VERSION)$(VER_FLAVOR).tar.gz"
 	@-if [ -d build ] ; then rmdir build ; fi
 
 .PHONY: releasedir
-releasedir: build/tuxpaint-$(VER_VERSION)
+releasedir: build/tuxpaint-$(VER_VERSION)$(VER_FLAVOR)
 
 
-build/tuxpaint-$(VER_VERSION):
+build/tuxpaint-$(VER_VERSION)$(VER_FLAVOR):
 	@echo
 	@echo "Creating release directory"
 	@echo
-	@mkdir -p build/tuxpaint-$(VER_VERSION)
+	@mkdir -p build/tuxpaint-$(VER_VERSION)$(VER_FLAVOR)
 	@find . -follow \
 	     \( -wholename '*/.git' -o -name .gitignore -o -name .thumbs -o -name .cvsignore -o -name 'dummy.o' -o -name 'build' -o -name '.#*' \) \
-	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)/ \;
+	     -prune -o -type f -exec cp --parents -vdp \{\} build/tuxpaint-$(VER_VERSION)$(VER_FLAVOR)/ \;
 
 .PHONY: release
 release: releasedir
@@ -416,7 +417,7 @@ release: releasedir
 	@echo "Creating release tarball"
 	@echo
 	@cd build ; \
-	    tar -czvf tuxpaint-$(VER_VERSION).tar.gz tuxpaint-$(VER_VERSION)
+	    tar -czvf tuxpaint-$(VER_VERSION)$(VER_FLAVOR).tar.gz tuxpaint-$(VER_VERSION)$(VER_FLAVOR)
 
 # "make olpc" builds the program for an OLPC XO:
 MAGIC_GOOD:=blur blocks_chalk_drip bricks calligraphy fade_darken\
