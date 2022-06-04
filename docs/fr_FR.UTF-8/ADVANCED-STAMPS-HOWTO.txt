@@ -4,7 +4,7 @@
      Copyright © 2006-2022 by Albert Cahalan et d'autres; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  mai 15, 2022
+                                  juin 4, 2022
 
      ----------------------------------------------------------------------
 

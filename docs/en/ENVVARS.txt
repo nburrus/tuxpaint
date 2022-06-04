@@ -5,7 +5,7 @@
         Copyright © 2021-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                January 20, 2022
+                                  June 4, 2022
 
      ----------------------------------------------------------------------
 

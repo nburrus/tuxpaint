@@ -5,7 +5,7 @@
         Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 marzo 31, 2022
+                                 junio 4, 2022
 
                                    About PNGs
 
