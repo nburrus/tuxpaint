@@ -5,7 +5,7 @@
         Copyright © 2019-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               15 de Maio de 2022
+                               4 de Xuño de 2022
 
    Tux Paint responde aos seguintes sinais (que poden enviarse ao proceso do
    programa a través de «kill» ou «killall», por exemplo).

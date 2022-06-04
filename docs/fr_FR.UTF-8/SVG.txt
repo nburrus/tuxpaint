@@ -5,7 +5,7 @@
         Copyright © 2007-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janvier 20, 2022
+                                  juin 4, 2022
 
                                 À propos de SVG
 

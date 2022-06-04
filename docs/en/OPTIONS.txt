@@ -6,7 +6,7 @@ Options Documentation
         Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  May 15, 2022
+                                  June 4, 2022
 
                 +---------------------------------------------+
                 |Table of Contents                            |
