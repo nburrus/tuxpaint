@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.May.18 (0.9.28)
+2022.June.4 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
     * Brush spacing may now be altered within Tux Paint.
@@ -240,6 +240,8 @@ http://www.tuxpaint.org/
 
   * Ports & Building:
     -----------------
+    * Release builds tarballs that denote SDL1.2 vs SDL2.0 branch.
+
     * Windows
       * Windows installer will no nlonger show a dialogue to inform
         user of uninstallation when "/VERYSILENT" switch is specified
