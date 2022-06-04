@@ -10,7 +10,7 @@
 # The version number, for release:
 
 VER_VERSION:=0.9.28
-VER_FLAVOR:="-sdl1"
+VER_FLAVOR:="-sdl2"
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
 else
