@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 22, 2022
+  June 14, 2002 - June 3, 2022
 */
 
 #include "platform.h"
@@ -2217,6 +2217,23 @@ int safe_snprintf(char *str, size_t size, const char *format, ...);
 
 static int bypass_splash_wait;
 
+
+#define ANNIVERSARY
+
+#ifdef ANNIVERSARY
+
+#define NUM_CONFETTI 100
+
+typedef struct {
+  float x, y, xm, ym, ymm;
+  Uint32 color;
+} confetti_t;
+
+confetti_t confetti[NUM_CONFETTI];
+
+#endif
+
+
 /**
  * Wait for a keypress or mouse click.
  *
@@ -2226,11 +2243,33 @@ static void do_wait(int counter)
 {
   SDL_Event event;
   int done;
+#ifdef ANNIVERSARY
+  int i;
+  SDL_Surface * back_surf;
+  SDL_Rect r;
+#endif
 
   if (bypass_splash_wait)
     return;
 
   done = 0;
+
+#ifdef ANNIVERSARY
+  for (i = 0; i < NUM_CONFETTI; i++) {
+    confetti[i].x = rand() % screen->w;
+    confetti[i].y = rand() % screen->h;
+    confetti[i].xm = (rand() % 9) - 4;
+    confetti[i].ym = (rand() % 4);
+    confetti[i].ymm = ((rand() % 10) / 20) + 0.1;
+    confetti[i].color = SDL_MapRGB(screen->format,
+                                   (rand() % 128) + 96,
+                                   (rand() % 128) + 96,
+                                   (rand() % 128) + 96);
+  }
+
+  back_surf = SDL_DisplayFormat(screen);
+#endif
+
 
   do
     {
@@ -2256,10 +2295,42 @@ static void do_wait(int counter)
             }
         }
 
+#ifdef ANNIVERSARY
+      for (i = 0; i < NUM_CONFETTI; i++) {
+        r.x = confetti[i].x;
+        r.y = confetti[i].y;
+        r.w = 8;
+        r.h = 8;
+
+        SDL_BlitSurface(back_surf, &r, screen, &r);
+      }
+
+      for (i = 0; i < NUM_CONFETTI; i++) {
+        confetti[i].x += confetti[i].xm;
+        confetti[i].xm += (((rand() % 5) - 2) / 10);
+        confetti[i].y += confetti[i].ym;
+        confetti[i].ym += confetti[i].ymm;
+
+        r.x = confetti[i].x;
+        r.y = confetti[i].y;
+        r.w = 6 + (rand() % 2);
+        r.h = (r.y % 8) + 1;
+
+        SDL_FillRect(screen, &r, confetti[i].color);
+      }
+
+      SDL_Flip(screen);
+#endif
+
+
       counter--;
       SDL_Delay(100);
     }
   while (!done && counter > 0);
+
+#ifdef ANNIVERSARY
+  SDL_FreeSurface(back_surf);
+#endif
 }
 
 
