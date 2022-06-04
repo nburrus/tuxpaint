@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ##############################################################################
 # Script to generate TuxPaint.dmg from TuxPaint.app.
@@ -39,8 +39,11 @@ ln -s "/Applications" "$VOLUME" \
 || exit 1
 
 echo "   * Configuring the folder to open upon mount..."
-bless --folder "$VOLUME" --openfolder "$VOLUME" \
-|| exit 1
+if [[ "$(uname -m)" == "arm64" ]]; then
+    bless --folder "$VOLUME"
+else
+    bless --folder "$VOLUME" --openfolder "$VOLUME"
+fi || exit 1
 
 echo "   * Unmounting the temporary image..."
 hdiutil detach "$VOLUME"
