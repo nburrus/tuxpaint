@@ -279,6 +279,12 @@ http://www.tuxpaint.org/
         different keycodes, so the backspace requires special handling on the
         macOS in programs writtens for the PC.
 
+      * Remove the `--openfolder` option when calling `bless` from Apple
+        Silicon.  This option is no longer valid on Apple Silicon as of the
+        March 2022 release of Xcode.
+
+      * Localization of SDL2.0 menu on macOS.
+
   * Documentation updates:
     ---------------------
     * Added some styling, use of HTML semantic tags, call-outs for notes,

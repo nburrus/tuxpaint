@@ -27329,10 +27329,6 @@ static void setup(void)
     }
 #endif
 
-#ifdef __APPLE__
-  apple_init();
-#endif
-
   im_init(&im_data, get_current_language());
 
 #ifndef NO_SDLPANGO
@@ -28472,6 +28468,10 @@ static void setup(void)
   /* Set up signal for no-questions-asked remote closing of app */
   signal(SIGUSR1, signal_handler);
   signal(SIGUSR2, signal_handler);
+#endif
+
+#ifdef __APPLE__
+  apple_init();
 #endif
 }
 
