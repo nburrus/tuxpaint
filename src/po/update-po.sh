@@ -16,8 +16,3 @@ for i in *.po ; do
   echo $i
   msgmerge --update --previous --backup=none $i tuxpaint.pot
 done
-
-msgfmt --desktop \
-  -d . \
-  --template ../tuxpaint.desktop.in \
-  --output-file ../tuxpaint.desktop
