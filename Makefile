@@ -671,6 +671,8 @@ bdist-win32:
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
 		MAGIC_PREFIX:=./win32/bdist/plugins \
 		ARCH_INSTALL:=install-dlls install-tpconf-i18n
+	mv ./win32/bdist/tuxpaint.conf ./win32/bdist/tuxpaint.cfg
+	unix2dos ./win32/bdist/tuxpaint.cfg
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean
