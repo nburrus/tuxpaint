@@ -15,4 +15,5 @@ TuxPaint.dmg
 .DS_Store
 *.thumbs
 src/po/POTFILES.in
-
+src/tuxpaint.desktop
+src/org.tuxpaint.Tuxpaint.metainfo.xml

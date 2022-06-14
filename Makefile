@@ -266,6 +266,9 @@ endif
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
 X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
 
+# Appstream metainfo
+METAINFO_PREFIX=$(DESTDIR)$(PREFIX)/share/metainfo
+
 # Maemo flag
 MAEMOFLAG:=
 
@@ -529,6 +532,12 @@ endif
 $(MOFILES): trans/%.mo: src/po/%.po  
 	msgfmt -o $@ $<
 
+%.desktop: %.desktop.in $(POTFILES)
+	msgfmt --desktop -d src/po --template $< -o $@
+
+%.metainfo.xml: %.metainfo.xml.in $(POTFILES)
+	msgfmt --xml -d src/po --template $< -o $@
+
 .PHONY: translations
 ifeq "$(shell msgfmt -h)" ""
 translations: trans
@@ -538,7 +547,7 @@ translations: trans
 	@echo "Install gettext to run Tux Paint in non-U.S. English modes."
 	@echo "--------------------------------------------------------------"
 else
-translations: trans $(MOFILES)
+translations: trans $(MOFILES) src/tuxpaint.desktop src/org.tuxpaint.Tuxpaint.metainfo.xml
 endif
 
 trans:
@@ -713,6 +722,7 @@ clean:
 # are the same as they were when you installed, of course!!!
 .PHONY: uninstall
 uninstall:	uninstall-i18n
+	-rm $(METAINFO_PREFIX)/org.tuxpaint.Tuxpaint.metainfo.xml
 	-rm /usr/share/applications/tuxpaint.desktop
 	-rm /usr/share/pixmaps/tuxpaint.png
 	-rm $(ICON_PREFIX)/tuxpaint.png
@@ -925,13 +935,11 @@ install-nokia770:
 	fi
 	@-find $(DESTDIR)$(NOKIA770_PREFIX) -name CVS -type d -exec rm -rf \{\} \;
 
-
-
 # Install a launcher icon in the Linux desktop environment's (freedesktop.org) menus...
 # FIXME: No way to install SVG icons using `xdg-icon-resource`
 # (see https://bugs.launchpad.net/ubuntu/+source/xdg-utils/+bug/790449)
 .PHONY: install-xdg
-install-xdg:
+install-xdg: src/tuxpaint.desktop src/org.tuxpaint.Tuxpaint.metainfo.xml
 	@echo
 	@echo "...Installing launcher icon into desktop environment..."
 	@if [ "x$(shell which xdg-icon-resource install)" != "x" ]; then \
@@ -952,6 +960,7 @@ install-xdg:
 	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 	  update-desktop-database ; \
 	fi
+	install --mode=0644 -t $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.metainfo.xml
 
 # Install the PNG icon (for KDE desktop, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
