@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 3, 2022
+  June 14, 2002 - June 14, 2022
 */
 
 #include "platform.h"
@@ -741,6 +741,7 @@ static SDL_Rect old_dest;
 
 static int button_w;            /* was 48 */
 static int button_h;            /* was 48 */
+static int button_size_auto = 0;    /* if the size of buttons should be autocalculated */
 static float button_scale;      /* scale factor to be applied to the  size of buttons */
 static int color_button_w;      /* was 32 */
 static int color_button_h;      /* was 48 */
@@ -26072,12 +26073,17 @@ static void setup_config(char *argv[])
     }
   if (tmpcfg.button_size)
     {
-      if (strtof(tmpcfg.button_size, NULL) < 24 || strtof(tmpcfg.button_size, NULL) > 192)
+      if (strstr(tmpcfg.button_size, "auto"))
+        button_size_auto = 1;
+      else
         {
-          fprintf(stderr, "Button size (now %s) must be between 24 and 192.\n", tmpcfg.button_size);
-          exit(1);
+          if (strtof(tmpcfg.button_size, NULL) < 24 || strtof(tmpcfg.button_size, NULL) > 192)
+            {
+              fprintf(stderr, "Button size (now %s) must be between 24 and 192.\n", tmpcfg.button_size);
+              exit(1);
+            }
+          button_scale = strtof(tmpcfg.button_size, NULL) / ORIGINAL_BUTTON_SIZE;
         }
-      button_scale = strtof(tmpcfg.button_size, NULL) / ORIGINAL_BUTTON_SIZE;
     }
   else
     button_scale = 1;
@@ -27083,6 +27089,9 @@ static void setup(void)
 
 
   /* (Need to do this after native screen resolution is handled) */
+
+  if (button_size_auto) /* Automatic size of buttons, see https://sourceforge.net/p/tuxpaint/feature-requests/218/ */
+    button_scale = (float) min((48 * screen->w) / 800, (48 * screen->h) / 600) / ORIGINAL_BUTTON_SIZE;
 
   setup_screen_layout();
   set_color_picker_crosshair_size();
