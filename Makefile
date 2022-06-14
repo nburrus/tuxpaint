@@ -4,12 +4,12 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - June 4, 2022
+# June 14, 2002 - June 14, 2022
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.28
+VER_VERSION:=0.9.29
 VER_FLAVOR:="-sdl2"
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
@@ -671,6 +671,8 @@ bdist-win32:
 		INCLUDE_PREFIX:=./win32/bdist/plugins/include \
 		MAGIC_PREFIX:=./win32/bdist/plugins \
 		ARCH_INSTALL:=install-dlls install-tpconf-i18n
+	mv ./win32/bdist/tuxpaint.conf ./win32/bdist/tuxpaint.cfg
+	unix2dos ./win32/bdist/tuxpaint.cfg
 
 # "make bdist-clean" deletes the 'bdist' directory
 .PHONY: bdist-clean

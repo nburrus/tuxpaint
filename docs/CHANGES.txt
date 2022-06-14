@@ -7,6 +7,35 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
+2022.June.14 (0.9.29)
+  * Other Improvements:
+    -------------------
+    * Automatic button size option ("buttonsize=auto"), to scale button
+      size reasonably based on window size / fullscreen resolution.
+      (For https://sourceforge.net/p/tuxpaint/feature-requests/218/)
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Using SDL linear scaling hint to reduce jaggedness when displaying
+      in full screen at a different resolution than the display's
+      native size.  (SDL2.0)
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+  * Ports & Building:
+    -----------------
+    * Change name of Tux Paint config. files from ".conf" to ".cfg"
+      on Windows.
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+  * Documentation updates:
+    ---------------------
+    * Update macOS build instructions for SDL2.0.
+      Mark Kim <markuskimius@gmail.com>
+
+  * Localization Updates:
+    ---------------------
+    * Catalan translation
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
 2022.June.4 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------

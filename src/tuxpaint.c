@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 3, 2022
+  June 14, 2002 - June 14, 2022
 */
 
 #include "platform.h"
@@ -26578,17 +26578,16 @@ static void setup_config(char *argv[])
   if (tmpcfg.button_size)
     {
       if (strstr(tmpcfg.button_size, "auto"))
-	button_size_auto = 1;
+        button_size_auto = 1;
       else
-	{
-	  button_size_auto = 0; /* raw size */
-	  if (strtof(tmpcfg.button_size, NULL) < 24 || strtof(tmpcfg.button_size, NULL) > 192)
-	    {
-	      fprintf(stderr, "Button size (now %s) must be between 24 and 192.\n", tmpcfg.button_size);
-	      exit(1);
-	    }
-	  button_scale = strtof(tmpcfg.button_size, NULL) / ORIGINAL_BUTTON_SIZE;
-	}
+        {
+          if (strtof(tmpcfg.button_size, NULL) < 24 || strtof(tmpcfg.button_size, NULL) > 192)
+            {
+              fprintf(stderr, "Button size (now %s) must be between 24 and 192.\n", tmpcfg.button_size);
+              exit(1);
+            }
+          button_scale = strtof(tmpcfg.button_size, NULL) / ORIGINAL_BUTTON_SIZE;
+        }
     }
   else
     button_scale = 1;

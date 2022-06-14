@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>tuxpaint</string>
 	<key>CFBundleGetInfoString</key>
-	<string>0.9.28, Copyright 2002-2022, Tux Paint Development Team</string>
+	<string>0.9.29, Copyright 2002-2022, Tux Paint Development Team</string>
 	<key>CFBundleIconFile</key>
 	<string>tuxpaint.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -19,10 +19,10 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.28</string>
+	<string>0.9.29</string>
 	<key>CFBundleSignature</key>
 	<string>TXPT</string>
 	<key>CFBundleVersion</key>
-	<string>2022-06-04</string>
+	<string>2022-06-14</string>
 </dict>
 </plist>
