@@ -4,12 +4,12 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - June 4, 2022
+# June 14, 2002 - June 14, 2022
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.28
+VER_VERSION:=0.9.29
 VER_FLAVOR:="-sdl1"
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
