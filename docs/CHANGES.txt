@@ -8,6 +8,13 @@ http://www.tuxpaint.org/
 
 
 2022.June.14 (0.9.29)
+  * Bug Fixes:
+    ----------
+    * Opening and immediately dismissing Color Mixer could cause
+      an unexpected color to be chosen.
+      h/t @kentonyanamin on Twitter for reporting.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/251/
+
   * Other Improvements:
     -------------------
     * Automatic button size option ("buttonsize=auto"), to scale button

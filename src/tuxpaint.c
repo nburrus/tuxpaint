@@ -23209,6 +23209,14 @@ static int do_color_mix(void)
       for (i = 0; i < NUM_MIXER_COLORS; i++)
         color_mixer_color_counts[i] = 0;
     }
+  else
+    {
+      new_r = color_hexes[COLOR_MIXER][0];
+      new_g = color_hexes[COLOR_MIXER][1];
+      new_b = color_hexes[COLOR_MIXER][2];
+    }
+
+
 
   done = 0;
   chose = 0;
