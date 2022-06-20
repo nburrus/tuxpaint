@@ -25095,30 +25095,9 @@ static void load_info_about_label_surface(FILE * lfi)
           fprintf(stderr, "Unexpected! Saved text length is >= 1024 (%u!)\n", new_node->save_texttool_len);
           free(new_node);
 #ifdef WIN32
-      /* Using fancy "%[]" operator to scan until the end of a line */
-      tmp_fscanf_return = fscanf(lfi, "%[^\n]\n", tmpstr);
-      mbstowcs(wtmpstr, tmpstr, 1024);
-      for (l = 0; l < new_node->save_texttool_len; l++)
-        new_node->save_texttool_str[l] = wtmpstr[l];
-      new_node->save_texttool_str[l] = L'\0';
-      free(tmpstr);
-      free(wtmpstr);
-#elif defined(__ANDROID__)
-      wchar_t tmp_char;
-      for (l = 0; l < new_node->save_texttool_len; l++)
-        {
-          fscanf(lfi, "%d ", &tmp_char);
-          new_node->save_texttool_str[l] = tmp_char;
-        }
-      fscanf(lfi, "\n");
-#else
-      /* Using fancy "%[]" operator to scan until the end of a line */
-      tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
+          free(wtmpstr);
 #endif
-
-#ifdef DEBUG
-      printf("Read: \"%ls\"\n", new_node->save_texttool_str); fflush(stdout);
-#endif
+          free(tmpstr);
           fclose(lfi);
           return;
         }
@@ -25131,6 +25110,14 @@ static void load_info_about_label_surface(FILE * lfi)
           for (l = 0; l < new_node->save_texttool_len; l++)
             new_node->save_texttool_str[l] = wtmpstr[l];
           new_node->save_texttool_str[l] = L'\0';
+#elif defined(__ANDROID__)
+      wchar_t tmp_char;
+      for (l = 0; l < new_node->save_texttool_len; l++)
+        {
+          fscanf(lfi, "%d ", &tmp_char);
+          new_node->save_texttool_str[l] = tmp_char;
+        }
+      fscanf(lfi, "\n");
 #else
           /* Using fancy "%[]" operator to scan until the end of a line */
           tmp_fscanf_return = fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
