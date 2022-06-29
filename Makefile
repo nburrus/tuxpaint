@@ -942,7 +942,7 @@ install-nokia770:
 install-xdg: src/tuxpaint.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
 	@echo
 	@echo "...Installing launcher icon into desktop environment..."
-	@if [ "x$(shell which xdg-icon-resource install)" != "x" ]; then \
+	@if [ "x$(shell which xdg-icon-resource)" != "x" ]; then \
 	  xdg-icon-resource install --size 192 data/images/icon192x192.png tux4kids-tuxpaint ; \
 	  xdg-icon-resource install --size 128 data/images/icon128x128.png tux4kids-tuxpaint ; \
 	  xdg-icon-resource install --size 96 data/images/icon96x96.png tux4kids-tuxpaint ; \
