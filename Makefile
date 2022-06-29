@@ -960,8 +960,7 @@ install-xdg: src/tuxpaint.desktop src/org.tuxpaint.Tuxpaint.metainfo.xml
 	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 	  update-desktop-database ; \
 	fi
-	@mkdir -p $(METAINFO_PREFIX)
-	install --mode=0644 -t $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.metainfo.xml
+	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.metainfo.xml
 
 # Install the PNG icon (for KDE desktop, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
