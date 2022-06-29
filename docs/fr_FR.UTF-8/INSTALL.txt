@@ -638,7 +638,7 @@ macOS
      * libpaper
      * libpng
      * librsvg
-     * libsdl
+     * libsdl2
      * libsdl2_image
      * libsdl2_mixer
      * libsdl2_pango^*
