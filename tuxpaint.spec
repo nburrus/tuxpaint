@@ -9,7 +9,7 @@ Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: SDL >= 1.2.4 SDL_image SDL_mixer SDL_ttf SDL_Pango SDL_gfx libpaper fribidi xdg-utils libimagequant
 BuildRequires: SDL-devel >= 1.2.4 SDL_image-devel SDL_mixer-devel SDL_ttf-devel SDL_Pango-devel SDL_gfx-devel
-BuildRequires: librsvg2-devel libpaper-devel fribidi-devel gperf gettext ImageMagick xdg-utils libimagequant-devel
+BuildRequires: librsvg2-devel libpaper-devel fribidi-devel gperf gettext >= 0.19.7 ImageMagick xdg-utils libimagequant-devel
 
 %description
 "Tux Paint" is a drawing program for young children.
