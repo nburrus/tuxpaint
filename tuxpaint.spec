@@ -98,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/tp-magic-config.*
 
 %changelog
+* Wed Jun 29 2022 <dolphin6k@wmail.plala.or.jp> -
+- Set minimum version requirement for gettext
+
 * Tue Jun 14 2022 <nbs@sonic.net> -
 - Set version number 0.9.29
 
