@@ -16,4 +16,4 @@ TuxPaint.dmg
 *.thumbs
 src/po/POTFILES.in
 src/tuxpaint.desktop
-src/org.tuxpaint.Tuxpaint.metainfo.xml
+src/org.tuxpaint.Tuxpaint.appdata.xml
