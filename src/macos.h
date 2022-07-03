@@ -32,6 +32,7 @@ const char *apple_fontsPath(void);
 const char *apple_preferencesPath(void);
 const char *apple_globalPreferencesPath(void);
 const char *apple_picturesPath(void);
+int apple_trash(const char *path);
 
 
 #endif /* __MACOS_H__ */

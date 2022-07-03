@@ -28719,11 +28719,12 @@ int main(int argc, char *argv[])
  */
 static int trash(char *path)
 {
-#ifdef UNLINK_ONLY
+#if defined(UNLINK_ONLY)
   return (unlink(path));
-#else
-#ifdef WIN32
+#elif defined(WIN32)
   return win32_trash(path);
+#elif defined(__APPLE__)
+  return apple_trash(path);
 #else
   char fname[MAX_PATH], trashpath[MAX_PATH], dest[MAX_PATH], infoname[MAX_PATH], bname[MAX_PATH], ext[MAX_PATH];
   char deldate[32];
@@ -28883,13 +28884,10 @@ static int trash(char *path)
 
   /* FIXME: xcfe and elsewhere: Anything to do? */
 
-  /* FIXME: Mac OS X */
-
   /* FIXME: Haiku */
 
   return (0);
-#endif /* WIN32 */
-#endif /* UNLINK_ONLY */
+#endif
 }
 
 /**

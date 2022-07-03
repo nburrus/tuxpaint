@@ -221,3 +221,19 @@ const char *apple_picturesPath(void)
     return p;
 }
 
+
+int apple_trash(const char *path)
+{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithUTF8String:path]];
+    NSURL *trash = nil;
+    NSError *error = nil;
+
+    [manager trashItemAtURL:url resultingItemURL:&trash error:&error];
+    if(error) {
+        DEBUG_PRINTF("%s\n", [[error localizedDescription] UTF8String]);
+        return -1;
+    }
+
+    return 0;
+}
