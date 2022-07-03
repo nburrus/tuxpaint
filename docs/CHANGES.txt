@@ -19,6 +19,12 @@ http://www.tuxpaint.org/
       h/t Karl Ove Hufthammer <karl@huftis.org> for the report
       Closes https://sourceforge.net/p/tuxpaint/bugs/255/
 
+    * Some Magic tools did not change descriptions when switching
+      from paint to full-canvas mode.
+      + Emboss
+      h/t Karl Ove Hufthammer <karl@huftis.org> for the report
+      Closes https://sourceforge.net/p/tuxpaint/bugs/257/
+
   * Other Improvements:
     -------------------
     * Automatic button size option ("buttonsize=auto"), to scale button

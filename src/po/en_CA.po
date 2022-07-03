@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-14 00:59-0700\n"
+"POT-Creation-Date: 2022-07-03 16:31-0700\n"
 "PO-Revision-Date: 2014-07-07 12:22+0100\n"
 "Last-Translator: Caroline Ford <caroline.ford.work@googlemail.com>\n"
 "Language-Team: \n"
@@ -312,15 +312,15 @@ msgstr ""
 msgid "Minimize"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:8 ../tuxpaint.desktop.in:3
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:8 ../tuxpaint.desktop.in:3
 msgid "Tux Paint"
 msgstr "Tux Paint"
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
 msgid "A drawing program for children"
 msgstr "A drawing program for children"
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:11
 msgid ""
 "Tux Paint is a free, award-winning drawing program for children ages 3 to "
 "12. Tux Paint is used in schools around the world as a computer literacy "
@@ -329,30 +329,30 @@ msgid ""
 "program."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:19
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:24
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:36
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:36
 msgid "The Magic tool is a set of special effects"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:40
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:40
 msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:44
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:44
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:50
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -360,7 +360,7 @@ msgid ""
 "mixing paints."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:51
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -368,21 +368,21 @@ msgid ""
 "colors."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:52
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
 "drawing."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:53
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
 "have been given better default spacing values, as well."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:54
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -390,7 +390,7 @@ msgid ""
 "background color. The Rush tool blurs the results."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:55
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -399,7 +399,7 @@ msgid ""
 "has also been expanded."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:56
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -407,7 +407,7 @@ msgid ""
 "The look and feel of the user documentation has been improved."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:61
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -416,7 +416,7 @@ msgid ""
 "painting mode for interactively coloring within a confined area."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -427,7 +427,7 @@ msgid ""
 "of Tux Paint's classic Rainbow tool."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -436,7 +436,7 @@ msgid ""
 "Chalk, and Emboss, now offer the ability to alter the entire image at once!"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -444,7 +444,7 @@ msgid ""
 "need."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:69
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -452,7 +452,7 @@ msgid ""
 "of gradients at different angles and sizes."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:70
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -460,14 +460,14 @@ msgid ""
 "picture via brush strokes."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:71
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
 "contact the Tux Paint team."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:72
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -477,34 +477,34 @@ msgid ""
 "systems."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:77
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
 "making it easier to use in any situation."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:78
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:79
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:80
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
 "with others."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:85
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -514,21 +514,21 @@ msgid ""
 "images."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:86
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
 "speaker is available."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:92
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
@@ -1301,18 +1301,18 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:23727 ../tuxpaint.c:23734
+#: ../tuxpaint.c:23734 ../tuxpaint.c:23741
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:26644
+#: ../tuxpaint.c:26651
 msgid "Select a color from your drawing."
 msgstr ""
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:26653
+#: ../tuxpaint.c:26660
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1320,7 +1320,7 @@ msgstr ""
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:26665
+#: ../tuxpaint.c:26672
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1510,9 +1510,15 @@ msgstr "Click and drag the mouse to cause distortion in your picture."
 msgid "Emboss"
 msgstr "Emboss"
 
-#: ../../magic/src/emboss.c:114
+#: ../../magic/src/emboss.c:115
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Click and drag the mouse to emboss the picture."
+
+#: ../../magic/src/emboss.c:117
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to emboss the entire picture."
+msgstr "Click to sharpen the entire picture."
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"

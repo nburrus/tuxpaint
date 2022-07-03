@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 13:27+0200\n"
+"POT-Creation-Date: 2022-07-03 16:31-0700\n"
 "PO-Revision-Date: 2022-07-03 13:23+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1392,6 +1392,10 @@ msgstr ""
 "grå (for å gjera bleikare) og svart (for å gjera mørkare) for å blanda saman "
 "ein ny farge."
 
+#: ../tuxpaint.desktop.in:6
+msgid "tuxpaint"
+msgstr "tuxpaint"
+
 #: ../tuxpaint.desktop.in:9
 msgid "Drawing program"
 msgstr "Teikneprogram"
@@ -1544,9 +1548,15 @@ msgstr "Hald inne knappen og flytt rundt for å forstyrra teikninga."
 msgid "Emboss"
 msgstr "Relieff"
 
-#: ../../magic/src/emboss.c:114
+#: ../../magic/src/emboss.c:115
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til relieff."
+
+#: ../../magic/src/emboss.c:117
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to emboss the entire picture."
+msgstr "Trykk for å gjera heile teikninga skarpare."
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
@@ -2231,10 +2241,6 @@ msgstr "Hald inne knappen og flytt rundt for å teikna med ein XELLER-effekt."
 #: ../../magic/src/xor.c:105
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Trykk for å leggja ein XELLER-effekt på heile teikninga."
-
-#~| msgid "Tux Paint"
-#~ msgid "tuxpaint"
-#~ msgstr "tuxpaint"
 
 #~ msgid "Pick a color."
 #~ msgstr "Vel ein farge."
