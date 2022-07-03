@@ -7,13 +7,17 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.July.03 (0.9.29)
+2022.July.3 (0.9.29)
   * Bug Fixes:
     ----------
     * Opening and immediately dismissing Color Mixer could cause
       an unexpected color to be chosen.
       h/t @kentonyanamin on Twitter for reporting.
       Closes https://sourceforge.net/p/tuxpaint/bugs/251/
+
+    * Line shape could report "360 degrees", which should be "0 degrees".
+      h/t Karl Ove Hufthammer <karl@huftis.org> for the report
+      Closes https://sourceforge.net/p/tuxpaint/bugs/255/
 
   * Other Improvements:
     -------------------

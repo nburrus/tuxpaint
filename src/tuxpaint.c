@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 14, 2022
+  June 14, 2002 - July 3, 2022
 */
 
 #include "platform.h"
@@ -5982,7 +5982,7 @@ static void mainloop(void)
                                     line_start_y + r_canvas.y, new_x + r_canvas.x, new_y + r_canvas.y);
                       update_screen(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-                      snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_LINE_MOVING), angle);
+                      snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_LINE_MOVING), floor(angle));
                       draw_tux_text(TUX_BORED, angle_tool_text, 1);
                     }
                   else if (cur_tool == TOOL_SHAPES)
