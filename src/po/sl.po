@@ -319,7 +319,7 @@ msgid "Tux Paint"
 msgstr "Slikar Tux"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
+msgid "A drawing program for children"
 msgstr "Risarski program za otroke"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11

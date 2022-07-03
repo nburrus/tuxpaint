@@ -323,8 +323,8 @@ msgid "Tux Paint"
 msgstr "Joonistame koos Tuksiga!"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
-msgstr "Joonistusprogramm lastele."
+msgid "A drawing program for children"
+msgstr "Joonistusprogramm lastele"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
 msgid ""

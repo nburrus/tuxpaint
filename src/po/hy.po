@@ -323,7 +323,7 @@ msgid "Tux Paint"
 msgstr "Նկարիչ Տուքսը"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
+msgid "A drawing program for children"
 msgstr "Նկարչական ծրագիր երեխաների համար:"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11

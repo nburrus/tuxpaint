@@ -319,8 +319,8 @@ msgid "Tux Paint"
 msgstr "ಟಕ್ಸ್ ಪೇಂಟ್"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
-msgstr "ಮಕ್ಕಳಿಗಾಗಿನ ಚಿತ್ರರಚನೆಯ ತಂತ್ರಾಂಶ."
+msgid "A drawing program for children"
+msgstr "ಮಕ್ಕಳಿಗಾಗಿನ ಚಿತ್ರರಚನೆಯ ತಂತ್ರಾಂಶ"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
 msgid ""

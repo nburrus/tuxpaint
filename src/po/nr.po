@@ -318,8 +318,8 @@ msgid "Tux Paint"
 msgstr "ITux Pende"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
-msgstr "Iphrogremu yokudweba yabantwana."
+msgid "A drawing program for children"
+msgstr "Iphrogremu yokudweba yabantwana"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
 msgid ""

@@ -318,8 +318,8 @@ msgid "Tux Paint"
 msgstr "Koti ya Rangi"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
-msgstr "Programu kwa watoto kuchora."
+msgid "A drawing program for children"
+msgstr "Programu kwa watoto kuchora"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
 msgid ""

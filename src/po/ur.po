@@ -317,7 +317,7 @@ msgid "Tux Paint"
 msgstr "ٹكس پینٹ"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
+msgid "A drawing program for children"
 msgstr "بچوں كے لئے ڈرائینگ پروگرام۔"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11

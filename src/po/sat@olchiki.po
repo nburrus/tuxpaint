@@ -315,7 +315,7 @@ msgid "Tux Paint"
 msgstr "ᱴᱠᱥ ᱨᱚᱝ ᱯᱮᱨᱮᱪ"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
+msgid "A drawing program for children"
 msgstr "ᱜᱤᱫᱨᱟᱹ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱜᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱛᱮᱭᱟᱨ ᱠᱟᱹᱢᱤ ᱦᱚᱨᱟ ᱾"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11

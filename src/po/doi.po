@@ -318,8 +318,8 @@ msgid "Tux Paint"
 msgstr "टक्स पेंट"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
-msgstr "बच्चें आस्तै इक्क चित्रकारी प्रोग्राम."
+msgid "A drawing program for children"
+msgstr "बच्चें आस्तै इक्क चित्रकारी प्रोग्राम"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
 msgid ""

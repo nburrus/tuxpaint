@@ -320,8 +320,8 @@ msgid "Tux Paint"
 msgstr "Малюй разом з Tux!"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
-msgstr "Дитяча програма для малювання."
+msgid "A drawing program for children"
+msgstr "Дитяча програма для малювання"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
 msgid ""

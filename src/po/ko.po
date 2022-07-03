@@ -310,7 +310,7 @@ msgid "Tux Paint"
 msgstr "턱스페인트"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:9 ../tuxpaint.desktop.in:10
-msgid "A drawing program for children."
+msgid "A drawing program for children"
 msgstr "어린이를 위한 미술 프로그램"
 
 #: ../org.tuxpaint.Tuxpaint.metainfo.xml.in:11
