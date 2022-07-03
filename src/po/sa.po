@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2011-11-19 07:03+0530\n"
 "Last-Translator: Aarathi Bala\n"
 "Language-Team: \n"
@@ -1400,11 +1400,17 @@ msgstr "सुधाखण्डालेख इव चित्रं परि
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "सुधाखण्डालेख इव चित्रं परिणमितुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "चित्रं स्रावयितुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "सम्पूर्मचित्रं तीव्रीकर्तुं क्लिक् कुरु।"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

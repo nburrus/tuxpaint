@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2008-01-18 12:40-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -1401,11 +1401,16 @@ msgstr "Klikkja og drag músina til at umgera myndina til eina kritmynd."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Klikkja og drag músina til at umgera myndina til eina kritmynd."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klikkja og drag músina til at fáa myndina at dryppa."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+msgid "Click to make the entire picture drip."
+msgstr "Klikkja til at gera eina spegilsmynd."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

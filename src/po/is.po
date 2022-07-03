@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2022-02-14 13:56+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -1361,9 +1361,15 @@ msgstr "Smelltu og dragðu músina til að breyta myndinni í krítarmynd!"
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Smelltu til að breyta myndinni í krítarmynd."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Smelltu og dragðu músina til að láta myndina leka."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to make the entire picture blocky."
+msgid "Click to make the entire picture drip."
+msgstr "Smelltu til að gera myndina alla í blokkum."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

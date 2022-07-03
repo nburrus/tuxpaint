@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2009-05-25 12:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
@@ -1412,11 +1412,16 @@ msgstr ""
 "Ji bo ku wêne wekî xêzkirineke bi tebeşîrê xuya bibe, bitikîne û mi,şkî li "
 "dorê bigerîne bigerîne."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Ji bo ku wêneyê bidilop bikî bi tikîne û mişkî li dorê bigerîne."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+msgid "Click to make the entire picture drip."
+msgstr "Ji bo çêkirina îmaja neynikê bitikîne."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23 uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-10-23 18:08+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1414,10 +1414,16 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб перетворити малюнок на "
 "малюнок крейдою."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб змусити малюнок потекти."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Клацніть, щоб зробити різкішим весь малюнок."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

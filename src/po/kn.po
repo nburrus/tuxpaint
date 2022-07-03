@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-06-08 23:43+0630\n"
 "Last-Translator: Savitha <savithasprasad@yahoo.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -1415,11 +1415,17 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಸೀಮೆಸುಣ್ಣದಲ್ಲಿ ರಚಿಸಲಾಗಿರುವಂತೆ ಬದಲಾಯಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "ನಿಮ್ಮ ಚಿತ್ರವು ತೊಟ್ಟಿಕ್ಕುವಂತೆ ಮಾಡಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "ಸಂಪೂರ್ಣ ಚಿತ್ರವನ್ನು ಮೊನಚುಗೊಳಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

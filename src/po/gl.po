@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2021-03-03 10:01+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
@@ -1393,9 +1393,15 @@ msgstr ""
 "Preme e arrastra o rato arredor para para converter o debuxo nun debuxo "
 "feito con xiz."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Preme e arrastra o rato o rato arredor para facer que o debuxo pingue."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Preme para reforzar todo o debuxo."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

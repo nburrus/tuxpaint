@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-03 10:35+0200\n"
 "Last-Translator: Ibrahima SARR <ibrahima.sarr@pulaagu.com>\n"
 "Language-Team: FULAH LOCALIZATION\n"
@@ -1392,9 +1392,15 @@ msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno kereewo."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno kereewo."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno baade."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Dobo ngam seeɓnude natal ngal fof."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

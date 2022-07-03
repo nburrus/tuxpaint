@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-10-15 11:04+0200\n"
 "Last-Translator: Willem Heppe <heppew@yahoo.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -1403,9 +1403,15 @@ msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 "Klik en sleep de muis om de tekening te veranderen in een krijttekening!"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik en sleep de muis om daar de tekening te laten druipen!"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Klik om overgangen in je hele tekening te verscherpen."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

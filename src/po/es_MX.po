@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2007-08-05 19:22-0400\n"
 "Last-Translator: Ignacio Tike <itike17@yahoo.com>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
@@ -1407,11 +1407,16 @@ msgstr ""
 "Haz clic y mueve el ratón alrededor para convertir la pintura en un dibujo "
 "de tiza."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Haz clic y arrastra el ratón para hacer que la imagen gotee."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+msgid "Click to make the entire picture drip."
+msgstr "Haz clic para hacer una imagen espejo."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

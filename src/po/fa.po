@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-11-09 21:17+0330\n"
 "Last-Translator: snima <unix.nima@gmail.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
@@ -1415,11 +1415,17 @@ msgstr ".برای سفید کردن تصویر با گچ کلیک کن و موس
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ".برای سفید کردن تصویر با گچ کلیک کن و موس را حرکت بده  "
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "برای ایجاد چکه در عکس کلیک کن و موشی را به اطراف حرکت بده."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to make ripples appear over your picture."
+msgid "Click to make the entire picture drip."
+msgstr "کلیک کن تا روی تصویرت موج ایجاد شود."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

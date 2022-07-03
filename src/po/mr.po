@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.21c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2013-03-28 12:11+0530\n"
 "Last-Translator: Santosh Jankiram Kshetre <quicklearning@rediffmail.com>\n"
 "Language-Team: Marathi\n"
@@ -1415,13 +1415,19 @@ msgstr ""
 "चित्राच्या ज्या भागावर खडुने काढले आहे असे दाखवचे असेल त्याचित्राच्या भागावर माऊस क्लिक "
 "करा."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "चित्राच्या ज्या भागावर पाण्याचा थेंब पड्ला आहे असे दाखवचे त्या त्या भागावर माऊस क्लिक "
 "करा. "
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "पूरे चित्र में पैनापन लाने के लिए क्लिक करें|"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2011-09-14 13:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: Bodo\n"
@@ -1404,11 +1404,17 @@ msgstr "सावगारिखौ सक आखिनायाव सोला
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "सावगारिखौ सक आखिनायाव सोलायहोनो माउसखौ क्लिक खालाम आरो लोरिहो।"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "सावगारि ड्रिप बानायनो माउसखौ क्लिक खालाम आरो लोरिहो।"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "आबुं सावगारिखौ गोफार खालामनो क्लिक खालाम।"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2013-09-04 10:23+0530\n"
 "Last-Translator:  <b>\n"
 "Language-Team: Dogri\n"
@@ -1403,11 +1403,17 @@ msgstr "तस्वीरा गी चाकी ड्राइङ बना�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "तस्वीरा गी चाकी ड्राइङ बनाने आस्तै क्लिक करो ते माउस गी फेरो."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "तस्वीरा गी टपकदी बनाने आस्तै क्लिक करियै माउस गी आलै-दोआलै फेरो."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "सबूरी तस्वीरा गी त्रिक्खा करने आस्तै क्लिक करो."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

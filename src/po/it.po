@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-18 09:15+0000\n"
 "Last-Translator: Flavio Pastore <ironbishop@fsfe.org>\n"
 "Language-Team: Italian\n"
@@ -1448,9 +1448,15 @@ msgstr ""
 "Fai clic e trascina il mouse per trasformare il disegno in uno fatto a "
 "gessetto."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Fai clic e trascina il mouse per far gocciolare il disegno."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Fai clic per far risaltare tutto il disegno."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

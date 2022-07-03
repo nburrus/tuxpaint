@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2013-02-18 09:21+0530\n"
 "Last-Translator: sk <sk>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -1401,11 +1401,17 @@ msgstr "चाक ड्राइंग केँ ब्लाक टाइप �
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "चाक ड्राइंग केँ ब्लाक टाइप बनाबै क' लेल माउसक गिर्द क्लिक करू आओर घसकाउ."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "चित्र ड्रिप केँ ब्लाक टाइप बनाबै क' लेल माउसक गिर्द क्लिक करू आओर घसकाउ."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "पूरे चित्र मे पैनापन लाबै क' लेल क्लिक करू."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

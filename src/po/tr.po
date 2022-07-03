@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2012-01-02 22:41+0200\n"
 "Last-Translator: gvhı <asd@gmail.com>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -1410,11 +1410,17 @@ msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 "Resmi bir tebeşir çizimine çevirmek için tıkla ve fareyi etrafta gezdir."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Resmi damla damla akıtmak için tıkla ve fareyi etrafta gezdir."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Bütün resmi keskinleştirmek için tıklayın."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

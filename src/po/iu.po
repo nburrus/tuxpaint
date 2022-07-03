@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Inuktitut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2013-07-04 16:05-0500\n"
 "Last-Translator: Harvey Ginter <harveyginter@gmail.com>\n"
 "Language-Team: LANGUAGE <harveyginter@gmail.com>\n"
@@ -1401,11 +1401,17 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑ
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᖅ ᐊᓪᓚᖑᐊᕐᓯᒪᔪᖕᖑᑎᓗᒍ ᐊᓪᓚᕕᐊᓗᒻᒥ ᐊᓪᓚᐅᑎᒧᑦ."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᒥᒃ ᑯᓯᕐᑐᖑᐊᖑᑎᑦᓯᓂᕐᒧᑦ."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᕐᒥᒃ ᑕᑉᐱᑐᖕᖑᑎᑦᓯᒋᐊᕐᓂᒧᑦ."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

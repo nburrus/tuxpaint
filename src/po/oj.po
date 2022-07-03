@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ojibwaytuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2007-10-08 18:19-0500\n"
 "Last-Translator: Ed Montgomery <edm@rocketmail.com>\n"
 "Language-Team: Ed <edm@rocketmail.com>\n"
@@ -1360,10 +1360,15 @@ msgstr "Waabizo"
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Waabizo"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Waabizo"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+msgid "Click to make the entire picture drip."
+msgstr "Waabimoojichaagwaazo"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

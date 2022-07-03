@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-06-09 08:08+0530\n"
 "Last-Translator: Khagen Sarma <khagen.sharma@gmail.com>\n"
 "Language-Team: none\n"
@@ -1402,11 +1402,17 @@ msgstr "चित्रलाई चक ड्रइङ बनाउनका �
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "चित्रलाई चक ड्रइङ बनाउनका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "चित्र ड्रिप बनाउनका लागि क्लिक गर्नुहस् अनि माउस घुमाउनुहोस्"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "पाईँको पूरा चित्र तिख्याउनुको लागि क्लिक गर्नुहोस्"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

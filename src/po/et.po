@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2015-03-07 13:09+0000\n"
 "Last-Translator: Sven Ollino <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1397,11 +1397,17 @@ msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt kriidijoonistuse sarnaseks."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Tee klõps, et teha terve pilt teravamaks."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-03-22 11:39+0400\n"
 "Last-Translator: Aram Palyan <ararat.info@gmail.com>\n"
 "Language-Team: Armenian <ararat.info@gmail.com>\n"
@@ -1411,12 +1411,18 @@ msgstr "Սեղմիր և շարժիր մկնիկը, պատկերը կավիճով
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Սեղմիր և շարժիր մկնիկը, պատկերը կավիճով նկարածի տեսք տալու համար:"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Սեղմիր և շարժիր մկնիկը շուրջ բոլորը նկարին թրջած տեսք հաղորդելու համար:"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Սեղմիր` ամբողջ նկարդ բարելավելու համար"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

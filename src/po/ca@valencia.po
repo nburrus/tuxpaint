@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2020-03-29 23:40+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
@@ -1408,10 +1408,16 @@ msgstr ""
 "Feu clic i arrossegueu el ratolí per la zona per a convertir la imatge en un "
 "dibuix fet amb guix."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per la zona per a fer que la imatge gotege."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Feu clic per a afinar tota la imatge."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

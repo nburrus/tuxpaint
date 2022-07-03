@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-26 21:51+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
@@ -1402,9 +1402,15 @@ msgstr "S klikom in premikanjem miške je mogoče risati s kredo."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "S klikom in premikanjem miške je mogoče risati s kredo."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "S klikom in premikanjem miške je mogoče kapljati po sliki."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "S klikom miške je mogoče izostriti celo sliko."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

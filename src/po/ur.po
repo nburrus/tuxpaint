@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2011-10-30 15:34+0530\n"
 "Last-Translator: Chandrakant Dhutadmal\n"
 "Language-Team: Urdu\n"
@@ -1409,12 +1409,18 @@ msgstr ""
 ".تصویر كو چاك ڈرائینگ میں بدلنے كے لئے ماؤس كو  اطراف میں كلك كریں اور موو "
 "كریں۔"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 ".تصویر كو ڈریپ میں بنانے كے لئے ماؤس كو  اطراف میں كلك كریں اور موو كریں۔"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "پوری تصویر كو شارپ كرنے كے لئے كلك كریں۔"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

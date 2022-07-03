@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2010-05-14 11:37-0000\n"
 "Last-Translator: Menik Prasantha <manikprasantha@gmail.com>\n"
 "Language-Team: none\n"
@@ -1429,11 +1429,17 @@ msgstr "පින්තූරය පාට කූරු මගින් ඇඳ�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "පින්තූරය පාට කූරු මගින් ඇඳීම සඳහා මූසික ක්ලිකය කර එය චලනය කරන්න."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "පින්තූරයේ බින්දු වශයෙන් වැටීම පෙන්වීමට මවුසය ක්ලික් කර එහා මෙහා ගෙන යන්න."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "මුලු පින්තුරයම මුවහත් කිරීමට තද කරන්න."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2011-11-28 22:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1411,11 +1411,17 @@ msgstr "Натиснете и движете мишката, за да прев�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Натиснете и движете мишката, за да превърнете рисунката в тебеширена."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Натиснете и движете мишката, за да направите рисунката да капе."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Натиснете, за да изострите цялата рисунка."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

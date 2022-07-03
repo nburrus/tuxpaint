@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2021-09-02 12:18-0700\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -1403,10 +1403,16 @@ msgstr ""
 "Briog is slaod an luchag mu thimcheall gus an tèid an dealbh ’na dhealbh "
 "cailce."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Briog is slaod an luchag mu thimcheall gus sileadh a thoirt air an dealbh."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Briog is slaod gus an dealbh gu lèir a gheurachadh."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

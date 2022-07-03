@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2010-07-08 13:33+0100\n"
 "Last-Translator: Zdeněk Chalupský <chalzd@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -1409,11 +1409,17 @@ msgstr "Pohybem myši po čáře získáš vzhled čáry od křídy."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Pohybem myši po čáře získáš vzhled čáry od křídy."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klepni nebo pohybuj myší a obrázek se rozteče."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Klikni pro zvýraznění (zaostření) okrajů celého obrázku."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

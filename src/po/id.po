@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-09 04:22+0000\n"
 "Last-Translator: Teuku Surya <tsuryafajri@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1410,9 +1410,15 @@ msgstr ""
 "Klik dan pindahkan mouse ke sekitar untuk merubah gambar menjadi gambar "
 "dengan kapur."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik dan pindahkan mouse ke sekitar untuk membuat gambar drip."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Klik untuk mempertajam seluruh gambar."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

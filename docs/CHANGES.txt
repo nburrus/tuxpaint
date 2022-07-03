@@ -14,16 +14,26 @@ http://www.tuxpaint.org/
       an unexpected color to be chosen.
       h/t @kentonyanamin on Twitter for reporting.
       Closes https://sourceforge.net/p/tuxpaint/bugs/251/
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Line shape could report "360 degrees", which should be "0 degrees".
       h/t Karl Ove Hufthammer <karl@huftis.org> for the report
       Closes https://sourceforge.net/p/tuxpaint/bugs/255/
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Some Magic tools did not change descriptions when switching
       from paint to full-canvas mode.
       + Emboss
-      h/t Karl Ove Hufthammer <karl@huftis.org> for the report
-      Closes https://sourceforge.net/p/tuxpaint/bugs/257/
+      + Drip
+      h/t Karl Ove Hufthammer <karl@huftis.org> for the reports
+      (https://sourceforge.net/p/tuxpaint/bugs/256/
+      https://sourceforge.net/p/tuxpaint/bugs/257/)
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      & Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Full-screen Drip magic effect didn't work well
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      Closes https://sourceforge.net/p/tuxpaint/bugs/256/
 
   * Other Improvements:
     -------------------

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-05-19 23:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1404,11 +1404,17 @@ msgstr "खडू पिंतरावणेंत पिंतुर बदल
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "खडू पिंतरावणेंत पिंतुर बदलूंक, मावस क्लिक करून भोंवतणी व्हरचो."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "पिंतुराची थेंबकणी करूंक मावस क्लिक करून भोंवतणी व्हरचो."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "तुमच्या पुराय पिंतुराक धार काडूंक क्लिक करचें."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

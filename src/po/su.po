@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2011-05-27 06:24+0200\n"
 "Last-Translator: kumincir <ia.adnan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1384,10 +1384,15 @@ msgstr ""
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click to change the colors in your entire picture."
 msgid "Click and drag the mouse around to make the picture drip."
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+msgid "Click to make the entire picture drip."
 msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/blur.c:81

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-19 06:38+0000\n"
 "Last-Translator: OdettePretorius <odettepret@gmail.com>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
@@ -1402,9 +1402,15 @@ msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 "Klik en beweeg die muis om die prent na 'n bordkryt-tekening te verander."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klik en beweeg die muis om die prent te laat afdrup."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Klik om die hele prent skerper te maak."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

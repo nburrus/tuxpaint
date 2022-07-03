@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2015-10-09 20:33-0400\n"
 "Last-Translator: Mark K. Kim <mkkim214@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -1379,9 +1379,15 @@ msgstr "마우스를 누르고 끌면 그림이 분필로 만든 것 같이 되�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "마우스를 누르고 끌면 그림이 분필로 만든 것 같이 되어요."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "마우스를 누르고 끌면 그림이 흐르는 것 같이 되어요."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "마우스를 누르면 그림이 전채가 진해져요."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

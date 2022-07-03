@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2010-09-17 16:19+0200fu\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -1409,11 +1409,17 @@ msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 "Imata kandi oyetoroze mawusi okuhindura ekishushani kyawe okuba nkeinoni."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Imata kandi oyetoroze mawusi okuhindura ekishushani kyawe okutonyooka."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Imata kushongora ekishushani kyona."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

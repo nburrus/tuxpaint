@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2022-06-03 14:09+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -1374,9 +1374,16 @@ msgstr ""
 "クリックしたままマウスをうごかして えの ぜんたいを チョークでかいたみたいに "
 "しよう。"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "クリックしたまま マウスをうごかして えを ぬらしたように しよう。"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to make the entire picture blocky."
+msgid "Click to make the entire picture drip."
+msgstr ""
+"クリックして えの ぜんたいを ちいさな しかくでできた ギザギザの えに しよう。"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

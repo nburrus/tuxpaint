@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-06-16 23:33-0800\n"
 "Last-Translator: Anand Kulkarni <kulkarni1016@yahoo.co.in>\n"
 "Language-Team: none\n"
@@ -1409,11 +1409,17 @@ msgstr ""
 "ছবিটো এটা চক-পেঞ্চিল ড্ৰয়িং লৈ পৰিৱৰ্তন কৰিবলৈ মাউছটোত ক্লিক কৰক আৰু চাৰিওফালে "
 "ঘূৰাওক. "
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "ছবিটো টোপালৰ দৰে সজাবলৈ মাউছটোত ক্লিক কৰক আৰু চাৰিওফালে ঘূৰাওক. "
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "আপোনাৰ সম্পূৰ্ণ ছবিটোত তীক্ষ্ণ কৰিবলৈ ক্লিক কৰক."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

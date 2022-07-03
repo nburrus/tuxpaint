@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2015-03-09 11:22+0000\n"
 "Last-Translator: Nudjaree <poonim_p@hotmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1396,11 +1396,17 @@ msgstr "คลิกแล้วลากเมาส์ไปมาเพื่
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "คลิกแล้วลากเมาส์ไปมาเพื่อทำให้รูปเป็นรูปเขียนด้วยชอล์ก"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "คลิกแล้วลากเมาส์ไปมา เพื่อทำให้ขอบรูปแตกเป็นฝอยๆ"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "คลิกเพื่อให้เกิดความคมชัดของภาพทั้งหมด."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

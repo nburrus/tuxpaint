@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1402,11 +1402,17 @@ msgstr "লাই অদু চোক দ্রোইং অমদা ওন্�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "লাই অদু চোক দ্রোইং অমদা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "পিকচর দ্রিপ ওইহন্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "অদোমগী লাই অপুম্বদু হেন্না ময়েক শেংহন্নবা ক্লিক তৌরো."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-06-28 12:48+0200\n"
 "Last-Translator: Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>\n"
 "Language-Team: Hungarian <debian-l10n-hungarian@lists.d.o>\n"
@@ -1414,11 +1414,17 @@ msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Kattints oda a rajzodon, ahol krétával szeretnél rajzolni."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Kattints oda a rajzodon, ahova festéket szeretnél csepegtetni."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Kattints az egész kép élesítéséhez."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

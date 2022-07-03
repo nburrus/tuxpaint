@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-06 13:01-0300\n"
 "Last-Translator: Fred Ulisses Maranhão <fred.maranhao@gmail.com>\n"
 "Language-Team: none\n"
@@ -1406,9 +1406,15 @@ msgstr "Clique e arraste para transformar a figura em um desenho de giz."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Clique e arraste para transformar a figura em um desenho de giz."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Clique e arraste para a figura ficar escorrida."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Clique para deixar toda a figura mais nítida."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2022-07-03 13:23+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1456,9 +1456,15 @@ msgstr ""
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Trykk for å gjera heile teikninga om til ei kritteikning."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga drypande."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to make the entire picture blocky."
+msgid "Click to make the entire picture drip."
+msgstr "Trykk for å gjera heile teikninga «blokkete»."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

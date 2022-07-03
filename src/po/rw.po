@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1407,10 +1407,15 @@ msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Na Kwimura i Imbeba Kuri i() y'Ishusho a Igishushanyo"
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+msgid "Click to make the entire picture drip."
+msgstr "Kuri Ubwoko a Ishusho"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

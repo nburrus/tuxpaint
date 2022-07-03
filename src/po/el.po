@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2021-09-02 07:45+0000\n"
 "Last-Translator: kiolalis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
@@ -1416,10 +1416,16 @@ msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι για να μετατρέψεις τη ζωγραφιά σε σχέδιο με "
 "κιμωλία."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι γύρω για να κάνεις τη ζωγραφιά να στάζει."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Κάνε κλικ για να οξύνεις ολόκληρη τη ζωγραφιά σου."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

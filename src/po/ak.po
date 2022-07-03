@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2010-10-27 10:16-0000\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -1400,11 +1400,17 @@ msgstr "Kleeke na twe mauso no dane  nfonyin no ɛnyɛ sɛ kyɔɔkɔ drɔɔe."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Kleeke na twe mauso no dane  nfonyin no ɛnyɛ sɛ kyɔɔkɔ drɔɔe."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Kleeke na twe mauso no ma nfonyin no dreepe."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Cleeke na nfonyin no ani nnahɔ."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

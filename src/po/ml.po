@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -1410,12 +1410,18 @@ msgstr "ചിത്രത്തെ വെണ്മയുള്ളതാക്�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "ചിത്രത്തെ വെണ്മയുള്ളതാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ മതി."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr ""
 "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രത്തെ ഇറ്റിറ്റു വീഴുന്ന രീതിയിലാക്കാനാവും."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "ചിത്രം മുഴുവന്‍ കൃത്യതയുള്ളതാക്കാന്‍ അമര്‍ത്തുക"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

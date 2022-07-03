@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -1330,8 +1330,12 @@ msgstr ""
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
+msgstr ""
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+msgid "Click to make the entire picture drip."
 msgstr ""
 
 #: ../../magic/src/blur.c:81

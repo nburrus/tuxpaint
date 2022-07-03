@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2014-06-16 16:55+0530\n"
 "Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
 "Language-Team: none\n"
@@ -1407,11 +1407,17 @@ msgstr "चोक खुड़ी गार तेयार रे चिता�
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "चोक खुड़ी गार तेयार रे चितार आ़चुर ला़गित माउस गोटा सेत् लाड़ाव आर ओताय मे."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "चिता़र टोपोक् तेयार ला़गित् माउस गोटा सेत् आ़चुर आर ओताय मे."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "गोटा चिता़र लासेर ला़गित् ओताय मे."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

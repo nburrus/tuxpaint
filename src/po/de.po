@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-25 21:13+0200\n"
 "Last-Translator: Holger Wansing <hwansing@mailbox.org>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
@@ -1411,9 +1411,15 @@ msgid "Click to turn the entire picture into a chalk drawing."
 msgstr ""
 "Klicke und ziehe die Maus, um dein Bild in ein Kreidebild zu verwandeln."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klicke und ziehe die Maus, um das Bild tröpfelig zu machen."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Klicke, um das gesamte Bild schärfer zu machen."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

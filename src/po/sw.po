@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2010-11-04 23:59+0200\n"
 "Last-Translator: Emanuel Feruzi <emanuel.feruzi@trilabs.co.tz>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1402,11 +1402,17 @@ msgstr "Bofya na sogea kipanya kuchua picha na chaki."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Bofya na sogea kipanya kuchua picha na chaki."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Bofya na sogea kipanya kudondoshea picha."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Bofya kuchonga picha yote."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

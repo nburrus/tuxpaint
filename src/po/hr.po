@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-26 10:53+0100\n"
 "Last-Translator: Paulo Pavačić <pavacic.p@gmail.com>\n"
 "Language-Team: none\n"
@@ -1395,9 +1395,15 @@ msgstr "Klikni i pomakni miš. Na crtežu će se izmješati boje."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Klikni i pomakni miš. Na crtežu će se izmješati boje."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Klikni i pomakni miš. Na crtežu će se razlijati boje."
+
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Klikni da izoštriš cijelu sliku."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"

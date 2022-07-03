@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 16:31-0700\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
 "PO-Revision-Date: 2017-12-23 23:11+0100\n"
 "Last-Translator: Yacine Bouklif <yacine_tizi2003@yahoo.fr>\n"
 "Language-Team: \n"
@@ -1405,9 +1405,16 @@ msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna d unuɣ s unegmirs."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna d unuɣ s unegmirs."
 
-#: ../../magic/src/blocks_chalk_drip.c:174
+#: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Ssed u selḥu taɣerdayt iwakken ad terreḍ tugna tettuddum."
+
+#
+#: ../../magic/src/blocks_chalk_drip.c:180
+#, fuzzy
+#| msgid "Click to sharpen the entire picture."
+msgid "Click to make the entire picture drip."
+msgstr "Ssed iwakken ad d-tban tugna merra."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"
