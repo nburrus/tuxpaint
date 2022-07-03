@@ -8,7 +8,7 @@
                              @TuxPaintTweets（ツイッター）
                                Tux Paint（Tumblr）
 
-                                   2022年6月14日
+                                   2022年7月 2日
 
                     +-------------------------------------+
                     |目次                                   |
@@ -422,8 +422,11 @@ Tux Paint の起動
 
               * 右下にある茶色の「けす」(ゴミ箱) ボタンで、選択した作品を削除します。(本当に削除して良いか確認されます)
 
-                📜 注: Linux（バージョン 0.9.22以降）、Windows（バージョン
-                0.9.27以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
+                📜 Note: On Linux (as of version 0.9.22), Windows (as of
+                version 0.9.27), and macOS (as of version 0.9.29), the
+                picture will be placed in your desktop's trash can / recycle
+                bin (where you may recover and restore it, if you change your
+                mind).
 
               * 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例:
                 "~/Pictures/TuxPaint/")に画像を出力します。

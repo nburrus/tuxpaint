@@ -8,7 +8,7 @@
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                                 juin 14, 2022
+                                juillet 2, 2022
 
           +----------------------------------------------------------+
           |Table des matières                                        |
@@ -683,10 +683,11 @@ Outils disponibles
                 droite de la liste pour effacer l'image sélectionnée. (Il
                 vous sera demandé de confirmer.)
 
-                📜 Note: On Linux (as of version 0.9.22) and Windows (as of
-                version 0.9.27), the picture will be placed in your desktop's
-                trash can / recycle bin (where you may recover and restore
-                it, if you change your mind).
+                📜 Note: On Linux (as of version 0.9.22), Windows (as of
+                version 0.9.27), and macOS (as of version 0.9.29), the
+                picture will be placed in your desktop's trash can / recycle
+                bin (where you may recover and restore it, if you change your
+                mind).
 
               * Cliquez sur le bouton "Exporter" près du coin inférieur droit
                 pour exporter l'image vers votre dossier d'exportation. (par
