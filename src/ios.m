@@ -20,6 +20,7 @@
   (See COPYING.txt)
 */
 #include <string.h>
+#include <unistd.h>
 #include <sys/stat.h>
 #include <libgen.h>
 #include <limits.h>
@@ -85,4 +86,10 @@ const char *apple_globalPreferencesPath(void)
 const char *apple_picturesPath(void)
 {
     return IOS_PICTURES_PATH;
+}
+
+
+int apple_trash(const char *path)
+{
+    return unlink(path);
 }
