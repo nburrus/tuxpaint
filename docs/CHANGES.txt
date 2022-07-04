@@ -95,6 +95,8 @@ http://www.tuxpaint.org/
       Terrence Sheflin <terrence.sheflin@gmail.com>
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
+    * SDL2.0 version: Compatibility with SDL2_Pango 0.1.3.
+
     * New tool, "test-png", which exercises libpng library on
       a set of PNG image files, allowing us to find those which
       cause Tux Paint (via SDL_image, in turn via libpng) to
