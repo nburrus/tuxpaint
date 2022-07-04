@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - June 29, 2022
+# June 14, 2002 - July 3, 2022
 
 
 # The version number, for release:
@@ -313,6 +313,9 @@ NOSVGFLAG:=$(if $(SVG_LIB),,-DNOSVG$(warning No SVG for you!))
 
 # SVG support uses libcairo1
 OLDSVGFLAG:=$(if $(filter -lsvg-cairo,$(SVG_LIB)),-DOLD_SVG,)
+
+
+PNG_CFLAGS:=$(shell $(PKG_CONFIG) libpng --cflags)
 
 
 ifeq ($(hack),1)
@@ -715,6 +718,7 @@ clean:
 	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
 	@-rm -f dlllist a.exe
 	@-rm -f win32/Preprocessed.iss win32/tuxpaint-*.zip win32/tuxpaint-*.exe
+	@-rm -f test-png
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -1400,3 +1404,7 @@ $(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c
 
 .PHONY: magic-plugins
 magic-plugins:	src/tp_magic_api.h $(MAGIC_SO)
+
+test-png:	src/test-png.c
+	$(CC) $(PNG_CFLAGS) src/test-png.c -o test-png $(PNG)
+

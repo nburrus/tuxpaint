@@ -91,6 +91,12 @@ http://www.tuxpaint.org/
       Terrence Sheflin <terrence.sheflin@gmail.com>
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
+    * New tool, "test-png", which exercises libpng library on
+      a set of PNG image files, allowing us to find those which
+      cause Tux Paint (via SDL_image, in turn via libpng) to
+      report back warnings to STDERR.
+      h/t Tim Dickson, per https://sourceforge.net/p/tuxpaint/bugs/252/
+
   * Documentation updates:
     ---------------------
     * Update macOS build instructions for SDL2.0.
