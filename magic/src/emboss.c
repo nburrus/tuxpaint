@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 8, 2021
+  Last updated: July 3, 2022
   $Id$
 */
 
@@ -109,9 +109,12 @@ int emboss_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 }
 
 // Return our descriptions, localized:
-char *emboss_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+char *emboss_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
-  return (strdup(gettext_noop("Click and drag the mouse to emboss the picture.")));
+  if (mode == MODE_PAINT)
+    return (strdup(gettext_noop("Click and drag the mouse to emboss the picture.")));
+  else
+    return (strdup(gettext_noop("Click to emboss the entire picture.")));
 }
 
 

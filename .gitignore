@@ -17,3 +17,4 @@ TuxPaint.dmg
 src/po/POTFILES.in
 src/tuxpaint.desktop
 src/org.tuxpaint.Tuxpaint.appdata.xml
+test-png

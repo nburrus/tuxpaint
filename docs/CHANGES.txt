@@ -7,13 +7,33 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.July.02 (0.9.29)
+2022.July.3 (0.9.29)
   * Bug Fixes:
     ----------
     * Opening and immediately dismissing Color Mixer could cause
       an unexpected color to be chosen.
       h/t @kentonyanamin on Twitter for reporting.
       Closes https://sourceforge.net/p/tuxpaint/bugs/251/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Line shape could report "360 degrees", which should be "0 degrees".
+      h/t Karl Ove Hufthammer <karl@huftis.org> for the report
+      Closes https://sourceforge.net/p/tuxpaint/bugs/255/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Some Magic tools did not change descriptions when switching
+      from paint to full-canvas mode.
+      + Emboss
+      + Drip
+      h/t Karl Ove Hufthammer <karl@huftis.org> for the reports
+      (https://sourceforge.net/p/tuxpaint/bugs/256/
+      https://sourceforge.net/p/tuxpaint/bugs/257/)
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      & Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Full-screen Drip magic effect didn't work well
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      Closes https://sourceforge.net/p/tuxpaint/bugs/256/
 
   * Other Improvements:
     -------------------
@@ -30,6 +50,10 @@ http://www.tuxpaint.org/
     * When deleting a file on macOS, move the file to trash instead of deleting
       the file permanently.
       Mark Kim <markuskimius@gmail.com>
+
+    * Processed PNG images through `pngout` to increase some compression
+      (also corrects some warnings being reported by libpng (via SDL_image);
+      h/t Tim Dickson, closes https://sourceforge.net/p/tuxpaint/bugs/252/)
 
   * Ports & Building:
     -----------------
@@ -71,8 +95,14 @@ http://www.tuxpaint.org/
       Terrence Sheflin <terrence.sheflin@gmail.com>
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
-    * Compatibility with SDL2_Pango 0.1.3.
+    * SDL2.0 version: Compatibility with SDL2_Pango 0.1.3.
       Mark Kim <markuskimius@gmail.com>
+
+    * New tool, "test-png", which exercises libpng library on
+      a set of PNG image files, allowing us to find those which
+      cause Tux Paint (via SDL_image, in turn via libpng) to
+      report back warnings to STDERR.
+      h/t Tim Dickson, per https://sourceforge.net/p/tuxpaint/bugs/252/
 
   * Documentation updates:
     ---------------------
@@ -83,6 +113,9 @@ http://www.tuxpaint.org/
     ---------------------
     * Catalan translation
       Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Norwegian Nynorsk translation
+      Karl Ove Hufthammer <karl@huftis.org>
 
 2022.June.4 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:

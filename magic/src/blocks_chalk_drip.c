@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 8, 2021
+  Last updated: July 3, 2022
   $Id$
 */
 
@@ -171,7 +171,14 @@ char *blocks_chalk_drip_get_description(magic_api * api ATTRIBUTE_UNUSED, int wh
     }
   else if (which == TOOL_DRIP)
     {
-      return (strdup(gettext_noop("Click and drag the mouse around to make the picture drip.")));
+      if (mode == MODE_PAINT)
+        {
+          return (strdup(gettext_noop("Click and drag the mouse around to make the picture drip.")));
+        }
+      else
+        {
+          return (strdup(gettext_noop("Click to make the entire picture drip.")));
+        }
     }
 
   return (NULL);
@@ -324,13 +331,25 @@ void blocks_chalk_drip_click(magic_api * api, int which, int mode,
   if (mode == MODE_PAINT) {
     blocks_chalk_drip_drag(api, which, canvas, last, x, y, x, y, update_rect);
   } else /* MODE_FULLSCREEN */ {
-    for (y = 0; y < canvas->h; y += EFFECT_REZ) {
-      if (y % 10 == 0) {
-        api->update_progress_bar();
+    if (which != TOOL_DRIP) {
+      for (y = 0; y < canvas->h; y += EFFECT_REZ) {
+        if (y % 10 == 0) {
+          api->update_progress_bar();
+        }
+        for (x = 0; x < canvas->w; x += EFFECT_REZ) {
+          blocks_chalk_drip_linecb(api, which, canvas, last, x, y);
+        }
       }
-
-      for (x = 0; x < canvas->w; x += EFFECT_REZ) {
-        blocks_chalk_drip_linecb(api, which, canvas, last, x, y);
+    } else {
+      /* Drip (works from bottom-to-top) */
+      int p =  (canvas->h -1) % 10;
+      for (y = canvas->h -1; y >= 0; y -= EFFECT_REZ) {
+        if ((y + p) % 10 == 0) {
+          api->update_progress_bar();
+        }
+        for (x = 0; x < canvas->w; x += EFFECT_REZ) {
+          blocks_chalk_drip_linecb(api, which, canvas, last, x, y);
+        }
       }
     }
     update_rect->x = 0;
