@@ -96,6 +96,7 @@ http://www.tuxpaint.org/
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
     * SDL2.0 version: Compatibility with SDL2_Pango 0.1.3.
+      Mark Kim <markuskimius@gmail.com>
 
     * New tool, "test-png", which exercises libpng library on
       a set of PNG image files, allowing us to find those which
