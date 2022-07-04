@@ -49,6 +49,7 @@ int main(int argc, char * argv[]) {
   for (i = 1; i < argc; i++) {
     printf("%5d ------------------------------------------------------------------\n", i);
     printf("%s\n", argv[i]);
+    fflush(stdout);
 
     /* Open the file */
     fi = fopen(argv[i], "rb");
