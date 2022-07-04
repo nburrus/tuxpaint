@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-03 16:39-0700\n"
-"PO-Revision-Date: 2022-07-03 13:23+0200\n"
+"PO-Revision-Date: 2022-07-04 20:59+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -1461,10 +1461,8 @@ msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga drypande."
 
 #: ../../magic/src/blocks_chalk_drip.c:180
-#, fuzzy
-#| msgid "Click to make the entire picture blocky."
 msgid "Click to make the entire picture drip."
-msgstr "Trykk for å gjera heile teikninga «blokkete»."
+msgstr "Trykk for å gjera heile teikninga drypande."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"
@@ -1559,10 +1557,8 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til relieff."
 
 #: ../../magic/src/emboss.c:117
-#, fuzzy
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
-msgstr "Trykk for å gjera heile teikninga skarpare."
+msgstr "Trykk for å gjera heile teikninga om til relieff."
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
