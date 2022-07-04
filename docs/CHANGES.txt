@@ -51,6 +51,10 @@ http://www.tuxpaint.org/
       the file permanently.
       Mark Kim <markuskimius@gmail.com>
 
+    * Processed PNG images through `pngout` to increase some compression
+      (also corrects some warnings being reported by libpng (via SDL_image);
+      h/t Tim Dickson, closes https://sourceforge.net/p/tuxpaint/bugs/252/)
+
   * Ports & Building:
     -----------------
     * Change name of Tux Paint config. files from ".conf" to ".cfg"
