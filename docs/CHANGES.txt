@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.July.3 (0.9.29)
+2022.July.7 (0.9.29)
   * Bug Fixes:
     ----------
     * Opening and immediately dismissing Color Mixer could cause
@@ -92,6 +92,8 @@ http://www.tuxpaint.org/
 
     * Various Android port updates
       * FIXME: Pere & Terrence, can you enumerate them here???
+      * Changing Android save paths to now default to the 'external' dir from the device itself.
+        https://github.com/tux4kids/Tuxpaint-Android/pull/18
       Terrence Sheflin <terrence.sheflin@gmail.com>
       Pere Pujal i Carabantes <perepujal@gmail.com>
 

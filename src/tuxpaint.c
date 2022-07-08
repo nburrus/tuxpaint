@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 3, 2022
+  June 14, 2002 - July 7, 2022
 */
 
 #include "platform.h"
@@ -26406,6 +26406,12 @@ static void setup_config(char *argv[])
       picturesdir = GetUserImageDir();
 #elif __APPLE__
       picturesdir = strdup(apple_picturesPath());
+#elif __ANDROID__
+      picturesdir = strdup(SDL_AndroidGetExternalStoragePath());
+      char* substring = strstr(picturesdir, "/Android");
+      if (substring != NULL) {
+        strcpy(substring, "/Pictures");
+      }
 #else
       picturesdir = get_xdg_user_dir("PICTURES", "Pictures");
 #endif
