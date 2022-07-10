@@ -5,7 +5,7 @@
         Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               8 de Xullo de 2022
+                              10 de Xullo de 2022
 
              +----------------------------------------------------+
              |Índice                                              |
@@ -147,7 +147,7 @@ Simple DirectMedia Layer library (libSDL)
 
 Windows
 
-   8 de Xullo de 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
+   10 de Xullo de 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
 
   Compiling Set-Up
 
@@ -222,15 +222,13 @@ Windows
    This time, use the MinGW "64bit" shell. Open the shell from the "Start
    Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 64-bit"
 
-      SDL_Pango
+      SDL2_Pango
 
-   Download a patch from z1.plala.jp, which enable SDL2_Pango to create dlls,
-   then build and install SDL2_Pango as follows.
+   You can fetch the source code from the Mark K. Kim's git repositry,
+   compile and install it as follows.
 
-     $ wget https://z1.plala.jp/tuxpaint/SDL2_Pango-dll.patch
      $ git clone https://github.com/markuskimius/SDL2_Pango
      $ cd SDL2_Pango
-     $ patch -p0 < ../SDL2_Pango-dll.patch
      $ ./configure --prefix=/mingw64 && make && make install
 
       libunibreak
@@ -282,15 +280,13 @@ Windows
    This time, use the MinGW "32bit" shell. Open the shell from the "Start
    Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 32-bit"
 
-      SDL_Pango
+      SDL2_Pango
 
-   Download a patch from z1.plala.jp, which enable SDL2_Pango to create dlls,
-   then build and install SDL2_Pango as follows.
+   You can fetch the source code from the Mark K. Kim's git repositry,
+   compile and install it as follows.
 
-     $ wget https://z1.plala.jp/tuxpaint/SDL2_Pango-dll.patch
      $ git clone https://github.com/markuskimius/SDL2_Pango
      $ cd SDL2_Pango
-     $ patch -p0 < ../SDL2_Pango-dll.patch
      $ ./configure --prefix=/mingw32 && make && make install
 
       libunibreak
@@ -464,10 +460,11 @@ Windows
 
   If Something Goes Wrong
 
-   Se ao facer dobre clic no atallo para executar Tux Paint, non ocorre nada,
-   probabelmente sexa porque algunhas destas opcións da liña de ordes son
-   incorrectas. Abra un explorador de ficheiros coma antes e busque un
-   ficheiro chamado «stderr.txt» no cartafol TuxPaint.
+   If, when you double-click on the shortcut to run Tux Paint, nothing
+   happens, it is probably because some of these command-line options are
+   wrong. Open an Explorer, and look for a file called "stderr.txt" in your
+   personal saving folder for TuxPaint which is normaly
+   "C:\Users\username\AppData\Roaming\TuxPaint".
 
    Conterá unha descrición do que estaba mal. Normalmente só se debe a
    maiúsculas e minúsculas incorrectas (maiúsculas «Z» no canto de minúsculas
