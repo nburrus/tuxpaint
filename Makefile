@@ -301,7 +301,6 @@ SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL2_PANGO_LIB)
 
 SDL_CFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 
-FREETYPE_CFLAGS:=$(shell $(PKG_CONFIG) freetype2 --cflags)
 
 # New one: -lrsvg-2 -lcairo
 # Old one: -lcairo -lsvg -lsvg-cairo
@@ -327,7 +326,6 @@ hack:
 	@echo 'SVG_LIB       is' $(SVG_LIB)
 	@echo 'SDL_LIBS      is' $(SDL_LIBS)
 	@echo 'SDL_CFLAGS    is' $(SDL_CFLAGS)
-	@echo 'FREETYPE_CFLAGS  is' $(FREETYPE_CFLAGS)
 	@echo 'SVG_CFLAGS    is' $(SVG_CFLAGS)
 	@echo 'PAPER_LIB     is' $(PAPER_LIB)
 	@echo 'PNG           is' $(PNG)
@@ -1149,7 +1147,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-o tuxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
 	@$(RAD_CMD)
@@ -1185,7 +1183,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 # Broke gperf|sed up into two steps so that it will fail properly if gperf is not installed; there's probably a more elegant solution -bjk 2009.11.20
@@ -1219,7 +1217,7 @@ obj/i18n.o:	src/i18n.c src/i18n.h src/debug.h
 obj/im.o:	src/im.c src/im.h src/debug.h
 	@echo
 	@echo "...Compiling IM support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/im.c -o obj/im.o
 
 obj/get_fname.o:	src/get_fname.c src/get_fname.h src/debug.h
@@ -1232,26 +1230,26 @@ obj/fonts.o:	src/fonts.c src/fonts.h src/dirwalk.h src/progressbar.h \
 		src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling font support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/fonts.c -o obj/fonts.o
 
 obj/dirwalk.o:	src/dirwalk.c src/dirwalk.h src/progressbar.h src/fonts.h \
 		src/debug.h
 	@echo
 	@echo "...Compiling directory-walking support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/dirwalk.c -o obj/dirwalk.o
 
 obj/cursor.o:	src/cursor.c src/cursor.h src/debug.h
 	@echo
 	@echo "...Compiling cursor support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/cursor.c -o obj/cursor.o
 
 obj/pixels.o:	src/pixels.c src/pixels.h src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling pixel functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/pixels.c -o obj/pixels.o
 
 obj/gifenc.o:	src/gifenc.c src/gifenc.h
@@ -1264,72 +1262,72 @@ obj/playsound.o:	src/playsound.c src/playsound.h \
 			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling sound playback functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/playsound.c -o obj/playsound.o
 
 obj/fill.o:	src/fill.c src/fill.h \
 		src/rgblinear.h src/playsound.h src/pixels.h
 	@echo
 	@echo "...Compiling flood fill tool..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/fill.c -o obj/fill.o
 
 obj/progressbar.o:	src/progressbar.c src/progressbar.h \
 			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling progress bar functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/progressbar.c -o obj/progressbar.o
 
 obj/rgblinear.o:	src/rgblinear.c src/rgblinear.h \
 			src/compiler.h src/debug.h
 	@echo
 	@echo "...Compiling RGB to Linear functions..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/rgblinear.c -o obj/rgblinear.o
 
 obj/sounds.o:	src/sounds.c src/sounds.h
 	@echo
 	@echo "...Compiling sound effect list..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/sounds.c -o obj/sounds.o
 
 
 obj/BeOS_print.o:	src/BeOS_print.cpp src/BeOS_print.h
 	@echo
 	@echo "...Compiling BeOS print support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
 obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo
 	@echo "...Compiling win32 print support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/win32_print.c -o obj/win32_print.o
 
 obj/win32_trash.o:	src/win32_trash.c src/debug.h
 	@echo
 	@echo "...Compiling win32 trash support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/win32_trash.c -o obj/win32_trash.o
 
 obj/postscript_print.o:	src/postscript_print.c \
 			src/postscript_print.h src/debug.h
 	@echo
 	@echo "...Compiling PostScript print support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/postscript_print.c -o obj/postscript_print.o
 
 obj/macos.o: src/macos.m src/macos.h src/platform.h src/debug.h
 	@echo
 	@echo "...Compiling macOS support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/macos.m -o obj/macos.o
 
 obj/ios.o: src/ios.m src/ios.h src/platform.h src/debug.h
 	@echo
 	@echo "...Compiling iOS support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/ios.m -o obj/ios.o
 
 obj/resource.o:	win32/resources.rc win32/resource.h
@@ -1341,7 +1339,7 @@ obj/onscreen_keyboard.o:	src/onscreen_keyboard.c src/onscreen_keyboard.h src/dir
 		src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling on screen keyboard support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FREETYPE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/onscreen_keyboard.c -o obj/onscreen_keyboard.o
 
 src/tp_magic_api.h:	src/tp_magic_api.h.in
