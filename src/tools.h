@@ -197,6 +197,9 @@ const char *const tool_tips[NUM_TOOLS] = {
 #define TIP_BRUSH_SPACING_MORE gettext_noop("This brush's spacing is now about %d times as big as the brush shape.")
 #define TIP_BRUSH_SPACING_MORE_FRAC gettext_noop("This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush shape.")
 
+// Instructions to show when rotating stamps
+#define TIP_STAMPS_ROTATING gettext_noop("Drag the mouse to rotate the stamp. Click to draw it.")
+
 
 /* Tool icon filenames: */
 

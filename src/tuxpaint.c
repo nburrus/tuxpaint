@@ -564,6 +564,9 @@ static void apply_label_node(int old_x, int old_y);
 static void reposition_onscreen_keyboard(int y);
 
 
+static void reset_stamps(int * stamp_xored_rt, int * stamp_place_x, int * stamp_place_y, int * stamp_tool_mode);
+
+
 /* EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL */
 #ifndef __APPLE__
 #if VIDEO_BPP==32
@@ -1371,6 +1374,7 @@ static int dont_load_stamps;
 static int mirrorstamps;
 static int disable_stamp_controls;
 static int stamp_size_override = -1;
+static int stamp_rotation = 0;
 static int new_colors_last;
 
 #ifdef NOKIA_770
@@ -2016,7 +2020,7 @@ SDL_Joystick *joystick;
 static void mainloop(void);
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
 static void blit_brush(int x, int y, int direction, double rotation, int * w, int * h);
-static void stamp_draw(int x, int y);
+static void stamp_draw(int x, int y, int stamp_angle_rotation);
 static void rec_undo_buffer(void);
 
 void show_version(int details);
@@ -2062,7 +2066,7 @@ static void reset_brush_counter(void);
 #define update_stamp_xor()
 #else
 static void stamp_xor(int x1, int y1);
-static void update_stamp_xor(void);
+static void update_stamp_xor(int stamp_angle_rotation);
 #endif
 
 static void set_active_stamp(void);
@@ -2445,6 +2449,13 @@ enum
 
 int shape_reverse;
 
+
+enum
+{
+  STAMP_TOOL_MODE_PLACE,
+  STAMP_TOOL_MODE_ROTATE,
+  STAMP_TOOL_MODE_DONE
+};
 on_screen_keyboard *new_kbd;
 SDL_Rect kbd_rect;
 
@@ -2479,6 +2490,10 @@ static void mainloop(void)
   int line_start_y = 0;
   int stamp_size_selector_clicked = 0;
   int stamp_xored = 0;
+  int stamp_xored_rt = 0;
+  int stamp_place_x = 0;
+  int stamp_place_y = 0;
+  int stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
 
 #ifdef AUTOSAVE_GOING_BACKGROUND
   char *fname;
@@ -2516,6 +2531,7 @@ static void mainloop(void)
   shape_current_x = 0;
   shape_current_y = 0;
   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+  stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
   button_down = 0;
   last_cursor_blink = cur_toggle_count = 0;
   texttool_len = 0;
@@ -2674,6 +2690,7 @@ static void mainloop(void)
                   if (!done)
                     {
                       magic_switchin(canvas);
+                      reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                       if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                         {
@@ -3475,8 +3492,9 @@ static void mainloop(void)
                               draw_stamps();
                               draw_colors(stamp_colorable(cur_stamp[stamp_group]) ||
                                           stamp_tintable(cur_stamp[stamp_group]));
+			      reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
                               set_active_stamp();
-                              update_stamp_xor();
+			      update_stamp_xor(0);
                             }
                           else if (cur_tool == TOOL_LINES)
                             {
@@ -3632,6 +3650,7 @@ static void mainloop(void)
                               draw_toolbar();
                               update_screen_rect(&r_tools);
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+			      reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
                             }
                           else if (cur_tool == TOOL_REDO)
                             {
@@ -3646,6 +3665,7 @@ static void mainloop(void)
                               draw_toolbar();
                               update_screen_rect(&r_tools);
                               shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+			      reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
                             }
                           else if (cur_tool == TOOL_OPEN)
                             {
@@ -3675,7 +3695,10 @@ static void mainloop(void)
                               else if (cur_tool == TOOL_MAGIC)
                                 draw_magic();
                               else if (cur_tool == TOOL_STAMP)
-                                draw_stamps();
+				{
+				  draw_stamps();
+				  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+				}
                               else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                                 {
                                   draw_fonts();
@@ -3718,6 +3741,8 @@ static void mainloop(void)
                                       SDL_StartTextInput();
                                     }
                                 }
+			      else if (old_tool == TOOL_STAMP)
+				reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                               cur_tool = old_tool;
                               draw_toolbar();
@@ -3755,7 +3780,10 @@ static void mainloop(void)
                               else if (cur_tool == TOOL_MAGIC)
                                 draw_magic();
                               else if (cur_tool == TOOL_STAMP)
-                                draw_stamps();
+				{
+				  draw_stamps();
+				  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+				}
                               else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                                 {
                                   draw_fonts();
@@ -3799,6 +3827,8 @@ static void mainloop(void)
                                       SDL_StartTextInput();
                                     }
                                 }
+			      else if (old_tool == TOOL_STAMP)
+				reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                               cur_tool = old_tool;
                               draw_toolbar();
@@ -3823,6 +3853,8 @@ static void mainloop(void)
 
                                     }
                                 }
+			      else if (old_tool == TOOL_STAMP)
+				reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                               cur_tool = old_tool;
                               draw_toolbar();
@@ -4051,6 +4083,12 @@ static void mainloop(void)
 
                           if (cur_tool == TOOL_STAMP)
                             {
+			       if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+				 {
+				   stamp_xor(stamp_place_x, stamp_place_y);
+				   reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+				 }
+
                               /* Stamp controls! */
                               int control_sound = -1;
 
@@ -4164,7 +4202,8 @@ static void mainloop(void)
                                   draw_stamps();
                                   update_screen_rect(&r_toolopt);
                                   set_active_stamp();
-                                  update_stamp_xor();
+                                  update_stamp_xor(0);
+				  stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
                                 }
                             }
                           else if (cur_tool == TOOL_MAGIC)
@@ -4811,7 +4850,8 @@ static void mainloop(void)
                             {
                               cur_stamp[stamp_group] = cur_thing;
                               set_active_stamp();
-                              update_stamp_xor();
+                              update_stamp_xor(0);
+			      stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
                             }
 
                           if (do_draw)
@@ -4966,7 +5006,20 @@ static void mainloop(void)
                               else if (cur_tool == TOOL_MAGIC)
                                 draw_magic();
                               else if (cur_tool == TOOL_STAMP)
-                                draw_stamps();
+				{
+				  if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+				    stamp_xor(stamp_place_x, stamp_place_y);
+				  else if (stamp_xored)
+				    {
+				      stamp_xor(canvas->w / 2, canvas->h / 2);
+				      stamp_xored = 0;
+				      update_screen(canvas->w / 2 - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+						    canvas->h / 2 - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
+						    canvas->w / 2 + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+						    canvas->h / 2 + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
+				    }
+				  draw_stamps();
+				}
                               else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                                 draw_fonts();
                               else if (cur_tool == TOOL_SHAPES)
@@ -5752,23 +5805,50 @@ static void mainloop(void)
                     }
                   else if (cur_tool == TOOL_STAMP)
                     {
-                      if (old_x >= 0 && old_y >= 0 && old_x <= r_canvas.w && old_y <= r_canvas.h)
-                        {
-                          /* Draw a stamp! */
+		      if (stamp_tool_mode == STAMP_TOOL_MODE_PLACE)
+			{
+			  if (old_x >= 0 && old_y >= 0 && old_x <= r_canvas.w && old_y <= r_canvas.h)
+			    {
+			      if (stamp_rotation)
+				{
+				  stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
+				  stamp_place_x = old_x;
+				  stamp_place_y = old_y;
+				  draw_tux_text(TUX_GREAT, TIP_STAMPS_ROTATING, 1);
+				}
+			      else
+				{
+				  /* Draw a stamp! */
+				  rec_undo_buffer();
+				  playsound(screen, 1, SND_STAMP, 1, event.button.x, SNDDIST_NEAR);
+				  stamp_draw(old_x, old_y, 0);
+				  reset_stamps(&stamp_xored_rt, &old_x, &old_y, &stamp_tool_mode);
 
-                          rec_undo_buffer();
+				  draw_tux_text(TUX_GREAT, great_str(), 1);
 
-                          stamp_draw(old_x, old_y);
-                          stamp_xor(old_x, old_y);
-                          playsound(screen, 1, SND_STAMP, 1, event.button.x, SNDDIST_NEAR);
+				  /* FIXME: Make delay configurable: */
 
-                          draw_tux_text(TUX_GREAT, great_str(), 1);
+				  control_drawtext_timer(1000, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt,
+							 stamp_data[stamp_group][cur_stamp[stamp_group]]->locale_text);
+				}
+			    }
+			}
+		      else if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+			{
+			  /* Draw a stamp! */
+			  rec_undo_buffer();
+			  playsound(screen, 1, SND_STAMP, 1, stamp_place_x, SNDDIST_NEAR);
+			  int stamp_angle_rotation = 360 - brush_rotation(stamp_place_x, stamp_place_y, old_x, old_y);
+                          stamp_draw(stamp_place_x, stamp_place_y, stamp_angle_rotation);
+			  draw_tux_text(TUX_GREAT, great_str(), 1);
+			  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
-                          /* FIXME: Make delay configurable: */
+			  /* FIXME: Make delay configurable: */
 
-                          control_drawtext_timer(1000, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt,
+			  control_drawtext_timer(1000, stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt,
                                                  stamp_data[stamp_group][cur_stamp[stamp_group]]->locale_text);
-                        }
+
+			}
                     }
 
                   else if (cur_tool == TOOL_LINES)
@@ -6122,7 +6202,12 @@ static void mainloop(void)
                   if (cur_tool == TOOL_BRUSH)
                     do_setcursor(cursor_brush);
                   else if (cur_tool == TOOL_STAMP)
-                    do_setcursor(cursor_tiny);
+		    {
+		      if (stamp_tool_mode != STAMP_TOOL_MODE_ROTATE)
+			do_setcursor(cursor_tiny);
+		      else
+			do_setcursor(cursor_rotate);
+		    }
                   else if (cur_tool == TOOL_LINES || cur_tool == TOOL_FILL)
                     do_setcursor(cursor_crosshair);
                   else if (cur_tool == TOOL_SHAPES)
@@ -6364,14 +6449,31 @@ static void mainloop(void)
                     {
                       if (cur_tool == TOOL_STAMP)
                         {
-                          /* Stamp */
-                          stamp_xor(old_x, old_y);
+			  if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+			    {
+			      stamp_xor(stamp_place_x, stamp_place_y);
+			      update_stamp_xor(360 - brush_rotation(stamp_place_x, stamp_place_y, old_x, old_y));
+			      stamp_xor(stamp_place_x, stamp_place_y);
 
-                          update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
-                                        old_y - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
-                                        old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
-                                        old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
-                        }
+			      /* The half of maximum size the stamp could have when rotating. */
+			      int half_bigbox = sqrt((CUR_STAMP_W + 1) * (CUR_STAMP_W + 1) + (CUR_STAMP_H + 1) * (CUR_STAMP_H + 1)) / 2;
+			      update_screen(stamp_place_x - half_bigbox + r_canvas.x,
+					    stamp_place_y - half_bigbox + r_canvas.y,
+					    stamp_place_x + half_bigbox + r_canvas.x,
+					    stamp_place_y + half_bigbox + r_canvas.y);
+			    }
+			  else if (stamp_xored_rt)
+			    {
+                          /* Stamp */
+			      stamp_xor(old_x, old_y);
+			      stamp_xored_rt = !stamp_xored_rt;
+
+			      update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+					    old_y - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
+					    old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
+					    old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
+			    }
+			}
                       else
                         {
                           if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
@@ -6390,14 +6492,15 @@ static void mainloop(void)
                                         old_x + w / 2 + r_canvas.x, old_y + h / 2 + r_canvas.y);
                         }
                     }
-
                   if (new_x >= 0 && new_x < r_canvas.w && new_y >= 0 && new_y < r_canvas.h)
                     {
                       if (cur_tool == TOOL_STAMP)
                         {
                           /* Stamp */
-                          stamp_xor(new_x, new_y);
-
+			  if (stamp_tool_mode != STAMP_TOOL_MODE_ROTATE){
+			    stamp_xor(new_x, new_y);
+			    stamp_xored_rt = 1;
+			}
                           update_screen(old_x - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
                                         old_y - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
                                         old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x,
@@ -6461,7 +6564,7 @@ static void mainloop(void)
                                             canvas->h / 2 + (h + 1) / 2 + r_canvas.y);
                             }
 
-                          update_stamp_xor();
+                          update_stamp_xor(0);
                           stamp_xor(canvas->w / 2, canvas->h / 2);
                           stamp_xored = 1;
                           update_screen(canvas->w / 2 - (CUR_STAMP_W + 1) / 2 + r_canvas.x,
@@ -7276,14 +7379,13 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
   vector_tint_surface(tmp_surf, surf_ptr);
 }
 
-
 /**
  * Draw the current stamp onto the canvas.
  *
  * @param x X coordinate
  * @param y Y coordinate
  */
-static void stamp_draw(int x, int y)
+static void stamp_draw(int x, int y, int stamp_angle_rotation)
 {
   SDL_Rect dest;
   SDL_Surface *scaled_surf, *tmp_surf, *surf_ptr;
@@ -7395,17 +7497,23 @@ static void stamp_draw(int x, int y)
       dont_free_scaled_surf = 1;
     }
 
+  /* Rotate the stamp if stamp_rotation is configured */
+  if (stamp_angle_rotation)
+    tmp_surf = rotozoomSurface(tmp_surf, stamp_angle_rotation, 1.0, SMOOTHING_ON);
+
   /* Where it will go? */
-  base_x = x - (CUR_STAMP_W + 1) / 2;
-  base_y = y - (CUR_STAMP_H + 1) / 2;
+  base_x = x - (tmp_surf->w + 1) / 2;
+  base_y = y - (tmp_surf->h + 1) / 2;
+
 
   /* And blit it! */
   dest.x = base_x;
   dest.y = base_y;
   SDL_BlitSurface(tmp_surf, NULL, canvas, &dest);     /* FIXME: Conditional jump or move depends on uninitialised value(s) */
 
-  update_canvas(x - (CUR_STAMP_W + 1) / 2,
-                y - (CUR_STAMP_H + 1) / 2, x + (CUR_STAMP_W + 1) / 2, y + (CUR_STAMP_H + 1) / 2);
+
+  update_canvas(x - (tmp_surf->w + 1) / 2,
+                y - (tmp_surf->h + 1) / 2, x + (tmp_surf->w + 1) / 2, y + (tmp_surf->h + 1) / 2);
 
   /* Free the temporary surfaces */
 
@@ -18333,10 +18441,29 @@ static char stiple[] =
 static unsigned char *stamp_outline_data;
 static int stamp_outline_w, stamp_outline_h;
 
+
+static void reset_stamps(int * stamp_xored_rt, int * stamp_place_x, int * stamp_place_y, int * stamp_tool_mode)
+{
+  printf("%d %d\n", stamp_xored_rt,*stamp_xored_rt);
+   if (!active_stamp)
+     return;
+   /* if (*stamp_xored_rt == 1) */
+   /*  stamp_xor(*stamp_place_x, *stamp_place_y); */
+   *stamp_xored_rt = 0;
+   *stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
+   int half_bigbox = sqrt((CUR_STAMP_W + 1) * (CUR_STAMP_W + 1) + (CUR_STAMP_H + 1) * (CUR_STAMP_H + 1)) / 2;
+   update_screen(*stamp_place_x - half_bigbox + r_canvas.x,
+		 *stamp_place_y - half_bigbox + r_canvas.y,
+		 *stamp_place_x + half_bigbox + r_canvas.x,
+		 *stamp_place_y + half_bigbox + r_canvas.y);
+   update_stamp_xor(0);
+}
+
+
 /**
  * FIXME
  */
-static void update_stamp_xor(void)
+static void update_stamp_xor(int stamp_angle_rotation)
 {
   int xx, yy, rx, ry;
   Uint8 dummy;
@@ -18353,6 +18480,9 @@ static void update_stamp_xor(void)
 
   /* start by scaling */
   src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
+
+  if(stamp_angle_rotation)
+    src = rotozoomSurface(src, stamp_angle_rotation, 1.0, SMOOTHING_ON);
 
   getpixel = getpixels[src->format->BytesPerPixel];
   alphabits = calloc(src->w + 4, src->h + 4);
@@ -26526,6 +26656,7 @@ static void setup_config(char *argv[])
   SETBOOL(hide_cursor);
   SETBOOL(keymouse);
   SETBOOL(mirrorstamps);
+  SETBOOL(stamp_rotation);
   SETBOOL(native_screensize);
   SETBOOL(new_colors_last);
   SETBOOL(no_button_distinction);

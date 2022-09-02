@@ -24,6 +24,7 @@ struct cfginfo
   const char *disable_stamp_controls;
   const char *dont_do_xor;
   const char *dont_load_stamps;
+  const char *stamp_rotation;
   const char *exportdir;
   const char *fullscreen;
   const char *grab_input;
