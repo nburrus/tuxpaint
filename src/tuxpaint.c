@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 7, 2022
+  June 14, 2002 - September 2, 2022
 */
 
 #include "platform.h"
@@ -5811,6 +5811,13 @@ static void mainloop(void)
 			    {
 			      if (stamp_rotation)
 				{
+                                  /* Going through stamp rotation step, first */
+
+                                  /* Warp mouse to the far right of the stamp,
+                                     where we'll start at 0-degrees of rotation */
+                                  SDL_WarpMouse(old_x + active_stamp->w, old_y);
+                                  do_setcursor(cursor_rotate);
+
 				  stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
 				  stamp_place_x = old_x;
 				  stamp_place_y = old_y;
@@ -5835,7 +5842,7 @@ static void mainloop(void)
 			}
 		      else if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
 			{
-			  /* Draw a stamp! */
+			  /* Draw a stamp (finishing rotation step)! */
 			  rec_undo_buffer();
 			  playsound(screen, 1, SND_STAMP, 1, stamp_place_x, SNDDIST_NEAR);
 			  int stamp_angle_rotation = 360 - brush_rotation(stamp_place_x, stamp_place_y, old_x, old_y);

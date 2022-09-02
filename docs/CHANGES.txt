@@ -7,7 +7,14 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.July.7 (0.9.29)
+2022.September.2 (0.9.29)
+  * Improvements to "Stamp" tool:
+    -----------------------------
+    * WIP - Stamps may now be rotated.
+      Use the "--stamp-rotation" option.  FIXME: Likely to
+      become default, with a "--no..." option.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
   * Bug Fixes:
     ----------
     * Opening and immediately dismissing Color Mixer could cause
