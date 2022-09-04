@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.September.2 (0.9.29)
+2022.September.4 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * WIP - Stamps may now be rotated.
@@ -17,6 +17,12 @@ http://www.tuxpaint.org/
 
   * Bug Fixes:
     ----------
+    * Always creating 24-bit canvases, in an attempt to avoid blending
+      artifacts, e.g., when applying brush strokes using the Paint tool.
+      (Previously, we were using the display's color depth and masks,
+      which seemed to work fine under SDL1.2, but does not under SDL2.)
+      Closes https://sourceforge.net/p/tuxpaint/bugs/259/
+
     * Opening and immediately dismissing Color Mixer could cause
       an unexpected color to be chosen.
       h/t @kentonyanamin on Twitter for reporting.

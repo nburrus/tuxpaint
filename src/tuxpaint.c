@@ -28079,13 +28079,15 @@ static void setup(void)
   printf("Canvas size is %d x %d\n", canvas_width, canvas_height);
 #endif
 
-  canvas = SDL_CreateRGBSurface(screen->flags, canvas_width, canvas_height,
-                                screen->format->BitsPerPixel,
-                                screen->format->Rmask, screen->format->Gmask, screen->format->Bmask, 0);
+  /* Per https://wiki.libsdl.org/SDL_CreateRGBSurface,
+     * the flags are unused and should be set to 0
+     * Using zeros for the RGB masks sets a default value, based on the depth.
+  */
+  canvas = SDL_CreateRGBSurface(0, canvas_width, canvas_height,
+                                24, 0, 0, 0, 0);
 
-  save_canvas = SDL_CreateRGBSurface(screen->flags, canvas_width, canvas_height,
-                                     screen->format->BitsPerPixel,
-                                     screen->format->Rmask, screen->format->Gmask, screen->format->Bmask, 0);
+  save_canvas = SDL_CreateRGBSurface(0, canvas_width, canvas_height,
+                                24, 0, 0, 0, 0);
 
 
   img_starter = NULL;
