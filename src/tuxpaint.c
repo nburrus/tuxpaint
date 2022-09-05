@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 2, 2022
+  June 14, 2002 - September 5, 2022
 */
 
 #include "platform.h"
@@ -13947,10 +13947,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   if (alpha_surf != NULL)
     {
-
-      SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
-
+      SDL_FillRect(alpha_surf, NULL, SDL_MapRGBA(alpha_surf->format, 0, 0, 0, 64));
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -22453,6 +22450,9 @@ static Uint8 magic_touched(int x, int y)
  * Allow the user to select a color from one of the
  * pixels within their picture.
  *
+ * A small dialog will appear over the color palette
+ * at the bottom of the screen.
+ *
  * @param boolean temp_mode - whether to only appear
  *   while a shortcut key is being held
  *   (if not, the mouse will be positioned at the bottom
@@ -22564,8 +22564,7 @@ static int do_color_sel(int temp_mode)
 
   if (alpha_surf != NULL)
     {
-      SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
+      SDL_FillRect(alpha_surf, NULL, SDL_MapRGBA(alpha_surf->format, 0, 0, 0, 64));
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -22929,9 +22928,7 @@ static int do_color_picker(void)
 
   if (alpha_surf != NULL)
     {
-      SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
-
+      SDL_FillRect(alpha_surf, NULL, SDL_MapRGBA(alpha_surf->format, 0, 0, 0, 64));
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -23655,8 +23652,7 @@ static int do_color_mix(void)
 
   if (alpha_surf != NULL)
     {
-      SDL_FillRect(alpha_surf, NULL, SDL_MapRGB(alpha_surf->format, 0, 0, 0));
-      SDL_SetSurfaceAlphaMod(alpha_surf, 64);
+      SDL_FillRect(alpha_surf, NULL, SDL_MapRGBA(alpha_surf->format, 0, 0, 0, 64));
 
       for (i = 8; i > 0; i = i - 2)
         {
@@ -23667,6 +23663,7 @@ static int do_color_mix(void)
 
           SDL_BlitSurface(alpha_surf, NULL, screen, &dest);
         }
+
 
       SDL_FreeSurface(alpha_surf);
     }
