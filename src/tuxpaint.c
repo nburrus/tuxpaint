@@ -1374,7 +1374,7 @@ static int dont_load_stamps;
 static int mirrorstamps;
 static int disable_stamp_controls;
 static int stamp_size_override = -1;
-static int stamp_rotation = 0;
+static int no_stamp_rotation = 0;
 static int new_colors_last;
 
 #ifdef NOKIA_770
@@ -5809,7 +5809,7 @@ static void mainloop(void)
 			{
 			  if (old_x >= 0 && old_y >= 0 && old_x <= r_canvas.w && old_y <= r_canvas.h)
 			    {
-			      if (stamp_rotation)
+			      if (!no_stamp_rotation)
 				{
                                   /* Going through stamp rotation step, first */
 
@@ -7504,7 +7504,7 @@ static void stamp_draw(int x, int y, int stamp_angle_rotation)
       dont_free_scaled_surf = 1;
     }
 
-  /* Rotate the stamp if stamp_rotation is configured */
+  /* Rotate the stamp (if no_stamp_rotation is not configured) */
   if (stamp_angle_rotation)
     tmp_surf = rotozoomSurface(tmp_surf, stamp_angle_rotation, 1.0, SMOOTHING_ON);
 
@@ -26660,7 +26660,7 @@ static void setup_config(char *argv[])
   SETBOOL(hide_cursor);
   SETBOOL(keymouse);
   SETBOOL(mirrorstamps);
-  SETBOOL(stamp_rotation);
+  SETBOOL(no_stamp_rotation);
   SETBOOL(native_screensize);
   SETBOOL(new_colors_last);
   SETBOOL(no_button_distinction);

@@ -10,9 +10,8 @@ http://www.tuxpaint.org/
 2022.September.5 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
-    * WIP - Stamps may now be rotated.
-      Use the "--stamp-rotation" option.  FIXME: Likely to
-      become default, with a "--no..." option.
+    * Stamps may now be rotated.
+      Use the "stamprotation=no" option to disable.
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
   * Bug Fixes:
