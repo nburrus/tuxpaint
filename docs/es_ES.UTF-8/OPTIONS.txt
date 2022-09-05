@@ -389,6 +389,20 @@ Simplification
            "nostampcontrols=no" or "stampcontrols=yes". In both cases, may be
            overridden by the command-line option "--stampcontrols".
 
+   nostamprotation=yes
+
+           This disables the rotation step of the Stamps tool, immediately
+           placing the stamp in its regular orientation (with any flipping or
+           mirroring applied) on the first click.
+
+           📜 Note: The stamp rotation feature was added to Tux Paint in
+           version 0.9.29.
+
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "nostamprotation=no" or "stamprotation=yes". In both cases, may be
+           overridden by the command-line option "--stamprotation".
+
    nomagiccontrols=yes
 
            Some Magic tools have the option of acting like a paintbrush, or
@@ -1379,6 +1393,7 @@ Joystick
      --nooutlines
      --nostamps
      --nostampcontrols
+     --nostamprotation
      --nomagiccontrols
      --noshapecontrols
      --nolabel
@@ -1453,6 +1468,7 @@ Joystick
      --outlines
      --stamps
      --stampcontrols
+     --stamprotation
      --magiccontrols
      --shapecontrols
      --label

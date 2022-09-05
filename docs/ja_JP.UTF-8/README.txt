@@ -216,7 +216,28 @@ Tux Paint の起動
 
            「はんこ」ツールは、スタンプやステッカーを集めたようなものです。馬や木、月など、あらかじめ用意された様々な写真やイラストを絵に貼り付けることができます。
 
-           マウスのカーソル動きに応じて画像の輪郭が表示され、貼り付け位置と大きさがわかります。
+           As you move the mouse around the canvas, an outline follows the
+           mouse, showing where the stamp will be placed, and how big it will
+           be. Click on the canvas where you wish to place the stamp.
+
+                Normal Stamps Mode
+
+                        Now you can move the mouse around the canvas to
+                        rotate the stamp.
+
+                        Click the mouse button again and the stamp will be
+                        added to the drawing.
+
+                Simple Stamps Mode
+                        If "stamp rotation" option is disabled, the stamp
+                        will be drawn on the canvas when you let go of the
+                        mouse button. (There's no rotation step.)
+
+                        ⚙ "stamp rotation" ("stamprotation")
+                        についての詳細は、各種設定について" のドキュメントを参照して下さい。
+
+           📜 Note: The stamp rotation feature was added to Tux Paint in
+           version 0.9.29.
 
            スタンプは、動物、植物、宇宙、乗り物、人物といった多くのカテゴリに分類されています。セレクタの左右の矢印のボタンを使ってカテゴリを切り替えることができます。
 

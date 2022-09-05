@@ -622,6 +622,19 @@
     </dd>
 
     <dt>
+      <code><b>nostamprotation=yes</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        This disables the rotation step of the <b>Stamps</b> tool, immediately placing the stamp in its regular orientation (with any flipping or mirroring applied) on the first click.      </p>
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The stamp rotation feature was added to Tux Paint in version 0.9.29.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>注:</strong> システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>nostamprotation=no</code>" または "<code>stamprotation=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--stamprotation</code>" で変更できます。      </p>
+    </dd>
+
+    <dt>
       <code><b>nomagiccontrols=yes</b></code>
     </dt>
 
@@ -2297,6 +2310,7 @@
           --nooutlines<br>
           --nostamps<br>
           --nostampcontrols<br>
+          --nostamprotation<br>
           --nomagiccontrols<br>
           --noshapecontrols<br>
           --nolabel<br>
@@ -2375,6 +2389,7 @@
           --outlines<br>
           --stamps<br>
           --stampcontrols<br>
+          --stamprotation<br>
           --magiccontrols<br>
           --shapecontrols<br>
           --label<br>

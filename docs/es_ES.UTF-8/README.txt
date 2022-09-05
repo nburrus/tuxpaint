@@ -308,7 +308,26 @@ Available Tools
 
            As you move the mouse around the canvas, an outline follows the
            mouse, showing where the stamp will be placed, and how big it will
-           be. Click to place the stamp.
+           be. Click on the canvas where you wish to place the stamp.
+
+                Normal Stamps Mode
+
+                        Now you can move the mouse around the canvas to
+                        rotate the stamp.
+
+                        Click the mouse button again and the stamp will be
+                        added to the drawing.
+
+                Simple Stamps Mode
+                        If "stamp rotation" option is disabled, the stamp
+                        will be drawn on the canvas when you let go of the
+                        mouse button. (There's no rotation step.)
+
+                        ⚙ See the "Options" documentation to learn about the
+                        "stamp rotation" ("stamprotation") option.
+
+           📜 Note: The stamp rotation feature was added to Tux Paint in
+           version 0.9.29.
 
            There can be numerous categories of stamps (e.g., animals, plants,
            outer space, vehicles, people, etc.). Use the Left and Right

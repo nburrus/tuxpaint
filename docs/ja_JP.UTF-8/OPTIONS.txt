@@ -318,6 +318,20 @@ Windows のユーザー
            を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--stampcontrols"
            で変更できます。
 
+   nostamprotation=yes
+
+           This disables the rotation step of the Stamps tool, immediately
+           placing the stamp in its regular orientation (with any flipping or
+           mirroring applied) on the first click.
+
+           📜 Note: The stamp rotation feature was added to Tux Paint in
+           version 0.9.29.
+
+           ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nostamprotation=no"
+           または "stamprotation=yes"
+           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--stamprotation"
+           で変更できます。
+
    nomagiccontrols=yes
 
            「まほう」ツールの中には、「ふで」ツールのように画像の一部分だけに効果を及ぼすか、キャンバス全体に効果を及ぼすかを選択できるものがあります。このオプションを設定すると、「まほう」ツールの動作の選択を無効にして、ツールごとに標準の動作だけをするようにします。（たいていは「ふで」のような動作になります）
@@ -1174,6 +1188,7 @@ Windows のユーザー
      --nooutlines
      --nostamps
      --nostampcontrols
+     --nostamprotation
      --nomagiccontrols
      --noshapecontrols
      --nolabel
@@ -1247,6 +1262,7 @@ Windows のユーザー
      --outlines
      --stamps
      --stampcontrols
+     --stamprotation
      --magiccontrols
      --shapecontrols
      --label

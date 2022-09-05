@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2022.06.04
-.TH TUXPAINT 1 "2022年6月 4日" "0.9.29" "Tux Paint"
+.\" tuxpaint.1 - 2022.09.05
+.TH TUXPAINT 1 "2022年9月 5日" "0.9.29" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -64,6 +64,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-nostamps]
 .br
 [\-\-nostampcontrols]
+.br
+[\-\-nostamprotation]
 .br
 [\-\-nomagiccontrols]
 .br
@@ -210,6 +212,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-stamps]
 .br
 [\-\-stampcontrols]
+.br
+[\-\-stamprotation]
 .br
 [\-\-magiccontrols]
 .br
@@ -408,6 +412,11 @@ Paint takes to load, and reduce the amount of RAM it requires.
 Disable or enable (default) buttons to control stamps.  Controls include
 mirror, flip, shrink and grow.  (Note: Not all stamps will be controllable
 in all ways.)
+
+.TP 8
+.B \-\-nostamprotation \-\-stamprotation
+Disable or enable (default) the rotation step when placing a stamp in the
+drawing.
 
 .TP 8
 .B \-\-nomagiccontrols \-\-magiccontrols
