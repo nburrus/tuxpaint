@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.September.5 (0.9.29)
+2022.September.7 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -21,9 +21,11 @@ http://www.tuxpaint.org/
       (Previously, we were using the display's color depth and masks,
       which seemed to work fine under SDL1.2, but does not under SDL2.)
       Closes https://sourceforge.net/p/tuxpaint/bugs/259/
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Mended issue that prevented pop-up prompt's drop-shadows
       from rendering (under SDL2).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Opening and immediately dismissing Color Mixer could cause
       an unexpected color to be chosen.
