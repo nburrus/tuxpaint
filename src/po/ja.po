@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-05 00:48-0700\n"
-"PO-Revision-Date: 2022-06-03 14:09+0900\n"
+"PO-Revision-Date: 2022-09-08 12:01+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -317,29 +317,38 @@ msgid ""
 "and an encouraging cartoon mascot who guides children as they use the "
 "program."
 msgstr ""
+"Tux Paintは、3歳から12歳までの子供を対象とした、受賞歴のある無料のお絵かきプ"
+"ログラムです。Tux Paint は、コンピュータ・リテラシーのためのお絵かき教材とし"
+"て世界中の学校で使用されています。使いやすいインターフェイス、楽しいサウンド"
+"エフェクトを備え、頼もしいマスコットが、プログラムを使う子供たちをガイドして"
+"くれます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
 msgstr ""
+"真っ白なキャンバスとさまざまな描画ツールが用意されており、子供達が創造力を発"
+"揮するのを助けます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
-msgstr ""
+msgstr "New Breed Software ほか"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:36
 msgid "The Magic tool is a set of special effects"
-msgstr ""
+msgstr "「まほう」ツールには、多くの特殊効果があります。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:40
 msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
 msgstr ""
+"「ふで」ツールでは、さまざまなブラシや色を使って、フリーハンドで絵を描くこと"
+"ができます"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:44
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
-msgstr ""
+msgstr "「はんこ」ツールは、スタンプやシールのセットのようなものです"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -348,6 +357,9 @@ msgid ""
 "blue) and shades (white, grey, and black) to create new colors, similar to "
 "mixing paints."
 msgstr ""
+"Tux Paint のカラーパレットには、新たに「カラーミキサー」オプションが加わり、"
+"絵の具を混ぜるように、異なる割合の原色（赤、黄、青）とシェード（白、グレー、"
+"黒）を組み合わせて、新しい色を作り出すことができるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
@@ -356,6 +368,8 @@ msgid ""
 "and value settings, allowing users to choose from over sixteen million "
 "colors."
 msgstr ""
+"カラーピッカーは、従来は約6万5千色の固定パレットでしたが、色相、彩度、明度の"
+"個別設定に対応し、1600万色以上の色を選択できるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
@@ -363,6 +377,8 @@ msgid ""
 "Selector — the \"pipette\" tool used for picking colors from the current "
 "drawing."
 msgstr ""
+"また、カラーセレクター（絵の中から色を抽出するためのピペットツール）に素早く"
+"アクセスするためのキーボードショートカットが利用できるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
@@ -370,6 +386,9 @@ msgid ""
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
 "have been given better default spacing values, as well."
 msgstr ""
+"「ふで」ツールと「せん」ツールでは、描画の間隔を調整する方法が追加され、点線"
+"やスミアの効果を作ることができるようになりました。また、多くのブラシでデフォ"
+"ルトの間隔が改善されました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
@@ -378,6 +397,10 @@ msgid ""
 "across the canvas in tiles, rather than filling the canvas with a solid "
 "background color. The Rush tool blurs the results."
 msgstr ""
+"「まほう」ツールの「ズーム」に、「タイルズーム」と「ワープ」の2つのバリエー"
+"ションが追加されました。「タイルズーム」は、キャンバスを背景色で塗りつぶすの"
+"ではなく、キャンバス全体にタイル状に描画を複製します。ラッシュツールは、ズー"
+"ム後に結果をぼかします。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
@@ -387,6 +410,9 @@ msgid ""
 "adjustments. Instructional information shown while using some other tools "
 "has also been expanded."
 msgstr ""
+"「かたち」ツールで、六角形と七角形が描けるようになりました。長方形、楕円な"
+"ど、引き伸ばせる図形は、下部に縦横比を表示しながら調整できるようになりまし"
+"た。その他、一部のツールで表示される操作説明も充実させました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid ""
@@ -395,6 +421,10 @@ msgid ""
 "macOS. Sizing of Tux Paint's built-in on-screen keyboard has been improved. "
 "The look and feel of the user documentation has been improved."
 msgstr ""
+"macOS で Tux Paint を使用する場合、[Control]+[S] による図面の保存などのキー"
+"ボードショートカットは、より標準的な [⌘ Command] キーでアクセスするようになり"
+"ました。タックスペイントに内蔵された画面キーボードのサイズ調整が改良されまし"
+"た。ユーザードキュメントの見映えが改善されました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
@@ -404,6 +434,11 @@ msgid ""
 "brush shape selector. Additionally, the Fill tool now offers a freehand "
 "painting mode for interactively coloring within a confined area."
 msgstr ""
+"「ふで」ツールと「せん」ツールは、線を描く角度に応じて回転するブラシをサポー"
+"トするようになりました。この新しい回転機能は、これまでの方向を持つブラシやア"
+"ニメーションするブラシと同様に、セレクタ上でわかりやすくに表示されるようにな"
+"りました。また、塗りつぶしツールにはフリーハンドモードが追加され、塗りつぶし"
+"たい範囲にインタラクティブに色を塗ることができるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -415,6 +450,12 @@ msgid ""
 "fun-house mirror. Lastly, Smooth Rainbow provides a more gradual variation "
 "of Tux Paint's classic Rainbow tool."
 msgstr ""
+"6つの新しい「まほう」ツールが追加されました。「パネル」は、描画を 2×2 のグ"
+"リッドに縮小して複製するので、4 コマ漫画の作成に便利です。「いろはんてん」は"
+"補色を生成します。「いなずま」 は、稲妻をインタラクティブに描画します。「はん"
+"しゃ」は、湖のような反射を描画します。「のびちぢみ」は、絵を伸ばしたり縮めた"
+"りすることができます。「なめらかなにじ」は、以前からある「にじ」ツールよりも"
+"スムーズなグラデーションの虹を描きます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
@@ -424,6 +465,10 @@ msgid ""
 "television screen. Additionally, Cartoon and Halftone, along with Blocks, "
 "Chalk, and Emboss, now offer the ability to alter the entire image at once!"
 msgstr ""
+"また、既存の「まほう」ツールの多くが改良されました。新聞紙に写真を貼ったよう"
+"な「ハーフトーン」、漫画のような画像にする「まんが」、テレビ画面のような「テ"
+"レビ」などが改良されました。さらに、「まんが」「ハーフトーン」「ブロック」"
+"「チョーク」「うきぼり」では、画像全体を一度に変更できるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
@@ -432,6 +477,8 @@ msgid ""
 "artistic, and picture decorations — making it easier to find the tool you "
 "need."
 msgstr ""
+"「まほう」ツールは、効果の特徴ごとにグループ分けされて、使いたいツールを簡単"
+"に見つけることができるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
@@ -440,6 +487,10 @@ msgid ""
 "the mouse click, while the \"Linear\" fill allows the interactive creation "
 "of gradients at different angles and sizes."
 msgstr ""
+"塗りつぶしツールに、グラデーションで領域を塗りつぶすオプションが追加されまし"
+"た。「ほうしゃ」は、クリック位置を中心とした放射状のグラデーションを作成し、"
+"「リニア」は、さまざまな方向や大きさのグラデーションをインタラクティブに作成"
+"できます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
@@ -448,6 +499,9 @@ msgid ""
 "canvas with a check pattern, and \"Clone\" allows duplicating parts of the "
 "picture via brush strokes."
 msgstr ""
+"新しい「まほう」ツールが追加されました。「ピクセル」はレトロゲーム風のピクセ"
+"ルアートを簡単に作成でき、「チェッカーボード」はキャンバス全体をチェック柄で"
+"塗りつぶし、「クローン」はマウス操作で絵の一部を複製することが可能です。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
@@ -455,6 +509,8 @@ msgid ""
 "easier. Parties interested in helping with localization are encouraged to "
 "contact the Tux Paint team."
 msgstr ""
+"ユーザードキュメントが一新され、各種言語への翻訳がより簡単になりました。翻訳"
+"にご興味のある方は、タックスペイントチームまでご連絡ください。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
@@ -465,6 +521,11 @@ msgid ""
 "be helpful to users of coarse input devices, such as eye-gaze tracking "
 "systems."
 msgstr ""
+"新しいアクセシビリティオプションが追加されました。ユーザーインターフェース全"
+"体を拡大表示できるようになり、昨今の高解像度ディスプレイにおいても視力の弱い"
+"ユーザーに適したソフトウェアになっています。この機能は、カラーパレットを再構"
+"成する新しいオプションとともに、視線追跡システムのような、細かい操作が難しい"
+"入力デバイスを利用するユーザーにも役立ちます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
@@ -472,6 +533,8 @@ msgid ""
 "options to choose whether shapes are drawn from the center or a corner, "
 "making it easier to use in any situation."
 msgstr ""
+"図形ツールの大きな改良点として、図形を中心から描くか端から描くかを選択できる"
+"ようになり、あらゆる場面で使いやすくなりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
@@ -479,12 +542,17 @@ msgid ""
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
+"画面キーボードは画面のサイズに応じて大きく表示されるようになり、視線入力シス"
+"テムなどの細かい操作が難しい入力デバイスを利用するユーザーにとって使いやすく"
+"なりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
 msgstr ""
+"「けしゴム」ツールには、新たに小さな消しゴムサイズが追加され、ポインターを素"
+"早く動かしたときに、より滑らかで連続した動きをするようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
@@ -492,6 +560,8 @@ msgid ""
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
 "with others."
 msgstr ""
+"最新バージョンでは、個々の作品やGIFアニメーションをエクスポートするオプション"
+"が追加され、作品を簡単に他の人と共有することができます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
@@ -502,6 +572,11 @@ msgid ""
 "also be placed at the end of that dialog, allowing emphasis of template "
 "images."
 msgstr ""
+"これまでは「まほう」ツールに含まれていた塗りつぶしツールを、見つけやすくなる"
+"よう、メインのツールバーに移動しました。また、起動時や「さいしょから」ダイア"
+"ログを表示する際のパフォーマンスの改善も行われています。また、「さいしょか"
+"ら」ダイアログで様々なテンプレート画像の方を目立たせたい場合には、単色のキャ"
+"ンバスを末尾に配置することができるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
@@ -509,6 +584,8 @@ msgid ""
 "benefit users with a hearing impairment, or in situations where only one "
 "speaker is available."
 msgstr ""
+"また、聴覚に障害のあるユーザーや、スピーカーが1つしかない場合に有効な、ステレ"
+"オサウンドの無効化も可能になりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
@@ -516,6 +593,9 @@ msgid ""
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
 msgstr ""
+"このバージョンでは、マウスを用いて画像の中の任意の色を選択できる「カラーピッ"
+"カー」と、「かたち」ツールに、三芒星、四芒星、五芒星が新たに追加されていま"
+"す。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid ""
@@ -524,6 +604,10 @@ msgid ""
 "Kabyle, Urdu, and Devanagari and Perso-Arabic variations of Kashmiri and "
 "Sindhi. Thirty other translations have been updated, as well."
 msgstr ""
+"また、最新版では、対応する言語は130近くまで増えました。新たに翻訳が追加された"
+"言語は、ベンガル語、ボド語、ドグリ語、カビル語、ウルドゥー語、また、デーヴァ"
+"ナーガリー及びペルソ・アラビア語バリエーションのカシミール語、そしてシンド語"
+"です。その他にも、30種類の翻訳が更新されました。"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -998,10 +1082,8 @@ msgstr ""
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:201
-#, fuzzy
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid "Drag the mouse to rotate the stamp. Click to draw it."
-msgstr "マウスをうごかして かたちをまわそう。クリックしたら できあがり。"
+msgstr "マウスをうごかして はんこをまわそう。クリックしたら できあがり。"
 
 #  FIXME: Move elsewhere!!!
 #. Prompt to confirm user wishes to quit
@@ -1314,8 +1396,6 @@ msgstr ""
 "しい いろを つくろう"
 
 #: ../tuxpaint.desktop.in:6
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "tuxpaint"
 msgstr "タックスペイント"
 
@@ -1368,7 +1448,7 @@ msgstr ""
 #: ../../magic/src/blocks_chalk_drip.c:158
 msgid "Click to make the entire picture blocky."
 msgstr ""
-"クリックして えの ぜんたいを ちいさな しかくでできた ギザギザの えに しよう。"
+"えを クリックして ぜんたいを ちいさな しかくでできた ギザギザの えに しよう。"
 
 #: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
@@ -1377,20 +1457,15 @@ msgstr "クリックしたままマウスをうごかして チョークでか�
 
 #: ../../magic/src/blocks_chalk_drip.c:169
 msgid "Click to turn the entire picture into a chalk drawing."
-msgstr ""
-"クリックしたままマウスをうごかして えの ぜんたいを チョークでかいたみたいに "
-"しよう。"
+msgstr "えを クリックして ぜんたいを チョークでかいたみたいに しよう。"
 
 #: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "クリックしたまま マウスをうごかして えを ぬらしたように しよう。"
 
 #: ../../magic/src/blocks_chalk_drip.c:180
-#, fuzzy
-#| msgid "Click to make the entire picture blocky."
 msgid "Click to make the entire picture drip."
-msgstr ""
-"クリックして えの ぜんたいを ちいさな しかくでできた ギザギザの えに しよう。"
+msgstr "えを クリックして ぜんたいを ぬらしたように しよう。"
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"
@@ -1435,7 +1510,7 @@ msgstr "クリックしたままマウスをうごかして まんがみたい�
 
 #: ../../magic/src/cartoon.c:125
 msgid "Click to turn the entire picture into a cartoon."
-msgstr "クリックして えの ぜんたいを まんがみたいに しよう。"
+msgstr "えを クリックして ぜんたいを まんがみたいに しよう。"
 
 #: ../../magic/src/checkerboard.c:100
 msgid "Checkerboard"
@@ -1485,10 +1560,8 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr "クリックしたまま マウスをうごかして えを うきぼりに しよう。"
 
 #: ../../magic/src/emboss.c:117
-#, fuzzy
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
-msgstr "えを クリックして ぜんたいを くっきり させよう。"
+msgstr "えを クリックして ぜんたいを うきぼりに しよう。"
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
@@ -1560,7 +1633,7 @@ msgstr "クリックしたまま マウスをうごかして くりかえしも�
 
 #: ../../magic/src/fretwork.c:195
 msgid "Click to surround your picture with repetitive patterns."
-msgstr "クリック して えの ぜんたいに くりかえしもようを かこう。"
+msgstr "えを クリックして ぜんたいに くりかえしもようを かこう。"
 
 #: ../../magic/src/glasstile.c:105
 msgid "Glass Tile"
@@ -1634,15 +1707,17 @@ msgstr ""
 
 #: ../../magic/src/kalidescope.c:164
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "クリックしたまま マウスをうごかして えの ぜんたいに もようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして えの ぜんたいに たくさんの おなじかたち"
+"の もようを かこう。"
 
 #: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr ""
-"クリックしたまま マウスをうごかして えの ぜんたいに たいしょうてきな もよう"
-"を かこう。"
+"クリックしたまま マウスをうごかして えの ぜんたいに たくさんの たいしょうてき"
+"な もようを かこう。"
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:172
@@ -1728,7 +1803,7 @@ msgstr "クリックしたまま マウスをうごかして しかっけいの 
 
 #: ../../magic/src/mosaic_shaped.c:142
 msgid "Click to add a square mosaic to your entire picture."
-msgstr "クリック して えのぜんたいを しかくい モザイクに しよう。"
+msgstr "えを クリックして ぜんたいを しかくい モザイクに しよう。"
 
 #: ../../magic/src/mosaic_shaped.c:146
 msgid ""
@@ -1737,7 +1812,7 @@ msgstr "クリックしたまま マウスをうごかして ろっかっけい�
 
 #: ../../magic/src/mosaic_shaped.c:147
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr "クリック して えのぜんたいを ろっかくけいの モザイクに しよう。"
+msgstr "えを クリックして ぜんたいを ろっかくけいの モザイクに しよう。"
 
 #: ../../magic/src/mosaic_shaped.c:151
 msgid ""
@@ -1747,7 +1822,7 @@ msgstr ""
 
 #: ../../magic/src/mosaic_shaped.c:152
 msgid "Click to add an irregular mosaic to your entire picture."
-msgstr "クリック して えのぜんたいを ふきそくな モザイクに しよう。"
+msgstr "えを クリックして ぜんたいを ふきそくな モザイクに しよう。"
 
 #: ../../magic/src/negative.c:73
 msgid "Negative"
@@ -1892,7 +1967,7 @@ msgstr "クリックしたばしょに あめを ふらせよう。"
 
 #: ../../magic/src/rain.c:77
 msgid "Click to cover your picture with rain drops."
-msgstr "えをクリックして ぜんたいに あめを ふらせよう。"
+msgstr "えを クリックして ぜんたいに あめを ふらせよう。"
 
 #  msgid "Rainbow"
 #: ../../magic/src/realrainbow.c:99
