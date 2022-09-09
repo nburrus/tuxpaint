@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 00:48-0700\n"
-"PO-Revision-Date: 2022-05-17 13:51+0100\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
+"PO-Revision-Date: 2022-09-08 15:03+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -125,11 +125,11 @@ msgstr "Bege!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:196
+#: ../dirwalk.c:188
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:196
+#: ../dirwalk.c:188
 msgid "QX"
 msgstr "QX"
 
@@ -139,48 +139,48 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:221
+#: ../dirwalk.c:213
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:224
+#: ../dirwalk.c:216
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:227
+#: ../dirwalk.c:219
 msgid "`%_@$~#{<(^&*"
 msgstr "`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:230
+#: ../dirwalk.c:222
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:233
+#: ../dirwalk.c:225
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:236
+#: ../dirwalk.c:228
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:240
+#: ../dirwalk.c:232
 msgid "<1>spare-1a"
 msgstr "<1>reservar-1a"
 
-#: ../dirwalk.c:241
+#: ../dirwalk.c:233
 msgid "<1>spare-1b"
 msgstr "<1>reservar-1b"
 
-#: ../dirwalk.c:242
+#: ../dirwalk.c:234
 msgid "<9>spare-9a"
 msgstr "<9>reservar-9a"
 
-#: ../dirwalk.c:243
+#: ../dirwalk.c:235
 msgid "<9>spare-9b"
 msgstr "<9>reservar-9b"
 
@@ -245,32 +245,32 @@ msgid "Good job!"
 msgstr "Bom trabalho!"
 
 #. Input Method: English mode
-#: ../im.c:88
+#: ../im.c:80
 msgid "English"
 msgstr "Inglês"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:91
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:94
+#: ../im.c:86
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:97
+#: ../im.c:89
 msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#: ../im.c:100
+#: ../im.c:92
 msgid "Thai"
 msgstr "Tailandês"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:103
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "Mandarim tradicional"
 
@@ -321,29 +321,39 @@ msgid ""
 "and an encouraging cartoon mascot who guides children as they use the "
 "program."
 msgstr ""
+"O Tux Paint é um programa de desenho gratuito e premiado para crianças dos 3 "
+"aos 12 anos de idade. O Tux Paint é utilizado em escolas de todo o mundo "
+"como uma atividade de desenho de literacia informática. Combina uma "
+"interface fácil de usar, efeitos sonoros divertidos, e uma mascote de "
+"desenhos animados encorajadora que guia as crianças enquanto utilizam o "
+"programa."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
 msgstr ""
+"É apresentado às crianças uma tela em branco e uma variedade de ferramentas "
+"de desenho para as ajudar a serem criativas."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
-msgstr ""
+msgstr "New Breed Software et al."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:36
 msgid "The Magic tool is a set of special effects"
-msgstr ""
+msgstr "A ferramenta de Magia é um conjunto de efeitos especiais"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:40
 msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
 msgstr ""
+"A ferramenta Pincel permite-te desenhar à mão livre, usando vários pincéis e "
+"cores"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:44
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
-msgstr ""
+msgstr "A ferramenta Carimbo é como um conjunto de carimbos ou autocolantes"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -352,6 +362,10 @@ msgid ""
 "blue) and shades (white, grey, and black) to create new colors, similar to "
 "mixing paints."
 msgstr ""
+"A paleta de cores do Tux Paint inclui uma nova opção de misturador de cores, "
+"que permite aos utilizadores combinar diferentes proporções de cores "
+"primárias (vermelho, amarelo e azul) e tonalidades (branco, cinzento e "
+"preto) para criar novas cores, semelhantes à mistura de tintas."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
@@ -360,6 +374,10 @@ msgid ""
 "and value settings, allowing users to choose from over sixteen million "
 "colors."
 msgstr ""
+"A opção Seletor de cores, que anteriormente oferecia uma paleta estática de "
+"cerca de sessenta e cinco mil escolhas de cores, suporta agora tonalidade "
+"separada, saturação, e definições de valores, permitindo aos utilizadores "
+"escolher entre mais de dezasseis milhões de cores."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
@@ -367,6 +385,9 @@ msgid ""
 "Selector — the \"pipette\" tool used for picking colors from the current "
 "drawing."
 msgstr ""
+"Além disso, está agora disponível uma tecla de atalho para acesso rápido ao "
+"Seletor de cores - a ferramenta \"pipeta\" utilizada para escolher cores do "
+"desenho atual."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
@@ -374,6 +395,10 @@ msgid ""
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
 "have been given better default spacing values, as well."
 msgstr ""
+"As ferramentas de Pintura e Linhas proporcionam agora uma forma de ajustar o "
+"espaçamento dos pincéis, permitindo a realização de linhas pontilhadas ou "
+"efeitos de manchas. Muitos pincéis foram também dotados de melhores valores "
+"de espaçamento padrão."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
@@ -382,6 +407,10 @@ msgid ""
 "across the canvas in tiles, rather than filling the canvas with a solid "
 "background color. The Rush tool blurs the results."
 msgstr ""
+"Duas novas variações da Ferramenta de Magia Zoom, Agrupar ampliação e "
+"Apressar, foram adicionadas. Ao encolher um desenho com o Agrupar ampliação, "
+"este replica o desenho através da tela em mosaicos, em vez de encher a tela "
+"com uma cor de fundo sólida. A ferramenta Apressar desfoca os resultados."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
@@ -391,6 +420,11 @@ msgid ""
 "adjustments. Instructional information shown while using some other tools "
 "has also been expanded."
 msgstr ""
+"A ferramenta Formas do Tux Paint oferece agora polígonos hexagonais (6 "
+"lados) e heptagonais (7 lados). Para formas que podem ser esticadas "
+"(retângulo, oval, etc.), a relação de aspeto da forma é exibida na parte "
+"inferior enquanto faz os seus ajustes. A informação instrutiva mostrada "
+"durante a utilização de algumas outras ferramentas foi também expandida."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid ""
@@ -399,6 +433,10 @@ msgid ""
 "macOS. Sizing of Tux Paint's built-in on-screen keyboard has been improved. "
 "The look and feel of the user documentation has been improved."
 msgstr ""
+"Teclas de atalho, tais como [Control]+[S] para guardar um desenho, são agora "
+"acedidos com a tecla mais tradicional [⌘ Command] quando se usa o Tux Paint "
+"no macOS. O dimensionamento do teclado Tux Paint incorporado no ecrã foi "
+"melhorado. O aspeto da documentação do utilizador foi melhorado."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
@@ -408,6 +446,12 @@ msgid ""
 "brush shape selector. Additionally, the Fill tool now offers a freehand "
 "painting mode for interactively coloring within a confined area."
 msgstr ""
+"As ferramentas Pintura e Linhas do Tux Paint suportam agora pincéis que "
+"rodam com base no ângulo do curso. Esta nova funcionalidade de rotação, bem "
+"como as funcionalidades mais antigas do pincel direcional e animado, são "
+"agora visualmente indicadas pelo seletor de formas do pincel. Além disso, a "
+"ferramenta Preenchimento oferece agora um modo de pintura à mão livre para "
+"colorir interactivamente dentro de uma área confinada."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -419,6 +463,13 @@ msgid ""
 "fun-house mirror. Lastly, Smooth Rainbow provides a more gradual variation "
 "of Tux Paint's classic Rainbow tool."
 msgstr ""
+"Seis novas ferramentas de Magia foram adicionadas ao Tux Paint. Painéis "
+"encolhem e duplicam o desenho numa grelha 2 por 2, que é útil para fazer "
+"banda desenhada de quatro painéis. Oposto produz cores complementares. "
+"Relâmpago interativo desenha um relâmpago. Reflexão cria uma reflexão em "
+"forma de lago sobre o desenho. Esticar, estica o desenho como um espelho de "
+"uma casa divertida. Finalmente, o Arco-íris suave proporciona uma variação "
+"mais gradual da ferramenta clássica do Tux Paint Arco-íris."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
@@ -428,6 +479,12 @@ msgid ""
 "television screen. Additionally, Cartoon and Halftone, along with Blocks, "
 "Chalk, and Emboss, now offer the ability to alter the entire image at once!"
 msgstr ""
+"Foram também atualizadas várias ferramentas de Magia existentes. Foram "
+"feitos melhoramentos em Meio tom, que simula fotografias em papel de jornal; "
+"Desenho animado, que faz uma imagem parecer um desenho animado; e TV, que "
+"simula um ecrã de televisão. Além disso, Desenho animado e Meio tom, "
+"juntamente com Blocos, Giz e Relevo, oferecem agora a possibilidade de "
+"alterar toda a imagem de uma só vez!"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
@@ -436,6 +493,10 @@ msgid ""
 "artistic, and picture decorations — making it easier to find the tool you "
 "need."
 msgstr ""
+"Finalmente, as ferramentas de Magia estão agora agrupadas em coleções de "
+"efeitos semelhantes - pintura, distorções, filtros de cor, distorção de "
+"desenhos, pintura de padrões, artística e decoração de desenhos - tornando "
+"mais fácil encontrar a ferramenta de que necessita."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
@@ -444,6 +505,11 @@ msgid ""
 "the mouse click, while the \"Linear\" fill allows the interactive creation "
 "of gradients at different angles and sizes."
 msgstr ""
+"A ferramenta de Preenchimento do Tux Paint oferece agora opções para "
+"preencher uma área com gradientes de cor. O preenchimento \"Radial\" cria um "
+"gradiente circular centrado à volta do clique do rato, enquanto o "
+"preenchimento \"Linear\" permite a criação interativa de gradientes em "
+"diferentes ângulos e tamanhos."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
@@ -452,6 +518,10 @@ msgid ""
 "canvas with a check pattern, and \"Clone\" allows duplicating parts of the "
 "picture via brush strokes."
 msgstr ""
+"Novas ferramentas de Magia foram adicionadas ao Tux Paint: \"Píxeis\" "
+"facilita a criação de arte píxel de estilo retro-jogo, \"Xadrez\" preenche "
+"toda a tela com um padrão de verificação, e \"Clonar\" permite duplicar "
+"partes da imagem através de pinceladas."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
@@ -459,6 +529,9 @@ msgid ""
 "easier. Parties interested in helping with localization are encouraged to "
 "contact the Tux Paint team."
 msgstr ""
+"A documentação do utilizador do Tux Paint foi revista, tornando a "
+"localização mais fácil. As partes interessadas em ajudar na localização são "
+"encorajadas a contactar a equipa do Tux Paint."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
@@ -469,6 +542,12 @@ msgid ""
 "be helpful to users of coarse input devices, such as eye-gaze tracking "
 "systems."
 msgstr ""
+"Finalmente, foi adicionado um novo par de opções de acessibilidade. Toda a "
+"interface do utilizador pode agora ser alargada, beneficiando os "
+"utilizadores com deficiência visual, e tornando o programa mais adequado a "
+"ecrãs de densidade muito elevada. Esta funcionalidade, juntamente com uma "
+"nova opção para reorganizar a paleta de cores, também pode ser útil aos "
+"utilizadores de dispositivos ásperos, tais como sistemas de rastreio ocular."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
@@ -476,6 +555,9 @@ msgid ""
 "options to choose whether shapes are drawn from the center or a corner, "
 "making it easier to use in any situation."
 msgstr ""
+"Foi feita uma grande melhoria na ferramenta Formas, que agora oferece opções "
+"para escolher se as formas são desenhadas a partir do centro ou de um canto, "
+"tornando-a mais fácil de usar em qualquer situação."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
@@ -483,12 +565,18 @@ msgid ""
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
+"O teclado no ecrã, uma funcionalidade de acessibilidade disponível "
+"opcionalmente quando se utilizam as ferramentas de Texto e Etiqueta, aparece "
+"agora maior em ecrãs maiores; útil para utilizadores de dispositivos mais "
+"ásperos, tais como sistemas de rastreio ocular."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
 msgstr ""
+"A ferramenta Borracha adiciona novos tamanhos de borracha mais pequenos, e "
+"aplica traços mais suaves e contíguos quando o ponteiro é movido rapidamente."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
@@ -496,6 +584,9 @@ msgid ""
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
 "with others."
 msgstr ""
+"Finalmente, esta versão mais recente adiciona opções para exportar desenhos "
+"individuais e animações GIF, facilitando a partilha de desenhos, desenhos "
+"animados e apresentações de diapositivos com outros."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
@@ -506,6 +597,12 @@ msgid ""
 "also be placed at the end of that dialog, allowing emphasis of template "
 "images."
 msgstr ""
+"A última versão promoveu a ferramenta \"Preenchimento\", anteriormente "
+"encontrada na secção \"Magia\" do Tux Paint, até à barra de ferramentas "
+"principal, onde é mais fácil de encontrar. Inclui também algumas melhorias "
+"de desempenho durante o arranque e quando se fala do \"Novo\" diálogo de "
+"desenho. As cores de fundo sólidas também podem ser colocadas no final desse "
+"diálogo, permitindo dar ênfase às imagens de modelo."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
@@ -513,6 +610,9 @@ msgid ""
 "benefit users with a hearing impairment, or in situations where only one "
 "speaker is available."
 msgstr ""
+"O Tux Paint também permite agora desativar o som estéreo, o que pode "
+"beneficiar os utilizadores com uma deficiência auditiva, ou em situações em "
+"que apenas está disponível uma coluna."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
@@ -520,6 +620,9 @@ msgid ""
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
 msgstr ""
+"Novidades nesta versão são um \"seletor de cores\", que permite que qualquer "
+"cor dentro de um desenho seja escolhida usando o cursor, e um conjunto de "
+"três, quatro, e cinco formas de estrelas pontiagudas."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid ""
@@ -528,6 +631,10 @@ msgid ""
 "Kabyle, Urdu, and Devanagari and Perso-Arabic variations of Kashmiri and "
 "Sindhi. Thirty other translations have been updated, as well."
 msgstr ""
+"A última versão incorpora também uma série de novas traduções, elevando o "
+"número de idiomas suportados para quase 130: Bengali, Bodo, Dogri, Kabyle, "
+"Urdu, e Devanagari e variações perso-arábicas de Kashmiri e Sindhi. Trinta "
+"outras traduções foram também atualizadas."
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -723,7 +830,7 @@ msgstr "Letras"
 #. "Magic" effects tools (blur, flip image, etc.)
 #: ../titles.h:78 ../tools.h:83
 msgid "Magic"
-msgstr "Mágico"
+msgstr "Magia"
 
 #. Title of fill selector (buttons down the right for fill tool)
 #: ../titles.h:81
@@ -783,7 +890,7 @@ msgstr "Novo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:9236
+#: ../tools.h:98 ../tuxpaint.c:8859
 msgid "Open"
 msgstr "Abrir"
 
@@ -1006,282 +1113,275 @@ msgstr ""
 "O espaçamento deste pincel é agora cerca de %1$d %2$d/%3$d vezes tão grande "
 "quanto a forma do pincel."
 
-#. Instructions to show when rotating stamps
-#: ../tools.h:201
-#, fuzzy
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
-msgid "Drag the mouse to rotate the stamp. Click to draw it."
-msgstr "Move o rato para rodares a forma. Clica para desenhares."
-
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2374
+#: ../tuxpaint.c:2339
 msgid "Do you really want to quit?"
 msgstr "Queres mesmo sair?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2377
+#: ../tuxpaint.c:2342
 msgid "Yes, I’m done!"
 msgstr "Sim, terminei!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2380 ../tuxpaint.c:2407
+#: ../tuxpaint.c:2345 ../tuxpaint.c:2372
 msgid "No, take me back!"
 msgstr "Não, quero continuar!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2384
+#: ../tuxpaint.c:2349
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Se saíres, vais perder o desenho! Queres gravar?"
 
-#: ../tuxpaint.c:2385 ../tuxpaint.c:2390
+#: ../tuxpaint.c:2350 ../tuxpaint.c:2355
 msgid "Yes, save it!"
 msgstr "Sim!"
 
-#: ../tuxpaint.c:2386 ../tuxpaint.c:2391
+#: ../tuxpaint.c:2351 ../tuxpaint.c:2356
 msgid "No, don’t bother saving!"
 msgstr "Não!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2389
+#: ../tuxpaint.c:2354
 msgid "Save your picture first?"
 msgstr "Queres gravar primeiro a desenho?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2394
+#: ../tuxpaint.c:2359
 msgid "Can’t open that picture!"
 msgstr "Não foi possível abrir o desenho!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2397 ../tuxpaint.c:2402 ../tuxpaint.c:2411 ../tuxpaint.c:2418
-#: ../tuxpaint.c:2427 ../tuxpaint.c:2432
+#: ../tuxpaint.c:2362 ../tuxpaint.c:2367 ../tuxpaint.c:2376 ../tuxpaint.c:2383
+#: ../tuxpaint.c:2392 ../tuxpaint.c:2397
 msgid "OK"
 msgstr "Está bem"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2401
+#: ../tuxpaint.c:2366
 msgid "There are no saved files!"
 msgstr "Não existem desenhos gravados!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2405
+#: ../tuxpaint.c:2370
 msgid "Print your picture now?"
 msgstr "Imprimir agora?"
 
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2371
 msgid "Yes, print it!"
 msgstr "Sim, imprimir!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2410
+#: ../tuxpaint.c:2375
 msgid "Your picture has been printed!"
 msgstr "A imagem foi impressa!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2414
+#: ../tuxpaint.c:2379
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Desculpa! O teu desenho não foi impresso!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2417
+#: ../tuxpaint.c:2382
 msgid "You can’t print yet!"
 msgstr "Ainda não podes imprimir!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2421
+#: ../tuxpaint.c:2386
 msgid "Erase this picture?"
 msgstr "Apagar este desenho?"
 
-#: ../tuxpaint.c:2422
+#: ../tuxpaint.c:2387
 msgid "Yes, erase it!"
 msgstr "Sim!"
 
-#: ../tuxpaint.c:2423
+#: ../tuxpaint.c:2388
 msgid "No, don’t erase it!"
 msgstr "Não!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2426
+#: ../tuxpaint.c:2391
 msgid "Remember to use the left mouse button!"
 msgstr "Lembra-te de usar o botão esquerdo do rato!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2430
+#: ../tuxpaint.c:2395
 msgid "Your picture has been exported!"
 msgstr "O teu desenho foi exportado!"
 
-#: ../tuxpaint.c:2431
+#: ../tuxpaint.c:2396
 msgid "Your slideshow GIF has been exported!"
 msgstr "O GIF da tua apresentação de diapositivos foi exportado!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2435
+#: ../tuxpaint.c:2400
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Desculpa! Não foi possível exportar o teu desenho!"
 
-#: ../tuxpaint.c:2436
+#: ../tuxpaint.c:2401
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr ""
 "Desculpa! Não foi possível exportar o GIF da tua apresentação de "
 "diapositivos!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2440
+#: ../tuxpaint.c:2405
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Escolhe os desenhos e clica em \"Mostrar\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2725
+#: ../tuxpaint.c:2626
 msgid "Sound muted."
 msgstr "Som desligado."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2730
+#: ../tuxpaint.c:2631
 msgid "Sound unmuted."
 msgstr "Som ligado."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3565
+#: ../tuxpaint.c:3416
 msgid "Please wait…"
-msgstr "Por favor aguarde…"
+msgstr "Aguarde…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9239
+#: ../tuxpaint.c:8862
 msgid "Erase"
 msgstr "Apagar"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9242
+#: ../tuxpaint.c:8865
 msgid "Slides"
 msgstr "Diapositivos"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9245
+#: ../tuxpaint.c:8868
 msgid "Export"
 msgstr "Exportar"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9248
+#: ../tuxpaint.c:8871
 msgid "Back"
 msgstr "Recuar"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9251
+#: ../tuxpaint.c:8874
 msgid "Play"
 msgstr "Mostrar"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9254
+#: ../tuxpaint.c:8877
 msgid "GIF Export"
 msgstr "Exportar GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9257
+#: ../tuxpaint.c:8880
 msgid "Next"
 msgstr "Avançar"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9260
+#: ../tuxpaint.c:8883
 msgid "Clear"
 msgstr "Limpar"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:10111
+#: ../tuxpaint.c:9742
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13888
+#: ../tuxpaint.c:13462
 msgid "Yes"
 msgstr "Sim"
 
-#: ../tuxpaint.c:13892
+#: ../tuxpaint.c:13466
 msgid "No"
 msgstr "Não"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15051
+#: ../tuxpaint.c:14619
 msgid "Replace the picture with your changes?"
 msgstr "Substituir o desenho original?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15055
+#: ../tuxpaint.c:14623
 msgid "Yes, replace the old one!"
 msgstr "Sim, substituir!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15059
+#: ../tuxpaint.c:14627
 msgid "No, save a new file!"
 msgstr "Não, gravar como novo!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:16335
+#: ../tuxpaint.c:15877
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Escolhe o desenho e clica em \"Abrir\"."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17883
+#: ../tuxpaint.c:17415
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Selecione 2 ou mais desenhos para se tornar num GIF animado."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:23546
+#: ../tuxpaint.c:22950
 msgid "red"
 msgstr "vermelho"
 
-#: ../tuxpaint.c:23547
+#: ../tuxpaint.c:22951
 msgid "yellow"
 msgstr "amarelo"
 
-#: ../tuxpaint.c:23548
+#: ../tuxpaint.c:22952
 msgid "blue"
 msgstr "azul"
 
-#: ../tuxpaint.c:23549
+#: ../tuxpaint.c:22953
 msgid "white"
 msgstr "branco"
 
-#: ../tuxpaint.c:23550
+#: ../tuxpaint.c:22954
 msgid "grey"
 msgstr "cinzento"
 
-#: ../tuxpaint.c:23551
+#: ../tuxpaint.c:22955
 msgid "black"
 msgstr "preto"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:23556
+#: ../tuxpaint.c:22960
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "A tua cor é %1$s %2$s."
 
-#: ../tuxpaint.c:23557
+#: ../tuxpaint.c:22961
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "A tua cor é %1$s %2$s e %3$s %4$s."
 
-#: ../tuxpaint.c:23558
+#: ../tuxpaint.c:22962
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "A tua cor é %1$s %2$s, %3$s %4$s, e %5$s %6$s."
 
-#: ../tuxpaint.c:23559
+#: ../tuxpaint.c:22963
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "A tua cor é %1$s %2$s, %3$s %4$s, %5$s %6$s, e %7$s %8$s."
 
-#: ../tuxpaint.c:23560
+#: ../tuxpaint.c:22964
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "A tua cor é %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, e %9$s %10$s."
 
-#: ../tuxpaint.c:23561
+#: ../tuxpaint.c:22965
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1291,18 +1391,18 @@ msgstr ""
 "%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:24332 ../tuxpaint.c:24339
+#: ../tuxpaint.c:23734 ../tuxpaint.c:23741
 msgid "entirely"
 msgstr "inteiramente"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:27282
+#: ../tuxpaint.c:26651
 msgid "Select a color from your drawing."
 msgstr "Seleciona uma cor do teu desenho."
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:27291
+#: ../tuxpaint.c:26660
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1313,7 +1413,7 @@ msgstr ""
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:27303
+#: ../tuxpaint.c:26672
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1323,10 +1423,9 @@ msgstr ""
 "cor."
 
 #: ../tuxpaint.desktop.in:6
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "tuxpaint"
-msgstr "Tux Paint"
+msgstr "tuxpaint"
 
 #: ../tuxpaint.desktop.in:9
 msgid "Drawing program"
@@ -1375,7 +1474,7 @@ msgstr "Clica e arrasta o rato para converter o desenho em blocos."
 
 #: ../../magic/src/blocks_chalk_drip.c:158
 msgid "Click to make the entire picture blocky."
-msgstr "Clica para tornar a imagem inteira em blocos."
+msgstr "Clica para converter o desenho inteiro em blocos."
 
 #: ../../magic/src/blocks_chalk_drip.c:165
 msgid ""
@@ -1384,17 +1483,15 @@ msgstr "Clica e arrasta o rato para converter em desenho de giz."
 
 #: ../../magic/src/blocks_chalk_drip.c:169
 msgid "Click to turn the entire picture into a chalk drawing."
-msgstr "Clica para transformar a imagem inteira num desenho a giz."
+msgstr "Clica para converter o desenho inteiro em giz."
 
 #: ../../magic/src/blocks_chalk_drip.c:176
 msgid "Click and drag the mouse around to make the picture drip."
-msgstr "Clica e arrasta o rato para criar gotas no desenho."
+msgstr "Clica e arrasta o rato para converter o desenho em gotas."
 
 #: ../../magic/src/blocks_chalk_drip.c:180
-#, fuzzy
-#| msgid "Click to make the entire picture blocky."
 msgid "Click to make the entire picture drip."
-msgstr "Clica para tornar a imagem inteira em blocos."
+msgstr "Clica para converter o desenho inteiro em gotas."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"
@@ -1406,7 +1503,7 @@ msgstr "Clica e arrasta o rato à volta para borrar o desenho."
 
 #: ../../magic/src/blur.c:90
 msgid "Click to blur the entire image."
-msgstr "Clica para borrar o desenho."
+msgstr "Clica para borrar o desenho inteiro."
 
 #. Both are named "Bricks", at the moment:
 #: ../../magic/src/bricks.c:121
@@ -1462,11 +1559,11 @@ msgstr ""
 "Clica uma vez para escolher um local para começar a clonagem. Clica "
 "novamente e arrasta para clonar essa parte do desenho."
 
-#: ../../magic/src/confetti.c:90
+#: ../../magic/src/confetti.c:86
 msgid "Confetti"
 msgstr "Serpentina"
 
-#: ../../magic/src/confetti.c:100
+#: ../../magic/src/confetti.c:96
 msgid "Click to throw confetti!"
 msgstr "Clica para criar serpentinas!"
 
@@ -1484,13 +1581,11 @@ msgstr "Relevo"
 
 #: ../../magic/src/emboss.c:115
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Clica e arrasta o rato para realçar o desenho."
+msgstr "Clica e arrasta o rato para criar relevo no desenho."
 
 #: ../../magic/src/emboss.c:117
-#, fuzzy
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
-msgstr "Clica para melhorar o desenho."
+msgstr "Clica para criar relevo no desenho inteiro."
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
@@ -1506,7 +1601,7 @@ msgstr "Clica e arrasta o rato para clarear algumas partes do desenho."
 
 #: ../../magic/src/fade_darken.c:136
 msgid "Click to lighten your entire picture."
-msgstr "Clica para clarear o desenho."
+msgstr "Clica para clarear o desenho inteiro."
 
 #: ../../magic/src/fade_darken.c:141
 msgid "Click and drag the mouse to darken parts of your picture."
@@ -1514,15 +1609,15 @@ msgstr "Clica e arrasta o rato para escurecer algumas partes do desenho."
 
 #: ../../magic/src/fade_darken.c:143
 msgid "Click to darken your entire picture."
-msgstr "Clica para escurecer o desenho."
+msgstr "Clica para escurecer o desenho inteiro."
 
 #: ../../magic/src/fisheye.c:102
 msgid "Fisheye"
-msgstr "Fisheye"
+msgstr "Olho-de-peixe"
 
 #: ../../magic/src/fisheye.c:112
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Clica no local do desenho em que queres criar o efeito fisheye."
+msgstr "Clica no local do desenho em que queres criar o efeito olho-de-peixe."
 
 #: ../../magic/src/flower.c:146
 msgid "Flower"
@@ -1540,40 +1635,40 @@ msgstr "Espuma"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Clica e arrasta o rato para cobrir uma área com bolhas espumosas."
 
-#: ../../magic/src/fold.c:108
+#: ../../magic/src/fold.c:104
 msgid "Fold"
 msgstr "Dobra"
 
-#: ../../magic/src/fold.c:118
+#: ../../magic/src/fold.c:114
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
 "Escolhe uma cor de fundo e clica para virar o canto da página para cima."
 
-#: ../../magic/src/fretwork.c:187
+#: ../../magic/src/fretwork.c:183
 msgid "Fretwork"
 msgstr "Ornamento"
 
-#: ../../magic/src/fretwork.c:193
+#: ../../magic/src/fretwork.c:189
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Clica e arrasta para desenhar padrões repetitivos."
 
-#: ../../magic/src/fretwork.c:195
+#: ../../magic/src/fretwork.c:191
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Clica para contornar o desenho com padrões repetitivos."
 
 #: ../../magic/src/glasstile.c:105
 msgid "Glass Tile"
-msgstr "Fundo de garrafa"
+msgstr "Mosaico de vidro"
 
 #: ../../magic/src/glasstile.c:118
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
-"Clica e arrasta o rato para desenhar um fundo de garrafa por cima da imagem."
+"Clica e arrasta o rato para colocar mosaico de vidro sobre o teu desenho."
 
 #: ../../magic/src/glasstile.c:120
 msgid "Click to cover your entire picture in glass tiles."
-msgstr "Clica para cobrir a imagem com fundo de garrafa."
+msgstr "Clica para cobrir o desenho inteiro com mosaicos de vidro."
 
 #: ../../magic/src/grass.c:108
 msgid "Grass"
@@ -1622,7 +1717,7 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
-"Clica e arrasta o rato para desenhar da esquerda para a direita da imagem "
+"Clica e arrasta o rato para desenhar da esquerda para a direita do desenho "
 "com dois pincéis simétricos."
 
 #: ../../magic/src/kalidescope.c:160
@@ -1630,19 +1725,19 @@ msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
-"Clica e arrasta o rato para desenhar de cima para baixo da imagem com dois "
+"Clica e arrasta o rato para desenhar de cima para baixo do desenho com dois "
 "pincéis simétricos."
 
 #: ../../magic/src/kalidescope.c:164
 msgid "Click and drag the mouse to draw a pattern across the picture."
-msgstr "Clica e arrasta o rato para desenhar padrões repetitivos na imagem."
+msgstr "Clica e arrasta o rato para desenhar padrões repetitivos no desenho."
 
 #: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr ""
-"Clica e arrasta o rato para desenhar um padrão simétrico em toda a imagem."
+"Clica e arrasta o rato para desenhar um padrão simétrico em todo o desenho."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:172
@@ -1657,7 +1752,7 @@ msgstr "Luz"
 
 #: ../../magic/src/light.c:116
 msgid "Click and drag to draw a beam of light on your picture."
-msgstr "Clica e arrasta para desenhar um feixe de luz na imagem."
+msgstr "Clica e arrasta para desenhar um feixe de luz no desenho."
 
 #: ../../magic/src/lightning.c:78
 msgid "Lightning"
@@ -1826,12 +1921,12 @@ msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Clica para transformar a imagem em painéis 2 por 2."
 
 #: ../../magic/src/perspective.c:173
-#, fuzzy
-#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
-msgstr "Clica e arrasta para cima para ampliar e para baixo para reduzir."
+msgstr ""
+"Clica e arrasta para ampliar o desenho. Arrasta para baixo para reduzir e "
+"ladrilhar o desenho."
 
 #: ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1845,7 +1940,7 @@ msgstr ""
 
 #: ../../magic/src/pixels.c:107
 msgid "Pixels"
-msgstr "Pixeis"
+msgstr "Píxeis"
 
 #: ../../magic/src/pixels.c:119
 msgid "Click and drag to draw large pixels."
@@ -1863,11 +1958,11 @@ msgstr "Clica no local do desenho em que queres criar o puzzle."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Clica para criar um puzzle em ecrã completo."
 
-#: ../../magic/src/rails.c:136
+#: ../../magic/src/rails.c:132
 msgid "Rails"
 msgstr "Carris"
 
-#: ../../magic/src/rails.c:146
+#: ../../magic/src/rails.c:142
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Clica e arrasta para desenhar carris na imagem."
 

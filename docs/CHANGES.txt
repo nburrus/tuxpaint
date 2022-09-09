@@ -144,6 +144,9 @@ http://www.tuxpaint.org/
     * Norwegian Nynorsk translation
       Karl Ove Hufthammer <karl@huftis.org>
 
+    * Portuguese (Portugal) translation
+      Hugo Carvalho <hugokarvalho@hotmail.com>
+
 2022.June.4 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
     ------------------------------------------
