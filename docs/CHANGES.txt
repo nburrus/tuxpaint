@@ -123,6 +123,11 @@ http://www.tuxpaint.org/
       report back warnings to STDERR.
       h/t Tim Dickson, per https://sourceforge.net/p/tuxpaint/bugs/252/
 
+    * Updated `src/po/check_translations.sh` sanity-checking script
+      to check `src/po/LINGUAS` file.  Also, OPTION docs and
+      Tux Paint Config. source updated to make the script's job easier.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Documentation updates:
     ---------------------
     * Update macOS build instructions for SDL2.0.
