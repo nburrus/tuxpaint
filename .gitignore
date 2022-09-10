@@ -14,6 +14,8 @@ TuxPaint.dmg
 *.dSYM
 .DS_Store
 *.thumbs
+*.swp
+*.swo
 src/po/POTFILES.in
 src/tuxpaint.desktop
 src/org.tuxpaint.Tuxpaint.appdata.xml
