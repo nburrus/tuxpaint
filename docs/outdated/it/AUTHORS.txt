@@ -243,7 +243,7 @@ http://www.newbreedsoftware.com/tuxpaint/
     Antoine Bigirimana <antoine@e-tools.com>.)
 
   * Korean
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
   
   * Kurdish
     Amed Ç. Jiyan <amed@pckurd.net>

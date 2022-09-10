@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.September.8 (0.9.29)
+2022.September.10 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -146,6 +146,9 @@ http://www.tuxpaint.org/
 
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
+
+    * Korean translation
+      Mark Kim <markuskimius@gmail.com>
 
 2022.June.4 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:
@@ -1035,17 +1038,17 @@ http://www.tuxpaint.org/
     * Correct issue that prevented Tux Paint from lauching on Mac OS X 10.7.
       (See https://sourceforge.net/p/tuxpaint/tuxpaint/ci/d2ef2e17d1962111d0f6f91394dce81e8706d48b/
       and https://stackoverflow.com/questions/20206985/xcode-linking-against-applicationservices-framework-with-sdk-10-9-causes-10-7)
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Reduce launch time by calling progress bar less frequently
       while loading stamps.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Ability to bring up the print dialog from the macOS build was
       removed in Tux Paint 0.9.23 to support the new build mechanism.
       It has been re-added.  To access it, option-click the print icon,
       or configure Tux Paint to always bring up the dialog upon print.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Made sure "New" dialog created correct thumbnail subdirectories
       for personal Starters & Templates (e.g., ~/.tuxpaint/starters/thumbs/)
@@ -1063,7 +1066,7 @@ http://www.tuxpaint.org/
     ----
     * Verbose debugging, and "DEBUG_PRINTF()" macro now available;
       see debugging options in INSTALL.txt.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
   * Notes:
     ------
@@ -1191,7 +1194,7 @@ http://www.tuxpaint.org/
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Korean translation
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Norwegian translation
       Karl Ove Hufthammer
@@ -1241,11 +1244,11 @@ http://www.tuxpaint.org/
     ----------------
     * Rewrote the macOS build system to be more Linux-like, with no XCode IDE.
       Build for older releases of macOS / Mac OS X (10.6 and later).
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Mac install creates a DMG
       Robert Buj Gelonch <rbuj@users.sf.net>
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Allow override override build date (in order to make builds reproducible)
       ("SOURCE_DATE_EPOCH")
@@ -2317,7 +2320,7 @@ http://www.tuxpaint.org/
     * Makefile edited so that Tux Paint can be installed in the absence
       of gettext in the system.
       Arunodai Vudem <arunvudem@gmail.com>
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Making Magic Tool source throw fewer compiler warnings.
 
@@ -2367,7 +2370,7 @@ http://www.tuxpaint.org/
       shipped along with tuxpaint code. Inclusion error message has been added
       for missing libpaper.
       Arunodai Vudem <arunvudem@gmail.com>
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * "Uppercase only" option support for builds that use Pango to render text.
       (Note: Needs help in some/many? locales.)
@@ -2863,7 +2866,7 @@ http://www.tuxpaint.org/
       and Japanese (Romanized Hiragana and Romanized Katakana) input methods.
       (Should be extensible to other languages.)
       (Addresses SourceForge Bug #1070414)
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Stamps now supports SVG vector-based graphics!
       (Only SVG versions of stamps are loaded, when both PNG and SVG
@@ -3306,7 +3309,7 @@ http://www.tuxpaint.org/
     * Japanese font shipped in Tux Paint now includes common educational Kanji
 
     * Korean
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Polish documentation
       Pawel Polak <sf_paul@users.sourceforge.net>
@@ -3440,7 +3443,7 @@ http://www.tuxpaint.org/
 
     * Source files and documentation files tagged with CVS Id tags
       for easier version tracking.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
   * Locale update:
     --------------
@@ -3895,7 +3898,7 @@ http://www.tuxpaint.org/
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Korean
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Lithuanian
       Gintaras Go?tautas <gintaras@nes.lt>
@@ -4022,7 +4025,7 @@ http://www.tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Korean README.txt documentation added, in both EUC-KR and UTF-8 formats.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Serbian translation created.
       Aleksandar Jelenak <jelenak@netlinkplus.net>
@@ -4090,7 +4093,7 @@ http://www.tuxpaint.org/
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Updated Korean translation.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Updated Malay translation.
       Muhammad Najmi Ahmad Zabidi <mnajem@linuxmail.org>
@@ -4172,7 +4175,7 @@ http://www.tuxpaint.org/
       John Popplewell <john@johnnypops.demon.co.uk>
 
     * Updated Makefile for easier install.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Cleaned up desktop entry file.
       Karl Ove Hufthammer <karl@huftis.org>
@@ -4204,7 +4207,7 @@ http://www.tuxpaint.org/
       Mark K. Kim & John Popplewell
   
     * Fixed security issue with permissions to Tux Paint docs directory.
-      Mark K. Kim <mkkim214@gmail.com>
+      Mark K. Kim <markuskimius@gmail.com>
 
     * Fixed 'savedir' bug.  (Was dropping filenames)
 
@@ -4385,7 +4388,7 @@ http://www.tuxpaint.org/
   * Right-to-left language support (for Hebrew, for example).
 
   * Updated Korean translations.
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
 
   * UTF-8 support in the Text Tool!
     Robert Glowczynski <robertg@software.com.pl>,
@@ -4664,7 +4667,7 @@ http://www.tuxpaint.org/
   * UTF-8 support working.
 
   * Korean translation completed!
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
 
   * Fixed errors in 'uninstall' target in Makefile
 
@@ -4722,7 +4725,7 @@ http://www.tuxpaint.org/
     T�r�k G�bor <gabo@linuxmania.hu>
 
   * Partly translated to Korean.  PO file in an unusable charset, though...
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
 
   * Supports locale-specific fonts for languages that need Unicode.
     e.g., Korean will use "ko.ttf", if found, for translated strings.

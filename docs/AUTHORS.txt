@@ -29,7 +29,7 @@ June 17, 2002 - May 6, 2022
   ( http://www.codeproject.com/cs/media/imageprocessing4.asp ).
 
   Input Method (IM) Framework implemented by:
-  Mark K. Kim <mkkim214@gmail.com>
+  Mark K. Kim <markuskimius@gmail.com>
 
   PostScript printing code based loosely on NetPBM's "pnmtops",
   copyright (c) 1989 by Jef Poskanzer.
@@ -739,7 +739,7 @@ June 17, 2002 - May 6, 2022
     TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Japanese Input Method
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
     TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Kabyle translation
@@ -776,10 +776,10 @@ June 17, 2002 - May 6, 2022
     Rahul Borade <rahulborade01@gmail.com>
 
   * Korean
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
 
   * Korean Input Method
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
 
   * Kurdish
     Amed Çeko Jiyan <amedcj@gmail.com>
@@ -1086,7 +1086,7 @@ June 17, 2002 - May 6, 2022
     Volker Grabsch <vog@notjusthosting.com>
 
   * Mac OS X coding and builds
-    Mark K. Kim <mkkim214@gmail.com>
+    Mark K. Kim <markuskimius@gmail.com>
     Martin Fuhrer <mfuhrer@users.sourceforge.net>
     Darrell Walisser <walisser@mac.com>  [retired]
     Eric Poncet <http://www.linguasoft.com/>
