@@ -13,6 +13,7 @@ TuxPaint.dmg
 *.dylib
 *.dSYM
 .DS_Store
+Info.plist
 *.thumbs
 *.swp
 *.swo

@@ -72,6 +72,9 @@ http://www.tuxpaint.org/
       (also corrects some warnings being reported by libpng (via SDL_image);
       h/t Tim Dickson, closes https://sourceforge.net/p/tuxpaint/bugs/252/)
 
+    * Automatically update macOS build version from the command line at build
+      time.
+
   * Ports & Building:
     -----------------
     * Change name of Tux Paint config. files from ".conf" to ".cfg"

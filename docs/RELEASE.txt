@@ -25,7 +25,6 @@ a .tar.gz source tarball, and making the tarball available for download.
 
    * Build description files:
      * tuxpaint.spec (Linux RPM package)
-     * macos/Info.plist (macOS build)
      * win32/resources.rc (Windows mingw/msys build)
 
    * Changelog
