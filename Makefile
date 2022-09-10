@@ -1111,6 +1111,7 @@ install-macbundle:
 	@install -d -m 755 $(BUNDLE)/Contents/lib
 	@install -m 755 tuxpaint $(BUNDLE)/Contents/MacOS
 	@install -m 644 macos/PkgInfo $(BUNDLE)/Contents
+	@VER_VERSION=$(VER_VERSION) macos/template.sh macos/Info.plist.shdoc > macos/Info.plist
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
 	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@macos/build-app.sh
@@ -1120,13 +1121,14 @@ install-macbundle:
 install-iosbundle:
 	@echo
 	@echo "...Installing iOS App Bundle Support Files..."
-	install -m 755 tuxpaint $(BUNDLE)
-	install -m 644 ios/PkgInfo $(BUNDLE)
-	install -m 644 ios/Info.plist $(BUNDLE)
-	install -m 644 ios/tuxpaint.icns $(BUNDLE)
-	install -m 644 ios/tuxpaint.cfg $(BUNDLE)
-	install -m 644 ios/Splash.png $(BUNDLE)
-	ibtool --compile $(BUNDLE)/Splash.storyboardc ios/Splash.storyboard
+	@install -m 755 tuxpaint $(BUNDLE)
+	@install -m 644 ios/PkgInfo $(BUNDLE)
+	@VER_VERSION=$(VER_VERSION) ios/template.sh ios/Info.plist.shdoc > ios/Info.plist
+	@install -m 644 ios/Info.plist $(BUNDLE)
+	@install -m 644 ios/tuxpaint.icns $(BUNDLE)
+	@install -m 644 ios/tuxpaint.cfg $(BUNDLE)
+	@install -m 644 ios/Splash.png $(BUNDLE)
+	@ibtool --compile $(BUNDLE)/Splash.storyboardc ios/Splash.storyboard
 
 
 # Create DMG for macOS
