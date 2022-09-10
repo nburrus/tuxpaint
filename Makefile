@@ -715,7 +715,7 @@ clean:
 	@-rm -f templates/.thumbs/*.png
 	@if [ -d templates/.thumbs ]; then rmdir templates/.thumbs; fi
 	@-if [ "x$(BUNDLE)" != "x" ]; then rm -rf $(BUNDLE); fi
-	@-rm -f TuxPaint.dmg temp.dmg; rm -rf magic/*.dSYM Resources
+	@-rm -f TuxPaint.dmg temp.dmg {macos,ios}/Info.plist; rm -rf magic/*.dSYM Resources
 	@-rm -f dlllist a.exe
 	@-rm -f win32/Preprocessed.iss win32/tuxpaint-*.zip win32/tuxpaint-*.exe
 	@-rm -f test-png
