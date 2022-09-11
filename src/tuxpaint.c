@@ -4859,6 +4859,11 @@ static void mainloop(void)
 
                           if (cur_thing != cur_stamp[stamp_group])
                             {
+			      if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+				{
+				  stamp_xor(stamp_place_x, stamp_place_y);
+				  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+				}
                               cur_stamp[stamp_group] = cur_thing;
                               set_active_stamp();
                               update_stamp_xor(0);
@@ -5826,7 +5831,7 @@ static void mainloop(void)
 
                                   /* Warp mouse to the far right of the stamp,
                                      where we'll start at 0-degrees of rotation */
-                                  SDL_WarpMouse(old_x + active_stamp->w, old_y);
+                                  SDL_WarpMouse(r_tools.w + old_x + active_stamp->w, old_y);
                                   do_setcursor(cursor_rotate);
 
 				  stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
