@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 5, 2022
+  June 14, 2002 - September 11, 2022
 */
 
 #include "platform.h"
@@ -5827,11 +5827,18 @@ static void mainloop(void)
 			    {
 			      if (!no_stamp_rotation)
 				{
+                                  int mouse_warp_x;
+
                                   /* Going through stamp rotation step, first */
 
                                   /* Warp mouse to the far right of the stamp,
-                                     where we'll start at 0-degrees of rotation */
-                                  SDL_WarpMouse(r_tools.w + old_x + active_stamp->w, old_y);
+                                     where we'll start at 0-degrees of rotation
+                                     (keep it within the canvas, though!) */
+                                  mouse_warp_x = r_tools.w + old_x + (CUR_STAMP_W / 2);
+                                  if (mouse_warp_x >= WINDOW_WIDTH - r_ttoolopt.w)
+                                    mouse_warp_x = WINDOW_WIDTH - r_ttoolopt.w - 1;
+
+                                  SDL_WarpMouse(mouse_warp_x, old_y);
                                   do_setcursor(cursor_rotate);
 
 				  stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
