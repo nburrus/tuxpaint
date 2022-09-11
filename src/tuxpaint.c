@@ -566,7 +566,6 @@ static void reposition_onscreen_keyboard(int y);
 
 static void reset_stamps(int * stamp_xored_rt, int * stamp_place_x, int * stamp_place_y, int * stamp_tool_mode);
 
-
 /* EP added #ifndef __APPLE__ because macros are buggy (shifted by 1 byte), plus the function exists in SDL */
 #ifndef __APPLE__
 #if VIDEO_BPP==32
@@ -2573,6 +2572,18 @@ static void mainloop(void)
           /* FIXME: Another thing we could do here is peek into events, and 'skip' to the last motion...? Or something... -bjk 2011.04.26 */
           if (current_event_time > pre_event_time + 500 && event.type == SDL_MOUSEMOTION)
             {
+		if (cur_tool == TOOL_STAMP && stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+		/* Discarding old stamp XORs, don't need to keep any outdated mouse motion event */
+		{
+		  int rest = SDL_PeepEvents(NULL, 1000, SDL_PEEKEVENT, SDL_MOUSEMOTION, SDL_MOUSEMOTION);
+		  for (int i = 0; i < rest; i++)
+		    {
+		      SDL_PollEvent(&event);
+		      if (event.type != SDL_MOUSEMOTION) /* But keep any other events that could be there */
+			break;
+		    }
+		}
+	  else
               ignoring_motion = (ignoring_motion + 1) % 3;        /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
             }
 
@@ -5846,6 +5857,7 @@ static void mainloop(void)
 			  rec_undo_buffer();
 			  playsound(screen, 1, SND_STAMP, 1, stamp_place_x, SNDDIST_NEAR);
 			  int stamp_angle_rotation = 360 - brush_rotation(stamp_place_x, stamp_place_y, old_x, old_y);
+
                           stamp_draw(stamp_place_x, stamp_place_y, stamp_angle_rotation);
 			  draw_tux_text(TUX_GREAT, great_str(), 1);
 			  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
@@ -6459,7 +6471,7 @@ static void mainloop(void)
 			  if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
 			    {
 			      stamp_xor(stamp_place_x, stamp_place_y);
-			      update_stamp_xor(360 - brush_rotation(stamp_place_x, stamp_place_y, old_x, old_y));
+			      update_stamp_xor((360 - brush_rotation(stamp_place_x, stamp_place_y, new_x, new_y)) % 360);
 			      stamp_xor(stamp_place_x, stamp_place_y);
 
 			      /* The half of maximum size the stamp could have when rotating. */
@@ -18448,11 +18460,9 @@ static int stamp_outline_w, stamp_outline_h;
 
 static void reset_stamps(int * stamp_xored_rt, int * stamp_place_x, int * stamp_place_y, int * stamp_tool_mode)
 {
-  printf("%d %d\n", stamp_xored_rt,*stamp_xored_rt);
    if (!active_stamp)
      return;
-   /* if (*stamp_xored_rt == 1) */
-   /*  stamp_xor(*stamp_place_x, *stamp_place_y); */
+
    *stamp_xored_rt = 0;
    *stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
    int half_bigbox = sqrt((CUR_STAMP_W + 1) * (CUR_STAMP_W + 1) + (CUR_STAMP_H + 1) * (CUR_STAMP_H + 1)) / 2;
@@ -18462,7 +18472,6 @@ static void reset_stamps(int * stamp_xored_rt, int * stamp_place_x, int * stamp_
 		 *stamp_place_y + half_bigbox + r_canvas.y);
    update_stamp_xor(0);
 }
-
 
 /**
  * FIXME
@@ -18486,7 +18495,11 @@ static void update_stamp_xor(int stamp_angle_rotation)
   src = thumbnail(src, CUR_STAMP_W, CUR_STAMP_H, 0);
 
   if(stamp_angle_rotation)
-    src = rotozoomSurface(src, stamp_angle_rotation, 1.0, SMOOTHING_ON);
+    {
+      SDL_Surface * aux_surf = src;
+      src = rotozoomSurface(aux_surf, stamp_angle_rotation, 1.0, SMOOTHING_ON);
+      SDL_FreeSurface(aux_surf);
+    }
 
   getpixel = getpixels[src->format->BytesPerPixel];
   alphabits = calloc(src->w + 4, src->h + 4);
