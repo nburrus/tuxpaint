@@ -2787,6 +2787,8 @@ static void mainloop(void)
                               label_node_to_edit = NULL;
                             }
                         }
+		      if (cur_tool == TOOL_STAMP)
+			  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                       if (cur_undo == newest_undo)
                         {
@@ -2808,6 +2810,8 @@ static void mainloop(void)
 
                   if (tool_avail[TOOL_REDO])
                     {
+		      if (cur_tool == TOOL_STAMP)
+			  reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
                       hide_blinking_cursor();
                       do_redo();
                       update_screen_rect(&r_tools);
@@ -2821,6 +2825,8 @@ static void mainloop(void)
                   /* Ctrl-O - Open */
 
                   magic_switchout(canvas);
+		  if (cur_tool == TOOL_STAMP)
+		    reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                   disable_avail_tools();
                   draw_toolbar();
@@ -2879,6 +2885,8 @@ static void mainloop(void)
                   /* Ctrl-N - New */
 
                   magic_switchout(canvas);
+		  if (cur_tool == TOOL_STAMP)
+		    reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                   hide_blinking_cursor();
                   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -2940,6 +2948,10 @@ static void mainloop(void)
                   magic_switchout(canvas);
                   hide_blinking_cursor();
 
+		  /* Only reset stamp XORs if there will be prompt */
+		  if (cur_tool == TOOL_STAMP && promptless_save == SAVE_OVER_PROMPT && file_id[0] != '\0')
+		    reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+
                   if (do_save(cur_tool, 0, 0))
                     {
                       /* Only think it's been saved if it HAS been saved :^) */
@@ -2981,6 +2993,8 @@ static void mainloop(void)
                   if (!disable_print)
                     {
                       magic_switchout(canvas);
+		      if (cur_tool == TOOL_STAMP)
+			reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
 
                       /* If they haven't hit [Enter], but clicked 'Print', add their text now -bjk 2007.10.25 */
 
