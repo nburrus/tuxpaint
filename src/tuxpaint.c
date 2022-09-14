@@ -7665,6 +7665,10 @@ void show_version(int details)
   printf("  Bilinear scaling disabled  (NO_BILINEAR)\n");
 #endif
 
+#ifdef NO_SDLPANGO
+  printf("  Pango support disabled  (NO_SDLPANGO)\n");
+#endif
+
 #ifdef NOSVG
   printf("  SVG support disabled  (NOSVG)\n");
 #endif
