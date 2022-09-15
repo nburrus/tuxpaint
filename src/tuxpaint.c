@@ -29444,6 +29444,11 @@ static void setup(void)
     }
   }
 
+  /* Clicking into window while unfocused would not let
+     the clicks through, which was unlike how things worked
+     in SDL1.2, and I found that annoying -bjk 2022.09.15 */
+  SDL_SetHint(SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH, "1");
+
   /* Set up event filter */
 
   SDL_SetEventFilter(TP_EventFilter, NULL);
@@ -29684,7 +29689,6 @@ static void setup(void)
         }
       }
 #endif
-
     }
     else
     {

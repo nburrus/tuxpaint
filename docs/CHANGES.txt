@@ -52,6 +52,11 @@ http://www.tuxpaint.org/
       Pere Pujal i Carabantes <perepujal@gmail.com>
       Closes https://sourceforge.net/p/tuxpaint/bugs/256/
 
+    * Receive clicks when Tux Paint window is regaining focus
+      (via "SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH"), which is how
+      the earlier SDL1.2 versions worked.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * Automatic button size option ("buttonsize=auto"), to scale button
