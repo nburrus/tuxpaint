@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 00:48-0700\n"
-"PO-Revision-Date: 2022-02-14 13:56+0000\n"
+"POT-Creation-Date: 2022-07-03 16:39-0700\n"
+"PO-Revision-Date: 2022-09-11 12:59+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -124,11 +124,11 @@ msgstr "Fölbrúnt!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:196
+#: ../dirwalk.c:188
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:196
+#: ../dirwalk.c:188
 msgid "QX"
 msgstr "QX"
 
@@ -138,48 +138,48 @@ msgstr "QX"
 #. especially important for users who have scroll buttons disabled.
 #. Translators should do whatever is needed to put crummy fonts last.
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:221
+#: ../dirwalk.c:213
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:224
+#: ../dirwalk.c:216
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:227
+#: ../dirwalk.c:219
 msgid "`%_@$~#{<(^&*"
 msgstr "€`%_@$~#{<(^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:230
+#: ../dirwalk.c:222
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:233
+#: ../dirwalk.c:225
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:236
+#: ../dirwalk.c:228
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:240
+#: ../dirwalk.c:232
 msgid "<1>spare-1a"
 msgstr "aa"
 
-#: ../dirwalk.c:241
+#: ../dirwalk.c:233
 msgid "<1>spare-1b"
 msgstr "AA"
 
-#: ../dirwalk.c:242
+#: ../dirwalk.c:234
 msgid "<9>spare-9a"
 msgstr "ðéíóúþæö"
 
-#: ../dirwalk.c:243
+#: ../dirwalk.c:235
 msgid "<9>spare-9b"
 msgstr "ÐÉÍÓÚÞÆÖ"
 
@@ -244,32 +244,32 @@ msgid "Good job!"
 msgstr "Vel gert!"
 
 #. Input Method: English mode
-#: ../im.c:88
+#: ../im.c:80
 msgid "English"
 msgstr "Enska"
 
 #. Input Method: Japanese Romanized Hiragana mode
-#: ../im.c:91
+#: ../im.c:83
 msgid "Hiragana"
 msgstr "Hiragana"
 
 #. Input Method: Japanese Romanized Katakana mode
-#: ../im.c:94
+#: ../im.c:86
 msgid "Katakana"
 msgstr "Katakana"
 
 #. Input Method: Korean Hangul 2-Bul mode
-#: ../im.c:97
+#: ../im.c:89
 msgid "Hangul"
 msgstr "Hangul"
 
 #. Input Method: Thai mode
-#: ../im.c:100
+#: ../im.c:92
 msgid "Thai"
 msgstr "Tælenska"
 
 #. Input Method: Traditional Chinese mode
-#: ../im.c:103
+#: ../im.c:95
 msgid "ZH_TW"
 msgstr "ZH_TW kínverska"
 
@@ -320,29 +320,37 @@ msgid ""
 "and an encouraging cartoon mascot who guides children as they use the "
 "program."
 msgstr ""
+"Tux Paint er frjálst, margverðlaunað teikniforrit fyrir börn á aldrinum 3 til"
+" 12 ára. Tux Paint er notað í skólum um víða veröld sem tölvutengd"
+" sköpunarupplifun. Það sameinar einfalt og auðlært viðmót, skemmtilegar"
+" hljóðbrellur og uppörvandi teiknimyndafígúru sem leiðbeinir börnunum við"
+" notkun hugbúnaðarins."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
 msgstr ""
+"Krakkarnir byrja með auðan myndflöt og ýmis verkfæri sem hvetja þau til"
+" sköpunar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
-msgstr ""
+msgstr "New Breed Software og fleiri."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:36
 msgid "The Magic tool is a set of special effects"
-msgstr ""
+msgstr "'Galdra'-verkfærið er með úrvali af sjónbrellum"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:40
 msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
 msgstr ""
+"Penslatólið gerir kleift að teikna fríhendismyndir með ýmsum penslum og litum"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:44
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
-msgstr ""
+msgstr "Stilmplatólið er eins og heilt sett af gúmmístimplum eða límmiðum"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -776,7 +784,7 @@ msgstr "Nýtt"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:9236
+#: ../tools.h:98 ../tuxpaint.c:8859
 msgid "Open"
 msgstr "Opna"
 
@@ -994,281 +1002,274 @@ msgid ""
 msgstr ""
 "Millibil pensilsins er núna um það bil %1$d %2$d/%3$d stærra en pensilformið."
 
-#. Instructions to show when rotating stamps
-#: ../tools.h:201
-#, fuzzy
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
-msgid "Drag the mouse to rotate the stamp. Click to draw it."
-msgstr "Hreyfðu músina til að snúa forminu. Smelltu til að teikna það."
-
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2374
+#: ../tuxpaint.c:2339
 msgid "Do you really want to quit?"
 msgstr "Viltu í alvörunni hætta?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2377
+#: ../tuxpaint.c:2342
 msgid "Yes, I’m done!"
 msgstr "Já, ég er búin!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2380 ../tuxpaint.c:2407
+#: ../tuxpaint.c:2345 ../tuxpaint.c:2372
 msgid "No, take me back!"
 msgstr "Nei, ég vil halda áfram!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2384
+#: ../tuxpaint.c:2349
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ef þú hættir, tapast myndin! Viltu geyma hana?"
 
-#: ../tuxpaint.c:2385 ../tuxpaint.c:2390
+#: ../tuxpaint.c:2350 ../tuxpaint.c:2355
 msgid "Yes, save it!"
 msgstr "Já, geyma hana!"
 
-#: ../tuxpaint.c:2386 ../tuxpaint.c:2391
+#: ../tuxpaint.c:2351 ../tuxpaint.c:2356
 msgid "No, don’t bother saving!"
 msgstr "Nei, ekki geyma þetta!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2389
+#: ../tuxpaint.c:2354
 msgid "Save your picture first?"
 msgstr "Geyma myndina fyrst?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2394
+#: ../tuxpaint.c:2359
 msgid "Can’t open that picture!"
 msgstr "Get ekki opnað þessa mynd!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2397 ../tuxpaint.c:2402 ../tuxpaint.c:2411 ../tuxpaint.c:2418
-#: ../tuxpaint.c:2427 ../tuxpaint.c:2432
+#: ../tuxpaint.c:2362 ../tuxpaint.c:2367 ../tuxpaint.c:2376 ../tuxpaint.c:2383
+#: ../tuxpaint.c:2392 ../tuxpaint.c:2397
 msgid "OK"
 msgstr "Í lagi"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2401
+#: ../tuxpaint.c:2366
 msgid "There are no saved files!"
 msgstr "Fann engar geymdar myndir!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2405
+#: ../tuxpaint.c:2370
 msgid "Print your picture now?"
 msgstr "Prenta myndina núna?"
 
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2371
 msgid "Yes, print it!"
 msgstr "Já, prentaðu hana!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2410
+#: ../tuxpaint.c:2375
 msgid "Your picture has been printed!"
 msgstr "Búið að prenta myndina þína!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2414
+#: ../tuxpaint.c:2379
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Því miður! Það var ekki hægt að prenta myndina þína!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2417
+#: ../tuxpaint.c:2382
 msgid "You can’t print yet!"
 msgstr "Þú getur ekki prentað strax!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2421
+#: ../tuxpaint.c:2386
 msgid "Erase this picture?"
 msgstr "Eyða myndinni?"
 
-#: ../tuxpaint.c:2422
+#: ../tuxpaint.c:2387
 msgid "Yes, erase it!"
 msgstr "Já, eyða henni!"
 
-#: ../tuxpaint.c:2423
+#: ../tuxpaint.c:2388
 msgid "No, don’t erase it!"
 msgstr "Nei, ekki eyða henni!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2426
+#: ../tuxpaint.c:2391
 msgid "Remember to use the left mouse button!"
 msgstr "Muna eftir að nota vinstri músarhnappinn!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2430
+#: ../tuxpaint.c:2395
 msgid "Your picture has been exported!"
 msgstr "Búið að flytja út myndina þína!"
 
-#: ../tuxpaint.c:2431
+#: ../tuxpaint.c:2396
 msgid "Your slideshow GIF has been exported!"
 msgstr "Búið að flytja út GIF-skyggnusýninguna þína!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2435
+#: ../tuxpaint.c:2400
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Því miður! Það var ekki hægt að flytja út myndina þína!"
 
-#: ../tuxpaint.c:2436
+#: ../tuxpaint.c:2401
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Því miður! Það var ekki hægt að flytja út GIF-skyggnusýninguna þína!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2440
+#: ../tuxpaint.c:2405
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Veldu myndirnar sem þú vilt, og smelltu svo á \"Spila\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2725
+#: ../tuxpaint.c:2626
 msgid "Sound muted."
 msgstr "Slökkt á hljóði."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2730
+#: ../tuxpaint.c:2631
 msgid "Sound unmuted."
 msgstr "Kveikt á hljóði."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3565
+#: ../tuxpaint.c:3416
 msgid "Please wait…"
 msgstr "Bíddu aðeins..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9239
+#: ../tuxpaint.c:8862
 msgid "Erase"
 msgstr "Eyða"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9242
+#: ../tuxpaint.c:8865
 msgid "Slides"
 msgstr "Myndasýning"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9245
+#: ../tuxpaint.c:8868
 msgid "Export"
 msgstr "Flytja út"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9248
+#: ../tuxpaint.c:8871
 msgid "Back"
 msgstr "Til baka"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9251
+#: ../tuxpaint.c:8874
 msgid "Play"
 msgstr "Spila"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9254
+#: ../tuxpaint.c:8877
 msgid "GIF Export"
 msgstr "GIF-útflutningur"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9257
+#: ../tuxpaint.c:8880
 msgid "Next"
 msgstr "Áfram"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9260
+#: ../tuxpaint.c:8883
 msgid "Clear"
 msgstr "Hreinsa"
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:10111
+#: ../tuxpaint.c:9742
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13888
+#: ../tuxpaint.c:13462
 msgid "Yes"
 msgstr "Já"
 
-#: ../tuxpaint.c:13892
+#: ../tuxpaint.c:13466
 msgid "No"
 msgstr "Nei"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15051
+#: ../tuxpaint.c:14619
 msgid "Replace the picture with your changes?"
 msgstr "Skipta út eldri myndinni með þeirri nýju?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15055
+#: ../tuxpaint.c:14623
 msgid "Yes, replace the old one!"
 msgstr "Já, skipta út þeirri gömlu!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15059
+#: ../tuxpaint.c:14627
 msgid "No, save a new file!"
 msgstr "Nei, geyma nýja mynd!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:16335
+#: ../tuxpaint.c:15877
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Veldu teikningu, og smelltu svo á 'Opna'."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:17883
+#: ../tuxpaint.c:17415
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Veldu 2 eða fleiri teikningar sem á að breyta í GIF-hreyfimynd."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:23546
+#: ../tuxpaint.c:22950
 msgid "red"
 msgstr "rautt"
 
-#: ../tuxpaint.c:23547
+#: ../tuxpaint.c:22951
 msgid "yellow"
 msgstr "gult"
 
-#: ../tuxpaint.c:23548
+#: ../tuxpaint.c:22952
 msgid "blue"
 msgstr "blátt"
 
-#: ../tuxpaint.c:23549
+#: ../tuxpaint.c:22953
 msgid "white"
 msgstr "hvítt"
 
-#: ../tuxpaint.c:23550
+#: ../tuxpaint.c:22954
 msgid "grey"
 msgstr "grátt"
 
-#: ../tuxpaint.c:23551
+#: ../tuxpaint.c:22955
 msgid "black"
 msgstr "svart"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:23556
+#: ../tuxpaint.c:22960
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Liturinn þinn er %1$s %2$s."
 
-#: ../tuxpaint.c:23557
+#: ../tuxpaint.c:22961
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Liturinn þinn er %1$s %2$s og %3$s %4$s."
 
-#: ../tuxpaint.c:23558
+#: ../tuxpaint.c:22962
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Liturinn þinn er %1$s %2$s, %3$s %4$s, og %5$s %6$s."
 
-#: ../tuxpaint.c:23559
+#: ../tuxpaint.c:22963
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Liturinn þinn er %1$s %2$s, %3$s %4$s, %5$s %6$s, og %7$s %8$s."
 
-#: ../tuxpaint.c:23560
+#: ../tuxpaint.c:22964
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "Liturinn þinn er %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, og %9$s %10$s."
 
-#: ../tuxpaint.c:23561
+#: ../tuxpaint.c:22965
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1278,26 +1279,29 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:24332 ../tuxpaint.c:24339
+#: ../tuxpaint.c:23734 ../tuxpaint.c:23741
 msgid "entirely"
 msgstr "algerlega"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:27282
+#: ../tuxpaint.c:26651
 msgid "Select a color from your drawing."
 msgstr "Veldu lit úr teikningunni þinni."
 
 #. Add "Color Picker" color:
 #. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:27291
+#: ../tuxpaint.c:26660
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
+"Veldu lit. Litblæir eru að ofan og niður. Litmettun/litstyrkur fer frá"
+" vinstri (fölt) "
+"til hægri (hreint). Litgildi (ljóst/dökkt) eru á gráu stikuni."
 
 #. Add "Color Mixer" color:
 #. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:27303
+#: ../tuxpaint.c:26672
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1306,10 +1310,9 @@ msgstr ""
 "að tóna) og svart (til að skyggja) til að blanda nýjan lit."
 
 #: ../tuxpaint.desktop.in:6
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "tuxpaint"
-msgstr "Tux Paint"
+msgstr "tuxpaint"
 
 #: ../tuxpaint.desktop.in:9
 msgid "Drawing program"
@@ -1373,10 +1376,9 @@ msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Smelltu og dragðu músina til að láta myndina leka."
 
 #: ../../magic/src/blocks_chalk_drip.c:180
-#, fuzzy
 #| msgid "Click to make the entire picture blocky."
 msgid "Click to make the entire picture drip."
-msgstr "Smelltu til að gera myndina alla í blokkum."
+msgstr "Smelltu til að láta alla myndina leka í dropum."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"
@@ -1443,11 +1445,11 @@ msgstr ""
 "Smelltu einu sinni til að velja brett til að klóna. Smelltu og dragðu músina "
 "til að búa til afrit af þeim bletti."
 
-#: ../../magic/src/confetti.c:90
+#: ../../magic/src/confetti.c:86
 msgid "Confetti"
 msgstr "Pappírsskraut"
 
-#: ../../magic/src/confetti.c:100
+#: ../../magic/src/confetti.c:96
 msgid "Click to throw confetti!"
 msgstr "Smelltu til að kasta skrauti!"
 
@@ -1468,10 +1470,9 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr "Smelltu og dragðu músina til að upphleypa myndina."
 
 #: ../../magic/src/emboss.c:117
-#, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
-msgstr "Smelltu til að skerpa alla myndina."
+msgstr "Smelltu til að upphleypa alla myndina."
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
@@ -1521,24 +1522,24 @@ msgstr "Froða"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Smelltu og dragðu músina yfir svæði til að þekja það með froðu."
 
-#: ../../magic/src/fold.c:108
+#: ../../magic/src/fold.c:104
 msgid "Fold"
 msgstr "Brot"
 
-#: ../../magic/src/fold.c:118
+#: ../../magic/src/fold.c:114
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Veldu bakgrunnslit og smelltu til að snúa við horni myndarinnar"
 
-#: ../../magic/src/fretwork.c:187
+#: ../../magic/src/fretwork.c:183
 msgid "Fretwork"
 msgstr "Mynstur"
 
-#: ../../magic/src/fretwork.c:193
+#: ../../magic/src/fretwork.c:189
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Smelltu og dragðu músina til að teikna endurtekin mynstur."
 
-#: ../../magic/src/fretwork.c:195
+#: ../../magic/src/fretwork.c:191
 msgid "Click to surround your picture with repetitive patterns."
 msgstr ""
 "Smelltu til að ramma myndina inn myndina þína með endurteknum mynstrum."
@@ -1795,7 +1796,7 @@ msgstr "Renna"
 
 #: ../../magic/src/perspective.c:165
 msgid "Rush"
-msgstr ""
+msgstr "Hreyfimóðun"
 
 #: ../../magic/src/perspective.c:169
 msgid "Click on the corners and drag where you want to stretch the picture."
@@ -1806,14 +1807,13 @@ msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Smelltu til að breyta myndinni þinni í 2 sinnum 2 spjöld."
 
 #: ../../magic/src/perspective.c:173
-#, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
 msgstr ""
-"Smelltu og dragðu músina upp til að renna að eða niður til að renna frá "
-"myndinni."
+"Smelltu og dragðu músina upp til að renna að eða. Dragðu niður til að renna"
+" frá myndinni og flísaleggja."
 
 #: ../../magic/src/perspective.c:175
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1822,12 +1822,11 @@ msgstr ""
 "myndinni."
 
 #: ../../magic/src/perspective.c:177
-#, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
-"Smelltu og dragðu músina upp til að renna að eða niður til að renna frá "
-"myndinni."
+"Smelltu og dragðu músina upp til að hreyfimóða inn eða niður til að"
+" hreyfimóða út úr myndinni."
 
 #: ../../magic/src/pixels.c:107
 msgid "Pixels"
@@ -1850,11 +1849,11 @@ msgstr ""
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Smelltu til að búa til púsluspil yfir allan skjáinn."
 
-#: ../../magic/src/rails.c:136
+#: ../../magic/src/rails.c:132
 msgid "Rails"
 msgstr "Teinar"
 
-#: ../../magic/src/rails.c:146
+#: ../../magic/src/rails.c:142
 msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Smelltu og dragðu músina til að teikna járnbrautarteina á myndina þína."

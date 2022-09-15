@@ -147,6 +147,9 @@ http://www.tuxpaint.org/
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
 
+    * Icelandic translation
+      Sveinn í Felli <sv1@fellsnet.is>
+
     * Japanese translation
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
