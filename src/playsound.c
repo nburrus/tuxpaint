@@ -48,70 +48,72 @@ static int old_sound[4] = { -1, -1, -1, -1 };
  *   (low values, near the top of the window, are quieter), or
  *   SNDDIST_NEAR for full volume
  */
-void playsound(SDL_Surface * screen, int chan, int s, int override, int x, int y)
+void playsound(SDL_Surface * screen, int chan, int s, int override, int x,
+               int y)
 {
 #ifndef NOSOUND
   int left, dist;
 
   if (!mute && use_sound && s != SND_NONE)
-    {
+  {
 #ifdef DEBUG
-      printf("playsound #%d in channel %d, pos (%d,%d), %soverride, ptr=%p\n", s, chan, x, y, override ? "" : "no ",
-             sounds[s]);
+    printf("playsound #%d in channel %d, pos (%d,%d), %soverride, ptr=%p\n",
+           s, chan, x, y, override ? "" : "no ", sounds[s]);
+    fflush(stdout);
+#endif
+    if (override || !Mix_Playing(chan))
+    {
+      Mix_PlayChannel(chan, sounds[s], 0);
+
+      old_sound[chan] = s;
+    }
+
+    if (old_sound[chan] == s)
+    {
+      if (y == SNDDIST_NEAR)
+        dist = 0;
+      else
+      {
+        if (y < 0)
+          y = 0;
+        else if (y >= screen->h - 1)
+          y = screen->h - 1;
+
+        dist = (255 * ((screen->h - 1) - y)) / (screen->h - 1);
+      }
+
+
+      if (use_stereo)
+      {
+        if (x == SNDPOS_LEFT)
+          left = 255 - dist;
+        else if (x == SNDPOS_CENTER)
+          left = (255 - dist) / 2;
+        else if (x == SNDPOS_RIGHT)
+          left = 0;
+        else
+        {
+          if (x < 0)
+            x = 0;
+          else if (x >= screen->w)
+            x = screen->w - 1;
+
+          left = ((255 - dist) * ((screen->w - 1) - x)) / (screen->w - 1);
+        }
+      }
+      else
+      {
+        /* Stereo disabled; treat everything like a SNDPOS_CENTER
+           (equal amount in each of the left/right channels) */
+        left = (255 - dist) / 2;
+      }
+#ifdef DEBUG
+      printf("Panning of sound #%d in channel %d, left=%d, right=%d\n", s,
+             chan, left, (255 - dist) - left);
       fflush(stdout);
 #endif
-      if (override || !Mix_Playing(chan))
-        {
-          Mix_PlayChannel(chan, sounds[s], 0);
-
-          old_sound[chan] = s;
-        }
-
-      if (old_sound[chan] == s)
-        {
-          if (y == SNDDIST_NEAR)
-            dist = 0;
-          else
-            {
-              if (y < 0)
-                y = 0;
-              else if (y >= screen->h - 1)
-                y = screen->h - 1;
-
-              dist = (255 * ((screen->h - 1) - y)) / (screen->h - 1);
-            }
-
-
-          if (use_stereo)
-            {
-              if (x == SNDPOS_LEFT)
-                left = 255 - dist;
-              else if (x == SNDPOS_CENTER)
-                left = (255 - dist) / 2;
-              else if (x == SNDPOS_RIGHT)
-                left = 0;
-              else
-                {
-                  if (x < 0)
-                    x = 0;
-                  else if (x >= screen->w)
-                    x = screen->w - 1;
-
-                  left = ((255 - dist) * ((screen->w - 1) - x)) / (screen->w - 1);
-                }
-            }
-          else
-            {
-              /* Stereo disabled; treat everything like a SNDPOS_CENTER
-                 (equal amount in each of the left/right channels) */
-              left = (255 - dist) / 2;
-            }
-#ifdef DEBUG
-          printf("Panning of sound #%d in channel %d, left=%d, right=%d\n", s, chan, left, (255 - dist) - left);
-          fflush(stdout);
-#endif
-          Mix_SetPanning(chan, left, (255 - dist) - left);
-        }
+      Mix_SetPanning(chan, left, (255 - dist) - left);
     }
+  }
 #endif
 }

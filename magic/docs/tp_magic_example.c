@@ -93,9 +93,11 @@ Uint8 example_r, example_g, example_b;
 // that are declared _before_ them.
 
 void example_drag(magic_api * api, int which, SDL_Surface * canvas,
-                  SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+                  SDL_Surface * snapshot, int ox, int oy, int x, int y,
+                  SDL_Rect * update_rect);
 
-void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+void example_line_callback(void *ptr, int which, SDL_Surface * canvas,
+                           SDL_Surface * snapshot, int x, int y);
 
 
 /* Setup Functions: */
@@ -136,22 +138,23 @@ int example_init(magic_api * api)
   char fname[1024];
 
   for (i = 0; i < NUM_TOOLS; i++)
-    {
-      // Assemble the filename from the "snd_filenames[]" array into
-      // a full path to a real file.
-      //
-      // Use "api->data_directory" to figure out where our sounds should be.
-      // (The "tp-magic-config --dataprefix" command would have told us when
-      // we installed our plugin and its data.)
+  {
+    // Assemble the filename from the "snd_filenames[]" array into
+    // a full path to a real file.
+    //
+    // Use "api->data_directory" to figure out where our sounds should be.
+    // (The "tp-magic-config --dataprefix" command would have told us when
+    // we installed our plugin and its data.)
 
-      snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory, snd_filenames[i]);
+    snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory,
+             snd_filenames[i]);
 
-      printf("Trying to load %s sound file\n", fname);
+    printf("Trying to load %s sound file\n", fname);
 
-      // Try to load the file!
+    // Try to load the file!
 
-      snd_effect[i] = Mix_LoadWAV(fname);
-    }
+    snd_effect[i] = Mix_LoadWAV(fname);
+  }
 
   return (1);
 }
@@ -191,7 +194,8 @@ SDL_Surface *example_get_icon(magic_api * api, int which)
   // We use 'which' (which of our tools Tux Paint is asking about)
   // as an index into the array.
 
-  snprintf(fname, sizeof(fname), "%s/images/magic/%s.png", api->data_directory, icon_filenames[which]);
+  snprintf(fname, sizeof(fname), "%s/images/magic/%s.png",
+           api->data_directory, icon_filenames[which]);
 
 
   // Try to load the image, and return the results to Tux Paint:
@@ -330,7 +334,8 @@ void example_shutdown(magic_api * api)
 
 void
 example_click(magic_api * api, int which, int mode,
-              SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect)
+              SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
+              SDL_Rect * update_rect)
 {
   // In our case, a single click (which is also the start of a drag!)
   // is identical to what dragging does, but just at one point, rather
@@ -347,7 +352,8 @@ example_click(magic_api * api, int which, int mode,
 
 void
 example_drag(magic_api * api, int which, SDL_Surface * canvas,
-             SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+             SDL_Surface * snapshot, int ox, int oy, int x, int y,
+             SDL_Rect * update_rect)
 {
   // Call Tux Paint's "line()" function.
   //
@@ -358,7 +364,8 @@ example_drag(magic_api * api, int which, SDL_Surface * canvas,
   // useful things (which of our "Magic" tools is being used and
   // the current and snapshot canvases).
 
-  api->line((void *)api, which, canvas, snapshot, ox, oy, x, y, 1, example_line_callback);
+  api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, 1,
+            example_line_callback);
 
 
   // If we need to, swap the X and/or Y values, so that
@@ -366,19 +373,19 @@ example_drag(magic_api * api, int which, SDL_Surface * canvas,
   // so the values we put inside "update_rect" make sense:
 
   if (ox > x)
-    {
-      int tmp = ox;
+  {
+    int tmp = ox;
 
-      ox = x;
-      x = tmp;
-    }
+    ox = x;
+    x = tmp;
+  }
   if (oy > y)
-    {
-      int tmp = oy;
+  {
+    int tmp = oy;
 
-      oy = y;
-      y = tmp;
-    }
+    oy = y;
+    y = tmp;
+  }
 
 
   // Fill in the elements of the "update_rect" SDL_Rect structure
@@ -409,7 +416,8 @@ example_drag(magic_api * api, int which, SDL_Surface * canvas,
 
 void
 example_release(magic_api * api, int which,
-                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect)
+                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
+                SDL_Rect * update_rect)
 {
   // Neither of our effects do anything special when the mouse is released
   // from a click or click-and-drag, so there's no code here...
@@ -453,7 +461,8 @@ void example_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 // It pays attention to 'which' to determine which of our plugin's tools
 // is currently selected.
 
-void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
+void example_line_callback(void *ptr, int which, SDL_Surface * canvas,
+                           SDL_Surface * snapshot, int x, int y)
 {
   // For technical reasons, we can't accept a pointer to the "magic_api"
   // struct, like the other functions do.
@@ -473,37 +482,41 @@ void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surfa
   // Tux Paint sends to us with the values we enumerated above.
 
   if (which == TOOL_ONE)
-    {
-      // Tool number 1 simply draws a single pixel at the (x,y) location.
-      // It's a 1x1 pixel brush
+  {
+    // Tool number 1 simply draws a single pixel at the (x,y) location.
+    // It's a 1x1 pixel brush
 
-      api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, example_r, example_g, example_b));
+    api->putpixel(canvas, x, y,
+                  SDL_MapRGB(canvas->format, example_r, example_g,
+                             example_b));
 
-      // We use "SDL_MapRGB()" to convert the RGB value we receive from Tux Paint
-      // for the user's current color selection to a 'Uint32' pixel value
-      // we can send to Tux Paint's "putpixel()" function.
-    }
+    // We use "SDL_MapRGB()" to convert the RGB value we receive from Tux Paint
+    // for the user's current color selection to a 'Uint32' pixel value
+    // we can send to Tux Paint's "putpixel()" function.
+  }
   else if (which == TOOL_TWO)
+  {
+    // Tool number 2 copies an 8x8 square of pixels from the opposite side
+    // of the canvas and puts it under the cursor
+
+    for (yy = -4; yy < 4; yy++)
     {
-      // Tool number 2 copies an 8x8 square of pixels from the opposite side
-      // of the canvas and puts it under the cursor
+      for (xx = -4; xx < 4; xx++)
+      {
+        api->putpixel(canvas, x + xx, y + yy,
+                      api->getpixel(snapshot, canvas->w - x - xx,
+                                    canvas->h - y - yy));
 
-      for (yy = -4; yy < 4; yy++)
-        {
-          for (xx = -4; xx < 4; xx++)
-            {
-              api->putpixel(canvas, x + xx, y + yy, api->getpixel(snapshot, canvas->w - x - xx, canvas->h - y - yy));
+        // We simply use Tux Paint's "getpixel()" routine to pull pixel
+        // values from the 'snapshot', and then "putpixel()" to draw them
+        // right into the 'canvas'.
 
-              // We simply use Tux Paint's "getpixel()" routine to pull pixel
-              // values from the 'snapshot', and then "putpixel()" to draw them
-              // right into the 'canvas'.
-
-              // Note: putpixel() and getpixel() are safe to use, even if your
-              // X,Y values are outside of the SDL surface (e.g., negative, or
-              // greater than the surface's width or height).
-            }
-        }
+        // Note: putpixel() and getpixel() are safe to use, even if your
+        // X,Y values are outside of the SDL surface (e.g., negative, or
+        // greater than the surface's width or height).
+      }
     }
+  }
 }
 
 // Switch-In event
@@ -522,7 +535,8 @@ void example_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surfa
 // Our example doesn't do anything when we switch to, or away from, our
 // Magic tools, so we just do nothing here.
 
-void example_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void example_switchin(magic_api * api, int which, int mode,
+                      SDL_Surface * canvas)
 {
 }
 
@@ -542,6 +556,7 @@ void example_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas
 // Our example doesn't do anything when we switch to, or away from, our
 // Magic tools, so we just do nothing here.
 
-void example_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas)
+void example_switchout(magic_api * api, int which, int mode,
+                       SDL_Surface * canvas)
 {
 }

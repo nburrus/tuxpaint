@@ -25,8 +25,8 @@
 #include "SDL.h"
 
 
-int DisplayPageSetup(const SDL_Surface* surface);
-const char* SurfacePrint(const SDL_Surface* surface, int showDialog);
+int DisplayPageSetup(const SDL_Surface * surface);
+const char *SurfacePrint(const SDL_Surface * surface, int showDialog);
 
 
 #endif /* __IOS_PRINT_H__ */

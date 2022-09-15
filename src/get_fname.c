@@ -87,35 +87,40 @@ char *get_fname(const char *const name, int kind)
 {
   char f[512];
   // const char *restrict const dir;
-  const char * dir;
+  const char *dir;
 
-  if (kind == DIR_SAVE) {
+  if (kind == DIR_SAVE)
+  {
     dir = savedir;
-  } else if (kind == DIR_DATA) {
+  }
+  else if (kind == DIR_DATA)
+  {
     dir = datadir;
-  } else if (kind == DIR_EXPORT || kind == DIR_EXPORT_PARENT) {
+  }
+  else if (kind == DIR_EXPORT || kind == DIR_EXPORT_PARENT)
+  {
     dir = exportdir;
   }
 
-  snprintf(f, sizeof(f),
-           "%s%c%s",
-	   dir, (*name) ? '/' : '\0', /* Some mkdir()'s don't like trailing slashes */
-	   name);
+  snprintf(f, sizeof(f), "%s%c%s", dir, (*name) ? '/' : '\0',   /* Some mkdir()'s don't like trailing slashes */
+           name);
 
-  if (kind == DIR_EXPORT_PARENT) {
+  if (kind == DIR_EXPORT_PARENT)
+  {
     int len, i, stop;
 
     stop = -1;
     len = strlen(f);
-    for (i = len - 1; i >= 0 && stop == -1; i--) {
+    for (i = len - 1; i >= 0 && stop == -1; i--)
+    {
       if (f[i] == '/')
         stop = i;
     }
-    if (stop != -1) {
+    if (stop != -1)
+    {
       f[stop] = '\0';
     }
   }
 
   return strdup(f);
 }
-

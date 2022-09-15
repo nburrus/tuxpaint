@@ -29,17 +29,19 @@
 #include <unistd.h>
 #include <png.h>
 
-int main(int argc, char * argv[]) {
+int main(int argc, char *argv[])
+{
   int i, w, h, y;
-  FILE * fi;
+  FILE *fi;
   png_structp png;
   png_infop info;
   png_byte ctype, depth;
-  png_bytep * rows;
+  png_bytep *rows;
 
 
   /* Usage output */
-  if (argc == 1 || strcmp(argv[1], "--help") == 0) {
+  if (argc == 1 || strcmp(argv[1], "--help") == 0)
+  {
     fprintf(stderr, "Usage: %s file.png [file.png ...]\n", argv[0]);
     exit(1);
   }
@@ -53,30 +55,39 @@ int main(int argc, char * argv[]) {
 
 
   /* Open each PNG image!... */
-  for (i = 1; i < argc; i++) {
-    printf("%5d ------------------------------------------------------------------\n", i);
+  for (i = 1; i < argc; i++)
+  {
+    printf
+      ("%5d ------------------------------------------------------------------\n",
+       i);
     printf("%s\n", argv[i]);
     fflush(stdout);
 
     /* Open the file */
     fi = fopen(argv[i], "rb");
-    if (fi == NULL) {
+    if (fi == NULL)
+    {
       printf("Cannot open\n");
-    } else {
+    }
+    else
+    {
       /* Prepare PNG library stuff... */
       png = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-      if (!png) {
+      if (!png)
+      {
         fprintf(stderr, "Cannot png_create_read_struct()!\n");
         exit(1);
       }
 
       info = png_create_info_struct(png);
-      if (!info) {
+      if (!info)
+      {
         fprintf(stderr, "Cannot png_create_info_struct()!\n");
         exit(1);
       }
 
-      if (setjmp(png_jmpbuf(png))) {
+      if (setjmp(png_jmpbuf(png)))
+      {
         fprintf(stderr, "Cannot setjmp(png_jmpbuf(png)))!\n");
         exit(1);
       }
@@ -95,39 +106,43 @@ int main(int argc, char * argv[]) {
       depth = png_get_bit_depth(png, info);
 
       /* If 16-bit, strip to 8-bit */
-      if (depth == 16) {
+      if (depth == 16)
+      {
         printf("test-png warning: 16-bit\n");
         png_set_strip_16(png);
       }
 
       /* Switch palette to RGB */
-      if (ctype == PNG_COLOR_TYPE_PALETTE) {
+      if (ctype == PNG_COLOR_TYPE_PALETTE)
+      {
         printf("test-png warning: paletted\n");
         png_set_palette_to_rgb(png);
       }
 
       /* Expand low-depth greyscale up to 8-bit */
-      if (ctype == PNG_COLOR_TYPE_GRAY && depth < 8) {
+      if (ctype == PNG_COLOR_TYPE_GRAY && depth < 8)
+      {
         printf("test-png warning: greyscale with only %d-bit depth\n", depth);
         png_set_expand_gray_1_2_4_to_8(png);
       }
 
       /* Expand tRNS chunks into alpha */
-      if (png_get_valid(png, info, PNG_INFO_tRNS)) {
+      if (png_get_valid(png, info, PNG_INFO_tRNS))
+      {
         printf("test-png warning: contains tRNS chunk\n");
         png_set_tRNS_to_alpha(png);
       }
 
       /* Fill alpha channel if there is none */
       if (ctype == PNG_COLOR_TYPE_RGB ||
-          ctype == PNG_COLOR_TYPE_GRAY ||
-          ctype == PNG_COLOR_TYPE_PALETTE) {
+          ctype == PNG_COLOR_TYPE_GRAY || ctype == PNG_COLOR_TYPE_PALETTE)
+      {
         png_set_filler(png, 0xFF, PNG_FILLER_AFTER);
       }
 
       /* Expand grey to color */
-      if (ctype == PNG_COLOR_TYPE_GRAY ||
-          ctype == PNG_COLOR_TYPE_GRAY_ALPHA) {
+      if (ctype == PNG_COLOR_TYPE_GRAY || ctype == PNG_COLOR_TYPE_GRAY_ALPHA)
+      {
         printf("test-png warning: greyscale\n");
         png_set_gray_to_rgb(png);
       }
@@ -137,15 +152,19 @@ int main(int argc, char * argv[]) {
 
       /* Allocate space */
       rows = (png_bytep *) malloc(sizeof(png_bytep) * h);
-      if (!rows) {
+      if (!rows)
+      {
         fprintf(stderr, "Failed to malloc() space for image data rows!\n");
         exit(1);
       }
 
-      for (y = 0; y < h; y++) {
+      for (y = 0; y < h; y++)
+      {
         rows[y] = (png_byte *) malloc(png_get_rowbytes(png, info));
-        if (!rows[y]) {
-          fprintf(stderr, "Failed to malloc() space for image data row #%d!\n", y);
+        if (!rows[y])
+        {
+          fprintf(stderr,
+                  "Failed to malloc() space for image data row #%d!\n", y);
           exit(1);
         }
       }
@@ -170,5 +189,5 @@ int main(int argc, char * argv[]) {
     fflush(stdout);
   }
 
-  return(0);
+  return (0);
 }

@@ -24,21 +24,21 @@
 
 
 #if defined(__APPLE__)
-    #include <TargetConditionals.h>
+#include <TargetConditionals.h>
 
     /*
-    * MAC test must be last because it tests true even on iOS / tvOS / watchOS.
-    */
+     * MAC test must be last because it tests true even on iOS / tvOS / watchOS.
+     */
 
-    #if TARGET_OS_IOS || TARGET_OS_IPHONE || TARGET_OS_SIMULATOR || TARGET_IPHONE_SIMULATOR || TARGET_OS_EMBEDDED
-        #define __IOS__         1
-    #elif TARGET_OS_OSX || TARGET_OS_MAC
-        #define __MACOS__       1
-    #else
-        #define __OTHER_APPLE__ 1
+#if TARGET_OS_IOS || TARGET_OS_IPHONE || TARGET_OS_SIMULATOR || TARGET_IPHONE_SIMULATOR || TARGET_OS_EMBEDDED
+#define __IOS__         1
+#elif TARGET_OS_OSX || TARGET_OS_MAC
+#define __MACOS__       1
+#else
+#define __OTHER_APPLE__ 1
 
-        #warning "Unsupported Apple platform, will build on a best-effort basis"
-    #endif
+#warning "Unsupported Apple platform, will build on a best-effort basis"
+#endif
 #endif /* __APPLE__ */
 
 

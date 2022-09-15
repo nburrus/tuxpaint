@@ -69,17 +69,18 @@
 
 static int f2int(float f)
 {
-  return ((int)f);
+  return ((int) f);
 }
 
 static int f2dec(float f)
 {
-  return (int)((f - f2int(f)) * 100);
+  return (int) ((f - f2int(f)) * 100);
 }
 
 /* Actually save the PostScript data to the file stream: */
 int do_ps_save(FILE * fi,
-               const char *restrict const fname, SDL_Surface * surf, const char *restrict pprsize, int is_pipe)
+               const char *restrict const fname, SDL_Surface * surf,
+               const char *restrict pprsize, int is_pipe)
 {
   const struct paper *ppr;
   int img_w = surf->w;
@@ -93,7 +94,8 @@ int do_ps_save(FILE * fi,
   Uint8 r, g, b;
   char buf[256];
 
-  Uint32(*getpixel) (SDL_Surface *, int, int) = getpixels[surf->format->BytesPerPixel];
+  Uint32(*getpixel) (SDL_Surface *, int, int) =
+    getpixels[surf->format->BytesPerPixel];
   int printed_img_w, printed_img_h;
   time_t t = time(NULL);
   int rotate;
@@ -103,35 +105,35 @@ int do_ps_save(FILE * fi,
   /* Determine paper size: */
 
   if (pprsize == NULL)
+  {
+    /* User did not request a specific paper size (on command-line or
+       in config file), ask the system.  It will return either their
+       $PAPER env. var., the value from /etc/papersize, or NULL: */
+
+    pprsize = systempapername();
+
+    if (pprsize == NULL)
     {
-      /* User did not request a specific paper size (on command-line or
-         in config file), ask the system.  It will return either their
-         $PAPER env. var., the value from /etc/papersize, or NULL: */
+      /* No setting, env. var. or /etc/ file; use the default! */
 
-      pprsize = systempapername();
-
-      if (pprsize == NULL)
-        {
-          /* No setting, env. var. or /etc/ file; use the default! */
-
-          pprsize = defaultpapername();
+      pprsize = defaultpapername();
 
 #ifdef DEBUG
-          printf("Using default paper\n");
-#endif
-        }
-#ifdef DEBUG
-      else
-        {
-          printf("Using system paper\n");
-        }
+      printf("Using default paper\n");
 #endif
     }
+#ifdef DEBUG
+    else
+    {
+      printf("Using system paper\n");
+    }
+#endif
+  }
 #ifdef DEBUG
   else
-    {
-      printf("Using user paper\n");
-    }
+  {
+    printf("Using user paper\n");
+  }
 #endif
 
 #ifdef DEBUG
@@ -147,7 +149,8 @@ int do_ps_save(FILE * fi,
   ppr_h = paperpsheight(ppr);
 
 #ifdef DEBUG
-  printf("Paper is %d x %d (%.2f\" x %.2f\")\n", ppr_w, ppr_h, (float)ppr_w / 72.0, (float)ppr_h / 72.0);
+  printf("Paper is %d x %d (%.2f\" x %.2f\")\n", ppr_w, ppr_h,
+         (float) ppr_w / 72.0, (float) ppr_h / 72.0);
 #endif
 
   paperdone();                  // FIXME: Should we do this at quit? -bjk 2007.06.25
@@ -155,18 +158,19 @@ int do_ps_save(FILE * fi,
 
   /* Determine whether it's best to rotate the image: */
 
-  if ((ppr_w >= ppr_h && img_w >= img_h) || (ppr_w <= ppr_h && img_w <= img_h))
-    {
-      rotate = 0;
-      r_img_w = img_w;
-      r_img_h = img_h;
-    }
+  if ((ppr_w >= ppr_h && img_w >= img_h)
+      || (ppr_w <= ppr_h && img_w <= img_h))
+  {
+    rotate = 0;
+    r_img_w = img_w;
+    r_img_h = img_h;
+  }
   else
-    {
-      rotate = 1;
-      r_img_w = img_h;
-      r_img_h = img_w;
-    }
+  {
+    rotate = 1;
+    r_img_w = img_h;
+    r_img_h = img_w;
+  }
 
 #ifdef DEBUG
   printf("Image is %d x %d\n", img_w, img_h);
@@ -177,13 +181,16 @@ int do_ps_save(FILE * fi,
 
   /* Determine scale: */
 
-  scale = my_min(((float)(ppr_w - (MARGIN * 2)) / (float)r_img_w), ((float)(ppr_h - (MARGIN * 2)) / (float)r_img_h));
+  scale =
+    my_min(((float) (ppr_w - (MARGIN * 2)) / (float) r_img_w),
+           ((float) (ppr_h - (MARGIN * 2)) / (float) r_img_h));
 
   printed_img_w = r_img_w * scale;
   printed_img_h = r_img_h * scale;
 
 #ifdef DEBUG
-  printf("Scaling image by %.2f (to %d x %d)\n", scale, printed_img_w, printed_img_h);
+  printf("Scaling image by %.2f (to %d x %d)\n", scale, printed_img_w,
+         printed_img_h);
 #endif
 
 
@@ -209,7 +216,8 @@ int do_ps_save(FILE * fi,
 
   fprintf(fi, "%%%%Pages: 1\n");
 
-  fprintf(fi, "%%%%BoundingBox: 0 0 %d %d\n", (int)(ppr_w + 0.5), (int)(ppr_h + 0.5));
+  fprintf(fi, "%%%%BoundingBox: 0 0 %d %d\n", (int) (ppr_w + 0.5),
+          (int) (ppr_h + 0.5));
 
   fprintf(fi, "%%%%EndComments\n");
 
@@ -228,20 +236,23 @@ int do_ps_save(FILE * fi,
 
   fprintf(fi, "%%%%Page: 1 1\n");
 
-  fprintf(fi, "<< /PageSize [ %d %d ] /ImagingBBox null >> setpagedevice\n", ppr_w, ppr_h);
+  fprintf(fi, "<< /PageSize [ %d %d ] /ImagingBBox null >> setpagedevice\n",
+          ppr_w, ppr_h);
 
   fprintf(fi, "gsave\n");
 
   /* 'translate' moves the user space origin to a new position with
      respect to the current page, leaving the orientation of the axes and
      the unit lengths unchanged. */
-  fprintf(fi, "%d.%02d %d.%02d translate\n", f2int(tlate_x), f2dec(tlate_x), f2int(tlate_y), f2dec(tlate_y));
+  fprintf(fi, "%d.%02d %d.%02d translate\n", f2int(tlate_x), f2dec(tlate_x),
+          f2int(tlate_y), f2dec(tlate_y));
 
   /* 'scale' modiﬁes the unit lengths independently along the current
      x and y axes, leaving the origin location and the orientation of the
      axes unchanged. */
   fprintf(fi, "%d.%02d %d.%02d scale\n",
-          f2int(printed_img_w), f2dec(printed_img_w), f2int(printed_img_h), f2dec(printed_img_h));
+          f2int(printed_img_w), f2dec(printed_img_w), f2int(printed_img_h),
+          f2dec(printed_img_h));
 
   /* Rotate the image */
   if (rotate)
@@ -261,23 +272,23 @@ int do_ps_save(FILE * fi,
   cur_line_len = 0;
 
   for (y = 0; y < img_h; y++)
+  {
+    for (plane = 0; plane < 3; plane++)
     {
-      for (plane = 0; plane < 3; plane++)
-        {
-          for (x = 0; x < img_w; x++)
-            {
-              SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
-              fprintf(fi, "%02x", (plane == 0 ? r : (plane == 1 ? g : b)));
+      for (x = 0; x < img_w; x++)
+      {
+        SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g, &b);
+        fprintf(fi, "%02x", (plane == 0 ? r : (plane == 1 ? g : b)));
 
-              cur_line_len++;
-              if (cur_line_len >= 30)
-                {
-                  fprintf(fi, "\n");
-                  cur_line_len = 0;
-                }
-            }
+        cur_line_len++;
+        if (cur_line_len >= 30)
+        {
+          fprintf(fi, "\n");
+          cur_line_len = 0;
         }
+      }
     }
+  }
 
   fprintf(fi, "\n");
   fprintf(fi, "grestore\n");
@@ -286,74 +297,74 @@ int do_ps_save(FILE * fi,
   fprintf(fi, "%%%%EOF\n");
 
   if (!is_pipe)
-    {
-      fclose(fi);
-      return 1;
-    }
+  {
+    fclose(fi);
+    return 1;
+  }
   else
-    {
-      pid_t child_pid, w;
-      int status;
+  {
+    pid_t child_pid, w;
+    int status;
 
 #ifdef __APPLE__
-      /* macOS does not always reset errno so Tux Paint thinks print never
-       * succeeds - let's reset before calling pclose() on macOS */
-      errno = 0;
+    /* macOS does not always reset errno so Tux Paint thinks print never
+     * succeeds - let's reset before calling pclose() on macOS */
+    errno = 0;
 #endif
 
-      child_pid = pclose(fi);
+    child_pid = pclose(fi);
 
 #ifdef DEBUG
-      printf("pclose returned %d\n", child_pid);
-      fflush(stdout);
-      printf("errno = %d\n", errno);
-      fflush(stdout);
+    printf("pclose returned %d\n", child_pid);
+    fflush(stdout);
+    printf("errno = %d\n", errno);
+    fflush(stdout);
 #endif
 
-      if (child_pid < 0 || (errno != 0 && errno != EAGAIN))
-        {                       /* FIXME: This right? */
-          return 0;
-        }
-      else if (child_pid == 0)
-        {
-          return 1;
-        }
-
-      do
-        {
-          w = waitpid(child_pid, &status, 0);
-
-#ifdef DEBUG
-          if (w == -1)
-            {
-              perror("waitpid");
-              exit(EXIT_FAILURE);
-            }
-          if (WIFEXITED(status))
-            {
-              printf("exited, status=%d\n", WEXITSTATUS(status));
-            }
-          else if (WIFSIGNALED(status))
-            {
-              printf("killed by signal %d\n", WTERMSIG(status));
-            }
-          else if (WIFSTOPPED(status))
-            {
-              printf("stopped by signal %d\n", WSTOPSIG(status));
-            }
-          else if (WIFCONTINUED(status))
-            {
-              printf("continued\n");
-            }
-#endif
-        }
-      while (w != -1 && !WIFEXITED(status) && !WIFSIGNALED(status));
-
-      if (WIFEXITED(status) && WEXITSTATUS(status) != 0)        /* Not happy exit */
-        return 0;
-
+    if (child_pid < 0 || (errno != 0 && errno != EAGAIN))
+    {                           /* FIXME: This right? */
+      return 0;
+    }
+    else if (child_pid == 0)
+    {
       return 1;
     }
+
+    do
+    {
+      w = waitpid(child_pid, &status, 0);
+
+#ifdef DEBUG
+      if (w == -1)
+      {
+        perror("waitpid");
+        exit(EXIT_FAILURE);
+      }
+      if (WIFEXITED(status))
+      {
+        printf("exited, status=%d\n", WEXITSTATUS(status));
+      }
+      else if (WIFSIGNALED(status))
+      {
+        printf("killed by signal %d\n", WTERMSIG(status));
+      }
+      else if (WIFSTOPPED(status))
+      {
+        printf("stopped by signal %d\n", WSTOPSIG(status));
+      }
+      else if (WIFCONTINUED(status))
+      {
+        printf("continued\n");
+      }
+#endif
+    }
+    while (w != -1 && !WIFEXITED(status) && !WIFSIGNALED(status));
+
+    if (WIFEXITED(status) && WEXITSTATUS(status) != 0)  /* Not happy exit */
+      return 0;
+
+    return 1;
+  }
 }
 
 #endif

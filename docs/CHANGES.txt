@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.September.14 (0.9.29)
+2022.September.15 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -130,6 +130,9 @@ http://www.tuxpaint.org/
       to check `src/po/LINGUAS` file.  Also, OPTION docs and
       Tux Paint Config. source updated to make the script's job easier.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Cleaned up .c and .h source files using `indent`:
+      find . -name "*.c" -or -name "*.h" -exec  indent -nbfda -npcs -npsl -bli0 --no-tabs {} \;
 
   * Documentation updates:
     ---------------------
