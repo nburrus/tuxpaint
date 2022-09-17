@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-03 16:39-0700\n"
-"PO-Revision-Date: 2022-09-13 21:07+0200\n"
+"PO-Revision-Date: 2022-09-15 15:04+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1623,11 +1623,11 @@ msgstr "Clique pour assombrir la totalité du dessin."
 
 #: ../../magic/src/fisheye.c:102
 msgid "Fisheye"
-msgstr "Oeil de poisson"
+msgstr "Grand angle"
 
 #: ../../magic/src/fisheye.c:112
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Choisis une partie de l'image pour créer un effet \"oeil de poisson\"."
+msgstr "Choisis une partie de l'image pour créer un effet \"fisheye\"."
 
 #: ../../magic/src/flower.c:146
 msgid "Flower"
