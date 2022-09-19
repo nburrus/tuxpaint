@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-05 00:48-0700\n"
-"PO-Revision-Date: 2022-06-04 10:02+0200\n"
+"PO-Revision-Date: 2022-09-20 00:52+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -356,30 +356,30 @@ msgid ""
 "drawing activity. It combines an easy-to-use interface, fun sound effects, "
 "and an encouraging cartoon mascot who guides children as they use the "
 "program."
-msgstr ""
+msgstr "Tux Paint és un guardonat programa de dibuix, lliure i gratuït per a nenes i nens de 3 a 12 anys. Es fa servir en escoles d'arreu del món com a eina d'aprenentatge de dibuix per ordinador. Combina una interfície fàcil d'usar, divertits efectes de so i una mascota que anima i guia la quitxalla mentre el fan servir. "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
-msgstr ""
+msgstr "Presenta un llenç en blanc i una multitud d'eines de dibuix per ajudar en la creativitat."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
-msgstr ""
+msgstr "New Breed Software et al."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:36
 msgid "The Magic tool is a set of special effects"
-msgstr ""
+msgstr "L'eina Màgic és una col·lecció d'efectes especials"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:40
 msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
-msgstr ""
+msgstr "L'eina Pinta serveix per pintar a mà alçada fent servir els diferents pinzells i colors"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:44
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
-msgstr ""
+msgstr "L'eina Estampa serveix per inserir imatges al dibuix"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -387,7 +387,7 @@ msgid ""
 "users to combine different proportions of primary colors (red, yellow, and "
 "blue) and shades (white, grey, and black) to create new colors, similar to "
 "mixing paints."
-msgstr ""
+msgstr "La paleta de colors inclou una nova opció per mesclar els colors que permet combinar els colors primaris(magenta, groc i cian) en diferents proporcions i tons(blanc, gris i negre) per crear nous colors com si es barregessin pintures."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
@@ -395,21 +395,21 @@ msgid ""
 "sixty-five thousand color choices, now supports separate hue, saturation, "
 "and value settings, allowing users to choose from over sixteen million "
 "colors."
-msgstr ""
+msgstr "L'eina de tria de colors, que previament oferia una paleta estàtica d'uns seixanta-cinc mil colors ara ofereix to, saturació i valor per separat, permetent triar entre setze milions de colors."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
 "drawing."
-msgstr ""
+msgstr "També s'ha afegit una drecera de teclat per accedir al selector de color(comptagotes) per agafar colors del dibuix."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
 "have been given better default spacing values, as well."
-msgstr ""
+msgstr "Ara les eines Pinta i Línies permeten ajustar l'espaiat dels pinzells, permetent línies de punts i superposicions. També s'ha ajustat els valors per defecte de molts altres pinzells. "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
@@ -417,7 +417,7 @@ msgid ""
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
 "across the canvas in tiles, rather than filling the canvas with a solid "
 "background color. The Rush tool blurs the results."
-msgstr ""
+msgstr "Màgic, s'ha afegit dues noves variants de l'eina Zoom, Zoom mosaic i Zoom lliscat, Quan es redueixla imatge amb Zoom mosaic, aquesta es replica arreu en comptes de omplir la resta del dibuis amb el color de fons. Zoom lliscat desenfoca els resultats."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
@@ -426,7 +426,7 @@ msgid ""
 "aspect ratio of the shape is displayed at the bottom while you make your "
 "adjustments. Instructional information shown while using some other tools "
 "has also been expanded."
-msgstr ""
+msgstr "L'eina Formes ara ofereix hexàgon(6 cares) i heptàgon(7 cares). Les formes que es poden estirar informen a baix de la seva proporció. S'ha expandit també altres instruccions mostrades mentre es fa servir l'eina."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid ""
@@ -434,7 +434,7 @@ msgid ""
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
 "macOS. Sizing of Tux Paint's built-in on-screen keyboard has been improved. "
 "The look and feel of the user documentation has been improved."
-msgstr ""
+msgstr "Les dreceres de teclat, com [Control]+[S] per desar, ara en macOS s'accedeixen amb [⌘ Command]. La mida del teclat de pantalla integrat s'ha millorat i la documentació s'ha millorat."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
@@ -443,7 +443,7 @@ msgid ""
 "directional and animated brush features, are now visually indicated by the "
 "brush shape selector. Additionally, the Fill tool now offers a freehand "
 "painting mode for interactively coloring within a confined area."
-msgstr ""
+msgstr "Les eines Pinta i Línies tenen pinzells que giren segons l'angle del traç. Aquesta nova característica, així com l'antiga de pinzells direccionals i la de pinzells animats es mostren visualment en el selector de pinzells. A més, l'eina Emplena ara ofereix un mode de pintat a mà alçada dintre d'una àrea confinada."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -454,7 +454,7 @@ msgid ""
 "reflection on the drawing. Stretch stretches and squashes the picture like a "
 "fun-house mirror. Lastly, Smooth Rainbow provides a more gradual variation "
 "of Tux Paint's classic Rainbow tool."
-msgstr ""
+msgstr "S'ha afegit sis noves eines Màgiques. Panells encongeix i duplica el dibuix en una graella de 2x2, útil pe fer un còmic de quatre panells. Oposat produeix colors complementaris. Llamp dibuixa llamps interactivament. Reflexió crea una reflexió com la d'un llac. Estira estira i comprimeix la imatge com en una casa de miralls. Finalment, Colors suaus és una versió gradual de Colors de l'arc."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
@@ -463,7 +463,7 @@ msgid ""
 "which makes an image look like a cartoon drawing; and TV, which simulates a "
 "television screen. Additionally, Cartoon and Halftone, along with Blocks, "
 "Chalk, and Emboss, now offer the ability to alter the entire image at once!"
-msgstr ""
+msgstr "També s'ha actualitzat vàries eines Màgiques. S'ha millorat Semitons que simula fotografies d'un diari. Solidifica que transforma la imatge a colors sòlids, com en un còmic, i TV que emula una pantalla de televisió. A més, Solidifica i Semitons, així com Quadrets, Guix i Relleu ara poden alterar tota la imatge d'un cop!"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
@@ -471,7 +471,7 @@ msgid ""
 "painting, distorts, color filters, picture warps, pattern painting, "
 "artistic, and picture decorations — making it easier to find the tool you "
 "need."
-msgstr ""
+msgstr "Finalment, les eines Màguiques s'han agrupat per funcionalitat, pintat, distorsions, filtres de color, deformacions, patrons, artístic i decoracions, fent més fàcil trobar l'eina que es cerca."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
@@ -479,7 +479,7 @@ msgid ""
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
 "the mouse click, while the \"Linear\" fill allows the interactive creation "
 "of gradients at different angles and sizes."
-msgstr ""
+msgstr "L'eina Emplena ara ofereix opcions per omplir una àrea amb gradients de color. L'emplenat \"Radial\" crea un gradient circular centrat on s'ha fet clic i l'emplenat \"Lineal\" permet la creació de gradients de angles i mides diferents."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
@@ -487,14 +487,14 @@ msgid ""
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
 "canvas with a check pattern, and \"Clone\" allows duplicating parts of the "
 "picture via brush strokes."
-msgstr ""
+msgstr "S'ha afegit noves eines Màgiques: amb \"Píxels\" és més fàcil crear dibuixos píxel-art com els dels videojocs antics, \"Escacs\" omple el dibuix amb un tauler d'escacs, i \"Clona\" permet duplicar parts del dibuix a pinzellades."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
 "contact the Tux Paint team."
-msgstr ""
+msgstr "La documentació s'ha retreballat, fent més senzilla la feina de localització. Qui vulgui ajudar en la localització està encoratjat a posar-se en contacte amb l'equip del Tux Paint."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
@@ -504,34 +504,34 @@ msgid ""
 "feature, along with a new option to re-organize the color palette, can also "
 "be helpful to users of coarse input devices, such as eye-gaze tracking "
 "systems."
-msgstr ""
+msgstr "Finalment, s'ha afegit un parell d'opcions d'accessibilitat. La interfície d'usuari es pot expandir beneficiant usuaris amb problemes de visió, i fent el programa més apte en pantalles d'alta densitat. Aquesta característica, juntament amb una nova opció per reorganitzar la paleta de colors pot ajudar qui utilitzi punters amb poca precisió, com els ratolins que es fan anar amb la mirada."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
 "making it easier to use in any situation."
-msgstr ""
+msgstr "L'eina Formes s'ha millorat, ara presenta opcions per triar si la forma es dibuixa des del centre o des d'una cantonada, fent més senzill de fer-la servir en totes les situacions."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
-msgstr ""
+msgstr "El teclat en pantalla, una característica d'accessibilitat disponible en les eines Text i Etiquetes, ara és més gran en pantalles grans. Útil per qui utilitzi punters amb poca precisió, com els ratolins que es fan anar amb la mirada."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
-msgstr ""
+msgstr "L'eina Esborra afegeix noves gomes, més petites, i esborra més suaument quan el ratolí es mou ràpid."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
 "with others."
-msgstr ""
+msgstr "Finalment, aquesta nova versió afegeix opcions per exportar dibuixos individuals i animacions GIF, fent més fàcil compartir dibuixos, còmics i presentacions de diapositives amb els altres."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
@@ -541,21 +541,21 @@ msgid ""
 "when bringing up the \"New\" drawing dialog. The solid background colors can "
 "also be placed at the end of that dialog, allowing emphasis of template "
 "images."
-msgstr ""
+msgstr "La darrera versió ha promogut l'eina \"Emplena\" amb les eines principals, previament estava dins les eines Màgiques. També inclou millores en l'arrencada i en obrir el diàleg de dibuix \"Nou\". Els colors sòlids es poden situar al final del diàleg, enfatitzant les imatges."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
 "speaker is available."
-msgstr ""
+msgstr "Ara també és possible desactivar el so estèreo, pot beneficiar ususaris amb problemes d'audició o en situacions on només hi ha disponible un sol altaveu."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
-msgstr ""
+msgstr "En aquesta versió hi ha un selector de color nou que permet triar qualsevol color existent al dibuix, i estrelles de tres, quatre i cinc puntes en l'eina Formes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid ""
@@ -563,7 +563,7 @@ msgid ""
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
 "Kabyle, Urdu, and Devanagari and Perso-Arabic variations of Kashmiri and "
 "Sindhi. Thirty other translations have been updated, as well."
-msgstr ""
+msgstr "La darrera versió incorpora també un bon nombre de traduccions noves, pujant fins a prop de 130 el nombre de llenguatges suportats: Bengalí, Bodo, Dogri, Cabil, Urdú i Devanagari i Perso-Aràbic variants de Caixmir i Sindhi.S'ha actualitzat també trenta altres llengues."
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -1037,10 +1037,8 @@ msgstr "L'espaiat d'aquest pinzell és de %1$d %2$d/%3$d vegades la seva mida."
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:201
-#, fuzzy
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid "Drag the mouse to rotate the stamp. Click to draw it."
-msgstr "Moveu el ratolí per girar la figura. Feu clic per dibuixar-la."
+msgstr "Moveu el ratolí per girar el segell. Feu clic per dibuixar-lo."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2374
@@ -1350,10 +1348,8 @@ msgstr ""
 "gris, o negre(per enfosquir), per barrejar-los en un color nou."
 
 #: ../tuxpaint.desktop.in:6
-#, fuzzy
-#| msgid "Tux Paint"
 msgid "tuxpaint"
-msgstr "Tux Paint"
+msgstr "tuxpaint"
 
 #: ../tuxpaint.desktop.in:9
 msgid "Drawing program"
@@ -1420,10 +1416,8 @@ msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Feu clic i arrossegueu el ratolí per fer gotejar la imatge."
 
 #: ../../magic/src/blocks_chalk_drip.c:180
-#, fuzzy
-#| msgid "Click to make the entire picture blocky."
 msgid "Click to make the entire picture drip."
-msgstr "Feu clic per fer-ne quadrets del dibuix."
+msgstr "Feu clic per fer gotejar el dibuix."
 
 #: ../../magic/src/blur.c:81
 msgid "Blur"
@@ -1517,10 +1511,8 @@ msgid "Click and drag the mouse to emboss the picture."
 msgstr "Feu clic i arrossegueu el ratolí per obtenir un relleu de la imatge."
 
 #: ../../magic/src/emboss.c:117
-#, fuzzy
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
-msgstr "Feu clic per afilar el dibuix."
+msgstr "Feu clic per fer el relleu del dibuix."
 
 #: ../../magic/src/fade_darken.c:115
 msgid "Lighten"
