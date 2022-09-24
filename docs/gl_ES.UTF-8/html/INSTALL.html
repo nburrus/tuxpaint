@@ -96,7 +96,7 @@
           </p>
 
           <p>
-            10 de Xullo de 2022          </p>
+            23 de Setembro de 2022          </p>
         </center>
       </header>
 
@@ -149,29 +149,24 @@
           Tux Paint require a «Simple DirectMedia Layer Library (libSDL)», unha biblioteca de programación multimedia de código aberto dispoñíbel baixo a licenza pública GNU Lesser General Public License (LGPL).        </p>
 
         <p>
-          Along with libSDL, Tux Paint depends on a number of other SDL 'helper' libraries: SDL_Image (for graphics files), SDL_gfx (for some graphical functions, like rotation), SDL_TTF and (optionally) SDL_Pango (for True Type Font support) and, optionally, SDL_Mixer (for sound effects).        </p>
+          Along with libSDL, Tux Paint depends on a number of other SDL 'helper' libraries: SDL_Image (for graphics files), SDL_gfx (for some graphical functions, like rotation), SDL_TTF and (optionally) SDL2_Pango (for True Type Font support) and, optionally, SDL_Mixer (for sound effects).        </p>
 
-        <dl>
-          <dt><strong>Linux/Unix</strong></dt>
-          <dd>
-            <p>
-              As bibliotecas SDL están dispoñíbeis como código fonte ou como paquetes RPM ou Debian para varias distribucións de Linux. Pódense descargar dende:            </p>
-            <ul>
-              <li>libSDL: <a href="http://www.libsdl.org/">http://www.libsdl.org/</a></li>
-              <li>SDL_Image: <a href="http://www.libsdl.org/projects/SDL_image/">http://www.libsdl.org/projects/SDL_image/</a></li>
-              <li>SDL_gfx: <a href="https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/">https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/</a> (<a href="https://sourceforge.net/projects/sdlgfx/">https://sourceforge.net/projects/sdlgfx/</a>)</li>
-              <li>SDL_TTF: <a href="http://www.libsdl.org/projects/SDL_ttf/">http://www.libsdl.org/projects/SDL_ttf/</a></li>
-              <li>SDL_Pango: <a href="http://sourceforge.net/projects/sdlpango/">http://sourceforge.net/projects/sdlpango/</a> (opcional)</li>
-              <li>SDL_Mixer: <a href="http://www.libsdl.org/projects/SDL_mixer/">http://www.libsdl.org/projects/SDL_mixer/</a> (opcional)</li>
-            </ul>
+        <p>
+          As bibliotecas SDL están dispoñíbeis como código fonte ou como paquetes RPM ou Debian para varias distribucións de Linux. Pódense descargar dende:        </p>
+        <ul>
+          <li>libSDL: <a href="http://www.libsdl.org/">http://www.libsdl.org/</a></li>
+          <li>SDL_image: <a href="https://github.com/libsdl-org/SDL_image">https://github.com/libsdl-org/SDL_image</a></li>
+          <li>SDL_gfx: <a href="https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/">https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/</a> (<a href="https://sourceforge.net/projects/sdlgfx/">https://sourceforge.net/projects/sdlgfx/</a>)</li>
+          <li>SDL_ttf: <a href="https://github.com/libsdl-org/SDL_ttf">https://github.com/libsdl-org/SDL_ttf</a></li>
+          <li>SDL2_Pango: <a href="https://github.com/markuskimius/SDL2_Pango">https://github.com/markuskimius/SDL2_Pango</a> (opcional)</li>
+          <li>SDL_mixer: <a href="https://github.com/libsdl-org/SDL_mixer">https://github.com/libsdl-org/SDL_mixer</a> (opcional)</li>
+        </ul>
 
-            <p>
-              Normalmente tamén están dispoñíbeis xunto coa súa distribución de Linux (p. ex.: nun medio de instalación ou dispoñíbeis a través dun software de mantemento de paquetes como «<code>apt</code>» de Debian).            </p>
+        <p>
+          Normalmente tamén están dispoñíbeis xunto coa súa distribución de Linux (p. ex.: nun medio de instalación ou dispoñíbeis a través dun software de mantemento de paquetes como «<code>apt</code>» de Debian).        </p>
 
-            <p class="note">
-              <span title="Information">&#128161;</span>              <strong>Note:</strong> When installing libraries from packages, be sure to ALSO install the development versions of the packages. (For example, install both "<code>SDL-1.2.4.rpm</code>" <em>and</em> "<code>SDL-1.2.4-devel.rpm</code>".)            </p>
-          </dd>
-        </dl>
+        <p class="note">
+          <span title="Information">&#128161;</span>          <strong>Note:</strong> When installing libraries from packages, be sure to ALSO install the development versions of the packages. (For example, install both "<code>SDL2-2.24.0.rpm</code>" <em>and</em> "<code>SDL2-devel-2.24.0.rpm</code>".)        </p>
       </section><!-- H2: Simple DirectMedia Layer library (libSDL) -->
 
       <section class="indent"><!-- H2: Other Libraries -->
@@ -314,9 +309,6 @@
           <p>
             A partir de febreiro de 2005 (comezando con Tux Paint 0.9.15), o «<code>Makefile</code>» inclúe compatibilidade para construír nun sistema Windows usando MinGW/MSYS (<a href="https://sourceforge.net/projects/msys2/">https://sourceforge.net/projects/msys2/</a>).          </p>
 
-          <p class="note">
-            <span title="Information">&#128161;</span>            <strong>Note:</strong> This documentation relates to the SDL2.0 version of Tux Paint, which became available starting with version 0.9.28 in June 2022.          </p>
-
           <p>
             Many tools and libraries are required to build Tux Paint. The package management system "<code>pacman</code>" helps you install them automatically solving complicated dependencies.          </p>
 
@@ -399,7 +391,7 @@
                 <span title="Information">&#128161;</span>                <strong>Note:</strong> Close the shell before proceeding to the remaining process.              </p>
             </section><!-- H4: ...dependency libraries for Tux Paint -->
 
-            <section class="indent"><!-- H4: Install SDL_Pango... -->
+            <section class="indent"><!-- H4: Install SDL2_Pango... -->
               <header>
                 <h4>
                   Install SDL2_Pango and libunibreak on the 64bit environment                </h4>
@@ -449,7 +441,7 @@
                     Proceed to the next "<a href="#32bit">MinGW 32bit (i686) toolchains</a>" section, or skip to the "<a href="#imagemagick">ImageMagick</a>" section if you need only a 64bit build environment.                  </i>
                 </p>
                 
-            </section><!-- H4: Install SDL_Pango... -->
+            </section><!-- H4: Install SDL2_Pango... -->
 
                         <hr size="1" noshade width="75%" />
             <section class="indent"><!-- H4: MinGW...compiler and tools -->
@@ -493,7 +485,7 @@
                 <span title="Information">&#128161;</span>                <strong>Note:</strong> Close the shell before proceeding to the remaining process.              </p>
             </section><!-- H4: ...dependency libraries for Tux Paint -->
 
-            <section class="indent"><!-- H4: Install SDL_Pango... -->
+            <section class="indent"><!-- H4: Install SDL2_Pango... -->
               <header>
                 <h4>
                   Install SDL2_Pango and libunibreak on the 32bit environment                </h4>
@@ -539,7 +531,7 @@
               </section><!-- H5: libunibreak -->
 
               
-            </section><!-- H4: Install SDL_Pango... -->
+            </section><!-- H4: Install SDL2_Pango... -->
 
                     </section><!-- H3: Compiling Set-Up -->
 

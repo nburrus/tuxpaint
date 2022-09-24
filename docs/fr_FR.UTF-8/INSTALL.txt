@@ -5,7 +5,7 @@
         Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                juillet 10, 2022
+                               septembre 23, 2022
 
            +--------------------------------------------------------+
            |Table des matières                                      |
@@ -32,36 +32,31 @@ Biliothèque Simple DirectMedia Layer (libSDL)
    (libSDL), une bibliothèque de programmation multimédia Open Source
    disponible sous la Licence publique générale limitée GNU (LGPL).
 
-   Avec libSDL, Tux Paint dépend d'un certain nombre d'autres bibliothèques
-   'd'aide' SDL : SDL_Image (pour les fichiers graphiques), SDL_gfx (pour
-   certaines fonctions graphiques, comme la rotation), SDL_TTF et (en option)
-   SDL_Pango (pour la prise en charge des polices True Type) et,
-   éventuellement, SDL_Mixer (pour les effets sonores).
+   Along with libSDL, Tux Paint depends on a number of other SDL 'helper'
+   libraries: SDL_Image (for graphics files), SDL_gfx (for some graphical
+   functions, like rotation), SDL_TTF and (optionally) SDL2_Pango (for True
+   Type Font support) and, optionally, SDL_Mixer (for sound effects).
 
-   Linux/Unix
+   Les bibliothèques SDL sont disponibles en tant que code source, ou en tant
+   que paquets RPM ou Debian pour diverses distributions de Linux. Ils
+   peuvent être téléchargés à partir de :
 
-           Les bibliothèques SDL sont disponibles en tant que code source, ou
-           en tant que paquets RPM ou Debian pour diverses distributions de
-           Linux. Ils peuvent être téléchargés à partir de :
+     * libSDL: http://www.libsdl.org/
+     * SDL_image: https://github.com/libsdl-org/SDL_image
+     * SDL_gfx:
+       https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
+       (https://sourceforge.net/projects/sdlgfx/)
+     * SDL_ttf: https://github.com/libsdl-org/SDL_ttf
+     * SDL2_Pango: https://github.com/markuskimius/SDL2_Pango (optionnel)
+     * SDL_mixer: https://github.com/libsdl-org/SDL_mixer (optionnel)
 
-              * libSDL: http://www.libsdl.org/
-              * SDL_Image: http://www.libsdl.org/projects/SDL_image/
-              * SDL_gfx:
-                https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
-                (https://sourceforge.net/projects/sdlgfx/)
-              * SDL_TTF: http://www.libsdl.org/projects/SDL_ttf/
-              * SDL_Pango: http://sourceforge.net/projects/sdlpango/
-                (optionnel)
-              * SDL_Mixer: http://www.libsdl.org/projects/SDL_mixer/
-                (optionnel)
+   Elles sont aussi parmi les paquets inclus dans votre distribution (par ex.
+   sur le media d'installation, ou via la maintenance de vos logiciels comme
+   la commande apt de Debian).
 
-           Elles sont aussi parmi les paquets inclus dans votre distribution
-           (par ex. sur le media d'installation, ou via la maintenance de vos
-           logiciels comme la commande apt de Debian).
-
-           💡 Note: When installing libraries from packages, be sure to ALSO
-           install the development versions of the packages. (For example,
-           install both "SDL-1.2.4.rpm" and "SDL-1.2.4-devel.rpm".)
+   💡 Note: When installing libraries from packages, be sure to ALSO install
+   the development versions of the packages. (For example, install both
+   "SDL2-2.24.0.rpm" and "SDL2-devel-2.24.0.rpm".)
 
   Autres bibliothèques
 
@@ -154,9 +149,6 @@ Windows
    Depuis février 2005 (à partir de Tux Paint 0.9.15), le "Makefile" inclut
    la prise en charge de la construction sur un système Windows à l'aide de
    MinGW/MSYS (https://sourceforge.net/projects/msys2/).
-
-   💡 Note: This documentation relates to the SDL2.0 version of Tux Paint,
-   which became available starting with version 0.9.28 in June 2022.
 
    Beaucoup d'outils et de bibliothèques sont nécessaires pour élaborer Tux
    Paint. Le système de gestion de paquet "pacman" apporte une aide pour
