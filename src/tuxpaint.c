@@ -8285,7 +8285,7 @@ void show_usage(int exitcode)
           "  [--disablescreensaver | --allowscreensaver ]\n"
           "  [--sound | --nosound]\n"
           "  [--stereo | --nostereo]\n"
-          "  [--buttonsize=N] (24-192; default=48)\n"
+          "  [--buttonsize=N] (24-192; default=48) | [--buttonsize=auto]\n"
           "  [--colorsrows=N] (1-3; default=1)\n"
           "  [--colorfile FILE]\n"
           "\n"
