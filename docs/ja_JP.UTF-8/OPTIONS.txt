@@ -164,6 +164,11 @@ Windows のユーザー
            SIZE
            の値は24から192までのピクセル値で指定します。ほとんどのボタンは正方形となっており、この設定はボタンの幅と高さの両方に影響します。
 
+           A value of "auto" may be provided, and Tux Paint will choose a
+           suitable button size based on the size of Tux Paint's window (or
+           fullscreen display). (For the default screen size of 800x600, it
+           will be the default button size: "48".)
+
            💡 注:
            選択されたボタンのサイズが大きすぎて画面内に必要なすべてのインターフェースが表示しきれない場合は、できる限り大きなボタンサイズが使用されます。(その旨がstderrに出力されます)
 

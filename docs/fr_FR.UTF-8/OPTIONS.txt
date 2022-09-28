@@ -202,6 +202,11 @@ Vidéo/Son
            comprise entre 24 et 192, inclusivement. La plupart des boutons
            sont carrés, et cela affecte leur largeur et hauteur.
 
+           A value of "auto" may be provided, and Tux Paint will choose a
+           suitable button size based on the size of Tux Paint's window (or
+           fullscreen display). (For the default screen size of 800x600, it
+           will be the default button size: "48".)
+
            💡 Note: If the chosen button size would cause the buttons to be
            too large for all required UI elements to appear under Tux Paint's
            chosen window size, the largest possible button size will be used.
