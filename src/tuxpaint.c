@@ -8362,7 +8362,9 @@ void show_usage(int exitcode)
           "  [--joystick-hat-timeout N] (0-3000; default value is 1000)\n"
           "  [--joystick-buttons-ignore=BUTTON1,BUTTON2,...]\n"
           "  [--joystick-btn-COMMAND=BUTTON]\n"
-          /* FIXME: "--joystick-btn-help" to list available commands, like "--lang help" */
+          /* Find these in "src/parse.gperf" & "src/tuxpaint-completion.bash" */
+          "    (commands: escape, brush, stamp, lines, shapes, text, label, magic,\n"
+          "    undo, redo, eraser, new, open, save, pgsetup, print)\n"
           "\n",
           progname);
   /* *INDENT-ON* */
