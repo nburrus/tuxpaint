@@ -169,9 +169,16 @@ Tux Paint の起動
                 「さいしょから」ボタンをクリックすると、最初からやり直す（色がない状態に戻す）ことができます。また、間違えた場合は、手順を何回でも取り消したり、やり直したりすることができます（最初からやり直す必要はありません）。
                 緑色のチェックボタンをクリックして色を確定します。「もどる」ボタンをクリックすると、色を選択せずにポップアップを終了します。
 
-           ⌨
-           使用中のツールが色をサポートしている場合、「スポイト」機能に素早くアクセスするためのショートカットを使用することができます。[Control]
-           キーを押しながらマウスをクリックしたままカーソルを動かすと、マウスカーソルの下にある色が表示されます。キャンバス全体をドラッグして欲しい色が見つかったところでマウスボタンを離すと、カーソルの下にある色が選択されます。マウスをキャンバスの外（例えば「どうぐ」の部分）で離すと、色の選択は変更されません。
+           ⌨ When the active tool supports colors, a shortcut may be used for
+           quick access to the "color picker" option. Hold the [Control] key
+           while clicking, and the color under the mouse cursor will be shown
+           at the bottom. You may drag around to canvas to find the color you
+           want. When you release the mouse button, the color under the
+           cursor will be selected. If you release the mouse outside of the
+           canvas (e.g., over the "Tools" area), the color selection will be
+           left unchanged. (This is similar to clicking the "Back" button
+           that's available when bringing up the "color picker" option via
+           its button the color palette.)
 
            ⚙ 注: カラーパレットの色は好みに応じて変更できます。変更方法については、"各種設定について"のドキュメントを参照してください。
 
@@ -394,6 +401,11 @@ Tux Paint の起動
            正方形の輪郭がマウスカーソルの位置に表示され、絵のどの部分が消されるかを示します。
 
            消している間、「キュッキュッ」と擦って消す効果音が流れます。
+
+           ⌨ Hold the [Delete] key while clicking for quick access to a small
+           round eraser (not available when you're in the process of rotating
+           a stamp or shape, or using an interactive maigc tool). Release the
+           mouse to return to your currently-selected tool.
 
   そのほかの操作
 
