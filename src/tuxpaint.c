@@ -5365,8 +5365,15 @@ static void mainloop(void)
           }
           else if (kbd_state[SDL_SCANCODE_DELETE] /* FIXME */)
           {
-            /* Holding [Del] while clicking; switch to temp-mode eraser! */
-            do_quick_eraser();
+            /* Holding [Del] while clicking; switch to temp-mode eraser!
+               (as long as we're not involved in anything else within
+               this main loop!) */
+
+            if ((cur_tool != TOOL_SHAPES || shape_mode == SHAPE_TOOL_MODE_DONE) &&
+                (cur_tool != TOOL_STAMP || stamp_tool_mode == STAMP_TOOL_MODE_PLACE))
+            {
+              do_quick_eraser();
+            }
           }
           else
           {
@@ -24345,6 +24352,8 @@ static int do_quick_eraser(void) {
   /* Remember current eraser & switch to a suitable default */
   old_eraser = cur_eraser;
   cur_eraser = NUM_ERASERS - 2; /* 2nd-smallest circle */
+
+  rec_undo_buffer();
 
   done = 0;
   do
