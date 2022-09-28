@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.September.17 (0.9.29)
+2022.September.28 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -59,6 +59,15 @@ http://www.tuxpaint.org/
 
   * Other Improvements:
     -------------------
+    * A keyboard shortcut is now available for quickly accessing
+      a small eraser.  Hold the [Del] key while clicking, and drag
+      around the picture to erase.  Release the key and/or mouse to
+      return to normal operation.
+      (Eventually, this could be utilized when we can support
+      the recognition of a drawing tablet stylus' "eraser" tip;
+      see https://sourceforge.net/p/tuxpaint/feature-requests/8/)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Automatic button size option ("buttonsize=auto"), to scale button
       size reasonably based on window size / fullscreen resolution.
       (For https://sourceforge.net/p/tuxpaint/feature-requests/218/)

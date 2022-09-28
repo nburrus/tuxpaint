@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 14, 2022
+  June 14, 2002 - September 28, 2022
 */
 
 #include "platform.h"
@@ -2211,6 +2211,8 @@ static void draw_color_mix_undo_redo(void);
 static void render_color_button(int the_color, SDL_Surface * decoration,
                                 SDL_Surface * icon);
 static void handle_color_changed(void);
+
+static int do_quick_eraser(void);
 
 static int do_slideshow(void);
 static void play_slideshow(int *selected, int num_selected, char *dirname,
@@ -5360,6 +5362,11 @@ static void mainloop(void)
               playsound(screen, 1, SND_CLICK, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 
             SDL_Flip(screen);
+          }
+          else if (kbd_state[SDL_SCANCODE_DELETE] /* FIXME */)
+          {
+            /* Holding [Del] while clicking; switch to temp-mode eraser! */
+            do_quick_eraser();
           }
           else
           {
@@ -24318,6 +24325,104 @@ static int do_color_sel(int temp_mode)
   }
 
   return (chose);
+}
+
+/**
+ * Quick eraser mode, invoked by holding [Del] while clicking.
+ * (Eventually, we'll be able to detect tablet stylus erasers;
+ * but waiting for https://github.com/libsdl-org/SDL/issues/2217)
+ */
+static int do_quick_eraser(void) {
+  SDL_Event event;
+  SDLKey key;
+  int val_x, val_y, motioner;
+  int valhat_x, valhat_y, hatmotioner;
+  int done, old_eraser;
+
+  val_x = val_y = motioner = 0;
+  valhat_x = valhat_y = hatmotioner = 0;
+
+  /* Remember current eraser & switch to a suitable default */
+  old_eraser = cur_eraser;
+  cur_eraser = NUM_ERASERS - 2; /* 2nd-smallest circle */
+
+  done = 0;
+  do
+  {
+    while (SDL_PollEvent(&event))
+    {
+      if (event.type == SDL_QUIT)
+      {
+        done = 1;
+      }
+      else if (event.type == SDL_WINDOWEVENT)
+      {
+        handle_active(&event);
+      }
+      else if (event.type == SDL_KEYUP)
+      {
+        key = event.key.keysym.sym;
+
+        handle_keymouse(key, SDL_KEYUP, 24, NULL, NULL);
+      }
+      else if (event.type == SDL_KEYDOWN)
+      {
+        key = event.key.keysym.sym;
+
+        handle_keymouse(key, SDL_KEYDOWN, 24, NULL, NULL);
+
+        if (key == SDLK_ESCAPE)
+        {
+          /* Hit [Escape] */
+          done = 1;
+        }
+      }
+      else if (event.type == SDL_MOUSEBUTTONUP)
+      {
+        /* Released mouse button; all done */
+        done = 1;
+      }
+      else if (event.type == SDL_MOUSEMOTION)
+      {
+        /* Dragging around the canvas */
+
+        if (event.button.x >= r_canvas.x &&
+            event.button.x < r_canvas.x + r_canvas.w &&
+            event.button.y >= r_canvas.y
+            && event.button.y < r_canvas.y + r_canvas.h)
+        {
+          do_setcursor(cursor_crosshair);
+          eraser_draw(oldpos_x - r_canvas.x, oldpos_y - r_canvas.y,
+                      event.button.x - r_canvas.x, event.button.y - r_canvas.y);
+        }
+
+        oldpos_x = event.motion.x;
+        oldpos_y = event.motion.y;
+      }
+      else if (event.type == SDL_JOYAXISMOTION)
+        handle_joyaxismotion(event, &motioner, &val_x, &val_y);
+
+      else if (event.type == SDL_JOYHATMOTION)
+        handle_joyhatmotion(event, oldpos_x, oldpos_y, &valhat_x, &valhat_y,
+                            &hatmotioner, &old_hat_ticks);
+
+      else if (event.type == SDL_JOYBALLMOTION)
+        handle_joyballmotion(event, oldpos_x, oldpos_y);
+
+      else if (event.type == SDL_JOYBUTTONDOWN
+               || event.type == SDL_JOYBUTTONUP)
+        handle_joybuttonupdown(event, oldpos_x, oldpos_y);
+    }
+
+    if (motioner | hatmotioner)
+      handle_motioners(oldpos_x, oldpos_y, motioner, hatmotioner,
+                       old_hat_ticks, val_x, val_y, valhat_x, valhat_y);
+
+    SDL_Delay(10);
+  }
+  while (!done);
+
+  cur_eraser = old_eraser;
 }
 
 /**
