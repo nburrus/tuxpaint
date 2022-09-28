@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2022.09.05
-.TH TUXPAINT 1 "septembre  5, 2022" "0.9.29" "Tux Paint"
+.\" tuxpaint.1 - 2022.09.28
+.TH TUXPAINT 1 "septembre 28, 2022" "0.9.29" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 
@@ -19,7 +19,7 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 .br
 [\-\-orient=portrait]
 .br
-[\-\-buttonsize SIZE]
+[\-\-buttonsize SIZE | \-\-buttonsize auto]
 .br
 [\-\-startblank]
 .br
@@ -344,10 +344,11 @@ Désactive ou active (défaut) le support pour stéréo.
 
 .SS INTERFACE SIZE
 .TP 8
-.B \-\-buttonsize \fISIZE\fP
-Ajuste la taille des boutons de l'interface utilisateur de \fITux Paint\fP,
-entre 24 et 192 pixels (48 par défaut, et qui convient pour des affichages
-avec 96 à 120 dpi).
+.B \-\-buttonsize \fISIZE\fP \-\-buttonsize auto
+Adjust the size of the buttons in \fITux Paint\fP's user interface, between
+24 and 192 pixels (48 is the default, and suitable for displays with 96 to
+120dpi pixel density). Use "auto" to have \fITux Paint\fP choose a button
+size based on \fITux Paint\fP's window/display size.
 
 .TP 8
 .B \-\-colorsrows=\fIROWS\fP
