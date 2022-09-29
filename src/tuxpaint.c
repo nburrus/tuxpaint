@@ -5363,14 +5363,16 @@ static void mainloop(void)
 
             SDL_Flip(screen);
           }
-          else if (kbd_state[SDL_SCANCODE_DELETE] /* FIXME */)
+          else if (kbd_state[SDL_SCANCODE_X])
           {
-            /* Holding [Del] while clicking; switch to temp-mode eraser!
+            /* Holding [X] while clicking; switch to temp-mode eraser!
                (as long as we're not involved in anything else within
                this main loop!) */
 
             if ((cur_tool != TOOL_SHAPES || shape_mode == SHAPE_TOOL_MODE_DONE) &&
-                (cur_tool != TOOL_STAMP || stamp_tool_mode == STAMP_TOOL_MODE_PLACE))
+                (cur_tool != TOOL_STAMP || stamp_tool_mode == STAMP_TOOL_MODE_PLACE) &&
+                cur_tool != TOOL_TEXT &&
+                cur_tool != TOOL_LABEL)
             {
               do_quick_eraser();
             }

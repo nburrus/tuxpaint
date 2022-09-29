@@ -60,10 +60,11 @@ http://www.tuxpaint.org/
   * Other Improvements:
     -------------------
     * A keyboard shortcut is now available for quickly accessing
-      a small eraser.  Hold the [Del] key while clicking, and drag
+      a small eraser.  Hold the [X] key while clicking, and drag
       around the picture to erase.  (Not available if in the process
-      of rotating a stamp or shape.)  Release the mouse to return to
-      normal operation.
+      of rotating a stamp or shape, or when Text or Label tool are
+      active.)  Release the mouse to return to normal operation.
+
       (Eventually, this could be utilized when we can support
       the recognition of a drawing tablet stylus' "eraser" tip;
       see https://sourceforge.net/p/tuxpaint/feature-requests/8/)
