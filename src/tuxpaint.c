@@ -24362,7 +24362,7 @@ static int do_quick_eraser(void) {
   done = 0;
   do
   {
-    while (SDL_PollEvent(&event))
+    while (SDL_PollEvent(&event) && !done)
     {
       if (event.type == SDL_QUIT)
       {
