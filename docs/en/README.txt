@@ -589,10 +589,11 @@ Available Tools
 
            As you erase, a 'squeaky clean' eraser wiping sound is played.
 
-           ⌨ Hold the [Delete] key while clicking for quick access to a small
-           round eraser (not available when you're in the process of rotating
-           a stamp or shape, or using an interactive maigc tool). Release the
-           mouse to return to your currently-selected tool.
+           ⌨ Hold the [X] key while clicking for quick access to a small
+           round eraser (not available when the Text or Label tools are
+           selected, when you're in the process of rotating a stamp or shape,
+           or when using an interactive magic tool). Release the mouse to
+           return to your currently-selected tool.
 
   Other Controls
 
