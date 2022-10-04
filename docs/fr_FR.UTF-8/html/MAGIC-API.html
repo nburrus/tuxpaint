@@ -95,7 +95,7 @@
             Magic Tool Plugin API Documentation          </h2>
 
           <p>
-            Copyright &copy; 2007-2022 by divers contributeurs; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2007-2022 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
@@ -107,12 +107,12 @@
       <table border="2"
              cellspacing="0"
              cellpadding="2"
-             summary="Table des matières"
+             summary="Table of Contents"
              align="center"
              style="page-break-inside: avoid;">
         <tr>
           <th>
-            Table des matières          </th>
+            Table of Contents          </th>
         </tr>
 
         <tr>
@@ -162,7 +162,7 @@
       <div class="keeptogether">
         <header>
           <h1 id="prereqs">
-            Prérequis          </h1>
+            Prerequisites          </h1>
         </header>
 
         <p>
@@ -763,7 +763,7 @@
           </p>
 
           <p>
-            The first line sets up Makefile variable ("<code>CFLAGS</code>") that contains flags for the compiler. "<code>-Wall</code>" asks for all compiler warnings to be shown.  "<code>-O2</code>" asks for level 2 optimization. "<code>( tp-magic-config --cflags)</code>" runs "<code>tp-magic-config</code>" to retrieve additional compiler flags that "Magic" tool plugins require.  (The "<code>$(shell ...)</code>" directive is similar to the <a href="#grave"><b><font size=+1>`</font></b> ("grave")</a> character in the BASH shell examples, above.)          </p>
+            The first line sets up Makefile variable ("<code>CFLAGS</code>") that contains flags for the compiler. "<code>-Wall</code>" asks for all compiler warnings to be shown.  "<code>-O2</code>" asks for level 2 optimization. "<code>($shell tp-magic-config --cflags)</code>" runs "<code>tp-magic-config</code>" to retrieve additional compiler flags that "Magic" tool plugins require.  (The "<code>$(shell ...)</code>" directive is similar to the <a href="#grave"><b><font size=+1>`</font></b> ("grave")</a> character in the BASH shell examples, above.)          </p>
 
           <p>
             The next line defines a Makefile target, "<code>my_plugin.so</code>", and states that it <i>depends on</i> the C source file "<code>my_plugin.c</code>".  (Any time the C file changes, "<code>make</code>" will know to recompile it and produce an updated "<code>.so</code>" file. If the C file hadn't changed, it won't bother recompiling.)          </p>
@@ -1225,7 +1225,7 @@
           <b>grave:</b>
           The "<code><font size=+1>`</font></code>" character; used by the BASH shell to use the output of a command as the command-line arguments to another.        </li>
         <li>
-          <b>vert:</b>
+          <b>green:</b>
           See "RGBA"        </li>
         <li>
           <b><code>-&gt;</code>:</b>

@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 versión 0.9.29
+                                 version 0.9.29
 
 Magic Tool Plugin API Documentation
 
@@ -697,9 +697,9 @@ Linux and other Unix-like Platforms
 
    The first line sets up Makefile variable ("CFLAGS") that contains flags
    for the compiler. "-Wall" asks for all compiler warnings to be shown.
-   "-O2" asks for level 2 optimization. "( tp-magic-config --cflags)" runs
-   "tp-magic-config" to retrieve additional compiler flags that "Magic" tool
-   plugins require. (The "$(shell ...)" directive is similar to the `
+   "-O2" asks for level 2 optimization. "($shell tp-magic-config --cflags)"
+   runs "tp-magic-config" to retrieve additional compiler flags that "Magic"
+   tool plugins require. (The "$(shell ...)" directive is similar to the `
    ("grave") character in the BASH shell examples, above.)
 
    The next line defines a Makefile target, "my_plugin.so", and states that

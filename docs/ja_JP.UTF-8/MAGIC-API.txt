@@ -1,15 +1,15 @@
                                    Tux Paint
-                                  バージョン 0.9.29
+                                 version 0.9.29
 
 Magic Tool Plugin API Documentation
 
-         Copyright © 2007-2022 by various contributors; AUTHORS.txt 参照.
+        Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  2022年10月 3日
+                                  10月 3, 2022
 
              +----------------------------------------------------+
-             |目次                                                  |
+             |Table of Contents                                   |
              |----------------------------------------------------|
              |  * Prequisites                                     |
              |  * Interfaces                                      |
@@ -697,9 +697,9 @@ Linux and other Unix-like Platforms
 
    The first line sets up Makefile variable ("CFLAGS") that contains flags
    for the compiler. "-Wall" asks for all compiler warnings to be shown.
-   "-O2" asks for level 2 optimization. "( tp-magic-config --cflags)" runs
-   "tp-magic-config" to retrieve additional compiler flags that "Magic" tool
-   plugins require. (The "$(shell ...)" directive is similar to the `
+   "-O2" asks for level 2 optimization. "($shell tp-magic-config --cflags)"
+   runs "tp-magic-config" to retrieve additional compiler flags that "Magic"
+   tool plugins require. (The "$(shell ...)" directive is similar to the `
    ("grave") character in the BASH shell examples, above.)
 
    The next line defines a Makefile target, "my_plugin.so", and states that
@@ -1044,7 +1044,7 @@ macOS
      * GNU C Compiler: See "gcc"
      * grave: The "`" character; used by the BASH shell to use the output of
        a command as the command-line arguments to another.
-     * グリーン: See "RGBA"
+     * green: See "RGBA"
      * ->: See "arrow"
      * .h: See "C header file"
      * header: See "C header file"
