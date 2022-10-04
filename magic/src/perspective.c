@@ -46,7 +46,6 @@
 #include <limits.h>
 #include <time.h>
 
-
 #ifndef gettext_noop
 #define gettext_noop(String) String
 #endif
@@ -496,6 +495,7 @@ void perspective_release(magic_api * api, int which,
     Uint32 r, g, b;
     float pct;
     SDL_Surface *scaled_surf;
+    SDL_Surface * aux1;
 
     if (new_h == canvas->h || new_h == 0)
     {
@@ -503,8 +503,10 @@ void perspective_release(magic_api * api, int which,
       return;                   /* Do nothing */
     }
 
-    if (new_h > canvas->h * 1.5)
-      new_h = canvas->h * 1.5;
+    /* FIXME should be a percentage that takes in account what is carried later when blitting scaled surfaces over. */
+    /* Same should apply for new_h < canvas->h */
+    if (new_h > canvas->h * 1.08)
+      new_h = canvas->h * 1.08;
 
     if (new_h < canvas->h)
     {
@@ -519,6 +521,28 @@ void perspective_release(magic_api * api, int which,
 
     SDL_BlitSurface(last, NULL, canvas, NULL);
 
+    aux1 = api->scale(last, last->w, last->h, 0);
+    for (h = 0; h < h2 - h1; h++)
+      {
+      hh = h2 - h;
+      w = canvas->w * hh / canvas->h;
+      scaled_surf = api->rotate_scale(aux1, 0, w);
+      dx1 = (canvas->w - scaled_surf->w) / 2;
+      dy1 = (canvas->h - scaled_surf->h) / 2;
+      SDL_Rect rrr;
+      rrr.x = dx1;
+      rrr.y =dy1;
+      rrr.w =  dx1 + scaled_surf->w;
+      rrr.h = dy1 + scaled_surf->h;
+      SDL_SetSurfaceBlendMode( scaled_surf, SDL_BLENDMODE_BLEND);
+      SDL_SetSurfaceAlphaMod(scaled_surf,24);
+      SDL_BlitSurface(scaled_surf, NULL, aux1, &rrr);
+      SDL_FreeSurface(scaled_surf);
+      }
+
+    SDL_BlitSurface(aux1, NULL, canvas, NULL);
+    SDL_FreeSurface(aux1);
+    /*
     for (h = 0; h < (h2 - h1); h++)
     {
       if ((h / 2) % 10 == 0)
@@ -566,7 +590,7 @@ void perspective_release(magic_api * api, int which,
           }
         }
       }
-    }
+    }*/
 
     update_rect->x = 0;
     update_rect->y = 0;

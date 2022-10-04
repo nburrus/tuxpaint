@@ -2289,6 +2289,7 @@ static Uint8 magic_linear_to_sRGB(float lin);
 static float magic_sRGB_to_linear(Uint8 srgb);
 static int magic_button_down(void);
 static SDL_Surface *magic_scale(SDL_Surface * surf, int w, int h, int aspect);
+static SDL_Surface *magic_rotate_scale(SDL_Surface * surf, int r, int w);
 static void reset_touched(void);
 static Uint8 magic_touched(int x, int y);
 
@@ -21836,6 +21837,7 @@ static void load_magic_plugins(void)
       magic_api_struct->canvas_w = canvas->w;
       magic_api_struct->canvas_h = canvas->h;
       magic_api_struct->scale = magic_scale;
+      magic_api_struct->rotate_scale = magic_rotate_scale;
       magic_api_struct->touched = magic_touched;
 
 
@@ -22507,6 +22509,14 @@ static int magic_button_down(void)
 static SDL_Surface *magic_scale(SDL_Surface * surf, int w, int h, int aspect)
 {
   return (thumbnail2(surf, w, h, aspect, 1));
+}
+
+/**
+ * FIXME
+ */
+static SDL_Surface *magic_rotate_scale(SDL_Surface * surf, int r, int w)
+{
+  return (rotozoomSurface(surf, r, (float)w / surf->w, SMOOTHING_ON));
 }
 
 /**

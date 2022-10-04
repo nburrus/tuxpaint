@@ -14,6 +14,11 @@ http://www.tuxpaint.org/
       Use the "stamprotation=no" option to disable.
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
+  * Improvements to Magic Tools:
+    ----------------------------
+    * Better performance from "Rush" (by using SDL_gfx rotozoom)
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
   * Other Improvements:
     -------------------
     * A keyboard shortcut is now available for quickly accessing

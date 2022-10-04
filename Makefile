@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - July 3, 2022
+# June 14, 2002 - October 3, 2022
 
 
 # The version number, for release:
@@ -16,7 +16,7 @@ ifdef SOURCE_DATE_EPOCH
 else
   VER_DATE=$(shell date "+%Y-%m-%d")
 endif
-MAGIC_API_VERSION:=0x00000005
+MAGIC_API_VERSION:=0x00000006
 
 # Need to know the OS
 
