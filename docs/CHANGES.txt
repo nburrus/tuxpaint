@@ -7,12 +7,39 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.September.28 (0.9.29)
+2022.October.3 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
       Use the "stamprotation=no" option to disable.
       Pere Pujal i Carabantes <perepujal@gmail.com>
+
+  * Other Improvements:
+    -------------------
+    * A keyboard shortcut is now available for quickly accessing
+      a small eraser.  Hold the [X] key while clicking, and drag
+      around the picture to erase.  (Not available if in the process
+      of rotating a stamp or shape, or when Text or Label tool are
+      active.)  Release the mouse to return to normal operation.
+
+      (Eventually, this could be utilized when we can support
+      the recognition of a drawing tablet stylus' "eraser" tip;
+      see https://sourceforge.net/p/tuxpaint/feature-requests/8/)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * When deleting a file on macOS, move the file to trash instead of deleting
+      the file permanently.
+      Mark Kim <markuskimius@gmail.com>
+
+    * Automatic button size option ("buttonsize=auto"), to scale button
+      size reasonably based on window size / fullscreen resolution.
+      (For https://sourceforge.net/p/tuxpaint/feature-requests/218/)
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Using SDL linear scaling hint to reduce jaggedness when displaying
+      in full screen at a different resolution than the display's
+      native size.  (SDL2.0)
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Bug Fixes:
     ----------
@@ -57,42 +84,16 @@ http://www.tuxpaint.org/
       the earlier SDL1.2 versions worked.
       Bill Kendrick <bill@newbreedsoftware.com>
 
-  * Other Improvements:
-    -------------------
-    * A keyboard shortcut is now available for quickly accessing
-      a small eraser.  Hold the [X] key while clicking, and drag
-      around the picture to erase.  (Not available if in the process
-      of rotating a stamp or shape, or when Text or Label tool are
-      active.)  Release the mouse to return to normal operation.
-
-      (Eventually, this could be utilized when we can support
-      the recognition of a drawing tablet stylus' "eraser" tip;
-      see https://sourceforge.net/p/tuxpaint/feature-requests/8/)
-      Bill Kendrick <bill@newbreedsoftware.com>
-
-    * Automatic button size option ("buttonsize=auto"), to scale button
-      size reasonably based on window size / fullscreen resolution.
-      (For https://sourceforge.net/p/tuxpaint/feature-requests/218/)
-      Pere Pujal i Carabantes <perepujal@gmail.com>
-
-    * Using SDL linear scaling hint to reduce jaggedness when displaying
-      in full screen at a different resolution than the display's
-      native size.  (SDL2.0)
-      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
-
-    * When deleting a file on macOS, move the file to trash instead of deleting
-      the file permanently.
-      Mark Kim <markuskimius@gmail.com>
-
+  * Ports & Building:
+    -----------------
     * Processed PNG images through `pngout` to increase some compression
       (also corrects some warnings being reported by libpng (via SDL_image);
       h/t Tim Dickson, closes https://sourceforge.net/p/tuxpaint/bugs/252/)
 
-    * Automatically update macOS build version from the command line at build
-      time.
+    * Automatically update macOS build version from the command line
+      at build time.
+      Mark Kim <markuskimius@gmail.com>
 
-  * Ports & Building:
-    -----------------
     * Change name of Tux Paint config. files from ".conf" to ".cfg"
       on Windows.
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
