@@ -161,6 +161,10 @@ http://www.tuxpaint.org/
     * Update macOS build instructions for SDL2.0.
       Mark Kim <markuskimius@gmail.com>
 
+    * Magic tool API documentation updated to match other docs,
+      and allow for localization.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * "--verbose-version" now shows whether SDL2_Pango is being used.
       Bill Kendrick <bill@newbreedsoftware.com>
 

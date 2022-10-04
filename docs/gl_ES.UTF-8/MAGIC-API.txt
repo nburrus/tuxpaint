@@ -151,7 +151,7 @@ Magic Tool Plugin API Documentation
 
            Note: "update_rect" is a C pointer (an "SDL_Rect *" rather than
            just an "SDL_Rect") because you need to fill in its contents.
-           Because it is a pointer, you access its elements via "->" (arrow)
+           Since it is a pointer, you access its elements via "->" (arrow)
            rather than "." (dot).
 
   Required Plugin Functions
@@ -183,9 +183,9 @@ Magic Tool Plugin API Documentation
            initialization was successful, or '0' if not (and Tux Paint will
            not present any 'Magic' tools from the plugin).
 
-           Note: Called once by Tux Paint, at startup. It is called first. It
-           is called after "api_version()", if Tux Paint believes your plugin
-           to be compatible.
+           Note: Called once by Tux Paint, at startup. It is called after
+           "api_version()", if Tux Paint believes your plugin to be
+           compatible.
 
    int get_tool_count(magic_api * api)
 
@@ -194,6 +194,29 @@ Magic Tool Plugin API Documentation
 
            Note: Called once by Tux Paint, at startup. It is called after
            your "init()", if it succeeded.
+
+   int modes(magic_api * api, int which)
+
+           This lets you tell Tux Paint what modes your tool can be used in;
+           either as a tool the user can paint with, or a tool that affects
+           the entire drawing at once.
+
+           You must return a value that's some combination of one or more of
+           available modes:
+              * MODE_PAINT - freehand paint (click and drag)
+              * MODE_FULLSCREEN - applies to full image with one click
+              * MODE_PAINT_WITH_PREVIEW - freehand paint, with preview (click
+                and drag)
+              * MODE_ONECLICK - applies to an area around the mouse, with one
+                click
+           e.g., if your tool is only one that the user can paint with,
+           return "MODE_PAINT". If the user can do both, return "MODE_PAINT |
+           MODE_FULLSCREEN" to tell Tux Paint it can do both.
+
+           Note: Called once for each Magic tool your plugin claims to
+           contain (by your "get_tool_count()").
+
+           Note: Added to Tux Paint 0.9.21; Magic API version 0x00000002.
 
    char * get_name(magic_api * api, int which)
 
@@ -212,28 +235,26 @@ Magic Tool Plugin API Documentation
            Use this to group tools together within sections of the 'Magic'
            selector. A number of groups are pre-defined within an enum found
            in "tp_magic_api.h":
-              * MAGIC_TYPE_DISTORTS mdash; Tools that distort the shape of
-                the image, like Blur, Emboss, and Ripples
-              * MAGIC_TYPE_COLOR_FILTERS mdash; Tools that mostly affect the
+              * MAGIC_TYPE_DISTORTS — Tools that distort the shape of the
+                image, like Blur, Emboss, and Ripples
+              * MAGIC_TYPE_COLOR_FILTERS — Tools that mostly affect the
                 colors of the image without distortion, like Darken,
                 Negative, and Tint
-              * MAGIC_TYPE_PICTURE_WARPS mdash; Tools that warp or move the
-                entire picture, like Shift, Flip, and Waves
-              * MAGIC_TYPE_PAINTING mdash; Tools that generally paint new
-                content at the cursor position, like Grass, Bricks, and Rails
-              * MAGIC_TYPE_PATTERN_PAINTING mdash; Tools that paint in
-                multiple places at once, like Kaleidoscope and the Symmetry
-                tools
-              * MAGIC_TYPE_PICTURE_DECORATIONS mdash; Tools that apply
-                decorations to the entire picture, like Blinds and Checkboard
-              * MAGIC_TYPE_ARTISTIC mdash; Special-purpose artistic tools,
-                like Flower, the String tools, and the Rainbow-arc-drawing
-                tools.
+              * MAGIC_TYPE_PICTURE_WARPS — Tools that warp or move the entire
+                picture, like Shift, Flip, and Waves
+              * MAGIC_TYPE_PAINTING — Tools that generally paint new content
+                at the cursor position, like Grass, Bricks, and Rails
+              * MAGIC_TYPE_PATTERN_PAINTING — Tools that paint in multiple
+                places at once, like Kaleidoscope and the Symmetry tools
+              * MAGIC_TYPE_PICTURE_DECORATIONS — Tools that apply decorations
+                to the entire picture, like Blinds and Checkboard
+              * MAGIC_TYPE_ARTISTIC — Special-purpose artistic tools, like
+                Flower, the String tools, and the Rainbow-arc-drawing tools.
 
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
 
-           Note: Added to Tux Paint 0.9.27; Magic API version '0x00000005'
+           Note: Added to Tux Paint 0.9.27; Magic API version 0x00000005.
 
    SDL_Surface * get_icon(magic_api * api, int which)
 
@@ -273,29 +294,6 @@ Magic Tool Plugin API Documentation
 
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
-
-   int modes(magic_api * api, int which)
-
-           This lets you tell Tux Paint what modes your tool can be used in;
-           either as a tool the user can paint with, or a tool that affects
-           the entire drawing at once.
-
-           You must return a value that's some combination of one or more of
-           available modes:
-              * MODE_PAINT - freehand paint (click and drag)
-              * MODE_FULLSCREEN - applies to full image with one click
-              * MODE_PAINT_WITH_PREVIEW - freehand paint, with preview (click
-                and drag)
-              * MODE_ONECLICK - applies to an area around the mouse, with one
-                click
-           e.g., if your tool is only one that the user can paint with,
-           return "MODE_PAINT". If the user can do both, return "MODE_PAINT |
-           MODE_FULLSCREEN" to tell Tux Paint it can do both.
-
-           Note: Called once for each Magic tool your plugin claims to
-           contain (by your "get_tool_count()").
-
-           Note: Added to Tux Paint 0.9.21; Magic API version '0x00000002'
 
    void shutdown(magic_api * api)
 
@@ -347,7 +345,7 @@ Magic Tool Plugin API Documentation
            pieces of that copy could be drawn on the canvas when they draw
            with the Magic tool.
 
-           Note: Added to Tux Paint 0.9.21; Magic API version '0x00000002'
+           Note: Added to Tux Paint 0.9.21; Magic API version 0x00000002.
 
    void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g)
            Tux Paint will call this function to inform the plugin of the RGB
@@ -507,7 +505,7 @@ Tux Paint Functions and Data
 
    char * tp_version
            A string containing the version of Tux Paint that's running (e.g.,
-           "0.9.18").
+           "0.9.29").
 
    int canvas_w
    int canvas_h
@@ -652,7 +650,7 @@ Constant Defintions in "tp_magic_api.h"
            your plugin is compatible.
 
            Note: This version number does not correspond to Tux Paint's own
-           release number (e.g., "0.9.18"). The API will not change every
+           release number (e.g., "0.9.29"). The API will not change every
            time a new version of Tux Paint is released, which means plugins
            compiled for earlier versions of Tux Paint will often run under
            newer versions.
@@ -699,9 +697,9 @@ Linux and other Unix-like Platforms
 
    The first line sets up Makefile variable ("CFLAGS") that contains flags
    for the compiler. "-Wall" asks for all compiler warnings to be shown.
-   "-O2" asks for level 2 optimization. "($shell tp-magic-config --cflags)"
-   runs "tp-magic-config" to retrieve additional compiler flags that "Magic"
-   tool plugins require. (The "$(shell ...)" directive is similar to the `
+   "-O2" asks for level 2 optimization. "( tp-magic-config --cflags)" runs
+   "tp-magic-config" to retrieve additional compiler flags that "Magic" tool
+   plugins require. (The "$(shell ...)" directive is similar to the `
    ("grave") character in the BASH shell examples, above.)
 
    The next line defines a Makefile target, "my_plugin.so", and states that
@@ -911,7 +909,7 @@ macOS
 
          char * my_plugin_snd_filenames[NUM_TOOLS] = {
              "one.ogg", "another.ogg", "yet_another.ogg" };
-         Mix_Chunk * my_plugin_snds[NUM_TOOLS];
+         Mix_Chunk * my_plugin_snds[NUM_TOOLS]") ?>;
 
      * Use a C "for"-loop to load or create the effect-specific data (such as
        loading sound effects during your "init()").
@@ -925,7 +923,7 @@ macOS
          "/usr/share/tuxpaint/sounds/magic/one.ogg" */
 
              snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",
-                 api->data_prefix, my_plugin_snd_filenames[i];
+                 api->data_prefix, my_plugin_snd_filenames[i]);
 
              my_plugin_snds[i] = Mix_LoadWAV(fname);
          }
@@ -967,13 +965,13 @@ macOS
      * ampersand: "&". A symbol in C that allows you to refer to the memory
        address of a variable; that is, a pointer. (For example, consider "int
        i;". Later, "&i" refers to the memory where "i" is stored, not the
-       value of "i" itself; it is a 'pointer to "i"'.) (See also "star")
+       value of "i" itself; it is a 'pointer to "i"'.) See also: "star"
      * API: Application Programming Interface. TBD
      * argument: A value sent to a function.
      * arrow: "->". A symbol in C that references an element within a pointer
        to a struct.
-     * backquote: See "grave."
-     * backtick: See "grave."
+     * backquote: See "grave"
+     * backtick: See "grave"
      * bit: "Binary digit." Bits are the basic storage unit in a computer's
        memory, disk, networking, etc. They represent either 0 or 1. (Compared
        to a decimal digit, which can be anything between 0 and 9.) Just as a
@@ -981,14 +979,14 @@ macOS
        "5" is fifteen (15)), so can bits (e.g., "1" and "0", is two). In
        decimal, we go from right to left: ones place, tens place, hundreds
        place, thousands place, etc. In binary, it is: ones place, twos place,
-       fours place, eights place, etc. (See also "byte.")
+       fours place, eights place, etc. See also: "byte"
      * blue: See "RGBA"
      * boolean 'or': A mathematical operation that results in a true value if
        either operand is true. ("1 | 0", "0 | 1" and "1 | 1" all result in
        "1". "0 | 0" results in "0".)
      * |: See "boolean 'or'"
      * .: See "dot"
-     * `: See "grave."
+     * `: See "grave"
      * *: See "star"
      * byte: A unit of memory made up of 8 bits. As a signed value, it can
        represent -128 through 127. As an unsigned value, it can represent 0
@@ -1035,17 +1033,18 @@ macOS
      * floating point: TBD
      * format: An SDL_Surface element (a pointer to an SDL_PixelFormat
        structure) that contains information about a surface; for example, the
-       number of bits used to represent each pixel). (See also the
-       "SDL_PixelFormat(3) man page)
+       number of bits used to represent each pixel). See also the
+       "SDL_PixelFormat(3)" man page)
      * free(): A C function that frees (deallocates) memory allocated by
        other C functions (such as "strdup()").
      * function: See "C function"
-     * gcc: The GNU C compiler, a portable Open Source compiler. (See also
-       the "gcc(1)" man page)
+     * gcc: The GNU C compiler, a portable Open Source compiler. See also the
+       "gcc(1)" man page)
+     * GIMP: An Open Source image manipulation and paint program.
      * GNU C Compiler: See "gcc"
      * grave: The "`" character; used by the BASH shell to use the output of
        a command as the command-line arguments to another.
-     * green: See "RGBA"
+     * verde: See "RGBA"
      * ->: See "arrow"
      * .h: See "C header file"
      * header: See "C header file"
@@ -1069,7 +1068,7 @@ macOS
        that exposes data and functions within the running copy of Tux Paint.
      * make: A utility that automatically determines which pieces of a larger
        program need to be recompiled, and issues the commands to recompile
-       them. (See also "Makefile")
+       them. See also: "Makefile"
      * Makefile: A text file used by the "make" utility; it describes the
        relationships among files in your program, and the commands for
        updating each file. (For example, to compile a human-readable
@@ -1083,25 +1082,25 @@ macOS
      * Mix_LoadWAV(): An SDL_mixer function that loads a sound file (WAV, Ogg
        Vorbis, etc.) and returns it as a "Mix_Chunk *".
      * namespace: TBD
-     * OGG: See "Ogg Vorbis"
-     * Ogg Vorbis: TBD (See also: "WAV")
+     * .ogg: See "Ogg Vorbis"
+     * Ogg Vorbis: See also: "WAV"
      * Plugin: TBD
-     * PNG: Portable Network Graphics. An extensible file format for the
+     * .png: Portable Network Graphics. An extensible file format for the
        lossless, portable, well-compressed storage of raster images. It's the
        file format Tux Paint uses to save images, and for its brushes and
        stamps. It's an easy way to store 32bpp RGBA images (24bpp true color
        with full 8bpp alpha transparency), excellent for use in graphics
-       programs like Tux Paint. (See also the "png(5) man page)
+       programs like Tux Paint. See also the "png(5)" man page)
      * pointer: See "C pointer"
      * prototype: See "C function prototype"
      * red: See "RGBA"
      * release: The action of releasing a button on a mouse.
      * RGBA: "Red, Green, Blue, Alpha." TBD
-     * RGB: See "RBGA"
+     * RGB: See "RGBA"
      * saturation: See "HSV"
      * SDL: See "Simple DirectMedia Layer"
      * SDL_FreeSurface(): An libSDL function that frees (deallocates) memory
-       allocated for an SDL surface ("SDL_Surface *"). (See also the
+       allocated for an SDL surface ("SDL_Surface *"). See also the
        "SDL_FreeSurface(3)" man page)
      * SDL_GetRGB(): A libSDL function that, given a Uint32 pixel value
        (e.g., one returned from the Tux Paint's Magic tool API helper
@@ -1109,13 +1108,13 @@ macOS
        from, and pointers to three Uint8 variables, will place the Red, Green
        and Blue (RGB) values of the pixel into the three Uint8 variables.
        (Example: "SDL_GetRGB(getpixel(surf, x, y), surf->format, &r, &g,
-       &b);".) (See also the "SDL_GetRGB(3)" man page)
+       &b);".) See also the "SDL_GetRGB(3)" man page)
      * SDL_MapRGB(): A libSDL function that, given the format of a surface
        and Uint8 values representing Red, Green and Blue values for a pixel,
        returns a Uint32 pixel value that can be placed in the surface (e.g.,
        using Tux Paint's Magic tool API helper function "putpixel()").
        (Example: "putpixel(surf, x, y, SDL_MapRGB(surf->format, r, g, b));".)
-       (See also the "SDL_MapRGB(3)" man page)
+       See also the "SDL_MapRGB(3)" man page)
      * SDL_image: A library on top of libSDL that can load various kinds of
        image files (e.g., PNG) and return them as an "SDL_Surface *".
      * SDL_mixer: A library on top of libSDL that can load various kinds of
@@ -1124,9 +1123,9 @@ macOS
      * SDL_Rect: A C structure defined by libSDL that represents a
        rectangular area. It contains elements representing the coordinates of
        the top left corner of the rectange (x,y) and the dimensions of the
-       rectangle (w,h). (See also the "SDL_Rect(3)" man page)
+       rectangle (w,h). See also the "SDL_Rect(3)" man page)
      * SDL_Surface *: (A pointer to) a C structure defined by libSDL that
-       contains a drawing surface. (See also the "SDL_Surface(3)" man page)
+       contains a drawing surface. See also the "SDL_Surface(3)" man page)
      * Shared Object: A piece of code that's compiled separately from the
        main application, and loaded dynamically, at runtime.
      * Simple DirectMedia Layer: A programming library that allows programs
@@ -1138,7 +1137,7 @@ macOS
        string, making sure not to go beyond the string's buffer size (which
        must also be supplied). For example, assume a string "char str[20];"
        has been declared; "snprintf(str, 20, "Name: %s, Age: %d", "Bill",
-       "32");" will store "Name: Bill, Age: 32" into 'str'. (See also the
+       "32");" will store "Name: Bill, Age: 32" into 'str'. See also the
        "snprintf(3)" man page)
      * .so: See "Shared Object"
      * sRBG: See "RGBA"
@@ -1149,19 +1148,18 @@ macOS
        variable. (For example, later "*p = 50;" assigns the value of 50 to
        the memory that "p" points to; it does not change the value of "p",
        which is still a pointer to an integer. In essence, it changed the
-       integer that's being pointed to.) (See also "ampersand")
+       integer that's being pointed to.) See also: "ampersand"
      * strdup(): A C function that allocates enough memory to store a copy of
        a string, copies the string to it, and returns a "char *" pointer to
-       the new copy. (See also the "strdup(3)" man page)
+       the new copy. See also the "strdup(3)" man page)
      * struct: See "C structure"
-     * The GIMP: An Open Source image manipulation and paint program.
      * tp_magic_api.h: A header file that defines Tux Paint's Magic tool API.
        Plugins must '#include' it.
      * tp-magic-config: A command-line program that provides information
        about the installed version of Tux Paint to plugin developers (such as
        what C compiler flags they should compile with, and where plugin
-       shared objects and data files should be installed). (See also the
-       "tp-magic-config(3)" man page.)
+       shared objects and data files should be installed). See also the
+       "tp-magic-config(3)" man page)
      * Uint32: A 32-bit, unsigned integer (defined by libSDL). In other
        words, four bytes that can represent 0 through 4294967295. (Typically
        used to hold enough information to store three or four bytes
@@ -1185,6 +1183,6 @@ macOS
        someone's age could be declared as an integer: "int a;". It can be
        examined later: "if (a >= 18) { /* they are an adult */ } else { /*
        they are not an adult */ }".
-     * WAV: TBD (See also "Ogg Vorbis")
+     * .wav: See also: "Ogg Vorbis"
      * (w,h): See "Dimensions"
      * (x,y): See "Coordinates"
