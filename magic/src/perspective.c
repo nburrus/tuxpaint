@@ -510,7 +510,7 @@ void perspective_release(magic_api * api, int which,
 
     if (new_h < canvas->h)
     {
-      h1 = new_h;
+      h1 = new_h + (canvas->h - new_h) * 4 / 5;
       h2 = canvas->h;
     }
     else
