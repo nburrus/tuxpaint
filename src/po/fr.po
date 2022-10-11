@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-03 16:39-0700\n"
-"PO-Revision-Date: 2022-10-11 09:56+0200\n"
+"PO-Revision-Date: 2022-10-11 11:02+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1778,7 +1778,7 @@ msgstr "Clique et déplace la souris pour dessiner un rayon de lumière."
 
 #: ../../magic/src/lightning.c:78
 msgid "Lightning"
-msgstr "&Eacute;clair"
+msgstr "Eclair"
 
 #: ../../magic/src/lightning.c:88
 msgid "Click, drag, and release to draw a lightning bolt between two points."
