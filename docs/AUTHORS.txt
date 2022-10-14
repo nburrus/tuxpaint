@@ -2,11 +2,11 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2021
+Copyright (c) 2002-2022
 Various contributors (see below, and CHANGES.txt)
 http://www.tuxpaint.org/
 
-June 17, 2002 - May 6, 2022
+June 17, 2002 - October 14, 2022
 
 * Design and Coding:
 
@@ -886,6 +886,7 @@ June 17, 2002 - May 6, 2022
     Ed Montgomery <edm@rocketmail.com>
 
   * Punjabi
+    A S Alam <aalam@satluj.org>
     Arshpreet Singh <arsh840@gmail.com>
 
   * Persian

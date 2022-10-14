@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.October.7 (0.9.29)
+2022.October.14 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -187,6 +187,9 @@ http://www.tuxpaint.org/
 
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
+
+    * Punjabi translation
+      A S Alam <aalam@satluj.org>
 
     * Korean translation
       Mark Kim <markuskimius@gmail.com>
