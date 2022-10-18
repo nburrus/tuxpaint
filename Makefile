@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # http://www.tuxpaint.org/
 
-# June 14, 2002 - October 3, 2022
+# June 14, 2002 - October 18, 2022
 
 
 # The version number, for release:
@@ -244,7 +244,6 @@ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
 
 # Docs and man page:
 DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)
-DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)/tuxpaint-dev
 MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
 
@@ -649,9 +648,6 @@ install-magic-plugin-dev:	src/tp_magic_api.h
 	@install -d $(INCLUDE_PREFIX)/tuxpaint
 	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
 	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/tuxpaint/tp_magic_api.h
-	@install -d $(DEVDOC_PREFIX)
-	@cp -R magic/docs/* $(DEVDOC_PREFIX)
-	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
 
 # Installs the various parts for the MinGW/MSYS development/testing environment.
 
@@ -748,7 +744,6 @@ uninstall:	uninstall-i18n
 	-rm -r $(MAGIC_PREFIX)
 	-rm -r $(INCLUDE_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tp-magic-config
-	-rm -r $(DEVDOC_PREFIX)
 	-if [ "x$(BUNDLE)" != "x" ]; then \
 	  rm -rf $(BUNDLE); \
 	fi

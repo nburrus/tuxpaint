@@ -1,65 +1,67 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   Last modified: 2021.09.21
+   October 18, 2022
 */
 
 
-/* Inclusion of header files: */
-/* -------------------------- */
+/* Inclusion of header files */
+/* ---------------------------------------------------------------------- */
 
 #include <stdio.h>
-#include <string.h>             // For "strdup()"
-#include <libintl.h>            // For "gettext()"
+#include <string.h>        // For "strdup()"
+#include <libintl.h>       // For "gettext()"
 
-#include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
-#include "SDL_image.h"          // For IMG_Load(), to load our PNG icon
-#include "SDL_mixer.h"          // For Mix_LoadWAV(), to load our sound effects
+#include "tp_magic_api.h"  // Tux Paint "Magic" tool API header
+#include "SDL_image.h"     // For IMG_Load(), to load our PNG icon
+#include "SDL_mixer.h"     // For Mix_LoadWAV(), to load our sound effects
 
 
 /* Tool Enumerations: */
-/* ------------------ */
+/* ---------------------------------------------------------------------- */
 
 /* What tools we contain: */
 
+
 enum
 {
-  TOOL_ONE,                     // Becomes '0'
-  TOOL_TWO,                     // Becomes '1'
-  NUM_TOOLS                     // Becomes '2'
+  TOOL_ONE, // Becomes '0'
+  TOOL_ONE, // Becomes '1'
+  NUM_TOOLS // Becomes '2'
 };
 
 
 /* A list of filenames for sounds and icons to load at startup: */
 
-const char *snd_filenames[NUM_TOOLS] = {
-  "one.wav",
-  "two.wav"
+const char *sound_filenames[NUM_TOOLS] = {
+  "tool_one.wav",
+  "tool_two.wav"
 };
 
 const char *icon_filenames[NUM_TOOLS] = {
-  "one.png",
-  "two.png"
+  "tool_one.png",
+  "tool_two.png"
 };
 
 
-// NOTE: We use a macro called "gettext_noop()" below in some arrays of
-// strings (char *'s) that hold the names and descriptions of our "Magic"
-// tools.  This allows the strings to be localized into other languages.
+/*
+NOTE: We use a macro called "gettext_noop()" below in some arrays of
+strings (char *'s) that hold the names and descriptions of our "Magic"
+tools.  This allows the strings to be localized into other languages.
+*/
 
 
 /* A list of names for the tools */
 
-const char *names[NUM_TOOLS] = {
+const char *tool_names[NUM_TOOLS] = {
   gettext_noop("A tool"),
   gettext_noop("Another tool")
 };
 
 
-/* How to group the tools with other similar tools,
-   within the 'Magic' selector: */
+/* How to group the tools with other similar tools, within the 'Magic' selector: */
 
-const int groups[NUM_TOOLS] = {
+const int tool_groups[$NUM_TOOLS] = {
   MAGIC_TYPE_PAINTING,
   MAGIC_TYPE_DISTORTS
 };
@@ -67,7 +69,7 @@ const int groups[NUM_TOOLS] = {
 
 /* A list of descriptions of the tools */
 
-const char *descs[NUM_TOOLS] = {
+const char *tool_descriptions[NUM_TOOLS] = {
   gettext_noop("This is example tool number 1."),
   gettext_noop("This is example tool number 2.")
 };
@@ -75,42 +77,46 @@ const char *descs[NUM_TOOLS] = {
 
 
 /* Our global variables: */
-/* --------------------- */
+/* ---------------------------------------------------------------------- */
 
 /* Sound effects: */
-Mix_Chunk *snd_effect[NUM_TOOLS];
+Mix_Chunk *sound_effects[NUM_TOOLS];
 
-/* The current color (an "RGB" value) the user has selected in Tux Paint: */
-Uint8 example_r, example_g, example_b;
+/* The current color (an "RGB" -- red, green, blue -- value) the user has selected in Tux Paint: */
+Uint8 example_r, $example_g, $example_b;
 
 
 /* Our local function prototypes: */
-/* ------------------------------ */
+/* ---------------------------------------------------------------------- */
 
-// These functions are called by other functions within our plugin,
-// so we provide a 'prototype' of them, so the compiler knows what
-// they accept and return.  This lets us use them in other functions
-// that are declared _before_ them.
+/*
+These functions are called by other functions within our plugin, so we
+provide a 'prototype' of them, so the compiler knows what they accept and
+return.  This lets us use them in other functions that are declared
+_before_ them.
+*/
 
 void example_drag(magic_api * api, int which, SDL_Surface * canvas,
                   SDL_Surface * snapshot, int ox, int oy, int x, int y,
                   SDL_Rect * update_rect);
 
-void example_line_callback(void *ptr, int which, SDL_Surface * canvas,
+void example_line_callback(void *pointer, int which, SDL_Surface * canvas,
                            SDL_Surface * snapshot, int x, int y);
 
 
 /* Setup Functions: */
-/* ---------------- */
+/* ---------------------------------------------------------------------- */
 
-// API Version check
-// 
-// The running copy of Tux Paint that has loaded us first asks us what
-// version of the Tux Paint "Magic" tool plugin API we were built against.
-// If it deems us compatible, we'll be used!
-//
-// All we need to do here is return "TP_MAGIC_API_VERSION",
-// which is #define'd in tp_magic_api.h.
+/*
+API Version check
+
+The running copy of Tux Paint that has loaded us first asks us what version
+of the Tux Paint 'Magic' tool plugin API we were built against.  If it
+deems us compatible, we'll be used!
+
+All we need to do here is return "TP_MAGIC_API_VERSION", which is defined
+(#define) in the header file "tp_magic_api.h".
+*/
 
 Uint32 example_api_version(void)
 {
@@ -118,42 +124,44 @@ Uint32 example_api_version(void)
 }
 
 
-// Initialization
-//
-// This happens once, when Tux Paint starts up and is loading all of the
-// "Magic" tool plugins.  (Assuming what we returned from api_version() was
-// acceptable!)
-// 
-// All we're doing in this example is loading our sound effects,
-// which we'll use later (in click(), drag() and release())
-// when the user is using our Magic tools.
-// 
-// The memory we allocate here to store the sounds will be
-// freed (aka released, aka deallocated) when the user quits Tux Paint,
-// when our shutdown() function is called.
+/*
+Initialization
+
+This happens once, when Tux Paint starts up and is loading all of the
+'Magic' tool plugins.  (Assuming what we returned from api_version was
+acceptable!)
+
+All we're doing in this example is loading our sound effects, which we'll
+use later (in example_click(), example_drag(), and example_release()) when
+the user is using our Magic tools.
+
+The memory we allocate here to store the sounds will be freed (aka
+released, aka deallocated) when the user quits Tux Paint, when our
+example_shutdown() function is called.
+*/
 
 int example_init(magic_api * api)
 {
   int i;
-  char fname[1024];
+  char filename[1024];
 
   for (i = 0; i < NUM_TOOLS; i++)
   {
-    // Assemble the filename from the "snd_filenames[]" array into
-    // a full path to a real file.
-    //
-    // Use "api->data_directory" to figure out where our sounds should be.
-    // (The "tp-magic-config --dataprefix" command would have told us when
-    // we installed our plugin and its data.)
+    /*
+    Assemble the filename from the "sound_filenames[]" array into a full path
+    to a real file.
 
-    snprintf(fname, sizeof(fname), "%s/sounds/magic/%s", api->data_directory,
-             snd_filenames[i]);
+    Use "api->data_directory" to figure out where our sounds should be. (The
+    "tp-magic-config --dataprefix" command would have told us when we installed
+    our plugin and its data.)
 
-    printf("Trying to load %s sound file\n", fname);
+    snprintf(filename, sizeof(filename), "%s/sounds/magic/%s", api->data_directory,
+             sound_filenames[i]);
+
+    printf("Trying to load %s sound file\n", filename);
 
     // Try to load the file!
-
-    snd_effect[i] = Mix_LoadWAV(fname);
+    sound_effects[i] = Mix_LoadWAV(filename);
   }
 
   return (1);
@@ -238,51 +246,58 @@ char *example_get_name(magic_api * api, int which)
 }
 
 
-// Report our "Magic" tool groups
-//
-// When Tux Paint is starting up and loading plugins, it asks us to
-// specify where the tool should be grouped.
+/*
+Report our 'Magic' tool groups
 
+When Tux Paint is starting up and loading plugins, it asks us to specify
+where the tool should be grouped.
+*/
 int example_get_group(magic_api * api, int which)
 {
-  // Return our group from the "groups[]" array.
-  //
-  // We use 'which' (which of our tools Tux Paint is asking about)
-  // as an index into the array.
+  /*
+  Return our group, found in the "tool_groups[]" array.
 
-  return (groups[which]);
+  We use 'which' (which of our tools Tux Paint is asking about) as an index
+  into the array.
+  */
+  return (tool_groups[which]);
 }
 
 
-// Report our "Magic" tool descriptions
-//
-// When Tux Paint is starting up and loading plugins, it asks us to
-// provide names (labels) for the "Magic" tool buttons.
+/*
+Report our 'Magic' tool descriptions
 
+When Tux Paint is starting up and loading plugins, it asks us to provide
+descriptions of each 'Magic' tool.
+*/
 char *example_get_description(magic_api * api, int which, int mode)
 {
   const char *our_desc_english;
   const char *our_desc_localized;
 
-  // Get our desc from the "descs[]" array.
-  //
-  // We use 'which' (which of our tools Tux Paint is asking about)
-  // as an index into the array.
+  /*
+  Get our description from the "tool_descriptions[]" array.
 
-  our_desc_english = descs[which];
+  We use 'which' (which of our tools Tux Paint is asking about) as an index
+  into the array.
+  */
+  our_desc_english = tool_descriptions[which];
 
 
-  // Return a localized (aka translated) version of our description,
-  // if possible.
-  //
-  // We send "gettext()" the English version of the description from our array.
+  /*
+  Return a localized (aka translated) version of our description, if
+  possible.
 
+  We send "gettext" the English version of the description from our array.
+  */
   our_desc_localized = gettext(our_desc_english);
 
 
-  // Finally, duplicate the string into a new section of memory, and
-  // send it to Tux Paint.  (Tux Paint keeps track of the string and
-  // will free it for us, so we have one less thing to keep track of.)
+  /*
+  Finally, duplicate the string into a new section of memory, and send it to
+  Tux Paint.  (Tux Paint keeps track of the string and will free it for us,
+  so we have one less thing to keep track of.)
+  */
 
   return (strdup(our_desc_localized));
 }
@@ -291,7 +306,7 @@ char *example_get_description(magic_api * api, int which, int mode)
 
 int example_requires_colors(magic_api * api, int which)
 {
-  // Both of our tools accept colors, so we're always returning '1' (for "true")
+  // Both of our tools accept colors, so we're always returning '1' (for 'true')
 
   return 1;
 }
@@ -301,34 +316,36 @@ int example_requires_colors(magic_api * api, int which)
 
 int example_modes(magic_api * api, int which)
 {
-  // Both of our tools are painted (neither affect the full-screen),
-  // so we're always returning 'MODE_PAINT'
+  // Both of our tools are painted (neither affect the full-screen), so we're
+always returning 'MODE_PAINT'
 
   return MODE_PAINT;
 }
 
 
-// Shut down
-//
-// Tux Paint is quitting.  When it quits, it asks all of the plugins
-// to 'clean up' after themselves.  We, for example, loaded some sound
-// effects at startup (in our init() function), so we should free the
-// memory used by them now.
+/*
+Shut down
 
+Tux Paint is quitting.  When it quits, it asks all of the plugins to 'clean
+up' after themselves.  We, for example, loaded some sound effects at
+startup (in our example_init() function), so we should free the memory used
+by them now.
+*/
 void example_shutdown(magic_api * api)
 {
   int i;
 
-  // Free (aka release, aka deallocate) the memory used to store the
-  // sound effects that we loaded during init():
-
+  /*
+  Free (aka release, aka deallocate) the memory used to store the sound
+  effects that we loaded during example_init():
+  */
   for (i = 0; i < NUM_TOOLS; i++)
-    Mix_FreeChunk(snd_effect[i]);
+    Mix_FreeChunk(sound_effects[i]);
 }
 
 
 /* Functions that respond to events in Tux Paint: */
-/* ---------------------------------------------- */
+/* ---------------------------------------------------------------------- */
 
 // Affect the canvas on click:
 
@@ -446,7 +463,7 @@ void example_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
 
 
 /* The Magic Effect Routines! */
-/* -------------------------- */
+/* ---------------------------------------------------------------------- */
 
 // Our "callback" function
 //

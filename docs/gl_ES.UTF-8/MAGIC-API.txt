@@ -6,7 +6,7 @@ Magic Tool Plugin API Documentation
         Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                Outubro 3, 2022
+                                Outubro 18, 2022
 
              +----------------------------------------------------+
              |Table of Contents                                   |
