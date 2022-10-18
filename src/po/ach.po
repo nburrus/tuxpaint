@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 00:48-0700\n"
+"POT-Creation-Date: 2022-10-18 01:28-0700\n"
 "PO-Revision-Date: 2010-12-09 09:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -122,106 +122,95 @@ msgstr "Okwor-okwor!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:196
+#: ../dirwalk.c:204
 msgid "qx"
 msgstr "qx"
 
-#: ../dirwalk.c:196
+#: ../dirwalk.c:205
 msgid "QX"
 msgstr "QX"
 
-#. TODO: weight specification
-#. Now we score fonts to ensure that the best ones will be placed at
-#. the top of the list. The user will see them first. This sorting is
-#. especially important for users who have scroll buttons disabled.
-#. Translators should do whatever is needed to put crummy fonts last.
-#. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:221
+#: ../dirwalk.c:234
 msgid "oO"
 msgstr "oO"
 
-#. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:224
+#: ../dirwalk.c:238
 msgid ",.?!"
 msgstr ",.?!"
 
-#. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:227
+#: ../dirwalk.c:242
 #, fuzzy
 #| msgid "`\\%_@$~#{<(^&*"
 msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{<(^&*"
 
-#. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:230
+#: ../dirwalk.c:246
 msgid "017"
 msgstr "017"
 
-#. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:233
+#: ../dirwalk.c:250
 msgid "O0"
 msgstr "O0"
 
-#. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:236
+#: ../dirwalk.c:254
 msgid "1Il|"
 msgstr "1II|"
 
-#: ../dirwalk.c:240
+#: ../dirwalk.c:259
 msgid "<1>spare-1a"
 msgstr "<1>cipea-1a"
 
-#: ../dirwalk.c:241
+#: ../dirwalk.c:261
 msgid "<1>spare-1b"
 msgstr "<1>cipea-1b"
 
-#: ../dirwalk.c:242
+#: ../dirwalk.c:263
 msgid "<9>spare-9a"
 msgstr "<9>cipea-9a"
 
-#: ../dirwalk.c:243
+#: ../dirwalk.c:265
 msgid "<9>spare-9b"
 msgstr "<9>cipea-9b"
 
-#: ../fill_tools.h:50
+#: ../fill_tools.h:51
 msgid "Solid"
 msgstr ""
 
-#: ../fill_tools.h:51
+#: ../fill_tools.h:52
 #, fuzzy
 #| msgid "Brushes"
 msgid "Brush"
 msgstr "Lajwac"
 
-#: ../fill_tools.h:52
+#: ../fill_tools.h:53
 #, fuzzy
 #| msgid "Lines"
 msgid "Linear"
 msgstr "Rek"
 
-#: ../fill_tools.h:53
+#: ../fill_tools.h:54
 msgid "Radial"
 msgstr ""
 
-#: ../fill_tools.h:57
+#: ../fill_tools.h:58
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
 msgstr "Dii yi cal meno wek gupik ka ma orumu en ki rangi."
 
-#: ../fill_tools.h:58
+#: ../fill_tools.h:59
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Dii yi cal meno wek gupik ka ma orumu en ki rangi."
 
-#: ../fill_tools.h:59
+#: ../fill_tools.h:61
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
 msgstr ""
 
-#: ../fill_tools.h:60
+#: ../fill_tools.h:63
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
@@ -610,64 +599,62 @@ msgstr "Cikwea obedo lagwic angwen ma romrom."
 msgid "A rectangle has four sides and four right angles."
 msgstr "Rectangle tye ki lake angwen ki gwic angwen."
 
-#. Description of a circle
-#: ../shapes.h:337 ../shapes.h:338
+#: ../shapes.h:338 ../shapes.h:340
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Circle obedo lawala ma aa ki kamoo keken ki ibute oo icwinye romaroma"
 
 #. Description of an ellipse
-#: ../shapes.h:341 ../shapes.h:342
+#: ../shapes.h:343 ../shapes.h:344
 msgid "An ellipse is a stretched circle."
 msgstr "Ellipse obedo lawala ma kitelo bute"
 
 #. Description of a triangle
-#: ../shapes.h:345 ../shapes.h:346
+#: ../shapes.h:347 ../shapes.h:348
 msgid "A triangle has three sides."
 msgstr "Triangle tye ki gwic adek"
 
 #. Description of a pentagon
-#: ../shapes.h:349 ../shapes.h:350
+#: ../shapes.h:351 ../shapes.h:352
 msgid "A pentagon has five sides."
 msgstr "Pentagon tye ki gwic abic"
 
 #. Description of a hexagon
-#: ../shapes.h:353 ../shapes.h:354
+#: ../shapes.h:355 ../shapes.h:356
 #, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
 msgstr "Pentagon tye ki gwic abic"
 
 #. Description of a heptagon
-#: ../shapes.h:357 ../shapes.h:358
+#: ../shapes.h:359 ../shapes.h:360
 #, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
 msgstr "Pentagon tye ki gwic abic"
 
 #. Description of an octagon
-#: ../shapes.h:361 ../shapes.h:362
+#: ../shapes.h:363 ../shapes.h:364
 msgid "An octagon has eight equal sides."
 msgstr "Octagon tye ki bute aboro marom aroma"
 
-#. Description of a rhombus
-#: ../shapes.h:365 ../shapes.h:366
+#: ../shapes.h:368 ../shapes.h:370
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Rhombus tye ki bute angwen marom, kun aryo ki iye otere maromaroma"
 
-#: ../shapes.h:368 ../shapes.h:369
+#: ../shapes.h:372 ../shapes.h:373
 msgid "A star with 3 points."
 msgstr ""
 
-#: ../shapes.h:370 ../shapes.h:371
+#: ../shapes.h:374 ../shapes.h:375
 msgid "A star with 4 points."
 msgstr ""
 
-#: ../shapes.h:372 ../shapes.h:373
+#: ../shapes.h:376 ../shapes.h:377
 msgid "A star with 5 points."
 msgstr ""
 
-#: ../shapes.h:433
+#: ../shapes.h:439
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -679,7 +666,7 @@ msgstr ""
 "Kwany kite. Di me yero dyere,ywaa, ci wek ywayo ka oo i kit ma imito. Ywa "
 "calo lawala ka imito wiro ne, ci i di me goyo cal man."
 
-#: ../shapes.h:434
+#: ../shapes.h:441
 #, fuzzy
 #| msgid ""
 #| "Pick a shape. Click to pick the center, drag, then let go when it is the "
@@ -691,11 +678,11 @@ msgstr ""
 "Kwany kite. Di me yero dyere,ywaa, ci wek ywayo ka oo i kit ma imito. Ywa "
 "calo lawala ka imito wiro ne, ci i di me goyo cal man."
 
-#: ../shapes.h:440
+#: ../shapes.h:447
 msgid "Draw shapes from the center."
 msgstr ""
 
-#: ../shapes.h:441
+#: ../shapes.h:448
 msgid "Draw shapes from a corner."
 msgstr ""
 
@@ -801,7 +788,7 @@ msgstr "Nyen"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:9236
+#: ../tools.h:98 ../tuxpaint.c:9822
 msgid "Open"
 msgstr "Yabi"
 
@@ -1020,288 +1007,282 @@ msgid "Drag the mouse to rotate the stamp. Click to draw it."
 msgstr "Dir oyo me wiro cal mamegi.Dii me goyo ne."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2374
+#: ../tuxpaint.c:2452
 msgid "Do you really want to quit?"
 msgstr "Adaa imito aao?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2377
+#: ../tuxpaint.c:2455
 msgid "Yes, I’m done!"
 msgstr "Eyo,dong atyeko oo!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2380 ../tuxpaint.c:2407
+#: ../tuxpaint.c:2458 ../tuxpaint.c:2485
 msgid "No, take me back!"
 msgstr "Ku, dwoka dok cen!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2384
+#: ../tuxpaint.c:2462
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ka i aao, ibino rwenyo cal mamegi woko! Imito gwoko ne?"
 
-#: ../tuxpaint.c:2385 ../tuxpaint.c:2390
+#: ../tuxpaint.c:2463 ../tuxpaint.c:2468
 msgid "Yes, save it!"
 msgstr "Eyo, gwoki!"
 
-#: ../tuxpaint.c:2386 ../tuxpaint.c:2391
+#: ../tuxpaint.c:2464 ../tuxpaint.c:2469
 msgid "No, don’t bother saving!"
 msgstr "Ku, pe iyele me gwoko ne!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2389
+#: ../tuxpaint.c:2467
 msgid "Save your picture first?"
 msgstr "Kong ki gwok cali maenini?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2394
+#: ../tuxpaint.c:2472
 msgid "Can’t open that picture!"
 msgstr "Yabo cal eno ni oloya woko!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2397 ../tuxpaint.c:2402 ../tuxpaint.c:2411 ../tuxpaint.c:2418
-#: ../tuxpaint.c:2427 ../tuxpaint.c:2432
+#: ../tuxpaint.c:2475 ../tuxpaint.c:2480 ../tuxpaint.c:2489 ../tuxpaint.c:2496
+#: ../tuxpaint.c:2505 ../tuxpaint.c:2510
 msgid "OK"
 msgstr "Aya do."
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2401
+#: ../tuxpaint.c:2479
 msgid "There are no saved files!"
 msgstr "Pe tye fayil mo keken ma onongo kigwoko."
 
 #. Verification of print action
-#: ../tuxpaint.c:2405
+#: ../tuxpaint.c:2483
 msgid "Print your picture now?"
 msgstr "Ki go cal mamegi ni dong ikaratac?"
 
-#: ../tuxpaint.c:2406
+#: ../tuxpaint.c:2484
 msgid "Yes, print it!"
 msgstr "Eyo, go ne!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2410
+#: ../tuxpaint.c:2488
 msgid "Your picture has been printed!"
 msgstr "Kityeko dong goyo cal mamegi woko! "
 
 #. We got an error printing
-#: ../tuxpaint.c:2414
+#: ../tuxpaint.c:2492
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Tim wa kica! Pe wa goyo cal mamegi!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2417
+#: ../tuxpaint.c:2495
 msgid "You can’t print yet!"
 msgstr "Pwod pe iromo goyo cal mamegi"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2421
+#: ../tuxpaint.c:2499
 msgid "Erase this picture?"
 msgstr "Duny cal eni woko?"
 
-#: ../tuxpaint.c:2422
+#: ../tuxpaint.c:2500
 msgid "Yes, erase it!"
 msgstr "Eyo,duny oo!"
 
-#: ../tuxpaint.c:2423
+#: ../tuxpaint.c:2501
 msgid "No, don’t erase it!"
 msgstr "Ku, pe iduny!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2426
+#: ../tuxpaint.c:2504
 msgid "Remember to use the left mouse button!"
 msgstr "Po me tic ki mapeca tung acam me oyo/ladic!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2430
+#: ../tuxpaint.c:2508
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "Kityeko dong goyo cal mamegi woko! "
 
-#: ../tuxpaint.c:2431
+#: ../tuxpaint.c:2509
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "Kityeko dong goyo cal mamegi woko! "
 
 #. We got an error exporting
-#: ../tuxpaint.c:2435
+#: ../tuxpaint.c:2513
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Tim wa kica! Pe wa goyo cal mamegi!"
 
-#: ../tuxpaint.c:2436
+#: ../tuxpaint.c:2514
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Tim wa kica! Pe wa goyo cal mamegi!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2440
+#: ../tuxpaint.c:2518
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Yer cal ma imito, ci idi \"Tuki\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2725
+#: ../tuxpaint.c:2829
 msgid "Sound muted."
 msgstr "Dwon kineko oo weng."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2730
+#: ../tuxpaint.c:2834
 msgid "Sound unmuted."
 msgstr "Dwon kiyabu."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3565
+#: ../tuxpaint.c:3732
 msgid "Please wait…"
 msgstr "Tim ber ikur..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9239
+#: ../tuxpaint.c:9825
 msgid "Erase"
 msgstr "Duny"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9242
+#: ../tuxpaint.c:9828
 msgid "Slides"
 msgstr "cale macer malube aluba "
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9245
+#: ../tuxpaint.c:9831
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9248
+#: ../tuxpaint.c:9834
 msgid "Back"
 msgstr "Cen"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9251
+#: ../tuxpaint.c:9837
 msgid "Play"
 msgstr "Tuki"
 
-#. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9254
+#: ../tuxpaint.c:9841
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9257
+#: ../tuxpaint.c:9844
 msgid "Next"
 msgstr "Mede anyim"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9260
+#: ../tuxpaint.c:9847
 msgid "Clear"
 msgstr ""
 
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
-#: ../tuxpaint.c:10111
+#: ../tuxpaint.c:10776
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:13888
+#: ../tuxpaint.c:14792
 msgid "Yes"
 msgstr "Eyo"
 
-#: ../tuxpaint.c:13892
+#: ../tuxpaint.c:14796
 msgid "No"
 msgstr "Ku"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15051
+#: ../tuxpaint.c:15989
 msgid "Replace the picture with your changes?"
 msgstr "Kilok cal malube ki alokaloka itici manyeni?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15055
+#: ../tuxpaint.c:15993
 msgid "Yes, replace the old one!"
 msgstr "Eyo,lok kun ileyo maconi oo!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15059
+#: ../tuxpaint.c:15997
 msgid "No, save a new file!"
 msgstr "Ku, gwok fayil manyen!"
 
-#. Let user choose an image:
-#. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:16335
+#: ../tuxpaint.c:17352
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Yer cal ma imito, ci idi \"Yabi\""
 
-#. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
-#. Only 1 selected?  No point in saving as GIF.
-#.
-#: ../tuxpaint.c:17883
+#: ../tuxpaint.c:19079
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:23546
+#: ../tuxpaint.c:25229
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:23547
+#: ../tuxpaint.c:25230
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Yelo!"
 
-#: ../tuxpaint.c:23548
+#: ../tuxpaint.c:25231
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Bululu calo pol!"
 
-#: ../tuxpaint.c:23549
+#: ../tuxpaint.c:25232
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Tar!"
 
-#: ../tuxpaint.c:23550
+#: ../tuxpaint.c:25233
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:23551
+#: ../tuxpaint.c:25234
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Col!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:23556
+#: ../tuxpaint.c:25239
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:23557
+#: ../tuxpaint.c:25240
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:23558
+#: ../tuxpaint.c:25241
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:23559
+#: ../tuxpaint.c:25243
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:23560
+#: ../tuxpaint.c:25245
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:23561
+#: ../tuxpaint.c:25247
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1309,26 +1290,21 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:24332 ../tuxpaint.c:24339
+#: ../tuxpaint.c:26083 ../tuxpaint.c:26090
 msgid "entirely"
 msgstr ""
 
-#. Add "Color Select" color:
-#: ../tuxpaint.c:27282
+#: ../tuxpaint.c:29317
 msgid "Select a color from your drawing."
 msgstr ""
 
-#. Add "Color Picker" color:
-#. (This is an attempt to describe an HSV color picker in extremely basic terms!)
-#: ../tuxpaint.c:27291
+#: ../tuxpaint.c:29328
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#. Add "Color Mixer" color:
-#. (The terms 'tint', 'tone', and 'shade' relate to combining white, grey, or black paint (respectively) to another color)
-#: ../tuxpaint.c:27303
+#: ../tuxpaint.c:29342
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1348,22 +1324,22 @@ msgstr "Purugram me goc"
 msgid "Color Shift"
 msgstr "Diro rangi"
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:77
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Dii ci iywa ladic ne wek olok rangi idul kom cal mamegi."
 
-#: ../../magic/src/alien.c:77
+#: ../../magic/src/alien.c:78
 msgid "Click to change the colors in your entire picture."
 msgstr "Dii wek olok rangi ikom cal mamegi weng."
 
-#: ../../magic/src/blind.c:116
+#: ../../magic/src/blind.c:124
 msgid "Blind"
 msgstr "Too wang"
 
-#: ../../magic/src/blind.c:128
+#: ../../magic/src/blind.c:139
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -1371,31 +1347,31 @@ msgstr ""
 "Dii macok ki lak cal ma megi wek iywa ci iwum ki dirica ma latowang ikume."
 "Ywa atira ci oyab onyo lor towang."
 
-#: ../../magic/src/blocks_chalk_drip.c:132
+#: ../../magic/src/blocks_chalk_drip.c:145
 msgid "Blocks"
 msgstr "Bulok"
 
-#: ../../magic/src/blocks_chalk_drip.c:134
+#: ../../magic/src/blocks_chalk_drip.c:147
 msgid "Chalk"
 msgstr "Coka"
 
-#: ../../magic/src/blocks_chalk_drip.c:136
+#: ../../magic/src/blocks_chalk_drip.c:149
 msgid "Drip"
 msgstr "Ton"
 
-#: ../../magic/src/blocks_chalk_drip.c:154
+#: ../../magic/src/blocks_chalk_drip.c:171
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Dii ci iywa ladic iyi akina ne wek omi cal gubed calo bulok."
 
-#: ../../magic/src/blocks_chalk_drip.c:158
+#: ../../magic/src/blocks_chalk_drip.c:176
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture blocky."
 msgstr "Dii wek ipak cal mamegi weng."
 
-#: ../../magic/src/blocks_chalk_drip.c:165
+#: ../../magic/src/blocks_chalk_drip.c:185
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1403,228 +1379,228 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "Dii ci iywa ladic iyi akina ne wek ilok cal kun dwoko ne igoc ma coka."
 
-#: ../../magic/src/blocks_chalk_drip.c:169
+#: ../../magic/src/blocks_chalk_drip.c:191
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Dii ci iywa ladic iyi akina ne wek ilok cal kun dwoko ne igoc ma coka."
 
-#: ../../magic/src/blocks_chalk_drip.c:176
+#: ../../magic/src/blocks_chalk_drip.c:200
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Dii ci iywa ladic iyi akina ne wek omi ton pa cal."
 
-#: ../../magic/src/blocks_chalk_drip.c:180
+#: ../../magic/src/blocks_chalk_drip.c:204
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture drip."
 msgstr "Dii wek ipak cal mamegi weng."
 
-#: ../../magic/src/blur.c:81
+#: ../../magic/src/blur.c:84
 msgid "Blur"
 msgstr "Ma laribiribi."
 
-#: ../../magic/src/blur.c:89
+#: ../../magic/src/blur.c:92
 #, fuzzy
 #| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "Dii ci iywa ladic iyi akina ne wek omi cal bed laribiribi."
 
-#: ../../magic/src/blur.c:90
+#: ../../magic/src/blur.c:93
 msgid "Click to blur the entire image."
 msgstr "Dii wek omi cal weng obed ma laribiribi."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:121
+#: ../../magic/src/bricks.c:129
 msgid "Bricks"
 msgstr "Matapwali"
 
-#: ../../magic/src/bricks.c:134
+#: ../../magic/src/bricks.c:144
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large bricks."
 msgstr "Dii ci idir wek ogo cal matapwali ma dit odoco."
 
-#: ../../magic/src/bricks.c:136
+#: ../../magic/src/bricks.c:146
 #, fuzzy
 #| msgid "Click and move to draw small bricks."
 msgid "Click and drag to draw small bricks."
 msgstr "Dii ci idir wek igo cal matapwali ma tino."
 
-#: ../../magic/src/calligraphy.c:125
+#: ../../magic/src/calligraphy.c:135
 msgid "Calligraphy"
 msgstr "Coc  ma mwonya"
 
-#: ../../magic/src/calligraphy.c:138
+#: ../../magic/src/calligraphy.c:152
 #, fuzzy
 #| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Dii ci idir ladic iyi akina ne wek igo iyi coc ma mwonya."
 
-#: ../../magic/src/cartoon.c:107
+#: ../../magic/src/cartoon.c:116
 msgid "Cartoon"
 msgstr "Katuun"
 
-#: ../../magic/src/cartoon.c:121
+#: ../../magic/src/cartoon.c:134
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Dii ci idir iyi akina ne wek owir cal dwok tung kum katuun."
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:140
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Dii ci iywa ladic iyi akina ne wek ilok cal kun dwoko ne igoc ma coka."
 
-#: ../../magic/src/checkerboard.c:100
+#: ../../magic/src/checkerboard.c:111
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:112
+#: ../../magic/src/checkerboard.c:126
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "Dii ki iywa wek igoo latero ma gitiyo ki cale me toltol."
 
-#: ../../magic/src/clone.c:133
+#: ../../magic/src/clone.c:142
 msgid "Clone"
 msgstr ""
 
-#: ../../magic/src/clone.c:145
+#: ../../magic/src/clone.c:159
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/confetti.c:90
+#: ../../magic/src/confetti.c:98
 msgid "Confetti"
 msgstr "Kwone cale ma giyiko ma mile"
 
-#: ../../magic/src/confetti.c:100
+#: ../../magic/src/confetti.c:111
 msgid "Click to throw confetti!"
 msgstr "Dii ci iba cal ma gigoyo ma mile!"
 
-#: ../../magic/src/distortion.c:135
+#: ../../magic/src/distortion.c:145
 msgid "Distortion"
 msgstr "Rucurucu"
 
-#: ../../magic/src/distortion.c:152
+#: ../../magic/src/distortion.c:166
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Dii ci iywa ladic wek omi cal mamegi rucere odoco."
 
-#: ../../magic/src/emboss.c:102
+#: ../../magic/src/emboss.c:110
 msgid "Emboss"
 msgstr "Ling"
 
-#: ../../magic/src/emboss.c:115
+#: ../../magic/src/emboss.c:127
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Dii ci iywa ladic wek iling  cal."
 
-#: ../../magic/src/emboss.c:117
+#: ../../magic/src/emboss.c:129
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
 msgstr "Dii wek ipak cal mamegi weng."
 
-#: ../../magic/src/fade_darken.c:115
+#: ../../magic/src/fade_darken.c:126
 msgid "Lighten"
 msgstr "Cwinyi"
 
-#: ../../magic/src/fade_darken.c:117
+#: ../../magic/src/fade_darken.c:128
 msgid "Darken"
 msgstr "Cidi"
 
-#: ../../magic/src/fade_darken.c:134
+#: ../../magic/src/fade_darken.c:149
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Dii ci idir ladic wek icwiny dul kom pa cal mamegi."
 
-#: ../../magic/src/fade_darken.c:136
+#: ../../magic/src/fade_darken.c:151
 msgid "Click to lighten your entire picture."
 msgstr "Dii wek icwiny cal mamegi weng."
 
-#: ../../magic/src/fade_darken.c:141
+#: ../../magic/src/fade_darken.c:158
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Dii ci idir ladic wek icid dul kom cal mamegi."
 
-#: ../../magic/src/fade_darken.c:143
+#: ../../magic/src/fade_darken.c:160
 msgid "Click to darken your entire picture."
 msgstr "Dii wek icid woko cal mamegi weng."
 
-#: ../../magic/src/fisheye.c:102
+#: ../../magic/src/fisheye.c:112
 msgid "Fisheye"
 msgstr "Lawangrec"
 
-#: ../../magic/src/fisheye.c:112
+#: ../../magic/src/fisheye.c:127
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Dii ki dul kom cal ma megi wek'oket ma calo lawangrec."
 
-#: ../../magic/src/flower.c:146
+#: ../../magic/src/flower.c:163
 msgid "Flower"
 msgstr "Ature"
 
-#: ../../magic/src/flower.c:158
+#: ../../magic/src/flower.c:180
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "Dii ci iywa ka gono yat pa lature. Wek otyek ka gono lature."
 
-#: ../../magic/src/foam.c:115
+#: ../../magic/src/foam.c:133
 msgid "Foam"
 msgstr "Bwoyo"
 
-#: ../../magic/src/foam.c:127
+#: ../../magic/src/foam.c:150
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Dii ci iywa ladic wek owum kakare ki bwoyo ma otwak."
 
-#: ../../magic/src/fold.c:108
+#: ../../magic/src/fold.c:124
 msgid "Fold"
 msgstr "Dol"
 
-#: ../../magic/src/fold.c:118
+#: ../../magic/src/fold.c:139
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
 "Yer rangi pa ka maneno calu bor ki dii wek owir  gwic pa pot katatac iwiye. "
 
-#: ../../magic/src/fretwork.c:187
+#: ../../magic/src/fretwork.c:209
 msgid "Fretwork"
 msgstr ""
 
-#: ../../magic/src/fretwork.c:193
+#: ../../magic/src/fretwork.c:217
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Dii ki iywa wek igoo latero ma gitiyo ki cale me toltol."
 
-#: ../../magic/src/fretwork.c:195
+#: ../../magic/src/fretwork.c:221
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Dii wek iwum cal mamegi ki ton pa kot."
 
-#: ../../magic/src/glasstile.c:105
+#: ../../magic/src/glasstile.c:114
 msgid "Glass Tile"
 msgstr "Matangula lum"
 
-#: ../../magic/src/glasstile.c:118
+#: ../../magic/src/glasstile.c:131
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Dii ci iywa ladic wek oket matangula lum iwi cal mamegi."
 
-#: ../../magic/src/glasstile.c:120
+#: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Dii wek iwum cal mamegi weng icanduk pa matangula lum."
 
-#: ../../magic/src/grass.c:108
+#: ../../magic/src/grass.c:116
 msgid "Grass"
 msgstr "Lum"
 
-#: ../../magic/src/grass.c:120
+#: ../../magic/src/grass.c:133
 #, fuzzy
 #| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
@@ -1646,28 +1622,28 @@ msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
 
-#: ../../magic/src/kalidescope.c:120
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Nucu mo ma romrom ki mukene ki caji ma Lacam/Lacuc"
 
-#: ../../magic/src/kalidescope.c:124
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Nucu mo ma romrom ki mukene ki caji ma Lamal/Piny"
 
-#: ../../magic/src/kalidescope.c:128
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:132
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:136
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Dol matye ki ebukutu ma i kio"
 
-#: ../../magic/src/kalidescope.c:154
+#: ../../magic/src/kalidescope.c:164
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -1675,7 +1651,7 @@ msgstr ""
 "Dii ci iywa ladic wek ogo ki lajwac aryo ma tye ki nucu mo maromrom arii ma "
 "lacam ki tung lacuc pa cal mamegi."
 
-#: ../../magic/src/kalidescope.c:160
+#: ../../magic/src/kalidescope.c:170
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -1683,13 +1659,13 @@ msgstr ""
 "Dii ci iywa ladic wek ogo ki lajwac aryo ma tye ki nucu mo ma romrom arii "
 "itung ku wie ci piny pa cal mamegi."
 
-#: ../../magic/src/kalidescope.c:164
+#: ../../magic/src/kalidescope.c:176
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Dii ci iywa ladic wek iling  cal."
 
-#: ../../magic/src/kalidescope.c:168
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -1701,63 +1677,62 @@ msgstr ""
 "Dii ci iywa ladic wek ogo ki lajwac aryo ma tye ki nucu mo maromrom arii ma "
 "lacam ki tung lacuc pa cal mamegi."
 
-#. KAL_BOTH
-#: ../../magic/src/kalidescope.c:172
+#: ../../magic/src/kalidescope.c:188
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
 "Dii ci iywa ladic wek ogo ki lajwac ma nucu ne romrom ki mukene "
 "(akaleidoscope)."
 
-#: ../../magic/src/light.c:104
+#: ../../magic/src/light.c:112
 msgid "Light"
 msgstr "Cwiny"
 
-#: ../../magic/src/light.c:116
+#: ../../magic/src/light.c:129
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Dii ci iywa wek ogo layin acara pa lero okom cal mamegi."
 
-#: ../../magic/src/lightning.c:78
+#: ../../magic/src/lightning.c:89
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "Cwinyi"
 
-#: ../../magic/src/lightning.c:88
+#: ../../magic/src/lightning.c:104
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "Dii ci iywa wek ogo layin acara pa lero okom cal mamegi."
 
-#: ../../magic/src/metalpaint.c:99
+#: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
 msgstr "Dawa me nyonyo"
 
-#: ../../magic/src/metalpaint.c:112
+#: ../../magic/src/metalpaint.c:125
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Dii ci iywa ladic wek oling ki rangi me nyonyo."
 
-#: ../../magic/src/mirror_flip.c:111
+#: ../../magic/src/mirror_flip.c:118
 msgid "Mirror"
 msgstr "Kio"
 
-#: ../../magic/src/mirror_flip.c:113
+#: ../../magic/src/mirror_flip.c:120
 msgid "Flip"
 msgstr "Lok me oyoto"
 
-#: ../../magic/src/mirror_flip.c:128
+#: ../../magic/src/mirror_flip.c:137
 msgid "Click to make a mirror image."
 msgstr "Dii wek iyik cal kio."
 
-#: ../../magic/src/mirror_flip.c:130
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to flip the picture upside-down."
 msgstr "Dii wek ilok cal laculawic."
 
-#: ../../magic/src/mosaic.c:97
+#: ../../magic/src/mosaic.c:103
 msgid "Mosaic"
 msgstr "Cal ma kiketo kacel ki gwenge ma olinge(Mosaic)"
 
-#: ../../magic/src/mosaic.c:105
+#: ../../magic/src/mosaic.c:112
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1765,24 +1740,24 @@ msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Dii wek idir ladic ka ibimedo teko pa mojaik ikom dul kom cal mamegi."
 
-#: ../../magic/src/mosaic.c:106
+#: ../../magic/src/mosaic.c:113
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr ""
 "Dii wek imed teko pa cal ma kiketo kacel ki gwenge ikom cal mamegi weng."
 
-#: ../../magic/src/mosaic_shaped.c:133
+#: ../../magic/src/mosaic_shaped.c:146
 msgid "Square Mosaic"
 msgstr "Cal ma kiketo kacel ki gwenge ma twoke angwen rorom"
 
-#: ../../magic/src/mosaic_shaped.c:134
+#: ../../magic/src/mosaic_shaped.c:147
 msgid "Hexagon Mosaic"
 msgstr "Cal ma kiketo kacel ki gwenge ma olinge ma twoke tye abicel"
 
-#: ../../magic/src/mosaic_shaped.c:135
+#: ../../magic/src/mosaic_shaped.c:148
 msgid "Irregular Mosaic"
 msgstr "Cal ma kiketo kacel ki gwenge ma olinge ma pe ki twoke "
 
-#: ../../magic/src/mosaic_shaped.c:141
+#: ../../magic/src/mosaic_shaped.c:155
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -1792,13 +1767,13 @@ msgstr ""
 "Dii ci idir ladic wek omed cal ma kiketo ki gwenge ma olinge  ma twoke "
 "angwen rorom ikom dul cal mamegi weng."
 
-#: ../../magic/src/mosaic_shaped.c:142
+#: ../../magic/src/mosaic_shaped.c:156
 msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
 "Dii wek omed cal ma kiketo kacel ki gwenge ma olinge ma twoke angwen ikom "
 "cal mamegi weng."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:161
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -1809,13 +1784,13 @@ msgstr ""
 "Dii ki idir ladic wek omed cal ma kiketo kacel ki gwenge ma olinge ma twoke "
 "abicel marom ikom cal mamegi."
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:162
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "Dii wek imed cal ma kiketo kacel ki gwenge ma olinge ma twoke abicel marom "
 "ikom cal mamegi weng."
 
-#: ../../magic/src/mosaic_shaped.c:151
+#: ../../magic/src/mosaic_shaped.c:167
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -1826,31 +1801,31 @@ msgstr ""
 "Dii ki idir ladic wek imed cal ma kiketo kacel ki gwenge ma olinge ma twoke "
 "tye ataata  idul kom cal mamegi."
 
-#: ../../magic/src/mosaic_shaped.c:152
+#: ../../magic/src/mosaic_shaped.c:168
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "Dii wek imed cal ma kiketo kacel ki gwenge ma olinge ma twoke tye ataata "
 "idul kum cal mamegi weng."
 
-#: ../../magic/src/negative.c:73
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Olutuke"
 
-#: ../../magic/src/negative.c:74
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:86
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Dii ki idir ladic akina ne wek omi wir mamegi obed marac."
 
-#: ../../magic/src/negative.c:80
+#: ../../magic/src/negative.c:87
 msgid "Click to turn your painting into its negative."
 msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
 
-#: ../../magic/src/negative.c:83
+#: ../../magic/src/negative.c:90
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -1860,7 +1835,7 @@ msgid ""
 "complementary colors."
 msgstr "Dii ki idir ladic i akinakina ne wek olok rangi pa dul kom cal mamegi."
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:92
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -1870,49 +1845,49 @@ msgstr ""
 msgid "Noise"
 msgstr "Dange"
 
-#: ../../magic/src/noise.c:74
+#: ../../magic/src/noise.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "Dii ki idir ladic wek imed dange idul ikom cal mamegi."
 
-#: ../../magic/src/noise.c:75
+#: ../../magic/src/noise.c:76
 msgid "Click to add noise to your entire picture."
 msgstr "Dii wek omed dange ikom cal mamegi weng."
 
-#: ../../magic/src/perspective.c:161
+#: ../../magic/src/perspective.c:169
 msgid "Perspective"
 msgstr "Malube kwede"
 
-#: ../../magic/src/perspective.c:162
+#: ../../magic/src/perspective.c:170
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:163
+#: ../../magic/src/perspective.c:171
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Nyaa "
 
-#: ../../magic/src/perspective.c:164
+#: ../../magic/src/perspective.c:172
 msgid "Zoom"
 msgstr "Nyaa "
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:173
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Dii ikom itwoketwoke ite ywayo kama imito ryeyone cal mamegi."
 
-#: ../../magic/src/perspective.c:171
+#: ../../magic/src/perspective.c:180
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:183
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -1920,81 +1895,81 @@ msgid ""
 "picture."
 msgstr "Dii ki iywa lamal wek onya onyo ywa lapiny wek irid cal woko."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:186
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Dii ki iywa lamal wek onya onyo ywa lapiny wek irid cal woko."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:189
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr "Dii ki iywa lamal wek onya onyo ywa lapiny wek irid cal woko."
 
-#: ../../magic/src/pixels.c:107
+#: ../../magic/src/pixels.c:114
 msgid "Pixels"
 msgstr ""
 
-#: ../../magic/src/pixels.c:119
+#: ../../magic/src/pixels.c:129
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to draw large pixels."
 msgstr "Dii ci idir wek ogo cal matapwali ma dit odoco."
 
-#: ../../magic/src/puzzle.c:106
+#: ../../magic/src/puzzle.c:115
 msgid "Puzzle"
 msgstr "Laruc wic"
 
-#: ../../magic/src/puzzle.c:118
+#: ../../magic/src/puzzle.c:131
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "Dii dul ikom cal mamegi ka ma imaro laruc wic iye."
 
-#: ../../magic/src/puzzle.c:119
+#: ../../magic/src/puzzle.c:132
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Dii wek iyik laruc wic malac iwang kompiuta."
 
-#: ../../magic/src/rails.c:136
+#: ../../magic/src/rails.c:153
 msgid "Rails"
 msgstr "Tyen-gar"
 
-#: ../../magic/src/rails.c:146
+#: ../../magic/src/rails.c:168
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Dii ki iywa wek igo yoo tyen gar ikom cal mamegi."
 
-#: ../../magic/src/rainbow.c:138
+#: ../../magic/src/rainbow.c:148
 msgid "Rainbow"
 msgstr "Itoloka"
 
-#: ../../magic/src/rainbow.c:140
+#: ../../magic/src/rainbow.c:152
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Smooth Rainbow"
 msgstr "Itoloka"
 
-#: ../../magic/src/rainbow.c:153
+#: ../../magic/src/rainbow.c:168
 msgid "You can draw in rainbow colors!"
 msgstr "Itwero goyo ki rangi pa itoloka!"
 
-#: ../../magic/src/rain.c:68
+#: ../../magic/src/rain.c:69
 msgid "Rain"
 msgstr "Kot"
 
-#: ../../magic/src/rain.c:76
+#: ../../magic/src/rain.c:77
 msgid "Click to place a rain drop onto your picture."
 msgstr "Dii wek olee ton pa kot ikom cal mamegi."
 
-#: ../../magic/src/rain.c:77
+#: ../../magic/src/rain.c:78
 msgid "Click to cover your picture with rain drops."
 msgstr "Dii wek iwum cal mamegi ki ton pa kot."
 
-#: ../../magic/src/realrainbow.c:99
+#: ../../magic/src/realrainbow.c:113
 msgid "Real Rainbow"
 msgstr "Itolaka kikome"
 
-#: ../../magic/src/realrainbow.c:101
+#: ../../magic/src/realrainbow.c:115
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV Itolaka"
 
-#: ../../magic/src/realrainbow.c:114
+#: ../../magic/src/realrainbow.c:130
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2002,38 +1977,38 @@ msgstr ""
 "Dii kan ma imito ni itoloka mamegi ocake iye, ywa nioo kan ma imito ni en "
 "ogik iye, ki mii ociti ka gono itolaka."
 
-#: ../../magic/src/reflection.c:110
+#: ../../magic/src/reflection.c:117
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:120
+#: ../../magic/src/reflection.c:132
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr "Dii wek idir ladic ka ibimedo teko pa mojaik ikom dul kom cal mamegi."
 
-#: ../../magic/src/ripples.c:103
+#: ../../magic/src/ripples.c:111
 msgid "Ripples"
 msgstr "Twagere pa pii"
 
-#: ../../magic/src/ripples.c:115
+#: ../../magic/src/ripples.c:127
 msgid "Click to make ripples appear over your picture."
 msgstr "Dii wek imii twage pa pii onyute iwi cal mamegi."
 
-#: ../../magic/src/rosette.c:118
+#: ../../magic/src/rosette.c:128
 msgid "Rosette"
 msgstr "Rosette"
 
-#: ../../magic/src/rosette.c:120
+#: ../../magic/src/rosette.c:130
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:131
+#: ../../magic/src/rosette.c:143
 msgid "Click and start drawing your rosette."
 msgstr "Dii ki icak goyo rosette mamegi."
 
-#: ../../magic/src/rosette.c:133
+#: ../../magic/src/rosette.c:145
 msgid "You can draw just like Picasso!"
 msgstr "Itwero goyo macalo Picasso kikome!"
 
@@ -2049,61 +2024,60 @@ msgstr "Paki"
 msgid "Silhouette"
 msgstr "Silhoutte"
 
-#: ../../magic/src/sharpen.c:82
+#: ../../magic/src/sharpen.c:83
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "Dii ki idir ladic wek okwed teng idul kom cal mamegi."
 
-#: ../../magic/src/sharpen.c:83
+#: ../../magic/src/sharpen.c:84
 msgid "Click to trace edges in your entire picture."
 msgstr "Dii wek okwed teng ical mamegi weng."
 
-#: ../../magic/src/sharpen.c:84
+#: ../../magic/src/sharpen.c:85
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "Dii ki idir ladic ne  wek opak dul kom cal mamegi."
 
-#: ../../magic/src/sharpen.c:85
+#: ../../magic/src/sharpen.c:86
 msgid "Click to sharpen the entire picture."
 msgstr "Dii wek ipak cal mamegi weng."
 
-#: ../../magic/src/sharpen.c:86
+#: ../../magic/src/sharpen.c:88
 #, fuzzy
 #| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "Dii ki idir ladic wek oyik silhoutte matye macol ki  matar."
 
-#: ../../magic/src/sharpen.c:87
+#: ../../magic/src/sharpen.c:90
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Dii wek iyik silhoutte manen macol kwede matar ikom cal mamegi weng."
 
-#: ../../magic/src/shift.c:107
+#: ../../magic/src/shift.c:115
 msgid "Shift"
 msgstr "Kobi"
 
-#: ../../magic/src/shift.c:119
+#: ../../magic/src/shift.c:132
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Dii ki  iywa me kobo cal mamegi  iyi akina kum canvas."
 
-#: ../../magic/src/smudge.c:103
+#: ../../magic/src/smudge.c:110
 msgid "Smudge"
 msgstr "Lililo"
 
 #. if (which == 1)
-#: ../../magic/src/smudge.c:105
+#: ../../magic/src/smudge.c:112
 msgid "Wet Paint"
 msgstr "Rangi madyaka"
 
-#: ../../magic/src/smudge.c:121
+#: ../../magic/src/smudge.c:131
 #, fuzzy
 #| msgid "Click and move the mouse around to smudge the picture."
 msgid "Click and drag the mouse around to smudge the picture."
 msgstr "Dii ki idir ladic akina ne wek ilil cal."
 
-#. if (which == 1)
-#: ../../magic/src/smudge.c:123
+#: ../../magic/src/smudge.c:135
 #, fuzzy
 #| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
@@ -2125,11 +2099,11 @@ msgstr "Dii wek  imed odilo akuna ikum cal mamegi. "
 msgid "Click to add snow flakes to your picture."
 msgstr "Dii wek imed pii mumake mapoto ki malo ikom cal mamegi."
 
-#: ../../magic/src/stretch.c:107
+#: ../../magic/src/stretch.c:118
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:119
+#: ../../magic/src/stretch.c:133
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2139,19 +2113,19 @@ msgid ""
 msgstr ""
 "Dii ci iywa wek omi dul kom cal ma megi onen calo ma gutye itelevision."
 
-#: ../../magic/src/string.c:129
+#: ../../magic/src/string.c:144
 msgid "String edges"
 msgstr "Teng tol weng ma gikubu"
 
-#: ../../magic/src/string.c:132
+#: ../../magic/src/string.c:147
 msgid "String corner"
 msgstr "Gwic tol  ma gikubu"
 
-#: ../../magic/src/string.c:135
+#: ../../magic/src/string.c:150
 msgid "String 'V'"
 msgstr "Tol \"V\""
 
-#: ../../magic/src/string.c:151
+#: ../../magic/src/string.c:168
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2159,11 +2133,11 @@ msgstr ""
 "Dii ki iywa wek igoo cale ki toltol. Ywa imalu-ki piny wek i goo rye manok "
 "onyo layin mapol, tung lacam onyo tung acuc wek oket i bur ma dit."
 
-#: ../../magic/src/string.c:154
+#: ../../magic/src/string.c:173
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Dii ki iywa wek igoo latero ma gitiyo ki cale me toltol."
 
-#: ../../magic/src/string.c:157
+#: ../../magic/src/string.c:176
 msgid "Draw string art arrows with free angles."
 msgstr "Goo lacim cal toltol kwede akina gi tye mere ataa."
 
@@ -2175,7 +2149,7 @@ msgstr "Rangi ma gi rubu matar."
 msgid "Color & White"
 msgstr "Rangi & Matar"
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:80
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2184,11 +2158,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Dii ki idir ladic i akinakina ne wek olok rangi pa dul kom cal mamegi."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:81
 msgid "Click to change the color of your entire picture."
 msgstr "Dii wek ilok rangi pa cal mamegi weng."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2200,7 +2174,7 @@ msgstr ""
 "Dii ki idir ladic i akinakina ne wek olok dul kom cal mamegi idwok matar "
 "kwede rangi ma iyero ne."
 
-#: ../../magic/src/tint.c:82
+#: ../../magic/src/tint.c:85
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Dii wek ilok kum cal mamegi weng odok matar ki rangi  ma yin iyero."
 
@@ -2212,38 +2186,38 @@ msgstr "Yat lajwa lak"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Dii ki iywa wek ibibio yat lajwa lak ikom cal ma megi."
 
-#: ../../magic/src/tornado.c:154
+#: ../../magic/src/tornado.c:168
 msgid "Tornado"
 msgstr "Yamo ajuru"
 
-#: ../../magic/src/tornado.c:166
+#: ../../magic/src/tornado.c:185
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Dii ki iywa wek ogo cal lapik yamo ajuru ikum cal ma megi."
 
-#: ../../magic/src/tv.c:99
+#: ../../magic/src/tv.c:106
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "Dii ci iywa wek omi dul kom cal ma megi onen calo ma gutye itelevision."
 
-#: ../../magic/src/tv.c:113
+#: ../../magic/src/tv.c:125
 msgid "Click to make your picture look like it's on television."
 msgstr "Dii wek omi cal ma megi nen ma calo tye itelevision."
 
-#: ../../magic/src/waves.c:111
+#: ../../magic/src/waves.c:119
 msgid "Waves"
 msgstr "Yamu ma tago pii"
 
-#: ../../magic/src/waves.c:113
+#: ../../magic/src/waves.c:121
 msgid "Wavelets"
 msgstr "Yamu ma tago manok"
 
-#: ../../magic/src/waves.c:122
+#: ../../magic/src/waves.c:131
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2252,7 +2226,7 @@ msgstr ""
 "Dii wek omi cal tage abutu. Dii macok ki wie pi tage macek, dol tere me tage "
 "maboco, lacam pi tage manok, ki tung lacuc pi tage mabor."
 
-#: ../../magic/src/waves.c:125
+#: ../../magic/src/waves.c:134
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -2261,19 +2235,19 @@ msgstr ""
 "Dii wek omi cal tage atir. Dii macok ki wiye pi tage macek, dol tere pi tage "
 "maboco, lacam pi tage manok, ki tung lacuc pi tage mabor."
 
-#: ../../magic/src/xor.c:92
+#: ../../magic/src/xor.c:99
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "Rangi"
 
-#: ../../magic/src/xor.c:103
+#: ../../magic/src/xor.c:112
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to draw a XOR effect"
 msgstr "Dii ki iywa wek igoo latero ma gitiyo ki cale me toltol."
 
-#: ../../magic/src/xor.c:105
+#: ../../magic/src/xor.c:116
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to draw a XOR effect on the whole picture"
