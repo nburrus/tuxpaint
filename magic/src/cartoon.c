@@ -4,7 +4,7 @@
   Cartoon Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 8, 2021
+  Last updated: October 19, 2022
   $Id$
 */
 
@@ -244,7 +244,7 @@ void cartoon_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->x = ox - 16;
   update_rect->y = oy - 16;
   update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->h;
+  update_rect->h = (y + 16) - update_rect->y;
 
   api->playsound(cartoon_snd, (x * 255) / canvas->w, 255);
 }

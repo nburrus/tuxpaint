@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.October.18 (0.9.29)
+2022.October.19 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -87,6 +87,12 @@ http://www.tuxpaint.org/
     * Receive clicks when Tux Paint window is regaining focus
       (via "SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH"), which is how
       the earlier SDL1.2 versions worked.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Various Magic tools miscalculated which part of canvas
+      needed updating in their paint mdoes; mended.
+      (Bricks, Cartoon, Clone, Distortion, Emboss, Glass Tile,
+      Light, Metal Paint, Negative, and Pixels.)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:

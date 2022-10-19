@@ -4,7 +4,7 @@
   Pixel art paintbrush Magic Tools Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2022 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 21, 2021
+  Last updated: October 19, 2022
   $Id$
 */
 
@@ -176,7 +176,7 @@ void pixels_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->x = x - 64;
   update_rect->y = y - 64;
   update_rect->w = (ox + 128) - update_rect->x;
-  update_rect->h = (oy + 128) - update_rect->h;
+  update_rect->h = (oy + 128) - update_rect->y;
 
   api->playsound(pixel_snd, (x * 255) / canvas->w, 255);
 }

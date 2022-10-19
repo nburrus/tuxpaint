@@ -6,7 +6,7 @@
 
   Albert Cahalan <albert@users.sf.net>
 
-  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 20, 2021
+  Last updated: October 19, 2022
   $Id$
 */
 
@@ -261,10 +261,12 @@ void bricks_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = x - 64;
-  update_rect->y = y - 64;
-  update_rect->w = (ox + 128) - update_rect->x;
-  update_rect->h = (oy + 128) - update_rect->h;
+  /* FIXME: Should use nominal_width & _height, specified_length, and vertical_joint here -bjk 2022.10.19 */
+
+  update_rect->x = x - 128;
+  update_rect->y = y - 128;
+  update_rect->w = (ox + 256) - update_rect->x;
+  update_rect->h = (oy + 256) - update_rect->y;
 
   api->playsound(brick_snd, (x * 255) / canvas->w, 255);
 }

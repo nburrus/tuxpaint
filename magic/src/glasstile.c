@@ -4,7 +4,7 @@
   Glass Tile Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   http://www.tuxpaint.org/
 
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 8, 2021
+  Last updated: October 19, 2022
   $Id$
 */
 
@@ -254,7 +254,7 @@ void glasstile_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->x = x - 1;
   update_rect->y = y - 1;
   update_rect->w = ox - update_rect->x + 1;
-  update_rect->h = oy - update_rect->h + 1;
+  update_rect->h = oy - update_rect->y + 1;
 */
 
   api->playsound(glasstile_snd, (x * 255) / canvas->w, 255);

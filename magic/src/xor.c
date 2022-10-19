@@ -6,7 +6,7 @@
    
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2013-2021 by Lukasz Dmitrowski
+  Copyright (c) 2013-2022 by Lukasz Dmitrowski
   
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  Last updated: September 21, 2021
+  Last updated: October 19, 2022
 */
 
 #include <stdio.h>
@@ -181,7 +181,7 @@ void xor_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->x = ox - 16;
   update_rect->y = oy - 16;
   update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->h;
+  update_rect->h = (y + 16) - update_rect->y;
 
   api->playsound(xor_snd, (x * 255) / canvas->w, 255);
 }
