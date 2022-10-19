@@ -564,7 +564,7 @@ void example_line_callback(void *pointer, int which, SDL_Surface * canvas,
         /*
         Here we have simply use Tux Paint's "getpixel()" routine to pull pixel
         values from the 'snapshot', and then "putpixel()" to draw them right
-        into the 'snapshot'.
+        into the 'canvas'.
 
         Note: putpixel() and getpixel() are safe to use, even if your X,Y values
         are outside of the SDL surface (e.g., negative, or greater than the
