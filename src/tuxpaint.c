@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 28, 2022
+  June 14, 2002 - October 25, 2022
 */
 
 #include "platform.h"
@@ -1928,6 +1928,7 @@ static int num_brushes, num_brushes_max, shape_brush = 0;
 static SDL_Surface **img_brushes, **img_brushes_thumbs;
 static int *brushes_frames = NULL;
 static int *brushes_spacing = NULL;
+static int *brushes_spacing_default = NULL;
 static short *brushes_directional = NULL;
 static short *brushes_rotate = NULL;
 
@@ -1977,7 +1978,7 @@ static int brush_counter, brush_frame;
 #define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
-#define BRUSH_SPACING_SIZES 12  /* How many brush spacing options to provide
+#define BRUSH_SPACING_SIZES 13  /* How many brush spacing options to provide
                                    (max will represent BRUSH_SPACING_MAX_MULTIPLIER times the
                                    max dimension of the brush; min will represent 1 pixel) */
 #define BRUSH_SPACING_MAX_MULTIPLIER 5  /* How far apart (in terms of a multiplier of a
@@ -4840,12 +4841,12 @@ static void mainloop(void)
                 /* Brush spacing */
 
                 int prev_size, chosen, new_size, frame_w, w, h, control_sound;
+                int next_new_size, prev_new_size;
+                int strike = event.button.x - r_ttoolopt.x;
 
                 prev_size = brushes_spacing[cur_brush];
-                chosen =
-                  ((BRUSH_SPACING_SIZES + 1) * (event.button.x -
-                                                r_ttoolopt.x)) / r_ttoolopt.w;
-
+                chosen = ((BRUSH_SPACING_SIZES * strike) / r_ttoolopt.w);
+ 
                 frame_w =
                   img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
                 w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
@@ -4855,9 +4856,34 @@ static void mainloop(void)
 
                 /* Spacing ranges from 0px to "N x the max dimension of the brush"
                    (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
-                new_size =
-                  (chosen * max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER) /
-                  BRUSH_SPACING_SIZES;
+                if (chosen == 0)
+                {
+                  new_size = 0;
+                }
+                else
+                {
+                  new_size =
+                    (chosen * max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER) /
+                    (BRUSH_SPACING_SIZES - 1);
+                }
+
+                if (new_size != brushes_spacing_default[cur_brush])
+                {
+                  prev_new_size =
+                    ((chosen - 1) * max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER) /
+                    (BRUSH_SPACING_SIZES - 1);
+                  next_new_size =
+                    ((chosen + 1) * max(w, h) * BRUSH_SPACING_MAX_MULTIPLIER) /
+                    (BRUSH_SPACING_SIZES - 1);
+
+                  if (prev_new_size < brushes_spacing_default[cur_brush] &&
+                      next_new_size > brushes_spacing_default[cur_brush])
+                  {
+                    DEBUG_PRINTF("Nudging %d brush spacing to my default: %d\n", new_size, brushes_spacing_default[cur_brush]);
+                    new_size = brushes_spacing_default[cur_brush];
+                  }
+                }
+
 
                 if (new_size != prev_size)
                 {
@@ -4873,16 +4899,20 @@ static void mainloop(void)
                   else
                     control_sound = SND_GROW;
 
+                  /* Show a message about the brush spacing */
                   if (new_size == 0)
                   {
+                    /* Smallest spacing (0px) */
                     draw_tux_text(TUX_GREAT, TIP_BRUSH_SPACING_ZERO, 1);
                   }
                   else if (new_size / max(w, h) == 1)
                   {
+                    /* Spacing is the same size as the brush */
                     draw_tux_text(TUX_GREAT, TIP_BRUSH_SPACING_SAME, 1);
                   }
                   else if (new_size > max(w, h))
                   {
+                    /* Spacing is larger than the brush */
                     double ratio, i, f;
 
                     ratio = (float) new_size / (float) max(w, h);
@@ -4901,11 +4931,13 @@ static void mainloop(void)
 
                     if (f == 0.0)
                     {
+                      /* Spacing ratio has no fractional part (e.g., "...4 times as big...") */
                       snprintf(tmp_tip, sizeof(tmp_tip),
                                gettext(TIP_BRUSH_SPACING_MORE), (int) i);
                     }
                     else
                     {
+                      /* Spacing ratio has a fractional part (e.g., "... 2 1/2 times as big...") */
                       sloppy_frac(f, &numer, &denom);
 
                       snprintf(tmp_tip, sizeof(tmp_tip),
@@ -4917,6 +4949,7 @@ static void mainloop(void)
                   }
                   else if (new_size < max(w, h))
                   {
+                    /* Spacing is smaller than the brush (e.g., "... 1/3 as big...") */
                     sloppy_frac((float) new_size / (float) max(w, h), &numer,
                                 &denom);
                     snprintf(tmp_tip, sizeof(tmp_tip),
@@ -8432,7 +8465,7 @@ static void loadbrush_callback(SDL_Surface * screen,
 {
   FILE *fi;
   char buf[64];
-  int want_rand;
+  int want_rand, spacing;
   int brush_w, brush_h;
   float scale;
 
@@ -8468,15 +8501,18 @@ static void loadbrush_callback(SDL_Surface * screen,
           realloc(brushes_rotate, num_brushes_max * sizeof(short));
         brushes_spacing =
           realloc(brushes_spacing, num_brushes_max * sizeof(int));
+        brushes_spacing_default =
+          realloc(brushes_spacing_default, num_brushes_max * sizeof(int));
       }
       img_brushes[num_brushes] = loadimage(fname);
 
       /* Load brush metadata, if any: */
 
+      /* (Brush setting defaults) */
       brushes_frames[num_brushes] = 1;
       brushes_directional[num_brushes] = 0;
       brushes_rotate[num_brushes] = 0;
-      brushes_spacing[num_brushes] = img_brushes[num_brushes]->h / 4;
+      spacing = img_brushes[num_brushes]->h / 4;
 
       strcpy(strcasestr(fname, ".png"), ".dat");        /* FIXME: Use strncpy (ugh, complicated) */
       fi = fopen(fname, "r");
@@ -8495,8 +8531,7 @@ static void loadbrush_callback(SDL_Surface * screen,
             }
             else if (strstr(buf, "spacing=") != NULL)
             {
-              brushes_spacing[num_brushes] =
-                atoi(strstr(buf, "spacing=") + 8);
+              spacing = atoi(strstr(buf, "spacing=") + 8);
             }
             else if (strstr(buf, "directional") != NULL)
             {
@@ -8547,6 +8582,9 @@ static void loadbrush_callback(SDL_Surface * screen,
                                                      1  /* keep alpha */
           );
       }
+
+      brushes_spacing[num_brushes] = spacing;
+      brushes_spacing_default[num_brushes] = spacing;
 
       num_brushes++;
     }
@@ -10629,18 +10667,18 @@ static void draw_brushes_spacing(void)
   /* Spacing ranges from 0px to "N x the max dimension of the brush"
      (so a 48x48 brush would have a spacing of 48 if the center option is chosen) */
   size_at =
-    (BRUSH_SPACING_SIZES * brushes_spacing[cur_brush]) / (max(w, h) *
-                                                          BRUSH_SPACING_MAX_MULTIPLIER);
+    ((BRUSH_SPACING_SIZES - 1) * brushes_spacing[cur_brush]) / (max(w, h) *
+                                                                BRUSH_SPACING_MAX_MULTIPLIER);
 
   x_per = (float) r_ttoolopt.w / BRUSH_SPACING_SIZES;
-  y_per = (float) button_h / BRUSH_SPACING_SIZES;
+  y_per = (float) button_h / (BRUSH_SPACING_SIZES + 1);
 
-  for (i = 0; i < BRUSH_SPACING_SIZES; i++)
+  for (i = 1; i < BRUSH_SPACING_SIZES + 1; i++)
   {
     xx = ceil(x_per);
     yy = ceil(y_per * i);
 
-    if (i <= size_at)
+    if (i <= size_at + 1)
       btn = thumbnail(img_btn_down, xx, yy, 0);
     else
       btn = thumbnail(img_btn_up, xx, yy, 0);
@@ -10650,11 +10688,11 @@ static void draw_brushes_spacing(void)
     /* FIXME: Check for NULL! */
 
 
-    dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+    dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + ((i - 1) * x_per);
     dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
     SDL_BlitSurface(blnk, NULL, screen, &dest);
 
-    dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
+    dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + ((i - 1) * x_per);
     dest.y = (button_h * buttons_tall + r_ttools.h) - (y_per * i);
     SDL_BlitSurface(btn, NULL, screen, &dest);
 
@@ -15253,6 +15291,7 @@ static void cleanup(void)
   free(brushes_directional);
   free(brushes_rotate);
   free(brushes_spacing);
+  free(brushes_spacing_default);
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
   free_surface_array(img_title_names, NUM_TITLES);

@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.October.19 (0.9.29)
+2022.October.25 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -93,6 +93,13 @@ http://www.tuxpaint.org/
       needed updating in their paint mdoes; mended.
       (Bricks, Cartoon, Clone, Distortion, Emboss, Glass Tile,
       Light, Metal Paint, Negative, and Pixels.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Some brushes' initial spacing was not acheivable after
+      changing the spacing.  Now 'nudging' back to the default
+      when chosing the spacing option that's closest to the default.
+      (h/t Pere for pointing this out)
+      (Also, some tweaks to the spacing UI)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:
