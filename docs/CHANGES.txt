@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.October.25 (0.9.29)
+2022.October.27 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -90,7 +90,7 @@ http://www.tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Various Magic tools miscalculated which part of canvas
-      needed updating in their paint mdoes; mended.
+      needed updating in their paint modes; mended.
       (Bricks, Cartoon, Clone, Distortion, Emboss, Glass Tile,
       Light, Metal Paint, Negative, and Pixels.)
       Bill Kendrick <bill@newbreedsoftware.com>
@@ -107,6 +107,7 @@ http://www.tuxpaint.org/
     * Processed PNG images through `pngout` to increase some compression
       (also corrects some warnings being reported by libpng (via SDL_image);
       h/t Tim Dickson, closes https://sourceforge.net/p/tuxpaint/bugs/252/)
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Automatically update macOS build version from the command line
       at build time.
@@ -160,6 +161,7 @@ http://www.tuxpaint.org/
       cause Tux Paint (via SDL_image, in turn via libpng) to
       report back warnings to STDERR.
       h/t Tim Dickson, per https://sourceforge.net/p/tuxpaint/bugs/252/
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Updated `src/po/check_translations.sh` sanity-checking script
       to check `src/po/LINGUAS` file.  Also, OPTION docs and
@@ -168,6 +170,7 @@ http://www.tuxpaint.org/
 
     * Cleaned up .c and .h source files using `indent`:
       find . -name "*.c" -or -name "*.h" -exec  indent -nbfda -npcs -npsl -bli0 --no-tabs {} \;
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Documentation updates:
     ---------------------
@@ -178,7 +181,7 @@ http://www.tuxpaint.org/
       and allow for localization.  (Maintained in "tuxpaint-docs" repo.)
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * WIP - Example Magic tool source file ("tp_magic_example.c")
+    * Example Magic tool source file ("tp_magic_example.c")
       now allows for localization.  (Maintained in "tuxpaint-docs" repo.)
       Bill Kendrick <bill@newbreedsoftware.com>
 
