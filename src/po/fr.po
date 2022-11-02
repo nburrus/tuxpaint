@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-18 01:28-0700\n"
-"PO-Revision-Date: 2022-10-11 11:02+0200\n"
+"PO-Revision-Date: 2022-11-02 09:53+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -452,9 +452,9 @@ msgstr ""
 "Six nouveaux outils de \"Magie\" ont été ajoutés. 'Panneaux\" contracte le "
 "dessin et le reproduit ensuite sur une grille de 2x2, ce qui est utile pour "
 "concevoir des B.D. sur quatre panneaux. \"Complément\" donne la couleur "
-"complémentaire. \"Éclair\" dessine un éclair de manière interactive. \"Reflet"
-"\" crée un reflet du dessin comme sur un lac. \"Étirer\" pour étirer et "
-"déformer l'image comme un miroir de foire. Et enfin, \"Arc-en-ciel doux\" "
+"complémentaire. \"Éclair\" dessine un éclair de manière interactive. "
+"\"Reflet\" crée un reflet du dessin comme sur un lac. \"Étirer\" pour étirer "
+"et déformer l'image comme un miroir de foire. Et enfin, \"Arc-en-ciel doux\" "
 "fournit une variation plus douce que l'outil arc-en-ciel classique."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
@@ -551,10 +551,10 @@ msgid ""
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
-"Le clavier virtuel, disponible sur option quand on utilise les outils \"Texte"
-"\" et \"Étiquette\" , apparaît plus grand sur des écrans plus grand; c'est "
-"utile avec des des dispositifs d'entrée moins précis, tels que systèmes "
-"pilotés avec les yeux."
+"Le clavier virtuel, disponible sur option quand on utilise les outils "
+"\"Texte\" et \"Étiquette\" , apparaît plus grand sur des écrans plus grand; "
+"c'est utile avec des des dispositifs d'entrée moins précis, tels que "
+"systèmes pilotés avec les yeux."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
@@ -1099,8 +1099,6 @@ msgstr ""
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:201
-#, fuzzy
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid "Drag the mouse to rotate the stamp. Click to draw it."
 msgstr "Bouge la souris pour faire tourner cette forme. Clique pour la figer."
 
