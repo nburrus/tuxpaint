@@ -665,18 +665,18 @@ var
 begin
   lang := Lang2Gettext(false);
 
-//  if lang = 'es' then
-//    qsguide := 'es_ES.UTF-8\html\tuxpaint-quickstart-guide.html'
-//  else
+  if lang = 'es' then
+    qsguide := 'es_ES.UTF-8\html\tuxpaint-quickstart-guide.html'
+  else
   if lang = 'fr' then
     qsguide := 'fr_FR.UTF8\html\tuxpaint-quickstart-guide.html'
   else
   if lang = 'gl' then
     qsguide := 'gl_GL.UTF-8\html\tuxpaint-quickstart-guide.html'
   else
-//  if lang = 'ja' then
-//    qsguide := 'ja_JP.UTF-8\html\tuxpaint-quickstart-guide.html'
-//  else
+  if lang = 'ja' then
+    qsguide := 'ja_JP.UTF-8\html\tuxpaint-quickstart-guide.html'
+  else
     qsguide := 'en\html\tuxpaint-quickstart-guide.html';
 
   Result := 'docs\'+qsguide
