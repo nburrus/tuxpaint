@@ -27,6 +27,7 @@
 #define AppConfigName AppName+" Config"
 #define AppConfigExe  AppPrefix+"-config.exe"
 #define AppReadme     "{code:MyReadme}"
+#define AppQsGuide    "{code:MyQsGuide}"
 #define AppLicense    "docs\COPYING.txt"
 
 #define BdistDir      ".\bdist"
@@ -159,6 +160,7 @@ Name: "{code:MyGroupDir}\{groupname}\Configure {#AppName}"; Filename: "{app}\{#A
 Name: "{code:MyGroupDir}\{groupname}\{#AppName} (Full Screen)"; Filename: "{app}\{#AppExe}"; Parameters: "--fullscreen native"; Comment: "Start {#AppName} in Fullscreen mode"
 Name: "{code:MyGroupDir}\{groupname}\{#AppName} (Windowed)"; Filename: "{app}\{#AppExe}"; Parameters: "--windowed"; Comment: "Start {#AppName} in a Window"
 Name: "{code:MyGroupDir}\{groupname}\Readme"; Filename: "{app}\{#AppReadme}"; Comment: "View ReadMe"
+Name: "{code:MyGroupDir}\{groupname}\Quick Start Guide"; Filename: "{app}\{#AppQsGuide}"; Comment: "View Quick Start Guide"
 Name: "{code:MyGroupDir}\{groupname}\License"; Filename: "{app}\{#AppLicense}"; Comment: "View License"
 Name: "{code:MyGroupDir}\{groupname}\{cm:UninstallProgram,{#AppName}}"; Filename: "{uninstallexe}"; IconFilename: "{app}\data\images\tuxpaint-installer.ico"; Comment: "Remove {#AppName}"
 Name: "{code:MyDesktopDir}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
@@ -171,6 +173,7 @@ Root: HKCU; Subkey: "SOFTWARE\{#AppRegKey}"; Flags: uninsdeletekey; ValueName: "
 
 [Run]
 Filename: "{app}\{#AppReadme}"; Description: "View the README file"; Flags: postinstall shellexec skipifsilent
+Filename: "{app}\{#AppQsGuide}"; Description: "View the Quick Start Guide"; Flags: postinstall shellexec skipifsilent
 Filename: "{app}\{#AppConfigExe}"; Description: "{cm:LaunchProgram,{#AppConfigName}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallDelete]
@@ -654,6 +657,29 @@ begin
     readme := 'en\html\README.html';
 
   Result := 'docs\'+readme
+end;
+
+function MyQsGuide(Default: String): String;
+var
+  lang, qsguide: String;
+begin
+  lang := Lang2Gettext(false);
+
+//  if lang = 'es' then
+//    qsguide := 'es_ES.UTF-8\html\tuxpaint-quickstart-guide.html'
+//  else
+  if lang = 'fr' then
+    qsguide := 'fr_FR.UTF8\html\tuxpaint-quickstart-guide.html'
+  else
+  if lang = 'gl' then
+    qsguide := 'gl_GL.UTF-8\html\tuxpaint-quickstart-guide.html'
+  else
+//  if lang = 'ja' then
+//    qsguide := 'ja_JP.UTF-8\html\tuxpaint-quickstart-guide.html'
+//  else
+    qsguide := 'en\html\tuxpaint-quickstart-guide.html';
+
+  Result := 'docs\'+qsguide
 end;
 
 function MyPublisherURL(Default: String): String;
