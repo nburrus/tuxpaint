@@ -169,16 +169,9 @@ Tux Paint の起動
                 「さいしょから」ボタンをクリックすると、最初からやり直す（色がない状態に戻す）ことができます。また、間違えた場合は、手順を何回でも取り消したり、やり直したりすることができます（最初からやり直す必要はありません）。
                 緑色のチェックボタンをクリックして色を確定します。「もどる」ボタンをクリックすると、色を選択せずにポップアップを終了します。
 
-           ⌨ When the active tool supports colors, a shortcut may be used for
-           quick access to the "color picker" option. Hold the [Control] key
-           while clicking, and the color under the mouse cursor will be shown
-           at the bottom. You may drag around to canvas to find the color you
-           want. When you release the mouse button, the color under the
-           cursor will be selected. If you release the mouse outside of the
-           canvas (e.g., over the "Tools" area), the color selection will be
-           left unchanged. (This is similar to clicking the "Back" button
-           that's available when bringing up the "color picker" option via
-           its button the color palette.)
+           ⌨
+           使用中のツールが色をサポートしている場合、「スポイト」機能に素早くアクセスするためのショートカットを使用することができます。[Control]
+           キーを押しながらマウスをクリックしたままカーソルを動かすと、マウスカーソルの下にある色が表示されます。キャンバス全体をドラッグして欲しい色が見つかったところでマウスボタンを離すと、カーソルの下にある色が選択されます。マウスをキャンバスの外（例えば「どうぐ」の部分）で離すと、色の選択は変更されません。
 
            ⚙ 注: カラーパレットの色は好みに応じて変更できます。変更方法については、"各種設定について"のドキュメントを参照してください。
 
@@ -223,28 +216,22 @@ Tux Paint の起動
 
            「はんこ」ツールは、スタンプやステッカーを集めたようなものです。馬や木、月など、あらかじめ用意された様々な写真やイラストを絵に貼り付けることができます。
 
-           As you move the mouse around the canvas, an outline follows the
-           mouse, showing where the stamp will be placed, and how big it will
-           be. Click on the canvas where you wish to place the stamp.
+           マウスを動かすと、スタンプが押される位置と大きさを示す輪郭線が表示されるので、押したい場所でクリックします。
 
-                Normal Stamps Mode
+                標準の動作
 
-                        Now you can move the mouse around the canvas to
-                        rotate the stamp.
+                        続いて、キャンバス内でマウスを動かすと、スタンプが回転します。
 
-                        Click the mouse button again and the stamp will be
-                        added to the drawing.
+                        最後にもう一度マウスをクリックすると、スタンプが押されます。
 
-                Simple Stamps Mode
-                        If "stamp rotation" option is disabled, the stamp
-                        will be drawn on the canvas when you let go of the
-                        mouse button. (There's no rotation step.)
+                簡易モード
+                        "スタンプの回転"
+                        オプションが無効化されている場合、回転の手順は省略され、マウスを放した時点でスタンプ押されます。
 
-                        ⚙ "stamp rotation" ("stamprotation")
-                        についての詳細は、各種設定について" のドキュメントを参照して下さい。
+                        ⚙ ""スタンプの回転"" ("stamprotation") についての詳細は、各種設定について"
+                        のドキュメントを参照して下さい。
 
-           📜 Note: The stamp rotation feature was added to Tux Paint in
-           version 0.9.29.
+           📜 注: はんこの回転機能は Tux Paint バージョン 0.9.29 で追加されました。
 
            スタンプは、動物、植物、宇宙、乗り物、人物といった多くのカテゴリに分類されています。セレクタの左右の矢印のボタンを使ってカテゴリを切り替えることができます。
 
@@ -402,11 +389,8 @@ Tux Paint の起動
 
            消している間、「キュッキュッ」と擦って消す効果音が流れます。
 
-           ⌨ Hold the [X] key while clicking for quick access to a small
-           round eraser (not available when the Text or Label tools are
-           selected, when you're in the process of rotating a stamp or shape,
-           or when using an interactive magic tool). Release the mouse to
-           return to your currently-selected tool.
+           ⌨ [X]
+           キーを押しながらマウスをクリックすると、小さな丸い消しゴムをすばやく使うことができます（もじ/ラベルツール選択時、はんこや図形の回転中、インタラクティブなまほうツールを使用している間は無効です）。マウスを離すと、選択中のツールに戻ります。
 
   そのほかの操作
 
@@ -456,11 +440,9 @@ Tux Paint の起動
 
               * 右下にある茶色の「けす」(ゴミ箱) ボタンで、選択した作品を削除します。(本当に削除して良いか確認されます)
 
-                📜 Note: On Linux (as of version 0.9.22), Windows (as of
-                version 0.9.27), and macOS (as of version 0.9.29), the
-                picture will be placed in your desktop's trash can / recycle
-                bin (where you may recover and restore it, if you change your
-                mind).
+                📜 注: Linux（バージョン 0.9.22以降）、Windows（バージョン
+                0.9.27以降）、macOS（バージョン
+                0.9.29以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
 
               * 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例:
                 "~/Pictures/TuxPaint/")に画像を出力します。
@@ -679,7 +661,7 @@ Tux Paint の起動
 
      💡 注: 例えばお子さんなど、他のユーザーのために変換作業を行う場合は、そのユーザーのアカウントでコマンドを実行する必要があります。
 
-     Example:
+     例:
 
        $ tuxpaint-import おばあちゃん.jpg
        おばあちゃん.jpg -> /home/username/.tuxpaint/saved/20211231012359.png

@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.November.2 (0.9.29)
+2022.November.12 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -203,6 +203,9 @@ http://www.tuxpaint.org/
       Sveinn í Felli <sv1@fellsnet.is>
 
     * Japanese translation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+    * Japanese documentation
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Norwegian Nynorsk translation

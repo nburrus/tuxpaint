@@ -381,7 +381,7 @@
         <i>SIZE</i> の値は24から192までのピクセル値で指定します。ほとんどのボタンは正方形となっており、この設定はボタンの幅と高さの両方に影響します。      </p>
 
       <p>
-        A value of "<code>auto</code>" may be provided, and Tux Paint will choose a suitable button size based on the size of Tux Paint's window (or fullscreen display).  (For the default screen size of 800x600, it will be the default button size: "48".)      </p>
+        SIZEの値として "<code>auto</code>" を指定すると、タックスペイントのウィンドウ（またはフルスクリーンディスプレイ）のサイズに基づいて、適切なボタンサイズが選択されます。(デフォルトの画面サイズ 800x600 の場合、ボタンサイズはデフォルトの "48" になります。)      </p>
 
       <p class="note">
         <span title="Information">&#128161;</span>        <strong>注:</strong> 選択されたボタンのサイズが大きすぎて画面内に必要なすべてのインターフェースが表示しきれない場合は、できる限り大きなボタンサイズが使用されます。(その旨が<code>stderr</code>に出力されます)      </p>
@@ -630,9 +630,9 @@
 
     <dd>
       <p>
-        This disables the rotation step of the <b>Stamps</b> tool, immediately placing the stamp in its regular orientation (with any flipping or mirroring applied) on the first click.      </p>
+        はんこを回転させるステップを省略し、１回のクリックで通常の向きにはんこを配置します。      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The stamp rotation feature was added to Tux Paint in version 0.9.29.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>注:</strong> はんこの回転機能は Tux Paint バージョン 0.9.29 で追加されました。      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>注:</strong> システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>nostamprotation=no</code>" または "<code>stamprotation=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--stamprotation</code>" で変更できます。      </p>
     </dd>
@@ -1859,7 +1859,7 @@
 
   <dl>
     <dt>
-      <code><b>colorfile=<i>FILENAME</i></b></code>
+      <code><b>colorfile=<i>ファイル名</i></b></code>
     </dt>
 
     <dd>
