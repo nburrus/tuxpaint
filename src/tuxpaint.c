@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 25, 2022
+  June 14, 2002 - November 14, 2022
 */
 
 #include "platform.h"
@@ -3631,8 +3631,8 @@ static void mainloop(void)
               cur_tool = whicht;
               draw_toolbar();
               update_screen_rect(&r_tools);
-              printf("screenrectr_tools %d, %d, %d, %d\n", r_tools.x,
-                     r_tools.y, r_tools.w, r_tools.h);
+              DEBUG_PRINTF("screenrectr_tools %d, %d, %d, %d\n", r_tools.x,
+                           r_tools.y, r_tools.w, r_tools.h);
               playsound(screen, 1, SND_CLICK, 0, SNDPOS_LEFT, SNDDIST_NEAR);
 
               /* FIXME: this "if" is just plain gross */
