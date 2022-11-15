@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: June 2, 2022
+  Last updated: November 14, 2022
   $Id$
 */
 
@@ -490,10 +490,7 @@ void perspective_release(magic_api * api, int which,
   }
   else if (which == TOOL_RUSH)
   {
-    int h1, h2, w, h, hh, x, y, dx1, dy1;
-    Uint8 r1, g1, b1, r2, g2, b2;
-    Uint32 r, g, b;
-    float pct;
+    int h1, h2, w, h, hh, dx1, dy1;
     SDL_Surface *scaled_surf;
     SDL_Surface * aux1;
 

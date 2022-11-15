@@ -1797,7 +1797,6 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font,
   Uint16 *ustr;
 
 #ifndef NO_SDLPANGO
-  unsigned int i, j;
   int utfstr_max;
   char *utfstr;
   SDLPango_Matrix pango_color;
@@ -2213,7 +2212,7 @@ static void render_color_button(int the_color, SDL_Surface * decoration,
                                 SDL_Surface * icon);
 static void handle_color_changed(void);
 
-static int do_quick_eraser(void);
+static void do_quick_eraser(void);
 
 static int do_slideshow(void);
 static void play_slideshow(int *selected, int num_selected, char *dirname,
@@ -13943,7 +13942,7 @@ static double loadinfo(const char *const fname, stamp_type * inf)
 /**
  * FIXME
  */
-static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect,
+static int SDLCALL NondefectiveBlit(SDL_Surface * src, const SDL_Rect * srcrect,
                                     SDL_Surface * dst, SDL_Rect * dstrect)
 {
   int dstx = 0;
@@ -14019,7 +14018,7 @@ static int SDLCALL NondefectiveBlit(SDL_Surface * src, SDL_Rect * srcrect,
  */
 static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
                                       int SDLCALL(*blit) (SDL_Surface * src,
-                                                          SDL_Rect * srcrect,
+                                                          const SDL_Rect * srcrect,
                                                           SDL_Surface * dst,
                                                           SDL_Rect * dstrect))
 {
@@ -24392,7 +24391,7 @@ static int do_color_sel(int temp_mode)
  * (Eventually, we'll be able to detect tablet stylus erasers;
  * but waiting for https://github.com/libsdl-org/SDL/issues/2217)
  */
-static int do_quick_eraser(void) {
+static void do_quick_eraser(void) {
   SDL_Event event;
   SDLKey key;
   int val_x, val_y, motioner;

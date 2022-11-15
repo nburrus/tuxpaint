@@ -1,7 +1,7 @@
 /*
   fonts.c
 
-  Copyright (c) 2009-2021
+  Copyright (c) 2009-2022
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: 2021.11.08
+  Last modified: November 14, 2022
 */
 
 #include <stdio.h>
@@ -1763,34 +1763,6 @@ const char *TuxPaint_Font_FontFaceStyleName(TuxPaint_Font * tpf)
 
 
 #ifndef NO_SDLPANGO
-
-void ssdl_color_to_pango_color(SDL_Color sdl_color,
-                               SDLPango_Matrix * pango_color)
-{
-  Uint8 pc[4][4];
-
-  pc[0][0] = 0;
-  pc[1][0] = 0;
-  pc[2][0] = 0;
-  pc[3][0] = 0;
-
-  pc[0][1] = 0;
-  pc[1][1] = 0;
-  pc[2][1] = 0;
-  pc[3][1] = 0;
-
-  pc[0][2] = 0;
-  pc[1][2] = 0;
-  pc[2][2] = 0;
-  pc[3][2] = 0;
-
-  pc[0][3] = 0;
-  pc[1][3] = 0;
-  pc[2][3] = 0;
-  pc[3][3] = 0;
-
-  memcpy(pango_color, pc, 16);
-}
 
 void sdl_color_to_pango_color(SDL_Color sdl_color,
                               SDLPango_Matrix * pango_color)

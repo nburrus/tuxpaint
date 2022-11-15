@@ -18,6 +18,8 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
+
+  Last modified: November 14, 2022
 */
 
 #include "debug.h"
@@ -1955,6 +1957,8 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard * keyboard, int x, int y)
 #ifdef OSK_DEBUG
         printf("len = %d\n", len);
         printf("event.text.text = \"%s\"\n", event.text.text);
+#else
+        len = len; /* Avoid 'set but not used' warning */
 #endif
       }
 

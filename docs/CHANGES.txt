@@ -172,6 +172,9 @@ http://www.tuxpaint.org/
       find . -name "*.c" -or -name "*.h" -exec  indent -nbfda -npcs -npsl -bli0 --no-tabs {} \;
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * WIP: Cleaned up some compile-time warnings that cropped up in SDL2 branch.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Documentation updates:
     ---------------------
     * New "Quickstart Guide" document added.

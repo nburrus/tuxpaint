@@ -1,7 +1,7 @@
 /*
   dirwalk.c
 
-  Copyright (c) 2009-2021
+  Copyright (c) 2009-2022
   http://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: 2021.11.08
+  Last modified: November 14, 2022
 */
 
 #include <stdio.h>
@@ -350,13 +350,17 @@ void tp_ftw(SDL_Surface * screen, SDL_Texture * texture,
   tp_ftw_str *dir_names = NULL;
   int d_namlen;
   int add_rsrc;
+#ifdef __ANDROID__
   unsigned dlen;
+#endif
 
   dir[dirlen++] = '/';
   dir[dirlen] = '\0';
 //printf("processing directory %s %d\n", dir, dirlen);
 
+#ifdef __ANDROID__
   dlen = dirlen;
+#endif
 
   /* Open the directory: */
   d = opendir(dir);
