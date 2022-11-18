@@ -20196,7 +20196,7 @@ static void do_render_cur_text(int do_blit)
     for (i = 0; i < texttool_len; i++)
       unicodeIn[i] = (FriBidiChar) texttool_str[i];
 
-    fribidi_log2vis(unicodeIn, texttool_len, &baseDir, unicodeOut, 0, 0, 0);
+    int maxlevel = fribidi_log2vis(unicodeIn, texttool_len, &baseDir, unicodeOut, 0, 0, 0);
 
     /* FIXME: If we determine that some new text was RtoL, we should
        reposition the text */
