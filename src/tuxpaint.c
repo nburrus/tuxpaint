@@ -2663,7 +2663,8 @@ static void mainloop(void)
           int rest =
             SDL_PeepEvents(NULL, 1000, SDL_PEEKEVENT, SDL_MOUSEMOTION,
                            SDL_MOUSEMOTION);
-          for (int i = 0; i < rest; i++)
+	  int i;
+          for (i = 0; i < rest; i++)
           {
             SDL_PollEvent(&event);
             if (event.type != SDL_MOUSEMOTION)  /* But keep any other events that could be there */
