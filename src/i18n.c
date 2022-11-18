@@ -41,6 +41,10 @@
 #include <sys/types.h>
 #endif
 
+#ifdef BDIST_WIN32
+#include <unistd.h>
+#endif
+
 #ifdef __BEOS__
 #include <wchar.h>
 #else
