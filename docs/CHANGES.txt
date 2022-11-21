@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.November.12 (0.9.29)
+2022.November.20 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -172,8 +172,13 @@ http://www.tuxpaint.org/
       find . -name "*.c" -or -name "*.h" -exec  indent -nbfda -npcs -npsl -bli0 --no-tabs {} \;
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * WIP: Cleaned up some compile-time warnings that cropped up in SDL2 branch.
+    * Cleaned up some compile-time warnings that cropped up in SDL2 branch.
       Bill Kendrick <bill@newbreedsoftware.com>
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+    * On Windows, run "tuxpaint-config" with the same privileges as
+      the installer app
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Documentation updates:
     ---------------------
