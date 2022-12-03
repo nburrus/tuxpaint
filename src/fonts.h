@@ -31,9 +31,6 @@
 #if defined(WIN32) || defined(__BEOS__)
 #undef FORKED_FONTS
 #endif
-#ifdef __APPLE__
-#undef FORKED_FONTS
-#endif
 #ifdef __ANDROID__
 #undef FORKED_FONTS
 #endif

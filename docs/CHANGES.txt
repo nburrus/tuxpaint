@@ -186,6 +186,16 @@ http://www.tuxpaint.org/
       https://sourceforge.net/p/tuxpaint/bugs/265/
       Mark Kim <markuskimius@gmail.com>
 
+    * More fonts for the text and label tools on the macOS.
+	  Enabled forked fonts so more fonts are available for use with the text
+	  and label tools on the macOS.  This is particularly noticible with
+	  localized fonts because only a few localized fonts may exist on the
+	  system so missing even a single font can lead to inability to type in a
+	  localized language at all.  It's unclear why forked fonts were disabled
+	  to start on the macOS but it appears to be reliable now so it's now been
+	  enabled to take advantage of its benefits.
+      Mark Kim <markuskimius@gmail.com>
+
   * Documentation updates:
     ---------------------
     * New "Quickstart Guide" document added.
