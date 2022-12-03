@@ -196,6 +196,11 @@ http://www.tuxpaint.org/
 	  enabled to take advantage of its benefits.
       Mark Kim <markuskimius@gmail.com>
 
+    * Speed up macOS app bundle build time.
+      Fixed a typo that was causing the macOS app bundle build time to be
+      unnecessarily long.  The app buildle build time is now ~20x faster.
+      Mark Kim <markuskimius@gmail.com>
+
   * Documentation updates:
     ---------------------
     * New "Quickstart Guide" document added.
