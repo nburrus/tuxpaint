@@ -189,7 +189,7 @@ FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
 windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant -mwindows
-macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -Wl,-framework,Cocoa
+macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -Wl,-framework,Cocoa $(shell $(PKG_CONFIG) --libs pangoft2)
 ios_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
@@ -1108,7 +1108,7 @@ install-macbundle:
 	@install -d -m 755 $(BUNDLE)/Contents/lib
 	@install -m 755 tuxpaint $(BUNDLE)/Contents/MacOS
 	@install -m 644 macos/PkgInfo $(BUNDLE)/Contents
-	@VER_VERSION=$(VER_VERSION) macos/template.sh macos/Info.plist.shdoc > macos/Info.plist
+	@VER_VERSION=$(VER_VERSION)$(VER_FLAVOR) macos/template.sh macos/Info.plist.shdoc > macos/Info.plist
 	@install -m 644 macos/Info.plist $(BUNDLE)/Contents
 	@install -m 644 macos/tuxpaint.icns $(BUNDLE)/Contents/Resources
 	@macos/build-app.sh
@@ -1120,7 +1120,7 @@ install-iosbundle:
 	@echo "...Installing iOS App Bundle Support Files..."
 	@install -m 755 tuxpaint $(BUNDLE)
 	@install -m 644 ios/PkgInfo $(BUNDLE)
-	@VER_VERSION=$(VER_VERSION) ios/template.sh ios/Info.plist.shdoc > ios/Info.plist
+	@VER_VERSION=$(VER_VERSION)$(VER_FLAVOR) ios/template.sh ios/Info.plist.shdoc > ios/Info.plist
 	@install -m 644 ios/Info.plist $(BUNDLE)
 	@install -m 644 ios/tuxpaint.icns $(BUNDLE)
 	@install -m 644 ios/tuxpaint.cfg $(BUNDLE)

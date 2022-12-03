@@ -286,6 +286,16 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc,
            desc);
 #endif
 
+#ifdef __APPLE__
+    /*
+    * SDLPango_CreateContext_GivenFontDesc() defaults to ASCII character set
+    * (at least on the macOS) unless the CHARSET environment varaible is set.
+    * May also want to set on non-macOS platforms, also.
+    */
+
+    mysetenv("CHARSET", "UTF-8");
+#endif
+
     tpf->pango_context = SDLPango_CreateContext_GivenFontDesc(desc);
     if (tpf->pango_context == NULL)
     {

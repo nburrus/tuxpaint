@@ -450,8 +450,12 @@ int iswprint(wchar_t wc)
 #error "---------------------------------------------------"
 #endif
 
+#ifdef DEBUG
+/* These are required to display pango debugging information later in this file */
+#include <pango/pango.h>
+#include <pango/pangoft2.h>
 #endif
-
+#endif /* !defined(NO_SDLPANGO) */
 
 #ifndef NOSOUND
 
@@ -30999,6 +31003,13 @@ int main(int argc, char *argv[])
   putenv((char *) "FONTCONFIG_PATH=Resources/etc");
 #endif
 
+#if defined(FC_DEBUG)
+  /*
+  * Enable fontconfig debugging. See "debug.h"
+  */
+  mysetenv("FC_DEBUG", FC_DEBUG);
+#endif
+
 #ifdef FORKED_FONTS
   /* must start ASAP, but depends on locale which in turn needs the config */
 #ifdef NO_SDLPANGO
@@ -31044,6 +31055,31 @@ int main(int argc, char *argv[])
 #endif
 
 
+#if defined(DEBUG) && !defined(NO_SDLPANGO)
+  /* Confirm pango's character set */
+  if(1) {
+    const char* charset;
+
+    g_get_charset(&charset);
+    printf("pango charset: %s\n", charset);
+  }
+
+  /* Display fonts available to pango */
+  if(1) {
+    PangoFontMap* fontmap;
+    PangoFontFamily** families;
+    int n_families;
+
+    fontmap = pango_ft2_font_map_new();
+    pango_font_map_list_families(fontmap, &families, &n_families);
+
+    for(int i=0; i < n_families; i++) {
+      const char* family_name = pango_font_family_get_name(families[i]);
+
+      printf("pango ft2 fontmap[%d] = '%s'\n", i, family_name);
+    }
+  }
+#endif
 
   claim_to_be_ready();
 

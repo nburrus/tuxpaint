@@ -208,6 +208,7 @@ extern w_langs wished_langs[255];
 int get_current_language(void);
 int setup_i18n(const char *restrict lang, const char *restrict locale,
                int *ptr_num_wished_languages) MUST_CHECK;
+void mysetenv(const char *name, const char *value);
 
 #ifdef NO_SDLPANGO
      int smash_i18n(void) MUST_CHECK;

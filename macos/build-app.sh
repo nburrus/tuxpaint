@@ -4,7 +4,7 @@ BUNDLE=TuxPaint.app
 BINARY="$BUNDLE/Contents/MacOS/tuxpaint"
 LIBS=`find $BUNDLE/Contents/Resources/lib -type f`
 LIBDIR="$BUNDLE/Contents/lib"
-CONF_FILES="/opt/local/etc/fonts/fonts.conf"
+CONF_FILES="macos/fonts.conf"
 CONFDIR="$BUNDLE/Contents/Resources/etc"
 
 

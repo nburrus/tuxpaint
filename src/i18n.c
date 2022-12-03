@@ -1064,7 +1064,7 @@ static void set_langint_from_locale_string(const char *restrict loc)
  * @param name Variable to set
  * @param value Value to set the variable to
  */
-static void mysetenv(const char *name, const char *value)
+void mysetenv(const char *name, const char *value)
 {
 #ifndef HAVE_SETENV
   int len;

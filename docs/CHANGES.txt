@@ -180,6 +180,12 @@ http://www.tuxpaint.org/
       the installer app
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
+    * Pango loads Tux Paint-supplied fonts on macOS.
+      Previously Pango loaded system-supplied fonts instead, which could lead
+      to fonts not rendering in a human-readable text.  This change fixes
+      https://sourceforge.net/p/tuxpaint/bugs/265/
+      Mark Kim <markuskimius@gmail.com>
+
   * Documentation updates:
     ---------------------
     * New "Quickstart Guide" document added.
