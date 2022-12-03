@@ -586,28 +586,42 @@ install:	install-bin install-data install-doc \
 	@if [ "x$(OS)" = "xmacos" ]; then \
         echo "The App Bundle has been created as $(BUNDLE)!  Now you can:"; \
         echo; \
-        echo "  * Double click $(BUNDLE) to run the application."; \
-        echo "  * Sign the App Bundle."; \
-        echo "  * Run 'make TuxPaint.dmg' to create the DMG file for distribution."; \
+        echo "  * Double click $(BUNDLE) to run the application,"; \
+        echo "  * sign the App Bundle (see below),"; \
+        echo "  * build the universal App Bundle (see below),"; \
+        echo "  * and/or run 'make TuxPaint.dmg' to create the DMG file for distribution."; \
         echo; \
+        echo "For usage, see $(DOC_PREFIX)/[locale]/README.txt"; \
+        echo; \
+        echo "SIGNING THE APP BUNDLE"; \
+        echo "----------------------"; \
         echo "Signing is optional for the Intel CPU build, or for the Apple Silicon build if"; \
         echo "it is to be run only on the system on which it was built (e.g., for"; \
         echo "development.)  The App Bundle must be signed if it is built to run natively on"; \
         echo "the Apple Silicon and is distributed."; \
         echo; \
-        echo "To sign the App Bundle, use the following command, where IDENTITY is your Apple"; \
+        echo "To sign the App Bundle, use the following commands, where IDENTITY is your Apple"; \
         echo "Developer ID if you have one, or a hyphen (-) to sign it ad-hoc:"; \
         echo; \
+        echo "  codesign --remove-signature $(BUNDLE)  # to remove any existing signature"; \
         echo "  codesign -s IDENTITY $(BUNDLE)"; \
         echo; \
-        echo "If you are signing the App Bundle *and* creating the DMG, the DMG must be"; \
-        echo "created after signing to ensure the signed App Bundle is used to create the"; \
-        echo "DMG."; \
+        echo "If you are building the universal Apple Bundle, sign the App Bundle *after*"; \
+        echo "building the universal App Bundle."; \
         echo; \
-        echo "For the instruction on how to create the App Bundle as Universal, see"; \
-        echo "$(DOC_PREFIX)/[locale]/INSTALL.txt"; \
+        echo "BUILDING THE UNIVERSAL APP BUNDLE"; \
+        echo "---------------------------------"; \
+        echo "Building the universal App Bundle involves building Tux Paint on the x86 machine"; \
+        echo "and also on the arm64 machine, then combining the two App Bundles using the supplied"; \
+        echo "script, 'macos/build-universal.sh'.  Name the two App Bundles 'TuxPaint-x86_64.app'"; \
+        echo "and 'TuxPaint-arm64.app' before running the script; the universal app bundle will be"; \
+        echo "named 'TuxPaint.app'."; \
         echo; \
-        echo "For usage, see $(DOC_PREFIX)/[locale]/README.txt"; \
+        echo "However, if your aim is to build a portable App Bundle, some extra effort will be needed."; \
+        echo "to make the code work on older versions of macOS than on those in which the bundles were"; \
+        echo "built.  There are a few options on how to do this.  Please see the details in:"; \
+        echo; \
+        echo "  $(DOC_PREFIX)/[locale]/INSTALL.txt"; \
 	else \
 		echo "All done! Now (preferably NOT as 'root' superuser),"; \
 		echo "you can type the command 'tuxpaint' to run the program!!!"; \
