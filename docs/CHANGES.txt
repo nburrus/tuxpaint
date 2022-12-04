@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 http://www.tuxpaint.org/
 
 
-2022.November.20 (0.9.29)
+2022.December.3 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -181,19 +181,19 @@ http://www.tuxpaint.org/
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Pango loads Tux Paint-supplied fonts on macOS.
-      Previously Pango loaded system-supplied fonts instead, which could lead
-      to fonts not rendering in a human-readable text.  This change fixes
-      https://sourceforge.net/p/tuxpaint/bugs/265/
+      Previously Pango loaded system-supplied fonts instead, which
+      could lead to fonts not rendering in a human-readable text.
+      This change fixes https://sourceforge.net/p/tuxpaint/bugs/265/
       Mark Kim <markuskimius@gmail.com>
 
     * More fonts for the text and label tools on the macOS.
-	  Enabled forked fonts so more fonts are available for use with the text
-	  and label tools on the macOS.  This is particularly noticible with
-	  localized fonts because only a few localized fonts may exist on the
-	  system so missing even a single font can lead to inability to type in a
-	  localized language at all.  It's unclear why forked fonts were disabled
-	  to start on the macOS but it appears to be reliable now so it's now been
-	  enabled to take advantage of its benefits.
+      Enabled forked fonts so more fonts are available for use with the
+      text and label tools on the macOS.  This is particularly noticible
+      with localized fonts because only a few localized fonts may exist
+      on the system so missing even a single font can lead to inability to
+      type in a localized language at all.  It's unclear why forked fonts
+      were disabled to start on the macOS but it appears to be reliable
+      now so it's now been enabled to take advantage of its benefits.
       Mark Kim <markuskimius@gmail.com>
 
     * Speed up macOS app bundle build time.
