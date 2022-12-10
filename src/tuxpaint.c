@@ -10813,9 +10813,29 @@ static void draw_fonts(void)
     if (font < num_font_families)
     {
       SDL_Surface *tmp_surf_1;
+      TuxPaint_Font * fonthandle;
 
-      /* Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces */
-      tmp_surf_1 = render_text(getfonthandle(font), gettext("Aa"), black);
+      /* Label for 'Letters' buttons (font selector, down the right when
+         the Text or Label tool are being used); used to show the difference
+         between font faces.  (We'll decide whether a font is suitable to
+         use the localized string here, or fallback to "Aa", depending on
+         whether the two glyphs render the same. i.e., if they both come
+         back as identical rectangles, we know the font doesn't adequately
+         support this font.) */
+      fonthandle = getfonthandle(font);
+      if (charset_works(fonthandle, gettext("Aa"))) {
+        /* Use the localized label string (e.g., "あぁ" in Japanese) */
+#ifdef DEBUG
+        printf("Font label '%s' for %s\n", gettext("Aa"), fonthandle->desc);
+#endif
+        tmp_surf_1 = render_text(fonthandle, gettext("Aa"), black);
+      } else {
+        /* Fallback; use the latin "Aa" string */
+#ifdef DEBUG
+        printf("Fallback font label 'Aa' for %s\n", fonthandle->desc);
+#endif
+        tmp_surf_1 = render_text(fonthandle, "Aa", black);
+      }
 
       if (tmp_surf_1 == NULL)
       {

@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: November 14, 2022
+  Last modified: December 9, 2022
 */
 
 #include <stdio.h>
@@ -1568,35 +1568,44 @@ static int do_surfcmp(const SDL_Surface * const *const v1,
 
   if (s1 == s2)
   {
+    /* Should not be receiving the same SDL_Surfaces! */
     fprintf(stderr, "s1==s2?\n");
     return 0;
   }
   if (!s1 || !s2 || !s1->w || !s2->w || !s1->h || !s2->h || !s1->format
       || !s2->format)
   {
+    /* One or the other or both SDL_Surfaces were invalid!? */
     was_bad_font = 1;
     return 0;
   }
   if (s1->format->BytesPerPixel != s2->format->BytesPerPixel)
   {
-    // something really strange and bad happened
+    /* The SDL_Surfaces are in different bit depths!? */
     was_bad_font = 1;
     return s1->format->BytesPerPixel - s2->format->BytesPerPixel;
   }
 
-
+  /* If they are different shapes, sort by their shape
+     (we can quickly tell that they are different) */
   if (s1->w != s2->w)
     return s1->w - s2->w;
   if (s1->h != s2->h)
     return s1->h - s2->h;
 
+  /* Otherwise, compare the pixels in the surfaces
+     (using `memcmp()`) */
   {
     const char *const c1 = (char *const) s1->pixels;
     const char *const c2 = (char *const) s2->pixels;
 
     width = s1->format->BytesPerPixel * s1->w;
-    if (width == s1->pitch)
+    if (width == s1->pitch) {
+      /* Same width, just compare scanline */
       return memcmp(c1, c2, width * s1->h);
+    }
+
+    /* Otherwise, compare pixels */
     cmp = 0;
     i = s1->h;
     while (i--)
@@ -1607,16 +1616,22 @@ static int do_surfcmp(const SDL_Surface * const *const v1,
     }
   }
 
-  return cmp;
+  /* In the end, they were the same! */
+  return 0;
 }
 
 // see if two font surfaces are the same
+// (if two come out identical, we'll set the `was_bad_font` flag)
 static int surfcmp(const void *s1, const void *s2)
 {
   int diff = do_surfcmp(s1, s2);
 
-  if (!diff)
+  if (!diff) {
+#ifdef DEBUG
+    printf("surfcmp found two identical renders!\n");
+#endif
     was_bad_font = 1;
+  }
   return diff;
 }
 
@@ -1656,7 +1671,6 @@ int charset_works(TuxPaint_Font * font, const char *s)
     }
 #endif
 
-/* FIXME: Should the following be in an "#else" block!? -bjk 2009.06.01 */
     if (font->typ == FONT_TYPE_TTF)
     {
       tmp_surf = TTF_RenderUTF8_Blended(font->ttf_font, c, black);
@@ -1664,10 +1678,7 @@ int charset_works(TuxPaint_Font * font, const char *s)
 
     if (!tmp_surf)
     {
-#if 0
-// THREADED_FONTS
-      printf("could not render \"%s\" font\n", TTF_FontFaceFamilyName(font));
-#endif
+      fprintf(stderr, "Could not render font %s\n", font->desc);
       goto out;
     }
     surfs[count++] = tmp_surf;
@@ -1687,6 +1698,9 @@ out:
     }
   }
   free(surfs);
+#ifdef DEBUG
+  printf("charset_works = %d for %s\n", ret, font->desc);
+#endif
   return ret;
 }
 

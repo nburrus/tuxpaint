@@ -1247,7 +1247,7 @@ msgstr "さいしょから"
 #. Label for 'Letters' buttons (font selector, down the right when the Text tool is being used); used to show the difference between font faces
 #: ../tuxpaint.c:10776
 msgid "Aa"
-msgstr "Aa"
+msgstr "あぁ"
 
 #  FIXME: Move elsewhere! Or not?!
 #. Admittedly stupid way of determining which keys can be used for
