@@ -1,9 +1,7 @@
 README.txt for "tuxpaint-ttf-japanese-minimal"
 Japanese TrueType Font (TTF) for Tux Paint (includes only required chars.)
 
-Bill Kendrick
-bill@newbreedsoftware.com
-http://www.newbreedsoftware.com/tuxpaint/
+https://tuxpaint.org/
 
 December 9, 2022- December 9, 2022
 
