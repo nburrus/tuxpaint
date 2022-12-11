@@ -8,7 +8,7 @@
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                                 julio 2, 2022
+                               diciembre 9, 2022
 
              +----------------------------------------------------+
              |Table of Contents                                   |
