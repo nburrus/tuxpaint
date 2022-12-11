@@ -132,7 +132,7 @@ msgstr "QX"
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
 #: ../dirwalk.c:234
 msgid "oO"
-msgstr "ぉお"
+msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
 #: ../dirwalk.c:240
@@ -152,12 +152,12 @@ msgstr "017"
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
 #: ../dirwalk.c:255
 msgid "O0"
-msgstr "のO0"
+msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
 #: ../dirwalk.c:260
 msgid "1Il|"
-msgstr "し1Il|"
+msgstr "1Il|"
 
 #: ../dirwalk.c:266
 msgid "<1>spare-1a"
@@ -1252,7 +1252,7 @@ msgstr "さいしょから"
 
 #: ../tuxpaint.c:10826 ../tuxpaint.c:10829 ../tuxpaint.c:10831
 msgid "Aa"
-msgstr "あぁ"
+msgstr "あア"
 
 #  FIXME: Move elsewhere! Or not?!
 #. Admittedly stupid way of determining which keys can be used for

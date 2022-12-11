@@ -1617,7 +1617,7 @@ static int do_surfcmp(const SDL_Surface * const *const v1,
   }
 
   /* In the end, they were the same! */
-  return 0;
+  return cmp;
 }
 
 // see if two font surfaces are the same
