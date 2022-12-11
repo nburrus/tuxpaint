@@ -6,7 +6,7 @@
 
   Copyright (c) 2002-2022 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 
   $Id$
 
-  June 14, 2002 - February 9, 2022
+  June 14, 2002 - December 11, 2022
 */
 
 #include <stdio.h>

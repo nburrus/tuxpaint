@@ -2,7 +2,7 @@
   fonts.c
 
   Copyright (c) 2009-2022
-  http://www.tuxpaint.org/
+  https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: December 9, 2022
+  Last modified: December 11, 2022
 */
 
 #include <stdio.h>

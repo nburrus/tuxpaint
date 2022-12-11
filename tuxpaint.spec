@@ -4,7 +4,7 @@ Version: 0.9.29
 Release: 1
 License: GPL
 Group: Multimedia/Graphics
-URL: http://www.tuxpaint.org/
+URL: https://tuxpaint.org/
 Source0: %{name}-%{version}-sdl2.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: SDL2 SDL2_image SDL2_mixer SDL2_ttf SDL2_Pango SDL2_gfx libpaper fribidi xdg-utils libimagequant
@@ -98,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/tp-magic-config.*
 
 %changelog
+* Sun Dec 11 2022 <nbs@sonic.net> -
+- Updated URL to HTTPS
+
 * Wed Jun 29 2022 <dolphin6k@wmail.plala.or.jp> -
 - Changed library requirements from SDL to SDL2
 - Adapted to the change of naming rule of tar ball.

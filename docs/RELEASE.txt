@@ -110,16 +110,16 @@ Time to release:
 
 Website updates
 ---------------
- * List new features on http://www.tuxpaint.org/features/
+ * List new features on https://tuxpaint.org/features/
 
- * Add any new requirements to http://www.tuxpaint.org/requirements/
+ * Add any new requirements to https://tuxpaint.org/requirements/
 
 Announcements
 -------------
  * Managed by Tux Paint
 
    + Tux Paint website
-     - Site: http://www.tuxpaint.org/
+     - Site: https://tuxpaint.org/
      - Submissions: [add announcement to /latest/]
 
    + Tux Paint on Facebook
@@ -128,6 +128,22 @@ Announcements
 
    + Tux Paint on Twitter
      - Site: https://www.facebook.com/TuxPaint
+     - Submissions: [currently managed by Bill K.]
+
+   + Tux Paint on Tumblr
+     - Site: https://www.tumblr.com/blog/tuxpaint
+     - Submissions: [currently managed by Bill K.]
+
+   + Tux Paint on Reddit
+     - https://www.reddit.com/user/TuxPaintDevs
+     - Submissions: [currently managed by Bill K.]
+
+   + Tux Paint on Mastodon
+     - https://floss.social/@tuxpaint
+     - Submissions: [currently managed by Bill K.]
+
+   + Tux Paint on Instagram
+     - https://www.instagram.com/tuxpaintdevs/
      - Submissions: [currently managed by Bill K.]
 
  * News sites & magazines

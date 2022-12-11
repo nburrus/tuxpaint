@@ -5,7 +5,7 @@
 
   Copyright (c) 2002-2022
   by various contributors; see AUTHORS.txt
-  http://www.tuxpaint.org/
+  https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 14, 2022
+  June 14, 2002 - December 11, 2022
 */
 
 #include "platform.h"

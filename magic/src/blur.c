@@ -1,14 +1,14 @@
 /*
   blur.c
-//
+
   blur, Blur tool
   Tux Paint - A simple drawing program for children.
 
   Credits: Bill Kendrick<bill@newbreedsoftware.com> & Andrew Corcoran <akanewbie@gmail.com>
 
-  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 8, 2021
+  Last updated: December 11, 2022
   $Id$
 */
 

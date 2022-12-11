@@ -4,9 +4,9 @@ Tux Paint - A simple drawing program for children.
 
 Copyright (c) 2002-2022
 Various contributors (see below, and CHANGES.txt)
-http://www.tuxpaint.org/
+https://tuxpaint.org/
 
-June 17, 2002 - October 14, 2022
+June 17, 2002 - December 11, 2022
 
 * Design and Coding:
 

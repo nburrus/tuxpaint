@@ -766,7 +766,7 @@ begin
   if lang = 'vie' then
     lang := 'vi_VN';
 
-  Result := 'http://www.tuxpaint.org/?lang='+lang
+  Result := 'https://tuxpaint.org/?lang='+lang
 end;
 
 #expr SaveToFile(AddBackslash(SourcePath) + 'Preprocessed.iss')

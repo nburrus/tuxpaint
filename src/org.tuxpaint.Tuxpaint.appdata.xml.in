@@ -24,12 +24,12 @@
   <developer_name>New Breed Software et al.</developer_name>
   <url type="homepage">https://tuxpaint.org/</url>
   <url type="bugtracker">https://sourceforge.net/p/tuxpaint/_list/tickets</url>
-  <url type="faq">https://www.tuxpaint.org/docs/en/html/FAQ.html</url>
-  <url type="help">https://www.tuxpaint.org/docs/</url>
+  <url type="faq">https://tuxpaint.org/docs/en/html/FAQ.html</url>
+  <url type="help">https://tuxpaint.org/docs/</url>
   <!-- TODO: https: donation URL -->
   <url type="donation">http://www.newbreedsoftware.com/donate/</url>
-  <url type="translate">https://www.tuxpaint.org/help/po/</url>
-  <url type="contact">https://www.tuxpaint.org/contact/</url>
+  <url type="translate">https://tuxpaint.org/help/po/</url>
+  <url type="contact">https://tuxpaint.org/contact/</url>
   <screenshots>
     <screenshot type="default">
       <image type="source">https://tuxpaint.org/screenshots/starter-coloringbook.png</image>

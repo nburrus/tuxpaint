@@ -7,9 +7,9 @@
   Credits: Adam 'foo-script' Rakowski <foo-script@o2.pl>
   and Bill Kendrick <bill@newbreedsoftware.com>
 
-  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -25,6 +25,8 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
+
+  Last updated: December 11, 2022
 */
 
 #include "tp_magic_api.h"

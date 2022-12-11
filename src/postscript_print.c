@@ -6,9 +6,9 @@
   (for non-Windows, non-BeOS platforms, e.g. Linux and macOS)
   (moved from tuxpaint.c in 0.9.17)
 
-  Copyright (c) 2022 by Bill Kendrick and others
+  Copyright (c) 2007-2022 by Bill Kendrick and others
   bill@newbreedsoftware.com
-  http://www.tuxpaint.org/
+  https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -35,8 +35,7 @@
     documentation.  This software is provided "as is" without express or
     implied warranty.
 
-
-  June 24, 2007 - April 29, 2022
+  June 24, 2007 - December 11, 2022
   $Id$
 */
 

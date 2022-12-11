@@ -2,9 +2,9 @@
 
 # Copyright (c) 2002-2022
 # Various contributors (see AUTHORS.txt)
-# http://www.tuxpaint.org/
+# https://tuxpaint.org/
 
-# June 14, 2002 - October 18, 2022
+# June 14, 2002 - December 11, 2022
 
 
 # The version number, for release:
@@ -633,7 +633,7 @@ install:	install-bin install-data install-doc \
 	@echo "Visit Tux Paint's home page for more information, updates"
 	@echo "and to learn how you can help out!"
 	@echo
-	@echo "  http://www.tuxpaint.org/"
+	@echo "  https://tuxpaint.org/"
 	@echo
 	@echo "Enjoy!"
 	@echo

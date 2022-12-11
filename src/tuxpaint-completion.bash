@@ -1,9 +1,9 @@
 # tuxpaint(1) completion 
 # put this file in /etc/bash_completion.d/ 
-# Bill Kendrick <bill@newbreedsoftware.com>; http://www.tuxpaint.org/
+# Bill Kendrick <bill@newbreedsoftware.com>; https://tuxpaint.org/
 # Based on inkscape's completion file, by allali@univ-mlv.fr
 #
-# Last modified 2022-09-28
+# Last modified 2022-12-11
 #
 # $Id$
 
