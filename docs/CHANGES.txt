@@ -237,7 +237,7 @@ https://tuxpaint.org/
     * Japanese documentation
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
-    * Japanese UI font updated
+    * Japanese font updated
       A subset of Genjyuu Gothic: http://jikasei.me/font/genjyuu/
       Added by TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
