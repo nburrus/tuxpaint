@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-09 22:28-0800\n"
+"POT-Creation-Date: 2022-12-17 23:54+0900\n"
 "PO-Revision-Date: 2022-09-08 12:01+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -159,19 +159,24 @@ msgstr "O0"
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:266
+#. put locale specific characters to the translation for this string to score up the fonts supporting those characters.
+#: ../dirwalk.c:265
+msgid "ABC...xyz"
+msgstr ""
+
+#: ../dirwalk.c:271
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:268
+#: ../dirwalk.c:273
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:270
+#: ../dirwalk.c:275
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:272
+#: ../dirwalk.c:277
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
@@ -266,33 +271,33 @@ msgid "ZH_TW"
 msgstr "ちゅうごくご"
 
 #. Add menu items
-#: ../macos.m:56
+#: ../macos.m:58
 msgid "About Tux Paint"
 msgstr "タックスペイントについて"
 
-#: ../macos.m:61
+#: ../macos.m:63
 msgid "Hide Tux Paint"
 msgstr "タックスペイントを隠す"
 
-#: ../macos.m:64
+#: ../macos.m:66
 msgid "Hide Others"
 msgstr "ほかを隠す"
 
-#: ../macos.m:67
+#: ../macos.m:69
 msgid "Show All"
 msgstr "全て表示"
 
-#: ../macos.m:71
+#: ../macos.m:73
 msgid "Quit Tux Paint"
 msgstr "タックスペイントを終了"
 
 #. Put menu into the menubar
-#: ../macos.m:101 ../macos.m:109
+#: ../macos.m:103 ../macos.m:111
 msgid "Window"
 msgstr "ウインドウ"
 
 #. "Minimize" item
-#: ../macos.m:104
+#: ../macos.m:106
 msgid "Minimize"
 msgstr "最小化"
 
@@ -344,265 +349,6 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:44
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "「はんこ」ツールは、スタンプやシールのセットのようなものです"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
-msgid ""
-"Tux Paint's Color palette includes a new Color Mixer option, which allows "
-"users to combine different proportions of primary colors (red, yellow, and "
-"blue) and shades (white, grey, and black) to create new colors, similar to "
-"mixing paints."
-msgstr ""
-"Tux Paint のカラーパレットには、新たに「カラーミキサー」オプションが加わり、"
-"絵の具を混ぜるように、異なる割合の原色（赤、黄、青）とシェード（白、グレー、"
-"黒）を組み合わせて、新しい色を作り出すことができるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
-msgid ""
-"The Color Picker option, which previously offered a static palette of around "
-"sixty-five thousand color choices, now supports separate hue, saturation, "
-"and value settings, allowing users to choose from over sixteen million "
-"colors."
-msgstr ""
-"カラーピッカーは、従来は約6万5千色の固定パレットでしたが、色相、彩度、明度の"
-"個別設定に対応し、1600万色以上の色を選択できるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
-msgid ""
-"Also, a keyboard shortcut is now available for quick access to the Color "
-"Selector — the \"pipette\" tool used for picking colors from the current "
-"drawing."
-msgstr ""
-"また、カラーセレクター（絵の中から色を抽出するためのピペットツール）に素早く"
-"アクセスするためのキーボードショートカットが利用できるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid ""
-"The Paint and Lines tools now provide a way to adjust the spacing of "
-"brushes, allowing dotted lines or smearing effects to be made. Many brushes "
-"have been given better default spacing values, as well."
-msgstr ""
-"「ふで」ツールと「せん」ツールでは、描画の間隔を調整する方法が追加され、点線"
-"やスミアの効果を作ることができるようになりました。また、多くのブラシでデフォ"
-"ルトの間隔が改善されました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid ""
-"Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
-"added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
-"across the canvas in tiles, rather than filling the canvas with a solid "
-"background color. The Rush tool blurs the results."
-msgstr ""
-"「まほう」ツールの「ズーム」に、「タイルズーム」と「ワープ」の2つのバリエー"
-"ションが追加されました。「タイルズーム」は、キャンバスを背景色で塗りつぶすの"
-"ではなく、キャンバス全体にタイル状に描画を複製します。ラッシュツールは、ズー"
-"ム後に結果をぼかします。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
-msgid ""
-"Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
-"polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
-"aspect ratio of the shape is displayed at the bottom while you make your "
-"adjustments. Instructional information shown while using some other tools "
-"has also been expanded."
-msgstr ""
-"「かたち」ツールで、六角形と七角形が描けるようになりました。長方形、楕円な"
-"ど、引き伸ばせる図形は、下部に縦横比を表示しながら調整できるようになりまし"
-"た。その他、一部のツールで表示される操作説明も充実させました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
-msgid ""
-"Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
-"accessed with the more traditional [⌘ Command] key when using Tux Paint on "
-"macOS. Sizing of Tux Paint's built-in on-screen keyboard has been improved. "
-"The look and feel of the user documentation has been improved."
-msgstr ""
-"macOS で Tux Paint を使用する場合、[Control]+[S] による図面の保存などのキー"
-"ボードショートカットは、より標準的な [⌘ Command] キーでアクセスするようになり"
-"ました。タックスペイントに内蔵された画面キーボードのサイズ調整が改良されまし"
-"た。ユーザードキュメントの見映えが改善されました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
-msgid ""
-"Tux Paint's Paint and Line tools now support brushes that rotate based on "
-"the angle of the stroke. This new rotation feature, as well as the older "
-"directional and animated brush features, are now visually indicated by the "
-"brush shape selector. Additionally, the Fill tool now offers a freehand "
-"painting mode for interactively coloring within a confined area."
-msgstr ""
-"「ふで」ツールと「せん」ツールは、線を描く角度に応じて回転するブラシをサポー"
-"トするようになりました。この新しい回転機能は、これまでの方向を持つブラシやア"
-"ニメーションするブラシと同様に、セレクタ上でわかりやすくに表示されるようにな"
-"りました。また、塗りつぶしツールにはフリーハンドモードが追加され、塗りつぶし"
-"たい範囲にインタラクティブに色を塗ることができるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
-msgid ""
-"Six new Magic tools have been added to Tux Paint. Panels shrinks and "
-"duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
-"panel comics. Opposite produces complementary colors. Lightning "
-"interactively draws a lightning bolt. Reflection creates a lake-like "
-"reflection on the drawing. Stretch stretches and squashes the picture like a "
-"fun-house mirror. Lastly, Smooth Rainbow provides a more gradual variation "
-"of Tux Paint's classic Rainbow tool."
-msgstr ""
-"6つの新しい「まほう」ツールが追加されました。「パネル」は、描画を 2×2 のグ"
-"リッドに縮小して複製するので、4 コマ漫画の作成に便利です。「いろはんてん」は"
-"補色を生成します。「いなずま」 は、稲妻をインタラクティブに描画します。「はん"
-"しゃ」は、湖のような反射を描画します。「のびちぢみ」は、絵を伸ばしたり縮めた"
-"りすることができます。「なめらかなにじ」は、以前からある「にじ」ツールよりも"
-"スムーズなグラデーションの虹を描きます。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
-msgid ""
-"A number of existing Magic tools have been updated, as well. Improvements "
-"were made to Halftone, which simulates photographs on newsprint; Cartoon, "
-"which makes an image look like a cartoon drawing; and TV, which simulates a "
-"television screen. Additionally, Cartoon and Halftone, along with Blocks, "
-"Chalk, and Emboss, now offer the ability to alter the entire image at once!"
-msgstr ""
-"また、既存の「まほう」ツールの多くが改良されました。新聞紙に写真を貼ったよう"
-"な「ハーフトーン」、漫画のような画像にする「まんが」、テレビ画面のような「テ"
-"レビ」などが改良されました。さらに、「まんが」「ハーフトーン」「ブロック」"
-"「チョーク」「うきぼり」では、画像全体を一度に変更できるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
-msgid ""
-"Finally, Magic tools are now grouped into collections of similar effects — "
-"painting, distorts, color filters, picture warps, pattern painting, "
-"artistic, and picture decorations — making it easier to find the tool you "
-"need."
-msgstr ""
-"「まほう」ツールは、効果の特徴ごとにグループ分けされて、使いたいツールを簡単"
-"に見つけることができるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
-msgid ""
-"Tux Paint's Fill tool now offers options to fill an area with color "
-"gradients. The \"Radial\" fill creates a circular gradient centered around "
-"the mouse click, while the \"Linear\" fill allows the interactive creation "
-"of gradients at different angles and sizes."
-msgstr ""
-"塗りつぶしツールに、グラデーションで領域を塗りつぶすオプションが追加されまし"
-"た。「ほうしゃ」は、クリック位置を中心とした放射状のグラデーションを作成し、"
-"「リニア」は、さまざまな方向や大きさのグラデーションをインタラクティブに作成"
-"できます。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
-msgid ""
-"New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
-"create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
-"canvas with a check pattern, and \"Clone\" allows duplicating parts of the "
-"picture via brush strokes."
-msgstr ""
-"新しい「まほう」ツールが追加されました。「ピクセル」はレトロゲーム風のピクセ"
-"ルアートを簡単に作成でき、「チェッカーボード」はキャンバス全体をチェック柄で"
-"塗りつぶし、「クローン」はマウス操作で絵の一部を複製することが可能です。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
-msgid ""
-"Tux Paint's user documentation has been overhauled, making localization "
-"easier. Parties interested in helping with localization are encouraged to "
-"contact the Tux Paint team."
-msgstr ""
-"ユーザードキュメントが一新され、各種言語への翻訳がより簡単になりました。翻訳"
-"にご興味のある方は、タックスペイントチームまでご連絡ください。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
-msgid ""
-"Finally, a new pair of accessibility options have been added. The entire "
-"user interface can now be enlarged benefiting users with impaired vision, "
-"and making the program more suitable to very high density displays. This "
-"feature, along with a new option to re-organize the color palette, can also "
-"be helpful to users of coarse input devices, such as eye-gaze tracking "
-"systems."
-msgstr ""
-"新しいアクセシビリティオプションが追加されました。ユーザーインターフェース全"
-"体を拡大表示できるようになり、昨今の高解像度ディスプレイにおいても視力の弱い"
-"ユーザーに適したソフトウェアになっています。この機能は、カラーパレットを再構"
-"成する新しいオプションとともに、視線追跡システムのような、細かい操作が難しい"
-"入力デバイスを利用するユーザーにも役立ちます。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
-msgid ""
-"A major improvement has been made to the Shapes tool, which now provides "
-"options to choose whether shapes are drawn from the center or a corner, "
-"making it easier to use in any situation."
-msgstr ""
-"図形ツールの大きな改良点として、図形を中心から描くか端から描くかを選択できる"
-"ようになり、あらゆる場面で使いやすくなりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
-msgid ""
-"The on-screen keyboard, an accessibility feature optionally available when "
-"using the Text and Label tools, now appears larger on bigger displays; "
-"helpful for users of coarser input devices, such as eye-tracking systems."
-msgstr ""
-"画面キーボードは画面のサイズに応じて大きく表示されるようになり、視線入力シス"
-"テムなどの細かい操作が難しい入力デバイスを利用するユーザーにとって使いやすく"
-"なりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
-msgid ""
-"The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
-"contiguous strokes when the pointer is moved quickly."
-msgstr ""
-"「けしゴム」ツールには、新たに小さな消しゴムサイズが追加され、ポインターを素"
-"早く動かしたときに、より滑らかで連続した動きをするようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
-msgid ""
-"Finally, this newest version adds options to export individual drawings and "
-"GIF animations, making it easy to share pictures, cartoons, and slideshows "
-"with others."
-msgstr ""
-"最新バージョンでは、個々の作品やGIFアニメーションをエクスポートするオプション"
-"が追加され、作品を簡単に他の人と共有することができます。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
-msgid ""
-"The latest version has promoted the \"Fill\" tool, previously found under "
-"the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
-"to find. It also includes some performance improvements during start-up and "
-"when bringing up the \"New\" drawing dialog. The solid background colors can "
-"also be placed at the end of that dialog, allowing emphasis of template "
-"images."
-msgstr ""
-"これまでは「まほう」ツールに含まれていた塗りつぶしツールを、見つけやすくなる"
-"よう、メインのツールバーに移動しました。また、起動時や「さいしょから」ダイア"
-"ログを表示する際のパフォーマンスの改善も行われています。また、「さいしょか"
-"ら」ダイアログで様々なテンプレート画像の方を目立たせたい場合には、単色のキャ"
-"ンバスを末尾に配置することができるようになりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
-msgid ""
-"Tux Paint also now makes it possible to disable stereo sound, which can "
-"benefit users with a hearing impairment, or in situations where only one "
-"speaker is available."
-msgstr ""
-"また、聴覚に障害のあるユーザーや、スピーカーが1つしかない場合に有効な、ステレ"
-"オサウンドの無効化も可能になりました。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
-msgid ""
-"New in this version are a \"color picker\", which allows any color within a "
-"drawing to be chosen using the pointer, and a set of three-, four-, and five-"
-"pointed star shapes."
-msgstr ""
-"このバージョンでは、マウスを用いて画像の中の任意の色を選択できる「カラーピッ"
-"カー」と、「かたち」ツールに、三芒星、四芒星、五芒星が新たに追加されていま"
-"す。"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
-msgid ""
-"The latest version also incorporates a number of new translations, bringing "
-"the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
-"Kabyle, Urdu, and Devanagari and Perso-Arabic variations of Kashmiri and "
-"Sindhi. Thirty other translations have been updated, as well."
-msgstr ""
-"また、最新版では、対応する言語は130近くまで増えました。新たに翻訳が追加された"
-"言語は、ベンガル語、ボド語、ドグリ語、カビル語、ウルドゥー語、また、デーヴァ"
-"ナーガリー及びペルソ・アラビア語バリエーションのカシミール語、そしてシンド語"
-"です。その他にも、30種類の翻訳が更新されました。"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:266 ../shapes.h:267
@@ -1392,11 +1138,11 @@ msgstr "クリックしたまま マウスをうごかして えのいろをか�
 msgid "Click to change the colors in your entire picture."
 msgstr "えを クリックして ぜんたいの いろをかえよう。"
 
-#: ../../magic/src/blind.c:124
+#: ../../magic/src/blind.c:126
 msgid "Blind"
 msgstr "ブラインド"
 
-#: ../../magic/src/blind.c:139
+#: ../../magic/src/blind.c:141
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -1489,12 +1235,12 @@ msgstr "クリックしたままマウスをうごかして まんがみたい�
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "えを クリックして ぜんたいを まんがみたいに しよう。"
 
-#: ../../magic/src/checkerboard.c:111
+#: ../../magic/src/checkerboard.c:113
 msgid "Checkerboard"
 msgstr "チェッカーボード"
 
 #  msgid "Click and drag to draw train track rails on your picture."
-#: ../../magic/src/checkerboard.c:126
+#: ../../magic/src/checkerboard.c:128
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr ""
 "クリックしてからドラッグすると えのぜんたいに チェッカーボードのパターンを え"
@@ -1921,18 +1667,6 @@ msgstr "せんろ"
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "クリックしたまま マウスをうごかして でんしゃの せんろを かこう。"
 
-#: ../../magic/src/rainbow.c:148
-msgid "Rainbow"
-msgstr "にじ"
-
-#: ../../magic/src/rainbow.c:152
-msgid "Smooth Rainbow"
-msgstr "なめらかなにじ"
-
-#: ../../magic/src/rainbow.c:168
-msgid "You can draw in rainbow colors!"
-msgstr "にじいろで かこう！"
-
 #: ../../magic/src/rain.c:69
 msgid "Rain"
 msgstr "あめ"
@@ -1944,6 +1678,18 @@ msgstr "クリックしたばしょに あめを ふらせよう。"
 #: ../../magic/src/rain.c:78
 msgid "Click to cover your picture with rain drops."
 msgstr "えを クリックして ぜんたいに あめを ふらせよう。"
+
+#: ../../magic/src/rainbow.c:148
+msgid "Rainbow"
+msgstr "にじ"
+
+#: ../../magic/src/rainbow.c:152
+msgid "Smooth Rainbow"
+msgstr "なめらかなにじ"
+
+#: ../../magic/src/rainbow.c:168
+msgid "You can draw in rainbow colors!"
+msgstr "にじいろで かこう！"
 
 #  msgid "Rainbow"
 #: ../../magic/src/realrainbow.c:113
@@ -2074,11 +1820,11 @@ msgstr "えを クリックして ぜんたいに ゆきだまを かこう。"
 msgid "Click to add snow flakes to your picture."
 msgstr "えを クリックして ぜんたいに ゆきを ふらせよう。"
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:120
 msgid "Stretch"
 msgstr "のびちぢみ"
 
-#: ../../magic/src/stretch.c:133
+#: ../../magic/src/stretch.c:135
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
@@ -2160,18 +1906,18 @@ msgstr "たつまき"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "クリックしたまま マウスをうごかして たつまきを かこう。"
 
-#: ../../magic/src/tv.c:106
+#: ../../magic/src/tv.c:108
 msgid "TV"
 msgstr "テレビ"
 
-#: ../../magic/src/tv.c:120
+#: ../../magic/src/tv.c:122
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "クリックしたまま マウスを うごかして テレビに うつったみたいに しよう。"
 
-#: ../../magic/src/tv.c:125
+#: ../../magic/src/tv.c:127
 msgid "Click to make your picture look like it's on television."
 msgstr "えを クリックして テレビに うつったみたいに しよう。"
 
@@ -2216,6 +1962,247 @@ msgstr "クリックしたまま マウスをうごかして カラフルなも�
 #: ../../magic/src/xor.c:116
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "えを くりっくして ぜんたいの いろを はんてんさせよう"
+
+#~ msgid ""
+#~ "Tux Paint's Color palette includes a new Color Mixer option, which allows "
+#~ "users to combine different proportions of primary colors (red, yellow, "
+#~ "and blue) and shades (white, grey, and black) to create new colors, "
+#~ "similar to mixing paints."
+#~ msgstr ""
+#~ "Tux Paint のカラーパレットには、新たに「カラーミキサー」オプションが加わ"
+#~ "り、絵の具を混ぜるように、異なる割合の原色（赤、黄、青）とシェード（白、グ"
+#~ "レー、黒）を組み合わせて、新しい色を作り出すことができるようになりました。"
+
+#~ msgid ""
+#~ "The Color Picker option, which previously offered a static palette of "
+#~ "around sixty-five thousand color choices, now supports separate hue, "
+#~ "saturation, and value settings, allowing users to choose from over "
+#~ "sixteen million colors."
+#~ msgstr ""
+#~ "カラーピッカーは、従来は約6万5千色の固定パレットでしたが、色相、彩度、明度"
+#~ "の個別設定に対応し、1600万色以上の色を選択できるようになりました。"
+
+#~ msgid ""
+#~ "Also, a keyboard shortcut is now available for quick access to the Color "
+#~ "Selector — the \"pipette\" tool used for picking colors from the current "
+#~ "drawing."
+#~ msgstr ""
+#~ "また、カラーセレクター（絵の中から色を抽出するためのピペットツール）に素早"
+#~ "くアクセスするためのキーボードショートカットが利用できるようになりました。"
+
+#~ msgid ""
+#~ "The Paint and Lines tools now provide a way to adjust the spacing of "
+#~ "brushes, allowing dotted lines or smearing effects to be made. Many "
+#~ "brushes have been given better default spacing values, as well."
+#~ msgstr ""
+#~ "「ふで」ツールと「せん」ツールでは、描画の間隔を調整する方法が追加され、点"
+#~ "線やスミアの効果を作ることができるようになりました。また、多くのブラシでデ"
+#~ "フォルトの間隔が改善されました。"
+
+#~ msgid ""
+#~ "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
+#~ "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
+#~ "across the canvas in tiles, rather than filling the canvas with a solid "
+#~ "background color. The Rush tool blurs the results."
+#~ msgstr ""
+#~ "「まほう」ツールの「ズーム」に、「タイルズーム」と「ワープ」の2つのバリ"
+#~ "エーションが追加されました。「タイルズーム」は、キャンバスを背景色で塗りつ"
+#~ "ぶすのではなく、キャンバス全体にタイル状に描画を複製します。ラッシュツール"
+#~ "は、ズーム後に結果をぼかします。"
+
+#~ msgid ""
+#~ "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-"
+#~ "sided) polygons. For shapes which can be stretched (rectangle, oval, "
+#~ "etc.), the aspect ratio of the shape is displayed at the bottom while you "
+#~ "make your adjustments. Instructional information shown while using some "
+#~ "other tools has also been expanded."
+#~ msgstr ""
+#~ "「かたち」ツールで、六角形と七角形が描けるようになりました。長方形、楕円な"
+#~ "ど、引き伸ばせる図形は、下部に縦横比を表示しながら調整できるようになりまし"
+#~ "た。その他、一部のツールで表示される操作説明も充実させました。"
+
+#~ msgid ""
+#~ "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
+#~ "accessed with the more traditional [⌘ Command] key when using Tux Paint "
+#~ "on macOS. Sizing of Tux Paint's built-in on-screen keyboard has been "
+#~ "improved. The look and feel of the user documentation has been improved."
+#~ msgstr ""
+#~ "macOS で Tux Paint を使用する場合、[Control]+[S] による図面の保存などの"
+#~ "キーボードショートカットは、より標準的な [⌘ Command] キーでアクセスするよ"
+#~ "うになりました。タックスペイントに内蔵された画面キーボードのサイズ調整が改"
+#~ "良されました。ユーザードキュメントの見映えが改善されました。"
+
+#~ msgid ""
+#~ "Tux Paint's Paint and Line tools now support brushes that rotate based on "
+#~ "the angle of the stroke. This new rotation feature, as well as the older "
+#~ "directional and animated brush features, are now visually indicated by "
+#~ "the brush shape selector. Additionally, the Fill tool now offers a "
+#~ "freehand painting mode for interactively coloring within a confined area."
+#~ msgstr ""
+#~ "「ふで」ツールと「せん」ツールは、線を描く角度に応じて回転するブラシをサ"
+#~ "ポートするようになりました。この新しい回転機能は、これまでの方向を持つブラ"
+#~ "シやアニメーションするブラシと同様に、セレクタ上でわかりやすくに表示される"
+#~ "ようになりました。また、塗りつぶしツールにはフリーハンドモードが追加され、"
+#~ "塗りつぶしたい範囲にインタラクティブに色を塗ることができるようになりまし"
+#~ "た。"
+
+#~ msgid ""
+#~ "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
+#~ "duplicates the drawing into a 2-by-2 grid, which is useful for making "
+#~ "four-panel comics. Opposite produces complementary colors. Lightning "
+#~ "interactively draws a lightning bolt. Reflection creates a lake-like "
+#~ "reflection on the drawing. Stretch stretches and squashes the picture "
+#~ "like a fun-house mirror. Lastly, Smooth Rainbow provides a more gradual "
+#~ "variation of Tux Paint's classic Rainbow tool."
+#~ msgstr ""
+#~ "6つの新しい「まほう」ツールが追加されました。「パネル」は、描画を 2×2 のグ"
+#~ "リッドに縮小して複製するので、4 コマ漫画の作成に便利です。「いろはんてん」"
+#~ "は補色を生成します。「いなずま」 は、稲妻をインタラクティブに描画します。"
+#~ "「はんしゃ」は、湖のような反射を描画します。「のびちぢみ」は、絵を伸ばした"
+#~ "り縮めたりすることができます。「なめらかなにじ」は、以前からある「にじ」"
+#~ "ツールよりもスムーズなグラデーションの虹を描きます。"
+
+#~ msgid ""
+#~ "A number of existing Magic tools have been updated, as well. Improvements "
+#~ "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
+#~ "which makes an image look like a cartoon drawing; and TV, which simulates "
+#~ "a television screen. Additionally, Cartoon and Halftone, along with "
+#~ "Blocks, Chalk, and Emboss, now offer the ability to alter the entire "
+#~ "image at once!"
+#~ msgstr ""
+#~ "また、既存の「まほう」ツールの多くが改良されました。新聞紙に写真を貼ったよ"
+#~ "うな「ハーフトーン」、漫画のような画像にする「まんが」、テレビ画面のような"
+#~ "「テレビ」などが改良されました。さらに、「まんが」「ハーフトーン」「ブロッ"
+#~ "ク」「チョーク」「うきぼり」では、画像全体を一度に変更できるようになりまし"
+#~ "た。"
+
+#~ msgid ""
+#~ "Finally, Magic tools are now grouped into collections of similar effects "
+#~ "— painting, distorts, color filters, picture warps, pattern painting, "
+#~ "artistic, and picture decorations — making it easier to find the tool you "
+#~ "need."
+#~ msgstr ""
+#~ "「まほう」ツールは、効果の特徴ごとにグループ分けされて、使いたいツールを簡"
+#~ "単に見つけることができるようになりました。"
+
+#~ msgid ""
+#~ "Tux Paint's Fill tool now offers options to fill an area with color "
+#~ "gradients. The \"Radial\" fill creates a circular gradient centered "
+#~ "around the mouse click, while the \"Linear\" fill allows the interactive "
+#~ "creation of gradients at different angles and sizes."
+#~ msgstr ""
+#~ "塗りつぶしツールに、グラデーションで領域を塗りつぶすオプションが追加されま"
+#~ "した。「ほうしゃ」は、クリック位置を中心とした放射状のグラデーションを作成"
+#~ "し、「リニア」は、さまざまな方向や大きさのグラデーションをインタラクティブ"
+#~ "に作成できます。"
+
+#~ msgid ""
+#~ "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier "
+#~ "to create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
+#~ "canvas with a check pattern, and \"Clone\" allows duplicating parts of "
+#~ "the picture via brush strokes."
+#~ msgstr ""
+#~ "新しい「まほう」ツールが追加されました。「ピクセル」はレトロゲーム風のピク"
+#~ "セルアートを簡単に作成でき、「チェッカーボード」はキャンバス全体をチェック"
+#~ "柄で塗りつぶし、「クローン」はマウス操作で絵の一部を複製することが可能で"
+#~ "す。"
+
+#~ msgid ""
+#~ "Tux Paint's user documentation has been overhauled, making localization "
+#~ "easier. Parties interested in helping with localization are encouraged to "
+#~ "contact the Tux Paint team."
+#~ msgstr ""
+#~ "ユーザードキュメントが一新され、各種言語への翻訳がより簡単になりました。翻"
+#~ "訳にご興味のある方は、タックスペイントチームまでご連絡ください。"
+
+#~ msgid ""
+#~ "Finally, a new pair of accessibility options have been added. The entire "
+#~ "user interface can now be enlarged benefiting users with impaired vision, "
+#~ "and making the program more suitable to very high density displays. This "
+#~ "feature, along with a new option to re-organize the color palette, can "
+#~ "also be helpful to users of coarse input devices, such as eye-gaze "
+#~ "tracking systems."
+#~ msgstr ""
+#~ "新しいアクセシビリティオプションが追加されました。ユーザーインターフェース"
+#~ "全体を拡大表示できるようになり、昨今の高解像度ディスプレイにおいても視力の"
+#~ "弱いユーザーに適したソフトウェアになっています。この機能は、カラーパレット"
+#~ "を再構成する新しいオプションとともに、視線追跡システムのような、細かい操作"
+#~ "が難しい入力デバイスを利用するユーザーにも役立ちます。"
+
+#~ msgid ""
+#~ "A major improvement has been made to the Shapes tool, which now provides "
+#~ "options to choose whether shapes are drawn from the center or a corner, "
+#~ "making it easier to use in any situation."
+#~ msgstr ""
+#~ "図形ツールの大きな改良点として、図形を中心から描くか端から描くかを選択でき"
+#~ "るようになり、あらゆる場面で使いやすくなりました。"
+
+#~ msgid ""
+#~ "The on-screen keyboard, an accessibility feature optionally available "
+#~ "when using the Text and Label tools, now appears larger on bigger "
+#~ "displays; helpful for users of coarser input devices, such as eye-"
+#~ "tracking systems."
+#~ msgstr ""
+#~ "画面キーボードは画面のサイズに応じて大きく表示されるようになり、視線入力シ"
+#~ "ステムなどの細かい操作が難しい入力デバイスを利用するユーザーにとって使いや"
+#~ "すくなりました。"
+
+#~ msgid ""
+#~ "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
+#~ "contiguous strokes when the pointer is moved quickly."
+#~ msgstr ""
+#~ "「けしゴム」ツールには、新たに小さな消しゴムサイズが追加され、ポインターを"
+#~ "素早く動かしたときに、より滑らかで連続した動きをするようになりました。"
+
+#~ msgid ""
+#~ "Finally, this newest version adds options to export individual drawings "
+#~ "and GIF animations, making it easy to share pictures, cartoons, and "
+#~ "slideshows with others."
+#~ msgstr ""
+#~ "最新バージョンでは、個々の作品やGIFアニメーションをエクスポートするオプ"
+#~ "ションが追加され、作品を簡単に他の人と共有することができます。"
+
+#~ msgid ""
+#~ "The latest version has promoted the \"Fill\" tool, previously found under "
+#~ "the \"Magic\" section of Tux Paint, to the main toolbar, where it's "
+#~ "easier to find. It also includes some performance improvements during "
+#~ "start-up and when bringing up the \"New\" drawing dialog. The solid "
+#~ "background colors can also be placed at the end of that dialog, allowing "
+#~ "emphasis of template images."
+#~ msgstr ""
+#~ "これまでは「まほう」ツールに含まれていた塗りつぶしツールを、見つけやすくな"
+#~ "るよう、メインのツールバーに移動しました。また、起動時や「さいしょから」ダ"
+#~ "イアログを表示する際のパフォーマンスの改善も行われています。また、「さい"
+#~ "しょから」ダイアログで様々なテンプレート画像の方を目立たせたい場合には、単"
+#~ "色のキャンバスを末尾に配置することができるようになりました。"
+
+#~ msgid ""
+#~ "Tux Paint also now makes it possible to disable stereo sound, which can "
+#~ "benefit users with a hearing impairment, or in situations where only one "
+#~ "speaker is available."
+#~ msgstr ""
+#~ "また、聴覚に障害のあるユーザーや、スピーカーが1つしかない場合に有効な、ス"
+#~ "テレオサウンドの無効化も可能になりました。"
+
+#~ msgid ""
+#~ "New in this version are a \"color picker\", which allows any color within "
+#~ "a drawing to be chosen using the pointer, and a set of three-, four-, and "
+#~ "five-pointed star shapes."
+#~ msgstr ""
+#~ "このバージョンでは、マウスを用いて画像の中の任意の色を選択できる「カラー"
+#~ "ピッカー」と、「かたち」ツールに、三芒星、四芒星、五芒星が新たに追加されて"
+#~ "います。"
+
+#~ msgid ""
+#~ "The latest version also incorporates a number of new translations, "
+#~ "bringing the number of supported languages up to nearly 130: Bengali, "
+#~ "Bodo, Dogri, Kabyle, Urdu, and Devanagari and Perso-Arabic variations of "
+#~ "Kashmiri and Sindhi. Thirty other translations have been updated, as well."
+#~ msgstr ""
+#~ "また、最新版では、対応する言語は130近くまで増えました。新たに翻訳が追加さ"
+#~ "れた言語は、ベンガル語、ボド語、ドグリ語、カビル語、ウルドゥー語、また、"
+#~ "デーヴァナーガリー及びペルソ・アラビア語バリエーションのカシミール語、そし"
+#~ "てシンド語です。その他にも、30種類の翻訳が更新されました。"
 
 #~ msgid "tuxpaint"
 #~ msgstr "タックスペイント"

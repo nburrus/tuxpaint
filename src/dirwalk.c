@@ -260,6 +260,11 @@ void loadfont_callback(SDL_Surface * screen, SDL_Texture * texture,
             font, /* distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye)) */ gettext("1Il|")
           );
 
+          user_font_styles[num_font_styles]->score +=
+            charset_works(
+            font, /* put locale specific characters to the translation for this string to score up the fonts supporting those characters. */ gettext("ABC...xyz")
+          );
+	  
           // translation spares -- design not finalized
 #if 0
           user_font_styles[num_font_styles]->score +=
