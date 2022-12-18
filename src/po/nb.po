@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 23:54+0900\n"
+"POT-Creation-Date: 2022-12-18 13:54+0900\n"
 "PO-Revision-Date: 2021-06-28 19:40+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -161,24 +161,19 @@ msgstr "O0"
 msgid "1Il|"
 msgstr "1Il|"
 
-#. put locale specific characters to the translation for this string to score up the fonts supporting those characters.
-#: ../dirwalk.c:265
-msgid "ABC...xyz"
-msgstr ""
-
-#: ../dirwalk.c:271
+#: ../dirwalk.c:266
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:273
+#: ../dirwalk.c:268
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:275
+#: ../dirwalk.c:270
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:277
+#: ../dirwalk.c:272
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 

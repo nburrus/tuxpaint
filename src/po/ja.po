@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 23:54+0900\n"
+"POT-Creation-Date: 2022-12-18 13:54+0900\n"
 "PO-Revision-Date: 2022-12-18 00:03+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -159,24 +159,19 @@ msgstr "O0"
 msgid "1Il|"
 msgstr "1Il|"
 
-#. put locale specific characters to the translation for this string to score up the fonts supporting those characters.
-#: ../dirwalk.c:265
-msgid "ABC...xyz"
-msgstr "あいうえおアイウエオ"
-
-#: ../dirwalk.c:271
+#: ../dirwalk.c:266
 msgid "<1>spare-1a"
 msgstr "<1>spare-1a"
 
-#: ../dirwalk.c:273
+#: ../dirwalk.c:268
 msgid "<1>spare-1b"
 msgstr "<1>spare-1b"
 
-#: ../dirwalk.c:275
+#: ../dirwalk.c:270
 msgid "<9>spare-9a"
 msgstr "<9>spare-9a"
 
-#: ../dirwalk.c:277
+#: ../dirwalk.c:272
 msgid "<9>spare-9b"
 msgstr "<9>spare-9b"
 
@@ -1962,6 +1957,9 @@ msgstr "クリックしたまま マウスをうごかして カラフルなも�
 #: ../../magic/src/xor.c:116
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "えを くりっくして ぜんたいの いろを はんてんさせよう"
+
+#~ msgid "ABC...xyz"
+#~ msgstr "あいうえおアイウエオ"
 
 #~ msgid ""
 #~ "Tux Paint's Color palette includes a new Color Mixer option, which allows "

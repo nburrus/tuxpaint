@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 23:54+0900\n"
+"POT-Creation-Date: 2022-12-18 13:54+0900\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -159,24 +159,19 @@ msgstr ""
 msgid "1Il|"
 msgstr ""
 
-#. put locale specific characters to the translation for this string to score up the fonts supporting those characters.
-#: ../dirwalk.c:265
-msgid "ABC...xyz"
-msgstr ""
-
-#: ../dirwalk.c:271
+#: ../dirwalk.c:266
 msgid "<1>spare-1a"
 msgstr ""
 
-#: ../dirwalk.c:273
+#: ../dirwalk.c:268
 msgid "<1>spare-1b"
 msgstr ""
 
-#: ../dirwalk.c:275
+#: ../dirwalk.c:270
 msgid "<9>spare-9a"
 msgstr ""
 
-#: ../dirwalk.c:277
+#: ../dirwalk.c:272
 msgid "<9>spare-9b"
 msgstr ""
 

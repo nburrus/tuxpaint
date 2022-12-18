@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 23:54+0900\n"
+"POT-Creation-Date: 2022-12-18 13:54+0900\n"
 "PO-Revision-Date: 2017-12-23 10:13+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -181,24 +181,19 @@ msgstr "О0"
 msgid "1Il|"
 msgstr "1Il|"
 
-#. put locale specific characters to the translation for this string to score up the fonts supporting those characters.
-#: ../dirwalk.c:265
-msgid "ABC...xyz"
-msgstr ""
-
-#: ../dirwalk.c:271
+#: ../dirwalk.c:266
 msgid "<1>spare-1a"
 msgstr "<1>дополнительная-1a"
 
-#: ../dirwalk.c:273
+#: ../dirwalk.c:268
 msgid "<1>spare-1b"
 msgstr "<1>дополнительная-1b"
 
-#: ../dirwalk.c:275
+#: ../dirwalk.c:270
 msgid "<9>spare-9a"
 msgstr "<9>дополнительная-9a"
 
-#: ../dirwalk.c:277
+#: ../dirwalk.c:272
 msgid "<9>spare-9b"
 msgstr "<9>дополнительная-9b"
 
