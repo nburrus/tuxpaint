@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-18 13:54+0900\n"
+"POT-Creation-Date: 2022-12-20 23:35+0900\n"
 "PO-Revision-Date: 2014-06-09 08:08+0530\n"
 "Last-Translator: Khagen Sarma <khagen.sharma@gmail.com>\n"
 "Language-Team: none\n"
@@ -161,19 +161,25 @@ msgstr "O0"
 msgid "1Il|"
 msgstr "1Il|"
 
-#: ../dirwalk.c:266
+#. If neccessary, translate any of following strings using at least
+#. two locale specific characters required to render your language.
+#. Then, the scores for those fonts having such characters will increase.
+#.
+#. You can use two different weight for scoring, 1 or 9, according
+#. to the importance.
+#: ../dirwalk.c:272
 msgid "<1>spare-1a"
 msgstr "<1>अपुग-1a"
 
-#: ../dirwalk.c:268
+#: ../dirwalk.c:274
 msgid "<1>spare-1b"
 msgstr "<1>अपुग-1b"
 
-#: ../dirwalk.c:270
+#: ../dirwalk.c:276
 msgid "<9>spare-9a"
 msgstr "<9>अपुग-9a"
 
-#: ../dirwalk.c:272
+#: ../dirwalk.c:278
 msgid "<9>spare-9b"
 msgstr "<9>अपुग-9b"
 

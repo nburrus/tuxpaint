@@ -260,9 +260,15 @@ void loadfont_callback(SDL_Surface * screen, SDL_Texture * texture,
             font, /* distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye)) */ gettext("1Il|")
           );
 
-          // translation spares -- design not finalized
-#if 0
+          // Translation spares
+	  
           user_font_styles[num_font_styles]->score +=
+	    // If neccessary, translate any of following strings using at least
+	    // two locale specific characters required to render your language.
+	    // Then, the scores for those fonts having such characters will increase.
+	    //
+	    // You can use two different weight for scoring, 1 or 9, according
+	    // to the importance.
             charset_works(font, gettext("<1>spare-1a"));
           user_font_styles[num_font_styles]->score +=
             charset_works(font, gettext("<1>spare-1b"));
@@ -270,7 +276,6 @@ void loadfont_callback(SDL_Surface * screen, SDL_Texture * texture,
             charset_works(font, gettext("<9>spare-9a")) * 9;
           user_font_styles[num_font_styles]->score +=
             charset_works(font, gettext("<9>spare-9b")) * 9;
-#endif
 
 // this really should be dynamic, avoiding the need for a special build
 #ifdef OLPC_XO
