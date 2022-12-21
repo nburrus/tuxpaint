@@ -7,12 +7,17 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.December.9 (0.9.29)
+2022.December.21 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
       Use the "stamprotation=no" option to disable.
       Pere Pujal i Carabantes <perepujal@gmail.com>
+
+  * New Magic Tools:
+    ----------------
+    * [WIP] "Googly Eyes"; place eyeballs in your drawing.`
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Magic Tools:
     ----------------------------
@@ -222,6 +227,12 @@ https://tuxpaint.org/
 
   * Localization Updates:
     ---------------------
+    * Allowing translators to provide strings that help score fonts
+      based on their support for the locale, and placing them higher
+      in the Text and Label tools' font selector.
+      Albert Cahalan <acahalan@gmail.com>
+      and TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
     * Catalan translation
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
