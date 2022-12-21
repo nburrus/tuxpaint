@@ -171,19 +171,19 @@ msgstr "1Il|"
 #. to the importance.
 #: ../dirwalk.c:272
 msgid "<1>spare-1a"
-msgstr "<1>1a-pieza"
+msgstr ""
 
 #: ../dirwalk.c:274
 msgid "<1>spare-1b"
-msgstr "<1>1b-pieza"
+msgstr ""
 
 #: ../dirwalk.c:276
 msgid "<9>spare-9a"
-msgstr "<9>9a-pieza"
+msgstr ""
 
 #: ../dirwalk.c:278
 msgid "<9>spare-9b"
-msgstr "<9>9b-pieza"
+msgstr ""
 
 #: ../fill_tools.h:51
 msgid "Solid"
