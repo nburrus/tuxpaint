@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-20 23:35+0900\n"
-"PO-Revision-Date: 2022-12-20 23:59+0900\n"
+"PO-Revision-Date: 2022-12-22 23:07+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -167,11 +167,11 @@ msgstr "1Il|"
 #. to the importance.
 #: ../dirwalk.c:272
 msgid "<1>spare-1a"
-msgstr "漢字"
+msgstr "漢¥"
 
 #: ../dirwalk.c:274
 msgid "<1>spare-1b"
-msgstr "<1>spare-1b"
+msgstr ""
 
 #: ../dirwalk.c:276
 msgid "<9>spare-9a"
@@ -179,7 +179,7 @@ msgstr "あア"
 
 #: ../dirwalk.c:278
 msgid "<9>spare-9b"
-msgstr "<9>spare-9b"
+msgstr ""
 
 #: ../fill_tools.h:51
 msgid "Solid"
