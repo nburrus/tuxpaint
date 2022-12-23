@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.December.21 (0.9.29)
+2022.December.23 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -106,6 +106,13 @@ https://tuxpaint.org/
       (h/t Pere for pointing this out)
       (Also, some tweaks to the spacing UI)
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Mend crash bug in "Paint" and "Radial Gradient" modes of Fill tool.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      with Bill Kendrick <bill@newbreedsoftware.com>
+      Closes https://sourceforge.net/p/tuxpaint/bugs/269
+      (h/t Miyagi Andel for reporting & Shin-ichi TOYAMA for pinpointing
+      the issue)
 
   * Ports & Building:
     -----------------

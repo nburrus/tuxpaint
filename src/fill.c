@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
+  Last updated: December 23, 2022
   $Id$
 */
 
@@ -643,17 +643,22 @@ void draw_brush_fill_single(SDL_Surface * canvas, int x, int y,
                             Uint32 draw_color, Uint8 * touched)
 {
   int xx, yy;
+  int pix;
 
   for (yy = -16; yy < 16; yy++)
   {
     for (xx = -16; xx < 16; xx++)
     {
-      if ((xx * xx) + (yy * yy) < (16 * 16) &&
-          touched[((y + yy) * canvas->w) + (x + xx)])
-      {
-        putpixels[canvas->format->BytesPerPixel] (canvas, x + xx, y + yy,
-                                                  draw_color);
-      }
+      pix = ((y + yy) * canvas->w) + (x + xx);
+
+      if (pix >= 0 && pix < canvas->w * canvas->h)
+        {
+          if ((xx * xx) + (yy * yy) < (16 * 16) && touched[pix])
+            {
+            putpixels[canvas->format->BytesPerPixel] (canvas, x + xx, y + yy,
+                                                      draw_color);
+          }
+        }
     }
   }
 }
@@ -747,6 +752,7 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top,
 {
   Uint32 old_colr, new_colr;
   int xx, yy;
+  int pix;
   float xd, yd, dist, rad, ratio;
   Uint8 draw_r, draw_g, draw_b, old_r, old_g, old_b, new_r, new_g, new_b;
 
@@ -768,38 +774,43 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top,
     for (xx = x_left; xx <= x_right; xx++)
     {
       /* Only alter the pixels within the flood itself */
-      if (touched[(yy * canvas->w) + xx])
-      {
-        /* Determine the distance from the click point */
-        xd = fabs((float) (xx - x));
-        yd = fabs((float) (yy - y));
-        dist = sqrt(xd * xd + yd * yd);
-        if (dist < rad)
+      pix = (yy * canvas->w) + xx;
+
+      if (pix >= 0 && pix < canvas->w * canvas->h)
         {
-          ratio = (dist / rad);
+          if (touched[pix])
+          {
+            /* Determine the distance from the click point */
+            xd = fabs((float) (xx - x));
+            yd = fabs((float) (yy - y));
+            dist = sqrt(xd * xd + yd * yd);
+            if (dist < rad)
+            {
+              ratio = (dist / rad);
 
-          /* Get the old color, and blend it (with a distance-based ratio) with the target color */
-          old_colr =
-            getpixels[canvas->format->BytesPerPixel] (canvas, xx, yy);
-          SDL_GetRGB(old_colr, canvas->format, &old_r, &old_g, &old_b);
+              /* Get the old color, and blend it (with a distance-based ratio) with the target color */
+              old_colr =
+                getpixels[canvas->format->BytesPerPixel] (canvas, xx, yy);
+              SDL_GetRGB(old_colr, canvas->format, &old_r, &old_g, &old_b);
 
-          /* Apply fuzziness at any antialiased edges we detected */
-          ratio = (ratio * ((float) touched[yy * canvas->w + xx] / 255.0));
+              /* Apply fuzziness at any antialiased edges we detected */
+              ratio = (ratio * ((float) touched[pix] / 255.0));
 
-          new_r =
-            (Uint8) (((float) old_r) * ratio +
-                     ((float) draw_r * (1.00 - ratio)));
-          new_g =
-            (Uint8) (((float) old_g) * ratio +
-                     ((float) draw_g * (1.00 - ratio)));
-          new_b =
-            (Uint8) (((float) old_b) * ratio +
-                     ((float) draw_b * (1.00 - ratio)));
+              new_r =
+                (Uint8) (((float) old_r) * ratio +
+                         ((float) draw_r * (1.00 - ratio)));
+              new_g =
+                (Uint8) (((float) old_g) * ratio +
+                         ((float) draw_g * (1.00 - ratio)));
+              new_b =
+                (Uint8) (((float) old_b) * ratio +
+                         ((float) draw_b * (1.00 - ratio)));
 
-          new_colr = SDL_MapRGB(canvas->format, new_r, new_g, new_b);
-          putpixels[canvas->format->BytesPerPixel] (canvas, xx, yy, new_colr);
+              new_colr = SDL_MapRGB(canvas->format, new_r, new_g, new_b);
+              putpixels[canvas->format->BytesPerPixel] (canvas, xx, yy, new_colr);
+            }
+          }
         }
-      }
     }
   }
 }
