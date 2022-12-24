@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2017-12-23 23:11+0100\n"
 "Last-Translator: Yacine Bouklif <yacine_tizi2003@yahoo.fr>\n"
 "Language-Team: \n"
@@ -1599,6 +1599,16 @@ msgstr "Ssed u selḥu taɣerdayt iwakken ad tgeḍ timkuẓin n zzǧaǧ di tugn
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Ssed iwakken ad taččareḍ merra tugna s temkuẓin n zzǧaǧ."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

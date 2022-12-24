@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2013-01-09 14:39+0530\n"
 "Last-Translator: Chandrakant Dhutadmal\n"
 "Language-Team: Sindhi-PA\n"
@@ -1600,6 +1600,16 @@ msgstr "پنهنجي تصوير مٿان شيشي جي ٿائل رکڻ لاءِ 
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "شيشي جي ٿاءلن ۾ سموري تصوير ڀرڻ لاءِ ڪلڪ ڪريو۔"
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

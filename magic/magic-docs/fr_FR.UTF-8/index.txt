@@ -97,6 +97,7 @@ Artistic
      * Ficelles (2)
      * Ficelles (3)
      * Fleur
+     * Googly Eyes
      * Tornade
 
      ----------------------------------------------------------------------

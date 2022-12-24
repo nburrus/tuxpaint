@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2015-03-07 13:09+0000\n"
 "Last-Translator: Sven Ollino <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1594,6 +1594,16 @@ msgstr "Tee klõps ja liiguta hiirt, et tekitada aknaruudustikku enda pildile."
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Klõpsa, et katta terve pilt aknaruudustikuga."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

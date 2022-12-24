@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2022-02-11 18:33+0530\n"
 "Last-Translator: Prasanta Hembram <prasantahembram720@gmail.com>\n"
 "Language-Team: \n"
@@ -1577,6 +1577,16 @@ msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱪᱮᱛᱟᱱ ᱠᱟᱸᱪ ᱠᱷᱟ�
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "ᱜᱤᱞᱟᱹᱥ ᱠᱷᱟᱯᱨᱟ ᱠᱚᱨᱮ ᱟᱢᱟᱜ ᱡᱚᱛᱚ ᱪᱤᱛᱟᱹᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

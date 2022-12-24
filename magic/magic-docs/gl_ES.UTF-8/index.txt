@@ -91,6 +91,7 @@ Picture Decorations
 Artistic
 
      * Flower
+     * Googly Eyes
      * Lightning
      * Real Rainbow
      * ROYGBIV Rainbow

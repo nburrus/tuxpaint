@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Inuktitut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2013-07-04 16:05-0500\n"
 "Last-Translator: Harvey Ginter <harveyginter@gmail.com>\n"
 "Language-Team: LANGUAGE <harveyginter@gmail.com>\n"
@@ -1595,6 +1595,16 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐃᒐᓛᑦ
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᓕᒫᑦ ᐃᒐᓛᑦᓴᔭᒧᑦ ᖃᓚᑕᐅᑎᓪᓗᒍ."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

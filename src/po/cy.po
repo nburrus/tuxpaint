@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2004-09-21 14:29+0100\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -1598,6 +1598,16 @@ msgstr "Clicia a symuda'r llygoden i deneuo'r llun."
 #, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Clicia a symuda'r llygoden o gwmpas i wneud blociau ar liwiau'r llun."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 #, fuzzy
