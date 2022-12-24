@@ -69,10 +69,9 @@ int googlyeyes_init(magic_api * api)
   char fname[1024];
   int i;
 
-// FIXME
-//  snprintf(fname, sizeof(fname), "%ssounds/magic/googlyeyes.ogg",
-//           api->data_directory);
-//  snd_effect = Mix_LoadWAV(fname);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/googlyeyes.ogg",
+           api->data_directory);
+  snd_effect = Mix_LoadWAV(fname);
 
   for (i = 0; i < NUM_SIZES; i++) {
     googlyeyes_img_bkgd[i] = NULL;
@@ -226,6 +225,9 @@ googlyeyes_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     eye_x = googlyeyes_img_bkgd[which]->w / 2;
   if (eye_y < googlyeyes_img_bkgd[which]->h / 2)
     eye_y = googlyeyes_img_bkgd[which]->h / 2;
+
+  api->stopsound();
+  api->playsound(snd_effect, (x * 255) / canvas->w, 255);
 
   googlyeyes_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
 }
