@@ -232,6 +232,7 @@ googlyeyes_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canva
                int oy ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   SDL_Rect dest;
+  int max_radius;
 
   /* Set the destination for the main background */
   update_rect->x = eye_x - googlyeyes_img_bkgd[which]->w / 2;
@@ -246,11 +247,21 @@ googlyeyes_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canva
   SDL_BlitSurface(googlyeyes_img_bkgd[which], NULL, canvas, update_rect);
 
   /* 2. Draw the pupil */
-  if (sqrt(((x - eye_x) * (x - eye_x)) + ((y - eye_y) * (y - eye_y))) > 
-      ((googlyeyes_img_bkgd[which]->w - googlyeyes_img_pupil[which]->w) / 2)
-  ) {
-    x = eye_x;
-    y = eye_y;
+  max_radius = ((googlyeyes_img_bkgd[which]->w - googlyeyes_img_pupil[which]->w) / 2);
+  if (sqrt(((x - eye_x) * (x - eye_x)) + ((y - eye_y) * (y - eye_y))) > max_radius) {
+    /* If drag position would place pupil outside the circular bounds
+     * of the background, put it on the edge, "looking towards" (pointing at)
+     * the mouse. */
+    /* (Calculations borrowed from Xeyes' "computePupil()",
+     * https://github.com/freedesktop/xorg-xeyes/blob/master/Eyes.c) */
+    double dx, dy, angle;
+
+    dx = (double) (x - eye_x);
+    dy = (double) (y - eye_y);
+    angle = atan2(dy, dx);
+
+    x = eye_x + (cos(angle) * max_radius);
+    y = eye_y + (sin(angle) * max_radius);
   }
 
   dest.x = x - googlyeyes_img_pupil[which]->w / 2;
