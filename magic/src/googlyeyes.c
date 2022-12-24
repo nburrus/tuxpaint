@@ -154,8 +154,7 @@ SDL_Surface *googlyeyes_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  // FIXME
-  snprintf(fname, sizeof(fname), "%simages/magic/googly-eyes-pupil.png",
+  snprintf(fname, sizeof(fname), "%simages/magic/googlyeyes.png",
            api->data_directory);
 
   return (IMG_Load(fname));
@@ -222,6 +221,12 @@ googlyeyes_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 {
   eye_x = x;
   eye_y = y;
+
+  if (eye_x < googlyeyes_img_bkgd[which]->w / 2)
+    eye_x = googlyeyes_img_bkgd[which]->w / 2;
+  if (eye_y < googlyeyes_img_bkgd[which]->h / 2)
+    eye_y = googlyeyes_img_bkgd[which]->h / 2;
+
   googlyeyes_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
 }
 
