@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2020-03-29 23:40+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
@@ -1604,6 +1604,16 @@ msgstr ""
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Feu clic per a omplir la imatge amb un mosaic de vidre."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

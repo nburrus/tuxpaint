@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2006-06-17 23:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -1613,6 +1613,16 @@ msgid "Click to cover your entire picture in glass tiles."
 msgstr ""
 "Кликнете на глувчето и влечете го наоколу за да ја промените бојата на "
 "сликата."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

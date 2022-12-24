@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -1596,6 +1596,16 @@ msgstr "Klik en beweeg de moes um dien tijken dun te moaken."
 #, fuzzy
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Klik en beweeg de moes rond um dien tijken blokkeg te moaken."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 #, fuzzy

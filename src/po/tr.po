@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2012-01-02 22:41+0200\n"
 "Last-Translator: gvhı <asd@gmail.com>\n"
 "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
@@ -1610,6 +1610,16 @@ msgstr "Resminin üzerinde camlı tuğla koymak istediğin yere tıkla ve sürü
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Bütün resmi camlı tuğla ile kaplamak için tıkla."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

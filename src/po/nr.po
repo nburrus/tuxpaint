@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1633,6 +1633,16 @@ msgid "Click to cover your entire picture in glass tiles."
 msgstr ""
 "Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
 "weithombe. "
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"

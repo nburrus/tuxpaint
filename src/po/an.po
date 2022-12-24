@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-24 11:15-0800\n"
+"POT-Creation-Date: 2022-12-24 11:31-0800\n"
 "PO-Revision-Date: 2017-12-29 10:04+0100\n"
 "Last-Translator: juanpabl <jpmart[arroba]unizar.es>\n"
 "Language-Team: softaragonés\n"
@@ -1593,6 +1593,16 @@ msgstr "Fe clic y arrociega lo ratet pa meter recholas sobre lo tuyo dibuixo."
 #: ../../magic/src/glasstile.c:135
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Fe clic pa emplir lo tuyo dibuixo de recholas."
+
+#: ../../magic/src/googlyeyes.c:167
+msgid "Google Eyes"
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:181
+#, c-format
+msgid ""
+"Click to place a %s, then drag and release to make it look that direction."
+msgstr ""
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"
