@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-24 11:31-0800\n"
-"PO-Revision-Date: 2022-09-20 00:52+0200\n"
+"PO-Revision-Date: 2022-12-27 19:31+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -1674,13 +1674,13 @@ msgstr "Feu clic per omplir la imatge amb blocs de vidre."
 
 #: ../../magic/src/googlyeyes.c:167
 msgid "Google Eyes"
-msgstr ""
+msgstr "UUlls"
 
 #: ../../magic/src/googlyeyes.c:181
 #, c-format
 msgid ""
 "Click to place a %s, then drag and release to make it look that direction."
-msgstr ""
+msgstr "Feu clic per dibuixar un ull, llavors arrossegueu i deixeu anar per fer que miri en aquesta direcció."
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"
