@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 11, 2022
+  June 14, 2002 - December 28, 2022
 */
 
 #include "platform.h"
@@ -2332,7 +2332,10 @@ int safe_snprintf(char *str, size_t size, const char *format, ...);
 static int bypass_splash_wait;
 
 
-#define ANNIVERSARY
+/* 2022 marked the 20th anniversary of Tux Paint, so the release
+   that year included a special addition to the splash title screen */
+
+/* #define ANNIVERSARY */
 
 #ifdef ANNIVERSARY
 
