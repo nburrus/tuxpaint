@@ -3,10 +3,10 @@
 
 各種設定について
 
-         Copyright © 2002-2022 by various contributors; AUTHORS.txt 参照.
+         Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                   2022年6月 4日
+                                   2023年1月 2日
 
                       +---------------------------------+
                       |目次                               |

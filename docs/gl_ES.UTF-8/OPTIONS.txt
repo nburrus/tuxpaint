@@ -3,10 +3,10 @@
 
 Documentación de opcións
 
-        Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
+        Copyright © 2002-2023 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               4 de Xuño de 2022
+                              2 de Xaneiro de 2023
 
              +----------------------------------------------------+
              |Índice                                              |
