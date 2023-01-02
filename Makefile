@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2022
+# Copyright (c) 2002-2023
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - December 11, 2022
+# June 14, 2002 - January 2, 2023
 
 
 # The version number, for release:
@@ -535,7 +535,7 @@ endif
 
 $(MOFILES): trans/%.mo: src/po/%.po trans
 	msgfmt -o $@ $<
-k
+
 %.desktop: %.desktop.in $(POTFILES)
 	msgfmt --desktop -d src/po --template $< -o $@
 
