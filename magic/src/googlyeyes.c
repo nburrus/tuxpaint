@@ -3,7 +3,7 @@
    Draws a googly eye at the click position, and looks
    towards where you drag+release.
 
-   Last modified: 2022.12.24
+   Last modified: 2023.01.02
 */
 
 #include <stdio.h>
@@ -18,8 +18,8 @@
 #define NUM_SIZES 2
 int sizes[NUM_SIZES] = { 100, 50 };
 char * size_names[NUM_SIZES] = {
-  "large googly eye",
-  "small googly eye"
+  gettext_noop("large googly eye"),
+  gettext_noop("small googly eye")
 };
 
 Mix_Chunk *snd_effect = NULL;
@@ -176,7 +176,7 @@ char *googlyeyes_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                 int mode ATTRIBUTE_UNUSED)
 {
   char tmp[512];
-  sprintf(tmp, gettext("Click to place a %s, then drag and release to make it look that direction."), size_names[which]);
+  sprintf(tmp, gettext("Click to place a %s, then drag and release to make it look that direction."), gettext(size_names[which]));
 
   return strdup(tmp);
 }
