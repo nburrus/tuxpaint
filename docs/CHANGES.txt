@@ -215,6 +215,10 @@ https://tuxpaint.org/
       unnecessarily long.  The app buildle build time is now ~20x faster.
       Mark Kim <markuskimius@gmail.com>
 
+    * Add missing dependencies in Makefile which result in build failures
+      when building with the --shuffle flag for GNU make.
+      Philipp Rösner <rndxelement@protonmail.com>
+
   * Documentation updates:
     ---------------------
     * New "Quickstart Guide" document added.

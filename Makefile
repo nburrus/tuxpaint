@@ -454,7 +454,7 @@ INSTALLED_MODIRS:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES,$(MOFILES
 
 $(INSTALLED_MODIRS): $(LOCALE_PREFIX)/%/LC_MESSAGES: trans/%.mo
 	install -d -m 755 $@
-$(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
+$(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo $(INSTALLED_MODIRS)
 	install -m 644 $< $@
 
 .PHONY: uninstall-i18n
@@ -533,9 +533,9 @@ endif
 
 # Build the translation files for gettext
 
-$(MOFILES): trans/%.mo: src/po/%.po  
+$(MOFILES): trans/%.mo: src/po/%.po trans
 	msgfmt -o $@ $<
-
+k
 %.desktop: %.desktop.in $(POTFILES)
 	msgfmt --desktop -d src/po --template $< -o $@
 
@@ -654,7 +654,7 @@ install-magic-plugins:
 			$(DATA_PREFIX)/sounds/magic/*.ogg
 
 .PHONY: install-magic-plugins
-install-magic-plugin-dev:	src/tp_magic_api.h
+install-magic-plugin-dev:	src/tp_magic_api.h install-bin
 	@echo
 	@echo "...Installing Magic Tool plug-in development files and docs..."
 	@cp tp-magic-config $(BIN_PREFIX)
@@ -810,7 +810,7 @@ install-example-stamps:
 STARTERS:=$(wildcard starters/*.*)
 INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
 
-$(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
+$(INSTALLED_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
 	install -m 644 $< $@
 
 install-example-starters-dirs:
@@ -851,7 +851,7 @@ $(THUMB_STARTERS):
 		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm $@ ) ; \
 	fi
 
-$(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
+$(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
 	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
 
 .PHONY: echo-thumb-starters
@@ -876,7 +876,7 @@ install-thumb-starters: echo-install-thumb-starters $(INSTALLED_THUMB_STARTERS)
 TEMPLATES:=$(wildcard templates/*.*)
 INSTALLED_TEMPLATES:=$(patsubst %,$(DATA_PREFIX)/%,$(TEMPLATES))
 
-$(INSTALLED_TEMPLATES): $(DATA_PREFIX)/%: %
+$(INSTALLED_TEMPLATES): $(DATA_PREFIX)/%: % install-example-template-dirs
 	install -m 644 $< $@
 
 install-example-template-dirs:
@@ -1027,7 +1027,7 @@ install-haiku:
 
 # Install the import script:
 .PHONY: install-importscript
-install-importscript:
+install-importscript: install-bin
 	@echo
 	@echo "...Installing 'tuxpaint-import' script..."
 	@cp src/tuxpaint-import.sh $(BIN_PREFIX)/tuxpaint-import
@@ -1410,7 +1410,7 @@ SHARED_FLAGS:=-shared -fpic -lm
 MAGIC_C:=$(wildcard magic/src/*.c)
 MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
 
-$(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c  
+$(MAGIC_SO): magic/%.$(SO_TYPE): magic/src/%.c src/tp_magic_api.h
 	$(CC) $(MAGIC_CFLAGS) $(LDFLAGS) $(SHARED_FLAGS) -o $@ $< $(PLUGIN_LIBS)
 # Probably should separate the various flags like the following:
 #	$(CC) $(PLUG_CPPFLAGS) $(PLUG_CFLAGS) $(PLUG_LDFLAGS) -o $@ $< $(PLUG_LIBS)
