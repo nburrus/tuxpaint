@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 12:00-0800\n"
-"PO-Revision-Date: 2022-12-29 09:19+0900\n"
+"PO-Revision-Date: 2023-01-04 18:41+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1633,11 +1633,11 @@ msgstr "えを クリックして ぜんたいに ガラスの タイルを か�
 
 #: ../../magic/src/googlyeyes.c:21
 msgid "large googly eye"
-msgstr ""
+msgstr "おおきな めだま"
 
 #: ../../magic/src/googlyeyes.c:22
 msgid "small googly eye"
-msgstr ""
+msgstr "ちいさな めだま"
 
 #: ../../magic/src/googlyeyes.c:165
 msgid "Google Eyes"
@@ -1648,7 +1648,8 @@ msgstr "めだま"
 msgid ""
 "Click to place a %s, then drag and release to make it look that direction."
 msgstr ""
-"くりっくしたあと どらっぐして めだまのむきをきめたら ぼたんをはなそう。"
+"%sを かこう！ クリックして ばしょをきめたあと マウスをうごかして すきなむき"
+"で ボタンをはなします。"
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"
