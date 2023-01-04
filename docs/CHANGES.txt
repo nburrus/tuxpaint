@@ -2,12 +2,12 @@ CHANGES.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2022
+Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.December.28 (0.9.29)
+2022.January.3 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -115,6 +115,11 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/269
       (h/t Miyagi Andel for reporting & Shin-ichi TOYAMA for pinpointing
       the issue)
+
+    * Disallow using Ctrl-Z shortcut while drawing or rotating shapes
+      or shapes, to avoid unexpected results.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/239/
+      Pere Pujal i Carabantes <perepujal@gmail.com>
 
   * Ports & Building:
     -----------------

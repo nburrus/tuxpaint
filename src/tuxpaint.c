@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2022
+  Copyright (c) 2002-2023
   by various contributors; see AUTHORS.txt
   https://tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 28, 2022
+  June 14, 2002 - January 3, 2023
 */
 
 #include "platform.h"
@@ -2861,9 +2861,10 @@ static void mainloop(void)
             magic_switchin(canvas);
         }
 #endif
-        else if (key == SDLK_z && (mod & KMOD_CTRL) && !noshortcuts)
+        else if (key == SDLK_z && (mod & KMOD_CTRL) && !noshortcuts && !button_down && !emulate_button_pressed && stamp_tool_mode != STAMP_TOOL_MODE_ROTATE && shape_tool_mode != SHAPE_TOOL_MODE_ROTATE)
         {
           /* Ctrl-Z - Undo */
+          /* (As long as we're not in the middle of something!!!) */
 
           magic_switchout(canvas);
 
