@@ -3,12 +3,12 @@
 
                      A simple drawing program for children
 
-        Copyright © 2002-2022 by various contributors; see AUTHORS.txt.
+        Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                               diciembre 9, 2022
+                                 enero 4, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |

@@ -3,12 +3,12 @@
 
                               子供向けのシンプルなお絵かきプログラム
 
-         Copyright © 2002-2022 by various contributors; AUTHORS.txt 参照.
+         Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
                              @TuxPaintTweets（ツイッター）
                                Tux Paint（Tumblr）
 
-                                  2022年12月 9日
+                                   2023年1月 4日
 
                     +-------------------------------------+
                     |目次                                   |

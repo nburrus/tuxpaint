@@ -3,12 +3,12 @@
 
                    Un sinxelo programa de debuxo para cativos
 
-        Copyright © 2002-2022 by varios colaboradores; see AUTHORS.txt.
+        Copyright © 2002-2023 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
                            @TuxPaintTweets on Twitter
                               Tux Paint on Tumblr
 
-                             9 de Decembro de 2022
+                              4 de Xaneiro de 2023
 
          +-----------------------------------------------------------+
          |Índice                                                     |
