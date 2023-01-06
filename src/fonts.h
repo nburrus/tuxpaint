@@ -1,7 +1,7 @@
 /*
   fonts.h
 
-  Copyright (c) 2009-2022
+  Copyright (c) 2009-2023
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
+  Last updated: January 6, 2023
   $Id$
 */
 
@@ -43,7 +43,7 @@
 #include "SDL2_Pango.h"
 #endif
 
-#define PANGO_DEFAULT_FONT "BitStream Vera"
+#define PANGO_DEFAULT_FONT "DejaVu Sans"
 
 #include "compiler.h"
 
