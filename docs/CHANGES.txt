@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.January.6 (0.9.29)
+2022.January.7 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -253,6 +253,9 @@ https://tuxpaint.org/
       in the Text and Label tools' font selector.
       Albert Cahalan <acahalan@gmail.com>
       and TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+    * Bulgarian
+      Vankata453 <https://sourceforge.net/u/vankata453>
 
     * Catalan translation
       Pere Pujal i Carabantes <perepujal@gmail.com>

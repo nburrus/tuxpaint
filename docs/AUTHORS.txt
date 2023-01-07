@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 2, 2023
+June 17, 2002 - January 7, 2023
 
 * Design and Coding:
 
@@ -579,6 +579,7 @@ June 17, 2002 - January 2, 2023
     Martin Zhekov <mjekov@bginfo.net>
     Yavor Doganov <yavor@doganov.org>
     Stefani Stoyanova
+    Vankata453 <https://sourceforge.net/u/vankata453>
 
   * Canadian English
     Matthew Lange, Canonical Ltd, and Rosetta Contributors

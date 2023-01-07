@@ -1,9 +1,9 @@
 # TuxPaint Bulgarian translation file
-# Copyright (C) 2005-2014 the tuxpaint team.
+# Copyright (C) 2005-2023 the tuxpaint team.
 # This file is distributed under the same license as the TuxPaint package.
 # Yavor Doganov <yavor@gnu.org>, 2005, 2006, 2007. (inactive)
 # Stefani Stoyanova, 2011. (inactive)
-# Please consider updating this translation.
+# Vankata453 <https://sourceforge.net/u/vankata453/profile/>, 2023.
 #
 msgid ""
 msgstr ""
@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-02 12:00-0800\n"
 "PO-Revision-Date: 2023-01-06 18:03+0200\n"
-"Last-Translator: \n"
+"Last-Translator: Vankata453\n"
 "Language-Team: \n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
