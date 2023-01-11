@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - January 2, 2023
+# June 14, 2002 - January 10, 2023
 
 
 # The version number, for release:
@@ -533,7 +533,7 @@ endif
 
 # Build the translation files for gettext
 
-$(MOFILES): trans/%.mo: src/po/%.po trans
+$(MOFILES): trans/%.mo: src/po/%.po
 	msgfmt -o $@ $<
 
 %.desktop: %.desktop.in $(POTFILES)
