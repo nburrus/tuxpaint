@@ -2246,6 +2246,7 @@ static char *uppercase(const char *restrict const str);
 static wchar_t *uppercase_w(const wchar_t *restrict const str);
 static char *textdir(const char *const str);
 static SDL_Surface *do_render_button_label(const char *const label);
+static SDL_Surface * crop_surface(SDL_Surface * surf);
 static void create_button_labels(void);
 static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param);
 static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param);
@@ -9805,7 +9806,7 @@ static void signal_handler(int sig)
 /* Render a button label using the appropriate string/font: */
 static SDL_Surface *do_render_button_label(const char *const label)
 {
-  SDL_Surface *tmp_surf, *surf;
+  SDL_Surface *tmp_surf1, *tmp_surf, *surf;
   SDL_Color black = { 0, 0, 0, 0 };
   TuxPaint_Font *myfont;
   int want_h;
@@ -9837,8 +9838,18 @@ static SDL_Surface *do_render_button_label(const char *const label)
       DEBUG_PRINTF("Need local font\n");
     }
 
-  tmp_surf = render_text(myfont, upstr, black);
+  tmp_surf1 = render_text(myfont, upstr, black);
   free(upstr);
+
+  // FIXME: CROP LABELS
+  tmp_surf = tmp_surf1;
+  /*
+  tmp_surf = crop_surface(tmp_surf1);
+  if(tmp_surf == NULL)
+    return NULL;
+
+  SDL_FreeSurface(tmp_surf1);
+  */
 
   DEBUG_PRINTF("Rendered as: %d x %d\n", tmp_surf->w, tmp_surf->h);
 
@@ -9856,6 +9867,68 @@ static SDL_Surface *do_render_button_label(const char *const label)
   DEBUG_PRINTF("\n");
 
   return surf;
+}
+
+static SDL_Surface * crop_surface(SDL_Surface * surf) {
+  int top, bottom, left, right, x, y, w, h;
+  Uint8 r, g, b, a, r1, g1, b1, a1;
+  Uint32(*getpixel) (SDL_Surface *, int, int) =
+    getpixels[surf->format->BytesPerPixel];
+  SDL_Surface * new_surf;
+  SDL_Rect src_rect;
+
+  SDL_GetRGBA(getpixel(surf, 0, 0), surf->format, &r1, &g1, &b1, &a1);
+
+  top = surf->h - 1;
+  bottom = 0;
+  left = surf->w - 1;
+  right = 0;
+
+  for (y = 0; y < surf->h; y++) {
+    for (x = 0; x < surf->w; x++) {
+      SDL_GetRGBA(getpixel(surf, x, y), surf->format, &r, &g, &b, &a);
+      if (r != r1 || g != g1 || b != b1 || a != a1) {
+        if (y < top)
+          top = y;
+        if (x < left)
+          left = x;
+        if (y > bottom)
+          bottom = y; 
+        if (x > right)
+          right = x;
+      }
+    }
+  }
+
+  w = right - left + 1;
+  h = bottom - top + 1;
+
+  DEBUG_PRINTF("Cropping %d x %d to %d x %d, from (%d,%d)\n", surf->w, surf->h, w, h, left, top);
+
+  if ((top == 0 && bottom == surf->h - 1 && left == 0 && right == surf->w - 1) ||
+      w <= 0 || h <= 0)
+    {
+      /* Not cropped; return the whole thing */
+      return SDL_DisplayFormatAlpha(surf);
+    }
+
+  new_surf = SDL_CreateRGBSurface(surf->flags,
+                                  w, h, surf->format->BitsPerPixel,
+                                  surf->format->Rmask, surf->format->Gmask,
+                                  surf->format->Bmask, surf->format->Amask);
+  if (new_surf == NULL)
+    {
+      fprintf(stderr, "crop_surface() cannot create new surface!\n");
+      return NULL;
+    }
+
+  src_rect.x = left;
+  src_rect.y = top;
+  src_rect.w = w;
+  src_rect.h = h;
+  SDL_BlitSurface(surf, &src_rect, new_surf, NULL);
+
+  return new_surf;
 }
 
 /**
@@ -10224,7 +10297,7 @@ static void draw_toolbar(void)
         ((i / 2) * button_h) + r_ttools.h +
         (2 * button_w) / ORIGINAL_BUTTON_SIZE +
         (((44 + button_label_y_nudge) * button_w) / ORIGINAL_BUTTON_SIZE -
-         img_tool_names[tool]->h) + off_y;
+         img_tool_names[tool]->h) + off_y; // FIXME: CROP LABELS
 
       SDL_BlitSurface(img_tool_names[tool], NULL, screen, &dest);
     }
@@ -10330,7 +10403,7 @@ static void draw_magic(void)
         (((i / 2) * button_h) + r_ttoolopt.h +
          (4 * button_h) / ORIGINAL_BUTTON_SIZE +
          ((44 * button_h) / ORIGINAL_BUTTON_SIZE -
-          magics[magic_group][magic].img_name->h) + off_y);
+          magics[magic_group][magic].img_name->h) + off_y); // FIXME: CROP LABELS
 
       SDL_BlitSurface(magics[magic_group][magic].img_name, NULL, screen,
                       &dest);
@@ -10765,9 +10838,7 @@ static void draw_fonts(void)
       most = most + gd_toolopt.cols + gd_toolopt.cols /* Ugly! */ ;
   }
 
-#ifdef DEBUG
-  printf("there are %d font families\n", num_font_families);
-#endif
+  DEBUG_PRINTF("there are %d font families\n", num_font_families);
 
 
   /* Do we need scrollbars? */
@@ -11508,7 +11579,7 @@ static void draw_shapes(void)
       dest.y =
         ((i / 2) * button_h) + r_ttoolopt.h +
         (4 * button_h) / ORIGINAL_BUTTON_SIZE +
-        ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_shape_names[shape]->h) +
+        ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_shape_names[shape]->h) + // FIXME: CROP LABELS
         off_y;
 
       SDL_BlitSurface(img_shape_names[shape], NULL, screen, &dest);
@@ -11848,7 +11919,7 @@ static void draw_fills(void)
       dest.y =
         ((i / 2) * button_h) + r_ttoolopt.h +
         (4 * button_h) / ORIGINAL_BUTTON_SIZE +
-        ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->h) +
+        ((44 * button_h) / ORIGINAL_BUTTON_SIZE - img_fill_names[i]->h) + // FIXME: CROP LABELS
         off_y;
 
       SDL_BlitSurface(img_fill_names[i], NULL, screen, &dest);
@@ -17541,7 +17612,7 @@ static int do_open(void)
 
           dest.x = r_ttools.w + (button_w - img_openlabels_open->w) / 2;
           dest.y =
-            (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h;
+            (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h; // FIXME: CROP LABELS
           SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
 
 
@@ -17563,7 +17634,7 @@ static int do_open(void)
                                      img_openlabels_slideshow->w) / 2;
           dest.y =
             (button_h * buttons_tall + r_ttools.h) -
-            img_openlabels_slideshow->h;
+            img_openlabels_slideshow->h; // FIXME: CROP LABELS
           SDL_BlitSurface(img_openlabels_slideshow, NULL, screen, &dest);
 
 
@@ -17578,7 +17649,7 @@ static int do_open(void)
                                                       img_openlabels_back->w)
             / 2;
           dest.y =
-            (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
+            (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h; // FIXME: CROP LABELS
           SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
 
@@ -17605,7 +17676,7 @@ static int do_open(void)
             (button_w - img_openlabels_pict_export->w) / 2;
           dest.y =
             (button_h * buttons_tall + r_ttools.h) -
-            img_openlabels_pict_export->h;
+            img_openlabels_pict_export->h; // FIXME: CROP LABELS
           SDL_BlitSurface(img_openlabels_pict_export, NULL, screen, &dest);
 
 
@@ -17625,7 +17696,7 @@ static int do_open(void)
                                                                  img_openlabels_erase->
                                                                  w) / 2;
           dest.y =
-            (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h;
+            (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h; // FIXME: CROP LABELS
           SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
 
 
@@ -18812,7 +18883,7 @@ static int do_slideshow(void)
 
       dest.x = r_ttools.w + (button_w - img_openlabels_play->w) / 2;
       dest.y =
-        (button_h * buttons_tall + r_ttools.h) - img_openlabels_play->h;
+        (button_h * buttons_tall + r_ttools.h) - img_openlabels_play->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_play, NULL, screen, &dest);
 
 
@@ -18833,7 +18904,7 @@ static int do_slideshow(void)
                                                       img_openlabels_gif_export->
                                                       w) / 2;
       dest.y =
-        (button_h * buttons_tall + r_ttools.h) - img_openlabels_gif_export->h;
+        (button_h * buttons_tall + r_ttools.h) - img_openlabels_gif_export->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_gif_export, NULL, screen, &dest);
 
 
@@ -18847,7 +18918,7 @@ static int do_slideshow(void)
         WINDOW_WIDTH - r_ttoolopt.w - button_w + (button_w -
                                                   img_openlabels_back->w) / 2;
       dest.y =
-        (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
+        (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
 
@@ -19492,7 +19563,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname,
       SDL_BlitSurface(img_back, NULL, screen, &dest);
 
       dest.x = screen->w - button_w + (button_w - img_openlabels_back->w) / 2;
-      dest.y = screen->h - img_openlabels_back->h;
+      dest.y = screen->h - img_openlabels_back->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
       /* "Next" button: */
@@ -19502,7 +19573,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname,
       SDL_BlitSurface(img_play, NULL, screen, &dest);
 
       dest.x = (button_w - img_openlabels_next->w) / 2;
-      dest.y = screen->h - img_openlabels_next->h;
+      dest.y = screen->h - img_openlabels_next->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_next, NULL, screen, &dest);
 
 
@@ -23251,7 +23322,7 @@ static int do_new_dialog(void)
 
       dest.x = r_ttools.w + (button_w - img_openlabels_open->w) / 2;
       dest.y =
-        (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h;
+        (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
 
 
@@ -23265,7 +23336,7 @@ static int do_new_dialog(void)
         WINDOW_WIDTH - r_ttoolopt.w - button_w + (button_w -
                                                   img_openlabels_back->w) / 2;
       dest.y =
-        (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
+        (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h; // FIXME: CROP LABELS
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
 
