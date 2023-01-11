@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 3, 2023
+  June 14, 2002 - January 11, 2023
 */
 
 #include "platform.h"
@@ -9808,28 +9808,52 @@ static SDL_Surface *do_render_button_label(const char *const label)
   SDL_Surface *tmp_surf, *surf;
   SDL_Color black = { 0, 0, 0, 0 };
   TuxPaint_Font *myfont;
+  int want_h;
   char *td_str = textdir(gettext(label));
   char *upstr = uppercase(td_str);
 
   free(td_str);
 
+  DEBUG_PRINTF("do_render_button_label(\"%s\")\n", label);
   if (button_w <= ORIGINAL_BUTTON_SIZE)
-    myfont = small_font;
+    {
+      DEBUG_PRINTF("Small font\n");
+      myfont = small_font;
+    }
   else if (button_w <= ORIGINAL_BUTTON_SIZE * 3)
-    myfont = medium_font;
+    {
+      DEBUG_PRINTF("Medium font\n");
+      myfont = medium_font;
+    }
   else
-    myfont = large_font;
+    {
+      DEBUG_PRINTF("Large font\n");
+      myfont = large_font;
+    }
 
   if (need_own_font && strcmp(gettext(label), label))
-    myfont = locale_font;
+    {
+      myfont = locale_font;
+      DEBUG_PRINTF("Need local font\n");
+    }
+
   tmp_surf = render_text(myfont, upstr, black);
   free(upstr);
 
+  DEBUG_PRINTF("Rendered as: %d x %d\n", tmp_surf->w, tmp_surf->h);
+
+  want_h = (int) (18 * button_scale + button_label_y_nudge);
+
+  DEBUG_PRINTF("  button_w = %d -- min w = %d\n", button_w, min(button_w, tmp_surf->w));
+  DEBUG_PRINTF("  want_h   = %d -- min h = %d\n", want_h, min(want_h, tmp_surf->h));
+
   surf =
     thumbnail(tmp_surf, min(button_w, tmp_surf->w),
-              min((int) (18 * button_scale + button_label_y_nudge),
-                  tmp_surf->h), 0);
+              min(want_h, tmp_surf->h), 1 /* keep aspect! */);
   SDL_FreeSurface(tmp_surf);
+
+  DEBUG_PRINTF("Resized to:  %d x %d\n", surf->w, surf->h);
+  DEBUG_PRINTF("\n");
 
   return surf;
 }
@@ -10829,15 +10853,11 @@ static void draw_fonts(void)
       fonthandle = getfonthandle(font);
       if (charset_works(fonthandle, gettext("Aa"))) {
         /* Use the localized label string (e.g., "あぁ" in Japanese) */
-#ifdef DEBUG
-        printf("Font label '%s' for %s\n", gettext("Aa"), fonthandle->desc);
-#endif
+        DEBUG_PRINTF("Font label '%s' for %s\n", gettext("Aa"), fonthandle->desc);
         tmp_surf_1 = render_text(fonthandle, gettext("Aa"), black);
       } else {
         /* Fallback; use the latin "Aa" string */
-#ifdef DEBUG
-        printf("Fallback font label 'Aa' for %s\n", fonthandle->desc);
-#endif
+        DEBUG_PRINTF("Fallback font label 'Aa' for %s\n", fonthandle->desc);
         tmp_surf_1 = render_text(fonthandle, "Aa", black);
       }
 
@@ -11856,13 +11876,13 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   int x, y;
   float src_x, src_y, off_x, off_y;
   SDL_Surface *s;
-
 #ifdef GAMMA_CORRECTED_THUMBNAILS
   float tr, tg, tb, ta;
 #else
   Uint32 tr, tg, tb, ta;
 #endif
   Uint8 r, g, b, a;
+  int new_x, new_y;
   float xscale, yscale;
   int tmp;
   void (*putpixel)(SDL_Surface *, int, int, Uint32);
@@ -11873,36 +11893,43 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y,
   /* Determine scale and centering offsets: */
   if (!keep_aspect)
   {
+    DEBUG_PRINTF("thumbnail2() asked for %d x %d => %d x %d, DON'T keep aspect\n", src->w, src->h, max_x, max_y);
+
     yscale = (float) ((float) src->h / (float) max_y);
     xscale = (float) ((float) src->w / (float) max_x);
-
-    off_x = 0;
-    off_y = 0;
   }
   else
   {
-    if (src->h > src->w)
-    {
-      yscale = (float) ((float) src->h / (float) max_y);
+    DEBUG_PRINTF("thumbnail2() asked for %d x %d => %d x %d, with aspect\n", src->w, src->h, max_x, max_y);
+
+    yscale = (float) ((float) src->h / (float) max_y);
+    xscale = (float) ((float) src->w / (float) max_x);
+    if (yscale > xscale)
       xscale = yscale;
-
-      off_x = ((src->h - src->w) / xscale) / 2;
-      off_y = 0;
-    }
-    else
-    {
-      xscale = (float) ((float) src->w / (float) max_x);
-      yscale = xscale;
-
-      off_x = 0;
-      off_y = ((src->w - src->h) / xscale) / 2;
-    }
   }
 
+  new_x = (int) ((float) src->w / xscale);
+  new_y = (int) ((float) src->h / yscale);
+
+  if (!keep_aspect)
+    {
+      off_x = 0;
+      off_y = 0;
+    }
+  else
+    {
+      off_x = ((float) max_x - (float) new_x) / 2.0;
+      off_y = ((float) max_y - (float) new_y) / 2.0;
+      DEBUG_PRINTF("  off_x = (%d - %d) / 2 = %.2f\n", max_x, new_x, off_x);
+      DEBUG_PRINTF("  off_y = (%d - %d) / 2 = %.2f\n", max_y, new_y, off_y);
+    }
 
 #ifndef NO_BILINEAR
   if (max_x > src->w && max_y > src->h)
-    return (zoom(src, max_x, max_y));
+    {
+      DEBUG_PRINTF("Calling zoom(%d,%d)\n", new_x, new_y);
+      return (zoom(src, new_x, new_y));
+    }
 #endif
 
 
@@ -12265,9 +12292,7 @@ static void do_undo(void)
     if (cur_undo < 0)
       cur_undo = NUM_UNDO_BUFS - 1;
 
-#ifdef DEBUG
-    printf("BLITTING: %d\n", cur_undo);
-#endif
+    DEBUG_PRINTF("BLITTING: %d\n", cur_undo);
     SDL_BlitSurface(undo_bufs[cur_undo], NULL, canvas, NULL);
 
 
