@@ -45,8 +45,6 @@ void googlyeyes_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
 void googlyeyes_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
                     SDL_Rect * update_rect);
-void googlyeyes_line_callback_drag(void *ptr, int which, SDL_Surface * canvas,
-                                  SDL_Surface * snapshot, int x, int y);
 void googlyeyes_release(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * snapshot, int x, int y,
                        SDL_Rect * update_rect);
@@ -297,13 +295,6 @@ void googlyeyes_set_color(magic_api * api ATTRIBUTE_UNUSED,
 {
 }
 
-
-void googlyeyes_line_callback_drag(void *ptr ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                                  SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                                  SDL_Surface * snapshot ATTRIBUTE_UNUSED,
-                                  int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED)
-{
-}
 
 void googlyeyes_switchin(magic_api * api ATTRIBUTE_UNUSED,
                         int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
