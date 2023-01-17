@@ -21,13 +21,19 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+// #define DEBUG_RADIUS
+// #define DEBUG_ALPHA
+// #define DEBUG_ANGLE
+
 Mix_Chunk *snd_effect = NULL;
 SDL_Surface * rivulet_img_brush_add = NULL,
+  * rivulet_img_brush_alpha = NULL,
   * rivulet_img_brush_sub = NULL,
   * rivulet_img_angles = NULL;
 SDL_Surface * rivulet_snapshot = NULL;
 int riv_x, riv_y;
 Uint8 * riv_radii = NULL,
+  * riv_alpha = NULL,
   * riv_angles = NULL;
 
 Uint32 rivulet_api_version(void);
@@ -74,10 +80,20 @@ int rivulet_init(magic_api * api)
 //  snd_effect = Mix_LoadWAV(fname);
 
   /* Load our images */
+
   snprintf(fname, sizeof(fname), "%simages/magic/rivulet-brush-add.png",
            api->data_directory);
   rivulet_img_brush_add = IMG_Load(fname);
   if (rivulet_img_brush_add == NULL)
+  {
+    fprintf(stderr, "Can't open %s\n", fname);
+    return 0;
+  }
+
+  snprintf(fname, sizeof(fname), "%simages/magic/rivulet-brush-alpha.png",
+           api->data_directory);
+  rivulet_img_brush_alpha = IMG_Load(fname);
+  if (rivulet_img_brush_alpha == NULL)
   {
     fprintf(stderr, "Can't open %s\n", fname);
     return 0;
@@ -92,7 +108,7 @@ int rivulet_init(magic_api * api)
     return 0;
   }
 
-  snprintf(fname, sizeof(fname), "%simages/magic/rivulet-brush-sub.png",
+  snprintf(fname, sizeof(fname), "%simages/magic/rivulet-angles.png",
            api->data_directory);
   rivulet_img_angles = IMG_Load(fname);
   if (rivulet_img_angles == NULL)
@@ -159,6 +175,9 @@ void rivulet_shutdown(magic_api * api ATTRIBUTE_UNUSED)
   if (rivulet_img_brush_add != NULL)
     SDL_FreeSurface(rivulet_img_brush_add);
 
+  if (rivulet_img_brush_alpha != NULL)
+    SDL_FreeSurface(rivulet_img_brush_alpha);
+
   if (rivulet_img_brush_sub != NULL)
     SDL_FreeSurface(rivulet_img_brush_sub);
 
@@ -167,6 +186,9 @@ void rivulet_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 
   if (riv_radii != NULL)
     free(riv_radii);
+
+  if (riv_alpha != NULL)
+    free(riv_alpha);
 
   if (riv_angles != NULL)
     free(riv_angles);
@@ -179,7 +201,7 @@ rivulet_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                 SDL_Rect * update_rect)
 {
   riv_x = x;
-  riv_y = y;
+  riv_y = y - 1;
 
   if (riv_radii == NULL || rivulet_snapshot == NULL)
     return;
@@ -205,7 +227,7 @@ rivulet_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
     return;
 
   /* Don't go backwards */
-  if (y < riv_y)
+  if (y <= riv_y)
     return;
 
   /* Don't stray too far left/right */
@@ -237,39 +259,72 @@ rivulet_release(magic_api * api, int which ATTRIBUTE_UNUSED,
                   int x, int y, /* ignored and reused in a for-loop */
                   SDL_Rect * update_rect)
 {
-  int src_x, src_y;
+  int src_x, src_y, idx;
   double radius, angle_deg, angle_rad;
+  Uint8 alpha;
   Uint32 pix;
+  Uint8 r, g, b, r1, g1, b1, r2, g2, b2;
+
 
   if (riv_radii == NULL || rivulet_snapshot == NULL)
     return;
 
   /* Undo all of the placeholder drawings */
-  SDL_BlitSurface(snapshot, NULL, canvas, NULL);
+  SDL_BlitSurface(rivulet_snapshot, NULL, canvas, NULL);
 
   /* Apply the lense effect */
   for (y = 0; y < canvas->h; y++)
   {
     for (x = 0; x < canvas->w; x++)
     {
-      radius = ((double) riv_radii[(y * canvas->w) + x]) / 2.0;
+      idx = (y * canvas->w) + x;
+
+#if defined(DEBUG_RADIUS) || defined(DEBUG_ALPHA) || defined(DEBUG_ANGLE)
+      int v;
+
+#if defined(DEBUG_RADIUS)
+      v = riv_radii[idx];
+#elif defined(DEBUG_ALPHA)
+      v = riv_alpha[idx];
+#else
+      v = riv_angles[idx];
+#endif
+
+      api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, v, 64, 64));
+#else
+
+      radius = ((double) riv_radii[idx]);
+      alpha = riv_alpha[idx] / 2;
 
       if (radius != 0.0) {
         /* Angle is stored as 0-255 (so 256 would be 360 degrees) */
-        /* FIXME: Simplify this :-P */
-        angle_deg = ((((double) riv_angles[(y * canvas->w) + x]) / 256.0) * 360.0);
-
-//        angle_deg = angle_deg + 90.0;
+        angle_deg = ((((double) riv_angles[idx]) / 256.0) * 360.0);
 
         angle_rad = (angle_deg * M_PI) / 180.0;
 
-        /* FIXME */
-        src_x = x - cos(angle_rad) * radius;
+        src_x = x + cos(angle_rad) * radius;
         src_y = y - sin(angle_rad) * radius;
 
+        pix = api->getpixel(rivulet_snapshot, x, y);
+        SDL_GetRGB(pix, rivulet_snapshot->format, &r1, &g1, &b1);
+
         pix = api->getpixel(rivulet_snapshot, src_x, src_y);
-        api->putpixel(canvas, x, y, pix);
+        SDL_GetRGB(pix, rivulet_snapshot->format, &r2, &g2, &b2);
+
+        r = ((r2 * alpha) / 255) + ((r1 * (255 - alpha) / 255));
+        g = ((g2 * alpha) / 255) + ((g1 * (255 - alpha) / 255));
+        b = ((b2 * alpha) / 255) + ((b1 * (255 - alpha) / 255));
+
+        if (riv_radii[idx] > 128)
+        {
+          r = (r + riv_radii[idx]) / 2;
+          g = (g + riv_radii[idx]) / 2;
+          b = (b + riv_radii[idx]) / 2;
+        }
+
+        api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
       }
+#endif
     }
   }
 
@@ -293,11 +348,11 @@ void rivulet_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api * api;
   SDL_Rect dest;
-  int w, h, half_w, half_h;
+  int w, h, half_w, half_h, idx;
   int src_x, src_y, dest_x, dest_y;
   Uint32 pix;
-  Uint8 r, g, b;
-  int new_rad;
+  Uint8 intensity, tmp;
+  int alpha, radius;
 
   api = (magic_api *) ptr;
 
@@ -324,24 +379,38 @@ void rivulet_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
       for (src_x = 0; src_x < w; src_x++) {
         dest_x = (x - half_w) + src_x;
         if (dest_x >= 0 && dest_x < canvas->w) {
+          idx = (dest_y * canvas->w) + dest_x;
+
+          /* Add alpha */
+          pix = api->getpixel(rivulet_img_brush_alpha, src_x, src_y);
+          SDL_GetRGB(pix, rivulet_img_brush_alpha->format, &intensity, &tmp, &tmp);
+
+          alpha = ((int) riv_alpha[idx] + (int) (intensity));
+          if (alpha > 255)
+            alpha = 255;
+          riv_alpha[idx] = (Uint8) alpha;
+
+
           /* Apply radius brush to radius displacement map */
-          pix = api->getpixel(rivulet_img_brush_add, src_x, src_y);
-          SDL_GetRGB(pix, rivulet_img_brush_add->format, &r, &g, &b);
+          if (alpha > 0)
+            {
+              pix = api->getpixel(rivulet_img_brush_add, src_x, src_y);
+              SDL_GetRGB(pix, rivulet_img_brush_add->format, &intensity, &tmp, &tmp);
 
-          new_rad = ((int) riv_radii[(dest_y * canvas->w) + dest_x] + (int) r - 64) / 2;
-          if (new_rad < 0)
-            new_rad = 0;
-          if (new_rad > 255)
-            new_rad = 255;
-
-          riv_radii[(dest_y * canvas->w) + dest_x] = (Uint8) new_rad;
+              radius = ((int) riv_radii[idx] + (int) intensity - 128);
+              if (radius < 0)
+                radius = 0;
+              if (radius > 255)
+                radius = 255;
+              riv_radii[idx] = radius;
+            }
 
 
           /* Apply angle brush to angle displacement map */
           pix = api->getpixel(rivulet_img_angles, src_x, src_y);
-          SDL_GetRGB(pix, rivulet_img_angles->format, &r, &g, &b);
+          SDL_GetRGB(pix, rivulet_img_angles->format, &intensity, &tmp, &tmp);
 
-          riv_angles[(dest_y * canvas->w) + dest_x] = r;
+          riv_angles[idx] = intensity;
         }
       }
     }
@@ -361,11 +430,25 @@ void rivulet_switchin(magic_api * api ATTRIBUTE_UNUSED,
           return;
         }
 
+      riv_alpha = (Uint8 *) malloc(sizeof(Uint8) * canvas->w * canvas->h);
+      if (riv_alpha == NULL)
+        {
+          free(riv_radii);
+          riv_radii = NULL;
+
+          fprintf(stderr, "rivulet: Cannot malloc() riv_alpha!\n");
+          return;
+        }
+
       riv_angles = (Uint8 *) malloc(sizeof(Uint8) * canvas->w * canvas->h);
       if (riv_angles == NULL)
         {
           free(riv_radii);
           riv_radii = NULL;
+
+          free(riv_alpha);
+          riv_alpha = NULL;
+
           fprintf(stderr, "rivulet: Cannot malloc() riv_angles!\n");
           return;
         }
@@ -395,6 +478,8 @@ void zero_riv_arrays(SDL_Surface * canvas)
 {
   if (riv_radii != NULL)
     memset(riv_radii, 0, (canvas->w * canvas->h));
+  if (riv_alpha != NULL)
+    memset(riv_alpha, 0, (canvas->w * canvas->h));
   if (riv_angles != NULL)
     memset(riv_angles, 0, (canvas->w * canvas->h));
 }
