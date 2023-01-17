@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.January.11 (0.9.29)
+2022.January.16 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -20,6 +20,8 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
       (Sound effect licensed as Creative Commons 0 by
       https://freesound.org/people/MrFossy/)
+
+    * [WIP] "Rivulet"; apply rivulets of water to the canvas
 
   * Improvements to Magic Tools:
     ----------------------------
