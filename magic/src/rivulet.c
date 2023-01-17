@@ -289,7 +289,6 @@ void rivulet_line_callback_drag(void *ptr ATTRIBUTE_UNUSED, int which ATTRIBUTE_
   dest.h = rivulet_img_brush_add->h;
 
   SDL_BlitSurface(rivulet_img_brush_add, NULL, canvas, &dest);
-
 }
 
 void rivulet_switchin(magic_api * api ATTRIBUTE_UNUSED,
