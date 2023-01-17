@@ -136,7 +136,7 @@ char *rivulet_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                 int which ATTRIBUTE_UNUSED,
                                 int mode ATTRIBUTE_UNUSED)
 {
-  return(gettext("Click and drag to add water rivulets to your drawing"));
+  return(gettext("Click and drag downward to add water rivulets to your drawing"));
 }
 
 int rivulet_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
@@ -259,13 +259,13 @@ rivulet_release(magic_api * api, int which ATTRIBUTE_UNUSED,
         /* FIXME: Simplify this :-P */
         angle_deg = ((((double) riv_angles[(y * canvas->w) + x]) / 256.0) * 360.0);
 
-        angle_deg = angle_deg + 90.0;
+//        angle_deg = angle_deg + 90.0;
 
         angle_rad = (angle_deg * M_PI) / 180.0;
 
         /* FIXME */
         src_x = x - cos(angle_rad) * radius;
-        src_y = y + sin(angle_rad) * radius;
+        src_y = y - sin(angle_rad) * radius;
 
         pix = api->getpixel(rivulet_snapshot, src_x, src_y);
         api->putpixel(canvas, x, y, pix);
@@ -324,11 +324,11 @@ void rivulet_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
       for (src_x = 0; src_x < w; src_x++) {
         dest_x = (x - half_w) + src_x;
         if (dest_x >= 0 && dest_x < canvas->w) {
-          /* Apply radius */
+          /* Apply radius brush to radius displacement map */
           pix = api->getpixel(rivulet_img_brush_add, src_x, src_y);
           SDL_GetRGB(pix, rivulet_img_brush_add->format, &r, &g, &b);
 
-          new_rad = ((int) riv_radii[(dest_y * canvas->w) + dest_x] + (int) r - 128);
+          new_rad = ((int) riv_radii[(dest_y * canvas->w) + dest_x] + (int) r - 64) / 2;
           if (new_rad < 0)
             new_rad = 0;
           if (new_rad > 255)
@@ -337,7 +337,7 @@ void rivulet_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
           riv_radii[(dest_y * canvas->w) + dest_x] = (Uint8) new_rad;
 
 
-          /* Apply angle */
+          /* Apply angle brush to angle displacement map */
           pix = api->getpixel(rivulet_img_angles, src_x, src_y);
           SDL_GetRGB(pix, rivulet_img_angles->format, &r, &g, &b);
 
