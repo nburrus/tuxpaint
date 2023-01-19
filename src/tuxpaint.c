@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 11, 2023
+  June 14, 2002 - January 19, 2023
 */
 
 #include "platform.h"
@@ -29895,29 +29895,20 @@ static void setup(void)
   if (fullscreen)
   {
 #ifdef USE_HWSURFACE
-    /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-       VIDEO_BPP, SDL_FULLSCREEN | SDL_HWSURFACE); */
     window_screen =
       SDL_CreateWindow("Tux Paint", SDL_WINDOWPOS_UNDEFINED,
                        SDL_WINDOWPOS_UNDEFINED,
-                       //0,0,
                        WINDOW_WIDTH, WINDOW_HEIGHT,
                        SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_HWSURFACE);
-    printf("1\n");
     if (window_screen == NULL)
       printf("window_screen = NULL 1\n");
 
 #else
-/*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-      VIDEO_BPP, SDL_FULLSCREEN | SDL_SWSURFACE);*/
     window_screen = SDL_CreateWindow(NULL,
-                                     //"Tux Paint",
                                      SDL_WINDOWPOS_UNDEFINED,
                                      SDL_WINDOWPOS_UNDEFINED,
-                                     //0, 0,
                                      WINDOW_WIDTH, WINDOW_HEIGHT,
                                      SDL_WINDOW_FULLSCREEN_DESKTOP);
-    printf("2\n");
     if (window_screen == NULL)
       printf("window_screen = NULL 2\n");
 #endif
@@ -30019,43 +30010,51 @@ static void setup(void)
 
   if (!fullscreen)
   {
-    int set_window_pos = 0;
+    int win_x = SDL_WINDOWPOS_UNDEFINED, win_y = SDL_WINDOWPOS_UNDEFINED;
 
-    if (getenv((char *) "SDL_VIDEO_WINDOW_POS") == NULL)
-    {
-      set_window_pos = 1;
-      putenv((char *) "SDL_VIDEO_WINDOW_POS=center");
-    }
+    /* SDL1.2 supported "SDL_VIDEO_WINDOW_POS", but SDL2 does not,
+       so we implement it ourselves */
+
+    if (getenv((char *) "SDL_VIDEO_WINDOW_POS") != NULL)
+      {
+        char * winpos;
+
+        winpos = getenv((char *) "SDL_VIDEO_WINDOW_POS");
+        if (strcmp(winpos, "nopref") != 0) {
+          if (strcmp(winpos, "center") == 0) {
+            win_x = SDL_WINDOWPOS_CENTERED;
+            win_y = SDL_WINDOWPOS_CENTERED;
+          } else {
+            int success;
+
+            success = sscanf(winpos, "%d,%d", &win_x, &win_y);
+            if (success != 2) {
+              fprintf(stderr, "Warning: Cannot parse SDL_VIDEO_WINDOW_POS value of \"%s\"; ignoring\n", winpos);
+              win_x = SDL_WINDOWPOS_UNDEFINED;
+              win_y = SDL_WINDOWPOS_UNDEFINED;
+            }
+          }
+        }
+      }
 
 #ifdef USE_HWSURFACE
     /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
        VIDEO_BPP, SDL_HWSURFACE); */
-    window_screen = SDL_CreateWindow("Tux Paint",
-                                     SDL_WINDOWPOS_UNDEFINED,
-                                     SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH,
-                                     WINDOW_HEIGHT, SDL_WINDOW_HWSURFACE);
-    printf("3\n");
+    window_screen = SDL_CreateWindow("Tux Paint", win_x, win_y,
+                                     WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_HWSURFACE);
     if (window_screen == NULL)
       printf("window_screen = NULL 3\n");
 #else
-    window_screen = SDL_CreateWindow("Tux Paint",
-                                     SDL_WINDOWPOS_UNDEFINED,
-                                     SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH,
+    window_screen = SDL_CreateWindow("Tux Paint", win_x, win_y,
+                                     WINDOW_WIDTH,
                                      WINDOW_HEIGHT, 0 /* no flags */ );
-    /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-       s
-       VIDEO_BPP, SDL_SWSURFACE); */
-    printf("4\n");
     if (window_screen == NULL)
       printf("window_screen = NULL 4\n");
-
 #endif
 
-    if (set_window_pos)
-      putenv((char *) "SDL_VIDEO_WINDOW_POS=nopref");
 
-    /* Note: Seems that this depends on the compliance by the window manager
-       currently this doesn't works under Fvwm */
+    /* Note: Seems that this depends on the compliance by the window manager.
+       Currently this doesn't work under Fvwm */
     SDL_SetWindowMinimumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
     SDL_SetWindowMaximumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -30069,12 +30068,6 @@ static void setup(void)
     screen =
       SDL_CreateRGBSurface(0, ww, hh, 32, 0x00FF0000, 0x0000FF00, 0x000000FF,
                            0xFF000000);
-
-
-    //screen = SDL_GetWindowSurface(window_screen);
-
-
-
 
     if (screen == NULL)
     {
