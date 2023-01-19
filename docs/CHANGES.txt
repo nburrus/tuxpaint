@@ -55,6 +55,13 @@ https://tuxpaint.org/
       native size.  (SDL2.0)
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
+    * If only one display is available, when running in windowed mode
+      and asking for Tux Paint to appear in a width and/or height larger
+      than the display's dimensions, Tux Paint will fall back to
+      the maximum(s) the display is capable of.
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/113/)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Changed default UI font from Bitstream Vera to DejaVu Sans.
       h/t Mark Kim <markuskimius@gmail.com>
 

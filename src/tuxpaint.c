@@ -14399,9 +14399,6 @@ static void load_starter(char *img_id)
   if (tmp_surf != NULL)
   {
     img_starter = SDL_DisplayFormatAlpha(tmp_surf);
-    //SDL_SetSurfaceAlphaMod(img_starter, SDL_ALPHA_OPAQUE);
-    //SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_BLEND);
-    printf("QQQQ\n");
     SDL_FreeSurface(tmp_surf);
   }
 
@@ -30011,10 +30008,58 @@ static void setup(void)
   if (!fullscreen)
   {
     int win_x = SDL_WINDOWPOS_UNDEFINED, win_y = SDL_WINDOWPOS_UNDEFINED;
+    int found_capable_display, max_scrn_w, max_scrn_h;
+    int num_displays, num_modes, i, res;
+    SDL_DisplayMode mode;
+
+    /* Query all displays to ensure that, if we only have on display,
+       that Tux Paint's window will not be larger than it */
+    found_capable_display = 0;
+    max_scrn_w = -1;
+    max_scrn_h = -1;
+
+    num_displays = SDL_GetNumVideoDisplays();
+    if (num_displays == 0) {
+      fprintf(stderr, "Warning: SDL_GetNumVideoDisplays() returned zero!");
+    } else if (num_displays < 0) {
+      fprintf(stderr, "Warning: SDL_GetNumVideoDisplays() failed: %s\n", SDL_GetError());
+    } else {
+      for (i = 0; i < num_displays; i++) {
+        res = SDL_GetCurrentDisplayMode(i, &mode);
+        if (res != 0) {
+          fprintf(stderr, "Warning: SDL_GetCurrentDisplayMode() on display %d %d failed: %s\n", i, SDL_GetError());
+        } else {
+          if (mode.w >= WINDOW_WIDTH && mode.h >= WINDOW_HEIGHT) {
+            /* Found a display capable of the chosen window size */
+            found_capable_display = 1;
+          } else {
+            if (mode.w >= max_scrn_w)
+              max_scrn_w = mode.w;
+            if (mode.h >= max_scrn_h)
+              max_scrn_h = mode.h;
+          }
+        }
+      }
+    }
+
+    if (max_scrn_w == -1) {
+      fprintf(stderr, "Warning: Could not query any display modes!?\n");
+    } else if (num_displays == 1) {
+      /* Only found one display, and window size is larger? Use that window size */
+      if (WINDOW_WIDTH > max_scrn_w) {
+        fprintf(stderr, "Asked for window width (%d) larger than max screen width (%d)\n", WINDOW_WIDTH, max_scrn_w);
+        WINDOW_WIDTH = max_scrn_w;
+      }
+  
+      if (WINDOW_HEIGHT > max_scrn_h) {
+        fprintf(stderr, "Asked for window height (%d) larger than max screen height (%d)\n", WINDOW_HEIGHT, max_scrn_h);
+        WINDOW_HEIGHT = max_scrn_h;
+      }
+    }
+
 
     /* SDL1.2 supported "SDL_VIDEO_WINDOW_POS", but SDL2 does not,
        so we implement it ourselves */
-
     if (getenv((char *) "SDL_VIDEO_WINDOW_POS") != NULL)
       {
         char * winpos;
@@ -30037,9 +30082,9 @@ static void setup(void)
         }
       }
 
+
+    /* Finally, ready to create a window! */
 #ifdef USE_HWSURFACE
-    /*    screen = SDL_SetVideoMode(WINDOW_WIDTH, WINDOW_HEIGHT,
-       VIDEO_BPP, SDL_HWSURFACE); */
     window_screen = SDL_CreateWindow("Tux Paint", win_x, win_y,
                                      WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_HWSURFACE);
     if (window_screen == NULL)

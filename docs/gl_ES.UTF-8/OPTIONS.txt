@@ -135,6 +135,11 @@ Video/Sound
               * 768x1024
               * 1600x1200
 
+           💡 If only one display is available, and Tux Paint is being run in
+           windowed (not fullscreen) mode, and the chosen window size exceeds
+           the capabilities of the display, Tux Paint will fall back to the
+           display's dimensions.
+
    orient=portrait
 
            Cambia as opcións de largo/alto dadas a Tux Paint, útiles para
