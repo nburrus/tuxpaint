@@ -64,6 +64,7 @@ Painting
      * Frise
      * Herbe
      * Lumière
+     * Maze
      * Mousse
      * Peinture métallique
      * Pixels

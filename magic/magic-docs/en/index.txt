@@ -62,6 +62,7 @@ Painting
      * Fretwork
      * Grass
      * Light
+     * Maze
      * Metal Paint
      * Pixels
      * Rails

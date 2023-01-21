@@ -135,7 +135,7 @@ int maze_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
 int maze_modes(magic_api * api ATTRIBUTE_UNUSED,
                     int which ATTRIBUTE_UNUSED)
 {
-  return MODE_PAINT /* | MODE_FULLSCREEN FIXME */;
+  return MODE_PAINT | MODE_FULLSCREEN;
 }
 
 void maze_shutdown(magic_api * api ATTRIBUTE_UNUSED)
@@ -177,7 +177,17 @@ maze_click(magic_api * api, int which, int mode,
   if (mode == MODE_PAINT) {
     maze_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
   } else {
-    /* FIXME */
+    Uint32 color;
+
+    memset(maze_mask, 1, (canvas->w * canvas->h));
+
+    color = SDL_MapRGB(canvas->format, maze_r, maze_g, maze_b);
+//  memset(maze_color, color, (sizeof(Uint32) * (canvas->w * canvas->h))); // FIXME: Why doesn't this work? -bjk 2023.01.21
+    for (y = 0; y < canvas->h; y++)
+      for (x = 0; x < canvas->w; x++)
+        maze_color[y * canvas->w + x] = color;
+
+    maze_release(api, which, canvas, snapshot, x, y, update_rect);
   }
 }
 
@@ -282,7 +292,6 @@ maze_release(magic_api * api, int which ATTRIBUTE_UNUSED,
     iter++;
   }
   while (state != STATE_DONE && iter < 10000);
-if (iter >= 10000) printf("OUCH\n");
 
   /* Draw the maze onto the canvas */
   for (y = 0; y < canvas->h; y++) {
