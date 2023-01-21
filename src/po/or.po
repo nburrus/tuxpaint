@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-16 17:28-0800\n"
+"POT-Creation-Date: 2023-01-21 03:05-0800\n"
 "PO-Revision-Date: 2012-04-05 20:08+0530\n"
 "Last-Translator: Ekanta <ekanta@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1201,100 +1201,100 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14954
+#: ../tuxpaint.c:14951
 msgid "Yes"
 msgstr "ହଁ"
 
-#: ../tuxpaint.c:14958
+#: ../tuxpaint.c:14955
 msgid "No"
 msgstr "ନାହିଁ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16152
+#: ../tuxpaint.c:16149
 msgid "Replace the picture with your changes?"
 msgstr "ଚିତ୍ର ସ୍ଥାନରେ ଆପଣଙ୍କ ପରିବର୍ତ୍ତନଗୁଡିକୁ ପ୍ରତିସ୍ଥାପିତ କରିବେ ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16156
+#: ../tuxpaint.c:16153
 msgid "Yes, replace the old one!"
 msgstr "ହଁ, ପୁରୁଣା ଚିତ୍ରଟି ବଦଳାନ୍ତୁ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16160
+#: ../tuxpaint.c:16157
 msgid "No, save a new file!"
 msgstr "ନା, ଏକ ନୂତନ ଫାଇଲ ସଂଚୟ କରନ୍ତୁ!"
 
-#: ../tuxpaint.c:17515
+#: ../tuxpaint.c:17512
 msgid "Choose the picture you want, then click “Open”."
 msgstr "ଆପଣ ଚାହୁଁଥିବା ଚିତ୍ର ଚୟନ କରନ୍ତୁ, ତାପରେ “ଖୋଲନ୍ତୁ” ରେ କ୍ଲିକ କରନ୍ତୁ ୤ "
 
-#: ../tuxpaint.c:19242
+#: ../tuxpaint.c:19239
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25392
+#: ../tuxpaint.c:25389
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25393
+#: ../tuxpaint.c:25390
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "ହଳଦିଆ!"
 
-#: ../tuxpaint.c:25394
+#: ../tuxpaint.c:25391
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "ଆକାଶ ନୀଳ!"
 
-#: ../tuxpaint.c:25395
+#: ../tuxpaint.c:25392
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "ଧଳା!"
 
-#: ../tuxpaint.c:25396
+#: ../tuxpaint.c:25393
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25397
+#: ../tuxpaint.c:25394
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "କଳା!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25402
+#: ../tuxpaint.c:25399
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25403
+#: ../tuxpaint.c:25400
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25404
+#: ../tuxpaint.c:25401
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25406
+#: ../tuxpaint.c:25403
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25408
+#: ../tuxpaint.c:25405
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25410
+#: ../tuxpaint.c:25407
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1302,21 +1302,21 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26246 ../tuxpaint.c:26253
+#: ../tuxpaint.c:26243 ../tuxpaint.c:26250
 msgid "entirely"
 msgstr ""
 
-#: ../tuxpaint.c:29480
+#: ../tuxpaint.c:29477
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:29491
+#: ../tuxpaint.c:29488
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29505
+#: ../tuxpaint.c:29502
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1727,6 +1727,23 @@ msgstr "ହାଲୁକା କରନ୍ତୁ"
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "ଆପଣଙ୍କ ଚିତ୍ରରେ ଏକ ଆଲୋକ କିରଣପୁଞ୍ଜ ଅଙ୍କନ କରିବା ପାଇଁ ମାଉସକୁ କ୍ଲିକ କରି ଡ୍ରାଗ କରନ୍ତୁ ୤ "
 
+#: ../../magic/src/maze.c:110
+msgid "Maze"
+msgstr ""
+
+#: ../../magic/src/maze.c:124
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to paint a maze on your picture."
+msgstr "ଆପଣଙ୍କ ଚିତ୍ରରେ ଟ୍ରେନ ପଥ ଧାରଣାଗୁଡିକ ଅଙ୍କନ କରିବା ପାଇଁ କ୍ଲିକ କରି ଡ୍ରାଗ କରନ୍ତୁ ୤ "
+
+#: ../../magic/src/maze.c:126
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn your entire picture into a maze."
+msgstr "ଚିତ୍ରକୁ ଚକ ଡ୍ରଇଂରେ ପରିବର୍ତ୍ତନ କରିବା ପାଇଁ କ୍ଲିକ କରି ମାଉସକୁ ଚାରିପଟେ ବୁଲାନ୍ତୁ ୤ "
+
 #: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
 msgstr "ଧାତୁ ରଙ୍ଗ କରିବା"
@@ -2013,11 +2030,11 @@ msgstr "ଲହରୀଗୁଡିକ"
 msgid "Click to make ripples appear over your picture."
 msgstr "ଆପଣଙ୍କ ଚିତ୍ରରେ ଲହରୀଗୁଡିକ ଦିଶିବା ଭଳି ତିଆରି କରିବାକୁ କିଲିକ କରନ୍ତୁ ୤ "
 
-#: ../../magic/src/rivulet.c:126
+#: ../../magic/src/rivulet.c:142
 msgid "Rivulet"
 msgstr ""
 
-#: ../../magic/src/rivulet.c:139
+#: ../../magic/src/rivulet.c:155
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-16 17:28-0800\n"
+"POT-Creation-Date: 2023-01-21 03:05-0800\n"
 "PO-Revision-Date: 2022-09-10 06:06-0400\n"
 "Last-Translator: Mark K. Kim <markuskimius@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -1149,93 +1149,93 @@ msgstr "A가"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14954
+#: ../tuxpaint.c:14951
 msgid "Yes"
 msgstr "네"
 
-#: ../tuxpaint.c:14958
+#: ../tuxpaint.c:14955
 msgid "No"
 msgstr "아니요"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16152
+#: ../tuxpaint.c:16149
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16156
+#: ../tuxpaint.c:16153
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16160
+#: ../tuxpaint.c:16157
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: ../tuxpaint.c:17515
+#: ../tuxpaint.c:17512
 msgid "Choose the picture you want, then click “Open”."
 msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
 
-#: ../tuxpaint.c:19242
+#: ../tuxpaint.c:19239
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "지프로 만들 두가지 이상의 그림을 고르세요."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25392
+#: ../tuxpaint.c:25389
 msgid "red"
 msgstr "빨간색"
 
-#: ../tuxpaint.c:25393
+#: ../tuxpaint.c:25390
 msgid "yellow"
 msgstr "노란색"
 
-#: ../tuxpaint.c:25394
+#: ../tuxpaint.c:25391
 msgid "blue"
 msgstr "파란색"
 
-#: ../tuxpaint.c:25395
+#: ../tuxpaint.c:25392
 msgid "white"
 msgstr "흰색"
 
-#: ../tuxpaint.c:25396
+#: ../tuxpaint.c:25393
 msgid "grey"
 msgstr "회색"
 
-#: ../tuxpaint.c:25397
+#: ../tuxpaint.c:25394
 msgid "black"
 msgstr "검정색"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25402
+#: ../tuxpaint.c:25399
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "당신의 색갈은 %1$s %2$s."
 
-#: ../tuxpaint.c:25403
+#: ../tuxpaint.c:25400
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "당신의 색갈은 %1$s %2$s 와 %3$s %4$s."
 
-#: ../tuxpaint.c:25404
+#: ../tuxpaint.c:25401
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "당신의 색갈은 %1$s %2$s, %3$s %4$s, 그리고 %5$s %6$s."
 
-#: ../tuxpaint.c:25406
+#: ../tuxpaint.c:25403
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "당신의 색갈은 %1$s %2$s, %3$s %4$s, %5$s %6$s, 그리고 %7$s %8$s."
 
-#: ../tuxpaint.c:25408
+#: ../tuxpaint.c:25405
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "당신의 색갈은 %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, 그리고%9$s %10$s."
 
-#: ../tuxpaint.c:25410
+#: ../tuxpaint.c:25407
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1245,21 +1245,21 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26246 ../tuxpaint.c:26253
+#: ../tuxpaint.c:26243 ../tuxpaint.c:26250
 msgid "entirely"
 msgstr "전채"
 
-#: ../tuxpaint.c:29480
+#: ../tuxpaint.c:29477
 msgid "Select a color from your drawing."
 msgstr "그림에서 색갈을 고르세요."
 
-#: ../tuxpaint.c:29491
+#: ../tuxpaint.c:29488
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29505
+#: ../tuxpaint.c:29502
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1606,6 +1606,22 @@ msgstr "번개"
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "마우스를 누르고 끌면 두 자리점에 번개를 그릴 수 있습니다."
 
+#: ../../magic/src/maze.c:110
+msgid "Maze"
+msgstr ""
+
+#: ../../magic/src/maze.c:124
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to paint a maze on your picture."
+msgstr "마우스를 누르고 끌면 레일을 그릴 수 있어요."
+
+#: ../../magic/src/maze.c:126
+#, fuzzy
+#| msgid "Click to turn the entire picture into a cartoon."
+msgid "Click to turn your entire picture into a maze."
+msgstr "마우스를 누르면 그림이 만화형이 되어요."
+
 #: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
 msgstr "쇠물감"
@@ -1849,11 +1865,11 @@ msgstr "물결"
 msgid "Click to make ripples appear over your picture."
 msgstr "마우스를 누르면 그림에 몰결을 만드세요."
 
-#: ../../magic/src/rivulet.c:126
+#: ../../magic/src/rivulet.c:142
 msgid "Rivulet"
 msgstr ""
 
-#: ../../magic/src/rivulet.c:139
+#: ../../magic/src/rivulet.c:155
 #, fuzzy
 #| msgid "Click and drag the mouse around to add a reflection to your picture."
 msgid "Click and drag downward to add water rivulets to your drawing"
