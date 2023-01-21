@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-21 03:05-0800\n"
-"PO-Revision-Date: 2022-12-27 19:31+0100\n"
+"PO-Revision-Date: 2023-01-21 23:14+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -1675,23 +1675,22 @@ msgstr "Feu clic per omplir la imatge amb blocs de vidre."
 
 #: ../../magic/src/googlyeyes.c:21
 msgid "large googly eye"
-msgstr ""
+msgstr "un ull gran"
 
 #: ../../magic/src/googlyeyes.c:22
 msgid "small googly eye"
-msgstr ""
+msgstr "un ull petit"
 
 #: ../../magic/src/googlyeyes.c:160
 msgid "Google Eyes"
 msgstr "UUlls"
 
+# Aquí, a %s hi va la traducció de "large googly eye" o "small googly eye" segons s'escaigui.
 #: ../../magic/src/googlyeyes.c:174
 #, c-format
 msgid ""
 "Click to place a %s, then drag and release to make it look that direction."
-msgstr ""
-"Feu clic per dibuixar un ull, llavors arrossegueu i deixeu anar per fer que "
-"miri en aquesta direcció."
+msgstr "Feu clic per dibuixar %s, llavors arrossegueu i deixeu anar per fer que miri en aquesta direcció."
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"
@@ -1786,19 +1785,15 @@ msgstr "Feu clic i arrossegueu per dibuixar un llamp."
 
 #: ../../magic/src/maze.c:110
 msgid "Maze"
-msgstr ""
+msgstr "Laberint"
 
 #: ../../magic/src/maze.c:124
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to paint a maze on your picture."
-msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
+msgstr "Feu clic i arrossegueu per dibuixar un laberint."
 
 #: ../../magic/src/maze.c:126
-#, fuzzy
-#| msgid "Click to turn the entire picture into a cartoon."
 msgid "Click to turn your entire picture into a maze."
-msgstr "Feu clic per convertir la imatge a colors sòlids."
+msgstr "Feu clic per dibuixar un laberint."
 
 #: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
@@ -2065,13 +2060,11 @@ msgstr ""
 
 #: ../../magic/src/rivulet.c:142
 msgid "Rivulet"
-msgstr ""
+msgstr "Regalim"
 
 #: ../../magic/src/rivulet.c:155
-#, fuzzy
-#| msgid "Click and drag the mouse around to add a reflection to your picture."
 msgid "Click and drag downward to add water rivulets to your drawing"
-msgstr "Feu clic i arrossegueu el ratolí per reflectir una part del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí cap avall per fer un regalin en el dibuix."
 
 #: ../../magic/src/rosette.c:128
 msgid "Rosette"
