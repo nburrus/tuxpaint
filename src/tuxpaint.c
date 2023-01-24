@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 19, 2023
+  June 14, 2002 - January 23, 2023
 */
 
 #include "platform.h"
@@ -18330,6 +18330,14 @@ static int do_open(void)
             label_node_to_edit = NULL;
           have_to_rec_label_node = FALSE;
 
+          /* Clean stale text */
+          if (texttool_len > 0)
+            {
+              texttool_str[0] = L'\0';
+              texttool_len = 0;
+              cursor_textwidth = 0;
+            }
+
           SDL_FillRect(label, NULL, SDL_MapRGBA(label->format, 0, 0, 0, 0));
 
           /* Figure out filename: */
@@ -23759,6 +23767,14 @@ static int do_new_dialog(void)
     start_label_node = current_label_node = first_label_node_in_redo_stack =
       highlighted_label_node = label_node_to_edit = NULL;
     have_to_rec_label_node = FALSE;
+
+    /* Clean stale text */
+    if (texttool_len > 0)
+      {
+        texttool_str[0] = L'\0';
+        texttool_len = 0;
+        cursor_textwidth = 0;
+      }
 
     if (which >= first_starter
         && (first_template == -1 || which < first_template)
