@@ -9,7 +9,7 @@
    follow the mouse precisely).  Upon release, the lense
    effect will be applied.
 
-   Last modified: 2023.01.23
+   Last modified: 2023.01.25
 */
 
 #include <stdio.h>
@@ -42,11 +42,11 @@ typedef struct {
 Mix_Chunk *snd_effect = NULL;
 Uint8 * maze_mask = NULL, * new_maze_mask = NULL, * maze_array = NULL;
 Uint32 * maze_color;
+maze_start_t * maze_starts;
+SDL_Surface * maze_snapshot = NULL;
 Uint8 maze_r, maze_g, maze_b;
 int maze_start_x, maze_start_y;
-maze_start_t * maze_starts;
 int num_maze_starts = 0, maze_starts_size = 0;
-SDL_Surface * maze_snapshot = NULL;
 
 Uint32 maze_api_version(void);
 int maze_init(magic_api * api);
@@ -70,15 +70,16 @@ void maze_line_callback_drag(void *ptr, int which, SDL_Surface * canvas,
 void maze_release(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * snapshot, int x, int y,
                        SDL_Rect * update_rect);
-void maze_render(magic_api * api, SDL_Surface * canvas, SDL_Surface * snapshot);
+void maze_render(magic_api * api, SDL_Surface * canvas);
 void maze_switchin(magic_api * api, int which, int mode,
                         SDL_Surface * canvas);
 void maze_switchout(magic_api * api, int which, int mode,
                          SDL_Surface * canvas);
 void zero_maze_arrays(SDL_Surface * canvas);
 void draw_hall(SDL_Surface * canvas, int x, int y);
-void maze_add_start(SDL_Surface * canvas);
+void maze_add_start(void);
 int check_arrays(void);
+void maze_collapse_contiguous(SDL_Surface * canvas);
 
 
 Uint32 maze_api_version(void)
@@ -168,7 +169,8 @@ void maze_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 
 /* FIXME */
 int check_arrays(void) {
-  if (maze_array == NULL || maze_mask == NULL || maze_color == NULL || maze_snapshot == NULL) {
+  if (maze_array == NULL || maze_mask == NULL || new_maze_mask == NULL ||
+      maze_color == NULL || maze_snapshot == NULL || maze_starts == NULL) {
     return(0);
   }
   return(1);
@@ -196,7 +198,7 @@ maze_click(magic_api * api, int which, int mode,
   } else {
     Uint32 color;
 
-    maze_add_start(canvas);
+    maze_add_start();
     memset(maze_mask, 1, (canvas->w * canvas->h));
 
     color = SDL_MapRGB(canvas->format, maze_r, maze_g, maze_b);
@@ -205,7 +207,7 @@ maze_click(magic_api * api, int which, int mode,
       for (x = 0; x < canvas->w; x++)
         maze_color[y * canvas->w + x] = color;
 
-    maze_render(api, canvas, snapshot);
+    maze_render(api, canvas);
 
     num_maze_starts = 0;
 
@@ -235,19 +237,15 @@ maze_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
 }
 
 
-#define STATE_DONE 0
-#define STATE_KEEPGOING 1
-#define STATE_PICKDIR 2
-
 void maze_release(magic_api * api, int which ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas, SDL_Surface * snapshot,
-                  int x, int y, /* ignored and reused in a for-loop */
+                  SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                  int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
                   SDL_Rect * update_rect) {
-  /* FIXME */
-  if (num_maze_starts == 0)
-    maze_add_start(canvas);
+  maze_collapse_contiguous(canvas);
 
-  maze_render(api, canvas, snapshot);
+  maze_add_start();
+
+  maze_render(api, canvas);
 
   update_rect->x = 0;
   update_rect->y = 0;
@@ -255,10 +253,14 @@ void maze_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   update_rect->h = canvas->h;
 }
 
-void maze_render(magic_api * api, SDL_Surface * canvas, SDL_Surface * snapshot)
+
+#define STATE_DONE 0
+#define STATE_KEEPGOING 1
+#define STATE_PICKDIR 2
+
+void maze_render(magic_api * api, SDL_Surface * canvas)
 {
   int x, y, nx, ny, btwn_nx, btwn_ny, state, dir, old_dir, s;
-  int check, is_touching, touching_val, min_touching, i;
   Uint32 iter;
 
   if (!check_arrays())
@@ -279,56 +281,59 @@ void maze_render(magic_api * api, SDL_Surface * canvas, SDL_Surface * snapshot)
     x = maze_starts[s].x;
     y = maze_starts[s].y;
 
-    maze_array[y * canvas->w + x] = MAZE_START;
+    /* Render from here, ONLY if it's still non-contiguous to anything: */
+    if (maze_mask[y * canvas->w + x] == s + 1) {
+      maze_array[y * canvas->w + x] = MAZE_START;
 
-    state = STATE_PICKDIR;
-    iter = 0;
-    do {
-      if (state == STATE_PICKDIR) {
-        dir = (rand() % 4);
-        old_dir = dir;
-      }
+      state = STATE_PICKDIR;
+      iter = 0;
+      do {
+        if (state == STATE_PICKDIR) {
+          dir = (rand() % 4);
+          old_dir = dir;
+        }
 
-      state = STATE_DONE;
+        state = STATE_DONE;
 
-      nx = x + (xm[dir] * MAZE_BLOCK_SIZE * 2);
-      ny = y + (ym[dir] * MAZE_BLOCK_SIZE * 2);
+        nx = x + (xm[dir] * MAZE_BLOCK_SIZE * 2);
+        ny = y + (ym[dir] * MAZE_BLOCK_SIZE * 2);
 
-      if (nx >= 0 && nx < canvas->w && ny >= 0 && ny < canvas->h && maze_array[ny * canvas->w + nx] == MAZE_WALL) {
-        draw_hall(canvas, nx, ny);
-        maze_array[ny * canvas->w + nx] = dir + 1;
+        if (nx >= 0 && nx < canvas->w && ny >= 0 && ny < canvas->h && maze_array[ny * canvas->w + nx] == MAZE_WALL) {
+          draw_hall(canvas, nx, ny);
+          maze_array[ny * canvas->w + nx] = dir + 1;
 
-        btwn_nx = x + (xm[dir] * MAZE_BLOCK_SIZE);
-        btwn_ny = y + (ym[dir] * MAZE_BLOCK_SIZE);
-        draw_hall(canvas, btwn_nx, btwn_ny);
+          btwn_nx = x + (xm[dir] * MAZE_BLOCK_SIZE);
+          btwn_ny = y + (ym[dir] * MAZE_BLOCK_SIZE);
+          draw_hall(canvas, btwn_nx, btwn_ny);
 
-        x = nx;
-        y = ny;
-
-        state = STATE_PICKDIR;
-      }
-
-      if (state == STATE_DONE) {
-        dir = (dir + 1) % 4;
-
-        if (dir != old_dir)
-          state = STATE_KEEPGOING;
-      }
-
-      if (state == STATE_DONE) {
-        dir = maze_array[y * canvas->w + x];
-        draw_hall(canvas, x, y);
-
-        if (dir != MAZE_START) {
-          x = x - (xm[dir - 1] * MAZE_BLOCK_SIZE * 2);
-          y = y - (ym[dir - 1] * MAZE_BLOCK_SIZE * 2);
+          x = nx;
+          y = ny;
 
           state = STATE_PICKDIR;
         }
+
+        if (state == STATE_DONE) {
+          dir = (dir + 1) % 4;
+
+          if (dir != old_dir)
+            state = STATE_KEEPGOING;
+        }
+
+        if (state == STATE_DONE) {
+          dir = maze_array[y * canvas->w + x];
+          draw_hall(canvas, x, y);
+
+          if (dir != MAZE_START) {
+            x = x - (xm[dir - 1] * MAZE_BLOCK_SIZE * 2);
+            y = y - (ym[dir - 1] * MAZE_BLOCK_SIZE * 2);
+
+            state = STATE_PICKDIR;
+          }
+        }
+        iter++;
       }
-      iter++;
+      while (state != STATE_DONE && iter < 10000);
     }
-    while (state != STATE_DONE && iter < 10000);
   }
 
   /* Draw the maze onto the canvas */
@@ -336,8 +341,6 @@ void maze_render(magic_api * api, SDL_Surface * canvas, SDL_Surface * snapshot)
     for (x = 0; x < canvas->w; x++) {
       if (maze_array[y * canvas->w + x] == MAZE_WALL) {
         api->putpixel(canvas, x, y, maze_color[y * canvas->w + x]);
-        /* FIXME */
-        api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, maze_mask[y * canvas->w + x] * 192, 64, 0));
       } else {
         api->putpixel(canvas, x, y, api->getpixel(maze_snapshot, x, y));
       }
@@ -361,7 +364,7 @@ void maze_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
                                   int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
-  int xx, yy;
+  int xx, yy, idx;
   Uint32 color;
 
   color = SDL_MapRGB(canvas->format, maze_r, maze_g, maze_b);
@@ -373,8 +376,11 @@ void maze_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
     if (y + yy > 0 && y + yy < canvas->h) {
       for (xx = -MAZE_PAINT_RADIUS; xx < MAZE_PAINT_RADIUS; xx++) {
         if (x + xx > 0 && x + xx < canvas->w) {
-          maze_mask[(y + yy) * canvas->w + (x + xx)] = num_maze_starts + 1;
-          maze_color[(y + yy) * canvas->w + (x + xx)] = color;
+          idx = (y + yy) * canvas->w + (x + xx);
+          if (maze_mask[idx] == 0) {
+            maze_mask[idx] = num_maze_starts + 1;
+          }
+          maze_color[idx] = color;
           api->putpixel(canvas, x + xx, y + yy, color);
         }
       }
@@ -492,9 +498,47 @@ void draw_hall(SDL_Surface * canvas, int x, int y) {
   }
 }
 
-void maze_add_start(SDL_Surface * canvas) {
+void maze_add_start(void) {
   maze_starts[num_maze_starts].x = maze_start_x;
   maze_starts[num_maze_starts].y = maze_start_y;
 
   num_maze_starts++;
 }
+
+void maze_collapse_contiguous(SDL_Surface * canvas) {
+  int i, x, y, touching, idx;
+
+  for (i = num_maze_starts; i > 0; i--) {
+    touching = -1;
+    for (y = 1; y < canvas->h - 1 && touching == -1; y++) {
+      for (x = 1; x < canvas->w - 1 && touching == -1; x++) {
+        idx = (y * canvas->w + x);
+        if (maze_mask[idx] == i + 1) {
+          if (maze_mask[idx - 1] != 0 && maze_mask[idx - 1] != i + 1) {
+            touching = maze_mask[idx - 1];
+          } else if (maze_mask[idx + 1] != 0 && maze_mask[idx + 1] != i + 1) {
+            touching = maze_mask[idx + 1];
+          } else if (maze_mask[idx - canvas->w] != 0 && maze_mask[idx - canvas->w] != i + 1) {
+            touching = maze_mask[idx - canvas->w];
+          } else if (maze_mask[idx + canvas->w] != 0 && maze_mask[idx + canvas->w] != i + 1) {
+            touching = maze_mask[idx + canvas->w];
+          }
+        }
+      }
+    }
+
+    if (touching != -1) {
+      /* Touching someone else; turn all of our area
+         into that area */
+      for (y = 1; y < canvas->h; y++) {
+        for (x = 1; x < canvas->w; x++) {
+          idx = (y * canvas->w + x);
+          if (maze_mask[idx] == i + 1) {
+            maze_mask[idx] = touching;
+          }
+        }
+      }
+    }
+  }
+}
+
