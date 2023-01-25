@@ -13,7 +13,7 @@
   Panels, Tile mode of Zoom, and Rush
   by Bill Kendrick
 
-  Copyright (c) 2014-2022
+  Copyright (c) 2014-2023
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
+  Last updated: January 25, 2023
   $Id$
 */
 
@@ -374,6 +374,9 @@ void perspective_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                        SDL_Surface * canvas, SDL_Surface * last, int x, int y,
                        SDL_Rect * update_rect)
 {
+  click_x = x;
+  click_y = y;
+
   switch (which)
   {
   case TOOL_PERSPECTIVE:
@@ -409,8 +412,6 @@ void perspective_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   case TOOL_ZOOM:
   case TOOL_TILEZOOM:
     {
-      click_x = x;
-      click_y = y;
       old_h = new_h;
     }
     break;
@@ -528,8 +529,8 @@ void perspective_release(magic_api * api, int which,
       dy1 = (canvas->h - scaled_surf->h) / 2;
       SDL_Rect rrr;
       rrr.x = dx1;
-      rrr.y =dy1;
-      rrr.w =  dx1 + scaled_surf->w;
+      rrr.y = dy1;
+      rrr.w = dx1 + scaled_surf->w;
       rrr.h = dy1 + scaled_surf->h;
       SDL_SetSurfaceBlendMode( scaled_surf, SDL_BLENDMODE_BLEND);
       SDL_SetSurfaceAlphaMod(scaled_surf,24);
@@ -778,9 +779,14 @@ void perspective_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 void perspective_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
                            Uint8 b)
 {
-  perspective_r = r;
-  perspective_g = g;
-  perspective_b = b;
+  if (r != perspective_r || g != perspective_g || b != perspective_b) {
+    perspective_r = r;
+    perspective_g = g;
+    perspective_b = b;
+
+    /* FIXME: The API call to MAGIC_color() should allow us to update the canvas! */
+    // perspective_drag(api, which, canvas, last, click_x, click_y, click_x, click_y, update_rect);
+  }
 }
 
 // Use colors:
