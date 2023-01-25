@@ -95,12 +95,12 @@
             Magic Tool Plugin API Documentation          </h2>
 
           <p>
-            Copyright &copy; 2007-2022 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2007-2023 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
           <p>
-            10月 18, 2022          </p>
+            1月 25, 2023          </p>
         </center>
       </header>
 
@@ -419,9 +419,15 @@
                   <b>Note:</b> Added to Tux Paint 0.9.21; Magic API version 0x00000002.                </p>
               </dd>
 
-              <dt><code><b>void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g) </b></code></dt>
+              <dt><code><b>void set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect) </b></code></dt>
               <dd>
-                Tux Paint will call this function to inform the plugin of the RGB values of the currently-selected color in Tux Paint's 'Colors' palette.  (It will be called whenever one of the plugin's Magic tools that accept colors becomes active, and whenever the user picks a new color while such a tool is currently active.)              </dd>
+                <p>
+                  Tux Paint will call this function to inform the plugin of the RGB values of the currently-selected color in Tux Paint's 'Colors' palette.  (It will be called whenever one of the plugin's Magic tools that accept colors becomes active, and whenever the user picks a new color while such a tool is currently active.)                </p>
+                <p>
+                  Generally, Magic tools will not alter the canvas in any way when receiving an updated color, but it is possible. (For example, the "Zoom" and "Perspective" tools apply effects which uses the current color choice as a solid background. The effects may be adjusted with subsequent click/drag operations, but you may also adjust the background color, without altering the zoom level or perspective, by simply picking a new color.)                </p>
+                <p>
+                  <b>Note:</b> Changed most recently in Tux Paint 0.9.29; Magic API version 0x00000007.                </p>
+              </dd>
 
               <dt><code><b>void click(magic_api * api, int which, int mode, SDL_Surface * snapshot, SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect) </b></code></dt>
               <dd>

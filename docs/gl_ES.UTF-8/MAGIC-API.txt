@@ -3,10 +3,10 @@
 
 Magic Tool Plugin API Documentation
 
-        Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
+        Copyright © 2007-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                Outubro 18, 2022
+                                Xaneiro 25, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -347,12 +347,25 @@ Magic Tool Plugin API Documentation
 
            Note: Added to Tux Paint 0.9.21; Magic API version 0x00000002.
 
-   void set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 g)
+   void set_color(magic_api * api, int which, SDL_Surface * canvas,
+   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
+
            Tux Paint will call this function to inform the plugin of the RGB
            values of the currently-selected color in Tux Paint's 'Colors'
            palette. (It will be called whenever one of the plugin's Magic
            tools that accept colors becomes active, and whenever the user
            picks a new color while such a tool is currently active.)
+
+           Generally, Magic tools will not alter the canvas in any way when
+           receiving an updated color, but it is possible. (For example, the
+           "Zoom" and "Perspective" tools apply effects which uses the
+           current color choice as a solid background. The effects may be
+           adjusted with subsequent click/drag operations, but you may also
+           adjust the background color, without altering the zoom level or
+           perspective, by simply picking a new color.)
+
+           Note: Changed most recently in Tux Paint 0.9.29; Magic API version
+           0x00000007.
 
    void click(magic_api * api, int which, int mode, SDL_Surface * snapshot,
    SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)
