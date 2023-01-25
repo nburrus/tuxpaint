@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 23, 2023
+  June 14, 2002 - January 25, 2023
 */
 
 #include "platform.h"
@@ -1537,9 +1537,9 @@ typedef struct magic_funcs_s
   char *(*get_description)(magic_api *, int, int);
   int (*requires_colors)(magic_api *, int);
   int (*modes)(magic_api *, int);
-  void (*set_color)(magic_api *, Uint8, Uint8, Uint8);
+  void (*set_color)(magic_api *, int, SDL_Surface *, SDL_Surface *, Uint8, Uint8, Uint8, SDL_Rect *);
   int (*init)(magic_api *);
-    Uint32(*api_version) (void);
+  Uint32(*api_version) (void);
   void (*shutdown)(magic_api *);
   void (*click)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int,
                 SDL_Rect *);
@@ -2215,6 +2215,7 @@ static void draw_color_mix_undo_redo(void);
 static void render_color_button(int the_color, SDL_Surface * decoration,
                                 SDL_Surface * icon);
 static void handle_color_changed(void);
+static void magic_set_color(void);
 
 static void do_quick_eraser(void);
 
@@ -3795,10 +3796,7 @@ static void mainloop(void)
                 draw_colors(magics[magic_group][cur_thing].colors);
 
                 if (magics[magic_group][cur_thing].colors)
-                  magic_funcs[magics[magic_group][cur_thing].handle_idx].
-                    set_color(magic_api_struct, color_hexes[cur_color][0],
-                              color_hexes[cur_color][1],
-                              color_hexes[cur_color][2]);
+                  magic_set_color();
               }
               else if (cur_tool == TOOL_ERASER)
               {
@@ -4471,10 +4469,7 @@ static void mainloop(void)
                   draw_colors(magics[magic_group][cur_thing].colors);
 
                   if (magics[magic_group][cur_thing].colors)
-                    magic_funcs[magics[magic_group][cur_thing].handle_idx].
-                      set_color(magic_api_struct, color_hexes[cur_color][0],
-                                color_hexes[cur_color][1],
-                                color_hexes[cur_color][2]);
+                    magic_set_color();
 
                   magic_switchin(canvas);
 
@@ -5239,10 +5234,7 @@ static void mainloop(void)
                 draw_colors(magics[grp][cur].colors);
 
                 if (magics[grp][cur].colors)
-                  magic_funcs[magics[grp][cur].handle_idx].
-                    set_color(magic_api_struct, color_hexes[cur_color][0],
-                              color_hexes[cur_color][1],
-                              color_hexes[cur_color][2]);
+                  magic_set_color();
 
                 magic_switchin(canvas);
               }
@@ -26499,15 +26491,47 @@ static void handle_color_changed(void)
 {
   render_brush();
 
-
-  if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+  if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL) {
     do_render_cur_text(0);
-  else if (cur_tool == TOOL_MAGIC)
-    magic_funcs[magics[magic_group][cur_magic[magic_group]].handle_idx].
-      set_color(magic_api_struct, color_hexes[cur_color][0],
-                color_hexes[cur_color][1], color_hexes[cur_color][2]);
-  else if (cur_tool == TOOL_STAMP)
+  } else if (cur_tool == TOOL_MAGIC) {
+    magic_set_color();
+  } else if (cur_tool == TOOL_STAMP) {
     clear_cached_stamp();
+  }
+}
+
+static void magic_set_color(void) {
+  int undo_ctr;
+  SDL_Surface *last;
+  SDL_Rect update_rect;
+
+  update_rect.x = 0;
+  update_rect.y = 0;
+  update_rect.w = 0;
+  update_rect.h = 0;
+
+  if (cur_undo > 0)
+    undo_ctr = cur_undo - 1;
+  else
+    undo_ctr = NUM_UNDO_BUFS - 1;
+
+  last = undo_bufs[undo_ctr];
+
+  magic_funcs[magics[magic_group][cur_magic[magic_group]].handle_idx].
+    set_color(magic_api_struct,
+              magics[magic_group][cur_magic[magic_group]].idx,
+              canvas,
+              last,
+              color_hexes[cur_color][0],
+              color_hexes[cur_color][1],
+              color_hexes[cur_color][2],
+              &update_rect);
+
+  if (update_rect.w > 0 && update_rect.h > 0) {
+    update_canvas(update_rect.x, update_rect.y,
+                  update_rect.x + update_rect.w,
+                  update_rect.y + update_rect.h);
+  }
 }
 
 /**
@@ -30043,7 +30067,7 @@ static void setup(void)
       for (i = 0; i < num_displays; i++) {
         res = SDL_GetCurrentDisplayMode(i, &mode);
         if (res != 0) {
-          fprintf(stderr, "Warning: SDL_GetCurrentDisplayMode() on display %d %d failed: %s\n", i, SDL_GetError());
+          fprintf(stderr, "Warning: SDL_GetCurrentDisplayMode() on display %d failed: %s\n", i, SDL_GetError());
         } else {
           if (mode.w >= WINDOW_WIDTH && mode.h >= WINDOW_HEIGHT) {
             /* Found a display capable of the chosen window size */

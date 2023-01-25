@@ -36,6 +36,10 @@ https://tuxpaint.org/
     * Better performance from "Rush" (by using SDL_gfx rotozoom)
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
+    * "Zoom" and "Perspective" background colors change
+      immediately when you select new colors.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * A keyboard shortcut is now available for quickly accessing
@@ -72,6 +76,11 @@ https://tuxpaint.org/
 
     * Changed default UI font from Bitstream Vera to DejaVu Sans.
       h/t Mark Kim <markuskimius@gmail.com>
+
+    * Update Tux Paint Magic API so `set_color()` functions can
+      alter the canvas.  (Utilized by "Zoom" and "Perspective", so far.)
+      Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000007.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Bug Fixes:
     ----------

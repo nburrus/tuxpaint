@@ -33,7 +33,6 @@
   (See COPYING.txt)
 
   Last updated: January 25, 2023
-  $Id$
 */
 
 #include <stdio.h>
@@ -77,7 +76,8 @@ void perspective_release(magic_api * api, int which,
 
 void perspective_shutdown(magic_api * api);
 
-void perspective_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void perspective_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 
 int perspective_requires_colors(magic_api * api, int which);
 
@@ -109,6 +109,7 @@ int corner;
 int dash;
 
 int click_x, click_y;
+int latest_x, latest_y;
 int new_w, new_h, old_h, sound_h;
 
 int perspective_average_r, perspective_average_g, perspective_average_b,
@@ -251,6 +252,9 @@ void perspective_drag(magic_api * api, int which, SDL_Surface * canvas,
                       int oy ATTRIBUTE_UNUSED, int x, int y,
                       SDL_Rect * update_rect)
 {
+  latest_x = x;
+  latest_y = y;
+
   switch (which)
   {
   case TOOL_PERSPECTIVE:
@@ -376,6 +380,8 @@ void perspective_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 {
   click_x = x;
   click_y = y;
+  latest_x = x;
+  latest_y = y;
 
   switch (which)
   {
@@ -776,16 +782,15 @@ void perspective_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void perspective_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
-                           Uint8 b)
+void perspective_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   if (r != perspective_r || g != perspective_g || b != perspective_b) {
     perspective_r = r;
     perspective_g = g;
     perspective_b = b;
 
-    /* FIXME: The API call to MAGIC_color() should allow us to update the canvas! */
-    // perspective_drag(api, which, canvas, last, click_x, click_y, click_x, click_y, update_rect);
+    perspective_release(api, which, canvas, last, latest_x, latest_y, update_rect);
   }
 }
 
