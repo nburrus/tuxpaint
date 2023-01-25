@@ -6,7 +6,7 @@
 
   By Pere Pujal Carabantes
 
-  Copyright (c) 2009-2022
+  Copyright (c) 2009-2023
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -24,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
+  Last updated: January 25, 2023
 */
 
 #include "tp_magic_api.h"
@@ -55,7 +55,8 @@ Mix_Chunk *blind_snd;
 
 // Prototypes
 Uint32 blind_api_version(void);
-void blind_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void blind_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int blind_init(magic_api * api);
 int blind_get_tool_count(magic_api * api);
 SDL_Surface *blind_get_icon(magic_api * api, int which);
@@ -87,8 +88,10 @@ Uint32 blind_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-void blind_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)       //get the colors from API and store it in structure
+void blind_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
+  //get the colors from API and store it in structure
   blind_r = r;
   blind_g = g;
   blind_b = b;

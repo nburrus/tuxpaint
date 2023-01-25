@@ -6,7 +6,7 @@
 
   Credits: Adam 'foo-script' Rakowski <foo-script@o2.pl>
 
-  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
+  Last updated: January 25, 2023
 */
 
 // sound only plays on release
@@ -51,7 +51,8 @@ Mix_Chunk *rosette_snd;
 //                              Housekeeping functions
 
 Uint32 rosette_api_version(void);
-void rosette_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void rosette_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int rosette_init(magic_api * api);
 int rosette_get_tool_count(magic_api * api);
 SDL_Surface *rosette_get_icon(magic_api * api, int which);
@@ -85,8 +86,10 @@ Uint32 rosette_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-void rosette_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)     //get the colors from API and store it in structure
+void rosette_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
+  //get the colors from API and store it in structure
   rosette_colors.r = r;
   rosette_colors.g = g;
   rosette_colors.b = b;

@@ -1,4 +1,6 @@
-/* Last updated 2021-09-21 */
+/*
+  Last updated: January 25, 2023
+*/
 
 #include <time.h>               //For time()
 
@@ -24,7 +26,8 @@ Mix_Chunk *confetti_snd;
 
 /* Local function prototypes: */
 Uint32 confetti_api_version(void);
-void confetti_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void confetti_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int confetti_init(magic_api * api);
 int confetti_get_tool_count(magic_api * api);
 SDL_Surface *confetti_get_icon(magic_api * api, int which);
@@ -59,8 +62,10 @@ Uint32 confetti_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-void confetti_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)    //get the colors from API and store it in structure
+void confetti_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
+  //get the colors from API and store it in structure
   confetti_colors.r = r;
   confetti_colors.g = g;
   confetti_colors.b = b;

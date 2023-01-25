@@ -6,7 +6,7 @@
    
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2013-2022 by Lukasz Dmitrowski
+  Copyright (c) 2013-2023 by Lukasz Dmitrowski
   
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
   
-  Last updated: October 19, 2022
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -55,7 +55,8 @@ void xor_release(magic_api * api, int which,
                  SDL_Rect * update_rect);
 
 void xor_shutdown(magic_api * api);
-void xor_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void xor_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int xor_requires_colors(magic_api * api, int which);
 void xor_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void xor_switchout(magic_api * api, int which, int mode,
@@ -222,8 +223,8 @@ void xor_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(xor_snd);
 }
 
-void xor_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED,
-                   Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
+void xor_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 

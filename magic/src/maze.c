@@ -1,15 +1,8 @@
 /* maze.c
 
-   Applys a lense effect like mazes of water dripping
-   down a pane of glass.  Applies an additive brush at
-   the mouse pointer, and a subtractive brush slightly
-   above (to simulate the water breaking up due to
-   evaporation), only allowing the draw path to go downwards,
-   and the left/right delta to change slightly (will not
-   follow the mouse precisely).  Upon release, the lense
-   effect will be applied.
+  Allows painting generated maze puzzles on your picture.
 
-   Last modified: 2023.01.25
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -61,7 +54,8 @@ void maze_shutdown(magic_api * api);
 void maze_click(magic_api * api, int which, int mode,
                      SDL_Surface * canvas, SDL_Surface * snapshot, int x,
                      int y, SDL_Rect * update_rect);
-void maze_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void maze_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                    SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 void maze_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
                     SDL_Rect * update_rect);
@@ -349,8 +343,8 @@ void maze_render(magic_api * api, SDL_Surface * canvas)
 }
 
 
-void maze_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                         Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
+void maze_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                    SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   maze_r = r;
   maze_g = g;

@@ -6,7 +6,7 @@
 
   Credits: Andrew Corcoran <akanewbie@gmail.com>
 
-  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -25,8 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
-  $Id$
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -115,7 +114,8 @@ void sharpen_release(magic_api * api, int which,
                      SDL_Rect * update_rect);
 
 void sharpen_shutdown(magic_api * api);
-void sharpen_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void sharpen_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int sharpen_requires_colors(magic_api * api, int which);
 void sharpen_switchin(magic_api * api, int which, int mode,
                       SDL_Surface * canvas);
@@ -371,9 +371,8 @@ void sharpen_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void sharpen_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                       Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
-                       Uint8 b ATTRIBUTE_UNUSED)
+void sharpen_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 

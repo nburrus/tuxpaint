@@ -4,7 +4,7 @@
   Mirror and Flip Magic Tools Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2021 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -23,8 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
-  $Id$
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -59,7 +58,8 @@ void mirror_flip_release(magic_api *, int, SDL_Surface *, SDL_Surface *, int,
 void mirror_flip_click(magic_api *, int, int, SDL_Surface *, SDL_Surface *,
                        int, int, SDL_Rect *);
 void mirror_flip_shutdown(magic_api *);
-void mirror_flip_set_color(magic_api *, Uint8, Uint8, Uint8);
+void mirror_flip_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int mirror_flip_requires_colors(magic_api *, int);
 void mirror_flip_switchin(magic_api *, int, int, SDL_Surface *);
 void mirror_flip_switchout(magic_api *, int, int, SDL_Surface *);
@@ -226,9 +226,8 @@ void mirror_flip_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // We don't use colors:
-void mirror_flip_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                           Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
-                           Uint8 b ATTRIBUTE_UNUSED)
+void mirror_flip_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 

@@ -1,8 +1,8 @@
 /*
- * Draws fretwork
- *
- * Last updated: 2022-05-19
- */
+  Draws fretwork
+
+  Last updated: January 25, 2023
+*/
 
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -57,7 +57,8 @@ static SDL_Surface *fretwork_one_back, *fretwork_three_back,
 
 Uint32 fretwork_api_version(void);
 int fretwork_modes(magic_api * api, int which);
-void fretwork_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void fretwork_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 static void fretwork_colorize(magic_api * api, SDL_Surface * dest,
                               SDL_Surface * src);
 int fretwork_init(magic_api * api);
@@ -106,7 +107,8 @@ int fretwork_modes(magic_api * api ATTRIBUTE_UNUSED,
   return (MODE_PAINT | MODE_FULLSCREEN);
 }
 
-void fretwork_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void fretwork_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   fretwork_r = r;
   fretwork_g = g;

@@ -4,7 +4,7 @@
   Clone tool paintbrush Magic Tools Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2022 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -23,8 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
-  $Id$
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -83,7 +82,8 @@ void clone_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
 void clone_release(magic_api * api, int which, SDL_Surface * canvas,
                    SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void clone_shutdown(magic_api * api);
-void clone_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void clone_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int clone_requires_colors(magic_api * api, int which);
 void clone_switchin(magic_api * api, int which, int mode,
                     SDL_Surface * canvas);
@@ -346,9 +346,8 @@ void clone_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(clone_start_snd);
 }
 
-void clone_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                     Uint8 ATTRIBUTE_UNUSED r, Uint8 ATTRIBUTE_UNUSED g,
-                     Uint8 ATTRIBUTE_UNUSED b)
+void clone_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 

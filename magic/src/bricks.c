@@ -6,7 +6,7 @@
 
   Albert Cahalan <albert@users.sf.net>
 
-  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -25,8 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
-  $Id$
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -70,7 +69,8 @@ void bricks_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
                   SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void bricks_release(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);        //An empty function. Is there a purpose to this? Ask moderator.
 void bricks_shutdown(magic_api * api);
-void bricks_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void bricks_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int bricks_requires_colors(magic_api * api, int which);
 void bricks_switchin(magic_api * api, int which, int mode,
                      SDL_Surface * canvas);
@@ -296,8 +296,8 @@ void bricks_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void bricks_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
-                      Uint8 b)
+void bricks_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   bricks_r = r;
   bricks_g = g;

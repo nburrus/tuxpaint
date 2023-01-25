@@ -7,7 +7,7 @@
   By Bill Kendrick
   Based on `blind.c` by Pere Pujal Carabantes
 
-  Copyright (c) 2021-2022
+  Copyright (c) 2021-2023
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
+  Last updated: January 25, 2023
 */
 
 #include "tp_magic_api.h"
@@ -39,7 +39,8 @@ Mix_Chunk *checkerboard_snd;
 
 // Prototypes
 Uint32 checkerboard_api_version(void);
-void checkerboard_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void checkerboard_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                            SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int checkerboard_init(magic_api * api);
 int checkerboard_get_tool_count(magic_api * api);
 SDL_Surface *checkerboard_get_icon(magic_api * api, int which);
@@ -73,8 +74,10 @@ Uint32 checkerboard_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-void checkerboard_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)        //get the colors from API and store it in structure
+void checkerboard_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                            SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
+  //get the colors from API and store it in structure
   checkerboard_r = r;
   checkerboard_g = g;
   checkerboard_b = b;

@@ -1,8 +1,8 @@
 /*
- * Folds the picture down from the corners.
- *
- * Last updated: 2021-09-20
- */
+  Folds the picture down from the corners.
+
+  Last updated: January 25, 2023
+*/
 
 //optimized version soon :)
 //when "folding" same corner many times it gives strange results. Now it's allowed. Let me know
@@ -48,7 +48,8 @@ static void fold_print_dark_line(void *ptr, int which, SDL_Surface * canvas,
 void translate_xy(SDL_Surface * canvas, int x, int y, int *a, int *b,
                   int rotation);
 Uint32 fold_api_version(void);
-void fold_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void fold_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                    SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int fold_init(magic_api * api);
 int fold_get_tool_count(magic_api * api);
 SDL_Surface *fold_get_icon(magic_api * api, int which);
@@ -84,8 +85,10 @@ Uint32 fold_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-void fold_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b)        //get the colors from API and store it in structure
+void fold_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
+  //get the colors from API and store it in structure
   fold_r = r;
   fold_g = g;
   fold_b = b;

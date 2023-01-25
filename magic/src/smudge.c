@@ -7,7 +7,7 @@
   Smudge by Albert Cahalan <albert@users.sf.net>
   Wet Paint addition by Bill Kendrick <bill@newbreedsoftware.com>
 
-  Copyright (c) 2002-2022
+  Copyright (c) 2002-2023
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -25,8 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 11, 2022
-  $Id$
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -56,7 +55,8 @@ void smudge_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
 void smudge_release(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void smudge_shutdown(magic_api * api);
-void smudge_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void smudge_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int smudge_requires_colors(magic_api * api, int which);
 void smudge_switchin(magic_api * api, int which, int mode,
                      SDL_Surface * canvas);
@@ -255,8 +255,8 @@ void smudge_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void smudge_set_color(magic_api * api ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
-                      Uint8 b)
+void smudge_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   smudge_r = r;
   smudge_g = g;

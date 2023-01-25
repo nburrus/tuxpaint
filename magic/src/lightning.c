@@ -1,9 +1,9 @@
 /* lightning.c
 
-   Draws a lightning strike between the click
-   and drag+release positions.
+  Draws a lightning strike between the click
+  and drag+release positions.
 
-   Last modified: 2021.11.07
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -33,7 +33,8 @@ void lightning_shutdown(magic_api * api);
 void lightning_click(magic_api * api, int which, int mode,
                      SDL_Surface * canvas, SDL_Surface * snapshot, int x,
                      int y, SDL_Rect * update_rect);
-void lightning_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void lightning_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                         SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 void lightning_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
                     SDL_Rect * update_rect);
@@ -300,7 +301,8 @@ void lightning_draw_bolt(void *ptr, SDL_Surface * canvas,
 }
 
 
-void lightning_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b)
+void lightning_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                         SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   api->rgbtohsv(r, g, b, &lightning_h, &lightning_s, &lightning_v);
 }

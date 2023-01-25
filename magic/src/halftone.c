@@ -1,6 +1,6 @@
 /* halftone.c
 
-   Last modified: 2021.11.07
+  Last updated: January 25, 2023
 */
 
 
@@ -79,7 +79,8 @@ void halftone_click(magic_api * api, int which, int mode,
 void halftone_release(magic_api * api, int which, SDL_Surface * canvas,
                       SDL_Surface * snapshot, int x, int y,
                       SDL_Rect * update_rect);
-void halftone_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void halftone_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 void halftone_switchin(magic_api * api, int which, int mode,
                        SDL_Surface * canvas);
 void halftone_switchout(magic_api * api, int which, int mode,
@@ -277,9 +278,8 @@ void halftone_release(magic_api * api ATTRIBUTE_UNUSED,
 {
 }
 
-void halftone_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                        Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
-                        Uint8 b ATTRIBUTE_UNUSED)
+void halftone_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 

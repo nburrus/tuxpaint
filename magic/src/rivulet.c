@@ -9,7 +9,7 @@
    follow the mouse precisely).  Upon release, the lense
    effect will be applied.
 
-   Last modified: 2023.01.16
+  Last updated: January 25, 2023
 */
 
 #include <stdio.h>
@@ -49,7 +49,8 @@ void rivulet_shutdown(magic_api * api);
 void rivulet_click(magic_api * api, int which, int mode,
                      SDL_Surface * canvas, SDL_Surface * snapshot, int x,
                      int y, SDL_Rect * update_rect);
-void rivulet_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void rivulet_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 void rivulet_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
                     SDL_Rect * update_rect);
@@ -335,8 +336,8 @@ rivulet_release(magic_api * api, int which ATTRIBUTE_UNUSED,
 }
 
 
-void rivulet_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                         Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED)
+void rivulet_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 

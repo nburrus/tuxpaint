@@ -6,7 +6,8 @@
   by Bill Kendrick <bill@newbreedsoftware.com>
   Math assistance by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
-  2009.04.02 - 2021.09.20
+  2009.04.02
+  Last updated: January 25, 2023
 
 FIXME:
 * Color/alpha art needs improvement.
@@ -43,7 +44,8 @@ char *realrainbow_get_description(magic_api * api, int which, int mode);
 int realrainbow_modes(magic_api * api, int which);
 int realrainbow_requires_colors(magic_api * api, int which);
 void realrainbow_shutdown(magic_api * api);
-void realrainbow_set_color(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
+void realrainbow_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 void realrainbow_click(magic_api * api, int which, int mode,
                        SDL_Surface * canvas, SDL_Surface * last, int x, int y,
                        SDL_Rect * update_rect);
@@ -152,9 +154,8 @@ void realrainbow_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(realrainbow_snd);
 }
 
-void realrainbow_set_color(magic_api * api ATTRIBUTE_UNUSED,
-                           Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
-                           Uint8 b ATTRIBUTE_UNUSED)
+void realrainbow_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
 }
 
