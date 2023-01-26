@@ -2,7 +2,7 @@
 
   Allows painting generated maze puzzles on your picture.
 
-  Last updated: January 25, 2023
+  Last updated: January 26, 2023
 */
 
 #include <stdio.h>
@@ -103,7 +103,7 @@ SDL_Surface *maze_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/rivulet.png", /* FIXME */
+  snprintf(fname, sizeof(fname), "%simages/magic/maze.png",
            api->data_directory);
 
   return (IMG_Load(fname));

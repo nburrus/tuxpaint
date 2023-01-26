@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.January.25 (0.9.29)
+2022.January.26 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -28,7 +28,6 @@ https://tuxpaint.org/
 
     * [WIP] "Maze"; draw a maze pattern over part or all of
       your drawing.
-      - needs icon
       - needs sound effect
 
   * Improvements to Magic Tools:
