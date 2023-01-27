@@ -85,10 +85,9 @@ int maze_init(magic_api * api)
 {
   char fname[1024];
 
-  /* FIXME */
-//  snprintf(fname, sizeof(fname), "%ssounds/magic/maze.ogg",
-//           api->data_directory);
-//  snd_effect = Mix_LoadWAV(fname);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/maze.ogg",
+           api->data_directory);
+  snd_effect = Mix_LoadWAV(fname);
 
   return (1);
 }
@@ -179,10 +178,7 @@ maze_click(magic_api * api, int which, int mode,
     return;
 
   if (snd_effect != NULL)
-    {
-      api->stopsound();
-      api->playsound(snd_effect, (x * 255) / canvas->w, 255);
-    }
+    api->stopsound();
 
   maze_start_x = floor(x / MAZE_BLOCK_SIZE) * MAZE_BLOCK_SIZE + (MAZE_BLOCK_SIZE / 2);
   maze_start_y = floor(y / MAZE_BLOCK_SIZE) * MAZE_BLOCK_SIZE + (MAZE_BLOCK_SIZE / 2);
@@ -200,6 +196,8 @@ maze_click(magic_api * api, int which, int mode,
     for (y = 0; y < canvas->h; y++)
       for (x = 0; x < canvas->w; x++)
         maze_color[y * canvas->w + x] = color;
+
+    api->playsound(snd_effect, 128, 255);
 
     maze_render(api, canvas);
 
@@ -235,6 +233,9 @@ void maze_release(magic_api * api, int which ATTRIBUTE_UNUSED,
                   SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
                   SDL_Rect * update_rect) {
+  if (snd_effect != NULL)
+    api->stopsound();
+
   maze_collapse_contiguous(canvas);
 
   maze_add_start();
@@ -360,6 +361,9 @@ void maze_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr;
   int xx, yy, idx;
   Uint32 color;
+
+  if (snd_effect != NULL)
+    api->playsound(snd_effect, (x * 255) / canvas->w, 255);
 
   color = SDL_MapRGB(canvas->format, maze_r, maze_g, maze_b);
 

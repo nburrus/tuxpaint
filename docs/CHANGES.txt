@@ -26,9 +26,9 @@ https://tuxpaint.org/
       - needs sound effect
       - effect needs improvement
 
-    * [WIP] "Maze"; draw a maze pattern over part or all of
-      your drawing.
-      - needs sound effect
+    * "Maze"; draw a maze pattern over part or all of your drawing.
+      (Sound effect licensed as Creative Commons 0 by
+      Julian Evans, https://www.julianevans.info/)
 
   * Improvements to Magic Tools:
     ----------------------------

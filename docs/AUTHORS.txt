@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 7, 2023
+June 17, 2002 - January 26, 2023
 
 * Design and Coding:
 
@@ -26,7 +26,7 @@ June 17, 2002 - January 7, 2023
   Albert Cahalan <albert@users.sf.net>
 
   Bilinear interpolation code based on an example by Christian Graus
-  ( http://www.codeproject.com/cs/media/imageprocessing4.asp ).
+  (http://www.codeproject.com/cs/media/imageprocessing4.asp)
 
   Input Method (IM) Framework implemented by:
   Mark K. Kim <markuskimius@gmail.com>
@@ -108,6 +108,12 @@ June 17, 2002 - January 7, 2023
   Googly Eyes sound effect: "SFX_STICKERRIPPER_docket_29.wav"
   (https://freesound.org/people/MrFossy/sounds/590303/)
   Creative Commons 0 license by "MrFossy"
+
+  Maze magic tool and artwork
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  Maze sound effect: "01-35 Footsteps, Wood, Socks, Running 2.wav"
+  (https://freesound.org/people/SpliceSound/sounds/369834/)
+  Creative Commons 0 by Julian Evans <https://www.julianevans.info/>
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
