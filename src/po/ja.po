@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-21 03:05-0800\n"
-"PO-Revision-Date: 2023-01-04 18:41+0900\n"
+"PO-Revision-Date: 2023-01-28 14:48+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1749,19 +1749,15 @@ msgstr "クリックしたまま マウスをうごかして いなずまを え
 
 #: ../../magic/src/maze.c:110
 msgid "Maze"
-msgstr ""
+msgstr "めいろ"
 
 #: ../../magic/src/maze.c:124
-#, fuzzy
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to paint a maze on your picture."
-msgstr "クリックしたまま マウスをうごかして でんしゃの せんろを かこう。"
+msgstr "クリックしたまま マウスをうごかして めいろを かこう。"
 
 #: ../../magic/src/maze.c:126
-#, fuzzy
-#| msgid "Click to turn the entire picture into a cartoon."
 msgid "Click to turn your entire picture into a maze."
-msgstr "えを クリックして ぜんたいを まんがみたいに しよう。"
+msgstr "えを クリックして ぜんたいを めいろに しよう。"
 
 #: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
@@ -2025,14 +2021,11 @@ msgstr "クリックして みずに いしを おとしたときの ような �
 
 #: ../../magic/src/rivulet.c:142
 msgid "Rivulet"
-msgstr ""
+msgstr "おがわ"
 
 #: ../../magic/src/rivulet.c:155
-#, fuzzy
-#| msgid "Click and drag the mouse around to add a reflection to your picture."
 msgid "Click and drag downward to add water rivulets to your drawing"
-msgstr ""
-"クリックしたまま マウスをうごかして かがみにうつったような えに しよう。"
+msgstr "クリックしたまま したのほうに マウスをうごかして おがわを かこう。"
 
 #: ../../magic/src/rosette.c:128
 msgid "Rosette"
