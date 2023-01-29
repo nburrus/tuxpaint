@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 26, 2023
+June 17, 2002 - January 28, 2023
 
 * Design and Coding:
 
@@ -114,6 +114,17 @@ June 17, 2002 - January 26, 2023
   Maze sound effect: "01-35 Footsteps, Wood, Socks, Running 2.wav"
   (https://freesound.org/people/SpliceSound/sounds/369834/)
   Creative Commons 0 by Julian Evans <https://www.julianevans.info/>
+
+  Circles and Rays magic tools and artwork
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
+  by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->.
+  Sound effect based on Richard Wagner's "Ride of the Valkyries"
+  licensed as Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+  (https://creativecommons.org/licenses/by/3.0/)
+  by https://pmmusic.pro/; conducted by Philip Milman.
+  (Why? Because Van Gogh liked Wagner:
+  https://yalebooks.yale.edu/book/9780300228335/van-gogh-and-music/)
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,

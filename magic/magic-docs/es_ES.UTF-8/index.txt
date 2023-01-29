@@ -5,6 +5,7 @@ Distorts
      * Blocks
      * Blur
      * Chalk
+     * Circles
      * Clone
      * Distortion
      * Drip
@@ -18,6 +19,7 @@ Distorts
      * Mosaic
      * Noise
      * Puzzle
+     * Rays
      * Ripples
      * Sharpen
      * Silhouette

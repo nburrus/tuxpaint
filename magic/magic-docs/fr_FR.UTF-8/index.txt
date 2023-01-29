@@ -3,6 +3,7 @@
 Distorts
 
      * Blocks
+     * Circles
      * Clone
      * Craie
      * Distorsion
@@ -17,6 +18,7 @@ Distorts
      * Noise
      * Oeil de poisson
      * Puzzle
+     * Rays
      * Relief
      * Ripples
      * Sharpen
