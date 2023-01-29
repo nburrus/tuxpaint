@@ -31,12 +31,12 @@ char * swirl_names[NUM_SWIRL_TOOLS] = {
 
 char * swirl_descriptions[NUM_SWIRL_TOOLS][2] = {
   {
-   gettext_noop("Click to turn your entire picture into circular brushstrokes."),
-   gettext_noop("Click and drag to transform parts of your picture to circular brushstrokes.")
+   gettext_noop("Click and drag to transform parts of your picture to circular brushstrokes."),
+   gettext_noop("Click to turn your entire picture into circular brushstrokes.")
   },
   {
-   gettext_noop("Click to turn your entire picture into brushstroke rays."),
-   gettext_noop("Click and drag to transform parts of your picture to brushstroke rays.")
+   gettext_noop("Click and drag to transform parts of your picture to brushstroke rays."),
+   gettext_noop("Click to turn your entire picture into brushstroke rays.")
   }
 };
 
@@ -144,7 +144,7 @@ int swirls_get_group(magic_api * api ATTRIBUTE_UNUSED,
 char *swirls_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                 int which, int mode)
 {
-  return strdup(gettext(swirl_descriptions[which][mode]));
+  return strdup(gettext(swirl_descriptions[which][mode - 1]));
 }
 
 int swirls_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
