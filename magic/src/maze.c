@@ -2,7 +2,7 @@
 
   Allows painting generated maze puzzles on your picture.
 
-  Last updated: January 26, 2023
+  Last updated: January 28, 2023
 */
 
 #include <stdio.h>
@@ -122,7 +122,7 @@ int maze_get_group(magic_api * api ATTRIBUTE_UNUSED,
 
 char *maze_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                 int which ATTRIBUTE_UNUSED,
-                                int mode ATTRIBUTE_UNUSED)
+                                int mode)
 {
   if (mode == MODE_PAINT)
     return(gettext("Click and drag to paint a maze on your picture."));
@@ -344,8 +344,8 @@ void maze_render(magic_api * api, SDL_Surface * canvas)
 }
 
 
-void maze_set_color(magic_api * api, int which, SDL_Surface * canvas,
-                    SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
+void maze_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
+                    SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   maze_r = r;
   maze_g = g;
