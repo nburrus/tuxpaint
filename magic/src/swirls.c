@@ -7,7 +7,7 @@
    Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
    by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->
 
-   Last updated: January 29, 2023
+   Last updated: January 30, 2023
 */
 
 #include <stdio.h>
@@ -56,7 +56,7 @@ char * swirl_icon_filenames[NUM_SWIRL_TOOLS] = {
 char * swirl_sfx_filenames[NUM_SWIRL_TOOLS] = {
   "swirls_circles.ogg",
   "swirls_rays.ogg",
-  "swirls_rays.ogg" // FIXME
+  "swirls_fur.ogg"
 };
 
 int SWIRLS_NUM_STROKES_PER_DRAG_LINE[NUM_SWIRL_TOOLS] = {
@@ -264,7 +264,7 @@ void swirls_release(magic_api * api, int which,
                   SDL_Surface * snapshot ATTRIBUTE_UNUSED,
                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
                   SDL_Rect * update_rect ATTRIBUTE_UNUSED) {
-  if (snd_effects[which] != NULL)
+  if (snd_effects[which] != NULL && which != SWIRL_TOOL_FUR)
     api->stopsound();
 }
 

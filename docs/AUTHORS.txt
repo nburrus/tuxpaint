@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 29, 2023
+June 17, 2002 - January 30, 2023
 
 * Design and Coding:
 
@@ -126,6 +126,10 @@ June 17, 2002 - January 29, 2023
   by https://pmmusic.pro/; conducted by Philip Milman.
   (Why? Because Van Gogh liked Wagner:
   https://yalebooks.yale.edu/book/9780300228335/van-gogh-and-music/)
+
+  Fur sound effect based on "Petting Long, Coarse Fur.wav"
+  (https://freesound.org/people/Kawgrim/sounds/584865/)
+  Creative Commons 0 by Kawgrim <https://freesound.org/people/Kawgrim/>
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
