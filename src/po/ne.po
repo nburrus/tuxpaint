@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-21 03:05-0800\n"
+"POT-Creation-Date: 2023-01-29 21:54-0800\n"
 "PO-Revision-Date: 2014-06-09 08:08+0530\n"
 "Last-Translator: Khagen Sarma <khagen.sharma@gmail.com>\n"
 "Language-Team: none\n"
@@ -799,7 +799,7 @@ msgstr "नयाँ"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:98 ../tuxpaint.c:9965
+#: ../tools.h:98 ../tuxpaint.c:9957
 msgid "Open"
 msgstr "खोल्नुहोस्"
 
@@ -1018,214 +1018,214 @@ msgid "Drag the mouse to rotate the stamp. Click to draw it."
 msgstr "आखारलाई घुमाउनका लागि माउस सार्नुहोस्। यसलाई कोर्नका लागि क्लिक गर्नुहोस्।"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2460
+#: ../tuxpaint.c:2461
 msgid "Do you really want to quit?"
 msgstr "के तपाईँ साँच्चै त्याग्न चाहनुहुन्छ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2463
+#: ../tuxpaint.c:2464
 msgid "Yes, I’m done!"
 msgstr "ज्यू, मेले गरेँ"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2466 ../tuxpaint.c:2493
+#: ../tuxpaint.c:2467 ../tuxpaint.c:2494
 msgid "No, take me back!"
 msgstr "होइन, मलाई पछि लानुहोस्!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2471
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "यदि तपाईँले त्याग्नुभयो भने तपाईले चित्र हराउनुहुनेछ! के यसलाई संरक्षण गरूँ?"
 
-#: ../tuxpaint.c:2471 ../tuxpaint.c:2476
+#: ../tuxpaint.c:2472 ../tuxpaint.c:2477
 msgid "Yes, save it!"
 msgstr "ज्यू, यसलाई संरक्षण गर्नुहोस्!"
 
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477
+#: ../tuxpaint.c:2473 ../tuxpaint.c:2478
 msgid "No, don’t bother saving!"
 msgstr "होइन, संरक्षण नगरे पनि केही हुन्न!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2475
+#: ../tuxpaint.c:2476
 msgid "Save your picture first?"
 msgstr "पहिला तपाईँको चित्र संरक्षण गर्नुहोस्"
 
 #. Error opening picture
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2481
 msgid "Can’t open that picture!"
 msgstr "चित्र खोल्न सकिएन!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2483 ../tuxpaint.c:2488 ../tuxpaint.c:2497 ../tuxpaint.c:2504
-#: ../tuxpaint.c:2513 ../tuxpaint.c:2518
+#: ../tuxpaint.c:2484 ../tuxpaint.c:2489 ../tuxpaint.c:2498 ../tuxpaint.c:2505
+#: ../tuxpaint.c:2514 ../tuxpaint.c:2519
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2487
+#: ../tuxpaint.c:2488
 msgid "There are no saved files!"
 msgstr "संरक्षण गरिएको फाइल छैन!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2491
+#: ../tuxpaint.c:2492
 msgid "Print your picture now?"
 msgstr "तपाईँको चित्र अहिले छाप्नुहुन्छ?"
 
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2493
 msgid "Yes, print it!"
 msgstr "ज्यू, छाप्नुहोस्!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2496
+#: ../tuxpaint.c:2497
 msgid "Your picture has been printed!"
 msgstr "तपाईँको चित्र छापिइयो!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2500
+#: ../tuxpaint.c:2501
 msgid "Sorry! Your picture could not be printed!"
 msgstr "माफ गर्नुहोस्! तपाईँको चित्र छाप्न सकिएन!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2503
+#: ../tuxpaint.c:2504
 msgid "You can’t print yet!"
 msgstr "तपाईले अहिलेसम्म छाप्न सक्नुभएन!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2507
+#: ../tuxpaint.c:2508
 msgid "Erase this picture?"
 msgstr "यो चित्र मेटाउनू?"
 
-#: ../tuxpaint.c:2508
+#: ../tuxpaint.c:2509
 msgid "Yes, erase it!"
 msgstr "ज्यू, यसलाई मेटाउनुहोस्!"
 
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2510
 msgid "No, don’t erase it!"
 msgstr "होइन, यसलाई नमेटाउनुहोस्!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2513
 msgid "Remember to use the left mouse button!"
 msgstr "माउसको देब्रे बटन प्रयोग गर्न सम्झनुहोस्!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2516
+#: ../tuxpaint.c:2517
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "तपाईँको चित्र छापिइयो!"
 
-#: ../tuxpaint.c:2517
+#: ../tuxpaint.c:2518
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "तपाईँको चित्र छापिइयो!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2521
+#: ../tuxpaint.c:2522
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "माफ गर्नुहोस्! तपाईँको चित्र छाप्न सकिएन!"
 
-#: ../tuxpaint.c:2522
+#: ../tuxpaint.c:2523
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "माफ गर्नुहोस्! तपाईँको चित्र छाप्न सकिएन!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2526
+#: ../tuxpaint.c:2527
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "तपाईँले चाहनुभएको चित्र चुन्नुहोस्, “Play” मा क्लिक गर्नुहोस्।"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2838
+#: ../tuxpaint.c:2839
 msgid "Sound muted."
 msgstr "आवाज मौन गरिएको छ।"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2843
+#: ../tuxpaint.c:2844
 msgid "Sound unmuted."
 msgstr "आवाज मैन निस्क्रीय गरिएको छ"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3742
+#: ../tuxpaint.c:3743
 msgid "Please wait…"
 msgstr "कृपया पर्खनुहोस्......"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9968
+#: ../tuxpaint.c:9960
 msgid "Erase"
 msgstr "मेटाउनुहोस्"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9971
+#: ../tuxpaint.c:9963
 msgid "Slides"
 msgstr "स्लाइडहरू"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9974
+#: ../tuxpaint.c:9966
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9977
+#: ../tuxpaint.c:9969
 msgid "Back"
 msgstr "पछि"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9980
+#: ../tuxpaint.c:9972
 msgid "Play"
 msgstr "प्ले गर्नुहोस्"
 
-#: ../tuxpaint.c:9984
+#: ../tuxpaint.c:9976
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9987
+#: ../tuxpaint.c:9979
 msgid "Next"
 msgstr "अघिल्लो"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9990
+#: ../tuxpaint.c:9982
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10925 ../tuxpaint.c:10927 ../tuxpaint.c:10928
+#: ../tuxpaint.c:10917 ../tuxpaint.c:10919 ../tuxpaint.c:10920
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14951
+#: ../tuxpaint.c:14943
 msgid "Yes"
 msgstr "ज्यू"
 
-#: ../tuxpaint.c:14955
+#: ../tuxpaint.c:14947
 msgid "No"
 msgstr "होइन"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16149
+#: ../tuxpaint.c:16141
 msgid "Replace the picture with your changes?"
 msgstr "तपाईँको प्रतिस्थापन चित्र परिवर्तन गर्नू?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16153
+#: ../tuxpaint.c:16145
 msgid "Yes, replace the old one!"
 msgstr "ज्यू, पुरानोलाई प्रतिस्थापन गर्नुहोस्!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16157
+#: ../tuxpaint.c:16149
 msgid "No, save a new file!"
 msgstr "होइन, एउटा नयाँ फाइल संरक्षण गर्नुहोस्!"
 
-#: ../tuxpaint.c:17512
+#: ../tuxpaint.c:17504
 msgid "Choose the picture you want, then click “Open”."
 msgstr "तपाईँले चाहनुभएको चित्र चुन्नुहोस्, “Open”.मा क्लिक गर्नुहोस्।"
 
@@ -1234,66 +1234,66 @@ msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25389
+#: ../tuxpaint.c:25397
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25390
+#: ../tuxpaint.c:25398
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "पँहेलो!"
 
-#: ../tuxpaint.c:25391
+#: ../tuxpaint.c:25399
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "आकासे निलो!"
 
-#: ../tuxpaint.c:25392
+#: ../tuxpaint.c:25400
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "सेतो!"
 
-#: ../tuxpaint.c:25393
+#: ../tuxpaint.c:25401
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25394
+#: ../tuxpaint.c:25402
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "कालो!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25399
+#: ../tuxpaint.c:25407
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25400
+#: ../tuxpaint.c:25408
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25401
+#: ../tuxpaint.c:25409
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25403
+#: ../tuxpaint.c:25411
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25405
+#: ../tuxpaint.c:25413
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25407
+#: ../tuxpaint.c:25415
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1301,21 +1301,21 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26243 ../tuxpaint.c:26250
+#: ../tuxpaint.c:26251 ../tuxpaint.c:26258
 msgid "entirely"
 msgstr ""
 
-#: ../tuxpaint.c:29477
+#: ../tuxpaint.c:29517
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:29488
+#: ../tuxpaint.c:29528
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29502
+#: ../tuxpaint.c:29542
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1325,26 +1325,26 @@ msgstr ""
 msgid "Drawing program"
 msgstr "ड्रइङ प्रोग्राम"
 
-#: ../../magic/src/alien.c:68
+#: ../../magic/src/alien.c:67
 msgid "Color Shift"
 msgstr "कलर सिप्ट"
 
-#: ../../magic/src/alien.c:77
+#: ../../magic/src/alien.c:76
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "तपाईको चित्रका अवयवहरूमा रङ्ग परिवर्त गर्नका लागि माउस क्लिक गरेर घुमाउनुहोस्।"
 
-#: ../../magic/src/alien.c:78
+#: ../../magic/src/alien.c:77
 msgid "Click to change the colors in your entire picture."
 msgstr "तपाईँको चित्रको स्मपूर्ण रङ्ग परिवर्तन गर्नका लागि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/blind.c:126
+#: ../../magic/src/blind.c:129
 msgid "Blind"
 msgstr "ब्लाइन्ड"
 
-#: ../../magic/src/blind.c:141
+#: ../../magic/src/blind.c:144
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -1461,11 +1461,11 @@ msgstr "चित्रलाई कार्टुनमा परिवर्�
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "चित्रलाई चक ड्रइङ बनाउनका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/checkerboard.c:113
+#: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:128
+#: ../../magic/src/checkerboard.c:131
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
@@ -1481,11 +1481,11 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/confetti.c:98
+#: ../../magic/src/confetti.c:103
 msgid "Confetti"
 msgstr "कनफेट्टी"
 
-#: ../../magic/src/confetti.c:111
+#: ../../magic/src/confetti.c:116
 msgid "Click to throw confetti!"
 msgstr "कनफेट्टी हटाउनका लागि क्लिक गर्नुहोस्"
 
@@ -1539,11 +1539,11 @@ msgstr "तपाईँको चित्रका अवयवहरू अँ
 msgid "Click to darken your entire picture."
 msgstr "तपाईँको पुरा चित्र उज्यालो पार्नका लागि क्लिक गर्नुहोस् ।"
 
-#: ../../magic/src/fisheye.c:112
+#: ../../magic/src/fisheye.c:114
 msgid "Fisheye"
 msgstr "फिशआइ"
 
-#: ../../magic/src/fisheye.c:127
+#: ../../magic/src/fisheye.c:129
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "तपाईको चित्रमा फिसआइ बनाउनका लागि चित्रको भागमा क्लिक गर्नुहोस्"
 
@@ -1563,26 +1563,26 @@ msgstr "फिंज"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "फिंजको फोकाहरूले क्षेत्र भर्नका लागि  क्लिक गर्नुहोस् अनि माउस ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:127
 msgid "Fold"
 msgstr "फोल्ट"
 
-#: ../../magic/src/fold.c:139
+#: ../../magic/src/fold.c:142
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "पृष्ठभूमि रङ्ग चुन्नुहोस् अनि पृष्ठलाई बन्द गर्नुको लागि कुनामा क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/fretwork.c:209
+#: ../../magic/src/fretwork.c:211
 msgid "Fretwork"
 msgstr "फ्रेटवर्क(खरो-काम)"
 
-#: ../../magic/src/fretwork.c:217
+#: ../../magic/src/fretwork.c:219
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr "स्ट्रिङ आर्टले बनेको तीर ड्र गर्नका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/fretwork.c:221
+#: ../../magic/src/fretwork.c:223
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "तपाईँको चित्रलाई बर्षातले ढाकिएको बनाउनका ल्गि क्लिक गर्नुहोस्।"
 
@@ -1607,11 +1607,11 @@ msgstr ""
 msgid "small googly eye"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:160
+#: ../../magic/src/googlyeyes.c:161
 msgid "Google Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:174
+#: ../../magic/src/googlyeyes.c:175
 #, c-format
 msgid ""
 "Click to place a %s, then drag and release to make it look that direction."
@@ -1707,29 +1707,29 @@ msgstr "प्रकाश"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "तपाईँको चित्रमा प्रकाशको लहर बनाउन क्लिक अनि ड्र्याग गर्नुहोस्"
 
-#: ../../magic/src/lightning.c:89
+#: ../../magic/src/lightning.c:90
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "उज्यालो पार्नु"
 
-#: ../../magic/src/lightning.c:104
+#: ../../magic/src/lightning.c:105
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "तपाईँको चित्रमा प्रकाशको लहर बनाउन क्लिक अनि ड्र्याग गर्नुहोस्"
 
-#: ../../magic/src/maze.c:110
+#: ../../magic/src/maze.c:114
 msgid "Maze"
 msgstr ""
 
-#: ../../magic/src/maze.c:124
+#: ../../magic/src/maze.c:128
 #, fuzzy
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to paint a maze on your picture."
 msgstr "तपाईँको चित्रमा रेलको पटरी बनाउनका लागि क्लिक गर्नुहोस् अनि ड्रयाग गर्नुहोस्।"
 
-#: ../../magic/src/maze.c:126
+#: ../../magic/src/maze.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1872,55 +1872,55 @@ msgid ""
 "complementary colors."
 msgstr ""
 
-#: ../../magic/src/noise.c:66
+#: ../../magic/src/noise.c:65
 msgid "Noise"
 msgstr "आवाज"
 
-#: ../../magic/src/noise.c:75
+#: ../../magic/src/noise.c:74
 #, fuzzy
 #| msgid "Click and move the mouse to add noise to parts of your picture."
 msgid "Click and drag the mouse to add noise to parts of your picture."
 msgstr "तपाईँको चित्रमा आवाज जोड्नका लागि क्लिक गर्नुहोस् अनि माउस गुमाउनुहोस्। "
 
-#: ../../magic/src/noise.c:76
+#: ../../magic/src/noise.c:75
 msgid "Click to add noise to your entire picture."
 msgstr "तपाईँको पुरा च्त्रमा आवाज जोड्नुहोस्।"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:170
 msgid "Perspective"
 msgstr "परिप्रेक्ष"
 
-#: ../../magic/src/perspective.c:170
+#: ../../magic/src/perspective.c:171
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:171
+#: ../../magic/src/perspective.c:172
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "जूम"
 
-#: ../../magic/src/perspective.c:172
+#: ../../magic/src/perspective.c:173
 msgid "Zoom"
 msgstr "जूम"
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:174
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:178
+#: ../../magic/src/perspective.c:179
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "चित्रलाई तपाईँले चाहनुभएको ठाउँमा तन्काउनका लागि कुनामा क्लिक गर्नुहोस् अनि ड्र्याग "
 "गर्नुहोस्।"
 
-#: ../../magic/src/perspective.c:180
+#: ../../magic/src/perspective.c:181
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "तपाईँको पेन्टिङलाई फिल्सको आकारमा परिणत गर्न क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/perspective.c:183
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -1930,13 +1930,13 @@ msgstr ""
 "जूमइन सम्म क्लिक गर्नुहोस् अनि ड्याग ग्रनुहोस् वा चित्रलाई जूमआउट गर्नका लागि ड्रयागआउट "
 "गर्नुहोस्।"
 
-#: ../../magic/src/perspective.c:186
+#: ../../magic/src/perspective.c:187
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "जूमइन सम्म क्लिक गर्नुहोस् अनि ड्याग ग्रनुहोस् वा चित्रलाई जूमआउट गर्नका लागि ड्रयागआउट "
 "गर्नुहोस्।"
 
-#: ../../magic/src/perspective.c:189
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -1954,23 +1954,23 @@ msgstr ""
 msgid "Click and drag to draw large pixels."
 msgstr "ठुलो ब्रिक्सबनाउनका लागि क्लिक गरेर मुभ गर्नुहोस्"
 
-#: ../../magic/src/puzzle.c:115
+#: ../../magic/src/puzzle.c:116
 msgid "Puzzle"
 msgstr "प्रहेलिका"
 
-#: ../../magic/src/puzzle.c:131
+#: ../../magic/src/puzzle.c:132
 msgid "Click the part of your picture where would you like a puzzle."
 msgstr "तपाईँको चित्रको त्यो भागलाई क्लिक गर्नुहोस् जहाँ तपाईँ प्रहेलिका चाहनुहुन्छ।"
 
-#: ../../magic/src/puzzle.c:132
+#: ../../magic/src/puzzle.c:133
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "फुलस्क्रिन मुडमा प्रहेलिका बनाउनका लागि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/rails.c:153
+#: ../../magic/src/rails.c:159
 msgid "Rails"
 msgstr "पटरीहरू"
 
-#: ../../magic/src/rails.c:168
+#: ../../magic/src/rails.c:174
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "तपाईँको चित्रमा रेलको पटरी बनाउनका लागि क्लिक गर्नुहोस् अनि ड्रयाग गर्नुहोस्।"
 
@@ -1988,27 +1988,27 @@ msgstr "इन्द्रेनी, "
 msgid "You can draw in rainbow colors!"
 msgstr "तपाई इन्द्रेनी रंग ड्र गर्न सक्नुहुन्छ!"
 
-#: ../../magic/src/rain.c:69
+#: ../../magic/src/rain.c:68
 msgid "Rain"
 msgstr "वर्षा"
 
-#: ../../magic/src/rain.c:77
+#: ../../magic/src/rain.c:76
 msgid "Click to place a rain drop onto your picture."
 msgstr "तपाईँको चित्रमा वर्षात ड्र गर्नुहोस्"
 
-#: ../../magic/src/rain.c:78
+#: ../../magic/src/rain.c:77
 msgid "Click to cover your picture with rain drops."
 msgstr "तपाईँको चित्रलाई बर्षातले ढाकिएको बनाउनका ल्गि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/realrainbow.c:113
+#: ../../magic/src/realrainbow.c:115
 msgid "Real Rainbow"
 msgstr "असली इन्द्रेनी"
 
-#: ../../magic/src/realrainbow.c:115
+#: ../../magic/src/realrainbow.c:117
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV इन्द्रेनी"
 
-#: ../../magic/src/realrainbow.c:130
+#: ../../magic/src/realrainbow.c:132
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2037,11 +2037,11 @@ msgstr "सानू लहर"
 msgid "Click to make ripples appear over your picture."
 msgstr "तपाईँको चित्रमा सानू लहर देखा पार्नका लागि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/rivulet.c:142
+#: ../../magic/src/rivulet.c:143
 msgid "Rivulet"
 msgstr ""
 
-#: ../../magic/src/rivulet.c:155
+#: ../../magic/src/rivulet.c:156
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2050,61 +2050,61 @@ msgstr ""
 "तपाईँको चित्रका विभिन्न अङ्गहरूमा विभिन्न रंगका साना टुक्राहरूका प्रभाव जोड्नका लागि "
 "क्लिक गर्नुहोस् अनि माउस गुमाउनुहोस्।"
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:131
 msgid "Rosette"
 msgstr "गुलाफको आकारको बुट्टा"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:133
 msgid "Picasso"
 msgstr "पिकासो"
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:146
 msgid "Click and start drawing your rosette."
 msgstr "क्लिक गर्नुहोस् अनि गुलाफको आकारको बुट्टा ड्र गर्न शुरू गर्नुहोस्।"
 
-#: ../../magic/src/rosette.c:145
+#: ../../magic/src/rosette.c:148
 msgid "You can draw just like Picasso!"
 msgstr "तपाई पिकासोजस्तै ड्र गर्न सक्नुहुन्छ!"
 
-#: ../../magic/src/sharpen.c:76
+#: ../../magic/src/sharpen.c:75
 msgid "Edges"
 msgstr "किनाराहरू"
 
-#: ../../magic/src/sharpen.c:77
+#: ../../magic/src/sharpen.c:76
 msgid "Sharpen"
 msgstr "तिख्याउनु"
 
-#: ../../magic/src/sharpen.c:78
+#: ../../magic/src/sharpen.c:77
 msgid "Silhouette"
 msgstr "पार्श्‍वचित्र"
 
-#: ../../magic/src/sharpen.c:83
+#: ../../magic/src/sharpen.c:82
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgstr "तपाईँको चित्रमा किनारा खुटयाउनुको लागि क्लिक गर्नुहोस् अनि माउस गुमाउनुहोस्।"
 
-#: ../../magic/src/sharpen.c:84
+#: ../../magic/src/sharpen.c:83
 msgid "Click to trace edges in your entire picture."
 msgstr "तपाईँको पूरा चित्रमा किनारा खुटयाउनुको लागि क्लिक गर्नुहोस् ।"
 
-#: ../../magic/src/sharpen.c:85
+#: ../../magic/src/sharpen.c:84
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to sharpen parts of your picture."
 msgstr "तपाईँको चित्रका अङ्गहरू तिख्याउनुको लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/sharpen.c:86
+#: ../../magic/src/sharpen.c:85
 msgid "Click to sharpen the entire picture."
 msgstr "पाईँको पूरा चित्र तिख्याउनुको लागि क्लिक गर्नुहोस्"
 
-#: ../../magic/src/sharpen.c:88
+#: ../../magic/src/sharpen.c:87
 #, fuzzy
 #| msgid "Click and move the mouse to create a black and white silhouette."
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr "श्यामश्वेत पाश्र्वचित्र बनाउनका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/sharpen.c:90
+#: ../../magic/src/sharpen.c:89
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "तपाईँको पूरा चित्रमा श्यामश्वेत पाश्र्वचित्र बनाउनका लागि क्लिक गर्नुहस्।"
 
@@ -2137,19 +2137,19 @@ msgstr "चित्र लतपत्याउनुको लागि क्
 msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgstr "वेट,लतपततिएको पेन्टले ड्र गर्नका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/snow.c:71
+#: ../../magic/src/snow.c:70
 msgid "Snow Ball"
 msgstr "स्नो बल"
 
-#: ../../magic/src/snow.c:72
+#: ../../magic/src/snow.c:71
 msgid "Snow Flake"
 msgstr "स्नो फेक"
 
-#: ../../magic/src/snow.c:76
+#: ../../magic/src/snow.c:75
 msgid "Click to add snow balls to your picture."
 msgstr "तपाईँको चित्रमा स्नो बल थप्नका लागि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/snow.c:77
+#: ../../magic/src/snow.c:76
 msgid "Click to add snow flakes to your picture."
 msgstr "तपाईँको चित्रमा स्नो फेक थप्नका लागि क्लिक गर्नुहोस्।"
 
@@ -2167,19 +2167,19 @@ msgid ""
 msgstr ""
 "तपाईँको चित्रलाई टेलिभिजनमा जस्तै देखिने बनाउनका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/string.c:144
+#: ../../magic/src/string.c:145
 msgid "String edges"
 msgstr "स्ट्रिङ किनाराहरू"
 
-#: ../../magic/src/string.c:147
+#: ../../magic/src/string.c:148
 msgid "String corner"
 msgstr "स्ट्रिङ कुना"
 
-#: ../../magic/src/string.c:150
+#: ../../magic/src/string.c:151
 msgid "String 'V'"
 msgstr "स्ट्रिङ'V'"
 
-#: ../../magic/src/string.c:168
+#: ../../magic/src/string.c:169
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2187,23 +2187,76 @@ msgstr ""
 "स्ट्रिङ आर्ट ड्र गर्नका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्। बेसी वा कम्ति पार्नका "
 "लागि टप-बटन ड्र्याग गर्नुहोस् , अझ ठुलो दुलो वनाउनका लागि दाहिने ।"
 
-#: ../../magic/src/string.c:173
+#: ../../magic/src/string.c:174
 msgid "Click and drag to draw arrows made of string art."
 msgstr "स्ट्रिङ आर्टले बनेको तीर ड्र गर्नका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/string.c:176
+#: ../../magic/src/string.c:177
 msgid "Draw string art arrows with free angles."
 msgstr "मुक्त कोणहरूद्वारा स्ट्रिङ आर्ट ड्र गर्नुहोस्।"
 
-#: ../../magic/src/tint.c:74
+#: ../../magic/src/swirls.c:30
+#, fuzzy
+#| msgid "Circle"
+msgid "Circles"
+msgstr "वृत्त"
+
+#: ../../magic/src/swirls.c:31
+msgid "Rays"
+msgstr ""
+
+#: ../../magic/src/swirls.c:32
+msgid "Fur"
+msgstr ""
+
+#: ../../magic/src/swirls.c:37
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to transform parts of your picture to circular brushstrokes."
+msgstr ""
+"तपाईँको चित्रलाई टेलिभिजनमा जस्तै देखिने बनाउनका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
+
+#: ../../magic/src/swirls.c:38
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn your entire picture into circular brushstrokes."
+msgstr "चित्रलाई चक ड्रइङ बनाउनका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
+
+#: ../../magic/src/swirls.c:41
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to transform parts of your picture to brushstroke rays."
+msgstr ""
+"तपाईँको चित्रलाई टेलिभिजनमा जस्तै देखिने बनाउनका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
+
+#: ../../magic/src/swirls.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to turn your entire picture into brushstroke rays."
+msgstr "चित्रलाई चक ड्रइङ बनाउनका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
+
+#: ../../magic/src/swirls.c:45
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to add fur to your picture."
+msgstr "तपाईँको चित्रमा रेलको पटरी बनाउनका लागि क्लिक गर्नुहोस् अनि ड्रयाग गर्नुहोस्।"
+
+#: ../../magic/src/tint.c:73
 msgid "Tint"
 msgstr "रंगाउनु"
 
-#: ../../magic/src/tint.c:75
+#: ../../magic/src/tint.c:74
 msgid "Color & White"
 msgstr "रंग&  सेतो"
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2212,11 +2265,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "तपाईँको चित्रका अङ्गहरूको रंग बदलाउनका लागि क्लिक गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:80
 msgid "Click to change the color of your entire picture."
 msgstr "तपाईँको पूरा चित्रको रंग बदलाउन क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/tint.c:83
+#: ../../magic/src/tint.c:82
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2228,16 +2281,16 @@ msgstr ""
 "तपाईँको चित्रका अङ्गहरूको रंग सेतो बनाउन तथा तपाईलाई मन पर्ने रंग चुन्नका लागि क्लिक "
 "गर्नुहोस् अनि माउस घुमाउनुहोस्।"
 
-#: ../../magic/src/tint.c:85
+#: ../../magic/src/tint.c:84
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr ""
 "तपाईँको पूरा चित्रलाई सेतो वा तपाईँलाई मन पर्ने रंगमा बदलाउनका लागि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/toothpaste.c:68
+#: ../../magic/src/toothpaste.c:67
 msgid "Toothpaste"
 msgstr "दन्तमञ्जन"
 
-#: ../../magic/src/toothpaste.c:76
+#: ../../magic/src/toothpaste.c:75
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "तपाईँको चित्रमा दन्तमञ्जन छर्किनका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
@@ -2249,30 +2302,30 @@ msgstr "भुँवरी"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "तपाईँको चित्रमा भँवरी नाली ड्र गर्नका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/tv.c:108
+#: ../../magic/src/tv.c:111
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:122
+#: ../../magic/src/tv.c:125
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "तपाईँको चित्रलाई टेलिभिजनमा जस्तै देखिने बनाउनका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/tv.c:127
+#: ../../magic/src/tv.c:130
 msgid "Click to make your picture look like it's on television."
 msgstr "तपाईँको चित्रलाई टेलिभिजनमा भएजस्तो बनाउनका लागि क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/waves.c:119
+#: ../../magic/src/waves.c:122
 msgid "Waves"
 msgstr "तरङ्गहरू"
 
-#: ../../magic/src/waves.c:121
+#: ../../magic/src/waves.c:124
 msgid "Wavelets"
 msgstr "तरङ्गहरू"
 
-#: ../../magic/src/waves.c:131
+#: ../../magic/src/waves.c:134
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2282,7 +2335,7 @@ msgstr ""
 "गर्नुहोस्, अग्लो तरंगका लागि मुनि, सानो तरंगका लागि देब्रेतिर अनि लामो तरंगका लागि "
 "द्हिनेतिर क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/waves.c:134
+#: ../../magic/src/waves.c:137
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -2292,15 +2345,15 @@ msgstr ""
 "गर्नुहोस्, अग्लो तरंगका लागि मुनि, सानो तरंगका लागि देब्रेतिर अनि लामो तरंगका लागि "
 "द्हिनेतिर क्लिक गर्नुहोस्।"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "रङ्गहरू"
 
-#: ../../magic/src/xor.c:112
+#: ../../magic/src/xor.c:113
 msgid "Click and drag to draw a XOR effect"
 msgstr "स्ट्रिङ आर्टले बनेको तीर ड्र गर्नका लागि क्लिक गर्नुहोस् अनि ड्र्याग गर्नुहोस्।"
 
-#: ../../magic/src/xor.c:116
+#: ../../magic/src/xor.c:117
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr ""
 "तपाईँको पूरा चित्रमा विभिन्न रंगका साना टुक्राहरूका प्रभाव जोड्नका लागि क्लिक गर्नुहोस् "
