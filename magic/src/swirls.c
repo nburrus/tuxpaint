@@ -162,7 +162,11 @@ char *swirls_get_name(magic_api * api ATTRIBUTE_UNUSED,
 int swirls_get_group(magic_api * api ATTRIBUTE_UNUSED,
                         int which ATTRIBUTE_UNUSED)
 {
-  return MAGIC_TYPE_DISTORTS;
+  if (which == SWIRL_TOOL_FUR) {
+    return MAGIC_TYPE_PAINTING;
+  } else {
+    return MAGIC_TYPE_DISTORTS;
+  }
 }
 
 char *swirls_get_description(magic_api * api ATTRIBUTE_UNUSED,

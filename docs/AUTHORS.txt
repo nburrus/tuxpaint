@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 28, 2023
+June 17, 2002 - January 29, 2023
 
 * Design and Coding:
 
@@ -115,11 +115,12 @@ June 17, 2002 - January 28, 2023
   (https://freesound.org/people/SpliceSound/sounds/369834/)
   Creative Commons 0 by Julian Evans <https://www.julianevans.info/>
 
-  Circles and Rays magic tools and artwork
+  Circles, Rays, and Fur magic tools and artwork
   by Bill Kendrick <bill@newbreedsoftware.com>
   Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
   by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->.
-  Sound effect based on Richard Wagner's "Ride of the Valkyries"
+
+  Circles & Rays sound effect based on Richard Wagner's "Ride of the Valkyries"
   licensed as Creative Commons Attribution 3.0 Unported (CC BY 3.0)
   (https://creativecommons.org/licenses/by/3.0/)
   by https://pmmusic.pro/; conducted by Philip Milman.

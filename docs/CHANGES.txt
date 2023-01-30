@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.January.28 (0.9.29)
+2022.January.29 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -16,30 +16,35 @@ https://tuxpaint.org/
 
   * New Magic Tools:
     ----------------
-    * "Googly Eyes"; place eyeballs in your drawing.`
+    * "Googly Eyes"; place eyeballs in your drawing.
       Bill Kendrick <bill@newbreedsoftware.com>
       (Sound effect licensed as Creative Commons 0 by
       https://freesound.org/people/MrFossy/)
-
-    * [WIP] "Rivulet"; apply rivulets of water to the canvas
-      - needs better icon
-      - needs sound effect
-      - effect needs improvement
-      Bill Kendrick <bill@newbreedsoftware.com>
 
     * "Maze"; draw a maze pattern over part or all of your drawing.
       Bill Kendrick <bill@newbreedsoftware.com>
       (Sound effect licensed as Creative Commons 0 by
       Julian Evans, https://www.julianevans.info/)
 
-    * "Circles" and "Rays"; convert the image into circular or ray
-      brushstrokes.
+    * "Circles" and "Rays" -- convert the image into circular or ray
+      brushstrokes, and [WIP] "Fur" -- add fur to a picture.
       Bill Kendrick <bill@newbreedsoftware.com>
       (Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
       by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->)
-      (Sound effect based on Richard Wagner's "Ride of the Valkyries"
-      licensed as Creative Commons Attribution 3.0 Unported (CC BY 3.0)
-      by https://pmmusic.pro/; conducted by Philip Milman)
+
+      [WIP] - Fur sound effect needed
+      [WIP] - Fur sound icon needed
+
+      ("Circles" and "Rays" sound effects based on Richard Wagner's
+      "Ride of the Valkyries", recording licensed as Creative Commons
+      Attribution 3.0 Unported (CC BY 3.0), and conducted by,
+      Philip Milman <https://pmmusic.pro/>)
+
+    * [WIP] "Rivulet"; apply rivulets of water to the canvas
+      - needs better icon
+      - needs sound effect
+      - effect needs improvement
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Magic Tools:
     ----------------------------
