@@ -1,12 +1,13 @@
 /* swirls.c
 
    Transforms parts of the image into brush strokes that
-   swirl around where you click.
+   swirl or shoot out from around where you click,
+   or in the case of Fur, paint following the mouse.
 
    Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
    by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->
 
-   Last updated: January 28, 2023
+   Last updated: January 29, 2023
 */
 
 #include <stdio.h>
@@ -21,12 +22,14 @@
 enum {
   SWIRL_TOOL_CIRCLES,
   SWIRL_TOOL_RAYS,
+  SWIRL_TOOL_FUR,
   NUM_SWIRL_TOOLS
 };
 
 char * swirl_names[NUM_SWIRL_TOOLS] = {
   gettext_noop("Circles"),
-  gettext_noop("Rays")
+  gettext_noop("Rays"),
+  gettext_noop("Fur")
 };
 
 char * swirl_descriptions[NUM_SWIRL_TOOLS][2] = {
@@ -37,27 +40,48 @@ char * swirl_descriptions[NUM_SWIRL_TOOLS][2] = {
   {
    gettext_noop("Click and drag to transform parts of your picture to brushstroke rays."),
    gettext_noop("Click to turn your entire picture into brushstroke rays.")
-  }
+  },
+  {
+   gettext_noop("Click and drag to add fur to your picture."),
+   ""
+  },
 };
 
 char * swirl_icon_filenames[NUM_SWIRL_TOOLS] = {
   "swirls_circles.png",
-  "swirls_rays.png"
+  "swirls_rays.png",
+  "swirls_rays.png" // FIXME
 };
 
 char * swirl_sfx_filenames[NUM_SWIRL_TOOLS] = {
   "swirls_circles.ogg",
-  "swirls_rays.ogg"
+  "swirls_rays.ogg",
+  "swirls_rays.ogg" // FIXME
 };
 
-#define SWIRLS_NUM_STROKES_PER_DRAG_LINE 5
-#define SWIRLS_DRAG_LINE_STROKE_RADIUS 64
-#define SWIRLS_STROKE_LENGTH 10
+int SWIRLS_NUM_STROKES_PER_DRAG_LINE[NUM_SWIRL_TOOLS] = {
+  5,
+  5,
+  15
+};
+
+int SWIRLS_DRAG_LINE_STROKE_RADIUS[NUM_SWIRL_TOOLS] = {
+  64,
+  64,
+  16
+};
+
+int SWIRLS_STROKE_LENGTH[NUM_SWIRL_TOOLS] = {
+  10,
+  10,
+  5
+};
 
 Mix_Chunk *snd_effects[NUM_SWIRL_TOOLS];
 SDL_Surface * swirls_snapshot = NULL;
 int swirls_start_x, swirls_start_y;
 Uint32 swirl_stroke_color;
+Uint8 swirl_fur_color_r, swirl_fur_color_g, swirl_fur_color_b;
 
 Uint32 swirls_api_version(void);
 int swirls_init(magic_api * api);
@@ -148,15 +172,23 @@ char *swirls_get_description(magic_api * api ATTRIBUTE_UNUSED,
 }
 
 int swirls_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                              int which ATTRIBUTE_UNUSED)
+                              int which)
 {
-  return 0;
+  if (which == SWIRL_TOOL_FUR) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 int swirls_modes(magic_api * api ATTRIBUTE_UNUSED,
                     int which ATTRIBUTE_UNUSED)
 {
-  return MODE_PAINT | MODE_FULLSCREEN;
+  if (which == SWIRL_TOOL_FUR) {
+    return MODE_PAINT;
+  } else {
+    return (MODE_PAINT | MODE_FULLSCREEN);
+  }
 }
 
 void swirls_shutdown(magic_api * api ATTRIBUTE_UNUSED)
@@ -207,6 +239,11 @@ void
 swirls_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
                SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
+  if (which == SWIRL_TOOL_FUR) {
+    swirls_start_x = x;
+    swirls_start_y = y;
+  }
+
   api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, 1 /* FIXME: Consider fewer iterations? */,
             swirls_line_callback_drag);
 
@@ -231,9 +268,12 @@ void swirls_release(magic_api * api, int which,
 void swirls_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
                       SDL_Surface * canvas ATTRIBUTE_UNUSED,
                       SDL_Surface * last ATTRIBUTE_UNUSED,
-                      Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED,
+                      Uint8 r, Uint8 g, Uint8 b,
                       SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  swirl_fur_color_r = r;
+  swirl_fur_color_g = g;
+  swirl_fur_color_b = b;
 }
 
 
@@ -249,10 +289,10 @@ void swirls_line_callback_drag(void *ptr, int which,
   if (snd_effects[which] != NULL)
     api->playsound(snd_effects[which], (x * 255) / canvas->w, 255);
 
-  for (i = 0; i < SWIRLS_NUM_STROKES_PER_DRAG_LINE; i++) {
+  for (i = 0; i < SWIRLS_NUM_STROKES_PER_DRAG_LINE[which]; i++) {
     ang_deg = (rand() % 360);
     ang_rad = (ang_deg * M_PI) / 180.0;
-    radius = (rand() % (SWIRLS_DRAG_LINE_STROKE_RADIUS * 2)) - SWIRLS_DRAG_LINE_STROKE_RADIUS;
+    radius = (rand() % (SWIRLS_DRAG_LINE_STROKE_RADIUS[which] * 2)) - SWIRLS_DRAG_LINE_STROKE_RADIUS[which];
 
     nx = x + (int) (cos(ang_rad) * radius);
     ny = y + (int) (sin(ang_rad) * radius);
@@ -262,24 +302,33 @@ void swirls_line_callback_drag(void *ptr, int which,
 }
 
 void swirls_draw_stroke(magic_api * api, int which, SDL_Surface * canvas, int x, int y) {
-  int x1, y1, x2, y2;
+  int x1, y1, x2, y2, len;
   double a;
   Uint8 r, g, b;
   float h, s, v;
+
+  len = SWIRLS_STROKE_LENGTH[which];
 
   a = get_angle(x, y, swirls_start_x, swirls_start_y);
   if (which == SWIRL_TOOL_CIRCLES) {
     a = a + (M_PI / 2.0);
   }
 
-  x1 = x - cos(a) * SWIRLS_STROKE_LENGTH;
-  y1 = y - sin(a) * SWIRLS_STROKE_LENGTH;
+  x1 = x - cos(a) * len;
+  y1 = y - sin(a) * len;
+  
+  x2 = x + cos(a) * len;
+  y2 = y + sin(a) * len;
 
-  x2 = x + cos(a) * SWIRLS_STROKE_LENGTH;
-  y2 = y + sin(a) * SWIRLS_STROKE_LENGTH;
+  if (which == SWIRL_TOOL_FUR) {
+    r = swirl_fur_color_r;
+    g = swirl_fur_color_g;
+    b = swirl_fur_color_b;
+  } else {
+    swirl_stroke_color = api->getpixel(swirls_snapshot, x, y);
+    SDL_GetRGB(swirl_stroke_color, canvas->format, &r, &g, &b);
+  }
 
-  swirl_stroke_color = api->getpixel(swirls_snapshot, x, y);
-  SDL_GetRGB(swirl_stroke_color, canvas->format, &r, &g, &b);
   api->rgbtohsv(r, g, b, &h, &s, &v);
   h = h + (((rand() % 7) - 3) / 10.0);
   if (s > 0.00) {
@@ -304,21 +353,25 @@ void swirls_draw_stroke(magic_api * api, int which, SDL_Surface * canvas, int x,
   api->hsvtorgb(h, s, v, &r, &g, &b);
   swirl_stroke_color = SDL_MapRGB(canvas->format, r, g, b);
 
-  api->line((void *) api, 0 /* N/A */, canvas, NULL /* N/A */,
+  api->line((void *) api, which, canvas, NULL /* N/A */,
             x1, y1, x2, y2, 1, swirls_line_callback_draw_stroke);
 }
 
 
-void swirls_line_callback_draw_stroke(void *ptr, int which ATTRIBUTE_UNUSED,
+void swirls_line_callback_draw_stroke(void *ptr, int which,
                                       SDL_Surface * canvas,
                                       SDL_Surface * snapshot ATTRIBUTE_UNUSED,
                                       int x, int y) {
   magic_api *api = (magic_api *) ptr;
-  int xx, yy;
 
-  for (yy = -1; yy <= 1; yy++) {
-    for (xx = -1; xx <= 1; xx++) {
-      api->putpixel(canvas, x + xx, y + yy, swirl_stroke_color);
+  if (which == SWIRL_TOOL_FUR) {
+    api->putpixel(canvas, x, y, swirl_stroke_color);
+  } else {
+    int xx, yy;
+    for (yy = -1; yy <= 1; yy++) {
+      for (xx = -1; xx <= 1; xx++) {
+        api->putpixel(canvas, x + xx, y + yy, swirl_stroke_color);
+      }
     }
   }
 }
