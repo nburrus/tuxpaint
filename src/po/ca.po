@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-29 21:54-0800\n"
-"PO-Revision-Date: 2023-01-21 23:14+0100\n"
+"PO-Revision-Date: 2023-01-30 13:35+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -2207,51 +2207,37 @@ msgstr ""
 "llavors fins al destí."
 
 #: ../../magic/src/swirls.c:30
-#, fuzzy
-#| msgid "Circle"
 msgid "Circles"
-msgstr "Cercle"
+msgstr "Cercles"
 
 #: ../../magic/src/swirls.c:31
 msgid "Rays"
-msgstr ""
+msgstr "Radis"
 
 #: ../../magic/src/swirls.c:32
 msgid "Fur"
-msgstr ""
+msgstr "Pèl"
 
 #: ../../magic/src/swirls.c:37
-#, fuzzy
-#| msgid ""
-#| "Click and drag to stretch part of your picture vertically or horizontally."
 msgid ""
 "Click and drag to transform parts of your picture to circular brushstrokes."
-msgstr "Feu clic i arrossegueu per estirar el dibuix."
+msgstr "Feu clic i arrossegueu per transformar parts del dibuix en traços circulars."
 
 #: ../../magic/src/swirls.c:38
-#, fuzzy
-#| msgid "Click to turn your entire picture into a maze."
 msgid "Click to turn your entire picture into circular brushstrokes."
-msgstr "Feu clic per dibuixar un laberint."
+msgstr "Feu clic per transformar el dibuix en traços circulars."
 
 #: ../../magic/src/swirls.c:41
-#, fuzzy
-#| msgid ""
-#| "Click and drag to stretch part of your picture vertically or horizontally."
 msgid "Click and drag to transform parts of your picture to brushstroke rays."
-msgstr "Feu clic i arrossegueu per estirar el dibuix."
+msgstr "Feu clic i arrossegueu per transformar parts del dibuix en traços radials."
 
 #: ../../magic/src/swirls.c:42
-#, fuzzy
-#| msgid "Click to turn your entire picture into a maze."
 msgid "Click to turn your entire picture into brushstroke rays."
-msgstr "Feu clic per dibuixar un laberint."
+msgstr "Feu clic per transformar el dibuix en traços radials."
 
 #: ../../magic/src/swirls.c:45
-#, fuzzy
-#| msgid "Click and drag to paint a maze on your picture."
 msgid "Click and drag to add fur to your picture."
-msgstr "Feu clic i arrossegueu per dibuixar un laberint."
+msgstr "Feu clic i arrossegueu per dibuixar pelatge."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"
