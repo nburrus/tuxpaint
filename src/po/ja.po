@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-29 21:54-0800\n"
-"PO-Revision-Date: 2023-01-28 14:48+0900\n"
+"PO-Revision-Date: 2023-02-04 12:24+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -2161,55 +2161,41 @@ msgid "Draw string art arrows with free angles."
 msgstr "すきな むきの あみめもようを かこう。"
 
 #: ../../magic/src/swirls.c:30
-#, fuzzy
-#| msgid "Circle"
 msgid "Circles"
-msgstr "まる"
+msgstr "えんけい"
 
 #: ../../magic/src/swirls.c:31
 msgid "Rays"
-msgstr ""
+msgstr "ほうしゃ"
 
 #: ../../magic/src/swirls.c:32
 msgid "Fur"
-msgstr ""
+msgstr "けがわ"
 
 #: ../../magic/src/swirls.c:37
-#, fuzzy
-#| msgid ""
-#| "Click and drag to stretch part of your picture vertically or horizontally."
 msgid ""
 "Click and drag to transform parts of your picture to circular brushstrokes."
 msgstr ""
-"クリックしたまま マウスを うごかして えを じょうげ さゆうに のびちぢみ させよ"
-"う。"
+"クリックしたまま マウスを うごかして なぞったところを まるく けばけばに しよ"
+"う"
 
 #: ../../magic/src/swirls.c:38
-#, fuzzy
-#| msgid "Click to turn your entire picture into a maze."
 msgid "Click to turn your entire picture into circular brushstrokes."
-msgstr "えを クリックして ぜんたいを めいろに しよう。"
+msgstr "クリックして えの ぜんたいを まるく けばけばに しよう"
 
 #: ../../magic/src/swirls.c:41
-#, fuzzy
-#| msgid ""
-#| "Click and drag to stretch part of your picture vertically or horizontally."
 msgid "Click and drag to transform parts of your picture to brushstroke rays."
 msgstr ""
-"クリックしたまま マウスを うごかして えを じょうげ さゆうに のびちぢみ させよ"
-"う。"
+"クリックしたまま マウスを うごかして なぞったところを こうせんみたいに けばけ"
+"ばに しよう"
 
 #: ../../magic/src/swirls.c:42
-#, fuzzy
-#| msgid "Click to turn your entire picture into a maze."
 msgid "Click to turn your entire picture into brushstroke rays."
-msgstr "えを クリックして ぜんたいを めいろに しよう。"
+msgstr "クリックして えの ぜんたいを こうせんみたいに けばけばに しよう"
 
 #: ../../magic/src/swirls.c:45
-#, fuzzy
-#| msgid "Click and drag to paint a maze on your picture."
 msgid "Click and drag to add fur to your picture."
-msgstr "クリックしたまま マウスをうごかして めいろを かこう。"
+msgstr "クリックしたまま マウスをうごかして けがわを かこう。"
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"
