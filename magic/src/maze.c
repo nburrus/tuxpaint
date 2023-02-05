@@ -2,7 +2,7 @@
 
   Allows painting generated maze puzzles on your picture.
 
-  Last updated: January 28, 2023
+  Last updated: February 5, 2023
 */
 
 #include <stdio.h>
@@ -327,7 +327,7 @@ void maze_render(magic_api * api, SDL_Surface * canvas)
         }
         iter++;
       }
-      while (state != STATE_DONE && iter < 10000);
+      while (state != STATE_DONE && iter < 100000);
     }
   }
 
