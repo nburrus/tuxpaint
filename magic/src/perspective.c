@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 25, 2023
+  Last updated: February 6, 2023
 */
 
 #include <stdio.h>
@@ -146,7 +146,7 @@ enum
 
 
 /* A copy of canvas at switchin, will be used to draw from it as snapshot changes at each click */
-static SDL_Surface *canvas_back;
+static SDL_Surface *canvas_back = NULL;
 
 static Mix_Chunk *perspective_snd_effect[perspective_NUM_TOOLS + 1];
 
@@ -252,6 +252,9 @@ void perspective_drag(magic_api * api, int which, SDL_Surface * canvas,
                       int oy ATTRIBUTE_UNUSED, int x, int y,
                       SDL_Rect * update_rect)
 {
+  if (canvas_back == NULL)
+    return;
+
   latest_x = x;
   latest_y = y;
 
@@ -479,6 +482,9 @@ void perspective_release(magic_api * api, int which,
                          SDL_Surface * canvas, SDL_Surface * last, int x,
                          int y, SDL_Rect * update_rect)
 {
+  if (canvas_back == NULL)
+    return;
+
   if (which == TOOL_PANELS)
     return;
 
@@ -662,6 +668,10 @@ void perspective_release(magic_api * api, int which,
                                       canvas->format->Gmask,
                                       canvas->format->Bmask, 0);
 
+printf("SDL_BlitSurface(canvas_back (%d), update_rect (%d), aux_surf (%d), NULL\n",
+canvas_back, update_rect, aux_surf);
+fflush(stdout);
+
       SDL_BlitSurface(canvas_back, update_rect, aux_surf, NULL);
       scaled_surf = api->scale(aux_surf, canvas->w, canvas->h, 0);
       SDL_BlitSurface(scaled_surf, NULL, canvas, NULL);
@@ -686,6 +696,9 @@ void perspective_preview(magic_api * api, int which,
   float ax, ay, bx, by, dx, dy;
   int ox_distance, oy_distance;
   int center_ofset_x, center_ofset_y;
+
+  if (canvas_back == NULL)
+    return;
 
 
   update_rect->x = update_rect->y = 0;
@@ -826,13 +839,20 @@ void perspective_switchin(magic_api * api ATTRIBUTE_UNUSED,
   amask =
     ~(canvas->format->Rmask | canvas->format->Gmask | canvas->format->Bmask);
 
-  canvas_back = SDL_CreateRGBSurface(SDL_SWSURFACE,
-                                     canvas->w,
-                                     canvas->h,
-                                     canvas->format->BitsPerPixel,
-                                     canvas->format->Rmask,
-                                     canvas->format->Gmask,
-                                     canvas->format->Bmask, amask);
+  if (canvas_back == NULL) {
+    canvas_back = SDL_CreateRGBSurface(SDL_SWSURFACE,
+                                       canvas->w,
+                                       canvas->h,
+                                       canvas->format->BitsPerPixel,
+                                       canvas->format->Rmask,
+                                       canvas->format->Gmask,
+                                       canvas->format->Bmask, amask);
+  }
+
+  if (canvas_back == NULL) {
+    fprintf(stderr, "perspective cannot create background canvas!\n");
+    return;
+  }
 
   SDL_BlitSurface(canvas, NULL, canvas_back, NULL);
 }
@@ -842,7 +862,10 @@ void perspective_switchout(magic_api * api ATTRIBUTE_UNUSED,
                            int mode ATTRIBUTE_UNUSED,
                            SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
-  SDL_FreeSurface(canvas_back);
+  if (canvas_back != NULL) {
+    SDL_FreeSurface(canvas_back);
+    canvas_back = NULL;
+  }
 }
 
 int perspective_modes(magic_api * api ATTRIBUTE_UNUSED, int which)

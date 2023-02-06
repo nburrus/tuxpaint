@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2022.January.30 (0.9.29)
+2023.February.6 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -32,8 +32,7 @@ https://tuxpaint.org/
       (Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
       by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->)
 
-      [WIP] - Fur sound effect needed
-      [WIP] - Fur sound icon needed
+      [WIP] - Fur icon needed
 
       ("Circles" and "Rays" sound effects based on Richard Wagner's
       "Ride of the Valkyries", recording licensed as Creative Commons
@@ -42,6 +41,12 @@ https://tuxpaint.org/
 
       ("Fur" sound effected licensed as Creative Commons 0 (CC0 1.0)
       by https://freesound.org/people/Kawgrim/)
+
+    * "Bloom" - Apply a glowing light bloom effect to the image.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+      [WIP] - Bloom icon needed
+      [WIP] - Bloom sound effect needed
 
     * [WIP] "Rivulet"; apply rivulets of water to the canvas
       - needs better icon
@@ -166,6 +171,10 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/269
       (h/t Miyagi Andel for reporting & Shin-ichi TOYAMA for pinpointing
       the issue)
+
+    * Mend crash bug in "perspective.c" Magic tools.
+      (Perspective, Panels, Timezoom, Zoom, Rush)
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Disallow using Ctrl-Z shortcut while drawing or rotating shapes
       or shapes, to avoid unexpected results.
