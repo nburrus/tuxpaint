@@ -3,7 +3,7 @@
    Applies a "bloom" effect to the image.
    (https://en.wikipedia.org/wiki/Bloom_(shader_effect))
 
-   Last updated: February 6, 2023
+   Last updated: February 7, 2023
 */
 
 #include <stdio.h>
@@ -118,9 +118,13 @@ int bloom_get_group(magic_api * api ATTRIBUTE_UNUSED,
 }
 
 char *bloom_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                                int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+                                int which ATTRIBUTE_UNUSED, int mode)
 {
-  return strdup(gettext("Bloom!")); /* FIXME */
+  if (mode == MODE_PAINT) {
+    return strdup(gettext("Click and drag to apply a glowing \"bloom\" effect to parts of your image."));
+  } else {
+    return strdup(gettext("Click to apply a glowing \"bloom\" effect to your entire image."));
+  }
 }
 
 int bloom_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
