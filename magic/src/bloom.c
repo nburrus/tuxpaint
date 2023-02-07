@@ -221,6 +221,10 @@ void bloom_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   SDL_BlitSurface(snapshot, NULL, canvas, NULL);
 
   for (y = 0; y < canvas->h; y++) {
+    if (y % 10 == 0) {
+      api->update_progress_bar();
+    }
+
     for (x = 0; x < canvas->w; x++) {
       if (bloom_mask[y * canvas->w + x] > 0) {
         sums[0] = 0.0;
