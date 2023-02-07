@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.6 (0.9.29)
+2023.February.7 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -44,9 +44,8 @@ https://tuxpaint.org/
 
     * "Bloom" - Apply a glowing light bloom effect to the image.
       Bill Kendrick <bill@newbreedsoftware.com>
-
-      [WIP] - Bloom icon needed
-      [WIP] - Bloom sound effect needed
+      (Sound effected licensed as Creative Commons 0 (CC0 1.0)
+      by https://freesound.org/people/kentnelson64/)
 
     * [WIP] "Rivulet"; apply rivulets of water to the canvas
       - needs better icon

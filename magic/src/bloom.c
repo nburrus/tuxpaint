@@ -64,6 +64,9 @@ void bloom_line_callback_drag(void *ptr, int which, SDL_Surface * canvas,
 void bloom_release(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * snapshot, int x, int y,
                        SDL_Rect * update_rect);
+void bloom_apply_effect(magic_api * api,
+                  SDL_Surface * canvas,
+                  SDL_Surface * snapshot);
 void bloom_switchin(magic_api * api, int which, int mode,
                         SDL_Surface * canvas);
 void bloom_switchout(magic_api * api, int which, int mode,
@@ -83,7 +86,7 @@ int bloom_init(magic_api * api)
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/bloom.ogg",
              api->data_directory);
-  snd_effects = NULL; /* FIXME Mix_LoadWAV(fname); */
+  snd_effects = Mix_LoadWAV(fname);
 
   bloom_scale = sqrt(2 * (BLOOM_PAINT_RADIUS * BLOOM_PAINT_RADIUS));
 
@@ -172,8 +175,7 @@ bloom_click(magic_api * api, int which, int mode,
     }
 
     memset(bloom_mask, 128, (canvas->w * canvas->h));
-    bloom_release(api, which, canvas, snapshot, x, y,
-                  update_rect);
+    bloom_apply_effect(api, canvas, snapshot);
 
     update_rect->x = 0;
     update_rect->y = 0;
@@ -202,21 +204,32 @@ bloom_drag(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Sur
 
 
 void bloom_release(magic_api * api, int which ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                  SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                  SDL_Surface * canvas,
+                  SDL_Surface * snapshot,
                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                  SDL_Rect * update_rect ATTRIBUTE_UNUSED) {
-  int sample, offset, offset_flip, xx, yy;
-  Uint8 r, g, b;
-  float rf, gf, bf, mask_weight, lum;
-  float sums[3];
-  Uint32 color;
-
+                  SDL_Rect * update_rect) {
   if (bloom_mask == NULL)
     return;
 
   if (snd_effects != NULL)
     api->stopsound();
+
+  bloom_apply_effect(api, canvas, snapshot);
+
+  update_rect->x = 0;
+  update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
+}
+
+void bloom_apply_effect(magic_api * api,
+                  SDL_Surface * canvas,
+                  SDL_Surface * snapshot) {
+  int sample, offset, offset_flip, x, y, xx, yy;
+  Uint8 r, g, b;
+  float rf, gf, bf, mask_weight, lum;
+  float sums[3];
+  Uint32 color;
 
   SDL_BlitSurface(snapshot, NULL, canvas, NULL);
 
@@ -296,11 +309,6 @@ void bloom_release(magic_api * api, int which ATTRIBUTE_UNUSED,
       }
     }
   }
-
-  update_rect->x = 0;
-  update_rect->y = 0;
-  update_rect->w = canvas->w;
-  update_rect->h = canvas->h;
 }
 
 

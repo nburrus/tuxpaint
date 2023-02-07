@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 30, 2023
+June 17, 2002 - February 7, 2023
 
 * Design and Coding:
 
@@ -130,6 +130,12 @@ June 17, 2002 - January 30, 2023
   Fur sound effect based on "Petting Long, Coarse Fur.wav"
   (https://freesound.org/people/Kawgrim/sounds/584865/)
   Creative Commons 0 by Kawgrim <https://freesound.org/people/Kawgrim/>
+
+  Bloom magic tool
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  Googly Eyes sound effect: "Torch Crackle.wav"
+  (https://freesound.org/people/kentnelson64/sounds/647221/)
+  Creative Commons 0 license by "kentnelson64"
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
