@@ -30,6 +30,7 @@ Distorts
 Color Filters
 
      * Assombrir
+     * Bloom
      * Cartoon
      * Color and White
      * Color Shift
@@ -64,6 +65,7 @@ Painting
      * Confettis
      * Dentifrice
      * Frise
+     * Fur
      * Herbe
      * Lumière
      * Maze

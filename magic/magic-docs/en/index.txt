@@ -29,6 +29,7 @@ Distorts
 
 Color Filters
 
+     * Bloom
      * Cartoon
      * Color Shift
      * Color and White
@@ -62,6 +63,7 @@ Painting
      * Confetti
      * Foam
      * Fretwork
+     * Fur
      * Grass
      * Light
      * Maze
