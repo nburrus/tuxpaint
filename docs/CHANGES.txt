@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.7 (0.9.29)
+2023.February.9 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -61,6 +61,10 @@ https://tuxpaint.org/
     * "Zoom" and "Perspective" background colors change
       immediately when you select new colors.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+  * New Starter
+    -----------
+    * Space_draw.svg by Ingrid Illa Terrier
 
   * Other Improvements:
     -------------------
