@@ -534,6 +534,9 @@ void perspective_release(magic_api * api, int which,
     aux1 = api->scale(last, last->w, last->h, 0);
     for (h = 0; h < h2 - h1; h++)
       {
+      if (h % 10 == 0) {
+	api->update_progress_bar();
+      }
       hh = h2 - h;
       w = canvas->w * hh / canvas->h;
       scaled_surf = api->rotate_scale(aux1, 0, w);
