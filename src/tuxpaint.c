@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 25, 2023
+  June 14, 2002 - February 10, 2023
 */
 
 #include "platform.h"
@@ -150,6 +150,19 @@ static scaleparams scaletable[] = {
   {32, 1},                      /* 32 */
   {48, 1},                      /* 48 */
 };
+
+enum {
+  STARTER_TEMPLATE_SCALE_MODE_NONE, /* smear or apply background color */
+  STARTER_TEMPLATE_SCALE_MODE_HORIZ, /* allow zooming in (cropping left/right) if image is wider than the canvas */
+  STARTER_TEMPLATE_SCALE_MODE_VERT, /* allow zooming in (cropping top/bottom) if image is taller than the canvas */
+  STARTER_TEMPLATE_SCALE_MODE_BOTH /* allow zooming in (cropping anything) if canvas is smaller in either/both dimensions */
+};
+
+typedef struct starter_template_options_s {
+  int scale_mode;
+  int smear;
+  int bkgd_color[3];
+} starter_template_options_t;
 
 
 /* Macros: */
@@ -14213,6 +14226,272 @@ static void autoscale_copy_smear_free(SDL_Surface * src, SDL_Surface * dst,
 
 
 /**
+ * Copy an image, scaling and smearing, as needed, into a new surface.
+ * Free the original surface.
+ *
+ * @param SDL_Surface * src -- source surface (will be freed by this function!)
+ * @param SDL_Surface * dst -- destination surface
+ * @param int SDCALL(*blit) -- function for blitting; "NondefectiveBlit" or "SDL_BlitSurface"
+ * @param starter_template_options_t opts -- options (loaded from ".dat" file) describing strategies to take
+ */
+static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * dst,
+                                               int SDLCALL(*blit) (SDL_Surface * src,
+                                                                   const SDL_Rect * srcrect,
+                                                                   SDL_Surface * dst,
+                                                                   SDL_Rect * dstrect),
+                                               starter_template_options_t opts) {
+  int new_w, new_h;
+  float src_aspect, dst_aspect;
+
+  new_w = src->w;
+  new_h = src->h;
+
+  src_aspect = (float) src->w / (float) src->h;
+  dst_aspect = (float) dst->w / (float) dst->h;
+
+  if (src_aspect > dst_aspect) {
+    printf("Image (%d x %d) is of a wider aspect (%0.5f) than canvas (%d x %d) (%0.5f)\n", src->w, src->h, src_aspect, dst->w, dst->h, dst_aspect);
+    if (opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_HORIZ ||
+        opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_BOTH) {
+      new_h = dst->h;
+      new_w = dst->h * src_aspect;
+      printf("Okay to crop left/right. Keeping aspect; scaling to %d x %d\n", new_w, new_h);
+    }
+  } else if (src_aspect < dst_aspect) {
+    printf("Image (%d x %d) is of a taller aspect (%0.5f) than canvas (%d x %d) (%0.5f)\n", src->w, src->h, src_aspect, dst->w, dst->h, dst_aspect);
+    if (opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_VERT ||
+        opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_BOTH) {
+      new_w = dst->w;
+      new_h = dst->w / src_aspect;
+      printf("Okay to crop top/bottom. Keeping aspect; scaling to %d x %d\n", new_w, new_h);
+    }
+  } else {
+    printf("Image (%d x %d) is the same aspect as canvas (%d x %d) (%0.05f)\n", src->w, src->h, dst->w, dst->h, src_aspect);
+  }
+
+
+  /* Scale and crop based on any aspect-ratio-keeping adjustments */
+  if (new_w != src->w || new_h != src->h) {
+    SDL_Surface * scaled, * src1;
+    SDL_Rect src_rect;
+
+    /* Scale, keeping aspect, which will cause extra content that needs cropping */
+
+    printf("Scaling from %d x %d to %d x %d\n", src->w, src->h, new_w, new_h);
+
+    scaled = thumbnail2(src, new_w, new_h, 0 /* keep aspect */, 1 /* keep alpha */);
+    if (scaled == NULL) {
+      fprintf(stderr, "Failed to scale an image!\n");
+      return;
+    }
+
+    /* Create a new surface to blit (crop) into */
+    src1 = SDL_CreateRGBSurface(src->flags,  /* SDL_SWSURFACE, */
+                                dst->w, dst->h, src->format->BitsPerPixel,
+                                src->format->Rmask, src->format->Gmask,
+                                src->format->Bmask, src->format->Amask);
+    if (src1 == NULL) {
+      fprintf(stderr, "Failed to create a surface!\n");
+      return;
+    }
+
+    SDL_FreeSurface(src);
+    src = src1;
+
+    /* Place the new image centered onto the dest */
+    src_rect.x = (scaled->w - dst->w) / 2;
+    src_rect.y = (scaled->h - dst->h) / 2;
+    src_rect.w = scaled->w;
+    src_rect.h = scaled->h;
+
+    printf("Blitting scaled image (%d x %d) into new 'src' image (%d x %d) at (%d,%d) %d x %d\n",
+           scaled->w, scaled->h, src->w, src->h, src_rect.x, src_rect.y, src_rect.w, src_rect.h);
+
+    SDL_BlitSurface(scaled, &src_rect, src, NULL);
+  }
+
+
+  if (src->w != dst->w || src->h != dst->h) {
+    printf("Fitting %d x %d onto %d x %d canvas\n", src->w, src->h, dst->w, dst->h);
+
+    if (opts.smear) {
+      printf("Smearing\n");
+
+      autoscale_copy_smear_free(src, dst, blit);
+      /* Note: autoscale_copy_smear_free() calls SDL_FreeSurface(src)! */
+    } else {
+      SDL_Surface * scaled;
+      SDL_Rect dst_rect;
+
+      if (src->w != dst->w || src->h != dst->h) {
+        if (src->w / (float) dst->w > src->h / (float) dst->h) {
+          printf("Scaling from %d x %d to %d x %d\n", src->w, src->h, dst->w, src->h * dst->w / src->w);
+          scaled = thumbnail(src, dst->w, src->h * dst->w / src->w, 0);
+        } else {
+          printf("Scaling from %d x %d to %d x %d\n", src->w, src->h, src->w * dst->h / src->h, dst->h);
+          scaled = thumbnail(src, src->w * dst->h / src->h, dst->h, 0);
+        }
+      }
+
+      SDL_FreeSurface(src);
+
+      if (scaled == NULL) {
+        fprintf(stderr, "Failed to scale an image!\n");
+        return;
+      }
+
+      printf("Centering on a background color\n");
+
+      SDL_FillRect(dst, NULL, SDL_MapRGB(dst->format, opts.bkgd_color[0], opts.bkgd_color[1], opts.bkgd_color[2]));
+
+      dst_rect.x = (dst->w - scaled->w) / 2;
+      dst_rect.y = (dst->h - scaled->h) / 2;
+      dst_rect.w = scaled->w;
+      dst_rect.h = scaled->h;
+
+      SDL_BlitSurface(scaled, NULL, dst, &dst_rect);
+
+      SDL_FreeSurface(scaled);
+    }
+  } else {
+    printf("No smearing or background needed\n");
+
+    SDL_FreeSurface(src);
+  }
+}
+
+
+/**
+ * Attempt to open a starter/template image's options (".dat")
+ * file and read the settings into an options structure.
+ *
+ * @param char * dirname -- directory source of image
+ * @param char * img_id -- basename of image
+ * @param starter_template_options_t * opts -- pointer to options struct to fill
+ */
+static void get_starter_template_options(char * dirname, char * img_id, starter_template_options_t * opts) {
+  char fname[256], buf[256];
+  char * arg;
+  FILE * fi;
+
+  /* Set defaults for all options (in case file missing, or file doesn't specify certain options) */
+  opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_NONE;
+  opts->smear = 1;
+  opts->bkgd_color[0] = 255;
+  opts->bkgd_color[1] = 255;
+  opts->bkgd_color[2] = 255;
+
+  /* Attempt to open the file */
+  safe_snprintf(fname, sizeof(fname), "%s/%s.dat", dirname, img_id);
+  fi = fopen(fname, "r");
+  if (fi == NULL) {
+    return;
+  }
+
+  while (!feof(fi)) {
+    if (fgets(buf, sizeof(buf), fi))
+    {
+      if (!feof(fi))
+      {
+        strip_trailing_whitespace(buf);
+
+        if (buf[0] == '\0' || buf[0] == '#') {
+          continue;
+        }
+
+        arg = strchr(buf, '=');
+        if (arg) {
+          *arg++ = '\0';
+        } else {
+          fprintf(stderr, "Don't understand line in '%s': '%s'\n", fname, buf);
+          continue;
+        }
+
+        if (strcmp(buf, "allowscale") == 0) {
+          if (strcmp(arg, "horizontal") == 0) {
+            opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_HORIZ;
+          } else if (strcmp(arg, "vertical") == 0) {
+            opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_VERT;
+          } else if (strcmp(arg, "both") == 0) {
+            opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_BOTH;
+          } else {
+            fprintf(stderr, "Unknown 'autoscale' option in '%s': '%s'\n", fname, arg);
+          }
+        } else if (strcmp(buf, "background") == 0) {
+          if (strcmp(arg, "smear") == 0) {
+            opts->smear = 1;
+          } else {
+            int count;
+            char tmp_str[256];
+
+            opts->smear = 0;
+
+            /* FIXME: This and setup_colors() needs to be modularized -bjk 2023.02.10 */
+
+            if (arg[0] == '#')
+            {
+              /* Hex form */
+
+              sscanf(arg + 1, "%s %n", tmp_str, &count);
+
+              if (strlen(tmp_str) == 6)
+              {
+                printf("6 digit hex ('%s')\n", arg);
+
+                /* Byte (#rrggbb) form */
+
+                opts->bkgd_color[0] =
+                  (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[1]);
+                opts->bkgd_color[1] =
+                  (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[3]);
+                opts->bkgd_color[2] =
+                  (hex2dec(tmp_str[4]) << 4) + hex2dec(tmp_str[5]);
+              }
+              else if (strlen(tmp_str) == 3)
+              {
+                printf("3 digit hex ('%s')\n", arg);
+
+                /* Nybble (#rgb) form */
+
+                opts->bkgd_color[0] =
+                  (hex2dec(tmp_str[0]) << 4) + hex2dec(tmp_str[0]);
+                opts->bkgd_color[1] =
+                  (hex2dec(tmp_str[1]) << 4) + hex2dec(tmp_str[1]);
+                opts->bkgd_color[2] =
+                  (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
+              } else {
+                printf("Don't understand color hex '%s'\n", arg);
+              }
+            }
+            else
+            {
+              printf("Integers ('%s')\n", arg);
+
+              /* Assume int form */
+
+              sscanf(arg, "%hu %hu %hu %n",
+                         (short unsigned int *) &(opts->bkgd_color[0]),
+                         (short unsigned int *) &(opts->bkgd_color[1]),
+                         (short unsigned int *) &(opts->bkgd_color[2]),
+                         &count);
+            }
+            printf("Background color: %d,%d,%d\n", opts->bkgd_color[0], opts->bkgd_color[1], opts->bkgd_color[2]);
+          }
+        } else {
+          fprintf(stderr, "Unrecognized option in '%s': '%s' (set to '%s')\n", fname, buf, arg);
+          continue;
+        }
+      }
+    }
+  }
+  fclose(fi);
+
+  /* N.B. If 'allowscale=both', then background options are meaningless;
+     we could report that here (e.g., to stderr) -bjk 2023.02.10 */
+}
+
+
+/**
  * FIXME
  */
 static void load_starter_id(char *saved_id, FILE * fil)
@@ -14544,6 +14823,7 @@ static void load_template(char *img_id)
   char *dirname;
   char fname[256];
   SDL_Surface *tmp_surf;
+  starter_template_options_t template_options;
 
   /* Determine path to starter files: */
 
@@ -14595,6 +14875,9 @@ static void load_template(char *img_id)
     SDL_FreeSurface(tmp_surf);
   }
 
+  /* Get template's options */
+  get_starter_template_options(dirname, img_id, &template_options);
+
 
   /* Scale if needed... */
 
@@ -14611,7 +14894,7 @@ static void load_template(char *img_id)
                                             canvas->format->Gmask,
                                             canvas->format->Bmask, 0);
 
-    autoscale_copy_smear_free(tmp_surf, img_starter_bkgd, SDL_BlitSurface);
+    autoscale_copy_scale_or_smear_free(tmp_surf, img_starter_bkgd, SDL_BlitSurface, template_options);
   }
 
   free(dirname);
@@ -14738,6 +15021,11 @@ static void load_current(void)
       }
 
       load_embedded_data(fname, org_surf);
+
+      /* FIXME: Consider using the new
+         autoscale_copy_smear_or_scale_free() based on the starter/template
+         file's options? (Will need to do here, rather than first thing,
+         above) -bjk 2023.02.09 */
     }
 
     free(fname);
@@ -18405,6 +18693,11 @@ static int do_open(void)
               load_template(template_id);
 
             load_embedded_data(fname, org_surf);
+
+            /* FIXME: Consider using the new
+               autoscale_copy_smear_or_scale_free() based on the starter/template
+               file's options? (Will need to do here, rather than first thing,
+               above) -bjk 2023.02.09 */
 
             reset_avail_tools();
 
@@ -28274,6 +28567,9 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
                                                       canvas->format->Bmask,
                                                       0);
 
+              /* FIXME: How to handle starter/template scaling/smearing
+                 options!? -bjk 2023.02.10 */
+
               autoscale_copy_smear_free(aux_surf, img_starter_bkgd,
                                         SDL_BlitSurface);
             }
@@ -28355,8 +28651,12 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
             /* 3rd arg ignored for RGBA surfaces */
             //      SDL_SetAlpha(aux_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
             SDL_SetSurfaceBlendMode(aux_surf, SDL_BLENDMODE_NONE);
+
+            /* FIXME: How to handle starter/template scaling/smearing
+               options!? -bjk 2023.02.10 */
             autoscale_copy_smear_free(aux_surf, img_starter,
                                       NondefectiveBlit);
+
             //      SDL_SetAlpha(img_starter, SDL_ALPHA_OPAQUE);
             SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_NONE);
 
@@ -29405,6 +29705,8 @@ static void setup_colors(void)
 
               max = max + per;
             }
+
+            /* FIXME: This and get_starter_template_options() needs to be modularized -bjk 2023.02.10 */
 
             while (str[strlen(str) - 1] == '\n'
                    || str[strlen(str) - 1] == '\r')

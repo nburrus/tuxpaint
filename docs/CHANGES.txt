@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.9 (0.9.29)
+2023.February.10 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -65,6 +65,24 @@ https://tuxpaint.org/
   * New Starter
     -----------
     * Space_draw.svg by Ingrid Illa Terrier
+
+  * Starter and Template Improvements
+    ---------------------------------
+    * [WIP] Now possible to set scaling and smearing options for
+      each starter or template image.  A ".dat" file can be
+      created which describes whether it's okay to scale and crop
+      the image's top/bottom and/or left/right, and if not both,
+      whether to smear the sides of the starter/template to the
+      edges of the canvas (the prior behavior, and the default),
+      or use a specific solid color background.
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/190/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+      TODO:
+       + Document
+       + Remove debugging printf()s (change to DEBUG_PRINTF()?)
+       + Add files for starters & templates that ship with Tux Paint
+       + Test!
 
   * Other Improvements:
     -------------------
