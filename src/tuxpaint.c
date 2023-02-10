@@ -14356,7 +14356,8 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
   } else {
     printf("No smearing or background needed\n");
 
-    SDL_FreeSurface(src);
+    autoscale_copy_smear_free(src, dst, blit);
+    // SDL_FreeSurface(src);
   }
 }
 
