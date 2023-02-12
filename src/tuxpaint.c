@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 10, 2023
+  June 14, 2002 - February 12, 2023
 */
 
 #include "platform.h"
@@ -158,8 +158,22 @@ enum {
   STARTER_TEMPLATE_SCALE_MODE_BOTH /* allow zooming in (cropping anything) if canvas is smaller in either/both dimensions */
 };
 
+enum {
+  STARTER_TEMPLATE_GRAVITY_HORIZ_CENTER,
+  STARTER_TEMPLATE_GRAVITY_HORIZ_LEFT,
+  STARTER_TEMPLATE_GRAVITY_HORIZ_RIGHT
+};
+
+enum {
+  STARTER_TEMPLATE_GRAVITY_VERT_CENTER,
+  STARTER_TEMPLATE_GRAVITY_VERT_TOP,
+  STARTER_TEMPLATE_GRAVITY_VERT_BOTTOM
+};
+
 typedef struct starter_template_options_s {
   int scale_mode;
+  int h_gravity;
+  int v_gravity;
   int smear;
   int bkgd_color[3];
 } starter_template_options_t;
@@ -14298,9 +14312,23 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
     SDL_FreeSurface(src);
     src = src1;
 
-    /* Place the new image centered onto the dest */
-    src_rect.x = (scaled->w - dst->w) / 2;
-    src_rect.y = (scaled->h - dst->h) / 2;
+    /* Place the new image onto the dest */
+    if (opts.h_gravity == STARTER_TEMPLATE_GRAVITY_HORIZ_LEFT) {
+      src_rect.x = 0;
+    } else if (opts.h_gravity == STARTER_TEMPLATE_GRAVITY_HORIZ_RIGHT) {
+      src_rect.x = scaled->w - dst->w;
+    } else /* opts.h_gravity == STARTER_TEMPLATE_GRAVITY_HORIZ_CENTER */ {
+      src_rect.x = (scaled->w - dst->w) / 2;
+    }
+
+    if (opts.v_gravity == STARTER_TEMPLATE_GRAVITY_VERT_TOP) {
+      src_rect.y = 0;
+    } else if (opts.v_gravity == STARTER_TEMPLATE_GRAVITY_VERT_BOTTOM) {
+      src_rect.y = scaled->h - dst->h;
+    } else /* opts.v_gravity == STARTER_TEMPLATE_GRAVITY_VERT_CENTER */ {
+      src_rect.y = (scaled->h - dst->h) / 2;
+    }
+
     src_rect.w = scaled->w;
     src_rect.h = scaled->h;
 
@@ -14377,6 +14405,8 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
 
   /* Set defaults for all options (in case file missing, or file doesn't specify certain options) */
   opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_NONE;
+  opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_CENTER;
+  opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_CENTER;
   opts->smear = 1;
   opts->bkgd_color[0] = 255;
   opts->bkgd_color[1] = 255;
@@ -14415,6 +14445,39 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
             opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_VERT;
           } else if (strcmp(arg, "both") == 0) {
             opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_BOTH;
+          } else if (strcmp(arg, "none") == 0) {
+            opts->scale_mode = STARTER_TEMPLATE_SCALE_MODE_NONE;
+          } else {
+            fprintf(stderr, "Unknown 'autoscale' option in '%s': '%s'\n", fname, arg);
+          }
+        } else if (strcmp(buf, "gravity") == 0) {
+          if (strcmp(arg, "top") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_CENTER;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_TOP;
+          } else if (strcmp(arg, "bottom") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_CENTER;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_BOTTOM;
+          } else if (strcmp(arg, "left") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_LEFT;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_CENTER;
+          } else if (strcmp(arg, "right") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_RIGHT;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_CENTER;
+          } else if (strcmp(arg, "top-left") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_LEFT;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_TOP;
+          } else if (strcmp(arg, "bottom-left") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_LEFT;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_BOTTOM;
+          } else if (strcmp(arg, "top-right") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_RIGHT;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_TOP;
+          } else if (strcmp(arg, "bottom-right") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_RIGHT;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_BOTTOM;
+          } else if (strcmp(arg, "center") == 0) {
+            opts->h_gravity = STARTER_TEMPLATE_GRAVITY_HORIZ_CENTER;
+            opts->v_gravity = STARTER_TEMPLATE_GRAVITY_VERT_CENTER;
           } else {
             fprintf(stderr, "Unknown 'autoscale' option in '%s': '%s'\n", fname, arg);
           }
@@ -14487,8 +14550,12 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
   }
   fclose(fi);
 
+  /* FIXME: It might be worth reporting warnings for these situations: */
   /* N.B. If 'allowscale=both', then background options are meaningless;
      we could report that here (e.g., to stderr) -bjk 2023.02.10 */
+  /* N.B. Certain 'gravity' options don't make sense based on the
+     'allowscale' option (e.g., if "vertical", then gravities that
+     include 'left' or 'right' are meaningless) -bjk 2023.02.12 */
 }
 
 

@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.10 (0.9.29)
+2023.February.12 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -74,9 +74,13 @@ https://tuxpaint.org/
       the image's top/bottom and/or left/right, and if not both,
       whether to smear the sides of the starter/template to the
       edges of the canvas (the prior behavior, and the default),
-      or use a specific solid color background.
+      or use a specific solid color background.  When scaling,
+      gravity may be specified, to ensure that a particular side or
+      corner of the starter or template is included.
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/190/
       Bill Kendrick <bill@newbreedsoftware.com>
+      with suggestions from Albert Cahalan <acahalan@gmail.com>
+      and Pere Pujal i Carabantes <perepujal@gmail.com>
 
       TODO:
        + Document
