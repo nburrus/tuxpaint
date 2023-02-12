@@ -3,7 +3,7 @@
    Draws a googly eye at the click position, and looks
    towards where you drag+release.
 
-  Last updated: January 25, 2023
+  Last updated: February 11, 2023
 */
 
 #include <stdio.h>
@@ -20,6 +20,10 @@ int sizes[NUM_SIZES] = { 100, 50 };
 char * size_names[NUM_SIZES] = {
   gettext_noop("large googly eye"),
   gettext_noop("small googly eye")
+};
+char * img_filenames[NUM_SIZES] = {
+  "googlyeyes.png",
+  "googlyeyes-sm.png"
 };
 
 Mix_Chunk *snd_effect = NULL;
@@ -145,12 +149,12 @@ int googlyeyes_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 
-SDL_Surface *googlyeyes_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *googlyeyes_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/googlyeyes.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/%s",
+           api->data_directory, img_filenames[which]);
 
   return (IMG_Load(fname));
 }
