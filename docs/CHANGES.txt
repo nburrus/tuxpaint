@@ -83,7 +83,6 @@ https://tuxpaint.org/
       and Pere Pujal i Carabantes <perepujal@gmail.com>
 
       TODO:
-       + Document
        + Remove debugging printf()s (change to DEBUG_PRINTF()?)
        + Add files for starters & templates that ship with Tux Paint
        + Test!
