@@ -786,7 +786,7 @@
               </li><!-- allowscale=vertical -->
 
               <li><!-- allowscale=both -->
-                If it's acceptable to crop either the top and bottom or the left and right, use "<code><b>allowscale=both</b></code>". Contents from starter will always fill the canvas, regardless of how its aspect ratio compare to that of the canvas.              </li><!-- allowscale=both -->
+                If it's acceptable to crop either the top and bottom or the left and right, use "<code><b>allowscale=both</b></code>". Contents from starter will always fill the canvas, regardless of how its aspect ratio compares to that of the canvas.              </li><!-- allowscale=both -->
 
               <li><!-- allowscale=none -->
                 The default behavior is to not allow cropping. This may be specified explicitly with "<code><b>allowscale=none</b></code>".              </li><!-- allowscale=none -->
@@ -801,6 +801,8 @@
               You can instead specify a solid background color (e.g., white for a 'coloring-book' style starter, with "<code><b>background=#fff</b></code>").            </p>
             <p>
               As cores pódense enumerar usando tres números decimais (por exemplo, «<code>255 68 136</code>») ou un «triplete» hexadecimal de 6 ou 3 díxitos de longo (por exemplo, «<code>#ff4488</code>» ou «<code>#F48</code>»).            </p>
+            <p>
+              See the <a href="OPTIONS.html#colorfile">"Color Palette File" section of "Options documentation"</a> for further details.            </p>
           </dd><!-- background -->
 
           <dt><strong>gravity</strong></dt>
@@ -811,72 +813,83 @@
               For example, if the top center of the starter contains the most important content, you can specify "<code><b>gravity=top</b></code>".  Or, if the bottom right is important, specify "<code><b>gravity=bottom-right</b></code>".            </p>
 
             <p>
-              The available options are:            </p>
-            <ul>
-              <li><code><b>top</b></code> &mdash; prefer the top center</li>
-              <li><code><b>bottom</b></code> &mdash; prefer the bottom center</li>
-              <li><code><b>left</b></code> &mdash; prefer the left center</li>
-              <li><code><b>right</b></code> &mdash; prefer the right center</li>
-              <li><code><b>top-left</b></code> &mdash; prefer the top left</li>
-              <li><code><b>top-right</b></code> &mdash; prefer the top right</li>
-              <li><code><b>bottom-left</b></code> &mdash; prefer the bottom left</li>
-              <li><code><b>bottom-right</b></code> &mdash; prefer the bottom right</li>
-            </ul>
+              The available options are:              <ul>
+                <li><code><b>center</b></code> &mdash; prefer the center (the default)</li>
+                <li><code><b>top</b></code> &mdash; prefer the top center</li>
+                <li><code><b>bottom</b></code> &mdash; prefer the bottom center</li>
+                <li><code><b>left</b></code> &mdash; prefer the left center</li>
+                <li><code><b>right</b></code> &mdash; prefer the right center</li>
+                <li><code><b>top-left</b></code> &mdash; prefer the top left</li>
+                <li><code><b>top-right</b></code> &mdash; prefer the top right</li>
+                <li><code><b>bottom-left</b></code> &mdash; prefer the bottom left</li>
+                <li><code><b>bottom-right</b></code> &mdash; prefer the bottom right</li>
+              </ul>
+            </p>
 
                           <div style="display: inline-block; border: 1px solid #888; width: 320px;">
-              <figure style="text-align: center;">
-                <img src="../../html/images/gravity-center-landscape.png"
-                  width="160"
-                  height="72"
-                  alt=""
-                  valign="middle" />
-                <figcaption style="font-size: smaller;">
-                  Focusing on the center of a starter image stretched to fit the width of the canvas.                </figcaption>
-              </figure>
+                <figure style="text-align: center;">
+                  <img src="../../html/images/gravity-center-landscape.png"
+                    width="160"
+                    height="72"
+                    alt="[ Landscape-shaped image of a horizon with the sun in the middle and a building on the right. ]"
+                    title="Landscape-shaped image of a horizon with the sun in the middle and a building on the right."
+                    valign="middle" />
+                  <figcaption style="font-size: smaller;">
+                    <p>Focusing on the center of a starter image stretched to fit the width of the canvas.<p/>
+                  </figcaption>
+                </figure>
               </div>
                             <div style="display: inline-block; border: 1px solid #888; width: 320px;">
-              <figure style="text-align: center;">
-                <img src="../../html/images/gravity-center-portrait.png"
-                  width="84"
-                  height="160"
-                  alt=""
-                  valign="middle" />
-                <figcaption style="font-size: smaller;">
-                  Focusing on the center of a starter image stretched to fit the height of the canvas.                </figcaption>
-              </figure>
+                <figure style="text-align: center;">
+                  <img src="../../html/images/gravity-center-portrait.png"
+                    width="84"
+                    height="160"
+                    alt="[ Portrait-shaped image of a horizon with the sun in the middle and the left side of building on the right. ]"
+                    title="Portrait-shaped image of a horizon with the sun in the middle and the left side of building on the right."
+                    valign="middle" />
+                  <figcaption style="font-size: smaller;">
+                    <p>Focusing on the center of a starter image stretched to fit the height of the canvas.<p/>
+                  </figcaption>
+                </figure>
               </div>
                             <div style="display: inline-block; border: 1px solid #888; width: 320px;">
-              <figure style="text-align: center;">
-                <img src="../../html/images/gravity-top-landscape.png"
-                  width="160"
-                  height="72"
-                  alt=""
-                  valign="middle" />
-                <figcaption style="font-size: smaller;">
-                  Focusing on the top of a starter image stretched to fit the width of the canvas.                </figcaption>
-              </figure>
+                <figure style="text-align: center;">
+                  <img src="../../html/images/gravity-top-landscape.png"
+                    width="160"
+                    height="72"
+                    alt="[ Landscape-shaped image of the sky with the sun at the bottom and the top of building on the right. ]"
+                    title="Landscape-shaped image of the sky with the sun at the bottom and the top of building on the right."
+                    valign="middle" />
+                  <figcaption style="font-size: smaller;">
+                    <p>Focusing on the top of a starter image stretched to fit the width of the canvas.<p/>
+                  </figcaption>
+                </figure>
               </div>
                             <div style="display: inline-block; border: 1px solid #888; width: 320px;">
-              <figure style="text-align: center;">
-                <img src="../../html/images/gravity-bottom-landscape.png"
-                  width="160"
-                  height="72"
-                  alt=""
-                  valign="middle" />
-                <figcaption style="font-size: smaller;">
-                  Focusing on the bottom of a starter image stretched to fit the width of the canvas.                </figcaption>
-              </figure>
+                <figure style="text-align: center;">
+                  <img src="../../html/images/gravity-bottom-landscape.png"
+                    width="160"
+                    height="72"
+                    alt="[ Landscape-shaped image of the ground with the sun at the top. ]"
+                    title="Landscape-shaped image of the ground with the sun at the top."
+                    valign="middle" />
+                  <figcaption style="font-size: smaller;">
+                    <p>Focusing on the bottom of a starter image stretched to fit the width of the canvas.<p/>
+                  </figcaption>
+                </figure>
               </div>
                             <div style="display: inline-block; border: 1px solid #888; width: 320px;">
-              <figure style="text-align: center;">
-                <img src="../../html/images/gravity-right-portrait.png"
-                  width="84"
-                  height="160"
-                  alt=""
-                  valign="middle" />
-                <figcaption style="font-size: smaller;">
-                  Focusing on the right of a starter image stretched to fit the height of the canvas.                </figcaption>
-              </figure>
+                <figure style="text-align: center;">
+                  <img src="../../html/images/gravity-right-portrait.png"
+                    width="84"
+                    height="160"
+                    alt="[ Portrait-shaped image of a horizon with the sun on the left and a building in the center. ]"
+                    title="Portrait-shaped image of a horizon with the sun on the left and a building in the center."
+                    valign="middle" />
+                  <figcaption style="font-size: smaller;">
+                    <p>Focusing on the right of a starter image stretched to fit the height of the canvas.<p/>
+                  </figcaption>
+                </figure>
               </div>
                         </dd><!-- gravity -->
         </dl>
@@ -946,7 +959,7 @@
       </header>
 
       <p>
-        Tux Paint admite numerosos idiomas grazas ao uso da biblioteca de localización «gettext». (Vexa a «Documentación de opcións» para saber como cambiar a configuración local en Tux Paint.)      </p>
+        Tux Paint supports numerous languages, thanks to use of the "gettext" localization library. (See <a href="OPTIONS.html#languages">the "Languages" section of "Options documentation"</a> for how to change locales in Tux Paint.)      </p>
 
       <p>
         Para traducir Tux Paint a un novo idioma, copie o ficheiro de modelo de tradución, «<code>tuxpaint.pot</code>» (atopado no código fonte de Tux Paint, no cartafol «<code>src/po/</code>»). Cambie o nome da copia como un ficheiro «<code>.po</code>», cun nome apropiado para o idioma ao que está a traducir (p. ex.: «<code>es.po</code>» para o español; ou «<code>pt_BR.po</code>» para o portugués brasileiro fronte a «<code>pt.po</code>» ou «<code>pt_PT.po</code>» para o portugués falado en Portugal.)      </p>

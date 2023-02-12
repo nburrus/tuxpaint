@@ -638,7 +638,7 @@ Starter Options
               * If it's acceptable to crop either the top and bottom or the
                 left and right, use "allowscale=both". Contents from starter
                 will always fill the canvas, regardless of how its aspect
-                ratio compare to that of the canvas.
+                ratio compares to that of the canvas.
               * The default behavior is to not allow cropping. This may be
                 specified explicitly with "allowscale=none".
 
@@ -657,6 +657,9 @@ Starter Options
            136") or a 6- or 3-digit-long hexadecimal 'triplet' (e.g.,
            "#ff4488" or "#F48").
 
+           See the "Color Palette File" section of "Options documentation"
+           for further details.
+
    gravity
 
            This option allows you to specify how Tux Paint should position a
@@ -670,7 +673,7 @@ Starter Options
            bottom right is important, specify "gravity=bottom-right".
 
            The available options are:
-
+              * center — prefer the center (the default)
               * top — prefer the top center
               * bottom — prefer the bottom center
               * left — prefer the left center
@@ -679,14 +682,33 @@ Starter Options
               * top-right — prefer the top right
               * bottom-left — prefer the bottom left
               * bottom-right — prefer the bottom right
+
+           [ Landscape-shaped image of a horizon with the sun in the middle
+           and a building on the right. ]
+
            Focusing on the center of a starter image stretched to fit the
            width of the canvas.
+
+           [ Portrait-shaped image of a horizon with the sun in the middle
+           and the left side of building on the right. ]
+
            Focusing on the center of a starter image stretched to fit the
            height of the canvas.
+
+           [ Landscape-shaped image of the sky with the sun at the bottom and
+           the top of building on the right. ]
+
            Focusing on the top of a starter image stretched to fit the width
            of the canvas.
+
+           [ Landscape-shaped image of the ground with the sun at the top. ]
+
            Focusing on the bottom of a starter image stretched to fit the
            width of the canvas.
+
+           [ Portrait-shaped image of a horizon with the sun on the left and
+           a building in the center. ]
+
            Focusing on the right of a starter image stretched to fit the
            height of the canvas.
 
@@ -741,8 +763,8 @@ Template Options
                                   Translations
 
    Tux Paint supports numerous languages, thanks to use of the "gettext"
-   localization library. (See "Options documentation" for how to change
-   locales in Tux Paint.)
+   localization library. (See the "Languages" section of "Options
+   documentation" for how to change locales in Tux Paint.)
 
    To translate Tux Paint to a new language, copy the translation template
    file, "tuxpaint.pot" (found in Tux Paint's source code, in the folder
