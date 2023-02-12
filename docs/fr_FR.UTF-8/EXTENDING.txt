@@ -2,10 +2,10 @@
                                    Tux Paint
                                  version 0.9.29
 
-        Copyright © 2002-2022 by divers contributeurs; see AUTHORS.txt.
+        Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  juin 4, 2022
+                                février 12, 2023
 
         +--------------------------------------------------------------+
         |Table des matières                                            |
@@ -26,7 +26,9 @@
         |  * 'Images de démarrage'                                     |
         |       * Images de démarrage avec style 'livre de coloriage'  |
         |       * Images de démarrage avec 'style scénique'            |
+        |       * Starter Options                                      |
         |  * 'Modèles'                                                 |
+        |       * Template Options                                     |
         |  * Traductions                                               |
         |  * Méthodes alternatives de saisie                           |
         |  * Clavier virtuel sur écran                                 |
@@ -630,6 +632,113 @@ Images de démarrage avec 'style scénique'
    is created. (In other words, if you base a drawing on a image de
    démarrage, it will always be affected by it.)
 
+Starter Options
+
+   Outre une an image, les starters peuvent également recevoir d'autres
+   attributs. Pour ce faire, vous devez créer un «fichier de données» pour
+   starter. (Note: Tux Paint prior to version 0.9.29 did not support starter
+   options.)
+
+   Un fichier de données de starter's est simplement un fichier texte ASCII
+   contenant les options pour le starter.
+
+   Le fichier porte le même nom que l'image , mais une extension ".dat". (par
+   exemple, le fichier de données "starter.png" est le fichier texte
+   "starter.dat" qui se trouve dans le même répertoire.)
+
+   allowscale
+
+           When a starter image is a different aspect ratio (width-to-height
+           proportions) than Tux Paint's canvas, by default it will be scaled
+           to fit entirely within the canvas, without stretching the starter
+           (changing its aspect ratio); for example, a square starter on a
+           portrait-shaped canvas will be placed in the center of the canvas.
+           By default, Tux Paint will then take the strip of pixels at the
+           edges of the starter and stretch them to the edges of the canvas,
+           "smearing" it.
+
+           If it's acceptable for the starter image to be cropped in one or
+           both directions, the "allowscale" may be used to tell Tux Paint
+           which behavior to allow:
+
+              * For starters where it's alright to crop the left and right
+                edges, but the top and bottom edges must be retained, use
+                "allowscale=horizontal".
+                   * If the starter's aspect ratio is wider than that of the
+                     canvas, it will be scaled to fit the height of the
+                     canvas, and the left and right will be cropped.
+                   * If the starter's aspect ratio is taller than that of the
+                     canvas, it will be scaled to fit the height of the
+                     canvas, and no cropping will occur, and the left and
+                     right edges will be smeared.
+              * For starters where it's alright to crop the top and bottom
+                edges, but the left and right edges must be retained, use
+                "allowscale=vertical".
+                   * If the starter's aspect ratio is taller than that of the
+                     canvas, it will be scaled to fit the width of the
+                     canvas, and the top and bottom will be cropped.
+                   * If the starter's aspect ratio is wider than that of the
+                     canvas, it will be scaled to fit the width of the
+                     canvas, and no cropping will occur, and the top and
+                     bottom edges will be smeared.
+              * If it's acceptable to crop either the top and bottom or the
+                left and right, use "allowscale=both". Contents from starter
+                will always fill the canvas, regardless of how its aspect
+                ratio compare to that of the canvas.
+              * The default behavior is to not allow cropping. This may be
+                specified explicitly with "allowscale=none".
+
+   background
+
+           This option allows you to specify how Tux Paint should fill the
+           rest of the canvas, when the starter does not fit in one or the
+           other direction. By default, as described above, Tux Paint will
+           "smear" the pixels from the edges of the starter. (This can be
+           specified explicitly with "background=smear".)
+
+           You can instead specify a solid background color (e.g., white for
+           a 'coloring-book' style starter, with "background=#fff").
+
+           Les couleurs peuvent être listées en utilisant trois nombres
+           décimaux (par exemple, "255 68 136") ou un 'triplet' hexadécimal
+           de 6 ou 3 chiffres (par exemple, " #ff4488" ou "#F48").
+
+   gravity
+
+           This option allows you to specify how Tux Paint should position a
+           starter, when it is being cropped in one or the other direction.
+           By default, Tux Paint will place the center of the starter within
+           the canvas. (This can be specified explicitly with
+           "gravity=center".)
+
+           For example, if the top center of the starter contains the most
+           important content, you can specify "gravity=top". Or, if the
+           bottom right is important, specify "gravity=bottom-right".
+
+           The available options are:
+
+              * top — prefer the top center
+              * bottom — prefer the bottom center
+              * left — prefer the left center
+              * right — prefer the right center
+              * top-left — prefer the top left
+              * top-right — prefer the top right
+              * bottom-left — prefer the bottom left
+              * bottom-right — prefer the bottom right
+           Focusing on the center of a starter image stretched to fit the
+           width of the canvas.
+           Focusing on the center of a starter image stretched to fit the
+           height of the canvas.
+           Focusing on the top of a starter image stretched to fit the width
+           of the canvas.
+           Focusing on the bottom of a starter image stretched to fit the
+           width of the canvas.
+           Focusing on the right of a starter image stretched to fit the
+           height of the canvas.
+
+   💡 Note: Templates (described below) may also have options files, and
+   currently support all of the same options as starters.
+
                                    'Modèles'
 
    Les images «Modèle» apparaissent également dans la boîte de dialogue
@@ -669,6 +778,14 @@ Images de démarrage avec 'style scénique'
    Paint has been quit, or another picture is loaded or a new image is
    created. (In other words, if you base a drawing on a image 'modèle', it
    will always be affected by it.)
+
+Template Options
+
+   Like 'starters', a configuration file may be specified that defines how
+   Tux Paint should behave when applying 'template' images to the canvas when
+   they do not have identical proportions (aspect ratio). See "Starter
+   Options", above. (Note: Tux Paint prior to version 0.9.29 did not support
+   template options.)
 
                                   Traductions
 
