@@ -2274,7 +2274,9 @@ static char *uppercase(const char *restrict const str);
 static wchar_t *uppercase_w(const wchar_t *restrict const str);
 static char *textdir(const char *const str);
 static SDL_Surface *do_render_button_label(const char *const label);
+#if 0
 static SDL_Surface * crop_surface(SDL_Surface * surf);
+#endif
 static void create_button_labels(void);
 static Uint32 scrolltimer_selector_callback(Uint32 interval, void *param);
 static Uint32 scrolltimer_tool_callback(Uint32 interval, void *param);
@@ -9860,15 +9862,16 @@ static SDL_Surface *do_render_button_label(const char *const label)
   tmp_surf1 = render_text(myfont, upstr, black);
   free(upstr);
 
-  // FIXME: CROP LABELS
   tmp_surf = tmp_surf1;
-  /*
+
+  // FIXME: CROP LABELS
+#if 0
   tmp_surf = crop_surface(tmp_surf1);
   if(tmp_surf == NULL)
     return NULL;
 
   SDL_FreeSurface(tmp_surf1);
-  */
+#endif
 
   DEBUG_PRINTF("Rendered as: %d x %d\n", tmp_surf->w, tmp_surf->h);
 
@@ -9888,6 +9891,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
   return surf;
 }
 
+#if 0
 static SDL_Surface * crop_surface(SDL_Surface * surf) {
   int top, bottom, left, right, x, y, w, h;
   Uint8 r, g, b, a, r1, g1, b1, a1;
@@ -9949,6 +9953,7 @@ static SDL_Surface * crop_surface(SDL_Surface * surf) {
 
   return new_surf;
 }
+#endif
 
 /**
  * FIXME
@@ -20679,6 +20684,7 @@ static void do_render_cur_text(int do_blit)
       unicodeIn[i] = (FriBidiChar) texttool_str[i];
 
     int maxlevel = fribidi_log2vis(unicodeIn, texttool_len, &baseDir, unicodeOut, 0, 0, 0);
+    maxlevel = maxlevel; // FIXME: Avoiding "unused variable" warning.  Note: if we remove it, baseDir isn't used either! -bjk 2023.02.12
 
     /* FIXME: If we determine that some new text was RtoL, we should
        reposition the text */
@@ -30418,13 +30424,12 @@ static void setup(void)
   if (!fullscreen)
   {
     int win_x = SDL_WINDOWPOS_UNDEFINED, win_y = SDL_WINDOWPOS_UNDEFINED;
-    int found_capable_display, max_scrn_w, max_scrn_h;
-    int num_displays, num_modes, i, res;
+    int max_scrn_w, max_scrn_h;
+    int num_displays, i, res;
     SDL_DisplayMode mode;
 
     /* Query all displays to ensure that, if we only have on display,
        that Tux Paint's window will not be larger than it */
-    found_capable_display = 0;
     max_scrn_w = -1;
     max_scrn_h = -1;
 
@@ -30441,7 +30446,6 @@ static void setup(void)
         } else {
           if (mode.w >= WINDOW_WIDTH && mode.h >= WINDOW_HEIGHT) {
             /* Found a display capable of the chosen window size */
-            found_capable_display = 1;
           } else {
             if (mode.w >= max_scrn_w)
               max_scrn_w = mode.w;

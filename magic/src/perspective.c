@@ -671,10 +671,6 @@ void perspective_release(magic_api * api, int which,
                                       canvas->format->Gmask,
                                       canvas->format->Bmask, 0);
 
-printf("SDL_BlitSurface(canvas_back (%d), update_rect (%d), aux_surf (%d), NULL\n",
-canvas_back, update_rect, aux_surf);
-fflush(stdout);
-
       SDL_BlitSurface(canvas_back, update_rect, aux_surf, NULL);
       scaled_surf = api->scale(aux_surf, canvas->w, canvas->h, 0);
       SDL_BlitSurface(scaled_surf, NULL, canvas, NULL);
