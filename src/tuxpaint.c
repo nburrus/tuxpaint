@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 12, 2023
+  June 14, 2002 - February 16, 2023
 */
 
 #include "platform.h"
@@ -1214,11 +1214,8 @@ static int grid_hit_gd(const SDL_Rect * const r, unsigned x, unsigned y,
   unsigned col = (x - r->x) / item_w;
   unsigned row = (y - r->y) / item_h;
 
-#ifdef DEBUG
-  /* FIXME: Send to stderr, not stdout? */
-  printf("%d,%d resolves to %d,%d in a %dx%d grid, index is %d\n", x, y, col,
+  DEBUG_PRINTF("%d,%d resolves to %d,%d in a %dx%d grid, index is %d\n", x, y, col,
          row, gd->cols, gd->rows, col + row * gd->cols);
-#endif
   if (col >= gd->cols || row >= gd->rows)
     return -1;
   return col + row * gd->cols;
@@ -1741,10 +1738,7 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
   {
     sdl_color_to_pango_color(color, &pango_color);
 
-#ifdef DEBUG
-    printf("Calling SDLPango_SetText(\"%s\")\n", str);
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("Calling SDLPango_SetText(\"%s\")\n", str);
 
 #ifdef __ANDROID__
     /* FIXME This extrange workaround helps in getting the translations working
@@ -1760,10 +1754,7 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 
   if (font->typ == FONT_TYPE_TTF)
   {
-#ifdef DEBUG
-    printf("Calling TTF_RenderUTF8_Blended(\"%s\")\n", str);
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("Calling TTF_RenderUTF8_Blended(\"%s\")\n", str);
 
     ret = TTF_RenderUTF8_Blended(font->ttf_font, str, color);
   }
@@ -2854,10 +2845,7 @@ static void mainloop(void)
 #ifndef NOSOUND
           if (use_sound)
           {
-#ifdef DEBUG
-            printf("modstate at mainloop %d, mod %d\n", SDL_GetModState(),
-                   mod);
-#endif
+            DEBUG_PRINTF("modstate at mainloop %d, mod %d\n", SDL_GetModState(), mod);
 
             mute = !mute;
             Mix_HaltChannel(-1);
@@ -4359,12 +4347,9 @@ static void mainloop(void)
                            (WINDOW_WIDTH - r_ttoolopt.w))) / r_ttoolopt.w) +
                     MIN_STAMP_SIZE;
 
-#ifdef DEBUG
-                  printf("Old size = %d, Chose %0.4f, New size =%d\n",
-                         old_size, choice,
-                         stamp_data[stamp_group][cur_stamp
-                                                 [stamp_group]]->size);
-#endif
+                  DEBUG_PRINTF("Old size = %d, Chose %0.4f, New size =%d\n",
+                               old_size, choice,
+                               stamp_data[stamp_group][cur_stamp[stamp_group]]->size);
 
                   if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size <
                       old_size)
@@ -5190,11 +5175,9 @@ static void mainloop(void)
               if (stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt !=
                   NULL)
               {
-#ifdef DEBUG
-                printf
+                DEBUG_PRINTF
                   ("stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt = %s\n",
                    stamp_data[stamp_group][cur_stamp[stamp_group]]->stxt);
-#endif
 
                 draw_tux_text_ex(TUX_GREAT,
                                  stamp_data[stamp_group][cur_stamp
@@ -7091,11 +7074,8 @@ static void mainloop(void)
                      (WINDOW_WIDTH - r_ttoolopt.w))) / r_toolopt.w) +
               MIN_STAMP_SIZE;
 
-#ifdef DEBUG
-            printf("Old size = %d, Chose %0.4f, New size =%d\n", old_size,
-                   choice,
-                   stamp_data[stamp_group][cur_stamp[stamp_group]]->size);
-#endif
+            DEBUG_PRINTF("Old size = %d, Chose %0.4f, New size =%d\n", old_size, choice,
+                         stamp_data[stamp_group][cur_stamp[stamp_group]]->size);
 
             if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size !=
                 old_size)
@@ -7936,18 +7916,12 @@ static void tint_surface(SDL_Surface * tmp_surf, SDL_Surface * surf_ptr)
   {
     initial_hue = tint_part_1(work, surf_ptr);
 
-#ifdef DEBUG
-    /* FIXME: To stderr, not stdout? */
-    printf("initial_hue = %f\n", initial_hue);
-#endif
+    DEBUG_PRINTF("initial_hue = %f\n", initial_hue);
 
     key_color_ptr =
       find_most_saturated(initial_hue, work, width * height, &hue_range);
 
-#ifdef DEBUG
-    /* FIXME: To stderr, not stdout? */
-    printf("key_color_ptr = %d\n", (int) (intptr_t) key_color_ptr);     //EP added (intptr_t) to avoid warning on x64
-#endif
+    DEBUG_PRINTF("key_color_ptr = %d\n", (int) (intptr_t) key_color_ptr);     //EP added (intptr_t) to avoid warning on x64
 
     if (key_color_ptr)
     {
@@ -8153,11 +8127,7 @@ static void rec_undo_buffer(void)
 
   newest_undo = cur_undo;
 
-#ifdef DEBUG
-  /* FIXME: Stderr instead of stdout? */
-  printf("DRAW: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo,
-         newest_undo);
-#endif
+  DEBUG_PRINTF("DRAW: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo, newest_undo);
 
 
   /* Update toolbar buttons, if needed: */
@@ -8730,10 +8700,7 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   unsigned int lower = 0;
   unsigned mid;
 
-#ifdef DEBUG
-  printf("Finishing %s for %dx%d (ratio=%0.4f)\n", sd->stampname, w, h,
-         ratio);
-#endif
+  DEBUG_PRINTF("Finishing %s for %dx%d (ratio=%0.4f)\n", sd->stampname, w, h, ratio);
 
   /* If Tux Paint is in mirror-image-by-default mode, mirror, if we can: */
   if (mirrorstamps && sd->mirrorable)
@@ -8752,9 +8719,8 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
     /* By default, Tux Paint allowed stamps to be, at max, 2x as wide OR 2x as tall as canvas; scaled that back to 1.5 -bjk 2011.01.08 */
     if (pw < canvas->w * 1.5 && ph < canvas->h * 1)
     {
-#ifdef DEBUG
-      printf("Upper at %d with proposed size %dx%d (wide)\n", upper, pw, ph);
-#endif
+      DEBUG_PRINTF("Upper at %d with proposed size %dx%d (wide)\n", upper, pw, ph);
+
       if (pw > canvas->w)
       {
         underscanned_upper = upper - 1;
@@ -8767,9 +8733,8 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
     }
     if (pw < canvas->w * 1 && ph < canvas->h * 1.5)
     {
-#ifdef DEBUG
-      printf("Upper at %d with proposed size %dx%d (tall)\n", upper, pw, ph);
-#endif
+      DEBUG_PRINTF("Upper at %d with proposed size %dx%d (tall)\n", upper, pw, ph);
+
       if (ph > canvas->h)
       {
         underscanned_upper = upper - 1;
@@ -8783,9 +8748,8 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
 #else
     if (pw <= canvas->w * 1 && ph <= canvas->h * 1)
     {
-#ifdef DEBUG
-      printf("Upper at %d with proposed size %dx%d\n", upper, pw, ph);
-#endif
+      DEBUG_PRINTF("Upper at %d with proposed size %dx%d\n", upper, pw, ph);
+
       underscanned_upper = upper;
       break;
     }
@@ -8804,9 +8768,7 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
 
     if (pw * ph > 20)
     {
-#ifdef DEBUG
-      printf("Lower at %d with proposed size %dx%d\n", lower, pw, ph);
-#endif
+      DEBUG_PRINTF("Lower at %d with proposed size %dx%d\n", lower, pw, ph);
       break;
     }
   }
@@ -8843,20 +8805,14 @@ static void loadstamp_finisher(stamp_type * sd, unsigned w, unsigned h,
   sd->size = mid;
   sd->max = upper;
 
-#ifdef DEBUG
-  printf("Final min=%d, size=%d, max=%d\n", lower, mid, upper);
-#endif
+  DEBUG_PRINTF("Final min=%d, size=%d, max=%d\n", lower, mid, upper);
 
   if (stamp_size_override != -1)
   {
     sd->size = (((upper - lower) * stamp_size_override) / 10) + lower;
-#ifdef DEBUG
-    printf("...but adjusting size to %d\n", sd->size);
-#endif
+    DEBUG_PRINTF("...but adjusting size to %d\n", sd->size);
   }
-#ifdef DEBUG
-  printf("\n");
-#endif
+  DEBUG_PRINTF("\n");
 }
 
 
@@ -8894,9 +8850,7 @@ static void set_active_stamp(void)
 
   memcpy(buf, sd->stampname, len);
 
-#ifdef DEBUG
-  printf("\nset_active_stamp()\n");
-#endif
+  DEBUG_PRINTF("\nset_active_stamp()\n");
 
   /* Look for pre-mirrored and pre-flipped version: */
 
@@ -8907,9 +8861,7 @@ static void set_active_stamp(void)
   {
     /* Want mirrored and flipped, both */
 
-#ifdef DEBUG
-    printf("want both mirrored & flipped\n");
-#endif
+    DEBUG_PRINTF("want both mirrored & flipped\n");
 
     if (!sd->no_premirrorflip)
     {
@@ -8928,9 +8880,7 @@ static void set_active_stamp(void)
 
     if (active_stamp != NULL)
     {
-#ifdef DEBUG
-      printf("found a _mirror_flip!\n");
-#endif
+      DEBUG_PRINTF("found a _mirror_flip!\n");
 
       needs_mirror = 0;
       needs_flip = 0;
@@ -8940,9 +8890,7 @@ static void set_active_stamp(void)
       /* Couldn't get one that was both, look for _mirror then _flip and
          flip or mirror it: */
 
-#ifdef DEBUG
-      printf("didn't find a _mirror_flip\n");
-#endif
+      DEBUG_PRINTF("didn't find a _mirror_flip\n");
 
       if (!sd->no_premirror)
       {
@@ -8960,9 +8908,7 @@ static void set_active_stamp(void)
 
       if (active_stamp != NULL)
       {
-#ifdef DEBUG
-        printf("found a _mirror!\n");
-#endif
+        DEBUG_PRINTF("found a _mirror!\n");
         needs_mirror = 0;
       }
       else
@@ -8970,9 +8916,7 @@ static void set_active_stamp(void)
         /* Couldn't get one that was just pre-mirrored, look for a
            pre-flipped */
 
-#ifdef DEBUG
-        printf("didn't find a _mirror, either\n");
-#endif
+        DEBUG_PRINTF("didn't find a _mirror, either\n");
 
         if (!sd->no_preflip)
         {
@@ -8990,16 +8934,12 @@ static void set_active_stamp(void)
 
         if (active_stamp != NULL)
         {
-#ifdef DEBUG
-          printf("found a _flip!\n");
-#endif
+          DEBUG_PRINTF("found a _flip!\n");
           needs_flip = 0;
         }
         else
         {
-#ifdef DEBUG
-          printf("didn't find a _flip, either\n");
-#endif
+          DEBUG_PRINTF("didn't find a _flip, either\n");
         }
       }
     }
@@ -9008,9 +8948,7 @@ static void set_active_stamp(void)
   {
     /* Want flipped only */
 
-#ifdef DEBUG
-    printf("want flipped only\n");
-#endif
+    DEBUG_PRINTF("want flipped only\n");
 
 #ifndef NOSVG
     memcpy(buf + len, "_flip.svg", 10);
@@ -9025,25 +8963,19 @@ static void set_active_stamp(void)
 
     if (active_stamp != NULL)
     {
-#ifdef DEBUG
-      printf("found a _flip!\n");
-#endif
+      DEBUG_PRINTF("found a _flip!\n");
       needs_flip = 0;
     }
     else
     {
-#ifdef DEBUG
-      printf("didn't find a _flip\n");
-#endif
+      DEBUG_PRINTF("didn't find a _flip\n");
     }
   }
   else if (sd->mirrored && !sd->no_premirror)
   {
     /* Want mirrored only */
 
-#ifdef DEBUG
-    printf("want mirrored only\n");
-#endif
+    DEBUG_PRINTF("want mirrored only\n");
 
 #ifndef NOSVG
     memcpy(buf + len, "_mirror.svg", 12);
@@ -9058,16 +8990,12 @@ static void set_active_stamp(void)
 
     if (active_stamp != NULL)
     {
-#ifdef DEBUG
-      printf("found a _mirror!\n");
-#endif
+      DEBUG_PRINTF("found a _mirror!\n");
       needs_mirror = 0;
     }
     else
     {
-#ifdef DEBUG
-      printf("didn't find a _mirror\n");
-#endif
+      DEBUG_PRINTF("didn't find a _mirror\n");
     }
   }
 
@@ -9077,9 +9005,7 @@ static void set_active_stamp(void)
 
   if (!active_stamp)
   {
-#ifdef DEBUG
-    printf("loading normal\n");
-#endif
+    DEBUG_PRINTF("loading normal\n");
 
 #ifndef NOSVG
     memcpy(buf + len, ".svg", 5);
@@ -9105,23 +9031,17 @@ static void set_active_stamp(void)
 
   if (needs_mirror)
   {
-#ifdef DEBUG
-    printf("mirroring\n");
-#endif
+    DEBUG_PRINTF("mirroring\n");
     active_stamp = mirror_surface(active_stamp);
   }
 
   if (needs_flip)
   {
-#ifdef DEBUG
-    printf("flipping\n");
-#endif
+    DEBUG_PRINTF("flipping\n");
     active_stamp = flip_surface(active_stamp);
   }
 
-#ifdef DEBUG
-  printf("\n\n");
-#endif
+  DEBUG_PRINTF("\n\n");
 
   clear_cached_stamp();
 }
@@ -9139,9 +9059,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
   unsigned w;
   unsigned h;
 
-#ifdef DEBUG
-  printf("\nget_stamp_thumb()\n");
-#endif
+  DEBUG_PRINTF("\nget_stamp_thumb()\n");
 
   memcpy(buf, sd->stampname, len);
 
@@ -9207,9 +9125,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
   /* first see if we can re-use an existing thumbnail */
   if (sd->thumbnail)
   {
-#ifdef DEBUG
-    printf("have an sd->thumbnail\n");
-#endif
+    DEBUG_PRINTF("have an sd->thumbnail\n");
 
     if (sd->thumb_mirrored_flipped == sd->flipped &&
         sd->thumb_mirrored_flipped == sd->mirrored &&
@@ -9218,9 +9134,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
     {
       /* It's already the way we want */
 
-#ifdef DEBUG
-      printf("mirrored == flipped == thumb_mirrored_flipped [bye]\n");
-#endif
+      DEBUG_PRINTF("mirrored == flipped == thumb_mirrored_flipped [bye]\n");
 
       return;
     }
@@ -9237,9 +9151,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
   if (sd->mirrored && sd->flipped)
   {
-#ifdef DEBUG
-    printf("want mirrored & flipped\n");
-#endif
+    DEBUG_PRINTF("want mirrored & flipped\n");
 
     if (!sd->no_premirrorflip)
     {
@@ -9257,18 +9169,15 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
     if (bigimg)
     {
-#ifdef DEBUG
-      printf("found a _mirror_flip!\n");
-#endif
+      DEBUG_PRINTF("found a _mirror_flip!\n");
 
       need_mirror = 0;
       need_flip = 0;
     }
     else
     {
-#ifdef DEBUG
-      printf("didn't find a mirror_flip\n");
-#endif
+      DEBUG_PRINTF("didn't find a mirror_flip\n");
+
       sd->no_premirrorflip = 1;
 
       if (!sd->no_premirror)
@@ -9287,17 +9196,13 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
       if (bigimg)
       {
-#ifdef DEBUG
-        printf("found a _mirror\n");
-#endif
+        DEBUG_PRINTF("found a _mirror\n");
 
         need_mirror = 0;
       }
       else
       {
-#ifdef DEBUG
-        printf("didn't find a mirror\n");
-#endif
+        DEBUG_PRINTF("didn't find a mirror\n");
 
         if (!sd->no_preflip)
         {
@@ -9315,9 +9220,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
         if (bigimg)
         {
-#ifdef DEBUG
-          printf("found a _flip\n");
-#endif
+          DEBUG_PRINTF("found a _flip\n");
 
           need_flip = 0;
         }
@@ -9326,9 +9229,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
   }
   else if (sd->mirrored && !sd->no_premirror)
   {
-#ifdef DEBUG
-    printf("want mirrored only\n");
-#endif
+    DEBUG_PRINTF("want mirrored only\n");
 
     memcpy(buf + len, "_mirror.png", 12);
     bigimg = do_loadimage(buf, 0);
@@ -9343,24 +9244,18 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
     if (bigimg)
     {
-#ifdef DEBUG
-      printf("found a _mirror!\n");
-#endif
+      DEBUG_PRINTF("found a _mirror!\n");
       need_mirror = 0;
     }
     else
     {
-#ifdef DEBUG
-      printf("didn't find a mirror\n");
-#endif
+      DEBUG_PRINTF("didn't find a mirror\n");
       sd->no_premirror = 1;
     }
   }
   else if (sd->flipped && !sd->no_preflip)
   {
-#ifdef DEBUG
-    printf("want flipped only\n");
-#endif
+    DEBUG_PRINTF("want flipped only\n");
 
     memcpy(buf + len, "_flip.png", 10);
     bigimg = do_loadimage(buf, 0);
@@ -9375,16 +9270,12 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
     if (bigimg)
     {
-#ifdef DEBUG
-      printf("found a _flip!\n");
-#endif
+      DEBUG_PRINTF("found a _flip!\n");
       need_flip = 0;
     }
     else
     {
-#ifdef DEBUG
-      printf("didn't find a flip\n");
-#endif
+      DEBUG_PRINTF("didn't find a flip\n");
       sd->no_preflip = 1;
     }
   }
@@ -9394,9 +9285,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
   if (!bigimg)
   {
-#ifdef DEBUG
-    printf("loading normal...\n");
-#endif
+    DEBUG_PRINTF("loading normal...\n");
 
     memcpy(buf + len, ".png", 5);
     bigimg = do_loadimage(buf, 0);
@@ -9438,17 +9327,13 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
 
   if (need_mirror)
   {
-#ifdef DEBUG
-    printf("mirroring\n");
-#endif
+    DEBUG_PRINTF("mirroring\n");
     sd->thumbnail = mirror_surface(sd->thumbnail);
   }
 
   if (need_flip)
   {
-#ifdef DEBUG
-    printf("flipping\n");
-#endif
+    DEBUG_PRINTF("flipping\n");
     sd->thumbnail = flip_surface(sd->thumbnail);
   }
 
@@ -9464,9 +9349,7 @@ static void get_stamp_thumb(stamp_type * sd, int process_sound)
   sd->thumb_mirrored = sd->mirrored;
   sd->thumb_flipped = sd->flipped;
 
-#ifdef DEBUG
-  printf("\n\n");
-#endif
+  DEBUG_PRINTF("\n\n");
 
 
   /* Finish up, if we need to: */
@@ -9497,10 +9380,8 @@ static void loadstamp_callback(SDL_Surface * screen,
                                unsigned i, const char *restrict const locale)
 {
   (void) locale;
-#ifdef DEBUG
-  /* FIXME: Stderr instead of stdout? */
-  printf("loadstamp_callback (%d): %s\n", i, dir);
-#endif
+
+  DEBUG_PRINTF("loadstamp_callback (%d): %s\n", i, dir);
 
   if (num_stamps[stamp_group] > 0)
   {
@@ -9523,17 +9404,11 @@ static void loadstamp_callback(SDL_Surface * screen,
     if (slashcount <= stamp_group_dir_depth)
     {
       stamp_group++;
-#ifdef DEBUG
-      /* FIXME: Stderr instead of stdout? */
-      printf("\n...counts as a new group! now: %d\n", stamp_group);
-#endif
+      DEBUG_PRINTF("\n...counts as a new group! now: %d\n", stamp_group);
     }
     else
     {
-#ifdef DEBUG
-      /* FIXME: Stderr instead of stdout? */
-      printf("...is still part of group %d\n", stamp_group);
-#endif
+      DEBUG_PRINTF("...is still part of group %d\n", stamp_group);
     }
   }
 
@@ -9737,52 +9612,34 @@ static int generate_fontconfig_cache_real(void)
   SDL_Surface *tmp_surf;
   SDL_Color black = { 0, 0, 0, 0 };
 
-#ifdef DEBUG
-  printf("-- Hello from generate_fontconfig_cache() (thread # %d)\n",
-         SDL_ThreadID());
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("-- Hello from generate_fontconfig_cache() (thread # %d)\n", SDL_ThreadID());
 
   tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12);
 
   if (tmp_font != NULL)
   {
-#ifdef DEBUG
-    printf("-- Generated a font.\n");
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("-- Generated a font.\n");
     tmp_surf = render_text(tmp_font, "Test", black);
     if (tmp_surf != NULL)
     {
-#ifdef DEBUG
-      printf("-- Generated a surface\n");
-      fflush(stdout);
-#endif
+      DEBUG_PRINTF("-- Generated a surface\n");
       SDL_FreeSurface(tmp_surf);
     }
     else
     {
-#ifdef DEBUG
-      printf("-- Failed to make a surface!\n");
-      fflush(stdout);
-#endif
+      DEBUG_PRINTF("-- Failed to make a surface!\n");
     }
     TuxPaint_Font_CloseFont(tmp_font);
   }
   else
   {
-#ifdef DEBUG
-    printf("-- Failed to generate a font!\n");
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("-- Failed to generate a font!\n");
   }
 
   fontconfig_thread_done = 1;
 
-#ifdef DEBUG
-  printf("-- generate_fontconfig_cache() is done\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("-- generate_fontconfig_cache() is done\n");
+
   return (0);
 }
 
@@ -12430,10 +12287,7 @@ static void do_undo(void)
     been_saved = 0;
   }
 
-#ifdef DEBUG
-  printf("UNDO: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo,
-         newest_undo);
-#endif
+  DEBUG_PRINTF("UNDO: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo, newest_undo);
 }
 
 
@@ -12461,9 +12315,8 @@ static void do_redo(void)
 
     cur_undo = (cur_undo + 1) % NUM_UNDO_BUFS;
 
-#ifdef DEBUG
-    printf("BLITTING: %d\n", cur_undo);
-#endif
+    DEBUG_PRINTF("BLITTING: %d\n", cur_undo);
+
     do_redo_label_node();
     SDL_BlitSurface(undo_bufs[cur_undo], NULL, canvas, NULL);
 
@@ -12473,10 +12326,7 @@ static void do_redo(void)
     been_saved = 0;
   }
 
-#ifdef DEBUG
-  printf("REDO: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo,
-         newest_undo);
-#endif
+  DEBUG_PRINTF("REDO: Current=%d  Oldest=%d  Newest=%d\n", cur_undo, oldest_undo, newest_undo);
 
 
   if (((cur_undo + 1) % NUM_UNDO_BUFS) == newest_undo)
@@ -13095,9 +12945,7 @@ static void enable_avail_tools(void)
 /* For qsort() call in do_open()... */
 static int compare_dirent2s(struct dirent2 *f1, struct dirent2 *f2)
 {
-#ifdef DEBUG
-  printf("compare_dirents: %s\t%s\n", f1->f.d_name, f2->f.d_name);
-#endif
+  DEBUG_PRINTF("compare_dirents: %s\t%s\n", f1->f.d_name, f2->f.d_name);
 
   if (f1->place == f2->place)
     return (strcmp(f1->f.d_name, f2->f.d_name));
@@ -14269,23 +14117,23 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
   dst_aspect = (float) dst->w / (float) dst->h;
 
   if (src_aspect > dst_aspect) {
-    printf("Image (%d x %d) is of a wider aspect (%0.5f) than canvas (%d x %d) (%0.5f)\n", src->w, src->h, src_aspect, dst->w, dst->h, dst_aspect);
+    DEBUG_PRINTF("Image (%d x %d) is of a wider aspect (%0.5f) than canvas (%d x %d) (%0.5f)\n", src->w, src->h, src_aspect, dst->w, dst->h, dst_aspect);
     if (opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_HORIZ ||
         opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_BOTH) {
       new_h = dst->h;
       new_w = dst->h * src_aspect;
-      printf("Okay to crop left/right. Keeping aspect; scaling to %d x %d\n", new_w, new_h);
+      DEBUG_PRINTF("Okay to crop left/right. Keeping aspect; scaling to %d x %d\n", new_w, new_h);
     }
   } else if (src_aspect < dst_aspect) {
-    printf("Image (%d x %d) is of a taller aspect (%0.5f) than canvas (%d x %d) (%0.5f)\n", src->w, src->h, src_aspect, dst->w, dst->h, dst_aspect);
+    DEBUG_PRINTF("Image (%d x %d) is of a taller aspect (%0.5f) than canvas (%d x %d) (%0.5f)\n", src->w, src->h, src_aspect, dst->w, dst->h, dst_aspect);
     if (opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_VERT ||
         opts.scale_mode == STARTER_TEMPLATE_SCALE_MODE_BOTH) {
       new_w = dst->w;
       new_h = dst->w / src_aspect;
-      printf("Okay to crop top/bottom. Keeping aspect; scaling to %d x %d\n", new_w, new_h);
+      DEBUG_PRINTF("Okay to crop top/bottom. Keeping aspect; scaling to %d x %d\n", new_w, new_h);
     }
   } else {
-    printf("Image (%d x %d) is the same aspect as canvas (%d x %d) (%0.05f)\n", src->w, src->h, dst->w, dst->h, src_aspect);
+    DEBUG_PRINTF("Image (%d x %d) is the same aspect as canvas (%d x %d) (%0.05f)\n", src->w, src->h, dst->w, dst->h, src_aspect);
   }
 
 
@@ -14296,7 +14144,7 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
 
     /* Scale, keeping aspect, which will cause extra content that needs cropping */
 
-    printf("Scaling from %d x %d to %d x %d\n", src->w, src->h, new_w, new_h);
+    DEBUG_PRINTF("Scaling from %d x %d to %d x %d\n", src->w, src->h, new_w, new_h);
 
     scaled = thumbnail2(src, new_w, new_h, 0 /* keep aspect */, 1 /* keep alpha */);
     if (scaled == NULL) {
@@ -14337,15 +14185,15 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
     src_rect.w = scaled->w;
     src_rect.h = scaled->h;
 
-    printf("Blitting scaled image (%d x %d) into new 'src' image (%d x %d) at (%d,%d) %d x %d\n",
-           scaled->w, scaled->h, src->w, src->h, src_rect.x, src_rect.y, src_rect.w, src_rect.h);
+    DEBUG_PRINTF("Blitting scaled image (%d x %d) into new 'src' image (%d x %d) at (%d,%d) %d x %d\n",
+                 scaled->w, scaled->h, src->w, src->h, src_rect.x, src_rect.y, src_rect.w, src_rect.h);
 
     SDL_BlitSurface(scaled, &src_rect, src, NULL);
   }
 
 
   if (src->w != dst->w || src->h != dst->h) {
-    printf("Fitting %d x %d onto %d x %d canvas\n", src->w, src->h, dst->w, dst->h);
+    DEBUG_PRINTF("Fitting %d x %d onto %d x %d canvas\n", src->w, src->h, dst->w, dst->h);
 
     if (opts.smear) {
       autoscale_copy_smear_free(src, dst, blit);
@@ -14356,10 +14204,10 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
 
       if (src->w != dst->w || src->h != dst->h) {
         if (src->w / (float) dst->w > src->h / (float) dst->h) {
-          printf("Scaling from %d x %d to %d x %d\n", src->w, src->h, dst->w, src->h * dst->w / src->w);
+          DEBUG_PRINTF("Scaling from %d x %d to %d x %d\n", src->w, src->h, dst->w, src->h * dst->w / src->w);
           scaled = thumbnail(src, dst->w, src->h * dst->w / src->w, 0);
         } else {
-          printf("Scaling from %d x %d to %d x %d\n", src->w, src->h, src->w * dst->h / src->h, dst->h);
+          DEBUG_PRINTF("Scaling from %d x %d to %d x %d\n", src->w, src->h, src->w * dst->h / src->h, dst->h);
           scaled = thumbnail(src, src->w * dst->h / src->h, dst->h, 0);
         }
       }
@@ -14371,7 +14219,7 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
         return;
       }
 
-      printf("Centering on a background color\n");
+      DEBUG_PRINTF("Centering on a background color\n");
 
       SDL_FillRect(dst, NULL, SDL_MapRGB(dst->format, opts.bkgd_color[0], opts.bkgd_color[1], opts.bkgd_color[2]));
 
@@ -14385,7 +14233,7 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
       SDL_FreeSurface(scaled);
     }
   } else {
-    printf("No smearing or background needed\n");
+    DEBUG_PRINTF("No smearing or background needed\n");
 
     autoscale_copy_smear_free(src, dst, blit);
     // SDL_FreeSurface(src);
@@ -14503,7 +14351,7 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
 
               if (strlen(tmp_str) == 6)
               {
-                printf("6 digit hex ('%s')\n", arg);
+                DEBUG_PRINTF("6 digit hex ('%s')\n", arg);
 
                 /* Byte (#rrggbb) form */
 
@@ -14516,7 +14364,7 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
               }
               else if (strlen(tmp_str) == 3)
               {
-                printf("3 digit hex ('%s')\n", arg);
+                DEBUG_PRINTF("3 digit hex ('%s')\n", arg);
 
                 /* Nybble (#rgb) form */
 
@@ -14527,12 +14375,12 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
                 opts->bkgd_color[2] =
                   (hex2dec(tmp_str[2]) << 4) + hex2dec(tmp_str[2]);
               } else {
-                printf("Don't understand color hex '%s'\n", arg);
+                fprintf(stderr, "Don't understand color hex '%s'\n", arg);
               }
             }
             else
             {
-              printf("Integers ('%s')\n", arg);
+              DEBUG_PRINTF("Integers ('%s')\n", arg);
 
               /* Assume int form */
 
@@ -14542,7 +14390,8 @@ static void get_starter_template_options(char * dirname, char * img_id, starter_
                          (short unsigned int *) &(opts->bkgd_color[2]),
                          &count);
             }
-            printf("Background color: %d,%d,%d\n", opts->bkgd_color[0], opts->bkgd_color[1], opts->bkgd_color[2]);
+
+            DEBUG_PRINTF("Background color: %d,%d,%d\n", opts->bkgd_color[0], opts->bkgd_color[1], opts->bkgd_color[2]);
           }
         } else {
           fprintf(stderr, "Unrecognized option in '%s': '%s' (set to '%s')\n", fname, buf, arg);
@@ -14633,10 +14482,7 @@ static void load_starter_id(char *saved_id, FILE * fil)
         tmp_ptr = fgets(template_id, sizeof(template_id), fi);
         template_id[strlen(template_id) - 1] = '\0';
         tmp = fscanf(fi, "%d", &template_personal);
-#ifdef DEBUG
-        printf("template = %s\n (Personal=%d)", template_id,
-               template_personal);
-#endif
+        DEBUG_PRINTF("template = %s\n (Personal=%d)", template_id, template_personal);
       }
       if (!feof(fi) && color_tag == 'M')
       {
@@ -15076,7 +14922,7 @@ static void load_current(void)
     else
     {
       org_surf = SDL_DisplayFormat(tmp);
-      printf("Smearing canvas @ 4\n");
+      DEBUG_PRINTF("Smearing canvas @ 4\n");
       autoscale_copy_smear_free(tmp, canvas, SDL_BlitSurface);
 
       /* First we run this for compatibility, then we will chek if
@@ -15920,27 +15766,21 @@ static void cleanup(void)
 
   if (medium_font != NULL)
   {
-#ifdef DEBUG
-    printf("cleanup: medium font\n");   //EP
-#endif
+    DEBUG_PRINTF("cleanup: medium font\n");   //EP
     TuxPaint_Font_CloseFont(medium_font);
     medium_font = NULL;
   }
 
   if (small_font != NULL)
   {
-#ifdef DEBUG
-    printf("cleanup: small font\n");    //EP
-#endif
+    DEBUG_PRINTF("cleanup: small font\n");    //EP
     TuxPaint_Font_CloseFont(small_font);
     small_font = NULL;
   }
 
   if (large_font != NULL)
   {
-#ifdef DEBUG
-    printf("cleanup: large font\n");    //EP
-#endif
+    DEBUG_PRINTF("cleanup: large font\n");    //EP
     TuxPaint_Font_CloseFont(large_font);
     large_font = NULL;
   }
@@ -16874,9 +16714,8 @@ static void do_png_embed_data(png_structp png_ptr)
   /* Starter foreground */
   if (img_starter)
   {
-#ifdef DEBUG
-    printf("Saving starter... %d\n", (int) (intptr_t) img_starter);     //EP added (intptr_t) to avoid warning on x64
-#endif
+    DEBUG_PRINTF("Saving starter... %d\n", (int) (intptr_t) img_starter);     //EP added (intptr_t) to avoid warning on x64
+
     sbk_pixs = malloc(img_starter->h * img_starter->w * 4);
     compressedLen = compressBound(img_starter->h * img_starter->w * 4);
 
@@ -16986,9 +16825,7 @@ static void do_png_embed_data(png_structp png_ptr)
     if (SDL_MUSTLOCK(img_starter_bkgd))
       SDL_UnlockSurface(img_starter_bkgd);
 
-#ifdef DEBUG
-    printf("%d \n", (int) compressedLen);
-#endif
+    DEBUG_PRINTF("%d \n", (int) compressedLen);
 
     compress(compressed_data, &compressedLen, sbk_pixs,
              img_starter_bkgd->h * img_starter_bkgd->w * 3);
@@ -16996,9 +16833,8 @@ static void do_png_embed_data(png_structp png_ptr)
     set_chunk_data(&chunk_data, &chunk_data_len,
                    img_starter_bkgd->w * img_starter_bkgd->h * 3,
                    compressed_data, compressedLen);
-#ifdef DEBUG
-    printf("%d \n", (int) compressedLen);
-#endif
+
+    DEBUG_PRINTF("%d \n", (int) compressedLen);
 
 
     tuxpaint_chunks[2].data = (png_byte *) chunk_data;
@@ -17174,10 +17010,8 @@ static void do_png_embed_data(png_structp png_ptr)
         fprintf(lfi, "\n\n");
       }
       current_node = current_node->next_to_up_label_node;
-#ifdef DEBUG
-      printf("cur %p, red %p\n", current_node,
-             first_label_node_in_redo_stack);
-#endif
+
+      DEBUG_PRINTF("cur %p, red %p\n", current_node, first_label_node_in_redo_stack);
     }
 
 #ifdef fmemopen_alternative
@@ -17844,11 +17678,7 @@ static int do_open(void)
     }
 
 
-
-#ifdef DEBUG
-    printf("%d saved files were found!\n", num_files);
-#endif
-
+    DEBUG_PRINTF("%d saved files were found!\n", num_files);
 
 
     if (num_files == 0)
@@ -18734,7 +18564,7 @@ static int do_open(void)
             starter_flipped = 0;
             starter_personal = 0;
 
-            printf("Smearing canvas @ 5\n");
+            DEBUG_PRINTF("Smearing canvas @ 5\n");
             org_surf = SDL_DisplayFormat(img);  /* Keep a copy of the original image
                                                    unscaled to send to load_embedded_data */
             autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
@@ -19116,9 +18946,8 @@ static int do_slideshow(void)
     }
   }
 
-#ifdef DEBUG
-  printf("%d saved files were found!\n", num_files);
-#endif
+  DEBUG_PRINTF("%d saved files were found!\n", num_files);
+
   /* Let user choose images: */
 
   /* Instructions for Slideshow file dialog */
@@ -19899,7 +19728,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname,
 
       if (img != NULL)
       {
-        printf("Smearing starter @ 6 (slideshow)\n");
+        DEBUG_PRINTF("Smearing starter @ 6 (slideshow)\n");
         autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
 
         safe_strncpy(file_id, d_names[which], sizeof(file_id));
@@ -20473,9 +20302,7 @@ static void print_image(void)
   scroll =
     (NUM_TOOLS > buttons_tall * gd_tools.cols) ? img_scroll_down->h : 0;
 
-#ifdef DEBUG
-  printf("Current time = %d\n", cur_time);
-#endif
+  DEBUG_PRINTF("Current time = %d\n", cur_time);
 
   if (cur_time >= last_print_time + print_delay)
   {
@@ -20901,9 +20728,8 @@ static char *uppercase(const char *restrict const str)
   while (dest[i++]);
   wcstombs(ustr, dest, n * 2);  /* at most n * 2 bytes written */
 
-#ifdef DEBUG
-  printf(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
-#endif
+  DEBUG_PRINTF(" ORIGINAL: %s\n" "UPPERCASE: %s\n\n", str, ustr);
+
   return ustr;
 }
 
@@ -20942,9 +20768,7 @@ static char *textdir(const char *const str)
   unsigned i, j;
   unsigned char c1, c2, c3, c4;
 
-#ifdef DEBUG
-  printf("ORIG_DIR: %s\n", str);
-#endif
+  DEBUG_PRINTF("ORIG_DIR: %s\n", str);
 
   dstr = malloc(strlen(str) + 5);
 
@@ -20993,9 +20817,7 @@ static char *textdir(const char *const str)
     strcpy((char *) dstr, str); /* safe; malloc'd to a sufficient size */
   }
 
-#ifdef DEBUG
-  printf("L2R_DIR: %s\n", dstr);
-#endif
+  DEBUG_PRINTF("L2R_DIR: %s\n", dstr);
 
   return ((char *) dstr);
 }
@@ -21777,16 +21599,12 @@ static SDL_Surface *load_svg(const char *file)
   svg_cairo_status_t res;
 
 
-#ifdef DEBUG
-  printf("Attempting to load \"%s\" as an SVG\n", file);
-#endif
+  DEBUG_PRINTF("Attempting to load \"%s\" as an SVG\n", file);
 
   /* Create the SVG cairo stuff: */
   if (svg_cairo_create(&scr) != SVG_CAIRO_STATUS_SUCCESS)
   {
-#ifdef DEBUG
-    printf("svg_cairo_create() failed\n");
-#endif
+    fprintf(stderr, "svg_cairo_create(%s) failed on\n", file);
     return (NULL);
   }
 
@@ -21794,24 +21612,19 @@ static SDL_Surface *load_svg(const char *file)
   if (svg_cairo_parse(scr, file) != SVG_CAIRO_STATUS_SUCCESS)
   {
     svg_cairo_destroy(scr);
-#ifdef DEBUG
-    printf("svg_cairo_parse(%s) failed\n", file);
-#endif
+    fprintf(stderr, "svg_cairo_parse(%s) failed\n", file);
     return (NULL);
   }
 
   /* Get the natural size of the SVG */
   svg_cairo_get_size(scr, &rwidth, &rheight);
-#ifdef DEBUG
-  printf("svg_get_size(): %d x %d\n", rwidth, rheight);
-#endif
+
+  DEBUG_PRINTF("svg_get_size(): %d x %d\n", rwidth, rheight);
 
   if (rwidth == 0 || rheight == 0)
   {
     svg_cairo_destroy(scr);
-#ifdef DEBUG
-    printf("SVG %s had 0 width or height!\n", file);
-#endif
+    fprintf(stderr, "SVG %s had 0 width or height!\n", file);
     return (NULL);
   }
 
@@ -21829,9 +21642,7 @@ static SDL_Surface *load_svg(const char *file)
   width = ((float) rwidth * scale);
   height = ((float) rheight * scale);
 
-#ifdef DEBUG
-  printf("scaling to %d x %d (%f scale)\n", width, height, scale);
-#endif
+  DEBUG_PRINTF("scaling to %d x %d (%f scale)\n", width, height, scale);
 
   /* scanline width */
   stride = width * btpp;
@@ -21839,11 +21650,9 @@ static SDL_Surface *load_svg(const char *file)
   /* Allocate space for an image: */
   image = calloc(stride * height, 1);
 
-#ifdef DEBUG
-  printf
+  DEBUG_PRINTF
     ("calling cairo_image_surface_create_for_data(..., CAIRO_FORMAT_ARGB32, %d(w), %d(h), %d(stride))\n",
      width, height, stride);
-#endif
 
   /* Create the cairo surface with the adjusted width and height */
 
@@ -21854,9 +21663,7 @@ static SDL_Surface *load_svg(const char *file)
   if (cr == NULL)
   {
     svg_cairo_destroy(scr);
-#ifdef DEBUG
-    printf("cairo_create() failed\n");
-#endif
+    fprintf(stderr, "cairo_create(%s) failed\n", file);
     return (NULL);
   }
 
@@ -21873,9 +21680,7 @@ static SDL_Surface *load_svg(const char *file)
 
   if (res != SVG_CAIRO_STATUS_SUCCESS)
   {
-#ifdef DEBUG
-    printf("svg_cairo_render() failed\n");
-#endif
+    fprintf(stderr, "svg_cairo_render(%s) failed\n");
     return (NULL);
   }
 
@@ -21894,9 +21699,7 @@ static SDL_Surface *load_svg(const char *file)
 
   if (sdl_surface_tmp == NULL)
   {
-#ifdef DEBUG
-    printf("SDL_CreateRGBSurfaceFrom() failed\n");
-#endif
+    fprintf(stderr, "SDL_CreateRGBSurfaceFrom(%s) failed\n", file);
     return (NULL);
   }
 
@@ -21907,16 +21710,12 @@ static SDL_Surface *load_svg(const char *file)
 
   if (sdl_surface == NULL)
   {
-#ifdef DEBUG
-    printf("SDL_DisplayFormatAlpha() failed\n");
-#endif
+    fprintf(stderr, "SDL_DisplayFormatAlpha(%s) failed\n", file);
     return (NULL);
   }
 
-#ifdef DEBUG
-  printf("SDL surface from %d x %d SVG is %d x %d\n", rwidth, rheight,
+  DEBUG_PRINTF("SDL surface from %d x %d SVG is %d x %d\n", rwidth, rheight,
          sdl_surface->w, sdl_surface->h);
-#endif
 
   return (sdl_surface);
 }
@@ -21942,9 +21741,7 @@ static SDL_Surface *_load_svg(const char *file)
   SDL_Surface *sdl_surface, *sdl_surface_tmp;
   Uint32 rmask, gmask, bmask, amask;
 
-#ifdef DEBUG
-  printf("load_svg(%s)\n", file);
-#endif
+  DEBUG_PRINTF("load_svg(%s)\n", file);
 
   /* Create an RSVG Handle from the SVG file: */
 
@@ -21953,9 +21750,7 @@ static SDL_Surface *_load_svg(const char *file)
   rsvg_handle = rsvg_handle_new_from_file(file, &gerr);
   if (rsvg_handle == NULL)
   {
-#ifdef DEBUG
-    fprintf(stderr, "rsvg_handle_new_from_file() failed\n");
-#endif
+    fprintf(stderr, "rsvg_handle_new_from_file(%s) failed\n", file);
     return (NULL);
   }
 
@@ -21963,25 +21758,19 @@ static SDL_Surface *_load_svg(const char *file)
   rwidth = dimensions.width;
   rheight = dimensions.height;
 
-#ifdef DEBUG
-  printf("SVG is %d x %d\n", rwidth, rheight);
-#endif
+  DEBUG_PRINTF("SVG is %d x %d\n", rwidth, rheight);
 
 
   /* Pick best scale to render to (for the canvas in this instance of Tux Paint) */
 
   scale = pick_best_scape(rwidth, rheight, r_canvas.w, r_canvas.h);
 
-#ifdef DEBUG
-  printf("best scale is %.4f\n", scale);
-#endif
+  DEBUG_PRINTF("best scale is %.4f\n", scale);
 
   width = ((float) rwidth * scale);
   height = ((float) rheight * scale);
 
-#ifdef DEBUG
-  printf("scaling to %d x %d (%f scale)\n", width, height, scale);
-#endif
+  DEBUG_PRINTF("scaling to %d x %d (%f scale)\n", width, height, scale);
 
   /* scanline width */
   stride = width * btpp;
@@ -21990,9 +21779,7 @@ static SDL_Surface *_load_svg(const char *file)
   image = calloc(stride * height, 1);
   if (image == NULL)
   {
-#ifdef DEBUG
-    fprintf(stderr, "Unable to allocate image buffer\n");
-#endif
+    fprintf(stderr, "Unable to allocate image buffer for %s\n", file);
     rsvg_handle_close(rsvg_handle, &gerr);
     return (NULL);
   }
@@ -22083,10 +21870,7 @@ static SDL_Surface *_load_svg(const char *file)
   }
 
 
-#ifdef DEBUG
-  printf("SDL surface from %d x %d SVG is %d x %d\n", rwidth, rheight,
-         sdl_surface->w, sdl_surface->h);
-#endif
+  DEBUG_PRINTF("SDL surface from %d x %d SVG is %d x %d\n", rwidth, rheight, sdl_surface->w, sdl_surface->h);
 
 
   /* Clean up: */
@@ -22123,19 +21907,14 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
   aspect = (float) orig_w / (float) orig_h;
 
-#ifdef DEBUG
-  printf("trying to fit %d x %d (aspect: %.4f) into %d x %d\n", orig_w,
-         orig_h, aspect, max_w, max_h);
-#endif
+  DEBUG_PRINTF("trying to fit %d x %d (aspect: %.4f) into %d x %d\n", orig_w, orig_h, aspect, max_w, max_h);
 
   wscale = (float) max_w / (float) orig_w;
   hscale = (float) max_h / (float) orig_h;
 
-#ifdef DEBUG
-  printf("max_w / orig_w = wscale: %.4f\n", wscale);
-  printf("max_h / orig_h = hscale: %.4f\n", hscale);
-  printf("\n");
-#endif
+  DEBUG_PRINTF("max_w / orig_w = wscale: %.4f\n", wscale);
+  DEBUG_PRINTF("max_h / orig_h = hscale: %.4f\n", hscale);
+  DEBUG_PRINTF("\n");
 
   if (aspect >= 1)
   {
@@ -22143,21 +21922,17 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
     scale = wscale;
 
-#ifdef DEBUG
-    printf("Wider-than-tall.  Using wscale.\n");
-    printf("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
+    DEBUG_PRINTF("Wider-than-tall.  Using wscale.\n");
+    DEBUG_PRINTF("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
            (int) ((float) orig_h * scale));
-#endif
 
     if ((float) orig_h * scale > (float) max_h)
     {
       scale = hscale;
 
-#ifdef DEBUG
-      printf("Too tall!  Using hscale!\n");
-      printf("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
+      DEBUG_PRINTF("Too tall!  Using hscale!\n");
+      DEBUG_PRINTF("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
              (int) ((float) orig_h * scale));
-#endif
     }
   }
   else
@@ -22166,29 +21941,22 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h,
 
     scale = hscale;
 
-#ifdef DEBUG
-    printf("Taller-than-wide.  Using hscale.\n");
-    printf("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
+    DEBUG_PRINTF("Taller-than-wide.  Using hscale.\n");
+    DEBUG_PRINTF("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
            (int) ((float) orig_h * scale));
-#endif
 
     if ((float) orig_w * scale > (float) max_w)
     {
       scale = wscale;
 
-#ifdef DEBUG
-      printf("Too wide!  Using wscale!\n");
-      printf("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
+      DEBUG_PRINTF("Too wide!  Using wscale!\n");
+      DEBUG_PRINTF("new size would be: %d x %d\n", (int) ((float) orig_w * scale),
              (int) ((float) orig_h * scale));
-#endif
     }
   }
 
-
-#ifdef DEBUG
-  printf("\n");
-  printf("Final scale: %.4f\n", scale);
-#endif
+  DEBUG_PRINTF("\n");
+  DEBUG_PRINTF("Final scale: %.4f\n", scale);
 
   return (scale);
 }
@@ -22323,11 +22091,8 @@ static void load_magic_plugins(void)
     else
       continue;                 /* Huh? */
 
-#ifdef DEBUG
-    printf("\n");
-    printf("Loading magic plug-ins from %s\n", place);
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("\n");
+    DEBUG_PRINTF("Loading magic plug-ins from %s\n", place);
 
     /* Gather list of files (for sorting): */
 
@@ -22400,10 +22165,7 @@ static void load_magic_plugins(void)
 
             if (magic_handle[num_plugin_files] != NULL)
             {
-#ifdef DEBUG
-              printf("loading: %s\n", fname);
-              fflush(stdout);
-#endif
+              DEBUG_PRINTF("loading: %s\n", fname);
 
               safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
                             "get_tool_count");
@@ -22485,48 +22247,46 @@ static void load_magic_plugins(void)
               magic_funcs[num_plugin_files].switchout =
                 SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
-#ifdef DEBUG
               //EP added (intptr_t) to avoid warning on x64 on all lines below
-              printf("get_tool_count = 0x%x\n",
+              DEBUG_PRINTF("get_tool_count = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].get_tool_count);
-              printf("get_group = 0x%x\n",
+              DEBUG_PRINTF("get_group = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].get_group);
-              printf("get_name = 0x%x\n",
+              DEBUG_PRINTF("get_name = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].get_name);
-              printf("get_icon = 0x%x\n",
+              DEBUG_PRINTF("get_icon = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].get_icon);
-              printf("get_description = 0x%x\n",
+              DEBUG_PRINTF("get_description = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].get_description);
-              printf("requires_colors = 0x%x\n",
+              DEBUG_PRINTF("requires_colors = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].requires_colors);
-              printf("modes = 0x%x\n",
+              DEBUG_PRINTF("modes = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].modes);
-              printf("set_color = 0x%x\n",
+              DEBUG_PRINTF("set_color = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].set_color);
-              printf("init = 0x%x\n",
+              DEBUG_PRINTF("init = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].init);
-              printf("api_version = 0x%x\n",
+              DEBUG_PRINTF("api_version = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].api_version);
-              printf("shutdown = 0x%x\n",
+              DEBUG_PRINTF("shutdown = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].shutdown);
-              printf("click = 0x%x\n",
+              DEBUG_PRINTF("click = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].click);
-              printf("drag = 0x%x\n",
+              DEBUG_PRINTF("drag = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].drag);
-              printf("release = 0x%x\n",
+              DEBUG_PRINTF("release = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].release);
-              printf("switchin = 0x%x\n",
+              DEBUG_PRINTF("switchin = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].switchin);
-              printf("switchout = 0x%x\n",
+              DEBUG_PRINTF("switchout = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].switchout);
-#endif
 
               err = 0;
 
@@ -22743,11 +22503,9 @@ static void load_magic_plugins(void)
                                     30 * button_h / ORIGINAL_BUTTON_SIZE, 1);
                         SDL_FreeSurface(icon_tmp);
 
-#ifdef DEBUG
-                        printf("-- %s\n", magics[group][idx].name);
-                        printf("avail_modes = %d\n",
+                        DEBUG_PRINTF("-- %s\n", magics[group][idx].name);
+                        DEBUG_PRINTF("avail_modes = %d\n",
                                magics[group][idx].avail_modes);
-#endif
 
                         num_magics[group]++;
                         num_magics_total++;
@@ -22794,12 +22552,9 @@ static void load_magic_plugins(void)
     qsort(magics[i], num_magics[i], sizeof(magic_t), magic_sort);
   }
 
-#ifdef DEBUG
-  printf("Loaded %d magic tools from %d plug-in files\n", num_magics_total,
+  DEBUG_PRINTF("Loaded %d magic tools from %d plug-in files\n", num_magics_total,
          num_plugin_files);
-  printf("\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("\n");
 }
 
 
@@ -23576,12 +23331,10 @@ static int do_new_dialog(void)
   }
 
 
-#ifdef DEBUG
-  printf("%d files and colors were found!\n", num_files);
-  printf
+  DEBUG_PRINTF("%d files and colors were found!\n", num_files);
+  DEBUG_PRINTF
     ("first_color = %d\nfirst_starter = %d\nfirst_template = %d\nnum_files = %d\n\n",
      first_color, first_starter, first_template, num_files);
-#endif
 
 
   /* Let user choose a color or image: */
@@ -24174,7 +23927,7 @@ static int do_new_dialog(void)
         starter_personal = 0;
         starter_modified = 0;
 
-        printf("Smearing canvas @ 7\n");
+        DEBUG_PRINTF("Smearing canvas @ 7\n");
         autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
         cur_undo = 0;
@@ -24234,7 +23987,7 @@ static int do_new_dialog(void)
         free_surface(&img_starter_bkgd);
         template_personal = 0;
 
-        printf("Smearing template @ 8\n");
+        DEBUG_PRINTF("Smearing template @ 8\n");
         autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
         cur_undo = 0;
@@ -27631,10 +27384,7 @@ static void load_info_about_label_surface(FILE * lfi)
 
     new_node->save_texttool_len = atoi(fgets(tmpstr, 5, lfi));
 
-#ifdef DEBUG
-    printf("Reading %d wide chars\n", new_node->save_texttool_len);
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("Reading %d wide chars\n", new_node->save_texttool_len);
 
     if (new_node->save_texttool_len >= 1024)
     {
@@ -27671,10 +27421,7 @@ static void load_info_about_label_surface(FILE * lfi)
         fscanf(lfi, "%l[^\n]\n", new_node->save_texttool_str);
 #endif
 
-#ifdef DEBUG
-      printf("Read: \"%ls\"\n", new_node->save_texttool_str);
-      fflush(stdout);
-#endif
+      DEBUG_PRINTF("Read: \"%ls\"\n", new_node->save_texttool_str);
 
       /* Read the label's color (RGB) */
       tmp_fscanf_return = fscanf(lfi, "%u\n", &l);
@@ -27717,10 +27464,9 @@ static void load_info_about_label_surface(FILE * lfi)
         new_node->save_y = tmp_pos;
       }
 
-#ifdef DEBUG
-      printf("Original label size %dx%d\n", new_node->save_width,
+      DEBUG_PRINTF("Original label size %dx%d\n", new_node->save_width,
              new_node->save_height);
-#endif
+
       if (new_node->save_width > 8192 || new_node->save_height > 8192)
       {
         fprintf(stderr, "Unexpected! Save dimensions are (%u x %u!)\n",
@@ -27858,27 +27604,21 @@ static void set_label_fonts()
         if (node->save_font_type[c] == '\n')
           node->save_font_type[c] = '\0';
 
-#ifdef DEBUG
-      printf("ttffont A%sA\n", ttffont);
-      printf("font_type B%sB\n", node->save_font_type);
-#endif
+      DEBUG_PRINTF("ttffont A%sA\n", ttffont);
+      DEBUG_PRINTF("font_type B%sB\n", node->save_font_type);
 
       if (strcmp(node->save_font_type, ttffont) == 0)
 
       {
-#ifdef DEBUG
-        printf("Font matched %s !!!\n", ttffont);
-#endif
+        DEBUG_PRINTF("Font matched %s !!!\n", ttffont);
         node->save_cur_font = i;
         break;
       }
       else if (strstr(ttffont, node->save_font_type)
                || strstr(node->save_font_type, ttffont))
       {
-#ifdef DEBUG
-        printf("setting %s as replacement",
+        DEBUG_PRINTF("setting %s as replacement",
                TTF_FontFaceFamilyName(getfonthandle(i)->ttf_font));
-#endif
         node->save_cur_font = i;
       }
     }
@@ -28328,10 +28068,8 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
   png_uint_32 ww, hh;
   png_uint_32 i, j;
 
-#ifdef DEBUG
-  printf("Loading embedded data...\n");
-  printf("%s\n", fname);
-#endif
+  DEBUG_PRINTF("Loading embedded data...\n");
+  DEBUG_PRINTF("%s\n", fname);
 
   fp = fopen(fname, "rb");
   if (!fp)
@@ -28353,9 +28091,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
   }
   else
   {
-#ifdef DEBUG
-    printf("%s\n", fname);
-#endif
+    DEBUG_PRINTF("%s\n", fname);
 
     info_ptr = png_create_info_struct(png_ptr);
     if (info_ptr == NULL)
@@ -28380,9 +28116,8 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
     num_unknowns = (int) png_get_unknown_chunks(png_ptr, info_ptr, &unknowns);
 
-#ifdef DEBUG
-    printf("num_unknowns %i\n", num_unknowns);
-#endif
+    DEBUG_PRINTF("num_unknowns %i\n", num_unknowns);
+
     if (num_unknowns)
     {
       have_label_delta = have_label_data = have_background = have_foreground =
@@ -28397,15 +28132,12 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
          blured when scaled one) */
       for (u = 0; u < num_unknowns; u++)
       {
-#ifdef DEBUG
-        printf("%s, %d\n", unknowns[u].name, (int) unknowns[u].size);
-#endif
+        DEBUG_PRINTF("%s, %d\n", unknowns[u].name, (int) unknowns[u].size);
 
         if (chunk_is_valid("tpDT", unknowns[u]))
         {
-#ifdef DEBUG
-          printf("Valid tpDT\n");
-#endif
+          DEBUG_PRINTF("Valid tpDT\n");
+
           fi = fmemopen(unknowns[u].data, unknowns[u].size, "r");
           if (fi == NULL)
           {
@@ -28468,9 +28200,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
         {
           if (chunk_is_valid("tpLD", unknowns[u]))
           {
-#ifdef DEBUG
-            printf("Valid tpLD\n");
-#endif
+            DEBUG_PRINTF("Valid tpLD\n");
 
             unc_buff =
               get_chunk_data(fp, fname, png_ptr, info_ptr, "tpLD",
@@ -28530,9 +28260,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
           /* Label Data */
           if (!disable_label && chunk_is_valid("tpLL", unknowns[u]))
           {
-#ifdef DEBUG
-            printf("Valid tpLL\n");
-#endif
+            DEBUG_PRINTF("Valid tpLL\n");
 
             unc_buff =
               get_chunk_data(fp, fname, png_ptr, info_ptr, "tpLL",
@@ -28565,16 +28293,14 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
             free(unc_buff);
             ldata = TRUE;
-#ifdef DEBUG
-            printf("Out of label data\n");
-#endif
+            DEBUG_PRINTF("Out of label data\n");
           }
         }
       }
 
       /* Apply the original canvas */
       if (ldelta && ldata) {
-        printf("Smearing org_surf @ 9\n");
+        DEBUG_PRINTF("Smearing org_surf @ 9\n");
         autoscale_copy_smear_free(org_surf, canvas, SDL_BlitSurface);
       } else {
         SDL_FreeSurface(org_surf);
@@ -28616,9 +28342,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
             }
             SDL_LockSurface(aux_surf);
 
-#ifdef DEBUG
-            printf("Bkgd!!!\n");
-#endif
+            DEBUG_PRINTF("Bkgd!!!\n");
             for (j = 0; j < hh; j++)
               for (i = 0; i < ww; i++)
                 putpixels[aux_surf->format->BytesPerPixel] (aux_surf, i, j,
@@ -28655,7 +28379,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
               /* FIXME: How to handle starter/template scaling/smearing
                  options!? -bjk 2023.02.10 */
 
-              printf("Smearing embedded bkgd @ 10\n");
+              DEBUG_PRINTF("Smearing embedded bkgd @ 10\n");
               autoscale_copy_smear_free(aux_surf, img_starter_bkgd,
                                         SDL_BlitSurface);
             }
@@ -28665,9 +28389,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
           if ((starter_modified || !img_starter)
               && chunk_is_valid("tpFG", unknowns[u]))
           {
-#ifdef DEBUG
-            printf("Frgd!!!\n");
-#endif
+            DEBUG_PRINTF("Frgd!!!\n");
 
             unc_buff =
               get_chunk_data(fp, fname, png_ptr, info_ptr, "tpFG",
@@ -28740,7 +28462,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
             /* FIXME: How to handle starter/template scaling/smearing
                options!? -bjk 2023.02.10 */
-            printf("Smearing embedded foreground @ 11\n");
+            DEBUG_PRINTF("Smearing embedded foreground @ 11\n");
             autoscale_copy_smear_free(aux_surf, img_starter,
                                       NondefectiveBlit);
 
@@ -29657,11 +29379,9 @@ static void setup_config(char *argv[])
     onscreen_keyboard = TRUE;
   }
 
-#ifdef DEBUG
-  printf("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n",
+  DEBUG_PRINTF("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n",
          _promptless_save_over_ask, _promptless_save_over_new,
          _promptless_save_over);
-#endif
 
   if (_promptless_save_over_ask)
   {
@@ -30197,20 +29917,15 @@ static void setup(void)
   else
   {
     SDL_JoystickEventState(SDL_ENABLE);
-#ifdef DEBUG
-    printf("Number of Axes: %d\n", SDL_JoystickNumAxes(joystick));
-    printf("Number of Buttons: %d\n", SDL_JoystickNumButtons(joystick));
-    printf("Number of Balls: %d\n", SDL_JoystickNumBalls(joystick));
-    printf("Number of Hats: %d\n", SDL_JoystickNumHats(joystick));
-#endif
+    DEBUG_PRINTF("Number of Axes: %d\n", SDL_JoystickNumAxes(joystick));
+    DEBUG_PRINTF("Number of Buttons: %d\n", SDL_JoystickNumButtons(joystick));
+    DEBUG_PRINTF("Number of Balls: %d\n", SDL_JoystickNumBalls(joystick));
+    DEBUG_PRINTF("Number of Hats: %d\n", SDL_JoystickNumHats(joystick));
   }
 
 
 #ifndef NOSOUND
-#ifdef DEBUG
-  printf("Initializing sound...\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Initializing sound...\n");
 #ifndef WIN32
   if (use_sound && Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024) < 0)
 #else
@@ -30242,17 +29957,13 @@ static void setup(void)
 #endif
 
 
-#ifdef DEBUG
-  printf("Enabling key repeat...\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Enabling key repeat...\n");
+
   /* Set-up Key-Repeat: */
   //  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
 
-#ifdef DEBUG
-  printf("Initializing TTF...\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Initializing TTF...\n");
+
   /* Init TTF stuff: */
   if (TTF_Init() < 0)
   {
@@ -30266,10 +29977,7 @@ static void setup(void)
   }
 
 
-#ifdef DEBUG
-  printf("Setting up colors...\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Setting up colors...\n");
   setup_colors();
 
 
@@ -30662,10 +30370,7 @@ static void setup(void)
 
   fontconfig_thread_done = 0;
 
-#ifdef DEBUG
-  printf("Spawning Pango thread\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Spawning Pango thread\n");
 
   fontconfig_thread =
     SDL_CreateThread(generate_fontconfig_cache, "fontconfig_thread", NULL);
@@ -30676,13 +30381,11 @@ static void setup(void)
   }
   else
   {
-#ifdef DEBUG
-    printf("Thread spawned\n");
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("Thread spawned\n");
+
     if (generate_fontconfig_cache_spinner(screen))      /* returns 1 if aborted */
     {
-      printf("Pango thread aborted!\n");
+      fprintf(stderr, "Pango thread aborted!\n");
       fflush(stdout);
       // FIXME SDL2
       //      SDL_KillThread(fontconfig_thread);
@@ -30690,19 +30393,13 @@ static void setup(void)
       exit(0);
       /* FIXME: Let's be more graceful about exiting (e.g., clean up lockfile!) -bjk 2010.04.27 */
     }
-#ifdef DEBUG
-    printf("Done generating cache\n");
-    fflush(stdout);
-#endif
+    DEBUG_PRINTF("Done generating cache\n");
   }
 
 
 #ifdef FORKED_FONTS
   /* NOW we can fork our own font scanner stuff, and let it run in the bgkd -bjk 2010.04.27 */
-#ifdef DEBUG
-  printf("Now running font scanner\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Now running font scanner\n");
   run_font_scanner(screen, texture, renderer,
                    lang_prefixes[get_current_language()]);
 #endif
@@ -30735,9 +30432,7 @@ static void setup(void)
   SDL_BlitSurface(tmp_surf, NULL, screen, &dest);
   SDL_FreeSurface(tmp_surf);
 
-#ifdef DEBUG
-  printf("%s\n", tmp_str);
-#endif
+  DEBUG_PRINTF("%s\n", tmp_str);
 
   safe_snprintf(tmp_str, sizeof(tmp_str),
                 "© 2002–2021 Bill Kendrick et al.");
@@ -30808,9 +30503,7 @@ static void setup(void)
   canvas_width = WINDOW_WIDTH - r_ttools.w - r_ttoolopt.w;
   canvas_height = (button_h * buttons_tall) + r_ttools.h;
 
-#ifdef DEBUG
-  printf("Canvas size is %d x %d\n", canvas_width, canvas_height);
-#endif
+  DEBUG_PRINTF("Canvas size is %d x %d\n", canvas_width, canvas_height);
 
   /* Per https://wiki.libsdl.org/SDL_CreateRGBSurface,
    * the flags are unused and should be set to 0
@@ -31599,17 +31292,11 @@ int main(int argc, char *argv[])
   /* must start ASAP, but depends on locale which in turn needs the config */
 #ifdef NO_SDLPANGO
   /* Only fork it now if we're not planning on creating a thread to handle fontconfig stuff -bjk 2010.04.27 */
-#ifdef DEBUG
-  printf("Running font scanner\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("Running font scanner\n");
   run_font_scanner(screen, texture, renderer,
                    lang_prefixes[get_current_language()]);
 #else
-#ifdef DEBUG
-  printf("NOT running font scanner\n");
-  fflush(stdout);
-#endif
+  DEBUG_PRINTF("NOT running font scanner\n");
 #endif
 #endif
 
@@ -31632,12 +31319,10 @@ int main(int argc, char *argv[])
   /* Set up! */
   setup();
 
-#ifdef DEBUG
-  printf("Seconds in early start-up: %.3f\n",
+  DEBUG_PRINTF("Seconds in early start-up: %.3f\n",
          (double) (time2 - time1) / CLOCK_SPEED);
-  printf("Seconds in late start-up:  %.3f\n",
+  DEBUG_PRINTF("Seconds in late start-up:  %.3f\n",
          (double) (time2 - time1) / CLOCK_SPEED);
-#endif
 
 
 #if defined(DEBUG) && !defined(NO_SDLPANGO)
@@ -31713,9 +31398,7 @@ static int trash(char *path)
     return (unlink(path));
   }
 
-#ifdef DEBUG
-  printf("trash: basename=%s", basename(path)); /* EP */
-#endif
+  DEBUG_PRINTF("trash: basename=%s", basename(path)); /* EP */
   safe_strncpy(fname, basename(path), sizeof(fname));
 
   if (!file_exists(path))
@@ -32207,9 +31890,7 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x,
     ev.button.state = SDL_RELEASED;
   }
 
-#ifdef DEBUG
-  printf("result %d %d\n", ev.button.x, ev.button.y);
-#endif
+  DEBUG_PRINTF("result %d %d\n", ev.button.x, ev.button.y);
 
   /* See if it's a button we ignore */
 
@@ -32541,7 +32222,7 @@ static int export_gif(int *selected, int num_selected, char *dirname,
 
       if (img != NULL)
       {
-        printf("Smearing image @ 12 (GIF export)\n");
+        DEBUG_PRINTF("Smearing image @ 12 (GIF export)\n");
         autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
 
         safe_strncpy(file_id, d_names[which], sizeof(file_id));

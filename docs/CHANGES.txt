@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.12 (0.9.29)
+2023.February.16 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -68,7 +68,7 @@ https://tuxpaint.org/
 
   * Starter and Template Improvements
     ---------------------------------
-    * [WIP] Now possible to set scaling and smearing options for
+    * Now possible to set scaling and smearing options for
       each starter or template image.  A ".dat" file can be
       created which describes whether it's okay to scale and crop
       the image's top/bottom and/or left/right, and if not both,
@@ -81,9 +81,6 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
       with suggestions from Albert Cahalan <acahalan@gmail.com>
       and Pere Pujal i Carabantes <perepujal@gmail.com>
-
-      TODO:
-       + Remove debugging printf()s (change to DEBUG_PRINTF()?)
 
   * Other Improvements:
     -------------------
