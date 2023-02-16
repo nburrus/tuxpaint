@@ -14348,8 +14348,6 @@ static void autoscale_copy_scale_or_smear_free(SDL_Surface * src, SDL_Surface * 
     printf("Fitting %d x %d onto %d x %d canvas\n", src->w, src->h, dst->w, dst->h);
 
     if (opts.smear) {
-      printf("Smearing\n");
-
       autoscale_copy_smear_free(src, dst, blit);
       /* Note: autoscale_copy_smear_free() calls SDL_FreeSurface(src)! */
     } else {
@@ -14701,6 +14699,8 @@ static void load_starter(char *img_id)
   char *dirname;
   char fname[256];
   SDL_Surface *tmp_surf;
+  starter_template_options_t template_options;
+
 
   /* Determine path to starter files: */
 
@@ -14861,7 +14861,10 @@ static void load_starter(char *img_id)
     //    SDL_SetAlpha(tmp_surf, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
     //SDL_SetSurfaceBlendMode(tmp_surf, SDL_BLENDMODE_BLEND);
 
-    autoscale_copy_smear_free(tmp_surf, img_starter, NondefectiveBlit);
+    get_starter_template_options(dirname, img_id, &template_options);
+
+    autoscale_copy_scale_or_smear_free(tmp_surf, img_starter, NondefectiveBlit, template_options);
+
     //    SDL_SetAlpha(img_starter, SDL_RLEACCEL, SDL_ALPHA_OPAQUE);
     SDL_SetSurfaceBlendMode(img_starter, SDL_BLENDMODE_BLEND);
 
@@ -14880,8 +14883,8 @@ static void load_starter(char *img_id)
                                             canvas->format->Rmask,
                                             canvas->format->Gmask,
                                             canvas->format->Bmask, 0);
-
-    autoscale_copy_smear_free(tmp_surf, img_starter_bkgd, SDL_BlitSurface);
+ 
+    autoscale_copy_scale_or_smear_free(tmp_surf, img_starter_bkgd, SDL_BlitSurface, template_options);
   }
 
   free(dirname);
@@ -15073,6 +15076,7 @@ static void load_current(void)
     else
     {
       org_surf = SDL_DisplayFormat(tmp);
+      printf("Smearing canvas @ 4\n");
       autoscale_copy_smear_free(tmp, canvas, SDL_BlitSurface);
 
       /* First we run this for compatibility, then we will chek if
@@ -18730,6 +18734,7 @@ static int do_open(void)
             starter_flipped = 0;
             starter_personal = 0;
 
+            printf("Smearing canvas @ 5\n");
             org_surf = SDL_DisplayFormat(img);  /* Keep a copy of the original image
                                                    unscaled to send to load_embedded_data */
             autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
@@ -19894,6 +19899,7 @@ static void play_slideshow(int *selected, int num_selected, char *dirname,
 
       if (img != NULL)
       {
+        printf("Smearing starter @ 6 (slideshow)\n");
         autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
 
         safe_strncpy(file_id, d_names[which], sizeof(file_id));
@@ -24168,6 +24174,7 @@ static int do_new_dialog(void)
         starter_personal = 0;
         starter_modified = 0;
 
+        printf("Smearing canvas @ 7\n");
         autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
         cur_undo = 0;
@@ -24227,6 +24234,7 @@ static int do_new_dialog(void)
         free_surface(&img_starter_bkgd);
         template_personal = 0;
 
+        printf("Smearing template @ 8\n");
         autoscale_copy_smear_free(img, canvas, SDL_BlitSurface);
 
         cur_undo = 0;
@@ -28563,11 +28571,14 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
           }
         }
       }
+
       /* Apply the original canvas */
-      if (ldelta && ldata)
+      if (ldelta && ldata) {
+        printf("Smearing org_surf @ 9\n");
         autoscale_copy_smear_free(org_surf, canvas, SDL_BlitSurface);
-      else
+      } else {
         SDL_FreeSurface(org_surf);
+      }
 
       /* Third run, back and foreground */
       if (have_background || have_foreground)
@@ -28644,6 +28655,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
               /* FIXME: How to handle starter/template scaling/smearing
                  options!? -bjk 2023.02.10 */
 
+              printf("Smearing embedded bkgd @ 10\n");
               autoscale_copy_smear_free(aux_surf, img_starter_bkgd,
                                         SDL_BlitSurface);
             }
@@ -28728,6 +28740,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
             /* FIXME: How to handle starter/template scaling/smearing
                options!? -bjk 2023.02.10 */
+            printf("Smearing embedded foreground @ 11\n");
             autoscale_copy_smear_free(aux_surf, img_starter,
                                       NondefectiveBlit);
 
@@ -32528,6 +32541,7 @@ static int export_gif(int *selected, int num_selected, char *dirname,
 
       if (img != NULL)
       {
+        printf("Smearing image @ 12 (GIF export)\n");
         autoscale_copy_smear_free(img, screen, SDL_BlitSurface);
 
         safe_strncpy(file_id, d_names[which], sizeof(file_id));
