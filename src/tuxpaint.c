@@ -1665,7 +1665,7 @@ static SDL_Surface *img_btnsm_up, *img_btnsm_off, *img_btnsm_down,
 static SDL_Surface *img_btn_nav, *img_btnsm_nav;
 static SDL_Surface *img_brush_anim, *img_brush_dir;
 static SDL_Surface *img_prev, *img_next;
-static SDL_Surface *img_mirror, *img_flip;
+static SDL_Surface *img_mirror, *img_flip, *img_rotate;
 static SDL_Surface *img_dead40x40;
 static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
@@ -6988,9 +6988,9 @@ static void mainloop(void)
                               stamp_place_x + half_bigbox + r_canvas.x,
                               stamp_place_y + half_bigbox + r_canvas.y);
 
-                  snprintf(angle_tool_text, sizeof(angle_tool_text),
-                           gettext(TIP_STAMPS_ROTATING), deg);
-                  draw_tux_text(TUX_GREAT, angle_tool_text, 1);
+                snprintf(angle_tool_text, sizeof(angle_tool_text),
+                         gettext(TIP_STAMPS_ROTATING), deg);
+                draw_tux_text(TUX_GREAT, angle_tool_text, 1);
               }
               else if (stamp_xored_rt)
               {
@@ -15665,6 +15665,7 @@ static void cleanup(void)
 
   free_surface(&img_mirror);
   free_surface(&img_flip);
+  free_surface(&img_rotate);
 
   free_surface(&img_title_on);
   free_surface(&img_title_off);
@@ -30674,6 +30675,7 @@ static void setup(void)
 
   img_mirror = loadimagerb(DATA_PREFIX "images/ui/mirror.png");
   img_flip = loadimagerb(DATA_PREFIX "images/ui/flip.png");
+  img_rotate = loadimagerb(DATA_PREFIX "images/ui/rotate.png");
 
   img_open = loadimagerb(DATA_PREFIX "images/ui/open.png");
   img_erase = loadimagerb(DATA_PREFIX "images/ui/erase.png");
