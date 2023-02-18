@@ -6243,7 +6243,9 @@ static void mainloop(void)
                   stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
                   stamp_place_x = old_x;
                   stamp_place_y = old_y;
-                  draw_tux_text(TUX_GREAT, TIP_STAMPS_ROTATING, 1);
+                  snprintf(angle_tool_text, sizeof(angle_tool_text),
+                           gettext(TIP_STAMPS_ROTATING), 0);
+                  draw_tux_text(TUX_GREAT, angle_tool_text, 1);
                 }
                 else
                 {
@@ -6968,11 +6970,13 @@ static void mainloop(void)
             {
               if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
               {
+                int deg;
+
                 stamp_xor(stamp_place_x, stamp_place_y);
 
-                update_stamp_xor((360 -
-                                  stamp_rotation(stamp_place_x, stamp_place_y,
-                                                 new_x, new_y)) % 360);
+                deg = (360 - stamp_rotation(stamp_place_x, stamp_place_y, new_x, new_y)) % 360;
+
+                update_stamp_xor(deg);
                 stamp_xor(stamp_place_x, stamp_place_y);
 
                 /* The half of maximum size the stamp could have when rotating. */
@@ -6983,6 +6987,10 @@ static void mainloop(void)
                               stamp_place_y - half_bigbox + r_canvas.y,
                               stamp_place_x + half_bigbox + r_canvas.x,
                               stamp_place_y + half_bigbox + r_canvas.y);
+
+                  snprintf(angle_tool_text, sizeof(angle_tool_text),
+                           gettext(TIP_STAMPS_ROTATING), deg);
+                  draw_tux_text(TUX_GREAT, angle_tool_text, 1);
               }
               else if (stamp_xored_rt)
               {
