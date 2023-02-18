@@ -1360,6 +1360,7 @@ static int joystick_button_selectlinestool = 255;
 static int joystick_button_selectshapestool = 255;
 static int joystick_button_selecttexttool = 255;
 static int joystick_button_selectlabeltool = 255;
+static int joystick_button_selectfilltool = 255;
 static int joystick_button_selectmagictool = 255;
 static int joystick_button_undo = 255;
 static int joystick_button_redo = 255;
@@ -8410,7 +8411,7 @@ void show_usage(int exitcode)
           "  [--joystick-buttons-ignore=BUTTON1,BUTTON2,...]\n"
           "  [--joystick-btn-COMMAND=BUTTON]\n"
           /* Find these in "src/parse.gperf" & "src/tuxpaint-completion.bash" */
-          "    (commands: escape, brush, stamp, lines, shapes, text, label, magic,\n"
+          "    (commands: escape, brush, stamp, lines, shapes, text, label, fill, magic,\n"
           "    undo, redo, eraser, new, open, save, pgsetup, print)\n"
           "\n",
           progname);
@@ -29241,6 +29242,20 @@ static void setup_config(char *argv[])
     joystick_button_selectlabeltool =
       strtof(tmpcfg.joystick_button_selectlabeltool, NULL);
   }
+  if (tmpcfg.joystick_button_selectfilltool)
+  {
+    if (strtof(tmpcfg.joystick_button_selectfilltool, NULL) < 0
+        || strtof(tmpcfg.joystick_button_selectfilltool, NULL) > 254)
+    {
+      /* FIXME: Find better exit code */
+      fprintf(stderr,
+              "Joystick button fill tool shortcurt (now %s)  must be between 0 and 254",
+              tmpcfg.joystick_button_selectfilltool);
+      exit(1);
+    }
+    joystick_button_selectfilltool =
+      strtof(tmpcfg.joystick_button_selectfilltool, NULL);
+  }
   if (tmpcfg.joystick_button_selectmagictool)
   {
     if (strtof(tmpcfg.joystick_button_selectmagictool, NULL) < 0
@@ -31819,6 +31834,7 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x,
              event.button.button == joystick_button_selectshapestool ||
              event.button.button == joystick_button_selecttexttool ||
              event.button.button == joystick_button_selectlabeltool ||
+             event.button.button == joystick_button_selectfilltool ||
              event.button.button == joystick_button_selectmagictool ||
              event.button.button == joystick_button_selecterasertool)
 
@@ -31863,6 +31879,13 @@ static void handle_joybuttonupdownscl(SDL_Event event, int oldpos_x,
         ev.button.x = (TOOL_LABEL % 2) * button_w + button_w / 2;
         ev.button.y =
           real_r_tools.y + TOOL_LABEL / 2 * button_h + button_h / 2;
+      }
+
+      else if (event.button.button == joystick_button_selectfilltool)
+      {
+        ev.button.x = (TOOL_FILL % 2) * button_w + button_w / 2;
+        ev.button.y =
+          real_r_tools.y + TOOL_FILL / 2 * button_h + button_h / 2;
       }
 
       else if (event.button.button == joystick_button_selectmagictool)

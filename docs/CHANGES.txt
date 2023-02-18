@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.16 (0.9.29)
+2023.February.18 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -120,6 +120,10 @@ https://tuxpaint.org/
     * Update Tux Paint Magic API so `set_color()` functions can
       alter the canvas.  (Utilized by "Zoom" and "Perspective", so far.)
       Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000007.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Joystick button to activate "Fill" tool added.
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/199/)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Bug Fixes:
