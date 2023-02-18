@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 16, 2023
+  June 14, 2002 - February 18, 2023
 */
 
 #include "platform.h"
@@ -2196,6 +2196,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush);
 static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
+static int stamp_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results, int autosave);
 static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf,
                        int embed);
@@ -6224,9 +6225,9 @@ static void mainloop(void)
               {
                 if (!no_stamp_rotation)
                 {
-                  int mouse_warp_x;
-
                   /* Going through stamp rotation step, first */
+#if 0
+                  int mouse_warp_x;
 
                   /* Warp mouse to the far right of the stamp,
                      where we'll start at 0-degrees of rotation
@@ -6235,7 +6236,8 @@ static void mainloop(void)
                   if (mouse_warp_x >= WINDOW_WIDTH - r_ttoolopt.w)
                     mouse_warp_x = WINDOW_WIDTH - r_ttoolopt.w - 1;
 
-                  SDL_WarpMouse(mouse_warp_x, old_y);
+                  SDL_WarpMouse(mouse_warp_x, old_y); // FIXME 2023-02-18
+#endif
                   do_setcursor(cursor_rotate);
 
                   stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
@@ -6273,7 +6275,7 @@ static void mainloop(void)
               rec_undo_buffer();
               playsound(screen, 1, SND_STAMP, 1, stamp_place_x, SNDDIST_NEAR);
               int stamp_angle_rotation =
-                360 - brush_rotation(stamp_place_x, stamp_place_y, old_x,
+                360 - stamp_rotation(stamp_place_x, stamp_place_y, old_x,
                                      old_y);
 
               stamp_draw(stamp_place_x, stamp_place_y, stamp_angle_rotation);
@@ -6339,7 +6341,7 @@ static void mainloop(void)
                             shape_current_y) * (shape_start_y -
                                                 shape_current_y));
 
-                  SDL_WarpMouse(shape_current_x + r_ttools.w, shape_start_y);
+                  SDL_WarpMouse(shape_current_x + r_ttools.w, shape_start_y); // FIXME 2023-02-18
                   do_setcursor(cursor_rotate);
 
 
@@ -6967,8 +6969,9 @@ static void mainloop(void)
               if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
               {
                 stamp_xor(stamp_place_x, stamp_place_y);
+
                 update_stamp_xor((360 -
-                                  brush_rotation(stamp_place_x, stamp_place_y,
+                                  stamp_rotation(stamp_place_x, stamp_place_y,
                                                  new_x, new_y)) % 360);
                 stamp_xor(stamp_place_x, stamp_place_y);
 
@@ -16331,14 +16334,18 @@ static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy)
 /**
  * FIXME
  */
-/* What angle is the mouse away from a brush drag or line draw? */
+/* What angle (degrees) is the mouse away from a brush drag, line draw, or stamp placement? */
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
-  int deg;
+  return (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
+}
 
-  deg = (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
-
-  return (deg);
+/* What angle (degrees) is the mouse away from a stamp placement (keep at zero if within stamp's bounding box!) */
+static int stamp_rotation(int ctr_x, int ctr_y, int ox, int oy)
+{
+  if (abs(ctr_x - ox) <= CUR_STAMP_W / 2 && abs(ctr_y - oy) <= CUR_STAMP_H / 2)
+    return (0);
+  return brush_rotation(ctr_x, ctr_y, ox, oy);
 }
 
 
