@@ -1345,6 +1345,11 @@ Joystick
              Selecciona o número do botón do joystick, como o ve SDL, que
              será un atallo a seleccionar a ferramenta de etiquetas.
 
+     joystick-btn-fill=NÚMERO DE BOTÓN
+
+             Selecciona o número do botón do joystick, como o ve SDL, que
+             será un atallo a select the fill tool.
+
      joystick-btn-magic=NÚMERO DE BOTÓN
 
              Selecciona o número do botón do joystick, como o ve SDL, que

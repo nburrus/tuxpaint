@@ -1303,6 +1303,11 @@ Joystick
              Selects the joystick button number, as seen by SDL, that will be
              a shortcut to select the label tool.
 
+     joystick-btn-fill=BUTTON NUMBER
+
+             Selects the joystick button number, as seen by SDL, that will be
+             a shortcut to select the fill tool.
+
      joystick-btn-magic=BUTTON NUMBER
 
              Selects the joystick button number, as seen by SDL, that will be

@@ -1105,6 +1105,11 @@ Windows のユーザー
 
              ジョイスティックの BUTTON NUMBER で設定したボタンに "「ラベル」ツール" へのショートカットを割り当てます。
 
+     joystick-btn-fill=BUTTON NUMBER
+
+             ジョイスティックの BUTTON NUMBER で設定したボタンに "select the fill tool"
+             へのショートカットを割り当てます。
+
      joystick-btn-magic=BUTTON NUMBER
 
              ジョイスティックの BUTTON NUMBER で設定したボタンに "「まほう」ツール" へのショートカットを割り当てます。

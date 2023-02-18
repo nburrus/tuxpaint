@@ -1371,6 +1371,11 @@ Joystick
              qui sera un raccourci pour sélectionner sélectionne l'outil
              Étiquette.
 
+     joystick-btn-fill=BUTTON NUMBER
+
+             Sélectionne le numéro du bouton du joystick, comme vu par SDL,
+             qui sera un raccourci pour sélectionner select the fill tool.
+
      joystick-btn-magic=BUTTON NUMBER
 
              Sélectionne le numéro du bouton du joystick, comme vu par SDL,
