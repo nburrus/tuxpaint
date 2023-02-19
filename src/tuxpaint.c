@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 18, 2023
+  June 14, 2002 - February 19, 2023
 */
 
 #include "platform.h"
@@ -1431,7 +1431,7 @@ static int disable_magic_controls;
 static int disable_shape_controls;
 
 static int shape_mode = SHAPEMODE_CENTER;
-static int stamp_rotation_ctrl = 1;
+static int stamp_rotation_ctrl = 0;
 
 static int starter_mirrored;
 static int starter_flipped;
