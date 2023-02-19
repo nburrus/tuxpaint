@@ -1431,6 +1431,7 @@ static int disable_magic_controls;
 static int disable_shape_controls;
 
 static int shape_mode = SHAPEMODE_CENTER;
+static int stamp_rotation_ctrl = 1;
 
 static int starter_mirrored;
 static int starter_flipped;
@@ -4379,7 +4380,8 @@ static void mainloop(void)
                 }
                 else if (which == 2 && !no_stamp_rotation)
                 {
-                  printf("Rotation\n"); /* FIXME 2023-02-18 */
+                  stamp_rotation_ctrl = !stamp_rotation_ctrl;
+                  control_sound = SND_FLIP;
                 }
                 else if (which == 3)
                 {
@@ -6231,7 +6233,7 @@ static void mainloop(void)
                   if (mouse_warp_x >= WINDOW_WIDTH - r_ttoolopt.w)
                     mouse_warp_x = WINDOW_WIDTH - r_ttoolopt.w - 1;
 
-                  SDL_WarpMouse(mouse_warp_x, old_y); // FIXME 2023-02-18
+                  SDL_WarpMouse(mouse_warp_x, old_y);
 #endif
                   do_setcursor(cursor_rotate);
 
@@ -6338,7 +6340,7 @@ static void mainloop(void)
                             shape_current_y) * (shape_start_y -
                                                 shape_current_y));
 
-                  SDL_WarpMouse(shape_current_x + r_ttools.w, shape_start_y); // FIXME 2023-02-18
+                  SDL_WarpMouse(shape_current_x + r_ttools.w, shape_start_y);
                   do_setcursor(cursor_rotate);
 
 
@@ -11217,10 +11219,33 @@ static void draw_stamps(void)
         r_ttoolopt.h +
         ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h);
 
-      dest.w = r_ttoolopt.w;
-      dest.h = button_h;
-      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 128, 128, 128)); /* FIMXE: 2023-02-18 */
+      if (stamp_rotation_ctrl)
+        button_body = img_btn_down;
+      else
+        button_body = img_btn_up;
 
+      SDL_BlitSurface(button_body, NULL, screen, &dest);
+
+      dest.x = WINDOW_WIDTH - (button_w * 2) + (button_w - img_rotate->w) / 2;
+      dest.y =
+        (r_ttoolopt.h +
+         ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h) +
+         (button_h - img_rotate->h) / 2);
+
+      SDL_BlitSurface(img_black, NULL, img_rotate, NULL);
+      SDL_BlitSurface(img_rotate, NULL, screen, &dest);
+
+      /* No-op button */
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w + button_w;
+      dest.y =
+        r_ttoolopt.h +
+        ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h);
+
+      SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+
+
+      /* Push other buttons down */
       off_y = button_h;
     } else {
       off_y = 0;
