@@ -7,12 +7,15 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.18 (0.9.29)
+2023.February.19 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
-      Use the "stamprotation=no" option to disable.
-      Pere Pujal i Carabantes <perepujal@gmail.com>
+      Use the "stamprotation=no" option to disable entirely,
+      or the control to enable/disable (if stamp controls are
+      not disabled).
+      Pere Pujal i Carabantes <perepujal@gmail.com> (feature)
+      Bill Kendrick <bill@newbreedsoftware.com> (on/off control)
 
   * New Magic Tools:
     ----------------
