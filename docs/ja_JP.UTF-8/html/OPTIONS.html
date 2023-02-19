@@ -102,7 +102,7 @@
           </p>
 
           <p>
-            2023年1月 2日          </p>
+            2023年2月19日          </p>
         </center>
       </header>
 
@@ -179,22 +179,15 @@
           </header>
 
           <p>
-            上記のユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）          </p>
+            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
 
           <blockquote>
             <code>/etc/tuxpaint/tuxpaint.conf</code>
           </blockquote>
-
-          <p>
-            以下のコマンドラインオプションを指定すると、システム全体の設定ファイルは無視され、設定ファイル "<code>.tuxpaintrc</code>" やコマンドラインオプションによる変更のみが反映されます。          </p>
-
-          <blockquote>
-            <code>--nosysconfig</code>
-          </blockquote>
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: Linux and Unix Users -->
 
-      <section><!-- H2: macOS Users -->
+      <section class="indent"><!-- H2: macOS Users -->
         <header>
           <h2>
             macOS のユーザー          </h2>
@@ -210,7 +203,7 @@
           </header>
 
           <p>
-            上記のユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）          </p>
+            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
 
           <blockquote>
             <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
@@ -218,19 +211,38 @@
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: macOS Users -->
 
-      <section><!-- H2: Windows Users -->
+      <section class="indent"><!-- H2: Windows Users -->
         <header>
           <h2>
             Windows のユーザー          </h2>
         </header>
 
         <p>
-          設定ファイルは、Tux Paint をインストールしたフォルダに "<code><b>tuxpaint.cfg</b></code>" というファイル名で作成します。        </p>
+          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in in your personal AppData folder: <code>C:\Users\username\AppData\Roaming\TuxPaint\</code>        </p>
 
         <p>
           設定ファイルはメモ帳やワードパッドで作成できますが、必ずテキストファイルとして保存するよう注意して下さい。また、ファイル名に ".txt" という拡張子をつけないようにします。        </p>
-      </section><!-- H2: macOS Users -->
-    </section>
+
+        <section class="indent"><!-- H3: System-Wide Configuration File -->
+          <header>
+            <h3>
+              システム全体の設定ファイル            </h3>
+          </header>
+
+          <p>
+            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+
+          <blockquote>
+            <code>C:\Program Files\Tuxpaint</code>
+          </blockquote>
+
+          </p>
+        </section><!-- H3: System-Wide Configuration File -->
+      </section><!-- H2: Windows Users -->
+
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        You can disable reading of this file altogether, leaving the settings as defaults (which can then be overridden by your personal config. file and/or command-line arguments) by using the command-line option "<code>--nosysconfig</code>".      </p>
+    </section><!-- H1: Configuration File -->
 
     <section class="outer"><!-- H1: Available Options -->
       <div class="keeptogether">
@@ -2256,7 +2268,7 @@
   </section>
       </section><!-- H1: Available Options -->
 
-    <section><!-- H1: Overriding System Config. Options -->
+    <section class="outer"><!-- H1: Overriding System Config. Options -->
       <header>
         <h1 id="overriding">
           システム全体の設定を上書きする        </h1>
@@ -2286,7 +2298,7 @@
       </blockquote>
     </section><!-- H1: Overriding System Config. Options -->
 
-    <section><!-- H1: Command-Line Options -->
+    <section class="outer"><!-- H1: Command-Line Options -->
       <header>
         <h1 id="command_line">
           コマンドラインオプション        </h1>
@@ -2509,7 +2521,7 @@
       </section><!-- H2: Command-Line Informational Options -->
     </section><!-- H1: Command-Line Options -->
 
-    <section><!-- H1: Choosing a Different Language -->
+    <section class="outer"><!-- H1: Choosing a Different Language -->
       <header>
         <h1 id="different_language">
           使用する言語の選択        </h1>

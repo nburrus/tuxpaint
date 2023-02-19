@@ -6,7 +6,7 @@
          Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                   2023年1月 2日
+                                   2023年2月19日
 
                       +---------------------------------+
                       |目次                               |
@@ -50,14 +50,11 @@ Linux 及び Unix のユーザー
 
   システム全体の設定ファイル
 
-   上記のユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）
+   Before this file is read, a system-wide configuration file is read. (By
+   default, this configuration has no settings enabled.) It is normally
+   located at:
 
      /etc/tuxpaint/tuxpaint.conf
-
-   以下のコマンドラインオプションを指定すると、システム全体の設定ファイルは無視され、設定ファイル ".tuxpaintrc"
-   やコマンドラインオプションによる変更のみが反映されます。
-
-     --nosysconfig
 
 macOS のユーザー
 
@@ -66,16 +63,33 @@ macOS のユーザー
 
   システム全体の設定ファイル
 
-   上記のユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）
+   Before this file is read, a system-wide configuration file is read. (By
+   default, this configuration has no settings enabled.) It is normally
+   located at:
 
      /Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Windows のユーザー
 
-   設定ファイルは、Tux Paint をインストールしたフォルダに "tuxpaint.cfg" というファイル名で作成します。
+   The file you should create is called "tuxpaint.cfg" and it should be
+   placed in in your personal AppData folder:
+   C:\Users\username\AppData\Roaming\TuxPaint\
 
    設定ファイルはメモ帳やワードパッドで作成できますが、必ずテキストファイルとして保存するよう注意して下さい。また、ファイル名に ".txt"
    という拡張子をつけないようにします。
+
+  システム全体の設定ファイル
+
+   Before this file is read, a system-wide configuration file is read. (By
+   default, this configuration has no settings enabled.) It is normally
+   located at:
+
+     C:\Program Files\Tuxpaint
+
+   ⚙ You can disable reading of this file altogether, leaving the settings as
+   defaults (which can then be overridden by your personal config. file
+   and/or command-line arguments) by using the command-line option
+   "--nosysconfig".
 
                                    利用可能なオプション
 
