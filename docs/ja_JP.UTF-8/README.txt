@@ -218,27 +218,23 @@ Tux Paint の起動
 
            マウスを動かすと、スタンプが押される位置と大きさを示す輪郭線が表示されるので、押したい場所でクリックします。
 
-                Stamp Categories
+                スタンプの分類
                         スタンプは、動物、植物、宇宙、乗り物、人物といった多くのカテゴリに分類されています。セレクタの左右の矢印のボタンを使ってカテゴリを切り替えることができます。
 
-                Stamp Rotation
+                "スタンプの回転"
 
-                        Using the rotation toggle button near the bottom
-                        right, you can enable a rotation step when placing
-                        stamps. Once you've placed the stamp, choose the
-                        angle to rotate it by moving the mouse around the
-                        canvas. Click the mouse button again and the stamp
-                        will be added to the drawing.
+                        右下のトグルボタンを使って、スタンプを配置する際の回転を有効にすることができます。
+                        スタンプを配置したらキャンバス上でマウスを動かして回転させる角度を選びます。
+                        もう一度マウスボタンをクリックすると、スタンプが追加されます。
 
-                        ⚙ Note: If "stamp rotation" option is disabled, the
-                        stamp will be drawn on the canvas when you let go of
-                        the mouse button. (There's no rotation step.)
+                        ⚙ 注:"スタンプの回転"
+                        オプションが無効化されている場合、回転の手順は省略され、マウスを放した時点でスタンプが確定します。
                         ""スタンプの回転"" ("stamprotation") についての詳細は、各種設定について"
                         のドキュメントを参照して下さい。
 
                         📜 注: はんこの回転機能は Tux Paint バージョン 0.9.29 で追加されました。
 
-                Stamp Controls
+                スタンプの操作
 
                         スタンプを絵に貼り付ける前に、以下の様々な効果を適用することができます（スタンプの種類によって異なります）:
 
@@ -246,12 +242,10 @@ Tux Paint の起動
                            * スタンプは、右下の三角形のバーの中をクリックすることで、縮小・拡大することができます。
                            * 多くのスタンプは、右下の操作ボタンを使って、上下・左右に反転させることができます。
 
-                        ⚙ Note: If the "nostampcontrols" option is set, Tux
-                        Paint won't display the Rotation, Mirror, Flip, or
-                        sizing controls for stamps. See the "Options"
-                        documentation.
+                        ⚙ 注: "nostampcontrols"
+                        オプションが設定されると、スタンプの回転、拡大・縮小、反転が無効になります。詳しくは"各種設定について"のドキュメントを参照してください。
 
-                Stamp Sounds
+                スタンプの効果音
 
                         個々のスタンプごとに効果音を設定することができます。画面下部の左側のヘルプエリア（Linux ペンギン
                         "Tux"の近く）にあるボタンを押すと、効果音を再生することができます。
