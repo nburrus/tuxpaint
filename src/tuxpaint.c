@@ -4166,7 +4166,11 @@ static void mainloop(void)
               if (!disable_stamp_controls)
               {
                 /* Account for stamp controls and group changing (left/right) buttons */
-                gd_controls.rows = 3;
+                if (!no_stamp_rotation) {
+                  gd_controls.rows = 4;
+                } else {
+                  gd_controls.rows = 3;
+                }
                 gd_controls.cols = 2;
               }
               else
@@ -4298,6 +4302,11 @@ static void mainloop(void)
 
               if (cur_tool == TOOL_STAMP)
               {
+                if (no_stamp_rotation && which > 1) {
+                  /* No column for stamp rotation control, pretend the lower buttons are lower */
+                  which += 2;
+                }
+
                 if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
                 {
                   stamp_xor(stamp_place_x, stamp_place_y);
@@ -4308,33 +4317,10 @@ static void mainloop(void)
                 /* Stamp controls! */
                 int control_sound = -1;
 
-                if (which == 4 || which == 5)
+                if (which == 6 || which == 7)
                 {
                   /* Grow/Shrink Controls: */
-#ifdef OLD_STAMP_GROW_SHRINK
-                  if (which == 5)
-                  {
-                    /* Bottom right button: Grow: */
-                    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size
-                        < MAX_STAMP_SIZE)
-                    {
-                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size++;
-                      control_sound = SND_GROW;
-                    }
-                  }
-                  else
-                  {
-                    /* Bottom left button: Shrink: */
-                    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size
-                        > MIN_STAMP_SIZE)
-                    {
-                      stamp_data[stamp_group][cur_stamp[stamp_group]]->size--;
-                      control_sound = SND_SHRINK;
-                    }
-                  }
-#else
                   int old_size;
-
 #ifdef DEBUG
                   float choice;
 #endif
@@ -4360,12 +4346,11 @@ static void mainloop(void)
                     if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size
                         > old_size)
                     control_sound = SND_GROW;
-#endif
                 }
-                else if (which == 2 || which == 3)
+                else if (which == 4 || which == 5)
                 {
                   /* Mirror/Flip Controls: */
-                  if (which == 3)
+                  if (which == 5)
                   {
                     /* Top right button: Flip: */
                     if (stamp_data[stamp_group]
@@ -4391,6 +4376,14 @@ static void mainloop(void)
                       control_sound = SND_MIRROR;
                     }
                   }
+                }
+                else if (which == 2 && !no_stamp_rotation)
+                {
+                  printf("Rotation\n"); /* FIXME 2023-02-18 */
+                }
+                else if (which == 3)
+                {
+                  /* No-op */
                 }
                 else
                 {
@@ -5964,13 +5957,14 @@ static void mainloop(void)
             {
               if (!disable_stamp_controls)
               {
-                /* was 2,2 before adding left/right stamp group buttons -bjk 2007.05.15 */
-                gd_controls.rows = 3;
+                if (!no_stamp_rotation)
+                  gd_controls.rows = 4;
+                else
+                  gd_controls.rows = 3;
                 gd_controls.cols = 2;
               }
               else
               {
-                /* was left 0,0 before adding left/right stamp group buttons -bjk 2007.05.03 */
                 gd_controls.rows = 1;
                 gd_controls.cols = 2;
               }
@@ -6607,7 +6601,12 @@ static void mainloop(void)
 
           /* This if/if/if block is awful -bjk 2022.01.19 */
           if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-            control_rows = 3;
+          {
+            if (!no_stamp_rotation)
+              control_rows = 4;
+            else
+              control_rows = 3;
+          }
 
           if (cur_tool == TOOL_LABEL)
           {
@@ -8278,12 +8277,6 @@ void show_version(int details)
   printf("  Threaded font loader disabled  (no FORKED_FONTS)\n");
 #endif
 
-
-  /* Old code used */
-
-#ifdef OLD_STAMP_GROW_SHRINK
-  printf("  Old-style stamp size UI  (OLD_STAMP_GROW_SHRINK)\n");
-#endif
 
   printf("  Data directory (DATA_PREFIX) = %s\n", DATA_PREFIX);
   printf("  Plugin directory (MAGIC_PREFIX) = %s\n", MAGIC_PREFIX);
@@ -11067,15 +11060,23 @@ static void draw_stamps(void)
 
   /* How many can we show? */
 
-  most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols - TOOLOFFSET;   /* was 10 and 14, before left/right controls -bjk 2007.05.03 */
-  if (disable_stamp_controls)
+  if (!disable_stamp_controls) {
+    if (!no_stamp_rotation) {
+      most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols - TOOLOFFSET;
+    } else {
+      most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols - TOOLOFFSET;
+    }
+  } else {
     most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - TOOLOFFSET;
+  }
 
 
   /* Do we need scrollbars? */
 
   if (num_stamps[stamp_group] > most + TOOLOFFSET)
   {
+    /* Yes, need scrollbars */
+
     off_y = img_scroll_up->h;
     max = (most - gd_toolopt.cols) + TOOLOFFSET;
 
@@ -11093,10 +11094,11 @@ static void draw_stamps(void)
 
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-    dest.y = r_ttoolopt.h + off_y + (((most + 2) / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h); /* was 6, before left/right controls -bjk 2007.05.03 */
+    dest.y = r_ttoolopt.h + off_y + (((most + 2) / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
 
-    if (!disable_stamp_controls)
-      dest.y = dest.y - (button_h * 2);
+    if (!disable_stamp_controls) {
+      dest.y -= (button_h * 2);
+    }
 
     if (stamp_scroll[stamp_group] <
         num_stamps[stamp_group] - (most - 2) - TOOLOFFSET)
@@ -11110,6 +11112,8 @@ static void draw_stamps(void)
   }
   else
   {
+    /* No, do not need scrollbars */
+
     off_y = 0;
     max = most + TOOLOFFSET;
   }
@@ -11163,7 +11167,6 @@ static void draw_stamps(void)
 
   /* Draw stamp group buttons (prev/next): */
 
-
   /* Show prev button: */
 
   button_color = img_black;
@@ -11206,11 +11209,29 @@ static void draw_stamps(void)
 
   if (!disable_stamp_controls)
   {
+    if (!no_stamp_rotation) {
+      /* Show rotation button */
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y =
+        r_ttoolopt.h +
+        ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h);
+
+      dest.w = r_ttoolopt.w;
+      dest.h = button_h;
+      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 128, 128, 128)); /* FIMXE: 2023-02-18 */
+
+      off_y = button_h;
+    } else {
+      off_y = 0;
+    } /* !no_stamp_rotation */
+
+
     /* Show mirror button: */
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w;
     dest.y =
-      r_ttoolopt.h +
+      r_ttoolopt.h + off_y +
       ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h);
 
     if (stamp_data[stamp_group][cur_stamp[stamp_group]]->mirrorable)
@@ -11235,7 +11256,7 @@ static void draw_stamps(void)
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_mirror->w) / 2;
     dest.y =
-      (r_ttoolopt.h +
+      (r_ttoolopt.h + off_y +
        ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h) +
        (button_h - img_mirror->h) / 2);
 
@@ -11246,7 +11267,7 @@ static void draw_stamps(void)
 
     dest.x = WINDOW_WIDTH - button_w;
     dest.y =
-      r_ttoolopt.h +
+      r_ttoolopt.h + off_y +
       ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h);
 
     if (stamp_data[stamp_group][cur_stamp[stamp_group]]->flipable)
@@ -11271,68 +11292,14 @@ static void draw_stamps(void)
 
     dest.x = WINDOW_WIDTH - button_w + (button_w - img_flip->w) / 2;
     dest.y =
-      (r_ttoolopt.h +
+      (r_ttoolopt.h + off_y +
        ((most + gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h) +
        (button_h - img_flip->h) / 2);
 
     SDL_BlitSurface(button_color, NULL, img_flip, NULL);
     SDL_BlitSurface(img_flip, NULL, screen, &dest);
 
-
-#ifdef OLD_STAMP_GROW_SHRINK
-    /* Show shrink button: */
-
-    dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-    dest.y = 40 + ((6 + TOOLOFFSET / 2) * button_h);
-
-    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size >
-        MIN_STAMP_SIZE)
-    {
-      button_color = img_black;
-      button_body = img_btn_up;
-    }
-    else
-    {
-      button_color = img_grey;
-      button_body = img_btn_off;
-    }
-    SDL_BlitSurface(button_body, NULL, screen, &dest);
-
-    dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_shrink->w) / 2;
-    dest.y =
-      (40 + ((6 + TOOLOFFSET / 2) * button_h) +
-       (button_h - img_shrink->h) / 2);
-
-    SDL_BlitSurface(button_color, NULL, img_shrink, NULL);
-    SDL_BlitSurface(img_shrink, NULL, screen, &dest);
-
-
-    /* Show grow button: */
-
-    dest.x = WINDOW_WIDTH - button_w;
-    dest.y = 40 + ((6 + TOOLOFFSET / 2) * button_h);
-
-    if (stamp_data[stamp_group][cur_stamp[stamp_group]]->size <
-        MAX_STAMP_SIZE)
-    {
-      button_color = img_black;
-      button_body = img_btn_up;
-    }
-    else
-    {
-      button_color = img_grey;
-      button_body = img_btn_off;
-    }
-    SDL_BlitSurface(button_body, NULL, screen, &dest);
-
-    dest.x = WINDOW_WIDTH - button_w + (button_w - img_grow->w) / 2;
-    dest.y =
-      (40 + ((6 + TOOLOFFSET / 2) * button_h) + (button_h - img_grow->h) / 2);
-
-    SDL_BlitSurface(button_color, NULL, img_grow, NULL);
-    SDL_BlitSurface(img_grow, NULL, screen, &dest);
-
-#else
+    /* Stamp size control: */
     sizes = MAX_STAMP_SIZE - MIN_STAMP_SIZE + 1;        /* +1 for SF Bug #1668235 -bjk 2011.01.08 */
     size_at =
       (stamp_data[stamp_group][cur_stamp[stamp_group]]->size -
@@ -11358,21 +11325,20 @@ static void draw_stamps(void)
       dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
       dest.y =
         (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols +
-           TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale;
+           TOOLOFFSET) / gd_toolopt.cols * button_h)) - 8 * button_scale + off_y;
       SDL_BlitSurface(blnk, NULL, screen, &dest);
 
       dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + (i * x_per);
       dest.y =
         (((most + gd_toolopt.cols + gd_toolopt.cols + gd_toolopt.cols +
            gd_toolopt.cols + TOOLOFFSET) / gd_toolopt.cols * button_h)) -
-        8 * button_scale - (y_per * i);
+        8 * button_scale - (y_per * i) + off_y;
       SDL_BlitSurface(btn, NULL, screen, &dest);
 
       SDL_FreeSurface(btn);
       SDL_FreeSurface(blnk);
     }
-#endif
-  }
+  } /* !disable_stamp_controls */
 
   redraw_tux_text();
 }
