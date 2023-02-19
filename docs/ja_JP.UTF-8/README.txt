@@ -218,34 +218,43 @@ Tux Paint の起動
 
            マウスを動かすと、スタンプが押される位置と大きさを示す輪郭線が表示されるので、押したい場所でクリックします。
 
-                標準の動作
+                Stamp Categories
+                        スタンプは、動物、植物、宇宙、乗り物、人物といった多くのカテゴリに分類されています。セレクタの左右の矢印のボタンを使ってカテゴリを切り替えることができます。
 
-                        続いて、キャンバス内でマウスを動かすと、スタンプが回転します。
+                Stamp Rotation
 
-                        最後にもう一度マウスをクリックすると、スタンプが押されます。
+                        Using the rotation toggle button near the bottom
+                        right, you can enable a rotation step when placing
+                        stamps. Once you've placed the stamp, choose the
+                        angle to rotate it by moving the mouse around the
+                        canvas. Click the mouse button again and the stamp
+                        will be added to the drawing.
 
-                簡易モード
-                        "スタンプの回転"
-                        オプションが無効化されている場合、回転の手順は省略され、マウスを放した時点でスタンプ押されます。
-
-                        ⚙ ""スタンプの回転"" ("stamprotation") についての詳細は、各種設定について"
+                        ⚙ Note: If "stamp rotation" option is disabled, the
+                        stamp will be drawn on the canvas when you let go of
+                        the mouse button. (There's no rotation step.)
+                        ""スタンプの回転"" ("stamprotation") についての詳細は、各種設定について"
                         のドキュメントを参照して下さい。
 
-           📜 注: はんこの回転機能は Tux Paint バージョン 0.9.29 で追加されました。
+                        📜 注: はんこの回転機能は Tux Paint バージョン 0.9.29 で追加されました。
 
-           スタンプは、動物、植物、宇宙、乗り物、人物といった多くのカテゴリに分類されています。セレクタの左右の矢印のボタンを使ってカテゴリを切り替えることができます。
+                Stamp Controls
 
-           スタンプを絵に貼り付ける前に、以下の様々な効果を適用することができます（スタンプの種類によって異なります）:
+                        スタンプを絵に貼り付ける前に、以下の様々な効果を適用することができます（スタンプの種類によって異なります）:
 
-              * スタンプには色をつけることができるものがあります。その場合、カラーパレットが有効になり、スタンプを絵に貼り付ける前に色を選ぶことができます。
-              * スタンプは、右下の三角形のバーの中をクリックすることで、縮小・拡大することができます。
-              * 多くのスタンプは、右下の操作ボタンを使って、上下・左右に反転させることができます。
+                           * スタンプには色をつけることができるものがあります。その場合、カラーパレットが有効になり、スタンプを絵に貼り付ける前に色を選ぶことができます。
+                           * スタンプは、右下の三角形のバーの中をクリックすることで、縮小・拡大することができます。
+                           * 多くのスタンプは、右下の操作ボタンを使って、上下・左右に反転させることができます。
 
-           個々のスタンプごとに効果音を設定することができます。画面下部の左側のヘルプエリア（Linux ペンギン
-           "Tux"の近く）にあるボタンを押すと、効果音を再生することができます。
+                        ⚙ Note: If the "nostampcontrols" option is set, Tux
+                        Paint won't display the Rotation, Mirror, Flip, or
+                        sizing controls for stamps. See the "Options"
+                        documentation.
 
-           ⚙ 注: "nostampcontrols"
-           オプションが設定されると、スタンプの拡大・縮小、反転が無効になります。詳しくは"各種設定について"のドキュメントを参照してください。
+                Stamp Sounds
+
+                        個々のスタンプごとに効果音を設定することができます。画面下部の左側のヘルプエリア（Linux ペンギン
+                        "Tux"の近く）にあるボタンを押すと、効果音を再生することができます。
 
    「せん」ツール
 
