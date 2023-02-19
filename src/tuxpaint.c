@@ -6220,7 +6220,7 @@ static void mainloop(void)
               if (old_x >= 0 && old_y >= 0 && old_x <= r_canvas.w
                   && old_y <= r_canvas.h)
               {
-                if (!no_stamp_rotation)
+                if (!no_stamp_rotation && stamp_rotation_ctrl)
                 {
                   /* Going through stamp rotation step, first */
 #if 0
