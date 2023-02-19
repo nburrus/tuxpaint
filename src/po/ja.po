@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-18 14:24-0800\n"
-"PO-Revision-Date: 2023-02-04 12:24+0900\n"
+"PO-Revision-Date: 2023-02-19 11:38+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1081,15 +1081,12 @@ msgstr ""
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:200
-#, fuzzy, c-format
-#| msgid ""
-#| "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
-#| "degrees.)"
+#, c-format
 msgid ""
 "Drag the mouse to rotate the stamp. Click to draw it. (It is rotated %d "
 "degrees.)"
 msgstr ""
-"マウスをうごかして かたちをまわそう。クリックしたら できあがり。（いまの かく"
+"マウスをうごかして はんこをまわそう。クリックしたら できあがり。（いまの かく"
 "ど： %d °）"
 
 #  FIXME: Move elsewhere!!!
@@ -1461,23 +1458,17 @@ msgstr "えを クリックして ぜんたいを ぬらしたように しよ�
 
 #: ../../magic/src/bloom.c:114
 msgid "Bloom"
-msgstr ""
+msgstr "かがやき"
 
 #: ../../magic/src/bloom.c:127
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
-msgstr "クリックしたまま マウスをうごかして モザイクえのようにしよう。"
+msgstr "クリックしたまま マウスをうごかして あかるく かがやかせよう。"
 
 #: ../../magic/src/bloom.c:129
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr ""
-"クリックしたまま マウスをうごかして えの ぜんたいを モザイクえのようにしよ"
-"う。"
+"クリックしたまま マウスをうごかして えの ぜんたいを あかるく かがやかせよう。"
 
 #: ../../magic/src/blur.c:84
 msgid "Blur"
