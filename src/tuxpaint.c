@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 19, 2023
+  June 14, 2002 - February 20, 2023
 */
 
 #include "platform.h"
@@ -2198,6 +2198,7 @@ static void free_surface_array(SDL_Surface * surface_array[], int count);
 static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush);
 static int shape_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy);
+static int stamp_will_rotate(int ctr_x, int ctr_y, int ox, int oy);
 static int stamp_rotation(int ctr_x, int ctr_y, int ox, int oy);
 static int do_save(int tool, int dont_show_success_results, int autosave);
 static int do_png_save(FILE * fi, const char *const fname, SDL_Surface * surf,
@@ -2563,9 +2564,9 @@ int shape_reverse;
 enum
 {
   STAMP_TOOL_MODE_PLACE,
-  STAMP_TOOL_MODE_ROTATE,
-  STAMP_TOOL_MODE_DONE
+  STAMP_TOOL_MODE_ROTATE
 };
+#define STAMP_XOR_LINE_UNSET INT_MIN
 on_screen_keyboard *new_kbd;
 SDL_Rect kbd_rect;
 
@@ -2606,6 +2607,10 @@ static void mainloop(void)
   int stamp_place_x = 0;
   int stamp_place_y = 0;
   int stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
+#ifdef EXPERIMENT_STAMP_ROTATION_LINE
+  int stamp_xor_line_old_x = STAMP_XOR_LINE_UNSET;
+  int stamp_xor_line_old_y = STAMP_XOR_LINE_UNSET;
+#endif
 
 #ifdef AUTOSAVE_GOING_BACKGROUND
   char *fname;
@@ -6234,12 +6239,19 @@ static void mainloop(void)
                     mouse_warp_x = WINDOW_WIDTH - r_ttoolopt.w - 1;
 
                   SDL_WarpMouse(mouse_warp_x, old_y);
-#endif
+
                   do_setcursor(cursor_rotate);
+#endif
+                  do_setcursor(cursor_hand);
 
                   stamp_tool_mode = STAMP_TOOL_MODE_ROTATE;
                   stamp_place_x = old_x;
                   stamp_place_y = old_y;
+#ifdef EXPERIMENT_STAMP_ROTATION_LINE
+                  stamp_xor_line_old_x = STAMP_XOR_LINE_UNSET;
+                  stamp_xor_line_old_y = STAMP_XOR_LINE_UNSET;
+#endif
+
                   snprintf(angle_tool_text, sizeof(angle_tool_text),
                            gettext(TIP_STAMPS_ROTATING), 0);
                   draw_tux_text(TUX_GREAT, angle_tool_text, 1);
@@ -6704,10 +6716,15 @@ static void mainloop(void)
             do_setcursor(cursor_brush);
           else if (cur_tool == TOOL_STAMP)
           {
-            if (stamp_tool_mode != STAMP_TOOL_MODE_ROTATE)
+            if (stamp_tool_mode != STAMP_TOOL_MODE_ROTATE) {
               do_setcursor(cursor_tiny);
-            else
-              do_setcursor(cursor_rotate);
+            } else {
+              if (stamp_will_rotate(new_x, new_y, stamp_place_x, stamp_place_y)) {
+                do_setcursor(cursor_rotate);
+              } else {
+                do_setcursor(cursor_hand);
+              }
+            }
           }
           else if (cur_tool == TOOL_LINES || cur_tool == TOOL_FILL)
             do_setcursor(cursor_crosshair);
@@ -6975,20 +6992,45 @@ static void mainloop(void)
                 int deg;
 
                 stamp_xor(stamp_place_x, stamp_place_y);
+#ifdef EXPERIMENT_STAMP_ROTATION_LINE
+                /* Erase old stamp rotation angle XOR'd line */
+                /* FIXME: Needs also be erased in other situations! */
+                if (stamp_xor_line_old_x != STAMP_XOR_LINE_UNSET && stamp_xor_line_old_y != STAMP_XOR_LINE_UNSET) {
+                  if (stamp_will_rotate(stamp_place_x, stamp_place_y, stamp_xor_line_old_x, stamp_xor_line_old_y)) {
+                    line_xor(stamp_place_x, stamp_place_y, stamp_xor_line_old_x, stamp_xor_line_old_y);
+                  }
+                }
+#endif
 
                 deg = (360 - stamp_rotation(stamp_place_x, stamp_place_y, new_x, new_y)) % 360;
-
                 update_stamp_xor(deg);
-                stamp_xor(stamp_place_x, stamp_place_y);
 
+                stamp_xor(stamp_place_x, stamp_place_y);
+#ifdef EXPERIMENT_STAMP_ROTATION_LINE
+                /* Erase old stamp rotation angle XOR'd line */
+                if (stamp_will_rotate(stamp_place_x, stamp_place_y, new_x, new_y)) {
+                  line_xor(stamp_place_x, stamp_place_y, new_x, new_y);
+                  stamp_xor_line_old_x = new_x;
+                  stamp_xor_line_old_y = new_y;
+                } else {
+                  stamp_xor_line_old_x = STAMP_XOR_LINE_UNSET;
+                  stamp_xor_line_old_y = STAMP_XOR_LINE_UNSET;
+                }
+#endif
+
+#ifndef EXPERIMENT_STAMP_ROTATION_LINE
                 /* The half of maximum size the stamp could have when rotating. */
                 int half_bigbox =
                   sqrt((CUR_STAMP_W + 1) * (CUR_STAMP_W + 1) +
                        (CUR_STAMP_H + 1) * (CUR_STAMP_H + 1)) / 2;
-                update_screen(stamp_place_x - half_bigbox + r_canvas.x,
-                              stamp_place_y - half_bigbox + r_canvas.y,
-                              stamp_place_x + half_bigbox + r_canvas.x,
-                              stamp_place_y + half_bigbox + r_canvas.y);
+                update_screen(min(min(new_x, old_x), stamp_place_x - half_bigbox) + r_canvas.x,
+                              min(min(new_y, old_y), stamp_place_y - half_bigbox) + r_canvas.y,
+                              max(max(new_x, old_x), stamp_place_x + half_bigbox) + r_canvas.x,
+                              max(max(new_y, old_y), stamp_place_y + half_bigbox) + r_canvas.y);
+#else
+                /* FIXME: Be smarter about this */
+                SDL_UpdateRect(screen, 0, 0, screen->w, screen->h);
+#endif
 
                 snprintf(angle_tool_text, sizeof(angle_tool_text),
                          gettext(TIP_STAMPS_ROTATING), deg);
@@ -16341,11 +16383,17 @@ static int brush_rotation(int ctr_x, int ctr_y, int ox, int oy)
   return (atan2(oy - ctr_y, ox - ctr_x) * 180 / M_PI);
 }
 
+static int stamp_will_rotate(int ctr_x, int ctr_y, int ox, int oy)
+{
+  return ((abs(ctr_x - ox) > button_w / 2) || (abs(ctr_y - oy) > button_h / 2));
+}
+
 /* What angle (degrees) is the mouse away from a stamp placement (keep at zero if within stamp's bounding box!) */
 static int stamp_rotation(int ctr_x, int ctr_y, int ox, int oy)
 {
-  if (abs(ctr_x - ox) <= CUR_STAMP_W / 2 && abs(ctr_y - oy) <= CUR_STAMP_H / 2)
+  if (!stamp_will_rotate(ctr_x, ctr_y, ox, oy))
     return (0);
+
   return brush_rotation(ctr_x, ctr_y, ox, oy);
 }
 
