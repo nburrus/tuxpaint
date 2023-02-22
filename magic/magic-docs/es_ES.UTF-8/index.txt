@@ -32,6 +32,7 @@ Color Filters
      * Bloom
      * Cartoon
      * Color and White
+     * Color Sep.
      * Color Shift
      * Darken
      * Lighten

@@ -1,0 +1,15 @@
+                       Tux Paint "Magic" Tool: Color Sep.
+
+                              Group: Color Filters
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   This separates your picture's colors. Selecting different colors can alter
+   how they are separated: red from cyan (which can be used to create
+   anaglyphic pictures you can view with 3D glasses), green from purple, or
+   blue from yellow. Click and drag to adjust how far apart, and in what
+   direction, separation occurs.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.29
