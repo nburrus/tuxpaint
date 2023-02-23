@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - February 21, 2023
+June 17, 2002 - February 22, 2023
 
 * Design and Coding:
 
@@ -137,11 +137,17 @@ June 17, 2002 - February 21, 2023
   (https://freesound.org/people/kentnelson64/sounds/647221/)
   Creative Commons 0 license by "kentnelson64"
 
-  Color Sep. magic tool
+  3D Glasses & Color Sep. magic tools
   by Bill Kendrick <bill@newbreedsoftware.com>
-  Color Sep. sound effect: "Sci-Fi Sensors"
+
+  3D Glasses sound effect: "Sci-Fi Sensors"
   (https://freesound.org/people/Zarkonnen/sounds/168885/)
   Creative Commons 0 license by "Zarkonnen"
+
+  Color Sep. sound effect: "Boing.wave"
+  (https://freesound.org/people/juskiddink/sounds/140867/)
+  Creative Commons Attribution 4.0 International (CC BY 4.0)
+  by "juskiddink"
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,

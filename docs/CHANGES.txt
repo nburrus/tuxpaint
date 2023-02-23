@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.21 (0.9.29)
+2023.February.22 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -48,11 +48,15 @@ https://tuxpaint.org/
       (Sound effected licensed as Creative Commons 0 (CC0 1.0)
       by https://freesound.org/people/kentnelson64/)
 
-    * "Color Sep." (color separation) - Separate the colors of the
-      image, e.g. Red vs Cyan, as in anaglyphic "3D glasses" images.
+    * "Color Sep." (color separation) and "3D Glasses" - Separate the
+      colors of the image, e.g. Red vs Cyan, as in anaglyphic
+      "3D glasses" images.
       Bill Kendrick <bill@newbreedsoftware.com>
-      (Sound effected licensed as Creative Commons 0 (CC0 1.0)
-      by https://freesound.org/people/Zarkonnen/)
+      ("3D Glasses" sound effected licensed as Creative Commons 0 (CC0 1.0)
+      by https://freesound.org/people/Zarkonnen/;
+      "Color Sep." sound effect licensed as Creative Commons
+      Attribution 4.0 International (CC BY 4.0)
+      by https://freesound.org/people/juskiddink/)
 
     * [WIP] "Rivulet"; apply rivulets of water to the canvas
       - needs better icon
