@@ -186,9 +186,15 @@ colorsep_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
       SDL_GetRGB(api->getpixel(snapshot, xx + offset_x / 2, yy + offset_y / 2), snapshot->format, &r1, &g1, &b1);
       SDL_GetRGB(api->getpixel(snapshot, xx - offset_x / 2, yy - offset_y / 2), snapshot->format, &r2, &g2, &b2);
 
-      r = (Uint8) ((float) r1 * colorsep_r_pct) + ((float) r2 * (1.0 - colorsep_r_pct));
-      g = (Uint8) ((float) g1 * colorsep_g_pct) + ((float) g2 * (1.0 - colorsep_g_pct));
-      b = (Uint8) ((float) b1 * colorsep_b_pct) + ((float) b2 * (1.0 - colorsep_b_pct));
+      if (which == COLORSEP_TOOL_3DGLASSES) {
+        r = r1;
+        g = g2;
+        b = b2;
+      } else {
+        r = (Uint8) ((float) r1 * colorsep_r_pct) + ((float) r2 * (1.0 - colorsep_r_pct));
+        g = (Uint8) ((float) g1 * colorsep_g_pct) + ((float) g2 * (1.0 - colorsep_g_pct));
+        b = (Uint8) ((float) b1 * colorsep_b_pct) + ((float) b2 * (1.0 - colorsep_b_pct));
+      }
 
       api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
     }
