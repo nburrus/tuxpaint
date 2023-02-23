@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2014-06-16 16:55+0530\n"
 "Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
 "Language-Team: none\n"
@@ -1508,17 +1508,29 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:35
+#, fuzzy
+#| msgid "Glass Tile"
+msgid "3D Glasses"
+msgstr "कांच खापरा"
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Color Shift"
 msgid "Color Sep."
 msgstr "रोङ उचा़ड़"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to separate your picture's colors."
+msgstr "आमाक् चिता़र रे रेलगाड़ी पांजा मेड़हेद छोड़ गार तेयार ला़गित् ओर आर ओताय मे."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

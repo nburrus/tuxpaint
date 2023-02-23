@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2022-11-02 09:53+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
@@ -1582,17 +1582,30 @@ msgstr ""
 "Clique une fois sur un endroit à cloner. Clique encore une fois et promène "
 "la souris pour cloner cet endroit."
 
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:35
+#, fuzzy
+#| msgid "Glass Tile"
+msgid "3D Glasses"
+msgstr "Carreau de verre"
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Color Shift"
 msgid "Color Sep."
 msgstr "Couleurs"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to separate your picture's colors."
+msgstr "Clique et déplace la souris pour dessiner des rails."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

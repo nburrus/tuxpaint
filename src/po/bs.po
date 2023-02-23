@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2010-11-05 04:24+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1613,18 +1613,29 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
+#: ../../magic/src/colorsep.c:35
+msgid "3D Glasses"
+msgstr ""
+
 #
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Colors"
 msgid "Color Sep."
 msgstr "Boje"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+#| msgid "Click and move the mouse around to blur the picture."
+msgid "Click and drag to separate your picture's colors."
+msgstr "Klikni i pomjeraj mišem da bi zatamnio sliku."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

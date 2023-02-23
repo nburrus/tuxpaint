@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1511,17 +1511,26 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:35
+msgid "3D Glasses"
+msgstr ""
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Colors"
 msgid "Color Sep."
 msgstr "Imibala"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+msgid "Click and drag to separate your picture's colors."
+msgstr "Nqomfa ushenxashenxise impuku ukuze udyobhe umfanekiso."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

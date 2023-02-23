@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2008-01-18 12:40-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -1495,17 +1495,28 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:35
+#, fuzzy
+#| msgid "Glass Tile"
+msgid "3D Glasses"
+msgstr "Glasrútar"
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Shift"
 msgid "Color Sep."
 msgstr "Flyt"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+msgid "Click and drag to separate your picture's colors."
+msgstr "Klikkja og drag músina til at tekna eina ljósstrálu á myndina."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

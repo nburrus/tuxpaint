@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2021-11-30 10:29+0100\n"
 "Last-Translator: Jozef Říha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -1471,17 +1471,30 @@ msgstr ""
 "Klikni raz a vyber miesto, ktoré sa bude klonovať. Klikni ešte raz a pohybom "
 "myši klonuj vybranú časť obrázka."
 
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:35
+#, fuzzy
+#| msgid "Glass Tile"
+msgid "3D Glasses"
+msgstr "Sklo"
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Color Shift"
 msgid "Color Sep."
 msgstr "Zmena farby"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to separate your picture's colors."
+msgstr ""
+"Kliknutím a ťahaním myši môžeš na obrázok nakresliť koľajnice pre vlak."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

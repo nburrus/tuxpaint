@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2017-12-05 12:38+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -1498,17 +1498,31 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/colorsep.c:90
+# kunne måske også være glasfelt, glasflise. Men er en knap hvor man gør 
+# billedet glasagtigt.
+#: ../../magic/src/colorsep.c:35
+#, fuzzy
+#| msgid "Glass Tile"
+msgid "3D Glasses"
+msgstr "Glasrude"
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Color Shift"
 msgid "Color Sep."
 msgstr "Farveskift"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to separate your picture's colors."
+msgstr "Klik og bevæg musen rundt for at tegne togspor på dit billede."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"

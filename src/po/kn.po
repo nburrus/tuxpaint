@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-21 23:08-0800\n"
+"POT-Creation-Date: 2023-02-22 21:01-0800\n"
 "PO-Revision-Date: 2014-06-08 23:43+0630\n"
 "Last-Translator: Savitha <savithasprasad@yahoo.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -1519,17 +1519,29 @@ msgid ""
 "that part of the picture."
 msgstr ""
 
-#: ../../magic/src/colorsep.c:90
+#: ../../magic/src/colorsep.c:35
+#, fuzzy
+#| msgid "Glass Tile"
+msgid "3D Glasses"
+msgstr "ಗಾಜಿನ ಹಾಸುಬಿಲ್ಲೆ"
+
+#: ../../magic/src/colorsep.c:36
 #, fuzzy
 #| msgid "Color Shift"
 msgid "Color Sep."
 msgstr "ಬಣ್ಣ ಸ್ಥಳಾಂತರ"
 
-#: ../../magic/src/colorsep.c:102
+#: ../../magic/src/colorsep.c:39
 msgid ""
-"Click and drag to separate your picture's colors (based on your color "
-"choice: red from cyan, green from purple, or blue from yellow)."
+"Click and drag left and right to separate your picture's red and cyan, to "
+"make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/colorsep.c:40
+#, fuzzy
+#| msgid "Click and drag to draw train track rails on your picture."
+msgid "Click and drag to separate your picture's colors."
+msgstr "ನಿಮ್ಮ ಚಿತ್ರದಲ್ಲಿ ರೈಲಿನ ಹಳಿಗಳನ್ನು ಚಿತ್ರಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಎಳೆಯಿರಿ."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"
