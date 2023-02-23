@@ -22,12 +22,12 @@ enum {
 };
 
 static char * colorsep_snd_filenames[NUM_TOOLS] = {
-  "colorsep.ogg", /* FIXME */
+  "3dglasses.ogg",
   "colorsep.ogg"
 };
 
 static char * colorsep_icon_filenames[NUM_TOOLS] = {
-  "colorsep.png", /* FIXME */
+  "3dglasses.png",
   "colorsep.png"
 };
 
