@@ -29,6 +29,7 @@ Distorts
 
 Color Filters
 
+     * 3D Glasses
      * Bloom
      * Cartoon
      * Color Sep.
