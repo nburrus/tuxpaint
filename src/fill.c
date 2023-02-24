@@ -4,7 +4,7 @@
   Fill tool
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2022 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 23, 2022
+  Last updated: February 24, 2023
   $Id$
 */
 
@@ -94,6 +94,9 @@ void init_queue(void);
 void add_to_queue(int x, int y, int y_outside);
 int remove_from_queue(int *x, int *y, int *y_outside);
 void cleanup_queue(void);
+int squareDist(int x1, int y1, int x2, int y2);
+float findSignedDistance(Uint8 * bitmask, int w, int h, int x, int y, float spread);
+void compute_sdf(float * sdf, Uint8 * bitmask, int w, int h);
 
 void init_queue(void)
 {
@@ -813,4 +816,160 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top,
         }
     }
   }
+}
+
+/* Signed Distance Field functions --------------------------------------
+   Based on `image-sdf` <https://github.com/mattdesl/image-sdf>
+   Copyright (c) 2014 by Matt DesLauriers (https://www.mattdesl.com/)
+   in JavaScript, released under the The MIT License
+   (which was based on DistanceFieldGenerator.java from `libgdx` <https://github.com/libgdx>
+   by Thomas ten Cate, in Java, released under the Apache License 2.0).
+
+   Converted to C for Tux Paint by Bill Kendrick 2023, GPL v2
+*/
+
+int squareDist(int x1, int y1, int x2, int y2) {
+  int dx, dy;
+
+  dx = (x1 - x2);
+  dy = (y1 - y2);
+  return (dx * dx) + (dy * dy);
+}
+
+float findSignedDistance(Uint8 * bitmask, int w, int h, int x, int y, float spread)
+{
+  int startX, endX, startY, endY, xx, yy;
+  int base;
+  int closestSquareDist, delta, sqDist;
+  float closestDist, deltaf;
+
+  base = bitmask[y * w + x];
+
+  deltaf = ceilf(spread);
+  delta = (int) deltaf;
+  startX = max((int) 0, x - delta);
+  startY = max((int) 0, y - delta);
+  endX = min(w - 1, x + delta);
+  endY = min(h - 1, y + delta);
+
+  closestSquareDist = (delta * delta);
+
+  for (yy = startY; yy <= endY; yy++) {
+    for (xx = startX; xx <= endX; xx++) {
+      if (base != bitmask[yy * w + xx]) {
+        sqDist = squareDist(x, y, xx, yy);
+        if (sqDist < closestSquareDist) {
+          closestSquareDist = sqDist;
+        }
+      }
+    }
+  }
+
+  closestDist = sqrt((float) closestSquareDist);
+  return (base ? 1.0 : -1.0) * min(closestDist, spread);
+}
+
+void compute_sdf(float * sdf, Uint8 * bitmask, int w, int h)
+{
+  int x, y;
+  float spread, signedDistance, alpha;
+
+  spread = 1.0;
+
+  for (y = 0; y < h; y++) {
+    for (x = 0; x < w; x++) {
+      signedDistance = findSignedDistance(bitmask, w, h, x, y, spread);
+      alpha = 0.5 + 0.5 * (signedDistance / spread);
+      alpha = min((float) 1.0, max((float) 0.0, alpha));
+      sdf[y * w + x] = alpha;
+    }
+  }
+}
+
+/* End of Signed Distance Field functions ------------------------------- */
+
+void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
+                          int x_right, int y_bottom,
+                          Uint32 draw_color, Uint8 * touched)
+{
+  Uint32 old_colr, new_colr;
+  int w, h;
+  int xx, yy;
+  int pix, pix2;
+  float ratio;
+  Uint8 draw_r, draw_g, draw_b, old_r, old_g, old_b, new_r, new_g, new_b;
+  float * sdf;
+  Uint8 * bitmask;
+
+  /* Create space for bitmask (based on `touched`) and SDF output
+     large enough for the area being filled */
+  w = x_right - x_left + 1;
+  h = y_bottom - y_top + 1;
+  sdf = (float *) malloc(sizeof(float) * w * h);
+  if (sdf == NULL)
+    return;
+
+  bitmask = (Uint8 *) malloc(sizeof(Uint8) * w * h);
+  if (bitmask == NULL) {
+    free(sdf);
+    return;
+  }
+
+  for (yy = 0; yy < h; yy++) {
+    for (xx = 0; xx < w; xx++) {
+      /* Converting 0-255 to 0/1 */
+      bitmask[yy * w + xx] = (touched[((yy + y_top) * canvas->w) + (xx + x_left)] >= 128);
+    }
+  }
+
+  /* Compute the alpha mask using a Signed Distance Field */
+  compute_sdf(sdf, bitmask, w, h);
+
+  /* Get our target color */
+  SDL_GetRGB(draw_color, canvas->format, &draw_r, &draw_g, &draw_b);
+
+  /* Traverse the flood-filled zone */
+  for (yy = y_top; yy <= y_bottom; yy++)
+  {
+    for (xx = x_left; xx <= x_right; xx++)
+    {
+      /* Only alter the pixels within the flood itself */
+      pix = (yy * canvas->w) + xx;
+
+      if (pix >= 0 && pix < canvas->w * canvas->h)
+        {
+          if (touched[pix])
+          {
+            pix2 = ((yy - y_top) * w) + (xx - x_left);
+
+            /* Determine the distance from the click point */
+            ratio = 1.0 - sdf[pix2];
+
+            /* Get the old color, and blend it (with a distance-based ratio) with the target color */
+            old_colr =
+              getpixels[canvas->format->BytesPerPixel] (canvas, xx, yy);
+            SDL_GetRGB(old_colr, canvas->format, &old_r, &old_g, &old_b);
+
+            /* Apply fuzziness at any antialiased edges we detected */
+            ratio = (ratio * ((float) touched[pix] / 255.0));
+
+            new_r =
+              (Uint8) (((float) old_r) * ratio +
+                       ((float) draw_r * (1.00 - ratio)));
+            new_g =
+              (Uint8) (((float) old_g) * ratio +
+                       ((float) draw_g * (1.00 - ratio)));
+            new_b =
+              (Uint8) (((float) old_b) * ratio +
+                       ((float) draw_b * (1.00 - ratio)));
+
+            new_colr = SDL_MapRGB(canvas->format, new_r, new_g, new_b);
+            putpixels[canvas->format->BytesPerPixel] (canvas, xx, yy, new_colr);
+          }
+        }
+    }
+  }
+
+  free(sdf);
+  free(bitmask);
 }
