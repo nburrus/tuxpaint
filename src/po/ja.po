@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-24 02:18-0800\n"
-"PO-Revision-Date: 2023-02-19 11:38+0900\n"
+"PO-Revision-Date: 2023-02-25 12:28+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -198,10 +198,8 @@ msgid "Radial"
 msgstr "ほうしゃ"
 
 #: ../fill_tools.h:56
-#, fuzzy
-#| msgid "Shapes"
 msgid "Shaped"
-msgstr "かたち"
+msgstr "あわせる"
 
 #: ../fill_tools.h:60
 msgid "Click to fill an area with a solid color."
@@ -228,16 +226,11 @@ msgstr ""
 "ぶします。"
 
 #: ../fill_tools.h:67
-#, fuzzy
-#| msgid ""
-#| "Click to fill an area with a radial gradient (from the chosen color to "
-#| "transparent)."
 msgid ""
 "Click to fill an area with a shaped gradient (from the chosen color to "
 "transparent)."
 msgstr ""
-"クリックしてからドラッグすると まわりにむかってグラデーションをつけて ぬりつ"
-"ぶします。"
+"クリックしたところの かたちにあわせてグラデーションをつけて ぬりつぶします。"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -1557,28 +1550,24 @@ msgstr ""
 "クしてから うつしたいさきのところで ドラッグします。"
 
 #: ../../magic/src/colorsep.c:35
-#, fuzzy
-#| msgid "Glass Tile"
 msgid "3D Glasses"
-msgstr "ガラス タイル"
+msgstr "りったいメガネ"
 
 #: ../../magic/src/colorsep.c:36
-#, fuzzy
-#| msgid "Color Shift"
 msgid "Color Sep."
-msgstr "へんしょく"
+msgstr "いろぶんかい"
 
 #: ../../magic/src/colorsep.c:39
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+"くりっくしてから みぎひだりに ドラッグして、いろを あかとあおに わけよう。あ"
+"かあおメガネで りったいてきに みえるよ！"
 
 #: ../../magic/src/colorsep.c:40
-#, fuzzy
-#| msgid "Click and drag to add fur to your picture."
 msgid "Click and drag to separate your picture's colors."
-msgstr "クリックしたまま マウスをうごかして けがわを かこう。"
+msgstr "クリックしたまま マウスをうごかして いろを ぶんかい しよう。"
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"
