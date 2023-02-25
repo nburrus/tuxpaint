@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 24, 2023
+  Last updated: February 25, 2023
   $Id$
 */
 
@@ -72,6 +72,21 @@ typedef struct queue_s
 queue_t *queue;
 int queue_size = 0, queue_end = 0;
 
+typedef struct sdf_point_s
+{
+  int dx, dy;
+} sdf_point;
+
+sdf_point sdf_pt_inside = { 0, 0 };
+sdf_point sdf_pt_empty = { 9999, 9999 };
+
+typedef struct sdf_grid_s
+{
+  sdf_point * * grid;
+  int w, h;
+} sdf_grid;
+
+
 /* Local function prototypes: */
 
 SDL_Surface *global_screen, *global_last, *global_canvas;
@@ -94,9 +109,15 @@ void init_queue(void);
 void add_to_queue(int x, int y, int y_outside);
 int remove_from_queue(int *x, int *y, int *y_outside);
 void cleanup_queue(void);
-int squareDist(int x1, int y1, int x2, int y2);
-float findSignedDistance(Uint8 * bitmask, int w, int h, int x, int y, float spread);
-void compute_sdf(float * sdf, Uint8 * bitmask, int w, int h);
+void sdf_pt_get(sdf_grid * g, int x, int y, sdf_point * p);
+void sdf_pt_put(sdf_grid * g, int x, int y, sdf_point p);
+int sdf_distsq(sdf_point p);
+void sdf_compare(sdf_grid * g, sdf_point * p, int x, int y, int offsetx, int offsety);
+int malloc_sdf_grid(sdf_grid * g, int w, int h);
+void free_sdf_grid(sdf_grid * g);
+void sdf_fill_bitmask_to_sdf_grids(Uint8 * bitmask, int w, int h, sdf_grid * g1, sdf_grid * g2);
+void sdf_generate(sdf_grid * g);
+
 
 void init_queue(void)
 {
@@ -819,74 +840,148 @@ void draw_radial_gradient(SDL_Surface * canvas, int x_left, int y_top,
 }
 
 /* Signed Distance Field functions --------------------------------------
-   Based on `image-sdf` <https://github.com/mattdesl/image-sdf>
-   Copyright (c) 2014 by Matt DesLauriers (https://www.mattdesl.com/)
-   in JavaScript, released under the The MIT License
-   (which was based on DistanceFieldGenerator.java from `libgdx` <https://github.com/libgdx>
-   by Thomas ten Cate, in Java, released under the Apache License 2.0).
-
-   Converted to C for Tux Paint by Bill Kendrick 2023, GPL v2
+   Based on `8ssedt` example code by Richard Mitton <http://www.codersnotes.com/about/>, 2009
+   Converted to C for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>, 2023
 */
 
-int squareDist(int x1, int y1, int x2, int y2) {
-  int dx, dy;
-
-  dx = (x1 - x2);
-  dy = (y1 - y2);
-  return (dx * dx) + (dy * dy);
+void sdf_pt_get(sdf_grid * g, int x, int y, sdf_point * p)
+{
+  if (x >= 0 && x < g->w && y >= 0 && y < g->h) {
+    memcpy(p, &(g->grid[y][x]), sizeof(sdf_point));
+  } else {
+    memcpy(p, &(sdf_pt_empty), sizeof(sdf_point));
+  }
 }
 
-float findSignedDistance(Uint8 * bitmask, int w, int h, int x, int y, float spread)
+void sdf_pt_put(sdf_grid * g, int x, int y, sdf_point p)
 {
-  int startX, endX, startY, endY, xx, yy;
-  int base;
-  int closestSquareDist, delta, sqDist;
-  float closestDist, deltaf;
+  memcpy(&(g->grid[y][x]), &p, sizeof(sdf_point));
+}
 
-  base = bitmask[y * w + x];
+int sdf_distsq(sdf_point p)
+{
+  return ((p.dx * p.dx) + (p.dy * p.dy));
+}
 
-  deltaf = ceilf(spread);
-  delta = (int) deltaf;
-  startX = max((int) 0, x - delta);
-  startY = max((int) 0, y - delta);
-  endX = min(w - 1, x + delta);
-  endY = min(h - 1, y + delta);
+void sdf_compare(sdf_grid * g, sdf_point * p, int x, int y, int offsetx, int offsety)
+{
+  sdf_point other;
 
-  closestSquareDist = (delta * delta);
+  sdf_pt_get(g, x + offsetx, y + offsety, &other);
+  other.dx += offsetx;
+  other.dy += offsety;
 
-  for (yy = startY; yy <= endY; yy++) {
-    for (xx = startX; xx <= endX; xx++) {
-      if (base != bitmask[yy * w + xx]) {
-        sqDist = squareDist(x, y, xx, yy);
-        if (sqDist < closestSquareDist) {
-          closestSquareDist = sqDist;
-        }
-      }
+  if (sdf_distsq(other) < sdf_distsq(*p)) {
+    p->dx = other.dx;
+    p->dy = other.dy;
+  }
+}
+
+int malloc_sdf_grid(sdf_grid * g, int w, int h) {
+  int i, abort;
+
+  g->w = w;
+  g->h = h;
+  g->grid = (sdf_point * *) malloc(h * sizeof(sdf_point *));
+  if (g->grid == NULL) {
+    fprintf(stderr, "malloc_sdf_grid() cannot malloc() g->grid!\n");
+    free(g);
+    return 0;
+  }
+
+  for (i = 0; i < h; i++) {
+    g->grid[i] = NULL;
+  }
+
+  abort = 0;
+  for (i = 0; i < h && !abort; i++) {
+    g->grid[i] = (sdf_point *) malloc(w * sizeof(sdf_point));
+    if (g->grid[i] == NULL) {
+      abort = 1;
     }
   }
 
-  closestDist = sqrt((float) closestSquareDist);
-  return (base ? 1.0 : -1.0) * min(closestDist, spread);
+  if (abort) {
+    fprintf(stderr, "malloc_sdf_grid() cannot malloc() g->grid[]!\n");
+    free_sdf_grid(g);
+    return 0;
+  }
+
+  return 1;
 }
 
-void compute_sdf(float * sdf, Uint8 * bitmask, int w, int h)
-{
-  int x, y;
-  float spread, signedDistance, alpha;
+void free_sdf_grid(sdf_grid * g) {
+  int i;
 
-  spread = 1.0;
+  for (i = 0; i < g->h; i++) {
+    if (g->grid[i] != NULL) {
+      free(g->grid[i]);
+    }
+  }
+  free(g->grid);
+}
+
+
+void sdf_fill_bitmask_to_sdf_grids(Uint8 * bitmask, int w, int h, sdf_grid * g1, sdf_grid * g2) {
+  int x, y;
 
   for (y = 0; y < h; y++) {
     for (x = 0; x < w; x++) {
-      signedDistance = findSignedDistance(bitmask, w, h, x, y, spread);
-      alpha = 0.5 + 0.5 * (signedDistance / spread);
-      alpha = min((float) 1.0, max((float) 0.0, alpha));
-      sdf[y * w + x] = alpha;
+      if (bitmask[y * w + x]) {
+        sdf_pt_put(g1, x, y, sdf_pt_inside);
+        sdf_pt_put(g2, x, y, sdf_pt_empty);
+      } else {
+        sdf_pt_put(g1, x, y, sdf_pt_empty);
+        sdf_pt_put(g2, x, y, sdf_pt_inside);
+      }
+    }
+  }
+}
+
+
+void sdf_generate(sdf_grid * g) {
+  int x, y;
+  sdf_point p;
+
+  /* Pass 0 */
+  for (y = 0; y < g->h; y++) {
+    for (x = 0; x < g->w; x++) {
+      sdf_pt_get(g, x, y, &p);
+      sdf_compare(g, &p, x, y, -1,  0);
+      sdf_compare(g, &p, x, y,  0, -1);
+      sdf_compare(g, &p, x, y, -1, -1);
+      sdf_compare(g, &p, x, y,  1, -1);
+      sdf_pt_put(g, x, y, p);
+    }
+
+    for (x = g->w - 1; x >= 0; x--) {
+      sdf_pt_get(g, x, y, &p);
+      sdf_compare(g, &p, x, y,  1, 0);
+      sdf_pt_put(g, x, y, p);
+    }
+  }
+
+  /* Pass 1 */
+  for (y = g->h - 1; y >= 0; y--) {
+    for (x = g->w - 1; x >= 0; x--) {
+      sdf_pt_get(g, x, y, &p);
+      sdf_compare(g, &p, x, y,  1, 0);
+      sdf_compare(g, &p, x, y,  0, 1);
+      sdf_compare(g, &p, x, y, -1, 1);
+      sdf_compare(g, &p, x, y,  1, 1);
+      sdf_pt_put(g, x, y, p);
+    }
+
+    for (x = 0; x < g->w; x++) {
+      sdf_pt_get(g, x, y, &p);
+      sdf_compare(g, &p, x, y, -1, 0);
+      sdf_pt_put(g, x, y, p);
     }
   }
 }
 
 /* End of Signed Distance Field functions ------------------------------- */
+
 
 void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
                           int x_right, int y_bottom,
@@ -895,26 +990,35 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
   Uint32 old_colr, new_colr;
   int w, h;
   int xx, yy;
-  int pix, pix2;
+  int pix_idx;
+  int scale;
   float ratio;
   Uint8 draw_r, draw_g, draw_b, old_r, old_g, old_b, new_r, new_g, new_b;
-  float * sdf;
   Uint8 * bitmask;
+  sdf_grid g1, g2;
 
   /* Create space for bitmask (based on `touched`) and SDF output
      large enough for the area being filled */
   w = x_right - x_left + 1;
   h = y_bottom - y_top + 1;
-  sdf = (float *) malloc(sizeof(float) * w * h);
-  if (sdf == NULL)
-    return;
 
   bitmask = (Uint8 *) malloc(sizeof(Uint8) * w * h);
   if (bitmask == NULL) {
-    free(sdf);
     return;
   }
 
+  if (!malloc_sdf_grid(&g1, w, h)) {
+    free(bitmask);
+    return;
+  }
+  if (!malloc_sdf_grid(&g2, w, h)) {
+    free(bitmask);
+    free_sdf_grid(&g1);
+    return;
+  }
+
+
+  /* Convert the `touched` values into a bitmask to feed into the SDF routines */
   for (yy = 0; yy < h; yy++) {
     for (xx = 0; xx < w; xx++) {
       /* Converting 0-255 to 0/1 */
@@ -922,8 +1026,11 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
     }
   }
 
-  /* Compute the alpha mask using a Signed Distance Field */
-  compute_sdf(sdf, bitmask, w, h);
+  /* Compute the Signed Distance Field (we'll use as an alpha mask) */
+
+  sdf_fill_bitmask_to_sdf_grids(bitmask, w, h, &g1, &g2);
+  sdf_generate(&g1);
+  sdf_generate(&g2);
 
   /* Get our target color */
   SDL_GetRGB(draw_color, canvas->format, &draw_r, &draw_g, &draw_b);
@@ -934,16 +1041,33 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
     for (xx = x_left; xx <= x_right; xx++)
     {
       /* Only alter the pixels within the flood itself */
-      pix = (yy * canvas->w) + xx;
+      pix_idx = (yy * canvas->w) + xx;
 
-      if (pix >= 0 && pix < canvas->w * canvas->h)
+      if (pix_idx >= 0 && pix_idx < canvas->w * canvas->h)
         {
-          if (touched[pix])
+          if (touched[pix_idx])
           {
-            pix2 = ((yy - y_top) * w) + (xx - x_left);
+            sdf_point p;
+            double dist1, dist2, dist;
+            int gx, gy;
+
+            gx = xx - x_left;
+            gy = yy - y_top;
+
+            sdf_pt_get(&g1, gx, gy, &p);
+            dist1 = sqrt(sdf_distsq(p));
+
+            sdf_pt_get(&g2, gx, gy, &p);
+            dist2 = sqrt(sdf_distsq(p));
+
+            dist = dist1 - dist2;
 
             /* Determine the distance from the click point */
-            ratio = 1.0 - sdf[pix2];
+            ratio = ((float) ((dist * 3) + 255)) / 255.0; // Magic numbers :-( -bjk 2023.02.25
+            if (ratio < 0.0)
+              ratio = 0.0;
+            else if (ratio > 1.0)
+              ratio = 1.0;
 
             /* Get the old color, and blend it (with a distance-based ratio) with the target color */
             old_colr =
@@ -951,7 +1075,7 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
             SDL_GetRGB(old_colr, canvas->format, &old_r, &old_g, &old_b);
 
             /* Apply fuzziness at any antialiased edges we detected */
-            ratio = (ratio * ((float) touched[pix] / 255.0));
+            ratio = (ratio * ((float) touched[pix_idx] / 255.0));
 
             new_r =
               (Uint8) (((float) old_r) * ratio +
@@ -970,6 +1094,7 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
     }
   }
 
-  free(sdf);
   free(bitmask);
+  free_sdf_grid(&g1);
+  free_sdf_grid(&g2);
 }
