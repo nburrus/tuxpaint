@@ -369,10 +369,14 @@ Tux Paint の起動
               * せんけい —
                 領域をクリックしてからドラッグすると、ドラッグした方向に向かって色が薄くなるようにグラデーションをつけて塗りつぶします。
               * ほうしゃ — クリックした場所を中心に周りに向かって放射状に色が薄くなるようにグラデーションをつけて塗りつぶします。
+              * Shaped — click once to fill an area with a color that fades
+                away (a gradient), following the contours of the shape you're
+                filling.
 
            📜 注: Tux Paint 0.9.24
            より前のバージョンでは、このツールは「まほう」ツールのひとつでした。（「まほう」ツールについては、以下をご覧ください） Tux
-           Paint 0.9.26 より前のバージョンでは、「たんしょく」の塗りつぶし方法しかありませんでした。
+           Paint 0.9.26 より前のバージョンでは、「たんしょく」の塗りつぶし方法しかありませんでした。 'Shaped' fill
+           was introduced in Tux Paint 0.9.29.
 
    「まほう」ツール（特殊効果）
 

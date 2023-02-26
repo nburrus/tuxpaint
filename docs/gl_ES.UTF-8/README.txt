@@ -575,10 +575,14 @@ Ferramentas dispoñíbeis
               * Radial: prema unha vez para encher unha área cunha cor que se
                 esvae (un gradiente) radialmente, centrado no lugar onde
                 premeu.
+              * Shaped — click once to fill an area with a color that fades
+                away (a gradient), following the contours of the shape you're
+                filling.
 
            📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see
            below). Prior to Tux Paint 0.9.26, the "Fill" tool only offered
-           the 'Solid' method of filling.
+           the 'Solid' method of filling. 'Shaped' fill was introduced in Tux
+           Paint 0.9.29.
 
    Ferramenta «Maxia» (efectos especiais)
 

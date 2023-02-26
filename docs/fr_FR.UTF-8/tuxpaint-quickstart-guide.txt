@@ -90,6 +90,8 @@ Tools (Drawing)
             angle and gradient)
           * Radial - Fills the area with a radial gradient, centered where
             you clicked/tapped
+          * Shaped - Fills the area with a gradient that follows the contours
+            of the area being filled
 
   🪄Magie
 

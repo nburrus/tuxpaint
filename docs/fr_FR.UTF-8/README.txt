@@ -591,10 +591,14 @@ Outils disponibles
               * Radial—cliquez une fois pour remplir une zone avec une
                 couleur qui s'atténue graduellement, à partir de l'endroit où
                 vous avez cliqué.
+              * Shaped — click once to fill an area with a color that fades
+                away (a gradient), following the contours of the shape you're
+                filling.
 
            📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see
            below). Prior to Tux Paint 0.9.26, the "Fill" tool only offered
-           the 'Solid' method of filling.
+           the 'Solid' method of filling. 'Shaped' fill was introduced in Tux
+           Paint 0.9.29.
 
    Outil "Magie" (Effets spéciaux)
 
