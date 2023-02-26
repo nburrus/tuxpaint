@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 25, 2023
+  Last updated: February 26, 2023
   $Id$
 */
 
@@ -359,7 +359,6 @@ void simulate_flood_fill_outside_check(SDL_Surface * screen,
   if ((global_prog_anim % 8) == 0)
   {
     show_progress_bar_(screen, texture, renderer);
-
   }
 
   if ((global_prog_anim % 800) == 1)    /* Always lay sound _once_ */
@@ -983,15 +982,11 @@ void sdf_generate(sdf_grid * g) {
 /* End of Signed Distance Field functions ------------------------------- */
 
 
-void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
-                          int x_right, int y_bottom,
-                          Uint32 draw_color, Uint8 * touched)
+void draw_shaped_gradient(SDL_Surface * canvas, Uint32 draw_color, Uint8 * touched)
 {
   Uint32 old_colr, new_colr;
-  int w, h;
   int xx, yy;
   int pix_idx;
-  int scale;
   float ratio;
   Uint8 draw_r, draw_g, draw_b, old_r, old_g, old_b, new_r, new_g, new_b;
   Uint8 * bitmask;
@@ -999,19 +994,16 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
 
   /* Create space for bitmask (based on `touched`) and SDF output
      large enough for the area being filled */
-  w = x_right - x_left + 1;
-  h = y_bottom - y_top + 1;
-
-  bitmask = (Uint8 *) malloc(sizeof(Uint8) * w * h);
+  bitmask = (Uint8 *) malloc(sizeof(Uint8) * canvas->w * canvas->h);
   if (bitmask == NULL) {
     return;
   }
 
-  if (!malloc_sdf_grid(&g1, w, h)) {
+  if (!malloc_sdf_grid(&g1, canvas->w, canvas->h)) {
     free(bitmask);
     return;
   }
-  if (!malloc_sdf_grid(&g2, w, h)) {
+  if (!malloc_sdf_grid(&g2, canvas->w, canvas->h)) {
     free(bitmask);
     free_sdf_grid(&g1);
     return;
@@ -1019,16 +1011,16 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
 
 
   /* Convert the `touched` values into a bitmask to feed into the SDF routines */
-  for (yy = 0; yy < h; yy++) {
-    for (xx = 0; xx < w; xx++) {
+  for (yy = 0; yy < canvas->h; yy++) {
+    for (xx = 0; xx < canvas->w; xx++) {
       /* Converting 0-255 to 0/1 */
-      bitmask[yy * w + xx] = (touched[((yy + y_top) * canvas->w) + (xx + x_left)] >= 128);
+      bitmask[yy * canvas->w + xx] = (touched[(yy * canvas->w) + xx] >= 128);
     }
   }
 
   /* Compute the Signed Distance Field (we'll use as an alpha mask) */
 
-  sdf_fill_bitmask_to_sdf_grids(bitmask, w, h, &g1, &g2);
+  sdf_fill_bitmask_to_sdf_grids(bitmask, canvas->w, canvas->h, &g1, &g2);
   sdf_generate(&g1);
   sdf_generate(&g2);
 
@@ -1036,9 +1028,9 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
   SDL_GetRGB(draw_color, canvas->format, &draw_r, &draw_g, &draw_b);
 
   /* Traverse the flood-filled zone */
-  for (yy = y_top; yy <= y_bottom; yy++)
+  for (yy = 0; yy < canvas->h; yy++)
   {
-    for (xx = x_left; xx <= x_right; xx++)
+    for (xx = 0; xx <= canvas->w; xx++)
     {
       /* Only alter the pixels within the flood itself */
       pix_idx = (yy * canvas->w) + xx;
@@ -1049,21 +1041,17 @@ void draw_shaped_gradient(SDL_Surface * canvas, int x_left, int y_top,
           {
             sdf_point p;
             double dist1, dist2, dist;
-            int gx, gy;
 
-            gx = xx - x_left;
-            gy = yy - y_top;
-
-            sdf_pt_get(&g1, gx, gy, &p);
+            sdf_pt_get(&g1, xx, yy, &p);
             dist1 = sqrt(sdf_distsq(p));
 
-            sdf_pt_get(&g2, gx, gy, &p);
+            sdf_pt_get(&g2, xx, yy, &p);
             dist2 = sqrt(sdf_distsq(p));
 
             dist = dist1 - dist2;
 
             /* Determine the distance from the click point */
-            ratio = ((float) ((dist * 3) + 255)) / 255.0; // Magic numbers :-( -bjk 2023.02.25
+            ratio = ((float) ((dist * 10) + 255)) / 255.0; // Magic numbers :-( -bjk 2023.02.25
             if (ratio < 0.0)
               ratio = 0.0;
             else if (ratio > 1.0)

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 24, 2023
+  June 14, 2002 - February 26, 2023
 */
 
 #include "platform.h"
@@ -5706,9 +5706,7 @@ static void mainloop(void)
                   else if (cur_fill == FILL_GRADIENT_SHAPED)
                   {
                     /* Shaped gradient */
-                    draw_shaped_gradient(canvas, sim_flood_x1, sim_flood_y1,
-                                         sim_flood_x2, sim_flood_y2,
-                                         draw_color, sim_flood_touched);
+                    draw_shaped_gradient(canvas, draw_color, sim_flood_touched);
                   }
                   else if (cur_fill == FILL_GRADIENT_LINEAR)
                   {
