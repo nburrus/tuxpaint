@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.February.26 (0.9.29)
+2023.February.28 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -57,6 +57,20 @@ https://tuxpaint.org/
       "Color Sep." sound effect licensed as Creative Commons
       Attribution 4.0 International (CC BY 4.0)
       by https://freesound.org/people/juskiddink/)
+
+    * [WIP] "Saturate" & "Desaturate" - Increase or decrease color saturation.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      - need icons
+      - need sound effects
+
+    * [WIP] "Keep Color" & "Remove Color" - Completely desaturate
+      parts of the picture, based on the chosen color.
+      "Keep" keeps the saturation intact if the colors match;
+      while "Remove" desaturates parts of the image that match the
+      chosen color.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      - need icons
+      - need sound effects
 
     * [WIP] "Rivulet"; apply rivulets of water to the canvas
       - needs better icon
