@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-24 02:18-0800\n"
+"POT-Creation-Date: 2023-02-28 01:15-0800\n"
 "PO-Revision-Date: 2017-12-31 11:57+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -810,7 +810,7 @@ msgstr "નવું"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9902
+#: ../tools.h:97 ../tuxpaint.c:9900
 msgid "Open"
 msgstr "ખોલો"
 
@@ -1168,145 +1168,145 @@ msgid "Please wait…"
 msgstr "મહેરબાની કરી રાહ જુઓ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9905
+#: ../tuxpaint.c:9903
 msgid "Erase"
 msgstr "ભૂંસો"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9908
+#: ../tuxpaint.c:9906
 msgid "Slides"
 msgstr "સ્લાઇડો"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9911
+#: ../tuxpaint.c:9909
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9914
+#: ../tuxpaint.c:9912
 msgid "Back"
 msgstr "પાછા"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9917
+#: ../tuxpaint.c:9915
 msgid "Play"
 msgstr "ચાલુ"
 
-#: ../tuxpaint.c:9921
+#: ../tuxpaint.c:9919
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9924
+#: ../tuxpaint.c:9922
 msgid "Next"
 msgstr "આગળ"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9927
+#: ../tuxpaint.c:9925
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10862 ../tuxpaint.c:10864 ../tuxpaint.c:10865
+#: ../tuxpaint.c:10860 ../tuxpaint.c:10862 ../tuxpaint.c:10863
 msgid "Aa"
 msgstr "આ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:15206
+#: ../tuxpaint.c:15204
 msgid "Yes"
 msgstr "હા"
 
-#: ../tuxpaint.c:15210
+#: ../tuxpaint.c:15208
 msgid "No"
 msgstr "ના"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16409
+#: ../tuxpaint.c:16407
 msgid "Replace the picture with your changes?"
 msgstr "ચિત્રને તમે કરેલા ફેરફારો સાથે બદલશો?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16413
+#: ../tuxpaint.c:16411
 msgid "Yes, replace the old one!"
 msgstr "હા, જુની ફાઇલને બદલો!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16417
+#: ../tuxpaint.c:16415
 msgid "No, save a new file!"
 msgstr "ના, નવી ફાઇલને સાચવો!"
 
-#: ../tuxpaint.c:17762
+#: ../tuxpaint.c:17760
 msgid "Choose the picture you want, then click “Open”."
 msgstr "તમારે જોઇતું ચિત્ર પસંદ કરો, અને “ખોલો” પર ક્લિક કરો."
 
-#: ../tuxpaint.c:19502
+#: ../tuxpaint.c:19500
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25588
+#: ../tuxpaint.c:25586
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25589
+#: ../tuxpaint.c:25587
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "પીળો!"
 
-#: ../tuxpaint.c:25590
+#: ../tuxpaint.c:25588
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "આકાશી વાદળી!"
 
-#: ../tuxpaint.c:25591
+#: ../tuxpaint.c:25589
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "સફેદ!"
 
-#: ../tuxpaint.c:25592
+#: ../tuxpaint.c:25590
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25593
+#: ../tuxpaint.c:25591
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "કાળું!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25598
+#: ../tuxpaint.c:25596
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25599
+#: ../tuxpaint.c:25597
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25600
+#: ../tuxpaint.c:25598
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25602
+#: ../tuxpaint.c:25600
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25604
+#: ../tuxpaint.c:25602
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25606
+#: ../tuxpaint.c:25604
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1314,21 +1314,21 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26442 ../tuxpaint.c:26449
+#: ../tuxpaint.c:26440 ../tuxpaint.c:26447
 msgid "entirely"
 msgstr ""
 
-#: ../tuxpaint.c:29703
+#: ../tuxpaint.c:29701
 msgid "Select a color from your drawing."
 msgstr "તમારા ચિત્રમાંથી રંગ પસંદ કરો."
 
-#: ../tuxpaint.c:29714
+#: ../tuxpaint.c:29712
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29728
+#: ../tuxpaint.c:29726
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1546,29 +1546,117 @@ msgstr "ચિત્રને ઉપસેલું કરવા માટે �
 msgid "Click to emboss the entire picture."
 msgstr "આખાં ચિત્રને તીક્ષ્ણ બનાવવા ક્લિક કરો."
 
-#: ../../magic/src/fade_darken.c:126
+#: ../../magic/src/fade_darken.c:47
 msgid "Lighten"
 msgstr "આછું"
 
-#: ../../magic/src/fade_darken.c:128
+#: ../../magic/src/fade_darken.c:48
 msgid "Darken"
 msgstr "ઘેરું"
 
-#: ../../magic/src/fade_darken.c:149
+#: ../../magic/src/fade_darken.c:49
+msgid "Desaturate"
+msgstr ""
+
+#: ../../magic/src/fade_darken.c:50
+msgid "Saturate"
+msgstr ""
+
+#: ../../magic/src/fade_darken.c:51
+#, fuzzy
+#| msgid "Xor Colors"
+msgid "Remove Color"
+msgstr "Xor રંગો"
+
+#: ../../magic/src/fade_darken.c:52
+#, fuzzy
+#| msgid "Colors"
+msgid "Keep Color"
+msgstr "રંગો"
+
+#: ../../magic/src/fade_darken.c:57
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "ચિત્રનાં ભાગોને ઝાંખું કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખેંચો."
 
-#: ../../magic/src/fade_darken.c:151
+#: ../../magic/src/fade_darken.c:58
 msgid "Click to lighten your entire picture."
 msgstr "આખાં ચિત્રને પ્રકાશિત કરવા માટે ક્લિક કરો."
 
-#: ../../magic/src/fade_darken.c:158
+#: ../../magic/src/fade_darken.c:61
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "તમારા ચિત્રનાં ભાગોને ઘાટાં કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખેંચો."
 
-#: ../../magic/src/fade_darken.c:160
+#: ../../magic/src/fade_darken.c:62
 msgid "Click to darken your entire picture."
 msgstr "તમારા સમગ્ર ચિત્રને ઘાટું કરવા માટે ક્લિક કરો."
+
+#: ../../magic/src/fade_darken.c:65
+#, fuzzy
+#| msgid "Click and drag the mouse to darken parts of your picture."
+msgid "Click and drag the mouse to desaturate parts of your picture."
+msgstr "તમારા ચિત્રનાં ભાગોને ઘાટાં કરવા માટે ક્લિક કરો અને આજુ-બાજુ ખેંચો."
+
+#: ../../magic/src/fade_darken.c:66
+#, fuzzy
+#| msgid "Click to darken your entire picture."
+msgid "Click to desaturate your entire picture."
+msgstr "તમારા સમગ્ર ચિત્રને ઘાટું કરવા માટે ક્લિક કરો."
+
+#: ../../magic/src/fade_darken.c:69
+#, fuzzy
+#| msgid "Click and drag the mouse to sharpen parts of your picture."
+msgid "Click and drag the mouse to saturate parts of your picture."
+msgstr "તમારા ચિત્રનાં ભાગોને ઘાટાં કરવા માટે ક્લિક કરો અને ખેંચો."
+
+#: ../../magic/src/fade_darken.c:70
+#, fuzzy
+#| msgid "Click to darken your entire picture."
+msgid "Click to saturate your entire picture."
+msgstr "તમારા સમગ્ર ચિત્રને ઘાટું કરવા માટે ક્લિક કરો."
+
+#: ../../magic/src/fade_darken.c:73
+#, fuzzy
+#| msgid "Click and drag the mouse to trace edges in parts of your picture."
+msgid ""
+"Click and drag the mouse to entirely desaturate parts of your picture that "
+"match the chosen color."
+msgstr "તમારા ચિત્રનાં ભાગોમાં ઉપસેલ ખૂણાઓ બનાવવા માટે ક્લિક કરો અને ખેંચો."
+
+#: ../../magic/src/fade_darken.c:74
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
+msgid ""
+"Click to entirely desaturate your the parts of your picture that match the "
+"chosen color."
+msgstr ""
+"તમારા ચિત્રના ભાગોને સફેદ અને તમે પસંદ કરેલા રંગમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ "
+"ખેંચો."
+
+#: ../../magic/src/fade_darken.c:77
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
+msgid ""
+"Click and drag the mouse to entirely desaturate parts of your picture that "
+"don't match the chosen color."
+msgstr ""
+"તમારા ચિત્રના ભાગોને સફેદ અને તમે પસંદ કરેલા રંગમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ "
+"ખેંચો."
+
+#: ../../magic/src/fade_darken.c:78
+#, fuzzy
+#| msgid ""
+#| "Click and drag the mouse around to turn parts of your picture into white "
+#| "and a color you choose."
+msgid ""
+"Click to entirely desaturate your the parts of your picture that don't match "
+"the chosen color."
+msgstr ""
+"તમારા ચિત્રના ભાગોને સફેદ અને તમે પસંદ કરેલા રંગમાં ફેરવવા માટે ક્લિક કરો અને માઉસ આજુબાજુ "
+"ખેંચો."
 
 #: ../../magic/src/fisheye.c:113
 msgid "Fisheye"
@@ -1629,22 +1717,8 @@ msgstr "વિસ્તારને કાચ તકતીથી ભરવા �
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "તમારા સમગ્ર ચિત્રને કાચની તકતીઓ વડે ઢાંકી દેવા માટે ક્લિક કરો."
 
-#: ../../magic/src/googlyeyes.c:21
-msgid "large googly eye"
-msgstr ""
-
-#: ../../magic/src/googlyeyes.c:22
-msgid "small googly eye"
-msgstr ""
-
 #: ../../magic/src/googlyeyes.c:165
-msgid "Google Eyes"
-msgstr ""
-
-#: ../../magic/src/googlyeyes.c:179
-#, c-format
-msgid ""
-"Click to place a %s, then drag and release to make it look that direction."
+msgid "Googly Eyes"
 msgstr ""
 
 #: ../../magic/src/grass.c:116
