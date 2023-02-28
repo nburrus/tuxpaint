@@ -100,8 +100,8 @@ char * icon_filenames[NUM_TOOLS] = {
 static Mix_Chunk *snd_effects[NUM_TOOLS];
 float chosen_h, chosen_s;
 
-#define KEEP_REMOVE_HUE_THRESH 15.0
-#define KEEP_REMOVE_VALUE_THRESH 0.4
+#define KEEP_REMOVE_HUE_THRESH 30.0
+// #define KEEP_REMOVE_VALUE_THRESH 0.4
 
 #define SAT_DESAT_RATIO_NUM 3
 #define SAT_DESAT_RATIO_DENOM 4
@@ -232,13 +232,15 @@ static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas,
         }
       }
     } else if (which == TOOL_REMOVE) {
-      if (fabs(h - chosen_h) <= KEEP_REMOVE_HUE_THRESH &&
-          fabs(s - chosen_s) <= KEEP_REMOVE_VALUE_THRESH) {
+      if (fabs(h - chosen_h) <= KEEP_REMOVE_HUE_THRESH
+ /* && fabs(s - chosen_s) <= KEEP_REMOVE_VALUE_THRESH */
+) {
         s = 0.0;
       }
     } else if (which == TOOL_KEEP) {
-      if (fabs(h - chosen_h) > KEEP_REMOVE_HUE_THRESH ||
-          fabs(s - chosen_s) > KEEP_REMOVE_VALUE_THRESH) {
+      if (fabs(h - chosen_h) > KEEP_REMOVE_HUE_THRESH
+ /* || fabs(s - chosen_s) > KEEP_REMOVE_VALUE_THRESH */
+) {
         s = 0.0;
       }
     }
