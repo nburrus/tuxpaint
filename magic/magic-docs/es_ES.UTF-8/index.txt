@@ -36,9 +36,13 @@ Color Filters
      * Color Sep.
      * Color Shift
      * Darken
+     * Desaturate
+     * Keep Color
      * Lighten
      * Negative
      * Opposite
+     * Remove Color
+     * Saturate
      * Tint
      * Xor Colors
 
