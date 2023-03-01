@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1607,6 +1607,20 @@ msgstr ""
 
 #: ../../magic/src/halftone.c:51
 msgid "Click to turn your drawing into a newspaper."
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+msgid "Kaleido-4"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+msgid "Kaleido-6"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr ""
 
 #: ../../magic/src/kalidescope.c:128

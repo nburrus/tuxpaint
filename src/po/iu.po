@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Inuktitut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2013-07-04 16:05-0500\n"
 "Last-Translator: Harvey Ginter <harveyginter@gmail.com>\n"
 "Language-Team: LANGUAGE <harveyginter@gmail.com>\n"
@@ -1764,6 +1764,28 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗ�
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᑦᔨᖑᐊᑦ ᐊᑦᔨᖑᐊᑦᓴᔭᖕᖏᑎᓗᒍ."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "ᐊᒥᓱᓂᒃ ᐋᕐᕿᓯᒪᒍᓯᕐᓂᒃ ᑕᑯᒍᑎ"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "ᐊᒥᓱᓂᒃ ᐋᕐᕿᓯᒪᒍᓯᕐᓂᒃ ᑕᑯᒍᑎ"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "ᓇᕐᓂᓗᒍ ᐅᓂᐊᑯᑖᕐᓗᒍ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖓᓂᒃ ᑕᓚᕖᓴᒦᑦᑑᔮᕐᑎᓯᓂᕐᒧᑦ."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

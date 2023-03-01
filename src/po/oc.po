@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2021-06-06 18:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
@@ -1640,6 +1640,24 @@ msgstr ""
 
 #: ../../magic/src/halftone.c:51
 msgid "Click to turn your drawing into a newspaper."
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Caleïdoscòpi"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Caleïdoscòpi"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr ""
 
 #: ../../magic/src/kalidescope.c:128

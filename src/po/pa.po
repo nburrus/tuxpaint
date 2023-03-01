@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2022-10-13 16:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1700,6 +1700,28 @@ msgstr "ਆਪਣੀ ਡਰਾਇੰਗ ਨੂੰ ਅਖ਼ਬਾਰ ਵਿੱ�
 #: ../../magic/src/halftone.c:51
 msgid "Click to turn your drawing into a newspaper."
 msgstr "ਆਪਣੀ ਡਰਾਇੰਗ ਨੂੰ ਅਖ਼ਬਾਰ ਵਿੱਚ ਬਦਲਣ ਲਈ ਕਲਿੱਕ ਕਰੋ।"
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "ਕੈਲੀਡਿਓਸਕੋਪ"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "ਕੈਲੀਡਿਓਸਕੋਪ"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "ਮਾਓਸ ਕਲਿਕ  ਦੀ ਮਦਦ ਨਾਲ  ਤਸਵੀਰ ਦੇ ਹਿਸੇਆਂ  ਨੂ ਟੈਲੀਵਿਜਨ ਵਿਚ ਫਿਟ ਕਰੋ"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2014-06-16 16:55+0530\n"
 "Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
 "Language-Team: none\n"
@@ -1779,6 +1779,28 @@ msgstr "मित् खोबोर कागोज रे आमाक् ग�
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "मित् खोबोर कागोज रे आमाक् गार चिता़र आ़चुर ला़गित् ओता आर ओर."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "आ़डी रुप ञेलाक्"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "आ़डी रुप ञेलाक्"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "आमाक् चिता़र  टेलिविजान रे ञेलोक् लेका रेयाक् हिंस तेयार ला़गित् ओर आर ओताय मे."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

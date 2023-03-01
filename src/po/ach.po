@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2010-12-09 09:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1778,6 +1778,29 @@ msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Dii wek olok wir mamegi dwoko ne nioo imarac."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Dol matye ki ebukutu ma i kio"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Dol matye ki ebukutu ma i kio"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Dii ci iywa wek omi dul kom cal ma megi onen calo ma gutye itelevision."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

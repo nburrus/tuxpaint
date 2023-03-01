@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2013-01-19 23:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sindhi-DV\n"
@@ -1778,6 +1778,30 @@ msgstr "पंहिंजे चित्रकारीअ निगेटि�
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "पंहिंजे चित्रकारीअ निगेटिव में बदिलाइण लाइ क्लिक करियो."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "सैरबीन"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "सैरबीन"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"पंहिंजे तस्वीर जा हिसा इएं बणाइण लाइ ॼणु उहे टेलीविज़न ते नज़र अचनि था क्लिक करियो ऐं "
+"गिहिलियो."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2014-06-08 23:43+0630\n"
 "Last-Translator: Savitha <savithasprasad@yahoo.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -1795,6 +1795,30 @@ msgstr "ನಿಮ್ಮ ಪೇಂಟಿಂಗ್ ಅನ್ನು ಒಂದು �
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "ನಿಮ್ಮ ಪೇಂಟಿಂಗ್ ಅನ್ನು ಒಂದು ದಿನಪತ್ರಿಕೆಯಲ್ಲಿ ಬದಲಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಎಳೆಯಿರಿ."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "ಚಿತ್ರದರ್ಶಕ"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "ಚಿತ್ರದರ್ಶಕ"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗವು ದೂರದರ್ಶನದಲ್ಲಿರುವ ರೀತಿಯಲ್ಲಿ ಕಾಣಿಸುವಂತೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
+"ಎಳೆಯಿರಿ."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2008-01-18 12:40-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -1750,6 +1750,25 @@ msgstr "Klikkja til at gera eina spegilsmynd."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Klikkja til at gera eina spegilsmynd."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Kaleidoskop"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Kaleidoskop"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "Klikkja og drag músina til at broyta litin á myndini."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

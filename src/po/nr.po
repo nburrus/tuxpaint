@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1796,6 +1796,23 @@ msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+msgid "Kaleido-4"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+msgid "Kaleido-6"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
+"weithombe. "
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

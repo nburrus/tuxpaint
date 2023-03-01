@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -1780,6 +1780,28 @@ msgstr "നിങ്ങളുടെ ചിത്രം പത്രം പോല
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "നിങ്ങളുടെ ചിത്രം പത്രം പോലെയാക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "കാലിഡോസ്കോപ്പ്"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "കാലിഡോസ്കോപ്പ്"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "ടെലിവിഷനില്‍ കാണുന്നതുപോലെ നിങ്ങളുടെ ചിത്രത്തെ മാറ്റാന്‍ മൗസിലമര്‍ത്തി വലിക്കുക."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

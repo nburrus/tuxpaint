@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2006-09-21 20:04+0200\n"
 "Last-Translator: Shumani Mercy Ṋevhulaudzi <nevhulaudzi@saps.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1794,6 +1794,22 @@ msgstr "Kiḽikani u ita tshifanyiso."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Kiḽikani u ita tshifanyiso."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+msgid "Kaleido-4"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+msgid "Kaleido-6"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Kiḽikani ni sudzuluse mausu u mona u shandukisa muvhala wa tshifanyiso."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

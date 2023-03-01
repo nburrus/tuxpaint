@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2017-12-20 13:24+0400\n"
 "Last-Translator: Giasher <giasher@gmail.com>\n"
 "Language-Team: Gia Shervashidze <giasher@gmail.com>\n"
@@ -1745,6 +1745,30 @@ msgstr "დაწკაპეთ და გადაათრიეთ ნახ
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "დაწკაპეთ და გადაათრიეთ ნახატის გაზეთად გარდასაქმნელად."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "კალეიდოსკოპი"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "კალეიდოსკოპი"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"დაწკაპეთ და გადაატარეთ გამოსახულების ნაწილების ტელევიზით ჩვენების რეჟიმში "
+"გრდასაქმნელად."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

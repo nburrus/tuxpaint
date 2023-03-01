@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2015-03-09 11:22+0000\n"
 "Last-Translator: Nudjaree <poonim_p@hotmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1757,6 +1757,28 @@ msgstr "คลิ๊กเพื่อเปลี่ยนภาพวาดข
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "คลิ๊กเพื่อเปลี่ยนภาพวาดของคุณให้กลับสี"
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "กล้องคาเลโดสโคป"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "กล้องคาเลโดสโคป"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "คลิกและลากเพื่อให้ชิ้นส่วนของภาพของคุณเหมือนอยู่ในจอโทรทัศน์."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

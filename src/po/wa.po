@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -1789,6 +1789,21 @@ msgstr "Clitchîz po mete l' imådje come dins on muroe."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Clitchîz po mete l' imådje come dins on muroe."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+msgid "Kaleido-4"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+msgid "Kaleido-6"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

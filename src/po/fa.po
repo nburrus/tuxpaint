@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2014-11-09 21:17+0330\n"
 "Last-Translator: snima <unix.nima@gmail.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
@@ -1783,6 +1783,26 @@ msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقا
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid "Click to turn your drawing into a newspaper."
+msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقاشی جابجا شود."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "لوله‌ شكل‌ نما "
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "لوله‌ شكل‌ نما "
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقاشی جابجا شود."
 
 #: ../../magic/src/kalidescope.c:128

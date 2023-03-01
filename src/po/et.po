@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2015-03-07 13:09+0000\n"
 "Last-Translator: Sven Ollino <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1768,6 +1768,29 @@ msgstr "Klõpsa pildil, et teha see tervenisti negatiivseks."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Klõpsa pildil, et teha see tervenisti negatiivseks."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Kaleidoskoop"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Kaleidoskoop"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Hoia hiirenuppu all ja liiguta, et muuta pilti vana telekapildi taoliseks."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

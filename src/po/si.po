@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2010-05-14 11:37-0000\n"
 "Last-Translator: Menik Prasantha <manikprasantha@gmail.com>\n"
 "Language-Team: none\n"
@@ -1802,6 +1802,28 @@ msgstr "ඔබගේ පින්තූරය අනුඡායාවක් බ
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "ඔබගේ පින්තූරය අනුඡායාවක් බවට හැරවීමට මූසික ක්ලිකය කරන්න."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "බහුරූපේක්ෂය"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "බහුරූපේක්ෂය"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "එබීමෙන් ඔබගේ පින්තුරයේ කොටසක්  පෙනෙන ආකාරයරුපවහිනයේ."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

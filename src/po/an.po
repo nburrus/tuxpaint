@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2017-12-29 10:04+0100\n"
 "Last-Translator: juanpabl <jpmart[arroba]unizar.es>\n"
 "Language-Team: softaragonés\n"
@@ -1771,6 +1771,30 @@ msgstr "Fe clic y arrociega pa tornar lo tuyo dibuixo en un periodico."
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Fe clic y arrociega pa tornar lo tuyo dibuixo en un periodico."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Caleidoscopio"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Caleidoscopio"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Fe clic y arrociega lo ratet pa fer que bella parte d'o tuyo dibuixo se "
+"veigan como en a televisión."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

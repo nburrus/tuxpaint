@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1770,6 +1770,28 @@ msgstr "ꯑꯗꯣꯝꯒꯤ ꯄꯦꯏꯟꯇꯤꯡ ꯑꯁꯤ ꯅꯦꯒꯦꯇꯤꯚ
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯄꯦꯏꯟꯇꯤꯡ ꯑꯁꯤ ꯅꯦꯒꯦꯇꯤꯚ ꯑꯣꯟꯊꯣꯛꯅꯕ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "ꯀꯦꯂꯥꯏꯗꯣꯁꯀꯣꯞ"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "ꯀꯦꯂꯥꯏꯗꯣꯁꯀꯣꯞ"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏꯒꯤ ꯁꯔꯨꯛꯁꯤꯡ ꯇꯦꯂꯤꯚꯤꯖꯟꯗ ꯎꯕ ꯃꯥꯟꯅ ꯁꯦꯝꯅꯕ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ ꯑꯃꯁꯨꯡ ꯆꯤꯡꯉꯣ."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

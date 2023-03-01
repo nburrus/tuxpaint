@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2014-03-22 11:39+0400\n"
 "Last-Translator: Aram Palyan <ararat.info@gmail.com>\n"
 "Language-Team: Armenian <ararat.info@gmail.com>\n"
@@ -1791,6 +1791,30 @@ msgstr "Սեղմիր և քաշիր նկարդ թերթի նման դարձնել
 #| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Սեղմիր և քաշիր նկարդ թերթի նման դարձնելու համար:"
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Գեղադիտակ"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Գեղադիտակ"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Սեղմիր և քաշիր` նկարիդ որոշ հատվածներին հեռուստաէկրանի պատկերի տեսք տալու "
+"համար:"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

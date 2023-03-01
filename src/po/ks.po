@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2012-01-02 11:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-PA\n"
@@ -1780,6 +1780,30 @@ msgstr "  کلِک کٔریو پَنٕن۪ی پینٕن۪ی پینٹِنگ من�
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "  کلِک کٔریو پَنٕن۪ی پینٕن۪ی پینٹِنگ منفی بناونہٕ خٲطرٕ۔"
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "کیلوڈوسکوپ"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "کیلوڈوسکوپ"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"کلِک تہٕ ڈریگ کٔریو پَنٕنہِ تصویر ہِنٛد۪ی حصہٕ تِتھ۪ی بناونہٕ خٲطرٕ زَن تہِ چھہٕ تِم ٹیلی وجنَس "
+"پد۪ٹھ۔"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

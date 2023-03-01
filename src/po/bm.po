@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2010-09-04 17:25+0200\n"
 "Last-Translator: Fasokan <konate20032001@yahoo.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1779,6 +1779,29 @@ msgstr "Kilike, i ka ja fan bɛɛ kɛ negatifu ye."
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Kilike, i ka ja fan bɛɛ kɛ negatifu ye."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Kaleyidosikɔpu "
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Kaleyidosikɔpu "
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Kilike i ka ɲinɛnin cɛɛnɛ k'i ka ja fan dɔw kɛ i ko u bɛ ka bɔ telewisɔn na. "
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.16\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2006-09-22 01:42+0200\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1766,6 +1766,21 @@ msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Nqomfa ukuze wenze umfuziselo wesipili."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+msgid "Kaleido-4"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+msgid "Kaleido-6"
+msgstr ""
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "Nqomfa ushenxashenxise impuku ukuze uguqule umbala womfanekiso."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

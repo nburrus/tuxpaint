@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2011-01-07 15:08+0530\n"
 "Last-Translator: saikumar <ramukiashc@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -1773,6 +1773,28 @@ msgstr "మీ చిత్రానికి  వ్యతిరేక గు�
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "మీ చిత్రానికి  వ్యతిరేక గుణం అమద్చడానికి వేయడానికి మౌస్ ని క్లిక్ చేయండి."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "చిత్రవిచిత్రములుగా అగుపడే వోక విధమైన గొట్టము"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "చిత్రవిచిత్రములుగా అగుపడే వోక విధమైన గొట్టము"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr "చిత్రములో మీకు కావలిసిన ప్రాంతాలు  టివి లోని చిత్రమువలె కనిపించుటకు క్లిక్ చేసీ లాగండి."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

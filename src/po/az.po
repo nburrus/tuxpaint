@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2008-02-10 19:28+0400\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -1798,6 +1798,26 @@ msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
 #, fuzzy
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Şəkili güzgüdəki kimi görmək üçün mausun sol düyməsini bas."
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "Kaleydoskop"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "Kaleydoskop"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+"Şəkili azca rəngləmək  üçün mausun sol düyməsini bas və mausu hərəkətə gətir."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"

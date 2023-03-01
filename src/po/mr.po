@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.21c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-28 01:15-0800\n"
+"POT-Creation-Date: 2023-03-01 01:24-0800\n"
 "PO-Revision-Date: 2013-03-28 12:11+0530\n"
 "Last-Translator: Santosh Jankiram Kshetre <quicklearning@rediffmail.com>\n"
 "Language-Team: Marathi\n"
@@ -1795,6 +1795,30 @@ msgstr "अपने चित्र को नकारात्मक मे�
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "अपने चित्र को नकारात्मक में बदलने के लिए क्लिक करें|"
+
+#: ../../magic/src/kaleidoscope_lens.c:36
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-4"
+msgstr "बहुरूपदर्शक"
+
+#: ../../magic/src/kaleidoscope_lens.c:37
+#, fuzzy
+#| msgid "Kaleidoscope"
+msgid "Kaleido-6"
+msgstr "बहुरूपदर्शक"
+
+#: ../../magic/src/kaleidoscope_lens.c:41
+#: ../../magic/src/kaleidoscope_lens.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag around your picture to look through it with a kaleidoscope!"
+msgstr ""
+" तस्वीर के कुछ हिस्सों को ऐसे बदलने के लिए जैसे वह टीवी पर हैं,इस तरह दिखाने के लिए क्लिक "
+"करें और माउस को स्थानांतरित करें|"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
