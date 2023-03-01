@@ -1,0 +1,14 @@
+                Tux Paint "Magic" Tool: Kaleido-4 and Kaleido-6
+
+                              Group: Picture Warps
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+   These two tools make it look like your picture is being viewed through a
+   kaleidoscope.
+
+   See also: Kaléidoscope.
+
+     ----------------------------------------------------------------------
+
+                                Tux Paint 0.9.29

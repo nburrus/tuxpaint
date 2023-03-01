@@ -50,6 +50,7 @@ Picture Warps
 
      * Flip
      * Fold
+     * Kaleido-4 and Kaleido-6
      * Mirror
      * Panels
      * Perspective
