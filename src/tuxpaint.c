@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - February 26, 2023
+  June 14, 2002 - March 3, 2023
 */
 
 #include "platform.h"
@@ -2215,7 +2215,7 @@ static int do_new_dialog(void);
 static int do_new_dialog_add_colors(SDL_Surface * *thumbs, int num_files,
                                     int *d_places, char * *d_names,
                                     char * *d_exts, int *white_in_palette);
-static int do_color_picker(void);
+static int do_color_picker(int prev_color);
 static void draw_color_picker_crosshairs(int color_picker_left,
                                          int color_picker_top,
                                          int color_picker_val_left,
@@ -2228,7 +2228,7 @@ static void draw_color_picker_palette_and_values(int color_picker_left,
                                                  int color_picker_val_top);
 static void render_color_picker_palette(void);
 static int do_color_sel(int temp_mode);
-static int do_color_mix(void);
+static int do_color_mix(int prev_color);
 static void draw_color_mixer_blank_example(void);
 static void calc_color_mixer_average(float *out_h, float *out_s,
                                      float *out_v);
@@ -5296,12 +5296,12 @@ static void mainloop(void)
 
                 chose_color = 0;
                 if (cur_color == (unsigned) COLOR_PICKER)
-                  chose_color = do_color_picker();
+                  chose_color = do_color_picker(old_color);
                 else if (cur_color == (unsigned) COLOR_SELECTOR)
                   chose_color = do_color_sel(0);
                 else if (cur_color == (unsigned) COLOR_MIXER)
                 {
-                  chose_color = do_color_mix();
+                  chose_color = do_color_mix(old_color);
                   if (!chose_color)
                     cur_color = old_color;
                 }
@@ -24096,12 +24096,12 @@ static int do_new_dialog(void)
 
       if (which == COLOR_PICKER)
       {
-        if (do_color_picker() == 0)
+        if (do_color_picker(-1) == 0)
           return (0);
       }
       else if (which == COLOR_MIXER)
       {
-        if (do_color_mix() == 0)
+        if (do_color_mix(-1) == 0)
           return (0);
       }
 
@@ -24809,7 +24809,7 @@ static void do_quick_eraser(void) {
  * Display a large prompt, allowing the user to pick a
  * color from a large palette.
  */
-static int do_color_picker(void)
+static int do_color_picker(int prev_color)
 {
 #ifndef NO_PROMPT_SHADOWS
   int i;
@@ -24828,6 +24828,9 @@ static int do_color_picker(void)
   SDLKey key;
   int color_picker_left, color_picker_top;
   int color_picker_val_left, color_picker_val_top;
+  int prev_color_left, prev_color_top;
+  int pipette_left, pipette_top;
+  int mixer_left, mixer_top;
   int back_left, back_top, done_left, done_top;
   SDL_Rect color_example_dest;
   SDL_Surface *backup;
@@ -24993,6 +24996,59 @@ static int do_color_picker(void)
                           color_hexes[COLOR_PICKER][2]));
 
 
+  /* Draw buttons to pull colors from other sources: */
+
+  /* (Color buckets) */
+
+  prev_color_left = r_final.x + r_final.w - (img_back->w + 2) * 3;
+  prev_color_top = color_picker_top + img_color_picker->h - (img_back->h + 2) * 2;
+
+  if (prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) {
+    dest.x = prev_color_left;
+    dest.y = prev_color_top;
+    dest.w = img_back->w;
+    dest.h = img_back->h;
+
+    SDL_FillRect(screen, &dest,
+                 SDL_MapRGB(screen->format,
+                            color_hexes[prev_color][0],
+                            color_hexes[prev_color][1],
+                            color_hexes[prev_color][2]));
+  }
+
+
+  /* (Pipette) */
+
+  pipette_left = r_final.x + r_final.w - (img_back->w + 2) * 2;
+  pipette_top = color_picker_top + img_color_picker->h - (img_back->h + 2) * 2;
+
+  dest.x = pipette_left;
+  dest.y = pipette_top;
+  dest.w = img_back->w;
+  dest.h = img_back->h;
+
+  SDL_FillRect(screen, &dest,
+               SDL_MapRGB(screen->format,
+                          color_hexes[NUM_DEFAULT_COLORS][0],
+                          color_hexes[NUM_DEFAULT_COLORS][1],
+                          color_hexes[NUM_DEFAULT_COLORS][2]));
+
+  /* (Mixer) */
+
+  mixer_left = r_final.x + r_final.w - (img_back->w + 2);
+  mixer_top = color_picker_top + img_color_picker->h - (img_back->h + 2) * 2;
+
+  dest.x = mixer_left;
+  dest.y = mixer_top;
+  dest.w = img_back->w;
+  dest.h = img_back->h;
+
+  SDL_FillRect(screen, &dest,
+               SDL_MapRGB(screen->format,
+                          color_hexes[NUM_DEFAULT_COLORS + 2][0],
+                          color_hexes[NUM_DEFAULT_COLORS + 2][1],
+                          color_hexes[NUM_DEFAULT_COLORS + 2][2]));
+
 
   /* Show "Back" button */
 
@@ -25001,6 +25057,8 @@ static int do_color_picker(void)
 
   dest.x = back_left;
   dest.y = back_top;
+  dest.w = img_back->w;
+  dest.h = img_back->h;
 
   SDL_BlitSurface(img_back, NULL, screen, &dest);
 
@@ -25170,6 +25228,47 @@ static int do_color_picker(void)
 
           chose = 0;
           done = 1;
+        }
+        else if (event.button.x >= prev_color_left &&
+                 event.button.x < prev_color_left + img_back->w &&
+                 event.button.y >= prev_color_top &&
+                 event.button.y < prev_color_top + img_back->h &&
+                 prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
+        {
+          float h, s, v;
+
+          /* Switch to the chosen bucket color */
+
+          rgbtohsv(color_hexes[prev_color][0],
+                   color_hexes[prev_color][1],
+                   color_hexes[prev_color][2],
+                   &h, &s, &v);
+
+          color_picker_v = (img_color_picker_val->h * (1.0 - v));
+          color_picker_x = (img_color_picker->w * s);
+          color_picker_y = (img_color_picker->h * (h / 360.0));
+
+          /* Re-render the palette with the new value */
+          render_color_picker_palette();
+
+          /* Update (entire) color box */
+          SDL_GetRGB(getpixel_img_color_picker
+                     (img_color_picker, color_picker_x, color_picker_y),
+                     img_color_picker->format, &r, &g, &b);
+
+          SDL_FillRect(screen, &color_example_dest,
+                       SDL_MapRGB(screen->format, r, g, b));
+
+          SDL_UpdateRect(screen,
+                         color_example_dest.x, color_example_dest.y,
+                         color_example_dest.w, color_example_dest.h);
+
+
+          /* Redraw hue/sat palette, and val slider, and redraw crosshairs */
+          draw_color_picker_palette_and_values(color_picker_left,
+                                               color_picker_top,
+                                               color_picker_val_left,
+                                               color_picker_val_top);
         }
       }
       else if (event.type == SDL_MOUSEMOTION)
@@ -25615,7 +25714,7 @@ int mixer_undo_buf[NUM_COLOR_MIX_UNDO_BUFS];
  * Display a large prompt, allowing the user to mix
  * colors together from hues and black/grey/white.
  */
-static int do_color_mix(void)
+static int do_color_mix(int prev_color)
 {
   int i, btn_clicked;
 #ifndef NO_PROMPT_SHADOWS

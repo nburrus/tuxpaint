@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.1 (0.9.29)
+2023.March.3 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -99,6 +99,15 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsofware.com>
       (Based on http://www.codersnotes.com/notes/signed-distance-fields/
       by Richard Mitton)
+
+  * Improvements to Color selectors:
+    --------------------------------
+    * [WIP] Rainbow palette color picker allows you to switch
+      to the chosen Tux Paint colors, [WIP] the pipette color selector
+      color, or [WIP] the color mixer color.
+
+    * [WIP] The color mixer allows you to switch to [WIP] the chosen
+      Tux Paint color or [WIP] the rainbow palette color picker color.
 
   * New Starter
     -----------
