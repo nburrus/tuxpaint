@@ -25033,6 +25033,12 @@ static int do_color_picker(int prev_color)
                           color_hexes[NUM_DEFAULT_COLORS][1],
                           color_hexes[NUM_DEFAULT_COLORS][2]));
 
+  dest.x = pipette_left + (img_back->w - img_color_sel->w) / 2;
+  dest.y = pipette_top + (img_back->h - img_color_sel->h) / 2;
+
+  SDL_BlitSurface(img_color_sel, NULL, screen, &dest);
+
+
   /* (Mixer) */
 
   mixer_left = r_final.x + r_final.w - (img_back->w + 2);
@@ -25048,6 +25054,11 @@ static int do_color_picker(int prev_color)
                           color_hexes[NUM_DEFAULT_COLORS + 2][0],
                           color_hexes[NUM_DEFAULT_COLORS + 2][1],
                           color_hexes[NUM_DEFAULT_COLORS + 2][2]));
+
+  dest.x = mixer_left + (img_back->w - img_color_mix->w) / 2;
+  dest.y = mixer_top + (img_back->h - img_color_mix->h) / 2;
+
+  SDL_BlitSurface(img_color_mix, NULL, screen, &dest);
 
 
   /* Show "Back" button */
@@ -25229,21 +25240,44 @@ static int do_color_picker(int prev_color)
           chose = 0;
           done = 1;
         }
-        else if (event.button.x >= prev_color_left &&
-                 event.button.x < prev_color_left + img_back->w &&
-                 event.button.y >= prev_color_top &&
-                 event.button.y < prev_color_top + img_back->h &&
-                 prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
+        else if ((event.button.x >= prev_color_left &&
+                  event.button.x < prev_color_left + img_back->w &&
+                  event.button.y >= prev_color_top &&
+                  event.button.y < prev_color_top + img_back->h &&
+                  prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) ||
+                 (event.button.x >= pipette_left &&
+                  event.button.x < pipette_left + img_back->w &&
+                  event.button.y >= pipette_top &&
+                  event.button.y < pipette_top + img_back->h) ||
+                 (event.button.x >= mixer_left &&
+                  event.button.x < mixer_left + img_back->w &&
+                  event.button.y >= mixer_top &&
+                  event.button.y < mixer_top + img_back->h))
         {
+          int c;
           float h, s, v;
 
-          /* Switch to the chosen bucket color */
+          if (event.button.x >= prev_color_left &&
+              event.button.x < prev_color_left + img_back->w &&
+              event.button.y >= prev_color_top &&
+              event.button.y < prev_color_top + img_back->h) {
+            /* Switch to the chosen bucket color */
+            c = prev_color; 
+          } else if (event.button.x >= pipette_left &&
+                     event.button.x < pipette_left + img_back->w &&
+                     event.button.y >= pipette_top &&
+                     event.button.y < pipette_top + img_back->h) {
+            /* Pipette */
+            c = NUM_DEFAULT_COLORS;
+          } else {
+            /* Mixer */
+            c = NUM_DEFAULT_COLORS + 2;
+          }
 
-          rgbtohsv(color_hexes[prev_color][0],
-                   color_hexes[prev_color][1],
-                   color_hexes[prev_color][2],
+          /* Conver the chosen color to HSV & reposition crosshairs */
+          rgbtohsv(color_hexes[c][0], color_hexes[c][1], color_hexes[c][2],
                    &h, &s, &v);
-
+  
           color_picker_v = (img_color_picker_val->h * (1.0 - v));
           color_picker_x = (img_color_picker->w * s);
           color_picker_y = (img_color_picker->h * (h / 360.0));
