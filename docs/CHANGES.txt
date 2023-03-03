@@ -100,15 +100,12 @@ https://tuxpaint.org/
       (Based on http://www.codersnotes.com/notes/signed-distance-fields/
       by Richard Mitton)
 
-  * Improvements to Color selectors:
+  * Improvements to Color selection:
     --------------------------------
-    * Rainbow palette color picker allows you to switch to the chosen
-      built-in color, the pipette (color selector) color, or the
-      color mixer's color.
-
-    * [WIP] The color mixer allows you to switch to the chosen built-in
-      color, the pipette (color selector) color, or the the rainbow palette
-      (color picker) color.
+    * The rainbow palette color picker allows you to switch to the
+      chosen built-in color, the pipette (color selector) color, or the
+      color mixer's color, and make adjustments using its hue, saturation,
+      and value controls.
 
   * New Starter
     -----------

@@ -161,6 +161,11 @@ Tux Paint の起動
                 数百段階の色相 — 上部の赤から下部の紫まで — が、数百段階の彩度 — 左側の淡い色から右側の純色まで —
                 で表示されます。縦のグレーの領域では、数百段階で、明度 — 上部が最も明るく、下部が最も暗い — を選ぶことができます。
                 緑色のチェックボタンをクリックして色を確定します。「もどる」ボタンをクリックすると、色を選択せずにポップアップを終了します。
+                You may also set this tool's color to that of other color
+                choices:
+                   * Whichever built-in color is selected, if any
+                   * The Color Picker's current color
+                   * The Color Mixer's current color
               * カラーミキサー
                 絵の具のパレットのようなアイコンの「カラーミキサー」では、加法混色の三原色 —
                 赤、青、黄と、白（色合い）、グレー（色調）、黒（濃淡）を混ぜて色を作成することができます。

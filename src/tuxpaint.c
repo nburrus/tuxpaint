@@ -25293,6 +25293,8 @@ static int do_color_picker(int prev_color)
                                                color_picker_top,
                                                color_picker_val_left,
                                                color_picker_val_top);
+
+          playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
         }
       }
       else if (event.type == SDL_MOUSEMOTION)
@@ -25403,6 +25405,20 @@ static int do_color_picker(int prev_color)
                 event.button.x < back_left + img_back->w &&
                 event.button.y >= back_top
                 && event.button.y < back_top + img_back->h)
+              do_setcursor(cursor_hand);
+            else if ((event.button.x >= prev_color_left &&
+                      event.button.x < prev_color_left + img_back->w &&
+                      event.button.y >= prev_color_top &&
+                      event.button.y < prev_color_top + img_back->h &&
+                      prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) ||
+                     (event.button.x >= pipette_left &&
+                      event.button.x < pipette_left + img_back->w &&
+                      event.button.y >= pipette_top &&
+                      event.button.y < pipette_top + img_back->h) ||
+                     (event.button.x >= mixer_left &&
+                      event.button.x < mixer_left + img_back->w &&
+                      event.button.y >= mixer_top &&
+                      event.button.y < mixer_top + img_back->h))
               do_setcursor(cursor_hand);
             else if (event.button.x >= done_left &&
                      event.button.x < done_left + img_yes->w &&
@@ -25731,9 +25747,11 @@ enum
   COLOR_MIXER_BTN_CLEAR,
   COLOR_MIXER_BTN_USE,
   COLOR_MIXER_BTN_BACK,
+#if 0
   COLOR_MIXER_BTN_PREV_COLOR,
   COLOR_MIXER_BTN_PIPETTE,
   COLOR_MIXER_BTN_RAINBOW,
+#endif
   NUM_COLOR_MIXER_BTNS
 };
 
@@ -26001,6 +26019,7 @@ static int do_color_mix(int prev_color)
   SDL_BlitSurface(img_mixerlabel_clear, NULL, screen, &dest);
 
 
+#if 0
   /* Draw buttons to pull colors from other sources: */
 
   /* (Color buckets) */
@@ -26036,15 +26055,15 @@ static int do_color_mix(int prev_color)
 
   /* (Rainbow) */
 
-  img_color_picker_btn = thumbnail(img_color_picker, cell_w - 2, cell_h - 2, 0);
-
   color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW] = r_final.x + (cell_w * 2) + 2;
   color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW] = r_final.y + (cell_h * 2) + 2;
 
+  img_color_picker_btn = thumbnail(img_color_picker, cell_w - 2, cell_h - 2, 0);
   if (img_color_picker_btn != NULL) {
     dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW];
     dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW];
     SDL_BlitSurface(img_color_picker_btn, NULL, screen, &dest);
+    SDL_FreeSurface(img_color_picker_btn);
   }
 
   dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW] + 4;
@@ -26057,6 +26076,7 @@ static int do_color_mix(int prev_color)
                           color_hexes[NUM_DEFAULT_COLORS + 2][0],
                           color_hexes[NUM_DEFAULT_COLORS + 2][1],
                           color_hexes[NUM_DEFAULT_COLORS + 2][2]));
+#endif
 
 
   /* Show "Back" button */
@@ -26166,7 +26186,13 @@ static int do_color_mix(int prev_color)
             (btn_clicked == COLOR_MIXER_BTN_UNDO
              && color_mix_cur_undo != color_mix_oldest_undo)
             || (btn_clicked == COLOR_MIXER_BTN_REDO
-                && color_mix_cur_undo != color_mix_newest_undo))
+                && color_mix_cur_undo != color_mix_newest_undo)
+#if 0
+            || (btn_clicked == COLOR_MIXER_BTN_PREV_COLOR && prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
+            || btn_clicked == COLOR_MIXER_BTN_PIPETTE
+            || btn_clicked == COLOR_MIXER_BTN_RAINBOW
+#endif
+           )
         {
           do_setcursor(cursor_hand);
         }
@@ -26252,6 +26278,14 @@ static int do_color_mix(int prev_color)
 
           playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
         }
+#if 0
+        else if ((btn_clicked == COLOR_MIXER_BTN_PREV_COLOR && prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
+                 || btn_clicked == COLOR_MIXER_BTN_PIPETTE
+                 || btn_clicked == COLOR_MIXER_BTN_RAINBOW)
+        {
+          printf("clicked %d\n", btn_clicked);
+        }
+#endif
         else if (btn_clicked == COLOR_MIXER_BTN_BACK)
         {
           /* Decided to go Back */
@@ -26442,10 +26476,6 @@ static int do_color_mix(int prev_color)
 
   update_canvas(0, 0, canvas->w, canvas->h);
 
-
-  if (img_color_picker_btn != NULL) {
-    SDL_FreeSurface(img_color_picker_btn);
-  }
 
   return (chose);
 }
