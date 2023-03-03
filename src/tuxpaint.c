@@ -1690,6 +1690,7 @@ static SDL_Surface *img_label_select, *img_label_apply;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb,
   *img_color_picker_val;
 static SDL_Surface *img_paintwell, *img_color_sel, *img_color_mix;
+static SDL_Surface *img_color_grab;
 static int color_picker_x, color_picker_y, color_picker_v;
 static int color_mixer_reset;
 
@@ -2222,6 +2223,7 @@ static void draw_color_picker_crosshairs(int color_picker_left,
                                          int color_picker_val_top);
 static void set_color_picker_crosshair_size(void);
 static void draw_color_picker_values(int l, int t);
+static void draw_color_grab_btn(SDL_Rect dest, int c);
 static void draw_color_picker_palette_and_values(int color_picker_left,
                                                  int color_picker_top,
                                                  int color_picker_val_left,
@@ -25009,11 +25011,7 @@ static int do_color_picker(int prev_color)
     dest.w = img_back->w;
     dest.h = img_back->h;
 
-    SDL_FillRect(screen, &dest,
-                 SDL_MapRGB(screen->format,
-                            color_hexes[prev_color][0],
-                            color_hexes[prev_color][1],
-                            color_hexes[prev_color][2]));
+    draw_color_grab_btn(dest, prev_color);
   }
 
 
@@ -25027,11 +25025,7 @@ static int do_color_picker(int prev_color)
   dest.w = img_back->w;
   dest.h = img_back->h;
 
-  SDL_FillRect(screen, &dest,
-               SDL_MapRGB(screen->format,
-                          color_hexes[NUM_DEFAULT_COLORS][0],
-                          color_hexes[NUM_DEFAULT_COLORS][1],
-                          color_hexes[NUM_DEFAULT_COLORS][2]));
+  draw_color_grab_btn(dest, NUM_DEFAULT_COLORS);
 
   dest.x = pipette_left + (img_back->w - img_color_sel->w) / 2;
   dest.y = pipette_top + (img_back->h - img_color_sel->h) / 2;
@@ -25049,11 +25043,7 @@ static int do_color_picker(int prev_color)
   dest.w = img_back->w;
   dest.h = img_back->h;
 
-  SDL_FillRect(screen, &dest,
-               SDL_MapRGB(screen->format,
-                          color_hexes[NUM_DEFAULT_COLORS + 2][0],
-                          color_hexes[NUM_DEFAULT_COLORS + 2][1],
-                          color_hexes[NUM_DEFAULT_COLORS + 2][2]));
+  draw_color_grab_btn(dest, NUM_DEFAULT_COLORS + 2);
 
   dest.x = mixer_left + (img_back->w - img_color_mix->w) / 2;
   dest.y = mixer_top + (img_back->h - img_color_mix->h) / 2;
@@ -25682,6 +25672,51 @@ static void draw_color_picker_values(int l, int t)
 }
 
 
+static void draw_color_grab_btn(SDL_Rect dest, int c) {
+  int x, y;
+  Uint8 cr, cg, cb, r, g, b, a, tmp;
+  Uint32(*getpixel_btn) (SDL_Surface *, int, int);
+  Uint32(*getpixel_scrn) (SDL_Surface *, int, int);
+  void (*putpixel_scrn) (SDL_Surface *, int, int, Uint32);
+  SDL_Rect outline_dest;
+
+  for (y = -1; y <= 1; y++) {
+    for (x = -1; x <= 1; x++) {
+      outline_dest.x = dest.x + x;
+      outline_dest.y = dest.y + y;
+      outline_dest.w = dest.w;
+      outline_dest.h = dest.h;
+
+      SDL_BlitSurface(img_color_grab, NULL, screen, &outline_dest);
+    }
+  }
+
+  cr = color_hexes[c][0];
+  cg = color_hexes[c][1];
+  cb = color_hexes[c][2];
+
+  getpixel_btn = getpixels[img_color_grab->format->BytesPerPixel];
+  getpixel_scrn = getpixels[img_color_grab->format->BytesPerPixel];
+  putpixel_scrn = putpixels[screen->format->BytesPerPixel];
+
+  SDL_LockSurface(screen);
+  SDL_LockSurface(img_color_grab);
+  for (y = 0; y < dest.h && y < img_color_grab->h; y++) {
+    for (x = 0; x < dest.w && x < img_color_grab->w; x++) {
+      SDL_GetRGBA(getpixel_btn(img_color_grab, x, y), img_color_grab->format, &tmp, &tmp, &tmp, &a);
+      SDL_GetRGBA(getpixel_scrn(screen, dest.x + x, dest.y + y), screen->format, &r, &g, &b, &tmp);
+
+      r = ((cr * a) + (r * (255 - a))) / 255;
+      g = ((cg * a) + (g * (255 - a))) / 255;
+      b = ((cb * a) + (b * (255 - a))) / 255;
+
+      putpixel_scrn(screen, x + dest.x, y + dest.y, SDL_MapRGB(screen->format, r, g, b));
+    }
+  }
+  SDL_UnlockSurface(screen);
+  SDL_UnlockSurface(img_color_grab);
+}
+
 enum
 {
   COLOR_MIXER_BTN_RED,
@@ -25696,6 +25731,9 @@ enum
   COLOR_MIXER_BTN_CLEAR,
   COLOR_MIXER_BTN_USE,
   COLOR_MIXER_BTN_BACK,
+  COLOR_MIXER_BTN_PREV_COLOR,
+  COLOR_MIXER_BTN_PIPETTE,
+  COLOR_MIXER_BTN_RAINBOW,
   NUM_COLOR_MIXER_BTNS
 };
 
@@ -25751,6 +25789,7 @@ int mixer_undo_buf[NUM_COLOR_MIX_UNDO_BUFS];
 static int do_color_mix(int prev_color)
 {
   int i, btn_clicked;
+  SDL_Surface * img_color_picker_btn;
 #ifndef NO_PROMPT_SHADOWS
   SDL_Surface *alpha_surf;
 #endif
@@ -25794,6 +25833,7 @@ static int do_color_mix(int prev_color)
 
   cell_w = img_back->w + 2;
   cell_h = img_back->h + 2;
+
 
   /* Area for the dialog window */
   r_final.x = r_canvas.x + (r_canvas.w - (cell_w * 6)) / 2 - 4;
@@ -25959,6 +25999,64 @@ static int do_color_mix(int prev_color)
     color_mix_btn_tops[COLOR_MIXER_BTN_CLEAR] + img_back->h -
     img_mixerlabel_clear->h;
   SDL_BlitSurface(img_mixerlabel_clear, NULL, screen, &dest);
+
+
+  /* Draw buttons to pull colors from other sources: */
+
+  /* (Color buckets) */
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_PREV_COLOR] = r_final.x + (cell_w * 0) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_PREV_COLOR] = r_final.y + (cell_h * 2) + 2;
+
+  if (prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) {
+    dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_PREV_COLOR];
+    dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_PREV_COLOR];
+    dest.w = cell_w - 2;
+    dest.h = cell_h - 2;
+
+    draw_color_grab_btn(dest, prev_color);
+  }
+
+  /* (Pipette) */
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_PIPETTE] = r_final.x + (cell_w * 1) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_PIPETTE] = r_final.y + (cell_h * 2) + 2;
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_PIPETTE];
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_PIPETTE];
+  dest.w = cell_w - 2;
+  dest.h = cell_h - 2;
+
+  draw_color_grab_btn(dest, NUM_DEFAULT_COLORS);
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_PIPETTE] + (cell_w - img_color_sel->w) / 2;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_PIPETTE] + (cell_h - img_color_sel->h) / 2;
+
+  SDL_BlitSurface(img_color_sel, NULL, screen, &dest);
+
+  /* (Rainbow) */
+
+  img_color_picker_btn = thumbnail(img_color_picker, cell_w - 2, cell_h - 2, 0);
+
+  color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW] = r_final.x + (cell_w * 2) + 2;
+  color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW] = r_final.y + (cell_h * 2) + 2;
+
+  if (img_color_picker_btn != NULL) {
+    dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW];
+    dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW];
+    SDL_BlitSurface(img_color_picker_btn, NULL, screen, &dest);
+  }
+
+  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW] + 4;
+  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW] + 4;
+  dest.w = cell_w - 10;
+  dest.h = cell_h - 10;
+
+  SDL_FillRect(screen, &dest,
+               SDL_MapRGB(screen->format,
+                          color_hexes[NUM_DEFAULT_COLORS + 2][0],
+                          color_hexes[NUM_DEFAULT_COLORS + 2][1],
+                          color_hexes[NUM_DEFAULT_COLORS + 2][2]));
 
 
   /* Show "Back" button */
@@ -26344,6 +26442,10 @@ static int do_color_mix(int prev_color)
 
   update_canvas(0, 0, canvas->w, canvas->h);
 
+
+  if (img_color_picker_btn != NULL) {
+    SDL_FreeSurface(img_color_picker_btn);
+  }
 
   return (chose);
 }
@@ -30643,7 +30745,7 @@ static void setup(void)
   DEBUG_PRINTF("%s\n", tmp_str);
 
   safe_snprintf(tmp_str, sizeof(tmp_str),
-                "© 2002–2021 Bill Kendrick et al.");
+                "© 2002–2023 Bill Kendrick, et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
@@ -30929,6 +31031,7 @@ static void setup(void)
     loadimagerb(DATA_PREFIX "images/ui/scroll_down_off.png");
   img_color_sel = loadimagerb(DATA_PREFIX "images/ui/csel.png");
   img_color_mix = loadimagerb(DATA_PREFIX "images/ui/cmix.png");
+  img_color_grab = loadimagerb(DATA_PREFIX "images/ui/color_grab.png");
 
 #ifdef LOW_QUALITY_COLOR_SELECTOR
   img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
