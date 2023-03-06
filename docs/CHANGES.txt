@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.3 (0.9.29)
+2023.March.6 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -99,6 +99,18 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsofware.com>
       (Based on http://www.codersnotes.com/notes/signed-distance-fields/
       by Richard Mitton)
+
+  * Improvements to Shape tool:
+    ---------------------------
+    * Rotation of corner-stretched shapes are around their center,
+      rather than orbiting a corner.
+      Bill Kendrick <bill@newbreedsofware.com>
+
+    * Stretching a shape upwards rotates it 180-degrees
+      (e.g., stretching the triangle downwards makes an up-pointing
+      triangle (^), as before; but stretching it upwards now makes
+      a down-pointing triangle (v))
+      Bill Kendrick <bill@newbreedsofware.com>
 
   * Improvements to Color selection:
     --------------------------------

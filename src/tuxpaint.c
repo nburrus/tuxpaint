@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 3, 2023
+  June 14, 2002 - March 6, 2023
 */
 
 #include "platform.h"
@@ -2592,7 +2592,7 @@ static void mainloop(void)
 {
   int done, val_x, val_y, valhat_x, valhat_y, new_x, new_y,
     shape_tool_mode, shape_start_x, shape_start_y, shape_current_x,
-    shape_current_y, old_stamp_group, which;
+    shape_current_y, shape_ctr_x, shape_ctr_y, old_stamp_group, which;
   int num_things;
   int *thing_scroll;
   int do_draw;
@@ -2651,6 +2651,8 @@ static void mainloop(void)
   shape_start_y = 0;
   shape_current_x = 0;
   shape_current_y = 0;
+  shape_ctr_x = 0;
+  shape_ctr_y = 0;
   shape_tool_mode = SHAPE_TOOL_MODE_DONE;
   stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
   button_down = 0;
@@ -5216,7 +5218,7 @@ static void mainloop(void)
             {
               cur_shape = cur_thing;
 
-              /* Remove ghost previews an reset the tool */
+              /* Remove ghost previews and reset the tool */
               if (shape_tool_mode != SHAPE_TOOL_MODE_DONE)
               {
                 shape_tool_mode = SHAPE_TOOL_MODE_DONE;
@@ -5502,6 +5504,8 @@ static void mainloop(void)
 
                 shape_start_x = old_x;
                 shape_start_y = old_y;
+                shape_ctr_x = old_x;
+                shape_ctr_y = old_y;
 
                 shape_tool_mode = SHAPE_TOOL_MODE_STRETCH;
 
@@ -5525,8 +5529,8 @@ static void mainloop(void)
                   playsound(screen, 1, SND_LINE_END, 1, event.button.x,
                             SNDDIST_NEAR);
                   do_shape(shape_start_x, shape_start_y, shape_current_x,
-                           shape_current_y, shape_rotation(shape_start_x,
-                                                           shape_start_y,
+                           shape_current_y, shape_rotation(shape_ctr_x,
+                                                           shape_ctr_y,
                                                            event.button.x -
                                                            r_canvas.x,
                                                            event.button.y -
@@ -6348,6 +6352,14 @@ static void mainloop(void)
                 shape_current_x = event.button.x - r_canvas.x;
                 shape_current_y = event.button.y - r_canvas.y;
 
+                if (shape_mode == SHAPEMODE_CENTER) {
+                  shape_ctr_x = shape_start_x;
+                  shape_ctr_y = shape_start_y;
+                } else {
+                  shape_ctr_x = shape_start_x + (shape_current_x - shape_start_x) / 2;
+                  shape_ctr_y = shape_start_y + (shape_current_y - shape_start_y) / 2;
+                }
+
                 if (!simple_shapes && !shape_no_rotate[cur_shape])
                 {
                   shape_tool_mode = SHAPE_TOOL_MODE_ROTATE;
@@ -6359,7 +6371,7 @@ static void mainloop(void)
                             shape_current_y) * (shape_start_y -
                                                 shape_current_y));
 
-                  SDL_WarpMouse(shape_current_x + r_ttools.w, shape_start_y);
+                  SDL_WarpMouse(shape_ctr_x + (shape_current_x - shape_ctr_x) * 1.05 + r_canvas.x, shape_ctr_y + r_canvas.y);
                   do_setcursor(cursor_rotate);
 
 
@@ -6374,7 +6386,7 @@ static void mainloop(void)
 
                   do_shape(shape_start_x, shape_start_y,
                            shape_current_x, shape_current_y,
-                           shape_rotation(shape_start_x, shape_start_y,
+                           shape_rotation(shape_ctr_x, shape_ctr_y,
                                           shape_current_x, shape_current_y),
                            0);
 
@@ -6413,8 +6425,8 @@ static void mainloop(void)
                 playsound(screen, 1, SND_LINE_END, 1, event.button.x,
                           SNDDIST_NEAR);
                 do_shape(shape_start_x, shape_start_y, shape_current_x,
-                         shape_current_y, shape_rotation(shape_start_x,
-                                                         shape_start_y,
+                         shape_current_y, shape_rotation(shape_ctr_x,
+                                                         shape_ctr_y,
                                                          event.button.x -
                                                          r_canvas.x,
                                                          event.button.y -
@@ -7216,11 +7228,11 @@ static void mainloop(void)
           {
             int deg;
 
-            deg = shape_rotation(shape_start_x, shape_start_y, old_x, old_y);
+            deg = shape_rotation(shape_ctr_x, shape_ctr_y, old_x, old_y);
             do_shape(shape_start_x, shape_start_y, shape_current_x,
                      shape_current_y, deg, 0);
 
-            deg = shape_rotation(shape_start_x, shape_start_y, new_x, new_y);
+            deg = shape_rotation(shape_ctr_x, shape_ctr_y, new_x, new_y);
             do_shape(shape_start_x, shape_start_y, shape_current_x,
                      shape_current_y, deg, 0);
 
@@ -16016,7 +16028,12 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
   int side, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
   float a1, a2, rotn_rad, init_ang, angle_skip;
   int xx, yy, offx, offy, max_x, max_y;
+  int upsidedown = 0;
 
+  if (ny < sy) {
+    upsidedown = 1;
+    rotn = (rotn + 180) % 360;
+  }
 
   /* Determine radius/shape of the shape to draw: */
 
@@ -16166,25 +16183,44 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     {
       rotn_rad = rotn * M_PI / 180;
 
-      xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
-      yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
+      if (shape_mode == SHAPEMODE_CENTER) {
+        xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
+        yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
+    
+        x1 = xp - offx;
+        y1 = yp - offy;
+    
+        xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
+        yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
+    
+        x2 = xp - offx;
+        y2 = yp - offy;
+    
+        xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
+        yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
+    
+        xv = xp - offx;
+        yv = yp - offy;
+      } else {
+        xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
+        yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
 
-      x1 = xp - offx;
-      y1 = yp - offy;
+        x1 = xp;
+        y1 = yp;
+    
+        xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
+        yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
+    
+        x2 = xp;
+        y2 = yp;
+    
+        xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
+        yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
 
-      xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
-      yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
-
-      x2 = xp - offx;
-      y2 = yp - offy;
-
-      xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
-      yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
-
-      xv = xp - offx;
-      yv = yp - offy;
+        xv = xp;
+        yv = yp;
+      }
     }
-
 
     /* Center the line around the center of the shape: */
 
@@ -16271,23 +16307,43 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
         {
           rotn_rad = rotn * M_PI / 180;
 
-          xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
-          yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
-
-          x1 = xp - offx;
-          y1 = yp - offy;
-
-          xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
-          yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
-
-          x2 = xp - offx;
-          y2 = yp - offy;
-
-          xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
-          yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
-
-          xv = xp - offx;
-          yv = yp - offy;
+          if (shape_mode == SHAPEMODE_CENTER) {
+            xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
+            yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
+  
+            x1 = xp - offx;
+            y1 = yp - offy;
+  
+            xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
+            yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
+  
+            x2 = xp - offx;
+            y2 = yp - offy;
+  
+            xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
+            yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
+  
+            xv = xp - offx;
+            yv = yp - offy;
+          } else {
+            xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
+            yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
+    
+            x1 = xp;
+            y1 = yp;
+        
+            xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
+            yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
+        
+            x2 = xp;
+            y2 = yp;
+        
+            xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
+            yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
+    
+            xv = xp;
+            yv = yp;
+          }
         }
 
 
