@@ -145,10 +145,15 @@
      * クリックまたはタップして、色が選べるツール（ふで、せん、かたちツール、および、はんこ、まほうツール）で使用する色を選択します。
      * 画像の中から色を選択するには、ピペット/カラーピッカー 💉 ボタンを使います。
           * ショートカット: [Ctrl] を押しながらキャンバスをクリックまたはタップすると、画像の中から素早く色を選択できます。
-     * 虹 🌈 のボタンをクリックまたはタップして、レインボーパレットから、色相と彩度を指定して色を選択します。
+     * Click/tap the rainbow 🌈 button to choose a arbitrary color.
+          * Click/tap in the rainbow square to pick a color (hue and
+            saturation).
           * 灰色のグラデーション バーをクリックまたはタップして、明るさを調整します。
           * 緑のチェックボックス ✓ をクリックまたはタップして決定します。
           * 「⤺戻る」をクリックまたはタップして中止し、パレットを閉じます。
+          * You may grab the currently-chosen built-in color (if any), the
+            color in the pipette / color picker, or the color in the color
+            mixer, by clicking one of the colored arrow ⇫ buttons.
      * 絵の具パレット 🎨 ボタンをクリックまたはタップして、赤、黄、青の３原色と、白（色合い）、グレー（色調）、黒（濃淡）を混ぜて色を作成します。
           * 緑のチェックボックス ✓ をクリックまたはタップして決定します。
           * カラーミキサーでは「🖓とりけし」および「🖒やりなおし」オプションが使えます。
