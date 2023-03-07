@@ -72,7 +72,7 @@ https://tuxpaint.org/
       - need icons
       - need sound effects
 
-    * [WIP] "Kaleido-4" & "Kaleido-6" -- Kaleidoscopic lens effect.
+    * [WIP] "Kaleido-4", "-6", and "-8" -- Kaleidoscopic lens effects.
       Bill Kendrick <bill@newbreedsoftware.com>
       - need icons
       - need sound effects

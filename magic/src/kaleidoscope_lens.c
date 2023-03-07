@@ -4,7 +4,7 @@
    kaleidoscope.
    Bill Kendrick
 
-   Last updated: February 28, 2023
+   Last updated: March 7, 2023
 */
 
 #include <stdio.h>
@@ -19,10 +19,12 @@
 enum {
   KAL_LENS_4,
   KAL_LENS_6,
+  KAL_LENS_8,
   NUM_TOOLS
 };
 
 static char * kaleidoscope_lens_snd_filenames[NUM_TOOLS] = {
+  "kaleidoscope_lens.ogg", // FIXME
   "kaleidoscope_lens.ogg", // FIXME
   "kaleidoscope_lens.ogg", // FIXME
 };
@@ -30,14 +32,17 @@ static char * kaleidoscope_lens_snd_filenames[NUM_TOOLS] = {
 static char * kaleidoscope_lens_icon_filenames[NUM_TOOLS] = {
   "colorsep.png", // FIXME
   "colorsep.png", // FIXME
+  "colorsep.png", // FIXME
 };
 
 char * kaleidoscope_lens_names[NUM_TOOLS] = {
   gettext_noop("Kaleido-4"),
   gettext_noop("Kaleido-6"),
+  gettext_noop("Kaleido-8"),
 };
 
 char * kaleidoscope_lens_descrs[NUM_TOOLS] = {
+  gettext_noop("Click and drag around your picture to look through it with a kaleidoscope!"),
   gettext_noop("Click and drag around your picture to look through it with a kaleidoscope!"),
   gettext_noop("Click and drag around your picture to look through it with a kaleidoscope!"),
 };
@@ -215,6 +220,8 @@ void kaleidoscope_lens_render(magic_api * api, int which, SDL_Surface * canvas,
     sides = 4;
   } else if (which == KAL_LENS_6) {
     sides = 6;
+  } else if (which == KAL_LENS_8) {
+    sides = 8;
   } else {
     return;
   }
