@@ -49,7 +49,7 @@ Color Filters
 Picture Warps
 
      * Flip
-     * Kaleido-4 and Kaleido-6
+     * Kaleido-4, Kaleido-6, and Kaleido-8
      * Miroir
      * Panneaux
      * Perspective
