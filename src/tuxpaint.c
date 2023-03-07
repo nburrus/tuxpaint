@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 6, 2023
+  June 14, 2002 - March 7, 2023
 */
 
 #include "platform.h"
@@ -2230,7 +2230,7 @@ static void draw_color_picker_palette_and_values(int color_picker_left,
                                                  int color_picker_val_top);
 static void render_color_picker_palette(void);
 static int do_color_sel(int temp_mode);
-static int do_color_mix(int prev_color);
+static int do_color_mix(void);
 static void draw_color_mixer_blank_example(void);
 static void calc_color_mixer_average(float *out_h, float *out_s,
                                      float *out_v);
@@ -5305,7 +5305,7 @@ static void mainloop(void)
                   chose_color = do_color_sel(0);
                 else if (cur_color == (unsigned) COLOR_MIXER)
                 {
-                  chose_color = do_color_mix(old_color);
+                  chose_color = do_color_mix();
                   if (!chose_color)
                     cur_color = old_color;
                 }
@@ -16028,10 +16028,8 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
   int side, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
   float a1, a2, rotn_rad, init_ang, angle_skip;
   int xx, yy, offx, offy, max_x, max_y;
-  int upsidedown = 0;
 
   if (ny < sy) {
-    upsidedown = 1;
     rotn = (rotn + 180) % 360;
   }
 
@@ -24159,7 +24157,7 @@ static int do_new_dialog(void)
       }
       else if (which == COLOR_MIXER)
       {
-        if (do_color_mix(-1) == 0)
+        if (do_color_mix() == 0)
           return (0);
       }
 
@@ -25320,7 +25318,7 @@ static int do_color_picker(int prev_color)
             c = NUM_DEFAULT_COLORS + 2;
           }
 
-          /* Conver the chosen color to HSV & reposition crosshairs */
+          /* Convert the chosen color to HSV & reposition crosshairs */
           rgbtohsv(color_hexes[c][0], color_hexes[c][1], color_hexes[c][2],
                    &h, &s, &v);
   
@@ -25803,11 +25801,6 @@ enum
   COLOR_MIXER_BTN_CLEAR,
   COLOR_MIXER_BTN_USE,
   COLOR_MIXER_BTN_BACK,
-#if 0
-  COLOR_MIXER_BTN_PREV_COLOR,
-  COLOR_MIXER_BTN_PIPETTE,
-  COLOR_MIXER_BTN_RAINBOW,
-#endif
   NUM_COLOR_MIXER_BTNS
 };
 
@@ -25860,10 +25853,9 @@ int mixer_undo_buf[NUM_COLOR_MIX_UNDO_BUFS];
  * Display a large prompt, allowing the user to mix
  * colors together from hues and black/grey/white.
  */
-static int do_color_mix(int prev_color)
+static int do_color_mix(void)
 {
   int i, btn_clicked;
-  SDL_Surface * img_color_picker_btn;
 #ifndef NO_PROMPT_SHADOWS
   SDL_Surface *alpha_surf;
 #endif
@@ -26075,66 +26067,6 @@ static int do_color_mix(int prev_color)
   SDL_BlitSurface(img_mixerlabel_clear, NULL, screen, &dest);
 
 
-#if 0
-  /* Draw buttons to pull colors from other sources: */
-
-  /* (Color buckets) */
-
-  color_mix_btn_lefts[COLOR_MIXER_BTN_PREV_COLOR] = r_final.x + (cell_w * 0) + 2;
-  color_mix_btn_tops[COLOR_MIXER_BTN_PREV_COLOR] = r_final.y + (cell_h * 2) + 2;
-
-  if (prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) {
-    dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_PREV_COLOR];
-    dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_PREV_COLOR];
-    dest.w = cell_w - 2;
-    dest.h = cell_h - 2;
-
-    draw_color_grab_btn(dest, prev_color);
-  }
-
-  /* (Pipette) */
-
-  color_mix_btn_lefts[COLOR_MIXER_BTN_PIPETTE] = r_final.x + (cell_w * 1) + 2;
-  color_mix_btn_tops[COLOR_MIXER_BTN_PIPETTE] = r_final.y + (cell_h * 2) + 2;
-
-  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_PIPETTE];
-  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_PIPETTE];
-  dest.w = cell_w - 2;
-  dest.h = cell_h - 2;
-
-  draw_color_grab_btn(dest, NUM_DEFAULT_COLORS);
-
-  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_PIPETTE] + (cell_w - img_color_sel->w) / 2;
-  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_PIPETTE] + (cell_h - img_color_sel->h) / 2;
-
-  SDL_BlitSurface(img_color_sel, NULL, screen, &dest);
-
-  /* (Rainbow) */
-
-  color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW] = r_final.x + (cell_w * 2) + 2;
-  color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW] = r_final.y + (cell_h * 2) + 2;
-
-  img_color_picker_btn = thumbnail(img_color_picker, cell_w - 2, cell_h - 2, 0);
-  if (img_color_picker_btn != NULL) {
-    dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW];
-    dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW];
-    SDL_BlitSurface(img_color_picker_btn, NULL, screen, &dest);
-    SDL_FreeSurface(img_color_picker_btn);
-  }
-
-  dest.x = color_mix_btn_lefts[COLOR_MIXER_BTN_RAINBOW] + 4;
-  dest.y = color_mix_btn_tops[COLOR_MIXER_BTN_RAINBOW] + 4;
-  dest.w = cell_w - 10;
-  dest.h = cell_h - 10;
-
-  SDL_FillRect(screen, &dest,
-               SDL_MapRGB(screen->format,
-                          color_hexes[NUM_DEFAULT_COLORS + 2][0],
-                          color_hexes[NUM_DEFAULT_COLORS + 2][1],
-                          color_hexes[NUM_DEFAULT_COLORS + 2][2]));
-#endif
-
-
   /* Show "Back" button */
 
   color_mix_btn_lefts[COLOR_MIXER_BTN_BACK] = r_final.x + (cell_w * 4) + 2;
@@ -26243,11 +26175,6 @@ static int do_color_mix(int prev_color)
              && color_mix_cur_undo != color_mix_oldest_undo)
             || (btn_clicked == COLOR_MIXER_BTN_REDO
                 && color_mix_cur_undo != color_mix_newest_undo)
-#if 0
-            || (btn_clicked == COLOR_MIXER_BTN_PREV_COLOR && prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
-            || btn_clicked == COLOR_MIXER_BTN_PIPETTE
-            || btn_clicked == COLOR_MIXER_BTN_RAINBOW
-#endif
            )
         {
           do_setcursor(cursor_hand);
@@ -26334,14 +26261,6 @@ static int do_color_mix(int prev_color)
 
           playsound(screen, 1, SND_BUBBLE, 1, SNDPOS_CENTER, SNDDIST_NEAR);
         }
-#if 0
-        else if ((btn_clicked == COLOR_MIXER_BTN_PREV_COLOR && prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
-                 || btn_clicked == COLOR_MIXER_BTN_PIPETTE
-                 || btn_clicked == COLOR_MIXER_BTN_RAINBOW)
-        {
-          printf("clicked %d\n", btn_clicked);
-        }
-#endif
         else if (btn_clicked == COLOR_MIXER_BTN_BACK)
         {
           /* Decided to go Back */
