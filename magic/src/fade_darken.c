@@ -84,8 +84,8 @@ char * sfx_filenames[NUM_TOOLS] = {
   "darken.wav",
   "desaturate.ogg",
   "saturate.ogg",
-  "remove_color.wav",
-  "keep_color.wav",
+  "remove_color.ogg",
+  "keep_color.ogg",
 };
 
 char * icon_filenames[NUM_TOOLS] = {

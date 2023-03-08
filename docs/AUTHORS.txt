@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - March 7, 2023
+June 17, 2002 - March 8, 2023
 
 * Design and Coding:
 
@@ -156,7 +156,13 @@ June 17, 2002 - March 7, 2023
   Saturate & Desaturate sounds: "can lid.wav"
   (https://freesound.org/people/Saltbearer/sounds/545742/)
   Creative Commons 0 License (CC0 1.0)
-  by Guy McPherson ("Saltbearer")
+  by Guy McPherson
+
+  Keep Color & Remove Colore sounds:
+  "Ethnic drums » ethnic beat6.wav" & "...7.wav"
+  (https://freesound.org/people/tootoos24/sounds/677558/ &
+  https://freesound.org/people/tootoos24/sounds/677559/)
+  Creative Commons 0 License (CC0 1.0) by Dmitry Lastovsky
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,

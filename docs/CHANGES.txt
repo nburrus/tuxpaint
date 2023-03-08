@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.7 (0.9.29)
+2023.March.8 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -63,13 +63,14 @@ https://tuxpaint.org/
       (Sounds based on "can lid.wav", Creative Commons 0 (CC0 1.0)
       by https://freesound.org/people/Saltbearer/)
 
-    * [WIP] "Keep Color" & "Remove Color" - Completely desaturate
+    * "Keep Color" & "Remove Color" - Completely desaturate
       parts of the picture, based on the chosen color.
       "Keep" keeps the saturation intact if the colors match;
       while "Remove" desaturates parts of the image that match the
       chosen color.
       Bill Kendrick <bill@newbreedsoftware.com>
-      - need sound effects
+      (Sounds based on "Ethnic drums » ethnic beat6.wav" and "...7.wav",
+      Creative Commons 0 (CC0 1.0) by https://freesound.org/people/tootoos24/)
 
     * [WIP] "Kaleido-4", "-6", and "-8" -- Kaleidoscopic lens effects.
       Bill Kendrick <bill@newbreedsoftware.com>
