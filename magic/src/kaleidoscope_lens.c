@@ -4,7 +4,7 @@
    kaleidoscope.
    Bill Kendrick
 
-   Last updated: March 7, 2023
+   Last updated: March 8, 2023
 */
 
 #include <stdio.h>
@@ -24,9 +24,9 @@ enum {
 };
 
 static char * kaleidoscope_lens_snd_filenames[NUM_TOOLS] = {
-  "kaleidoscope_lens.ogg", // FIXME
-  "kaleidoscope_lens.ogg", // FIXME
-  "kaleidoscope_lens.ogg", // FIXME
+  "kaleido-4.ogg",
+  "kaleido-6.ogg",
+  "kaleido-8.ogg",
 };
 
 static char * kaleidoscope_lens_icon_filenames[NUM_TOOLS] = {
@@ -193,6 +193,10 @@ kaleidoscope_lens_drag(magic_api * api, int which, SDL_Surface * canvas,
               SDL_Surface * snapshot, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
               int x, int y, SDL_Rect * update_rect)
 {
+  if (snd_effects[which] != NULL) {
+    api->playsound(snd_effects[which], 128, 255);
+  }
+
   kaleidoscope_lens_render(api, which, canvas, snapshot, x, y, 1);
 
   update_rect->x = 0;
@@ -293,6 +297,8 @@ void kaleidoscope_lens_release(magic_api * api, int which,
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
+
+  api->stopsound();
 }
 
 
