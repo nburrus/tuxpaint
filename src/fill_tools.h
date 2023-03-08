@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 24, 2023
+  Last updated: March 7, 2023
   $Id$
 */
 
@@ -72,7 +72,7 @@ const char *const fill_img_fnames[NUM_FILLS] = {
   DATA_PREFIX "images/fills/brush.png",
   DATA_PREFIX "images/fills/gradient_linear.png",
   DATA_PREFIX "images/fills/gradient_radial.png",
-  DATA_PREFIX "images/fills/gradient_radial.png" // FIXME
+  DATA_PREFIX "images/fills/gradient_shaped.png"
 };
 
 #endif

@@ -77,12 +77,6 @@ https://tuxpaint.org/
       - need icons
       - need sound effects
 
-    * [WIP] "Rivulet"; apply rivulets of water to the canvas
-      - needs better icon
-      - needs sound effect
-      - effect needs improvement
-      Bill Kendrick <bill@newbreedsoftware.com>
-
   * Improvements to Magic Tools:
     ----------------------------
     * Better performance from "Rush" (by using SDL_gfx rotozoom)
