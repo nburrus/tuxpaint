@@ -82,8 +82,8 @@ char * tool_descriptions[NUM_TOOLS][2] = {
 char * sfx_filenames[NUM_TOOLS] = {
   "fade.wav",
   "darken.wav",
-  "desaturate.wav",
-  "saturate.wav",
+  "desaturate.ogg",
+  "saturate.ogg",
   "remove_color.wav",
   "keep_color.wav",
 };

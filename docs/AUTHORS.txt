@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - February 25, 2023
+June 17, 2002 - March 7, 2023
 
 * Design and Coding:
 
@@ -152,6 +152,11 @@ June 17, 2002 - February 25, 2023
   (https://freesound.org/people/juskiddink/sounds/140867/)
   Creative Commons Attribution 4.0 International (CC BY 4.0)
   by "juskiddink"
+
+  Saturate & Desaturate sounds: "can lid.wav"
+  (https://freesound.org/people/Saltbearer/sounds/545742/)
+  Creative Commons 0 License (CC0 1.0)
+  by Guy McPherson ("Saltbearer")
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,

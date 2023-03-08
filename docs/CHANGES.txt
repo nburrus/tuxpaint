@@ -58,9 +58,10 @@ https://tuxpaint.org/
       Attribution 4.0 International (CC BY 4.0)
       by https://freesound.org/people/juskiddink/)
 
-    * [WIP] "Saturate" & "Desaturate" - Increase or decrease color saturation.
+    * "Saturate" & "Desaturate" - Increase or decrease color saturation.
       Bill Kendrick <bill@newbreedsoftware.com>
-      - need sound effects
+      (Sounds based on "can lid.wav", Creative Commons 0 (CC0 1.0)
+      by https://freesound.org/people/Saltbearer/)
 
     * [WIP] "Keep Color" & "Remove Color" - Completely desaturate
       parts of the picture, based on the chosen color.
