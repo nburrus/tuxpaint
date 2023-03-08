@@ -30,9 +30,9 @@ static char * kaleidoscope_lens_snd_filenames[NUM_TOOLS] = {
 };
 
 static char * kaleidoscope_lens_icon_filenames[NUM_TOOLS] = {
-  "colorsep.png", // FIXME
-  "colorsep.png", // FIXME
-  "colorsep.png", // FIXME
+  "kaleido-4.png",
+  "kaleido-6.png",
+  "kaleido-8.png",
 };
 
 char * kaleidoscope_lens_names[NUM_TOOLS] = {

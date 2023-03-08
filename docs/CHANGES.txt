@@ -72,13 +72,12 @@ https://tuxpaint.org/
       (Sounds based on "Ethnic drums » ethnic beat6.wav" and "...7.wav",
       Creative Commons 0 (CC0 1.0) by https://freesound.org/people/tootoos24/)
 
-    * [WIP] "Kaleido-4", "-6", and "-8" -- Kaleidoscopic lens effects.
+    * "Kaleido-4", "-6", and "-8" -- Kaleidoscopic lens effects.
       Bill Kendrick <bill@newbreedsoftware.com>
       (Sounds based on "Xylophone chromatic descending passages improv",
       "Xylophone scale descent improv", & "Xylophone chromatic passages improv",
       licensed as Creative Commons Attribution 4.0 International (CC BY 4.0)
       by https://freesound.org/people/Ustym_Petrovych/)
-      - need icons
 
   * Improvements to Magic Tools:
     ----------------------------
