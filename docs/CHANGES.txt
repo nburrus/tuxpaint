@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.6 (0.9.29)
+2023.March.7 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -60,7 +60,6 @@ https://tuxpaint.org/
 
     * [WIP] "Saturate" & "Desaturate" - Increase or decrease color saturation.
       Bill Kendrick <bill@newbreedsoftware.com>
-      - need icons
       - need sound effects
 
     * [WIP] "Keep Color" & "Remove Color" - Completely desaturate
@@ -69,7 +68,6 @@ https://tuxpaint.org/
       while "Remove" desaturates parts of the image that match the
       chosen color.
       Bill Kendrick <bill@newbreedsoftware.com>
-      - need icons
       - need sound effects
 
     * [WIP] "Kaleido-4", "-6", and "-8" -- Kaleidoscopic lens effects.

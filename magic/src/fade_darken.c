@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 28, 2023
+  Last updated: March 7, 2023
 */
 
 #include <stdio.h>
@@ -82,19 +82,19 @@ char * tool_descriptions[NUM_TOOLS][2] = {
 char * sfx_filenames[NUM_TOOLS] = {
   "fade.wav",
   "darken.wav",
-  "fade.wav", // FIXME
-  "darken.wav", // FIXME
-  "darken.wav", // FIXME
-  "darken.wav", // FIXME
+  "desaturate.wav",
+  "saturate.wav",
+  "remove_color.wav",
+  "keep_color.wav",
 };
 
 char * icon_filenames[NUM_TOOLS] = {
   "fade.png",
   "darken.png",
-  "fade.png", // FIXME
-  "darken.png", // FIXME
-  "darken.png", // FIXME
-  "darken.png", // FIXME
+  "desaturate.png",
+  "saturate.png",
+  "remove_color.png",
+  "keep_color.png",
 };
 
 static Mix_Chunk *snd_effects[NUM_TOOLS];
