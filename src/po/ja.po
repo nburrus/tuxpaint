@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-07 00:49-0800\n"
-"PO-Revision-Date: 2023-02-25 12:28+0900\n"
+"PO-Revision-Date: 2023-03-10 23:47+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1607,23 +1607,19 @@ msgstr "こく"
 
 #: ../../magic/src/fade_darken.c:49
 msgid "Desaturate"
-msgstr ""
+msgstr "ひほうわ"
 
 #: ../../magic/src/fade_darken.c:50
 msgid "Saturate"
-msgstr ""
+msgstr "ほうわ"
 
 #: ../../magic/src/fade_darken.c:51
-#, fuzzy
-#| msgid "Xor Colors"
 msgid "Remove Color"
-msgstr "ちゃくしょく"
+msgstr "だっしょく"
 
 #: ../../magic/src/fade_darken.c:52
-#, fuzzy
-#| msgid "Colors"
 msgid "Keep Color"
-msgstr "いろ"
+msgstr "いろのこし"
 
 #: ../../magic/src/fade_darken.c:57
 msgid "Click and drag the mouse to lighten parts of your picture."
@@ -1642,72 +1638,52 @@ msgid "Click to darken your entire picture."
 msgstr "えを クリックして ぜんたいの いろを こくしよう。"
 
 #: ../../magic/src/fade_darken.c:65
-#, fuzzy
-#| msgid "Click and drag the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
-msgstr "クリックしたまま マウスをうごかして えのいろを こくしよう。"
+msgstr "クリックしたまま マウスをうごかして くすんだ いろに しよう。"
 
 #: ../../magic/src/fade_darken.c:66
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
-msgstr "えを クリックして ぜんたいの いろを こくしよう。"
+msgstr "えを クリックして ぜんたいを くすんだ いろに しよう。"
 
 #: ../../magic/src/fade_darken.c:69
-#, fuzzy
-#| msgid "Click and drag the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
-msgstr "クリックしたまま マウスをうごかして えを くっきり させよう。"
+msgstr "クリックしたまま マウスをうごかして あざやかな いろに しよう。"
 
 #: ../../magic/src/fade_darken.c:70
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
-msgstr "えを クリックして ぜんたいの いろを こくしよう。"
+msgstr "えを クリックして ぜんたいを あざやかな いろに しよう。"
 
 #: ../../magic/src/fade_darken.c:73
-#, fuzzy
-#| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
-msgstr "クリックしたまま マウスをうごかして えを ふちどりだけに しよう。"
+msgstr ""
+"クリックしたまま マウスをうごかして えらんだいろと おなじいろのところを しろ"
+"くろに しよう。"
 
 #: ../../magic/src/fade_darken.c:74
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click to entirely desaturate your the parts of your picture that match the "
 "chosen color."
 msgstr ""
-"いろを えらんだあと クリックしたままマウスをうごかして そのいろと しろいろ だ"
-"けの えに しよう。"
+"えを クリックして えらんだいろと おなじいろのところを ぜんぶ しろくろに しよ"
+"う。"
 
 #: ../../magic/src/fade_darken.c:77
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
 msgstr ""
-"いろを えらんだあと クリックしたままマウスをうごかして そのいろと しろいろ だ"
-"けの えに しよう。"
+"クリックしたまま マウスをうごかして えらんだいろと ちがういろのところを しろ"
+"くろに しよう。"
 
 #: ../../magic/src/fade_darken.c:78
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click to entirely desaturate your the parts of your picture that don't match "
 "the chosen color."
 msgstr ""
-"いろを えらんだあと クリックしたままマウスをうごかして そのいろと しろいろ だ"
-"けの えに しよう。"
+"えを クリックして えらんだいろと ちがういろのところを ぜんぶ しろくろに しよ"
+"う。"
 
 #: ../../magic/src/fisheye.c:113
 msgid "Fisheye"
@@ -1771,8 +1747,6 @@ msgid "Click to cover your entire picture in glass tiles."
 msgstr "えを クリックして ぜんたいに ガラスの タイルを かぶせよう。"
 
 #: ../../magic/src/googlyeyes.c:165
-#, fuzzy
-#| msgid "Google Eyes"
 msgid "Googly Eyes"
 msgstr "めだま"
 
@@ -1797,34 +1771,24 @@ msgid "Click to turn your drawing into a newspaper."
 msgstr "えをクリックして しんぶんみたいに しよう。"
 
 #: ../../magic/src/kaleidoscope_lens.c:39
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-4"
-msgstr "まんげきょう"
+msgstr "まんげきょう４"
 
 #: ../../magic/src/kaleidoscope_lens.c:40
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-6"
-msgstr "まんげきょう"
+msgstr "まんげきょう６"
 
 #: ../../magic/src/kaleidoscope_lens.c:41
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-8"
-msgstr "まんげきょう"
+msgstr "まんげきょう８"
 
 #: ../../magic/src/kaleidoscope_lens.c:45
 #: ../../magic/src/kaleidoscope_lens.c:46
 #: ../../magic/src/kaleidoscope_lens.c:47
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr ""
-"クリックしたまま マウスを うごかして テレビに うつったみたいに しよう。"
+"クリックしたまま マウスを うごかして まんげきょうで のぞいたように しよう！"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
