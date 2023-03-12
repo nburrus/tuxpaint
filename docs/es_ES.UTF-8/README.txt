@@ -5,10 +5,8 @@
 
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
-                           @TuxPaintTweets on Twitter
-                              Tux Paint on Tumblr
 
-                                 enero 4, 2023
+                                 marzo 12, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -1127,10 +1125,25 @@ Importing Pictures Manually
    To learn more, visit the "Help Us" page of the official Tux Paint website:
    https://tuxpaint.org/help/
 
+                  Follow the Tux Paint project on social media
+
+   Tux Paint maintains a presence on a variety of social media networks,
+   where we post updates and artwork.
+     * Join the Tux Paint page on Facebook
+     * Follow @TuxPaintDevs on Instagram
+     * Follow @tuxpaint@floss.social on Mastodon
+     * Follow u/TuxPaintDevs on Reddit
+     * Follow Tux Paint on Tumblr
+     * Follow @TuxPaintTweets on Twitter
+
                                Trademark notices
 
      * "Linux" is a registered trademark of Linus Torvalds.
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
      * "Apple" and "macOS" are registered trademarks of Apple Inc.
-     * "Twitter" is a registered trademark of Twitter, Inc.
+     * "Facebook" and "Instagram" are registered trademarks of Meta
+       Platforms, Inc.
+     * "Mastodon" is a registered trademark of Mastodon gGmbH.
+     * "Reddit" is a registered trademark of Reddit, Inc.
      * "Tumblr" is a registered trademark of Tumblr, Inc.
+     * "Twitter" is a registered trademark of Twitter, Inc.

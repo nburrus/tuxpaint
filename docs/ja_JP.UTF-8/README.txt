@@ -5,10 +5,8 @@
 
          Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
-                             @TuxPaintTweets（ツイッター）
-                               Tux Paint（Tumblr）
 
-                                   2023年1月 4日
+                                   2023年3月12日
 
                     +-------------------------------------+
                     |目次                                   |
@@ -771,10 +769,25 @@ Tux Paint の起動
    もっとお知りになりたい場合、Tux Paint のウェブサイト の "私たちにご協力を" のページ
    (https://tuxpaint.org/help/) をごらん下さい
 
+                  Follow the Tux Paint project on social media
+
+   Tux Paint maintains a presence on a variety of social media networks,
+   where we post updates and artwork.
+     * Join the Tux Paint page on Facebook
+     * Follow @TuxPaintDevs on Instagram
+     * Follow @tuxpaint@floss.social on Mastodon
+     * Follow u/TuxPaintDevs on Reddit
+     * Follow Tux Paint on Tumblr
+     * Follow @TuxPaintTweets on Twitter
+
                                      商標について
 
      * "Linux" は Linus Torvalds の登録商標です。
      * "Microsoft" および "Windows" は、Microsoft 社の登録商標です。
      * "Apple" および "macOS" は Apple 社の登録商標です。
-     * "Twitter" は、Twitter 社の登録商標です。
+     * "Facebook" and "Instagram" are registered trademarks of Meta
+       Platforms, Inc.
+     * "Mastodon" is a registered trademark of Mastodon gGmbH.
+     * "Reddit" is a registered trademark of Reddit, Inc.
      * "Tumblr" は Tumblr 社の登録商標です。
+     * "Twitter" は、Twitter 社の登録商標です。
