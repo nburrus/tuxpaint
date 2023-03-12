@@ -32,7 +32,7 @@ Tools (Drawing)
      * (See Paint)
      * Click/tap and drag to draw a line.
 
-  ⭓Shapes
+  ⭓Formes
 
      * Choose a shape on the right.
      * Select whether you want to extend the shape from the center ⧈, or a
@@ -62,7 +62,7 @@ Tools (Drawing)
           * Left/Right arrows switches keyboard layouts (e.g., "QWERTY" vs.
             "ABC")
 
-  🅰Label
+  🅰Étiquette
 
      * (See Text)
      * Labels float 'above' the drawing; you cannot paint or stamp over them,
