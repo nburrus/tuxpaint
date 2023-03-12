@@ -52,15 +52,6 @@ Que é «Tux Paint»?
    variedade de ferramentas de debuxo para axudar ao seu cativo a ser
    creativo.
 
-Licenza
-
-   Tux Paint é un proxecto de código aberto, software libre publicado baixo a
-   licenza pública xeral GNU (GPL). É de balde e o «código fonte» detrás do
-   programa está dispoñíbel. (Isto permite a outras persoas engadir funcións,
-   corrixir erros e usar partes do programa no seu propio software GPL).
-
-   Consulte o texto completo da licenza GPL en COPYING.txt.
-
 Objectives
 
    Doado e divertido
@@ -91,6 +82,19 @@ Objectives
            crear nomes de ficheiro nin usar o teclado. A apertura dunha imaxe
            faise seleccionándoa nunha colección de miniaturas. O acceso a
            outros ficheiros da computadora está restrinxido.
+
+Licenza
+
+   Tux Paint é un proxecto de código aberto, software libre publicado baixo a
+   licenza pública xeral GNU (GPL). É de balde e o «código fonte» detrás do
+   programa está dispoñíbel. (Isto permite a outras persoas engadir funcións,
+   corrixir erros e usar partes do programa no seu propio software GPL).
+
+   Consulte o texto completo da licenza GPL en COPYING.txt.
+
+What's New?
+
+   See CHANGES.txt for the complete list of changes.
 
                                 Uso de Tux Paint
 

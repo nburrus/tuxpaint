@@ -51,15 +51,6 @@ What Is "Tux Paint"?
    program. It provides a blank canvas and a variety of drawing tools to help
    your child be creative.
 
-License
-
-   Tux Paint is an Open Source project, Free Software released under the GNU
-   General Public License (GPL). It is free, and the 'source code' behind the
-   program is available. (This allows others to add features, fix bugs, and
-   use parts of the program in their own GPL'd software.)
-
-   See COPYING.txt for the full text of the GPL license.
-
 Objectives
 
    Easy and Fun
@@ -91,6 +82,19 @@ Objectives
            create filenames or use the keyboard. Opening an image is done by
            selecting it from a collection of thumbnails. Access to other
            files on the computer is restricted.
+
+License
+
+   Tux Paint is an Open Source project, Free Software released under the GNU
+   General Public License (GPL). It is free, and the 'source code' behind the
+   program is available. (This allows others to add features, fix bugs, and
+   use parts of the program in their own GPL'd software.)
+
+   See COPYING.txt for the full text of the GPL license.
+
+What's New?
+
+   See CHANGES.txt for the complete list of changes.
 
                                 Using Tux Paint
 
