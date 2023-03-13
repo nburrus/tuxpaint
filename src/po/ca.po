@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-13 01:15-0700\n"
-"PO-Revision-Date: 2023-01-30 13:35+0100\n"
+"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"PO-Revision-Date: 2023-03-13 09:06+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -238,10 +238,8 @@ msgid "Radial"
 msgstr "Radial"
 
 #: ../fill_tools.h:56
-#, fuzzy
-#| msgid "Shapes"
 msgid "Shaped"
-msgstr "Formes"
+msgstr "Forma"
 
 #: ../fill_tools.h:60
 msgid "Click to fill an area with a solid color."
@@ -268,16 +266,10 @@ msgstr ""
 "transparent)."
 
 #: ../fill_tools.h:67
-#, fuzzy
-#| msgid ""
-#| "Click to fill an area with a radial gradient (from the chosen color to "
-#| "transparent)."
 msgid ""
 "Click to fill an area with a shaped gradient (from the chosen color to "
 "transparent)."
-msgstr ""
-"Feu clic per omplir una àrea amb un gradient radial (del color triat fins el "
-"transparent)."
+msgstr "Feu clic per omplir una àrea amb un gradient que abraci la seva forma (del color triat fins el transparent)."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -1145,16 +1137,11 @@ msgstr "L'espaiat d'aquest pinzell és de %1$d %2$d/%3$d vegades la seva mida."
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:200
-#, fuzzy, c-format
-#| msgid ""
-#| "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
-#| "degrees.)"
+#, c-format
 msgid ""
 "Drag the mouse to rotate the stamp. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr ""
-"Moveu el ratolí per girar la figura. Feu clic per dibuixar-la. (Angle en "
-"graus %d.)"
+msgstr "Arrossegueu el ratolí per girar la figura. Feu clic per dibuixar-la. (Angle en graus %d.)"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2487
@@ -1522,23 +1509,16 @@ msgstr "Feu clic per fer gotejar el dibuix."
 
 #: ../../magic/src/bloom.c:114
 msgid "Bloom"
-msgstr ""
+msgstr "Bloom"
 
 #: ../../magic/src/bloom.c:127
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per afegir un efecte de mosaic a parts del "
-"dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per afegir un efecte de brillantor de contrallum a parts del dibuix."
 
 #: ../../magic/src/bloom.c:129
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
-msgstr "Feu clic per afegir un efecte de mosaic al dibuix."
+msgstr "Feu clic per afegir un efecte de brillantor de contrallum al dibuix."
 
 #: ../../magic/src/blur.c:84
 msgid "Blur"
@@ -1607,28 +1587,22 @@ msgstr ""
 "arrossegueu per clonar aquella part del dibuix."
 
 #: ../../magic/src/colorsep.c:35
-#, fuzzy
-#| msgid "Glass Tile"
 msgid "3D Glasses"
-msgstr "Blocs de vidre"
+msgstr "Ulleres 3D"
 
 #: ../../magic/src/colorsep.c:36
-#, fuzzy
-#| msgid "Color Shift"
 msgid "Color Sep."
-msgstr "Altera colors"
+msgstr "Separa colors"
 
 #: ../../magic/src/colorsep.c:39
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
-msgstr ""
+msgstr "Feu clic i arrossegueu a dreta o esquerra per separar el vermell i el cian, per fer anaglifs que podeu mirar amb ulleres 3D de dos colors!"
 
 #: ../../magic/src/colorsep.c:40
-#, fuzzy
-#| msgid "Click and drag to add fur to your picture."
 msgid "Click and drag to separate your picture's colors."
-msgstr "Feu clic i arrossegueu per dibuixar pelatge."
+msgstr "Feu clic i arrossegueu per separar els colors del dibuix."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"
@@ -1669,23 +1643,19 @@ msgstr "Enfosqueix"
 
 #: ../../magic/src/fade_darken.c:49
 msgid "Desaturate"
-msgstr ""
+msgstr "Dessatura"
 
 #: ../../magic/src/fade_darken.c:50
 msgid "Saturate"
-msgstr ""
+msgstr "Satura"
 
 #: ../../magic/src/fade_darken.c:51
-#, fuzzy
-#| msgid "Xor Colors"
 msgid "Remove Color"
-msgstr "Xor"
+msgstr "Treu color"
 
 #: ../../magic/src/fade_darken.c:52
-#, fuzzy
-#| msgid "Colors"
 msgid "Keep Color"
-msgstr "Colors"
+msgstr "Guarda color"
 
 #: ../../magic/src/fade_darken.c:57
 msgid "Click and drag the mouse to lighten parts of your picture."
@@ -1704,72 +1674,44 @@ msgid "Click to darken your entire picture."
 msgstr "Feu clic per enfosquir el dibuix."
 
 #: ../../magic/src/fade_darken.c:65
-#, fuzzy
-#| msgid "Click and drag the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
-msgstr "Feu clic i arrossegueu el ratolí per enfosquir parts del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per dessaturar parts del dibuix."
 
 #: ../../magic/src/fade_darken.c:66
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
-msgstr "Feu clic per enfosquir el dibuix."
+msgstr "Feu clic per dessaturar el dibuix."
 
 #: ../../magic/src/fade_darken.c:69
-#, fuzzy
-#| msgid "Click and drag the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
-msgstr "Feu clic i arrossegueu el ratolí per afilar parts del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per saturar parts del dibuix."
 
 #: ../../magic/src/fade_darken.c:70
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
-msgstr "Feu clic per enfosquir el dibuix."
+msgstr "Feu clic per saturar el dibuix."
 
 #: ../../magic/src/fade_darken.c:73
-#, fuzzy
-#| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
-msgstr "Feu clic i arrossegueu el ratolí per traçar vores de parts del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per dessaturar parts del dibuix que corresponguin amb el color triat."
 
 #: ../../magic/src/fade_darken.c:74
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
-"Click to entirely desaturate the parts of your picture that match the chosen "
-"color."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per convertir parts de la imatge en blanc/"
-"color."
+"Click to entirely desaturate the parts of your picture that match the "
+"chosen color."
+msgstr "Feu clic per dessaturar tot allò del dibuix que correspongui amb el color triat."
 
 #: ../../magic/src/fade_darken.c:77
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per convertir parts de la imatge en blanc/"
-"color."
+msgstr "Feu clic i arrossegueu el ratolí per dessaturar completament parts del dibuix que no corresponguin amb el color triat."
 
 #: ../../magic/src/fade_darken.c:78
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
-"Click to entirely desaturate the parts of your picture that don't match the "
-"chosen color."
-msgstr ""
-"Feu clic i arrossegueu el ratolí per convertir parts de la imatge en blanc/"
-"color."
+"Click to entirely desaturate the parts of your picture that don't match "
+"the chosen color."
+msgstr "Feu clic per dessaturar tot allò del dibuix que no correspongui amb el color triat.."
 
 #: ../../magic/src/fisheye.c:113
 msgid "Fisheye"
@@ -1832,8 +1774,6 @@ msgid "Click to cover your entire picture in glass tiles."
 msgstr "Feu clic per omplir la imatge amb blocs de vidre."
 
 #: ../../magic/src/googlyeyes.c:165
-#, fuzzy
-#| msgid "Google Eyes"
 msgid "Googly Eyes"
 msgstr "UUlls"
 
@@ -1858,35 +1798,23 @@ msgid "Click to turn your drawing into a newspaper."
 msgstr "Feu clic per transformar el dibuix com si fos un diari."
 
 #: ../../magic/src/kaleidoscope_lens.c:39
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-4"
-msgstr "Calidoscopi"
+msgstr "Calidoscopi-4"
 
 #: ../../magic/src/kaleidoscope_lens.c:40
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-6"
-msgstr "Calidoscopi"
+msgstr "Calidoscopi-6"
 
 #: ../../magic/src/kaleidoscope_lens.c:41
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-8"
-msgstr "Calidoscopi"
+msgstr "Calidoscopi-8"
 
 #: ../../magic/src/kaleidoscope_lens.c:45
 #: ../../magic/src/kaleidoscope_lens.c:46
 #: ../../magic/src/kaleidoscope_lens.c:47
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
-msgstr ""
-"Feu clic i arrossegueu per pintar parts de la imatge com si estès en el "
-"televisor."
+msgstr "Feu clic i arrossegueu per pintar la imatge com si la miressiu amb un calidoscopi."
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
