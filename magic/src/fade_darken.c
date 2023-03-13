@@ -71,11 +71,11 @@ char * tool_descriptions[NUM_TOOLS][2] = {
   },
   {
    gettext_noop("Click and drag the mouse to entirely desaturate parts of your picture that match the chosen color."),
-   gettext_noop("Click to entirely desaturate your the parts of your picture that match the chosen color."),
+   gettext_noop("Click to entirely desaturate your parts of your picture that match the chosen color."),
   },
   {
    gettext_noop("Click and drag the mouse to entirely desaturate parts of your picture that don't match the chosen color."),
-   gettext_noop("Click to entirely desaturate your the parts of your picture that don't match the chosen color."),
+   gettext_noop("Click to entirely desaturate the parts of your picture that don't match the chosen color."),
   },
 };
 
