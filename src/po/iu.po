@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint Inuktitut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2013-07-04 16:05-0500\n"
 "Last-Translator: Harvey Ginter <harveyginter@gmail.com>\n"
 "Language-Team: LANGUAGE <harveyginter@gmail.com>\n"
@@ -1654,8 +1654,8 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᑎᑦᑕᑯ
 #| "Click and move the mouse around to turn parts of your picture into white "
 #| "and a color you choose."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᓐᓂᒃ ᖃᑯᕐᑕᕈᕐᑎᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ."
 
 #: ../../magic/src/fade_darken.c:77
@@ -1674,8 +1674,8 @@ msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑ
 #| "Click and move the mouse around to turn parts of your picture into white "
 #| "and a color you choose."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr "ᓇᕐᓂᓗᒍ ᐊᐅᓚᓗᒍᓗ ᐊᐅᓚᑦᓯᒍᑎᖓ ᐊᑦᔨᖑᐊᕐᐱᑦ ᐃᓚᖏᓐᓂᒃ ᖃᑯᕐᑕᕈᕐᑎᓯᓂᕐᒧᑦ ᑕᐅᑦᑐᒥᓪᓗ ᓂᕈᐊᕐᑕᓂᐅᕕᑦ."
 
 #: ../../magic/src/fisheye.c:113

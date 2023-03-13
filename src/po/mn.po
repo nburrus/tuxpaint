@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1512,8 +1512,8 @@ msgstr ""
 
 #: ../../magic/src/fade_darken.c:74
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr ""
 
 #: ../../magic/src/fade_darken.c:77
@@ -1524,8 +1524,8 @@ msgstr ""
 
 #: ../../magic/src/fade_darken.c:78
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr ""
 
 #: ../../magic/src/fisheye.c:113

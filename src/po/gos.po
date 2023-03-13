@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2005-07-26 01:30-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: \n"
@@ -1637,8 +1637,8 @@ msgstr "Klik en beweeg de moes rond um dien tijken dokeg te moaken."
 #: ../../magic/src/fade_darken.c:74
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr ""
 "Klik en beweeg de moes rond um dien tijken in n kriettijken umme te teuvern."
 
@@ -1653,8 +1653,8 @@ msgstr ""
 #: ../../magic/src/fade_darken.c:78
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr ""
 "Klik en beweeg de moes rond um dien tijken in n kriettijken umme te teuvern."
 

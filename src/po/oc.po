@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2021-06-06 18:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
@@ -1545,8 +1545,8 @@ msgstr ""
 
 #: ../../magic/src/fade_darken.c:74
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr ""
 
 #: ../../magic/src/fade_darken.c:77
@@ -1557,8 +1557,8 @@ msgstr ""
 
 #: ../../magic/src/fade_darken.c:78
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr ""
 
 #: ../../magic/src/fisheye.c:113

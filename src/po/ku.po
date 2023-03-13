@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2009-05-25 12:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
@@ -1656,8 +1656,8 @@ msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 #: ../../magic/src/fade_darken.c:74
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr ""
 "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
 
@@ -1672,8 +1672,8 @@ msgstr ""
 #: ../../magic/src/fade_darken.c:78
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr ""
 "Ji bo ku wêneyê çêkî wêneyekî kartok bitikîne û mişkî li dorê bigerîne."
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2014-11-09 21:17+0330\n"
 "Last-Translator: snima <unix.nima@gmail.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
@@ -1674,8 +1674,8 @@ msgstr "برای گذاشتن شیشه های کوچک کلیک کن و موس �
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr "برای تبدیل تصویر به حالت کارتونی کلیک کن و موس را حرکت بده. "
 
 #: ../../magic/src/fade_darken.c:77
@@ -1690,8 +1690,8 @@ msgstr "برای تبدیل تصویر به حالت کارتونی کلیک ک�
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr "برای تبدیل تصویر به حالت کارتونی کلیک کن و موس را حرکت بده. "
 
 #: ../../magic/src/fisheye.c:113

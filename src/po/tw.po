@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -1642,8 +1642,8 @@ msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 #: ../../magic/src/fade_darken.c:74
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #: ../../magic/src/fade_darken.c:77
@@ -1656,8 +1656,8 @@ msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 #: ../../magic/src/fade_darken.c:78
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr "Fa akura no fa mfoni no so ma no nnane koriko."
 
 #: ../../magic/src/fisheye.c:113

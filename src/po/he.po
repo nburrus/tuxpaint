@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2009-05-10 21:45+0200\n"
 "Last-Translator: Jorge Mariano <jmariano@ymail.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -1660,8 +1660,8 @@ msgstr "לחצי והזיזי את העכבר להאפלת חלקים בתמונ
 #| "Click and move the mouse around to turn parts of your picture into white "
 #| "and a color you choose."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr "לחצי והזיזי את העכבר כדי להפוך את התמונה לסרט מצויר."
 
 #: ../../magic/src/fade_darken.c:77
@@ -1680,8 +1680,8 @@ msgstr "לחצי והזיזי את העכבר כדי להפוך את התמונ�
 #| "Click and move the mouse around to turn parts of your picture into white "
 #| "and a color you choose."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr "לחצי והזיזי את העכבר כדי להפוך את התמונה לסרט מצויר."
 
 #: ../../magic/src/fisheye.c:113

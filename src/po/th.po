@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2015-03-09 11:22+0000\n"
 "Last-Translator: Nudjaree <poonim_p@hotmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1647,8 +1647,8 @@ msgstr "คลิกและย้ายเมาส์ไปยังขอบ
 #| "Click and move the mouse around to turn parts of your picture into white "
 #| "and a color you choose."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr "คลิกและย้ายเมาส์ไปรอบๆเพื่อเปลี่ยนชิ้นส่วนรูปภาพของคุณให้เป็นสีขาวและสีที่คุณเลือก."
 
 #: ../../magic/src/fade_darken.c:77
@@ -1667,8 +1667,8 @@ msgstr "คลิกและย้ายเมาส์ไปรอบๆเพ
 #| "Click and move the mouse around to turn parts of your picture into white "
 #| "and a color you choose."
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr "คลิกและย้ายเมาส์ไปรอบๆเพื่อเปลี่ยนชิ้นส่วนรูปภาพของคุณให้เป็นสีขาวและสีที่คุณเลือก."
 
 #: ../../magic/src/fisheye.c:113

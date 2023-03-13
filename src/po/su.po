@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2011-05-27 06:24+0200\n"
 "Last-Translator: kumincir <ia.adnan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1601,10 +1601,11 @@ msgid ""
 msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/fade_darken.c:74
+#, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
-msgstr ""
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/fade_darken.c:77
 #, fuzzy
@@ -1614,10 +1615,11 @@ msgid ""
 msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/fade_darken.c:78
+#, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
-msgstr ""
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/fisheye.c:113
 msgid "Fisheye"

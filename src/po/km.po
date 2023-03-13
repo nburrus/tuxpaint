@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-07 00:49-0800\n"
+"POT-Creation-Date: 2023-03-13 01:15-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1641,8 +1641,8 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 #: ../../magic/src/fade_darken.c:74
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that match the "
-"chosen color."
+"Click to entirely desaturate the parts of your picture that match the chosen "
+"color."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
 
 #: ../../magic/src/fade_darken.c:77
@@ -1655,8 +1655,8 @@ msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដ�
 #: ../../magic/src/fade_darken.c:78
 #, fuzzy
 msgid ""
-"Click to entirely desaturate your the parts of your picture that don't match "
-"the chosen color."
+"Click to entirely desaturate the parts of your picture that don't match the "
+"chosen color."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​រូបភាព​ឲ្យ​ទៅ​ជា​រូប​តុក្កតា ។"
 
 #: ../../magic/src/fisheye.c:113
