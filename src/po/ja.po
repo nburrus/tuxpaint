@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-13 01:15-0700\n"
-"PO-Revision-Date: 2023-03-10 23:47+0900\n"
+"PO-Revision-Date: 2023-03-13 21:04+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1662,10 +1662,6 @@ msgstr ""
 "くろに しよう。"
 
 #: ../../magic/src/fade_darken.c:74
-#, fuzzy
-#| msgid ""
-#| "Click to entirely desaturate your the parts of your picture that match "
-#| "the chosen color."
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
@@ -1682,10 +1678,6 @@ msgstr ""
 "くろに しよう。"
 
 #: ../../magic/src/fade_darken.c:78
-#, fuzzy
-#| msgid ""
-#| "Click to entirely desaturate your the parts of your picture that don't "
-#| "match the chosen color."
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
