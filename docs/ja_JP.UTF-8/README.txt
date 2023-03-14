@@ -73,43 +73,36 @@
 
    ライセンスの全文は、COPYING.txtをお読みください。
 
-What's New in Tux Paint version 0.9.29?
+Tux Paint バージョン 0.9.29 での変更点
 
-   Stamp tool update
-           Stamps may be rotated before being applied to the canvas
+   「はんこ」ツールの変更
+           はんこ は、キャンバスに貼り付ける前に回転できるようになりました
 
-   Shapes tool update
-           Improvements to Shapes tool behavior when using the "from the
-           corner" stretching mode
+   「かたち」ツールの変更
+           「かたち」ツールで「角から広げる」モードでの動作を改善しました
 
-   New Fill tool
-           A shaped gradient mode has been added to the Fill tool
+   「ぬる」ツールの追加
+           「ぬる」ツールに、領域の輪郭に合わせてグラデーションをつけるモードが追加されました。
 
-   Fifteen new Magic tools
-           Maze, Googly Eyes, Fur, Circles, Rays, 3D Glasses, Color Sep.,
-           Saturate, Desaturate, Remove Color, Keep Color, Kaleido-4,
-           Kaleido-6, Kaleido-8, Bloom
+   15個の新たな「まほう」ツールの追加
+           「めいろ」, 「めだま」, 「けがわ」, 「えんけい」, 「ほうしゃ」, 「りったいメガネ」, 「いろぶんかい」, 「ほうわ」,
+           「ひほうわ」, 「だっしょく」, 「いろのこし」, 「まんげきょう4」, 「まんげきょう6」, 「まんげきょう8」, 「かがやき」
 
-   Eraser shortcut
-           A keyboard shortcut is available for quick access to the Eraser
-           tool
+   けしゴム のショートカット
+           「けしゴム」ツールに素早くアクセスできるキーボードショートカットが利用できるようになりました
 
-   Rainbow Palette update
-           The chosen built-in color, Color Picker (pipette tool) color, or
-           Color Mixer color can be loaded into the Rainbow Palette dialog
+   「レインボーパレット」の変更
+           組み込みのカラーパレットやスポイト又はカラーミキサーで選んだ色を「レインボーパレット」ダイアログに読み込むことができるようになりました
 
-   Quick Start Guide created
-           A new Quick Start Guide explains the basic usage of Tux Paint
+   クイックスタートガイド
+           新たなドキュメント「クイックスタートガイド」では、Tux Paint の基本的な使い方を説明しています
 
-   Other changes
-              * Drawings removed using the Open dialog's Erase button are
-                moved to the system's Trash can on macOS
-              * Starter and Template images offer scaling, to avoid smearing
-                on the edges
-              * The "buttonsize" interface size option now offers an "auto"
-                option
+   その他の変更点
+              * macOS 版でも「ひらく」ダイアログの「けす」ボタンで削除した作品が「ゴミ箱」に入るようになりました
+              * スターター画像とテンプレート画像に、画面に合わせた拡大縮小のオプションを設定できるようになりました
+              * ユーザーインターフェースの"buttonsize" に、自動選択のオプションが追加されました
 
-   See CHANGES.txt for the complete list of changes.
+   全ての変更点については、CHANGES.txt をお読みください。
 
                                  Tux Paint の使い方
 
@@ -807,25 +800,23 @@ Tux Paint の起動
    もっとお知りになりたい場合、Tux Paint のウェブサイト の "私たちにご協力を" のページ
    (https://tuxpaint.org/help/) をごらん下さい
 
-                  Follow the Tux Paint project on social media
+                          Tux Paint プロジェクトの SNS アカウント
 
-   Tux Paint maintains a presence on a variety of social media networks,
-   where we post updates and artwork.
-     * Join the Tux Paint page on Facebook
-     * Follow @TuxPaintDevs on Instagram
-     * Follow @tuxpaint@floss.social on Mastodon
-     * Follow u/TuxPaintDevs on Reddit
-     * Follow Tux Paint on Tumblr
-     * Follow @TuxPaintTweets on Twitter
+   Tux Paint は様々な SNS アカウントを利用し、最新情報や作品を投稿しています。
+     * Facebook で Tux Paint のページに参加する
+     * Instagram で @TuxPaintDevs をフォローする
+     * Mastdon で @tuxpaint@floss.socal をフォローする
+     * Reddit で u/TuxPaintDevs をフォローする
+     * Tumblr で Tux Paint をフォローする
+     * Twitter で @TuxPaintTweets をフォローする
 
                                      商標について
 
      * "Linux" は Linus Torvalds の登録商標です。
      * "Microsoft" および "Windows" は、Microsoft 社の登録商標です。
      * "Apple" および "macOS" は Apple 社の登録商標です。
-     * "Facebook" and "Instagram" are registered trademarks of Meta
-       Platforms, Inc.
-     * "Mastodon" is a registered trademark of Mastodon gGmbH.
-     * "Reddit" is a registered trademark of Reddit, Inc.
+     * "Facebook" および "Instagram" は Meta Platforms 社の登録商標です。
+     * "Mastodon" は Mastodon gGmbH の登録商標です。
+     * "Reddit" は、Reddit 社の登録商標です。
      * "Tumblr" は Tumblr 社の登録商標です。
      * "Twitter" は、Twitter 社の登録商標です。
