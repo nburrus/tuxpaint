@@ -15240,30 +15240,46 @@ static int do_prompt_image_flash_snd(const char *const text,
   SDL_FillRect(backup, NULL, SDL_MapRGBA(backup->format, 255, 255, 255, 255));
   SDL_BlitSurface(screen, NULL, backup, NULL);
 
-  for (w = 0; w <= r_ttools.w; w = w + 2)
+  /*
+  * This loop creates an animation effect of the dialog box popping up.  To
+  * ensure the animation plays at the same speed regardless of the platform and
+  * resource available at the time, capture the rate at which each frame is
+  * being drawn and draw the next frame at the adaptive rate.
+  */
   {
-    oox = ox - w;
-    ooy = oy - w;
+    Uint64 anim_ms = 300;
+    Uint64 last_ms = SDL_GetTicks64();
 
-    nx = PROMPT_LEFT + r_ttools.w - w + PROMPTOFFSETX;
-    ny = 2 + canvas->h / 2 - w;
+    w = 0;
 
-    dest.x = ((nx * w) + (oox * (r_ttools.w - w))) / r_ttools.w;
-    dest.y = ((ny * w) + (ooy * (r_ttools.w - w))) / r_ttools.w;
-    dest.w = (PROMPT_W - r_ttools.w * 2) + w * 2;
-    dest.h = w * 2;
-    SDL_FillRect(screen, &dest,
-                 SDL_MapRGB(screen->format, 224 - (int) (w / button_scale),
-                            224 - (int) (w / button_scale),
-                            244 - (int) (w / button_scale)));
+    while(w <= r_ttools.w)
+    {
+      Uint64 next_ms = 0;
 
-    SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+      oox = ox - w;
+      ooy = oy - w;
 
-    if ((w % 8) == 0)
-      SDL_Delay(1);
+      nx = PROMPT_LEFT + r_ttools.w - w + PROMPTOFFSETX;
+      ny = 2 + canvas->h / 2 - w;
 
-    if (w == r_ttools.w - 2)
-      SDL_BlitSurface(backup, NULL, screen, NULL);
+      dest.x = ((nx * w) + (oox * (r_ttools.w - w))) / r_ttools.w;
+      dest.y = ((ny * w) + (ooy * (r_ttools.w - w))) / r_ttools.w;
+      dest.w = (PROMPT_W - r_ttools.w * 2) + w * 2;
+      dest.h = w * 2;
+      SDL_FillRect(screen, &dest,
+                   SDL_MapRGB(screen->format, 224 - (int) (w / button_scale),
+                              224 - (int) (w / button_scale),
+                              244 - (int) (w / button_scale)));
+
+      SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+
+      /* Calculate the amount by which to move to the next animation frame */
+      next_ms = SDL_GetTicks64();
+      w += (next_ms - last_ms) * r_ttools.w / anim_ms;
+      last_ms = next_ms;
+    }
+
+    SDL_BlitSurface(backup, NULL, screen, NULL);
   }
 
   SDL_FreeSurface(backup);

@@ -181,6 +181,10 @@ https://tuxpaint.org/
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/199/)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Play dialog popup animation at a consistent speed across platforms.
+      Also, fix the issue with animation not clearing after the final render.
+      Mark Kim <markuskimius@gmail.com>
+
   * Bug Fixes:
     ----------
     * Always creating 24-bit canvases, in an attempt to avoid blending
