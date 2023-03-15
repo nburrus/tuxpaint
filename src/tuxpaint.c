@@ -15275,7 +15275,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
       /* Calculate the amount by which to move to the next animation frame */
       next_ms = SDL_GetTicks64();
-      w += (next_ms - last_ms) * r_ttools.w / anim_ms;
+      w += max(1, ((next_ms - last_ms) * r_ttools.w) / anim_ms);
       last_ms = next_ms;
     }
 
