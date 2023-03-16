@@ -15242,14 +15242,15 @@ static int do_prompt_image_flash_snd(const char *const text,
   * being drawn and draw the next frame at the adaptive rate.
   */
   {
-    Uint64 anim_ms = 300;
-    Uint64 last_ms = SDL_GetTicks64();
+    Uint32 anim_ms = 120;
+    Uint32 last_ms = SDL_GetTicks();
 
     w = 0;
 
     while(w <= r_ttools.w)
     {
-      Uint64 next_ms = 0;
+      Uint32 next_ms = 0;
+      Uint32 dw = 0;
 
       oox = ox - w;
       ooy = oy - w;
@@ -15269,12 +15270,31 @@ static int do_prompt_image_flash_snd(const char *const text,
       SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
 
       /* Calculate the amount by which to move to the next animation frame */
-      next_ms = SDL_GetTicks64();
-      w += max(1, ((next_ms - last_ms) * r_ttools.w) / anim_ms);
-      last_ms = next_ms;
-    }
+      if(w < r_ttools.w-2) {
+        while(true) {
+          next_ms = SDL_GetTicks();
+          dw = ((next_ms - last_ms) * r_ttools.w + r_tools.w/2) / anim_ms;
+          if(dw) break;
 
-    SDL_BlitSurface(backup, NULL, screen, NULL);
+          /* This platform is so fast that there is no new frame to draw.
+           * Yield some time then recalculate the next frame. */
+          SDL_Delay(1);
+        }
+        w += dw;
+        w = min(w, r_ttools.w-2);
+        last_ms = next_ms;
+      }
+      else if(w == r_ttools.w-2) {
+        /* Draw the dialog box. The dialog box is drawn 1 frame before the last
+         * frame because the last frame draws the top and left borders.  We
+         * also skip a frame for artistic reasons. */
+        SDL_BlitSurface(backup, NULL, screen, NULL);
+        w += 2;
+      }
+      else {
+        w += 2;
+      }
+    }
   }
 
   SDL_FreeSurface(backup);
