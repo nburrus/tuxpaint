@@ -15271,7 +15271,7 @@ static int do_prompt_image_flash_snd(const char *const text,
 
       /* Calculate the amount by which to move to the next animation frame */
       if(w < r_ttools.w-2) {
-        while(true) {
+        while(1) {
           next_ms = SDL_GetTicks();
           dw = ((next_ms - last_ms) * r_ttools.w + r_tools.w/2) / anim_ms;
           if(dw) break;
