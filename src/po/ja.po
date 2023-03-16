@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-15 21:31-0700\n"
-"PO-Revision-Date: 2023-03-13 21:04+0900\n"
+"PO-Revision-Date: 2023-03-17 08:54+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -356,11 +356,11 @@ msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
 msgstr ""
 "「ふで」ツールでは、さまざまなブラシや色を使って、フリーハンドで絵を描くこと"
-"ができます"
+"ができます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:42
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
-msgstr "「はんこ」ツールは、スタンプやシールのセットのようなものです"
+msgstr "「はんこ」ツールは、スタンプやシールのセットのようなものです。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid ""
@@ -368,42 +368,53 @@ msgid ""
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
+"「めいろ」「めだま」「けがわ」「えんけい」「ほうしゃ」「りったいメガネ」「い"
+"ろぶんかい」「ほうわ」「ひほうわ」「だっしょく」「いろのこし」「まんげきょう"
+"4」「まんげきょう6」「っまんげきょう」「かがやき」の15種類のまほうツールが追"
+"加されています。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Stamps may be rotated before being applied to the canvas."
-msgstr ""
+msgstr "はんこは、キャンバスに貼り付ける前に回転できるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
-msgstr ""
+msgstr "「かたち」ツールの図形の角から広げるモードの動作を改良しました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
+"塗りつぶしツールに、エリアの輪郭にそってグラデーションをつけるモードが追加さ"
+"れました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
-msgstr ""
+msgstr "キーボードショートカットで素早くけしゴムが使えるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
 msgstr ""
+"レインボーパレット（HSV色選択）ツールに、組み込みカラーパレットやスポイトツー"
+"ル又はカラーミキサーで選択した色を取り込めるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
+"スターター画像とテンプレート画像の属性に、画像と縦横比が異なるキャンバスに読"
+"み込む際、どのように拡大するかを設定できるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
+"UIボタンの大きさを画面サイズに応じて自動設定するオプションが追加されました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "A quick start guide has been added."
-msgstr ""
+msgstr "「クイックスタートガイド」が同梱されました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
