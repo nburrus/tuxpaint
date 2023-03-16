@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-15 21:31-0700\n"
-"PO-Revision-Date: 2023-03-13 09:06+0100\n"
+"PO-Revision-Date: 2023-03-16 16:05+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -408,43 +408,43 @@ msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
-msgstr ""
+msgstr "S'ha afegit quinze eines màgiques noves: Laberint, Uulls, Pèl, Cercles, Radis, Ulleres 3D, Separa colors, Satura, Dessatura, Treu color, Guarda color, Calidoscopi-4, Calidoscopi-6, Calidoscopi-8 i Bloom."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Stamps may be rotated before being applied to the canvas."
-msgstr ""
+msgstr "Els segells es poden girar en inserir-los al dibuix."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
-msgstr ""
+msgstr "En l'ena Formes, s'ha millorat el mode d'inserir des de la vora."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
-msgstr ""
+msgstr "L'eina Emplena ara ofereix un efecte de degradat que segueix la forma de l'àrea que s'emplena."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
-msgstr ""
+msgstr "Hi ha disponible una drecera de teclat que permet esborrar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
-msgstr ""
+msgstr "El selector de colors ara pot carregar el color  actual o els colors del mesclador de colors o escollir-los del dibuix."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
-msgstr ""
+msgstr "Les imatges d'engegada, Starter i Template, ara poden especificar la manera en que s'han d'estirar o retallar per adaptar-se a una mida de pantalla diferent."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
-msgstr ""
+msgstr "La opció de configuració \"buttonsize\" ara accepta tambe \"auto\" com a valor."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "A quick start guide has been added."
-msgstr ""
+msgstr "S'ha afegit una guia d'engegada ràpida."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
