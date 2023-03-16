@@ -4127,7 +4127,6 @@ static void mainloop(void)
                */
 
               scrolling_tool = 1;
-              SDL_InitSubSystem(SDL_INIT_TIMER);
               scrolltimer_tool =
                 SDL_AddTimer(REPEAT_SPEED, scrolltimer_tool_callback,
                              (void *) &scrolltimer_tool_event);
@@ -5021,7 +5020,6 @@ static void mainloop(void)
                    */
 
                   scrolling_selector = 1;
-                  SDL_InitSubSystem(SDL_INIT_TIMER);
                   scrolltimer_selector =
                     SDL_AddTimer(REPEAT_SPEED, scrolltimer_selector_callback,
                                  (void *) &scrolltimer_selector_event);
@@ -5048,7 +5046,6 @@ static void mainloop(void)
                       scrolltimer_selector = TIMERID_NONE;
                     }
                     scrolling_selector = 0;
-                    SDL_QuitSubSystem(SDL_INIT_TIMER);
                   }
                 }
               }
@@ -6190,7 +6187,6 @@ static void mainloop(void)
             scrolltimer_selector = TIMERID_NONE;
           }
           scrolling_selector = 0;
-          SDL_QuitSubSystem(SDL_INIT_TIMER);
 
           DEBUG_PRINTF("Killing selector scrolling\n");
         }
@@ -6203,7 +6199,6 @@ static void mainloop(void)
             scrolltimer_tool = TIMERID_NONE;
           }
           scrolling_tool = 0;
-          SDL_QuitSubSystem(SDL_INIT_TIMER);
 
           DEBUG_PRINTF("Killing tool scrolling\n");
         }
@@ -18236,15 +18231,7 @@ static int do_open(void)
                          sizeof(SDL_Event));
                   scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
-                  /*
-                   * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
-                   * for scrolling) then disable it immediately after (e.g., after the timer has fired or
-                   * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
-                   * energy impact on the Mac.
-                   */
-
                   scrolling_dialog = 1;
-                  SDL_InitSubSystem(SDL_INIT_TIMER);
                   scrolltimer_dialog =
                     SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback,
                                  (void *) &scrolltimer_dialog_event);
@@ -18457,7 +18444,6 @@ static int do_open(void)
                 scrolltimer_dialog = TIMERID_NONE;
               }
               scrolling_dialog = 0;
-              SDL_QuitSubSystem(SDL_INIT_TIMER);
               DEBUG_PRINTF("Killing dialog scrolling\n");
             }
           }
@@ -19459,15 +19445,7 @@ static int do_slideshow(void)
             memcpy(&scrolltimer_dialog_event, &event, sizeof(SDL_Event));
             scrolltimer_dialog_event.type = TP_SDL_MOUSEBUTTONSCROLL;
 
-            /*
-             * We enable the timer subsystem only when needed (e.g., to use SDL_AddTimer() needed
-             * for scrolling) then disable it immediately after (e.g., after the timer has fired or
-             * after SDL_RemoveTimer()) because enabling the timer subsystem in SDL1 has a high
-             * energy impact on the Mac.
-             */
-
             scrolling_dialog = 1;
-            SDL_InitSubSystem(SDL_INIT_TIMER);
             scrolltimer_dialog =
               SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback,
                            (void *) &scrolltimer_dialog_event);
@@ -19732,7 +19710,6 @@ static int do_slideshow(void)
             scrolltimer_dialog = TIMERID_NONE;
           }
           scrolling_dialog = 0;
-          SDL_QuitSubSystem(SDL_INIT_TIMER);
           DEBUG_PRINTF("Killing dialog scrolling\n");
         }
       }
@@ -23808,7 +23785,6 @@ static int do_new_dialog(void)
                */
 
               scrolling_dialog = 1;
-              SDL_InitSubSystem(SDL_INIT_TIMER);
               scrolltimer_dialog =
                 SDL_AddTimer(REPEAT_SPEED, scrolltimer_dialog_callback,
                              (void *) &scrolltimer_dialog_event);
@@ -23961,7 +23937,6 @@ static int do_new_dialog(void)
             scrolltimer_dialog = TIMERID_NONE;
           }
           scrolling_dialog = 0;
-          SDL_QuitSubSystem(SDL_INIT_TIMER);
           DEBUG_PRINTF("Killing dialog scrolling\n");
         }
       }
@@ -30178,7 +30153,7 @@ static void setup(void)
   if (joystick_dev != -1)
     do_lock_file();
 
-  init_flags = SDL_INIT_VIDEO | SDL_INIT_JOYSTICK;
+  init_flags = SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_TIMER;
   if (use_sound)
     init_flags |= SDL_INIT_AUDIO;
   if (!fullscreen)
