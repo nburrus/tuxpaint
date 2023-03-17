@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.15 (0.9.29)
+2023.March.16 (0.9.29) ### RC1
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
