@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.16 (0.9.29) ### RC1
+2023.March.18 (0.9.29) ### RC2?
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -374,6 +374,9 @@ https://tuxpaint.org/
     * Add missing dependencies in Makefile which result in build failures
       when building with the --shuffle flag for GNU make.
       Philipp Rösner <rndxelement@protonmail.com>
+
+    * Correction to allow Haiku printing code to compile again
+      Luc 'Begasus' Schrijvers <begasus@gmail.com>
 
   * Documentation updates:
     ---------------------
