@@ -194,6 +194,11 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/259/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Magic tools with very long filenames/function names did not load
+      on some Android systems.  Affected new Kaleido-* tools, but also
+      Blocks, Chalk, and Drip (hence this being listed as a bug fix).
+      h/t Pere for discovering this.
+
     * SDL1.2 supported "SDL_VIDEO_WINDOW_POS" environment variable,
       but SDL2 does not; so reimplemented it ourselves. (See ENVARS docs.)
       Bill Kendrick <bill@newbreedsoftware.com>
