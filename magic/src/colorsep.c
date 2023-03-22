@@ -31,7 +31,7 @@ static char * colorsep_snd_filenames[NUM_TOOLS] = {
 static char * colorsep_icon_filenames[NUM_TOOLS] = {
   "3dglasses.png",
   "colorsep.png",
-  "colorsep.png" // FIXME
+  "doublevision.png"
 };
 
 char * colorsep_names[NUM_TOOLS] = {
