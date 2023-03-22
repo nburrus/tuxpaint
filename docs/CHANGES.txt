@@ -62,12 +62,12 @@ https://tuxpaint.org/
       Attribution 4.0 International (CC BY 4.0)
       by https://freesound.org/people/juskiddink/)
 
-    * [WIP] "Double Vision" - separate and blend (50/50) the image,
+    * "Double Vision" - separate and blend (50/50) the image,
       simulating double vision.
       Bill Kendrick <bill@newbreedsoftware.com>
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/221/)
-      + needs icon
-      + needs sound effects
+      (Sound effect licensed as Creative Commons 0 (CC0 1.0)
+      by https://freesound.org/people/nomiqbomi/)
 
     * "Saturate" & "Desaturate" - Increase or decrease color saturation.
       Bill Kendrick <bill@newbreedsoftware.com>

@@ -25,7 +25,7 @@ enum {
 static char * colorsep_snd_filenames[NUM_TOOLS] = {
   "3dglasses.ogg",
   "colorsep.ogg",
-  "colorsep.ogg" // FIXME
+  "doublevision.ogg",
 };
 
 static char * colorsep_icon_filenames[NUM_TOOLS] = {
