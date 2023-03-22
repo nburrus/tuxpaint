@@ -1,12 +1,10 @@
-                        Tux Paint "Magic" Tool: 「いろぶんかい」
+                     Tux Paint "Magic" Tool: Double Vision
 
                               Group: Color Filters
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-   This tool separates one color out of your entire picture, shifting colors
-   away from each other (similar to '3D Glasses', but you may choose the any
-   color to separate, and may move in any direction).
+   This blends the image with itself, to simulate double vision.
 
    See also: 「りったいメガネ」 & Double Vision.
 

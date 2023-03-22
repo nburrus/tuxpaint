@@ -1,10 +1,12 @@
-                         Tux Paint "Magic" Tool: 「かがやき」
+                     Tux Paint "Magic" Tool: Double Vision
 
                               Group: Color Filters
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-   Add a glowing \"bloom\" effect to pictures.
+   This blends the image with itself, to simulate double vision.
+
+   See also: 3D Glasses & Double Vision.
 
      ----------------------------------------------------------------------
 
