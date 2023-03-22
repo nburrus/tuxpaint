@@ -20137,6 +20137,23 @@ static void wait_for_sfx(void)
 /* XOR-based outline of rubber stamp shapes
    (unused if LOW_QUALITY_STAMP_OUTLINE is #defined) */
 
+#if 0
+#define STIPLE_W 10
+#define STIPLE_H 10
+static char stiple[] =
+"8844221100"
+"8844221100"
+"1100884422"
+"1100884422"
+"4422110088"
+"4422110088"
+"0088442211"
+"0088442211"
+"2211008844"
+"2211008844"
+;
+#endif
+
 #if 1
 #define STIPLE_W 5
 #define STIPLE_H 5
@@ -20303,7 +20320,25 @@ static void stamp_xor(int x, int y)
       sy = y + yy - stamp_outline_h / 2;
       if (stiple[sx % STIPLE_W + sy % STIPLE_H * STIPLE_W] != '8')
         continue;
+
       xorpixel(sx, sy);
+
+      if (xx < stamp_outline_w - 1) {
+        if (stiple[(sx + 1) % STIPLE_W + sy % STIPLE_H * STIPLE_W] != '8') {
+          xorpixel(sx + 1, sy);
+        }
+      }
+      if (yy < stamp_outline_h - 1) {
+        if (stiple[sx % STIPLE_W + (sy + 1) % STIPLE_H * STIPLE_W] != '8') {
+          xorpixel(sx, sy + 1);
+        }
+
+        if (xx < stamp_outline_w - 1) {
+          if (stiple[(sx + 1) % STIPLE_W + (sy + 1) % STIPLE_H * STIPLE_W] != '8') {
+            xorpixel(sx + 1, sy + 1);
+          }
+        }
+      }
     }
   }
   SDL_UnlockSurface(screen);

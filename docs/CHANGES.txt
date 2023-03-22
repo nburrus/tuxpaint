@@ -17,6 +17,10 @@ https://tuxpaint.org/
       Pere Pujal i Carabantes <perepujal@gmail.com> (feature)
       Bill Kendrick <bill@newbreedsoftware.com> (on/off control)
 
+    * Outline while placing & rotating stamp is now thicker.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t Pere for reporting this & Albert for explaining things.
+
   * New Magic Tools:
     ----------------
     * "Googly Eyes"; place eyeballs in your drawing.
