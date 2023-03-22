@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.19 (0.9.29) ### RC2
+2023.March.21 (0.9.29) ### RC2
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -198,6 +198,13 @@ https://tuxpaint.org/
       on some Android systems.  Affected new Kaleido-* tools, but also
       Blocks, Chalk, and Drip (hence this being listed as a bug fix).
       h/t Pere for discovering this.
+
+    * On touch devices, the color pipette tool could easilly be
+      immediately dismissed due to the 'button up' event happening
+      right where the "Back" dismissal/cancel button appeared.
+      Now only pays attention to 'release' if the button was down.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t Pere for reporting this.
 
     * SDL1.2 supported "SDL_VIDEO_WINDOW_POS" environment variable,
       but SDL2 does not; so reimplemented it ourselves. (See ENVARS docs.)
