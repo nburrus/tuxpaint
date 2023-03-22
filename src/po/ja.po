@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 22:40+0900\n"
-"PO-Revision-Date: 2023-03-17 08:54+0900\n"
+"PO-Revision-Date: 2023-03-22 22:45+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1300,7 +1300,7 @@ msgstr "いろぶんかい"
 
 #: ../../magic/src/colorsep.c:40
 msgid "Double Vision"
-msgstr ""
+msgstr "ふくし"
 
 #: ../../magic/src/colorsep.c:44
 msgid ""
@@ -1315,10 +1315,10 @@ msgid "Click and drag to separate your picture's colors."
 msgstr "クリックしたまま マウスをうごかして いろを ぶんかい しよう。"
 
 #: ../../magic/src/colorsep.c:46
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to simulate double vision."
-msgstr "おおきな レンガを かこう。"
+msgstr ""
+"クリックしたまま マウスを動かして ものが にじゅうにみえる「ふくし」を まねよ"
+"う。"
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"
