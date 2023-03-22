@@ -123,6 +123,13 @@ https://tuxpaint.org/
     -----------
     * Space_draw.svg by Ingrid Illa Terrier
 
+  * New Template
+    ------------
+    * rainbow_gradient.png by Bill Kendrick
+      [Hint: Start a new picture, paint over the entire thing
+      with black, then use eraser to 'scratch away' and expose
+      the rainbow!]
+
   * Starter and Template Improvements
     ---------------------------------
     * Now possible to set scaling and smearing options for
