@@ -68,6 +68,8 @@ void colorsep_set_color(magic_api * api, int which, SDL_Surface * canvas,
 void colorsep_drag(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
                     SDL_Rect * update_rect);
+void colorsep_apply(magic_api * api, int which, SDL_Surface * canvas,
+                    SDL_Surface * snapshot, int offset_x, int offset_y, int preview);
 void colorsep_release(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * snapshot, int x, int y,
                        SDL_Rect * update_rect);
@@ -164,19 +166,18 @@ colorsep_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 
   /* (Start off as if they clicked off to the side a little, so that
    * quick click+release will split the image bit by bit */
-  colorsep_click_x = x;
+  colorsep_click_x = x + 10;
   colorsep_click_y = y;
-  colorsep_drag(api, which, canvas, snapshot, x, y, x - 10, y, update_rect);
+  colorsep_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
 }
 
 
 void
-colorsep_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
+colorsep_drag(magic_api * api, int which, SDL_Surface * canvas,
               SDL_Surface * snapshot, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
               int x, int y, SDL_Rect * update_rect)
 {
-  int xx, yy, offset_x, offset_y;
-  Uint8 r1, g1, b1, r2, g2, b2, r, g, b;
+  int offset_x, offset_y;
 
   offset_x = colorsep_click_x - x;
   if (which == COLORSEP_TOOL_3DGLASSES) {
@@ -187,12 +188,34 @@ colorsep_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
 
   api->playsound(snd_effects[which], (((-offset_x * 255) / canvas->w) + 128), 255);
 
-  for (yy = 0; yy < canvas->h; yy++) {
-    for (xx = 0; xx < canvas->w; xx++) {
+  colorsep_apply(api, which, canvas, snapshot, offset_x, offset_y, 1);
+
+  update_rect->x = 0;
+  update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
+}
+
+void colorsep_apply(magic_api * api, int which, SDL_Surface * canvas,
+                    SDL_Surface * snapshot, int offset_x, int offset_y, int preview)
+{
+  int xx, yy, step;
+  Uint8 r1, g1, b1, r2, g2, b2, r, g, b;
+  SDL_Rect dest;
+
+  if (preview) {
+    step = 3;
+  } else {
+    step = 1;
+  }
+
+  for (yy = 0; yy < canvas->h; yy = yy + step) {
+    for (xx = 0; xx < canvas->w; xx = xx + step) {
       SDL_GetRGB(api->getpixel(snapshot, xx + offset_x / 2, yy + offset_y / 2), snapshot->format, &r1, &g1, &b1);
       SDL_GetRGB(api->getpixel(snapshot, xx - offset_x / 2, yy - offset_y / 2), snapshot->format, &r2, &g2, &b2);
 
       if (which == COLORSEP_TOOL_3DGLASSES) {
+        /* Split red aparet from green & blue (cyan) */
         r = r1;
         g = g2;
         b = b2;
@@ -201,28 +224,47 @@ colorsep_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
         g = (Uint8) ((float) g1 * colorsep_g_pct) + ((float) g2 * (1.0 - colorsep_g_pct));
         b = (Uint8) ((float) b1 * colorsep_b_pct) + ((float) b2 * (1.0 - colorsep_b_pct));
       } else { /* which == COLORSEP_TOOL_DOUBLEVISION */
+        /* 50/50 for all colors */
         r = (Uint8) ((float) r1 * 0.5) + ((float) r2 * 0.5);
         g = (Uint8) ((float) g1 * 0.5) + ((float) g2 * 0.5);
         b = (Uint8) ((float) b1 * 0.5) + ((float) b2 * 0.5);
       }
 
-      api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+      if (preview) {
+        dest.x = xx;
+        dest.y = yy;
+        dest.w = step;
+        dest.h = step;
+
+        SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, r, g, b));
+      } else {
+        api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));
+      }
     }
   }
+}
+
+
+void colorsep_release(magic_api * api, int which,
+                  SDL_Surface * canvas,
+                  SDL_Surface * snapshot,
+                  int x, int y,
+                  SDL_Rect * update_rect)
+{
+  int offset_x, offset_y;
+
+  offset_x = colorsep_click_x - x;
+  if (which == COLORSEP_TOOL_3DGLASSES) {
+    offset_y = 0;
+  } else {
+    offset_y = colorsep_click_y - y;
+  }
+  colorsep_apply(api, which, canvas, snapshot, offset_x, offset_y, 0);
 
   update_rect->x = 0;
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
-}
-
-
-void colorsep_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                  SDL_Surface * snapshot ATTRIBUTE_UNUSED,
-                  int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                  SDL_Rect * update_rect ATTRIBUTE_UNUSED)
-{
 }
 
 
