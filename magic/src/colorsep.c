@@ -3,7 +3,7 @@
    Color separation effect (a la red/cyan aka red/blue 3D glasses).
    Bill Kendrick
 
-   Last updated: February 22, 2023
+   Last updated: March 22, 2023
 */
 
 #include <stdio.h>
@@ -18,26 +18,32 @@
 enum {
   COLORSEP_TOOL_3DGLASSES,
   COLORSEP_TOOL_COLORSEP,
+  COLORSEP_TOOL_DOUBLEVISION,
   NUM_TOOLS
 };
 
 static char * colorsep_snd_filenames[NUM_TOOLS] = {
   "3dglasses.ogg",
-  "colorsep.ogg"
+  "colorsep.ogg",
+  "colorsep.ogg" // FIXME
 };
 
 static char * colorsep_icon_filenames[NUM_TOOLS] = {
   "3dglasses.png",
-  "colorsep.png"
+  "colorsep.png",
+  "colorsep.png" // FIXME
 };
 
 char * colorsep_names[NUM_TOOLS] = {
   gettext_noop("3D Glasses"),
   gettext_noop("Color Sep."),
+  gettext_noop("Double Vision"),
 };
+
 char * colorsep_descrs[NUM_TOOLS] = {
   gettext_noop("Click and drag left and right to separate your picture's red and cyan, to make anaglyphs you can view with 3D glasses!"),
-  gettext_noop("Click and drag to separate your picture's colors.")
+  gettext_noop("Click and drag to separate your picture's colors."),
+  gettext_noop("Click and drag to simulate double vision."),
 };
 
 Mix_Chunk *snd_effects[NUM_TOOLS];
@@ -190,10 +196,14 @@ colorsep_drag(magic_api * api ATTRIBUTE_UNUSED, int which, SDL_Surface * canvas,
         r = r1;
         g = g2;
         b = b2;
-      } else {
+      } else if (which == COLORSEP_TOOL_COLORSEP) {
         r = (Uint8) ((float) r1 * colorsep_r_pct) + ((float) r2 * (1.0 - colorsep_r_pct));
         g = (Uint8) ((float) g1 * colorsep_g_pct) + ((float) g2 * (1.0 - colorsep_g_pct));
         b = (Uint8) ((float) b1 * colorsep_b_pct) + ((float) b2 * (1.0 - colorsep_b_pct));
+      } else { /* which == COLORSEP_TOOL_DOUBLEVISION */
+        r = (Uint8) ((float) r1 * 0.5) + ((float) r2 * 0.5);
+        g = (Uint8) ((float) g1 * 0.5) + ((float) g2 * 0.5);
+        b = (Uint8) ((float) b1 * 0.5) + ((float) b2 * 0.5);
       }
 
       api->putpixel(canvas, xx, yy, SDL_MapRGB(canvas->format, r, g, b));

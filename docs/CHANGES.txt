@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.21 (0.9.29) ### RC2
+2023.March.22 (0.9.29) ### RC2
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -61,6 +61,13 @@ https://tuxpaint.org/
       "Color Sep." sound effect licensed as Creative Commons
       Attribution 4.0 International (CC BY 4.0)
       by https://freesound.org/people/juskiddink/)
+
+    * [WIP] "Double Vision" - separate and blend (50/50) the image,
+      simulating double vision.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/221/)
+      + needs icon
+      + needs sound effects
 
     * "Saturate" & "Desaturate" - Increase or decrease color saturation.
       Bill Kendrick <bill@newbreedsoftware.com>
