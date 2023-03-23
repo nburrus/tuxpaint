@@ -1166,8 +1166,22 @@ static void keybd_prepare(on_screen_keyboard * keyboard)
             snprintf(fontname, 255, "%s/fonts/locale/%s", DATA_PREFIX,
                      keyboard->layout->fontpath);
             keyboard->osk_fonty = TTF_OpenFont(fontname, font_height);
-          }
-        }
+	    if (keyboard->osk_fonty == NULL)
+	    {
+	      /* Fonts are in assets "data" dir in Android builds */
+	      snprintf(fontname, 255, "data/fonts/%s",
+		       keyboard->layout->fontpath);
+	      keyboard->osk_fonty = TTF_OpenFont(fontname, font_height);
+	      if (keyboard->osk_fonty == NULL)
+	      {
+		/* Fonts are in assets "data" dir in Android builds, checking locale dir */
+		snprintf(fontname, 255, "data/fonts/locale/%s",
+			 keyboard->layout->fontpath);
+		keyboard->osk_fonty = TTF_OpenFont(fontname, font_height);
+	      }
+	    }
+	  }
+	}
       }
     }
 
@@ -1176,6 +1190,13 @@ static void keybd_prepare(on_screen_keyboard * keyboard)
       /* Going with the default */
       sprintf(fontname, "%s/fonts/FreeSansBold.ttf", DATA_PREFIX);
       keyboard->osk_fonty = TTF_OpenFont(fontname, font_height);
+
+      if (keyboard->osk_fonty == NULL)
+      {
+      /* Also for Android */
+      sprintf(fontname, "data/fonts/FreeSansBold.ttf");
+      keyboard->osk_fonty = TTF_OpenFont(fontname, font_height);
+      }
     }
 
     if (keyboard->osk_fonty == NULL)
