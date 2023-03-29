@@ -182,7 +182,7 @@ msgstr ""
 
 #: ../fill_tools.h:52
 msgid "Solid"
-msgstr ""
+msgstr "ઘાટું"
 
 #: ../fill_tools.h:53
 #, fuzzy
@@ -198,7 +198,7 @@ msgstr "રેખાઓ"
 
 #: ../fill_tools.h:55
 msgid "Radial"
-msgstr ""
+msgstr "ગોળાકાર"
 
 #: ../fill_tools.h:56
 #, fuzzy
@@ -290,40 +290,37 @@ msgstr "ZH_TW"
 
 #. Add menu items
 #: ../macos.m:58
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "About Tux Paint"
-msgstr "ટક્સ પેન્ટ"
+msgstr "ટક્સ પેન્ટ વિશે"
 
 #: ../macos.m:63
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "Hide Tux Paint"
-msgstr "ટક્સ પેન્ટ"
+msgstr "ટક્સ પેન્ટ છુપાવો"
 
 #: ../macos.m:66
 msgid "Hide Others"
-msgstr ""
+msgstr "અન્યને છુપાવો"
 
 #: ../macos.m:69
 msgid "Show All"
-msgstr ""
+msgstr "બધું દર્શાવો"
 
 #: ../macos.m:73
-#, fuzzy
 #| msgid "Tux Paint"
 msgid "Quit Tux Paint"
-msgstr "ટક્સ પેન્ટ"
+msgstr "ટક્સ પેન્ટમાંથી બહાર નીકળો"
 
 #. Put menu into the menubar
 #: ../macos.m:103 ../macos.m:111
 msgid "Window"
-msgstr ""
+msgstr "વિન્ડો"
 
 #. "Minimize" item
 #: ../macos.m:106
 msgid "Minimize"
-msgstr ""
+msgstr "નાનું કરો"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:8 ../tuxpaint.desktop.in:3
 msgid "Tux Paint"
@@ -331,7 +328,7 @@ msgstr "ટક્સ પેન્ટ"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
 msgid "A drawing program for children"
-msgstr "બાળકો માટે ચિત્ર કાર્યક્રમ"
+msgstr "બાળકો માટેનો ચિત્ર કાર્યક્રમ"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:11
 msgid ""
@@ -624,17 +621,15 @@ msgstr "પંચકોણ"
 
 #. Hexagon shape tool (6 sides)
 #: ../shapes.h:290 ../shapes.h:291
-#, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Hexagon"
-msgstr "હેક્સાગોન મોઝેઈક"
+msgstr "હેક્સાગોન"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
 #: ../shapes.h:294 ../shapes.h:295
-#, fuzzy
 #| msgid "Hexagon Mosaic"
 msgid "Heptagon"
-msgstr "હેક્સાગોન મોઝેઈક"
+msgstr "હેક્સાગોન"
 
 #. Octagon shape tool (8 sides)
 #: ../shapes.h:298 ../shapes.h:299
@@ -686,17 +681,15 @@ msgstr "પંચકોણને પાંચ બાજુઓ છે."
 
 #. Description of a hexagon
 #: ../shapes.h:355 ../shapes.h:356
-#, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
-msgstr "પંચકોણને પાંચ બાજુઓ છે."
+msgstr "ષટ્કોણને પાંચ બાજુઓ છે."
 
 #. Description of a heptagon
 #: ../shapes.h:359 ../shapes.h:360
-#, fuzzy
 #| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
-msgstr "પંચકોણને પાંચ બાજુઓ છે."
+msgstr "સપ્તકોણને પાંચ બાજુઓ છે."
 
 #. Description of an octagon
 #: ../shapes.h:363 ../shapes.h:364
