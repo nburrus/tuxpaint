@@ -185,38 +185,34 @@ msgid "Solid"
 msgstr "ઘાટું"
 
 #: ../fill_tools.h:53
-#, fuzzy
 #| msgid "Brushes"
 msgid "Brush"
-msgstr "પીંછીઓ"
+msgstr "પીંછી"
 
 #: ../fill_tools.h:54
-#, fuzzy
 #| msgid "Lines"
 msgid "Linear"
-msgstr "રેખાઓ"
+msgstr "રેખીય"
 
 #: ../fill_tools.h:55
 msgid "Radial"
 msgstr "ગોળાકાર"
 
 #: ../fill_tools.h:56
-#, fuzzy
 #| msgid "Shapes"
 msgid "Shaped"
-msgstr "આકારો"
+msgstr "આકારીત"
 
 #: ../fill_tools.h:60
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
-msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ચિત્રમાં ક્લિક કરો."
+msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ક્લિક કરો."
 
 #: ../fill_tools.h:61
-#, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click and drag to fill an area by hand, using a brush."
-msgstr "તે વિસ્તારને રંગથી ભરવાં માટે ચિત્રમાં ક્લિક કરો."
+msgstr "પીંછીનો ઉપયોગ કરીને વિસ્તારને રંગથી ભરવાં માટે ક્લિક કરો."
 
 #: ../fill_tools.h:63
 msgid ""
@@ -1216,7 +1212,7 @@ msgstr "સ્લાઇડો"
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
 #: ../tuxpaint.c:9918
 msgid "Export"
-msgstr ""
+msgstr "નિકાસ"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
 #: ../tuxpaint.c:9921
@@ -1230,7 +1226,7 @@ msgstr "ચાલુ"
 
 #: ../tuxpaint.c:9928
 msgid "GIF Export"
-msgstr ""
+msgstr "GIF નિકાસ"
 
 #. Slideshow: 'Next' button, to load next slide (image)
 #: ../tuxpaint.c:9931
@@ -1240,7 +1236,7 @@ msgstr "આગળ"
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
 #: ../tuxpaint.c:9934
 msgid "Clear"
-msgstr ""
+msgstr "સાફ કરો"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
 #: ../tuxpaint.c:10869 ../tuxpaint.c:10871 ../tuxpaint.c:10872
@@ -1285,56 +1281,53 @@ msgstr ""
 #. Descriptions (names) of the color mixer tool's primary colors and shades
 #: ../tuxpaint.c:25883
 msgid "red"
-msgstr ""
+msgstr "લાલ"
 
 #: ../tuxpaint.c:25884
-#, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
-msgstr "પીળો!"
+msgstr "પીળો"
 
 #: ../tuxpaint.c:25885
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
-msgstr "આકાશી વાદળી!"
+msgstr "વાદળી"
 
 #: ../tuxpaint.c:25886
 #, fuzzy
-#| msgid "White!"
 msgid "white"
-msgstr "સફેદ!"
+msgstr "સફેદ"
 
 #: ../tuxpaint.c:25887
 msgid "grey"
-msgstr ""
+msgstr "ભૂખરો"
 
 #: ../tuxpaint.c:25888
 #, fuzzy
-#| msgid "Black!"
 msgid "black"
-msgstr "કાળું!"
+msgstr "કાળું"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
 #: ../tuxpaint.c:25893
 #, c-format
 msgid "Your color is %1$s %2$s."
-msgstr ""
+msgstr "તમારો રંગ %1$s %2$s છે."
 
 #: ../tuxpaint.c:25894
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
-msgstr ""
+msgstr "તમારો રંગ %1$s %2$s અને %3$s %4$s છે."
 
 #: ../tuxpaint.c:25895
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
-msgstr ""
+msgstr "તમારો રંગ %1$s %2$s, %3$s %4$s, અને %5$s %6$s છે."
 
 #: ../tuxpaint.c:25897
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
-msgstr ""
+msgstr "તમારો રંગ %1$s %2$s, %3$s %4$s, %5$s %6$s, અને %7$s %8$s છે."
 
 #: ../tuxpaint.c:25899
 #, c-format
@@ -1352,7 +1345,7 @@ msgstr ""
 #. Color mixer; e.g., "Your color is entirely grey."
 #: ../tuxpaint.c:26739 ../tuxpaint.c:26746
 msgid "entirely"
-msgstr ""
+msgstr "સંપૂર્ણ"
 
 #: ../tuxpaint.c:30000
 msgid "Select a color from your drawing."
@@ -1609,16 +1602,14 @@ msgid "Saturate"
 msgstr ""
 
 #: ../../magic/src/fade_darken.c:51
-#, fuzzy
 #| msgid "Xor Colors"
 msgid "Remove Color"
-msgstr "Xor રંગો"
+msgstr "રંગ દૂર કરો"
 
 #: ../../magic/src/fade_darken.c:52
-#, fuzzy
 #| msgid "Colors"
 msgid "Keep Color"
-msgstr "રંગો"
+msgstr "રંગ રાખો"
 
 #: ../../magic/src/fade_darken.c:57
 msgid "Click and drag the mouse to lighten parts of your picture."
@@ -1984,7 +1975,7 @@ msgstr "ઋણ"
 
 #: ../../magic/src/negative.c:80
 msgid "Opposite"
-msgstr ""
+msgstr "વિરોધી"
 
 #: ../../magic/src/negative.c:86
 msgid "Click and drag the mouse around to make your painting negative."
@@ -2258,7 +2249,7 @@ msgstr "તમારા ચિત્રકામમાં બરફના ટુ
 
 #: ../../magic/src/stretch.c:120
 msgid "Stretch"
-msgstr ""
+msgstr "ખેંચો"
 
 #: ../../magic/src/stretch.c:135
 #, fuzzy
@@ -2298,14 +2289,13 @@ msgid "Draw string art arrows with free angles."
 msgstr "મુક્ત ખૂણાઓ સાથેનાં તીરો દોરો."
 
 #: ../../magic/src/swirls.c:30
-#, fuzzy
 #| msgid "Circle"
 msgid "Circles"
-msgstr "વર્તુળ"
+msgstr "વર્તુળો"
 
 #: ../../magic/src/swirls.c:31
 msgid "Rays"
-msgstr ""
+msgstr "કિરણો"
 
 #: ../../magic/src/swirls.c:32
 msgid "Fur"
