@@ -7,7 +7,7 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 
-2023.March.24 (0.9.29) ### RC3
+2023.March.29 (0.9.29) ### RC3
   * Improvements to "Stamp" tool:
     -----------------------------
     * Stamps may now be rotated.
@@ -429,8 +429,13 @@ https://tuxpaint.org/
       now allows for localization.  (Maintained in "tuxpaint-docs" repo.)
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Updated macOS build instructions for SDL2.0.
+    * Updated macOS build instructions for SDL2.0 (INSTALL docs).
       Mark Kim <markuskimius@gmail.com>
+
+    * Added an overview of building for Android (INSTALL docs).
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      (Edited by Bill Kendrick)
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/224/
 
     * "--verbose-version" now shows whether SDL2_Pango is being used.
       Bill Kendrick <bill@newbreedsoftware.com>
