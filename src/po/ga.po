@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 00:16-0700\n"
+"POT-Creation-Date: 2023-03-30 08:56-0700\n"
 "PO-Revision-Date: 2015-10-09 17:38+0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -206,25 +206,32 @@ msgstr "Cliceáil chun limistéar a líonadh le dath amháin."
 
 #: ../fill_tools.h:61
 msgid "Click and drag to fill an area by hand, using a brush."
-msgstr "Cliceáil agus tarraing an luch chun limistéar a líonadh de láimh, le scuab."
+msgstr ""
+"Cliceáil agus tarraing an luch chun limistéar a líonadh de láimh, le scuab."
 
 #: ../fill_tools.h:63
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
-msgstr "Cliceáil agus tarraing an luch chun limistéar a líonadh le grádán líneach (ón dath roghnaithe go trédhearcach)."
+msgstr ""
+"Cliceáil agus tarraing an luch chun limistéar a líonadh le grádán líneach "
+"(ón dath roghnaithe go trédhearcach)."
 
 #: ../fill_tools.h:65
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
-msgstr "Cliceáil chun limistéar a líonadh le grádán gathach (ón dath roghnaithe go trédhearcach)."
+msgstr ""
+"Cliceáil chun limistéar a líonadh le grádán gathach (ón dath roghnaithe go "
+"trédhearcach)."
 
 #: ../fill_tools.h:67
 msgid ""
 "Click to fill an area with a shaped gradient (from the chosen color to "
 "transparent)."
-msgstr "Cliceáil chun limistéar a líonadh le grádán deilbhithe (ón dath roghnaithe go trédhearcach)."
+msgstr ""
+"Cliceáil chun limistéar a líonadh le grádán deilbhithe (ón dath roghnaithe "
+"go trédhearcach)."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -701,7 +708,9 @@ msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
-"Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an cnaipe nuair a bheidh an méid agus an cruth socraithe agat. Bog chun é a rothlú, agus cliceáil arís chun é a dhearadh."
+"Roghnaigh cruth. Cliceáil chun an lár a roghnú, tarraing, ansin scaoil an "
+"cnaipe nuair a bheidh an méid agus an cruth socraithe agat. Bog chun é a "
+"rothlú, agus cliceáil arís chun é a dhearadh."
 
 #: ../shapes.h:441
 msgid ""
@@ -819,7 +828,7 @@ msgstr "Nua"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9909
+#: ../tools.h:97 ../tuxpaint.c:9915
 msgid "Open"
 msgstr "Oscail"
 
@@ -928,7 +937,8 @@ msgstr "Scaoil an cnaipe chun an líne a chríochnú."
 msgid ""
 "Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
-msgstr "Scaoil an cnaipe chun an líne a chríochnú. (Is é %.0f céim uillinn na líne.)"
+msgstr ""
+"Scaoil an cnaipe chun an líne a chríochnú. (Is é %.0f céim uillinn na líne.)"
 
 #. Instruction while using Shape tool (after first click, before release)
 #: ../tools.h:169
@@ -939,7 +949,9 @@ msgstr "Coinnigh an cnaipe síos chun an cruth a fhairsingiú."
 #, c-format
 msgid ""
 "Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
-msgstr "Coinnigh an cnaipe síos chun an cruth a fhairsingiú. (Is é \"%.2g:1\" an cóimheas crutha.)"
+msgstr ""
+"Coinnigh an cnaipe síos chun an cruth a fhairsingiú. (Is é \"%.2g:1\" an "
+"cóimheas crutha.)"
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
 #: ../tools.h:173
@@ -951,7 +963,9 @@ msgstr "Bog an luch chun an cruth a rothlú. Cliceáil chun é a dhearadh."
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr "Bog an luch chun an cruth a rothlú. Cliceáil chun é a dhearadh. (Tá sé rothlaithe %d céim.)"
+msgstr ""
+"Bog an luch chun an cruth a rothlú. Cliceáil chun é a dhearadh. (Tá sé "
+"rothlaithe %d céim.)"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
@@ -963,7 +977,10 @@ msgstr "OK… Bímis ag dearadh an chinn seo!"
 msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
-msgstr "Cliceáil ar lipéad atá ann (nó brúigh [Tab] chun dul tríothu agus [Enter] chun ceann amháin a roghnú). Ansin, beidh tú in ann é a bhogadh, a chur in eagar, nó stíl an téacs a athrú."
+msgstr ""
+"Cliceáil ar lipéad atá ann (nó brúigh [Tab] chun dul tríothu agus [Enter] "
+"chun ceann amháin a roghnú). Ansin, beidh tú in ann é a bhogadh, a chur in "
+"eagar, nó stíl an téacs a athrú."
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:183
@@ -971,14 +988,19 @@ msgid ""
 "Click in your picture if you wish to reposition this label, type to change "
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
-msgstr "Cliceáil sa phictiúr más mian leat an lipéad seo a chur in áit nua, clóscríobh chun an téacs a athrú, agus bain triail as na roghanna chun stíl an téacs a athrú. Brúigh [Enter] nó [Tab] nuair a bheidh tú críochnaithe."
+msgstr ""
+"Cliceáil sa phictiúr más mian leat an lipéad seo a chur in áit nua, "
+"clóscríobh chun an téacs a athrú, agus bain triail as na roghanna chun stíl "
+"an téacs a athrú. Brúigh [Enter] nó [Tab] nuair a bheidh tú críochnaithe."
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:186
 msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
-msgstr "Cliceáil lipéad atá ann (nó brúigh [Tab] chun dul tríothu agus [Enter] chun ceann amháin a roghnú) chun an téacs a chur i bhfeidhm ar an gcanbhás."
+msgstr ""
+"Cliceáil lipéad atá ann (nó brúigh [Tab] chun dul tríothu agus [Enter] chun "
+"ceann amháin a roghnú) chun an téacs a chur i bhfeidhm ar an gcanbhás."
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:189
@@ -993,7 +1015,9 @@ msgstr "Athraíonn an scuab seo ag brath ar an uillinn."
 msgid ""
 "This brush changes depending on the angle, and is animated; its shape "
 "changes as you draw!"
-msgstr "Athraíonn an scuab seo ag brath ar an uillinn, agus tá sí beoite chomh maith; athraíonn a cruth de réir mar a dhearann tú!"
+msgstr ""
+"Athraíonn an scuab seo ag brath ar an uillinn, agus tá sí beoite chomh "
+"maith; athraíonn a cruth de réir mar a dhearann tú!"
 
 #: ../tools.h:193
 msgid "This brush's spacing is now 1 pixel!"
@@ -1012,14 +1036,17 @@ msgstr "Is ionann spásáil na scuaibe agus méid na scuaibe anois."
 #: ../tools.h:196
 #, c-format
 msgid "This brush's spacing is now about %d times as big as the brush shape."
-msgstr "Tá spásáil na scuaibe thart ar %d uair níos mó ná méid na scuaibe anois."
+msgstr ""
+"Tá spásáil na scuaibe thart ar %d uair níos mó ná méid na scuaibe anois."
 
 #: ../tools.h:197
 #, c-format
 msgid ""
 "This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
 "shape."
-msgstr "Tá spásáil na scuaibe thart ar %1$d %2$d/%3$d uair níos mó ná méid na scuaibe anois."
+msgstr ""
+"Tá spásáil na scuaibe thart ar %1$d %2$d/%3$d uair níos mó ná méid na "
+"scuaibe anois."
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:200
@@ -1027,7 +1054,9 @@ msgstr "Tá spásáil na scuaibe thart ar %1$d %2$d/%3$d uair níos mó ná méi
 msgid ""
 "Drag the mouse to rotate the stamp. Click to draw it. (It is rotated %d "
 "degrees.)"
-msgstr "Tarraing an luch chun an stampa a rothlú. Cliceáil chun é a dhearadh. (Tá sé rothlaithe %d céim.)"
+msgstr ""
+"Tarraing an luch chun an stampa a rothlú. Cliceáil chun é a dhearadh. (Tá sé "
+"rothlaithe %d céim.)"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2487
@@ -1160,167 +1189,170 @@ msgid "Please wait…"
 msgstr "Fan go fóill…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9912
+#: ../tuxpaint.c:9918
 msgid "Erase"
 msgstr "Scrios"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9915
+#: ../tuxpaint.c:9921
 msgid "Slides"
 msgstr "Sleamhnáin"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9918
+#: ../tuxpaint.c:9924
 msgid "Export"
 msgstr "Easpórtáil"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9921
+#: ../tuxpaint.c:9927
 msgid "Back"
 msgstr "Siar"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9924
+#: ../tuxpaint.c:9930
 msgid "Play"
 msgstr "Seinn"
 
-#: ../tuxpaint.c:9928
+#: ../tuxpaint.c:9934
 msgid "GIF Export"
 msgstr "Easpórtáil GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9931
+#: ../tuxpaint.c:9937
 msgid "Next"
 msgstr "Ar Aghaidh"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9934
+#: ../tuxpaint.c:9940
 msgid "Clear"
 msgstr "Glan"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10869 ../tuxpaint.c:10871 ../tuxpaint.c:10872
+#: ../tuxpaint.c:10875 ../tuxpaint.c:10877 ../tuxpaint.c:10878
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:15217
+#: ../tuxpaint.c:15223
 msgid "Yes"
 msgstr "Tá"
 
-#: ../tuxpaint.c:15221
+#: ../tuxpaint.c:15227
 msgid "No"
 msgstr "Níl"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16498
+#: ../tuxpaint.c:16504
 msgid "Replace the picture with your changes?"
 msgstr "Forscríobh an pictiúr le do chuid athruithe?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16502
+#: ../tuxpaint.c:16508
 msgid "Yes, replace the old one!"
 msgstr "Forscríobh é!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16506
+#: ../tuxpaint.c:16512
 msgid "No, save a new file!"
 msgstr "Ná forscríobh, sábháil i gcomhad nua!"
 
-#: ../tuxpaint.c:17851
+#: ../tuxpaint.c:17857
 msgid "Choose the picture you want, then click “Open”."
 msgstr ""
 "Roghnaigh an pictiúr is mian leat a oscailt, agus ansin cliceáil “Oscail”."
 
-#: ../tuxpaint.c:19574
+#: ../tuxpaint.c:19580
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Roghnaigh dhá líníocht, nó níos mó, chun GIF beoite a dhéanamh díobh."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25883
+#: ../tuxpaint.c:25889
 msgid "red"
 msgstr "dearg"
 
-#: ../tuxpaint.c:25884
+#: ../tuxpaint.c:25890
 msgid "yellow"
 msgstr "buí"
 
-#: ../tuxpaint.c:25885
+#: ../tuxpaint.c:25891
 msgid "blue"
 msgstr "gorm"
 
-#: ../tuxpaint.c:25886
+#: ../tuxpaint.c:25892
 msgid "white"
 msgstr "bán"
 
-#: ../tuxpaint.c:25887
+#: ../tuxpaint.c:25893
 msgid "grey"
 msgstr "liath"
 
-#: ../tuxpaint.c:25888
+#: ../tuxpaint.c:25894
 msgid "black"
 msgstr "dubh"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25893
+#: ../tuxpaint.c:25899
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Dath: %1$s %2$s."
 
-#: ../tuxpaint.c:25894
+#: ../tuxpaint.c:25900
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Dath: %1$s %2$s agus %3$s %4$s."
 
-#: ../tuxpaint.c:25895
+#: ../tuxpaint.c:25901
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Dath: %1$s %2$s, %3$s %4$s, agus %5$s %6$s."
 
-#: ../tuxpaint.c:25897
+#: ../tuxpaint.c:25903
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Dath: %1$s %2$s, %3$s %4$s, %5$s %6$s, agus %7$s %8$s."
 
-#: ../tuxpaint.c:25899
+#: ../tuxpaint.c:25905
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
-msgstr ""
-"Dath: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, agus %9$s %10$s."
+msgstr "Dath: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, agus %9$s %10$s."
 
-#: ../tuxpaint.c:25901
+#: ../tuxpaint.c:25907
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
 msgstr ""
-"Dath: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, agus "
-"%11$s %12$s."
+"Dath: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, agus %11$s "
+"%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26739 ../tuxpaint.c:26746
+#: ../tuxpaint.c:26745 ../tuxpaint.c:26752
 msgid "entirely"
 msgstr "go hiomlán"
 
-#: ../tuxpaint.c:30000
+#: ../tuxpaint.c:30006
 msgid "Select a color from your drawing."
 msgstr "Roghnaigh dath ón líníocht."
 
-#: ../tuxpaint.c:30011
+#: ../tuxpaint.c:30017
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
-msgstr "Roghnaigh dath. Téann na líocha ó bhun go barr. Téann an sáithiú ó chlé (níos báine) go deas (lándaite). Gile/dorchadas: an barra liath."
+msgstr ""
+"Roghnaigh dath. Téann na líocha ó bhun go barr. Téann an sáithiú ó chlé "
+"(níos báine) go deas (lándaite). Gile/dorchadas: an barra liath."
 
-#: ../tuxpaint.c:30025
+#: ../tuxpaint.c:30031
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
-msgstr "Cliceáil na príomhdhathanna (dearg, buí, agus gorm), bán (imir), liath (ton), agus dubh (scáthú), chun dath nua a mheascadh."
+msgstr ""
+"Cliceáil na príomhdhathanna (dearg, buí, agus gorm), bán (imir), liath "
+"(ton), agus dubh (scáthú), chun dath nua a mheascadh."
 
 #: ../tuxpaint.desktop.in:9
 msgid "Drawing program"
@@ -1365,11 +1397,14 @@ msgstr "Sil"
 
 #: ../../magic/src/blocks_etc.c:171
 msgid "Click and drag the mouse around to make the picture blocky."
-msgstr "Cliceáil agus tarraing an luch chun maisíocht blocanna a chur i bhfeidhm ar an bpictiúr."
+msgstr ""
+"Cliceáil agus tarraing an luch chun maisíocht blocanna a chur i bhfeidhm ar "
+"an bpictiúr."
 
 #: ../../magic/src/blocks_etc.c:176
 msgid "Click to make the entire picture blocky."
-msgstr "Cliceáil chun maisíocht blocanna a chur i bhfeidhm ar an bpictiúr iomlán."
+msgstr ""
+"Cliceáil chun maisíocht blocanna a chur i bhfeidhm ar an bpictiúr iomlán."
 
 #: ../../magic/src/blocks_etc.c:185
 msgid ""
@@ -1383,7 +1418,9 @@ msgstr "Cliceáil chun líníocht chailce a dhéanamh den phictiúr."
 
 #: ../../magic/src/blocks_etc.c:200
 msgid "Click and drag the mouse around to make the picture drip."
-msgstr "Cliceáil agus tarraing an luch chun maisíocht silte a chur i bhfeidhm ar an bpictiúr."
+msgstr ""
+"Cliceáil agus tarraing an luch chun maisíocht silte a chur i bhfeidhm ar an "
+"bpictiúr."
 
 #: ../../magic/src/blocks_etc.c:204
 msgid "Click to make the entire picture drip."
@@ -1397,7 +1434,8 @@ msgstr "Bláth"
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
-"Cliceáil agus tarraing an luch chun \"bláthú\" a chur i bhfeidhm ar chuid den phictiúr."
+"Cliceáil agus tarraing an luch chun \"bláthú\" a chur i bhfeidhm ar chuid "
+"den phictiúr."
 
 #: ../../magic/src/bloom.c:129
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1464,7 +1502,9 @@ msgstr "Clónáil"
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
-msgstr "Cliceáil uair amháin chun áit a roghnú. Cliceáil arís agus tarraing an luch chun an chuid sin den phictiúr a chlónáil."
+msgstr ""
+"Cliceáil uair amháin chun áit a roghnú. Cliceáil arís agus tarraing an luch "
+"chun an chuid sin den phictiúr a chlónáil."
 
 #: ../../magic/src/colorsep.c:38
 msgid "3D Glasses"
@@ -1482,7 +1522,9 @@ msgstr "Radharc Dúbailte"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
-msgstr "Cliceáil agus tarraing an luch ar chlé agus ar dheis chun dearg agus cian a scaradh sa bpictiúr sa chaoi gur féidir leat breathnú air trí ghloiní 3T."
+msgstr ""
+"Cliceáil agus tarraing an luch ar chlé agus ar dheis chun dearg agus cian a "
+"scaradh sa bpictiúr sa chaoi gur féidir leat breathnú air trí ghloiní 3T."
 
 #: ../../magic/src/colorsep.c:45
 msgid "Click and drag to separate your picture's colors."
@@ -1582,25 +1624,33 @@ msgstr "Cliceáil chun an pictiúr iomlán a sháithiú."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
-msgstr "Cliceáil agus tarraing an luch chun cuid den phictiúr a dhísháithiú go hiomlán, aon áit a bhfuil an dath roghnaithe ann."
+msgstr ""
+"Cliceáil agus tarraing an luch chun cuid den phictiúr a dhísháithiú go "
+"hiomlán, aon áit a bhfuil an dath roghnaithe ann."
 
 #: ../../magic/src/fade_darken.c:74
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
-msgstr "Cliceáil chun cuid den phictiúr a dhísháithiú go hiomlán, aon áit a bhfuil an dath roghnaithe ann."
+msgstr ""
+"Cliceáil chun cuid den phictiúr a dhísháithiú go hiomlán, aon áit a bhfuil "
+"an dath roghnaithe ann."
 
 #: ../../magic/src/fade_darken.c:77
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
-msgstr "Cliceáil agus tarraing an luch chun cuid den phictiúr a dhísháithiú go hiomlán, aon áit nach bhfuil an dath roghnaithe ann."
+msgstr ""
+"Cliceáil agus tarraing an luch chun cuid den phictiúr a dhísháithiú go "
+"hiomlán, aon áit nach bhfuil an dath roghnaithe ann."
 
 #: ../../magic/src/fade_darken.c:78
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
-msgstr "Cliceáil chun cuid den phictiúr a dhísháithiú go hiomlán, aon áit nach bhfuil an dath roghnaithe ann."
+msgstr ""
+"Cliceáil chun cuid den phictiúr a dhísháithiú go hiomlán, aon áit nach "
+"bhfuil an dath roghnaithe ann."
 
 #: ../../magic/src/fisheye.c:113
 msgid "Fisheye"
@@ -1706,7 +1756,8 @@ msgstr "Cailéideascóp-8"
 #: ../../magic/src/kaleidox.c:47
 msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
-msgstr "Cliceáil agus tarraing ar an bpictiúr chun cuma chailéideascópach a chur air!"
+msgstr ""
+"Cliceáil agus tarraing ar an bpictiúr chun cuma chailéideascópach a chur air!"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
@@ -1780,7 +1831,9 @@ msgstr "Tintreach"
 
 #: ../../magic/src/lightning.c:105
 msgid "Click, drag, and release to draw a lightning bolt between two points."
-msgstr "Cliceáil, tarraing, agus scaoil chun splanc thintrí a dhearadh idir dhá phointe."
+msgstr ""
+"Cliceáil, tarraing, agus scaoil chun splanc thintrí a dhearadh idir dhá "
+"phointe."
 
 #: ../../magic/src/maze.c:114
 msgid "Maze"
@@ -1788,12 +1841,12 @@ msgstr "Cathair Ghríobháin"
 
 #: ../../magic/src/maze.c:128
 msgid "Click and drag to paint a maze on your picture."
-msgstr "Cliceáil agus tarraing chun cathair ghríobháin a dhearadh ar an bpictiúr."
+msgstr ""
+"Cliceáil agus tarraing chun cathair ghríobháin a dhearadh ar an bpictiúr."
 
 #: ../../magic/src/maze.c:130
 msgid "Click to turn your entire picture into a maze."
-msgstr ""
-"Cliceáil chun cathair ghríobháin a dhéanamh den phictiúr iomlán."
+msgstr "Cliceáil chun cathair ghríobháin a dhéanamh den phictiúr iomlán."
 
 #: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
@@ -1899,13 +1952,17 @@ msgstr "Cliceáil chun pictiúr diúltach a dhéanamh den phictiúr."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
-msgstr "Cliceáil agus tarraing an luch thart chun dathanna a athrú go dtí dathanna comhlántacha."
+msgstr ""
+"Cliceáil agus tarraing an luch thart chun dathanna a athrú go dtí dathanna "
+"comhlántacha."
 
 #: ../../magic/src/negative.c:92
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
-msgstr "Cliceáil chun na dathanna go léir sa phictiúr a athrú go dtí dathanna comhlántacha."
+msgstr ""
+"Cliceáil chun na dathanna go léir sa phictiúr a athrú go dtí dathanna "
+"comhlántacha."
 
 #: ../../magic/src/noise.c:65
 msgid "Noise"
@@ -1952,7 +2009,9 @@ msgstr "Cliceáil chun painéil 2×2 a chur i bhfeidhm ar an bpictiúr."
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
-msgstr "Cliceáil agus tarraing aníos chun zúmáil isteach. Tarraing anuas chun zúmáil amach agus an pictiúr a thíliú."
+msgstr ""
+"Cliceáil agus tarraing aníos chun zúmáil isteach. Tarraing anuas chun zúmáil "
+"amach agus an pictiúr a thíliú."
 
 #: ../../magic/src/perspective.c:187
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
@@ -1962,7 +2021,9 @@ msgstr ""
 
 #: ../../magic/src/perspective.c:190
 msgid "Click and drag up to rush in or drag down to rush out the picture."
-msgstr "Cliceáil agus tarraing aníos chun mearzúmáil isteach a dhéanamh, nó tarraing anuas chun mearzúmáil amach a dhéanamh."
+msgstr ""
+"Cliceáil agus tarraing aníos chun mearzúmáil isteach a dhéanamh, nó tarraing "
+"anuas chun mearzúmáil amach a dhéanamh."
 
 #: ../../magic/src/pixels.c:114
 msgid "Pixels"
@@ -2038,7 +2099,9 @@ msgstr "Frithchaitheamh"
 
 #: ../../magic/src/reflection.c:132
 msgid "Click and drag the mouse around to add a reflection to your picture."
-msgstr "Cliceáil agus tarraing an luch thart chun íomhá frithchaite a chur leis an bpictiúr"
+msgstr ""
+"Cliceáil agus tarraing an luch thart chun íomhá frithchaite a chur leis an "
+"bpictiúr"
 
 #: ../../magic/src/ripples.c:111
 msgid "Ripples"
@@ -2153,7 +2216,9 @@ msgstr "Síneadh"
 #: ../../magic/src/stretch.c:135
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
-msgstr "Cliceáil agus tarraing chun cuid den phictiúr a shíneadh go hingearach nó go cothrománach."
+msgstr ""
+"Cliceáil agus tarraing chun cuid den phictiúr a shíneadh go hingearach nó go "
+"cothrománach."
 
 #: ../../magic/src/string.c:145
 msgid "String edges"
@@ -2198,7 +2263,9 @@ msgstr "Fionnadh"
 #: ../../magic/src/swirls.c:37
 msgid ""
 "Click and drag to transform parts of your picture to circular brushstrokes."
-msgstr "Cliceáil agus tarraing an luch chun buillí scuaibe ciorclacha a chur ar chuid den phictiúr."
+msgstr ""
+"Cliceáil agus tarraing an luch chun buillí scuaibe ciorclacha a chur ar "
+"chuid den phictiúr."
 
 #: ../../magic/src/swirls.c:38
 msgid "Click to turn your entire picture into circular brushstrokes."
@@ -2206,7 +2273,9 @@ msgstr "Cliceáil chun buillí scuaibe ciorclacha a chur ar an bpictiúr iomlán
 
 #: ../../magic/src/swirls.c:41
 msgid "Click and drag to transform parts of your picture to brushstroke rays."
-msgstr "Cliceáil agus tarraing an luch chun gathanna scuaibe a chur ar chuid den phictiúr."
+msgstr ""
+"Cliceáil agus tarraing an luch chun gathanna scuaibe a chur ar chuid den "
+"phictiúr."
 
 #: ../../magic/src/swirls.c:42
 msgid "Click to turn your entire picture into brushstroke rays."
