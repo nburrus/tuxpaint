@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-30 09:13-0700\n"
-"PO-Revision-Date: 2023-03-22 23:10+0100\n"
+"PO-Revision-Date: 2023-03-30 23:09+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -390,7 +390,7 @@ msgstr "New Breed Software et al."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:34
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
-msgstr ""
+msgstr "Tux Paint proveeix nombrosos dibuixos per acolorir."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid ""
@@ -1672,7 +1672,6 @@ msgid "Click and drag to separate your picture's colors."
 msgstr "Feu clic i arrossegueu per separar els colors del dibuix."
 
 #: ../../magic/src/colorsep.c:46
-#, fuzzy
 msgid "Click and drag to simulate double vision."
 msgstr "Feu clic i arrossegueu per simular visió doble."
 
