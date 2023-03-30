@@ -734,11 +734,11 @@ msgstr ""
 
 #: ../shapes.h:447
 msgid "Draw shapes from the center."
-msgstr ""
+msgstr "મધ્યમાંથી આકારો દોરો."
 
 #: ../shapes.h:448
 msgid "Draw shapes from a corner."
-msgstr ""
+msgstr "ખૂણામાંથી આકારો દોરો."
 
 #. Title of tool selector (buttons down the left)
 #: ../titles.h:57
@@ -784,7 +784,6 @@ msgstr "જાદુ"
 
 #. Title of fill selector (buttons down the right for fill tool)
 #: ../titles.h:81
-#, fuzzy
 #| msgid "Fill"
 msgid "Fills"
 msgstr "ભરો"
@@ -1289,13 +1288,11 @@ msgid "yellow"
 msgstr "પીળો"
 
 #: ../tuxpaint.c:25885
-#, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "વાદળી"
 
 #: ../tuxpaint.c:25886
-#, fuzzy
 msgid "white"
 msgstr "સફેદ"
 
@@ -1304,7 +1301,6 @@ msgid "grey"
 msgstr "ભૂખરો"
 
 #: ../tuxpaint.c:25888
-#, fuzzy
 msgid "black"
 msgstr "કાળું"
 
@@ -1522,10 +1518,9 @@ msgid ""
 msgstr ""
 
 #: ../../magic/src/colorsep.c:38
-#, fuzzy
 #| msgid "Glass Tile"
 msgid "3D Glasses"
-msgstr "કાચ તકતી"
+msgstr "૩-ડી ચશ્મા"
 
 #: ../../magic/src/colorsep.c:39
 #, fuzzy
@@ -1756,7 +1751,7 @@ msgstr "તમારા સમગ્ર ચિત્રને કાચની �
 
 #: ../../magic/src/googlyeyes.c:165
 msgid "Googly Eyes"
-msgstr ""
+msgstr "ગુગલી આંખો"
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"
@@ -1781,22 +1776,19 @@ msgid "Click to turn your drawing into a newspaper."
 msgstr "તમારાં ચિત્રને સમાચારપત્રમાં ફેરવવા માટે ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/kaleidox.c:39
-#, fuzzy
 #| msgid "Kaleidoscope"
 msgid "Kaleido-4"
-msgstr "કેલિડોસ્કોપ"
+msgstr "કેલિડો-૪"
 
 #: ../../magic/src/kaleidox.c:40
-#, fuzzy
 #| msgid "Kaleidoscope"
 msgid "Kaleido-6"
-msgstr "કેલિડોસ્કોપ"
+msgstr "કેલિડો-૬"
 
 #: ../../magic/src/kaleidox.c:41
-#, fuzzy
 #| msgid "Kaleidoscope"
 msgid "Kaleido-8"
-msgstr "કેલિડોસ્કોપ"
+msgstr "કેલિડો-૫"
 
 #: ../../magic/src/kaleidox.c:45 ../../magic/src/kaleidox.c:46
 #: ../../magic/src/kaleidox.c:47
@@ -1878,20 +1870,18 @@ msgstr "તમારા ચિત્રકામમાં પ્રકાશન�
 
 #: ../../magic/src/maze.c:114
 msgid "Maze"
-msgstr ""
+msgstr "જાળી"
 
 #: ../../magic/src/maze.c:128
-#, fuzzy
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to paint a maze on your picture."
-msgstr "તમારા ચિત્રમાં રેલ્વેનાં પાટાઓ દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
+msgstr "તમારા ચિત્રમાં જાળી દોરવા માટે માઉસને ક્લિક કરીને ખેંચો."
 
 #: ../../magic/src/maze.c:130
-#, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn your entire picture into a maze."
-msgstr "ચિત્રને ચોક ચિત્રમાં ફેરવવા માઉસ ક્લિક કરો અને ખેંચો."
+msgstr "તમારા સમગ્ર ચિત્રને જાળીમાં ફેરવવા માઉસ ક્લિક કરો અને ખેંચો."
 
 #: ../../magic/src/metalpaint.c:108
 msgid "Metal Paint"
@@ -2019,13 +2009,12 @@ msgstr "દેખાવ"
 
 #: ../../magic/src/perspective.c:171
 msgid "Panels"
-msgstr ""
+msgstr "પટ્ટીઓ"
 
 #: ../../magic/src/perspective.c:172
-#, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
-msgstr "મોટું"
+msgstr "તકતીકાર મોટું"
 
 #: ../../magic/src/perspective.c:173
 msgid "Zoom"
@@ -2040,10 +2029,9 @@ msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "જ્યાં તમે ચિત્ર ખેંચવા માંગતા હોવ ત્યાં ખૂણાઓ પર ક્લિક કરો અને ખેંચો."
 
 #: ../../magic/src/perspective.c:181
-#, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
-msgstr "તમારાં ચિત્રને તેની નેગેટીવમાં ફેરવવા માટે ક્લિક કરો."
+msgstr "તમારાં ચિત્રને ૨-૨ પટ્ટીઓમાં ફેરવવા માટે ક્લિક કરો."
 
 #: ../../magic/src/perspective.c:184
 #, fuzzy
@@ -2065,13 +2053,12 @@ msgstr "મોટું કરવા માટે ક્લિક કરો અ�
 
 #: ../../magic/src/pixels.c:114
 msgid "Pixels"
-msgstr ""
+msgstr "પિક્સેલ"
 
 #: ../../magic/src/pixels.c:129
-#, fuzzy
 #| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw large pixels."
-msgstr "મોટી ઇંટો દોરવા માટે ક્લિક કરો અને ખેંચો."
+msgstr "મોટા પિક્સેલ દોરવા માટે ક્લિક કરો અને ખેંચો."
 
 #: ../../magic/src/puzzle.c:116
 msgid "Puzzle"
@@ -2098,10 +2085,9 @@ msgid "Rainbow"
 msgstr "મેઘધનુષ"
 
 #: ../../magic/src/rainbow.c:152
-#, fuzzy
 #| msgid "Rainbow"
 msgid "Smooth Rainbow"
-msgstr "મેઘધનુષ"
+msgstr "સરળ મેઘધનુષ"
 
 #: ../../magic/src/rainbow.c:168
 msgid "You can draw in rainbow colors!"
@@ -2252,13 +2238,13 @@ msgid "Stretch"
 msgstr "ખેંચો"
 
 #: ../../magic/src/stretch.c:135
-#, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
-msgstr "તમારા ચિત્રનાં ભાગોને ટેલિવિઝન પર હોય તેવું બનાવવા માટે ક્લિક કરો અને ખેંચો."
+msgstr ""
+"તમારા ચિત્રનાં ઊભું અથવ આડું લાંબુ કરવા માટે ક્લિક કરો અને ખેંચો."
 
 #: ../../magic/src/string.c:145
 msgid "String edges"
@@ -2299,7 +2285,7 @@ msgstr "કિરણો"
 
 #: ../../magic/src/swirls.c:32
 msgid "Fur"
-msgstr ""
+msgstr "ફર"
 
 #: ../../magic/src/swirls.c:37
 #, fuzzy
@@ -2308,7 +2294,8 @@ msgstr ""
 #| "television."
 msgid ""
 "Click and drag to transform parts of your picture to circular brushstrokes."
-msgstr "તમારા ચિત્રનાં ભાગોને ટેલિવિઝન પર હોય તેવું બનાવવા માટે ક્લિક કરો અને ખેંચો."
+msgstr ""
+"તમારા ચિત્રનાં ભાગને વર્તુળાકાર પીંછીના ટપકાંમાં ફેરવવા માટે ક્લિક કરો અને ખેંચો."
 
 #: ../../magic/src/swirls.c:38
 #, fuzzy
