@@ -323,7 +323,7 @@ June 17, 2002 - March 29, 2023
 
   * Street
     Ingrid Illa Terrier
-    (via Pere Pujal Carabantes <ppujal@airtel.net>)
+    (via Pere Pujal Carabantes)
 
   * Nagasaki
     Jim Trice <jimtrice@linuxmail.org>
@@ -589,7 +589,7 @@ June 17, 2002 - March 29, 2023
 
   * Arabic
     Tilo <Drfortilo@gmail.com>
-    Khaled Hosny <khaledhosny@eglug.org>
+    Khaled Hosny
     Khalid Al Holan <alholan@gmail.com>
 
   * Aragones
@@ -655,7 +655,7 @@ June 17, 2002 - March 29, 2023
     via Caroline Ford <caroline.ford.work@googlemail.com>
 
   * Catalan
-    Pere Pujal Carabantes <ppujal@airtel.net>
+    Pere Pujal Carabantes <perepujal@gmail.com>
     Robert Buj Gelonch
 
   * Chinese (Simplified)
@@ -739,7 +739,7 @@ June 17, 2002 - March 29, 2023
     Jérôme Chantreau <plovemax@hotmail.com> [documentation]
 
   * Fula
-    Ibraahiima SAAR <ibrahima.sarr@pulaagu.com>, Fula Localization Project, http://www.pulaar-fulfulde.org/
+    Ibraahiima SAAR, Fula Localization Project, http://www.pulaar-fulfulde.org/
 
   * Gaelic (Scottish)
     Fòram na Gàidhlig
@@ -760,7 +760,7 @@ June 17, 2002 - March 29, 2023
     Pfannenstein Erik (website)
 
   * Gronings
-    J.F.M. Lange <jfm.lange@hky.de>
+    J.F.M. Lange
 
   * Greek
     Serafeim Kyriaki
@@ -787,7 +787,7 @@ June 17, 2002 - March 29, 2023
 
   * Hungarian
     Török Gábor
-    Gabor Kelemen <kelemeng@gnome.hu>
+    Gabor Kelemen
     Nagy Akos <nagy.akos@codespring.ro>
     Dr. Nagy Elemér Kár oly
 
@@ -801,7 +801,7 @@ June 17, 2002 - March 29, 2023
     Sugar Labs i18n team <https://translate.sugarlabs.org/>
 
   * Inuktitut
-    Harvey Ginter <harveyginter@gmail.com>
+    Harvey Ginter <harveyginter@gmail.com> [retired]
 
   * Irish Gaelic
     Kevin Patrick Scannell <kscanne@gmail.com>
@@ -834,7 +834,7 @@ June 17, 2002 - March 29, 2023
     Auk Piseth
 
   * Kiga translation
-    Florence Tushabe <tushabe@cit.mak.ac.ug>
+    Florence Tushabe
 
   * Kinyarwanda
     Steve Murphy
@@ -939,11 +939,11 @@ June 17, 2002 - March 29, 2023
     Provided by Neha Aphale <aphaleneha@gmail.com>
 
   * Northern Sotho
-    Pheledi Mathibela <pheledi@mosekolatranslation.co.za>
+    Pheledi Mathibela
 
   * Norwegian Bokmal
     Knut Erik Hollund
-    Dag H. Loras <dag.loraas@operamail.com>
+    Dag H. Loras
     Klaus Ade Johnstad
     Karl Ove Hufthammer <karl@huftis.org>
 
@@ -974,7 +974,7 @@ June 17, 2002 - March 29, 2023
     Robert Glowczynski
     Tomasz 'karave' Tarach <karave@poczta.onet.pl>
     Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>
-    Michal Terbert <michaeel@skrzynka.pl>
+    Michal Terbert
 
   * Portuguese (Brazilian)
     Fred Ulisses Maranhao
@@ -997,7 +997,7 @@ June 17, 2002 - March 29, 2023
   * Russian
     Nikolay Parukhin <parukhin@gmail.com>
     Sergei Popov <skein@rambler.ru>
-    Dmitriy Ivanov <ace22b@myrealbox.com>
+    Dmitriy Ivanov
     Yuri Kozlov
 
   * Sanskrit translation
@@ -1060,7 +1060,7 @@ June 17, 2002 - March 29, 2023
     Matías Bellone
 
   * Spanish (Mexico)
-    Ignacio Tike <ignaciotike@spymac.com>
+    Ignacio Tike
     Daniel Illingworth
     Luis C. Suárez <luiscsuarez@gmail.com>
     Matías Bellone
@@ -1089,7 +1089,7 @@ June 17, 2002 - March 29, 2023
 
   * Tamil
     Ravishankar Ayyakkannu <ravishankar.ayyakkannu@gmail.com>
-    Mugunth <mugunth@thamizha.com>
+    Mugunth
 
   * Telugu
     Pavithran Shakamuri <pavithran.s@gmail.com>
@@ -1138,7 +1138,7 @@ June 17, 2002 - March 29, 2023
     Clytie Siddall
 
   * Walloon
-    Pablo Saratxaga <pablo@walon.org>
+    Pablo Saratxaga
 
   * Welsh
     Kevin Donnelly <kevin@dotmon.com>
@@ -1169,7 +1169,7 @@ June 17, 2002 - March 29, 2023
     Martin Fuhrer <mfuhrer@users.sourceforge.net>
     Darrell Walisser <walisser@mac.com>  [retired]
     Eric Poncet <http://www.linguasoft.com/>
-    Harvey Ginter <harveyginter@gmail.com>
+    Harvey Ginter <harveyginter@gmail.com> [retired]
     Robert Buj Gelonch
 
   * Maemo (Nokia 770 and N880) coding and builds
