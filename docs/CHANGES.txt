@@ -457,6 +457,12 @@ https://tuxpaint.org/
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
 
+    * Gaelic (Irish) translation
+      Kevin Scannell <kscanne@gmail.com>
+
+    * Gujarati translation
+      Kartik Mistry <kartik.mistry@gmail.com>
+
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
 
@@ -1510,7 +1516,7 @@ https://tuxpaint.org/
       Yannis Kaskamanidis <kiolalis@gmail.com>
 
     * Gujarati translation
-      Kartik Mistry <kartik.mistry@gmail.com>,
+      Kartik Mistry <kartik.mistry@gmail.com>
 
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
