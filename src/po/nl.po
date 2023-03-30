@@ -1,14 +1,14 @@
 # translation of tuxpaint.nl.po to Dutch.
-# Copyright (C) 2002-2023.
+# Copyright (C) 2002-2017.
 # Herman Bruyninckx <herman.bruyninckx@mech.kuleuven.ac.be>, 2002.
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2007, 2009, 2014.
-# Willem Heppe <heppew@yahoo.com>, 2017, 2023.
+# Willem Heppe <heppew@yahoo.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 08:56-0700\n"
+"POT-Creation-Date: 2023-03-24 00:16-0700\n"
 "PO-Revision-Date: 2023-03-30 14:41+0200\n"
 "Last-Translator: Willem Heppe <heppew@yahoo.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -341,8 +341,8 @@ msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
 msgstr ""
-"Kinderen krijgen een leeg canvas en een vari??teit aan tekenmiddelen om de "
-"te helpen creatief te zijn."
+"Kinderen krijgen een leeg canvas en een variëteit aan tekenmiddelen om de te "
+"helpen creatief te zijn."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
@@ -545,7 +545,7 @@ msgstr ""
 "uitgevoerd bij Halftoon, die foto's simuleert op nieuwafdrukken; Cartoon, "
 "die een afbeelding maakt die lijkt op een cartoontekening; en TV, dat een "
 "televisiescherm simuleert. Bovendien, Cartoon zowel als Halftoon , samen met "
-"Blokken, Krijt, en Reli??f bieden nu de mogelijkheid om de gehele afbeelding "
+"Blokken, Krijt, en Reliëf bieden nu de mogelijkheid om de gehele afbeelding "
 "tegelijk aan te passen!"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
@@ -591,7 +591,7 @@ msgid ""
 "contact the Tux Paint team."
 msgstr ""
 "Tux Paint's gebruikerdocumentatie is verbeterd, waarmee vertaling "
-"makkelijker wordt. Ge??nteresseerde partijen worden aangemoedigd om contact "
+"makkelijker wordt. Geïnteresseerde partijen worden aangemoedigd om contact "
 "op te nemen met Tux Paint om mee te helpen."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
@@ -942,7 +942,7 @@ msgstr "Nieuw"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9915
+#: ../tools.h:97 ../tuxpaint.c:9909
 msgid "Open"
 msgstr "Openen"
 
@@ -1024,10 +1024,8 @@ msgstr ""
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:152
-#, fuzzy
-#| msgid "Open"
 msgid "Open…"
-msgstr "Openen"
+msgstr "Openen…"
 
 #. Response to 'save' action
 #: ../tools.h:155
@@ -1050,6 +1048,7 @@ msgid "Let go of the button to complete the line."
 msgstr "Laat de muisknop los om de lijn af te sluiten."
 
 #: ../tools.h:166
+#, c-format
 msgid ""
 "Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
@@ -1272,20 +1271,20 @@ msgstr "Onthoud dat je de linker muisknop dient te gebruiken!"
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2543
 msgid "Your picture has been exported!"
-msgstr "De tekening is ge??xporteerd!"
+msgstr "De tekening is geëxporteerd!"
 
 #: ../tuxpaint.c:2544
 msgid "Your slideshow GIF has been exported!"
-msgstr "De diavoorstelling GIF is ge??xporteerd!"
+msgstr "De diavoorstelling GIF is geëxporteerd!"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2548
 msgid "Sorry! Your picture could not be exported!"
-msgstr "Sorry! Je tekening is niet ge??xporteerd!"
+msgstr "Sorry! Je tekening is niet geëxporteerd!"
 
 #: ../tuxpaint.c:2549
 msgid "Sorry! Your slideshow GIF could not be exported!"
-msgstr "Sorry! Je diavoorstelling GIF is niet ge??xporteerd!"
+msgstr "Sorry! Je diavoorstelling GIF is niet geëxporteerd!"
 
 #. Slideshow instructions
 #: ../tuxpaint.c:2553
@@ -1308,137 +1307,137 @@ msgid "Please wait…"
 msgstr "Even geduld…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9918
+#: ../tuxpaint.c:9912
 msgid "Erase"
 msgstr "Uitgommen"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9921
+#: ../tuxpaint.c:9915
 msgid "Slides"
 msgstr "Dia's"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9924
+#: ../tuxpaint.c:9918
 msgid "Export"
 msgstr "Export"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9927
+#: ../tuxpaint.c:9921
 msgid "Back"
 msgstr "Terug"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9930
+#: ../tuxpaint.c:9924
 msgid "Play"
 msgstr "Afspelen"
 
-#: ../tuxpaint.c:9934
+#: ../tuxpaint.c:9928
 msgid "GIF Export"
 msgstr "GIF Export"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9937
+#: ../tuxpaint.c:9931
 msgid "Next"
 msgstr "Volgende"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9940
+#: ../tuxpaint.c:9934
 msgid "Clear"
 msgstr "Wissen"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10875 ../tuxpaint.c:10877 ../tuxpaint.c:10878
+#: ../tuxpaint.c:10869 ../tuxpaint.c:10871 ../tuxpaint.c:10872
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:15223
+#: ../tuxpaint.c:15217
 msgid "Yes"
 msgstr "Ja"
 
-#: ../tuxpaint.c:15227
+#: ../tuxpaint.c:15221
 msgid "No"
 msgstr "Nee"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16504
+#: ../tuxpaint.c:16498
 msgid "Replace the picture with your changes?"
 msgstr "De tekening vervangen met de wijzigingen?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16508
+#: ../tuxpaint.c:16502
 msgid "Yes, replace the old one!"
 msgstr "Ja, vervang de oude!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16512
+#: ../tuxpaint.c:16506
 msgid "No, save a new file!"
 msgstr "Nee, opslaan in een nieuw bestand!"
 
-#: ../tuxpaint.c:17857
+#: ../tuxpaint.c:17851
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Kies de tekening die je wilt en klik dan op “Openen”."
 
-#: ../tuxpaint.c:19580
+#: ../tuxpaint.c:19574
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Kies 2 of meer tekeningen om in een geanimeerde GIF te veranderen."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25889
+#: ../tuxpaint.c:25883
 msgid "red"
 msgstr "rood"
 
-#: ../tuxpaint.c:25890
+#: ../tuxpaint.c:25884
 msgid "yellow"
 msgstr "geel"
 
-#: ../tuxpaint.c:25891
+#: ../tuxpaint.c:25885
 msgid "blue"
 msgstr "blauw"
 
-#: ../tuxpaint.c:25892
+#: ../tuxpaint.c:25886
 msgid "white"
 msgstr "wit"
 
-#: ../tuxpaint.c:25893
+#: ../tuxpaint.c:25887
 msgid "grey"
 msgstr "grijs"
 
-#: ../tuxpaint.c:25894
+#: ../tuxpaint.c:25888
 msgid "black"
 msgstr "zwart"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25899
+#: ../tuxpaint.c:25893
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Je kleur is %1$s %2$s."
 
-#: ../tuxpaint.c:25900
+#: ../tuxpaint.c:25894
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Je kleur is %1$s %2$s en %3$s %4$s."
 
-#: ../tuxpaint.c:25901
+#: ../tuxpaint.c:25895
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Je kleur is %1$s %2$s, %3$s %4$s en %5$s %6$s."
 
-#: ../tuxpaint.c:25903
+#: ../tuxpaint.c:25897
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Je kleur is %1$s %2$s, %3$s %4$s, %5$s %6$s en %7$s %8$s."
 
-#: ../tuxpaint.c:25905
+#: ../tuxpaint.c:25899
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "Je kleur is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s en %9$s %10$s."
 
-#: ../tuxpaint.c:25907
+#: ../tuxpaint.c:25901
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1448,15 +1447,15 @@ msgstr ""
 "%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26745 ../tuxpaint.c:26752
+#: ../tuxpaint.c:26739 ../tuxpaint.c:26746
 msgid "entirely"
 msgstr "geheel"
 
-#: ../tuxpaint.c:30006
+#: ../tuxpaint.c:30000
 msgid "Select a color from your drawing."
 msgstr "Kies een kleur uit je tekening."
 
-#: ../tuxpaint.c:30017
+#: ../tuxpaint.c:30011
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1465,7 +1464,7 @@ msgstr ""
 "gaat van links (bleek) naar rechts (puur). Waarde (helderheid/donkerte): "
 "grijze balk."
 
-#: ../tuxpaint.c:30031
+#: ../tuxpaint.c:30025
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1667,15 +1666,15 @@ msgstr "Klik en sleep de muis om vervormingen te maken in je tekening."
 
 #: ../../magic/src/emboss.c:110
 msgid "Emboss"
-msgstr "Reli??f"
+msgstr "Reliëf"
 
 #: ../../magic/src/emboss.c:127
 msgid "Click and drag the mouse to emboss the picture."
-msgstr "Klik en sleep de muis om in de tekening een reli??f te maken."
+msgstr "Klik en sleep de muis om in de tekening een reliëf te maken."
 
 #: ../../magic/src/emboss.c:129
 msgid "Click to emboss the entire picture."
-msgstr "Klik om reli??f in je hele tekening toe te voegen."
+msgstr "Klik om reliëf in je hele tekening toe te voegen."
 
 #: ../../magic/src/fade_darken.c:47
 msgid "Lighten"
@@ -1980,64 +1979,62 @@ msgstr "Klik om de tekening ondersteboven te zetten."
 
 #: ../../magic/src/mosaic.c:103
 msgid "Mosaic"
-msgstr "Moza??ek"
+msgstr "Mozaïek"
 
 #: ../../magic/src/mosaic.c:112
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
-msgstr "Klik en sleep de muis om de tekening deels te bedekken met moza??ek."
+msgstr "Klik en sleep de muis om de tekening deels te bedekken met mozaïek."
 
 #: ../../magic/src/mosaic.c:113
 msgid "Click to add a mosaic effect to your entire picture."
-msgstr "Klik om de hele tekening te bedekken met moza??ek."
+msgstr "Klik om de hele tekening te bedekken met mozaïek."
 
 #: ../../magic/src/mosaic_shaped.c:146
 msgid "Square Mosaic"
-msgstr "Vierkante moza??ek"
+msgstr "Vierkante mozaïek"
 
 #: ../../magic/src/mosaic_shaped.c:147
 msgid "Hexagon Mosaic"
-msgstr "Zeshoek moza??ek"
+msgstr "Zeshoek mozaïek"
 
 #: ../../magic/src/mosaic_shaped.c:148
 msgid "Irregular Mosaic"
-msgstr "Onregelmatige moza??ek"
+msgstr "Onregelmatige mozaïek"
 
 #: ../../magic/src/mosaic_shaped.c:155
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Klik en sleep de muis om een vierkant moza??ek aan delen van uw afbeelding "
+"Klik en sleep de muis om een vierkant mozaïek aan delen van uw afbeelding "
 "toe te voegen."
 
 #: ../../magic/src/mosaic_shaped.c:156
 msgid "Click to add a square mosaic to your entire picture."
-msgstr ""
-"Klik om de een vierkante moza??ek aan uw hele afbeelding toe te voegen."
+msgstr "Klik om de een vierkante mozaïek aan uw hele afbeelding toe te voegen."
 
 #: ../../magic/src/mosaic_shaped.c:161
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
-"Klik en sleep de muis om een zeskantige moza??ek aan delen van uw afbeelding "
+"Klik en sleep de muis om een zeskantige mozaïek aan delen van uw afbeelding "
 "toe te voegen."
 
 #: ../../magic/src/mosaic_shaped.c:162
 msgid "Click to add a hexagonal mosaic to your entire picture."
-msgstr ""
-"Klik om een zeskantige moza??ek aan de gehele afbeelding toe te voegen."
+msgstr "Klik om een zeskantige mozaïek aan de gehele afbeelding toe te voegen."
 
 #: ../../magic/src/mosaic_shaped.c:167
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
-"Klik en sleep de muis om een onregelmatige moza??ek aan delen van uw "
+"Klik en sleep de muis om een onregelmatige mozaïek aan delen van uw "
 "afbeelding toe te voegen."
 
 #: ../../magic/src/mosaic_shaped.c:168
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
-"Klik om de een onregelmatige moza??ek aan uw hele afbeelding toe te voegen."
+"Klik om de een onregelmatige mozaïek aan uw hele afbeelding toe te voegen."
 
 #: ../../magic/src/negative.c:79
 msgid "Negative"
@@ -2483,3 +2480,67 @@ msgstr "Klik en sleep om een XOR-effect te tekenen"
 #: ../../magic/src/xor.c:117
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Klik om in de hele afbeelding een XOR-effect te tekenen"
+
+#, fuzzy
+#~| msgid "Move the mouse to rotate the shape. Click to draw it."
+#~ msgid "Drag the mouse to rotate the stamp. Click to draw it."
+#~ msgstr "Beweeg de muis om de vorm te draaien. Klik als je tevreden bent."
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and drag the mouse to add a mosaic effect to parts of your picture."
+#~ msgid "Click and drag downward to add water rivulets to your drawing"
+#~ msgstr "Klik en sleep de muis om de tekening deels te bedekken met mozaïek."
+
+#, fuzzy
+#~| msgid "Tux Paint"
+#~ msgid "tuxpaint"
+#~ msgstr "Tux Paint"
+
+#~ msgid "Pick a color."
+#~ msgstr "Kies een kleur."
+
+#~ msgid "Click in the picture to fill that area with color."
+#~ msgstr "Klik in de tekening om dat gebied met kleur te vullen."
+
+#, fuzzy
+#~| msgid "Click and drag to draw a beam of light on your picture."
+#~ msgid ""
+#~ "Click and drag to draw the blind, move left or right to open or close."
+#~ msgstr "Klik en teken met de muis een lichtbundel in je tekening."
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic square"
+#~ msgstr "Mozaïek"
+
+#, fuzzy
+#~| msgid "Mosaic"
+#~ msgid "Mosaic hexagon"
+#~ msgstr "Mozaïek"
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic squared effect to parts of your "
+#~ "picture."
+#~ msgstr "Klik en beweeg de muis om de tekening daar te bedekken met mozaïek."
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic squared effect to your entire picture."
+#~ msgstr "Klik om de hele tekening te bedekken met mozaïek."
+
+#, fuzzy
+#~| msgid ""
+#~| "Click and move the mouse to add a mosaic effect to parts of your picture."
+#~ msgid ""
+#~ "Click and move the mouse to add a mosaic hexagonal effect to parts of "
+#~ "your picture."
+#~ msgstr "Klik en beweeg de muis om de tekening daar te bedekken met mozaïek."
+
+#, fuzzy
+#~| msgid "Click to add a mosaic effect to your entire picture."
+#~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
+#~ msgstr "Klik om de hele tekening te bedekken met mozaïek."
