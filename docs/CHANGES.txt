@@ -476,6 +476,9 @@ https://tuxpaint.org/
       A subset of Genjyuu Gothic: http://jikasei.me/font/genjyuu/
       Added by TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
+    * Korean translation
+      Mark Kim <markuskimius@gmail.com>
+
     * Norwegian Nynorsk translation
       Karl Ove Hufthammer <karl@huftis.org>
 
@@ -485,8 +488,8 @@ https://tuxpaint.org/
     * Punjabi translation
       A S Alam <aalam@satluj.org>
 
-    * Korean translation
-      Mark Kim <markuskimius@gmail.com>
+    * Ukrainian translation
+      Yuri Chornoivan <yurchor@ukr.net>
 
 2022.June.4 (0.9.28)
   * Improvements to "Paint" and "Lines" tools:

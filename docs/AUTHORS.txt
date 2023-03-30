@@ -1113,9 +1113,9 @@ June 17, 2002 - March 29, 2023
     Joana Portia Antwi-Danso
     Samuel Sarpong
 
-  * Ukranian
+  * Ukrainian
     Serhij Dubyk <serhijdubyk@gmail.com>
-    yurchor <yurchor@ukr.net>
+    Yuri Chornoivan <yurchor@ukr.net>
     Sugar Labs i18n team <https://translate.sugarlabs.org/accounts/yurchor/>
 
   * Urkanian documentation
