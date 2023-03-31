@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-30 09:13-0700\n"
-"PO-Revision-Date: 2022-11-02 09:53+0100\n"
+"PO-Revision-Date: 2023-03-31 15:41+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -167,19 +167,19 @@ msgstr "1Il|"
 #. to the importance.
 #: ../dirwalk.c:272
 msgid "<1>spare-1a"
-msgstr ""
+msgstr "<1>spare-1a"
 
 #: ../dirwalk.c:274
 msgid "<1>spare-1b"
-msgstr ""
+msgstr "<1>spare-1b"
 
 #: ../dirwalk.c:276
 msgid "<9>spare-9a"
-msgstr ""
+msgstr "<9>spare-9a"
 
 #: ../dirwalk.c:278
 msgid "<9>spare-9b"
-msgstr ""
+msgstr "<9>spare-9b"
 
 #: ../fill_tools.h:52
 msgid "Solid"
@@ -358,6 +358,8 @@ msgstr "New Breed Software et autres."
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:34
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
 msgstr ""
+"Tux Paint est livré avec de nombreuses images prédessinnées du style livre "
+"de coloriage. "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid ""
@@ -377,6 +379,10 @@ msgid ""
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
+"Quinze nouveaux outils 'Magie' ont été ajoutés : Labyrinthe, Yeux "
+"écarquillés, Fourrure, Cercles, Raies, Lunettes 3D, Séparation des couleurs, "
+"Saturer, Désaturer, Enlever une couleur, Garder une couleur, Kaleido-4, "
+"Kaleido-6, Kaleido-8 et Fleurir."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Stamps may be rotated before being applied to the canvas."
