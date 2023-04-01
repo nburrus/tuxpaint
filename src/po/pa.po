@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2022-10-13 16:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -320,6 +320,7 @@ msgid "Tux Paint"
 msgstr "ਟਕਸ ਪੇਂਟ "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "ਬੱਚਿਆਂ ਵਾਸਤੇ ਪੇਂਟ ਕਰਨ ਵਾਲਾ ਡਰਾਇੰਗ ਪ੍ਰੋਗਰਾਮ"
 
@@ -1353,9 +1354,13 @@ msgstr ""
 "ਮੂਲ ਰੰਗ (ਲਾਲ, ਪੀਲਾ ਤੇ ਨੀਲਾ), ਚਿੱਟਾ (ਦਾਗ), ਸਲੇਟੀ (ਤੋਂ ਟੋਨ) ਅਤੇ ਕਾਲਾ (ਤੋਂ ਛਾਂ) ਨਵੇਂ ਰੰਗਾਂ ਨਾਲ "
 "ਮਿਲਾਉਣ ਲਈ ਚੁਣੋ।"
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "ਡਰਾਇੰਗ ਪਰੋਗਰਾਮ"
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2023-03-22 22:45+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -318,6 +318,7 @@ msgid "Tux Paint"
 msgstr "タックスペイント"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "子供向けお絵描きプログラム。"
 
@@ -1453,9 +1454,13 @@ msgstr ""
 "もとになる いろ（あか、きいろ、あお）に、しろ、はいいろ、くろ をまぜて あたら"
 "しい いろを つくろう"
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "お絵かきプログラム"
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"

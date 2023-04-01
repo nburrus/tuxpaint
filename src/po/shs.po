@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -316,6 +316,7 @@ msgid "Tux Paint"
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr ""
 
@@ -1320,8 +1321,12 @@ msgid ""
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
+msgstr ""
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
 msgstr ""
 
 #: ../../magic/src/alien.c:67

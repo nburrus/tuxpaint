@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2013-09-04 10:23+0530\n"
 "Last-Translator:  <b>\n"
 "Language-Team: Dogri\n"
@@ -333,6 +333,7 @@ msgid "Tux Paint"
 msgstr "टक्स पेंट"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "बच्चें आस्तै इक्क चित्रकारी प्रोग्राम"
 
@@ -1381,9 +1382,13 @@ msgid ""
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "चित्रकारी प्रोग्राम"
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"

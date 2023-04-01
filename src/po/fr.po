@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2023-04-01 10:50+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
@@ -323,6 +323,7 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "Un programme de dessin pour les enfants"
 
@@ -1487,9 +1488,13 @@ msgstr ""
 "teinte), gris (pour la tonalité, et noir (pour l'ombre), et mélangez pour "
 "avoir une nouvelle couleur."
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "Programme de dessin"
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"
@@ -1904,17 +1909,14 @@ msgid "Click to turn your drawing into a newspaper."
 msgstr "Clique pour que ton image ressemble à celle d'un journal."
 
 #: ../../magic/src/kaleidox.c:39
-#| msgid "Kaleidoscope"
 msgid "Kaleido-4"
 msgstr "Kaleido-4"
 
 #: ../../magic/src/kaleidox.c:40
-#| msgid "Kaleidoscope"
 msgid "Kaleido-6"
 msgstr "Kaleido-6"
 
 #: ../../magic/src/kaleidox.c:41
-#| msgid "Kaleidoscope"
 msgid "Kaleido-8"
 msgstr "Kaleido-8"
 

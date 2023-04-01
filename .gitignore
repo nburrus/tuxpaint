@@ -19,5 +19,6 @@ Info.plist
 *.swo
 src/po/POTFILES.in
 src/tuxpaint.desktop
+src/tuxpaint-fullscreen.desktop
 src/org.tuxpaint.Tuxpaint.appdata.xml
 test-png

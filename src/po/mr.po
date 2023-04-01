@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.21c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2013-03-28 12:11+0530\n"
 "Last-Translator: Santosh Jankiram Kshetre <quicklearning@rediffmail.com>\n"
 "Language-Team: Marathi\n"
@@ -333,6 +333,7 @@ msgid "Tux Paint"
 msgstr "टुक्स हे चित्रकाराचे आधुनिक उपकरण  "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "खास मुलांना चित्र काढण्यासाठी बनवलेल सॉफ्टवेअर "
 
@@ -1390,9 +1391,13 @@ msgid ""
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "चित्र काढण्यासाठी सॉफ्ट्वेअर "
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"

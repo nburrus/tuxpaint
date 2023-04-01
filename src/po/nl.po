@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2023-03-30 14:41+0200\n"
 "Last-Translator: Willem Heppe <heppew@yahoo.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -319,6 +319,7 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "Een tekenprogramma voor kinderen"
 
@@ -1472,9 +1473,13 @@ msgstr ""
 "Klik de primaire kleuren (rood, geel en blauw), wit (voor tint), grijs (voor "
 "toon) en zwart (voor schaduw) om nieuwe kleur te mengen."
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "Tekenprogramma"
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"

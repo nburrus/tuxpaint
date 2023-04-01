@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"POT-Creation-Date: 2023-04-01 16:47-0700\n"
 "PO-Revision-Date: 2023-04-01 20:01+0400\n"
 "Last-Translator: Giasher <giasher@gmail.com>\n"
 "Language-Team: Gia Shervashidze <giasher@gmail.com>\n"
@@ -284,7 +284,6 @@ msgstr "ჩინური"
 
 #. Add menu items
 #: ../macos.m:58
-#| msgid "Tux Paint"
 msgid "About Tux Paint"
 msgstr "Tux Paint-ის შესახებ"
 
@@ -319,6 +318,7 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
+#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "სახატავი პროგრამა ბავშვებისთვის"
 
@@ -1238,7 +1238,6 @@ msgid "Your picture has been exported!"
 msgstr "თქვენი ნახატი დაექსპორტდა!"
 
 #: ../tuxpaint.c:2544
-#| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "თქვენი GIF სლაიდშოუ დაექსპორტდა!"
 
@@ -1437,9 +1436,13 @@ msgstr ""
 "დაწკაპეთ პირველადი ფერები (წითელი, ყვითელი, ლურჯი), თეთრი (ელფერისთვის), "
 "ნაცრისფერი (ტონალობისთვის) და შავი (დაჩრდილვისთვის) ახალი ფერის მისაღებად."
 
-#: ../tuxpaint.desktop.in:9
+#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
 msgstr "სახატავი პროგრამა"
+
+#: ../tuxpaint-fullscreen.desktop.in:3
+msgid "Tux Paint (Fullscreen)"
+msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"

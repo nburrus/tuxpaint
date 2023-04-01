@@ -336,6 +336,12 @@ https://tuxpaint.org/
       FreeDesktop systems (e.g., Linux)
       Will Thompson <https://sourceforge.net/u/wjjjjt/profile/>
 
+    * Add "tuxpaint-fullscreen.desktop", which launches Tux Paint
+      with "--fullscreen=native" option on Freedesktop.org environments
+      (similar to the fullscreen launcher we've had for Windows)
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/227/; h/t Aaron Wolf)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Remove "intltool" dependency. (Thanks to this, no need for
       "tuxpaint.desktop.in".  It involved rewriting "update-po.sh"
       to invoke 'xgettext' and 'msgfmt' rather than 'intltool' commands.)
