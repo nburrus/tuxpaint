@@ -852,13 +852,14 @@ Android
 
   Building
 
-   The Gradle build generates some variants: Playstore, debugPlaystore,
-   offPlaystore and debugoffPlaystore. You must sign the non-debug ones to be
+   The Gradle build generates some variants: PlayStore, debugPlayStore,
+   offPlayStore and debugoffPlayStore. You must sign the non-debug ones to be
    able to install them. (FIXME: Link to info on how to sign.) (Note:
-   "Playstore" ones are intended to be uploaded to Google Play; this is
-   currently managed by Terrence Sheflin —March 2023. "offPlaystore" is the
+   "playStore" ones are intended to be uploaded to Google Play; this is
+   currently managed by Terrence Sheflin —March 2023. "offPlayStore" is the
    flavor that we distribute as APK files on the Tux Paint website and
-   SourceForge file hosting, and send to the F-Droid app. repository.)
+   SourceForge file hosting, and is the variant built by the F-Droid app.
+   repository.)
 
    To trigger a build from F-droid, it suffices to tag a commit and push it
    to GitHub. That doesn't guarantee the build will succeed though, so Pere
