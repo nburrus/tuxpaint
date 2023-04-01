@@ -5,15 +5,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 09:13-0700\n"
-"PO-Revision-Date: 2023-02-26 15:44+0100\n"
+"POT-Creation-Date: 2023-04-01 15:45+0200\n"
+"PO-Revision-Date: 2023-04-01 15:44+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -350,7 +350,7 @@ msgstr "New Breed Software et al."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:34
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
-msgstr ""
+msgstr "Tux Paint kjem med mange ferdige teikningar du kan fargeleggja."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid ""
@@ -367,42 +367,53 @@ msgid ""
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
+"Femten nye magiske verktøy er lagde til: labyrint, stireauge, pels, sirklar, "
+"strålar, 3D-brillar, skil fargar, gråare, meir fargerik, fjern farge, behald "
+"farge, kaleido-4, kaleido-6, kaleido-8 og glød."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Stamps may be rotated before being applied to the canvas."
-msgstr ""
+msgstr "Du kan dreia på stempla før du stemplar dei på teikninga."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
-msgstr ""
+msgstr "Dra-frå-hjørna-funksjonen i figurverktøyet er forbetra."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
+"Bøtteverktøyet har no ein modus der du kan teikna fargeovergangar som "
+"følgjer former."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
-msgstr ""
+msgstr "Mellombels viskelêrmodus er no tilgjengeleg via tastaturet."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
 msgstr ""
+"Regnbogepaletten (HSV-fargeveljaren) kan no henta inn fargar frå pipetten "
+"eller fargeblandaren."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
+"Teikningmalane kan no definera korleis dei skal strekkjast, for slik å unngå "
+"utsmørjing når breidd/høgd-forholdet til vindauget ikkje stemmer med det til "
+"malen."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
+"Innstillinga «buttonsize» (knappstorleik) har no eit «auto»-alternativ."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "A quick start guide has been added."
-msgstr ""
+msgstr "Ei «kom i gang»-rettleiing er lagd til."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
@@ -1606,7 +1617,7 @@ msgstr "Skil fargar"
 
 #: ../../magic/src/colorsep.c:40
 msgid "Double Vision"
-msgstr ""
+msgstr "Dobbeltsyn"
 
 #: ../../magic/src/colorsep.c:44
 msgid ""
@@ -1621,10 +1632,8 @@ msgid "Click and drag to separate your picture's colors."
 msgstr "Hald inne knappen og flytt rundt for å skilja fargane i teikninga."
 
 #: ../../magic/src/colorsep.c:46
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to simulate double vision."
-msgstr "Hald inne knappen og flytt rundt for å teikna store mursteinar."
+msgstr "Hald inne knappen og flytt rundt for å etterlikna dobbeltsyn."
 
 #: ../../magic/src/confetti.c:103
 msgid "Confetti"
@@ -1664,23 +1673,19 @@ msgstr "Mørkare"
 
 #: ../../magic/src/fade_darken.c:49
 msgid "Desaturate"
-msgstr ""
+msgstr "Gråare"
 
 #: ../../magic/src/fade_darken.c:50
 msgid "Saturate"
-msgstr ""
+msgstr "Meir fargerik"
 
 #: ../../magic/src/fade_darken.c:51
-#, fuzzy
-#| msgid "Xor Colors"
 msgid "Remove Color"
-msgstr "XELLER-fargar"
+msgstr "Fjern farge"
 
 #: ../../magic/src/fade_darken.c:52
-#, fuzzy
-#| msgid "Separate Colors"
 msgid "Keep Color"
-msgstr "Skil fargar"
+msgstr "Behald farge"
 
 #: ../../magic/src/fade_darken.c:57
 msgid "Click and drag the mouse to lighten parts of your picture."
@@ -1701,73 +1706,52 @@ msgid "Click to darken your entire picture."
 msgstr "Trykk for å gjera heile teikninga mørkare."
 
 #: ../../magic/src/fade_darken.c:65
-#, fuzzy
-#| msgid "Click and drag the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr ""
-"Hald inne knappen og flytt rundt for å gjera delar av teikninga mørkare."
+"Hald inne knappen og flytt rundt for å gjera delar av teikninga gråare."
 
 #: ../../magic/src/fade_darken.c:66
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
-msgstr "Trykk for å gjera heile teikninga mørkare."
+msgstr "Trykk for å gjera heile teikninga gråare."
 
 #: ../../magic/src/fade_darken.c:69
-#, fuzzy
-#| msgid "Click and drag the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
-msgstr "Hald inne knappen og flytt rundt for å gjera teikninga skarpare."
+msgstr ""
+"Hald inne knappen og flytt rundt for å gjera deler av teikninga meir "
+"fargerik."
 
 #: ../../magic/src/fade_darken.c:70
-#, fuzzy
-#| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
-msgstr "Trykk for å gjera heile teikninga mørkare."
+msgstr "Trykk for å gjera heile teikninga meir fargerik."
 
 #: ../../magic/src/fade_darken.c:73
-#, fuzzy
-#| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
-msgstr "Hald inne knappen og flytt rundt for å markera kantane i teikninga."
+msgstr ""
+"Hald inne knappen og flytt rundt for å gjera dei delane som har valt farge, "
+"gråare."
 
 #: ../../magic/src/fade_darken.c:74
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
-msgstr ""
-"Hald inne knappen og flytt rundt for å gjera delar av teikninga kvit og ein "
-"farge du vel."
+msgstr "Trykk for å gjera alle delar av teikninga som har valt farge, gråare."
 
 #: ../../magic/src/fade_darken.c:77
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
 msgstr ""
-"Hald inne knappen og flytt rundt for å gjera delar av teikninga kvit og ein "
-"farge du vel."
+"Hald inne knappen og flytt rundt for å gjera dei delane som ikkje har valt "
+"farge, gråare."
 
 #: ../../magic/src/fade_darken.c:78
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
 msgstr ""
-"Hald inne knappen og flytt rundt for å gjera delar av teikninga kvit og ein "
-"farge du vel."
+"Trykk for å gjera alle delar av teikninga som ikkje har valt farge, gråare."
 
 #: ../../magic/src/fisheye.c:113
 msgid "Fisheye"
@@ -1832,8 +1816,6 @@ msgid "Click to cover your entire picture in glass tiles."
 msgstr "Trykk for å dekkja heile teikninga med glasfliser."
 
 #: ../../magic/src/googlyeyes.c:165
-#, fuzzy
-#| msgid "Google Eyes"
 msgid "Googly Eyes"
 msgstr "Stireauge"
 
@@ -1858,34 +1840,24 @@ msgid "Click to turn your drawing into a newspaper."
 msgstr "Trykk for å gjera heile teikninga om til ei avis."
 
 #: ../../magic/src/kaleidox.c:39
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-4"
-msgstr "Kaleidoskop"
+msgstr "Kaleido-4"
 
 #: ../../magic/src/kaleidox.c:40
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-6"
-msgstr "Kaleidoskop"
+msgstr "Kaleido-6"
 
 #: ../../magic/src/kaleidox.c:41
-#, fuzzy
-#| msgid "Kaleidoscope"
 msgid "Kaleido-8"
-msgstr "Kaleidoskop"
+msgstr "Kaleido-8"
 
 #: ../../magic/src/kaleidox.c:45 ../../magic/src/kaleidox.c:46
 #: ../../magic/src/kaleidox.c:47
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr ""
-"Hald inne knappen og flytt rundt for å få teikninga til å sjå ut som ho vert "
-"vist på TV."
+"Hald inne knappen og flytt rundt for å sjå på teikninga gjennom eit "
+"kaleidoskop!"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
