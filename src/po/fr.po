@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 16:47-0700\n"
-"PO-Revision-Date: 2023-04-01 10:50+0200\n"
+"POT-Creation-Date: 2023-03-30 09:13-0700\n"
+"PO-Revision-Date: 2023-04-02 05:58+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -207,7 +207,7 @@ msgstr "Clique pour remplir une surface avec une couleur unie."
 
 #: ../fill_tools.h:61
 msgid "Click and drag to fill an area by hand, using a brush."
-msgstr "Clique pour remplir une surface à la main, avec un pinceau."
+msgstr "Clique pour remplir une surface à la main à l'aide d'un pinceau."
 
 #: ../fill_tools.h:63
 msgid ""
@@ -226,10 +226,6 @@ msgstr ""
 "choisie jusqu'à la transparence)."
 
 #: ../fill_tools.h:67
-#, fuzzy
-#| msgid ""
-#| "Click to fill an area with a radial gradient (from the chosen color to "
-#| "transparent)."
 msgid ""
 "Click to fill an area with a shaped gradient (from the chosen color to "
 "transparent)."
@@ -323,7 +319,6 @@ msgid "Tux Paint"
 msgstr "Tux Paint"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:10
-#: ../tuxpaint-fullscreen.desktop.in:10
 msgid "A drawing program for children"
 msgstr "Un programme de dessin pour les enfants"
 
@@ -336,7 +331,7 @@ msgid ""
 "program."
 msgstr ""
 "Tux Paint est un programme de dessin libre, conçu pour les jeunes enfants "
-"âgés de 3 ans à 12, et qui a remporté de nombreux prix. Tux Paint est "
+"âgés de 3 à 12 ans, et qui a remporté de nombreux prix. Tux Paint est "
 "utilisé dans des écoles partout dans le monde comme activité d'apprentissage "
 "de dessin par ordinateur. Il possède une interface simple à utiliser, des "
 "effets sonores amusants, et une mascotte dessinée qui encourage et aide les "
@@ -378,10 +373,10 @@ msgid ""
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
-"Quinze nouveaux outils 'Magie' ont été ajoutés : Labyrinthe, Yeux "
-"écarquillés, Fourrure, Cercles, Raies, Lunettes 3D, Séparation des couleurs, "
-"Saturer, Désaturer, Enlever une couleur, Garder une couleur, Kaleido-4, "
-"Kaleido-6, Kaleido-8 et Bloom."
+"Quinze nouveaux outils 'Magie' ont été ajoutés : Labyrinthe, Gros yeux, "
+"Fourrure, Cercles, Raies, 3D, Séparation des couleurs, Aviver, Atténuer, "
+"Enlever une couleur, Garder une couleur, Kaleido-4, Kaleido-6, Kaleido-8 et "
+"Bloom."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Stamps may be rotated before being applied to the canvas."
@@ -407,16 +402,24 @@ msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
 msgstr ""
+"La palette de l'arc-en-ciel (pipette HSV) peut maintenant charger les "
+"couleurs intégrées ou bien les couleurs venant de l'outil pipette ou bien du "
+"mélangeur."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
+"On peut spécifier l'étirement des images de Démarrage ou des images Modèle, "
+"pour éviter des défauts quand le ration d'aspect du canevas diffère de celui "
+"de l'image."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
+"L'option de configuration \"taille des boutons\" offre maintenant un réglage "
+"\"auto\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "A quick start guide has been added."
@@ -688,8 +691,8 @@ msgid ""
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
 msgstr ""
-"Nouvellement dans cette version sont une \" pipette à couleur \", qui permet "
-"de choisir toute couleur dans un dessin, et un ensemble d'étoiles à trois, "
+"Nouveau dans cette version :  une \" pipette à couleur \", qui permet de "
+"choisir toute couleur dans un dessin, et un ensemble d'étoiles à trois, "
 "quatre et cinq branches."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
@@ -1180,16 +1183,13 @@ msgstr ""
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:200
-#, fuzzy, c-format
-#| msgid ""
-#| "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
-#| "degrees.)"
+#, c-format
 msgid ""
 "Drag the mouse to rotate the stamp. Click to draw it. (It is rotated %d "
 "degrees.)"
 msgstr ""
-"Bouge la souris pour faire tourner cette forme. Clique pour la figer. Elle a "
-"tourné de %d degrés.)"
+"Bouge la souris pour faire tourner ce tampon. Clique pour le figer.'La "
+"rotation est de %d degrés.)"
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2487
@@ -1488,13 +1488,9 @@ msgstr ""
 "teinte), gris (pour la tonalité, et noir (pour l'ombre), et mélangez pour "
 "avoir une nouvelle couleur."
 
-#: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
+#: ../tuxpaint.desktop.in:9
 msgid "Drawing program"
 msgstr "Programme de dessin"
-
-#: ../tuxpaint-fullscreen.desktop.in:3
-msgid "Tux Paint (Fullscreen)"
-msgstr ""
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"
@@ -1570,20 +1566,16 @@ msgstr "Bloom"
 
 #
 #: ../../magic/src/bloom.c:127
-#, fuzzy
-#| msgid ""
-#| "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
-"Clique et déplace la souris pour ajouter, par endroits, un effet de mosaïque."
+"Clique et déplace la souris pour ajouter, par endroits, une lueur brillante."
 
 #
 #: ../../magic/src/bloom.c:129
-#, fuzzy
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
-msgstr "Clique pour avoir un effet de mosaïque sur l'ensemble de l'image."
+msgstr ""
+"Clique pour avoir un effet de lumière brillante sur l'ensemble de l'image."
 
 #: ../../magic/src/blur.c:84
 msgid "Blur"
@@ -1657,7 +1649,7 @@ msgstr ""
 
 #: ../../magic/src/colorsep.c:38
 msgid "3D Glasses"
-msgstr "Lunettes 3D"
+msgstr "3D"
 
 #: ../../magic/src/colorsep.c:39
 msgid "Color Sep."
@@ -1725,7 +1717,7 @@ msgstr "Sombre"
 
 #: ../../magic/src/fade_darken.c:49
 msgid "Desaturate"
-msgstr "Désaturer"
+msgstr "Atténuer"
 
 #: ../../magic/src/fade_darken.c:50
 msgid "Saturate"
@@ -1762,39 +1754,41 @@ msgstr "Clique pour assombrir la totalité du dessin."
 #
 #: ../../magic/src/fade_darken.c:65
 msgid "Click and drag the mouse to desaturate parts of your picture."
-msgstr "Clique et déplace la souris pour désaturer des parties de ton dessin."
+msgstr ""
+"Clique et déplace la souris pour atténuer les couleurs sur des parties de "
+"ton dessin."
 
 #
 #: ../../magic/src/fade_darken.c:66
 msgid "Click to desaturate your entire picture."
-msgstr "Clique pour désaturer la totalité du dessin."
+msgstr "Clique pour atténuer les couleurs sur la totalité du dessin."
 
 #: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to saturate parts of your picture."
-msgstr "Clique et déplace la souris pour saturer des parties de ton dessin."
+msgstr ""
+"Clique et déplace la souris pour aviver les couleurs sur des parties de ton "
+"dessin."
 
 #
 #: ../../magic/src/fade_darken.c:70
 msgid "Click to saturate your entire picture."
-msgstr "Clique pour saturer la totalité du dessin."
+msgstr "Clique pour aviver les couleurs sur la totalité du dessin."
 
 #
 #: ../../magic/src/fade_darken.c:73
-#, fuzzy
-#| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
 msgstr ""
-"Clique et déplace la souris pour avoir localement le contour des objets "
-"dessinés."
+"Clique et déplace la souris pour complètement atténuer une couleur choisie "
+"sur une partie du dessin."
 
 #: ../../magic/src/fade_darken.c:74
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
 msgstr ""
-"Clique pour désaturer entièrement les parties du dessin qui correspondent à "
+"Clique pour atténuer entièrement les parties du dessin qui correspondent à "
 "la couleur choisie."
 
 #: ../../magic/src/fade_darken.c:77
@@ -1802,7 +1796,7 @@ msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
 msgstr ""
-"Clique et déplace la souris pour désaturer entièrement les parties du dessin "
+"Clique et déplace la souris pour atténuer entièrement les parties du dessin "
 "qui ne correspondent pas à la couleur choisie."
 
 #: ../../magic/src/fade_darken.c:78
@@ -1810,7 +1804,7 @@ msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
 msgstr ""
-"Clique pour désaturer entièrement les parties du dessin qui ne correspondent "
+"Clique pour atténuer entièrement les parties du dessin qui ne correspondent "
 "pas à la couleur choisie."
 
 #: ../../magic/src/fisheye.c:113
@@ -1880,7 +1874,7 @@ msgstr "Clique pour ajouter des carreaux de verre sur l'ensemble du dessin."
 
 #: ../../magic/src/googlyeyes.c:165
 msgid "Googly Eyes"
-msgstr "Yeux écarquillés"
+msgstr "Gros yeux"
 
 #: ../../magic/src/grass.c:116
 msgid "Grass"
@@ -1909,14 +1903,17 @@ msgid "Click to turn your drawing into a newspaper."
 msgstr "Clique pour que ton image ressemble à celle d'un journal."
 
 #: ../../magic/src/kaleidox.c:39
+#| msgid "Kaleidoscope"
 msgid "Kaleido-4"
 msgstr "Kaleido-4"
 
 #: ../../magic/src/kaleidox.c:40
+#| msgid "Kaleidoscope"
 msgid "Kaleido-6"
 msgstr "Kaleido-6"
 
 #: ../../magic/src/kaleidox.c:41
+#| msgid "Kaleidoscope"
 msgid "Kaleido-8"
 msgstr "Kaleido-8"
 
