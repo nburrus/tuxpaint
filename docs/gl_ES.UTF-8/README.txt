@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               1 de Abril de 2023
+                               2 de Abril de 2023
 
          +-----------------------------------------------------------+
          |Índice                                                     |
