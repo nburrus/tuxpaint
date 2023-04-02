@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-01 16:47-0700\n"
-"PO-Revision-Date: 2023-03-22 22:45+0900\n"
+"PO-Revision-Date: 2023-04-02 09:54+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -351,6 +351,8 @@ msgstr "New Breed Software ほか"
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:34
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
 msgstr ""
+"Tux Paint には、たくさんの塗り絵のスタイルの画像があらかじめ用意されていま"
+"す。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid ""
@@ -1460,7 +1462,7 @@ msgstr "お絵かきプログラム"
 
 #: ../tuxpaint-fullscreen.desktop.in:3
 msgid "Tux Paint (Fullscreen)"
-msgstr ""
+msgstr "Tux Paint (Fullscreen)"
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"
