@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-02 10:06-0700\n"
-"PO-Revision-Date: 2023-04-03 09:50+0200\n"
+"PO-Revision-Date: 2023-04-03 10:44+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1109,8 +1109,8 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
-"Cliquez sur une étiquette existante ( ou bien pressez [Tab] pour parcourir "
-"et [Enter] sur votre choix). Ainsi vous pouvez la déplacer, l'éditer et "
+"Clique sur une étiquette existante ( ou bien presse [Tab] pour parcourir "
+"puis [Enter] sur ton choix). Ensuite, tu pourras la déplacer, l'éditer et "
 "changer le style."
 
 #. Instructions to show when a Label has been chosen with the selector
@@ -1120,9 +1120,9 @@ msgid ""
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
 msgstr ""
-"Cliquez sur le dessin si vous voulez repositionner cette étiquette, changer "
-"le texte, et utiliser l'option pour changer le style du texte. Pressez   "
-"[Enter] ou [Tab] pour finir."
+"Clique sur le dessin si tu veux repositionner cette étiquette, changer le "
+"texte, et utiliser l'option pour changer le style du texte. Presse   [Enter] "
+"ou [Tab] pour finir."
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:186
@@ -1130,14 +1130,14 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
 msgstr ""
-"Cliquez sur une étiquette existante (ou bien pressez [Tab] pour aller de "
-"l'une à l'autre et [Enter] pour choisir) pour mettre de manière permanente "
-"le texte sur la toile."
+"Clique sur une étiquette existante (ou bien presse [Tab] pour aller de l'une "
+"à l'autre et [Enter] pour choisir) pour mettre de manière permanente le "
+"texte sur la toile."
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:189
 msgid "This brush is animated; its shape changes as you draw!"
-msgstr "Ce pinceau est animé; sa forme change pendant que vous dessinez !"
+msgstr "Ce pinceau est animé; sa forme change pendant que tu dessines !"
 
 #: ../tools.h:190
 msgid "This brush changes depending on the angle."
@@ -1398,7 +1398,7 @@ msgstr "Choisis une image, et clique ensuite sur “Ouvrir”."
 
 #: ../tuxpaint.c:19580
 msgid "Select 2 or more drawings to turn into an animated GIF."
-msgstr "Sélectionner 2 ou plusieurs dessins pour créer une image animée GIF."
+msgstr "Sélectionne deux ou plusieurs dessins pour créer une image animée GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
 #: ../tuxpaint.c:25889
@@ -1429,29 +1429,29 @@ msgstr "noir"
 #: ../tuxpaint.c:25899
 #, c-format
 msgid "Your color is %1$s %2$s."
-msgstr "Votre couleur est  %1$s %2$s."
+msgstr "Ta couleur est  %1$s %2$s."
 
 #: ../tuxpaint.c:25900
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
-msgstr "Votre couleur est  %1$s %2$s et %3$s %4$s."
+msgstr "Ta couleur est  %1$s %2$s et %3$s %4$s."
 
 #: ../tuxpaint.c:25901
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
-msgstr "Votre couleur est %1$s %2$s, %3$s %4$s, et %5$s %6$s."
+msgstr "Ta couleur est %1$s %2$s, %3$s %4$s, et %5$s %6$s."
 
 #: ../tuxpaint.c:25903
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
-msgstr "Votre couleur est %1$s %2$s, %3$s %4$s, %5$s %6$s, et %7$s %8$s."
+msgstr "Ta couleur est %1$s %2$s, %3$s %4$s, %5$s %6$s, et %7$s %8$s."
 
 #: ../tuxpaint.c:25905
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
-"Votre couleur est %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, et %9$s %10$s."
+"Ta couleur est %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, et %9$s %10$s."
 
 #: ../tuxpaint.c:25907
 #, c-format
@@ -1459,7 +1459,7 @@ msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
 msgstr ""
-"Votre couleur est %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, et "
+"Ta couleur est %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, et "
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
@@ -1476,7 +1476,7 @@ msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
-"Cliquez sur une couleur. La teinte va de haut vers le bas. La saturation/"
+"Clique sur une couleur. La teinte va de haut vers le bas. La saturation/"
 "intensité va de la gauche (pâle) vers la droite (pur). La valeur brillant/"
 "sombre : barre grise."
 
@@ -1485,8 +1485,8 @@ msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
-"Cliquez sur les couleurs primaires (rouge, jaune et bleu), blanc (pour la "
-"teinte), gris (pour la tonalité, et noir (pour l'ombre), et mélangez pour "
+"Clique sur les couleurs primaires (rouge, jaune et bleu), blanc (pour la "
+"teinte), gris (pour la tonalité, et noir (pour l'ombre), et mélange les pour "
 "avoir une nouvelle couleur."
 
 #: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
@@ -1495,11 +1495,11 @@ msgstr "Programme de dessin"
 
 #: ../tuxpaint-fullscreen.desktop.in:3
 msgid "Tux Paint (Fullscreen)"
-msgstr ""
+msgstr "Tux Paint (plein écran)"
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"
-msgstr "Couleurs"
+msgstr "Changement de couleur"
 
 #
 #: ../../magic/src/alien.c:76
@@ -2003,7 +2003,7 @@ msgstr ""
 
 #: ../../magic/src/maze.c:114
 msgid "Maze"
-msgstr "Labyrunthe"
+msgstr "Labyrinthe"
 
 #
 #: ../../magic/src/maze.c:128
