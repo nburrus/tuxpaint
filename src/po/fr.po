@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-02 10:06-0700\n"
-"PO-Revision-Date: 2023-04-02 05:58+0200\n"
+"PO-Revision-Date: 2023-04-03 09:50+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -412,9 +412,9 @@ msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
-"On peut spécifier l'étirement des images de Démarrage ou des images Modèle, "
-"pour éviter des défauts quand le ration d'aspect du canevas diffère de celui "
-"de l'image."
+"On peut spécifier comment étirer les images de Démarrage ou les images "
+"Modèle, pour éviter des défauts quand le ration d'aspect du canevas diffère "
+"de celui de l'image."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
@@ -481,7 +481,7 @@ msgstr ""
 "Deux nouvelles variantes de l'outil 'Zoom', \"Zoom tuile\" et \"Rush\", sont "
 "apparues. Quand on dézoome avec \"Zoom tuile\", il reproduit le dessin en "
 "plusieurs tuiles sur la toile, plutôt que remplir la toile avec une couleur "
-"noir unie. L'outil \"Rush\" zoome et dézoome en ajoutant un effet de flou."
+"noire unie. L'outil \"Rush\" zoome et dézoome en ajoutant un effet de flou."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
@@ -494,7 +494,7 @@ msgstr ""
 "L'outil 'Formes' offre maintenant de nouveaux polygones : hexagone (6 côtés) "
 "et heptagone (7 côtés). Pour les formes qui peuvent être agrandies "
 "(rectangle, ovale, etc ...), le rapport h/l est affiché en bas lorsque vous "
-"faites la modification.Des informations  sont également montrées pour "
+"faites la modification. Des informations  sont également montrées pour "
 "d'autres outils."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
@@ -589,7 +589,7 @@ msgid ""
 "picture via brush strokes."
 msgstr ""
 "De nouveaux outils 'Magie' ont été ajoutés : \"Pixels\" rend plus facile la "
-"création d'images de style retro-gaming, \"Dalier\" remplit la toile avec un "
+"création d'images de style retro-gaming, \"Damier\" remplit la toile avec un "
 "damier, et \"Clone\" permet la duplication de parties de l'image avec des "
 "coups de pinceaux."
 
@@ -627,8 +627,8 @@ msgid ""
 "making it easier to use in any situation."
 msgstr ""
 "Une amélioration majeure a été apportée à l'outil 'Formes', qui permet de "
-"choisir si les formes sont dessinées depuis le centre ou un coin, facilitant "
-"ainsi son usage dans toutes les situations."
+"choisir si les formes sont dessinées depuis le centre ou un coin, le rendant "
+"ainsi plus facile à utiliser dans toutes les situations."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
 msgid ""
@@ -657,7 +657,7 @@ msgid ""
 "with others."
 msgstr ""
 "Et enfin, cette nouvelle version ajoute des options pour exporter des "
-"dessins et des animations GIF, facilitant ainsi le parage d'images, de B.D. "
+"dessins et des animations GIF, facilitant ainsi le partage d'images, de B.D. "
 "et de diaporamas."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
@@ -926,7 +926,7 @@ msgstr "Texte"
 #. Label tool
 #: ../tools.h:76
 msgid "Label"
-msgstr "Ètiquette"
+msgstr "Étiquette"
 
 #. Fill tool
 #: ../tools.h:79
