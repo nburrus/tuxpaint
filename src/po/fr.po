@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-02 10:06-0700\n"
-"PO-Revision-Date: 2023-04-03 10:44+0200\n"
+"PO-Revision-Date: 2023-04-03 13:40+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1785,8 +1785,8 @@ msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
 msgstr ""
-"Clique et déplace la souris pour complètement atténuer une couleur choisie "
-"sur une partie du dessin."
+"Clique et déplace la souris pour complètement atténuer, sur une partie du "
+"dessin,  une couleur que tu as choisie."
 
 #: ../../magic/src/fade_darken.c:74
 msgid ""
@@ -1827,7 +1827,7 @@ msgstr "Fleur"
 #: ../../magic/src/flower.c:180
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
-"Clique et déplace la souris pour dessiner une fleur. Relâche pour la finir."
+"Clique et déplace la souris pour dessiner une fleur. Relâche pour terminer"
 
 #: ../../magic/src/foam.c:133
 msgid "Foam"
@@ -1993,7 +1993,7 @@ msgstr "Clique et déplace la souris pour dessiner un rayon de lumière."
 
 #: ../../magic/src/lightning.c:90
 msgid "Lightning"
-msgstr "Eclair"
+msgstr "Éclair"
 
 #: ../../magic/src/lightning.c:105
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2497,7 +2497,7 @@ msgstr "Colorier"
 
 #: ../../magic/src/tint.c:74
 msgid "Color & White"
-msgstr "Couleur+Blanc"
+msgstr "Coul.+Blc"
 
 #
 #: ../../magic/src/tint.c:79
