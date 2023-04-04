@@ -6,6 +6,11 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
+2023.April.3 (0.9.30)
+  * Localization Updates:
+    ---------------------
+    * French translation
+      Jacques Chion <jacques.chion@orange.fr>
 
 2023.April.2 (0.9.29)
   * Improvements to "Stamp" tool:
