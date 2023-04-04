@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 version 0.9.29
+                                 version 0.9.30
 
 Magic Tool Plugin API Documentation
 
@@ -518,7 +518,7 @@ Tux Paint Functions and Data
 
    char * tp_version
            A string containing the version of Tux Paint that's running (e.g.,
-           "0.9.29").
+           "0.9.30").
 
    int canvas_w
    int canvas_h
@@ -663,7 +663,7 @@ Constant Defintions in "tp_magic_api.h"
            your plugin is compatible.
 
            Note: This version number does not correspond to Tux Paint's own
-           release number (e.g., "0.9.29"). The API will not change every
+           release number (e.g., "0.9.30"). The API will not change every
            time a new version of Tux Paint is released, which means plugins
            compiled for earlier versions of Tux Paint will often run under
            newer versions.
