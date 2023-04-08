@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - March 29, 2023
+June 17, 2002 - April 8, 2023
 
 * Design and Coding:
 
@@ -662,6 +662,7 @@ June 17, 2002 - March 29, 2023
     Huang Zuzhen <zuzhenhuang@vip.sina.com>
     Wang Jian
     Never Min <nevermin@gmail.com>
+    臧传明 <qdeduos@163.com>
 
   * Chinese (Simplified) README and FAQ documentation
     HackerGene <hackergene@gmail.com>

@@ -6,9 +6,12 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.3 (0.9.30)
+2023.April.8 (0.9.30)
   * Localization Updates:
     ---------------------
+    * Chinese (Simplified) translation
+      臧传明 <qdeduos@163.com>
+
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
 
