@@ -13702,24 +13702,29 @@ static Mix_Chunk *loadsound_extra(const char *const fname, const char *extra)
 
           debug("...No short local version of sound (WAV)!");
 
-          strcpy(snd_fname, fname);     /* malloc'd size should be sufficient */
-          safe_snprintf(tmp_str, sizeof(tmp_str), "%s.ogg", extra);
-          strcpy((char *) strcasestr(snd_fname, ext), tmp_str); /* FIXME: Use strncpy() (ugh, complicated) */
-          debug(snd_fname);
-          tmp_snd = Mix_LoadWAV(snd_fname);
-
-          if (tmp_snd == NULL)
-          {
-            debug("...No default version of sound (OGG)!");
-
-            strcpy(snd_fname, fname);   /* malloc'd size should be sufficient */
-            safe_snprintf(tmp_str, sizeof(tmp_str), "%s.wav", extra);
-            strcpy((char *) strcasestr(snd_fname, ext), tmp_str);       /* FIXME: Use strncpy() (ugh, complicated) */
+          if (strcmp(extra, "_desc") != 0 || strcmp(short_lang_prefix, "en") == 0) {
+            /* (Not loading a descriptive sound, or we're in English locale, go ahead and fall back;
+               i.e., if loading a descriptive sound in a non-English locale, let's not load the
+               English version; see https://sourceforge.net/p/tuxpaint/bugs/261/) */
+            strcpy(snd_fname, fname);     /* malloc'd size should be sufficient */
+            safe_snprintf(tmp_str, sizeof(tmp_str), "%s.ogg", extra);
+            strcpy((char *) strcasestr(snd_fname, ext), tmp_str); /* FIXME: Use strncpy() (ugh, complicated) */
             debug(snd_fname);
             tmp_snd = Mix_LoadWAV(snd_fname);
-
+  
             if (tmp_snd == NULL)
-              debug("...No default version of sound (WAV)!");
+            {
+              debug("...No default version of sound (OGG)!");
+  
+              strcpy(snd_fname, fname);   /* malloc'd size should be sufficient */
+              safe_snprintf(tmp_str, sizeof(tmp_str), "%s.wav", extra);
+              strcpy((char *) strcasestr(snd_fname, ext), tmp_str);       /* FIXME: Use strncpy() (ugh, complicated) */
+              debug(snd_fname);
+              tmp_snd = Mix_LoadWAV(snd_fname);
+  
+              if (tmp_snd == NULL)
+                debug("...No default version of sound (WAV)!");
+            }
           }
         }
       }

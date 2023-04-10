@@ -7,11 +7,20 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2023.April.9 (0.9.30)
+  * Improvements to Stamp tool:
+    ---------------------------
+    * Avoid playing English descriptive sound for a stamp
+      stamp when not running in an English locale.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/261/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Improvements to Shape tool:
     ---------------------------
     * Octagon allows aspect ratio change
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * Slight improvement to shape calculations
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
     ---------------------
