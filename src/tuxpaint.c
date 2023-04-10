@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 21, 2023
+  June 14, 2002 - April 9, 2023
 */
 
 #include "platform.h"
@@ -16066,7 +16066,8 @@ static void free_surface_array(SDL_Surface * surface_array[], int count)
 /* Draw a shape! */
 static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 {
-  int side, rx, ry, rmax, x1, y1, x2, y2, xp, yp, xv, yv, old_brush, step;
+  int side, rx, ry, rmax, old_brush, step;
+  float x1, y1, x2, y2, xp, yp, xv, yv;
   float a1, a2, rotn_rad, init_ang, angle_skip;
   int xx, yy, offx, offy, max_x, max_y;
 
@@ -16144,19 +16145,19 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     {
       a1 = (angle_skip * side + init_ang) * M_PI / 180.0;
       a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180.0;
-      x1 = (int) (cos(a1) * rx);
-      y1 = (int) (-sin(a1) * ry);
+      x1 = (cos(a1) * (float) rx);
+      y1 = (-sin(a1) * (float) ry);
 
-      if (abs(x1) > max_x)
-        max_x = abs(x1);
-      if (abs(y1) > max_y)
-        max_y = abs(y1);
+      if (fabsf(x1) > max_x)
+        max_x = fabsf(x1);
+      if (fabsf(y1) > max_y)
+        max_y = fabsf(y1);
     }
 
     if (max_x < rx)
-      rx = (rx * rx) / max_x;
+      rx = (rx * rx) / (int) max_x;
     if (max_y < ry)
-      ry = (ry * ry) / max_y;
+      ry = (ry * ry) / (int) max_y;
   }
 
 
@@ -16204,23 +16205,30 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 
   for (side = 0; side < shape_sides[cur_shape]; side = side + step)
   {
-    a1 = (angle_skip * side + init_ang) * M_PI / 180;
-    a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
+    a1 = (angle_skip * (float) side + init_ang) * M_PI / 180.0;
 
-    x1 = (int) (cos(a1) * rx);
-    y1 = (int) (-sin(a1) * ry);
+    x1 = (cos(a1) * (float) rx);
+    y1 = (-sin(a1) * (float) ry);
 
-    x2 = (int) (cos(a2) * rx);
-    y2 = (int) (-sin(a2) * ry);
+    if (side < shape_sides[cur_shape] - step) {
+      a2 = (angle_skip * ((float) side + 1.0) + init_ang) * M_PI / 180.0;
+    } else {
+      a2 = init_ang * M_PI / 180.0;
+    }
 
-    xv = (int) (cos((a1 + a2) / 2) * rx * shape_valley[cur_shape] / 100);
-    yv = (int) (-sin((a1 + a2) / 2) * ry * shape_valley[cur_shape] / 100);
+    x2 = (cos(a2) * (float) rx);
+    y2 = (-sin(a2) * (float) ry);
+
+printf("side=%d, a1=%f, a2=%f -- (%f,%f) -> (%f,%f)\n", side, a1, a2, x1, y1, x2, y2);
+
+    xv = (cos((a1 + a2) / 2.0) * (float) rx * (float) shape_valley[cur_shape]) / 100.0;
+    yv = (-sin((a1 + a2) / 2.0) * (float) ry * (float) shape_valley[cur_shape]) / 100.0;
 
     /* Rotate the line: */
 
     if (rotn != 0)
     {
-      rotn_rad = rotn * M_PI / 180;
+      rotn_rad = rotn * M_PI / 180.0;
 
       if (shape_mode == SHAPEMODE_CENTER) {
         xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
@@ -16286,12 +16294,10 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     }
     else
     {
+      /* Brush */
       if (shape_valley[cur_shape] == 100)
-        /* Brush */
-
         brush_draw(x1, y1, x2, y2, 0);
       else
-        /* Stars */
       {
         brush_draw(x1, y1, xv, yv, 0);
         brush_draw(xv, yv, x2, y2, 0);
@@ -16310,34 +16316,30 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
 
       for (side = 0; side < shape_sides[cur_shape]; side++)
       {
-        a1 = (angle_skip * side + init_ang) * M_PI / 180;
-        a2 = (angle_skip * (side + 1) + init_ang) * M_PI / 180;
+        a1 = (angle_skip * (float) side + init_ang) * M_PI / 180.0;
+        a2 = (angle_skip * ((float) side + 1.0) + init_ang) * M_PI / 180.0;
 
         if (yy == xx * ry / rx)
         {
-          x1 = (int) (cos(a1) * xx);
-          y1 = (int) (-sin(a1) * yy);
+          x1 = (cos(a1) * xx);
+          y1 = (-sin(a1) * yy);
 
-          x2 = (int) (cos(a2) * xx);
-          y2 = (int) (-sin(a2) * yy);
+          x2 = (cos(a2) * xx);
+          y2 = (-sin(a2) * yy);
 
-          xv =
-            (int) (cos((a1 + a2) / 2) * xx * shape_valley[cur_shape] / 100);
-          yv =
-            (int) (-sin((a1 + a2) / 2) * yy * shape_valley[cur_shape] / 100);
+          xv = (cos((a1 + a2) / 2) * xx * shape_valley[cur_shape] / 100);
+          yv = (-sin((a1 + a2) / 2) * yy * shape_valley[cur_shape] / 100);
         }
         else
         {
-          x1 = (int) (cos(a1) * yy);
-          y1 = (int) (-sin(a1) * xx);
+          x1 = (cos(a1) * yy);
+          y1 = (-sin(a1) * xx);
 
-          x2 = (int) (cos(a2) * yy);
-          y2 = (int) (-sin(a2) * xx);
+          x2 = (cos(a2) * yy);
+          y2 = (-sin(a2) * xx);
 
-          xv =
-            (int) (cos((a1 + a2) / 2) * yy * shape_valley[cur_shape] / 100);
-          yv =
-            (int) (-sin((a1 + a2) / 2) * xx * shape_valley[cur_shape] / 100);
+          xv = (cos((a1 + a2) / 2) * yy * shape_valley[cur_shape] / 100);
+          yv = (-sin((a1 + a2) / 2) * xx * shape_valley[cur_shape] / 100);
         }
 
         /* Rotate the line: */
