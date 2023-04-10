@@ -94,7 +94,7 @@ const int shape_sides[NUM_SHAPES] = {
   4,                            /* 4 points star */
   4,                            /* 4 points star */
   5,                            /* 5 points star */
-  5                             /* 5 points star */
+  5,                            /* 5 points star */
 };
 
 
@@ -126,7 +126,7 @@ const int shape_locked[NUM_SHAPES] = {
   0,                            /* 4 points star */
   0,                            /* 4 points star */
   0,                            /* 5 points star */
-  0                             /* 5 points star */
+  0,                            /* 5 points star */
 };
 
 
@@ -158,7 +158,7 @@ const int shape_filled[NUM_SHAPES] = {
   0,                            /* 4 points star */
   1,                            /* 4 points star */
   0,                            /* 5 points star */
-  1                             /* 5 points star */
+  1,                            /* 5 points star */
 };
 
 
@@ -191,7 +191,7 @@ const float shape_init_ang[NUM_SHAPES] = {
   0.0,                          /* 4 points star */
   0.0,                          /* 4 points star */
   162.0,                        /* 5 points star ((360/5)+90) */
-  162.0                         /* 5 points star ((360/5)+90) */
+  162.0,                        /* 5 points star ((360/5)+90) */
 };
 
 
@@ -223,7 +223,7 @@ const int shape_no_rotate[NUM_SHAPES] = {
   0,                            /* 4 points star */
   0,                            /* 4 points star */
   0,                            /* 5 points star */
-  0                             /* 5 points star */
+  0,                            /* 5 points star */
 };
 
 /* Valley of stars in percent of size */
@@ -254,7 +254,7 @@ const int shape_valley[NUM_SHAPES] = {
   30,                           /* 4 points star */
   30,                           /* 4 points star */
   35,                           /* 5 points star */
-  35                            /* 5 points star */
+  35,                           /* 5 points star */
 };
 
 
@@ -303,21 +303,15 @@ const char *const shape_names[NUM_SHAPES] = {
 
   // Triangle star (3 points star)
   gettext_noop("Star"),
-
-  // Triangle star (3 points star)
   gettext_noop("Star"),
 
   // Rhombus star (4 points star)
   gettext_noop("Star"),
-
-  // Rhombus star (4 points star)
   gettext_noop("Star"),
 
-  // Pentagone star (5 points star)
+  // Pentagon star (5 points star)
   gettext_noop("Star"),
-
-  // Pentagone star (5 points star)
-  gettext_noop("Star")
+  gettext_noop("Star"),
 };
 
 
@@ -367,13 +361,18 @@ const char *const shape_tips[NUM_SHAPES] = {
     ("A rhombus has four equal sides, and opposite sides are parallel."),
   gettext_noop
     ("A rhombus has four equal sides, and opposite sides are parallel."),
+  
+  // Description of triangle star (3 points star)
+  gettext_noop("A star with 3 points."),
+  gettext_noop("A star with 3 points."),
 
-  gettext_noop("A star with 3 points."),
-  gettext_noop("A star with 3 points."),
+  // Description of rhombus star (4 points star)
   gettext_noop("A star with 4 points."),
   gettext_noop("A star with 4 points."),
+
+  // Description of pentagon star (5 points star)
   gettext_noop("A star with 5 points."),
-  gettext_noop("A star with 5 points.")
+  gettext_noop("A star with 5 points."),
 };
 
 
@@ -405,7 +404,7 @@ const char *const shape_img_fnames[NUM_SHAPES] = {
   DATA_PREFIX "images/shapes/star4p.png",
   DATA_PREFIX "images/shapes/star4p_f.png",
   DATA_PREFIX "images/shapes/star5p.png",
-  DATA_PREFIX "images/shapes/star5p_f.png"
+  DATA_PREFIX "images/shapes/star5p_f.png",
 };
 
 

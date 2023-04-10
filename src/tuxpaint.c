@@ -16210,11 +16210,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     x1 = (cos(a1) * (float) rx);
     y1 = (-sin(a1) * (float) ry);
 
-    if (side < shape_sides[cur_shape] - step) {
-      a2 = (angle_skip * ((float) side + 1.0) + init_ang) * M_PI / 180.0;
-    } else {
-      a2 = init_ang * M_PI / 180.0;
-    }
+    a2 = (angle_skip * ((float) side + 1.0) + init_ang) * M_PI / 180.0;
 
     x2 = (cos(a2) * (float) rx);
     y2 = (-sin(a2) * (float) ry);
