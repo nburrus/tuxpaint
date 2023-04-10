@@ -1,12 +1,12 @@
                                    Tux Paint
-                                 version 0.9.29
+                                 version 0.9.30
 
 Magic Tool Plugin API Documentation
 
         Copyright © 2007-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                Xaneiro 25, 2023
+                                 Abril 9, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -295,6 +295,15 @@ Magic Tool Plugin API Documentation
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
 
+   int accepted_sizes(magic_api * api, int which)
+
+           Return how many size variations the 'Magic' tool accepts. Return a
+           '0' if the 'Magic' tool should not offer sizing options. Returning
+           '1' is the same as returning '0'.
+
+           Note: Called once for each Magic tool your plugin claims to
+           contain (by your "get_tool_count()").
+
    void shutdown(magic_api * api)
 
            The plugin should do any cleanup here. If you allocated any memory
@@ -366,6 +375,20 @@ Magic Tool Plugin API Documentation
 
            Note: Changed most recently in Tux Paint 0.9.29; Magic API version
            0x00000007.
+
+   void set_size(magic_api * api, int which, SDL_Surface * canvas,
+   SDL_Surface * last, Uint8 size, SDL_Rect * update_rect)
+
+           Tux Paint will call this function to inform the plugin of the
+           'Magic' tool size option chosen. (It will be called whenever one
+           of the plugin's Magic tools that accept sizes becomes active, and
+           whenever the user picks a new size while such a tool is currently
+           active.)
+
+           Generally, Magic tools will not alter the canvas in any way when
+           receiving an updated size, but it is possible.
+
+           Note: Added to Tux Paint 0.9.30; Magic API version 0x00000008.
 
    void click(magic_api * api, int which, int mode, SDL_Surface * snapshot,
    SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect)
@@ -518,7 +541,7 @@ Tux Paint Functions and Data
 
    char * tp_version
            A string containing the version of Tux Paint that's running (e.g.,
-           "0.9.29").
+           "0.9.30").
 
    int canvas_w
    int canvas_h
@@ -663,7 +686,7 @@ Constant Defintions in "tp_magic_api.h"
            your plugin is compatible.
 
            Note: This version number does not correspond to Tux Paint's own
-           release number (e.g., "0.9.29"). The API will not change every
+           release number (e.g., "0.9.30"). The API will not change every
            time a new version of Tux Paint is released, which means plugins
            compiled for earlier versions of Tux Paint will often run under
            newer versions.
