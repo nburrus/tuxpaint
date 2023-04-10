@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 16:47-0700\n"
+"POT-Creation-Date: 2023-04-09 22:52-0700\n"
 "PO-Revision-Date: 2023-03-30 23:09+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -405,6 +405,10 @@ msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "L'eina Estampa serveix per inserir imatges al dibuix"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
+msgid "FIXME"
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
@@ -414,25 +418,25 @@ msgstr ""
 "Radis, Ulleres 3D, Separa colors, Satura, Dessatura, Treu color, Guarda "
 "color, Calidoscopi-4, Calidoscopi-6, Calidoscopi-8 i Bloom."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr "Els segells es poden girar en inserir-los al dibuix."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr "En l'ena Formes, s'ha millorat el mode d'inserir des de la vora."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 "L'eina Emplena ara ofereix un efecte de degradat que segueix la forma de "
 "l'àrea que s'emplena."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgstr "Hi ha disponible una drecera de teclat que permet esborrar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
@@ -440,7 +444,7 @@ msgstr ""
 "El selector de colors ara pot carregar el color  actual o els colors del "
 "mesclador de colors o escollir-los del dibuix."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
@@ -449,17 +453,17 @@ msgstr ""
 "en que s'han d'estirar o retallar per adaptar-se a una mida de pantalla "
 "diferent."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 "La opció de configuració \"buttonsize\" ara accepta tambe \"auto\" com a "
 "valor."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "A quick start guide has been added."
 msgstr "S'ha afegit una guia d'engegada ràpida."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -471,7 +475,7 @@ msgstr ""
 "i tons(blanc, gris i negre) per crear nous colors com si es barregessin "
 "pintures."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -482,7 +486,7 @@ msgstr ""
 "seixanta-cinc mil colors ara ofereix to, saturació i valor per separat, "
 "permetent triar entre setze milions de colors."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
@@ -491,7 +495,7 @@ msgstr ""
 "També s'ha afegit una drecera de teclat per accedir al selector de "
 "color(comptagotes) per agafar colors del dibuix."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
@@ -501,7 +505,7 @@ msgstr ""
 "permetent línies de punts i superposicions. També s'ha ajustat els valors "
 "per defecte de molts altres pinzells. "
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -513,7 +517,7 @@ msgstr ""
 "en comptes de omplir la resta del dibuis amb el color de fons. Zoom lliscat "
 "desenfoca els resultats."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -525,7 +529,7 @@ msgstr ""
 "que es poden estirar informen a baix de la seva proporció. S'ha expandit "
 "també altres instruccions mostrades mentre es fa servir l'eina."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -536,7 +540,7 @@ msgstr ""
 "s'accedeixen amb [⌘ Command]. La mida del teclat de pantalla integrat s'ha "
 "millorat i la documentació s'ha millorat."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -550,7 +554,7 @@ msgstr ""
 "l'eina Emplena ara ofereix un mode de pintat a mà alçada dintre d'una àrea "
 "confinada."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -567,7 +571,7 @@ msgstr ""
 "imatge com en una casa de miralls. Finalment, Colors suaus és una versió "
 "gradual de Colors de l'arc."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -581,7 +585,7 @@ msgstr ""
 "Solidifica i Semitons, així com Quadrets, Guix i Relleu ara poden alterar "
 "tota la imatge d'un cop!"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -592,7 +596,7 @@ msgstr ""
 "distorsions, filtres de color, deformacions, patrons, artístic i "
 "decoracions, fent més fàcil trobar l'eina que es cerca."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -604,7 +608,7 @@ msgstr ""
 "clic i l'emplenat \"Lineal\" permet la creació de gradients de angles i "
 "mides diferents."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -615,7 +619,7 @@ msgstr ""
 "píxel-art com els dels videojocs antics, \"Escacs\" omple el dibuix amb un "
 "tauler d'escacs, i \"Clona\" permet duplicar parts del dibuix a pinzellades."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:87
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
@@ -625,7 +629,7 @@ msgstr ""
 "localització. Qui vulgui ajudar en la localització està encoratjat a posar-"
 "se en contacte amb l'equip del Tux Paint."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -641,7 +645,7 @@ msgstr ""
 "qui utilitzi punters amb poca precisió, com els ratolins que es fan anar amb "
 "la mirada."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
@@ -651,7 +655,7 @@ msgstr ""
 "dibuixa des del centre o des d'una cantonada, fent més senzill de fer-la "
 "servir en totes les situacions."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
@@ -662,7 +666,7 @@ msgstr ""
 "utilitzi punters amb poca precisió, com els ratolins que es fan anar amb la "
 "mirada."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
@@ -670,7 +674,7 @@ msgstr ""
 "L'eina Esborra afegeix noves gomes, més petites, i esborra més suaument quan "
 "el ratolí es mou ràpid."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
@@ -680,7 +684,7 @@ msgstr ""
 "individuals i animacions GIF, fent més fàcil compartir dibuixos, còmics i "
 "presentacions de diapositives amb els altres."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:101
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -694,7 +698,7 @@ msgstr ""
 "l'arrencada i en obrir el diàleg de dibuix \"Nou\". Els colors sòlids es "
 "poden situar al final del diàleg, enfatitzant les imatges."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
@@ -703,7 +707,7 @@ msgstr ""
 "Ara també és possible desactivar el so estèreo, pot beneficiar ususaris amb "
 "problemes d'audició o en situacions on només hi ha disponible un sol altaveu."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
@@ -713,7 +717,7 @@ msgstr ""
 "color existent al dibuix, i estrelles de tres, quatre i cinc puntes en "
 "l'eina Formes."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
@@ -726,74 +730,74 @@ msgstr ""
 "actualitzat també trenta altres llengues."
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:266 ../shapes.h:267
+#: ../shapes.h:265 ../shapes.h:266
 msgid "Square"
 msgstr "Quadrat"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:270 ../shapes.h:271
+#: ../shapes.h:269 ../shapes.h:270
 msgid "Rectangle"
 msgstr "Rectangle"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:274 ../shapes.h:275
+#: ../shapes.h:273 ../shapes.h:274
 msgid "Circle"
 msgstr "Cercle"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:278 ../shapes.h:279
+#: ../shapes.h:277 ../shapes.h:278
 msgid "Ellipse"
 msgstr "El·lipse"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:282 ../shapes.h:283
+#: ../shapes.h:281 ../shapes.h:282
 msgid "Triangle"
 msgstr "Triangle"
 
 #. Pentagon shape tool (5 sides)
-#: ../shapes.h:286 ../shapes.h:287
+#: ../shapes.h:285 ../shapes.h:286
 msgid "Pentagon"
 msgstr "Pentàgon"
 
 #. Hexagon shape tool (6 sides)
-#: ../shapes.h:290 ../shapes.h:291
+#: ../shapes.h:289 ../shapes.h:290
 msgid "Hexagon"
 msgstr "Hexàgon"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
-#: ../shapes.h:294 ../shapes.h:295
+#: ../shapes.h:293 ../shapes.h:294
 msgid "Heptagon"
 msgstr "Heptàgon"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:298 ../shapes.h:299
+#: ../shapes.h:297 ../shapes.h:298
 msgid "Octagon"
 msgstr "Octàgon"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:302 ../shapes.h:303
+#: ../shapes.h:301 ../shapes.h:302
 msgid "Rhombus"
 msgstr "Rombe"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
-#. Pentagone star (5 points star)
-#: ../shapes.h:306 ../shapes.h:309 ../shapes.h:312 ../shapes.h:315
-#: ../shapes.h:318 ../shapes.h:321
+#. Pentagon star (5 points star)
+#: ../shapes.h:305 ../shapes.h:306 ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "Star"
 msgstr "Estrella"
 
 #. Description of a square
-#: ../shapes.h:329 ../shapes.h:330
+#: ../shapes.h:322 ../shapes.h:323
 msgid "A square is a rectangle with four equal sides."
 msgstr "Un quadrat és un rectangle amb quatre cares iguals."
 
 #. Description of a rectangle
-#: ../shapes.h:333 ../shapes.h:334
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A rectangle has four sides and four right angles."
 msgstr "Un rectangle té quatre cares i quatre angles rectes."
 
-#: ../shapes.h:338 ../shapes.h:340
+#: ../shapes.h:331 ../shapes.h:333
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -801,52 +805,55 @@ msgstr ""
 "centre."
 
 #. Description of an ellipse
-#: ../shapes.h:343 ../shapes.h:344
+#: ../shapes.h:336 ../shapes.h:337
 msgid "An ellipse is a stretched circle."
 msgstr "Una el·lipse és un cercle estirat."
 
 #. Description of a triangle
-#: ../shapes.h:347 ../shapes.h:348
+#: ../shapes.h:340 ../shapes.h:341
 msgid "A triangle has three sides."
 msgstr "Un triangle té tres cares."
 
 #. Description of a pentagon
-#: ../shapes.h:351 ../shapes.h:352
+#: ../shapes.h:344 ../shapes.h:345
 msgid "A pentagon has five sides."
 msgstr "Un pentàgon té cinc cares."
 
 #. Description of a hexagon
-#: ../shapes.h:355 ../shapes.h:356
+#: ../shapes.h:348 ../shapes.h:349
 msgid "A hexagon has six sides."
 msgstr "Un hexàgon té sis cares."
 
 #. Description of a heptagon
-#: ../shapes.h:359 ../shapes.h:360
+#: ../shapes.h:352 ../shapes.h:353
 msgid "A heptagon has seven sides."
 msgstr "Un heptàgon té set cares."
 
 #. Description of an octagon
-#: ../shapes.h:363 ../shapes.h:364
+#: ../shapes.h:356 ../shapes.h:357
 msgid "An octagon has eight equal sides."
 msgstr "Un octàgon té vuit cares iguals."
 
-#: ../shapes.h:368 ../shapes.h:370
+#: ../shapes.h:361 ../shapes.h:363
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Un rombe té quatre cares iguals i les cares oposades són paral·leles."
 
-#: ../shapes.h:372 ../shapes.h:373
+#. Description of triangle star (3 points star)
+#: ../shapes.h:366 ../shapes.h:367
 msgid "A star with 3 points."
 msgstr "Una estrella de tres puntes."
 
-#: ../shapes.h:374 ../shapes.h:375
+#. Description of rhombus star (4 points star)
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 4 points."
 msgstr "Una estrella de quatre puntes."
 
-#: ../shapes.h:376 ../shapes.h:377
+#. Description of pentagon star (5 points star)
+#: ../shapes.h:374 ../shapes.h:375
 msgid "A star with 5 points."
 msgstr "Una estrela de cinc puntes."
 
-#: ../shapes.h:439
+#: ../shapes.h:437
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
@@ -855,7 +862,7 @@ msgstr ""
 "deixeu anar el botó quan sigui de la mida i forma que voleu. Moveu el ratolí "
 "per girar-la i feu clic per dibuixar-la."
 
-#: ../shapes.h:441
+#: ../shapes.h:439
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
@@ -863,11 +870,11 @@ msgstr ""
 "Trieu una figura. Feu clic per començar a dibuixar-la, arrossegueu, llavors "
 "deixeu anar el botó quan sigui de la mida i forma que voleu."
 
-#: ../shapes.h:447
+#: ../shapes.h:445
 msgid "Draw shapes from the center."
 msgstr "Dibuixa formes des del centre."
 
-#: ../shapes.h:448
+#: ../shapes.h:446
 msgid "Draw shapes from a corner."
 msgstr "Dibuixa formes des d'una cantonada."
 
@@ -1387,84 +1394,84 @@ msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16504
+#: ../tuxpaint.c:16502
 msgid "Replace the picture with your changes?"
 msgstr "Substitueixo el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16508
+#: ../tuxpaint.c:16506
 msgid "Yes, replace the old one!"
 msgstr "Sí, substitueix l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16512
+#: ../tuxpaint.c:16510
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
-#: ../tuxpaint.c:17857
+#: ../tuxpaint.c:17855
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Trieu el dibuix que voleu, llavors feu clic en Obre."
 
-#: ../tuxpaint.c:19580
+#: ../tuxpaint.c:19578
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Seleccioneu 2 o més dibuixos per exportar-los a GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25889
+#: ../tuxpaint.c:25887
 msgid "red"
 msgstr "magenta"
 
-#: ../tuxpaint.c:25890
+#: ../tuxpaint.c:25888
 msgid "yellow"
 msgstr "groc"
 
-#: ../tuxpaint.c:25891
+#: ../tuxpaint.c:25889
 msgid "blue"
 msgstr "cian"
 
-#: ../tuxpaint.c:25892
+#: ../tuxpaint.c:25890
 msgid "white"
 msgstr "blanc"
 
-#: ../tuxpaint.c:25893
+#: ../tuxpaint.c:25891
 msgid "grey"
 msgstr "gris"
 
-#: ../tuxpaint.c:25894
+#: ../tuxpaint.c:25892
 msgid "black"
 msgstr "negre"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25899
+#: ../tuxpaint.c:25897
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "El vostre color és %1$s %2$s."
 
-#: ../tuxpaint.c:25900
+#: ../tuxpaint.c:25898
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "El vostre color és %1$s %2$s i %3$s %4$s."
 
-#: ../tuxpaint.c:25901
+#: ../tuxpaint.c:25899
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "El vostre color és %1$s %2$s, %3$s %4$s i %5$s %6$s."
 
-#: ../tuxpaint.c:25903
+#: ../tuxpaint.c:25901
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s i %7$s %8$s."
 
-#: ../tuxpaint.c:25905
+#: ../tuxpaint.c:25903
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s i %9$s %10$s."
 
-#: ../tuxpaint.c:25907
+#: ../tuxpaint.c:25905
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1474,15 +1481,15 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26745 ../tuxpaint.c:26752
+#: ../tuxpaint.c:26743 ../tuxpaint.c:26750
 msgid "entirely"
 msgstr "totalment"
 
-#: ../tuxpaint.c:30006
+#: ../tuxpaint.c:30004
 msgid "Select a color from your drawing."
 msgstr "Seleccioneu un color del vostre dibuix."
 
-#: ../tuxpaint.c:30017
+#: ../tuxpaint.c:30015
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1491,7 +1498,7 @@ msgstr ""
 "saturació o intensitat, d'esquerra(pàlid) a dreta(pur), trieu el valor "
 "(lluminositat/foscor) a la barra de grisos."
 
-#: ../tuxpaint.c:30031
+#: ../tuxpaint.c:30029
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."

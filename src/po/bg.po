@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 16:47-0700\n"
+"POT-Creation-Date: 2023-04-09 22:52-0700\n"
 "PO-Revision-Date: 2023-01-06 18:03+0200\n"
 "Last-Translator: Vankata453\n"
 "Language-Team: \n"
@@ -376,49 +376,53 @@ msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "Инструментът за печати е комплект от гумени печати и стикери"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
+msgid "FIXME"
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "A quick start guide has been added."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -430,7 +434,7 @@ msgstr ""
 "основни цветове (червено, жълто и синьо) и сенки (бели, сиви и черни) за "
 "създаване на нови цветове, подобно на смесване на бои."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -442,7 +446,7 @@ msgstr ""
 "и стойност, които позволяват на потребителите да избират от над 16 милиона "
 "цвята."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
@@ -451,7 +455,7 @@ msgstr ""
 "Също, пряк път на клавиатурата вече е наличен за бърз достъп към селектора "
 "на цвят - пипетката, използвана за избор на цвят от текущата рисунка."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
@@ -462,7 +466,7 @@ msgstr ""
 "ефекти да бъдат създадени. Също, много видове четки може да са получили по-"
 "добри стойности за разстояние по подразбиране."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -475,7 +479,7 @@ msgstr ""
 "вместо платното да се запълни с плътен цвят за фон. Инструментът за "
 "\"Втурване\" размазва резултатите."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -489,7 +493,7 @@ msgstr ""
 "отдолу, докато се извършват промени. Инструкциите, показвани при използване "
 "на някои други инструменти, също са обогатени."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -502,7 +506,7 @@ msgstr ""
 "клавиатура е подобрен, както и изгледът и удобството на потребителската "
 "документация."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -517,7 +521,7 @@ msgstr ""
 "четка. Допълнително, инструментът за запълване вече предлага режим за "
 "рисуване със свободна ръка, за интерактивно оцветяване в ограничени зони."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -535,7 +539,7 @@ msgstr ""
 "смачква картината като на криво огледало. На последно място, \"Гладка дъга\" "
 "е постепенен вариант на класическия инструмент за дъга в \"Рисуване с Тъкс\"."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -550,7 +554,7 @@ msgstr ""
 "Допълнително, \"Анимация\" и \"Полутон\", както и \"Блокове\", \"Тебешир\" и "
 "\"Релеф\", вече предлагат възможността за промяна на цялата картина наведнъж!"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -562,7 +566,7 @@ msgstr ""
 "изкривяване на картини, за рисуване на шаблони, артистичен и за декорация на "
 "картини, правейки намирането на необходимия инструмент по-лесно."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -575,7 +579,7 @@ msgstr ""
 "\"Линейното\" запълване позволява интерактивното създаване на градиенти под "
 "различни ъгли и размери."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -587,7 +591,7 @@ msgstr ""
 "лесно, \"Шахматна дъска\" запълва цялото платно с образ на шахматна дъска, и "
 "\"Копие\" позволява дублиране на части от рисунката чрез щрихи."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:87
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
@@ -597,7 +601,7 @@ msgstr ""
 "прави локализацията по-лесна. Тези, които желаят да помогнат с локализиране, "
 "са насърчени да се свържат с екипа на \"Рисуване с Тъкс\"."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -613,7 +617,7 @@ msgstr ""
 "цветовата палитра, може да бъде в полза на потребители с груби входящи "
 "устройства, като например системи за контрол чрез поглед."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
@@ -623,7 +627,7 @@ msgstr ""
 "вече предоставя опции за избор дали фигурите ще бъдат рисувани от центъра "
 "или от ъгъл, правейки лесно използването му във всяка ситуация."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
@@ -634,7 +638,7 @@ msgstr ""
 "дисплеи; в полза на потребители с груби входящи устройства, като например "
 "системи за контрол чрез поглед."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
@@ -642,7 +646,7 @@ msgstr ""
 "Гумичката съдържа нови, по-малки размери, и прилага по-гладки, съседни "
 "щрихи, когато курсора е преместен бързо."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
@@ -652,7 +656,7 @@ msgstr ""
 "рисунки и GIF анимации, правейки лесно споделянето на картини, анимации и "
 "слайд шоута с други."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:101
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -668,7 +672,7 @@ msgstr ""
 "рисунка. Плътните цветове за фон също могат да бъдат поставени към края на "
 "този диалог, позволявайки подчертаване на шаблонни изображения."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
@@ -678,7 +682,7 @@ msgstr ""
 "може да бъде от полза на потребители със слухово увреждане, или в ситуации, "
 "където само един говорител е наличен."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
@@ -688,7 +692,7 @@ msgstr ""
 "бъде избран чрез курсора, и набор от трилъчеви, четирилъчеви и петолъчни "
 "звезди."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
@@ -701,125 +705,128 @@ msgstr ""
 "също са актуализирани."
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:266 ../shapes.h:267
+#: ../shapes.h:265 ../shapes.h:266
 msgid "Square"
 msgstr "Квадрат"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:270 ../shapes.h:271
+#: ../shapes.h:269 ../shapes.h:270
 msgid "Rectangle"
 msgstr "Правоъгълник"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:274 ../shapes.h:275
+#: ../shapes.h:273 ../shapes.h:274
 msgid "Circle"
 msgstr "Кръг"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:278 ../shapes.h:279
+#: ../shapes.h:277 ../shapes.h:278
 msgid "Ellipse"
 msgstr "Елипса"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:282 ../shapes.h:283
+#: ../shapes.h:281 ../shapes.h:282
 msgid "Triangle"
 msgstr "Триъгълник"
 
 #. Pentagon shape tool (5 sides)
-#: ../shapes.h:286 ../shapes.h:287
+#: ../shapes.h:285 ../shapes.h:286
 msgid "Pentagon"
 msgstr "Петоъгълник"
 
 #. Hexagon shape tool (6 sides)
-#: ../shapes.h:290 ../shapes.h:291
+#: ../shapes.h:289 ../shapes.h:290
 msgid "Hexagon"
 msgstr "Шестоъгълник"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
-#: ../shapes.h:294 ../shapes.h:295
+#: ../shapes.h:293 ../shapes.h:294
 msgid "Heptagon"
 msgstr "Седмоъгълник"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:298 ../shapes.h:299
+#: ../shapes.h:297 ../shapes.h:298
 msgid "Octagon"
 msgstr "Осмоъгълник"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:302 ../shapes.h:303
+#: ../shapes.h:301 ../shapes.h:302
 msgid "Rhombus"
 msgstr "Ромб"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
-#. Pentagone star (5 points star)
-#: ../shapes.h:306 ../shapes.h:309 ../shapes.h:312 ../shapes.h:315
-#: ../shapes.h:318 ../shapes.h:321
+#. Pentagon star (5 points star)
+#: ../shapes.h:305 ../shapes.h:306 ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "Star"
 msgstr "Звезда"
 
 #. Description of a square
-#: ../shapes.h:329 ../shapes.h:330
+#: ../shapes.h:322 ../shapes.h:323
 msgid "A square is a rectangle with four equal sides."
 msgstr "Квадратът е правоъгълник с четири равни страни."
 
 #. Description of a rectangle
-#: ../shapes.h:333 ../shapes.h:334
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A rectangle has four sides and four right angles."
 msgstr "Правоъгълникът има четири страни и четири прави ъгли."
 
-#: ../shapes.h:338 ../shapes.h:340
+#: ../shapes.h:331 ../shapes.h:333
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr "Кръгът е крива, чиито точки са на еднакво разстояние от центъра."
 
 #. Description of an ellipse
-#: ../shapes.h:343 ../shapes.h:344
+#: ../shapes.h:336 ../shapes.h:337
 msgid "An ellipse is a stretched circle."
 msgstr "Елипсата е разтеглен кръг."
 
 #. Description of a triangle
-#: ../shapes.h:347 ../shapes.h:348
+#: ../shapes.h:340 ../shapes.h:341
 msgid "A triangle has three sides."
 msgstr "Триъгълникът има три страни."
 
 #. Description of a pentagon
-#: ../shapes.h:351 ../shapes.h:352
+#: ../shapes.h:344 ../shapes.h:345
 msgid "A pentagon has five sides."
 msgstr "Петоъгълникът има пет страни."
 
 #. Description of a hexagon
-#: ../shapes.h:355 ../shapes.h:356
+#: ../shapes.h:348 ../shapes.h:349
 msgid "A hexagon has six sides."
 msgstr "Шестоъгълникът има шест страни."
 
 #. Description of a heptagon
-#: ../shapes.h:359 ../shapes.h:360
+#: ../shapes.h:352 ../shapes.h:353
 msgid "A heptagon has seven sides."
 msgstr "Седмоъгълникът има седем страни."
 
 #. Description of an octagon
-#: ../shapes.h:363 ../shapes.h:364
+#: ../shapes.h:356 ../shapes.h:357
 msgid "An octagon has eight equal sides."
 msgstr "Осмоъгълникът има осем равни страни."
 
-#: ../shapes.h:368 ../shapes.h:370
+#: ../shapes.h:361 ../shapes.h:363
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr "Ромбът има четири равни страни и срещуположните са успоредни."
 
-#: ../shapes.h:372 ../shapes.h:373
+#. Description of triangle star (3 points star)
+#: ../shapes.h:366 ../shapes.h:367
 msgid "A star with 3 points."
 msgstr "Трилъчева звезда."
 
-#: ../shapes.h:374 ../shapes.h:375
+#. Description of rhombus star (4 points star)
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 4 points."
 msgstr "Четирилъчева звезда."
 
-#: ../shapes.h:376 ../shapes.h:377
+#. Description of pentagon star (5 points star)
+#: ../shapes.h:374 ../shapes.h:375
 msgid "A star with 5 points."
 msgstr "Петолъчна звезда."
 
-#: ../shapes.h:439
+#: ../shapes.h:437
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
@@ -828,7 +835,7 @@ msgstr ""
 "когато постигнете желаните размер и форма. Движете курсора, за да завъртите "
 "формата, и кликнете отново, за да я нарисувате."
 
-#: ../shapes.h:441
+#: ../shapes.h:439
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
@@ -836,11 +843,11 @@ msgstr ""
 "Изберете форма. Натиснете, за да започнете да рисувате, влачете и пуснете, "
 "когато постигнете желаните размер и форма."
 
-#: ../shapes.h:447
+#: ../shapes.h:445
 msgid "Draw shapes from the center."
 msgstr "Чертай фигури от центъра."
 
-#: ../shapes.h:448
+#: ../shapes.h:446
 msgid "Draw shapes from a corner."
 msgstr "Чертай фигури от ъгъл."
 
@@ -1367,83 +1374,83 @@ msgid "No"
 msgstr "Не"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16504
+#: ../tuxpaint.c:16502
 msgid "Replace the picture with your changes?"
 msgstr "Замяна на рисунката с вашите промени?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16508
+#: ../tuxpaint.c:16506
 msgid "Yes, replace the old one!"
 msgstr "Да, заменете старата!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16512
+#: ../tuxpaint.c:16510
 msgid "No, save a new file!"
 msgstr "Не, да се запази като нов файл!"
 
-#: ../tuxpaint.c:17857
+#: ../tuxpaint.c:17855
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Изберете рисунка, след това натиснете „Отваряне“."
 
-#: ../tuxpaint.c:19580
+#: ../tuxpaint.c:19578
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Избери 2 или повече рисунки за създаване на анимиран GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25889
+#: ../tuxpaint.c:25887
 msgid "red"
 msgstr "червено"
 
-#: ../tuxpaint.c:25890
+#: ../tuxpaint.c:25888
 msgid "yellow"
 msgstr "жълто"
 
-#: ../tuxpaint.c:25891
+#: ../tuxpaint.c:25889
 msgid "blue"
 msgstr "синьо"
 
-#: ../tuxpaint.c:25892
+#: ../tuxpaint.c:25890
 msgid "white"
 msgstr "бяло"
 
-#: ../tuxpaint.c:25893
+#: ../tuxpaint.c:25891
 msgid "grey"
 msgstr "сиво"
 
-#: ../tuxpaint.c:25894
+#: ../tuxpaint.c:25892
 msgid "black"
 msgstr "черно"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25899
+#: ../tuxpaint.c:25897
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Цветът е %1$s %2$s."
 
-#: ../tuxpaint.c:25900
+#: ../tuxpaint.c:25898
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Цветът е %1$s %2$s и %3$s %4$s."
 
-#: ../tuxpaint.c:25901
+#: ../tuxpaint.c:25899
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Цветът е %1$s %2$s, %3$s %4$s и %5$s %6$s."
 
-#: ../tuxpaint.c:25903
+#: ../tuxpaint.c:25901
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Цветът е %1$s %2$s, %3$s %4$s, %5$s %6$s и %7$s %8$s."
 
-#: ../tuxpaint.c:25905
+#: ../tuxpaint.c:25903
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "Цветът е %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s и %9$s %10$s."
 
-#: ../tuxpaint.c:25907
+#: ../tuxpaint.c:25905
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1453,15 +1460,15 @@ msgstr ""
 "%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26745 ../tuxpaint.c:26752
+#: ../tuxpaint.c:26743 ../tuxpaint.c:26750
 msgid "entirely"
 msgstr "изцяло"
 
-#: ../tuxpaint.c:30006
+#: ../tuxpaint.c:30004
 msgid "Select a color from your drawing."
 msgstr "Изберете цвят от рисунката."
 
-#: ../tuxpaint.c:30017
+#: ../tuxpaint.c:30015
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1470,7 +1477,7 @@ msgstr ""
 "върви от ляво (бледо) на дясно (чисто). Стойност (светлина/тъмнина): сива "
 "лента."
 
-#: ../tuxpaint.c:30031
+#: ../tuxpaint.c:30029
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."

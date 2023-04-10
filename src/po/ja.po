@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 16:47-0700\n"
+"POT-Creation-Date: 2023-04-09 22:52-0700\n"
 "PO-Revision-Date: 2023-04-02 09:54+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -366,6 +366,10 @@ msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "「はんこ」ツールは、スタンプやシールのセットのようなものです。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
+msgid "FIXME"
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
@@ -376,25 +380,25 @@ msgstr ""
 "4」「まんげきょう6」「っまんげきょう」「かがやき」の15種類のまほうツールが追"
 "加されています。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr "はんこは、キャンバスに貼り付ける前に回転できるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr "「かたち」ツールの図形の角から広げるモードの動作を改良しました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 "塗りつぶしツールに、エリアの輪郭にそってグラデーションをつけるモードが追加さ"
 "れました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgstr "キーボードショートカットで素早くけしゴムが使えるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
@@ -402,7 +406,7 @@ msgstr ""
 "レインボーパレット（HSV色選択）ツールに、組み込みカラーパレットやスポイトツー"
 "ル又はカラーミキサーで選択した色を取り込めるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
@@ -410,16 +414,16 @@ msgstr ""
 "スターター画像とテンプレート画像の属性に、画像と縦横比が異なるキャンバスに読"
 "み込む際、どのように拡大するかを設定できるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 "UIボタンの大きさを画面サイズに応じて自動設定するオプションが追加されました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "A quick start guide has been added."
 msgstr "「クイックスタートガイド」が同梱されました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -430,7 +434,7 @@ msgstr ""
 "絵の具を混ぜるように、異なる割合の原色（赤、黄、青）とシェード（白、グレー、"
 "黒）を組み合わせて、新しい色を作り出すことができるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -440,7 +444,7 @@ msgstr ""
 "カラーピッカーは、従来は約6万5千色の固定パレットでしたが、色相、彩度、明度の"
 "個別設定に対応し、1600万色以上の色を選択できるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
@@ -449,7 +453,7 @@ msgstr ""
 "また、カラーセレクター（絵の中から色を抽出するためのピペットツール）に素早く"
 "アクセスするためのキーボードショートカットが利用できるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
@@ -459,7 +463,7 @@ msgstr ""
 "やスミアの効果を作ることができるようになりました。また、多くのブラシでデフォ"
 "ルトの間隔が改善されました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -471,7 +475,7 @@ msgstr ""
 "ではなく、キャンバス全体にタイル状に描画を複製します。ラッシュツールは、ズー"
 "ム後に結果をぼかします。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -483,7 +487,7 @@ msgstr ""
 "ど、引き伸ばせる図形は、下部に縦横比を表示しながら調整できるようになりまし"
 "た。その他、一部のツールで表示される操作説明も充実させました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -495,7 +499,7 @@ msgstr ""
 "ました。タックスペイントに内蔵された画面キーボードのサイズ調整が改良されまし"
 "た。ユーザードキュメントの見映えが改善されました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -509,7 +513,7 @@ msgstr ""
 "りました。また、塗りつぶしツールにはフリーハンドモードが追加され、塗りつぶし"
 "たい範囲にインタラクティブに色を塗ることができるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -526,7 +530,7 @@ msgstr ""
 "りすることができます。「なめらかなにじ」は、以前からある「にじ」ツールよりも"
 "スムーズなグラデーションの虹を描きます。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -539,7 +543,7 @@ msgstr ""
 "レビ」などが改良されました。さらに、「まんが」「ハーフトーン」「ブロック」"
 "「チョーク」「うきぼり」では、画像全体を一度に変更できるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -549,7 +553,7 @@ msgstr ""
 "「まほう」ツールは、効果の特徴ごとにグループ分けされて、使いたいツールを簡単"
 "に見つけることができるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -561,7 +565,7 @@ msgstr ""
 "「リニア」は、さまざまな方向や大きさのグラデーションをインタラクティブに作成"
 "できます。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -572,7 +576,7 @@ msgstr ""
 "ルアートを簡単に作成でき、「チェッカーボード」はキャンバス全体をチェック柄で"
 "塗りつぶし、「クローン」はマウス操作で絵の一部を複製することが可能です。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:87
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
@@ -581,7 +585,7 @@ msgstr ""
 "ユーザードキュメントが一新され、各種言語への翻訳がより簡単になりました。翻訳"
 "にご興味のある方は、タックスペイントチームまでご連絡ください。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -596,7 +600,7 @@ msgstr ""
 "成する新しいオプションとともに、視線追跡システムのような、細かい操作が難しい"
 "入力デバイスを利用するユーザーにも役立ちます。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
@@ -605,7 +609,7 @@ msgstr ""
 "図形ツールの大きな改良点として、図形を中心から描くか端から描くかを選択できる"
 "ようになり、あらゆる場面で使いやすくなりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
@@ -615,7 +619,7 @@ msgstr ""
 "テムなどの細かい操作が難しい入力デバイスを利用するユーザーにとって使いやすく"
 "なりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
@@ -623,7 +627,7 @@ msgstr ""
 "「けしゴム」ツールには、新たに小さな消しゴムサイズが追加され、ポインターを素"
 "早く動かしたときに、より滑らかで連続した動きをするようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
@@ -632,7 +636,7 @@ msgstr ""
 "最新バージョンでは、個々の作品やGIFアニメーションをエクスポートするオプション"
 "が追加され、作品を簡単に他の人と共有することができます。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:101
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -647,7 +651,7 @@ msgstr ""
 "ら」ダイアログで様々なテンプレート画像の方を目立たせたい場合には、単色のキャ"
 "ンバスを末尾に配置することができるようになりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
@@ -656,7 +660,7 @@ msgstr ""
 "また、聴覚に障害のあるユーザーや、スピーカーが1つしかない場合に有効な、ステレ"
 "オサウンドの無効化も可能になりました。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
@@ -666,7 +670,7 @@ msgstr ""
 "カー」と、「かたち」ツールに、三芒星、四芒星、五芒星が新たに追加されていま"
 "す。"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
@@ -679,74 +683,74 @@ msgstr ""
 "です。その他にも、30種類の翻訳が更新されました。"
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
-#: ../shapes.h:266 ../shapes.h:267
+#: ../shapes.h:265 ../shapes.h:266
 msgid "Square"
 msgstr "ましかく"
 
 #. Rectangle shape tool (4 sides at right angles)
-#: ../shapes.h:270 ../shapes.h:271
+#: ../shapes.h:269 ../shapes.h:270
 msgid "Rectangle"
 msgstr "ながしかく"
 
 #. Circle shape tool (X radius and Y radius are the same)
-#: ../shapes.h:274 ../shapes.h:275
+#: ../shapes.h:273 ../shapes.h:274
 msgid "Circle"
 msgstr "まる"
 
 #. Ellipse shape tool (X radius and Y radius may differ)
-#: ../shapes.h:278 ../shapes.h:279
+#: ../shapes.h:277 ../shapes.h:278
 msgid "Ellipse"
 msgstr "ながまる"
 
 #. Triangle shape tool (3 sides)
-#: ../shapes.h:282 ../shapes.h:283
+#: ../shapes.h:281 ../shapes.h:282
 msgid "Triangle"
 msgstr "さんかく"
 
 #. Pentagon shape tool (5 sides)
-#: ../shapes.h:286 ../shapes.h:287
+#: ../shapes.h:285 ../shapes.h:286
 msgid "Pentagon"
 msgstr "ごかっけい"
 
 #. Hexagon shape tool (6 sides)
-#: ../shapes.h:290 ../shapes.h:291
+#: ../shapes.h:289 ../shapes.h:290
 msgid "Hexagon"
 msgstr "ろっかっけい"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
-#: ../shapes.h:294 ../shapes.h:295
+#: ../shapes.h:293 ../shapes.h:294
 msgid "Heptagon"
 msgstr "ななかっけい"
 
 #. Octagon shape tool (8 sides)
-#: ../shapes.h:298 ../shapes.h:299
+#: ../shapes.h:297 ../shapes.h:298
 msgid "Octagon"
 msgstr "はちかっけい"
 
 #. Rhombus shape tool (4 sides, not at right angles)
-#: ../shapes.h:302 ../shapes.h:303
+#: ../shapes.h:301 ../shapes.h:302
 msgid "Rhombus"
 msgstr "ダイヤ"
 
 #. Triangle star (3 points star)
 #. Rhombus star (4 points star)
-#. Pentagone star (5 points star)
-#: ../shapes.h:306 ../shapes.h:309 ../shapes.h:312 ../shapes.h:315
-#: ../shapes.h:318 ../shapes.h:321
+#. Pentagon star (5 points star)
+#: ../shapes.h:305 ../shapes.h:306 ../shapes.h:309 ../shapes.h:310
+#: ../shapes.h:313 ../shapes.h:314
 msgid "Star"
 msgstr "ほし"
 
 #. Description of a square
-#: ../shapes.h:329 ../shapes.h:330
+#: ../shapes.h:322 ../shapes.h:323
 msgid "A square is a rectangle with four equal sides."
 msgstr "ましかくは ４つの「へん」が ぜんぶ おんなじ ながさの ながしかくだ。"
 
 #. Description of a rectangle
-#: ../shapes.h:333 ../shapes.h:334
+#: ../shapes.h:326 ../shapes.h:327
 msgid "A rectangle has four sides and four right angles."
 msgstr "ながしかくには ４つの「へん」と ４つの「ちょっかく」があるんだ。"
 
-#: ../shapes.h:338 ../shapes.h:340
+#: ../shapes.h:331 ../shapes.h:333
 msgid ""
 "A circle is a curve where all points have the same distance from the center."
 msgstr ""
@@ -754,55 +758,58 @@ msgstr ""
 "け はなれているんだ。"
 
 #. Description of an ellipse
-#: ../shapes.h:343 ../shapes.h:344
+#: ../shapes.h:336 ../shapes.h:337
 msgid "An ellipse is a stretched circle."
 msgstr ""
 "「ながまる」は「だえん」とも いうよ。「まる」を ひきのばしたものなんだ。"
 
 #. Description of a triangle
-#: ../shapes.h:347 ../shapes.h:348
+#: ../shapes.h:340 ../shapes.h:341
 msgid "A triangle has three sides."
 msgstr "さんかっけいには ３つの「へん」が あるんだ。"
 
 #. Description of a pentagon
-#: ../shapes.h:351 ../shapes.h:352
+#: ../shapes.h:344 ../shapes.h:345
 msgid "A pentagon has five sides."
 msgstr "ごかっけいには ５つの「へん」が あるんだ。"
 
 #. Description of a hexagon
-#: ../shapes.h:355 ../shapes.h:356
+#: ../shapes.h:348 ../shapes.h:349
 msgid "A hexagon has six sides."
 msgstr "ろっかっけいには ６つの「へん」が あるんだ。"
 
 #. Description of a heptagon
-#: ../shapes.h:359 ../shapes.h:360
+#: ../shapes.h:352 ../shapes.h:353
 msgid "A heptagon has seven sides."
 msgstr "ななかっけいには ７つの「へん」が あるんだ。"
 
 #. Description of an octagon
-#: ../shapes.h:363 ../shapes.h:364
+#: ../shapes.h:356 ../shapes.h:357
 msgid "An octagon has eight equal sides."
 msgstr "はちかっけいには ８つの「へん」が あるんだ。"
 
-#: ../shapes.h:368 ../shapes.h:370
+#: ../shapes.h:361 ../shapes.h:363
 msgid "A rhombus has four equal sides, and opposite sides are parallel."
 msgstr ""
 "「ダイヤ」は「ひしがた」とも いうよ。４つの「へん」が おなじながさで むかい"
 "あった「へん」が へいこうなんだ。"
 
-#: ../shapes.h:372 ../shapes.h:373
+#. Description of triangle star (3 points star)
+#: ../shapes.h:366 ../shapes.h:367
 msgid "A star with 3 points."
 msgstr "とんがりが ３つの ほし。"
 
-#: ../shapes.h:374 ../shapes.h:375
+#. Description of rhombus star (4 points star)
+#: ../shapes.h:370 ../shapes.h:371
 msgid "A star with 4 points."
 msgstr "とんがりが ４つの ほし。"
 
-#: ../shapes.h:376 ../shapes.h:377
+#. Description of pentagon star (5 points star)
+#: ../shapes.h:374 ../shapes.h:375
 msgid "A star with 5 points."
 msgstr "とんがりが ５つの ほし。"
 
-#: ../shapes.h:439
+#: ../shapes.h:437
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
@@ -811,7 +818,7 @@ msgstr ""
 "さとかたちがきまったらボタンをはなす。マウスをうごかしてすきなむきにまわし"
 "て、さいごに クリックしたら、できあがり。"
 
-#: ../shapes.h:441
+#: ../shapes.h:439
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
@@ -819,11 +826,11 @@ msgstr ""
 "まず、すきなかたちをえらんで かきたいばしょでクリック。 ドラッグして、おおき"
 "さとかたちがきまったらボタンをはなして、できあがり。"
 
-#: ../shapes.h:447
+#: ../shapes.h:445
 msgid "Draw shapes from the center."
 msgstr "ずけいを まんなかから ひろげます。"
 
-#: ../shapes.h:448
+#: ../shapes.h:446
 msgid "Draw shapes from a corner."
 msgstr "ずけいを ひだりうえの かどから ひろげます。"
 
@@ -1346,83 +1353,83 @@ msgid "No"
 msgstr "いいえ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16504
+#: ../tuxpaint.c:16502
 msgid "Replace the picture with your changes?"
 msgstr "いまかいたえと まえのえを いれかえる？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16508
+#: ../tuxpaint.c:16506
 msgid "Yes, replace the old one!"
 msgstr "はい、まえのえと いれかえます！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16512
+#: ../tuxpaint.c:16510
 msgid "No, save a new file!"
 msgstr "いいえ、あたらしく セーブします！"
 
-#: ../tuxpaint.c:17857
+#: ../tuxpaint.c:17855
 msgid "Choose the picture you want, then click “Open”."
 msgstr "えを えらんでから 「ひらく」をクリックしてね。"
 
-#: ../tuxpaint.c:19580
+#: ../tuxpaint.c:19578
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "２ついじょうのえをえらんで GIFアニメをかきだします。"
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25889
+#: ../tuxpaint.c:25887
 msgid "red"
 msgstr "あか"
 
-#: ../tuxpaint.c:25890
+#: ../tuxpaint.c:25888
 msgid "yellow"
 msgstr "きいろ"
 
-#: ../tuxpaint.c:25891
+#: ../tuxpaint.c:25889
 msgid "blue"
 msgstr "あお"
 
-#: ../tuxpaint.c:25892
+#: ../tuxpaint.c:25890
 msgid "white"
 msgstr "しろ"
 
-#: ../tuxpaint.c:25893
+#: ../tuxpaint.c:25891
 msgid "grey"
 msgstr "はいいろ"
 
-#: ../tuxpaint.c:25894
+#: ../tuxpaint.c:25892
 msgid "black"
 msgstr "くろ"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25899
+#: ../tuxpaint.c:25897
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "%1$s %2$s です"
 
-#: ../tuxpaint.c:25900
+#: ../tuxpaint.c:25898
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "%2$sが%1$sで %4$sが%3$sの いろ"
 
-#: ../tuxpaint.c:25901
+#: ../tuxpaint.c:25899
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sの いろ"
 
-#: ../tuxpaint.c:25903
+#: ../tuxpaint.c:25901
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sの いろ"
 
-#: ../tuxpaint.c:25905
+#: ../tuxpaint.c:25903
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "%2$sが%1$sで %4$sが%3$sで %6$sが%5$sで %8$sが%7$sで %10$sが%9$sの いろ"
 
-#: ../tuxpaint.c:25907
+#: ../tuxpaint.c:25905
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1432,15 +1439,15 @@ msgstr ""
 "が%11$sの いろ"
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26745 ../tuxpaint.c:26752
+#: ../tuxpaint.c:26743 ../tuxpaint.c:26750
 msgid "entirely"
 msgstr "かんぜんな"
 
-#: ../tuxpaint.c:30006
+#: ../tuxpaint.c:30004
 msgid "Select a color from your drawing."
 msgstr "えの なかから いろを えらぼう。"
 
-#: ../tuxpaint.c:30017
+#: ../tuxpaint.c:30015
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1448,7 +1455,7 @@ msgstr ""
 "いろの えらびかた：いろあいは うえから したへ、あざやかさは ひだり（あわい い"
 "ろ）から みぎ（あざやかな いろ）へ。みぎの バーで あかるさを えらびます。"
 
-#: ../tuxpaint.c:30031
+#: ../tuxpaint.c:30029
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
