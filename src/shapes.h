@@ -4,7 +4,7 @@
   For Tux Paint
   List of available shapes.
 
-  Copyright (c) 2002-2022 by Bill Kendrick and others
+  Copyright (c) 2002-2023 by Bill Kendrick and others
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -23,8 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 11, 2022
-  $Id$
+  June 14, 2002 - April 9, 2023
 */
 
 
@@ -118,8 +117,8 @@ const int shape_locked[NUM_SHAPES] = {
   0,                            /* Hexagon */
   0,                            /* Heptagon */
   0,                            /* Heptagon */
-  1,                            /* Octagon *//* FIXME: Consider unlocking? -bjk 2022.01.21 */
-  1,                            /* Octagon *//* FIXME: Consider unlocking? -bjk 2022.01.21 */
+  0,                            /* Octagon */
+  0,                            /* Octagon */
   0,                            /* Rhombus */
   0,                            /* Rhombus */
   0,                            /* 3 points star */
