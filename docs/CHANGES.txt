@@ -31,7 +31,7 @@ https://tuxpaint.org/
 
   * Other Improvements:
     -------------------
-    * WIP Word-wrap long button labels.
+    * Word-wrap long button labels, for better readability.
       (h/t Jozef Riha for the idea.)
       Helps https://sourceforge.net/p/tuxpaint/bugs/131/
       Bill Kendrick <bill@newbreedsoftware.com>

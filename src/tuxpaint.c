@@ -849,7 +849,7 @@ static void set_max_buttonscale(void)
 {
   float max_w, max_h;
 
-  /* WINDOW_WIDTH / original size of tools columnss + 9 buttons + tooloption columns */
+  /* WINDOW_WIDTH / original size of tools columns + 9 buttons + tooloption columns */
   max_w =
     (float) WINDOW_WIDTH / (gd_tools.cols * 48 + 9 * 48 +
                             gd_toolopt.cols * 48);
@@ -10075,7 +10075,7 @@ static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
  */
 static SDL_Surface *loadimagerb(const char *const fname)
 {
-  /* For the vaste majority of users return as soon as possible and touch the image as less as we can. */
+  /* For the vast majority of users return as soon as possible and touch the image as little as we can. */
   if (button_h == ORIGINAL_BUTTON_SIZE)
     return (loadimage(fname));
 
@@ -10269,7 +10269,6 @@ static void draw_toolbar(void)
 
       SDL_BlitSurface(img_tools[tool], NULL, screen, &dest);
 
-
       dest.x =
         ((i % 2) * button_w) + (4 * button_w) / ORIGINAL_BUTTON_SIZE +
         ((40 * button_w) / ORIGINAL_BUTTON_SIZE -
@@ -10278,7 +10277,7 @@ static void draw_toolbar(void)
         ((i / 2) * button_h) + r_ttools.h +
         (2 * button_w) / ORIGINAL_BUTTON_SIZE +
         (((44 + button_label_y_nudge) * button_w) / ORIGINAL_BUTTON_SIZE -
-         img_tool_names[tool]->h) + off_y; // FIXME: CROP LABELS
+         img_tool_names[tool]->h) + off_y;
 
       SDL_BlitSurface(img_tool_names[tool], NULL, screen, &dest);
     }
@@ -30195,7 +30194,7 @@ int TP_EventFilter( __attribute__((unused))
  */
 static void setup(void)
 {
-  int i;
+  int i, j;
   int ww, hh;
   char *upstr;
   SDL_Color black = { 0, 0, 0, 0 };
@@ -31487,6 +31486,49 @@ static void setup(void)
 #endif
 
   create_button_labels();
+
+  /* Resize any icons if the text we just rendered was too wide,
+     and we word-wrapped it to be two lines tall */
+
+  /* (Tools) */
+  for (i = 0; i < NUM_TOOLS; i++) {
+    if (img_tools[i]->h + img_tool_names[i]->h > button_h - 1) {
+      tmp_surf = thumbnail(img_tools[i], img_tools[i]->w, (button_h - img_tool_names[i]->h - 1), 0);
+      SDL_FreeSurface(img_tools[i]);
+      img_tools[i] = tmp_surf;
+    }
+  }
+
+  /* (Magic tools) */
+  for (i = 0; i < MAX_MAGIC_GROUPS; i++) {
+    for (j = 0; j < num_magics[i]; j++) {
+      if (magics[i][j].img_icon->h + magics[i][j].img_name->h > button_h - 1) {
+        tmp_surf = thumbnail(magics[i][j].img_icon, magics[i][j].img_icon->w, (button_h - magics[i][j].img_name->h - 1), 0);
+        SDL_FreeSurface(magics[i][j].img_icon);
+        magics[i][j].img_icon = tmp_surf;
+      }
+    }
+  }
+
+  /* (Shapes) */
+  for (i = 0; i < NUM_SHAPES; i++) {
+    if (img_shapes[i]->h + img_shape_names[i]->h > button_h - 1) {
+      tmp_surf = thumbnail(img_shapes[i], img_shapes[i]->w, (button_h - img_shape_names[i]->h - 1), 0);
+      SDL_FreeSurface(img_shapes[i]);
+      img_shapes[i] = tmp_surf;
+    }
+  }
+
+  /* (Fill methods) */
+  for (i = 0; i < NUM_FILLS; i++) {
+    if (img_fills[i]->h + img_fill_names[i]->h > button_h - 1) {
+      tmp_surf = thumbnail(img_fills[i], img_fills[i]->w, (button_h - img_fill_names[i]->h - 1), 0);
+      SDL_FreeSurface(img_fills[i]);
+      img_fills[i] = tmp_surf;
+    }
+  }
+
+  /* FIXME: Worth resizing img_openlabels_* or img_mixerlabel_clear? */
 
 
   /* Seed random-number generator: */
