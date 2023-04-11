@@ -37,6 +37,9 @@ https://tuxpaint.org/
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
 
+    * Slovak translation
+      Jozef Říha <jose1711@gmail.com>
+
 2023.April.2 (0.9.29)
   * Improvements to "Stamp" tool:
     -----------------------------
