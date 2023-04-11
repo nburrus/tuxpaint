@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.9 (0.9.30)
+2023.April.11 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -27,6 +27,13 @@ https://tuxpaint.org/
     * WIP Support for sizes in Magic tools via the plugin API.
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/220/
       Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000008.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Other Improvements:
+    -------------------
+    * WIP Word-wrap long button labels.
+      (h/t Jozef Riha for the idea.)
+      Helps https://sourceforge.net/p/tuxpaint/bugs/131/
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:

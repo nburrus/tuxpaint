@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 9, 2023
+  June 14, 2002 - April 11, 2023
 */
 
 #include "platform.h"
@@ -1750,7 +1750,8 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font,
 #endif
 
     SDLPango_SetDefaultColor(font->pango_context, &pango_color);
-    SDLPango_SetText(font->pango_context, str, -1);
+    // SDLPango_SetText(font->pango_context, str, -1);
+    SDLPango_SetText_GivenAlignment(font->pango_context, str, -1, SDLPANGO_ALIGN_CENTER);
     ret = SDLPango_CreateSurfaceDraw(font->pango_context);
   }
 #endif
@@ -9757,6 +9758,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
   SDL_Color black = { 0, 0, 0, 0 };
   TuxPaint_Font *myfont;
   int want_h;
+  float height_mult;
   char *td_str = textdir(gettext(label));
   char *upstr = uppercase(td_str);
 
@@ -9786,6 +9788,35 @@ static SDL_Surface *do_render_button_label(const char *const label)
     }
 
   tmp_surf1 = render_text(myfont, upstr, black);
+  if (tmp_surf1 == NULL) {
+    fprintf(stderr, "Failed to render button '%s'!\n", upstr);
+    exit(1);
+  }
+
+  height_mult = 1.0;
+
+  if (tmp_surf1->w >= button_w * 1.5) {
+    DEBUG_PRINTF("'%s' is very wide (%d) compared to button size (%d)\n", upstr, tmp_surf1->w, button_w);
+    if (strstr(upstr, " ") != NULL) {
+      int i, found = -1;
+
+      for (i = (strlen(upstr) * 3 / 4); i >= 0 && found == -1; i--) {
+        if (upstr[i] == ' ') {
+          found = i;
+        }
+      }
+
+      if (found != -1) {
+        upstr[found] = '\n';
+
+        SDL_FreeSurface(tmp_surf1);
+        tmp_surf1 = render_text(myfont, upstr, black);
+
+        height_mult = 1.5;
+      }
+    }
+  }
+
   free(upstr);
 
   tmp_surf = tmp_surf1;
@@ -9801,7 +9832,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
 
   DEBUG_PRINTF("Rendered as: %d x %d\n", tmp_surf->w, tmp_surf->h);
 
-  want_h = (int) (18 * button_scale + button_label_y_nudge);
+  want_h = (int) (18 * button_scale + button_label_y_nudge) * height_mult;
 
   DEBUG_PRINTF("  button_w = %d -- min w = %d\n", button_w, min(button_w, tmp_surf->w));
   DEBUG_PRINTF("  want_h   = %d -- min h = %d\n", want_h, min(want_h, tmp_surf->h));
