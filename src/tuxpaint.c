@@ -8253,42 +8253,62 @@ void show_version(int details)
 
 #ifdef LOW_QUALITY_THUMBNAILS
   printf("  Low Quality Thumbnails enabled  (LOW_QUALITY_THUMBNAILS)\n");
+#else
+  printf("  High Quality Thumbnails enabled  (not LOW_QUALITY_THUMBNAILS)\n");
 #endif
 
 #ifdef LOW_QUALITY_COLOR_SELECTOR
   printf
     ("  Low Quality Color Selector enabled  (LOW_QUALITY_COLOR_SELECTOR)\n");
+#else
+  printf
+    ("  Hight Quality Color Selector enabled  (not LOW_QUALITY_COLOR_SELECTOR)\n");
 #endif
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
   printf
     ("  Low Quality Stamp Outline enabled  (LOW_QUALITY_STAMP_OUTLINE)\n");
+#else
+  printf
+    ("  Hight Quality Stamp Outline enabled  (not LOW_QUALITY_STAMP_OUTLINE)\n");
 #endif
 
 #ifdef NO_PROMPT_SHADOWS
   printf("  Prompt Shadows disabled  (NO_PROMPT_SHADOWS)\n");
+#else
+  printf("  Prompt Shadows enabled  (not NO_PROMPT_SHADOWS)\n");
 #endif
 
 #ifdef SMALL_CURSOR_SHAPES
   printf("  Small cursor shapes enabled  (SMALL_CURSOR_SHAPES)\n");
+#else
+  printf("  Large cursor shapes enabled  (not SMALL_CURSOR_SHAPES)\n");
 #endif
 
 #ifdef NO_BILINEAR
   printf("  Bilinear scaling disabled  (NO_BILINEAR)\n");
+#else
+  printf("  Bilinear scaling enabled  (BILINEAR)\n");
 #endif
 
 #ifdef NO_SDLPANGO
   printf("  Pango support disabled  (NO_SDLPANGO)\n");
+#else
+  printf("  Pango support enabled  (not NO_SDLPANGO)\n");
 #endif
 
 #ifdef NOSVG
   printf("  SVG support disabled  (NOSVG)\n");
+#else
+  printf("  SVG support enabled  (not NOSVG)\n");
 #endif
 
   /* Sound: */
 
 #ifdef NOSOUND
   printf("  Sound disabled  (NOSOUND)\n");
+#else
+  printf("  Sound enabled  (not NOSOUND)\n");
 #endif
 
 

@@ -36,6 +36,10 @@ https://tuxpaint.org/
       Helps https://sourceforge.net/p/tuxpaint/bugs/131/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Slightly more verbose output from "--verbose-version"
+      (shows when certain features are enabled; not just disabled)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) translation
