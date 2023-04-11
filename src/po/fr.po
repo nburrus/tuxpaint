@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-09 22:52-0700\n"
-"PO-Revision-Date: 2023-04-03 13:40+0200\n"
+"PO-Revision-Date: 2023-04-11 16:33+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -370,7 +370,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid "FIXME"
-msgstr ""
+msgstr "FIXME"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
@@ -1733,7 +1733,7 @@ msgstr "Atténuer"
 
 #: ../../magic/src/fade_darken.c:50
 msgid "Saturate"
-msgstr "Saturer"
+msgstr "Aviver"
 
 #: ../../magic/src/fade_darken.c:51
 msgid "Remove Color"
