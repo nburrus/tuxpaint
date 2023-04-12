@@ -1430,6 +1430,7 @@ static int simple_shapes;
 static int only_uppercase;
 
 static int disable_magic_controls;
+static int disable_magic_sizes;
 static int disable_shape_controls;
 
 static int shape_mode = SHAPEMODE_CENTER;
@@ -29443,6 +29444,7 @@ static void setup_config(char *argv[])
   SETBOOL(disable_label);
   SETBOOL(disable_brushspacing);
   SETBOOL(disable_magic_controls);
+  SETBOOL(disable_magic_sizes);
   SETBOOL(disable_shape_controls);
   SETBOOL(disable_print);
   SETBOOL(disable_quit);
@@ -31397,8 +31399,11 @@ static void setup(void)
   /* Load magic tool plugins: */
 
   magic_disabled_features = 0x00000000;
-  if (0) { /* FIXME */
+  if (disable_magic_sizes) {
     magic_disabled_features |= MAGIC_FEATURE_SIZE;
+  }
+  if (disable_magic_controls) {
+    magic_disabled_features |= MAGIC_FEATURE_CONTROL;
   }
 
   load_magic_plugins();
