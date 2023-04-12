@@ -25,8 +25,12 @@ https://tuxpaint.org/
   * Improvements to Magic tools:
     ----------------------------
     * WIP Support for sizes in Magic tools via the plugin API.
+      WIP Adds a new UI element for setting sizes in the Magic tool.
+      WIP May be disabled with the "nomagicsizes" option.
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/220/
       Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000008.
+      WIP Plugins' "init()" functions are sent a new "disabled_features"
+      argument containing bitmask of Magic-relevant disabled features.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Other Improvements:

@@ -281,12 +281,20 @@
                   <b>Note:</b> Called once by Tux Paint, at startup. It is called first.                </p>
               </dd>
 
-              <dt><code><b>int init(magic_api * api)</b></code></dt>
+              <dt><code><b>int init(magic_api * api, Uint32 disabled_features)</b></code></dt>
               <dd>
                 <p>
                   The plugin should do any initialization here. Return '1' if initialization was successful, or '0' if not (and Tux Paint will not present any 'Magic' tools from the plugin).                </p>
                 <p>
                   <b>Note:</b> Called once by Tux Paint, at startup. It is called after "<code>api_version()</code>", if Tux Paint believes your plugin to be compatible.                </p>
+                <p>
+                  The <code>disabled_features</code> value contains bits set for any Tux Paint features relevant to Magic tools which have been disabled in this session. Test using the C bitwise 'and' operator, '<code>&amp;</code>'. The features are defined in <code>tp_magic_api.h</code>:                  <ul>
+                    <li>
+                      <code>MAGIC_FEATURE_SIZE</code>: Magic tool size (Magic tool size)                    </li>
+                  </ul>
+                  Your Magic tool(s) may wish to react differently depending on whether one or more features have been disabled. (For example, the "Brick" Magic tool always offered two tool variations: large and small. With the addition of the size feature, only one tool is necessary. However, with the size option disabled, the plugin is able to revert back to providing two separate tools.)                </p>
+                <p>
+                  <b>Note:</b> Changed most recently in Tux Paint 0.9.30; Magic API version 0x00000008.                </p>
               </dd>
 
               <dt><code><b>int get_tool_count(magic_api * api)</b></code></dt>
@@ -389,6 +397,14 @@
               <dd>
                 <p>
                   Return how many size variations the 'Magic' tool accepts. Return a '0' if the 'Magic' tool should not offer sizing options. Returning '1' is the same as returning '0'.                </p>
+                <p>
+                  <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                </p>
+              </dd>
+
+              <dt><code><b>int default_size(magic_api * api, int which)</b></code></dt>
+              <dd>
+                <p>
+                  Return the default size the 'Magic' tool accepts. This will be the default setting for the tool the first time it is used during a Tux Paint session. If Tux Paint is being invoked with the sizing option disabled, this will be the only size requested by Tux Paint.  Return a number between '1' and the amount you returned in <code>accepted_sizes()</code>.                </p>
                 <p>
                   <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                </p>
               </dd>
