@@ -2249,6 +2249,7 @@ static void render_color_button(int the_color, SDL_Surface * decoration,
                                 SDL_Surface * icon);
 static void handle_color_changed(void);
 static void magic_set_color(void);
+static void magic_set_size(void);
 
 static void do_quick_eraser(void);
 
@@ -3835,6 +3836,8 @@ static void mainloop(void)
 
                 if (magics[magic_group][cur_thing].colors)
                   magic_set_color();
+                if (magics[magic_group][cur_thing].sizes)
+                  magic_set_size();
               }
               else if (cur_tool == TOOL_ERASER)
               {
@@ -4498,6 +4501,8 @@ static void mainloop(void)
 
                   if (magics[magic_group][cur_thing].colors)
                     magic_set_color();
+                  if (magics[magic_group][cur_thing].sizes)
+                    magic_set_size();
 
                   magic_switchin(canvas);
 
@@ -5259,6 +5264,8 @@ static void mainloop(void)
 
                 if (magics[grp][cur].colors)
                   magic_set_color();
+                if (magics[grp][cur].sizes)
+                  magic_set_size();
 
                 magic_switchin(canvas);
               }
@@ -22762,6 +22769,22 @@ static void load_magic_plugins(void)
                       magics[group][idx].colors =
                         magic_funcs[num_plugin_files].requires_colors
                         (magic_api_struct, i);
+                      magics[group][idx].sizes =
+                        magic_funcs[num_plugin_files].accepted_sizes
+                        (magic_api_struct, i);
+                      if (magic_funcs[num_plugin_files].accepted_sizes) {
+                        magics[group][idx].default_size =
+                          magic_funcs[num_plugin_files].default_size
+                          (magic_api_struct, i);
+                        if (magics[group][idx].default_size < 1 ||
+                            magics[group][idx].default_size > magics[group][idx].sizes) {
+                          fprintf(stderr,
+                                  "Warning: plugin %s mode # %d default size (%d) out of range (1-%d)\n",
+                                  fname, i, magics[group][idx].default_size, magics[group][idx].sizes);
+                          magics[group][idx].default_size = 1;
+                        }
+                        magics[group][idx].size = magics[group][idx].default_size;
+                      }
                       if (magics[group][idx].avail_modes & MODE_PAINT)
                         magics[group][idx].mode = MODE_PAINT;
                       else if (magics[group][idx].avail_modes & MODE_ONECLICK)
@@ -27125,6 +27148,45 @@ static void magic_set_color(void) {
               color_hexes[cur_color][1],
               color_hexes[cur_color][2],
               &update_rect);
+
+  if (update_rect.w > 0 && update_rect.h > 0) {
+    update_canvas(update_rect.x, update_rect.y,
+                  update_rect.x + update_rect.w,
+                  update_rect.y + update_rect.h);
+  }
+}
+
+/**
+ * Send the [new] size choice for a given Magic tool to
+ * the tool's plugin.
+ *
+ * We expect that `magics[magic_group][cur_magic[magic_group]].size`
+ * has been set prior to calling this.
+ */
+static void magic_set_size() {
+  int undo_ctr;
+  SDL_Surface *last;
+  SDL_Rect update_rect;
+
+  update_rect.x = 0;
+  update_rect.y = 0;
+  update_rect.w = 0;
+  update_rect.h = 0;
+
+  if (cur_undo > 0)
+    undo_ctr = cur_undo - 1;
+  else
+    undo_ctr = NUM_UNDO_BUFS - 1;
+
+  last = undo_bufs[undo_ctr];
+
+  magic_funcs[magics[magic_group][cur_magic[magic_group]].handle_idx].
+    set_size(magic_api_struct,
+             magics[magic_group][cur_magic[magic_group]].idx,
+             canvas,
+             last,
+             magics[magic_group][cur_magic[magic_group]].size,
+             &update_rect);
 
   if (update_rect.w > 0 && update_rect.h > 0) {
     update_canvas(update_rect.x, update_rect.y,

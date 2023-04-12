@@ -34,9 +34,12 @@
 
 /* Our globals: */
 
+#define KAL_MAX_SIZE 6
+#define KAL_DEF_SIZE 4
+
 static Mix_Chunk *kalidescope_snd;
 static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
-static Uint8 kalidescope_sz = 8; // FIXME: Not necessary
+static Uint8 kalidescope_sz = (KAL_DEF_SIZE * 2);
 static int square_size = 128;
 
 
@@ -307,13 +310,13 @@ void kalidescope_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
 Uint8 kalidescope_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED,
                                  int which ATTRIBUTE_UNUSED)
 {
-  return 6;
+  return KAL_MAX_SIZE;
 }
 
 Uint8 kalidescope_default_size(magic_api * api ATTRIBUTE_UNUSED,
                                int which ATTRIBUTE_UNUSED)
 {
-  return 4;
+  return KAL_DEF_SIZE;
 }
 
 // Record the size from Tux Paint:
