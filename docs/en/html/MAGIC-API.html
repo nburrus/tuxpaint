@@ -290,7 +290,7 @@
                 <p>
                   The <code>disabled_features</code> value contains bits set for any Tux Paint features relevant to Magic tools which have been disabled in this session. Test using the C bitwise 'and' operator, '<code>&amp;</code>'. The features are defined in <code>tp_magic_api.h</code>:                  <ul>
                     <li>
-                      <code>MAGIC_FEATURE_SIZE</code>: Magic tool size (Magic tool size)                    </li>
+                      <code>MAGIC_FEATURE_SIZE</code>: Magic tool size (<code>--nomagicsizes</code>)                    </li>
                   </ul>
                   Your Magic tool(s) may wish to react differently depending on whether one or more features have been disabled. (For example, the "Brick" Magic tool always offered two tool variations: large and small. With the addition of the size feature, only one tool is necessary. However, with the size option disabled, the plugin is able to revert back to providing two separate tools.)                </p>
                 <p>

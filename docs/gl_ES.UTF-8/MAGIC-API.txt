@@ -191,7 +191,7 @@ Magic Tool Plugin API Documentation
            features relevant to Magic tools which have been disabled in this
            session. Test using the C bitwise 'and' operator, '&'. The
            features are defined in tp_magic_api.h:
-              * MAGIC_FEATURE_SIZE: Magic tool size (Magic tool size)
+              * MAGIC_FEATURE_SIZE: Magic tool size (--nomagicsizes)
            Your Magic tool(s) may wish to react differently depending on
            whether one or more features have been disabled. (For example, the
            "Brick" Magic tool always offered two tool variations: large and
