@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.11 (0.9.30)
+2023.April.12 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -24,14 +24,19 @@ https://tuxpaint.org/
 
   * Improvements to Magic tools:
     ----------------------------
-    * WIP Support for sizes in Magic tools via the plugin API.
-      WIP Adds a new UI element for setting sizes in the Magic tool.
-      WIP May be disabled with the "nomagicsizes" option.
-      Closes https://sourceforge.net/p/tuxpaint/feature-requests/220/
-      Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000008.
-      WIP Plugins' "init()" functions are sent a new "disabled_features"
-      argument containing bitmask of Magic-relevant disabled features.
+    * Support for sizes in Magic tools via the plugin API.
+      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/220/)
+      + WIP Adds a new UI element for setting sizes in the Magic tool.
+      + May be disabled with the "nomagicsizes" option.
+      + Plugins' "init()" functions are sent a new "disabled_features"
+        argument containing bitmask of Magic-relevant disabled features
+        (so far Magic controls & the new Magic sizes feature).
+      + Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000008.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Various Magic tools now support sizing options:
+      + Kaleidoscope
+      + WIP... more!
 
   * Other Improvements:
     -------------------
