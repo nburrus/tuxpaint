@@ -393,7 +393,7 @@
                   <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                </p>
               </dd>
 
-              <dt><code><b>int accepted_sizes(magic_api * api, int which)</b></code></dt>
+              <dt><code><b>Uint8 accepted_sizes(magic_api * api, int which)</b></code></dt>
               <dd>
                 <p>
                   Return how many size variations the 'Magic' tool accepts. Return a '0' if the 'Magic' tool should not offer sizing options. Returning '1' is the same as returning '0'.                </p>
@@ -401,7 +401,7 @@
                   <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                </p>
               </dd>
 
-              <dt><code><b>int default_size(magic_api * api, int which)</b></code></dt>
+              <dt><code><b>Uint8 default_size(magic_api * api, int which)</b></code></dt>
               <dd>
                 <p>
                   Return the default size the 'Magic' tool accepts. This will be the default setting for the tool the first time it is used during a Tux Paint session. If Tux Paint is being invoked with the sizing option disabled, this will be the only size requested by Tux Paint.  Return a number between '1' and the amount you returned in <code>accepted_sizes()</code>.                </p>

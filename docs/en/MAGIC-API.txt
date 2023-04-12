@@ -310,7 +310,7 @@ Magic Tool Plugin API Documentation
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
 
-   int accepted_sizes(magic_api * api, int which)
+   Uint8 accepted_sizes(magic_api * api, int which)
 
            Return how many size variations the 'Magic' tool accepts. Return a
            '0' if the 'Magic' tool should not offer sizing options. Returning
@@ -319,7 +319,7 @@ Magic Tool Plugin API Documentation
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
 
-   int default_size(magic_api * api, int which)
+   Uint8 default_size(magic_api * api, int which)
 
            Return the default size the 'Magic' tool accepts. This will be the
            default setting for the tool the first time it is used during a

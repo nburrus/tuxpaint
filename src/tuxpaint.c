@@ -1420,6 +1420,8 @@ static int stamp_size_override = -1;
 static int no_stamp_rotation = 0;
 static int new_colors_last;
 
+static Uint8 magic_disabled_features = 0x00000000;
+
 #ifdef NOKIA_770
 static int simple_shapes = 1;
 #else
@@ -1562,9 +1564,12 @@ typedef struct magic_funcs_s
   SDL_Surface *(*get_icon)(magic_api *, int);
   char *(*get_description)(magic_api *, int, int);
   int (*requires_colors)(magic_api *, int);
+  Uint8 (*accepted_sizes)(magic_api *, int);
+  Uint8 (*default_size)(magic_api *, int);
   int (*modes)(magic_api *, int);
   void (*set_color)(magic_api *, int, SDL_Surface *, SDL_Surface *, Uint8, Uint8, Uint8, SDL_Rect *);
-  int (*init)(magic_api *);
+  void (*set_size)(magic_api *, int, SDL_Surface *, SDL_Surface *, Uint8, SDL_Rect *);
+  int (*init)(magic_api *, Uint32);
   Uint32(*api_version) (void);
   void (*shutdown)(magic_api *);
   void (*click)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int,
@@ -1586,6 +1591,9 @@ typedef struct magic_s
   int mode;                     /* Current mode (paint or fullscreen) */
   int avail_modes;              /* Available modes (paint &/or fullscreen) */
   int colors;                   /* Whether magic tool accepts colors */
+  int sizes;                    /* Whether magic tool accepts sizes */
+  int default_size;             /* Magic tool's default size setting */
+  int size;                     /* Magic tool's size setting */
   int group;                    /* Which group of magic tools this lives in */
   char *name;                   /* Name of magic tool */
   char *tip[MAX_MODES];         /* Description of magic tool, in each possible mode */
@@ -22426,6 +22434,16 @@ static void load_magic_plugins(void)
                 SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
               safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+                            "accepted_sizes");
+              magic_funcs[num_plugin_files].accepted_sizes =
+                SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
+              safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+                            "default_size");
+              magic_funcs[num_plugin_files].default_size =
+                SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
+              safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
                             "modes");
               magic_funcs[num_plugin_files].modes =
                 SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
@@ -22433,6 +22451,11 @@ static void load_magic_plugins(void)
               safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
                             "set_color");
               magic_funcs[num_plugin_files].set_color =
+                SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
+              safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
+                            "set_size");
+              magic_funcs[num_plugin_files].set_size =
                 SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
               safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname,
@@ -22492,11 +22515,20 @@ static void load_magic_plugins(void)
               DEBUG_PRINTF("requires_colors = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].requires_colors);
+              DEBUG_PRINTF("accepted_sizes = 0x%x\n",
+                     (int) (intptr_t)
+                     magic_funcs[num_plugin_files].accepted_sizes);
+              DEBUG_PRINTF("default_size = 0x%x\n",
+                     (int) (intptr_t)
+                     magic_funcs[num_plugin_files].default_size);
               DEBUG_PRINTF("modes = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].modes);
               DEBUG_PRINTF("set_color = 0x%x\n",
                      (int) (intptr_t)
                      magic_funcs[num_plugin_files].set_color);
+              DEBUG_PRINTF("set_size = 0x%x\n",
+                     (int) (intptr_t)
+                     magic_funcs[num_plugin_files].set_size);
               DEBUG_PRINTF("init = 0x%x\n",
                      (int) (intptr_t) magic_funcs[num_plugin_files].init);
               DEBUG_PRINTF("api_version = 0x%x\n",
@@ -22557,6 +22589,20 @@ static void load_magic_plugins(void)
                         fname);
                 err = 1;
               }
+              if (magic_funcs[num_plugin_files].accepted_sizes == NULL)
+              {
+                fprintf(stderr,
+                        "Error: plugin %s is missing accepted_sizes\n",
+                        fname);
+                err = 1;
+              }
+              if (magic_funcs[num_plugin_files].default_size == NULL)
+              {
+                fprintf(stderr,
+                        "Error: plugin %s is missing default_size\n",
+                        fname);
+                err = 1;
+              }
               if (magic_funcs[num_plugin_files].modes == NULL)
               {
                 fprintf(stderr, "Error: plugin %s is missing modes\n", fname);
@@ -22565,6 +22611,12 @@ static void load_magic_plugins(void)
               if (magic_funcs[num_plugin_files].set_color == NULL)
               {
                 fprintf(stderr, "Error: plugin %s is missing set_color\n",
+                        fname);
+                err = 1;
+              }
+              if (magic_funcs[num_plugin_files].set_size == NULL)
+              {
+                fprintf(stderr, "Error: plugin %s is missing set_size\n",
                         fname);
                 err = 1;
               }
@@ -22630,7 +22682,7 @@ static void load_magic_plugins(void)
               }
               else
               {
-                res = magic_funcs[num_plugin_files].init(magic_api_struct);
+                res = magic_funcs[num_plugin_files].init(magic_api_struct, magic_disabled_features);
 
                 if (res != 0)
                   n =
@@ -31280,6 +31332,11 @@ static void setup(void)
 
 
   /* Load magic tool plugins: */
+
+  magic_disabled_features = 0x00000000;
+  if (0) { /* FIXME */
+    magic_disabled_features |= MAGIC_FEATURE_SIZE;
+  }
 
   load_magic_plugins();
 

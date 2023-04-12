@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 11, 2023
 */
 
 #include <stdio.h>
@@ -36,6 +36,7 @@
 
 static Mix_Chunk *kalidescope_snd;
 static Uint8 kalidescope_r, kalidescope_g, kalidescope_b;
+static Uint8 kalidescope_sz = 8; // FIXME: Not necessary
 static int square_size = 128;
 
 
@@ -79,8 +80,12 @@ void kalidescope_release(magic_api * api, int which, SDL_Surface * canvas,
                          SDL_Rect * update_rect);
 void kalidescope_shutdown(magic_api * api);
 int kalidescope_requires_colors(magic_api * api, int which);
+Uint8 kalidescope_accepted_sizes(magic_api * api, int which);
+Uint8 kalidescope_default_size(magic_api * api, int which);
 void kalidescope_set_color(magic_api * api, int which, SDL_Surface * canvas,
                            SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+void kalidescope_set_size(magic_api * api, int which, SDL_Surface * canvas,
+                          SDL_Surface * last, Uint8 sz, SDL_Rect * update_rect);
 void kalidescope_switchin(magic_api * api, int which, int mode,
                           SDL_Surface * canvas);
 void kalidescope_switchout(magic_api * api, int which, int mode,
@@ -202,11 +207,11 @@ static void do_kalidescope(void *ptr, int which, SDL_Surface * canvas,
   colr =
     SDL_MapRGB(canvas->format, kalidescope_r, kalidescope_g, kalidescope_b);
 
-  for (yy = -8; yy < 8; yy++)
+  for (yy = -kalidescope_sz; yy < kalidescope_sz; yy++)
   {
-    for (xx = -8; xx < 8; xx++)
+    for (xx = -kalidescope_sz; xx < kalidescope_sz; xx++)
     {
-      if (api->in_circle(xx, yy, 8))
+      if (api->in_circle(xx, yy, kalidescope_sz))
       {
         api->putpixel(canvas, x + xx, y + yy, colr);
 
@@ -282,6 +287,13 @@ void kalidescope_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(kalidescope_snd);
 }
 
+// Use colors:
+int kalidescope_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
+                                int which ATTRIBUTE_UNUSED)
+{
+  return 1;
+}
+
 // Record the color from Tux Paint:
 void kalidescope_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
                            SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
@@ -291,12 +303,26 @@ void kalidescope_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
   kalidescope_b = b;
 }
 
-// Use colors:
-int kalidescope_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                                int which ATTRIBUTE_UNUSED)
+// Use sizes:
+Uint8 kalidescope_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED,
+                                 int which ATTRIBUTE_UNUSED)
 {
-  return 1;
+  return 6;
 }
+
+Uint8 kalidescope_default_size(magic_api * api ATTRIBUTE_UNUSED,
+                               int which ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+// Record the size from Tux Paint:
+void kalidescope_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
+                          SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 sz, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  kalidescope_sz = (sz * 2);
+}
+
 
 void kalidescope_switchin(magic_api * api ATTRIBUTE_UNUSED,
                           int which ATTRIBUTE_UNUSED,
