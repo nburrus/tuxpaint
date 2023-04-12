@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2023.04.09
-.TH TUXPAINT 1 "avril  9, 2023" "0.9.30" "Tux Paint"
+.\" tuxpaint.1 - 2023.04.12
+.TH TUXPAINT 1 "avril 12, 2023" "0.9.30" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 
@@ -68,6 +68,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 [\-\-nostamprotation]
 .br
 [\-\-nomagiccontrols]
+.br
+[\-\-nomagicsizes]
 .br
 [\-\-noshapecontrols]
 .br
@@ -216,6 +218,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 [\-\-stamprotation]
 .br
 [\-\-magiccontrols]
+.br
+[\-\-magicsizes]
 .br
 [\-\-shapecontrols]
 .br
@@ -435,6 +439,11 @@ Désactive ou active (par défaut) les boutons pour contrôler les outils
 Magie. Les contrôles incluent soit un outil Magie est utilisé comme un
 pinceau, soit il affecte l'ensemble de l'image en une seule fois. (Note :
 tous les outils ne sont pas forcément contrôlables.)
+
+.TP 8
+.B \-\-nomagicsizes \-\-magicsizes
+Disable or enable (default) Magic size controls.  (Note: Not all Magic
+tools offer size controls.)
 
 .TP 8
 .B \-\-noshapecontrols \-\-shapecontrols

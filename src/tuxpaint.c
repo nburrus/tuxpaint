@@ -8447,6 +8447,7 @@ void show_usage(int exitcode)
           "  [--stamps | --nostamps]\n"
           "  [--nostampcontrols | --stampcontrols]\n"
           "  [--nomagiccontrols | --magiccontrols]\n"
+          "  [--nomagicsizes | --magicsizes]\n"
           "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
           "  [--nobrushspacing | --brushspacing]\n"
