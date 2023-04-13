@@ -4502,45 +4502,68 @@ static void mainloop(void)
                 }
                 else
                 {
-                  /* Magic controls! */
-                  if (which == 3
-                      && magics[grp][cur].avail_modes & MODE_FULLSCREEN)
-                  {
-                    magic_switchout(canvas);
-                    magics[grp][cur].mode = MODE_FULLSCREEN;
-                    magic_switchin(canvas);
-                    draw_magic();
-                    update_screen_rect(&r_toolopt);
+                  if (!disable_magic_controls && (which == 2 || which == 3)) {
+                    /* Magic controls! */
+                    if (which == 3
+                        && magics[grp][cur].avail_modes & MODE_FULLSCREEN)
+                    {
+                      magic_switchout(canvas);
+                      magics[grp][cur].mode = MODE_FULLSCREEN;
+                      magic_switchin(canvas);
+                      draw_magic();
+                      update_screen_rect(&r_toolopt);
+                    }
+                    else if (which == 2
+                             && magics[grp][cur].avail_modes & MODE_PAINT)
+                    {
+                      magic_switchout(canvas);
+                      magics[grp][cur].mode = MODE_PAINT;
+                      magic_switchin(canvas);
+                      draw_magic();
+                      update_screen_rect(&r_toolopt);
+                    }
+                    else if (which == 2
+                             && magics[grp][cur].avail_modes &
+                             MODE_PAINT_WITH_PREVIEW)
+                    {
+                      magic_switchout(canvas);
+                      magics[grp][cur].mode = MODE_PAINT_WITH_PREVIEW;
+                      magic_switchin(canvas);
+                      draw_magic();
+                      update_screen_rect(&r_toolopt);
+                    }
+                    else if (which == 2
+                             && magics[grp][cur].avail_modes & MODE_ONECLICK)
+                    {
+                      magic_switchout(canvas);
+                      magics[grp][cur].mode = MODE_ONECLICK;
+                      magic_switchin(canvas);
+                      draw_magic();
+                      update_screen_rect(&r_toolopt);
+                    }
+                    playsound(screen, 0, SND_CLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+                  } else if (!disable_magic_sizes) {
+                    if (magics[grp][cur].sizes > 1) {
+                      int old_size, new_size;
+
+                      old_size = magics[grp][cur].size;
+
+                      new_size = ((magics[grp][cur].sizes * (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w))) / r_ttoolopt.w) + 1;
+
+                      if (new_size != old_size) {
+                        magics[grp][cur].size = new_size;
+                        magic_set_size();
+
+                        draw_magic();
+                        update_screen_rect(&r_toolopt);
+
+                        if (new_size < old_size)                    
+                          playsound(screen, 0, SND_SHRINK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+                        else
+                          playsound(screen, 0, SND_GROW, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+                      }
+                    }
                   }
-                  else if (which == 2
-                           && magics[grp][cur].avail_modes & MODE_PAINT)
-                  {
-                    magic_switchout(canvas);
-                    magics[grp][cur].mode = MODE_PAINT;
-                    magic_switchin(canvas);
-                    draw_magic();
-                    update_screen_rect(&r_toolopt);
-                  }
-                  else if (which == 2
-                           && magics[grp][cur].avail_modes &
-                           MODE_PAINT_WITH_PREVIEW)
-                  {
-                    magic_switchout(canvas);
-                    magics[grp][cur].mode = MODE_PAINT_WITH_PREVIEW;
-                    magic_switchin(canvas);
-                    draw_magic();
-                    update_screen_rect(&r_toolopt);
-                  }
-                  else if (which == 2
-                           && magics[grp][cur].avail_modes & MODE_ONECLICK)
-                  {
-                    magic_switchout(canvas);
-                    magics[grp][cur].mode = MODE_ONECLICK;
-                    magic_switchin(canvas);
-                    draw_magic();
-                    update_screen_rect(&r_toolopt);
-                  }
-                  /* FIXME: Sfx */
                 }
               }
               else if (cur_tool == TOOL_SHAPES)
@@ -10549,7 +10572,7 @@ static void draw_magic(void)
         xx = ceil(x_per);
         yy = ceil(y_per * (float) i);
 
-        if (i <= magics[grp][cur].size + 1)
+        if (i <= magics[grp][cur].size)
           btn = thumbnail(img_btn_down, xx, yy, 0);
         else
           btn = thumbnail(img_btn_up, xx, yy, 0);
