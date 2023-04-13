@@ -72,7 +72,7 @@ enum
   blur_NUM_TOOLS
 };
 
-static const int blur_RADIUS = 16;
+static int blur_RADIUS = 16;
 
 static Mix_Chunk *blur_snd_effect[blur_NUM_TOOLS];
 
@@ -319,9 +319,10 @@ void blur_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 }
 
 // Record the size from Tux Paint:
-void blur_set_size(magic_api * api, int which, SDL_Surface * canvas,
-                   SDL_Surface * last, Uint8 sz, SDL_Rect * update_rect) {
-  /* FIXME */
+void blur_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                   SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                   Uint8 sz, SDL_Rect * update_rect ATTRIBUTE_UNUSED) {
+  blur_RADIUS = sz * 4;
 }
 
 // Use colors:
@@ -332,14 +333,12 @@ int blur_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
 }
 
 
-Uint8 blur_accepted_sizes(magic_api * api, int which) {
-  /* FIXME */
-  return 1;
+Uint8 blur_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED) {
+  return 8;
 }
 
-Uint8 blur_default_size(magic_api * api, int which) {
-  /* FIXME */
-  return 1;
+Uint8 blur_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED) {
+  return 4;
 }
 
 void blur_switchin(magic_api * api ATTRIBUTE_UNUSED,
