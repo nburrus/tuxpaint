@@ -4874,7 +4874,7 @@ static void mainloop(void)
 
                 prev_size = brushes_spacing[cur_brush];
                 chosen = ((BRUSH_SPACING_SIZES * strike) / r_ttoolopt.w);
- 
+
                 frame_w =
                   img_brushes[cur_brush]->w / abs(brushes_frames[cur_brush]);
                 w = frame_w / (brushes_directional[cur_brush] ? 3 : 1);
@@ -9888,7 +9888,7 @@ static SDL_Surface * crop_surface(SDL_Surface * surf) {
         if (x < left)
           left = x;
         if (y > bottom)
-          bottom = y; 
+          bottom = y;
         if (x > right)
           right = x;
       }
@@ -10531,43 +10531,59 @@ static void draw_magic(void)
 
   if (!disable_magic_sizes)
   {
-    SDL_Surface *button_color;
     int grp, cur;
-    int down;
-
-    down = 4;
-    if (disable_magic_controls)
-      down = 2;
-
 
     grp = magic_group;
     cur = cur_magic[magic_group];
 
+    if (magics[grp][cur].sizes > 1) {
+      int i, xx, yy;
+      float x_per, y_per;
+      SDL_Surface * blnk, * btn;
 
-    /* FIXME */
+      x_per = (float) r_ttoolopt.w / (float) magics[grp][cur].sizes;
+      y_per = (float) button_h / (float) (magics[grp][cur].sizes + 1);
 
-    button_color = img_btn_off;       /* Unavailable */
+      for (i = 1; i < magics[grp][cur].sizes + 1; i++)
+      {
+        xx = ceil(x_per);
+        yy = ceil(y_per * (float) i);
 
-    dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-    dest.y =
-      r_ttoolopt.h +
-      ((most / gd_toolopt.cols +
-        (TOOLOFFSET + down) / gd_toolopt.cols) * button_h);
+        if (i <= magics[grp][cur].size + 1)
+          btn = thumbnail(img_btn_down, xx, yy, 0);
+        else
+          btn = thumbnail(img_btn_up, xx, yy, 0);
 
-    SDL_BlitSurface(button_color, NULL, screen, &dest);
+        blnk = thumbnail(img_btn_off, xx, button_h - yy, 0);
 
+        /* FIXME: Check for NULL! */
 
-    /* FIXME */
+        dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + ((i - 1) * x_per);
+        dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+        SDL_BlitSurface(blnk, NULL, screen, &dest);
 
-    button_color = img_btn_off;       /* Unavailable */
+        dest.x = (WINDOW_WIDTH - r_ttoolopt.w) + ((i - 1) * x_per);
+        dest.y = (button_h * buttons_tall + r_ttools.h) - (y_per * i);
+        SDL_BlitSurface(btn, NULL, screen, &dest);
 
-    dest.x = WINDOW_WIDTH - button_w;
-    dest.y =
-      r_ttoolopt.h +
-      ((most / gd_toolopt.cols +
-        (TOOLOFFSET + down) / gd_toolopt.cols) * button_h);
+        SDL_FreeSurface(btn);
+        SDL_FreeSurface(blnk);
+      }
+    } else {
+      SDL_Surface * wide_button_off;
 
-    SDL_BlitSurface(button_color, NULL, screen, &dest);
+      /* Sizing not supported, just draw a big blank */
+
+      wide_button_off = thumbnail(img_btn_off, r_ttoolopt.w, button_h, 0);
+
+      /* FIXME: Check for NULL! */
+
+      dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+      dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+      SDL_BlitSurface(wide_button_off, NULL, screen, &dest);
+
+      SDL_FreeSurface(wide_button_off);
+    }
   }
 }
 
@@ -13803,17 +13819,17 @@ static Mix_Chunk *loadsound_extra(const char *const fname, const char *extra)
             strcpy((char *) strcasestr(snd_fname, ext), tmp_str); /* FIXME: Use strncpy() (ugh, complicated) */
             debug(snd_fname);
             tmp_snd = Mix_LoadWAV(snd_fname);
-  
+
             if (tmp_snd == NULL)
             {
               debug("...No default version of sound (OGG)!");
-  
+
               strcpy(snd_fname, fname);   /* malloc'd size should be sufficient */
               safe_snprintf(tmp_str, sizeof(tmp_str), "%s.wav", extra);
               strcpy((char *) strcasestr(snd_fname, ext), tmp_str);       /* FIXME: Use strncpy() (ugh, complicated) */
               debug(snd_fname);
               tmp_snd = Mix_LoadWAV(snd_fname);
-  
+
               if (tmp_snd == NULL)
                 debug("...No default version of sound (WAV)!");
             }
@@ -14895,7 +14911,7 @@ static void load_starter(char *img_id)
                                             canvas->format->Rmask,
                                             canvas->format->Gmask,
                                             canvas->format->Bmask, 0);
- 
+
     autoscale_copy_scale_or_smear_free(tmp_surf, img_starter_bkgd, SDL_BlitSurface, template_options);
   }
 
@@ -16326,19 +16342,19 @@ printf("side=%d, a1=%f, a2=%f -- (%f,%f) -> (%f,%f)\n", side, a1, a2, x1, y1, x2
       if (shape_mode == SHAPEMODE_CENTER) {
         xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
         yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
-    
+
         x1 = xp - offx;
         y1 = yp - offy;
-    
+
         xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
         yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
-    
+
         x2 = xp - offx;
         y2 = yp - offy;
-    
+
         xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
         yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
-    
+
         xv = xp - offx;
         yv = yp - offy;
       } else {
@@ -16347,13 +16363,13 @@ printf("side=%d, a1=%f, a2=%f -- (%f,%f) -> (%f,%f)\n", side, a1, a2, x1, y1, x2
 
         x1 = xp;
         y1 = yp;
-    
+
         xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
         yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
-    
+
         x2 = xp;
         y2 = yp;
-    
+
         xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
         yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
 
@@ -16444,37 +16460,37 @@ printf("side=%d, a1=%f, a2=%f -- (%f,%f) -> (%f,%f)\n", side, a1, a2, x1, y1, x2
           if (shape_mode == SHAPEMODE_CENTER) {
             xp = (x1 + offx) * cos(rotn_rad) - (y1 + offy) * sin(rotn_rad);
             yp = (x1 + offx) * sin(rotn_rad) + (y1 + offy) * cos(rotn_rad);
-  
+
             x1 = xp - offx;
             y1 = yp - offy;
-  
+
             xp = (x2 + offx) * cos(rotn_rad) - (y2 + offy) * sin(rotn_rad);
             yp = (x2 + offx) * sin(rotn_rad) + (y2 + offy) * cos(rotn_rad);
-  
+
             x2 = xp - offx;
             y2 = yp - offy;
-  
+
             xp = (xv + offx) * cos(rotn_rad) - (yv + offy) * sin(rotn_rad);
             yp = (xv + offx) * sin(rotn_rad) + (yv + offy) * cos(rotn_rad);
-  
+
             xv = xp - offx;
             yv = yp - offy;
           } else {
             xp = x1 * cos(rotn_rad) - y1 * sin(rotn_rad);
             yp = x1 * sin(rotn_rad) + y1 * cos(rotn_rad);
-    
+
             x1 = xp;
             y1 = yp;
-        
+
             xp = x2 * cos(rotn_rad) - y2 * sin(rotn_rad);
             yp = x2 * sin(rotn_rad) + y2 * cos(rotn_rad);
-        
+
             x2 = xp;
             y2 = yp;
-        
+
             xp = xv * cos(rotn_rad) - yv * sin(rotn_rad);
             yp = xv * sin(rotn_rad) + yv * cos(rotn_rad);
-    
+
             xv = xp;
             yv = yp;
           }
@@ -24837,13 +24853,13 @@ static int do_color_sel(int temp_mode)
               && event.button.y < r_canvas.y + r_canvas.h)
           {
             /* Picked a color in the canvas, and released! */
-  
+
             chose = 1;
             done = 1;
-  
+
             x = event.button.x - r_canvas.x;
             y = event.button.y - r_canvas.y;
-  
+
             color_sel_x = x;
             color_sel_y = y;
           }
@@ -24857,7 +24873,7 @@ static int do_color_sel(int temp_mode)
                   && event.button.y < back_top + img_back->h)
               {
                 /* Full UI mode: Decided to go Back; abort */
-  
+
                 chose = 0;
                 done = 1;
               }
@@ -25526,7 +25542,7 @@ static int do_color_picker(int prev_color)
               event.button.y >= prev_color_top &&
               event.button.y < prev_color_top + img_back->h) {
             /* Switch to the chosen bucket color */
-            c = prev_color; 
+            c = prev_color;
           } else if (event.button.x >= pipette_left &&
                      event.button.x < pipette_left + img_back->w &&
                      event.button.y >= pipette_top &&
@@ -25541,7 +25557,7 @@ static int do_color_picker(int prev_color)
           /* Convert the chosen color to HSV & reposition crosshairs */
           rgbtohsv(color_hexes[c][0], color_hexes[c][1], color_hexes[c][2],
                    &h, &s, &v);
-  
+
           color_picker_v = (img_color_picker_val->h * (1.0 - v));
           color_picker_x = (img_color_picker->w * s);
           color_picker_y = (img_color_picker->h * (h / 360.0));
@@ -30760,7 +30776,7 @@ static void setup(void)
         fprintf(stderr, "Asked for window width (%d) larger than max screen width (%d)\n", WINDOW_WIDTH, max_scrn_w);
         WINDOW_WIDTH = max_scrn_w;
       }
-  
+
       if (WINDOW_HEIGHT > max_scrn_h) {
         fprintf(stderr, "Asked for window height (%d) larger than max screen height (%d)\n", WINDOW_HEIGHT, max_scrn_h);
         WINDOW_HEIGHT = max_scrn_h;
