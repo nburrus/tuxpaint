@@ -37,6 +37,7 @@ https://tuxpaint.org/
     * Various Magic tools now support sizing options:
       + Kaleidoscope
       + Blur
+      + Googly Eyes
       + WIP... more!
 
   * Other Improvements:
