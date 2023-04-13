@@ -1567,11 +1567,11 @@ typedef struct magic_funcs_s
   SDL_Surface *(*get_icon)(magic_api *, int);
   char *(*get_description)(magic_api *, int, int);
   int (*requires_colors)(magic_api *, int);
-  Uint8 (*accepted_sizes)(magic_api *, int);
-  Uint8 (*default_size)(magic_api *, int);
+  Uint8 (*accepted_sizes)(magic_api *, int, int);
+  Uint8 (*default_size)(magic_api *, int, int);
   int (*modes)(magic_api *, int);
   void (*set_color)(magic_api *, int, SDL_Surface *, SDL_Surface *, Uint8, Uint8, Uint8, SDL_Rect *);
-  void (*set_size)(magic_api *, int, SDL_Surface *, SDL_Surface *, Uint8, SDL_Rect *);
+  void (*set_size)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, Uint8, SDL_Rect *);
   int (*init)(magic_api *, Uint32);
   Uint32(*api_version) (void);
   void (*shutdown)(magic_api *);
@@ -1594,9 +1594,9 @@ typedef struct magic_s
   int mode;                     /* Current mode (paint or fullscreen) */
   int avail_modes;              /* Available modes (paint &/or fullscreen) */
   int colors;                   /* Whether magic tool accepts colors */
-  int sizes;                    /* Whether magic tool accepts sizes */
-  int default_size;             /* Magic tool's default size setting */
-  int size;                     /* Magic tool's size setting */
+  int sizes[MAX_MODES];         /* Whether magic tool accepts sizes */
+  int default_size[MAX_MODES];  /* Magic tool's default size setting */
+  int size[MAX_MODES];          /* Magic tool's size setting */
   int group;                    /* Which group of magic tools this lives in */
   char *name;                   /* Name of magic tool */
   char *tip[MAX_MODES];         /* Description of magic tool, in each possible mode */
@@ -4543,21 +4543,25 @@ static void mainloop(void)
                     }
                     playsound(screen, 0, SND_CLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                   } else if (!disable_magic_sizes) {
-                    if (magics[grp][cur].sizes > 1) {
+                    int mode;
+
+                    mode = magic_modeint(magics[grp][cur].mode);
+
+                    if (magics[grp][cur].sizes[mode] > 1) {
                       int old_size, new_size;
 
-                      old_size = magics[grp][cur].size;
+                      old_size = magics[grp][cur].size[mode];
 
-                      new_size = ((magics[grp][cur].sizes * (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w))) / r_ttoolopt.w) + 1;
+                      new_size = ((magics[grp][cur].sizes[mode] * (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w))) / r_ttoolopt.w) + 1;
 
                       if (new_size != old_size) {
-                        magics[grp][cur].size = new_size;
+                        magics[grp][cur].size[mode] = new_size;
                         magic_set_size();
 
                         draw_magic();
                         update_screen_rect(&r_toolopt);
 
-                        if (new_size < old_size)                    
+                        if (new_size < old_size)
                           playsound(screen, 0, SND_SHRINK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
                         else
                           playsound(screen, 0, SND_GROW, 0, SNDPOS_CENTER, SNDDIST_NEAR);
@@ -10554,25 +10558,27 @@ static void draw_magic(void)
 
   if (!disable_magic_sizes)
   {
-    int grp, cur;
+    int grp, cur, mode;
 
     grp = magic_group;
     cur = cur_magic[magic_group];
+    mode = magic_modeint(magics[grp][cur].mode);
 
-    if (magics[grp][cur].sizes > 1) {
-      int i, xx, yy;
+    if (magics[grp][cur].sizes[mode] > 1) {
+      int i, xx, yy, sizes;
       float x_per, y_per;
       SDL_Surface * blnk, * btn;
 
-      x_per = (float) r_ttoolopt.w / (float) magics[grp][cur].sizes;
-      y_per = (float) button_h / (float) (magics[grp][cur].sizes + 1);
+      sizes = magics[grp][cur].sizes[mode];
+      x_per = (float) r_ttoolopt.w / (float) sizes;
+      y_per = (float) button_h / (float) (sizes + 1);
 
-      for (i = 1; i < magics[grp][cur].sizes + 1; i++)
+      for (i = 1; i < sizes + 1; i++)
       {
         xx = ceil(x_per);
         yy = ceil(y_per * (float) i);
 
-        if (i <= magics[grp][cur].size)
+        if (i <= magics[grp][cur].size[mode])
           btn = thumbnail(img_btn_down, xx, yy, 0);
         else
           btn = thumbnail(img_btn_up, xx, yy, 0);
@@ -22835,22 +22841,45 @@ static void load_magic_plugins(void)
                       magics[group][idx].colors =
                         magic_funcs[num_plugin_files].requires_colors
                         (magic_api_struct, i);
-                      magics[group][idx].sizes =
-                        magic_funcs[num_plugin_files].accepted_sizes
-                        (magic_api_struct, i);
-                      if (magic_funcs[num_plugin_files].accepted_sizes) {
-                        magics[group][idx].default_size =
-                          magic_funcs[num_plugin_files].default_size
-                          (magic_api_struct, i);
-                        if (magics[group][idx].default_size < 1 ||
-                            magics[group][idx].default_size > magics[group][idx].sizes) {
-                          fprintf(stderr,
-                                  "Warning: plugin %s mode # %d default size (%d) out of range (1-%d)\n",
-                                  fname, i, magics[group][idx].default_size, magics[group][idx].sizes);
-                          magics[group][idx].default_size = 1;
+
+                      for (j = 0; j < MAX_MODES; j++)
+                      {
+                        int mode_bit;
+
+                        mode_bit = 0;
+
+                        if (j == 1 && magics[group][idx].avail_modes & MODE_FULLSCREEN) {
+                          mode_bit = MODE_FULLSCREEN;
+                        } else {
+                          if (magics[group][idx].avail_modes & MODE_PAINT) {
+                            mode_bit = MODE_PAINT;
+                          } else if (magics[group][idx].avail_modes & MODE_ONECLICK) {
+                            mode_bit = MODE_ONECLICK;
+                          } else if (magics[group][idx].avail_modes & MODE_PAINT_WITH_PREVIEW) {
+                            mode_bit = MODE_PAINT_WITH_PREVIEW;
+                          }
                         }
-                        magics[group][idx].size = magics[group][idx].default_size;
+
+                        if (mode_bit != 0) {
+                          magics[group][idx].sizes[j] =
+                            magic_funcs[num_plugin_files].accepted_sizes
+                            (magic_api_struct, i, mode_bit);
+                          if (magics[group][idx].sizes[j] > 1) {
+                            magics[group][idx].default_size[j] =
+                              magic_funcs[num_plugin_files].default_size
+                              (magic_api_struct, i, mode_bit);
+                            if (magics[group][idx].default_size[j] < 1 ||
+                                magics[group][idx].default_size[j] > magics[group][idx].sizes[j]) {
+                              fprintf(stderr,
+                                      "Warning: plugin %s tool # %d for %d mode (%x) default size (%d) out of range (1-%d)\n",
+                                      fname, i, j, mode_bit, magics[group][idx].default_size[j], magics[group][idx].sizes[j]);
+                              magics[group][idx].default_size[j] = 1;
+                            }
+                            magics[group][idx].size[j] = magics[group][idx].default_size[j];
+                          }
+                        }
                       }
+
                       if (magics[group][idx].avail_modes & MODE_PAINT)
                         magics[group][idx].mode = MODE_PAINT;
                       else if (magics[group][idx].avail_modes & MODE_ONECLICK)
@@ -27249,9 +27278,10 @@ static void magic_set_size() {
   magic_funcs[magics[magic_group][cur_magic[magic_group]].handle_idx].
     set_size(magic_api_struct,
              magics[magic_group][cur_magic[magic_group]].idx,
+             magics[magic_group][cur_magic[magic_group]].mode,
              canvas,
              last,
-             magics[magic_group][cur_magic[magic_group]].size,
+             magics[magic_group][cur_magic[magic_group]].size[magic_modeint(magics[magic_group][cur_magic[magic_group]].mode)],
              &update_rect);
 
   if (update_rect.w > 0 && update_rect.h > 0) {

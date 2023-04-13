@@ -83,12 +83,13 @@ void kalidescope_release(magic_api * api, int which, SDL_Surface * canvas,
                          SDL_Rect * update_rect);
 void kalidescope_shutdown(magic_api * api);
 int kalidescope_requires_colors(magic_api * api, int which);
-Uint8 kalidescope_accepted_sizes(magic_api * api, int which);
-Uint8 kalidescope_default_size(magic_api * api, int which);
+Uint8 kalidescope_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 kalidescope_default_size(magic_api * api, int which, int mode);
 void kalidescope_set_color(magic_api * api, int which, SDL_Surface * canvas,
                            SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-void kalidescope_set_size(magic_api * api, int which, SDL_Surface * canvas,
-                          SDL_Surface * last, Uint8 sz, SDL_Rect * update_rect);
+void kalidescope_set_size(magic_api * api, int which, int mode,
+                          SDL_Surface * canvas, SDL_Surface * last,
+                          Uint8 sz, SDL_Rect * update_rect);
 void kalidescope_switchin(magic_api * api, int which, int mode,
                           SDL_Surface * canvas);
 void kalidescope_switchout(magic_api * api, int which, int mode,
@@ -307,20 +308,21 @@ void kalidescope_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
 
 // Use sizes:
 Uint8 kalidescope_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED,
-                                 int which ATTRIBUTE_UNUSED)
+                                 int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return KAL_MAX_SIZE;
 }
 
 Uint8 kalidescope_default_size(magic_api * api ATTRIBUTE_UNUSED,
-                               int which ATTRIBUTE_UNUSED)
+                               int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return KAL_DEF_SIZE;
 }
 
 // Record the size from Tux Paint:
-void kalidescope_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                          SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 sz, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void kalidescope_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                          Uint8 sz, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   kalidescope_sz = (sz * 2);
 }

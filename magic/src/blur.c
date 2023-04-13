@@ -55,11 +55,11 @@ void blur_release(magic_api * api, int which, SDL_Surface * canvas,
 void blur_shutdown(magic_api * api);
 void blur_set_color(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-void blur_set_size(magic_api * api, int which, SDL_Surface * canvas,
+void blur_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas,
                    SDL_Surface * last, Uint8 sz, SDL_Rect * update_rect);
 int blur_requires_colors(magic_api * api, int which);
-Uint8 blur_accepted_sizes(magic_api * api, int which);
-Uint8 blur_default_size(magic_api * api, int which);
+Uint8 blur_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 blur_default_size(magic_api * api, int which, int mode);
 void blur_switchin(magic_api * api, int which, int mode,
                    SDL_Surface * canvas);
 void blur_switchout(magic_api * api, int which, int mode,
@@ -319,7 +319,7 @@ void blur_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 }
 
 // Record the size from Tux Paint:
-void blur_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+void blur_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
                    SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
                    Uint8 sz, SDL_Rect * update_rect ATTRIBUTE_UNUSED) {
   blur_RADIUS = sz * 4;
@@ -333,11 +333,14 @@ int blur_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
 }
 
 
-Uint8 blur_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED) {
-  return 8;
+Uint8 blur_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode) {
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
 }
 
-Uint8 blur_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED) {
+Uint8 blur_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED) {
   return 4;
 }
 

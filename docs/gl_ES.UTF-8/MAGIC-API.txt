@@ -312,23 +312,24 @@ Magic Tool Plugin API Documentation
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
 
-   Uint8 accepted_sizes(magic_api * api, int which)
+   Uint8 accepted_sizes(magic_api * api, int which, int mode)
 
-           Return how many size variations the 'Magic' tool accepts. Return a
-           '0' if the 'Magic' tool should not offer sizing options. Returning
-           '1' is the same as returning '0'.
+           Return how many size variations the 'Magic' tool accepts, in the
+           given mode (i.e., 'MODE_PAINT' or 'MODE_FULLSCREEN). Return a '0'
+           if the 'Magic' tool should not offer sizing options. Returning '1'
+           is the same as returning '0'.
 
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
 
-   Uint8 default_size(magic_api * api, int which)
+   Uint8 default_size(magic_api * api, int which, int mode)
 
-           Return the default size the 'Magic' tool accepts. This will be the
-           default setting for the tool the first time it is used during a
-           Tux Paint session. If Tux Paint is being invoked with the sizing
-           option disabled, this will be the only size requested by Tux
-           Paint. Return a number between '1' and the amount you returned in
-           accepted_sizes().
+           Return the default size the 'Magic' tool accepts, in the given
+           mode. This will be the default setting for the tool the first time
+           it is used during a Tux Paint session. If Tux Paint is being
+           invoked with the sizing option disabled, this will be the only
+           size requested by Tux Paint. Return a number between '1' and the
+           amount you returned in accepted_sizes().
 
            Note: Called once for each Magic tool your plugin claims to
            contain (by your "get_tool_count()").
@@ -405,7 +406,7 @@ Magic Tool Plugin API Documentation
            Note: Changed most recently in Tux Paint 0.9.29; Magic API version
            0x00000007.
 
-   void set_size(magic_api * api, int which, SDL_Surface * canvas,
+   void set_size(magic_api * api, int which, int mode, SDL_Surface * canvas,
    SDL_Surface * last, Uint8 size, SDL_Rect * update_rect)
 
            Tux Paint will call this function to inform the plugin of the
