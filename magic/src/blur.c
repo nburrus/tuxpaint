@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 12, 2023
 */
 
 #include <stdio.h>
@@ -39,7 +39,7 @@
 
 // Prototypes
 Uint32 blur_api_version(void);
-int blur_init(magic_api * api);
+int blur_init(magic_api * api, Uint32 disabled_features);
 int blur_get_tool_count(magic_api * api);
 SDL_Surface *blur_get_icon(magic_api * api, int which);
 char *blur_get_name(magic_api * api, int which);
@@ -55,7 +55,11 @@ void blur_release(magic_api * api, int which, SDL_Surface * canvas,
 void blur_shutdown(magic_api * api);
 void blur_set_color(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+void blur_set_size(magic_api * api, int which, SDL_Surface * canvas,
+                   SDL_Surface * last, Uint8 sz, SDL_Rect * update_rect);
 int blur_requires_colors(magic_api * api, int which);
+Uint8 blur_accepted_sizes(magic_api * api, int which);
+Uint8 blur_default_size(magic_api * api, int which);
 void blur_switchin(magic_api * api, int which, int mode,
                    SDL_Surface * canvas);
 void blur_switchout(magic_api * api, int which, int mode,
@@ -99,9 +103,8 @@ Uint32 blur_api_version(void)
 }
 
 //Load sounds
-int blur_init(magic_api * api)
+int blur_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
-
   int i;
   char fname[1024];
 
@@ -315,11 +318,28 @@ void blur_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 {
 }
 
+// Record the size from Tux Paint:
+void blur_set_size(magic_api * api, int which, SDL_Surface * canvas,
+                   SDL_Surface * last, Uint8 sz, SDL_Rect * update_rect) {
+  /* FIXME */
+}
+
 // Use colors:
 int blur_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
                          int which ATTRIBUTE_UNUSED)
 {
   return 0;
+}
+
+
+Uint8 blur_accepted_sizes(magic_api * api, int which) {
+  /* FIXME */
+  return 1;
+}
+
+Uint8 blur_default_size(magic_api * api, int which) {
+  /* FIXME */
+  return 1;
 }
 
 void blur_switchin(magic_api * api ATTRIBUTE_UNUSED,

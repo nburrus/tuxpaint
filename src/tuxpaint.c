@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 11, 2023
+  June 14, 2002 - April 12, 2023
 */
 
 #include "platform.h"
@@ -594,6 +594,8 @@ static void select_label_node(int *old_x, int *old_y);
 static void apply_label_node(int old_x, int old_y);
 static void reposition_onscreen_keyboard(int y);
 
+
+int calc_magic_control_rows(void);
 
 static void reset_stamps(int *stamp_xored_rt, int *stamp_place_x,
                          int *stamp_place_y, int *stamp_tool_mode);
@@ -4226,23 +4228,11 @@ static void mainloop(void)
                 gd_controls.cols = 2;
               }
             }
-
             else if (cur_tool == TOOL_MAGIC)
             {
-              if (!disable_magic_controls)
-              {
-                /* Account for magic controls and group changing (left/right) buttons */
-                gd_controls.rows = 2;
-                gd_controls.cols = 2;
-              }
-              else
-              {
-                /* Magic controls are disabled; account for group changing (left/right) buttons */
-                gd_controls.rows = 1;
-                gd_controls.cols = 2;
-              }
+              gd_controls.cols = 2;
+              gd_controls.rows = calc_magic_control_rows();
             }
-
             else if (cur_tool == TOOL_SHAPES)
             {
               if (!disable_shape_controls)
@@ -6024,16 +6014,8 @@ static void mainloop(void)
             }
             else if (cur_tool == TOOL_MAGIC)
             {
-              if (!disable_magic_controls)
-              {
-                gd_controls.rows = 2;
-                gd_controls.cols = 2;
-              }
-              else
-              {
-                gd_controls.rows = 1;
-                gd_controls.cols = 2;
-              }
+              gd_controls.cols = 2;
+              gd_controls.rows = calc_magic_control_rows();
             }
             else if (cur_tool == TOOL_SHAPES)
             {
@@ -6669,11 +6651,7 @@ static void mainloop(void)
           if (cur_tool == TOOL_TEXT && !disable_stamp_controls)
             control_rows = 2;
           if (cur_tool == TOOL_MAGIC)
-          {
-            control_rows = 1;
-            if (!disable_magic_controls)
-              control_rows = 2;
-          }
+            control_rows = calc_magic_control_rows();
           if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
             control_rows = 1;
           if ((cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES)
@@ -10342,8 +10320,10 @@ static void draw_magic(void)
 
   /* How many can we show? */
 
-  most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - TOOLOFFSET - 2;
+  most = (buttons_tall * gd_toolopt.cols) - (gd_toolopt.cols * 2) - TOOLOFFSET - 2;
   if (disable_magic_controls)
+    most = most + gd_toolopt.cols;
+  if (disable_magic_sizes)
     most = most + gd_toolopt.cols;
 
   if (num_magics[magic_group] > most + TOOLOFFSET)
@@ -10543,6 +10523,51 @@ static void draw_magic(void)
                                                             h) / 2);
 
     SDL_BlitSurface(img_magic_fullscreen, NULL, screen, &dest);
+
+  }
+
+
+  /* Draw magic size controls: */
+
+  if (!disable_magic_sizes)
+  {
+    SDL_Surface *button_color;
+    int grp, cur;
+    int down;
+
+    down = 4;
+    if (disable_magic_controls)
+      down = 2;
+
+
+    grp = magic_group;
+    cur = cur_magic[magic_group];
+
+
+    /* FIXME */
+
+    button_color = img_btn_off;       /* Unavailable */
+
+    dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+    dest.y =
+      r_ttoolopt.h +
+      ((most / gd_toolopt.cols +
+        (TOOLOFFSET + down) / gd_toolopt.cols) * button_h);
+
+    SDL_BlitSurface(button_color, NULL, screen, &dest);
+
+
+    /* FIXME */
+
+    button_color = img_btn_off;       /* Unavailable */
+
+    dest.x = WINDOW_WIDTH - button_w;
+    dest.y =
+      r_ttoolopt.h +
+      ((most / gd_toolopt.cols +
+        (TOOLOFFSET + down) / gd_toolopt.cols) * button_h);
+
+    SDL_BlitSurface(button_color, NULL, screen, &dest);
   }
 }
 
@@ -33388,3 +33413,29 @@ static void reposition_onscreen_keyboard(int y)
     update_screen_rect(&kbd_rect);
   }
 }
+
+/**
+ * How many rows of controls (not actual Magic tool items)
+ * are to be displayed at the bottom of the selector?
+ * (Based on whether magic controls and/or magic sizes are
+ * disabled)
+ *
+ * @return int
+ */
+int calc_magic_control_rows(void) {
+  int r;
+
+  /* Start with group changing (left/right) buttons */
+  r = 1;
+
+  /* Add magic controls (paint vs fullscreen) */
+  if (!disable_magic_controls)
+    r++;
+
+  /* Add magic size controls */
+  if (!disable_magic_sizes)
+    r++;
+
+  return r;
+}
+
