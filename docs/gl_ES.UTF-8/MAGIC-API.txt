@@ -6,7 +6,7 @@ Magic Tool Plugin API Documentation
         Copyright © 2007-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 Abril 9, 2023
+                                 Abril 13, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -743,7 +743,8 @@ Linux and other Unix-like Platforms
    As a stand-alone command, using the GNU C Compiler and BASH shell, for
    example:
 
-     $ gcc -shared `tp-magic-config --cflags` my_plugin.c -o my_plugin.so
+     $ gcc -shared -fpic `tp-magic-config --cflags` my_plugin.c -o
+     my_plugin.so
 
    Note: The characters around the "tp-magic-config" command are a
    grave/backtick/backquote ("`"), and not an apostrophe/single-quote ("'").
