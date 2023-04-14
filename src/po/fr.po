@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-09 22:52-0700\n"
-"PO-Revision-Date: 2023-04-11 16:33+0200\n"
+"PO-Revision-Date: 2023-04-14 10:10+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1665,7 +1665,7 @@ msgstr "3D"
 
 #: ../../magic/src/colorsep.c:39
 msgid "Color Sep."
-msgstr "Sép. couleurs."
+msgstr "Séparer"
 
 #: ../../magic/src/colorsep.c:40
 msgid "Double Vision"
@@ -2599,7 +2599,7 @@ msgstr ""
 
 #: ../../magic/src/xor.c:100
 msgid "Xor Colors"
-msgstr "Couleurs Xor"
+msgstr "Xor"
 
 #: ../../magic/src/xor.c:113
 msgid "Click and drag to draw a XOR effect"
