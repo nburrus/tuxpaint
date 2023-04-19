@@ -3,7 +3,7 @@
    Color separation effect (a la red/cyan aka red/blue 3D glasses).
    Bill Kendrick
 
-   Last updated: March 22, 2023
+   Last updated: April 18, 2023
 */
 
 #include <stdio.h>
@@ -51,7 +51,7 @@ int colorsep_click_x, colorsep_click_y;
 float colorsep_r_pct, colorsep_g_pct, colorsep_b_pct;
 
 Uint32 colorsep_api_version(void);
-int colorsep_init(magic_api * api);
+int colorsep_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED);
 int colorsep_get_tool_count(magic_api * api);
 SDL_Surface *colorsep_get_icon(magic_api * api, int which);
 char *colorsep_get_name(magic_api * api, int which);
@@ -77,6 +77,9 @@ void colorsep_switchin(magic_api * api, int which, int mode,
                         SDL_Surface * canvas);
 void colorsep_switchout(magic_api * api, int which, int mode,
                          SDL_Surface * canvas);
+Uint8 colorsep_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED);
+Uint8 colorsep_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED);
+void colorsep_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED);
 
 
 Uint32 colorsep_api_version(void)
@@ -84,7 +87,7 @@ Uint32 colorsep_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int colorsep_init(magic_api * api)
+int colorsep_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];
@@ -299,3 +302,17 @@ void colorsep_switchout(magic_api * api ATTRIBUTE_UNUSED,
 {
 }
 
+Uint8 colorsep_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 colorsep_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+
+void colorsep_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+}
