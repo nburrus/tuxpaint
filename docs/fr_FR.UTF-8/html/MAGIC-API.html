@@ -305,6 +305,8 @@
                   This should return the number of Magic tools this plugin provides to Tux Paint.                </p>
                 <p>
                   <b>Note:</b> Called once by Tux Paint, at startup.  It is called after your "<code>init()</code>", if it succeeded.                </p>
+                <p>
+                  <b>Note:</b> You may wish to resond differently, based on whether certain features have been disabled (e.g., 'paint' versus 'entire picture' controls, or 'Magic sizes' controls).                </p>
               </dd>
 
               <dt><code><b>int modes(magic_api * api, int which)</b></code></dt>
@@ -400,15 +402,19 @@
                 <p>
                   Return how many size variations the 'Magic' tool accepts, in the given mode (i.e., '<code>MODE_PAINT</code>' or '<code>MODE_FULLSCREEN</code>). Return a '0' if the 'Magic' tool should not offer sizing options. Returning '1' is the same as returning '0'.                </p>
                 <p>
-                  <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                </p>
+                  <b>Note:</b> For each Magic tool your plugin claims to contain (reported by your "<code>get_tool_count()</code>" function), this function will be called for each mode the tool claims to support (reported by your "<code>modes()</code>" function).                </p>
+                <p>
+                  <b>Note:</b> Added to Tux Paint 0.9.30; Magic API version 0x00000008.                </p>
               </dd>
 
               <dt><code><b>Uint8 default_size(magic_api * api, int which, int mode)</b></code></dt>
               <dd>
                 <p>
-                  Return the default size the 'Magic' tool accepts, in the given mode. This will be the default setting for the tool the first time it is used during a Tux Paint session. If Tux Paint is being invoked with the sizing option disabled, this will be the only size requested by Tux Paint.  Return a number between '1' and the amount you returned in <code>accepted_sizes()</code>.                </p>
+                  Return the default size the 'Magic' tool should start out with, in the given mode. This will be the default setting for the tool the first time it is used during a Tux Paint session. If Tux Paint is being invoked with the sizing option disabled, this will be the only size requested by Tux Paint.  Return a number between '1' and the amount you returned in <code>accepted_sizes()</code>.                </p>
                 <p>
-                  <b>Note:</b> Called once for each Magic tool your plugin claims to contain (by your "<code>get_tool_count()</code>").                </p>
+                  <b>Note:</b> For each Magic tool your plugin claims to contain (reported by your "<code>get_tool_count()</code>" function), this function will be called for each mode the tool claims to support (reported by your "<code>modes()</code>" function).                </p>
+                <p>
+                  <b>Note:</b> Added to Tux Paint 0.9.30; Magic API version 0x00000008.                </p>
               </dd>
 
               <dt><code><b>void shutdown(magic_api * api)</b></code></dt>
@@ -1141,8 +1147,11 @@
           <b><code>&amp;</code>:</b>
           See "ampersand"        </li>
         <li>
-          <b>ampersand:</b>
+          <b>ampersand (pointers):</b>
           "<code>&amp;</code>". A symbol in C that allows you to refer to the memory address of a variable; that is, a pointer. (For example, consider "<code>int i;</code>". Later, "<code>&amp;i</code>" refers to the memory where "<code>i</code>" is stored, not the value of "<code>i</code>" itself; it is a 'pointer to "<code>i</code>"'.)          See also: "star"        </li>
+        <li>
+          <b>ampersand (bitwise operator):</b>
+          "<code>&amp;</code>". A symbol in C that acts as a bitwise "and" operator. Only bits set in both values will be returned. For example, "<code>11 &amp; 6</code>" compares the binary values '1011' to '0110'. Only the bit in the 2's place is set, so the result is <code>2</code> ('0010').          See also: "bit"        </li>
         <li>
           <b>API:</b>
            Application Programming Interface. <i>TBD</i>
