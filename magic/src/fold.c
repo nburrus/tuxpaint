@@ -1,7 +1,7 @@
 /*
   Folds the picture down from the corners.
 
-  Last updated: February 12, 2023
+  Last updated: April 18, 2023
 */
 
 //optimized version soon :)
@@ -13,8 +13,6 @@
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
-
-#define FOLD_LEN 80
 
 #ifdef __ANDROID__
 #define inline static
@@ -50,7 +48,7 @@ void translate_xy(SDL_Surface * canvas, int x, int y, int *a, int *b,
 Uint32 fold_api_version(void);
 void fold_set_color(magic_api * api, int which, SDL_Surface * canvas,
                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int fold_init(magic_api * api);
+int fold_init(magic_api * api, Uint32 disabled_features);
 int fold_get_tool_count(magic_api * api);
 SDL_Surface *fold_get_icon(magic_api * api, int which);
 char *fold_get_name(magic_api * api, int which);
@@ -79,6 +77,9 @@ void fold_switchin(magic_api * api, int which, int mode,
 inline Uint8 fold_what_corner(int x, int y, SDL_Surface * canvas);
 void fold_switchout(magic_api * api, int which, int mode,
                     SDL_Surface * canvas);
+Uint8 fold_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 fold_default_size(magic_api * api, int which, int mode);
+void fold_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 Uint32 fold_api_version(void)
 {
@@ -94,7 +95,7 @@ void fold_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
   fold_b = b;
 }
 
-int fold_init(magic_api * api)
+int fold_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -634,4 +635,19 @@ void fold_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int fold_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT_WITH_PREVIEW);
+}
+
+
+Uint8 fold_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 fold_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void fold_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
