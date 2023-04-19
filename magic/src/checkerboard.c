@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 18, 2023
 */
 
 #include "tp_magic_api.h"
@@ -41,7 +41,7 @@ Mix_Chunk *checkerboard_snd;
 Uint32 checkerboard_api_version(void);
 void checkerboard_set_color(magic_api * api, int which, SDL_Surface * canvas,
                             SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int checkerboard_init(magic_api * api);
+int checkerboard_init(magic_api * api, Uint32 disabled_features);
 int checkerboard_get_tool_count(magic_api * api);
 SDL_Surface *checkerboard_get_icon(magic_api * api, int which);
 char *checkerboard_get_name(magic_api * api, int which);
@@ -66,6 +66,9 @@ void checkerboard_switchin(magic_api * api, int which, int mode,
 void checkerboard_switchout(magic_api * api, int which, int mode,
                             SDL_Surface * canvas);
 int checkerboard_modes(magic_api * api, int which);
+Uint8 checkerboard_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED);
+Uint8 checkerboard_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED);
+void checkerboard_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED);
 
 //                              Housekeeping functions
 
@@ -83,7 +86,7 @@ void checkerboard_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUT
   checkerboard_b = b;
 }
 
-int checkerboard_init(magic_api * api)
+int checkerboard_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -290,4 +293,18 @@ int checkerboard_modes(magic_api * api ATTRIBUTE_UNUSED,
                        int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+Uint8 checkerboard_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 checkerboard_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void checkerboard_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
