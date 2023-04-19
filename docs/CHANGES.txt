@@ -59,6 +59,9 @@ https://tuxpaint.org/
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
 
+    * Icelandic translation
+      Sveinn í Felli <sv1@fellsnet.is>
+
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
 
