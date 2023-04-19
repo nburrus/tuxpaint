@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-09 22:52-0700\n"
+"POT-Creation-Date: 2023-04-19 11:39-0700\n"
 "PO-Revision-Date: 2013-09-04 10:23+0530\n"
 "Last-Translator:  <b>\n"
 "Language-Team: Dogri\n"
@@ -865,7 +865,7 @@ msgstr "नमां"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9915
+#: ../tools.h:97 ../tuxpaint.c:9988
 msgid "Open"
 msgstr "खोह्‌ल्लो"
 
@@ -1086,282 +1086,282 @@ msgid ""
 msgstr "आकार गी घुमाने आस्तै माउस गी ल्हाओ.चित्रकारी आस्तै क्लिक करो."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2487
+#: ../tuxpaint.c:2500
 msgid "Do you really want to quit?"
 msgstr "क्या तुस सच्चें गै छोड़ना चांह्‌दे ओ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2490
+#: ../tuxpaint.c:2503
 msgid "Yes, I’m done!"
 msgstr "हां, में करी बैठां!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2493 ../tuxpaint.c:2520
+#: ../tuxpaint.c:2506 ../tuxpaint.c:2533
 msgid "No, take me back!"
 msgstr "नेईं, मिगी पिच्छें लेई जाओ."
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2510
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "जेकर तुस छोड़दे ओ, तां तुंʼदी तस्वीर नश्ट होई जाह्‌ग! इस्सी बचाइयै रक्खेआ जाऽ?"
 
-#: ../tuxpaint.c:2498 ../tuxpaint.c:2503
+#: ../tuxpaint.c:2511 ../tuxpaint.c:2516
 msgid "Yes, save it!"
 msgstr "हां, इस्सी बचाइयै रक्खेआ जाऽ !"
 
-#: ../tuxpaint.c:2499 ../tuxpaint.c:2504
+#: ../tuxpaint.c:2512 ../tuxpaint.c:2517
 msgid "No, don’t bother saving!"
 msgstr "नेईं, बचाइयै रक्खने दी लोड़ नेईं."
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2502
+#: ../tuxpaint.c:2515
 msgid "Save your picture first?"
 msgstr "तुंʼदी तस्वीर गी पैह्‌लें बचाइयै रक्खेआ जाऽ ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2507
+#: ../tuxpaint.c:2520
 msgid "Can’t open that picture!"
 msgstr "उस तस्वीर गी खोह्‌ल्ली नेईं सकदे !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2510 ../tuxpaint.c:2515 ../tuxpaint.c:2524 ../tuxpaint.c:2531
-#: ../tuxpaint.c:2540 ../tuxpaint.c:2545
+#: ../tuxpaint.c:2523 ../tuxpaint.c:2528 ../tuxpaint.c:2537 ../tuxpaint.c:2544
+#: ../tuxpaint.c:2553 ../tuxpaint.c:2558
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2514
+#: ../tuxpaint.c:2527
 msgid "There are no saved files!"
 msgstr "बचाइयै रक्खी दियां कोई फाइलां नेईं हैन !"
 
 #. Verification of print action
-#: ../tuxpaint.c:2518
+#: ../tuxpaint.c:2531
 msgid "Print your picture now?"
 msgstr "तुंʼदी तस्वीर गी हून प्रिंट कीता जाऽ ?"
 
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2532
 msgid "Yes, print it!"
 msgstr "हां, इस्सी प्रिंट करो !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2523
+#: ../tuxpaint.c:2536
 msgid "Your picture has been printed!"
 msgstr "हां, तुंʼदी तस्वीर गी प्रिंट करी लैता गेआ ऐ  !"
 
 #. We got an error printing
-#: ../tuxpaint.c:2527
+#: ../tuxpaint.c:2540
 msgid "Sorry! Your picture could not be printed!"
 msgstr "अफसोस ! तुंʼदी तस्वीर गी प्रिंट नेईं कीता जाई सकेआ !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2530
+#: ../tuxpaint.c:2543
 msgid "You can’t print yet!"
 msgstr "तुस अजें बी प्रिंट नेईं करी सकदे !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2534
+#: ../tuxpaint.c:2547
 msgid "Erase this picture?"
 msgstr "इस तस्वीर गी मटाई दित्ता जाऽ ?"
 
-#: ../tuxpaint.c:2535
+#: ../tuxpaint.c:2548
 msgid "Yes, erase it!"
 msgstr "हां, इस्सी मटाई देओ !"
 
-#: ../tuxpaint.c:2536
+#: ../tuxpaint.c:2549
 msgid "No, don’t erase it!"
 msgstr "नेईं, इस्सी मत मटाओ !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2539
+#: ../tuxpaint.c:2552
 msgid "Remember to use the left mouse button!"
 msgstr "खब्बा माउस बटन बरतना चेतै रक्खो !"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2543
+#: ../tuxpaint.c:2556
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "हां, तुंʼदी तस्वीर गी प्रिंट करी लैता गेआ ऐ  !"
 
-#: ../tuxpaint.c:2544
+#: ../tuxpaint.c:2557
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "हां, तुंʼदी तस्वीर गी प्रिंट करी लैता गेआ ऐ  !"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2548
+#: ../tuxpaint.c:2561
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "अफसोस ! तुंʼदी तस्वीर गी प्रिंट नेईं कीता जाई सकेआ !"
 
-#: ../tuxpaint.c:2549
+#: ../tuxpaint.c:2562
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "अफसोस ! तुंʼदी तस्वीर गी प्रिंट नेईं कीता जाई सकेआ !"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2553
+#: ../tuxpaint.c:2566
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "जेह्‌ड़ियां तस्वीरां तुस चांह्‌दे ओ, ओह् चुनो ते फ्ही “चलाओ” पर क्लिक करो."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2868
+#: ../tuxpaint.c:2881
 msgid "Sound muted."
 msgstr "अवाज़ गी बंद कीता गेदा ऐ."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2873
+#: ../tuxpaint.c:2886
 msgid "Sound unmuted."
 msgstr "अवाज़ गी छोड़ी दित्ता गेआ ."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3772
+#: ../tuxpaint.c:3785
 msgid "Please wait…"
 msgstr "कृपा करियै बलगो..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9918
+#: ../tuxpaint.c:9991
 msgid "Erase"
 msgstr "पूंझो"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9921
+#: ../tuxpaint.c:9994
 msgid "Slides"
 msgstr "स्लाइड़ां"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9924
+#: ../tuxpaint.c:9997
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9927
+#: ../tuxpaint.c:10000
 msgid "Back"
 msgstr "पिच्छें"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9930
+#: ../tuxpaint.c:10003
 msgid "Play"
 msgstr "चलाओ"
 
-#: ../tuxpaint.c:9934
+#: ../tuxpaint.c:10007
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9937
+#: ../tuxpaint.c:10010
 msgid "Next"
 msgstr "अगला"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9940
+#: ../tuxpaint.c:10013
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10875 ../tuxpaint.c:10877 ../tuxpaint.c:10878
+#: ../tuxpaint.c:11012 ../tuxpaint.c:11014 ../tuxpaint.c:11015
 msgid "Aa"
 msgstr "आऽ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:15223
+#: ../tuxpaint.c:15365
 msgid "Yes"
 msgstr "हां"
 
-#: ../tuxpaint.c:15227
+#: ../tuxpaint.c:15369
 msgid "No"
 msgstr "नेईं"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16502
+#: ../tuxpaint.c:16644
 msgid "Replace the picture with your changes?"
 msgstr "तुंʼदियें तब्दीलियें गी तस्वीर कन्नै प्रतिस्थापत कीता जाऽ ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16506
+#: ../tuxpaint.c:16648
 msgid "Yes, replace the old one!"
 msgstr "हां, परानी गी बदली ओड़ो!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16510
+#: ../tuxpaint.c:16652
 msgid "No, save a new file!"
 msgstr "नेईं इक नमीं फाइल बचाइयै रक्खो!"
 
-#: ../tuxpaint.c:17855
+#: ../tuxpaint.c:17997
 msgid "Choose the picture you want, then click “Open”."
 msgstr "जेह्‌ड़ी तस्वीर तुस चांह्‌दे ओ, ओह् चुनो ते फ्ही “खोह्‌ल्लो” पर क्लिक करो."
 
-#: ../tuxpaint.c:19578
+#: ../tuxpaint.c:19720
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25887
+#: ../tuxpaint.c:26112
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25888
+#: ../tuxpaint.c:26113
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "पीला !"
 
-#: ../tuxpaint.c:25889
+#: ../tuxpaint.c:26114
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "अस्मानी नीला !"
 
-#: ../tuxpaint.c:25890
+#: ../tuxpaint.c:26115
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "चिट्टा !"
 
-#: ../tuxpaint.c:25891
+#: ../tuxpaint.c:26116
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25892
+#: ../tuxpaint.c:26117
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "काला!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25897
+#: ../tuxpaint.c:26122
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25898
+#: ../tuxpaint.c:26123
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25899
+#: ../tuxpaint.c:26124
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25901
+#: ../tuxpaint.c:26126
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25903
+#: ../tuxpaint.c:26128
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25905
+#: ../tuxpaint.c:26130
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1369,21 +1369,21 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26743 ../tuxpaint.c:26750
+#: ../tuxpaint.c:26968 ../tuxpaint.c:26975
 msgid "entirely"
 msgstr ""
 
-#: ../tuxpaint.c:30004
+#: ../tuxpaint.c:30270
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:30015
+#: ../tuxpaint.c:30281
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:30029
+#: ../tuxpaint.c:30295
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1412,11 +1412,11 @@ msgstr "अपनी तस्वीरा दे हिस्सें च र�
 msgid "Click to change the colors in your entire picture."
 msgstr "अपनी सबूरी तस्वीरा च रंग बदलने आस्तै क्लिक करो."
 
-#: ../../magic/src/blind.c:129
+#: ../../magic/src/blind.c:132
 msgid "Blind"
 msgstr "ब्लाइंड"
 
-#: ../../magic/src/blind.c:144
+#: ../../magic/src/blind.c:147
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -1493,17 +1493,17 @@ msgstr "अपनी तस्वीरा दे हिस्सें च प�
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr "अपनी सबूरी तस्वीरा च  पच्चीकारी दा प्रभाव जोड़ने आस्तै क्लिक करो ."
 
-#: ../../magic/src/blur.c:84
+#: ../../magic/src/blur.c:88
 msgid "Blur"
 msgstr "ब्लर करो"
 
-#: ../../magic/src/blur.c:92
+#: ../../magic/src/blur.c:96
 #, fuzzy
 #| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to blur the image."
 msgstr "बिंब गी ब्लर करने आस्तै क्लिक करियै माउस गी फेरो."
 
-#: ../../magic/src/blur.c:93
+#: ../../magic/src/blur.c:97
 msgid "Click to blur the entire image."
 msgstr "सबूरे बिंब गी ब्लर करने आस्तै क्लिक करो."
 
@@ -1551,11 +1551,11 @@ msgstr "तस्वीरा गी कार्टून च बदलने �
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "तस्वीरा गी चाकी ड्राइङ बनाने आस्तै क्लिक करो ते माउस गी फेरो."
 
-#: ../../magic/src/checkerboard.c:116
+#: ../../magic/src/checkerboard.c:119
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:131
+#: ../../magic/src/checkerboard.c:134
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
@@ -1775,11 +1775,11 @@ msgstr "झग्ग"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "कुसै खित्ते गी झग्गी बुलबलें कन्नै भरने आस्तै क्लिक करो ते खिच्चो."
 
-#: ../../magic/src/fold.c:127
+#: ../../magic/src/fold.c:128
 msgid "Fold"
 msgstr "फोल्ड करो"
 
-#: ../../magic/src/fold.c:142
+#: ../../magic/src/fold.c:143
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "कोई पछौकड़ रंग चुनो ते सफे दी नुक्कर फोल्ड करने आस्तै क्लिक करो."
@@ -1812,15 +1812,33 @@ msgstr "अपनी तस्वीरा पर  शीशा टाइल प
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "अपनी सबूरी तस्वीरा गी  शीशा टाइल च कवर करने आस्तै क्लिक करो ."
 
-#: ../../magic/src/googlyeyes.c:165
+#: ../../magic/src/googlyeyes.c:23
+msgid ""
+"Click to place a large googly eye, then drag and release to make it look "
+"that direction."
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:24
+msgid ""
+"Click to place a small googly eye, then drag and release to make it look "
+"that direction."
+msgstr ""
+
+#: ../../magic/src/googlyeyes.c:203
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/grass.c:116
+#: ../../magic/src/googlyeyes.c:219
+msgid ""
+"Click to place a googly eye, then drag and release to make it look that "
+"direction."
+msgstr ""
+
+#: ../../magic/src/grass.c:118
 msgid "Grass"
 msgstr "घाऽ"
 
-#: ../../magic/src/grass.c:133
+#: ../../magic/src/grass.c:135
 #, fuzzy
 #| msgid "Click and move to draw grass. Don’t forget the dirt!"
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
@@ -1871,28 +1889,28 @@ msgid ""
 msgstr ""
 "अपनी तस्वीरें दे हिस्सें गी इʼयां बनाने आस्तै जिʼयां ओह् टैलीविज़न पर होन, क्लिक करो ते खिच्चो."
 
-#: ../../magic/src/kalidescope.c:128
+#: ../../magic/src/kalidescope.c:136
 msgid "Symmetric Left/Right"
 msgstr "इक्कै जेह् खब्बा/सज्जा"
 
-#: ../../magic/src/kalidescope.c:132
+#: ../../magic/src/kalidescope.c:140
 msgid "Symmetric Up/Down"
 msgstr "इक्कै जेह् उप्पर/खʼल्ल"
 
-#: ../../magic/src/kalidescope.c:136
+#: ../../magic/src/kalidescope.c:144
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:140
+#: ../../magic/src/kalidescope.c:148
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:144
+#: ../../magic/src/kalidescope.c:152
 msgid "Kaleidoscope"
 msgstr "कलाइडस्कोप"
 
-#: ../../magic/src/kalidescope.c:164
+#: ../../magic/src/kalidescope.c:172
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -1900,7 +1918,7 @@ msgstr ""
 "दो इक जनेहे बुर्शें कन्नै चित्रकारी करने आस्तै क्लिक करो ते माउस गी अपनी तस्वीरा पर खब्बेआ "
 "सज्जै  फेरो."
 
-#: ../../magic/src/kalidescope.c:170
+#: ../../magic/src/kalidescope.c:178
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -1908,13 +1926,13 @@ msgstr ""
 "दो इक जनेहे बुर्शें कन्नै चित्रकारी करने आस्तै क्लिक करो ते माउस गी अपनी तस्वीरा पर धुर "
 "उप्परा थल्ले तगर फेरो."
 
-#: ../../magic/src/kalidescope.c:176
+#: ../../magic/src/kalidescope.c:184
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "अपनी तस्वीरा पर नक्काशी करने आस्तै क्लिक करो ते माउस गी खिच्चो."
 
-#: ../../magic/src/kalidescope.c:182
+#: ../../magic/src/kalidescope.c:190
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -1926,7 +1944,7 @@ msgstr ""
 "दो इक जनेहे बुर्शें कन्नै चित्रकारी करने आस्तै क्लिक करो ते माउस गी अपनी तस्वीरा पर खब्बेआ "
 "सज्जै  फेरो."
 
-#: ../../magic/src/kalidescope.c:188
+#: ../../magic/src/kalidescope.c:196
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "इक जनेहे बुर्शें कन्नै चित्रकारी करने आस्तै क्लिक करो ते माउस फेरो (इक कलाइडस्कोप)."
