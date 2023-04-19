@@ -389,7 +389,33 @@ Tux Paint の起動
 
            「まほう」ツールは、様々な特殊なツールを集めたものです。右側のセレクタで、「まほう」の効果を選択することができます。効果を適用する方法は、クリック＋ドラッグ、単なるクリックなど、ツールごとに様々です。
 
-           クリック＋ドラッグを使用するツールの場合、右側のセレクタの下部左側にある「描画」を表すボタンが有効になります。１クリックで画面全体に効果を及ぼすツールの場合、右側の「画面全体」を表すボタンが有効になります。
+           Magic Controls
+
+             クリック＋ドラッグを使用するツールの場合、右側のセレクタの下部左側にある「描画」を表すボタンが有効になります。１クリックで画面全体に効果を及ぼすツールの場合、右側の「画面全体」を表すボタンが有効になります。
+
+             ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't
+             display the painting or entire picture controls. See the
+             "Options" documentation.
+
+             💡 If the magic controls are disabled, the Magic plugin may make
+             separate tools available, one for painting and one that affects
+             the entire pictre.
+
+           Magic Sizing
+
+             Some tools offer different sizing options. If so, a slider will
+             appear at the bottom right side of the screen. This may affect
+             the radius of a special effect (e.g., Darken) or painted object
+             (e.g., Patterns), or other attributes (e.g., large versus small
+             Brick shapes).
+
+             ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't
+             display the sizing controls. See the "Options" documentation.
+
+             💡 If the sizing option is disabled, the Magic plugin may simply
+             offer a default size (e.g., Patterns), or it may make separate
+             tools available with different pre-set sizes (e.g., Bricks and
+             Googly Eyes).
 
            「magic-docs」フォルダ内のドキュメント「まほう」ツールの一覧もお読みください。
 

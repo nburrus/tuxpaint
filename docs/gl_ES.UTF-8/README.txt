@@ -602,11 +602,37 @@ Ferramentas dispoñíbeis
            arredor da imaxe e/ou simplemente premer na imaxe unha vez para
            aplicar o efecto.
 
-           Se a ferramenta pode usarse premendo e arrastrando, estará
-           dispoñíbel un botón de «pintura» á esquerda, baixo a lista de
-           ferramentas Maxia na parte dereita da pantalla. Se a ferramenta
-           pode afectar toda a imaxe á vez, haberá un botón «imaxe completa»
-           á dereita.
+           Magic Controls
+
+             Se a ferramenta pode usarse premendo e arrastrando, estará
+             dispoñíbel un botón de «pintura» á esquerda, baixo a lista de
+             ferramentas Maxia na parte dereita da pantalla. Se a ferramenta
+             pode afectar toda a imaxe á vez, haberá un botón «imaxe
+             completa» á dereita.
+
+             ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't
+             display the painting or entire picture controls. See the
+             "Options" documentation.
+
+             💡 If the magic controls are disabled, the Magic plugin may make
+             separate tools available, one for painting and one that affects
+             the entire pictre.
+
+           Magic Sizing
+
+             Some tools offer different sizing options. If so, a slider will
+             appear at the bottom right side of the screen. This may affect
+             the radius of a special effect (e.g., Darken) or painted object
+             (e.g., Patterns), or other attributes (e.g., large versus small
+             Brick shapes).
+
+             ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't
+             display the sizing controls. See the "Options" documentation.
+
+             💡 If the sizing option is disabled, the Magic plugin may simply
+             offer a default size (e.g., Patterns), or it may make separate
+             tools available with different pre-set sizes (e.g., Bricks and
+             Googly Eyes).
 
            Consulte as instrucións de cada ferramenta Máxica (no cartafol
            «magic-docs»).

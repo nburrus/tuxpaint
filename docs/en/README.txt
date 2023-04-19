@@ -588,11 +588,37 @@ Available Tools
            picture, and/or simply click the picture once, to apply the
            effect.
 
-           If the tool can be used by clicking and dragging, a 'painting'
-           button will be available on the left, below the list of Magic
-           tools on the right side of the screen. If the tool can affect the
-           entire picture at once, an 'entire picture' button will be
-           available on the right.
+           Magic Controls
+
+             If the tool can be used by clicking and dragging, a 'painting'
+             button will be available on the left, below the list of Magic
+             tools on the right side of the screen. If the tool can affect
+             the entire picture at once, an 'entire picture' button will be
+             available on the right.
+
+             ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't
+             display the painting or entire picture controls. See the
+             "Options" documentation.
+
+             💡 If the magic controls are disabled, the Magic plugin may make
+             separate tools available, one for painting and one that affects
+             the entire pictre.
+
+           Magic Sizing
+
+             Some tools offer different sizing options. If so, a slider will
+             appear at the bottom right side of the screen. This may affect
+             the radius of a special effect (e.g., Darken) or painted object
+             (e.g., Patterns), or other attributes (e.g., large versus small
+             Brick shapes).
+
+             ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't
+             display the sizing controls. See the "Options" documentation.
+
+             💡 If the sizing option is disabled, the Magic plugin may simply
+             offer a default size (e.g., Patterns), or it may make separate
+             tools available with different pre-set sizes (e.g., Bricks and
+             Googly Eyes).
 
            See the instructions for each Magic tool (in the 'magic-docs'
            folder).

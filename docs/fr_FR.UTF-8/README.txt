@@ -618,11 +618,37 @@ Outils disponibles
            glisser dans l'image, et / ou simplement cliquer une fois sur
            l'image pour appliquer l'effet.
 
-           Si l'outil peut être utilisé en cliquant et en faisant glisser, un
-           bouton «peinture» sera disponible sur la gauche, sous la liste des
-           outils «magiques» sur le côté droit de l'écran. Si l'outil peut
-           affecter toute l'image en entier, un bouton «Image entière» sera
-           disponible sur la droite.
+           Magic Controls
+
+             Si l'outil peut être utilisé en cliquant et en faisant glisser,
+             un bouton «peinture» sera disponible sur la gauche, sous la
+             liste des outils «magiques» sur le côté droit de l'écran. Si
+             l'outil peut affecter toute l'image en entier, un bouton «Image
+             entière» sera disponible sur la droite.
+
+             ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't
+             display the painting or entire picture controls. See the
+             "Options" documentation.
+
+             💡 If the magic controls are disabled, the Magic plugin may make
+             separate tools available, one for painting and one that affects
+             the entire pictre.
+
+           Magic Sizing
+
+             Some tools offer different sizing options. If so, a slider will
+             appear at the bottom right side of the screen. This may affect
+             the radius of a special effect (e.g., Darken) or painted object
+             (e.g., Patterns), or other attributes (e.g., large versus small
+             Brick shapes).
+
+             ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't
+             display the sizing controls. See the "Options" documentation.
+
+             💡 If the sizing option is disabled, the Magic plugin may simply
+             offer a default size (e.g., Patterns), or it may make separate
+             tools available with different pre-set sizes (e.g., Bricks and
+             Googly Eyes).
 
            Voir les instructions pour chaque outil 'Magie' (dans le dossier
            'magic-docs').

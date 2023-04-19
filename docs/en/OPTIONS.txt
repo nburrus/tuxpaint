@@ -440,7 +440,7 @@ Simplification
            Some Magic tools offer various size settings. This option disables
            the sizing control, and only provides the tools' default sizes.
            (Some plugins may offer additional variations of a Magic tool, to
-           make a few sizes possible, e.g. "Bricks" and "Googly Eyes".
+           make a few sizes possible, e.g. "Bricks" and "Googly Eyes".)
 
            ⚙ Note: If used in a system-wide configuration file, may be
            overridden by the user's configuration file using
