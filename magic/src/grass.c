@@ -24,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 18, 2023
 */
 
 #include <stdio.h>
@@ -41,7 +41,7 @@ static Uint8 grass_r, grass_g, grass_b;
 static SDL_Surface *img_grass;
 
 // Prototypes
-int grass_init(magic_api * api);
+int grass_init(magic_api * api, Uint32 disabled_features);
 Uint32 grass_api_version(void);
 int grass_get_tool_count(magic_api * api);
 SDL_Surface *grass_get_icon(magic_api * api, int which);
@@ -67,10 +67,12 @@ void grass_switchin(magic_api * api, int which, int mode,
 void grass_switchout(magic_api * api, int which, int mode,
                      SDL_Surface * canvas);
 int grass_modes(magic_api * api, int which);
-
+Uint8 grass_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 grass_default_size(magic_api * api, int which, int mode);
+void grass_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 // No setup required:
-int grass_init(magic_api * api)
+int grass_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -309,4 +311,20 @@ void grass_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int grass_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 grass_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  /* FIXME: Perhaps some day this could be for blade thickness, height, randomness, or something else...? -bjk 2023.04.18 */
+  return 0;
+}
+
+Uint8 grass_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void grass_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
