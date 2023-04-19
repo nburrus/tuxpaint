@@ -3,7 +3,7 @@
    Draws a googly eye at the click position, and looks
    towards where you drag+release.
 
-  Last updated: April 12, 2023
+  Last updated: April 18, 2023
 */
 
 #include <stdio.h>
@@ -142,8 +142,6 @@ int googlyeyes_init(magic_api * api, Uint32 disabled_features)
     } else {
       size = (100 * (googlyeyes_sizes - i)) / googlyeyes_sizes;
     }
-
-    printf("%d -> %d%%\n", i, size);
 
     googlyeyes_img_bkgd[i] = api->scale(googlyeyes_img_bkgd[0],
                                         (googlyeyes_img_bkgd[0]->w * size) / 100,
