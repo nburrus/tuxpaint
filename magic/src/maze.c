@@ -42,7 +42,7 @@ int maze_start_x, maze_start_y;
 int num_maze_starts = 0, maze_starts_size = 0;
 
 Uint32 maze_api_version(void);
-int maze_init(magic_api * api);
+int maze_init(magic_api * api, Uint32 disabled_features);
 int maze_get_tool_count(magic_api * api);
 SDL_Surface *maze_get_icon(magic_api * api, int which);
 char *maze_get_name(magic_api * api, int which);
@@ -74,6 +74,9 @@ void draw_hall(SDL_Surface * canvas, int x, int y);
 void maze_add_start(void);
 int check_arrays(void);
 void maze_collapse_contiguous(SDL_Surface * canvas);
+Uint8 maze_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 maze_default_size(magic_api * api, int which, int mode);
+void maze_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 maze_api_version(void)
@@ -81,7 +84,7 @@ Uint32 maze_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int maze_init(magic_api * api)
+int maze_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -540,3 +543,16 @@ void maze_collapse_contiguous(SDL_Surface * canvas) {
   }
 }
 
+Uint8 maze_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 maze_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void maze_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+}
