@@ -39,6 +39,10 @@ https://tuxpaint.org/
       + Blur
       + Googly Eyes
       + WIP... more!
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * String 'V' and String corner magic tools preview with XOR effect.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Other Improvements:
     -------------------
