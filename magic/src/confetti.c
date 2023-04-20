@@ -56,6 +56,9 @@ int confetti_modes(magic_api * api, int which);
 void confetti_drag(magic_api * api, int which, SDL_Surface * canvas,
                    SDL_Surface * snapshot, int ox, int oy, int x, int y,
                    SDL_Rect * update_rect);
+Uint8 confetti_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 confetti_default_size(magic_api * api, int which, int mode);
+void confetti_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 Uint32 confetti_api_version(void)
 {
