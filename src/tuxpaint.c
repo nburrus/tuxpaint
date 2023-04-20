@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 12, 2023
+  June 14, 2002 - April 19, 2023
 */
 
 #include "platform.h"
@@ -20030,8 +20030,10 @@ static void play_slideshow(int *selected, int num_selected, char *dirname,
           if (starter_flipped)
             flip_starter();
         }
-        else
+        else if (template_id[0] != '\0')
+        {
           load_template(template_id);
+        }
       }
 
       /* "Back" button: */

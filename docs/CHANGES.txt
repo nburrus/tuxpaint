@@ -51,6 +51,11 @@ https://tuxpaint.org/
       (shows when certain features are enabled; not just disabled)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * Bug Fixes:
+    ----------
+    * Don't try to load a blank-named template during slideshow playback.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) translation
