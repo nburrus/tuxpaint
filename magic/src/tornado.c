@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -78,19 +78,12 @@ static void tornado_ComputeBezier(Point2D * cp, int numberOfPoints,
 static void tornado_colorize_cloud(magic_api * api);
 static Uint32 tornado_mess(Uint32 pixel, SDL_Surface * canvas);
 Uint32 tornado_api_version(void);
-int tornado_init(magic_api * api);
+int tornado_init(magic_api * api, Uint32 disabled_features);
 int tornado_get_tool_count(magic_api * api);
 SDL_Surface *tornado_get_icon(magic_api * api, int which);
 char *tornado_get_name(magic_api * api, int which);
 int tornado_get_group(magic_api * api, int which);
-
 char *tornado_get_description(magic_api * api, int which, int mode);
-
-
-
-
-
-
 void tornado_drag(magic_api * api, int which, SDL_Surface * canvas,
                   SDL_Surface * last, int ox, int oy, int x, int y,
                   SDL_Rect * update_rect);
@@ -109,6 +102,9 @@ void tornado_switchin(magic_api * api, int which, int mode,
 void tornado_switchout(magic_api * api, int which, int mode,
                        SDL_Surface * canvas);
 int tornado_modes(magic_api * api, int which);
+Uint8 tornado_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 tornado_default_size(magic_api * api, int which, int mode);
+void tornado_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 
@@ -119,7 +115,7 @@ Uint32 tornado_api_version(void)
 
 
 // No setup required:
-int tornado_init(magic_api * api)
+int tornado_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -628,4 +624,19 @@ int tornado_modes(magic_api * api ATTRIBUTE_UNUSED,
                   int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT_WITH_PREVIEW);
+}
+
+
+Uint8 tornado_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 tornado_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void tornado_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
