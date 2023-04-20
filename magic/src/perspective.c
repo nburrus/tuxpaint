@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 6, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -54,7 +54,7 @@ static void perspective_preview(magic_api * api, int which,
                                 int x, int y, SDL_Rect * update_rect,
                                 float step);
 Uint32 perspective_api_version(void);
-int perspective_init(magic_api * api);
+int perspective_init(magic_api * api, Uint32 disabled_features);
 int perspective_get_tool_count(magic_api * api);
 SDL_Surface *perspective_get_icon(magic_api * api, int which);
 char *perspective_get_name(magic_api * api, int which);
@@ -96,6 +96,9 @@ int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc,
 void perspective_line(void *ptr_to_api, int which, SDL_Surface * canvas,
                       SDL_Surface * snapshot, int x, int y);
 
+Uint8 perspective_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 perspective_default_size(magic_api * api, int which, int mode);
+void perspective_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 
@@ -196,7 +199,7 @@ Uint32 perspective_api_version(void)
 }
 
 //Load sounds
-int perspective_init(magic_api * api)
+int perspective_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];
@@ -892,4 +895,19 @@ void perspective_line(void *ptr_to_api, int which ATTRIBUTE_UNUSED,
     api->putpixel(canvas, x, y, black);
   else
     api->putpixel(canvas, x, y, white);
+}
+
+
+Uint8 perspective_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 perspective_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void perspective_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
