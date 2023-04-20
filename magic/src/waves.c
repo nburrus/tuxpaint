@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -41,7 +41,7 @@ static Mix_Chunk *waves_snd[2];
 /* Local function prototypes: */
 
 Uint32 waves_api_version(void);
-int waves_init(magic_api * api);
+int waves_init(magic_api * api, Uint32 disabled_features);
 int waves_get_tool_count(magic_api * api);
 SDL_Surface *waves_get_icon(magic_api * api, int which);
 char *waves_get_name(magic_api * api, int which);
@@ -63,6 +63,9 @@ void waves_switchin(magic_api * api, int which, int mode,
 void waves_switchout(magic_api * api, int which, int mode,
                      SDL_Surface * canvas);
 int waves_modes(magic_api * api, int which);
+Uint8 waves_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 waves_default_size(magic_api * api, int which, int mode);
+void waves_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 Uint32 waves_api_version(void)
 {
@@ -71,7 +74,7 @@ Uint32 waves_api_version(void)
 
 
 // No setup required:
-int waves_init(magic_api * api)
+int waves_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -253,4 +256,19 @@ void waves_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int waves_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 waves_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 waves_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void waves_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
