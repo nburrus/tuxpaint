@@ -38,6 +38,7 @@ https://tuxpaint.org/
       + Kaleidoscope
       + Blur
       + Googly Eyes
+      + Ripples
       + WIP... more!
       Bill Kendrick <bill@newbreedsoftware.com>
 

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -39,9 +39,10 @@
 static Mix_Chunk *ripples_snd;
 
 static int ripples_z, ripples_brite;
+static float ripples_radius = 100;
 
 Uint32 ripples_api_version(void);
-int ripples_init(magic_api * api);
+int ripples_init(magic_api * api, Uint32 disabled_features);
 int ripples_get_tool_count(magic_api * api);
 SDL_Surface *ripples_get_icon(magic_api * api, int which);
 char *ripples_get_name(magic_api * api, int which);
@@ -66,6 +67,10 @@ void ripples_switchin(magic_api * api, int which, int mode,
 void ripples_switchout(magic_api * api, int which, int mode,
                        SDL_Surface * canvas);
 int ripples_modes(magic_api * api, int which);
+Uint8 ripples_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 ripples_default_size(magic_api * api, int which, int mode);
+void ripples_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 ripples_api_version(void)
 {
@@ -76,7 +81,7 @@ Uint32 ripples_api_version(void)
 #define deg_sin(x) sin((x) * M_PI / 180.0)
 
 // No setup required:
-int ripples_init(magic_api * api)
+int ripples_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -161,15 +166,12 @@ void ripples_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                    SDL_Surface * canvas, SDL_Surface * last, int x, int y,
                    SDL_Rect * update_rect)
 {
-  float radius;
   float fli;
   int ox, oy, nx, ny, d;
 
-  radius = 100;
-
-  for (fli = 0; fli < radius; fli = fli + .25)
+  for (fli = 0; fli < ripples_radius; fli = fli + .25)
   {
-    ripples_z = (10 * deg_sin(((50 * 50) / (fli + 4)) * 10));
+    ripples_z = (10 * deg_sin(((powf(ripples_radius / 2.0, 2)) / (fli + 4)) * 10));
 
     ox = fli * deg_cos(0) + x;
     oy = -fli * deg_sin(0) + y;
@@ -189,10 +191,10 @@ void ripples_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     }
   }
 
-  update_rect->x = x - 100;
-  update_rect->y = y - 100;
-  update_rect->w = 200;
-  update_rect->h = 200;
+  update_rect->x = x - (int) ripples_radius;
+  update_rect->y = y - (int) ripples_radius;
+  update_rect->w = ((int) ripples_radius) * 2;
+  update_rect->h = ((int) ripples_radius) * 2;
 
   api->playsound(ripples_snd, (x * 255) / api->canvas_w, 255);
 }
@@ -243,4 +245,19 @@ int ripples_modes(magic_api * api ATTRIBUTE_UNUSED,
                   int which ATTRIBUTE_UNUSED)
 {
   return (MODE_ONECLICK);
+}
+
+
+Uint8 ripples_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED) {
+  return 10;
+}
+
+Uint8 ripples_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 5;
+}
+
+void ripples_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  ripples_radius = ((float) size) * 20.0;
 }
