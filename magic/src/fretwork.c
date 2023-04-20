@@ -1,7 +1,7 @@
 /*
   Draws fretwork
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include "tp_magic_api.h"
@@ -61,7 +61,7 @@ void fretwork_set_color(magic_api * api, int which, SDL_Surface * canvas,
                         SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 static void fretwork_colorize(magic_api * api, SDL_Surface * dest,
                               SDL_Surface * src);
-int fretwork_init(magic_api * api);
+int fretwork_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED);
 int fretwork_get_tool_count(magic_api * api);
 SDL_Surface *fretwork_get_icon(magic_api * api, int which);
 char *fretwork_get_name(magic_api * api, int which);
@@ -92,6 +92,9 @@ void fretwork_drag(magic_api * api, int which, SDL_Surface * canvas,
 static void fretwork_draw_wrapper(void *ptr, int which, SDL_Surface * canvas,
                                   SDL_Surface * last, int x, int y);
 inline unsigned int fretwork_get_segment(int x, int y);
+Uint8 fretwork_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 fretwork_default_size(magic_api * api, int which, int mode);
+void fretwork_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 SDL_Surface *fretwork_one, *fretwork_three, *fretwork_four, *fretwork_corner;
@@ -146,7 +149,7 @@ static void fretwork_colorize(magic_api * api, SDL_Surface * dest,
 }
 
 
-int fretwork_init(magic_api * api)
+int fretwork_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   Uint8 i;                      //is always < 4, so Uint8 seems to be a good idea
@@ -704,5 +707,18 @@ void fretwork_drag(magic_api * api, int which,
     update_rect->w = w;
     update_rect->h = h;
   }
+}
 
+Uint8 fretwork_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 fretwork_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void fretwork_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
