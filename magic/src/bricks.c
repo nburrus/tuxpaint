@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -49,13 +49,15 @@ enum
 
 static Mix_Chunk *brick_snd;
 static Uint8 bricks_r, bricks_g, bricks_b;
+static int brick_two_tools = 0;
+static int brick_size = TOOL_LARGEBRICKS;
 
 
 /* Local function prototype: */
 
 static void do_brick(magic_api * api, SDL_Surface * canvas, int x, int y,
                      int w, int h);
-int bricks_init(magic_api * api);
+int bricks_init(magic_api * api, Uint32 disabled_features);
 Uint32 bricks_api_version(void);
 int bricks_get_tool_count(magic_api * api);
 SDL_Surface *bricks_get_icon(magic_api * api, int which);
@@ -77,15 +79,23 @@ void bricks_switchin(magic_api * api, int which, int mode,
 void bricks_switchout(magic_api * api, int which, int mode,
                       SDL_Surface * canvas);
 int bricks_modes(magic_api * api, int which);
+Uint8 bricks_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 bricks_default_size(magic_api * api, int which, int mode);
+void bricks_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 // No setup required:
-int bricks_init(magic_api * api)
+int bricks_init(magic_api * api, Uint32 disabled_features)
 {
   char fname[1024];
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/brick.wav",
            api->data_directory);
   brick_snd = Mix_LoadWAV(fname);
+
+  if (disabled_features & MAGIC_FEATURE_SIZE)
+    brick_two_tools = 1;
+  else
+    brick_two_tools = 0;
 
   return (1);
 }
@@ -98,7 +108,10 @@ Uint32 bricks_api_version(void)
 // We have multiple tools:
 int bricks_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return (NUM_TOOLS);
+  if (brick_two_tools)
+    return (NUM_TOOLS);
+  else
+    return 1;
 }
 
 // Load our icons:
@@ -140,10 +153,14 @@ int bricks_get_group(magic_api * api ATTRIBUTE_UNUSED,
 char *bricks_get_description(magic_api * api ATTRIBUTE_UNUSED, int which,
                              int mode ATTRIBUTE_UNUSED)
 {
-  if (which == TOOL_LARGEBRICKS)
-    return (strdup(gettext_noop("Click and drag to draw large bricks.")));
-  else if (which == TOOL_SMALLBRICKS)
-    return (strdup(gettext_noop("Click and drag to draw small bricks.")));
+  if (brick_two_tools) {
+    if (which == TOOL_LARGEBRICKS)
+      return (strdup(gettext_noop("Click and drag to draw large bricks.")));
+    else if (which == TOOL_SMALLBRICKS)
+      return (strdup(gettext_noop("Click and drag to draw small bricks.")));
+  } else {
+    return (strdup(gettext_noop("Click and drag to draw bricks.")));
+  }
 
   return (NULL);
 }
@@ -170,7 +187,7 @@ static void do_bricks(void *ptr, int which, SDL_Surface * canvas,
   static int y_count;
   unsigned char *mybrick;
 
-  if (which == TOOL_LARGEBRICKS)
+  if ((brick_two_tools && which == TOOL_LARGEBRICKS) || (brick_two_tools == 0 && brick_size == TOOL_LARGEBRICKS))
   {
     vertical_joint = 4;         // between a brick and the one above/below
     horizontal_joint = 4;       // between a brick and the one to the side
@@ -362,4 +379,23 @@ void bricks_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int bricks_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 bricks_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 2;
+}
+
+Uint8 bricks_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 2;
+}
+
+void bricks_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED) {
+  if (size == 1) {
+    brick_size = TOOL_SMALLBRICKS;
+  } else { // 2
+    brick_size = TOOL_LARGEBRICKS;
+  }
 }
