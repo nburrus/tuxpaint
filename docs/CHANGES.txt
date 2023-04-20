@@ -37,6 +37,7 @@ https://tuxpaint.org/
     * Various Magic tools now support sizing options:
       + Kaleidoscope
       + Blur
+      + Confetti
       + Googly Eyes
       + Puzzle
       + Rainbow & Smooth Rainbow

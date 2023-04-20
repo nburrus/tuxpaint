@@ -1,5 +1,5 @@
 /*
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <time.h>               //For time()
@@ -8,7 +8,7 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-#define CONFETTI_BRUSH_SIZE 8   //radius of each confetti circle
+static int CONFETTI_BRUSH_SIZE = 8;   //radius of each confetti circle
 #define CONFETTI_QUANTITY 3     //how many circles will be created every click?
 
 #ifdef __ANDROID__
@@ -28,7 +28,7 @@ Mix_Chunk *confetti_snd;
 Uint32 confetti_api_version(void);
 void confetti_set_color(magic_api * api, int which, SDL_Surface * canvas,
                         SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int confetti_init(magic_api * api);
+int confetti_init(magic_api * api, Uint32 disabled_features);
 int confetti_get_tool_count(magic_api * api);
 SDL_Surface *confetti_get_icon(magic_api * api, int which);
 char *confetti_get_name(magic_api * api, int which);
@@ -71,7 +71,7 @@ void confetti_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UN
   confetti_colors.b = b;
 }
 
-int confetti_init(magic_api * api)
+int confetti_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -209,8 +209,8 @@ void confetti_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   for (i = 0; i < CONFETTI_QUANTITY; i++)
   {
     srand((dx + dy) / 2 + time(0));     //to get a unique seed even if dx and dy aren't defined
-    dx = (rand() % 100) - 50;   //generate a value between <-50; +50>
-    dy = (rand() % 100) - 50;   //to spread confetti around the cursor position
+    dx = (rand() % CONFETTI_BRUSH_SIZE * 12) - (CONFETTI_BRUSH_SIZE * 6);   //generate a value between <-50; +50>
+    dy = (rand() % CONFETTI_BRUSH_SIZE * 12) - (CONFETTI_BRUSH_SIZE * 6);   //to spread confetti around the cursor position
 
     if (!i)
     {
@@ -273,4 +273,20 @@ int confetti_modes(magic_api * api ATTRIBUTE_UNUSED,
                    int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 confetti_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 8;
+}
+
+Uint8 confetti_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 2;
+}
+
+void confetti_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  CONFETTI_BRUSH_SIZE = size * 4;
 }
