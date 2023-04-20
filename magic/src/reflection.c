@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -51,7 +51,7 @@ enum reflection_sides
 int reflection_side_old;
 
 /* Local function prototypes: */
-int reflection_init(magic_api * api);
+int reflection_init(magic_api * api, Uint32 disabled_features);
 Uint32 reflection_api_version(void);
 int reflection_get_tool_count(magic_api * api);
 SDL_Surface *reflection_get_icon(magic_api * api, int which);
@@ -78,10 +78,13 @@ void reflection_switchin(magic_api * api, int which, int mode,
 void reflection_switchout(magic_api * api, int which, int mode,
                           SDL_Surface * canvas);
 int reflection_modes(magic_api * api, int which);
+Uint8 reflection_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 reflection_default_size(magic_api * api, int which, int mode);
+void reflection_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 
-int reflection_init(magic_api * api)
+int reflection_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -427,4 +430,19 @@ int reflection_modes(magic_api * api ATTRIBUTE_UNUSED,
                      int which ATTRIBUTE_UNUSED)
 {
   return MODE_PAINT;
+}
+
+
+Uint8 reflection_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 reflection_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void reflection_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
