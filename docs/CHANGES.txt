@@ -38,6 +38,7 @@ https://tuxpaint.org/
       + Kaleidoscope
       + Blur
       + Googly Eyes
+      + Puzzle
       + Rainbow & Smooth Rainbow
       + Ripples
       + Rosette, Picasso

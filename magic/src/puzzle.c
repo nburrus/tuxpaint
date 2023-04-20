@@ -34,7 +34,7 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-#define RATIO 5                 //change this value to get bigger puzzle
+static int RATIO = 5;
 
 //TODO: Fullscreen mode
 //In fullscreen mode RATIO _should_ be 1
@@ -50,7 +50,7 @@ static int rects_w, rects_h;
 SDL_Surface *canvas_backup;
 
 Uint32 puzzle_api_version(void);
-int puzzle_init(magic_api * api);
+int puzzle_init(magic_api * api, Uint32 disabled_features);
 int puzzle_get_tool_count(magic_api * api);
 SDL_Surface *puzzle_get_icon(magic_api * api, int which);
 char *puzzle_get_name(magic_api * api, int which);
@@ -78,13 +78,16 @@ void puzzle_click(magic_api * api, int which, int mode,
                   SDL_Surface * canvas, SDL_Surface * last, int x, int y,
                   SDL_Rect * update_rect);
 int gcd(int a, int b);
+Uint8 puzzle_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 puzzle_default_size(magic_api * api, int which, int mode);
+void puzzle_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 Uint32 puzzle_api_version(void)
 {
   return (TP_MAGIC_API_VERSION);
 }
 
-int puzzle_init(magic_api * api)
+int puzzle_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -282,3 +285,21 @@ void puzzle_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 {
   puzzle_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
+
+
+Uint8 puzzle_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 10;
+}
+
+Uint8 puzzle_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void puzzle_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  RATIO = size + 1;
+  puzzle_switchin(api, which, mode, canvas);
+}
+
