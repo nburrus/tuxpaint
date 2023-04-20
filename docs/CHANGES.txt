@@ -40,6 +40,8 @@ https://tuxpaint.org/
       + Googly Eyes
       + Rainbow & Smooth Rainbow
       + Ripples
+      + Rosette, Picasso
+      + Sharpen, Edges, Silhouette
       + WIP... more!
       Bill Kendrick <bill@newbreedsoftware.com>
 

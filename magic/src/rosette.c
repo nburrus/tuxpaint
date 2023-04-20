@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 // sound only plays on release
@@ -35,7 +35,8 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 #include <math.h>               //for sin, cos, ...
-#define ROSETTE_R 8             //circle's diameter
+
+static int ROSETTE_R = 8; //circle's diameter
 
 static int xmid, ymid;
 
@@ -53,7 +54,7 @@ Mix_Chunk *rosette_snd;
 Uint32 rosette_api_version(void);
 void rosette_set_color(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int rosette_init(magic_api * api);
+int rosette_init(magic_api * api, Uint32 disabled_features);
 int rosette_get_tool_count(magic_api * api);
 SDL_Surface *rosette_get_icon(magic_api * api, int which);
 char *rosette_get_name(magic_api * api, int which);
@@ -80,6 +81,10 @@ void rosette_switchout(magic_api * api, int which, int mode,
 int rosette_modes(magic_api * api, int which);
 void rosette_circle(void *ptr, int which, SDL_Surface * canvas,
                     SDL_Surface * snapshot, int x, int y);
+Uint8 rosette_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 rosette_default_size(magic_api * api, int which, int mode);
+void rosette_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 rosette_api_version(void)
 {
@@ -95,7 +100,7 @@ void rosette_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
   rosette_colors.b = b;
 }
 
-int rosette_init(magic_api * api)
+int rosette_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -276,4 +281,20 @@ int rosette_modes(magic_api * api ATTRIBUTE_UNUSED,
                   int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 rosette_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+Uint8 rosette_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 1;
+}
+
+void rosette_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  ROSETTE_R = (size + 2) * 2;
 }
