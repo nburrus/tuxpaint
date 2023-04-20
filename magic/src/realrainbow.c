@@ -35,7 +35,7 @@ void realrainbow_arc(magic_api * api, int which, SDL_Surface * canvas,
 static void realrainbow_linecb(void *ptr, int which, SDL_Surface * canvas,
                                SDL_Surface * last, int x, int y);
 Uint32 realrainbow_api_version(void);
-int realrainbow_init(magic_api * api);
+int realrainbow_init(magic_api * api, Uint32 disabled_features);
 int realrainbow_get_tool_count(magic_api * api);
 SDL_Surface *realrainbow_get_icon(magic_api * api, int which);
 char *realrainbow_get_name(magic_api * api, int which);
@@ -59,6 +59,9 @@ void realrainbow_switchin(magic_api * api, int which, int mode,
                           SDL_Surface * canvas);
 void realrainbow_switchout(magic_api * api, int which, int mode,
                            SDL_Surface * canvas);
+Uint8 realrainbow_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 realrainbow_default_size(magic_api * api, int which, int mode);
+void realrainbow_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 realrainbow_api_version(void)
@@ -66,7 +69,7 @@ Uint32 realrainbow_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int realrainbow_init(magic_api * api)
+int realrainbow_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -413,4 +416,19 @@ static void realrainbow_linecb(void *ptr, int which ATTRIBUTE_UNUSED,
     ((origb * (255 - realrainbow_blenda)) / 255);
 
   api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, newr, newg, newb));
+}
+
+
+Uint8 realrainbow_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 realrainbow_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void realrainbow_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
