@@ -3,7 +3,7 @@
 
   Draw train tracks.
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -52,7 +52,7 @@ Uint32 rails_api_version(void);
 int rails_modes(magic_api * api, int which);
 void rails_set_color(magic_api * api, int which, SDL_Surface * canvas,
                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int rails_init(magic_api * api);
+int rails_init(magic_api * api, Uint32 disabled_features);
 int rails_get_tool_count(magic_api * api);
 SDL_Surface *rails_get_icon(magic_api * api, int which);
 char *rails_get_name(magic_api * api, int which);
@@ -88,6 +88,9 @@ static void rails_draw_wrapper(void *ptr, int which, SDL_Surface * canvas,
 void rails_drag(magic_api * api, int which, SDL_Surface * canvas,
                 SDL_Surface * snapshot, int ox, int oy, int x, int y,
                 SDL_Rect * update_rect);
+Uint8 rails_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 rails_default_size(magic_api * api, int which, int mode);
+void rails_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 Uint32 rails_api_version(void)
 {
@@ -104,7 +107,7 @@ void rails_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 {
 }
 
-int rails_init(magic_api * api)
+int rails_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   Uint8 i;                      //is always < 3, so Uint8 seems to be a good idea
@@ -611,4 +614,19 @@ void rails_drag(magic_api * api, int which, SDL_Surface * canvas,
     update_rect->h = h;
   }
 
+}
+
+
+Uint8 rails_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 rails_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void rails_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
