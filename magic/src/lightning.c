@@ -3,7 +3,7 @@
   Draws a lightning strike between the click
   and drag+release positions.
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -21,7 +21,7 @@ int sx, sy;
 
 
 Uint32 lightning_api_version(void);
-int lightning_init(magic_api * api);
+int lightning_init(magic_api * api, Uint32 disabled_features);
 int lightning_get_tool_count(magic_api * api);
 SDL_Surface *lightning_get_icon(magic_api * api, int which);
 char *lightning_get_name(magic_api * api, int which);
@@ -50,6 +50,9 @@ void lightning_switchin(magic_api * api, int which, int mode,
                         SDL_Surface * canvas);
 void lightning_switchout(magic_api * api, int which, int mode,
                          SDL_Surface * canvas);
+Uint8 lightning_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 lightning_default_size(magic_api * api, int which, int mode);
+void lightning_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 lightning_api_version(void)
@@ -57,7 +60,7 @@ Uint32 lightning_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int lightning_init(magic_api * api)
+int lightning_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -328,5 +331,19 @@ void lightning_switchout(magic_api * api ATTRIBUTE_UNUSED,
                          int which ATTRIBUTE_UNUSED,
                          int mode ATTRIBUTE_UNUSED,
                          SDL_Surface * canvas ATTRIBUTE_UNUSED)
+{
+}
+
+Uint8 lightning_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 lightning_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void lightning_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
