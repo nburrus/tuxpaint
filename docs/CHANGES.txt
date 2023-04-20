@@ -45,6 +45,7 @@ https://tuxpaint.org/
       + Ripples
       + Rosette, Picasso
       + Sharpen, Edges, Silhouette
+      + Toothpaste
       + WIP... more!
       Bill Kendrick <bill@newbreedsoftware.com>
 

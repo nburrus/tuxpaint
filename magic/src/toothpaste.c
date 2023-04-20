@@ -44,7 +44,7 @@
 
 double pi;
 static Uint8 toothpaste_r, toothpaste_g, toothpaste_b;
-static const int toothpaste_RADIUS = 10;
+static int toothpaste_RADIUS = 10;
 double *toothpaste_weights = NULL;
 
 enum
@@ -77,7 +77,7 @@ const char *toothpaste_descs[toothpaste_NUM_TOOLS] = {
 
 
 Uint32 toothpaste_api_version(void);
-int toothpaste_init(magic_api * api);
+int toothpaste_init(magic_api * api, Uint32 disabled_features);
 int toothpaste_get_tool_count(magic_api * api);
 SDL_Surface *toothpaste_get_icon(magic_api * api, int which);
 char *toothpaste_get_name(magic_api * api, int which);
@@ -103,6 +103,11 @@ void toothpaste_switchin(magic_api * api, int which, int mode,
 void toothpaste_switchout(magic_api * api, int which, int mode,
                           SDL_Surface * canvas);
 int toothpaste_modes(magic_api * api, int which);
+int toothpaste_setup_weights(magic_api * api);
+Uint8 toothpaste_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 toothpaste_default_size(magic_api * api, int which, int mode);
+void toothpaste_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 toothpaste_api_version(void)
 {
@@ -110,12 +115,10 @@ Uint32 toothpaste_api_version(void)
 }
 
 
-int toothpaste_init(magic_api * api)
+int toothpaste_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
-
   int i;
   char fname[1024];
-  int k, j;
 
   //Load sounds
   for (i = 0; i < toothpaste_NUM_TOOLS; i++)
@@ -125,8 +128,19 @@ int toothpaste_init(magic_api * api)
     toothpaste_snd_effect[i] = Mix_LoadWAV(fname);
   }
 
+  return (toothpaste_setup_weights(api));
+}
+
+int toothpaste_setup_weights(magic_api * api)
+{
+  int k, j;
+
   //Set up weights
   pi = acos(0.0) * 2;
+  if (toothpaste_weights != NULL) {
+    free(toothpaste_weights);
+  }
+
   toothpaste_weights =
     (double *) malloc(toothpaste_RADIUS * 2 * toothpaste_RADIUS * 2 *
                       sizeof(double));
@@ -193,8 +207,10 @@ static void do_toothpaste(void *ptr, int which ATTRIBUTE_UNUSED,
                           SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
-
   int xx, yy;
+
+  if (toothpaste_weights == NULL)
+    return;
 
   // double colr;
   float h, s, v;
@@ -316,4 +332,21 @@ int toothpaste_modes(magic_api * api ATTRIBUTE_UNUSED,
                      int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 toothpaste_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 6;
+}
+
+Uint8 toothpaste_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 2;
+}
+
+void toothpaste_set_size(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  toothpaste_RADIUS = size * 5;
+  toothpaste_setup_weights(api);
 }
