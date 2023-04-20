@@ -46,7 +46,7 @@ static void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * last, int ox, int oy, int x, int y,
                        SDL_Rect * update_rect, int crosshairs);
 Uint32 shift_api_version(void);
-int shift_init(magic_api * api);
+int shift_init(magic_api * api, Uint32 disabled_features);
 int shift_get_tool_count(magic_api * api);
 SDL_Surface *shift_get_icon(magic_api * api, int which);
 char *shift_get_name(magic_api * api, int which);
@@ -70,6 +70,10 @@ void shift_switchout(magic_api * api, int which, int mode,
                      SDL_Surface * canvas);
 int shift_modes(magic_api * api, int which);
 
+Uint8 shift_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 shift_default_size(magic_api * api, int which, int mode);
+void shift_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 
 Uint32 shift_api_version(void)
@@ -79,7 +83,7 @@ Uint32 shift_api_version(void)
 
 
 // No setup required:
-int shift_init(magic_api * api)
+int shift_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -363,4 +367,19 @@ void shift_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int shift_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT_WITH_PREVIEW);
+}
+
+
+Uint8 shift_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 shift_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void shift_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
