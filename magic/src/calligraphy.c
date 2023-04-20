@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 19, 2023
 */
 
 #include <stdio.h>
@@ -52,7 +52,7 @@ static Point2D calligraphy_PointOnCubicBezier(Point2D * cp, float t);
 static void calligraphy_ComputeBezier(Point2D * cp, int numberOfPoints,
                                       Point2D * curve);
 static float calligraphy_dist(float x1, float y1, float x2, float y2);
-int calligraphy_init(magic_api * api);
+int calligraphy_init(magic_api * api, Uint32 disabled_features);
 Uint32 calligraphy_api_version(void);
 int calligraphy_get_tool_count(magic_api * api);
 SDL_Surface *calligraphy_get_icon(magic_api * api, int which);
@@ -77,9 +77,13 @@ void calligraphy_switchin(magic_api * api, int which, int mode,
 void calligraphy_switchout(magic_api * api, int which, int mode,
                            SDL_Surface * canvas);
 int calligraphy_modes(magic_api * api, int which);
+Uint8 calligraphy_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 calligraphy_default_size(magic_api * api, int which, int mode);
+void calligraphy_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
-// No setup required:
-int calligraphy_init(magic_api * api)
+
+
+int calligraphy_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -471,4 +475,19 @@ int calligraphy_modes(magic_api * api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 calligraphy_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 calligraphy_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void calligraphy_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
