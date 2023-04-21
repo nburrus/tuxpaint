@@ -41,6 +41,7 @@ https://tuxpaint.org/
       + Clone
       + Confetti
       + Googly Eyes
+      + Light
       + Metal Paint
       + Negative & Opposite
       + Pixels
