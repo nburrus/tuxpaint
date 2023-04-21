@@ -821,4 +821,4 @@ Tux Paint の起動
      * "Mastodon" は Mastodon gGmbH の登録商標です。
      * "Reddit" は、Reddit 社の登録商標です。
      * "Tumblr" は Tumblr 社の登録商標です。
-     * "Twitter" は、Twitter 社の登録商標です。
+     * "Twitter" is a registered trademark of X Corp.

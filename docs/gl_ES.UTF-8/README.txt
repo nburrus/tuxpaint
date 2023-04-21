@@ -1206,4 +1206,4 @@ Importar imaxes manualmente
      * "Mastodon" is a registered trademark of Mastodon gGmbH.
      * "Reddit" is a registered trademark of Reddit, Inc.
      * "Tumblr" is a registered trademark of Tumblr, Inc.
-     * "Twitter" is a registered trademark of Twitter, Inc.
+     * "Twitter" is a registered trademark of X Corp.
