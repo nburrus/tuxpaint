@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - April 8, 2023
+June 17, 2002 - April 20, 2023
 
 * Design and Coding:
 
@@ -1052,7 +1052,8 @@ June 17, 2002 - April 8, 2023
 
   * Songhay
     Abdoul Cisse <abdoulseydou@hotmail.com>
-    Mohomodou Houssouba <mh@bollag-areal.ch>
+    Mohomodou Houssouba <mh@songhay.org>
+    Songhay localisation and dictionary project <https://www.songhay.org/>
 
   * Spanish
     Teresa Orive <teresa.g.orive@gmail.com>

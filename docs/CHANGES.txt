@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.13 (0.9.30)
+2023.April.20 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -81,6 +81,11 @@ https://tuxpaint.org/
 
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
+
+    * Songhay translation
+      Abdoul Cisse <abdoulseydou@hotmail.com>
+      Mohomodou Houssouba <mh@songhay.org>
+      Songhay localisation and dictionary project <https://www.songhay.org/>
 
 2023.April.2 (0.9.29)
   * Improvements to "Stamp" tool:
