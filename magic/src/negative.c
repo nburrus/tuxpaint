@@ -33,8 +33,9 @@
 #include "SDL_mixer.h"
 
 static Mix_Chunk *negative_snd;
+static int negative_radius = 16;
 
-int negative_init(magic_api * api);
+int negative_init(magic_api * api, Uint32 disabled_features);
 Uint32 negative_api_version(void);
 int negative_get_tool_count(magic_api * api);
 SDL_Surface *negative_get_icon(magic_api * api, int which);
@@ -62,6 +63,9 @@ void negative_switchin(magic_api * api, int which, int mode,
 void negative_switchout(magic_api * api, int which, int mode,
                         SDL_Surface * canvas);
 int negative_modes(magic_api * api, int which);
+Uint8 negative_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 negative_default_size(magic_api * api, int which, int mode);
+void negative_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 enum
 {
@@ -93,7 +97,7 @@ const char *negative_descs[negative_NUM_TOOLS][2] = {
 };
 
 
-int negative_init(magic_api * api)
+int negative_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -192,11 +196,11 @@ static void do_negative(void *ptr, int which, SDL_Surface * canvas,
   Uint8 r, g, b, new_r, new_g, new_b;
   magic_api *api = (magic_api *) ptr;
 
-  for (yy = y - 16; yy < y + 16; yy++)
+  for (yy = y - negative_radius; yy < y + negative_radius; yy++)
   {
-    for (xx = x - 16; xx < x + 16; xx++)
+    for (xx = x - negative_radius; xx < x + negative_radius; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, 16))
+      if (api->in_circle(xx - x, yy - y, negative_radius))
       {
         SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
         negative_calc(api, which, r, g, b, &new_r, &new_g, &new_b);
@@ -232,10 +236,10 @@ void negative_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
+  update_rect->x = ox - negative_radius;
+  update_rect->y = oy - negative_radius;
+  update_rect->w = (x + negative_radius) - update_rect->x;
+  update_rect->h = (y + negative_radius) - update_rect->y;
 
   api->playsound(negative_snd, (x * 255) / canvas->w, 255);
 
@@ -322,4 +326,22 @@ int negative_modes(magic_api * api ATTRIBUTE_UNUSED,
                    int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
+}
+
+
+Uint8 negative_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode) {
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 negative_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void negative_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  negative_radius = size * 4;
 }
