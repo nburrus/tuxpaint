@@ -40,6 +40,7 @@ https://tuxpaint.org/
       + Bricks
       + Clone
       + Confetti
+      + Foam
       + Googly Eyes
       + Light
       + Metal Paint
@@ -59,6 +60,13 @@ https://tuxpaint.org/
 
     * Clone performance improved.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Foam bubbles now always appear circular.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * New Foam sound effect.
+      (Sound effect licensed as Creative Commons 0 by
+      https://freesound.org/people/ristooooo1)
 
   * Other Improvements:
     -------------------

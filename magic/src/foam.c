@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 20, 2023
 */
 
 #include <stdio.h>
@@ -42,11 +42,12 @@ static int *foam_mask, *foam_mask_tmp;
 static SDL_Surface *foam_7, *foam_5, *foam_3, *foam_1;
 
 Uint32 foam_api_version(void);
-int foam_init(magic_api * api);
+int foam_init(magic_api * api, Uint32 disabled_features);
 char *foam_get_description(magic_api * api, int which, int mode);
 void foam_release(magic_api * api, int which,
                   SDL_Surface * canvas, SDL_Surface * last, int x, int y,
                   SDL_Rect * update_rect);
+void foam_release_worker(SDL_Surface * canvas, SDL_Surface* last, SDL_Rect * update_rect);
 void foam_drag(magic_api * api, int which, SDL_Surface * canvas,
                SDL_Surface * last, int ox, int oy, int x, int y,
                SDL_Rect * update_rect);
@@ -67,6 +68,9 @@ void foam_shutdown(magic_api * api);
 int foam_get_tool_count(magic_api * api);
 int foam_modes(magic_api * api, int which);
 int foam_requires_colors(magic_api * api, int which);
+Uint8 foam_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 foam_default_size(magic_api * api, int which, int mode);
+void foam_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 #define FOAM_PROP 8
 #define FOAM_RADIUS 3
@@ -78,7 +82,7 @@ Uint32 foam_api_version(void)
 
 
 // No setup required:
-int foam_init(magic_api * api)
+int foam_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   SDL_Surface *foam_data;
@@ -93,16 +97,16 @@ int foam_init(magic_api * api)
 
   foam_7 =
     api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 4) / 4,
-               ((api->canvas_h / FOAM_PROP) * 4) / 4, 0);
+               ((api->canvas_h / FOAM_PROP) * 4) / 4, 1);
   foam_5 =
     api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 3) / 4,
-               ((api->canvas_h / FOAM_PROP) * 3) / 4, 0);
+               ((api->canvas_h / FOAM_PROP) * 3) / 4, 1);
   foam_3 =
     api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 2) / 4,
-               ((api->canvas_h / FOAM_PROP) * 2) / 4, 0);
+               ((api->canvas_h / FOAM_PROP) * 2) / 4, 1);
   foam_1 =
     api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 1) / 4,
-               ((api->canvas_h / FOAM_PROP) * 1) / 4, 0);
+               ((api->canvas_h / FOAM_PROP) * 1) / 4, 1);
 
   SDL_FreeSurface(foam_data);
 
@@ -186,7 +190,8 @@ void foam_drag(magic_api * api, int which, SDL_Surface * canvas,
 {
   api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_foam);
 
-  foam_release(api, which, canvas, last, x, y, update_rect);
+  foam_release_worker(canvas, last, update_rect);
+//  foam_release(api, which, canvas, last, x, y, update_rect);
 
 /* FIXME */
   if (ox > x)
@@ -262,6 +267,12 @@ void foam_release(magic_api * api ATTRIBUTE_UNUSED ATTRIBUTE_UNUSED,
                   int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
                   SDL_Surface * last, int x ATTRIBUTE_UNUSED,
                   int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect)
+{
+  api->stopsound();
+  foam_release_worker(canvas, last, update_rect);
+}
+
+void foam_release_worker(SDL_Surface * canvas, SDL_Surface* last, SDL_Rect * update_rect)
 {
   int xx, yy;
   int changes, max_iters;
@@ -490,4 +501,19 @@ void foam_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int foam_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 foam_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 foam_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void foam_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
