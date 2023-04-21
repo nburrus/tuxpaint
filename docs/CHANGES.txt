@@ -35,7 +35,7 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Various Magic tools now support sizing options:
-      + Kaleidoscope
+      + Kaleidoscope, Symmetric L/R & U/D, Pattern, Tiles
       + Blur
       + Bricks
       + Confetti
