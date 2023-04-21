@@ -175,10 +175,10 @@ void pixels_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = x - 64;
-  update_rect->y = y - 64;
-  update_rect->w = (ox + 128) - update_rect->x;
-  update_rect->h = (oy + 128) - update_rect->y;
+  update_rect->x = x - pixel_size * 2;
+  update_rect->y = y - pixel_size * 2;
+  update_rect->w = (ox + pixel_size * 2) - update_rect->x;
+  update_rect->h = (oy + pixel_size * 2) - update_rect->y;
 
   api->playsound(pixel_snd, (x * 255) / canvas->w, 255);
 }
@@ -256,7 +256,6 @@ void pixels_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
   int canv_area_scale;
 
   canv_area_scale = sqrt(canvas->w * canvas->h) / 144;
-  printf("scale=%d\n", canv_area_scale);
 
   pixel_size = pow(2, size) * canv_area_scale;
 }
