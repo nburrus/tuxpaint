@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 20, 2023
 */
 
 #include <stdio.h>
@@ -45,11 +45,12 @@ enum
 
 static Mix_Chunk *pixel_snd;
 static Uint8 pixels_r, pixels_g, pixels_b;
+static int pixel_size = 8;
 
 
 /* Local function prototype: */
 
-int pixels_init(magic_api * api);
+int pixels_init(magic_api * api, Uint32 disabled_features);
 Uint32 pixels_api_version(void);
 int pixels_get_tool_count(magic_api * api);
 SDL_Surface *pixels_get_icon(magic_api * api, int which);
@@ -72,9 +73,13 @@ void pixels_switchin(magic_api * api, int which, int mode,
 void pixels_switchout(magic_api * api, int which, int mode,
                       SDL_Surface * canvas);
 int pixels_modes(magic_api * api, int which);
+Uint8 pixels_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 pixels_default_size(magic_api * api, int which, int mode);
+void pixels_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 // No setup required:
-int pixels_init(magic_api * api)
+int pixels_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -138,9 +143,6 @@ static void do_pixels(void *ptr ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
                       SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   SDL_Rect dest;
-  int pixel_size;
-
-  pixel_size = 8;
 
   dest.x = (x / pixel_size) * pixel_size;
   dest.y = (y / pixel_size) * pixel_size;
@@ -236,4 +238,25 @@ void pixels_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int pixels_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
+}
+
+
+Uint8 pixels_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+Uint8 pixels_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 1;
+}
+
+void pixels_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  int canv_area_scale;
+
+  canv_area_scale = sqrt(canvas->w * canvas->h) / 144;
+  printf("scale=%d\n", canv_area_scale);
+
+  pixel_size = pow(2, size) * canv_area_scale;
 }

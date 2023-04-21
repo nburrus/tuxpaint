@@ -42,6 +42,7 @@ https://tuxpaint.org/
       + Confetti
       + Googly Eyes
       + Negative & Opposite
+      + Pixels
       + Puzzle
       + Rainbow & Smooth Rainbow
       + Ripples
