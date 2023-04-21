@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 20, 2023
 */
 
 #include <stdio.h>
@@ -44,7 +44,7 @@ enum
 static Mix_Chunk *snd_effects[NUM_TOOLS];
 
 /* Prototypes */
-int mirror_flip_init(magic_api *);
+int mirror_flip_init(magic_api *, Uint32 disabled_features);
 Uint32 mirror_flip_api_version(void);
 int mirror_flip_get_tool_count(magic_api *);
 SDL_Surface *mirror_flip_get_icon(magic_api *, int);
@@ -64,9 +64,12 @@ int mirror_flip_requires_colors(magic_api *, int);
 void mirror_flip_switchin(magic_api *, int, int, SDL_Surface *);
 void mirror_flip_switchout(magic_api *, int, int, SDL_Surface *);
 int mirror_flip_modes(magic_api *, int);
+Uint8 mirror_flip_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 mirror_flip_default_size(magic_api * api, int which, int mode);
+void mirror_flip_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 // No setup required:
-int mirror_flip_init(magic_api * api)
+int mirror_flip_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -256,4 +259,19 @@ int mirror_flip_modes(magic_api * api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN);
+}
+
+
+Uint8 mirror_flip_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 mirror_flip_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void mirror_flip_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }

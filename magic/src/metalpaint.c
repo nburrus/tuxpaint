@@ -77,7 +77,7 @@ Uint32 metalpaint_api_version(void)
 
 
 // No setup required:
-int metalpaint_init(magic_api * api, Uint32 disabled_features)
+int metalpaint_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
