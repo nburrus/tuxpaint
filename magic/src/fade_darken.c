@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: March 13, 2023
+  Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -99,6 +99,7 @@ char * icon_filenames[NUM_TOOLS] = {
 
 static Mix_Chunk *snd_effects[NUM_TOOLS];
 float chosen_h, chosen_s;
+static int fade_darken_radius = 16;
 
 #define KEEP_REMOVE_HUE_THRESH 30.0
 // #define KEEP_REMOVE_VALUE_THRESH 0.4
@@ -109,7 +110,7 @@ float chosen_h, chosen_s;
 
 /* Local function prototypes: */
 
-int fade_darken_init(magic_api * api);
+int fade_darken_init(magic_api * api, Uint32 disabled_features);
 Uint32 fade_darken_api_version(void);
 int fade_darken_get_tool_count(magic_api * api);
 SDL_Surface *fade_darken_get_icon(magic_api * api, int which);
@@ -138,9 +139,12 @@ void fade_darken_switchin(magic_api * api, int which, int mode,
 void fade_darken_switchout(magic_api * api, int which, int mode,
                            SDL_Surface * canvas);
 int fade_darken_modes(magic_api * api, int which);
+Uint8 fade_darken_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 fade_darken_default_size(magic_api * api, int which, int mode);
+void fade_darken_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
-int fade_darken_init(magic_api * api)
+int fade_darken_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];
@@ -259,11 +263,11 @@ static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas,
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
 
-  for (yy = y - 16; yy < y + 16; yy++)
+  for (yy = y - fade_darken_radius; yy < y + fade_darken_radius; yy++)
   {
-    for (xx = x - 16; xx < x + 16; xx++)
+    for (xx = x - fade_darken_radius; xx < x + fade_darken_radius; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, 16) && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, fade_darken_radius) && !api->touched(xx, yy))
       {
         do_fade_darken(api, which, canvas, last, xx, yy);
       }
@@ -302,10 +306,10 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
+  update_rect->x = ox - fade_darken_radius;
+  update_rect->y = oy - fade_darken_radius;
+  update_rect->w = (x + fade_darken_radius) - update_rect->x;
+  update_rect->h = (y + fade_darken_radius) - update_rect->y;
 }
 
 // Ask Tux Paint to call our 'do_fade_darken_paint()' callback at a single point,
@@ -389,4 +393,23 @@ int fade_darken_modes(magic_api * api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
+}
+
+
+Uint8 fade_darken_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 fade_darken_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void fade_darken_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  fade_darken_radius = size * 4;
 }

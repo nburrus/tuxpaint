@@ -41,6 +41,7 @@ https://tuxpaint.org/
       + Cartoon
       + Clone
       + Confetti
+      + Darken, Lighten
       + Distortion
       + Emboss
       + Foam
@@ -54,8 +55,10 @@ https://tuxpaint.org/
       + Pixels
       + Puzzle
       + Rainbow & Smooth Rainbow
+      + Remove Color, Keep Color
       + Ripples
       + Rosette, Picasso
+      + Saturate, Desaturate
       + Sharpen, Edges, Silhouette
       + Toothpaste
       + WIP... more!
