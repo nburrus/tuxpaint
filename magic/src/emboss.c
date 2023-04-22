@@ -35,10 +35,11 @@
 /* Our globals: */
 
 static Mix_Chunk *emboss_snd;
+static int emboss_radius = 16;
 
 // Prototypes
 Uint32 emboss_api_version(void);
-int emboss_init(magic_api * api);
+int emboss_init(magic_api * api, Uint32 disabled_features);
 int emboss_get_tool_count(magic_api * api);
 SDL_Surface *emboss_get_icon(magic_api * api, int which);
 char *emboss_get_name(magic_api * api, int which);
@@ -66,6 +67,9 @@ void emboss_switchin(magic_api * api, int which, int mode,
 void emboss_switchout(magic_api * api, int which, int mode,
                       SDL_Surface * canvas);
 int emboss_modes(magic_api * api, int which);
+Uint8 emboss_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 emboss_default_size(magic_api * api, int which, int mode);
+void emboss_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 emboss_api_version(void)
@@ -75,7 +79,7 @@ Uint32 emboss_api_version(void)
 
 
 // No setup required:
-int emboss_init(magic_api * api)
+int emboss_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -170,11 +174,11 @@ static void do_emboss(void *ptr, int which ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
 
-  for (yy = -16; yy < 16; yy++)
+  for (yy = -emboss_radius; yy < emboss_radius; yy++)
   {
-    for (xx = -16; xx < 16; xx++)
+    for (xx = -emboss_radius; xx < emboss_radius; xx++)
     {
-      if (api->in_circle(xx, yy, 16))
+      if (api->in_circle(xx, yy, emboss_radius))
       {
         if (!api->touched(x + xx, y + yy))
         {
@@ -207,10 +211,10 @@ void emboss_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
+  update_rect->x = ox - emboss_radius;
+  update_rect->y = oy - emboss_radius;
+  update_rect->w = (x + emboss_radius) - update_rect->x;
+  update_rect->h = (y + emboss_radius) - update_rect->y;
 
   api->playsound(emboss_snd, (x * 255) / canvas->w, 255);
 }
@@ -291,4 +295,23 @@ void emboss_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int emboss_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
+}
+
+
+Uint8 emboss_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 emboss_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void emboss_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  emboss_radius = size * 4;
 }
