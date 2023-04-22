@@ -45,7 +45,8 @@
   <releases>
     <release version="0.9.30" date="2023-04-03">
       <description>
-        <p>FIXME</p>
+        <p>Many Magic tools now offer size settings.</p>
+        <p>Button labels word-wrap when possible (improves legibility).</p>
       </description>
     </release>
     <release version="0.9.29" date="2023-04-02">
