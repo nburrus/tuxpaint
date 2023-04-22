@@ -7,7 +7,7 @@
    Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
    by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->
 
-   Last updated: February 16, 2023
+   Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -84,7 +84,7 @@ Uint32 swirl_stroke_color;
 Uint8 swirl_fur_color_r, swirl_fur_color_g, swirl_fur_color_b;
 
 Uint32 swirls_api_version(void);
-int swirls_init(magic_api * api);
+int swirls_init(magic_api * api, Uint32 disabled_features);
 int swirls_get_tool_count(magic_api * api);
 SDL_Surface *swirls_get_icon(magic_api * api, int which);
 char *swirls_get_name(magic_api * api, int which);
@@ -116,6 +116,9 @@ void swirls_switchin(magic_api * api, int which, int mode,
 void swirls_switchout(magic_api * api, int which, int mode,
                          SDL_Surface * canvas);
 double get_angle(int x, int y, int target_x, int target_y);
+Uint8 swirls_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 swirls_default_size(magic_api * api, int which, int mode);
+void swirls_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 swirls_api_version(void)
@@ -123,7 +126,7 @@ Uint32 swirls_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int swirls_init(magic_api * api)
+int swirls_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];
@@ -404,4 +407,22 @@ void swirls_switchout(magic_api * api ATTRIBUTE_UNUSED,
 
 double get_angle(int x, int y, int target_x, int target_y) {
   return atan2((double) (y - target_y), (double) (x - target_x));
+}
+
+
+Uint8 swirls_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  /* TODO - We could offer different radiuses for "Circles and Rays",
+   * and perhaps some different functionality for "Fur", based on size.
+   * For now, not utilizing Magic tool size feature. -bjk 2023.04.22 */
+  return 0;
+}
+
+Uint8 swirls_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void swirls_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
