@@ -60,6 +60,7 @@ https://tuxpaint.org/
       + Rosette, Picasso
       + Saturate, Desaturate
       + Sharpen, Edges, Silhouette
+      + Tint, Color & White
       + Toothpaste
       + WIP... more!
       Bill Kendrick <bill@newbreedsoftware.com>

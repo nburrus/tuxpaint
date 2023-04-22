@@ -29,7 +29,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -55,7 +55,7 @@ static Uint8 tint_r, tint_g, tint_b;
 static int tint_min = INT_MAX;
 static int tint_max = 0;
 
-static const int tint_RADIUS = 16;
+static int tint_RADIUS = 16;
 
 static Mix_Chunk *tint_snd_effect[tint_NUM_TOOLS];
 
@@ -84,7 +84,7 @@ const char *tint_descs[tint_NUM_TOOLS][2] = {
    ("Click to turn your entire picture into white and a color you choose.")}
 };
 
-int tint_init(magic_api * api);
+int tint_init(magic_api * api, Uint32 disabled_features);
 Uint32 tint_api_version(void);
 int tint_get_tool_count(magic_api * api);
 SDL_Surface *tint_get_icon(magic_api * api, int which);
@@ -114,6 +114,10 @@ void tint_switchin(magic_api * api, int which, int mode,
 void tint_switchout(magic_api * api, int which, int mode,
                     SDL_Surface * canvas);
 int tint_modes(magic_api * api, int which);
+Uint8 tint_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 tint_default_size(magic_api * api, int which, int mode);
+void tint_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 tint_api_version(void)
 {
@@ -121,9 +125,8 @@ Uint32 tint_api_version(void)
 }
 
 //Load sounds
-int tint_init(magic_api * api)
-{
-  int i;
+int tint_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+{int i;
   char fname[1024];
 
   for (i = 0; i < tint_NUM_TOOLS; i++)
@@ -376,3 +379,23 @@ int tint_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN | MODE_PAINT);
 }
+
+
+Uint8 tint_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 tint_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void tint_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  tint_RADIUS = size * 4;
+}
+
