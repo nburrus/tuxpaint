@@ -103,8 +103,8 @@ What's New in Tux Paint version 0.9.30?
            Many Magic Tools will now offer an option to adjust the size of
            the effect. For example, thinner lines in the symmetry painting
            tools, finer or coarser application of effects like blur, or a
-           wider range of shapes. This option may be disabled using the
-           "nomagicsizes" option.
+           wider range of shapes. (This feature may be deactivated using the
+           "nomagicsizes" simplification option.)
 
    Word-wrapped button labels
            When possible, longer labels shown on Tux Paint's UI buttons will
