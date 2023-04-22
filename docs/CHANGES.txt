@@ -38,6 +38,7 @@ https://tuxpaint.org/
       + Bloom
       + Blur
       + Bricks
+      + Cartoon
       + Clone
       + Confetti
       + Foam

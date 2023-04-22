@@ -73,6 +73,9 @@ void bloom_switchout(magic_api * api, int which, int mode,
                          SDL_Surface * canvas);
 float luminance(float r, float g, float b);
 float change_luminance(float c_in, float l_in, float l_out);
+Uint8 bloom_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 bloom_default_size(magic_api * api, int which, int mode);
+void bloom_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 bloom_api_version(void)

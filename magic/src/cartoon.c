@@ -39,11 +39,12 @@
 
 static Mix_Chunk *cartoon_snd;
 SDL_Surface *result_surf;
+static int cartoon_radius = 16;
 
 #define OUTLINE_THRESH 48
 
 /* Local function prototypes: */
-int cartoon_init(magic_api * api);
+int cartoon_init(magic_api * api, Uint32 disabled_features);
 Uint32 cartoon_api_version(void);
 int cartoon_get_tool_count(magic_api * api);
 SDL_Surface *cartoon_get_icon(magic_api * api, int which);
@@ -72,11 +73,13 @@ void cartoon_switchin(magic_api * api, int which, int mode,
 void cartoon_switchout(magic_api * api, int which, int mode,
                        SDL_Surface * canvas);
 int cartoon_modes(magic_api * api, int which);
-
+Uint8 cartoon_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 cartoon_default_size(magic_api * api, int which, int mode);
+void cartoon_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 // No setup required:
-int cartoon_init(magic_api * api)
+int cartoon_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -207,11 +210,11 @@ static void do_cartoon(void *ptr, int which ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
 
-  for (yy = y - 16; yy < y + 16; yy = yy + 1)
+  for (yy = y - cartoon_radius; yy < y + cartoon_radius; yy = yy + 1)
   {
-    for (xx = x - 16; xx < x + 16; xx = xx + 1)
+    for (xx = x - cartoon_radius; xx < x + cartoon_radius; xx = xx + 1)
     {
-      if (api->in_circle(xx - x, yy - y, 16))
+      if (api->in_circle(xx - x, yy - y, cartoon_radius))
       {
         api->putpixel(canvas, xx, yy, api->getpixel(result_surf, xx, yy));
       }
@@ -241,10 +244,10 @@ void cartoon_drag(magic_api * api, int which, SDL_Surface * canvas,
 
   api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_cartoon);
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
+  update_rect->x = ox - cartoon_radius;
+  update_rect->y = oy - cartoon_radius;
+  update_rect->w = (x + cartoon_radius) - update_rect->x;
+  update_rect->h = (y + cartoon_radius) - update_rect->y;
 
   api->playsound(cartoon_snd, (x * 255) / canvas->w, 255);
 }
@@ -355,4 +358,20 @@ int cartoon_modes(magic_api * api ATTRIBUTE_UNUSED,
                   int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
+}
+
+
+Uint8 cartoon_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 8;
+}
+
+Uint8 cartoon_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void cartoon_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  cartoon_radius = size * 4;
 }
