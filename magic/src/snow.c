@@ -25,7 +25,13 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 22, 2023
+
+  TODO:
+   * Support sizes (for snowflakes, we'll need a new set of bitmap PNGs!) -bjk 2023.04.22
+   * Offer a painting mode (Note: if "nomagiccontrols" set, we'll want to default to
+     fullscreen, not paint, due to fullscreen being the classic mode of operation!)
+     -bjk 2023.04.22
 */
 
 #include <stdio.h>
@@ -77,7 +83,7 @@ const char *snow_descs[snow_NUM_TOOLS] = {
 };
 
 Uint32 snow_api_version(void);
-int snow_init(magic_api * api);
+int snow_init(magic_api * api, Uint32 disabled_features);
 int snow_get_tool_count(magic_api * api);
 SDL_Surface *snow_get_icon(magic_api * api, int which);
 char *snow_get_name(magic_api * api, int which);
@@ -103,13 +109,18 @@ void snow_switchin(magic_api * api, int which, int mode,
 void snow_switchout(magic_api * api, int which, int mode,
                     SDL_Surface * canvas);
 int snow_modes(magic_api * api, int which);
+Uint8 snow_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 snow_default_size(magic_api * api, int which, int mode);
+void snow_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
+
 Uint32 snow_api_version(void)
 {
   return (TP_MAGIC_API_VERSION);
 }
 
 //Load sounds
-int snow_init(magic_api * api)
+int snow_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
 
   int i;
@@ -133,10 +144,6 @@ int snow_init(magic_api * api)
     return (0);
   }
 
-  if (snow_flake2 == NULL)
-  {
-    printf("meh\n");
-  }
   for (i = 0; i < snow_NUM_TOOLS; i++)
   {
     snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory,
@@ -312,4 +319,20 @@ void snow_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int snow_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN);
+}
+
+
+Uint8 snow_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  /* FIXME: Support sizes */
+  return 0;
+}
+
+Uint8 snow_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void snow_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
