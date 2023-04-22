@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2020-03-29 23:40+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
@@ -1483,11 +1483,11 @@ msgstr ""
 msgid "Click to make the entire picture drip."
 msgstr "Feu clic per a afinar tota la imatge."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -1497,7 +1497,7 @@ msgstr ""
 "Feu clic i arrossegueu el ratolí per a afegir un efecte de mosaic a parts de "
 "la imatge."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1544,17 +1544,17 @@ msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per la zona per a dibuixar en cal·ligrafia."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Vinyeta"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per la zona per a convertir la imatge en "
 "una vinyeta."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1625,24 +1625,24 @@ msgstr "Paperets"
 msgid "Click to throw confetti!"
 msgstr "Feu clic per a llançar paperets!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Distorsió"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per a provocar una distorsió en la imatge."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Relleu"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Feu clic i arrossegueu el ratolí per a fer la imatge en relleu."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1818,17 +1818,17 @@ msgstr "Feu clic i arrossegueu per a dibuixar una sanefa."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Feu clic per a envoltar la imatge amb una sanefa."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Mosaic de vidre"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per a posar un mosaic de vidre damunt la "
 "imatge."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Feu clic per a omplir la imatge amb un mosaic de vidre."
 
@@ -2028,63 +2028,63 @@ msgstr "Feu clic per a invertir la imatge horitzontalment."
 msgid "Click to flip the picture upside-down."
 msgstr "Feu clic per a invertir la imatge verticalment."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mosaic"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per a afegir un efecte de mosaic a parts de "
 "la imatge."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Feu clic per a afegir un efecte de mosaic a tota la imatge."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Mosaic quadrat"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Mosaic hexagonal"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Mosaic irregular"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per a afegir un efecte de mosaic quadrat a "
 "parts de la imatge."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Feu clic per a afegir un efecte de mosaic quadrat a tota la imatge."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per a afegir un efecte de mosaic hexagonal "
 "a parts de la imatge."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Feu clic per a afegir un efecte de mosaic hexagonal a tota la imatge."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per a afegir un efecte de mosaic irregular "
 "a parts de la imatge."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Feu clic per a afegir un efecte de mosaic irregular a tota la imatge."
 
@@ -2535,11 +2535,15 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Feu clic i arrossegueu per a dibuixar un tornado en la imatge."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2547,7 +2551,7 @@ msgstr ""
 "Feu clic i arrossegueu per a fer que parts de la imatge semblen com si "
 "estigueren en un televisor."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr ""
 "Feu clic per a fer que la imatge semble com si estiguera en un televisor."

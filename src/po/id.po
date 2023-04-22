@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2017-12-09 04:22+0000\n"
 "Last-Translator: Teuku Surya <tsuryafajri@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1484,11 +1484,11 @@ msgstr "Klik dan pindahkan mouse ke sekitar untuk membuat gambar drip."
 msgid "Click to make the entire picture drip."
 msgstr "Klik untuk mempertajam seluruh gambar."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -1498,7 +1498,7 @@ msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan efek mozaik pada bagian gambar "
 "anda."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1543,16 +1543,16 @@ msgstr "Kaligrafi"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik dan gerakkan mouse di sekitar gambar untuk mengambar kaligrafi."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Kartun"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Klik dan pindahkan mouse ke sekitar untuk mengubah gambar ke sebuah kartun."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1623,23 +1623,23 @@ msgstr "Konfeti"
 msgid "Click to throw confetti!"
 msgstr "Klik untuk melempar konfeti!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Distorsi"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik dan tarik mouse untuk menimbulkan distorsi pada gambar anda."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Emboss"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik dan tarik mouse untuk meng-emboss gambar."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1810,15 +1810,15 @@ msgstr "Klik dan tarik untuk menggambar pola yang berulang. "
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klik untuk mengelilingi gambar anda dengan pola yang berulang."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Glass Tile"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klik dan tarik mouse untuk menempatkan glass tile diatas gambar anda."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Klik untuk menutupi seluruh gambar anda dengan glass tile."
 
@@ -2014,64 +2014,64 @@ msgstr "Klik untuk membuat mirror gambar."
 msgid "Click to flip the picture upside-down."
 msgstr "Klik untuk membalik gambar."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mozaik"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan efek mozaik pada bagian gambar "
 "anda."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Klik untuk menambahkan efek mozaik pada seluruh gambar anda."
 
 # | msgid "Square"
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Mozaik persegi"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Mozaik Segi Lima"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Mozaik Tidak Teratur"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan sebuah mozaik persegi pada bagian "
 "gambar anda."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klik untuk menambahkan mozaik persegi pada seluruh gambar anda."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "klik dan gerakkan mouse untuk menambahkan mozaik segi lima pada bagian "
 "gambar anda."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klik untuk menambahkan mozaik segi lima pada seluruh gambar anda."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Klik dan gerakkan mouse untuk menambahkan mozaik tidak teratur pada bagian "
 "gambar anda."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klik untuk menambahkan mozaik tidak teratur pada seluruh gambar anda."
 
@@ -2524,11 +2524,15 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klik dan tarik untuk mengambarkan sebuah tornado pada gambar anda."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2536,7 +2540,7 @@ msgstr ""
 "Klik dan tarik untuk membuat bagian dari gambar anda terlihat seperti berada "
 "pada televisi."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Klik untuk membuat gambar anda terlihat seperti di televisi."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2014-06-08 23:43+0630\n"
 "Last-Translator: Savitha <savithasprasad@yahoo.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -1491,11 +1491,11 @@ msgstr "ನಿಮ್ಮ ಚಿತ್ರವು ತೊಟ್ಟಿಕ್ಕುವ�
 msgid "Click to make the entire picture drip."
 msgstr "ಸಂಪೂರ್ಣ ಚಿತ್ರವನ್ನು ಮೊನಚುಗೊಳಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1505,7 +1505,7 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗಗಳಿಗೆ ಮೊಸಾಯಿಕ್ ಪರಿಣಾಮವನ್ನು ಸೇರಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಜರುಗಿಸಿ."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1558,18 +1558,18 @@ msgstr "ಕ್ಯಾಲಿಗ್ರಾಫಿ"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "ಕ್ಯಾಲಿಗ್ರಾಫಿಯಲ್ಲಿ ಚಿತ್ರಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "ಕಾರ್ಟೂನ್"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಕಾರ್ಟೂನಿನಂತೆ ಬದಲಾಯಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1640,23 +1640,23 @@ msgstr "ಬಣ್ಣದ ಕಾಗದಚೂರುಗಳು"
 msgid "Click to throw confetti!"
 msgstr "ಬಣ್ಣದ ಕಾಗದದ ಚೂರುಗಳನ್ನು ಎಸೆಯಲು ಕ್ಲಿಕ್ ಮಾಡಿ!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "ವಿರೂಪ"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ವಿರೂಪಗೊಳಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಎಳೆಯಿರಿ."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "ಉಬ್ಬುಚಿತ್ರ"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಉಬ್ಬುಚಿತ್ರವಾಗಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಎಳೆಯಿರಿ."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1829,17 +1829,17 @@ msgid "Click to surround your picture with repetitive patterns."
 msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಸುತ್ತಮುತ್ತಲು ಪುನರಾವರ್ತಿತ ವಿನ್ಯಾಸಗಳಿಂದ ಆವರಿಸಿದಂತೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "ಗಾಜಿನ ಹಾಸುಬಿಲ್ಲೆ"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದಲ್ಲಿ ಗಾಜಿನ ಹಾಸುಬಿಲ್ಲೆಗಳನ್ನು ಹೊಂದಿರುವಂತೆ ಮಾಡಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಎಳೆಯಿರಿ."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "ಸಂಪೂರ್ಣ ಚಿತ್ರದಲ್ಲಿ ಗಾಜಿನ ಹಾಸುಬಿಲ್ಲೆಗಳಿಂದ ಆವರಿಸುವಂತೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
@@ -2042,11 +2042,11 @@ msgstr "ಒಂದು ಪ್ರತಿರೂಪ ಚಿತ್ರವನ್ನು ಮ
 msgid "Click to flip the picture upside-down."
 msgstr "ಚಿತ್ರವನ್ನು ತಲೆಕೆಳಗಾಗುವಂತೆ ತಿರುಗಿಸಲು ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "ಮೊಸಾಯಿಕ್"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2056,23 +2056,23 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗಗಳಿಗೆ ಮೊಸಾಯಿಕ್ ಪರಿಣಾಮವನ್ನು ಸೇರಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಜರುಗಿಸಿ."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚಿತ್ರಕ್ಕೆ ಮೊಸಾಯಿಕ್ ಪರಿಣಾಮವನ್ನು ಸೇರಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "ಚೌಕ ಮೊಸಾಯಿಕ್"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "ಷಢ್ಭುಜಾಕೃತಿ ಮೊಸಾಯಿಕ್"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "ಅನಿಯಮಿತ ಮೊಸಾಯಿಕ್"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2081,11 +2081,11 @@ msgid ""
 msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗಗಳಿಗೆ ಚೌಕ ಮೊಸಾಯಿಕ್ ಅನ್ನು ಸೇರಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಜರುಗಿಸಿ."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚಿತ್ರಕ್ಕೆ ಚೌಕ ಮೊಸಾಯಿಕ್ ಅನ್ನು ಸೇರಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2096,11 +2096,11 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗಗಳಿಗೆ ಷಡ್ಭುಜಾಕೃತಿ ಮೊಸಾಯಿಕ್ ಅನ್ನು ಸೇರಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಜರುಗಿಸಿ."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚಿತ್ರಕ್ಕೆ ಷಡ್ಭುಜಾಕೃತಿ ಮೊಸಾಯಿಕ್ ಅನ್ನು ಸೇರಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2111,7 +2111,7 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗಗಳಿಗೆ ಅನಿಯಮಿತ ಮೊಸಾಯಿಕ್ ಅನ್ನು ಸೇರಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಜರುಗಿಸಿ."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚಿತ್ರಕ್ಕೆ ಅನಿಯಮಿತ ಮೊಸಾಯಿಕ್ ಅನ್ನು ಸೇರಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 
@@ -2577,11 +2577,15 @@ msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದಲ್ಲಿ ಒಂದು ಸುಂಟರಗಾಳಿಯ ಆಲಿಕೆಯನ್ನು ಚಿತ್ರಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು ಎಳೆಯಿರಿ."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "ಟಿವಿ"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2589,7 +2593,7 @@ msgstr ""
 "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗವು ದೂರದರ್ಶನದಲ್ಲಿರುವ ರೀತಿಯಲ್ಲಿ ಕಾಣಿಸುವಂತೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
 "ಎಳೆಯಿರಿ."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "ನಿಮ್ಮ ಚಿತ್ರವು ದೂರದರ್ಶನದಲ್ಲಿರುವ ರೀತಿಯಲ್ಲಿ ಕಾಣಿಸುವಂತೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
 

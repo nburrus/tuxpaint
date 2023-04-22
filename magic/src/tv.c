@@ -27,11 +27,6 @@
   (See COPYING.txt)
 
   Last updated: April 22, 2023
-
-  FIXME: The results should be brighter. However, some artists use
-  the original "TV" effect as a stylistic way to darken parts of their
-  picture, so we should offer two tools (brighter, and classic).
-  -bjk 2023.04.22
 */
 
 #include "tp_magic_api.h"
@@ -40,6 +35,12 @@
 #include <math.h>
 
 static int tv_radius = 16;
+
+enum {
+  TV_TOOL_TV_CLASSIC,
+  TV_TOOL_TV_BRIGHT,
+  NUM_TV_TOOLS
+};
 
 Mix_Chunk *tv_snd;
 
@@ -100,7 +101,7 @@ int tv_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 
 int tv_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return 1;
+  return NUM_TV_TOOLS;
 }
 
 SDL_Surface *tv_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
@@ -113,10 +114,12 @@ SDL_Surface *tv_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
   return (IMG_Load(fname));
 }
 
-char *tv_get_name(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED)
+char *tv_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return strdup(gettext_noop("TV"));
+  if (which == TV_TOOL_TV_CLASSIC)
+    return strdup(gettext_noop("TV"));
+  else
+    return strdup(gettext_noop("TV (Bright)"));
 }
 
 int tv_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -131,12 +134,10 @@ char *tv_get_description(magic_api * api ATTRIBUTE_UNUSED,
     return
       strdup(gettext_noop
              ("Click and drag to make parts of your picture look like they are on television."));
-
   else
     return
       strdup(gettext_noop
              ("Click to make your picture look like it's on television."));
-
 }
 
 int tv_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
@@ -160,18 +161,33 @@ void tv_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 
 // Interactivity functions
 
-void tv_do_tv(void *ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
+void tv_do_tv(void *ptr_to_api, int which_tool,
               SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
               int x, int y)
 {
   magic_api *api = (magic_api *) ptr_to_api;
-  Uint8 r, g, b, i;
+  int r, g, b, i;
+  Uint8 r8, g8, b8;
 
   for (i = 0; i < 2; i++)
   {
     /* Convert the line below to their red/green/blue elements */
-    SDL_GetRGB(api->getpixel(snapshot, x, y + i), snapshot->format, &r, &g,
-               &b);
+    SDL_GetRGB(api->getpixel(snapshot, x, y + i), snapshot->format, &r8, &g8, &b8);
+
+    /* The results should have been brighter. However, some artists used
+       the original "TV" effect as a stylistic way to darken parts of their
+       picture, so we offer two tools (brighter, and classic).
+       -bjk 2023.04.22 */
+    if (which_tool == TV_TOOL_TV_BRIGHT) {
+      r = r8 * 2;
+      g = g8 * 2;
+      b = b8 * 2;
+    } else {
+      r = r8;
+      g = g8;
+      b = b8;
+    }
+
     if (x % 3 == 0)
     {
       /* Red */
@@ -195,11 +211,15 @@ void tv_do_tv(void *ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
     g = g / (i + 1);
     b = b / (i + 1);
 
-    api->putpixel(canvas, x, y + i, SDL_MapRGB(canvas->format, r, g, b));
+    r8 = min(r, 255);
+    g8 = min(g, 255);
+    b8 = min(b, 255);
+
+    api->putpixel(canvas, x, y + i, SDL_MapRGB(canvas->format, r8, g8, b8));
   }
 }
 
-void tv_paint_tv(void *ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
+void tv_paint_tv(void *ptr_to_api, int which_tool,
                  SDL_Surface * canvas,
                  SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
@@ -214,7 +234,7 @@ void tv_paint_tv(void *ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
     {
       if (api->in_circle(i - x, j - y, tv_radius) && !api->touched(i, j))
       {
-        tv_do_tv(api, 0, canvas, snapshot, i, j);
+        tv_do_tv(api, which_tool, canvas, snapshot, i, j);
       }
     }
   }
@@ -295,4 +315,3 @@ void tv_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, i
 {
   tv_radius = size * 4;
 }
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2021-09-02 07:45+0000\n"
 "Last-Translator: kiolalis <kiolalis@gmail.com>\n"
 "Language-Team: \n"
@@ -1492,11 +1492,11 @@ msgstr ""
 msgid "Click to make the entire picture drip."
 msgstr "Κάνε κλικ για να οξύνεις ολόκληρη τη ζωγραφιά σου."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -1506,7 +1506,7 @@ msgstr ""
 "Κάνε κλικ και μετακίνησε το ποντίκι για να προσθέσεις εφέ μωσαϊκού σε "
 "τμήματα της ζωγραφιάς σου."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1551,17 +1551,17 @@ msgstr "Καλλιγραφία"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Κάνε κλικ και κίνησε το ποντίκι για να σχεδιάσεις καλλιγραφικά."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Σκίτσο"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Κάνε κλικ και κίνησε το ποντίκι γύρω για να κάνεις τη ζωγραφιά να μοιάζει με "
 "καρτούν."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1634,25 +1634,25 @@ msgstr "Χαρτοπόλεμος"
 msgid "Click to throw confetti!"
 msgstr "Κάνε κλικ για να πετάξεις χαρτοπόλεμο!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Παραμόρφωση"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να κάνεις τη ζωγραφια σου να παραμορφωθεί "
 "σου."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Ανάγλυφο"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Κάνε κλικ και σύρε το ποντίκι για να κάνεις την εικόνα ανάγλυφη."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1831,17 +1831,17 @@ msgid "Click to surround your picture with repetitive patterns."
 msgstr ""
 "Κάνε κλικ για να περιστοιχίσεις τη ζωγραφιά σου με επαναλαμβανόμενα μοτίβα."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Υαλότουβλο"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να τοποθετήσεις υαλότουβλα στη ζωγραφιά "
 "σου."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Κάνε κλικ για να καλύψεις ολόκληρη τη ζωγραφιά σου με υαλότουβλα."
 
@@ -2046,65 +2046,65 @@ msgstr "Κάνε κλικ για να φτιάξεις μια ζωγραφιά-�
 msgid "Click to flip the picture upside-down."
 msgstr "Κάνε κλικ για να γυρίσεις τη ζωγραφιά άνω-κάτω."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Μωσαϊκό"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Κάνε κλικ και μετακίνησε το ποντίκι για να προσθέσεις εφέ μωσαϊκού σε "
 "τμήματα της ζωγραφιάς σου."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Κάνε κλικ για να προσθέσεις εφέ μωσαϊκού σε ολόκληρη τη ζωγραφιά σου."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Τετραγωνικό μωσαϊκό"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Εξαγωνικό μωσαϊκό"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Ακανόνιστο μωσαϊκό."
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Κάνε κλικ και μετακίνησε το ποντίκι για να προσθέσεις τετραγωνικό μωσαϊκό σε "
 "τμήματα της ζωγραφιάς σου."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
 "Κάνε κλικ για να προσθέσεις τετραγωνικό μωσαϊκό σε ολόκληρη τη ζωγραφιά σου."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Κάνε κλικ και μετακίνησε το ποντίκι για να προσθέσεις εξαγωνικό μωσαϊκό σε "
 "τμήματα της ζωγραφιάς σου."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "Κάνε κλικ για να προσθέσεις εξαγωνικό μωσαϊκό σε ολόκληρη τη ζωγραφιά σου."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Κάνε κλικ και μετακίνησε το ποντίκι για να προσθέσεις ακανόνιστο μωσαϊκό σε "
 "τμήματα της ζωγραφιάς σου."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "Κάνε κλικ για να προσθέσεις ακανόνιστο μωσαϊκό σε ολόκληρη τη ζωγραφιά σου."
@@ -2576,11 +2576,15 @@ msgstr ""
 "Κάνε κλικ και σύρε το ποντίκι για να σχεδιάσεις ανεμοστρόβιλους στη ζωγραφιά "
 "σου."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "Τηλεόραση"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2588,7 +2592,7 @@ msgstr ""
 "Κάνε κλικ για να κάνεις τη ζωγραφιά σου να μοιάζει σαν να είναι στην "
 "τηλεόραση."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr ""
 "Κάνε κλικ για να κάνεις τη ζωγραφιά σου να μοιάζει σαν να είναι στην "

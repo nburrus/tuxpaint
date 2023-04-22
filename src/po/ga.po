@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2015-10-09 17:38+0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1442,18 +1442,18 @@ msgstr ""
 msgid "Click to make the entire picture drip."
 msgstr "Cliceáil chun maisíocht silte a chur i bhfeidhm ar an bpictiúr iomlán."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr "Bláth"
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
 "Cliceáil agus tarraing an luch chun \"bláthú\" a chur i bhfeidhm ar chuid "
 "den phictiúr."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr "Cliceáil chun \"bláthú\" a chur i bhfeidhm ar an bpictiúr iomlán."
 
@@ -1496,15 +1496,15 @@ msgstr "Callagrafaíocht"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Cliceáil agus tarraing an luch chun callagrafaíocht a dhéanamh."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Cartún"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Cliceáil agus tarraing an luch chun cartún a dhéanamh den phictiúr."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Cliceáil chun cartún a dhéanamh den phictiúr."
 
@@ -1564,25 +1564,25 @@ msgstr "Coinfití"
 msgid "Click to throw confetti!"
 msgstr "Cliceáil chun coinfití a chaitheamh!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Díchumadh"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a dhíchumadh."
 
 # confusing, but correct
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Cabhair"
 
 # yes this is the right verbal noun
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Cliceáil agus bog an luch chun an pictiúr a chabhradh."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 msgid "Click to emboss the entire picture."
 msgstr "Cliceáil chun an pictiúr iomlán a chabhradh."
 
@@ -1725,15 +1725,15 @@ msgstr "Cliceáil agus tarraing chun patrún athfhillteach a dhearadh."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Cliceáil chun patrún athfhillteach a chur timpeall an phictiúir."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Tíl Ghloine"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Cliceáil agus tarraing an luch chun tíl ghloine a chur ar an bpictiúr."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Cliceáil chun tíleanna gloine a chur ar an bpictiúr iomlán."
 
@@ -1912,63 +1912,63 @@ msgstr "Cliceáil le haghaidh íomhá scáthánach."
 msgid "Click to flip the picture upside-down."
 msgstr "Cliceáil chun an pictiúr a chur bunoscionn."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mósáic"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Cliceáil agus tarraing an luch chun maisíocht mhósáice a dhéanamh ar chuid "
 "den phictiúr."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Cliceáil chun maisíocht mhósáic a dhéanamh ar fud an phictiúir."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Mósáic Chearnógach"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Mósáic Heicseagánach"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Mósáic Neamhrialta"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Cliceáil agus tarraing an luch chun mósáic chearnógach a dhéanamh ar chuid "
 "den phictiúr."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Cliceáil chun mósáic chearnógach a dhéanamh ar fud an phictiúir."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Cliceáil agus tarraing an luch chun mósáic heicseagánach a dhéanamh ar chuid "
 "den phictiúr."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Cliceáil chun mósáic heicseagánach a dhéanamh ar fud an phictiúir."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Cliceáil agus tarraing an luch chun mósáic neamhrialta a dhéanamh ar chuid "
 "den phictiúr."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Cliceáil chun mósáic neamhrialta a dhéanamh ar fud an phictiúir."
 
@@ -2371,18 +2371,22 @@ msgstr "Tornádó"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Cliceáil agus tarraing chun tornádó a dhearadh ar do phictiúr."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "Teilifís"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "Cliceáil agus tarraing chun cuma teilifíse a chur ar chuid de do phictiúr."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Cliceáil chun cuma teilifíse a chur ar do phictiúr."
 

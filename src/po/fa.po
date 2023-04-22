@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2014-11-09 21:17+0330\n"
 "Last-Translator: snima <unix.nima@gmail.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
@@ -1492,18 +1492,18 @@ msgstr "برای ایجاد چکه در عکس کلیک کن و موشی را ب
 msgid "Click to make the entire picture drip."
 msgstr "کلیک کن تا روی تصویرت موج ایجاد شود."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1558,17 +1558,17 @@ msgstr "خوش نویسی"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "برای خوشنویسی کلیک کن و موس را در جهت مناسب حرکت بده. "
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "کارتون"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "برای تبدیل تصویر به حالت کارتونی کلیک کن و موس را حرکت بده. "
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1637,25 +1637,25 @@ msgstr "نقل"
 msgid "Click to throw confetti!"
 msgstr "کلیک کن تا نقل بپاشد."
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "اعوجاج"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 #, fuzzy
 #| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "برجسته کردن"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "برای ایجاد برجستگی در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to make ripples appear over your picture."
 msgid "Click to emboss the entire picture."
@@ -1818,15 +1818,15 @@ msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن 
 msgid "Click to surround your picture with repetitive patterns."
 msgstr ".ک رنگ یا عکس بردار و شروع کن به کشیدن نقاشی "
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "کف "
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "برای گذاشتن شیشه های کوچک کلیک کن و موس را بکش."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "برای پوشش کاشیکاری شیشه ای بر روی تمام عکس کلیک کن."
 
@@ -2024,73 +2024,73 @@ msgstr "کلیک کن تا تصویر برعکس شود."
 msgid "Click to flip the picture upside-down."
 msgstr "کلیک کن تا تصویر وارونه شود."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 #, fuzzy
 #| msgid "Magic"
 msgid "Mosaic"
 msgstr "جادویی"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "برای ایجاد برجستگی در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 #, fuzzy
 #| msgid "Square"
 msgid "Square Mosaic"
 msgstr "مربع"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "موزائیک شش‌گوش"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "موزائید بی‌ ترتیب"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "برای ایجاد برجستگی در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "برای ایجاد برجستگی در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid "Click and drag the mouse to cause a distortion in your picture."
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click to add an irregular mosaic to your entire picture."
@@ -2569,11 +2569,15 @@ msgstr "توفان"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "برای ایجاد پرتوهای نور در تصویر کلیک کن و موس را بکش."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "تلویزیون"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
@@ -2581,7 +2585,7 @@ msgid ""
 "television."
 msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقاشی جابجا شود."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "برای شبه کردن عکس شما به شکل تلویزیونیش کلیک کن."
 

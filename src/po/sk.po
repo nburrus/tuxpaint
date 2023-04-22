@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2023-04-10 13:48+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -1560,18 +1560,18 @@ msgstr "Kliknutím a ťahaním myši po obrázku sa roztečú farby."
 msgid "Click to make the entire picture drip."
 msgstr "Kliknutím obrázok rozleješ."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr "Kvitnutie"
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
 "Kliknutím a ťahaním myši použiješ na časti obrázka svietivý efekt "
 "„kvitnutia“."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr ""
 "Kliknutím a ťahaním myši použiješ na celý obrázok svietivý efekt „kvitnutia“."
@@ -1615,15 +1615,15 @@ msgstr "Kaligrafia"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Kliknutím a ťahaním myši môžeš písať kaligrafickým štýlom."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Komiks"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Kliknutím a ťahaním myši prekreslíš obrázok na komiks."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Kliknutím a ťahaním myši zmeníš obrázok na kriedokresbu."
 
@@ -1684,23 +1684,23 @@ msgstr "Konfety"
 msgid "Click to throw confetti!"
 msgstr "Ak klikneš myšou, môžeš hádzať konfety!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Skreslenie"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Kliknutím a ťahaním myši svoj obrázok skreslíš."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Rytina"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Kliknutím a ťahaním myši urobíš z obrázka rytinu."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 msgid "Click to emboss the entire picture."
 msgstr "Kliknutím vyrysuješ celý obrázok."
 
@@ -1839,15 +1839,15 @@ msgstr "Kliknutím a pohybom myši môžeš kresliť opakujúce sa vzory."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klikni pre obklopenie obrázka opakujúcim sa vzorom."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Sklo"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Kliknutím a ťahaním myši pred obrázok nakreslíš sklo."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Kliknutím zaplníš celý obrázok sklenenými tabuľami."
 
@@ -2019,59 +2019,59 @@ msgstr "Klikni myšou a obrázok sa zrkadlovo otočí."
 msgid "Click to flip the picture upside-down."
 msgstr "Klikni myšou a otočíš obrázok dole hlavou."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mozaika"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Kliknutím a ťahaním myši vytvoríš z časti obrázka mozaiku."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Ak klikneš myšou, vytvoríš mozaiku z celého obrázka."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "4-mozai"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "6-mozai"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Neprav. mozaika"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Ak klikneš myšou a potiahneš, premeníš časti obrázka na štvorcovú mozaiku."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Ak klikneš myšou, urobíš štvorcovú mozaiku z celého obrázka."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Ak klikneš myšou a potiahneš, premeníš časti obrázka na šesťuholníkovú "
 "mozaiku."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Ak klikneš myšou, premeníš celý obrázok na šesťuholníkovú mozaiku."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Ak klikneš myšou a potiahneš, premeníš časti obrázka na nepravidelnú mozaiku."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Ak klikneš myšou, premeníš celý obrázok na nepravidelnú mozaiku."
 
@@ -2465,11 +2465,15 @@ msgstr "Tornádo"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Kliknutím a ťahaním myši môžeš na obrázok nakresliť tornádo."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2477,7 +2481,7 @@ msgstr ""
 "Kliknutím a ťahaním myši zmeníš časti svojho obrázka tak, že budú vyzerať "
 "ako v televízore."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Klikni a bude to vyzerať tak, akoby bol tvoj obrázok v televízii."
 

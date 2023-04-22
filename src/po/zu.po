@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2011-02-07 12:30+0200\n"
 "Last-Translator: sipho <sipho@translate.org.za>\n"
 "Language-Team: SIpho\n"
@@ -1496,11 +1496,11 @@ msgstr ""
 msgid "Click to make the entire picture drip."
 msgstr "Chofoza ukucijisa sonke isithombe."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1510,7 +1510,7 @@ msgstr ""
 "Chofoza bese unyakazisa igundane ukuze wongeze amiphumela yemozayiki "
 "ezinxenyeni zesithombe sakho."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1564,11 +1564,11 @@ msgstr "Ukuloba kahle"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Chofoza bese unyakazisa igundane kaningana ukuze ulobe kahle."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Ikhathuni"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
@@ -1576,7 +1576,7 @@ msgstr ""
 "Chofoza bese unyakazisa igundane kaningana ukuze ujikise isithombe sibe "
 "ikhathuni."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1650,24 +1650,24 @@ msgstr "Ikhomfeti"
 msgid "Click to throw confetti!"
 msgstr "Chofoza ukuze uphonse ikhombfeti!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Inhlanekezela"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Chofoza bese donsa igundane ukuze wenze inhlanekezela esithombeni sakho."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "i-emboss"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Chofoza bese udonsa igundane wenzi isithombe sibeyi-emboss."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1849,17 +1849,17 @@ msgstr ""
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Chofoza ukugwuma isithombe sakho ngamaconsi emvula."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Uthayela wengilazi"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Chofoza bese udonsa igundane ukuze ubeke uthayela wengilazi esithombeni "
 "sakho."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Chofoza ukuze umboze isithombe sakho sonke ngamathayela wengilazi."
 
@@ -2067,11 +2067,11 @@ msgstr "Chofoza ukuze wenze isithombe sesibuko."
 msgid "Click to flip the picture upside-down."
 msgstr "Chofoza ukuphendula isithombe sakho phansi-phezulu."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mozayiki"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2081,23 +2081,23 @@ msgstr ""
 "Chofoza bese unyakazisa igundane ukuze wongeze amiphumela yemozayiki "
 "ezinxenyeni zesithombe sakho."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Chofoza ungeze umphumela wemozayiki esithombeni sakho sonke."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Imozayiki engunxantathu"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Imozayiki engusithuphanhlangothi"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Imozayiki engaqondile"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2107,12 +2107,12 @@ msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele imozayiki engunxantathu ezinxenyeni "
 "zesithombe sakho."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
 "Chofoza ukuze unezelele ngemozayiki engunxantathu esithombeni sakho sonke."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2123,13 +2123,13 @@ msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele imozayiki engusithuphanhlangothi "
 "ezinxenyeni zesithombe sakho."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "Chofoza ukuze unezelele imozayiki engusithuphanhlangothi esithombeni sakho "
 "sonke."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2140,7 +2140,7 @@ msgstr ""
 "Chofoza uhambise imawuzi ukuze unezelele imozayiki engaqondile ezinxenyeni "
 "zesithombe sakho."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Chofa ukuze unezelele imozayiki engaqondile esithombeni sakho sonke."
 
@@ -2625,11 +2625,15 @@ msgstr "Isivunguvungu"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Chofoza udonse ukuze udwebe ushimula wesivunguvungu esithombeni sakho."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "I-TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2637,7 +2641,7 @@ msgstr ""
 "Chofoza bese uyadonsa ukwenza izingxenye zesithombe sakho zibukeke engathi "
 "zikumabonakude."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Chofoza ukwenz aisithombe sakho sibukeke engathi sikumabonakude."
 

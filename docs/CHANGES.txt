@@ -79,6 +79,12 @@ https://tuxpaint.org/
       (Sound effect licensed as Creative Commons 0 by
       https://freesound.org/people/ristooooo1)
 
+    * TV offers a new "TV (Bright)" variation
+      (the original was always too dim, but has been utilized by
+      people as an artistic way to darken an image, so don't want
+      to take away the 'classic' variation).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * Word-wrap long button labels, for better readability.

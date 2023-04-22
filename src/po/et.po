@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2015-03-07 13:09+0000\n"
 "Last-Translator: Sven Ollino <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1473,11 +1473,11 @@ msgstr "Tee klõps ja liiguta hiirt, et panna pilt tilkuma."
 msgid "Click to make the entire picture drip."
 msgstr "Tee klõps, et teha terve pilt teravamaks."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1485,7 +1485,7 @@ msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1538,17 +1538,17 @@ msgstr "Kalligraafia"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Tee klõps ja liiguta hiirt kalligraafiaga joonistamiseks."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Multikas"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Tee klõps ja liiguta hiirt, et muuta pilt multika sarnaseks."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1617,23 +1617,23 @@ msgstr "Paberkettad"
 msgid "Click to throw confetti!"
 msgstr "Loobi paberkettaid!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Moonutus"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Hoia hiirenuppu all ja liiguta, et luua pildile moonutusi."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Kohruta"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Hoia hiirenuppu all ja liiguta pildi kohrutamiseks."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1804,15 +1804,15 @@ msgstr ""
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klõpsa pildil, et katta see vihmapiiskadega."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Aknaruudustik"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Tee klõps ja liiguta hiirt, et tekitada aknaruudustikku enda pildile."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Klõpsa, et katta terve pilt aknaruudustikuga."
 
@@ -2010,11 +2010,11 @@ msgstr "Tee klõps, et tekitada peegelpilt."
 msgid "Click to flip the picture upside-down."
 msgstr "Tee klõps, et pöörata pilt pea alaspidi."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mosaiik"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2022,53 +2022,53 @@ msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Klõpsa, et lisada mosaiigiefekt tervele pildile."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 #, fuzzy
 msgid "Square Mosaic"
 msgstr "Ruut"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 #, fuzzy
 msgid "Hexagon Mosaic"
 msgstr "Mosaiik"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 #, fuzzy
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klõpsa, et lisada mosaiigiefekt tervele pildile."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klõpsa, et lisada mosaiigiefekt tervele pildile."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Tee klõps ja liiguta hiirt, et lisada mosaiigiefekti pildile."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 #, fuzzy
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klõpsa, et lisada mosaiigiefekt tervele pildile."
@@ -2518,18 +2518,22 @@ msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "Hoia hiirenuppu all ja liiguta, et joonistada pildile tornaado keerist."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "Hoia hiirenuppu all ja liiguta, et muuta pilti vana telekapildi taoliseks."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Klõpsa, et muuta pilt vana telekapildi sarnaseks."
 

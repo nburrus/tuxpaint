@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2010-09-04 17:25+0200\n"
 "Last-Translator: Fasokan <konate20032001@yahoo.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1479,11 +1479,11 @@ msgstr "Kilike, i ka ja yɛlɛma k’a kɛ I ko nɔgɔlan bɔnnen b’a kan."
 msgid "Click to make the entire picture drip."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan bɛɛ misɛnya."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1491,7 +1491,7 @@ msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan dɔw kɛ mozayiki ye."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1544,18 +1544,18 @@ msgstr "Tɛgɛtilennenya"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ɲɛgɛn kɛ ni tɛgɛtilennenya ya."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Wɔkulɔnin"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Kilike, i ka ɲinɛnin munumunu walasa i ka ja ka yɛlɛma ka kɛ wɔkulɔnin ye."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1625,23 +1625,23 @@ msgstr "Kɔnfeti (papiye ɲɛgɛnnen mɔlɔnkɔtɔlen)"
 msgid "Click to throw confetti!"
 msgstr "Kilike, i ka kɔnfɛtiw fili!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Ja cogoya yɛlɛmali."
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka cogoya dɔw yɛlɛma i ka ja la. "
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "ɲɛ sankɔrɔtali"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Kilike, I ka ɲinɛnin cɛɛnɛ walasa ka ja ɲɛ sankɔrɔta."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1813,15 +1813,15 @@ msgstr "Kilike, i ka ɲinɛnin layaala ya ka dogodogonin tilennenw ci."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Kilike, i ka ja fan bɛɛ kɛ sanji toni toni ye."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Wɛɛrɛ karo"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka wɛɛrɛ karo ɲɔgɔn kɛ ja fan dɔw la."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Kilike, i ka wɛɛrɛ karo ɲɔgɔn kɛ ja fan bɛɛ la. "
 
@@ -2026,11 +2026,11 @@ msgstr "Kilike, i ka ja filɛ i ko a bɛ ka bɔ dungare la. "
 msgid "Click to flip the picture upside-down."
 msgstr "Kilike, i ka ja yɛlɛma yɛlɛma sanfɛla ni dugumana cɛ."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mozayiki"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2038,23 +2038,23 @@ msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan dɔw kɛ mozayiki ye."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan bɛɛ kɛ mozayiki ye."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Kare mozayiki"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Ɛkizagoni mozayiki"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Mozayiki cogoya caman"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2062,11 +2062,11 @@ msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan dɔw kɛ kare mozayikiman ye."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan bɛɛ kɛ mozayiki ye."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2076,11 +2076,11 @@ msgid ""
 msgstr ""
 "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan dɔw kɛ mozaki ye ani karo ɛkizakoniw."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Kilike, i ka ja fan bɛɛ kɛ mozayiki ye ani karo ɛkizagoniw."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2089,7 +2089,7 @@ msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja fan dɔw kɛ mozayiki cogoya caman ye."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Kilike, i ka ja fan bɛɛ kɛ mozayiki cogoya caman ye."
 
@@ -2543,18 +2543,22 @@ msgstr "Fununfunun"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka fununfunu ɲɛgɛn i ka ja kan."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "Telewisɔn"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "Kilike i ka ɲinɛnin cɛɛnɛ k'i ka ja fan dɔw kɛ i ko u bɛ ka bɔ telewisɔn na. "
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Kilike, i k'a kɛ i ko i ka ja bɛ ka bɔ telewisɔn na. "
 

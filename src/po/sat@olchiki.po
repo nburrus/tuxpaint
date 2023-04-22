@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2022-02-11 18:33+0530\n"
 "Last-Translator: Prasanta Hembram <prasantahembram720@gmail.com>\n"
 "Language-Team: \n"
@@ -1468,11 +1468,11 @@ msgstr "ᱪᱤᱛᱟᱹᱨ ᱴᱚᱯᱚᱜ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ �
 msgid "Click to make the entire picture drip."
 msgstr "ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ  ᱞᱟᱥᱮᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -1482,7 +1482,7 @@ msgstr ""
 "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮᱭᱟᱜ ᱦᱤᱸᱥ ᱨᱮ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱯᱚᱨᱵᱷᱟᱣ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ ᱨᱟᱠᱟᱵᱽ "
 "ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1528,17 +1528,17 @@ msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr ""
 "ᱵᱮᱥ ᱟᱠᱷᱚᱨ ᱚᱞ ᱦᱩᱱᱟᱹᱨ ᱨᱮ ᱜᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱜᱚᱴᱟ ᱥᱮᱫ ᱛᱮ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "ᱠᱟᱨᱴᱩᱩᱱ"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "ᱪᱤᱜᱟᱹᱨᱤᱭᱟᱹ ᱞᱟᱹᱜᱤᱫ ᱵᱮᱱᱟᱣᱟᱠᱟᱱ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱪᱤᱛᱟᱹᱨ ᱟᱹᱪᱩᱨ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱜᱚᱴᱟ ᱥᱮᱫ ᱛᱮ "
 "ᱚᱨ ᱠᱟᱛᱮ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to turn the entire picture into a cartoon."
@@ -1606,23 +1606,23 @@ msgstr "ᱥᱤᱠᱟᱹᱨ"
 msgid "Click to throw confetti!"
 msgstr "ᱥᱤᱠᱟᱹᱨ ᱜᱤᱰᱤ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "ᱵᱟᱹᱲᱤᱪ ᱛᱮᱭᱟᱨ"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱵᱟᱹᱲᱤᱪ ᱛᱮᱭᱟᱨᱫ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "ᱜᱟᱲᱦᱟᱣ"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "ᱪᱤᱛᱟᱹᱨ ᱜᱟᱲᱦᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1791,15 +1791,15 @@ msgstr "ᱫᱚᱯᱚᱲᱦᱟᱣ ᱪᱤᱱᱦᱟᱹ ᱠᱚ ᱜᱟᱨ ᱞᱟᱹ�
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "ᱫᱚᱯᱚᱲᱦᱟᱣ ᱪᱤᱱᱦᱟᱹ ᱠᱚ ᱜᱟᱨ ᱞᱟᱹᱜᱤ ᱜᱟᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "ᱠᱟᱸᱪ ᱠᱷᱟᱯᱨᱟ"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱪᱮᱛᱟᱱ ᱠᱟᱸᱪ ᱠᱷᱟᱯᱨᱟ ᱫᱚᱦᱚ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "ᱜᱤᱞᱟᱹᱥ ᱠᱷᱟᱯᱨᱟ ᱠᱚᱨᱮ ᱟᱢᱟᱜ ᱡᱚᱛᱚ ᱪᱤᱛᱟᱹᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
@@ -1991,66 +1991,66 @@ msgstr "ᱟᱨᱥᱤ ᱩᱢᱩᱞ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟ�
 msgid "Click to flip the picture upside-down."
 msgstr "ᱪᱤᱛᱟᱹᱨ ᱪᱮᱛᱟᱱ ᱫᱷᱟᱨᱮ-ᱞᱟᱛᱟᱨ ᱩᱪᱷᱞᱟᱹᱣ ᱞᱟᱹᱜᱤ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮᱭᱟᱜ ᱦᱤᱸᱥ ᱨᱮ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱯᱚᱨᱵᱷᱟᱣ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ ᱨᱟᱠᱟᱵᱽ "
 "ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱯᱚᱨᱵᱷᱟᱣ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "ᱥᱠᱣᱮᱨ ᱢᱚᱥᱟᱭᱤᱠ"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "ᱦᱮᱠᱥᱟᱜᱚᱱ ᱢᱚᱥᱟᱭᱤᱠ"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "ᱵᱟᱝ ᱴᱷᱤᱠ ᱢᱚᱥᱟᱭᱤᱠ"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮᱭᱟᱜ ᱦᱤᱸᱥ ᱨᱮ ᱯᱩᱱᱠᱩᱬ ᱵᱟᱠᱥᱟ ᱛᱮ ᱮᱥᱮᱛ ᱛᱮᱭᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱥᱮᱞᱮᱫ "
 "ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
 "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱯᱩᱱ ᱥᱚᱢᱟᱱ ᱡᱤᱞᱤᱧ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱥᱮᱞᱮᱫ "
 "ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮᱭᱟᱜ ᱦᱤᱸᱥ ᱨᱮ ᱤᱨᱟᱹᱞ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ "
 "ᱢᱟᱩᱥ ᱚᱨ ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱤᱨᱟᱹᱞ ᱜᱟᱨ ᱛᱮ ᱮᱥᱮᱫ ᱛᱮᱭᱟᱨ ᱪᱤᱛᱟᱹᱨ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮᱭᱟᱜ ᱦᱤᱸᱥ ᱨᱮ ᱟᱯᱟᱵᱟᱲᱤᱭᱟᱹ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱢᱟᱩᱥ ᱚᱨ "
 "ᱨᱟᱠᱟᱵᱽ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "ᱟᱢᱟᱜ ᱜᱚᱴᱟ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱟᱯᱟᱵᱟᱹᱲᱤᱭᱟ ᱪᱤᱛᱟᱹᱨ ᱵᱚᱨᱱᱚ ᱥᱮᱞᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
@@ -2487,18 +2487,22 @@ msgstr "ᱦᱚᱭ ᱫᱟᱠ"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱨᱮ ᱢᱤᱫ  ᱦᱚᱭ ᱫᱟᱜ ᱪᱤᱢᱱᱤ ᱜᱟᱨ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "ᱴᱤ ᱵᱷᱤ"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ  ᱴᱮᱞᱤᱣᱤᱡᱟᱱ ᱨᱮ ᱧᱮᱞᱚᱜ ᱞᱮᱠᱟ ᱨᱮᱭᱟᱜ ᱦᱤᱸᱥ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱨ ᱟᱨ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "ᱟᱢᱟᱜ ᱪᱤᱛᱟᱹᱨ ᱚᱱᱟ ᱴᱮᱞᱤᱣᱤᱡᱟᱱ ᱨᱮ ᱢᱮᱱᱟᱜ ᱞᱮᱠᱟ ᱛᱮᱭᱟᱨ ᱞᱟᱹᱜᱤᱫ ᱚᱛᱟᱭ ᱢᱮ ᱾"
 

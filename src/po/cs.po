@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2010-07-08 13:33+0100\n"
 "Last-Translator: Zdeněk Chalupský <chalzd@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -1485,11 +1485,11 @@ msgstr "Klepni nebo pohybuj myší a obrázek se rozteče."
 msgid "Click to make the entire picture drip."
 msgstr "Klikni pro zvýraznění (zaostření) okrajů celého obrázku."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1498,7 +1498,7 @@ msgid ""
 msgstr ""
 "Stiskni tlačítko myši a pohybem myši přidej mozaiku na vybrané části obrázku."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1553,17 +1553,17 @@ msgstr ""
 "Stiskem a pohybem myši získáš kaligrafické písmo. Vyznačuje se rozdílnou "
 "tloušťkou tahu."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Komiks"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Stiskem a pohybem myši získáš komiksový vzhled obrázku."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1631,23 +1631,23 @@ msgstr "Konfety"
 msgid "Click to throw confetti!"
 msgstr "Klikni pro házení konfet!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Zkreslení"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Kliknutím nebo tažením myši vyvoláš narušení čar a zkreslení obrázku."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Protlačení"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Kliknutím, nebo tažením myši protlačíš vybrané části obrázku."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1822,17 +1822,17 @@ msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klikni na pokrytí tvého obrázku dešťovými kapkami."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Skleněné dlaždice"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Kliknutím nebo tažením tažením myši polož skleněné dlaždice přes svůj "
 "obrázek."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Klikni pro pokrytí celého obrazu skleněnými dlaždicemi."
 
@@ -2035,11 +2035,11 @@ msgstr "Kliknutím vytvoříš zrcadlový obrázku."
 msgid "Click to flip the picture upside-down."
 msgstr "Kikni a obrázek se otočí vzhůru nohama."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mozaika"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2048,23 +2048,23 @@ msgid ""
 msgstr ""
 "Stiskni tlačítko myši a pohybem myši přidej mozaiku na vybrané části obrázku."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Kliknutím přidáš mozaiku na celý obrázek."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Čtvercová mozaika"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Śestiúhelníková mozaika"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Nepravidelná mozaika"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2074,11 +2074,11 @@ msgstr ""
 "Stiskni tlačítko myši a pohybem myši přidej čtvercovou mozaiku na vybrané "
 "části obrázku."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Kliknutím přidáš čtvercovou mozaiku na celý obrázek."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2089,11 +2089,11 @@ msgstr ""
 "Kliknutím nebo pohybem myši přidej šestiúhelníkovou mozaiku na vybrané části "
 "obrázku."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Kliknutím přidáš šestiúhelníkovou mozaiku na celý obrázek."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2104,7 +2104,7 @@ msgstr ""
 "Stikni tlačítko a pohybem myši přidej nepravidelnou mozaiku na vybrané části "
 "obrázku."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Kliknutím přidáš nepravidelnou mozaiku na celý obrázek."
 
@@ -2555,11 +2555,15 @@ msgstr "Tornádo"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klepnutím a tažením nakresli cestu tornáda po obrázku."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2567,7 +2571,7 @@ msgstr ""
 "Kliknutím a tažením, docílíš vzhledu obrazu v televizi s viditelným "
 "řádkováním."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Klikni, aby tvůj obrázek vypadal, jako v špatně naladěné televizi."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2023-04-02 09:54+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -1539,16 +1539,16 @@ msgstr "クリックしたまま マウスをうごかして えを ぬらした
 msgid "Click to make the entire picture drip."
 msgstr "えを クリックして ぜんたいを ぬらしたように しよう。"
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr "かがやき"
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "クリックしたまま マウスをうごかして あかるく かがやかせよう。"
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr ""
 "クリックしたまま マウスをうごかして えの ぜんたいを あかるく かがやかせよう。"
@@ -1592,15 +1592,15 @@ msgstr "ふでもじ"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "クリックしたまま マウスをうごかして ふでもじを かこう。"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "まんが"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "クリックしたままマウスをうごかして まんがみたいな えに しよう。"
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "えを クリックして ぜんたいを まんがみたいに しよう。"
 
@@ -1665,23 +1665,23 @@ msgstr "かみふぶき"
 msgid "Click to throw confetti!"
 msgstr "クリックして かみふぶきを とばそう！"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "ゆがめる"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "クリックしたまま マウスをうごかして えを ゆがめよう。"
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "うきぼり"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "クリックしたまま マウスをうごかして えを うきぼりに しよう。"
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 msgid "Click to emboss the entire picture."
 msgstr "えを クリックして ぜんたいを うきぼりに しよう。"
 
@@ -1821,16 +1821,16 @@ msgstr "クリックしたまま マウスをうごかして くりかえしも�
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "えを クリックして ぜんたいに くりかえしもようを かこう。"
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "ガラス タイル"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "クリックしたまま マウスをうごかして えに ガラスの タイルを かぶせよう。"
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "えを クリックして ぜんたいに ガラスの タイルを かぶせよう。"
 
@@ -2022,58 +2022,58 @@ msgstr "えをクリックして みぎとひだりを ひっくりかえそう�
 msgid "Click to flip the picture upside-down."
 msgstr "えをクリックして さかさまにしよう。"
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "モザイク"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "クリックしたまま マウスをうごかして モザイクえのようにしよう。"
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr ""
 "クリックしたまま マウスをうごかして えの ぜんたいを モザイクえのようにしよ"
 "う。"
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "タイル"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "はちのす"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "モザイク"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "クリックしたまま マウスをうごかして しかっけいの もざいくを かこう。"
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "えを クリックして ぜんたいを しかくい モザイクに しよう。"
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "クリックしたまま マウスをうごかして ろっかっけいの モザイクを かこう。"
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "えを クリックして ぜんたいを ろっかくけいの モザイクに しよう。"
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "クリックしたまま マウスをうごかして ふきそくな かたちの モザイクを かこう。"
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "えを クリックして ぜんたいを ふきそくな モザイクに しよう。"
 
@@ -2474,18 +2474,22 @@ msgstr "たつまき"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "クリックしたまま マウスをうごかして たつまきを かこう。"
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "テレビ"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 "クリックしたまま マウスを うごかして テレビに うつったみたいに しよう。"
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "えを クリックして テレビに うつったみたいに しよう。"
 

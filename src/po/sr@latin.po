@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2010-12-12 00:00+0100\n"
 "Last-Translator: Ivana <reci.ne.silvesteru@gmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -1597,12 +1597,12 @@ msgstr "Klikni i šetaj miša da bi boje na slici procurile."
 msgid "Click to make the entire picture drip."
 msgstr "Klikni da bi cela slika bila izoštrena."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
 #
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1611,7 +1611,7 @@ msgid ""
 msgstr "Klikni i pomeraj miša da dodaš mozaik efekt na delu slike."
 
 #
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1672,19 +1672,19 @@ msgstr "Lepo pisanje"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klikni i pomeraj miša okolo za lepo pisanje (kaligrafija)"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Crtež"
 
 #
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klikni i šetaj miša da bi pretvorio sliku u crtež."
 
 #
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1755,26 +1755,26 @@ msgstr "Konfete"
 msgid "Click to throw confetti!"
 msgstr "Klikni da baciš konfete!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Iskrivljavanje"
 
 #
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klikni i mrdaj mišem da zamrnjaš sliku."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Reljefno"
 
 #
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klikni i mrdaj mišem da bi slika postala reljefna."
 
 #
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1962,18 +1962,18 @@ msgstr "Klikni i mrdaj mišem da bi zamaglio sliku."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klikni da bi slika bila prekrivena kapljicama kiše."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Staklene pločice"
 
 #
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Klikni i pomeraj mišem da bi slika bila prekrivena staklenim pločicama."
 
 #
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr ""
 "Klikni i pomeraj miša da cela slika bila prekrivena staklenim pločicama."
@@ -2193,12 +2193,12 @@ msgid "Click to flip the picture upside-down."
 msgstr "Klikni da bi obrnuo sliku naopačke."
 
 #
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mozaik"
 
 #
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2207,26 +2207,26 @@ msgid ""
 msgstr "Klikni i pomeraj miša da dodaš mozaik efekt na delu slike."
 
 #
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Klikni da dodaš mozaik efekt na celu sliku."
 
 #
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Kvadratni mozaik"
 
 #
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Šestougaoni mozaik"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Nepravilam mozaik"
 
 #
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2235,12 +2235,12 @@ msgid ""
 msgstr "Klikni  i pomeraj mišem za kvadratni mozaik na delu slike."
 
 #
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klikni i dodaj kvadratni mozaik na celoj slici."
 
 #
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2250,12 +2250,12 @@ msgid ""
 msgstr "Klikni  i pomeraj mišem za šestougaoni mozaik na delu slike."
 
 #
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klikni i dodaj šestougaoni mozaik na celoj slici."
 
 #
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2265,7 +2265,7 @@ msgid ""
 msgstr "Klikni  i pomeraj mišem za nepravilni mozaik na delu slike."
 
 #
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klikni i dodaj nepravilni mozaik na celoj slici."
 
@@ -2765,19 +2765,23 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klikni i privuci crtež tornada tvojoj slici."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "Televizor"
 
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
 #
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr "Klikni i učini da deo slike izgleda kao da je na televiziji."
 
 #
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Klikni i pomeraj miša da bi slika izgledala kao da je na televizoru."
 

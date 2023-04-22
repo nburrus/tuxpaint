@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2013-01-19 23:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sindhi-DV\n"
@@ -1479,11 +1479,11 @@ msgstr "तस्वीरी बूंद रचण लाइ क्लिक �
 msgid "Click to make the entire picture drip."
 msgstr "पंहिंजी समूरी तस्वीर तिखी करण लाइ क्लिक करियो."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1493,7 +1493,7 @@ msgstr ""
 "पंहिंजे तस्वीर जे हिसनि में टुकिरियुनि जे टुकिरियुनि जे जड़त कारीअ जो असरु शामिलु करण लास "
 "क्लिक करियो ऐं हलायो."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1546,17 +1546,17 @@ msgstr "ख़ुशनवीसी"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "ख़ुशनवीसीअ में नक़्श रचण लाइ क्लिक करियो ऐं उन जे चौतरफ़ि माऊसु हलायो."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "कार्टूनु"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "तस्वीर कार्टून में बदलाइण लाइ क्लिक करियो ऐं उन जे चौतरफ़ि माऊसु हलायो."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1625,23 +1625,23 @@ msgstr "रंगीनु पननि जूंटुकिरियूं"
 msgid "Click to throw confetti!"
 msgstr "रंगीनु पननि जूं टुकिरियूं उछिलाइण लाइ क्लिक करियो."
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "फिॾाई"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "पंहिंजे तस्वीर में फिॾाई आणण लाइ क्लिक करिय ऐं माऊसु गिहिलियो."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "एम्बोस"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "तस्वीर एम्बोस करण लाइ क्लिक करियो ऐं माऊसु गिहिलियो"
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1812,15 +1812,15 @@ msgstr "पोइण जे कला सां तीर रचण लाइ �
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "पंहिंजे तस्वीर बरसाति जे बूंदुनि सां भरण लशइ क्लिक करियो."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "शीशे जी टाइल"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "पंहिंजे तस्वीर मथां शीशे जी टाइल रखण लाइ क्लिक करियो ऐं माऊसु गिहिलियो."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "शीशे जी टाइल में समूरी तस्वीर भरण लाइ क्लिक करियो."
 
@@ -2017,11 +2017,11 @@ msgstr "दर्सिनीअ जो अक़्सु रचण लाइ क�
 msgid "Click to flip the picture upside-down."
 msgstr "तस्वीर मथां हेठि उछल ॾियारण लाइ क्लिक करियो."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "टुकिरियुनि जी जड़तकारी"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2031,23 +2031,23 @@ msgstr ""
 "पंहिंजे तस्वीर जे हिसनि में टुकिरियुनि जे टुकिरियुनि जे जड़त कारीअ जो असरु शामिलु करण लास "
 "क्लिक करियो ऐं हलायो."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "पंहिंजे समूरीअ तस्वीर में टुकिरियुनि जे जड़तकारीअ असरु शामिलु करण लाइ क्लिक करियो."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "चौरसि टुकिरियुनि जी जड़तकारी"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "छह कुंडी टुकिरियुनि जी जड़तकारी"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "बेतर्तीबु टुकिरियुनि जी जड़तकारी"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2057,11 +2057,11 @@ msgstr ""
 "पंहिंजे तस्वीर जे हिसनि में चौरसि टकिरियुनि जी जड़त कारी शामिलु करण लाइ क्लिक करियो ऐं "
 "माऊसु हलायो."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "पंहिंजे समूरीअ तस्वीर में चौरसि टुकिरियुनि जी जड़तकारी शामिलु करण लाइ क्लिक करियो."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2072,12 +2072,12 @@ msgstr ""
 "पंहिंजे तस्वीर जे हिसनि में छह कुंडनि टुकिरनि जी जड़त कारी शामिलु करण लाइ क्लिक करियो ऐं "
 "माऊसु हलायो."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "पंहिंजे समूरीअ तस्वीर में छह कुंडनि टुकिरियुनि जी जड़तकारी शामिलु करण लाइ क्लिक करियो."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2088,7 +2088,7 @@ msgstr ""
 "पंहिंजे तस्वीर जे हिसनि में बेतर्तीबु टुकिरियुनि जी जड़तकारी शामिलु करण लाइ क्लिक करियो ऐं "
 "माऊसु हलायो."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "पंहिंजे समूरीअ तस्वीर में बेतर्तीबु टुकिरियुनि जी जड़तकारी शामिलु करण लाइ क्लिक करियो."
@@ -2549,11 +2549,15 @@ msgstr "वाचूड़ो"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "पंहिंजे तस्वीर ते वाचूड़े वादी क़ीफ़ जे नक़्शु कढण लाइ क्लिक करियो ऐं गिहिलियो."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2561,7 +2565,7 @@ msgstr ""
 "पंहिंजे तस्वीर जा हिसा इएं बणाइण लाइ ॼणु उहे टेलीविज़न ते नज़र अचनि था क्लिक करियो ऐं "
 "गिहिलियो."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "पंहिंजी तस्वीर टेलीविज़न ते हुजण जहिड़ी बणाइण लाइ क्लिक करियो."
 

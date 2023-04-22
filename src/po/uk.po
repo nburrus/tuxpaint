@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23 uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2023-03-29 19:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1586,18 +1586,18 @@ msgstr ""
 msgid "Click to make the entire picture drip."
 msgstr "Клацніть, щоб зробити вкритим краплями весь малюнок."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr "Флуоресценція"
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб застосувати ефект "
 "флуоресценції до частин вашого малюнка."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr ""
 "Натисніть кнопку миші, щоб застосувати ефект флуоресценції до усього вашого "
@@ -1647,17 +1647,17 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб малювати каліграфічним "
 "пензлем."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Комікс"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб перетворити малюнок на "
 "мультиплікаційний."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Натисніть кнопку миші, щоб перетворити увесь малюнок на комікс."
 
@@ -1722,26 +1722,26 @@ msgstr "Конфеті"
 msgid "Click to throw confetti!"
 msgstr "Клацніть, щоб порозкидувати конфеті!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Спотворення"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Клацніть та протягніть мишку по малюнку, щоб викликати спотворення на ньому."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Рельєф"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб зробити малюнок "
 "рельєфнішим."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 msgid "Click to emboss the entire picture."
 msgstr "Клацніть, щоб зробити зробити рельєфним весь малюнок."
 
@@ -1891,16 +1891,16 @@ msgid "Click to surround your picture with repetitive patterns."
 msgstr ""
 "Клацніть кнопкою миші, щоб оточити ваш малюнок візерунком, що повторюється."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Вітраж"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Клацніть та протягніть мишкою, щоб встановити вітраж над Вашим малюнком."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Клацніть, щоб покрити малюнок скляною мозаїкою."
 
@@ -2082,64 +2082,64 @@ msgstr "Клацніть, щоб зробити дзеркальне відби�
 msgid "Click to flip the picture upside-down."
 msgstr "Клацніть на малюнку, щоб перевернути його догори ногами."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Мозаїка"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб додати ефект мозаїчності "
 "на частину вашого малюнка."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Клацніть, щоб покрити мозаїкою весь малюнок."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Квадратна мозаїка"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Шестикутна мозаїка"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Неправильна мозаїка"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб додати мозаїку з "
 "квадратиків на ваш малюнок."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Клацніть, щоб перетворити увесь ваш малюнок на мозаїку з квадратиків."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб додати мозаїку з "
 "шестикутників на ваш малюнок."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr ""
 "Клацніть, щоб перетворити увесь ваш малюнок на мозаїку з шестикутників."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб додати мозаїку з "
 "елементів неправильної форми на ваш малюнок."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "Клацніть, щоб перетворити увесь ваш малюнок на мозаїку з елементів "
@@ -2564,11 +2564,15 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб намалювати вихор на "
 "вашому малюнку."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "ТБ"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2576,7 +2580,7 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб ваш малюнок виглядав як "
 "зображення у телевізорі."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Клацніть, щоб Ваш малюнок виглядав як телевізійний."
 

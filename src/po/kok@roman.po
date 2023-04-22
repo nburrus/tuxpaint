@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2012-05-11 18:00+0530\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1484,11 +1484,11 @@ msgstr " pinturachi gollovnni korunk maus clk korun zongeantor kor "
 msgid "Click to make the entire picture drip."
 msgstr " sogllea pinturachi dhar kaddunk klik kor "
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1498,7 +1498,7 @@ msgstr ""
 " tujea pinturachea bhagak mozaik prabhav zoddunk mous klik korun zogeantor "
 "kor "
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1551,17 +1551,17 @@ msgstr " hatborop "
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr " hatboropan pintoranvk klik korun bonvtonni zogeantor kor "
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr " kartun "
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr " pintur kartunant bodlunk maus klik korun bonvtonni zogeantor kor "
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1631,23 +1631,23 @@ msgstr " konfitt'tti "
 msgid "Click to throw confetti!"
 msgstr " konfitt'tti uddonvk klik kor "
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr " Vikruti "
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr " tujea pinturant vikruti nirmann korunk maus klik korun vhodd "
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr " chchapp mar "
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr " chchapp marunk maus klik korun vhodd "
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1827,15 +1827,15 @@ msgstr " suta kolent kel'lo bann pintranvk klik korun vodd "
 msgid "Click to surround your picture with repetitive patterns."
 msgstr " tujem pintur pavsa thembiyamni dhampunk klik kor "
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr " arsea itto "
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr " tujea pinturacher arsea itto ghalunk klik korun zogeantor kor "
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr " sogllem pintur arsea ittean bhorunk klik kor "
 
@@ -2041,11 +2041,11 @@ msgstr " arseachi protima korunk klik kor "
 msgid "Click to flip the picture upside-down."
 msgstr " pintur voir-sokoil flip korunk klik kor "
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr " mozaik "
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2055,23 +2055,23 @@ msgstr ""
 " tujea pinturachea bhagak mozaik prabhav zoddunk mous klik korun zogeantor "
 "kor "
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr " tujea soglea pinturak mozaik probhav zoddunk klik kor "
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr " chovkoni mozaik "
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr " xottkoni mozaik "
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr " oniyomit chovkon "
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2081,11 +2081,11 @@ msgstr ""
 " tujea pinturachea bhagank chovkoni mozaik zoddunk maus klik korun zogeantor "
 "kor "
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr " tujea sogllea pinturak chovkoni mozaik zoddunk klik kor "
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2096,11 +2096,11 @@ msgstr ""
 " tujea pinturachea bhagank xottkoni mozaik zoddunk maus klik korun zogeantor "
 "kor "
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr " tujea sogllea pinturak xottkoni mozaik zoddunk klik kor "
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2111,7 +2111,7 @@ msgstr ""
 " tujea pinturachea bhagank oniyomit mozaik zoddunk maus klik korun zogeantor "
 "kor "
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr " tujea sogllea pinturak oniyomit mozaik zoddunk klik kor "
 
@@ -2574,18 +2574,22 @@ msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 " tujea pinturacher zoddvarea gallnem pintranvk klik korun zageantor kor "
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr " durdorxon "
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
 " tujea pinturacher bhag durdorxonacher aschea bhaxen disonk, klikkorun vodd "
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr " tujem pintur durdorxonacher asa mull'lle bhaxen disonk klik kor "
 

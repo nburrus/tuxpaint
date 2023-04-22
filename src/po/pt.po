@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2023-03-30 15:04+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -1571,18 +1571,18 @@ msgstr "Clica e arrasta o rato para converter o desenho em gotas."
 msgid "Click to make the entire picture drip."
 msgstr "Clica para converter o desenho inteiro em gotas."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr "Florescente"
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
 "Clica e arrasta para aplicar um efeito \"florescente\" brilhante em algumas "
 "partes do teu desenho."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr ""
 "Clica para aplicar um efeito \"florescente\" brilhante a todo o teu desenho."
@@ -1626,15 +1626,15 @@ msgstr "Caligrafia"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Clica e arrasta o rato à volta para desenhar em caligrafia."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Desenho animado"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Clica e arrasta o rato para converter a imagem num desenho animado."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Clica para transformar a imagem inteira num desenho animado."
 
@@ -1695,23 +1695,23 @@ msgstr "Serpentina"
 msgid "Click to throw confetti!"
 msgstr "Clica para criar serpentinas!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Distorção"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Clica e arrasta o rato para distorcer o desenho."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Relevo"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Clica e arrasta o rato para criar relevo no desenho."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 msgid "Click to emboss the entire picture."
 msgstr "Clica para criar relevo no desenho inteiro."
 
@@ -1849,16 +1849,16 @@ msgstr "Clica e arrasta para desenhar padrões repetitivos."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Clica para contornar o desenho com padrões repetitivos."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Mosaico de vidro"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Clica e arrasta o rato para colocar mosaico de vidro sobre o teu desenho."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Clica para cobrir o desenho inteiro com mosaicos de vidro."
 
@@ -2031,63 +2031,63 @@ msgstr "Clica para espelhares o desenho."
 msgid "Click to flip the picture upside-down."
 msgstr "Clica para inverteres o desenho."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mosaico"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Clica e arrasta o rato para adicionar um efeito de mosaico em algumas partes "
 "do desenho."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Clica para adicionar um efeito de mosaico ao desenho."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Mosaico quadrado"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Mosaico hexagonal"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Mosaico irregular"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Clica e arrasta o rato para adicionar um mosaico quadrado em algumas partes "
 "do desenho."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Clica para adicionar um mosaico quadrado ao desenho."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Clica e arrasta o rato para adicionar um mosaico hexagonal em algumas partes "
 "do desenho."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Clica para adicionar um mosaico hexagonal ao desenho."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Clica e arrasta o rato para adicionar um mosaico irregular em algumas partes "
 "do desenho."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Clica para adicionar um mosaico irregular ao desenho."
 
@@ -2484,11 +2484,15 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Clica e arrasta para desenhar um tornado no desenho."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2496,7 +2500,7 @@ msgstr ""
 "Clica e arrasta para fazer com que algumas partes do desenho apareçam como "
 "se estivessem na televisão."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Clica para fazer com que o desenho pareça estar numa televisão."
 

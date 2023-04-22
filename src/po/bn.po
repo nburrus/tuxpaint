@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2017-12-30 18:24+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Bengali\n"
@@ -1478,11 +1478,11 @@ msgstr "ছবিটি ঝরানো করতে মাউস ক্লি�
 msgid "Click to make the entire picture drip."
 msgstr "সমগ্র ছবিটি ধারালো করতে ক্লিক করুন."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1490,7 +1490,7 @@ msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "আপনার ছবির কিছু অংশে মোজাইক প্রভাব যোগ করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1543,17 +1543,17 @@ msgstr "চারুলিপি"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "চারুলিপিতে আঁকতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "কার্টুন"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "ছবিটি একটি কার্টুনে পরিণত করতে মাউস ক্লিক করুন এবং চারপাশে ঘোরান."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1622,23 +1622,23 @@ msgstr "রঙিন কাগজ"
 msgid "Click to throw confetti!"
 msgstr "রঙিন কাগজ ছুড়ে মারতে ক্লিক করুন!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "বিকৃতি"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "আপনার ছবিতে বিকৃতি আনতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "এমবস"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "ছবিটি এমবস করতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1809,15 +1809,15 @@ msgstr "স্ট্রিং আর্টের তৈরি তীর আঁ�
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "আপনার ছবিতে বৃষ্টির ফোঁটা দিয়ে ভরতে ক্লিক করুন."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "কাচের টাইল"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "আপনার ছবিতে কাচের টাইল রাখতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "আপনার সমগ্র ছবিটি কাচের টাইলে ঢাকতে ক্লিক করুন."
 
@@ -2018,11 +2018,11 @@ msgstr "প্রতিবিম্ব তৈরি করতে ক্লিক
 msgid "Click to flip the picture upside-down."
 msgstr "ছবির উপরদিক-নিচে ফ্লিপ করতে ক্লিক করুন."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "মোজাইক"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2030,23 +2030,23 @@ msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "আপনার ছবির কিছু অংশে মোজাইক প্রভাব যোগ করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "আপনার সমগ্র ছবিতে মোজাইক প্রভাব যোগ করতে ক্লিক করুন."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "বর্গাকার মোজাইক"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "ষড়কোণ মোজাইক"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "অনিয়মিত মোজাইক"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2054,11 +2054,11 @@ msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "আপনার ছবির কিছু অংশে বর্গাকার মোজাইক যোগ করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "আপনার সমগ্র ছবিতে বর্গাকার মোজাইক যোগ করতে ক্লিক করুন.."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2067,11 +2067,11 @@ msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "আপনার ছবির কিছু অংশে ষড়ভূজ মোজাইক যোগ করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "আপনার সমগ্র ছবিতে ষড়ভূজ মোজাইক যোগ করতে ক্লিক করুন."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2081,7 +2081,7 @@ msgid ""
 msgstr ""
 "আপনার ছবির কিছু অংশে একটি অনিয়মিত মোজাইক যোগ করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "আপনার ছবিতে একটি অনিয়মিত মোজাইক যোগ করতে ক্লিক করুন."
 
@@ -2525,17 +2525,21 @@ msgstr "টর্নেডো"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "আপনার ছবিতে একটি টর্নেডো ফানেল আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "TV"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr "আপনার ছবিটির কিছু অংশ টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "আপনার ছবিটি টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন."
 

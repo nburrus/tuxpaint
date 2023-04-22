@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2022-09-10 06:06-0400\n"
 "Last-Translator: Mark K. Kim <markuskimius@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -1413,11 +1413,11 @@ msgstr "마우스를 누르고 끌면 그림이 흐르는 것 같이 되어요."
 msgid "Click to make the entire picture drip."
 msgstr "마우스를 누르면 그림이 전채가 흐르게 변해요."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -1425,7 +1425,7 @@ msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "마우스를 누르고 끌면 그림을 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1470,15 +1470,15 @@ msgstr "서예"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "마우스를 누르고 끌면 서에식으로 그름을 그릴수 있어요."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "만화"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "마우스를 누르고 끌면 그림이 만화 같이 변화돼요."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "마우스를 누르면 그림이 만화형이 되어요."
 
@@ -1542,23 +1542,23 @@ msgstr "종이조각"
 msgid "Click to throw confetti!"
 msgstr "종이조각들을 뿌려보세요!"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "찌그리기"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "마우스를 누르고 끌면 그림을 찌그를 수 있어요."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "양각"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "마우스를 누르고 끌면 그림을 약각 시킬 수 있어요."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 msgid "Click to emboss the entire picture."
 msgstr "마우스를 누르면 그림이 양각형이 되어요."
 
@@ -1715,15 +1715,15 @@ msgstr "마우스를 누르고 끌면 무늬를 그릴 수 있습니다."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "마우스를 누르면 그림이 무늬로 둘러 쌓아 져요."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "유리 타일"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "마우스를 누르고 끌면 그림에 유리타일이 깔려요."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "마우스를 누르면 그림 전채가 유리타일로 깔려요."
 
@@ -1901,56 +1901,56 @@ msgstr "마우스를 누르면 그림이 뒤집어져요."
 msgid "Click to flip the picture upside-down."
 msgstr "마우스를 누르면 그림이 엎어져요."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "모자이크"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "마우스를 누르고 끌면 그림을 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "마우스를 누르면 그림을 모자이크로 덮을 수 있어요."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "정사각형 모자이크"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "6각형 모자이크"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "고르지 못한 모자이크"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "마우스를 누르고 끌면 그림의 부분을 정사각형 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "마우스를 누르면 그림을 정사각형 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "마우스를 누르고 끌면 그림의 부분을 6각형 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "마우스를 누르면 그림을 6각형 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "마우스를 누르고 끌면 그림의 부분을 고르지 못한 모자이크로 만들 수 있어요."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "마우스를 누르면 그림을 고르지 못한 모자이크로 만들 수 있어요."
 
@@ -2342,17 +2342,21 @@ msgstr "회오리바람"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "마우스를 누르고 끌면 깔때기 회오리바람 을 그릴 수 있어요."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "텔레비젼"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr "마우스를 누르고 끌면 그림의 부분이 텔레비젼에 나온 것 같이돼요."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "마우스를 누르면 그림이 텔레비젼에 나온 것 같이돼요."
 

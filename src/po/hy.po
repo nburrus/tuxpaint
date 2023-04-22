@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2014-03-22 11:39+0400\n"
 "Last-Translator: Aram Palyan <ararat.info@gmail.com>\n"
 "Language-Team: Armenian <ararat.info@gmail.com>\n"
@@ -1488,11 +1488,11 @@ msgstr ""
 msgid "Click to make the entire picture drip."
 msgstr "Սեղմիր` ամբողջ նկարդ բարելավելու համար"
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1502,7 +1502,7 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում խճանկարի էֆեկտ "
 "ավելացնելու համար"
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1555,17 +1555,17 @@ msgstr "Գեղագրություն"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը գեղագրական ոճով նկարելու համար"
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Մուլտիկ"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Սեղմիր և շարժիր մկնիկը շուրջ բոլորը մուլտիկային դարձնելու համար:"
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1635,23 +1635,23 @@ msgstr "Ձյունիկ"
 msgid "Click to throw confetti!"
 msgstr "Սեղմիր ու ցպնիր ձյունիկներ:"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Աղավաղում"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Սեղմիր և քաշելով տար մկնիկը պատկերն աղավաղելու համար"
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Քանդակ"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Սեղմիր և քաշելով տար մկնիկը պատկերը քանդակ դարձնելու համար"
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1827,15 +1827,15 @@ msgstr "Սեղմիր և քաշիր կրկնվող ձևանմուշներ նկա�
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Սեղմիր, նկարդ կրկնվող ձևանմուշներով շրջապատելու համար"
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Ապակե Սալիկ"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Սեղմիր և քաշելով տար մկնիկը, նկարիդ վրա ապակե սալիկ դնելու համար"
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Սեղմիր, նկարդ ամբողջությամբ ապակե սալիկով ծածկելու համար"
 
@@ -2036,11 +2036,11 @@ msgstr "Սեղմիր` հայելային պատկեր ստեղծելու համ�
 msgid "Click to flip the picture upside-down."
 msgstr "Սեղմիր` նկարը գլխիվայր շրջելու համար:"
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Խճանկար"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2050,23 +2050,23 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում խճանկարի էֆեկտ "
 "ավելացնելու համար"
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Սեղմիր` ամբողջ պատկերում խճանկարի էֆեկտ ավելացնելու համար:"
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Քառակուսի խճանկար"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Վեցանկյուն Խճանկար"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Անկանոն Խճանկար"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a square mosaic to parts of your picture."
@@ -2076,11 +2076,11 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում քառակուսի խճանկար "
 "ավելացնելու համար:"
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Սեղմիր` ամբողջ նկարիդ քառակուսի խճանկար ավելացնելու համար:"
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a hexagonal mosaic to parts of your "
@@ -2091,11 +2091,11 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում վեցանկյուն խճանկար "
 "ավելացնելու համար:"
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Սեղմիր` ամբողջ նկարիդ վեցանկյուններով խճանկար ավելացնելու համար:"
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add an irregular mosaic to parts of your "
@@ -2106,7 +2106,7 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում անկանոն խճանկար "
 "ավելացնելու համար:"
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Սեղմիր` ամբողջ նկարիդ անկանոն խճանկար ավելացնելու համար:"
 
@@ -2569,11 +2569,15 @@ msgstr "Պտտահողմ"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Սեղմիր և քաշիր` նկարիդ վրա պտտահողմի «ձագար» նկարելու համար"
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "Հեռուստացույց"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2581,7 +2585,7 @@ msgstr ""
 "Սեղմիր և քաշիր` նկարիդ որոշ հատվածներին հեռուստաէկրանի պատկերի տեսք տալու "
 "համար:"
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Սեղմիր` նկարին հեռուստաէկրանի պատկերի տեսք տալու համար:"
 

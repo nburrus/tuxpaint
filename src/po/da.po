@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2017-12-05 12:38+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -1482,11 +1482,11 @@ msgstr "Klik og bevæg musen rundt for at få farverne til at løbe/dryppe."
 msgid "Click to make the entire picture drip."
 msgstr "Klik for at skærpe hele billedet."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -1496,7 +1496,7 @@ msgstr ""
 "Klik og bevæg musen rundt for at tilføje en mosaikeffekt til dele af dit "
 "billede."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1541,15 +1541,15 @@ msgstr "Kalligrafi"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik og bevæg musen rundt for at tegne med kalligrafi."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "Karikatur"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klik og bevæg musen rundt for at karikere billedet."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1622,25 +1622,25 @@ msgid "Click to throw confetti!"
 msgstr "Klik for at kaste konfetti!"
 
 # Overvejelser: forvrængning, forvanskning, fordrejning 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "Forvrængning"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik og bevæg musen rundt, for at skabe forvrængning i dit billede."
 
 # Engelsk forklaring af ordet emboss: to raise or represent (surface designs) in relief. 
 # Kunne også være præget, drevet, presset (præg, driv, pres), fremhæv.
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "Tydeliggør"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "Klik og bevæg musen rundt, for at tydeliggøre billedet."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1813,15 +1813,15 @@ msgstr "Klik for at omringe dit billede med gentagende mønstre."
 
 # kunne måske også være glasfelt, glasflise. Men er en knap hvor man gør 
 # billedet glasagtigt.
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "Glasrude"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "Klik og bevæg musen rundt, for at sætte glasruder over dit billede."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Klik for at dække hele dit billede i glasruder."
 
@@ -2017,63 +2017,63 @@ msgstr "Klik på billedet for at spejlvende det."
 msgid "Click to flip the picture upside-down."
 msgstr "Klik på billedet for at vende det op/ned."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mosaik"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr ""
 "Klik og bevæg musen rundt for at tilføje en mosaikeffekt til dele af dit "
 "billede."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "Klik for at tilføje en mosaikeffekt på hele dit billede."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 msgid "Square Mosaic"
 msgstr "Kvadratmosaik"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 msgid "Hexagon Mosaic"
 msgstr "Sekskantmosaik"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr "Asymmetrisk mosaik"
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
 "Klik og bevæg musen rundt for at tilføje en kvadratmosaik til dele af dit "
 "billede."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "Klik for at tilføje en kvadratmosaik på hele dit billede."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr ""
 "Klik og bevæg musen rundt for at tilføje en sekskantmosaik til dele af dit "
 "billede."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "Klik for at tilføje en sekskantmosaik på hele dit billede."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr ""
 "Klik og bevæg musen rundt for at tilføje en irregulær mosaik til dele af dit "
 "billede."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klik for at tilføje en asymmetrisk mosaik på hele dit billede."
 
@@ -2513,11 +2513,15 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klik og bevæg musen rundt for at tegne en tornadotragt på dit billede."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "Tv"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
@@ -2525,7 +2529,7 @@ msgstr ""
 "Klik og bevæg musen rundt for at få dit billede til at se ud som om, det er "
 "i fjernsynet."
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "Klik for at få dit billede til at se ud som om, det er i fjernsynet."
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-22 10:05-0700\n"
+"POT-Creation-Date: 2023-04-22 12:12-0700\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -1485,11 +1485,11 @@ msgstr "படத்தை ஒழுகச் செய்ய ஏதேனும
 msgid "Click to make the entire picture drip."
 msgstr "சொடுக்கினால், முழுப்படத்தையும் கூராக்கலாம்."
 
-#: ../../magic/src/bloom.c:114
+#: ../../magic/src/bloom.c:117
 msgid "Bloom"
 msgstr ""
 
-#: ../../magic/src/bloom.c:127
+#: ../../magic/src/bloom.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -1497,7 +1497,7 @@ msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/bloom.c:129
+#: ../../magic/src/bloom.c:132
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
@@ -1550,17 +1550,17 @@ msgstr "பட எழுத்து"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "சொடுக்கி நகர்த்தினால், பட எழுத்துகளை வரையலாம்."
 
-#: ../../magic/src/cartoon.c:116
+#: ../../magic/src/cartoon.c:119
 msgid "Cartoon"
 msgstr "கேலிப்படம்"
 
-#: ../../magic/src/cartoon.c:134
+#: ../../magic/src/cartoon.c:137
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தை ஒரு கேலிப்படம் போல மாற்றலாம்."
 
-#: ../../magic/src/cartoon.c:140
+#: ../../magic/src/cartoon.c:143
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1631,23 +1631,23 @@ msgstr "வண்ணக் காகிதத் துண்டுகள்"
 msgid "Click to throw confetti!"
 msgstr "சொடுக்கினால், வண்ணக் காகிதத் துண்டுகளை எறியலாம்"
 
-#: ../../magic/src/distortion.c:145
+#: ../../magic/src/distortion.c:150
 msgid "Distortion"
 msgstr "உருக்குலை"
 
-#: ../../magic/src/distortion.c:166
+#: ../../magic/src/distortion.c:171
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தை உருக்குலைக்கலாம்."
 
-#: ../../magic/src/emboss.c:110
+#: ../../magic/src/emboss.c:114
 msgid "Emboss"
 msgstr "புடை"
 
-#: ../../magic/src/emboss.c:127
+#: ../../magic/src/emboss.c:131
 msgid "Click and drag the mouse to emboss the picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தைப் புடைக்கச் செய்யலாம்."
 
-#: ../../magic/src/emboss.c:129
+#: ../../magic/src/emboss.c:133
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
@@ -1813,15 +1813,15 @@ msgstr "சொடுக்கி இழுத்தால், படத்தி
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "சொடுக்கினால், படம் முழுக்க மழைத்துளிகளைச் சேர்க்கலாம்."
 
-#: ../../magic/src/glasstile.c:114
+#: ../../magic/src/glasstile.c:121
 msgid "Glass Tile"
 msgstr "கண்ணாடி ஓடு"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:138
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தில் கண்ணாடி ஓடுகளை இடலாம்."
 
-#: ../../magic/src/glasstile.c:135
+#: ../../magic/src/glasstile.c:142
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "சொடுக்கினால், முழுப்படத்தையும் கண்ணாடி ஓடுகளால் நிரப்பலாம்."
 
@@ -2022,11 +2022,11 @@ msgstr "சொடுக்கினால், கண்ணாடிப் பட
 msgid "Click to flip the picture upside-down."
 msgstr "சொடுக்கினால் படம் தலைகீழாகும்."
 
-#: ../../magic/src/mosaic.c:103
+#: ../../magic/src/mosaic.c:107
 msgid "Mosaic"
 msgstr "Mosaic"
 
-#: ../../magic/src/mosaic.c:112
+#: ../../magic/src/mosaic.c:116
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2034,27 +2034,27 @@ msgid ""
 "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic.c:113
+#: ../../magic/src/mosaic.c:117
 msgid "Click to add a mosaic effect to your entire picture."
 msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic_shaped.c:146
+#: ../../magic/src/mosaic_shaped.c:150
 #, fuzzy
 #| msgid "Square"
 msgid "Square Mosaic"
 msgstr "சதுரம்"
 
-#: ../../magic/src/mosaic_shaped.c:147
+#: ../../magic/src/mosaic_shaped.c:151
 #, fuzzy
 #| msgid "Mosaic"
 msgid "Hexagon Mosaic"
 msgstr "Mosaic"
 
-#: ../../magic/src/mosaic_shaped.c:148
+#: ../../magic/src/mosaic_shaped.c:152
 msgid "Irregular Mosaic"
 msgstr ""
 
-#: ../../magic/src/mosaic_shaped.c:155
+#: ../../magic/src/mosaic_shaped.c:159
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2062,13 +2062,13 @@ msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic_shaped.c:156
+#: ../../magic/src/mosaic_shaped.c:160
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add a square mosaic to your entire picture."
 msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic_shaped.c:161
+#: ../../magic/src/mosaic_shaped.c:165
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2076,13 +2076,13 @@ msgid ""
 "Click and drag the mouse to add a hexagonal mosaic to parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic_shaped.c:162
+#: ../../magic/src/mosaic_shaped.c:166
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add a hexagonal mosaic to your entire picture."
 msgstr "சொடுக்கினால், முழுப்படத்திலும் mosaic விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic_shaped.c:167
+#: ../../magic/src/mosaic_shaped.c:171
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2090,7 +2090,7 @@ msgid ""
 "Click and drag the mouse to add an irregular mosaic to parts of your picture."
 msgstr "சொடுக்கி நகர்த்தினால், படத்தில் mosais விளைவு சேர்க்கலாம்."
 
-#: ../../magic/src/mosaic_shaped.c:168
+#: ../../magic/src/mosaic_shaped.c:172
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to add an irregular mosaic to your entire picture."
@@ -2541,11 +2541,15 @@ msgstr ""
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தில் தொடர்வண்டி இருப்புப் பாதைகளை வரையலாம்."
 
-#: ../../magic/src/tv.c:110
+#: ../../magic/src/tv.c:120
 msgid "TV"
 msgstr "தொலைக்காட்சி"
 
-#: ../../magic/src/tv.c:124
+#: ../../magic/src/tv.c:122
+msgid "TV (Bright)"
+msgstr ""
+
+#: ../../magic/src/tv.c:136
 #, fuzzy
 #| msgid "Click to make your picture look like it's on television."
 msgid ""
@@ -2553,7 +2557,7 @@ msgid ""
 "television."
 msgstr "சொடுக்கினால், உங்கள் படம் தொலைக்காட்சியில் உள்ளது போல் தெரியும். "
 
-#: ../../magic/src/tv.c:129
+#: ../../magic/src/tv.c:140
 msgid "Click to make your picture look like it's on television."
 msgstr "சொடுக்கினால், உங்கள் படம் தொலைக்காட்சியில் உள்ளது போல் தெரியும். "
 
