@@ -363,11 +363,14 @@ void bloom_line_callback_drag(void *ptr, int which ATTRIBUTE_UNUSED,
 
 
 void bloom_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                        int which ATTRIBUTE_UNUSED ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                        int which ATTRIBUTE_UNUSED ATTRIBUTE_UNUSED, int mode,
                         SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
   if (bloom_mask == NULL)
     bloom_mask = (Uint8 *) malloc(sizeof(Uint8) * canvas-> w * canvas->h);
+
+  if (mode == MODE_FULLSCREEN)
+    bloom_set_size(api, which, mode, NULL, NULL, bloom_default_size(api, which, mode), NULL);
 }
 
 void bloom_switchout(magic_api * api ATTRIBUTE_UNUSED,
@@ -386,9 +389,12 @@ float change_luminance(float c_in, float l_in, float l_out) {
 }
 
 
-Uint8 bloom_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 bloom_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
-  return 4;
+  if (mode == MODE_PAINT)
+    return 4;
+  else
+    return 0;
 }
 
 Uint8 bloom_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
