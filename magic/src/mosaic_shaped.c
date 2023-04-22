@@ -30,7 +30,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -64,7 +64,7 @@ static void mosaic_shaped_paint(void *ptr, int which, SDL_Surface * canvas,
                                 SDL_Surface * last, int x, int y);
 
 Uint32 mosaic_shaped_api_version(void);
-int mosaic_shaped_init(magic_api * api);
+int mosaic_shaped_init(magic_api * api, Uint32 disabled_features);
 int mosaic_shaped_get_tool_count(magic_api * api);
 SDL_Surface *mosaic_shaped_get_icon(magic_api * api, int which);
 char *mosaic_shaped_get_name(magic_api * api, int which);
@@ -102,6 +102,10 @@ int mosaic_shaped_modes(magic_api * api, int which);
 int scan_fill(magic_api * api, SDL_Surface * canvas, SDL_Surface * srfc,
               int x, int y, int fill_edge, int fill_tile, int size,
               Uint32 color);
+Uint8 mosaic_shaped_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 mosaic_shaped_default_size(magic_api * api, int which, int mode);
+void mosaic_shaped_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint8 *mosaic_shaped_counted;
 Uint8 *mosaic_shaped_done;
@@ -175,7 +179,7 @@ Uint32 mosaic_shaped_api_version(void)
 }
 
 //Load sounds
-int mosaic_shaped_init(magic_api * api)
+int mosaic_shaped_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];
@@ -959,4 +963,19 @@ static void mosaic_shaped_paint(void *ptr, int which ATTRIBUTE_UNUSED,
       }
 
     }
+}
+
+
+Uint8 mosaic_shaped_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+Uint8 mosaic_shaped_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 0;
+}
+
+void mosaic_shaped_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
 }
