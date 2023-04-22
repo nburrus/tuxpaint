@@ -26,7 +26,12 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 22, 2023
+
+  FIXME: The results should be brighter. However, some artists use
+  the original "TV" effect as a stylistic way to darken parts of their
+  picture, so we should offer two tools (brighter, and classic).
+  -bjk 2023.04.22
 */
 
 #include "tp_magic_api.h"
@@ -34,14 +39,14 @@
 #include "SDL_mixer.h"
 #include <math.h>
 
-int RADIUS = 16;
+static int tv_radius = 16;
 
 Mix_Chunk *tv_snd;
 
 Uint32 tv_api_version(void);
 void tv_set_color(magic_api * api, int which, SDL_Surface * canvas,
                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int tv_init(magic_api * api);
+int tv_init(magic_api * api, Uint32 disabled_features);
 int tv_get_tool_count(magic_api * api);
 SDL_Surface *tv_get_icon(magic_api * api, int which);
 char *tv_get_name(magic_api * api, int which);
@@ -64,6 +69,10 @@ void tv_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
 void tv_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void tv_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int tv_modes(magic_api * api, int which);
+Uint8 tv_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 tv_default_size(magic_api * api, int which, int mode);
+void tv_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 //                              Housekeeping functions
 
@@ -78,7 +87,7 @@ void tv_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, 
   //get the colors from API and store it in structure
 }
 
-int tv_init(magic_api * api ATTRIBUTE_UNUSED)
+int tv_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -199,11 +208,11 @@ void tv_paint_tv(void *ptr_to_api, int which_tool ATTRIBUTE_UNUSED,
 
   y = (y - (y % 2));
 
-  for (i = x - RADIUS; i < x + RADIUS; i++)
+  for (i = x - tv_radius; i < x + tv_radius; i++)
   {
-    for (j = y - RADIUS; j < y + RADIUS; j += 2)
+    for (j = y - tv_radius; j < y + tv_radius; j += 2)
     {
-      if (api->in_circle(i - x, j - y, RADIUS) && !api->touched(i, j))
+      if (api->in_circle(i - x, j - y, tv_radius) && !api->touched(i, j))
       {
         tv_do_tv(api, 0, canvas, snapshot, i, j);
       }
@@ -217,10 +226,10 @@ void tv_drag(magic_api * api, int which, SDL_Surface * canvas,
 {
   api->line(api, which, canvas, snapshot, ox, oy, x, y, 1, tv_paint_tv);
 
-  update_rect->x = min(ox, x) - RADIUS;
-  update_rect->y = min(oy, y) - RADIUS;
-  update_rect->w = abs(ox - x) + RADIUS * 2;
-  update_rect->h = abs(oy - y) + RADIUS * 2;
+  update_rect->x = min(ox, x) - tv_radius;
+  update_rect->y = min(oy, y) - tv_radius;
+  update_rect->w = abs(ox - x) + tv_radius * 2;
+  update_rect->h = abs(oy - y) + tv_radius * 2;
   api->playsound(tv_snd, (x * 255) / canvas->w, 255);
 }
 
@@ -267,3 +276,23 @@ int tv_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN | MODE_PAINT);
 }
+
+
+Uint8 tv_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 tv_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void tv_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  tv_radius = size * 4;
+}
+

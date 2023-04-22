@@ -62,6 +62,7 @@ https://tuxpaint.org/
       + Sharpen, Edges, Silhouette
       + Tint, Color & White
       + Toothpaste
+      + TV
       + WIP... more!
       Bill Kendrick <bill@newbreedsoftware.com>
 
