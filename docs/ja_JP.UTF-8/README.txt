@@ -75,8 +75,16 @@
 
 Tux Paint バージョン 0.9.30 での変更点
 
-   FIXME
-           FIXME
+   Magic Tool sizes
+           Many Magic Tools will now offer an option to adjust the size of
+           the effect. For example, thinner lines in the symmetry painting
+           tools, finer or coarser application of effects like blur, or a
+           wider range of shapes. This option may be disabled using the
+           "nomagicsizes" option.
+
+   Word-wrapped button labels
+           When possible, longer labels shown on Tux Paint's UI buttons will
+           be word-wrapped, to help improve legibility.
 
    全ての変更点については、CHANGES.txt をお読みください。
 
