@@ -3,7 +3,7 @@
    Applies a "bloom" effect to the image.
    (https://en.wikipedia.org/wiki/Bloom_(shader_effect))
 
-   Last updated: February 27, 2023
+   Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -16,13 +16,13 @@
 #include "SDL_mixer.h"
 
 /* Radius of the painting tool */
-#define BLOOM_PAINT_RADIUS 24
+static int BLOOM_PAINT_RADIUS = 24;
 
 /* Overall weight to apply the sampled pixels */
 #define BLOOM_WEIGHT_CONST 0.05
 
 /* Length of spike shape */
-#define BLOOM_SPIKE_LENGTH 5
+static int BLOOM_SPIKE_LENGTH = 5;
 
 /* From https://www.shadertoy.com/view/lsXGWn */
 //float sample_weights[9] = {
@@ -42,7 +42,7 @@ Uint8 * bloom_mask = NULL;
 int bloom_scale;
 
 Uint32 bloom_api_version(void);
-int bloom_init(magic_api * api);
+int bloom_init(magic_api * api, Uint32 disabled_features);
 int bloom_get_tool_count(magic_api * api);
 SDL_Surface *bloom_get_icon(magic_api * api, int which);
 char *bloom_get_name(magic_api * api, int which);
@@ -80,7 +80,7 @@ Uint32 bloom_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int bloom_init(magic_api * api)
+int bloom_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -380,4 +380,22 @@ float luminance(float r, float g, float b) {
 
 float change_luminance(float c_in, float l_in, float l_out) {
     return c_in * (l_out / l_in);
+}
+
+
+Uint8 bloom_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+Uint8 bloom_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 2;
+}
+
+void bloom_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  BLOOM_PAINT_RADIUS = size * 12;
+  BLOOM_SPIKE_LENGTH = sqrt(BLOOM_PAINT_RADIUS + 1);
+  bloom_scale = sqrt(2 * (BLOOM_PAINT_RADIUS * BLOOM_PAINT_RADIUS));
 }

@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.20 (0.9.30)
+2023.April.22 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -35,13 +35,14 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Various Magic tools now support sizing options:
-      + Kaleidoscope, Symmetric L/R & U/D, Pattern, Tiles
+      + Bloom
       + Blur
       + Bricks
       + Clone
       + Confetti
       + Foam
       + Googly Eyes
+      + Kaleidoscope, Symmetric L/R & U/D, Pattern, Tiles
       + Light
       + Metal Paint
       + Negative & Opposite
