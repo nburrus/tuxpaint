@@ -361,9 +361,12 @@ int cartoon_modes(magic_api * api ATTRIBUTE_UNUSED,
 }
 
 
-Uint8 cartoon_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 cartoon_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
-  return 8;
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
 }
 
 Uint8 cartoon_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
