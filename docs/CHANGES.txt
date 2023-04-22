@@ -49,6 +49,7 @@ https://tuxpaint.org/
       + Metal Paint
       + Mosaic
       + Negative & Opposite
+      + Noise
       + Pixels
       + Puzzle
       + Rainbow & Smooth Rainbow

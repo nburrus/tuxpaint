@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -43,7 +43,7 @@
 #endif
 
 static const int noise_AMOUNT = 100.0;
-static const int noise_RADIUS = 16;
+static int noise_RADIUS = 16;
 
 enum
 {
@@ -76,7 +76,7 @@ const char *noise_descs[noise_NUM_TOOLS][2] = {
 };
 
 Uint32 noise_api_version(void);
-int noise_init(magic_api * api);
+int noise_init(magic_api * api, Uint32);
 SDL_Surface *noise_get_icon(magic_api * api, int which);
 char *noise_get_name(magic_api * api, int which);
 int noise_get_group(magic_api * api, int which);
@@ -104,6 +104,10 @@ void noise_switchout(magic_api * api, int which, int mode,
                      SDL_Surface * canvas);
 int noise_modes(magic_api * api, int which);
 int noise_get_tool_count(magic_api * api ATTRIBUTE_UNUSED);
+Uint8 noise_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 noise_default_size(magic_api * api, int which, int mode);
+void noise_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 noise_api_version(void)
 {
@@ -111,7 +115,7 @@ Uint32 noise_api_version(void)
 }
 
 //Load sounds
-int noise_init(magic_api * api)
+int noise_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];
@@ -323,4 +327,23 @@ void noise_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int noise_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN | MODE_PAINT);
+}
+
+
+Uint8 noise_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 noise_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void noise_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  noise_RADIUS = size * 4;
 }
