@@ -3,11 +3,11 @@
 
   Draws pixels which color depends on previous hue value
   (in HSV model) and coordinates
-   
+
   Tux Paint - A simple drawing program for children.
 
   Copyright (c) 2013-2023 by Lukasz Dmitrowski
-  
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
@@ -22,8 +22,8 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
-  
-  Last updated: February 12, 2023
+
+  Last updated: April 22, 2023
 */
 
 #include <stdio.h>
@@ -33,9 +33,10 @@
 #include "SDL_mixer.h"
 
 static Mix_Chunk *xor_snd;
+static int xor_radius = 16;
 
 Uint32 xor_api_version(void);
-int xor_init(magic_api * api);
+int xor_init(magic_api * api, Uint32 disabled_features);
 int xor_get_tool_count(magic_api * api);
 SDL_Surface *xor_get_icon(magic_api * api, int which);
 char *xor_get_name(magic_api * api, int which);
@@ -62,13 +63,17 @@ void xor_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void xor_switchout(magic_api * api, int which, int mode,
                    SDL_Surface * canvas);
 int xor_modes(magic_api * api, int which);
+Uint8 xor_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 xor_default_size(magic_api * api, int which, int mode);
+void xor_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 xor_api_version(void)
 {
   return (TP_MAGIC_API_VERSION);
 }
 
-int xor_init(magic_api * api)
+int xor_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -144,11 +149,11 @@ static void do_xor_circle(void *ptr, int which ATTRIBUTE_UNUSED,
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
 
-  for (yy = -16; yy < 16; yy++)
+  for (yy = -xor_radius; yy < xor_radius; yy++)
   {
-    for (xx = -16; xx < 16; xx++)
+    for (xx = -xor_radius; xx < xor_radius; xx++)
     {
-      if (api->in_circle(xx, yy, 16))
+      if (api->in_circle(xx, yy, xor_radius))
       {
         if (!api->touched(xx + x, yy + y))
           do_xor(api, which, canvas, last, x + xx, y + yy);
@@ -179,10 +184,10 @@ void xor_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
+  update_rect->x = ox - xor_radius;
+  update_rect->y = oy - xor_radius;
+  update_rect->w = (x + xor_radius) - update_rect->x;
+  update_rect->h = (y + xor_radius) - update_rect->y;
 
   api->playsound(xor_snd, (x * 255) / canvas->w, 255);
 }
@@ -249,4 +254,23 @@ void xor_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int xor_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
+}
+
+
+Uint8 xor_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 xor_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void xor_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  xor_radius = size * 4;
 }

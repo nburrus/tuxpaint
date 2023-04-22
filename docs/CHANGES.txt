@@ -63,6 +63,7 @@ https://tuxpaint.org/
       + Tint, Color & White
       + Toothpaste
       + TV
+      + Xor Colors
       + WIP... more!
       Bill Kendrick <bill@newbreedsoftware.com>
 
