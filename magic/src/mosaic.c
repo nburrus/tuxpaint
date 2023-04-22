@@ -54,7 +54,7 @@ static void reset_mosaic_blured(SDL_Surface * canvas);
 
 /* Prototypes */
 Uint32 mosaic_api_version(void);
-int mosaic_init(magic_api *);
+int mosaic_init(magic_api *, Uint32);
 int mosaic_get_tool_count(magic_api *);
 SDL_Surface *mosaic_get_icon(magic_api *, int);
 char *mosaic_get_name(magic_api *, int);
@@ -74,9 +74,13 @@ int mosaic_requires_colors(magic_api *, int);
 void mosaic_switchin(magic_api *, int, int, SDL_Surface *);
 void mosaic_switchout(magic_api *, int, int, SDL_Surface *);
 int mosaic_modes(magic_api *, int);
+Uint8 mosaic_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 mosaic_default_size(magic_api * api, int which, int mode);
+void mosaic_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 static const int mosaic_AMOUNT = 300;
-static const int mosaic_RADIUS = 16;
+static int mosaic_RADIUS = 16;
 static const double mosaic_SHARPEN = 1.0;
 static int randnoise ATTRIBUTE_UNUSED;
 Uint8 *mosaic_blured;
@@ -119,7 +123,7 @@ Uint32 mosaic_api_version(void)
 }
 
 //Load sounds
-int mosaic_init(magic_api * api)
+int mosaic_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
 
   int i;
@@ -523,3 +527,23 @@ void reset_mosaic_blured(SDL_Surface * canvas)
       mosaic_blured[j * canvas->w + i] = 0;
 
 }
+
+
+Uint8 mosaic_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+{
+  if (mode == MODE_PAINT)
+    return 8;
+  else
+    return 0;
+}
+
+Uint8 mosaic_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+void mosaic_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  mosaic_RADIUS = size * 4;
+}
+

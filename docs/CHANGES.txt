@@ -47,6 +47,7 @@ https://tuxpaint.org/
       + Kaleidoscope, Symmetric L/R & U/D, Pattern, Tiles
       + Light
       + Metal Paint
+      + Mosaic
       + Negative & Opposite
       + Pixels
       + Puzzle
