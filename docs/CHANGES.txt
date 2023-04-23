@@ -63,6 +63,7 @@ https://tuxpaint.org/
       + Rosette, Picasso
       + Saturate, Desaturate
       + Sharpen, Edges, Silhouette
+      + Smudge, Wet Paint
       + Tint, Color & White
       + Toothpaste
       + TV
