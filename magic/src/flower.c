@@ -2,7 +2,7 @@
   flower.c
 
   Flower Magic Tool Plugin
-  Tux Paint - A simple drawing program for children.
+//   Tux Paint - A simple drawing program for children.
 
   Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
@@ -26,7 +26,6 @@
   Last updated: April 23, 2023
 
   FIXME:
-   * Stalk color (RGB values) should match leaf & base bitmaps' colors
    * Bitmaps need to be redrawn at a larger size, to avoid blurriness
 */
 
@@ -51,8 +50,8 @@ enum
 
 /* Note: We need to be able to have a default width of 32px when DEFAULT_SIZE
  * is chosen, to match legacy Flower tool's size */
-#define NUM_SIZES 4
-#define MAX_WIDTH 128
+#define NUM_SIZES 3
+#define MAX_WIDTH 96
 #define DEFAULT_SIZE (32 / (MAX_WIDTH / NUM_SIZES))
 
 static int flower_cur_size = DEFAULT_SIZE;
@@ -451,12 +450,12 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
       dest.h = 2 * (((flower_petals->w - 1) / 32) + 1); // 1px tall for smallest sizes; taller for larger sizes
     }
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 128, 0)); // FIXME: Match base & leaf color!!! -bjk 2023.04.23
+    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 42, 177, 42));
 
 
     /* When we're done (final render), we can add some random leaves: */
 
-    if (final && i > 32 && i < n_points - 32 && (i % 16) == 0
+    if (final && i > flower_petals->h && i < n_points - flower_base->h && (i % (flower_leaf->h / 2)) == 0
         && (rand() % 5) > 0)
     {
       /* Check for hard left/right angles: */
