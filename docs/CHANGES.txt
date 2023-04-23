@@ -45,6 +45,7 @@ https://tuxpaint.org/
       + Distortion
       + Emboss
       + Fisheye
+      + [WIP] Flower
       + Foam
       + Googly Eyes
       + Kaleidoscope, Symmetric L/R & U/D, Pattern, Tiles

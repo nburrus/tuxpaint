@@ -23,7 +23,11 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 23, 2023
+
+  FIXME:
+   * Stalk color (RGB values) should match leaf & base bitmaps' colors
+   * Bitmaps need to be redrawn at a larger size, to avoid blurriness
 */
 
 #include <stdio.h>
@@ -45,13 +49,22 @@ enum
   LEAFSIDE_LEFT_UP
 };
 
+/* Note: We need to be able to have a default width of 32px when DEFAULT_SIZE
+ * is chosen, to match legacy Flower tool's size */
+#define NUM_SIZES 4
+#define MAX_WIDTH 128
+#define DEFAULT_SIZE (32 / (MAX_WIDTH / NUM_SIZES))
+
+static int flower_cur_size = DEFAULT_SIZE;
+
 static Mix_Chunk *flower_click_snd, *flower_release_snd;
 static Uint8 flower_r, flower_g, flower_b;
 static int flower_min_x, flower_max_x, flower_bottom_x, flower_bottom_y;
 static int flower_side_first;
 static int flower_side_decided;
-static SDL_Surface *flower_base, *flower_leaf, *flower_petals,
-  *flower_petals_colorized;
+static SDL_Surface *flower_base_full = NULL, *flower_leaf_full = NULL, *flower_petals_full = NULL;
+static SDL_Surface *flower_base = NULL, *flower_leaf = NULL, *flower_petals = NULL,
+  *flower_petals_colorized = NULL;
 
 /* Local function prototypes: */
 
@@ -66,9 +79,8 @@ static void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x,
 static Point2D flower_PointOnCubicBezier(Point2D * cp, float t);
 static void flower_ComputeBezier(Point2D * cp, int numberOfPoints,
                                  Point2D * curve);
-static void flower_colorize_petals(magic_api * api);
 Uint32 flower_api_version(void);
-int flower_init(magic_api * api);
+int flower_init(magic_api * api, Uint32 disabled_features);
 int flower_get_tool_count(magic_api * api);
 SDL_Surface *flower_get_icon(magic_api * api, int which);
 char *flower_get_name(magic_api * api, int which);
@@ -102,6 +114,9 @@ void flower_switchin(magic_api * api, int which, int mode,
 void flower_switchout(magic_api * api, int which, int mode,
                       SDL_Surface * canvas);
 int flower_modes(magic_api * api, int which);
+Uint8 flower_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 flower_default_size(magic_api * api, int which, int mode);
+void flower_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 
@@ -112,9 +127,11 @@ Uint32 flower_api_version(void)
 
 
 // No setup required:
-int flower_init(magic_api * api)
+int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
+  SDL_Surface * tmp_surf;
+  int h;
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/flower_click.ogg",
            api->data_directory);
@@ -126,15 +143,49 @@ int flower_init(magic_api * api)
 
   snprintf(fname, sizeof(fname), "%simages/magic/flower_base.png",
            api->data_directory);
-  flower_base = IMG_Load(fname);
+  tmp_surf = IMG_Load(fname);
+  if (tmp_surf == NULL) {
+    fprintf(stderr, "Cannot load %s", fname);
+    return(0);
+  }
+  h = tmp_surf->h * MAX_WIDTH / tmp_surf->w;
+  flower_base_full = api->scale(tmp_surf, MAX_WIDTH, h, 1);
+  if (flower_base_full == NULL) {
+    fprintf(stderr, "Cannot scale %s", fname);
+    return(0);
+  }
 
   snprintf(fname, sizeof(fname), "%simages/magic/flower_leaf.png",
            api->data_directory);
-  flower_leaf = IMG_Load(fname);
+  tmp_surf = IMG_Load(fname);
+  if (tmp_surf == NULL) {
+    fprintf(stderr, "Cannot load %s", fname);
+    return(0);
+  }
+  /* N.B.: Leaf is 1/2 as wide as base & petals */
+  h = tmp_surf->h * MAX_WIDTH / tmp_surf->w;
+  flower_leaf_full = api->scale(tmp_surf, MAX_WIDTH / 2, h, 1);
+  if (flower_leaf_full == NULL) {
+    fprintf(stderr, "Cannot scale %s", fname);
+    return(0);
+  }
 
   snprintf(fname, sizeof(fname), "%simages/magic/flower_petals.png",
            api->data_directory);
-  flower_petals = IMG_Load(fname);
+  tmp_surf = IMG_Load(fname);
+  if (tmp_surf == NULL) {
+    fprintf(stderr, "Cannot load %s", fname);
+    return(0);
+  }
+  h = tmp_surf->h * MAX_WIDTH / tmp_surf->w;
+  flower_petals_full = api->scale(tmp_surf, MAX_WIDTH, h, 1);
+  if (flower_petals_full == NULL) {
+    fprintf(stderr, "Cannot scale %s", fname);
+    return(0);
+  }
+
+  flower_cur_size = DEFAULT_SIZE;
+  flower_set_size(api, 0, 0, NULL, NULL, flower_cur_size, NULL);
 
   return (1);
 }
@@ -268,8 +319,8 @@ void flower_release(magic_api * api, int which ATTRIBUTE_UNUSED,
 {
   /* Don't let flower be too low compared to base: */
 
-  if (y >= flower_bottom_y - 32)
-    y = flower_bottom_y - 32;
+  if (y >= flower_bottom_y - flower_base->h)
+    y = flower_bottom_y - flower_base->h;
 
 
   /* Do final calcs and draw base: */
@@ -306,8 +357,11 @@ static void flower_drawflower(magic_api * api ATTRIBUTE_UNUSED,
 {
   SDL_Rect dest;
 
-  dest.x = x - (flower_petals->w / 2);
-  dest.y = y - (flower_petals->h / 2);
+  if (flower_petals_colorized == NULL) // Abort!
+    return;
+
+  dest.x = x - (flower_petals_colorized->w / 2);
+  dest.y = y - (flower_petals_colorized->h / 2);
 
   SDL_BlitSurface(flower_petals_colorized, NULL, canvas, &dest);
 }
@@ -316,6 +370,9 @@ static void flower_drawbase(magic_api * api ATTRIBUTE_UNUSED,
                             SDL_Surface * canvas)
 {
   SDL_Rect dest;
+
+  if (flower_base == NULL) // Abort!
+    return;
 
   dest.x = flower_bottom_x - (flower_base->w / 2);
   dest.y = flower_bottom_y;
@@ -335,6 +392,9 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
   SDL_Rect dest, src;
   int xx, yy, side;
 
+
+  if (flower_leaf == NULL) // Abort!
+    return;
 
   /* Compute a nice bezier curve for the stalk, based on the
      base (x,y), leftmost (x), rightmost (x), and top (x,y) */
@@ -377,8 +437,8 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
     {
       dest.x = curve[i].x;
       dest.y = curve[i].y;
-      dest.w = 2;
-      dest.h = 2;
+      dest.w = 4;
+      dest.h = 4;
     }
     else
     {
@@ -387,11 +447,11 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
 
       dest.x = left;
       dest.y = curve[i].y;
-      dest.w = right - left + 1;
-      dest.h = 2;
+      dest.w = right - left + ((flower_petals->w - 1) / 32) + 1; // 1px wide for smallest sizes; wider for larger sizes
+      dest.h = 2 * (((flower_petals->w - 1) / 32) + 1); // 1px tall for smallest sizes; taller for larger sizes
     }
 
-    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 128, 0));
+    SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 0, 128, 0)); // FIXME: Match base & leaf color!!! -bjk 2023.04.23
 
 
     /* When we're done (final render), we can add some random leaves: */
@@ -513,6 +573,13 @@ void flower_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     SDL_FreeSurface(flower_petals);
   if (flower_petals_colorized != NULL)
     SDL_FreeSurface(flower_petals_colorized);
+
+  if (flower_base_full != NULL)
+    SDL_FreeSurface(flower_base_full);
+  if (flower_leaf_full != NULL)
+    SDL_FreeSurface(flower_leaf_full);
+  if (flower_petals_full != NULL)
+    SDL_FreeSurface(flower_petals_full);
 }
 
 // Record the color from Tux Paint:
@@ -605,6 +672,9 @@ static void flower_colorize_petals(magic_api * api)
   if (flower_petals_colorized != NULL)
     SDL_FreeSurface(flower_petals_colorized);
 
+  if (flower_petals == NULL) // Abort!
+    return;
+
   /* Create a surface to render into: */
 
   amask =
@@ -637,7 +707,7 @@ static void flower_colorize_petals(magic_api * api)
                                 flower_g, flower_b, a));
 
       if (api->in_circle
-          ((x - flower_petals->w / 2), (y - flower_petals->h / 2), 8))
+          ((x - flower_petals->w / 2), (y - flower_petals->h / 2), (flower_petals->w / 4)))
       {
         api->putpixel(flower_petals_colorized, x, y,
                       SDL_MapRGBA(flower_petals_colorized->format, 0xFF, 0xFF,
@@ -665,4 +735,42 @@ void flower_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int flower_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT_WITH_PREVIEW);
+}
+
+Uint8 flower_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return NUM_SIZES;
+}
+
+Uint8 flower_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return DEFAULT_SIZE;
+}
+
+void flower_set_size(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  int scale, width, height;
+
+  flower_cur_size = size;
+  scale = (size * 100) / NUM_SIZES;
+
+  width = (scale * flower_base_full->w) / 100;
+  height = (scale * flower_base_full->h) / 100;
+  if (flower_base != NULL)
+    SDL_FreeSurface(flower_base);
+  flower_base = api->scale(flower_base_full, width, height, 1);
+
+  width = (scale * flower_leaf_full->w) / 100;
+  height = (scale * flower_leaf_full->h) / 100;
+  if (flower_leaf != NULL)
+    SDL_FreeSurface(flower_leaf);
+  flower_leaf = api->scale(flower_leaf_full, width, height, 1);
+
+  width = (scale * flower_petals_full->w) / 100;
+  height = (scale * flower_petals_full->h) / 100;
+  if (flower_petals != NULL)
+    SDL_FreeSurface(flower_petals);
+  flower_petals = api->scale(flower_petals_full, width, height, 1);
+
+  flower_colorize_petals(api);
 }
