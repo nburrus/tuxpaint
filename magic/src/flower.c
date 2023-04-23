@@ -24,9 +24,6 @@
   (See COPYING.txt)
 
   Last updated: April 23, 2023
-
-  FIXME:
-   * Bitmaps need to be redrawn at a larger size, to avoid blurriness
 */
 
 #include <stdio.h>
@@ -162,7 +159,7 @@ int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
     return(0);
   }
   /* N.B.: Leaf is 1/2 as wide as base & petals */
-  h = tmp_surf->h * MAX_WIDTH / tmp_surf->w;
+  h = tmp_surf->h * (MAX_WIDTH / 2) / tmp_surf->w;
   flower_leaf_full = api->scale(tmp_surf, MAX_WIDTH / 2, h, 1);
   if (flower_leaf_full == NULL) {
     fprintf(stderr, "Cannot scale %s", fname);
@@ -446,8 +443,8 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
 
       dest.x = left;
       dest.y = curve[i].y;
-      dest.w = right - left + ((flower_petals->w - 1) / 32) + 1; // 1px wide for smallest sizes; wider for larger sizes
-      dest.h = 2 * (((flower_petals->w - 1) / 32) + 1); // 1px tall for smallest sizes; taller for larger sizes
+      dest.w = right - left + (flower_petals->w / 32) + 2;
+      dest.h = 2 * ((flower_petals->w / 32) + 1);
     }
 
     SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, 42, 177, 42));
@@ -458,6 +455,8 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
     if (final && i > flower_petals->h && i < n_points - flower_base->h && (i % (flower_leaf->h / 2)) == 0
         && (rand() % 5) > 0)
     {
+      int cx, cy;
+
       /* Check for hard left/right angles: */
 
       side = -1;
@@ -495,10 +494,13 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
 
       /* Draw the appropriately-oriented leaf, if any: */
 
+      cx = (left + right) / 2;
+      cy = (curve[i].y);
+
       if (side == LEAFSIDE_RIGHT_DOWN)
       {
-        dest.x = curve[i].x;
-        dest.y = curve[i].y;
+        dest.x = cx;
+        dest.y = cy;
 
         SDL_BlitSurface(flower_leaf, NULL, canvas, &dest);
       }
@@ -511,8 +513,8 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
           src.w = 1;
           src.h = flower_leaf->h;
 
-          dest.x = curve[i].x - xx;
-          dest.y = curve[i].y;
+          dest.x = cx - xx;
+          dest.y = cy;
 
           SDL_BlitSurface(flower_leaf, &src, canvas, &dest);
         }
@@ -526,8 +528,8 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
           src.w = flower_leaf->w;
           src.h = 1;
 
-          dest.x = curve[i].x;
-          dest.y = curve[i].y - yy;
+          dest.x = cx;
+          dest.y = cy - yy;
 
           SDL_BlitSurface(flower_leaf, &src, canvas, &dest);
         }
@@ -543,8 +545,8 @@ static void flower_drawstalk(magic_api * api ATTRIBUTE_UNUSED,
             src.w = 1;
             src.h = 1;
 
-            dest.x = curve[i].x - xx;
-            dest.y = curve[i].y - yy;
+            dest.x = cx - xx;
+            dest.y = cy - yy;
 
             SDL_BlitSurface(flower_leaf, &src, canvas, &dest);
           }
