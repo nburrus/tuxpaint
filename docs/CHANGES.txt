@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.22 (0.9.30)
+2023.April.23 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -55,6 +55,7 @@ https://tuxpaint.org/
       + Noise
       + Pixels
       + Puzzle
+      + Rain
       + Rainbow & Smooth Rainbow
       + Remove Color, Keep Color
       + Ripples

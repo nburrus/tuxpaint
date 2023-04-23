@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: April 23, 2023
 */
 
 #include <stdio.h>
@@ -45,8 +45,8 @@
 void rain_click(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int,
                 SDL_Rect *);
 
-static const int rain_SIZE = 30;
-static const int rain_AMOUNT = 200;
+static int rain_SIZE = 30;
+static int rain_AMOUNT = 200;
 
 enum
 {
@@ -78,7 +78,7 @@ const char *rain_descs[rain_NUM_TOOLS][2] = {
 };
 
 Uint32 rain_api_version(void);
-int rain_init(magic_api * api);
+int rain_init(magic_api * api, Uint32 disabled_features);
 int rain_get_tool_count(magic_api * api);
 SDL_Surface *rain_get_icon(magic_api * api, int which);
 char *rain_get_name(magic_api * api, int which);
@@ -104,6 +104,10 @@ void rain_switchin(magic_api * api, int which, int mode,
 void rain_switchout(magic_api * api, int which, int mode,
                     SDL_Surface * canvas);
 int rain_modes(magic_api * api, int which);
+Uint8 rain_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 rain_default_size(magic_api * api, int which, int mode);
+void rain_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+
 
 Uint32 rain_api_version(void)
 {
@@ -113,14 +117,14 @@ Uint32 rain_api_version(void)
 //Checks if a a pixel is inside a raindrop shape centered on the origin
 static int rain_inRainShape(double x, double y, double r)
 {
-  if (sqrt(x * x + y * y) < (r * pow(cos(atan2(x, y)), 10.0)))
+  if (sqrt(x * x + y * y) < (r * pow(cos(atan2(x, y)), (float) (rain_SIZE / 3.0))))
   {
     return 1;
   }
   return 0;
 }
 
-int rain_init(magic_api * api)
+int rain_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
 
   int i;
@@ -333,4 +337,22 @@ void rain_switchout(magic_api * api ATTRIBUTE_UNUSED,
 int rain_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN | MODE_PAINT);
+}
+
+
+Uint8 rain_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  /* Size affects both fullscreen and paint mode, in Rain tool! */
+  return 4;
+}
+
+Uint8 rain_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 2;
+}
+
+void rain_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  rain_SIZE = size * 15;
+  rain_AMOUNT = 400 / size;
 }
