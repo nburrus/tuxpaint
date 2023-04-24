@@ -327,10 +327,8 @@ const char *const shape_tips[NUM_SHAPES] = {
   gettext_noop("A rectangle has four sides and four right angles."),
 
   // Description of a circle
-  gettext_noop
-    ("A circle is a curve where all points have the same distance from the center."),
-  gettext_noop
-    ("A circle is a curve where all points have the same distance from the center."),
+  gettext_noop("A circle is a curve where all points have the same distance from the center."),
+  gettext_noop("A circle is a curve where all points have the same distance from the center."),
 
   // Description of an ellipse
   gettext_noop("An ellipse is a stretched circle."),
@@ -357,11 +355,9 @@ const char *const shape_tips[NUM_SHAPES] = {
   gettext_noop("An octagon has eight equal sides."),
 
   // Description of a rhombus
-  gettext_noop
-    ("A rhombus has four equal sides, and opposite sides are parallel."),
-  gettext_noop
-    ("A rhombus has four equal sides, and opposite sides are parallel."),
-  
+  gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
+  gettext_noop("A rhombus has four equal sides, and opposite sides are parallel."),
+
   // Description of triangle star (3 points star)
   gettext_noop("A star with 3 points."),
   gettext_noop("A star with 3 points."),
@@ -435,8 +431,7 @@ enum
 const char *const shape_tool_tips[NUM_SHAPE_COMPLEXITIES] = {
   gettext_noop
     ("Pick a shape. Click to start drawing, drag, and let go when it is the size and shape you want. Move around to rotate it, and click again to draw it."),
-  gettext_noop
-    ("Pick a shape. Click to start drawing, drag, and let go when it is the size and shape you want.")
+  gettext_noop("Pick a shape. Click to start drawing, drag, and let go when it is the size and shape you want.")
 };
 
 /* Strings shown when switching between "from center"

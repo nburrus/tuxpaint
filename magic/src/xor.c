@@ -44,28 +44,25 @@ int xor_get_group(magic_api * api, int which);
 char *xor_get_description(magic_api * api, int which, int mode);
 
 void xor_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y,
-              SDL_Rect * update_rect);
+              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 
 void xor_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-               SDL_Rect * update_rect);
+               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void xor_release(magic_api * api, int which,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                 SDL_Rect * update_rect);
+                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void xor_shutdown(magic_api * api);
 void xor_set_color(magic_api * api, int which, SDL_Surface * canvas,
                    SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int xor_requires_colors(magic_api * api, int which);
 void xor_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
-void xor_switchout(magic_api * api, int which, int mode,
-                   SDL_Surface * canvas);
+void xor_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int xor_modes(magic_api * api, int which);
 Uint8 xor_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 xor_default_size(magic_api * api, int which, int mode);
-void xor_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void xor_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                  SDL_Rect * update_rect);
 
 
 Uint32 xor_api_version(void)
@@ -77,8 +74,7 @@ int xor_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory);
   xor_snd = Mix_LoadWAV(fname);
 
   return (1);
@@ -93,38 +89,31 @@ SDL_Surface *xor_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
 
-char *xor_get_name(magic_api * api ATTRIBUTE_UNUSED,
-                   int which ATTRIBUTE_UNUSED)
+char *xor_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Xor Colors")));
 }
 
-int xor_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED)
+int xor_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_COLOR_FILTERS;
 }
 
-char *xor_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED, int mode)
+char *xor_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
     return (strdup(gettext_noop("Click and drag to draw a XOR effect")));
   else
-    return (strdup
-            (gettext_noop
-             ("Click to draw a XOR effect on the whole picture")));
+    return (strdup(gettext_noop("Click to draw a XOR effect on the whole picture")));
 }
 
 static void do_xor(void *ptr, int which ATTRIBUTE_UNUSED,
-                   SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED,
-                   int x, int y)
+                   SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   Uint8 r, g, b, xor;
@@ -134,17 +123,16 @@ static void do_xor(void *ptr, int which ATTRIBUTE_UNUSED,
   SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r, &g, &b);
   api->rgbtohsv(r, g, b, &hue, &sat, &val);
   if (sat == 0)
-    xor = (2 * (int) hue + (x ^ y)) % 360;
+    xor = (2 * (int)hue + (x ^ y)) % 360;
   else
-    xor = ((int) hue + (x ^ y)) % 360;
+    xor = ((int)hue + (x ^ y)) % 360;
   api->hsvtorgb(xor, 1, 1, &r, &g, &b);
   pixel = SDL_MapRGB(canvas->format, r, g, b);
   api->putpixel(canvas, x, y, pixel);
 }
 
 static void do_xor_circle(void *ptr, int which ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas,
-                          SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
+                          SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
@@ -163,11 +151,9 @@ static void do_xor_circle(void *ptr, int which ATTRIBUTE_UNUSED,
 }
 
 void xor_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x,
-              int y, SDL_Rect * update_rect)
+              SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1,
-            do_xor_circle);
+  api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_xor_circle);
 
   if (ox > x)
   {
@@ -193,8 +179,7 @@ void xor_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 void xor_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED,
-               int x, int y, SDL_Rect * update_rect)
+               SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   if (mode == MODE_PAINT)
     xor_drag(api, which, canvas, last, x, y, x, y, update_rect);
@@ -217,8 +202,7 @@ void xor_click(magic_api * api, int which, int mode,
 void xor_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
                  SDL_Surface * canvas ATTRIBUTE_UNUSED,
                  SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
-                 int y ATTRIBUTE_UNUSED,
-                 SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                 int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -229,25 +213,23 @@ void xor_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 void xor_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
+                   Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
-int xor_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                        int which ATTRIBUTE_UNUSED)
+int xor_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
 void xor_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void xor_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                   SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
@@ -270,7 +252,9 @@ Uint8 xor_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
   return 4;
 }
 
-void xor_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void xor_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                  SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                  Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   xor_radius = size * 4;
 }

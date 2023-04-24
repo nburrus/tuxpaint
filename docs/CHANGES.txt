@@ -106,6 +106,12 @@ https://tuxpaint.org/
     * Don't try to load a blank-named template during slideshow playback.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * Ports & Building:
+    -----------------
+    * Created "src/indent.sh", to run 'indent' against source files.
+      Ran it during 0.9.30 development.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) translation

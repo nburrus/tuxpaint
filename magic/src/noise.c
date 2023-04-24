@@ -70,8 +70,7 @@ const int noise_groups[noise_NUM_TOOLS] = {
 };
 
 const char *noise_descs[noise_NUM_TOOLS][2] = {
-  {gettext_noop
-   ("Click and drag the mouse to add noise to parts of your picture."),
+  {gettext_noop("Click and drag the mouse to add noise to parts of your picture."),
    gettext_noop("Click to add noise to your entire picture."),},
 };
 
@@ -81,15 +80,11 @@ SDL_Surface *noise_get_icon(magic_api * api, int which);
 char *noise_get_name(magic_api * api, int which);
 int noise_get_group(magic_api * api, int which);
 char *noise_get_description(magic_api * api, int which, int mode);
-static void do_noise_pixel(void *ptr, int which, SDL_Surface * canvas,
-                           SDL_Surface * last, int x, int y);
-static void do_noise_full(void *ptr, SDL_Surface * canvas, SDL_Surface * last,
-                          int which);
-static void do_noise_brush(void *ptr, int which, SDL_Surface * canvas,
-                           SDL_Surface * last, int x, int y);
+static void do_noise_pixel(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
+static void do_noise_full(void *ptr, SDL_Surface * canvas, SDL_Surface * last, int which);
+static void do_noise_brush(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 void noise_drag(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last, int ox, int oy, int x, int y,
-                SDL_Rect * update_rect);
+                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void noise_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
                  SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void noise_release(magic_api * api, int which, SDL_Surface * canvas,
@@ -98,15 +93,14 @@ void noise_shutdown(magic_api * api);
 void noise_set_color(magic_api * api, int which, SDL_Surface * canvas,
                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int noise_requires_colors(magic_api * api, int which);
-void noise_switchin(magic_api * api, int which, int mode,
-                    SDL_Surface * canvas);
-void noise_switchout(magic_api * api, int which, int mode,
-                     SDL_Surface * canvas);
+void noise_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void noise_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int noise_modes(magic_api * api, int which);
 int noise_get_tool_count(magic_api * api ATTRIBUTE_UNUSED);
 Uint8 noise_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 noise_default_size(magic_api * api, int which, int mode);
-void noise_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void noise_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                    SDL_Rect * update_rect);
 
 
 Uint32 noise_api_version(void)
@@ -124,8 +118,7 @@ int noise_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 
   for (i = 0; i < noise_NUM_TOOLS; i++)
   {
-    snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory,
-             noise_snd_filenames[i]);
+    snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, noise_snd_filenames[i]);
     noise_snd_effect[i] = Mix_LoadWAV(fname);
   }
   return (1);
@@ -141,8 +134,7 @@ SDL_Surface *noise_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory,
-           noise_icon_filenames[which]);
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, noise_icon_filenames[which]);
   return (IMG_Load(fname));
 }
 
@@ -159,16 +151,14 @@ int noise_get_group(magic_api * api ATTRIBUTE_UNUSED, int which)
 }
 
 // Return our descriptions, localized:
-char *noise_get_description(magic_api * api ATTRIBUTE_UNUSED, int which,
-                            int mode)
+char *noise_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   return (strdup(gettext_noop(noise_descs[which][mode - 1])));
 }
 
 //Do the effect for one pixel
 static void do_noise_pixel(void *ptr, int which ATTRIBUTE_UNUSED,
-                           SDL_Surface * canvas,
-                           SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
+                           SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
 
@@ -176,22 +166,17 @@ static void do_noise_pixel(void *ptr, int which ATTRIBUTE_UNUSED,
   double temp2[3];
   int k;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &temp[0], &temp[1],
-             &temp[2]);
+  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &temp[0], &temp[1], &temp[2]);
   for (k = 0; k < 3; k++)
   {
-    temp2[k] =
-      clamp(0.0, (int) temp[k] - (rand() % noise_AMOUNT) + noise_AMOUNT / 2.0,
-            255.0);
+    temp2[k] = clamp(0.0, (int)temp[k] - (rand() % noise_AMOUNT) + noise_AMOUNT / 2.0, 255.0);
   }
-  api->putpixel(canvas, x, y,
-                SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
+  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, temp2[0], temp2[1], temp2[2]));
 
 }
 
 // Do the effect for the full image
-static void do_noise_full(void *ptr, SDL_Surface * canvas, SDL_Surface * last,
-                          int which)
+static void do_noise_full(void *ptr, SDL_Surface * canvas, SDL_Surface * last, int which)
 {
   int x, y;
 
@@ -205,8 +190,7 @@ static void do_noise_full(void *ptr, SDL_Surface * canvas, SDL_Surface * last,
 }
 
 //do the effect for the brush
-static void do_noise_brush(void *ptr, int which, SDL_Surface * canvas,
-                           SDL_Surface * last, int x, int y)
+static void do_noise_brush(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
@@ -215,8 +199,7 @@ static void do_noise_brush(void *ptr, int which, SDL_Surface * canvas,
   {
     for (xx = x - noise_RADIUS; xx < x + noise_RADIUS; xx++)
     {
-      if (api->in_circle(xx - x, yy - y, noise_RADIUS)
-          && !api->touched(xx, yy))
+      if (api->in_circle(xx - x, yy - y, noise_RADIUS) && !api->touched(xx, yy))
       {
         do_noise_pixel(api, which, canvas, last, xx, yy);
       }
@@ -226,12 +209,10 @@ static void do_noise_brush(void *ptr, int which, SDL_Surface * canvas,
 
 // Affect the canvas on drag:
 void noise_drag(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last, int ox, int oy, int x, int y,
-                SDL_Rect * update_rect)
+                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
 
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1,
-            do_noise_brush);
+  api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_noise_brush);
 
   api->playsound(noise_snd_effect[which], (x * 255) / canvas->w, 255);
 
@@ -258,8 +239,7 @@ void noise_drag(magic_api * api, int which, SDL_Surface * canvas,
 
 // Affect the canvas on click:
 void noise_click(magic_api * api, int which, int mode,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                 SDL_Rect * update_rect)
+                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   if (mode == MODE_PAINT)
     noise_drag(api, which, canvas, last, x, y, x, y, update_rect);
@@ -279,8 +259,7 @@ void noise_release(magic_api * api ATTRIBUTE_UNUSED,
                    int which ATTRIBUTE_UNUSED,
                    SDL_Surface * canvas ATTRIBUTE_UNUSED,
                    SDL_Surface * last ATTRIBUTE_UNUSED,
-                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                   SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -300,27 +279,26 @@ void noise_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void noise_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                     SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void noise_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                     SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                     Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED,
+                     SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 // Use colors:
-int noise_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED)
+int noise_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
 void noise_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                    SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void noise_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                     SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
@@ -343,7 +321,9 @@ Uint8 noise_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
   return 4;
 }
 
-void noise_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void noise_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                    SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                    SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   noise_RADIUS = size * 4;
 }

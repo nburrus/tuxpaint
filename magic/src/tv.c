@@ -36,7 +36,8 @@
 
 static int tv_radius = 16;
 
-enum {
+enum
+{
   TV_TOOL_TV_CLASSIC,
   TV_TOOL_TV_BRIGHT,
   NUM_TV_TOOLS
@@ -55,16 +56,12 @@ int tv_get_group(magic_api * api, int which);
 char *tv_get_description(magic_api * api, int which, int mode);
 int tv_requires_colors(magic_api * api, int which);
 void tv_release(magic_api * api, int which,
-                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
-                SDL_Rect * update_rect);
+                SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect);
 void tv_shutdown(magic_api * api);
-void tv_paint_tv(void *ptr_to_api, int which_tool, SDL_Surface * canvas,
-                 SDL_Surface * snapshot, int x, int y);
-void tv_do_tv(void *ptr_to_api, int which_tool, SDL_Surface * canvas,
-              SDL_Surface * snapshot, int x, int y);
+void tv_paint_tv(void *ptr_to_api, int which_tool, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
+void tv_do_tv(void *ptr_to_api, int which_tool, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
 void tv_drag(magic_api * api, int which, SDL_Surface * canvas,
-             SDL_Surface * snapshot, int ox, int oy, int x, int y,
-             SDL_Rect * update_rect);
+             SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void tv_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
               SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void tv_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
@@ -72,7 +69,8 @@ void tv_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int tv_modes(magic_api * api, int which);
 Uint8 tv_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 tv_default_size(magic_api * api, int which, int mode);
-void tv_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void tv_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                 SDL_Rect * update_rect);
 
 
 //                              Housekeeping functions
@@ -83,7 +81,8 @@ Uint32 tv_api_version(void)
 }
 
 void tv_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                  SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                  SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
+                  Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   //get the colors from API and store it in structure
 }
@@ -92,8 +91,7 @@ int tv_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/tv.ogg",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/tv.ogg", api->data_directory);
   tv_snd = Mix_LoadWAV(fname);
 
   return (1);
@@ -108,8 +106,7 @@ SDL_Surface *tv_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/tv.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/tv.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
@@ -127,21 +124,15 @@ int tv_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
   return MAGIC_TYPE_DISTORTS;
 }
 
-char *tv_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                         int which ATTRIBUTE_UNUSED, int mode)
+char *tv_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
-    return
-      strdup(gettext_noop
-             ("Click and drag to make parts of your picture look like they are on television."));
+    return strdup(gettext_noop("Click and drag to make parts of your picture look like they are on television."));
   else
-    return
-      strdup(gettext_noop
-             ("Click to make your picture look like it's on television."));
+    return strdup(gettext_noop("Click to make your picture look like it's on television."));
 }
 
-int tv_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                       int which ATTRIBUTE_UNUSED)
+int tv_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
@@ -149,8 +140,7 @@ int tv_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
 void tv_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
                 SDL_Surface * canvas ATTRIBUTE_UNUSED,
                 SDL_Surface * snapshot ATTRIBUTE_UNUSED,
-                int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -162,8 +152,7 @@ void tv_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 // Interactivity functions
 
 void tv_do_tv(void *ptr_to_api, int which_tool,
-              SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
-              int x, int y)
+              SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr_to_api;
   int r, g, b, i;
@@ -178,11 +167,14 @@ void tv_do_tv(void *ptr_to_api, int which_tool,
        the original "TV" effect as a stylistic way to darken parts of their
        picture, so we offer two tools (brighter, and classic).
        -bjk 2023.04.22 */
-    if (which_tool == TV_TOOL_TV_BRIGHT) {
+    if (which_tool == TV_TOOL_TV_BRIGHT)
+    {
       r = r8 * 2;
       g = g8 * 2;
       b = b8 * 2;
-    } else {
+    }
+    else
+    {
       r = r8;
       g = g8;
       b = b8;
@@ -220,8 +212,7 @@ void tv_do_tv(void *ptr_to_api, int which_tool,
 }
 
 void tv_paint_tv(void *ptr_to_api, int which_tool,
-                 SDL_Surface * canvas,
-                 SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
+                 SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   int i, j;
   magic_api *api = (magic_api *) ptr_to_api;
@@ -241,8 +232,7 @@ void tv_paint_tv(void *ptr_to_api, int which_tool,
 }
 
 void tv_drag(magic_api * api, int which, SDL_Surface * canvas,
-             SDL_Surface * snapshot, int ox, int oy, int x, int y,
-             SDL_Rect * update_rect)
+             SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
   api->line(api, which, canvas, snapshot, ox, oy, x, y, 1, tv_paint_tv);
 
@@ -254,8 +244,7 @@ void tv_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 void tv_click(magic_api * api, int which, int mode,
-              SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-              SDL_Rect * update_rect)
+              SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   if (mode == MODE_FULLSCREEN)
   {
@@ -279,15 +268,13 @@ void tv_click(magic_api * api, int which, int mode,
 }
 
 void tv_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                 int mode ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                 int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 
 }
 
 void tv_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 
 }
@@ -311,7 +298,9 @@ Uint8 tv_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
   return 4;
 }
 
-void tv_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void tv_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                 SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                 SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   tv_radius = size * 4;
 }

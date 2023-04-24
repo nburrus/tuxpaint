@@ -45,29 +45,24 @@ SDL_Surface *metalpaint_get_icon(magic_api * api, int which);
 char *metalpaint_get_name(magic_api * api, int which);
 int metalpaint_get_group(magic_api * api, int which);
 char *metalpaint_get_description(magic_api * api, int which, int mode);
-static void do_metalpaint(void *ptr, int which, SDL_Surface * canvas,
-                          SDL_Surface * last, int x, int y);
+static void do_metalpaint(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 void metalpaint_drag(magic_api * api, int which, SDL_Surface * canvas,
-                     SDL_Surface * last, int ox, int oy, int x, int y,
-                     SDL_Rect * update_rect);
+                     SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void metalpaint_click(magic_api * api, int which, int mode,
-                      SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                      SDL_Rect * update_rect);
+                      SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void metalpaint_release(magic_api * api, int which, SDL_Surface * canvas,
-                        SDL_Surface * last, int x, int y,
-                        SDL_Rect * update_rect);
+                        SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void metalpaint_shutdown(magic_api * api);
 void metalpaint_set_color(magic_api * api, int which, SDL_Surface * canvas,
                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int metalpaint_requires_colors(magic_api * api, int which);
-void metalpaint_switchin(magic_api * api, int which, int mode,
-                         SDL_Surface * canvas);
-void metalpaint_switchout(magic_api * api, int which, int mode,
-                          SDL_Surface * canvas);
+void metalpaint_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void metalpaint_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int metalpaint_modes(magic_api * api, int which);
 Uint8 metalpaint_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 metalpaint_default_size(magic_api * api, int which, int mode);
-void metalpaint_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void metalpaint_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                         SDL_Rect * update_rect);
 
 
 Uint32 metalpaint_api_version(void)
@@ -81,8 +76,7 @@ int metalpaint_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/metalpaint.wav",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/metalpaint.wav", api->data_directory);
   metalpaint_snd = Mix_LoadWAV(fname);
 
   return (1);
@@ -99,34 +93,28 @@ SDL_Surface *metalpaint_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/metalpaint.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/metalpaint.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
 
 // Return our names, localized:
-char *metalpaint_get_name(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED)
+char *metalpaint_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Metal Paint")));
 }
 
 // Return our groups:
-int metalpaint_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                         int which ATTRIBUTE_UNUSED)
+int metalpaint_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
 }
 
 // Return our descriptions, localized:
 char *metalpaint_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                                 int which ATTRIBUTE_UNUSED,
-                                 int mode ATTRIBUTE_UNUSED)
+                                 int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup
-          (gettext_noop
-           ("Click and drag the mouse to paint with a metallic color.")));
+  return (strdup(gettext_noop("Click and drag the mouse to paint with a metallic color.")));
 }
 
 #define METALPAINT_CYCLE 32
@@ -143,8 +131,7 @@ static int metalpaint_gradient[METALPAINT_CYCLE] = {
 // Do the effect:
 
 static void do_metalpaint(void *ptr, int which ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas,
-                          SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
+                          SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
@@ -161,19 +148,16 @@ static void do_metalpaint(void *ptr, int which ATTRIBUTE_UNUSED,
       g = (metalpaint_g * n) / 255;
       b = (metalpaint_b * n) / 255;
 
-      api->putpixel(canvas, x + xx, y + yy,
-                    SDL_MapRGB(canvas->format, r, g, b));
+      api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, r, g, b));
     }
   }
 }
 
 // Affect the canvas on drag:
 void metalpaint_drag(magic_api * api, int which, SDL_Surface * canvas,
-                     SDL_Surface * last, int ox, int oy, int x, int y,
-                     SDL_Rect * update_rect)
+                     SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1,
-            do_metalpaint);
+  api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_metalpaint);
 
   if (ox > x)
   {
@@ -200,8 +184,7 @@ void metalpaint_drag(magic_api * api, int which, SDL_Surface * canvas,
 
 // Affect the canvas on click:
 void metalpaint_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
-                      SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                      SDL_Rect * update_rect)
+                      SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   metalpaint_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
@@ -211,8 +194,7 @@ void metalpaint_release(magic_api * api ATTRIBUTE_UNUSED,
                         int which ATTRIBUTE_UNUSED,
                         SDL_Surface * canvas ATTRIBUTE_UNUSED,
                         SDL_Surface * last ATTRIBUTE_UNUSED,
-                        int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                        SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                        int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -224,8 +206,9 @@ void metalpaint_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void metalpaint_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                          SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void metalpaint_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
+                          Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   metalpaint_r = min(255, r + 64);
   metalpaint_g = min(255, g + 64);
@@ -233,28 +216,22 @@ void metalpaint_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
 }
 
 // Use colors:
-int metalpaint_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                               int which ATTRIBUTE_UNUSED)
+int metalpaint_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
 void metalpaint_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                         int which ATTRIBUTE_UNUSED,
-                         int mode ATTRIBUTE_UNUSED,
-                         SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                         int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void metalpaint_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED,
-                          int mode ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                          int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int metalpaint_modes(magic_api * api ATTRIBUTE_UNUSED,
-                     int which ATTRIBUTE_UNUSED)
+int metalpaint_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
 }
@@ -270,7 +247,9 @@ Uint8 metalpaint_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIB
   return 2;
 }
 
-void metalpaint_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void metalpaint_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                         SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                         SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   metalpaint_size = size * 4;
 }

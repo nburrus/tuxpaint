@@ -65,31 +65,25 @@ int distortion_requires_colors(magic_api * api, int which);
 void distortion_shutdown(magic_api * api);
 
 void distortion_click(magic_api * api, int which, int mode,
-                      SDL_Surface * canvas, SDL_Surface * snapshot, int x,
-                      int y, SDL_Rect * update_rect);
+                      SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect);
 void distortion_release(magic_api * api, int which, SDL_Surface * canvas,
-                        SDL_Surface * snapshot, int x, int y,
-                        SDL_Rect * update_rect);
+                        SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect);
 
 void distortion_set_color(magic_api * api, int which, SDL_Surface * canvas,
                           SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-void distortion_switchin(magic_api * api, int which, int mode,
-                         SDL_Surface * canvas);
-void distortion_switchout(magic_api * api, int which, int mode,
-                          SDL_Surface * canvas);
+void distortion_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void distortion_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int distortion_modes(magic_api * api, int which);
 
 void distortion_drag(magic_api * api, int which, SDL_Surface * canvas,
-                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
-                     SDL_Rect * update_rect);
+                     SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 
-static void distortion_line_callback(void *ptr, int which,
-                                     SDL_Surface * canvas,
-                                     SDL_Surface * snapshot, int x, int y);
+static void distortion_line_callback(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
 
 Uint8 distortion_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 distortion_default_size(magic_api * api, int which, int mode);
-void distortion_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void distortion_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                         SDL_Rect * update_rect);
 
 
 /* Setup Functions: */
@@ -107,8 +101,7 @@ int distortion_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/distortion.ogg",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/distortion.ogg", api->data_directory);
 
   // Try to load the file!
 
@@ -132,8 +125,7 @@ SDL_Surface *distortion_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/distortion.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/distortion.png", api->data_directory);
 
 
   // Try to load the image, and return the results to Tux Paint:
@@ -144,8 +136,7 @@ SDL_Surface *distortion_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 // Report our "Magic" tool names
 
-char *distortion_get_name(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED)
+char *distortion_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Distortion")));
 }
@@ -153,8 +144,7 @@ char *distortion_get_name(magic_api * api ATTRIBUTE_UNUSED,
 
 // Report our "Magic" tool groups
 
-int distortion_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                         int which ATTRIBUTE_UNUSED)
+int distortion_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_DISTORTS;
 }
@@ -163,18 +153,14 @@ int distortion_get_group(magic_api * api ATTRIBUTE_UNUSED,
 // Report our "Magic" tool descriptions
 
 char *distortion_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                                 int which ATTRIBUTE_UNUSED,
-                                 int mode ATTRIBUTE_UNUSED)
+                                 int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup
-          (gettext_noop
-           ("Click and drag the mouse to cause distortion in your picture.")));
+  return (strdup(gettext_noop("Click and drag the mouse to cause distortion in your picture.")));
 }
 
 // Report whether we accept colors
 
-int distortion_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                               int which ATTRIBUTE_UNUSED)
+int distortion_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
@@ -194,8 +180,7 @@ void distortion_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 // Affect the canvas on click:
 
 void distortion_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
-                      SDL_Surface * canvas, SDL_Surface * snapshot, int x,
-                      int y, SDL_Rect * update_rect)
+                      SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect)
 {
   distortion_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
 }
@@ -204,11 +189,9 @@ void distortion_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 // Affect the canvas on drag:
 
 void distortion_drag(magic_api * api, int which, SDL_Surface * canvas,
-                     SDL_Surface * snapshot, int ox, int oy, int x, int y,
-                     SDL_Rect * update_rect)
+                     SDL_Surface * snapshot, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
-  api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, 1,
-            distortion_line_callback);
+  api->line((void *)api, which, canvas, snapshot, ox, oy, x, y, 1, distortion_line_callback);
 
 
   if (ox > x)
@@ -244,14 +227,15 @@ void distortion_release(magic_api * api ATTRIBUTE_UNUSED,
                         int which ATTRIBUTE_UNUSED,
                         SDL_Surface * canvas ATTRIBUTE_UNUSED,
                         SDL_Surface * snapshot ATTRIBUTE_UNUSED,
-                        int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                        SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                        int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 
-void distortion_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                          SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void distortion_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                          Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED,
+                          SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -259,8 +243,7 @@ void distortion_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
 // Our "callback" function
 
 static void distortion_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
-                                     SDL_Surface * canvas,
-                                     SDL_Surface * snapshot, int x, int y)
+                                     SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
@@ -276,29 +259,23 @@ static void distortion_line_callback(void *ptr, int which ATTRIBUTE_UNUSED,
     {
       if (api->in_circle(xx, yy, distortion_radius))
       {
-        api->putpixel(canvas, x + xx, y + yy,
-                      api->getpixel(snapshot, x + xx / 2, y + yy));
+        api->putpixel(canvas, x + xx, y + yy, api->getpixel(snapshot, x + xx / 2, y + yy));
       }
     }
   }
 }
 
 void distortion_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                         int which ATTRIBUTE_UNUSED,
-                         int mode ATTRIBUTE_UNUSED,
-                         SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                         int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void distortion_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED,
-                          int mode ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                          int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int distortion_modes(magic_api * api ATTRIBUTE_UNUSED,
-                     int which ATTRIBUTE_UNUSED)
+int distortion_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT);
 }
@@ -314,7 +291,9 @@ Uint8 distortion_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIB
   return 2;
 }
 
-void distortion_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void distortion_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                         SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                         SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   distortion_radius = size * 4;
 }

@@ -73,11 +73,9 @@ char *clone_get_name(magic_api * api, int which);
 int clone_get_group(magic_api * api, int which);
 char *clone_get_description(magic_api * api, int which, int mode);
 void clone_drag(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last, int ox, int oy, int x, int y,
-                SDL_Rect * update_rect);
+                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void clone_doit(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last, int ox, int oy, int x, int y,
-                SDL_Rect * update_rect, int crosshairs);
+                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect, int crosshairs);
 void clone_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
                  SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void clone_release(magic_api * api, int which, SDL_Surface * canvas,
@@ -86,29 +84,25 @@ void clone_shutdown(magic_api * api);
 void clone_set_color(magic_api * api, int which, SDL_Surface * canvas,
                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int clone_requires_colors(magic_api * api, int which);
-void clone_switchin(magic_api * api, int which, int mode,
-                    SDL_Surface * canvas);
-void clone_switchout(magic_api * api, int which, int mode,
-                     SDL_Surface * canvas);
+void clone_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void clone_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int clone_modes(magic_api * api, int which);
 void clone_crosshairs(magic_api * api, SDL_Surface * canvas, int x, int y);
-void done_cloning(magic_api * api, SDL_Surface * canvas,
-                  SDL_Rect * update_rect);
+void done_cloning(magic_api * api, SDL_Surface * canvas, SDL_Rect * update_rect);
 Uint8 clone_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 clone_default_size(magic_api * api, int which, int mode);
-void clone_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void clone_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                    SDL_Rect * update_rect);
 
 // No setup required:
 int clone_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/clone_start.ogg",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/clone_start.ogg", api->data_directory);
   clone_start_snd = Mix_LoadWAV(fname);
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/clone.ogg",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/clone.ogg", api->data_directory);
   clone_snd = Mix_LoadWAV(fname);
 
   clone_state = CLONE_READY_TO_START;
@@ -133,30 +127,25 @@ SDL_Surface *clone_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/clone.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/clone.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
 
 // Return our names, localized:
-char *clone_get_name(magic_api * api ATTRIBUTE_UNUSED,
-                     int which ATTRIBUTE_UNUSED)
+char *clone_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Clone")));
 }
 
 // Return our groups:
-int clone_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                    int which ATTRIBUTE_UNUSED)
+int clone_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_DISTORTS;
 }
 
 // Return our descriptions, localized:
-char *clone_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                            int which ATTRIBUTE_UNUSED,
-                            int mode ATTRIBUTE_UNUSED)
+char *clone_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup
           (gettext_noop
@@ -167,8 +156,7 @@ char *clone_get_description(magic_api * api ATTRIBUTE_UNUSED,
 
 // Do the effect:
 
-static void do_clone(void *ptr, int which ATTRIBUTE_UNUSED,
-                     SDL_Surface * canvas, SDL_Surface * last, int x, int y)
+static void do_clone(void *ptr, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int yy, dx;
@@ -206,8 +194,7 @@ static void do_clone(void *ptr, int which ATTRIBUTE_UNUSED,
 
 // Affect the canvas on drag:
 void clone_drag(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x,
-                int y, SDL_Rect * update_rect)
+                SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
   /* Step 3 - Actively cloning (moving the mouse) */
 
@@ -221,8 +208,7 @@ void clone_drag(magic_api * api, int which, SDL_Surface * canvas,
 }
 
 void clone_doit(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last, int ox, int oy, int x, int y,
-                SDL_Rect * update_rect, int crosshairs)
+                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect, int crosshairs)
 {
   if (clone_state != CLONE_CLONING)
     return;
@@ -230,7 +216,7 @@ void clone_doit(magic_api * api, int which, SDL_Surface * canvas,
   clone_drag_start_x = ox;
   clone_drag_start_y = oy;
 
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1, do_clone);
+  api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_clone);
 
   /* Move source position relative to mouse motion */
   clone_src_x += (x - ox);
@@ -275,8 +261,7 @@ void clone_doit(magic_api * api, int which, SDL_Surface * canvas,
 
 // Affect the canvas on click:
 void clone_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                 SDL_Rect * update_rect)
+                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   if (clone_state == CLONE_READY_TO_START)
   {
@@ -306,8 +291,7 @@ void clone_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 
 void clone_release(magic_api * api, int which ATTRIBUTE_UNUSED,
                    SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED,
-                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                   SDL_Rect * update_rect)
+                   int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect)
 {
   if (clone_state == CLONE_STARTING)
   {
@@ -321,8 +305,7 @@ void clone_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   }
 }
 
-void done_cloning(magic_api * api, SDL_Surface * canvas,
-                  SDL_Rect * update_rect)
+void done_cloning(magic_api * api, SDL_Surface * canvas, SDL_Rect * update_rect)
 {
   /* Done cloning! */
 
@@ -361,32 +344,30 @@ void clone_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(clone_start_snd);
 }
 
-void clone_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                     SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void clone_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                     SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                     Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED,
+                     SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
-int clone_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED)
+int clone_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
 void clone_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                    SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
   clone_last =
     SDL_CreateRGBSurface(0, canvas->w, canvas->h,
                          canvas->format->BitsPerPixel, canvas->format->Rmask,
-                         canvas->format->Gmask, canvas->format->Bmask,
-                         canvas->format->Amask);
+                         canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
 
   clone_state = CLONE_READY_TO_START;
 }
 
-void clone_switchout(magic_api * api, int which ATTRIBUTE_UNUSED,
-                     int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
+void clone_switchout(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
 {
   SDL_Rect update_rect;         /* Needed to satisfy done_cloning() :-( */
 
@@ -402,15 +383,19 @@ int clone_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 }
 
 
-Uint8 clone_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED) {
+Uint8 clone_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
   return 8;
 }
 
-Uint8 clone_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED) {
+Uint8 clone_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
   return 2;
 }
 
-void clone_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void clone_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                    SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                    SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   clone_radius = size * 8;
 }

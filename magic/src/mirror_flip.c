@@ -51,12 +51,9 @@ SDL_Surface *mirror_flip_get_icon(magic_api *, int);
 char *mirror_flip_get_name(magic_api *, int);
 int mirror_flip_get_group(magic_api *, int);
 char *mirror_flip_get_description(magic_api *, int, int);
-void mirror_flip_drag(magic_api *, int, SDL_Surface *, SDL_Surface *, int,
-                      int, int, int, SDL_Rect *);
-void mirror_flip_release(magic_api *, int, SDL_Surface *, SDL_Surface *, int,
-                         int, int, int, SDL_Rect *);
-void mirror_flip_click(magic_api *, int, int, SDL_Surface *, SDL_Surface *,
-                       int, int, SDL_Rect *);
+void mirror_flip_drag(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
+void mirror_flip_release(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
+void mirror_flip_click(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
 void mirror_flip_shutdown(magic_api *);
 void mirror_flip_set_color(magic_api * api, int which, SDL_Surface * canvas,
                            SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
@@ -66,19 +63,18 @@ void mirror_flip_switchout(magic_api *, int, int, SDL_Surface *);
 int mirror_flip_modes(magic_api *, int);
 Uint8 mirror_flip_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 mirror_flip_default_size(magic_api * api, int which, int mode);
-void mirror_flip_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void mirror_flip_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                          SDL_Rect * update_rect);
 
 // No setup required:
 int mirror_flip_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/mirror.wav",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/mirror.wav", api->data_directory);
   snd_effects[TOOL_MIRROR] = Mix_LoadWAV(fname);
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/flip.wav",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/flip.wav", api->data_directory);
   snd_effects[TOOL_FLIP] = Mix_LoadWAV(fname);
 
   return (1);
@@ -102,13 +98,11 @@ SDL_Surface *mirror_flip_get_icon(magic_api * api, int which)
 
   if (which == TOOL_MIRROR)
   {
-    snprintf(fname, sizeof(fname), "%simages/magic/mirror.png",
-             api->data_directory);
+    snprintf(fname, sizeof(fname), "%simages/magic/mirror.png", api->data_directory);
   }
   else if (which == TOOL_FLIP)
   {
-    snprintf(fname, sizeof(fname), "%simages/magic/flip.png",
-             api->data_directory);
+    snprintf(fname, sizeof(fname), "%simages/magic/flip.png", api->data_directory);
   }
 
   return (IMG_Load(fname));
@@ -126,15 +120,13 @@ char *mirror_flip_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 }
 
 // Return our group (the same):
-int mirror_flip_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED)
+int mirror_flip_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PICTURE_WARPS;
 }
 
 // Return our descriptions, localized:
-char *mirror_flip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which,
-                                  int mode ATTRIBUTE_UNUSED)
+char *mirror_flip_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == TOOL_MIRROR)
     return (strdup(gettext_noop("Click to make a mirror image.")));
@@ -150,8 +142,7 @@ void mirror_flip_drag(magic_api * api ATTRIBUTE_UNUSED,
                       SDL_Surface * canvas ATTRIBUTE_UNUSED,
                       SDL_Surface * last ATTRIBUTE_UNUSED,
                       int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
-                      int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                      SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                      int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   // No-op
 }
@@ -161,8 +152,7 @@ void mirror_flip_release(magic_api * api ATTRIBUTE_UNUSED,
                          SDL_Surface * canvas ATTRIBUTE_UNUSED,
                          SDL_Surface * last ATTRIBUTE_UNUSED,
                          int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
-                         int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                         SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                         int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   // No-op
 }
@@ -170,8 +160,7 @@ void mirror_flip_release(magic_api * api ATTRIBUTE_UNUSED,
 // Affect the canvas on click:
 void mirror_flip_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                        SDL_Surface * canvas, SDL_Surface * last,
-                       int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                       SDL_Rect * update_rect)
+                       int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect)
 {
   int xx, yy;
   SDL_Rect src, dest;
@@ -229,40 +218,37 @@ void mirror_flip_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // We don't use colors:
-void mirror_flip_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                           SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void mirror_flip_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                           SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                           Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED,
+                           SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 // We don't use colors:
-int mirror_flip_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                                int which ATTRIBUTE_UNUSED)
+int mirror_flip_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
 void mirror_flip_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED,
-                          int mode ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                          int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void mirror_flip_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                           int which ATTRIBUTE_UNUSED,
-                           int mode ATTRIBUTE_UNUSED,
-                           SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                           int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int mirror_flip_modes(magic_api * api ATTRIBUTE_UNUSED,
-                      int which ATTRIBUTE_UNUSED)
+int mirror_flip_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_FULLSCREEN);
 }
 
 
-Uint8 mirror_flip_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 mirror_flip_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                                 int mode ATTRIBUTE_UNUSED)
 {
   return 0;
 }
@@ -272,6 +258,8 @@ Uint8 mirror_flip_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRI
   return 0;
 }
 
-void mirror_flip_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void mirror_flip_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                          Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }

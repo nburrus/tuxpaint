@@ -49,27 +49,23 @@ char *ripples_get_name(magic_api * api, int which);
 int ripples_get_group(magic_api * api, int which);
 char *ripples_get_description(magic_api * api, int which, int mode);
 void ripples_drag(magic_api * api, int which, SDL_Surface * canvas,
-                  SDL_Surface * last, int ox, int oy, int x, int y,
-                  SDL_Rect * update_rect);
-static void ripples_linecb(void *ptr, int which, SDL_Surface * canvas,
-                           SDL_Surface * last, int x, int y);
+                  SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+static void ripples_linecb(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 void ripples_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
                    SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void ripples_release(magic_api * api, int which, SDL_Surface * canvas,
-                     SDL_Surface * last, int x, int y,
-                     SDL_Rect * update_rect);
+                     SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void ripples_shutdown(magic_api * api);
 void ripples_set_color(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int ripples_requires_colors(magic_api * api, int which);
-void ripples_switchin(magic_api * api, int which, int mode,
-                      SDL_Surface * canvas);
-void ripples_switchout(magic_api * api, int which, int mode,
-                       SDL_Surface * canvas);
+void ripples_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void ripples_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int ripples_modes(magic_api * api, int which);
 Uint8 ripples_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 ripples_default_size(magic_api * api, int which, int mode);
-void ripples_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void ripples_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                      SDL_Rect * update_rect);
 
 
 Uint32 ripples_api_version(void)
@@ -85,8 +81,7 @@ int ripples_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/ripples.ogg",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/ripples.ogg", api->data_directory);
   ripples_snd = Mix_LoadWAV(fname);
 
   return (1);
@@ -103,33 +98,27 @@ SDL_Surface *ripples_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/ripples.png",
-           api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/ripples.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
 
 // Return our names, localized:
-char *ripples_get_name(magic_api * api ATTRIBUTE_UNUSED,
-                       int which ATTRIBUTE_UNUSED)
+char *ripples_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Ripples")));
 }
 
 // Return our groups:
-int ripples_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                      int which ATTRIBUTE_UNUSED)
+int ripples_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_DISTORTS;
 }
 
 // Return our descriptions, localized:
-char *ripples_get_description(magic_api * api ATTRIBUTE_UNUSED,
-                              int which ATTRIBUTE_UNUSED,
-                              int mode ATTRIBUTE_UNUSED)
+char *ripples_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup
-          (gettext_noop("Click to make ripples appear over your picture.")));
+  return (strdup(gettext_noop("Click to make ripples appear over your picture.")));
 }
 
 // Affect the canvas on drag:
@@ -138,14 +127,12 @@ void ripples_drag(magic_api * api ATTRIBUTE_UNUSED,
                   SDL_Surface * canvas ATTRIBUTE_UNUSED,
                   SDL_Surface * last ATTRIBUTE_UNUSED,
                   int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
-                  int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                  SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                  int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 static void ripples_linecb(void *ptr, int which ATTRIBUTE_UNUSED,
-                           SDL_Surface * canvas, SDL_Surface * last, int x,
-                           int y)
+                           SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   Uint8 r, g, b;
@@ -163,8 +150,7 @@ static void ripples_linecb(void *ptr, int which ATTRIBUTE_UNUSED,
 
 // Affect the canvas on click:
 void ripples_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
-                   SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                   SDL_Rect * update_rect)
+                   SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   float fli;
   int ox, oy, nx, ny, d;
@@ -183,18 +169,17 @@ void ripples_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 
       ripples_brite = (ripples_z * 20 * deg_sin(d + 45)) / ((fli / 4) + 1);
 
-      api->line((void *) api, which, canvas, last, ox, oy, nx, ny, 1,
-                ripples_linecb);
+      api->line((void *)api, which, canvas, last, ox, oy, nx, ny, 1, ripples_linecb);
 
       ox = nx;
       oy = ny;
     }
   }
 
-  update_rect->x = x - (int) ripples_radius;
-  update_rect->y = y - (int) ripples_radius;
-  update_rect->w = ((int) ripples_radius) * 2;
-  update_rect->h = ((int) ripples_radius) * 2;
+  update_rect->x = x - (int)ripples_radius;
+  update_rect->y = y - (int)ripples_radius;
+  update_rect->w = ((int)ripples_radius) * 2;
+  update_rect->h = ((int)ripples_radius) * 2;
 
   api->playsound(ripples_snd, (x * 255) / api->canvas_w, 255);
 }
@@ -204,8 +189,7 @@ void ripples_release(magic_api * api ATTRIBUTE_UNUSED,
                      int which ATTRIBUTE_UNUSED,
                      SDL_Surface * canvas ATTRIBUTE_UNUSED,
                      SDL_Surface * last ATTRIBUTE_UNUSED,
-                     int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                     SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                     int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -217,38 +201,37 @@ void ripples_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Record the color from Tux Paint:
-void ripples_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                       SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void ripples_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                       SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
+                       Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED, Uint8 b ATTRIBUTE_UNUSED,
+                       SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 // Use colors:
-int ripples_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                            int which ATTRIBUTE_UNUSED)
+int ripples_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
 void ripples_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                      SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void ripples_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                       SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int ripples_modes(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED)
+int ripples_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_ONECLICK);
 }
 
 
-Uint8 ripples_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED) {
+Uint8 ripples_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
   return 10;
 }
 
@@ -257,7 +240,9 @@ Uint8 ripples_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
   return 5;
 }
 
-void ripples_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void ripples_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                      SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                      SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
-  ripples_radius = ((float) size) * 20.0;
+  ripples_radius = ((float)size) * 20.0;
 }

@@ -43,7 +43,7 @@ enum
   NUM_TOOLS
 };
 
-char * tool_names[NUM_TOOLS] = {
+char *tool_names[NUM_TOOLS] = {
   gettext_noop("Lighten"),
   gettext_noop("Darken"),
   gettext_noop("Desaturate"),
@@ -52,34 +52,31 @@ char * tool_names[NUM_TOOLS] = {
   gettext_noop("Keep Color"),
 };
 
-char * tool_descriptions[NUM_TOOLS][2] = {
+char *tool_descriptions[NUM_TOOLS][2] = {
   {
    gettext_noop("Click and drag the mouse to lighten parts of your picture."),
-   gettext_noop("Click to lighten your entire picture.")
-  },
+   gettext_noop("Click to lighten your entire picture.")},
   {
    gettext_noop("Click and drag the mouse to darken parts of your picture."),
-   gettext_noop("Click to darken your entire picture.")
-  },
+   gettext_noop("Click to darken your entire picture.")},
   {
    gettext_noop("Click and drag the mouse to desaturate parts of your picture."),
-   gettext_noop("Click to desaturate your entire picture.")
-  },
+   gettext_noop("Click to desaturate your entire picture.")},
   {
    gettext_noop("Click and drag the mouse to saturate parts of your picture."),
-   gettext_noop("Click to saturate your entire picture.")
-  },
+   gettext_noop("Click to saturate your entire picture.")},
   {
    gettext_noop("Click and drag the mouse to entirely desaturate parts of your picture that match the chosen color."),
    gettext_noop("Click to entirely desaturate the parts of your picture that match the chosen color."),
-  },
+   },
   {
-   gettext_noop("Click and drag the mouse to entirely desaturate parts of your picture that don't match the chosen color."),
+   gettext_noop
+   ("Click and drag the mouse to entirely desaturate parts of your picture that don't match the chosen color."),
    gettext_noop("Click to entirely desaturate the parts of your picture that don't match the chosen color."),
-  },
+   },
 };
 
-char * sfx_filenames[NUM_TOOLS] = {
+char *sfx_filenames[NUM_TOOLS] = {
   "fade.wav",
   "darken.wav",
   "desaturate.ogg",
@@ -88,7 +85,7 @@ char * sfx_filenames[NUM_TOOLS] = {
   "keep_color.ogg",
 };
 
-char * icon_filenames[NUM_TOOLS] = {
+char *icon_filenames[NUM_TOOLS] = {
   "fade.png",
   "darken.png",
   "desaturate.png",
@@ -117,31 +114,25 @@ SDL_Surface *fade_darken_get_icon(magic_api * api, int which);
 int fade_darken_get_group(magic_api * api, int which);
 char *fade_darken_get_name(magic_api * api, int which);
 char *fade_darken_get_description(magic_api * api, int which, int mode);
-static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas,
-                           SDL_Surface * last, int x, int y);
-static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas,
-                                 SDL_Surface * last, int x, int y);
+static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
+static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
-                      SDL_Surface * last, int ox, int oy, int x, int y,
-                      SDL_Rect * update_rect);
+                      SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void fade_darken_click(magic_api * api, int which, int mode,
-                       SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                       SDL_Rect * update_rect);
+                       SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void fade_darken_release(magic_api * api, int which, SDL_Surface * canvas,
-                         SDL_Surface * last, int x, int y,
-                         SDL_Rect * update_rect);
+                         SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void fade_darken_shutdown(magic_api * api);
 void fade_darken_set_color(magic_api * api, int which, SDL_Surface * canvas,
                            SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int fade_darken_requires_colors(magic_api * api, int which);
-void fade_darken_switchin(magic_api * api, int which, int mode,
-                          SDL_Surface * canvas);
-void fade_darken_switchout(magic_api * api, int which, int mode,
-                           SDL_Surface * canvas);
+void fade_darken_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
+void fade_darken_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int fade_darken_modes(magic_api * api, int which);
 Uint8 fade_darken_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 fade_darken_default_size(magic_api * api, int which, int mode);
-void fade_darken_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
+void fade_darken_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
+                          SDL_Rect * update_rect);
 
 
 int fade_darken_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
@@ -149,9 +140,9 @@ int fade_darken_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   int i;
   char fname[1024];
 
-  for (i = 0; i < NUM_TOOLS; i++) {
-    snprintf(fname, sizeof(fname), "%ssounds/magic/%s",
-             api->data_directory, sfx_filenames[i]);
+  for (i = 0; i < NUM_TOOLS; i++)
+  {
+    snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, sfx_filenames[i]);
     snd_effects[i] = Mix_LoadWAV(fname);
   }
 
@@ -174,8 +165,7 @@ SDL_Surface *fade_darken_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/%s",
-           api->data_directory, icon_filenames[which]);
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, icon_filenames[which]);
 
   return (IMG_Load(fname));
 }
@@ -187,21 +177,18 @@ char *fade_darken_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 }
 
 // Return our group (all the same):
-int fade_darken_get_group(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED)
+int fade_darken_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_COLOR_FILTERS;
 }
 
 // Return our description, localized:
-char *fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which,
-                                  int mode)
+char *fade_darken_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
   return strdup(gettext(tool_descriptions[which][mode - 1]));
 }
 
-static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas,
-                           SDL_Surface * last, int x, int y)
+static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   Uint8 r, g, b;
   magic_api *api = (magic_api *) ptr;
@@ -226,25 +213,36 @@ static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas,
 
     api->rgbtohsv(r, g, b, &h, &s, &v);
 
-    if (which == TOOL_DESATURATE) {
+    if (which == TOOL_DESATURATE)
+    {
       s = (s * SAT_DESAT_RATIO_NUM) / SAT_DESAT_RATIO_DENOM;
-    } else if (which == TOOL_SATURATE) {
-      if (s > 0.1) { /* don't saturate things w/o undefined color! */
+    }
+    else if (which == TOOL_SATURATE)
+    {
+      if (s > 0.1)
+      {                         /* don't saturate things w/o undefined color! */
         s = (s * SAT_DESAT_RATIO_DENOM) / SAT_DESAT_RATIO_NUM;
-        if (s > 1.0) {
+        if (s > 1.0)
+        {
           s = 1.0;
         }
       }
-    } else if (which == TOOL_REMOVE) {
+    }
+    else if (which == TOOL_REMOVE)
+    {
       if (fabs(h - chosen_h) <= KEEP_REMOVE_HUE_THRESH
- /* && fabs(s - chosen_s) <= KEEP_REMOVE_VALUE_THRESH */
-) {
+          /* && fabs(s - chosen_s) <= KEEP_REMOVE_VALUE_THRESH */
+        )
+      {
         s = 0.0;
       }
-    } else if (which == TOOL_KEEP) {
+    }
+    else if (which == TOOL_KEEP)
+    {
       if (fabs(h - chosen_h) > KEEP_REMOVE_HUE_THRESH
- /* || fabs(s - chosen_s) > KEEP_REMOVE_VALUE_THRESH */
-) {
+          /* || fabs(s - chosen_s) > KEEP_REMOVE_VALUE_THRESH */
+        )
+      {
         s = 0.0;
       }
     }
@@ -257,8 +255,7 @@ static void do_fade_darken(void *ptr, int which, SDL_Surface * canvas,
 
 
 // Callback that does the fade_darken color effect on a circle centered around x,y
-static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas,
-                                 SDL_Surface * last, int x, int y)
+static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   int xx, yy;
   magic_api *api = (magic_api *) ptr;
@@ -277,14 +274,12 @@ static void do_fade_darken_paint(void *ptr, int which, SDL_Surface * canvas,
 
 // Ask Tux Paint to call our 'do_fade_darken_paint()' callback over a line
 void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
-                      SDL_Surface * last, int ox, int oy, int x, int y,
-                      SDL_Rect * update_rect)
+                      SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
   SDL_LockSurface(last);
   SDL_LockSurface(canvas);
 
-  api->line((void *) api, which, canvas, last, ox, oy, x, y, 1,
-            do_fade_darken_paint);
+  api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_fade_darken_paint);
 
   SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(last);
@@ -315,8 +310,7 @@ void fade_darken_drag(magic_api * api, int which, SDL_Surface * canvas,
 // Ask Tux Paint to call our 'do_fade_darken_paint()' callback at a single point,
 // or 'do_fade_darken()' on the entire image
 void fade_darken_click(magic_api * api, int which, int mode,
-                       SDL_Surface * canvas, SDL_Surface * last, int x, int y,
-                       SDL_Rect * update_rect)
+                       SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   if (mode == MODE_PAINT)
     fade_darken_drag(api, which, canvas, last, x, y, x, y, update_rect);
@@ -342,8 +336,7 @@ void fade_darken_release(magic_api * api ATTRIBUTE_UNUSED,
                          int which ATTRIBUTE_UNUSED,
                          SDL_Surface * canvas ATTRIBUTE_UNUSED,
                          SDL_Surface * last ATTRIBUTE_UNUSED,
-                         int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED,
-                         SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                         int x ATTRIBUTE_UNUSED, int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -358,7 +351,8 @@ void fade_darken_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 void fade_darken_set_color(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                           SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                           SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b,
+                           SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   float tmp;
 
@@ -366,8 +360,7 @@ void fade_darken_set_color(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surf
 }
 
 // We don't use colors
-int fade_darken_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
-                                int which ATTRIBUTE_UNUSED)
+int fade_darken_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   if (which == TOOL_REMOVE || which == TOOL_KEEP)
     return 1;
@@ -376,27 +369,23 @@ int fade_darken_requires_colors(magic_api * api ATTRIBUTE_UNUSED,
 }
 
 void fade_darken_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                          int which ATTRIBUTE_UNUSED,
-                          int mode ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                          int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void fade_darken_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                           int which ATTRIBUTE_UNUSED,
-                           int mode ATTRIBUTE_UNUSED,
-                           SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                           int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int fade_darken_modes(magic_api * api ATTRIBUTE_UNUSED,
-                      int which ATTRIBUTE_UNUSED)
+int fade_darken_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
 }
 
 
-Uint8 fade_darken_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 fade_darken_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                                 int mode ATTRIBUTE_UNUSED)
 {
   if (mode == MODE_PAINT)
     return 8;
@@ -409,7 +398,9 @@ Uint8 fade_darken_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRI
   return 4;
 }
 
-void fade_darken_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void fade_darken_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size,
+                          SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   fade_darken_radius = size * 4;
 }
