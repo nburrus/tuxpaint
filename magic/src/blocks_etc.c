@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: March 19, 2023
+  Last updated: April 23, 2023
 */
 
 #include <stdio.h>
@@ -42,7 +42,7 @@ enum
   NUM_TOOLS
 };
 
-#define EFFECT_REZ 4
+static int EFFECT_REZ = 4;
 
 
 /* Our globals: */
@@ -52,7 +52,7 @@ static Mix_Chunk *snd_effect[NUM_TOOLS];
 
 /* Our function prototypes: */
 
-int blocks_etc_init(magic_api * api);
+int blocks_etc_init(magic_api * api, Uint32 disabled_features);
 Uint32 blocks_etc_api_version(void);
 int blocks_etc_get_tool_count(magic_api * api);
 SDL_Surface *blocks_etc_get_icon(magic_api * api, int which);
@@ -80,10 +80,13 @@ void blocks_etc_switchin(magic_api * api, int which, int mode,
 void blocks_etc_switchout(magic_api * api, int which, int mode,
                                  SDL_Surface * canvas);
 int blocks_etc_modes(magic_api * api, int which);
+Uint8 blocks_etc_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 blocks_etc_default_size(magic_api * api, int which, int mode);
+void blocks_etc_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 
-int blocks_etc_init(magic_api * api)
+int blocks_etc_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -245,7 +248,7 @@ static void blocks_etc_linecb(void *ptr, int which,
           {
             Uint32 p_tmp;
 
-            p_tmp = api->getpixel(last, xx + (i >> 2), yy + (i & 3));
+            p_tmp = api->getpixel(last, xx + (i / EFFECT_REZ), yy + (i % EFFECT_REZ));
             p_or |= p_tmp;
             p_and &= p_tmp;
             pix[i] = p_tmp;
@@ -310,16 +313,16 @@ static void blocks_etc_linecb(void *ptr, int which,
   }
   else if (which == TOOL_DRIP)
   {
-    for (xx = x - 8; xx <= x + 8; xx++)
+    for (xx = x - (EFFECT_REZ * 2); xx <= x + (EFFECT_REZ * 2); xx++)
     {
-      h = (rand() % 8) + 8;
+      h = (rand() % (EFFECT_REZ * 2)) + (EFFECT_REZ * 2);
 
       for (yy = y; yy <= y + h; yy++)
       {
         src.x = xx;
         src.y = y;
         src.w = 1;
-        src.h = 16;
+        src.h = (EFFECT_REZ * 4);
 
         dest.x = xx;
         dest.y = yy;
@@ -353,10 +356,10 @@ void blocks_etc_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = ox - 16;
-  update_rect->y = oy - 16;
-  update_rect->w = (x + 16) - update_rect->x;
-  update_rect->h = (y + 16) - update_rect->y;
+  update_rect->x = ox - (EFFECT_REZ * 4);
+  update_rect->y = oy - (EFFECT_REZ * 4);
+  update_rect->w = (x + (EFFECT_REZ * 4)) - update_rect->x;
+  update_rect->h = (y + (EFFECT_REZ * 4)) - update_rect->y;
 
   api->playsound(snd_effect[which], (x * 255) / canvas->w, 255);
 }
@@ -458,14 +461,29 @@ void blocks_etc_switchout(magic_api * api ATTRIBUTE_UNUSED,
 {
 }
 
-int blocks_etc_modes(magic_api * api ATTRIBUTE_UNUSED, int which)
+int blocks_etc_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  if (which == TOOL_BLOCKS || TOOL_CHALK)
-  {
-    return (MODE_PAINT | MODE_FULLSCREEN);
-  }
-  else                          /* TOOL_DRIP */
-  {
-    return (MODE_PAINT);
-  }
+  return (MODE_PAINT | MODE_FULLSCREEN);
+}
+
+
+Uint8 blocks_etc_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  return 4;
+}
+
+Uint8 blocks_etc_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+{
+  if (which == TOOL_BLOCKS)
+    return 1;
+  else
+    return 2;
+}
+
+void blocks_etc_set_size(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+{
+  if (which == TOOL_BLOCKS)
+    EFFECT_REZ = size * 4;
+  else
+    EFFECT_REZ = size * 2;
 }
