@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 20, 2023
+  Last updated: April 23, 2023
 */
 
 #include <stdio.h>
@@ -175,10 +175,15 @@ void pixels_drag(magic_api * api, int which, SDL_Surface * canvas,
     y = tmp;
   }
 
-  update_rect->x = x - pixel_size * 2;
-  update_rect->y = y - pixel_size * 2;
-  update_rect->w = (ox + pixel_size * 2) - update_rect->x;
-  update_rect->h = (oy + pixel_size * 2) - update_rect->y;
+  ox = (ox / pixel_size) * pixel_size;
+  oy = (oy / pixel_size) * pixel_size;
+  x = (x / pixel_size) * pixel_size;
+  y = (y / pixel_size) * pixel_size;
+
+  update_rect->x = ox - pixel_size * 2;
+  update_rect->y = oy - pixel_size * 2;
+  update_rect->w = (x + pixel_size * 2) - update_rect->x;
+  update_rect->h = (y + pixel_size * 2) - update_rect->y;
 
   api->playsound(pixel_snd, (x * 255) / canvas->w, 255);
 }
