@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 18, 2023
+  Last updated: April 23, 2023
 */
 
 #include <stdio.h>
@@ -100,6 +100,9 @@ void alien_set_color(magic_api * api, int which, SDL_Surface * canvas,
 int alien_requires_colors(magic_api * api, int which);
 Uint8 alien_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 alien_default_size(magic_api * api, int which, int mode);
+void alien_set_size(magic_api * api, int which, int mode,
+              SDL_Surface * canvas, SDL_Surface * last,
+              Uint8 size, SDL_Rect * update_rect);
 void alien_switchin(magic_api * api, int which, int mode,
                     SDL_Surface * canvas);
 void alien_switchout(magic_api * api, int which, int mode,
