@@ -101,6 +101,12 @@ https://tuxpaint.org/
       (shows when certain features are enabled; not just disabled)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * Starter and Template Improvements
+    ---------------------------------
+    * More starters have smearing disabled (world maps & "skyline-sf-dusk")
+      (h/t Anna-Cornelia Queen)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Bug Fixes:
     ----------
     * Don't try to load a blank-named template during slideshow playback.
