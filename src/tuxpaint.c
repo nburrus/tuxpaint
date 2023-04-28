@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 27, 2023
+  June 14, 2002 - April 28, 2023
 */
 
 #include "platform.h"
@@ -28954,6 +28954,7 @@ static void setup(void)
   SDL_Rect dest;
   int scale;
   int canvas_width, canvas_height;
+  int win_x = SDL_WINDOWPOS_UNDEFINED, win_y = SDL_WINDOWPOS_UNDEFINED;
 
 #ifndef LOW_QUALITY_COLOR_SELECTOR
   int x, y;
@@ -29176,22 +29177,49 @@ static void setup(void)
   }
 
 
+  /* SDL1.2 supported "SDL_VIDEO_WINDOW_POS", but SDL2 does not,
+     so we implement it ourselves */
+  if (getenv((char *)"SDL_VIDEO_WINDOW_POS") != NULL)
+  {
+    char *winpos;
+
+    winpos = getenv((char *)"SDL_VIDEO_WINDOW_POS");
+    if (strcmp(winpos, "nopref") != 0)
+    {
+      if (strcmp(winpos, "center") == 0)
+      {
+        win_x = SDL_WINDOWPOS_CENTERED;
+        win_y = SDL_WINDOWPOS_CENTERED;
+      }
+      else
+      {
+        int success;
+
+        success = sscanf(winpos, "%d,%d", &win_x, &win_y);
+        if (success != 2)
+        {
+          fprintf(stderr, "Warning: Cannot parse SDL_VIDEO_WINDOW_POS value of \"%s\"; ignoring\n", winpos);
+          win_x = SDL_WINDOWPOS_UNDEFINED;
+          win_y = SDL_WINDOWPOS_UNDEFINED;
+        }
+      }
+    }
+  }
+
+
   /* Open Window: */
 
   if (fullscreen)
   {
 #ifdef USE_HWSURFACE
     window_screen =
-      SDL_CreateWindow("Tux Paint", SDL_WINDOWPOS_UNDEFINED,
-                       SDL_WINDOWPOS_UNDEFINED,
+      SDL_CreateWindow("Tux Paint", win_x, win_y,
                        WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_HWSURFACE);
     if (window_screen == NULL)
       printf("window_screen = NULL 1\n");
 
 #else
-    window_screen = SDL_CreateWindow(NULL,
-                                     SDL_WINDOWPOS_UNDEFINED,
-                                     SDL_WINDOWPOS_UNDEFINED,
+    window_screen = SDL_CreateWindow(NULL, win_x, win_y,
                                      WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
     if (window_screen == NULL)
       printf("window_screen = NULL 2\n");
@@ -29291,7 +29319,6 @@ static void setup(void)
 
   if (!fullscreen)
   {
-    int win_x = SDL_WINDOWPOS_UNDEFINED, win_y = SDL_WINDOWPOS_UNDEFINED;
     int max_scrn_w, max_scrn_h;
     int num_displays, i, res;
     SDL_DisplayMode mode;
@@ -29353,36 +29380,6 @@ static void setup(void)
       {
         fprintf(stderr, "Asked for window height (%d) larger than max screen height (%d)\n", WINDOW_HEIGHT, max_scrn_h);
         WINDOW_HEIGHT = max_scrn_h;
-      }
-    }
-
-
-    /* SDL1.2 supported "SDL_VIDEO_WINDOW_POS", but SDL2 does not,
-       so we implement it ourselves */
-    if (getenv((char *)"SDL_VIDEO_WINDOW_POS") != NULL)
-    {
-      char *winpos;
-
-      winpos = getenv((char *)"SDL_VIDEO_WINDOW_POS");
-      if (strcmp(winpos, "nopref") != 0)
-      {
-        if (strcmp(winpos, "center") == 0)
-        {
-          win_x = SDL_WINDOWPOS_CENTERED;
-          win_y = SDL_WINDOWPOS_CENTERED;
-        }
-        else
-        {
-          int success;
-
-          success = sscanf(winpos, "%d,%d", &win_x, &win_y);
-          if (success != 2)
-          {
-            fprintf(stderr, "Warning: Cannot parse SDL_VIDEO_WINDOW_POS value of \"%s\"; ignoring\n", winpos);
-            win_x = SDL_WINDOWPOS_UNDEFINED;
-            win_y = SDL_WINDOWPOS_UNDEFINED;
-          }
-        }
       }
     }
 

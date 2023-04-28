@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.27 (0.9.30)
+2023.April.28 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -102,6 +102,12 @@ https://tuxpaint.org/
 
     * Slightly more verbose output from "--verbose-version"
       (shows when certain features are enabled; not just disabled)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * SDL_VIDEO_WINDOW_POS environment variable is now recognized
+      when running Tux Paint in fullscreen mode (useful for positioning
+      Tux Paint on a particular monitor).
+      Closes https://sourceforge.net/p/tuxpaint/bugs/277/
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Starter and Template Improvements
