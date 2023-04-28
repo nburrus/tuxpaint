@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 20, 2023
+  June 14, 2002 - April 27, 2023
 */
 
 #include "platform.h"
@@ -4384,6 +4384,11 @@ static void mainloop(void)
                       update_screen_rect(&r_toolopt);
                     }
                     playsound(screen, 0, SND_CLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+
+                    if (magics[grp][cur].sizes[magic_modeint(magics[grp][cur].mode)]) {
+                      DEBUG_PRINTF("group %d thing %d in mode %04x (%d) has %d sizes; size is %d\n", grp, cur, magics[grp][cur].mode, magic_modeint(magics[grp][cur].mode), magics[grp][cur].sizes[magic_modeint(magics[grp][cur].mode)], magics[grp][cur].size[magic_modeint(magics[grp][cur].mode)]);
+                      magic_set_size();
+                    }
                   }
                   else if (!disable_magic_sizes)
                   {
@@ -25976,6 +25981,8 @@ static void magic_set_size()
     undo_ctr = NUM_UNDO_BUFS - 1;
 
   last = undo_bufs[undo_ctr];
+
+  DEBUG_PRINTF("set_size for mode %04x (%d) being set to %d\n", magics[magic_group][cur_magic[magic_group]].mode, magic_modeint(magics[magic_group][cur_magic[magic_group]].mode), magics[magic_group][cur_magic[magic_group]].size[magic_modeint(magics[magic_group][cur_magic[magic_group]].mode)]);
 
   magic_funcs[magics[magic_group][cur_magic[magic_group]].handle_idx].set_size(magic_api_struct,
                                                                                magics[magic_group][cur_magic
