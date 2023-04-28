@@ -30,7 +30,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: April 27, 2023
 */
 
 #include <stdio.h>
@@ -519,26 +519,32 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 43, 36, 23, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 26, 28, 53, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 54, 10, 63, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 55, 0, 36, 23, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 63, 43, 28, 53, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 24, 63, 28, 53, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 24, 0, 27, 19, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 63, 8, 50, 6, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 10, 0, 4, 10, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 10, 0, 25, 7, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 41, 0, 26, 12, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 41, 63, 28, 53, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 41, 63, 56, 58, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 63, 53, 55, 45, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 55, 63, 59, 49, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 10, 63, 20, 45, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 63, 26, 40, 18, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 4, 30, 14, 14, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 18, 33, 21, 17, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 23, 48, 29, 27, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 37, 50, 36, 23, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 44, 13, 37, 3, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 59, 24, 55, 7, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 49, 47, 54, 23, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 36, 35, 51, 37, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 61, 44, 52, 31, 1, mosaic_shaped_paint);
@@ -558,6 +564,7 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 16, 8, 0, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 8, 0, 26, 0, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 26, 0, 32, 14, 1, mosaic_shaped_paint);
+    api->update_progress_bar();
     api->line(api, which, mosaic_shaped_pattern, NULL, 32, 14, 26, 27, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 32, 14, 47, 14, 1, mosaic_shaped_paint);
     api->line(api, which, mosaic_shaped_pattern, NULL, 0, 13, 8, 27, 1, mosaic_shaped_paint);
@@ -566,6 +573,7 @@ void mosaic_shaped_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSE
     api->putpixel(mosaic_shaped_pattern, 9, 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, 9, 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, 26, 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
+    api->update_progress_bar();
     api->putpixel(mosaic_shaped_pattern, 26, 26, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, 26, 25, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
     api->putpixel(mosaic_shaped_pattern, 25, 27, SDL_MapRGBA(mosaic_shaped_pattern->format, 0, 0, 0, SDL_ALPHA_OPAQUE));
