@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 23:27-0700\n"
-"PO-Revision-Date: 2023-04-02 09:54+0900\n"
+"PO-Revision-Date: 2023-04-30 09:00+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -367,11 +367,11 @@ msgstr "「はんこ」ツールは、スタンプやシールのセットのよ
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid "Many Magic tools now offer size settings."
-msgstr ""
+msgstr "「まほう」ツールの多くは、サイズが変更できるようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Button labels word-wrap when possible (improves legibility)."
-msgstr ""
+msgstr "ボタンのラベルは可能な場合は折り返し表示されます。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
@@ -1588,10 +1588,8 @@ msgid "Click and drag to draw small bricks."
 msgstr "ちいさな レンガを かこう。"
 
 #: ../../magic/src/bricks.c:156
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw bricks."
-msgstr "おおきな レンガを かこう。"
+msgstr "レンガを かこう。"
 
 #: ../../magic/src/calligraphy.c:130
 msgid "Calligraphy"
@@ -1844,41 +1842,32 @@ msgid "Click to cover your entire picture in glass tiles."
 msgstr "えを クリックして ぜんたいに ガラスの タイルを かぶせよう。"
 
 #: ../../magic/src/googlyeyes.c:24
-#, fuzzy
-#| msgid ""
-#| "Click to place a %s, then drag and release to make it look that direction."
 msgid ""
 "Click to place a large googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
-"%sを かこう！ クリックして ばしょをきめたあと マウスをうごかして すきなむき"
-"で ボタンをはなします。"
+"おおきなめだまを かこう！ クリックして ばしょをきめたあと マウスをうごかして "
+"すきなむきで ボタンをはなします。"
 
 #: ../../magic/src/googlyeyes.c:25
-#, fuzzy
-#| msgid ""
-#| "Click to place a %s, then drag and release to make it look that direction."
 msgid ""
 "Click to place a small googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
-"%sを かこう！ クリックして ばしょをきめたあと マウスをうごかして すきなむき"
-"で ボタンをはなします。"
+"ちいさなめだまを かこう！ クリックして ばしょをきめたあと マウスをうごかして "
+"すきなむきで ボタンをはなします。"
 
 #: ../../magic/src/googlyeyes.c:205
 msgid "Googly Eyes"
 msgstr "めだま"
 
 #: ../../magic/src/googlyeyes.c:222
-#, fuzzy
-#| msgid ""
-#| "Click to place a %s, then drag and release to make it look that direction."
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
 msgstr ""
-"%sを かこう！ クリックして ばしょをきめたあと マウスをうごかして すきなむき"
-"で ボタンをはなします。"
+"めだまを かこう！ クリックして ばしょをきめたあと マウスをうごかして すきなむ"
+"きで ボタンをはなします。"
 
 #: ../../magic/src/grass.c:111
 msgid "Grass"
@@ -2491,7 +2480,7 @@ msgstr "テレビ"
 
 #: ../../magic/src/tv.c:119
 msgid "TV (Bright)"
-msgstr ""
+msgstr "あかるいテレビ"
 
 #: ../../magic/src/tv.c:130
 msgid ""
