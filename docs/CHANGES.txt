@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.28 (0.9.30)
+2023.April.30 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -137,6 +137,9 @@ https://tuxpaint.org/
 
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Japanese translation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Slovak translation
       Jozef Říha <jose1711@gmail.com>
