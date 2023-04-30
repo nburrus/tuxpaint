@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - April 9, 2023
+# June 14, 2002 - April 30, 2023
 
 
 # The version number, for release:
@@ -295,7 +295,6 @@ NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL2_Mixer failed, no s
 # SDL Pango is needed to render complex scripts like Thai and Arabic
 SDL2_PANGO_LIB:=$(call linktest,SDL2_Pango,-lSDL2_Pango,$(SDL_LIBS))
 SDL2_PANGO_CFLAGS:=$(shell $(PKG_CONFIG) --cflags SDL2_Pango)
-NOPANGOFLAG:=$(if $(SDL2_PANGO_LIB),,-DNO_SDLPANGO$(warning -lSDL2_Pango failed, no scripts for you!))
 
 SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL2_PANGO_LIB)
 
@@ -355,7 +354,7 @@ DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
 	-DIMDIR=\"$(patsubst $(DESTDIR)%,%,$(IM_PREFIX))/\" \
 	-DCONFDIR=\"$(patsubst $(DESTDIR)%,%,$(CONFDIR))/\" \
 	-DMAGIC_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(MAGIC_PREFIX))/\" \
-	$(NOSOUNDFLAG) $(NOSVGFLAG) $(OLDSVGFLAG) $(NOPANGOFLAG) \
+	$(NOSOUNDFLAG) $(NOSVGFLAG) $(OLDSVGFLAG) \
 	$(MAEMOFLAG)
 
 DEBUG_FLAGS:=

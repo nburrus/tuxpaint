@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 28, 2023
+  June 14, 2002 - April 30, 2023
 */
 
 #include "platform.h"
@@ -452,8 +452,6 @@ int iswprint(wchar_t wc)
 #endif
 
 
-#ifndef NO_SDLPANGO
-
 /*
  The following section renames global variables defined in SDL_Pango.h to avoid errors during linking.
  It is okay to rename these variables because they are constants.
@@ -487,7 +485,7 @@ int iswprint(wchar_t wc)
 #include <pango/pango.h>
 #include <pango/pangoft2.h>
 #endif
-#endif /* !defined(NO_SDLPANGO) */
+
 
 #ifndef NOSOUND
 
@@ -1710,10 +1708,7 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
 {
   SDL_Surface *ret = NULL;
   int height;
-
-#ifndef NO_SDLPANGO
   SDLPango_Matrix pango_color;
-#endif
 
   if (font == NULL)
   {
@@ -1722,7 +1717,6 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
     return NULL;
   }
 
-#ifndef NO_SDLPANGO
   if (font->typ == FONT_TYPE_PANGO)
   {
     sdl_color_to_pango_color(color, &pango_color);
@@ -1740,7 +1734,6 @@ static SDL_Surface *render_text(TuxPaint_Font * restrict font, const char *restr
     SDLPango_SetText_GivenAlignment(font->pango_context, str, -1, SDLPANGO_ALIGN_CENTER);
     ret = SDLPango_CreateSurfaceDraw(font->pango_context);
   }
-#endif
 
   if (font->typ == FONT_TYPE_TTF)
   {
@@ -1805,21 +1798,17 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
   SDL_Surface *ret = NULL;
   int height;
   Uint16 *ustr;
-
-#ifndef NO_SDLPANGO
   int utfstr_max;
   char *utfstr;
   SDLPango_Matrix pango_color;
-#endif
 
-#ifndef NO_SDLPANGO
   if (font->typ == FONT_TYPE_PANGO)
   {
     sdl_color_to_pango_color(color, &pango_color);
 
     SDLPango_SetDefaultColor(font->pango_context, &pango_color);
 
-/* Convert from 16-bit UNICODE to UTF-8 encoded for SDL_Pango: */
+    /* Convert from 16-bit UNICODE to UTF-8 encoded for SDL_Pango: */
 
     utfstr_max = (sizeof(char) * 4 * (wcslen(str) + 1));
     utfstr = (char *)malloc(utfstr_max);
@@ -1829,7 +1818,6 @@ static SDL_Surface *render_text_w(TuxPaint_Font * restrict font, const wchar_t *
     SDLPango_SetText(font->pango_context, utfstr, -1);
     ret = SDLPango_CreateSurfaceDraw(font->pango_context);
   }
-#endif
 
   if (font->typ == FONT_TYPE_TTF)
   {
@@ -2248,9 +2236,7 @@ static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Re
 static void handle_active(SDL_Event * event);
 
 /*static char *replace_tilde(const char* const path);*/
-#ifdef NO_SDLPANGO
 static void anti_carriage_return(int left, int right, int cur_top, int new_top, int cur_bot, int line_width);
-#endif
 static void load_starter_id(char *saved_id, FILE * fil);
 static void load_starter(char *img_id);
 static void load_template(char *img_id);
@@ -7893,12 +7879,6 @@ void show_version(int details)
   printf("  Bilinear scaling enabled  (BILINEAR)\n");
 #endif
 
-#ifdef NO_SDLPANGO
-  printf("  Pango support disabled  (NO_SDLPANGO)\n");
-#else
-  printf("  Pango support enabled  (not NO_SDLPANGO)\n");
-#endif
-
 #ifdef NOSVG
   printf("  SVG support disabled  (NOSVG)\n");
 #else
@@ -9233,7 +9213,7 @@ static int load_user_fonts_stub(void *vp)
 }
 #endif
 
-#ifndef NO_SDLPANGO
+
 volatile long fontconfig_thread_done = 0;
 
 /**
@@ -9311,7 +9291,7 @@ static int generate_fontconfig_cache( __attribute__((unused))
 {
   return generate_fontconfig_cache_real();
 }
-#endif
+
 
 #define hex2dec(c) (((c) >= '0' && (c) <= '9') ? ((c) - '0') : \
   ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
@@ -12688,21 +12668,7 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
   SDL_Surface *text;
   TuxPaint_Font *myfont = medium_font;
   SDL_Rect dest;
-
-#ifdef NO_SDLPANGO
-  int len;
-  int x, y, j;
-  unsigned int i;
-  char substr[512];
-  unsigned char *locale_str;
-  char *tstr;
-  unsigned char utf8_char[5];
-  SDL_Rect src;
-  int utf8_str_len, last_text_height;
-  unsigned char utf8_str[512];
-#else
   SDLPango_Matrix pango_color;
-#endif
 
 
   if (str == NULL || str[0] == '\0')
@@ -12718,7 +12684,6 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
   }
 
 
-#ifndef NO_SDLPANGO
   /* Letting SDL_Pango do all this stuff! */
 
   sdl_color_to_pango_color(color, &pango_color);
@@ -12761,329 +12726,6 @@ static void wordwrap_text_ex(const char *const str, SDL_Color color,
     SDL_BlitSurface(text, NULL, screen, &dest);
     SDL_FreeSurface(text);
   }
-#else
-
-  /* Cursor starting position: */
-
-  x = left;
-  y = top;
-
-  last_text_height = 0;
-
-  debug(str);
-  debug(gettext(str));
-  debug("...");
-
-  if (strcmp(str, "") != 0)
-  {
-    if (want_right_to_left == 0)
-      locale_str = (unsigned char *)strdup(gettext(str));
-    else
-      locale_str = (unsigned char *)textdir(gettext(str));
-
-
-    /* For each UTF8 character: */
-
-    utf8_str_len = 0;
-    utf8_str[0] = '\0';
-
-    for (i = 0; i <= strlen((char *)locale_str); i++)
-    {
-      if (locale_str[i] < 128)
-      {
-        utf8_str[utf8_str_len++] = locale_str[i];
-        utf8_str[utf8_str_len] = '\0';
-
-
-        /* Space?  Blit the word! (Word-wrap if necessary) */
-
-        if (locale_str[i] == ' ' || locale_str[i] == '\0')
-        {
-          if (only_uppercase)
-          {
-            char *upper_utf8_str = uppercase((char *)utf8_str);
-
-            text = render_text(myfont, (char *)upper_utf8_str, color);
-            free(upper_utf8_str);
-          }
-          else
-            text = render_text(myfont, (char *)utf8_str, color);
-
-          if (!text)
-            continue;           /* Didn't render anything... */
-
-          /* ----------- */
-          if (text->w > right - left)
-          {
-            /* Move left and down (if not already at left!) */
-
-            if (x > left)
-            {
-              if (need_right_to_left && want_right_to_left)
-                anti_carriage_return(left, right, top, top + text->h, y + text->h, x - left);
-
-              x = left;
-              y = y + text->h;
-            }
-
-
-            /* Junk the blitted word; it's too long! */
-
-            last_text_height = text->h;
-            SDL_FreeSurface(text);
-
-
-            /* For each UTF8 character: */
-
-            for (j = 0; j < utf8_str_len; j++)
-            {
-              /* How many bytes does this character need? */
-
-              if (utf8_str[j] < 128)    /* 0xxx xxxx - 1 byte */
-              {
-                utf8_char[0] = utf8_str[j];
-                utf8_char[1] = '\0';
-              }
-              else if ((utf8_str[j] & 0xE0) == 0xC0)    /* 110x xxxx - 2 bytes */
-              {
-                utf8_char[0] = utf8_str[j];
-                utf8_char[1] = utf8_str[j + 1];
-                utf8_char[2] = '\0';
-                j = j + 1;
-              }
-              else if ((utf8_str[j] & 0xF0) == 0xE0)    /* 1110 xxxx - 3 bytes */
-              {
-                utf8_char[0] = utf8_str[j];
-                utf8_char[1] = utf8_str[j + 1];
-                utf8_char[2] = utf8_str[j + 2];
-                utf8_char[3] = '\0';
-                j = j + 2;
-              }
-              else              /* 1111 0xxx - 4 bytes */
-              {
-                utf8_char[0] = utf8_str[j];
-                utf8_char[1] = utf8_str[j + 1];
-                utf8_char[2] = utf8_str[j + 2];
-                utf8_char[3] = utf8_str[j + 3];
-                utf8_char[4] = '\0';
-                j = j + 3;
-              }
-
-
-              if (utf8_char[0] != '\0')
-              {
-                text = render_text(myfont, (char *)utf8_char, color);
-                if (text != NULL)
-                {
-                  if (x + text->w > right)
-                  {
-                    if (need_right_to_left && want_right_to_left)
-                      anti_carriage_return(left, right, top, top + text->h, y + text->h, x - left);
-
-                    x = left;
-                    y = y + text->h;
-                  }
-
-                  dest.x = x;
-
-                  if (need_right_to_left && want_right_to_left)
-                    dest.y = top;
-                  else
-                    dest.y = y;
-
-                  SDL_BlitSurface(text, NULL, screen, &dest);
-
-                  last_text_height = text->h;
-
-                  x = x + text->w;
-
-                  SDL_FreeSurface(text);
-                }
-              }
-            }
-          }
-          else
-          {
-            /* Not too wide for one line... */
-
-            if (x + text->w > right)
-            {
-              /* This word needs to move down? */
-
-              if (need_right_to_left && want_right_to_left)
-                anti_carriage_return(left, right, top, top + text->h, y + text->h, x - left);
-
-              x = left;
-              y = y + text->h;
-            }
-
-            dest.x = x;
-
-            if (need_right_to_left && want_right_to_left)
-              dest.y = top;
-            else
-              dest.y = y;
-
-            SDL_BlitSurface(text, NULL, screen, &dest);
-
-            last_text_height = text->h;
-            x = x + text->w;
-
-            SDL_FreeSurface(text);
-          }
-
-
-          utf8_str_len = 0;
-          utf8_str[0] = '\0';
-        }
-      }
-      else if ((locale_str[i] & 0xE0) == 0xC0)
-      {
-        utf8_str[utf8_str_len++] = locale_str[i];
-        utf8_str[utf8_str_len++] = locale_str[i + 1];
-        utf8_str[utf8_str_len] = '\0';
-        i++;
-      }
-      else if ((locale_str[i] & 0xF0) == 0xE0)
-      {
-        utf8_str[utf8_str_len++] = locale_str[i];
-        utf8_str[utf8_str_len++] = locale_str[i + 1];
-        utf8_str[utf8_str_len++] = locale_str[i + 2];
-        utf8_str[utf8_str_len] = '\0';
-        i = i + 2;
-      }
-      else
-      {
-        utf8_str[utf8_str_len++] = locale_str[i];
-        utf8_str[utf8_str_len++] = locale_str[i + 1];
-        utf8_str[utf8_str_len++] = locale_str[i + 2];
-        utf8_str[utf8_str_len++] = locale_str[i + 3];
-        utf8_str[utf8_str_len] = '\0';
-        i = i + 3;
-      }
-    }
-
-    free(locale_str);
-  }
-  else if (strlen(str) != 0)
-  {
-    /* Truncate if too big! (sorry!) */
-
-    {
-      char *s1 = gettext(str);
-
-      if (want_right_to_left)
-      {
-        char *freeme = s1;
-
-        s1 = textdir(s1);
-        free(freeme);
-      }
-      tstr = uppercase(s1);
-      free(s1);
-    }
-
-    if (strlen(tstr) > sizeof(substr) - 1)
-      tstr[sizeof(substr) - 1] = '\0';
-
-
-    /* For each word... */
-
-    for (i = 0; i < strlen(tstr); i++)
-    {
-      /* Figure out the word... */
-
-      len = 0;
-
-      for (j = i; tstr[j] != ' ' && tstr[j] != '\0'; j++)
-      {
-        substr[len++] = tstr[j];
-      }
-
-      substr[len++] = ' ';
-      substr[len] = '\0';
-
-
-      /* Render the word for display... */
-
-
-      if (only_uppercase)
-      {
-        char *uppercase_substr = uppercase(substr);
-
-        text = render_text(myfont, uppercase_substr, color);
-        free(uppercase_substr);
-      }
-      else
-        text = render_text(myfont, substr, color);
-
-
-      /* If it won't fit on this line, move to the next! */
-
-      if (x + text->w > right)  /* Correct? */
-      {
-        if (need_right_to_left && want_right_to_left)
-          anti_carriage_return(left, right, top, top + text->h, y + text->h, x - left);
-
-        x = left;
-        y = y + text->h;
-      }
-
-
-      /* Draw the word: */
-
-      dest.x = x;
-
-      if (need_right_to_left && want_right_to_left)
-        dest.y = top;
-      else
-        dest.y = y;
-
-      SDL_BlitSurface(text, NULL, screen, &dest);
-
-
-      /* Move the cursor one word's worth: */
-
-      x = x + text->w;
-
-
-      /* Free the temp. surface: */
-
-      last_text_height = text->h;
-      SDL_FreeSurface(text);
-
-
-      /* Now on to the next word... */
-
-      i = j;
-    }
-
-    free(tstr);
-  }
-
-
-  /* Right-justify the final line of text, in right-to-left mode: */
-
-  if (need_right_to_left && want_right_to_left && last_text_height > 0)
-  {
-    src.x = left;
-    src.y = top;
-    src.w = x - left;
-    src.h = last_text_height;
-
-    dest.x = right - src.w;
-    dest.y = top;
-
-    SDL_BlitSurface(screen, &src, screen, &dest);
-
-    dest.x = left;
-    dest.y = top;
-    dest.w = (right - left - src.w);
-    dest.h = last_text_height;
-
-    SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
-  }
-#endif
 }
 
 
@@ -20735,42 +20377,6 @@ static void handle_active(SDL_Event * event)
 #endif
   }
 }
-
-
-/**
- * FIXME
- */
-/* For right-to-left languages, when word-wrapping, we need to
-   make sure the text doesn't end up going from bottom-to-top, too! */
-#ifdef NO_SDLPANGO
-static void anti_carriage_return(int left, int right, int cur_top, int new_top, int cur_bot, int line_width)
-{
-  SDL_Rect src, dest;
-
-
-  /* Move current set of text down one line (and right-justify it!): */
-
-  src.x = left;
-  src.y = cur_top;
-  src.w = line_width;
-  src.h = cur_bot - cur_top;
-
-  dest.x = right - line_width;
-  dest.y = new_top;
-
-  SDL_BlitSurface(screen, &src, screen, &dest);
-
-
-  /* Clear the top line for new text: */
-
-  dest.x = left;
-  dest.y = cur_top;
-  dest.w = right - left;
-  dest.h = new_top - cur_top;
-
-  SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 255, 255, 255));
-}
-#endif
 
 
 /**
@@ -28971,10 +28577,7 @@ static void setup(void)
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
   Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
   int big_title;
-
-#ifndef NO_SDLPANGO
   SDL_Thread *fontconfig_thread;
-#endif
 
   render_scale = 1.0;
 
@@ -28989,9 +28592,7 @@ static void setup(void)
 
   im_init(&im_data, get_current_language());
 
-#ifndef NO_SDLPANGO
   SDLPango_Init();
-#endif
 
 #ifndef WIN32
   putenv((char *)"SDL_VIDEO_X11_WMCLASS=TuxPaint.TuxPaint");
@@ -29513,9 +29114,6 @@ static void setup(void)
   show_progress_bar(screen);
 
 
-
-
-#ifndef NO_SDLPANGO
   /* Let Pango & fontcache do their work without locking up */
 
   fontconfig_thread_done = 0;
@@ -29551,7 +29149,6 @@ static void setup(void)
   run_font_scanner(screen, texture, renderer, lang_prefixes[get_current_language()]);
 #endif
 
-#endif
 
   medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
                                        DATA_PREFIX "fonts/default_font.ttf",
@@ -29929,19 +29526,8 @@ static void setup(void)
     exit(1);
   }
 
-
-#ifdef NO_SDLPANGO
-  locale_font = load_locale_font(medium_font, 18);
-#else
   locale_font = medium_font;
-#endif
 
-
-#if 0
-  /* put elsewhere for THREADED_FONTS */
-  /* Load user fonts, for the text tool */
-  load_user_fonts();
-#endif
 
   if (!dont_load_stamps)
     load_stamps(screen);
@@ -30440,13 +30026,7 @@ int main(int argc, char *argv[])
 
 #ifdef FORKED_FONTS
   /* must start ASAP, but depends on locale which in turn needs the config */
-#ifdef NO_SDLPANGO
-  /* Only fork it now if we're not planning on creating a thread to handle fontconfig stuff -bjk 2010.04.27 */
-  DEBUG_PRINTF("Running font scanner\n");
-  run_font_scanner(screen, texture, renderer, lang_prefixes[get_current_language()]);
-#else
   DEBUG_PRINTF("NOT running font scanner\n");
-#endif
 #endif
 
   /* Warnings to satisfy SF.net Bug #3327493 -bjk 2011.06.24 */
@@ -30471,7 +30051,7 @@ int main(int argc, char *argv[])
   DEBUG_PRINTF("Seconds in late start-up:  %.3f\n", (double)(time2 - time1) / CLOCK_SPEED);
 
 
-#if defined(DEBUG) && !defined(NO_SDLPANGO)
+#ifdef DEBUG
   /* Confirm pango's character set */
   if (1)
   {

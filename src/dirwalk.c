@@ -1,7 +1,7 @@
 /*
   dirwalk.c
 
-  Copyright (c) 2009-2022
+  Copyright (c) 2009-2023
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: December 11, 2022
+  Last modified: April 30, 2023
 */
 
 #include <stdio.h>
@@ -166,11 +166,11 @@ void loadfont_callback(SDL_Surface * screen, SDL_Texture * texture,
 
           printf("%s:%d - success: tpf: 0x%x tpf->ttf_font: 0x%x\n", __FILE__, __LINE__, (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->ttf_font);       //EP added (intptr_t) to avoid warning on x64
         }
-#ifndef NO_SDLPANGO
         else
+        {
           printf("%s:%d - success: tpf: 0x%x tpf->pango_context: 0x%x\n",
                  __FILE__, __LINE__, (unsigned int)(intptr_t) font, (unsigned int)(intptr_t) font->pango_context);
-#endif
+        }
 #endif
 
         // These fonts crash Tux Paint via a library bug.

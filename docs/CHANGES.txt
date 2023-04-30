@@ -127,6 +127,13 @@ https://tuxpaint.org/
       Ran it during 0.9.30 development.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Now requiring "SDL2_Pango" library all the time (no longer
+      builds without it).  Motivation: Without it, many scripts
+      (e.g. Japanese, Thai, Arabic) did not render properly.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/268/
+      (h/t Pere for confirming the situation.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Chinese (Simplified) translation

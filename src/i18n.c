@@ -4,7 +4,7 @@
   For Tux Paint
   Language-related functions
 
-  Copyright (c) 2002-2022 by Bill Kendrick and others
+  Copyright (c) 2002-2023 by Bill Kendrick and others
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -23,9 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  $Id$
-
-  June 14, 2002 - December 11, 2022
+  June 14, 2002 - April 30, 2023
 */
 
 #include <stdio.h>
@@ -256,11 +254,8 @@ static int lang_use_right_to_left[] = {
   -1
 };
 
-/* FIXME: */
+/* FIXME: Remove! (We now require SDL_Pango all the time, so this is unnecessary -bjk 2023.04.30) */
 static int lang_use_right_to_left_word[] = {
-#ifdef NO_SDLPANGO
-  LANG_HE,
-#endif
   -1
 };
 
@@ -1334,15 +1329,3 @@ int setup_i18n(const char *restrict lang, const char *restrict locale, int *num_
     locale = "";
   return set_current_language(locale, num_wished_langs);
 }
-
-#ifdef NO_SDLPANGO
-/**
- * FIXME
- */
-int smash_i18n(void)
-{
-  int tmp;
-
-  return set_current_language("C", &tmp);
-}
-#endif
