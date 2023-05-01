@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.April.30 (0.9.30)
+2023.May.1 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -91,6 +91,11 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Mosaic (shaped) tools: more progress bar feedback.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Blind: Remove entire-picture ("fullscreen") mode; it wasn't
+      particularly useful.
+      h/t Pere
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Other Improvements:

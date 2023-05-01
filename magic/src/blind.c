@@ -24,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 18, 2023
+  Last updated: May 1, 2023
 */
 
 #include "tp_magic_api.h"
@@ -325,7 +325,7 @@ void blind_switchout(magic_api * api ATTRIBUTE_UNUSED,
 
 int blind_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (MODE_FULLSCREEN | MODE_PAINT);
+  return (MODE_PAINT);
 }
 
 Uint8 blind_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
