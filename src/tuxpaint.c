@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 30, 2023
+  June 14, 2002 - May 1, 2023
 */
 
 #include "platform.h"
@@ -2235,8 +2235,6 @@ static void handle_keymouse(SDLKey key, Uint32 updown, int steps, SDL_Rect * are
 static void handle_keymouse_buttons(SDLKey key, int *whicht, int *whichc, SDL_Rect real_r_tools);
 static void handle_active(SDL_Event * event);
 
-/*static char *replace_tilde(const char* const path);*/
-static void anti_carriage_return(int left, int right, int cur_top, int new_top, int cur_bot, int line_width);
 static void load_starter_id(char *saved_id, FILE * fil);
 static void load_starter(char *img_id);
 static void load_template(char *img_id);
