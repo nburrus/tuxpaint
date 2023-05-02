@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 23:27-0700\n"
+"POT-Creation-Date: 2023-05-02 00:00-0700\n"
 "PO-Revision-Date: 2023-04-10 13:48+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -955,7 +955,7 @@ msgstr "Nový"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9537
+#: ../tools.h:97 ../tuxpaint.c:9520
 msgid "Open"
 msgstr "Otvoriť"
 
@@ -1194,274 +1194,274 @@ msgstr ""
 "otočený o %d stupňov.)"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2438
+#: ../tuxpaint.c:2422
 msgid "Do you really want to quit?"
 msgstr "Chceš naozaj skončiť?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2441
+#: ../tuxpaint.c:2425
 msgid "Yes, I’m done!"
 msgstr "Áno, už som skončil(-a)!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2444 ../tuxpaint.c:2471
+#: ../tuxpaint.c:2428 ../tuxpaint.c:2455
 msgid "No, take me back!"
 msgstr "Nie, chcem sa vrátiť!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2448
+#: ../tuxpaint.c:2432
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Ak skončíš, stratíš svoj obrázok. Mám ho uložiť?"
 
-#: ../tuxpaint.c:2449 ../tuxpaint.c:2454
+#: ../tuxpaint.c:2433 ../tuxpaint.c:2438
 msgid "Yes, save it!"
 msgstr "Áno, ulož ho!"
 
-#: ../tuxpaint.c:2450 ../tuxpaint.c:2455
+#: ../tuxpaint.c:2434 ../tuxpaint.c:2439
 msgid "No, don’t bother saving!"
 msgstr "Nie, netreba!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2453
+#: ../tuxpaint.c:2437
 msgid "Save your picture first?"
 msgstr "Chceš najskôr uložiť obrázok?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2458
+#: ../tuxpaint.c:2442
 msgid "Can’t open that picture!"
 msgstr "Tento obrázok sa nedá otvoriť!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2461 ../tuxpaint.c:2466 ../tuxpaint.c:2475 ../tuxpaint.c:2482
-#: ../tuxpaint.c:2491 ../tuxpaint.c:2496
+#: ../tuxpaint.c:2445 ../tuxpaint.c:2450 ../tuxpaint.c:2459 ../tuxpaint.c:2466
+#: ../tuxpaint.c:2475 ../tuxpaint.c:2480
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2449
 msgid "There are no saved files!"
 msgstr "Žiadne uložené súbory tu nie sú!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2469
+#: ../tuxpaint.c:2453
 msgid "Print your picture now?"
 msgstr "Chceš si teraz svoj obrázok vytlačiť?"
 
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2454
 msgid "Yes, print it!"
 msgstr "Áno, vytlač ho!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2474
+#: ../tuxpaint.c:2458
 msgid "Your picture has been printed!"
 msgstr "Tvoj obrázok je vytlačený!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2478
+#: ../tuxpaint.c:2462
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Prepáč. Tvoj obrázok sa nedá vytlačiť!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2465
 msgid "You can’t print yet!"
 msgstr "Ešte nemôžeš tlačiť!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2469
 msgid "Erase this picture?"
 msgstr "Mám odstrániť tento obrázok?"
 
-#: ../tuxpaint.c:2486
+#: ../tuxpaint.c:2470
 msgid "Yes, erase it!"
 msgstr "Áno, odstráň ho!"
 
-#: ../tuxpaint.c:2487
+#: ../tuxpaint.c:2471
 msgid "No, don’t erase it!"
 msgstr "Nie, neodstraňuj ho!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2490
+#: ../tuxpaint.c:2474
 msgid "Remember to use the left mouse button!"
 msgstr "Nezabudnite, že treba stlačiť ľavé tlačidlo myši!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2494
+#: ../tuxpaint.c:2478
 msgid "Your picture has been exported!"
 msgstr "Tvoj obrázok bol exportovaný!"
 
-#: ../tuxpaint.c:2495
+#: ../tuxpaint.c:2479
 msgid "Your slideshow GIF has been exported!"
 msgstr "Tvoja GIF prezentácia bola exportovaná!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2499
+#: ../tuxpaint.c:2483
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Prepáč. Tvoj obrázok sa nedá exportovať!"
 
-#: ../tuxpaint.c:2500
+#: ../tuxpaint.c:2484
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Prepáč. Tvoja GIF prezentácia sa nedá exportovať!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2504
+#: ../tuxpaint.c:2488
 msgid "Choose the pictures you want, then click “Play”."
 msgstr ""
 "Klikni na obrázky, ktoré chceš vidieť, a potom klikni na tlačidlo „Prehrať”."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2813
+#: ../tuxpaint.c:2797
 msgid "Sound muted."
 msgstr "Zvuk je stlmený."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2818
+#: ../tuxpaint.c:2802
 msgid "Sound unmuted."
 msgstr "Zvuk nie je stlmený."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3663
+#: ../tuxpaint.c:3647
 msgid "Please wait…"
 msgstr "Počkaj, prosím…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9540
+#: ../tuxpaint.c:9523
 msgid "Erase"
 msgstr "Guma"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9543
+#: ../tuxpaint.c:9526
 msgid "Slides"
 msgstr "Výstava"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9546
+#: ../tuxpaint.c:9529
 msgid "Export"
 msgstr "Export"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9549
+#: ../tuxpaint.c:9532
 msgid "Back"
 msgstr "Späť"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9552
+#: ../tuxpaint.c:9535
 msgid "Play"
 msgstr "Prehrať"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9555
+#: ../tuxpaint.c:9538
 msgid "GIF Export"
 msgstr "Export do GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9558
+#: ../tuxpaint.c:9541
 msgid "Next"
 msgstr "Ďalej"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9561
+#: ../tuxpaint.c:9544
 msgid "Clear"
 msgstr "Vyčistiť"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10499 ../tuxpaint.c:10502 ../tuxpaint.c:10503
+#: ../tuxpaint.c:10482 ../tuxpaint.c:10485 ../tuxpaint.c:10486
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14733
+#: ../tuxpaint.c:14378
 msgid "Yes"
 msgstr "Áno"
 
-#: ../tuxpaint.c:14737
+#: ../tuxpaint.c:14382
 msgid "No"
 msgstr "Nie"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16004
+#: ../tuxpaint.c:15649
 msgid "Replace the picture with your changes?"
 msgstr "Mám tieto zmeny uložiť do starého obrázka?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16008
+#: ../tuxpaint.c:15653
 msgid "Yes, replace the old one!"
 msgstr "Áno, prepíš starý súbor!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16012
+#: ../tuxpaint.c:15657
 msgid "No, save a new file!"
 msgstr "Nie, ulož ich do nového súboru!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:17278
+#: ../tuxpaint.c:16923
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Vyber si obrázok, ktorý chceš, a potom klikni na „Otvoriť”."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18867
+#: ../tuxpaint.c:18512
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Vyber aspoň 2 kresby a vytvor z nich animovaný GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24898
+#: ../tuxpaint.c:24507
 msgid "red"
 msgstr "červená"
 
-#: ../tuxpaint.c:24899
+#: ../tuxpaint.c:24508
 msgid "yellow"
 msgstr "žltá"
 
-#: ../tuxpaint.c:24900
+#: ../tuxpaint.c:24509
 msgid "blue"
 msgstr "modrá"
 
-#: ../tuxpaint.c:24901
+#: ../tuxpaint.c:24510
 msgid "white"
 msgstr "biela"
 
-#: ../tuxpaint.c:24902
+#: ../tuxpaint.c:24511
 msgid "grey"
 msgstr "sivá"
 
-#: ../tuxpaint.c:24903
+#: ../tuxpaint.c:24512
 msgid "black"
 msgstr "čierna"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24908
+#: ../tuxpaint.c:24517
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Tvoja farba je %1$s %2$s."
 
-#: ../tuxpaint.c:24909
+#: ../tuxpaint.c:24518
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Tvoja farba je %1$s %2$s a %3$s %4$s."
 
-#: ../tuxpaint.c:24910
+#: ../tuxpaint.c:24519
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Tvoja farba je %1$s %2$s, %3$s %4$s a %5$s %6$s."
 
-#: ../tuxpaint.c:24911
+#: ../tuxpaint.c:24520
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Tvoja farba je %1$s %2$s, %3$s %4$s, %5$s %6$s a %7$s %8$s."
 
-#: ../tuxpaint.c:24912
+#: ../tuxpaint.c:24521
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "Tvoja farba je %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s a %9$s %10$s."
 
-#: ../tuxpaint.c:24913
+#: ../tuxpaint.c:24522
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1471,16 +1471,16 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25693 ../tuxpaint.c:25698
+#: ../tuxpaint.c:25302 ../tuxpaint.c:25307
 msgid "entirely"
 msgstr "úplne"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28786
+#: ../tuxpaint.c:28397
 msgid "Select a color from your drawing."
 msgstr "Vyber farbu z kresby."
 
-#: ../tuxpaint.c:28797
+#: ../tuxpaint.c:28408
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1489,7 +1489,7 @@ msgstr ""
 "(vyblednutá) doprava (čistá). Hodnotu jasu (svetlosť/tmavosť) nastavuje šedý "
 "pruh."
 
-#: ../tuxpaint.c:28811
+#: ../tuxpaint.c:28422
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -2204,15 +2204,21 @@ msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Kliknutím a ťahaním myši môžeš na obrázok nakresliť koľajnice pre vlak."
 
-#: ../../magic/src/rainbow.c:146
+#: ../../magic/src/rainbow.c:154
 msgid "Rainbow"
 msgstr "Dúha"
 
-#: ../../magic/src/rainbow.c:150
+#: ../../magic/src/rainbow.c:158
 msgid "Smooth Rainbow"
 msgstr "Hladká dúha"
 
-#: ../../magic/src/rainbow.c:163
+#: ../../magic/src/rainbow.c:162
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Rainbow Cycle"
+msgstr "Dúha"
+
+#: ../../magic/src/rainbow.c:175
 msgid "You can draw in rainbow colors!"
 msgstr "Môžeš kresliť farbami dúhy!"
 

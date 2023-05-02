@@ -98,6 +98,13 @@ https://tuxpaint.org/
       h/t Pere
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * New Magic Tools:
+    ----------------
+    * Rainbow Cycle: Changes colors each time you use it
+      (similar to Rainbow and Smooth Rainbow, but only changes
+      between strokes).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * Word-wrap long button labels, for better readability.

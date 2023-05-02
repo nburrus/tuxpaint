@@ -34,9 +34,16 @@
 
 /* Our globals: */
 
-#define NUM_RAINBOW_COLORS 23
-
 static int rainbow_radius = 16;
+
+enum {
+  TOOL_RAINBOW,
+  TOOL_SMOOTH_RAINBOW,
+  TOOL_RAINBOW_CYCLE,
+  NUM_TOOLS
+};
+
+#define NUM_RAINBOW_COLORS 23
 
 static const int rainbow_hexes[NUM_RAINBOW_COLORS][3] = {
   {255, 0, 0},
@@ -125,7 +132,7 @@ int rainbow_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 // We have multiple tools:
 int rainbow_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return (2);
+  return (NUM_TOOLS);
 }
 
 // Load our icons:
@@ -141,13 +148,18 @@ SDL_Surface *rainbow_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *rainbow_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  if (which == 0)
+  /* FIXME: Place these in an array */
+  if (which == TOOL_RAINBOW)
   {
     return (strdup(gettext_noop("Rainbow")));
   }
-  else
+  else if (which == TOOL_SMOOTH_RAINBOW)
   {
     return (strdup(gettext_noop("Smooth Rainbow")));
+  }
+  else /* TOOL_RAINBOW_CYCLE */
+  {
+    return (strdup(gettext_noop("Rainbow Cycle")));
   }
 }
 
@@ -190,7 +202,7 @@ void rainbow_drag(magic_api * api, int which, SDL_Surface * canvas,
   Uint8 r1, g1, b1, r2, g2, b2;
   int rc_tmp;
 
-  if (which == 1)
+  if (which == TOOL_SMOOTH_RAINBOW)
   {
     rainbow_mix += 1;
     if (rainbow_mix > MIX_MAX)
@@ -199,10 +211,14 @@ void rainbow_drag(magic_api * api, int which, SDL_Surface * canvas,
       rainbow_color = (rainbow_color + 1) % NUM_RAINBOW_COLORS;
     }
   }
-  else
+  else if (which == TOOL_RAINBOW)
   {
     rainbow_mix = 0;
     rainbow_color = (rainbow_color + 1) % NUM_RAINBOW_COLORS;
+  }
+  else /* TOOL_RAINBOW_CYCLE */
+  {
+    rainbow_mix = 0;
   }
 
   r1 = rainbow_hexes[rainbow_color][0];
@@ -250,6 +266,10 @@ void rainbow_drag(magic_api * api, int which, SDL_Surface * canvas,
 void rainbow_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                    SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
+  if (which == TOOL_RAINBOW_CYCLE) {
+    rainbow_color = (rainbow_color + 1) % NUM_RAINBOW_COLORS;
+  }
+
   rainbow_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
