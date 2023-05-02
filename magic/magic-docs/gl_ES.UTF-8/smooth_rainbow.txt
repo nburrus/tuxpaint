@@ -8,7 +8,7 @@
    cycles through a spectrum of colors — except the colors blend smoothly as
    you draw.
 
-   See also: Rainbow.
+   See also: Rainbow & Rainbow Cycle.
 
      ----------------------------------------------------------------------
 

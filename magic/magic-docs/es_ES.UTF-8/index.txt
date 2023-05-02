@@ -80,6 +80,7 @@ Painting
      * Rails
      * Rain
      * Rainbow
+     * Rainbow Cycle
      * Smooth Rainbow
      * Toothpaste
      * Wet Paint

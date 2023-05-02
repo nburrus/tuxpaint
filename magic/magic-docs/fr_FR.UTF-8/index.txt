@@ -82,6 +82,7 @@ Painting
      * Pixels
      * Pluie
      * Rails
+     * Rainbow Cycle
      * Wet Paint
 
 Pattern Painting
