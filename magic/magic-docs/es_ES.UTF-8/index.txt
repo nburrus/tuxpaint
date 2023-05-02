@@ -26,6 +26,7 @@ Distorts
      * Smudge
      * Square Mosaic
      * TV
+     * TV (Bright)
 
 Color Filters
 

@@ -6,6 +6,8 @@
 
    Fill the picture with snowflakes.
 
+   This tool is operated with a single click.
+
    See also: Rain & Snow Ball.
 
      ----------------------------------------------------------------------

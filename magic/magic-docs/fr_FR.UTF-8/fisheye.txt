@@ -6,6 +6,10 @@
 
    Warp parts of your picture like it's being seen through a fisheye lens.
 
+   This tool is operated in a freehand fashion.
+
+   This tool offers multiple size settings.
+
    See also: Ripples.
 
      ----------------------------------------------------------------------

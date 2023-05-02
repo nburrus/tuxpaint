@@ -7,6 +7,8 @@
    This transforms the picture into circular brush strokes around where you
    clicked.
 
+   This tool offers both freehand and one-click operation.
+
    See also: Rays.
 
      ----------------------------------------------------------------------

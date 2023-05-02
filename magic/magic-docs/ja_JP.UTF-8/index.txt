@@ -24,6 +24,7 @@ Distorts
      * Smudge
      * Square Mosaic
      * TV
+     * TV (Bright)
      * 「えんけい」
      * 「ほうしゃ」
 

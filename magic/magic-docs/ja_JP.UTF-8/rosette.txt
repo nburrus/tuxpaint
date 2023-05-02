@@ -6,6 +6,10 @@
 
    Draw three brushes at once, in a rosette shape.
 
+   This tool is operated in a freehand fashion.
+
+   This tool offers multiple size settings.
+
    See also: Kaleidoscope & Picasso.
 
      ----------------------------------------------------------------------

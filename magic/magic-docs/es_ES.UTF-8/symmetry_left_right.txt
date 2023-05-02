@@ -6,6 +6,10 @@
 
    Paint with relfective symmetry across the horizontal center of the image.
 
+   This tool is operated in a freehand fashion.
+
+   This tool offers multiple size settings.
+
    See also: Kaleidoscope, Pattern, Symmetry Up/Down, & Tiles.
 
      ----------------------------------------------------------------------

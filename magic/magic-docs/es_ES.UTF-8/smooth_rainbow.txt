@@ -8,6 +8,10 @@
    cycles through a spectrum of colors — except the colors blend smoothly as
    you draw.
 
+   This tool is operated in a freehand fashion.
+
+   This tool offers multiple size settings.
+
    See also: Rainbow & Rainbow Cycle.
 
      ----------------------------------------------------------------------

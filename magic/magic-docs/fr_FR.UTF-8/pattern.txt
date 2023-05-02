@@ -6,6 +6,10 @@
 
    Draws a tiled pattern around the picture.
 
+   This tool is operated in a freehand fashion.
+
+   This tool offers multiple size settings.
+
    See also: Tuiles.
 
      ----------------------------------------------------------------------

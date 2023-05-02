@@ -6,6 +6,8 @@
 
    Converts parts of your picture into a mosaic of hexagon cells.
 
+   This tool offers both freehand and one-click operation.
+
    See also: Irregular Mosaic, Square Mosaic, & Mosaic.
 
      ----------------------------------------------------------------------

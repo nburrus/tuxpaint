@@ -7,6 +7,10 @@
 
    This draws a light, smudgy coat of paint on the picture.
 
+   This tool is operated in a freehand fashion.
+
+   This tool offers multiple size settings.
+
    See also: Smudge.
 
      ----------------------------------------------------------------------

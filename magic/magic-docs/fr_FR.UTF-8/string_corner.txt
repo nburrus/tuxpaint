@@ -6,6 +6,8 @@
 
    Draw V-shaped string art at right angles.
 
+   This tool is operated in a freehand fashion.
+
    See also: Ficelles (1) & Ficelles (3).
 
      ----------------------------------------------------------------------
