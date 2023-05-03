@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 00:00-0700\n"
-"PO-Revision-Date: 2023-04-30 09:00+0900\n"
+"PO-Revision-Date: 2023-05-03 11:46+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -2206,10 +2206,8 @@ msgid "Smooth Rainbow"
 msgstr "なめらかなにじ"
 
 #: ../../magic/src/rainbow.c:162
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Rainbow Cycle"
-msgstr "にじ"
+msgstr "にじいろ"
 
 #: ../../magic/src/rainbow.c:175
 msgid "You can draw in rainbow colors!"
