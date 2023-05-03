@@ -15359,7 +15359,7 @@ static void do_shape(int sx, int sy, int nx, int ny, int rotn, int use_brush)
     x2 = (cos(a2) * (float)rx);
     y2 = (-sin(a2) * (float)ry);
 
-    printf("side=%d, a1=%f, a2=%f -- (%f,%f) -> (%f,%f)\n", side, a1, a2, x1, y1, x2, y2);
+    DEBUG_PRINTF("side=%d, a1=%f, a2=%f -- (%f,%f) -> (%f,%f)\n", side, a1, a2, x1, y1, x2, y2);
 
     xv = (cos((a1 + a2) / 2.0) * (float)rx * (float)shape_valley[cur_shape]) / 100.0;
     yv = (-sin((a1 + a2) / 2.0) * (float)ry * (float)shape_valley[cur_shape]) / 100.0;
