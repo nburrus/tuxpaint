@@ -430,7 +430,7 @@ Available Tools
                         method of most other traditional drawing software.
 
                         📜 This option was added starting with Tux Paint
-                        version 0.9.25.)
+                        version 0.9.25.
 
            ⚙ Note: If shape controls are disabled (e.g., with the
            "noshapecontrols" option), the controls will not be presented, and
@@ -627,6 +627,8 @@ Available Tools
              offer a default size (e.g., Patterns), or it may make separate
              tools available with different pre-set sizes (e.g., Bricks and
              Googly Eyes).
+
+             📜 This option was added starting with Tux Paint version 0.9.30.
 
            See the instructions for each Magic tool (in the 'magic-docs'
            folder).

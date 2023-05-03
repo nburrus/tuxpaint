@@ -436,7 +436,7 @@ Ferramentas dispoñíbeis
                         method of most other traditional drawing software.
 
                         📜 This option was added starting with Tux Paint
-                        version 0.9.25.)
+                        version 0.9.25.
 
            ⚙ Nota: Se os controis de forma están desactivados (p. ex.: coa
            opción «noshapecontrols»), non se presentarán os controis e
@@ -641,6 +641,8 @@ Ferramentas dispoñíbeis
              offer a default size (e.g., Patterns), or it may make separate
              tools available with different pre-set sizes (e.g., Bricks and
              Googly Eyes).
+
+             📜 This option was added starting with Tux Paint version 0.9.30.
 
            Consulte as instrucións de cada ferramenta Máxica (no cartafol
            «magic-docs»).

@@ -445,7 +445,7 @@ Outils disponibles
                         method of most other traditional drawing software.
 
                         📜 This option was added starting with Tux Paint
-                        version 0.9.25.)
+                        version 0.9.25.
 
            ⚙ Remarque : si les contrôles de forme sont désactivés (par
            exemple, avec l'option "noshapecontrols"), il n'y aura pas de
@@ -657,6 +657,8 @@ Outils disponibles
              offer a default size (e.g., Patterns), or it may make separate
              tools available with different pre-set sizes (e.g., Bricks and
              Googly Eyes).
+
+             📜 This option was added starting with Tux Paint version 0.9.30.
 
            Voir les instructions pour chaque outil 'Magie' (dans le dossier
            'magic-docs').
