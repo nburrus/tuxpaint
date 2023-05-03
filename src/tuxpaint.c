@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 1, 2023
+  June 14, 2002 - May 3, 2023
 */
 
 #include "platform.h"
@@ -5203,7 +5203,6 @@ static void mainloop(void)
             chose_color = do_color_sel(1);
 
             draw_cur_tool_tip();
-            draw_colors(COLORSEL_FORCE_REDRAW);
 
             if (chose_color)
             {
@@ -5213,6 +5212,8 @@ static void mainloop(void)
             }
             else
               playsound(screen, 1, SND_CLICK, 1, SNDPOS_CENTER, SNDDIST_NEAR);
+
+            draw_colors(COLORSEL_FORCE_REDRAW);
 
             SDL_Flip(screen);
           }

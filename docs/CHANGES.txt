@@ -133,6 +133,10 @@ https://tuxpaint.org/
     * Don't try to load a blank-named template during slideshow playback.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Color palette would still show previously-selected color as active
+      when returning from the temporary color pipette ([Ctrl] + click).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Ports & Building:
     -----------------
     * Created "src/indent.sh", to run 'indent' against source files.
