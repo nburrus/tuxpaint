@@ -75,16 +75,12 @@
 
 Tux Paint バージョン 0.9.30 での変更点
 
-   Magic Tool sizes
-           Many Magic Tools will now offer an option to adjust the size of
-           the effect. For example, thinner lines in the symmetry painting
-           tools, finer or coarser application of effects like blur, or a
-           wider range of shapes. (This feature may be deactivated using the
-           "nomagicsizes" simplification option.)
+   「まほう」ツールのサイズ変更機能
+           多くの「まほう」ツールに、効果の大きさを調整するオプションが追加されました。例えば、「さゆうたいしょう」の描画ツールで線を細くしたり、「ぼかす」ツールでの効果を細かくしたり粗くしたり、描画オブジェクトの大きさを細かく変更することができます。(この機能は、簡略化オプション"nomagicsizes"を使って無効化することができます)
 
-   Word-wrapped button labels
-           When possible, longer labels shown on Tux Paint's UI buttons will
-           be word-wrapped, to help improve legibility.
+   ボタンのラベルの折り返し
+           Tux Paint
+           のユーザーインターフェースボタンのラベルの文字列が長い場合、読みやすくするために折り返し表示ができるようになりました。
 
    全ての変更点については、CHANGES.txt をお読みください。
 
@@ -397,33 +393,25 @@ Tux Paint の起動
 
            「まほう」ツールは、様々な特殊なツールを集めたものです。右側のセレクタで、「まほう」の効果を選択することができます。効果を適用する方法は、クリック＋ドラッグ、単なるクリックなど、ツールごとに様々です。
 
-           Magic Controls
+           「まほう」効果の制御
 
-             クリック＋ドラッグを使用するツールの場合、右側のセレクタの下部左側にある「描画」を表すボタンが有効になります。１クリックで画面全体に効果を及ぼすツールの場合、右側の「画面全体」を表すボタンが有効になります。
+             クリック＋ドラッグを使用するツールの場合、右側のセレクタの下部左側にある「描画モード」を表すボタンが有効になります。１クリックで画面全体に効果を及ぼすツールの場合、右側の「全画面モード」を表すボタンが有効になります。
 
-             ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't
-             display the painting or entire picture controls. See the
-             "Options" documentation.
+             ⚙ 注: "nomagiccontrols"
+             オプションが設定されると、「描画モード」「全画面モード」の選択ボタンが無効になります。詳しくは"各種設定について"のドキュメントを参照してください。
 
-             💡 If the magic controls are disabled, the Magic plugin may make
-             separate tools available, one for painting and one that affects
-             the entire pictre.
+             💡
+             「まほう」効果の制御が無効にされた場合、いくつかの「まほう」プラグインは「描画モード」「全画面モード」に対応するツールに分かれて利用できるようになります。
 
-           Magic Sizing
+           「まほう」サイズの制御
 
-             Some tools offer different sizing options. If so, a slider will
-             appear at the bottom right side of the screen. This may affect
-             the radius of a special effect (e.g., Darken) or painted object
-             (e.g., Patterns), or other attributes (e.g., large versus small
-             Brick shapes).
+             「まほう」ツールの中には描画のサイズや効果が及ぶ幅の大きさを変更できるものがあり、その場合、画面の右下にスライダーボタンが表示されます。
 
-             ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't
-             display the sizing controls. See the "Options" documentation.
+             ⚙ 注: "nomagicsizes"
+             オプションが設定されると、サイズを変更スライダーのボタンが無効になります。詳しくは"各種設定について"のドキュメントを参照してください。
 
-             💡 If the sizing option is disabled, the Magic plugin may simply
-             offer a default size (e.g., Patterns), or it may make separate
-             tools available with different pre-set sizes (e.g., Bricks and
-             Googly Eyes).
+             💡
+             サイズ変更が無効にされると、単にツールごとの標準のサイズに固定される場合と、例えば「れんが」や「めだま」などいくつかのプラグインのように、異なるサイズのツールが追加される場合があります。
 
            「magic-docs」フォルダ内のドキュメント「まほう」ツールの一覧もお読みください。
 
@@ -829,4 +817,4 @@ Tux Paint の起動
      * "Mastodon" は Mastodon gGmbH の登録商標です。
      * "Reddit" は、Reddit 社の登録商標です。
      * "Tumblr" は Tumblr 社の登録商標です。
-     * "Twitter" is a registered trademark of X Corp.
+     * "Twitter" は、X 社の登録商標です。

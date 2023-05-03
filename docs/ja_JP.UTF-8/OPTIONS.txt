@@ -352,10 +352,7 @@ Windows のユーザー
 
    nomagicsizes=yes
 
-           Some Magic tools offer various size settings. This option disables
-           the sizing control, and only provides the tools' default sizes.
-           (Some plugins may offer additional variations of a Magic tool, to
-           make a few sizes possible, e.g. "Bricks" and "Googly Eyes".)
+           「まほう」ツールの中には、描画のサイズや効果が及ぶ幅の大きさを変更できるものがあります。このオプションを設定するとサイズの変更を無効にして、ツールごとの標準のサイズを使用します。（この場合、「れんが」や「めだま」などいくつかのプラグインでは、異なるサイズのツールが追加されます。）
 
            ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nomagicsizes=no" または
            "magicsizes=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
