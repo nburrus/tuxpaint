@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 00:00-0700\n"
-"PO-Revision-Date: 2023-05-03 11:46+0900\n"
+"PO-Revision-Date: 2023-05-04 08:55+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -1613,7 +1613,7 @@ msgstr "えを クリックして ぜんたいを まんがみたいに しよ�
 
 #: ../../magic/src/checkerboard.c:114
 msgid "Checkerboard"
-msgstr "チェッカーボード"
+msgstr "チェッカー ボード"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/checkerboard.c:125
@@ -1636,7 +1636,7 @@ msgstr ""
 
 #: ../../magic/src/colorsep.c:39
 msgid "3D Glasses"
-msgstr "りったいメガネ"
+msgstr "りったい メガネ"
 
 #: ../../magic/src/colorsep.c:40
 msgid "Color Sep."
@@ -1782,7 +1782,7 @@ msgstr ""
 
 #: ../../magic/src/fisheye.c:111
 msgid "Fisheye"
-msgstr "ぎょがんレンズ"
+msgstr "ぎょがん レンズ"
 
 #: ../../magic/src/fisheye.c:121
 msgid "Click on part of your picture to create a fisheye effect."
@@ -1891,15 +1891,15 @@ msgstr "えをクリックして しんぶんみたいに しよう。"
 
 #: ../../magic/src/kaleidox.c:40
 msgid "Kaleido-4"
-msgstr "まんげきょう４"
+msgstr "まんげきょう ４めん"
 
 #: ../../magic/src/kaleidox.c:41
 msgid "Kaleido-6"
-msgstr "まんげきょう６"
+msgstr "まんげきょう ６めん"
 
 #: ../../magic/src/kaleidox.c:42
 msgid "Kaleido-8"
-msgstr "まんげきょう８"
+msgstr "まんげきょう ８めん"
 
 #: ../../magic/src/kaleidox.c:46 ../../magic/src/kaleidox.c:47
 #: ../../magic/src/kaleidox.c:48
@@ -1910,11 +1910,11 @@ msgstr ""
 
 #: ../../magic/src/kalidescope.c:127
 msgid "Symmetric Left/Right"
-msgstr "さゆうたいしょう"
+msgstr "さゆう たいしょう"
 
 #: ../../magic/src/kalidescope.c:131
 msgid "Symmetric Up/Down"
-msgstr "じょうげたいしょう"
+msgstr "じょうげ たいしょう"
 
 #: ../../magic/src/kalidescope.c:135
 msgid "Pattern"
@@ -2203,7 +2203,7 @@ msgstr "にじ"
 
 #: ../../magic/src/rainbow.c:158
 msgid "Smooth Rainbow"
-msgstr "なめらかなにじ"
+msgstr "なめらかな にじ"
 
 #: ../../magic/src/rainbow.c:162
 msgid "Rainbow Cycle"
@@ -2233,7 +2233,7 @@ msgstr "リアルな にじ"
 #  msgid "Rainbow"
 #: ../../magic/src/realrainbow.c:107
 msgid "ROYGBIV Rainbow"
-msgstr "なないろのにじ"
+msgstr "なないろの にじ"
 
 #: ../../magic/src/realrainbow.c:120
 msgid ""
@@ -2327,7 +2327,7 @@ msgstr "よごす"
 #. if (which == 1)
 #: ../../magic/src/smudge.c:112
 msgid "Wet Paint"
-msgstr "よごれたふで"
+msgstr "よごれた ふで"
 
 #: ../../magic/src/smudge.c:128
 msgid "Click and drag the mouse around to smudge the picture."
@@ -2484,7 +2484,7 @@ msgstr "テレビ"
 
 #: ../../magic/src/tv.c:119
 msgid "TV (Bright)"
-msgstr "あかるいテレビ"
+msgstr "あかるい テレビ"
 
 #: ../../magic/src/tv.c:130
 msgid ""
