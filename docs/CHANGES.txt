@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.4 (0.9.30)
+2023.May.5 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -161,7 +161,7 @@ https://tuxpaint.org/
 
   * Documentation updates:
     ----------------------
-    * WIP Added screenshot examples of each Magic tool.
+    * Added screenshot examples of each Magic tool.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
