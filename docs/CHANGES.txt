@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.3 (0.9.30)
+2023.May.4 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
     * Avoid playing English descriptive sound for a stamp
@@ -135,6 +135,11 @@ https://tuxpaint.org/
 
     * Color palette would still show previously-selected color as active
       when returning from the temporary color pipette ([Ctrl] + click).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Update maximum button size calculation to account for Stamp
+      rotation button added in 0.9.29.  (Otherwise you could end up
+      seeing no stamps between the up/down scroll buttons!)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 3, 2023
+  June 14, 2002 - May 4, 2023
 */
 
 #include "platform.h"
@@ -854,10 +854,10 @@ static void set_max_buttonscale(void)
   float max_w, max_h;
 
   /* WINDOW_WIDTH / original size of tools columns + 9 buttons + tooloption columns */
-  max_w = (float)WINDOW_WIDTH / (gd_tools.cols * 48 + 9 * 48 + gd_toolopt.cols * 48);
+  max_w = (float)WINDOW_WIDTH / (gd_tools.cols * 48 + (9 * 48) + (gd_toolopt.cols * 48));
 
   /* WINDOW_HEIGHT / original size of r_ttools.h + 5 buttons + colors rows + tux area */
-  max_h = (float)WINDOW_HEIGHT / (40 + 5 * 48 + gd_colors.rows * 48 + 56);
+  max_h = (float)WINDOW_HEIGHT / (40 + (6 * 48) + (gd_colors.rows * 48) + 56);
 
   button_scale = min(max_w, max_h);
   fprintf(stderr, "Will use a button size of %d\n", (int)(button_scale * ORIGINAL_BUTTON_SIZE));
