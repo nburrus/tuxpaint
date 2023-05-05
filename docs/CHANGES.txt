@@ -142,6 +142,10 @@ https://tuxpaint.org/
       seeing no stamps between the up/down scroll buttons!)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Some button sizes could cause buttons to render with gaps
+      (e.g. 90 and 91), where 'garbage' graphics could appear.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Ports & Building:
     -----------------
     * Created "src/indent.sh", to run 'indent' against source files.

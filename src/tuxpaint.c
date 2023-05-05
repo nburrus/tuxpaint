@@ -803,7 +803,7 @@ static float render_scale;      /* Scale factor for the render */
 static int button_w;            /* was 48 */
 static int button_h;            /* was 48 */
 static int button_size_auto = 0;        /* if the size of buttons should be autocalculated */
-static float button_scale;      /* scale factor to be applied to the  size of buttons */
+static float button_scale;      /* scale factor to be applied to the size of buttons */
 static int color_button_w;      /* was 32 */
 static int color_button_h;      /* was 48 */
 static int colors_rows;
@@ -860,7 +860,7 @@ static void set_max_buttonscale(void)
   max_h = (float)WINDOW_HEIGHT / (40 + (6 * 48) + (gd_colors.rows * 48) + 56);
 
   button_scale = min(max_w, max_h);
-  fprintf(stderr, "Will use a button size of %d\n", (int)(button_scale * ORIGINAL_BUTTON_SIZE));
+  fprintf(stderr, "Will use a button size of %d (scale = %f)\n", (int)(button_scale * ORIGINAL_BUTTON_SIZE), button_scale);
 }
 
 /**
@@ -11458,8 +11458,13 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
     xscale = (float)((float)src->w / (float)sx);
   }
 
-  new_x = (int)((float)src->w / xscale);
-  new_y = (int)((float)src->h / yscale);
+  new_x = (int)ceil((float)src->w / xscale);
+  new_y = (int)ceil((float)src->h / yscale);
+
+  if (new_x > max_x)
+    new_x = max_x;
+  if (new_y > max_y)
+    new_y = max_y;
 
   if (!keep_aspect)
   {
@@ -27809,11 +27814,14 @@ static void setup_config(char *argv[])
         fprintf(stderr, "Button size (now %s) must be between 24 and 192.\n", tmpcfg.button_size);
         exit(1);
       }
-      button_scale = strtof(tmpcfg.button_size, NULL) / ORIGINAL_BUTTON_SIZE;
+      button_scale = (float) strtof(tmpcfg.button_size, NULL) / (float) ORIGINAL_BUTTON_SIZE;
+      DEBUG_PRINTF("Button size %s requested = %d (scale = %f)\n", tmpcfg.button_size, (int)(button_scale * ORIGINAL_BUTTON_SIZE), button_scale);
     }
   }
   else
+  {
     button_scale = 1;
+  }
   if (tmpcfg.colors_rows)
   {
     if (strtof(tmpcfg.colors_rows, NULL) > 3)
