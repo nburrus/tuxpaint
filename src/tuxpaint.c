@@ -11458,8 +11458,8 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
     xscale = (float)((float)src->w / (float)sx);
   }
 
-  new_x = (int)ceil((float)src->w / xscale);
-  new_y = (int)ceil((float)src->h / yscale);
+  new_x = ceil((float)src->w / xscale);
+  new_y = ceil((float)src->h / yscale);
 
   if (new_x > max_x)
     new_x = max_x;
