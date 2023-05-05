@@ -2,10 +2,10 @@
                                  versión 0.9.30
                       Environment Variables Documentation
 
-        Copyright © 2021-2022 by various contributors; see AUTHORS.txt.
+        Copyright © 2021-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 junio 4, 2022
+                                  mayo 5, 2023
 
      ----------------------------------------------------------------------
 
