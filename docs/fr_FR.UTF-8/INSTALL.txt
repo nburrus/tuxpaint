@@ -142,6 +142,8 @@ Biliothèque Simple DirectMedia Layer (libSDL)
    "COPYING.txt" pour plus de détails), et donc le 'code source' du programme
    est disponible gratuitement.
 
+       ------------------------------------------------------------------
+
 Windows
 
    juillet 10, 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
@@ -162,8 +164,8 @@ Windows
    https://www.msys2.org/ et installez-le où vous voulez (par défaut
    "C:\msys64")
 
-   Open the MSYS2 shell from the "Start Menu" -> "MSYS2 64bit" -> "MSYS2
-   MSYS" and execute following command:
+   Open the MSYS2 shell from the "Start Menu" → "MSYS2 64bit" → "MSYS2 MSYS"
+   and execute following command:
 
      $ yes "" | pacman -Syu
 
@@ -215,8 +217,8 @@ Windows
 
    SDL2_Pango and libunibreak should be installed manually.
 
-   Cette fois-ci, utilisez le shell MinGW "64bit". Ouvrez le shell depuis le
-   "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW 64-bit"
+   This time, use the MinGW "64bit" shell. Open the shell from the "Start
+   Menu" → "MSYS2 64bit" → "MSYS2 MinGW 64-bit"
 
       SDL2_Pango
 
@@ -275,8 +277,8 @@ Windows
 
    SDL2_Pango and libunibreak should be installed manually.
 
-   Cette fois-ci, utilisez le shell MinGW "32bit". Ouvrez le shell depuis le
-   "Menu de Démarrage" -> "MSYS2 64bit" -> "MSYS2 MinGW 32-bit"
+   This time, use the MinGW "32bit" shell. Open the shell from the "Start
+   Menu" → "MSYS2 64bit" → "MSYS2 MinGW 32-bit"
 
       SDL2_Pango
 
@@ -328,10 +330,10 @@ Windows
    You can compile 64-bit binaries using "MSYS2 64bit" shell, and 32-bit
    binaries using "MSYS2 32bit" shell, respectively.
 
-     * Choisissez "MSYS2 64bit" -> "MSYS2 MinGW 64-bit" dans le "Menu de
-       Démarrage" pour ouvrir le shell 64bit.
-     * Choisissez "MSYS2 64bit" -> "MSYS2 MinGW 32-bit" dans le "Menu de
-       Démarrage" pour ouvrir le shell 32bit.
+     * Select "MSYS2 64bit" → "MSYS2 MinGW 64-bit" from the "Start Menu" to
+       open the 64bit shell.
+     * Select "MSYS2 64bit" → "MSYS2 MinGW 32-bit" from the "Start Menu" to
+       open the 32bit shell.
 
     Tux Paint Config.
 
@@ -473,6 +475,8 @@ Windows
    sera simplement dû à une casse de caractère incorrecte (majuscule 'Z' à la
    place de 'z' minuscule) ou un '-' (tiret) manquant (en trop).
 
+       ------------------------------------------------------------------
+
 Linux/Unix
 
   Compilation :
@@ -494,17 +498,6 @@ Linux/Unix
    pouvez exécuter "make" avec "SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG" :
 
      $ make SVG_LIB= SVG_CFLAGS=
-
-  Désactivation du support Pango (donc des dépendances Pango, Cairo, etc ...)
-
-   📜 Avant la version 0.9.18, Tuxpaint utilisait la bibliothèque libSDL_ttf
-   pour gérer les fichiers utilisant les fontes True Type. Depuis la 09.18
-   libSDL_Pango est utilisée, car il permet un meilleur support pour
-   l'internationalisation. Cependant, si vous voulez désactiver l'utilisation
-   de SDL_Pango, vous pouvez le faire en exécutant "make" avec
-   "SDL_PANGO_LIB=" :
-
-     $ make SDL_PANGO_LIB=
 
   Disabling Sound at Compile-time
 
@@ -602,6 +595,8 @@ Linux/Unix
 
    💡 Note: This list is out of date. See "Makefile" and "Makefile-i18n" for a
    complete list.
+
+       ------------------------------------------------------------------
 
 macOS
 
@@ -793,7 +788,7 @@ macOS
    https://developer.apple.com/documentation/macos-release-notes/macos-big-sur-11_0_1-universal-apps-release-notes#:~:text=New%20in%20macOS,pass%20through%20Gatekeeper.
 
    If you get an error that the application bundle is already signed, remove
-   it before signing::
+   it before signing:
 
      $ codesign --remove-signature TuxPaint.app
 
@@ -815,6 +810,8 @@ macOS
      $ macos/build-universal.sh
      $ codesign -s - TuxPaint.app
      $ make TuxPaint.dmg
+
+       ------------------------------------------------------------------
 
 Android
 
@@ -879,41 +876,42 @@ Android
    from the root of fdroiddata, run ../fdroidserver/fdroid build --server
    org.tuxpaint:NNNN (NNNN = version, e.g. 9288)
 
+       ------------------------------------------------------------------
+
 Haiku
 
-   mai 6, 2023 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
+   mai 7, 2023 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
 
   Prérequis
 
- Install the required develop packages in Terminal:
- 32bit:
- pkgman install xcairo_x86_devel fribidi_x86_devel gdk_pixbuf_x86_devel
- libiconv_x86_devel libimagequant_x86_devel gettext_x86_libintl
- libpaper_x86_devel pango_x86_devel libpng16_x86_devel librsvg_x86_devel
- libsdl2_x86_devel sdl2_image_x86_devel sdl2_gfx_x86_devel
- sdl2_mixer_x86_devel sdl2_pango_x86_devel sdl2_ttf_x86_devel zlib_x86_devel
- 64bit:
- pkgman install xcairo_devel fribidi_devel gdk_pixbuf_devel libiconv_devel
- libimagequant_devel gettext_libintl libpaper_devel pango_devel
- libpng16_devel librsvg_devel libsdl2_devel sdl2_image_devel sdl2_gfx_devel
- sdl2_mixer_devel sdl2_pango_devel sdl2_ttf_devel zlib_devel
+   Install the required develop packages in Terminal:
 
- For 32bit you need to swith to the new compiler (currently gcc 11.2.0) with
- setarch x86
+   32-bit:
+           pkgman install xcairo_x86_devel fribidi_x86_devel
+           gdk_pixbuf_x86_devel libiconv_x86_devel libimagequant_x86_devel
+           gettext_x86_libintl libpaper_x86_devel pango_x86_devel
+           libpng16_x86_devel librsvg_x86_devel libsdl2_x86_devel
+           sdl2_image_x86_devel sdl2_gfx_x86_devel sdl2_mixer_x86_devel
+           sdl2_pango_x86_devel sdl2_ttf_x86_devel zlib_x86_devel
+
+   64-bit:
+           pkgman install xcairo_devel fribidi_devel gdk_pixbuf_devel
+           libiconv_devel libimagequant_devel gettext_libintl libpaper_devel
+           pango_devel libpng16_devel librsvg_devel libsdl2_devel
+           sdl2_image_devel sdl2_gfx_devel sdl2_mixer_devel sdl2_pango_devel
+           sdl2_ttf_devel zlib_devel
+
+   For 32-bit you need to switch to the new compiler (currently gcc 11.2.0)
+   with setarch x86
 
   Building
 
- cd tuxpaint-VERSION
-
- Now build Tux Paint:
- make PREFIX=/boot/home/config/non-packaged
+   make PREFIX=/boot/home/config/non-packaged
 
   Tux Paint Stamps
 
- cd tuxpaint-stamps-VERSION
-
- Install the stamps:
- make install-all DATA_PREFIX=/boot/home/config/non-packaged/share/tuxpaint/
+   make install-all
+   DATA_PREFIX=/boot/home/config/non-packaged/share/tuxpaint/
 
                                     Débogage
 

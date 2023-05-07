@@ -161,6 +161,9 @@ https://tuxpaint.org/
 
   * Documentation updates:
     ----------------------
+    * Haiku build instructions added to INSTALL docs.
+      Luc 'Begasus' Schrijvers <begasus@gmail.com>
+
     * Added screenshot examples of each Magic tool.
       Bill Kendrick <bill@newbreedsoftware.com>
 

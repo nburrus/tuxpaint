@@ -139,6 +139,8 @@ Simple DirectMedia Layer library (libSDL)
    "COPYING.txt" for details), and therefore the 'source code' to the program
    is available freely.
 
+       ------------------------------------------------------------------
+
 Windows
 
    2022年7月10日 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
@@ -158,8 +160,8 @@ Windows
    Download the latest MSYS2 environment from https://www.msys2.org/ and
    install it where you'd like (the default is "C:\msys64")
 
-   Open the MSYS2 shell from the "Start Menu" -> "MSYS2 64bit" -> "MSYS2
-   MSYS" and execute following command:
+   Open the MSYS2 shell from the "Start Menu" → "MSYS2 64bit" → "MSYS2 MSYS"
+   and execute following command:
 
      $ yes "" | pacman -Syu
 
@@ -211,7 +213,7 @@ Windows
    SDL2_Pango and libunibreak should be installed manually.
 
    This time, use the MinGW "64bit" shell. Open the shell from the "Start
-   Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 64-bit"
+   Menu" → "MSYS2 64bit" → "MSYS2 MinGW 64-bit"
 
       SDL2_Pango
 
@@ -269,7 +271,7 @@ Windows
    SDL2_Pango and libunibreak should be installed manually.
 
    This time, use the MinGW "32bit" shell. Open the shell from the "Start
-   Menu" -> "MSYS2 64bit" -> "MSYS2 MinGW 32-bit"
+   Menu" → "MSYS2 64bit" → "MSYS2 MinGW 32-bit"
 
       SDL2_Pango
 
@@ -320,9 +322,9 @@ Windows
    You can compile 64-bit binaries using "MSYS2 64bit" shell, and 32-bit
    binaries using "MSYS2 32bit" shell, respectively.
 
-     * Select "MSYS2 64bit" -> "MSYS2 MinGW 64-bit" from the "Start Menu" to
+     * Select "MSYS2 64bit" → "MSYS2 MinGW 64-bit" from the "Start Menu" to
        open the 64bit shell.
-     * Select "MSYS2 64bit" -> "MSYS2 MinGW 32-bit" from the "Start Menu" to
+     * Select "MSYS2 64bit" → "MSYS2 MinGW 32-bit" from the "Start Menu" to
        open the 32bit shell.
 
     Tux Paint Config.
@@ -460,6 +462,8 @@ Windows
    due to incorrect character-case (capital 'Z' instead of lowercase 'z') or
    a missing (or extra) '-' (dash).
 
+       ------------------------------------------------------------------
+
 Linux/Unix
 
   Compiling:
@@ -480,16 +484,6 @@ Linux/Unix
    with "SVG_LIB= SVG_CFLAGS= NOSVGFLAG=NOSVG" added:
 
      $ make SVG_LIB= SVG_CFLAGS=
-
-  Disabling Pango support (and hence Pango, Cairo, etc. dependencies):
-
-   📜 Prior to version 0.9.18, Tux Paint used the libSDL_ttf library for
-   rendering text using TrueType Fonts. Since 0.9.18, libSDL_Pango is used,
-   as it has much greater support for internationalization. However, if you
-   wish to disable the use of SDL_Pango, you may do so running "make" with
-   "SDL_PANGO_LIB=" added:
-
-     $ make SDL_PANGO_LIB=
 
   Disabling Sound at Compile-time
 
@@ -583,6 +577,8 @@ Linux/Unix
 
    💡 Note: This list is out of date. See "Makefile" and "Makefile-i18n" for a
    complete list.
+
+       ------------------------------------------------------------------
 
 macOS
 
@@ -772,7 +768,7 @@ macOS
    https://developer.apple.com/documentation/macos-release-notes/macos-big-sur-11_0_1-universal-apps-release-notes#:~:text=New%20in%20macOS,pass%20through%20Gatekeeper.
 
    If you get an error that the application bundle is already signed, remove
-   it before signing::
+   it before signing:
 
      $ codesign --remove-signature TuxPaint.app
 
@@ -794,6 +790,8 @@ macOS
      $ macos/build-universal.sh
      $ codesign -s - TuxPaint.app
      $ make TuxPaint.dmg
+
+       ------------------------------------------------------------------
 
 Android
 
@@ -858,41 +856,42 @@ Android
    from the root of fdroiddata, run ../fdroidserver/fdroid build --server
    org.tuxpaint:NNNN (NNNN = version, e.g. 9288)
 
+       ------------------------------------------------------------------
+
 Haiku
 
-   2023年5月 6日 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
+   2023年5月 7日 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
 
   Prerequisites
 
- Install the required develop packages in Terminal:
- 32bit:
- pkgman install xcairo_x86_devel fribidi_x86_devel gdk_pixbuf_x86_devel
- libiconv_x86_devel libimagequant_x86_devel gettext_x86_libintl
- libpaper_x86_devel pango_x86_devel libpng16_x86_devel librsvg_x86_devel
- libsdl2_x86_devel sdl2_image_x86_devel sdl2_gfx_x86_devel
- sdl2_mixer_x86_devel sdl2_pango_x86_devel sdl2_ttf_x86_devel zlib_x86_devel
- 64bit:
- pkgman install xcairo_devel fribidi_devel gdk_pixbuf_devel libiconv_devel
- libimagequant_devel gettext_libintl libpaper_devel pango_devel
- libpng16_devel librsvg_devel libsdl2_devel sdl2_image_devel sdl2_gfx_devel
- sdl2_mixer_devel sdl2_pango_devel sdl2_ttf_devel zlib_devel
+   Install the required develop packages in Terminal:
 
- For 32bit you need to swith to the new compiler (currently gcc 11.2.0) with
- setarch x86
+   32-bit:
+           pkgman install xcairo_x86_devel fribidi_x86_devel
+           gdk_pixbuf_x86_devel libiconv_x86_devel libimagequant_x86_devel
+           gettext_x86_libintl libpaper_x86_devel pango_x86_devel
+           libpng16_x86_devel librsvg_x86_devel libsdl2_x86_devel
+           sdl2_image_x86_devel sdl2_gfx_x86_devel sdl2_mixer_x86_devel
+           sdl2_pango_x86_devel sdl2_ttf_x86_devel zlib_x86_devel
+
+   64-bit:
+           pkgman install xcairo_devel fribidi_devel gdk_pixbuf_devel
+           libiconv_devel libimagequant_devel gettext_libintl libpaper_devel
+           pango_devel libpng16_devel librsvg_devel libsdl2_devel
+           sdl2_image_devel sdl2_gfx_devel sdl2_mixer_devel sdl2_pango_devel
+           sdl2_ttf_devel zlib_devel
+
+   For 32-bit you need to switch to the new compiler (currently gcc 11.2.0)
+   with setarch x86
 
   Building
 
- cd tuxpaint-VERSION
-
- Now build Tux Paint:
- make PREFIX=/boot/home/config/non-packaged
+   make PREFIX=/boot/home/config/non-packaged
 
   Tux Paint Stamps
 
- cd tuxpaint-stamps-VERSION
-
- Install the stamps:
- make install-all DATA_PREFIX=/boot/home/config/non-packaged/share/tuxpaint/
+   make install-all
+   DATA_PREFIX=/boot/home/config/non-packaged/share/tuxpaint/
 
                                    Debugging
 
