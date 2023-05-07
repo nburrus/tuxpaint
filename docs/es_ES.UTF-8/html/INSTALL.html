@@ -120,7 +120,7 @@
                   <li><a href="#req-libsdl">Simple DirectMedia Layer library (libSDL)</a></li>                  <li><a href="#req-other-libs">Other Libraries</a></li>                </ul>
               </li>
               <li><a href="#compiling">Compiling and Installation</a>                <ul>
-                  <li><a href="#compiling-windows">Windows</a></li>                  <li><a href="#compiling-linux">Linux/Unix</a></li>                  <li><a href="#compiling-macos">macOS</a></li>                  <li><a href="#compiling-android">Android</a></li>                </ul>
+                  <li><a href="#compiling-windows">Windows</a></li>                  <li><a href="#compiling-linux">Linux/Unix</a></li>                  <li><a href="#compiling-macos">macOS</a></li>                  <li><a href="#compiling-android">Android</a></li>                  <li><a href="#compiling-haiku">Haiku</a></li>                </ul>
               </li>
               <li><a href="#debugging">Debugging</a></li>              <li><a href="#uninstalling">Uninstalling Tux Paint</a>                <ul>
                   <li><a href="#uninstalling-windows">Windows</a></li>                  <li><a href="#uninstalling-macOS">macOS</a></li>                  <li><a href="#uninstalling-linux">Linux</a></li>                </ul>
@@ -1241,6 +1241,76 @@
         </section><!-- H3: Building -->
 
       </section><!-- H2: Android -->
+
+      <section class="indent"><!-- H2: Haiku -->
+        <header>
+          <h2>
+            <a name="compiling-macos" id="compiling-android">
+              Haiku            </a>
+          </h2>
+          <p style="font-size: small;">
+            <em>
+              mayo  6, 2023              Luc Schrijvers &lt;<a href="mailto:begasus@gmail.com">begasus@gmail.com</a>&gt;
+              (Edited by Bill Kendrick)
+            </em>
+          </p>
+        </header>
+
+        <section class="indent"><!-- H3: Prerequisites -->
+          <header>
+            <h3>
+              Prerequisites            </h3>
+          </header>
+
+<pre>
+Install the required develop packages in Terminal:
+32bit:
+pkgman install xcairo_x86_devel fribidi_x86_devel gdk_pixbuf_x86_devel
+libiconv_x86_devel libimagequant_x86_devel gettext_x86_libintl
+libpaper_x86_devel pango_x86_devel libpng16_x86_devel librsvg_x86_devel
+libsdl2_x86_devel sdl2_image_x86_devel sdl2_gfx_x86_devel
+sdl2_mixer_x86_devel sdl2_pango_x86_devel sdl2_ttf_x86_devel zlib_x86_devel
+64bit:
+pkgman install xcairo_devel fribidi_devel gdk_pixbuf_devel libiconv_devel
+libimagequant_devel gettext_libintl libpaper_devel pango_devel
+libpng16_devel librsvg_devel libsdl2_devel sdl2_image_devel sdl2_gfx_devel
+sdl2_mixer_devel sdl2_pango_devel sdl2_ttf_devel zlib_devel
+
+For 32bit you need to swith to the new compiler (currently gcc 11.2.0) with
+setarch x86
+</pre>
+
+        </section><!-- H3: Prerequisites -->
+
+        <section class="indent"><!-- H3: Building -->
+          <header>
+            <h3>
+              Building            </h3>
+          </header>
+
+<pre>
+cd tuxpaint-VERSION
+
+Now build Tux Paint:
+make PREFIX=/boot/home/config/non-packaged
+</pre>
+        </section><!-- H3: Building -->
+
+        <section class="indent"><!-- H3: Tux Paint Stamps -->
+          <header>
+            <h3>
+              Tux Paint Stamps            </h3>
+          </header>
+
+<pre>
+cd tuxpaint-stamps-VERSION
+
+Install the stamps:
+make install-all DATA_PREFIX=/boot/home/config/non-packaged/share/tuxpaint/
+</pre>
+        </section><!-- H3: Tux Paint Stamps -->
+
+      </section><!-- H2: Haiku -->
 
     </section><!-- H1: Compiling and Installation -->
 

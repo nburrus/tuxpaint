@@ -18,6 +18,7 @@
              |       * Linux/Unix                                 |
              |       * macOS                                      |
              |       * Android                                    |
+             |       * Haiku                                      |
              |  * Debugging                                       |
              |  * Uninstalling Tux Paint                          |
              |       * Windows                                    |
@@ -856,6 +857,42 @@ Android
    need 1GB free on disk. Run the makebuildserver tool they provide, then,
    from the root of fdroiddata, run ../fdroidserver/fdroid build --server
    org.tuxpaint:NNNN (NNNN = version, e.g. 9288)
+
+Haiku
+
+   2023年5月 6日 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
+
+  Prerequisites
+
+ Install the required develop packages in Terminal:
+ 32bit:
+ pkgman install xcairo_x86_devel fribidi_x86_devel gdk_pixbuf_x86_devel
+ libiconv_x86_devel libimagequant_x86_devel gettext_x86_libintl
+ libpaper_x86_devel pango_x86_devel libpng16_x86_devel librsvg_x86_devel
+ libsdl2_x86_devel sdl2_image_x86_devel sdl2_gfx_x86_devel
+ sdl2_mixer_x86_devel sdl2_pango_x86_devel sdl2_ttf_x86_devel zlib_x86_devel
+ 64bit:
+ pkgman install xcairo_devel fribidi_devel gdk_pixbuf_devel libiconv_devel
+ libimagequant_devel gettext_libintl libpaper_devel pango_devel
+ libpng16_devel librsvg_devel libsdl2_devel sdl2_image_devel sdl2_gfx_devel
+ sdl2_mixer_devel sdl2_pango_devel sdl2_ttf_devel zlib_devel
+
+ For 32bit you need to swith to the new compiler (currently gcc 11.2.0) with
+ setarch x86
+
+  Building
+
+ cd tuxpaint-VERSION
+
+ Now build Tux Paint:
+ make PREFIX=/boot/home/config/non-packaged
+
+  Tux Paint Stamps
+
+ cd tuxpaint-stamps-VERSION
+
+ Install the stamps:
+ make install-all DATA_PREFIX=/boot/home/config/non-packaged/share/tuxpaint/
 
                                    Debugging
 
