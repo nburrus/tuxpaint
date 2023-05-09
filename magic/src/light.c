@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 20, 2023
+  Last updated: May 8, 2023
 */
 
 #include <stdio.h>
@@ -146,7 +146,8 @@ static void do_light(void *ptr, int which ATTRIBUTE_UNUSED,
 
         SDL_GetRGB(pix, canvas->format, &r, &g, &b);
 
-        adj = (((float)light_radius - 0.01) - sqrt(abs(xx * yy))) / (16.0 * (float)light_radius);
+        adj = sqrt(light_radius - sqrt((xx * xx) + (yy * yy))) / 64.0;
+        // adj = (((float)light_radius - 0.01) - sqrt(abs(xx * yy))) / (16.0 * (float)light_radius);
 
         api->rgbtohsv(r, g, b, &h, &s, &v);
 
