@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 4, 2023
+  June 14, 2002 - May 9, 2023
 */
 
 #include "platform.h"
@@ -276,6 +276,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <FindDirectory.h>
 #include <fs_info.h>
 #endif
+
 #if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__ || defined __ANDROID__
 #include <wchar.h>
 #include <stdbool.h>
@@ -1486,7 +1487,7 @@ static Uint16 select_y;
 static int select_cur_font;
 static int select_text_state;
 static unsigned select_text_size;
-static int coming_from_undo_or_redo = FALSE;
+static int coming_from_undo_or_redo = SDL_FALSE;
 
 
 static void add_label_node(int, int, Uint16, Uint16, SDL_Surface * label_node_surface);
@@ -2276,8 +2277,8 @@ static SDL_Surface *load_kpx(const char *file);
 
 #ifndef NOSVG
 static SDL_Surface *load_svg(const char *file);
-static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned int max_w, unsigned int max_h);
 #endif
+static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned int max_w, unsigned int max_h);
 static SDL_Surface *myIMG_Load_RWops(const char *file);
 static SDL_Surface *myIMG_Load(const char *file);
 static int trash(char *path);
@@ -2844,7 +2845,7 @@ static void mainloop(void)
               else if (cur_tool == TOOL_LABEL && label_node_to_edit)
               {
                 rec_undo_buffer();
-                have_to_rec_label_node = TRUE;
+                have_to_rec_label_node = SDL_TRUE;
                 add_label_node(0, 0, 0, 0, NULL);
                 derender_node(&label_node_to_edit);
                 label_node_to_edit = NULL;
@@ -3231,7 +3232,7 @@ static void mainloop(void)
                   /* [Enter] to finish erasing text from a pre-existing Label */
 
                   rec_undo_buffer();
-                  have_to_rec_label_node = TRUE;
+                  have_to_rec_label_node = SDL_TRUE;
                   add_label_node(0, 0, 0, 0, NULL);
                   derender_node(&label_node_to_edit);
                   label_node_to_edit = NULL;
@@ -3352,7 +3353,7 @@ static void mainloop(void)
                   /* [Tab] to finish erasing text from a pre-existing Label */
 
                   rec_undo_buffer();
-                  have_to_rec_label_node = TRUE;
+                  have_to_rec_label_node = SDL_TRUE;
                   add_label_node(0, 0, 0, 0, NULL);
                   derender_node(&label_node_to_edit);
                   label_node_to_edit = NULL;
@@ -3537,7 +3538,7 @@ static void mainloop(void)
                   else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                   {
                     rec_undo_buffer();
-                    have_to_rec_label_node = TRUE;
+                    have_to_rec_label_node = SDL_TRUE;
                     add_label_node(0, 0, 0, 0, NULL);
                     derender_node(&label_node_to_edit);
                     label_node_to_edit = NULL;
@@ -4612,7 +4613,7 @@ static void mainloop(void)
                           else if (label_node_to_edit)
                           {
                             rec_undo_buffer();
-                            have_to_rec_label_node = TRUE;
+                            have_to_rec_label_node = SDL_TRUE;
                             add_label_node(0, 0, 0, 0, NULL);
                             label_node_to_edit = NULL;
                           }
@@ -4661,7 +4662,7 @@ static void mainloop(void)
                           else if (label_node_to_edit)
                           {
                             rec_undo_buffer();
-                            have_to_rec_label_node = TRUE;
+                            have_to_rec_label_node = SDL_TRUE;
                             add_label_node(0, 0, 0, 0, NULL);
                             label_node_to_edit = NULL;
                           }
@@ -7881,7 +7882,11 @@ void show_version(int details)
 #ifdef NOSVG
   printf("  SVG support disabled  (NOSVG)\n");
 #else
-  printf("  SVG support enabled  (not NOSVG)\n");
+#ifdef OLD_SVG
+  printf("  SVG support enabled -- old: libCairo  (not NOSVG, OLD_SVG)\n");
+#else
+  printf("  SVG support enabled -- new: libRSVG  (not NOSVG, not OLD_SVG)\n");
+#endif
 #endif
 
   /* Sound: */
@@ -14147,7 +14152,7 @@ static void load_current(void)
     first_label_node_in_redo_stack = NULL;
     highlighted_label_node = NULL;
     label_node_to_edit = NULL;
-    have_to_rec_label_node = FALSE;
+    have_to_rec_label_node = SDL_FALSE;
 
     safe_snprintf(ftmp, sizeof(ftmp), "saved/%s%s", file_id, FNAME_EXTENSION);
     fname = get_fname(ftmp, DIR_SAVE);
@@ -16224,7 +16229,7 @@ static void do_png_embed_data(png_structp png_ptr)
     current_node = start_label_node;
     while (current_node && current_node != first_label_node_in_redo_stack)
     {
-      if (current_node->is_enabled == TRUE && current_node->save_texttool_len > 0)
+      if (current_node->is_enabled == SDL_TRUE && current_node->save_texttool_len > 0)
       {
         fprintf(lfi, "%u\n", current_node->save_texttool_len);
         for (i = 0; i < current_node->save_texttool_len; i++)
@@ -17663,7 +17668,7 @@ static int do_open(void)
           delete_label_list(&start_label_node);
           start_label_node = current_label_node =
             first_label_node_in_redo_stack = highlighted_label_node = label_node_to_edit = NULL;
-          have_to_rec_label_node = FALSE;
+          have_to_rec_label_node = SDL_FALSE;
 
           /* Clean stale text */
           if (texttool_len > 0)
@@ -19719,7 +19724,7 @@ static void do_render_cur_text(int do_blit)
            (cur_tool == TOOL_PRINT ||
             cur_tool == TOOL_SAVE || cur_tool == TOOL_OPEN || cur_tool == TOOL_NEW || cur_tool == TOOL_QUIT)))
       {
-        have_to_rec_label_node = TRUE;
+        have_to_rec_label_node = SDL_TRUE;
         add_label_node(src.w, src.h, dest.x, dest.y, tmp_surf);
         simply_render_node(current_label_node);
       }
@@ -19730,7 +19735,7 @@ static void do_render_cur_text(int do_blit)
       {
         myblit(tmp_surf, &src, label, &dest);
 
-        have_to_rec_label_node = TRUE;
+        have_to_rec_label_node = SDL_TRUE;
         add_label_node(src.w, src.h, dest.x, dest.y, tmp_surf);
 
       }
@@ -20724,7 +20729,7 @@ static SDL_Surface *load_svg(const char *file)
   return (sdl_surface);
 }
 
-#else
+#else /* #ifdef OLD_SVG */
 
 /**
  * FIXME
@@ -20895,7 +20900,9 @@ static SDL_Surface *load_svg(const char *file)
   return (sdl_surface);
 }
 
-#endif
+#endif /* #ifdef OLD_SVG */
+
+#endif /* #ifndef NOSVG */
 
 
 /**
@@ -20956,8 +20963,6 @@ static float pick_best_scape(unsigned int orig_w, unsigned int orig_h, unsigned 
 
   return (scale);
 }
-
-#endif
 
 /**
  * FIXME
@@ -21807,7 +21812,10 @@ static int do_new_dialog(void)
   int white_in_palette;
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
-  int skip, k;
+  int skip;
+#ifndef NOSVG
+  int k;
+#endif
 
 
   val_x = val_y = motioner = 0;
@@ -22786,7 +22794,7 @@ static int do_new_dialog(void)
     delete_label_list(&start_label_node);
     start_label_node = current_label_node = first_label_node_in_redo_stack =
       highlighted_label_node = label_node_to_edit = NULL;
-    have_to_rec_label_node = FALSE;
+    have_to_rec_label_node = SDL_FALSE;
 
     /* Clean stale text */
     if (texttool_len > 0)
@@ -25747,11 +25755,11 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface * label
 
   if (texttool_len > 0)
   {
-    new_node->is_enabled = TRUE;
+    new_node->is_enabled = SDL_TRUE;
   }
   else
   {
-    new_node->is_enabled = FALSE;
+    new_node->is_enabled = SDL_FALSE;
   }
 
   new_node->save_font_type = NULL;
@@ -25787,7 +25795,7 @@ static void add_label_node(int w, int h, Uint16 x, Uint16 y, SDL_Surface * label
     start_label_node = current_label_node;
 
   highlighted_label_node = new_node;
-  if (highlighted_label_node->is_enabled == FALSE)
+  if (highlighted_label_node->is_enabled == SDL_FALSE)
     cycle_highlighted_label_node();
 }
 
@@ -25800,7 +25808,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
   struct label_node *current_node;
   struct label_node *tmp_node = NULL;
   unsigned u;
-  int done = FALSE;
+  int done = SDL_FALSE;
 
   Uint8 r, g, b, a;
   int i, j, k;
@@ -25810,7 +25818,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
 
   current_node = *ref_head;
 
-  while (done != TRUE)
+  while (done != SDL_TRUE)
   {
     if (x >= current_node->save_x)
     {
@@ -25820,12 +25828,12 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
         {
           if (y <= (current_node->save_y) + (current_node->save_height))
           {
-            if (current_node->is_enabled == TRUE)
+            if (current_node->is_enabled == SDL_TRUE)
             {
               if (hover == 1)
                 return (current_node);
               tmp_node = current_node;
-              done = TRUE;
+              done = SDL_TRUE;
             }
           }
         }
@@ -25835,7 +25843,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
     if (current_node == NULL)
       current_node = current_label_node;
     if (current_node == *ref_head)
-      done = TRUE;
+      done = SDL_TRUE;
   }
 
   if (tmp_node != NULL)
@@ -25934,7 +25942,7 @@ static void rec_undo_label(void)
 
   if (coming_from_undo_or_redo) // yet recorded, avoiding to write text_undo
   {
-    coming_from_undo_or_redo = FALSE;
+    coming_from_undo_or_redo = SDL_FALSE;
     return;
   }
 
@@ -25950,7 +25958,7 @@ static void rec_undo_label(void)
   {
     current_label_node->save_undoid = cur_undo;
     text_undo[cur_undo] = 1;
-    have_to_rec_label_node = FALSE;
+    have_to_rec_label_node = SDL_FALSE;
   }
   else
   {
@@ -25973,7 +25981,7 @@ static void do_undo_label_node()
       if (current_label_node->save_undoid == (cur_undo + 1) % NUM_UNDO_BUFS)
       {
         if (current_label_node->disables != NULL)       /* If current node is an editing of an older one, reenable it. */
-          current_label_node->disables->is_enabled = TRUE;
+          current_label_node->disables->is_enabled = SDL_TRUE;
 
         first_label_node_in_redo_stack = current_label_node;
         current_label_node = current_label_node->next_to_down_label_node;
@@ -25983,7 +25991,7 @@ static void do_undo_label_node()
 
         highlighted_label_node = current_label_node;
         derender_node(&first_label_node_in_redo_stack);
-        coming_from_undo_or_redo = TRUE;
+        coming_from_undo_or_redo = SDL_TRUE;
       }
     }
   highlighted_label_node = current_label_node;
@@ -26007,13 +26015,13 @@ static void do_redo_label_node()
       highlighted_label_node = current_label_node;
       if (current_label_node->disables != NULL) /* If this is a redo of an editing, redisable the old node. */
       {
-        current_label_node->disables->is_enabled = FALSE;
+        current_label_node->disables->is_enabled = SDL_FALSE;
         derender_node(&current_label_node->disables);
       }
       else
         simply_render_node(current_label_node);
 
-      coming_from_undo_or_redo = TRUE;
+      coming_from_undo_or_redo = SDL_TRUE;
     }
   }
 }
@@ -26110,7 +26118,7 @@ static void render_all_nodes_starting_at(struct label_node **node)
     current_node = *node;
     while (current_node != first_label_node_in_redo_stack)
     {
-      if (current_node->is_enabled == TRUE)
+      if (current_node->is_enabled == SDL_TRUE)
       {
         simply_render_node(current_node);
       }
@@ -26255,7 +26263,7 @@ static void load_info_about_label_surface(FILE * lfi)
   delete_label_list(&start_label_node);
   start_label_node = current_label_node = first_label_node_in_redo_stack =
     highlighted_label_node = label_node_to_edit = NULL;
-  have_to_rec_label_node = FALSE;
+  have_to_rec_label_node = SDL_FALSE;
 
 
   if (lfi == NULL)
@@ -26456,7 +26464,7 @@ static void load_info_about_label_surface(FILE * lfi)
         new_node->save_text_size = MIN_TEXT_SIZE;
 
       new_node->save_undoid = 255;      /* A value that cur_undo will likely never reach */
-      new_node->is_enabled = TRUE;
+      new_node->is_enabled = SDL_TRUE;
       new_node->disables = NULL;
       new_node->next_to_down_label_node = NULL;
       new_node->next_to_up_label_node = NULL;
@@ -26585,7 +26593,7 @@ static void tmp_apply_uncommited_text()
              cur_tool == TOOL_SAVE || cur_tool == TOOL_OPEN || cur_tool == TOOL_NEW || cur_tool == TOOL_QUIT)))
   {
     add_label_node(0, 0, 0, 0, NULL);
-    current_label_node->is_enabled = FALSE;
+    current_label_node->is_enabled = SDL_FALSE;
     current_label_node->save_undoid = 253;
 
     derender_node(&label_node_to_edit);
@@ -26729,7 +26737,7 @@ static void cycle_highlighted_label_node()
     }
     else
     {
-      while (aux_node->is_enabled == FALSE && aux_node != highlighted_label_node)
+      while (aux_node->is_enabled == SDL_FALSE && aux_node != highlighted_label_node)
       {
         aux_node = aux_node->next_to_down_label_node;
         if (aux_node == NULL)
@@ -26754,11 +26762,11 @@ static int are_labels()
     while (aux_node)
     {
       if (aux_node->is_enabled)
-        return (TRUE);
+        return (SDL_TRUE);
       aux_node = aux_node->next_to_down_label_node;
     }
   }
-  return (FALSE);
+  return (SDL_FALSE);
 }
 
 /**
@@ -26793,7 +26801,7 @@ int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
       if (unknown.data[count] == '\n')
       {
         if (new_field == 1)
-          return (FALSE);       /* Avoid empty fields */
+          return (SDL_FALSE);       /* Avoid empty fields */
         fields++;
         if (fields == 4)
         {                       /* Last check, see if the sizes match */
@@ -26803,9 +26811,9 @@ int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
           free(control);
           free(softwr);
           if (count + comp + 1 == unknown.size)
-            return (TRUE);
+            return (SDL_TRUE);
           else
-            return (FALSE);
+            return (SDL_FALSE);
         }
         new_field = 1;
       }
@@ -26821,7 +26829,7 @@ int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
               (unknown.data[count] == '5') ||
               (unknown.data[count] == '6') ||
               (unknown.data[count] == '7') || (unknown.data[count] == '8') || (unknown.data[count] == '9')))
-          return (FALSE);
+          return (SDL_FALSE);
 
         new_field = 0;
       }
@@ -26829,7 +26837,7 @@ int chunk_is_valid(const char *chunk_name, png_unknown_chunk unknown)
     }
   }
 
-  return (FALSE);
+  return (SDL_FALSE);
 }
 
 /**
@@ -27012,8 +27020,8 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
     if (num_unknowns)
     {
-      have_label_delta = have_label_data = have_background = have_foreground = FALSE;
-      ldelta = ldata = fgnd = bgnd = FALSE;
+      have_label_delta = have_label_data = have_background = have_foreground = SDL_FALSE;
+      ldelta = ldata = fgnd = bgnd = SDL_FALSE;
 
       /* Need to get things in order, as we can't enforce any order in custom chunks,
          we need to go around them 3 times */
@@ -27073,13 +27081,13 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
         }
         /* Also check what we have there */
         if (chunk_is_valid("tpBK", unknowns[u]))
-          have_background = TRUE;
+          have_background = SDL_TRUE;
         if (chunk_is_valid("tpFG", unknowns[u]))
-          have_foreground = TRUE;
+          have_foreground = SDL_TRUE;
         if (chunk_is_valid("tpLD", unknowns[u]))
-          have_label_delta = TRUE;
+          have_label_delta = SDL_TRUE;
         if (chunk_is_valid("tpLL", unknowns[u]))
-          have_label_data = TRUE;
+          have_label_data = SDL_TRUE;
       }
 
       /* Recover the labels and apply the diff from label to canvas. */
@@ -27129,7 +27137,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
             SDL_UnlockSurface(org_surf);
 
             free(unc_buff);
-            ldelta = TRUE;
+            ldelta = SDL_TRUE;
           }
 
           /* Label Data */
@@ -27162,7 +27170,7 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
             }
 
             free(unc_buff);
-            ldata = TRUE;
+            ldata = SDL_TRUE;
             DEBUG_PRINTF("Out of label data\n");
           }
         }
@@ -28167,12 +28175,12 @@ static void setup_config(char *argv[])
   if (tmpcfg.onscreen_keyboard_layout)
   {
     onscreen_keyboard_layout = strdup(tmpcfg.onscreen_keyboard_layout);
-    onscreen_keyboard = TRUE;
+    onscreen_keyboard = SDL_TRUE;
   }
 
   if (tmpcfg.onscreen_keyboard_disable_change)
   {
-    onscreen_keyboard = TRUE;
+    onscreen_keyboard = SDL_TRUE;
   }
 
   DEBUG_PRINTF("\n\nPromptless save:\nask: %d\nnew: %d\nover: %d\n\n",
@@ -30304,7 +30312,7 @@ static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int
   step = 5000;
   if (abs(i) < joystick_low_threshold && abs(j) < joystick_low_threshold)
   {
-    *motioner = FALSE;
+    *motioner = SDL_FALSE;
     *val_x = 0;
     *val_y = 0;
   }
@@ -30326,10 +30334,10 @@ static void handle_joyaxismotion(SDL_Event event, int *motioner, int *val_x, int
 
     if (*val_x || *val_y)
     {
-      *motioner = TRUE;
+      *motioner = SDL_TRUE;
     }
     else
-      *motioner = FALSE;
+      *motioner = SDL_FALSE;
   }
 }
 
@@ -30747,7 +30755,7 @@ char *get_xdg_user_dir(const char *dir_type, const char *fallback)
   char tmp_path[MAX_PATH], config_path[MAX_PATH], line[MAX_PATH], search[MAX_PATH], return_path[MAX_PATH];
   int found_it;
 
-  found_it = FALSE;
+  found_it = SDL_FALSE;
 
   /* Figure out where XDG user-dirs config exists, and use it if possible */
   if (getenv("XDG_CONFIG_HOME") != NULL)
@@ -30826,7 +30834,7 @@ char *get_xdg_user_dir(const char *dir_type, const char *fallback)
           return_path[strlen(return_path) - 1] = '\0';
         }
 
-        found_it = TRUE;
+        found_it = SDL_TRUE;
       }
     }
 
@@ -30903,7 +30911,7 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   if (gif_fname == NULL)
   {
     /* Can't create export dir! Abort! */
-    return FALSE;
+    return SDL_FALSE;
   }
 
   /* For now, always saving GIF using the size of Tux Paint's window,
@@ -31142,7 +31150,7 @@ static int export_pict(char *fname)
     fprintf(stderr,
             "Cannot export from saved Tux Paint file '%s'\nThe error that occurred was:\n%s\n\n",
             fname, strerror(errno));
-    return FALSE;
+    return SDL_FALSE;
   }
 
   time_before = SDL_GetTicks();
@@ -31150,7 +31158,7 @@ static int export_pict(char *fname)
   if (pict_fname == NULL)
   {
     fclose(fi);
-    return FALSE;
+    return SDL_FALSE;
   }
 
   fo = fopen(pict_fname, "wb");
@@ -31160,7 +31168,7 @@ static int export_pict(char *fname)
             "Cannot export to new file '%s'\nThe error that occurred was:\n%s\n\n", pict_fname, strerror(errno));
     free(pict_fname);
     fclose(fi);
-    return FALSE;
+    return SDL_FALSE;
   }
 
   while (!feof(fi))
@@ -31188,7 +31196,7 @@ static int export_pict(char *fname)
     SDL_Delay(time_after + 1000 - time_before);
   }
 
-  return TRUE;
+  return SDL_TRUE;
 }
 
 /**
@@ -31323,7 +31331,7 @@ static void select_label_node(int *old_x, int *old_y)
   cur_thing = label_node_to_edit->save_cur_font;
 
   /* Disable the label node; we'll be replacing it (or removing it) */
-  label_node_to_edit->is_enabled = FALSE;
+  label_node_to_edit->is_enabled = SDL_FALSE;
   derender_node(&label_node_to_edit);
 
   /* Copy the label's text into the active text input */
@@ -31413,7 +31421,7 @@ static void apply_label_node(int old_x, int old_y)
   draw_fonts();
   update_screen_rect(&r_toolopt);
 
-  have_to_rec_label_node = TRUE;
+  have_to_rec_label_node = SDL_TRUE;
 
   /* [Best way to explain this?] */
   rect.x = label_node_to_edit->save_x;
@@ -31422,7 +31430,7 @@ static void apply_label_node(int old_x, int old_y)
   rect.h = label_node_to_edit->save_height;
 
   SDL_BlitSurface(label_node_to_edit->label_node_surface, NULL, canvas, &rect);
-  label_node_to_edit->is_enabled = FALSE;
+  label_node_to_edit->is_enabled = SDL_FALSE;
 
   /* [Best way to explain this?] */
   add_label_node(0, 0, 0, 0, NULL);

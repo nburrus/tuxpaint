@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - May 1, 2023
+# June 14, 2002 - May 9, 2023
 
 
 # The version number, for release:
@@ -1181,7 +1181,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 	@echo "...Linking Tux Paint..."
 	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-o tuxpaint $^ \
-		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS)
+		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS) -lm
 	@$(RAD_CMD)
 	@$(RSRC_CMD)
 	@$(MIMESET_CMD)
