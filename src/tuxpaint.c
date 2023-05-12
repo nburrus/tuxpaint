@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 10, 2023
+  June 14, 2002 - May 12, 2023
 */
 
 #include "platform.h"
@@ -27661,7 +27661,7 @@ static void setup_config(char *argv[])
   safe_snprintf(str, sizeof(str), "%s/tuxpaint.cfg", savedir);  /* FIXME */
 #elif defined(__BEOS__) || defined(__HAIKU__)
   /* BeOS: Use a "tuxpaint.cfg" file: */
-  strcpy(str, "tuxpaint.cfg");  /* safe; sufficient size */
+  safe_snprintf(str, sizeof(str), "%s/config/settings/TuxPaint/tuxpaint.cfg", home);
 #elif defined(__APPLE__)
   /* macOS, iOS: Use a "tuxpaint.cfg" file in the Tux Paint application support folder */
   safe_snprintf(str, sizeof(str), "%s/tuxpaint.cfg", apple_preferencesPath());
