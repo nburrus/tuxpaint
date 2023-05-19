@@ -769,7 +769,7 @@ Tux Paint の起動
               * SIGNALS.html
                 Tux Paint が応答する POSIX シグナルに関する情報。
               * MAGIC-API.html
-                Creating new Magic tools using Tux Paint's plugin API.
+                プラグインAPIを用いた独自の「まほう」ツールの作成
 
    開発の記録及びライセンス:
               * AUTHORS.txt
