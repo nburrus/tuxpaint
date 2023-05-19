@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  May 16, 2023
+                                  May 18, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |
