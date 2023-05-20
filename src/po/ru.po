@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-02 00:00-0700\n"
+"POT-Creation-Date: 2023-05-20 11:22-0700\n"
 "PO-Revision-Date: 2023-05-19 16:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 22.12.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 # При выборе чёрного (0, 0, 0) цвета
 #. Response to Black (0, 0, 0) color selected
@@ -209,12 +209,10 @@ msgid "Solid"
 msgstr "Сплошная"
 
 #: ../fill_tools.h:53
-#| msgid "Brushes"
 msgid "Brush"
 msgstr "Кисть"
 
 #: ../fill_tools.h:54
-#| msgid "Lines"
 msgid "Linear"
 msgstr "Линейная"
 
@@ -223,46 +221,42 @@ msgid "Radial"
 msgstr "Радиальная"
 
 #: ../fill_tools.h:56
-#| msgid "Shapes"
 msgid "Shaped"
 msgstr "Фигурная"
 
 #: ../fill_tools.h:60
-#| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
 msgstr "Щёлкните, чтобы заполнить эту область сплошным цветом."
 
 #: ../fill_tools.h:61
-#| msgid "Click in the picture to fill that area with color."
 msgid "Click and drag to fill an area by hand, using a brush."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы заполнить область вручную с"
-" помощью кисти."
+"Щёлкните и ведите мышью по картинке, чтобы заполнить область вручную с "
+"помощью кисти."
 
 #: ../fill_tools.h:62
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы заполнить область линейным"
-" градиентом (от выбранного цвета к прозрачному)."
+"Щёлкните и ведите мышью по картинке, чтобы заполнить область линейным "
+"градиентом (от выбранного цвета к прозрачному)."
 
 #: ../fill_tools.h:63
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
 msgstr ""
-"Щёлкните, чтобы заполнить область радиальным градиентом (от выбранного цвета"
-" к прозрачному)."
+"Щёлкните, чтобы заполнить область радиальным градиентом (от выбранного цвета "
+"к прозрачному)."
 
 #: ../fill_tools.h:64
-#| msgid "Click in the picture to fill that area with color."
 msgid ""
 "Click to fill an area with a shaped gradient (from the chosen color to "
 "transparent)."
 msgstr ""
-"Щёлкните, чтобы заполнить область фигурным градиентом (от выбранного цвета к"
-" прозрачному)."
+"Щёлкните, чтобы заполнить область фигурным градиентом (от выбранного цвета к "
+"прозрачному)."
 
 # Поздравление №1
 #. Congratulations #1
@@ -326,12 +320,10 @@ msgstr "Традиционный китайский"
 
 #. Add menu items
 #: ../macos.m:58
-#| msgid "Tux Paint"
 msgid "About Tux Paint"
 msgstr "О программе Tux Paint"
 
 #: ../macos.m:63
-#| msgid "Tux Paint"
 msgid "Hide Tux Paint"
 msgstr "Скрыть Tux Paint"
 
@@ -344,7 +336,6 @@ msgid "Show All"
 msgstr "Показать все"
 
 #: ../macos.m:73
-#| msgid "Tux Paint"
 msgid "Quit Tux Paint"
 msgstr "Выйти из Tux Paint"
 
@@ -375,19 +366,19 @@ msgid ""
 "and an encouraging cartoon mascot who guides children as they use the "
 "program."
 msgstr ""
-"Tux Paint — это свободная, отмеченная наградами программа рисования для детей"
-" от 3 до 12 лет. Tux Paint используется в школах по всему миру для повышения"
-" компьютерной грамотности через рисование. Её отличает лёгкий в освоении"
-" интерфейс и забавные звуковые эффекты. Рисованный персонаж (пингвин Тукс)"
-" поможет детям в освоении программы."
+"Tux Paint — это свободная, отмеченная наградами программа рисования для "
+"детей от 3 до 12 лет. Tux Paint используется в школах по всему миру для "
+"повышения компьютерной грамотности через рисование. Её отличает лёгкий в "
+"освоении интерфейс и забавные звуковые эффекты. Рисованный персонаж (пингвин "
+"Тукс) поможет детям в освоении программы."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
 "Kids are presented with a blank canvas and a variety of drawing tools to "
 "help them be creative."
 msgstr ""
-"Холст и набор инструментов для рисования помогут развить творческие"
-" способности ребёнка."
+"Холст и набор инструментов для рисования помогут развить творческие "
+"способности ребёнка."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:24
 msgid "New Breed Software et al."
@@ -401,138 +392,142 @@ msgstr "В Tux Paint включено множество готовых изоб
 msgid ""
 "The Paint Brush tool lets you draw freehand, using various brushes and colors"
 msgstr ""
-"Инструмент «Кисть» позволяет рисовать от руки с помощью различных кистей и"
-" цветов"
+"Инструмент «Кисть» позволяет рисовать от руки с помощью различных кистей и "
+"цветов"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:42
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "Инструмент «Штамп» работает как набор резиновых штампов или наклеек"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
+msgid "TBD"
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Many Magic tools now offer size settings."
 msgstr "Многие магические инструменты теперь предоставляют параметры размера."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Button labels word-wrap when possible (improves legibility)."
 msgstr ""
-"Метки кнопок переносятся на новую строку, когда это возможно (так их проще"
-" читать)."
+"Метки кнопок переносятся на новую строку, когда это возможно (так их проще "
+"читать)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
-"Добавлены пятнадцать новых магических инструментов: «Лабиринт», «Игрушечные"
-" глаза», «Шерсть», «Круги», «Лучи», «3D-очки», «Цветоделение», «Насыщение»,"
-" «Обесцвечивание», «Удаление цвета», «Сохранение цвета», «Калейдоскоп-4»,"
-" «Калейдоскоп-6», «Калейдоскоп-8» и «Свечение»."
+"Добавлены пятнадцать новых магических инструментов: «Лабиринт», «Игрушечные "
+"глаза», «Шерсть», «Круги», «Лучи», «3D-очки», «Цветоделение», «Насыщение», "
+"«Обесцвечивание», «Удаление цвета», «Сохранение цвета», «Калейдоскоп-4», "
+"«Калейдоскоп-6», «Калейдоскоп-8» и «Свечение»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr "Штампы можно повернуть перед нанесением на холст."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr "Улучшена работа инструмента «Формы» в режиме перетаскивания из угла."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 "Инструмент «Заливка» теперь предоставляет режим фигурного градиента (скос)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgstr ""
-"Доступ к режиму стирания можно получить путём нажатия соответствующей"
-" комбинации клавиш."
+"Доступ к режиму стирания можно получить путём нажатия соответствующей "
+"комбинации клавиш."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
 msgstr ""
-"Радужная палитра (средство выбора цветов HSV) теперь позволяет загружать"
-" встроенный цвет или цвета из инструмента пипетки или инструмента смешивания"
-" цветов."
+"Радужная палитра (средство выбора цветов HSV) теперь позволяет загружать "
+"встроенный цвет или цвета из инструмента пипетки или инструмента смешивания "
+"цветов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
-"Можно указать, как следует растягивать начальное и шаблонное изображения"
-" (чтобы они не смазывались, когда соотношение сторон холста отличается от"
-" соотношения сторон изображения)."
+"Можно указать, как следует растягивать начальное и шаблонное изображения "
+"(чтобы они не смазывались, когда соотношение сторон холста отличается от "
+"соотношения сторон изображения)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 "Для параметра конфигурации «buttonsize» теперь предусмотрен вариант «auto»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid "A quick start guide has been added."
 msgstr "Добавлено краткое руководство по началу работы."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
 "blue) and shades (white, grey, and black) to create new colors, similar to "
 "mixing paints."
 msgstr ""
-"Цветовая палитра Tux Paint включает новую опцию смешивания цветов. Она"
-" позволяет пользователям в разных пропорциях сочетать основные цвета"
-" (красный, жёлтый и синий) и оттенки (белый, серый и чёрный) для создания"
-" новых цветов; это похоже на смешивание красок на палитре."
+"Цветовая палитра Tux Paint включает новую опцию смешивания цветов. Она "
+"позволяет пользователям в разных пропорциях сочетать основные цвета "
+"(красный, жёлтый и синий) и оттенки (белый, серый и чёрный) для создания "
+"новых цветов; это похоже на смешивание красок на палитре."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
 "and value settings, allowing users to choose from over sixteen million "
 "colors."
 msgstr ""
-"Опция выбора цвета, ранее предоставлявшая статичную палитру из примерно"
-" шестидесяти пяти тысяч вариантов, теперь поддерживает отдельные параметры"
-" оттенка, насыщенности и значения, что позволяет пользователям выбирать из"
-" более чем шестнадцати миллионов цветов."
+"Опция выбора цвета, ранее предоставлявшая статичную палитру из примерно "
+"шестидесяти пяти тысяч вариантов, теперь поддерживает отдельные параметры "
+"оттенка, насыщенности и значения, что позволяет пользователям выбирать из "
+"более чем шестнадцати миллионов цветов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
 "drawing."
 msgstr ""
-"Кроме того, теперь доступна комбинация клавиш для быстрого перехода к выбору"
-" цвета — инструменту «пипетки», который используется для выбора цветов из"
-" текущего рисунка."
+"Кроме того, теперь доступна комбинация клавиш для быстрого перехода к выбору "
+"цвета — инструменту «пипетки», который используется для выбора цветов из "
+"текущего рисунка."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
 "have been given better default spacing values, as well."
 msgstr ""
-"С помощью инструментов «Краска» и «Линии» теперь можно настраивать интервалы"
-" для кистей, что позволяет создавать пунктирные линии или эффекты смазывания."
-" Кроме того, для многих кистей были улучшены стандартные значения интервалов."
+"С помощью инструментов «Краска» и «Линии» теперь можно настраивать интервалы "
+"для кистей, что позволяет создавать пунктирные линии или эффекты смазывания. "
+"Кроме того, для многих кистей были улучшены стандартные значения интервалов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
 "across the canvas in tiles, rather than filling the canvas with a solid "
 "background color. The Rush tool blurs the results."
 msgstr ""
-"Добавлены два новых варианта магического инструмента «Масштабирование»:"
-" «Плиточное масштабирование» и «Рывок». Когда рисунок уменьшается с помощью"
-" «Плиточного масштабирования», он повторяется на холсте в виде плиток (не"
-" происходит заполнения холста сплошным фоновым цветом). После использования"
-" инструмента «Рывок» рисунок смазывается."
+"Добавлены два новых варианта магического инструмента «Масштабирование»: "
+"«Плиточное масштабирование» и «Рывок». Когда рисунок уменьшается с помощью "
+"«Плиточного масштабирования», он повторяется на холсте в виде плиток (не "
+"происходит заполнения холста сплошным фоновым цветом). После использования "
+"инструмента «Рывок» рисунок смазывается."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -540,26 +535,26 @@ msgid ""
 "adjustments. Instructional information shown while using some other tools "
 "has also been expanded."
 msgstr ""
-"Инструмент «Формы» Tux Paint теперь содержит шестиугольник и семиугольник."
-" Для тех форм, которые можно растягивать (прямоугольник, овал и т.д.), при"
-" изменении размеров отображается соотношение сторон. Кроме того, расширен"
-" перечень сведений, которые показываются при использовании некоторых других"
-" инструментов."
+"Инструмент «Формы» Tux Paint теперь содержит шестиугольник и семиугольник. "
+"Для тех форм, которые можно растягивать (прямоугольник, овал и т.д.), при "
+"изменении размеров отображается соотношение сторон. Кроме того, расширен "
+"перечень сведений, которые показываются при использовании некоторых других "
+"инструментов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
 "macOS. Sizing of Tux Paint's built-in on-screen keyboard has been improved. "
 "The look and feel of the user documentation has been improved."
 msgstr ""
-"Комбинациями клавиш (например, [Control]+[S] для сохранения рисунка) теперь"
-" можно пользоваться с помощью традиционной клавиши [⌘ Command], когда Tux"
-" Paint используется в macOS. Также оптимизирован размер встроенной экранной"
-" клавиатуры Tux Paint. Выполнена работа по усовершенствованию документации"
-" пользователя."
+"Комбинациями клавиш (например, [Control]+[S] для сохранения рисунка) теперь "
+"можно пользоваться с помощью традиционной клавиши [⌘ Command], когда Tux "
+"Paint используется в macOS. Также оптимизирован размер встроенной экранной "
+"клавиатуры Tux Paint. Выполнена работа по усовершенствованию документации "
+"пользователя."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -567,14 +562,14 @@ msgid ""
 "brush shape selector. Additionally, the Fill tool now offers a freehand "
 "painting mode for interactively coloring within a confined area."
 msgstr ""
-"Инструменты «Краска» и «Линии» Tux Paint теперь поддерживают кисти с"
-" поворотом на основе угла мазка. Эта новая возможность поворота (как и ранее"
-" существовавшие возможности работы с направленными и анимированными кистями)"
-" теперь визуально обозначается в средстве выбора формы кисти. Кроме того,"
-" инструмент «Заливка» теперь предоставляет режим рисования от руки для"
-" интерактивного раскрашивания в пределах ограниченной области."
+"Инструменты «Краска» и «Линии» Tux Paint теперь поддерживают кисти с "
+"поворотом на основе угла мазка. Эта новая возможность поворота (как и ранее "
+"существовавшие возможности работы с направленными и анимированными кистями) "
+"теперь визуально обозначается в средстве выбора формы кисти. Кроме того, "
+"инструмент «Заливка» теперь предоставляет режим рисования от руки для "
+"интерактивного раскрашивания в пределах ограниченной области."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:84
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -584,16 +579,16 @@ msgid ""
 "fun-house mirror. Lastly, Smooth Rainbow provides a more gradual variation "
 "of Tux Paint's classic Rainbow tool."
 msgstr ""
-"В Tux Paint добавлены шесть новых магических инструментов. «Панели» уменьшает"
-" и дублирует рисунок, формируя таблицу 2х2, которая подходит для создания"
-" четырёхпанельных комиксов. «Противоположность» создаёт комплементарные"
-" цвета. «Молния» интерактивно рисует молнию. «Отражение» создаёт на рисунке"
-" отражение, похожее на отражение в озере. «Растяжение» растягивает и сжимает"
-" изображение как зеркало в комнате смеха. Наконец, «Плавные 7 цветов»"
-" предоставляет вариант классического инструмента «7 цветов» Tux Paint,"
-" обеспечивая более плавные переходы."
+"В Tux Paint добавлены шесть новых магических инструментов. «Панели» "
+"уменьшает и дублирует рисунок, формируя таблицу 2х2, которая подходит для "
+"создания четырёхпанельных комиксов. «Противоположность» создаёт "
+"комплементарные цвета. «Молния» интерактивно рисует молнию. «Отражение» "
+"создаёт на рисунке отражение, похожее на отражение в озере. «Растяжение» "
+"растягивает и сжимает изображение как зеркало в комнате смеха. Наконец, "
+"«Плавные 7 цветов» предоставляет вариант классического инструмента «7 "
+"цветов» Tux Paint, обеспечивая более плавные переходы."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -601,61 +596,61 @@ msgid ""
 "television screen. Additionally, Cartoon and Halftone, along with Blocks, "
 "Chalk, and Emboss, now offer the ability to alter the entire image at once!"
 msgstr ""
-"Также был обновлён ряд существующих магических инструментов. Улучшены"
-" следующие инструменты: «Полутоновый оттиск» (имитирует фотографии на"
-" газетной бумаге), «Мультфильм» (делает изображение похожим на рисунок из"
-" мультфильма) и «ТВ» (имитирует экран телевизора). Кроме того, инструменты"
-" «Мультфильм» и «Полутоновый оттиск», а также «Мозаика», «Мел» и «Рельеф»"
-" теперь позволяют изменять всё изображение целиком!"
+"Также был обновлён ряд существующих магических инструментов. Улучшены "
+"следующие инструменты: «Полутоновый оттиск» (имитирует фотографии на "
+"газетной бумаге), «Мультфильм» (делает изображение похожим на рисунок из "
+"мультфильма) и «ТВ» (имитирует экран телевизора). Кроме того, инструменты "
+"«Мультфильм» и «Полутоновый оттиск», а также «Мозаика», «Мел» и «Рельеф» "
+"теперь позволяют изменять всё изображение целиком!"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
 "artistic, and picture decorations — making it easier to find the tool you "
 "need."
 msgstr ""
-"Наконец, магические инструменты теперь сгруппированы в коллекции по принципу"
-" схожести эффектов — рисование, искажение, цветовые фильтры, искривление"
-" картинки, рисование по образцу, художественные эффекты и декорирование"
-" рисунков. Благодаря этому становится проще найти нужный инструмент."
+"Наконец, магические инструменты теперь сгруппированы в коллекции по принципу "
+"схожести эффектов — рисование, искажение, цветовые фильтры, искривление "
+"картинки, рисование по образцу, художественные эффекты и декорирование "
+"рисунков. Благодаря этому становится проще найти нужный инструмент."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
 "the mouse click, while the \"Linear\" fill allows the interactive creation "
 "of gradients at different angles and sizes."
 msgstr ""
-"Инструмент «Заливка» Tux Paint теперь позволяет заполнить область цветовыми"
-" градиентами. «Радиальная» заливка формирует круговой градиент с центром в"
-" месте щелчка мыши, в то время как «Линейная» заливка позволяет в"
-" интерактивном режиме создавать градиенты под разными углами и разных"
-" размеров."
+"Инструмент «Заливка» Tux Paint теперь позволяет заполнить область цветовыми "
+"градиентами. «Радиальная» заливка формирует круговой градиент с центром в "
+"месте щелчка мыши, в то время как «Линейная» заливка позволяет в "
+"интерактивном режиме создавать градиенты под разными углами и разных "
+"размеров."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:87
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
 "canvas with a check pattern, and \"Clone\" allows duplicating parts of the "
 "picture via brush strokes."
 msgstr ""
-"В Tux Paint добавлены новые магические инструменты: «Пикселы» даёт"
-" возможность создавать пиксельные рисунки в стиле ретроигр, «Шахматная доска»"
-" заполняет весь холст шахматным узором, а «Клонирование» позволяет"
-" дублировать части рисунка с помощью мазков кистью."
+"В Tux Paint добавлены новые магические инструменты: «Пикселы» даёт "
+"возможность создавать пиксельные рисунки в стиле ретроигр, «Шахматная доска» "
+"заполняет весь холст шахматным узором, а «Клонирование» позволяет "
+"дублировать части рисунка с помощью мазков кистью."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
 "contact the Tux Paint team."
 msgstr ""
-"Документация пользователя Tux Paint была переработана, что упрощает"
-" локализацию. Тем, кто готов помочь с локализацией, рекомендуется обратиться"
-" к команде Tux Paint."
+"Документация пользователя Tux Paint была переработана, что упрощает "
+"локализацию. Тем, кто готов помочь с локализацией, рекомендуется обратиться "
+"к команде Tux Paint."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -664,55 +659,54 @@ msgid ""
 "be helpful to users of coarse input devices, such as eye-gaze tracking "
 "systems."
 msgstr ""
-"Наконец, были добавлены две новые функции специальных возможностей. Теперь"
-" можно увеличить весь интерфейс пользователя, что удобно для пользователей с"
-" нарушениями зрения и упрощает работу с программой на экранах высокой"
-" плотности. Эта функция, наряду с новой опцией реорганизации цветовой"
-" палитры, также может быть полезна пользователям более грубых устройств ввода"
-" (например, систем отслеживания движений глаз)."
+"Наконец, были добавлены две новые функции специальных возможностей. Теперь "
+"можно увеличить весь интерфейс пользователя, что удобно для пользователей с "
+"нарушениями зрения и упрощает работу с программой на экранах высокой "
+"плотности. Эта функция, наряду с новой опцией реорганизации цветовой "
+"палитры, также может быть полезна пользователям более грубых устройств ввода "
+"(например, систем отслеживания движений глаз)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:99
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
 "making it easier to use in any situation."
 msgstr ""
-"Значительное улучшение инструмента «Формы»: теперь он позволяет выбрать,"
-" следует ли рисовать формы из центра или из угла, что упрощает работу с этим"
-" инструментом во всех ситуациях."
+"Значительное улучшение инструмента «Формы»: теперь он позволяет выбрать, "
+"следует ли рисовать формы из центра или из угла, что упрощает работу с этим "
+"инструментом во всех ситуациях."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:100
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
-"Экранная клавиатура (функция специальных возможностей, доступная при"
-" использовании инструментов «Текст» и «Метка») теперь выглядит крупнее на"
-" больших экранах; "
-"это удобно для пользователей более грубых устройств ввода, таких как системы"
-" отслеживания движений глаз."
+"Экранная клавиатура (функция специальных возможностей, доступная при "
+"использовании инструментов «Текст» и «Метка») теперь выглядит крупнее на "
+"больших экранах; это удобно для пользователей более грубых устройств ввода, "
+"таких как системы отслеживания движений глаз."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:101
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
 msgstr ""
-"Для инструмента «Ластик» добавлены новые (более маленькие) размеры и"
-" реализованы плавные, непрерывные мазки при быстром перемещении указателя"
-" мыши."
+"Для инструмента «Ластик» добавлены новые (более маленькие) размеры и "
+"реализованы плавные, непрерывные мазки при быстром перемещении указателя "
+"мыши."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
 "with others."
 msgstr ""
-"Наконец, в этой новейшей версии добавлены возможности экспорта отдельных"
-" рисунков и GIF-анимаций, что позволяет с лёгкостью делиться картинками,"
-" мультфильмами и слайдшоу с другими пользователями."
+"Наконец, в этой новейшей версии добавлены возможности экспорта отдельных "
+"рисунков и GIF-анимаций, что позволяет с лёгкостью делиться картинками, "
+"мультфильмами и слайдшоу с другими пользователями."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -721,44 +715,44 @@ msgid ""
 "also be placed at the end of that dialog, allowing emphasis of template "
 "images."
 msgstr ""
-"В последней версии инструмент «Заливка», ранее находившийся в разделе «Магия»"
-" Tux Paint, был перемещён на главную панель инструментов; там его проще"
-" найти. Также улучшена его производительность при запуске и вызове"
-" диалогового окна нового рисунка. Кроме того, пункты сплошных цветов фона"
-" можно расположить в конце этого диалога, что позволяет сосредоточить"
-" внимание на шаблонных изображениях."
+"В последней версии инструмент «Заливка», ранее находившийся в разделе "
+"«Магия» Tux Paint, был перемещён на главную панель инструментов; там его "
+"проще найти. Также улучшена его производительность при запуске и вызове "
+"диалогового окна нового рисунка. Кроме того, пункты сплошных цветов фона "
+"можно расположить в конце этого диалога, что позволяет сосредоточить "
+"внимание на шаблонных изображениях."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
 "speaker is available."
 msgstr ""
-"Теперь в Tux Paint также можно отключать стереозвук, что может быть удобно"
-" пользователям с нарушениями слуха или в тех случаях, когда доступен только"
-" один динамик."
+"Теперь в Tux Paint также можно отключать стереозвук, что может быть удобно "
+"пользователям с нарушениями слуха или в тех случаях, когда доступен только "
+"один динамик."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:113
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
 msgstr ""
-"Новые возможности в этой версии: «пипетка», позволяющая выбрать любой цвет на"
-" рисунке с помощью указателя мыши, а также возможность создавать трёх-,"
-" четырёх- и пятиконечные формы звёзд."
+"Новые возможности в этой версии: «пипетка», позволяющая выбрать любой цвет "
+"на рисунке с помощью указателя мыши, а также возможность создавать трёх-, "
+"четырёх- и пятиконечные формы звёзд."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:114
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
 "Kabyle, Urdu, and Devanagari and Perso-Arabic variations of Kashmiri and "
 "Sindhi. Thirty other translations have been updated, as well."
 msgstr ""
-"Последняя версия также включает ряд новых переводов: бенгальский, бодо,"
-" догри, кабильский, урду, а также деванагари и персо-арабские варианты"
-" кашмири и синдхи. Теперь поддерживаются почти 130 языков. Кроме того,"
-" обновлены тридцать других переводов."
+"Последняя версия также включает ряд новых переводов: бенгальский, бодо, "
+"догри, кабильский, урду, а также деванагари и персо-арабские варианты "
+"кашмири и синдхи. Теперь поддерживаются почти 130 языков. Кроме того, "
+"обновлены тридцать других переводов."
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:265 ../shapes.h:266
@@ -792,13 +786,11 @@ msgstr "Пятиугольник"
 
 #. Hexagon shape tool (6 sides)
 #: ../shapes.h:289 ../shapes.h:290
-#| msgid "Hexagon Mosaic"
 msgid "Hexagon"
 msgstr "Шестиугольник"
 
 #. Heptagon (aka septagon) shape tool (7 sides)
 #: ../shapes.h:293 ../shapes.h:294
-#| msgid "Hexagon Mosaic"
 msgid "Heptagon"
 msgstr "Семиугольник"
 
@@ -855,13 +847,11 @@ msgstr "У пятиугольника пять сторон (и углов!)"
 
 #. Description of a hexagon
 #: ../shapes.h:346 ../shapes.h:347
-#| msgid "A pentagon has five sides."
 msgid "A hexagon has six sides."
 msgstr "У шестиугольника шесть сторон (и углов!)"
 
 #. Description of a heptagon
 #: ../shapes.h:350 ../shapes.h:351
-#| msgid "A pentagon has five sides."
 msgid "A heptagon has seven sides."
 msgstr "У семиугольника семь сторон (и углов!)"
 
@@ -892,27 +882,21 @@ msgid "A star with 5 points."
 msgstr "Звезда с 5 лучами."
 
 #: ../shapes.h:433
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want. Move around to rotate it, and click again to draw it."
 msgstr ""
-"Выберите форму. Щёлкните, чтобы начать рисовать, и ведите мышью до получения"
-" нужного размера и формы. Покрутите форму, затем снова щёлкните, чтобы"
-" нарисовать её."
+"Выберите форму. Щёлкните, чтобы начать рисовать, и ведите мышью до получения "
+"нужного размера и формы. Покрутите форму, затем снова щёлкните, чтобы "
+"нарисовать её."
 
 #: ../shapes.h:434
-#| msgid ""
-#| "Pick a shape. Click to pick the center, drag, then let go when it is the "
-#| "size you want. Move around to rotate it, and click to draw it."
 msgid ""
 "Pick a shape. Click to start drawing, drag, and let go when it is the size "
 "and shape you want."
 msgstr ""
-"Выберите форму. Щёлкните, чтобы начать рисовать, и ведите мышью до получения"
-" нужного размера и формы."
+"Выберите форму. Щёлкните, чтобы начать рисовать, и ведите мышью до получения "
+"нужного размера и формы."
 
 #: ../shapes.h:440
 msgid "Draw shapes from the center."
@@ -966,7 +950,6 @@ msgstr "Магия"
 
 #. Title of fill selector (buttons down the right for fill tool)
 #: ../titles.h:81
-#| msgid "Fill"
 msgid "Fills"
 msgstr "Заливки"
 
@@ -1023,7 +1006,7 @@ msgstr "Создать"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9520
+#: ../tools.h:97 ../tuxpaint.c:9528
 msgid "Open"
 msgstr "Открыть"
 
@@ -1063,25 +1046,19 @@ msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Выберите стиль текста. Щёлкните по рисунку и печатайте. Нажмите  "
-"[Enter] или [Tab] для завершения."
+"Выберите стиль текста. Щёлкните по рисунку и печатайте. Нажмите  [Enter] или "
+"[Tab] для завершения."
 
 #: ../tools.h:131
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it and change its "
-#| "text style."
 msgid ""
 "Choose a style of text. Click on your drawing and you can start typing. "
 "Press [Enter] or [Tab] to complete the text. By using the selector button "
 "and clicking an existing label, you can move it, edit it, and change its "
 "text style."
 msgstr ""
-"Выберите стиль текста. Щёлкните по рисунку и печатайте. Нажмите "
-"[Enter] или [Tab] для завершения. Используя кнопку выбора и нажимая на "
-"существующие метки, можно перемещать и редактировать их, а также изменять их"
-" стиль текста."
+"Выберите стиль текста. Щёлкните по рисунку и печатайте. Нажмите [Enter] или "
+"[Tab] для завершения. Используя кнопку выбора и нажимая на существующие "
+"метки, можно перемещать и редактировать их, а также изменять их стиль текста."
 
 #. Magic tool instruction
 #: ../tools.h:137
@@ -1135,7 +1112,6 @@ msgstr "Отпустите кнопку, чтобы закончить лини�
 
 #: ../tools.h:166
 #, c-format
-#| msgid "Let go of the button to complete the line."
 msgid ""
 "Let go of the button to complete the line. (Your line’s angle is %.0f "
 "degrees.)"
@@ -1149,7 +1125,6 @@ msgstr "Держите кнопку, чтобы растянуть форму."
 
 #: ../tools.h:170
 #, c-format
-#| msgid "Hold the button to stretch the shape."
 msgid ""
 "Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
 msgstr ""
@@ -1162,13 +1137,12 @@ msgstr "Покрутите форму, затем щёлкните, чтобы �
 
 #: ../tools.h:174
 #, c-format
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid ""
 "Move the mouse to rotate the shape. Click to draw it. (It is rotated %d "
 "degrees.)"
 msgstr ""
-"Покрутите форму, затем щёлкните, чтобы нарисовать её. (Форма повёрнута на %d"
-" град.)"
+"Покрутите форму, затем щёлкните, чтобы нарисовать её. (Форма повёрнута на %d "
+"град.)"
 
 #. Notification that 'New' action was aborted (current image would have been lost)
 #: ../tools.h:177
@@ -1181,9 +1155,9 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
-"Щёлкните по существующей метке (или нажмите [Tab] для циклического перебора"
-" меток и [Enter] для выбора метки). После этого метку можно будет переместить"
-" и отредактировать, а также изменить её стиль текста."
+"Щёлкните по существующей метке (или нажмите [Tab] для циклического перебора "
+"меток и [Enter] для выбора метки). После этого метку можно будет переместить "
+"и отредактировать, а также изменить её стиль текста."
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:183
@@ -1192,9 +1166,9 @@ msgid ""
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
 msgstr ""
-"Щёлкните по картинке, чтобы изменить положение этой метки. Чтобы изменить"
-" текст метки, введите другой текст. Воспользуйтесь параметрами для изменения"
-" стиля текста. Для завершения редактирования нажмите [Enter] или [Tab]."
+"Щёлкните по картинке, чтобы изменить положение этой метки. Чтобы изменить "
+"текст метки, введите другой текст. Воспользуйтесь параметрами для изменения "
+"стиля текста. Для завершения редактирования нажмите [Enter] или [Tab]."
 
 #. Instructions to show when the Label tool's apply mode is activated
 #: ../tools.h:186
@@ -1202,8 +1176,8 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
 msgstr ""
-"Щёлкните по существующей метке (или нажмите [Tab] для циклического перебора"
-" меток и [Enter] для выбора метки), чтобы зафиксировать текст на холсте."
+"Щёлкните по существующей метке (или нажмите [Tab] для циклического перебора "
+"меток и [Enter] для выбора метки), чтобы зафиксировать текст на холсте."
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:189
@@ -1219,8 +1193,8 @@ msgid ""
 "This brush changes depending on the angle, and is animated; its shape "
 "changes as you draw!"
 msgstr ""
-"Эта кисть меняется в зависимости от угла и анимирована; её форма меняется во"
-" время рисования!"
+"Эта кисть меняется в зависимости от угла и анимирована; её форма меняется во "
+"время рисования!"
 
 #: ../tools.h:193
 msgid "This brush's spacing is now 1 pixel!"
@@ -1231,8 +1205,8 @@ msgstr "Теперь интервал для этой кисти равен од
 msgid ""
 "This brush's spacing is now about %1$d/%2$d the size of the brush shape."
 msgstr ""
-"Теперь интервал для этой кисти приблизительно равен %1$d/%2$d размера её"
-" формы."
+"Теперь интервал для этой кисти приблизительно равен %1$d/%2$d размера её "
+"формы."
 
 #: ../tools.h:195
 msgid "This brush's spacing is now about the size of the brush shape."
@@ -1242,8 +1216,8 @@ msgstr "Теперь интервал для этой кисти приблиз�
 #, c-format
 msgid "This brush's spacing is now about %d times as big as the brush shape."
 msgstr ""
-"Теперь интервал для этой кисти приблизительно в %d раз(а) больше размера её"
-" формы."
+"Теперь интервал для этой кисти приблизительно в %d раз(а) больше размера её "
+"формы."
 
 #: ../tools.h:197
 #, c-format
@@ -1251,337 +1225,328 @@ msgid ""
 "This brush's spacing is now about %1$d %2$d/%3$d times as big as the brush "
 "shape."
 msgstr ""
-"Теперь интервал для этой кисти приблизительно в %1$d %2$d/%3$d раз(а) больше"
-" размера её формы."
+"Теперь интервал для этой кисти приблизительно в %1$d %2$d/%3$d раз(а) больше "
+"размера её формы."
 
 #. Instructions to show when rotating stamps
 #: ../tools.h:200
 #, c-format
-#| msgid "Move the mouse to rotate the shape. Click to draw it."
 msgid ""
 "Drag the mouse to rotate the stamp. Click to draw it. (It is rotated %d "
 "degrees.)"
 msgstr ""
-"Ведите мышью по картинке, чтобы повернуть штамп. Щёлкните, чтобы нарисовать"
-" его. (Штамп повёрнут на %d град.)"
+"Ведите мышью по картинке, чтобы повернуть штамп. Щёлкните, чтобы нарисовать "
+"его. (Штамп повёрнут на %d град.)"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2422
+#: ../tuxpaint.c:2425
 msgid "Do you really want to quit?"
 msgstr "Действительно выйти?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2425
+#: ../tuxpaint.c:2428
 msgid "Yes, I’m done!"
 msgstr "Да, работа закончена!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2428 ../tuxpaint.c:2455
+#: ../tuxpaint.c:2431 ../tuxpaint.c:2458
 msgid "No, take me back!"
 msgstr "Нет, нужно продолжить!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2432
+#: ../tuxpaint.c:2435
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Если выполнить выход, картинка будет потеряна! Сохранить её?"
 
-#: ../tuxpaint.c:2433 ../tuxpaint.c:2438
+#: ../tuxpaint.c:2436 ../tuxpaint.c:2441
 msgid "Yes, save it!"
 msgstr "Да, сохранить!"
 
-#: ../tuxpaint.c:2434 ../tuxpaint.c:2439
+#: ../tuxpaint.c:2437 ../tuxpaint.c:2442
 msgid "No, don’t bother saving!"
 msgstr "Нет, не нужно сохранять!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2437
+#: ../tuxpaint.c:2440
 msgid "Save your picture first?"
 msgstr "Сохранить сначала картинку?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2442
+#: ../tuxpaint.c:2445
 msgid "Can’t open that picture!"
 msgstr "Не удалось открыть эту картинку!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2445 ../tuxpaint.c:2450 ../tuxpaint.c:2459 ../tuxpaint.c:2466
-#: ../tuxpaint.c:2475 ../tuxpaint.c:2480
+#: ../tuxpaint.c:2448 ../tuxpaint.c:2453 ../tuxpaint.c:2462 ../tuxpaint.c:2469
+#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
 msgid "OK"
 msgstr "Хорошо"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2449
+#: ../tuxpaint.c:2452
 msgid "There are no saved files!"
 msgstr "Нет сохранённых картинок!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2453
+#: ../tuxpaint.c:2456
 msgid "Print your picture now?"
 msgstr "Напечатать картинку?"
 
-#: ../tuxpaint.c:2454
+#: ../tuxpaint.c:2457
 msgid "Yes, print it!"
 msgstr "Да, распечатать!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2458
+#: ../tuxpaint.c:2461
 msgid "Your picture has been printed!"
 msgstr "Картинка распечатана!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2462
+#: ../tuxpaint.c:2465
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Извините! Не удалось распечатать картинку!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2468
 msgid "You can’t print yet!"
 msgstr "Вы пока не можете печатать!"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2469
+#: ../tuxpaint.c:2472
 msgid "Erase this picture?"
 msgstr "Удалить эту картинку?"
 
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2473
 msgid "Yes, erase it!"
 msgstr "Да, удалить!"
 
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2474
 msgid "No, don’t erase it!"
 msgstr "Нет, не удалять!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2474
+#: ../tuxpaint.c:2477
 msgid "Remember to use the left mouse button!"
 msgstr "Используйте только левую кнопку мыши!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2478
-#| msgid "Your picture has been printed!"
+#: ../tuxpaint.c:2481
 msgid "Your picture has been exported!"
 msgstr "Картинка экспортирована!"
 
-#: ../tuxpaint.c:2479
-#| msgid "Your picture has been printed!"
+#: ../tuxpaint.c:2482
 msgid "Your slideshow GIF has been exported!"
 msgstr "Экспорт GIF со слайдшоу выполнен!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2483
-#| msgid "Sorry! Your picture could not be printed!"
+#: ../tuxpaint.c:2486
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Извините! Не удалось экспортировать картинку!"
 
-#: ../tuxpaint.c:2484
-#| msgid "Sorry! Your picture could not be printed!"
+#: ../tuxpaint.c:2487
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Извините! Не удалось выполнить экспорт GIF со слайдшоу!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2488
+#: ../tuxpaint.c:2491
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Выберите картинки, а потом нажмите кнопку «Запуск»."
 
 # Звук можно заглушить, используя клавиатурное сокращение.
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2797
+#: ../tuxpaint.c:2800
 msgid "Sound muted."
 msgstr "Звук отключён."
 
 # Звук можно включить, используя клавиатурное сокращение.
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2802
+#: ../tuxpaint.c:2805
 msgid "Sound unmuted."
 msgstr "Звук включён."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3647
+#: ../tuxpaint.c:3650
 msgid "Please wait…"
 msgstr "Пожалуйста, подождите..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9523
+#: ../tuxpaint.c:9531
 msgid "Erase"
 msgstr "Удалить"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9526
+#: ../tuxpaint.c:9534
 msgid "Slides"
 msgstr "Слайды"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9529
+#: ../tuxpaint.c:9537
 msgid "Export"
 msgstr "Экспорт"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9532
+#: ../tuxpaint.c:9540
 msgid "Back"
 msgstr "Назад"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9535
+#: ../tuxpaint.c:9543
 msgid "Play"
 msgstr "Запуск"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9538
+#: ../tuxpaint.c:9546
 msgid "GIF Export"
 msgstr "Экспорт GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9541
+#: ../tuxpaint.c:9549
 msgid "Next"
 msgstr "Далее"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9544
+#: ../tuxpaint.c:9552
 msgid "Clear"
 msgstr "Очистить"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10482 ../tuxpaint.c:10485 ../tuxpaint.c:10486
+#: ../tuxpaint.c:10490 ../tuxpaint.c:10493 ../tuxpaint.c:10494
 msgid "Aa"
 msgstr "Аа"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14378
+#: ../tuxpaint.c:14390
 msgid "Yes"
 msgstr "Да"
 
-#: ../tuxpaint.c:14382
+#: ../tuxpaint.c:14394
 msgid "No"
 msgstr "Нет"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15649
+#: ../tuxpaint.c:15661
 msgid "Replace the picture with your changes?"
 msgstr "Заменить старую картинку?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15653
+#: ../tuxpaint.c:15665
 msgid "Yes, replace the old one!"
 msgstr "Да, заменить старую картинку!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15657
+#: ../tuxpaint.c:15669
 msgid "No, save a new file!"
 msgstr "Нет, сохранить в новый файл!"
 
 #. Let user choose an image:
 #. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:16923
+#: ../tuxpaint.c:16935
 msgid "Choose the picture you want, then click “Open”."
 msgstr "Выберите картинку, а потом щёлкните «Открыть»."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18512
+#: ../tuxpaint.c:18524
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 "Выберите два или больше рисунков для преобразования в анимированный GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24507
+#: ../tuxpaint.c:24522
 msgid "red"
 msgstr "красный"
 
 # При выборе жёлтого (255, 255, 0) цвета
-#: ../tuxpaint.c:24508
-#| msgid "Yellow!"
+#: ../tuxpaint.c:24523
 msgid "yellow"
 msgstr "жёлтый"
 
 # При выборе голубого (138, 168, 205) цвета
-#: ../tuxpaint.c:24509
-#| msgid "Sky blue!"
+#: ../tuxpaint.c:24524
 msgid "blue"
 msgstr "синий"
 
 # При выборе белого (255, 255, 255) цвета
-#: ../tuxpaint.c:24510
-#| msgid "White!"
+#: ../tuxpaint.c:24525
 msgid "white"
 msgstr "белый"
 
-#: ../tuxpaint.c:24511
+#: ../tuxpaint.c:24526
 msgid "grey"
 msgstr "серый"
 
 # При выборе чёрного (0, 0, 0) цвета
-#: ../tuxpaint.c:24512
-#| msgid "Black!"
+#: ../tuxpaint.c:24527
 msgid "black"
 msgstr "чёрный"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24517
+#: ../tuxpaint.c:24532
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Ваш цвет: %1$s %2$s."
 
-#: ../tuxpaint.c:24518
+#: ../tuxpaint.c:24533
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Ваш цвет: %1$s %2$s и %3$s %4$s."
 
-#: ../tuxpaint.c:24519
+#: ../tuxpaint.c:24534
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Ваш цвет: %1$s %2$s, %3$s %4$s и %5$s %6$s."
 
-#: ../tuxpaint.c:24520
+#: ../tuxpaint.c:24535
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Ваш цвет: %1$s %2$s, %3$s %4$s, %5$s %6$s и %7$s %8$s."
 
-#: ../tuxpaint.c:24521
+#: ../tuxpaint.c:24536
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "Ваш цвет: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s и %9$s %10$s."
 
-#: ../tuxpaint.c:24522
+#: ../tuxpaint.c:24537
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
 "%11$s %12$s."
 msgstr ""
-"Ваш цвет: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s и "
-"%11$s %12$s."
+"Ваш цвет: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s и %11$s "
+"%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25302 ../tuxpaint.c:25307
+#: ../tuxpaint.c:25317 ../tuxpaint.c:25322
 msgid "entirely"
 msgstr "полностью"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28397
+#: ../tuxpaint.c:28415
 msgid "Select a color from your drawing."
 msgstr "Выберите цвет для рисования."
 
-#: ../tuxpaint.c:28408
+#: ../tuxpaint.c:28426
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
-"Выберите цвет. Оттенки идут сверху вниз. Насыщенность или интенсивность —"
-" слева (тускло) направо (ярко). Значение (освещённость или затенённость):"
-" серая панель."
+"Выберите цвет. Оттенки идут сверху вниз. Насыщенность или интенсивность — "
+"слева (тускло) направо (ярко). Значение (освещённость или затенённость): "
+"серая панель."
 
-#: ../tuxpaint.c:28422
+#: ../tuxpaint.c:28440
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
 msgstr ""
-"Щёлкните по основным цветам (красному, жёлтому и синему), белому (для"
-" придания оттенка), серому (для тонирования) и чёрному (для добавления"
-" затенённости), чтобы смешать их в новый цвет."
+"Щёлкните по основным цветам (красному, жёлтому и синему), белому (для "
+"придания оттенка), серому (для тонирования) и чёрному (для добавления "
+"затенённости), чтобы смешать их в новый цвет."
 
 #: ../tuxpaint.desktop.in:9 ../tuxpaint-fullscreen.desktop.in:9
 msgid "Drawing program"
@@ -1613,8 +1578,8 @@ msgid ""
 "perpendicularly to open or close the blinds."
 msgstr ""
 "Щёлкните около края рисунка, чтобы повесить над ним оконные шторы. "
-"Перемещайте указатель мыши в перпендикулярном направлении, чтобы открыть или"
-" закрыть шторы."
+"Перемещайте указатель мыши в перпендикулярном направлении, чтобы открыть или "
+"закрыть шторы."
 
 #: ../../magic/src/blocks_etc.c:136
 msgid "Blocks"
@@ -1634,7 +1599,6 @@ msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы превратить её части в мозаику."
 
 #: ../../magic/src/blocks_etc.c:162
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture blocky."
 msgstr "Щёлкните, чтобы вся картинка стала мозаичной."
 
@@ -1646,8 +1610,6 @@ msgstr ""
 "мелом."
 
 #: ../../magic/src/blocks_etc.c:173
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Щёлкните, чтобы превратить всю картинку в рисунок мелом."
 
@@ -1656,7 +1618,6 @@ msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы покрыть её части каплями."
 
 #: ../../magic/src/blocks_etc.c:184
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture drip."
 msgstr "Щёлкните, чтобы покрыть каплями всю картинку."
 
@@ -1665,8 +1626,6 @@ msgid "Bloom"
 msgstr "Свечение"
 
 #: ../../magic/src/bloom.c:119
-#| msgid ""
-#| "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
@@ -1674,7 +1633,6 @@ msgstr ""
 "свечения."
 
 #: ../../magic/src/bloom.c:123
-#| msgid "Click to add a mosaic effect to your entire picture."
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr "Щёлкните, чтобы добавить эффект свечения ко всей картинке."
 
@@ -1705,7 +1663,6 @@ msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы нарисовать маленькие кирпичи."
 
 #: ../../magic/src/bricks.c:156
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw bricks."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать кирпичи."
 
@@ -1727,8 +1684,6 @@ msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы превратить её в мультфильм."
 
 #: ../../magic/src/cartoon.c:129
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Щёлкните, чтобы превратить всю картинку в мультфильм."
 
@@ -1737,7 +1692,6 @@ msgid "Checkerboard"
 msgstr "Шахматная доска"
 
 #: ../../magic/src/checkerboard.c:125
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы заполнить холст шахматным узором."
@@ -1751,16 +1705,14 @@ msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
 msgstr ""
-"Щёлкните один раз, чтобы выбрать место для клонирования. Щёлкните снова и"
-" ведите мышью по картинке, чтобы клонировать эту её часть."
+"Щёлкните один раз, чтобы выбрать место для клонирования. Щёлкните снова и "
+"ведите мышью по картинке, чтобы клонировать эту её часть."
 
 #: ../../magic/src/colorsep.c:39
-#| msgid "Glass Tile"
 msgid "3D Glasses"
 msgstr "3D-очки"
 
 #: ../../magic/src/colorsep.c:40
-#| msgid "Color Shift"
 msgid "Color Sep."
 msgstr "Цветоделение"
 
@@ -1773,16 +1725,14 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
-"Щёлкните и ведите мышью влево и вправо по картинке, чтобы разделить красный и"
-" синий и создать анаглифы, которые можно будет просматривать в 3D-очках!"
+"Щёлкните и ведите мышью влево и вправо по картинке, чтобы разделить красный "
+"и синий и создать анаглифы, которые можно будет просматривать в 3D-очках!"
 
 #: ../../magic/src/colorsep.c:47
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to separate your picture's colors."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы разделить цвета на ней."
 
 #: ../../magic/src/colorsep.c:48
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to simulate double vision."
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы имитировать двоение в глазах."
@@ -1813,7 +1763,6 @@ msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы сделать её части рельефными."
 
 #: ../../magic/src/emboss.c:122
-#| msgid "Click to sharpen the entire picture."
 msgid "Click to emboss the entire picture."
 msgstr "Щёлкните, чтобы сделать всю картинку рельефной."
 
@@ -1834,12 +1783,10 @@ msgid "Saturate"
 msgstr "Насыщение"
 
 #: ../../magic/src/fade_darken.c:51
-#| msgid "Xor Colors"
 msgid "Remove Color"
 msgstr "Удаление цвета"
 
 #: ../../magic/src/fade_darken.c:52
-#| msgid "Colors"
 msgid "Keep Color"
 msgstr "Сохранение цвета"
 
@@ -1860,67 +1807,53 @@ msgid "Click to darken your entire picture."
 msgstr "Щёлкните, чтобы затемнить всю картинку."
 
 #: ../../magic/src/fade_darken.c:63
-#| msgid "Click and drag the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы обесцветить её части."
 
 #: ../../magic/src/fade_darken.c:64
-#| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "Щёлкните, чтобы обесцветить всю картинку."
 
 #: ../../magic/src/fade_darken.c:66
-#| msgid "Click and drag the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы сделать насыщенными её части."
 
 #: ../../magic/src/fade_darken.c:67
-#| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "Щёлкните, чтобы сделать насыщенной всю картинку."
 
 #: ../../magic/src/fade_darken.c:69
-#| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы полностью обесцветить те части"
-" рисунка, которые соответствуют выбранному цвету."
+"Щёлкните и ведите мышью по картинке, чтобы полностью обесцветить те части "
+"рисунка, которые соответствуют выбранному цвету."
 
 #: ../../magic/src/fade_darken.c:70
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
 msgstr ""
-"Щёлкните, чтобы полностью обесцветить те части рисунка, которые соответствуют"
-" выбранному цвету."
+"Щёлкните, чтобы полностью обесцветить те части рисунка, которые "
+"соответствуют выбранному цвету."
 
 #: ../../magic/src/fade_darken.c:74
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы полностью обесцветить те части"
-" рисунка, которые не соответствуют выбранному цвету."
+"Щёлкните и ведите мышью по картинке, чтобы полностью обесцветить те части "
+"рисунка, которые не соответствуют выбранному цвету."
 
 #: ../../magic/src/fade_darken.c:75
-#| msgid ""
-#| "Click and drag the mouse around to turn parts of your picture into white "
-#| "and a color you choose."
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
 msgstr ""
-"Щёлкните, чтобы полностью обесцветить те части рисунка, которые не"
-" соответствуют выбранному цвету."
+"Щёлкните, чтобы полностью обесцветить те части рисунка, которые не "
+"соответствуют выбранному цвету."
 
 #: ../../magic/src/fisheye.c:111
 msgid "Fisheye"
@@ -1962,7 +1895,6 @@ msgid "Fretwork"
 msgstr "Узор"
 
 #: ../../magic/src/fretwork.c:201
-#| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы нарисовать повторяющиеся узоры."
@@ -1990,16 +1922,16 @@ msgid ""
 "Click to place a large googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
-"Щёлкните для размещения большого игрушечного глаза, проведите мышью по"
-" картинке и отпустите кнопку, чтобы глаз смотрел в указанном направлении."
+"Щёлкните для размещения большого игрушечного глаза, проведите мышью по "
+"картинке и отпустите кнопку, чтобы глаз смотрел в указанном направлении."
 
 #: ../../magic/src/googlyeyes.c:25
 msgid ""
 "Click to place a small googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
-"Щёлкните для размещения маленького игрушечного глаза, проведите мышью по"
-" картинке и отпустите кнопку, чтобы глаз смотрел в указанном направлении."
+"Щёлкните для размещения маленького игрушечного глаза, проведите мышью по "
+"картинке и отпустите кнопку, чтобы глаз смотрел в указанном направлении."
 
 #: ../../magic/src/googlyeyes.c:205
 msgid "Googly Eyes"
@@ -2010,8 +1942,8 @@ msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
 msgstr ""
-"Щёлкните для размещения игрушечного глаза, проведите мышью по картинке и"
-" отпустите кнопку, чтобы глаз смотрел в указанном направлении."
+"Щёлкните для размещения игрушечного глаза, проведите мышью по картинке и "
+"отпустите кнопку, чтобы глаз смотрел в указанном направлении."
 
 #: ../../magic/src/grass.c:111
 msgid "Grass"
@@ -2033,35 +1965,28 @@ msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы превратить рисунок в газету."
 
 #: ../../magic/src/halftone.c:51
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click to turn your drawing into a newspaper."
 msgstr "Щёлкните, чтобы превратить рисунок в газету."
 
 #: ../../magic/src/kaleidox.c:40
-#| msgid "Kaleidoscope"
 msgid "Kaleido-4"
 msgstr "Калейдоскоп-4"
 
 #: ../../magic/src/kaleidox.c:41
-#| msgid "Kaleidoscope"
 msgid "Kaleido-6"
 msgstr "Калейдоскоп-6"
 
 #: ../../magic/src/kaleidox.c:42
-#| msgid "Kaleidoscope"
 msgid "Kaleido-8"
 msgstr "Калейдоскоп-8"
 
 #: ../../magic/src/kaleidox.c:46 ../../magic/src/kaleidox.c:47
 #: ../../magic/src/kaleidox.c:48
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы посмотреть на неё через"
-" калейдоскоп."
+"Щёлкните и ведите мышью по картинке, чтобы посмотреть на неё через "
+"калейдоскоп."
 
 #: ../../magic/src/kalidescope.c:127
 msgid "Symmetric Left/Right"
@@ -2109,8 +2034,8 @@ msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы нарисовать на ней симметричный"
-" узор."
+"Щёлкните и ведите мышью по картинке, чтобы нарисовать на ней симметричный "
+"узор."
 
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:179
@@ -2129,29 +2054,24 @@ msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать луч света."
 
 #: ../../magic/src/lightning.c:84
-#| msgid "Lighten"
 msgid "Lightning"
 msgstr "Молния"
 
 #: ../../magic/src/lightning.c:94
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr ""
-"Щёлкните, проведите мышью по картинке и отпустите кнопку, чтобы нарисовать"
-" молнию между двумя точками."
+"Щёлкните, проведите мышью по картинке и отпустите кнопку, чтобы нарисовать "
+"молнию между двумя точками."
 
 #: ../../magic/src/maze.c:110
 msgid "Maze"
 msgstr "Лабиринт"
 
 #: ../../magic/src/maze.c:121
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to paint a maze on your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать на ней лабиринт."
 
 #: ../../magic/src/maze.c:123
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn your entire picture into a maze."
 msgstr "Щёлкните, чтобы превратить всю картинку в лабиринт."
 
@@ -2258,23 +2178,20 @@ msgid "Click to turn your painting into its negative."
 msgstr "Щёлкните, чтобы превратить рисунок в негатив."
 
 #: ../../magic/src/negative.c:87
-#| msgid ""
-#| "Click and drag the mouse around to change the color of parts of your "
-#| "picture."
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы заменить цвета на противоположные"
-" (комплементарные)."
+"Щёлкните и ведите мышью по картинке, чтобы заменить цвета на противоположные "
+"(комплементарные)."
 
 #: ../../magic/src/negative.c:88
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
 msgstr ""
-"Щёлкните, чтобы заменить все цвета на рисунке на противоположные"
-" (комплементарные)."
+"Щёлкните, чтобы заменить все цвета на рисунке на противоположные "
+"(комплементарные)."
 
 #: ../../magic/src/noise.c:65
 msgid "Noise"
@@ -2297,7 +2214,6 @@ msgid "Panels"
 msgstr "Панели"
 
 #: ../../magic/src/perspective.c:167
-#| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Плиточное масштабирование"
 
@@ -2312,42 +2228,38 @@ msgstr "Рывок"
 #: ../../magic/src/perspective.c:173
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
-"Щёлкните по углу и ведите мышью, чтобы растянуть рисунок в нужном направлении."
+"Щёлкните по углу и ведите мышью, чтобы растянуть рисунок в нужном "
+"направлении."
 
 #: ../../magic/src/perspective.c:175
-#| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Щёлкните, чтобы превратить рисунок в панели 2х2."
 
 #: ../../magic/src/perspective.c:177
-#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
 msgstr ""
-"Щёлкните и ведите мышью по картинке вверх для её увеличения или вниз для "
-"её уменьшения и создания плиток."
+"Щёлкните и ведите мышью по картинке вверх для её увеличения или вниз для её "
+"уменьшения и создания плиток."
 
 #: ../../magic/src/perspective.c:179
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
-"Щёлкните и ведите мышью по картинке вверх для её увеличения или вниз для "
-"её уменьшения."
+"Щёлкните и ведите мышью по картинке вверх для её увеличения или вниз для её "
+"уменьшения."
 
 #: ../../magic/src/perspective.c:181
-#| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
-"Щёлкните и ведите мышью по картинке вверх для создания эффекта входа или вниз"
-" для "
-"создания эффекта выхода."
+"Щёлкните и ведите мышью по картинке вверх для создания эффекта входа или "
+"вниз для создания эффекта выхода."
 
 #: ../../magic/src/pixels.c:114
 msgid "Pixels"
 msgstr "Пикселы"
 
 #: ../../magic/src/pixels.c:126
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw large pixels."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать большие пикселы."
 
@@ -2377,12 +2289,10 @@ msgid "Rainbow"
 msgstr "7 цветов"
 
 #: ../../magic/src/rainbow.c:158
-#| msgid "Rainbow"
 msgid "Smooth Rainbow"
 msgstr "Плавные 7 цветов"
 
 #: ../../magic/src/rainbow.c:162
-#| msgid "Rainbow"
 msgid "Rainbow Cycle"
 msgstr "Круг из 7 цветов"
 
@@ -2415,15 +2325,14 @@ msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
-"Щёлкните, чтобы указать начало радуги, и ведите мышью по картинке до её конца."
+"Щёлкните, чтобы указать начало радуги, и ведите мышью по картинке до её "
+"конца."
 
 #: ../../magic/src/reflection.c:114
 msgid "Reflection"
 msgstr "Отражение"
 
 #: ../../magic/src/reflection.c:125
-#| msgid ""
-#| "Click and drag the mouse to add a mosaic effect to parts of your picture."
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы добавить на неё отражение."
 
@@ -2539,14 +2448,11 @@ msgid "Stretch"
 msgstr "Растяжение"
 
 #: ../../magic/src/stretch.c:128
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы растянуть её часть по вертикали"
-" или по горизонтали."
+"Щёлкните и ведите мышью по картинке, чтобы растянуть её часть по вертикали "
+"или по горизонтали."
 
 #: ../../magic/src/string.c:136
 msgid "String edges"
@@ -2582,7 +2488,6 @@ msgid "Draw string art arrows with free angles."
 msgstr "Рисуйте стрелки из нитей под любым углом."
 
 #: ../../magic/src/swirls.c:31
-#| msgid "Circle"
 msgid "Circles"
 msgstr "Круги"
 
@@ -2595,38 +2500,27 @@ msgid "Fur"
 msgstr "Шерсть"
 
 #: ../../magic/src/swirls.c:38
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to transform parts of your picture to circular brushstrokes."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы превратить её части в круги из"
-" мазков кистью."
+"Щёлкните и ведите мышью по картинке, чтобы превратить её части в круги из "
+"мазков кистью."
 
 #: ../../magic/src/swirls.c:39
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn your entire picture into circular brushstrokes."
 msgstr "Щёлкните, чтобы превратить всю картинку в круги из мазков кистью."
 
 #: ../../magic/src/swirls.c:41
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid "Click and drag to transform parts of your picture to brushstroke rays."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы превратить её части в лучи из"
-" мазков кистью."
+"Щёлкните и ведите мышью по картинке, чтобы превратить её части в лучи из "
+"мазков кистью."
 
 #: ../../magic/src/swirls.c:42
-#| msgid ""
-#| "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn your entire picture into brushstroke rays."
 msgstr "Щёлкните, чтобы превратить всю картинку в лучи из мазков кистью."
 
 #: ../../magic/src/swirls.c:44
-#| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to add fur to your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы добавить на неё шерсть."
 
@@ -2690,8 +2584,7 @@ msgid ""
 "Click and drag to make parts of your picture look like they are on "
 "television."
 msgstr ""
-"Щёлкните и ведите мышью по картинке, чтобы она выглядела, как "
-"телевизионная."
+"Щёлкните и ведите мышью по картинке, чтобы она выглядела, как телевизионная."
 
 #: ../../magic/src/tv.c:132
 msgid "Click to make your picture look like it's on television."
@@ -2721,9 +2614,9 @@ msgid ""
 "waves, the bottom for taller waves, the left for small waves, and the right "
 "for long waves."
 msgstr ""
-"Щёлкните, чтобы нарисовать вертикальные волны. Ведите мышью вверх, чтобы"
-" сделать "
-"волны короче, вниз — выше, налево — для коротких волн, направо — для длинных."
+"Щёлкните, чтобы нарисовать вертикальные волны. Ведите мышью вверх, чтобы "
+"сделать волны короче, вниз — выше, налево — для коротких волн, направо — для "
+"длинных."
 
 #: ../../magic/src/xor.c:99
 msgid "Xor Colors"

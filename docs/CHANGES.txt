@@ -6,6 +6,12 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
+2023.May.20 (0.9.31)
+  * Localization Updates:
+    ---------------------
+    * Russian translaton
+      Olesya Gerasimenko <translation-team@basealt.ru>
+
 2023.May.18 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------

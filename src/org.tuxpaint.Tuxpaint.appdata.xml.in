@@ -43,6 +43,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.9.31" date="2023-05-20">
+      <description>
+        <p>TBD</p>
+      </description>
+    </release>
     <release version="0.9.30" date="2023-05-14">
       <description>
         <p>Many Magic tools now offer size settings.</p>
