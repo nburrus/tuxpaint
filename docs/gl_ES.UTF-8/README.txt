@@ -1,5 +1,5 @@
                                    Tux Paint
-                                 versión 0.9.30
+                                 versión 0.9.31
 
                    Un sinxelo programa de debuxo para cativos
 
@@ -92,18 +92,10 @@ Licenza
 
    Consulte o texto completo da licenza GPL en COPYING.txt.
 
-What's New in Tux Paint version 0.9.30?
+What's New in Tux Paint version 0.9.31?
 
-   Magic Tool sizes
-           Many Magic Tools will now offer an option to adjust the size of
-           the effect. For example, thinner lines in the symmetry painting
-           tools, finer or coarser application of effects like blur, or a
-           wider range of shapes. (This feature may be deactivated using the
-           "nomagicsizes" simplification option.)
-
-   Word-wrapped button labels
-           When possible, longer labels shown on Tux Paint's UI buttons will
-           be word-wrapped, to help improve legibility.
+   TBD
+           TBD
 
    See CHANGES.txt for the complete list of changes.
 
