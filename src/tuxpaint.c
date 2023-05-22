@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 12, 2023
+  June 14, 2002 - May 22, 2023
 */
 
 #include "platform.h"
@@ -1967,12 +1967,12 @@ static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
   img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_rotate, img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
-#define NUM_ERASERS 16          /* How many sizes of erasers
+#define NUM_ERASERS 24          /* How many sizes of erasers
                                    (from ERASER_MIN to _MAX as squares, then again
                                    from ERASER_MIN to _MAX as circles;
                                    must be a multiple of 2;
                                    best if a multiple of 4, since selector is 2 buttons across) */
-#define NUM_ERASER_SIZES (NUM_ERASERS / 2)
+#define NUM_ERASER_SIZES (NUM_ERASERS / 3)
 #define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
@@ -6586,7 +6586,7 @@ static void mainloop(void)
             sz = calc_eraser_size(cur_eraser);
             if (cur_eraser >= NUM_ERASER_SIZES)
             {
-              /* Circle eraser */
+              /* Circle eraser (sharp & fuzzy) */
               circle_xor(new_x, new_y, sz / 2);
             }
             else
@@ -6653,6 +6653,8 @@ static void mainloop(void)
           }
           else
           {
+            w = calc_eraser_size(cur_eraser);
+/*
             if (cur_eraser < NUM_ERASER_SIZES)
             {
               w = (ERASER_MIN +
@@ -6664,7 +6666,7 @@ static void mainloop(void)
                    ((NUM_ERASER_SIZES - (cur_eraser - NUM_ERASERS / 2) - 1) *
                     ((ERASER_MAX - ERASER_MIN) / (NUM_ERASER_SIZES - 1))));
             }
-
+*/
             h = w;
           }
 
@@ -6739,7 +6741,7 @@ static void mainloop(void)
             {
               if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
               {
-                /* Circle eraser */
+                /* Circle eraser (sharp & fuzzy) */
                 circle_xor(old_x, old_y, calc_eraser_size(cur_eraser) / 2);
               }
               else
@@ -6770,7 +6772,7 @@ static void mainloop(void)
             {
               if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
               {
-                /* Circle eraser */
+                /* Circle eraser (sharp & fuzzy) */
                 circle_xor(new_x, new_y, calc_eraser_size(cur_eraser) / 2);
               }
               else
@@ -11173,7 +11175,7 @@ static void draw_erasers(void)
 
   /* Do we need scrollbars? */
 
-  if (NUM_FILLS > most + TOOLOFFSET)
+  if (NUM_ERASERS > most + TOOLOFFSET)
   {
     most = most - gd_toolopt.cols;      /* was 12 */
     off_y = img_scroll_up->h;
@@ -11230,7 +11232,7 @@ static void draw_erasers(void)
 
     if (i < NUM_ERASERS)
     {
-      if (i < NUM_ERASERS / 2)
+      if (i < NUM_ERASER_SIZES)
       {
         /* Square */
 
@@ -11269,16 +11271,20 @@ static void draw_erasers(void)
       }
       else
       {
+        int fuzzy;
+
         /* Circle */
 
-        sz = (2 + ((NUM_ERASER_SIZES - 1 - (i - NUM_ERASERS / 2)) * (38 / (NUM_ERASER_SIZES - 1)))) * button_scale;
+        fuzzy = (i >= NUM_ERASER_SIZES * 2);
+
+        sz = (2 + ((NUM_ERASER_SIZES - 1 - (i % NUM_ERASER_SIZES)) * (38 / (NUM_ERASER_SIZES - 1)))) * button_scale;
 
         x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
         y = ((j / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2 + off_y;
 
-        for (yy = 0; yy <= sz; yy++)
+        for (yy = 0; yy <= sz; yy += (fuzzy + 1))
         {
-          for (xx = 0; xx <= sz; xx++)
+          for (xx = (yy % (fuzzy + 1)); xx <= sz; xx += (fuzzy + 1))
           {
             n = (xx * xx) + (yy * yy) - ((sz / 2) * (sz / 2));
 
@@ -11291,7 +11297,6 @@ static void draw_erasers(void)
               putpixel(screen, (x + sz / 2) + xx, (y + sz / 2) - yy, SDL_MapRGB(screen->format, 0, 0, 0));
 
               putpixel(screen, (x + sz / 2) - xx, (y + sz / 2) - yy, SDL_MapRGB(screen->format, 0, 0, 0));
-
             }
           }
         }
@@ -12195,7 +12200,7 @@ static void circle_xor(int x, int y, int sz)
 
 static int calc_eraser_size(int which_eraser)
 {
-  if (which_eraser >= NUM_ERASER_SIZES)
+  while (which_eraser >= NUM_ERASER_SIZES)
     which_eraser -= NUM_ERASER_SIZES;
 
   return (((NUM_ERASER_SIZES - 1 - which_eraser) * ((ERASER_MAX - ERASER_MIN) / (NUM_ERASER_SIZES - 1))) + ERASER_MIN);
