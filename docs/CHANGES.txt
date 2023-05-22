@@ -6,7 +6,22 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.20 (0.9.31)
+2023.May.22 (0.9.31)
+  * New Magic Tools:
+    ----------------
+    * WIP Loops - Draw loop-the-loops.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * WIP Ribbon - Paints a flowing, fixed-length ribbon.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * WIP Smooth - Freehand paintbrush with a smoothing effect (Bezier curve)
+      h/t Pere for the idea
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * WIP Squiggles - Draw squiggly shapes.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Russian translaton
