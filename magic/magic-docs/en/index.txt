@@ -75,6 +75,7 @@ Painting
      * Fur
      * Grass
      * Light
+     * Loops
      * Maze
      * Metal Paint
      * Pixels
@@ -82,7 +83,10 @@ Painting
      * Rain
      * Rainbow
      * Rainbow Cycle
+     * Ribbon
+     * Smooth
      * Smooth Rainbow
+     * Squiggles
      * Toothpaste
      * Wet Paint
 

@@ -94,8 +94,11 @@ Licenza
 
 What's New in Tux Paint version 0.9.31?
 
-   TBD
-           TBD
+   Fuzzy Erasers
+           Fuzzy-edged round erasers have been added to the Eraser tool
+
+   New Magic tools
+           Loops, Ribbon, Smooth, and Squiggles
 
    See CHANGES.txt for the complete list of changes.
 
@@ -645,8 +648,8 @@ Ferramentas dispoñíbeis
            prema e arrastre), a imaxe borrarase. (Pode ser branco, doutra cor
            ou a unha imaxe de fondo, dependendo da imaxe.)
 
-           Hai varios tamaños de goma dispoñíbeis, tanto redondos como
-           cadrados.
+           A number of eraser sizes are available, with both square and round
+           shapes. Fuzzy-edged round shapes are also available.
 
            Ao mover o rato, un contorno cadrado segue o punteiro, amosando
            que parte da imaxe se borrará a branco.
@@ -654,7 +657,7 @@ Ferramentas dispoñíbeis
            Ao borralo, reprodúcese un son de borrado «rechiante».
 
            ⌨ Hold the [X] key while clicking for quick access to a small
-           round eraser (not available when the Text or Label tools are
+           sharp round eraser (not available when the Text or Label tools are
            selected, when you're in the process of rotating a stamp or shape,
            or when using an interactive magic tool). Release the mouse to
            return to your currently-selected tool.

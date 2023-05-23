@@ -74,13 +74,17 @@ Painting
      * Fretwork
      * Grass
      * Light
+     * Loops
      * Metal Paint
      * Pixels
      * Rails
      * Rain
      * Rainbow
      * Rainbow Cycle
+     * Ribbon
+     * Smooth
      * Smooth Rainbow
+     * Squiggles
      * Toothpaste
      * Wet Paint
      * 「けがわ」

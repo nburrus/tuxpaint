@@ -76,6 +76,7 @@ Painting
      * Frise
      * Fur
      * Herbe
+     * Loops
      * Lumière
      * Maze
      * Mousse
@@ -84,6 +85,9 @@ Painting
      * Pluie
      * Rails
      * Rainbow Cycle
+     * Ribbon
+     * Smooth
+     * Squiggles
      * Wet Paint
 
 Pattern Painting

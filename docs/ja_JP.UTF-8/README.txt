@@ -75,8 +75,11 @@
 
 Tux Paint バージョン 0.9.31 での変更点
 
-   TBD
-           TBD
+   Fuzzy Erasers
+           Fuzzy-edged round erasers have been added to the Eraser tool
+
+   New Magic tools
+           Loops, Ribbon, Smooth, and Squiggles
 
    全ての変更点については、CHANGES.txt をお読みください。
 
@@ -417,14 +420,18 @@ Tux Paint の起動
 
            このツールは「ふで」ツールに似ています。クリック（または、クリック＋ドラッグ）をした部分が消されます。（消した部分は、白あるいはその他の色、また、レイヤーキャンバスなど、絵によって異なる状態に戻ります。）
 
-           いくつもの大きさの正方形と円形の消しゴムがあります。
+           A number of eraser sizes are available, with both square and round
+           shapes. Fuzzy-edged round shapes are also available.
 
            正方形の輪郭がマウスカーソルの位置に表示され、絵のどの部分が消されるかを示します。
 
            消している間、「キュッキュッ」と擦って消す効果音が流れます。
 
-           ⌨ [X]
-           キーを押しながらマウスをクリックすると、小さな丸い消しゴムをすばやく使うことができます（もじ/ラベルツール選択時、はんこや図形の回転中、インタラクティブなまほうツールを使用している間は無効です）。マウスを離すと、選択中のツールに戻ります。
+           ⌨ Hold the [X] key while clicking for quick access to a small
+           sharp round eraser (not available when the Text or Label tools are
+           selected, when you're in the process of rotating a stamp or shape,
+           or when using an interactive magic tool). Release the mouse to
+           return to your currently-selected tool.
 
   そのほかの操作
 
