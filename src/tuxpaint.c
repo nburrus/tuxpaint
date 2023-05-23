@@ -12224,9 +12224,9 @@ static void do_eraser(int x, int y, int update)
     else
       SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
   }
-  else
+  else if (cur_eraser < NUM_ERASER_SIZES * 2)
   {
-    /* Round eraser: */
+    /* Round sharp eraser: */
 
     for (yy = 0; yy <= sz; yy++)
     {
@@ -12260,6 +12260,49 @@ static void do_eraser(int x, int y, int update)
             SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, canvas_color_r, canvas_color_g, canvas_color_b));
           else
             SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
+        }
+      }
+    }
+  }
+  else
+  {
+    Uint8 r_erase, g_erase, b_erase;
+    Uint8 r_canvas, g_canvas, b_canvas;
+    Uint32 (*getpixel_bkgd) (SDL_Surface *, int, int) = NULL;
+    Uint32 (*getpixel_canvas) (SDL_Surface *, int, int) = getpixels[canvas->format->BytesPerPixel];
+    void (*putpixel) (SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
+    float sq, erase_pct, canvas_pct, r, g, b;
+
+    /* Round fuzzy eraser: */
+
+    r_erase = canvas_color_r;
+    g_erase = canvas_color_g;
+    b_erase = canvas_color_b;
+
+    if (img_starter_bkgd != NULL)
+      getpixel_bkgd = getpixels[img_starter_bkgd->format->BytesPerPixel];
+
+    for (yy = -sz / 2; yy <= sz / 2; yy++)
+    {
+      for (xx = -sz / 2; xx <= sz / 2; xx++)
+      {
+        sq = sqrt((xx * xx) + (yy * yy));
+
+        if (sq <= sz / 2)
+        {
+          if (img_starter_bkgd != NULL)
+            SDL_GetRGB(getpixel_bkgd(img_starter_bkgd, x + xx, y + yy), img_starter_bkgd->format, &r_erase, &g_erase, &b_erase);
+
+          SDL_GetRGB(getpixel_canvas(canvas, x + xx, y + yy), canvas->format, &r_canvas, &g_canvas, &b_canvas);
+
+          canvas_pct = (float) sq / (sz / 2);
+          erase_pct = 1.0 - canvas_pct;
+
+          r = (((float) r_erase * erase_pct) + ((float) r_canvas) * canvas_pct);
+          g = (((float) g_erase * erase_pct) + ((float) g_canvas) * canvas_pct);
+          b = (((float) b_erase * erase_pct) + ((float) b_canvas) * canvas_pct);
+
+          putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, (Uint8) r, (Uint8) g, (Uint8) b));
         }
       }
     }

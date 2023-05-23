@@ -22,9 +22,9 @@ https://tuxpaint.org/
     * WIP Squiggles - Draw squiggly shapes.
       Bill Kendrick <bill@newbreedsoftware.com>
 
-  * Improvements to Shape tool:
-    ---------------------------
-    * WIP Fuzzy erasers
+  * Improvements to Eraser tool:
+    ----------------------------
+    * Fuzzy round erasers
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Bug Fixes:
