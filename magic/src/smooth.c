@@ -46,6 +46,12 @@ enum {
   NUM_TOOLS
 };
 
+char * smooth_icon_fnames[NUM_TOOLS] = {
+  "smooth.png",
+  "rainbow.png", // FIXME
+  "rainbow.png", // FIXME
+};
+
 char * smooth_snd_fnames[NUM_TOOLS] = {
   "smooth.ogg",
   "squiggles.ogg",
@@ -144,11 +150,11 @@ int smooth_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 // Load our icon:
-SDL_Surface *smooth_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *smooth_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/rainbow.png", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, smooth_icon_fnames[which]);
   return (IMG_Load(fname));
 }
 

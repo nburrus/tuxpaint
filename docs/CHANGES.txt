@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.22 (0.9.31)
+2023.May.23 (0.9.31)
   * New Magic Tools:
     ----------------
     * WIP Loops - Draw loop-the-loops.
@@ -15,17 +15,16 @@ https://tuxpaint.org/
       https://freesound.org/people/Jagadamba/
       - WIP needs icon
 
-    * WIP Ribbon - Paints a flowing, fixed-length ribbon.
+    * Ribbon - Paints a flowing, fixed-length ribbon.
       Bill Kendrick <bill@newbreedsoftware.com>
-      - WIP needs sfx
-      - WIP needs icon
+      Sound effect CC-BY 3.0 by
+      https://freesound.org/people/CosmicEmbers/
 
-    * WIP Smooth - Freehand paintbrush with a smoothing effect (Bezier curve)
+    * Smooth - Freehand paintbrush with a smoothing effect (Bezier curve)
       h/t Pere for the idea
       Bill Kendrick <bill@newbreedsoftware.com>
       Sound effect CC-BY 4.0 by
       https://freesound.org/people/PercyFrench/
-      - WIP needs icon
 
     * WIP Squiggles - Draw squiggly shapes.
       Bill Kendrick <bill@newbreedsoftware.com>
