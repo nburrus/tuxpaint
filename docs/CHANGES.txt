@@ -25,11 +25,10 @@ https://tuxpaint.org/
       Sound effect CC-BY 4.0 by
       https://freesound.org/people/PercyFrench/
 
-    * WIP Squiggles - Draw squiggly shapes.
+    * Squiggles - Draw squiggly shapes.
       Bill Kendrick <bill@newbreedsoftware.com>
       Sound effect CC0 (public domain)
       by https://freesound.org/people/Tomoyo%20Ichijouji/
-      - WIP needs icon
 
   * Improvements to Eraser tool:
     ----------------------------
