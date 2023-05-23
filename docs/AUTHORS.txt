@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - May 20, 2023
+June 17, 2002 - May 22, 2023
 
 * Design and Coding:
 
@@ -183,6 +183,15 @@ June 17, 2002 - May 20, 2023
   (https://freesound.org/people/Ustym_Petrovych/sounds/668399/)
   Creative Commons Attribution 4.0 International (CC BY 4.0)
   by https://freesound.org/people/Ustym_Petrovych/
+
+  "Loops" & "Squiggles" Magic tools
+  by Bill Kendrick <bill@newbreedsoftware.com>
+
+  "Loops" sound:
+  "Percussion » Wobble Board"
+  (https://freesound.org/people/Jagadamba/sounds/254397/)
+  Creative Commons Attribution 4.0 International (CC BY 4.0)
+  by https://freesound.org/people/Jagadamba/
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
