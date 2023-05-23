@@ -33,6 +33,10 @@ https://tuxpaint.org/
       scroll buttons were missing, and button clicks inaccurate.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Improved Eraser XOR outline when using Ctrl-Z & Ctrl-R
+      for Undo/Redo.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Russian translaton

@@ -600,6 +600,7 @@ static void reposition_onscreen_keyboard(int y);
 
 
 int calc_magic_control_rows(void);
+void maybe_redraw_eraser_xor(void);
 
 static void reset_stamps(int *stamp_xored_rt, int *stamp_place_x, int *stamp_place_y, int *stamp_tool_mode);
 
@@ -2854,7 +2855,9 @@ static void mainloop(void)
               }
             }
             if (cur_tool == TOOL_STAMP)
+            {
               reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+            }
 
             if (cur_undo == newest_undo)
             {
@@ -2864,6 +2867,7 @@ static void mainloop(void)
             do_undo();
             update_screen_rect(&r_tools);
             shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+            maybe_redraw_eraser_xor();
           }
 
           magic_switchin(canvas);
@@ -2882,6 +2886,7 @@ static void mainloop(void)
             do_redo();
             update_screen_rect(&r_tools);
             shape_tool_mode = SHAPE_TOOL_MODE_DONE;
+            maybe_redraw_eraser_xor();
           }
 
           magic_switchin(canvas);
@@ -6654,19 +6659,6 @@ static void mainloop(void)
           else
           {
             w = calc_eraser_size(cur_eraser);
-/*
-            if (cur_eraser < NUM_ERASER_SIZES)
-            {
-              w = (ERASER_MIN +
-                   ((NUM_ERASER_SIZES - cur_eraser - 1) * ((ERASER_MAX - ERASER_MIN) / (NUM_ERASER_SIZES - 1))));
-            }
-            else
-            {
-              w = (ERASER_MIN +
-                   ((NUM_ERASER_SIZES - (cur_eraser - NUM_ERASERS / 2) - 1) *
-                    ((ERASER_MAX - ERASER_MIN) / (NUM_ERASER_SIZES - 1))));
-            }
-*/
             h = w;
           }
 
@@ -6739,7 +6731,7 @@ static void mainloop(void)
             }
             else
             {
-              if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
+              if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASER_SIZES)
               {
                 /* Circle eraser (sharp & fuzzy) */
                 circle_xor(old_x, old_y, calc_eraser_size(cur_eraser) / 2);
@@ -6770,7 +6762,7 @@ static void mainloop(void)
             }
             else
             {
-              if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASERS / 2)
+              if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASER_SIZES)
               {
                 /* Circle eraser (sharp & fuzzy) */
                 circle_xor(new_x, new_y, calc_eraser_size(cur_eraser) / 2);
@@ -12290,9 +12282,9 @@ static void do_eraser(int x, int y, int update)
   {
     update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
 
-    if (cur_eraser >= NUM_ERASERS / 2)
+    if (cur_eraser >= NUM_ERASER_SIZES)
     {
-      /* Circle eraser */
+      /* Circle eraser (sharp & fuzzy) */
       circle_xor(x, y, sz / 2);
     }
     else
@@ -23544,7 +23536,7 @@ static void do_quick_eraser(void)
 
   /* Remember current eraser & switch to a suitable default */
   old_eraser = cur_eraser;
-  cur_eraser = NUM_ERASERS - 2; /* 2nd-smallest circle */
+  cur_eraser = (NUM_ERASER_SIZES * 2) - 2; /* 2nd-smallest circle */
 
   rec_undo_buffer();
 
@@ -31520,3 +31512,41 @@ int calc_magic_control_rows(void)
 
   return r;
 }
+
+/**
+ * Redraw the Eraser XOR shape around the cursor if it's within
+ * the canvas and the current tool is the Eraser.
+ * (Used after hitting Ctrl-Z to Undo or Ctlr-R to Redo)
+ */
+void maybe_redraw_eraser_xor(void)
+{
+  int mx, my, sz;
+
+  if (cur_tool == TOOL_ERASER)
+  {
+    SDL_GetMouseState(&mx, &my);
+    /* FIXME: If you're moving the mouse WHILE hitting Ctrl-Z,
+       the XOR could happen in the wrong place :-/ -bjk 2023.05.22 */
+    if (hit_test(&r_canvas, mx, my))
+    {
+      mx = mx - r_canvas.x;
+      my = my - r_canvas.y;
+
+      sz = calc_eraser_size(cur_eraser);
+      if (cur_eraser >= NUM_ERASER_SIZES)
+      {
+        /* Circle eraser (sharp & fuzzy) */
+        circle_xor(mx, my, sz / 2);
+      }
+      else
+      {
+        /* Square eraser */
+        rect_xor(mx - sz / 2, my - sz / 2, mx + sz / 2, my + sz / 2);
+      }
+
+      update_screen(mx - sz / 2 + r_canvas.x, my - sz / 2 + r_canvas.y,
+                    mx + sz / 2 + r_canvas.x, my + sz / 2 + r_canvas.y);
+    }
+  }
+}
+
