@@ -28,7 +28,8 @@ https://tuxpaint.org/
 
     * WIP Squiggles - Draw squiggly shapes.
       Bill Kendrick <bill@newbreedsoftware.com>
-      - WIP needs sfx
+      Sound effect CC0 (public domain)
+      by https://freesound.org/people/Tomoyo%20Ichijouji/
       - WIP needs icon
 
   * Improvements to Eraser tool:

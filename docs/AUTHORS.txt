@@ -187,11 +187,15 @@ June 17, 2002 - May 22, 2023
   "Loops" & "Squiggles" Magic tools
   by Bill Kendrick <bill@newbreedsoftware.com>
 
-  "Loops" sound:
-  "Percussion » Wobble Board"
+  "Loops" sound: "Percussion » Wobble Board"
   (https://freesound.org/people/Jagadamba/sounds/254397/)
   Creative Commons Attribution 4.0 International (CC BY 4.0)
   by https://freesound.org/people/Jagadamba/
+
+  "Squiggles" sound: "Scribble"
+  (https://freesound.org/people/Tomoyo%20Ichijouji/sounds/211247/)
+  Creative Commons 0 License (CC0)
+  by https://freesound.org/people/Tomoyo%20Ichijouji/
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,

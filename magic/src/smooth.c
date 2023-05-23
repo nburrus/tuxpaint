@@ -48,7 +48,7 @@ enum {
 
 char * smooth_snd_fnames[NUM_TOOLS] = {
   "rainbow.ogg", // FIXME
-  "rainbow.ogg", // FIXME
+  "squiggles.ogg",
   "loops.ogg",
 };
 
