@@ -49,7 +49,7 @@ enum {
 char * smooth_icon_fnames[NUM_TOOLS] = {
   "smooth.png",
   "rainbow.png", // FIXME
-  "rainbow.png", // FIXME
+  "loops.png",
 };
 
 char * smooth_snd_fnames[NUM_TOOLS] = {

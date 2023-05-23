@@ -9,11 +9,10 @@ https://tuxpaint.org/
 2023.May.23 (0.9.31)
   * New Magic Tools:
     ----------------
-    * WIP Loops - Draw loop-the-loops.
+    * Loops - Draw loop-the-loops.
       Bill Kendrick <bill@newbreedsoftware.com>
       Sound effect CC-BY 4.0 by
       https://freesound.org/people/Jagadamba/
-      - WIP needs icon
 
     * Ribbon - Paints a flowing, fixed-length ribbon.
       Bill Kendrick <bill@newbreedsoftware.com>
