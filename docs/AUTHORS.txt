@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - May 22, 2023
+June 17, 2002 - May 23, 2023
 
 * Design and Coding:
 
@@ -201,6 +201,13 @@ June 17, 2002 - May 22, 2023
   (https://freesound.org/people/PercyFrench/sounds/652600/)
   Creative Commons Attribution 4.0 International (CC BY 4.0)
   by https://freesound.org/people/PercyFrench/
+
+  "Ribbon" Magic tool
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  Sound effect "cape-swoosh"
+  (https://freesound.org/people/CosmicEmbers/sounds/161415/)
+  Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+  by https://freesound.org/people/CosmicEmbers/
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
