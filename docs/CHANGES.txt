@@ -23,7 +23,8 @@ https://tuxpaint.org/
     * WIP Smooth - Freehand paintbrush with a smoothing effect (Bezier curve)
       h/t Pere for the idea
       Bill Kendrick <bill@newbreedsoftware.com>
-      - WIP needs sfx
+      Sound effect CC-BY 4.0 by
+      https://freesound.org/people/PercyFrench/
       - WIP needs icon
 
     * WIP Squiggles - Draw squiggly shapes.

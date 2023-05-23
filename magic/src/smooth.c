@@ -47,7 +47,7 @@ enum {
 };
 
 char * smooth_snd_fnames[NUM_TOOLS] = {
-  "rainbow.ogg", // FIXME
+  "smooth.ogg",
   "squiggles.ogg",
   "loops.ogg",
 };
@@ -318,8 +318,6 @@ void smooth_click(magic_api * api,
     smooth_squiggle_rad = LOOP_RAD_CALC;
     smooth_drag(api, which, canvas, last, x, y, x, y, update_rect);
   }
-
-  api->playsound(smooth_snds[which], (x * 255) / canvas->w, 255);
 }
 
 
@@ -373,7 +371,7 @@ void smooth_release(magic_api * api,
     }
   }
 
-  api->playsound(smooth_snds[which], (x * 255) / canvas->w, 255);
+  api->stopsound();
 
   update_rect->x = 0;
   update_rect->y = 0;
