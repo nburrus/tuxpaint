@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 22, 2023
+  June 14, 2002 - May 25, 2023
 */
 
 #include "platform.h"
@@ -1667,7 +1667,7 @@ static SDL_Surface *img_black, *img_grey;
 static SDL_Surface *img_yes, *img_no;
 static SDL_Surface *img_sfx, *img_speak;
 static SDL_Surface *img_open, *img_erase, *img_back, *img_trash, *img_pict_export;
-static SDL_Surface *img_slideshow, *img_play, *img_gif_export, *img_select_digits;
+static SDL_Surface *img_slideshow, *img_template, *img_play, *img_gif_export, *img_select_digits;
 static SDL_Surface *img_printer, *img_printer_wait;
 static SDL_Surface *img_save_over, *img_popup_arrow;
 static SDL_Surface *img_cursor_up, *img_cursor_down;
@@ -1934,7 +1934,7 @@ static short *brushes_rotate = NULL;
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_fills[NUM_FILLS], *img_fill_names[NUM_FILLS];
 static SDL_Surface *img_openlabels_open, *img_openlabels_erase,
-  *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play,
+  *img_openlabels_slideshow, *img_openlabels_back, *img_openlabels_play, *img_openlabels_template,
   *img_openlabels_gif_export, *img_openlabels_pict_export, *img_openlabels_next, *img_mixerlabel_clear;
 
 static SDL_Surface *img_tux[NUM_TIP_TUX];
@@ -2205,7 +2205,7 @@ static void draw_selection_digits(int right, int bottom, int n);
 
 static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
 int export_gif_monitor_events(void);
-static int export_pict(char *fname);
+static int export_pict(char *fname, int where);
 static char *get_export_filepath(const char *ext);
 
 static void wait_for_sfx(void);
@@ -2487,6 +2487,12 @@ static void do_wait(int counter)
 #define PROMPT_PICT_EXPORT_FAILED_TXT gettext_noop("Sorry! Your picture could not be exported!")
 #define PROMPT_GIF_EXPORT_FAILED_TXT gettext_noop("Sorry! Your slideshow GIF could not be exported!")
 
+/* Confirmation of successful (we hope) image-to-template conversion */
+#define PROMPT_PICT_TEMPLATE_TXT gettext_noop("Your picture is now available as a template in the “New“ dialog!")
+#define PROMPT_TEMPLATE_YES gettext_noop("OK")
+
+/* We got an error doing image-to-template conversion */
+#define PROMPT_PICT_TEMPLATE_FAILED_TXT gettext_noop("Sorry! Your picture could not turned into a template!")
 
 /* Slideshow instructions */
 #define TUX_TIP_SLIDESHOW gettext("Choose the pictures you want, then click “Play”.")
@@ -9527,6 +9533,9 @@ static void create_button_labels(void)
   /* Open dialog: 'Slides' button, to switch to slide show mode */
   img_openlabels_slideshow = do_render_button_label(gettext_noop("Slides"));
 
+  /* Open dialog: 'Template' button, to make a template out of a drawing */
+  img_openlabels_template = do_render_button_label(gettext_noop("Template"));
+
   /* Open dialog: 'Export' button, to copy an image to an easily-accessible location */
   img_openlabels_pict_export = do_render_button_label(gettext_noop("Export"));
 
@@ -14935,6 +14944,7 @@ static void cleanup(void)
 
   free_surface(&img_openlabels_open);
   free_surface(&img_openlabels_slideshow);
+  free_surface(&img_openlabels_template);
   free_surface(&img_openlabels_erase);
   free_surface(&img_openlabels_pict_export);
   free_surface(&img_openlabels_back);
@@ -14968,6 +14978,7 @@ static void cleanup(void)
   free_surface(&img_trash);
 
   free_surface(&img_slideshow);
+  free_surface(&img_template);
   free_surface(&img_play);
   free_surface(&img_gif_export);
   free_surface(&img_select_digits);
@@ -16639,7 +16650,7 @@ static int do_open(void)
   int *d_places;
   FILE *fi;
   char fname[MAX_PATH];
-  int num_files, i, done, slideshow, update_list, want_erase, want_export;
+  int num_files, i, done, slideshow, update_list, want_erase, want_export, want_template;
   int cur, which, num_files_in_dirs, j, any_saved_files;
   SDL_Rect dest;
   SDL_Event event;
@@ -16972,7 +16983,15 @@ static int do_open(void)
       /* Let user choose an image: */
 
       /* Instructions for 'Open' file dialog */
-      char *instructions = textdir(gettext_noop("Choose the picture you want, then click “Open”."));
+      char *instructions;
+      int num_left_buttons;
+
+      /* FIXME: Support simplification to disable "Template" option -bjk 2023.05.25 */
+      if (1) {
+        instructions = textdir(gettext_noop("Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
+      } else {
+        instructions = textdir(gettext_noop("Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
+      }
 
       draw_tux_text(TUX_BORED, instructions, 1);
 
@@ -16982,6 +17001,7 @@ static int do_open(void)
       update_list = 1;
       want_erase = 0;
       want_export = 0;
+      want_template = 0;
 
       done = 0;
       slideshow = 0;
@@ -17063,11 +17083,11 @@ static int do_open(void)
           SDL_BlitSurface(img_open, NULL, screen, &dest);
 
           dest.x = r_ttools.w + (button_w - img_openlabels_open->w) / 2;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h;     // FIXME: CROP LABELS
+          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h;
           SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
 
 
-          /* "Slideshow" button: */
+          /* "Slides" (slideshow) button: */
 
           dest.x = r_ttools.w + button_w;
           dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
@@ -17081,8 +17101,33 @@ static int do_open(void)
           SDL_BlitSurface(img_slideshow, NULL, screen, &dest);
 
           dest.x = r_ttools.w + button_w + (button_w - img_openlabels_slideshow->w) / 2;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_slideshow->h;        // FIXME: CROP LABELS
+          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_slideshow->h;
           SDL_BlitSurface(img_openlabels_slideshow, NULL, screen, &dest);
+
+
+          /* FIXME: Support simplification to disable "Template" option -bjk 2023.05.25 */
+          if (1) {
+            /* "Template" (make template) button: */
+  
+            num_left_buttons = 3;
+
+            dest.x = r_ttools.w + button_w * 2;
+            dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+            if (any_saved_files)
+              SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
+            else
+              SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+  
+            dest.x = r_ttools.w + button_w * 2;
+            dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+            SDL_BlitSurface(img_template, NULL, screen, &dest);
+  
+            dest.x = r_ttools.w + button_w * 2 + (button_w - img_openlabels_template->w) / 2;
+            dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_template->h;
+            SDL_BlitSurface(img_openlabels_template, NULL, screen, &dest);
+          } else {
+            num_left_buttons = 2;
+          }
 
 
           /* "Back" button: */
@@ -17092,7 +17137,7 @@ static int do_open(void)
           SDL_BlitSurface(img_back, NULL, screen, &dest);
 
           dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w + (button_w - img_openlabels_back->w) / 2;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;     // FIXME: CROP LABELS
+          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
           SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
 
@@ -17113,7 +17158,7 @@ static int do_open(void)
           dest.x =
             WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w - button_w +
             (button_w - img_openlabels_pict_export->w) / 2;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_pict_export->h;      // FIXME: CROP LABELS
+          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_pict_export->h;
           SDL_BlitSurface(img_openlabels_pict_export, NULL, screen, &dest);
 
 
@@ -17128,7 +17173,7 @@ static int do_open(void)
             SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
 
           dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w + (button_w - img_openlabels_erase->w) / 2;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h;    // FIXME: CROP LABELS
+          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h;
           SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
 
 
@@ -17362,6 +17407,16 @@ static int do_open(void)
               done = 1;
               playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
             }
+            else if (event.button.x >= r_ttools.w + button_w * 2
+                     && event.button.x < r_ttools.w + button_w * 3
+                     && event.button.y >=
+                     (button_h * buttons_tall + r_ttools.h) - button_h
+                     && event.button.y < (button_h * buttons_tall + r_ttools.h) && any_saved_files == 1)
+            {
+              /* Make Template */
+
+              want_template = 1;
+            }
             else if (event.button.x >= r_ttools.w + button_w
                      && event.button.x < r_ttools.w + button_w + button_w
                      && event.button.y >=
@@ -17475,7 +17530,7 @@ static int do_open(void)
             }
             else
               if (((event.button.x >= r_ttools.w
-                    && event.button.x < r_ttools.w + button_w + button_w)
+                    && event.button.x < r_ttools.w + (button_w * num_left_buttons))
                    || (event.button.x >=
                        (WINDOW_WIDTH - r_ttoolopt.w - button_w)
                        && event.button.x < (WINDOW_WIDTH - r_ttoolopt.w))
@@ -17673,10 +17728,26 @@ static int do_open(void)
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          if (export_pict(rfname))
+          if (export_pict(rfname, 0))
             do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
           else
             do_prompt_snd(PROMPT_PICT_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES,
+                          "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
+
+          draw_tux_text(TUX_BORED, instructions, 1);
+          update_list = 1;
+        }
+
+        if (want_template)
+        {
+          want_template = 0;
+
+          safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
+          rfname = get_fname(fname, DIR_SAVE);
+          if (export_pict(rfname, 1))
+            do_prompt_snd(PROMPT_PICT_TEMPLATE_TXT, PROMPT_TEMPLATE_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+          else
+            do_prompt_snd(PROMPT_PICT_TEMPLATE_FAILED_TXT, PROMPT_TEMPLATE_YES,
                           "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
 
           draw_tux_text(TUX_BORED, instructions, 1);
@@ -29434,6 +29505,7 @@ static void setup(void)
   img_trash = loadimagerb(DATA_PREFIX "images/ui/trash.png");
 
   img_slideshow = loadimagerb(DATA_PREFIX "images/ui/slideshow.png");
+  img_template = loadimagerb(DATA_PREFIX "images/ui/template.png");
   img_play = loadimagerb(DATA_PREFIX "images/ui/play.png");
   img_gif_export = loadimagerb(DATA_PREFIX "images/ui/gif_export.png");
   img_select_digits = loadimagerb(DATA_PREFIX "images/ui/select_digits.png");
@@ -31166,15 +31238,19 @@ int export_gif_monitor_events(void)
 
 /**
  * Copy an image (just the main PNG) from Tux Paint's "saved"
- * directory to the user's chosen export directory
- * (e.g., ~/Pictures, or whatever "--exportdir" says).
+ * directory to either
+ *  a. the user's chosen export directory
+ *     (e.g., ~/Pictures, or whatever "--exportdir" says).
+ *  b. the user's local templates directory
  *
- * Used when exporting a single image from the Open dialog.
+ * Used when exporting, or making into a template, a single image
+ * from the Open dialog.
  *
  * @param char * fname -- full path to the image to export
+ * @param int where -- 0 is for export, 1 is for making a template
  * @return int 1 = success, 0 = failed
  */
-static int export_pict(char *fname)
+static int export_pict(char *fname, int where)
 {
   FILE *fi, *fo;
   size_t len;
@@ -31195,7 +31271,31 @@ static int export_pict(char *fname)
   }
 
   time_before = SDL_GetTicks();
-  pict_fname = get_export_filepath("png");
+  if (where == 0)
+  {
+    pict_fname = get_export_filepath("png");
+  }
+  else
+  {
+    char * dir;
+
+    pict_fname = NULL;
+
+    dir = get_fname("templates", DIR_DATA);
+    if (dir != NULL)
+    {
+      time_t t;
+      int len = (strlen(dir) + 64);
+      char timestamp[16];
+
+      /* Create a unique filename, within that dir */
+      t = time(NULL); 
+      strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t)); 
+      pict_fname = (char *) malloc(sizeof(char) * len);
+      snprintf(pict_fname, len, "%s/%s.png", dir, timestamp);
+    }
+  }
+
   if (pict_fname == NULL)
   {
     fclose(fi);

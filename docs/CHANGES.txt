@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.23 (0.9.31)
+2023.May.25 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -34,6 +34,18 @@ https://tuxpaint.org/
     ----------------------------
     * Fuzzy round erasers
       Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Other Improvements:
+    -------------------
+    * WIP - Saved pictures can, from the Open dialog, be copied into
+      the user's templates directory, and used as backgrounds
+      for other drawings by selecting it from the New dialog.
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
+      Bill Kendrick <bill@newbreedsoftware.com>
+      TODO:
+      + Need to allow the ability to turn this off.
+      + May need to ensure the same unchanged saved image isn't
+        made into multiple redundant templates.
 
   * Bug Fixes:
     ----------
