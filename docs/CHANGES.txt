@@ -60,8 +60,9 @@ https://tuxpaint.org/
     * When specifying "datadir", Tux Paint's "New" dialog
       was able to present templates found in that directory,
       but would attempt to load from whatever the user's
-      "savedir" was, instead.
-      h/t Giancarlo Orru for reporting the bug.
+      "savedir" was, instead.  It was also unable to create
+      a ".thumbs" subdirectory & store thumbnails there.
+      h/t Giancarlo Orru for reporting the main part of this bug.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
