@@ -31288,6 +31288,11 @@ static int export_pict(char *fname, int where)
       int len = (strlen(dir) + 64);
       char timestamp[16];
 
+      if (!make_directory(DIR_DATA, "templates", "Can't create 'templates' directory in specified datadir"))
+      {
+        return(SDL_FALSE);
+      }
+
       /* Create a unique filename, within that dir */
       t = time(NULL); 
       strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t)); 
