@@ -43,9 +43,9 @@ https://tuxpaint.org/
       + If the original image has already been exported as a template,
         it will not be re-saved.  We check, in this order:
         - identical filename prefix (based on original saved picture)
-        - identical file sizes
-        - TODO identical image dimensions
-        - TODO identical image data
+        - identical file sizes (bytes)
+        - identical image dimensions (pixels)
+        - identical image data (CRC checksum)
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
       Bill Kendrick <bill@newbreedsoftware.com>
       + TODO - Need to allow the ability to turn this feature off.

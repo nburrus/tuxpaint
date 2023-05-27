@@ -2224,6 +2224,8 @@ enum {
 
 static int export_pict(char *fname, int where, char * orig_fname);
 static char *get_export_filepath(const char *ext);
+void get_img_dimensions(char * fpath, int * widht, int * height);
+uLong get_img_crc(char * fpath);
 
 static void wait_for_sfx(void);
 static void rgbtohsv(Uint8 r8, Uint8 g8, Uint8 b8, float *h, float *s, float *v);
@@ -31327,8 +31329,21 @@ static int export_pict(char *fname, int where, char * orig_fname)
       struct dirent *f;
       SDL_bool any_identical;
       struct stat sbuf_orig, sbuf_test;
+      int orig_w, orig_h;
+      uLong orig_crc;
       int res;
 
+      /* Make sure we have a directory to put the template into! */
+      if (!make_directory(DIR_DATA, "templates", "Can't create 'templates' directory in specified datadir"))
+        return EXPORT_ERR_CANNOT_MKDIR;
+
+      /* We'll only calculate the saved image's dimensions or CRC if we find a
+         template that is identical in other easier-to-test ways
+         (filename prefix, file size) */
+      orig_w = -1;
+      orig_crc = 0;
+
+      /* Get save image's file size (in bytes) */
       res = stat(fname, &sbuf_orig);
       if (res != 0)
       {
@@ -31336,11 +31351,6 @@ static int export_pict(char *fname, int where, char * orig_fname)
         fclose(fi);
         return EXPORT_ERR_CANNOT_OPEN_SOURCE;
       }
-
-      printf("Orig %s = %ld bytes\n", fname, sbuf_orig.st_size);
-
-      if (!make_directory(DIR_DATA, "templates", "Can't create 'templates' directory in specified datadir"))
-        return EXPORT_ERR_CANNOT_MKDIR;
 
       /* We'll use a filename prefix based on the picture being exported;
          if any other templates exist with this prefix, we'll check whether
@@ -31353,7 +31363,7 @@ static int export_pict(char *fname, int where, char * orig_fname)
 
       if (d != NULL)
       {
-        /* Gather list of files (for sorting): */
+        /* Iterate over list of all personal templates: */
 
         do
         {
@@ -31370,32 +31380,68 @@ static int export_pict(char *fname, int where, char * orig_fname)
 
               snprintf(templ_fname, sizeof(templ_fname), "%s/%s", dir, f->d_name);
 
-              printf("%s matches %s!\n", templ_fname, orig_fname); // FIXME: DEBUG_PRINTF()
+              DEBUG_PRINTF("%s prefix matches save file's filename %s!\n", templ_fname, orig_fname);
 
               res = stat(templ_fname, &sbuf_test);
               if (res == 0)
               {
                 if (sbuf_test.st_size == sbuf_orig.st_size)
                 {
+                  int templ_w, templ_h;
+
                   /* File sizes match!  (But in case that's a coincidence,
                      we'll check yet more datapoints to confirm) */
-                  printf("  ...and is the same size (%ld bytes)\n", sbuf_orig.st_size); // FIXME: DEBUG_PRINTF()
+                  DEBUG_PRINTF("  ...and is the same size (%ld bytes)\n", sbuf_orig.st_size);
 
-                  /* FIXME Check they ARE identical (PNG dimensions, then data) */
-                  any_identical = SDL_TRUE;
+                  if (orig_w == -1)
+                    get_img_dimensions(fname, &orig_w, &orig_h);
+
+                  get_img_dimensions(templ_fname, &templ_w, &templ_h);
+
+                  if (templ_w == orig_w && templ_h == orig_h)
+                  {
+                    uLong templ_crc;
+
+                    /* Image dimensions match!  (But in case that's a coincidence,
+                       we'll check yet one final datapoint to confirm) */
+                    DEBUG_PRINTF("  ...and is the same dimensions (%d x %d)\n", orig_w, orig_h);
+
+                    if (orig_crc == 0)
+                      orig_crc = get_img_crc(fname);
+
+                    templ_crc = get_img_crc(templ_fname);
+
+                    if (templ_crc == orig_crc)
+                    {
+                      /* Appears to be identical data; don't bother making a new template */
+                      DEBUG_PRINTF("  ...and appear to have the same content (crc = %ld)\n", orig_crc);
+
+                      any_identical = SDL_TRUE;
+                    }
+                    else
+                    {
+                      DEBUG_PRINTF("  ...but appear to have the different content (template crc = %ld, saved file's is now %ld)\n", templ_crc, orig_crc);
+                    }
+                  }
+                  else
+                  {
+                    DEBUG_PRINTF("  ...but dimensions differ (template = %d x %d, saved file is now %d x %d)\n", templ_w, templ_h, orig_w, orig_h);
+                  }
                 }
                 else
                 {
-                  printf("  ...but file sizes differ (template = %ld bytes, saved file is now %ld bytes\n",
-                         sbuf_test.st_size, sbuf_orig.st_size); // FIXME: DEBUG_PRINTF()
+                  DEBUG_PRINTF("  ...but file sizes differ (template = %ld bytes, saved file is now %ld bytes\n",
+                               sbuf_test.st_size, sbuf_orig.st_size);
                 }
               }
               else
               {
-                fprintf(stderr, "Warning: Cannot stat %s\n", templ_fname);
+                fprintf(stderr, "Warning: Cannot stat %s! Can't test for identical-ness\n", templ_fname);
               }
             }
           }
+          /* Stop once we've looked at all files, but we'll short-circuit
+             and exit the loop if we've come across an identical template */
         }
         while (f != NULL && !any_identical);
 
@@ -31460,6 +31506,87 @@ static int export_pict(char *fname, int where, char * orig_fname)
   }
 
   return EXPORT_SUCCESS;
+}
+
+/**
+ * Gets the dimensions (width & height, in pixels) of a PNG file
+ *
+ * @param char * fpath -- full path to the file
+ * @param int * w -- pointer to an int where we'll fill in the width
+ * @param int * h -- pointer to an int where we'll fill in the height
+ */
+void get_img_dimensions(char * fpath, int * w, int * h)
+{
+  FILE * fi;
+  png_structp png;
+  png_infop info;
+
+  png = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+  if (png == NULL)
+  {
+    fprintf(stderr, "get_img_dimensions() failed to png_create_read_struct() %s\n", fpath);
+    return;
+  }
+
+  info = png_create_info_struct(png);
+  if (info == NULL)
+  {
+    fprintf(stderr, "get_img_dimensions() failed to png_create_info_struct() %s\n", fpath);
+    return;
+  }
+
+  if (setjmp(png_jmpbuf(png)))
+  {
+    fprintf(stderr, "get_img_dimensions() failed to png_jmpbuf() %s\n", fpath);
+    return;
+  }
+
+  fi = fopen(fpath, "rb");
+  if (fi == NULL)
+  {
+    fprintf(stderr, "get_img_dimensions() cannot open %s\n", fpath);
+    return;
+  }
+
+  png_init_io(png, fi);
+
+  png_read_info(png, info);
+
+  *w = png_get_image_width(png, info);
+  *h = png_get_image_height(png, info);
+
+  png_destroy_read_struct(&png, &info, NULL);
+}
+
+uLong get_img_crc(char * fpath)
+{
+  uLong crc;
+  FILE * fi;
+  size_t len;
+  unsigned char buf[1024];
+
+  fi = fopen(fpath, "rb");
+  if (fi == NULL)
+  {
+    fprintf(stderr, "Cannot open file; cannot calculate CRC for %s\n", fpath);
+    return 0;
+  }
+
+  crc = crc32(0L, Z_NULL, 0);
+
+  while (!feof(fi))
+  {
+    len = fread(buf, sizeof(unsigned char), sizeof(buf), fi);
+    if (len > 0)
+    {
+      crc = crc32(crc, buf, len);
+      update_progress_bar();
+    }
+  }
+
+  fclose(fi);
+
+  return crc;
 }
 
 /**
