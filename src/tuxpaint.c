@@ -2222,7 +2222,7 @@ enum {
   EXPORT_ERR_ALREADY_EXPORTED /* Exported template appears to already exist */
 };
 
-static int export_pict(char *fname, int where, char * orig_fname, char * orig_ext);
+static int export_pict(char *fname, int where, char * orig_fname);
 static char *get_export_filepath(const char *ext);
 
 static void wait_for_sfx(void);
@@ -17748,7 +17748,7 @@ static int do_open(void)
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          res = export_pict(rfname, EXPORT_LOC_PICTURES, NULL, NULL);
+          res = export_pict(rfname, EXPORT_LOC_PICTURES, NULL);
 
           if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
@@ -17768,7 +17768,7 @@ static int do_open(void)
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          res = export_pict(rfname, EXPORT_LOC_TEMPLATES, d_names[which], d_exts[which]);
+          res = export_pict(rfname, EXPORT_LOC_TEMPLATES, d_names[which]);
 
           if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_TEMPLATE_TXT, PROMPT_TEMPLATE_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
@@ -31267,21 +31267,26 @@ int export_gif_monitor_events(void)
 
 /**
  * Copy an image (just the main PNG) from Tux Paint's "saved"
- * directory to either
+ * directory to either:
+ *
  *  a. the user's chosen export directory
- *     (e.g., ~/Pictures, or whatever "--exportdir" says).
+ *     (e.g., ~/Pictures, or whatever "--exportdir" says)
  *  b. the user's local templates directory
+ *     (e.g., ~/.tuxpaint/templates, base dir can be set by "--datadir")
  *
  * Used when exporting, or making into a template, a single image
- * from the Open dialog.
+ * (via options presented in the "Open" dialog).
  *
  * @param char * fname -- full path to the image to export
- * @param int where -- EXPORT_LOC_PICTURES is for export, EXPORT_LOC_TEMPLATES is for making a template
- * @param char * orig_fname -- basename of original picture's filename (used by EXPORT_LOC_TEMPLATES), or NULL
- * @param char * orig_ext -- extention of original picture's filename (used by EXPORT_LOC_TEMPLATES), or NULL
+ * @param int where -- where are we exporting to? (what are we exporting?)
+ *  + EXPORT_LOC_PICTURES is for exporting to Pictures
+ *  + EXPORT_LOC_TEMPLATES is for making a new personal Tux Paint template
+ * @param char * orig_fname -- basename of original picture's filename
+ *  + used by EXPORT_LOC_TEMPLATES as prefix of new template
+ *  + unused by EXPORT_LOC_PICTURES (just send NULL)
  * @return EXPORT_SUCCESS on success, or one of the EXPORT_ERR_... values on failure
  */
-static int export_pict(char *fname, int where, char * orig_fname, char * orig_ext)
+static int export_pict(char *fname, int where, char * orig_fname)
 {
   FILE *fi, *fo;
   size_t len;
@@ -31321,6 +31326,18 @@ static int export_pict(char *fname, int where, char * orig_fname, char * orig_ex
       DIR *d;
       struct dirent *f;
       SDL_bool any_identical;
+      struct stat sbuf_orig, sbuf_test;
+      int res;
+
+      res = stat(fname, &sbuf_orig);
+      if (res != 0)
+      {
+        free(dir);
+        fclose(fi);
+        return EXPORT_ERR_CANNOT_OPEN_SOURCE;
+      }
+
+      printf("Orig %s = %ld bytes\n", fname, sbuf_orig.st_size);
 
       if (!make_directory(DIR_DATA, "templates", "Can't create 'templates' directory in specified datadir"))
         return EXPORT_ERR_CANNOT_MKDIR;
@@ -31344,10 +31361,39 @@ static int export_pict(char *fname, int where, char * orig_fname, char * orig_ex
 
           if (f != NULL)
           {
-            if (strstr(f->d_name, orig_fname) == f->d_name) {
-              printf("%s matches %s!\n", f->d_name, orig_fname);
-              /* FIXME Check they ARE identical (filesize, PNG dimensions, then data) */
-              any_identical = SDL_TRUE;
+            if (strstr(f->d_name, orig_fname) == f->d_name)
+            {
+              /* Filename prefixes match!  It was based on this drawing!
+                 (But this drawing may have changed since, so we'll check
+                 other datapoints to confirm) */
+              char templ_fname[FILENAME_MAX];
+
+              snprintf(templ_fname, sizeof(templ_fname), "%s/%s", dir, f->d_name);
+
+              printf("%s matches %s!\n", templ_fname, orig_fname); // FIXME: DEBUG_PRINTF()
+
+              res = stat(templ_fname, &sbuf_test);
+              if (res == 0)
+              {
+                if (sbuf_test.st_size == sbuf_orig.st_size)
+                {
+                  /* File sizes match!  (But in case that's a coincidence,
+                     we'll check yet more datapoints to confirm) */
+                  printf("  ...and is the same size (%ld bytes)\n", sbuf_orig.st_size); // FIXME: DEBUG_PRINTF()
+
+                  /* FIXME Check they ARE identical (PNG dimensions, then data) */
+                  any_identical = SDL_TRUE;
+                }
+                else
+                {
+                  printf("  ...but file sizes differ (template = %ld bytes, saved file is now %ld bytes\n",
+                         sbuf_test.st_size, sbuf_orig.st_size); // FIXME: DEBUG_PRINTF()
+                }
+              }
+              else
+              {
+                fprintf(stderr, "Warning: Cannot stat %s\n", templ_fname);
+              }
             }
           }
         }
@@ -31368,6 +31414,8 @@ static int export_pict(char *fname, int where, char * orig_fname, char * orig_ex
       pict_fname = (char *) malloc(sizeof(char) * len);
       snprintf(pict_fname, len, "%s/%s-%s.png", dir, orig_fname, timestamp);
     }
+
+    free(dir);
   }
 
   if (pict_fname == NULL)
@@ -31391,7 +31439,7 @@ static int export_pict(char *fname, int where, char * orig_fname, char * orig_ex
     len = fread(buf, sizeof(unsigned char), sizeof(buf), fi);
     if (len > 0)
     {
-      fwrite(buf, sizeof(unsigned char), sizeof(buf), fo);
+      fwrite(buf, sizeof(unsigned char), len, fo);
     }
   }
 

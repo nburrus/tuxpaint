@@ -40,6 +40,12 @@ https://tuxpaint.org/
     * WIP - Saved pictures can, from the Open dialog, be copied into
       the user's templates directory, and used as backgrounds
       for other drawings by selecting it from the New dialog.
+      + If the original image has already been exported as a template,
+        it will not be re-saved.  We check, in this order:
+        - identical filename prefix (based on original saved picture)
+        - identical file sizes
+        - TODO identical image dimensions
+        - TODO identical image data
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
       Bill Kendrick <bill@newbreedsoftware.com>
       + TODO - Need to allow the ability to turn this feature off.
@@ -48,8 +54,6 @@ https://tuxpaint.org/
         - tuxpaint-docs,tuxpaint: Document in OPTIONS docs
         - tuxpaint-docs,tuxpaint: Document in manpage
         - tuxpaint-config: Add support to Tux Paint Config.
-      + WIP - Ensure the same unchanged saved image isn't made into
-        multiple redundant templates.
 
   * Bug Fixes:
     ----------
@@ -67,6 +71,10 @@ https://tuxpaint.org/
       "savedir" was, instead.  It was also unable to create
       a ".thumbs" subdirectory & store thumbnails there.
       h/t Giancarlo Orru for reporting the main part of this bug.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Exported drawings (to e.g. ~/Pictures) would contain extraneous
+      data beyond the end of the data (copied from the original PNG).
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
