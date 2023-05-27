@@ -2205,6 +2205,23 @@ static void draw_selection_digits(int right, int bottom, int n);
 
 static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
 int export_gif_monitor_events(void);
+
+/* Locations where export_pict() can save */
+enum {
+  EXPORT_LOC_PICTURES,
+  EXPORT_LOC_TEMPLATES
+};
+
+/* Return values of export_pict() */
+enum {
+  EXPORT_SUCCESS,
+  EXPORT_ERR_CANNOT_MKDIR, /* Need to mkdir() but cannot */
+  EXPORT_ERR_FILENAME_PROBLEM, /* Problem creating output file's filename */
+  EXPORT_ERR_CANNOT_OPEN_SOURCE, /* Can't open input file for read */
+  EXPORT_ERR_CANNOT_SAVE, /* Can't open export file for write */
+  EXPORT_ERR_ALREADY_EXPORTED /* Exported template appears to already exist */
+};
+
 static int export_pict(char *fname, int where);
 static char *get_export_filepath(const char *ext);
 
@@ -17724,11 +17741,15 @@ static int do_open(void)
 
         if (want_export)
         {
+          int res;
+
           want_export = 0;
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          if (export_pict(rfname, 0))
+          res = export_pict(rfname, EXPORT_LOC_PICTURES);
+
+          if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
           else
             do_prompt_snd(PROMPT_PICT_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES,
@@ -17740,12 +17761,17 @@ static int do_open(void)
 
         if (want_template)
         {
+          int res;
+
           want_template = 0;
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          if (export_pict(rfname, 1))
+          res = export_pict(rfname, EXPORT_LOC_TEMPLATES);
+
+          if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_TEMPLATE_TXT, PROMPT_TEMPLATE_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+          /* FIXME: else if (res == EXPORT_ERR_ALREADY_EXPORTED) */
           else
             do_prompt_snd(PROMPT_PICT_TEMPLATE_FAILED_TXT, PROMPT_TEMPLATE_YES,
                           "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
@@ -31247,8 +31273,8 @@ int export_gif_monitor_events(void)
  * from the Open dialog.
  *
  * @param char * fname -- full path to the image to export
- * @param int where -- 0 is for export, 1 is for making a template
- * @return int 1 = success, 0 = failed
+ * @param int where -- EXPORT_LOC_PICTURES is for export, EXPORT_LOC_TEMPLATES is for making a template
+ * @return EXPORT_SUCCESS on success, or one of the EXPORT_ERR_... values on failure
  */
 static int export_pict(char *fname, int where)
 {
@@ -31267,15 +31293,15 @@ static int export_pict(char *fname, int where)
     fprintf(stderr,
             "Cannot export from saved Tux Paint file '%s'\nThe error that occurred was:\n%s\n\n",
             fname, strerror(errno));
-    return SDL_FALSE;
+    return EXPORT_ERR_CANNOT_OPEN_SOURCE;
   }
 
   time_before = SDL_GetTicks();
-  if (where == 0)
+  if (where == EXPORT_LOC_PICTURES)
   {
     pict_fname = get_export_filepath("png");
   }
-  else
+  else /* where == EXPORT_LOC_TEMPLATES */
   {
     char * dir;
 
@@ -31289,9 +31315,7 @@ static int export_pict(char *fname, int where)
       char timestamp[16];
 
       if (!make_directory(DIR_DATA, "templates", "Can't create 'templates' directory in specified datadir"))
-      {
-        return(SDL_FALSE);
-      }
+        return EXPORT_ERR_CANNOT_MKDIR;
 
       /* Create a unique filename, within that dir */
       t = time(NULL); 
@@ -31304,7 +31328,7 @@ static int export_pict(char *fname, int where)
   if (pict_fname == NULL)
   {
     fclose(fi);
-    return SDL_FALSE;
+    return EXPORT_ERR_FILENAME_PROBLEM;
   }
 
   fo = fopen(pict_fname, "wb");
@@ -31314,7 +31338,7 @@ static int export_pict(char *fname, int where)
             "Cannot export to new file '%s'\nThe error that occurred was:\n%s\n\n", pict_fname, strerror(errno));
     free(pict_fname);
     fclose(fi);
-    return SDL_FALSE;
+    return EXPORT_ERR_CANNOT_SAVE;
   }
 
   while (!feof(fi))
@@ -31342,7 +31366,7 @@ static int export_pict(char *fname, int where)
     SDL_Delay(time_after + 1000 - time_before);
   }
 
-  return SDL_TRUE;
+  return EXPORT_SUCCESS;
 }
 
 /**
