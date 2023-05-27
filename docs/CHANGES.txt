@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.25 (0.9.31)
+2023.May.27 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -55,6 +55,13 @@ https://tuxpaint.org/
 
     * Improved Eraser XOR outline when using Ctrl-Z & Ctrl-R
       for Undo/Redo.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * When specifying "datadir", Tux Paint's "New" dialog
+      was able to present templates found in that directory,
+      but would attempt to load from whatever the user's
+      "savedir" was, instead.
+      h/t Giancarlo Orru for reporting the bug.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 25, 2023
+  June 14, 2002 - May 27, 2023
 */
 
 #include "platform.h"
@@ -14057,7 +14057,7 @@ static void load_template(char *img_id)
   if (template_personal == 0)
     dirname = strdup(DATA_PREFIX "templates");
   else
-    dirname = get_fname("templates", DIR_SAVE);
+    dirname = get_fname("templates", DIR_DATA);
 
   /* Clear them to NULL first: */
   img_starter = NULL;
@@ -16986,7 +16986,7 @@ static int do_open(void)
       char *instructions;
       int num_left_buttons;
 
-      /* FIXME: Support simplification to disable "Template" option -bjk 2023.05.25 */
+      /* FIXME: Support simplification to disable "Template" (make a template) option -bjk 2023.05.25 */
       if (1) {
         instructions = textdir(gettext_noop("Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
       } else {
