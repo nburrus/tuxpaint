@@ -22229,12 +22229,12 @@ static int do_new_dialog(void)
               {
                 /* Make sure we have a ~/.tuxpaint/[starters|templates] directory: */
                 if (make_directory
-                    (DIR_SAVE, dirname[d_places[num_files]],
+                    (DIR_DATA, dirname[d_places[num_files]],
                      "Can't create user data directory (for starters/templates) (E010)"))
                 {
                   /* (Make sure we have a .../[starters|templates]/.thumbs/ directory:) */
                   safe_snprintf(fname, sizeof(fname), "%s/.thumbs", dirname[d_places[num_files]]);
-                  make_directory(DIR_SAVE, fname,
+                  make_directory(DIR_DATA, fname,
                                  "Can't create user data thumbnail directory (for starters/templates) (E011)");
                 }
               }
@@ -22331,13 +22331,13 @@ static int do_new_dialog(void)
                                 dirname[d_places[num_files]], d_names[num_files]);
 
                   if (!make_directory
-                      (DIR_SAVE, "starters",
+                      (DIR_DATA, "starters",
                        "Can't create user data directory (for starters) (E012)")
-                      || !make_directory(DIR_SAVE, "templates",
+                      || !make_directory(DIR_DATA, "templates",
                                          "Can't create user data directory (for templates) (E013)")
-                      || !make_directory(DIR_SAVE, "starters/.thumbs",
+                      || !make_directory(DIR_DATA, "starters/.thumbs",
                                          "Can't create user data directory (for starters) (E014)")
-                      || !make_directory(DIR_SAVE, "templates/.thumbs",
+                      || !make_directory(DIR_DATA, "templates/.thumbs",
                                          "Can't create user data directory (for templates) (E015)"))
                     fprintf(stderr, "Cannot save any pictures! SORRY!\n\n");
                   else
