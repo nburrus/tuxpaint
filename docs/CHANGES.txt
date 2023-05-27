@@ -42,10 +42,14 @@ https://tuxpaint.org/
       for other drawings by selecting it from the New dialog.
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
       Bill Kendrick <bill@newbreedsoftware.com>
-      TODO:
-      + Need to allow the ability to turn this off.
-      + May need to ensure the same unchanged saved image isn't
-        made into multiple redundant templates.
+      + TODO - Need to allow the ability to turn this feature off.
+        - tuxpaint: Command-line/config file option
+        - tuxpaint: Add to bash completion
+        - tuxpaint-docs,tuxpaint: Document in OPTIONS docs
+        - tuxpaint-docs,tuxpaint: Document in manpage
+        - tuxpaint-config: Add support to Tux Paint Config.
+      + WIP - Ensure the same unchanged saved image isn't made into
+        multiple redundant templates.
 
   * Bug Fixes:
     ----------

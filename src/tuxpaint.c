@@ -2222,7 +2222,7 @@ enum {
   EXPORT_ERR_ALREADY_EXPORTED /* Exported template appears to already exist */
 };
 
-static int export_pict(char *fname, int where);
+static int export_pict(char *fname, int where, char * orig_fname, char * orig_ext);
 static char *get_export_filepath(const char *ext);
 
 static void wait_for_sfx(void);
@@ -2509,6 +2509,7 @@ static void do_wait(int counter)
 #define PROMPT_TEMPLATE_YES gettext_noop("OK")
 
 /* We got an error doing image-to-template conversion */
+#define PROMPT_PICT_TEMPLATE_EXISTS_TXT gettext_noop("You already turned this picture into a template. Look for it in the “New“ dialog!")
 #define PROMPT_PICT_TEMPLATE_FAILED_TXT gettext_noop("Sorry! Your picture could not turned into a template!")
 
 /* Slideshow instructions */
@@ -17747,7 +17748,7 @@ static int do_open(void)
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          res = export_pict(rfname, EXPORT_LOC_PICTURES);
+          res = export_pict(rfname, EXPORT_LOC_PICTURES, NULL, NULL);
 
           if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
@@ -17767,11 +17768,13 @@ static int do_open(void)
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          res = export_pict(rfname, EXPORT_LOC_TEMPLATES);
+          res = export_pict(rfname, EXPORT_LOC_TEMPLATES, d_names[which], d_exts[which]);
 
           if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_TEMPLATE_TXT, PROMPT_TEMPLATE_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
-          /* FIXME: else if (res == EXPORT_ERR_ALREADY_EXPORTED) */
+          else if (res == EXPORT_ERR_ALREADY_EXPORTED)
+            do_prompt_snd(PROMPT_PICT_TEMPLATE_EXISTS_TXT, PROMPT_TEMPLATE_YES,
+                          "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
           else
             do_prompt_snd(PROMPT_PICT_TEMPLATE_FAILED_TXT, PROMPT_TEMPLATE_YES,
                           "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
@@ -31274,9 +31277,11 @@ int export_gif_monitor_events(void)
  *
  * @param char * fname -- full path to the image to export
  * @param int where -- EXPORT_LOC_PICTURES is for export, EXPORT_LOC_TEMPLATES is for making a template
+ * @param char * orig_fname -- basename of original picture's filename (used by EXPORT_LOC_TEMPLATES), or NULL
+ * @param char * orig_ext -- extention of original picture's filename (used by EXPORT_LOC_TEMPLATES), or NULL
  * @return EXPORT_SUCCESS on success, or one of the EXPORT_ERR_... values on failure
  */
-static int export_pict(char *fname, int where)
+static int export_pict(char *fname, int where, char * orig_fname, char * orig_ext)
 {
   FILE *fi, *fo;
   size_t len;
@@ -31311,17 +31316,57 @@ static int export_pict(char *fname, int where)
     if (dir != NULL)
     {
       time_t t;
-      int len = (strlen(dir) + 64);
+      int len = (strlen(dir) + 128);
       char timestamp[16];
+      DIR *d;
+      struct dirent *f;
+      SDL_bool any_identical;
 
       if (!make_directory(DIR_DATA, "templates", "Can't create 'templates' directory in specified datadir"))
         return EXPORT_ERR_CANNOT_MKDIR;
+
+      /* We'll use a filename prefix based on the picture being exported;
+         if any other templates exist with this prefix, we'll check whether
+         the image is still identical.  If so, we'll avoid creating a new
+         template, since that's redundant, (EXPORT_ERR_ALREADY_EXPORTED),
+         otherwise we can proceed with copying. */
+
+      d = opendir(dir);
+      any_identical = SDL_FALSE;
+
+      if (d != NULL)
+      {
+        /* Gather list of files (for sorting): */
+
+        do
+        {
+          f = readdir(d);
+
+          if (f != NULL)
+          {
+            if (strstr(f->d_name, orig_fname) == f->d_name) {
+              printf("%s matches %s!\n", f->d_name, orig_fname);
+              /* FIXME Check they ARE identical (filesize, PNG dimensions, then data) */
+              any_identical = SDL_TRUE;
+            }
+          }
+        }
+        while (f != NULL && !any_identical);
+
+        closedir(d);
+      }
+
+      if (any_identical)
+      {
+        fclose(fi);
+        return EXPORT_ERR_ALREADY_EXPORTED; 
+      }
 
       /* Create a unique filename, within that dir */
       t = time(NULL); 
       strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t)); 
       pict_fname = (char *) malloc(sizeof(char) * len);
-      snprintf(pict_fname, len, "%s/%s.png", dir, timestamp);
+      snprintf(pict_fname, len, "%s/%s-%s.png", dir, orig_fname, timestamp);
     }
   }
 
