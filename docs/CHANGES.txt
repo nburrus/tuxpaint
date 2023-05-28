@@ -82,6 +82,12 @@ https://tuxpaint.org/
     * Russian translaton
       Olesya Gerasimenko <translation-team@basealt.ru>
 
+  * Ports & Building:
+    -----------------
+    * Ensure `trans` dir. exists, for parallel builds (`make -j`)
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t bkw @ slackbuilds
+
 2023.May.18 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
