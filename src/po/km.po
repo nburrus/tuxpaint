@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 11:22-0700\n"
+"POT-Creation-Date: 2023-05-29 10:51-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -874,7 +874,7 @@ msgstr "ថ្មី"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9528
+#: ../tools.h:97 ../tuxpaint.c:9550
 msgid "Open"
 msgstr "បើក"
 
@@ -1089,296 +1089,326 @@ msgid ""
 msgstr "ផ្លាស់ទី​កណ្ដុរ ដើម្បី​បង្វិល​រូបរាង ។ ចុច​ដើម្បី​គូរ​វា ។"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2425
+#: ../tuxpaint.c:2447
 msgid "Do you really want to quit?"
 msgstr "តើ​អ្នក​ពិត​ជា​ចង់​ចេញ​ឬ ?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2428
+#: ../tuxpaint.c:2450
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "បាទ/ចាស ខ្ញុំ​ធ្វើ​រួច​ហើយ !"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2431 ../tuxpaint.c:2458
+#: ../tuxpaint.c:2453 ../tuxpaint.c:2480
 msgid "No, take me back!"
 msgstr "ទេ ថយក្រោយ​វិញ​សិន !"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2435
+#: ../tuxpaint.c:2457
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ប្រសិន​បើ​អ្នក​ចេញ អ្នក​នឹង​បាត់​រូបភាព ! រក្សាទុក​វា​ឬទេ ?"
 
-#: ../tuxpaint.c:2436 ../tuxpaint.c:2441
+#: ../tuxpaint.c:2458 ../tuxpaint.c:2463
 msgid "Yes, save it!"
 msgstr "បាទ/​ចាស រក្សាទុក​វា !"
 
-#: ../tuxpaint.c:2437 ../tuxpaint.c:2442
+#: ../tuxpaint.c:2459 ../tuxpaint.c:2464
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "ទេ មិន​រក្សាទុក​ទេ !"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2440
+#: ../tuxpaint.c:2462
 msgid "Save your picture first?"
 msgstr "រក្សាទុក​រូបភាព​របស់​អ្នក​ជា​មុន​សិន​​ឬ ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2445
+#: ../tuxpaint.c:2467
 msgid "Can’t open that picture!"
 msgstr "មិនអាច​បើក​រូបភាព​នោះ​បាន​ទេ !"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2448 ../tuxpaint.c:2453 ../tuxpaint.c:2462 ../tuxpaint.c:2469
-#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
+#: ../tuxpaint.c:2470 ../tuxpaint.c:2475 ../tuxpaint.c:2484 ../tuxpaint.c:2491
+#: ../tuxpaint.c:2500 ../tuxpaint.c:2505 ../tuxpaint.c:2513
 msgid "OK"
 msgstr "យល់ព្រម"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2452
+#: ../tuxpaint.c:2474
 msgid "There are no saved files!"
 msgstr "មិនមាន​ឯកសារ​ដែលបាន​រក្សាទុក​ទេ !"
 
 #. Verification of print action
-#: ../tuxpaint.c:2456
+#: ../tuxpaint.c:2478
 msgid "Print your picture now?"
 msgstr "បោះពុម្ព​រូបភាព​របស់​អ្នក​ឥឡូវ​ឬ ?"
 
-#: ../tuxpaint.c:2457
+#: ../tuxpaint.c:2479
 msgid "Yes, print it!"
 msgstr "បាទ/​ចាស បោះពុម្ព !"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2461
+#: ../tuxpaint.c:2483
 msgid "Your picture has been printed!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
 #. We got an error printing
-#: ../tuxpaint.c:2465
+#: ../tuxpaint.c:2487
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2468
+#: ../tuxpaint.c:2490
 msgid "You can’t print yet!"
 msgstr "អ្នក​មិន​អាច​បោះពុម្ព​បាន​នៅ​ឡើយ​ទេ !"
 
 #. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2472
+#: ../tuxpaint.c:2494
 msgid "Erase this picture?"
 msgstr "លុប​រូបភាព​នេះ​ឬ ?"
 
-#: ../tuxpaint.c:2473
+#: ../tuxpaint.c:2495
 msgid "Yes, erase it!"
 msgstr "បាទ​/​ចាស លុប !"
 
-#: ../tuxpaint.c:2474
+#: ../tuxpaint.c:2496
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "ទេ មិន​លុប​ទេ !"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2477
+#: ../tuxpaint.c:2499
 msgid "Remember to use the left mouse button!"
 msgstr "ចងចាំ​ថា ត្រូវ​ប្រើ​ប៊ូតុង​កណ្ដុរ​ឆ្វេង !"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2503
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
-#: ../tuxpaint.c:2482
+#: ../tuxpaint.c:2504
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2486
+#: ../tuxpaint.c:2508
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
-#: ../tuxpaint.c:2487
+#: ../tuxpaint.c:2509
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
 
+#. Confirmation of successful (we hope) image-to-template conversion
+#: ../tuxpaint.c:2512
+msgid "Your picture is now available as a template in the “New“ dialog!"
+msgstr ""
+
+#. We got an error doing image-to-template conversion
+#: ../tuxpaint.c:2516
+msgid ""
+"You already turned this picture into a template. Look for it in the “New“ "
+"dialog!"
+msgstr ""
+
+#: ../tuxpaint.c:2517
+#, fuzzy
+#| msgid "Your picture has been printed!"
+msgid "Sorry! Your picture could not turned into a template!"
+msgstr "រូបភាព​របស់​ត្រូវ​បាន​បោះពុម្ព​ហើយ !"
+
 #. Slideshow instructions
-#: ../tuxpaint.c:2491
+#: ../tuxpaint.c:2520
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "ជ្រើស​រូបភាព​ដែល​ចង់បាន រួច​ចុច “ចាក់” ។"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2800
+#: ../tuxpaint.c:2829
 msgid "Sound muted."
 msgstr "បាន​បិទ​សំឡេង ។"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2805
+#: ../tuxpaint.c:2834
 msgid "Sound unmuted."
 msgstr "បាន​បើក​សំឡេង ។"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3650
+#: ../tuxpaint.c:3683
 msgid "Please wait…"
 msgstr "សូម​រង់ចាំ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9531
+#: ../tuxpaint.c:9553
 msgid "Erase"
 msgstr "លុប"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9534
+#: ../tuxpaint.c:9556
 msgid "Slides"
 msgstr "ស្លាយ"
 
+#. Open dialog: 'Template' button, to make a template out of a drawing
+#: ../tuxpaint.c:9559
+msgid "Template"
+msgstr ""
+
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9537
+#: ../tuxpaint.c:9562
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9540
+#: ../tuxpaint.c:9565
 msgid "Back"
 msgstr "ថយក្រោយ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9543
+#: ../tuxpaint.c:9568
 msgid "Play"
 msgstr "ចាក់"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9546
+#: ../tuxpaint.c:9571
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9549
+#: ../tuxpaint.c:9574
 msgid "Next"
 msgstr "បន្ទាប់"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9552
+#: ../tuxpaint.c:9577
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10490 ../tuxpaint.c:10493 ../tuxpaint.c:10494
+#: ../tuxpaint.c:10515 ../tuxpaint.c:10518 ../tuxpaint.c:10519
 msgid "Aa"
 msgstr "កខគ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14390
+#: ../tuxpaint.c:14461
 msgid "Yes"
 msgstr "បាទ/​ចាស"
 
-#: ../tuxpaint.c:14394
+#: ../tuxpaint.c:14465
 msgid "No"
 msgstr "ទេ"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15661
+#: ../tuxpaint.c:15734
 msgid "Replace the picture with your changes?"
 msgstr "ជំនួស​រូបភាព ដោយ​ការ​ផ្លាស់ប្ដូរ​របស់​អ្នក ?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15665
+#: ../tuxpaint.c:15738
 msgid "Yes, replace the old one!"
 msgstr "បាទ​/​ចាស ជំនួស​លើ​ឯកសារ​ចាស់ !"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15669
+#: ../tuxpaint.c:15742
 msgid "No, save a new file!"
 msgstr "ទេ រក្សាទុក​ជា​ឯកសារ​ថ្មី !"
 
-#. Let user choose an image:
-#. Instructions for 'Open' file dialog
-#: ../tuxpaint.c:16935
-msgid "Choose the picture you want, then click “Open”."
-msgstr "ជ្រើស​រូបភាព​ដែល​អ្នក​​ចង់​បាន រួច​ហើយ “បើក” ។"
+#: ../tuxpaint.c:17012
+msgid ""
+"Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
+"Click “Slides” to create a slideshow animation or “Back“ to return to your "
+"current picture."
+msgstr ""
+
+#: ../tuxpaint.c:17014
+msgid ""
+"Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
+"to create a slideshow animation or “Back“ to return to your current picture."
+msgstr ""
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18524
+#: ../tuxpaint.c:18667
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24522
+#: ../tuxpaint.c:24665
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:24523
+#: ../tuxpaint.c:24666
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "​​លឿង !"
 
-#: ../tuxpaint.c:24524
+#: ../tuxpaint.c:24667
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "​ខៀវផ្ទៃមេឃ !"
 
-#: ../tuxpaint.c:24525
+#: ../tuxpaint.c:24668
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "​ស !"
 
-#: ../tuxpaint.c:24526
+#: ../tuxpaint.c:24669
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:24527
+#: ../tuxpaint.c:24670
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "​ខ្មៅ !"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24532
+#: ../tuxpaint.c:24675
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:24533
+#: ../tuxpaint.c:24676
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:24534
+#: ../tuxpaint.c:24677
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:24535
+#: ../tuxpaint.c:24678
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:24536
+#: ../tuxpaint.c:24679
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:24537
+#: ../tuxpaint.c:24680
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1386,22 +1416,22 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25317 ../tuxpaint.c:25322
+#: ../tuxpaint.c:25460 ../tuxpaint.c:25465
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28415
+#: ../tuxpaint.c:28559
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:28426
+#: ../tuxpaint.c:28570
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:28440
+#: ../tuxpaint.c:28584
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -2256,6 +2286,15 @@ msgstr ""
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
 
+#: ../../magic/src/ribbon.c:117
+msgid "Ribbon"
+msgstr ""
+
+#: ../../magic/src/ribbon.c:129
+#, fuzzy
+msgid "Add a flowing ribbon to your picture."
+msgstr "ចុច ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​របស់​អ្នក​គួច ។"
+
 #: ../../magic/src/ripples.c:109
 msgid "Ripples"
 msgstr "គួច"
@@ -2332,6 +2371,38 @@ msgstr "ផ្លាស់ប្ដូរ"
 #: ../../magic/src/shift.c:124
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "ចុច ហើយ​អូស ដើម្បី​ផ្លាស់ប្ដូរ​រូបភាព​របស់​អ្នក​នៅលើ​ផ្ទាំង​ក្រណាត់ ។"
+
+#: ../../magic/src/smooth.c:62
+#, fuzzy
+#| msgid "Rainbow"
+msgid "Smooth"
+msgstr "ឥន្ទធនូ"
+
+#: ../../magic/src/smooth.c:63
+msgid "Squiggles"
+msgstr ""
+
+#: ../../magic/src/smooth.c:64
+msgid "Loops"
+msgstr ""
+
+#: ../../magic/src/smooth.c:68
+#, fuzzy
+msgid ""
+"Click and drag the mouse around to draw in freehand; it will be smoothed "
+"when you let go."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
+
+#: ../../magic/src/smooth.c:69
+#, fuzzy
+msgid "Click and drag the mouse around to draw squiggles."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ធ្វើ​ឲ្យ​រូបភាព​ព្រិល ។"
+
+#: ../../magic/src/smooth.c:70
+#, fuzzy
+#| msgid "Click and move the mouse around to draw in calligraphy."
+msgid "Click and drag the mouse around to draw loop-the-loops."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​គូរ​ជា​សិល្បៈ​នៃ​ការ​សរសេរ ។"
 
 #: ../../magic/src/smudge.c:110
 msgid "Smudge"
@@ -2570,6 +2641,9 @@ msgstr "ចុច ហើយ​អូស ដើម្បី​គូរ​​ភ�
 #, fuzzy
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
+
+#~ msgid "Choose the picture you want, then click “Open”."
+#~ msgstr "ជ្រើស​រូបភាព​ដែល​អ្នក​​ចង់​បាន រួច​ហើយ “បើក” ។"
 
 #, fuzzy
 #~| msgid "Move the mouse to rotate the shape. Click to draw it."
