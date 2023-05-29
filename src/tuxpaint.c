@@ -586,6 +586,7 @@ int iswprint(wchar_t wc)
 
 #include "compiler.h"
 
+char * tp_ui_font = NULL;
 
 /* Convert floats to fractions between (min/max) and ((max-min)/max)
    (anything with smaller resolution will round up or down) */
@@ -8052,6 +8053,7 @@ void show_usage(int exitcode)
           " Languages:\n"
           "  [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
           "  [--mirrorstamps | --dontmirrorstamps]\n"
+          "  [--uifont \"FONT NAME\" | --uifont default]\n"
           "  [--sysfonts | --nosysfonts]\n"
           "  [--currentlocalefont | --alllocalefonts]\n"
           "\n"
@@ -9283,7 +9285,7 @@ static int generate_fontconfig_cache_real(void)
 
   DEBUG_PRINTF("-- Hello from generate_fontconfig_cache() (thread # %d)\n", SDL_ThreadID());
 
-  tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12);
+  tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12); /* always just using the default font for the purpose of getting FontConfig to generate its cache */
 
   if (tmp_font != NULL)
   {
@@ -27875,6 +27877,23 @@ static void setup_config(char *argv[])
     tmpcfg.parsertmp_locale = NULL;
   button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &num_wished_langs);
 
+  if (tmpcfg.tp_ui_font)
+  {
+    if (strcmp(tmpcfg.tp_ui_font, "default") == 0)
+    {
+      printf/*DEBUG_PRINTF*/("UI font will be default: %s\n", PANGO_DEFAULT_FONT);
+      tp_ui_font = strdup(PANGO_DEFAULT_FONT);
+    }
+    else
+    {
+      tp_ui_font = strdup(tmpcfg.tp_ui_font);
+      printf/*DEBUG_PRINTF*/("UI font will be: %s\n", tp_ui_font);
+    }
+  }
+  else
+  {
+    tp_ui_font = strdup(PANGO_DEFAULT_FONT);
+  }
 
   /* FIXME: most of this is not required before starting the font scanner */
 
@@ -29311,8 +29330,8 @@ static void setup(void)
 #endif
 
 
-  medium_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-                                       DATA_PREFIX "fonts/default_font.ttf",
+  medium_font = TuxPaint_Font_OpenFont(tp_ui_font,
+                                       DATA_PREFIX "fonts/default_font.ttf", /* FIXME: Does this matter any more? -bjk 2023.05.29 */
                                        (18 - (only_uppercase * 3)) * button_scale);
 
   if (medium_font == NULL)
@@ -29654,8 +29673,9 @@ static void setup(void)
 
   /* Load system fonts: */
 
-  large_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT,
-                                      DATA_PREFIX "fonts/default_font.ttf", (30 - (only_uppercase * 3)) * button_scale);
+  large_font = TuxPaint_Font_OpenFont(tp_ui_font,
+                                      DATA_PREFIX "fonts/default_font.ttf", /* FIXME: Does this matter any more? -bjk 2023.05.29 */
+                                      (30 - (only_uppercase * 3)) * button_scale);
 
   if (large_font == NULL)
   {
@@ -29669,7 +29689,8 @@ static void setup(void)
   }
 
 
-  small_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, DATA_PREFIX "fonts/default_font.ttf",
+  small_font = TuxPaint_Font_OpenFont(tp_ui_font,
+                                      DATA_PREFIX "fonts/default_font.ttf", /* FIXME: Does this matter any more? -bjk 2023.05.29 */
 #ifdef __APPLE__
                                       (12 - (only_uppercase * 2)) * button_scale
 #else

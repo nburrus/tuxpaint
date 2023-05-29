@@ -36,6 +36,7 @@ struct cfginfo
   const char *native_screensize;
   const char *new_colors_last;
   const char *no_button_distinction;
+  const char *tp_ui_font;
   const char *no_fancy_cursors;
   const char *no_system_fonts;
   const char *noshortcuts;

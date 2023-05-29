@@ -53,6 +53,7 @@ _tuxpaint()
                         --newcolorsfirst --newcolorslast \
                         --colorsrows=1 --colorsrows=2 \
                         --colorsrows=3 \
+			--uifont --uifont=default \
 			--sysfonts --nosysfonts \
 			--nostampcontrols --stampcontrols \
 			--nostamprotation --stamprotation \

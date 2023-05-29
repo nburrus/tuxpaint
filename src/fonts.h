@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 30, 2023
+  Last updated: May 29, 2023
 */
 
 #ifndef FONTS_H
@@ -39,8 +39,11 @@
 #include "SDL_ttf.h"
 #include "SDL2_Pango.h"
 
+/* UI font, which as of 0.9.31, can be overridden by "uifont"
+   setting (also, this will be used if "uifont=default" is specified,
+   e.g. to override a config. file option using a command-line option) */
+
 #define PANGO_DEFAULT_FONT "DejaVu Sans"
-//#define PANGO_DEFAULT_FONT "OpenDyslexicAlta"
 
 #include "compiler.h"
 

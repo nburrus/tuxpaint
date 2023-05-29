@@ -49,6 +49,11 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * WIP Ability to specify a font for Tux Paint's UI (button labels,
+      dialog boxes, Tux tip text at the bottom).
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/146/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Bug Fixes:
     ----------
     * In some window size / button size combinations, Eraser
