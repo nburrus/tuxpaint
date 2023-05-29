@@ -535,7 +535,8 @@ endif
 
 # Build the translation files for gettext
 
-$(MOFILES): trans/%.mo: src/po/%.po trans
+$(MOFILES): trans/%.mo: src/po/%.po
+	@-mkdir -p trans
 	msgfmt -o $@ $<
 
 %.desktop: %.desktop.in $(POTFILES)
@@ -553,13 +554,8 @@ translations: trans
 	@echo "Install gettext to run Tux Paint in non-U.S. English modes."
 	@echo "--------------------------------------------------------------"
 else
-translations: trans $(MOFILES) src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
+translations: $(MOFILES) src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
 endif
-
-trans:
-	@echo
-	@echo "...Preparing translation files..."
-	@mkdir trans
 
 ######
 
