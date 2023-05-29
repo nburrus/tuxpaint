@@ -710,6 +710,14 @@ Windows のユーザー
            を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--currentlocalefont"
            で変更できます。
 
+   uifont=FONT NAME
+
+           もじツールで、オペレーティングシステムのフォントを使用します。通常では、Tux Paint
+           はパッケージに付属するフォントだけを使用します。
+
+           Specify "default" to let Tux Paint use its default font, "DejaVu
+           Sans" (its standard behavior).
+
 印刷
 
   印刷の制御
@@ -1227,8 +1235,10 @@ Windows のユーザー
      --nostampcontrols
      --nostamprotation
      --nomagiccontrols
+     --nomagicsizes
      --noshapecontrols
      --nolabel
+     --nobrushspacing
      --newcolorslast
      --mouse-accessibility
      --onscreen-keyboard
@@ -1258,6 +1268,7 @@ Windows のユーザー
      --joystick-btn-print
      --joystick-buttons-ignore
      --sysfonts
+     --uifont=FONT NAME
      --alllocalefonts
      --mirrorstamps
      --stampsize=SIZE
@@ -1301,11 +1312,14 @@ Windows のユーザー
      --stampcontrols
      --stamprotation
      --magiccontrols
+     --magicsizes
      --shapecontrols
      --label
+     --brushspacing
      --newcolorsfirst
      --nosysfonts
      --currentlocalefont
+     --uifont=default
      --dontmirrorstamps
      --stampsize=default
      --mouse

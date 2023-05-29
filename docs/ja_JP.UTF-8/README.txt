@@ -83,7 +83,14 @@ Tux Paint バージョン 0.9.31 での変更点
 
    Create templates from Open dialog
            Saved drawings can be turned into templates (used to make new
-           drawings) via a new option in the Open dialog
+           drawings) via a new option in the Open dialog. (This feature may
+           be deactivated using the "notemplateexport" simplification
+           option.)
+
+   User interface font may be overridden
+           The font used for the user interface (button labels, dialog
+           pop-ups, and instructions) can be overridden from its default
+           ("DejaVu Sans"). (See the "uifont" configuration option.)
 
    全ての変更点については、CHANGES.txt をお読みください。
 

@@ -1420,7 +1420,7 @@
 
 <section>
   <header>
-    <h3>フォント</h3>
+    <h3 id="fonts">フォント</h3>
   </header>
 
   <dl>
@@ -1447,6 +1447,18 @@
         以前のバージョンのように全てのフォントを読み込むようにするには、このオプションを有効にします。      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>注:</strong> システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>alllocalefonts=no</code>" または "<code>currentlocalefont=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--currentlocalefont</code>" で変更できます。      </p>
+    </dd>
+
+    <dt>
+      <code><b>uifont=FONT NAME</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        <b>もじ</b>ツールで、オペレーティングシステムのフォントを使用します。通常では、Tux Paint はパッケージに付属するフォントだけを使用します。      </p>
+
+      <p>
+        Specify "<code>default</code>" to let Tux Paint use its default font, "DejaVu Sans" (its standard behavior).      </p>
     </dd>
   </dl>
 </section>
@@ -2365,8 +2377,10 @@
           --nostampcontrols<br>
           --nostamprotation<br>
           --nomagiccontrols<br>
+          --nomagicsizes<br>
           --noshapecontrols<br>
           --nolabel<br>
+          --nobrushspacing<br>
           --newcolorslast<br>
           --mouse-accessibility<br>
           --onscreen-keyboard<br>
@@ -2396,6 +2410,7 @@
           --joystick-btn-print<br>
           --joystick-buttons-ignore<br>
           --sysfonts<br>
+          --uifont=<i>FONT NAME</i><br>
           --alllocalefonts<br>
           --mirrorstamps<br>
           --stampsize=<i>SIZE</i><br>
@@ -2444,11 +2459,14 @@
           --stampcontrols<br>
           --stamprotation<br>
           --magiccontrols<br>
+          --magicsizes<br>
           --shapecontrols<br>
           --label<br>
+          --brushspacing<br>
           --newcolorsfirst<br>
           --nosysfonts<br>
           --currentlocalefont<br>
+          --uifont=default<br>
           --dontmirrorstamps<br>
           --stampsize=default<br>
           --mouse<br>

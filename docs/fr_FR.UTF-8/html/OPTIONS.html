@@ -1420,7 +1420,7 @@
 
 <section>
   <header>
-    <h3>Polices</h3>
+    <h3 id="fonts">Polices</h3>
   </header>
 
   <dl>
@@ -1447,6 +1447,18 @@
         Pour charger toutes les polices spécifiques aux paramètres régionaux (l'ancien comportement), utilisez cette option.      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>alllocalefonts=no</code>" or "<code>currentlocalefont=yes</code>". In both cases, may be overridden by the command-line option "<code>--currentlocalefont</code>".      </p>
+    </dd>
+
+    <dt>
+      <code><b>uifont=FONT NAME</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        Cette option oblige Tux Paint à essayer de charger des polices (à utiliser dans l'outil Texte ) à partir de votre système d'exploitation. Normalement, Tux Paint ne chargera que ceux fournis avec Tux Paint.      </p>
+
+      <p>
+        Specify "<code>default</code>" to let Tux Paint use its default font, "DejaVu Sans" (its standard behavior).      </p>
     </dd>
   </dl>
 </section>
@@ -2365,8 +2377,10 @@
           --nostampcontrols<br>
           --nostamprotation<br>
           --nomagiccontrols<br>
+          --nomagicsizes<br>
           --noshapecontrols<br>
           --nolabel<br>
+          --nobrushspacing<br>
           --newcolorslast<br>
           --mouse-accessibility<br>
           --onscreen-keyboard<br>
@@ -2396,6 +2410,7 @@
           --joystick-btn-print<br>
           --joystick-buttons-ignore<br>
           --sysfonts<br>
+          --uifont=<i>FONT NAME</i><br>
           --alllocalefonts<br>
           --mirrorstamps<br>
           --stampsize=<i>SIZE</i><br>
@@ -2444,11 +2459,14 @@
           --stampcontrols<br>
           --stamprotation<br>
           --magiccontrols<br>
+          --magicsizes<br>
           --shapecontrols<br>
           --label<br>
+          --brushspacing<br>
           --newcolorsfirst<br>
           --nosysfonts<br>
           --currentlocalefont<br>
+          --uifont=default<br>
           --dontmirrorstamps<br>
           --stampsize=default<br>
           --mouse<br>

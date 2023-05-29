@@ -149,6 +149,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 .br
 [\-\-alllocalefonts]
 .br
+[\-\-uifont \fIFONT NAME\fP]
+.br
 [\-\-savedir \fIRÉPERTOIRE\fP]
 .br
 [\-\-exportdir \fIRÉPERTOIRE\fP]
@@ -242,6 +244,8 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 [\-\-sysfonts]
 .br
 [\-\-currentlocalefont]
+.br
+[\-\-uifont=default\fP]
 .br
 [\-\-saveoverask]
 .br
@@ -1235,6 +1239,13 @@ Tux Paint évite de charger des fontes trouvées dans sosu-répertoire
 fonctionne Tux Paint. Utilisez l'option "--alllocalefonts" pour charger de
 telles fontes, pour les outils Texte et Étiquette. (C'était le
 comportement par défaut pour les versions antérieures à la 0.9.21).
+
+.TP 8
+.B \-\-uifont=\fIFONT NAME\fP \-\-uifont=default
+Specify the name of a font for Tux Paint to attempt to use for its user
+interface (UI) -- button labels, dialog pop-up text, instructional text at
+the bottom. If left unspecified, or "default" is given, then "DejaVu Sans"
+will be used. (This was the default behavior, prior to version 0.9.31.)
 
 .SH OPTIONS - MISCELLANEOUS
 .l

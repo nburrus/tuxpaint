@@ -830,6 +830,16 @@ Languages
            "alllocalefonts=no" or "currentlocalefont=yes". In both cases, may
            be overridden by the command-line option "--currentlocalefont".
 
+   uifont=FONT NAME
+
+           Esta opción fai que Tux Paint tente cargar tipos de letra (para
+           usalos na ferramenta Texto) dende o seu sistema operativo.
+           Normalmente, Tux Paint só cargará os que foron incluídos con Tux
+           Paint.
+
+           Specify "default" to let Tux Paint use its default font, "DejaVu
+           Sans" (its standard behavior).
+
 Impresión
 
   Print Permissions
@@ -1490,8 +1500,10 @@ Joystick
      --nostampcontrols
      --nostamprotation
      --nomagiccontrols
+     --nomagicsizes
      --noshapecontrols
      --nolabel
+     --nobrushspacing
      --newcolorslast
      --mouse-accessibility
      --onscreen-keyboard
@@ -1521,6 +1533,7 @@ Joystick
      --joystick-btn-print
      --joystick-buttons-ignore
      --sysfonts
+     --uifont=FONT NAME
      --alllocalefonts
      --mirrorstamps
      --stampsize=TAMAÑO
@@ -1565,11 +1578,14 @@ Joystick
      --stampcontrols
      --stamprotation
      --magiccontrols
+     --magicsizes
      --shapecontrols
      --label
+     --brushspacing
      --newcolorsfirst
      --nosysfonts
      --currentlocalefont
+     --uifont=default
      --dontmirrorstamps
      --stampsize=default
      --mouse
