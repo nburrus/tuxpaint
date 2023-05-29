@@ -8046,6 +8046,7 @@ void show_usage(int exitcode)
           "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
           "  [--nobrushspacing | --brushspacing]\n"
+          "  [--notemplateexport | --templateexport]\n"
           "  [--newcolorsfirst | --newcolorslast]\n"
           "\n"
           " Languages:\n"
