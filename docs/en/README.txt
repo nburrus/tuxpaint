@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  May 18, 2023
+                                  May 29, 2023
 
              +----------------------------------------------------+
              |Table of Contents                                   |
@@ -404,7 +404,8 @@ Available Tools
 
            Different brushes have different spacing, leaving either a series
            of individual shapes, or a continuous stroke of the brush shape.
-           Brush spacing may be adjusted. See "Paint", above, to learn more.
+           Brush spacing may be adjusted. See the brush spacing section of
+           the "Paint" tool, above, to learn more.
 
    "Shapes" Tool
 
@@ -766,7 +767,11 @@ Available Tools
                 be used as the basis for new drawings.
 
                 📜 Note: The Template creation feature was added to Tux Paint
-                in version 0.9.30.
+                in version 0.9.31.
+
+                ⚙ The Template creation feature can be disabled (e.g., by
+                selecting "Disable 'Make Template'" in Tux Paint Config. or
+                running Tux Paint with the "notemplateexport" option).
 
               * Click the red 'Back' arrow button at the lower right of the
                 list to cancel and return to the picture you were drawing.

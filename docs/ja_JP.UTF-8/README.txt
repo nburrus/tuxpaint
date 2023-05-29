@@ -6,7 +6,7 @@
          Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                   2023年5月18日
+                                   2023年5月29日
 
                     +-------------------------------------+
                     |目次                                   |
@@ -277,8 +277,10 @@ Tux Paint の起動
            アニメーション対応のブラシでは、線に沿って形が変化します。 指向性のブラシでは、線の角度に応じて異なる形状を表示します。
            さらに、アニメーションと指向性の両方を備えたブラシもあります。 詳しくは、上記の「ふで」の項をご覧ください。
 
-           線に沿って形が並んだり、連続した線になったりと、それぞれの「ふで」毎に異なる描画間隔が設定されており、この間隔は変更することができます。詳しくは、上の
-           "ペイントブラシ「ふで」" のセクションを参照して下さい。
+           Different brushes have different spacing, leaving either a series
+           of individual shapes, or a continuous stroke of the brush shape.
+           Brush spacing may be adjusted. See the brush spacing section of
+           the "Paint" tool, above, to learn more.
 
    「かたち」ツール
 
@@ -508,7 +510,11 @@ Tux Paint の起動
                 be used as the basis for new drawings.
 
                 📜 Note: The Template creation feature was added to Tux Paint
-                in version 0.9.30.
+                in version 0.9.31.
+
+                ⚙ The Template creation feature can be disabled (e.g., by
+                selecting "Disable 'Make Template'" in Tux Paint Config. or
+                running Tux Paint with the "notemplateexport" option).
 
               * 右下にある赤色の「もどる」ボタンを押すと、絵を描く画面に戻ります。
 

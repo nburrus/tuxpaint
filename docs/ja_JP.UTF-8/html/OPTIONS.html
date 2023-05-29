@@ -102,7 +102,7 @@
           </p>
 
           <p>
-            2023年5月18日          </p>
+            2023年5月29日          </p>
         </center>
       </header>
 
@@ -704,11 +704,24 @@
 
     <dd>
       <p>
-        「ふで」ツールと「せん」ツールで、描画間隔の調整を無効にします。標準の描画間隔が用いられます。      </p>
+        Disables the <a href="README.html#brush_spacing">brush spacing</a> option of the <a href="README.html#using_tools_drawing_paint"><b>Paint</b></a> and <a href="using_tools_drawing_lines"><b>Lines</b></a> tools. The brushes' default spacings will be used.      </p>
       <p class="note">
         <span title="Version variation">&#128220;</span>        <strong>注:</strong> 描画間隔調整のオプションは、バージョン 0.9.28 で追加されました。描画間隔調整についての詳細は、<a href="EXTENDING.html">EXTENDING.html</a>を参照してください。      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>注:</strong> システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>nobrushspacing=no</code>" または "<code>brushspacing=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--brushspacing</code>" で変更できます。      </p>
+    </dd>
+
+    <dt>
+      <code><b>notemplateexport=yes</b></code>
+    </dt>
+
+    <dd>
+      <p>
+        Disables the ability to create a new <a href="README.html#using_tools_other_new">Template</a> image (based on a saved drawing) from within the <a href="README.html#using_tools_other_open"><strong>Open</strong></a> dialog.      </p>
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The Template creation feature was added to Tux Paint in version 0.9.31.      </p>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        <strong>注:</strong> システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>notemplateexport=no</code>" または "<code>templateexport=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--templateexport</code>" で変更できます。      </p>
     </dd>
   </dl>
 </section>

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 27, 2023
+  June 14, 2002 - May 29, 2023
 */
 
 #include "platform.h"
@@ -1415,6 +1415,8 @@ static int disable_stamp_controls;
 static int stamp_size_override = -1;
 static int no_stamp_rotation = 0;
 static int new_colors_last;
+
+static int disable_template_export;
 
 static Uint8 magic_disabled_features = 0x00000000;
 
@@ -17006,8 +17008,7 @@ static int do_open(void)
       char *instructions;
       int num_left_buttons;
 
-      /* FIXME: Support simplification to disable "Template" (make a template) option -bjk 2023.05.25 */
-      if (1) {
+      if (!disable_template_export) {
         instructions = textdir(gettext_noop("Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
       } else {
         instructions = textdir(gettext_noop("Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
@@ -17125,8 +17126,7 @@ static int do_open(void)
           SDL_BlitSurface(img_openlabels_slideshow, NULL, screen, &dest);
 
 
-          /* FIXME: Support simplification to disable "Template" option -bjk 2023.05.25 */
-          if (1) {
+          if (!disable_template_export) {
             /* "Template" (make template) button: */
   
             num_left_buttons = 3;
@@ -17427,7 +17427,8 @@ static int do_open(void)
               done = 1;
               playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
             }
-            else if (event.button.x >= r_ttools.w + button_w * 2
+            else if (!disable_template_export &&
+                     event.button.x >= r_ttools.w + button_w * 2
                      && event.button.x < r_ttools.w + button_w * 3
                      && event.button.y >=
                      (button_h * buttons_tall + r_ttools.h) - button_h
@@ -27897,6 +27898,7 @@ static void setup_config(char *argv[])
   SETBOOL(disable_save);
   SETBOOL(disable_screensaver);
   SETBOOL(disable_stamp_controls);
+  SETBOOL(disable_template_export);
   SETBOOL(dont_do_xor);
   SETBOOL(dont_load_stamps);
   SETBOOL(fullscreen);

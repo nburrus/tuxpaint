@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2023.05.20
-.TH TUXPAINT 1 "May 20, 2023" "0.9.31" "Tux Paint"
+.\" tuxpaint.1 - 2023.05.29
+.TH TUXPAINT 1 "May 29, 2023" "0.9.31" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -76,6 +76,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-nolabel]
 .br
 [\-\-nobrushspacing]
+.br
+[\-\-notemplateexport]
 .br
 [\-\-newcolorslast]
 .br
@@ -226,6 +228,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-label]
 .br
 [\-\-brushspacing]
+.br
+[\-\-templateexport]
 .br
 [\-\-newcolorsfirst]
 .br
@@ -450,6 +454,11 @@ which can be altered or moved later.
 .B \-\-nobrushspacing \-\-brushspacing
 Disable or enable (default) the brush spacing option of the Paint and Lines
 tools, which allows you to override the default spacing of a brush.
+
+.TP 8
+.B \-\-notemplateexport \-\-templateexport
+Disable or enable (default) the ability to create new Templates from saved
+drawings via the Open dialog.
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l

@@ -23,6 +23,7 @@ struct cfginfo
   const char *disable_save;
   const char *disable_screensaver;
   const char *disable_stamp_controls;
+  const char *disable_template_export;
   const char *dont_do_xor;
   const char *dont_load_stamps;
   const char *no_stamp_rotation;

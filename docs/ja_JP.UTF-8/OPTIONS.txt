@@ -6,7 +6,7 @@
          Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                   2023年5月18日
+                                   2023年5月29日
 
                       +---------------------------------+
                       |目次                               |
@@ -378,7 +378,8 @@ Windows のユーザー
 
    nobrushspacing=yes
 
-           「ふで」ツールと「せん」ツールで、描画間隔の調整を無効にします。標準の描画間隔が用いられます。
+           Disables the brush spacing option of the Paint and Lines tools.
+           The brushes' default spacings will be used.
 
            📜 注: 描画間隔調整のオプションは、バージョン 0.9.28
            で追加されました。描画間隔調整についての詳細は、EXTENDING.htmlを参照してください。
@@ -386,6 +387,19 @@ Windows のユーザー
            ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "nobrushspacing=no" または
            "brushspacing=yes" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの
            "--brushspacing" で変更できます。
+
+   notemplateexport=yes
+
+           Disables the ability to create a new Template image (based on a
+           saved drawing) from within the Open dialog.
+
+           📜 Note: The Template creation feature was added to Tux Paint in
+           version 0.9.31.
+
+           ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "notemplateexport=no"
+           または "templateexport=yes"
+           を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "--templateexport"
+           で変更できます。
 
 言語関連
 

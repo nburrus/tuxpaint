@@ -6,7 +6,7 @@ Documentation sur les options
         Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  mai 18, 2023
+                                  mai 29, 2023
 
     +---------------------------------------------------------------------+
     |Table des matières                                                   |
@@ -501,6 +501,19 @@ Simplification
            overridden by the user's configuration file using
            "nobrushspacing=no" or "brushspacing=yes". In both cases, may be
            overridden by the command-line option "--brushspacing".
+
+   notemplateexport=yes
+
+           Disables the ability to create a new Template image (based on a
+           saved drawing) from within the Open dialog.
+
+           📜 Note: The Template creation feature was added to Tux Paint in
+           version 0.9.31.
+
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using
+           "notemplateexport=no" or "templateexport=yes". In both cases, may
+           be overridden by the command-line option "--templateexport".
 
 Langues
 
