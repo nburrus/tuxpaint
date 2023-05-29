@@ -81,6 +81,10 @@ Tux Paint バージョン 0.9.31 での変更点
    New Magic tools
            Loops, Ribbon, Smooth, and Squiggles
 
+   Create templates from Open dialog
+           Saved drawings can be turned into templates (used to make new
+           drawings) via a new option in the Open dialog
+
    全ての変更点については、CHANGES.txt をお読みください。
 
                                  Tux Paint の使い方
@@ -453,27 +457,34 @@ Tux Paint の起動
 
            ⌨ 注: キーボードで [Control / ⌘] + [N] を押しても新規作成ができます。
 
-           単色のキャンバス
+                単色のキャンバス
+                        あらかじめ用意されている背景色のほか、レインボーパレットやカラーミキサーで色を選択することができます。これらは、絵を描くときにキャンバスの下に表示されるカラーパレットにあるオプションと同じように操作します。詳細は
+                        メインの画面 > 下部: カラーパレット「いろ」 > 色に関する特別なオプション を参照。
 
-             あらかじめ用意されている背景色のほか、レインボーパレットやカラーミキサーで色を選択することができます。これらは、絵を描くときにキャンバスの下に表示されるカラーパレットにあるオプションと同じように操作します。詳細は
-             メインの画面 > 下部: カラーパレット「いろ」 > 色に関する特別なオプション を参照。
+                レイヤー画像
+                           * レイヤー画像には、塗り絵のページのようなもの（白黒の線で描かれ、色を塗ることができる）や、前景レイヤーと背景レイヤーに挟まれた部分に絵を描ける３Ｄ画像のようなものがあります。
+                           * また、このほかに、背景レイヤーだけの画像も用意されています。
 
-           レイヤー画像
+                        「消しゴム」ツールを使用すると、元のレイヤー画像が消されずに残ります。また、マジックツールの「反転」と「ミラー」は、レイヤー画像も反転させます。
 
-             レイヤー画像には、塗り絵のページのようなもの（白黒の線で描かれ、色を塗ることができる）や、前景レイヤーと背景レイヤーに挟まれた部分に絵を描ける３Ｄ画像のようなものがあります。
+                        レイヤー画像は、その上に絵を描いて保存すると新しい絵として保存され、元々のレイヤー画像自体は上書きされないので、後で（「さいしょから」ダイアログからアクセスして）何度でも使うことができます。
 
-             また、このほかに、背景レイヤーだけの画像も用意されています。
+                        ⚙ You can create your own 'Starter' and Template
+                        images. See the Extending Tux Paint documentation's
+                        sections on 'Starters' and Templates.
 
-             「消しゴム」ツールを使用すると、元のレイヤー画像が消されずに残ります。また、マジックツールの「反転」と「ミラー」は、レイヤー画像も反転させます。
-
-             レイヤー画像は、その上に絵を描いて保存すると新しい絵として保存され、元々のレイヤー画像自体は上書きされないので、後で（「さいしょから」ダイアログからアクセスして）何度でも使うことができます。
+                        💡 You can also convert your saved drawings into
+                        Templates directly within Tux Paint, from the 'Open'
+                        dialog. See "Open", below.
 
    「ひらく」
 
            「ひらく」をクリックすると、保存されている全ての作品のリストが表示されます。リストが画面に収まりきらない場合は、上下の矢印のボタンでリストをスクロールできます。
 
            まず、絵をクリックして選択します…
-              * 左下にある緑色の「ひらく」ボタンで、選択した作品を読み込みます。
+              * Click the green 'Open' button at the lower left of the list
+                to load the selected picture. You will then be able to edit
+                it.
 
                 (または、開きたい作品をダブルクリックします）
 
@@ -485,11 +496,19 @@ Tux Paint の起動
                 0.9.27以降）、macOS（バージョン
                 0.9.29以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
 
-              * 「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例:
-                "~/Pictures/TuxPaint/")に画像を出力します。
+              * Click the 'Export' button near the lower right to export the
+                selected picture to your export folder. (e.g.,
+                "~/Pictures/TuxPaint/")
 
            「ひらく」の画面からは、以下のこともできます:
               * 左側の一番下にある青色の「スライド」のボタンを押すと、スライドショーモードになります。詳しくは「スライドショー」の項を参照。
+
+              * Click the blue 'Template' button at the lower left to go to
+                convert the selected picture into a new template, which can
+                be used as the basis for new drawings.
+
+                📜 Note: The Template creation feature was added to Tux Paint
+                in version 0.9.30.
 
               * 右下にある赤色の「もどる」ボタンを押すと、絵を描く画面に戻ります。
 

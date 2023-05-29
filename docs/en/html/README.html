@@ -224,6 +224,9 @@
 
   <dt>New Magic tools</dt>
   <dd>Loops, Ribbon, Smooth, and Squiggles</dd>
+
+  <dt>Create templates from Open dialog</dt>
+  <dd>Saved drawings can be turned into templates (used to make new drawings) via a new option in the Open dialog</dd>
 </dl>
 
     <p>
@@ -504,7 +507,7 @@
 </section>
 
       <!-- Using: Tools -->
-      <section class="outer">
+      <section>
         <header>
           <h2 id="using_tools">
             Available Tools          </h2>
@@ -1040,26 +1043,31 @@
   <p class="note">
     <span title="Keyboard shortcut">&#9000;</span>    <strong>Note:</strong> You can also press <b><code>[Control / &#8984;]</code></b> + <code><b>[N]</b></code> on the keyboard to start a new drawing.  </p>
 
-  <strong>Special Solid Background Color Choices</strong>
-  <blockquote>
-    <p>
-      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">Main Screen &gt; Lower: Colors &gt; Special color options</a> for details.    </p>
-  </blockquote>
+  <dl>
+    <dt><strong>Special Solid Background Color Choices</strong></dt>
+    <dd>
+      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">Main Screen &gt; Lower: Colors &gt; Special color options</a> for details.    </dd>
 
-  <strong>'Starter' &amp; Template Images</strong>
-  <blockquote>
-    <p>
-      'Starters' can behave like a page from a coloring book — a black-and-white outline of a picture, which you can then color in, and the black outline remains intact — or like a 3D photograph, where you draw in between a foreground and background layer.    </p>
+    <dt><strong>'Starter' &amp; Template Images</strong></dt>
+    <dd>
+      <ul>
+        <li>'Starters' can behave like a page from a coloring book — a black-and-white outline of a picture, which you can then color in, and the black outline remains intact — or like a 3D photograph, where you draw in between a foreground and background layer.</li>
+        <li>'Templates' are similar, but simply provide a background drawing to work off of. Unlike 'Starters', there is no layer that remains in the foreground of anything you draw in the picture.</li>
+      </ul>
 
-    <p>
-      'Templates' are similar, but simply provide a background drawing to work off of. Unlike 'Starters', there is no layer that remains in the foreground of anything you draw in the picture.    </p>
+      <p>
+        When using the 'Eraser' tool, the original image from the 'Starter' or 'Template' will reappear. The 'Flip' and 'Mirror' Magic tools affect the orientation of the 'Starter' or 'Template', as well.      </p>
 
-    <p>
-      When using the 'Eraser' tool, the original image from the 'Starter' or 'Template' will reappear. The 'Flip' and 'Mirror' Magic tools affect the orientation of the 'Starter' or 'Template', as well.    </p>
+      <p>
+        When you load a 'Starter' or 'Template', draw on it, and then click 'Save,' it creates a new picture file — it doesn't overwrite the original, so you can use it again later (by accessing it from the 'New' dialog).      </p>
 
-    <p>
-      When you load a 'Starter' or 'Template', draw on it, and then click 'Save,' it creates a new picture file — it doesn't overwrite the original, so you can use it again later (by accessing it from the 'New' dialog).    </p>
-  </blockquote>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        You can create your own 'Starter' and Template images. See the <em>Extending Tux Paint</em> documentation's sections on <a href="EXTENDING.html#starters">'Starters'</a> and <a href="EXTENDING.html#templates">Templates</a>.      </p>
+
+      <p class="note">
+        <span title="Information">&#128161;</span>        You can also convert your saved drawings into Templates directly within Tux Paint, from the 'Open' dialog. See "<a href="#using_tools_other_open">Open</a>", below.      </p>
+    </dd>
+  </dl>
 </dd>
             <dt id="using_tools_other_open">
   <strong>"Open" Command</strong>
@@ -1091,7 +1099,7 @@
             alt=""
             align="right">
         <p>
-          Click the green 'Open' button at the lower left of the list to load the selected picture.        </p>
+          Click the green 'Open' button at the lower left of the list to load the selected picture. You will then be able to edit it.        </p>
 
         <p>
           (Alternatively, you can double-click a picture's icon to load it.)        </p>
@@ -1123,7 +1131,7 @@
             alt=""
             align="right">
         <p>
-          Click the 'Export' button near the lower right to export the image to your export folder. (e.g., "<code>~/Pictures/TuxPaint/</code>")        </p>
+          Click the 'Export' button near the lower right to export the selected picture to your export folder. (e.g., "<code>~/Pictures/TuxPaint/</code>")        </p>
         <div class="screenshot-right-after"></div>
       </li>
     </ul>
@@ -1140,6 +1148,20 @@
         <p>
           Click the blue 'Slides' (slide projector) button at the lower left to go to slideshow mode. See "<a href="#using_tools_other_open_slides">Slides</a>", below, for details.        </p>
         <div class="screenshot-right-after"></div>
+      </li>
+
+      <li>
+        <img src="../../html/images/open_template.png"
+            width="48"
+            height="48"
+            alt=""
+            align="right">
+        <p>
+          Click the blue 'Template' button at the lower left to go to convert the selected picture into a new template, which can be used as the basis for new drawings.        </p>
+        <div class="screenshot-right-after"></div>
+
+        <p class="note">
+          <span title="Version variation">&#128220;</span>          <strong>Note:</strong> The Template creation feature was added to Tux Paint in version 0.9.30.        </p>
       </li>
 
       <li>

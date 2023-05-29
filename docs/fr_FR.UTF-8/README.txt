@@ -105,6 +105,10 @@ What's New in Tux Paint version 0.9.31?
    New Magic tools
            Loops, Ribbon, Smooth, and Squiggles
 
+   Create templates from Open dialog
+           Saved drawings can be turned into templates (used to make new
+           drawings) via a new option in the Open dialog
+
    See CHANGES.txt for the complete list of changes.
 
                                Utiliser Tux Paint
@@ -711,37 +715,48 @@ Outils disponibles
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [N] sur
            le clavier pour commencer un nouveau dessin.
 
-           Special Solid Background Color Choices
+                Special Solid Background Color Choices
+                        Along with the preset solid colors, you can also
+                        choose colors using a rainbow palette or a "color
+                        mixer". These operate identically to the options
+                        found in the color palette shown below the canvas
+                        when drawing a picture. See Main Screen > Lower:
+                        Colors > Special color options for details.
 
-             Along with the preset solid colors, you can also choose colors
-             using a rainbow palette or a "color mixer". These operate
-             identically to the options found in the color palette shown
-             below the canvas when drawing a picture. See Main Screen >
-             Lower: Colors > Special color options for details.
+                Images de "Démarrage" et images "Modèle"
+                           * Les "Images de démarrage" se comportent comme
+                             une page d'un livre de coloriage - un contour
+                             noir et blanc d'une image, que vous pouvez
+                             ensuite colorier, et le contour noir reste
+                             intact - ou comme une photographie 3D, où vous
+                             dessinez entre une couche de premier plan et une
+                             d'arrière-plan.
+                           * Les "Images modèle" sont semblables, mais
+                             fournissent simplement un dessin d'arrière-plan
+                             sur lequel travailler. Contrairement aux «Images
+                             de démarrage», rien de ce que vous dessinerez ne
+                             restera au premier plan.
 
-           Images de "Démarrage" et images "Modèle"
+                        Lorsque vous utiliserez l'outil «Gomme», l'image
+                        d'origine du «Démarrage» ou du «Modèle» réapparaîtra.
+                        Les outils magiques "Retourner" et "Miroir"
+                        affecteront aussi bien l'orientation de "l'image de
+                        démarrage" que celle de "l'image Modèle".
 
-             Les "Images de démarrage" se comportent comme une page d'un
-             livre de coloriage - un contour noir et blanc d'une image, que
-             vous pouvez ensuite colorier, et le contour noir reste intact -
-             ou comme une photographie 3D, où vous dessinez entre une couche
-             de premier plan et une d'arrière-plan.
+                        Lorsque vous chargez une 'Image modèle' ou 'image
+                        modèle', dessinez dessus, puis cliquez sur
+                        'Sauvegarder', cela crée un nouveau fichier image -
+                        il n'écrase pas l'original, vous pouvez donc
+                        l'utiliser à nouveau plus tard (en y accédant depuis
+                        la boîte de dialogue 'Nouveau').
 
-             Les "Images modèle" sont semblables, mais fournissent simplement
-             un dessin d'arrière-plan sur lequel travailler. Contrairement
-             aux «Images de démarrage», rien de ce que vous dessinerez ne
-             restera au premier plan.
+                        ⚙ You can create your own 'Starter' and Template
+                        images. See the Extending Tux Paint documentation's
+                        sections on 'Starters' and Templates.
 
-             Lorsque vous utiliserez l'outil «Gomme», l'image d'origine du
-             «Démarrage» ou du «Modèle» réapparaîtra. Les outils magiques
-             "Retourner" et "Miroir" affecteront aussi bien l'orientation de
-             "l'image de démarrage" que celle de "l'image Modèle".
-
-             Lorsque vous chargez une 'Image modèle' ou 'image modèle',
-             dessinez dessus, puis cliquez sur 'Sauvegarder', cela crée un
-             nouveau fichier image - il n'écrase pas l'original, vous pouvez
-             donc l'utiliser à nouveau plus tard (en y accédant depuis la
-             boîte de dialogue 'Nouveau').
+                        💡 You can also convert your saved drawings into
+                        Templates directly within Tux Paint, from the 'Open'
+                        dialog. See "Open", below.
 
    Commande "Ouvrir"
 
@@ -751,8 +766,9 @@ Outils disponibles
            pour faire défiler la liste des images.
 
            Cliquez sur une image pour la sélectionner, puis ...
-              * Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la
-                liste pour charger l'image sélectionnée.
+              * Click the green 'Open' button at the lower left of the list
+                to load the selected picture. You will then be able to edit
+                it.
 
                 (Vous pouvez également double-cliquer sur l'icône d'une image
                 pour la charger.)
@@ -771,14 +787,21 @@ Outils disponibles
                 bin (where you may recover and restore it, if you change your
                 mind).
 
-              * Cliquez sur le bouton "Exporter" près du coin inférieur droit
-                pour exporter l'image vers votre dossier d'exportation. (par
-                exemple, "~/Pictures/TuxPaint/")
+              * Click the 'Export' button near the lower right to export the
+                selected picture to your export folder. (e.g.,
+                "~/Pictures/TuxPaint/")
 
            From the "Open" screen you can also:
               * Click the blue 'Slides' (slide projector) button at the lower
                 left to go to slideshow mode. See "Slides", below, for
                 details.
+
+              * Click the blue 'Template' button at the lower left to go to
+                convert the selected picture into a new template, which can
+                be used as the basis for new drawings.
+
+                📜 Note: The Template creation feature was added to Tux Paint
+                in version 0.9.30.
 
               * Ou cliquez sur le bouton fléché rouge «Retour» en bas à
                 droite de la liste pour annuler et revenir à l'image que vous

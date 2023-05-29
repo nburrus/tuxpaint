@@ -100,6 +100,10 @@ What's New in Tux Paint version 0.9.31?
    New Magic tools
            Loops, Ribbon, Smooth, and Squiggles
 
+   Create templates from Open dialog
+           Saved drawings can be turned into templates (used to make new
+           drawings) via a new option in the Open dialog
+
    See CHANGES.txt for the complete list of changes.
 
                                 Using Tux Paint
@@ -679,35 +683,45 @@ Available Tools
            ⌨ Note: You can also press [Control / ⌘] + [N] on the keyboard to
            start a new drawing.
 
-           Special Solid Background Color Choices
+                Special Solid Background Color Choices
+                        Along with the preset solid colors, you can also
+                        choose colors using a rainbow palette or a "color
+                        mixer". These operate identically to the options
+                        found in the color palette shown below the canvas
+                        when drawing a picture. See Main Screen > Lower:
+                        Colors > Special color options for details.
 
-             Along with the preset solid colors, you can also choose colors
-             using a rainbow palette or a "color mixer". These operate
-             identically to the options found in the color palette shown
-             below the canvas when drawing a picture. See Main Screen >
-             Lower: Colors > Special color options for details.
+                'Starter' & Template Images
+                           * 'Starters' can behave like a page from a
+                             coloring book — a black-and-white outline of a
+                             picture, which you can then color in, and the
+                             black outline remains intact — or like a 3D
+                             photograph, where you draw in between a
+                             foreground and background layer.
+                           * 'Templates' are similar, but simply provide a
+                             background drawing to work off of. Unlike
+                             'Starters', there is no layer that remains in
+                             the foreground of anything you draw in the
+                             picture.
 
-           'Starter' & Template Images
+                        When using the 'Eraser' tool, the original image from
+                        the 'Starter' or 'Template' will reappear. The 'Flip'
+                        and 'Mirror' Magic tools affect the orientation of
+                        the 'Starter' or 'Template', as well.
 
-             'Starters' can behave like a page from a coloring book — a
-             black-and-white outline of a picture, which you can then color
-             in, and the black outline remains intact — or like a 3D
-             photograph, where you draw in between a foreground and
-             background layer.
+                        When you load a 'Starter' or 'Template', draw on it,
+                        and then click 'Save,' it creates a new picture file
+                        — it doesn't overwrite the original, so you can use
+                        it again later (by accessing it from the 'New'
+                        dialog).
 
-             'Templates' are similar, but simply provide a background drawing
-             to work off of. Unlike 'Starters', there is no layer that
-             remains in the foreground of anything you draw in the picture.
+                        ⚙ You can create your own 'Starter' and Template
+                        images. See the Extending Tux Paint documentation's
+                        sections on 'Starters' and Templates.
 
-             When using the 'Eraser' tool, the original image from the
-             'Starter' or 'Template' will reappear. The 'Flip' and 'Mirror'
-             Magic tools affect the orientation of the 'Starter' or
-             'Template', as well.
-
-             When you load a 'Starter' or 'Template', draw on it, and then
-             click 'Save,' it creates a new picture file — it doesn't
-             overwrite the original, so you can use it again later (by
-             accessing it from the 'New' dialog).
+                        💡 You can also convert your saved drawings into
+                        Templates directly within Tux Paint, from the 'Open'
+                        dialog. See "Open", below.
 
    "Open" Command
 
@@ -718,7 +732,8 @@ Available Tools
 
            Click a picture to select it, and then...
               * Click the green 'Open' button at the lower left of the list
-                to load the selected picture.
+                to load the selected picture. You will then be able to edit
+                it.
 
                 (Alternatively, you can double-click a picture's icon to load
                 it.)
@@ -738,12 +753,20 @@ Available Tools
                 mind).
 
               * Click the 'Export' button near the lower right to export the
-                image to your export folder. (e.g., "~/Pictures/TuxPaint/")
+                selected picture to your export folder. (e.g.,
+                "~/Pictures/TuxPaint/")
 
            From the "Open" screen you can also:
               * Click the blue 'Slides' (slide projector) button at the lower
                 left to go to slideshow mode. See "Slides", below, for
                 details.
+
+              * Click the blue 'Template' button at the lower left to go to
+                convert the selected picture into a new template, which can
+                be used as the basis for new drawings.
+
+                📜 Note: The Template creation feature was added to Tux Paint
+                in version 0.9.30.
 
               * Click the red 'Back' arrow button at the lower right of the
                 list to cancel and return to the picture you were drawing.

@@ -804,11 +804,11 @@ Starter Options
 
 Template Options
 
-   Like 'starters', a configuration file may be specified that defines how
+   Like 'Starters', a configuration file may be specified that defines how
    Tux Paint should behave when applying 'template' images to the canvas when
    they do not have identical proportions (aspect ratio). See "Starter
    Options", above. (Note: Tux Paint prior to version 0.9.29 did not support
-   template options.)
+   starter options.)
 
                                   Traductions
 

@@ -224,6 +224,9 @@
 
   <dt>New Magic tools</dt>
   <dd>Loops, Ribbon, Smooth, and Squiggles</dd>
+
+  <dt>Create templates from Open dialog</dt>
+  <dd>Saved drawings can be turned into templates (used to make new drawings) via a new option in the Open dialog</dd>
 </dl>
 
     <p>
@@ -504,7 +507,7 @@
 </section>
 
       <!-- Using: Tools -->
-      <section class="outer">
+      <section>
         <header>
           <h2 id="using_tools">
             Outils disponibles          </h2>
@@ -1040,26 +1043,31 @@
   <p class="note">
     <span title="Keyboard shortcut">&#9000;</span>    <strong>Remarque :</strong> vous pouvez également appuyer <b><code>[Control / &#8984;]</code></b> + <code><b>[N]</b></code> sur le clavier pour commencer un nouveau dessin.  </p>
 
-  <strong>Special Solid Background Color Choices</strong>
-  <blockquote>
-    <p>
-      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">Main Screen &gt; Lower: Colors &gt; Special color options</a> for details.    </p>
-  </blockquote>
+  <dl>
+    <dt><strong>Special Solid Background Color Choices</strong></dt>
+    <dd>
+      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">Main Screen &gt; Lower: Colors &gt; Special color options</a> for details.    </dd>
 
-  <strong>Images de "Démarrage" et images "Modèle"</strong>
-  <blockquote>
-    <p>
-      Les "Images de démarrage" se comportent comme une page d'un livre de coloriage - un contour noir et blanc d'une image, que vous pouvez ensuite colorier, et le contour noir reste intact - ou comme une photographie 3D, où vous dessinez entre une couche de premier plan et une d'arrière-plan.    </p>
+    <dt><strong>Images de "Démarrage" et images "Modèle"</strong></dt>
+    <dd>
+      <ul>
+        <li>Les "Images de démarrage" se comportent comme une page d'un livre de coloriage - un contour noir et blanc d'une image, que vous pouvez ensuite colorier, et le contour noir reste intact - ou comme une photographie 3D, où vous dessinez entre une couche de premier plan et une d'arrière-plan.</li>
+        <li>Les "Images modèle" sont semblables, mais fournissent simplement un dessin d'arrière-plan sur lequel travailler. Contrairement aux «Images de démarrage», rien de ce que vous dessinerez ne restera au premier plan.</li>
+      </ul>
 
-    <p>
-      Les "Images modèle" sont semblables, mais fournissent simplement un dessin d'arrière-plan sur lequel travailler. Contrairement aux «Images de démarrage», rien de ce que vous dessinerez ne restera au premier plan.    </p>
+      <p>
+        Lorsque vous utiliserez l'outil «Gomme», l'image d'origine du «Démarrage» ou du «Modèle» réapparaîtra. Les outils magiques "Retourner" et "Miroir" affecteront aussi bien l'orientation de "l'image de démarrage" que celle de "l'image Modèle".      </p>
 
-    <p>
-      Lorsque vous utiliserez l'outil «Gomme», l'image d'origine du «Démarrage» ou du «Modèle» réapparaîtra. Les outils magiques "Retourner" et "Miroir" affecteront aussi bien l'orientation de "l'image de démarrage" que celle de "l'image Modèle".    </p>
+      <p>
+        Lorsque vous chargez une 'Image modèle' ou 'image modèle', dessinez dessus, puis cliquez sur 'Sauvegarder', cela crée un nouveau fichier image - il n'écrase pas l'original, vous pouvez donc l'utiliser à nouveau plus tard (en y accédant depuis la boîte de dialogue 'Nouveau').      </p>
 
-    <p>
-      Lorsque vous chargez une 'Image modèle' ou 'image modèle', dessinez dessus, puis cliquez sur 'Sauvegarder', cela crée un nouveau fichier image - il n'écrase pas l'original, vous pouvez donc l'utiliser à nouveau plus tard (en y accédant depuis la boîte de dialogue 'Nouveau').    </p>
-  </blockquote>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        You can create your own 'Starter' and Template images. See the <em>Extending Tux Paint</em> documentation's sections on <a href="EXTENDING.html#starters">'Starters'</a> and <a href="EXTENDING.html#templates">Templates</a>.      </p>
+
+      <p class="note">
+        <span title="Information">&#128161;</span>        You can also convert your saved drawings into Templates directly within Tux Paint, from the 'Open' dialog. See "<a href="#using_tools_other_open">Open</a>", below.      </p>
+    </dd>
+  </dl>
 </dd>
             <dt id="using_tools_other_open">
   <strong>Commande "Ouvrir"</strong>
@@ -1091,7 +1099,7 @@
             alt=""
             align="right">
         <p>
-          Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la liste pour charger l'image sélectionnée.        </p>
+          Click the green 'Open' button at the lower left of the list to load the selected picture. You will then be able to edit it.        </p>
 
         <p>
           (Vous pouvez également double-cliquer sur l'icône d'une image pour la charger.)        </p>
@@ -1123,7 +1131,7 @@
             alt=""
             align="right">
         <p>
-          Cliquez sur le bouton "Exporter" près du coin inférieur droit pour exporter l'image vers votre dossier d'exportation. (par exemple, "<code>~/Pictures/TuxPaint/</code>")        </p>
+          Click the 'Export' button near the lower right to export the selected picture to your export folder. (e.g., "<code>~/Pictures/TuxPaint/</code>")        </p>
         <div class="screenshot-right-after"></div>
       </li>
     </ul>
@@ -1140,6 +1148,20 @@
         <p>
           Click the blue 'Slides' (slide projector) button at the lower left to go to slideshow mode. See "<a href="#using_tools_other_open_slides">Slides</a>", below, for details.        </p>
         <div class="screenshot-right-after"></div>
+      </li>
+
+      <li>
+        <img src="../../html/images/open_template.png"
+            width="48"
+            height="48"
+            alt=""
+            align="right">
+        <p>
+          Click the blue 'Template' button at the lower left to go to convert the selected picture into a new template, which can be used as the basis for new drawings.        </p>
+        <div class="screenshot-right-after"></div>
+
+        <p class="note">
+          <span title="Version variation">&#128220;</span>          <strong>Note:</strong> The Template creation feature was added to Tux Paint in version 0.9.30.        </p>
       </li>
 
       <li>

@@ -17,7 +17,7 @@
    |  * Gardar                                  |
    |  * Problemas de son                        |
    |  * Problemas no modo de pantalla completa  |
-   |  * Outros problemas                        |
+   |  * Other Problems                          |
    |  * Axuda / Contacto                        |
    +--------------------------------------------+
 
@@ -496,7 +496,7 @@ Problemas no modo de pantalla completa
 
      ----------------------------------------------------------------------
 
-Outros problemas
+Other Problems
 
    Tux Paint non funciona
 
@@ -585,6 +585,18 @@ Outros problemas
            De xeito predeterminado, Tux Paint primeiro mira os ficheiros de
            configuración para ver as opcións.
 
+              * Windows
+
+                En Windows, Tux Paint examina primeiro o ficheiro de
+                configuración:
+
+                  tuxpaint.cfg
+
+                Finalmente, úsanse as opcións enviadas como argumentos da
+                liña de ordes.
+
+              * macOS
+
               * Unix e Linux
 
                 En Unix e Linux, primeiro examine o ficheiro de configuración
@@ -600,15 +612,7 @@ Outros problemas
                 Finalmente, úsanse as opcións enviadas como argumentos da
                 liña de ordes.
 
-              * Windows
-
-                En Windows, Tux Paint examina primeiro o ficheiro de
-                configuración:
-
-                  tuxpaint.cfg
-
-                Finalmente, úsanse as opcións enviadas como argumentos da
-                liña de ordes.
+              * Haiku
 
            Isto significa que se estabelece algo nun ficheiro de
            configuración que non quere estabelecer, terá que cambiar o

@@ -17,7 +17,7 @@
    |  * Sauvegarde                     |
    |  * Problèmes audio                |
    |  * Problèmes en mode plein écran  |
-   |  * Autres problèmes               |
+   |  * Other Problems                 |
    |  * Aide / Contact                 |
    +-----------------------------------+
 
@@ -513,7 +513,7 @@ Problèmes en mode plein écran
 
      ----------------------------------------------------------------------
 
-Autres problèmes
+Other Problems
 
    Tux Paint ne veut pas fonctionner
 
@@ -605,6 +605,18 @@ Autres problèmes
            Par défaut, Tux Paint regarde d'abord les fichiers de
            configuration pour les options.
 
+              * Windows
+
+                Sous Windows, Tux Paint examine d'abord le fichier de
+                configuration :
+
+                  tuxpaint.cfg
+
+                Et finalement, toutes les options envoyées en tant
+                qu'arguments de ligne de commande sont utilisées.
+
+              * macOS
+
               * Unix et Linux
 
                 Sous Unix et Linux, il examine d'abord le fichier de
@@ -620,15 +632,7 @@ Autres problèmes
                 Et finalement, toutes les options envoyées en tant
                 qu'arguments de ligne de commande sont utilisées.
 
-              * Windows
-
-                Sous Windows, Tux Paint examine d'abord le fichier de
-                configuration :
-
-                  tuxpaint.cfg
-
-                Et finalement, toutes les options envoyées en tant
-                qu'arguments de ligne de commande sont utilisées.
+              * Haiku
 
            Cela signifie que si quelque chose est défini dans un fichier de
            configuration que vous ne souhaitez pas activer, vous devrez soit

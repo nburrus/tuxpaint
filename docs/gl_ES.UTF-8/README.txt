@@ -100,6 +100,10 @@ What's New in Tux Paint version 0.9.31?
    New Magic tools
            Loops, Ribbon, Smooth, and Squiggles
 
+   Create templates from Open dialog
+           Saved drawings can be turned into templates (used to make new
+           drawings) via a new option in the Open dialog
+
    See CHANGES.txt for the complete list of changes.
 
                                 Uso de Tux Paint
@@ -691,36 +695,46 @@ Ferramentas dispoñíbeis
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [N] no teclado para
            iniciar un novo debuxo.
 
-           Special Solid Background Color Choices
+                Special Solid Background Color Choices
+                        Along with the preset solid colors, you can also
+                        choose colors using a rainbow palette or a "color
+                        mixer". These operate identically to the options
+                        found in the color palette shown below the canvas
+                        when drawing a picture. See Main Screen > Lower:
+                        Colors > Special color options for details.
 
-             Along with the preset solid colors, you can also choose colors
-             using a rainbow palette or a "color mixer". These operate
-             identically to the options found in the color palette shown
-             below the canvas when drawing a picture. See Main Screen >
-             Lower: Colors > Special color options for details.
+                Imaxes «de comezo» e de «modelo»
+                           * As «imaxes de inicio» poden comportarse como
+                             unha páxina dun libro para colorar: un contorno
+                             en branco e negro dunha imaxe, que logo pode
+                             colorar e o contorno negro permanecerá intacto,
+                             ou como unha fotografía en 3D, onde debuxa entre
+                             primeiro plano e a capa de fondo.
+                           * Os «modelos» son similares, pero simplemente
+                             fornecen un debuxo de fondo para poder
+                             traballar. A diferenza das «imaxes de inicio»,
+                             non hai ningunha capa que permaneza no primeiro
+                             plano de nada que debuxe na imaxe.
 
-           Imaxes «de comezo» e de «modelo»
+                        Cando se usa a ferramenta «Borrador», reaparecerá a
+                        imaxe orixinal da «imaxe de inicio» ou do «modelo».
+                        As ferramentas máxicas «Inverter» e «Espello» tamén
+                        afectan á orientación da «imaxe de inicio» ou do
+                        «modelo».
 
-             As «imaxes de inicio» poden comportarse como unha páxina dun
-             libro para colorar: un contorno en branco e negro dunha imaxe,
-             que logo pode colorar e o contorno negro permanecerá intacto, ou
-             como unha fotografía en 3D, onde debuxa entre primeiro plano e a
-             capa de fondo.
+                        Cando carga unha «imaxe de inicio» ou un «modelo»,
+                        debuxa nel(a) e logo preme en «Gardar», crea un novo
+                        ficheiro de imaxe; non sobrescribe o orixinal, polo
+                        que pode usalo de novo máis adiante (accedendo a el
+                        dende o diálogo «Novo»).
 
-             Os «modelos» son similares, pero simplemente fornecen un debuxo
-             de fondo para poder traballar. A diferenza das «imaxes de
-             inicio», non hai ningunha capa que permaneza no primeiro plano
-             de nada que debuxe na imaxe.
+                        ⚙ You can create your own 'Starter' and Template
+                        images. See the Extending Tux Paint documentation's
+                        sections on 'Starters' and Templates.
 
-             Cando se usa a ferramenta «Borrador», reaparecerá a imaxe
-             orixinal da «imaxe de inicio» ou do «modelo». As ferramentas
-             máxicas «Inverter» e «Espello» tamén afectan á orientación da
-             «imaxe de inicio» ou do «modelo».
-
-             Cando carga unha «imaxe de inicio» ou un «modelo», debuxa nel(a)
-             e logo preme en «Gardar», crea un novo ficheiro de imaxe; non
-             sobrescribe o orixinal, polo que pode usalo de novo máis adiante
-             (accedendo a el dende o diálogo «Novo»).
+                        💡 You can also convert your saved drawings into
+                        Templates directly within Tux Paint, from the 'Open'
+                        dialog. See "Open", below.
 
    Orde «Abrir»
 
@@ -730,8 +744,9 @@ Ferramentas dispoñíbeis
            imaxes.
 
            Prema nunha imaxe para seleccionala e logo...
-              * Prema no botón verde «Abrir» na parte inferior esquerda da
-                lista para cargar a imaxe seleccionada.
+              * Click the green 'Open' button at the lower left of the list
+                to load the selected picture. You will then be able to edit
+                it.
 
                 (Como alternativa, pode facer dobre clic na icona dunha imaxe
                 para cargala.)
@@ -750,14 +765,21 @@ Ferramentas dispoñíbeis
                 bin (where you may recover and restore it, if you change your
                 mind).
 
-              * Prema no botón «Exportar» preto da parte inferior dereita
-                para exportar a imaxe ao cartafol de exportación. (p. ex.:
-                «~/Pictures/TuxPaint/»)
+              * Click the 'Export' button near the lower right to export the
+                selected picture to your export folder. (e.g.,
+                "~/Pictures/TuxPaint/")
 
            From the "Open" screen you can also:
               * Click the blue 'Slides' (slide projector) button at the lower
                 left to go to slideshow mode. See "Slides", below, for
                 details.
+
+              * Click the blue 'Template' button at the lower left to go to
+                convert the selected picture into a new template, which can
+                be used as the basis for new drawings.
+
+                📜 Note: The Template creation feature was added to Tux Paint
+                in version 0.9.30.
 
               * Prema no botón de frecha vermello «Atrás» situado na parte
                 inferior dereita da lista para cancelar e volver á imaxe que

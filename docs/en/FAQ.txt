@@ -17,7 +17,7 @@
    |  * Saving                    |
    |  * Audio Problems            |
    |  * Fullscreen Mode Problems  |
-   |  * Other Probelms            |
+   |  * Other Problems            |
    |  * Help / Contact            |
    +------------------------------+
 
@@ -479,7 +479,7 @@ Fullscreen Mode Problems
 
      ----------------------------------------------------------------------
 
-Other Probelms
+Other Problems
 
    Tux Paint won't run
 
@@ -563,6 +563,17 @@ Other Probelms
            By default, Tux Paint first looks at configuration files for
            options.
 
+              * Windows
+
+                Under Windows, Tux Paint first examines the configuration
+                file:
+
+                  tuxpaint.cfg
+
+                Finally, any options sent as command-line arguments are used.
+
+              * macOS
+
               * Unix and Linux
 
                 Under Unix and Linux, it first examines the system-wide
@@ -576,14 +587,7 @@ Other Probelms
 
                 Finally, any options sent as command-line arguments are used.
 
-              * Windows
-
-                Under Windows, Tux Paint first examines the configuration
-                file:
-
-                  tuxpaint.cfg
-
-                Finally, any options sent as command-line arguments are used.
+              * Haiku
 
            This means that if anything is set in a configuration file that
            you don't want set, you'll need to either change the config. file

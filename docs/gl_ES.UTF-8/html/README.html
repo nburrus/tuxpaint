@@ -224,6 +224,9 @@
 
   <dt>New Magic tools</dt>
   <dd>Loops, Ribbon, Smooth, and Squiggles</dd>
+
+  <dt>Create templates from Open dialog</dt>
+  <dd>Saved drawings can be turned into templates (used to make new drawings) via a new option in the Open dialog</dd>
 </dl>
 
     <p>
@@ -504,7 +507,7 @@
 </section>
 
       <!-- Using: Tools -->
-      <section class="outer">
+      <section>
         <header>
           <h2 id="using_tools">
             Ferramentas dispoñíbeis          </h2>
@@ -1040,26 +1043,31 @@
   <p class="note">
     <span title="Keyboard shortcut">&#9000;</span>    <strong>Nota:</strong> Tamén pode premer <b><code>[Control / &#8984;]</code></b> + <code><b>[N]</b></code> no teclado para iniciar un novo debuxo.  </p>
 
-  <strong>Special Solid Background Color Choices</strong>
-  <blockquote>
-    <p>
-      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">Main Screen &gt; Lower: Colors &gt; Special color options</a> for details.    </p>
-  </blockquote>
+  <dl>
+    <dt><strong>Special Solid Background Color Choices</strong></dt>
+    <dd>
+      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">Main Screen &gt; Lower: Colors &gt; Special color options</a> for details.    </dd>
 
-  <strong>Imaxes «de comezo» e de «modelo»</strong>
-  <blockquote>
-    <p>
-      As «imaxes de inicio» poden comportarse como unha páxina dun libro para colorar: un contorno en branco e negro dunha imaxe, que logo pode colorar e o contorno negro permanecerá intacto, ou como unha fotografía en 3D, onde debuxa entre primeiro plano e a capa de fondo.    </p>
+    <dt><strong>Imaxes «de comezo» e de «modelo»</strong></dt>
+    <dd>
+      <ul>
+        <li>As «imaxes de inicio» poden comportarse como unha páxina dun libro para colorar: un contorno en branco e negro dunha imaxe, que logo pode colorar e o contorno negro permanecerá intacto, ou como unha fotografía en 3D, onde debuxa entre primeiro plano e a capa de fondo.</li>
+        <li>Os «modelos» son similares, pero simplemente fornecen un debuxo de fondo para poder traballar. A diferenza das «imaxes de inicio», non hai ningunha capa que permaneza no primeiro plano de nada que debuxe na imaxe.</li>
+      </ul>
 
-    <p>
-      Os «modelos» son similares, pero simplemente fornecen un debuxo de fondo para poder traballar. A diferenza das «imaxes de inicio», non hai ningunha capa que permaneza no primeiro plano de nada que debuxe na imaxe.    </p>
+      <p>
+        Cando se usa a ferramenta «Borrador», reaparecerá a imaxe orixinal da «imaxe de inicio» ou do «modelo». As ferramentas máxicas «Inverter» e «Espello» tamén afectan á orientación da «imaxe de inicio» ou do «modelo».      </p>
 
-    <p>
-      Cando se usa a ferramenta «Borrador», reaparecerá a imaxe orixinal da «imaxe de inicio» ou do «modelo». As ferramentas máxicas «Inverter» e «Espello» tamén afectan á orientación da «imaxe de inicio» ou do «modelo».    </p>
+      <p>
+        Cando carga unha «imaxe de inicio» ou un «modelo», debuxa nel(a) e logo preme en «Gardar», crea un novo ficheiro de imaxe; non sobrescribe o orixinal, polo que pode usalo de novo máis adiante (accedendo a el dende o diálogo «Novo»).      </p>
 
-    <p>
-      Cando carga unha «imaxe de inicio» ou un «modelo», debuxa nel(a) e logo preme en «Gardar», crea un novo ficheiro de imaxe; non sobrescribe o orixinal, polo que pode usalo de novo máis adiante (accedendo a el dende o diálogo «Novo»).    </p>
-  </blockquote>
+      <p class="note">
+        <span title="Configuration option">&#9881;</span>        You can create your own 'Starter' and Template images. See the <em>Extending Tux Paint</em> documentation's sections on <a href="EXTENDING.html#starters">'Starters'</a> and <a href="EXTENDING.html#templates">Templates</a>.      </p>
+
+      <p class="note">
+        <span title="Information">&#128161;</span>        You can also convert your saved drawings into Templates directly within Tux Paint, from the 'Open' dialog. See "<a href="#using_tools_other_open">Open</a>", below.      </p>
+    </dd>
+  </dl>
 </dd>
             <dt id="using_tools_other_open">
   <strong>Orde «Abrir»</strong>
@@ -1091,7 +1099,7 @@
             alt=""
             align="right">
         <p>
-          Prema no botón verde «Abrir» na parte inferior esquerda da lista para cargar a imaxe seleccionada.        </p>
+          Click the green 'Open' button at the lower left of the list to load the selected picture. You will then be able to edit it.        </p>
 
         <p>
           (Como alternativa, pode facer dobre clic na icona dunha imaxe para cargala.)        </p>
@@ -1123,7 +1131,7 @@
             alt=""
             align="right">
         <p>
-          Prema no botón «Exportar» preto da parte inferior dereita para exportar a imaxe ao cartafol de exportación. (p. ex.: «<code>~/Pictures/TuxPaint/</code>»)        </p>
+          Click the 'Export' button near the lower right to export the selected picture to your export folder. (e.g., "<code>~/Pictures/TuxPaint/</code>")        </p>
         <div class="screenshot-right-after"></div>
       </li>
     </ul>
@@ -1140,6 +1148,20 @@
         <p>
           Click the blue 'Slides' (slide projector) button at the lower left to go to slideshow mode. See "<a href="#using_tools_other_open_slides">Slides</a>", below, for details.        </p>
         <div class="screenshot-right-after"></div>
+      </li>
+
+      <li>
+        <img src="../../html/images/open_template.png"
+            width="48"
+            height="48"
+            alt=""
+            align="right">
+        <p>
+          Click the blue 'Template' button at the lower left to go to convert the selected picture into a new template, which can be used as the basis for new drawings.        </p>
+        <div class="screenshot-right-after"></div>
+
+        <p class="note">
+          <span title="Version variation">&#128220;</span>          <strong>Note:</strong> The Template creation feature was added to Tux Paint in version 0.9.30.        </p>
       </li>
 
       <li>
