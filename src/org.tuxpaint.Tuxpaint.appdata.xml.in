@@ -43,9 +43,12 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.31" date="2023-05-20">
+    <release version="0.9.31" date="2023-05-29">
       <description>
-        <p>TBD</p>
+        <p>New Magic tools: Loops, Ribbon, Smooth, and Squiggles.</p>
+        <p>Eraser tool now offers fuzzy erasers.</p>
+        <p>Turn saved drawings into Templates (found in the New dialog) within Tux Paint (via the Open dialog).</p>
+        <p>Specify UI font, via "uifont" configuration option.</p>
       </description>
     </release>
     <release version="0.9.30" date="2023-05-14">
