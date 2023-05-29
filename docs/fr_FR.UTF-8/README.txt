@@ -802,7 +802,8 @@ Outils disponibles
                 be used as the basis for new drawings.
 
                 📜 Note: The Template creation feature was added to Tux Paint
-                in version 0.9.31.
+                in version 0.9.31. To learn how to create Templates outside
+                of Tux Paint, see Extending Tux Paint
 
                 ⚙ The Template creation feature can be disabled (e.g., by
                 selecting "Disable 'Make Template'" in Tux Paint Config. or

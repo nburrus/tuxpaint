@@ -5,7 +5,7 @@
         Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                février 12, 2023
+                                  mai 29, 2023
 
         +--------------------------------------------------------------+
         |Table des matières                                            |
@@ -809,6 +809,12 @@ Template Options
    they do not have identical proportions (aspect ratio). See "Starter
    Options", above. (Note: Tux Paint prior to version 0.9.29 did not support
    starter options.)
+
+   💡 It's also possible to create basic Templates (with no options) from
+   existing saved drawings directly within Tux Paint, from the "Open" dialog.
+   They will be placed in the user's personal templates folder. (Note: Tux
+   Paint prior to version 0.9.31 did not support Template creation from the
+   Open dialog.)
 
                                   Traductions
 
