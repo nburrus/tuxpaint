@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.27 (0.9.31)
+2023.May.31 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -37,7 +37,7 @@ https://tuxpaint.org/
 
   * Other Improvements:
     -------------------
-    * Saved pictures can, from the Open dialog, be copied into
+    * WIP Saved pictures can, from the Open dialog, be copied into
       the user's templates directory, and used as backgrounds
       for other drawings by selecting it from the New dialog.
       + If the original image has already been exported as a template,
@@ -46,11 +46,31 @@ https://tuxpaint.org/
         - identical file sizes (bytes)
         - identical image dimensions (pixels)
         - identical image data (CRC checksum)
+      + TODO Templates created from saved drawings in Tux Paint will
+        be flagged as such [TBD file sitting alongside it]
+      + TODO Templates created from saved drawings in Tux Paint can
+        be removed via a new "Erase" option that will appear when
+        such templates are selected from the "New" dialog. [See below]
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * TODO The new "Erase" option to remove templates from the "New"
+      dialog, as well as the "Erase" option to remove saved images
+      from the "Open" dialog, may be disabled via a new simplification
+      configuration setting, "--TBD".
+        + TODO Tux Paint --help output
+        + TODO Tux Paint manpage
+        + TODO Tux Paint OPTIONS docs
+        + TODO Tux Paint Config.
+        + TODO Tux Paint Config. README docs
+        + TODO Tux Paint README: What's New?
+        + TODO Tux Paint appdate 0.9.31 new features
+        + TODO Tux Paint Website Features page
+
     * WIP Ability to specify a font for Tux Paint's UI (button labels,
       dialog boxes, Tux tip text at the bottom).
+      + TODO Provide a way to list available fonts ("--uifont list"?)
+      + TODO List fonts in a pull-down menu in Tux Paint Config.?
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/146/
       Bill Kendrick <bill@newbreedsoftware.com>
 
