@@ -27879,15 +27879,28 @@ static void setup_config(char *argv[])
 
   if (tmpcfg.tp_ui_font)
   {
+    char * tmp_str;
+
     if (strcmp(tmpcfg.tp_ui_font, "default") == 0)
     {
-      printf/*DEBUG_PRINTF*/("UI font will be default: %s\n", PANGO_DEFAULT_FONT);
+      printf/*DEBUG_PRINTF*/("Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
       tp_ui_font = strdup(PANGO_DEFAULT_FONT);
     }
     else
     {
       tp_ui_font = strdup(tmpcfg.tp_ui_font);
-      printf/*DEBUG_PRINTF*/("UI font will be: %s\n", tp_ui_font);
+      printf/*DEBUG_PRINTF*/("Requested UI font described by \"%s\"\n", tp_ui_font);
+    }
+
+    tmp_str = ask_pango_for_font(tp_ui_font);
+    if (tmp_str != NULL)
+    {
+      printf("Actual UI font will be \"%s\"\n", tmp_str);
+      free(tmp_str);
+    }
+    else
+    {
+      printf("Error asking pango for actual font!\n");
     }
   }
   else

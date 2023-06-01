@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 29, 2023
+  Last updated: May 31, 2023
 */
 
 #ifndef FONTS_H
@@ -164,5 +164,6 @@ void sdl_color_to_pango_color(SDL_Color sdl_color, SDLPango_Matrix * pango_color
 
 int load_user_fonts(SDL_Surface * screen, SDL_Texture * texture,
                     SDL_Renderer * renderer, void *vp, const char *restrict const locale);
+char * ask_pango_for_font(char * pangodesc);
 
 #endif

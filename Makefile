@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - May 28, 2023
+# June 14, 2002 - May 31, 2023
 
 
 # The version number, for release:
@@ -294,11 +294,16 @@ SDL_LIBS+=$(call linktest,libpng,$(PNG),)
 SDL_MIXER_LIB:=$(call linktest,SDL2_mixer,-lSDL2_mixer,$(SDL_LIBS))
 NOSOUNDFLAG:=$(if $(SDL_MIXER_LIB),,-DNOSOUND$(warning -lSDL2_Mixer failed, no sound for you!))
 
-# SDL Pango is needed to render complex scripts like Thai and Arabic
+# SDL2_Pango is used to render text (and is needed for complex scripts like Thai and Arabic)
 SDL2_PANGO_LIB:=$(call linktest,SDL2_Pango,-lSDL2_Pango,$(SDL_LIBS))
 SDL2_PANGO_CFLAGS:=$(shell $(PKG_CONFIG) --cflags SDL2_Pango)
 
-SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL2_PANGO_LIB)
+# Pango itself is needed for direct and indirect access to some Pango functions
+PANGO_LIB:=$(call linktest,pango,-lpango,$(SDL_LIBS))
+PANGO_LIB+=$(call linktest,pangoft2,-lpangoft2,$(SDL_LIBS))
+PANGO_CFLAGS:=$(shell $(PKG_CONFIG) --cflags pango)
+
+SDL_LIBS+=$(SDL_MIXER_LIB) $(SDL2_PANGO_LIB) $(PANGO_LIB)
 
 SDL_CFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --cflags)
 
@@ -323,16 +328,17 @@ PNG_CFLAGS:=$(shell $(PKG_CONFIG) libpng --cflags)
 ifeq ($(hack),1)
 hack:
 	@echo 'SDL2_PANGO_LIB is' $(SDL2_PANGO_LIB)
-	@echo 'SDL_MIXER_LIB is' $(SDL_MIXER_LIB)
-	@echo 'SVG_LIB       is' $(SVG_LIB)
-	@echo 'SDL_LIBS      is' $(SDL_LIBS)
-	@echo 'SDL_CFLAGS    is' $(SDL_CFLAGS)
-	@echo 'SVG_CFLAGS    is' $(SVG_CFLAGS)
-	@echo 'PAPER_LIB     is' $(PAPER_LIB)
-	@echo 'PNG           is' $(PNG)
-	@echo 'LDFLAGS       is' $(LDFLAGS)
-	@echo 'CFLAGS        is' $(CFLAGS)
-	@echo 'CPPFLAGS      is' $(CPPFLAGS)
+	@echo 'PANGO_LIB      is' $(PANGO_LIB)
+	@echo 'SDL_MIXER_LIB  is' $(SDL_MIXER_LIB)
+	@echo 'SVG_LIB        is' $(SVG_LIB)
+	@echo 'SDL_LIBS       is' $(SDL_LIBS)
+	@echo 'SDL_CFLAGS     is' $(SDL_CFLAGS)
+	@echo 'SVG_CFLAGS     is' $(SVG_CFLAGS)
+	@echo 'PAPER_LIB      is' $(PAPER_LIB)
+	@echo 'PNG            is' $(PNG)
+	@echo 'LDFLAGS        is' $(LDFLAGS)
+	@echo 'CFLAGS         is' $(CFLAGS)
+	@echo 'CPPFLAGS       is' $(CPPFLAGS)
 endif
 
 # The entire set of CFLAGS:
@@ -346,7 +352,8 @@ CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	-Waggregate-return \
 	-Wstrict-prototypes -Wmissing-prototypes \
 	$(shell src/test-option.sh -Wstrict-aliasing=2) \
-    $(SDL2_PANGO_CFLAGS) \
+	$(PANGO_CFLAGS) \
+	$(SDL2_PANGO_CFLAGS) \
 	$(ARCH_CFLAGS)
 
 DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
@@ -1260,7 +1267,7 @@ obj/fonts.o:	src/fonts.c src/fonts.h src/dirwalk.h src/progressbar.h \
 		src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling font support..."
-	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/fonts.c -o obj/fonts.o
 
 obj/dirwalk.o:	src/dirwalk.c src/dirwalk.h src/progressbar.h src/fonts.h \

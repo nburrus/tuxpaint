@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.May.31 (0.9.31)
+2023.June.1 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -69,6 +69,7 @@ https://tuxpaint.org/
 
     * WIP Ability to specify a font for Tux Paint's UI (button labels,
       dialog boxes, Tux tip text at the bottom).
+      + The requested font & actual font loaded will be echo'd to STDOUT
       + TODO Provide a way to list available fonts ("--uifont list"?)
       + TODO List fonts in a pull-down menu in Tux Paint Config.?
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/146/
