@@ -109,7 +109,8 @@ What's New in Tux Paint version 0.9.31?
    User interface font may be overridden
            The font used for the user interface (button labels, dialog
            pop-ups, and instructions) can be overridden from its default
-           ("DejaVu Sans"). (See the "uifont" configuration option.)
+           ("DejaVu Sans"). (See the "uifont" configuration option. Use
+           "--listfonts" to see a list of available fonts.)
 
    File Erase may be disabled
            Controls to erase saved work — saved drawings (via the Open

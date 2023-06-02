@@ -48,7 +48,7 @@
         <p>New Magic tools: Loops, Ribbon, Smooth, and Squiggles.</p>
         <p>Eraser tool now offers fuzzy erasers.</p>
         <p>Turn saved drawings into Templates (found in the New dialog) within Tux Paint (via the Open dialog). These may be deleted from the New dialog.</p>
-        <p>Specify UI font, via "uifont" configuration option.</p>
+        <p>Specify UI font, via "uifont" configuration option. (List available fonts with "--listfonts" on the command-line.)</p>
         <p>"Erase" option to remove saved drawings from the Open dialog and exported templates from the New dialog may be disabled, via "noerase" configuration option.</p>
       </description>
     </release>

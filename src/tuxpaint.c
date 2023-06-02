@@ -481,12 +481,8 @@ int iswprint(wchar_t wc)
 #error "---------------------------------------------------"
 #endif
 
-#ifdef DEBUG
-/* These are required to display pango debugging information later in this file */
 #include <pango/pango.h>
 #include <pango/pangoft2.h>
-#endif
-
 
 #ifndef NOSOUND
 
@@ -2065,6 +2061,7 @@ static void rec_undo_buffer(void);
 
 void show_version(int details);
 void show_usage(int exitcode);
+void show_fonts(void);
 static char *progname;
 
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
@@ -8013,7 +8010,7 @@ void show_usage(int exitcode)
   /* *INDENT-OFF* */
   fprintf(f,
           "\n"
-          "Usage: %s {--usage | --help | --version | --verbose-version | --copying}\n"
+          "Usage: %s {--usage | --help | --version | --verbose-version | --copying | --listfonts}\n"
           "\n"
           " Config:\n"
           "  [--nosysconfig]\n"
@@ -8114,6 +8111,27 @@ void show_usage(int exitcode)
   /* *INDENT-ON* */
 }
 
+/**
+ * Show a list of fonts that Pango finds (and hence
+ * should be available to "--uifont" argument) and exit.
+ */
+void show_fonts(void) {
+  PangoFontMap *fontmap;
+  PangoFontFamily **families;
+  int n_families;
+
+  fontmap = pango_ft2_font_map_new();
+  pango_font_map_list_families(fontmap, &families, &n_families);
+
+  for (int i = 0; i < n_families; i++)
+  {
+    const char *family_name = pango_font_family_get_name(families[i]);
+
+    printf("%s\n", family_name);
+  }
+
+  exit(0);
+}
 
 /**
  * Compute default scale factor for stamps.
@@ -30405,24 +30423,6 @@ int main(int argc, char *argv[])
 
     g_get_charset(&charset);
     printf("pango charset: %s\n", charset);
-  }
-
-  /* Display fonts available to pango */
-  if (1)
-  {
-    PangoFontMap *fontmap;
-    PangoFontFamily **families;
-    int n_families;
-
-    fontmap = pango_ft2_font_map_new();
-    pango_font_map_list_families(fontmap, &families, &n_families);
-
-    for (int i = 0; i < n_families; i++)
-    {
-      const char *family_name = pango_font_family_get_name(families[i]);
-
-      printf("pango ft2 fontmap[%d] = '%s'\n", i, family_name);
-    }
   }
 #endif
 

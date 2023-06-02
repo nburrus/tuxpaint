@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 22:47-0700\n"
+"POT-Creation-Date: 2023-06-01 23:26-0700\n"
 "PO-Revision-Date: 2023-04-07 09:13+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
@@ -375,7 +375,9 @@ msgid ""
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
-msgid "Specify UI font, via \"uifont\" configuration option."
+msgid ""
+"Specify UI font, via \"uifont\" configuration option. (List available fonts "
+"with \"--listfonts\" on the command-line.)"
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
@@ -931,7 +933,7 @@ msgstr "新建"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9557
+#: ../tools.h:97 ../tuxpaint.c:9575
 msgid "Open"
 msgstr "打开"
 
@@ -1152,244 +1154,244 @@ msgid ""
 msgstr "移动鼠标来旋转形状。单击就可以画出它。"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2449
+#: ../tuxpaint.c:2446
 msgid "Do you really want to quit?"
 msgstr "你真的要退出吗？"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2452
+#: ../tuxpaint.c:2449
 msgid "Yes, I’m done!"
 msgstr "OK！画完了！"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2455 ../tuxpaint.c:2482
+#: ../tuxpaint.c:2452 ../tuxpaint.c:2479
 msgid "No, take me back!"
 msgstr "不，我要返回！"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2459
+#: ../tuxpaint.c:2456
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果你退出了，你会丢掉你的图片！保存起来吗？"
 
-#: ../tuxpaint.c:2460 ../tuxpaint.c:2465
+#: ../tuxpaint.c:2457 ../tuxpaint.c:2462
 msgid "Yes, save it!"
 msgstr "是的，保存它！"
 
-#: ../tuxpaint.c:2461 ../tuxpaint.c:2466
+#: ../tuxpaint.c:2458 ../tuxpaint.c:2463
 msgid "No, don’t bother saving!"
 msgstr "不，现在不保存！"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2464
+#: ../tuxpaint.c:2461
 msgid "Save your picture first?"
 msgstr "先保存你的图片？"
 
 #. Error opening picture
-#: ../tuxpaint.c:2469
+#: ../tuxpaint.c:2466
 msgid "Can’t open that picture!"
 msgstr "打不开那个图片！"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477 ../tuxpaint.c:2486 ../tuxpaint.c:2493
-#: ../tuxpaint.c:2504 ../tuxpaint.c:2509 ../tuxpaint.c:2517
+#: ../tuxpaint.c:2469 ../tuxpaint.c:2474 ../tuxpaint.c:2483 ../tuxpaint.c:2490
+#: ../tuxpaint.c:2501 ../tuxpaint.c:2506 ../tuxpaint.c:2514
 msgid "OK"
 msgstr "好的"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2473
 msgid "There are no saved files!"
 msgstr "没有保存过的文件！"
 
 #. Verification of print action
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2477
 msgid "Print your picture now?"
 msgstr "现在打印你的图片吗？"
 
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2478
 msgid "Yes, print it!"
 msgstr "是的，打印！"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2482
 msgid "Your picture has been printed!"
 msgstr "你的图片被打印出来了！"
 
 #. We got an error printing
-#: ../tuxpaint.c:2489
+#: ../tuxpaint.c:2486
 msgid "Sorry! Your picture could not be printed!"
 msgstr "抱歉！您的图片无法保存！"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2489
 msgid "You can’t print yet!"
 msgstr "你还不能打印耶！"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2494
 msgid "Erase this picture?"
 msgstr "删除这个图片吗？"
 
-#: ../tuxpaint.c:2498
+#: ../tuxpaint.c:2495
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "删除这个图片吗？"
 
-#: ../tuxpaint.c:2499
+#: ../tuxpaint.c:2496
 msgid "Yes, erase it!"
 msgstr "是的，擦掉！"
 
-#: ../tuxpaint.c:2500
+#: ../tuxpaint.c:2497
 msgid "No, don’t erase it!"
 msgstr "不，不要擦掉！"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2503
+#: ../tuxpaint.c:2500
 msgid "Remember to use the left mouse button!"
 msgstr "记住使用鼠标左键!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2507
+#: ../tuxpaint.c:2504
 msgid "Your picture has been exported!"
 msgstr "你的图片被打印出来了！"
 
-#: ../tuxpaint.c:2508
+#: ../tuxpaint.c:2505
 msgid "Your slideshow GIF has been exported!"
 msgstr "你的图片被打印出来了！"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2509
 msgid "Sorry! Your picture could not be exported!"
 msgstr "抱歉！您的图片无法保存！"
 
-#: ../tuxpaint.c:2513
+#: ../tuxpaint.c:2510
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "抱歉！您的图片无法保存！"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2516
+#: ../tuxpaint.c:2513
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2517
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2521
+#: ../tuxpaint.c:2518
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "抱歉！您的图片无法保存！"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2521
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2833
+#: ../tuxpaint.c:2830
 msgid "Sound muted."
 msgstr "静音。"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2838
+#: ../tuxpaint.c:2835
 msgid "Sound unmuted."
 msgstr "取消静音。"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3687
+#: ../tuxpaint.c:3684
 msgid "Please wait…"
 msgstr "请等待…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9560
+#: ../tuxpaint.c:9578
 msgid "Erase"
 msgstr "擦出"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9563
+#: ../tuxpaint.c:9581
 msgid "Slides"
 msgstr "幻灯片"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9566
+#: ../tuxpaint.c:9584
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9569
+#: ../tuxpaint.c:9587
 msgid "Export"
 msgstr "导出"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9572
+#: ../tuxpaint.c:9590
 msgid "Back"
 msgstr "返回"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9575
+#: ../tuxpaint.c:9593
 msgid "Play"
 msgstr "播放"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9578
+#: ../tuxpaint.c:9596
 msgid "GIF Export"
 msgstr "GIF 导出"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9581
+#: ../tuxpaint.c:9599
 msgid "Next"
 msgstr "下一个"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9584
+#: ../tuxpaint.c:9602
 msgid "Clear"
 msgstr "清除"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10522 ../tuxpaint.c:10525 ../tuxpaint.c:10526
+#: ../tuxpaint.c:10540 ../tuxpaint.c:10543 ../tuxpaint.c:10544
 msgid "Aa"
 msgstr "文字"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14468
+#: ../tuxpaint.c:14486
 msgid "Yes"
 msgstr "是的"
 
-#: ../tuxpaint.c:14472
+#: ../tuxpaint.c:14490
 msgid "No"
 msgstr "不要"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15741
+#: ../tuxpaint.c:15759
 msgid "Replace the picture with your changes?"
 msgstr "确定要替换图片？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15745
+#: ../tuxpaint.c:15763
 msgid "Yes, replace the old one!"
 msgstr "是的，替换原来的图片！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15749
+#: ../tuxpaint.c:15767
 msgid "No, save a new file!"
 msgstr "不，保存到新文件！"
 
-#: ../tuxpaint.c:17019
+#: ../tuxpaint.c:17037
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17021
+#: ../tuxpaint.c:17039
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1398,64 +1400,64 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18690
+#: ../tuxpaint.c:18708
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "选择2个或多个图形以转换为动画GIF。"
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24817
+#: ../tuxpaint.c:24835
 msgid "red"
 msgstr "红色"
 
-#: ../tuxpaint.c:24818
+#: ../tuxpaint.c:24836
 msgid "yellow"
 msgstr "黄色"
 
-#: ../tuxpaint.c:24819
+#: ../tuxpaint.c:24837
 msgid "blue"
 msgstr "天蓝色"
 
-#: ../tuxpaint.c:24820
+#: ../tuxpaint.c:24838
 msgid "white"
 msgstr "白色"
 
-#: ../tuxpaint.c:24821
+#: ../tuxpaint.c:24839
 msgid "grey"
 msgstr "灰色"
 
-#: ../tuxpaint.c:24822
+#: ../tuxpaint.c:24840
 msgid "black"
 msgstr "黑色"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24827
+#: ../tuxpaint.c:24845
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "你的颜色是 %1$s %2$s 。"
 
-#: ../tuxpaint.c:24828
+#: ../tuxpaint.c:24846
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "你的颜色是 %1$s %2$s 和 %3$s %4$s。"
 
-#: ../tuxpaint.c:24829
+#: ../tuxpaint.c:24847
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "你的颜色是 %1$s %2$s, %3$s %4$s，和 %5$s %6$s。"
 
-#: ../tuxpaint.c:24830
+#: ../tuxpaint.c:24848
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "你的颜色是 %1$s %2$s, %3$s %4$s, %5$s %6$s， 和 %7$s %8$s。"
 
-#: ../tuxpaint.c:24831
+#: ../tuxpaint.c:24849
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "你的颜色是 %1$s %2$s， %3$s %4$s， %5$s %6$s， %7$s %8$s， 和 %9$s %10$s。"
 
-#: ../tuxpaint.c:24832
+#: ../tuxpaint.c:24850
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1465,16 +1467,16 @@ msgstr ""
 "%11$s %12$s。"
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25612 ../tuxpaint.c:25617
+#: ../tuxpaint.c:25630 ../tuxpaint.c:25635
 msgid "entirely"
 msgstr "完全"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28742
+#: ../tuxpaint.c:28760
 msgid "Select a color from your drawing."
 msgstr "从绘画中选择一种颜色。"
 
-#: ../tuxpaint.c:28753
+#: ../tuxpaint.c:28771
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1482,7 +1484,7 @@ msgstr ""
 "选择一种颜色。色调从上到下。饱和度/强度从左（淡）向右（纯）。值（亮度/暗"
 "度）：灰色条。"
 
-#: ../tuxpaint.c:28767
+#: ../tuxpaint.c:28785
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."

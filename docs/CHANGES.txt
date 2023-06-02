@@ -55,16 +55,20 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * "Erase" controls may be disabled via a new simplification
-      configuration setting, "--noerase".  This removes the ability
+      configuration setting, "noerase".  This removes the ability
       to delete:
       + saved images from the "Open" dialog, and
       + templates, from the "New" dialog
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * WIP Ability to specify a font for Tux Paint's UI (button labels,
-      dialog boxes, Tux tip text at the bottom).
-      + The requested font & actual font loaded will be echo'd to STDOUT
-      + TODO Provide a way to list available fonts ("--uifont list"?)
+    * Ability to specify a font for Tux Paint's UI (button labels,
+      dialog boxes, Tux tip text at the bottom), "uifont".
+      + Notes:
+        - The requested font & actual font loaded will be echo'd to STDOUT.
+        - Be aware of spaces; wrap in quotes (") or escape with backslash (\)
+          when needed, when using the "--uifont=..." command-line option.
+      + Tux Paint can list available fonts to STDOUT (and then exits) if
+        given the command-line option "--listfonts".
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/146/
       Bill Kendrick <bill@newbreedsoftware.com>
 

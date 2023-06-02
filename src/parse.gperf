@@ -40,6 +40,7 @@ struct cfg
 /* Prototypes of what's in tuxpaint.c: */
 void show_version(int details);
 void show_usage(int exitcode);
+void show_fonts(void);
 
 static void imm_version(void)
 {
@@ -60,6 +61,11 @@ static void imm_help(void)
 {
   show_version(0);
   show_usage(0);
+}
+
+static void imm_fonts(void)
+{
+  show_fonts();
 }
 
 static void imm_copying(void)
@@ -117,6 +123,7 @@ fancycursors,        NEGBOOL(no_fancy_cursors)
 fullscreen,          MULTI(parsertmp_fullscreen_native)
 grab,                POSBOOL(grab_input)
 help,                IMM(help)
+listfonts,           IMM(fonts)
 hidecursor,          POSBOOL(hide_cursor)
 keyboard,            POSBOOL(keymouse)
 label,               NEGBOOL(disable_label)

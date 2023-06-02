@@ -26,6 +26,7 @@ _tuxpaint()
 			-v --version -vv --verbose-version \
 			-c --copying \
 			-u --usage \
+			--listfonts \
 			-w --windowed -f --fullscreen \
 			--native \
 			--disablescreensaver --allowscreensaver \

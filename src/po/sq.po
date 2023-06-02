@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 22:47-0700\n"
+"POT-Creation-Date: 2023-06-01 23:26-0700\n"
 "PO-Revision-Date: 2021-11-26 13:47+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -386,7 +386,9 @@ msgid ""
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
-msgid "Specify UI font, via \"uifont\" configuration option."
+msgid ""
+"Specify UI font, via \"uifont\" configuration option. (List available fonts "
+"with \"--listfonts\" on the command-line.)"
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
@@ -892,7 +894,7 @@ msgstr "I ri"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9557
+#: ../tools.h:97 ../tuxpaint.c:9575
 msgid "Open"
 msgstr "Hap"
 
@@ -1124,244 +1126,244 @@ msgstr ""
 "(Rrotullohet me %d gradë.)"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2449
+#: ../tuxpaint.c:2446
 msgid "Do you really want to quit?"
 msgstr "Doni vërtet të dilet?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2452
+#: ../tuxpaint.c:2449
 msgid "Yes, I’m done!"
 msgstr "Po, mbarova!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2455 ../tuxpaint.c:2482
+#: ../tuxpaint.c:2452 ../tuxpaint.c:2479
 msgid "No, take me back!"
 msgstr "Jo, kthemëni mbrapsht!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2459
+#: ../tuxpaint.c:2456
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Nëse dilet, do të humbni vizatimin tuaj! Të ruhet?"
 
-#: ../tuxpaint.c:2460 ../tuxpaint.c:2465
+#: ../tuxpaint.c:2457 ../tuxpaint.c:2462
 msgid "Yes, save it!"
 msgstr "Po, ruaje!"
 
-#: ../tuxpaint.c:2461 ../tuxpaint.c:2466
+#: ../tuxpaint.c:2458 ../tuxpaint.c:2463
 msgid "No, don’t bother saving!"
 msgstr "Jo, mos e vra mendjen për ta ruajtur!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2464
+#: ../tuxpaint.c:2461
 msgid "Save your picture first?"
 msgstr "Të ruhet vizatimi juaj së pari?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2469
+#: ../tuxpaint.c:2466
 msgid "Can’t open that picture!"
 msgstr "S’hapet dot ai vizatim!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477 ../tuxpaint.c:2486 ../tuxpaint.c:2493
-#: ../tuxpaint.c:2504 ../tuxpaint.c:2509 ../tuxpaint.c:2517
+#: ../tuxpaint.c:2469 ../tuxpaint.c:2474 ../tuxpaint.c:2483 ../tuxpaint.c:2490
+#: ../tuxpaint.c:2501 ../tuxpaint.c:2506 ../tuxpaint.c:2514
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2473
 msgid "There are no saved files!"
 msgstr "S’ka kartela të ruajtura!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2477
 msgid "Print your picture now?"
 msgstr "Të shtypet vizatimi juaj tani?"
 
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2478
 msgid "Yes, print it!"
 msgstr "Po, shtype!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2482
 msgid "Your picture has been printed!"
 msgstr "Vizatimi juaj u shtyp!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2489
+#: ../tuxpaint.c:2486
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Na ndjeni! Vizatimi juaj s’u shtyp dot!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2489
 msgid "You can’t print yet!"
 msgstr "S’mundeni ende të shtypni!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2494
 msgid "Erase this picture?"
 msgstr "Të fshihet ky vizatim?"
 
-#: ../tuxpaint.c:2498
+#: ../tuxpaint.c:2495
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "Të fshihet ky vizatim?"
 
-#: ../tuxpaint.c:2499
+#: ../tuxpaint.c:2496
 msgid "Yes, erase it!"
 msgstr "Po, fshije!"
 
-#: ../tuxpaint.c:2500
+#: ../tuxpaint.c:2497
 msgid "No, don’t erase it!"
 msgstr "Jo, mos e fshi!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2503
+#: ../tuxpaint.c:2500
 msgid "Remember to use the left mouse button!"
 msgstr "Mos harroni të përdorni butonin e majtë të miut!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2507
+#: ../tuxpaint.c:2504
 msgid "Your picture has been exported!"
 msgstr "Vizatimi juaj u eksportua!"
 
-#: ../tuxpaint.c:2508
+#: ../tuxpaint.c:2505
 msgid "Your slideshow GIF has been exported!"
 msgstr "GIF-i për diapozitivat tuaj u eksportua!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2509
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Na ndjeni! Vizatimi juaj s’u eksportua dot!"
 
-#: ../tuxpaint.c:2513
+#: ../tuxpaint.c:2510
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Na ndjeni! GIF-i juaj për diapozitiva s’u eksportua dot!"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2516
+#: ../tuxpaint.c:2513
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2517
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2521
+#: ../tuxpaint.c:2518
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "Na ndjeni! Vizatimi juaj s’u shtyp dot!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2521
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Zgjidhni vizatimin që doni, mandej klikoni mbi “Luaje”."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2833
+#: ../tuxpaint.c:2830
 msgid "Sound muted."
 msgstr "U mbyll zëri."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2838
+#: ../tuxpaint.c:2835
 msgid "Sound unmuted."
 msgstr "U hap zëri."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3687
+#: ../tuxpaint.c:3684
 msgid "Please wait…"
 msgstr "Ju lutemi, pritni…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9560
+#: ../tuxpaint.c:9578
 msgid "Erase"
 msgstr "Fshije"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9563
+#: ../tuxpaint.c:9581
 msgid "Slides"
 msgstr "Diapozitiva"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9566
+#: ../tuxpaint.c:9584
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9569
+#: ../tuxpaint.c:9587
 msgid "Export"
 msgstr "Eksportim"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9572
+#: ../tuxpaint.c:9590
 msgid "Back"
 msgstr "Mbrapsht"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9575
+#: ../tuxpaint.c:9593
 msgid "Play"
 msgstr "Luaje"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9578
+#: ../tuxpaint.c:9596
 msgid "GIF Export"
 msgstr "Eksportim si GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9581
+#: ../tuxpaint.c:9599
 msgid "Next"
 msgstr "Pasuesi"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9584
+#: ../tuxpaint.c:9602
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10522 ../tuxpaint.c:10525 ../tuxpaint.c:10526
+#: ../tuxpaint.c:10540 ../tuxpaint.c:10543 ../tuxpaint.c:10544
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14468
+#: ../tuxpaint.c:14486
 msgid "Yes"
 msgstr "Po"
 
-#: ../tuxpaint.c:14472
+#: ../tuxpaint.c:14490
 msgid "No"
 msgstr "Jo"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15741
+#: ../tuxpaint.c:15759
 msgid "Replace the picture with your changes?"
 msgstr "Të zëvendësohet vizatimi me ndryshimet tuaja?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15745
+#: ../tuxpaint.c:15763
 msgid "Yes, replace the old one!"
 msgstr "Po, zëvendësoje të vjetrin!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15749
+#: ../tuxpaint.c:15767
 msgid "No, save a new file!"
 msgstr "Jo, ruaje në kartelë të re!"
 
-#: ../tuxpaint.c:17019
+#: ../tuxpaint.c:17037
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17021
+#: ../tuxpaint.c:17039
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1370,73 +1372,73 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18690
+#: ../tuxpaint.c:18708
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 "Përzgjidhni 2 ose më tepër vizatime, për t’i shndërruar në një GIF të "
 "animuar."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24817
+#: ../tuxpaint.c:24835
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:24818
+#: ../tuxpaint.c:24836
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "E verdhë!"
 
-#: ../tuxpaint.c:24819
+#: ../tuxpaint.c:24837
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "E kaltër!"
 
-#: ../tuxpaint.c:24820
+#: ../tuxpaint.c:24838
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "E bardhë!"
 
-#: ../tuxpaint.c:24821
+#: ../tuxpaint.c:24839
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:24822
+#: ../tuxpaint.c:24840
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "E zezë!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24827
+#: ../tuxpaint.c:24845
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:24828
+#: ../tuxpaint.c:24846
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:24829
+#: ../tuxpaint.c:24847
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:24830
+#: ../tuxpaint.c:24848
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:24831
+#: ../tuxpaint.c:24849
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:24832
+#: ../tuxpaint.c:24850
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1444,22 +1446,22 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25612 ../tuxpaint.c:25617
+#: ../tuxpaint.c:25630 ../tuxpaint.c:25635
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28742
+#: ../tuxpaint.c:28760
 msgid "Select a color from your drawing."
 msgstr "Përzgjidhni një ngjyrë prej vizatimit tuaj."
 
-#: ../tuxpaint.c:28753
+#: ../tuxpaint.c:28771
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:28767
+#: ../tuxpaint.c:28785
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
