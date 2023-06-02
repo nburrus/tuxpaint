@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 29, 2023
+  June 14, 2002 - June 1, 2023
 */
 
 #include "platform.h"
@@ -1403,6 +1403,7 @@ static int disable_quit;
 
 static int noshortcuts;
 static int disable_save;
+static int disable_erase;
 static int ok_to_use_lockfile = 1;
 static int start_blank;
 static int autosave_on_quit;
@@ -8048,7 +8049,7 @@ void show_usage(int exitcode)
           "  [--nolabel | --label]\n"
           "  [--nobrushspacing | --brushspacing]\n"
           "  [--notemplateexport | --templateexport]\n"
-          "  [--newcolorsfirst | --newcolorslast]\n"
+          "  [--noerase | --erase]\n"
           "\n"
           " Languages:\n"
           "  [--lang LANGUAGE | --locale LOCALE | --lang help]\n"
@@ -8074,6 +8075,7 @@ void show_usage(int exitcode)
           " Saving:\n"
           "  [--saveoverask | --saveover | --saveovernew]\n"
           "  [--startblank | --startlast]\n"
+          "  [--newcolorsfirst | --newcolorslast]\n"
           "  [--savedir DIRECTORY]\n"
           "  [--nosave | --save]\n"
           "  [--autosave | --noautosave]\n"
@@ -17187,18 +17189,20 @@ static int do_open(void)
 
           /* "Erase" button: */
 
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
-
-          if (d_places[which] != PLACE_STARTERS_DIR && d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
-            SDL_BlitSurface(img_erase, NULL, screen, &dest);
-          else
-            SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-
-          dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w + (button_w - img_openlabels_erase->w) / 2;
-          dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h;
-          SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
-
+          if (!disable_erase)
+          {
+            dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w;
+            dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+  
+            if (d_places[which] != PLACE_STARTERS_DIR && d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
+              SDL_BlitSurface(img_erase, NULL, screen, &dest);
+            else
+              SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
+  
+            dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w + (button_w - img_openlabels_erase->w) / 2;
+            dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h;
+            SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
+          }
 
           SDL_Flip(screen);
 
@@ -17300,10 +17304,11 @@ static int do_open(void)
               done = 1;
               playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
             }
-            else if (key == SDLK_d &&
+            else if (!disable_erase &&
+                     key == SDLK_d &&
                      (event.key.keysym.mod & KMOD_CTRL) &&
-                     d_places[which] != PLACE_STARTERS_DIR &&
-                     d_places[which] != PLACE_PERSONAL_STARTERS_DIR && !noshortcuts)
+                     d_places[which] != PLACE_STARTERS_DIR && // FIXME: Meaningless?
+                     d_places[which] != PLACE_PERSONAL_STARTERS_DIR && !noshortcuts) // FIXME: Meaningless?
             {
               /* Delete! */
 
@@ -17466,7 +17471,8 @@ static int do_open(void)
               done = 1;
               playsound(screen, 1, SND_CLICK, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
             }
-            else if (event.button.x >=
+            else if (!disable_erase &&
+                     event.button.x >=
                      (WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w)
                      && event.button.x <
                      (WINDOW_WIDTH - button_w - r_ttoolopt.w)
@@ -17552,25 +17558,37 @@ static int do_open(void)
 
               do_setcursor(cursor_down);
             }
-            else
-              if (((event.button.x >= r_ttools.w
-                    && event.button.x < r_ttools.w + (button_w * num_left_buttons))
-                   || (event.button.x >=
-                       (WINDOW_WIDTH - r_ttoolopt.w - button_w)
-                       && event.button.x < (WINDOW_WIDTH - r_ttoolopt.w))
-                   || (event.button.x >=
-                       (WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w -
-                        button_w) && event.button.x < (WINDOW_WIDTH - button_w - r_ttoolopt.w) &&
-                       /* Both "Erase" and "Export" only work on our own files... */
-                       d_places[which] != PLACE_STARTERS_DIR &&
-                       d_places[which] != PLACE_PERSONAL_STARTERS_DIR)) &&
-                  event.button.y >=
-                  (button_h * buttons_tall + r_ttools.h) - button_h
+            else if (event.button.y >= (button_h * buttons_tall + r_ttools.h) - button_h
                   && event.button.y < (button_h * buttons_tall + r_ttools.h))
             {
-              /* One of the command buttons: */
-
-              do_setcursor(cursor_hand);
+              if (event.button.x >= r_ttools.w && event.button.x < r_ttools.w + (button_w * num_left_buttons))
+              {
+                /* One of the command buttons on the left: Open, Slides, Template [maybe] */
+                do_setcursor(cursor_hand);
+              }
+              else if (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w)
+                       && event.button.x < (WINDOW_WIDTH - r_ttoolopt.w))
+              {
+                /* Command button on the right: Back */
+                do_setcursor(cursor_hand);
+              }
+              else if (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w * 2)
+                       && event.button.x < (WINDOW_WIDTH - r_ttoolopt.w - button_w)
+                       && !disable_erase)
+              {
+                /* Command button on the right: Erase [maybe] */
+                do_setcursor(cursor_hand);
+              }
+              else if (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w * 3)
+                       && event.button.x < (WINDOW_WIDTH - r_ttoolopt.w - button_w * 2))
+              {
+                /* Command button on the right: Export */
+                do_setcursor(cursor_hand);
+              }
+              else
+              {
+                do_setcursor(cursor_arrow);
+              }
             }
             else if (event.button.x >= r_ttools.w
                      && event.button.x < WINDOW_WIDTH - r_ttoolopt.w
@@ -27929,6 +27947,7 @@ static void setup_config(char *argv[])
   SETBOOL(disable_print);
   SETBOOL(disable_quit);
   SETBOOL(disable_save);
+  SETBOOL(disable_erase);
   SETBOOL(disable_screensaver);
   SETBOOL(disable_stamp_controls);
   SETBOOL(disable_template_export);

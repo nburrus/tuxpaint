@@ -3,7 +3,7 @@
 # Bill Kendrick <bill@newbreedsoftware.com>; https://tuxpaint.org/
 # Based on inkscape's completion file, by allali@univ-mlv.fr
 #
-# Last modified 2023-05-29
+# Last modified 2023-06-01
 #
 # $Id$
 
@@ -69,6 +69,7 @@ _tuxpaint()
 			--stampsize=8 --stampsize=9 --stampsize=default \
 			--saveoverask --saveover --saveovernew \
 			--nosave --save \
+			--noerase --erase \
 			--autosave --noautosave \
 			--savedir --datadir --exportdir \
 			--reversesort --noreversesort \
