@@ -21970,7 +21970,7 @@ static int do_new_dialog(void)
   SDL_Event event;
   SDLKey key;
   Uint32 last_click_time;
-  int last_click_which, last_click_button;
+  int last_click_which, last_click_button, which_changed, erasable;
   int places_to_look;
   int tot;
   int first_color, first_starter, first_template;
@@ -22017,7 +22017,7 @@ static int do_new_dialog(void)
     }
     else if (places_to_look == PLACE_STARTERS_DIR)
     {
-      /* Finally, check for system-wide coloring-book style
+      /* Check for system-wide coloring-book style
          'starter' images: */
 
       dirname[places_to_look] = strdup(DATA_PREFIX "starters");
@@ -22462,8 +22462,24 @@ static int do_new_dialog(void)
   do_setcursor(cursor_arrow);
 
 
+  which_changed = 1;
+  erasable = 0;
+
   do
   {
+    /* If we're clicking an exported template, we can delete it */
+    if (which_changed)
+    {
+      erasable = 0;
+      if (d_places[which] == PLACE_PERSONAL_TEMPLATES_DIR)
+      {
+        /* FIXME: Check for fingerprint that it was one exported from Tux Paint */
+        printf("%s\n", d_names[which]);
+        erasable = 1;
+      }
+      which_changed = 0;
+    }
+
     /* Update screen: */
 
     if (update_list)
@@ -22544,9 +22560,20 @@ static int do_new_dialog(void)
       SDL_BlitSurface(img_open, NULL, screen, &dest);
 
       dest.x = r_ttools.w + (button_w - img_openlabels_open->w) / 2;
-      dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h; // FIXME: CROP LABELS
+      dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h;
       SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
 
+      /* FIXME: "Erase" button: */
+      if (erasable) 
+      {
+        dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w * 2;
+        dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
+        SDL_BlitSurface(img_erase, NULL, screen, &dest);
+  
+        dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w * 2 + (button_w - img_openlabels_back->w) / 2;
+        dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
+        SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
+      }
 
       /* "Back" button: */
 
@@ -22555,7 +22582,7 @@ static int do_new_dialog(void)
       SDL_BlitSurface(img_back, NULL, screen, &dest);
 
       dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w + (button_w - img_openlabels_back->w) / 2;
-      dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h; // FIXME: CROP LABELS
+      dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
       SDL_BlitSurface(img_openlabels_back, NULL, screen, &dest);
 
 
@@ -22675,6 +22702,8 @@ static int do_new_dialog(void)
           which =
             ((event.button.x - r_ttools.w) / (THUMB_W) + (((event.button.y - img_scroll_up->h) / THUMB_H) * 4)) + cur;
 
+          which_changed = 1;
+
           if (which < num_files)
           {
             playsound(screen, 1, SND_BLEEP, 1, event.button.x, SNDDIST_NEAR);
@@ -22719,7 +22748,10 @@ static int do_new_dialog(void)
               }
 
               if (which >= cur + 16)
+              {
                 which = which - 4;
+                which_changed = 1;
+              }
             }
             else if (event.button.y >=
                      (button_h * buttons_tall + r_ttools.h - button_h)
@@ -22738,7 +22770,10 @@ static int do_new_dialog(void)
               }
 
               if (which < cur)
+              {
                 which = which + 4;
+                which_changed = 1;
+              }
             }
 
             if (scrolltimer_dialog != TIMERID_NONE)
@@ -22783,6 +22818,17 @@ static int do_new_dialog(void)
           done = 1;
           playsound(screen, 1, SND_CLICK, 1, SNDPOS_LEFT, SNDDIST_NEAR);
         }
+        else if (erasable && event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w * 2) &&
+                 event.button.x < (WINDOW_WIDTH - r_ttoolopt.w - button_w) &&
+                 event.button.y >=
+                 (button_h * buttons_tall + r_ttools.h) - button_h
+                 && event.button.y < (button_h * buttons_tall + r_ttools.h))
+        {
+          /* "Erase" */
+
+          printf("Erase\n");
+          /* FIXME */
+        }
         else if (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w) &&
                  event.button.x < (WINDOW_WIDTH - r_ttoolopt.w) &&
                  event.button.y >=
@@ -22813,7 +22859,10 @@ static int do_new_dialog(void)
             do_setcursor(cursor_arrow);
 
           if (which >= cur + 16)
+          {
             which = which - 4;
+            which_changed = 1;
+          }
         }
         else if (event.wheel.y < 0 && cur < num_files - 16)
         {
@@ -22825,7 +22874,10 @@ static int do_new_dialog(void)
             do_setcursor(cursor_arrow);
 
           if (which < cur)
+          {
             which = which + 4;
+            which_changed = 1;
+          }
         }
       }
       else if (event.type == SDL_MOUSEMOTION)
@@ -22854,7 +22906,7 @@ static int do_new_dialog(void)
         else
           if (((event.button.x >= r_ttools.w
                 && event.button.x < r_ttools.w + button_w)
-               || (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w)
+               || (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w * (erasable ? 2 : 1))
                    && event.button.x < (WINDOW_WIDTH - r_ttoolopt.w)
                    && d_places[which] != PLACE_STARTERS_DIR
                    && d_places[which] != PLACE_PERSONAL_STARTERS_DIR))
