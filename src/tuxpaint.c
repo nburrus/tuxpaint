@@ -2492,8 +2492,10 @@ static void do_wait(int counter)
 #define PROMPT_PRINT_TOO_SOON_TXT gettext_noop("You can’t print yet!")
 #define PROMPT_PRINT_TOO_SOON_YES gettext_noop("OK")
 
-/* Prompt to confirm erasing a picture in the Open dialog */
+/* Prompt to confirm erasing a picture in the Open dialog,
+   or exported template from the New dialog */
 #define PROMPT_ERASE_TXT gettext_noop("Erase this picture?")
+#define PROMPT_ERASE_TEMPLATE_TXT gettext_noop("Erase this template?")
 #define PROMPT_ERASE_YES gettext_noop("Yes, erase it!")
 #define PROMPT_ERASE_NO gettext_noop("No, don’t erase it!")
 
@@ -22471,12 +22473,15 @@ static int do_new_dialog(void)
     if (which_changed)
     {
       erasable = 0;
-      if (d_places[which] == PLACE_PERSONAL_TEMPLATES_DIR)
+      if (!disable_erase)
       {
-        /* FIXME: Check for fingerprint that it was one exported from Tux Paint */
-        printf("%s\n", d_names[which]);
-        erasable = 1;
+        if (d_places[which] == PLACE_PERSONAL_TEMPLATES_DIR)
+        {
+          /* FIXME: Check for fingerprint that it was one exported from Tux Paint */
+          erasable = 1;
+        }
       }
+
       which_changed = 0;
     }
 
@@ -22563,7 +22568,7 @@ static int do_new_dialog(void)
       dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_open->h;
       SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
 
-      /* FIXME: "Erase" button: */
+      /* "Erase" button: */
       if (erasable) 
       {
         dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w * 2;
@@ -22826,8 +22831,82 @@ static int do_new_dialog(void)
         {
           /* "Erase" */
 
-          printf("Erase\n");
-          /* FIXME */
+          if (do_prompt_image_snd(PROMPT_ERASE_TEMPLATE_TXT,
+                                  PROMPT_ERASE_YES, PROMPT_ERASE_NO,
+                                  thumbs[which],
+                                  img_popup_arrow, img_trash, SND_AREYOUSURE,
+                                  WINDOW_WIDTH - r_ttoolopt.w - button_w -
+                                  button_w + 24, button_h * buttons_tall + r_ttools.h - button_h + img_scroll_up->h))
+          {
+            char *rfname;
+
+            safe_snprintf(fname, sizeof(fname), "templates/%s%s", d_names[which], d_exts[which]);
+            rfname = get_fname(fname, DIR_DATA);
+
+            if (trash(rfname) == 0)
+            {
+              update_list = 1;
+
+
+              /* Delete the thumbnail, too: */
+
+              safe_snprintf(fname, sizeof(fname), "saved/.thumbs/%s-t.png", d_names[which]);
+
+              free(rfname);
+              rfname = get_fname(fname, DIR_SAVE);
+
+              unlink(rfname);
+
+
+              /* Move all other files up a notch: */
+
+              free(d_names[which]);
+              free(d_exts[which]);
+              free_surface(&thumbs[which]);
+
+              thumbs[which] = NULL;
+
+              for (i = which; i < num_files - 1; i++)
+              {
+                d_names[i] = d_names[i + 1];
+                d_exts[i] = d_exts[i + 1];
+                thumbs[i] = thumbs[i + 1];
+                d_places[i] = d_places[i + 1];
+              }
+
+              num_files--;
+
+
+              /* Make sure the cursor doesn't go off the end! */
+
+              if (which >= num_files)
+                which = num_files - 1;
+
+
+              /* Scroll up if the cursor goes off top of screen! */
+
+              if (which < cur && cur >= 4)
+              {
+                cur = cur - 4;
+                update_list = 1;
+              }
+
+              which_changed = 1;
+            }
+            else
+            {
+              perror(rfname);
+
+              do_prompt_snd("CAN'T", "OK", "", SND_YOUCANNOT, 0, 0);
+              update_list = 1;
+            }
+
+            free(rfname);
+          }
+          else
+          {
+            update_list = 1;
+          }
         }
         else if (event.button.x >= (WINDOW_WIDTH - r_ttoolopt.w - button_w) &&
                  event.button.x < (WINDOW_WIDTH - r_ttoolopt.w) &&

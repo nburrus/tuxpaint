@@ -92,6 +92,11 @@ Tux Paint バージョン 0.9.31 での変更点
            pop-ups, and instructions) can be overridden from its default
            ("DejaVu Sans"). (See the "uifont" configuration option.)
 
+   File Erase may be disabled
+           Controls to erase saved work — saved drawings (via the Open
+           dialog) and exported templates (via the New dialog) — can be
+           disabled. (See the "noerase" configuration option.)
+
    全ての変更点については、CHANGES.txt をお読みください。
 
                                  Tux Paint の使い方
@@ -486,6 +491,28 @@ Tux Paint の起動
                         Templates directly within Tux Paint, from the 'Open'
                         dialog. See "Open", below.
 
+                Erasing Exported Template Images
+
+                        If you've selected a Template in your personal
+                        templates folder, and it was created from within Tux
+                        Paint (using the "Template" button in the "Open"
+                        dialog), you may remove it from within Tux Paint,
+                        too. An 'Erase' (trash can) button will appear at the
+                        lower right of the list. Click it to erase the
+                        selected template. (You will be asked to confirm.)
+
+                        💡 Note: On Linux, Windows, and macOS, the picture
+                        will be placed in your desktop's trash can / recycle
+                        bin (where you may recover and restore it, if you
+                        change your mind).
+
+                        ⚙ Note: The 'Erase' button may be disabled, via the
+                        "noerase" option.
+
+           ⚙ Note: The solid colors can be placed at the end of the 'New'
+           dialog (below the Starters and Templates), via the "newcolorslast"
+           option.
+
    「ひらく」
 
            「ひらく」をクリックすると、保存されている全ての作品のリストが表示されます。リストが画面に収まりきらない場合は、上下の矢印のボタンでリストをスクロールできます。
@@ -504,6 +531,9 @@ Tux Paint の起動
                 📜 注: Linux（バージョン 0.9.22以降）、Windows（バージョン
                 0.9.27以降）、macOS（バージョン
                 0.9.29以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
+
+                ⚙ Note: The 'Erase' button may be disabled, via the "noerase"
+                option.
 
               * Click the 'Export' button near the lower right to export the
                 selected picture to your export folder. (e.g.,

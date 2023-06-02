@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 21:29-0700\n"
+"POT-Creation-Date: 2023-06-01 22:47-0700\n"
 "PO-Revision-Date: 2023-04-01 15:44+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -373,7 +373,7 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
 "Turn saved drawings into Templates (found in the New dialog) within Tux "
-"Paint (via the Open dialog)."
+"Paint (via the Open dialog). These may be deleted from the New dialog."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
@@ -382,8 +382,9 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
-"\"Erase\" option to remove saved drawings from the Open dialog may be "
-"disabled, via \"noerase\" configuration option."
+"\"Erase\" option to remove saved drawings from the Open dialog and exported "
+"templates from the New dialog may be disabled, via \"noerase\" configuration "
+"option."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
@@ -961,7 +962,7 @@ msgstr "Ny"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9555
+#: ../tools.h:97 ../tuxpaint.c:9557
 msgid "Open"
 msgstr "Opna"
 
@@ -1236,7 +1237,7 @@ msgstr "Klarte ikkje opna teikninga."
 
 #. Generic dialog dismissal
 #: ../tuxpaint.c:2472 ../tuxpaint.c:2477 ../tuxpaint.c:2486 ../tuxpaint.c:2493
-#: ../tuxpaint.c:2502 ../tuxpaint.c:2507 ../tuxpaint.c:2515
+#: ../tuxpaint.c:2504 ../tuxpaint.c:2509 ../tuxpaint.c:2517
 msgid "OK"
 msgstr "OK"
 
@@ -1269,165 +1270,172 @@ msgstr "Klarte ikkje skriva ut teikninga."
 msgid "You can’t print yet!"
 msgstr "Du kan ikkje skriva ut enno."
 
-#. Prompt to confirm erasing a picture in the Open dialog
-#: ../tuxpaint.c:2496
+#. Prompt to confirm erasing a picture in the Open dialog,
+#. or exported template from the New dialog
+#: ../tuxpaint.c:2497
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
 
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2498
+#, fuzzy
+#| msgid "Erase this picture?"
+msgid "Erase this template?"
+msgstr "Vil du verkeleg sletta teikninga?"
+
+#: ../tuxpaint.c:2499
 msgid "Yes, erase it!"
 msgstr "Ja, slett ho!"
 
-#: ../tuxpaint.c:2498
+#: ../tuxpaint.c:2500
 msgid "No, don’t erase it!"
 msgstr "Nei, ikkje slett ho!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2501
+#: ../tuxpaint.c:2503
 msgid "Remember to use the left mouse button!"
 msgstr "Hugs å bruka venstre museknapp!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2505
+#: ../tuxpaint.c:2507
 msgid "Your picture has been exported!"
 msgstr "Teikninga er no eksportert."
 
-#: ../tuxpaint.c:2506
+#: ../tuxpaint.c:2508
 msgid "Your slideshow GIF has been exported!"
 msgstr "GIF-animasjonen er no eksportert."
 
 #. We got an error exporting
-#: ../tuxpaint.c:2510
+#: ../tuxpaint.c:2512
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Klarte ikkje eksportera teikninga."
 
-#: ../tuxpaint.c:2511
+#: ../tuxpaint.c:2513
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Klarte ikkje eksportera GIF-animasjonen."
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2514
+#: ../tuxpaint.c:2516
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2518
+#: ../tuxpaint.c:2520
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2521
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "Klarte ikkje skriva ut teikninga."
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2522
+#: ../tuxpaint.c:2524
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vel teikningane du vil ha, og trykk så på «Køyr»."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2831
+#: ../tuxpaint.c:2833
 msgid "Sound muted."
 msgstr "Lyd slått av."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2836
+#: ../tuxpaint.c:2838
 msgid "Sound unmuted."
 msgstr "Lyd slått på."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3685
+#: ../tuxpaint.c:3687
 msgid "Please wait…"
 msgstr "Vent litt …"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9558
+#: ../tuxpaint.c:9560
 msgid "Erase"
 msgstr "Slett"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9561
+#: ../tuxpaint.c:9563
 msgid "Slides"
 msgstr "Lysbilete"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9564
+#: ../tuxpaint.c:9566
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9567
+#: ../tuxpaint.c:9569
 msgid "Export"
 msgstr "Eksporter"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9570
+#: ../tuxpaint.c:9572
 msgid "Back"
 msgstr "Tilbake"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9573
+#: ../tuxpaint.c:9575
 msgid "Play"
 msgstr "Køyr"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9576
+#: ../tuxpaint.c:9578
 msgid "GIF Export"
 msgstr "GIF-eksport"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9579
+#: ../tuxpaint.c:9581
 msgid "Next"
 msgstr "Neste"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9582
+#: ../tuxpaint.c:9584
 msgid "Clear"
 msgstr "Tøm"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10520 ../tuxpaint.c:10523 ../tuxpaint.c:10524
+#: ../tuxpaint.c:10522 ../tuxpaint.c:10525 ../tuxpaint.c:10526
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14466
+#: ../tuxpaint.c:14468
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:14470
+#: ../tuxpaint.c:14472
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15739
+#: ../tuxpaint.c:15741
 msgid "Replace the picture with your changes?"
 msgstr "Vil du byta ut den gamle teikninga med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15743
+#: ../tuxpaint.c:15745
 msgid "Yes, replace the old one!"
 msgstr "Ja, byt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15747
+#: ../tuxpaint.c:15749
 msgid "No, save a new file!"
 msgstr "Nei, lagra som ei ny teikning!"
 
-#: ../tuxpaint.c:17017
+#: ../tuxpaint.c:17019
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17019
+#: ../tuxpaint.c:17021
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1436,65 +1444,65 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18688
+#: ../tuxpaint.c:18690
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 "Vel to eller fleire teikningar for å gjera dei om til ei animert GIF-"
 "biletfil."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24686
+#: ../tuxpaint.c:24817
 msgid "red"
 msgstr "raud"
 
-#: ../tuxpaint.c:24687
+#: ../tuxpaint.c:24818
 msgid "yellow"
 msgstr "gul"
 
-#: ../tuxpaint.c:24688
+#: ../tuxpaint.c:24819
 msgid "blue"
 msgstr "blå"
 
-#: ../tuxpaint.c:24689
+#: ../tuxpaint.c:24820
 msgid "white"
 msgstr "kvit"
 
-#: ../tuxpaint.c:24690
+#: ../tuxpaint.c:24821
 msgid "grey"
 msgstr "grå"
 
-#: ../tuxpaint.c:24691
+#: ../tuxpaint.c:24822
 msgid "black"
 msgstr "svart"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24696
+#: ../tuxpaint.c:24827
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Fargen er %1$s %2$s."
 
-#: ../tuxpaint.c:24697
+#: ../tuxpaint.c:24828
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Fargen er %1$s %2$s og %3$s %4$s."
 
-#: ../tuxpaint.c:24698
+#: ../tuxpaint.c:24829
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Fargen er %1$s %2$s, %3$s %4$s og %5$s %6$s."
 
-#: ../tuxpaint.c:24699
+#: ../tuxpaint.c:24830
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Fargen er %1$s %2$s, %3$s %4$s, %5$s %6$s og %7$s %8$s."
 
-#: ../tuxpaint.c:24700
+#: ../tuxpaint.c:24831
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "Fargen er %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s og %9$s %10$s."
 
-#: ../tuxpaint.c:24701
+#: ../tuxpaint.c:24832
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1504,16 +1512,16 @@ msgstr ""
 "%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25481 ../tuxpaint.c:25486
+#: ../tuxpaint.c:25612 ../tuxpaint.c:25617
 msgid "entirely"
 msgstr "heilt"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28611
+#: ../tuxpaint.c:28742
 msgid "Select a color from your drawing."
 msgstr "Vel ein farge frå teikninga."
 
-#: ../tuxpaint.c:28622
+#: ../tuxpaint.c:28753
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1522,7 +1530,7 @@ msgstr ""
 "endrar seg frå bleik (til venstre) til fargesterk (til høgre). Lysstyrke "
 "(lys/mørk): grå stolpe."
 
-#: ../tuxpaint.c:28636
+#: ../tuxpaint.c:28767
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
