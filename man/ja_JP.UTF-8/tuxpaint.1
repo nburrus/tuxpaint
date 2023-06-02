@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2023.05.29
-.TH TUXPAINT 1 "2023年5月29日" "0.9.31" "Tux Paint"
+.\" tuxpaint.1 - 2023.06.01
+.TH TUXPAINT 1 "2023年6月 1日" "0.9.31" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -163,6 +163,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-nosave]
 .br
+[\-\-noerase]
+.br
 [\-\-autosave]
 .br
 [\-\-reversesort]
@@ -250,6 +252,8 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 [\-\-saveoverask]
 .br
 [\-\-save]
+.br
+[\-\-erase]
 .br
 [\-\-noautosave]
 .br
@@ -463,6 +467,13 @@ tools, which allows you to override the default spacing of a brush.
 .B \-\-notemplateexport \-\-templateexport
 Disable or enable (default) the ability to create new Templates from saved
 drawings via the Open dialog.
+
+.TP 8
+.B \-\-noerase \-\-erase
+The --noerase option disables Tux Paint's ability to erase files (saved
+drawings, via the Open dialog, and exported templates, via the New dialog).
+Useful to prevent a user from accidentally erasing their own work, or that
+of others (especially used in combination with --saveovernew).
 
 .SH OPTIONS - CONTROLLING TUX PAINT
 .l

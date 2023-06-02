@@ -495,6 +495,21 @@ Simplification
            "notemplateexport=no" or "templateexport=yes". In both cases, may
            be overridden by the command-line option "--templateexport".
 
+   noerase=yes
+
+           Disables the ability to erase saved drawings via the "Erase"
+           button on the Open dialog, or exported Template images (based on a
+           saved drawing) via the "Erase" button on the New dialog. Useful to
+           prevent users from erasing work, especially combined with the
+           --saveovernew option.
+
+           📜 Note: This option was added to Tux Paint in version 0.9.31.
+
+           ⚙ Note: If used in a system-wide configuration file, may be
+           overridden by the user's configuration file using "noerase=no" or
+           "erase=yes". In both cases, may be overridden by the command-line
+           option "--erase".
+
 Languages
 
   Language
