@@ -54,13 +54,12 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * WIP The new "Erase" option to remove templates from the "New"
-      dialog, as well as the "Erase" option to remove saved images
-      from the "Open" dialog, may be disabled via a new simplification
-      configuration setting, "--noerase".
-        + TODO Tux Paint Config.
-        + TODO Tux Paint Config. README docs
-        + TODO Tux Paint Website Features page
+    * WIP "Erase" controls may be disabled via a new simplification
+      configuration setting, "--noerase".  This removes the ability
+      to delete:
+      + saved images from the "Open" dialog, and
+      + WIP templates, from the "New" dialog
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     * WIP Ability to specify a font for Tux Paint's UI (button labels,
       dialog boxes, Tux tip text at the bottom).
