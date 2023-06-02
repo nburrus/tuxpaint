@@ -2061,7 +2061,10 @@ static void rec_undo_buffer(void);
 
 void show_version(int details);
 void show_usage(int exitcode);
+
+int compare_font_family(const void *a, const void *b);
 void show_fonts(void);
+
 static char *progname;
 
 static SDL_Cursor *get_cursor(unsigned char *bits, unsigned char *mask_bits,
@@ -8118,19 +8121,33 @@ void show_usage(int exitcode)
 void show_fonts(void) {
   PangoFontMap *fontmap;
   PangoFontFamily **families;
-  int n_families;
+  int i, n_families;
+  char * * family_names;
 
   fontmap = pango_ft2_font_map_new();
   pango_font_map_list_families(fontmap, &families, &n_families);
 
-  for (int i = 0; i < n_families; i++)
+  family_names = (char * *) malloc(sizeof(char *) * n_families);
+  for (i = 0; i < n_families; i++)
   {
-    const char *family_name = pango_font_family_get_name(families[i]);
-
-    printf("%s\n", family_name);
+    family_names[i] = strdup(pango_font_family_get_name(families[i]));
   }
 
+  qsort(family_names, n_families, sizeof(char*), compare_font_family);
+
+  for (i = 0; i < n_families; i++)
+  {
+    printf("%s\n", family_names[i]);
+    free(family_names[i]);
+  }
+  free(family_names);
+
   exit(0);
+}
+
+int compare_font_family(const void *a, const void *b)
+{
+  return strcasecmp(*(char * const*) a, *(char * const*) b);
 }
 
 /**
