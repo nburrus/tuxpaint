@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 1, 2023
+  June 14, 2002 - June 3, 2023
 */
 
 #include "platform.h"
@@ -19648,6 +19648,8 @@ void do_print(void)
   else
     pcmd = printcommand;
 
+  DEBUG_PRINTF("printcmd: %s\n", printcommand);
+
   pi = popen(pcmd, "w");
 
   if (pi == NULL)
@@ -27752,8 +27754,17 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     wordexp_t result;
 
     wordexp(arg, &result, 0);
-    arg = strdup(result.we_wordv[0]);
-    wordfree(&result);
+    if (result.we_wordv != NULL)
+    {
+      DEBUG_PRINTF("wordexp result.we_wordv of `%s` was `%s`\n", str, result.we_wordv[0]);
+      arg = strdup(result.we_wordv[0]);
+      wordfree(&result);
+    }
+    else
+    {
+      fprintf(stderr, "Shell expansion of `%s` failed! (You probably need to wrap it in quotes (\")!)\n", str);
+      continue;
+    }
 #endif
 #endif
 

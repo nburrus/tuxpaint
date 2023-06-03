@@ -94,6 +94,12 @@ https://tuxpaint.org/
       data beyond the end of the data (copied from the original PNG).
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Shell expansion (via wordexp()) of configuration options containing
+      spaces (e.g., `printcommand=ps2pdf - - > $HOME/print.pdf`) would
+      fail & cause a crash.  It now shows an error and recommends adding
+      quotes. (e.g., `printcommand="ps2pdf - - > $HOME/print.pdf"`)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Russian translaton
