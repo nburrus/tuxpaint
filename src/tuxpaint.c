@@ -27756,13 +27756,13 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     wordexp(arg, &result, 0);
     if (result.we_wordv != NULL)
     {
-      DEBUG_PRINTF("wordexp result.we_wordv of `%s` was `%s`\n", str, result.we_wordv[0]);
+      DEBUG_PRINTF("wordexp result.we_wordv of '%s' was '%s'\n", str, result.we_wordv[0]);
       arg = strdup(result.we_wordv[0]);
       wordfree(&result);
     }
     else
     {
-      fprintf(stderr, "Shell expansion of `%s` failed! (You probably need to wrap it in quotes (\")!)\n", str);
+      fprintf(stderr, "Shell expansion of '%s' on line %d of '%s' failed! (You probably need to wrap it in quotes (\")!)\n", str, line, filename);
       continue;
     }
 #endif
