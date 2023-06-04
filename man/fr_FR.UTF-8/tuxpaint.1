@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2023.06.01
-.TH TUXPAINT 1 "juin  1, 2023" "0.9.31" "Tux Paint"
+.\" tuxpaint.1 - 2023.06.04
+.TH TUXPAINT 1 "juin  4, 2023" "0.9.31" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 
@@ -13,13 +13,13 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 .br
 [\-\-allowscreensaver]
 .br
-[\-\-WIDTHxHEIGHT]
+[\-\-\fIWIDTH\fPx\fIHEIGHT\fP]
 .br
 [\-\-native]
 .br
 [\-\-orient=portrait]
 .br
-[\-\-buttonsize SIZE | \-\-buttonsize auto]
+[\-\-buttonsize \fISIZE\fP | \-\-buttonsize auto]
 .br
 [\-\-startblank]
 .br
@@ -247,7 +247,7 @@ tuxpaint -- "Tux Paint", un programme simple pour les jeunes enfants.
 .br
 [\-\-currentlocalefont]
 .br
-[\-\-uifont=default\fP]
+[\-\-uifont=default]
 .br
 [\-\-saveoverask]
 .br
@@ -332,7 +332,7 @@ défaut).
 En mode plein écran, utilise la résolution de l'écran par défaut.
 
 .TP 8
-.B \-\-WIDTHxHEIGHT
+.B \-\-\fIWIDTH\fPx\fIHEIGHT\fP
 Fait tourner \fITux Paint\fP dans une fenêtre de dimensions
 particulières, ou dans une résolution plein écran particulière (si
 \-\-native n'est pas utilisé). Valeur par défaut 800x600. Largeur minimum
@@ -1255,7 +1255,7 @@ telles fontes, pour les outils Texte et Étiquette. (C'était le
 comportement par défaut pour les versions antérieures à la 0.9.21).
 
 .TP 8
-.B \-\-uifont=\fIFONT NAME\fP \-\-uifont=default
+.B \-\-uifont=\fI"FONT NAME"\fP \-\-uifont=default
 Specify the name of a font for Tux Paint to attempt to use for its user
 interface (UI) -- button labels, dialog pop-up text, instructional text at
 the bottom. If left unspecified, or "default" is given, then "DejaVu Sans"

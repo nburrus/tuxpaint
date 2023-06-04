@@ -1,5 +1,5 @@
-.\" tuxpaint.1 - 2023.06.01
-.TH TUXPAINT 1 "2023年6月 1日" "0.9.31" "Tux Paint"
+.\" tuxpaint.1 - 2023.06.04
+.TH TUXPAINT 1 "2023年6月 4日" "0.9.31" "Tux Paint"
 .SH NAME
 tuxpaint -- "Tux Paint", a drawing program for young children.
 
@@ -13,13 +13,13 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-allowscreensaver]
 .br
-[\-\-WIDTHxHEIGHT]
+[\-\-\fIWIDTH\fPx\fIHEIGHT\fP]
 .br
 [\-\-native]
 .br
 [\-\-orient=portrait]
 .br
-[\-\-buttonsize SIZE | \-\-buttonsize auto]
+[\-\-buttonsize \fISIZE\fP | \-\-buttonsize auto]
 .br
 [\-\-startblank]
 .br
@@ -247,7 +247,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-currentlocalefont]
 .br
-[\-\-uifont=default\fP]
+[\-\-uifont=default]
 .br
 [\-\-saveoverask]
 .br
@@ -328,7 +328,7 @@ system's native resolution ("--fullscreen=native"); or run in a window
 When in fullscreen mode, use the system's default screen resolution.
 
 .TP 8
-.B \-\-WIDTHxHEIGHT
+.B \-\-\fIWIDTH\fPx\fIHEIGHT\fP
 Run \fITux Paint\fP in a particularly-sized window, or at a particular
 fullscreen resolution (if \-\-native is not used).  Default is 800x600. 
 Minimum width is 640.  Minimum height is 480.  Portrait and landscape
@@ -1224,7 +1224,7 @@ the "--alllocalefonts" option to load all such fonts, for use in the Text
 and Label tools. (This was the default behavior, prior to version 0.9.21.)
 
 .TP 8
-.B \-\-uifont=\fIFONT NAME\fP \-\-uifont=default
+.B \-\-uifont=\fI"FONT NAME"\fP \-\-uifont=default
 Specify the name of a font for Tux Paint to attempt to use for its user
 interface (UI) -- button labels, dialog pop-up text, instructional text at
 the bottom. If left unspecified, or "default" is given, then "DejaVu Sans"
