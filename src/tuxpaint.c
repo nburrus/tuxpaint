@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 3, 2023
+  June 14, 2002 - June 4, 2023
 */
 
 #include "platform.h"
@@ -27749,9 +27749,13 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     }
 
 #ifdef __linux__
-#ifndef __ANDROID__
-    /* Perform shell expansion */
+#ifndef __ANDROID__l
+    /* Perform shell expansion FIXME on certain arguments that would benefit from them
+       (FIXME) */
+    /* N.B. In the unlikely event that someone was using environment vars. for
+       options other than these, we may want to reconsider how this is handled -bjk 2023.06.04 */
     wordexp_t result;
+//FIXME printf("arg = <%s>\n", arg);
 
     wordexp(arg, &result, 0);
     if (result.we_wordv != NULL)
@@ -27767,6 +27771,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     }
 #endif
 #endif
+//FIXME printf("arg = <%s>\n", arg);
 
     /* FIXME: leaking mem here, but the trouble is that these
        strings get mixed in with ones from .data and .rodata
