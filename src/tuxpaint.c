@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 4, 2023
+  June 14, 2002 - June 6, 2023
 */
 
 #include "platform.h"
@@ -13021,18 +13021,26 @@ static void strip_trailing_whitespace(char *buf)
   }
 }
 
-/* Strip quotes at the beggining and end of the string: */
-
+/**
+ * Strip double quotes (") at the beggining and end of the string:
+ *
+ * @param char * buf -- String to strip quotes from; contents will be modified in that case
+*/
 static void strip_quotes(char *buf)
 {
   unsigned i = strlen(buf);
   int k;
 
-  if (buf[0] == '"'){
-    for (k = 0; k < i - 2; k++){
-      buf[k] = buf[k+1];
+  if (i > 2)
+  {
+    if (buf[0] == '"')
+    {
+      for (k = 0; k < (int) i - 2; k++)
+      { 
+        buf[k] = buf[k+1];
+      }
+      buf[i-2] = '\0';
     }
-    buf[i-2] = '\0';
   }
 }
 
@@ -27765,12 +27773,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
 
 #ifdef __linux__
 #ifndef __ANDROID__l
-    /* Perform shell expansion FIXME on certain arguments that would benefit from them
-       (FIXME) */
-    /* N.B. In the unlikely event that someone was using environment vars. for
-       options other than these, we may want to reconsider how this is handled -bjk 2023.06.04 */
     wordexp_t result;
-//FIXME printf("arg = <%s>\n", arg);
 
     wordexp(arg, &result, 0);
     if (result.we_wordv != NULL)
@@ -27787,11 +27790,9 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
 #endif
 #endif
 
-    printf("Before stripping quotes: %s\n", arg);
+    /* wordexp() on Linux (used above) will strip quotes, but on other
+       platforms we'll want to do it ourselves */
     strip_quotes(arg);
-    printf("After stripping quotes: %s\n", arg);
-    
-//FIXME printf("arg = <%s>\n", arg);
 
     /* FIXME: leaking mem here, but the trouble is that these
        strings get mixed in with ones from .data and .rodata
