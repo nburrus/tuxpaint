@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - May 31, 2023
+# June 14, 2002 - June 7, 2023
 
 
 # The version number, for release:
@@ -13,6 +13,10 @@ VER_VERSION:=0.9.31
 
 # We are always SDL2 now, so don't need "-sdl2"
 VER_FLAVOR:=""
+
+# Set to yes if you don't want to install in current live system
+# this affects icons and other desktop related files
+PACKAGE_ONLY:=no
 
 ifdef SOURCE_DATE_EPOCH
   VER_DATE=$(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
@@ -266,6 +270,7 @@ endif
 
 # Icons and launchers:
 ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
+NEWICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/icons/hicolor
 X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
 
 # Appstream metainfo
@@ -569,7 +574,11 @@ endif
 windows_ARCH_INSTALL:=
 macos_ARCH_INSTALL:=install-macbundle
 ios_ARCH_INSTALL:=install-iosbundle
-linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
+ifeq ($(PACKAGE_ONLY),yes)
+	linux_ARCH_INSTALL:=install-pkgxdg install-man install-importscript install-bash-completion
+else
+	linux_ARCH_INSTALL:=install-xdg install-man install-importscript install-bash-completion
+endif
 ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
 
 # "make install" installs all of the various parts
@@ -968,9 +977,25 @@ install-nokia770:
 # Install a launcher icon in the Linux desktop environment's (freedesktop.org) menus...
 # FIXME: No way to install SVG icons using `xdg-icon-resource`
 # (see https://bugs.launchpad.net/ubuntu/+source/xdg-utils/+bug/790449)
+# if package_only, then install to destdir locations rather than live system
+.PHONY: install-pkgxdg
+install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
+	@mkdir -p $(DESTDIR)$(PREFIX)/share/applications
+	cp -a src/tuxpaint.desktop $(DESTDIR)$(PREFIX)/share/applications/
+	cp -a src/tuxpaint-fullscreen.desktop $(DESTDIR)$(PREFIX)/share/applications/
+	mkdir -p $(NEWICON_PREFIX)/{16x16,22x22,32x32,48x48,64x64,96x96,128x128,192x192}
+	cp -a data/images/icon16x16.png $(NEWICON_PREFIX)/16x16/tuxpaint.png
+	cp -a data/images/icon22x22.png $(NEWICON_PREFIX)/22x22/tuxpaint.png
+	cp -a data/images/icon32x32.png $(NEWICON_PREFIX)/32x32/tuxpaint.png
+	cp -a data/images/icon48x48.png $(NEWICON_PREFIX)/48x48/tuxpaint.png
+	cp -a data/images/icon64x64.png $(NEWICON_PREFIX)/64x64/tuxpaint.png
+	cp -a data/images/icon96x96.png $(NEWICON_PREFIX)/96x96/tuxpaint.png
+	cp -a data/images/icon128x128.png $(NEWICON_PREFIX)/128x128/tuxpaint.png
+	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
+
 .PHONY: install-xdg
 install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
-	@echo
+	@echo ""
 	@echo "...Installing launcher icon into desktop environment..."
 	@if [ "x$(shell which xdg-icon-resource)" != "x" ]; then \
 	  xdg-icon-resource install --size 192 data/images/icon192x192.png tux4kids-tuxpaint ; \
@@ -1002,19 +1027,23 @@ install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpai
 	  update-desktop-database ; \
 	fi
 	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
+#do package path related stuff, ie use destdir
 
 # Install the PNG icon (for KDE desktop, etc.)
 # and the 24-color 32x32 XPM (for other Window managers):
+# if package-only was yes, we already did this. so do nothing.
 .PHONY: install-icon
 install-icon:
-	@echo
-	@echo "...Installing launcher icon graphics..."
-	@install -d $(ICON_PREFIX)
-	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
-	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
-	@install -d $(X11_ICON_PREFIX)
-	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm
-	@chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm
+	@if [ "x$(PACKAGE_ONLY)" != "xyes" ]; then \
+	  echo; \
+	  echo "...Installing launcher icon graphics..."; \
+	  install -d $(ICON_PREFIX); \
+	  cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png; \
+	  chmod 644 $(ICON_PREFIX)/tuxpaint.png; \
+	  install -d $(X11_ICON_PREFIX); \
+	  cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm; \
+	  chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm; \
+	fi
 
 
 # Install the program:

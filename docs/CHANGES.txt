@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.June.6 (0.9.31)
+2023.June.7 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -97,7 +97,10 @@ https://tuxpaint.org/
     * Shell expansion (via wordexp()) of configuration options containing
       spaces (e.g., `printcommand=ps2pdf - - > $HOME/print.pdf`) would
       fail & cause a crash.  It now shows an error and recommends adding
-      quotes. (e.g., `printcommand="ps2pdf - - > $HOME/print.pdf"`)
+      quotes. (e.g., `printcommand="ps2pdf - - > $HOME/print.pdf"`).
+      + Tux Paint Config. 0.0.22 wraps certain options in quotes now
+      + Tux Paint 0.0.31 will trim quotes, when wordexp() is not used
+        (e.g., Windows)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
@@ -110,6 +113,12 @@ https://tuxpaint.org/
     * Ensure `trans` dir. exists, for parallel builds (`make -j`)
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t bkw @ slackbuilds
+
+    * A new `PACKAGE_ONLY` variable to Makefile can be used to
+      place launcher icon files into $(DESTDIR)$(PREFIX), rather
+      than using `xdg-...` tools to install them.  (Avoids polluting
+      local filesystem while generating packages, e.g. for Slackware Linux)
+      Tim Dickson <dickson.tim@googlemail.com>
 
 2023.May.18 (0.9.30)
   * Improvements to Stamp tool:
