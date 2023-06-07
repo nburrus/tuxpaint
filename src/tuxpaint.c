@@ -2241,6 +2241,7 @@ static SDL_Surface *mirror_surface(SDL_Surface * s);
 static void print_image(void);
 static void do_print(void);
 static void strip_trailing_whitespace(char *buf);
+static void strip_quotes(char *buf);
 static void do_render_cur_text(int do_blit);
 static char *uppercase(const char *restrict const str);
 static wchar_t *uppercase_w(const wchar_t *restrict const str);
@@ -13020,6 +13021,20 @@ static void strip_trailing_whitespace(char *buf)
   }
 }
 
+/* Strip quotes at the beggining and end of the string: */
+
+static void strip_quotes(char *buf)
+{
+  unsigned i = strlen(buf);
+  int k;
+
+  if (buf[0] == '"'){
+    for (k = 0; k < i - 2; k++){
+      buf[k] = buf[k+1];
+    }
+    buf[i-2] = '\0';
+  }
+}
 
 /* Load a file's description: */
 
@@ -27771,6 +27786,11 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     }
 #endif
 #endif
+
+    printf("Before stripping quotes: %s\n", arg);
+    strip_quotes(arg);
+    printf("After stripping quotes: %s\n", arg);
+    
 //FIXME printf("arg = <%s>\n", arg);
 
     /* FIXME: leaking mem here, but the trouble is that these
