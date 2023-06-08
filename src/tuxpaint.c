@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 6, 2023
+  June 14, 2002 - June 8, 2023
 */
 
 #include "platform.h"
@@ -22533,13 +22533,12 @@ static int do_new_dialog(void)
     if (which_changed)
     {
       erasable = 0;
-      if (!disable_erase)
+
+      if (!disable_erase &&
+          d_places[which] == PLACE_PERSONAL_TEMPLATES_DIR &&
+          strstr(d_names[which], EXPORTED_TEMPLATE_PREFIX) == d_names[which])
       {
-        if (d_places[which] == PLACE_PERSONAL_TEMPLATES_DIR)
-        {
-          /* FIXME: Check for fingerprint that it was one exported from Tux Paint */
-          erasable = 1;
-        }
+        erasable = 1;
       }
 
       which_changed = 0;
@@ -31699,7 +31698,7 @@ static int export_pict(char *fname, int where, char * orig_fname)
       t = time(NULL); 
       strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t)); 
       pict_fname = (char *) malloc(sizeof(char) * len);
-      snprintf(pict_fname, len, "%s/%s-%s.png", dir, orig_fname, timestamp);
+      snprintf(pict_fname, len, "%s/%s-%s-%s.png", dir, EXPORTED_TEMPLATE_PREFIX, orig_fname, timestamp);
     }
 
     free(dir);

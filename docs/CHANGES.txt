@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.June.7 (0.9.31)
+2023.June.8 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -37,7 +37,7 @@ https://tuxpaint.org/
 
   * Other Improvements:
     -------------------
-    * WIP Saved pictures can, from the Open dialog, be copied into
+    * Saved pictures can, from the Open dialog, be copied into
       the user's templates directory, and used as backgrounds
       for other drawings by selecting it from the New dialog.
       + If the original image has already been exported as a template,
@@ -46,9 +46,7 @@ https://tuxpaint.org/
         - identical file sizes (bytes)
         - identical image dimensions (pixels)
         - identical image data (CRC checksum)
-      + TODO Templates created from saved drawings in Tux Paint will
-        be flagged as such [TBD file sitting alongside it]
-      + TODO Templates created from saved drawings in Tux Paint can
+      + Templates created from saved drawings in Tux Paint can
         be removed via a new "Erase" option that will appear when
         such templates are selected from the "New" dialog. [See below]
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/236/
