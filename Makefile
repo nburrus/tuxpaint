@@ -991,6 +991,7 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tux
 	cp -a data/images/icon64x64.png $(NEWICON_PREFIX)/64x64/tuxpaint.png
 	cp -a data/images/icon96x96.png $(NEWICON_PREFIX)/96x96/tuxpaint.png
 	cp -a data/images/icon128x128.png $(NEWICON_PREFIX)/128x128/tuxpaint.png
+	cp -a data/images/icon192x192.png $(NEWICON_PREFIX)/192x192/tuxpaint.png
 	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
 
 .PHONY: install-xdg
