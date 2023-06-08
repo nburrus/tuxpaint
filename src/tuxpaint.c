@@ -27921,6 +27921,7 @@ static void setup_config(char *argv[])
 {
   char str[128];
   char *picturesdir;
+  int i;
 
 #if !defined(_WIN32) && !defined(__ANDROID__)
   const char *home = getenv("HOME");
@@ -28096,6 +28097,15 @@ static void setup_config(char *argv[])
   if (tmpcfg.parsertmp_locale == PARSE_CLOBBER)
     tmpcfg.parsertmp_locale = NULL;
   button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &num_wished_langs);
+
+  /* Determine the referred font for the current locale */
+  for (i = 0; default_local_fonts[i].locale_id != -1; i++)
+  {
+    if (default_local_fonts[i].locale_id == get_current_language())
+    {
+      PANGO_DEFAULT_FONT = default_local_fonts[i].font_name;
+    }
+  }
 
   if (tmpcfg.tp_ui_font)
   {

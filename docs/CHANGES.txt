@@ -70,6 +70,13 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/146/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * WIP Different default fonts may be set on a per-locale basis
+      (hard-coded into Tux Paint).  Most locales still use "DejaVu Sans",
+      if available.  As of 0.9.31, things are configured as:
+      + Japanese: TBD
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/240/
+      Bill Kendrick <bill@newbreedsoftware.com> (code)
+
   * Bug Fixes:
     ----------
     * In some window size / button size combinations, Eraser

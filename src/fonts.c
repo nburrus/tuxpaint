@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: June 1, 2023
+  Last modified: June 8, 2023
 */
 
 #include <stdio.h>
@@ -173,6 +173,16 @@ int button_label_y_nudge;
 static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
+const char * PANGO_DEFAULT_FONT = "DejaVu Sans";
+
+default_locale_font_t default_local_fonts[] = {
+  {
+   LANG_JA,
+   "TakaoPGothic" /* Included in Ubuntu "fonts-takao-gothic" package */
+   // FIXME: Shin-ichi recommend something, please! -bjk 2023.06.08
+  },
+  {-1, NULL},
+}; 
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)
 {

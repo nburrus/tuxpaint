@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 31, 2023
+  Last updated: June 8, 2023
 */
 
 #ifndef FONTS_H
@@ -39,11 +39,23 @@
 #include "SDL_ttf.h"
 #include "SDL2_Pango.h"
 
+#include "i18n.h"
+
 /* UI font, which as of 0.9.31, can be overridden by "uifont"
    setting (also, this will be used if "uifont=default" is specified,
-   e.g. to override a config. file option using a command-line option) */
+   e.g. to override a config. file option using a command-line option).
 
-#define PANGO_DEFAULT_FONT "DejaVu Sans"
+   Also, starting in 0.9.31, we can specify different preferred fonts
+   based on locale.
+*/
+
+typedef struct default_locale_font_s {
+  int locale_id;
+  const char * font_name;
+} default_locale_font_t;
+
+extern default_locale_font_t default_local_fonts[];
+extern const char * PANGO_DEFAULT_FONT;
 
 #include "compiler.h"
 
