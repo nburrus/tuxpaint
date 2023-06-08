@@ -176,10 +176,35 @@ static void reliable_read(int fd, void *buf, size_t count);
 const char * PANGO_DEFAULT_FONT = "DejaVu Sans";
 
 default_locale_font_t default_local_fonts[] = {
+  // Initially based on "otfinfo --info fonts/locale/*.ttf | grep "Full name:"
   {
    LANG_JA,
    "TakaoPGothic" /* Included in Ubuntu "fonts-takao-gothic" package */
    // FIXME: Shin-ichi recommend something, please! -bjk 2023.06.08
+  },
+  {
+   LANG_BO, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
+   "Tsampa Keyboard" /* FIXME: Not packaged in Ubuntu! */
+  },
+  {
+   LANG_GU,
+   "Lohit Gujarati" /* Included in Ubuntu "fonts-lohit-gujr" package */
+  },
+  {
+   LANG_TH,
+   "Garuda" /* Included in Ubuntu "fonts-tlwg-garuda-ttf" package */
+  },
+  {
+   LANG_AR,
+   "Nice" /* Included in Ubuntu "fonts-arabeyes" package (ae_Nice) */
+  },
+  {
+   LANG_HE,
+   "Nachlieli CLM" /* Inclued in Ubuntu "culmus" package */
+  },
+  {
+   LANG_HI,
+   "Lohit Devanagari" /* Included in Ubuntu "fonts-lohit-deva" package */
   },
   {-1, NULL},
 }; 

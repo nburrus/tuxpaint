@@ -73,7 +73,13 @@ https://tuxpaint.org/
     * WIP Different default fonts may be set on a per-locale basis
       (hard-coded into Tux Paint).  Most locales still use "DejaVu Sans",
       if available.  As of 0.9.31, things are configured as:
+      + Arabic: Nice
+      + Gujarati: Lohit Gujarati
+      + Hebrew: Nachlieli CLM
+      + Hindi: Lohit Devanagari
       + Japanese: TBD
+      + Thai: Garuda
+      + Tibetan: Tsampa Keyboard
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/240/
       Bill Kendrick <bill@newbreedsoftware.com> (code)
 
