@@ -30418,6 +30418,14 @@ int main(int argc, char *argv[])
   printf("Tux Paint log - %s\n", logTime);
 #endif
 
+#if defined(__MACOS__)
+  /* Pango uses Fontconfig which requires /opt/local/etc/fonts/fonts.conf. This
+   * file may not exist on the runtime system, however, so we copy the file
+   * into our app bundle at compile time, and tell Fontconfig here to look for
+   * the file within the app bundle. */
+  putenv((char *)"FONTCONFIG_PATH=Resources/etc");
+#endif
+
   chdir_to_binary(argv[0]);
   setup_config(argv);
 
@@ -30434,14 +30442,6 @@ int main(int argc, char *argv[])
 
 #ifdef DEBUG
   CLOCK_ASM(time2);
-#endif
-
-#if defined(__MACOS__)
-  /* Pango uses Fontconfig which requires /opt/local/etc/fonts/fonts.conf. This
-   * file may not exist on the runtime system, however, so we copy the file
-   * into our app bundle at compile time, and tell Fontconfig here to look for
-   * the file within the app bundle. */
-  putenv((char *)"FONTCONFIG_PATH=Resources/etc");
 #endif
 
 #if defined(FC_DEBUG)
