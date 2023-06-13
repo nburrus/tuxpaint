@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 8, 2023
+  June 14, 2002 - June 13, 2023
 */
 
 #include "platform.h"
