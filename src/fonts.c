@@ -174,24 +174,27 @@ static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
 const char * PANGO_DEFAULT_FONT = "DejaVu Sans";
+const char * PANGO_DEFAULT_FONT_FALLBACK = NULL;
 
-/* Names of the fonts we include in `fonts/locale/` */
+/* Names of the fonts we include in `fonts/locale/`
+   (LANG_* codes are from `src/i18n.h`) */
 // (Try `otfinfo --info fonts/locale/*.ttf | grep "Full name:"`)
 default_locale_font_t default_local_fonts[] = {
-  { LANG_AR, "ae_Nice" },
-  { LANG_BO, "Tsampa Keyboard" }, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
-  { LANG_EL, "Thryomanes" },
-  { LANG_GU, "Lohit Gujarati" },
-  { LANG_HE, "Nachlieli Light" },
-  { LANG_HI, "Raghindi" },
-  { LANG_JA, "GJGothicPNSubset" },
-  { LANG_KA, "TuxPaint Georgian" },
-  { LANG_KO, "Baekmuk Gulim" },
-  { LANG_TA, "TSCu_Comic" },
-  { LANG_TE, "Vemana2000" },
-  { LANG_TH, "Garuda" },
-  { LANG_ZH_TW, "SubsetForTuxPaint" },
-  { -1, NULL },
+  { LANG_AR, "ae_Nice", NULL },
+  { LANG_BO, "Tsampa Keyboard", NULL }, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
+  { LANG_EL, "Thryomanes", NULL},
+  { LANG_GU, "Lohit Gujarati", NULL },
+  { LANG_HE, "Nachlieli Light", NULL },
+  { LANG_HI, "Raghindi", NULL },
+  { LANG_JA, "Gen Jyuu Gothic P Regular", "GJGothicPNSubset" },
+  { LANG_KA, "TuxPaint Georgian", NULL }, /* FIXME: Upon what is this font based? Never knew -bjk 2023.06.12 */
+  { LANG_KO, "Baekmuk Gulim", NULL },
+  { LANG_TA, "TSCu_Comic", NULL },
+  { LANG_TE, "Vemana2000", NULL },
+  { LANG_TH, "Garuda", NULL },
+  { LANG_ZH_CN, "AR PL SungtiL GB", NULL },
+  { LANG_ZH_TW, "HanWangKaiMediumChuIn", "SubsetForTuxPaint" },
+  { -1, NULL, NULL },
 }; 
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)

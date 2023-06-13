@@ -27926,6 +27926,7 @@ static void setup_config(char *argv[])
 {
   char str[128];
   char *picturesdir;
+  char *tp_ui_font_fallback;
   int i;
 
 #if !defined(_WIN32) && !defined(__ANDROID__)
@@ -28104,13 +28105,17 @@ static void setup_config(char *argv[])
   button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &num_wished_langs);
 
   /* Determine the referred font for the current locale */
+  PANGO_DEFAULT_FONT_FALLBACK = NULL;
   for (i = 0; default_local_fonts[i].locale_id != -1; i++)
   {
     if (default_local_fonts[i].locale_id == get_current_language())
     {
       PANGO_DEFAULT_FONT = default_local_fonts[i].font_name;
+      PANGO_DEFAULT_FONT_FALLBACK = default_local_fonts[i].font_name_fallback;
     }
   }
+
+  tp_ui_font_fallback = NULL;
 
   if (tmpcfg.tp_ui_font)
   {
@@ -28122,6 +28127,10 @@ static void setup_config(char *argv[])
     {
       printf/*DEBUG_PRINTF*/("Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
       tp_ui_font = strdup(PANGO_DEFAULT_FONT);
+      if (PANGO_DEFAULT_FONT_FALLBACK != NULL)
+      {
+        tp_ui_font_fallback = strdup(PANGO_DEFAULT_FONT_FALLBACK);
+      }
     }
     else
     {
@@ -28162,6 +28171,19 @@ static void setup_config(char *argv[])
     tmp_str = ask_pango_for_font(tp_ui_font);
     if (tmp_str != NULL)
     {
+      if (strcmp(tp_ui_font, tmp_str) != 0 && tp_ui_font_fallback != NULL)
+      {
+        free(tp_ui_font);
+        tp_ui_font = strdup(tp_ui_font_fallback);
+        tp_ui_font_fallback = NULL;
+
+        printf/*DEBUG_PRINTF*/("Requested fallback default UI font, \"%s\"\n", tp_ui_font);
+        tmp_str = ask_pango_for_font(tp_ui_font);
+      }
+    }
+
+    if (tmp_str != NULL)
+    {   
       printf("Actual UI font will be \"%s\"\n", tmp_str);
       free(tmp_str);
     }

@@ -52,10 +52,11 @@
 typedef struct default_locale_font_s {
   int locale_id;
   const char * font_name;
+  const char * font_name_fallback;
 } default_locale_font_t;
 
 extern default_locale_font_t default_local_fonts[];
-extern const char * PANGO_DEFAULT_FONT;
+extern const char * PANGO_DEFAULT_FONT, * PANGO_DEFAULT_FONT_FALLBACK;
 
 #include "compiler.h"
 
