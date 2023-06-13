@@ -183,6 +183,10 @@ default_locale_font_t default_local_fonts[] = {
    // FIXME: Shin-ichi recommend something, please! -bjk 2023.06.08
   },
   {
+   LANG_KO,
+   "Baekmuk Gulim"
+  },
+  {
    LANG_BO, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
    "Tsampa Keyboard" /* FIXME: Not packaged in Ubuntu! */
   },
