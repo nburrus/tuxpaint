@@ -22,3 +22,4 @@ src/tuxpaint.desktop
 src/tuxpaint-fullscreen.desktop
 src/org.tuxpaint.Tuxpaint.appdata.xml
 test-png
+inkscape

@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - June 7, 2023
+# June 14, 2002 - June 12, 2023
 
 
 # The version number, for release:
@@ -745,6 +745,7 @@ clean:
 	@-rm -f dlllist a.exe
 	@-rm -f win32/Preprocessed.iss win32/tuxpaint-*.zip win32/tuxpaint-*.exe
 	@-rm -f test-png
+	@-rm -f ./inkscape
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -882,6 +883,10 @@ $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
 echo-thumb-starters:
 	@echo
 	@echo "...Generating thumbnails for starters..."
+	@echo "# Don't let ImageMagick use Inkscape; use rsvgconvert instead" > ./inkscape
+	@echo "exit 1" >> ./inkscape
+	@chmod 755 ./inkscape
+	@(eval export PATH=$(shell pwd):$(PATH))
 
 # Create thumbnails for starters
 .PHONY: thumb-starters
@@ -936,6 +941,10 @@ $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
 echo-thumb-templates:
 	@echo
 	@echo "...Generating thumbnails for templates..."
+	@echo "# Don't let ImageMagick use Inkscape; use rsvgconvert instead" > ./inkscape
+	@echo "exit 1" >> ./inkscape
+	@chmod 755 ./inkscape
+	@(eval export PATH=$(shell pwd):$(PATH))
 
 # Create thumbnails for templates
 .PHONY: thumb-templates

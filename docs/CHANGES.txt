@@ -131,6 +131,15 @@ https://tuxpaint.org/
       local filesystem while generating packages, e.g. for Slackware Linux)
       Tim Dickson <dickson.tim@googlemail.com>
 
+    * When generating thumbnails for Starters & Templates, create a
+      "inkscape" shellscript, which simply does "exit 1", and add the
+      current directory to the beginning of the $PATH variable.
+      This will prevent ImageMagick's "convert" utility from using
+      Inkscape, if installed, and fallback to "rsvgconvert".
+      (When building Slackware packages, it was noticed that FontConfig
+      was running and generating a cache, which was unexpected.)
+      Tim Dickson <dickson.tim@googlemail.com>
+
 2023.May.18 (0.9.30)
   * Improvements to Stamp tool:
     ---------------------------
