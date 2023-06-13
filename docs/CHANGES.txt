@@ -70,22 +70,14 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/146/
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * WIP Different default fonts may be set on a per-locale basis
-      (hard-coded into Tux Paint).  Most locales still use "DejaVu Sans",
-      if available.  As of 0.9.31, things are configured as:
-      + Arabic: Nice
-      + Gujarati: Lohit Gujarati
-      + Hebrew: Nachlieli CLM
-      + Hindi: Lohit Devanagari
-      + Japanese: TBD <<FIXME>>
-      + Korean: Baekmuk Gulim
-      + Thai: Garuda
-      + Tibetan: Tsampa Keyboard
+    * Different default fonts once again used on a per-locale basis.
       (This returns us to how Tux Paint behaved when we used
       SDL_ttf to directly load fonts for the UI, and used TTF font files
-      that we ship in the `fonts/locale/` directory.)
+      that we ship in the `fonts/locale/` directory.  We now ask Pango,
+      via FontConfig, to look there for fonts.)
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/240/
       Bill Kendrick <bill@newbreedsoftware.com> (code)
+      h/t Mark Kim & TOYAMA Shin-ichi
 
   * Bug Fixes:
     ----------

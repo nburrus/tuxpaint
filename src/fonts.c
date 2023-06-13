@@ -175,42 +175,23 @@ static void reliable_read(int fd, void *buf, size_t count);
 
 const char * PANGO_DEFAULT_FONT = "DejaVu Sans";
 
+/* Names of the fonts we include in `fonts/locale/` */
+// (Try `otfinfo --info fonts/locale/*.ttf | grep "Full name:"`)
 default_locale_font_t default_local_fonts[] = {
-  // Initially based on "otfinfo --info fonts/locale/*.ttf | grep "Full name:"
-  {
-   LANG_JA,
-   "TakaoPGothic" /* Included in Ubuntu "fonts-takao-gothic" package */
-   // FIXME: Shin-ichi recommend something, please! -bjk 2023.06.08
-  },
-  {
-   LANG_KO,
-   "Baekmuk Gulim"
-  },
-  {
-   LANG_BO, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
-   "Tsampa Keyboard" /* FIXME: Not packaged in Ubuntu! */
-  },
-  {
-   LANG_GU,
-   "Lohit Gujarati" /* Included in Ubuntu "fonts-lohit-gujr" package */
-  },
-  {
-   LANG_TH,
-   "Garuda" /* Included in Ubuntu "fonts-tlwg-garuda-ttf" package */
-  },
-  {
-   LANG_AR,
-   "Nice" /* Included in Ubuntu "fonts-arabeyes" package (ae_Nice) */
-  },
-  {
-   LANG_HE,
-   "Nachlieli CLM" /* Inclued in Ubuntu "culmus" package */
-  },
-  {
-   LANG_HI,
-   "Lohit Devanagari" /* Included in Ubuntu "fonts-lohit-deva" package */
-  },
-  {-1, NULL},
+  { LANG_AR, "ae_Nice" },
+  { LANG_BO, "Tsampa Keyboard" }, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
+  { LANG_EL, "Thryomanes" },
+  { LANG_GU, "Lohit Gujarati" },
+  { LANG_HE, "Nachlieli Light" },
+  { LANG_HI, "Raghindi" },
+  { LANG_JA, "GJGothicPNSubset" },
+  { LANG_KA, "TuxPaint Georgian" },
+  { LANG_KO, "Baekmuk Gulim" },
+  { LANG_TA, "TSCu_Comic" },
+  { LANG_TE, "Vemana2000" },
+  { LANG_TH, "Garuda" },
+  { LANG_ZH_TW, "SubsetForTuxPaint" },
+  { -1, NULL },
 }; 
 
 void TuxPaint_Font_CloseFont(TuxPaint_Font * tpf)

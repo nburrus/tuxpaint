@@ -9326,46 +9326,9 @@ static int generate_fontconfig_cache_real(void)
   TuxPaint_Font *tmp_font;
   SDL_Surface *tmp_surf;
   SDL_Color black = { 0, 0, 0, 0 };
-  FcBool fontAddStatus;
-  const char * locale_fontdir;
 
   DEBUG_PRINTF("-- Hello from generate_fontconfig_cache() (thread # %d)\n", SDL_ThreadID());
 
-
-  /* Add Tux Paint's own set of fonts to FontConfig,
-     so SDL2_Pango can find and use them */
-  locale_fontdir = "/usr/local/share/tuxpaint/fonts"; // FIXME
-
-  fontAddStatus = FcConfigAppFontAddDir(FcConfigGetCurrent(), (const FcChar8 *) locale_fontdir);
-  if (fontAddStatus == FcFalse)
-  {
-    fprintf(stderr, "Unable to add font dir %s\n", locale_fontdir);
-  }
-
-  /* ARGH: Why is '/usr/local/share/tuxpaint/fonts' not
-     coming back in the list of font dirs (below)?!
-
-     I tried both of these & they did not help.
-     Documentation out there is very vague; Google barely helping.
-
-     -bjk 2023.06.12
-  */
-  printf("Rescanning fonts..."); fflush(stdout);
-  FcDirCacheRead(locale_fontdir, FcTrue /* force */, FcConfigGetCurrent());
-  FcDirCacheRescan(locale_fontdir, FcConfigGetCurrent());
-  printf("done\n");
-
-  if (SDL_TRUE) // FIXME
-  {
-    FcStrList *str_list;
-    FcChar8 *path;
-    str_list = FcConfigGetFontDirs(FcConfigGetCurrent());
-    printf("FontConfigGetFontDirs():\n");
-    while ((path = FcStrListNext(str_list)) != NULL) {
-      printf(" * %s\n", (const char *) path);
-    }
-    printf("\n");
-  }
 
   tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12); /* always just using the default font for the purpose of getting FontConfig to generate its cache */
 
@@ -28152,6 +28115,8 @@ static void setup_config(char *argv[])
   if (tmpcfg.tp_ui_font)
   {
     char * tmp_str;
+    FcBool fontAddStatus;
+    const char locale_fontdir[MAX_PATH];
 
     if (strcmp(tmpcfg.tp_ui_font, "default") == 0)
     {
@@ -28163,6 +28128,36 @@ static void setup_config(char *argv[])
       tp_ui_font = strdup(tmpcfg.tp_ui_font);
       printf/*DEBUG_PRINTF*/("Requested UI font described by \"%s\"\n", tp_ui_font);
     }
+
+    /* Add Tux Paint's own set of fonts to FontConfig,
+       so SDL2_Pango can find and use them */
+    snprintf(locale_fontdir, sizeof(locale_fontdir), "%s/fonts", DATA_PREFIX);
+
+    fontAddStatus = FcConfigAppFontAddDir(FcConfigGetCurrent(), (const FcChar8 *) locale_fontdir);
+    if (fontAddStatus == FcFalse)
+    {
+      fprintf(stderr, "Unable to add font dir %s\n", locale_fontdir);
+    }
+
+    /* FIXME: Unclear whether this is necessary? -bjk 2023.06.12 */
+    DEBUG_PRINTF("Rescanning fonts..."); fflush(stdout);
+    FcDirCacheRead((const FcChar8 *) locale_fontdir, FcTrue /* force */, FcConfigGetCurrent());
+    FcDirCacheRescan((const FcChar8 *) locale_fontdir, FcConfigGetCurrent());
+    DEBUG_PRINTF("done\n");
+
+#ifdef DEBUG
+    {
+      FcStrList *str_list;
+      FcChar8 *path;
+      str_list = FcConfigGetFontDirs(FcConfigGetCurrent());
+      printf("FcConfigGetFontDirs():\n");
+      while ((path = FcStrListNext(str_list)) != NULL) {
+        printf(" * %s\n", (const char *) path);
+      }
+      printf("\n");
+    }
+#endif
+
 
     tmp_str = ask_pango_for_font(tp_ui_font);
     if (tmp_str != NULL)
