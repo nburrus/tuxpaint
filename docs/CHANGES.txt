@@ -77,9 +77,13 @@ https://tuxpaint.org/
       + Gujarati: Lohit Gujarati
       + Hebrew: Nachlieli CLM
       + Hindi: Lohit Devanagari
-      + Japanese: TBD
+      + Japanese: TBD <<FIXME>>
+      + Korean: Baekmuk Gulim
       + Thai: Garuda
       + Tibetan: Tsampa Keyboard
+      (This returns us to how Tux Paint behaved when we used
+      SDL_ttf to directly load fonts for the UI, and used TTF font files
+      that we ship in the `fonts/locale/` directory.)
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/240/
       Bill Kendrick <bill@newbreedsoftware.com> (code)
 

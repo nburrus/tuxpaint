@@ -2317,6 +2317,8 @@ char *safe_strncat(char *dest, const char *src, size_t n);
 char *safe_strncpy(char *dest, const char *src, size_t n);
 int safe_snprintf(char *str, size_t size, const char *format, ...);
 
+static int generate_fontconfig_cache_real(void);
+
 #define MAX_UTF8_CHAR_LENGTH 6
 
 #define USEREVENT_TEXT_UPDATE 1
@@ -8125,6 +8127,8 @@ void show_fonts(void) {
   int i, n_families;
   char * * family_names;
 
+  generate_fontconfig_cache_real();
+
   fontmap = pango_ft2_font_map_new();
   pango_font_map_list_families(fontmap, &families, &n_families);
 
@@ -9322,8 +9326,46 @@ static int generate_fontconfig_cache_real(void)
   TuxPaint_Font *tmp_font;
   SDL_Surface *tmp_surf;
   SDL_Color black = { 0, 0, 0, 0 };
+  FcBool fontAddStatus;
+  const char * locale_fontdir;
 
   DEBUG_PRINTF("-- Hello from generate_fontconfig_cache() (thread # %d)\n", SDL_ThreadID());
+
+
+  /* Add Tux Paint's own set of fonts to FontConfig,
+     so SDL2_Pango can find and use them */
+  locale_fontdir = "/usr/local/share/tuxpaint/fonts"; // FIXME
+
+  fontAddStatus = FcConfigAppFontAddDir(FcConfigGetCurrent(), (const FcChar8 *) locale_fontdir);
+  if (fontAddStatus == FcFalse)
+  {
+    fprintf(stderr, "Unable to add font dir %s\n", locale_fontdir);
+  }
+
+  /* ARGH: Why is '/usr/local/share/tuxpaint/fonts' not
+     coming back in the list of font dirs (below)?!
+
+     I tried both of these & they did not help.
+     Documentation out there is very vague; Google barely helping.
+
+     -bjk 2023.06.12
+  */
+  printf("Rescanning fonts..."); fflush(stdout);
+  FcDirCacheRead(locale_fontdir, FcTrue /* force */, FcConfigGetCurrent());
+  FcDirCacheRescan(locale_fontdir, FcConfigGetCurrent());
+  printf("done\n");
+
+  if (SDL_TRUE) // FIXME
+  {
+    FcStrList *str_list;
+    FcChar8 *path;
+    str_list = FcConfigGetFontDirs(FcConfigGetCurrent());
+    printf("FontConfigGetFontDirs():\n");
+    while ((path = FcStrListNext(str_list)) != NULL) {
+      printf(" * %s\n", (const char *) path);
+    }
+    printf("\n");
+  }
 
   tmp_font = TuxPaint_Font_OpenFont(PANGO_DEFAULT_FONT, NULL, 12); /* always just using the default font for the purpose of getting FontConfig to generate its cache */
 
