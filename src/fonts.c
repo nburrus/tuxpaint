@@ -178,7 +178,12 @@ const char * PANGO_DEFAULT_FONT_FALLBACK = NULL;
 
 /* Names of the fonts we include in `fonts/locale/`
    (LANG_* codes are from `src/i18n.h`) */
-// (Try `otfinfo --info fonts/locale/*.ttf | grep "Full name:"`)
+// (Try `otfinfo --info fonts/locale/*.ttf | grep "Family:"`)
+/* Note: When there's a preferred family name, and a fall-back,
+   this is generally when Tux Paint ships a 'subset' font based
+   on the strings used in the app, and we offer a separate
+   download of the full (much larger) font TTF file.
+   (https://tuxpaint.org/download/fonts/) */
 default_locale_font_t default_local_fonts[] = {
   { LANG_AR, "ae_Nice", NULL },
   { LANG_BO, "Tsampa Keyboard", NULL }, // NOTE: Our current translation is Wylie transliterated, not Unicode! */
@@ -187,7 +192,7 @@ default_locale_font_t default_local_fonts[] = {
   { LANG_HE, "Nachlieli Light", NULL },
   { LANG_HI, "Raghindi", NULL },
   { LANG_JA, "Gen Jyuu Gothic P Regular", "GJGothicPNSubset" },
-  { LANG_KA, "TuxPaint Georgian", NULL }, /* FIXME: Upon what is this font based? Never knew -bjk 2023.06.12 */
+  { LANG_KA, "TuxPaint Georgian", NULL }, /* FIXME: Upon what was this font based? Never knew -bjk 2023.06.12 */
   { LANG_KO, "Baekmuk Gulim", NULL },
   { LANG_TA, "TSCu_Comic", NULL },
   { LANG_TE, "Vemana2000", NULL },
