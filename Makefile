@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - June 12, 2023
+# June 14, 2002 - June 13, 2023
 
 
 # The version number, for release:
@@ -886,7 +886,7 @@ echo-thumb-starters:
 	@echo "# Don't let ImageMagick use Inkscape; use rsvgconvert instead" > ./inkscape
 	@echo "exit 1" >> ./inkscape
 	@chmod 755 ./inkscape
-	@(eval export PATH=$(shell pwd):$(PATH))
+	@(eval export PATH="$(shell pwd)":"$(PATH)")
 
 # Create thumbnails for starters
 .PHONY: thumb-starters
@@ -944,7 +944,7 @@ echo-thumb-templates:
 	@echo "# Don't let ImageMagick use Inkscape; use rsvgconvert instead" > ./inkscape
 	@echo "exit 1" >> ./inkscape
 	@chmod 755 ./inkscape
-	@(eval export PATH=$(shell pwd):$(PATH))
+	@(eval export PATH="$(shell pwd)":"$(PATH)")
 
 # Create thumbnails for templates
 .PHONY: thumb-templates
