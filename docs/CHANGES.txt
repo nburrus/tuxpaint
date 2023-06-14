@@ -115,6 +115,11 @@ https://tuxpaint.org/
     * Russian translaton
       Olesya Gerasimenko <translation-team@basealt.ru>
 
+    * Updated the Chinese (Traditional) subset font file that ships
+      with Tux Paint, based on the current translation strings.
+      (Updated Python script to explicitly use `python2` these days.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Ports & Building:
     -----------------
     * Ensure `trans` dir. exists, for parallel builds (`make -j`)
