@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 13, 2023
+  June 14, 2002 - June 15, 2023
 */
 
 #include "platform.h"
@@ -28121,7 +28121,7 @@ static void setup_config(char *argv[])
   {
     char * tmp_str;
     FcBool fontAddStatus;
-    const char locale_fontdir[MAX_PATH];
+    char locale_fontdir[MAX_PATH];
 
     if (strcmp(tmpcfg.tp_ui_font, "default") == 0)
     {
