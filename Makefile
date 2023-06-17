@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - June 13, 2023
+# June 14, 2002 - June 17, 2023
 
 
 # The version number, for release:
@@ -329,6 +329,7 @@ OLDSVGFLAG:=$(if $(filter -lsvg-cairo,$(SVG_LIB)),-DOLD_SVG,)
 
 PNG_CFLAGS:=$(shell $(PKG_CONFIG) libpng --cflags)
 
+CONVERT:=./convert-wrapper.sh
 
 ifeq ($(hack),1)
 hack:
@@ -380,7 +381,7 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
 # are 132x80.  On larger screens, they will be bigger (since the New dialog
 # is always 4x4 thumbnails); therefore, generating larger thumbs, which can
 # be still be scaled down fairly quickly (esp. complicated SVG ones).
-CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize !264x160 -background white -interlace none
+CONVERT_OPTS:=-alpha Background -alpha Off +depth -resize "!264x160" -background white -interlace none
 
 .SUFFIXES:
 
@@ -745,7 +746,6 @@ clean:
 	@-rm -f dlllist a.exe
 	@-rm -f win32/Preprocessed.iss win32/tuxpaint-*.zip win32/tuxpaint-*.exe
 	@-rm -f test-png
-	@-rm -f ./inkscape
 	@echo
 
 # "make uninstall" should remove the various parts from their
@@ -870,10 +870,10 @@ $(THUMB_STARTERS):
 	@if [ "x" != "x"$(STARTER_BACK_NAME) ] ; \
 	then \
 		composite $(STARTER_NAME) $(STARTER_BACK_NAME) obj/tmp_$(notdir $(STARTER_NAME)).png ; \
-		convert $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ 2> /dev/null ; \
+		$(CONVERT) $(CONVERT_OPTS) obj/tmp_$(notdir $(STARTER_NAME)).png $@ 2> /dev/null ; \
 		rm obj/tmp_$(notdir $(STARTER_NAME)).png ; \
 	else \
-		convert $(CONVERT_OPTS) $(STARTER_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm -f $@ ) ; \
+		$(CONVERT) $(CONVERT_OPTS) $(STARTER_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm -f $@ ) ; \
 	fi
 
 $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
@@ -883,10 +883,6 @@ $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
 echo-thumb-starters:
 	@echo
 	@echo "...Generating thumbnails for starters..."
-	@echo "# Don't let ImageMagick use Inkscape; use rsvgconvert instead" > ./inkscape
-	@echo "exit 1" >> ./inkscape
-	@chmod 755 ./inkscape
-	@(eval export PATH="$(shell pwd)":"$(PATH)")
 
 # Create thumbnails for starters
 .PHONY: thumb-starters
@@ -932,7 +928,7 @@ TEMPLATE_NAME=$(or $(wildcard $(subst templates/.thumbs,templates,$(@:-t.png=.sv
 $(THUMB_TEMPLATES):
 	@printf "."
 	@mkdir -p templates/.thumbs
-	@convert $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm -f $@ ) ; \
+	@$(CONVERT) $(CONVERT_OPTS) $(TEMPLATE_NAME) $@ 2> /dev/null || ( echo "($@ failed)" ; rm -f $@ ) ; \
 
 $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
 	@install -D -m 644 $< $@ || ( echo "NO THUMB $<" )
@@ -941,10 +937,6 @@ $(INSTALLED_THUMB_TEMPLATES): $(DATA_PREFIX)/%: %
 echo-thumb-templates:
 	@echo
 	@echo "...Generating thumbnails for templates..."
-	@echo "# Don't let ImageMagick use Inkscape; use rsvgconvert instead" > ./inkscape
-	@echo "exit 1" >> ./inkscape
-	@chmod 755 ./inkscape
-	@(eval export PATH="$(shell pwd)":"$(PATH)")
 
 # Create thumbnails for templates
 .PHONY: thumb-templates
