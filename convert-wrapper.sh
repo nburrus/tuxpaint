@@ -24,6 +24,7 @@ if [ x$FILEEXT = "xsvg" ]; then
   # that Imagemagick's `convert` will fallback to another
   # SVG converter, thus avoiding invoking the real Inkscape.
   echo "exit 1" > ./inkscape
+  chmod +x ./inkscape
   
   # Add the local directory to the beginning of this script's
   # $PATH so `convert` finds the dummy script we just made.
