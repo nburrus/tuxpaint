@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 15, 2023
+  June 14, 2002 - June 18, 2023
 */
 
 #include "platform.h"
@@ -20974,6 +20974,7 @@ static SDL_Surface *_load_svg(const char *file)
   RsvgHandle *rsvg_handle;
   GError *gerr;
   unsigned char *image;
+  gdouble d_rwidth, d_rheight;
   int rwidth, rheight;
   int width, height, stride;
   float scale;
@@ -20995,11 +20996,11 @@ static SDL_Surface *_load_svg(const char *file)
     return (NULL);
   }
 
-  rsvg_handle_get_dimensions(rsvg_handle, &dimensions);
-  rwidth = dimensions.width;
-  rheight = dimensions.height;
+  rsvg_handle_get_intrinsic_size_in_pixels(rsvg_handle, &d_rwidth, &d_rheight);
+  rwidth = (int) d_rwidth;
+  rheight = (int) d_rheight;
 
-  DEBUG_PRINTF("SVG is %d x %d\n", rwidth, rheight);
+  DEBUG_PRINTF("SVG is %f x %f (%d x %d)\n", d_rwidth, d_rheight, rwidth, rheight);
 
 
   /* Pick best scale to render to (for the canvas in this instance of Tux Paint) */
