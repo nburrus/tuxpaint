@@ -96,21 +96,6 @@ Problemas de interface
            calidade». Vexa: «As miniaturas dos selos no selector de selos
            vense mal», arriba.
 
-   Os botóns de selección de cores son cadrados feos, e non botóns bonitos.
-
-           Tux Paint probabelmente compilado desactivando os fermosos botóns
-           de selección de cor. Executa a orde: «tuxpaint --verbose-version»
-           dende unha liña de ordes. Se, entre outras saídas, ves o texto:
-           «Low Quality Color Selector enabled», entón é isto o que está a
-           suceder.
-
-           Para cambialo, debe volver compilar Tux Paint dende o código
-           fonte. Asegúrese de eliminar ou comentar calquera liña que diga:
-
-             #define LOW_QUALITY_COLOR_SELECTOR
-
-           no ficheiro «tuxpaint.c» no directorio «src».
-
    Todo o texto está en maiúscula.
 
            Está activada a opción «maiúsculas».

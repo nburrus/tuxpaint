@@ -100,23 +100,6 @@ Problèmes d'interface
            "Les vignettes de tampon dans le sélecteur de tampon ne sont pas
            jolies", ci-dessus.
 
-   Les boutons du sélecteur de couleurs sont des carrés affreux, pas de jolis
-   boutons !
-
-           Tux Paint a probablement été compilé avec les jolis boutons de
-           sélection de couleur désactivés. Exécutez la commande: "tuxpaint
-           --verbose-version" à partir d'une ligne de commande. Si, parmi les
-           résultats, vous voyez le texte: "Low Quality Color Selector
-           enabled", c'est ce qui se passe.
-
-           Pour changer cela, vous devez reconstruire Tux Paint à partir des
-           sources. Assurez-vous de supprimer ou de commenter toute ligne qui
-           dit :
-
-             #define LOW_QUALITY_COLOR_SELECTOR
-
-           dans le fichier "tuxpaint.c" du répertoire "src".
-
    Tout le texte est en majuscule !
 
            L'option "majuscule" est activée.

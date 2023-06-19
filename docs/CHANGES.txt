@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.June.18 (0.9.31)
+2023.June.19 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -110,6 +110,10 @@ https://tuxpaint.org/
         (e.g., Windows)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Mended bad rendering of color-picker (HSV palette) button when
+      selecting a Label text with a color not found in built-in colors.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Russian translaton
@@ -143,6 +147,9 @@ https://tuxpaint.org/
 
     * WIP Replaced deprecated RSVG library calls.
       https://sourceforge.net/p/tuxpaint/bugs/278/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Removed LOW_QUALITY_COLOR_SELECTOR compile-time option
       Bill Kendrick <bill@newbreedsoftware.com>
 
 2023.May.18 (0.9.30)

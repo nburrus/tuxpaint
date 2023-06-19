@@ -91,21 +91,6 @@ Interface Problems
            "Low Quality Thumbnails" is probably enabled. See: "Stamp
            thumbnails in the Stamp Selector look bad", above.
 
-   The color picker buttons are ugly squares, not pretty buttons!
-
-           Tux Paint was probably compiled with the nice looking color
-           selector buttons disabled. Run the command: "tuxpaint
-           --verbose-version" from a command line. If, amongst the other
-           output, you see the text: "Low Quality Color Selector enabled",
-           then this is what's happening.
-
-           To change this, you must rebuild Tux Paint from source. Be sure to
-           remove or comment out any line that says:
-
-             #define LOW_QUALITY_COLOR_SELECTOR
-
-           in the "tuxpaint.c" file in the "src" directory.
-
    All of the text is in uppercase!
 
            The "uppercase" option is on.

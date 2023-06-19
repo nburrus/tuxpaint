@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 18, 2023
+  June 14, 2002 - June 19, 2023
 */
 
 #include "platform.h"
@@ -76,7 +76,6 @@
 #else
 /* #define DEBUG_MALLOC */
 /* #define LOW_QUALITY_THUMBNAILS */
-/* #define LOW_QUALITY_COLOR_SELECTOR */
 /* #define LOW_QUALITY_STAMP_OUTLINE */
 /* #define NO_PROMPT_SHADOWS */
 /* #define USE_HWSURFACE */
@@ -1941,12 +1940,8 @@ static SDL_Surface *img_tux[NUM_TIP_TUX];
 
 static SDL_Surface *img_mouse, *img_mouse_click;
 
-#ifdef LOW_QUALITY_COLOR_SELECTOR
-static SDL_Surface *img_paintcan;
-#else
 static SDL_Surface **img_color_btns;
 static SDL_Surface *img_color_btn_off;
-#endif
 
 static int colors_are_selectable;
 
@@ -7880,16 +7875,10 @@ void show_version(int details)
   printf("  High Quality Thumbnails enabled  (not LOW_QUALITY_THUMBNAILS)\n");
 #endif
 
-#ifdef LOW_QUALITY_COLOR_SELECTOR
-  printf("  Low Quality Color Selector enabled  (LOW_QUALITY_COLOR_SELECTOR)\n");
-#else
-  printf("  Hight Quality Color Selector enabled  (not LOW_QUALITY_COLOR_SELECTOR)\n");
-#endif
-
 #ifdef LOW_QUALITY_STAMP_OUTLINE
   printf("  Low Quality Stamp Outline enabled  (LOW_QUALITY_STAMP_OUTLINE)\n");
 #else
-  printf("  Hight Quality Stamp Outline enabled  (not LOW_QUALITY_STAMP_OUTLINE)\n");
+  printf("  High Quality Stamp Outline enabled  (not LOW_QUALITY_STAMP_OUTLINE)\n");
 #endif
 
 #ifdef NO_PROMPT_SHADOWS
@@ -10228,24 +10217,8 @@ static unsigned draw_colors(unsigned action)
   {
     dest.x = r_colors.x + i % gd_colors.cols * color_button_w;
     dest.y = r_colors.y + i / gd_colors.cols * color_button_h;
-#ifndef LOW_QUALITY_COLOR_SELECTOR
     SDL_BlitSurface((colors_state == COLORSEL_ENABLE)
                     ? img_color_btns[i + (i == cur_color) * NUM_COLORS] : img_color_btn_off, NULL, screen, &dest);
-#else
-    dest.w = color_button_w;
-    dest.h = color_button_h;
-    if (colors_state == COLORSEL_ENABLE)
-      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, color_hexes[i][0], color_hexes[i][1], color_hexes[i][2]));
-    else
-      SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 240, 240, 240));
-
-    if (i == cur_color && colors_state == COLORSEL_ENABLE)
-    {
-      dest.y += 4;
-      SDL_BlitSurface(img_paintcan, NULL, screen, &dest);
-    }
-#endif
-
   }
   update_screen_rect(&r_colors);
 
@@ -15128,12 +15101,8 @@ static void cleanup(void)
 
   free_surface_array(undo_bufs, NUM_UNDO_BUFS);
 
-#ifdef LOW_QUALITY_COLOR_SELECTOR
-  free_surface(&img_paintcan);
-#else
   free_surface_array(img_color_btns, NUM_COLORS * 2);
   free(img_color_btns);
-#endif
 
   if (onscreen_keyboard)
   {
@@ -16418,9 +16387,7 @@ static void do_png_embed_data(png_structp png_ptr)
         for (x = 0; x < current_node->save_width; x++)
           for (y = 0; y < current_node->save_height; y++)
           {
-                    /* *INDENT-OFF* */
-                    pix = getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
-                    /* *INDENT-ON* */
+            pix = getpixels[current_node->label_node_surface->format->BytesPerPixel](current_node->label_node_surface, x, y);
             SDL_GetRGBA(pix, current_label_node->label_node_surface->format, &r, &g, &b, &a);
             fwrite(&a, alpha_size, 1, lfi);
           }
@@ -26180,9 +26147,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
   struct label_node *tmp_node = NULL;
   unsigned u;
   int done = SDL_FALSE;
-
-  Uint8 r, g, b, a;
-  int i, j, k;
+  int k;
 
   if (*ref_head == NULL)
     return (NULL);
@@ -26242,45 +26207,16 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
 
       if (k == COLOR_PICKER)
       {
+        /* If the label's color is not one of the built-ins,
+           set the color picker to the label's color, and
+           make the color picker be the currently-selected color */
         cur_color = COLOR_PICKER;
         select_color = COLOR_PICKER;
         color_hexes[select_color][0] = tmp_node->save_color.r;
         color_hexes[select_color][1] = tmp_node->save_color.g;
         color_hexes[select_color][2] = tmp_node->save_color.b;
-        SDL_LockSurface(img_color_btns[COLOR_PICKER]);
-        SDL_LockSurface(img_color_btns[COLOR_PICKER + NUM_COLORS]);
 
-        for (j = 0; j < 48 /* 48 */ ; j++)
-        {
-          for (i = 0; i < 48; i++)
-          {
-            SDL_GetRGBA(getpixels[img_paintwell->format->BytesPerPixel]
-                        (img_paintwell, i, j), img_paintwell->format, &r, &g, &b, &a);
-            if (a == 255)
-            {
-              putpixels[img_color_btns[COLOR_PICKER]->format->BytesPerPixel]
-                (img_color_btns[COLOR_PICKER], i, j,
-                 SDL_MapRGB(img_color_btns[COLOR_PICKER]->format,
-                            tmp_node->save_color.r, tmp_node->save_color.g, tmp_node->save_color.b));
-              putpixels[img_color_btns[COLOR_PICKER + NUM_COLORS]->format->BytesPerPixel] (img_color_btns[COLOR_PICKER +
-                                                                                                          NUM_COLORS],
-                                                                                           i, j,
-                                                                                           SDL_MapRGB(img_color_btns
-                                                                                                      [COLOR_PICKER +
-                                                                                                       NUM_COLORS]->
-                                                                                                      format,
-                                                                                                      tmp_node->
-                                                                                                      save_color.r,
-                                                                                                      tmp_node->
-                                                                                                      save_color.g,
-                                                                                                      tmp_node->
-                                                                                                      save_color.b));
-            }
-          }
-        }
-        SDL_UnlockSurface(img_color_btns[COLOR_PICKER]);
-        SDL_UnlockSurface(img_color_btns[COLOR_PICKER + NUM_COLORS]);
-
+        render_color_button(COLOR_PICKER, img_color_picker_thumb, NULL);
         draw_colors(COLORSEL_CLOBBER);
         render_brush();         /* FIXME: render_brush should be called at the start of Brush and Line tools? */
       }
@@ -29055,18 +28991,14 @@ static void setup(void)
   int scale;
   int canvas_width, canvas_height;
   int win_x = SDL_WINDOWPOS_UNDEFINED, win_y = SDL_WINDOWPOS_UNDEFINED;
-
-#ifndef LOW_QUALITY_COLOR_SELECTOR
   int x, y;
   SDL_Surface *tmp_btn_up;
   SDL_Surface *tmp_btn_down;
   Uint8 r, g, b;
-#endif
   SDL_Surface *tmp_imgcurup, *tmp_imgcurdown;
   Uint32 init_flags;
   char tmp_str[128];
   SDL_Surface *img1;
-
   Uint32(*getpixel_tmp_btn_up) (SDL_Surface *, int, int);
   Uint32(*getpixel_tmp_btn_down) (SDL_Surface *, int, int);
   Uint32(*getpixel_img_paintwell) (SDL_Surface *, int, int);
@@ -29926,10 +29858,6 @@ static void setup(void)
   img_color_mix = loadimagerb(DATA_PREFIX "images/ui/cmix.png");
   img_color_grab = loadimagerb(DATA_PREFIX "images/ui/color_grab.png");
 
-#ifdef LOW_QUALITY_COLOR_SELECTOR
-  img_paintcan = loadimage(DATA_PREFIX "images/ui/paintcan.png");
-#endif
-
   if (onscreen_keyboard)
   {
     img_oskdel = loadimagerb(DATA_PREFIX "images/ui/osk_delete.png");
@@ -30114,8 +30042,6 @@ static void setup(void)
 
   /* Generate color selection buttons: */
 
-#ifndef LOW_QUALITY_COLOR_SELECTOR
-
   /* Create appropriately-shaped buttons: */
   img1 = loadimage(DATA_PREFIX "images/ui/paintwell.png");
   img_paintwell = thumbnail(img1, color_button_w, color_button_h, 0);
@@ -30161,10 +30087,9 @@ static void setup(void)
   getpixel_img_paintwell = getpixels[img_paintwell->format->BytesPerPixel];
 
 
-  for (y = 0; y < tmp_btn_up->h /* 48 */ ; y++)
+  for (y = 0; y < tmp_btn_up->h; y++)
   {
-    for (x = 0; x < tmp_btn_up->w /* (WINDOW_WIDTH - r_ttoolopt.w) / NUM_COLORS */ ;
-         x++)
+    for (x = 0; x < tmp_btn_up->w; x++)
     {
       double ru, gu, bu, rd, gd, bd, aa;
       Uint8 a;
@@ -30198,7 +30123,7 @@ static void setup(void)
                                                                             (img_color_picker_thumb, x, y));
         }
 
-        if (i < COLOR_PICKER || a == 255)
+        if (i < COLOR_PICKER || a == 0)
         {
           putpixels[img_color_btns[i]->format->BytesPerPixel]
             (img_color_btns[i], x, y,
@@ -30222,6 +30147,7 @@ static void setup(void)
     }
   }
 
+  /* Apply icons on top of the color buttons that have them */
   for (i = 0; i < NUM_COLORS * 2; i++)
   {
     SDL_UnlockSurface(img_color_btns[i]);
@@ -30249,8 +30175,6 @@ static void setup(void)
   SDL_UnlockSurface(tmp_btn_down);
   SDL_FreeSurface(tmp_btn_up);
   SDL_FreeSurface(tmp_btn_down);
-
-#endif
 
   create_button_labels();
 
@@ -30333,6 +30257,7 @@ static void setup(void)
   apple_init();
 #endif
 }
+
 
 /* ================================================================================== */
 
