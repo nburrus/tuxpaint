@@ -79,6 +79,11 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com> (code)
       h/t Mark Kim & TOYAMA Shin-ichi
 
+    * Made it easier to tell when color picker (HSV palette)
+      is the currently-selected color.
+      https://sourceforge.net/p/tuxpaint/bugs/279/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Bug Fixes:
     ----------
     * In some window size / button size combinations, Eraser
@@ -110,8 +115,11 @@ https://tuxpaint.org/
         (e.g., Windows)
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Mended bad rendering of color-picker (HSV palette) button when
-      selecting a Label text with a color not found in built-in colors.
+    * Mended bad rendering of color picker (HSV palette) button when
+      selecting a Label text with a color not found in built-in colors,
+      and mend unwanted outline around the chosen color in the
+      color selector (pipette), color picker (HSV palette) and
+      color mixer buttons.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:

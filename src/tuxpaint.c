@@ -1679,7 +1679,7 @@ static SDL_Surface *img_shapes_corner, *img_shapes_center;
 static SDL_Surface *img_bold, *img_italic;
 static SDL_Surface *img_label_select, *img_label_apply;
 static SDL_Surface *img_color_picker, *img_color_picker_thumb, *img_color_picker_val;
-static SDL_Surface *img_paintwell, *img_color_sel, *img_color_mix;
+static SDL_Surface *img_paintwell, *img_color_sel, *img_color_mix, *img_color_picker_icon;
 static SDL_Surface *img_color_grab;
 static int color_picker_x, color_picker_y, color_picker_v;
 static int color_mixer_reset;
@@ -2191,7 +2191,7 @@ static void draw_color_mixer_blank_example(void);
 static void calc_color_mixer_average(float *out_h, float *out_s, float *out_v);
 static void draw_color_mixer_tooltip(void);
 static void draw_color_mix_undo_redo(void);
-static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Surface * icon);
+static void render_color_button(int the_color, SDL_Surface * icon);
 static void handle_color_changed(void);
 static void magic_set_color(void);
 static void magic_set_size(void);
@@ -23852,7 +23852,7 @@ static int do_color_sel(int temp_mode)
     color_hexes[COLOR_SELECTOR][2] = b;
 
     /* Re-render color selector to show the current color it contains: */
-    render_color_button(COLOR_SELECTOR, NULL, img_color_sel);
+    render_color_button(COLOR_SELECTOR, img_color_sel);
   }
 
   return (chose);
@@ -24574,7 +24574,7 @@ static int do_color_picker(int prev_color)
 
 
     /* Re-render color picker to show the current color it contains: */
-    render_color_button(COLOR_PICKER, img_color_picker_thumb, NULL);
+    render_color_button(COLOR_PICKER, img_color_picker_icon);
   }
   else
   {
@@ -25435,7 +25435,7 @@ static int do_color_mix(void)
 
 
     /* Re-render color mixer to show the current color it contains: */
-    render_color_button(COLOR_MIXER, NULL, img_color_mix);
+    render_color_button(COLOR_MIXER, img_color_mix);
   }
   else
   {
@@ -25759,9 +25759,9 @@ static void draw_color_mixer_tooltip(void)
  * with their current color.
  *
  * @param int the_color - the color within the palette (e.g., COLOR_PICKER) (its RGB values will be grabbed via global color_hexes[], and the new button will be rendered into the appropriate img_color_btns[])
- * @param SDL_Surface * decoration - a decoration bitmap to be applied to the button (or NULL if none) (e.g., the color picker rainbow that appears around the color picker button's paintwell)
+ * @param SDL_Surface * icon - a bitmap to be applied to the button (or NULL if none) (e.g., the pipette icon that appears over the color selector)
  */
-static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Surface * icon)
+static void render_color_button(int the_color, SDL_Surface * icon)
 {
   SDL_Surface *tmp_btn_up, *tmp_btn_down;
   SDL_Rect dest;
@@ -25808,30 +25808,18 @@ static void render_color_button(int the_color, SDL_Surface * decoration, SDL_Sur
 
       aa = a / 255.0;
 
-      if (decoration != NULL)
-      {
-        putpixels[img_color_btns[the_color]->format->BytesPerPixel]
-          (img_color_btns[the_color], x, y, getpixels[decoration->format->BytesPerPixel] (decoration, x, y));
-        putpixels[img_color_btns[the_color + NUM_COLORS]->
-                  format->BytesPerPixel] (img_color_btns[the_color + NUM_COLORS], x, y,
-                                          getpixels[decoration->format->BytesPerPixel] (decoration, x, y));
-      }
+      putpixels[img_color_btns[the_color]->format->BytesPerPixel]
+        (img_color_btns[the_color], x, y,
+         SDL_MapRGB(img_color_btns[the_color]->format,
+                    linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
+                    linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
 
-      if (a == 255)
-      {
-        putpixels[img_color_btns[the_color]->format->BytesPerPixel]
-          (img_color_btns[the_color], x, y,
-           SDL_MapRGB(img_color_btns[the_color]->format,
-                      linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
-                      linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
-
-        putpixels[img_color_btns[the_color + NUM_COLORS]->
-                  format->BytesPerPixel] (img_color_btns[the_color + NUM_COLORS], x, y,
-                                          SDL_MapRGB(img_color_btns[the_color + NUM_COLORS]->format,
-                                                     linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
-                                                     linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
-                                                     linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
-      }
+      putpixels[img_color_btns[the_color + NUM_COLORS]->
+                format->BytesPerPixel] (img_color_btns[the_color + NUM_COLORS], x, y,
+                                        SDL_MapRGB(img_color_btns[the_color + NUM_COLORS]->format,
+                                                   linear_to_sRGB(rh * aa + rd * (1.0 - aa)),
+                                                   linear_to_sRGB(gh * aa + gd * (1.0 - aa)),
+                                                   linear_to_sRGB(bh * aa + bd * (1.0 - aa))));
     }
   }
 
@@ -26216,7 +26204,7 @@ static struct label_node *search_label_list(struct label_node **ref_head, Uint16
         color_hexes[select_color][1] = tmp_node->save_color.g;
         color_hexes[select_color][2] = tmp_node->save_color.b;
 
-        render_color_button(COLOR_PICKER, img_color_picker_thumb, NULL);
+        render_color_button(COLOR_PICKER, img_color_picker_icon);
         draw_colors(COLORSEL_CLOBBER);
         render_brush();         /* FIXME: render_brush should be called at the start of Brush and Line tools? */
       }
@@ -29856,6 +29844,7 @@ static void setup(void)
   img_scroll_down_off = loadimagerb(DATA_PREFIX "images/ui/scroll_down_off.png");
   img_color_sel = loadimagerb(DATA_PREFIX "images/ui/csel.png");
   img_color_mix = loadimagerb(DATA_PREFIX "images/ui/cmix.png");
+  img_color_picker_icon = loadimagerb(DATA_PREFIX "images/ui/color_picker_icon.png");
   img_color_grab = loadimagerb(DATA_PREFIX "images/ui/color_grab.png");
 
   if (onscreen_keyboard)
@@ -30112,37 +30101,23 @@ static void setup(void)
         double gh = sRGB_to_linear_table[color_hexes[i][1]];
         double bh = sRGB_to_linear_table[color_hexes[i][2]];
 
-        if (i == COLOR_PICKER)
-        {
-          putpixels[img_color_btns[i]->format->BytesPerPixel]
-            (img_color_btns[i], x, y,
-             getpixels[img_color_picker_thumb->format->BytesPerPixel] (img_color_picker_thumb, x, y));
-          putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel] (img_color_btns[i + NUM_COLORS], x, y,
-                                                                            getpixels[img_color_picker_thumb->
-                                                                                      format->BytesPerPixel]
-                                                                            (img_color_picker_thumb, x, y));
-        }
-
-        if (i < COLOR_PICKER || a == 0)
-        {
-          putpixels[img_color_btns[i]->format->BytesPerPixel]
-            (img_color_btns[i], x, y,
-             SDL_MapRGB(img_color_btns[i]->format,
-                        linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
-                        linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
-          putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel] (img_color_btns[i + NUM_COLORS], x, y,
-                                                                            SDL_MapRGB(img_color_btns
-                                                                                       [i + NUM_COLORS]->format,
-                                                                                       linear_to_sRGB(rh * aa +
-                                                                                                      rd * (1.0 -
-                                                                                                            aa)),
-                                                                                       linear_to_sRGB(gh * aa +
-                                                                                                      gd * (1.0 -
-                                                                                                            aa)),
-                                                                                       linear_to_sRGB(bh * aa +
-                                                                                                      bd * (1.0 -
-                                                                                                            aa))));
-        }
+        putpixels[img_color_btns[i]->format->BytesPerPixel]
+          (img_color_btns[i], x, y,
+           SDL_MapRGB(img_color_btns[i]->format,
+                      linear_to_sRGB(rh * aa + ru * (1.0 - aa)),
+                      linear_to_sRGB(gh * aa + gu * (1.0 - aa)), linear_to_sRGB(bh * aa + bu * (1.0 - aa))));
+        putpixels[img_color_btns[i + NUM_COLORS]->format->BytesPerPixel] (img_color_btns[i + NUM_COLORS], x, y,
+                                                                          SDL_MapRGB(img_color_btns
+                                                                                     [i + NUM_COLORS]->format,
+                                                                                     linear_to_sRGB(rh * aa +
+                                                                                                    rd * (1.0 -
+                                                                                                          aa)),
+                                                                                     linear_to_sRGB(gh * aa +
+                                                                                                    gd * (1.0 -
+                                                                                                          aa)),
+                                                                                     linear_to_sRGB(bh * aa +
+                                                                                                    bd * (1.0 -
+                                                                                                          aa))));
       }
     }
   }
@@ -30159,6 +30134,15 @@ static void setup(void)
       dest.w = img_color_sel->w;
       dest.h = img_color_sel->h;
       SDL_BlitSurface(img_color_sel, NULL, img_color_btns[i], &dest);
+    }
+    else if (i == COLOR_PICKER || i == COLOR_SELECTOR + NUM_COLORS)
+    {
+      /* Color selector; draw rainbow */
+      dest.x = (img_color_btns[i]->w - img_color_picker_icon->w) / 2;
+      dest.y = (img_color_btns[i]->h - img_color_picker_icon->h) / 2;
+      dest.w = img_color_picker_icon->w;
+      dest.h = img_color_picker_icon->h;
+      SDL_BlitSurface(img_color_picker_icon, NULL, img_color_btns[i], &dest);
     }
     else if (i == COLOR_MIXER || i == COLOR_MIXER + NUM_COLORS)
     {
