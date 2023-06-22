@@ -1354,7 +1354,7 @@ TuxPaint_Font *getfonthandle(int desire)
     return NULL;
   }
 
-  if (fi->filename != NULL)
+  if (fi->filename[text_state] != NULL)
   {
 #ifdef DEBUG
     printf("%s:%d - Setting 'name' to fi->filename[%d (0x%x)]\n", __FILE__, __LINE__, (int)text_state, (int)text_state);
@@ -1371,7 +1371,7 @@ TuxPaint_Font *getfonthandle(int desire)
   else
   {
 #ifdef DEBUG
-    printf("%s:%d - fi->filename is NULL\n", __FILE__, __LINE__);
+    printf("%s:%d - fi->filename[%d (0x%x) is NULL\n", __FILE__, __LINE__, (int)text_state, (int)text_state);
     fflush(stdout);
 #endif
 
