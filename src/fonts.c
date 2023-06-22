@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: June 13, 2023
+  Last modified: June 21, 2023
 */
 
 #include <stdio.h>
@@ -339,7 +339,7 @@ TuxPaint_Font *TuxPaint_Font_OpenFont(const char *pangodesc, const char *ttffile
       return NULL;
     }
 
-    familyname = TTF_FontFaceFamilyName(ttf_font);      /* N.B.: I don't believe we're supposed to free() this... -bjk 2021.10.26 */
+    familyname = (char *) TTF_FontFaceFamilyName(ttf_font);      /* N.B.: I don't believe we're supposed to free() this... -bjk 2021.10.26 */
     (void)familyname;           // avoid compiler complaints if ALWAYS_LOAD_FONT_WITH_PANGO is not set, and DEBUG is not set
 
 #ifdef DEBUG
