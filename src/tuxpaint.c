@@ -26834,7 +26834,7 @@ static void set_label_fonts()
       /* FIXME: 2009/09/13 TTF_FontFaceFamilyName() appends random "\n" at the end
          of the returned string.  Should investigate why, and when corrected,
          remove the code that deals whith the ending "\n"s in ttffont */
-      ttffont = TTF_FontFaceFamilyName(getfonthandle(i)->ttf_font);
+      ttffont = (char *) TTF_FontFaceFamilyName(getfonthandle(i)->ttf_font);
       for (c = 0; c < strlen(ttffont); c++)
         if (ttffont[c] == '\n')
           ttffont[c] = '\0';
