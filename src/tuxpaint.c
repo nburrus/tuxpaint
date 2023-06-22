@@ -27525,7 +27525,6 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
               draw_tux_text(TUX_OOPS, strerror(errno), 0);
 
-              free(unc_buff);
               return;
             }
             SDL_LockSurface(aux_surf);
@@ -27586,7 +27585,6 @@ void load_embedded_data(char *fname, SDL_Surface * org_surf)
 
               draw_tux_text(TUX_OOPS, strerror(errno), 0);
 
-              free(unc_buff);
               return;
             }
 
