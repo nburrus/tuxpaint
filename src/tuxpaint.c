@@ -3739,7 +3739,7 @@ static void mainloop(void)
 
                 if (magics[magic_group][cur_thing].colors)
                   magic_set_color();
-                if (magics[magic_group][cur_thing].sizes)
+                if (magics[magic_group][cur_thing].sizes[magic_modeint(magics[magic_group][cur_thing].mode)])
                   magic_set_size();
               }
               else if (cur_tool == TOOL_ERASER)
@@ -4361,7 +4361,7 @@ static void mainloop(void)
 
                   if (magics[magic_group][cur_thing].colors)
                     magic_set_color();
-                  if (magics[magic_group][cur_thing].sizes)
+                  if (magics[magic_group][cur_thing].sizes[magic_modeint(magics[magic_group][cur_thing].mode)])
                     magic_set_size();
 
                   magic_switchin(canvas);
@@ -5101,7 +5101,7 @@ static void mainloop(void)
 
                 if (magics[grp][cur].colors)
                   magic_set_color();
-                if (magics[grp][cur].sizes)
+                if (magics[grp][cur].sizes[magic_modeint(magics[grp][cur].mode)])
                   magic_set_size();
 
                 magic_switchin(canvas);
