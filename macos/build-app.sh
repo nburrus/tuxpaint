@@ -62,7 +62,7 @@ for i in "$BINARY" $LIBS $LIBDIR/*; do
     #
     # https://stackoverflow.com/questions/20206985/xcode-linking-against-applicationservices-framework-with-sdk-10-9-causes-10-7
     #
-    if [ `otool -L "$i" | grep -c '^[[:space:]]*\/System\/Library\/Frameworks\/CoreGraphics\.framework\/Versions\/A\/CoreGraphics'` -gt 0 ]; then
+    if [ `otool -L "$i" | grep -c '^[[:space:]]*[/]System[/]Library[/]Frameworks[/]CoreGraphics\.framework[/]Versions[/]A[/]CoreGraphics'` -gt 0 ]; then
         defaultlib="/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
         compatlib="/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
 		install_name_tool -change "$defaultlib" "$compatlib" "$i"
