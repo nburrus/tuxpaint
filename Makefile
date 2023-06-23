@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - June 17, 2023
+# June 14, 2002 - June 22, 2023
 
 
 # The version number, for release:
@@ -984,15 +984,15 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tux
 	@mkdir -p $(DESTDIR)$(PREFIX)/share/applications
 	cp -a src/tuxpaint.desktop $(DESTDIR)$(PREFIX)/share/applications/
 	cp -a src/tuxpaint-fullscreen.desktop $(DESTDIR)$(PREFIX)/share/applications/
-	mkdir -p $(NEWICON_PREFIX)/{16x16,22x22,32x32,48x48,64x64,96x96,128x128,192x192}
-	cp -a data/images/icon16x16.png $(NEWICON_PREFIX)/16x16/tuxpaint.png
-	cp -a data/images/icon22x22.png $(NEWICON_PREFIX)/22x22/tuxpaint.png
-	cp -a data/images/icon32x32.png $(NEWICON_PREFIX)/32x32/tuxpaint.png
-	cp -a data/images/icon48x48.png $(NEWICON_PREFIX)/48x48/tuxpaint.png
-	cp -a data/images/icon64x64.png $(NEWICON_PREFIX)/64x64/tuxpaint.png
-	cp -a data/images/icon96x96.png $(NEWICON_PREFIX)/96x96/tuxpaint.png
-	cp -a data/images/icon128x128.png $(NEWICON_PREFIX)/128x128/tuxpaint.png
-	cp -a data/images/icon192x192.png $(NEWICON_PREFIX)/192x192/tuxpaint.png
+	mkdir -p $(NEWICON_PREFIX)/{16x16,22x22,32x32,48x48,64x64,96x96,128x128,192x192}/apps
+	cp -a data/images/icon16x16.png $(NEWICON_PREFIX)/16x16/apps/tuxpaint.png
+	cp -a data/images/icon22x22.png $(NEWICON_PREFIX)/22x22/apps/tuxpaint.png
+	cp -a data/images/icon32x32.png $(NEWICON_PREFIX)/32x32/apps/tuxpaint.png
+	cp -a data/images/icon48x48.png $(NEWICON_PREFIX)/48x48/apps/tuxpaint.png
+	cp -a data/images/icon64x64.png $(NEWICON_PREFIX)/64x64/apps/tuxpaint.png
+	cp -a data/images/icon96x96.png $(NEWICON_PREFIX)/96x96/apps/tuxpaint.png
+	cp -a data/images/icon128x128.png $(NEWICON_PREFIX)/128x128/apps/tuxpaint.png
+	cp -a data/images/icon192x192.png $(NEWICON_PREFIX)/192x192/apps/tuxpaint.png
 	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
 
 .PHONY: install-xdg
