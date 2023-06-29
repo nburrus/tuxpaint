@@ -1,15 +1,15 @@
                                    Tux Paint
-                                 útgáfa 0.9.31
+                                 version 0.9.31
 
 Options Documentation
 
-    Höfundarréttur © 2002-2023 eftir various contributors; sjá AUTHORS-skrá.
+        Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  29. maí 2023
+                                  maí 29, 2023
 
                 +---------------------------------------------+
-                |Efnisyfirlit                                 |
+                |Table of Contents                            |
                 |---------------------------------------------|
                 |  * Tux Paint Config.                        |
                 |  * Configuration File                       |

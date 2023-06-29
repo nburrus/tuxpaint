@@ -1,14 +1,14 @@
                                    Tux Paint
-                                 útgáfa 0.9.31
+                                 version 0.9.31
                            Installation Documentation
 
-    Höfundarréttur © 2002-2023 eftir various contributors; sjá AUTHORS-skrá.
+        Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  13. maí 2023
+                                  maí 13, 2023
 
              +----------------------------------------------------+
-             |Efnisyfirlit                                        |
+             |Table of Contents                                   |
              |----------------------------------------------------|
              |  * Requirements                                    |
              |       * Simple DirectMedia Layer library (libSDL)  |
@@ -143,7 +143,7 @@ Simple DirectMedia Layer library (libSDL)
 
 Windows
 
-   10. júlí 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
+   júlí 10, 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
 
   Compiling Set-Up
 
@@ -582,7 +582,7 @@ Linux/Unix
 
 macOS
 
-   5. júní 2022 Mark Kim <markuskimius@gmail.com>
+   júní 5, 2022 Mark Kim <markuskimius@gmail.com>
 
    Starting with Tux Paint 0.9.23, Tux Paint for macOS is built as though it
    were a Linux application.
@@ -795,7 +795,7 @@ macOS
 
 Android
 
-   29. mars 2023 Pere Pujal i Carabantes <perepujal@gmail.com> (Edited by
+   mars 29, 2023 Pere Pujal i Carabantes <perepujal@gmail.com> (Edited by
    Bill Kendrick)
 
    As of March 2023, the Android build of Tux Paint is maintained in a
@@ -860,7 +860,7 @@ Android
 
 Haiku
 
-   7. maí 2023 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
+   maí 7, 2023 Luc Schrijvers <begasus@gmail.com> (Edited by Bill Kendrick)
 
   Prerequisites
 

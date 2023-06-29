@@ -212,4 +212,4 @@ Shortcuts while drawing:
      * [Alt]+[S] - Toggle sound effects on/off
      * [Esc] - ⤺Back or 🗙Quit
 
-   Last updated: 9. maí 2023
+   Last updated: maí 9, 2023

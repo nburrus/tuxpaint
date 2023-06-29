@@ -1,16 +1,15 @@
                                    Tux Paint
-                     útgáfa 0.9.31 Advanced Stamps 'How-To'
+                    version 0.9.31 Advanced Stamps 'How-To'
 
-        Höfundarréttur © 2006-2022 eftir Albert Cahalan and others; sjá
-                                 AUTHORS-skrá.
+      Copyright © 2006-2022 by Albert Cahalan and others; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  4. júní 2022
+                                  júní 4, 2022
 
      ----------------------------------------------------------------------
 
    +----------------------------------------+
-   |Efnisyfirlit                            |
+   |Table of Contents                       |
    |----------------------------------------|
    |  * About this 'How-To'                 |
    |  * Image choice is crucial             |
@@ -208,7 +207,7 @@ Replace the fringe and junk pixels
      editing and viewing the WIP image. Frequent layer visibility changes
      will help you to see what you are doing. You are likely to use all of:
 
-       * composited over grænt (mask enabled)
+       * composited over green (mask enabled)
        * composited over magenta (mask enabled)
        * original (the top or bottom layer)
        * composited over the original (mask enabled)

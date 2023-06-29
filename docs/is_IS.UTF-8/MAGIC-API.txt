@@ -1,17 +1,17 @@
                                    Tux Paint
-                                 version 0.9.31
+                                 útgáfa 0.9.31
 
 Magic Tool Plugin API Documentation
 
-        Copyright © 2007-2023 by various contributors; see AUTHORS.txt.
+    Höfundarréttur © 2007-2023 eftir various contributors; sjá AUTHORS-skrá.
                              https://tuxpaint.org/
 
-                                 apríl 13, 2023
+                                 13. apríl 2023
 
              +----------------------------------------------------+
-             |Table of Contents                                   |
+             |Efnisyfirlit                                        |
              |----------------------------------------------------|
-             |  * Prequisites                                     |
+             |  * Forkröfur                                       |
              |  * Interfaces                                      |
              |       * 'Magic' tool plugin functions              |
              |            * Common arguments to plugin functions  |
@@ -21,7 +21,7 @@ Magic Tool Plugin API Documentation
              |       * Tux Paint Functions and Data               |
              |            * Pixel Manipulations                   |
              |            * Helper Functions                      |
-             |            * Informational                         |
+             |            * Til upplýsingar                       |
              |            * Tux Paint System Calls                |
              |            * Color Conversions                     |
              |       * Helper Macros in "tp_magic_api.h"          |
@@ -36,11 +36,11 @@ Magic Tool Plugin API Documentation
              |       * macOS                                      |
              |  * Creating plugins with multiple effects          |
              |  * Example Code                                    |
-             |  * Getting Help                                    |
-             |  * Glossary                                        |
+             |  * Til að fá hjálp                                 |
+             |  * Orðasafn                                        |
              +----------------------------------------------------+
 
-                                    Overview
+                                    Yfirlit
 
    Beginning with version 0.9.18, Tux Paint's 'Magic' tools were converted
    from routines that lived within the application itself, to a set of
@@ -579,7 +579,7 @@ Tux Paint Functions and Data
            to use this function. The "Blur" and "Smudge" tools that ship with
            Tux Paint are examples of such effects.
 
-  Informational
+  Til upplýsingar
 
    char * tp_version
            A string containing the version of Tux Paint that's running (e.g.,
@@ -1028,7 +1028,7 @@ macOS
    The C source file "tp_magic_example.c" contains a complete example of a
    plugin with multiple simple effects.
 
-                                  Getting Help
+                                Til að fá hjálp
 
    For more information, check the Tux Paint website: https://tuxpaint.org/,
    and the Simple DirectMedia Layer library website: http://www.libsdl.org/.
@@ -1037,57 +1037,57 @@ macOS
    "tuxpaint-devel" and "tuxpaint-users" mailing lists:
    https://tuxpaint.org/lists/.
 
-                                    Glossary
+                                    Orðasafn
 
-     * alpha: See "RGBA"
-     * &: See "ampersand"
-     * ampersand (pointers): "&". A symbol in C that allows you to refer to
+     * alfa: See "RGBA"
+     * &: See "'og' merki"
+     * 'og' merki (bendlar): "&". A symbol in C that allows you to refer to
        the memory address of a variable; that is, a pointer. (For example,
        consider "int i;". Later, "&i" refers to the memory where "i" is
        stored, not the value of "i" itself; it is a 'pointer to "i"'.) See
        also: "star"
-     * ampersand (bitwise operator): "&". A symbol in C that acts as a
+     * 'og' merki (bitwise operator): "&". A symbol in C that acts as a
        bitwise "and" operator. Only bits set in both values will be returned.
        For example, "11 & 6" compares the binary values '1011' to '0110'.
        Only the bit in the 2's place is set, so the result is 2 ('0010'). See
-       also: "bit"
+       also: "bitar"
      * API: Application Programming Interface. TBD
-     * argument: A value sent to a function.
+     * viðfang: A value sent to a function.
      * arrow: "->". A symbol in C that references an element within a pointer
        to a struct.
      * backquote: See "grave"
-     * backtick: See "grave"
-     * bit: "Binary digit." Bits are the basic storage unit in a computer's
+     * bakslag: See "grave"
+     * bitar: "Binary digit." Bits are the basic storage unit in a computer's
        memory, disk, networking, etc. They represent either 0 or 1. (Compared
        to a decimal digit, which can be anything between 0 and 9.) Just as a
        series of decimal digits can represent a larger number (e.g., "1" and
        "5" is fifteen (15)), so can bits (e.g., "1" and "0", is two). In
        decimal, we go from right to left: ones place, tens place, hundreds
        place, thousands place, etc. In binary, it is: ones place, twos place,
-       fours place, eights place, etc. See also: "byte"
-     * blue: See "RGBA"
-     * boolean 'or': A mathematical operation that results in a true value if
-       either operand is true. ("1 | 0", "0 | 1" and "1 | 1" all result in
-       "1". "0 | 0" results in "0".)
-     * |: See "boolean 'or'"
-     * .: See "dot"
+       fours place, eights place, etc. See also: "bæti"
+     * blátt: See "RGBA"
+     * boole gildið 'eða': A mathematical operation that results in a true
+       value if either operand is true. ("1 | 0", "0 | 1" and "1 | 1" all
+       result in "1". "0 | 0" results in "0".)
+     * |: See "boole gildið 'eða'"
+     * .: See "punktur"
      * `: See "grave"
      * *: See "star"
-     * byte: A unit of memory made up of 8 bits. As a signed value, it can
+     * bæti: A unit of memory made up of 8 bits. As a signed value, it can
        represent -128 through 127. As an unsigned value, it can represent 0
        through 255. As a series of bits, for example, the byte "00001100"
        represents the decimal value 12.
-     * callback: TBD
+     * svörun: TBD
      * C enumeration: A construct in C that allows you to label numeric
        values (usually starting at 0 and incrementing by one). (e.g., "enum {
        ONE, TWO, THREE };"
      * C function: TBD
      * C function prototype: TBD
      * C header file: TBD
-     * channel: TBD
-     * click: The action of pressing a button on a mouse.
-     * coordinates: A set of numbers corresponding to a physical position;
-       for example, in a two-dimensional (2D) image, "X" and "Y" coordinates
+     * rás: TBD
+     * smellur: The action of pressing a button on a mouse.
+     * hnit: A set of numbers corresponding to a physical position; for
+       example, in a two-dimensional (2D) image, "X" and "Y" coordinates
        specify the position across (left-to-right) and down the image,
        respectively. In SDL, the coordinates (0,0) is the top-leftmost pixel
        of a surface.
@@ -1105,17 +1105,18 @@ macOS
        RADIUS 16"; all instances of "RADIUS" will be replaced with "16"), but
        can also be used to create macros. Typically placed within C header
        files.
-     * dimensions: The size of an object, in terms of its width (left to
-       right) and height (top to bottom).
+     * stærðir: The size of an object, in terms of its width (left to right)
+       and height (top to bottom).
      * .dll: See "Shared Object"
-     * dot: ".". A symbol in C that references an element within a struct.
-     * drag: The action of moving a mouse while the button remains held.
+     * punktur: ".". A symbol in C that references an element within a
+       struct.
+     * draga: The action of moving a mouse while the button remains held.
      * element: A variable stored within a C structure. (Example: "w" and "h"
        elements of SDL_Surface store the surface's width and height,
        respectively.)
      * enum: See "C enumeration"
-     * float: See "floating point"
-     * floating point: TBD
+     * float: See "fleytitala"
+     * fleytitala: TBD
      * format: An SDL_Surface element (a pointer to an SDL_PixelFormat
        structure) that contains information about a surface; for example, the
        number of bits used to represent each pixel). See also the
@@ -1129,13 +1130,13 @@ macOS
      * GNU C Compiler: See "gcc"
      * grave: The "`" character; used by the BASH shell to use the output of
        a command as the command-line arguments to another.
-     * green: See "RGBA"
+     * grænt: See "RGBA"
      * ->: See "arrow"
      * .h: See "C header file"
-     * header: See "C header file"
+     * haus: See "C header file"
      * header file: See "C header file"
      * HSV: Hue, Saturation and Value. TBD
-     * hue: See "HSV"
+     * litblær: See "HSV"
      * IMG_Load(): An SDL_image function that loads an image file (e.g., a
        PNG) and returns it as an "SDL_Surface *".
      * #include: A C statement that asks the compiler to read the contents of
@@ -1143,12 +1144,12 @@ macOS
      * int: See "integer"
      * integer: TBD
      * libSDL: See "Simple DirectMedia Layer"
-     * linear: TBD
-     * macro: A C construct that looks similar to a C function, but is simply
-       a #define that is expanded 'inline'. For example, if you declared the
-       macro "#define ADD(A,B) ((A)+(B))", and then used it with "c =
-       ADD(1,2);", that line of code would literally expand to "c = ((1) +
-       (2));", or more simply, "c = 1 + 2;".
+     * línulegt: TBD
+     * fjölvi: A C construct that looks similar to a C function, but is
+       simply a #define that is expanded 'inline'. For example, if you
+       declared the macro "#define ADD(A,B) ((A)+(B))", and then used it with
+       "c = ADD(1,2);", that line of code would literally expand to "c = ((1)
+       + (2));", or more simply, "c = 1 + 2;".
      * magic_api: A C structure that is passed along to a plugin's functions
        that exposes data and functions within the running copy of Tux Paint.
      * make: A utility that automatically determines which pieces of a larger
@@ -1169,7 +1170,7 @@ macOS
      * namespace: TBD
      * .ogg: See "Ogg Vorbis"
      * Ogg Vorbis: See also: "WAV"
-     * Plugin: TBD
+     * Viðbót: TBD
      * .png: Portable Network Graphics. An extensible file format for the
        lossless, portable, well-compressed storage of raster images. It's the
        file format Tux Paint uses to save images, and for its brushes and
@@ -1177,9 +1178,9 @@ macOS
        with full 8bpp alpha transparency), excellent for use in graphics
        programs like Tux Paint. See also the "png(5)" man page)
      * pointer: See "C pointer"
-     * prototype: See "C function prototype"
-     * red: See "RGBA"
-     * release: The action of releasing a button on a mouse.
+     * frumgerð: See "C function prototype"
+     * rautt: See "RGBA"
+     * sleppa: The action of releasing a button on a mouse.
      * RGBA: "Red, Green, Blue, Alpha." TBD
      * RGB: See "RGBA"
      * saturation: See "HSV"
@@ -1233,7 +1234,7 @@ macOS
        variable. (For example, later "*p = 50;" assigns the value of 50 to
        the memory that "p" points to; it does not change the value of "p",
        which is still a pointer to an integer. In essence, it changed the
-       integer that's being pointed to.) See also: "ampersand"
+       integer that's being pointed to.) See also: "'og' merki"
      * strdup(): A C function that allocates enough memory to store a copy of
        a string, copies the string to it, and returns a "char *" pointer to
        the new copy. See also the "strdup(3)" man page)
@@ -1251,7 +1252,7 @@ macOS
        representing a pixel's color; i.e., RBGA value).
      * Uint8: An 8-bit, unsigned integer (defined by libSDL). In other words,
        a byte that can represent 0 through 255.
-     * unsigned: In C, a variable that can store a numeric value can be
+     * óundirritað: In C, a variable that can store a numeric value can be
        declared as either "signed" (the default), or "unsigned". In the
        former case, one bit of the value is used to denote the sign of the
        value (either positive or negative). In the latter case, the value can
@@ -1261,7 +1262,7 @@ macOS
        go below 0. For the purposes of graphics in SDL, unsigned values
        should be used for RGB values, since each channel (red, green and
        blue) may be between 0 (off) and 255 (brightest).
-     * value: See "HSV"
+     * gildi: See "HSV"
      * variable: A construct in computer programming that contains a value
        which can be referenced again later by referring to the variable's
        name, and typically changed later. For example, a variable to hold
@@ -1269,5 +1270,5 @@ macOS
        examined later: "if (a >= 18) { /* they are an adult */ } else { /*
        they are not an adult */ }".
      * .wav: See also: "Ogg Vorbis"
-     * (w,h): See "Dimensions"
-     * (x,y): See "Coordinates"
+     * (w,h): See "Stærðir"
+     * (x,y): See "Hnit"

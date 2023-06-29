@@ -1,15 +1,15 @@
                                    Tux Paint
-                    útgáfa 0.9.31 Frequently Asked Questions
+                   version 0.9.31 Frequently Asked Questions
 
-    Höfundarréttur © 2002-2023 eftir various contributors; sjá AUTHORS-skrá.
+        Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 16. mars 2023
+                                 mars 16, 2023
 
      ----------------------------------------------------------------------
 
    +------------------------------+
-   |Efnisyfirlit                  |
+   |Table of Contents             |
    |------------------------------|
    |  * Drawing-related           |
    |  * Interface Problems        |

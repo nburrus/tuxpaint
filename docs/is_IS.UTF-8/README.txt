@@ -1,15 +1,15 @@
                                    Tux Paint
-                                 útgáfa 0.9.31
+                                 version 0.9.31
 
                      A simple drawing program for children
 
-    Höfundarréttur © 2002-2023 eftir various contributors; sjá AUTHORS-skrá.
+        Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  29. maí 2023
+                                  maí 29, 2023
 
              +----------------------------------------------------+
-             |Efnisyfirlit                                        |
+             |Table of Contents                                   |
              |----------------------------------------------------|
              |  * About Tux Paint                                 |
              |  * Using Tux Paint                                 |
@@ -844,7 +844,7 @@ Available Tools
            Click this button and your picture will be printed!
 
            On most platforms, you can also hold the [Alt] key (called
-           [Slaufa] on Macs) while clicking the 'Print' button to get a
+           [Option] on Macs) while clicking the 'Print' button to get a
            printer dialog. Note that this may not work if you're running Tux
            Paint in fullscreen mode. See below.
 
@@ -904,7 +904,7 @@ Available Tools
                         printer with default settings when the 'Print' button
                         is pushed.
 
-                        However, if you hold the [Alt] (or [Slaufa]) key on
+                        However, if you hold the [Alt] (or [Option]) key on
                         the keyboard while clicking the 'Print' button, as
                         long as you're not in fullscreen mode, your operating
                         system's printer dialog will appear, where you can
@@ -926,14 +926,14 @@ Available Tools
                         By default, Tux Paint only shows the printer dialog
                         (or, on Linux/Unix, runs the "altprintcommand"; e.g.,
                         "kprinter" instead of "lpr") if the [Alt] (or
-                        [Slaufa]) key is held while clicking the 'Print'
+                        [Option]) key is held while clicking the 'Print'
                         button.
 
                         However, this behavior can be changed. You can have
                         the printer dialog always appear by using
                         "--altprintalways" on the command-line, or
                         "altprint=always" in Tux Paint's configuration file.
-                        Conversely, you can prevent the [Alt]/[Slaufa] key
+                        Conversely, you can prevent the [Alt]/[Option] key
                         from having any effect by using "--altprintnever", or
                         "altprint=never".
 

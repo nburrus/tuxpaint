@@ -1,11 +1,11 @@
                                    Tux Paint
-                                 útgáfa 0.9.31
+                                 version 0.9.31
                                SVG Documentation
 
-    Höfundarréttur © 2007-2022 eftir various contributors; sjá AUTHORS-skrá.
+        Copyright © 2007-2022 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  4. júní 2022
+                                  júní 4, 2022
 
                                    About SVGs
 
