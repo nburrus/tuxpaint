@@ -130,6 +130,9 @@ https://tuxpaint.org/
     * Icelandic translation
       Sveinn í Felli <sv1@fellsnet.is>
 
+    * Icelandic documentation
+      Sveinn í Felli <sv1@fellsnet.is>
+
     * Russian translaton
       Olesya Gerasimenko <translation-team@basealt.ru>
 

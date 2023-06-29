@@ -7,7 +7,7 @@
 # Bill Kendrick
 # bill@newbreedsoftware.com
 # 
-# Sept. 4, 2005 - May 2, 2023
+# Sept. 4, 2005 - June 29, 2023
 
 # FIXME: Japanese does not wordwrap in many cases, leading to very long
 # lines in the TXT output.  Post-processing with `fmt` doesn't look like
@@ -28,6 +28,9 @@ FR_TEXTFILES:=$(patsubst fr_FR.UTF-8/html/%.html,fr_FR.UTF-8/%.txt,$(FR_HTMLFILE
 
 GL_HTMLFILES:=$(wildcard gl_ES.UTF-8/html/*.html)
 GL_TEXTFILES:=$(patsubst gl_ES.UTF-8/html/%.html,gl_ES.UTF-8/%.txt,$(GL_HTMLFILES))
+
+IS_HTMLFILES:=$(wildcard is_IS.UTF-8/html/*.html)
+IS_TEXTFILES:=$(patsubst is_IS.UTF-8/html/%.html,is_IS.UTF-8/%.txt,$(IS_HTMLFILES))
 
 IT_HTMLFILES:=$(wildcard it/html/*.html)
 IT_TEXTFILES:=$(patsubst it/html/%.html,it/%.txt,$(IT_HTMLFILES))
@@ -53,6 +56,7 @@ all:	$(EN_TEXTFILES) \
 	$(ES_TEXTFILES) \
 	$(FR_TEXTFILES) \
 	$(GL_TEXTFILES) \
+	$(IS_TEXTFILES) \
 	$(IT_TEXTFILES) \
 	$(JA_TEXTFILES) \
 	$(NL_TEXTFILES) \
@@ -67,6 +71,7 @@ clean:
 	$(ES_TEXTFILES) \
 	$(FR_TEXTFILES) \
 	$(GL_TEXTFILES) \
+	$(IS_TEXTFILES) \
 	$(IT_TEXTFILES) \
 	$(JA_TEXTFILES) \
 	$(NL_TEXTFILES) \
@@ -84,6 +89,9 @@ $(FR_TEXTFILES): fr_FR.UTF-8/%.txt: fr_FR.UTF-8/html/%.html
 	$(LINKS) $< > $@
 
 $(GL_TEXTFILES): gl_ES.UTF-8/%.txt: gl_ES.UTF-8/html/%.html
+	$(LINKS) $< > $@
+
+$(IS_TEXTFILES): is_IS.UTF-8/%.txt: is_IS.UTF-8/html/%.html
 	$(LINKS) $< > $@
 
 $(IT_TEXTFILES): it/%.txt: it/html/%.html
