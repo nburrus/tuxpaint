@@ -27728,7 +27728,7 @@ static void parse_file_options(struct cfginfo *restrict tmpcfg, const char *file
     }
 
 #ifdef __linux__
-#ifndef __ANDROID__l
+#ifndef __ANDROID__
     wordexp_t result;
 
     wordexp(arg, &result, 0);
