@@ -30401,7 +30401,7 @@ int main(int argc, char *argv[])
   /* EP added block to log messages */
   freopen("/tmp/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
 #elif defined (__ANDROID__)
-  freopen("/mnt/sdcard/tuxpaint/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
+  freopen("/storage/emulated/0/Android/data/org.tuxpaint/files/tuxpaint.log", "w", stdout);    /* redirect stdout to a file */
 #endif
 
   dup2(fileno(stdout), fileno(stderr)); /* redirect stderr to stdout */
