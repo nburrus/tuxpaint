@@ -543,7 +543,7 @@ void example_set_size(magic_api * api, int which, SDL_Surface * canvas, SDL_Surf
   this file.
   */
 
-  example_size = size * 4;
+  example_stærð = stærð * 4;
 }
 
 
