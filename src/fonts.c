@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: June 21, 2023
+  Last modified: June 29, 2023
 */
 
 #include <stdio.h>
@@ -78,6 +78,7 @@ extern char *strcasestr(const char *haystack, const char *needle);
 #ifdef __HAIKU__
 #include <FindDirectory.h>
 #include <fs_info.h>
+#define _POSIX_PRIORITY_SCHEDULING
 #endif
 
 /* system fonts that cause TTF_OpenFont to crash */
