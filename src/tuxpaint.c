@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 21, 2023
+  June 14, 2002 - July 2, 2023
 */
 
 #include "platform.h"
@@ -6652,6 +6652,19 @@ static void mainloop(void)
                                  new_x, new_y, draw_color, sim_flood_touched);
 
             update_canvas(sim_flood_x1, sim_flood_y1, sim_flood_x2, sim_flood_y2);
+
+            if (new_y != fill_y)
+              angle = (atan2f((new_x - fill_x), (new_y - fill_y)) * 180 / M_PI) - 90.0;
+            else if (new_x >= fill_x)
+              angle = 0.0;
+            else
+              angle = 180.0;
+            
+            if (angle < 0.0)
+              angle += 360.0;
+            
+            snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_FILL_LINEAR_MOVING), floor(angle));
+            draw_tux_text(TUX_GREAT, angle_tool_text, 1);
           }
           else if (cur_tool == TOOL_FILL && cur_fill == FILL_BRUSH)
           {
