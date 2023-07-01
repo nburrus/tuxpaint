@@ -30,6 +30,12 @@ https://tuxpaint.org/
       Sound effect CC0 (public domain)
       by https://freesound.org/people/Tomoyo%20Ichijouji/
 
+  * Improvements to Magic tools:
+    ----------------------------
+    * Calligraphy offers size (thickness) options.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t abruh for the idea
+
   * Improvements to Eraser tool:
     ----------------------------
     * Fuzzy round erasers
