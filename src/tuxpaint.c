@@ -28082,12 +28082,12 @@ static void setup_config(char *argv[])
 
   tp_ui_font_fallback = NULL;
 
-  if (tmpcfg.tp_ui_font)
-  {
     char * tmp_str;
     FcBool fontAddStatus;
     char locale_fontdir[MAX_PATH];
 
+  if (tmpcfg.tp_ui_font)
+  {
     if (strcmp(tmpcfg.tp_ui_font, "default") == 0)
     {
       printf/*DEBUG_PRINTF*/("Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
@@ -28102,6 +28102,15 @@ static void setup_config(char *argv[])
       tp_ui_font = strdup(tmpcfg.tp_ui_font);
       printf/*DEBUG_PRINTF*/("Requested UI font described by \"%s\"\n", tp_ui_font);
     }
+  }
+  else{
+    printf/*DEBUG_PRINTF*/("Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
+    tp_ui_font = strdup(PANGO_DEFAULT_FONT);
+    if (PANGO_DEFAULT_FONT_FALLBACK != NULL)
+      {
+        tp_ui_font_fallback = strdup(PANGO_DEFAULT_FONT_FALLBACK);
+      }
+  }
 
     /* Add Tux Paint's own set of fonts to FontConfig,
        so SDL2_Pango can find and use them */
@@ -28156,11 +28165,6 @@ static void setup_config(char *argv[])
     {
       printf("Error asking pango for actual font!\n");
     }
-  }
-  else
-  {
-    tp_ui_font = strdup(PANGO_DEFAULT_FONT);
-  }
 
   /* FIXME: most of this is not required before starting the font scanner */
 
