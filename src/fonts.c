@@ -192,7 +192,7 @@ default_locale_font_t default_local_fonts[] = {
   { LANG_GU, "Lohit Gujarati", NULL },
   { LANG_HE, "Nachlieli Light", NULL },
   { LANG_HI, "Raghindi", NULL },
-  { LANG_JA, "Gen Jyuu Gothic P Regular", "GJGothicPNSubset" },
+  { LANG_JA, "Noto Sans CJK JP", "GJGothicPNSubset" },
   { LANG_KA, "TuxPaint Georgian", NULL }, /* FIXME: Upon what was this font based? Never knew -bjk 2023.06.12 */
   { LANG_KO, "Baekmuk Gulim", NULL },
   { LANG_TA, "TSCu_Comic", NULL },
