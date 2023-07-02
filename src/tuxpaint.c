@@ -8128,6 +8128,19 @@ void show_fonts(void) {
   PangoFontFamily **families;
   int i, n_families;
   char * * family_names;
+  char locale_fontdir[MAX_PATH];
+  FcBool fontAddStatus;
+  
+  snprintf(locale_fontdir, sizeof(locale_fontdir), "%s/fonts", DATA_PREFIX);
+  
+  fontAddStatus = FcConfigAppFontAddDir(FcConfigGetCurrent(), (const FcChar8 *) locale_fontdir);
+  if (fontAddStatus == FcFalse)
+    {
+      fprintf(stderr, "Unable to add font dir %s\n", locale_fontdir);
+    }
+  
+  FcDirCacheRead((const FcChar8 *) locale_fontdir, FcTrue /* force */, FcConfigGetCurrent());
+  FcDirCacheRescan((const FcChar8 *) locale_fontdir, FcConfigGetCurrent());
 
   generate_fontconfig_cache_real();
 
