@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.July.2 (0.9.31)
+2023.July.5 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -146,6 +146,12 @@ https://tuxpaint.org/
 
     * Icelandic documentation
       Sveinn í Felli <sv1@fellsnet.is>
+
+    * Japanese translation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+    * Japanese documentation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Russian translaton
       Olesya Gerasimenko <translation-team@basealt.ru>

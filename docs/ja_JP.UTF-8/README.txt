@@ -75,28 +75,21 @@
 
 Tux Paint バージョン 0.9.31 での変更点
 
-   Fuzzy Erasers
-           Fuzzy-edged round erasers have been added to the Eraser tool
+   ぼかし消しゴム
+           消しゴムツールに端がぼやけた丸い消しゴムが追加されました
 
-   New Magic tools
-           Loops, Ribbon, Smooth, and Squiggles
+   「まほう」ツールの追加
+           「ループ」「リボン」「なめらかなせん」「ぐじゃぐじゃ」
 
-   Create templates from Open dialog
-           Saved drawings can be turned into templates (used to make new
-           drawings) via a new option in the Open dialog. (This feature may
-           be deactivated using the "notemplateexport" simplification
-           option.)
+   独自テンプレートの作成機能
+           「ひらく」ダイアログの新しいオプションにより、保存した作品をテンプレートに変換し、新規に絵を作成する際に使用ることができます。(この機能は簡略化オプション
+           "notemplateexport" を使用して無効にすることができます)。
 
-   User interface font may be overridden
-           The font used for the user interface (button labels, dialog
-           pop-ups, and instructions) can be overridden from its default
-           ("DejaVu Sans"). (See the "uifont" configuration option. Use
-           "--listfonts" to see a list of available fonts.)
+   ユーザーインターフェースフォントの指定
+           ボタンラベル、ポップアップダイアログ、操作ガイドなどのユーザーインターフェイスに使用されるフォントを変更することができます。("uifont"オプションを参照。利用可能なフォントは"-listfonts
 
-   File Erase may be disabled
-           Controls to erase saved work — saved drawings (via the Open
-           dialog) and exported templates (via the New dialog) — can be
-           disabled. (See the "noerase" configuration option.)
+   削除の無効化
+           保存した作品や自作のテンプレートを削除するボタンを無効にすることができます。(設定オプション"noerase"を参照)
 
    全ての変更点については、CHANGES.txt をお読みください。
 
@@ -290,10 +283,7 @@ Tux Paint の起動
            アニメーション対応のブラシでは、線に沿って形が変化します。 指向性のブラシでは、線の角度に応じて異なる形状を表示します。
            さらに、アニメーションと指向性の両方を備えたブラシもあります。 詳しくは、上記の「ふで」の項をご覧ください。
 
-           Different brushes have different spacing, leaving either a series
-           of individual shapes, or a continuous stroke of the brush shape.
-           Brush spacing may be adjusted. See the brush spacing section of
-           the "Paint" tool, above, to learn more.
+           線に沿って形が並んだり、連続した線になったりと、それぞれの「ふで」毎に異なる描画間隔が設定されており、この間隔は変更することができます。詳しくは、"ペイントブラシ「ふで」"の"ブラシの描画間隔"のセクションを参照して下さい。
 
    「かたち」ツール
 
@@ -439,18 +429,14 @@ Tux Paint の起動
 
            このツールは「ふで」ツールに似ています。クリック（または、クリック＋ドラッグ）をした部分が消されます。（消した部分は、白あるいはその他の色、また、レイヤーキャンバスなど、絵によって異なる状態に戻ります。）
 
-           A number of eraser sizes are available, with both square and round
-           shapes. Fuzzy-edged round shapes are also available.
+           いくつもの大きさの正方形と円形の消しゴムがあります。端がぼやけた円形の消しゴムも用意されています。
 
            正方形の輪郭がマウスカーソルの位置に表示され、絵のどの部分が消されるかを示します。
 
            消している間、「キュッキュッ」と擦って消す効果音が流れます。
 
-           ⌨ Hold the [X] key while clicking for quick access to a small
-           sharp round eraser (not available when the Text or Label tools are
-           selected, when you're in the process of rotating a stamp or shape,
-           or when using an interactive magic tool). Release the mouse to
-           return to your currently-selected tool.
+           ⌨ [X]
+           キーを押しながらマウスをクリックすると、小さな丸い消しゴムをすばやく使うことができます（もじ/ラベルツール選択時、はんこや図形の回転中、インタラクティブなまほうツールを使用している間は無効です）。マウスを離すと、選択中のツールに戻ります。
 
   そのほかの操作
 
@@ -484,44 +470,30 @@ Tux Paint の起動
 
                         レイヤー画像は、その上に絵を描いて保存すると新しい絵として保存され、元々のレイヤー画像自体は上書きされないので、後で（「さいしょから」ダイアログからアクセスして）何度でも使うことができます。
 
-                        ⚙ You can create your own 'Starter' and Template
-                        images. See the Extending Tux Paint documentation's
-                        sections on 'Starters' and Templates.
+                        ⚙ 独自のスターター画像やテンプレート画像を作成することができます。ドキュメント「Tux Paint
+                        の拡張」の「スターター」と「テンプレート」のセクションを参照してください。
 
-                        💡 You can also convert your saved drawings into
-                        Templates directly within Tux Paint, from the 'Open'
-                        dialog. See "Open", below.
+                        💡 また、保存した作品をTux
+                        Paintの「ひらく」ダイアログから直接テンプレートに変換することもできます。以下の「ひらく」を参照してください。
 
-                Erasing Exported Template Images
+                自作テンプレートの削除
 
-                        If you've selected a Template in your personal
-                        templates folder, and it was created from within Tux
-                        Paint (using the "Template" button in the "Open"
-                        dialog), you may remove it from within Tux Paint,
-                        too. An 'Erase' (trash can) button will appear at the
-                        lower right of the list. Click it to erase the
-                        selected template. (You will be asked to confirm.)
+                        「さいしょから」ダイアログで自作テンプレート（「ひらく」ダイアログの「テンプレート」ボタンを使って作成したもの）を選択すると、リストの右下に「けす」（ゴミ箱）ボタンが表示されます。これをクリックすると、選択したテンプレートが消去されます。(確認を求められます）
 
-                        💡 Note: On Linux, Windows, and macOS, the picture
-                        will be placed in your desktop's trash can / recycle
-                        bin (where you may recover and restore it, if you
-                        change your mind).
+                        💡 注:
+                        Linux、Windows、macOSでは、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
 
-                        ⚙ Note: The 'Erase' button may be disabled, via the
-                        "noerase" option.
+                        ⚙ 注: 「けす」ボタンは、"noerase" オプションで無効にできます。
 
-           ⚙ Note: The solid colors can be placed at the end of the 'New'
-           dialog (below the Starters and Templates), via the "newcolorslast"
-           option.
+           ⚙ 注:単色のキャンバスは、"newcolorslast
+           "オプションによって、「さいしょから」ダイアログの最後（スターターとテンプレートの下）に配置することができます。
 
    「ひらく」
 
            「ひらく」をクリックすると、保存されている全ての作品のリストが表示されます。リストが画面に収まりきらない場合は、上下の矢印のボタンでリストをスクロールできます。
 
            まず、絵をクリックして選択します…
-              * Click the green 'Open' button at the lower left of the list
-                to load the selected picture. You will then be able to edit
-                it.
+              * 左下にある緑色の「ひらく」ボタンで、選択した作品を読み込んで編集することができます。
 
                 (または、開きたい作品をダブルクリックします）
 
@@ -533,27 +505,22 @@ Tux Paint の起動
                 0.9.27以降）、macOS（バージョン
                 0.9.29以降）では、削除した作品は、デスクトップのゴミ箱に移動するので、後で元に戻すことができます。
 
-                ⚙ Note: The 'Erase' button may be disabled, via the "noerase"
-                option.
+                ⚙ 注: 「けす」ボタンは、"noerase" オプションで無効にできます。
 
-              * Click the 'Export' button near the lower right to export the
-                selected picture to your export folder. (e.g.,
-                "~/Pictures/TuxPaint/")
+              * 右下の「かきだす」のボタンをクリックすると、ユーザーの標準の画像フォルダ（例:
+                "~/Pictures/TuxPaint/")に画像を出力します。
 
            「ひらく」の画面からは、以下のこともできます:
               * 左側の一番下にある青色の「スライド」のボタンを押すと、スライドショーモードになります。詳しくは「スライドショー」の項を参照。
 
-              * Click the blue 'Template' button at the lower left to go to
-                convert the selected picture into a new template, which can
-                be used as the basis for new drawings.
+              * 左下の青い「テンプレート」ボタンをクリックすると、選択した作品が新しいテンプレートに変換され、「さいしょから」ダイアログから利用できるようになります。
 
-                📜 Note: The Template creation feature was added to Tux Paint
-                in version 0.9.31. To learn how to create Templates outside
-                of Tux Paint, see Extending Tux Paint
+                📜 注: テンプレート作成機能は Tux Paint バージョン 0.9.31 で追加されました。
+                上記以外の方法で独自のテンプレートを作成するには, ドキュメント「Tux Paint の拡張」をご覧下さい。
 
-                ⚙ The Template creation feature can be disabled (e.g., by
-                selecting "Disable 'Make Template'" in Tux Paint Config. or
-                running Tux Paint with the "notemplateexport" option).
+                ⚙ テンプレート作成機能は、Tux Paint
+                設定ツールで「テンプレート作成機能を無効にする」を選択するか、"notemplateexport"オプションを指定してTux
+                Paintを起動することで無効にすることができます。
 
               * 右下にある赤色の「もどる」ボタンを押すと、絵を描く画面に戻ります。
 
