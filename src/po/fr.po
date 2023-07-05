@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-29 23:59-0700\n"
-"PO-Revision-Date: 2023-06-28 10:13+0200\n"
+"PO-Revision-Date: 2023-07-05 20:31+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -373,24 +373,18 @@ msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
 msgstr "Nouveaux outils Magie : Boucles, Ruban, Adoucir et Gribouillis"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
-#, fuzzy
-#| msgid "Eraser tool now offers fuzzy erasers."
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
-msgstr "L'outil Gomme permet maintenant de flouter."
+msgstr "L'outil Gomme permet maintenant de flouter (bords"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
-#, fuzzy
-#| msgid ""
-#| "Turn saved drawings into Templates (found in the New dialog) within Tux "
-#| "Paint (via the Open dialog). These may be deleted from the New dialog."
 msgid ""
 "Turn saved drawings into Templates (found in the New dialog) from within Tux "
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
 "the New dialog.)"
 msgstr ""
-"Transforme des dessins sauvegardés en modèles (que l'on trouve dans la boîte "
-"de dialogue). Ils peuvent être effacés à partir de la nouvelle boîte de "
-"dialogue."
+"Transforme des dessins sauvegardés en modèles (que l'on trouve dans la "
+"nouvelle boîte de dialogue). (Ils peuvent donc être effacés à partir de la "
+"nouvelle boîte de dialogue)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
@@ -403,29 +397,29 @@ msgstr ""
 "avec l'option \"noerase\". "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
-#, fuzzy
-#| msgid ""
-#| "Specify UI font, via \"uifont\" configuration option. (List available "
-#| "fonts with \"--listfonts\" on the command-line.)"
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
 msgstr ""
 "Spécifie la fonte utilisateur, via l'option de configuration \"uifont\". (La "
 "liste des fontes disponibles est disponible avec l'option \"--listfonts\" en "
-"ligne de commande."
+"ligne de commande)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Different (default) user interface fonts are once again used for under "
 "different locales."
 msgstr ""
+"Différentes fontes interface utilisateurs sont disponibles pour des locales "
+"différentes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
+"De petites améliorations ont été apportées pour les couleurs "
+"'spéciales' (pipette, sélecteur HSV et mélangeur de couleurs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Many Magic tools now offer size settings."
@@ -1957,7 +1951,7 @@ msgstr "Fleur"
 #: ../../magic/src/flower.c:212
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
-"Clique et déplace la souris pour dessiner une fleur. Relâche pour terminer"
+"Clique et déplace la souris pour dessiner une fleur. Relâche pour terminer."
 
 #: ../../magic/src/foam.c:120
 msgid "Foam"
