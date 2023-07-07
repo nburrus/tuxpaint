@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-29 23:59-0700\n"
-"PO-Revision-Date: 2023-03-30 23:09+0200\n"
+"PO-Revision-Date: 2023-07-08 01:03+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -1336,10 +1336,8 @@ msgid "Erase this picture?"
 msgstr "Esborro aquest dibuix?"
 
 #: ../tuxpaint.c:2496
-#, fuzzy
-#| msgid "Erase this picture?"
 msgid "Erase this template?"
-msgstr "Esborro aquest dibuix?"
+msgstr "Esborro aquesta plantilla de fons?"
 
 #: ../tuxpaint.c:2497
 msgid "Yes, erase it!"
@@ -1375,20 +1373,18 @@ msgstr "La vostra animació no s'ha pogut exportar!"
 #. Confirmation of successful (we hope) image-to-template conversion
 #: ../tuxpaint.c:2514
 msgid "Your picture is now available as a template in the “New“ dialog!"
-msgstr ""
+msgstr "El dibuix ja hauria d'estar disponible com a plantilla de fons en el diàleg de «Nou» dibuix."
 
 #. We got an error doing image-to-template conversion
 #: ../tuxpaint.c:2518
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
-msgstr ""
+msgstr "Ja heu convertit aquest dibuix en una plantilla de fons. Busqueu-la en el diàleg de «Nou» dibuix."
 
 #: ../tuxpaint.c:2519
-#, fuzzy
-#| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
-msgstr "El vostre dibuix no s'ha pogut imprimir!"
+msgstr "El vostre dibuix no s'ha pogut convertir en plantilla de fons!"
 
 #. Slideshow instructions
 #: ../tuxpaint.c:2522
@@ -1423,7 +1419,7 @@ msgstr "Diapositives"
 #. Open dialog: 'Template' button, to make a template out of a drawing
 #: ../tuxpaint.c:9596
 msgid "Template"
-msgstr ""
+msgstr "Plantilla de fons"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
 #: ../tuxpaint.c:9599
@@ -1493,12 +1489,16 @@ msgid ""
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
+"Trieu un dibuix i feu clic en «Obre», «Exporta», «Plantilla de fons» o «Esborra».\n"
+"Feu clic a «Diapositives» per crear una presentació o «Endarrere» per tornar al dibuix actual."
 
 #: ../tuxpaint.c:17051
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
 msgstr ""
+"Trieu un dibuix i feu clic en «Obre», «Exporta» o «Esborra».\\n\"\n"
+"\"Feu clic a «Diapositives» per crear una presentació o «Endarrere» per tornar al dibuix actual."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
@@ -1602,7 +1602,7 @@ msgstr "Programa de dibuix"
 
 #: ../tuxpaint-fullscreen.desktop.in:3
 msgid "Tux Paint (Fullscreen)"
-msgstr ""
+msgstr "Tux Paint (Pantalla completa)"
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"
@@ -1709,10 +1709,8 @@ msgid "Click and drag to draw small bricks."
 msgstr "Feu clic i arrossegueu per dibuixar rajoles petites."
 
 #: ../../magic/src/bricks.c:156
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw bricks."
-msgstr "Feu clic i arrossegueu per dibuixar rajoles grans."
+msgstr "Feu clic i arrossegueu per dibuixar rajoles."
 
 #: ../../magic/src/calligraphy.c:130
 msgid "Calligraphy"
@@ -1960,29 +1958,17 @@ msgstr ""
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Feu clic per omplir la imatge amb blocs de vidre."
 
-# Aquí, a %s hi va la traducció de "large googly eye" o "small googly eye" segons s'escaigui.
 #: ../../magic/src/googlyeyes.c:24
-#, fuzzy
-#| msgid ""
-#| "Click to place a %s, then drag and release to make it look that direction."
 msgid ""
 "Click to place a large googly eye, then drag and release to make it look "
 "that direction."
-msgstr ""
-"Feu clic per dibuixar %s, llavors arrossegueu i deixeu anar per fer que miri "
-"en aquesta direcció."
+msgstr "Feu clic per dibuixar un ull gran, llavors arrossegueu i deixeu anar per fer que miri en aquesta direcció."
 
-# Aquí, a %s hi va la traducció de "large googly eye" o "small googly eye" segons s'escaigui.
 #: ../../magic/src/googlyeyes.c:25
-#, fuzzy
-#| msgid ""
-#| "Click to place a %s, then drag and release to make it look that direction."
 msgid ""
 "Click to place a small googly eye, then drag and release to make it look "
 "that direction."
-msgstr ""
-"Feu clic per dibuixar %s, llavors arrossegueu i deixeu anar per fer que miri "
-"en aquesta direcció."
+msgstr "Feu clic per dibuixar un ull petit, llavors arrossegueu i deixeu anar per fer que miri en aquesta direcció."
 
 #: ../../magic/src/googlyeyes.c:205
 msgid "Googly Eyes"
@@ -1991,14 +1977,10 @@ msgstr "UUlls"
 # Aquí, a %s hi va la traducció de "large googly eye" o "small googly eye" segons s'escaigui.
 #: ../../magic/src/googlyeyes.c:222
 #, fuzzy
-#| msgid ""
-#| "Click to place a %s, then drag and release to make it look that direction."
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
-msgstr ""
-"Feu clic per dibuixar %s, llavors arrossegueu i deixeu anar per fer que miri "
-"en aquesta direcció."
+msgstr "Feu clic per dibuixar %s, llavors arrossegueu i deixeu anar per fer que miri en aquesta direcció."
 
 #: ../../magic/src/grass.c:111
 msgid "Grass"
@@ -2385,13 +2367,11 @@ msgstr "Feu clic i arrossegueu el ratolí per reflectir una part del dibuix."
 
 #: ../../magic/src/ribbon.c:117
 msgid "Ribbon"
-msgstr ""
+msgstr "Cinta"
 
 #: ../../magic/src/ribbon.c:129
-#, fuzzy
-#| msgid "Click to add snow balls to your picture."
 msgid "Add a flowing ribbon to your picture."
-msgstr "Feu clic per afegir boles de neu al dibuix."
+msgstr "Feu clic per afegir una cinta al dibuix."
 
 #: ../../magic/src/ripples.c:109
 msgid "Ripples"
@@ -2472,19 +2452,17 @@ msgstr "Colors suaus"
 
 #: ../../magic/src/smooth.c:63
 msgid "Squiggles"
-msgstr ""
+msgstr "Garbuix"
 
 #: ../../magic/src/smooth.c:64
 msgid "Loops"
-msgstr ""
+msgstr "Espires"
 
 #: ../../magic/src/smooth.c:68
-#, fuzzy
-#| msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgid ""
 "Click and drag the mouse around to draw in freehand; it will be smoothed "
 "when you let go."
-msgstr "Feu clic i arrossegueu el ratolí per mullar parts del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per dibuixar lliurement, quan deixeu anar el ratolí s'arrodonirà el traç."
 
 #: ../../magic/src/smooth.c:69
 #, fuzzy
@@ -2493,10 +2471,8 @@ msgid "Click and drag the mouse around to draw squiggles."
 msgstr "Feu clic i arrossegueu el ratolí per difuminar parts del dibuix."
 
 #: ../../magic/src/smooth.c:70
-#, fuzzy
-#| msgid "Click and drag the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw loop-the-loops."
-msgstr "Feu clic i arrossegueu el ratolí per fer escriptura cal·ligràfica."
+msgstr "Feu clic i arrossegueu el ratolí per dibuixar espires com les de les llibretes d'espiral."
 
 #: ../../magic/src/smudge.c:110
 msgid "Smudge"
@@ -2662,7 +2638,7 @@ msgstr "TV"
 
 #: ../../magic/src/tv.c:119
 msgid "TV (Bright)"
-msgstr ""
+msgstr "TV (Brillant)"
 
 #: ../../magic/src/tv.c:130
 msgid ""
