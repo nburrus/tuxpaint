@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-08 22:58+0900\n"
-"PO-Revision-Date: 2023-07-08 23:03+0900\n"
+"PO-Revision-Date: 2023-07-09 00:45+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -2064,7 +2064,7 @@ msgstr "なめらかな せん"
 
 #: ../../magic/src/smooth.c:63
 msgid "Squiggles"
-msgstr "ぐじゃぐじゃ"
+msgstr "くしゃくしゃ"
 
 #: ../../magic/src/smooth.c:64
 msgid "Loops"
@@ -2080,7 +2080,7 @@ msgstr ""
 
 #: ../../magic/src/smooth.c:69
 msgid "Click and drag the mouse around to draw squiggles."
-msgstr "クリックしたまま マウスをうごかして ぐじゃぐじゃと えがこう。"
+msgstr "クリックしたまま マウスをうごかして くしゃくしゃの ループを えがこう。"
 
 #: ../../magic/src/smooth.c:70
 msgid "Click and drag the mouse around to draw loop-the-loops."
@@ -2307,8 +2307,8 @@ msgstr "えを くりっくして ぜんたいの いろを はんてんさせ�
 
 #~ msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
 #~ msgstr ""
-#~ "「まほう」ツールの追加: 「ループ」「リボン」「なめらかなせん」「ぐじゃぐ"
-#~ "じゃ」"
+#~ "「まほう」ツールの追加: 「ループ」「リボン」「なめらかなせん」「くしゃく"
+#~ "しゃ」"
 
 #~ msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
 #~ msgstr "周囲をぼかした消しゴムを追加しました。"
