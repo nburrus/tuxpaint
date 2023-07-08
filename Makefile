@@ -985,6 +985,7 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tux
 	cp -a src/tuxpaint.desktop $(DESTDIR)$(PREFIX)/share/applications/
 	cp -a src/tuxpaint-fullscreen.desktop $(DESTDIR)$(PREFIX)/share/applications/
 	mkdir -p $(NEWICON_PREFIX)/{16x16,22x22,32x32,48x48,64x64,96x96,128x128,192x192}/apps
+	mkdir -p $(METAINFO_PREFIX)
 	cp -a data/images/icon16x16.png $(NEWICON_PREFIX)/16x16/apps/tuxpaint.png
 	cp -a data/images/icon22x22.png $(NEWICON_PREFIX)/22x22/apps/tuxpaint.png
 	cp -a data/images/icon32x32.png $(NEWICON_PREFIX)/32x32/apps/tuxpaint.png
