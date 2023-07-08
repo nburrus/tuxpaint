@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 2, 2023
+  June 14, 2002 - July 8, 2023
 */
 
 #include "platform.h"
@@ -21073,13 +21073,16 @@ static SDL_Surface *_load_svg(const char *file)
 
   /* Ask RSVG to render the SVG into the Cairo object: */
 
+#if LIBRSVG_MAJOR_VERSION < 2 || LIBRSVG_MINOR_VERSION < 46
   cairo_scale(cr, scale, scale);
 
-  /* FIXME: We can use cairo_rotate() here to rotate stamps! -bjk 2007.06.21 */
-
-#if LIBRSVG_MAJOR_VERSION < 2 || LIBRSVG_MINOR_VERSION < 46
   rsvg_handle_render_cairo(rsvg_handle, cr);
 #else
+  // N.B. We do NOT call cairo_scale() in this case, since
+  // we're setting a viewport to render into; else we'd end
+  // up scaling twice, resulting in a too-large, and badly-cropped
+  // stamp -bjk 2023.07.08
+
   viewport.x = 0;
   viewport.y = 0;
   viewport.width = width;
