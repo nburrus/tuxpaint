@@ -1,7 +1,8 @@
 Summary: A drawing program for young children
 Name: tuxpaint
 Version: 0.9.31
-Release: 1
+Release: 1%{?dist}
+Epoch: 1
 License: GPL
 Group: Multimedia/Graphics
 URL: https://tuxpaint.org/
@@ -40,32 +41,13 @@ make PREFIX=%{_prefix} DOC_PREFIX=%{_docdir}/tuxpaint linux_ARCH_CFLAGS='-I/usr/
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make ARCH_INSTALL="install-man install-importscript install-bash-completion" \
+make PACKAGE_ONLY=yes \
      PREFIX=%{_prefix} DESTDIR=$RPM_BUILD_ROOT \
      DOC_PREFIX=$RPM_BUILD_ROOT%{_docdir}/tuxpaint \
      DEVDOC_PREFIX=$RPM_BUILD_ROOT%{_docdir}/tuxpaint/devel \
      install
 
-export XDG_DATA_DIRS=$RPM_BUILD_ROOT%{_datadir}
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/{icons/hicolor,applications,desktop-directories}
-
-xdg-icon-resource install --mode system --noupdate --size 192 data/images/icon192x192.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 128 data/images/icon128x128.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 96 data/images/icon96x96.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 64 data/images/icon64x64.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 48 data/images/icon48x48.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 32 data/images/icon32x32.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 22 data/images/icon22x22.png tux4kids-tuxpaint
-xdg-icon-resource install --mode system --noupdate --size 16 data/images/icon16x16.png tux4kids-tuxpaint
-
-cp src/tuxpaint.desktop ./tux4kids-tuxpaint.desktop
-cp src/tuxpaint-fullscreen.desktop ./tux4kids-tuxpaint-fullscreen.desktop
-xdg-desktop-menu install --mode system --noupdate tux4kids-tuxpaint.desktop
-xdg-desktop-menu install --mode system --noupdate tux4kids-tuxpaint-fullscreen.desktop
-rm ./tux4kids-tuxpaint.desktop
-rm ./tux4kids-tuxpaint-fullscreen.desktop
-
-rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/tuxpaint/outdated
+# Scripts in this directory force dependency on python2 and fontforge
 rm -rf $RPM_BUILD_ROOT%{_datadir}/tuxpaint/fonts/locale/zh_tw_docs
 
 %post
@@ -88,10 +70,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/bash_completion.d/tuxpaint-completion.bash
 %{_docdir}/tuxpaint/*
 %{_datadir}/tuxpaint/*
-%{_datadir}/pixmaps/tuxpaint.*
-%{_datadir}/applications/tux4kids-tuxpaint.desktop
-%{_datadir}/applications/tux4kids-tuxpaint-fullscreen.desktop
-%{_datadir}/icons/hicolor/*/apps/tux4kids-tuxpaint.png
+%{_datadir}/applications/tuxpaint*.desktop
+%{_datadir}/icons/hicolor/*/apps/tuxpaint.png
+%{_datadir}/metainfo/org.tuxpaint.Tuxpaint.appdata.xml
 %{_datadir}/locale/*/LC_MESSAGES/tuxpaint.mo
 %{_mandir}/man1/tuxpaint*.*
 %{_mandir}/*/man1/tuxpaint*.*
@@ -111,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_docdir}/tuxpaint/*/html/tp_magic_example.c
 
 %changelog
+* Sat Jul 08 2023 <dolphin6k@wmail.plala.or.jp> -
+- Use PACKAGE_ONLY=yes for desktop icon installation
+
 * Wed Jun 07 2023 <dolphin6k@wmail.plala.or.jp> -
 - Added fullscreen launcher icon.
 
