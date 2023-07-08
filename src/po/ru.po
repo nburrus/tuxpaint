@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-29 23:59-0700\n"
+"POT-Creation-Date: 2023-07-08 22:58+0900\n"
 "PO-Revision-Date: 2023-05-19 16:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -258,6 +258,18 @@ msgstr ""
 "Щёлкните, чтобы заполнить область фигурным градиентом (от выбранного цвета к "
 "прозрачному)."
 
+#: ../fill_tools.h:75
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and drag to fill an area with a linear gradient (from the chosen "
+#| "color to transparent)."
+msgid ""
+"Click and drag to fill an area with a linear gradient (from the chosen color "
+"to transparent). (Your gradient’s angle is %.0f degrees.)"
+msgstr ""
+"Щёлкните и ведите мышью по картинке, чтобы заполнить область линейным "
+"градиентом (от выбранного цвета к прозрачному)."
+
 # Поздравление №1
 #. Congratulations #1
 #: ../great.h:37
@@ -398,397 +410,6 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:42
 msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "Инструмент «Штамп» работает как набор резиновых штампов или наклеек"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
-msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
-msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
-msgid ""
-"Turn saved drawings into Templates (found in the New dialog) from within Tux "
-"Paint itself (via the Open dialog). (They may subsequently be deleted from "
-"the New dialog.)"
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
-msgid ""
-"\"Erase\" option to remove saved drawings from the Open dialog and exported "
-"templates from the New dialog may be disabled, via \"noerase\" configuration "
-"option."
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
-msgid ""
-"Specify the user interface font, via \"uifont\" configuration option. (List "
-"available fonts with \"--listfonts\" on the command-line.)"
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid ""
-"Different (default) user interface fonts are once again used for under "
-"different locales."
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid ""
-"Minor improvements to the selection buttons for the 'special' colors "
-"(pipette, HSV picker, and color mixer)."
-msgstr ""
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
-msgid "Many Magic tools now offer size settings."
-msgstr "Многие магические инструменты теперь предоставляют параметры размера."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
-msgid "Button labels word-wrap when possible (improves legibility)."
-msgstr ""
-"Метки кнопок переносятся на новую строку, когда это возможно (так их проще "
-"читать)."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
-msgid ""
-"Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
-"Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
-"Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
-msgstr ""
-"Добавлены пятнадцать новых магических инструментов: «Лабиринт», «Игрушечные "
-"глаза», «Шерсть», «Круги», «Лучи», «3D-очки», «Цветоделение», «Насыщение», "
-"«Обесцвечивание», «Удаление цвета», «Сохранение цвета», «Калейдоскоп-4», "
-"«Калейдоскоп-6», «Калейдоскоп-8» и «Свечение»."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
-msgid "Stamps may be rotated before being applied to the canvas."
-msgstr "Штампы можно повернуть перед нанесением на холст."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
-msgid "Shapes tool, in drag-from-corner mode, has been improved."
-msgstr "Улучшена работа инструмента «Формы» в режиме перетаскивания из угла."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
-msgid "Fill tool now offers a shaped gradient (bevel) mode."
-msgstr ""
-"Инструмент «Заливка» теперь предоставляет режим фигурного градиента (скос)."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
-msgid "A quick Eraser mode is be accessed via keyboard shortcut."
-msgstr ""
-"Доступ к режиму стирания можно получить путём нажатия соответствующей "
-"комбинации клавиш."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
-msgid ""
-"The rainbow palette (HSV color picker) can now load the built-in color, or "
-"the colors from the pipette tool or color mixer."
-msgstr ""
-"Радужная палитра (средство выбора цветов HSV) теперь позволяет загружать "
-"встроенный цвет или цвета из инструмента пипетки или инструмента смешивания "
-"цветов."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
-msgid ""
-"Starter and Template images can specify how they should stretch, to avoid "
-"smearing when the canvas aspect ratio differs from that of the image."
-msgstr ""
-"Можно указать, как следует растягивать начальное и шаблонное изображения "
-"(чтобы они не смазывались, когда соотношение сторон холста отличается от "
-"соотношения сторон изображения)."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
-msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
-msgstr ""
-"Для параметра конфигурации «buttonsize» теперь предусмотрен вариант «auto»."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
-msgid "A quick start guide has been added."
-msgstr "Добавлено краткое руководство по началу работы."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
-msgid ""
-"Tux Paint's Color palette includes a new Color Mixer option, which allows "
-"users to combine different proportions of primary colors (red, yellow, and "
-"blue) and shades (white, grey, and black) to create new colors, similar to "
-"mixing paints."
-msgstr ""
-"Цветовая палитра Tux Paint включает новую опцию смешивания цветов. Она "
-"позволяет пользователям в разных пропорциях сочетать основные цвета "
-"(красный, жёлтый и синий) и оттенки (белый, серый и чёрный) для создания "
-"новых цветов; это похоже на смешивание красок на палитре."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
-msgid ""
-"The Color Picker option, which previously offered a static palette of around "
-"sixty-five thousand color choices, now supports separate hue, saturation, "
-"and value settings, allowing users to choose from over sixteen million "
-"colors."
-msgstr ""
-"Опция выбора цвета, ранее предоставлявшая статичную палитру из примерно "
-"шестидесяти пяти тысяч вариантов, теперь поддерживает отдельные параметры "
-"оттенка, насыщенности и значения, что позволяет пользователям выбирать из "
-"более чем шестнадцати миллионов цветов."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
-msgid ""
-"Also, a keyboard shortcut is now available for quick access to the Color "
-"Selector — the \"pipette\" tool used for picking colors from the current "
-"drawing."
-msgstr ""
-"Кроме того, теперь доступна комбинация клавиш для быстрого перехода к выбору "
-"цвета — инструменту «пипетки», который используется для выбора цветов из "
-"текущего рисунка."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
-msgid ""
-"The Paint and Lines tools now provide a way to adjust the spacing of "
-"brushes, allowing dotted lines or smearing effects to be made. Many brushes "
-"have been given better default spacing values, as well."
-msgstr ""
-"С помощью инструментов «Краска» и «Линии» теперь можно настраивать интервалы "
-"для кистей, что позволяет создавать пунктирные линии или эффекты смазывания. "
-"Кроме того, для многих кистей были улучшены стандартные значения интервалов."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
-msgid ""
-"Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
-"added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
-"across the canvas in tiles, rather than filling the canvas with a solid "
-"background color. The Rush tool blurs the results."
-msgstr ""
-"Добавлены два новых варианта магического инструмента «Масштабирование»: "
-"«Плиточное масштабирование» и «Рывок». Когда рисунок уменьшается с помощью "
-"«Плиточного масштабирования», он повторяется на холсте в виде плиток (не "
-"происходит заполнения холста сплошным фоновым цветом). После использования "
-"инструмента «Рывок» рисунок смазывается."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
-msgid ""
-"Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
-"polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
-"aspect ratio of the shape is displayed at the bottom while you make your "
-"adjustments. Instructional information shown while using some other tools "
-"has also been expanded."
-msgstr ""
-"Инструмент «Формы» Tux Paint теперь содержит шестиугольник и семиугольник. "
-"Для тех форм, которые можно растягивать (прямоугольник, овал и т.д.), при "
-"изменении размеров отображается соотношение сторон. Кроме того, расширен "
-"перечень сведений, которые показываются при использовании некоторых других "
-"инструментов."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:84
-msgid ""
-"Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
-"accessed with the more traditional [⌘ Command] key when using Tux Paint on "
-"macOS. Sizing of Tux Paint's built-in on-screen keyboard has been improved. "
-"The look and feel of the user documentation has been improved."
-msgstr ""
-"Комбинациями клавиш (например, [Control]+[S] для сохранения рисунка) теперь "
-"можно пользоваться с помощью традиционной клавиши [⌘ Command], когда Tux "
-"Paint используется в macOS. Также оптимизирован размер встроенной экранной "
-"клавиатуры Tux Paint. Выполнена работа по усовершенствованию документации "
-"пользователя."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
-msgid ""
-"Tux Paint's Paint and Line tools now support brushes that rotate based on "
-"the angle of the stroke. This new rotation feature, as well as the older "
-"directional and animated brush features, are now visually indicated by the "
-"brush shape selector. Additionally, the Fill tool now offers a freehand "
-"painting mode for interactively coloring within a confined area."
-msgstr ""
-"Инструменты «Краска» и «Линии» Tux Paint теперь поддерживают кисти с "
-"поворотом на основе угла мазка. Эта новая возможность поворота (как и ранее "
-"существовавшие возможности работы с направленными и анимированными кистями) "
-"теперь визуально обозначается в средстве выбора формы кисти. Кроме того, "
-"инструмент «Заливка» теперь предоставляет режим рисования от руки для "
-"интерактивного раскрашивания в пределах ограниченной области."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
-msgid ""
-"Six new Magic tools have been added to Tux Paint. Panels shrinks and "
-"duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
-"panel comics. Opposite produces complementary colors. Lightning "
-"interactively draws a lightning bolt. Reflection creates a lake-like "
-"reflection on the drawing. Stretch stretches and squashes the picture like a "
-"fun-house mirror. Lastly, Smooth Rainbow provides a more gradual variation "
-"of Tux Paint's classic Rainbow tool."
-msgstr ""
-"В Tux Paint добавлены шесть новых магических инструментов. «Панели» "
-"уменьшает и дублирует рисунок, формируя таблицу 2х2, которая подходит для "
-"создания четырёхпанельных комиксов. «Противоположность» создаёт "
-"комплементарные цвета. «Молния» интерактивно рисует молнию. «Отражение» "
-"создаёт на рисунке отражение, похожее на отражение в озере. «Растяжение» "
-"растягивает и сжимает изображение как зеркало в комнате смеха. Наконец, "
-"«Плавные 7 цветов» предоставляет вариант классического инструмента «7 "
-"цветов» Tux Paint, обеспечивая более плавные переходы."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
-msgid ""
-"A number of existing Magic tools have been updated, as well. Improvements "
-"were made to Halftone, which simulates photographs on newsprint; Cartoon, "
-"which makes an image look like a cartoon drawing; and TV, which simulates a "
-"television screen. Additionally, Cartoon and Halftone, along with Blocks, "
-"Chalk, and Emboss, now offer the ability to alter the entire image at once!"
-msgstr ""
-"Также был обновлён ряд существующих магических инструментов. Улучшены "
-"следующие инструменты: «Полутоновый оттиск» (имитирует фотографии на "
-"газетной бумаге), «Мультфильм» (делает изображение похожим на рисунок из "
-"мультфильма) и «ТВ» (имитирует экран телевизора). Кроме того, инструменты "
-"«Мультфильм» и «Полутоновый оттиск», а также «Мозаика», «Мел» и «Рельеф» "
-"теперь позволяют изменять всё изображение целиком!"
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
-msgid ""
-"Finally, Magic tools are now grouped into collections of similar effects — "
-"painting, distorts, color filters, picture warps, pattern painting, "
-"artistic, and picture decorations — making it easier to find the tool you "
-"need."
-msgstr ""
-"Наконец, магические инструменты теперь сгруппированы в коллекции по принципу "
-"схожести эффектов — рисование, искажение, цветовые фильтры, искривление "
-"картинки, рисование по образцу, художественные эффекты и декорирование "
-"рисунков. Благодаря этому становится проще найти нужный инструмент."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
-msgid ""
-"Tux Paint's Fill tool now offers options to fill an area with color "
-"gradients. The \"Radial\" fill creates a circular gradient centered around "
-"the mouse click, while the \"Linear\" fill allows the interactive creation "
-"of gradients at different angles and sizes."
-msgstr ""
-"Инструмент «Заливка» Tux Paint теперь позволяет заполнить область цветовыми "
-"градиентами. «Радиальная» заливка формирует круговой градиент с центром в "
-"месте щелчка мыши, в то время как «Линейная» заливка позволяет в "
-"интерактивном режиме создавать градиенты под разными углами и разных "
-"размеров."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
-msgid ""
-"New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
-"create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
-"canvas with a check pattern, and \"Clone\" allows duplicating parts of the "
-"picture via brush strokes."
-msgstr ""
-"В Tux Paint добавлены новые магические инструменты: «Пикселы» даёт "
-"возможность создавать пиксельные рисунки в стиле ретроигр, «Шахматная доска» "
-"заполняет весь холст шахматным узором, а «Клонирование» позволяет "
-"дублировать части рисунка с помощью мазков кистью."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:99
-msgid ""
-"Tux Paint's user documentation has been overhauled, making localization "
-"easier. Parties interested in helping with localization are encouraged to "
-"contact the Tux Paint team."
-msgstr ""
-"Документация пользователя Tux Paint была переработана, что упрощает "
-"локализацию. Тем, кто готов помочь с локализацией, рекомендуется обратиться "
-"к команде Tux Paint."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:100
-msgid ""
-"Finally, a new pair of accessibility options have been added. The entire "
-"user interface can now be enlarged benefiting users with impaired vision, "
-"and making the program more suitable to very high density displays. This "
-"feature, along with a new option to re-organize the color palette, can also "
-"be helpful to users of coarse input devices, such as eye-gaze tracking "
-"systems."
-msgstr ""
-"Наконец, были добавлены две новые функции специальных возможностей. Теперь "
-"можно увеличить весь интерфейс пользователя, что удобно для пользователей с "
-"нарушениями зрения и упрощает работу с программой на экранах высокой "
-"плотности. Эта функция, наряду с новой опцией реорганизации цветовой "
-"палитры, также может быть полезна пользователям более грубых устройств ввода "
-"(например, систем отслеживания движений глаз)."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
-msgid ""
-"A major improvement has been made to the Shapes tool, which now provides "
-"options to choose whether shapes are drawn from the center or a corner, "
-"making it easier to use in any situation."
-msgstr ""
-"Значительное улучшение инструмента «Формы»: теперь он позволяет выбрать, "
-"следует ли рисовать формы из центра или из угла, что упрощает работу с этим "
-"инструментом во всех ситуациях."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
-msgid ""
-"The on-screen keyboard, an accessibility feature optionally available when "
-"using the Text and Label tools, now appears larger on bigger displays; "
-"helpful for users of coarser input devices, such as eye-tracking systems."
-msgstr ""
-"Экранная клавиатура (функция специальных возможностей, доступная при "
-"использовании инструментов «Текст» и «Метка») теперь выглядит крупнее на "
-"больших экранах; это удобно для пользователей более грубых устройств ввода, "
-"таких как системы отслеживания движений глаз."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
-msgid ""
-"The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
-"contiguous strokes when the pointer is moved quickly."
-msgstr ""
-"Для инструмента «Ластик» добавлены новые (более маленькие) размеры и "
-"реализованы плавные, непрерывные мазки при быстром перемещении указателя "
-"мыши."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
-msgid ""
-"Finally, this newest version adds options to export individual drawings and "
-"GIF animations, making it easy to share pictures, cartoons, and slideshows "
-"with others."
-msgstr ""
-"Наконец, в этой новейшей версии добавлены возможности экспорта отдельных "
-"рисунков и GIF-анимаций, что позволяет с лёгкостью делиться картинками, "
-"мультфильмами и слайдшоу с другими пользователями."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:113
-msgid ""
-"The latest version has promoted the \"Fill\" tool, previously found under "
-"the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
-"to find. It also includes some performance improvements during start-up and "
-"when bringing up the \"New\" drawing dialog. The solid background colors can "
-"also be placed at the end of that dialog, allowing emphasis of template "
-"images."
-msgstr ""
-"В последней версии инструмент «Заливка», ранее находившийся в разделе "
-"«Магия» Tux Paint, был перемещён на главную панель инструментов; там его "
-"проще найти. Также улучшена его производительность при запуске и вызове "
-"диалогового окна нового рисунка. Кроме того, пункты сплошных цветов фона "
-"можно расположить в конце этого диалога, что позволяет сосредоточить "
-"внимание на шаблонных изображениях."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:114
-msgid ""
-"Tux Paint also now makes it possible to disable stereo sound, which can "
-"benefit users with a hearing impairment, or in situations where only one "
-"speaker is available."
-msgstr ""
-"Теперь в Tux Paint также можно отключать стереозвук, что может быть удобно "
-"пользователям с нарушениями слуха или в тех случаях, когда доступен только "
-"один динамик."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:119
-msgid ""
-"New in this version are a \"color picker\", which allows any color within a "
-"drawing to be chosen using the pointer, and a set of three-, four-, and five-"
-"pointed star shapes."
-msgstr ""
-"Новые возможности в этой версии: «пипетка», позволяющая выбрать любой цвет "
-"на рисунке с помощью указателя мыши, а также возможность создавать трёх-, "
-"четырёх- и пятиконечные формы звёзд."
-
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:120
-msgid ""
-"The latest version also incorporates a number of new translations, bringing "
-"the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
-"Kabyle, Urdu, and Devanagari and Perso-Arabic variations of Kashmiri and "
-"Sindhi. Thirty other translations have been updated, as well."
-msgstr ""
-"Последняя версия также включает ряд новых переводов: бенгальский, бодо, "
-"догри, кабильский, урду, а также деванагари и персо-арабские варианты "
-"кашмири и синдхи. Теперь поддерживаются почти 130 языков. Кроме того, "
-"обновлены тридцать других переводов."
 
 #. Square shape tool (4 equally-lengthed sides at right angles)
 #: ../shapes.h:265 ../shapes.h:266
@@ -1042,7 +663,7 @@ msgstr "Создать"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9587
+#: ../tools.h:97 ../tuxpaint.c:9613
 msgid "Open"
 msgstr "Открыть"
 
@@ -1431,90 +1052,90 @@ msgid "Please wait…"
 msgstr "Пожалуйста, подождите..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9590
+#: ../tuxpaint.c:9616
 msgid "Erase"
 msgstr "Удалить"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9593
+#: ../tuxpaint.c:9619
 msgid "Slides"
 msgstr "Слайды"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9596
+#: ../tuxpaint.c:9622
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9599
+#: ../tuxpaint.c:9625
 msgid "Export"
 msgstr "Экспорт"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9602
+#: ../tuxpaint.c:9628
 msgid "Back"
 msgstr "Назад"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9605
+#: ../tuxpaint.c:9631
 msgid "Play"
 msgstr "Запуск"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9608
+#: ../tuxpaint.c:9634
 msgid "GIF Export"
 msgstr "Экспорт GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9611
+#: ../tuxpaint.c:9637
 msgid "Next"
 msgstr "Далее"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9614
+#: ../tuxpaint.c:9640
 msgid "Clear"
 msgstr "Очистить"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10536 ../tuxpaint.c:10539 ../tuxpaint.c:10540
+#: ../tuxpaint.c:10562 ../tuxpaint.c:10565 ../tuxpaint.c:10566
 msgid "Aa"
 msgstr "Аа"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14504
+#: ../tuxpaint.c:14530
 msgid "Yes"
 msgstr "Да"
 
-#: ../tuxpaint.c:14508
+#: ../tuxpaint.c:14534
 msgid "No"
 msgstr "Нет"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15773
+#: ../tuxpaint.c:15799
 msgid "Replace the picture with your changes?"
 msgstr "Заменить старую картинку?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15777
+#: ../tuxpaint.c:15803
 msgid "Yes, replace the old one!"
 msgstr "Да, заменить старую картинку!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15781
+#: ../tuxpaint.c:15807
 msgid "No, save a new file!"
 msgstr "Нет, сохранить в новый файл!"
 
-#: ../tuxpaint.c:17049
+#: ../tuxpaint.c:17075
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17051
+#: ../tuxpaint.c:17077
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1523,68 +1144,68 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18720
+#: ../tuxpaint.c:18746
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 "Выберите два или больше рисунков для преобразования в анимированный GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:24878
+#: ../tuxpaint.c:24910
 msgid "red"
 msgstr "красный"
 
 # При выборе жёлтого (255, 255, 0) цвета
-#: ../tuxpaint.c:24879
+#: ../tuxpaint.c:24911
 msgid "yellow"
 msgstr "жёлтый"
 
 # При выборе голубого (138, 168, 205) цвета
-#: ../tuxpaint.c:24880
+#: ../tuxpaint.c:24912
 msgid "blue"
 msgstr "синий"
 
 # При выборе белого (255, 255, 255) цвета
-#: ../tuxpaint.c:24881
+#: ../tuxpaint.c:24913
 msgid "white"
 msgstr "белый"
 
-#: ../tuxpaint.c:24882
+#: ../tuxpaint.c:24914
 msgid "grey"
 msgstr "серый"
 
 # При выборе чёрного (0, 0, 0) цвета
-#: ../tuxpaint.c:24883
+#: ../tuxpaint.c:24915
 msgid "black"
 msgstr "чёрный"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:24888
+#: ../tuxpaint.c:24920
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Ваш цвет: %1$s %2$s."
 
-#: ../tuxpaint.c:24889
+#: ../tuxpaint.c:24921
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Ваш цвет: %1$s %2$s и %3$s %4$s."
 
-#: ../tuxpaint.c:24890
+#: ../tuxpaint.c:24922
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Ваш цвет: %1$s %2$s, %3$s %4$s и %5$s %6$s."
 
-#: ../tuxpaint.c:24891
+#: ../tuxpaint.c:24923
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Ваш цвет: %1$s %2$s, %3$s %4$s, %5$s %6$s и %7$s %8$s."
 
-#: ../tuxpaint.c:24892
+#: ../tuxpaint.c:24924
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "Ваш цвет: %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s и %9$s %10$s."
 
-#: ../tuxpaint.c:24893
+#: ../tuxpaint.c:24925
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1594,16 +1215,16 @@ msgstr ""
 "%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25673 ../tuxpaint.c:25678
+#: ../tuxpaint.c:25705 ../tuxpaint.c:25710
 msgid "entirely"
 msgstr "полностью"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:28834
+#: ../tuxpaint.c:28870
 msgid "Select a color from your drawing."
 msgstr "Выберите цвет для рисования."
 
-#: ../tuxpaint.c:28845
+#: ../tuxpaint.c:28881
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1612,7 +1233,7 @@ msgstr ""
 "слева (тускло) направо (ярко). Значение (освещённость или затенённость): "
 "серая панель."
 
-#: ../tuxpaint.c:28859
+#: ../tuxpaint.c:28895
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1739,11 +1360,11 @@ msgstr ""
 msgid "Click and drag to draw bricks."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать кирпичи."
 
-#: ../../magic/src/calligraphy.c:130
+#: ../../magic/src/calligraphy.c:131
 msgid "Calligraphy"
 msgstr "Каллиграфия"
 
-#: ../../magic/src/calligraphy.c:143
+#: ../../magic/src/calligraphy.c:144
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы рисовать каллиграфической кистью."
@@ -2357,6 +1978,18 @@ msgid "Click and drag to draw train track rails on your picture."
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы нарисовать железнодорожные рельсы."
 
+#: ../../magic/src/rain.c:67
+msgid "Rain"
+msgstr "Дождь"
+
+#: ../../magic/src/rain.c:75
+msgid "Click to place a rain drop onto your picture."
+msgstr "Щёлкните, чтобы поместить дождевую каплю на картинку."
+
+#: ../../magic/src/rain.c:76
+msgid "Click to cover your picture with rain drops."
+msgstr "Щёлкните, чтобы покрыть картинку дождевыми каплями."
+
 #: ../../magic/src/rainbow.c:154
 msgid "Rainbow"
 msgstr "7 цветов"
@@ -2372,18 +2005,6 @@ msgstr "Круг из 7 цветов"
 #: ../../magic/src/rainbow.c:175
 msgid "You can draw in rainbow colors!"
 msgstr "Можно рисовать цветами радуги!"
-
-#: ../../magic/src/rain.c:67
-msgid "Rain"
-msgstr "Дождь"
-
-#: ../../magic/src/rain.c:75
-msgid "Click to place a rain drop onto your picture."
-msgstr "Щёлкните, чтобы поместить дождевую каплю на картинку."
-
-#: ../../magic/src/rain.c:76
-msgid "Click to cover your picture with rain drops."
-msgstr "Щёлкните, чтобы покрыть картинку дождевыми каплями."
 
 #: ../../magic/src/realrainbow.c:105
 msgid "Real Rainbow"
@@ -2749,6 +2370,333 @@ msgstr "Щёлкните и ведите мышью по картинке, чт�
 #: ../../magic/src/xor.c:112
 msgid "Click to draw a XOR effect on the whole picture"
 msgstr "Щёлкните, чтобы добавить эффект XOR ко всей картинке."
+
+#~ msgid "Many Magic tools now offer size settings."
+#~ msgstr ""
+#~ "Многие магические инструменты теперь предоставляют параметры размера."
+
+#~ msgid "Button labels word-wrap when possible (improves legibility)."
+#~ msgstr ""
+#~ "Метки кнопок переносятся на новую строку, когда это возможно (так их "
+#~ "проще читать)."
+
+#~ msgid ""
+#~ "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
+#~ "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
+#~ "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
+#~ msgstr ""
+#~ "Добавлены пятнадцать новых магических инструментов: «Лабиринт», "
+#~ "«Игрушечные глаза», «Шерсть», «Круги», «Лучи», «3D-очки», «Цветоделение», "
+#~ "«Насыщение», «Обесцвечивание», «Удаление цвета», «Сохранение цвета», "
+#~ "«Калейдоскоп-4», «Калейдоскоп-6», «Калейдоскоп-8» и «Свечение»."
+
+#~ msgid "Stamps may be rotated before being applied to the canvas."
+#~ msgstr "Штампы можно повернуть перед нанесением на холст."
+
+#~ msgid "Shapes tool, in drag-from-corner mode, has been improved."
+#~ msgstr ""
+#~ "Улучшена работа инструмента «Формы» в режиме перетаскивания из угла."
+
+#~ msgid "Fill tool now offers a shaped gradient (bevel) mode."
+#~ msgstr ""
+#~ "Инструмент «Заливка» теперь предоставляет режим фигурного градиента "
+#~ "(скос)."
+
+#~ msgid "A quick Eraser mode is be accessed via keyboard shortcut."
+#~ msgstr ""
+#~ "Доступ к режиму стирания можно получить путём нажатия соответствующей "
+#~ "комбинации клавиш."
+
+#~ msgid ""
+#~ "The rainbow palette (HSV color picker) can now load the built-in color, "
+#~ "or the colors from the pipette tool or color mixer."
+#~ msgstr ""
+#~ "Радужная палитра (средство выбора цветов HSV) теперь позволяет загружать "
+#~ "встроенный цвет или цвета из инструмента пипетки или инструмента "
+#~ "смешивания цветов."
+
+#~ msgid ""
+#~ "Starter and Template images can specify how they should stretch, to avoid "
+#~ "smearing when the canvas aspect ratio differs from that of the image."
+#~ msgstr ""
+#~ "Можно указать, как следует растягивать начальное и шаблонное изображения "
+#~ "(чтобы они не смазывались, когда соотношение сторон холста отличается от "
+#~ "соотношения сторон изображения)."
+
+#~ msgid ""
+#~ "The \"buttonsize\" configuration option now offers an \"auto\" setting."
+#~ msgstr ""
+#~ "Для параметра конфигурации «buttonsize» теперь предусмотрен вариант "
+#~ "«auto»."
+
+#~ msgid "A quick start guide has been added."
+#~ msgstr "Добавлено краткое руководство по началу работы."
+
+#~ msgid ""
+#~ "Tux Paint's Color palette includes a new Color Mixer option, which allows "
+#~ "users to combine different proportions of primary colors (red, yellow, "
+#~ "and blue) and shades (white, grey, and black) to create new colors, "
+#~ "similar to mixing paints."
+#~ msgstr ""
+#~ "Цветовая палитра Tux Paint включает новую опцию смешивания цветов. Она "
+#~ "позволяет пользователям в разных пропорциях сочетать основные цвета "
+#~ "(красный, жёлтый и синий) и оттенки (белый, серый и чёрный) для создания "
+#~ "новых цветов; это похоже на смешивание красок на палитре."
+
+#~ msgid ""
+#~ "The Color Picker option, which previously offered a static palette of "
+#~ "around sixty-five thousand color choices, now supports separate hue, "
+#~ "saturation, and value settings, allowing users to choose from over "
+#~ "sixteen million colors."
+#~ msgstr ""
+#~ "Опция выбора цвета, ранее предоставлявшая статичную палитру из примерно "
+#~ "шестидесяти пяти тысяч вариантов, теперь поддерживает отдельные параметры "
+#~ "оттенка, насыщенности и значения, что позволяет пользователям выбирать из "
+#~ "более чем шестнадцати миллионов цветов."
+
+#~ msgid ""
+#~ "Also, a keyboard shortcut is now available for quick access to the Color "
+#~ "Selector — the \"pipette\" tool used for picking colors from the current "
+#~ "drawing."
+#~ msgstr ""
+#~ "Кроме того, теперь доступна комбинация клавиш для быстрого перехода к "
+#~ "выбору цвета — инструменту «пипетки», который используется для выбора "
+#~ "цветов из текущего рисунка."
+
+#~ msgid ""
+#~ "The Paint and Lines tools now provide a way to adjust the spacing of "
+#~ "brushes, allowing dotted lines or smearing effects to be made. Many "
+#~ "brushes have been given better default spacing values, as well."
+#~ msgstr ""
+#~ "С помощью инструментов «Краска» и «Линии» теперь можно настраивать "
+#~ "интервалы для кистей, что позволяет создавать пунктирные линии или "
+#~ "эффекты смазывания. Кроме того, для многих кистей были улучшены "
+#~ "стандартные значения интервалов."
+
+#~ msgid ""
+#~ "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
+#~ "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
+#~ "across the canvas in tiles, rather than filling the canvas with a solid "
+#~ "background color. The Rush tool blurs the results."
+#~ msgstr ""
+#~ "Добавлены два новых варианта магического инструмента «Масштабирование»: "
+#~ "«Плиточное масштабирование» и «Рывок». Когда рисунок уменьшается с "
+#~ "помощью «Плиточного масштабирования», он повторяется на холсте в виде "
+#~ "плиток (не происходит заполнения холста сплошным фоновым цветом). После "
+#~ "использования инструмента «Рывок» рисунок смазывается."
+
+#~ msgid ""
+#~ "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-"
+#~ "sided) polygons. For shapes which can be stretched (rectangle, oval, "
+#~ "etc.), the aspect ratio of the shape is displayed at the bottom while you "
+#~ "make your adjustments. Instructional information shown while using some "
+#~ "other tools has also been expanded."
+#~ msgstr ""
+#~ "Инструмент «Формы» Tux Paint теперь содержит шестиугольник и "
+#~ "семиугольник. Для тех форм, которые можно растягивать (прямоугольник, "
+#~ "овал и т.д.), при изменении размеров отображается соотношение сторон. "
+#~ "Кроме того, расширен перечень сведений, которые показываются при "
+#~ "использовании некоторых других инструментов."
+
+#~ msgid ""
+#~ "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
+#~ "accessed with the more traditional [⌘ Command] key when using Tux Paint "
+#~ "on macOS. Sizing of Tux Paint's built-in on-screen keyboard has been "
+#~ "improved. The look and feel of the user documentation has been improved."
+#~ msgstr ""
+#~ "Комбинациями клавиш (например, [Control]+[S] для сохранения рисунка) "
+#~ "теперь можно пользоваться с помощью традиционной клавиши [⌘ Command], "
+#~ "когда Tux Paint используется в macOS. Также оптимизирован размер "
+#~ "встроенной экранной клавиатуры Tux Paint. Выполнена работа по "
+#~ "усовершенствованию документации пользователя."
+
+#~ msgid ""
+#~ "Tux Paint's Paint and Line tools now support brushes that rotate based on "
+#~ "the angle of the stroke. This new rotation feature, as well as the older "
+#~ "directional and animated brush features, are now visually indicated by "
+#~ "the brush shape selector. Additionally, the Fill tool now offers a "
+#~ "freehand painting mode for interactively coloring within a confined area."
+#~ msgstr ""
+#~ "Инструменты «Краска» и «Линии» Tux Paint теперь поддерживают кисти с "
+#~ "поворотом на основе угла мазка. Эта новая возможность поворота (как и "
+#~ "ранее существовавшие возможности работы с направленными и анимированными "
+#~ "кистями) теперь визуально обозначается в средстве выбора формы кисти. "
+#~ "Кроме того, инструмент «Заливка» теперь предоставляет режим рисования от "
+#~ "руки для интерактивного раскрашивания в пределах ограниченной области."
+
+#~ msgid ""
+#~ "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
+#~ "duplicates the drawing into a 2-by-2 grid, which is useful for making "
+#~ "four-panel comics. Opposite produces complementary colors. Lightning "
+#~ "interactively draws a lightning bolt. Reflection creates a lake-like "
+#~ "reflection on the drawing. Stretch stretches and squashes the picture "
+#~ "like a fun-house mirror. Lastly, Smooth Rainbow provides a more gradual "
+#~ "variation of Tux Paint's classic Rainbow tool."
+#~ msgstr ""
+#~ "В Tux Paint добавлены шесть новых магических инструментов. «Панели» "
+#~ "уменьшает и дублирует рисунок, формируя таблицу 2х2, которая подходит для "
+#~ "создания четырёхпанельных комиксов. «Противоположность» создаёт "
+#~ "комплементарные цвета. «Молния» интерактивно рисует молнию. «Отражение» "
+#~ "создаёт на рисунке отражение, похожее на отражение в озере. «Растяжение» "
+#~ "растягивает и сжимает изображение как зеркало в комнате смеха. Наконец, "
+#~ "«Плавные 7 цветов» предоставляет вариант классического инструмента «7 "
+#~ "цветов» Tux Paint, обеспечивая более плавные переходы."
+
+#~ msgid ""
+#~ "A number of existing Magic tools have been updated, as well. Improvements "
+#~ "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
+#~ "which makes an image look like a cartoon drawing; and TV, which simulates "
+#~ "a television screen. Additionally, Cartoon and Halftone, along with "
+#~ "Blocks, Chalk, and Emboss, now offer the ability to alter the entire "
+#~ "image at once!"
+#~ msgstr ""
+#~ "Также был обновлён ряд существующих магических инструментов. Улучшены "
+#~ "следующие инструменты: «Полутоновый оттиск» (имитирует фотографии на "
+#~ "газетной бумаге), «Мультфильм» (делает изображение похожим на рисунок из "
+#~ "мультфильма) и «ТВ» (имитирует экран телевизора). Кроме того, инструменты "
+#~ "«Мультфильм» и «Полутоновый оттиск», а также «Мозаика», «Мел» и «Рельеф» "
+#~ "теперь позволяют изменять всё изображение целиком!"
+
+#~ msgid ""
+#~ "Finally, Magic tools are now grouped into collections of similar effects "
+#~ "— painting, distorts, color filters, picture warps, pattern painting, "
+#~ "artistic, and picture decorations — making it easier to find the tool you "
+#~ "need."
+#~ msgstr ""
+#~ "Наконец, магические инструменты теперь сгруппированы в коллекции по "
+#~ "принципу схожести эффектов — рисование, искажение, цветовые фильтры, "
+#~ "искривление картинки, рисование по образцу, художественные эффекты и "
+#~ "декорирование рисунков. Благодаря этому становится проще найти нужный "
+#~ "инструмент."
+
+#~ msgid ""
+#~ "Tux Paint's Fill tool now offers options to fill an area with color "
+#~ "gradients. The \"Radial\" fill creates a circular gradient centered "
+#~ "around the mouse click, while the \"Linear\" fill allows the interactive "
+#~ "creation of gradients at different angles and sizes."
+#~ msgstr ""
+#~ "Инструмент «Заливка» Tux Paint теперь позволяет заполнить область "
+#~ "цветовыми градиентами. «Радиальная» заливка формирует круговой градиент с "
+#~ "центром в месте щелчка мыши, в то время как «Линейная» заливка позволяет "
+#~ "в интерактивном режиме создавать градиенты под разными углами и разных "
+#~ "размеров."
+
+#~ msgid ""
+#~ "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier "
+#~ "to create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
+#~ "canvas with a check pattern, and \"Clone\" allows duplicating parts of "
+#~ "the picture via brush strokes."
+#~ msgstr ""
+#~ "В Tux Paint добавлены новые магические инструменты: «Пикселы» даёт "
+#~ "возможность создавать пиксельные рисунки в стиле ретроигр, «Шахматная "
+#~ "доска» заполняет весь холст шахматным узором, а «Клонирование» позволяет "
+#~ "дублировать части рисунка с помощью мазков кистью."
+
+#~ msgid ""
+#~ "Tux Paint's user documentation has been overhauled, making localization "
+#~ "easier. Parties interested in helping with localization are encouraged to "
+#~ "contact the Tux Paint team."
+#~ msgstr ""
+#~ "Документация пользователя Tux Paint была переработана, что упрощает "
+#~ "локализацию. Тем, кто готов помочь с локализацией, рекомендуется "
+#~ "обратиться к команде Tux Paint."
+
+#~ msgid ""
+#~ "Finally, a new pair of accessibility options have been added. The entire "
+#~ "user interface can now be enlarged benefiting users with impaired vision, "
+#~ "and making the program more suitable to very high density displays. This "
+#~ "feature, along with a new option to re-organize the color palette, can "
+#~ "also be helpful to users of coarse input devices, such as eye-gaze "
+#~ "tracking systems."
+#~ msgstr ""
+#~ "Наконец, были добавлены две новые функции специальных возможностей. "
+#~ "Теперь можно увеличить весь интерфейс пользователя, что удобно для "
+#~ "пользователей с нарушениями зрения и упрощает работу с программой на "
+#~ "экранах высокой плотности. Эта функция, наряду с новой опцией "
+#~ "реорганизации цветовой палитры, также может быть полезна пользователям "
+#~ "более грубых устройств ввода (например, систем отслеживания движений "
+#~ "глаз)."
+
+#~ msgid ""
+#~ "A major improvement has been made to the Shapes tool, which now provides "
+#~ "options to choose whether shapes are drawn from the center or a corner, "
+#~ "making it easier to use in any situation."
+#~ msgstr ""
+#~ "Значительное улучшение инструмента «Формы»: теперь он позволяет выбрать, "
+#~ "следует ли рисовать формы из центра или из угла, что упрощает работу с "
+#~ "этим инструментом во всех ситуациях."
+
+#~ msgid ""
+#~ "The on-screen keyboard, an accessibility feature optionally available "
+#~ "when using the Text and Label tools, now appears larger on bigger "
+#~ "displays; helpful for users of coarser input devices, such as eye-"
+#~ "tracking systems."
+#~ msgstr ""
+#~ "Экранная клавиатура (функция специальных возможностей, доступная при "
+#~ "использовании инструментов «Текст» и «Метка») теперь выглядит крупнее на "
+#~ "больших экранах; это удобно для пользователей более грубых устройств "
+#~ "ввода, таких как системы отслеживания движений глаз."
+
+#~ msgid ""
+#~ "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
+#~ "contiguous strokes when the pointer is moved quickly."
+#~ msgstr ""
+#~ "Для инструмента «Ластик» добавлены новые (более маленькие) размеры и "
+#~ "реализованы плавные, непрерывные мазки при быстром перемещении указателя "
+#~ "мыши."
+
+#~ msgid ""
+#~ "Finally, this newest version adds options to export individual drawings "
+#~ "and GIF animations, making it easy to share pictures, cartoons, and "
+#~ "slideshows with others."
+#~ msgstr ""
+#~ "Наконец, в этой новейшей версии добавлены возможности экспорта отдельных "
+#~ "рисунков и GIF-анимаций, что позволяет с лёгкостью делиться картинками, "
+#~ "мультфильмами и слайдшоу с другими пользователями."
+
+#~ msgid ""
+#~ "The latest version has promoted the \"Fill\" tool, previously found under "
+#~ "the \"Magic\" section of Tux Paint, to the main toolbar, where it's "
+#~ "easier to find. It also includes some performance improvements during "
+#~ "start-up and when bringing up the \"New\" drawing dialog. The solid "
+#~ "background colors can also be placed at the end of that dialog, allowing "
+#~ "emphasis of template images."
+#~ msgstr ""
+#~ "В последней версии инструмент «Заливка», ранее находившийся в разделе "
+#~ "«Магия» Tux Paint, был перемещён на главную панель инструментов; там его "
+#~ "проще найти. Также улучшена его производительность при запуске и вызове "
+#~ "диалогового окна нового рисунка. Кроме того, пункты сплошных цветов фона "
+#~ "можно расположить в конце этого диалога, что позволяет сосредоточить "
+#~ "внимание на шаблонных изображениях."
+
+#~ msgid ""
+#~ "Tux Paint also now makes it possible to disable stereo sound, which can "
+#~ "benefit users with a hearing impairment, or in situations where only one "
+#~ "speaker is available."
+#~ msgstr ""
+#~ "Теперь в Tux Paint также можно отключать стереозвук, что может быть "
+#~ "удобно пользователям с нарушениями слуха или в тех случаях, когда "
+#~ "доступен только один динамик."
+
+#~ msgid ""
+#~ "New in this version are a \"color picker\", which allows any color within "
+#~ "a drawing to be chosen using the pointer, and a set of three-, four-, and "
+#~ "five-pointed star shapes."
+#~ msgstr ""
+#~ "Новые возможности в этой версии: «пипетка», позволяющая выбрать любой "
+#~ "цвет на рисунке с помощью указателя мыши, а также возможность создавать "
+#~ "трёх-, четырёх- и пятиконечные формы звёзд."
+
+#~ msgid ""
+#~ "The latest version also incorporates a number of new translations, "
+#~ "bringing the number of supported languages up to nearly 130: Bengali, "
+#~ "Bodo, Dogri, Kabyle, Urdu, and Devanagari and Perso-Arabic variations of "
+#~ "Kashmiri and Sindhi. Thirty other translations have been updated, as well."
+#~ msgstr ""
+#~ "Последняя версия также включает ряд новых переводов: бенгальский, бодо, "
+#~ "догри, кабильский, урду, а также деванагари и персо-арабские варианты "
+#~ "кашмири и синдхи. Теперь поддерживаются почти 130 языков. Кроме того, "
+#~ "обновлены тридцать других переводов."
 
 #~ msgid "Choose the picture you want, then click “Open”."
 #~ msgstr "Выберите картинку, а потом щёлкните «Открыть»."
