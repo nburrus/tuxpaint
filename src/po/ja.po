@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-08 22:58+0900\n"
-"PO-Revision-Date: 2023-06-30 17:47+0900\n"
+"PO-Revision-Date: 2023-07-08 23:03+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -233,16 +233,13 @@ msgstr ""
 "クリックしたところの かたちにあわせてグラデーションをつけて ぬりつぶします。"
 
 #: ../fill_tools.h:75
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to fill an area with a linear gradient (from the chosen "
-#| "color to transparent)."
+#, c-format
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
 msgstr ""
 "クリックしてからドラッグすると ひとつのむきにグラデーションをつけて ぬりつぶ"
-"します。"
+"します。（いまの かくど：%.0f °）"
 
 #. Congratulations #1
 #: ../great.h:37
