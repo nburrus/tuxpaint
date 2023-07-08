@@ -20971,7 +20971,9 @@ static SDL_Surface *_load_svg(const char *file)
   int width, height, stride;
   float scale;
   int bpp = 32, btpp = 4;
+#if !(LIBRSVG_MAJOR_VERSION < 2 || LIBRSVG_MINOR_VERSION < 46)
   RsvgRectangle viewport;
+#endif
   SDL_Surface *sdl_surface, *sdl_surface_tmp;
   Uint32 rmask, gmask, bmask, amask;
 
@@ -21075,6 +21077,9 @@ static SDL_Surface *_load_svg(const char *file)
 
   /* FIXME: We can use cairo_rotate() here to rotate stamps! -bjk 2007.06.21 */
 
+#if LIBRSVG_MAJOR_VERSION < 2 || LIBRSVG_MINOR_VERSION < 46
+  rsvg_handle_render_cairo(rsvg_handle, cr);
+#else
   viewport.x = 0;
   viewport.y = 0;
   viewport.width = width;
@@ -21087,6 +21092,7 @@ static SDL_Surface *_load_svg(const char *file)
     &viewport,
     &gerr);
   /* FIXME: ignoring errors (gerr) for now -bjk 2023.06.18 */
+#endif
 
   cairo_surface_finish(cairo_surf);
 
