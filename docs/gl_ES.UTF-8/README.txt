@@ -8,42 +8,42 @@
 
                                29 de Maio de 2023
 
-         +-----------------------------------------------------------+
-         |Índice                                                     |
-         |-----------------------------------------------------------|
-         |  * Sobre Tux Paint                                        |
-         |  * Uso de Tux Paint                                       |
-         |       * Inicio de Tux Paint                               |
-         |       * Pantalla de título                                |
-         |       * Pantalla principal                                |
-         |       * Ferramentas dispoñíbeis                           |
-         |            * Ferramentas de debuxo                        |
-         |                 * Ferramenta «Pintar» (pinceis)           |
-         |                 * Ferramenta «Selo» (selos de caucho)     |
-         |                 * Ferramenta «Liñas»                      |
-         |                 * Ferramenta «Formas»                     |
-         |                 * Ferramentas «Texto» e «Etiquetas»       |
-         |                 * Ferramenta «Encher»                     |
-         |                 * Ferramenta «Maxia» (efectos especiais)  |
-         |                 * Ferramenta de «Goma» (de borrar)        |
-         |            * Outros controis                              |
-         |                 * "Undo" and "Redo" Commands              |
-         |                 * Orde «Novo»                             |
-         |                 * Orde «Abrir»                            |
-         |                 * Orde «Gardar»                           |
-         |                 * Orde «Imprimir»                         |
-         |                 * Orde «Diapositivas» (en «Abrir»)        |
-         |                 * Orde «Saír»                             |
-         |                 * Silenciar o son                         |
-         |  * Carga doutras imaxes en Tux Paint                      |
-         |  * Máis información                                       |
-         |  * Como obter axuda                                       |
-         |  * Como participar                                        |
-         +-----------------------------------------------------------+
+        +-------------------------------------------------------------+
+        |Índice                                                       |
+        |-------------------------------------------------------------|
+        |I. Sobre Tux Paint                                           |
+        |II. Uso de Tux Paint                                         |
+        |      A. Inicio de Tux Paint                                 |
+        |      B. Pantalla de título                                  |
+        |      C. Pantalla principal                                  |
+        |      D. Ferramentas dispoñíbeis                             |
+        |           1. Ferramentas de debuxo                          |
+        |                a. Ferramenta «Pintar» (pinceis)             |
+        |                b. Ferramenta «Selo» (selos de caucho)       |
+        |                c. Ferramenta «Liñas»                        |
+        |                d. Ferramenta «Formas»                       |
+        |                e. Ferramentas «Texto» e «Etiquetas»         |
+        |                f. Ferramenta «Encher»                       |
+        |                g. Ferramenta «Maxia» (efectos especiais)    |
+        |                h. Ferramenta de «Goma» (de borrar)          |
+        |           2. Outros controis                                |
+        |                a. "Undo" and "Redo" Commands                |
+        |                b. Orde «Novo»                               |
+        |                c. Orde «Abrir»                              |
+        |                d. Orde «Gardar»                             |
+        |                e. Orde «Imprimir»                           |
+        |                f. Orde «Diapositivas» (en «Abrir»)          |
+        |                g. Orde «Saír»                               |
+        |                h. Silenciar o son                           |
+        |III. Carga doutras imaxes en Tux Paint                       |
+        |IV. Máis información                                         |
+        |V. Como obter axuda                                          |
+        |VI. Como participar                                          |
+        +-------------------------------------------------------------+
 
-                                Sobre Tux Paint
+                               I. Sobre Tux Paint
 
-Que é «Tux Paint»?
+A. Que é «Tux Paint»?
 
    Tux Paint é un programa de debuxo libre e de balde deseñado para cativos
    (3 ou máis anos). Ten unha interface sinxela e doada de usar, divertidos
@@ -52,7 +52,7 @@ Que é «Tux Paint»?
    variedade de ferramentas de debuxo para axudar ao seu cativo a ser
    creativo.
 
-Objectives
+B. Objectives
 
    Doado e divertido
            Tux Paint pretende ser un sinxelo programa de debuxo para cativos
@@ -83,7 +83,14 @@ Objectives
            faise seleccionándoa nunha colección de miniaturas. O acceso a
            outros ficheiros da computadora está restrinxido.
 
-Licenza
+   Accessibility
+           Tux Paint offers a number of accessibility options, including
+           increasing the size of control buttons, changing the UI font,
+           options to control the cursor (mouse pointer) using the keyboard
+           or other input devices (joystick, gamepad, etc.), an on-screen
+           keyboard, and "stick" mouse clicks.
+
+C. Licenza
 
    Tux Paint é un proxecto de código aberto, software libre publicado baixo a
    licenza pública xeral GNU (GPL). É de balde e o «código fonte» detrás do
@@ -92,7 +99,7 @@ Licenza
 
    Consulte o texto completo da licenza GPL en COPYING.txt.
 
-What's New in Tux Paint version 0.9.31?
+D. What's New in Tux Paint version 0.9.31?
 
    Fuzzy Erasers
            Fuzzy-edged round erasers have been added to the Eraser tool
@@ -119,11 +126,11 @@ What's New in Tux Paint version 0.9.31?
 
    See CHANGES.txt for the complete list of changes.
 
-                                Uso de Tux Paint
+                              II. Uso de Tux Paint
 
-Inicio de Tux Paint
+A. Inicio de Tux Paint
 
-  Usuarios de Linux/Unix
+  1. Usuarios de Linux/Unix
 
    Tux Paint should have placed a launcher icon in your KDE and/or GNOME
    menus, under 'Graphics.'
@@ -135,7 +142,7 @@ Inicio de Tux Paint
 
    Se se producen erros, amosaranse no terminal (en STDERR).
 
-  Usuarios de Windows
+  2. Usuarios de Windows
 
                                                         [Icona de Tux Paint]  
                                                              Tux Paint        
@@ -159,13 +166,13 @@ Inicio de Tux Paint
    Se usou a descarga de «ficheiro ZIP», o cartafol de Tux Paint estará onde
    teña extraído o contido do ficheiro ZIP.
 
-  Usuarios de macOS
+  3. Usuarios de macOS
 
    Simplemente fai dobre clic na icona «Tux Paint».
 
    [Pantalla de título]
 
-Pantalla de título
+B. Pantalla de título
 
    Cando se cargue por primeira vez Tux Paint, aparecerá unha pantalla de
    título/recoñecementos.
@@ -174,7 +181,7 @@ Pantalla de título
    xanela de Tux Paint para continuar. (Ou, após aproximadamente 5 segundos,
    a pantalla do título desaparecerá automaticamente.)
 
-Pantalla principal
+C. Pantalla principal
 
    A pantalla principal divídese nas seguintes seccións:
 
@@ -282,11 +289,11 @@ Pantalla principal
            Na parte inferior da pantalla, Tux, o pingüín de Linux, ofrece
            consellos e outra información mentres usa Tux Paint.
 
-Ferramentas dispoñíbeis
+D. Ferramentas dispoñíbeis
 
-  Ferramentas de debuxo
+  1. Ferramentas de debuxo
 
-   Ferramenta «Pintar» (pinceis)
+   a. Ferramenta «Pintar» (pinceis)
 
            A ferramenta Pincel permítelle debuxar a man alzada usando varios
            pinceis (escollidos no Selector da dereita) e cores (escollidos na
@@ -332,7 +339,7 @@ Ferramentas dispoñíbeis
              display the brush spacing controls. See the "Options"
              documentation.
 
-   Ferramenta «Selo» (selos de caucho)
+   b.Ferramenta «Selo» (selos de caucho)
 
            A ferramenta Selo é como un conxunto de selos de cacho ou
            adhesivos. Permítelle pegar imaxes fotográficas ou debuxadas
@@ -401,7 +408,7 @@ Ferramentas dispoñíbeis
                         efectos de son e os sons descritivos para o selo
                         seleccionado nese momento.
 
-   Ferramenta «Liñas»
+   c.Ferramenta «Liñas»
 
            Esta ferramenta permítelle debuxar liñas rectas empregando os
            diversos pinceis e cores que normalmente emprega co pincel.
@@ -425,7 +432,7 @@ Ferramentas dispoñíbeis
            Brush spacing may be adjusted. See the brush spacing section of
            the "Paint" tool, above, to learn more.
 
-   Ferramenta «Formas»
+   d.Ferramenta «Formas»
 
            Esta ferramenta permítelle debuxar algunhas formas sinxelas
            enchidas e sen encher.
@@ -487,7 +494,7 @@ Ferramentas dispoñíbeis
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
-   Ferramentas «Texto» e «Etiquetas»
+   e.Ferramentas «Texto» e «Etiquetas»
 
            Choose a font (from the 'Letters' available on the right) and a
            color (from the color palette near the bottom). You may also apply
@@ -593,7 +600,7 @@ Ferramentas dispoñíbeis
                         ⚙ See the "Options" and "Extending Tux Paint"
                         documentation for more information.
 
-   Ferramenta «Encher»
+   f.Ferramenta «Encher»
 
            A ferramenta «Encher» inunda unha área contigua do seu debuxo
            cunha cor da súa escolla. Ofrécense tres opcións de recheo:
@@ -615,7 +622,7 @@ Ferramentas dispoñíbeis
            the 'Solid' method of filling. 'Shaped' fill was introduced in Tux
            Paint 0.9.29.
 
-   Ferramenta «Maxia» (efectos especiais)
+   g.Ferramenta «Maxia» (efectos especiais)
 
            A ferramenta Maxia é realmente un conxunto de ferramentas
            especiais. Seleccione un dos efectos «máxicos» no selector da
@@ -660,7 +667,7 @@ Ferramentas dispoñíbeis
            Consulte as instrucións de cada ferramenta Máxica (no cartafol
            «magic-docs»).
 
-   Ferramenta de «Goma» (de borrar)
+   h.Ferramenta de «Goma» (de borrar)
 
            Esta ferramenta é similar ao pincel. Onde queira que prema (ou
            prema e arrastre), a imaxe borrarase. (Pode ser branco, doutra cor
@@ -680,9 +687,9 @@ Ferramentas dispoñíbeis
            or when using an interactive magic tool). Release the mouse to
            return to your currently-selected tool.
 
-  Outros controis
+  2. Outros controis
 
-   "Undo" and "Redo" Commands
+   a."Undo" and "Redo" Commands
 
            Clicking the "Undo" button will undo (revert) the last drawing
            action. You can even undo more than once!
@@ -699,7 +706,7 @@ Ferramentas dispoñíbeis
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [R] no teclado para
            Refacer.
 
-   Orde «Novo»
+   b.Orde «Novo»
 
            Ao premer no botón «Novo» iniciarase un novo debuxo. Aparecerá un
            diálogo no que pode escoller comezar unha nova imaxe cunha cor de
@@ -772,7 +779,7 @@ Ferramentas dispoñíbeis
            dialog (below the Starters and Templates), via the "newcolorslast"
            option.
 
-   Orde «Abrir»
+   c.Orde «Abrir»
 
            Isto amosa unha lista de todas as imaxes que gardou. Se hai máis
            do que pode caber na pantalla, use as frechas arriba e abaixo na
@@ -832,7 +839,7 @@ Ferramentas dispoñíbeis
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [O] no teclado para
            activar o diálogo «Abrir».
 
-   Orde «Gardar»
+   d.Orde «Gardar»
 
            Isto garda a súa imaxe actual.
 
@@ -855,7 +862,7 @@ Ferramentas dispoñíbeis
            ⌨ Nota: Tamén pode premer [Control / ⌘] + [S] no teclado para
            gardar.
 
-   Orde «Imprimir»
+   e.Orde «Imprimir»
 
            Prema neste botón e imprimirase a súa imaxe.
 
@@ -956,7 +963,7 @@ Ferramentas dispoñíbeis
 
                         ⚙ Vexa a documentación de «Opcións.
 
-   Orde «Diapositivas» (en «Abrir»)
+   f.Orde «Diapositivas» (en «Abrir»)
 
            O botón «Diapositivas» está dispoñíbel no diálogo «Abrir». Pode
            usarse para reproducir unha animación sinxela dentro de Tux Paint
@@ -1031,7 +1038,7 @@ Ferramentas dispoñíbeis
            Prema en «Atrás» na pantalla de selección de imaxes de
            diapositivas para volver ao diálogo «Abrir».
 
-   Orde «Saír»
+   g.Orde «Saír»
 
            Ao premer no botón «Saír», pechando a xanela de Tux Paint ou
            premendo a tecla [Escape] sairase de Tux Paint.
@@ -1059,7 +1066,7 @@ Ferramentas dispoñíbeis
 
            ⚙ Vexa a documentación de «Opcións.
 
-   Silenciar o son
+   h.Silenciar o son
 
            Non hai ningún botón de control na pantalla neste momento, pero ao
            usar a secuencia de teclado [Alt] + [S], os efectos de son pódense
@@ -1073,7 +1080,9 @@ Ferramentas dispoñíbeis
 
            ⚙ Vexa a documentación de «Opcións.
 
-                       Carga doutras imaxes en Tux Paint
+                     III. Carga doutras imaxes en Tux Paint
+
+A. Overview
 
    O diálogo «Abrir» de Tux Paint só amosa as imaxes que creou con Tux Paint.
    Entón, que facer se quere cargar algún outro debuxo ou incluso unha
@@ -1107,86 +1116,87 @@ Ferramentas dispoñíbeis
    opción «Exportar» do diálogo «Abrir» de Tux Paint para copialas a unha
    localización de acceso máis doado e seguro.
 
-Uso do script de importación, «tuxpaint-import»
+B. Uso do script de importación, «tuxpaint-import»
 
-     Os usuarios de Linux e Unix poden usar o script «tuxpaint-import» que se
-     instala ao instalar Tux Paint. Emprega algunhas ferramentas NetPBM para
-     converter a imaxe («anytopnm»), redimensionala de xeito que poida caber
-     no lenzo de Tux Paint («pnmscale») e convertela a PNG («pnmtopng»).
+   Os usuarios de Linux e Unix poden usar o script «tuxpaint-import» que se
+   instala ao instalar Tux Paint. Emprega algunhas ferramentas NetPBM para
+   converter a imaxe («anytopnm»), redimensionala de xeito que poida caber no
+   lenzo de Tux Paint («pnmscale») e convertela a PNG («pnmtopng»).
 
-     Tamén usa a orde «date» para obter a hora e a data actual, que é a
-     convención de nomes de ficheiros que usa Tux Paint para os ficheiros
-     gardados. (Lembre que nunca se lle pide un «nome de ficheiro» cando vai
-     gardar ou abrir imaxes.)
+   Tamén usa a orde «date» para obter a hora e a data actual, que é a
+   convención de nomes de ficheiros que usa Tux Paint para os ficheiros
+   gardados. (Lembre que nunca se lle pide un «nome de ficheiro» cando vai
+   gardar ou abrir imaxes.)
 
-     Para usar este script, abonda con executalo dende unha liña de ordes e
-     fornecerlle o nome do ficheiro que quere converter.
+   Para usar este script, abonda con executalo dende unha liña de ordes e
+   fornecerlle o nome do ficheiro que quere converter.
 
-     They will be converted and placed in your Tux Paint "saved" directory.
+   They will be converted and placed in your Tux Paint "saved" directory.
 
-     💡 Note: If you're doing this for a different user (e.g., your child)
-     you'll need to make sure to run the command under their account.)
+   💡 Note: If you're doing this for a different user (e.g., your child)
+   you'll need to make sure to run the command under their account.)
 
-     Exemplo:
+   Exemplo:
 
-       $ tuxpaint-import avoa.jpg
-       avoa.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
-       jpegtopnm: WRITING A PPM FILE
+     $ tuxpaint-import avoa.jpg
+     avoa.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
+     jpegtopnm: WRITING A PPM FILE
 
-     A primeira liña («tuxpaint-import avoa.jpg») é a orde a executar. As
-     dúas liñas seguintes son a saída do programa mentres funciona.
+   A primeira liña («tuxpaint-import avoa.jpg») é a orde a executar. As dúas
+   liñas seguintes son a saída do programa mentres funciona.
 
-     Agora pode cargar Tux Paint e unha versión desa imaxe orixinal estará
-     dispoñíbel no diálogo «Abrir». Só ten que premer dúas veces na súa
-     icona.
+   Agora pode cargar Tux Paint e unha versión desa imaxe orixinal estará
+   dispoñíbel no diálogo «Abrir». Só ten que premer dúas veces na súa icona.
 
-Importar imaxes manualmente
+C. Importar imaxes manualmente
 
-     Os usuarios de Windows, macOS e Haiku que queiran importar imaxes
-     arbitrarias a Tux Paint deben facelo mediante un proceso manual.
+   Os usuarios de Windows, macOS e Haiku que queiran importar imaxes
+   arbitrarias a Tux Paint deben facelo mediante un proceso manual.
 
-     Cargue un programa gráfico que sexa quen tanto de cargar a súa imaxe
-     como de gardar un ficheiro en formato PNG. (Vexa o ficheiro de
-     documentación «PNG.html» para obter unha lista do software suxerido e
-     outras referencias.)
+   Cargue un programa gráfico que sexa quen tanto de cargar a súa imaxe como
+   de gardar un ficheiro en formato PNG. (Vexa o ficheiro de documentación
+   «PNG.html» para obter unha lista do software suxerido e outras
+   referencias.)
 
-     Cando Tux Paint carga unha imaxe que non ten o mesmo tamaño que o seu
-     lenzo de debuxo, escala (e ás veces mancha os bordos) da imaxe para que
-     se axuste ao lenzo.
+   Cando Tux Paint carga unha imaxe que non ten o mesmo tamaño que o seu
+   lenzo de debuxo, escala (e ás veces mancha os bordos) da imaxe para que se
+   axuste ao lenzo.
 
-     Para evitar que a imaxe se estire ou manche, pode redimensionala ao
-     tamaño do lenzo de Tux Paint. Este tamaño depende do tamaño da xanela de
-     Tux Paint ou da resolución coa que se executa Tux Paint, se está en
-     pantalla completa. (Nota: A resolución predeterminada é 800x600.) Vexa
-     «Cálculo das dimensións da imaxe», a continuación.
+   Para evitar que a imaxe se estire ou manche, pode redimensionala ao tamaño
+   do lenzo de Tux Paint. Este tamaño depende do tamaño da xanela de Tux
+   Paint ou da resolución coa que se executa Tux Paint, se está en pantalla
+   completa. (Nota: A resolución predeterminada é 800x600.) Vexa «Cálculo das
+   dimensións da imaxe», a continuación.
 
-     Gardar a imaxe en formato PNG. Recoméndase encarecidamente que nomee o
-     ficheiro usando a data e hora actuais, xa que esa é a convención que usa
-     Tux Paint:
+  1. Naming the File
 
-       AAAAMMDDhhmmss.png
+   Gardar a imaxe en formato PNG. Recoméndase encarecidamente que nomee o
+   ficheiro usando a data e hora actuais, xa que esa é a convención que usa
+   Tux Paint:
 
-       * AAAA = Ano
-       * MM = Mes (dous díxitos, «01»-«12»)
-       * DD = Día do mes (dous díxitos, «01»-«31»)
-       * HH = Hora (dous díxitos, en formato 24 horas, «00»-«23»)
-       * mm = Minuto (dous díxitos, «00»-«59»)
-       * ss = Segundo (dous díxitos, «00»-«59»)
+     AAAAMMDDhhmmss.png
 
-     Exemplo: «20210731110500.png», para o 31 de xullo de 2021 ás 11:05am.
+     * AAAA = Ano
+     * MM = Mes (dous díxitos, «01»-«12»)
+     * DD = Día do mes (dous díxitos, «01»-«31»)
+     * HH = Hora (dous díxitos, en formato 24 horas, «00»-«23»)
+     * mm = Minuto (dous díxitos, «00»-«59»)
+     * ss = Segundo (dous díxitos, «00»-«59»)
 
-     Coloque este ficheiro PNG no seu directorio/cartafol «saved» de Tux
-     Paint. (Ver arriba.)
+   Exemplo: «20210731110500.png», para o 31 de xullo de 2021 ás 11:05am.
 
-  Cálculo das dimensións da imaxe
+   Coloque este ficheiro PNG no seu directorio/cartafol «saved» de Tux Paint.
+   (Ver arriba.)
 
-       É preciso reescribir esta parte da documentación xa que se engadiu a
-       nova opción «buttonsize». Polo de agora, tente debuxar e gardar unha
-       imaxe dentro de Tux Paint, logo determine o tamaño (largo e alto en
-       píxeles) que obtivo e tente igualar iso ao escalar a(s) imaxe(s) que
-       está a importar en Tux Paint.
+  2. Cálculo das dimensións da imaxe
 
-                                Máis información
+   É preciso reescribir esta parte da documentación xa que se engadiu a nova
+   opción «buttonsize». Polo de agora, tente debuxar e gardar unha imaxe
+   dentro de Tux Paint, logo determine o tamaño (largo e alto en píxeles) que
+   obtivo e tente igualar iso ao escalar a(s) imaxe(s) que está a importar en
+   Tux Paint.
+
+                              IV.Máis información
 
    Outra documentación incluída con Tux Paint (que se atopa no
    cartafol/directorio «docs») inclúe:
@@ -1232,7 +1242,7 @@ Importar imaxes manualmente
                 Tux Paint's software license, the GNU General Public License
                 (GPL)
 
-                                Como obter axuda
+                               V.Como obter axuda
 
    If you need help, there are numerous ways to interact with Tux Paint
    developers and other users:
@@ -1244,7 +1254,7 @@ Importar imaxes manualmente
    Para obter máis información, visite a páxina «Contacto» do sitio web
    oficial de Tux Paint: https://tuxpaint.org/contact/
 
-                                Como participar
+                               VI.Como participar
 
    Tux Paint is a volunteer-driven project, and we're happy to accept your
    help in a variety of ways:
@@ -1258,7 +1268,7 @@ Importar imaxes manualmente
    Para obter máis información, visite a páxina «Colabora connosco» do sitio
    web oficial de Tux Paint: https://tuxpaint.org/help/
 
-                  Follow the Tux Paint project on social media
+                VII.Follow the Tux Paint project on social media
 
    Tux Paint maintains a presence on a variety of social media networks,
    where we post updates and artwork.
@@ -1269,7 +1279,7 @@ Importar imaxes manualmente
      * Follow Tux Paint on Tumblr
      * Follow @TuxPaintTweets on Twitter
 
-                               Trademark notices
+                            VIII. Trademark notices
 
      * "Linux" is a registered trademark of Linus Torvalds.
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.

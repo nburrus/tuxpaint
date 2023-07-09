@@ -8,42 +8,42 @@
 
                                   maí 29, 2023
 
-             +----------------------------------------------------+
-             |Table of Contents                                   |
-             |----------------------------------------------------|
-             |  * About Tux Paint                                 |
-             |  * Using Tux Paint                                 |
-             |       * Launching Tux Paint                        |
-             |       * Title Screen                               |
-             |       * Main Screen                                |
-             |       * Available Tools                            |
-             |            * Drawing Tools                         |
-             |                 * "Paint" Tool (Brush)             |
-             |                 * "Stamp" Tool (Rubber Stamps)     |
-             |                 * "Lines" Tool                     |
-             |                 * "Shapes" Tool                    |
-             |                 * "Text" and "Label" Tools         |
-             |                 * "Fill" Tool                      |
-             |                 * "Magic" Tool (Special Effects)   |
-             |                 * "Eraser" Tool                    |
-             |            * Other Controls                        |
-             |                 * "Undo" and "Redo" Commands       |
-             |                 * "New" Command                    |
-             |                 * "Open" Command                   |
-             |                 * "Save" Command                   |
-             |                 * "Print" Command                  |
-             |                 * "Slides" Command (under "Open")  |
-             |                 * "Quit" Command                   |
-             |                 * Sound Muting                     |
-             |  * Loading Other Pictures into Tux Paint           |
-             |  * Further Reading                                 |
-             |  * How to Get Help                                 |
-             |  * How to Participate                              |
-             +----------------------------------------------------+
+            +------------------------------------------------------+
+            |Table of Contents                                     |
+            |------------------------------------------------------|
+            |I. About Tux Paint                                    |
+            |II. Using Tux Paint                                   |
+            |      A. Launching Tux Paint                          |
+            |      B. Title Screen                                 |
+            |      C. Main Screen                                  |
+            |      D. Available Tools                              |
+            |           1. Drawing Tools                           |
+            |                a. "Paint" Tool (Brush)               |
+            |                b. "Stamp" Tool (Rubber Stamps)       |
+            |                c. "Lines" Tool                       |
+            |                d. "Shapes" Tool                      |
+            |                e. "Text" and "Label" Tools           |
+            |                f. "Fill" Tool                        |
+            |                g. "Magic" Tool (Special Effects)     |
+            |                h. "Eraser" Tool                      |
+            |           2. Other Controls                          |
+            |                a. "Undo" and "Redo" Commands         |
+            |                b. "New" Command                      |
+            |                c. "Open" Command                     |
+            |                d. "Save" Command                     |
+            |                e. "Print" Command                    |
+            |                f. "Slides" Command (under "Open")    |
+            |                g. "Quit" Command                     |
+            |                h. Sound Muting                       |
+            |III. Loading Other Pictures into Tux Paint            |
+            |IV. Further Reading                                   |
+            |V. How to Get Help                                    |
+            |VI. How to Participate                                |
+            +------------------------------------------------------+
 
-                                About Tux Paint
+                               I. About Tux Paint
 
-What Is "Tux Paint"?
+A. What Is "Tux Paint"?
 
    Tux Paint is a free drawing program designed for young children (kids ages
    3 and up). It has a simple, easy-to-use interface, fun sound effects, and
@@ -51,7 +51,7 @@ What Is "Tux Paint"?
    program. It provides a blank canvas and a variety of drawing tools to help
    your child be creative.
 
-Objectives
+B. Objectives
 
    Easy and Fun
            Tux Paint is meant to be a simple drawing program for young
@@ -83,7 +83,14 @@ Objectives
            selecting it from a collection of thumbnails. Access to other
            files on the computer is restricted.
 
-License
+   Accessibility
+           Tux Paint offers a number of accessibility options, including
+           increasing the size of control buttons, changing the UI font,
+           options to control the cursor (mouse pointer) using the keyboard
+           or other input devices (joystick, gamepad, etc.), an on-screen
+           keyboard, and "stick" mouse clicks.
+
+C. License
 
    Tux Paint is an Open Source project, Free Software released under the GNU
    General Public License (GPL). It is free, and the 'source code' behind the
@@ -92,7 +99,7 @@ License
 
    See COPYING.txt for the full text of the GPL license.
 
-What's New in Tux Paint version 0.9.31?
+D. What's New in Tux Paint version 0.9.31?
 
    Fuzzy Erasers
            Fuzzy-edged round erasers have been added to the Eraser tool
@@ -119,11 +126,11 @@ What's New in Tux Paint version 0.9.31?
 
    See CHANGES.txt for the complete list of changes.
 
-                                Using Tux Paint
+                              II. Using Tux Paint
 
-Launching Tux Paint
+A. Launching Tux Paint
 
-  Linux/Unix Users
+  1. Linux/Unix Users
 
    Tux Paint should have placed a launcher icon in your KDE and/or GNOME
    menus, under 'Graphics.'
@@ -135,7 +142,7 @@ Launching Tux Paint
 
    If any errors occur, they will be displayed on the terminal (to STDERR).
 
-  Windows Users
+  2. Windows Users
 
                                                             [Tux Paint Icon]  
                                                                Tux Paint      
@@ -159,13 +166,13 @@ Launching Tux Paint
    If you used the 'ZIP-file' download, Tux Paint's folder will be wherever
    you extracted the contents of the ZIP file.
 
-  macOS Users
+  3. macOS Users
 
    Simply double-click the "Tux Paint" icon.
 
    [Title screen]
 
-Title Screen
+B. Title Screen
 
    When Tux Paint first loads, a title/credits screen will appear.
 
@@ -173,7 +180,7 @@ Title Screen
    window to continue. (Or, after about 5 seconds, the title screen will go
    away automatically.)
 
-Main Screen
+C. Main Screen
 
    The main screen is divided into the following sections:
 
@@ -280,11 +287,11 @@ Main Screen
            At the very bottom of the screen, Tux, the Linux Penguin, provides
            tips and other information while you use Tux Paint.
 
-Available Tools
+D. Available Tools
 
-  Drawing Tools
+  1. Drawing Tools
 
-   "Paint" Tool (Brush)
+   a. "Paint" Tool (Brush)
 
            The Paint Brush tool lets you draw freehand, using various brushes
            (chosen in the Selector on the right) and colors (chosen in the
@@ -330,7 +337,7 @@ Available Tools
              display the brush spacing controls. See the "Options"
              documentation.
 
-   "Stamp" Tool (Rubber Stamps)
+   b."Stamp" Tool (Rubber Stamps)
 
            The Stamp tool is like a set of rubber stamps or stickers. It lets
            you paste pre-drawn or photographic images (like a picture of a
@@ -395,7 +402,7 @@ Available Tools
                         penguin) allow you to re-play the sound effects and
                         descriptive sounds for the currently-selected stamp.
 
-   "Lines" Tool
+   c."Lines" Tool
 
            This tool lets you draw straight lines using the various brushes
            and colors you normally use with the Paint Brush.
@@ -420,7 +427,7 @@ Available Tools
            Brush spacing may be adjusted. See the brush spacing section of
            the "Paint" tool, above, to learn more.
 
-   "Shapes" Tool
+   d."Shapes" Tool
 
            This tool lets you draw some simple filled, and un-filled shapes.
 
@@ -480,7 +487,7 @@ Available Tools
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
-   "Text" and "Label" Tools
+   e."Text" and "Label" Tools
 
            Choose a font (from the 'Letters' available on the right) and a
            color (from the color palette near the bottom). You may also apply
@@ -581,7 +588,7 @@ Available Tools
                         ⚙ See the "Options" and "Extending Tux Paint"
                         documentation for more information.
 
-   "Fill" Tool
+   f."Fill" Tool
 
            The 'Fill' tool 'flood-fills' a contiguous area of your drawing
            with a color of your choice. Three fill options are offered:
@@ -601,7 +608,7 @@ Available Tools
            the 'Solid' method of filling. 'Shaped' fill was introduced in Tux
            Paint 0.9.29.
 
-   "Magic" Tool (Special Effects)
+   g."Magic" Tool (Special Effects)
 
            The Magic tool is actually a set of special tools. Select one of
            the 'magic' effects from the selector on the right. Then,
@@ -646,7 +653,7 @@ Available Tools
            See the instructions for each Magic tool (in the 'magic-docs'
            folder).
 
-   "Eraser" Tool
+   h."Eraser" Tool
 
            This tool is similar to the Paint Brush. Wherever you click (or
            click and drag), the picture will be erased. (This may be white,
@@ -667,9 +674,9 @@ Available Tools
            or when using an interactive magic tool). Release the mouse to
            return to your currently-selected tool.
 
-  Other Controls
+  2. Other Controls
 
-   "Undo" and "Redo" Commands
+   a."Undo" and "Redo" Commands
 
            Clicking the "Undo" button will undo (revert) the last drawing
            action. You can even undo more than once!
@@ -686,7 +693,7 @@ Available Tools
            ⌨ Note: You can also press [Control / ⌘] + [R] on the keyboard to
            Redo.
 
-   "New" Command
+   b."New" Command
 
            Clicking the 'New' button will start a new drawing. A dialog will
            appear where you may choose to start a new picture using a solid
@@ -759,7 +766,7 @@ Available Tools
            dialog (below the Starters and Templates), via the "newcolorslast"
            option.
 
-   "Open" Command
+   c."Open" Command
 
            This shows you a list of all of the pictures you've saved. If
            there are more than can fit on the screen, use the up and down
@@ -818,7 +825,7 @@ Available Tools
            ⌨ Note: You can also press [Control / ⌘] + [O] on the keyboard to
            bring up the 'Open' dialog.
 
-   "Save" Command
+   d."Save" Command
 
            This saves your current picture.
 
@@ -839,7 +846,7 @@ Available Tools
            ⌨ Note: You can also press [Control / ⌘] + [S] on the keyboard to
            save.
 
-   "Print" Command
+   e."Print" Command
 
            Click this button and your picture will be printed!
 
@@ -939,7 +946,7 @@ Available Tools
 
                         ⚙ See the "Options" documentation.
 
-   "Slides" Command (under "Open")
+   f."Slides" Command (under "Open")
 
            The 'Slides' button is available in the 'Open' dialog. It can be
            used to play a simple animation within Tux Paint, or a slideshow
@@ -1013,7 +1020,7 @@ Available Tools
            Click 'Back' in the slideshow image selection screen to return to
            the 'Open' dialog.
 
-   "Quit" Command
+   g."Quit" Command
 
            Clicking the 'Quit' button, closing the Tux Paint window, or
            pushing the [Escape] key will quit Tux Paint.
@@ -1041,7 +1048,7 @@ Available Tools
 
            ⚙ See the "Options" documentation.
 
-   Sound Muting
+   h.Sound Muting
 
            There is no on-screen control button at this time, but by using
            the [Alt] + [S] keyboard sequence, sound effects can be disabled
@@ -1054,7 +1061,9 @@ Available Tools
 
            ⚙ See the "Options" documentation.
 
-                     Loading Other Pictures into Tux Paint
+                   III. Loading Other Pictures into Tux Paint
+
+A. Overview
 
    Tux Paint's 'Open' dialog only displays pictures you created with Tux
    Paint. So what do you do if you want to load some other drawinng or even a
@@ -1085,84 +1094,85 @@ Available Tools
    from Tux Paint's 'Open' dialog can be used to copy them to a location
    that's easier and safer to access.
 
-Using the import script, "tuxpaint-import"
+B. Using the import script, "tuxpaint-import"
 
-     Linux and Unix users can use the "tuxpaint-import" shell script which
-     gets installed when you install Tux Paint. It uses some NetPBM tools to
-     convert the image ("anytopnm"), resize it so that it will fit in Tux
-     Paint's canvas ("pnmscale"), and convert it to a PNG ("pnmtopng").
+   Linux and Unix users can use the "tuxpaint-import" shell script which gets
+   installed when you install Tux Paint. It uses some NetPBM tools to convert
+   the image ("anytopnm"), resize it so that it will fit in Tux Paint's
+   canvas ("pnmscale"), and convert it to a PNG ("pnmtopng").
 
-     It also uses the "date" command to get the current time and date, which
-     is the file-naming convention Tux Paint uses for saved files. (Remember,
-     you are never asked for a 'filename' when you go to save or open
-     pictures!)
+   It also uses the "date" command to get the current time and date, which is
+   the file-naming convention Tux Paint uses for saved files. (Remember, you
+   are never asked for a 'filename' when you go to save or open pictures!)
 
-     To use this script, simply run it from a command-line prompt, and
-     provide it the name(s) of the file(s) you wish to convert.
+   To use this script, simply run it from a command-line prompt, and provide
+   it the name(s) of the file(s) you wish to convert.
 
-     They will be converted and placed in your Tux Paint "saved" directory.
+   They will be converted and placed in your Tux Paint "saved" directory.
 
-     💡 Note: If you're doing this for a different user (e.g., your child)
-     you'll need to make sure to run the command under their account.)
+   💡 Note: If you're doing this for a different user (e.g., your child)
+   you'll need to make sure to run the command under their account.)
 
-     Example:
+   Example:
 
-       $ tuxpaint-import grandma.jpg
-       grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
-       jpegtopnm: WRITING A PPM FILE
+     $ tuxpaint-import grandma.jpg
+     grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
+     jpegtopnm: WRITING A PPM FILE
 
-     The first line ("tuxpaint-import grandma.jpg") is the command to run.
-     The following two lines are output from the program while it's working.
+   The first line ("tuxpaint-import grandma.jpg") is the command to run. The
+   following two lines are output from the program while it's working.
 
-     Now you can load Tux Paint, and a version of that original picture will
-     be available under the 'Open' dialog. Just double-click its icon!
+   Now you can load Tux Paint, and a version of that original picture will be
+   available under the 'Open' dialog. Just double-click its icon!
 
-Importing Pictures Manually
+C. Importing Pictures Manually
 
-     Windows, macOS, and Haiku users who wish to import arbitrary images into
-     Tux Paint must do so via a manual process.
+   Windows, macOS, and Haiku users who wish to import arbitrary images into
+   Tux Paint must do so via a manual process.
 
-     Load a graphics program that is capable of both loading your picture and
-     saving a PNG format file. (See the documentation file "PNG.html" for a
-     list of suggested software, and other references.)
+   Load a graphics program that is capable of both loading your picture and
+   saving a PNG format file. (See the documentation file "PNG.html" for a
+   list of suggested software, and other references.)
 
-     When Tux Paint loads an image that's not the same size as its drawing
-     canvas, it scales (and sometimes smears the edges of) the image so that
-     it fits within the canvas.
+   When Tux Paint loads an image that's not the same size as its drawing
+   canvas, it scales (and sometimes smears the edges of) the image so that it
+   fits within the canvas.
 
-     To avoid having the image stretched or smeared, you can resize it to Tux
-     Paint's canvas size. This size depends on the size of the Tux Paint
-     window, or resolution at which Tux Paint is run, if in fullscreen.
-     (Note: The default resolution is 800x600.) See "Calculating Image
-     Dimensions", below.
+   To avoid having the image stretched or smeared, you can resize it to Tux
+   Paint's canvas size. This size depends on the size of the Tux Paint
+   window, or resolution at which Tux Paint is run, if in fullscreen. (Note:
+   The default resolution is 800x600.) See "Calculating Image Dimensions",
+   below.
 
-     Save the picture in PNG format. It is highly recommended that you name
-     the filename using the current date and time, since that's the
-     convention Tux Paint uses:
+  1. Naming the File
 
-       YYYYMMDDhhmmss.png
+   Save the picture in PNG format. It is highly recommended that you name the
+   filename using the current date and time, since that's the convention Tux
+   Paint uses:
 
-       * YYYY = Year
-       * MM = Month (two digits, "01"-"12")
-       * DD = Day of month (two digits, "01"-"31")
-       * HH = Hour (two digits, in 24-hour format, "00"-"23")
-       * mm = Minute (two digits, "00"-"59")
-       * ss = Seconds (two digits, "00"-"59")
+     YYYYMMDDhhmmss.png
 
-     Example: "20210731110500.png", for July 31, 2021 at 11:05am.
+     * YYYY = Year
+     * MM = Month (two digits, "01"-"12")
+     * DD = Day of month (two digits, "01"-"31")
+     * HH = Hour (two digits, in 24-hour format, "00"-"23")
+     * mm = Minute (two digits, "00"-"59")
+     * ss = Seconds (two digits, "00"-"59")
 
-     Place this PNG file in your Tux Paint "saved" directory/folder. (See
-     above.)
+   Example: "20210731110500.png", for July 31, 2021 at 11:05am.
 
-  Calculating Image Dimensions
+   Place this PNG file in your Tux Paint "saved" directory/folder. (See
+   above.)
 
-       This part of the documentation needs to be rewritten, since the new
-       "buttonsize" option was added. For now, try drawing and saving an
-       image within Tux Paint, then determine what size (pixel width and
-       height) it came out to, and try to match that when scaling the
-       picture(s) you're importing into Tux Paint.
+  2. Calculating Image Dimensions
 
-                                Further Reading
+   This part of the documentation needs to be rewritten, since the new
+   "buttonsize" option was added. For now, try drawing and saving an image
+   within Tux Paint, then determine what size (pixel width and height) it
+   came out to, and try to match that when scaling the picture(s) you're
+   importing into Tux Paint.
+
+                               IV.Further Reading
 
    Other documentation included with Tux Paint (found in the "docs"
    folder/directory) includes:
@@ -1207,7 +1217,7 @@ Importing Pictures Manually
                 Tux Paint's software license, the GNU General Public License
                 (GPL)
 
-                                How to Get Help
+                               V.How to Get Help
 
    If you need help, there are numerous ways to interact with Tux Paint
    developers and other users:
@@ -1219,7 +1229,7 @@ Importing Pictures Manually
    To learn more, visit the "Contact" page of the official Tux Paint website:
    https://tuxpaint.org/contact/
 
-                               How to Participate
+                             VI.How to Participate
 
    Tux Paint is a volunteer-driven project, and we're happy to accept your
    help in a variety of ways:
@@ -1233,7 +1243,7 @@ Importing Pictures Manually
    To learn more, visit the "Help Us" page of the official Tux Paint website:
    https://tuxpaint.org/help/
 
-                  Follow the Tux Paint project on social media
+                VII.Follow the Tux Paint project on social media
 
    Tux Paint maintains a presence on a variety of social media networks,
    where we post updates and artwork.
@@ -1244,7 +1254,7 @@ Importing Pictures Manually
      * Follow Tux Paint on Tumblr
      * Follow @TuxPaintTweets on Twitter
 
-                               Trademark notices
+                            VIII. Trademark notices
 
      * "Linux" is a registered trademark of Linus Torvalds.
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.

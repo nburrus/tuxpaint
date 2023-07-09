@@ -8,42 +8,42 @@
 
                                   mai 29, 2023
 
-          +----------------------------------------------------------+
-          |Table des matières                                        |
-          |----------------------------------------------------------|
-          |  * À propos de Tux Paint                                 |
-          |  * Utiliser Tux Paint                                    |
-          |       * Lancement de Tux Paint                           |
-          |       * Écran titre                                      |
-          |       * Écran principal                                  |
-          |       * Outils disponibles                               |
-          |            * Outils de dessin                            |
-          |                 * Outil "Peinture" (pinceau)             |
-          |                 * Outil "Tampon" (tampon de caoutchouc)  |
-          |                 * Outil "Lignes"                         |
-          |                 * Outil "Formes"                         |
-          |                 * Outils "Texte" et "Étiquette"          |
-          |                 * Outil "Remplir"                        |
-          |                 * Outil "Magie" (Effets spéciaux)        |
-          |                 * Outil "Gomme"                          |
-          |            * Autres contrôles                            |
-          |                 * "Undo" and "Redo" Commands             |
-          |                 * Commande "Nouveau"                     |
-          |                 * Commande "Ouvrir"                      |
-          |                 * Commande "Sauvegarder"                 |
-          |                 * Commande "Imprimer"                    |
-          |                 * Commande "Diapos" (sous "Ouvrir")      |
-          |                 * Commande "Quitter"                     |
-          |                 * Coupure du son                         |
-          |  * Chargement d'autres images dans Tux Paint             |
-          |  * Lectures complémentaires                              |
-          |  * Comment obtenir de l'aide                             |
-          |  * Comment participer                                    |
-          +----------------------------------------------------------+
+         +------------------------------------------------------------+
+         |Table des matières                                          |
+         |------------------------------------------------------------|
+         |I. À propos de Tux Paint                                    |
+         |II. Utiliser Tux Paint                                      |
+         |      A. Lancement de Tux Paint                             |
+         |      B. Écran titre                                        |
+         |      C. Écran principal                                    |
+         |      D. Outils disponibles                                 |
+         |           1. Outils de dessin                              |
+         |                a. Outil "Peinture" (pinceau)               |
+         |                b. Outil "Tampon" (tampon de caoutchouc)    |
+         |                c. Outil "Lignes"                           |
+         |                d. Outil "Formes"                           |
+         |                e. Outils "Texte" et "Étiquette"            |
+         |                f. Outil "Remplir"                          |
+         |                g. Outil "Magie" (Effets spéciaux)          |
+         |                h. Outil "Gomme"                            |
+         |           2. Autres contrôles                              |
+         |                a. "Undo" and "Redo" Commands               |
+         |                b. Commande "Nouveau"                       |
+         |                c. Commande "Ouvrir"                        |
+         |                d. Commande "Sauvegarder"                   |
+         |                e. Commande "Imprimer"                      |
+         |                f. Commande "Diapos" (sous "Ouvrir")        |
+         |                g. Commande "Quitter"                       |
+         |                h. Coupure du son                           |
+         |III. Chargement d'autres images dans Tux Paint              |
+         |IV. Lectures complémentaires                                |
+         |V. Comment obtenir de l'aide                                |
+         |VI. Comment participer                                      |
+         +------------------------------------------------------------+
 
-                             À propos de Tux Paint
+                            I. À propos de Tux Paint
 
-Qu'est-ce que "Tux Paint" ?
+A. Qu'est-ce que "Tux Paint" ?
 
    Tux Paint est un programme de dessin gratuit conçu pour les jeunes enfants
    (enfants de 3 ans et plus). Il possède une interface simple et facile à
@@ -52,7 +52,7 @@ Qu'est-ce que "Tux Paint" ?
    fournis une toile vierge et un ensemble d'outils de dessin pour aider
    votre enfant à être créatif.
 
-Objectives
+B. Objectives
 
    Facile et amusant
            Tux Paint se veut un simple programme de dessin pour les jeunes
@@ -87,7 +87,14 @@ Objectives
            dans une collection de vignettes. L'accès à d'autres fichiers sur
            l'ordinateur est restreint.
 
-Licence
+   Accessibilité
+           Tux Paint offers a number of accessibility options, including
+           increasing the size of control buttons, changing the UI font,
+           options to control the cursor (mouse pointer) using the keyboard
+           or other input devices (joystick, gamepad, etc.), an on-screen
+           keyboard, and "stick" mouse clicks.
+
+C. Licence
 
    Tux Paint est un projet Open Source, un logiciel libre publié sous la
    licence publique générale GNU (GPL). Il est gratuit et le «code source» du
@@ -97,7 +104,7 @@ Licence
 
    Voir COPYING.txt pour le texte complet de la licence GPL.
 
-What's New in Tux Paint version 0.9.31?
+D. What's New in Tux Paint version 0.9.31?
 
    Fuzzy Erasers
            Fuzzy-edged round erasers have been added to the Eraser tool
@@ -124,11 +131,11 @@ What's New in Tux Paint version 0.9.31?
 
    See CHANGES.txt for the complete list of changes.
 
-                               Utiliser Tux Paint
+                             II. Utiliser Tux Paint
 
-Lancement de Tux Paint
+A. Lancement de Tux Paint
 
-  Utilisateurs de Linux/Unix
+  1. Utilisateurs de Linux/Unix
 
    Tux Paint should have placed a launcher icon in your KDE and/or GNOME
    menus, under 'Graphics.'
@@ -141,7 +148,7 @@ Lancement de Tux Paint
    Si des erreurs se produisent, elles seront affichées sur le terminal
    ("stderr").
 
-  Utilisateurs de Windows
+  2. Utilisateurs de Windows
 
                                                       [Icône pour Tux Paint]  
                                                             Tux Paint         
@@ -167,13 +174,13 @@ Lancement de Tux Paint
    Paint sera là où vous l'avez placé lorsque vous avez décompressé le
    fichier ZIP.
 
-  Utilisateurs de macOS
+  3. Utilisateurs de macOS
 
    Double-cliquez simplement sur l'icône "Tux Paint".
 
    [Écran-titre]
 
-Écran titre
+B. Écran titre
 
    Lors du premier chargement de Tux Paint, un écran avec titre et crédits
    apparaîtra.
@@ -182,7 +189,7 @@ Lancement de Tux Paint
    souris pour continuer. (Ou, après environ 30 secondes, l'écran-titre
    disparaîtra automatiquement.)
 
-Écran principal
+C. Écran principal
 
    L'écran principal est divisé en plusieurs sections :
 
@@ -289,11 +296,11 @@ Lancement de Tux Paint
            Tout en bas de l'écran, Tux, le pingouin Linux, fournit des
            conseils et d'autres informations pendant que vous dessinez.
 
-Outils disponibles
+D. Outils disponibles
 
-  Outils de dessin
+  1. Outils de dessin
 
-   Outil "Peinture" (pinceau)
+   a. Outil "Peinture" (pinceau)
 
            L'outil Pinceau vous permet de dessiner à main levée, en utilisant
            différents pinceaux (choisis dans le sélecteur à droite) et
@@ -338,7 +345,7 @@ Outils disponibles
              display the brush spacing controls. See the "Options"
              documentation.
 
-   Outil "Tampon" (tampon de caoutchouc)
+   b.Outil "Tampon" (tampon de caoutchouc)
 
            L'outil Tampon montre un ensemble de tampons en caoutchouc ou
            d'autocollants. Il vous permet de coller des images pré-dessinées
@@ -408,7 +415,7 @@ Outils disponibles
                         permettent de rejouer les effets sonores et la
                         description du tampon actuellement sélectionné.
 
-   Outil "Lignes"
+   c.Outil "Lignes"
 
            Cet outil vous permet de dessiner des lignes droites à l'aide des
            différents pinceaux et couleurs que vous utilisez habituellement.
@@ -434,7 +441,7 @@ Outils disponibles
            Brush spacing may be adjusted. See the brush spacing section of
            the "Paint" tool, above, to learn more.
 
-   Outil "Formes"
+   d.Outil "Formes"
 
            Cet outil vous permet de dessiner des formes simples remplies ou
            non remplies.
@@ -496,7 +503,7 @@ Outils disponibles
                         ⚙ See the "Options" documentation to learn about the
                         "simple shapes" ("simpleshapes") option.
 
-   Outils "Texte" et "Étiquette"
+   e.Outils "Texte" et "Étiquette"
 
            Choose a font (from the 'Letters' available on the right) and a
            color (from the color palette near the bottom). You may also apply
@@ -607,7 +614,7 @@ Outils disponibles
                         ⚙ See the "Options" and "Extending Tux Paint"
                         documentation for more information.
 
-   Outil "Remplir"
+   f.Outil "Remplir"
 
            L'outil «Remplir» «remplit» une zone contiguë de votre dessin avec
            une couleur unie de votre choix. Trois options de remplissage sont
@@ -631,7 +638,7 @@ Outils disponibles
            the 'Solid' method of filling. 'Shaped' fill was introduced in Tux
            Paint 0.9.29.
 
-   Outil "Magie" (Effets spéciaux)
+   g.Outil "Magie" (Effets spéciaux)
 
            L'outil «Magie» est en fait un ensemble d'outils spéciaux.
            Sélectionnez l'un des effets «magiques» dans le sélecteur de
@@ -676,7 +683,7 @@ Outils disponibles
            Voir les instructions pour chaque outil 'Magie' (dans le dossier
            'magic-docs').
 
-   Outil "Gomme"
+   h.Outil "Gomme"
 
            Cet outil est similaire au pinceau. Partout où vous cliquez (ou
            cliquez et faites glisser), l'image sera effacée. (Cela peut être
@@ -698,9 +705,9 @@ Outils disponibles
            or when using an interactive magic tool). Release the mouse to
            return to your currently-selected tool.
 
-  Autres contrôles
+  2. Autres contrôles
 
-   "Undo" and "Redo" Commands
+   a."Undo" and "Redo" Commands
 
            Clicking the "Undo" button will undo (revert) the last drawing
            action. You can even undo more than once!
@@ -717,7 +724,7 @@ Outils disponibles
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [R] sur
            le clavier pour Refaire.
 
-   Commande "Nouveau"
+   b.Commande "Nouveau"
 
            Cliquez sur le bouton "Nouveau" pour démarrer un nouveau dessin.
            Une boîte de dialogue apparaîtra, avec laquelle vous pouvez
@@ -794,7 +801,7 @@ Outils disponibles
            dialog (below the Starters and Templates), via the "newcolorslast"
            option.
 
-   Commande "Ouvrir"
+   c.Commande "Ouvrir"
 
            Cela vous montre une liste de toutes les images que vous avez
            enregistrées. S'il y en a plus que ce que peut contenir l'écran,
@@ -854,7 +861,7 @@ Outils disponibles
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [O] sur
            le clavier pour afficher la boîte de dialogue "Ouvrir".
 
-   Commande "Sauvegarder"
+   d.Commande "Sauvegarder"
 
            Pour sauvegarder votre image en cours.
 
@@ -878,7 +885,7 @@ Outils disponibles
            ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [S] sur
            le clavier pour sauvegarde.
 
-   Commande "Imprimer"
+   e.Commande "Imprimer"
 
            Cliquez sur ce bouton et votre image sera imprimée !
 
@@ -981,7 +988,7 @@ Outils disponibles
 
                         ⚙ Voir la documentation sur "Options".
 
-   Commande "Diapos" (sous "Ouvrir")
+   f.Commande "Diapos" (sous "Ouvrir")
 
            Le bouton "Diapositives" est disponible dans la boîte de dialogue
            "Ouvrir". Il peut être utilisé pour lire une simple animation dans
@@ -1061,7 +1068,7 @@ Outils disponibles
            Cliquez sur "Retour" dans l'écran de sélection d'image du
            diaporama pour revenir à la boîte de dialogue "Ouvrir".
 
-   Commande "Quitter"
+   g.Commande "Quitter"
 
            Cliquez sur le bouton "Quitter", fermez la fenêtre de Tux Paint ou
            appuyez sur la touche [Escape] pour quitter Tux Paint.
@@ -1090,7 +1097,7 @@ Outils disponibles
 
            ⚙ Voir la documentation sur "Options".
 
-   Coupure du son
+   h.Coupure du son
 
            Il n'y a pas de bouton de commande à l'écran pour le moment, mais
            en appuyant sur les touches [Alt] + [S] , les effets sonores
@@ -1104,7 +1111,9 @@ Outils disponibles
 
            ⚙ Voir la documentation sur "Options".
 
-                   Chargement d'autres images dans Tux Paint
+                 III. Chargement d'autres images dans Tux Paint
+
+A. Overview
 
    Étant donné que la boîte de dialogue «Ouvrir» de Tux Paint n'affiche que
    les images que vous avez créées avec Tux Paint, que se passe-t-il si vous
@@ -1140,91 +1149,92 @@ Outils disponibles
    Tux Paint peut être utilisée pour les copier dans un endroit plus facile
    d'accès plus sûr.
 
-Utilisation du script d'importation "tuxpaint-import"
+B. Utilisation du script d'importation "tuxpaint-import"
 
-     Les utilisateurs Linux et Unix peuvent utiliser script shell
-     "tuxpaint-import" qui s'installe lorsque vous installez Tux Paint. Il
-     utilise certains outils NetPBM pour convertir l'image ("anytopnm"), la
-     redimensionner pour qu'elle tienne dans le canevas de Tux Paint
-     ("pnmscale") et la convertir en PNG ("pnmtopng").
+   Les utilisateurs Linux et Unix peuvent utiliser script shell
+   "tuxpaint-import" qui s'installe lorsque vous installez Tux Paint. Il
+   utilise certains outils NetPBM pour convertir l'image ("anytopnm"), la
+   redimensionner pour qu'elle tienne dans le canevas de Tux Paint
+   ("pnmscale") et la convertir en PNG ("pnmtopng").
 
-     Il utilise également la commande "date" pour obtenir l'heure et la date
-     actuelles, qui sont la convention de dénomination des fichiers utilisée
-     par Tux Paint pour les fichiers enregistrés. (N'oubliez pas que vous
-     n'êtes jamais invité à entrer un "nom de fichier " lorsque vous allez
-     enregistrer ou ouvrir des images !)
+   Il utilise également la commande "date" pour obtenir l'heure et la date
+   actuelles, qui sont la convention de dénomination des fichiers utilisée
+   par Tux Paint pour les fichiers enregistrés. (N'oubliez pas que vous
+   n'êtes jamais invité à entrer un "nom de fichier " lorsque vous allez
+   enregistrer ou ouvrir des images !)
 
-     Pour utiliser ce script, exécutez simplement la commande à partir d'une
-     invite de ligne de commande et indiquez-lui le (s) nom (s) du ou des
-     fichiers que vous voulez convertir.
+   Pour utiliser ce script, exécutez simplement la commande à partir d'une
+   invite de ligne de commande et indiquez-lui le (s) nom (s) du ou des
+   fichiers que vous voulez convertir.
 
-     They will be converted and placed in your Tux Paint "saved" directory.
+   They will be converted and placed in your Tux Paint "saved" directory.
 
-     💡 Note: If you're doing this for a different user (e.g., your child)
-     you'll need to make sure to run the command under their account.)
+   💡 Note: If you're doing this for a different user (e.g., your child)
+   you'll need to make sure to run the command under their account.)
 
-     Exemple :
+   Exemple :
 
-       $ tuxpaint-import grandma.jpg
-       grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
-       jpegtopnm: WRITING A PPM FILE
+     $ tuxpaint-import grandma.jpg
+     grandma.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
+     jpegtopnm: WRITING A PPM FILE
 
-     La première ligne ("tuxpaint-import grandma.jpg") est la commande à
-     exécuter. Les deux lignes suivantes sont les sorties du programme
-     pendant qu'il fonctionne.
+   La première ligne ("tuxpaint-import grandma.jpg") est la commande à
+   exécuter. Les deux lignes suivantes sont les sorties du programme pendant
+   qu'il fonctionne.
 
-     Vous pouvez maintenant charger Tux Paint, et une version de cette image
-     originale sera disponible dans la boîte de dialogue «Ouvrir».
-     Double-cliquez simplement sur son icône !
+   Vous pouvez maintenant charger Tux Paint, et une version de cette image
+   originale sera disponible dans la boîte de dialogue «Ouvrir».
+   Double-cliquez simplement sur son icône !
 
-Importer des images manuellement
+C. Importer des images manuellement
 
-     Les utilisateurs de Windows, macOS et Haiku désirant importer des images
-     dans Tux Paint doivent le faire manuellement.
+   Les utilisateurs de Windows, macOS et Haiku désirant importer des images
+   dans Tux Paint doivent le faire manuellement.
 
-     Chargez un programme graphique capable à la fois de charger votre image
-     et d'enregistrer un fichier au format PNG. (Voir le fichier de
-     documentation "PNG.html" pour une liste des logiciels suggérés et
-     d'autres références.)
+   Chargez un programme graphique capable à la fois de charger votre image et
+   d'enregistrer un fichier au format PNG. (Voir le fichier de documentation
+   "PNG.html" pour une liste des logiciels suggérés et d'autres références.)
 
-     Lorsque Tux Paint charge une image qui n'a pas la même taille que son
-     canevas de dessin, il met à l'échelle (et parfois en coloriant les
-     bords) l'image pour qu'elle tienne dans le canevas.
+   Lorsque Tux Paint charge une image qui n'a pas la même taille que son
+   canevas de dessin, il met à l'échelle (et parfois en coloriant les bords)
+   l'image pour qu'elle tienne dans le canevas.
 
-     Pour éviter que l'image ne soit étirée ou maculée, vous pouvez la
-     redimensionner à la taille de la toile de Tux Paint. Cette taille dépend
-     de la taille de la fenêtre Tux Paint, ou de la résolution à laquelle Tux
-     Paint est exécuté, si il est en plein écran. (Remarque : la résolution
-     par défaut est de 800x600.) Voir "Calculer les dimensions des images"
-     ci-dessous.
+   Pour éviter que l'image ne soit étirée ou maculée, vous pouvez la
+   redimensionner à la taille de la toile de Tux Paint. Cette taille dépend
+   de la taille de la fenêtre Tux Paint, ou de la résolution à laquelle Tux
+   Paint est exécuté, si il est en plein écran. (Remarque : la résolution par
+   défaut est de 800x600.) Voir "Calculer les dimensions des images"
+   ci-dessous.
 
-     Sauvegarder l'image au format PNG. Il est fortement recommandé que vous
-     nommiez le fichier en utilisant la date et l'heure courante, puisque
-     c'est ce que Tux Paint utilise :
+  1. Naming the File
 
-       YYYYMMDDhhmmss.png
+   Sauvegarder l'image au format PNG. Il est fortement recommandé que vous
+   nommiez le fichier en utilisant la date et l'heure courante, puisque c'est
+   ce que Tux Paint utilise :
 
-       * YYYY = Year
-       * MM = Mois (deux chiffres, "01"-"12")
-       * DD = Jour du mois (deux chiffres, "01"-"31")
-       * HH = Heure (deux chiffres,au format 24h, "00"-"23")
-       * mm = Minute (deux chiffres, "00"-"59")
-       * ss = Secondes (deux chiffres, "00"-"59")
+     YYYYMMDDhhmmss.png
 
-     Exemple: "20210731110500.png",pour le 31 juillet 2021 à 11:05 du matin.
+     * YYYY = Year
+     * MM = Mois (deux chiffres, "01"-"12")
+     * DD = Jour du mois (deux chiffres, "01"-"31")
+     * HH = Heure (deux chiffres,au format 24h, "00"-"23")
+     * mm = Minute (deux chiffres, "00"-"59")
+     * ss = Secondes (deux chiffres, "00"-"59")
 
-     Mettez cd fichier PNG dans votre répertoire Tux Paint "saved". (Voir
-     ci-dessus)
+   Exemple: "20210731110500.png",pour le 31 juillet 2021 à 11:05 du matin.
 
-  Calculer les dimensions des images
+   Mettez cd fichier PNG dans votre répertoire Tux Paint "saved". (Voir
+   ci-dessus)
 
-       Cette partie de documentation doit être réécrite puisque la nouvelle
-       option "buttonsize" a été ajoutée. Pour l'heure, essayer de dessiner
-       et de sauvegarder l'image dans Tux Paint, et ensuite déterminer quelle
-       taille (largeur et hauteur en pixels) elle possède, et essayez de
-       l'adapter lors de la mise à l'échelle en l'important dans Tux Paint.
+  2. Calculer les dimensions des images
 
-                            Lectures complémentaires
+   Cette partie de documentation doit être réécrite puisque la nouvelle
+   option "buttonsize" a été ajoutée. Pour l'heure, essayer de dessiner et de
+   sauvegarder l'image dans Tux Paint, et ensuite déterminer quelle taille
+   (largeur et hauteur en pixels) elle possède, et essayez de l'adapter lors
+   de la mise à l'échelle en l'important dans Tux Paint.
+
+                          IV.Lectures complémentaires
 
    Les autres documents inclus avec Tux Paint (dans le répertoire "docs")
    incluent :
@@ -1269,7 +1279,7 @@ Importer des images manuellement
                 Tux Paint's software license, the GNU General Public License
                 (GPL)
 
-                           Comment obtenir de l'aide
+                          V.Comment obtenir de l'aide
 
    If you need help, there are numerous ways to interact with Tux Paint
    developers and other users:
@@ -1281,7 +1291,7 @@ Importer des images manuellement
    Pour en savoir plus, visitez la page "Contact" du site officiel de Tux
    Paint : https://tuxpaint.org/contact/
 
-                               Comment participer
+                             VI.Comment participer
 
    Tux Paint is a volunteer-driven project, and we're happy to accept your
    help in a variety of ways:
@@ -1295,7 +1305,7 @@ Importer des images manuellement
    Pour en savoir plus, visitez la page "Nous aider" du site officiel de Tux
    Paint : https://tuxpaint.org/help/
 
-                  Follow the Tux Paint project on social media
+                VII.Follow the Tux Paint project on social media
 
    Tux Paint maintains a presence on a variety of social media networks,
    where we post updates and artwork.
@@ -1306,7 +1316,7 @@ Importer des images manuellement
      * Follow Tux Paint on Tumblr
      * Follow @TuxPaintTweets on Twitter
 
-                               Trademark notices
+                            VIII. Trademark notices
 
      * "Linux" is a registered trademark of Linus Torvalds.
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
