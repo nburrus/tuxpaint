@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-08 22:58+0900\n"
-"PO-Revision-Date: 2023-07-08 01:03+0200\n"
+"PO-Revision-Date: 2023-07-09 12:05+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -274,16 +274,11 @@ msgstr ""
 "color triat fins el transparent)."
 
 #: ../fill_tools.h:75
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to fill an area with a linear gradient (from the chosen "
-#| "color to transparent)."
+#, c-format
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
-msgstr ""
-"Feu clic i arrossegueu per omplir una àrea amb un gradient lineal (del color "
-"triat fins el transparent)."
+msgstr "Feu clic i arrossegueu per omplir una àrea amb un gradient lineal (del color triat fins el transparent). (L'angle del gradient és de %.0f graus."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -1630,13 +1625,10 @@ msgstr "UUlls"
 
 # Aquí, a %s hi va la traducció de "large googly eye" o "small googly eye" segons s'escaigui.
 #: ../../magic/src/googlyeyes.c:222
-#, fuzzy
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
-msgstr ""
-"Feu clic per dibuixar %s, llavors arrossegueu i deixeu anar per fer que miri "
-"en aquesta direcció."
+msgstr "Feu clic per dibuixar un ull, llavors arrossegueu i deixeu anar per fer que miri en aquesta direcció."
 
 #: ../../magic/src/grass.c:111
 msgid "Grass"
@@ -1988,10 +1980,8 @@ msgid "Smooth Rainbow"
 msgstr "Colors suaus"
 
 #: ../../magic/src/rainbow.c:162
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Rainbow Cycle"
-msgstr "Colors de l'arc"
+msgstr "Cicle de colors"
 
 #: ../../magic/src/rainbow.c:175
 msgid "You can draw in rainbow colors!"
@@ -2101,14 +2091,12 @@ msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Feu clic i arrossegueu el ratolí per fer desplaçar la imatge."
 
 #: ../../magic/src/smooth.c:62
-#, fuzzy
-#| msgid "Smooth Rainbow"
 msgid "Smooth"
-msgstr "Colors suaus"
+msgstr "Traç suau"
 
 #: ../../magic/src/smooth.c:63
 msgid "Squiggles"
-msgstr "Garbuix"
+msgstr "Espires gargot"
 
 #: ../../magic/src/smooth.c:64
 msgid "Loops"
@@ -2123,10 +2111,8 @@ msgstr ""
 "el ratolí s'arrodonirà el traç."
 
 #: ../../magic/src/smooth.c:69
-#, fuzzy
-#| msgid "Click and drag the mouse around to blur the image."
 msgid "Click and drag the mouse around to draw squiggles."
-msgstr "Feu clic i arrossegueu el ratolí per difuminar parts del dibuix."
+msgstr "Feu clic i arrossegueu el ratolí per dibuixar espires amb traç irregular."
 
 #: ../../magic/src/smooth.c:70
 msgid "Click and drag the mouse around to draw loop-the-loops."
