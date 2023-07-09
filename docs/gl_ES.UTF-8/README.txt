@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               29 de Maio de 2023
+                               9 de Xullo de 2023
 
         +-------------------------------------------------------------+
         |Índice                                                       |
@@ -35,6 +35,7 @@
         |                f. Orde «Diapositivas» (en «Abrir»)          |
         |                g. Orde «Saír»                               |
         |                h. Silenciar o son                           |
+        |      E. Controlling Tux Paint                               |
         |III. Carga doutras imaxes en Tux Paint                       |
         |IV. Máis información                                         |
         |V. Como obter axuda                                          |
@@ -123,6 +124,11 @@ D. What's New in Tux Paint version 0.9.31?
            Controls to erase saved work — saved drawings (via the Open
            dialog) and exported templates (via the New dialog) — can be
            disabled. (See the "noerase" configuration option.)
+
+   "Controlling Tux Paint" documentation
+           A brief overview of how Tux Paint can be controlled — mouse,
+           tablet, touchscreen, joystick, and keyboard — has been added to
+           the README documentation.
 
    See CHANGES.txt for the complete list of changes.
 
@@ -1079,6 +1085,82 @@ D. Ferramentas dispoñíbeis
            cando o pai ou o profesor quere que estean desactivados).
 
            ⚙ Vexa a documentación de «Opcións.
+
+E. Controlling Tux Paint
+
+  1. Using a Mouse or Trackball
+
+   Tux Paint's main mode of operation is via any device that appears to your
+   operating system as a mouse, including standard mice, trackballs, and
+   trackpads, as well as drawing tablets (usually operated with a stylus) and
+   touch screens (operated with a finger and/or a stylus) (see "Using a
+   Tablet or Touchscreen" below for more information).
+
+   For drawing and controlling Tux Paint, only a single mouse button is used
+   — typically, on multi-button mice, this will the left mouse button, but
+   this can usually be configured at the operating system level. By default,
+   Tux Paint will ignore input from the other button(s). If a user attempts
+   to use the other button(s), a pop-up dialog will eventually appear
+   reminding them that only one button is recognized Tux Paint. However, you
+   may configure Tux Paint to accept any button as input (see the Options
+   documentation).
+
+    a. Scrolling
+
+   Many input devices offer a way to quickly scroll within applications —
+   many mice have a scroll wheel, trackballs have scroll rings, and trackpads
+   recognize certain "scroll" gestures (e.g., two-finger vertical motion, or
+   vertical motion on the edge of the trackpad). Tux Paint supports scrooling
+   input to allow quick scrolling through certain lists (e.g., Stamps, Magic
+   tools, and the New and Open dialogs).
+
+   Tux Paint will also automatically scroll if you click and hold the mouse
+   down on an scroll button — the "up" and "down" arrow buttons that appear
+   above and below scrolling lists.
+
+    b. Mouse Accessibility
+
+   Other devices that appear as a mouse can be used to control Tux Paint. For
+   example:
+     * Head pointing/tracking devices
+     * Eye gaze trackers
+     * Foot mice
+
+   Tux Paint offers a "sticky mouse click" accessibility setting, where a
+   single click begins a click-and-drag operation, and a subsequent click
+   ends it. (See the Options documentation.)
+
+  2. Using a Tablet or Touchscreen
+
+   As noted above, Tux Paint recognizes any device that appears as a mouse.
+   This means drawing tablets and touchscreens may be used. However, these
+   devices often support other features beyond X/Y motion, button clicks, and
+   scroll-wheel motion. Currently, those additional features are not
+   supported by Tux Paint. Some examples:
+     * Pressure and angle
+     * Eraser tip
+     * Multi-touch gestures
+
+  3. Using a Joystick-like Device
+
+   Tux Paint may be configured to recognize input from any game controller
+   that appears to your operating system as a joystick. That even includes
+   modern game console controllers connected via USB or Bluetooth (e.g.,
+   Nintendo Switch or Microsoft Xbox game pads)!
+
+   Numerous configuration options are available to best suit the device being
+   used, and the user's needs. Analog input will be used for coarse movement,
+   and digital "hat" input for fine movement. Buttons on the controller can
+   be mapped to different Tux Paint controls (e.g., acting as the [Escape]
+   key, switching to the Paint tool, invoking Undo and Redo operations,
+   etc.). See the Options documentation for more details.
+
+  4. Using the Keyboard
+
+   Tux Paint offers an option to allow the keyboard to be used to control the
+   mouse pointer. This includes motion and clicking, as well as shortcuts to
+   navigate between and within certain parts of the interface. See the
+   Options documentation for more details.
 
                      III. Carga doutras imaxes en Tux Paint
 

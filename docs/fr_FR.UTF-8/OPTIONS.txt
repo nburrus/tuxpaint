@@ -1287,7 +1287,7 @@ Accessibilité
                   «clic» (par exemple [Insert]), et utilisez les touches de
                   déplacement (par exemple [Left]).
 
-                  💡 >Note: The "mouse accessibility" feature works with the
+                  💡 Note: The "mouse accessibility" feature works with the
                   keyboard mouse controls. With both options enabled,
                   painting tools can be used to draw by pressing a 'click'
                   key to start clicking, movement keys to move around (which

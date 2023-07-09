@@ -1232,7 +1232,7 @@ Accessibility
                 * To click-and-drag, hold one of the 'click' keys (e.g.,
                   [Insert]), and use the movement keys (e.g., [Left]).
 
-                  💡 >Note: The "mouse accessibility" feature works with the
+                  💡 Note: The "mouse accessibility" feature works with the
                   keyboard mouse controls. With both options enabled,
                   painting tools can be used to draw by pressing a 'click'
                   key to start clicking, movement keys to move around (which

@@ -98,6 +98,13 @@ https://tuxpaint.org/
       https://sourceforge.net/p/tuxpaint/bugs/279/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * Documentation updates:
+    ----------------------
+    * Added a "Controlling Tux Paint" section to README
+      (covers mice/etc., tablets and touchscreens, joysticks,
+      and keyboard accessibility mode).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Bug Fixes:
     ----------
     * In some window size / button size combinations, Eraser
