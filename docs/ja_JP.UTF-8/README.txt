@@ -6,7 +6,7 @@
          Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                   2023年7月 9日
+                                   2023年7月10日
 
                    +---------------------------------------+
                    |目次                                     |
@@ -35,7 +35,7 @@
                    |                f. 「スライドショー」           |
                    |                g. プログラムの終了            |
                    |                h. 効果音を消すには            |
-                   |      E. Controlling Tux Paint         |
+                   |      E. Tux Paint 操作                  |
                    |III. 他の画像の Tux Paint への読み込み            |
                    |IV. その他のドキュメント                         |
                    |V. お問い合わせ先                             |
@@ -704,81 +704,52 @@ D. 各種のツール
 
            ⚙ 詳細は "各種設定について" のドキュメントを参照して下さい。
 
-E. Controlling Tux Paint
+E. Tux Paint 操作
 
-  1. Using a Mouse or Trackball
+  1. マウス・トラックボールによる操作
 
-   Tux Paint's main mode of operation is via any device that appears to your
-   operating system as a mouse, including standard mice, trackballs, and
-   trackpads, as well as drawing tablets (usually operated with a stylus) and
-   touch screens (operated with a finger and/or a stylus) (see "Using a
-   Tablet or Touchscreen" below for more information).
+   Tux Paint
+   の操作の大部分は、標準的なマウス、トラックボール、トラックパッド、お絵かきタブレット（通常はスタイラスペンで操作）、タッチスクリーン（指やスタイラスペンで操作）など、OS上でマウスとして認識されるデバイスを使用します（詳しくは後述の「タブレット端末やタッチスクリーンでの操作」をご覧ください）。
 
-   For drawing and controlling Tux Paint, only a single mouse button is used
-   — typically, on multi-button mice, this will the left mouse button, but
-   this can usually be configured at the operating system level. By default,
-   Tux Paint will ignore input from the other button(s). If a user attempts
-   to use the other button(s), a pop-up dialog will eventually appear
-   reminding them that only one button is recognized Tux Paint. However, you
-   may configure Tux Paint to accept any button as input (see the Options
-   documentation).
+   通常はマウスの左ボタンを使用しますが、これはOSレベルの設定で変更することができます。デフォルトでは他のボタンからの入力は無視され、他のボタンを使用しようとすると、認識できるのは1つのボタンだけであることを知らせるポップアップダイアログが表示されます。ただし、どのボタンからの入力も受け付けるように設定することもできます（ドキュメント「各種設定について」を参照してください）。
 
-    a. Scrolling
+    a. スクロール操作
 
-   Many input devices offer a way to quickly scroll within applications —
-   many mice have a scroll wheel, trackballs have scroll rings, and trackpads
-   recognize certain "scroll" gestures (e.g., two-finger vertical motion, or
-   vertical motion on the edge of the trackpad). Tux Paint supports scrooling
-   input to allow quick scrolling through certain lists (e.g., Stamps, Magic
-   tools, and the New and Open dialogs).
+   マウスホイール、トラックボールのスクロールリング、トラックパッドの「スクロール」ジェスチャー（2本指での垂直移動やトラックパッドの端での垂直移動など）はスクロール入力として認識され、スタンプ、まほうツール、新規作成ダイアログや開くダイアログなどのリストを素早くスクロールできます。
 
-   Tux Paint will also automatically scroll if you click and hold the mouse
-   down on an scroll button — the "up" and "down" arrow buttons that appear
-   above and below scrolling lists.
+   また、これらのリストの上下にあるスクロールボタンをクリックし続ければ自動的にスクロールします。
 
-    b. Mouse Accessibility
+    b. マウスによる操作
 
-   Other devices that appear as a mouse can be used to control Tux Paint. For
-   example:
-     * Head pointing/tracking devices
-     * Eye gaze trackers
-     * Foot mice
+   上記のほかにも、マウスとして認識される以下のようなデバイスであれば、Tux Paint の操作に使用できます:
+     * ヘッドポインティング/トラッキングデバイス
+     * 視線追跡デバイス
+     * フットマウス
 
-   Tux Paint offers a "sticky mouse click" accessibility setting, where a
-   single click begins a click-and-drag operation, and a subsequent click
-   ends it. (See the Options documentation.)
+   Tux Paint
+   には「マウスクリックのトグル動作」という操作設定があり、シングルクリックでクリック＆ドラッグ操作が始まり、その後のクリックで終了します。（ドキュメント「各種設定について」を参照してください）
 
-  2. Using a Tablet or Touchscreen
+  2. タブレット端末やタッチスクリーンでの操作
 
-   As noted above, Tux Paint recognizes any device that appears as a mouse.
-   This means drawing tablets and touchscreens may be used. However, these
-   devices often support other features beyond X/Y motion, button clicks, and
-   scroll-wheel motion. Currently, those additional features are not
-   supported by Tux Paint. Some examples:
-     * Pressure and angle
-     * Eraser tip
-     * Multi-touch gestures
+   上述のように Tux Paint はマウスとして認識されるあらゆるデバイス ー タブレットやタッチスクリーンなど ー
+   を使用することができます。これらのデバイスの多くは以下のような追加機能をサポートしていますが、これらは現在のところ Tux Paint
+   ではサポートされていません:
+     * 筆圧や傾きの検出
+     * けしゴムペン先機能
+     * マルチタッチジェスチャー
 
-  3. Using a Joystick-like Device
+  3. ジョイスティック等のデバイスによる操作
 
-   Tux Paint may be configured to recognize input from any game controller
-   that appears to your operating system as a joystick. That even includes
-   modern game console controllers connected via USB or Bluetooth (e.g.,
-   Nintendo Switch or Microsoft Xbox game pads)!
+   Tux Paintは OS
+   上でジョイスティックとして表示されるあらゆるゲームコントローラーからの入力を認識するように設定できます。USBやBluetoothで接続された最新のゲーム機のコントローラー（Nintendo
+   SwitchやMicrosoft Xboxのゲームパッドなど）も含まれます！
 
-   Numerous configuration options are available to best suit the device being
-   used, and the user's needs. Analog input will be used for coarse movement,
-   and digital "hat" input for fine movement. Buttons on the controller can
-   be mapped to different Tux Paint controls (e.g., acting as the [Escape]
-   key, switching to the Paint tool, invoking Undo and Redo operations,
-   etc.). See the Options documentation for more details.
+   使用する機器やユーザーのニーズに合わせて、数多くの設定オプションが用意されています。おおまかな動きにはアナログ入力が使われ、細かい動きにはデジタルの「ハット」入力が使われます。コントローラーのボタンは、Tux
+   Paintのさまざまな操作にマッピングできます（例えば、[Escape]キーとして機能したり、ペイントツールに切り替えたり、UndoやRedo操作を呼び出したりなど）。詳しくはドキュメント「各種設定について」を参照してください。
 
-  4. Using the Keyboard
+  4. キーボードによる操作
 
-   Tux Paint offers an option to allow the keyboard to be used to control the
-   mouse pointer. This includes motion and clicking, as well as shortcuts to
-   navigate between and within certain parts of the interface. See the
-   Options documentation for more details.
+   タックスペイントでは、キーボードからマウスポインタを操作することができます。これには、マウスポインタの移動とクリック、およびインターフェイスの特定の部分を移動するためのショートカットが含まれます。詳しくはドキュメント「各種設定について」を参照してください。
 
                           III. 他の画像の Tux Paint への読み込み
 
@@ -937,6 +908,7 @@ C. 手動での取り込み
      * Instagram で @TuxPaintDevs をフォローする
      * Mastdon で @tuxpaint@floss.socal をフォローする
      * Reddit で u/TuxPaintDevs をフォローする
+     * Follow @TuxPaintDevs on Threads
      * Tumblr で Tux Paint をフォローする
      * Twitter で @TuxPaintTweets をフォローする
 
@@ -945,7 +917,8 @@ C. 手動での取り込み
      * "Linux" は Linus Torvalds の登録商標です。
      * "Microsoft" および "Windows" は、Microsoft 社の登録商標です。
      * "Apple" および "macOS" は Apple 社の登録商標です。
-     * "Facebook" および "Instagram" は Meta Platforms 社の登録商標です。
+     * "Facebook", "Instagram", and "Threads" are registered trademarks of
+       Meta Platforms, Inc.
      * "Mastodon" は Mastodon gGmbH の登録商標です。
      * "Reddit" は、Reddit 社の登録商標です。
      * "Tumblr" は Tumblr 社の登録商標です。

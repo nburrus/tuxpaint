@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  July 9, 2023
+                                 July 10, 2023
 
             +------------------------------------------------------+
             |Table of Contents                                     |
@@ -1091,7 +1091,7 @@ E. Controlling Tux Paint
    Many input devices offer a way to quickly scroll within applications —
    many mice have a scroll wheel, trackballs have scroll rings, and trackpads
    recognize certain "scroll" gestures (e.g., two-finger vertical motion, or
-   vertical motion on the edge of the trackpad). Tux Paint supports scrooling
+   vertical motion on the edge of the trackpad). Tux Paint supports scrolling
    input to allow quick scrolling through certain lists (e.g., Stamps, Magic
    tools, and the New and Open dialogs).
 
@@ -1333,6 +1333,7 @@ C. Importing Pictures Manually
      * Follow @TuxPaintDevs on Instagram
      * Follow @tuxpaint@floss.social on Mastodon
      * Follow u/TuxPaintDevs on Reddit
+     * Follow @TuxPaintDevs on Threads
      * Follow Tux Paint on Tumblr
      * Follow @TuxPaintTweets on Twitter
 
@@ -1341,8 +1342,8 @@ C. Importing Pictures Manually
      * "Linux" is a registered trademark of Linus Torvalds.
      * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
      * "Apple" and "macOS" are registered trademarks of Apple Inc.
-     * "Facebook" and "Instagram" are registered trademarks of Meta
-       Platforms, Inc.
+     * "Facebook", "Instagram", and "Threads" are registered trademarks of
+       Meta Platforms, Inc.
      * "Mastodon" is a registered trademark of Mastodon gGmbH.
      * "Reddit" is a registered trademark of Reddit, Inc.
      * "Tumblr" is a registered trademark of Tumblr, Inc.
