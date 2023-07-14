@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 júlí 10, 2023
+                                 júlí 13, 2023
 
             +------------------------------------------------------+
             |Table of Contents                                     |
