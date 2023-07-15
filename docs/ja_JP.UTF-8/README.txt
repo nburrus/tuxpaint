@@ -35,7 +35,7 @@
                    |                f. 「スライドショー」           |
                    |                g. プログラムの終了            |
                    |                h. 効果音を消すには            |
-                   |      E. Tux Paint 操作                  |
+                   |      E. 操作方法                          |
                    |III. 他の画像の Tux Paint への読み込み            |
                    |IV. その他のドキュメント                         |
                    |V. お問い合わせ先                             |
@@ -67,12 +67,9 @@ B. 特長
    簡単な操作
            ユーザーは、コンピューターの複雑な機能に直接触れる必要がありません。描画中の作品は、プログラム終了時に保存され、再開時に表示されます。作品を保存するために、ファイル名をつけたりキーボードを使う必要はありません。保存された作品は、縮小画像の一覧から選択するだけで読み込むことができ、コンピューターの他のファイルにアクセスすることはありません。
 
-   アクセシビリティ
-           Tux Paint offers a number of accessibility options, including
-           increasing the size of control buttons, changing the UI font,
-           options to control the cursor (mouse pointer) using the keyboard
-           or other input devices (joystick, gamepad, etc.), an on-screen
-           keyboard, and "stick" mouse clicks.
+   操作方法
+           Tux Paint
+           には、ボタンのサイズ拡大、UIフォントの変更、キーボードや他の入力デバイス（ジョイスティック、ゲームパッドなど）を用いたカーソル操作、オンスクリーンキーボード、マウスクリックの固定など、操作性に関する多くのオプションが用意されています。
 
 C. 著作権
 
@@ -99,10 +96,9 @@ D. Tux Paint バージョン 0.9.31 での変更点
    削除の無効化
            保存した作品や自作のテンプレートを削除するボタンを無効にすることができます。(設定オプション"noerase"を参照)
 
-   "Controlling Tux Paint" documentation
-           A brief overview of how Tux Paint can be controlled — mouse,
-           tablet, touchscreen, joystick, and keyboard — has been added to
-           the README documentation.
+   Tux Paint の操作の説明を追加
+           マウスやタブレット、タッチスクリーン、ジョイスティック、キーボードなど、各種のデバイスを用いた Tux Paint
+           の操作方法の概要が README ドキュメントに追加されました。
 
    全ての変更点については、CHANGES.txt をお読みください。
 
@@ -704,7 +700,7 @@ D. 各種のツール
 
            ⚙ 詳細は "各種設定について" のドキュメントを参照して下さい。
 
-E. Tux Paint 操作
+E. 操作方法
 
   1. マウス・トラックボールによる操作
 
@@ -745,7 +741,8 @@ E. Tux Paint 操作
    SwitchやMicrosoft Xboxのゲームパッドなど）も含まれます！
 
    使用する機器やユーザーのニーズに合わせて、数多くの設定オプションが用意されています。おおまかな動きにはアナログ入力が使われ、細かい動きにはデジタルの「ハット」入力が使われます。コントローラーのボタンは、Tux
-   Paintのさまざまな操作にマッピングできます（例えば、[Escape]キーとして機能したり、ペイントツールに切り替えたり、UndoやRedo操作を呼び出したりなど）。詳しくはドキュメント「各種設定について」を参照してください。
+   Paintのさまざまな操作にマッピングできます（例えば [Escape]
+   キーとして機能したり、ペイントツールに切り替えたり、UndoやRedo操作を呼び出したりなど）。詳しくはドキュメント「各種設定について」を参照してください。
 
   4. キーボードによる操作
 
@@ -753,7 +750,7 @@ E. Tux Paint 操作
 
                           III. 他の画像の Tux Paint への読み込み
 
-A. Overview
+A. 概要
 
    Tux Paint の「ひらく」ダイアログでは、Tux Paint
    で作成した画像だけが表示されます。その他の画像や写真を読み込んで編集するにはどのようにすれば良いでしょうか？
@@ -820,7 +817,7 @@ C. 手動での取り込み
    のウィンドウサイズや、フルスクリーン動作時の画面解像度に依存します。(注: 標準の解像度は 800x600 です)。 以下の
    "イメージサイズの計算方法" をごらんください。
 
-  1. Naming the File
+  1. ファイル名の付け方
 
    画像は PNG 形式で保存してください。また、以下のように、Tux Paint
    における命名規則である、現在の日付と時刻を用いたファイル名を使用することを強くお勧めします。
@@ -908,7 +905,7 @@ C. 手動での取り込み
      * Instagram で @TuxPaintDevs をフォローする
      * Mastdon で @tuxpaint@floss.socal をフォローする
      * Reddit で u/TuxPaintDevs をフォローする
-     * Follow @TuxPaintDevs on Threads
+     * Threads で @TuxPaintDevs をフォローする
      * Tumblr で Tux Paint をフォローする
      * Twitter で @TuxPaintTweets をフォローする
 
@@ -917,8 +914,7 @@ C. 手動での取り込み
      * "Linux" は Linus Torvalds の登録商標です。
      * "Microsoft" および "Windows" は、Microsoft 社の登録商標です。
      * "Apple" および "macOS" は Apple 社の登録商標です。
-     * "Facebook", "Instagram", and "Threads" are registered trademarks of
-       Meta Platforms, Inc.
+     * "Facebook", "Instagram" および "Threads" は Meta Platforms 社の登録商標です。
      * "Mastodon" は Mastodon gGmbH の登録商標です。
      * "Reddit" は、Reddit 社の登録商標です。
      * "Tumblr" は Tumblr 社の登録商標です。
