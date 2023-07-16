@@ -1,17 +1,18 @@
-                      Tux Paint "Magic" Tool: Symétrie H/B
+                     Tux Paint "Magic" Tool: Symétrie H/B
 
                             Group: Pattern Painting
 
             Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-   Paint with relfective symmetry across the vertical center of the image.
+Paint with relfective symmetry across the vertical center of the image.
 
-   This tool is operated in a freehand fashion.
+This tool is operated in a freehand fashion.
 
-   This tool offers multiple size settings.
+This tool offers multiple size settings.
 
-   See also: Kaléidoscope, Motif, Symétrie D/G, & Tuiles.
+See also: Kaléidoscope, Motif, Symétrie D/G, & Tuiles.
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+

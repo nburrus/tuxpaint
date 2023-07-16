@@ -4,18 +4,19 @@
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-   This tool draws small flowers, with leafy bases and stalks. Click to set
-   the base, then drag the mouse upwards to draw the stalk, and finally
-   release the mouse button to finish the flower. It will be drawn in the
-   currently-selected color. The shape and length of the stalk depends on how
-   you move the mouse while you drag.
+This tool draws small flowers, with leafy bases and stalks. Click to set the
+base, then drag the mouse upwards to draw the stalk, and finally release the
+mouse button to finish the flower. It will be drawn in the currently-selected
+color. The shape and length of the stalk depends on how you move the mouse
+while you drag.
 
-   This tool is operated in a freehand fashion.
+This tool is operated in a freehand fashion.
 
-   This tool offers multiple size settings.
+This tool offers multiple size settings.
 
-   See also: Herbe.
+See also: Herbe.
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+

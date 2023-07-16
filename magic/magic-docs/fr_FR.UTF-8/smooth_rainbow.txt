@@ -1,19 +1,19 @@
-                    Tux Paint "Magic" Tool: Arc-en-ciel lent
+                   Tux Paint "Magic" Tool: Arc-en-ciel lent
 
                                 Group: Painting
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-   This is similar to Rainbow magic tool — as you move the mouse around, it
-   cycles through a spectrum of colors — except the colors blend smoothly as
-   you draw.
+This is similar to Rainbow magic tool — as you move the mouse around, it cycles
+through a spectrum of colors — except the colors blend smoothly as you draw.
 
-   This tool is operated in a freehand fashion.
+This tool is operated in a freehand fashion.
 
-   This tool offers multiple size settings.
+This tool offers multiple size settings.
 
-   See also: Arc-en-ciel & Rainbow Cycle.
+See also: Arc-en-ciel & Rainbow Cycle.
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+

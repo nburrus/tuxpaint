@@ -1,15 +1,16 @@
                     Tux Paint "Magic" Tool: Flocon de neige
 
-                           Group: Picture Decorations
+                          Group: Picture Decorations
 
                  Author: Andrew Corcoran <akanewbie@gmail.com>
 
-   Fill the picture with snowflakes.
+Fill the picture with snowflakes.
 
-   This tool is operated with a single click.
+This tool is operated with a single click.
 
-   See also: Pluie & Boule de neige.
+See also: Pluie & Boule de neige.
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+

@@ -4,15 +4,16 @@
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-   This draws random squiggly loops, using the currently-selected color, as
-   you move the mouse around.
+This draws random squiggly loops, using the currently-selected color, as you
+move the mouse around.
 
-   This tool is operated in a freehand fashion.
+This tool is operated in a freehand fashion.
 
-   This tool offers multiple size settings.
+This tool offers multiple size settings.
 
-   See also: Smooth & Squiggles.
+See also: Smooth & Squiggles.
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+

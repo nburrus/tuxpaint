@@ -1,15 +1,16 @@
-                     Tux Paint "Magic" Tool: Boule de neige
+                    Tux Paint "Magic" Tool: Boule de neige
 
-                           Group: Picture Decorations
+                          Group: Picture Decorations
 
                  Author: Andrew Corcoran <akanewbie@gmail.com>
 
-   Fill the picture with snowballs.
+Fill the picture with snowballs.
 
-   This tool is operated with a single click.
+This tool is operated with a single click.
 
-   See also: Pluie & Flocon de neige.
+See also: Pluie & Flocon de neige.
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+

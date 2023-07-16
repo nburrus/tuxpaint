@@ -2,123 +2,124 @@
 
 Distorts
 
-     * Blocks
-     * Circles
-     * Clone
-     * Craie
-     * Distorsion
-     * Edges
-     * Flou
-     * Glass Tile
-     * Goutte
-     * Halftone
-     * Hexagon Mosaic
-     * Irregular Mosaic
-     * Mosaic
-     * Noise
-     * Oeil de poisson
-     * Puzzle
-     * Rays
-     * Relief
-     * Ripples
-     * Sharpen
-     * Silhouette
-     * Smudge
-     * Square Mosaic
-     * TV
-     * TV (Bright)
+  * Blocks
+  * Circles
+  * Clone
+  * Craie
+  * Distorsion
+  * Edges
+  * Flou
+  * Glass Tile
+  * Goutte
+  * Halftone
+  * Hexagon Mosaic
+  * Irregular Mosaic
+  * Mosaic
+  * Noise
+  * Oeil de poisson
+  * Puzzle
+  * Rays
+  * Relief
+  * Ripples
+  * Sharpen
+  * Silhouette
+  * Smudge
+  * Square Mosaic
+  * TV
+  * TV (Bright)
 
 Color Filters
 
-     * 3D Glasses
-     * Assombrir
-     * Bloom
-     * Cartoon
-     * Color and White
-     * Color Sep.
-     * Color Shift
-     * Desaturate
-     * Double Vision
-     * Éclaircir
-     * Keep Color
-     * Negative
-     * Opposite
-     * Remove Color
-     * Saturate
-     * Tint
-     * Xor Colors
+  * 3D Glasses
+  * Assombrir
+  * Bloom
+  * Cartoon
+  * Color and White
+  * Color Sep.
+  * Color Shift
+  * Desaturate
+  * Double Vision
+  * Éclaircir
+  * Keep Color
+  * Negative
+  * Opposite
+  * Remove Color
+  * Saturate
+  * Tint
+  * Xor Colors
 
 Picture Warps
 
-     * Flip
-     * Kaleido-4, Kaleido-6, and Kaleido-8
-     * Miroir
-     * Panneaux
-     * Perspective
-     * Plier
-     * Reflection
-     * Rush
-     * Shift
-     * Stretch
-     * Tile Zoom
-     * Vaguelettes
-     * Vagues
-     * Zoom
+  * Flip
+  * Kaleido-4, Kaleido-6, and Kaleido-8
+  * Miroir
+  * Panneaux
+  * Perspective
+  * Plier
+  * Reflection
+  * Rush
+  * Shift
+  * Stretch
+  * Tile Zoom
+  * Vaguelettes
+  * Vagues
+  * Zoom
 
 Painting
 
-     * Arc-en-ciel
-     * Arc-en-ciel lent
-     * Briques
-     * Calligraphie
-     * Confettis
-     * Dentifrice
-     * Frise
-     * Fur
-     * Herbe
-     * Loops
-     * Lumière
-     * Maze
-     * Mousse
-     * Peinture métallique
-     * Pixels
-     * Pluie
-     * Rails
-     * Rainbow Cycle
-     * Ribbon
-     * Smooth
-     * Squiggles
-     * Wet Paint
+  * Arc-en-ciel
+  * Arc-en-ciel lent
+  * Briques
+  * Calligraphie
+  * Confettis
+  * Dentifrice
+  * Frise
+  * Fur
+  * Herbe
+  * Loops
+  * Lumière
+  * Maze
+  * Mousse
+  * Peinture métallique
+  * Pixels
+  * Pluie
+  * Rails
+  * Rainbow Cycle
+  * Ribbon
+  * Smooth
+  * Squiggles
+  * Wet Paint
 
 Pattern Painting
 
-     * Kaléidoscope
-     * Motif
-     * Picasso
-     * Rosace
-     * Symétrie D/G
-     * Symétrie H/B
-     * Tuiles
+  * Kaléidoscope
+  * Motif
+  * Picasso
+  * Rosace
+  * Symétrie D/G
+  * Symétrie H/B
+  * Tuiles
 
 Picture Decorations
 
-     * Blind
-     * Boule de neige
-     * Damier
-     * Flocon de neige
+  * Blind
+  * Boule de neige
+  * Damier
+  * Flocon de neige
 
 Artistic
 
-     * Arc-en-ciel réel
-     * Arc-en-ciel simple
-     * Éclaircir
-     * Ficelles (1)
-     * Ficelles (2)
-     * Ficelles (3)
-     * Fleur
-     * Googly Eyes
-     * Tornade
+  * Arc-en-ciel réel
+  * Arc-en-ciel simple
+  * Éclaircir
+  * Ficelles (1)
+  * Ficelles (2)
+  * Ficelles (3)
+  * Fleur
+  * Googly Eyes
+  * Tornade
 
-     ----------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
-                                Tux Paint 0.9.31
+                               Tux Paint 0.9.31
+
