@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.July.13 (0.9.31)
+2023.July.15 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -103,6 +103,12 @@ https://tuxpaint.org/
     * Added a "Controlling Tux Paint" section to README
       (covers mice/etc., tablets and touchscreens, joysticks,
       and keyboard accessibility mode).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Using `w3m` (rather than `links`) to generated plain text
+      alternatives to HTML documentation.  (It handles word-wrapping
+      Japanese text properly.)
+      h/t TOYAMA Shin-ichi
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Bug Fixes:
