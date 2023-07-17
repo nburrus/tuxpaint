@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-13 23:12-0700\n"
-"PO-Revision-Date: 2023-07-05 20:31+0200\n"
+"PO-Revision-Date: 2023-07-17 19:30+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -234,16 +234,14 @@ msgstr ""
 "choisie jusqu'à la transparence)."
 
 #: ../fill_tools.h:75
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to fill an area with a linear gradient (from the chosen "
-#| "color to transparent)."
+#, c-format
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
 msgstr ""
 "Clique et déplace la souris pour remplir une surface avec un dégradé "
-"linéaire (depuis la couleur choisie jusqu'à la transparence)."
+"linéaire (depuis la couleur choisie jusqu'à la transparence).(Votre angle de "
+"gradient est de %.0f degrés)."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -382,11 +380,11 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
-msgstr "Nouveaux outils Magie : Boucles, Ruban, Adoucir et Gribouillis"
+msgstr "Nouveaux outils Magie : Boucles, Ruban, Adoucir et Gribouillis."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
-msgstr "L'outil Gomme permet maintenant de flouter (bords"
+msgstr "L'outil Gomme permet maintenant de flouter (bords progressifs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -406,7 +404,7 @@ msgid ""
 msgstr ""
 "L'option \"Effacer\" pour supprimer des dessins sauvegardés avec la boîte "
 "Ouvrir et des modèles exportés avec la boîte Nouveau peut être désactiver "
-"avec l'option \"noerase\". "
+"avec l'option \"noerase\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
@@ -437,7 +435,7 @@ msgstr ""
 msgid "Many Magic tools now offer size settings."
 msgstr ""
 "Beaucoup d'outils Magie possèdent maintenant la possibilité de changer de "
-"taille. "
+"taille."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "Button labels word-wrap when possible (improves legibility)."
