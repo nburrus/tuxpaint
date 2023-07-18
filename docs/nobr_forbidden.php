@@ -15,7 +15,7 @@
 /* See https://en.wikipedia.org/wiki/Line_breaking_rules_in_East_Asian_languages */
 
 /* Closing brackets (ignoring ' " ]) */
-$forbidden_start = ")｝〕〉》」』】〙〗〟｠»";
+$forbidden_start = "）)｝〕〉》」』】〙〗〟｠»";
 
 /* Japanese characters: chiisai kana and special marks */
 $forbidden_start .= "ヽヾーァィゥェォッャュョヮヵヶぁぃぅぇぉっゃゅょゎゕゖㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ々〻";
@@ -33,7 +33,7 @@ $forbidden_start .= "・、:;,";
 $forbidden_start .= "。\.";
 
 /* Opening brackets (ignoring ' " [) */
-$forbidden_end = "(｛〔〈《「『【〘〖〝｟«";
+$forbidden_end = "（(｛〔〈《「『【〘〖〝｟«";
 
 
 /* FIXME: Would be better to use DOMDocument() and modify the
