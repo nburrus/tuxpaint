@@ -15,7 +15,7 @@
 /* See https://en.wikipedia.org/wiki/Line_breaking_rules_in_East_Asian_languages */
 
 /* Closing brackets (ignoring ' " ]) */
-$forbidden_start = "）)｝〕〉》」』】〙〗〟｠»";
+$forbidden_start = "）\)｝〕〉》」』】〙〗〟｠»";
 
 /* Japanese characters: chiisai kana and special marks */
 $forbidden_start .= "ヽヾーァィゥェォッャュョヮヵヶぁぃぅぇぉっゃゅょゎゕゖㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ々〻";
@@ -33,7 +33,7 @@ $forbidden_start .= "・、:;,";
 $forbidden_start .= "。\.";
 
 /* Opening brackets (ignoring ' " [) */
-$forbidden_end = "（(｛〔〈《「『【〘〖〝｟«";
+$forbidden_end = "（\(｛〔〈《「『【〘〖〝｟«";
 
 
 /* FIXME: Would be better to use DOMDocument() and modify the
@@ -103,10 +103,11 @@ while (!feof($fi)) {
 function replace_forbidden($str) {
   global $forbidden_start, $forbidden_end;
 
-  $japanese = "\p{Katakana}\p{Hiragana}";
+  $japanese = "\p{Katakana}\p{Hiragana}\p{Han}";
 
-  $str = preg_replace("/([$japanese][$forbidden_start])/u", "<nobr>\\1</nobr>", $str);
-  $str = preg_replace("/([$forbidden_end][$japanese])/u", "<nobr>\\1</nobr>", $str);
+  $str = preg_replace("/([$forbidden_end]+[$japanese][$forbidden_start]+)/u", "<nobr>\\1</nobr>", $str);
+  $str = preg_replace("/([$japanese][$forbidden_start]+)/u", "<nobr>\\1</nobr>", $str);
+  $str = preg_replace("/([$forbidden_end]+[$japanese])/u", "<nobr>\\1</nobr>", $str);
   return $str;
 }
 
