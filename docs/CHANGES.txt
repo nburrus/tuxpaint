@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.July.15 (0.9.31)
+2023.July.17 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -107,7 +107,9 @@ https://tuxpaint.org/
 
     * Using `w3m` (rather than `links`) to generated plain text
       alternatives to HTML documentation.  (It handles word-wrapping
-      Japanese text properly.)
+      Japanese text properly.)  Using a small PHP script to handle
+      forbidden wrapping (e.g., no full-stop "。" at the beginning
+      of lines, etc.) when processing Japanese docs.
       h/t TOYAMA Shin-ichi
       Bill Kendrick <bill@newbreedsoftware.com>
 

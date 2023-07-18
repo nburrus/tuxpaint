@@ -8,6 +8,11 @@ args=${@:1:${#}-1}
 # This needs expanding & to not mess with <img> `alt` tag attributes or anything inside HTML tags (e.g., " quotes)!
 # -bjk 2023.07.17
 
-sed -e "s/<\\/dd>/<br\\/><br\\/><\\/dd>/g" $infile \
-  | w3m $args
-
+if [[ "$infile" =~ ja_JP ]]; then
+  sed -e "s/<\\/dd>/<br\\/><br\\/><\\/dd>/g" $infile \
+    | php ./nobr_forbidden.php \
+    | w3m $args
+else
+  sed -e "s/<\\/dd>/<br\\/><br\\/><\\/dd>/g" $infile \
+    | w3m $args
+fi

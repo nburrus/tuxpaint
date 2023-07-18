@@ -6,7 +6,7 @@
    Höfundarréttur © 2007-2023 eftir various contributors; sjá AUTHORS-skrá.
                              https://tuxpaint.org/
 
-                                13. apríl 2023
+                                 17. júlí 2023
 
 +--------------------------------------------------+
 |                   Efnisyfirlit                   |
@@ -1001,7 +1001,7 @@ effects:
 
         char * my_plugin_snd_filenames[NUM_TOOLS] = {
             "one.ogg", "another.ogg", "yet_another.ogg" };
-        Mix_Chunk * my_plugin_snds[NUM_TOOLS]") ?>;
+        Mix_Chunk * my_plugin_snds[NUM_TOOLS]");
 
   * Use a C "for"-loop to load or create the effect-specific data (such as
     loading sound effects during your "init()").

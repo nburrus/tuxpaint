@@ -6,7 +6,7 @@
         Copyright © 2007-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                abril 13, 2023
+                                julio 17, 2023
 
 +--------------------------------------------------+
 |                Table of Contents                 |
@@ -1001,7 +1001,7 @@ effects:
 
         char * my_plugin_snd_filenames[NUM_TOOLS] = {
             "one.ogg", "another.ogg", "yet_another.ogg" };
-        Mix_Chunk * my_plugin_snds[NUM_TOOLS]") ?>;
+        Mix_Chunk * my_plugin_snds[NUM_TOOLS]");
 
   * Use a C "for"-loop to load or create the effect-specific data (such as
     loading sound effects during your "init()").
