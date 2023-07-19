@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.July.17 (0.9.31)
+2023.July.19 (0.9.31)
   * New Magic Tools:
     ----------------
     * Loops - Draw loop-the-loops.
@@ -120,7 +120,8 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Improved Eraser XOR outline when using Ctrl-Z & Ctrl-R
-      for Undo/Redo.
+      for Undo/Redo, and Eraser and Stamp XOR outlines when
+      using click+X for quick eraser access.
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * When specifying "datadir", Tux Paint's "New" dialog

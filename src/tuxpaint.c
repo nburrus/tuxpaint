@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 8, 2023
+  June 14, 2002 - July 19, 2023
 */
 
 #include "platform.h"
@@ -5186,7 +5186,9 @@ static void mainloop(void)
                 else if (cur_tool == TOOL_STAMP)
                 {
                   if (stamp_tool_mode == STAMP_TOOL_MODE_ROTATE)
+                  {
                     stamp_xor(stamp_place_x, stamp_place_y);
+                  }
                   else if (stamp_xored)
                   {
                     stamp_xor(canvas->w / 2, canvas->h / 2);
@@ -5265,7 +5267,24 @@ static void mainloop(void)
                 (cur_tool != TOOL_STAMP || stamp_tool_mode == STAMP_TOOL_MODE_PLACE) &&
                 cur_tool != TOOL_TEXT && cur_tool != TOOL_LABEL)
             {
+              /* Jump into quick eraser loop */
               do_quick_eraser();
+
+              /* Avoid XOR outlines from getting drawn
+                 at our initial "click + [X]" position */
+              if (cur_tool == TOOL_STAMP)
+              {
+                reset_stamps(&stamp_xored_rt, &stamp_place_x, &stamp_place_y, &stamp_tool_mode);
+              }
+              else if (cur_tool == TOOL_ERASER)
+              {
+                int mx, my;
+
+                SDL_GetMouseState(&mx, &my);
+                old_x = mx - r_canvas.x;
+                old_y = my - r_canvas.y;
+                maybe_redraw_eraser_xor();
+              }
             }
           }
           else
@@ -23924,15 +23943,25 @@ static void do_quick_eraser(void)
   int val_x, val_y, motioner;
   int valhat_x, valhat_y, hatmotioner;
   int done, old_eraser;
+  int mx, my;
 
   val_x = val_y = motioner = 0;
   valhat_x = valhat_y = hatmotioner = 0;
+
+  /* Redraw canvas to zap any Stamps or Eraser XOR outlines */
+  update_canvas(0, 0, canvas->w, canvas->h);
 
   /* Remember current eraser & switch to a suitable default */
   old_eraser = cur_eraser;
   cur_eraser = (NUM_ERASER_SIZES * 2) - 2; /* 2nd-smallest circle */
 
+  /* Snapshot the canvas, so we can undo */
   rec_undo_buffer();
+
+  /* Do an initial erase at the click location */
+  SDL_GetMouseState(&mx, &my);
+  eraser_draw(mx - r_canvas.x, my - r_canvas.y,
+              mx - r_canvas.x, my - r_canvas.y);
 
   done = 0;
   do
