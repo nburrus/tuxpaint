@@ -147,6 +147,7 @@ Tools (Controls)
       + Or, click/tap "🎞GIF Export" to save an animated GIF of the animation to
         your system's "Pictures" folder.
       + Click/tap "⤺Back" to return to the Open dialog.
+  * Click/tap "🖻⮫🗏Template" to turn the drawing into a new template.
   * Shortcut: [Ctrl]+[O]
 
 🕮⮪Save
@@ -206,5 +207,5 @@ Shortcuts while drawing:
   * [Alt]+[S] - Toggle sound effects on/off
   * [Esc] - ⤺Back or 🗙Quit
 
-Last updated: 9 de Maio de 2023
+Last updated: 19 de Xullo de 2023
 
