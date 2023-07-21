@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - May 23, 2023
+June 17, 2002 - July 20, 2023
 
 * Design and Coding:
 
@@ -1246,6 +1246,8 @@ June 17, 2002 - May 23, 2023
 
   * Android
     JianWei Zhang as contribution in the GSoC 2015
+    Pere Pujal i Carabantes
+    Terrence Sheflin <terrence.sheflin@gmail.com>
 
 * Support / Testers
 
