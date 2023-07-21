@@ -43,7 +43,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.31" date="2023-07-13">
+    <release version="0.9.31" date="2023-07-20">
       <description>
         <p>New Magic tools: Loops, Ribbon, Smooth, and Squiggles.</p>
         <p>Eraser tool now offers fuzzy (soft-edged) erasers.</p>

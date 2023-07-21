@@ -4,12 +4,12 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - July 13, 2023
+# June 14, 2002 - July 20, 2023
 
 
 # The version number, for release:
 
-VER_VERSION:=0.9.31-rc1
+VER_VERSION:=0.9.31
 
 # We are always SDL2 now, so don't need "-sdl2"
 VER_FLAVOR:=""
