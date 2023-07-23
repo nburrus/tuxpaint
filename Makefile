@@ -602,27 +602,10 @@ install:	install-bin install-data install-doc \
         echo "The App Bundle has been created as $(BUNDLE)!  Now you can:"; \
         echo; \
         echo "  * Double click $(BUNDLE) to run the application,"; \
-        echo "  * sign the App Bundle (see below),"; \
         echo "  * build the universal App Bundle (see below),"; \
         echo "  * and/or run 'make TuxPaint.dmg' to create the DMG file for distribution."; \
         echo; \
         echo "For usage, see $(DOC_PREFIX)/[locale]/README.txt"; \
-        echo; \
-        echo "SIGNING THE APP BUNDLE"; \
-        echo "----------------------"; \
-        echo "Signing is optional for the Intel CPU build, or for the Apple Silicon build if"; \
-        echo "it is to be run only on the system on which it was built (e.g., for"; \
-        echo "development.)  The App Bundle must be signed if it is built to run natively on"; \
-        echo "the Apple Silicon and is distributed."; \
-        echo; \
-        echo "To sign the App Bundle, use the following commands, where IDENTITY is your Apple"; \
-        echo "Developer ID if you have one, or a hyphen (-) to sign it ad-hoc:"; \
-        echo; \
-        echo "  codesign --remove-signature $(BUNDLE)  # to remove any existing signature"; \
-        echo "  codesign -s IDENTITY $(BUNDLE)"; \
-        echo; \
-        echo "If you are building the universal Apple Bundle, sign the App Bundle *after*"; \
-        echo "building the universal App Bundle."; \
         echo; \
         echo "BUILDING THE UNIVERSAL APP BUNDLE"; \
         echo "---------------------------------"; \

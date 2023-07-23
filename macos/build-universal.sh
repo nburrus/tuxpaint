@@ -17,6 +17,8 @@ Usage: ${SCRIPTNAME} [OPTIONS] TuxPaint-1.app TuxPaint-2.app ...
 
   -o OUTBUNDLE          Bundle to create.  [Default=${OUTBUNDLE}]
 
+  -s IDENTITY           Re-sign the bundle with IDENTITY.  [Default=${IDENTITY}]
+
 EOF
 }
 
@@ -27,6 +29,7 @@ EOF
 ARCHS=( arm64 x86_64 )
 BUNDLES=( $(printf "TuxPaint-%s.app\n" "${ARCHS[@]}") )
 OUTBUNDLE=TuxPaint.app
+IDENTITY="-"
 FORCE=0
 
 
@@ -39,10 +42,11 @@ function main() {
     local isok=1
 
     # Process arguments
-    while getopts "fo:h" opt; do
+    while getopts "fo:s:h" opt; do
         case "$opt" in
             f)  FORCE=1           ;;
             o)  OUTBUNDLE=$OPTARG ;;
+            s)  IDENTITY=$OPTARG  ;;
             h)  usage && exit 0   ;;
             *)  isok=0
         esac
@@ -83,6 +87,7 @@ function main() {
     (( isok )) || exit 1
 
     build-universal
+    resign-bundle
 }
 
 
@@ -133,6 +138,14 @@ function build-universal() {
     done
 
     (( isok ))
+}
+
+
+function resign-bundle() {
+    echo "   * Sign $OUTBUNDLE..."
+    codesign --remove-signature "$OUTBUNDLE"
+    codesign -s "$IDENTITY" "$OUTBUNDLE"
+    echo "     -> Done!"
 }
 
 

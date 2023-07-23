@@ -76,3 +76,21 @@ for i in "$CONF_FILES"; do
 	cp -p "$i" "$CONFDIR"
 done
 
+# Re-sign the bundle
+#
+# Apple Silicon requires all binaries that run natively to be signed.  For this
+# reason, Xcode automatically signs all binaries built for Apple Silicon,
+# anonymously if needed.  However, install_name_tool, which we use above,
+# breaks the signature, so we need to resign the combined bundle.  We sign it
+# anonymously using the identity named "-" (hyphen).  If the user has their own
+# identity, they will need to sign it manually (after building the universal
+# bundle, if one is being built).
+#
+# For more information on signature requirement on Apple Silicon, see:
+# https://developer.apple.com/documentation/macos-release-notes/macos-big-sur-11_0_1-universal-apps-release-notes#:~:text=New%20in%20macOS,pass%20through%20Gatekeeper.
+#
+echo "   * Sign the app bundle with default identity..."
+codesign --remove-signature "$BUNDLE"
+codesign -s - "$BUNDLE"
+echo "     -> Done!"
+
