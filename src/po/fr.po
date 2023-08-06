@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:29-0700\n"
-"PO-Revision-Date: 2023-07-17 19:30+0200\n"
+"PO-Revision-Date: 2023-08-06 20:21+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -342,11 +342,11 @@ msgid ""
 "program."
 msgstr ""
 "Tux Paint est un programme de dessin libre, conçu pour les jeunes enfants "
-"âgés de 3 à 12 ans, et qui a remporté de nombreux prix. Tux Paint est "
-"utilisé dans des écoles partout dans le monde comme activité d'apprentissage "
-"de dessin par ordinateur. Il possède une interface simple à utiliser, des "
-"effets sonores amusants, et une mascotte dessinée qui encourage et aide les "
-"enfants lorsqu'ils utilisent le programme."
+"âgés de 3 à 12 ans, ayantremporté de nombreux prix. Tux Paint est utilisé "
+"dans des écoles partout dans le monde comme activité d'apprentissage de "
+"dessin par ordinateur. Il possède une interface simple à utiliser, des "
+"effets sonores amusants, et une mascotte qui encourage et aide les enfants "
+"quand ils utilisent le programme."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:19
 msgid ""
@@ -363,8 +363,8 @@ msgstr "New Breed Software et autres."
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:34
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
 msgstr ""
-"Tux Paint est livré avec de nombreuses images prédessinées du style livre de "
-"coloriage"
+"Tux Paint est livré avec de nombreuses images prédessinées du style 'livre "
+"de coloriage'"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid ""
@@ -384,7 +384,7 @@ msgstr "Nouveaux outils Magie : Boucles, Ruban, Adoucir et Gribouillis."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
-msgstr "L'outil Gomme permet maintenant de flouter (bords progressifs)."
+msgstr "L'outil 'Gomme' permet maintenant de flouter (bords progressifs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -403,7 +403,7 @@ msgid ""
 "option."
 msgstr ""
 "L'option \"Effacer\" pour supprimer des dessins sauvegardés avec la boîte "
-"Ouvrir et des modèles exportés avec la boîte Nouveau peut être désactiver "
+"Ouvrir et des modèles exportés avec la boîte Nouveau peut être désactivé "
 "avec l'option \"noerase\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
@@ -462,7 +462,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr ""
-"L'outil 'Formes', dans le mode dessiner à partir d'un coin, a été améliorer."
+"L'outil 'Formes', dans le mode 'dessiner à partir d'un coin', a été "
+"améliorer."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
@@ -471,7 +472,7 @@ msgstr "L'outil 'Remplir' possède maintenant un mode de remplissage en biseau."
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgstr ""
-"Un mode d'effacement rapide peut être réalisé via un raccourci clavier."
+"Un mode d'effacement rapide peut être effectué via un raccourci clavier."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
@@ -488,7 +489,7 @@ msgid ""
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
 "On peut spécifier comment étirer les images de Démarrage ou les images "
-"Modèle, pour éviter des défauts quand le ration d'aspect du canevas diffère "
+"Modèle, pour éviter des défauts quand le ratio d'aspect du canevas diffère "
 "de celui de l'image."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
