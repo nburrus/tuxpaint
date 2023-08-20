@@ -3,7 +3,7 @@
 
                          Documentation sur les options
 
-        Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
+       Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
                                juillet 20, 2023
@@ -54,9 +54,9 @@ dans votre répertoire personnel. (aka "~/.tuxpaintrc" ou "$HOME/.tuxpaintrc")
 
 Fichier de configuration pour l'ensemble du système
 
-Before this file is read, a system-wide configuration file is read. (By
-default, this configuration has no settings enabled.) It is normally located
-at:
+Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
+système est lu. (Par défaut, cette configuration n'a pas de paramètres
+activés.) Il se trouve normalement ici :
 
     /etc/tuxpaint/tuxpaint.conf
 
@@ -68,17 +68,17 @@ Support/TuxPaint
 
 Fichier de configuration pour l'ensemble du système
 
-Before this file is read, a system-wide configuration file is read. (By
-default, this configuration has no settings enabled.) It is normally located
-at:
+Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
+système est lu. (Par défaut, cette configuration n'a pas de paramètres
+activés.) Il se trouve normalement ici :
 
     /Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Utilisateurs de Windows
 
-The file you should create is called "tuxpaint.cfg" and it should be placed in
-in your personal AppData folder: C:\Users\nom d'utilisateur\AppData\Roaming\
-TuxPaint\
+Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et doit être placé
+dans votre dossier personnel AppData : C:\Users\nom d'utilisateur\AppData\
+Roaming\TuxPaint\
 
 Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier. Assurez-vous de
 l'enregistrer en tant que texte brut et assurez-vous que le nom de fichier ne
@@ -86,15 +86,16 @@ contient pas ".txt" à la fin ...
 
 Fichier de configuration pour l'ensemble du système
 
-Before this file is read, a system-wide configuration file is read. (By
-default, this configuration has no settings enabled.) It is normally located
-at:
+Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
+système est lu. (Par défaut, cette configuration n'a pas de paramètres
+activés.) Il se trouve normalement ici :
 
     C:\Program Files\Tuxpaint
 
-⚙ You can disable reading of this file altogether, leaving the settings as
-defaults (which can then be overridden by your personal config. file and/or
-command-line arguments) by using the command-line option "--nosysconfig".
+⚙ Vous pouvez désactiver complètement la lecture de ce fichier, en laissant les
+paramètres par défaut (qui peuvent ensuite être remplacés par votre fichier
+config personnel et / ou vos arguments de ligne de commande) en utilisant
+l'option de ligne de commande "--nosysconfig".
 
 Options disponibles
 
@@ -1540,7 +1541,7 @@ Boutons pour raccourcis
     joystick-btn-fill=BUTTON NUMBER
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
-        un raccourci pour sélectionner select the fill tool.
+        un raccourci pour sélectionner sélectionne l'outil de remplissage.
 
 
 
@@ -1967,8 +1968,8 @@ Boutons pour raccourcis
     |------------------+------------------+----------------+------------------|
     | iu_CA            |                  | Inuktitut      |                  |
     |------------------+------------------+----------------+------------------|
-    | ja_JP (*)        |                  | Japanese       | right [Alt] or   |
-    |                  |                  |                | left [Alt]       |
+    | ja_JP (*)        |                  | Japanese       | [Alt] droit ou   |
+    |                  |                  |                | [Alt] gauche     |
     |------------------+------------------+----------------+------------------|
     | ka_GE            |                  | Georgian       |                  |
     |------------------+------------------+----------------+------------------|
@@ -1978,8 +1979,8 @@ Boutons pour raccourcis
     |------------------+------------------+----------------+------------------|
     | kn_IN            |                  | Kannada        |                  |
     |------------------+------------------+----------------+------------------|
-    | ko_KR (*)        |                  | Korean         | right [Alt] or   |
-    |                  |                  |                | left [Alt]       |
+    | ko_KR (*)        |                  | Korean         | [Alt] droit ou   |
+    |                  |                  |                | [Alt] gauche     |
     |------------------+------------------+----------------+------------------|
     | kok_IN           |                  | Konkani        |                  |
     |                  |                  | (Devanagari)   |                  |
@@ -2139,10 +2140,10 @@ Boutons pour raccourcis
     représentées à l'aide d'un jeu de caractères latins, comme les autres.
     Consultez la section "Polices spéciales " ci-dessous.
 
-    💡 Note: Tux Paint provides an alternative input method for entering
-    characters with the Text tool in some locales. The key comibation(s) listed
-    can be used to cycle through the supported input methods while the Text
-    tool is active.
+    💡 Remarque : Tux Paint fournit une méthode de saisie alternative pour
+    saisir des caractères avec l' outil Texte avec certaines langues. Les
+    combinaisons de touches répertoriées peuvent être utilisées pour parcourir
+    les méthodes de saisie prises en charge lorsque l' outil Texte est actif.
 
     Définition des paramètres régionaux de votre environnement
 
@@ -2163,12 +2164,14 @@ Boutons pour raccourcis
     utiliser sont activés en éditant le fichier "/etc/locale.gen" sur votre
     système, puis en exécutant le programme "locale-gen" en tant que root.
 
-    💡 Note: Debian users may be able to simply run the command
-    "dpkg-reconfigure locales" as root to bring up a configuration dialog.
-    Ubuntu users may be able to run "sudo dpkg-reconfigure localeconf" (the
-    "localeconf" package may need to be installed first), or you may need to
-    edit the file "/var/lib/locales/supported.d/local" first, and add locales
-    they want, from the list found in "/usr/share/i18n/SUPPORTED".
+    💡 Remarque : les utilisateurs Debian peuvent simplement exécuter la
+    commande "dpkg-reconfigure locales" en tant que root pour afficher une
+    boîte de dialogue de configuration. Les utilisateurs d'Ubuntu peuvent
+    exécuter "sudo dpkg-reconfigure localeconf" (le paquet "localeconf" peut
+    avoir besoin d'être installé en premier), ou bien peuvent avoir besoin
+    d'éditer le fichier "/var/lib/locales/supported.d/local" d'abord, et
+    d'ajouter les paramètres régionaux qu'ils veulent, à partir de la liste
+    trouvée dans "/usr/share/i18n/SUPPORTED".
 
     Ensuite, avant d'exécuter Tux Paint, définissez votre variable
     d'environnement "$LANG" sur l'un des paramètres régionaux répertoriés

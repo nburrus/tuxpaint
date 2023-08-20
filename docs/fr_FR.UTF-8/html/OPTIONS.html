@@ -97,7 +97,7 @@
             Documentation sur les options          </h2>
 
           <p>
-            Copyright &copy; 2002-2023 by divers contributeurs; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2002-2023 by divers contributeurs; voir <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
@@ -179,7 +179,7 @@
           </header>
 
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+            Avant la lecture de ce fichier, un fichier de configuration à l'échelle du système est lu. (Par défaut, cette configuration n'a pas de paramètres activés.) Il se trouve normalement ici :          </p>
 
           <blockquote>
             <code>/etc/tuxpaint/tuxpaint.conf</code>
@@ -203,7 +203,7 @@
           </header>
 
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+            Avant la lecture de ce fichier, un fichier de configuration à l'échelle du système est lu. (Par défaut, cette configuration n'a pas de paramètres activés.) Il se trouve normalement ici :          </p>
 
           <blockquote>
             <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
@@ -218,7 +218,7 @@
         </header>
 
         <p>
-          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in in your personal AppData folder: <code>C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\</code>        </p>
+          Le fichier que vous devez créer s'appelle "<code><b>tuxpaint.cfg</b></code>" et doit être placé dans votre dossier personnel AppData : <code>C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\</code>        </p>
 
         <p>
           Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier. Assurez-vous de l'enregistrer en tant que texte brut et assurez-vous que le nom de fichier ne contient pas ".txt" à la fin ...        </p>
@@ -230,7 +230,7 @@
           </header>
 
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+            Avant la lecture de ce fichier, un fichier de configuration à l'échelle du système est lu. (Par défaut, cette configuration n'a pas de paramètres activés.) Il se trouve normalement ici :          </p>
 
           <blockquote>
             <code>C:\Program Files\Tuxpaint</code>
@@ -241,7 +241,7 @@
       </section><!-- H2: Windows Users -->
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        You can disable reading of this file altogether, leaving the settings as defaults (which can then be overridden by your personal config. file and/or command-line arguments) by using the command-line option "<code>--nosysconfig</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        Vous pouvez désactiver complètement la lecture de ce fichier, en laissant les paramètres par défaut (qui peuvent ensuite être remplacés par votre fichier config personnel et / ou vos arguments de ligne de commande) en utilisant l'option de ligne de commande "<code>--nosysconfig</code>".      </p>
     </section><!-- H1: Configuration File -->
 
     <section class="outer"><!-- H1: Available Options -->
@@ -2229,7 +2229,7 @@
 
     <dd>
       <p>
-        Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera un raccourci pour sélectionner select the fill tool.      </p>
+        Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera un raccourci pour sélectionner sélectionne l'outil de remplissage.      </p>
     </dd>
 
     <dt>
@@ -2943,7 +2943,7 @@
     <td><!-- locale_code --><code>ja_JP (*)</code></td>
     <td></td>
     <td>Japanese</td>
-    <td>right [Alt] or left [Alt]</td>
+    <td>[Alt] droit ou [Alt] gauche</td>
   </tr>
     <tr>
     <td><!-- locale_code --><code>ka_GE</code></td>
@@ -2973,7 +2973,7 @@
     <td><!-- locale_code --><code>ko_KR (*)</code></td>
     <td></td>
     <td>Korean</td>
-    <td>right [Alt] or left [Alt]</td>
+    <td>[Alt] droit ou [Alt] gauche</td>
   </tr>
     <tr>
     <td><!-- locale_code --><code>kok_IN</code></td>
@@ -3389,7 +3389,7 @@
           <b>(*)</b> - Ces langues nécessitent leurs propres polices, car elles ne sont pas représentées à l'aide d'un jeu de caractères latins, comme les autres. Consultez la section "<a href="#special_fonts"><i>Polices spéciales</i></a> " ci-dessous.        </p>
 
         <p class="note">
-          <span title="Information">&#128161;</span>          <strong>Note:</strong> Tux Paint provides an alternative input method for entering characters with the <b>Text</b> tool in some locales. The key comibation(s) listed can be used to cycle through the supported input methods while the <b>Text</b> tool is active.        </p>
+          <span title="Information">&#128161;</span>          <strong>Remarque :</strong> Tux Paint fournit une méthode de saisie alternative pour saisir des caractères avec l' outil <b>Texte</b> avec certaines langues. Les combinaisons de touches répertoriées peuvent être utilisées pour parcourir les méthodes de saisie prises en charge lorsque l' outil <b>Texte</b> est actif.        </p>
       </section><!-- H2: Available Languages -->
 
       <section><!-- H2: Setting Your Environment's Locale -->
@@ -3416,7 +3416,7 @@
             Tout d'abord, assurez-vous que les paramètres régionaux que vous souhaitez utiliser sont activés en éditant le fichier "<code>/etc/locale.gen</code>" sur votre système, puis en exécutant le programme "<code>locale-gen</code>" en tant que root.          </p>
 
           <p class="note">
-            <span title="Information">&#128161;</span>            <strong>Note:</strong> Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>/var/lib/locales/supported.d/local</code>" first, and add locales they want, from the list found in "<code>/usr/share/i18n/SUPPORTED</code>".          </p>
+            <span title="Information">&#128161;</span>            <strong>Remarque :</strong> les utilisateurs Debian peuvent simplement exécuter la commande "<code>dpkg-reconfigure locales</code>" en tant que root pour afficher une boîte de dialogue de configuration. Les utilisateurs d'Ubuntu peuvent exécuter "<code>sudo dpkg-reconfigure localeconf</code>" (le paquet "localeconf" peut avoir besoin d'être installé en premier), ou bien peuvent avoir besoin d'éditer le fichier "<code>/var/lib/locales/supported.d/local</code>" d'abord, et d'ajouter les paramètres régionaux qu'ils veulent, à partir de la liste trouvée dans "<code>/usr/share/i18n/SUPPORTED</code>".          </p>
 
           <p>
             Ensuite, avant d'exécuter Tux Paint, définissez votre variable d'environnement "<code>$LANG</code>" sur l'un des paramètres régionaux répertoriés ci-dessus. (Si vous voulez que tous les programmes qui peuvent être traduits le soient, vous voudrez peut - être placer les éléments suivants dans script de connexion, par ex. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc...)          </p>

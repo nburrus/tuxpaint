@@ -2,7 +2,7 @@
                                 version 0.9.31
                 Documentation sur les variables d'environnement
 
-        Copyright © 2021-2023 by divers contributeurs; see AUTHORS.txt.
+       Copyright © 2021-2023 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
                                   mai 5, 2023
@@ -99,11 +99,12 @@ SDL_VIDEO_ALLOW_SCREENSAVER
 
 SDL_VIDEO_WINDOW_POS
 
-    Requests where to position Tux Paint's window, and can be used to specify
-    what display to place a fullscreen Tux Paint in a multi-monitor
-    configuration. If not set, or set to "nopref" (meaning "no preference"),
-    Simple DirectMedia Layer (libSDL) decides. Can be set to an X,Y coordinate
-    (e.g. 200,100), or "center" (meaning "center").
+    Demande où positionner la fenêntre de Tux Paint, ce qui peut être utilisé
+    pour spécifier où mettre Tux Paint en plein écran en configuration
+    multi-moniteurs. Si il n'y a rien, ou bien le réglage est mis à "nopref"
+    (ce qui signifie "pas de préférence"), Simple DirectMedia Layer (libSDL)
+    décide. Peut être réglé pour une coordonnée X,Y (par ex. 200,100), ou
+    "center" (ce qui signifie "centré").
 
 
 

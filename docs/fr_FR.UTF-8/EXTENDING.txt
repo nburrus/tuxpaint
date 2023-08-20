@@ -2,7 +2,7 @@
                                    Tux Paint
                                 version 0.9.31
 
-        Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
+       Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
                                  mai 29, 2023
@@ -26,13 +26,13 @@
 |   * 'Images de démarrage'                                   |
 |       + Images de démarrage avec style 'livre de coloriage' |
 |       + Images de démarrage avec 'style scénique'           |
-|       + Starter Options                                     |
+|       + Options d'image de démarrage                        |
 |   * 'Modèles'                                               |
-|       + Template Options                                    |
+|       + Options des images Modèle                           |
 |   * Traductions                                             |
 |   * Méthodes alternatives de saisie                         |
 |   * Clavier virtuel sur écran                               |
-|   * Magic Tools                                             |
+|   * Outils 'Magie'                                          |
 +-------------------------------------------------------------+
 
 Si vous souhaitez ajouter ou modifier des éléments tels que des pinceaux, des
@@ -40,7 +40,8 @@ images de démarrage, des tampons en caoutchouc et d'autres contenus utilisés
 par Tux Paint , vous pouvez le faire assez facilement en ajoutant, modifiant ou
 supprimant simplement des fichiers là où Tux Paint les recherche.
 
-💡 Note: You'll need to re-launch Tux Paint for the changes to take effect.
+💡 Remarque : vous devrez redémarrer Tux Paint pour que les modifications
+prennent effet.
 
 Où vont les fichiers
 
@@ -210,8 +211,9 @@ Pinceaux animés
     Ajoutez une ligne contenant la ligne "frames=N" au fichier de données du
     pinceau, où"N" est le nombre d'images dans le pinceau.
 
-    ⚙ Note: If you'd rather the frames be flipped through randomly, rather than
-    sequentially, also add a line containing "random" to the brush's data file.
+    ⚙ Remarque : si vous préférez que les images apparaissent de manière
+    aléatoire plutôt que séquentielle, ajoutez en plus une ligne contenant "
+    random" au fichier de données du pinceau.
 
 
 
@@ -260,9 +262,10 @@ Pinceaux animés orientables ou tournants
 Placez les PNG de l'image du pinceau (et tous les fichiers texte de données)
 dans le répertoire "brushes".
 
-💡 Note: If your new pinceaux all come out as solid squares or rectangles, it's
-because you forgot to use alpha transparency! See the 'PNG documentation' in
-Tux Paint for more information and tips.
+💡 Remarque : si vos nouveaux pinceaux se présentent tous sous forme de carrés
+ou de rectangles pleins, c'est que vous avez oublié d'utiliser la transparence
+alpha ! Consultez le fichier de documentation "PNG" pour plus d'informations et
+de conseils.
 
 Tampons
 
@@ -291,14 +294,16 @@ l'utilisateur d'ajuster le tampon vers le haut (plus grand) et vers le bas
 Les SVG sont basés sur des vecteurs et seront mis à l'échelle de manière
 adéquate pour le canevas utilisé.
 
-💡 Note: If your new des tampons basés sur PNG all come out as solid squares or
-rectangles, it's because you forgot to use alpha transparency! See the 'PNG
-documentation' in Tux Paint for more information and tips.
+💡 Remarque : si vos nouveaux des tampons basés sur PNG se présentent tous sous
+forme de carrés ou de rectangles pleins, c'est que vous avez oublié d'utiliser
+la transparence alpha ! Consultez le fichier de documentation "PNG" pour plus
+d'informations et de conseils.
 
-💡 Note: If your new SVG stamps seem to have a lot of whitespace, make sure the
-SVG 'document' is no larger than the shape(s) within. If they are being
-clipped, make sure the 'document' is large enough to contain the shape(s). See
-the 'SVG documentation' in Tux Paint for more information and tips.
+💡 Remarque : si vos nouveaux tampons SVG semblent avoir beaucoup de zones
+vides, assurez-vous que le «document» SVG n'est pas plus grand que la ou les
+formes qu'il contient. S'ils sont coupés, assurez-vous que le «document» est
+suffisamment grand pour contenir la ou les formes. Voir le fichier de
+documentation " SVG" pour plus d'informations et de conseils.
 
 ⚙ Utilisateurs avancés : Le HOWTO Advanced Stamps décrit, en détail, comment
 créer des images PNG qui seront parfaitement mises à l'échelle lorsqu'elles
@@ -372,32 +377,33 @@ Support pour la régionalisation
 
 
 
-💡 Note: Also consider using descriptive sounds; see 'Son descriptif du tampon',
-below.
+💡 Remarque : Pensez à utiliser les descriptions sonores; voir 'Son descriptif
+du tampon' ci-dessous.
 
 Son descriptif du tampon
 
-Tux Paint peut également jouer un son descriptif quand on choisit un tampon.
-Par ex., une personne disant le mot "canard" quand on choisit un canard, ou le
-nom d'un instrument de musique quand on en choisit un. Les fichiers peuvent
-être au format "WAVE (".wav")" ou "OGG Vorbis (".ogg")", et on le même nom que
-l'image PNG ou SVG, avec "_desc" à la fin (par ex., le son descritid de
-"stamp.svg" est le fichier son "stamp_desc.ogg" dans le même répertoire).
+Tux Paint peut également émettre une description sonore quand on choisit un
+tampon. Par ex., une personne disant le mot "canard" quand on choisit un
+canard, ou le nom d'un instrument de musique quand on en choisit un. Les
+fichiers peuvent être au format "WAVE (".wav")" ou "OGG Vorbis (".ogg")", et on
+le même nom que l'image PNG ou SVG, avec "_desc" à la fin (par ex., le son
+descritid de "stamp.svg" est le fichier son "stamp_desc.ogg" dans le même
+répertoire).
 
 Support pour la régionalisation
 
-    Pour les descriptions dans différentes langues, créez également des
+    Pour les descriptions sonores dans différentes langues, créez également des
     fichiers WAV ou OGG avec à la fois "_desc" et le libellé des paramètres
     régionaux dans le nom de fichier, sous la forme : "stamp_desc_LOCALE.EXT"
 
-    L'son descriptif qui sera joué lorsque le tampon correspondant au fichier
-    image "stamp.png" est choisi, et que Tux Paint utilise la langue espagnole,
-    sera "stamp_desc_es.wav". Avec la langue française, ce sera
+    L'description sonore qui sera joué lorsque le tampon correspondant au
+    fichier image "stamp.png" est choisi, et que Tux Paint utilise la langue
+    espagnole, sera "stamp_desc_es.wav". Avec la langue française, ce sera
     "stamp_desc_fr.wav". Avec le portugais brésilien, "stamp_desc_pt_BR.wav",
     etc ...
 
-    Si aucun son descriptif localisé ne peut être chargé, Tux Paint tentera de
-    charger le fichier son «par défaut». (par exemple, "stamp_desc.wav")
+    Si aucun description sonore localisé ne peut être chargé, Tux Paint tentera
+    de charger le fichier son «par défaut». (par exemple, "stamp_desc.wav")
 
 
 
@@ -554,9 +560,9 @@ Depuis Tux Paint 0.9.18, vous pouvez également fournir une image pré-retourné
 avec "_flip" dans le nom, et / ou une image qui est à la fois en miroir et
 retournée, en la nommant " _mirror_flip".
 
-💡 Note: If the user flips and mirrors an image, and a pre-drawn "_mirror_flip"
-doesn't exist, but either "_flip" or "_mirror" does, it will be used, and
-mirrored or flipped, respectively.
+💡 Remarque : Si l'utilisateur retourne et reflète une image, et qu'un
+"_mirror_flip" pré-dessiné n'existe pas, mais que "_flip" ou "_mirror" existe ,
+il sera utilisé, et reflété ou retourné, selon le cas.
 
 Polices
 
@@ -628,18 +634,19 @@ Placez-les dans le répertoire "starters". Lorsque la boîte de dialogue
 «Nouveau» est accessible dans Tux Paint , les images de démarrage apparaîtront
 avec l'écran qui apparaît, suivant les différents choix de couleurs unies.
 
-💡 Note: 'Images de démarrage' are 'attached' to saved pictures, via a small
-text file that has the same name as the saved file, but with ".dat" as the
-extension. This allows it to continue to affect the drawing even after Tux
-Paint has been quit, or another picture is loaded or a new image is created.
-(In other words, if you base a drawing on a image de démarrage, it will always
-be affected by it.)
+💡 Remarque :'Images de démarrage' sont 'attachés' aux images sauvegardées, via
+un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec
+".dat" comme extension. Ceci permet de continuer de s'occuper du dessin, mais
+après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien
+une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur
+un image de démarrage, il sera toujours changé par lui).
 
-Starter Options
+Options d'image de démarrage
 
-Outre une an image, les starters peuvent également recevoir d'autres attributs.
-Pour ce faire, vous devez créer un «fichier de données» pour starter. (Note:
-Tux Paint prior to version 0.9.29 did not support starter options.)
+Outre une une image, les 'Images de démarrage' peuvent également recevoir
+d'autres attributs. Pour ce faire, vous devez créer un «fichier de données»
+pour image de 'Départ'. (Note : Tux Paint avant la version 0.9.29 ne supporte
+pas options de démarrage.)
 
 Un fichier de données de starter's est simplement un fichier texte ASCII
 contenant les options pour le starter.
@@ -650,35 +657,37 @@ qui se trouve dans le même répertoire.)
 
 allowscale
 
-    When a starter image is a different aspect ratio (width-to-height
-    proportions) than Tux Paint's canvas, by default it will be scaled to fit
-    entirely within the canvas, without stretching the starter (changing its
-    aspect ratio); for example, a square starter on a portrait-shaped canvas
-    will be placed in the center of the canvas. By default, Tux Paint will then
-    take the strip of pixels at the edges of the starter and stretch them to
-    the edges of the canvas, "smearing" it.
+    Quand une image de démarrage a un ratio d'aspect (proportion largeur/
+    hauteur) différent de celui du canevas de Tux Paint, elle sera dimensionnée
+    pour remplir entièrement le canevas sans l'étirer (en changeant le ratio
+    d'aspect); par exemple une image carrée sur un canevas de format portrait
+    sera placée au centre de ce canevas. Par défaur, Tux Paint prend la bande
+    de pixels aux bords de l'image et l'étend jusqu'aux bords du canevas, en
+    "l'étalant".
 
-    If it's acceptable for the starter image to be cropped in one or both
-    directions, the "allowscale" may be used to tell Tux Paint which behavior
-    to allow:
+    Si l'image de démarrage peut être rognée dans une ou les deux directions, "
+    allowscale" peut être utilisé pour dire à Tux Paint quel comportement est
+    permis :
 
-      + For starters where it's alright to crop the left and right edges, but
-        the top and bottom edges must be retained, use "allowscale=horizontal".
-          o If the starter's aspect ratio is wider than that of the canvas, it
-            will be scaled to fit the height of the canvas, and the left and
-            right will be cropped.
-          o If the starter's aspect ratio is taller than that of the canvas, it
-            will be scaled to fit the height of the canvas, and no cropping
-            will occur, and the left and right edges will be smeared.
+      + Pour les images pour lesquelles c'est d'accord pour rogner les bords
+        gauche et droite, mais les bords haut et bas doivent être conservés,
+        utilisez "allowscale=horizontal".
+          o If the starter's aspect ratio is plus large than that of the
+            canvas, it will be scaled to fit the height of the canvas, and the
+            gauche et droite will be cropped.
+          o If the starter's aspect ratio is plus haut than that of the canvas,
+            it will be scaled to fit the height of the canvas, and no cropping
+            will occur, and the gauche et droite edges will be smeared.
 
-      + For starters where it's alright to crop the top and bottom edges, but
-        the left and right edges must be retained, use "allowscale=vertical".
-          o If the starter's aspect ratio is taller than that of the canvas, it
-            will be scaled to fit the width of the canvas, and the top and
-            bottom will be cropped.
-          o If the starter's aspect ratio is wider than that of the canvas, it
-            will be scaled to fit the width of the canvas, and no cropping will
-            occur, and the top and bottom edges will be smeared.
+      + Pour les images pour lesquelles c'est d'accord pour rogner les bords
+        haut et bas, mais les bords gauche et droite doivent être conservés,
+        utilisez "allowscale=vertical".
+          o If the starter's aspect ratio is plus haut than that of the canvas,
+            it will be scaled to fit the largeur of the canvas, and the haut et
+            bas will be cropped.
+          o If the starter's aspect ratio is plus large than that of the
+            canvas, it will be scaled to fit the largeur of the canvas, and no
+            cropping will occur, and the haut et bas edges will be smeared.
 
       + If it's acceptable to crop either the top and bottom or the left and
         right, use "allowscale=both". Contents from starter will always fill
@@ -688,7 +697,7 @@ allowscale
         explicitly with "allowscale=none".
 
 
-background
+arrière-plan
 
     This option allows you to specify how Tux Paint should fill the rest of the
     canvas, when the starter does not fit in one or the other direction. By
@@ -708,7 +717,7 @@ background
 
 
 
-gravity
+gravité
 
     This option allows you to specify how Tux Paint should position a starter,
     when it is being cropped in one or the other direction. By default, Tux
@@ -719,48 +728,48 @@ gravity
     content, you can specify "gravity=top". Or, if the bottom right is
     important, specify "gravity=bottom-right".
 
-    The available options are:
-      + center — prefer the center (the default)
-      + top — prefer the top center
-      + bottom — prefer the bottom center
-      + left — prefer the left center
-      + right — prefer the right center
-      + top-left — prefer the top left
-      + top-right — prefer the top right
-      + bottom-left — prefer the bottom left
-      + bottom-right — prefer the bottom right
+    Options disponibles :
+      + center — formes à partir du centre (par défaut)
+      + top — formes à partir du centre en haut
+      + bottom — formes à partir du centre en bas
+      + left — préférer le centre gauche
+      + right — préférer le centre droit
+      + top-left — préférer en haut à gauche
+      + top-right — préférer en haut à droite
+      + bottom-left — préférer en bas à gauche
+      + bottom-right — préférer en bas à droite
 
     [ Landscape-shaped image of a horizon with the sun in the middle and a
     building on the right. ]
 
-    Focusing on the center of a starter image stretched to fit the width of the
-    canvas.
+    Focusing on the centre of a starter image stretched to fit the largeur of
+    the canvas.
 
 
     [ Portrait-shaped image of a horizon with the sun in the middle and the
     left side of building on the right. ]
 
-    Focusing on the center of a starter image stretched to fit the height of
+    Focusing on the centre of a starter image stretched to fit the height of
     the canvas.
 
 
     [ Landscape-shaped image of the sky with the sun at the bottom and the top
     of building on the right. ]
 
-    Focusing on the top of a starter image stretched to fit the width of the
+    Focusing on the haut of a starter image stretched to fit the largeur of the
     canvas.
 
 
     [ Landscape-shaped image of the ground with the sun at the top. ]
 
-    Focusing on the bottom of a starter image stretched to fit the width of the
+    Focusing on the bas of a starter image stretched to fit the largeur of the
     canvas.
 
 
     [ Portrait-shaped image of a horizon with the sun on the left and a
     building in the center. ]
 
-    Focusing on the right of a starter image stretched to fit the height of the
+    Focusing on the droit of a starter image stretched to fit the height of the
     canvas.
 
 
@@ -802,30 +811,34 @@ Placez-les dans le répertoire "templates". Lorsque la boîte de dialogue
 «Nouveau» est accessible dans Tux Paint , les images 'modèle' apparaîtront avec
 l'écran qui apparaît, suivant les différents choix de couleurs unies.
 
-💡 Note: 'Modèles' are 'attached' to saved pictures, via a small text file that
-has the same name as the saved file, but with ".dat" as the extension. This
-allows it to continue to affect the drawing even after Tux Paint has been quit,
-or another picture is loaded or a new image is created. (In other words, if you
-base a drawing on a image 'modèle', it will always be affected by it.)
+💡 Remarque :'Modèles' sont 'attachés' aux images sauvegardées, via un petit
+fichier texte qui a le même nom que le fichier sauvegardé, mais avec ".dat"
+comme extension. Ceci permet de continuer de s'occuper du dessin, mais après
+avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une
+nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un
+image 'modèle', il sera toujours changé par lui).
 
 
-Template Options
+Options des images Modèle
 
 Like 'Starters', a configuration file may be specified that defines how Tux
 Paint should behave when applying 'template' images to the canvas when they do
 not have identical proportions (aspect ratio). See "Starter Options", above.
-(Note: Tux Paint prior to version 0.9.29 did not support starter options.)
+(Note : Tux Paint avant la version 0.9.29 ne supporte pas options de
+démarrage.)
 
 💡 It's also possible to create basic Templates (with no options) from existing
 saved drawings directly within Tux Paint, from the "Open" dialog. They will be
-placed in the user's personal templates folder. (Note: Tux Paint prior to
-version 0.9.31 did not support Template creation from the Open dialog.)
+placed in the user's personal templates folder. (Note : Tux Paint avant la
+version 0.9.31 ne supporte pas Création de Modèle depuis la boîte de dialogue
+Ouvrir.)
 
 Traductions
 
-Tux Paint supports numerous languages, thanks to use of the "gettext"
-localization library. (See the "Languages" section of "Options documentation"
-for how to change locales in Tux Paint.)
+Tux Paint supporte de nombreux langages, grâce à l'utilisation de la
+bibliothèque de localisation "gettext". (Voir la section "Langages" de la
+"documentation Options " pour savoir comment changer les paramètres régionaux
+dans Tux Paint .)
 
 Pour traduire Tux Paint dans une nouvelle langue, copiez le fichier de modèle
 de traduction, "tuxpaint.pot" (trouvé avec le code source de Tux Paint , dans
@@ -858,12 +871,12 @@ quelques uns :
   * Virtraal
   * Lokalize
 
-💡 Note: It is best to always work off of the latest Tux Paint text catalog
-template ("tuxpaint.pot"), since new text is added, and old text is
-occasionally changed. The text catalog for the upcoming, unreleased version of
-Tux Paint can be found in Tux Paint's Git repository (see: https://tuxpaint.org
-/download/source/git/), and on the Tux Paint website at https://tuxpaint.org/
-help/po/.
+💡 Remarque : Il est préférable de toujours travailler avec le dernier modèle de
+catalogue de texte Tux Paint ("tuxpaint.pot"), car si nouveau texte est ajouté
+et l'ancien texte peut être parfois modifié. Le catalogue de textes de la
+prochaine version inédite de Tux Paint se trouve dans le référentiel Git de Tux
+Paint (voir : https://tuxpaint.org/download/source/git/ ), et sur le site Web
+de Tux Paint à https://tuxpaint.org/help/po/.
 
 Pour modifier une traduction existante, téléchargez le dernier fichier ".po"
 pour cette langue et modifiez-le comme décrit ci-dessus.
@@ -878,10 +891,10 @@ Autrement, si vous avez un compte chez SourceForge.net , vous pouvez demander à
 de code source Git afin que vous puissiez valider vos modifications
 directement.
 
-💡 Note: Support for new locales requires making additions to Tux Paint's source
-code ("/src/i18n.h" et "/src/i18n.c"), and requires updates to the Makefile,
-pour s'assurer que les fichiers ".po" sont compilés en fichiers ".mo", et
-utilisables pendant l'exécution.
+💡 Remarque : La prise en charge de nouveaux locales nécessite des ajouts au
+code source de Tux Paint ( "/src/i18n.h" et "/src/i18n.c"), et nécessite des
+mises à jour de Makefile, pour s'assurer que les fichiers ".po" sont compilés
+en fichiers ".mo", et utilisables pendant l'exécution.
 
 Méthodes alternatives de saisie
 
@@ -932,18 +945,19 @@ Exemple :
     30AD ki -
     30AE gi -
 
-⚙ Note: Blank lines within the ".im" file will be ignored, as will any text
-following a "#" (pound/hash) character — it can be used to denote comments, as
-seen in the example above.
+⚙ RemarqueLes lignes vides du fichier ".im" sont ignorées, aussi bien que les
+lignes commençant par le caractère "#" ( livre/dièse)-- on peut l'utiliser pour
+ajouter des commentaires, comme dans l'exemple ci-dessus.
 
-💡 Note: Meanings of the flags are locale-specific, and are processed by the
-language-specific source code in "src/im.c". For example, "b" is used in Korean
-to handle Batchim, which may carry over to the next character.
+💡 Remarque : Les significations des indicateurs sont spécifiques à la langue et
+sont traitées par le code source spécifique à la langue dans "src/im.c". Par
+exemple, "b" est utilisé en coréen pour gérer Batchim, qui peut être reporté au
+caractère suivant.
 
-💡 Note: Support for new méthodes de saisie requires making additions to Tux
-Paint's source code ("/src/im.c"), and requires updates to the Makefile, pour
-s'assurer que les fichiers ".im" sont disponibles pour être utilisés lors de
-l'exécution du programme.
+💡 Remarque : La prise en charge de nouveaux méthodes de saisie nécessite des
+ajouts au code source de Tux Paint ( "/src/im.c"), et nécessite des mises à
+jour de Makefile, pour s'assurer que les fichiers ".im" sont disponibles pour
+être utilisés lors de l'exécution du programme.
 
 Clavier virtuel sur écran
 
@@ -968,9 +982,9 @@ décrire l'agencement et la disposition des touches.
     keysymdefs keysymdef.h
     keyboardlist qwerty.layout default.layout
 
-⚙ Note: Blank lines within the ".layout" file will be ignored, as will any text
-following a "#" (pound/hash) character — it can be used to denote comments, as
-seen in the example above.
+⚙ RemarqueLes lignes vides du fichier ".layout" sont ignorées, aussi bien que
+les lignes commençant par le caractère "#" ( livre/dièse)-- on peut l'utiliser
+pour ajouter des commentaires, comme dans l'exemple ci-dessus.
 
 La ligne "keyboardlist" décrit les dispositions vers lesquelles on bascule
 lorsque l'utilisateur clique sur les boutons gauche et droit du clavier. (Voir
@@ -1103,12 +1117,12 @@ provient également du système X Window . Il définit les valeurs Unicode de
 chaque keycap (par exemple, "XK_equal" correspond à "U+003D", pour le caractère
 "=" ("EQUALS SIGN").
 
-💡 Note: This file is not compiled into Tux Paint, but is read and parsed at
-runtime.
+💡 Remarque : Ce fichier n'est pas compilé avec Tux Paint, mais il est lu et
+analysé durant l'exécution de celui-ci.
 
 Il est peu probable qu'une modification de ce fichier soit requise.
 
-Magic Tools
+Outils 'Magie'
 
 Tux Paint's Magic tools are pieces of software, external to the main Tux Paint
 application, that are loaded as "plugins" at runtime, and interact with the

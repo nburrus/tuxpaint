@@ -2,7 +2,7 @@
                                 version 0.9.31
                      Documentation sur PNG pour Tux Paint
 
-        Copyright © 2007-2022 by divers contributeurs; see AUTHORS.txt.
+       Copyright © 2007-2022 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
                                  juin 4, 2022

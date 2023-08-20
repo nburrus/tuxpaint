@@ -3,7 +3,7 @@
 
                      Un programme simple pour les enfants
 
-        Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
+       Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
                                juillet 20, 2023
@@ -27,7 +27,7 @@
 |              g. Outil "Magie" (Effets spéciaux)       |
 |              h. Outil "Gomme"                         |
 |          2. Autres contrôles                          |
-|              a. "Undo" and "Redo" Commands            |
+|              a. Commandes "Défaire" et "Refaire"      |
 |              b. Commande "Nouveau"                    |
 |              c. Commande "Ouvrir"                     |
 |              d. Commande "Sauvegarder"                |
@@ -35,7 +35,7 @@
 |              f. Commande "Diapos" (sous "Ouvrir")     |
 |              g. Commande "Quitter"                    |
 |              h. Coupure du son                        |
-|      E. Controlling Tux Paint                         |
+|      E. Contrôle de Tux Paint                         |
 | III. Chargement d'autres images dans Tux Paint        |
 | IV. Lectures complémentaires                          |
 |  V. Comment obtenir de l'aide                         |
@@ -53,7 +53,7 @@ encourager et guider les enfants lorsqu'ils utilisent le programme. Sont
 fournis une toile vierge et un ensemble d'outils de dessin pour aider votre
 enfant à être créatif.
 
-B. Objectives
+B. Objectifs
 
 Facile et amusant
     Tux Paint se veut un simple programme de dessin pour les jeunes enfants. Il
@@ -101,12 +101,12 @@ logiciel sous GPL.)
 
 Voir COPYING.txt pour le texte complet de la licence GPL.
 
-D. What's New in Tux Paint version 0.9.31?
+D. Qu'y a-t-il de neuf dans la version 0.9.31 de Tux Paint ?
 
 Fuzzy Erasers
     Fuzzy-edged round erasers have been added to the Eraser tool
 
-New Magic tools
+Nouveaux outils Magie
     Loops, Ribbon, Smooth, and Squiggles
 
 Create templates from Open dialog
@@ -120,20 +120,20 @@ User interface font may be overridden
     "uifont" configuration option. Use "--listfonts" to see a list of available
     fonts.)
 
-File Erase may be disabled
+L'effacement de fichier peut être désactivé
 
     Controls to erase saved work — saved drawings (via the Open dialog) and
     exported templates (via the New dialog) — can be disabled. (See the
     "noerase" configuration option.)
 
-"Controlling Tux Paint" documentation
+Documentation sur "Contrôler Tux Paint"
 
     A brief overview of how Tux Paint can be controlled — mouse, tablet,
     touchscreen, joystick, and keyboard — has been added to the README
     documentation.
 
 
-See CHANGES.txt for the complete list of changes.
+Voir CHANGES.txt pour la liste complète des changements.
 
 II. Utiliser Tux Paint
 
@@ -141,8 +141,8 @@ A. Lancement de Tux Paint
 
 1. Utilisateurs de Linux/Unix
 
-Tux Paint should have placed a launcher icon in your KDE and/or GNOME menus,
-under 'Graphics.'
+Tux Paint devrait avoir mis une icône de lanceur dans vos menus KDE et/ou
+GNOME, sous «Graphiques».
 
 Autrement, vous pouvez exécuter la commande suivante à une invite du shell (par
 exemple, "$") :
@@ -238,12 +238,12 @@ En bas : couleurs
     as the color to use when flood-filling an area of the picture.)
 
     On the far right are three special color options:
-      + Color Picker
-        The "color picker" (which has an outline of an eye-dropper) allows you
-        to pick a color found within your drawing.
+      + Sélecteur de couleur
+        Le "sélecteur de couleurs" (qui ressemble à un compte-gouttes) vous
+        permet de choisir une couleur trouvée dans votre dessin.
         (A shortcut key is available to access this feature quickly; see
         below.)
-      + Rainbow Palette
+      + Palette de l'Arc-en-ciel
         The rainbow palette allows you to pick any color by choosing the hue,
         saturation, and value of the color you want. A box on the left displays
         hundreds of hues — from red at the top through to violet at the bottom
@@ -255,9 +255,9 @@ En bas : couleurs
         button to dismiss the pop-up without picking a new color.
         You may also set this tool's color to that of other color choices:
           o Whichever built-in color is selected, if any
-          o The Color Picker's current color
-          o The Color Mixer's current color
-      + Color Mixer
+          o Couleur actuelle du Sélecteur de couleur
+          o Couleur actuelle du mélangeur de couleurs
+      + Mélangeur de couleurs
         The "color mixer" (which has silhouette of a paint palette) allows you
         to create colors by blending primary additive colors — red, yellow, and
         blue — along with white (to "tint"), grey (to "tone"), and black (to
@@ -358,13 +358,13 @@ b.Outil "Tampon" (tampon de caoutchouc)
     showing where the stamp will be placed, and how big it will be. Click on
     the canvas where you wish to place the stamp.
 
-    Stamp Categories
+    Catégories de tampons
         Il peut y avoir de nombreuses catégories de timbres (par ex. animaux,
         plantes, espace extra-atmosphérique, véhicules, personnes, etc.).
         Utilisez les flèches gauche et droite pour parcourir les différentes
         collections.
 
-    Stamp Rotation
+    Rotation des tampons
 
         Using the rotation toggle button near the bottom right, you can enable
         a rotation step when placing stamps. Once you've placed the stamp,
@@ -374,15 +374,15 @@ b.Outil "Tampon" (tampon de caoutchouc)
 
         ⚙ Note: If "stamp rotation" option is disabled, the stamp will be drawn
         on the canvas when you let go of the mouse button. (There's no rotation
-        step.) See the "Options" documentation to learn about the "stamp
-        rotation" ("stamprotation") option.
+        step.) Voir la documentation sur "Options" pour tout savoir sur
+        l'option rotation d'un tampon" ("stamprotation").
 
         📜 Note: The stamp rotation feature was added to Tux Paint in version
         0.9.29.
 
 
 
-    Stamp Controls
+    Contrôles des tampons
 
         Avant de `` tamponner '' une image sur votre dessin, différents effets
         peuvent parfois être appliqués (en fonction du tampon) :
@@ -405,7 +405,7 @@ b.Outil "Tampon" (tampon de caoutchouc)
 
 
 
-    Stamp Sounds
+    Effets sonores des tampons
 
         Les tampons peuvent avoir un effet sonore et / ou une description orale
         (parlés). Les boutons en bas à gauche (près de Tux, le pingouin Linux)
@@ -468,7 +468,8 @@ d.Outil "Formes"
         clicked. This is the default method of most other traditional drawing
         software.
 
-        📜 This option was added starting with Tux Paint version 0.9.25.
+        📜 Cette option a été ajoutée en démarrant la version 0.9.25 de Tux
+        Paint.
 
 
 
@@ -506,8 +507,8 @@ d.Outil "Formes"
         the canvas when you let go of the mouse button. (There's no rotation
         step.)
 
-        ⚙ See the "Options" documentation to learn about the "simple shapes"
-        ("simpleshapes") option.
+        ⚙ Voir la documentation sur "Options" pour tout savoir sur l'option
+        formes simples" ("simpleshapes").
 
 
 
@@ -552,10 +553,10 @@ e.Outils "Texte" et "Étiquette"
         To edit a label, click the label selection button. All labels in the
         drawing will appear highlighted. Click one — or use the [Tab] key to
         cycle through all the labels, and the [Entrée] or [Retour] key to
-        select one — and you may then edit the label. (Use they [Backspace] key
-        to erase characters, and other keys to add text to the label; click in
-        the canvas to reposition the label; click in the palette to change the
-        color of the text in the label; etc.)
+        select one — and you may then edit the label. (Use they [Retour
+        arrière] key to erase characters, and other keys to add text to the
+        label; click in the canvas to reposition the label; click in the
+        palette to change the color of the text in the label; etc.)
 
         You may "apply" a label to the canvas, painting the text into the
         picture as if it had been added using the Text tool, by clicking the
@@ -587,8 +588,8 @@ e.Outils "Texte" et "Étiquette"
         Currently supported locales, the input methods available, and the key
         to toggle or cycle modes, are listed below.
 
-          o Japanese — Romanized Hiragana and Romanized Katakana — touche [Alt]
-            droite or touche [Alt] gauche
+          o Japonais -- Hiragana et Katakana romanisés — touche [Alt] droite ou
+            touche [Alt] gauche
           o Korean — Hangul 2-Bul — touche [Alt] droite or touche [Alt] gauche
           o Chinois traditionnel — touche [Alt] droite or touche [Alt] gauche
           o Thai — touche [Alt] droite
@@ -641,7 +642,7 @@ g.Outil "Magie" (Effets spéciaux)
     l'outil, vous pouvez soit cliquer et faire glisser dans l'image, et / ou
     simplement cliquer une fois sur l'image pour appliquer l'effet.
 
-    Magic Controls
+    Contrôles des outils Magie
 
 
         Si l'outil peut être utilisé en cliquant et en faisant glisser, un
@@ -673,7 +674,8 @@ g.Outil "Magie" (Effets spéciaux)
         default size (e.g., Patterns), or it may make separate tools available
         with different pre-set sizes (e.g., Bricks and Googly Eyes).
 
-        📜 This option was added starting with Tux Paint version 0.9.30.
+        📜 Cette option a été ajoutée en démarrant la version 0.9.30 de Tux
+        Paint.
 
     Voir les instructions pour chaque outil 'Magie' (dans le dossier
     'magic-docs').
@@ -705,7 +707,7 @@ h.Outil "Gomme"
 
 2. Autres contrôles
 
-a."Undo" and "Redo" Commands
+a.Commandes "Défaire" et "Refaire"
 
     Clicking the "Undo" button will undo (revert) the last drawing action. You
     can even undo more than once!
@@ -1105,9 +1107,9 @@ h.Coupure du son
 
 
 
-E. Controlling Tux Paint
+E. Contrôle de Tux Paint
 
-1. Using a Mouse or Trackball
+1. Utiliser une Souris ou une Boule de pointage
 
 Tux Paint's main mode of operation is via any device that appears to your
 operating system as a mouse, including standard mice, trackballs, and
@@ -1123,7 +1125,7 @@ button(s), a pop-up dialog will eventually appear reminding them that only one
 button is recognized Tux Paint. However, you may configure Tux Paint to accept
 any button as input (see the Options documentation).
 
-a. Scrolling
+a. Défilement
 
 Many input devices offer a way to quickly scroll within applications — many
 mice have a scroll wheel, trackballs have scroll rings, and trackpads recognize
@@ -1136,20 +1138,20 @@ Tux Paint will also automatically scroll if you click and hold the mouse down
 on an scroll button — the "up" and "down" arrow buttons that appear above and
 below scrolling lists.
 
-b. Mouse Accessibility
+b. Accessibilité de la souris
 
 Other devices that appear as a mouse can be used to control Tux Paint. For
 example:
 
   * Head pointing/tracking devices
-  * Eye gaze trackers
-  * Foot mice
+  * Dispositifs de suivi du regard
+  * Souris de pied
 
 Tux Paint offers a "sticky mouse click" accessibility setting, where a single
 click begins a click-and-drag operation, and a subsequent click ends it. (See
 the Options documentation.)
 
-2. Using a Tablet or Touchscreen
+2. Utiliser une Tablette ou un Écran tactile
 
 As noted above, Tux Paint recognizes any device that appears as a mouse. This
 means drawing tablets and touchscreens may be used. However, these devices
@@ -1157,11 +1159,11 @@ often support other features beyond X/Y motion, button clicks, and scroll-wheel
 motion. Currently, those additional features are not supported by Tux Paint.
 Some examples:
 
-  * Pressure and angle
-  * Eraser tip
-  * Multi-touch gestures
+  * Pression et angle
+  * Conseil pour la Gomme
+  * Gestes avec plusieurs doigts
 
-3. Using a Joystick-like Device
+3. Utiliser un dispositif de type joystick
 
 Tux Paint may be configured to recognize input from any game controller that
 appears to your operating system as a joystick. That even includes modern game
@@ -1175,7 +1177,7 @@ to different Tux Paint controls (e.g., acting as the [Escape] key, switching to
 the Paint tool, invoking Undo and Redo operations, etc.). See the Options
 documentation for more details.
 
-4. Using the Keyboard
+4. Utiliser le clavier
 
 Tux Paint offers an option to allow the keyboard to be used to control the
 mouse pointer. This includes motion and clicking, as well as shortcuts to
@@ -1184,7 +1186,7 @@ documentation for more details.
 
 III. Chargement d'autres images dans Tux Paint
 
-A. Overview
+A. Aperçu
 
 Étant donné que la boîte de dialogue «Ouvrir» de Tux Paint n'affiche que les
 images que vous avez créées avec Tux Paint, que se passe-t-il si vous souhaitez
@@ -1274,7 +1276,7 @@ taille de la fenêtre Tux Paint, ou de la résolution à laquelle Tux Paint est
 exécuté, si il est en plein écran. (Remarque : la résolution par défaut est de
 800x600.) Voir "Calculer les dimensions des images" ci-dessous.
 
-1. Naming the File
+1. Nom du fichier
 
 Sauvegarder l'image au format PNG. Il est fortement recommandé que vous nommiez
 le fichier en utilisant la date et l'heure courante, puisque c'est ce que Tux
@@ -1306,7 +1308,7 @@ IV.Lectures complémentaires
 Les autres documents inclus avec Tux Paint (dans le répertoire "docs") incluent
 :
 
-Using Tux Paint:
+Utiliser Tux Paint :
       + OPTIONS.html
         Instructions détaillées sur les options en ligne de commande et les
         fichiers de configuration, pour ceux qui ne veulent pas utiliser
@@ -1315,7 +1317,7 @@ Using Tux Paint:
         Documentation pour chacun des outils "Magic" actuellement installés.
 
 
-How to extend Tux Paint:
+Extensions pour Tux Paint :
       + EXTENDING.html
         Des instructions détaillées sur la création de pinceaux, de tampons,
         d'images de démarrage et de modèles; et l'ajout de polices; et créer un
@@ -1328,7 +1330,7 @@ How to extend Tux Paint:
         utiliser dans Tux Paint.
 
 
-Technical information:
+Information technique :
       + INSTALL.html
         Instructions pour compiler et installer Tux Paint, le cas échéant.
       + SIGNALS.html
@@ -1337,7 +1339,7 @@ Technical information:
         Creating new Magic tools using Tux Paint's plugin API.
 
 
-Development history and license:
+Historique du développement et licence :
       + AUTHORS.txt
         Liste des auteurs et contributeurs.
       + CHANGES.txt
@@ -1349,8 +1351,8 @@ Development history and license:
 
 V.Comment obtenir de l'aide
 
-If you need help, there are numerous ways to interact with Tux Paint developers
-and other users:
+Si vous avez besoin d'aide, il existe de nombreux moyens d'interagir avec les
+développeurs de Tux Paint et les autres utilisateurs :
 
   * Mentionner des bogues, ou demander de nouvelles fonctionnalités via le
     système de suivi des bogues
@@ -1362,8 +1364,8 @@ https://tuxpaint.org/contact/
 
 VI.Comment participer
 
-Tux Paint is a volunteer-driven project, and we're happy to accept your help in
-a variety of ways:
+Tux Paint est un projet mené par des volontaires, et nous serions heureux
+d'accepter votre aide dans des tas de domaines :
 
   * Traduire Tux Paint dans une autre langue
   * Améliorer les traductions existantes
@@ -1380,23 +1382,23 @@ VII.Follow the Tux Paint project on social media
 Tux Paint maintains a presence on a variety of social media networks, where we
 post updates and artwork.
 
-  * Join the Tux Paint page on Facebook
-  * Follow @TuxPaintDevs on Instagram
-  * Follow @tuxpaint@floss.social on Mastodon
-  * Follow u/TuxPaintDevs on Reddit
-  * Follow @TuxPaintDevs on Threads
-  * Follow Tux Paint on Tumblr
-  * Follow @TuxPaintTweets on Twitter
+  * Suivez Tux Paint sur Facebook
+  * Suivre @TuxPaintDevs sur Instagram
+  * Suivre @tuxpaint@floss.social sur Mastodon
+  * Suivre u/TuxPaintDevs sur Reddit
+  * Suivre @TuxPaintDevs sur Threads
+  * Suivre Tux Paint sur Tumblr
+  * Suivre @TuxPaintTweets sur Twitter
 
-VIII. Trademark notices
+VIII. Mentions concernant les marques déposées
 
-  * "Linux" is a registered trademark of Linus Torvalds.
-  * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
-  * "Apple" and "macOS" are registered trademarks of Apple Inc.
-  * "Facebook", "Instagram", and "Threads" are registered trademarks of Meta
-    Platforms, Inc.
-  * "Mastodon" is a registered trademark of Mastodon gGmbH.
-  * "Reddit" is a registered trademark of Reddit, Inc.
-  * "Tumblr" is a registered trademark of Tumblr, Inc.
-  * "Twitter" is a registered trademark of X Corp.
+  * "Linux" est marque déposée par Linus Torvalds.
+  * "Microsoft" et "Windows" sont des marques déposées par Microsoft Corp.
+  * "Apple" et "macOS" sont des marques déposées par Apple Inc.
+  * "Facebook" et "Instagram" sont des marques déposées par Meta Platforms,
+    Inc.
+  * "Mastodon" est une marque déposée par Mastodon gGmbH.
+  * "Reddit" est une marque déposée par Reddit, Inc.
+  * "Tumblr" est une marque déposée par Tumblr, Inc.
+  * "Twitter" est une marque déposée par X Corp.
 

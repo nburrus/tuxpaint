@@ -1,7 +1,7 @@
                                    Tux Paint
                   version 0.9.31 Questions fréquemment posées
 
-        Copyright © 2002-2023 by divers contributeurs; see AUTHORS.txt.
+       Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
                                juillet 20, 2023
@@ -16,7 +16,7 @@
 |   * Sauvegarde                    |
 |   * Problèmes audio               |
 |   * Problèmes en mode plein écran |
-|   * Other Problems                |
+|   * Autres problèmes              |
 |   * Aide / Contact                |
 +-----------------------------------+
 -------------------------------------------------------------------------------
@@ -503,7 +503,7 @@ Tux Paint continue de fonctionner en mode plein écran - je veux qu'il soit
 
 -------------------------------------------------------------------------------
 
-Other Problems
+Autres problèmes
 
 Tux Paint ne veut pas fonctionner
 
