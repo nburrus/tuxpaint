@@ -189,13 +189,13 @@ se trouve dans le même répertoire.)
 Espacement des pinceaux
 
     Depuis la version 0.9.16 de Tux Paint , vous pouvez désormais spécifier
-    l'espacement des pinceaux (c'est-à-dire la fréquence à laquelle ils sont
-    dessinés). Par défaut, l'espacement correspond à la hauteur du pinceau,
-    divisée par 4.
+    l'espacement des coups de pinceaux (c'est-à-dire la fréquence à laquelle
+    ils sont dessinés). Par défaut, l'espacement correspond à la hauteur du
+    pinceau, divisée par 4.
 
     Ajoutez une ligne contenant la ligne "spacing=N" au fichier de données du
-    pinceau, où "N" est l'espacement souhaité pour le pinceau. (Plus le nombre
-    est bas, plus le pinceau est dessiné souvent.)
+    pinceau, où "N" est l'espacement souhaité pour les coups de pinceau. (Plus
+    le nombre est bas, plus le pinceau est dessiné souvent.)
 
 
 

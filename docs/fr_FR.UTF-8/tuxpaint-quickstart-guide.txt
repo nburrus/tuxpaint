@@ -81,7 +81,7 @@ Outils (dessin)
   * Choisir une couleur (voir "Couleurs").
   * Click/tap (and drag, with Brush and Linear modes) to fill an area of the
     picture with a color.
-      + 'Inonde' une surface avec une couleur unie
+      + Uni - 'Inonde' une surface avec une couleur unie
       + Brush - Paints with a solid color, without drawing outside the chosen
         area
       + Linear - Fills the area with a linear gradient (drag to choose angle

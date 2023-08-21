@@ -337,13 +337,15 @@ a. Outil "Peinture" (pinceau)
         (such as the basic circular ones) are spaced closely, so they make a
         continuous stroke.
 
-        The default spacing of brushes may be overridden using by clicking
-        within the triangular-shaped series of bars at the bottom right; the
-        larger the bar, the wider the spacing. Brush spacing affects both tools
-        that use the brushes: the "Paint" tool and the "Lines" tool.
+        L'espacement des coups de pinceau peut être changé en cliquant dans
+        l'ensemble de barres (de forme triangulaire) en bas à droite; plus la
+        barre est grande, plus l'espacement est grand. Le réglage de
+        l'espacement des coups de pinceaux affecte deux outils utilisant les
+        pinceaux ! l'outil "Peindre" et l'outil "Ligne".
 
-        ⚙ Note: If the "nobrushspacing" option is set, Tux Paint won't display
-        the brush spacing controls. See the "Options" documentation.
+        ⚙ Note: Si l'option "nobrushspacing" est définie, Tux Paint n'affichera
+        pas les contrôles d'espacement des coups de pinceaux. Voir la
+        documentation "Options".
 
 
 
@@ -354,9 +356,9 @@ b.Outil "Tampon" (tampon de caoutchouc)
     photographiques (comme l'image d'un cheval, d'un arbre ou de la lune) dans
     votre dessin.
 
-    As you move the mouse around the canvas, an outline follows the mouse,
-    showing where the stamp will be placed, and how big it will be. Click on
-    the canvas where you wish to place the stamp.
+    Lorsque vous déplacez la souris sur le canevas, une forme suit la souris,
+    indiquant où le tampon sera placé, ainsi que sa taille. Cliquez sur le
+    canevas à l'endroit où vous voulez placer le tampon.
 
     Catégories de tampons
         Il peut y avoir de nombreuses catégories de timbres (par ex. animaux,
@@ -372,10 +374,11 @@ b.Outil "Tampon" (tampon de caoutchouc)
         Click the mouse button again and the stamp will be added to the
         drawing.
 
-        ⚙ Note: If "stamp rotation" option is disabled, the stamp will be drawn
-        on the canvas when you let go of the mouse button. (There's no rotation
-        step.) Voir la documentation sur "Options" pour tout savoir sur
-        l'option rotation d'un tampon" ("stamprotation").
+        ⚙ Note : Si l'option de "rotation des tampons" est désactivée, le
+        tampon sera mis sur le canevas quand vous relâchez le bouton de la
+        souris (Il n'y a pas d'étape de rotation). Voir la documentation sur "
+        Options" pour tout savoir sur l'option rotation d'un tampon"
+        ("stamprotation").
 
         📜 Note : La possibilité de rotation des tampons a été incorporée dans
         Tux Paint avec la version 0.9.29.
@@ -399,9 +402,9 @@ b.Outil "Tampon" (tampon de caoutchouc)
             affichés sous forme d'image miroir à l'aide des boutons de commande
             en bas à droite.
 
-        ⚙ Note: If the "nostampcontrols" option is set, Tux Paint won't display
-        the Rotation, Mirror, Flip, or sizing controls for stamps. See the "
-        Options" documentation.
+        ⚙ Note: Si l'option "nostampcontrols" est définie, Tux Paint
+        n'affichera pas les commandes Rotation, Miroir, Retourner, Réduire et
+        Agrandir pour les tampons. Voir la documentation "Options".
 
 
 
@@ -456,17 +459,17 @@ d.Outil "Formes"
     l'outil :
 
     Formes à partir du centre
-        The shape will expand from where you initially clicked, and will be
-        centered around that position.
+        La forme se développe à partir de l'endroit où vous avez cliqué
+        initialement et sera centrée autour de cette position.
 
         📜 This was Tux Paint's only behavior through version 0.9.24.)
 
 
 
     Formes à partir d'un coin
-        The shape will extend with one corner starting from where you initially
-        clicked. This is the default method of most other traditional drawing
-        software.
+        La forme se développe à partir d'un coin depuis l'endroit où vous avez
+        cliqué initialement. Il s'agit de la méthode par défaut de la plupart
+        des autres logiciels de dessin traditionnels.
 
         📜 Cette option a été ajoutée en démarrant la version 0.9.25 de Tux
         Paint.
@@ -503,9 +506,9 @@ d.Outil "Formes"
 
 
     Mode de Formes Simples
-        If the "simple shapes" option is enabled, the shape will be drawn on
-        the canvas when you let go of the mouse button. (There's no rotation
-        step.)
+        Si l'option "formes simples" est activée, la forme sera dessinée sur le
+        canevas lorsque vous relâcherez le bouton de la souris. (Il n'y a pas
+        de rotation.)
 
         ⚙ Voir la documentation sur "Options" pour tout savoir sur l'option
         formes simples" ("simpleshapes").
@@ -517,12 +520,12 @@ d.Outil "Formes"
 
 e.Outils "Texte" et "Étiquette"
 
-    Choose a font (from the 'Letters' available on the right) and a color (from
-    the color palette near the bottom). You may also apply a bold, and/or an
-    italic styling effect to the text. Click on the screen and a cursor will
-    appear. Type text and it will show up on the screen. (You can change the
-    font, color, and styling while entering the text, before it is applied to
-    the canvas.)
+    Choisissez une police (parmi les «Lettres» disponibles sur la droite) et
+    une couleur (dans la palette de couleurs en bas). Vous pouvez aussi
+    appliquer des effets tels que caractère gras et/ou italique. Cliquez sur
+    l'écran et un curseur apparaîtra. Tapez un texte et il apparaîtra à
+    l'écran. (Vous pouvez changer la police, la couleur et le style en entrant
+    le texte, avant de l'appliquer sur le canevas).
 
     Appuyez sur [Entrée] ou [Retour] et le texte sera inclus dans l'image et le
     curseur se déplacera d'une ligne vers le bas.
@@ -594,20 +597,20 @@ e.Outils "Texte" et "Étiquette"
           o Chinois traditionnel — touche [Alt] droite or touche [Alt] gauche
           o Thai — touche [Alt] droite
 
-        💡 Note: Many fonts do not include all characters for all languages, so
-        sometimes you'll need to change fonts to see the characters you're
-        trying to type.
+        💡 Note : de nombreuses polices n'incluent pas tous les caractères pour
+        toutes les langues, vous devriez donc parfois changer de police pour
+        voir les caractères que vous essayez de saisir.
 
 
 
     Clavier virtuel sur écran
 
-        An optional on-screen keyboard is available for the Text and Label
-        tools, which can provide a variety of layouts and character composition
-        (e.g., composing "a" and "e" into "æ").
+        Un clavier virtuel sur écran (optionnel) est disponible pour les outils
+        "Texte" et "Étiquette", qui peut présenter une palette de dispositions
+        et de création de caractères (par ex "a" et "e" pour "æ").
 
-        ⚙ See the "Options" and "Extending Tux Paint" documentation for more
-        information.
+        ⚙ Voir les documents "Options" et "Extension de Tux Paint" pour plus
+        d'informations.
 
 
 
@@ -618,20 +621,21 @@ f.Outil "Remplir"
 
     L'outil «Remplir» «remplit» une zone contiguë de votre dessin avec une
     couleur unie de votre choix. Trois options de remplissage sont offertes :
-      + Solide — cliquez une fois pour remplir une zone avec une couleur unie.
-      + Brush — click and drag to fill an area with a solid color using
-        freehand painting.
+      + Uni — cliquez une fois pour remplir une zone avec une couleur unie.
+      + Pinceau — cliquez et glissez pour remplir une zone avec une couleur
+        unie, lorsque l'on fait de la peinture à main levée.
       + Linéaire—cliquez et faites glisser pour remplir une zone avec une
         couleur qui s'atténue au fur et à mesure dans la direction où vous
         déplacez la souris.
       + Radial—cliquez une fois pour remplir une zone avec une couleur qui
         s'atténue graduellement, à partir de l'endroit où vous avez cliqué.
-      + Shaped — click once to fill an area with a color that fades away (a
-        gradient), following the contours of the shape you're filling.
+      + Radial—cliquez une fois pour remplir une zone avec une couleur qui
+        s'atténue graduellement, à partir de l'endroit où vous avez cliqué.
 
-    📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see below).
-    Prior to Tux Paint 0.9.26, the "Fill" tool only offered the 'Solid' method
-    of filling. 'Shaped' fill was introduced in Tux Paint 0.9.29.
+    📜 Note : Avant Tux Paint 0.9.24, "Remplir" était un outil "magique" (voir
+    ci-dessous). Avant Tux Paint 0.9.26, l'outil "Remplir" n'offrait que la
+    méthode 'Uni' pour le remplissage. 'Shaped' fill was introduced in Tux
+    Paint 0.9.29.
 
 
 
@@ -651,9 +655,9 @@ g.Outil "Magie" (Effets spéciaux)
         affecter toute l'image en entier, un bouton «Image entière» sera
         disponible sur la droite.
 
-        ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't display
-        the painting or entire picture controls. See the "Options"
-        documentation.
+        ⚙ Note: Si l'option "nomagiccontrols" est définie, Tux Paint
+        n'affichera pas les contrôles pour peindre. Voir la documentation de "
+        Options" .
 
         💡 If the magic controls are disabled, the Magic plugin may make
         separate tools available, one for painting and one that affects the
@@ -667,8 +671,8 @@ g.Outil "Magie" (Effets spéciaux)
         special effect (e.g., Darken) or painted object (e.g., Patterns), or
         other attributes (e.g., large versus small Brick shapes).
 
-        ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't display
-        the sizing controls. See the "Options" documentation.
+        ⚙ Note : Si l'option "nomagicsizes" est définie, Tux Paint n'affichera
+        pas les contrôles de dimension. Voir la documentations sur "Options" .
 
         💡 If the sizing option is disabled, the Magic plugin may simply offer a
         default size (e.g., Patterns), or it may make separate tools available
@@ -688,8 +692,8 @@ h.Outil "Gomme"
     faites glisser), l'image sera effacée. (Cela peut être du blanc, une autre
     couleur ou une image d'arrière-plan, selon l'image.)
 
-    A number of eraser sizes are available, with both square and round shapes.
-    Fuzzy-edged round shapes are also available.
+    Un certain nombre de tailles de gommes sont disponibles, soit rondes soit
+    carrées. Des formes rondes avec contour flou sont aussi disponibles.
 
     Lorsque vous déplacez la souris, un contour carré suit le pointeur,
     indiquant quelle partie de l'image sera effacée en blanc.
@@ -709,14 +713,14 @@ h.Outil "Gomme"
 
 a.Commandes "Défaire" et "Refaire"
 
-    Clicking the "Undo" button will undo (revert) the last drawing action. You
-    can even undo more than once!
+    Cliquer sur le bouton "Défaire" annulera la dernière action. Vous pouvez
+    même annuler plus d'une fois !
 
     ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [Z] sur le
     clavier pour Défaire.
 
-    Clicking the "Redo" button will redo the drawing action you just un-did via
-    the "Undo" command.
+    Cliquer sur le bouton "Refaire" annulera l'action que vous venez juste
+    faire avec le bouton «Défaire».
 
     Tant que vous ne dessinez plus, vous pouvez refaire autant de fois que vous
     avez défait !
@@ -737,7 +741,7 @@ b.Commande "Nouveau"
     ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [N] sur le
     clavier pour commencer un nouveau dessin.
 
-    Special Solid Background Color Choices
+    Choix de couleurs unies en arrière plan
         Along with the preset solid colors, you can also choose colors using a
         rainbow palette or a "color mixer". These operate identically to the
         options found in the color palette shown below the canvas when drawing
@@ -775,7 +779,7 @@ b.Commande "Nouveau"
 
 
 
-    Erasing Exported Template Images
+    Effaçage des images Modèles exportées
 
         If you've selected a Template in your personal templates folder, and it
         was created from within Tux Paint (using the "Template" button in the
@@ -784,11 +788,12 @@ b.Commande "Nouveau"
         Click it to erase the selected template. (You will be asked to
         confirm.)
 
-        💡 Note: On Linux, Windows, and macOS, the picture will be placed in
-        your desktop's trash can / recycle bin (where you may recover and
-        restore it, if you change your mind).
+        💡 Note : Pour Linux, Windows, et macOS , l'image sera placée dans la
+        corbeille de votre bureau (où vous pourrez le restaurer si vous changez
+        d'avis).
 
-        ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
+        ⚙ Note :: Le bouton 'Effacer' peut être désactivé via l'option
+        "noerase".
 
 
 
@@ -806,15 +811,15 @@ c.Commande "Ouvrir"
     des images.
 
     Cliquez sur une image pour la sélectionner, puis ...
-      + Click the green 'Open' button at the lower left of the list to load the
-        selected picture. You will then be able to edit it.
+      + Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la liste pour
+        charger l'image sélectionnée. Vous pourrez alors l'éditer.
 
         (Vous pouvez également double-cliquer sur l'icône d'une image pour la
         charger.)
 
-        💡 If choose to open a picture, and your current drawing hasn't been
-        saved, you will be prompted as to whether you want to save it or not.
-        (See "Save," below.)
+        💡 Si vous choisissez d'ouvrir une image et que votre dessin en cours
+        n'a pas été enregistré, il vous sera demandé si vous souhaitez
+        l'enregistrer ou non. (Voir "Sauvegarder," ci-dessous.)
 
       + Cliquez sur le bouton marron "Effacer" (poubelle) en bas à droite de la
         liste pour effacer l'image sélectionnée. (Il vous sera demandé de
@@ -825,7 +830,8 @@ c.Commande "Ouvrir"
         l'image sera placée dans la corbeille de votre bureau (où vous pourrez
         le restaurer si vous changez d'avis).
 
-        ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
+        ⚙ Note :: Le bouton 'Effacer' peut être désactivé via l'option
+        "noerase".
 
       + Cliquez sur le bouton 'Exporter' près du coin inférieur droit pour
         exporter l'image vers votre dossier d'exportation. (par ex. "~/Pictures
@@ -844,9 +850,9 @@ c.Commande "Ouvrir"
         version 0.9.31 de Tux Paint. To learn how to create Templates outside
         of Tux Paint, see Extending Tux Paint
 
-        ⚙ The Template creation feature can be disabled (e.g., by selecting
-        "Disable 'Make Template'" in Tux Paint Config. or running Tux Paint
-        with the "notemplateexport" option).
+        ⚙ La possibilité de création de Modèle peut être désactivée (par ex. en
+        choisissant "Désactiver 'Fabriquer un Modèle' dans Tux Paint Config. ou
+        en lançant em>Tux Paint avec l'option "notemplateexport").
 
       + Ou cliquez sur le bouton fléché rouge «Retour» en bas à droite de la
         liste pour annuler et revenir à l'image que vous étiez en train de
