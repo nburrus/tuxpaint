@@ -214,24 +214,24 @@ trouver les fichiers .dll requis.
 
 bibliothèques de dépendance 64bit (x86_64) pour Tux Paint et Tux Paint Config
 
-You can install tools and libraries required for compiling Tux Paint and Tux
-Paint Config on MSYS2/MINGW using "pacman" except for SDL2_Pango and
-libunibreak.
+Vous pouvez installer les outils et bibliothèques nécessaires pour la
+compilation de Tux Paint et de Tux Paint Config sur MSYS2/MINGW en utilisant
+"pacman", sauf pour SDL2_Pango et libunibreak.
 
-FLTK is a cross-platform GUI toolkit used by "Tux Paint Config". You can skip
-installing it if you are only building "Tux Paint".
+FLTK est un ensemble d'outils multiplateforme utilisé par "Tux Paint Config".
+Vous pouvez ne pas l'installer si vous compilez seulement "Tux Paint".
 
     $ pacman -S mingw-w64-x86_64-SDL_{image,ttf,gfx}
     $ pacman -S mingw-w64-x86_64-{librsvg,fribidi,libimagequant,fltk}
 
 💡 Nota : Fermez l'interpréteur de commandes avant de passer à la suite.
 
-Install SDL2_Pango and libunibreak on the 64bit environment
+Installer SDL2_Pango et libunibreak pour l'environnement 64bit
 
-SDL2_Pango and libunibreak should be installed manually.
+SDL2_Pango et libunibreak doivent être installés manuellement.
 
-This time, use the MinGW "64bit" shell. Open the shell from the "Start Menu" →
-"MSYS2 64bit" → "MSYS2 MinGW 64-bit"
+Cette fois-ci, utilisez le shell MinGW "64bit". Ouvrez le shell depuis le "Menu
+de Démarrage" → "MSYS2 64bit" → "MSYS2 MinGW 64-bit"
 
 SDL2_Pango
 
@@ -244,8 +244,8 @@ install it as follows.
 
 libunibreak
 
-libunibreak is required for compiling Tux Paint Config. You can skip installing
-it if you are only building "Tux Paint".
+libunibreak est nécessaire pour compiler Tux Paint Config. Vous pouvez ne pas
+l'installer si vous compilez seulement "Tux Paint".
 
 You can fetch the source code from the git repositry and compile it as follows.
 
@@ -273,24 +273,24 @@ trouver les fichiers .dll requis.
 
 bibliothèques de dépendance 32bit (i686) pour Tux Paint et Tux Paint Config
 
-You can install tools and libraries required for compiling Tux Paint and Tux
-Paint Config on MSYS2/MINGW using "pacman" except for SDL2_Pango and
-libunibreak.
+Vous pouvez installer les outils et bibliothèques nécessaires pour la
+compilation de Tux Paint et de Tux Paint Config sur MSYS2/MINGW en utilisant
+"pacman", sauf pour SDL2_Pango et libunibreak.
 
-FLTK is a cross-platform GUI toolkit used by "Tux Paint Config". You can skip
-installing it if you are only building "Tux Paint".
+FLTK est un ensemble d'outils multiplateforme utilisé par "Tux Paint Config".
+Vous pouvez ne pas l'installer si vous compilez seulement "Tux Paint".
 
     $ pacman -S mingw-w64-i686-SDL_{image,ttf,gfx}
     $ pacman -S mingw-w64-i686-{librsvg,fribidi,libimagequant,fltk}
 
 💡 Nota : Fermez l'interpréteur de commandes avant de passer à la suite.
 
-Install SDL2_Pango and libunibreak on the 32bit environment
+Installer SDL2_Pango et libunibreak pour l'environnement 32bit
 
-SDL2_Pango and libunibreak should be installed manually.
+SDL2_Pango et libunibreak doivent être installés manuellement.
 
-This time, use the MinGW "32bit" shell. Open the shell from the "Start Menu" →
-"MSYS2 64bit" → "MSYS2 MinGW 32-bit"
+Cette fois-ci, utilisez le shell MinGW "32bit". Ouvrez le shell depuis le "Menu
+de Démarrage" → "MSYS2 64bit" → "MSYS2 MinGW 32-bit"
 
 SDL2_Pango
 
@@ -303,8 +303,8 @@ install it as follows.
 
 libunibreak
 
-libunibreak is required for compiling Tux Paint Config. You can skip installing
-it if you are only building "Tux Paint".
+libunibreak est nécessaire pour compiler Tux Paint Config. Vous pouvez ne pas
+l'installer si vous compilez seulement "Tux Paint".
 
 You can fetch the source code from the git repositry and compile it as follows.
 
@@ -320,9 +320,9 @@ formats d'image. Tux Paint utilise deux fonctions ("convert" et "composite")
 pour générer des vignettes pour les images de démarrage et des modèles durant
 le process de compilation.
 
-Using official binary release available from "Windows Binary Release" is
-recommended, due to the commands installed with "pacman" on MinGW/MSYS not
-working as expected!
+L'utilisation des binaires officiels tirés de "Versions binaires pour Windows"
+est recommandée car les commandes installées avec "pacman" sur MinGW/MSYS ne
+fonctionnent pas comme elles devraient !
 
 N'oubliez pas de cocher "Installer les utilitaires hérités (par ex. convert)"
 pour l'installation, car le processus de compilation de Tux Paint les utilise.
@@ -337,13 +337,13 @@ configuration du shell BASH, "~/.bash_profile".
 
 Tux Paint & Tux Paint Config.
 
-You can compile 64-bit binaries using "MSYS2 64bit" shell, and 32-bit binaries
-using "MSYS2 32bit" shell, respectively.
+Vous pouvez compiler des binaires 64bit en utilisant le shell "MSYS2 64bit", et
+des binaires 32bit en utilisant le shell "MSYS32 32bit".
 
-  * Select "MSYS2 64bit" → "MSYS2 MinGW 64-bit" from the "Start Menu" to open
-    the 64bit shell.
-  * Select "MSYS2 64bit" → "MSYS2 MinGW 32-bit" from the "Start Menu" to open
-    the 32bit shell.
+  * Choisissez "MSYS2 64bit" → "MSYS2 MinGW 64-bit" dans le "Menu de Démarrage"
+    pour ouvrir le shell 64bit.
+  * Choisissez "MSYS2 64bit" → "MSYS2 MinGW 32-bit" dans le "Menu de Démarrage"
+    pour ouvrir le shell 32bit.
 
 Tux Paint Config.
 
@@ -432,8 +432,9 @@ Utiliser l'installateur de Tux Paint sous Windows
 Double-cliquez sur l'exécutable du programme d'installation de Tux Paint
 (fichier .EXE) et suivez les instructions.
 
-First, you will be asked to read the license. (It is the GNU General Public
-License (GPL), which is also available as "COPYING.txt".)
+Tout d'abord, il vous sera demandé d'accepter la licence. (Il s'agit de la
+licence publique générale GNU (GPL), qui est également disponible en tant que
+"COPYING.txt".)
 
 Il vous sera ensuite demandé si vous souhaitez installer des raccourcis à Tux
 Paint dans votre menu Démarrer de Windows et sur votre bureau Windows.(Les deux
@@ -476,11 +477,11 @@ Quand vous avez fini, appuyez sur "OK".
 
 Si quelque chose ne va pas
 
-If, when you double-click on the shortcut to run Tux Paint, nothing happens, it
-is probably because some of these command-line options are wrong. Open an
-Explorer, and look for a file called "stderr.txt" in your personal saving
-folder for TuxPaint which is normaly "C:\Users\username\AppData\Roaming\
-TuxPaint".
+Si, lorsque vous double-cliquez sur le raccourci pour lancer le jeu, rien ne se
+passe, c'est probablement parce que certaines des options en lignes de commande
+sont erronées. Ouvrez un explorateuet recherchez un fichier appelé "stderr.txt"
+dans votre dossier personnel de sauvegarde de TuxPaint, qui est normalement "C:
+\Users\utilisateur\AppData\Roaming\TuxPaint".
 
 Il contiendra une description de ce qui n'allait pas. Habituellement, ce sera
 simplement dû à une casse de caractère incorrecte (majuscule 'Z' à la place de
@@ -492,9 +493,9 @@ Linux/Unix
 
 Compilation :
 
-💡 Note: Tux Paint does not use autoconf/automake, so there is no "./configure"
-script to run. Compiling should be straight-forward though, assuming everything
-Tux Paint needs is installed.
+💡 Remarque :Tux Paint n'utilise pas autoconf/automake, dès lors il n'y a pas de
+script "./configure" à lancer. La compilation devrait aller cependant aller
+toute seule, en supposant que Tux Paint ait tout ce dont il a besoin.
 
 Pour compiler le programme à partir des sources, lancez simplement la commande
 suivante après une invite shell (par ex. "$") :
@@ -556,9 +557,9 @@ ex. sur Ubuntu) :
 
     $ sudo make install
 
-💡 Note: By default, "tuxpaint", the executable program, is placed in "/usr/
-local/bin/". The data files (images, sounds, etc.) are placed in "/usr/local/
-share/tuxpaint/".
+💡 Remarque :Par défaut, "tuxpaint", le programme exécutable, est placé en "/usr
+/local/bin/". Les données (images, sons, etc ...) sont dans "/usr/local/share/
+tuxpaint/".
 
 Changer où vont les fichiers
 
@@ -598,8 +599,8 @@ LOCALE_PREFIX
     sous-répertoire "LC_MESSAGES").
 
 
-💡 Note: This list is out of date. See "Makefile" and "Makefile-i18n" for a
-complete list.
+💡 Remarque : Cette liste est obsolète. Voir "Makefile" et "Makefile-i18n" pour
+une liste complète.
 
     -----------------------------------------------------------------------
 
@@ -607,8 +608,8 @@ macOS
 
 juin 5, 2022 Mark Kim <markuskimius@gmail.com>
 
-Starting with Tux Paint 0.9.23, Tux Paint for macOS is built as though it were
-a Linux application.
+À partir de Tux Paint 0.9.23, Tux Paint pour macOS est construit comme si
+c'était une application Linux.
 
 Prérequis
 
@@ -660,9 +661,10 @@ incluse dans TuxPaint.dmg.
 
 sdl2_pango
 
-sdl2_pango is not available from MacPorts as of this writing. It can be
-installed from the source code as follows. It should be installed to /opt/local
-(same as MacPorts) for the library to be included in TuxPaint.dmg.
+sdl2_pango n'est pas disponible sur MacPorts à cette heure. Il peut être
+installé à partir du code source comme ce qui suit. Il doit être installé sur /
+opt/local (comme pour MacPorts) pour la bibliothèque devant être incluse dans
+TuxPaint.dmg.
 
     $ git clone https://github.com/markuskimius/SDL2_Pango.git
     $ cd SDL2_Pango
@@ -679,9 +681,9 @@ Tapez simplement :
     % make
     % make install
 
-... to create the TuxPaint.app application bundle that can be run in-place or
-copied to /Applications. Pour créer le fichier DMG pour la distribution, faites
-'make TuxPaint.dmg'.
+... pour crée l'application TuxPaint.app qui peut être exécutée sur place ou
+copiée sur /Applications. Pour créer le fichier DMG pour la distribution,
+faites 'make TuxPaint.dmg'.
 
 Additional steps are required when building a Unviersal Binary. See "Building a
 Universal Binary" below.
@@ -710,11 +712,12 @@ Vieilles versions de macOS
 Quelques vieilles versions de macOS peuvent être téléchargées sur la page
 d'aide d'Apple : https://support.apple.com/en-us/HT211683
 
-macOS for Intel CPU does allow dual booting of multiple versions of the OS, but
-it's safer and easier to install the old macOS onto a flash drive. Wherever
-you're installing it, the target drive's partitioniong scheme and partition
-type must match what the old macOS expects, so use the Disk Utility to
-partition and format the flash drive accordingly.
+macOS avec un CPU Intel permet de booter sur plusieurs versions de l'OS, mais
+c'est préférable et plus facile d'installer le vieux macOS sur une clé. Quelque
+soit la l'endroit où vous l'installer, le partitionnement du disque et le type
+de partition doivent correspondre à ce qu'attend l'ancien macOS, dès lors
+utilisez l'utilitaire de partitionnement et le format de la clé en accord avec
+ceci.
 
 Dual booting multiple versions of macOS for Apple Silicon has been so far
 unsuccessful. Instead of installing an older version of macOS for Apple Silicon

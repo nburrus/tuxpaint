@@ -111,9 +111,10 @@ fullscreen=yes
 
     Le programme tourne en plein écran plutôt que dans une fenêtre.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "fullscreen=no". In both cases, may be
-    overridden by the command-line option "--windowed".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "fullscreen=no". Dans les deux cas, il peut être remplacé avec
+    l'option en ligne de commande "--windowed".
 
 
 
@@ -153,9 +154,10 @@ orient=portrait
     faire pivoter la fenêtre pour les affichages de portait, comme un écran PC
     orientée comme une tablette.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "orient=landscape". In both cases, may
-    be overridden by the command-line option "--orient=landscape".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "orient=landscape". Dans les deux cas, il peut être remplacé avec
+    l'option en ligne de commande "--orient=landscape".
 
 
 
@@ -176,10 +178,11 @@ allowscreensaver=yes
     définissant la variable d'environnement "SDL_VIDEO_ALLOW_SCREENSAVER" de
     votre système égale à "1".)
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "allowscreensaver=no" or
-    "disablescreensaver=yes". In both cases, may be overridden by the
-    command-line option "--disablescreensaver".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "allowscreensaver=no" ou "disablescreensaver=yes". Dans les deux
+    cas, il peut être remplacé avec l'option en ligne de commande
+    "--disablescreensaver".
 
 
 
@@ -192,9 +195,10 @@ nosound=yes
     ne peut pas être utilisé pour réactiver les sons s'ils ont été désactivés à
     l'aide de cette option.)
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nosound=no" or "sound=yes". In both
-    cases, may be overridden by the command-line option "--sound".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nosound=no" ou "sound=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--sound".
 
 
 
@@ -204,9 +208,10 @@ nostereo=yes
     ayant une déficience auditive avec une oreille ou dans les endroits où un
     seul haut-parleur ou casque est utilisé.)
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nostereo=no" or "stereo=yes". In both
-    cases, may be overridden by the command-line option "--stereo".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nostereo=no" ou "stereo=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--stereo".
 
 
 
@@ -229,10 +234,9 @@ buttonsize=SIZE
     display). (For the default screen size of 800x600, it will be the default
     button size: "48".)
 
-    💡 Note: If the chosen button size would cause the buttons to be too large
-    for all required UI elements to appear under Tux Paint's chosen window
-    size, the largest possible button size will be used. (A note will appear in
-    stderr.)
+    💡 Note : si la taille des boutons fait que ceux-ci sont trop grands pour
+    qu'ils apparaissent tous, la taille la plus grande possible sera utilisée.
+    (Une remarque apparaîtra sur le terminal en stderr.)
 
 
 
@@ -258,10 +262,10 @@ nofancycursors=yes
     Dans certains environnements, les curseurs sophistiqués posent des
     problèmes. Utilisez cette option pour les éviter.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nofancycursors=no" or "fancycursors=
-    yes". In both cases, may be overridden by the command-line option
-    "--fancycursors".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nofancycursors=no" ou "fancycursors=yes". Dans les deux cas, il
+    peut être remplacé avec l'option en ligne de commande "--fancycursors".
 
 
 
@@ -273,9 +277,10 @@ hidecursor=yes
     Ceci est utile pour les appareils à écran tactile, tels que les tablettes
     PC.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "hidecursor=no" or "showcursor=yes". In
-    both cases, may be overridden by the command-line option "--showcursor".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "hidecursor=no" ou "showcursor=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--showcursor".
 
 
 
@@ -290,9 +295,10 @@ noshortcuts=yes
     Ceci est utile pour éviter que des commandes indésirables ne soient
     activées par des enfants qui n'ont pas d'expérience avec les claviers.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "noshortcuts=no" or "shortcuts=yes". In
-    both cases, may be overridden by the command-line option "--shortcuts".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "noshortcuts=no" ou "shortcuts=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--shortcuts".
 
 
 
@@ -310,9 +316,10 @@ grab=yes
     de fenêtre), [Ctrl]-[Escape], etc. Ceci est particulièrement utile en mode
     plein écran.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "grab=no" or "dontgrab=yes". In both
-    cases, may be overridden by the command-line option "--dontgrab".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "grab=no" ou "dontgrab=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--dontgrab".
 
 
 
@@ -321,9 +328,10 @@ nowheelmouse=yes
     Cela désactive la prise en charge de la molette pour les souris qui en ont.
     (Normalement, la molette fait défiler le menu du sélecteur sur la droite.)
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nowheelmouse=no" or "wheelmouse=yes".
-    In both cases, may be overridden by the command-line option "--wheelmouse".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nowheelmouse=no" ou "wheelmouse=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--wheelmouse".
 
 
 
@@ -339,10 +347,11 @@ nobuttondistinction=yes
     désactivée (ramenant Tux Paint à son ancien comportement) grâce à cette
     option.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nobuttondistinction=no" or
-    "buttondistinction=yes". In both cases, may be overridden by the
-    command-line option "--buttondistinction".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nobuttondistinction=no" ou "buttondistinction=yes". Dans les
+    deux cas, il peut être remplacé avec l'option en ligne de commande
+    "--buttondistinction".
 
 
 
@@ -357,10 +366,10 @@ simpleshapes=yes
     glisser et relâcher, voilà tout ce qui sera possible pour dessiner une
     forme.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "simpleshapes=no" or "complexshapes=
-    yes". In both cases, may be overridden by the command-line option
-    "--complexshapes".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "simpleshapes=no" ou "complexshapes=yes". Dans les deux cas, il
+    peut être remplacé avec l'option en ligne de commande "--complexshapes".
 
 
 
@@ -373,9 +382,10 @@ nooutlines=yes
     Cela peut aider lorsque Tux Paint est exécuté sur des ordinateurs très
     lents ou affiché sur un écran X-Window distant.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nooutlines=no" or "outlines=yes". In
-    both cases, may be overridden by the command-line option "--outlines".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nooutlines=no" ou "outlines=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--outlines".
 
 
 
@@ -385,9 +395,10 @@ uppercase=yes
     deviendra "BOULE"). Utile pour les enfants qui savent lire, mais qui n'ont
     appris que les majuscules jusqu'à présent.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "uppercase=no" or "mixedcase=yes". In
-    both cases, may be overridden by the command-line option "--mixedcase".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "uppercase=no" ou "mixedcase=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--mixedcase".
 
 
 
@@ -422,9 +433,10 @@ noquit=yes
     Vous pouvez également utiliser la combinaison de touches suivante pour
     quitter : [Shift] + [Control] + [Escape].
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "noquit=no" or "quit=yes". In both
-    cases, may be overridden by the command-line option "--quit".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "noquit=no" ou "quit=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--quit".
 
 
 
@@ -437,9 +449,10 @@ nostamps=yes
     mémoire pendant son exécution. Bien entendu, aucun timbre ne sera
     disponible.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nostamps=no" or "stamps=yes". In both
-    cases, may be overridden by the command-line option "--stamps".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nostamps=no" ou "stamps=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--stamps".
 
 
 
@@ -449,10 +462,10 @@ nostampcontrols=yes
     et / ou voir leur taille modifiée. Cette option désactive ces contrôles et
     ne fournit que les tampons de base.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nostampcontrols=no" or "stampcontrols=
-    yes". In both cases, may be overridden by the command-line option
-    "--stampcontrols".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nostampcontrols=no" ou "stampcontrols=yes". Dans les deux cas,
+    il peut être remplacé avec l'option en ligne de commande "--stampcontrols".
 
 
 
@@ -462,13 +475,13 @@ nostamprotation=yes
     stamp in its regular orientation (with any flipping or mirroring applied)
     on the first click.
 
-    📜 Note: The stamp rotation feature was added to Tux Paint in version
-    0.9.29.
+    📜 Note : La possibilité de rotation des tampons a été incorporée dans Tux
+    Paint avec la version 0.9.29.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nostamprotation=no" or "stamprotation=
-    yes". In both cases, may be overridden by the command-line option
-    "--stamprotation".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nostamprotation=no" ou "stamprotation=yes". Dans les deux cas,
+    il peut être remplacé avec l'option en ligne de commande "--stamprotation".
 
 
 
@@ -478,10 +491,10 @@ nomagiccontrols=yes
     d'affecter la toile entière. Cette option désactive les contrôles et ne
     fournit que la fonctionnalité par défaut (généralement en mode peinture).
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nomagiccontrols=no" or "magiccontrols=
-    yes". In both cases, may be overridden by the command-line option
-    "--magiccontrols".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nomagiccontrols=no" ou "magiccontrols=yes". Dans les deux cas,
+    il peut être remplacé avec l'option en ligne de commande "--magiccontrols".
 
 
 
@@ -492,9 +505,10 @@ nomagicsizes=yes
     may offer additional variations of a Magic tool, to make a few sizes
     possible, e.g. "Bricks" and "Googly Eyes".)
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nomagicsizes=no" or "magicsizes=yes".
-    In both cases, may be overridden by the command-line option "--magicsizes".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nomagicsizes=no" ou "magicsizes=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--magicsizes".
 
 
 
@@ -505,10 +519,10 @@ noshapecontrols=yes
     dessinées - centrées autour du clic initial de la souris ou à partir d'un
     coin au clic de la souris.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "noshapecontrols=no" or "shapecontrols=
-    yes". In both cases, may be overridden by the command-line option
-    "--shapecontrols".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "noshapecontrols=no" ou "shapecontrols=yes". Dans les deux cas,
+    il peut être remplacé avec l'option en ligne de commande "--shapecontrols".
 
 
 
@@ -517,9 +531,10 @@ nolabel=yes
     Désactive l'outil Étiquette : l'outil qui permet la saisie de texte pouvant
     être édité plus tard.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nolabel=no" or "label=yes". In both
-    cases, may be overridden by the command-line option "--label".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nolabel=no" ou "label=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--label".
 
 
 
@@ -531,10 +546,10 @@ nobrushspacing=yes
     📜 Note: The brush spacing option was added to Tux Paint's user interface in
     version 0.9.28. For more information on brush spacing, see EXTENDING.html
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "nobrushspacing=no" or "brushspacing=
-    yes". In both cases, may be overridden by the command-line option
-    "--brushspacing".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "nobrushspacing=no" ou "brushspacing=yes". Dans les deux cas, il
+    peut être remplacé avec l'option en ligne de commande "--brushspacing".
 
 
 
@@ -543,13 +558,14 @@ notemplateexport=yes
     Disables the ability to create a new Template image (based on a saved
     drawing) from within the Open dialog.
 
-    📜 Note: The Template creation feature was added to Tux Paint in version
-    0.9.31.
+    📜 Note : La possibilité de création de Modèles a été ajouté avec la version
+    0.9.31 de Tux Paint.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "notemplateexport=no" or
-    "templateexport=yes". In both cases, may be overridden by the command-line
-    option "--templateexport".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "notemplateexport=no" ou "templateexport=yes". Dans les deux cas,
+    il peut être remplacé avec l'option en ligne de commande
+    "--templateexport".
 
 
 
@@ -560,11 +576,12 @@ noerase=yes
     "Erase" button on the New dialog. Useful to prevent users from erasing
     work, especially combined with the --saveovernew option.
 
-    📜 Note: This option was added to Tux Paint in version 0.9.31.
+    📜 Note : Cette option a été ajoutée avec la version 0.9.31 de Tux Paint.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "noerase=no" or "erase=yes". In both
-    cases, may be overridden by the command-line option "--erase".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "noerase=no" ou "erase=yes". Dans les deux cas, il peut être
+    remplacé avec l'option en ligne de commande "--erase".
 
 
 
@@ -575,8 +592,8 @@ Langue
 
 lang=LANGUAGE
 
-    Run Tux Paint in one of the supported languages. Possible choices for
-    LANGUAGE currently include:
+    Exécutez Tux Paint dans l'une des langues prises en charge. Les choix
+    possibles pour la LANGUE comprennent actuellement :
 
         +-----------------------------------------------------------------+
         | english               | american-english      |                 |
@@ -856,9 +873,10 @@ mirrorstamps=yes
     Cela peut être utile pour les personnes qui préfèrent voir les choses de
     droite à gauche plutôt que de gauche à droite.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "mirrorstamps=no" or "dontmirrorstamps=
-    yes". In both cases, may be overridden by the command-line option
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "mirrorstamps=no" ou "dontmirrorstamps=yes". Dans les deux cas,
+    il peut être remplacé avec l'option en ligne de commande
     "--dontmirrorstamps".
 
 
@@ -872,9 +890,10 @@ sysfonts=yes
     dans l'outil Texte ) à partir de votre système d'exploitation. Normalement,
     Tux Paint ne chargera que ceux fournis avec Tux Paint.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "sysfonts=no" or "nosysfonts=yes". In
-    both cases, may be overridden by the command-line option "--nosysfonts".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "sysfonts=no" ou "nosysfonts=yes". Dans les deux cas, il peut
+    être remplacé avec l'option en ligne de commande "--nosysfonts".
 
 
 
@@ -890,10 +909,11 @@ alllocalefonts=yes
     Pour charger toutes les polices spécifiques aux paramètres régionaux
     (l'ancien comportement), utilisez cette option.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "alllocalefonts=no" or
-    "currentlocalefont=yes". In both cases, may be overridden by the
-    command-line option "--currentlocalefont".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "alllocalefonts=no" ou "currentlocalefont=yes". Dans les deux
+    cas, il peut être remplacé avec l'option en ligne de commande
+    "--currentlocalefont".
 
 
 
@@ -903,8 +923,8 @@ uifont=FONT NAME
     dans l'outil Texte ) à partir de votre système d'exploitation. Normalement,
     Tux Paint ne chargera que ceux fournis avec Tux Paint.
 
-    Specify "default" to let Tux Paint use its default font, "DejaVu Sans" (its
-    standard behavior).
+    Spécifiez "default" pour que Tux Paint utilise la fonte par défaut, "DejaVu
+    Sans" (c'est un comportement standard).
 
 
 
@@ -924,9 +944,10 @@ printdelay=SECONDES
     Limite l'impression afin que l'impression ne puisse avoir lieu qu'une fois
     toutes les SECONDES secondes.
 
-    ⚙ Note: If used in a system-wide configuration file, may be overridden by
-    the user's configuration file using "printdelay=0". In both cases, may be
-    overridden by the command-line option "--printdelay=0".
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "printdelay=0". Dans les deux cas, il peut être remplacé avec
+    l'option en ligne de commande "--printdelay=0".
 
 
 
@@ -974,15 +995,17 @@ Sauvegarder la configuration d'impression
         bouton «Imprimer» dans Tux Paint pour faire apparaître une fenêtre de
         dialogue d'impression Windows.
 
-        Any configuration changes made in this dialog will be saved to the file
-        "userdata/print.cfg" , and used again, as long as the "printcfg" option
-        is set.
+        Toutes les modifications de configuration apportées dans cette boîte de
+        dialogue seront enregistrées dans le fichier "userdata/print.cfg", et
+        réutilisées, tant que l'option "printcfg" reste définie.
 
-        💡 Note: This only works when not running Tux Paint in fullscreen mode.
+        💡 Note : Ceci ne fonctionne qur lorsque Tux Paint n'est pas utilisé en
+        plein écran.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "printcfg=no" or "noprintcfg=
-        yes". In both cases, may be overridden by the command-line option
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "printcfg=no" ou "noprintcfg=yes". Dans les
+        deux cas, il peut être remplacé avec l'option en ligne de commande
         "--noprintcfg".
 
 
@@ -1085,9 +1108,10 @@ Sauvegarder la configuration d'impression
         Ceci oblige Tux Paint à afficher une toile vide au démarrage, plutôt
         que la dernière image qui a été éditée.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "startblank=no" or "startlast=
-        yes". In both cases, may be overridden by the command-line option
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "startblank=no" ou "startlast=yes". Dans les
+        deux cas, il peut être remplacé avec l'option en ligne de commande
         "--startlast".
 
 
@@ -1098,10 +1122,11 @@ Sauvegarder la configuration d'impression
         dernier, ainsi tous les démarreurs et / ou modèles seront affichés en
         premier.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "newcolorslast=no" or
-        "newcolorsfirst=yes". In both cases, may be overridden by the
-        command-line option "--newcolorsfirst".
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "newcolorslast=no" ou "newcolorsfirst=yes".
+        Dans les deux cas, il peut être remplacé avec l'option en ligne de
+        commande "--newcolorsfirst".
 
 
 
@@ -1128,13 +1153,14 @@ Sauvegarder la configuration d'impression
             Exemple: /Users/Username/Library/Application Support/TuxPaint/saved
             /
 
-        💡 Note: When specifying a Windows drive (e.g., "H:\"), you must also
-        specify a subdirectory.
+        💡 Note : Si vous spécifiez un lecteur Windows (pzr ex. "H:\"), vous
+        devez spécifiez également un sous-répertoire.
 
-        📜 Note: Prior to version 0.9.18, Tux Paint would also use the setting
-        or default for "savedir" as the place to search for personal data files
-        (brushes, stamps, starters and fonts). As of version 0.9.18, they may
-        be specified separately (see the "datadir" option, below).
+        📜 Note : Avant la version 0.9.18, Tux Paint utilisait également le
+        réglage "savedir" comme emplacement pour rechercher des fichiers de
+        données personnelles (pinceaux, tampons, images de démarrages et
+        polices). À partir de la version 0.9.18, ils peuvent être spécifiés
+        séparément (voir l'option "datadir" ci-dessous).
 
         Exemple: savedir=Z:\tuxpaint\
 
@@ -1167,10 +1193,11 @@ Sauvegarder la configuration d'impression
                 OK.
           o macOS — TBD!
 
-        💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
-        be created and used. (e.g., "~/Images/TuxPaint") When the "--exportdir"
-        option is used, the exact path specified will be used (no "TuxPaint"
-        subdirectory is created).
+        💡 Note : Quand les réglages par défaut sont utilisés, un nouveau
+        sous-répertoire "TuxPaint" sera créé puis utilisé(par ex "~/Images/
+        TuxPaint"). Quand l'option "--exportdir" est utilisée, le chemin exact
+        qui a été spécifié sera utilisé (pas de sous-répertoire "TuxPaint"
+        créé).
 
         Le répertoire lui-même (par ex. "~/Images/TuxPaint") sera créé, s'il
         n'existe pas.
@@ -1193,9 +1220,10 @@ Sauvegarder la configuration d'impression
         l'utiliser dans le cas où le programme est utilisé juste pour le fun,
         ou dans un environnement de tests.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "nosave=no" or "save=yes". In
-        both cases, may be overridden by the command-line option "--save".
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "nosave=no" ou "save=yes". Dans les deux
+        cas, il peut être remplacé avec l'option en ligne de commande "--save".
 
 
 
@@ -1204,9 +1232,10 @@ Sauvegarder la configuration d'impression
         Ceci empêche Tux Paint de vous demander si vous voulez sauvegarder
         l'image quand vous quittez, et suppose que vous le faites.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "autosave=no" or "noautosave=
-        yes". In both cases, may be overridden by the command-line option
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "autosave=no" ou "noautosave=yes". Dans les
+        deux cas, il peut être remplacé avec l'option en ligne de commande
         "--noautosave".
 
 
@@ -1216,10 +1245,11 @@ Sauvegarder la configuration d'impression
         This reverses the sorting of the Open and Slideshow dialogs, placing
         the newest images at the top of the list.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "reversesort=no" or
-        "noreversesort=yes". In both cases, may be overridden by the
-        command-line option "--noreversesort".
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "reversesort=no" ou "noreversesort=yes".
+        Dans les deux cas, il peut être remplacé avec l'option en ligne de
+        commande "--noreversesort".
 
 
 
@@ -1245,9 +1275,10 @@ Sauvegarder la configuration d'impression
         Par défaut, le fichier de verrouillage est stocké dans "~/.tuxpaint/"
         sous Linux et Unix, et "userdata\" sous Windows.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "nolockfile=no" or "lockfile=
-        yes". In both cases, may be overridden by the command-line option
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "nolockfile=no" ou "lockfile=yes". Dans les
+        deux cas, il peut être remplacé avec l'option en ligne de commande
         "--lockfile".
 
 
@@ -1279,12 +1310,12 @@ Sauvegarder la configuration d'impression
             Exemple: /Users/Username/Library/Application Support/TuxPaint/
             brushes/
 
-        📜 Note: Prior to version 0.9.18, Tux Paint would use the same setting
-        or default as for "savedir" to search for data files. As of version
-        0.9.18, they may be specified separately.
+        📜 Note : Avant la version 0.9.18, Tux Paint utlisait les mêmes réglages
+        que "savedir" pour chercher les fichiers de données. Depuis la version
+        0.9.18, ils peuvent être spécifiés séparément.
 
-        💡 Note: When specifying a Windows drive (e.g., "H:\"), you must also
-        specify a subdirectory.
+        💡 Note : Si vous spécifiez un lecteur Windows (pzr ex. "H:\"), vous
+        devez spécifiez également un sous-répertoire.
 
         Exemple: datadir=/home/johnny/tuxpaint-data/
 
@@ -1368,19 +1399,22 @@ Sauvegarder la configuration d'impression
             (par exemple [Insert]), et utilisez les touches de déplacement (par
             exemple [Left]).
 
-            💡 Note: The "mouse accessibility" feature works with the keyboard
-            mouse controls. With both options enabled, painting tools can be
-            used to draw by pressing a 'click' key to start clicking, movement
-            keys to move around (which will draw), and another 'click' key to
-            end the click (stop drawing).
+            💡 Note : La fonction «accessibilité de la souris» fonctionne avec
+            les commandes de la souris via le clavier. Avec les deux options
+            activées, les outils de peinture peuvent être utilisés pour
+            dessiner en appuyant sur une touche "clic" pour commencer à
+            cliquer, des touches de mouvement pour se déplacer (qui dessinera)
+            et une autre touche "clic" pour terminer le clic (arrêt du dessin).
 
           o Une souris et/ou un joystick standard peuvent toujours être
             utilisés (vous pouvez donc, par exemple, vous déplacer avec la
             souris et cliquer avec le clavier, ou vice-versa)
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using "keyboard=no" or "mouse=yes". In
-        both cases, may be overridden by the command-line option "--mouse".
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "keyboard=no" ou "mouse=yes". Dans les deux
+        cas, il peut être remplacé avec l'option en ligne de commande
+        "--mouse".
 
 
 
@@ -1396,8 +1430,8 @@ Sauvegarder la configuration d'impression
 
     onscreen-keyboard-layout=LAYOUTNAME
 
-        Selects the initial layout for the on-screen keyboard when using the
-        Text and Label tools.
+        Choisit une disposition initiale pour le clavier virtuel quand on
+        utilise les outils Texte et Étiquette .
         Remarque: l'utilisation de cette option implique automatiquement
         onscreen-keyboard=yes , la configuration des deux est donc redondante.
 
@@ -1411,10 +1445,11 @@ Sauvegarder la configuration d'impression
         Remarque: l'utilisation de cette option implique automatiquement
         onscreen-keyboard=yes , la configuration des deux est donc redondante.
 
-        ⚙ Note: If used in a system-wide configuration file, may be overridden
-        by the user's configuration file using
-        "onscreen-keyboard-disable-change=no". In both cases, may be overridden
-        by the command-line option "--onscreen-keyboard-disable-change=no".
+        ⚙ Note : si utilisé dans un fichier de configuration pour tout le
+        monde, il peut être remplacé par le fichier de configuration de
+        l'utilisateur en utilisant "onscreen-keyboard-disable-change=no". Dans
+        les deux cas, il peut être remplacé avec l'option en ligne de commande
+        "--onscreen-keyboard-disable-change=no".
 
 
 
@@ -1635,8 +1670,8 @@ Boutons pour raccourcis
 
     Options de ligne de commande
 
-    Options may also be issued on the command-line when you go to launch Tux
-    Paint.
+    Des options peuvent également être émises sur la ligne de commande lorsque
+    vous démarrez Tux Paint.
 
     --fullscreen
         --WIDTHxHEIGHT
@@ -1843,7 +1878,8 @@ Boutons pour raccourcis
     environnement. (Vous pouvez les remplacer en ligne de commande en utilisant
     l'option "--locale"; voir ci - dessus)
 
-    Use the option "--lang help" to list the language options available.
+    Utilisez l'option "--lang help" pour lister les options de langues
+    disponibles.
 
     Langues disponibles
 
@@ -2215,7 +2251,7 @@ Boutons pour raccourcis
       + Sélectionner l'onglet "Avancé".
       + Cliquez sur le bouton "Variables d'environnement ...".
       + Édite la valeur du paramètre "LANG" (le crée s'il n'existe pas).
-   
+
     Polices spéciales
 
     Certaines langues nécessitent l'installation de polices spéciales. Ces
@@ -2224,10 +2260,11 @@ Boutons pour raccourcis
     disponibles séparément. (Voir le tableau ci-dessus, dans la section «
     Choisir une autre langue ».)
 
-    📜 Note: As of version 0.9.18, Tux Paint uses the "SDL_Pango" library, which
-    utilizes the "Pango" library to render text in the user interface, rather
-    than using "SDL_ttf" directly. Unless your copy of Tux Paint was built
-    without Pango support, special fonts should no longer be necessary.
+    📜 Remarque : Depuis la version 0.9.18, Tux Paint utilise la bibliothèque
+    "SDL_Pango", qui utilise la bibliothèque "Pango" pour afficher le texte
+    dans l'interface utilisateur, plutôt que d'utiliser directement "SDL_ttf".
+    À moins que votre copie de Tux Paint n'ait été construite sans le support
+    de Pango, les polices spéciales ne devraient plus être nécessaires .
 
     Lors de l'exécution de Tux Paint dans une langue nécessitant sa propre
     police, Tux Paint essaiera de charger le fichier de police à partir de son
@@ -2242,8 +2279,9 @@ Boutons pour raccourcis
 
         /usr/share/tuxpaint/fonts/locale/ko.ttf
 
-    You can download fonts for supported languages from Tux Paint's website,
-    https://tuxpaint.org/. (Look in the 'Fonts' section under 'Download.')
+    Vous pouvez télécharger des polices pour les langues prises en charge sur
+    le site Web de Tux Paint, https://www.tuxpaint.org/ . (Regardez dans la
+    section "Polices" sous "Télécharger".)
 
     Sous Unix et Linux, vous pouvez utiliser le Makefile qui est fourni avec la
     police pour installer la police à l'emplacement approprié.

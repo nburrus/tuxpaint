@@ -103,7 +103,7 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
 
 D. Qu'y a-t-il de neuf dans la version 0.9.31 de Tux Paint ?
 
-Fuzzy Erasers
+Gomme floue
     Fuzzy-edged round erasers have been added to the Eraser tool
 
 Nouveaux outils Magie
@@ -281,8 +281,8 @@ En bas : couleurs
     button that's available when bringing up the "color picker" option via its
     button the color palette.)
 
-    ⚙ Note: You can define your own colors for Tux Paint. See the "Options"
-    documentation.
+    ⚙ Note : Vous pouvez définir vos propres couleurs. Voir la documentation "
+    Options" .
 
 
 
@@ -377,8 +377,8 @@ b.Outil "Tampon" (tampon de caoutchouc)
         step.) Voir la documentation sur "Options" pour tout savoir sur
         l'option rotation d'un tampon" ("stamprotation").
 
-        📜 Note: The stamp rotation feature was added to Tux Paint in version
-        0.9.29.
+        📜 Note : La possibilité de rotation des tampons a été incorporée dans
+        Tux Paint avec la version 0.9.29.
 
 
 
@@ -820,27 +820,29 @@ c.Commande "Ouvrir"
         liste pour effacer l'image sélectionnée. (Il vous sera demandé de
         confirmer.)
 
-        📜 Note: On Linux (as of version 0.9.22), Windows (as of version
-        0.9.27), and macOS (as of version 0.9.29), the picture will be placed
-        in your desktop's trash can / recycle bin (where you may recover and
-        restore it, if you change your mind).
+        📜 Note : Pour Linux (à partir de la version 0.9.22), Windows (à partir
+        de la vaersion 0.9.27), et macOS (à partir de la version 0.9.29),
+        l'image sera placée dans la corbeille de votre bureau (où vous pourrez
+        le restaurer si vous changez d'avis).
 
         ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
 
-      + Click the 'Export' button near the lower right to export the selected
-        picture to your export folder. (e.g., "~/Pictures/TuxPaint/")
+      + Cliquez sur le bouton 'Exporter' près du coin inférieur droit pour
+        exporter l'image vers votre dossier d'exportation. (par ex. "~/Pictures
+        /TuxPaint/")
 
     From the "Open" screen you can also:
-      + Click the blue 'Slides' (slide projector) button at the lower left to
-        go to slideshow mode. See "Slides", below, for details.
+      + Cliquez sur le bouton bleu "Diapositives" (projecteur de diapositives)
+        en bas à gauche pour passer en mode diaporama. Voir "Diaporama",
+        ci-dessous, pour les détails.
 
       + Click the blue 'Template' button at the lower left to go to convert the
         selected picture into a new template, which can be used as the basis
         for new drawings.
 
-        📜 Note: The Template creation feature was added to Tux Paint in version
-        0.9.31. To learn how to create Templates outside of Tux Paint, see
-        Extending Tux Paint
+        📜 Note : La possibilité de création de Modèles a été ajouté avec la
+        version 0.9.31 de Tux Paint. To learn how to create Templates outside
+        of Tux Paint, see Extending Tux Paint
 
         ⚙ The Template creation feature can be disabled (e.g., by selecting
         "Disable 'Make Template'" in Tux Paint Config. or running Tux Paint
@@ -1026,8 +1028,8 @@ f.Commande "Diapos" (sous "Ouvrir")
 
         To play a slideshow within Tux Paint, click the 'Play' button.
 
-        💡 Note: If you hadn't selected any images, then all of your saved
-        images will be played in the slideshow!
+        💡 Note : si vous n'avez sélectionné aucune image, toutes vos images
+        enregistrées seront mises dans le diaporama !)
 
         Pendant le diaporama, appuyez sur [Espace], [Entrée] ou [Retour] , ou
         sur [Flèche droite] - ou cliquez sur le bouton "Suivant" en bas à
@@ -1045,10 +1047,10 @@ f.Commande "Diapos" (sous "Ouvrir")
         Cliquez sur le bouton "Exporter GIF" en bas à droite pour que Tux Paint
         génère un fichier GIF animé basé sur les images sélectionnées.
 
-        💡 Note: At least two images must be selected. (To export a single
-        image, use the 'Export' option from the main 'Open' dialog.) If no
-        images are selected, Tux Paint will not attempt to generate a GIF based
-        on all saved images.
+        💡 Note : On doit sélectionner au moins deux images. (Pour exporter une
+        seule image, utilisez l'option "Exporter" de la boîte de dialogue
+        "Ouvrir".) Si aucune image n'est sélectionnée, Tux Paint n'essaiera PAS
+        de générer un GIF basé sur toutes les images enregistrées.
 
         Appuyer sur [Escape] pendant l'exportation annulera le processus et
         vous ramènera à la boîte de dialogue "Diaporama".
@@ -1068,10 +1070,11 @@ g.Commande "Quitter"
 
     On vous demandera d'abord si vous voulez vraiment arrêter.
 
-    If you choose to quit, and you haven't saved the current picture, you will
-    first be asked if wish to save it. If it's not a new image, you will then
-    be asked if you want to save over the old version, or create a new entry.
-    (See "Save" above.)
+    Si vous choisissez de quitter et que vous n'avez pas enregistré l'image
+    actuelle, il vous sera d'abord demandé si vous souhaitez l'enregistrer.
+    S'il ne s'agit pas d'une nouvelle image, il vous sera alors demandé si vous
+    souhaitez écraser l'ancienne version ou créer une nouvelle entrée. (Voir "
+    Sauvegarder" aci-dessus.)
 
     ⚙ Remarque :: Si l'image est enregistrée, elle sera rechargée
     automatiquement la prochaine fois que vous exécuterez Tux Paint -- à moins
@@ -1238,10 +1241,10 @@ Pour utiliser ce script, exécutez simplement la commande à partir d'une invite
 de ligne de commande et indiquez-lui le (s) nom (s) du ou des fichiers que vous
 voulez convertir.
 
-They will be converted and placed in your Tux Paint "saved" directory.
+Ils seront convertis et placés dans votre répertoite Tux Paint "saved".
 
-💡 Note: If you're doing this for a different user (e.g., your child) you'll
-need to make sure to run the command under their account.)
+💡 Note : si vous faites cela pour un autre utilisateur (par ex. votre enfant)
+vous devrez vous assurer d'exécuter la commande sous son compte.)
 
 Exemple :
 
@@ -1345,7 +1348,7 @@ Historique du développement et licence :
       + CHANGES.txt
         Résumé des changements entre chaque version de Tux Paint.
       + COPYING.txt
-        Tux Paint's software license, the GNU General Public License (GPL)
+        Licence du programme Tux Paint, la GNU General Public License (GPL)
 
 
 

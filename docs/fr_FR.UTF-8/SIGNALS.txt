@@ -27,10 +27,10 @@ SIGTERM (également, [Control] + [C] depuis un terminal exécutant 'tuxpaint')
 
     Exemple: killall tuxpaint
 
-    💡 Note: From other parts of the interface, the signal is currently
-    interpreted as a request to go back (e.g., from the "New" dialog back to
-    the main interface), as if a "Back" button in Tux Paint were clicked, or
-    the [Esc] was key pressed.
+    💡 Note : Sur d'autres parties de l'interface, le signal est en fait
+    interprété comme une demande de retour en arrière (par exemple, de la boîte
+    de dialogue "Nouveau" pour revenir sur l'interface principale), comme si un
+    bouton "Retour" dans Tux Paint a été cliqué, ou la touche [Esc] enfoncée.
 
 
 
@@ -49,10 +49,10 @@ SIGUSR1 & SIGUSR2
 
     Exemple: killall -s SIGUSR1 tuxpaint
 
-    💡 Note: From other parts of the interface, unfortunately, Tux Paint will go
-    back one level in the interface. Therefore, at this time, it may be
-    necessary to send this signal to Tux Paint a few times, for it to quit
-    completely.
+    💡 Note : À partir d'autres parties de l'interface, malheureusement, Tux
+    Paint ne reviendra que d'un niveau dans l'interface. Par conséquent, à ce
+    moment, il peut être nécessaire d'envoyer ce signal à Tux Paint plusieurs
+    fois pour qu'il s'arrête complètement.
 
 
 
