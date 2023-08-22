@@ -765,9 +765,9 @@
                     align="right">
                 Pour les images pour lesquelles c'est <em> d'accord pour rogner les bords gauche et droite</em>, mais les bords haut et bas doivent être conservés, utilisez "<code><b>allowscale=horizontal</b></code>".                <ul>
                   <li>
-                    If the starter's aspect ratio is plus large than that of the canvas, it will be scaled to fit the height of the canvas, and the gauche et droite will be cropped.                  </li>
+                    Si le ratio d'aspect de l'image de démarrage est plus large  que celui du canevas, elle sera mise à l'échelle pour avoir la même height que le canevas et gauche et droite seront rognés.                  </li>
                   <li>
-                    If the starter's aspect ratio is plus haut than that of the canvas, it will be scaled to fit the height of the canvas, and no cropping will occur, and the gauche et droite edges will be smeared.                  </li>
+                    Si le ratio d'aspect de l'image de démarrage est plus haut  que celui du canevas, elle sera mise à l'échelle pour avoir la même height que le canevas et il n'y aura pas de rognage,  et les bords de gauche et droite seront barbouillés.                  </li>
                 </ul>
                 <br clear="all" />
               </li><!-- allowscale=horizontal -->
@@ -780,39 +780,39 @@
                     align="right">
                 Pour les images pour lesquelles c'est <em> d'accord pour rogner les bords haut et bas</em>, mais les bords gauche et droite doivent être conservés, utilisez "<code><b>allowscale=vertical</b></code>".                <ul>
                   <li>
-                    If the starter's aspect ratio is plus haut than that of the canvas, it will be scaled to fit the largeur of the canvas, and the haut et bas will be cropped.                  </li>
+                    Si le ratio d'aspect de l'image de démarrage est plus haut  que celui du canevas, elle sera mise à l'échelle pour avoir la même largeur que le canevas et haut et bas seront rognés.                  </li>
                   <li>
-                    If the starter's aspect ratio is plus large than that of the canvas, it will be scaled to fit the largeur of the canvas, and no cropping will occur, and the haut et bas edges will be smeared.                  </li>
+                    Si le ratio d'aspect de l'image de démarrage est plus large  que celui du canevas, elle sera mise à l'échelle pour avoir la même largeur que le canevas et il n'y aura pas de rognage,  et les bords de haut et bas seront barbouillés.                  </li>
                 </ul>
                 <br clear="all" />
               </li><!-- allowscale=vertical -->
 
               <li><!-- allowscale=both -->
-                If it's acceptable to crop either the top and bottom or the left and right, use "<code><b>allowscale=both</b></code>". Contents from starter will always fill the canvas, regardless of how its aspect ratio compares to that of the canvas.              </li><!-- allowscale=both -->
+                Si on accepte de rogner soit le haut et le bas, soit la droite et la gauche, utilisez "<code><b>allowscale=both</b></code>". Le contenu de l'image de démarrage sera toujours en accord avec la canevas, indépendamment de son ratio d'aspect par rapport à celui du canevas.              </li><!-- allowscale=both -->
 
               <li><!-- allowscale=none -->
-                The default behavior is to not allow cropping. This may be specified explicitly with "<code><b>allowscale=none</b></code>".              </li><!-- allowscale=none -->
+                Le comportement par défaut est de ne pas faire de rognage. Ceci peut être spécifié explicitement avec "<code><b>allowscale=none</b></code>".              </li><!-- allowscale=none -->
             </ul>
           </dd><!-- allowscale -->
 
           <dt><strong>arrière-plan</strong></dt>
           <dd><!-- background -->
             <p>
-              This option allows you to specify how Tux Paint should fill the rest of the canvas, when the starter does not fit in one or the other direction.  By default, as described above, Tux Paint will "smear" the pixels from the edges of the starter.  (This can be specified explicitly with "<code><b>background=smear</b></code>".)            </p>
+              Cette option vous permet de spécifier comment Tux Paint doit remplir le reste du canevas, lorsque l'image de démarrage ne s'accorde pas dans l'une ou l'autre direction. Par , comme dit auparavant,  Tux Paint "barbouillera" les bords de cette image. (Ceci peut être spécifié expkicitement avec  "<code><b>background=smear</b></code>".)            </p>
             <p>
-              You can instead specify a solid background color (e.g., white for a 'coloring-book' style starter, with "<code><b>background=#fff</b></code>").            </p>
+              Vous pouvez spécifier à la place une couleur unie en arrière-plan (par ex. pour une image de démarrage du style 'livre de coloriage', avec "<code><b>background=#fff</b></code>").            </p>
             <p>
               Les couleurs peuvent être listées en utilisant trois nombres décimaux (par exemple, "<code>255 68 136</code>") ou un 'triplet' hexadécimal de 6 ou 3 chiffres (par exemple, " <code>#ff4488</code>" ou "<code>#F48</code>").            </p>
             <p>
-              See the <a href="OPTIONS.html#colorfile">"Color Palette File" section of "Options documentation"</a> for further details.            </p>
+              Voyez la <a href="OPTIONS.html#colorfile">section "Fichier de palette couleur" section de la  "documentation Options"</a> pour plus de détails.            </p>
           </dd><!-- background -->
 
           <dt><strong>gravité</strong></dt>
           <dd><!-- gravity -->
             <p>
-              This option allows you to specify how Tux Paint should position a starter, when it is being cropped in one or the other direction.  By default, Tux Paint will place the center of the starter within the canvas. (This can be specified explicitly with "<code><b>gravity=center</b></code>".)            </p>
+              Cette option vous permet de spécifier comment Tux Paint doit positionner une image de démarrage lorsqu'elle a été rognée dans l'une ou l'autre direction. Par défaut, placera le centre de l'image de démarrage xomme celui du canevas. (Ceci peut être spécifié explicitement avec "<code><b>gravity=center</b></code>".)            </p>
             <p>
-              For example, if the top center of the starter contains the most important content, you can specify "<code><b>gravity=top</b></code>".  Or, if the bottom right is important, specify "<code><b>gravity=bottom-right</b></code>".            </p>
+              Par exemple, si le haut de l'image de démarrage est avec le contenu le plus important, vous pouvez spécifier "<code><b>gravity=top</b></code>". Ou si le bas à droite est plus important, spécifiez "<code><b>gravity=bottom-right</b></code>".            </p>
 
             <p>
               Options disponibles :              <ul>
@@ -833,11 +833,11 @@
                   <img src="../../html/images/gravity-center-landscape.png"
                     width="160"
                     height="72"
-                    alt="[ Landscape-shaped image of a horizon with the sun in the middle and a building on the right. ]"
-                    title="Landscape-shaped image of a horizon with the sun in the middle and a building on the right."
+                    alt="[ Une image au format paysage avec un horizon où le soleil est au milieu et une construction sur le côté droit. ]"
+                    title="Une image au format paysage avec un horizon où le soleil est au milieu et une construction sur le côté droit."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Focusing on the centre of a starter image stretched to fit the largeur of the canvas.<p/>
+                    <p>Vue sur le centre d'une image de démarrage étirée pour être en accord avec la largeur du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
@@ -846,11 +846,11 @@
                   <img src="../../html/images/gravity-center-portrait.png"
                     width="84"
                     height="160"
-                    alt="[ Portrait-shaped image of a horizon with the sun in the middle and the left side of building on the right. ]"
-                    title="Portrait-shaped image of a horizon with the sun in the middle and the left side of building on the right."
+                    alt="[ Image au format portrait avec un horizon, le soleil au milieu et le côté gauche d'une construction à droite. ]"
+                    title="Image au format portrait avec un horizon, le soleil au milieu et le côté gauche d'une construction à droite."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Focusing on the centre of a starter image stretched to fit the height of the canvas.<p/>
+                    <p>Vue sur le centre d'une image de démarrage étirée pour être en accord avec la height du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
@@ -859,11 +859,11 @@
                   <img src="../../html/images/gravity-top-landscape.png"
                     width="160"
                     height="72"
-                    alt="[ Landscape-shaped image of the sky with the sun at the bottom and the top of building on the right. ]"
-                    title="Landscape-shaped image of the sky with the sun at the bottom and the top of building on the right."
+                    alt="[ Image au format paysage avec le ciel, le soleil en bas et le haut d'une construction sur la droite. ]"
+                    title="Image au format paysage avec le ciel, le soleil en bas et le haut d'une construction sur la droite."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Focusing on the haut of a starter image stretched to fit the largeur of the canvas.<p/>
+                    <p>Vue sur le haut d'une image de démarrage étirée pour être en accord avec la largeur du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
@@ -872,11 +872,11 @@
                   <img src="../../html/images/gravity-bottom-landscape.png"
                     width="160"
                     height="72"
-                    alt="[ Landscape-shaped image of the ground with the sun at the top. ]"
-                    title="Landscape-shaped image of the ground with the sun at the top."
+                    alt="[ Image, au format paysage, du sol avec le soleil en haut. ]"
+                    title="Image, au format paysage, du sol avec le soleil en haut."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Focusing on the bas of a starter image stretched to fit the largeur of the canvas.<p/>
+                    <p>Vue sur le bas d'une image de démarrage étirée pour être en accord avec la largeur du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
@@ -885,11 +885,11 @@
                   <img src="../../html/images/gravity-right-portrait.png"
                     width="84"
                     height="160"
-                    alt="[ Portrait-shaped image of a horizon with the sun on the left and a building in the center. ]"
-                    title="Portrait-shaped image of a horizon with the sun on the left and a building in the center."
+                    alt="[ Image, au format portrait, d'un horizon avec le soleil à gauche et une construction au milieu. ]"
+                    title="Image, au format portrait, d'un horizon avec le soleil à gauche et une construction au milieu."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Focusing on the droit of a starter image stretched to fit the height of the canvas.<p/>
+                    <p>Vue sur le droit d'une image de démarrage étirée pour être en accord avec la height du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
