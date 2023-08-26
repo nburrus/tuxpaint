@@ -314,7 +314,7 @@
       </ul>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        If only one display is available, and Tux Paint is being run in windowed (not fullscreen) mode, and the chosen window size exceeds the capabilities of the display, Tux Paint will fall back to the display's dimensions.      </p>
+        <span title="Information">&#128161;</span>        Si un seul écran est disponible, et que Tux Paint tourne en mode fenêtré (pas en plein écran), et que la taille de fenêtre choisie excède les possibilités de l'écran, Tux Paint resdescendra aux dimensions de l'écran.      </p>
     </dd>
 
     <dt>
@@ -398,7 +398,7 @@
         La valeur de <i>SIZE</i> doit être exprimée en pixels, et peut être comprise entre 24 et 192, inclusivement. La plupart des boutons sont carrés, et cela affecte leur largeur et hauteur.      </p>
 
       <p>
-        A value of "<code>auto</code>" may be provided, and Tux Paint will choose a suitable button size based on the size of Tux Paint's window (or fullscreen display).  (For the default screen size of 800x600, it will be the default button size: "48".)      </p>
+        Une valeur de "<code>auto</code>" peut être fournie, et Tux Paint choisira une taille de bouton en conséquence en fonction de la taille de fenêtre (ou bien en plein év=cran). (Pour la taille d'écran par défaut de 800x600, lataille du bouton sera par défaut "48".)      </p>
 
       <p class="note">
         <span title="Information">&#128161;</span>        <strong> Note : </strong> si la taille des boutons fait que ceux-ci sont trop grands pour qu'ils apparaissent tous, la taille la plus grande possible sera utilisée. (Une remarque apparaîtra sur le terminal en <code>stderr</code>.)      </p>
@@ -647,7 +647,7 @@
 
     <dd>
       <p>
-        This disables the rotation step of the <b>Stamps</b> tool, immediately placing the stamp in its regular orientation (with any flipping or mirroring applied) on the first click.      </p>
+        Cela désactive la rotation des <b>Tampons</b> mettant immédiatement le tampon dans son orientation normale (le retournement ou la réflection peuvent être appliqués) au premier clic.      </p>
       <p class="note">
         <span title="Version variation">&#128220;</span>        <strong>Note :</strong> La possibilité de rotation des tampons a été incorporée dans Tux Paint avec la version 0.9.29.      </p>
       <p class="note">
@@ -671,7 +671,7 @@
 
     <dd>
       <p>
-        Some <b>Magic</b> tools offer various size settings. This option disables the sizing control, and only provides the tools' default sizes. (Some plugins may offer additional variations of a Magic tool, to make a few sizes possible, e.g. "Bricks" and "Googly Eyes".)      </p>
+        Certaibs outils <b>Magie</b> peuvent avoir plusieurs réglages de taille. Cette option annule cette possibilité et ne permet que la taille par défaut.(Quelques plugins offre des variations additionnelles en vue de réaliser quelques tailles possibles, par ex. "Briques" et "Yeux écarquillés".)      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note : </strong>si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l'utilisateur en utilisant "<code>nomagicsizes=no</code>" ou "<code>magicsizes=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--magicsizes</code>".      </p>
     </dd>
@@ -704,9 +704,9 @@
 
     <dd>
       <p>
-        Disables the <a href="README.html#brush_spacing">brush spacing</a> option of the <a href="README.html#using_tools_drawing_paint"><b>Paint</b></a> and <a href="using_tools_drawing_lines"><b>Lines</b></a> tools. The brushes' default spacings will be used.      </p>
+        Désactive l'option <a href="README.html#brush_spacing">brush spacing</a>espacement des coups de pinceaux</a> pour les outils <a href="README.html#using_tools_drawing_paint"><b>Peindre</b></a> et <a href="using_tools_drawing_lines"><b>Lignes</b></a> . L'espacement par défaut sera utilisé.      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The brush spacing option was added to Tux Paint's user interface in version 0.9.28. For more information on brush spacing, see <a href="EXTENDING.html">EXTENDING.html</a>      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Note : </strong> L'option 'espacement des coups de pinceaux' a été ajoutée à Tux Paint version 0.9.28. Pour plus d'informations sur l'espacement des coups de pinceaux, voir <a href="EXTENDING.html">EXTENDING.html</a>      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note : </strong>si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l'utilisateur en utilisant "<code>nobrushspacing=no</code>" ou "<code>brushspacing=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--brushspacing</code>".      </p>
     </dd>
@@ -717,7 +717,7 @@
 
     <dd>
       <p>
-        Disables the ability to create a new <a href="README.html#using_tools_other_new">Template</a> image (based on a saved drawing) from within the <a href="README.html#using_tools_other_open"><strong>Open</strong></a> dialog.      </p>
+        Désactive la possibilité de créer de nouvelles iamges <a href="README.html#using_tools_other_new">Modèle</a>  (basées sur des images sauvegardées) à partir de la boîte de dialogue <a href="README.html#using_tools_other_open"><strong>Ouvrir</strong></a> .      </p>
       <p class="note">
         <span title="Version variation">&#128220;</span>        <strong>Note : </strong> La possibilité de création de Modèles a été ajouté avec la version 0.9.31 de Tux Paint.      </p>
       <p class="note">
@@ -730,7 +730,7 @@
 
     <dd>
       <p>
-        Disables the ability to erase saved drawings via the "Erase" button on the <a href="README.html#using_tools_other_open"><strong>Open</strong></a> dialog, or exported <a href="README.html#using_tools_other_new">Template</a> images (based on a saved drawing) via the "Erase" button on the <a href="README.html#using_tools_other_new">New</a> dialog. Useful to prevent users from erasing work, especially combined with the <a href="#saving"><code>--saveovernew</code></a> option.      </p>
+        Désactive la possibilité d'effacer des images sauvegardées via le bouton "Effacer" de la boîte de dialogue <a href="README.html#using_tools_other_open"><strong>Ouvrir</strong></a> , ou bien d'images <a href="README.html#using_tools_other_new">Modèle</a> exportées (à base de dessins sauvegardés) via le bouton "Effacer" de la boîte de dialogue <a href="README.html#using_tools_other_new">Nouveao</a>. C'est utile pour empêcher les utilisateurs d'effacer des travaux, spécialement si c'est combiné avec l'option <a href="#saving"><code>--saveovernew</code></a>.      </p>
       <p class="note">
         <span title="Version variation">&#128220;</span>        <strong>Note : </strong> Cette option a été ajoutée avec la version 0.9.31 de Tux Paint.      </p>
       <p class="note">
@@ -1835,7 +1835,7 @@
 
     <dd>
       <p>
-        This reverses the sorting of the Open and Slideshow dialogs, placing the newest images at the top of the list.      </p>
+        Ceci inverse le tri des fichiers dans les dialogues Ouvrir et Diaporama; plaçant les nouvelles images en tête de liste.      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note : </strong>si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l'utilisateur en utilisant "<code>reversesort=no</code>" ou "<code>noreversesort=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--noreversesort</code>".      </p>
     </dd>

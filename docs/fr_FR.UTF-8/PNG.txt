@@ -76,7 +76,7 @@ Outils en ligne de commande
 
 
 
-Proprietary Software for Windows
+Logiciel propriétaire pour Windows
       + CorelDRAW (Corel) — http://www.corel.com/
       + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
       + Paint Shop Pro (Corel) — https://www.paintshoppro.com/

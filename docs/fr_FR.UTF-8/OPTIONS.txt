@@ -142,9 +142,9 @@ windowsize=SIZE
       + 768x1024
       + 1600x1200
 
-    💡 If only one display is available, and Tux Paint is being run in windowed
-    (not fullscreen) mode, and the chosen window size exceeds the capabilities
-    of the display, Tux Paint will fall back to the display's dimensions.
+    💡 Si un seul écran est disponible, et que Tux Paint tourne en mode fenêtré
+    (pas en plein écran), et que la taille de fenêtre choisie excède les
+    possibilités de l'écran, Tux Paint resdescendra aux dimensions de l'écran.
 
 
 
@@ -229,10 +229,10 @@ buttonsize=SIZE
     24 et 192, inclusivement. La plupart des boutons sont carrés, et cela
     affecte leur largeur et hauteur.
 
-    A value of "auto" may be provided, and Tux Paint will choose a suitable
-    button size based on the size of Tux Paint's window (or fullscreen
-    display). (For the default screen size of 800x600, it will be the default
-    button size: "48".)
+    Une valeur de "auto" peut être fournie, et Tux Paint choisira une taille de
+    bouton en conséquence en fonction de la taille de fenêtre (ou bien en plein
+    év=cran). (Pour la taille d'écran par défaut de 800x600, lataille du bouton
+    sera par défaut "48".)
 
     💡 Note : si la taille des boutons fait que ceux-ci sont trop grands pour
     qu'ils apparaissent tous, la taille la plus grande possible sera utilisée.
@@ -471,9 +471,9 @@ nostampcontrols=yes
 
 nostamprotation=yes
 
-    This disables the rotation step of the Stamps tool, immediately placing the
-    stamp in its regular orientation (with any flipping or mirroring applied)
-    on the first click.
+    Cela désactive la rotation des Tampons mettant immédiatement le tampon dans
+    son orientation normale (le retournement ou la réflection peuvent être
+    appliqués) au premier clic.
 
     📜 Note : La possibilité de rotation des tampons a été incorporée dans Tux
     Paint avec la version 0.9.29.
@@ -500,10 +500,10 @@ nomagiccontrols=yes
 
 nomagicsizes=yes
 
-    Some Magic tools offer various size settings. This option disables the
-    sizing control, and only provides the tools' default sizes. (Some plugins
-    may offer additional variations of a Magic tool, to make a few sizes
-    possible, e.g. "Bricks" and "Googly Eyes".)
+    Certaibs outils Magie peuvent avoir plusieurs réglages de taille. Cette
+    option annule cette possibilité et ne permet que la taille par défaut.
+    (Quelques plugins offre des variations additionnelles en vue de réaliser
+    quelques tailles possibles, par ex. "Briques" et "Yeux écarquillés".)
 
     ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
     peut être remplacé par le fichier de configuration de l'utilisateur en
@@ -540,11 +540,12 @@ nolabel=yes
 
 nobrushspacing=yes
 
-    Disables the brush spacing option of the Paint and Lines tools. The
-    brushes' default spacings will be used.
+    Désactive l'option brush spacingespacement des coups de pinceaux pour les
+    outils Peindre et Lignes . L'espacement par défaut sera utilisé.
 
-    📜 Note: The brush spacing option was added to Tux Paint's user interface in
-    version 0.9.28. For more information on brush spacing, see EXTENDING.html
+    📜 Note : L'option 'espacement des coups de pinceaux' a été ajoutée à Tux
+    Paint version 0.9.28. Pour plus d'informations sur l'espacement des coups
+    de pinceaux, voir EXTENDING.html
 
     ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
     peut être remplacé par le fichier de configuration de l'utilisateur en
@@ -555,8 +556,8 @@ nobrushspacing=yes
 
 notemplateexport=yes
 
-    Disables the ability to create a new Template image (based on a saved
-    drawing) from within the Open dialog.
+    Désactive la possibilité de créer de nouvelles iamges Modèle (basées sur
+    des images sauvegardées) à partir de la boîte de dialogue Ouvrir .
 
     📜 Note : La possibilité de création de Modèles a été ajouté avec la version
     0.9.31 de Tux Paint.
@@ -571,10 +572,12 @@ notemplateexport=yes
 
 noerase=yes
 
-    Disables the ability to erase saved drawings via the "Erase" button on the
-    Open dialog, or exported Template images (based on a saved drawing) via the
-    "Erase" button on the New dialog. Useful to prevent users from erasing
-    work, especially combined with the --saveovernew option.
+    Désactive la possibilité d'effacer des images sauvegardées via le bouton
+    "Effacer" de la boîte de dialogue Ouvrir , ou bien d'images Modèle
+    exportées (à base de dessins sauvegardés) via le bouton "Effacer" de la
+    boîte de dialogue Nouveao. C'est utile pour empêcher les utilisateurs
+    d'effacer des travaux, spécialement si c'est combiné avec l'option
+    --saveovernew.
 
     📜 Note : Cette option a été ajoutée avec la version 0.9.31 de Tux Paint.
 
@@ -1242,8 +1245,8 @@ Sauvegarder la configuration d'impression
 
     reversesort=yes
 
-        This reverses the sorting of the Open and Slideshow dialogs, placing
-        the newest images at the top of the list.
+        Ceci inverse le tri des fichiers dans les dialogues Ouvrir et
+        Diaporama; plaçant les nouvelles images en tête de liste.
 
         ⚙ Note : si utilisé dans un fichier de configuration pour tout le
         monde, il peut être remplacé par le fichier de configuration de
