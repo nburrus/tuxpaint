@@ -85,10 +85,11 @@ Simplicité
     d'autres fichiers sur l'ordinateur est restreint.
 
 Accessibilité
-    Tux Paint offers a number of accessibility options, including increasing
-    the size of control buttons, changing the UI font, options to control the
-    cursor (mouse pointer) using the keyboard or other input devices (joystick,
-    gamepad, etc.), an on-screen keyboard, and "stick" mouse clicks.
+    Tux Paint offre un grand nombre d'options pour l'accessibilité, comprenant
+    l'augmentation de la taille des boutons de contrôle, le changement des
+    fontes utilisateur, des options pour contrôler le pointeur de souris en
+    utilisant le clavier ou d'autres dispostifs d'entrée (joystick, manette de
+    jeu, etc ..), un clavier virtuel, et des clics de souris "collants".
 
 
 C. Licence
@@ -231,55 +232,60 @@ Côté droit : sélecteur
     Pourpre, Brun, Gris]
 En bas : couleurs
 
-    When the active tool supports colors, a palette of colors choices will be
-    shown near the bottom of the screen. Click one to choose a color, and it
-    will be used by the active tool. (For example, the "Paint" tool will use it
-    as the color to draw with the chosen brush, and the "Fill" tool will use it
-    as the color to use when flood-filling an area of the picture.)
+    Quand l'outil en cours utilise des couleurs, une palette pour choisir des
+    couleurs se trouve en bas de l'écran. Cliquez sur une pour choisir une
+    couleur, et elle sera utilisée par l'outil en cours. (Par ex. l'outil
+    "Peindre" utilisera cette couleur pour dessiner avec le piceau choisi, et
+    l'outil "Remplir" utilisera cette couleur pour remplir une partie du
+    dessin)
 
-    On the far right are three special color options:
+    Tout à fait à droite se trouvent trois options spéciales pour les couleurs
+    :
       + Sélecteur de couleur
         Le "sélecteur de couleurs" (qui ressemble à un compte-gouttes) vous
         permet de choisir une couleur trouvée dans votre dessin.
-        (A shortcut key is available to access this feature quickly; see
-        below.)
+        (Un raccourci clavier est disponible pour accéder à cet effet
+        rapidement; voir ci-dessous)
       + Palette de l'Arc-en-ciel
-        The rainbow palette allows you to pick any color by choosing the hue,
-        saturation, and value of the color you want. A box on the left displays
-        hundreds of hues — from red at the top through to violet at the bottom
-        — at hundreds of saturation/intensity levels — from pale & washed-out
-        on the left through to pure on the right. A grey vertical bar provides
-        access to hundreds of value levels — from lighest at the top through to
-        darkest at the bottom.
-        Click the green checkbox button to select the color, or the "Back"
-        button to dismiss the pop-up without picking a new color.
-        You may also set this tool's color to that of other color choices:
-          o Whichever built-in color is selected, if any
+        La palette de l'arc-en-ciel vous permet de prendre n'importe quelle
+        couleur en choisissant la teinte, la saturation et la valeur de la
+        couleur désirée. Une boîte sur le côté gauche montre des centaines de
+        teinte &madsh; de rouge en haut jusqu'au violet en bas — à des
+        centaines de niveaux de saturation/intensité — délavées sur la gauche à
+        pures sur la droite. Une barre grise verticale donne accès à des
+        centaines de niveaux — du plus clair en haut à plus sombre en bas.
+        Cliquez sur le bouton vert pour selectionner la couleur, ou sur le
+        bouton "Retour" pour abandonner sans prendre de nouvelle couleur.
+        Vous pouvez aussi régler la couleur de cet outil avec une autre que
+        l'on choisit :
+          o Peu importe la couleur intégrée choisie, si il y an a une
           o Couleur actuelle du Sélecteur de couleur
           o Couleur actuelle du mélangeur de couleurs
       + Mélangeur de couleurs
-        The "color mixer" (which has silhouette of a paint palette) allows you
-        to create colors by blending primary additive colors — red, yellow, and
-        blue — along with white (to "tint"), grey (to "tone"), and black (to
-        "shade").
-        You may click any button multiple times (for example, red + red +
-        yellow results in a red-orange color). The ratios of colors added are
-        shown at the bottom.
-        You can start over (reset to no colors in your picture) by clicking the
-        "Clear" button. You can also undo or redo multiple steps of mixing, in
-        case you made a mistake (without having to start over).
-        Click the green checkbox button to select the color, or the "Back"
-        button to dismiss the pop-up without picking a new color.
+        Le "mélangeur de couleur" (qui ressemble à une palette de peintre) vous
+        permet de créer des couleurs en mélangeant des couleurs primaires —
+        rouge, jaune et bleu — en même temps que du blanc (pour "tinter"), gris
+        (pour "harmoniser") et noir (pour "ombrer").
+        Vous pouvez cliquer sur un bouton plusieurs fois (par ex. rouge + rouge
+        + jaune donne une couleur rouge-orange). Le ratio des couleurs ajoutées
+        est montré en bas.
+        Vous pouvez revenir en arrière (reset avec aucune couleur dans le
+        dessin) en cliquant sur le bouton "Effacer". Vous pouvez Défaire et
+        Refaire des étapes de mélange, au cas où vous auriez fait une erreur
+        (sans avoir à tout recommencer).
+        Cliquez sur le bouton vert pour selectionner la couleur, ou sur le
+        bouton "Retour" pour abandonner sans prendre de nouvelle couleur.
 
-    ⌨ When the active tool supports colors, a shortcut may be used for quick
-    access to the "color picker" option. Hold the [Control] key while clicking,
-    and the color under the mouse cursor will be shown at the bottom. You may
-    drag around to canvas to find the color you want. When you release the
-    mouse button, the color under the cursor will be selected. If you release
-    the mouse outside of the canvas (e.g., over the "Tools" area), the color
-    selection will be left unchanged. (This is similar to clicking the "Back"
-    button that's available when bringing up the "color picker" option via its
-    button the color palette.)
+    ⌨ Quand l'outil qui est actif a besoin de couleurs, un raccourci clavier
+    peut être utilisé pour un accès rapide à l'option "sélecteur de couleur".
+    Maintenez enfoncée la touche [Control] pendant le clic, et la couleur sous
+    le pointeur de souris apparaîtra en bas. Vous pouvez vous promener sur le
+    canevas pour trouver la couleur qui vous convient. Lorsque vous relâchez le
+    bouton de la souris, la couleur qui était sous le pointeur est
+    sélectionnée. Si vous relâchez en dehors du canevas (par ex. au-dessus de
+    la zone "Outils"), la sélection de la couleur restera inchangée. (C'est la
+    même chose qu'en cliquant sur le bouton "Annuler" qui est disponible sur
+    l'option "sélecteur de couleur" via la palette de couleur).
 
     ⚙ Note : Vous pouvez définir vos propres couleurs. Voir la documentation "
     Options" .
@@ -331,11 +337,11 @@ a. Outil "Peinture" (pinceau)
     Espacement des pinceaux
 
 
-        The space between each position where a brush is applied to the canvas
-        can vary. Some brushes (such as the footprints and flower) are spaced,
-        by default, far enough apart that they don't overlap. Other brushes
-        (such as the basic circular ones) are spaced closely, so they make a
-        continuous stroke.
+        L'espace entre chaque position de coup de pinceau peut varier. Quelques
+        pinceaux (tels que les empreintes de pas et les fleurs) sont espacés,
+        par défaut, de manière suffisamment grande pour qu'elles ne se
+        recouvrent pas. D'autres pineaux (tels que les circulaires basiques)
+        sont espacés de près et font ainsi un coup de pinceau continu.
 
         L'espacement des coups de pinceau peut être changé en cliquant dans
         l'ensemble de barres (de forme triangulaire) en bas à droite; plus la
@@ -1146,30 +1152,31 @@ un mouvement vertical sur les bords du pavé. Tux Paint support le défilement
 avec certaines listes (par ex. les Tampons, les outils 'Magie', les boîtes de
 dialogue Nouveau et Ouvrir).
 
-Tux Paint will also automatically scroll if you click and hold the mouse down
-on an scroll button — the "up" and "down" arrow buttons that appear above and
-below scrolling lists.
+Vous pouvez avoir un défilement automatique en cliquant et en maintenant
+enfoncé sur un bouton de défilement — les flèches "haut" et "bas" apparaissant
+au-dessus et en-dessous de la liste.
 
 b. Accessibilité de la souris
 
-Other devices that appear as a mouse can be used to control Tux Paint. For
-example:
+Yous dispositf ressemblant à une souris peut être utilisé pour contrôler Tux
+Paint. Par exemple :
 
-  * Head pointing/tracking devices
+  * Dispositifs de pointage/suivi avec la tête
   * Dispositifs de suivi du regard
   * Souris de pied
 
-Tux Paint offers a "sticky mouse click" accessibility setting, where a single
-click begins a click-and-drag operation, and a subsequent click ends it. (See
-the Options documentation.)
+Tux Paint possède un réglage d'accessibilité "clic collant", où un simple clic
+permet de faire "cliquer et glisser", et autre clic l'arrête. ( (Voir la
+Options documentation.)
 
 2. Utiliser une Tablette ou un Écran tactile
 
-As noted above, Tux Paint recognizes any device that appears as a mouse. This
-means drawing tablets and touchscreens may be used. However, these devices
-often support other features beyond X/Y motion, button clicks, and scroll-wheel
-motion. Currently, those additional features are not supported by Tux Paint.
-Some examples:
+Comme indiqué précédemment, Tux Paint reconnaît tout dispositif ressemblant à
+une souris. Ce qui veut dire que les tablettes graphiques et les écrans
+tactiles sont utilisables. Cependant ces dispositifs offrent aussi d'autres
+fonctionnalités que les mouvements X/Y, les clics et la roulette de défilement.
+Aujourd'hui, ces fonctionnalités additionnelles ne sont pas supportées par Tux
+Paint. Quelques examples :
 
   * Pression et angle
   * Conseil pour la Gomme
@@ -1177,24 +1184,25 @@ Some examples:
 
 3. Utiliser un dispositif de type joystick
 
-Tux Paint may be configured to recognize input from any game controller that
-appears to your operating system as a joystick. That even includes modern game
-console controllers connected via USB or Bluetooth (e.g., Nintendo Switch or
-Microsoft Xbox game pads)!
+Tux Paint peut être configuré pour reconnaître l'entrée de tout contrôleur de
+jeu qui apparaît dans votre système dexploitation tel qu'un joystick. Ceci
+comprend même les consomes modernes connectées par USB ou Bluetooth (par ex.
+les manettes de jeu Nintendo Switch ou Microsoft Xbox) !
 
-Numerous configuration options are available to best suit the device being
-used, and the user's needs. Analog input will be used for coarse movement, and
-digital "hat" input for fine movement. Buttons on the controller can be mapped
-to different Tux Paint controls (e.g., acting as the [Escape] key, switching to
-the Paint tool, invoking Undo and Redo operations, etc.). See the Options
-documentation for more details.
+Beaucoup d'options de configuration existent pour s'adapter au mieux aux
+dispositifs utilisés, et aux besoins de l'utilisateur. Une entrée analogique
+sera utilisée pour des mouvements grossiers, et un dispositif digital pour les
+mouvements fins. Les boutons du contrôleurs peuvent être adaptés pour
+différents contrôles de Tux Paint (par ex. pour actionner la touche [Escape],
+pour invoquer les opérations Faire et Défaire, etc ...). Voir la documentation
+pour plus de détails Options .
 
 4. Utiliser le clavier
 
-Tux Paint offers an option to allow the keyboard to be used to control the
-mouse pointer. This includes motion and clicking, as well as shortcuts to
-navigate between and within certain parts of the interface. See the Options
-documentation for more details.
+Tux Paint fournit une option pour permettre d'utiliser le clavier pour
+contrôler le pointeur de souris. Cela inclut le mouvement et le clic, aussi
+bien que les raccourcis pour naviguer entre et à l'intérieur de certaines
+parties de l'interface. Voir la documentation pour plus de détails Options.
 
 III. Chargement d'autres images dans Tux Paint
 
