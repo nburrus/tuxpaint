@@ -1,14 +1,14 @@
-                     Tux Paint "Magic" Tool: Double Vision
+                  Outil 'Magie' de Tux Paint : Vision double
 
-                             Group: Color Filters
+                           Groupe: Filtres couleurs
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This blends the image with itself, to simulate double vision.
 
 This tool is operated in a freehand fashion.
 
-See also: 3D Glasses & Double Vision.
+Voir aussi : Lunettes 3D & Vision double.
 
 -------------------------------------------------------------------------------
 

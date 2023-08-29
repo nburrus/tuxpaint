@@ -1,8 +1,8 @@
-                  Tux Paint "Magic" Tool: Peinture métallique
+               Outil 'Magie' de Tux Paint : Peinture métallique
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Click and drag to draw shiny metal using the current color.
 

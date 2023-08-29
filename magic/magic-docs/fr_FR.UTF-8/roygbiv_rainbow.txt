@@ -1,14 +1,14 @@
-                  Tux Paint "Magic" Tool: Arc-en-ciel simple
+                Outil 'Magie' de Tux Paint : Arc-en-ciel simple
 
-                                Group: Artistic
+                              Groupe: Artistique
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Draw a rainbow arc of red, orange, yellow, green, blue, indigo and violet.
 
 This tool is operated in a freehand fashion.
 
-See also: Arc-en-ciel simple.
+Voir aussi : Arc-en-ciel simple.
 
 -------------------------------------------------------------------------------
 

@@ -1,8 +1,8 @@
-                     Tux Paint "Magic" Tool: Kaléidoscope
+                   Outil 'Magie' de Tux Paint : Kaléidoscope
 
-                            Group: Pattern Painting
+                           Groupe: Peindre un motif
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This paint brush draws in four places at the same time, mirroring
 symmetrically, both horizontally and vertically. It uses the currently selected
@@ -12,7 +12,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Picasso, Rosace, & Kaleido-4, Kaleido-6, and Kaleido-8.
+Voir aussi : Picasso, Rosace, & Kaleido-4, Kaleido-6, et Kaleido-8.
 
 -------------------------------------------------------------------------------
 

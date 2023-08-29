@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Goutte
+                      Outil 'Magie' de Tux Paint : Goutte
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This makes the paint "drip" wherever you move the mouse.
 

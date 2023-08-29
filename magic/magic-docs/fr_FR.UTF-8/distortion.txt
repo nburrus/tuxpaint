@@ -1,8 +1,8 @@
-                      Tux Paint "Magic" Tool: Distorsion
+                    Outil 'Magie' de Tux Paint : Distorsion
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This slightly distorts the picture wherever you move the mouse.
 

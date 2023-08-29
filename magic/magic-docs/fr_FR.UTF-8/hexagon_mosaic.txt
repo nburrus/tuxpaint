@@ -1,14 +1,14 @@
-                    Tux Paint "Magic" Tool: Hexagon Mosaic
+               Outil 'Magie' de Tux Paint : Mosaïque hexagonale
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Converts parts of your picture into a mosaic of hexagon cells.
 
 This tool offers both freehand and one-click operation.
 
-See also: Irregular Mosaic, Square Mosaic, & Mosaic.
+Voir aussi : Mosaïque irrégulière, Mosaïque carrée, & Mosaïque.
 
 -------------------------------------------------------------------------------
 

@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Fleur
+                      Outil 'Magie' de Tux Paint : Fleur
 
-                                Group: Artistic
+                              Groupe: Artistique
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This tool draws small flowers, with leafy bases and stalks. Click to set the
 base, then drag the mouse upwards to draw the stalk, and finally release the
@@ -14,7 +14,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Herbe.
+Voir aussi : Herbe.
 
 -------------------------------------------------------------------------------
 

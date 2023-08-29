@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Craie
+                      Outil 'Magie' de Tux Paint : Craie
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This makes parts of the picture (where you move the mouse) look like a chalk
 drawing.

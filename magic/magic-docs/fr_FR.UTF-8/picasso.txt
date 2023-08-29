@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Picasso
+                     Outil 'Magie' de Tux Paint : Picasso
 
-                            Group: Pattern Painting
+                           Groupe: Peindre un motif
 
-                   Author: Adam Rakowski <foo-script@o2.pl>
+                   Auteur : Adam Rakowski <foo-script@o2.pl>
 
 Draw three swirling brushes at once, in a Picasso style.
 
@@ -10,7 +10,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Rosace & Kaléidoscope.
+Voir aussi : Rosace & Kaléidoscope.
 
 -------------------------------------------------------------------------------
 

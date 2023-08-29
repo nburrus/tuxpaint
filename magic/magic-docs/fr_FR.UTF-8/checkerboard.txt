@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Damier
+                      Outil 'Magie' de Tux Paint : Damier
 
-                          Group: Picture Decorations
+                        Groupe: Décorations des images
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This covers the entire canvas with a checkboard pattern using the current
 color. Drag to change the size of the squares.

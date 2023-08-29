@@ -1,14 +1,14 @@
-                     Tux Paint "Magic" Tool: Ficelles (3)
+                   Outil 'Magie' de Tux Paint : Ficelles (3)
 
-                                Group: Artistic
+                              Groupe: Artistique
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Draw string art around the edges of your picture.
 
 This tool is operated in a freehand fashion.
 
-See also: Ficelles (1) & Ficelles (2).
+Voir aussi : Ficelles (1) & Ficelles (2).
 
 -------------------------------------------------------------------------------
 

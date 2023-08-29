@@ -1,14 +1,14 @@
-                     Tux Paint "Magic" Tool: Ficelles (1)
+                   Outil 'Magie' de Tux Paint : Ficelles (1)
 
-                                Group: Artistic
+                              Groupe: Artistique
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Draw V-shaped string art at any angle.
 
 This tool is operated in a freehand fashion.
 
-See also: Ficelles (2) & Ficelles (3).
+Voir aussi : Ficelles (2) & Ficelles (3).
 
 -------------------------------------------------------------------------------
 

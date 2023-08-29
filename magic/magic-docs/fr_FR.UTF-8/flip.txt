@@ -1,14 +1,14 @@
-                         Tux Paint "Magic" Tool: Flip
+                    Outil 'Magie' de Tux Paint : Renverser
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Similar to "Mirror." Click and the entire image will be turned upside-down.
 
 This tool is operated with a single click.
 
-See also: Miroir.
+Voir aussi : Miroir.
 
 -------------------------------------------------------------------------------
 

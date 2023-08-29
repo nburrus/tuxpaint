@@ -1,8 +1,8 @@
-                      Tux Paint "Magic" Tool: Glass Tile
+                 Outil 'Magie' de Tux Paint : Carreau de verre
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Click and drag over your picture to make it look like it's being seen through
 glass tiles.

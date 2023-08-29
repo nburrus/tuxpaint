@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Plier
+                      Outil 'Magie' de Tux Paint : Plier
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-                   Authors: Adam Rakowski <foo-script@o2.pl>
+                  Auteurs : Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 

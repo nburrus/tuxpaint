@@ -1,8 +1,8 @@
-                   Tux Paint "Magic" Tool: Arc-en-ciel lent
+                 Outil 'Magie' de Tux Paint : Arc-en-ciel doux
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This is similar to Rainbow magic tool — as you move the mouse around, it cycles
 through a spectrum of colors — except the colors blend smoothly as you draw.
@@ -11,7 +11,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Arc-en-ciel & Rainbow Cycle.
+Voir aussi : Arc-en-ciel & Arc-en-ciel.
 
 -------------------------------------------------------------------------------
 

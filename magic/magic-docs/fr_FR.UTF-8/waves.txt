@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Vagues
+                      Outil 'Magie' de Tux Paint : Vagues
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Click to make the entire picture wavy, side-to-side. Drag the mouse up and down
 to change the height of the ripples, and left and right to change the width.
@@ -10,7 +10,7 @@ Release the mouse button when it looks the way you like it.
 
 This tool is operated in a freehand fashion.
 
-See also: Vaguelettes.
+Voir aussi : Vaguelettes.
 
 -------------------------------------------------------------------------------
 

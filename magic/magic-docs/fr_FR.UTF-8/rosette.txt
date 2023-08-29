@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Rosace
+                      Outil 'Magie' de Tux Paint : Rosace
 
-                            Group: Pattern Painting
+                           Groupe: Peindre un motif
 
-                   Author: Adam Rakowski <foo-script@o2.pl>
+                   Auteur : Adam Rakowski <foo-script@o2.pl>
 
 Draw three brushes at once, in a rosette shape.
 
@@ -10,7 +10,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Kaléidoscope & Picasso.
+Voir aussi : Kaléidoscope & Picasso.
 
 -------------------------------------------------------------------------------
 

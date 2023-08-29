@@ -1,15 +1,15 @@
-                       Tux Paint "Magic" Tool: Panneaux
+                     Outil 'Magie' de Tux Paint : Panneaux
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Shrink the image and repeat it four times in a 2-by-2 grid. Useful for creating
 4-panel comics. Can also be used to create a compound-eye effect.
 
 This tool is operated with a single click.
 
-See also: Tile Zoom.
+Voir aussi : Zoom tuile.
 
 -------------------------------------------------------------------------------
 

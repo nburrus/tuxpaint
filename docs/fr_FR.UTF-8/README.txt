@@ -105,12 +105,12 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
 D. Qu'y a-t-il de neuf dans la version 0.9.31 de Tux Paint ?
 
 Gomme floue
-    Fuzzy-edged round erasers have been added to the Eraser tool
+    Des gommes aux contours flous ont été rajoutées à l'outil Gomme
 
 Nouveaux outils Magie
-    Loops, Ribbon, Smooth, and Squiggles
+    Boucles, Ruban, Doux et Gribouillis
 
-Create templates from Open dialog
+Créer des modèles à partir de la boîte de dialogue Ouvrir
     Saved drawings can be turned into templates (used to make new drawings) via
     a new option in the Open dialog. (This feature may be deactivated using the
     "notemplateexport" simplification option.)
@@ -374,11 +374,10 @@ b.Outil "Tampon" (tampon de caoutchouc)
 
     Rotation des tampons
 
-        Using the rotation toggle button near the bottom right, you can enable
-        a rotation step when placing stamps. Once you've placed the stamp,
-        choose the angle to rotate it by moving the mouse around the canvas.
-        Click the mouse button again and the stamp will be added to the
-        drawing.
+        En utilisant le bouton de rotation en bas à droite, vous pouvez
+        effectuer une rotation quand vous placez un tampon. Une fois le tampon
+        placé, choisissez l'angle de rotation en bougeant la souris. Cliquez
+        une fois de plus et le tampon sera ajouté au dessin.
 
         ⚙ Note : Si l'option de "rotation des tampons" est désactivée, le
         tampon sera mis sur le canevas quand vous relâchez le bouton de la
@@ -431,12 +430,11 @@ c.Outil "Lignes"
     Cet outil vous permet de dessiner des lignes droites à l'aide des
     différents pinceaux et couleurs que vous utilisez habituellement.
 
-    Click the mouse and hold it to choose the starting point of the line. As
-    you move the mouse around, a thin 'rubber-band' line will show where the
-    line will be drawn. At the bottom, you'll see the angle of your line, in
-    degrees. A line going straight to the right is 0°, a line going straight up
-    is 90°, a line going straight left is 180°, a line going straight down is
-    270°, and so on.
+    Cliquez et maintenez appuyé pour choisir le départ de la ligne. Quand vous
+    bouger la souris, un fin 'ruban élastique' montre les limites de la future
+    ligne. Tout en bas, vous voyez l'angle de cette ligne en degrés. Une ligne
+    qui va vers la droite est à 0°, une ligne droit vers le haut est à 90°, une
+    ligne vers la gauche 180°, une ligne vers le bas 270°, et ainsi de suite.
 
     Relâchez la souris pour terminer la ligne. On entend alors le son "sproing
     !".
@@ -446,10 +444,11 @@ c.Outil "Lignes"
     l'angle du pinceau. Et enfin certains sont à la fois animés et
     directionnels. Voir "Paint", au-dessus, pour en savoir plus.
 
-    Different brushes have different spacing, leaving either a series of
-    individual shapes, or a continuous stroke of the brush shape. Brush spacing
-    may be adjusted. See the brush spacing section of the "Paint" tool, above,
-    to learn more.
+    Différents pinceaux ont des espacements de coups de pinceaux différents,
+    laissant derrière eux soit une série de formes individuelles, soit un coup
+    de pinceau continu avec la forme du pinceau. L'espacement entre les coups
+    de piceau peut être ajusté. Voir la section de l'outil "Peindre" espacement
+    du pinceau, c-dessus pour en savoir plus.
 
 
 
@@ -468,7 +467,7 @@ d.Outil "Formes"
         La forme se développe à partir de l'endroit où vous avez cliqué
         initialement et sera centrée autour de cette position.
 
-        📜 This was Tux Paint's only behavior through version 0.9.24.)
+        📜 C'était le seul comportement de Tux Paint jusqu'à la version 0.9.24.
 
 
 
@@ -493,18 +492,18 @@ d.Outil "Formes"
     larges que hauts ou plus hauts que larges), d'autres pas (par exemple,
     carré et cercle).
 
-    For shapes that can change proportion, the aspect ratio of the shape will
-    be shown at the bottom. For example: "1:1" will be shown if it is "square"
-    (as tall as it is wide); "2:1" if it is either twice as wide as it is tall,
-    or twice as tall as it is wide; and so on.
+    Pour les formes qui peuvent changer de proportions, le ration d'aspect se
+    trouve en bas. Par exemple : "1:1" : sera mentionné si la forme est carrée;
+    "2:1" si deux fois plus large que haut, ou deux fois plus haut que large
+    ...
 
     Relâchez la souris lorsque vous avez terminé l'étirement.
 
     Mode normal
 
-        Now you can move the mouse around the canvas to rotate the shape. The
-        angle your shape is rotated will be shown at the bottom, in degrees
-        (similar to the "Lines" tool, described above).
+        Maintenant vous pouvez bouger la souris autour du canevas pour faire
+        tourner la forme. L'angle de rotation est indiqué en bas, en degrés
+        (pareil que l'outil "Lignes" décrit ci-dessus).
 
         Cliquez à nouveau sur le bouton de la souris et la forme sera dessinée
         avec la couleur en cours.
@@ -559,13 +558,15 @@ e.Outils "Texte" et "Étiquette"
         choix de la police et la couleur ) sont stockés séparément. Cela permet
         à l'étiquette d'être repositionnée ou modifiée ultérieurement.
 
-        To edit a label, click the label selection button. All labels in the
-        drawing will appear highlighted. Click one — or use the [Tab] key to
-        cycle through all the labels, and the [Entrée] or [Retour] key to
-        select one — and you may then edit the label. (Use they [Retour
-        arrière] key to erase characters, and other keys to add text to the
-        label; click in the canvas to reposition the label; click in the
-        palette to change the color of the text in the label; etc.)
+        Pour éditer une étiquette, cliquez sur le bouton de sélection
+        d'étiquette. Toutes les étiquettes du dessin apparaîtront en
+        surbrillance. Cliquez sur une — ou utilisez la touche [Tab]; pour aller
+        de l'une à l'autre étiquette, et utilisez les touches [Entrée]; ou
+        [Retour]; pour en sélectionner une, et vous éditez ainsi l'étiquette.
+        (Utilisez la touche [Retour arrière]; pour effacer les caractères, et
+        d'autres touches pour ajouter du texte; cliquez sur le canevas pour
+        repositionner l'étiquette; cliquez sur la palette pour changer la
+        couleur du texte, etc ...)
 
         You may "apply" a label to the canvas, painting the text into the
         picture as if it had been added using the Text tool, by clicking the
@@ -594,8 +595,8 @@ e.Outils "Texte" et "Étiquette"
         utilisée pour parcourir le ou les modes soit normaux (caractère latin)
         soit spécifiques aux paramètres régionaux.
 
-        Currently supported locales, the input methods available, and the key
-        to toggle or cycle modes, are listed below.
+        Les locales supportées, les méthodes d'entrée disponibles et la touche
+        pour basculer de mode sont listées ci-dessous.
 
           o Japonais -- Hiragana et Katakana romanisés — touche [Alt] droite ou
             touche [Alt] gauche
@@ -640,8 +641,8 @@ f.Outil "Remplir"
 
     📜 Note : Avant Tux Paint 0.9.24, "Remplir" était un outil "magique" (voir
     ci-dessous). Avant Tux Paint 0.9.26, l'outil "Remplir" n'offrait que la
-    méthode 'Uni' pour le remplissage. 'Shaped' fill was introduced in Tux
-    Paint 0.9.29.
+    méthode 'Uni' pour le remplissage. Le remplissage 4radial' a été introduit
+    dans la version 0.9.29 de Tux Paint.
 
 
 
@@ -665,24 +666,26 @@ g.Outil "Magie" (Effets spéciaux)
         n'affichera pas les contrôles pour peindre. Voir la documentation de "
         Options" .
 
-        💡 If the magic controls are disabled, the Magic plugin may make
-        separate tools available, one for painting and one that affects the
-        entire pictre.
+        💡 Si les contrôles de 'Magie' sont désactivés, le plugin 'Magie' peut
+        rendre des outils disponibles séparément, un pour peindre et l'autre
+        affectant l'image entière.
 
-    Magic Sizing
+    Dimensionnement magique
 
 
-        Some tools offer different sizing options. If so, a slider will appear
-        at the bottom right side of the screen. This may affect the radius of a
-        special effect (e.g., Darken) or painted object (e.g., Patterns), or
-        other attributes (e.g., large versus small Brick shapes).
+        Quelques outils offrent des options de dimensionnement. Si c'est le
+        cas, un message apparaît en bas à droite de l'écran. Cela peut affecter
+        la dimension d'un effet spécial (par ex. Assombrir) ou un objet peint
+        (par ex.des Motifs) ou d'autres attributs (par ex. des formes de brique
+        petites plutôt que grandes).
 
         ⚙ Note : Si l'option "nomagicsizes" est définie, Tux Paint n'affichera
         pas les contrôles de dimension. Voir la documentations sur "Options" .
 
-        💡 If the sizing option is disabled, the Magic plugin may simply offer a
-        default size (e.g., Patterns), or it may make separate tools available
-        with different pre-set sizes (e.g., Bricks and Googly Eyes).
+        💡 Si l'option de dimensionnement est désactivée, le plugin Magie peut
+        offrir simplement une taille par défaut (par ex. pour les Motifs), ou
+        bien il peut faire des outils séparés avec des tailles prédéfinies (par
+        ex. Briques et Yeux Écarquillés).
 
         📜 Cette option a été ajoutée en démarrant la version 0.9.30 de Tux
         Paint.
@@ -706,11 +709,11 @@ h.Outil "Gomme"
 
     Au fur et à mesure que vous effacez, un grincement est émis.
 
-    ⌨ Hold the [X] key while clicking for quick access to a small sharp round
-    eraser (not available when the Text or Label tools are selected, when
-    you're in the process of rotating a stamp or shape, or when using an
-    interactive magic tool). Release the mouse to return to your
-    currently-selected tool.
+    ⌨ Tenez la touche [X] enfoncée en cliquant pour un accès rapide à une
+    petite gomme ronde (non effectif avec les outils Texte et Étiquette, quand
+    vous faites tourner un tampon ou une forme, ou bien quand vous utilisez un
+    outil magique interactif). Relâchez la souris pour revenir à l'outil
+    sélectionné.
 
 
 
@@ -748,11 +751,12 @@ b.Commande "Nouveau"
     clavier pour commencer un nouveau dessin.
 
     Choix de couleurs unies en arrière plan
-        Along with the preset solid colors, you can also choose colors using a
-        rainbow palette or a "color mixer". These operate identically to the
-        options found in the color palette shown below the canvas when drawing
-        a picture. See Main Screen > Lower: Colors > Special color options for
-        details.
+        En plus des couleurs unies prédéfinies, vous pouvez aussi choisir des
+        couleurs grâce à une palette arc-en-ciel ou un "mélangeur de couleurs".
+        Ceux-ci opèrent de manière identique avec les options de la palette de
+        couleur en-dessous du canevas quand on dessine une image. Voir Écran
+        principal > En Bas : Couleurs > Options Spéciales de couleur options
+        pour les détails.
 
     Images de "Démarrage" et images "Modèle"
           o Les "Images de démarrage" se comportent comme une page d'un livre
@@ -776,23 +780,24 @@ b.Commande "Nouveau"
         nouveau plus tard (en y accédant depuis la boîte de dialogue
         'Nouveau').
 
-        ⚙ You can create your own 'Starter' and Template images. See the
-        Extending Tux Paint documentation's sections on 'Starters' and
-        Templates.
+        ⚙ Vous pouvez vos propres "Images de démarrage" et Modèles d'Image.
+        Voir la section de la documentation concernant les Extensions pour Tux
+        Paint , avec 'Images de démarrages' et Images Modèles.
 
-        💡 You can also convert your saved drawings into Templates directly
-        within Tux Paint, from the 'Open' dialog. See "Open", below.
+        💡 Vous pouvez aussi convertir vos dessins sauvegardés en Modèles
+        directement dans Tux Paint à partir de la boîte de dialogue 'Ouvrir'.
+        Voir "Ouvrir", ci-dessous.
 
 
 
     Effaçage des images Modèles exportées
 
-        If you've selected a Template in your personal templates folder, and it
-        was created from within Tux Paint (using the "Template" button in the
-        "Open" dialog), you may remove it from within Tux Paint, too. An
-        'Erase' (trash can) button will appear at the lower right of the list.
-        Click it to erase the selected template. (You will be asked to
-        confirm.)
+        Si vous avez sélectionner une Image Modèle dans votre répertoire
+        personnel, et qu'il a été créé à partir de Tux Paint (en utilisant le
+        bouton "Modèles" la boîte de dialogue "Ouvrir" , vous pouvez l'enlever
+        à partir de Tux Paint également. Un bouton 'Effacer' (Corbeille)
+        apparaît en bas à droite de la liste. Cliquez pour effacer l'image
+        sélectionnée. (On vous demandera de confirmer.)
 
         💡 Note : Pour Linux, Windows, et macOS , l'image sera placée dans la
         corbeille de votre bureau (où vous pourrez le restaurer si vous changez
@@ -804,8 +809,9 @@ b.Commande "Nouveau"
 
 
 
-    ⚙ Note: The solid colors can be placed at the end of the 'New' dialog
-    (below the Starters and Templates), via the "newcolorslast" option.
+    ⚙ Note : Les couleurs unies peuvent être placées à la fin de la boîte de
+    dialogue 'Nouveau' (dessous les Images de démarrage et Modèles), via
+    l'option "newcolorslast".
 
 
 
@@ -843,18 +849,18 @@ c.Commande "Ouvrir"
         exporter l'image vers votre dossier d'exportation. (par ex. "~/Pictures
         /TuxPaint/")
 
-    From the "Open" screen you can also:
+    Depuis l'écran "Ouvrir" vous pouvez aussi :
       + Cliquez sur le bouton bleu "Diapositives" (projecteur de diapositives)
         en bas à gauche pour passer en mode diaporama. Voir "Diaporama",
         ci-dessous, pour les détails.
 
-      + Click the blue 'Template' button at the lower left to go to convert the
-        selected picture into a new template, which can be used as the basis
-        for new drawings.
+      + Cliquez sur le bouton bleu 'Modèle' en bas à gauche pour convertir
+        l'image sélectionnée en nouveau Modèle, qui pourra vous servir de base
+        pour de nouveaux dessins.
 
         📜 Note : La possibilité de création de Modèles a été ajouté avec la
-        version 0.9.31 de Tux Paint. To learn how to create Templates outside
-        of Tux Paint, see Extending Tux Paint
+        version 0.9.31 de Tux Paint. Pour savoir comment créer des Modèles hors
+        de Tux Paint, voyez Extensions pour Tux Paint
 
         ⚙ La possibilité de création de Modèle peut être désactivée (par ex. en
         choisissant "Désactiver 'Fabriquer un Modèle' dans Tux Paint Config. ou
@@ -1038,7 +1044,8 @@ f.Commande "Diapos" (sous "Ouvrir")
 
     Lecture dans Tux Paint
 
-        To play a slideshow within Tux Paint, click the 'Play' button.
+        Pour démarrer un diaporama dans Tux Paint, cliquez sur le bouton
+        'Jouer'.
 
         💡 Note : si vous n'avez sélectionné aucune image, toutes vos images
         enregistrées seront mises dans le diaporama !)
@@ -1356,7 +1363,7 @@ Information technique :
       + SIGNALS.html
         Informations sur les signaux POSIX auxquels répond Tux Paint.
       + MAGIC-API.html
-        Creating new Magic tools using Tux Paint's plugin API.
+        Créer de nouveaux outils Magie avec le plugin API de Tux Paint.
 
 
 Historique du développement et licence :
@@ -1397,10 +1404,10 @@ d'accepter votre aide dans des tas de domaines :
 Pour en savoir plus, visitez la page "Nous aider" du site officiel de Tux Paint
 : https://tuxpaint.org/help/
 
-VII.Follow the Tux Paint project on social media
+VII.Suivez le projet Tux Paint sur les réseaux sociaux
 
-Tux Paint maintains a presence on a variety of social media networks, where we
-post updates and artwork.
+Tux Paint est présent sur de nombreux media sociaux, où nous annonçons les
+mises à jour et les oeuvres d'art.
 
   * Suivez Tux Paint sur Facebook
   * Suivre @TuxPaintDevs sur Instagram

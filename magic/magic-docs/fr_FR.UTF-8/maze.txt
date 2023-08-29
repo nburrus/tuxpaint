@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Maze
+                    Outil 'Magie' de Tux Paint : Labyrinthe
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Click and drag to construct a maze on your picture.
 

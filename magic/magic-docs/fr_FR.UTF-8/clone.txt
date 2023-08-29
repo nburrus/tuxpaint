@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Clone
+                      Outil 'Magie' de Tux Paint : Cloner
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Clone (copy, via painting) part of the picture. Click ones to choose the
 source, then click and drag to clone it elsewhere in the drawing. Once you

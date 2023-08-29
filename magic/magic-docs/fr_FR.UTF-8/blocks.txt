@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Blocks
+                      Outil 'Magie' de Tux Paint : Blocs
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-              Authors: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
 
 This makes the picture blocky looking ("pixelated") wherever you drag the

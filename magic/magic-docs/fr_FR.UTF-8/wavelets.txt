@@ -1,8 +1,8 @@
-                      Tux Paint "Magic" Tool: Vaguelettes
+                   Outil 'Magie' de Tux Paint : Vaguelettes
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-              Authors: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
                        Adam Rakowski <foo-script@o2.pl>
 
 Click to make the entire picture wavy, up-and-down. Drag the mouse up and down
@@ -11,7 +11,7 @@ Release the mouse button when it looks the way you like it.
 
 This tool is operated in a freehand fashion.
 
-See also: Vagues.
+Voir aussi : Vagues.
 
 -------------------------------------------------------------------------------
 

@@ -1,8 +1,8 @@
-                       Tux Paint "Magic" Tool: Wet Paint
+                  Outil 'Magie' de Tux Paint : Effet mouillé
 
-                                Group: Painting
+                                Groupe: Peindre
 
-                 Authors: Albert Cahalan <albert@users.sf.net>
+                Auteurs : Albert Cahalan <albert@users.sf.net>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
 This draws a light, smudgy coat of paint on the picture.
@@ -11,7 +11,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Smudge.
+Voir aussi : Baver.
 
 -------------------------------------------------------------------------------
 

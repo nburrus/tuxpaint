@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Flou
+                       Outil 'Magie' de Tux Paint : Flou
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-              Authors: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
 
 This makes the picture fuzzy wherever you drag the mouse.
@@ -11,7 +11,7 @@ This tool offers both freehand and one-click operation.
 
 This tool offers multiple size settings.
 
-See also: Sharpen & Smudge.
+Voir aussi : Affiner & Baver.
 
 -------------------------------------------------------------------------------
 

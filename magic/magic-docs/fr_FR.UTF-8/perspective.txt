@@ -1,8 +1,8 @@
-                      Tux Paint "Magic" Tool: Perspective
+                   Outil 'Magie' de Tux Paint : Perspective
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Click and drag from the corners to change the perspective of your picture.
 

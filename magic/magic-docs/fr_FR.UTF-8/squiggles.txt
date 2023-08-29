@@ -1,8 +1,8 @@
-                       Tux Paint "Magic" Tool: Squiggles
+                   Outil 'Magie' de Tux Paint : Gribouillis
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This draws random squiggly loops, using the currently-selected color, as you
 move the mouse around.
@@ -11,7 +11,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Smooth & Squiggles.
+Voir aussi : Doux & Gribouillis.
 
 -------------------------------------------------------------------------------
 

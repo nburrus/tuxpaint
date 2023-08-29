@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Sharpen
+                     Outil 'Magie' de Tux Paint : Affiner
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+                Auteur : Andrew Corcoran <akanewbie@gmail.com>
 
 Sharpen the focus of the picture.
 
@@ -10,7 +10,7 @@ This tool offers both freehand and one-click operation.
 
 This tool offers multiple size settings.
 
-See also: Flou.
+Voir aussi : Flou.
 
 -------------------------------------------------------------------------------
 

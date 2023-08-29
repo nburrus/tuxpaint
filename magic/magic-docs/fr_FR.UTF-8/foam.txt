@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Mousse
+                      Outil 'Magie' de Tux Paint : Mousse
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Click and drag the mouse to draw foamy bubbles. The more you drag the mouse in
 a particular spot, the more likely small bubbles will combine to form bigger

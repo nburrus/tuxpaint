@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Smooth
+                       Outil 'Magie' de Tux Paint : Doux
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Draw a freehand shape, which will have its curves smoothed when you release. It
 draws using the currently-selected color.
@@ -11,7 +11,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Loops & Squiggles.
+Voir aussi : Boucles & Gribouillis.
 
 -------------------------------------------------------------------------------
 

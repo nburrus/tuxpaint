@@ -1,14 +1,14 @@
-                   Tux Paint "Magic" Tool: Irregular Mosaic
+               Outil 'Magie' de Tux Paint : Mosaïque irrégulière
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Converts parts of your picture into a mosaic of irregularly-shaped cells.
 
 This tool offers both freehand and one-click operation.
 
-See also: Hexagon Mosaic, Square Mosaic, & Mosaic.
+Voir aussi : Mosaïque hexagonale, Mosaïque carrée, & Mosaïque.
 
 -------------------------------------------------------------------------------
 

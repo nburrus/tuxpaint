@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Lumière
+                     Outil 'Magie' de Tux Paint : Lumière
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This draws a glowing beam on the canvas, in the currently-selected color. The
 more you use it on one spot, the more white it becomes.

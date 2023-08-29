@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Pluie
+                      Outil 'Magie' de Tux Paint : Pluie
 
-                                Group: Painting
+                                Groupe: Peindre
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+                Auteur : Andrew Corcoran <akanewbie@gmail.com>
 
 Paint raindrops on your picture.
 
@@ -10,7 +10,7 @@ This tool offers both freehand and one-click operation.
 
 This tool offers multiple size settings.
 
-See also: Boule de neige & Flocon de neige.
+Voir aussi : Boule de neige & Flocon de neige.
 
 -------------------------------------------------------------------------------
 

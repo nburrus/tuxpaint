@@ -1,8 +1,8 @@
-                          Tux Paint "Magic" Tool: Fur
+                     Outil 'Magie' de Tux Paint : Fourrure
 
-                                Group: Painting
+                                Groupe: Peindre
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Add fur to your drawing.
 

@@ -1,15 +1,15 @@
-                         Tux Paint "Magic" Tool: Zoom
+                       Outil 'Magie' de Tux Paint : Zoom
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Click and drag up to zoom in, or down to zoom out. (When scaling down, your
 chosen color will be used as a background color.)
 
 This tool is operated in a freehand fashion.
 
-See also: Rush & Tile Zoom.
+Voir aussi : Rush & Zoom tuile.
 
 -------------------------------------------------------------------------------
 

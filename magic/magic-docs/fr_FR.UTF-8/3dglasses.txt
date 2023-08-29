@@ -1,8 +1,8 @@
-                      Tux Paint "Magic" Tool: 3D Glasses
+                   Outil 'Magie' de Tux Paint : Lunettes 3D
 
-                             Group: Color Filters
+                           Groupe: Filtres couleurs
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 This tool horizontally separates your entire picture's red and cyan color
 channels, letting you create anaglyphic pictures that can be viewed with 3D
@@ -10,7 +10,7 @@ glasses.
 
 This tool is operated in a freehand fashion.
 
-See also: Color Sep. & Double Vision.
+Voir aussi : Sép des couleurs. & Vision double.
 
 -------------------------------------------------------------------------------
 

@@ -1,96 +1,96 @@
-                  Tux Paint "Magic" Tool: List of Magic Tools
+              Outil 'Magie' de Tux Paint : Lite des outils Magie
 
-Distorts
+Distorsions
 
-  * Blocks
-  * Circles
-  * Clone
+  * Affiner
+  * Baver
+  * Blocs
+  * Bords
+  * Carreau de verre
+  * Cercles
+  * Cloner
   * Craie
   * Distorsion
-  * Edges
   * Flou
-  * Glass Tile
   * Goutte
   * Halftone
-  * Hexagon Mosaic
-  * Irregular Mosaic
-  * Mosaic
-  * Noise
+  * Mosaïque
+  * Mosaïque carrée
+  * Mosaïque hexagonale
+  * Mosaïque irrégulière
   * Oeil de poisson
+  * Ondes
+  * Parasites
   * Puzzle
-  * Rays
+  * Raies
   * Relief
-  * Ripples
-  * Sharpen
   * Silhouette
-  * Smudge
-  * Square Mosaic
   * TV
-  * TV (Bright)
+  * TV (brillant)
 
-Color Filters
+Filtres couleurs
 
-  * 3D Glasses
   * Assombrir
-  * Bloom
-  * Cartoon
-  * Color and White
-  * Color Sep.
-  * Color Shift
-  * Desaturate
-  * Double Vision
+  * B.D.
+  * Changement de couleur
+  * Complémentaire
+  * Couleur et blanc
+  * Couleurs Xor
+  * Désaturer
   * Éclaircir
-  * Keep Color
-  * Negative
-  * Opposite
-  * Remove Color
-  * Saturate
-  * Tint
-  * Xor Colors
+  * Enlever une couleur
+  * Fleurir
+  * Garder une couleur
+  * Lunettes 3D
+  * Négatif
+  * Saturer
+  * Sép des couleurs.
+  * Teinter
+  * Vision double
 
-Picture Warps
+Déformations de l'image
 
-  * Flip
-  * Kaleido-4, Kaleido-6, and Kaleido-8
+  * Étirer
+  * Kaleido-4, Kaleido-6, et Kaleido-8
   * Miroir
   * Panneaux
   * Perspective
   * Plier
-  * Reflection
+  * Reflet
+  * Renverser
   * Rush
   * Shift
-  * Stretch
-  * Tile Zoom
   * Vaguelettes
   * Vagues
   * Zoom
+  * Zoom tuile
 
-Painting
+Peindre
 
   * Arc-en-ciel
-  * Arc-en-ciel lent
+  * Arc-en-ciel
+  * Arc-en-ciel doux
+  * Boucles
   * Briques
   * Calligraphie
   * Confettis
   * Dentifrice
+  * Doux
+  * Effet mouillé
+  * Fourrure
   * Frise
-  * Fur
+  * Gribouillis
   * Herbe
-  * Loops
+  * Labyrinthe
   * Lumière
-  * Maze
   * Mousse
   * Peinture métallique
   * Pixels
   * Pluie
   * Rails
-  * Rainbow Cycle
-  * Ribbon
-  * Smooth
-  * Squiggles
-  * Wet Paint
+  * Ruban
 
-Pattern Painting
+Peindre un motif
 
   * Kaléidoscope
   * Motif
@@ -100,14 +100,14 @@ Pattern Painting
   * Symétrie H/B
   * Tuiles
 
-Picture Decorations
+Décorations des images
 
-  * Blind
   * Boule de neige
   * Damier
   * Flocon de neige
+  * Store
 
-Artistic
+Artistique
 
   * Arc-en-ciel réel
   * Arc-en-ciel simple
@@ -116,8 +116,8 @@ Artistic
   * Ficelles (2)
   * Ficelles (3)
   * Fleur
-  * Googly Eyes
   * Tornade
+  * Yeux écarquillés
 
 -------------------------------------------------------------------------------
 

@@ -1,8 +1,8 @@
-                      Tux Paint "Magic" Tool: Silhouette
+                    Outil 'Magie' de Tux Paint : Silhouette
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+                Auteur : Andrew Corcoran <akanewbie@gmail.com>
 
 Trace the edges in your picture, over a black background.
 
@@ -10,7 +10,7 @@ This tool offers both freehand and one-click operation.
 
 This tool offers multiple size settings.
 
-See also: Edges & Relief.
+Voir aussi : Bords & Relief.
 
 -------------------------------------------------------------------------------
 

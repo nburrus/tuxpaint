@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Rails
+                      Outil 'Magie' de Tux Paint : Rails
 
-                                Group: Painting
+                                Groupe: Peindre
 
-                   Authors: Adam Rakowski <foo-script@o2.pl>
+                  Auteurs : Adam Rakowski <foo-script@o2.pl>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
 

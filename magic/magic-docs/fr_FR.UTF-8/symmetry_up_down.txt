@@ -1,8 +1,8 @@
-                     Tux Paint "Magic" Tool: Symétrie H/B
+                   Outil 'Magie' de Tux Paint : Symétrie H/B
 
-                            Group: Pattern Painting
+                           Groupe: Peindre un motif
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Paint with relfective symmetry across the vertical center of the image.
 
@@ -10,7 +10,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Kaléidoscope, Motif, Symétrie D/G, & Tuiles.
+Voir aussi : Kaléidoscope, Motif, Symétrie D/G, & Tuiles.
 
 -------------------------------------------------------------------------------
 

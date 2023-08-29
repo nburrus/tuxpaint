@@ -1,8 +1,8 @@
-                       Tux Paint "Magic" Tool: Tile Zoom
+                    Outil 'Magie' de Tux Paint : Zoom tuile
 
-                             Group: Picture Warps
+                        Groupe: Déformations de l'image
 
-           Authors: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteurs : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
 Click and drag up to zoom in, or down to zoom out. When scaling down, your
@@ -10,7 +10,7 @@ image will be tiled across the canvas.
 
 This tool is operated in a freehand fashion.
 
-See also: Panneaux, Rush, & Zoom.
+Voir aussi : Panneaux, Rush, & Zoom.
 
 -------------------------------------------------------------------------------
 

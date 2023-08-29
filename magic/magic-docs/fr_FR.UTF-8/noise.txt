@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Noise
+                    Outil 'Magie' de Tux Paint : Parasites
 
-                                Group: Distorts
+                              Groupe: Distorsions
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+                Auteur : Andrew Corcoran <akanewbie@gmail.com>
 
 Add random noise and static to your picture.
 

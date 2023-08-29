@@ -1,8 +1,8 @@
-                         Tux Paint "Magic" Tool: Motif
+                      Outil 'Magie' de Tux Paint : Motif
 
-                            Group: Pattern Painting
+                           Groupe: Peindre un motif
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
 Draws a tiled pattern around the picture.
 
@@ -10,7 +10,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Tuiles.
+Voir aussi : Tuiles.
 
 -------------------------------------------------------------------------------
 

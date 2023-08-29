@@ -1,8 +1,8 @@
-                        Tux Paint "Magic" Tool: Briques
+                     Outil 'Magie' de Tux Paint : Briques
 
-                                Group: Painting
+                                Groupe: Peindre
 
-                 Author: Albert Cahalan <albert@users.sf.net>
+                 Auteur : Albert Cahalan <albert@users.sf.net>
 
 These two tools intelligently paint large and small brick patterns on the
 canvas. The bricks can be tinted various redish hues by selecting different
@@ -12,7 +12,7 @@ This tool is operated in a freehand fashion.
 
 This tool offers multiple size settings.
 
-See also: Pixels.
+Voir aussi : Pixels.
 
 -------------------------------------------------------------------------------
 
