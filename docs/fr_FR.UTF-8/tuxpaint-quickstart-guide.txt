@@ -5,73 +5,78 @@ Outils (dessin)
 🖌Peindre
 
   * Choisissez un pinceau sur la droite.
-  * Some brushes are animated 🎞, some are directional ✲, some are both.
-  * Change brush spacing with the bars 📶 at the bottom right.
+  * Certains pinceaux sont animés 🎞, d'autres directionnels ✲, certains ont les
+    deux propriétés.
+  * Change l'espacement entre les coups de pinceau à l'aide des barres 📶 en bas
+    à droite.
   * Choisir une couleur (voir "Couleurs").
-  * Click/tap and drag in the canvas to paint.
+  * Cliquez/tapez et promenez-vous sur le canevas pour peindre.
 
 ⌧Tampons
 
-  * Change categories with the arrow buttons ⇦⇨ near the bottom right.
+  * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
   * Choisis un tampon sur la droite.
   * De nombreux tampons peuvent être affichés sous forme d'image miroir 🪞, et/
     ou retournés verticalement ↕ à l'aide des boutons de commande en bas à
     droite.
-  * Some stamps allow you to choose their color (see "Colors").
-  * Change stamp size with the bars 📶 at the bottom right.
-  * Rotation ⟳ may be enabled, if desired.
-  * Click/tap in the canvas to place a stamp.
-      + If rotation is enabled, drag to rotate it, and click/tap again to add
-        it to the drawing.
-  * Some stamps play sound effects; press the speaker 🕪 button to hear it
-    again.
-  * Some stamps play descriptive sounds; press the headphones 🎧 button to hear
-    it again.
+  * On peut choisir la couleur de certains tampons (voir "Couleurs").
+  * Chnage la taille du tampon avec les barres 📶 en bas à droite.
+  * Le rotation ⟳ peut être activée si on le désire.
+  * Cliquez/tpez sur le canevas pour placer un tampon.
+      + Si la rotation est activée, balayez pour tourner, et cliquez/tapez pour
+        l'ajouter au dessin.
+  * Certains tampons sont accompagnés d'effets sonores; cliquez sur le
+    haut-parleur 🕪 pour rejouer.
+  * Quelques tampons ont des sons descriptifs; pressez sur le bouton des
+    écouteurs 🎧 pour réentendre.
 
 ⚟Lignes
 
   * (Voir Peindre)
-  * Click/tap and drag to draw a line.
+  * Cliquez/tapez puis balayez pour tracer une ligne.
 
 ⭓Formes
 
   * Choisissez une forme sur la droite.
-  * Select whether you want to extend the shape from the center ⧈, or a corner
-    ◰, using controls at the bottom right.
-  * Click/tap to position, and drag to set the size of the shape.
-  * Drag to rotate it, and click/tap again to add it to the drawing.
+  * Choisissez si vous voulez étendre la forme à partir du centre ⧈, ou à
+    partir d'un coin ◰, en utilisant les contrôles en bas à droite.
+  * Cliquez/tapez pour positionnez puis balayez pour régler la taille de la
+    forme.
+  * Balayez pour tourner, puis cliquez/tapez pur l'ajouter au dessin.
 
 🄰Texte
 
   * Choisissez une fonte sur la droite.
-  * Select whether you want the text bold 𝗔 and/or italic 𝘈, using controls
-    near the bottom right.
-  * Change text size using the up 🡁 and down 🡃 arrow buttons at the bottom
-    right.
+  * Choisissez si vous voulez que le texte soit en gras 𝗔 et/ou en italique 𝘈,
+    en utilisant les contrôles en bas à droite.
+  * Changez la taille du texte en utilisant les flèches haut 🡁 et bas 🡃 en bas
+    à droite.
   * Choisir une couleur (voir "Couleurs").
-  * Click/tap the canvas to position an insertion cursor.
+  * Cliquez/tapez sur le canevas pour positionner un curseur d'insertion.
   * Entre du texte soit via votre clavier soit par le clavier virtuel.
-  * Click/tap the canvas again if you wish to reposition the text.
-  * Press [Enter]/[Return] or click/tap ⮨ to add the text to the drawing and
-    begin entering more text one line down.
-  * Or, press [Tab] or click/tap or ⟷ to add the text to the drawing and
-    continue entering more text immediately to the right.
+  * Cliquez/tapez sur le canevas si vous voulez repositionner le texte.
+  * Pressez [Entrée]/[Retour] ou cliquez/tapez ⮨ pour ajouter du texte au
+    dessin et commencer à entrée plus de texte une ligne au-dessous.
+  * Ou bien, pressez [Tab] ou cliquez/tapez ou ⟷ pour ajouter du texte au
+    dessin et continuer un texte immédiatement à sa droite.
   * Utiliser clavier virtuel sur écran :
-      + "Cmp" can be used to compose characters, e.g. Cmp ' a results in á.
-      + "AltGr" can be used to quickly access more characters.
-      + Left/Right arrows switches keyboard layouts (e.g., "QWERTY" vs. "ABC")
+      + "Cmp" peut être utilisé pour composer des caractères, par ex. "Cmp ' a"
+        donne á.
+      + "AltGr" permet d'accéder rapidement à plus de caractères.
+      + Les flèches gauche/droite permet la bascule entre des dispositions de
+        clavier (par ex."QWERTY" vs. "ABC")
 
 🅰Étiquette
 
   * (Voir texte)
-  * Labels float 'above' the drawing; you cannot paint or stamp over them,
-    apply Magic effects, etc.
-  * Labels may be edited, repositioned, and styled after they've been added to
-    the drawing.
-  * Click/tap the ☝ button near the lower right to choose a label. Click/tap
-    the label you wish to modify, then click/tap somewhere else in the canvas
-    to reposition, or change the font/style, change color, and/or type to edit
-    the text.
+  * Les étiquettes flottent 'au dessus' du dessin; vous ne pouvez pas peindre
+    ou mettre un tampon par dessus, appliquer des effets magiques, et ...
+  * Les étiquettes peuvent être éditées, repositionnées et changer de style
+    après avoir été ajoutées au dessin.
+  * Cliquez/tapez sur le bouton ☝ en bas à droite pour choisir une étiquette.
+    Cliquez/tapez sur l'étiquette que vous souhaitez modifier, puis cliquez/
+    tapez autre part dans le canevas pour repositionner, ou changer la police,
+    le style, la couleur et/ou éditer le texte.
   * Or, use the 🖑 button near the lower right to "flatten" a label, applying it
     to the canvas; it may no longer be edited with the Label tool.
 
@@ -94,7 +99,7 @@ Outils (dessin)
 🪄Magie
 
   * Choisissez un outil magique sur la droite.
-  * Change categories with the arrow buttons ⇦⇨ near the bottom right.
+  * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
   * Some magic tools draw or apply effects via click/tap and drag 〰🪄, some
     affect the entire drawing 🖻🪄, and some offer both options; use the controls
     at the bottom right.

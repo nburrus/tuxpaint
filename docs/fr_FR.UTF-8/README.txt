@@ -111,27 +111,29 @@ Nouveaux outils Magie
     Boucles, Ruban, Doux et Gribouillis
 
 Créer des modèles à partir de la boîte de dialogue Ouvrir
-    Saved drawings can be turned into templates (used to make new drawings) via
-    a new option in the Open dialog. (This feature may be deactivated using the
-    "notemplateexport" simplification option.)
+    Les dessins sauvegardés peuvent être convertis en Modèles (qui sont
+    utilisés pour de nouveaux dessins) grâce à une nouvelle option dans la
+    boîte de dialogue 'Ouvrir'.( Cette possibilité peut être désactivée en
+    utilisant "notemplateexport" l'option de simplification.)
 
-User interface font may be overridden
-    The font used for the user interface (button labels, dialog pop-ups, and
-    instructions) can be overridden from its default ("DejaVu Sans"). (See the
-    "uifont" configuration option. Use "--listfonts" to see a list of available
-    fonts.)
+La police de l'interface utilisateur peut être remplacée
+    La police utilisée pour l'interface utilisateur (étiquettes des boutons,
+    dialogues pop-up et instructions) peut être remplacée ("DejaVu Sans").(Voir
+    l'"uifont" option de configuration. Utilisez "--listfonts" pour voir la
+    liste des polices disponibles.)
 
 L'effacement de fichier peut être désactivé
 
-    Controls to erase saved work — saved drawings (via the Open dialog) and
-    exported templates (via the New dialog) — can be disabled. (See the
-    "noerase" configuration option.)
+    Les contrôles pour effacer le travail sauvegardé — dessins sauvegardés (via
+    la boîte de dialogue Ouvrir) et les modèles exportés (via la boîte de
+    dialogue Nouveau) — peuvent être désactivés. Voir l' "noerase" option de
+    configuration.)
 
 Documentation sur "Contrôler Tux Paint"
 
-    A brief overview of how Tux Paint can be controlled — mouse, tablet,
-    touchscreen, joystick, and keyboard — has been added to the README
-    documentation.
+    Un bref aperçu pour savoir comment Tux Paint peut être controllé — souris,
+    tablette, écran tactile, joystick et clavier — a été ajouté au document
+    README.
 
 
 Voir CHANGES.txt pour la liste complète des changements.
