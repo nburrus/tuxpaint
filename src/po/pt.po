@@ -1,5 +1,5 @@
 # Translation of tuxpaint to Portuguese.
-# Copyright (C) 2002-2021 The Tuxpaint Team.
+# Copyright (C) 2002-2023 The Tuxpaint Team.
 # This file is distributed under the same license as the tuxpaint package.
 # Ricardo Cruz <rick2@aeiou.pt>, 2003.
 # Helder Correia <helder.pereira.correia@gmail.com>, 2005, 2006, 2007.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:29-0700\n"
-"PO-Revision-Date: 2023-03-30 15:04+0100\n"
+"PO-Revision-Date: 2023-09-01 10:09+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -238,16 +238,13 @@ msgstr ""
 "escolhida até ao transparente)."
 
 #: ../fill_tools.h:75
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to fill an area with a linear gradient (from the chosen "
-#| "color to transparent)."
+#, c-format
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
 msgstr ""
-"Clica e arrasta para preencher uma área com um gradiente linear (desde a cor "
-"escolhida até transparente)."
+"Clica e arrasta para preencher uma área com um gradiente linear (da cor "
+"escolhida para transparente). (O ângulo do gradiente é de %.0f graus)."
 
 #. Congratulations #1
 #: ../great.h:37
@@ -297,7 +294,7 @@ msgstr "Tailandês"
 #. Input Method: Traditional Chinese mode
 #: ../im.c:103
 msgid "ZH_TW"
-msgstr "Mandarim tradicional"
+msgstr "ZH_TW"
 
 #. Add menu items
 #: ../macos.m:58
@@ -314,7 +311,7 @@ msgstr "Ocultar Outros"
 
 #: ../macos.m:69
 msgid "Show All"
-msgstr "Mostrar tudo"
+msgstr "Mostrar Tudo"
 
 #: ../macos.m:73
 msgid "Quit Tux Paint"
@@ -385,11 +382,12 @@ msgstr "A ferramenta Carimbo é como um conjunto de carimbos ou autocolantes"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
-msgstr ""
+msgstr "Novas ferramentas de Magia: Laços, Fita, Suavizar e Rabiscos."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
 msgstr ""
+"A ferramenta Borracha oferece agora borrachas difusas (com arestas suaves)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
@@ -397,6 +395,9 @@ msgid ""
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
 "the New dialog.)"
 msgstr ""
+"Transforme desenhos guardados em Modelos (encontrados na caixa de diálogo "
+"Novo) a partir do próprio Tux Paint (através da caixa de diálogo Abrir). "
+"(Eles podem ser eliminados posteriormente da caixa de diálogo Novo)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
@@ -404,32 +405,44 @@ msgid ""
 "templates from the New dialog may be disabled, via \"noerase\" configuration "
 "option."
 msgstr ""
+"A opção \"Apagar\" para remover desenhos guardados da caixa de diálogo Abrir "
+"e modelos exportados da caixa de diálogo Novo pode ser desativada, através "
+"da opção de configuração \"não apagar\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
 msgstr ""
+"Especificar o tipo de letra da interface do utilizador, através da opção de "
+"configuração \"uifont\". (Liste os tipos de letra disponíveis com \"--"
+"listfonts\" na linha de comandos)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Different (default) user interface fonts are once again used for under "
 "different locales."
 msgstr ""
+"Mais uma vez, são utilizados tipos de letra diferentes (predefinidos) para a "
+"interface do utilizador em diferentes locais."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
+"Pequenos melhoramentos nos botões de seleção para as cores "
+"\"especiais\" (pipeta, seletor HSV e misturador de cores)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Many Magic tools now offer size settings."
-msgstr ""
+msgstr "Muitas ferramentas de Magia oferecem agora definições de tamanho."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "Button labels word-wrap when possible (improves legibility)."
 msgstr ""
+"Os rótulos dos botões devem ser revestidos de palavras sempre que possível "
+"(melhora a legibilidade)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
@@ -1337,10 +1350,8 @@ msgid "Erase this picture?"
 msgstr "Apagar este desenho?"
 
 #: ../tuxpaint.c:2496
-#, fuzzy
-#| msgid "Erase this picture?"
 msgid "Erase this template?"
-msgstr "Apagar este desenho?"
+msgstr "Apagar este modelo?"
 
 #: ../tuxpaint.c:2497
 msgid "Yes, erase it!"
@@ -1379,6 +1390,7 @@ msgstr ""
 #: ../tuxpaint.c:2514
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
+"O seu desenho está agora disponível como modelo na caixa de diálogo \"Novo\"!"
 
 #. We got an error doing image-to-template conversion
 #: ../tuxpaint.c:2518
@@ -1386,12 +1398,12 @@ msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
+"Já transformou esta imagem num modelo. Procure-a na caixa de diálogo "
+"\"Novo\"!"
 
 #: ../tuxpaint.c:2519
-#, fuzzy
-#| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
-msgstr "Desculpa! O teu desenho não foi impresso!"
+msgstr "Desculpa! Não foi possível transformar o teu desenho num modelo!"
 
 #. Slideshow instructions
 #: ../tuxpaint.c:2522
@@ -1426,7 +1438,7 @@ msgstr "Diapositivos"
 #. Open dialog: 'Template' button, to make a template out of a drawing
 #: ../tuxpaint.c:9641
 msgid "Template"
-msgstr ""
+msgstr "Modelo"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
 #: ../tuxpaint.c:9644
@@ -1496,12 +1508,18 @@ msgid ""
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
+"Escolhe um desenho e clica em \"Abrir\", \"Exportar\", \"Modelo\" ou "
+"\"Apagar\". Clique em \"Diapositivos\" para criar uma animação de "
+"apresentação de diapositivos ou em \"Recuar\" para voltar ao desenho atual."
 
 #: ../tuxpaint.c:17096
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
 msgstr ""
+"Escolha um desenho e clica em \"Abrir\", \"Exportar\" ou \"Apagar\". Clique "
+"em \"Diapositivos\" para criar uma animação de apresentação de diapositivos "
+"ou em \"Recuar\" para voltar ao desenho atual."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
@@ -1605,7 +1623,7 @@ msgstr "Programa de desenho"
 
 #: ../tuxpaint-fullscreen.desktop.in:3
 msgid "Tux Paint (Fullscreen)"
-msgstr ""
+msgstr "Tux Paint (ecrã inteiro)"
 
 #: ../../magic/src/alien.c:67
 msgid "Color Shift"
@@ -1711,10 +1729,8 @@ msgid "Click and drag to draw small bricks."
 msgstr "Clica e arrasta para desenhares tijolos pequenos."
 
 #: ../../magic/src/bricks.c:156
-#, fuzzy
-#| msgid "Click and drag to draw large bricks."
 msgid "Click and drag to draw bricks."
-msgstr "Clica e arrasta para desenhares tijolos grandes."
+msgstr "Clica e arrasta para desenhares tijolos."
 
 #: ../../magic/src/calligraphy.c:131
 msgid "Calligraphy"
@@ -1965,12 +1981,16 @@ msgid ""
 "Click to place a large googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
+"Clica para colocar um olho arregalado grande e, em seguida, arrasta e larga "
+"para o fazer parecer nessa direção."
 
 #: ../../magic/src/googlyeyes.c:25
 msgid ""
 "Click to place a small googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
+"Clica para colocar um olho arregalado pequeno e, em seguida, arrasta e larga "
+"para o fazer parecer nessa direção."
 
 #: ../../magic/src/googlyeyes.c:205
 msgid "Googly Eyes"
@@ -1981,6 +2001,8 @@ msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
 msgstr ""
+"Clica para colocar um olho arregalado e, em seguida, arrasta e larga para o "
+"fazer parecer nessa direção."
 
 #: ../../magic/src/grass.c:111
 msgid "Grass"
@@ -2319,10 +2341,8 @@ msgid "Smooth Rainbow"
 msgstr "Arco-íris suave"
 
 #: ../../magic/src/rainbow.c:162
-#, fuzzy
-#| msgid "Rainbow"
 msgid "Rainbow Cycle"
-msgstr "Arco-íris"
+msgstr "Ciclo do arco-íris"
 
 #: ../../magic/src/rainbow.c:175
 msgid "You can draw in rainbow colors!"
@@ -2366,13 +2386,11 @@ msgstr "Clica e arrasta o rato para adicionar um reflexo ao teu desenho."
 
 #: ../../magic/src/ribbon.c:117
 msgid "Ribbon"
-msgstr ""
+msgstr "Fita"
 
 #: ../../magic/src/ribbon.c:129
-#, fuzzy
-#| msgid "Click to add snow balls to your picture."
 msgid "Add a flowing ribbon to your picture."
-msgstr "Clica para adicionar bolas de neve ao desenho."
+msgstr "Adiciona uma fita esvoaçante ao teu desenho."
 
 #: ../../magic/src/ripples.c:109
 msgid "Ripples"
@@ -2446,38 +2464,32 @@ msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Clica e arrasta para alterar o desenhona tela."
 
 #: ../../magic/src/smooth.c:62
-#, fuzzy
-#| msgid "Smooth Rainbow"
 msgid "Smooth"
-msgstr "Arco-íris suave"
+msgstr "Suave"
 
 #: ../../magic/src/smooth.c:63
 msgid "Squiggles"
-msgstr ""
+msgstr "Rabiscos"
 
 #: ../../magic/src/smooth.c:64
 msgid "Loops"
-msgstr ""
+msgstr "Laços"
 
 #: ../../magic/src/smooth.c:68
-#, fuzzy
-#| msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgid ""
 "Click and drag the mouse around to draw in freehand; it will be smoothed "
 "when you let go."
-msgstr "Clica e arrasta o rato para desenhar com tinta fresca e esborratada."
+msgstr ""
+"Clica e arrasta o rato para desenhar à mão livre. O desenho será suavizado "
+"quando o largar."
 
 #: ../../magic/src/smooth.c:69
-#, fuzzy
-#| msgid "Click and drag the mouse around to blur the image."
 msgid "Click and drag the mouse around to draw squiggles."
-msgstr "Clica e arrasta o rato à volta para borrar o desenho."
+msgstr "Clica e arrasta o rato à volta para desenhar rabiscos."
 
 #: ../../magic/src/smooth.c:70
-#, fuzzy
-#| msgid "Click and drag the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw loop-the-loops."
-msgstr "Clica e arrasta o rato à volta para desenhar em caligrafia."
+msgstr "Clica e arrasta o rato à volta para desenhar os laços."
 
 #: ../../magic/src/smudge.c:110
 msgid "Smudge"
@@ -2640,7 +2652,7 @@ msgstr "TV"
 
 #: ../../magic/src/tv.c:119
 msgid "TV (Bright)"
-msgstr ""
+msgstr "TV (brilhante)"
 
 #: ../../magic/src/tv.c:130
 msgid ""
