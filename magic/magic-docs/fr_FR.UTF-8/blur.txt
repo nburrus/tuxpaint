@@ -5,7 +5,7 @@
               Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
 
-This makes the picture fuzzy wherever you drag the mouse.
+Ceci floute l'image là où vous promenez la souris.
 
 This tool offers both freehand and one-click operation.
 

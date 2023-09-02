@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This makes parts of the picture (where you move the mouse) look like a chalk
-drawing.
+Ceci fait que des parties de l'image (là où vous avez balayé avec la souris)
+paraissent comme dessinées à la craie.
 
 This tool offers both freehand and one-click operation.
 

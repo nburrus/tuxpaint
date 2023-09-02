@@ -5,8 +5,8 @@
               Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
 
-This makes the picture blocky looking ("pixelated") wherever you drag the
-mouse.
+Ceci transforme l'image comme il était formée de blocs ("pixelisée") là où vous
+balayez avec la souris.
 
 This tool offers both freehand and one-click operation.
 
