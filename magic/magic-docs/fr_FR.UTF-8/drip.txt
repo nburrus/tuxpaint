@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This makes the paint "drip" wherever you move the mouse.
+Ceci fait "dégouliner" la peinture à l'endroit où vous bougez la souris.
 
 This tool offers both freehand and one-click operation.
 

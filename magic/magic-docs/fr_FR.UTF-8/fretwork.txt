@@ -4,7 +4,8 @@
 
            Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Draw an interlaced decorative design that looks like wooden fretwork.
+Exécute un dessin décoratif avec entrelacement qui ressemble à un travail de
+chantournage du bois.
 
 This tool offers both freehand and one-click operation.
 

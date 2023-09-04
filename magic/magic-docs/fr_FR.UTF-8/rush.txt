@@ -5,8 +5,8 @@
            Auteurs : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
-Click and drag up to zoom in, or down to zoom out. The results will be blurred/
-smeared.
+Cliquez et balayez vers la haut pour zoomer, ou vers le bas pour dézoomer. Le
+résultat sera flou/barbouillé.
 
 This tool is operated in a freehand fashion.
 

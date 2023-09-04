@@ -4,7 +4,7 @@
 
            Auteur : Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
 
-Colors based on the position drawn on the picture.
+Le couleurs sont basées sur la position dessinée sur le dessin.
 
 This tool offers both freehand and one-click operation.
 

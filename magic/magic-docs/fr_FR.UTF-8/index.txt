@@ -10,10 +10,10 @@ Distorsions
   * Cercles
   * Cloner
   * Craie
+  * Demi-teinte
   * Distorsion
   * Flou
   * Goutte
-  * Halftone
   * Mosaïque
   * Mosaïque carrée
   * Mosaïque hexagonale

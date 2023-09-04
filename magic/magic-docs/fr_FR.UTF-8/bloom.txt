@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Add a glowing "bloom" effect to pictures.
+Ajoute un effet de "floraison" éclatante aux images.
 
 This tool offers both freehand and one-click operation.
 

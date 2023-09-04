@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This makes the picture look like a cartoon — with thick outlines and bright,
-solid colors — wherever you move the mouse.
+Ceci fait que l'image ressemble à une B.D. — avec des contours épais et des
+couleurs unies et vives — là où vous passez la souris.
 
 This tool offers both freehand and one-click operation.
 

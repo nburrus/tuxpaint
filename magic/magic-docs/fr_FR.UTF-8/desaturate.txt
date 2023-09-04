@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This desaturates the colors wherever you drag the mouse. (Do it to the same
-spot many times, and it will eventually become greyscale.)
+Cela désature les couleurs là où vous promenez votre souris. (Si vous les
+faites plusieurs au même endroit, vous obtiendrez éventuellement du gris.)
 
 This tool offers both freehand and one-click operation.
 

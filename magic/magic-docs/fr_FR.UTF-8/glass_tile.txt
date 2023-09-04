@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Click and drag over your picture to make it look like it's being seen through
-glass tiles.
+Cliquez et balayez votre image pour faire en sorte qu'elle ressemble à une
+image vue au travers de tuiles de verre.
 
 This tool offers both freehand and one-click operation.
 

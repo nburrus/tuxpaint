@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This increases the saturation of colors wherever you drag the mouse.
+Cela augmente la saturation des couleurs là où vous promenez la souris.
 
 This tool offers both freehand and one-click operation.
 

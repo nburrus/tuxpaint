@@ -4,9 +4,9 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This makes parts of your picture look "embossed." Wherever there are sharp
-edges in your picture, the picture will look raised like it was stamped in
-metal.
+Ceci rend des parties de votre image "gaufrées". Partout où il y a des
+finitions nettes dans votre image, celle-ci deviendra comme si elle était
+estampée.
 
 This tool offers both freehand and one-click operation.
 

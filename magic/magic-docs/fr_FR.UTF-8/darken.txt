@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This darkens the colors wherever you drag the mouse. (Do it to the same spot
-many times, and it will eventually become black.)
+Cela assombrit les couleurs là où vous promènerez la souris. (Si vous le faites
+plusieurs fois au même endroit, vous aurez éventuellement du noir.)
 
 This tool offers both freehand and one-click operation.
 

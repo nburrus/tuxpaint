@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Click and drag around to stretch and squish parts of the picture.
+Cliquez et balayez pour étirer et écrabouiller des parties de l'image.
 
 This tool is operated in a freehand fashion.
 

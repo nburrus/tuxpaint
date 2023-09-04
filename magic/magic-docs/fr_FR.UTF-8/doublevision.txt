@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This blends the image with itself, to simulate double vision.
+Cela mélange l'image avec elle-même, pour simuler une double vision.
 
 This tool is operated in a freehand fashion.
 

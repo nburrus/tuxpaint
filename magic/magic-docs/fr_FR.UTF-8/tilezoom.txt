@@ -5,8 +5,8 @@
            Auteurs : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
-Click and drag up to zoom in, or down to zoom out. When scaling down, your
-image will be tiled across the canvas.
+Cliquez et balayez vers le haut pour zoomer, ou vers le bas pour dézoomer. En
+dézoomant, votre image sera multiplié en carreaux sur le canevas.
 
 This tool is operated in a freehand fashion.
 

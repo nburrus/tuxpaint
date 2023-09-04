@@ -4,9 +4,9 @@
 
                  Auteur : Albert Cahalan <albert@users.sf.net>
 
-These two tools intelligently paint large and small brick patterns on the
-canvas. The bricks can be tinted various redish hues by selecting different
-colors in the color palette.
+Ces deux outils peignent intelligemment de grandes et petites briques sur le
+canevas. Les briques peuvent colorées avec des teintes rougeâtres en les
+choisissant dans la palette de couleurs.
 
 This tool is operated in a freehand fashion.
 

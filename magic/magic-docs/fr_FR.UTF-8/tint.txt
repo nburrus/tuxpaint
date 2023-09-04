@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This changes the color (or hue) of the parts of the picture to the selected
-color.
+Cela change la couleur (ou la teinte) des parties de l'image ayant la couleur
+choisie.
 
 This tool offers both freehand and one-click operation.
 

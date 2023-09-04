@@ -4,7 +4,7 @@
 
                    Auteur : Adam Rakowski <foo-script@o2.pl>
 
-Throw confetti around your picture!
+Jetez des confettis sur l'image !
 
 This tool is operated in a freehand fashion.
 

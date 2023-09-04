@@ -4,8 +4,8 @@
 
                  Auteur : Albert Cahalan <albert@users.sf.net>
 
-This pushes the colors around under the mouse, like finger painting with wet
-paint.
+Ceci repousse les couleurs aux alentours de la souris, comme le doigt avec de
+la peinture humide.
 
 This tool is operated in a freehand fashion.
 

@@ -4,7 +4,8 @@
 
            Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Click and drag from the corners to change the perspective of your picture.
+Cliquez et balayez à partir d'un coin pour changer la paerspective de votre
+dessin.
 
 This tool is operated in a freehand fashion.
 

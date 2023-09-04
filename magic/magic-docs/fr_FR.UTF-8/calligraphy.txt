@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This paints on the canvas with a calligraphy pen. The quicker you move, the
-thinner the lines.
+Ceci peint sur le canevas avec un style calligraphique. Plus vous allez vite,
+plus les lignes sont fines.
 
 This tool is operated in a freehand fashion.
 

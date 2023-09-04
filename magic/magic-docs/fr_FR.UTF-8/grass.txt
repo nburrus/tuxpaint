@@ -4,9 +4,9 @@
 
                  Auteur : Albert Cahalan <albert@users.sf.net>
 
-This paints grass on the image. The higher up the canvas, the smaller the grass
-is drawn, giving an illusion of perspective. The grass can be tinted various
-greenish hues by selecting different colors in the color palette.
+Peint de l'herbe sur l'image. Plus on va le haut du canevas, plus l'herbe est
+petite, donnant ainsi une illusion de perspective. L'herbe peut être colorée
+avec des teintes verdâtres en les choisissant dans la palette de couleurs.
 
 This tool is operated in a freehand fashion.
 

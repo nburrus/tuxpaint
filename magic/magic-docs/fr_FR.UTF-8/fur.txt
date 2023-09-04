@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Add fur to your drawing.
+Ajoutez de la fourrure à votre dessin.
 
 This tool is operated in a freehand fashion.
 

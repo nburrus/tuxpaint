@@ -6,8 +6,8 @@
                    Bill Kendrick <bill@newbreedsoftware.com>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Click a corner of your picture and drag towards the center to fold it up like a
-piece of paper.
+Cliquez dans un coin de votre dessin et balayez vers le centre pour le replier
+comme un morceau de papier.
 
 This tool is operated in a freehand fashion.
 

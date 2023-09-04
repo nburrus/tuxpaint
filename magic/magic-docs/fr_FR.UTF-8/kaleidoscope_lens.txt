@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-These three tools make it look like your picture is being viewed through a
+Ces trois outils font comme si vous regardiez votre image au travers un
 kaleidoscope.
 
 This tool is operated in a freehand fashion.

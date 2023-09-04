@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This transforms the picture into brush strokes that point towards where you
-clicked.
+Ceci transforme l'image en coups de pinceau qui pointent vers l'endroit où vous
+avez cliqué.
 
 This tool offers both freehand and one-click operation.
 

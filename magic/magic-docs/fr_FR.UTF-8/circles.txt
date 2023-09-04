@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This transforms the picture into circular brush strokes around where you
-clicked.
+Cela transforme votre image en coups de pinceaux circulaires autour du point où
+vous avez cliqué.
 
 This tool offers both freehand and one-click operation.
 

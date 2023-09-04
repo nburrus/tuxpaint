@@ -4,7 +4,7 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Similar to "Mirror." Click and the entire image will be turned upside-down.
+Semblable à Miroir". Cliquez et toute l'image sera inversée haut/bas.
 
 This tool is operated with a single click.
 

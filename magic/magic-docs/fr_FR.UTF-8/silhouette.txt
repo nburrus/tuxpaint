@@ -4,7 +4,7 @@
 
                 Auteur : Andrew Corcoran <akanewbie@gmail.com>
 
-Trace the edges in your picture, over a black background.
+Marque les bords de l'image, avec un arrière-plan noir.
 
 This tool offers both freehand and one-click operation.
 

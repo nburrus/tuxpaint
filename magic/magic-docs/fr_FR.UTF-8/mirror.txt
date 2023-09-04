@@ -4,8 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-When you click the mouse in your picture with the "Mirror" magic effect
-selected, the entire image will be reversed, turning it into a mirror image.
+Quand vous cliquez sur le dessin avec l'effet magique "Miroir" sélectionné,
+toute l'image est inversée comme dans un miroir.
 
 This tool is operated with a single click.
 

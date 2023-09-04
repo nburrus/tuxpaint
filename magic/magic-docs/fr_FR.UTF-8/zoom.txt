@@ -4,8 +4,9 @@
 
            Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Click and drag up to zoom in, or down to zoom out. (When scaling down, your
-chosen color will be used as a background color.)
+Cliquez et balayez vers le haut pour zoomer, et vers le bas pour dézoomer.
+(Quand vous dézoomer, la couleur que vous avez choisie est utilisée comme
+couleur d'arrière-plan)
 
 This tool is operated in a freehand fashion.
 

@@ -4,7 +4,8 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Click and drag down, up, left, or right, to add a reflection to you picture.
+Cliquez et balayez vers le bas, le haut, à gauche, à droite pour ajouter un
+effet de réflection à votre dessin.
 
 This tool is operated in a freehand fashion.
 

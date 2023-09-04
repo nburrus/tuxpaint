@@ -5,7 +5,7 @@
                   Auteurs : Adam Rakowski <foo-script@o2.pl>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Adds a glass mosaic effect to your picture.
+Ajoute un effet de miroir en mosaïque au dessin.
 
 This tool offers both freehand and one-click operation.
 
