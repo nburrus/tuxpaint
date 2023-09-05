@@ -4,11 +4,11 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This draws a flowing ribbon behind the mouse as you move it.
+Dessine un ruban derrière la souris quand vous la bougez.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 -------------------------------------------------------------------------------
 

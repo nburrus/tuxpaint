@@ -5,12 +5,12 @@
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Ceci rend des parties de votre image "gaufrées". Partout où il y a des
-finitions nettes dans votre image, celle-ci deviendra comme si elle était
-estampée.
+finitions nettes dans votre image, celles-ci deviendront comme si elles étaient
+estampées.
 
-This tool offers both freehand and one-click operation.
+Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 Voir aussi : Bords & Silhouette.
 

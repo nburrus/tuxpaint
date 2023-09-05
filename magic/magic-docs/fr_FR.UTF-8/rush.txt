@@ -8,9 +8,9 @@
 Cliquez et balayez vers la haut pour zoomer, ou vers le bas pour dézoomer. Le
 résultat sera flou/barbouillé.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
-Voir aussi : Rush, Zoom tuile, & Zoom.
+Voir aussi : Rush, Zoom avec carreau, & Zoom.
 
 -------------------------------------------------------------------------------
 

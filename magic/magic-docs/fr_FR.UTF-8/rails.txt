@@ -6,9 +6,9 @@
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
 
-Draw connecting locomotive train rails on your picture.
+Dessine des rails sur votre image.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
 -------------------------------------------------------------------------------
 

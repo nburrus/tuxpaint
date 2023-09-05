@@ -8,7 +8,7 @@ Cet outil permet de séparer sur l'image entière les canaux de couleur rouge et
 cyan, créant ainsi des images anaglyphiques qui peuvent être utilisées avec des
 lunettes 3D.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
 Voir aussi : Sép des couleurs. & Vision double.
 

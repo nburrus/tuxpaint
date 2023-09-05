@@ -7,9 +7,9 @@
 Déforme des parties de l'image comme si elle était vue au travers d'une
 lentille "oeil de poisson".
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 Voir aussi : Ondes.
 

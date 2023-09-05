@@ -4,11 +4,11 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Draw loop-the-loops on the canvas, in the currently-selected color.
+Dessine des boucles sur le canevas.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 Voir aussi : Doux & Gribouillis.
 

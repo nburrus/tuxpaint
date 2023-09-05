@@ -4,12 +4,12 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-This draws random squiggly loops, using the currently-selected color, as you
-move the mouse around.
+Dessine des boucles ondulées aléatoires en bougeant la souris et en utilisant
+la couleur sélectionnée.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 Voir aussi : Doux & Gribouillis.
 

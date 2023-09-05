@@ -4,9 +4,9 @@
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Semblable à Miroir". Cliquez et toute l'image sera inversée haut/bas.
+Semblable à "Miroir". Cliquez et toute l'image sera inversée haut/bas.
 
-This tool is operated with a single click.
+Cet outil travaille avec un seul clic.
 
 Voir aussi : Miroir.
 

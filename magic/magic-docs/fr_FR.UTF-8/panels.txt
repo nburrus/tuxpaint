@@ -8,9 +8,9 @@ Rétrécit l'image et le répète quatre fois dans une grille de 2x2. Utile pour
 création de bande dessinée à 4 panneaux. Peut être également utilisé pour un
 effet yeux-composés (insectes).
 
-This tool is operated with a single click.
+Cet outil travaille avec un seul clic.
 
-Voir aussi : Zoom tuile.
+Voir aussi : Zoom avec carreau.
 
 -------------------------------------------------------------------------------
 

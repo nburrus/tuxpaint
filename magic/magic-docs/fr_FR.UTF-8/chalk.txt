@@ -5,11 +5,11 @@
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
 Ceci fait que des parties de l'image (là où vous avez balayé avec la souris)
-paraissent comme dessinées à la craie.
+apparaissent comme dessinées à la craie.
 
-This tool offers both freehand and one-click operation.
+Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 -------------------------------------------------------------------------------
 

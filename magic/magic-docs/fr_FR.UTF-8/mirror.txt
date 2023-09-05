@@ -7,7 +7,7 @@
 Quand vous cliquez sur le dessin avec l'effet magique "Miroir" sélectionné,
 toute l'image est inversée comme dans un miroir.
 
-This tool is operated with a single click.
+Cet outil travaille avec un seul clic.
 
 Voir aussi : Renverser.
 

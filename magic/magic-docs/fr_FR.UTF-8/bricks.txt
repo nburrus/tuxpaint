@@ -8,9 +8,9 @@ Ces deux outils peignent intelligemment de grandes et petites briques sur le
 canevas. Les briques peuvent colorées avec des teintes rougeâtres en les
 choisissant dans la palette de couleurs.
 
-This tool is operated in a freehand fashion.
+Cet outil permet de travailler en mode à main levée.
 
-This tool offers multiple size settings.
+Cet outil permet de travailler avec plusieurs tailles.
 
 Voir aussi : Pixels.
 
