@@ -570,13 +570,13 @@ e.Outils "Texte" et "Étiquette"
         repositionner l'étiquette; cliquez sur la palette pour changer la
         couleur du texte, etc ...)
 
-        You may "apply" a label to the canvas, painting the text into the
-        picture as if it had been added using the Text tool, by clicking the
-        label application button. (This feature was added in Tux Paint version
-        0.9.28.) All labels in the drawing will appear highlighted, and you
-        select one just as you do when selecting a label to edit. The chosen
-        label will be removed, and the text will be added directly to the
-        canvas.
+        Vous pouvez "plaquer" une étiquette sur le canevas, en peignant le
+        texte sur le dessin comme si il avait été ajouté avec l'outil Texte,
+        puis en cliquant sur le bouton "étiquette". (Cette possibilité a été
+        ajoutée dans la version 0.9.28 de Tux Paint). Toutes les étiquettes du
+        dessin apparaîtront en surbrillance, et vous en sélectionnez une seule
+        comme si vous l'éditiez. L'étiquette choisie est enlevée et le texte
+        sera ajouté directement sur le canevas.
 
         ⚙ L' outil Étiquette peut être désactivé (par exemple, en sélectionnant
         "Désactiver l'outil 'Label'" dans Tux Paint Config ou bien en exécutant

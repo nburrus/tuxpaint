@@ -215,7 +215,7 @@ Couleurs
       + Cliquez/tapez sur "⤺Back" pour annuler et abandonner le mélangeur de
         couleur.
 
-Raccourcis quand on dessine :
+Raccourcit quand on dessine :
 
   * [Ctrl]+Cliquez/tapez - accès rapide à la pipette/sélcecteur de couleur 💉
   * [X]+Cliquez/tapez - accès rapide à la gomme ◪

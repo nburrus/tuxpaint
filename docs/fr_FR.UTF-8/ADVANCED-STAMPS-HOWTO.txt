@@ -109,7 +109,7 @@ Préparez l'image
     utilisateurs de Adobe Photoshop choisiront PSD, à titre d'exemple.
 
     Si vous avez effectué une rotation et un recadrage de votre image,
-    applatissez-la. Vous n'avez besoin que d'un seul calque RGB sans masque ou
+    aplatissez la. Vous n'avez besoin que d'un seul calque RGB sans masque ou
     canal alpha.
 
     Ouvrez la boîte de dialogue qui concerne les calques. Reproduisez une
