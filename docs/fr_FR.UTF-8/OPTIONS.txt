@@ -411,7 +411,7 @@ stampsize=SIZE
     de tous les tampons. La valeur SIZE doit être comprise entre 0 (le plus
     petit) et 10 (le plus grand). La taille est relative aux tailles
     disponibles du tampon, qui dépendent du tampon lui-même, et de la taille
-    actuelle de la toile de Tux Paint.
+    actuelle du canevas de Tux Paint.
 
     Spécifiez "default" pour laisser Tux Paint décider (c'est un comportement
     standard).
@@ -488,7 +488,7 @@ nostamprotation=yes
 nomagiccontrols=yes
 
     Certains outils Magie ont la possibilité d'agir comme un pinceau ou
-    d'affecter la toile entière. Cette option désactive les contrôles et ne
+    d'affecter le canevas en entier. Cette option désactive les contrôles et ne
     fournit que la fonctionnalité par défaut (généralement en mode peinture).
 
     ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
@@ -556,7 +556,7 @@ nobrushspacing=yes
 
 notemplateexport=yes
 
-    Désactive la possibilité de créer de nouvelles iamges Modèle (basées sur
+    Désactive la possibilité de créer de nouvelles images Modèle (basées sur
     des images sauvegardées) à partir de la boîte de dialogue Ouvrir .
 
     📜 Note : La possibilité de création de Modèles a été ajouté avec la version
@@ -1108,7 +1108,7 @@ Sauvegarder la configuration d'impression
 
     startblank=yes
 
-        Ceci oblige Tux Paint à afficher une toile vide au démarrage, plutôt
+        Ceci oblige Tux Paint à afficher un canevas vide au démarrage, plutôt
         que la dernière image qui a été éditée.
 
         ⚙ Note : si utilisé dans un fichier de configuration pour tout le
@@ -1382,7 +1382,7 @@ Sauvegarder la configuration d'impression
 
         Caractéristiques :
 
-          o Mouvement fin sur la toile, ou rapide si Shift est maintenu.
+          o Mouvement fin sur le canevas, ou rapide si Shift est maintenu.
           o Mouvement rapide dans la zone des boutons d'outils.
           o Touches de contrôle :
               # [Left]/[Right]/[Up]/[Down], pavé numérique [1] jusqu'à [9] :

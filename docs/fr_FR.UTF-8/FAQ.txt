@@ -96,7 +96,7 @@ Les vignettes des tampons dans le sélecteur de tampons ne sont pas jolies
 
 
 Les images de la boîte de dialogue "Ouvrir" ne sont pas jolies
-    "Miniatures de faible qualité" a été probablement activé. Voir: "Les
+    "Miniatures de faible qualité" a été probablement activé. Voir : "Les
     vignettes de tampon dans le sélecteur de tampon ne sont pas jolies",
     ci-dessus.
 

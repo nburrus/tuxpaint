@@ -304,7 +304,7 @@
           Un fichier de données de brush's est simplement un fichier texte ASCII contenant les options pour le brush.        </p>
 
         <p>
-          Le fichier porte le même nom que l'image PNG , mais une extension "<code>.dat</code>". (par exemple, le fichier de données "<code>brush.png</code>" est le fichier texte "<code>brush.dat</code>" qui se trouve dans le même répertoire.)        </p>
+          Le fichier porte le même nom que l'image PNG , mais une extension "<code>.dat</code>". (par exemple, le fichier de données "<code>brosse.png</code>" est le fichier texte "<code>brosse.dat</code>" qui se trouve dans le même répertoire.)        </p>
 
         <dl>
           <dt><strong>Espacement des pinceaux</strong></dt>
@@ -340,7 +340,7 @@
           <dt><strong>Pinceaux tournants</strong></dt>
           <dd>
             <p>
-              Depuis la version 0.9.27 de Tux Paint , vous pouvez désormais créer des pinceaux tournants. Au fur et à mesure que le pinceau est utilisé, il tourne de 360 degrés, en fonction de la direction du pinceau.            </p>
+              Depuis la version 0.9.27 de Tux Paint , vous pouvez désormais créer des pinceaux tournants. Au fur et à mesure que le pinceau est utilisé, il tourne sur 360 degrés, en fonction de la direction du pinceau.            </p>
             <p>
               Ajoute une ligne contenant le mot "<code><b>rotate</b></code>" au fichier de données brosse.            </p>
           </dd>
@@ -590,7 +590,7 @@
           <dt><strong>Taille initiale du tampon</strong></dt>
           <dd>
             <p>
-              Par défaut, Tux Paint suppose que votre tampon est dimensionné de manière appropriée pour un affichage non mis à l'échelle sur une toile de 608x472. Il s'agit de la taille originale de la toile pour Tux Paint , pour un écran 640x480. Tux Paint ajustera ensuite le tampon en fonction de la taille réelle du canevas et, si c'est activé, des contrôles de taille du tampon définis par l'utilisateur.            </p>
+              Par défaut, Tux Paint suppose que votre tampon est dimensionné de manière appropriée pour un affichage non mis à l'échelle sur un canevas de 608x472. Il s'agit de la taille originale du canevas pour Tux Paint , pour un écran 640x480. Tux Paint ajustera ensuite le tampon en fonction de la taille réelle du canevas et, si c'est activé, des contrôles de taille du tampon définis par l'utilisateur.            </p>
             <p>
               Si votre tampon est trop grand ou trop petit, vous pouvez spécifier un facteur d'échelle. Si votre tampon est 2,5 fois plus large (ou haut) qu'il devrait l'être, ajoutez une des options, représentant toutes le même réglage, à votre fichier de données du tampon.(Un signe égal,"<code>=</code>", peut être ajouté après le mot "<code>scale</code>".)            </p>
             <ul>
@@ -700,7 +700,7 @@
           En plus de la superposition de style `` livre de coloriage '', vous pouvez également fournir une image d'arrière-plan séparée dans le cadre d'une "image de démarrage''. La superposition agit de la même manière : elle ne peut pas être dessinée, effacée ou affectée par les outils «Magie». Cependant, l'arrière-plan peut l'être !        </p>
 
         <p>
-          Lorsque l'outil «Gomme» est utilisé sur une image basée sur ce type d'image de démarrage, plutôt que de transformer la toile en une couleur unie, telle que le blanc, il renvoie cette partie de la toile à l'image d'arrière-plan d'origine à partir de image de démarrage.        </p>
+          Lorsque l'outil «Gomme» est utilisé sur une image basée sur ce type d'image de démarrage, plutôt que de transformer le canevas en une couleur unie, telle que le blanc, il restaure cette partie du canevas avec l'image d'arrière-plan d'origine à partir de image de démarrage.        </p>
 
         <p>
           En créant à la fois une superposition et un arrière-plan, vous pouvez créer une «image de démarrage» qui simule la profondeur. Imaginez un arrière-plan qui montre l'océan et une superposition qui est l'image d'un récif. Vous pouvez ensuite dessiner (ou tamponner) des poissons sur l'image. Ils apparaîtront dans l'océan, mais jamais «devant» le récif.        </p>
@@ -710,13 +710,13 @@
       </section><!-- H2: Scene-Style Starters -->
 
       <p>
-        Pour de meilleurs résultats, les images de démarrage doivent être de la même taille que la toile de Tux Paint . (Voir la section "Chargement d'autres images dans Tux Paint " du README pour plus de détails sur le dimensionnement.) Si ce n'est pas le cas, elles seront étirées, sans affecter la forme ("rapport hauteur / largeur"); cependant, des bavures peuvent être apparaître sur les bords.      </p>
+        Pour de meilleurs résultats, les images de démarrage doivent être de la même taille que le canevas de Tux Paint . (Voir la section "Chargement d'autres images dans Tux Paint " du README pour plus de détails sur le dimensionnement.) Si ce n'est pas le cas, elles seront étirées, sans affecter la forme ("rapport hauteur / largeur"); cependant, des bavures peuvent être apparaître sur les bords.      </p>
 
       <p>
         Placez-les dans le répertoire "<code><b>starters</b></code>". Lorsque la boîte de dialogue «Nouveau» est accessible dans Tux Paint , les images de démarrage  apparaîtront avec l'écran qui apparaît, suivant les différents choix de couleurs unies.      </p>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Remarque  :</strong>'Images de démarrage' sont 'attachés' aux images sauvegardées, via un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec "<code>.dat</code>" comme extension. Ceci permet de continuer de s'occuper du dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un image de démarrage, il sera toujours changé par lui).      </p>
+        <span title="Information">&#128161;</span>        <strong>Remarque  :</strong>Les 'Images de démarrage' sont 'attachés' aux images sauvegardées, via un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec "<code>.dat</code>" comme extension. Ceci permet de continuer de s'occuper du dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un image de démarrage, il sera toujours changé par lui).      </p>
 
       <section><!-- H2: Starter Options -->
         <header>
@@ -765,9 +765,9 @@
                     align="right">
                 Pour les images pour lesquelles c'est <em> d'accord pour rogner les bords gauche et droite</em>, mais les bords haut et bas doivent être conservés, utilisez "<code><b>allowscale=horizontal</b></code>".                <ul>
                   <li>
-                    Si le ratio d'aspect de l'image de démarrage est plus large  que celui du canevas, elle sera mise à l'échelle pour avoir la même height que le canevas et gauche et droite seront rognés.                  </li>
+                    Si le ratio d'aspect de l'image de démarrage est plus large  que celui du canevas, elle sera mise à l'échelle pour avoir la même hauteur que le canevas et gauche et droite seront rognés.                  </li>
                   <li>
-                    Si le ratio d'aspect de l'image de démarrage est plus haut  que celui du canevas, elle sera mise à l'échelle pour avoir la même height que le canevas et il n'y aura pas de rognage,  et les bords de gauche et droite seront barbouillés.                  </li>
+                    Si le ratio d'aspect de l'image de démarrage est plus haut  que celui du canevas, elle sera mise à l'échelle pour avoir la même hauteur que le canevas et il n'y aura pas de rognage,  et les bords de gauche et droite seront barbouillés.                  </li>
                 </ul>
                 <br clear="all" />
               </li><!-- allowscale=horizontal -->
@@ -850,7 +850,7 @@
                     title="Image au format portrait avec un horizon, le soleil au milieu et le côté gauche d'une construction à droite."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Vue sur le centre d'une image de démarrage étirée pour être en accord avec la height du canevas.<p/>
+                    <p>Vue sur le centre d'une image de démarrage étirée pour être en accord avec la hauteur du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
@@ -889,7 +889,7 @@
                     title="Image, au format portrait, d'un horizon avec le soleil à gauche et une construction au milieu."
                     valign="middle" />
                   <figcaption style="font-size: smaller;">
-                    <p>Vue sur le droit d'une image de démarrage étirée pour être en accord avec la height du canevas.<p/>
+                    <p>Vue sur le droit d'une image de démarrage étirée pour être en accord avec la hauteur du canevas.<p/>
                   </figcaption>
                 </figure>
               </div>
@@ -897,7 +897,7 @@
         </dl>
 
         <p class="note">
-          <span title="Information">&#128161;</span>          <strong>Note : </strong>Les Modèles (description plus bas) peut eux aussi avoir des options, et ont les mêmes options que les images de démarrage.        </p>
+          <span title="Information">&#128161;</span>          <strong>Note : </strong>Les Modèles (description plus bas) peuvent eux aussi avoir des options, et ont les mêmes options que les images de démarrage.        </p>
         <br clear="all">
       </section><!-- H2: Starter Options -->
 
@@ -923,19 +923,19 @@
         À la différence des  images dessinées dans Tux Paint par les utilisateurs puis réouvertes plus tard, l'ouverture d'un «modèle» crée un nouveau dessin. Lorsque vous enregistrez, l'image «modèle» n'est pas écrasée. À la différence des «images de démarrage», il n'y a pas de «calque» immuable au-dessus du canevas. Vous pouvez dessiner sur n'importe quelle partie de celui-ci.      </p>
 
       <p>
-          Lorsque l'outil «Gomme» est utilisé sur une image basée sur ce type d'image 'modèle', plutôt que de transformer la toile en une couleur unie, telle que le blanc, il renvoie cette partie de la toile à l'image d'arrière-plan d'origine à partir de image 'modèle'.      </p>
+          Lorsque l'outil «Gomme» est utilisé sur une image basée sur ce type d'image 'modèle', plutôt que de transformer le canevas en une couleur unie, telle que le blanc, il restaure cette partie du canevas avec l'image d'arrière-plan d'origine à partir de image 'modèle'.      </p>
 
       <p>
         Les «modèles» sont simplement des fichiers image (au format PNG, JPG, SVG ou KPX (KidPix)). Aucune préparation ou conversion n'est requise.      </p>
 
       <p>
-        Pour de meilleurs résultats, les images 'modèle' doivent être de la même taille que la toile de Tux Paint . (Voir la section "Chargement d'autres images dans Tux Paint " du README pour plus de détails sur le dimensionnement.) Si ce n'est pas le cas, elles seront étirées, sans affecter la forme ("rapport hauteur / largeur"); cependant, des bavures peuvent être apparaître sur les bords.      </p>
+        Pour de meilleurs résultats, les images 'modèle' doivent être de la même taille que le canevas de Tux Paint . (Voir la section "Chargement d'autres images dans Tux Paint " du README pour plus de détails sur le dimensionnement.) Si ce n'est pas le cas, elles seront étirées, sans affecter la forme ("rapport hauteur / largeur"); cependant, des bavures peuvent être apparaître sur les bords.      </p>
 
       <p>
         Placez-les dans le répertoire "<code><b>templates</b></code>". Lorsque la boîte de dialogue «Nouveau» est accessible dans Tux Paint , les images 'modèle'  apparaîtront avec l'écran qui apparaît, suivant les différents choix de couleurs unies.      </p>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Remarque  :</strong>'Modèles' sont 'attachés' aux images sauvegardées, via un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec "<code>.dat</code>" comme extension. Ceci permet de continuer de s'occuper du dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un image 'modèle', il sera toujours changé par lui).      </p>
+        <span title="Information">&#128161;</span>        <strong>Remarque  :</strong>Les 'Modèles' sont 'attachés' aux images sauvegardées, via un petit fichier texte qui a le même nom que le fichier sauvegardé, mais avec "<code>.dat</code>" comme extension. Ceci permet de continuer de s'occuper du dessin, mais après avoir quitté Tux Paint, oi bien une autre image a été chargée, ou bien une nouvelle image a été créée (En d'autres termes, si vous basez un dessin sur un image 'modèle', il sera toujours changé par lui).      </p>
       <br clear="all">
 
       <section><!-- H2: Template Options -->

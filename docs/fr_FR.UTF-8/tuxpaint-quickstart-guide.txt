@@ -15,12 +15,12 @@ Outils (dessin)
 ⌧Tampons
 
   * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
-  * Choisis un tampon sur la droite.
+  * Choisisez un tampon sur la droite.
   * De nombreux tampons peuvent être affichés sous forme d'image miroir 🪞, et/
     ou retournés verticalement ↕ à l'aide des boutons de commande en bas à
     droite.
   * On peut choisir la couleur de certains tampons (voir "Couleurs").
-  * Chnage la taille du tampon avec les barres 📶 en bas à droite.
+  * Change la taille du tampon avec les barres 📶 en bas à droite.
   * Le rotation ⟳ peut être activée si on le désire.
   * Cliquez/tpez sur le canevas pour placer un tampon.
       + Si la rotation est activée, balayez pour tourner, et cliquez/tapez pour
@@ -77,7 +77,7 @@ Outils (dessin)
     Cliquez/tapez sur l'étiquette que vous souhaitez modifier, puis cliquez/
     tapez autre part dans le canevas pour repositionner, ou changer la police,
     le style, la couleur et/ou éditer le texte.
-  * Ou bien, utilisez le bouton 🖑 zn bas à droite pour "écraser" une étiquette,
+  * Ou bien, utilisez le bouton 🖑 en bas à droite pour "écraser" une étiquette,
     en l'appliquant sur le canevas; on ne pourra plus l'éditer avec l'outil
     étiquette.
 

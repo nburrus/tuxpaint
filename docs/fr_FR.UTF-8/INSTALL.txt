@@ -170,7 +170,7 @@ MSYS (https://sourceforge.net/projects/msys2/).
 
 Beaucoup d'outils et de bibliothèques sont nécessaires pour élaborer Tux Paint.
 Le système de gestion de paquet "pacman" apporte une aide pour installer
-automatiquement, en résolvant les dépendances nombreuses.
+automatiquement, en résolvant less nombreuses dépendances.
 
 MYSYS2
 

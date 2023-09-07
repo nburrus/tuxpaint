@@ -137,7 +137,7 @@ Préparez le masque
 
     Prenez l'habitude de faire un [Control]-clic et un [Alt]-clic sur les
     images-vignettes dans la boîte de dialogue des calques. Vous devez le faire
-    pour vérifier ce que vous voyez et ce que vous éditez. Parfois vous
+    pour contrôler ce que vous voyez avec ce que vous éditez. Parfois vous
     éditerez des choses que vous ne pouvez pas voir. Par exemple, vous pouvez
     éditer le masque du masque WIP, tout en regardant l'image non modifiée.
     Faites attention à ne pas vous tromper. Vérifiez toujours que vous éditez
@@ -225,7 +225,7 @@ Remplacer la frange et les pixels indésirables
       + composite sur magenta (masque activé)
       + original (calque supérieur ou inférieur)
       + composite sur l'original (masque activé)
-      + calque WIP brut (masque désactivé
+      + calque WIP brut (masque désactivé)
 
     Pour réduire les accidents, vous souhaiterez peut-être sélectionner
     uniquement les pixels qui ne sont pas gris dans le masque. (Sélectionnez
@@ -309,9 +309,9 @@ Sauvegarder l'image pour Tux Paint
         peints, sans aucune vignette de masque dans la boîte de dialogue des
         calques. Si vous avez mis à l'échelle le masque, mettez cette image à
         l'échelle exactement de la même manière. Enregistrez cette image en
-        tant que pixmap portable NetPBM (".ppm"). (Remarque : .ppm, .pgm.) (Si
-        vous choisissez le format RAW PPM, le deuxième octet du fichier doit
-        être le chiffre ASCII «6», octet hexadécimal 0x36.)
+        tant que pixmap portable NetPBM (".ppm"). (Remarque : .ppm, pas .pgm.)
+        (Si vous choisissez le format RAW PPM, le deuxième octet du fichier
+        doit être le chiffre ASCII «6», octet hexadécimal 0x36.)
 
         Vous devez maintenant fusionner les deux fichiers en un seul. Faites
         cela avec la commande pnmtopng, comme ceci :

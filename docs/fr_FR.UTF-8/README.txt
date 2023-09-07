@@ -50,7 +50,7 @@ Tux Paint est un programme de dessin gratuit conçu pour les jeunes enfants
 (enfants de 3 ans et plus). Il possède une interface simple et facile à
 utiliser, des effets sonores amusants et une mascotte de dessin animé pour
 encourager et guider les enfants lorsqu'ils utilisent le programme. Sont
-fournis une toile vierge et un ensemble d'outils de dessin pour aider votre
+fournis un canevas vierge et un ensemble d'outils de dessin pour aider votre
 enfant à être créatif.
 
 B. Objectifs
@@ -209,10 +209,10 @@ Côté gauche : la barre d'outils
     [Toile]
 Milieu : Toile pour Dessiner
 
-    La plus grande partie de l'écran, au centre, est la toile de dessin. C'est
-    évidemment là que vous dessinerez !
+    La plus grande partie de l'écran, au centre, est le canevas pour dessiner.
+    C'est évidemment là que vous dessinerez !
 
-    💡 Remarque: la taille de la toile de dessin dépend de la taille de Tux
+    💡 Remarque: la taille du canevas de dessin dépend de la taille de Tux
     Paint. Vous pouvez modifier la taille de Tux Paint à l'aide de l'outil de
     configuration tuxpaint-config, ou par d’autres moyens. Consultez la
     documentation OPTIONS pour plus de détails.
@@ -318,15 +318,15 @@ a. Outil "Peinture" (pinceau)
     Si vous maintenez le bouton de la souris enfoncé et déplacez la souris,
     elle dessine au fur et à mesure que vous vous déplacez.
 
-    Cerains pinceaux sont animés — ils changent de forme lorsque vous dessinez.
-    Un bon exemple est le pinceau 'grappe' livré avec Tux Paint. Ces pinceaux
-    ont une icône avec une petite pellicule dessinée sur le bouton de
+    Certains pinceaux sont animés — ils changent de forme lorsque vous
+    dessinez. Un bon exemple est le pinceau 'grappe' livré avec Tux Paint. Ces
+    pinceaux ont une icône avec une petite pellicule dessinée sur le bouton de
     sélection.
 
     D'autres pinceaux sont directionnels — leur forme dépend de la direction
     dans laquelle vous dessinez. Un exemple est le pinceau flèche livré avec
     Tux Paint. Ces pinceaux ont une petite étoile à 8 branches sur leur icône
-    du bouton de sékection.
+    du bouton de sélection.
 
     Et enfin, certains pinceaux peuvent être = la fois directionnels et animés.
     Des exemples sont les pinceaux 'chat' et 'écureuil' livrés avec Tux Paint.
@@ -450,7 +450,7 @@ c.Outil "Lignes"
     laissant derrière eux soit une série de formes individuelles, soit un coup
     de pinceau continu avec la forme du pinceau. L'espacement entre les coups
     de piceau peut être ajusté. Voir la section de l'outil "Peindre" espacement
-    du pinceau, c-dessus pour en savoir plus.
+    du pinceau, ci-dessus pour en savoir plus.
 
 
 
@@ -661,8 +661,8 @@ g.Outil "Magie" (Effets spéciaux)
         Si l'outil peut être utilisé en cliquant et en faisant glisser, un
         bouton «peinture» sera disponible sur la gauche, sous la liste des
         outils «magiques» sur le côté droit de l'écran. Si l'outil peut
-        affecter toute l'image en entier, un bouton «Image entière» sera
-        disponible sur la droite.
+        affecter l'image en entier, un bouton «Image entière» sera disponible
+        sur la droite.
 
         ⚙ Note: Si l'option "nomagiccontrols" est définie, Tux Paint
         n'affichera pas les contrôles pour peindre. Voir la documentation de "
@@ -792,7 +792,7 @@ b.Commande "Nouveau"
 
 
 
-    Effaçage des images Modèles exportées
+    Effacement des images Modèles exportées
 
         Si vous avez sélectionner une Image Modèle dans votre répertoire
         personnel, et qu'il a été créé à partir de Tux Paint (en utilisant le
@@ -1300,7 +1300,7 @@ de dessin, il met à l'échelle (et parfois en coloriant les bords) l'image pour
 qu'elle tienne dans le canevas.
 
 Pour éviter que l'image ne soit étirée ou maculée, vous pouvez la
-redimensionner à la taille de la toile de Tux Paint. Cette taille dépend de la
+redimensionner à la taille du canevas de Tux Paint. Cette taille dépend de la
 taille de la fenêtre Tux Paint, ou de la résolution à laquelle Tux Paint est
 exécuté, si il est en plein écran. (Remarque : la résolution par défaut est de
 800x600.) Voir "Calculer les dimensions des images" ci-dessous.
