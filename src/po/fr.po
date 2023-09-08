@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-20 22:29-0700\n"
-"PO-Revision-Date: 2023-08-06 20:21+0200\n"
+"PO-Revision-Date: 2023-09-08 15:30+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -2547,7 +2547,7 @@ msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
 
 #: ../../magic/src/smooth.c:62
 msgid "Smooth"
-msgstr "Doux"
+msgstr "Adoucir"
 
 #: ../../magic/src/smooth.c:63
 msgid "Squiggles"
