@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - July 19, 2023
+  June 14, 2002 - October 13, 2023
 */
 
 #include "platform.h"
@@ -10818,18 +10818,16 @@ static void draw_stamps(void)
   {
     if (!no_stamp_rotation)
     {
-      most =
-        (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols -
-        TOOLOFFSET;
+      most = ((buttons_tall - 4) * gd_toolopt.cols) - TOOLOFFSET;
     }
     else
     {
-      most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - gd_toolopt.cols - gd_toolopt.cols - TOOLOFFSET;
+      most = ((buttons_tall - 3) * gd_toolopt.cols) - TOOLOFFSET;
     }
   }
   else
   {
-    most = (buttons_tall * gd_toolopt.cols) - gd_toolopt.cols - TOOLOFFSET;
+    most = ((buttons_tall - 1) * gd_toolopt.cols) - TOOLOFFSET;
   }
 
 
@@ -10856,13 +10854,9 @@ static void draw_stamps(void)
 
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-    dest.y = r_ttoolopt.h + off_y + (((most + 2) / gd_toolopt.cols + TOOLOFFSET / gd_toolopt.cols) * button_h);
+    dest.y = r_ttoolopt.h + off_y + ((((most + TOOLOFFSET) / gd_toolopt.cols) - 1) * button_h);
 
-    if (!disable_stamp_controls)
-    {
-      dest.y -= (button_h * 2);
-    }
-
+    dest.x = WINDOW_WIDTH - r_ttoolopt.w;
     if (stamp_scroll[stamp_group] < num_stamps[stamp_group] - (most - 2) - TOOLOFFSET)
     {
       SDL_BlitSurface(img_scroll_down, NULL, screen, &dest);
