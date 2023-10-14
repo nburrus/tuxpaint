@@ -7,6 +7,12 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2023.October.13 (0.9.32)
+  * Improvements to "Text" & "Label" tools:
+    ---------------------------------------
+    * The name and size of the chosen font is shown in the instructions
+      at the bottom.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * Simplify macOS building by signing macOS app bundle anonymously by

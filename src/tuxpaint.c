@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 13, 2023
+  June 14, 2002 - October 14, 2023
 */
 
 #include "platform.h"
@@ -4945,18 +4945,22 @@ static void mainloop(void)
             }
             else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
             {
-              /* FIXME */
-              /* char font_tux_text[512]; */
+              char font_tux_text[1024];
+              const char * fmt_str;
 
               cur_font = cur_thing;
 
-              /* FIXME */
-              /*
-                 safe_snprintf(font_tux_text, sizeof font_tux_text, "%s (%s).",
-                 TTF_FontFaceFamilyName(getfonthandle(cur_font)),
-                 TTF_FontFaceStyleName(getfonthandle(cur_font)));
-                 draw_tux_text(TUX_GREAT, font_tux_text, 1);
-               */
+              /* Show a message about the chosen font */
+              if (cur_tool == TOOL_TEXT)
+                fmt_str = TIP_TEXT_FONTCHANGE;
+              else
+                fmt_str = TIP_LABEL_FONTCHANGE;
+
+              safe_snprintf(font_tux_text, sizeof(font_tux_text), gettext(fmt_str),
+                 TTF_FontFaceFamilyName(getfonthandle(cur_font)->ttf_font),
+                 TTF_FontFaceStyleName(getfonthandle(cur_font)->ttf_font),
+                 getfonthandle(cur_font)->height);
+              draw_tux_text(TUX_GREAT, font_tux_text, 1);
 
               if (do_draw)
                 draw_fonts();
