@@ -596,6 +596,7 @@ static void reposition_onscreen_keyboard(int y);
 
 
 int calc_magic_control_rows(void);
+int calc_stamp_control_rows(void);
 void maybe_redraw_eraser_xor(void);
 
 static void reset_stamps(int *stamp_xored_rt, int *stamp_place_x, int *stamp_place_y, int *stamp_tool_mode);
@@ -6381,15 +6382,6 @@ static void mainloop(void)
           {
           }
 
-          /* This if/if/if block is awful -bjk 2022.01.19 */
-          if (cur_tool == TOOL_STAMP && !disable_stamp_controls)
-          {
-            if (!no_stamp_rotation)
-              control_rows = 4;
-            else
-              control_rows = 3;
-          }
-
           if (cur_tool == TOOL_LABEL)
           {
             control_rows = 1;
@@ -6401,6 +6393,8 @@ static void mainloop(void)
             control_rows = 2;
           if (cur_tool == TOOL_MAGIC)
             control_rows = calc_magic_control_rows();
+          if (cur_tool == TOOL_STAMP)
+            control_rows = calc_stamp_control_rows();
           if (cur_tool == TOOL_SHAPES && !disable_shape_controls)
             control_rows = 1;
           if ((cur_tool == TOOL_BRUSH || cur_tool == TOOL_LINES) && !disable_brushspacing)
@@ -6436,34 +6430,52 @@ static void mainloop(void)
             }
             else
             {
-              /* One of the selectors: */
-
-              /* FIXME: Also show "cursor_hand" when touching controls (stamp size, brush spacing, etc.!) (See below) -bjk 2022.01.19 */
+              /* One of the selectors or controls: */
 
               which =
                 ((event.button.y - r_ttoolopt.h -
                   img_scroll_up->h) / button_h) * 2 + (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w)) / button_w;
 
-              if (which < num_things)
+              if (which + *thing_scroll < num_things)
+              {
+                /* A selectable item */
                 do_setcursor(cursor_hand);
+              }
+              else if (which >= (buttons_tall - control_rows) * 2 - 2 /* account for scroll button */)
+              {
+                /* Controls at the bottom (below scroll-down button, if any) */
+                do_setcursor(cursor_hand);
+              }
               else
+              {
+                /* Within the visible items, but nothing selectable */
                 do_setcursor(cursor_arrow);
+              }
             }
           }
           else
           {
-            /* No scroll buttons - must be a selector: */
-
-            /* FIXME: Also show "cursor_hand" when touching controls (stamp size, brush spacing, etc.!) (See above) -bjk 2022.01.19 */
+            /* No scroll buttons - must be a selector or control: */
 
             which =
               ((event.button.y - r_ttoolopt.h) / button_h) * 2 +
               (event.button.x - (WINDOW_WIDTH - r_ttoolopt.w)) / button_w;
 
-            if (which < num_things)
+            if (which + *thing_scroll < num_things)
+            {
+              /* A selectable item */
               do_setcursor(cursor_hand);
+            }
+            else if (which >= (buttons_tall - control_rows) * 2)
+            {
+              /* Controls at the bottom (below scroll-down button, if any) */
+              do_setcursor(cursor_hand);
+            }
             else
+            {
+              /* Within the visible items, but nothing selectable */
               do_setcursor(cursor_arrow);
+            }
           }
         }
         else if (HIT(r_canvas) && keyglobal == 0)
@@ -32209,6 +32221,35 @@ int calc_magic_control_rows(void)
   /* Add magic size controls */
   if (!disable_magic_sizes)
     r++;
+
+  return r;
+}
+
+
+/**
+ * How many rows of controls (not actual Stamp items)
+ * are to be displayed at the bottom of the selector?
+ * (Based on whether stamp controls and/or stamp rotation are
+ * disabled)
+ *
+ * @return int
+ */
+int calc_stamp_control_rows(void)
+{
+  int r;
+
+  /* Start with group changing (left/right) buttons */
+  r = 1;
+
+  /* Add Stamp controls (one row flip/mirror, another size) */
+  if (!disable_stamp_controls)
+  {
+    r += 2;
+
+    /* Add Stamp rotation controls */
+    if (!no_stamp_rotation)
+      r++;
+  }
 
   return r;
 }

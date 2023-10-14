@@ -19,6 +19,11 @@ https://tuxpaint.org/
       when stamp controls were disabled.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Ensuring mouse pointer shape changes to hand when hovering over
+      control buttons below the scroll-down arrow in the selector area
+      (e.g., stamp controls, text styles, etc.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Bulgarian
