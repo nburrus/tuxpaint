@@ -9303,7 +9303,23 @@ static void load_stamps(SDL_Surface * screen)
 #ifndef __ANDROID__
   load_stamp_dir(screen, DATA_PREFIX "stamps");
 #else
-  load_stamp_dir(screen, ASSETS_STAMPS_DIR);
+  load_stamp_dir(screen, "stamps/animals");
+  load_stamp_dir(screen, "stamps/cartoon/tux");
+  load_stamp_dir(screen, "stamps/clothes");
+  load_stamp_dir(screen, "stamps/food");
+  load_stamp_dir(screen, "stamps/hobbies");
+  load_stamp_dir(screen, "stamps/household");
+  load_stamp_dir(screen, "stamps/medical");
+  load_stamp_dir(screen, "stamps/military");
+  load_stamp_dir(screen, "stamps/naturalforces");
+  load_stamp_dir(screen, "stamps/people");
+  load_stamp_dir(screen, "stamps/plants");
+  load_stamp_dir(screen, "stamps/seasonal");
+  load_stamp_dir(screen, "stamps/space");
+  load_stamp_dir(screen, "stamps/sports");
+  load_stamp_dir(screen, "stamps/symbols");
+  load_stamp_dir(screen, "stamps/town");
+  load_stamp_dir(screen, "stamps/vehicles");
 #endif
 #ifdef __MACOS__
   load_stamp_dir(screen, "Resources/stamps");
