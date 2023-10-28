@@ -390,6 +390,7 @@ typedef struct safer_dirent
 #define wcstombs(tok, wtok, size) WideCharToMultiByte(CP_UTF8,0,wtok,-1,tok,size,NULL,NULL)
 
 extern int win32_trash(const char *path);
+extern void win32_print_version(void);
 
 #undef iswprint
 int iswprint(wchar_t wc)
@@ -30579,6 +30580,12 @@ int main(int argc, char *argv[])
   }
 #endif
 
+#ifdef WIN32
+  printf("Tux Paint Version " VER_VERSION " (" VER_DATE ")\n");
+  printf("Running on ");
+  win32_print_version();
+#endif
+  
   claim_to_be_ready();
 
   mainloop();
