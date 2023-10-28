@@ -30529,6 +30529,15 @@ int main(int argc, char *argv[])
   freopen(stdout_win32, "w", stdout);   /* redirect stdout to a file */
   freopen(stderr_win32, "w", stderr);   /* redirect stderr to a file */
 #endif
+  printf("Tux Paint Version " VER_VERSION "");
+#ifdef WIN64
+  printf("- x86_64");
+#else
+  printf("- i686");
+#endif
+  printf(" (" VER_DATE ")\n");
+  printf("Running on ");
+  win32_print_version();
 #endif
 
 #ifdef DEBUG
@@ -30580,12 +30589,6 @@ int main(int argc, char *argv[])
   }
 #endif
 
-#ifdef WIN32
-  printf("Tux Paint Version " VER_VERSION " (" VER_DATE ")\n");
-  printf("Running on ");
-  win32_print_version();
-#endif
-  
   claim_to_be_ready();
 
   mainloop();

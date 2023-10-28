@@ -8,13 +8,13 @@ void win32_print_version(void);
 void win32_print_version(void)
 {
   char *verStr;
-  unsigned int Version = 0; 
+  unsigned int Version = 0;
   unsigned int Build = 0;
-  
+
   Version = GetVersion();
-  if (Version < 0x80000000)              
+  if (Version < 0x80000000)
     Build = (DWORD)(HIWORD(Version));
-      
+
   if (IsWindows10OrGreater()) {
     if (Build < 22000){
       verStr = strdup("Windows 10");
@@ -40,12 +40,12 @@ void win32_print_version(void)
   }
 
   printf ("Microsoft %s", verStr);
-  
+
   if (IsWindowsServer()){
     printf(" Server");
   }
-  
-  if (Version < 0x80000000){              
+
+  if (Version < 0x80000000){
     printf(" (Build %d)\n", Build);
   }
 }
