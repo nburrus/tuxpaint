@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-14 00:15-0700\n"
-"PO-Revision-Date: 2023-09-08 15:30+0200\n"
+"PO-Revision-Date: 2023-10-31 06:41+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -1275,35 +1275,27 @@ msgstr ""
 
 #. Text tool instructions after changing font
 #: ../tools.h:203
-#, fuzzy, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text."
+#, c-format
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
-"texte. Presse [Entrée] ou [Tab] quand tu as fini."
+"La police a une taille de \"%1$s (%2$s)\", %3$d. Cliquez sur votre dessin et "
+"commencez à écrire. Pressez [Entrée] ou [Tab] quand aurez fini."
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
-#, fuzzy, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it, and change its "
-#| "text style."
+#, c-format
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text. By using the "
 "selector button and clicking an existing label, you can move it, edit it, "
 "and change its text style."
 msgstr ""
-"Choisis un style de texte. Clique sur ton dessin et commence à taper ton "
-"texte. Presse [Entrée] ou [Tab] quand tu as fini. En cliquant sur le bouton "
-"de sélection puis sur un texte déjà existant, tu peux le déplacer, l'éditer "
-"et changer son style."
+"La police a une taille de \"%1$s (%2$s)\", %3$d. Cliquez sur votre dessin et "
+"commencez à écrire. Pressez [Entrée] ou [Tab] quand aurez fini. En utilisant "
+"le bouton de sélection et en cliquant une étiquette existante, vous pouvez "
+"la déplacer et changer le style du texte."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2448
