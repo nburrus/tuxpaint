@@ -38,6 +38,9 @@ https://tuxpaint.org/
       AppData.
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
+    * "Foam" magic tool -- avoid crash if image data cannot be loaded.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Bulgarian

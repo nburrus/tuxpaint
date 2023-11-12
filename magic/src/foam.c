@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 20, 2023
+  Last updated: November 12, 2023
 */
 
 #include <stdio.h>
@@ -87,6 +87,11 @@ int foam_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 
   snprintf(fname, sizeof(fname), "%simages/magic/foam_data.png", api->data_directory);
   foam_data = IMG_Load(fname);
+  if (foam_data == NULL)
+  {
+    fprintf(stderr, "Cannot load %s\n", fname);
+    return (0);
+  }
 
   foam_7 = api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 4) / 4, ((api->canvas_h / FOAM_PROP) * 4) / 4, 1);
   foam_5 = api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 3) / 4, ((api->canvas_h / FOAM_PROP) * 3) / 4, 1);
@@ -94,6 +99,12 @@ int foam_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   foam_1 = api->scale(foam_data, ((api->canvas_w / FOAM_PROP) * 1) / 4, ((api->canvas_h / FOAM_PROP) * 1) / 4, 1);
 
   SDL_FreeSurface(foam_data);
+
+  if (foam_7 == NULL || foam_5 == NULL || foam_3 == NULL || foam_1 == NULL)
+  {
+    fprintf(stderr, "Cannot scale %s\n", fname);
+    return(0);
+  }
 
   return (1);
 }
