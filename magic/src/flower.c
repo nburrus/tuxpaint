@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 23, 2023
+  Last updated: November 12, 2023
 */
 
 #include <stdio.h>
@@ -130,14 +130,14 @@ int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   tmp_surf = IMG_Load(fname);
   if (tmp_surf == NULL)
   {
-    fprintf(stderr, "Cannot load %s", fname);
+    fprintf(stderr, "Cannot load %s\n", fname);
     return (0);
   }
   h = tmp_surf->h * MAX_WIDTH / tmp_surf->w;
   flower_base_full = api->scale(tmp_surf, MAX_WIDTH, h, 1);
   if (flower_base_full == NULL)
   {
-    fprintf(stderr, "Cannot scale %s", fname);
+    fprintf(stderr, "Cannot scale %s\n", fname);
     return (0);
   }
 
@@ -145,7 +145,7 @@ int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   tmp_surf = IMG_Load(fname);
   if (tmp_surf == NULL)
   {
-    fprintf(stderr, "Cannot load %s", fname);
+    fprintf(stderr, "Cannot load %s\n", fname);
     return (0);
   }
   /* N.B.: Leaf is 1/2 as wide as base & petals */
@@ -153,7 +153,7 @@ int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   flower_leaf_full = api->scale(tmp_surf, MAX_WIDTH / 2, h, 1);
   if (flower_leaf_full == NULL)
   {
-    fprintf(stderr, "Cannot scale %s", fname);
+    fprintf(stderr, "Cannot scale %s\n", fname);
     return (0);
   }
 
@@ -161,14 +161,14 @@ int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   tmp_surf = IMG_Load(fname);
   if (tmp_surf == NULL)
   {
-    fprintf(stderr, "Cannot load %s", fname);
+    fprintf(stderr, "Cannot load %s\n", fname);
     return (0);
   }
   h = tmp_surf->h * MAX_WIDTH / tmp_surf->w;
   flower_petals_full = api->scale(tmp_surf, MAX_WIDTH, h, 1);
   if (flower_petals_full == NULL)
   {
-    fprintf(stderr, "Cannot scale %s", fname);
+    fprintf(stderr, "Cannot scale %s\n", fname);
     return (0);
   }
 

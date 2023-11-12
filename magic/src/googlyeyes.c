@@ -3,7 +3,7 @@
    Draws a googly eye at the click position, and looks
    towards where you drag+release.
 
-  Last updated: April 18, 2023
+  Last updated: November 12, 2023
 */
 
 #include <stdio.h>
@@ -150,7 +150,7 @@ int googlyeyes_init(magic_api * api, Uint32 disabled_features)
 
     if (googlyeyes_img_bkgd[i] == NULL)
     {
-      fprintf(stderr, "Cannot scale bkgd to %d%%", size);
+      fprintf(stderr, "Cannot scale bkgd to %d%%\n", size);
       return (1);
     }
 
@@ -160,7 +160,7 @@ int googlyeyes_init(magic_api * api, Uint32 disabled_features)
 
     if (googlyeyes_img_pupil[i] == NULL)
     {
-      fprintf(stderr, "Cannot scale pupil to %d%%", size);
+      fprintf(stderr, "Cannot scale pupil to %d%%\n", size);
       return (1);
     }
 
@@ -170,7 +170,7 @@ int googlyeyes_init(magic_api * api, Uint32 disabled_features)
 
     if (googlyeyes_img_reflection[i] == NULL)
     {
-      fprintf(stderr, "Cannot scale reflection to %d%%", size);
+      fprintf(stderr, "Cannot scale reflection to %d%%\n", size);
       return (1);
     }
   }
