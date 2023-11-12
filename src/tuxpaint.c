@@ -21381,7 +21381,11 @@ static void load_magic_plugins(void)
     num_magics[i] = 0;
   num_magics_total = 0;
 
+#ifdef WIN32
+  for (plc = 0; plc < MAGIC_PLACE_LOCAL; plc++)
+#else
   for (plc = 0; plc < NUM_MAGIC_PLACES; plc++)
+#endif
   {
     if (plc == MAGIC_PLACE_GLOBAL)
     {
