@@ -38,7 +38,8 @@ https://tuxpaint.org/
       AppData.
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
-    * "Foam" magic tool -- avoid crash if image data cannot be loaded.
+    * Avoid crash in some Magic tools if image data cannot be loaded.
+      (Foam, Fretwork, Rails)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:

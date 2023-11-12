@@ -3,7 +3,7 @@
 
   Draw train tracks.
 
-  Last updated: April 19, 2023
+  Last updated: November 12, 2023
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -121,6 +121,23 @@ int rails_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   rails_three = IMG_Load(rails_images[1]);
   rails_four = IMG_Load(rails_images[2]);
   rails_corner = IMG_Load(rails_images[3]);
+
+  if (rails_one == NULL) {
+    fprintf(stderr, "Can't load image %s\n", rails_images[0]);
+    return(0);
+  }
+  if (rails_three == NULL) {
+    fprintf(stderr, "Can't load image %s\n", rails_images[1]);
+    return(0);
+  }
+  if (rails_four == NULL) {
+    fprintf(stderr, "Can't load image %s\n", rails_images[2]);
+    return(0);
+  }
+  if (rails_corner == NULL) {
+    fprintf(stderr, "Can't load image %s\n", rails_images[3]);
+    return(0);
+  }
 
   img_w = rails_one->w;
   img_h = rails_one->h;

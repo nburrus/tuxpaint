@@ -1,7 +1,7 @@
 /*
   Draws fretwork
 
-  Last updated: April 19, 2023
+  Last updated: November 12, 2023
 */
 
 #include "tp_magic_api.h"
@@ -161,6 +161,23 @@ int fretwork_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   fretwork_three_back = IMG_Load(fretwork_images[1]);
   fretwork_four_back = IMG_Load(fretwork_images[2]);
   fretwork_corner_back = IMG_Load(fretwork_images[3]);
+
+  if (fretwork_one == NULL || fretwork_one_back == NULL) {
+    fprintf(stderr, "Cannot load %s\n", fretwork_images[0]);
+    return(0);
+  }
+  if (fretwork_three == NULL || fretwork_three_back == NULL) {
+    fprintf(stderr, "Cannot load %s\n", fretwork_images[1]);
+    return(0);
+  }
+  if (fretwork_four == NULL || fretwork_four_back == NULL) {
+    fprintf(stderr, "Cannot load %s\n", fretwork_images[2]);
+    return(0);
+  }
+  if (fretwork_corner == NULL || fretwork_corner_back == NULL) {
+    fprintf(stderr, "Cannot load %s\n", fretwork_images[3]);
+    return(0);
+  }
 
   img_w = fretwork_one->w;
   img_h = fretwork_one->h;
