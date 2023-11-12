@@ -30524,8 +30524,8 @@ int main(int argc, char *argv[])
 #ifndef DEBUG
   char stdout_win32[255], stderr_win32[255];
 
-  safe_snprintf(stdout_win32, 255, "%s/stdout.txt", savedir);
-  safe_snprintf(stderr_win32, 255, "%s/stderr.txt", savedir);
+  safe_snprintf(stdout_win32, 255, "%s/stdout.txt", GetDefaultSaveDir("TuxPaint"));
+  safe_snprintf(stderr_win32, 255, "%s/stderr.txt", GetDefaultSaveDir("TuxPaint"));
   freopen(stdout_win32, "w", stdout);   /* redirect stdout to a file */
   freopen(stderr_win32, "w", stderr);   /* redirect stderr to a file */
 #endif
