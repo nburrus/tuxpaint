@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.31
+                                version 0.9.32
 
                      Un programme simple pour les enfants
 
@@ -102,38 +102,16 @@ logiciel sous GPL.)
 
 Voir COPYING.txt pour le texte complet de la licence GPL.
 
-D. Qu'y a-t-il de neuf dans la version 0.9.31 de Tux Paint ?
+D. Qu'y a-t-il de neuf dans la version 0.9.32 de Tux Paint ?
 
-Gomme floue
-    Des gommes aux contours flous ont été rajoutées à l'outil Gomme
-
-Nouveaux outils Magie
-    Boucles, Ruban, Doux et Gribouillis
-
-Créer des modèles à partir de la boîte de dialogue Ouvrir
-    Les dessins sauvegardés peuvent être convertis en Modèles (qui sont
-    utilisés pour de nouveaux dessins) grâce à une nouvelle option dans la
-    boîte de dialogue 'Ouvrir'.( Cette possibilité peut être désactivée en
-    utilisant "notemplateexport" l'option de simplification.)
-
-La police de l'interface utilisateur peut être remplacée
-    La police utilisée pour l'interface utilisateur (étiquettes des boutons,
-    dialogues pop-up et instructions) peut être remplacée ("DejaVu Sans").(Voir
-    l'"uifont" option de configuration. Utilisez "--listfonts" pour voir la
-    liste des polices disponibles.)
-
-L'effacement de fichier peut être désactivé
-
-    Les contrôles pour effacer le travail sauvegardé — dessins sauvegardés (via
-    la boîte de dialogue Ouvrir) et les modèles exportés (via la boîte de
-    dialogue Nouveau) — peuvent être désactivés. Voir l' "noerase" option de
-    configuration.)
-
-Documentation sur "Contrôler Tux Paint"
-
-    Un bref aperçu pour savoir comment Tux Paint peut être controllé — souris,
-    tablette, écran tactile, joystick et clavier — a été ajouté au document
-    README.
+Project-Id-Version: tuxpaint-docs Report-Msgid-Bugs-To: PO-Revision-Date:
+    2023-09-07 16:13+0200 Last-Translator: Chion Jacques Language-Team:
+    Language: fr MIME-Version: 1.0 Content-Type: text/plain; charset=UTF-8
+    Content-Transfer-Encoding: 8bit X-Generator: Poedit 3.2.2
+    Project-Id-Version: tuxpaint-docs Report-Msgid-Bugs-To: PO-Revision-Date:
+    2023-09-07 16:13+0200 Last-Translator: Chion Jacques Language-Team:
+    Language: fr MIME-Version: 1.0 Content-Type: text/plain; charset=UTF-8
+    Content-Transfer-Encoding: 8bit X-Generator: Poedit 3.2.2
 
 
 Voir CHANGES.txt pour la liste complète des changements.

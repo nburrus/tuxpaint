@@ -1,5 +1,5 @@
                                    Tux Paint
-                               バージョン 0.9.31
+                               バージョン 0.9.32
 
                     子供向けのシンプルなお絵かきプログラム
 
@@ -95,34 +95,18 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 
 ライセンスの全文は、COPYING.txtをお読みください。
 
-D. Tux Paint バージョン 0.9.31 での変更点
+D. Tux Paint バージョン 0.9.32 での変更点
 
-ぼかし消しゴム
-    消しゴムツールに端がぼやけた丸い消しゴムが追加されました
-
-「まほう」ツールの追加
-    「ループ」「リボン」「なめらかなせん」「くしゃくしゃ」
-
-独自テンプレートの作成機能
-    「ひらく」ダイアログの新しいオプションにより、保存した作品をテンプレートに
-    変換し、新規に絵を作成する際に使用ることができます。(この機能は簡略化オプ
-    ション "notemplateexport" を使用して無効にすることができます)。
-
-ユーザーインターフェースフォントの指定
-    ボタンラベル、ポップアップダイアログ、操作ガイドなどのユーザーインターフェ
-    イスに使用されるフォントを変更することができます。("uifont"オプションを参
-    照。利用可能なフォントは"-listfonts"オプションで確認できます)
-
-削除の無効化
-
-    保存した作品や自作のテンプレートを削除するボタンを無効にすることができま
-    す。(設定オプション"noerase"を参照)
-
-Tux Paint の操作の説明を追加
-
-    マウスやタブレット、タッチスクリーン、ジョイスティック、キーボードなど、各
-    種のデバイスを用いた Tux Paint の操作方法の概要が README ドキュメントに追加
-    されました。
+Project-Id-Version: tuxpaint-docs Report-Msgid-Bugs-To: PO-Revision-Date:
+    2023-07-15 18:16+0900 Last-Translator: Language-Team: Japanese Language: ja
+    MIME-Version: 1.0 Content-Type: text/plain; charset=UTF-8
+    Content-Transfer-Encoding: 8bit Plural-Forms: nplurals=1; plural=0;
+    X-Generator: Poedit 3.3.2
+    Project-Id-Version: tuxpaint-docs Report-Msgid-Bugs-To: PO-Revision-Date:
+    2023-07-15 18:16+0900 Last-Translator: Language-Team: Japanese Language: ja
+    MIME-Version: 1.0 Content-Type: text/plain; charset=UTF-8
+    Content-Transfer-Encoding: 8bit Plural-Forms: nplurals=1; plural=0;
+    X-Generator: Poedit 3.3.2
 
 
 全ての変更点については、CHANGES.txt をお読みください。

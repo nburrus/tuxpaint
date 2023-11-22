@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.31
+                                version 0.9.32
 
                      A simple drawing program for children
 
@@ -97,36 +97,9 @@ parts of the program in their own GPL'd software.)
 
 See COPYING.txt for the full text of the GPL license.
 
-D. What's New in Tux Paint version 0.9.31?
+D. What's New in Tux Paint version 0.9.32?
 
-Fuzzy Erasers
-    Fuzzy-edged round erasers have been added to the Eraser tool
 
-New Magic tools
-    Loops, Ribbon, Smooth, and Squiggles
-
-Create templates from Open dialog
-    Saved drawings can be turned into templates (used to make new drawings) via
-    a new option in the Open dialog. (This feature may be deactivated using the
-    "notemplateexport" simplification option.)
-
-User interface font may be overridden
-    The font used for the user interface (button labels, dialog pop-ups, and
-    instructions) can be overridden from its default ("DejaVu Sans"). (See the
-    "uifont" configuration option. Use "--listfonts" to see a list of available
-    fonts.)
-
-File Erase may be disabled
-
-    Controls to erase saved work — saved drawings (via the Open dialog) and
-    exported templates (via the New dialog) — can be disabled. (See the
-    "noerase" configuration option.)
-
-"Controlling Tux Paint" documentation
-
-    A brief overview of how Tux Paint can be controlled — mouse, tablet,
-    touchscreen, joystick, and keyboard — has been added to the README
-    documentation.
 
 
 See CHANGES.txt for the complete list of changes.
