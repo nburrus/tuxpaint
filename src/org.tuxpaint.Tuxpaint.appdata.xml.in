@@ -43,6 +43,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.9.32" date="2023-11-21">
+      <description>
+        <p>TBD<!-- FIXME --></p>
+      </description>
+    </release>
     <release version="0.9.31" date="2023-07-20">
       <description>
         <p>New Magic tools: Loops, Ribbon, Smooth, and Squiggles.</p>

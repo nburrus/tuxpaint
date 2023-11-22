@@ -9,7 +9,7 @@
 
 # The version number, for release:
 
-VER_VERSION:=0.9.31
+VER_VERSION:=0.9.32
 
 # We are always SDL2 now, so don't need "-sdl2"
 VER_FLAVOR:=""
