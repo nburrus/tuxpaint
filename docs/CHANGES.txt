@@ -58,6 +58,11 @@ https://tuxpaint.org/
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
 
+  * Ports & Building:
+    -----------------
+    * Don't pollute documentation folder ($DOC_PREFIX) with build scripts.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
 2023.July.20 (0.9.31)
   * New Magic Tools:
     ----------------

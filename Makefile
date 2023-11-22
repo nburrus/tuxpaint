@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - July 20, 2023
+# June 14, 2002 - November 21, 2023
 
 
 # The version number, for release:
@@ -625,7 +625,7 @@ install:	install-bin install-data install-doc \
 		echo "you can type the command 'tuxpaint' to run the program!!!"; \
 		echo; \
 		echo "For more information, see the 'tuxpaint' man page,"; \
-		echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)/README.txt"; \
+		echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)/[locale]/README.txt"; \
 	fi
 	@echo
 	@echo "Visit Tux Paint's home page for more information, updates"
@@ -1109,6 +1109,7 @@ install-doc:
 	@cp -R docs/* $(DOC_PREFIX)
 	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
 	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
+	@rm $(DOC_PREFIX)/*.sh $(DOC_PREFIX)/*.php # Remove build scripts
 	@echo
 	@echo "...Installing English Magic tool docs..."
 	@install -d $(DOC_PREFIX)/en/magic-docs
