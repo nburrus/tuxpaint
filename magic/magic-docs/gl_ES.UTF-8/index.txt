@@ -67,6 +67,8 @@ Picture Warps
 
 Painting
 
+  * 1-Point Draw
+  * 1-Point Select
   * Bricks
   * Calligraphy
   * Confetti
@@ -121,5 +123,5 @@ Artistic
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.31
+                               Tux Paint 0.9.32
 

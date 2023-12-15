@@ -8,7 +8,9 @@ Click and drag from the corners to change the perspective of your picture.
 
 This tool is operated in a freehand fashion.
 
+See also: 1-Point Draw.
+
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.31
+                               Tux Paint 0.9.32
 

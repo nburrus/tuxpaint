@@ -67,6 +67,8 @@ Déformations de l'image
 
 Peindre
 
+  * 1-Point Draw
+  * 1-Point Select
   * Arc-en-ciel
   * Arc-en-ciel
   * Arc-en-ciel doux
@@ -121,5 +123,5 @@ Artistique
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.31
+                               Tux Paint 0.9.32
 

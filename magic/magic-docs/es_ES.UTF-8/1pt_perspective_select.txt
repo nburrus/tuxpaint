@@ -1,0 +1,17 @@
+                    Tux Paint "Magic" Tool: 1-Point Select
+
+                                Group: Painting
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+Click to position the vanishing point that will be used with the "1-Point Draw"
+tool.
+
+This tool is operated with a single click.
+
+See also: 1-Point Draw.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.32
+

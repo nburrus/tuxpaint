@@ -13,5 +13,5 @@ Voir aussi : Mosaïque hexagonale, Mosaïque carrée, & Mosaïque.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.31
+                               Tux Paint 0.9.32
 

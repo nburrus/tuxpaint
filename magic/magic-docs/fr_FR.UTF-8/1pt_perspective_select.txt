@@ -1,0 +1,17 @@
+                  Outil 'Magie' de Tux Paint : 1-Point Select
+
+                                Groupe: Peindre
+
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+
+Click to position the vanishing point that will be used with the "1-Point Draw"
+tool.
+
+Cet outil travaille avec un seul clic.
+
+Voir aussi : 1-Point Draw.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.32
+
