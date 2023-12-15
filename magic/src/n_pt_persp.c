@@ -1,8 +1,11 @@
 /* n_pt_persp.c
 
    1-, 2-, and 3-point perspective line-drawing tools.
+   (Work-in-progress; only handles 1-point at the moment)
 
-   December 12, 2023 - December 14, 2023
+   by Bill Kendrick <bill@newbreedsoftware.com>
+
+   December 12, 2023 - December 15, 2023
 */
 
 
@@ -282,15 +285,35 @@ void n_pt_persp_drag(magic_api * api, int which,
                      int old_x, int old_y, int x, int y,
                      SDL_Rect * update_rect)
 {
+  /* Draw the line (preview) */
   n_pt_persp_work(api, which, canvas, x, y, update_rect, 1);
 
-  api->line((void *) api, which, canvas, NULL,
-            0, y, canvas->w - 1, y, 6,
-            n_pt_persp_line_xor_callback);
+  /* Show some guides */
+  if (which == TOOL_1PT_DRAW) {
+    /* 1-point perspective */
 
-  api->line((void *) api, which, canvas, NULL,
-            x, 0, x, canvas->h - 1, 6,
-            n_pt_persp_line_xor_callback);
+    /* Horizontal line (horizon) */
+    if (y != a1_pt_y) {
+      api->line((void *) api, which, canvas, NULL,
+                0, a1_pt_y, canvas->w - 1, a1_pt_y, 12,
+                n_pt_persp_line_xor_callback);
+    }
+
+    /* Horizontal line (from cursor) */
+    api->line((void *) api, which, canvas, NULL,
+              0, y, canvas->w - 1, y, 6,
+              n_pt_persp_line_xor_callback);
+
+    /* Vertical line */
+    api->line((void *) api, which, canvas, NULL,
+              x, 0, x, canvas->h - 1, 6,
+              n_pt_persp_line_xor_callback);
+
+    /* Diagonal line to the vanishing point */
+    api->line((void *) api, which, canvas, NULL,
+              x, y, a1_pt_x, a1_pt_y, 12,
+              n_pt_persp_line_xor_callback);
+  }
 }
 
 #define SNAP 10
@@ -301,7 +324,7 @@ void n_pt_persp_work(magic_api * api, int which,
 {
   int portion_x1, portion_y1, portion_x2, portion_y2, portion_w, portion_h;
   int x1, y1, x2, y2;
-  float slope;
+  float slope, slope2;
   SDL_Rect area_rect;
 
   if (n_pt_persp_snapshot == NULL)
@@ -312,6 +335,8 @@ void n_pt_persp_work(magic_api * api, int which,
   x1 = y1 = x2 = y2 = 0;
 
   if (which == TOOL_1PT_DRAW) {
+    /* 1-point perspective */
+
     x1 = line_start_x;
     y1 = line_start_y;
 
@@ -325,15 +350,36 @@ void n_pt_persp_work(magic_api * api, int which,
       y2 = y1;
     } else {
       /* Diagonal */
+
       slope = ((float) y1 - (float) a1_pt_y) / ((float) x1 - (float) a1_pt_x);
-      // FIXME printf("Slope of %d - %d / %d - %d = %.5f\n", y1, a1_pt_y, x1, a1_pt_x, slope);
       x2 = x;
       y2 = line_start_y + (slope * (x - line_start_x));
+
+      /* Don't go past our cursor's Y */
+      if ((y < line_start_y && y2 < y) ||
+          (y > line_start_y && y2 > y)) {
+        if (slope != 0.0) {
+          y2 = y;
+          x2 = ((y - line_start_y) / slope) + line_start_x;
+        }
+      }
+
+      /* Snap to horizontal if cursor is on the wrong side */
+      slope2 = ((float) line_start_y - (float) y) / ((float) line_start_x - (float) x);
+      if ((slope2 > 0.00 && slope < 0.00) ||
+          (slope2 < 0.00 && slope > 0.00)) {
+        x2 = x;
+        y2 = y1;
+      }
     }
   } else if (which == TOOL_2PT_DRAW) {
+    /* 2-point perspective */
+
     /* FIXME */
     return;
   } else if (which == TOOL_3PT_DRAW) {
+    /* 3-point perspective */
+
     /* FIXME */
     return;
   }
@@ -369,7 +415,11 @@ void n_pt_persp_work(magic_api * api, int which,
 
   SDL_BlitSurface(n_pt_persp_snapshot, NULL /* FIXME &area_rect */, canvas, NULL /* FIXME &area_rect */);
 
+  /* Draw the line */
+
   if (xor) {
+    /* Still moving; use XOR */
+
     api->line((void *) api, which, canvas, NULL,
               x1, y1, x2, y2, 3,
               n_pt_persp_line_xor_callback);
@@ -379,6 +429,8 @@ void n_pt_persp_work(magic_api * api, int which,
     update_rect->w = portion_w + 1;
     update_rect->h = portion_h + 1;
   } else {
+    /* Released; draw the line for real */
+
     api->line((void *) api, which, canvas, NULL,
               x1, y1, x2, y2, 1,
               n_pt_persp_line_callback);
@@ -400,12 +452,11 @@ void n_pt_persp_work(magic_api * api, int which,
 }
 
 
-/* Affect the canvas on release: */
-
 void n_pt_persp_release(magic_api * api, int which,
                         SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
                         SDL_Rect * update_rect)
 {
+  /* Draw the line (for real) */
   n_pt_persp_work(api, which, canvas, x, y, update_rect, 0);
 }
 
@@ -482,6 +533,8 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
   float slope;
 
   if (which == TOOL_1PT_SELECT) {
+    /* 1-point perspective */
+
     n_pt_persp_draw_one_point(api, canvas, a1_pt_x, a1_pt_y, 0);
 
     for (l = 0; l < 5; l++) {
@@ -521,13 +574,21 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
       }
     }
   } else if (which == TOOL_2PT_SELECT) {
+    /* 2-point perspective */
+
     for (i = 0; i < 2; i++) {
       n_pt_persp_draw_one_point(api, canvas, a2_pt_x[i], a2_pt_y[i], i);
     }
+
+    /* FIXME: Draw a grid */
   } else if (which == TOOL_3PT_SELECT) {
+    /* 2-point perspective */
+
     for (i = 0; i < 3; i++) {
       n_pt_persp_draw_one_point(api, canvas, a3_pt_x[i], a3_pt_y[i], i);
     }
+
+    /* FIXME: Draw a grid */
   }
 }
 
