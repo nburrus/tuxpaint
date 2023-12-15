@@ -97,16 +97,13 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 
 D. Tux Paint バージョン 0.9.32 での変更点
 
-Project-Id-Version: tuxpaint-docs Report-Msgid-Bugs-To: PO-Revision-Date:
-    2023-07-15 18:16+0900 Last-Translator: Language-Team: Japanese Language: ja
-    MIME-Version: 1.0 Content-Type: text/plain; charset=UTF-8
-    Content-Transfer-Encoding: 8bit Plural-Forms: nplurals=1; plural=0;
-    X-Generator: Poedit 3.3.2
-    Project-Id-Version: tuxpaint-docs Report-Msgid-Bugs-To: PO-Revision-Date:
-    2023-07-15 18:16+0900 Last-Translator: Language-Team: Japanese Language: ja
-    MIME-Version: 1.0 Content-Type: text/plain; charset=UTF-8
-    Content-Transfer-Encoding: 8bit Plural-Forms: nplurals=1; plural=0;
-    X-Generator: Poedit 3.3.2
+1-point Perspective (vanishing point) Magic tool
+    A pair of tools that allow you to set a vanishing point, and then draw
+    lines in 1-point perspective.
+
+Font details shown when selected
+    The name and size of the selected font are shown when using the Text and
+    Label tools.
 
 
 全ての変更点については、CHANGES.txt をお読みください。

@@ -100,16 +100,13 @@ Consulte o texto completo da licenza GPL en COPYING.txt.
 
 D. What's New in Tux Paint version 0.9.32?
 
-Project-Id-Version: unnamed project Report-Msgid-Bugs-To: PO-Revision-Date:
-    2021-06-02 11:52+0200 Last-Translator: Miguel Anxo Bouzada Language-Team:
-    Galego Language: gl MIME-Version: 1.0 Content-Type: text/plain; charset=
-    UTF-8 Content-Transfer-Encoding: 8bit X-Generator: Poedit 2.4.2
-    Plural-Forms: nplurals=2; plural=(n != 1);
-    Project-Id-Version: unnamed project Report-Msgid-Bugs-To: PO-Revision-Date:
-    2021-06-02 11:52+0200 Last-Translator: Miguel Anxo Bouzada Language-Team:
-    Galego Language: gl MIME-Version: 1.0 Content-Type: text/plain; charset=
-    UTF-8 Content-Transfer-Encoding: 8bit X-Generator: Poedit 2.4.2
-    Plural-Forms: nplurals=2; plural=(n != 1);
+1-point Perspective (vanishing point) Magic tool
+    A pair of tools that allow you to set a vanishing point, and then draw
+    lines in 1-point perspective.
+
+Font details shown when selected
+    The name and size of the selected font are shown when using the Text and
+    Label tools.
 
 
 See CHANGES.txt for the complete list of changes.
