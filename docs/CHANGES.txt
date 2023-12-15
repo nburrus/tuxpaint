@@ -7,6 +7,13 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2023.December.14 (0.9.32)
+  * New Magic Tools:
+    ----------------
+    * WIP - 1-point Perspective (vanishing point)
+      Choose a vanishing point, and then draw lines that always
+      point towards it, or are vertical or horizontal.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Improvements to "Text" & "Label" tools:
     ---------------------------------------
     * The name and size of the chosen font is shown in the instructions
