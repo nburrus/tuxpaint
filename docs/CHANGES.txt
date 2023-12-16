@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.December.14 (0.9.32)
+2023.December.15 (0.9.32)
   * New Magic Tools:
     ----------------
     * WIP - 1-point Perspective (vanishing point)
@@ -67,11 +67,10 @@ https://tuxpaint.org/
 
   * Starter and Template Improvements
     ---------------------------------
-    * Small transparent edge to Nagasaki to avoid dark smears
-      Pere Pujal i Carabantes <perepujal@gmail.com>
-
-    * Arranging a leaf on Frame Flowers, and adding transparency
-      on its ouside.
+    * Adjustments to avoid smearing/etc.
+      + Nagasaki
+      + Flower Frame (also arrange a leaf)
+      + USA Map
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
   * Ports & Building:
