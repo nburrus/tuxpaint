@@ -43,9 +43,10 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.32" date="2023-11-21">
+    <release version="0.9.32" date="2023-12-17">
       <description>
-        <p>TBD<!-- FIXME --></p>
+        <p>New Magic tool: 1-point Perspective (vanishing point) line drawing tool.</p>
+        <p>Font name and size shown when selecting fonts in Text and Label tools.</p>
       </description>
     </release>
     <release version="0.9.31" date="2023-07-20">
