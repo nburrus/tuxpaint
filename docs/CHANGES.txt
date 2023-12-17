@@ -36,6 +36,10 @@ https://tuxpaint.org/
       when stamp controls were disabled.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Avoid potential crash when choosing rainbow palette Color Picker (HSV)
+      from "New" dialog.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Ensuring mouse pointer shape changes to hand when hovering over
       control buttons below the scroll-down arrow in the selector area
       (e.g., stamp controls, text styles, etc.)

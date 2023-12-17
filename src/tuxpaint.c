@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 14, 2023
+  June 14, 2002 - December 17, 2023
 */
 
 #include "platform.h"
@@ -24090,7 +24090,7 @@ static int do_color_picker(int prev_color)
   int color_picker_left, color_picker_top;
   int color_picker_val_left, color_picker_val_top;
   int prev_color_left, prev_color_top;
-  int pipette_left, pipette_top;
+  int picker_left, picker_top;
   int mixer_left, mixer_top;
   int back_left, back_top, done_left, done_top;
   SDL_Rect color_example_dest;
@@ -24254,7 +24254,7 @@ static int do_color_picker(int prev_color)
   prev_color_left = r_final.x + r_final.w - (img_back->w + 2) * 3;
   prev_color_top = color_picker_top + img_color_picker->h - (img_back->h + 2) * 2;
 
-  if (prev_color != -1 && prev_color < NUM_DEFAULT_COLORS)
+  if (prev_color != -1 && prev_color < NUM_COLORS)
   {
     dest.x = prev_color_left;
     dest.y = prev_color_top;
@@ -24265,20 +24265,20 @@ static int do_color_picker(int prev_color)
   }
 
 
-  /* (Pipette) */
+  /* (Picker) */
 
-  pipette_left = r_final.x + r_final.w - (img_back->w + 2) * 2;
-  pipette_top = color_picker_top + img_color_picker->h - (img_back->h + 2) * 2;
+  picker_left = r_final.x + r_final.w - (img_back->w + 2) * 2;
+  picker_top = color_picker_top + img_color_picker->h - (img_back->h + 2) * 2;
 
-  dest.x = pipette_left;
-  dest.y = pipette_top;
+  dest.x = picker_left;
+  dest.y = picker_top;
   dest.w = img_back->w;
   dest.h = img_back->h;
 
-  draw_color_grab_btn(dest, NUM_DEFAULT_COLORS);
+  draw_color_grab_btn(dest, COLOR_PICKER);
 
-  dest.x = pipette_left + (img_back->w - img_color_sel->w) / 2;
-  dest.y = pipette_top + (img_back->h - img_color_sel->h) / 2;
+  dest.x = picker_left + (img_back->w - img_color_sel->w) / 2;
+  dest.y = picker_top + (img_back->h - img_color_sel->h) / 2;
 
   SDL_BlitSurface(img_color_sel, NULL, screen, &dest);
 
@@ -24293,7 +24293,7 @@ static int do_color_picker(int prev_color)
   dest.w = img_back->w;
   dest.h = img_back->h;
 
-  draw_color_grab_btn(dest, NUM_DEFAULT_COLORS + 2);
+  draw_color_grab_btn(dest, COLOR_MIXER);
 
   dest.x = mixer_left + (img_back->w - img_color_mix->w) / 2;
   dest.y = mixer_top + (img_back->h - img_color_mix->h) / 2;
@@ -24469,11 +24469,11 @@ static int do_color_picker(int prev_color)
                   event.button.x < prev_color_left + img_back->w &&
                   event.button.y >= prev_color_top &&
                   event.button.y < prev_color_top + img_back->h &&
-                  prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) ||
-                 (event.button.x >= pipette_left &&
-                  event.button.x < pipette_left + img_back->w &&
-                  event.button.y >= pipette_top &&
-                  event.button.y < pipette_top + img_back->h) ||
+                  prev_color != -1 && prev_color < NUM_COLORS) ||
+                 (event.button.x >= picker_left &&
+                  event.button.x < picker_left + img_back->w &&
+                  event.button.y >= picker_top &&
+                  event.button.y < picker_top + img_back->h) ||
                  (event.button.x >= mixer_left &&
                   event.button.x < mixer_left + img_back->w &&
                   event.button.y >= mixer_top && event.button.y < mixer_top + img_back->h))
@@ -24488,17 +24488,17 @@ static int do_color_picker(int prev_color)
             /* Switch to the chosen bucket color */
             c = prev_color;
           }
-          else if (event.button.x >= pipette_left &&
-                   event.button.x < pipette_left + img_back->w &&
-                   event.button.y >= pipette_top && event.button.y < pipette_top + img_back->h)
+          else if (event.button.x >= picker_left &&
+                   event.button.x < picker_left + img_back->w &&
+                   event.button.y >= picker_top && event.button.y < picker_top + img_back->h)
           {
-            /* Pipette */
-            c = NUM_DEFAULT_COLORS;
+            /* Picker */
+            c = COLOR_PICKER;
           }
           else
           {
             /* Mixer */
-            c = NUM_DEFAULT_COLORS + 2;
+            c = COLOR_MIXER;
           }
 
           /* Convert the chosen color to HSV & reposition crosshairs */
@@ -24630,11 +24630,11 @@ static int do_color_picker(int prev_color)
                       event.button.x < prev_color_left + img_back->w &&
                       event.button.y >= prev_color_top &&
                       event.button.y < prev_color_top + img_back->h &&
-                      prev_color != -1 && prev_color < NUM_DEFAULT_COLORS) ||
-                     (event.button.x >= pipette_left &&
-                      event.button.x < pipette_left + img_back->w &&
-                      event.button.y >= pipette_top &&
-                      event.button.y < pipette_top + img_back->h) ||
+                      prev_color != -1 && prev_color < NUM_COLORS) ||
+                     (event.button.x >= picker_left &&
+                      event.button.x < picker_left + img_back->w &&
+                      event.button.y >= picker_top &&
+                      event.button.y < picker_top + img_back->h) ||
                      (event.button.x >= mixer_left &&
                       event.button.x < mixer_left + img_back->w &&
                       event.button.y >= mixer_top && event.button.y < mixer_top + img_back->h))
