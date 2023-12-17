@@ -5,7 +5,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 15, 2023
+   December 12, 2023 - December 17, 2023
 */
 
 
@@ -81,22 +81,47 @@ int a3_pt_x[3], a3_pt_y[3], a3_pt_cur;
 int line_start_x, line_start_y;
 
 
-void n_pt_persp_drag(magic_api * api, int which, SDL_Surface * canvas,
-  SDL_Surface * snapshot, int old_x, int old_y, int x, int y,
-  SDL_Rect * update_rect);
-
+/* Function prototypes: */
+Uint32 n_pt_persp_api_version(void);
+int n_pt_persp_init(magic_api * api, Uint32 disabled_features);
+int n_pt_persp_get_tool_count(magic_api * api);
+SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which);
+char *n_pt_persp_get_name(magic_api * api, int which);
+int n_pt_persp_get_group(magic_api * api, int which);
+char *n_pt_persp_get_description(magic_api * api, int which, int mode);
+int n_pt_persp_requires_colors(magic_api * api, int which);
+int n_pt_persp_modes(magic_api * api, int which);
+Uint8 n_pt_persp_accepted_sizes(magic_api * api, int which, int mode);
+Uint8 n_pt_persp_default_size(magic_api * api, int which, int mode);
+void n_pt_persp_shutdown(magic_api * api);
+void n_pt_persp_click(magic_api * api, int which, int mode,
+                      SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
+                      SDL_Rect * update_rect);
+void n_pt_persp_drag(magic_api * api, int which,
+                     SDL_Surface * canvas, SDL_Surface * snapshot,
+                     int old_x, int old_y, int x, int y,
+                     SDL_Rect * update_rect);
 void n_pt_persp_work(magic_api * api, int which,
                      SDL_Surface * canvas, int x, int y,
                      SDL_Rect * update_rect, int xor);
-
+void n_pt_persp_release(magic_api * api, int which,
+                        SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
+                        SDL_Rect * update_rect);
+void n_pt_persp_set_color(magic_api * api, int which, SDL_Surface * canvas,
+                          SDL_Surface * snapshot, Uint8 r, Uint8 g, Uint8 b,
+                          SDL_Rect * update_rect);
+void n_pt_persp_set_size(magic_api * api, int which, int mode,
+                         SDL_Surface * canvas, SDL_Surface * last,
+                         Uint8 size, SDL_Rect * update_rect);
 void n_pt_persp_line_xor_callback(void *pointer, int which, SDL_Surface * canvas,
-  SDL_Surface * snapshot, int x, int y);
-
+                                  SDL_Surface * snapshot, int x, int y);
 void n_pt_persp_line_callback(void *pointer, int which, SDL_Surface * canvas,
-  SDL_Surface * snapshot, int x, int y);
-
+                              SDL_Surface * snapshot, int x, int y);
+void n_pt_persp_switchin(magic_api * api, int which, int mode,
+                      SDL_Surface * canvas);
+void n_pt_persp_switchout(magic_api * api, int which, int mode,
+                       SDL_Surface * canvas);
 void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas);
-
 void n_pt_persp_draw_one_point(magic_api * api, SDL_Surface * canvas, int x, int y, int i);
 
 
@@ -106,7 +131,7 @@ Uint32 n_pt_persp_api_version(void)
 }
 
 
-int n_pt_persp_init(magic_api * api, Uint32 disabled_features)
+int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 {
   int i;
   char filename[1024];
@@ -154,7 +179,7 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features)
 }
 
 
-int n_pt_persp_get_tool_count(magic_api * api)
+int n_pt_persp_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return 2; // FIXME
   //return (NUM_TOOLS);
@@ -172,25 +197,25 @@ SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which)
 }
 
 
-char *n_pt_persp_get_name(magic_api * api, int which)
+char *n_pt_persp_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   return (strdup(gettext(tool_names[which])));
 }
 
 
-int n_pt_persp_get_group(magic_api * api, int which)
+int n_pt_persp_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MAGIC_TYPE_PAINTING);
 }
 
 
-char *n_pt_persp_get_description(magic_api * api, int which, int mode)
+char *n_pt_persp_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext(tool_descriptions[which])));
 }
 
 
-int n_pt_persp_requires_colors(magic_api * api, int which)
+int n_pt_persp_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW)
     return 1;
@@ -199,7 +224,7 @@ int n_pt_persp_requires_colors(magic_api * api, int which)
 }
 
 
-int n_pt_persp_modes(magic_api * api, int which)
+int n_pt_persp_modes(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW)
     return MODE_PAINT;
@@ -207,7 +232,7 @@ int n_pt_persp_modes(magic_api * api, int which)
     return MODE_FULLSCREEN;
 }
 
-Uint8 n_pt_persp_accepted_sizes(magic_api * api, int which, int mode)
+Uint8 n_pt_persp_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW)
     return 4;
@@ -216,13 +241,14 @@ Uint8 n_pt_persp_accepted_sizes(magic_api * api, int which, int mode)
 }
 
 
-Uint8 n_pt_persp_default_size(magic_api * api, int which, int mode)
+Uint8 n_pt_persp_default_size(magic_api * api ATTRIBUTE_UNUSED,
+                              int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
 
-void n_pt_persp_shutdown(magic_api * api)
+void n_pt_persp_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   int i;
 
@@ -238,7 +264,7 @@ void n_pt_persp_shutdown(magic_api * api)
 }
 
 
-void n_pt_persp_click(magic_api * api, int which, int mode,
+void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                       SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
                       SDL_Rect * update_rect)
 {
@@ -281,9 +307,9 @@ void n_pt_persp_click(magic_api * api, int which, int mode,
 
 /* Affect the canvas on drag: */
 void n_pt_persp_drag(magic_api * api, int which,
-                     SDL_Surface * canvas, SDL_Surface * snapshot,
-                     int old_x, int old_y, int x, int y,
-                     SDL_Rect * update_rect)
+                     SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                     int old_x ATTRIBUTE_UNUSED, int old_y ATTRIBUTE_UNUSED,
+                     int x, int y, SDL_Rect * update_rect)
 {
   /* Draw the line (preview) */
   n_pt_persp_work(api, which, canvas, x, y, update_rect, 1);
@@ -325,7 +351,7 @@ void n_pt_persp_work(magic_api * api, int which,
   int portion_x1, portion_y1, portion_x2, portion_y2, portion_w, portion_h;
   int x1, y1, x2, y2;
   float slope, slope2;
-  SDL_Rect area_rect;
+  /* SDL_Rect area_rect; */
 
   if (n_pt_persp_snapshot == NULL)
     return;
@@ -408,10 +434,12 @@ void n_pt_persp_work(magic_api * api, int which,
   portion_h = (portion_y2 - portion_y1) + 1;
 
   /* FIXME: Not working correctly!? -bjk 2023.12.13 */
+  /*
   area_rect.x = portion_x1;
   area_rect.y = portion_y1;
   area_rect.w = portion_w;
   area_rect.h = portion_h;
+  */
 
   SDL_BlitSurface(n_pt_persp_snapshot, NULL /* FIXME &area_rect */, canvas, NULL /* FIXME &area_rect */);
 
@@ -453,15 +481,19 @@ void n_pt_persp_work(magic_api * api, int which,
 
 
 void n_pt_persp_release(magic_api * api, int which,
-                        SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
-                        SDL_Rect * update_rect)
+                        SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                        int x, int y, SDL_Rect * update_rect)
 {
   /* Draw the line (for real) */
   n_pt_persp_work(api, which, canvas, x, y, update_rect, 0);
 }
 
 
-void n_pt_persp_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
+void n_pt_persp_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas ATTRIBUTE_UNUSED,
+                          SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                          Uint8 r, Uint8 g, Uint8 b,
+                          SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   n_pt_persp_r = r;
   n_pt_persp_g = g;
@@ -477,8 +509,8 @@ void n_pt_persp_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
 }
 
 
-void n_pt_persp_line_xor_callback(void *pointer, int which, SDL_Surface * canvas,
-  SDL_Surface * snapshot, int x, int y)
+void n_pt_persp_line_xor_callback(void *pointer, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
+                                  SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) pointer;
   Uint8 r, g, b;
@@ -496,10 +528,10 @@ void n_pt_persp_line_xor_callback(void *pointer, int which, SDL_Surface * canvas
   api->putpixel(canvas, x + 1, y + 1, SDL_MapRGB(canvas->format, r, g, b));
 }
 
-void n_pt_persp_line_callback(void *pointer, int which, SDL_Surface * canvas,
-  SDL_Surface * snapshot, int x, int y)
+void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                              SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                              int x, int y)
 {
-  magic_api *api = (magic_api *) pointer;
   SDL_Rect r;
 
   r.x = x - n_pt_persp_size;
@@ -510,8 +542,8 @@ void n_pt_persp_line_callback(void *pointer, int which, SDL_Surface * canvas,
   SDL_FillRect(canvas, &r, SDL_MapRGB(canvas->format, n_pt_persp_r, n_pt_persp_g, n_pt_persp_b));
 }
 
-void n_pt_persp_switchin(magic_api * api, int which, int mode,
-                      SDL_Surface * canvas)
+void n_pt_persp_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
+                         SDL_Surface * canvas)
 {
   if (which == TOOL_1PT_SELECT || which == TOOL_2PT_SELECT || which == TOOL_3PT_SELECT) {
     SDL_BlitSurface(canvas, NULL, n_pt_persp_snapshot, NULL);
@@ -520,8 +552,8 @@ void n_pt_persp_switchin(magic_api * api, int which, int mode,
   }
 }
 
-void n_pt_persp_switchout(magic_api * api, int which, int mode,
-                       SDL_Surface * canvas)
+void n_pt_persp_switchout(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED,
+                          SDL_Surface * canvas)
 {
   if (which == TOOL_1PT_SELECT || which == TOOL_2PT_SELECT || which == TOOL_3PT_SELECT) {
     SDL_BlitSurface(n_pt_persp_snapshot, NULL, canvas, NULL);
@@ -560,7 +592,7 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
       /* Some vertical lines between the diagonals */
       if (l == 0) {
         for (m = 0; m < 8; m++) {
-          int xx, yy1, yy2, mm;
+          int xx, yy1, yy2;
           int m_scale[8] = {-8,-4,-2,-1,1,2,4,8};
 
           xx = a1_pt_x + ((float) (canvas->w / 10) * (float) m_scale[m]);
