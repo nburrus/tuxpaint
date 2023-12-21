@@ -380,6 +380,56 @@ void n_pt_persp_drag(magic_api * api, int which,
     api->line((void *) api, which, canvas, NULL,
               x, y, a1_pt_x, a1_pt_y, 12,
               n_pt_persp_line_xor_callback);
+  } else if (which == TOOL_2PT_DRAW) {
+    /* 2-point perspective */
+    int i, x1, y1, x2, y2;
+    float slope;
+
+    /* Horizon line (vanishing point) */
+    slope = ((float) a2_pt_y[0] - (float) a2_pt_y[1]) / ((float) a2_pt_x[0] - (float) a2_pt_x[1]);
+    x1 = 0;
+    y1 = a2_pt_y[0] - (a2_pt_x[0] * slope);
+    x2 = canvas->w;
+    y2 = a2_pt_y[0] + ((canvas->w - a2_pt_x[0]) * slope);
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    /* Horizon line (from the cursor) */
+    x1 = 0;
+    y1 = y - (x * slope);
+    x2 = canvas->w;
+    y2 = y + ((canvas->w - x) * slope);
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    /* Perpendicular-to-horizon line (from the cursor) */
+    if (slope == 0.0 || slope == M_PI) {
+      x1 = x;
+      y1 = 0;
+      x2 = x;
+      y2 = canvas->h;
+    } else {
+      float perp_slope = -(slope);
+
+      x1 = x - (y * perp_slope);
+      y1 = 0;
+      x2 = x + ((canvas->h - y) * perp_slope);
+      y2 = canvas->h;
+    }
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    /* Diagonal lines from cursor to the vanishing points */
+    for (i = 0; i < 2; i++) {
+      api->line((void *) api, which, canvas, NULL,
+                x, y, a2_pt_x[i], a2_pt_y[i], 12,
+                n_pt_persp_line_xor_callback);
+    }
   }
 }
 
