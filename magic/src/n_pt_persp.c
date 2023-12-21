@@ -559,19 +559,9 @@ void n_pt_persp_line_xor_callback(void *pointer, int which ATTRIBUTE_UNUSED, SDL
                                   SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) pointer;
-  Uint8 r, g, b;
 
-  SDL_GetRGB(api->getpixel(canvas, x, y), canvas->format, &r, &g, &b);
-  r ^= 255;
-  g ^= 255;
-  b ^= 255;
-  api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
-
-  SDL_GetRGB(api->getpixel(canvas, x + 1, y + 1), canvas->format, &r, &g, &b);
-  r ^= 255;
-  g ^= 255;
-  b ^= 255;
-  api->putpixel(canvas, x + 1, y + 1, SDL_MapRGB(canvas->format, r, g, b));
+  api->xorpixel(canvas, x, y);
+  api->xorpixel(canvas, x + 1, y + 1);
 }
 
 void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
