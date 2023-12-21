@@ -17,6 +17,8 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+#define SNAP 10
+
 
 enum
 {
@@ -79,7 +81,7 @@ int a1_pt_x, a1_pt_y;
 int a2_pt_x[2], a2_pt_y[2], a2_pt_cur;
 int a3_pt_x[3], a3_pt_y[3], a3_pt_cur;
 int line_start_x, line_start_y;
-
+float a2_valid_angle[8];
 
 /* Function prototypes: */
 Uint32 n_pt_persp_api_version(void);
@@ -276,6 +278,17 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     /* Set next position of 2-point perspective */
     a2_pt_x[a2_pt_cur] = x;
     a2_pt_y[a2_pt_cur] = y;
+
+    if (abs(a2_pt_x[0] - a2_pt_x[1]) < SNAP) {
+      if (a2_pt_x[0] <= a2_pt_x[1]) {
+        a2_pt_x[0] -= (SNAP / 2);
+        a2_pt_x[1] += (SNAP / 2);
+      } else {
+        a2_pt_x[0] += (SNAP / 2);
+        a2_pt_x[1] -= (SNAP / 2);
+      }
+    }
+
     a2_pt_cur = (a2_pt_cur + 1) % 2;
   } else if (which == TOOL_3PT_SELECT) {
     /* Set next position of 3-point perspective */
@@ -285,6 +298,34 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   } else {
     /* Start drawing a line */
     SDL_BlitSurface(canvas, NULL, n_pt_persp_snapshot, NULL);
+
+    if (which == TOOL_2PT_DRAW) {
+      int i;
+
+      /* Horizon between vanishing points, and perpendicular (rise above/below) */
+      a2_valid_angle[0] = atan2(a2_pt_y[1] - a2_pt_y[0], a2_pt_x[1] - a2_pt_x[0]);
+      a2_valid_angle[1] = a2_valid_angle[0] + M_PI;
+      a2_valid_angle[2] = a2_valid_angle[0] + (M_PI / 2.0);
+      a2_valid_angle[3] = a2_valid_angle[0] + (M_PI / 2.0) + M_PI;
+
+      /* Angles that point toward the two vanishing points */
+      if (x == a2_pt_x[0]) {
+        x++;
+      }
+      if (x == a2_pt_x[1]) {
+        x++;
+      }
+      a2_valid_angle[4] = atan2(a2_pt_y[0] - y, a2_pt_x[0] - x);
+      a2_valid_angle[5] = a2_valid_angle[4] + M_PI;
+      a2_valid_angle[6] = atan2(a2_pt_y[1] - y, a2_pt_x[1] - x);
+      a2_valid_angle[7] = a2_valid_angle[6] + M_PI;
+
+      for (i = 0; i < 8; i++) {
+        if (a2_valid_angle[i] > M_PI) {
+          a2_valid_angle[i] -= (M_PI * 2);
+        }
+      }
+    }
 
     line_start_x = x;
     line_start_y = y;
@@ -342,8 +383,6 @@ void n_pt_persp_drag(magic_api * api, int which,
   }
 }
 
-#define SNAP 10
-
 void n_pt_persp_work(magic_api * api, int which,
                      SDL_Surface * canvas, int x, int y,
                      SDL_Rect * update_rect, int xor)
@@ -400,54 +439,54 @@ void n_pt_persp_work(magic_api * api, int which,
     }
   } else if (which == TOOL_2PT_DRAW) {
     /* 2-point perspective */
+    int i, best_angle_idx;
+    float cursor_angle, diff, best_diff;
 
+    /* Find the valid angle that the drawn angle fits best to */
+    cursor_angle = atan2f(y - line_start_y, x - line_start_x);
+
+    best_angle_idx = -1;
+    best_diff = M_PI * 2;
+
+    for (i = 0; i < 8; i++) {
+      diff = fabs(cursor_angle - a2_valid_angle[i]);
+
+      if (diff < best_diff) {
+        best_angle_idx = i;
+        best_diff = diff;
+      }
+    }
+
+    if (best_angle_idx == -1) {
+      printf("???\n");
+      return;
+    }
+
+    /* Calculate a line segment, so we can determine the slope */
     x1 = line_start_x;
     y1 = line_start_y;
+    x2 = line_start_x + cos(a2_valid_angle[best_angle_idx]) * 1000;
+    y2 = line_start_y + sin(a2_valid_angle[best_angle_idx]) * 1000;
 
-    if (abs(line_start_x - x) <= SNAP) {
-      /* Vertical */
-      x2 = x1;
-      y2 = y;
-    } else if (abs(line_start_y - y) <= SNAP) {
-      /* Horizontal */
+// printf("angle #%d (%d)\n", best_angle_idx, (int) (a2_valid_angle[best_angle_idx] * 180.0 / M_PI));
+
+    if (x2 != x1) {
+      slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
       x2 = x;
-      y2 = y1;
-    } else {
-      int ok, i;
+      y2 = line_start_y + (slope * (x - line_start_x));
 
-      /* Diagonal */
-
-      ok = 0;
-
-      for (i = 0; i < 2 && ok == 0; i++) {
-        slope = ((float) y1 - (float) a2_pt_y[i]) / ((float) x1 - (float) a2_pt_x[i]);
-        x2 = x;
-        y2 = line_start_y + (slope * (x - line_start_x));
-
-        /* Don't go past our cursor's Y */
-        if ((y < line_start_y && y2 < y) ||
-            (y > line_start_y && y2 > y)) {
-          if (slope != 0.0) {
-            y2 = y;
-            x2 = ((y - line_start_y) / slope) + line_start_x;
-          }
-        }
-
-        /* Wrong side? Use the point 2 */
-        slope2 = ((float) line_start_y - (float) y) / ((float) line_start_x - (float) x);
-        if ((slope2 > 0.00 && slope < 0.00) ||
-            (slope2 < 0.00 && slope > 0.00)) {
-          ok = 0;
-
-          if (i == 1) {
-            /* Worst case, snap to horizontal */
-            x2 = x;
-            y2 = y1;
-          }
-        } else {
-          ok = 1;
+      /* Don't go past our cursor's Y */
+      if ((y < line_start_y && y2 < y) ||
+          (y > line_start_y && y2 > y)) {
+        if (slope != 0.0) {
+          y2 = y;
+          x2 = ((y - line_start_y) / slope) + line_start_x;
         }
       }
+      /* FIXME: Sometimes the line goes off in the wrong direction! */
+    } else {
+      x2 = x;
+      y2 = y;
     }
   } else if (which == TOOL_3PT_DRAW) {
     /* 3-point perspective */
