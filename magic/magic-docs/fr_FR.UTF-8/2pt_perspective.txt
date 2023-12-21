@@ -1,0 +1,18 @@
+                   Outil 'Magie' de Tux Paint : 2-Point Draw
+
+                                Groupe: Peindre
+
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+
+Click and drag to draw with 2-point perspective. Lines will only go towards
+your two vanishing points, or aligned with either the "horizon" defined by the
+two vanishing points, or a line perpendicular to that "horizon".
+
+Cet outil permet de travailler en mode à main levée.
+
+Voir aussi : 1-Point Draw, 1-Point Select, 2-Point Select, & Perspective.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.32
+

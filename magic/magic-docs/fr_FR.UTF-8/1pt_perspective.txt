@@ -10,7 +10,7 @@ choose your vanishing point.
 
 Cet outil permet de travailler en mode à main levée.
 
-Voir aussi : 1-Point Select & Perspective.
+Voir aussi : 1-Point Select, 2-Point Draw, 2-Point Select, & Perspective.
 
 -------------------------------------------------------------------------------
 

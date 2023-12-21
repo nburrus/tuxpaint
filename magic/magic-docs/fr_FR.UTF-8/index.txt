@@ -69,6 +69,8 @@ Peindre
 
   * 1-Point Draw
   * 1-Point Select
+  * 2-Point Draw
+  * 2-Point Select
   * Arc-en-ciel
   * Arc-en-ciel
   * Arc-en-ciel doux

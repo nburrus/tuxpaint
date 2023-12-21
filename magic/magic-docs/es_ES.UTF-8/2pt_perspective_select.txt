@@ -1,0 +1,17 @@
+                    Tux Paint "Magic" Tool: 2-Point Select
+
+                                Group: Painting
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+Click to position the two vanishing points that will be used with the "2-Point
+Draw" tool. (Each time you click, it cycles between the two points.)
+
+This tool is operated with a single click.
+
+See also: 1-Point Draw, 1-Point Select, 2-Point Draw, & Perspective.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.32
+

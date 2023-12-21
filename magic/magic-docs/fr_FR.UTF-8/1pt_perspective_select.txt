@@ -9,7 +9,7 @@ tool.
 
 Cet outil travaille avec un seul clic.
 
-Voir aussi : 1-Point Draw.
+Voir aussi : 1-Point Draw, 2-Point Draw, 2-Point Select, & Perspective.
 
 -------------------------------------------------------------------------------
 
