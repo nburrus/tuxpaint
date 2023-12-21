@@ -5,7 +5,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 17, 2023
+   December 12, 2023 - December 21, 2023
 */
 
 
@@ -181,7 +181,7 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 
 int n_pt_persp_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return 2; // FIXME
+  return 4; // FIXME
   //return (NUM_TOOLS);
 }
 
@@ -401,8 +401,54 @@ void n_pt_persp_work(magic_api * api, int which,
   } else if (which == TOOL_2PT_DRAW) {
     /* 2-point perspective */
 
-    /* FIXME */
-    return;
+    x1 = line_start_x;
+    y1 = line_start_y;
+
+    if (abs(line_start_x - x) <= SNAP) {
+      /* Vertical */
+      x2 = x1;
+      y2 = y;
+    } else if (abs(line_start_y - y) <= SNAP) {
+      /* Horizontal */
+      x2 = x;
+      y2 = y1;
+    } else {
+      int ok, i;
+
+      /* Diagonal */
+
+      ok = 0;
+
+      for (i = 0; i < 2 && ok == 0; i++) {
+        slope = ((float) y1 - (float) a2_pt_y[i]) / ((float) x1 - (float) a2_pt_x[i]);
+        x2 = x;
+        y2 = line_start_y + (slope * (x - line_start_x));
+
+        /* Don't go past our cursor's Y */
+        if ((y < line_start_y && y2 < y) ||
+            (y > line_start_y && y2 > y)) {
+          if (slope != 0.0) {
+            y2 = y;
+            x2 = ((y - line_start_y) / slope) + line_start_x;
+          }
+        }
+
+        /* Wrong side? Use the point 2 */
+        slope2 = ((float) line_start_y - (float) y) / ((float) line_start_x - (float) x);
+        if ((slope2 > 0.00 && slope < 0.00) ||
+            (slope2 < 0.00 && slope > 0.00)) {
+          ok = 0;
+
+          if (i == 1) {
+            /* Worst case, snap to horizontal */
+            x2 = x;
+            y2 = y1;
+          }
+        } else {
+          ok = 1;
+        }
+      }
+    }
   } else if (which == TOOL_3PT_DRAW) {
     /* 3-point perspective */
 
