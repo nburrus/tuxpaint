@@ -715,10 +715,10 @@ void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUT
 {
   SDL_Rect r;
 
-  r.x = x - n_pt_persp_size;
-  r.y = y - n_pt_persp_size;
-  r.w = n_pt_persp_size * 2;
-  r.h = n_pt_persp_size * 2;
+  r.x = x - n_pt_persp_size / 2;
+  r.y = y - n_pt_persp_size / 2;
+  r.w = n_pt_persp_size;
+  r.h = n_pt_persp_size;
 
   SDL_FillRect(canvas, &r, SDL_MapRGB(canvas->format, n_pt_persp_r, n_pt_persp_g, n_pt_persp_b));
 }
