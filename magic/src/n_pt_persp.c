@@ -448,12 +448,6 @@ void n_pt_persp_drag(magic_api * api, int which,
                 x1, y1, x2, y2, 2,
                 n_pt_persp_line_xor_callback);
       }
-
-/*
-      api->line((void *) api, which, canvas, NULL,
-                x, y, a2_pt_x[i], a2_pt_y[i], 5,
-                n_pt_persp_line_xor_callback);
-*/
     }
   } else if (which == TOOL_3PT_DRAW) {
     /* 3-point perspective - draw */
@@ -564,9 +558,7 @@ void n_pt_persp_work(magic_api * api, int which,
     x2 = line_start_x + cos(a2_valid_angle[best_angle_idx]) * 1000;
     y2 = line_start_y + sin(a2_valid_angle[best_angle_idx]) * 1000;
 
-// printf("angle #%d (%d)\n", best_angle_idx, (int) (a2_valid_angle[best_angle_idx] * 180.0 / M_PI));
-
-    if (x2 != x1) {
+    if (abs(x2 - x1) >= 2) {
       slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
       x2 = x;
       y2 = line_start_y + (slope * (x - line_start_x));
@@ -579,9 +571,8 @@ void n_pt_persp_work(magic_api * api, int which,
           x2 = ((y - line_start_y) / slope) + line_start_x;
         }
       }
-      /* FIXME: Sometimes the line goes off in the wrong direction! */
     } else {
-      x2 = x;
+      x2 = x1;
       y2 = y;
     }
   } else if (which == TOOL_3PT_DRAW) {
