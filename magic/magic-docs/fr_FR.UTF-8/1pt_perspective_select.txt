@@ -7,7 +7,7 @@
 Click to position the vanishing point that will be used with the "1-Point Draw"
 tool.
 
-Cet outil travaille avec un seul clic.
+Cet outil permet de travailler en mode à main levée.
 
 Voir aussi : 1-Point Draw, 2-Point Draw, 2-Point Select, & Perspective.
 

@@ -7,7 +7,7 @@
 Click to position the vanishing point that will be used with the "1-Point Draw"
 tool.
 
-This tool is operated with a single click.
+This tool is operated in a freehand fashion.
 
 See also: 1-Point Draw, 2-Point Draw, 2-Point Select, & Perspective.
 

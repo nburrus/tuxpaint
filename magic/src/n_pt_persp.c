@@ -5,7 +5,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 21, 2023
+   December 12, 2023 - December 22, 2023
 */
 
 
@@ -99,6 +99,7 @@ void n_pt_persp_shutdown(magic_api * api);
 void n_pt_persp_click(magic_api * api, int which, int mode,
                       SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
                       SDL_Rect * update_rect);
+void n_pt_persp_vanish_pt_moved(magic_api * api, int which, SDL_Surface * canvas, SDL_Rect * update_rect);
 void n_pt_persp_drag(magic_api * api, int which,
                      SDL_Surface * canvas, SDL_Surface * snapshot,
                      int old_x, int old_y, int x, int y,
@@ -226,12 +227,9 @@ int n_pt_persp_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which)
 }
 
 
-int n_pt_persp_modes(magic_api * api ATTRIBUTE_UNUSED, int which)
+int n_pt_persp_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW)
-    return MODE_PAINT;
-  else
-    return MODE_FULLSCREEN;
+  return MODE_PAINT;
 }
 
 Uint8 n_pt_persp_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
@@ -274,8 +272,26 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     /* Set position of 1-point perspective */
     a1_pt_x = x;
     a1_pt_y = y;
+
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else if (which == TOOL_2PT_SELECT) {
     /* Set next position of 2-point perspective */
+    int pick, i;
+    float dist, min_dist;
+
+    pick = 0;
+    min_dist = FLT_MAX;
+
+    for (i = 0; i < 2; i++) {
+      dist = sqrt(pow(a2_pt_x[i] - x, 2) + pow(a2_pt_y[i] - y, 2));
+      if (dist < min_dist) {
+        pick = i;
+        min_dist = dist;
+      }
+    }
+
+    a2_pt_cur = pick;
+
     a2_pt_x[a2_pt_cur] = x;
     a2_pt_y[a2_pt_cur] = y;
 
@@ -289,12 +305,13 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
       }
     }
 
-    a2_pt_cur = (a2_pt_cur + 1) % 2;
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else if (which == TOOL_3PT_SELECT) {
     /* Set next position of 3-point perspective */
     a3_pt_x[a3_pt_cur] = x;
     a3_pt_y[a3_pt_cur] = y;
-    a3_pt_cur = (a3_pt_cur + 1) % 3;
+
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else {
     /* Start drawing a line */
     SDL_BlitSurface(canvas, NULL, n_pt_persp_snapshot, NULL);
@@ -330,12 +347,11 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     line_start_x = x;
     line_start_y = y;
     n_pt_persp_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
-
-    return;
   }
+}
 
-  /* Still here? Draw points */
 
+void n_pt_persp_vanish_pt_moved(magic_api * api, int which, SDL_Surface * canvas, SDL_Rect * update_rect) {
   SDL_BlitSurface(n_pt_persp_snapshot, NULL, canvas, NULL);
   n_pt_persp_draw_points(api, which, canvas);
 
@@ -357,7 +373,7 @@ void n_pt_persp_drag(magic_api * api, int which,
 
   /* Show some guides */
   if (which == TOOL_1PT_DRAW) {
-    /* 1-point perspective */
+    /* 1-point perspective - draw */
 
     /* Horizontal line (horizon) */
     if (y != a1_pt_y) {
@@ -381,7 +397,7 @@ void n_pt_persp_drag(magic_api * api, int which,
               x, y, a1_pt_x, a1_pt_y, 12,
               n_pt_persp_line_xor_callback);
   } else if (which == TOOL_2PT_DRAW) {
-    /* 2-point perspective */
+    /* 2-point perspective - draw */
     int i, x1, y1, x2, y2;
     float slope;
 
@@ -430,6 +446,24 @@ void n_pt_persp_drag(magic_api * api, int which,
                 x, y, a2_pt_x[i], a2_pt_y[i], 12,
                 n_pt_persp_line_xor_callback);
     }
+  } else if (which == TOOL_3PT_DRAW) {
+    /* 3-point perspective - draw */
+    /* FIXME */
+  } else if (which == TOOL_1PT_SELECT) {
+    /* 1-point perspective - select */
+    a1_pt_x = x;
+    a1_pt_y = y;
+
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
+  } else if (which == TOOL_2PT_SELECT) {
+    /* 2-point perspective - select */
+    a2_pt_x[a2_pt_cur] = x;
+    a2_pt_y[a2_pt_cur] = y;
+
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
+  } else if (which == TOOL_3PT_SELECT) {
+    /* 3-point perspective - select */
+    /* FIXME */
   }
 }
 
@@ -619,8 +653,27 @@ void n_pt_persp_release(magic_api * api, int which,
                         SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
                         int x, int y, SDL_Rect * update_rect)
 {
-  /* Draw the line (for real) */
-  n_pt_persp_work(api, which, canvas, x, y, update_rect, 0);
+  if (which == TOOL_1PT_SELECT) {
+    /* 1-point perspective - vanishing point drag released */
+    /* No-op */
+  } else if (which == TOOL_2PT_SELECT) {
+    /* 2-point perspective - vanishing point drag released */
+    if (abs(a2_pt_x[0] - a2_pt_x[1]) < SNAP) {
+      if (a2_pt_x[0] <= a2_pt_x[1]) {
+        a2_pt_x[0] -= (SNAP / 2);
+        a2_pt_x[1] += (SNAP / 2);
+      } else {
+        a2_pt_x[0] += (SNAP / 2);
+        a2_pt_x[1] -= (SNAP / 2);
+      }
+    }
+  } else if (which == TOOL_3PT_SELECT) {
+    /* 3-point perspective - vanishing point drag released */
+    /* FIXME */
+  } else {
+    /* Draw the line (for real) */
+    n_pt_persp_work(api, which, canvas, x, y, update_rect, 0);
+  }
 }
 
 

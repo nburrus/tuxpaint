@@ -7,7 +7,7 @@
 Click to position the two vanishing points that will be used with the "2-Point
 Draw" tool. (Each time you click, it cycles between the two points.)
 
-This tool is operated with a single click.
+This tool is operated in a freehand fashion.
 
 See also: 1-Point Draw, 1-Point Select, 2-Point Draw, & Perspective.
 
