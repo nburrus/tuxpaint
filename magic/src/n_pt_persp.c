@@ -185,7 +185,7 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 int n_pt_persp_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
   return 4; // FIXME
-  //return (NUM_TOOLS);
+  // return (NUM_TOOLS);
 }
 
 
@@ -268,6 +268,12 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                       SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
                       SDL_Rect * update_rect)
 {
+  int pick, i;
+  float dist, min_dist;
+
+  pick = 0;
+  min_dist = FLT_MAX;
+
   if (which == TOOL_1PT_SELECT) {
     /* Set position of 1-point perspective */
     a1_pt_x = x;
@@ -275,12 +281,7 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else if (which == TOOL_2PT_SELECT) {
-    /* Set next position of 2-point perspective */
-    int pick, i;
-    float dist, min_dist;
-
-    pick = 0;
-    min_dist = FLT_MAX;
+    /* Pick closest 2-point perspective & move it */
 
     for (i = 0; i < 2; i++) {
       dist = sqrt(pow(a2_pt_x[i] - x, 2) + pow(a2_pt_y[i] - y, 2));
@@ -295,19 +296,19 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     a2_pt_x[a2_pt_cur] = x;
     a2_pt_y[a2_pt_cur] = y;
 
-    if (abs(a2_pt_x[0] - a2_pt_x[1]) < SNAP) {
-      if (a2_pt_x[0] <= a2_pt_x[1]) {
-        a2_pt_x[0] -= (SNAP / 2);
-        a2_pt_x[1] += (SNAP / 2);
-      } else {
-        a2_pt_x[0] += (SNAP / 2);
-        a2_pt_x[1] -= (SNAP / 2);
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
+  } else if (which == TOOL_3PT_SELECT) {
+    /* Pick closest 3-point perspective & move it */
+    for (i = 0; i < 3; i++) {
+      dist = sqrt(pow(a3_pt_x[i] - x, 2) + pow(a3_pt_y[i] - y, 2));
+      if (dist < min_dist) {
+        pick = i;
+        min_dist = dist;
       }
     }
 
-    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
-  } else if (which == TOOL_3PT_SELECT) {
-    /* Set next position of 3-point perspective */
+    a3_pt_cur = pick;
+
     a3_pt_x[a3_pt_cur] = x;
     a3_pt_y[a3_pt_cur] = y;
 
@@ -401,16 +402,9 @@ void n_pt_persp_drag(magic_api * api, int which,
     int i, x1, y1, x2, y2;
     float slope;
 
-    /* Horizon line (vanishing point) */
-    slope = ((float) a2_pt_y[0] - (float) a2_pt_y[1]) / ((float) a2_pt_x[0] - (float) a2_pt_x[1]);
-    x1 = 0;
-    y1 = a2_pt_y[0] - (a2_pt_x[0] * slope);
-    x2 = canvas->w;
-    y2 = a2_pt_y[0] + ((canvas->w - a2_pt_x[0]) * slope);
+    n_pt_persp_draw_points(api, TOOL_2PT_SELECT, canvas);
 
-    api->line((void *) api, which, canvas, NULL,
-              x1, y1, x2, y2, 12,
-              n_pt_persp_line_xor_callback);
+    slope = ((float) a2_pt_y[0] - (float) a2_pt_y[1]) / ((float) a2_pt_x[0] - (float) a2_pt_x[1]);
 
     /* Horizon line (from the cursor) */
     x1 = 0;
@@ -418,7 +412,7 @@ void n_pt_persp_drag(magic_api * api, int which,
     x2 = canvas->w;
     y2 = y + ((canvas->w - x) * slope);
     api->line((void *) api, which, canvas, NULL,
-              x1, y1, x2, y2, 12,
+              x1, y1, x2, y2, 5,
               n_pt_persp_line_xor_callback);
 
     /* Perpendicular-to-horizon line (from the cursor) */
@@ -437,14 +431,29 @@ void n_pt_persp_drag(magic_api * api, int which,
     }
 
     api->line((void *) api, which, canvas, NULL,
-              x1, y1, x2, y2, 12,
+              x1, y1, x2, y2, 5,
               n_pt_persp_line_xor_callback);
 
     /* Diagonal lines from cursor to the vanishing points */
     for (i = 0; i < 2; i++) {
+      if (x != a2_pt_x[i]) {
+        slope = ((float) y - (float) a2_pt_y[i]) / ((float) x - (float) a2_pt_x[i]);
+
+      x1 = 0;
+      y1 = a2_pt_y[i] - (a2_pt_x[i] * slope);
+      x2 = canvas->w;
+      y2 = a2_pt_y[i] + ((canvas->w - a2_pt_x[i]) * slope);
+
       api->line((void *) api, which, canvas, NULL,
-                x, y, a2_pt_x[i], a2_pt_y[i], 12,
+                x1, y1, x2, y2, 2,
                 n_pt_persp_line_xor_callback);
+      }
+
+/*
+      api->line((void *) api, which, canvas, NULL,
+                x, y, a2_pt_x[i], a2_pt_y[i], 5,
+                n_pt_persp_line_xor_callback);
+*/
     }
   } else if (which == TOOL_3PT_DRAW) {
     /* 3-point perspective - draw */
@@ -463,7 +472,10 @@ void n_pt_persp_drag(magic_api * api, int which,
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else if (which == TOOL_3PT_SELECT) {
     /* 3-point perspective - select */
-    /* FIXME */
+    a3_pt_x[a3_pt_cur] = x;
+    a3_pt_y[a3_pt_cur] = y;
+
+    n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   }
 }
 
@@ -739,7 +751,7 @@ void n_pt_persp_switchout(magic_api * api ATTRIBUTE_UNUSED, int which, int mode 
 }
 
 void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
-  int i, l, m, x1, y1, x2, y2;
+  int i, l, m, x1, y1, x2, y2, x;
   float slope;
 
   if (which == TOOL_1PT_SELECT) {
@@ -790,7 +802,57 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
       n_pt_persp_draw_one_point(api, canvas, a2_pt_x[i], a2_pt_y[i], i);
     }
 
-    /* FIXME: Draw a grid */
+    /* Horizon line (vanishing point) */
+    slope = ((float) a2_pt_y[0] - (float) a2_pt_y[1]) / ((float) a2_pt_x[0] - (float) a2_pt_x[1]);
+    x1 = 0;
+    y1 = a2_pt_y[0] - (a2_pt_x[0] * slope);
+    x2 = canvas->w;
+    y2 = a2_pt_y[0] + ((canvas->w - a2_pt_x[0]) * slope);
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    x = (a2_pt_x[0] + a2_pt_x[1]) / 2;
+
+    /* Perpendicular-to-horizon line */
+    if (slope == 0.0 || slope == M_PI) {
+      x1 = x;
+      y1 = 0;
+      x2 = x;
+      y2 = canvas->h;
+    } else {
+      float perp_slope = -(slope);
+      int y;
+
+      x = (a2_pt_x[0] + a2_pt_x[1]) / 2;
+      y = (a2_pt_y[0] + a2_pt_y[1]) / 2;
+
+      x1 = x - (y * perp_slope);
+      y1 = 0;
+      x2 = x + ((canvas->h - y) * perp_slope);
+      y2 = canvas->h;
+    }
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    api->line((void *) api, which, canvas, NULL,
+              a2_pt_x[0], a2_pt_y[0], x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    api->line((void *) api, which, canvas, NULL,
+              a2_pt_x[1], a2_pt_y[1], x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, a2_pt_x[0], a2_pt_y[0], 12,
+              n_pt_persp_line_xor_callback);
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, a2_pt_x[1], a2_pt_y[1], 12,
+              n_pt_persp_line_xor_callback);
   } else if (which == TOOL_3PT_SELECT) {
     /* 2-point perspective */
 
