@@ -6,12 +6,18 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.December.17 (0.9.32)
+2023.December.22 (0.9.32)
   * New Magic Tools:
     ----------------
     * 1-point Perspective (vanishing point)
       Choose a vanishing point, and then draw lines that always
       point towards it, or are vertical or horizontal.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * 2-point Perspective (vanishing point)
+      Choose two vanishing points, and then draw lines that always
+      point towards them, along the horizon defined by them,
+      or perpendicular to that horizon.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to "Text" & "Label" tools:
