@@ -6,7 +6,7 @@
        Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2023年7月20日
+                                2023年12月22日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -1215,13 +1215,15 @@ VII.Tux Paint プロジェクトの SNS アカウント
 
 Tux Paint は様々な SNS アカウントを利用し、最新情報や作品を投稿しています。
 
+  * Follow @tuxpaint.bsky.social on Bluesky
   * Facebook で Tux Paint のページに参加する
   * Instagram で @TuxPaintDevs をフォローする
   * Mastdon で @tuxpaint@floss.socal をフォローする
   * Reddit で u/TuxPaintDevs をフォローする
   * Threads で @TuxPaintDevs をフォローする
+  * Follow @TuxPaintDevs on TikTok
   * Tumblr で Tux Paint をフォローする
-  * Twitter で @TuxPaintTweets をフォローする
+  * Subscribe to @TuxPaintOfficial on YoUTube
 
 VIII. 商標について
 

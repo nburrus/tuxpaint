@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 júlí 20, 2023
+                               desember 22, 2023
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -1300,13 +1300,15 @@ VII.Follow the Tux Paint project on social media
 Tux Paint maintains a presence on a variety of social media networks, where we
 post updates and artwork.
 
+  * Follow @tuxpaint.bsky.social on Bluesky
   * Join the Tux Paint page on Facebook
   * Follow @TuxPaintDevs on Instagram
   * Follow @tuxpaint@floss.social on Mastodon
   * Follow u/TuxPaintDevs on Reddit
   * Follow @TuxPaintDevs on Threads
+  * Follow @TuxPaintDevs on TikTok
   * Follow Tux Paint on Tumblr
-  * Follow @TuxPaintTweets on Twitter
+  * Subscribe to @TuxPaintOfficial on YoUTube
 
 VIII. Trademark notices
 
