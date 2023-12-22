@@ -4,8 +4,8 @@
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-Click to position the two vanishing points that will be used with the "2-Point
-Draw" tool. (Each time you click, it cycles between the two points.)
+Click (and drag) to position the two vanishing points that will be used with
+the "2-Point Draw" tool.
 
 This tool is operated in a freehand fashion.
 
