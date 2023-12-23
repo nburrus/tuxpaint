@@ -5,7 +5,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 22, 2023
+   December 12, 2023 - December 23, 2023
 */
 
 
@@ -46,8 +46,8 @@ const char *icon_filenames[NUM_TOOLS] = {
   "1pt_persp_draw.png",
   "2pt_persp_select.png",
   "2pt_persp_draw.png",
-  "perspective.png", // FIXME
-  "perspective.png", // FIXME
+  "3pt_persp_select.png",
+  "3pt_persp_draw.png",
 };
 
 
@@ -82,6 +82,7 @@ int a2_pt_x[2], a2_pt_y[2], a2_pt_cur;
 int a3_pt_x[3], a3_pt_y[3], a3_pt_cur;
 int line_start_x, line_start_y;
 float a2_valid_angle[8];
+float a3_valid_angle[8];
 
 /* Function prototypes: */
 Uint32 n_pt_persp_api_version(void);
@@ -146,6 +147,8 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
     sound_effects[i] = Mix_LoadWAV(filename);
   }
 
+  /* Set default vanishing point positions: */
+
   /* 1-pt perspective initial vanishing point: Center of canvas */
   a1_pt_x = api->canvas_w / 2;
   a1_pt_y = api->canvas_w / 2;
@@ -160,14 +163,14 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   a2_pt_cur = 0;
 
   /* 3-pt perspective initial vanishing points: top center, and left and right near bottom of canvas */
-  a3_pt_x[0] = api->canvas_w / 2;
-  a3_pt_y[0] = 0;
+  a3_pt_x[0] = api->canvas_w * 1 / 20;
+  a3_pt_y[0] = api->canvas_h * 19 / 20;
 
-  a3_pt_x[1] = 0;
-  a3_pt_y[1] = api->canvas_h * 4 / 5;
+  a3_pt_x[1] = api->canvas_w * 19 / 20;
+  a3_pt_y[1] = api->canvas_h * 19 / 20;
 
-  a3_pt_x[2] = api->canvas_w - 1;
-  a3_pt_y[2] = api->canvas_h * 4 / 5;
+  a3_pt_x[2] = api->canvas_w / 2;
+  a3_pt_y[2] = api->canvas_h * 1 / 20;
 
   a3_pt_cur = 0;
 
@@ -184,8 +187,7 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
 
 int n_pt_persp_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return 4; // FIXME
-  // return (NUM_TOOLS);
+  return (NUM_TOOLS);
 }
 
 
@@ -314,12 +316,12 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else {
+    int i;
+
     /* Start drawing a line */
     SDL_BlitSurface(canvas, NULL, n_pt_persp_snapshot, NULL);
 
     if (which == TOOL_2PT_DRAW) {
-      int i;
-
       /* Horizon between vanishing points, and perpendicular (rise above/below) */
       a2_valid_angle[0] = atan2(a2_pt_y[1] - a2_pt_y[0], a2_pt_x[1] - a2_pt_x[0]);
       a2_valid_angle[1] = a2_valid_angle[0] + M_PI;
@@ -341,6 +343,24 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
       for (i = 0; i < 8; i++) {
         if (a2_valid_angle[i] > M_PI) {
           a2_valid_angle[i] -= (M_PI * 2);
+        }
+      }
+    } else if (which == TOOL_3PT_DRAW) {
+      /* Horizon between vanishing points, and perpendicular (rise above/below) */
+      a3_valid_angle[0] = atan2(a3_pt_y[1] - a3_pt_y[0], a3_pt_x[1] - a3_pt_x[0]);
+      a3_valid_angle[1] = a3_valid_angle[0] + M_PI;
+
+      /* Angles that point toward the three vanishing points */
+      a3_valid_angle[2] = atan2(a3_pt_y[0] - y, a3_pt_x[0] - x);
+      a3_valid_angle[3] = a3_valid_angle[2] + M_PI;
+      a3_valid_angle[4] = atan2(a3_pt_y[1] - y, a3_pt_x[1] - x);
+      a3_valid_angle[5] = a3_valid_angle[4] + M_PI;
+      a3_valid_angle[6] = atan2(a3_pt_y[2] - y, a3_pt_x[2] - x);
+      a3_valid_angle[7] = a3_valid_angle[6] + M_PI;
+
+      for (i = 0; i < 8; i++) {
+        if (a3_valid_angle[i] > M_PI) {
+          a3_valid_angle[i] -= (M_PI * 2);
         }
       }
     }
@@ -369,6 +389,9 @@ void n_pt_persp_drag(magic_api * api, int which,
                      int old_x ATTRIBUTE_UNUSED, int old_y ATTRIBUTE_UNUSED,
                      int x, int y, SDL_Rect * update_rect)
 {
+  int i, x1, y1, x2, y2;
+  float slope;
+
   /* Draw the line (preview) */
   n_pt_persp_work(api, which, canvas, x, y, update_rect, 1);
 
@@ -399,9 +422,6 @@ void n_pt_persp_drag(magic_api * api, int which,
               n_pt_persp_line_xor_callback);
   } else if (which == TOOL_2PT_DRAW) {
     /* 2-point perspective - draw */
-    int i, x1, y1, x2, y2;
-    float slope;
-
     n_pt_persp_draw_points(api, TOOL_2PT_SELECT, canvas);
 
     slope = ((float) a2_pt_y[0] - (float) a2_pt_y[1]) / ((float) a2_pt_x[0] - (float) a2_pt_x[1]);
@@ -439,19 +459,48 @@ void n_pt_persp_drag(magic_api * api, int which,
       if (x != a2_pt_x[i]) {
         slope = ((float) y - (float) a2_pt_y[i]) / ((float) x - (float) a2_pt_x[i]);
 
-      x1 = 0;
-      y1 = a2_pt_y[i] - (a2_pt_x[i] * slope);
-      x2 = canvas->w;
-      y2 = a2_pt_y[i] + ((canvas->w - a2_pt_x[i]) * slope);
+        x1 = 0;
+        y1 = a2_pt_y[i] - (a2_pt_x[i] * slope);
+        x2 = canvas->w;
+        y2 = a2_pt_y[i] + ((canvas->w - a2_pt_x[i]) * slope);
 
-      api->line((void *) api, which, canvas, NULL,
-                x1, y1, x2, y2, 2,
-                n_pt_persp_line_xor_callback);
+        api->line((void *) api, which, canvas, NULL,
+                  x1, y1, x2, y2, 2,
+                  n_pt_persp_line_xor_callback);
       }
     }
   } else if (which == TOOL_3PT_DRAW) {
     /* 3-point perspective - draw */
-    /* FIXME */
+
+    n_pt_persp_draw_points(api, TOOL_3PT_SELECT, canvas);
+
+    /* Horizon line (from the cursor) */
+    slope = ((float) a3_pt_y[0] - (float) a3_pt_y[1]) / ((float) a3_pt_x[0] - (float) a3_pt_x[1]);
+    x1 = 0;
+    y1 = y - (x * slope);
+    x2 = canvas->w;
+    y2 = y + ((canvas->w - x) * slope);
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 5,
+              n_pt_persp_line_xor_callback);
+
+    /* N.B. No "vertical" line; the 3rd vanishing point defines "up" and "down" */
+
+    /* Diagonal lines from cursor to the vanishing points */
+    for (i = 0; i < 3; i++) {
+      if (x != a3_pt_x[i]) {
+        slope = ((float) y - (float) a3_pt_y[i]) / ((float) x - (float) a3_pt_x[i]);
+
+        x1 = 0;
+        y1 = a3_pt_y[i] - (a3_pt_x[i] * slope);
+        x2 = canvas->w;
+        y2 = a3_pt_y[i] + ((canvas->w - a3_pt_x[i]) * slope);
+
+        api->line((void *) api, which, canvas, NULL,
+                  x1, y1, x2, y2, 2,
+                  n_pt_persp_line_xor_callback);
+      }
+    }
   } else if (which == TOOL_1PT_SELECT) {
     /* 1-point perspective - select */
     a1_pt_x = x;
@@ -477,9 +526,10 @@ void n_pt_persp_work(magic_api * api, int which,
                      SDL_Surface * canvas, int x, int y,
                      SDL_Rect * update_rect, int xor)
 {
-  int portion_x1, portion_y1, portion_x2, portion_y2, portion_w, portion_h;
   int x1, y1, x2, y2;
   float slope, slope2;
+  int i, best_angle_idx;
+  float cursor_angle, diff, best_diff;
   /* SDL_Rect area_rect; */
 
   if (n_pt_persp_snapshot == NULL)
@@ -527,10 +577,16 @@ void n_pt_persp_work(magic_api * api, int which,
         y2 = y1;
       }
     }
-  } else if (which == TOOL_2PT_DRAW) {
-    /* 2-point perspective */
-    int i, best_angle_idx;
-    float cursor_angle, diff, best_diff;
+  } else if (which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW) {
+    float * valid_angle;
+
+    /* 2- & 3-point perspective */
+
+    if (which == TOOL_2PT_DRAW) {
+      valid_angle = a2_valid_angle;
+    } else {
+      valid_angle = a3_valid_angle;
+    }
 
     /* Find the valid angle that the drawn angle fits best to */
     cursor_angle = atan2f(y - line_start_y, x - line_start_x);
@@ -539,7 +595,7 @@ void n_pt_persp_work(magic_api * api, int which,
     best_diff = M_PI * 2;
 
     for (i = 0; i < 8; i++) {
-      diff = fabs(cursor_angle - a2_valid_angle[i]);
+      diff = fabs(cursor_angle - valid_angle[i]);
 
       if (diff < best_diff) {
         best_angle_idx = i;
@@ -555,8 +611,8 @@ void n_pt_persp_work(magic_api * api, int which,
     /* Calculate a line segment, so we can determine the slope */
     x1 = line_start_x;
     y1 = line_start_y;
-    x2 = line_start_x + cos(a2_valid_angle[best_angle_idx]) * 1000;
-    y2 = line_start_y + sin(a2_valid_angle[best_angle_idx]) * 1000;
+    x2 = line_start_x + cos(valid_angle[best_angle_idx]) * 1000;
+    y2 = line_start_y + sin(valid_angle[best_angle_idx]) * 1000;
 
     if (abs(x2 - x1) >= 2) {
       slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
@@ -575,45 +631,9 @@ void n_pt_persp_work(magic_api * api, int which,
       x2 = x1;
       y2 = y;
     }
-  } else if (which == TOOL_3PT_DRAW) {
-    /* 3-point perspective */
-
-    /* FIXME */
-    return;
   }
 
-  portion_x1 = x1;
-  portion_y1 = y1;
-  portion_x2 = x2;
-  portion_y2 = y2;
-
-  if (portion_x1 > portion_x2)
-  {
-    int temp = portion_x1;
-
-    portion_x1 = portion_x2;
-    portion_x2 = temp;
-  }
-  if (portion_y1 > portion_y2)
-  {
-    int temp = portion_y1;
-
-    portion_y1 = portion_y2;
-    portion_y2 = temp;
-  }
-
-  portion_w = (portion_x2 - portion_x1) + 1;
-  portion_h = (portion_y2 - portion_y1) + 1;
-
-  /* FIXME: Not working correctly!? -bjk 2023.12.13 */
-  /*
-  area_rect.x = portion_x1;
-  area_rect.y = portion_y1;
-  area_rect.w = portion_w;
-  area_rect.h = portion_h;
-  */
-
-  SDL_BlitSurface(n_pt_persp_snapshot, NULL /* FIXME &area_rect */, canvas, NULL /* FIXME &area_rect */);
+  SDL_BlitSurface(n_pt_persp_snapshot, NULL, canvas, NULL);
 
   /* Draw the line */
 
@@ -623,32 +643,20 @@ void n_pt_persp_work(magic_api * api, int which,
     api->line((void *) api, which, canvas, NULL,
               x1, y1, x2, y2, 3,
               n_pt_persp_line_xor_callback);
-
-    update_rect->x = portion_x1;
-    update_rect->y = portion_y1;
-    update_rect->w = portion_w + 1;
-    update_rect->h = portion_h + 1;
   } else {
     /* Released; draw the line for real */
 
     api->line((void *) api, which, canvas, NULL,
               x1, y1, x2, y2, 1,
               n_pt_persp_line_callback);
-
-    update_rect->x = portion_x1 - n_pt_persp_size;
-    update_rect->y = portion_y1 - n_pt_persp_size;
-    update_rect->w = portion_w + n_pt_persp_size;
-    update_rect->h = portion_h + n_pt_persp_size;
   }
 
-  /* FIXME */
   update_rect->x = 0;
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
-  api->playsound(sound_effects[which],
-    (x * 255) / canvas->w, 255);
+  api->playsound(sound_effects[which], (x * 255) / canvas->w, 255);
 }
 
 
@@ -845,13 +853,33 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
               x1, y1, a2_pt_x[1], a2_pt_y[1], 12,
               n_pt_persp_line_xor_callback);
   } else if (which == TOOL_3PT_SELECT) {
-    /* 2-point perspective */
+    /* 3-point perspective */
 
     for (i = 0; i < 3; i++) {
       n_pt_persp_draw_one_point(api, canvas, a3_pt_x[i], a3_pt_y[i], i);
     }
 
-    /* FIXME: Draw a grid */
+    /* Horizon line (vanishing point) */
+    slope = ((float) a3_pt_y[0] - (float) a3_pt_y[1]) / ((float) a3_pt_x[0] - (float) a3_pt_x[1]);
+    x1 = 0;
+    y1 = a3_pt_y[0] - (a3_pt_x[0] * slope);
+    x2 = canvas->w;
+    y2 = a3_pt_y[0] + ((canvas->w - a3_pt_x[0]) * slope);
+
+    api->line((void *) api, which, canvas, NULL,
+              x1, y1, x2, y2, 12,
+              n_pt_persp_line_xor_callback);
+
+    for (i = 0; i < 6; i++) {
+      x1 = a3_pt_x[0] + (((a3_pt_x[1] - a3_pt_x[0]) / 5) * i);
+      y1 = a3_pt_y[0] + ((x1 - a3_pt_x[0]) * slope);
+      x2 = a3_pt_x[2];
+      y2 = a3_pt_y[2];
+
+      api->line((void *) api, which, canvas, NULL,
+                x1, y1, x2, y2, 12,
+                n_pt_persp_line_xor_callback);
+    }
   }
 }
 

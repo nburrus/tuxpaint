@@ -67,18 +67,20 @@ Déformations de l'image
 
 Peindre
 
-  * 1-Point Draw
-  * 1-Point Select
-  * 2-Point Draw
-  * 2-Point Select
+  * 3-Point Draw
+  * 3-Point Select
   * Arc-en-ciel
   * Arc-en-ciel
   * Arc-en-ciel doux
   * Boucles
   * Briques
   * Calligraphie
+  * Choix 1 point
+  * Choix 2 points
   * Confettis
   * Dentifrice
+  * Dessin 1 point
+  * Dessin 2 points
   * Doux
   * Effet mouillé
   * Fourrure

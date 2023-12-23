@@ -10,7 +10,8 @@ two vanishing points, or a line perpendicular to that "horizon".
 
 This tool is operated in a freehand fashion.
 
-See also: 1-Point Draw, 1-Point Select, 2-Point Select, & Perspective.
+See also: 1-Point Draw, 1-Point Select, 2-Point Select, 3-Point Draw, 3-Point
+Select, & Perspective.
 
 -------------------------------------------------------------------------------
 

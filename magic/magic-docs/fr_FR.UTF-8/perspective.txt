@@ -9,7 +9,7 @@ dessin.
 
 Cet outil permet de travailler en mode à main levée.
 
-Voir aussi : 1-Point Draw.
+Voir aussi : Dessin 1 point.
 
 -------------------------------------------------------------------------------
 
