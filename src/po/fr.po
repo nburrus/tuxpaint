@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-17 10:48-0800\n"
-"PO-Revision-Date: 2023-10-31 06:41+0100\n"
+"PO-Revision-Date: 2023-12-23 15:43+0100\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -382,10 +382,14 @@ msgstr ""
 msgid ""
 "New Magic tool: 1-point Perspective (vanishing point) line drawing tool."
 msgstr ""
+"Nouvel outil Magie: outil de dessin de ligne avec perspective (1 point de "
+"fuite)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
+"Le nom et la taille de la police sont indiqués lors du choix d'une police "
+"dans les outils Texte et Étiquette. "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
@@ -1826,7 +1830,7 @@ msgstr "3D"
 
 #: ../../magic/src/colorsep.c:40
 msgid "Color Sep."
-msgstr "Séparer"
+msgstr "Sép. des couleurs"
 
 #: ../../magic/src/colorsep.c:41
 msgid "Double Vision"
@@ -2356,66 +2360,72 @@ msgstr "Clique pour ajouter des parasites sur la totalité du dessin."
 
 #: ../../magic/src/n_pt_persp.c:53
 msgid "1-Point Select"
-msgstr ""
+msgstr "1-Point Choisir"
 
 #: ../../magic/src/n_pt_persp.c:54
 msgid "1-Point Draw"
-msgstr ""
+msgstr "1-Point Dessiner"
 
 #: ../../magic/src/n_pt_persp.c:55
 msgid "2-Point Select"
-msgstr ""
+msgstr "2-Point Choisir"
 
 #: ../../magic/src/n_pt_persp.c:56
 msgid "2-Point Draw"
-msgstr ""
+msgstr "2-Point Dessiner"
 
 #: ../../magic/src/n_pt_persp.c:57
 msgid "3-Point Select"
-msgstr ""
+msgstr "3-Point Choisir"
 
 #: ../../magic/src/n_pt_persp.c:58
 msgid "3-Point Draw"
-msgstr ""
+msgstr "3-Point Dessiner"
 
 #: ../../magic/src/n_pt_persp.c:63
 msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
 msgstr ""
+"Clique sur le dessin pour placer un point de fuite pour l'outil de dessin "
+"avec une perspective à 1 point."
 
 #: ../../magic/src/n_pt_persp.c:64
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
-msgstr "Clique et promène la souris pour dessiner des motifs répétitifs."
+msgstr ""
+"Clique et promène la souris pour dessiner des lignes avec une perspective à "
+"1 point de fuite."
 
 #: ../../magic/src/n_pt_persp.c:65
 msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
 msgstr ""
+"Clique sur le dessin en deux endroits pour placer des points de fuite pour "
+"l'outil de dessin avec une perspective à 2 points."
 
 #: ../../magic/src/n_pt_persp.c:66
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
-msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
+msgstr ""
+"Clique et promène la souris pour dessiner des lignes avec une perspective à "
+"2 points de fuite."
 
 #: ../../magic/src/n_pt_persp.c:67
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
+"Clique sur le dessin en trois endroits pour placer des points de fuite pour "
+"l'outil de dessin avec une perspective à 3 points."
 
 #: ../../magic/src/n_pt_persp.c:68
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
-msgstr "Clique et déplace la souris pour déplacer ton image dans le cadre."
+msgstr ""
+"Clique et promène la souris pour dessiner des lignes avec une perspective à "
+"3 points de fuite."
 
 #: ../../magic/src/perspective.c:165
 msgid "Perspective"
