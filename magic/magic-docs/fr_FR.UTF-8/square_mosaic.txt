@@ -8,6 +8,8 @@ Convertit une partie du dessin en une mosaïque de cellules carrées.
 
 Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
+This tool offers color choices.
+
 Voir aussi : Mosaïque hexagonale, Mosaïque irrégulière, & Mosaïque.
 
 -------------------------------------------------------------------------------

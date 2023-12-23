@@ -9,6 +9,8 @@ sélectionnée. Balayez pour changer la taille des carrés.
 
 Cet outil permet de travailler en mode à main levée.
 
+This tool offers color choices.
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.32

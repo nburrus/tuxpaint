@@ -8,6 +8,8 @@ Draw string art around the edges of your picture.
 
 This tool is operated in a freehand fashion.
 
+This tool offers color choices.
+
 See also: String V & String Corner.
 
 -------------------------------------------------------------------------------

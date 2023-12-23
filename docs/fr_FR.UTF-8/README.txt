@@ -6,7 +6,7 @@
        Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               décembre 22, 2023
+                               décembre 23, 2023
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -104,17 +104,21 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
 
 D. Qu'y a-t-il de neuf dans la version 0.9.32 de Tux Paint ?
 
-1-point Perspective (vanishing point) Magic tool
-    A pair of tools that allow you to set a vanishing point, and then draw
-    lines in 1-point perspective.
+Outil Magie avec une perspective à 1 point de fuite
+    Des outils qui permettent de créer un point de fuite, et de dessiner
+    ensuite des lignes avec une perspective à 1 point.
 
-2-point Perspective (vanishing point) Magic tool
-    A pair of tools that allow you to set two vanishing points, and then draw
-    lines in 2-point perspective.
+Outil Magie avec une perspective à 2 points de fuite
+    Des outils qui permettent de créer deux points de fuite, et de dessiner
+    ensuite des lignes avec une perspective à 2 points.
 
-Font details shown when selected
-    The name and size of the selected font are shown when using the Text and
-    Label tools.
+3-point Perspective (vanishing point) Magic tool
+    A pair of tools that allow you to set three vanishing points, and then draw
+    lines in 3-point perspective.
+
+Les détails de la police sont affichés lors du choix
+    Le nom et la taille de la police choisie sont montrés quand on utilise les
+    outils Texte et Étiquette.
 
 
 Voir CHANGES.txt pour la liste complète des changements.
@@ -1392,15 +1396,15 @@ VII.Suivez le projet Tux Paint sur les réseaux sociaux
 Tux Paint est présent sur de nombreux media sociaux, où nous annonçons les
 mises à jour et les oeuvres d'art.
 
-  * Follow @tuxpaint.bsky.social on Bluesky
+  * Suivre @tuxpaint@bsky.social sur Bluesky
   * Suivez Tux Paint sur Facebook
   * Suivre @TuxPaintDevs sur Instagram
   * Suivre @tuxpaint@floss.social sur Mastodon
   * Suivre u/TuxPaintDevs sur Reddit
   * Suivre @TuxPaintDevs sur Threads
-  * Follow @TuxPaintDevs on TikTok
+  * Suivre @TuxPaintDevs sur TikTok
   * Suivre Tux Paint sur Tumblr
-  * Subscribe to @TuxPaintOfficial on YoUTube
+  * Souscrivez à @TuxPaintOfficial sur YoUTube
 
 VIII. Mentions concernant les marques déposées
 

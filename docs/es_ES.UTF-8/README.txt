@@ -6,7 +6,7 @@
         Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              diciembre 22, 2023
+                              diciembre 23, 2023
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -106,6 +106,10 @@ D. What's New in Tux Paint version 0.9.32?
 2-point Perspective (vanishing point) Magic tool
     A pair of tools that allow you to set two vanishing points, and then draw
     lines in 2-point perspective.
+
+3-point Perspective (vanishing point) Magic tool
+    A pair of tools that allow you to set three vanishing points, and then draw
+    lines in 3-point perspective.
 
 Font details shown when selected
     The name and size of the selected font are shown when using the Text and

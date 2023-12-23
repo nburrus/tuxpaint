@@ -9,6 +9,8 @@ chosen color will be used as a background color.)
 
 This tool is operated in a freehand fashion.
 
+This tool offers color choices.
+
 See also: Rush & Tile Zoom.
 
 -------------------------------------------------------------------------------

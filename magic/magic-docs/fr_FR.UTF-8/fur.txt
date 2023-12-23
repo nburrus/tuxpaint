@@ -8,6 +8,8 @@ Ajoutez de la fourrure à votre dessin.
 
 Cet outil permet de travailler en mode à main levée.
 
+This tool offers color choices.
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.32

@@ -11,6 +11,8 @@ comme un morceau de papier.
 
 Cet outil permet de travailler en mode à main levée.
 
+This tool offers color choices.
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.32

@@ -10,6 +10,8 @@ greenish hues by selecting different colors in the color palette.
 
 This tool is operated in a freehand fashion.
 
+This tool offers color choices.
+
 See also: Flower.
 
 -------------------------------------------------------------------------------

@@ -8,6 +8,8 @@ Dessine une une ficelle en forme de V à n'importe quel angle.
 
 Cet outil permet de travailler en mode à main levée.
 
+This tool offers color choices.
+
 Voir aussi : Ficelles dans les coins & Ficelles sur les bords.
 
 -------------------------------------------------------------------------------

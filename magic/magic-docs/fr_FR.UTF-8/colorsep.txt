@@ -10,6 +10,8 @@ séparer et la direction de la séparation).
 
 Cet outil permet de travailler en mode à main levée.
 
+This tool offers color choices.
+
 Voir aussi : Lunettes 3D & Vision double.
 
 -------------------------------------------------------------------------------

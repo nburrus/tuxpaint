@@ -11,6 +11,8 @@ Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
 Cet outil permet de travailler avec plusieurs tailles.
 
+This tool offers color choices.
+
 Voir aussi : Éclaircir & Assombrir.
 
 -------------------------------------------------------------------------------
