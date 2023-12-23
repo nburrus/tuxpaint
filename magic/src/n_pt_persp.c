@@ -42,10 +42,10 @@ const char *sound_filenames[NUM_TOOLS] = {
 };
 
 const char *icon_filenames[NUM_TOOLS] = {
-  "perspective.png", // FIXME
-  "perspective.png", // FIXME
-  "perspective.png", // FIXME
-  "perspective.png", // FIXME
+  "1pt_persp_select.png",
+  "1pt_persp_draw.png",
+  "2pt_persp_select.png",
+  "2pt_persp_draw.png",
   "perspective.png", // FIXME
   "perspective.png", // FIXME
 };
