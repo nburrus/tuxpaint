@@ -32,13 +32,17 @@ enum
 };
 
 
-const char *sound_filenames[NUM_TOOLS] = {
-  "", // FIXME
-  "", // FIXME
-  "", // FIXME
-  "", // FIXME
-  "", // FIXME
-  "", // FIXME
+enum {
+  SND_SELECT,
+  SND_DRAW_CLICK,
+  SND_DRAW_RELEASE,
+  NUM_SNDS
+};
+
+const char *sound_filenames[NUM_SNDS] = {
+  "n_pt_persp_select.ogg",
+  "n_pt_persp_click.ogg",
+  "n_pt_persp_release.ogg",
 };
 
 const char *icon_filenames[NUM_TOOLS] = {
@@ -140,7 +144,7 @@ int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
   int i;
   char filename[1024];
 
-  for (i = 0; i < NUM_TOOLS; i++)
+  for (i = 0; i < NUM_SNDS; i++)
   {
     snprintf(filename, sizeof(filename), "%s/sounds/magic/%s", api->data_directory,
              sound_filenames[i]);
@@ -258,7 +262,7 @@ void n_pt_persp_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     SDL_FreeSurface(n_pt_persp_snapshot);
   }
 
-  for (i = 0; i < NUM_TOOLS; i++) {
+  for (i = 0; i < NUM_SNDS; i++) {
     if (sound_effects[i] != NULL) {
       Mix_FreeChunk(sound_effects[i]);
     }
@@ -317,6 +321,8 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else {
     int i;
+
+    api->playsound(sound_effects[SND_DRAW_CLICK], (x * 255) / canvas->w, 255);
 
     /* Start drawing a line */
     SDL_BlitSurface(canvas, NULL, n_pt_persp_snapshot, NULL);
@@ -380,6 +386,8 @@ void n_pt_persp_vanish_pt_moved(magic_api * api, int which, SDL_Surface * canvas
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
+
+  api->playsound(sound_effects[SND_SELECT], 128, 255);
 }
 
 
@@ -655,8 +663,6 @@ void n_pt_persp_work(magic_api * api, int which,
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
-
-  api->playsound(sound_effects[which], (x * 255) / canvas->w, 255);
 }
 
 
@@ -666,7 +672,7 @@ void n_pt_persp_release(magic_api * api, int which,
 {
   if (which == TOOL_1PT_SELECT) {
     /* 1-point perspective - vanishing point drag released */
-    /* No-op */
+    api->stopsound();
   } else if (which == TOOL_2PT_SELECT) {
     /* 2-point perspective - vanishing point drag released */
     if (abs(a2_pt_x[0] - a2_pt_x[1]) < SNAP) {
@@ -678,12 +684,15 @@ void n_pt_persp_release(magic_api * api, int which,
         a2_pt_x[1] -= (SNAP / 2);
       }
     }
+    api->stopsound();
   } else if (which == TOOL_3PT_SELECT) {
     /* 3-point perspective - vanishing point drag released */
-    /* FIXME */
+    api->stopsound();
   } else {
     /* Draw the line (for real) */
     n_pt_persp_work(api, which, canvas, x, y, update_rect, 0);
+
+    api->playsound(sound_effects[SND_DRAW_RELEASE], (x * 255) / canvas->w, 255);
   }
 }
 
