@@ -7,31 +7,6 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2023.December.29 (0.9.32)
-  * New Magic Tools:
-    ----------------
-    * Vanishing point magic tools:
-      + 1-point Perspective ("1-Point Select" & "1-Point Draw")
-        Choose a vanishing point, and then draw lines that always
-        point towards it, or are vertical or horizontal.
-      + 2-point Perspective ("2-Point Select" & "2-Point Draw")
-        Choose two vanishing points, and then draw lines that always
-        point towards them, along the horizon defined by them,
-        or perpendicular to that horizon.
-      + 3-point Perspective ("3-Point Select" & "3-Point Draw")
-        Choose three vanishing points, and then draw lines that always
-        point towards them, or along the horizon defined by the first two.
-      + Code: Bill Kendrick <bill@newbreedsoftware.com>
-      + Sounds:
-        - Select: "Gummibandloop_121.wav"
-          (https://freesound.org/people/von_Gardener/sounds/473829/)
-          Creative Commons 0 by von_Gardener
-        - Click: "Rubber Band"
-          (https://freesound.org/people/IndigoRay/sounds/241869/)
-          Creative Commons 0 by IndigoRay
-        - Release: "Elastic band c note"
-          (https://freesound.org/people/mudflea2/sounds/708182/)
-          Creative Commons 0 by mudflea2
-
   * Improvements to Magic tools:
     ----------------------------
     * WIP - Support for complexity levels in Magic tools via the
@@ -48,6 +23,32 @@ https://tuxpaint.org/
     * "Clone" tool does not operate when Tux Paint is in "novice"
       complexity mode.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+  * New Magic Tools:
+    ----------------
+    * Vanishing point magic tools:
+      + 1-point Perspective ("1-Point Select" & "1-Point Draw")
+        Choose a vanishing point, and then draw lines that always
+        point towards it, or are vertical or horizontal.
+      + 2-point Perspective ("2-Point Select" & "2-Point Draw")
+        Choose two vanishing points, and then draw lines that always
+        point towards them, along the horizon defined by them,
+        or perpendicular to that horizon.
+      + 3-point Perspective ("3-Point Select" & "3-Point Draw")
+        Choose three vanishing points, and then draw lines that always
+        point towards them, or along the horizon defined by the first two.
+      + Tools do not operate when in "novice" complexity mode.
+      + Code: Bill Kendrick <bill@newbreedsoftware.com>
+      + Sounds:
+        - Select: "Gummibandloop_121.wav"
+          (https://freesound.org/people/von_Gardener/sounds/473829/)
+          Creative Commons 0 by von_Gardener
+        - Click: "Rubber Band"
+          (https://freesound.org/people/IndigoRay/sounds/241869/)
+          Creative Commons 0 by IndigoRay
+        - Release: "Elastic band c note"
+          (https://freesound.org/people/mudflea2/sounds/708182/)
+          Creative Commons 0 by mudflea2
 
   * Improvements to "Text" & "Label" tools:
     ---------------------------------------

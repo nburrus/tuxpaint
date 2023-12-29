@@ -144,6 +144,14 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   int i;
   char filename[1024];
 
+  if (complexity_level == MAGIC_COMPLEXITY_NOVICE) {
+    /* No N-point perspective tools _at all_, if in Novice mode */
+    return 0;
+  }
+
+  /* FIXME: Behave differently if in BEGINNER mode, vs ADVANCED */
+  /* (See idea in https://sourceforge.net/p/tuxpaint/feature-requests/247/ -bjk 2023.12.29) */
+
   for (i = 0; i < NUM_SNDS; i++)
   {
     snprintf(filename, sizeof(filename), "%s/sounds/magic/%s", api->data_directory,
