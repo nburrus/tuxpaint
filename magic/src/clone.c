@@ -95,9 +95,14 @@ void clone_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, 
                     SDL_Rect * update_rect);
 
 // No setup required:
-int clone_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
+int clone_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level)
 {
   char fname[1024];
+
+  if (complexity_level == MAGIC_COMPLEXITY_NOVICE) {
+    /* Clone tool not available in "novice" mode */
+    return(0);
+  }
 
   snprintf(fname, sizeof(fname), "%ssounds/magic/clone_start.ogg", api->data_directory);
   clone_start_snd = Mix_LoadWAV(fname);
@@ -119,6 +124,7 @@ Uint32 clone_api_version(void)
 // We have multiple tools:
 int clone_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
+  printf("CLONE TOOL COUNT\n");
   return (NUM_TOOLS);
 }
 

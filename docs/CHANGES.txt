@@ -45,6 +45,10 @@ https://tuxpaint.org/
       + Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000009.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * "Clone" tool does not operate when Tux Paint is in "novice"
+      complexity mode.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Improvements to "Text" & "Label" tools:
     ---------------------------------------
     * The name and size of the chosen font is shown in the instructions
