@@ -124,7 +124,6 @@ Uint32 clone_api_version(void)
 // We have multiple tools:
 int clone_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  printf("CLONE TOOL COUNT\n");
   return (NUM_TOOLS);
 }
 
