@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -77,7 +77,7 @@ static int rainbow_color, rainbow_mix;
 static Uint32 rainbow_rgb;
 static Mix_Chunk *rainbow_snd;
 
-int rainbow_init(magic_api * api, Uint32 disabled_features);
+int rainbow_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 rainbow_api_version(void);
 int rainbow_get_tool_count(magic_api * api);
 SDL_Surface *rainbow_get_icon(magic_api * api, int which);
@@ -115,7 +115,7 @@ Uint32 rainbow_api_version(void)
 }
 
 // Load our sfx:
-int rainbow_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int rainbow_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

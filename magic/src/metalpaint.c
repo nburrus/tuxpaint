@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 20, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -39,7 +39,7 @@ static Uint8 metalpaint_r, metalpaint_g, metalpaint_b;
 static int metalpaint_size = 8;
 
 Uint32 metalpaint_api_version(void);
-int metalpaint_init(magic_api * api, Uint32 disabled_features);
+int metalpaint_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int metalpaint_get_tool_count(magic_api * api);
 SDL_Surface *metalpaint_get_icon(magic_api * api, int which);
 char *metalpaint_get_name(magic_api * api, int which);
@@ -72,7 +72,7 @@ Uint32 metalpaint_api_version(void)
 
 
 // No setup required:
-int metalpaint_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int metalpaint_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

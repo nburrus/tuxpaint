@@ -1,7 +1,7 @@
 /*
   alien.c
 
-  alien, Modifies the colours of the image.
+  "Color Shift" aka "Alien": Modifies the colours of the image.
   Tux Paint - A simple drawing program for children.
 
   Credits: Andrew Corcoran <akanewbie@gmail.com> inspired by the Alien Map GIMP plugin
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 23, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -78,7 +78,7 @@ const char *alien_descs[alien_NUM_TOOLS][2] = {
 
 // Prototypes
 Uint32 alien_api_version(void);
-int alien_init(magic_api * api, Uint32 disabled_features);
+int alien_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int alien_get_tool_count(magic_api * api);
 SDL_Surface *alien_get_icon(magic_api * api, int which);
 char *alien_get_name(magic_api * api, int which);
@@ -110,7 +110,7 @@ Uint32 alien_api_version(void)
 }
 
 //Load sounds
-int alien_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int alien_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

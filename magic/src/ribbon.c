@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 23, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -47,7 +47,7 @@ static int ribbon_tail = 0, ribbon_head = 0;
 static double ribbon_old_angle;
 static Mix_Chunk *ribbon_snd;
 
-int ribbon_init(magic_api * api, Uint32 disabled_features);
+int ribbon_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 ribbon_api_version(void);
 int ribbon_get_tool_count(magic_api * api);
 SDL_Surface *ribbon_get_icon(magic_api * api, int which);
@@ -85,7 +85,7 @@ Uint32 ribbon_api_version(void)
 }
 
 // Load our sfx:
-int ribbon_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int ribbon_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

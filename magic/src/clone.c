@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 20, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -65,7 +65,7 @@ int clone_radius = 16;
 
 /* Local function prototype: */
 
-int clone_init(magic_api * api, Uint32 disabled_features);
+int clone_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 clone_api_version(void);
 int clone_get_tool_count(magic_api * api);
 SDL_Surface *clone_get_icon(magic_api * api, int which);
@@ -95,7 +95,7 @@ void clone_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, 
                     SDL_Rect * update_rect);
 
 // No setup required:
-int clone_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int clone_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

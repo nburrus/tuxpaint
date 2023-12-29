@@ -2,7 +2,7 @@
 
   Allows painting generated maze puzzles on your picture.
 
-  Last updated: February 5, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -43,7 +43,7 @@ int maze_start_x, maze_start_y;
 int num_maze_starts = 0, maze_starts_size = 0;
 
 Uint32 maze_api_version(void);
-int maze_init(magic_api * api, Uint32 disabled_features);
+int maze_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int maze_get_tool_count(magic_api * api);
 SDL_Surface *maze_get_icon(magic_api * api, int which);
 char *maze_get_name(magic_api * api, int which);
@@ -80,7 +80,7 @@ Uint32 maze_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int maze_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int maze_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

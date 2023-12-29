@@ -24,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 18, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -41,7 +41,7 @@ static Uint8 grass_r, grass_g, grass_b;
 static SDL_Surface *img_grass;
 
 // Prototypes
-int grass_init(magic_api * api, Uint32 disabled_features);
+int grass_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 grass_api_version(void);
 int grass_get_tool_count(magic_api * api);
 SDL_Surface *grass_get_icon(magic_api * api, int which);
@@ -69,7 +69,7 @@ void grass_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, 
                     SDL_Rect * update_rect);
 
 // No setup required:
-int grass_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int grass_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

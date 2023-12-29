@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -77,7 +77,7 @@ const char *toothpaste_descs[toothpaste_NUM_TOOLS] = {
 
 
 Uint32 toothpaste_api_version(void);
-int toothpaste_init(magic_api * api, Uint32 disabled_features);
+int toothpaste_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int toothpaste_get_tool_count(magic_api * api);
 SDL_Surface *toothpaste_get_icon(magic_api * api, int which);
 char *toothpaste_get_name(magic_api * api, int which);
@@ -110,7 +110,7 @@ Uint32 toothpaste_api_version(void)
 }
 
 
-int toothpaste_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int toothpaste_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

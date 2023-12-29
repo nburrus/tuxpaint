@@ -32,7 +32,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -53,7 +53,7 @@ static void perspective_preview(magic_api * api, int which,
                                 SDL_Surface * canvas, SDL_Surface * last,
                                 int x, int y, SDL_Rect * update_rect, float step);
 Uint32 perspective_api_version(void);
-int perspective_init(magic_api * api, Uint32 disabled_features);
+int perspective_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int perspective_get_tool_count(magic_api * api);
 SDL_Surface *perspective_get_icon(magic_api * api, int which);
 char *perspective_get_name(magic_api * api, int which);
@@ -187,7 +187,7 @@ Uint32 perspective_api_version(void)
 }
 
 //Load sounds
-int perspective_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int perspective_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

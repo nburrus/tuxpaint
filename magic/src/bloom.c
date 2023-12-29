@@ -3,7 +3,7 @@
    Applies a "bloom" effect to the image.
    (https://en.wikipedia.org/wiki/Bloom_(shader_effect))
 
-   Last updated: April 22, 2023
+   Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -42,7 +42,7 @@ Uint8 *bloom_mask = NULL;
 int bloom_scale;
 
 Uint32 bloom_api_version(void);
-int bloom_init(magic_api * api, Uint32 disabled_features);
+int bloom_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int bloom_get_tool_count(magic_api * api);
 SDL_Surface *bloom_get_icon(magic_api * api, int which);
 char *bloom_get_name(magic_api * api, int which);
@@ -76,7 +76,7 @@ Uint32 bloom_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int bloom_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int bloom_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

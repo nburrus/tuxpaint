@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -87,7 +87,7 @@ const char *sharpen_descs[sharpen_NUM_TOOLS][2] = {
 };
 
 Uint32 sharpen_api_version(void);
-int sharpen_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED);
+int sharpen_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int sharpen_get_tool_count(magic_api * api);
 SDL_Surface *sharpen_get_icon(magic_api * api, int which);
 char *sharpen_get_name(magic_api * api, int which);
@@ -126,7 +126,7 @@ Uint32 sharpen_api_version(void)
 
 
 // No setup required:
-int sharpen_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int sharpen_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
 
   int i;

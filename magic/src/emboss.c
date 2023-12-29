@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -39,7 +39,7 @@ static int emboss_radius = 16;
 
 // Prototypes
 Uint32 emboss_api_version(void);
-int emboss_init(magic_api * api, Uint32 disabled_features);
+int emboss_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int emboss_get_tool_count(magic_api * api);
 SDL_Surface *emboss_get_icon(magic_api * api, int which);
 char *emboss_get_name(magic_api * api, int which);
@@ -75,7 +75,7 @@ Uint32 emboss_api_version(void)
 
 
 // No setup required:
-int emboss_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int emboss_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

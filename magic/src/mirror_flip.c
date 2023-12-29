@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 20, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -44,7 +44,7 @@ enum
 static Mix_Chunk *snd_effects[NUM_TOOLS];
 
 /* Prototypes */
-int mirror_flip_init(magic_api *, Uint32 disabled_features);
+int mirror_flip_init(magic_api *, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 mirror_flip_api_version(void);
 int mirror_flip_get_tool_count(magic_api *);
 SDL_Surface *mirror_flip_get_icon(magic_api *, int);
@@ -67,7 +67,7 @@ void mirror_flip_set_size(magic_api * api, int which, int mode, SDL_Surface * ca
                           SDL_Rect * update_rect);
 
 // No setup required:
-int mirror_flip_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int mirror_flip_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

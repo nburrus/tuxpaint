@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -45,7 +45,7 @@ static Mix_Chunk *shift_snd;
 static void shift_doit(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect, int crosshairs);
 Uint32 shift_api_version(void);
-int shift_init(magic_api * api, Uint32 disabled_features);
+int shift_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int shift_get_tool_count(magic_api * api);
 SDL_Surface *shift_get_icon(magic_api * api, int which);
 char *shift_get_name(magic_api * api, int which);
@@ -80,7 +80,7 @@ Uint32 shift_api_version(void)
 
 
 // No setup required:
-int shift_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int shift_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

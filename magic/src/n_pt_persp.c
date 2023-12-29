@@ -5,7 +5,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 23, 2023
+   December 12, 2023 - December 29, 2023
 */
 
 
@@ -90,7 +90,7 @@ float a3_valid_angle[8];
 
 /* Function prototypes: */
 Uint32 n_pt_persp_api_version(void);
-int n_pt_persp_init(magic_api * api, Uint32 disabled_features);
+int n_pt_persp_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int n_pt_persp_get_tool_count(magic_api * api);
 SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which);
 char *n_pt_persp_get_name(magic_api * api, int which);
@@ -139,7 +139,7 @@ Uint32 n_pt_persp_api_version(void)
 }
 
 
-int n_pt_persp_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level)
 {
   int i;
   char filename[1024];

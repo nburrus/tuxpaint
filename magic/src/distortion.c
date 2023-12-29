@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: December 29, 2023
 */
 
 /* Inclusion of header files: */
@@ -55,7 +55,7 @@ static int distortion_radius = 8;
 // that are declared _before_ them.
 
 Uint32 distortion_api_version(void);
-int distortion_init(magic_api * api, Uint32 disabled_features);
+int distortion_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int distortion_get_tool_count(magic_api * api);
 SDL_Surface *distortion_get_icon(magic_api * api, int which);
 char *distortion_get_name(magic_api * api, int which);
@@ -97,7 +97,7 @@ Uint32 distortion_api_version(void)
 
 // Initialization
 
-int distortion_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int distortion_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 
 #include "tp_magic_api.h"
@@ -52,7 +52,7 @@ Mix_Chunk *stretch_snd;
 Uint32 stretch_api_version(void);
 void stretch_set_color(magic_api * api, int which, SDL_Surface * canvas,
                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int stretch_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED);
+int stretch_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int stretch_get_tool_count(magic_api * api);
 SDL_Surface *stretch_get_icon(magic_api * api, int which);
 char *stretch_get_name(magic_api * api, int which);
@@ -89,7 +89,7 @@ void stretch_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 {
 }
 
-int stretch_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int stretch_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: Decemer 29, 2023
 */
 
 #include <stdio.h>
@@ -36,7 +36,7 @@ static Mix_Chunk *xor_snd;
 static int xor_radius = 16;
 
 Uint32 xor_api_version(void);
-int xor_init(magic_api * api, Uint32 disabled_features);
+int xor_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int xor_get_tool_count(magic_api * api);
 SDL_Surface *xor_get_icon(magic_api * api, int which);
 char *xor_get_name(magic_api * api, int which);
@@ -70,7 +70,7 @@ Uint32 xor_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int xor_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int xor_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

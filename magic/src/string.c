@@ -1,7 +1,7 @@
 /*
   Strings -- draws string art.
 
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -64,7 +64,7 @@ char *string_get_description(magic_api * api, int which, int mode);
 int string_requires_colors(magic_api * api, int which);
 void string_release(magic_api * api, int which,
                     SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y, SDL_Rect * update_rect);
-int string_init(magic_api * api, Uint32 disabled_features);
+int string_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 void string_shutdown(magic_api * api);
 void string_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot);
 void string_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot);
@@ -190,7 +190,7 @@ void string_release(magic_api * api, int which,
   }
 }
 
-int string_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int string_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

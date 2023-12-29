@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: February 12, 2023
+  Last updated: December 29, 2023
 */
 
 
@@ -50,7 +50,7 @@ static int rects_w, rects_h;
 SDL_Surface *canvas_backup;
 
 Uint32 puzzle_api_version(void);
-int puzzle_init(magic_api * api, Uint32 disabled_features);
+int puzzle_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int puzzle_get_tool_count(magic_api * api);
 SDL_Surface *puzzle_get_icon(magic_api * api, int which);
 char *puzzle_get_name(magic_api * api, int which);
@@ -82,7 +82,7 @@ Uint32 puzzle_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int puzzle_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int puzzle_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

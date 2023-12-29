@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -56,7 +56,7 @@ static int brick_size = TOOL_LARGEBRICKS;
 /* Local function prototype: */
 
 static void do_brick(magic_api * api, SDL_Surface * canvas, int x, int y, int w, int h);
-int bricks_init(magic_api * api, Uint32 disabled_features);
+int bricks_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 bricks_api_version(void);
 int bricks_get_tool_count(magic_api * api);
 SDL_Surface *bricks_get_icon(magic_api * api, int which);
@@ -81,7 +81,7 @@ void bricks_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas,
                      SDL_Rect * update_rect);
 
 // No setup required:
-int bricks_init(magic_api * api, Uint32 disabled_features)
+int bricks_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

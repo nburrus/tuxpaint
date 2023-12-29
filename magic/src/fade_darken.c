@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -107,7 +107,7 @@ static int fade_darken_radius = 16;
 
 /* Local function prototypes: */
 
-int fade_darken_init(magic_api * api, Uint32 disabled_features);
+int fade_darken_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 fade_darken_api_version(void);
 int fade_darken_get_tool_count(magic_api * api);
 SDL_Surface *fade_darken_get_icon(magic_api * api, int which);
@@ -135,7 +135,7 @@ void fade_darken_set_size(magic_api * api, int which, int mode, SDL_Surface * ca
                           SDL_Rect * update_rect);
 
 
-int fade_darken_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int fade_darken_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

@@ -3,7 +3,7 @@
 
   Draw train tracks.
 
-  Last updated: November 12, 2023
+  Last updated: December 29, 2023
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -52,7 +52,7 @@ Uint32 rails_api_version(void);
 int rails_modes(magic_api * api, int which);
 void rails_set_color(magic_api * api, int which, SDL_Surface * canvas,
                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int rails_init(magic_api * api, Uint32 disabled_features);
+int rails_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int rails_get_tool_count(magic_api * api);
 SDL_Surface *rails_get_icon(magic_api * api, int which);
 char *rails_get_name(magic_api * api, int which);
@@ -102,7 +102,7 @@ void rails_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 {
 }
 
-int rails_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int rails_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   Uint8 i;                      //is always < 3, so Uint8 seems to be a good idea

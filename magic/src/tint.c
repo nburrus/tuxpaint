@@ -29,7 +29,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -81,7 +81,7 @@ const char *tint_descs[tint_NUM_TOOLS][2] = {
    gettext_noop("Click to turn your entire picture into white and a color you choose.")}
 };
 
-int tint_init(magic_api * api, Uint32 disabled_features);
+int tint_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 tint_api_version(void);
 int tint_get_tool_count(magic_api * api);
 SDL_Surface *tint_get_icon(magic_api * api, int which);
@@ -117,7 +117,7 @@ Uint32 tint_api_version(void)
 }
 
 //Load sounds
-int tint_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int tint_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

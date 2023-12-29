@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -39,7 +39,7 @@
 
 // Prototypes
 Uint32 blur_api_version(void);
-int blur_init(magic_api * api, Uint32 disabled_features);
+int blur_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int blur_get_tool_count(magic_api * api);
 SDL_Surface *blur_get_icon(magic_api * api, int which);
 char *blur_get_name(magic_api * api, int which);
@@ -100,7 +100,7 @@ Uint32 blur_api_version(void)
 }
 
 //Load sounds
-int blur_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int blur_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

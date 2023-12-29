@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -75,7 +75,7 @@ const char *noise_descs[noise_NUM_TOOLS][2] = {
 };
 
 Uint32 noise_api_version(void);
-int noise_init(magic_api * api, Uint32);
+int noise_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 SDL_Surface *noise_get_icon(magic_api * api, int which);
 char *noise_get_name(magic_api * api, int which);
 int noise_get_group(magic_api * api, int which);
@@ -109,7 +109,7 @@ Uint32 noise_api_version(void)
 }
 
 //Load sounds
-int noise_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int noise_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

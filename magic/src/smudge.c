@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 23, 2023
+  Last updated: December 29, 2023
 
   FIXME: "Wet Paint" doesn't smudge enough -bjk 2023.04.23
 */
@@ -42,7 +42,7 @@ static Mix_Chunk *smudge_snd;
 static Uint8 smudge_r, smudge_g, smudge_b;
 static int smudge_radius = 16;
 
-int smudge_init(magic_api * api, Uint32 disabled_features);
+int smudge_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 smudge_api_version(void);
 SDL_Surface *smudge_get_icon(magic_api * api, int which);
 char *smudge_get_name(magic_api * api, int which);
@@ -69,7 +69,7 @@ void smudge_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas,
                      SDL_Rect * update_rect);
 
 
-int smudge_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int smudge_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

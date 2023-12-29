@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -64,7 +64,7 @@ char *kal_icon_names[KAL_COUNT] = {
 /* Function Declarations: */
 
 Uint32 kalidescope_api_version(void);
-int kalidescope_init(magic_api * api, Uint32 disabled_features);
+int kalidescope_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int kalidescope_get_tool_count(magic_api * api);
 SDL_Surface *kalidescope_get_icon(magic_api * api, int which);
 char *kalidescope_get_name(magic_api * api, int which);
@@ -94,7 +94,7 @@ Uint32 kalidescope_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int kalidescope_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int kalidescope_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

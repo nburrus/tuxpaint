@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 22, 2023
+  Last updated: December 29, 2023
 
   TODO:
    * Support sizes (for snowflakes, we'll need a new set of bitmap PNGs!) -bjk 2023.04.22
@@ -83,7 +83,7 @@ const char *snow_descs[snow_NUM_TOOLS] = {
 };
 
 Uint32 snow_api_version(void);
-int snow_init(magic_api * api, Uint32 disabled_features);
+int snow_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int snow_get_tool_count(magic_api * api);
 SDL_Surface *snow_get_icon(magic_api * api, int which);
 char *snow_get_name(magic_api * api, int which);
@@ -116,7 +116,7 @@ Uint32 snow_api_version(void)
 }
 
 //Load sounds
-int snow_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int snow_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
 
   int i;

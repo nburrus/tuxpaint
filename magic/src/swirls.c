@@ -7,7 +7,7 @@
    Inspired by "Night Sky Scene [Pen Parallax]" Scratch Project
    by -HexaScape- <https://scratch.mit.edu/users/-HexaScape->
 
-   Last updated: April 22, 2023
+   Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -82,7 +82,7 @@ Uint32 swirl_stroke_color;
 Uint8 swirl_fur_color_r, swirl_fur_color_g, swirl_fur_color_b;
 
 Uint32 swirls_api_version(void);
-int swirls_init(magic_api * api, Uint32 disabled_features);
+int swirls_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int swirls_get_tool_count(magic_api * api);
 SDL_Surface *swirls_get_icon(magic_api * api, int which);
 char *swirls_get_name(magic_api * api, int which);
@@ -117,7 +117,7 @@ Uint32 swirls_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int swirls_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int swirls_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

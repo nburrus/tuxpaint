@@ -1,7 +1,7 @@
 /*
   Draws fretwork
 
-  Last updated: November 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include "tp_magic_api.h"
@@ -59,7 +59,7 @@ int fretwork_modes(magic_api * api, int which);
 void fretwork_set_color(magic_api * api, int which, SDL_Surface * canvas,
                         SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 static void fretwork_colorize(magic_api * api, SDL_Surface * dest, SDL_Surface * src);
-int fretwork_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED);
+int fretwork_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int fretwork_get_tool_count(magic_api * api);
 SDL_Surface *fretwork_get_icon(magic_api * api, int which);
 char *fretwork_get_name(magic_api * api, int which);
@@ -138,7 +138,7 @@ static void fretwork_colorize(magic_api * api, SDL_Surface * dest, SDL_Surface *
 }
 
 
-int fretwork_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int fretwork_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   Uint8 i;                      //is always < 4, so Uint8 seems to be a good idea

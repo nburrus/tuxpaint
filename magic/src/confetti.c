@@ -1,5 +1,5 @@
 /*
-  Last updated: April 19, 2023
+  Last updated: December 29, 2023
 */
 
 #include <time.h>               //For time()
@@ -29,7 +29,7 @@ Mix_Chunk *confetti_snd;
 Uint32 confetti_api_version(void);
 void confetti_set_color(magic_api * api, int which, SDL_Surface * canvas,
                         SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
-int confetti_init(magic_api * api, Uint32 disabled_features);
+int confetti_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int confetti_get_tool_count(magic_api * api);
 SDL_Surface *confetti_get_icon(magic_api * api, int which);
 char *confetti_get_name(magic_api * api, int which);
@@ -72,7 +72,7 @@ void confetti_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UN
   confetti_colors.b = b;
 }
 
-int confetti_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int confetti_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: November 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -73,7 +73,7 @@ static void flower_drawflower(magic_api * api, SDL_Surface * canvas, int x, int 
 static Point2D flower_PointOnCubicBezier(Point2D * cp, float t);
 static void flower_ComputeBezier(Point2D * cp, int numberOfPoints, Point2D * curve);
 Uint32 flower_api_version(void);
-int flower_init(magic_api * api, Uint32 disabled_features);
+int flower_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int flower_get_tool_count(magic_api * api);
 SDL_Surface *flower_get_icon(magic_api * api, int which);
 char *flower_get_name(magic_api * api, int which);
@@ -114,7 +114,7 @@ Uint32 flower_api_version(void)
 
 
 // No setup required:
-int flower_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int flower_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   SDL_Surface *tmp_surf;

@@ -30,7 +30,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 27, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -58,7 +58,7 @@ static void mosaic_shaped_fill(void *ptr_to_api, int which, SDL_Surface * canvas
 static void mosaic_shaped_paint(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 
 Uint32 mosaic_shaped_api_version(void);
-int mosaic_shaped_init(magic_api * api, Uint32 disabled_features);
+int mosaic_shaped_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int mosaic_shaped_get_tool_count(magic_api * api);
 SDL_Surface *mosaic_shaped_get_icon(magic_api * api, int which);
 char *mosaic_shaped_get_name(magic_api * api, int which);
@@ -164,7 +164,7 @@ Uint32 mosaic_shaped_api_version(void)
 }
 
 //Load sounds
-int mosaic_shaped_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int mosaic_shaped_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   int i;
   char fname[1024];

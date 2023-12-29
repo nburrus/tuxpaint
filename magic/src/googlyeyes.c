@@ -3,7 +3,7 @@
    Draws a googly eye at the click position, and looks
    towards where you drag+release.
 
-  Last updated: November 12, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -42,7 +42,7 @@ SDL_Surface **googlyeyes_img_reflection = NULL;
 int eye_x, eye_y;
 
 Uint32 googlyeyes_api_version(void);
-int googlyeyes_init(magic_api * api, Uint32 disabled_features);
+int googlyeyes_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int googlyeyes_get_tool_count(magic_api * api);
 SDL_Surface *googlyeyes_get_icon(magic_api * api, int which);
 char *googlyeyes_get_name(magic_api * api, int which);
@@ -73,7 +73,7 @@ Uint32 googlyeyes_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int googlyeyes_init(magic_api * api, Uint32 disabled_features)
+int googlyeyes_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   int i;

@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: April 23, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -77,7 +77,7 @@ const char *rain_descs[rain_NUM_TOOLS][2] = {
 };
 
 Uint32 rain_api_version(void);
-int rain_init(magic_api * api, Uint32 disabled_features);
+int rain_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 int rain_get_tool_count(magic_api * api);
 SDL_Surface *rain_get_icon(magic_api * api, int which);
 char *rain_get_name(magic_api * api, int which);
@@ -119,7 +119,7 @@ static int rain_inRainShape(double x, double y, double r)
   return 0;
 }
 
-int rain_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int rain_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
 
   int i;

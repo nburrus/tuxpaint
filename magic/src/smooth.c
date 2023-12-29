@@ -28,7 +28,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: May 22, 2023
+  Last updated: December 29, 2023
 */
 
 #include <stdio.h>
@@ -95,7 +95,7 @@ static Point2D smooth_PointOnCubicBezier(Point2D * cp, float t);
 static void smooth_ComputeBezier(Point2D * cp, int numberOfPoints, Point2D * curve);
 static float smooth_dist(float x1, float y1, float x2, float y2);
 
-int smooth_init(magic_api * api, Uint32 disabled_features);
+int smooth_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
 Uint32 smooth_api_version(void);
 int smooth_get_tool_count(magic_api * api);
 SDL_Surface *smooth_get_icon(magic_api * api, int which);
@@ -125,7 +125,7 @@ void smooth_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas,
 
 
 
-int smooth_init(magic_api * api, Uint32 disabled_features ATTRIBUTE_UNUSED)
+int smooth_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   int i;
