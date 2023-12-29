@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 17, 2023
+  June 14, 2002 - December 29, 2023
 */
 
 #include "platform.h"
@@ -1417,8 +1417,6 @@ static int new_colors_last;
 
 static int disable_template_export;
 
-static Uint8 magic_disabled_features = 0x00000000;
-
 #ifdef NOKIA_770
 static int simple_shapes = 1;
 #else
@@ -1544,6 +1542,9 @@ extern char *GetUserImageDir(void);
 
 #include "tp_magic_api.h"
 
+static Uint8 magic_disabled_features = 0x00000000;
+static Uint8 magic_complexity_level = MAGIC_COMPLEXITY_ADVANCED;
+
 static void update_progress_bar(void);
 static void special_notify(int flags);
 
@@ -1555,13 +1556,13 @@ typedef struct magic_funcs_s
   SDL_Surface *(*get_icon)(magic_api *, int);
   char *(*get_description)(magic_api *, int, int);
   int (*requires_colors)(magic_api *, int);
-   Uint8(*accepted_sizes) (magic_api *, int, int);
-   Uint8(*default_size) (magic_api *, int, int);
+  Uint8(*accepted_sizes) (magic_api *, int, int);
+  Uint8(*default_size) (magic_api *, int, int);
   int (*modes)(magic_api *, int);
   void (*set_color)(magic_api *, int, SDL_Surface *, SDL_Surface *, Uint8, Uint8, Uint8, SDL_Rect *);
   void (*set_size)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, Uint8, SDL_Rect *);
-  int (*init)(magic_api *, Uint32);
-   Uint32(*api_version) (void);
+  int (*init)(magic_api *, Uint8, Uint8);
+  Uint32(*api_version) (void);
   void (*shutdown)(magic_api *);
   void (*click)(magic_api *, int, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
   void (*drag)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, int, int, SDL_Rect *);
@@ -21667,7 +21668,7 @@ static void load_magic_plugins(void)
               }
               else
               {
-                res = magic_funcs[num_plugin_files].init(magic_api_struct, magic_disabled_features);
+                res = magic_funcs[num_plugin_files].init(magic_api_struct, magic_disabled_features, magic_complexity_level);
 
                 if (res != 0)
                   n = magic_funcs[num_plugin_files].get_tool_count(magic_api_struct);
@@ -30061,7 +30062,7 @@ static void setup(void)
 
   /* Load magic tool plugins: */
 
-  magic_disabled_features = 0x00000000;
+  magic_disabled_features = 0b00000000;
   if (disable_magic_sizes)
   {
     magic_disabled_features |= MAGIC_FEATURE_SIZE;

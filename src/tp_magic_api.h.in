@@ -1,6 +1,8 @@
 #ifndef TP_MAGIC_API_H
 #define TP_MAGIC_API_H
 
+/* src/tp_magic_api.h.in last modified 2023-12-29 */
+
 #include "SDL.h"
 #include "SDL_mixer.h"
 #include "libintl.h"
@@ -185,9 +187,18 @@ enum {
 };
 
 /* Magic-relevant Tux Paint features (which may be reported as disabled) */
+/* (Uint8) */
 
-#define MAGIC_FEATURE_CONTROL 0x00000001
-#define MAGIC_FEATURE_SIZE 0x00000002
+#define MAGIC_FEATURE_CONTROL 0b00000001
+#define MAGIC_FEATURE_SIZE    0b00000010
+
+/* Magic complexity level requested by the user (allowing plugins to simplify) */
+
+enum {
+  MAGIC_COMPLEXITY_ADVANCED,
+  MAGIC_COMPLEXITY_BEGINNER,
+  MAGIC_COMPLEXITY_NOVICE,
+};
 
 #endif
 
