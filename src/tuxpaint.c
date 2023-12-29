@@ -1543,7 +1543,7 @@ extern char *GetUserImageDir(void);
 #include "tp_magic_api.h"
 
 static Uint8 magic_disabled_features = 0x00000000;
-static Uint8 magic_complexity_level = MAGIC_COMPLEXITY_ADVANCED;
+static Uint8 magic_complexity_level = MAGIC_COMPLEXITY_DEFAULT;
 
 static void update_progress_bar(void);
 static void special_notify(int flags);
@@ -21681,7 +21681,7 @@ static void load_magic_plugins(void)
 
                 if (n == 0)
                 {
-                  fprintf(stderr, "Error: plugin %s failed to startup or reported 0 magic tools\n", fname);
+                  fprintf(stderr, "Notice: plugin %1$s failed to startup or reported 0 magic tools (Tux Paint is in complexity mode \"%2$s\")\n", fname, MAGIC_COMPLEXITY_LEVEL_NAMES[magic_complexity_level]);
                   fflush(stderr);
                   SDL_UnloadObject(magic_handle[num_plugin_files]);
                 }

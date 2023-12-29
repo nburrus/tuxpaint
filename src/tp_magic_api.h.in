@@ -195,10 +195,20 @@ enum {
 /* Magic complexity level requested by the user (allowing plugins to simplify) */
 
 enum {
-  MAGIC_COMPLEXITY_ADVANCED,
-  MAGIC_COMPLEXITY_BEGINNER,
   MAGIC_COMPLEXITY_NOVICE,
+  MAGIC_COMPLEXITY_BEGINNER,
+  MAGIC_COMPLEXITY_ADVANCED,
+  NUM_MAGIC_COMPLEXITY_LEVELS
 };
+
+#define MAGIC_COMPLEXITY_DEFAULT MAGIC_COMPLEXITY_ADVANCED
+
+char * MAGIC_COMPLEXITY_LEVEL_NAMES[NUM_MAGIC_COMPLEXITY_LEVELS] = {
+  "novice",
+  "beginner",
+  "advanced",
+};
+
 
 #endif
 
