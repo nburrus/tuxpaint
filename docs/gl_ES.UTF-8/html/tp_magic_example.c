@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   Abril 13, 2023
+   Decembro 29, 2023
 */
 
 
@@ -144,7 +144,7 @@ released, aka deallocated) when the user quits Tux Paint, when our
 example_shutdown() function is called.
 */
 
-int example_init(magic_api * api, Uint32 disabled_features)
+int example_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level)
 {
   int i;
   char filename[1024];
