@@ -177,7 +177,7 @@ Uint32 api_version(void)
 
 
 
-int init(magic_api * api, Uint32 disabled_features)
+int init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level)
 
     The plugin should do any initialization here. Return '1' if initialization
     was successful, or '0' if not (and Tux Paint will not present any 'Magic'
@@ -200,8 +200,23 @@ int init(magic_api * api, Uint32 disabled_features)
     disabled, the plugin is able to revert back to providing two separate
     tools.)
 
-    Note: Changed most recently in Tux Paint 0.9.30; Magic API version
-    0x00000008.
+    The complexity_level variable contains the "complexity level" that Tux
+    Paint magic tools may offer — that is, the expertise level of the user. The
+    levels are defined in tp_magic_api.h:
+      + MAGIC_COMPLEXITY_ADVANCED: Advanced (default) (--complexity=advanced)
+      + MAGIC_COMPLEXITY_BEGINNER: Beginner (--complexity=beginner)
+      + MAGIC_COMPLEXITY_Novice: Novice (--complexity=novice)
+    Your Magic tool(s) may wish to react differently depending on the expertise
+    level of the user, either simplifying how each tool works, or excluding one
+    or all of them entirely. (For example, the 1-, 2-, and 3-point perspective
+    toolsets are totally inactive when in "novice" mode. In "beginner" mode,
+    the drawing tools are available, but the tools to edit the vanishing point
+    positions are disabled; the default vanishing points are used. In fact, in
+    "beginner" mode, an additional 3-point perspective drawing tool appears,
+    with alternative vanishing points.)
+
+    Note: Changed most recently in Tux Paint 0.9.32; Magic API version
+    0x00000009.
 
 
 

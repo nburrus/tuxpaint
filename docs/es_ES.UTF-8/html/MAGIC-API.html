@@ -281,7 +281,7 @@
                   <b>Note:</b> Called once by Tux Paint, at startup. It is called first.                </p>
               </dd>
 
-              <dt><code><b>int init(magic_api * api, Uint32 disabled_features)</b></code></dt>
+              <dt><code><b>int init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level)</b></code></dt>
               <dd>
                 <p>
                   The plugin should do any initialization here. Return '1' if initialization was successful, or '0' if not (and Tux Paint will not present any 'Magic' tools from the plugin).                </p>
@@ -296,7 +296,17 @@
                   </ul>
                   Your Magic tool(s) may wish to react differently depending on whether one or more features have been disabled. (For example, the "Brick" Magic tool always offered two tool variations: large and small. With the addition of the size feature, only one tool is necessary. However, with the size option disabled, the plugin is able to revert back to providing two separate tools.)                </p>
                 <p>
-                  <b>Note:</b> Changed most recently in Tux Paint 0.9.30; Magic API version 0x00000008.                </p>
+                  The <code>complexity_level</code> variable contains the "complexity level" that Tux Paint magic tools may offer &mdash; that is, the expertise level of the user. The levels are defined in <code>tp_magic_api.h</code>:                  <ul>
+                    <li>
+                      <code>MAGIC_COMPLEXITY_ADVANCED</code>: Advanced (default) (<code>--complexity=advanced</code>)                    </li>
+                    <li>
+                      <code>MAGIC_COMPLEXITY_BEGINNER</code>: Beginner (<code>--complexity=beginner</code>)                    </li>
+                    <li>
+                      <code>MAGIC_COMPLEXITY_Novice</code>: Novice (<code>--complexity=novice</code>)                    </li>
+                  </ul>
+                  Your Magic tool(s) may wish to react differently depending on the expertise level of the user, either simplifying how each tool works, or excluding one or all of them entirely. (For example, the 1-, 2-, and 3-point perspective toolsets are totally inactive when in "novice" mode. In "beginner" mode, the drawing tools are available, but the tools to edit the vanishing point positions are disabled; the default vanishing points are used. In fact, in "beginner" mode, an additional 3-point perspective drawing tool appears, with alternative vanishing points.)                </p>
+                <p>
+                  <b>Note:</b> Changed most recently in Tux Paint 0.9.32; Magic API version 0x00000009.                </p>
               </dd>
 
               <dt><code><b>int get_tool_count(magic_api * api)</b></code></dt>

@@ -34,10 +34,14 @@ https://tuxpaint.org/
 
   * Improvements to Magic tools:
     ----------------------------
-    * WIP - Support for complexity levels in Magic tools via the plugin API.
+    * WIP - Support for complexity levels in Magic tools via the
+      plugin API.
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/247/)
-      + WIP - Complexity/expertise level may be set via configuration.
-      + WIP - Plugins' "init()" functions are sent a new "complexity_level" argument.
+      + WIP - Complexity/expertise level may be set via configuration,
+        `--complexity`; values may be "advanced" (default), "beginner",
+        or "novice".
+      + WIP - Plugins' "init()" functions are sent a new
+        `complexity_level` argument.
       + Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000009.
       Bill Kendrick <bill@newbreedsoftware.com>
 
