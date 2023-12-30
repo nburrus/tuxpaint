@@ -111,6 +111,12 @@ D. What's New in Tux Paint version 0.9.32?
     A pair of tools that allow you to set three vanishing points, and then draw
     lines in 3-point perspective.
 
+New "complexity" setting (complexity)
+
+A new setting that allows certain Magic tools to behave differently (or remove
+    their availability altogether) based on the expertise-level of the user.
+    The new "N-point Perspective" tools and "Clone" tool are affected by this
+    setting.
 Font details shown when selected
     The name and size of the selected font are shown when using the Text and
     Label tools.

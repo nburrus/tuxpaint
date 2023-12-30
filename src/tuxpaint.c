@@ -8093,6 +8093,7 @@ void show_usage(int exitcode)
           "  [--nolabel | --label]\n"
           "  [--nobrushspacing | --brushspacing]\n"
           "  [--notemplateexport | --templateexport]\n"
+          "  [--complexity=advanced | --complexity=beginner | --complexity=novice]\n"
           "  [--noerase | --erase]\n"
           "\n"
           " Languages:\n"

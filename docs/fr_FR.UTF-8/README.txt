@@ -116,6 +116,12 @@ Outil Magie avec une perspective à 2 points de fuite
     A pair of tools that allow you to set three vanishing points, and then draw
     lines in 3-point perspective.
 
+New "complexity" setting (complexity)
+
+A new setting that allows certain Magic tools to behave differently (or remove
+    their availability altogether) based on the expertise-level of the user.
+    The new "N-point Perspective" tools and "Clone" tool are affected by this
+    setting.
 Les détails de la police sont affichés lors du choix
     Le nom et la taille de la police choisie sont montrés quand on utilise les
     outils Texte et Étiquette.
