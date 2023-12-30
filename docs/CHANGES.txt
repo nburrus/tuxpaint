@@ -6,7 +6,7 @@ Copyright (c) 2002-2023
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2023.December.29 (0.9.32)
+2023.December.30 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Support for complexity levels in Magic tools via the plugin API.
@@ -38,9 +38,9 @@ https://tuxpaint.org/
         point towards them, or along the horizon defined by the first two.
       + None of these tools are available when in "novice" complexity mode
         (see above).
-      + WIP - "Select" tools (to edit vanishing points) are not offered
+      + "Select" tools (to edit vanishing points) are not offered
         when in "beginner" complexity mode.
-        - WIP - Also, two "3-Point Draw" tools are provided in "beginner"
+        - Also, two "3-Point Draw" tools are provided in "beginner"
           mode, to offer both 'looking up' and 'looking down' perspectives.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
       + Sounds:

@@ -1,11 +1,18 @@
 /* n_pt_persp.c
 
    1-, 2-, and 3-point perspective line-drawing tools.
-   (Work-in-progress; only handles 1-point at the moment)
+
+   Different complexity (expertise) levels offer different
+   tools.  In Advanced mode, there are "Draw" and "Select"
+   (vanishing point editing) tools.  In Beginner mode,
+   there are only "Draw" tools; the user is forced to use our
+   default vanishing points (a second "3-point" draw tool is
+   provided with an alternative vanishing point).  And in
+   Novice mode, this plugin offers NO tools.
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 29, 2023
+   December 12, 2023 - December 30, 2023
 */
 
 
@@ -19,30 +26,76 @@
 
 #define SNAP 10
 
-
+/* All _possible_ tools */
 enum
 {
-  TOOL_1PT_SELECT,
-  TOOL_1PT_DRAW,
-  TOOL_2PT_SELECT,
-  TOOL_2PT_DRAW,
-  TOOL_3PT_SELECT,
-  TOOL_3PT_DRAW,
+  TOOL_1PT_SELECT, /* advanced & beginner */
+  TOOL_1PT_DRAW, /* advanced only */
+  TOOL_2PT_SELECT, /* advanced & beginner */
+  TOOL_2PT_DRAW, /* advanced only */
+  TOOL_3PT_SELECT, /* advanced & beginner */
+  TOOL_3PT_DRAW, /* advanced only */
+  TOOL_3PT_SELECT_ALT, /* beginner only (not directly accessible; used for drawing guideS) */
+  TOOL_3PT_DRAW_ALT, /* beginner only */
   NUM_TOOLS
 };
 
+// #define DEBUG
 
-enum {
-  SND_SELECT,
-  SND_DRAW_CLICK,
-  SND_DRAW_RELEASE,
-  NUM_SNDS
+#ifdef DEBUG
+char * tool_debug_names[NUM_TOOLS] = {
+  "1pt select",
+  "1pt draw",
+  "2pt select",
+  "2pt draw",
+  "3pt select",
+  "3pt draw",
+  "3pt select alt",
+  "3pt draw alt",
+};
+#endif
+
+Uint8 complexity;
+
+int num_tools[NUM_MAGIC_COMPLEXITY_LEVELS] = {
+  0, /* Novice */
+  4, /* Beginner */
+  6, /* Advanced */
 };
 
-const char *sound_filenames[NUM_SNDS] = {
-  "n_pt_persp_select.ogg",
-  "n_pt_persp_click.ogg",
-  "n_pt_persp_release.ogg",
+int * which_to_tool;
+
+int which_to_tool_per_complexity[NUM_MAGIC_COMPLEXITY_LEVELS][NUM_TOOLS] = {
+  /* Novice */
+  {
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+  },
+  /* Beginner */
+  {
+    TOOL_1PT_DRAW,
+    TOOL_2PT_DRAW,
+    TOOL_3PT_DRAW,
+    TOOL_3PT_DRAW_ALT,
+    -1,
+    -1,
+    -1,
+  },
+  /* Advanced */
+  {
+    TOOL_1PT_SELECT,
+    TOOL_1PT_DRAW,
+    TOOL_2PT_SELECT,
+    TOOL_2PT_DRAW,
+    TOOL_3PT_SELECT,
+    TOOL_3PT_DRAW,
+    -1,
+  },
 };
 
 const char *icon_filenames[NUM_TOOLS] = {
@@ -52,6 +105,8 @@ const char *icon_filenames[NUM_TOOLS] = {
   "2pt_persp_draw.png",
   "3pt_persp_select.png",
   "3pt_persp_draw.png",
+  "",
+  "3pt_persp_draw_alt.png",
 };
 
 
@@ -62,6 +117,8 @@ const char *tool_names[NUM_TOOLS] = {
   gettext_noop("2-Point Draw"),
   gettext_noop("3-Point Select"),
   gettext_noop("3-Point Draw"),
+  "",
+  gettext_noop("3-Point Draw Down"),
 };
 
 
@@ -72,10 +129,26 @@ const char *tool_descriptions[NUM_TOOLS] = {
   gettext_noop("Click and drag to draw lines with your 2-point perspective vanishing points."),
   gettext_noop("Click three places in your drawing to pick vanishing points for the 3-point perspective painting tool."),
   gettext_noop("Click and drag to draw lines with your 3-point perspective vanishing points."),
+  "",
+  gettext_noop("Click and drag to draw lines with your 3-point perspective vanishing points (downward perspective)."),
 };
 
 
-Mix_Chunk *sound_effects[NUM_TOOLS];
+/* Sound effects (same for everyone) */
+enum {
+  SND_SELECT,
+  SND_DRAW_CLICK,
+  SND_DRAW_RELEASE,
+  NUM_SNDS
+};
+
+Mix_Chunk *sound_effects[NUM_SNDS];
+
+const char *sound_filenames[NUM_SNDS] = {
+  "n_pt_persp_select.ogg",
+  "n_pt_persp_click.ogg",
+  "n_pt_persp_release.ogg",
+};
 
 Uint8 n_pt_persp_r, n_pt_persp_g, n_pt_persp_b;
 Uint8 n_pt_persp_size = 1;
@@ -84,6 +157,7 @@ SDL_Surface * n_pt_persp_snapshot = NULL;
 int a1_pt_x, a1_pt_y;
 int a2_pt_x[2], a2_pt_y[2], a2_pt_cur;
 int a3_pt_x[3], a3_pt_y[3], a3_pt_cur;
+int a3b_pt_x[3], a3b_pt_y[3];
 int line_start_x, line_start_y;
 float a2_valid_angle[8];
 float a3_valid_angle[8];
@@ -109,7 +183,7 @@ void n_pt_persp_drag(magic_api * api, int which,
                      SDL_Surface * canvas, SDL_Surface * snapshot,
                      int old_x, int old_y, int x, int y,
                      SDL_Rect * update_rect);
-void n_pt_persp_work(magic_api * api, int which,
+void n_pt_persp_work(magic_api * api, int tool,
                      SDL_Surface * canvas, int x, int y,
                      SDL_Rect * update_rect, int xor);
 void n_pt_persp_release(magic_api * api, int which,
@@ -121,15 +195,15 @@ void n_pt_persp_set_color(magic_api * api, int which, SDL_Surface * canvas,
 void n_pt_persp_set_size(magic_api * api, int which, int mode,
                          SDL_Surface * canvas, SDL_Surface * last,
                          Uint8 size, SDL_Rect * update_rect);
-void n_pt_persp_line_xor_callback(void *pointer, int which, SDL_Surface * canvas,
+void n_pt_persp_line_xor_callback(void *pointer, int tool, SDL_Surface * canvas,
                                   SDL_Surface * snapshot, int x, int y);
-void n_pt_persp_line_callback(void *pointer, int which, SDL_Surface * canvas,
+void n_pt_persp_line_callback(void *pointer, int tool, SDL_Surface * canvas,
                               SDL_Surface * snapshot, int x, int y);
 void n_pt_persp_switchin(magic_api * api, int which, int mode,
                       SDL_Surface * canvas);
 void n_pt_persp_switchout(magic_api * api, int which, int mode,
                        SDL_Surface * canvas);
-void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas);
+void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas);
 void n_pt_persp_draw_one_point(magic_api * api, SDL_Surface * canvas, int x, int y, int i);
 
 
@@ -144,8 +218,34 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   int i;
   char filename[1024];
 
+  for (i = 0; i < NUM_SNDS; i++) {
+    sound_effects[i] = NULL;
+  }
+
+  complexity = complexity_level;
+  which_to_tool = which_to_tool_per_complexity[complexity_level];
+
+#ifdef DEBUG
+  printf("complexity level %d; tool mapping:\n", complexity);
+  fflush(stdout);
+  for (i = 0; i < NUM_TOOLS; i++) {
+    printf("%d -> %d ", i, which_to_tool[i]);
+    fflush(stdout);
+    if (which_to_tool[i] != -1) {
+      printf("%s", tool_debug_names[which_to_tool[i]]);
+    }
+    printf("\n");
+    fflush(stdout);
+  }
+#endif
+
+
   if (complexity_level == MAGIC_COMPLEXITY_NOVICE) {
     /* No N-point perspective tools _at all_, if in Novice mode */
+#ifdef DEBUG
+    printf("n_pt_persp_init -- MAGIC_COMPLEXITY_NOVICE so no tools for you!\n");
+    fflush(stdout);
+#endif
     return 0;
   }
 
@@ -186,6 +286,17 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
 
   a3_pt_cur = 0;
 
+  /* 3-pt perspective alternative initial vanishing points: bottom center, and left and right near top of canvas */
+  a3b_pt_x[0] = api->canvas_w * 1 / 20;
+  a3b_pt_y[0] = api->canvas_h * 1 / 20;
+
+  a3b_pt_x[1] = api->canvas_w * 19 / 20;
+  a3b_pt_y[1] = api->canvas_h * 1 / 20;
+
+  a3b_pt_x[2] = api->canvas_w / 2;
+  a3b_pt_y[2] = api->canvas_h * 19 / 20;
+
+
   n_pt_persp_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, api->canvas_w, api->canvas_h,
                                              32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000); // FIXME: Safe?
   if (n_pt_persp_snapshot == NULL) {
@@ -199,7 +310,7 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
 
 int n_pt_persp_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return (NUM_TOOLS);
+  return (num_tools[complexity]);
 }
 
 
@@ -207,8 +318,14 @@ SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which)
 {
   char filename[1024];
 
+#ifdef DEBUG
+  printf("\nn_pt_persp_get_icon\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
   snprintf(filename, sizeof(filename), "%s/images/magic/%s",
-           api->data_directory, icon_filenames[which]);
+           api->data_directory, icon_filenames[which_to_tool[which]]);
 
   return (IMG_Load(filename));
 }
@@ -216,7 +333,12 @@ SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which)
 
 char *n_pt_persp_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext(tool_names[which])));
+#ifdef DEBUG
+  printf("\nn_pt_persp_get_name\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+  return (strdup(gettext(tool_names[which_to_tool[which]])));
 }
 
 
@@ -228,13 +350,26 @@ int n_pt_persp_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
 
 char *n_pt_persp_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext(tool_descriptions[which])));
+#ifdef DEBUG
+  printf("\nn_pt_persp_get_description\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+  return (strdup(gettext(tool_descriptions[which_to_tool[which]])));
 }
 
 
 int n_pt_persp_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW)
+#ifdef DEBUG
+  printf("\nn_pt_persp_requires_colors\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
+
+  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT)
     return 1;
   else
     return 0;
@@ -248,7 +383,15 @@ int n_pt_persp_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 
 Uint8 n_pt_persp_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
-  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW)
+#ifdef DEBUG
+  printf("\nn_pt_persp_accepted_sizes\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
+
+  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT)
     return 4;
   else
     return 0;
@@ -284,6 +427,14 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 {
   int pick, i;
   float dist, min_dist;
+
+#ifdef DEBUG
+  printf("\nn_pt_persp_click\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
 
   pick = 0;
   min_dist = FLT_MAX;
@@ -377,6 +528,24 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
           a3_valid_angle[i] -= (M_PI * 2);
         }
       }
+    } else if (which == TOOL_3PT_DRAW_ALT) {
+      /* Horizon between vanishing points, and perpendicular (rise above/below) */
+      a3_valid_angle[0] = atan2(a3b_pt_y[1] - a3b_pt_y[0], a3b_pt_x[1] - a3b_pt_x[0]);
+      a3_valid_angle[1] = a3_valid_angle[0] + M_PI;
+
+      /* Angles that point toward the three vanishing points */
+      a3_valid_angle[2] = atan2(a3b_pt_y[0] - y, a3b_pt_x[0] - x);
+      a3_valid_angle[3] = a3_valid_angle[2] + M_PI;
+      a3_valid_angle[4] = atan2(a3b_pt_y[1] - y, a3b_pt_x[1] - x);
+      a3_valid_angle[5] = a3_valid_angle[4] + M_PI;
+      a3_valid_angle[6] = atan2(a3b_pt_y[2] - y, a3b_pt_x[2] - x);
+      a3_valid_angle[7] = a3_valid_angle[6] + M_PI;
+
+      for (i = 0; i < 8; i++) {
+        if (a3_valid_angle[i] > M_PI) {
+          a3_valid_angle[i] -= (M_PI * 2);
+        }
+      }
     }
 
     line_start_x = x;
@@ -408,8 +577,16 @@ void n_pt_persp_drag(magic_api * api, int which,
   int i, x1, y1, x2, y2;
   float slope;
 
+#ifdef DEBUG
+  printf("\nn_pt_persp_drag\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
+
   /* Draw the line (preview) */
-  n_pt_persp_work(api, which, canvas, x, y, update_rect, 1);
+  n_pt_persp_work(api, which /* the tool */, canvas, x, y, update_rect, 1);
 
   /* Show some guides */
   if (which == TOOL_1PT_DRAW) {
@@ -485,13 +662,31 @@ void n_pt_persp_drag(magic_api * api, int which,
                   n_pt_persp_line_xor_callback);
       }
     }
-  } else if (which == TOOL_3PT_DRAW) {
+  } else if (which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT) {
     /* 3-point perspective - draw */
 
-    n_pt_persp_draw_points(api, TOOL_3PT_SELECT, canvas);
+    int a3_x[3], a3_y[3];
+
+    if (which == TOOL_3PT_DRAW) {
+      a3_x[0] = a3_pt_x[0];
+      a3_y[0] = a3_pt_y[0];
+      a3_x[1] = a3_pt_x[1];
+      a3_y[1] = a3_pt_y[1];
+      a3_x[2] = a3_pt_x[2];
+      a3_y[2] = a3_pt_y[2];
+      n_pt_persp_draw_points(api, TOOL_3PT_SELECT, canvas);
+    } else {
+      a3_x[0] = a3b_pt_x[0];
+      a3_y[0] = a3b_pt_y[0];
+      a3_x[1] = a3b_pt_x[1];
+      a3_y[1] = a3b_pt_y[1];
+      a3_x[2] = a3b_pt_x[2];
+      a3_y[2] = a3b_pt_y[2];
+      n_pt_persp_draw_points(api, TOOL_3PT_SELECT_ALT, canvas);
+    }
 
     /* Horizon line (from the cursor) */
-    slope = ((float) a3_pt_y[0] - (float) a3_pt_y[1]) / ((float) a3_pt_x[0] - (float) a3_pt_x[1]);
+    slope = ((float) a3_y[0] - (float) a3_y[1]) / ((float) a3_x[0] - (float) a3_x[1]);
     x1 = 0;
     y1 = y - (x * slope);
     x2 = canvas->w;
@@ -504,13 +699,13 @@ void n_pt_persp_drag(magic_api * api, int which,
 
     /* Diagonal lines from cursor to the vanishing points */
     for (i = 0; i < 3; i++) {
-      if (x != a3_pt_x[i]) {
-        slope = ((float) y - (float) a3_pt_y[i]) / ((float) x - (float) a3_pt_x[i]);
+      if (x != a3_x[i]) {
+        slope = ((float) y - (float) a3_y[i]) / ((float) x - (float) a3_x[i]);
 
         x1 = 0;
-        y1 = a3_pt_y[i] - (a3_pt_x[i] * slope);
+        y1 = a3_y[i] - (a3_x[i] * slope);
         x2 = canvas->w;
-        y2 = a3_pt_y[i] + ((canvas->w - a3_pt_x[i]) * slope);
+        y2 = a3_y[i] + ((canvas->w - a3_x[i]) * slope);
 
         api->line((void *) api, which, canvas, NULL,
                   x1, y1, x2, y2, 2,
@@ -538,7 +733,7 @@ void n_pt_persp_drag(magic_api * api, int which,
   }
 }
 
-void n_pt_persp_work(magic_api * api, int which,
+void n_pt_persp_work(magic_api * api, int tool,
                      SDL_Surface * canvas, int x, int y,
                      SDL_Rect * update_rect, int xor)
 {
@@ -551,11 +746,19 @@ void n_pt_persp_work(magic_api * api, int which,
   if (n_pt_persp_snapshot == NULL)
     return;
 
+  /* N.B. "which" is already set to the appropriate tool by the calling function! */
+
+#ifdef DEBUG
+  printf("\nn_pt_persp_work\n");
+  printf("%d (%s)\n", tool, tool_debug_names[tool]);
+  fflush(stdout);
+#endif
+
   /* Adhere x & y to perspective! */
 
   x1 = y1 = x2 = y2 = 0;
 
-  if (which == TOOL_1PT_DRAW) {
+  if (tool == TOOL_1PT_DRAW) {
     /* 1-point perspective */
 
     x1 = line_start_x;
@@ -593,14 +796,14 @@ void n_pt_persp_work(magic_api * api, int which,
         y2 = y1;
       }
     }
-  } else if (which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW) {
+  } else if (tool == TOOL_2PT_DRAW || tool == TOOL_3PT_DRAW || tool == TOOL_3PT_DRAW_ALT) {
     float * valid_angle;
 
     /* 2- & 3-point perspective */
 
-    if (which == TOOL_2PT_DRAW) {
+    if (tool == TOOL_2PT_DRAW) {
       valid_angle = a2_valid_angle;
-    } else {
+    } else { /* TOOL_3PT_DRAW || TOOL_3PT_DRAW_ALT */
       valid_angle = a3_valid_angle;
     }
 
@@ -656,13 +859,13 @@ void n_pt_persp_work(magic_api * api, int which,
   if (xor) {
     /* Still moving; use XOR */
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, x2, y2, 3,
               n_pt_persp_line_xor_callback);
   } else {
     /* Released; draw the line for real */
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, x2, y2, 1,
               n_pt_persp_line_callback);
   }
@@ -678,6 +881,14 @@ void n_pt_persp_release(magic_api * api, int which,
                         SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
                         int x, int y, SDL_Rect * update_rect)
 {
+#ifdef DEBUG
+  printf("\nn_pt_persp_release\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
+
   if (which == TOOL_1PT_SELECT) {
     /* 1-point perspective - vanishing point drag released */
     api->stopsound();
@@ -725,7 +936,7 @@ void n_pt_persp_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
 }
 
 
-void n_pt_persp_line_xor_callback(void *pointer, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
+void n_pt_persp_line_xor_callback(void *pointer, int tool ATTRIBUTE_UNUSED, SDL_Surface * canvas,
                                   SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) pointer;
@@ -734,7 +945,7 @@ void n_pt_persp_line_xor_callback(void *pointer, int which ATTRIBUTE_UNUSED, SDL
   api->xorpixel(canvas, x + 1, y + 1);
 }
 
-void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int tool ATTRIBUTE_UNUSED,
                               SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
                               int x, int y)
 {
@@ -751,6 +962,14 @@ void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUT
 void n_pt_persp_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                          SDL_Surface * canvas)
 {
+#ifdef DEBUG
+  printf("\nn_pt_persp_switchin\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
+
   if (which == TOOL_1PT_SELECT || which == TOOL_2PT_SELECT || which == TOOL_3PT_SELECT) {
     SDL_BlitSurface(canvas, NULL, n_pt_persp_snapshot, NULL);
 
@@ -761,16 +980,30 @@ void n_pt_persp_switchin(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 void n_pt_persp_switchout(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED,
                           SDL_Surface * canvas)
 {
+#ifdef DEBUG
+  printf("\nn_pt_persp_switchout\n");
+  printf("%d becomes %d (%s)\n", which, which_to_tool[which], tool_debug_names[which_to_tool[which]]);
+  fflush(stdout);
+#endif
+
+  which = which_to_tool[which];
+
   if (which == TOOL_1PT_SELECT || which == TOOL_2PT_SELECT || which == TOOL_3PT_SELECT) {
     SDL_BlitSurface(n_pt_persp_snapshot, NULL, canvas, NULL);
   }
 }
 
-void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
+void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
   int i, l, m, x1, y1, x2, y2, x;
   float slope;
 
-  if (which == TOOL_1PT_SELECT) {
+#ifdef DEBUG
+  printf("\nn_pt_persp_draw_points\n");
+  printf("%d (%s)\n", tool, tool_debug_names[tool]);
+  fflush(stdout);
+#endif
+
+  if (tool == TOOL_1PT_SELECT) {
     /* 1-point perspective */
 
     n_pt_persp_draw_one_point(api, canvas, a1_pt_x, a1_pt_y, 0);
@@ -791,7 +1024,7 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
       slope = ((float) a1_pt_y - (float) y1) / ((float) a1_pt_x - (float) x1);
       y2 = y1 + (x2 - x1) * slope;
 
-      api->line((void *) api, which, canvas, NULL,
+      api->line((void *) api, tool, canvas, NULL,
                 x1, y1, x2, y2, 6,
                 n_pt_persp_line_xor_callback);
 
@@ -805,13 +1038,13 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
           yy1 = a1_pt_y + (a1_pt_x - xx) * slope;
           yy2 = a1_pt_y + (xx - a1_pt_x) * slope;
 
-          api->line((void *) api, which, canvas, NULL,
+          api->line((void *) api, tool, canvas, NULL,
                     xx, yy1, xx, yy2, 3,
                     n_pt_persp_line_xor_callback);
         }
       }
     }
-  } else if (which == TOOL_2PT_SELECT) {
+  } else if (tool == TOOL_2PT_SELECT) {
     /* 2-point perspective */
 
     for (i = 0; i < 2; i++) {
@@ -825,7 +1058,7 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
     x2 = canvas->w;
     y2 = a2_pt_y[0] + ((canvas->w - a2_pt_x[0]) * slope);
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, x2, y2, 12,
               n_pt_persp_line_xor_callback);
 
@@ -850,50 +1083,67 @@ void n_pt_persp_draw_points(magic_api * api, int which, SDL_Surface * canvas) {
       y2 = canvas->h;
     }
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, x2, y2, 12,
               n_pt_persp_line_xor_callback);
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               a2_pt_x[0], a2_pt_y[0], x2, y2, 12,
               n_pt_persp_line_xor_callback);
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               a2_pt_x[1], a2_pt_y[1], x2, y2, 12,
               n_pt_persp_line_xor_callback);
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, a2_pt_x[0], a2_pt_y[0], 12,
               n_pt_persp_line_xor_callback);
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, a2_pt_x[1], a2_pt_y[1], 12,
               n_pt_persp_line_xor_callback);
-  } else if (which == TOOL_3PT_SELECT) {
+  } else if (tool == TOOL_3PT_SELECT || tool == TOOL_3PT_SELECT_ALT) {
     /* 3-point perspective */
+    int a3_x[3], a3_y[3];
+
+    if (tool == TOOL_3PT_SELECT) {
+      a3_x[0] = a3_pt_x[0];
+      a3_y[0] = a3_pt_y[0];
+      a3_x[1] = a3_pt_x[1];
+      a3_y[1] = a3_pt_y[1];
+      a3_x[2] = a3_pt_x[2];
+      a3_y[2] = a3_pt_y[2];
+    } else {
+      a3_x[0] = a3b_pt_x[0];
+      a3_y[0] = a3b_pt_y[0];
+      a3_x[1] = a3b_pt_x[1];
+      a3_y[1] = a3b_pt_y[1];
+      a3_x[2] = a3b_pt_x[2];
+      a3_y[2] = a3b_pt_y[2];
+    }
 
     for (i = 0; i < 3; i++) {
-      n_pt_persp_draw_one_point(api, canvas, a3_pt_x[i], a3_pt_y[i], i);
+      n_pt_persp_draw_one_point(api, canvas, a3_x[i], a3_y[i], i);
     }
 
     /* Horizon line (vanishing point) */
-    slope = ((float) a3_pt_y[0] - (float) a3_pt_y[1]) / ((float) a3_pt_x[0] - (float) a3_pt_x[1]);
+    slope = ((float) a3_y[0] - (float) a3_y[1]) / ((float) a3_x[0] - (float) a3_x[1]);
     x1 = 0;
-    y1 = a3_pt_y[0] - (a3_pt_x[0] * slope);
+    y1 = a3_y[0] - (a3_x[0] * slope);
     x2 = canvas->w;
-    y2 = a3_pt_y[0] + ((canvas->w - a3_pt_x[0]) * slope);
+    y2 = a3_y[0] + ((canvas->w - a3_x[0]) * slope);
 
-    api->line((void *) api, which, canvas, NULL,
+    api->line((void *) api, tool, canvas, NULL,
               x1, y1, x2, y2, 12,
               n_pt_persp_line_xor_callback);
 
     for (i = 0; i < 6; i++) {
-      x1 = a3_pt_x[0] + (((a3_pt_x[1] - a3_pt_x[0]) / 5) * i);
-      y1 = a3_pt_y[0] + ((x1 - a3_pt_x[0]) * slope);
-      x2 = a3_pt_x[2];
-      y2 = a3_pt_y[2];
+      x1 = a3_x[0] + (((a3_x[1] - a3_x[0]) / 5) * i);
+      y1 = a3_y[0] + ((x1 - a3_x[0]) * slope);
+      x2 = a3_x[2];
+      y2 = a3_y[2];
 
-      api->line((void *) api, which, canvas, NULL,
+      api->line((void *) api, tool, canvas, NULL,
                 x1, y1, x2, y2, 12,
                 n_pt_persp_line_xor_callback);
     }
