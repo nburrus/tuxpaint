@@ -9,7 +9,8 @@ the "3-Point Draw" tool.
 
 Cet outil permet de travailler en mode à main levée.
 
-This tool reacts to the "complexity" (expertise level) setting.
+This tool is only available with "complexity" (expertise level) set to
+'Advanced'.
 
 Voir aussi : Dessin 1 point, Choix 1 point, Dessin 2 points, Choix 2 points,
 3-Point Draw, & Perspective.

@@ -6,7 +6,7 @@
 
 Click and drag to draw with 1-point perspective. Lines will only go towards
 your vanishing point, or be horizontal or vertical. Use "1-Point Select" to
-choose your vanishing point.
+choose your vanishing point (only available in "advanced" mode).
 
 This tool is operated in a freehand fashion.
 
