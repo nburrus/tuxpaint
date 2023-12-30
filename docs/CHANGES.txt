@@ -9,14 +9,13 @@ https://tuxpaint.org/
 2023.December.29 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
-    * WIP - Support for complexity levels in Magic tools via the
-      plugin API.
+    * Support for complexity levels in Magic tools via the plugin API.
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/247/)
-      + WIP - Complexity/expertise level may be set via configuration,
+      + Complexity/expertise level may be set via configuration,
         `--complexity`; values may be "advanced" (default), "beginner",
         or "novice".
-      + WIP - Plugins' "init()" functions are sent a new
-        `complexity_level` argument.
+      + Plugins' "init()" functions are sent a new `complexity_level`
+        argument.
       + Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000009.
       Bill Kendrick <bill@newbreedsoftware.com>
 
@@ -37,7 +36,12 @@ https://tuxpaint.org/
       + 3-point Perspective ("3-Point Select" & "3-Point Draw")
         Choose three vanishing points, and then draw lines that always
         point towards them, or along the horizon defined by the first two.
-      + Tools do not operate when in "novice" complexity mode.
+      + None of these tools are available when in "novice" complexity mode
+        (see above).
+      + WIP - "Select" tools (to edit vanishing points) are not offered
+        when in "beginner" complexity mode.
+        - WIP - Also, two "3-Point Draw" tools are provided in "beginner"
+          mode, to offer both 'looking up' and 'looking down' perspectives.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
       + Sounds:
         - Select: "Gummibandloop_121.wav"

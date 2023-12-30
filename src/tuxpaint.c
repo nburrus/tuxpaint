@@ -28370,6 +28370,21 @@ static void setup_config(char *argv[])
         stamp_size_override = 10;
     }
   }
+  if (tmpcfg.complexity)
+  {
+    /* FIXME: Could maybe iterate the array of MAGIC_COMPLEXITY_LEVEL_NAMES[],
+       but just hard-coding for now -bjk 2023.12.29 */
+    if (!strcmp(tmpcfg.complexity, "novice")) {
+      magic_complexity_level = MAGIC_COMPLEXITY_NOVICE;
+    } else if (!strcmp(tmpcfg.complexity, "beginner")) {
+      magic_complexity_level = MAGIC_COMPLEXITY_BEGINNER;
+    } else if (!strcmp(tmpcfg.complexity, "advanced")) {
+      magic_complexity_level = MAGIC_COMPLEXITY_ADVANCED;
+    } else {
+      fprintf(stderr, "Ignoring unknown 'complexity' value \"%s\"\n", tmpcfg.complexity);
+    }
+  }
+
   /* FIXME: make this dynamic (accelerometer or OLPC XO-1 rotation button) */
   if (tmpcfg.rotate_orientation)
     rotate_orientation = !strcmp(tmpcfg.rotate_orientation, "portrait");        /* alternative is "landscape" */
