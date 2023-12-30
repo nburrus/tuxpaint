@@ -1233,17 +1233,19 @@ Tux Paint は様々な SNS アカウントを利用し、最新情報や作品�
   * Threads で @TuxPaintDevs をフォローする
   * Follow @TuxPaintDevs on TikTok
   * Tumblr で Tux Paint をフォローする
-  * Subscribe to @TuxPaintOfficial on YoUTube
+  * Subscribe to @TuxPaintOfficial on YouTube
 
 VIII. 商標について
 
   * "Linux" は Linus Torvalds の登録商標です。
   * "Microsoft" および "Windows" は、Microsoft 社の登録商標です。
   * "Apple" および "macOS" は Apple 社の登録商標です。
+  * "Haiku" is a registered trademark of Haiku, Inc.
   * "Facebook", "Instagram" および "Threads" は Meta Platforms 社の登録商標で
     す。
   * "Mastodon" は Mastodon gGmbH の登録商標です。
   * "Reddit" は、Reddit 社の登録商標です。
+  * "TIK TOK" is a trademark of Bytedance Ltd.
   * "Tumblr" は Tumblr 社の登録商標です。
-  * "Twitter" は、X 社の登録商標です。
+  * "YouTube" is a registered trademark of Alphabet, Inc.
 

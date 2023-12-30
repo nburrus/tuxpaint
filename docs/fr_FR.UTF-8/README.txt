@@ -1410,17 +1410,19 @@ mises à jour et les oeuvres d'art.
   * Suivre @TuxPaintDevs sur Threads
   * Suivre @TuxPaintDevs sur TikTok
   * Suivre Tux Paint sur Tumblr
-  * Souscrivez à @TuxPaintOfficial sur YoUTube
+  * Subscribe to @TuxPaintOfficial on YouTube
 
 VIII. Mentions concernant les marques déposées
 
   * "Linux" est marque déposée par Linus Torvalds.
   * "Microsoft" et "Windows" sont des marques déposées par Microsoft Corp.
   * "Apple" et "macOS" sont des marques déposées par Apple Inc.
+  * "Haiku" is a registered trademark of Haiku, Inc.
   * "Facebook" et "Instagram" sont des marques déposées par Meta Platforms,
     Inc.
   * "Mastodon" est une marque déposée par Mastodon gGmbH.
   * "Reddit" est une marque déposée par Reddit, Inc.
+  * "TIK TOK" is a trademark of Bytedance Ltd.
   * "Tumblr" est une marque déposée par Tumblr, Inc.
-  * "Twitter" est une marque déposée par X Corp.
+  * "YouTube" is a registered trademark of Alphabet, Inc.
 

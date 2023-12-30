@@ -1318,17 +1318,19 @@ post updates and artwork.
   * Follow @TuxPaintDevs on Threads
   * Follow @TuxPaintDevs on TikTok
   * Follow Tux Paint on Tumblr
-  * Subscribe to @TuxPaintOfficial on YoUTube
+  * Subscribe to @TuxPaintOfficial on YouTube
 
 VIII. Trademark notices
 
   * "Linux" is a registered trademark of Linus Torvalds.
   * "Microsoft" and "Windows" are registered trademarks of Microsoft Corp.
   * "Apple" and "macOS" are registered trademarks of Apple Inc.
+  * "Haiku" is a registered trademark of Haiku, Inc.
   * "Facebook", "Instagram", and "Threads" are registered trademarks of Meta
     Platforms, Inc.
   * "Mastodon" is a registered trademark of Mastodon gGmbH.
   * "Reddit" is a registered trademark of Reddit, Inc.
+  * "TIK TOK" is a trademark of Bytedance Ltd.
   * "Tumblr" is a registered trademark of Tumblr, Inc.
-  * "Twitter" is a registered trademark of X Corp.
+  * "YouTube" is a registered trademark of Alphabet, Inc.
 
