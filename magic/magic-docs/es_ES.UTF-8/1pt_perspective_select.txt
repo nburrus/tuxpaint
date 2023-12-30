@@ -9,6 +9,8 @@ Click (and drag) to position the vanishing point that will be used with the
 
 This tool is operated in a freehand fashion.
 
+This tool reacts to the "complexity" (expertise level) setting.
+
 See also: 1-Point Draw, 2-Point Draw, 2-Point Select, 3-Point Draw, 3-Point
 Select, & Perspective.
 

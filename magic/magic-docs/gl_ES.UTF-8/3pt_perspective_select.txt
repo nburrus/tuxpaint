@@ -9,6 +9,8 @@ the "3-Point Draw" tool.
 
 This tool is operated in a freehand fashion.
 
+This tool reacts to the "complexity" (expertise level) setting.
+
 See also: 1-Point Draw, 1-Point Select, 2-Point Draw, 2-Point Select, 3-Point
 Draw, & Perspective.
 
