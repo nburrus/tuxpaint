@@ -10,7 +10,7 @@ couleur d'arrière-plan)
 
 Cet outil permet de travailler en mode à main levée.
 
-This tool offers color choices.
+Cet outil permet de choisir des couleurs.
 
 Voir aussi : Rush & Zoom avec carreau.
 

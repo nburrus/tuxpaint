@@ -8,7 +8,7 @@ Cliquez et promenez le curseur pour construire un labyrinthe sur votre image.
 
 Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
-This tool offers color choices.
+Cet outil permet de choisir des couleurs.
 
 -------------------------------------------------------------------------------
 

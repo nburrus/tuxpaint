@@ -9,10 +9,10 @@ dessin.
 
 Cet outil permet de travailler en mode à main levée.
 
-This tool offers color choices.
+Cet outil permet de choisir des couleurs.
 
 Voir aussi : Dessin 1 point, Choix 1 point, Dessin 2 points, Choix 2 points,
-3-Point Draw, & 3-Point Select.
+Dessin à 3-Point, & Choix 3-Point.
 
 -------------------------------------------------------------------------------
 

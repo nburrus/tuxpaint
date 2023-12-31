@@ -554,31 +554,32 @@ nobrushspacing=yes
 
 
 
-complexity=COMPLEXITY
+complexity=COMPLEXITÉ
 
-    Sets the complexity (expertise) level of Tux Paint, which can either
-    disable some Magic tools, or cause them to operate differently. (For
-    example, the "Clone" tool is not available in novice mode, and the 1-, 2-,
-    and 3-point perspective tools do not allow vanishing points to be edited in
-    beginner mode.)
+    Règle le niveau de complexité (expertise) de Tux Paint, qui permet soit de
+    déactiver certains outils de Magie, ou de changer leur comportement. (Par
+    exemple, l'outil "Clone" n'est pas disponible en mode novice, et les outils
+    de perspective à 1,2 ou 3 points n'éditeront pas de points de fuite en mode
+    débutant.
 
-    The COMPLEXITY value may be one of:
+    La valeur COMPLEXITÉ peut l'une de celles-ci :
 
     advanced (par défaut)
-        "Advanced" — For users familiar with Tux Paint and who can operate more
-        complex tools.
+        "Avancé" — Pour les utilisateurs familiers avec Tux Paint et qui
+        peuvent œuvrer avec de outils plus complexes.
 
     beginner
-        "Beginner" — For users comfortable with Tux Paint, but where complex
-        tools may cause confusion or frustration.
+        "Débutant" — Pour les utilisateurs habitués à Tux Paint, mais les
+        outils complexes peuvent leur causer confusion ou frustration.
 
     novice
-        "Novice" — For first-time Tux Paint users, users inexperienced with
-        computers, or those with special accessibility needs.
+        "Novice" — Pour les utilisateurs qui débutent avec Tux Paint, ou bien
+        qui ont peu d'expérience des ordinateurs, ou bien encore ceux qui ont
+        besoin d'outils spéciaux pour l'accessibilité
 
 
-    📜 Note: The complexity option was added to Tux Paint in version 0.9.32.
-    Consult the individual Magic tools' documentation.
+    📜 Note : Ll'option de complexité a été ajoutée dans la version 0.9.32 de
+    Tux Paint. Consultez la documentation individuelle des outils Magiei.
 
     ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
     peut être remplacé par le fichier de configuration de l'utilisateur en

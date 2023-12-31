@@ -10,7 +10,7 @@ Cet outil permet de travailler en mode à main levée.
 
 Cet outil permet de travailler avec plusieurs tailles.
 
-This tool offers color choices.
+Cet outil permet de choisir des couleurs.
 
 Voir aussi : Doux & Gribouillis.
 

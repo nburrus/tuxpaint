@@ -108,20 +108,20 @@ Outil Magie avec une perspective à 1 point de fuite
     Des outils qui permettent de créer un point de fuite, et de dessiner
     ensuite des lignes avec une perspective à 1 point.
 
-Outil Magie avec une perspective à 2 points de fuite
+Outil de Magie avec une perspective à 2 points de fuite
     Des outils qui permettent de créer deux points de fuite, et de dessiner
     ensuite des lignes avec une perspective à 2 points.
 
-3-point Perspective (vanishing point) Magic tool
-    A pair of tools that allow you to set three vanishing points, and then draw
-    lines in 3-point perspective.
+Outil de Magie Perspective 3-point (point de fuite)
+    Un ensemble d'outils qui vous permet d'avoir trois points de fuite, et
+    pouvoir ainsi tracer des lignes avec une perspective à 3 points.
 
-New "complexity" setting (complexity)
+Réglage du nouveau "complexité" (complexity)
 
-A new setting that allows certain Magic tools to behave differently (or remove
-    their availability altogether) based on the expertise-level of the user.
-    The new "N-point Perspective" tools and "Clone" tool are affected by this
-    setting.
+Un nouveau réglage qui permet à certains outils Magie de se comporter
+    différemment (ou bien d'être supprimés) en se basant sur le niveau
+    d'expertise de l'utilisateur. Les nouveaux outils "Perspective N-point" et
+    "Clone" sont affectés via ce réglage.
 Les détails de la police sont affichés lors du choix
     Le nom et la taille de la police choisie sont montrés quand on utilise les
     outils Texte et Étiquette.
@@ -1410,19 +1410,19 @@ mises à jour et les oeuvres d'art.
   * Suivre @TuxPaintDevs sur Threads
   * Suivre @TuxPaintDevs sur TikTok
   * Suivre Tux Paint sur Tumblr
-  * Subscribe to @TuxPaintOfficial on YouTube
+  * Souscrivez à @TuxPaintOfficial sur YoUTube
 
 VIII. Mentions concernant les marques déposées
 
   * "Linux" est marque déposée par Linus Torvalds.
   * "Microsoft" et "Windows" sont des marques déposées par Microsoft Corp.
   * "Apple" et "macOS" sont des marques déposées par Apple Inc.
-  * "Haiku" is a registered trademark of Haiku, Inc.
+  * "Haiku" est une marque déposée par Haiku, Inc.
   * "Facebook" et "Instagram" sont des marques déposées par Meta Platforms,
     Inc.
   * "Mastodon" est une marque déposée par Mastodon gGmbH.
   * "Reddit" est une marque déposée par Reddit, Inc.
-  * "TIK TOK" is a trademark of Bytedance Ltd.
+  * "TIK TOK" est une marque déposée de Bytedance Ltd.
   * "Tumblr" est une marque déposée par Tumblr, Inc.
-  * "YouTube" is a registered trademark of Alphabet, Inc.
+  * "YouTube" est une marque déposée de Alphabet, Inc.
 

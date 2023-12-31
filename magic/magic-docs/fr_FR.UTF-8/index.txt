@@ -1,4 +1,4 @@
-              Outil 'Magie' de Tux Paint : Liste des outils Magie
+            Outil 'Magie' de Tux Paint : Liste des outils de Magie
 
 Distorsions
 
@@ -67,8 +67,6 @@ Déformations de l'image
 
 Peindre
 
-  * 3-Point Draw
-  * 3-Point Select
   * Arc-en-ciel
   * Arc-en-ciel
   * Arc-en-ciel doux
@@ -77,10 +75,12 @@ Peindre
   * Calligraphie
   * Choix 1 point
   * Choix 2 points
+  * Choix 3-Point
   * Confettis
   * Dentifrice
   * Dessin 1 point
   * Dessin 2 points
+  * Dessin à 3-Point
   * Doux
   * Effet mouillé
   * Fourrure
