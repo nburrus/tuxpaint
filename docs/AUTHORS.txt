@@ -2,11 +2,11 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2023
+Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - December 23, 2023
+June 17, 2002 - January 1, 2024
 
 * Design and Coding:
 

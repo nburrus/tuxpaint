@@ -43,10 +43,12 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.32" date="2023-12-17">
+    <release version="0.9.32" date="2024-01-01">
       <description>
-        <p>New Magic tool: 1-point Perspective (vanishing point) line drawing tool.</p>
+        <p>New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools and vanishing point editors.</p>
+        <p>New configuration option, "complexity", which affects the behavior (or availability) of some Magic tools.</p>
         <p>Font name and size shown when selecting fonts in Text and Label tools.</p>
+        <p>Bug-fixes and localization updates.</p>
       </description>
     </release>
     <release version="0.9.31" date="2023-07-20">

@@ -97,12 +97,12 @@
             Magic Tool Plugin API Documentation          </h2>
 
           <p>
-            Höfundarréttur &copy; 2007-2023 eftir various contributors; sjá <a href="../../AUTHORS.txt">AUTHORS-skrá</a>.<br>
+            Höfundarréttur &copy; 2007-2024 eftir various contributors; sjá <a href="../../AUTHORS.txt">AUTHORS-skrá</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
           <p>
-            17. júlí 2023          </p>
+             1. janúar 2024          </p>
         </center>
       </header>
 
@@ -298,11 +298,11 @@
                 <p>
                   The <code>complexity_level</code> variable contains the "complexity level" that Tux Paint magic tools may offer &mdash; that is, the expertise level of the user. The levels are defined in <code>tp_magic_api.h</code>:                  <ul>
                     <li>
-                      <code>MAGIC_COMPLEXITY_ADVANCED</code>: Advanced (default) (<code>--complexity=advanced</code>)                    </li>
+                      <code>MAGIC_COMPLEXITY_NOVICE</code> (0): Novice (<code>--complexity=novice</code>)                    </li>
                     <li>
-                      <code>MAGIC_COMPLEXITY_BEGINNER</code>: Beginner (<code>--complexity=beginner</code>)                    </li>
+                      <code>MAGIC_COMPLEXITY_BEGINNER</code> (1): Beginner (<code>--complexity=beginner</code>)                    </li>
                     <li>
-                      <code>MAGIC_COMPLEXITY_Novice</code>: Novice (<code>--complexity=novice</code>)                    </li>
+                      <code>MAGIC_COMPLEXITY_ADVANCED</code> (2): Advanced (default) (<code>--complexity=advanced</code>)                    </li>
                   </ul>
                   Your Magic tool(s) may wish to react differently depending on the expertise level of the user, either simplifying how each tool works, or excluding one or all of them entirely. (For example, the 1-, 2-, and 3-point perspective toolsets are totally inactive when in "novice" mode. In "beginner" mode, the drawing tools are available, but the tools to edit the vanishing point positions are disabled; the default vanishing points are used. In fact, in "beginner" mode, an additional 3-point perspective drawing tool appears, with alternative vanishing points.)                </p>
                 <p>

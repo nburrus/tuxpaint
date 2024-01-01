@@ -3,10 +3,10 @@
 
                       Magic Tool Plugin API Documentation
 
-   Höfundarréttur © 2007-2023 eftir various contributors; sjá AUTHORS-skrá.
+   Höfundarréttur © 2007-2024 eftir various contributors; sjá AUTHORS-skrá.
                              https://tuxpaint.org/
 
-                                 17. júlí 2023
+                                1. janúar 2024
 
 +--------------------------------------------------+
 |                   Efnisyfirlit                   |
@@ -203,9 +203,10 @@ int init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level)
     The complexity_level variable contains the "complexity level" that Tux
     Paint magic tools may offer — that is, the expertise level of the user. The
     levels are defined in tp_magic_api.h:
-      + MAGIC_COMPLEXITY_ADVANCED: Advanced (default) (--complexity=advanced)
-      + MAGIC_COMPLEXITY_BEGINNER: Beginner (--complexity=beginner)
-      + MAGIC_COMPLEXITY_Novice: Novice (--complexity=novice)
+      + MAGIC_COMPLEXITY_NOVICE (0): Novice (--complexity=novice)
+      + MAGIC_COMPLEXITY_BEGINNER (1): Beginner (--complexity=beginner)
+      + MAGIC_COMPLEXITY_ADVANCED (2): Advanced (default) (--complexity=
+        advanced)
     Your Magic tool(s) may wish to react differently depending on the expertise
     level of the user, either simplifying how each tool works, or excluding one
     or all of them entirely. (For example, the 1-, 2-, and 3-point perspective

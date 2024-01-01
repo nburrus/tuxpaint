@@ -3,10 +3,10 @@
 
                      A simple drawing program for children
 
-        Copyright © 2002-2023 by various contributors; see AUTHORS.txt.
+        Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              diciembre 23, 2023
+                                 enero 1, 2024
 
 +-------------------------------------------------+
 |                Table of Contents                |

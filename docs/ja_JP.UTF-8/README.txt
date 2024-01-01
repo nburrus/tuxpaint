@@ -3,10 +3,10 @@
 
                     子供向けのシンプルなお絵かきプログラム
 
-       Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
+       Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                2023年12月23日
+                                 2024年1月 1日
 
 +--------------------------------------------------+
 |                       目次                       |
