@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.January.2 (0.9.32)
+2024.January.7 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Support for complexity levels in Magic tools via the plugin API.
@@ -53,6 +53,19 @@ https://tuxpaint.org/
         - Release: "Elastic band c note"
           (https://freesound.org/people/mudflea2/sounds/708182/)
           Creative Commons 0 by mudflea2
+
+    * WIP - Epitrochoid and Hypotrochoid magic tools:
+      + Tools to draw centered trochoids; to create art similar to a
+        Spirograph or Wondergraph.  Drag left/right to adjust the
+        radius of the stator (fixed circle). Drag up/down to adjust
+        radius of the rotator (the rolling circle). Size option
+        adjusts the position of the virtual pen within the rotator.
+      + If "--nomagicsizes" is set, three versions each of
+        epitrochoid and hypotrochoid drawing tools will be made
+        available, each with differing pen positions.
+      + Code: Bill Kendrick <bill@newbreedsoftware.com>
+      + WIP - Needs icons
+      + WIP - Needs sounds
 
   * Improvements to "Text" & "Label" tools:
     ---------------------------------------
