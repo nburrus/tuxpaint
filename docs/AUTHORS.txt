@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 1, 2024
+June 17, 2002 - January 7, 2024
 
 * Design and Coding:
 
@@ -159,6 +159,21 @@ June 17, 2002 - January 1, 2024
    + Release: "Elastic band c note"
      (https://freesound.org/people/mudflea2/sounds/708182/)
      Creative Commons 0 by https://freesound.org/people/mudflea2/
+
+  Epitrochoid & Hypotrochodi (centered trochoids) tools
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  Sounds:
+   + Drag: "Running Gear"
+     (https://freesound.org/people/Vurca/sounds/315753/)
+     CC0 1.0 Universal
+     by Vurca (https://freesound.org/people/Vurca/)
+   + Epitrochoid draw: "celtic_harp_c3.wav"
+     (https://freesound.org/people/Daphne_in_Wonderland/sounds/127156/)
+     & Hypotrochoid draw: "celtic_harp_c2.wav"
+     (https://freesound.org/people/Daphne_in_Wonderland/sounds/127155/)
+     CC0 1.0 Universal, from "Celtic Harp Samples" collection
+     (https://freesound.org/people/Daphne_in_Wonderland/packs/29328/),
+     by Daphne Farazi (https://soundcloud.com/daphnefarazi)
 
   3D Glasses, Color Sep., & Double Vision magic tools
   by Bill Kendrick <bill@newbreedsoftware.com>
