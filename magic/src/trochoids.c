@@ -132,16 +132,16 @@ const char *tool_descriptions[NUM_TOOLS] = {
 
 /* Sound effects (same for everyone) */
 enum {
-  SND_DRAW_CLICK,
-  SND_DRAW_RELEASE_EPITROCHOID,
-  SND_DRAW_RELEASE_HYPOTROCHOID,
+  SND_DRAG,
+  SND_RELEASE_EPITROCHOID,
+  SND_RELEASE_HYPOTROCHOID,
   NUM_SNDS
 };
 
 Mix_Chunk *sound_effects[NUM_SNDS];
 
 const char *sound_filenames[NUM_SNDS] = {
-  "n_pt_persp_click.ogg", // FIXME
+  "trochoids_drag.ogg",
   "epitrochoid.ogg",
   "hypotrochoid.ogg",
 };
@@ -177,6 +177,7 @@ void trochoids_work(magic_api * api, int which,
 void trochoids_release(magic_api * api, int which,
                         SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
                         SDL_Rect * update_rect);
+void trochoids_sound(magic_api * api, int snd_idx, int x, int y);
 void trochoids_set_color(magic_api * api, int which, SDL_Surface * canvas,
                           SDL_Surface * snapshot, Uint8 r, Uint8 g, Uint8 b,
                           SDL_Rect * update_rect);
@@ -318,6 +319,7 @@ void trochoids_drag(magic_api * api, int which,
 {
   dragged = 1;
   trochoids_work(api, which, canvas, snapshot, x, y, update_rect, 1);
+  trochoids_sound(api, SND_DRAG, x, y);
 }
 
 void trochoids_work(magic_api * api, int which,
@@ -329,7 +331,7 @@ void trochoids_work(magic_api * api, int which,
 
   which = which_to_tool[which];
 
-  /* Drag left/rigth to change radius of stator (fixed circle) */
+  /* Drag left/right to change radius of stator (fixed circle) */
   R = abs(trochoids_x - x);
   if (R < 20) {
     R = 20;
@@ -426,7 +428,13 @@ void trochoids_release(magic_api * api, int which,
                         SDL_Surface * canvas, SDL_Surface * snapshot,
                         int x, int y, SDL_Rect * update_rect)
 {
-  int tool, snd_idx, R, vol, pan;
+  int tool, snd_idx;
+
+  /* (Stop dragging sound, or previous release sound if they just
+     clicked (no drag) to make another shape quickly;
+     the release sound effect lingers & we want to start playing again,
+     otherwise it will seem like the sound only happens intermittently) */
+  api->stopsound();
 
   /* If they clicked & released with no drag,
      ignore the (x,y) we received; we want the
@@ -437,41 +445,46 @@ void trochoids_release(magic_api * api, int which,
     y += (canvas->h / 20);
   }
 
-  /* Pick which sound to play */
+  /* Pick which sound to play & play it */
   tool = which_to_tool[which];
   if (tool == TOOL_EPITROCHOID_SIZES ||
       tool == TOOL_EPITROCHOID_NOSIZES_1 ||
       tool == TOOL_EPITROCHOID_NOSIZES_2 ||
       tool == TOOL_EPITROCHOID_NOSIZES_3) {
-    snd_idx = SND_DRAW_RELEASE_EPITROCHOID;
+    snd_idx = SND_RELEASE_EPITROCHOID;
   } else {
-    snd_idx = SND_DRAW_RELEASE_HYPOTROCHOID;
+    snd_idx = SND_RELEASE_HYPOTROCHOID;
   }
+  trochoids_sound(api, snd_idx, x, y);
 
-  /* Volume based on the radius of the stator (fixed circle);
-     larger = louder */
-  R = abs(trochoids_x - x);
+
+  /* Draw it (no guides, this time!) */
+  trochoids_work(api, which, canvas, snapshot, x, y, update_rect, 0);
+}
+
+
+/* Play a sound; volume and panning will be based
+   on the size and position of the shape being generated
+   by the user's UI interaction */
+void trochoids_sound(magic_api * api, int snd_idx, int x, int y) {
+  int R, vol, pan;
+
+  /* Volume based on the radii of the stator (fixed circle)
+     and the rotator (rolling circle), combined; larger = louder */
+  R = abs(trochoids_x - x) + abs(trochoids_y - y);
   if (R < 20) {
     R = 20;
-  } else if (R > canvas->w) {
-    R = canvas->w;
+  } else if (R > api->canvas_w) {
+    R = api->canvas_w;
   }
-  vol = (255 * R * 2) / canvas->w;
+  vol = (255 * R * 2) / api->canvas_w;
   if (vol > 255) {
     vol = 255;
   }
 
-  /* (Stop previous sound if they made another shape quickly;
-     the sound effect lingers & we want to start playing again,
-     else it will seem like the sound only happens intermittently) */
-  api->stopsound();
-
-  /* Panning based on the left/right position of the shape */
-  pan = 128; /* FIXME */
+  /* Panning based on the left/right position of the center of the shape */
+  pan = (trochoids_x * 255) / api->canvas_w;
   api->playsound(sound_effects[snd_idx], pan, vol);
-
-  /* Draw it (no guides, this time!) */
-  trochoids_work(api, which, canvas, snapshot, x, y, update_rect, 0);
 }
 
 
