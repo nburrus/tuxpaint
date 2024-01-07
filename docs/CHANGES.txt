@@ -54,17 +54,18 @@ https://tuxpaint.org/
           (https://freesound.org/people/mudflea2/sounds/708182/)
           Creative Commons 0 by mudflea2
 
-    * WIP - Epitrochoid and Hypotrochoid magic tools:
+    * Epitrochoid and Hypotrochoid magic tools:
       + Tools to draw centered trochoids; to create art similar to a
         Spirograph or Wondergraph.  Drag left/right to adjust the
         radius of the stator (fixed circle). Drag up/down to adjust
         radius of the rotator (the rolling circle). Size option
-        adjusts the position of the virtual pen within the rotator.
-      + If "--nomagicsizes" is set, three versions each of
-        epitrochoid and hypotrochoid drawing tools will be made
-        available, each with differing pen positions.
+        adjusts the position of the virtual pen within (or outside)
+        the rotator.
+        - If "--nomagicsizes" is set, three versions each of
+          epitrochoid and hypotrochoid drawing tools will be made
+          available, each with differing pen positions (inside, edge,
+          and outside).
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
-      + WIP - Needs icons
       + Sounds:
         - Drag: "Running Gear", CC0 1.0 Universal
           by Vurca (https://freesound.org/people/Vurca/)

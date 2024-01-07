@@ -93,14 +93,14 @@ float trochoids_sizes_per_tool[NUM_TOOLS] = {
 };
 
 const char *icon_filenames[NUM_TOOLS] = {
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
-  "1pt_persp_select.png", /* FIXME */
+  "epitrochoid_edge.png", /* use "edge" variation when sizes are available */
+  "epitrochoid_inside.png",
+  "epitrochoid_edge.png",
+  "epitrochoid_outside.png",
+  "hypotrochoid_edge.png", /* use "edge" variation when sizes are available */
+  "hypotrochoid_inside.png",
+  "hypotrochoid_edge.png",
+  "hypotrochoid_outside.png",
 };
 
 
