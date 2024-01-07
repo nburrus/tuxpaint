@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-01 11:06-0800\n"
+"POT-Creation-Date: 2024-01-07 02:44-0800\n"
 "PO-Revision-Date: 2017-12-18 09:15+0000\n"
 "Last-Translator: Flavio Pastore <ironbishop@fsfe.org>\n"
 "Language-Team: Italian\n"
@@ -2835,6 +2835,96 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "Fai clic e trascina per disegnare il vortice di un tornado sul tuo disegno."
+
+#: ../../magic/src/trochoids.c:108
+msgid "Epitrochoid"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:109
+msgid "Epitrochoid Inside"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:110
+msgid "Epitrochoid Edge"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:111
+msgid "Epitrochoid Outside"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:112
+msgid "Hypotrochoid"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:113
+msgid "Hypotrochoid Inside"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:114
+msgid "Hypotrochoid Edge"
+msgstr ""
+
+#: ../../magic/src/trochoids.c:115
+msgid "Hypotrochoid Outside"
+msgstr ""
+
+#. Epitrochoids
+#: ../../magic/src/trochoids.c:121
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Use the size option to change where the pen is."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:122
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Then pen is within the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:123
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Then pen is on the edge of the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:124
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Then pen is outside the rolling circle."
+msgstr ""
+
+#. Hypotrochoids
+#: ../../magic/src/trochoids.c:126
+msgid ""
+"Click to start drawing a hypotrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"inside it. Use the size option to change where the pen is."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:127
+msgid ""
+"Click to start drawing a hypotrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"inside it. Then pen is within the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:128
+msgid ""
+"Click to start drawing a hypotrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"inside it. Then pen is on the edge of the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:129
+msgid ""
+"Click to start drawing a hypotrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"inside it. Then pen is outside the rolling circle."
+msgstr ""
 
 #: ../../magic/src/tv.c:117
 msgid "TV"

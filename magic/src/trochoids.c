@@ -106,13 +106,13 @@ const char *icon_filenames[NUM_TOOLS] = {
 
 const char *tool_names[NUM_TOOLS] = {
   gettext_noop("Epitrochoid"),
-  gettext_noop("Epitrochoid 1"),
-  gettext_noop("Epitrochoid 2"),
-  gettext_noop("Epitrochoid 3"),
+  gettext_noop("Epitrochoid Inside"),
+  gettext_noop("Epitrochoid Edge"),
+  gettext_noop("Epitrochoid Outside"),
   gettext_noop("Hypotrochoid"),
-  gettext_noop("Hypotrochoid 1"),
-  gettext_noop("Hypotrochoid 2"),
-  gettext_noop("Hypotrochoid 3"),
+  gettext_noop("Hypotrochoid Inside"),
+  gettext_noop("Hypotrochoid Edge"),
+  gettext_noop("Hypotrochoid Outside"),
 };
 
 
