@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 02:44-0800\n"
+"POT-Creation-Date: 2024-01-07 12:43-0800\n"
 "PO-Revision-Date: 2023-04-07 09:13+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
@@ -372,8 +372,9 @@ msgstr "Stamp工具就像一套橡皮图章或贴纸"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid ""
-"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools and "
-"vanishing point editors."
+"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
+"corresponding vanishing point editors); Epitrochoid and Hypotrochoid "
+"generators."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49

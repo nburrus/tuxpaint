@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 02:44-0800\n"
+"POT-Creation-Date: 2024-01-07 12:43-0800\n"
 "PO-Revision-Date: 2023-04-10 13:48+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -383,8 +383,9 @@ msgstr "Nástroj Pečiatka je ako sada gumových pečiatok alebo nálepiek"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid ""
-"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools and "
-"vanishing point editors."
+"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
+"corresponding vanishing point editors); Epitrochoid and Hypotrochoid "
+"generators."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 02:44-0800\n"
+"POT-Creation-Date: 2024-01-07 12:43-0800\n"
 "PO-Revision-Date: 2015-03-09 11:22+0000\n"
 "Last-Translator: Nudjaree <poonim_p@hotmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/doudoulinux/"
@@ -385,8 +385,9 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid ""
-"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools and "
-"vanishing point editors."
+"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
+"corresponding vanishing point editors); Epitrochoid and Hypotrochoid "
+"generators."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49

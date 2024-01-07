@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 02:44-0800\n"
+"POT-Creation-Date: 2024-01-07 12:43-0800\n"
 "PO-Revision-Date: 2022-10-13 16:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -372,8 +372,9 @@ msgstr "ਮੋਹਰ ਟੂਲ ਰਬੜ ਦੀ ਮੋਹਰ ਜਾਂ ਸਟਿ
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:48
 msgid ""
-"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools and "
-"vanishing point editors."
+"New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
+"corresponding vanishing point editors); Epitrochoid and Hypotrochoid "
+"generators."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
