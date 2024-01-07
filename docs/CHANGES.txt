@@ -65,7 +65,12 @@ https://tuxpaint.org/
         available, each with differing pen positions.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
       + WIP - Needs icons
-      + WIP - Needs sounds
+      + WIP Sounds:
+        - Drag: TBD
+        - Epitrochoid draw "celtic_harp_c3.wav" &
+          Hypotrochoid draw "celtic_harp_c2.wav"
+          both CC0 1.0 Universal
+          by Daphne Farazi (https://soundcloud.com/daphnefarazi)
 
   * Improvements to "Text" & "Label" tools:
     ---------------------------------------
