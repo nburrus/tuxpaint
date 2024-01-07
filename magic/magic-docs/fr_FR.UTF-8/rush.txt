@@ -10,7 +10,7 @@ résultat sera flou/barbouillé.
 
 Cet outil permet de travailler en mode à main levée.
 
-Voir aussi : Rush, Zoom avec carreau, & Zoom.
+Voir aussi : Zoom avec carreau & Zoom.
 
 -------------------------------------------------------------------------------
 

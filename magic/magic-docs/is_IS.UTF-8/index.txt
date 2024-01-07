@@ -115,8 +115,16 @@ Picture Decorations
 
 Artistic
 
+  * Epitrochoid
+  * Epitrochoid Edge
+  * Epitrochoid Inside
+  * Epitrochoid Outside
   * Flower
   * Googly Eyes
+  * Hypotrochoid
+  * Hypotrochoid Edge
+  * Hypotrochoid Inside
+  * Hypotrochoid Outside
   * Lightning
   * Real Rainbow
   * ROYGBIV Rainbow

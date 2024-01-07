@@ -13,8 +13,7 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: 「いろのこし」, 「ほうわ」, 「ひほうわ」, Darken, Lighten, Tint, &
-「だっしょく」.
+See also: 「いろのこし」, 「ほうわ」, 「ひほうわ」, Darken, Lighten, & Tint.
 
 -------------------------------------------------------------------------------
 

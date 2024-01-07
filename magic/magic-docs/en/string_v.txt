@@ -10,7 +10,9 @@ This tool is operated in a freehand fashion.
 
 This tool offers color choices.
 
-See also: String Corner & String Edges.
+See also: Epitrochoid, Epitrochoid Inside, Epitrochoid Edge, Epitrochoid
+Outside, Hypotrochoid, Hypotrochoid Inside, Hypotrochoid Edge, Hypotrochoid
+Outside, String Corner, & String Edges.
 
 -------------------------------------------------------------------------------
 

@@ -10,7 +10,7 @@ smeared.
 
 This tool is operated in a freehand fashion.
 
-See also: Rush, Tile Zoom, & Zoom.
+See also: Tile Zoom & Zoom.
 
 -------------------------------------------------------------------------------
 

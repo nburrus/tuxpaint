@@ -117,11 +117,19 @@ Artistique
 
   * Arc-en-ciel réel
   * Arc-en-ciel simple
+  * Epitrochoid
+  * Epitrochoid Edge
+  * Epitrochoid Inside
+  * Epitrochoid Outside
   * Ficelles dans les coins
   * Ficelles sur les bords
   * Ficelles V
   * Fleur
   * Foudre
+  * Hypotrochoid
+  * Hypotrochoid Edge
+  * Hypotrochoid Inside
+  * Hypotrochoid Outside
   * Tornade
   * Yeux écarquillés
 

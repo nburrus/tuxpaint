@@ -13,8 +13,8 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Garder une couleur, Saturer, Désaturer, Assombrir, Éclaircir,
-Teinter, & Enlever une couleur.
+Voir aussi : Garder une couleur, Saturer, Désaturer, Assombrir, Éclaircir, &
+Teinter.
 
 -------------------------------------------------------------------------------
 

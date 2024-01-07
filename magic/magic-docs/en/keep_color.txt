@@ -13,8 +13,7 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: Remove Color, Saturate, Desaturate, Darken, Lighten, Tint, & Remove
-Color.
+See also: Remove Color, Saturate, Desaturate, Darken, Lighten, & Tint.
 
 -------------------------------------------------------------------------------
 
