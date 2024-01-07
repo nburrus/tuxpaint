@@ -4,11 +4,12 @@
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
-FIXME
+Click to place the center of an epitrochoid curve, then drag left/right to
+adjust the radius of a fixed circle, and up/down to adjust the radius of the
+circle that will roll along its outside to produce the drawing. The "pen" that
+paints the curve will be on the edge of the rolling circle.
 
 This tool is operated in a freehand fashion.
-
-This tool offers multiple size settings.
 
 This tool offers color choices.
 
