@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.January.7 (0.9.32)
+2024.January.8 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Support for complexity levels in Magic tools via the plugin API.
@@ -116,7 +116,10 @@ https://tuxpaint.org/
 
   * Localization Updates:
     ---------------------
-    * Bulgarian
+    * Albanian translation
+      Besnik Bleta <besnik@programeshqip.org>
+
+    * Bulgarian translation
       Note: Does an overhaul of most of the translations to replace more
       polite, plural verb forms, with singular, spoken forms.
       Vankata453 <https://sourceforge.net/u/vankata453>
