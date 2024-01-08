@@ -4,7 +4,7 @@
 
            Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Peint avec une symétrie réflective par rapport au centre horizontal de l'image.
+Paint with reflective symmetry across the horizontal center of the image.
 
 Cet outil permet de travailler en mode à main levée.
 

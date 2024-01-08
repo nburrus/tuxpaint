@@ -74,7 +74,7 @@
         <p>Stamps may be rotated before being applied to the canvas.</p>
         <p>Shapes tool, in drag-from-corner mode, has been improved.</p>
         <p>Fill tool now offers a shaped gradient (bevel) mode.</p>
-        <p>A quick Eraser mode is be accessed via keyboard shortcut.</p>
+        <p>A quick Eraser mode can be accessed via keyboard shortcut.</p>
         <p>The rainbow palette (HSV color picker) can now load the built-in color, or the colors from the pipette tool or color mixer.</p>
         <p>Starter and Template images can specify how they should stretch, to avoid smearing when the canvas aspect ratio differs from that of the image.</p>
         <p>The "buttonsize" configuration option now offers an "auto" setting.</p>

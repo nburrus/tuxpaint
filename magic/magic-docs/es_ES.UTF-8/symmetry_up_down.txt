@@ -4,7 +4,7 @@
 
             Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-Paint with relfective symmetry across the vertical center of the image.
+Paint with reflective symmetry across the vertical center of the image.
 
 This tool is operated in a freehand fashion.
 
