@@ -427,12 +427,12 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
 
 
   /* Set default angles: */
-  dim_ang = 30.0 * M_PI / 180.0;
+  dim_ang = 45.0 * M_PI / 180.0;
   tri_ang[0] = 15 * M_PI / 180.0;
   tri_ang[1] = 75 * M_PI / 180.0;
   tri_ang_chosen = 0;
-  oblq_ang = 45 * M_PI / 180.0;
-  oblqb_ang = 135 * M_PI / 180.0;
+  oblq_ang = -45 * M_PI / 180.0;
+  oblqb_ang = 45 * M_PI / 180.0;
 
 
   /* Generate our own snapshot surface */
@@ -891,17 +891,38 @@ void n_pt_persp_drag(magic_api * api, int which,
     /* Isometric, Dimetric, Trimetric, or Oblique draw */
     if (which == TOOL_ISO_DRAW) {
       n_pt_persp_draw_points(api, TOOL_ISO_SELECT, canvas);
+      /* FIXME: additional guides */
     } else if (which == TOOL_DIM_DRAW) {
       n_pt_persp_draw_points(api, TOOL_DIM_SELECT, canvas);
+      /* FIXME: additional guides */
     } else if (which == TOOL_TRI_DRAW) {
       n_pt_persp_draw_points(api, TOOL_TRI_SELECT, canvas);
+      /* FIXME: additional guides */
     } else if (which == TOOL_OBLQ_DRAW) {
-      n_pt_persp_draw_points(api, TOOL_OBLQ_SELECT, canvas);
+      api->line((void *) api, which, canvas, NULL,
+                x, 0, x, canvas->h - 1, 6,
+                n_pt_persp_line_xor_callback);
+      api->line((void *) api, which, canvas, NULL,
+                0, y, canvas->w - 1, y, 6,
+                n_pt_persp_line_xor_callback);
+      api->line((void *) api, which, canvas, NULL,
+                x - cos(oblq_ang) * canvas->w, y - sin(oblq_ang) * canvas->w,
+                x + cos(oblq_ang) * canvas->w, y + sin(oblq_ang) * canvas->w,
+                6,
+                n_pt_persp_line_xor_callback);
     } else if (which == TOOL_OBLQ_DRAW_ALT) {
-      n_pt_persp_draw_points(api, TOOL_OBLQ_SELECT_ALT, canvas);
+      api->line((void *) api, which, canvas, NULL,
+                x, 0, x, canvas->h - 1, 6,
+                n_pt_persp_line_xor_callback);
+      api->line((void *) api, which, canvas, NULL,
+                0, y, canvas->w - 1, y, 6,
+                n_pt_persp_line_xor_callback);
+      api->line((void *) api, which, canvas, NULL,
+                x - cos(oblqb_ang) * canvas->w, y - sin(oblqb_ang) * canvas->w,
+                x + cos(oblqb_ang) * canvas->w, y + sin(oblqb_ang) * canvas->w,
+                6,
+                n_pt_persp_line_xor_callback);
     }
-
-    /* FIXME: additional guides */
   } else if (which == TOOL_1PT_SELECT) {
     /* 1-point perspective - select */
     a1_pt_x = x;
@@ -998,9 +1019,9 @@ void n_pt_persp_drag(magic_api * api, int which,
       oblq_ang = M_PI - MIN_AXONOMETRIC_ANGLE;
     }
 
-//#ifdef DEBUG FIXME
+#ifdef DEBUG
     printf("Oblique select %.2f\n", oblq_ang * 180.0 / M_PI);
-//#endif
+#endif
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   }
 }
@@ -1124,7 +1145,94 @@ void n_pt_persp_work(magic_api * api, int tool,
     }
   } else if (tool == TOOL_ISO_DRAW || tool == TOOL_DIM_DRAW || tool == TOOL_TRI_DRAW ||
              tool == TOOL_OBLQ_DRAW || tool == TOOL_OBLQ_DRAW_ALT) {
-    // FIXME
+    float valid_angles[6];
+    float ang;
+
+    /* Orthographic projections (isometric, dimetric, trimetric, oblique) */
+
+    if (line_start_x == x) {
+      /* Vertical */
+      x1 = line_start_x;
+      y1 = line_start_y;
+      x2 = x1;
+      y2 = y;
+    } else {
+      /* vertical */
+      valid_angles[0] = M_PI / 2;
+
+      if (tool == TOOL_ISO_DRAW) {
+        /* isometric diagonals */
+        valid_angles[1] = (30.0 * M_PI / 180.0);
+        valid_angles[2] = (150.0 * M_PI / 180.0);
+      } else if (tool == TOOL_DIM_DRAW) {
+        /* dimetric diagonals */
+        valid_angles[1] = dim_ang;
+        valid_angles[2] = M_PI - dim_ang;
+      } else if (tool == TOOL_TRI_DRAW) {
+        /* trimetric diagonals */
+        valid_angles[1] = tri_ang[0];
+        valid_angles[2] = tri_ang[1];
+      } else if (tool == TOOL_OBLQ_DRAW) {
+        /* horizontal */
+        valid_angles[1] = 0.0;
+        /* oblique diagonal */
+        valid_angles[2] = oblq_ang;
+      } else if (tool == TOOL_OBLQ_DRAW_ALT) {
+        /* horizontal */
+        valid_angles[1] = 0.0;
+        /* oblique diagonal */
+        valid_angles[2] = oblqb_ang;
+      }
+
+      /* And the opposite directions */
+      for (i = 0; i < 3; i++) {
+        valid_angles[i + 3] = valid_angles[i] + M_PI;
+      }
+
+      // FIXME needs more work
+
+      cursor_angle = atan2f(y - line_start_y, x - line_start_x);
+      printf("cursor ang = %.2f\n", cursor_angle * 180.0 / M_PI);
+
+      best_angle_idx = -1;
+      best_diff = M_PI * 2;
+
+      for (i = 0; i < 6; i++) {
+        diff = fabs(cursor_angle - valid_angles[i]);
+
+        if (diff < best_diff) {
+          best_angle_idx = i;
+          best_diff = diff;
+        }
+      }
+
+      if (best_angle_idx == -1) {
+        printf("???\n");
+        return;
+      }
+
+      ang = valid_angles[best_angle_idx];
+
+      printf("best ang = %.2f\n", ang * 180.0 / M_PI);
+
+      x1 = line_start_x;
+      y1 = line_start_y;
+      x2 = line_start_x + cos(ang) * 1000;
+      y2 = line_start_y + sin(ang) * 1000;
+
+      slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
+      x2 = x;
+      y2 = line_start_y + (slope * (x - line_start_x));
+
+      /* Don't go past our cursor's Y */
+      if ((y < line_start_y && y2 < y) ||
+          (y > line_start_y && y2 > y)) {
+        if (slope != 0.0) {
+          y2 = y;
+          x2 = ((y - line_start_y) / slope) + line_start_x;
+        }
+      }
+    }
   }
 
   SDL_BlitSurface(n_pt_persp_snapshot, NULL, canvas, NULL);
