@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2023
+  Copyright (c) 2002-2024
   by various contributors; see AUTHORS.txt
   https://tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 29, 2023
+  June 14, 2002 - January 13, 2024
 */
 
 #include "platform.h"
@@ -29718,7 +29718,7 @@ static void setup(void)
 
   DEBUG_PRINTF("%s\n", tmp_str);
 
-  safe_snprintf(tmp_str, sizeof(tmp_str), "© 2002–2023 Bill Kendrick, et al.");
+  safe_snprintf(tmp_str, sizeof(tmp_str), "© 2002–2024 Bill Kendrick, et al.");
   tmp_surf = render_text(medium_font, tmp_str, black);
   dest.x = 10;
   dest.y = WINDOW_HEIGHT - img_progress->h - (tmp_surf->h * 2);
