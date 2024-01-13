@@ -888,38 +888,70 @@ void n_pt_persp_drag(magic_api * api, int which,
     }
   } else if (which == TOOL_ISO_DRAW || which == TOOL_DIM_DRAW || which == TOOL_TRI_DRAW ||
              which == TOOL_OBLQ_DRAW || which == TOOL_OBLQ_DRAW_ALT) {
+    int guide_len;
+
+    guide_len = max(canvas->w, canvas->h);
+
+    /* All of these tools have a vertical guide */
+    api->line((void *) api, which, canvas, NULL,
+              x, 0, x, canvas->h - 1, 6,
+              n_pt_persp_line_xor_callback);
+
     /* Isometric, Dimetric, Trimetric, or Oblique draw */
     if (which == TOOL_ISO_DRAW) {
-      n_pt_persp_draw_points(api, TOOL_ISO_SELECT, canvas);
-      /* FIXME: additional guides */
-    } else if (which == TOOL_DIM_DRAW) {
-      n_pt_persp_draw_points(api, TOOL_DIM_SELECT, canvas);
-      /* FIXME: additional guides */
-    } else if (which == TOOL_TRI_DRAW) {
-      n_pt_persp_draw_points(api, TOOL_TRI_SELECT, canvas);
-      /* FIXME: additional guides */
-    } else if (which == TOOL_OBLQ_DRAW) {
+      /* Isometric */
+      float ang;
+
+      ang = 30.0 * M_PI / 180.0;
       api->line((void *) api, which, canvas, NULL,
-                x, 0, x, canvas->h - 1, 6,
-                n_pt_persp_line_xor_callback);
-      api->line((void *) api, which, canvas, NULL,
-                0, y, canvas->w - 1, y, 6,
-                n_pt_persp_line_xor_callback);
-      api->line((void *) api, which, canvas, NULL,
-                x - cos(oblq_ang) * canvas->w, y - sin(oblq_ang) * canvas->w,
-                x + cos(oblq_ang) * canvas->w, y + sin(oblq_ang) * canvas->w,
+                x - cos(ang) * guide_len, y + sin(ang) * guide_len,
+                x + cos(ang) * guide_len, y - sin(ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
-    } else if (which == TOOL_OBLQ_DRAW_ALT) {
+      ang = 150.0 * M_PI / 180.0;
       api->line((void *) api, which, canvas, NULL,
-                x, 0, x, canvas->h - 1, 6,
+                x - cos(ang) * guide_len, y + sin(ang) * guide_len,
+                x + cos(ang) * guide_len, y - sin(ang) * guide_len,
+                6,
                 n_pt_persp_line_xor_callback);
+    } else if (which == TOOL_DIM_DRAW) {
+      /* Dimetric */
+      api->line((void *) api, which, canvas, NULL,
+                x - cos(dim_ang) * guide_len, y + sin(dim_ang) * guide_len,
+                x + cos(dim_ang) * guide_len, y - sin(dim_ang) * guide_len,
+                6,
+                n_pt_persp_line_xor_callback);
+      api->line((void *) api, which, canvas, NULL,
+                x - cos(M_PI - dim_ang) * guide_len, y + sin(M_PI - dim_ang) * guide_len,
+                x + cos(M_PI - dim_ang) * guide_len, y - sin(M_PI - dim_ang) * guide_len,
+                6,
+                n_pt_persp_line_xor_callback);
+    } else if (which == TOOL_TRI_DRAW) {
+      /* Trimetric */
+      api->line((void *) api, which, canvas, NULL,
+                x - cos(tri_ang[0]) * guide_len, y + sin(tri_ang[0]) * guide_len,
+                x + cos(tri_ang[0]) * guide_len, y - sin(tri_ang[0]) * guide_len,
+                6,
+                n_pt_persp_line_xor_callback);
+      api->line((void *) api, which, canvas, NULL,
+                x - cos(tri_ang[1]) * guide_len, y + sin(tri_ang[1]) * guide_len,
+                x + cos(tri_ang[1]) * guide_len, y - sin(tri_ang[1]) * guide_len,
+                6,
+                n_pt_persp_line_xor_callback);
+    } else if (which == TOOL_OBLQ_DRAW || which == TOOL_OBLQ_DRAW_ALT) {
+      /* Oblique */
+      float ang;
       api->line((void *) api, which, canvas, NULL,
                 0, y, canvas->w - 1, y, 6,
                 n_pt_persp_line_xor_callback);
+      if (which == TOOL_OBLQ_DRAW) {
+        ang = oblq_ang;
+      } else {
+        ang = oblqb_ang;
+      }
       api->line((void *) api, which, canvas, NULL,
-                x - cos(oblqb_ang) * canvas->w, y - sin(oblqb_ang) * canvas->w,
-                x + cos(oblqb_ang) * canvas->w, y + sin(oblqb_ang) * canvas->w,
+                x - cos(ang) * guide_len, y + sin(ang) * guide_len,
+                x + cos(ang) * guide_len, y - sin(ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
     }
@@ -1005,11 +1037,7 @@ void n_pt_persp_drag(magic_api * api, int which,
       y = canvas->h - y;
       x = canvas->w - x;
     }
-
-    oblq_ang = atan2f(canvas->h / 2 - y, canvas->w / 2 - x);
-    if (oblq_ang > M_PI) {
-      oblq_ang -= M_PI;
-    }
+    oblq_ang = atan2f(canvas->h / 2 - y, x - canvas->w / 2);
 
     if (oblq_ang < MIN_AXONOMETRIC_ANGLE) {
       oblq_ang = MIN_AXONOMETRIC_ANGLE;
@@ -1623,8 +1651,8 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
       y1 = -y1;
     }
     api->line((void *) api, tool, canvas, NULL,
-              canvas->w / 2 - x1, canvas->h / 2 - y1,
-              canvas->w / 2 + x1, canvas->h / 2 + y1, 12,
+              canvas->w / 2 - x1, canvas->h / 2 + y1,
+              canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
               n_pt_persp_line_xor_callback);
   }
 }
