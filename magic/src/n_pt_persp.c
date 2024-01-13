@@ -276,6 +276,12 @@ int a1_pt_x, a1_pt_y;
 int a2_pt_x[2], a2_pt_y[2], a2_pt_cur;
 int a3_pt_x[3], a3_pt_y[3], a3_pt_cur;
 int a3b_pt_x[3], a3b_pt_y[3];
+int dim_ang;
+int tri_ang[2];
+int oblq_ang;
+int oblqb_ang;
+
+
 int line_start_x, line_start_y;
 float a2_valid_angle[8];
 float a3_valid_angle[8];
@@ -415,6 +421,16 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   a3b_pt_y[2] = api->canvas_h * 19 / 20;
 
 
+  /* Set default angles: */
+  dim_ang = 30;
+  tri_ang[0] = 40;
+  tri_ang[1] = 20;
+  oblq_ang = 45;
+  oblqb_ang = 135;
+
+
+  /* Generate our own snapshot surface */
+
   n_pt_persp_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, api->canvas_w, api->canvas_h,
                                              32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000); // FIXME: Safe?
   if (n_pt_persp_snapshot == NULL) {
@@ -487,7 +503,10 @@ int n_pt_persp_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which)
 
   which = which_to_tool[which];
 
-  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT)
+  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT ||
+      which == TOOL_ISO_DRAW || which == TOOL_DIM_DRAW || which == TOOL_TRI_DRAW ||
+      which == TOOL_OBLQ_DRAW || which == TOOL_OBLQ_DRAW_ALT
+  )
     return 1;
   else
     return 0;
@@ -509,10 +528,14 @@ Uint8 n_pt_persp_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which, int
 
   which = which_to_tool[which];
 
-  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT)
+  if (which == TOOL_1PT_DRAW || which == TOOL_2PT_DRAW || which == TOOL_3PT_DRAW || which == TOOL_3PT_DRAW_ALT ||
+      which == TOOL_ISO_DRAW || which == TOOL_DIM_DRAW || which == TOOL_TRI_DRAW ||
+      which == TOOL_OBLQ_DRAW || which == TOOL_OBLQ_DRAW_ALT
+  ) {
     return 4;
-  else
+  } else {
     return 0;
+  }
 }
 
 
@@ -596,7 +619,17 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
     a3_pt_y[a3_pt_cur] = y;
 
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
+  } else if (which == TOOL_DIM_SELECT) {
+    /* Set angle for Dimetric */
+    // FIXME
+  } else if (which == TOOL_TRI_SELECT) {
+    /* Set an angle for Trimetric */
+    // FIXME
+  } else if (which == TOOL_OBLQ_SELECT) {
+    /* Set n angle for Oblique */
+    // FIXME
   } else {
+    /* Not a SELECT; must be a DRAW! */
     int i;
 
     api->playsound(sound_effects[SND_DRAW_CLICK], (x * 255) / canvas->w, 255);
@@ -665,6 +698,11 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
         }
       }
     }
+    /* N.B. For Isometric, Dimetric, Trimetric, and Oblique,
+     * angles are always the same, regardless of the line's
+     * position (unlike the perspective tools, where the angles
+     * are related to the drawing position & the vanishing point(s)
+     */
 
     line_start_x = x;
     line_start_y = y;
@@ -830,6 +868,10 @@ void n_pt_persp_drag(magic_api * api, int which,
                   n_pt_persp_line_xor_callback);
       }
     }
+  } else if (which == TOOL_ISO_DRAW || which == TOOL_DIM_DRAW || which == TOOL_TRI_DRAW ||
+             which == TOOL_OBLQ_DRAW || which == TOOL_OBLQ_DRAW_ALT) {
+    /* Isometric, Dimetric, Trimetric, or Oblique draw */
+    // FIXME
   } else if (which == TOOL_1PT_SELECT) {
     /* 1-point perspective - select */
     a1_pt_x = x;
@@ -848,6 +890,15 @@ void n_pt_persp_drag(magic_api * api, int which,
     a3_pt_y[a3_pt_cur] = y;
 
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
+  } else if (which == TOOL_DIM_SELECT) {
+    /* Dimetric - select */
+    // FIXME
+  } else if (which == TOOL_TRI_SELECT) {
+    /* Trimetric - select */
+    // FIXME
+  } else if (which == TOOL_OBLQ_SELECT) {
+    /* Oblique - select */
+    // FIXME
   }
 }
 
@@ -968,6 +1019,9 @@ void n_pt_persp_work(magic_api * api, int tool,
       x2 = x1;
       y2 = y;
     }
+  } else if (tool == TOOL_ISO_DRAW || tool == TOOL_DIM_DRAW || tool == TOOL_TRI_DRAW ||
+             tool == TOOL_OBLQ_DRAW || tool == TOOL_OBLQ_DRAW_ALT) {
+    // FIXME
   }
 
   SDL_BlitSurface(n_pt_persp_snapshot, NULL, canvas, NULL);
@@ -1024,6 +1078,10 @@ void n_pt_persp_release(magic_api * api, int which,
     api->stopsound();
   } else if (which == TOOL_3PT_SELECT) {
     /* 3-point perspective - vanishing point drag released */
+    api->stopsound();
+  } else if (which == TOOL_DIM_SELECT || which == TOOL_TRI_SELECT || which == TOOL_OBLQ_SELECT) {
+    /* Dimetric, Trimetric, Oblqiue - angle adjustment drag released */
+    // FIXME
     api->stopsound();
   } else {
     /* Draw the line (for real) */
@@ -1265,6 +1323,12 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
                 x1, y1, x2, y2, 12,
                 n_pt_persp_line_xor_callback);
     }
+  } else if (tool == TOOL_DIM_SELECT) {
+    // FIXME
+  } else if (tool == TOOL_TRI_SELECT) {
+    // FIXME
+  } else if (tool == TOOL_OBLQ_SELECT || tool == TOOL_OBLQ_SELECT_ALT) {
+    // FIXME
   }
 }
 
