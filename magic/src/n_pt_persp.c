@@ -1185,13 +1185,13 @@ void n_pt_persp_work(magic_api * api, int tool,
       x2 = x1;
       y2 = y;
     } else {
-      /* vertical */
-      valid_angles[0] = M_PI / 2;
+      /* all tools include vertical */
+      valid_angles[0] = -M_PI / 2;
 
       if (tool == TOOL_ISO_DRAW) {
         /* isometric diagonals */
-        valid_angles[1] = (30.0 * M_PI / 180.0);
-        valid_angles[2] = (150.0 * M_PI / 180.0);
+        valid_angles[1] = -(30.0 * M_PI / 180.0);
+        valid_angles[2] = -(150.0 * M_PI / 180.0);
       } else if (tool == TOOL_DIM_DRAW) {
         /* dimetric diagonals */
         valid_angles[1] = dim_ang;
@@ -1215,6 +1215,9 @@ void n_pt_persp_work(magic_api * api, int tool,
       /* And the opposite directions */
       for (i = 0; i < 3; i++) {
         valid_angles[i + 3] = valid_angles[i] + M_PI;
+        if (valid_angles[i + 3] > M_PI * 2) {
+          valid_angles[i] -= (M_PI * 2);
+        }
       }
 
       // FIXME needs more work
@@ -1241,24 +1244,29 @@ void n_pt_persp_work(magic_api * api, int tool,
 
       ang = valid_angles[best_angle_idx];
 
-      printf("best ang = %.2f\n", ang * 180.0 / M_PI);
+      printf("best ang = [%d] %.2f\n", best_angle_idx, ang * 180.0 / M_PI);
 
       x1 = line_start_x;
       y1 = line_start_y;
       x2 = line_start_x + cos(ang) * 1000;
       y2 = line_start_y + sin(ang) * 1000;
 
-      slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
-      x2 = x;
-      y2 = line_start_y + (slope * (x - line_start_x));
+      if (abs(x2 - x1) >= 2) {
+        slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
+        x2 = x;
+        y2 = line_start_y + (slope * (x - line_start_x));
 
-      /* Don't go past our cursor's Y */
-      if ((y < line_start_y && y2 < y) ||
-          (y > line_start_y && y2 > y)) {
-        if (slope != 0.0) {
-          y2 = y;
-          x2 = ((y - line_start_y) / slope) + line_start_x;
+        /* Don't go past our cursor's Y */
+        if ((y < line_start_y && y2 < y) ||
+            (y > line_start_y && y2 > y)) {
+          if (slope != 0.0) {
+            y2 = y;
+            x2 = ((y - line_start_y) / slope) + line_start_x;
+          }
         }
+      } else {
+        x2 = x1;
+        y2 = y;
       }
     }
   }
