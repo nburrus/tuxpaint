@@ -1,6 +1,7 @@
 /* n_pt_persp.c
 
-   1-, 2-, and 3-point perspective line-drawing tools.
+   1-, 2-, and 3-point perspective, axonometric (isometric, dimetric,
+   and trimetric), and oblique line-drawing tools,
 
    Different complexity (expertise) levels offer different
    tools.  In Advanced mode, there are "Draw" and "Select"
@@ -12,7 +13,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - December 30, 2023
+   December 12, 2023 - January 12, 2024
 */
 
 
@@ -29,14 +30,37 @@
 /* All _possible_ tools */
 enum
 {
-  TOOL_1PT_SELECT, /* advanced & beginner */
-  TOOL_1PT_DRAW, /* advanced only */
-  TOOL_2PT_SELECT, /* advanced & beginner */
-  TOOL_2PT_DRAW, /* advanced only */
-  TOOL_3PT_SELECT, /* advanced & beginner */
-  TOOL_3PT_DRAW, /* advanced only */
-  TOOL_3PT_SELECT_ALT, /* beginner only (not directly accessible; used for drawing guideS) */
+  /* 1-point perspective */
+  TOOL_1PT_SELECT, /* advanced only */
+  TOOL_1PT_DRAW, /* advanced & beginner */
+
+  /* 2-point perspective */
+  TOOL_2PT_SELECT, /* advanced only */
+  TOOL_2PT_DRAW, /* advanced & beginner */
+
+  /* 3-point perspective */
+  TOOL_3PT_SELECT, /* advanced only */
+  TOOL_3PT_DRAW, /* advanced & beginner */
+  TOOL_3PT_SELECT_ALT, /* beginner only (not directly accessible; used for drawing guides) */
   TOOL_3PT_DRAW_ALT, /* beginner only */
+
+  /* Isometric */
+  TOOL_ISO_DRAW, /* advanced & beginner (N.B. isometric defined by exact angles; no "SELECT" tool) */
+
+  /* Dimetric */
+  TOOL_DIM_SELECT, /* advanced only */
+  TOOL_DIM_DRAW, /* advanced & beginner */
+
+  /* Trimetric */
+  TOOL_TRI_SELECT, /* advanced only */
+  TOOL_TRI_DRAW, /* advanced & beginner */
+
+  /* Oblique */
+  TOOL_OBLQ_SELECT, /* advanced only */
+  TOOL_OBLQ_DRAW, /* advanced & beginner */
+  TOOL_OBLQ_SELECT_ALT, /* beginner only (not directly accessible; used for drawing guides) */
+  TOOL_OBLQ_DRAW_ALT, /* beginner only */
+
   NUM_TOOLS
 };
 
@@ -44,14 +68,36 @@ enum
 
 #ifdef DEBUG
 char * tool_debug_names[NUM_TOOLS] = {
+  /* 1-point perspective */
   "1pt select",
   "1pt draw",
+
+  /* 2-point perspective */
   "2pt select",
   "2pt draw",
+
+  /* 3-point perspective */
   "3pt select",
   "3pt draw",
   "3pt select alt",
   "3pt draw alt",
+
+  /* Isometric */
+  "iso draw",
+
+  /* Dimetric */
+  "dim select",
+  "dim draw",
+
+  /* Trimetric */
+  "tri select",
+  "tri draw",
+
+  /* Oblique */
+  "oblq select alt",
+  "oblq draw alt",
+  "oblq select",
+  "oblq draw",
 };
 #endif
 
@@ -59,8 +105,8 @@ Uint8 complexity;
 
 int num_tools[NUM_MAGIC_COMPLEXITY_LEVELS] = {
   0, /* Novice */
-  4, /* Beginner */
-  6, /* Advanced */
+  9, /* Beginner */
+  13, /* Advanced */
 };
 
 int * which_to_tool;
@@ -68,12 +114,8 @@ int * which_to_tool;
 int which_to_tool_per_complexity[NUM_MAGIC_COMPLEXITY_LEVELS][NUM_TOOLS] = {
   /* Novice */
   {
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
+    -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1, -1, -1, -1, -1, -1, -1,
     -1,
   },
   /* Beginner */
@@ -82,9 +124,12 @@ int which_to_tool_per_complexity[NUM_MAGIC_COMPLEXITY_LEVELS][NUM_TOOLS] = {
     TOOL_2PT_DRAW,
     TOOL_3PT_DRAW,
     TOOL_3PT_DRAW_ALT,
-    -1,
-    -1,
-    -1,
+    TOOL_ISO_DRAW,
+    TOOL_DIM_DRAW,
+    TOOL_TRI_DRAW,
+    TOOL_OBLQ_DRAW,
+    TOOL_OBLQ_DRAW_ALT,
+    -1, -1, -1, -1, -1, -1, -1, -1,
   },
   /* Advanced */
   {
@@ -94,43 +139,116 @@ int which_to_tool_per_complexity[NUM_MAGIC_COMPLEXITY_LEVELS][NUM_TOOLS] = {
     TOOL_2PT_DRAW,
     TOOL_3PT_SELECT,
     TOOL_3PT_DRAW,
-    -1,
+    TOOL_ISO_DRAW,
+    TOOL_DIM_SELECT,
+    TOOL_DIM_DRAW,
+    TOOL_TRI_SELECT,
+    TOOL_TRI_DRAW,
+    TOOL_OBLQ_SELECT,
+    TOOL_OBLQ_DRAW,
+    -1, -1, -1, -1,
   },
 };
 
 const char *icon_filenames[NUM_TOOLS] = {
+  /* 1-point perspective */
   "1pt_persp_select.png",
   "1pt_persp_draw.png",
+
+  /* 2-point perspective */
   "2pt_persp_select.png",
   "2pt_persp_draw.png",
+
+  /* 3-point perspective */
   "3pt_persp_select.png",
   "3pt_persp_draw.png",
   "",
   "3pt_persp_draw_alt.png",
+
+  /* Isometric */
+  "Snow_flake4.png", // FIXME
+
+  /* Dimetric */
+  "Snow_flake4.png", // FIXME
+  "Snow_flake4.png", // FIXME
+
+  /* Trimetric */
+  "Snow_flake4.png", // FIXME
+  "Snow_flake4.png", // FIXME
+
+  /* Oblique */
+  "Snow_flake4.png", // FIXME
+  "Snow_flake4.png", // FIXME
+  "",
+  "Snow_flake4.png", // FIXME
 };
 
 
 const char *tool_names[NUM_TOOLS] = {
+  /* 1-point perspective */
   gettext_noop("1-Point Select"),
   gettext_noop("1-Point Draw"),
+
+  /* 2-point perspective */
   gettext_noop("2-Point Select"),
   gettext_noop("2-Point Draw"),
+
+  /* 3-point perspective */
   gettext_noop("3-Point Select"),
   gettext_noop("3-Point Draw"),
   "",
   gettext_noop("3-Point Draw Down"),
+
+  /* Isometric */
+  gettext_noop("Isometric Lines"),
+
+  /* Dimetric */
+  gettext_noop("Dimetric Select"),
+  gettext_noop("Dimetric Draw"),
+
+  /* Trimetric */
+  gettext_noop("Trimetric Select"),
+  gettext_noop("Trimetric Draw"),
+
+  /* Oblique */
+  gettext_noop("Oblique Select"),
+  gettext_noop("Oblique Draw"),
+  "",
+  gettext_noop("Oblique Draw Left"),
 };
 
 
 const char *tool_descriptions[NUM_TOOLS] = {
+  /* 1-point perspective */
   gettext_noop("Click in your drawing to pick a vanishing point for the 1-point perspective painting tool."),
   gettext_noop("Click and drag to draw lines with your 1-point perspective vanishing point."),
+
+  /* 2-point perspective */
   gettext_noop("Click two places in your drawing to pick vanishing points for the 2-point perspective painting tool."),
   gettext_noop("Click and drag to draw lines with your 2-point perspective vanishing points."),
+
+  /* 3-point perspective */
   gettext_noop("Click three places in your drawing to pick vanishing points for the 3-point perspective painting tool."),
   gettext_noop("Click and drag to draw lines with your 3-point perspective vanishing points."),
   "",
   gettext_noop("Click and drag to draw lines with your 3-point perspective vanishing points (downward perspective)."),
+
+  /* Isometric */
+  gettext_noop("Click and drag to draw lines with an isometric projection."),
+
+  /* Dimetric */
+  gettext_noop("Click in your drawing to adjust the angle used by the dimetric projection painting tool."),
+  gettext_noop("Click and drag to draw lines with dimetric projection."),
+
+  /* Trimetric */
+  gettext_noop("Click in your drawing to adjust the angles used by the trimetric projection painting tool."),
+  gettext_noop("Click and drag to draw lines with trimetric projection."),
+
+  /* Oblique */
+  gettext_noop("Click in your drawing to adjust the angle used by the oblique projection painting tool."),
+  gettext_noop("Click and drag to draw lines with oblique projection."),
+  "",
+  gettext_noop("Click and drag to draw lines with oblique projection (right-facing)."),
 };
 
 
@@ -344,7 +462,7 @@ char *n_pt_persp_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 
 int n_pt_persp_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (MAGIC_TYPE_PAINTING);
+  return (MAGIC_TYPE_PROJECTIONS);
 }
 
 

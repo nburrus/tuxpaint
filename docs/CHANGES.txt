@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.January.8 (0.9.32)
+2024.January.12 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Support for complexity levels in Magic tools via the plugin API.
@@ -25,23 +25,41 @@ https://tuxpaint.org/
 
   * New Magic Tools:
     ----------------
-    * Vanishing point magic tools:
-      + 1-point Perspective ("1-Point Select" & "1-Point Draw")
-        Choose a vanishing point, and then draw lines that always
-        point towards it, or are vertical or horizontal.
-      + 2-point Perspective ("2-Point Select" & "2-Point Draw")
-        Choose two vanishing points, and then draw lines that always
-        point towards them, along the horizon defined by them,
-        or perpendicular to that horizon.
-      + 3-point Perspective ("3-Point Select" & "3-Point Draw")
-        Choose three vanishing points, and then draw lines that always
-        point towards them, or along the horizon defined by the first two.
+    * WIP Tools to draw with various kinds of graphical projections
+      (all placed within a new tool group):
+      + Point-projection persepctive:
+        - 1-point Perspective ("1-Point Select" & "1-Point Draw")
+          Choose a vanishing point, and then draw lines that always
+          point towards it, or are vertical or horizontal.
+        - 2-point Perspective ("2-Point Select" & "2-Point Draw")
+          Choose two vanishing points, and then draw lines that always
+          point towards them, along the horizon defined by them,
+          or perpendicular to that horizon.
+        - 3-point Perspective ("3-Point Select" & "3-Point Draw")
+          Choose three vanishing points, and then draw lines that always
+          point towards them, or along the horizon defined by the first two.
+      + WIP Orthographic (orthogonal) projection:
+        - WIP Isometric ("Isometric Lines")
+          Lines only go at evenly-spaced (120 degrees) angles (vertically
+          and diagonally).
+        - WIP Dimetric ("Dimetric Select" & "Dimetric Draw")
+          Choose a single angle for both diagonals directions; lines may
+          only go diagonally at those angles, or vertically.
+        - WIP Dimetric ("Trimetric Select" & "Trimetric Draw")
+          Choose an angle for two diagonals directions; lines may
+          only go diagonally at those angles, or vertically.
+        - WIP Oblique ("Oblique Select" & "Oblique Draw")
+          Choose an angle for a single diagonal direction; lines may
+          only go diagonally at that one angle, vertically, or
+          horizontally.
       + None of these tools are available when in "novice" complexity mode
         (see above).
-      + "Select" tools (to edit vanishing points) are not offered
-        when in "beginner" complexity mode.
-        - Also, two "3-Point Draw" tools are provided in "beginner"
-          mode, to offer both 'looking up' and 'looking down' perspectives.
+      + "Select" tools (to edit vanishing points or angles) are not offered
+        when in "beginner" complexity mode.  However, in "beginner" mode:
+        - Two "3-Point Draw" tools are provided, offering both 'upwards'
+          and 'downwards' perspectives.
+        - WIP Two "Oblqiue" tools are provided, offering recedings axes
+          to both the right and the left.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
       + Sounds:
         - Select: "Gummibandloop_121.wav"
