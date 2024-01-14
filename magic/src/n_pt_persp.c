@@ -19,7 +19,6 @@
    December 12, 2023 - January 14, 2024
 */
 
-
 #include <stdio.h>
 #include <string.h>
 #include <libintl.h>
@@ -27,6 +26,9 @@
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
+
+// #define DEBUG
+#define PERF
 
 #define SNAP 10
 
@@ -67,8 +69,6 @@ enum
 
   NUM_TOOLS
 };
-
-// #define DEBUG
 
 #ifdef DEBUG
 char * tool_debug_names[NUM_TOOLS] = {
@@ -763,6 +763,10 @@ void n_pt_persp_drag(magic_api * api, int which,
 {
   int i, x1, y1, x2, y2;
   float slope;
+#ifdef PERF
+  Uint64 tick;
+  tick = SDL_GetPerformanceCounter();
+#endif
 
   snap_to(which, &old_x, &old_y);
   snap_to(which, &x, &y);
@@ -1070,6 +1074,10 @@ void n_pt_persp_drag(magic_api * api, int which,
 #endif
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   }
+
+#ifdef PERF
+  printf("%0.5f\n", (float) (SDL_GetPerformanceCounter() - tick) / (float) SDL_GetPerformanceFrequency());
+#endif
 }
 
 void n_pt_persp_work(magic_api * api, int tool,
