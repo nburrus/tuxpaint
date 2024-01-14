@@ -588,8 +588,8 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   fflush(stdout);
 #endif
 
-  x = (x / 10) * 10;
-  y = (y / 10) * 10;
+  x = (x / SNAP) * SNAP;
+  y = (y / SNAP) * SNAP;
 
   tool = which_to_tool[which];
 
@@ -761,10 +761,10 @@ void n_pt_persp_drag(magic_api * api, int which,
   int i, x1, y1, x2, y2;
   float slope;
 
-  old_x = (old_x / 10) * 10;
-  old_y = (old_y / 10) * 10;
-  x = (x / 10) * 10;
-  y = (y / 10) * 10;
+  old_x = (old_x / SNAP) * SNAP;
+  old_y = (old_y / SNAP) * SNAP;
+  x = (x / SNAP) * SNAP;
+  y = (y / SNAP) * SNAP;
 
 #ifdef DEBUG
   printf("\nn_pt_persp_drag\n");
@@ -1343,8 +1343,8 @@ void n_pt_persp_release(magic_api * api, int which,
   fflush(stdout);
 #endif
 
-  x = (x / 10) * 10;
-  y = (y / 10) * 10;
+  x = (x / SNAP) * SNAP;
+  y = (y / SNAP) * SNAP;
 
   which = which_to_tool[which];
 
