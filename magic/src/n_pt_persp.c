@@ -171,15 +171,15 @@ const char *icon_filenames[NUM_TOOLS] = {
   "isometric_draw.png",
 
   /* Dimetric */
-  "Snow_flake4.png", // FIXME
+  "dimetric_select.png",
   "dimetric_draw.png",
 
   /* Trimetric */
-  "Snow_flake4.png", // FIXME
+  "trimetric_select.png",
   "trimetric_draw.png",
 
   /* Oblique */
-  "Snow_flake4.png", // FIXME
+  "oblique_select.png",
   "oblique_draw.png",
   "",
   "oblique_draw_alt.png",

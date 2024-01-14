@@ -25,7 +25,7 @@ https://tuxpaint.org/
 
   * New Magic Tools:
     ----------------
-    * WIP Tools to draw with various kinds of graphical projections
+    * Tools to draw with various kinds of graphical projections
       (all placed within a new tool group):
       + Point-projection persepctive:
         - 1-point Perspective ("1-Point Select" & "1-Point Draw")
@@ -38,7 +38,7 @@ https://tuxpaint.org/
         - 3-point Perspective ("3-Point Select" & "3-Point Draw")
           Choose three vanishing points, and then draw lines that always
           point towards them, or along the horizon defined by the first two.
-      + WIP Orthographic (orthogonal) projection:
+      + Orthographic (orthogonal) projection:
         - Isometric ("Isometric Lines")
           Lines only go at evenly-spaced (120 degrees) angles (vertically
           and diagonally).
@@ -52,14 +52,13 @@ https://tuxpaint.org/
           Choose an angle for a single diagonal direction; lines may
           only go diagonally at that one angle, vertically, or
           horizontally.
-        [WIP Need icons & docs]
       + None of these tools are available when in "novice" complexity mode
         (see above).
       + "Select" tools (to edit vanishing points or angles) are not offered
         when in "beginner" complexity mode.  However, in "beginner" mode:
         - Two "3-Point Draw" tools are provided, offering both 'upwards'
           and 'downwards' perspectives.
-        - WIP Two "Oblqiue Draw" tools are provided, offering recedings axes
+        - Two "Oblqiue Draw" tools are provided, offering recedings axes
           to both the right and the left.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
       + Sounds:
