@@ -65,7 +65,7 @@ Déformations de l'image
   * Zoom
   * Zoom avec carreau
 
-Peindre
+Projections
 
   * Choix 1 point
   * Choix 2 points

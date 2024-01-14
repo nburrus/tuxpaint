@@ -1,6 +1,6 @@
                   Outil 'Magie' de Tux Paint : Dessin 1 point
 
-                                Groupe: Peindre
+                              Groupe: Projections
 
               Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 

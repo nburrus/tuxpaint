@@ -65,7 +65,7 @@ Picture Warps
   * Waves
   * Zoom
 
-Painting
+Projections
 
   * 1-Point Draw
   * 1-Point Select

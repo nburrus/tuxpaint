@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.32
+                                versión 0.9.32
 
                      A simple drawing program for children
 

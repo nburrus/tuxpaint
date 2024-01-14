@@ -1,6 +1,6 @@
                     Tux Paint "Magic" Tool: Dimetric Select
 
-                                Group: Painting
+                              Group: Projections
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 

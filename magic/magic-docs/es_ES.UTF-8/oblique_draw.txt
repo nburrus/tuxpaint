@@ -1,6 +1,6 @@
                      Tux Paint "Magic" Tool: Oblique Draw
 
-                                Group: Painting
+                              Group: Projections
 
                Author: Bill Kendrick <bill@newbreedsoftware.com>
 
