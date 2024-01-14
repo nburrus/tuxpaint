@@ -13,7 +13,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - January 13, 2024
+   December 12, 2023 - January 14, 2024
 */
 
 
@@ -289,6 +289,9 @@ float oblqb_ang;
 #define MIN_AXONOMETRIC_ANGLE (15.0 * M_PI / 180.0)
 #define MAX_AXONOMETRIC_ANGLE (75.0 * M_PI / 180.0)
 
+#define MIN_OBLIQUE_ANGLE (30.0 * M_PI / 180.0)
+#define MAX_OBLIQUE_ANGLE (60.0 * M_PI / 180.0)
+
 int line_start_x, line_start_y;
 float a2_valid_angle[8];
 float a3_valid_angle[8];
@@ -328,6 +331,8 @@ void n_pt_persp_set_size(magic_api * api, int which, int mode,
                          Uint8 size, SDL_Rect * update_rect);
 void n_pt_persp_line_xor_callback(void *pointer, int tool, SDL_Surface * canvas,
                                   SDL_Surface * snapshot, int x, int y);
+void n_pt_persp_line_xor_thick_callback(void *pointer, int tool, SDL_Surface * canvas,
+                                        SDL_Surface * snapshot, int x, int y);
 void n_pt_persp_line_callback(void *pointer, int tool, SDL_Surface * canvas,
                               SDL_Surface * snapshot, int x, int y);
 void n_pt_persp_switchin(magic_api * api, int which, int mode,
@@ -583,6 +588,9 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   fflush(stdout);
 #endif
 
+  x = (x / 10) * 10;
+  y = (y / 10) * 10;
+
   tool = which_to_tool[which];
 
   pick = 0;
@@ -752,6 +760,11 @@ void n_pt_persp_drag(magic_api * api, int which,
 {
   int i, x1, y1, x2, y2;
   float slope;
+
+  old_x = (old_x / 10) * 10;
+  old_y = (old_y / 10) * 10;
+  x = (x / 10) * 10;
+  y = (y / 10) * 10;
 
 #ifdef DEBUG
   printf("\nn_pt_persp_drag\n");
@@ -1043,12 +1056,12 @@ void n_pt_persp_drag(magic_api * api, int which,
     }
     oblq_ang = atan2f(canvas->h / 2 - y, x - canvas->w / 2);
 
-    if (oblq_ang < MIN_AXONOMETRIC_ANGLE) {
-      oblq_ang = MIN_AXONOMETRIC_ANGLE;
-    } else if (oblq_ang > MAX_AXONOMETRIC_ANGLE && oblq_ang < M_PI - MAX_AXONOMETRIC_ANGLE) {
-      oblq_ang = MAX_AXONOMETRIC_ANGLE;
-    } else if (oblq_ang > M_PI - MIN_AXONOMETRIC_ANGLE) {
-      oblq_ang = M_PI - MIN_AXONOMETRIC_ANGLE;
+    if (oblq_ang < MIN_OBLIQUE_ANGLE) {
+      oblq_ang = MIN_OBLIQUE_ANGLE;
+    } else if (oblq_ang > MAX_OBLIQUE_ANGLE && oblq_ang < M_PI - MAX_OBLIQUE_ANGLE) {
+      oblq_ang = MAX_OBLIQUE_ANGLE;
+    } else if (oblq_ang > M_PI - MIN_OBLIQUE_ANGLE) {
+      oblq_ang = M_PI - MIN_OBLIQUE_ANGLE;
     }
 
 #ifdef DEBUG
@@ -1330,6 +1343,9 @@ void n_pt_persp_release(magic_api * api, int which,
   fflush(stdout);
 #endif
 
+  x = (x / 10) * 10;
+  y = (y / 10) * 10;
+
   which = which_to_tool[which];
 
   if (which == TOOL_1PT_SELECT) {
@@ -1389,6 +1405,22 @@ void n_pt_persp_line_xor_callback(void *pointer, int tool ATTRIBUTE_UNUSED, SDL_
 
   api->xorpixel(canvas, x, y);
   api->xorpixel(canvas, x + 1, y + 1);
+}
+
+void n_pt_persp_line_xor_thick_callback(void *pointer, int tool ATTRIBUTE_UNUSED, SDL_Surface * canvas,
+                                        SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
+{
+  int i, j;
+
+  magic_api *api = (magic_api *) pointer;
+
+  for (i = -3; i <= 3; i++) {
+    for (j = -3; j <= 3; j++) {
+      if (abs(i) == abs(j)) {
+        api->xorpixel(canvas, x + i, y + j);
+      }
+    }
+  }
 }
 
 void n_pt_persp_line_callback(void *pointer ATTRIBUTE_UNUSED, int tool ATTRIBUTE_UNUSED,
@@ -1632,11 +1664,11 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
     api->line((void *) api, tool, canvas, NULL,
               canvas->w / 2 - x1, canvas->h / 2 - y1,
               canvas->w / 2 + x1, canvas->h / 2 + y1, 12,
-              n_pt_persp_line_xor_callback);
+              n_pt_persp_line_xor_thick_callback);
     api->line((void *) api, tool, canvas, NULL,
               canvas->w / 2 - x1, canvas->h / 2 + y1,
               canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
-              n_pt_persp_line_xor_callback);
+              n_pt_persp_line_xor_thick_callback);
   } else if (tool == TOOL_TRI_SELECT) {
     /* Trimetric */
 
@@ -1649,20 +1681,30 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
     /* angle 1 */
     x1 = cos(tri_ang[0]) * canvas->w;
     y1 = sin(tri_ang[0]) * canvas->w;
-    for (i = 0; i < ((tri_ang_chosen == 0) * 3) + 1; i++) {
+    if (tri_ang_chosen == 0) {
       api->line((void *) api, tool, canvas, NULL,
-                canvas->w / 2 - x1 + i, canvas->h / 2 + y1,
-                canvas->w / 2 + x1 + i, canvas->h / 2 - y1, 12,
+                canvas->w / 2 - x1, canvas->h / 2 + y1,
+                canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
+                n_pt_persp_line_xor_thick_callback);
+    } else {
+      api->line((void *) api, tool, canvas, NULL,
+                canvas->w / 2 - x1, canvas->h / 2 + y1,
+                canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
                 n_pt_persp_line_xor_callback);
     }
 
     /* angle 2 */
     x1 = cos(tri_ang[1]) * canvas->w;
     y1 = sin(tri_ang[1]) * canvas->w;
-    for (i = 0; i < ((tri_ang_chosen == 1) * 3) + 1; i++) {
+    if (tri_ang_chosen == 1) {
       api->line((void *) api, tool, canvas, NULL,
-                canvas->w / 2 - x1 + i, canvas->h / 2 + y1,
-                canvas->w / 2 + x1 + i, canvas->h / 2 - y1, 12,
+                canvas->w / 2 - x1, canvas->h / 2 + y1,
+                canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
+                n_pt_persp_line_xor_thick_callback);
+    } else {
+      api->line((void *) api, tool, canvas, NULL,
+                canvas->w / 2 - x1, canvas->h / 2 + y1,
+                canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
                 n_pt_persp_line_xor_callback);
     }
   } else if (tool == TOOL_OBLQ_SELECT || tool == TOOL_OBLQ_SELECT_ALT) {
@@ -1689,7 +1731,7 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
     api->line((void *) api, tool, canvas, NULL,
               canvas->w / 2 - x1, canvas->h / 2 + y1,
               canvas->w / 2 + x1, canvas->h / 2 - y1, 12,
-              n_pt_persp_line_xor_callback);
+              n_pt_persp_line_xor_thick_callback);
   }
 }
 
