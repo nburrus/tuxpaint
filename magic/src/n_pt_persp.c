@@ -344,7 +344,10 @@ void n_pt_persp_switchout(magic_api * api, int which, int mode,
                        SDL_Surface * canvas);
 void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas);
 void n_pt_persp_draw_one_point(magic_api * api, SDL_Surface * canvas, int x, int y, int i);
+
+#ifdef SNAP_TO
 void snap_to(int which, int * x, int * y);
+#endif
 
 
 Uint32 n_pt_persp_api_version(void)
@@ -592,7 +595,9 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   fflush(stdout);
 #endif
 
+#ifdef SNAP_TO
   snap_to(which, &x, &y);
+#endif
 
   tool = which_to_tool[which];
 
@@ -768,8 +773,10 @@ void n_pt_persp_drag(magic_api * api, int which,
   tick = SDL_GetPerformanceCounter();
 #endif
 
+#ifdef SNAP_TO
   snap_to(which, &old_x, &old_y);
   snap_to(which, &x, &y);
+#endif
 
 #ifdef DEBUG
   printf("\nn_pt_persp_drag\n");
@@ -1352,7 +1359,9 @@ void n_pt_persp_release(magic_api * api, int which,
   fflush(stdout);
 #endif
 
+#ifdef SNAP_TO
   snap_to(which, &x, &y);
+#endif
 
   which = which_to_tool[which];
 
@@ -1763,6 +1772,8 @@ void n_pt_persp_draw_one_point(magic_api * api, SDL_Surface * canvas, int x, int
 }
 
 
+#ifdef SNAP_TO
+
 /* Snap to grids based on the tool */
 void snap_to(int which, int * x, int * y) {
   if (which == TOOL_ISO_DRAW) {
@@ -1775,4 +1786,6 @@ void snap_to(int which, int * x, int * y) {
     /* FIXME */
   }
 }
+
+#endif
 
