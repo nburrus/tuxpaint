@@ -52,7 +52,7 @@ https://tuxpaint.org/
           Choose an angle for a single diagonal direction; lines may
           only go diagonally at that one angle, vertically, or
           horizontally.
-        [WIP Need icons & sounds & docs]
+        [WIP Need icons & docs]
       + None of these tools are available when in "novice" complexity mode
         (see above).
       + "Select" tools (to edit vanishing points or angles) are not offered

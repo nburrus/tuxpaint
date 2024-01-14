@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 7, 2024
+June 17, 2002 - January 13, 2024
 
 * Design and Coding:
 
@@ -147,7 +147,8 @@ June 17, 2002 - January 7, 2024
   (https://freesound.org/people/kentnelson64/sounds/647221/)
   Creative Commons 0 license by "kentnelson64"
 
-  1-point, 2-point, and 3-point Perspective tools
+  1-point, 2-point, and 3-point Perspective tools, and
+  Isometric, Dimetric, Trimetric, and Oblique tools
   by Bill Kendrick <bill@newbreedsoftware.com>
   Sounds:
    + Select: "Gummibandloop_121.wav"
