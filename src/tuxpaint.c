@@ -13834,14 +13834,16 @@ static void get_starter_template_options(char *dirname, char *img_id, starter_te
             }
             else
             {
+              short unsigned int r, g, b;
+
               DEBUG_PRINTF("Integers ('%s')\n", arg);
 
               /* Assume int form */
 
-              sscanf(arg, "%hu %hu %hu %n",
-                     (short unsigned int *)&(opts->bkgd_color[0]),
-                     (short unsigned int *)&(opts->bkgd_color[1]),
-                     (short unsigned int *)&(opts->bkgd_color[2]), &count);
+              sscanf(arg, "%hu %hu %hu %n", &r, &g, &b, &count);
+              opts->bkgd_color[0] = r;
+              opts->bkgd_color[1] = g;
+              opts->bkgd_color[2] = b;
             }
 
             DEBUG_PRINTF("Background color: %d,%d,%d\n", opts->bkgd_color[0], opts->bkgd_color[1], opts->bkgd_color[2]);
@@ -30632,7 +30634,7 @@ static int trash(char *path)
 #elif defined(__APPLE__)
   return apple_trash(path);
 #else
-  char fname[MAX_PATH], trashpath[MAX_PATH], dest[MAX_PATH], infoname[MAX_PATH], bname[MAX_PATH], ext[MAX_PATH];
+  char fname[MAX_PATH], trashpath[MAX_PATH], dest[MAX_PATH], infoname[MAX_PATH], bname[MAX_PATH + 1], ext[MAX_PATH];
   char deldate[32];
   struct tm tim;
   time_t now;
