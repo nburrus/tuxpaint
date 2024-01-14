@@ -168,21 +168,21 @@ const char *icon_filenames[NUM_TOOLS] = {
 
   /* Isometric */
   "",
-  "Snow_flake4.png", // FIXME
+  "isometric_draw.png",
 
   /* Dimetric */
   "Snow_flake4.png", // FIXME
-  "Snow_flake4.png", // FIXME
+  "dimetric_draw.png",
 
   /* Trimetric */
   "Snow_flake4.png", // FIXME
-  "Snow_flake4.png", // FIXME
+  "trimetric_draw.png",
 
   /* Oblique */
   "Snow_flake4.png", // FIXME
-  "Snow_flake4.png", // FIXME
+  "oblique_draw.png",
   "",
-  "Snow_flake4.png", // FIXME
+  "oblique_draw_alt.png",
 };
 
 
@@ -217,7 +217,7 @@ const char *tool_names[NUM_TOOLS] = {
   gettext_noop("Oblique Select"),
   gettext_noop("Oblique Draw"),
   "",
-  gettext_noop("Oblique Draw Right"),
+  gettext_noop("Oblique Draw Left"),
 };
 
 
@@ -433,8 +433,8 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   tri_ang[1] = 165 * M_PI / 180.0;
   tri_ang_chosen = 0;
 
-  oblq_ang = -45 * M_PI / 180.0;
-  oblqb_ang = 45 * M_PI / 180.0;
+  oblq_ang = 45 * M_PI / 180.0;
+  oblqb_ang = -45 * M_PI / 180.0;
 
 
   /* Generate our own snapshot surface */

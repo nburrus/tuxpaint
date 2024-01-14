@@ -59,7 +59,7 @@ https://tuxpaint.org/
         when in "beginner" complexity mode.  However, in "beginner" mode:
         - Two "3-Point Draw" tools are provided, offering both 'upwards'
           and 'downwards' perspectives.
-        - WIP Two "Oblqiue" tools are provided, offering recedings axes
+        - WIP Two "Oblqiue Draw" tools are provided, offering recedings axes
           to both the right and the left.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
       + Sounds:
