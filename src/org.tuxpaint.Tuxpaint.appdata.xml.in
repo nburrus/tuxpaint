@@ -43,9 +43,11 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.32" date="2024-01-07">
+    <release version="0.9.32" date="2024-01-13">
       <description>
-        <p>New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and corresponding vanishing point editors); Epitrochoid and Hypotrochoid generators.</p>
+        <p>New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and corresponding vanishing point editors).</p>
+        <p>New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing tools (and corresponding angle editors).</p>
+        <p>New Magic tools: Epitrochoid and Hypotrochoid generators.</p>
         <p>New configuration option, "complexity", which affects the behavior (or availability) of some Magic tools.</p>
         <p>Font name and size shown when selecting fonts in Text and Label tools.</p>
         <p>Bug-fixes and localization updates.</p>
