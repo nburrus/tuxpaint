@@ -13,7 +13,8 @@ This tool is only available with "complexity" (expertise level) set to
 'Advanced'.
 
 See also: 1-Point Draw, 2-Point Draw, 2-Point Select, 3-Point Draw, 3-Point
-Select, & Perspective.
+Select, Isometric Line, Dimetric Select, Dimetric Draw, Trimetric Select,
+Trimetric Draw, Oblique Select, Oblique Draw, & Perspective.
 
 -------------------------------------------------------------------------------
 

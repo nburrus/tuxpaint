@@ -67,20 +67,30 @@ Déformations de l'image
 
 Peindre
 
+  * Choix 1 point
+  * Choix 2 points
+  * Choix 3-Point
+  * Dessin 1 point
+  * Dessin 2 points
+  * Dessin à 3-Point
+  * Dimetric Draw
+  * Dimetric Select
+  * Isometric Line
+  * Oblique Draw
+  * Oblique Select
+  * Trimetric Draw
+  * Trimetric Select
+
+Peindre
+
   * Arc-en-ciel
   * Arc-en-ciel
   * Arc-en-ciel doux
   * Boucles
   * Briques
   * Calligraphie
-  * Choix 1 point
-  * Choix 2 points
-  * Choix 3-Point
   * Confettis
   * Dentifrice
-  * Dessin 1 point
-  * Dessin 2 points
-  * Dessin à 3-Point
   * Doux
   * Effet mouillé
   * Fourrure

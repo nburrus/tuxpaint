@@ -73,6 +73,16 @@ Painting
   * 2-Point Select
   * 3-Point Draw
   * 3-Point Select
+  * Dimetric Draw
+  * Dimetric Select
+  * Isometric Line
+  * Oblique Draw
+  * Oblique Select
+  * Trimetric Draw
+  * Trimetric Select
+
+Painting
+
   * Bricks
   * Calligraphy
   * Confetti

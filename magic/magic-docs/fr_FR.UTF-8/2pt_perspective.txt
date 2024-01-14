@@ -16,10 +16,11 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Cet outil réagit avec les réglages de "complexité" (niveau d'expertise).
+This tool is not available with "complexity" (expertise level) set to 'Novice'.
 
 Voir aussi : Dessin 1 point, Choix 1 point, Choix 2 points, Dessin à 3-Point,
-Choix 3-Point, & Perspective.
+Choix 3-Point, Isometric Line, Dimetric Select, Dimetric Draw, Trimetric Select
+, Trimetric Draw, Oblique Select, Oblique Draw, & Perspective.
 
 -------------------------------------------------------------------------------
 
