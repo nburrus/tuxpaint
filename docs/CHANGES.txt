@@ -39,19 +39,20 @@ https://tuxpaint.org/
           Choose three vanishing points, and then draw lines that always
           point towards them, or along the horizon defined by the first two.
       + WIP Orthographic (orthogonal) projection:
-        - WIP Isometric ("Isometric Lines")
+        - Isometric ("Isometric Lines")
           Lines only go at evenly-spaced (120 degrees) angles (vertically
           and diagonally).
-        - WIP Dimetric ("Dimetric Select" & "Dimetric Draw")
+        - Dimetric ("Dimetric Select" & "Dimetric Draw")
           Choose a single angle for both diagonals directions; lines may
           only go diagonally at those angles, or vertically.
-        - WIP Dimetric ("Trimetric Select" & "Trimetric Draw")
+        - Dimetric ("Trimetric Select" & "Trimetric Draw")
           Choose an angle for two diagonals directions; lines may
           only go diagonally at those angles, or vertically.
-        - WIP Oblique ("Oblique Select" & "Oblique Draw")
+        - Oblique ("Oblique Select" & "Oblique Draw")
           Choose an angle for a single diagonal direction; lines may
           only go diagonally at that one angle, vertically, or
           horizontally.
+        [WIP Need icons & sounds & docs]
       + None of these tools are available when in "novice" complexity mode
         (see above).
       + "Select" tools (to edit vanishing points or angles) are not offered

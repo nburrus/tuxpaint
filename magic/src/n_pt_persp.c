@@ -217,7 +217,7 @@ const char *tool_names[NUM_TOOLS] = {
   gettext_noop("Oblique Select"),
   gettext_noop("Oblique Draw"),
   "",
-  gettext_noop("Oblique Draw Left"),
+  gettext_noop("Oblique Draw Right"),
 };
 
 
@@ -428,9 +428,11 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
 
   /* Set default angles: */
   dim_ang = 45.0 * M_PI / 180.0;
-  tri_ang[0] = 15 * M_PI / 180.0;
-  tri_ang[1] = 75 * M_PI / 180.0;
+
+  tri_ang[0] = 30 * M_PI / 180.0;
+  tri_ang[1] = 165 * M_PI / 180.0;
   tri_ang_chosen = 0;
+
   oblq_ang = -45 * M_PI / 180.0;
   oblqb_ang = 45 * M_PI / 180.0;
 
@@ -631,18 +633,18 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
       if (x < canvas->w / 2) {
         if (y < canvas->h / 2) {
           /* top left */
-          tri_ang_chosen = 0;
+          tri_ang_chosen = 1;
         } else {
           /* bottom left */
-          tri_ang_chosen = 1;
+          tri_ang_chosen = 0;
         }
       } else {
         if (y < canvas->h / 2) {
           /* top right */
-          tri_ang_chosen = 1;
+          tri_ang_chosen = 0;
         } else {
           /* bottom right */
-          tri_ang_chosen = 0;
+          tri_ang_chosen = 1;
         }
       }
     }
@@ -997,29 +999,31 @@ void n_pt_persp_drag(magic_api * api, int which,
     n_pt_persp_vanish_pt_moved(api, which, canvas, update_rect);
   } else if (which == TOOL_TRI_SELECT) {
     /* Trimetric - select */
-    float ang;
-
-    if (tri_ang_chosen == 0) {
-      y = canvas->h - y;
-    }
-    if (x < canvas->w / 2) {
-      x = canvas->w - x;
-      y = canvas->h - y;
-    }
+    float ang, offset;
 
     ang = atan2f(canvas->h / 2 - y, x - canvas->w / 2);
 
+#ifdef DEBUG
+    printf("cursor ang = %.2f -> ", ang * 180.0 / M_PI);
+#endif
     if (ang > M_PI) {
       ang -= M_PI;
-    } else if (ang < -M_PI) {
+    } else if (ang < 0) {
       ang += M_PI;
     }
+#ifdef DEBUG
+    printf("%.2f -> clipping for %d -> ", ang * 180.0 / M_PI, tri_ang_chosen);
+#endif
 
-    if (ang < MIN_AXONOMETRIC_ANGLE) {
-      ang = MIN_AXONOMETRIC_ANGLE;
-    } else if (ang > MAX_AXONOMETRIC_ANGLE) {
-      ang = MAX_AXONOMETRIC_ANGLE;
+    offset = ((M_PI / 2) * tri_ang_chosen);
+    if (ang < MIN_AXONOMETRIC_ANGLE + offset) {
+      ang = MIN_AXONOMETRIC_ANGLE + offset;
+    } else if (ang > MAX_AXONOMETRIC_ANGLE + offset) {
+      ang = MAX_AXONOMETRIC_ANGLE + offset;
     }
+#ifdef DEBUG
+    printf("%.2f -> \n", ang * 180.0 / M_PI);
+#endif
 
     tri_ang[tri_ang_chosen] = ang;
 
@@ -1198,39 +1202,58 @@ void n_pt_persp_work(magic_api * api, int tool,
         valid_angles[2] = M_PI - dim_ang;
       } else if (tool == TOOL_TRI_DRAW) {
         /* trimetric diagonals */
-        valid_angles[1] = tri_ang[0];
-        valid_angles[2] = tri_ang[1];
+        valid_angles[1] = M_PI - tri_ang[0];
+        valid_angles[2] = M_PI - tri_ang[1];
       } else if (tool == TOOL_OBLQ_DRAW) {
         /* horizontal */
         valid_angles[1] = 0.0;
         /* oblique diagonal */
-        valid_angles[2] = oblq_ang;
+        valid_angles[2] = M_PI - oblq_ang;
       } else if (tool == TOOL_OBLQ_DRAW_ALT) {
         /* horizontal */
         valid_angles[1] = 0.0;
         /* oblique diagonal */
-        valid_angles[2] = oblqb_ang;
+        valid_angles[2] = M_PI - oblqb_ang;
       }
 
       /* And the opposite directions */
       for (i = 0; i < 3; i++) {
         valid_angles[i + 3] = valid_angles[i] + M_PI;
-        if (valid_angles[i + 3] > M_PI * 2) {
-          valid_angles[i] -= (M_PI * 2);
-        }
       }
 
-      // FIXME needs more work
+#ifdef DEBUG
+      printf("\n");
+#endif
+      for (i = 0; i < 6; i++) {
+#ifdef DEBUG
+        printf("  %.2f -> ", valid_angles[i] * 180.0 / M_PI);
+#endif
+        if (valid_angles[i] > M_PI) {
+          valid_angles[i] -= (M_PI * 2);
+        }
+#ifdef DEBUG
+        printf("%.2f\n", valid_angles[i] * 180.0 / M_PI);
+#endif
+      }
 
-      cursor_angle = atan2f(y - line_start_y, x - line_start_x);
+      cursor_angle = atan2f(line_start_y- y, line_start_x - x);
+#ifdef DEBUG
       printf("cursor ang = %.2f\n", cursor_angle * 180.0 / M_PI);
+#endif
 
       best_angle_idx = -1;
       best_diff = M_PI * 2;
 
       for (i = 0; i < 6; i++) {
+#ifdef DEBUG
+        printf("  #%d %.2f vs %.2f\n", i, cursor_angle * 180.0 / M_PI, valid_angles[i] * 180.0 / M_PI);
+#endif
         diff = fabs(cursor_angle - valid_angles[i]);
-
+        if (diff < best_diff) {
+          best_angle_idx = i;
+          best_diff = diff;
+        }
+        diff = fabs((cursor_angle - (M_PI * 2)) - valid_angles[i]);
         if (diff < best_diff) {
           best_angle_idx = i;
           best_diff = diff;
@@ -1243,8 +1266,9 @@ void n_pt_persp_work(magic_api * api, int tool,
       }
 
       ang = valid_angles[best_angle_idx];
-
+#ifdef DEBUG
       printf("best ang = [%d] %.2f\n", best_angle_idx, ang * 180.0 / M_PI);
+#endif
 
       x1 = line_start_x;
       y1 = line_start_y;
@@ -1625,18 +1649,22 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
     /* angle 1 */
     x1 = cos(tri_ang[0]) * canvas->w;
     y1 = sin(tri_ang[0]) * canvas->w;
-    api->line((void *) api, tool, canvas, NULL,
-              canvas->w / 2 - x1, canvas->h / 2 - y1,
-              canvas->w / 2 + x1, canvas->h / 2 + y1, 12,
-              n_pt_persp_line_xor_callback);
+    for (i = 0; i < ((tri_ang_chosen == 0) * 3) + 1; i++) {
+      api->line((void *) api, tool, canvas, NULL,
+                canvas->w / 2 - x1 + i, canvas->h / 2 + y1,
+                canvas->w / 2 + x1 + i, canvas->h / 2 - y1, 12,
+                n_pt_persp_line_xor_callback);
+    }
 
     /* angle 2 */
     x1 = cos(tri_ang[1]) * canvas->w;
-    y1 = -sin(tri_ang[1]) * canvas->w;
-    api->line((void *) api, tool, canvas, NULL,
-              canvas->w / 2 - x1, canvas->h / 2 - y1,
-              canvas->w / 2 + x1, canvas->h / 2 + y1, 12,
-              n_pt_persp_line_xor_callback);
+    y1 = sin(tri_ang[1]) * canvas->w;
+    for (i = 0; i < ((tri_ang_chosen == 1) * 3) + 1; i++) {
+      api->line((void *) api, tool, canvas, NULL,
+                canvas->w / 2 - x1 + i, canvas->h / 2 + y1,
+                canvas->w / 2 + x1 + i, canvas->h / 2 - y1, 12,
+                n_pt_persp_line_xor_callback);
+    }
   } else if (tool == TOOL_OBLQ_SELECT || tool == TOOL_OBLQ_SELECT_ALT) {
     /* Oblique */
 
