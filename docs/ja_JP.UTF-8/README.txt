@@ -109,6 +109,24 @@ D. Tux Paint バージョン 0.9.32 での変更点
     A pair of tools that allow you to set three vanishing points, and then draw
     lines in 3-point perspective.
 
+Isometric Magic tool
+    A tool that draws lines in an isometric projection.
+
+Dimetric Magic tool
+    A pair of tools that allow you to set an angle, and then draw lines in a
+    dimetric projection.
+
+Trimetric Magic tool
+    A pair of tools that allow you to set two angles, and then draw lines in a
+    trimetric projection.
+
+Oblique Magic tool
+    A pair of tools that allow you to set an angles, and then draw lines in an
+    oblique projection.
+
+Epitrochoid and Hypotrochoid Magic tools
+    Tools that create centered trochoid curved patterns.
+
 New "complexity" setting (complexity)
 
 A new setting that allows certain Magic tools to behave differently (or remove

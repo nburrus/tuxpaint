@@ -116,6 +116,24 @@ Outil de Magie Perspective 3-point (point de fuite)
     Un ensemble d'outils qui vous permet d'avoir trois points de fuite, et
     pouvoir ainsi tracer des lignes avec une perspective à 3 points.
 
+Isometric Magic tool
+    A tool that draws lines in an isometric projection.
+
+Dimetric Magic tool
+    A pair of tools that allow you to set an angle, and then draw lines in a
+    dimetric projection.
+
+Trimetric Magic tool
+    A pair of tools that allow you to set two angles, and then draw lines in a
+    trimetric projection.
+
+Oblique Magic tool
+    A pair of tools that allow you to set an angles, and then draw lines in an
+    oblique projection.
+
+Epitrochoid and Hypotrochoid Magic tools
+    Tools that create centered trochoid curved patterns.
+
 Réglage du nouveau "complexité" (complexity)
 
 Un nouveau réglage qui permet à certains outils Magie de se comporter
