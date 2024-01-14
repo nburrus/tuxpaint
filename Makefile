@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2023
+# Copyright (c) 2002-2024
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - December 29, 2023
+# June 14, 2002 - January 14, 2024
 
 
 # The version number, for release:
@@ -349,8 +349,10 @@ endif
 
 # The entire set of CFLAGS:
 
-#-ffast-math
-OPTFLAGS:=-O0 -g
+FASTMATH:=-ffast-math
+
+OPTFLAGS:=-O2 -g $(FASTMATH)
+
 CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
 	$(if $(filter windows,$(OS)),,$(call comptest,-fvisibility=hidden,)) \
 	-Wcast-align -Wredundant-decls \
@@ -1451,8 +1453,7 @@ beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
 linux_PLUGIN_LIBS:=
 PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
 
-#MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
-MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
+MAGIC_CFLAGS:=-g3 -O2 $(FASTMATH) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
 SHARED_FLAGS:=-shared -fpic -lm
 
 MAGIC_C:=$(wildcard magic/src/*.c)

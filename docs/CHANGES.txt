@@ -101,6 +101,9 @@ https://tuxpaint.org/
 
   * Other Improvements:
     -------------------
+    * Makefile builds everything with "-O2" now, and adds "-ffast-math"
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Simplify macOS building by signing macOS app bundle anonymously by
       default.
       Mark Kim <markuskimius@gmail.com>
