@@ -28,7 +28,7 @@
 #include "SDL_mixer.h"
 
 // #define DEBUG
-#define PERF
+// #define PERF
 
 #define SNAP 10
 
@@ -670,7 +670,7 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
 
     if (tool == TOOL_2PT_DRAW) {
       /* Horizon between vanishing points, and perpendicular (rise above/below) */
-      a2_valid_angle[0] = atan2(a2_pt_y[1] - a2_pt_y[0], a2_pt_x[1] - a2_pt_x[0]);
+      a2_valid_angle[0] = atan2f(a2_pt_y[1] - a2_pt_y[0], a2_pt_x[1] - a2_pt_x[0]);
       a2_valid_angle[1] = a2_valid_angle[0] + M_PI;
       a2_valid_angle[2] = a2_valid_angle[0] + (M_PI / 2.0);
       a2_valid_angle[3] = a2_valid_angle[0] + (M_PI / 2.0) + M_PI;
@@ -682,9 +682,9 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
       if (x == a2_pt_x[1]) {
         x++;
       }
-      a2_valid_angle[4] = atan2(a2_pt_y[0] - y, a2_pt_x[0] - x);
+      a2_valid_angle[4] = atan2f(a2_pt_y[0] - y, a2_pt_x[0] - x);
       a2_valid_angle[5] = a2_valid_angle[4] + M_PI;
-      a2_valid_angle[6] = atan2(a2_pt_y[1] - y, a2_pt_x[1] - x);
+      a2_valid_angle[6] = atan2f(a2_pt_y[1] - y, a2_pt_x[1] - x);
       a2_valid_angle[7] = a2_valid_angle[6] + M_PI;
 
       for (i = 0; i < 8; i++) {
@@ -694,15 +694,15 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
       }
     } else if (tool == TOOL_3PT_DRAW) {
       /* Horizon between vanishing points, and perpendicular (rise above/below) */
-      a3_valid_angle[0] = atan2(a3_pt_y[1] - a3_pt_y[0], a3_pt_x[1] - a3_pt_x[0]);
+      a3_valid_angle[0] = atan2f(a3_pt_y[1] - a3_pt_y[0], a3_pt_x[1] - a3_pt_x[0]);
       a3_valid_angle[1] = a3_valid_angle[0] + M_PI;
 
       /* Angles that point toward the three vanishing points */
-      a3_valid_angle[2] = atan2(a3_pt_y[0] - y, a3_pt_x[0] - x);
+      a3_valid_angle[2] = atan2f(a3_pt_y[0] - y, a3_pt_x[0] - x);
       a3_valid_angle[3] = a3_valid_angle[2] + M_PI;
-      a3_valid_angle[4] = atan2(a3_pt_y[1] - y, a3_pt_x[1] - x);
+      a3_valid_angle[4] = atan2f(a3_pt_y[1] - y, a3_pt_x[1] - x);
       a3_valid_angle[5] = a3_valid_angle[4] + M_PI;
-      a3_valid_angle[6] = atan2(a3_pt_y[2] - y, a3_pt_x[2] - x);
+      a3_valid_angle[6] = atan2f(a3_pt_y[2] - y, a3_pt_x[2] - x);
       a3_valid_angle[7] = a3_valid_angle[6] + M_PI;
 
       for (i = 0; i < 8; i++) {
@@ -712,15 +712,15 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
       }
     } else if (tool == TOOL_3PT_DRAW_ALT) {
       /* Horizon between vanishing points, and perpendicular (rise above/below) */
-      a3_valid_angle[0] = atan2(a3b_pt_y[1] - a3b_pt_y[0], a3b_pt_x[1] - a3b_pt_x[0]);
+      a3_valid_angle[0] = atan2f(a3b_pt_y[1] - a3b_pt_y[0], a3b_pt_x[1] - a3b_pt_x[0]);
       a3_valid_angle[1] = a3_valid_angle[0] + M_PI;
 
       /* Angles that point toward the three vanishing points */
-      a3_valid_angle[2] = atan2(a3b_pt_y[0] - y, a3b_pt_x[0] - x);
+      a3_valid_angle[2] = atan2f(a3b_pt_y[0] - y, a3b_pt_x[0] - x);
       a3_valid_angle[3] = a3_valid_angle[2] + M_PI;
-      a3_valid_angle[4] = atan2(a3b_pt_y[1] - y, a3b_pt_x[1] - x);
+      a3_valid_angle[4] = atan2f(a3b_pt_y[1] - y, a3b_pt_x[1] - x);
       a3_valid_angle[5] = a3_valid_angle[4] + M_PI;
-      a3_valid_angle[6] = atan2(a3b_pt_y[2] - y, a3b_pt_x[2] - x);
+      a3_valid_angle[6] = atan2f(a3b_pt_y[2] - y, a3b_pt_x[2] - x);
       a3_valid_angle[7] = a3_valid_angle[6] + M_PI;
 
       for (i = 0; i < 8; i++) {
@@ -924,38 +924,38 @@ void n_pt_persp_drag(magic_api * api, int which,
 
       ang = 30.0 * M_PI / 180.0;
       api->line((void *) api, which, canvas, NULL,
-                x - cos(ang) * guide_len, y + sin(ang) * guide_len,
-                x + cos(ang) * guide_len, y - sin(ang) * guide_len,
+                x - cosf(ang) * guide_len, y + sinf(ang) * guide_len,
+                x + cosf(ang) * guide_len, y - sinf(ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
       ang = 150.0 * M_PI / 180.0;
       api->line((void *) api, which, canvas, NULL,
-                x - cos(ang) * guide_len, y + sin(ang) * guide_len,
-                x + cos(ang) * guide_len, y - sin(ang) * guide_len,
+                x - cosf(ang) * guide_len, y + sinf(ang) * guide_len,
+                x + cosf(ang) * guide_len, y - sinf(ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
     } else if (which == TOOL_DIM_DRAW) {
       /* Dimetric */
       api->line((void *) api, which, canvas, NULL,
-                x - cos(dim_ang) * guide_len, y + sin(dim_ang) * guide_len,
-                x + cos(dim_ang) * guide_len, y - sin(dim_ang) * guide_len,
+                x - cosf(dim_ang) * guide_len, y + sinf(dim_ang) * guide_len,
+                x + cosf(dim_ang) * guide_len, y - sinf(dim_ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
       api->line((void *) api, which, canvas, NULL,
-                x - cos(M_PI - dim_ang) * guide_len, y + sin(M_PI - dim_ang) * guide_len,
-                x + cos(M_PI - dim_ang) * guide_len, y - sin(M_PI - dim_ang) * guide_len,
+                x - cosf(M_PI - dim_ang) * guide_len, y + sinf(M_PI - dim_ang) * guide_len,
+                x + cosf(M_PI - dim_ang) * guide_len, y - sinf(M_PI - dim_ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
     } else if (which == TOOL_TRI_DRAW) {
       /* Trimetric */
       api->line((void *) api, which, canvas, NULL,
-                x - cos(tri_ang[0]) * guide_len, y + sin(tri_ang[0]) * guide_len,
-                x + cos(tri_ang[0]) * guide_len, y - sin(tri_ang[0]) * guide_len,
+                x - cosf(tri_ang[0]) * guide_len, y + sinf(tri_ang[0]) * guide_len,
+                x + cosf(tri_ang[0]) * guide_len, y - sinf(tri_ang[0]) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
       api->line((void *) api, which, canvas, NULL,
-                x - cos(tri_ang[1]) * guide_len, y + sin(tri_ang[1]) * guide_len,
-                x + cos(tri_ang[1]) * guide_len, y - sin(tri_ang[1]) * guide_len,
+                x - cosf(tri_ang[1]) * guide_len, y + sinf(tri_ang[1]) * guide_len,
+                x + cosf(tri_ang[1]) * guide_len, y - sinf(tri_ang[1]) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
     } else if (which == TOOL_OBLQ_DRAW || which == TOOL_OBLQ_DRAW_ALT) {
@@ -970,8 +970,8 @@ void n_pt_persp_drag(magic_api * api, int which,
         ang = oblqb_ang;
       }
       api->line((void *) api, which, canvas, NULL,
-                x - cos(ang) * guide_len, y + sin(ang) * guide_len,
-                x + cos(ang) * guide_len, y - sin(ang) * guide_len,
+                x - cosf(ang) * guide_len, y + sinf(ang) * guide_len,
+                x + cosf(ang) * guide_len, y - sinf(ang) * guide_len,
                 6,
                 n_pt_persp_line_xor_callback);
     }
@@ -1177,8 +1177,8 @@ void n_pt_persp_work(magic_api * api, int tool,
     /* Calculate a line segment, so we can determine the slope */
     x1 = line_start_x;
     y1 = line_start_y;
-    x2 = line_start_x + cos(valid_angle[best_angle_idx]) * 1000;
-    y2 = line_start_y + sin(valid_angle[best_angle_idx]) * 1000;
+    x2 = line_start_x + cosf(valid_angle[best_angle_idx]) * 1000;
+    y2 = line_start_y + sinf(valid_angle[best_angle_idx]) * 1000;
 
     if (abs(x2 - x1) >= 2) {
       slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
@@ -1294,8 +1294,8 @@ void n_pt_persp_work(magic_api * api, int tool,
 
       x1 = line_start_x;
       y1 = line_start_y;
-      x2 = line_start_x + cos(ang) * 1000;
-      y2 = line_start_y + sin(ang) * 1000;
+      x2 = line_start_x + cosf(ang) * 1000;
+      y2 = line_start_y + sinf(ang) * 1000;
 
       if (abs(x2 - x1) >= 2) {
         slope = ((float) y2 - (float) y1) / ((float) x2 - (float) x1);
@@ -1647,8 +1647,8 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
               n_pt_persp_line_xor_callback);
 
     /* the angle (always 30) */
-    x1 = cos(30.0 * M_PI / 180.0) * canvas->w;
-    y1 = sin(30.0 * M_PI / 180.0) * canvas->h;
+    x1 = cosf(30.0 * M_PI / 180.0) * canvas->w;
+    y1 = sinf(30.0 * M_PI / 180.0) * canvas->h;
     api->line((void *) api, tool, canvas, NULL,
               canvas->w / 2 - x1, canvas->h / 2 - y1,
               canvas->w / 2 + x1, canvas->h / 2 + y1, 12,
@@ -1667,8 +1667,8 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
               n_pt_persp_line_xor_callback);
 
     /* the angle */
-    x1 = cos(dim_ang) * canvas->w;
-    y1 = sin(dim_ang) * canvas->h;
+    x1 = cosf(dim_ang) * canvas->w;
+    y1 = sinf(dim_ang) * canvas->h;
     api->line((void *) api, tool, canvas, NULL,
               canvas->w / 2 - x1, canvas->h / 2 - y1,
               canvas->w / 2 + x1, canvas->h / 2 + y1, 12,
@@ -1687,8 +1687,8 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
               n_pt_persp_line_xor_callback);
 
     /* angle 1 */
-    x1 = cos(tri_ang[0]) * canvas->w;
-    y1 = sin(tri_ang[0]) * canvas->w;
+    x1 = cosf(tri_ang[0]) * canvas->w;
+    y1 = sinf(tri_ang[0]) * canvas->w;
     if (tri_ang_chosen == 0) {
       api->line((void *) api, tool, canvas, NULL,
                 canvas->w / 2 - x1, canvas->h / 2 + y1,
@@ -1702,8 +1702,8 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
     }
 
     /* angle 2 */
-    x1 = cos(tri_ang[1]) * canvas->w;
-    y1 = sin(tri_ang[1]) * canvas->w;
+    x1 = cosf(tri_ang[1]) * canvas->w;
+    y1 = sinf(tri_ang[1]) * canvas->w;
     if (tri_ang_chosen == 1) {
       api->line((void *) api, tool, canvas, NULL,
                 canvas->w / 2 - x1, canvas->h / 2 + y1,
@@ -1731,8 +1731,8 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
               n_pt_persp_line_xor_callback);
 
     /* diagonal (receding) */
-    x1 = cos(oblq_ang) * canvas->w;
-    y1 = sin(oblq_ang) * canvas->h;
+    x1 = cosf(oblq_ang) * canvas->w;
+    y1 = sinf(oblq_ang) * canvas->h;
     if (tool == TOOL_OBLQ_SELECT_ALT) {
       y1 = -y1;
     }
