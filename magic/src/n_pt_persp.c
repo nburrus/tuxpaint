@@ -395,7 +395,7 @@ int n_pt_persp_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
 
   for (i = 0; i < NUM_SNDS; i++)
   {
-    snprintf(filename, sizeof(filename), "%s/sounds/magic/%s", api->data_directory,
+    snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory,
              sound_filenames[i]);
     sound_effects[i] = Mix_LoadWAV(filename);
   }
@@ -478,7 +478,7 @@ SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which)
   fflush(stdout);
 #endif
 
-  snprintf(filename, sizeof(filename), "%s/images/magic/%s",
+  snprintf(filename, sizeof(filename), "%simages/magic/%s",
            api->data_directory, icon_filenames[which_to_tool[which]]);
 
   return (IMG_Load(filename));
