@@ -5,8 +5,9 @@
    Spirograph and Wondergraph.
 
    by Bill Kendrick <bill@newbreedsoftware.com>
+   with help from Pere Pujal Carabantes
 
-   January 6, 2024 - January 7, 2024
+   January 6, 2024 - January 15, 2024
 */
 
 #include <stdio.h>
@@ -17,8 +18,8 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-#define deg_cos(x) cos((float) (x) * M_PI / 180.0)
-#define deg_sin(x) sin((float) (x) * M_PI / 180.0)
+#define deg_cos(x) cosf((float) (x) * M_PI / 180.0)
+#define deg_sin(x) sinf((float) (x) * M_PI / 180.0)
 
 /* All _possible_ tools */
 enum
@@ -347,16 +348,16 @@ void trochoids_work(magic_api * api, int which,
 
   r = (r / 10) * 10;
 
-  /* Epitrochoid: rotator is outside the stator;
-     Hypotrochoid: rotator is inside the stator */
   if (which == TOOL_HYPOTROCHOID_SIZES ||
       which == TOOL_HYPOTROCHOID_NOSIZES_1 ||
       which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
       which == TOOL_HYPOTROCHOID_NOSIZES_3) {
-    r = -r - 2;
+    /* Hypotrochoid */
+    r_ratio = (float) (R - r) / (float) r;
+  } else {
+    /* Epitrochoid */
+    r_ratio = (float) (R + r) / (float) r;
   }
-
-  r_ratio = (float) (R + r) / (float) r;
 
   /* Size option (or use of alternate tools, if --nomagicsizes)
      determines the distance from the center of the rotator
@@ -378,16 +379,30 @@ void trochoids_work(magic_api * api, int which,
 
   SDL_BlitSurface(snapshot, update_rect, canvas, update_rect);
 
+
   /* Draw the lines */
   LCM = calc_lcm(r, R);
   for (a = 0; a < 360.0 * (float) (LCM / R); a++) {
     float a2 = (a + 1);
 
-    px = trochoids_x + (((R + r) * deg_cos(a)) + (d * deg_cos(r_ratio * a)));
-    py = trochoids_y + (((R + r) * deg_sin(a)) - (d * deg_sin(r_ratio * a)));
-    px2 = trochoids_x + (((R + r) * deg_cos((a2))) + (d * deg_cos(r_ratio * a2)));
-    py2 = trochoids_y + (((R + r) * deg_sin((a2))) - (d * deg_sin(r_ratio * a2)));
-    api->line((void *)api, which, canvas, snapshot, px, py, px2, py2, (20 * guides) + 1, trochoids_line_callback);
+    if (which == TOOL_HYPOTROCHOID_SIZES ||
+        which == TOOL_HYPOTROCHOID_NOSIZES_1 ||
+        which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
+        which == TOOL_HYPOTROCHOID_NOSIZES_3) {
+      /* Hypotrochoid */
+      px = trochoids_x + (((R - r) * deg_cos(a)) + (d * deg_cos(r_ratio * a)));
+      py = trochoids_y + (((R - r) * deg_sin(a)) - (d * deg_sin(r_ratio * a)));
+      px2 = trochoids_x + (((R - r) * deg_cos((a2))) + (d * deg_cos(r_ratio * a2)));
+      py2 = trochoids_y + (((R - r) * deg_sin((a2))) - (d * deg_sin(r_ratio * a2)));
+    } else {
+      /* Epitrochoid */
+      px = trochoids_x + (((R + r) * deg_cos(a)) - (d * deg_cos(r_ratio * a)));
+      py = trochoids_y + (((R + r) * deg_sin(a)) - (d * deg_sin(r_ratio * a)));
+      px2 = trochoids_x + (((R + r) * deg_cos((a2))) - (d * deg_cos(r_ratio * a2)));
+      py2 = trochoids_y + (((R + r) * deg_sin((a2))) - (d * deg_sin(r_ratio * a2)));
+    }
+
+    api->line((void *)api, which, canvas, snapshot, px, py, px2, py2, (20 * (guides && (a >= 360.0))) + 1, trochoids_line_callback);
   }
 
   if (guides) {
@@ -405,16 +420,38 @@ void trochoids_work(magic_api * api, int which,
       api->xorpixel(canvas, px + 1, py + 1);
 
       /* Rotator (rolling circle) */
-      px = (int) ((float) trochoids_x + ((R + r) * deg_cos(rotator_anim_a)) + ((float) r * deg_cos(a)));
-      py = (int) ((float) trochoids_y + ((R + r) * deg_sin(rotator_anim_a)) - ((float) r * deg_sin(a)));
+      if (which == TOOL_HYPOTROCHOID_SIZES ||
+          which == TOOL_HYPOTROCHOID_NOSIZES_1 ||
+          which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
+          which == TOOL_HYPOTROCHOID_NOSIZES_3) {
+        /* Hypotrochoid */
+        px = (int) ((float) trochoids_x + ((R - r) * deg_cos(rotator_anim_a)) + ((float) -r * deg_cos(a)));
+        py = (int) ((float) trochoids_y + ((R - r) * deg_sin(rotator_anim_a)) - ((float) -r * deg_sin(a)));
+      } else {
+        /* Epitrochoid */
+        px = (int) ((float) trochoids_x + ((R + r) * deg_cos(rotator_anim_a)) + ((float) r * deg_cos(a)));
+        py = (int) ((float) trochoids_y + ((R + r) * deg_sin(rotator_anim_a)) - ((float) r * deg_sin(a)));
+      }
       api->xorpixel(canvas, px, py);
       api->xorpixel(canvas, px + 1, py);
       api->xorpixel(canvas, px, py + 1);
       api->xorpixel(canvas, px + 1, py + 1);
 
     }
-    px = (int) ((float) trochoids_x + ((R + r) * deg_cos(rotator_anim_a)) + ((float) d * deg_cos(0)));
-    py = (int) ((float) trochoids_y + ((R + r) * deg_sin(rotator_anim_a)) - ((float) d * deg_sin(0)));
+
+    /* Pen */
+    if (which == TOOL_HYPOTROCHOID_SIZES ||
+        which == TOOL_HYPOTROCHOID_NOSIZES_1 ||
+        which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
+        which == TOOL_HYPOTROCHOID_NOSIZES_3) {
+      /* Hypotrochoid */
+      px = trochoids_x + (((R - r) * deg_cos(rotator_anim_a)) + (d * deg_cos(rotator_anim_a)));
+      py = trochoids_y + (((R - r) * deg_sin(rotator_anim_a)) - (d * deg_sin(rotator_anim_a)));
+    } else {
+      /* Epitrochoid */
+      px = trochoids_x + (((R + r) * deg_cos(rotator_anim_a)) - (d * deg_cos(rotator_anim_a)));
+      py = trochoids_y + (((R + r) * deg_sin(rotator_anim_a)) - (d * deg_sin(rotator_anim_a)));
+    }
     for (int yy = -2; yy <= 2; yy++) {
       for (int xx = -2; xx <= 2; xx++) {
         api->putpixel(canvas, px + xx, py + yy, trochoids_color);
