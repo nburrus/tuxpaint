@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   diciembre 29, 2023
+   enero 15, 2024
 */
 
 
@@ -159,7 +159,7 @@ int example_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_leve
     "tp-magic-config --dataprefix" command would have told us when we installed
     our plugin and its data.)
     */
-    snprintf(filename, sizeof(filename), "%s/sounds/magic/%s", api->data_directory,
+    snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory,
              sound_filenames[i]);
 
     printf("Trying to load %s sound file\n", filename);
@@ -209,7 +209,7 @@ SDL_Surface *example_get_icon(magic_api * api, int which)
   We use "which" (which of our tools Tux Paint is asking about) as an index
   into the array.
   */
-  snprintf(filename, sizeof(filename), "%s/images/magic/%s",
+  snprintf(filename, sizeof(filename), "%simages/magic/%s",
            api->data_directory, icon_filenames[which]);
 
   printf("Trying to load %s icon\n", filename);
