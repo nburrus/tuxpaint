@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.January.14 (0.9.32)
+2024.January.15 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Support for complexity levels in Magic tools via the plugin API.
@@ -72,7 +72,7 @@ https://tuxpaint.org/
           (https://freesound.org/people/mudflea2/sounds/708182/)
           Creative Commons 0 by mudflea2
 
-    * Epitrochoid and Hypotrochoid magic tools:
+    * WIP Epitrochoid and Hypotrochoid magic tools:
       + Tools to draw centered trochoids; to create art similar to a
         Spirograph or Wondergraph.  Drag left/right to adjust the
         radius of the stator (fixed circle). Drag up/down to adjust
@@ -83,7 +83,9 @@ https://tuxpaint.org/
           epitrochoid and hypotrochoid drawing tools will be made
           available, each with differing pen positions (inside, edge,
           and outside).
+        + FIXME Angles reversed!?!
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
+        (with help from Pere Pujal i Carabantes <perepujal@gmail.com>)
       + Sounds:
         - Drag: "Running Gear", CC0 1.0 Universal
           by Vurca (https://freesound.org/people/Vurca/)
@@ -92,6 +94,7 @@ https://tuxpaint.org/
           both CC0 1.0 Universal from "Celtic Harp Samples" collection
           (https://freesound.org/people/Daphne_in_Wonderland/packs/29328/)
           by Daphne Farazi (https://soundcloud.com/daphnefarazi)
+       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/248/
 
   * Improvements to "Text" & "Label" tools:
     ---------------------------------------
