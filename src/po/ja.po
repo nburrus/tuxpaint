@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-13 18:21-0800\n"
-"PO-Revision-Date: 2023-07-09 00:45+0900\n"
+"PO-Revision-Date: 2024-01-17 11:17+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -379,30 +379,41 @@ msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
 msgstr ""
+"「まほう」ツールの追加: 透視図法による作図ツール（「１てんとうし」「２てんと"
+"うし」「３てんとうし」）と、それぞれの消失点を設定するためのツール"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
+"「まほう」ツールの追加: 各種投影法による作図ツール（「とうかく」「２とうか"
+"く」「ふとうかく」「しゃとうえい」）と、それぞれの基準角を設定するためのツー"
+"ル"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
 msgstr ""
+"「まほう」ツールの追加: コロイド曲線描画ツール（「エピコロイド」「ハイポコロ"
+"イド」）"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
 msgstr ""
+"新規オプションとして「難易度」の設定を追加。設定したレベルに応じて「まほう」"
+"ツールの動作を変更したり、いくつかの「まほう」ツールを無効にしたりします。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
+"「もじ」ツール、「ラベル」ツールで、フォント名とフォントサイズを表示するよう"
+"になりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Bug-fixes and localization updates."
-msgstr ""
+msgstr "バグ修正と翻訳の更新。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
@@ -490,8 +501,6 @@ msgstr ""
 "れました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
-#, fuzzy
-#| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr "キーボードショートカットで素早くけしゴムが使えるようになりました。"
 
@@ -1265,25 +1274,17 @@ msgstr ""
 
 #. Text tool instructions after changing font
 #: ../tools.h:203
-#, fuzzy, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text."
+#, c-format
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
 msgstr ""
 "じのかたちをえらんで、クリックしたあと キーをおして じをかこう。 [Enter] か "
-"[Tab] をおせば かきおわり。"
+"[Tab] をおせば かきおわり。≪フォント：%1$s (%2$s), %3$dピクセル≫"
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
-#, fuzzy, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it, and change its "
-#| "text style."
+#, c-format
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text. By using the "
@@ -1292,7 +1293,8 @@ msgid ""
 msgstr ""
 "じのかたちをえらんで、クリックしたあと キーをおして じをかこう。 [Enter] か "
 "[Tab] をおせば かきおわり。 ゆびのマークの せんたくボタンを おしてから ラベル"
-"を クリックすれば うごかしたり かきなおしたり かたちを かえたり できるよ。"
+"を クリックすれば うごかしたり かきなおしたり かたちを かえたり できるよ。≪"
+"フォント：%1$s (%2$s), %3$dピクセル≫"
 
 #  FIXME: Move elsewhere!!!
 #. Prompt to confirm user wishes to quit
@@ -2289,70 +2291,68 @@ msgstr "えを クリックして ぜんたいを ざらざらに しよう。"
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:191
 msgid "1-Point Select"
-msgstr ""
+msgstr "１てんとうし せんたく"
 
 #: ../../magic/src/n_pt_persp.c:192
 msgid "1-Point Draw"
-msgstr ""
+msgstr "１てんとうし びょうが"
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:195
 msgid "2-Point Select"
-msgstr ""
+msgstr "２てんとうし せんたく"
 
 #: ../../magic/src/n_pt_persp.c:196
 msgid "2-Point Draw"
-msgstr ""
+msgstr "２てんとうし びょうが"
 
 #. 3-point perspective
 #: ../../magic/src/n_pt_persp.c:199
 msgid "3-Point Select"
-msgstr ""
+msgstr "３てんとうし せんたく"
 
 #: ../../magic/src/n_pt_persp.c:200
 msgid "3-Point Draw"
-msgstr ""
+msgstr "３てんとうし びょうが"
 
 #: ../../magic/src/n_pt_persp.c:202
 msgid "3-Point Draw Down"
-msgstr ""
+msgstr "３てんとうし みあげる"
 
 #: ../../magic/src/n_pt_persp.c:206
 msgid "Isometric Lines"
-msgstr ""
+msgstr "とうかく びょうが"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:209
 msgid "Dimetric Select"
-msgstr ""
+msgstr "２とうかく せんたく"
 
 #: ../../magic/src/n_pt_persp.c:210
-#, fuzzy
-#| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
-msgstr "じょうげ たいしょう"
+msgstr "２とうかく びょうが"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:213
 msgid "Trimetric Select"
-msgstr ""
+msgstr "ふとうかく せんたく"
 
 #: ../../magic/src/n_pt_persp.c:214
 msgid "Trimetric Draw"
-msgstr ""
+msgstr "ふとうかく びょうが"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:217
 msgid "Oblique Select"
-msgstr ""
+msgstr "しゃとうえい せんたく"
 
 #: ../../magic/src/n_pt_persp.c:218
 msgid "Oblique Draw"
-msgstr ""
+msgstr "しゃとうえい びょうが"
 
 #: ../../magic/src/n_pt_persp.c:220
 msgid "Oblique Draw Left"
-msgstr ""
+msgstr "しゃとうえい はんてんびょうが"
 
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:226
@@ -2360,14 +2360,16 @@ msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
 msgstr ""
+"クリックして 「１てんとうし」で つかう とおくの てん（しょうしつてん）を １"
+"つ きめます。"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/n_pt_persp.c:227
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして とおくの １つの てんに あつまる せんを ひ"
+"こう。"
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:230
@@ -2375,13 +2377,15 @@ msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
 msgstr ""
+"クリックして 「２てんとうし」で つかう とおくの てん（しょうしつてん）を ２"
+"つ きめます。"
 
 #: ../../magic/src/n_pt_persp.c:231
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
-msgstr "クリックしたまま マウスをうごかして えの ぜんたいを うごかそう。"
+msgstr ""
+"クリックしたまま マウスをうごかして とおくの ２つのてんに あつまる せんを ひ"
+"こう。"
 
 #. 3-point perspective
 #: ../../magic/src/n_pt_persp.c:234
@@ -2389,28 +2393,30 @@ msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
+"クリックして 「３てんとうし」で つかう とおくの てん（しょうしつてん）を ３"
+"つ きめます。"
 
 #: ../../magic/src/n_pt_persp.c:235
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
-msgstr "クリックしたまま マウスをうごかして えの ぜんたいを うごかそう。"
+msgstr ""
+"クリックしたまま マウスをうごかして とおくの ３つの てんに あつまる せんを ひ"
+"こう。"
 
 #: ../../magic/src/n_pt_persp.c:237
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
-msgstr "クリックしたまま マウスをうごかして えの ぜんたいを うごかそう。"
+msgstr ""
+"クリックしたまま マウスをうごかして とおくの ３つの てんに あつまる せんを ひ"
+"こう。（したから みあげるように かけます）"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/n_pt_persp.c:241
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして 「とうかく」の とうえいほうで おくゆきの"
+"ある ずを かこう。"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:244
@@ -2418,13 +2424,15 @@ msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
+"クリックして 「２とうかく」の とうえいほうで つかう ２ほんの せんの かくどを "
+"きめます。"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/n_pt_persp.c:245
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして 「２とうかく」の とうえいほうで おくゆき"
+"のある ずを かこう。"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:248
@@ -2432,13 +2440,15 @@ msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
+"クリックして 「ふとうかく」の とうえいほうで つかう ３ぼんの せんの かくどを "
+"きめます。"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/n_pt_persp.c:249
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして 「ふとうかく」の とうえいほうで おくゆき"
+"のある ずを かこう。"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:252
@@ -2446,20 +2456,22 @@ msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
+"クリックして 「しゃとうえい」の とうえいほうで つかう ななめの せんの かくど"
+"を きめます。"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/n_pt_persp.c:253
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして 「しゃとうえい」の とうえいほうで おくゆ"
+"きのある ずを かこう。"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/n_pt_persp.c:255
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして 「しゃとうえい」の とうえいほうで おくゆ"
+"きのある ずを かこう。（はんたいむき）"
 
 #: ../../magic/src/perspective.c:165
 msgid "Perspective"
@@ -2857,35 +2869,35 @@ msgstr "クリックしたまま マウスをうごかして たつまきを か
 
 #: ../../magic/src/trochoids.c:108
 msgid "Epitrochoid"
-msgstr ""
+msgstr "エピトロコイド"
 
 #: ../../magic/src/trochoids.c:109
 msgid "Epitrochoid Inside"
-msgstr ""
+msgstr "エピトロコイド ふち"
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid Edge"
-msgstr ""
+msgstr "エピトロコイド エッジ"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Outside"
-msgstr ""
+msgstr "エピトロコイド そと"
 
 #: ../../magic/src/trochoids.c:112
 msgid "Hypotrochoid"
-msgstr ""
+msgstr "ハイポトロコイド"
 
 #: ../../magic/src/trochoids.c:113
 msgid "Hypotrochoid Inside"
-msgstr ""
+msgstr "ハイポトロコイド なか"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid Edge"
-msgstr ""
+msgstr "ハイポトロコイド ふち"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Outside"
-msgstr ""
+msgstr "ハイポトロコイド そと"
 
 #. Epitrochoids
 #: ../../magic/src/trochoids.c:121
@@ -2894,6 +2906,11 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
 msgstr ""
+"まるのそとがわを まるがころがるときに できる かたち（エピコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして うちがわの "
+"まるの おおきさを きめます。うえしたにドラッグして そとがわをころがる まるの "
+"おおきさを きめます。ペンのばしょをかえるには おおきさをかえるボタンを つかい"
+"ます。"
 
 #: ../../magic/src/trochoids.c:122
 msgid ""
@@ -2901,6 +2918,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
 msgstr ""
+"まるのそとがわを まるがころがるときに できる かたち（エピコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして うちがわの "
+"まるの おおきさを きめます。うえしたにドラッグして そとがわをころがる まるの "
+"おおきさを きめます。ペンは そとがわのまるの なかにあります。"
 
 #: ../../magic/src/trochoids.c:123
 msgid ""
@@ -2908,6 +2929,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"まるのそとがわを まるがころがるときに できる かたち（エピコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして うちがわの "
+"まるの おおきさを きめます。うえしたにドラッグして そとがわをころがる まるの "
+"おおきさを きめます。ペンは そとがわのまるの ふちにあります。"
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
@@ -2915,6 +2940,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
+"まるのそとがわを まるがころがるときに できる かたち（エピコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして うちがわの "
+"まるの おおきさを きめます。うえしたにドラッグして そとがわをころがる まるの "
+"おおきさを きめます。ペンは そとがわのまるの そとにあります。"
 
 #. Hypotrochoids
 #: ../../magic/src/trochoids.c:126
@@ -2923,6 +2952,11 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
+"まるのうちがわを まるがころがるときに できる かたち（ハイポコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして そとがわの "
+"まるの おおきさを きめます。うえしたにドラッグして うちがわをころがる まるの "
+"おおきさを きめます。ペンのばしょをかえるには おおきさをかえるボタンを つかい"
+"ます。"
 
 #: ../../magic/src/trochoids.c:127
 msgid ""
@@ -2930,6 +2964,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
+"まるのうちがわを まるがころがるときに できる かたち（ハイポコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして そとがわの "
+"まるの おおきさを きめます。うえしたにドラッグして うちがわをころがる まるの "
+"おおきさを きめます。ペンは うちがわのまるの なかにあります。"
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
@@ -2937,6 +2975,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"まるのうちがわを まるがころがるときに できる かたち（ハイポコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして そとがわの "
+"まるの おおきさを きめます。うえしたにドラッグして うちがわをころがる まるの "
+"おおきさを きめます。ペンは うちがわのまるの ふちにあります。"
 
 #: ../../magic/src/trochoids.c:129
 msgid ""
@@ -2944,6 +2986,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
 msgstr ""
+"まるのうちがわを まるがころがるときに できる かたち（ハイポコロイド）を かこ"
+"う。 まず、クリックして かきはじめます。 みぎひだりにドラッグして そとがわの "
+"まるの おおきさを きめます。うえしたにドラッグして うちがわをころがる まるの "
+"おおきさを きめます。ペンは うちがわのまるの そとにあります。"
 
 #: ../../magic/src/tv.c:117
 msgid "TV"
