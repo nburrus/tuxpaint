@@ -3,7 +3,7 @@
 
   Draw train tracks.
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -57,6 +57,7 @@ int rails_get_tool_count(magic_api * api);
 SDL_Surface *rails_get_icon(magic_api * api, int which);
 char *rails_get_name(magic_api * api, int which);
 int rails_get_group(magic_api * api, int which);
+int rails_get_order(int which);
 char *rails_get_description(magic_api * api, int which, int mode);
 int rails_requires_colors(magic_api * api, int which);
 void rails_release(magic_api * api, int which,
@@ -170,6 +171,11 @@ char *rails_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 int rails_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
+}
+
+int rails_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 2200;
 }
 
 char *rails_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)

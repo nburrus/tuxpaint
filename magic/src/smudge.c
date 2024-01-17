@@ -128,7 +128,7 @@ int smudge_get_order(int which)
   if (which == 0)
     return 3; /* within MAGIC_TYPE_DISTORTS */
   else
-    return 0; /* FIXME */ /* within MAGIC_TYPE_PAINTING */
+    return 2500; /* within MAGIC_TYPE_PAINTING */
 }
 
 // Return our descriptions, localized:

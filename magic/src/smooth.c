@@ -9,7 +9,7 @@
   Idea: Pere Pujal i Carabantes (https://sourceforge.net/p/tuxpaint/feature-requests/238/)
   Based on: calligraphy.c by Bill Kendrick
 
-  Copyright (c) 2023 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2024 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -28,7 +28,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 29, 2023
+  Last updated: Januayr 16, 2024
 */
 
 #include <stdio.h>
@@ -101,6 +101,7 @@ int smooth_get_tool_count(magic_api * api);
 SDL_Surface *smooth_get_icon(magic_api * api, int which);
 char *smooth_get_name(magic_api * api, int which);
 int smooth_get_group(magic_api * api, int which);
+int smooth_get_order(int which);
 char *smooth_get_description(magic_api * api, int which, int mode);
 static void smooth_linecb(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 static void smooth_squiggle_linecb(void *ptr, int which,
@@ -168,6 +169,12 @@ char *smooth_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int smooth_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
+}
+
+// Return our order
+int smooth_get_order(int which)
+{
+  return 1300 + which;
 }
 
 // Return our description, localized:

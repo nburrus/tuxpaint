@@ -1,5 +1,5 @@
 /*
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 #include <time.h>               //For time()
@@ -34,6 +34,7 @@ int confetti_get_tool_count(magic_api * api);
 SDL_Surface *confetti_get_icon(magic_api * api, int which);
 char *confetti_get_name(magic_api * api, int which);
 int confetti_get_group(magic_api * api, int which);
+int confetti_get_order(int which);
 char *confetti_get_description(magic_api * api, int which, int mode);
 int confetti_requires_colors(magic_api * api, int which);
 void confetti_release(magic_api * api, int which,
@@ -104,6 +105,11 @@ char *confetti_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UN
 int confetti_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
+}
+
+int confetti_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 1400;
 }
 
 char *confetti_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)

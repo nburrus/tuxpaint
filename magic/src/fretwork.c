@@ -1,7 +1,7 @@
 /*
   Draws fretwork
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 #include "tp_magic_api.h"
@@ -64,6 +64,7 @@ int fretwork_get_tool_count(magic_api * api);
 SDL_Surface *fretwork_get_icon(magic_api * api, int which);
 char *fretwork_get_name(magic_api * api, int which);
 int fretwork_get_group(magic_api * api, int which);
+int fretwork_get_order(int which);
 char *fretwork_get_description(magic_api * api, int which, int mode);
 int fretwork_requires_colors(magic_api * api, int which);
 void fretwork_release(magic_api * api, int which,
@@ -205,6 +206,11 @@ SDL_Surface *fretwork_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 int fretwork_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
+}
+
+int fretwork_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 2100;
 }
 
 char *fretwork_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
