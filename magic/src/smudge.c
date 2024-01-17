@@ -7,7 +7,7 @@
   Smudge by Albert Cahalan <albert@users.sf.net>
   Wet Paint addition by Bill Kendrick <bill@newbreedsoftware.com>
 
-  Copyright (c) 2002-2023
+  Copyright (c) 2002-2024
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 
   FIXME: "Wet Paint" doesn't smudge enough -bjk 2023.04.23
 */
@@ -47,6 +47,7 @@ Uint32 smudge_api_version(void);
 SDL_Surface *smudge_get_icon(magic_api * api, int which);
 char *smudge_get_name(magic_api * api, int which);
 int smudge_get_group(magic_api * api, int which);
+int smudge_get_order(int which);
 char *smudge_get_description(magic_api * api, int which, int mode);
 static void do_smudge(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 void smudge_drag(magic_api * api, int which, SDL_Surface * canvas,
@@ -119,6 +120,15 @@ int smudge_get_group(magic_api * api ATTRIBUTE_UNUSED, int which)
     return MAGIC_TYPE_DISTORTS; /* Smudge */
   else
     return MAGIC_TYPE_PAINTING; /* Wet Paint */
+}
+
+// Return our order
+int smudge_get_order(int which)
+{
+  if (which == 0)
+    return 3; /* within MAGIC_TYPE_DISTORTS */
+  else
+    return 0; /* FIXME */ /* within MAGIC_TYPE_PAINTING */
 }
 
 // Return our descriptions, localized:
