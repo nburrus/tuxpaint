@@ -1,10 +1,11 @@
 /*
   Folds the picture down from the corners.
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 //optimized version soon :)
+//  LOL comment is from 2008-07-10 -bjk 2024.01.16
 //when "folding" same corner many times it gives strange results. Now it's allowed. Let me know
 //if you think it shouldn't be.
 
@@ -47,6 +48,7 @@ int fold_get_tool_count(magic_api * api);
 SDL_Surface *fold_get_icon(magic_api * api, int which);
 char *fold_get_name(magic_api * api, int which);
 int fold_get_group(magic_api * api, int which);
+int fold_get_order(int which);
 char *fold_get_description(magic_api * api, int which, int mode);
 int fold_requires_colors(magic_api * api, int which);
 void fold_release(magic_api * api, int which,
@@ -117,6 +119,11 @@ char *fold_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 int fold_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PICTURE_WARPS;
+}
+
+int fold_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 700;
 }
 
 char *fold_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)

@@ -7,7 +7,7 @@
   By Bill Kendrick
   Some parts based on "Blind" Magic Tool by Pere Pujal Carabantes
 
-  Copyright (c) 2021-2023
+  Copyright (c) 2021-2024
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 #include "tp_magic_api.h"
@@ -57,6 +57,7 @@ int stretch_get_tool_count(magic_api * api);
 SDL_Surface *stretch_get_icon(magic_api * api, int which);
 char *stretch_get_name(magic_api * api, int which);
 int stretch_get_group(magic_api * api, int which);
+int stretch_get_order(int which);
 char *stretch_get_description(magic_api * api, int which, int mode);
 int stretch_requires_colors(magic_api * api, int which);
 void stretch_release(magic_api * api, int which,
@@ -121,6 +122,11 @@ char *stretch_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 int stretch_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PICTURE_WARPS;
+}
+
+int stretch_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 500;
 }
 
 char *stretch_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)

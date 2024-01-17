@@ -4,7 +4,7 @@
    kaleidoscope.
    Bill Kendrick
 
-   Last updated: December 29, 2023
+   Last updated: January 16, 2024
 */
 
 #include <stdio.h>
@@ -56,6 +56,7 @@ int kaleidox_get_tool_count(magic_api * api);
 SDL_Surface *kaleidox_get_icon(magic_api * api, int which);
 char *kaleidox_get_name(magic_api * api, int which);
 int kaleidox_get_group(magic_api * api, int which);
+int kaleidox_get_order(int which);
 char *kaleidox_get_description(magic_api * api, int which, int mode);
 int kaleidox_requires_colors(magic_api * api, int which);
 int kaleidox_modes(magic_api * api, int which);
@@ -120,6 +121,11 @@ char *kaleidox_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int kaleidox_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PICTURE_WARPS;
+}
+
+int kaleidox_get_order(int which)
+{
+  return 800 + which;
 }
 
 char *kaleidox_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
