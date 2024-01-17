@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1566,14 +1566,14 @@ msgstr ""
 msgid "Color Shift"
 msgstr "মচু হোংদোকপা"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "অদোমগী লাইগী শরুক্তা মচু ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা চৎলো."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "অদোমগী লাই অপুম্বগী মচু হোংদোক্নবা ক্লিক তৌরো."
 
@@ -1705,17 +1705,17 @@ msgstr "কেলিগ্রাফি"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "কেলিগ্রাফি ওইনা য়েক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "কারতুন"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "লাই অদু কার্তুন অমা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1834,51 +1834,51 @@ msgstr "মচুশিং"
 msgid "Keep Color"
 msgstr "মচুশিং"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "অদোমগী লাইগী শরুক অদু ঙান্থোকহন্নবা মাউস ক্লিক তৌরো অদুগা চৎলো."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "অদোমগী লাই অপুম্বদু ঙান্থোকহন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "অদোমগী লাইগী শরুক অদু মমশিনহন্নবা মাউস ক্লিক তৌরো অদুগা চৎলো."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "অদোমগী লাই অপুম্বদু মমশিলহন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "অদোমগী লাইগী শরুক অদু মমশিনহন্নবা মাউস ক্লিক তৌরো অদুগা চৎলো."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "অদোমগী লাই অপুম্বদু মমশিলহন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "অদোমগী লাইগী শরুকশিং হেন্না ময়েক শেংহন্নবা মাউস ক্লিক তৌরো অদুগা চৎলো."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "অদোমগী লাই অপুম্বদু মমশিলহন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1886,7 +1886,7 @@ msgid ""
 "match the chosen color."
 msgstr "অদোমগী লাইগী শরুক্তা চিদাইশিং থিনবা মাউস ক্লিক তৌরো অদুগা চৎলো."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1898,7 +1898,7 @@ msgstr ""
 "অদোমগী লাইগী শরুক অঙৌবা অমসুং অদোম্না খনবা মচুদা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা "
 "কোয়না চৎলো."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1910,7 +1910,7 @@ msgstr ""
 "অদোমগী লাইগী শরুক অঙৌবা অমসুং অদোম্না খনবা মচুদা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা "
 "কোয়না চৎলো."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1930,11 +1930,11 @@ msgstr "ফিশআই"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "ফিশআইগী মওং ওইহন্নবা অদোমগী লাই অদুগী শরুক্তা ক্লিক তৌরো."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "লৈ"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "লৈখোক অমা য়েক্নবা ক্লিক তৌরো অদুগা চিংঙো. লৈ অদু য়েকপা লোইশিলহল্লো."
 
@@ -1946,11 +1946,11 @@ msgstr "কোঙ্গোল"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "মফম অদু কোঙ্গোলশিংনা কুপশিন্নবা মাউস ক্লিক তৌরো অদুগা চিংঙো."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "ফোল্দ"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "বেকগ্রাউন্দ মচু খল্লো অমসুং লামায়গী চুথেক্কী মচিনদু ওন্থোক্নবা ক্লিক তৌরো."
@@ -1995,11 +1995,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2059,28 +2059,28 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "অদোমগী লাইগী শরুকশিং তেলিভিজনদা উবা মান্না শেম্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "সিমেত্রিক ওই/য়েৎ"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "সিমেত্রিক মথক/মখা"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "কেলাইদোস্কোপ"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2088,7 +2088,7 @@ msgstr ""
 "অদোমগী লাইদা ওই অমসুং য়েৎতা সিমেত্রিক ওইবা ব্রশ অনীনা য়েক্নবা মাউস ক্লিক তৌরো "
 "অমসুং চিংঙো."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2096,13 +2096,13 @@ msgstr ""
 "অদোমগী লাইদা মথক অমসুং মখাদা সিমেত্রিক ওইবা ব্রশ অনীনা য়েক্নবা মাউস ক্লিক তৌরো "
 "অমসুং চিংঙো."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "লাই অদু এম্বোস তৌনবা মাউস ক্লিক তৌরো অদুগা চিংঙো."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -2115,7 +2115,7 @@ msgstr ""
 "অমসুং চিংঙো."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "সিমেত্রিক ব্রশেস (কেলাইদোস্কোপ অমা) য়েক্নবা মাউস ক্লিক তৌরো অমসুং চিংঙো."
@@ -2128,13 +2128,13 @@ msgstr "মঙাল"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "অদোমগী লাইদা মঙালগী মশেক য়েক্নবা ক্লিক তৌরো অদুগা চিংঙো."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "ঙান্থোকহল্লো"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2165,19 +2165,19 @@ msgstr "মেতেল পেইন্ত"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "মেতালিক মচুনা য়েকশিন্নবা মাউস ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "মিরর"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "ফ্লিপ"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "মিরর ইমেজ অমা শেম্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "লাই অদু মথক-মখা ওন্থোক্নবা ক্লিক তৌরো."
 
@@ -2250,25 +2250,25 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "অদোমগী লাই অপুম্বদু মওং নাইদবা মোজেক অমা হাপচিন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "নেগেতিভ"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "অদোমগী পেইন্তিং নেগেতিভ ওইনা শেম্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "অদোমগী পেইন্তিং অসি নেগেতিভ ওন্থোক্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2278,7 +2278,7 @@ msgid ""
 "complementary colors."
 msgstr "অদোমগী লাইগী শরুক্তা মচু ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2467,39 +2467,39 @@ msgstr "স্ত্রিং আর্তনা শেম্বা তেনজ
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "স্ত্রিং আর্তনা শেম্বা তেনজৈশিং য়েক্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "পর্সপেক্তিভ"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "জুম"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "জুম"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "চুথেক্তা ক্লিক তৌরো অদুগা অদোম্না লাই অদু শাংদোকপা পাম্বা মফমদা চিংঙো."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "অদোমগী পেইন্তিং অসি নেগেতিভ ওন্থোক্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2507,11 +2507,11 @@ msgid ""
 "picture."
 msgstr "লাই অদু জুম ইন তৌনবা ক্লিক তৌরো অদুগা চিংখৎলো নত্রগা জুম আউত তৌনবা চিংথরো."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "লাই অদু জুম ইন তৌনবা ক্লিক তৌরো অদুগা চিংখৎলো নত্রগা জুম আউত তৌনবা চিংথরো."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2579,15 +2579,15 @@ msgstr "অদোমগী লাইদা নোংগী মরিক অম�
 msgid "Click to cover your picture with rain drops."
 msgstr "অদোমগী লাইদা নোংগী মরিকশিংনা কুপশিন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "অশেংবা চুমথাং"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV চুমথাং"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2595,11 +2595,11 @@ msgstr ""
 "অদোম্না চুমথাংগী অহৌবা ওইবা পাম্বা অদুদা ক্লিক তৌরো, অদুগা লোইশিনবা পাম্বা মফমদা "
 "চিংঙো, অদুগা চুমথাং অমা য়েকহল্লো."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2624,19 +2624,19 @@ msgstr "ঈথক"
 msgid "Click to make ripples appear over your picture."
 msgstr "অদোমগী লাইগী মথক্তা ঈথক শেম্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "রোজেত"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "পিকাসো"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "অদোমগী রোজেত ক্লিক তৌরো অমসুং য়েকপা হৌরো."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "অদোম্না পিকাসোগুম্না য়েকপা য়াই!"
 
@@ -2682,11 +2682,11 @@ msgstr "অমুবা অমসুং অঙৌবা সিলুয়েত �
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "অদোমগী লাই অপুম্বা অমুবা অমসুং অঙৌবা সিলুয়েত শেম্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "মফম হোংদোকপা"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "অদোমগী লাই কেনভাসতা মফম হোংদোক্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
@@ -2762,11 +2762,11 @@ msgstr "অদোমগী লাইদা স্নো বোল হাপচ�
 msgid "Click to add snow flakes to your picture."
 msgstr "অদোমগী লাইদা স্নো ফ্লেক্স হাপচিন্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2775,19 +2775,19 @@ msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "অদোমগী লাইগী শরুকশিং তেলিভিজনদা উবা মান্না শেম্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "স্ত্রিং এদজশিং"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "স্ত্রিং কোর্নর"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "স্ত্রিং 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2795,11 +2795,11 @@ msgstr ""
 "স্ত্রিং আর্ত য়েক্নবা ক্লিক তৌরো অমসুং চিংঙো. লৈই য়ামদনা নত্রগা য়াম্না য়েক্নবা মথক-মখা "
 "চিংঙো, হেন্না চাওবা মখুল শেম্নবা ওই নত্রগা য়েৎ চিংঙো."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "স্ত্রিং আর্তনা শেম্বা তেনজৈশিং য়েক্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "ফ্রী ওইবা এঙ্গলদা স্ত্রিং আর্ত তেনজৈশিং য়েকউ."
 
@@ -2862,7 +2862,7 @@ msgstr "তিন্ত"
 msgid "Color & White"
 msgstr "মচু অমসুং অঙৌবা"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2871,11 +2871,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "অদোমগী লাইগী শরুক্তা মচু ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা কোয়না চৎলো."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "অদোমগী লাই অপুম্বগী মচু হোংদোক্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2887,7 +2887,7 @@ msgstr ""
 "অদোমগী লাইগী শরুক অঙৌবা অমসুং অদোম্না খনবা মচুদা ওন্থোক্নবা মাউস ক্লিক তৌরো অদুগা "
 "কোয়না চৎলো."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "অদোমগী লাই অপুম্বদু অঙৌবা অমসুং অদোম্না খনবা মচুদা ওন্থোক্নবা ক্লিক তৌরো."
 
@@ -2899,11 +2899,11 @@ msgstr "তুথপেস্ত"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "অদোমগী লাইদা তুথপেস্ত মেত্থোক্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "তোর্নাদো"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "অদোমগী লাইদা তোর্নাদো ফনেল অমা য়েক্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
@@ -3015,15 +3015,15 @@ msgstr "অদোমগী লাইগী শরুকশিং তেলিভ
 msgid "Click to make your picture look like it's on television."
 msgstr "অদোমগী লাই অদু তেলিভিজনদা উবা মান্না শেম্নবা ক্লিক তৌরো."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "ৱেভস"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "ৱেভলেতস"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3033,7 +3033,7 @@ msgstr ""
 "ৱেভ ওইনবা মখাদা, অপিকপা ৱেভ ওইনবা ওইদা, অমসুং অশাংবা ৱেভ ওইনবা য়েত্তা ক্লিক "
 "তৌরো."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3043,22 +3043,22 @@ msgstr ""
 "ৱেভ ওইনবা মখাদা, অপিকপা ৱেভ ওইনবা ওইদা, অমসুং অশাংবা ৱেভ ওইনবা য়েত্তা ক্লিক "
 "তৌরো."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "মচুশিং"
 
-#: ../../magic/src/xor.c:110
+#: ../../magic/src/xor.c:116
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
-msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "স্ত্রিং আর্তনা শেম্বা তেনজৈশিং য়েক্নবা ক্লিক তৌরো অমসুং চিংঙো."
 
-#: ../../magic/src/xor.c:112
+#: ../../magic/src/xor.c:118
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "অদোমগী লাই অপুম্বদা মোজেক্কী মওং হাপচিন্নবা ক্লিক তৌরো."
 
 #~ msgid "Choose the picture you want, then click “Open”."

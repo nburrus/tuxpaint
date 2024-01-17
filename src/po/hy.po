@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2014-03-22 11:39+0400\n"
 "Last-Translator: Aram Palyan <ararat.info@gmail.com>\n"
 "Language-Team: Armenian <ararat.info@gmail.com>\n"
@@ -1572,7 +1572,7 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Գույնը փոխել"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
@@ -1580,7 +1580,7 @@ msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը նկարիդ որոշ հատվածներում գույնը փոխելու համար"
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Սեղմիր ամբողջ նկարիդ գույները փոխելու համար:"
 
@@ -1715,17 +1715,17 @@ msgstr "Գեղագրություն"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը գեղագրական ոճով նկարելու համար"
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Մուլտիկ"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Սեղմիր և շարժիր մկնիկը շուրջ բոլորը մուլտիկային դարձնելու համար:"
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1845,51 +1845,51 @@ msgstr "Xor Գույներ"
 msgid "Keep Color"
 msgstr "Գույներ"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներ լուսավորելու համար:"
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Սեղմիր, նկարդ ամբողջությամբ լուսավորելու համար"
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Սեղմիր և տեղաշարժիր մկնիկը նկարիդ որոշ հատվածներ մթնեցնելու համար:"
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Սեղմիր, նկարդ ամբողջությամբ մթնեցնելու համար:"
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Սեղմիր և տեղաշարժիր մկնիկը նկարիդ որոշ հատվածներ մթնեցնելու համար:"
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "Սեղմիր, նկարդ ամբողջությամբ մթնեցնելու համար:"
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ հատվածները բարելավելու համար:"
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "Սեղմիր, նկարդ ամբողջությամբ մթնեցնելու համար:"
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1898,7 +1898,7 @@ msgid ""
 msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը` նկարիդ որոշ հատվածներում եզրեր գծելու համար"
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1910,7 +1910,7 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ որոշ հատվածներ սպիտակ և քո "
 "ընտրած գույնով ներկելու համար"
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1922,7 +1922,7 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ որոշ հատվածներ սպիտակ և քո "
 "ընտրած գույնով ներկելու համար"
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1945,11 +1945,11 @@ msgstr ""
 "Սեղմիր նկարիդ որևէ հատվածում ձկան աչքի էֆեկտ (ուռուցիկություն) ստեղծելու "
 "համար:"
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Ծաղիկ"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Սեղմիր և քաշիր, ծաղիկի ցողուն նկարելու համար: Շարունակիր` ծաղիկն ավարտելու "
@@ -1964,11 +1964,11 @@ msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr ""
 "Սեղմիր և քաշելով տար մկնիկը, որևէ հատված փրփուրից պղպջակներով ծածկելու համար:"
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Ծալք"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Ընտրիր ետնապատկերի գույնը և սեղմիր, էջի անկյունը ծալելու համար:"
@@ -2011,11 +2011,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2075,28 +2075,28 @@ msgstr ""
 "Սեղմիր և քաշիր` նկարիդ որոշ հատվածներին հեռուստաէկրանի պատկերի տեսք տալու "
 "համար:"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Սիմետրիկ Ձախ/Աջ"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Սիմետրիկ Վերև/Ներքև"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Նախշ"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Սալիկներ"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Գեղադիտակ"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2104,7 +2104,7 @@ msgstr ""
 "Սեղմիր և քաշելով տար մկնիկը, երկու վրձիններով նկարելու համար, որոնք սիմետրիկ "
 "են նկարի աջ և ձախ երկայնքով:"
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2112,12 +2112,12 @@ msgstr ""
 "Սեղմիր և քաշելով տար մկնիկը, երկու վրձիններով նկարելու համար, որոնք սիմետրիկ "
 "են նկարի վերևի և ներքևի երկայնքով:"
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr ""
 "Սեղմիր և քաշելով տար մկնիկը, նկարի երկայնքով ձևանմուշներ նկարելու համար:"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw a pattern plus its symmetric across the "
@@ -2130,7 +2130,7 @@ msgstr ""
 "նկարելու համար:"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2144,13 +2144,13 @@ msgstr "Լույս"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Սեղմիր և քաշիր` նկարումդ լույսի շող նկարելու համար:"
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "Լուսավորել"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2181,19 +2181,19 @@ msgstr "Մետաղ"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Սեղմիր և քաշելով տար մկնիկը` մետաղյա գույնով ներկելու համար:"
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Հայելի"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Գլխիվայր"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Սեղմիր` հայելային պատկեր ստեղծելու համար"
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Սեղմիր` նկարը գլխիվայր շրջելու համար:"
 
@@ -2271,26 +2271,26 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Սեղմիր` ամբողջ նկարիդ անկանոն խճանկար ավելացնելու համար:"
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Սևանկար"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` պատկերը սևանկար դարձնելու համար:"
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Սեղմիր` պատկերը սևանկար դարձնելու համար"
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2302,7 +2302,7 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ հատվածների գույնը փոխելու "
 "համար:"
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2493,40 +2493,40 @@ msgstr "Սեղմիր և քաշիր կրկնվող ձևանմուշներ նկա�
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Սեղմիր և քաշիր կրկնվող ձևանմուշներ նկարելու համար "
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Հեռանկար"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Չափս"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Չափս"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "Սեղմիր անկյունների վրա և քաշիր այն հատվածները, որտեղ ցանկանում ես ձգել նկարը"
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Սեղմիր` պատկերը սևանկար դարձնելու համար"
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2534,11 +2534,11 @@ msgid ""
 "picture."
 msgstr "Սեղմիր և քաշիր վեր` նկարդ խոշորացնելու և քաշիր վար՝ փոքրացնելու համար"
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Սեղմիր և քաշիր վեր` նկարդ խոշորացնելու և քաշիր վար՝ փոքրացնելու համար"
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2606,16 +2606,16 @@ msgstr "Սեղմիր` նկարումդ անձրևի կաթիլ տեղադրել�
 msgid "Click to cover your picture with rain drops."
 msgstr "Սեղմիր` նկարդ անձրևի կաթիլներով պատելու համար"
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Իրական Ծիածան"
 
 # ԿՆԴԿԵԿՄ - Կարմիր, Նարնջագույն, Դեղին, Կանաչ, Երկնագույն, Կապույտ, Մանուշակագույն - ծիածանի գույների հերթականությունը:
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ԿՆԴԿԵԿՄ ծիածան"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2624,11 +2624,11 @@ msgstr ""
 "այնտեղ, որտեղ ցանկանում ես, որ այն ավարտվի և այնուհետև բաց թող, որ նկարվի "
 "ծիածանը:"
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2655,19 +2655,19 @@ msgstr "Ծածանք"
 msgid "Click to make ripples appear over your picture."
 msgstr "Սեղմիր, որ նկարիդ վրա հայտնվեն ծածանումներ:"
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Վարդաքանդակ"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Պիկասո"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Սեղմիր` վարդաքանդակներ նկարելու համար"
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Դու կարող ես նկարել ինչպես Պիկասոն"
 
@@ -2714,11 +2714,11 @@ msgstr "Սեղմիր և տեղաշարժիր մկնիկը` սև և սպիտակ 
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Սեղմիր` ամբողջ նկարիդ սև և սպիտակ ուրվանկարները ստեղծելու համար"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Փոխել"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Սեղմիր և քաշիր` նկարդ պաստառի վրա փոխելու համար"
 
@@ -2796,11 +2796,11 @@ msgstr "Սեղմիր` նկարումդ ձնագնդիներ ավելացնելո
 msgid "Click to add snow flakes to your picture."
 msgstr "Սեղմիր` նկարումդ ձյան փաթիլներ ավելացնելու համար:"
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2811,19 +2811,19 @@ msgstr ""
 "Սեղմիր և քաշիր` նկարիդ որոշ հատվածներին հեռուստաէկրանի պատկերի տեսք տալու "
 "համար:"
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Լարի եզրերը"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Լարի անկյունը"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "Լար 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2832,12 +2832,12 @@ msgstr ""
 "կամ շատ տողեր նկարելու համար, քաշիր դեպի ձախ կամ աջ` ավելի մեծ անցք անելու "
 "համար:"
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr ""
 "Սեղմիր և քաշիր` լարային արվեստով պատրաստված նետեր/սլաքներ նկարելու համար:"
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Նկարել լարային արվեստի նետեր/սլաքներ` ազատ անկյուններով"
 
@@ -2904,7 +2904,7 @@ msgstr "Երանգավորել"
 msgid "Color & White"
 msgstr "Գույն և Սպիտակ"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2915,11 +2915,11 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ հատվածների գույնը փոխելու "
 "համար:"
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Սեղմիր` ամբողջ նկարիդ գույնը փոխելու համար:"
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2931,7 +2931,7 @@ msgstr ""
 "Սեղմիր և տեղաշարժիր մկնիկը շուրջ բոլորը` նկարիդ որոշ հատվածներ սպիտակ և քո "
 "ընտրած գույնով ներկելու համար"
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Սեղմիր` ամբողջ նկարդ սպիտակ և քո ընտրած գույնով ներկելու համար"
 
@@ -2943,11 +2943,11 @@ msgstr "Մածուկ"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Սեղմիր և քաշիր` նկարիդ վրա ատամի մածուկ ցայտեցնելու համար"
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Պտտահողմ"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Սեղմիր և քաշիր` նկարիդ վրա պտտահողմի «ձագար» նկարելու համար"
 
@@ -3061,15 +3061,15 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Սեղմիր` նկարին հեռուստաէկրանի պատկերի տեսք տալու համար:"
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Ալիքներ"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Ալյակներ"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3079,7 +3079,7 @@ msgstr ""
 "կարճ ալիքների համար, ներքև՝ ավելի բարձր ալիքների համար, ձախ՝ փոքր ալիքների "
 "համար և աջ` երկար ալիքների համար:"
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3089,16 +3089,20 @@ msgstr ""
 "ալիքների համար, ներքև՝ ավելի բարձր ալիքների համար, ձախ՝ փոքր ալիքների համար "
 "և աջ` երկար ալիքների համար:"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "Xor Գույներ"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Սեղմիր և քաշիր` XOR էֆեկտով նկարելու համար"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Սեղմիր` ամբողջ պատկերում XOR էֆեկտով նկարելու համար:"
 
 #~ msgid "Choose the picture you want, then click “Open”."

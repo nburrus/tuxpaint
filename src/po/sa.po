@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2011-11-19 07:03+0530\n"
 "Last-Translator: Aarathi Bala\n"
 "Language-Team: \n"
@@ -1562,14 +1562,14 @@ msgstr ""
 msgid "Color Shift"
 msgstr "वर्णस्थानान्तरकरणम्"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "तव चित्रस्य भागेषु वर्णान् परिणमितुं मौस् क्लिक् कृत्वा चालय।"
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "तव सम्पूर्णचित्रे वर्णान् परिणमितुं क्लिक् कुरु।"
 
@@ -1701,17 +1701,17 @@ msgstr "कालिग्रफी"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "कालिग्रफी मध्ये आलिखितुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "कार्टून्"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "चित्रं कार्टून् इव परिणमितुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1830,51 +1830,51 @@ msgstr "वर्णाः"
 msgid "Keep Color"
 msgstr "वर्णाः"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "तव चित्रस्य भागान् मृदु कर्तुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "तव सम्पूर्णचित्रं मृदु कर्तुं क्लिक् कुरु"
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "तव चित्रस्य भागान् गभीरीकर्तुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "तव सम्पूर्णचित्रं गभीरीकर्तुं क्लिक् कुरु।"
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "तव चित्रस्य भागान् गभीरीकर्तुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "तव सम्पूर्णचित्रं गभीरीकर्तुं क्लिक् कुरु।"
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "चित्रस्य भागान् तीव्रीकर्तुं मौस् क्लिक् कृत्वा चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "तव सम्पूर्णचित्रं गभीरीकर्तुं क्लिक् कुरु।"
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1882,7 +1882,7 @@ msgid ""
 "match the chosen color."
 msgstr "तव चित्रे तत्र तत्र प्रान्तान् आलिखितुं मौस् क्लिक् कृत्वा चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1894,7 +1894,7 @@ msgstr ""
 "तव चित्रस्य भागानां वर्णं, त्वया वृतं वर्णं श्वेतं प्रति च परिणमितुं मौस् क्लिक् कृत्वा परितः "
 "चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1906,7 +1906,7 @@ msgstr ""
 "तव चित्रस्य भागानां वर्णं, त्वया वृतं वर्णं श्वेतं प्रति च परिणमितुं मौस् क्लिक् कृत्वा परितः "
 "चेष्टय।"
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1926,11 +1926,11 @@ msgstr "मीननेत्रम्"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "मीननेत्रप्रभावम् उत्पादयितुं चित्रस्य भागे क्लिक् कुरु।"
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "पुष्पम्"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "पुष्पतन्तु आलिखितुं क्लिक् कृत्वा कर्षय। पुष्पं समापयितुं त्यज।"
 
@@ -1942,11 +1942,11 @@ msgstr "फेनः"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "फेनबुद्बुदैः क्षेत्रम् आच्छादयितुं मौस् क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "पुटीकुरु"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "पृष्ठस्य कोणं परिवर्तयितुं पृष्ठपटलवर्णं वृत्वा क्लिक् कुरु।"
@@ -1991,11 +1991,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2055,48 +2055,48 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "तव चित्रस्य भागान् दूरदर्शनेभवानिव कारयितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "समविभक्तं वामम्/दक्षिणम्"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "समविभक्तम् उपरि/अधः"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "कलैडोस्कोप्"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
 "तव चित्रस्य वामदक्षिणयोः समविभक्ततया द्वाभ्यां कूर्चाभ्याम् आलिखितुं मौस् क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
 "तव चित्रस्य उपर्यधोभागयोः समविभक्ततया द्वाभ्यां कूर्चाभ्याम् आलिखितुं मौस् क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "चित्रम् एम्बोस् कर्तुं मौस् क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -2108,7 +2108,7 @@ msgstr ""
 "तव चित्रस्य वामदक्षिणयोः समविभक्ततया द्वाभ्यां कूर्चाभ्याम् आलिखितुं मौस् क्लिक् कृत्वा कर्षय।"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "समविभक्तकूर्चैः आलिखितुं मौस् क्लिक् कृत्वा कर्षय (कलैडोस्कोप्)।"
@@ -2121,13 +2121,13 @@ msgstr "प्रकाशः"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "तव चित्रे प्रकाशरेखाम् आलिखितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "लघूकुरु"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2158,19 +2158,19 @@ msgstr "धातुवर्णलेप्यम्"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "धातुमयवर्णेन लेपयितुं मौस् क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "दर्पणः"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "समाक्षिप"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "दर्पणचित्रं कर्तुं क्लिक् कुरु।"
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "चित्रस्य उपरिभागम् अधः समाक्षेप्तुं क्लिक् कुरु।"
 
@@ -2240,25 +2240,25 @@ msgstr "तव चित्रस्य भागान् प्रति ए�
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "तव सम्पूर्णचित्रं प्रति एकम् असममोसैक् सङ्कलयितुं क्लिक् कुरु।"
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "व्यतिरेकः"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "तव आलेख्यं व्यतिरेकं कर्तुं मौस् क्लिक् कृत्वा चेष्टय।"
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "तव सम्पूर्णालेख्यं स्वव्यतिरेकं कर्तुं क्लिक् कुरु।"
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2268,7 +2268,7 @@ msgid ""
 "complementary colors."
 msgstr "तव चित्रस्य भागानां वर्णं परिणमितुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2457,39 +2457,39 @@ msgstr "सूत्रकलया तीरान् आलिखितुं 
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "सूत्रकलया तीरान् आलिखितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "आलोकः"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "जूम् कुरु"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "जूम् कुरु"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "कोणान् क्लिक् कृत्वा यत्र चित्रं विस्तारयितुम् इच्छसि तत्र कर्षय।"
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "तव सम्पूर्णालेख्यं स्वव्यतिरेकं कर्तुं क्लिक् कुरु।"
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2497,11 +2497,11 @@ msgid ""
 "picture."
 msgstr "क्लिक् कृत्वा, चित्रान्तः जूम् कर्तुं उपरि कर्षय, तथा चित्रात् बहिः जूम् कर्तुं अधः कर्षय।"
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "क्लिक् कृत्वा, चित्रान्तः जूम् कर्तुं उपरि कर्षय, तथा चित्रात् बहिः जूम् कर्तुं अधः कर्षय।"
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2569,15 +2569,15 @@ msgstr "चित्रे वर्षाबिन्दुं स्थपय�
 msgid "Click to cover your picture with rain drops."
 msgstr "वर्षाबिन्दुभिः चित्रम् आच्छादयितुं क्लिक् कुरु।"
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "सत्येन्द्रधनुः"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV इन्द्रधनुः"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2585,11 +2585,11 @@ msgstr ""
 "यत्र इन्द्रधनुः आरब्धुमिच्छसि तत्र क्लिक् कुरु, यत्र समापयितुमिच्छसि तत्र कर्षय, ततः इन्द्रधनुः "
 "आलिखितुं त्यज।"
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2614,19 +2614,19 @@ msgstr "वीचयः"
 msgid "Click to make ripples appear over your picture."
 msgstr "तव चित्रस्योपरि वीचीः कारयितुं क्लिक् कुरु"
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "रोसेट्"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "पिकासो"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "तव रोसेट् आलेखनं क्लिक् कृत्वा आरभस्व"
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "पिकासो इव आलिखितुं शक्नोषि!"
 
@@ -2672,11 +2672,11 @@ msgstr "कृष्णश्वेतं सिलुएत् उत्पा�
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "सम्पूर्णचित्रस्य कृष्णश्वेतं सिलुएत् उत्पादयितुं मौस् क्लिक् कृत्वा चेष्टय।"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Shift"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "पटे चित्रं स्थानान्तरं कर्तुं क्लिक् कृत्वा कर्षय।"
 
@@ -2752,11 +2752,11 @@ msgstr "तव चित्रं प्रति तुषारकणान्
 msgid "Click to add snow flakes to your picture."
 msgstr "तव चित्रं प्रति तुषारकणान् सङ्कलयितुं क्लिक् कुरु।"
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2765,19 +2765,19 @@ msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "तव चित्रस्य भागान् दूरदर्शनेभवानिव कारयितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "अक्षरसमूहप्रान्ताः"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "अक्षरसमूहकोणः"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "अक्षरसमूहः 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2785,11 +2785,11 @@ msgstr ""
 "सूत्रकलाम् आलिखितुं क्लिक् कृत्वा कर्षय। न्यूनाः अधिकाः वा रेखाः आलिखितुम् उपर्यधः कर्षय, "
 "बृहत्तरविवरं कर्तुं वामे दक्षिणे वा कर्षय।"
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "सूत्रकलया तीरान् आलिखितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "मुक्तकोणैः सह सूत्रकलातीरान् आलिख।"
 
@@ -2852,7 +2852,7 @@ msgstr "टिण्ट्"
 msgid "Color & White"
 msgstr "वर्णः & श्वेतः"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2861,11 +2861,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "तव चित्रस्य भागानां वर्णं परिणमितुं मौस् क्लिक् कृत्वा परितः चेष्टय।"
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "तव सम्पूर्णचित्रस्य वर्णं परिणमितुं क्लिक् कुरु।"
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2877,7 +2877,7 @@ msgstr ""
 "तव चित्रस्य भागानां वर्णं, त्वया वृतं वर्णं श्वेतं प्रति च परिणमितुं मौस् क्लिक् कृत्वा परितः "
 "चेष्टय।"
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "तव सम्पूर्णचित्रं, त्वया वृतं वर्णं श्वेतं प्रति च परिणमितुं क्लिक् कुरु।"
 
@@ -2889,11 +2889,11 @@ msgstr "दन्तफेनकम्"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "तव चित्रे दन्तफेनकमिव आलिखितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "टोर्नेडो"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "तव चित्रे टोर्नेडो फनल् आलिखितुं क्लिक् कृत्वा कर्षय।"
 
@@ -3005,15 +3005,15 @@ msgstr "तव चित्रस्य भागान् दूरदर्श
 msgid "Click to make your picture look like it's on television."
 msgstr "तव चित्रं दूरदर्शनेभवमिव कारयितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "तरङ्गाः"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "लघुतरङ्गाः"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3022,7 +3022,7 @@ msgstr ""
 "तिर्यग्रूपेण चित्रं तरङ्गीकर्तुं क्लिक् कुरु। लघुतरतरङ्गेभ्यः उपरि, उच्चैस्तरतरङ्गेभ्यः तलं, "
 "लघुतरङ्गेभ्यः वामं, दीर्घतरङ्गेभ्यः दक्षिणं च क्लिक् कुरु"
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3031,22 +3031,22 @@ msgstr ""
 "ऋजुरूपेण चित्रं तरङ्गीकर्तुं क्लिक् कुरु। लघुतरतरङ्गेभ्यः उपरि, उच्चैस्तरतरङ्गेभ्यः तलं, लघुतरङ्गेभ्यः "
 "वामं, दीर्घतरङ्गेभ्यः दक्षिणं च क्लिक् कुरु"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "वर्णाः"
 
-#: ../../magic/src/xor.c:110
+#: ../../magic/src/xor.c:116
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
-msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "सूत्रकलया तीरान् आलिखितुं क्लिक् कृत्वा कर्षय।"
 
-#: ../../magic/src/xor.c:112
+#: ../../magic/src/xor.c:118
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "तव सम्पूर्णचित्रं प्रति मोसैक् प्रभावं सङ्कलयितुं क्लिक् कुरु।"
 
 #~ msgid "Choose the picture you want, then click “Open”."

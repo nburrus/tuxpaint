@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2010-09-21 09:37+0200\n"
 "Last-Translator: OLWENY San James <sjolweny85@yahoo.co.uk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1574,7 +1574,7 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Enkyuka ya Langi"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
@@ -1582,7 +1582,7 @@ msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Nyiga era tambuza mouse okukyusa langi z'ebimu ku bitundu bye kifaananyi kyo."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Nyiga okukyusa langi mu kifaananyi kyo kyonna."
 
@@ -1714,17 +1714,17 @@ msgstr "Kikila kya mpandiika"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Nyiga era tambuza okufuna empandiika ennungi"
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Katunni"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Nyiga era tambuza okufuula ekifaananyi akagolokoosi"
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1843,52 +1843,52 @@ msgstr "Langi"
 msgid "Keep Color"
 msgstr "Langi"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
 "Nyiga era tambuza mawusi okutangaaza ebimu ku bitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Nyiga okutangaaza ekifaananyi kyo kyonna"
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Nyiga era tambuza okukwaasa ebimu ku bitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Nyiga okukwaasa ekifaananyi kyo kyonna"
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Nyiga era tambuza okukwaasa ebimu ku bitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "Nyiga okukwaasa ekifaananyi kyo kyonna"
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Nyiga era tambuza mawusi okwogiya ebitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "Nyiga okukwaasa ekifaananyi kyo kyonna"
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1897,7 +1897,7 @@ msgid ""
 msgstr ""
 "Nyiga era tambuza mawusi okugoberera emigo ku bitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1909,7 +1909,7 @@ msgstr ""
 "Nyiga era tambuza mawusi okufuula ebitundu by'ekifaananyi kyo ebyeru ne "
 "langi endala gye weesiimidde"
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1921,7 +1921,7 @@ msgstr ""
 "Nyiga era tambuza mawusi okufuula ebitundu by'ekifaananyi kyo ebyeru ne "
 "langi endala gye weesiimidde"
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1941,11 +1941,11 @@ msgstr "Fiseye"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Nyiga ku kitundu kye kifaananyi kyo okuteekawo fiseye"
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Ekimuli"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "Nyiga era walula okukuba akakonda k'ekimui. Tta okumaliriza ekimuli"
 
@@ -1957,11 +1957,11 @@ msgstr "Enkuula"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Nyiga era walula mawusi okubikka ekifo n'ekyoovu"
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Zinga"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Londa langi y'emabega era nyiga okufuula ensonda z'omuko"
@@ -2007,11 +2007,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2071,28 +2071,28 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "Nyiga era walula okufuula ebitundu by'ekifaananyi kyo ng'ebiri ku TV"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Kifaanagana Kkono/Ddyo"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Kifaanagana Waggulu/Wansi"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Kitangalijja"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2100,7 +2100,7 @@ msgstr ""
 "Nyiga era walula mawusi okukuba ne Bbulaasi ezifaanana mu bukiika ku Kkono "
 "ne Ddyo w'ekifaananyi kyo"
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2108,13 +2108,13 @@ msgstr ""
 "Nyiga era walula mawusi okukuba ne Bbulaasi bbiri ezifaanagana mu bukiika "
 "waggulu ne wansi"
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Nyiga era walula okuzimbulukusa ekifaananyi"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -2127,7 +2127,7 @@ msgstr ""
 "ne Ddyo w'ekifaananyi kyo"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Nyiga era walula mawusi okukuba ne Bbulaasi ezifaanagana"
@@ -2140,13 +2140,13 @@ msgstr "Ekitangala"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Nyiga era walula okuteeka ekitangaala ku kifaananyi kyo"
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "Tangaza"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2177,19 +2177,19 @@ msgstr "Langi Eyekika kyekyuma"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Nyiga era walula mawusi okusiiga ne langi y'ekyuma"
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Endabirwamu"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Kyusa"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Nyiga okufuna ekifaananyi ky'endabirwamu"
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Nyiga okuvuunika ekifaananyi"
 
@@ -2266,25 +2266,25 @@ msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "Nyiga okutobeka ekifaananyi kyo kyonna n'ekitundu ekitalina nzida zeezimu"
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Kigaana"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Nyiga era tambuza mawusi okufuula ekisiige kyo ekigaana"
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Nyiga okuteeka ekisiige kyo mu mbeera egaana "
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2294,7 +2294,7 @@ msgid ""
 "complementary colors."
 msgstr "Nyiga era tambuza mawusi okukyusa langi y'ebitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2483,39 +2483,39 @@ msgstr "Nyiga era walula okukuba obusaale nga bukoleddwa mu buwuzi"
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Nyiga era walula okukuba obusaale nga bukoleddwa mu buwuzi"
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Endabika"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Kuzimbulukusa"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Kuzimbulukusa"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Nyiga mu nsonda era walula w'oyagala ekifaananyi okugaziwa"
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Nyiga okuteeka ekisiige kyo mu mbeera egaana "
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2525,13 +2525,13 @@ msgstr ""
 "Nyiga era walula ng'ozza wa ggulu okuzimbulukusa oba walua ng'ozza wansi "
 "okukendeeza ekifaananyi"
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Nyiga era walula ng'ozza wa ggulu okuzimbulukusa oba walua ng'ozza wansi "
 "okukendeeza ekifaananyi"
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2601,15 +2601,15 @@ msgstr "Nyiga okuteeka ettondo ly'enkuba ku kifaananyi kyo"
 msgid "Click to cover your picture with rain drops."
 msgstr "Nyiga okukweka ekifaananyi kyo n'amatondo g'enkuba"
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Musoke Yenyini"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV Musoke"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2617,11 +2617,11 @@ msgstr ""
 "Nyiga w'oyagala musoke wo atandikire, walula okutuuka woyagala akome, era "
 "tta okukuba musoke"
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2646,19 +2646,19 @@ msgstr "Amayengo"
 msgid "Click to make ripples appear over your picture."
 msgstr "Koona okusiga amayengo ku kyifaananyi"
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Kimui kya Looza"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Pikas0"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Nyiga era tandika okukuba ekimuli kya Looza"
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Osobola okukuba nga bw'okuba Pikaso"
 
@@ -2707,11 +2707,11 @@ msgstr ""
 "Nyiga era teeka wo ekiyenzeyenze kye kifaananyi kyo kyo kyonna mu nzirugavu "
 "n'enjeru"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Fuula"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Nyiga era walula okujjulula ekifaananyi"
 
@@ -2787,11 +2787,11 @@ msgstr "Nyiga okuteeka amakerenda ga muzira mu kifaananyi kyo"
 msgid "Click to add snow flakes to your picture."
 msgstr "Nyiga okuteeka muzira mu kifaananyi kyo"
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2800,19 +2800,19 @@ msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "Nyiga era walula okufuula ebitundu by'ekifaananyi kyo ng'ebiri ku TV"
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Emigo gy'obuwuzi"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Ensonda z'obuwuzi"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "Akawuzi 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2821,11 +2821,11 @@ msgstr ""
 "okuteeka mu enkoloboze ntono oba nyinyi, ku kkono oba ddyo okuteeka mu "
 "ekituli ekinene"
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Nyiga era walula okukuba obusaale nga bukoleddwa mu buwuzi"
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Kuba obusaali bw'obuwuzi nga bulina ensonda ezeetadde"
 
@@ -2888,7 +2888,7 @@ msgstr "Tabika langi"
 msgid "Color & White"
 msgstr "Langi n'enjeru"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2897,11 +2897,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Nyiga era tambuza mawusi okukyusa langi y'ebitundu by'ekifaananyi kyo"
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Nyiga okukyusa langi z'ekifaananyi kyo kyonna"
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2913,7 +2913,7 @@ msgstr ""
 "Nyiga era tambuza mawusi okufuula ebitundu by'ekifaananyi kyo ebyeru ne "
 "langi endala gye weesiimidde"
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr ""
 "Nyiga okufuula ekifaananyi kyo kyonna ekyeru ne langi endala gye weesiimidde"
@@ -2926,11 +2926,11 @@ msgstr "Ddagala lya mannyo"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Nyiga era walula okuteeka eddagala ly'amannyo ku kifaananyi kyo"
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Muyaga"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Nyiga era walula okukuba akasengejja embuyaga mu kifaananyi kyo"
 
@@ -3042,15 +3042,15 @@ msgstr "Nyiga era walula okufuula ebitundu by'ekifaananyi kyo ng'ebiri ku TV"
 msgid "Click to make your picture look like it's on television."
 msgstr "Nyiga okulabisa ekifaananyi kyo ng'ekiri ku TV"
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Mavunya"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "BUVUNYA"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3060,7 +3060,7 @@ msgstr ""
 "amampi, wansi, okufuna amawanvu, kkono agalabika obutono, era ne ku ddyo "
 "okufuna amawanvu"
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3070,22 +3070,22 @@ msgstr ""
 "amampi, wansi, okufuna amawanvu, kkono agalabika obutono, era ne ku ddyo "
 "okufuna amawanvu"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "Langi"
 
-#: ../../magic/src/xor.c:110
+#: ../../magic/src/xor.c:116
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
-msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Nyiga era walula okukuba obusaale nga bukoleddwa mu buwuzi"
 
-#: ../../magic/src/xor.c:112
+#: ../../magic/src/xor.c:118
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Nyiga okutobeka ekifaananyi kyo kyonna"
 
 #~ msgid "Choose the picture you want, then click “Open”."

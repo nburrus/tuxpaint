@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2017-12-17 22:48+0100\n"
 "Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
@@ -1572,11 +1572,11 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Färgväxling"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klicka och dra med musen för att ändra färgen i delar av din bild."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Klicka för att ändra färgerna för hela din bild."
 
@@ -1695,16 +1695,16 @@ msgstr "Kalligrafi"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klicka och dra med musen för att rita med kalligrafipensel."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Seriefigur"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Klicka och dra med musen för att omvandla bilden till en serieteckning!"
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1823,47 +1823,47 @@ msgstr "Xor Färger"
 msgid "Keep Color"
 msgstr "Färger"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild ljusare."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Klicka för att göra hela din bild ljusare."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild mörkare."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Klicka för att göra hela din bild mörkare."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and drag the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild mörkare."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "Klicka för att göra hela din bild mörkare."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and drag the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Klicka och dra med musen för att göra delar av din bild skarpare."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "Klicka för att göra hela din bild mörkare."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1871,7 +1871,7 @@ msgid ""
 "match the chosen color."
 msgstr "Klicka och dra med musen för att spåra kanterna i delar av din bild."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn parts of your picture into white "
@@ -1883,7 +1883,7 @@ msgstr ""
 "Klicka och dra med musen för att göra delar av din bild till vit samt en "
 "färg som du själv väljer."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn parts of your picture into white "
@@ -1895,7 +1895,7 @@ msgstr ""
 "Klicka och dra med musen för att göra delar av din bild till vit samt en "
 "färg som du själv väljer."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn parts of your picture into white "
@@ -1915,11 +1915,11 @@ msgstr "Fisköga"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Klicka på en del av din bild för att skapa en fisköga-effekt."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Blomma"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Klicka och dra för att rita blommans stjälk. Släpp för att göra färdigt "
@@ -1933,11 +1933,11 @@ msgstr "Skum"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klicka och dra för att täcka området med bubblor."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Vik"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Välj en bakgrundsfärg och klicka för att vika över hörnet av sidan."
@@ -1980,11 +1980,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2041,28 +2041,28 @@ msgid ""
 msgstr ""
 "Klicka och dra för att få delar av din bild att se ut som om de är på TV."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Symmetrisk vänster/höger"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Symmetrisk upp/ner"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Mönster"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Plattor"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2070,7 +2070,7 @@ msgstr ""
 "Klicka och dra med musen för att rita med två penslar som är symmetriska på "
 "vänster och höger sida av din bild."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2078,11 +2078,11 @@ msgstr ""
 "Klicka och dra med musen för att rita med två penslar som är symmetriska "
 "över och under din bild."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Klicka och dra med musen för att rita ett mönster över bilden."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -2091,7 +2091,7 @@ msgstr ""
 "bilden."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2106,13 +2106,13 @@ msgstr "Ljus"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Klicka och dra för att rita en ljusstråle på bilden."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "Ljusare"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2143,19 +2143,19 @@ msgstr "Metall"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klicka och dra med musen för att rita med metallfärg."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Spegla"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Vänd"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Klicka för att skapa en spegelbild."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Klicka för att vända bilden upp-och-ner."
 
@@ -2218,23 +2218,23 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klicka för att lägga en oregelbunden mosaik till hela bilden."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Negativ"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Klicka och dra med musen för att skapa ett negativ av din bild."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Klicka för att göra om bilden till ett negativ."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to change the color of parts of your "
@@ -2244,7 +2244,7 @@ msgid ""
 "complementary colors."
 msgstr "Klicka och dra med musen för att ändra färgen i delar av din bild."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2432,39 +2432,39 @@ msgstr "Klicka och dra för att rita repetitiva mönster. "
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Klicka och dra för att rita repetitiva mönster. "
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Perspektiv"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Zooma"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Zooma"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klicka på hörnen och dra där du vill att sträcka bilden."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klicka för att göra om bilden till ett negativ."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2474,13 +2474,13 @@ msgstr ""
 "Klicka och dra uppåt för att zooma in eller dra nedåt för att zooma ut "
 "bilden."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Klicka och dra uppåt för att zooma in eller dra nedåt för att zooma ut "
 "bilden."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2550,15 +2550,15 @@ msgstr "Klicka för att placera ut en regndroppe på din bild."
 msgid "Click to cover your picture with rain drops."
 msgstr "Klicka för att täcka din bild med regndroppar."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Riktig regnbåge"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROGGBIV Regnbåge"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2566,11 +2566,11 @@ msgstr ""
 "Klicka där du vill att din regnbåge ska börja, dra dit du vill att den ska "
 "sluta och släpp sedan knappen för att rita en regnbåge."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -2597,19 +2597,19 @@ msgstr "Krusningar"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klicka för att skapa krusningar på bilden."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Rosett"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Klicka och börja rita din rosett."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Du kan rita precis som Picasso!"
 
@@ -2649,11 +2649,11 @@ msgstr "Klicka och dra med musen för att skapa en svartvit silhuett."
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Klicka för att skapa en svartvit silhuett av hela din bild."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Flytta"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Klicka och dra för att flytta runt bilden."
 
@@ -2725,11 +2725,11 @@ msgstr "Klicka för att lägga till snöbollar till din bild."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klicka för att lägga till snöflingor till din bild."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2739,19 +2739,19 @@ msgid ""
 msgstr ""
 "Klicka och dra för att få delar av din bild att se ut som om de är på TV."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Trådtavla (kanter)"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Trådtavla (hörnor)"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "Trådtavla 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2759,11 +2759,11 @@ msgstr ""
 "Klicka och dra för att rita trådtavlor. Dra upp och ned för att ändra "
 "antalet trådar, vänster och höger för att göra hålet större."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Klicka och dra för att rita trådtavlor i form av pilar."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr ""
 "Klicka och dra för att rita trådtavlor i form av pilar med valfria vinklar."
@@ -2829,16 +2829,16 @@ msgstr "Tona"
 msgid "Color & White"
 msgstr "Färg och vitt"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klicka och dra med musen för att ändra färgen i delar av din bild."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Klicka för att ändra färgen för hela din bild."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
@@ -2846,7 +2846,7 @@ msgstr ""
 "Klicka och dra med musen för att göra delar av din bild till vit samt en "
 "färg som du själv väljer."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Klicka för att göra hela din bild till vitt och en färg du väljer."
 
@@ -2858,11 +2858,11 @@ msgstr "Tandkräm"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klicka och dra för att spruta tandkräm på din bild."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Tornado"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klicka och dra för att rita en tornado  på din bild."
 
@@ -2975,15 +2975,15 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Klicka för att få din bild att se ut som om den var på tv."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Vågor"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Små vågor"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2993,7 +2993,7 @@ msgstr ""
 "vågor, långt ner för högre vågor, till vänster för små vågor och till höger "
 "för långa vågor."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3003,16 +3003,20 @@ msgstr ""
 "vågor, långt ner för högre vågor, till vänster för små vågor och till höger "
 "för långa vågor."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "Xor Färger"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Klicka och dra för att applicera en XOR-effekt"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Klicka för att applicera en XOR-effekt på hela bilden"
 
 #~ msgid "Choose the picture you want, then click “Open”."

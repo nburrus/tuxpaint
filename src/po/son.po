@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint-Songhay\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2023-04-20 15:29+0200\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Songhay Localization Team\n"
@@ -1636,11 +1636,11 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Noone bere"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Naagu ka ncaŋoo nor ka ni biyoo dooyaŋ noonawey barmay."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Naagu ka bii timmantaa noonawey barmay."
 
@@ -1746,15 +1746,15 @@ msgstr "Kalamhantum"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Naagu nda ncaŋoo nor biyoo bande ka kalamhantum bii zeeri."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Biifeelaga"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Naagu nda ncaŋoo nor biyoo bande k'a bere k'a tee filla biifeelaga."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Naagu ka biyoo bere k'a tee filla biifeelaga."
 
@@ -1858,52 +1858,52 @@ msgstr "Noone kaa"
 msgid "Keep Color"
 msgstr "Noone gaabu"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Naagu ka ncaŋoo nor ka ni biyoo dooyaŋ kaarandi."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Naagu ka biyoo kul henanandi."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Naagu nda ncaŋoo nor ka ni biyoo dooyaŋ kubandi."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Naagu ka ni bii timmantaa kubandi."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Naagu nda ncaŋoo nor ka ni biyoo dooyaŋ doonandi."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 msgid "Click to desaturate your entire picture."
 msgstr "Naagu ka ni biyoo kul doonandi."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Naagu nda ncaŋoo nor ka ni biyoo dooyaŋ tiŋandi."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 msgid "Click to saturate your entire picture."
 msgstr "Naagu ka ni bii timmantaa tiŋandi."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
 msgstr ""
 "Naagu nda ncaŋoo nor ka ni bii timmantaa doonandi ka hima noone suubantaa."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
 msgstr "Naagu ka ni bii dogey kul doonandi, kaŋyaŋ ga hima noone suubantaa."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
@@ -1911,7 +1911,7 @@ msgstr ""
 "Naagu nda ncaŋoo nor ka ni bii dogey kul doonandi, kaŋyaŋ si hima noone "
 "suubantaa."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
@@ -1925,11 +1925,11 @@ msgstr "Hamiisamoo"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Doo suuba ni biyoo ra k'a tee sanda hamiisamoo."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Kutukurya"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "Naagu ka nor ka zayra boosu zeeri. A taŋ ka kutukuryaa benandi."
 
@@ -1941,11 +1941,11 @@ msgstr "Kufu"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Naagu nda ncaŋoo nor ka nungoo too nda kufu bulbulyaŋ."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Taabu"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Bandafaari noone suuba, de m'a naagu ka tiiraa ceraa bere."
@@ -1986,11 +1986,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr "Guli moɲey"
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2034,28 +2034,28 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "Ni biyoo naagu nd'a nor-nor k'a ka guna sanda noonehoobu ra!"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Tenjante kanbe wow/guma"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Tenjante beene/ganda"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Noonekur"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Ferawizey"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Noonehoobu"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2063,7 +2063,7 @@ msgstr ""
 "Ncaŋoo naagu k'a nor ka zeeri nda caaraykalam hinka kaŋ ga tenji nda cere ni "
 "biyoo gamoo ra kanbe wow nd'iguma here."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2071,11 +2071,11 @@ msgstr ""
 "Ncaŋoo naagu k'a nor ka zeeri nda caaraykalam hinka kaŋ ga tenji nda cere ni "
 "biyoo gamoo ra beene nda ganda."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Naagu nda caŋoo nor ka noonekur zeeri ka biyoo gaaru."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -2083,7 +2083,7 @@ msgstr ""
 "Naagu nda ncaŋoo nor ka noonekur zeeri kaŋ ga tee sasawante biyoo gamoo ra."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2097,11 +2097,11 @@ msgstr "Denji"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Naagu nda nor ka denji-ize zeeri ni biyoo ga."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 msgid "Lightning"
 msgstr "Meli"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "Naagu, nor nda naŋ, ka melikaryan zeeri tonbi hinka game ra."
 
@@ -2125,19 +2125,19 @@ msgstr "Guuru caaray"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Naagu ka ncaŋoo nor ka guuru noone foo ka caaray."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Diji"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Gum"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Naagu ka diji bii tee."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Naagu ka biyoo gum ka koy ganda."
 
@@ -2193,23 +2193,23 @@ msgstr "Naagu ka ncaŋoo nor ka tarma cerehooyante tonton ni biyoo dooyaŋ ga."
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Naagu ka tarma cerehooyante tonton ni bii timmantaa ga."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Bii-biyya"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr "Nkuway"
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Naagu nda ncaŋoo nor ni biyoo bande ka ni caaraa tee bii-biyya."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Naagu ka ni caaraa bere k'a tee bii-biyya."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
@@ -2217,7 +2217,7 @@ msgstr ""
 "Naagu ka ncaŋoo nor biyoo bande ka ngey noonawey barmay nkuwawey ga -- ngey "
 "noone tontoney."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2406,35 +2406,35 @@ msgstr "Naagu nda nor ka noonekur fillanteyaŋ zeeri."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Naagu nda nor ka noonekur fillanteyaŋ zeeri."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Honnayyan"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr "Feddey"
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 msgid "Tile Zoom"
 msgstr "Feraw beerandiyan"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Beerandiyan"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr "Cahãri"
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Lokey naagu k'i nor nungu kaŋ here n ga baa ma biyoo yobu."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Naagu ka biyoo bere k'a tee ihinka-hinka feddiyaŋ."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
@@ -2442,11 +2442,11 @@ msgstr ""
 "Naagu nda nor beene ka biyoo manandi. Cendi ganda k'a moorandi nda k'a tee "
 "canbu bii."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "Naagu nda nor beene ka biyoo manandi wala ganda k'a moorandi."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
 "Naagu nda cendi beene ka biyoo dam nda cahãri wala ganda k'a kaataray nda "
@@ -2510,15 +2510,15 @@ msgstr "Naagu ka ncirɲi loti doori ni biyoo boŋ."
 msgid "Click to cover your picture with rain drops."
 msgstr "Naagu ka ni biyoo kul kakasu nda ncirɲi lotiyaŋ."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Beene dobo cimi"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "Beene dobo noonawey"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2526,11 +2526,11 @@ msgstr ""
 "Naagu nungu kaŋ n ga baa ni beene dobaa ma sintin, nor nungoo  here kaŋ n ga "
 "baa a ma ben, nda m'a naŋ ka beene dobo zeeri."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr "Asuura"
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr ""
 "Naagu nda ncaŋoo nor-nor ka nereri tonton ni biyoo ga. naagu m'a kuubi ka "
@@ -2554,19 +2554,19 @@ msgstr "Bonday-izey"
 msgid "Click to make ripples appear over your picture."
 msgstr "Naagu ka bonday-izeyaŋ bangandi ni biyoo boŋ."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Fita hiiri"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Pikaaso"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Naagu ne ka fita hiiri zeeri."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "N ga hin ka bii tee sanda Pikaaso!"
 
@@ -2606,11 +2606,11 @@ msgstr "Naagu nda ncaŋoo nor ka bii bibi nd'ikaaray tee."
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Naagu ka bii bibi nd'ikaaray tee ni zeeri-bii timmantaa se."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Bere"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Naagu nda nor ka ni biyoo bere korfuroo bande."
 
@@ -2682,28 +2682,28 @@ msgstr "Naagu ka nez hamni tonton ni biyoo ga."
 msgid "Click to add snow flakes to your picture."
 msgstr "Naagu ka nez hamni tonton ni biyoo ga."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr "Cendi"
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "Naagu nda nor ka ni biyoo doo foo cendi kuuroo wala hayroo bande."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Tenjiri jesey"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Tenjiri loku"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "'V' tenjiri"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2711,11 +2711,11 @@ msgstr ""
 "Naagu nda nor ka tenjiri kanbateeri zeeri. Cendi beene ka zunbu ka zebu wala "
 "ka zeeriyaŋ tonton, kanbe wow wal'iguma guusu beeri se."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Naagu nda nor ka birawyaŋ tee nda tenjiri kanbateeri."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Tenjiri kanbateeri birawyaŋ zeeri nda kanje feeranteyaŋ."
 
@@ -2761,23 +2761,23 @@ msgstr "Dawa"
 msgid "Color & White"
 msgstr "Noone bibi nd’ikaaray"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Naagu ka ncaŋoo nor-nor ka ni biyoo dooyaŋ noonaa barmay."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Naagu ka ni bii timmantaa noonaa barmay."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Naagu nda nor ka ni biyoo dooyaŋ k'i tee ikaaray nda noonaa kaŋ n g'a suuba."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Naagu ka ni biyoo kul bere k'a tee ikaaray nda noone kaŋ n g'a suuba."
 
@@ -2789,11 +2789,11 @@ msgstr "Kossi doonu"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Naagu nda nor ka kossi doonu firsi ni biyoo ga."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Hewkur"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Naagu nda nor ka hewkur nsuufay zeeri ni biyoo ga."
 
@@ -2905,15 +2905,15 @@ msgstr "Naagu nda nor ka ni biyoo dooyaŋ himandi sand'i goo telewizon ra."
 msgid "Click to make your picture look like it's on television."
 msgstr "Naagu ka biyoo himandi sand'a goo telewizoŋ ra."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Bondaway"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Bondayzey"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2923,7 +2923,7 @@ msgstr ""
 "ganda here ibeeriyaŋ se, kanbe wow bonday beeriyaŋ se, kanbe guma ga bonday "
 "kukuyaŋ se."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -2933,16 +2933,20 @@ msgstr ""
 "ganda bonday beeriyaŋ se, kanbe wow ga bonday kaccuyaŋ se, nd'iguma ga "
 "bonday kukuyaŋ se."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "Xor noonawey"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Naagu nda cendi ka XOR kanbe zeeri"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Naagu ka biyoo kul zeeri nda XOR alhaali"
 
 #~ msgid "New Breed Software et al."

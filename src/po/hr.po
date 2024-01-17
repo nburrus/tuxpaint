@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2017-12-26 10:53+0100\n"
 "Last-Translator: Paulo Pavačić <pavacic.p@gmail.com>\n"
 "Language-Team: none\n"
@@ -1566,11 +1566,11 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Promjena boja"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klikni i pomakni miš da promijeniš boje na dijelovima svoga crteža."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Klikni za promjenu boje u cijelom crtežu."
 
@@ -1687,15 +1687,15 @@ msgstr "Ručno pisanje"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klikni i pomakni miš za ručno pisanje."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Animirani film"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klikni i pomakni miš da načiniš animirani film od slike."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1814,47 +1814,47 @@ msgstr "Xor Boje"
 msgid "Keep Color"
 msgstr "Boje"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klikni i pomakni miš da osvijetliš dijelove slike."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Klikni da osvjetliš cijelu sliku."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klikni i pomakni miš da zatamniš dijelove slike."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Klikni da zatamniš cijelu sliku."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and drag the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Klikni i pomakni miš da zatamniš dijelove slike."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "Klikni da zatamniš cijelu sliku."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and drag the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Klikni i pomakni miš da izoštriš dijelove svoje slike."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "Klikni da zatamniš cijelu sliku."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and drag the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1862,7 +1862,7 @@ msgid ""
 "match the chosen color."
 msgstr "Klikni i pomakni miš da pratiš kutove na dijelovima tvoje slike."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn parts of your picture into white "
@@ -1873,7 +1873,7 @@ msgid ""
 msgstr ""
 "Klikni i pomakni miš da obojiš dijelove slike u bijelo ili boju prema izboru."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn parts of your picture into white "
@@ -1884,7 +1884,7 @@ msgid ""
 msgstr ""
 "Klikni i pomakni miš da obojiš dijelove slike u bijelo ili boju prema izboru."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to turn parts of your picture into white "
@@ -1903,11 +1903,11 @@ msgstr "Oko"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Klikni na dijelu svoje slike za primjenjivanje efekta oko."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Cvijet"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "Klikni i povuci da nacrtaš stabljiku. Pusti da dovršiš cvijet."
 
@@ -1919,11 +1919,11 @@ msgstr "Pjena"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klikni i pomakni miš da ispuniš te djelove crteža s balončićima."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Presavi"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Odaberi pozadinsku sliku i klikni da presaviš kut stranice."
@@ -1966,11 +1966,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2028,28 +2028,28 @@ msgstr ""
 "Klikni i pomakni miš da napraviš da dijelovi slike izgledaju kao da jena "
 "televizoru."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Simetrično Lijevo/Desno"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Simetrično Gore/Dolje"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Uzorak"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Pločice"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2057,7 +2057,7 @@ msgstr ""
 "Klikni i pomakni miš za crtanje s dva kista koji crtaju simetrično s lijeve "
 "idesne strane"
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2065,18 +2065,18 @@ msgstr ""
 "Klikni i pomakni miš za crtanje s dva kista koji crtaju simetrično s gornje "
 "idoljnje strane"
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Klikni i pomakni miš za crtanje uzorka preko slike"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "Klikni i povuci miš za crtanje uzorka i njegove simetrije preko slike"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Klikni i povuci miš za crtanje s simetričnim kistovima (kaleidoskop)."
@@ -2089,13 +2089,13 @@ msgstr "Svijetlo"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Klikni i pomakni miš za crtanje zrake svijetlosti na tvojoj slici."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "Osvjetli"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2126,19 +2126,19 @@ msgstr "Boja metala"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klikni i pomakni miš za crtanje s metalnom bojom.."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Ogledalo"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Okreni"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Klikni za zrcaljenje tvoje slike."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Klikni da preokreneš crtež naopako."
 
@@ -2198,23 +2198,23 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klikni da dodaš nepravilan mozaik na cijelu sliku."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Negativ"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Klikni i pomakni miš da napraviš negativ svoje slike."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Klikni da pretvoriš sliku u negativ. "
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse around to change the color of parts of your "
@@ -2224,7 +2224,7 @@ msgid ""
 "complementary colors."
 msgstr "Klikni i pomakni miš da promijeniš boju na dijelovima svoje slike."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2411,39 +2411,39 @@ msgstr "Klikni i pomakni miš za crtanje ponavljajućih redoslijeda uzorka."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Klikni i pomakni miš za crtanje ponavljajućih redoslijeda uzorka."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Perspektiva"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "Zumiraj"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Zumiraj"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klikni na kutove i povuci u smjeru gdje želiš proširiti sliku."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klikni da pretvoriš sliku u negativ. "
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2452,12 +2452,12 @@ msgid ""
 msgstr ""
 "Klikni i pomakni miš gore da zumiraš ili pomakni miš dolje da odaljiš sliku"
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Klikni i pomakni miš gore da zumiraš ili pomakni miš dolje da odaljiš sliku"
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2526,15 +2526,15 @@ msgstr "Klikni da smjestiš kišnu kap na sliku."
 msgid "Click to cover your picture with rain drops."
 msgstr "Klikni da prekriješ cijeli svoj crtež s kišnim kapima."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Prava duga"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "Posebna vrsta Duge"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2542,11 +2542,11 @@ msgstr ""
 "Klikni gdje želiš da započne duga, povuci do mjesta gdje želiš da završavai "
 "nakon toga pusti da nacrtaš dugu."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to add a mosaic effect to parts of your picture."
@@ -2571,19 +2571,19 @@ msgstr "Valovi"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klikni da valovi prekriju sliku."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Ruža"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Pikaso"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Klikni miš i započni crtati ružu."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Možeš crtati kao mali Picasso!"
 
@@ -2623,11 +2623,11 @@ msgstr "Klikni i pomakni miš da stvoriš crnu i bijelu sjenku."
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Klikni da stvoriš crnu i bijelu sjenku na cijeloj svojoj slici. "
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Promijeni"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Klikni i pomakni miš da prebaciš sliku na platno."
 
@@ -2699,11 +2699,11 @@ msgstr "Klikni da dodaš grude snijega na sliku."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klikni da dodaš pahuljice na sliu.."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2714,19 +2714,19 @@ msgstr ""
 "Klikni i pomakni miš da napraviš da dijelovi slike izgledaju kao da jena "
 "televizoru."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Niz rubova"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Niz kutova"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "Niz 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2735,11 +2735,11 @@ msgstr ""
 "danacrtaš više ili manje linija. Povuci lijevo ili desno da napraviš veću "
 "rupu. "
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Klikni i pomakni miš da nacrtaš strijele napravljene od niza."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Crtaj strijele napravljene s svojevoljnim kutovima."
 
@@ -2806,23 +2806,23 @@ msgstr "Nijansa"
 msgid "Color & White"
 msgstr "Boja & Bijela"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klikni i pomakni miš da promijeniš boju na dijelovima svoje slike."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Klikni i pomakni miš da promijeniš boju na cijeloj slici."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr ""
 "Klikni i pomakni miš da obojiš dijelove slike u bijelo ili boju prema izboru."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Klikni da obojaš cijelu sliku u bijelo ili boju prema izboru."
 
@@ -2834,11 +2834,11 @@ msgstr "Pasta za zube"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klikni i pomakni miš da izabciš zubnu pastu na dijelove slike."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Tornado"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klikni i pomakni miš da nacrtaš tornado lijevak na sliku."
 
@@ -2952,15 +2952,15 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Klikni da napraviš da tvoja slika izgleda kao da je na televizoru."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Valovi"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Mali valovi"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2969,7 +2969,7 @@ msgstr ""
 "Klikni da napraviš sliku horizontalno namreškanu. Klikni prema vrhu zakraće "
 "valove, dno za više valove, lijevo za niže valove i desno za duge valove"
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -2978,16 +2978,20 @@ msgstr ""
 "Klikni da napraviš sliku vertikalno namreškanu. Klikni prema vrhu zakraće "
 "valove, dno za više valove, lijevo za niže valove i desno za duge valove"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "Xor Boje"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Klikni i pomakni miš za crtanje XOR efekta."
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Klikni da primijeniš XOR efekt na cijelu sliku."
 
 #~ msgid "Choose the picture you want, then click “Open”."

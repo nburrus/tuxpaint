@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -1572,14 +1572,14 @@ msgstr ""
 msgid "Color Shift"
 msgstr "നിറം മാറ്റാം"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "നിങ്ങളുടെ ചിത്രത്തിന്റെ ഒരു ഭാഗത്ത് നിറം മാറ്റാന്‍ മൗസിന്റെ ഇടതു ബട്ടണ്‍ അമര്‍ത്തുക"
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "നിങ്ങളുടെ ചിത്രത്തിന്റെ നിറം മാറ്റാനായി ബട്ടണ്‍ അമര്‍ത്തുക."
 
@@ -1712,17 +1712,17 @@ msgstr "കാലിഗ്രാഫി"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "കാലിഗ്രാഫിക്ക് ചുറ്റും വരയ്കാനായി മൗസില്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "കാര്‍ട്ടൂണ്‍."
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "ചിത്രം കാര്‍ട്ടൂണ്‍ ആക്കിമാറ്റുവാനായി മൗസ് ചിത്രത്തില്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1841,51 +1841,51 @@ msgstr "എക്സോർ നിറങ്ങള്‍"
 msgid "Keep Color"
 msgstr "നിറങ്ങള്‍"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "ചിത്രത്തെ ഇളം നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക.."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ ഇളം നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "ചിത്രത്തെ കടും നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ കടും നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "ചിത്രത്തെ കടും നിറമാക്കാന്‍ മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിക്കുക."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ കടും നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "ചിത്രത്തിന്റെ ഭാഗങ്ങള്‍ കൃത്യതയുള്ളതാക്കാന്‍ മൗസില്‍ അമര്‍ത്തി നീക്കുക"
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "ചിത്രം മുഴുവന്‍ കടും നിറമാക്കാന്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1893,7 +1893,7 @@ msgid ""
 "match the chosen color."
 msgstr "ചിത്രത്തിന്റെ  അരിക് വ്യക്തമാക്കാന്‍ മൗസിനെ ചലിപ്പിക്കുകയും അമര്‍ത്തുകയും  ചെയ്യുക"
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1905,7 +1905,7 @@ msgstr ""
 "നിങ്ങള്‍ നിശ്ചയിക്കുന്ന ചിത്രത്തിന്റെ ഒരു ഭാഗം വെളുത്തതോ മറ്റു നിറമോ ആക്കി മാറ്റുവാന്‍ മൗസ് "
 "അമര്‍ത്തി നീക്കുക"
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1917,7 +1917,7 @@ msgstr ""
 "നിങ്ങള്‍ നിശ്ചയിക്കുന്ന ചിത്രത്തിന്റെ ഒരു ഭാഗം വെളുത്തതോ മറ്റു നിറമോ ആക്കി മാറ്റുവാന്‍ മൗസ് "
 "അമര്‍ത്തി നീക്കുക"
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1937,11 +1937,11 @@ msgstr "മീന്‍കണ്ണ്"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "മീന്‍കണ്ണിന്റെ ചാരുത ലഭിക്കാനായി ചിത്രത്തിലെ നിശ്ചിതഭാഗത്ത് അമര്‍ത്തുക."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "പൂവ്"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "പൂവും തണ്ടും വരയ്ക്കുന്നതിനായി മൗസ് വലിച്ചമര്‍ത്തുക."
 
@@ -1953,11 +1953,11 @@ msgstr "പത"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "പതയുടെ കുമിള കൊണ്ട് പൊതിയുന്നതിനായി മൗസ് വലിച്ചമര്‍ത്തുക."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "മടക്കുക"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "ഒരു പശ്ചാത്തല നിറം തിരഞ്ഞടുത്ത് അമര്‍ത്തിയാല്‍ പേജിന്റെ മൂല ഉയര്‍ന്നു വരും."
@@ -2000,11 +2000,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2062,28 +2062,28 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "ടെലിവിഷനില്‍ കാണുന്നതുപോലെ നിങ്ങളുടെ ചിത്രത്തെ മാറ്റാന്‍ മൗസിലമര്‍ത്തി വലിക്കുക."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "ചേര്‍ച്ചയുള്ള ഇടതു/വലതു"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "ചേര്‍ച്ചയുള്ള മുകള/താഴെ"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "പാറ്റേൺ"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "ടൈലുകൾ"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "കാലിഡോസ്കോപ്പ്"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2091,7 +2091,7 @@ msgstr ""
 "ചിത്രത്തിന്റെ ഇടതും വലതും ഒരു പോലെയുളള രന്ടു ബ്രഷ് ഉപയൊഗിചു വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ "
 "അമര്‍ത്തിവലിക്കുക"
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2099,11 +2099,11 @@ msgstr ""
 "ചിത്രത്തിന്റെ മുകളും താഴെയും ഒരു പോലെയുളള രന്ടു ബ്രഷ് ഉപയൊഗിചു വരക്കുന്നതിനായി മൗസ് ബട്ടന്‍ "
 "അമര്‍ത്തിവലിക്കുക"
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "ചിത്രത്തിലുടനീളം പാറ്റേൺ ലഭിക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw a pattern plus its symmetric across the "
@@ -2116,7 +2116,7 @@ msgstr ""
 "അമര്‍ത്തിവലിക്കുക"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2130,13 +2130,13 @@ msgstr "പ്രകാശം"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "ചിത്രത്തില്‍ ഒരു പ്രകാശരശ്മി വരയ്ക്കാനായി മൗസ്  അമര്‍ത്തിവലിക്കുക."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "ഇളം നിറം"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2167,19 +2167,19 @@ msgstr "ലോഹപെയിന്റ്"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "ചിത്രത്തില്‍ ലോഹപെയിന്റ് കൊണ്ട് നിറം നല്‍കാനായി മൗസ് അമര്‍ത്തിവലിക്കുക."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "കണ്ണാടി"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "തിരിക്കുക"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "ബിംബചിത്ര നിര്‍മാണത്തിന് അമര്‍ത്തുക."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "ചിത്രത്തെ തലകീഴായി മറിക്കുന്നതിന് അമര്‍ത്തുക"
 
@@ -2250,25 +2250,25 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "ക്രമരഹിത മൊസൈക്ക് വരയ്ക്കാനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "വിപരീതരൂപം"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിവലിച്ചാല്‍ ചിത്രത്തെ വിപരീതരൂപത്തിലാക്കാനാവും."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "ചിത്രത്തെ വിപരീതരൂപത്തിലാക്കാനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2278,7 +2278,7 @@ msgid ""
 "complementary colors."
 msgstr "ചിത്രത്തിന്റെ നിശ്ചിത ഭാഗത്തിന്റെ നിറം മാറ്റുവാന്‍ മൗസ് ക്ലിക്ക് ചെയ്ത് നീക്കുക."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2467,39 +2467,39 @@ msgstr "ഒരേപോലുള്ള പാറ്റേൺ ലഭിക്ക�
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "ഒരേപോലുള്ള പാറ്റേൺ ലഭിക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "ദൃശ്യം"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "വലുതാക്കുക."
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "വലുതാക്കുക."
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "ചിത്രത്തിന്റെ മൂലകളില്‍ അമര്‍ത്തിവലിച്ചാല്‍ അതിനെ വലുതാക്കാനാവും."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "ചിത്രത്തെ വിപരീതരൂപത്തിലാക്കാനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2508,12 +2508,12 @@ msgid ""
 msgstr ""
 "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രം വലുതാക്കുകയും ചെറുതാക്കുകയും ചെയ്യാം."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "മൗസ് ബട്ടണ്‍ അമര്‍ത്തിപ്പിടിച്ച് കൊണ്ട് ചലിപ്പിച്ചാല്‍ ചിത്രം വലുതാക്കുകയും ചെറുതാക്കുകയും ചെയ്യാം."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2582,15 +2582,15 @@ msgstr "മഴത്തുള്ളി വരയ്ക്കാന്‍ അമ�
 msgid "Click to cover your picture with rain drops."
 msgstr "മഴത്തുള്ളികള്‍ കൊണ്ട് മൂടാന്‍ അമര്‍ത്തുക."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "തനി മഴവില്ല്"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV മഴവില്ല്"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2598,11 +2598,11 @@ msgstr ""
 "മഴവില്ല് വരച്ചുതുടങ്ങേണ്ട സ്ഥലത്ത് അമര്‍ത്തുക, ആവശ്യമുള്ള സ്ഥലങ്ങളിലേക്ക് മൗസ് നീക്കുക, അമര്‍ത്തല്‍ "
 "അവസാനിപ്പിക്കുക. "
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2627,19 +2627,19 @@ msgstr "ഓളങ്ങള്‍"
 msgid "Click to make ripples appear over your picture."
 msgstr "ചിത്രത്തില്‍ ഓളങ്ങള്‍ വരയ്ക്കുന്നതിനായി അമര്‍ത്തുക."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "റോസെറ്റെ"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "പിക്കാസൊ"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "മൗസ് അമര്‍ത്തി റോസെറ്റെ വരയ്ക്കാന്‍ തുടങ്ങൂ."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "നിങ്ങള്‍ക്ക് പിക്കാസോയെ പോലെ വരയ്ക്കാം"
 
@@ -2685,11 +2685,11 @@ msgstr "കറുപ്പും വെള്ളയും കലര്‍ന്�
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "മുഴുവന്‍ ചിത്രത്തിലും കറുപ്പും വെള്ളയും കലര്‍ന്ന നിഴലുണ്ടാക്കുവാന്‍ അമര്‍ത്തുക"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "നീക്കാം"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "ക്യാന്‍​വാസിലേയ്ക്ക് ചിത്രം മാറ്റുവാന്‍ മൗസില്‍ അമര്‍ത്തി വലിക്കുക"
 
@@ -2765,11 +2765,11 @@ msgstr "ചിത്രത്തില്‍ മഞ്ഞുണ്ടകള്�
 msgid "Click to add snow flakes to your picture."
 msgstr "ചിത്രത്തില്‍ മഞ്ഞ് വിതറാന്‍ അമര്‍ത്തുക"
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2778,29 +2778,29 @@ msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "ടെലിവിഷനില്‍ കാണുന്നതുപോലെ നിങ്ങളുടെ ചിത്രത്തെ മാറ്റാന്‍ മൗസിലമര്‍ത്തി വലിക്കുക."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "നൂല്‍രൂപങ്ങള്‍ കൊണ്ടുള്ള വക്കുകള്‍"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "നൂല്‍രൂപങ്ങള്‍  കൊണ്ടുള്ള മൂലകള്‍"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "നൂല്‍രൂപങ്ങള്‍ കൊണ്ടുള്ള V"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr "നൂല്‍രൂപങ്ങള്‍ വരയ്ക്കാന്‍ വേണ്ടി മൗസ് ക്ലിക്കുചെയ്ത്  വലിക്കുക. "
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "നൂല്‍രൂപങ്ങളെ കൊണ്ട് അമ്പുകള്‍ വരയ്ക്കുന്നതിന് ക്ലിക്കുചെയ്ത് വലിക്കുക "
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "നൂല്‍രൂപങ്ങളെ കൊണ്ട്  സ്വതന്തൃമായ കോണങ്ങളുള്ള അമ്പുകള്‍ വരയ്ക്കുന്നതിന് ക്ലിക്കുചെയ്ത് വലിക്കുക"
 
@@ -2863,7 +2863,7 @@ msgstr "നിഴലിപ്പ്"
 msgid "Color & White"
 msgstr "നിറവും വെള്ളയും"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2872,11 +2872,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "ചിത്രത്തിന്റെ നിശ്ചിത ഭാഗത്തിന്റെ നിറം മാറ്റുവാന്‍ മൗസ് ക്ലിക്ക് ചെയ്ത് നീക്കുക."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "മുഴുവന്‍ ചിത്രത്തിന്റെയും നിറം മാറ്റാന്‍ അമര്‍ത്തുക"
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2888,7 +2888,7 @@ msgstr ""
 "നിങ്ങള്‍ നിശ്ചയിക്കുന്ന ചിത്രത്തിന്റെ ഒരു ഭാഗം വെളുത്തതോ മറ്റു നിറമോ ആക്കി മാറ്റുവാന്‍ മൗസ് "
 "അമര്‍ത്തി നീക്കുക"
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "മൗസില്‍ അമര്‍ത്തിയാല്‍ നിങ്ങളുടെ ചിത്രത്തെ വെളുത്തതോ തിരഞ്ഞെടുക്കുന്ന നിറത്തിലോ മാറ്റാം."
 
@@ -2900,11 +2900,11 @@ msgstr "ടൂത്ത്പേസ്റ്റ്"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "നിങ്ങളുടെ ചിത്രത്തില്‍ ടൂത്ത്പേസ്റ്റ് തെറിപ്പിയ്ക്കാന്‍ ക്ലിക്ക് ചെയ്ത് വലിയ്ക്കുക"
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "ചുഴലിക്കാറ്റ്"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "ചിത്രത്തില്‍ ചുഴലിക്കാറ്റ് വരയ്ക്കാന്‍ ക്ലിക്ക് ചെയ്ത് വലിയ്ക്കുക"
 
@@ -3016,15 +3016,15 @@ msgstr "ടെലിവിഷനില്‍ കാണുന്നതുപോ�
 msgid "Click to make your picture look like it's on television."
 msgstr "നിങ്ങളുടെ ചിത്രം ടി. വിയില്‍ കാണുന്നതുപോലെയാക്കാന്‍ ക്ലിക്കുചെയ്യുക"
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "തിരകള്‍"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "തിരമാലകള്‍"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3034,7 +3034,7 @@ msgstr ""
 "മുകളിലേക്ക് ക്ലിക്കുചെയ്യുക, വലിയ തിരകള്‍ക്ക് താഴേക്കും, ചെറിയതിരകള്‍ക്ക് ഇടത്തേക്കും, നീളം കൂടിയ "
 "തിരകള്‍ക്ക് വലത്തോട്ടും ക്ലിക്കുചെയ്യുക."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3044,16 +3044,20 @@ msgstr ""
 "ക്ലിക്കുചെയ്യുക, ഉയരം കൂടിയ തിരകള്‍ക്ക് താഴേക്കും, ചെറിയ തിരകള്‍ക്ക് ഇടത്തേക്കും, നീളം കൂടിയ "
 "തിരകള്‍ക്ക് വലത്തോട്ടും ക്ലിക്കുചെയ്യുക."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "എക്സോർ നിറങ്ങള്‍"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "എക്സോർ പ്രഭാവം ലഭിക്കുന്നതിനു ക്ലിക്ക് ചെയ്ത് വലിക്കുക."
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "ചിത്രത്തിലുടനീളം എക്സോർ പ്രഭാവം ലഭിക്കുന്നതിനു ക്ലിക്ക് ചെയ്ത് വലിക്കുക."
 
 #~ msgid "Choose the picture you want, then click “Open”."

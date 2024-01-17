@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2023-04-07 09:13+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
@@ -1591,11 +1591,11 @@ msgstr "Tux Paint（全屏）"
 msgid "Color Shift"
 msgstr "曝光"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
@@ -1698,15 +1698,15 @@ msgstr "书法"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "单击然后移动鼠标来绘制相片底片。"
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "卡通"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
@@ -1808,57 +1808,57 @@ msgstr "随机色"
 msgid "Keep Color"
 msgstr "颜色"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "单击然后移动鼠标，使图片部分变亮。"
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "单击使图片整体变亮。"
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "单击然后移动鼠标，使图片部分变暗。"
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "单击使图片整体变暗。"
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "单击然后移动鼠标，使图片部分变暗。"
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 msgid "Click to desaturate your entire picture."
 msgstr "单击使图片整体变暗。"
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "单击然后移动鼠标锐化部分图画。"
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 msgid "Click to saturate your entire picture."
 msgstr "单击使图片整体变暗。"
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
 msgstr "单击然后移动鼠标跟踪部分图画的边缘。"
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
 msgstr "单击然后拖动鼠标改变你的画面颜色。"
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
 msgstr "单击然后拖动鼠标改变你的画面颜色。"
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
@@ -1872,11 +1872,11 @@ msgstr "鱼眼效果"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "单击然后移动鼠标画一个花柄。让我们画一朵花。"
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "花朵"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "单击然后移动鼠标画一个花柄。让我们画一朵花。"
 
@@ -1888,11 +1888,11 @@ msgstr "泡泡"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "单击然后移动鼠标用泡泡覆盖一片区域。"
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "折叠"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "选择背景颜色，点击将画面对角折叠。"
@@ -1933,11 +1933,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr "金鱼眼"
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -1981,51 +1981,51 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "点击并拖动您的图片，即可使用万花筒进行浏览！"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "均衡 左/右"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "均衡 上/下"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "图案"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "瓦片"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "万花筒"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr "单击并拖动鼠标，使用两个在图片左右两侧对称的笔刷进行绘制。"
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr "单击并拖动鼠标，使用两个在图片顶部和底部对称的笔刷进行绘制。"
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "单击然后拖动鼠标在画质上画一个图案。"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
 msgstr "单击然后拖动鼠标，画一对对称图案。"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "单击然后移动鼠标用对称的画笔（一个万花筒）画图。"
@@ -2038,11 +2038,11 @@ msgstr "光"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "单击并拖动可以在图片上绘制一束光。"
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 msgid "Lightning"
 msgstr "变亮"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr "单击、拖动并释放以在两个点之间绘制闪电。"
 
@@ -2066,19 +2066,19 @@ msgstr "金属质感"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "单击然后移动鼠标画金属质感效果。"
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "镜子"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "翻转"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "单击做出镜像。"
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "点击使图片上下翻转。"
 
@@ -2134,29 +2134,29 @@ msgstr "单击然后移动鼠标为你的图画部分添加不规则马赛克效
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "单击为你的整张图画添加不规则马赛克效果。"
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "底片"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr "反色"
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "单击然后移动鼠标制作画面底片。"
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "单击使你的画变为底片。"
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
 msgstr "单击并拖动鼠标可以将颜色更改为相反的颜色，即互补色。"
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2343,45 +2343,45 @@ msgstr "点击和拖拽来重复图样。"
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "点击和拖拽来重复图样。"
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "透镜"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr "面板"
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 msgid "Tile Zoom"
 msgstr "缩小"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "缩小"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr "快速移动"
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "单击画面角落然后将其拉拽到你想要的位置。"
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "单击使你的画变为底片。"
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
 msgstr "单击然后向上拖拽放大，向下拖拽缩小。"
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "单击然后向上拖拽放大，向下拖拽缩小。"
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr "单击然后向上拖拽放大，向下拖拽缩小。"
 
@@ -2443,26 +2443,26 @@ msgstr "单击在画面上画雨点。"
 msgid "Click to cover your picture with rain drops."
 msgstr "单击在画面上布满雨滴。"
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "真实的彩虹"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "七彩虹"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
 msgstr ""
 "单击选择彩虹的起始位置，拖动鼠标到彩虹的终止位置，这样就画出一道彩虹了。"
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr "反射"
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr "单击然后移动鼠标为你的图画部分添加马赛克效果。"
 
@@ -2484,19 +2484,19 @@ msgstr "波纹"
 msgid "Click to make ripples appear over your picture."
 msgstr "单击在你的图片上画出波纹。"
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "玫瑰花饰"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "毕加索风格"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "点击开始画玫瑰花饰。"
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "你可以像毕加索一样作画！"
 
@@ -2536,11 +2536,11 @@ msgstr "单击然后移动鼠标创建一个黑白侧面影象。"
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "单击创建整个图片的黑白侧面影象。"
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "移动"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "单击并拖动可以在画布上移动图片。"
 
@@ -2612,39 +2612,39 @@ msgstr "单击在图片中添加雪球。"
 msgid "Click to add snow flakes to your picture."
 msgstr "单击在图片中添加雪片。"
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr "伸展"
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "单击并拖动可以垂直或水平拉伸图片的一部分。"
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "边缘条纹化"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "角落条纹化"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "条纹'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
 msgstr ""
 "单击拖动鼠标进行条纹创作。滑动上下按钮以增加或减少线条，左右按钮改变粗细。"
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "单击并拖动以绘制艺术箭头。"
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "使用不同的角度来创作箭。"
 
@@ -2689,22 +2689,22 @@ msgstr "滤镜处理"
 msgid "Color & White"
 msgstr "彩色 & 黑白"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "单击然后拖动鼠标改变画面颜色。"
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "单击改变整幅画面颜色。"
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
 msgstr "单击然后拖动鼠标改变你的画面颜色。"
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "单击然后拖动鼠标改变你的整个画面颜色。"
 
@@ -2716,11 +2716,11 @@ msgstr "牙膏"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "单击并拖动在图画上喷出牙膏。"
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "龙卷风"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "单击和拖动鼠标画龙卷风。"
 
@@ -2832,15 +2832,15 @@ msgstr "点击拖动鼠标，使你的作品看起来像在电视里一样。"
 msgid "Click to make your picture look like it's on television."
 msgstr "单击使你的图画看起来像在电视机里。"
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "波浪"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "小波"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2849,7 +2849,7 @@ msgstr ""
 "单击使你的图画起水平波纹。单击顶部画低波纹，单击底部画高波纹，单击左面画小波"
 "纹，单击右面画长波纹。"
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -2858,16 +2858,20 @@ msgstr ""
 "单击使你的图画起垂直波纹。单击顶部画低波纹，单击底部画高波纹，单击左面画小波"
 "纹，单击右面画长波纹。"
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "随机色"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "单击然后拖动鼠标以绘制随机色效果"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "单击然后拖动鼠标使整个画面填充随机色效果"
 
 #~ msgid "New Breed Software et al."

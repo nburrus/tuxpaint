@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2017-12-30 18:24+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Bengali\n"
@@ -1566,14 +1566,14 @@ msgstr ""
 msgid "Color Shift"
 msgstr "রঙ পরিবর্তন"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "আপনার ছবির কিছু অংশে রঙ পরিবর্তন করতে মাউস ক্লিক করুন এবং ঘোরান."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "আপনার সমগ্র ছবিতে রঙ পরিবর্তন করতে ক্লিক করুন."
 
@@ -1705,17 +1705,17 @@ msgstr "চারুলিপি"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "চারুলিপিতে আঁকতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "কার্টুন"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "ছবিটি একটি কার্টুনে পরিণত করতে মাউস ক্লিক করুন এবং চারপাশে ঘোরান."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1834,51 +1834,51 @@ msgstr "রঙ"
 msgid "Keep Color"
 msgstr "রঙ"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "আপনার ছবির অংশ আলোকিত করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "আপনার সমগ্র ছবি আলোকিত করতে ক্লিক করুন."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "আপনার ছবির অংশ অন্ধকার করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "আপনার সমগ্র ছবি অন্ধকার করতে ক্লিক করুন."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "আপনার ছবির অংশ অন্ধকার করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "আপনার সমগ্র ছবি অন্ধকার করতে ক্লিক করুন."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "আপনার ছবির কিছু অংশ ধারালো করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "আপনার সমগ্র ছবি অন্ধকার করতে ক্লিক করুন."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1886,7 +1886,7 @@ msgid ""
 "match the chosen color."
 msgstr "আপনার ছবির কিছু অংশে প্রান্ত রূপরেখা করতে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1898,7 +1898,7 @@ msgstr ""
 "আপনার ছবির কিছু অংশ সাদা এবং আপনার পছন্দ একটি রঙে পরিবর্তন করতে মাউস ক্লিক করুন ও "
 "ঘোরান."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1910,7 +1910,7 @@ msgstr ""
 "আপনার ছবির কিছু অংশ সাদা এবং আপনার পছন্দ একটি রঙে পরিবর্তন করতে মাউস ক্লিক করুন ও "
 "ঘোরান."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1930,11 +1930,11 @@ msgstr "মাছের চোখ"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "আপনার ছবিতে যে অংশে মাছের চোখের প্রভাব তৈরি করতে চান সেখানে ক্লিক করুন."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "ফুল"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "ফুল বৃন্ত আঁকতে ক্লিক করুন ও টানুন. চলুন ফুল সমাপ্ত করি."
 
@@ -1946,11 +1946,11 @@ msgstr "ফেনা"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "একটি অঞ্চল ফেনাময় বুদ্‌বুদ্‌ দিয়ে ঢাকতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "ভাঁজ"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "একটি পশ্চাদ্‌ভূমি রঙ বাছাই করুন এবং পাতার কোনায় পরিবর্তন আনতে ক্লিক করুন."
@@ -1995,11 +1995,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2059,28 +2059,28 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "আপনার ছবিটির কিছু অংশ টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "প্রতিসাম্য বাঁয়ে/ডাইনে"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "প্রতিসাম্য উপরে/নিচে"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "কলেইডোস্কোপ"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2088,7 +2088,7 @@ msgstr ""
 "আপনার ছবির বাঁয়ে ও ডাইনে প্রতিসাম্য এমন দুটি ব্রাশ দিয়ে আঁকতে মাউস ক্লিক করুন এবং "
 "টানুন."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2096,13 +2096,13 @@ msgstr ""
 "আপনার ছবির উপরে ও তলায় প্রতিসাম্য এমন দুটি ব্রাশ দিয়ে আঁকতে মাউস ক্লিক করুন এবং "
 "টানুন."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "ছবিটি এমবস করতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -2115,7 +2115,7 @@ msgstr ""
 "টানুন."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "প্রতিসাম্য ব্রাশ সহ আঁকতে মাউস ক্লিক করুন ও টানুন (কলেইডোস্কোপ)."
@@ -2128,13 +2128,13 @@ msgstr "আলোক"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "আপনার ছবিতে আলোকের স্তম্ভ আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "আলোকিত করুন"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2165,19 +2165,19 @@ msgstr "মেটাল পেন্ট"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "ধাতব রঙ সহ পেন্ট করতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "আয়না"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "ফ্লিপ"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "প্রতিবিম্ব তৈরি করতে ক্লিক করুন."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "ছবির উপরদিক-নিচে ফ্লিপ করতে ক্লিক করুন."
 
@@ -2248,25 +2248,25 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "আপনার ছবিতে একটি অনিয়মিত মোজাইক যোগ করতে ক্লিক করুন."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "ঋণাত্মক"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "আপনার ছবি ঋণাত্মক করতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "আপনার পেন্টিং ঋণাত্মকে পরিণত করতে ক্লিক করুন."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2276,7 +2276,7 @@ msgid ""
 "complementary colors."
 msgstr "আপনার ছবির কিছু অংশে রঙ পরিবর্তন করতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2465,39 +2465,39 @@ msgstr "স্ট্রিং আর্টের তৈরি তীর আঁ�
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "চিত্র"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "ঝুম"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "ঝুম"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "ছবিটি আপনার খুশিমতো বিস্তারিত করতে কোনায় ক্লিক করুন এবং টানুন."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "আপনার পেন্টিং ঋণাত্মকে পরিণত করতে ক্লিক করুন."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2506,12 +2506,12 @@ msgid ""
 msgstr ""
 "ছবিটি ঝুম ইন করতে ক্লিক করুন ও উপরে টানুন বা ঝুম আউট করতে ক্লিক করুন ও নিচে টানুন."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "ছবিটি ঝুম ইন করতে ক্লিক করুন ও উপরে টানুন বা ঝুম আউট করতে ক্লিক করুন ও নিচে টানুন."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2580,15 +2580,15 @@ msgstr "আপনার ছবিতে বৃষ্টির ফোঁটা �
 msgid "Click to cover your picture with rain drops."
 msgstr "আপনার ছবিতে বৃষ্টির ফোঁটা দিয়ে ভরতে ক্লিক করুন."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "বাস্তব রামধনু"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROYGBIV রামধনু"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2596,11 +2596,11 @@ msgstr ""
 "রামধনু যেখান থেকে শুরু করতে চান ক্লিক করুন, যেখানে শেষ করতে চান সেখানে টানুন, "
 "তারপর রামধনু আঁকতে দিন."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2625,19 +2625,19 @@ msgstr "মৃদু তরঙ্গ"
 msgid "Click to make ripples appear over your picture."
 msgstr "আপনার ছবির উপর মৃদু তরঙ্গ তৈরি করতে ক্লিক করুন."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "গোলাপাকৃতি ব্যাজ"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "পিকাসো"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "ক্লিক করুন এবং গোলাপাকৃতি ব্যাজ আঁকতে শুরু করুন."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "আপনি পিকাসোর মতো আঁকতে পারেন!"
 
@@ -2683,11 +2683,11 @@ msgstr "একটি সাদা-কালো ছায়াচিত্র ত�
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "আপনার সমগ্র ছবিতে একটি সাদা-কালো ছায়াচিত্র তৈরি করতে ক্লিক করুন."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "পরিবর্তন"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "আপনার ছবির ক্যানভাসের চারপাশে পরিবর্তন করতে ক্লিক করুন ও টানুন."
 
@@ -2763,11 +2763,11 @@ msgstr "আপনার ছবিতে বরফের বল যোগ কর�
 msgid "Click to add snow flakes to your picture."
 msgstr "আপনার ছবিতে বরফের পরত যোগ করতে ক্লিক করুন."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2776,19 +2776,19 @@ msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "আপনার ছবিটির কিছু অংশ টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "স্ট্রিং প্রান্ত"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "স্ট্রিং কোনা"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "স্ট্রিং 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2796,11 +2796,11 @@ msgstr ""
 "স্ট্রিং আর্ট আঁকতে ক্লিক করুন ও টানুন. কম ও বেশি লাইন আঁকতে উপরে-তলায় টানুন, আরও বড় "
 "ছিদ্র তৈরি করতে বাঁয়ে বা ডাইনে টানুন."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "মু্ক্ত কোণসহ স্ট্রিং আর্ট তীর আঁকুন."
 
@@ -2863,7 +2863,7 @@ msgstr "রঙের আভা"
 msgid "Color & White"
 msgstr "রঙিন & সাদা"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2872,11 +2872,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "আপনার ছবির কিছু অংশে রঙ পরিবর্তন করতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "আপনার সমগ্র ছবির রঙ বদলাতে ক্লিক করুন."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2888,7 +2888,7 @@ msgstr ""
 "আপনার ছবির কিছু অংশ সাদা এবং আপনার পছন্দ একটি রঙে পরিবর্তন করতে মাউস ক্লিক করুন ও "
 "ঘোরান."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "আপনার সমগ্র ছবি সাদা এবং আপনার পছন্দ একটি রঙে পরিবর্তন করতে ক্লিক করুন."
 
@@ -2900,11 +2900,11 @@ msgstr "টুথপেস্ট"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "আপনার ছবিতে দাঁত মাজন ফোয়ারা করতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "টর্নেডো"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "আপনার ছবিতে একটি টর্নেডো ফানেল আঁকতে ক্লিক করুন ও টানুন."
 
@@ -3016,15 +3016,15 @@ msgstr "আপনার ছবিটির কিছু অংশ টেলি�
 msgid "Click to make your picture look like it's on television."
 msgstr "আপনার ছবিটি টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "তরঙ্গ"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "মৃদু তরঙ্গ"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3033,7 +3033,7 @@ msgstr ""
 "ছবি অনুভূমিক ঢেউ খেলানো করতে ক্লিক করুন. অপেক্ষাকৃত নিচু ঢেউয়ের জন্য উপরের দিকে, উঁচু "
 "ঢেউয়ের জন্য তলায়, ছোট ঢেউয়ের জন্য বাঁয়ে এবং দীর্ঘ ঢেউয়ের জন্য ডানদিকে ক্লিক করুন."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3042,22 +3042,22 @@ msgstr ""
 "ছবি উল্লম্ব ঢেউ খেলানো করতে ক্লিক করুন. অপেক্ষাকৃত নিচু ঢেউয়ের জন্য উপরের দিকে, উঁচু "
 "ঢেউয়ের জন্য তলায়, ছোট ঢেউয়ের জন্য বাঁয়ে এবং দীর্ঘ ঢেউয়ের জন্য ডানদিকে ক্লিক করুন."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "রঙ"
 
-#: ../../magic/src/xor.c:110
+#: ../../magic/src/xor.c:116
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
-msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/xor.c:112
+#: ../../magic/src/xor.c:118
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "আপনার সমগ্র ছবিতে মোজাইক প্রভাব যোগ করতে ক্লিক করুন."
 
 #~ msgid "Choose the picture you want, then click “Open”."

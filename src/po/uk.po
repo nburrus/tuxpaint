@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23 uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2023-03-29 19:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1688,13 +1688,13 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Зсув кольору"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Клацніть кнопкою миші і перетягніть вказівник, щоб змінити кольори частин "
 "вашого малюнка."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Клацніть, щоб змінити кольори на усьому малюнку."
 
@@ -1815,17 +1815,17 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб малювати каліграфічним "
 "пензлем."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Комікс"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб перетворити малюнок на "
 "мультиплікаційний."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Натисніть кнопку миші, щоб перетворити увесь малюнок на комікс."
 
@@ -1937,47 +1937,47 @@ msgstr "Вилучити колір"
 msgid "Keep Color"
 msgstr "Зберегти колір"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб зробити світлішими "
 "частини вашого малюнка."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Клацніть, щоб освітлити весь малюнок."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб зробити темнішими частини "
 "вашого малюнка."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Клацніть, щоб зробити темнішим весь малюнок."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб знебарвити частини вашого "
 "малюнка."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 msgid "Click to desaturate your entire picture."
 msgstr "Клацніть, щоб знебарвити весь малюнок."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб зробити насиченішими "
 "кольори частини вашого малюнка."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 msgid "Click to saturate your entire picture."
 msgstr "Клацніть, щоб зробити насиченішими кольори усього малюнка."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
@@ -1985,7 +1985,7 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб повністю знебарвити "
 "частини вашого малюнка, які близькі до вибраного кольору."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
@@ -1993,7 +1993,7 @@ msgstr ""
 "Натисніть кнопку миші, щоб повністю знебарвити частини вашого малюнка, які "
 "близькі до вибраного кольору."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
@@ -2001,7 +2001,7 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб повністю знебарвити "
 "частини вашого малюнка, які не є близькими до вибраного кольору."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
@@ -2017,11 +2017,11 @@ msgstr "Здуття"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Клацніть на деякі місця малюнку, щоб там створити ефекти здуття."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Квітка"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Клацніть та протягніть, щоб виростити стебло для квітки. Відпустіть кнопку, "
@@ -2035,11 +2035,11 @@ msgstr "Піна"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Клацніть та поводіть мишкою, щоб покрити область бульками піни."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Згин"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Виберіть фоновий колір та клацніть, щоб загнути куточок сторінки."
@@ -2084,11 +2084,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr "Вирячені очі"
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2138,28 +2138,28 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб поглянути на ваш малюнок "
 "крізь калейдоскоп."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Симетрично зліва праворуч"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Симетрично згори вниз"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Візерунок"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Плитки"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Калейдоскоп"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2167,7 +2167,7 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб малювати двома пензлями "
 "симетрично ліворуч і праворуч на вашому малюнку."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2175,13 +2175,13 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб малювати двома пензлями "
 "симетрично вгору і вниз на вашому малюнку."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб намалювати візерунок на "
 "вашому малюнку."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -2190,7 +2190,7 @@ msgstr ""
 "візерунок на вашому малюнку."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr "Клацніть та малюйте фігури 4-ма симетричними пензликами (калейдоскоп)."
@@ -2203,11 +2203,11 @@ msgstr "Ліхтар"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Клацніть та поводіть пучком світла по Вашому малюнку."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 msgid "Lightning"
 msgstr "Блискавка"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr ""
 "Клацніть кнопкою миші, перетягніть вказівник і відпустіть його, щоб "
@@ -2235,19 +2235,19 @@ msgstr "Метал"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Клацніть та протягніть мишу, щоб фарбувати металевим кольором."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Дзеркало"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Переворот"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Клацніть, щоб зробити дзеркальне відбиття малюнка."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Клацніть на малюнку, щоб перевернути його догори ногами."
 
@@ -2314,25 +2314,25 @@ msgstr ""
 "Клацніть, щоб перетворити увесь ваш малюнок на мозаїку з елементів "
 "неправильної форми."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Негатив"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr "Протилежні"
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб перетворити ваш малюнок "
 "на негатив."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Клацніть, щоб перетворити малюнок на його негатив."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
@@ -2340,7 +2340,7 @@ msgstr ""
 "Клацніть кнопкою миші і перетягніть вказівник, щоб перетворити кольори на "
 "обернені — доповнювальні кольори."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2543,37 +2543,37 @@ msgstr ""
 "Щоб намалювати повторювані візерунки, натисніть кнопку миші і перетягніть "
 "вказівник."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Перспектива"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr "Панелі"
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 msgid "Tile Zoom"
 msgstr "Плиткове масштабування"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Масштаб"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr "Стягування"
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr ""
 "Натисніть кнопку миші у куті і перетягніть вказівник, щоб розтягнути малюнок "
 "у відповідному напрямку."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Натисніть кнопку миші, щоб перетворити весь малюнок на панелі 2х2."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
@@ -2581,13 +2581,13 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник вгору, щоб збільшити ваш "
 "малюнок. Перетягніть вниз, щоб його зменшити."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник вгору, щоб збільшити ваш "
 "малюнок, або вниз, щоб його зменшити."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник вгору для створення сходження "
@@ -2654,15 +2654,15 @@ msgstr "Поклацайте на малюнку, щоб помістити на
 msgid "Click to cover your picture with rain drops."
 msgstr "Клацніть, щоб покрити весь малюнок дощовими краплями."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Справжня веселка"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "Веселка"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2670,11 +2670,11 @@ msgstr ""
 "Клацніть там де має початися Ваша веселка, тягніть мишку туди, де має бути "
 "її кінець — тоді відпускайте і з’явиться веселка."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr "Відбиття"
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб додати відбиття на ваш "
@@ -2698,19 +2698,19 @@ msgstr "Брижі"
 msgid "Click to make ripples appear over your picture."
 msgstr "Клацніть, щоб утворити брижі поверх вашого малюнка."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Трояндочка"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Пікассо"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Натисніть і почнете малювати трояндочку."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Еге-ге, можна тепер малювати як Пікасо!"
 
@@ -2756,11 +2756,11 @@ msgstr ""
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Клацніть, щоб створити чорно-білий силует на весь малюнок."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Зсув"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Клацніть та тягніть, щоб зсунути Ваш малюнок відносно полотнини."
 
@@ -2838,30 +2838,30 @@ msgstr "Клацайте, щоб додавати сніжки на малюно
 msgid "Click to add snow flakes to your picture."
 msgstr "Клацайте, щоб накидати сніжинок на малюнок."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr "Розтягнути"
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб розтягнути ваш малюнок "
 "вертикально або горизонтально."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Межі рядка"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Кут рядка"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "Рядок „V“"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2870,13 +2870,13 @@ msgstr ""
 "вказівник. Перетягніть вказівник вгору-вниз, щоб збільшити або зменшити "
 "кількість ниток, або ліворуч-праворуч, щоб збільшити отвір."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr ""
 "Щоб намалювати стрілку з ниток, натисніть кнопку миші і перетягніть "
 "вказівник."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Малювання стрілок з ниток під довільними кутами."
 
@@ -2927,18 +2927,18 @@ msgstr "Барва"
 msgid "Color & White"
 msgstr "Кольоровий та білий"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Клацніть кнопкою миші і перетягніть вказівник, щоб змінити колір частин "
 "вашого малюнка."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Клацніть, щоб змінити колір всього малюнка."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
@@ -2946,7 +2946,7 @@ msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб перетворити частини "
 "вашого малюнка на чорно-білі."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Клацніть, щоб залишити на малюнку білий та вибраний вами колір."
 
@@ -2959,11 +2959,11 @@ msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr ""
 "Добре натисніть та тягніть мишу, щоб вичавлювати зубну пасту на малюнок."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Вихор"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "Натисніть кнопку миші і перетягніть вказівник, щоб намалювати вихор на "
@@ -3079,15 +3079,15 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Клацніть, щоб Ваш малюнок виглядав як телевізійний."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Хвильки"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Хвилюшки"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3097,7 +3097,7 @@ msgstr ""
 "хвилі коротшими, донизу — вищими, ліворуч — для низьких хвиль, праворуч — "
 "для довгих."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3107,18 +3107,22 @@ msgstr ""
 "хвилі коротшими, донизу — вищими, ліворуч — для низьких хвиль, праворуч — "
 "для довгих."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "XOR для кольорів"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr ""
 "Щоб використати ефект виключного АБО, натисніть кнопку миші і перетягніть "
 "вказівник"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr ""
 "Клацніть, щоб застосувати ефекти виключного АБО до усього вашого малюнка"
 

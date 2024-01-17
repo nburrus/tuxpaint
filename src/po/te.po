@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2011-01-07 15:08+0530\n"
 "Last-Translator: saikumar <ramukiashc@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -1562,14 +1562,14 @@ msgstr ""
 msgid "Color Shift"
 msgstr " రంగు మార్పు"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to change the colors in parts of your picture."
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "చిత్రములో మేకు కవలేసేన చోటుల్లలో రంగు మార్చుటకు  క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "మొత్తం చిత్రం యొక్క రంగు మార్చుటకు క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
@@ -1703,17 +1703,17 @@ msgstr "అందమైన వ్రాలు"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "చిత్రానికి అందమైన వ్రాలు వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "వ్యంగ్య చిత్రం"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 #, fuzzy
 #| msgid "Click and move the mouse around to turn the picture into a cartoon."
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "చిత్రమును వ్యంగ్యచిత్రముగా మార్చుటకు  దాని చుట్టూ మౌస్ ని క్లిక్ చేసే తెప్పండి."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1831,51 +1831,51 @@ msgstr "రంగులు"
 msgid "Keep Color"
 msgstr "రంగులు"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 #, fuzzy
 #| msgid "Click and move the mouse to lighten parts of your picture."
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "చిత్రంలో మీకు కావలిసిన ప్రాంతాలను లేత కాంతి మార్చడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "చిత్రం మొత్తానికి లేత కాంతి అమద్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "చిత్రంలో మీకు కావలిసిన ప్రాంతాలను ముదురుగా మార్చడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "చిత్రం మొత్తానికి ముదురు కాంతి అమద్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 #, fuzzy
 #| msgid "Click and move the mouse to darken parts of your picture."
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "చిత్రంలో మీకు కావలిసిన ప్రాంతాలను ముదురుగా మార్చడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to desaturate your entire picture."
 msgstr "చిత్రం మొత్తానికి ముదురు కాంతి అమద్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 #, fuzzy
 #| msgid "Click and move the mouse to sharpen parts of your picture."
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "మీ చిత్రములోని కొన్ని ప్రాంతాలకు పడునుపెట్టడానికి క్లిక్ చేసే జరపండి."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 #, fuzzy
 #| msgid "Click to darken your entire picture."
 msgid "Click to saturate your entire picture."
 msgstr "చిత్రం మొత్తానికి ముదురు కాంతి అమద్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 #, fuzzy
 #| msgid "Click and move the mouse to trace edges in parts of your picture."
 msgid ""
@@ -1883,7 +1883,7 @@ msgid ""
 "match the chosen color."
 msgstr "మీ చిత్రములో కోణాలను కనిపెట్టడానికి క్లిక్ చేసే జరపండి."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1895,7 +1895,7 @@ msgstr ""
 "చిత్రంలో మీకు కావలిసిన ప్రాంతాలకు తెలుపు లేదా మీరు ఎంచుకున్న రంగు అమద్చడానికి క్లిక్ చేసి దాని చుట్టూ "
 "జరపండి."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1907,7 +1907,7 @@ msgstr ""
 "చిత్రంలో మీకు కావలిసిన ప్రాంతాలకు తెలుపు లేదా మీరు ఎంచుకున్న రంగు అమద్చడానికి క్లిక్ చేసి దాని చుట్టూ "
 "జరపండి."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -1928,11 +1928,11 @@ msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
 "చిత్రంలో మీకు కావలిసిన ప్రాంతాలకు చాప కన్నుప్రభావాన్నితీసుకురావటానికి  క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "పువ్వు"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr "పువ్వుల తొడిమెలు చిత్రిన్చుటకు క్లిక్ కొట్టి లాగండి.పోయి పువ్వులు సంపూర్నించండి."
 
@@ -1944,11 +1944,11 @@ msgstr "నురగ"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "ఒక ప్రదేశాన్ని నురుగు బుడగలతో కప్పుటకు మౌస్ ని క్లిక్ చేసి లాగుము."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "మాడుచు"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "ఎడిన ఒక నేపథ్య వర్ణాని ఎంచుకోండి మరియు కాగితము తిప్పుటకు ములలో క్లిక్ కొట్టండి."
@@ -1992,11 +1992,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2056,48 +2056,48 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr "చిత్రములో మీకు కావలిసిన ప్రాంతాలు  టివి లోని చిత్రమువలె కనిపించుటకు క్లిక్ చేసీ లాగండి."
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "సమవిభక్త ఎడమ/కుడి"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "సమవిభక్త పికి/క్రిందికి"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr ""
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr ""
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "చిత్రవిచిత్రములుగా అగుపడే వోక విధమైన గొట్టము"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
 msgstr ""
 "మీ చిత్రము యొక్క కుడి ఎడమకు సమవిభక్తముగా రెండు బురుసులుతో చిత్రిన్చుటకు మౌస్ ని క్లిక్ చేసి లాగుము."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
 msgstr ""
 "మీ చిత్రముకు ఫైన, క్రింద సమవిభక్తముగా రెండు బురుసులుతో చిత్రిన్చుటకు మౌస్ ని క్లిక్ చేసి లాగుము."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 #, fuzzy
 #| msgid "Click and drag the mouse to emboss the picture."
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "చిత్రానికి వక్ర రేక కల్పన వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 #, fuzzy
 #| msgid ""
 #| "Click and drag the mouse to draw with two brushes that are symmetric "
@@ -2109,7 +2109,7 @@ msgstr ""
 "మీ చిత్రము యొక్క కుడి ఎడమకు సమవిభక్తముగా రెండు బురుసులుతో చిత్రిన్చుటకు మౌస్ ని క్లిక్ చేసి లాగుము."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2124,13 +2124,13 @@ msgstr "కాంతి"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "చిత్రానికి  కాంతి కిరణాలు అమద్చడానికి  క్లిక్ చేసి లాగుము."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightning"
 msgstr "ప్రకాశింపజేయు"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 #, fuzzy
 #| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click, drag, and release to draw a lightning bolt between two points."
@@ -2161,19 +2161,19 @@ msgstr "లోహము యొక్క రంగు"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "మీ చిత్రానికి లోహము యొక్క రంగు వేయడానికి మౌస్ ని క్లిక్ చేసి లాగుము."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "అద్దం"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "తిరగావేయ్యు"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "ఒక దర్పణ చిత్రం కోసం క్లిక్ కొట్టండి."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "చిత్రాన్ని తలక్రిందలు చేయటానికి క్లిక్ చేయండి"
 
@@ -2251,25 +2251,25 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "చిత్రం మొత్తానికి అక్రమమైన  మోసెను వ్రాసి/మోసిఅక్  ప్రభావాన్ని అమద్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "వ్యతిరేఖార్ధమైన"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr ""
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 #, fuzzy
 #| msgid "Click and move the mouse around to make your painting negative."
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "మీ చిత్రానికి  వ్యతిరేక గుణం అమద్చడానికి వేయడానికి మౌస్ ని క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "మీ చిత్రానికి  వ్యతిరేక గుణం అమద్చడానికి వేయడానికి మౌస్ ని క్లిక్ చేయండి."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2279,7 +2279,7 @@ msgid ""
 "complementary colors."
 msgstr "చిత్రంలో మీకు కావలిసిన ప్రాంతాలకు రంగు మార్చడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2462,39 +2462,39 @@ msgstr "చిత్రానికి మఱక వేయడానికి క
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "చిత్రానికి మఱక వేయడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "దృష్టి "
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr ""
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 #, fuzzy
 #| msgid "Zoom"
 msgid "Tile Zoom"
 msgstr "సమీప వీక్షణం"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "సమీప వీక్షణం"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr ""
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "చిత్రాని సాగదియుటకు మూలల వద్ద క్లిక్ చేసి లాగుము"
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 #, fuzzy
 #| msgid "Click to turn your painting into its negative."
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "మీ చిత్రానికి  వ్యతిరేక గుణం అమద్చడానికి వేయడానికి మౌస్ ని క్లిక్ చేయండి."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid ""
@@ -2502,11 +2502,11 @@ msgid ""
 "picture."
 msgstr "క్లిక్ చేసే,సమీప వీక్షణ చేయడానికి బయటకు లాగండి నిరసమీప వీక్షణ చేయడానికి  లోపటికి లాగండి."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr "క్లిక్ చేసే,సమీప వీక్షణ చేయడానికి బయటకు లాగండి నిరసమీప వీక్షణ చేయడానికి  లోపటికి లాగండి."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 #, fuzzy
 #| msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgid "Click and drag up to rush in or drag down to rush out the picture."
@@ -2574,15 +2574,15 @@ msgstr "చిత్రానికి  నీటి చుక్కలు వ�
 msgid "Click to cover your picture with rain drops."
 msgstr "మీ చిత్రాన్ని నీటి చుక్కలతో నింపడానికి క్లిక్ చేయండి."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "నిజమైన ఇంద్ర ధనస్సు"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "రొయ్గ్బివ్ ఇంద్ర ధనస్సు"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2590,11 +2590,11 @@ msgstr ""
 "మీరు ఇంద్రధనస్సు ఎక్కడ మొదలుపెడదాం అనుకుంటున్నారో అక్కడ క్లిక్ కొట్టండి, అక్కడినుంచి లాగి మేరు ఆపాలి "
 "అనుకునే దెగ్గర వదలండి.అలా చిత్రించండి."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -2621,19 +2621,19 @@ msgstr "తరంగాలు"
 msgid "Click to make ripples appear over your picture."
 msgstr "మీ చిత్రము ఫైన తరంగాలు కనబడుతకు క్లిక్ చేయండి."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "గుడ్డతో కుట్టిన పువ్వు"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "పికాస్సో"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "క్లిక్ చేసే గుడ్డతో కుట్టిన పువ్వు చిత్రించండి."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "మీరు పికాస్సో లాగా చిత్రించగలరు !"
 
@@ -2679,11 +2679,11 @@ msgstr "నలుపు తెలుపు సిలిహౌట్టే /చ�
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "మొత్తం చిత్రాన్ని నలుపు తెలుపు సిలిహౌట్టే /చిత్రపటం లాగా  చేయుటకు క్లిక్ చేయండి."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "జరుగు"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "మీ చిత్రాన్ని ఒక చద్దరి ఫైకి కదులుచుటకు క్లిక్ చేసే లాగండి."
 
@@ -2759,11 +2759,11 @@ msgstr "మంచు బంతులు అమద్చడానికి క్
 msgid "Click to add snow flakes to your picture."
 msgstr "మంచు బంతునకలు అమద్చడానికి క్లిక్ చేయండి."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr ""
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -2772,19 +2772,19 @@ msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr "చిత్రములో మీకు కావలిసిన ప్రాంతాలు  టివి లోని చిత్రమువలె కనిపించుటకు క్లిక్ చేసీ లాగండి."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "దారము యొక్క మూలా"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "దారము యొక్క కోణము "
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "దారము 'వీ'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2792,11 +2792,11 @@ msgstr ""
 "దార కళను చిత్రిన్చుటకు క్లిక్ కొట్టి లాగును.ఫైన క్రింది బగామును లాగి ఎక్కువ లేదా తక్కువ రేకలను,ఎడమ "
 "లేదా కుడి  పెద్ద రంద్రము చెయ్యండి. "
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "దార కలచే నిర్మించబడిన  బాణాలను అమద్చడానికి క్లిక్ చేసే లాగుము."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr " మీకు ఇష్ట మైన కోణాల దార కళను  చిత్రిచుకోనుము."
 
@@ -2859,7 +2859,7 @@ msgstr "లేత చాయ"
 msgid "Color & White"
 msgstr "రంగు మరియు తెలుపు."
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to change the color of parts of your "
@@ -2868,11 +2868,11 @@ msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "చిత్రంలో మీకు కావలిసిన ప్రాంతాలకు రంగు మార్చడానికి క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "చిత్రం మొత్తానికి రంగు మార్చడానికి  క్లిక్ చేయండి."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn parts of your picture into white "
@@ -2884,7 +2884,7 @@ msgstr ""
 "చిత్రంలో మీకు కావలిసిన ప్రాంతాలకు తెలుపు లేదా మీరు ఎంచుకున్న రంగు అమద్చడానికి క్లిక్ చేసి దాని చుట్టూ "
 "జరపండి."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "చిత్రం తెలుపు లేదా మీరు ఎంచుకున్న రంగుకి మార్చడానికి  క్లిక్ చేయండి."
 
@@ -2896,11 +2896,11 @@ msgstr "పల్లా పొందిక"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "చిత్రానికి పల్లా పొందికను వేయుటకు క్లిక్ చేసీ లాగుము."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "గాలివాన "
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "చిత్రానికి గాలివాన సుడిని  వేయుటకు క్లిక్ చేసీ లాగుము."
 
@@ -3012,15 +3012,15 @@ msgstr "చిత్రములో మీకు కావలిసిన ప్
 msgid "Click to make your picture look like it's on television."
 msgstr "మీయొక్క చిత్రము టివి లోని చిత్రమువలె కనిపించుటకు క్లిక్ కొట్టండి."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "తరంగాలు"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "తరంగాల సమోహము"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3029,7 +3029,7 @@ msgstr ""
 "క్షితిజ సమాంతరం తరంగాలకు మీయొక్క చిత్రముకంకు అమ్పడానికి క్లిక్ కొట్టండి.పొట్టి తరంగాలకు ఫైన ,పొడవు  "
 "తరంగాలకు క్రింద,చిన్న తరంగాలకు ఎడమ,పెద్ద తరంగాలకు కుడి దిక్కున క్లిక్ చెయ్యండి."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3038,22 +3038,22 @@ msgstr ""
 "నిలువు తరంగాలు మీయొక్క చిత్రముకంకు అమ్పడానికి క్లిక్ కొట్టండి.పొట్టి తరంగాలకు ఫైన ,పొడవు  తరంగాలకు "
 "క్రింద,చిన్న తరంగాలకు ఎడమ,పెద్ద తరంగాలకు కుడి దిక్కున క్లిక్ చెయ్యండి."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 #, fuzzy
 #| msgid "Colors"
 msgid "Xor Colors"
 msgstr "రంగులు"
 
-#: ../../magic/src/xor.c:110
+#: ../../magic/src/xor.c:116
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
-msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "దార కలచే నిర్మించబడిన  బాణాలను అమద్చడానికి క్లిక్ చేసే లాగుము."
 
-#: ../../magic/src/xor.c:112
+#: ../../magic/src/xor.c:118
 #, fuzzy
 #| msgid "Click to add a mosaic effect to your entire picture."
-msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "చిత్రం మొత్తానికి మోసెను వ్రాసి/మోసిఅక్ ప్రభావాన్ని అమద్చడానికి  క్లిక్ చేయండి."
 
 #~ msgid "Choose the picture you want, then click “Open”."

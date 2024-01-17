@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2023-03-30 14:41+0200\n"
 "Last-Translator: Willem Heppe <heppew@yahoo.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -1664,11 +1664,11 @@ msgstr ""
 msgid "Color Shift"
 msgstr "Kleurverschuiving"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr "Klik en sleep de muis om daar de kleur van je tekening te veranderen."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Klik en verander de kleur van je hele tekening."
 
@@ -1778,15 +1778,15 @@ msgstr "Schoonschrift"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klik en sleep de muis om te schrijven in schoonschrift."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Striptekening"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr "Klik en sleep de muis om daar de tekening te veranderen in een strip."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Klik de hele afbeelding in een cartoon te veranderen."
 
@@ -1890,39 +1890,39 @@ msgstr "Verwijder Kleur"
 msgid "Keep Color"
 msgstr "Behoud de Kleur"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr "Klik en sleep de muis om daar de tekening lichter te maken."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Klik om de hele tekening lichter te maken."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr "Klik en sleep de muis om daar de tekening donkerder te maken."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Klik om de hele tekening donkerder te maken."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Klik en sleep de muis om delen van de tekening minder te verzadigen."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 msgid "Click to desaturate your entire picture."
 msgstr "Klik om de hele tekening  minder te verzadigen."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Klik en sleep de muis om delen van je tekening te verzadigen."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 msgid "Click to saturate your entire picture."
 msgstr "Klik om de hele tekening te verzadigen."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
@@ -1930,7 +1930,7 @@ msgstr ""
 "Klik en sleep de muis om delen van je afbeelding, die niet passen bij de "
 "gekozen kleur, geheel te onverzadigen."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
@@ -1938,7 +1938,7 @@ msgstr ""
 "Klik om delen van je afbeelding, die niet passen bij de gekozen kleur, "
 "geheel te onverzadigen."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
@@ -1946,7 +1946,7 @@ msgstr ""
 "Klik en sleep de muis om om delen van je afbeelding, die niet passen bij de "
 "gekozen kleur, geheel te onverzadigen."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
@@ -1962,11 +1962,11 @@ msgstr "Visoog"
 msgid "Click on part of your picture to create a fisheye effect."
 msgstr "Klik op een deel van de tekening om daar een visoog effect te geven."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Bloem"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Klik en sleep om de steel van bloem te tekenen. Laat los om de bloem af te "
@@ -1980,11 +1980,11 @@ msgstr "Schuim"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klik en sleep de muis om de tekening te bedekken met  schuimbellen."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Vouwen"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr ""
@@ -2026,11 +2026,11 @@ msgid ""
 "that direction."
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr "Oogjes"
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2076,28 +2076,28 @@ msgstr ""
 "Klik en sleep door je tekening om het te laten lijken of je door een "
 "kaleidoscoop kijkt!"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Symmetrisch Links/Rechts"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Symmetrisch Omhoog/Omlaag"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Patroon"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Beeldvlakken"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Caleidoscoop"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2105,7 +2105,7 @@ msgstr ""
 "Klik en sleep de muis om met twee penselen te tekenen die symmetrisch zijn "
 "aan de linker- en rechterkant van uw afbeelding."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2113,11 +2113,11 @@ msgstr ""
 "Klik en sleep de muis om met twee penselen te tekenen die symmetrisch zijn "
 "aan de boven- en onderkant van uw afbeelding."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr "Klik en sleep de muis om een patroon over de afbeelding te tekenen."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -2126,7 +2126,7 @@ msgstr ""
 "tekenen."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2141,11 +2141,11 @@ msgstr "Licht"
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr "Klik en teken met de muis een lichtbundel in je tekening."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 msgid "Lightning"
 msgstr "Bliksem"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr ""
 "Klik, sleep en laat los om een bliksemflits tussen twee punten te tekenen."
@@ -2170,19 +2170,19 @@ msgstr "Metallic lak"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klik en sleep de muis om in te kleuren met metallic lak."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Spiegel"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Omkeren"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Klik om een spiegelbeeld te maken."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Klik om de tekening ondersteboven te zetten."
 
@@ -2245,23 +2245,23 @@ msgid "Click to add an irregular mosaic to your entire picture."
 msgstr ""
 "Klik om de een onregelmatige mozaïek aan uw hele afbeelding toe te voegen."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Negatief"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr "Tegenovergestelde"
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr "Klik en sleep de muis om daar een negatief beeld te maken."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Klik om van de tekening een negatief beeld te maken."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
@@ -2269,7 +2269,7 @@ msgstr ""
 "Klik en sleep de muis om daar de kleur van je tekening te veranderen in het "
 "tegenovergestelde - de complementaire kleur."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2458,35 +2458,35 @@ msgstr "Klik en sleep om zich herhalende patronen te tekenen."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Klik en sleep om zich herhalende patronen te tekenen."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Perspectief"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr "Panelen"
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 msgid "Tile Zoom"
 msgstr "Tegel-zoomen"
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Zoomen"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr "Vervagen"
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klik op de hoeken en sleep waar u de afbeelding wilt uitrekken."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klik om van de tekening een beeld te maken van 2-bij-2 panelen."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
@@ -2494,13 +2494,13 @@ msgstr ""
 "Klik en sleep omhoog om in te zoomen of omlaag om uit zoomen en tegel de "
 "afbeelding."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Klik en sleep omhoog om in te zoomen of omlaag om uit zoomen in de "
 "afbeelding."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
 "Klik en sleep omhoog om in te vervagen of omlaag om uit vervagen in de "
@@ -2564,15 +2564,15 @@ msgstr "Klik op de plaats waar je regendruppels wil laten vallen."
 msgid "Click to cover your picture with rain drops."
 msgstr "Klik en bedek je tekening met regendruppels."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Echte regenboog"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "ROGGBIV Regenboog"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2580,11 +2580,11 @@ msgstr ""
 "Klik waar je regenboog wilt laten beginnen, sleep tot waar je wilt laten "
 "eindigen en laat dan los om de regenboog te tekenen."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr "Weerspiegeling"
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr "Klik en sleep de muis om reflectie aan de tekening toe te voegen."
 
@@ -2606,19 +2606,19 @@ msgstr "Kreukels"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klik om kreukels te maken in je tekening."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Rozet"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Picasso"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Klik en begin een rozet te tekenen."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Jij kan net als Picasso tekenen!"
 
@@ -2658,11 +2658,11 @@ msgstr "Klik en sleep de muis om een deel van je tekening zwart-wit te maken."
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Klik om de hele tekening zwart-wit te maken."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Wisselen"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Klik en sleep de muis om daar de ondergrond in canvas te veranderen."
 
@@ -2734,30 +2734,30 @@ msgstr "Klik en zet sneeuwballen op je tekening."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klik en laat sneeuwvlokken vallen op je tekening."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr "Uitrekken"
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
 "Klik en sleep om delen van de tekening verticaal of horizontaal uit te "
 "rekken."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Tekstranden"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Teksthoek"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "Tekst 'V'"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2765,11 +2765,11 @@ msgstr ""
 "Klik en sleep om tekstkunst te tekenen. Sleep van boven naar beneden om meer "
 "of minder regels te tekenen en links naar rechts om een groter gat te maken."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr "Klik en sleep om pijlen te tekenen die uit tekstkunst bestaan."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Teken pijlen met tekstkunst met vrije hoeken."
 
@@ -2818,16 +2818,16 @@ msgstr "Kleur"
 msgid "Color & White"
 msgstr "Kleur & Wit"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr "Klik en sleep de muis om daar de kleur van je tekening te veranderen."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Klik en verander de kleur van je hele tekening."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
@@ -2835,7 +2835,7 @@ msgstr ""
 "Klik en sleep de muis om daar de tekening te veranderen in wit en een kleur "
 "naar keuze."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr "Klik en verander de hele tekening in wit en een kleur naar keuze."
 
@@ -2847,11 +2847,11 @@ msgstr "Tandpasta"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klik en sleep om tandpasta op je tekening te spuiten."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Tornado"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Klik en sleep om een tornadoslurf te tekenen in je tekening."
 
@@ -2964,15 +2964,15 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Klik en maak van je tekening een televisiebeeld."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Golven"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Golfjes"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -2982,7 +2982,7 @@ msgstr ""
 "golven en onder voor lange golven. Links voor kleine golven en rechts voor "
 "lange golven."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -2992,16 +2992,20 @@ msgstr ""
 "golven en onder voor lange golven. Links voor kleine golven en rechts voor "
 "lange golven."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "Xor-kleuren"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Klik en sleep om een XOR-effect te tekenen"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Klik om in de hele afbeelding een XOR-effect te tekenen"
 
 #~ msgid "New Breed Software et al."

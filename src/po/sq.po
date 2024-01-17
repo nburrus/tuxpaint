@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 21:37-0800\n"
+"POT-Creation-Date: 2024-01-16 22:42-0800\n"
 "PO-Revision-Date: 2024-01-07 20:20+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -1688,13 +1688,13 @@ msgstr "Tux Paint (Sa krejt ekrani)"
 msgid "Color Shift"
 msgstr "Këmbim Ngjyrash"
 
-#: ../../magic/src/alien.c:75
+#: ../../magic/src/alien.c:79
 msgid "Click and drag the mouse to change the colors in parts of your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të ndryshohen ngjyrat në pjesë të vizatimit "
 "tuaj."
 
-#: ../../magic/src/alien.c:76
+#: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Klikoni që të ndryshohen ngjyrat në krejt vizatimin tuaj."
 
@@ -1803,16 +1803,16 @@ msgstr "Bukurshkrim"
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klikoni dhe tërhiqeni miun përreth që të vizatohet me bukurshkrim."
 
-#: ../../magic/src/cartoon.c:111
+#: ../../magic/src/cartoon.c:112
 msgid "Cartoon"
 msgstr "Vizatimor"
 
-#: ../../magic/src/cartoon.c:125
+#: ../../magic/src/cartoon.c:132
 msgid "Click and drag the mouse around to turn the picture into a cartoon."
 msgstr ""
 "Klikoni dhe tërhiqeni miun përreth që të vizatohet brenda një karikature."
 
-#: ../../magic/src/cartoon.c:129
+#: ../../magic/src/cartoon.c:136
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Klikoni për ta kthyer tërë vizatimin në një karikaturë."
 
@@ -1920,42 +1920,42 @@ msgstr "Hiqe Ngjyrën"
 msgid "Keep Color"
 msgstr "Mbaje Ngjyrën"
 
-#: ../../magic/src/fade_darken.c:57
+#: ../../magic/src/fade_darken.c:66
 msgid "Click and drag the mouse to lighten parts of your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun përreth që të bëhen më të ndritshme pjesë të "
 "vizatimit tuaj."
 
-#: ../../magic/src/fade_darken.c:58
+#: ../../magic/src/fade_darken.c:67
 msgid "Click to lighten your entire picture."
 msgstr "Klikoni që të bëhet më i ndritshëm krejt vizatimi juaj."
 
-#: ../../magic/src/fade_darken.c:60
+#: ../../magic/src/fade_darken.c:69
 msgid "Click and drag the mouse to darken parts of your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të bëhen më të errëta pjesë të vizatimit tuaj."
 
-#: ../../magic/src/fade_darken.c:61
+#: ../../magic/src/fade_darken.c:70
 msgid "Click to darken your entire picture."
 msgstr "Klikoni që të bëhet më i errët krejt vizatimi juaj."
 
-#: ../../magic/src/fade_darken.c:63
+#: ../../magic/src/fade_darken.c:72
 msgid "Click and drag the mouse to desaturate parts of your picture."
 msgstr "Klikoni dhe tërhiqeni miun që të çngopen pjesë të vizatimit tuaj."
 
-#: ../../magic/src/fade_darken.c:64
+#: ../../magic/src/fade_darken.c:73
 msgid "Click to desaturate your entire picture."
 msgstr "Klikoni që të çngopet krejt figura juaj."
 
-#: ../../magic/src/fade_darken.c:66
+#: ../../magic/src/fade_darken.c:75
 msgid "Click and drag the mouse to saturate parts of your picture."
 msgstr "Klikoni dhe tërhiqeni miun që të ngopen pjesë të vizatimit tuaj."
 
-#: ../../magic/src/fade_darken.c:67
+#: ../../magic/src/fade_darken.c:76
 msgid "Click to saturate your entire picture."
 msgstr "Klikoni që të ngopet krejt figura juaj."
 
-#: ../../magic/src/fade_darken.c:69
+#: ../../magic/src/fade_darken.c:78
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
@@ -1963,7 +1963,7 @@ msgstr ""
 "Klikoni dhe tërhiqeni miun që të çngopen pjesë të vizatimit tuaj që "
 "përputhen me ngjyrën e zgjedhur."
 
-#: ../../magic/src/fade_darken.c:70
+#: ../../magic/src/fade_darken.c:79
 msgid ""
 "Click to entirely desaturate the parts of your picture that match the chosen "
 "color."
@@ -1971,7 +1971,7 @@ msgstr ""
 "Klikoni që të bëhet çngopje tërësisht për pjesët e figurës tuaj që kanë "
 "përputhje me ngjyrën e zgjedhur."
 
-#: ../../magic/src/fade_darken.c:74
+#: ../../magic/src/fade_darken.c:83
 msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "don't match the chosen color."
@@ -1979,7 +1979,7 @@ msgstr ""
 "Klikoni dhe tërhiqeni miun përqark që të bëhet çngopje tërësisht për pjesë "
 "të figurës tuaj që s’kanë përputhje me ngjyrën e zgjedhur."
 
-#: ../../magic/src/fade_darken.c:75
+#: ../../magic/src/fade_darken.c:84
 msgid ""
 "Click to entirely desaturate the parts of your picture that don't match the "
 "chosen color."
@@ -1996,11 +1996,11 @@ msgid "Click on part of your picture to create a fisheye effect."
 msgstr ""
 "Klikoni mbi një pjesë të vizatimit tuaj që të krijohet një efekt sy peshku."
 
-#: ../../magic/src/flower.c:200
+#: ../../magic/src/flower.c:201
 msgid "Flower"
 msgstr "Lule"
 
-#: ../../magic/src/flower.c:212
+#: ../../magic/src/flower.c:219
 msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgstr ""
 "Klikoni dhe tërhiqeni që të vizatohet kërcelli i një luleje. Mandej lëreni, "
@@ -2014,11 +2014,11 @@ msgstr "Shkumë"
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klikoni dhe tërhiqeni miun që një pjesë të mbulohet me flluska shkume."
 
-#: ../../magic/src/fold.c:114
+#: ../../magic/src/fold.c:116
 msgid "Fold"
 msgstr "Kthim Faqeje"
 
-#: ../../magic/src/fold.c:124
+#: ../../magic/src/fold.c:131
 msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Zgjidhni një ngjyrë sfondi dhe klikoni që të kthehet cepi i fletës."
@@ -2065,11 +2065,11 @@ msgstr ""
 "Klikoni që të vendosen një palë sy të vegjël të zgurdulluar, mandej "
 "tërhiqeni dhe lëreni për t’i bërë të shohin në atë drejtim."
 
-#: ../../magic/src/googlyeyes.c:205
+#: ../../magic/src/googlyeyes.c:206
 msgid "Googly Eyes"
 msgstr "Sy të Zgurdulluar"
 
-#: ../../magic/src/googlyeyes.c:222
+#: ../../magic/src/googlyeyes.c:228
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2117,28 +2117,28 @@ msgstr ""
 "Klikoni dhe tërhiqeni përreth vizatimit tuaj për ta bërë të duket si përmes "
 "kaleidoskopi!"
 
-#: ../../magic/src/kalidescope.c:127
+#: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
 msgstr "Simetri Majtas/Djathtas"
 
-#: ../../magic/src/kalidescope.c:131
+#: ../../magic/src/kalidescope.c:132
 msgid "Symmetric Up/Down"
 msgstr "Simetri Lart/Poshtë"
 
-#: ../../magic/src/kalidescope.c:135
+#: ../../magic/src/kalidescope.c:136
 msgid "Pattern"
 msgstr "Rregullsi"
 
-#: ../../magic/src/kalidescope.c:139
+#: ../../magic/src/kalidescope.c:140
 msgid "Tiles"
 msgstr "Kuadrate"
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:143
+#: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
 msgstr "Kaleidoskop"
 
-#: ../../magic/src/kalidescope.c:161
+#: ../../magic/src/kalidescope.c:168
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the left and right of your picture."
@@ -2146,7 +2146,7 @@ msgstr ""
 "Klikoni dhe tërhiqeni miun që të vizatohet me dy penela të cilët janë "
 "simetrikë përgjatë të majtës dhe të djathtës së vizatimit tuaj."
 
-#: ../../magic/src/kalidescope.c:167
+#: ../../magic/src/kalidescope.c:174
 msgid ""
 "Click and drag the mouse to draw with two brushes that are symmetric across "
 "the top and bottom of your picture."
@@ -2154,12 +2154,12 @@ msgstr ""
 "Klikoni dhe tërhiqeni miun që të vizatohet me dy penela të cilët janë "
 "simetrikë përgjatë kreut dhe fundit të vizatimit tuaj."
 
-#: ../../magic/src/kalidescope.c:171
+#: ../../magic/src/kalidescope.c:178
 msgid "Click and drag the mouse to draw a pattern across the picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të vizatohet një rregullsi nëpër vizatim."
 
-#: ../../magic/src/kalidescope.c:175
+#: ../../magic/src/kalidescope.c:182
 msgid ""
 "Click and drag the mouse to draw a pattern that is symmetric across the "
 "picture."
@@ -2168,7 +2168,7 @@ msgstr ""
 "simetrike nëpër vizatim."
 
 #. KAL_BOTH
-#: ../../magic/src/kalidescope.c:179
+#: ../../magic/src/kalidescope.c:186
 msgid ""
 "Click and drag the mouse to draw with symmetric brushes (a kaleidoscope)."
 msgstr ""
@@ -2183,11 +2183,11 @@ msgid "Click and drag to draw a beam of light on your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të vizatohet një tufë drite në vizatimin tuaj."
 
-#: ../../magic/src/lightning.c:84
+#: ../../magic/src/lightning.c:85
 msgid "Lightning"
 msgstr "Rrufe"
 
-#: ../../magic/src/lightning.c:94
+#: ../../magic/src/lightning.c:100
 msgid "Click, drag, and release to draw a lightning bolt between two points."
 msgstr ""
 "Klikoni, tërhiqeni dhe lëshojeni miun që të vizatohet një rrufe mes dy "
@@ -2213,19 +2213,19 @@ msgstr "Bojë Metalike"
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klikoni dhe tërhiqeni miun që të vizatohet me ngjyrë metalike."
 
-#: ../../magic/src/mirror_flip.c:115
+#: ../../magic/src/mirror_flip.c:116
 msgid "Mirror"
 msgstr "Pasqyroje"
 
-#: ../../magic/src/mirror_flip.c:117
+#: ../../magic/src/mirror_flip.c:118
 msgid "Flip"
 msgstr "Ktheje në anë tjetër"
 
-#: ../../magic/src/mirror_flip.c:132
+#: ../../magic/src/mirror_flip.c:139
 msgid "Click to make a mirror image."
 msgstr "Klikoni që të bëhet një figurë e pasqyruar."
 
-#: ../../magic/src/mirror_flip.c:134
+#: ../../magic/src/mirror_flip.c:141
 msgid "Click to flip the picture upside-down."
 msgstr "Klikoni që vizatimi të kthehet me kokë poshtë."
 
@@ -2290,25 +2290,25 @@ msgstr ""
 msgid "Click to add an irregular mosaic to your entire picture."
 msgstr "Klikoni që të shtohet një mozaik i parregullt në krejt vizatimin tuaj."
 
-#: ../../magic/src/negative.c:78
+#: ../../magic/src/negative.c:79
 msgid "Negative"
 msgstr "Negativ"
 
-#: ../../magic/src/negative.c:79
+#: ../../magic/src/negative.c:80
 msgid "Opposite"
 msgstr "E kundërta"
 
-#: ../../magic/src/negative.c:84
+#: ../../magic/src/negative.c:85
 msgid "Click and drag the mouse around to make your painting negative."
 msgstr ""
 "Klikoni dhe tërhiqeni miun përreth që të shndërrohet vizatimi juaj në "
 "negativ."
 
-#: ../../magic/src/negative.c:85
+#: ../../magic/src/negative.c:86
 msgid "Click to turn your painting into its negative."
 msgstr "Klikoni që të shndërrohet vizatimi juaj në negativ."
 
-#: ../../magic/src/negative.c:87
+#: ../../magic/src/negative.c:88
 msgid ""
 "Click and drag the mouse around to change colors to their opposites -- their "
 "complementary colors."
@@ -2316,7 +2316,7 @@ msgstr ""
 "Klikoni dhe tërhiqeni miun përqark që të ndryshohen ngjyrat e kundërta -- "
 "ngjyrat e tyre komplementare."
 
-#: ../../magic/src/negative.c:88
+#: ../../magic/src/negative.c:89
 msgid ""
 "Click to turn all colors in your painting into their opposites -- their "
 "complementary colors."
@@ -2553,35 +2553,35 @@ msgstr ""
 "Klikoni dhe tërhiqeni, që të vizatohen vija me qendrën tuaj të projeksionit "
 "të perspektivës me 1 qendër."
 
-#: ../../magic/src/perspective.c:165
+#: ../../magic/src/perspective.c:174
 msgid "Perspective"
 msgstr "Perspektivë"
 
-#: ../../magic/src/perspective.c:166
+#: ../../magic/src/perspective.c:175
 msgid "Panels"
 msgstr "Panele"
 
-#: ../../magic/src/perspective.c:167
+#: ../../magic/src/perspective.c:176
 msgid "Tile Zoom"
 msgstr ""
 
-#: ../../magic/src/perspective.c:168
+#: ../../magic/src/perspective.c:177
 msgid "Zoom"
 msgstr "Zoom"
 
-#: ../../magic/src/perspective.c:169
+#: ../../magic/src/perspective.c:178
 msgid "Rush"
 msgstr "Ngut"
 
-#: ../../magic/src/perspective.c:173
+#: ../../magic/src/perspective.c:182
 msgid "Click on the corners and drag where you want to stretch the picture."
 msgstr "Klikoni te cepat dhe tërhiqeni deri ku doni të shformohet vizatimi."
 
-#: ../../magic/src/perspective.c:175
+#: ../../magic/src/perspective.c:184
 msgid "Click to turn your picture into 2-by-2 panels."
 msgstr "Klikoni për ta kthyer vizatimin tuaj panele 2-herë-2."
 
-#: ../../magic/src/perspective.c:177
+#: ../../magic/src/perspective.c:186
 msgid ""
 "Click and drag up to zoom in the picture. Drag down to zoom out and tile the "
 "picture."
@@ -2589,13 +2589,13 @@ msgstr ""
 "Klikoni dhe tërhiqeni sipër për zmadhim. Tërhiqeni poshtë për zvogëlim të "
 "vizatimit dhe riprodhim të tij në kuadrate."
 
-#: ../../magic/src/perspective.c:179
+#: ../../magic/src/perspective.c:188
 msgid "Click and drag up to zoom in or drag down to zoom out the picture."
 msgstr ""
 "Klikoni dhe tërhiqeni sipër për zmadhim, ose tërhiqeni poshtë për zvogëlim "
 "të vizatimit."
 
-#: ../../magic/src/perspective.c:181
+#: ../../magic/src/perspective.c:190
 msgid "Click and drag up to rush in or drag down to rush out the picture."
 msgstr ""
 
@@ -2655,15 +2655,15 @@ msgstr "Klikoni që në vizatimin tuaj të vendoset një pikë shiu."
 msgid "Click to cover your picture with rain drops."
 msgstr "Klikoni që vizatimi juaj të mbulohet me pika shiu."
 
-#: ../../magic/src/realrainbow.c:105
+#: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
 msgstr "Ylber i Njëmendtë"
 
-#: ../../magic/src/realrainbow.c:107
+#: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
 msgstr "Ylber ROYGBIV"
 
-#: ../../magic/src/realrainbow.c:120
+#: ../../magic/src/realrainbow.c:126
 msgid ""
 "Click where you want your rainbow to start, drag to where you want it to "
 "end, and then let go to draw a rainbow."
@@ -2671,11 +2671,11 @@ msgstr ""
 "Klikoni ku doni të fillojë ylberi juaj, tërhiqeni deri atje ku doni të "
 "përfundojë, dhe mandej lëshojeni butonin, që të vizatohet një ylber."
 
-#: ../../magic/src/reflection.c:114
+#: ../../magic/src/reflection.c:115
 msgid "Reflection"
 msgstr "Pasqyrim"
 
-#: ../../magic/src/reflection.c:125
+#: ../../magic/src/reflection.c:131
 msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që te vizatimi juaj të shtohet një pasqyrmi."
@@ -2696,19 +2696,19 @@ msgstr "Valëzim"
 msgid "Click to make ripples appear over your picture."
 msgstr "Klikoni që të bëni të shfaqen valëzime nëpër vizatimin tuaj."
 
-#: ../../magic/src/rosette.c:128
+#: ../../magic/src/rosette.c:129
 msgid "Rosette"
 msgstr "Rozetë"
 
-#: ../../magic/src/rosette.c:130
+#: ../../magic/src/rosette.c:131
 msgid "Picasso"
 msgstr "Pikaso"
 
-#: ../../magic/src/rosette.c:141
+#: ../../magic/src/rosette.c:147
 msgid "Click and start drawing your rosette."
 msgstr "Klikoni dhe filloni të vizatoni rozetën tuaj."
 
-#: ../../magic/src/rosette.c:143
+#: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Mund të vizatoni mu si Pikasoja!"
 
@@ -2750,11 +2750,11 @@ msgstr "Klikoni dhe tërhiqeni miun që të krijohet një siluetë bardhë e zi.
 msgid "Click to create a black and white silhouette of your entire picture."
 msgstr "Klikoni që të krijohet një siluetë bardhezi e krejt vizatimit tuaj."
 
-#: ../../magic/src/shift.c:112
+#: ../../magic/src/shift.c:113
 msgid "Shift"
 msgstr "Zhvendoseni"
 
-#: ../../magic/src/shift.c:124
+#: ../../magic/src/shift.c:131
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Klikoni te tërhiqeni që të zhvendoset vizatimi juaj nëpër kanavacë."
 
@@ -2820,30 +2820,30 @@ msgstr "Klikoni që në vizatimin tuaj të shtohen topa dëbore."
 msgid "Click to add snow flakes to your picture."
 msgstr "Klikoni që në vizatimin tuaj të shtohen flokë dëbore."
 
-#: ../../magic/src/stretch.c:118
+#: ../../magic/src/stretch.c:119
 msgid "Stretch"
 msgstr "Tërheqje"
 
-#: ../../magic/src/stretch.c:128
+#: ../../magic/src/stretch.c:134
 msgid ""
 "Click and drag to stretch part of your picture vertically or horizontally."
 msgstr ""
 "Klikoni dhe tërhiqeni për ta tërhequr vizatimin tuaj vertikalisht ose "
 "horizontalisht."
 
-#: ../../magic/src/string.c:136
+#: ../../magic/src/string.c:137
 msgid "String edges"
 msgstr "Skaje me thurje"
 
-#: ../../magic/src/string.c:139
+#: ../../magic/src/string.c:140
 msgid "String corner"
 msgstr "Cep me thurje"
 
-#: ../../magic/src/string.c:142
+#: ../../magic/src/string.c:143
 msgid "String 'V'"
 msgstr "“V” me thurje"
 
-#: ../../magic/src/string.c:158
+#: ../../magic/src/string.c:175
 msgid ""
 "Click and drag to draw string art. Drag top-bottom to draw less or more "
 "lines, left or right to make a bigger hole."
@@ -2852,12 +2852,12 @@ msgstr ""
 "për të vizatuar më pak ose më shumë vija, majtas ose djathtas për të krijuar "
 "një vrimë më të madhe."
 
-#: ../../magic/src/string.c:161
+#: ../../magic/src/string.c:178
 msgid "Click and drag to draw arrows made of string art."
 msgstr ""
 "Klikoni dhe tërhiqeni, që të vizatohen shigjeta të krijuara nga thurje."
 
-#: ../../magic/src/string.c:164
+#: ../../magic/src/string.c:181
 msgid "Draw string art arrows with free angles."
 msgstr "Vizatohen shigjeta të krijuara nga thurje, me kënde sa doni."
 
@@ -2904,18 +2904,18 @@ msgstr "Ngjyrosje"
 msgid "Color & White"
 msgstr "Ngjyrë & E bardhë"
 
-#: ../../magic/src/tint.c:78
+#: ../../magic/src/tint.c:83
 msgid ""
 "Click and drag the mouse around to change the color of parts of your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun përqark që të ndryshohet ngjyra e pjesësh të "
 "vizatimit tuaj."
 
-#: ../../magic/src/tint.c:79
+#: ../../magic/src/tint.c:84
 msgid "Click to change the color of your entire picture."
 msgstr "Klikoni që të ndryshohet ngjyra e krejt vizatimit tuaj."
 
-#: ../../magic/src/tint.c:80
+#: ../../magic/src/tint.c:85
 msgid ""
 "Click and drag the mouse around to turn parts of your picture into white and "
 "a color you choose."
@@ -2923,7 +2923,7 @@ msgstr ""
 "Klikoni dhe tërhiqeni miun përqark që pjesë të vizatimit tuaj të shndërrohen "
 "në të bardhë dhe një ngjyrë tjetër që e zgjidhni ju."
 
-#: ../../magic/src/tint.c:81
+#: ../../magic/src/tint.c:86
 msgid "Click to turn your entire picture into white and a color you choose."
 msgstr ""
 "Klikoni që krejt vizatimi juaj të shndërrohet në të bardhë dhe një ngjyrë "
@@ -2937,11 +2937,11 @@ msgstr "Pastë dhëmbësh"
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klikoni dhe tërhiqeni që mbi vizatimin tuaj të shtihet pastë dhëmbësh."
 
-#: ../../magic/src/tornado.c:152
+#: ../../magic/src/tornado.c:153
 msgid "Tornado"
 msgstr "Shtjellë"
 
-#: ../../magic/src/tornado.c:164
+#: ../../magic/src/tornado.c:171
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni që në vizatimin tuaj të krijohet një hinkë shtjelle."
@@ -3056,15 +3056,15 @@ msgstr ""
 msgid "Click to make your picture look like it's on television."
 msgstr "Klikoni për ta bërë vizatimin të duket si të ishte në televizor."
 
-#: ../../magic/src/waves.c:118
+#: ../../magic/src/waves.c:125
 msgid "Waves"
 msgstr "Valë"
 
-#: ../../magic/src/waves.c:120
+#: ../../magic/src/waves.c:127
 msgid "Wavelets"
 msgstr "Valëza"
 
-#: ../../magic/src/waves.c:129
+#: ../../magic/src/waves.c:136
 msgid ""
 "Click to make the picture horizontally wavy. Click toward the top for "
 "shorter waves, the bottom for taller waves, the left for small waves, and "
@@ -3074,7 +3074,7 @@ msgstr ""
 "shkurtra, klikoni drejt kreut, drejt fundit për valë më të larta, majtas për "
 "valë të vogla, dhe djathtas për valë të gjata."
 
-#: ../../magic/src/waves.c:132
+#: ../../magic/src/waves.c:139
 msgid ""
 "Click to make the picture vertically wavy. Click toward the top for shorter "
 "waves, the bottom for taller waves, the left for small waves, and the right "
@@ -3084,16 +3084,20 @@ msgstr ""
 "shkurtra, klikoni drejt kreut, drejt fundit për valë më të larta, majtas për "
 "valë të vogla, dhe djathtas për valë të gjata."
 
-#: ../../magic/src/xor.c:99
+#: ../../magic/src/xor.c:100
 msgid "Xor Colors"
 msgstr "Ngjyra Xor"
 
-#: ../../magic/src/xor.c:110
-msgid "Click and drag to draw a XOR effect"
+#: ../../magic/src/xor.c:116
+#, fuzzy
+#| msgid "Click and drag to draw a XOR effect"
+msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Klikoni dhe tërhiqeni, që të vizatohet një efekt XOR"
 
-#: ../../magic/src/xor.c:112
-msgid "Click to draw a XOR effect on the whole picture"
+#: ../../magic/src/xor.c:118
+#, fuzzy
+#| msgid "Click to draw a XOR effect on the whole picture"
+msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Klikoni që të vizatohet një efekt XOR në krejt vizatimin"
 
 #~ msgid "New Breed Software et al."
