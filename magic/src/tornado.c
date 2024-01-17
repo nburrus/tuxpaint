@@ -4,7 +4,7 @@
   Tornado Magic Tool Plugin
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2024 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -27,7 +27,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 #include <stdio.h>
@@ -79,6 +79,7 @@ int tornado_get_tool_count(magic_api * api);
 SDL_Surface *tornado_get_icon(magic_api * api, int which);
 char *tornado_get_name(magic_api * api, int which);
 int tornado_get_group(magic_api * api, int which);
+int tornado_get_order(int which);
 char *tornado_get_description(magic_api * api, int which, int mode);
 void tornado_drag(magic_api * api, int which, SDL_Surface * canvas,
                   SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
@@ -156,6 +157,12 @@ char *tornado_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 int tornado_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_ARTISTIC;
+}
+
+// Return our orders:
+int tornado_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 500;
 }
 
 // Return our descriptions, localized:

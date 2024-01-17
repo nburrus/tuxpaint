@@ -7,7 +7,7 @@
   Math assistance by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
   First created: 2009.04.02
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 
 FIXME:
 * Color/alpha art needs improvement.
@@ -37,6 +37,7 @@ int realrainbow_get_tool_count(magic_api * api);
 SDL_Surface *realrainbow_get_icon(magic_api * api, int which);
 char *realrainbow_get_name(magic_api * api, int which);
 int realrainbow_get_group(magic_api * api, int which);
+int realrainbow_get_order(int which);
 char *realrainbow_get_description(magic_api * api, int which, int mode);
 int realrainbow_modes(magic_api * api, int which);
 int realrainbow_requires_colors(magic_api * api, int which);
@@ -110,6 +111,11 @@ char *realrainbow_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int realrainbow_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_ARTISTIC;
+}
+
+int realrainbow_get_order(int which)
+{
+  return 300 + which;
 }
 
 char *realrainbow_get_description(magic_api * api ATTRIBUTE_UNUSED,

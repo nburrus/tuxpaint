@@ -7,7 +7,7 @@
    by Bill Kendrick <bill@newbreedsoftware.com>
    with help from Pere Pujal Carabantes
 
-   January 6, 2024 - January 15, 2024
+   January 6, 2024 - January 16, 2024
 */
 
 #include <stdio.h>
@@ -159,6 +159,7 @@ int trochoids_get_tool_count(magic_api * api);
 SDL_Surface *trochoids_get_icon(magic_api * api, int which);
 char *trochoids_get_name(magic_api * api, int which);
 int trochoids_get_group(magic_api * api, int which);
+int trochoids_get_order(int which);
 char *trochoids_get_description(magic_api * api, int which, int mode);
 int trochoids_requires_colors(magic_api * api, int which);
 int trochoids_modes(magic_api * api, int which);
@@ -256,6 +257,12 @@ char *trochoids_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int trochoids_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MAGIC_TYPE_ARTISTIC);
+}
+
+int trochoids_get_order(int which)
+{
+  /* Group in their own spot, ordered the way the appear in the "TOOL_..." `enum` */
+  return 10000 + which;
 }
 
 

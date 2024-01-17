@@ -3,7 +3,7 @@
   Draws a lightning strike between the click
   and drag+release positions.
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 #include <stdio.h>
@@ -26,6 +26,7 @@ int lightning_get_tool_count(magic_api * api);
 SDL_Surface *lightning_get_icon(magic_api * api, int which);
 char *lightning_get_name(magic_api * api, int which);
 int lightning_get_group(magic_api * api, int which);
+int lightning_get_order(int which);
 char *lightning_get_description(magic_api * api, int which, int mode);
 int lightning_requires_colors(magic_api * api, int which);
 int lightning_modes(magic_api * api, int which);
@@ -87,6 +88,11 @@ char *lightning_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
 int lightning_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_ARTISTIC;
+}
+
+int lightning_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 400;
 }
 
 char *lightning_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
