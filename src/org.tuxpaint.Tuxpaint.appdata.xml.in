@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
 <!-- Copyright 2019-2022 Endless OS Foundation LLC -->
+<!-- Copyright 2024 Tux Paint developers -->
 <component type="desktop">
   <id>org.tuxpaint.Tuxpaint</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -21,7 +22,7 @@
       help them be creative.
     </p>
   </description>
-  <developer_name>New Breed Software et al.</developer_name>
+  <developer_name>Bill Kendrick, et al.</developer_name>
   <url type="homepage">https://tuxpaint.org/</url>
   <url type="bugtracker">https://sourceforge.net/p/tuxpaint/_list/tickets</url>
   <url type="faq">https://tuxpaint.org/docs/en/html/FAQ.html</url>
@@ -43,12 +44,13 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.32" date="2024-01-13">
+    <release version="0.9.32" date="2024-01-16">
       <description>
         <p>New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and corresponding vanishing point editors).</p>
         <p>New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing tools (and corresponding angle editors).</p>
         <p>New Magic tools: Epitrochoid and Hypotrochoid generators.</p>
         <p>New configuration option, "complexity", which affects the behavior (or availability) of some Magic tools.</p>
+        <p>Magic tools reorganized (previously ordered alphabetically by localized name).</p>
         <p>Font name and size shown when selecting fonts in Text and Label tools.</p>
         <p>Bug-fixes and localization updates.</p>
       </description>
