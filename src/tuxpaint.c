@@ -21373,7 +21373,7 @@ static SDL_Surface *load_kpx(const char *file)
  */
 static void load_magic_plugins(void)
 {
-  int res, n, i, plc;
+  int res, n, i, plc, tries;
   char *place;
   int err;
   DIR *d;
@@ -21858,6 +21858,15 @@ static void load_magic_plugins(void)
 
   DEBUG_PRINTF("Loaded %d magic tools from %d plug-in files\n", num_magics_total, num_plugin_files);
   DEBUG_PRINTF("\n");
+
+  /* Start out with the first magic group that _has_ any tools */
+  tries = 0;
+  while (num_magics[magic_group] == 0 && tries < MAX_MAGIC_GROUPS) {
+    magic_group++;
+    if (magic_group >= MAX_MAGIC_GROUPS) {
+      magic_group = 0;
+    }
+  }
 }
 
 
