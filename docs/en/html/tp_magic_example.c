@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   January 15, 2024
+   January 16, 2024
 */
 
 
@@ -192,7 +192,8 @@ int example_get_tool_count(magic_api * api)
 /*
 Load our icons
 
-When Tux Paint is starting up and loading plugins, it asks us to provide icons for the 'Magic' tool buttons.
+When Tux Paint is starting up and loading plugins, it asks us to provide
+icons for the 'Magic' tool buttons.
 */
 SDL_Surface *example_get_icon(magic_api * api, int which)
 {
@@ -272,6 +273,20 @@ int example_get_group(magic_api * api, int which)
   into the array.
   */
   return (tool_groups[which]);
+}
+
+
+/*
+Return grouping/ordering number
+
+When Tux Paint is starting up and loading plugins, it asks us to provide a
+numeric value used for sorting 'Magic' tools within a group.  Tools will be
+ordered based on this number, and those with the same number will be sorted
+alphabetically by their localized name (see 'example_get_name').
+*/
+int *example_get_order(int which)
+{
+  return 0;
 }
 
 

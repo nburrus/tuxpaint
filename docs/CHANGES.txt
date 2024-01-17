@@ -9,14 +9,18 @@ https://tuxpaint.org/
 2024.January.16 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
-    * Support for complexity levels in Magic tools via the plugin API.
-      (Closes https://sourceforge.net/p/tuxpaint/feature-requests/247/)
-      + Complexity/expertise level may be set via configuration,
-        `--complexity`; values may be "advanced" (default), "beginner",
-        or "novice".
-      + Plugins' "init()" functions are sent a new `complexity_level`
-        argument.
-      + Note: Bumps `TP_MAGIC_API_VERSION` to 0x00000009.
+    * Magic tool plugin API updates
+      + Support for complexity levels in Magic tools via the plugin API.
+        (Closes https://sourceforge.net/p/tuxpaint/feature-requests/247/)
+        - Complexity/expertise level may be set via configuration,
+          `--complexity`; values may be "advanced" (default), "beginner",
+          or "novice".
+        - Plugins' "init()" functions are sent a new `complexity_level`
+          argument.
+      + WIP Magic tools can provide a value that allows them to be
+        sorted and grouped together (rather than always relying on the
+        localized name of the tool).
+      + Note: `TP_MAGIC_API_VERSION` bumped to 0x00000009.
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * "Clone" tool does not operate when Tux Paint is in "novice"
