@@ -3,7 +3,7 @@
    Applies a "bloom" effect to the image.
    (https://en.wikipedia.org/wiki/Bloom_(shader_effect))
 
-   Last updated: December 29, 2023
+   Last updated: January 16, 2024
 */
 
 #include <stdio.h>
@@ -47,6 +47,7 @@ int bloom_get_tool_count(magic_api * api);
 SDL_Surface *bloom_get_icon(magic_api * api, int which);
 char *bloom_get_name(magic_api * api, int which);
 int bloom_get_group(magic_api * api, int which);
+int bloom_get_order(int which);
 char *bloom_get_description(magic_api * api, int which, int mode);
 int bloom_requires_colors(magic_api * api, int which);
 int bloom_modes(magic_api * api, int which);
@@ -107,9 +108,14 @@ char *bloom_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
   return strdup(gettext("Bloom"));
 }
 
-int bloom_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED ATTRIBUTE_UNUSED)
+int bloom_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_COLOR_FILTERS;
+}
+
+int bloom_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 900;
 }
 
 char *bloom_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)

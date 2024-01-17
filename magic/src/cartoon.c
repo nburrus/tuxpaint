@@ -50,6 +50,7 @@ int cartoon_get_tool_count(magic_api * api);
 SDL_Surface *cartoon_get_icon(magic_api * api, int which);
 char *cartoon_get_name(magic_api * api, int which);
 int cartoon_get_group(magic_api * api, int which);
+int cartoon_get_order(int which);
 char *cartoon_get_description(magic_api * api, int which, int mode);
 void cartoon_apply_colors(magic_api * api, SDL_Surface * surf, int xx, int yy);
 void cartoon_apply_outline(magic_api * api, int xx, int yy);
@@ -115,6 +116,12 @@ char *cartoon_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 int cartoon_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_COLOR_FILTERS;
+}
+
+// Return our orders
+int cartoon_get_order(int which ATTRIBUTE_UNUSED)
+{
+  return 600;
 }
 
 // Return our descriptions, localized:

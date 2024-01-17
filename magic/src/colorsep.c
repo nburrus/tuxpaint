@@ -3,7 +3,7 @@
    Color separation effect (a la red/cyan aka red/blue 3D glasses).
    Bill Kendrick
 
-   Last updated: December 29, 2023
+   Last updated: January 16, 2024
 */
 
 #include <stdio.h>
@@ -58,6 +58,7 @@ int colorsep_get_tool_count(magic_api * api);
 SDL_Surface *colorsep_get_icon(magic_api * api, int which);
 char *colorsep_get_name(magic_api * api, int which);
 int colorsep_get_group(magic_api * api, int which);
+int colorsep_get_order(int which);
 char *colorsep_get_description(magic_api * api, int which, int mode);
 int colorsep_requires_colors(magic_api * api, int which);
 int colorsep_modes(magic_api * api, int which);
@@ -123,6 +124,11 @@ char *colorsep_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int colorsep_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_COLOR_FILTERS;
+}
+
+int colorsep_get_order(int which)
+{
+  return 700 + which;
 }
 
 char *colorsep_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
