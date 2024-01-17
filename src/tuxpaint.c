@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 13, 2024
+  June 14, 2002 - January 16, 2024
 */
 
 #include "platform.h"
@@ -1552,6 +1552,7 @@ typedef struct magic_funcs_s
 {
   int (*get_tool_count)(magic_api *);
   int (*get_group)(magic_api *, int);
+  int (*get_order)(int);
   char *(*get_name)(magic_api *, int);
   SDL_Surface *(*get_icon)(magic_api *, int);
   char *(*get_description)(magic_api *, int, int);
@@ -1574,7 +1575,7 @@ typedef struct magic_funcs_s
 
 typedef struct magic_s
 {
-  int place;
+  int place;                    /* System-wide or local to the user? */
   int handle_idx;               /* Index to magic funcs for each magic tool (shared objs may report more than 1 tool) */
   int idx;                      /* Index to magic tools within shared objects (shared objs may report more than 1 tool) */
   int mode;                     /* Current mode (paint or fullscreen) */
@@ -1584,6 +1585,7 @@ typedef struct magic_s
   int default_size[MAX_MODES];  /* Magic tool's default size setting */
   int size[MAX_MODES];          /* Magic tool's size setting */
   int group;                    /* Which group of magic tools this lives in */
+  int order;                    /* Order within the group of magic tools (for sorting; falls back to name) */
   char *name;                   /* Name of magic tool */
   char *tip[MAX_MODES];         /* Description of magic tool, in each possible mode */
   SDL_Surface *img_icon;
@@ -21485,6 +21487,9 @@ static void load_magic_plugins(void)
               safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname, "get_group");
               magic_funcs[num_plugin_files].get_group = SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
+              safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname, "get_order");
+              magic_funcs[num_plugin_files].get_order = SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
+
               safe_snprintf(funcname, sizeof(funcname), "%s_%s", objname, "get_name");
               magic_funcs[num_plugin_files].get_name = SDL_LoadFunction(magic_handle[num_plugin_files], funcname);
 
@@ -21541,6 +21546,7 @@ static void load_magic_plugins(void)
               //EP added (intptr_t) to avoid warning on x64 on all lines below
               DEBUG_PRINTF("get_tool_count = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_tool_count);
               DEBUG_PRINTF("get_group = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_group);
+              DEBUG_PRINTF("get_order = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_order);
               DEBUG_PRINTF("get_name = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_name);
               DEBUG_PRINTF("get_icon = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_icon);
               DEBUG_PRINTF("get_description = 0x%x\n", (int)(intptr_t) magic_funcs[num_plugin_files].get_description);
@@ -21569,6 +21575,11 @@ static void load_magic_plugins(void)
               if (magic_funcs[num_plugin_files].get_group == NULL)
               {
                 fprintf(stderr, "Error: plugin %s is missing get_group\n", fname);
+                err = 1;
+              }
+              if (magic_funcs[num_plugin_files].get_order == NULL)
+              {
+                fprintf(stderr, "Error: plugin %s is missing get_order\n", fname);
                 err = 1;
               }
               if (magic_funcs[num_plugin_files].get_name == NULL)
@@ -21705,6 +21716,7 @@ static void load_magic_plugins(void)
                       magics[group][idx].handle_idx = num_plugin_files;
                       magics[group][idx].group = group;
                       magics[group][idx].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
+                      magics[group][idx].order = magic_funcs[num_plugin_files].get_order(i);
 
                       magics[group][idx].avail_modes = magic_funcs[num_plugin_files].modes(magic_api_struct, i);
 
@@ -21858,7 +21870,13 @@ static int magic_sort(const void *a, const void *b)
   magic_t *am = (magic_t *) a;
   magic_t *bm = (magic_t *) b;
 
-  return (strcoll(gettext(am->name), gettext(bm->name)));
+  if (am->order != bm->order) {
+    /* Different 'order's, use them */
+    return (am->order - bm->order);
+  } else {
+    /* Same 'order', use the (localized) name */
+    return (strcoll(gettext(am->name), gettext(bm->name)));
+  }
 }
 
 

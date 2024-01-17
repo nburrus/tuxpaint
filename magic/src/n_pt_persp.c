@@ -16,7 +16,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   December 12, 2023 - January 14, 2024
+   December 12, 2023 - January 16, 2024
 */
 
 #include <stdio.h>
@@ -69,6 +69,7 @@ enum
 
   NUM_TOOLS
 };
+
 
 #ifdef DEBUG
 char * tool_debug_names[NUM_TOOLS] = {
@@ -306,6 +307,7 @@ int n_pt_persp_get_tool_count(magic_api * api);
 SDL_Surface *n_pt_persp_get_icon(magic_api * api, int which);
 char *n_pt_persp_get_name(magic_api * api, int which);
 int n_pt_persp_get_group(magic_api * api, int which);
+int n_pt_persp_get_order(int which);
 char *n_pt_persp_get_description(magic_api * api, int which, int mode);
 int n_pt_persp_requires_colors(magic_api * api, int which);
 int n_pt_persp_modes(magic_api * api, int which);
@@ -499,6 +501,11 @@ char *n_pt_persp_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int n_pt_persp_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MAGIC_TYPE_PROJECTIONS);
+}
+
+int n_pt_persp_get_order(int which) {
+  /* Use the order they appear in the TOOL... enum */
+  return which;
 }
 
 
