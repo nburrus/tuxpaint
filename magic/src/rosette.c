@@ -6,7 +6,7 @@
 
   Credits: Adam 'foo-script' Rakowski <foo-script@o2.pl>
 
-  Copyright (c) 2002-2023 by Bill Kendrick and others; see AUTHORS.txt
+  Copyright (c) 2002-2024 by Bill Kendrick and others; see AUTHORS.txt
   bill@newbreedsoftware.com
   https://tuxpaint.org/
 
@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 29, 2023
+  Last updated: January 16, 2024
 */
 
 // sound only plays on release
@@ -59,6 +59,7 @@ int rosette_get_tool_count(magic_api * api);
 SDL_Surface *rosette_get_icon(magic_api * api, int which);
 char *rosette_get_name(magic_api * api, int which);
 int rosette_get_group(magic_api * api, int which);
+int rosette_get_order(int which);
 char *rosette_get_description(magic_api * api, int which, int mode);
 int rosette_requires_colors(magic_api * api, int which);
 void rosette_release(magic_api * api, int which,
@@ -133,6 +134,11 @@ char *rosette_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 int rosette_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PATTERN_PAINTING;
+}
+
+int rosette_get_order(int which)
+{
+  return 200 + which;
 }
 
 char *rosette_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
