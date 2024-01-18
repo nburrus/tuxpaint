@@ -7,7 +7,7 @@
    by Bill Kendrick <bill@newbreedsoftware.com>
    with help from Pere Pujal Carabantes
 
-   January 6, 2024 - January 16, 2024
+   January 6, 2024 - January 17, 2024
 */
 
 #include <stdio.h>
@@ -360,6 +360,10 @@ void trochoids_work(magic_api * api, int which,
       which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
       which == TOOL_HYPOTROCHOID_NOSIZES_3) {
     /* Hypotrochoid */
+    if (R == r) {
+      r += 10;
+    }
+
     r_ratio = (float) (R - r) / (float) r;
   } else {
     /* Epitrochoid */
@@ -417,16 +421,18 @@ void trochoids_work(magic_api * api, int which,
        showing the mechanism that would be used to generate the pattern */
     rotator_anim_a = (int) (atan2(y - trochoids_y, x - trochoids_x) / M_PI * 180.0);
 
-    for (a = 0; a < 360; a = a + 2) {
-      /* Stator (fixed circle) */
+    /* Stator (fixed circle) */
+    for (a = 0; a < 360; a = a + 360 / R) {
       px = (int) ((float) trochoids_x + ((float) R * deg_cos(a)));
       py = (int) ((float) trochoids_y - ((float) R * deg_sin(a)));
-      api->xorpixel(canvas, px, py);
-      api->xorpixel(canvas, px + 1, py);
-      api->xorpixel(canvas, px, py + 1);
-      api->xorpixel(canvas, px + 1, py + 1);
+      api->putpixel(canvas, px, py, 0);
+      api->putpixel(canvas, px + 1, py, 0xff);
+      api->putpixel(canvas, px, py + 1, 0);
+      api->putpixel(canvas, px + 1, py + 1, 0xff);
+    }
 
-      /* Rotator (rolling circle) */
+    /* Rotator (rolling circle) */
+    for (a = 0; a < 360; a = a + 360 / r) {
       if (which == TOOL_HYPOTROCHOID_SIZES ||
           which == TOOL_HYPOTROCHOID_NOSIZES_1 ||
           which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
@@ -452,13 +458,22 @@ void trochoids_work(magic_api * api, int which,
         which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
         which == TOOL_HYPOTROCHOID_NOSIZES_3) {
       /* Hypotrochoid */
-      px = trochoids_x + (((R - r) * deg_cos(rotator_anim_a)) + (d * deg_cos(rotator_anim_a)));
-      py = trochoids_y + (((R - r) * deg_sin(rotator_anim_a)) - (d * deg_sin(rotator_anim_a)));
+      px = trochoids_x + (((R - r) * deg_cos(rotator_anim_a)) + (d * deg_cos(360 - rotator_anim_a)));
+      py = trochoids_y + (((R - r) * deg_sin(rotator_anim_a)) - (d * deg_sin(360 - rotator_anim_a)));
+
+      px2 = trochoids_x + (((R - r) * deg_cos(rotator_anim_a)));
+      py2 = trochoids_y + (((R - r) * deg_sin(rotator_anim_a)));
     } else {
       /* Epitrochoid */
-      px = trochoids_x + (((R + r) * deg_cos(rotator_anim_a)) - (d * deg_cos(rotator_anim_a)));
-      py = trochoids_y + (((R + r) * deg_sin(rotator_anim_a)) - (d * deg_sin(rotator_anim_a)));
+      px = trochoids_x + (((R + r) * deg_cos(rotator_anim_a)) - (d * deg_cos(360 - rotator_anim_a)));
+      py = trochoids_y + (((R + r) * deg_sin(rotator_anim_a)) - (d * deg_sin(360 - rotator_anim_a)));
+
+      px2 = trochoids_x + (((R + r) * deg_cos(rotator_anim_a)));
+      py2 = trochoids_y + (((R + r) * deg_sin(rotator_anim_a)));
     }
+
+    api->line((void *)api, which, canvas, snapshot, px, py, px2, py2, 2, trochoids_line_callback);
+
     for (int yy = -2; yy <= 2; yy++) {
       for (int xx = -2; xx <= 2; xx++) {
         api->putpixel(canvas, px + xx, py + yy, trochoids_color);
