@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-16 22:42-0800\n"
-"PO-Revision-Date: 2023-07-09 12:05+0200\n"
+"PO-Revision-Date: 2024-01-21 00:09+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:25
 msgid "Bill Kendrick, et al."
-msgstr ""
+msgstr "Bill Kendrick i altres."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:35
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
@@ -417,85 +417,85 @@ msgstr "L'eina Estampa serveix per inserir imatges al dibuix"
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
-msgstr ""
+msgstr "Noves eines màgiques: Eines per dibuxar perspectives d'un, dos i tres punts de fuga, i les corresponents per editar-ne els punts."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
-msgstr ""
+msgstr "Noves eines màgiques: Eines per fer dibuixos isomètrics, dimètrics, trimètrics i oblics, i les corresponents per editar-ne els angles."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
-msgstr ""
+msgstr "Noves eines màgiques: Generadors d'epitrocoides i hipotrocoides."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
-msgstr ""
+msgstr "Nova opció de configuració \"complexity\" que afecta el comportament i/o disponibilitat d'algunes eines"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
-msgstr ""
+msgstr "Reordenació de les eines màgiques, abans eren ordenades segons l'alfabet."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
-msgstr ""
+msgstr "Es mostra el nom del tipus de lletra i la seva mida en les eines Texte i Etiquetes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "Bug-fixes and localization updates."
-msgstr ""
+msgstr "Correccions d'errors i actualitzacions de localitzacions."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
-msgstr ""
+msgstr "Noves eines màgiques: Espires, Cinta, Traç suau, Espires gargot."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
-msgstr ""
+msgstr "L'eina d'esborrar ara ofereix gomes suaus."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
 "Turn saved drawings into Templates (found in the New dialog) from within Tux "
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
 "the New dialog.)"
-msgstr ""
+msgstr "Des del diàleg d'Obrir es pot convertir dibuixos desats en plantilles de fons que es trobaran en el diàleg de Nou dibuix. Aquestes plantilles de fons també es podran esborrar en el diàleg d'Obrir."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
 "\"Erase\" option to remove saved drawings from the Open dialog and exported "
 "templates from the New dialog may be disabled, via \"noerase\" configuration "
 "option."
-msgstr ""
+msgstr "La opció d'esborrar els fitxers desats es pot desactivar amb la opció de configuració «noerase»"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
-msgstr ""
+msgstr "Es pot especificar el tipus de lletra de la interfície amb la opció de configuració «uifont». Podeu obtenir el llistat de tipus de lletra disponibles amb la opció «--listfonts» en la línia d'ordres."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
 "Different (default) user interface fonts are once again used for under "
 "different locales."
-msgstr ""
+msgstr "Per defecte s'empren diferents tipus de lleta per a diferents locales."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
-msgstr ""
+msgstr "Petites millores en els botons especials de selecció de colors."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid "Many Magic tools now offer size settings."
-msgstr ""
+msgstr "Ara es pot configurar mides en moltes eines màgiques."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid "Button labels word-wrap when possible (improves legibility)."
-msgstr ""
+msgstr "Multilínia en les etiquetes dels botons(per millorar la llegibilitat)"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
@@ -522,8 +522,6 @@ msgstr ""
 "l'àrea que s'emplena."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
-#, fuzzy
-#| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr "Hi ha disponible una drecera de teclat que permet esborrar."
 
@@ -1224,10 +1222,7 @@ msgstr "D'acord, llavors… Seguirem dibuixant en aquest!"
 msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
-msgstr ""
-"Feu clic en una etiqueta (o premeu [Tab] per resaltar-la seguit de [Enter] "
-"per sel·lecionar-la). Llavors podeu moure-la, esborrar-la, editar-la i "
-"canviar-ne el tipus de lletra."
+msgstr "Feu clic en una etiqueta (o premeu [Tab] per resaltar-la seguit de [Enter] per selecionar-la). Llavors podeu moure-la, esborrar-la, editar-la i canviar-ne el tipus de lletra."
 
 #. Instructions to show when a Label has been chosen with the selector
 #: ../tools.h:183
@@ -1245,9 +1240,7 @@ msgstr ""
 msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
-msgstr ""
-"Feu clic en una etiqueta (o premeu [Tab] per ressaltar-la i [Enter] per "
-"sel·leccionar-la) si la voleu aplicar definitivament al dibuix."
+msgstr "Feu clic en una etiqueta (o premeu [Tab] per ressaltar-la i [Enter] per seleccionar-la) si la voleu aplicar definitivament al dibuix."
 
 #. Instructions to show when choosing brushes, depending on the brush's feature (if there are none, show_brush_tip() will show the current tool's tip)
 #: ../tools.h:189
@@ -1268,7 +1261,7 @@ msgstr ""
 
 #: ../tools.h:193
 msgid "This brush's spacing is now 1 pixel!"
-msgstr "L'espaiat d'aquest pinzell és de 1 pixel!"
+msgstr "L'espaiat d'aquest pinzell és de 1 píxel!"
 
 #: ../tools.h:194
 #, c-format
@@ -1305,35 +1298,21 @@ msgstr ""
 
 #. Text tool instructions after changing font
 #: ../tools.h:203
-#, fuzzy, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text."
+#, c-format
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
-msgstr ""
-"Trieu una lletra. Feu clic en el vostre dibuix i ja podeu començar a "
-"escriure. Premeu [Enter] o [Tab] per aplicar el text."
+msgstr "El tipus de lletra és «%1$s (%2$s)», d'una alçada de %3$d píxels. Feu clic en el vostre dibuix i ja podeu començar a escriure. Premeu [Enter] o [Tab] per aplicar el text."
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
-#, fuzzy, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it, and change its "
-#| "text style."
+#, c-format
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text. By using the "
 "selector button and clicking an existing label, you can move it, edit it, "
 "and change its text style."
-msgstr ""
-"Trieu un tipus de lletra. Feu clic en el vostre dibuix i ja podeu començar a "
-"escriure. Premeu [Enter] o [Tab] per aplicar el text. Si feu clic en el botó "
-"de selecció, podreu moure les etiquetes, editar-les, esborrar-les i canviar-"
-"ne el tipus de lletra."
+msgstr "El tipus de lletra és «%1$s (%2$s)», d'una alçada de %3$d píxels. Feu clic en el vostre dibuix i ja podeu començar a escriure. Premeu [Enter] o [Tab] per aplicar el text. Si feu clic en el botó de selecció, podreu moure les etiquetes, editar-les, esborrar-les i canviar-ne el tipus de lletra."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2452
@@ -2329,171 +2308,153 @@ msgstr "Feu clic per afegir soroll al dibuix."
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:195
 msgid "1-Point Select"
-msgstr ""
+msgstr "1 punt Selecció"
 
 #: ../../magic/src/n_pt_persp.c:196
 msgid "1-Point Draw"
-msgstr ""
+msgstr "1 punt Dibuix"
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:199
 msgid "2-Point Select"
-msgstr ""
+msgstr "2 punts Selecció"
 
 #: ../../magic/src/n_pt_persp.c:200
 msgid "2-Point Draw"
-msgstr ""
+msgstr "2 punts Dibuix"
 
 #. 3-point perspective
 #: ../../magic/src/n_pt_persp.c:203
 msgid "3-Point Select"
-msgstr ""
+msgstr "3 punts Selecció"
 
 #: ../../magic/src/n_pt_persp.c:204
 msgid "3-Point Draw"
-msgstr ""
+msgstr "3 punts Dibuix"
 
 #: ../../magic/src/n_pt_persp.c:206
 msgid "3-Point Draw Down"
-msgstr ""
+msgstr "Vista d'ocell"
 
 #: ../../magic/src/n_pt_persp.c:210
 msgid "Isometric Lines"
-msgstr ""
+msgstr "Línies isomètriques"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:213
 msgid "Dimetric Select"
-msgstr ""
+msgstr "Dimètric Selecció"
 
 #: ../../magic/src/n_pt_persp.c:214
-#, fuzzy
-#| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
-msgstr "Simetria"
+msgstr "Dimètric Dibuix"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:217
 msgid "Trimetric Select"
-msgstr ""
+msgstr "Trimètric Selecció"
 
 #: ../../magic/src/n_pt_persp.c:218
 msgid "Trimetric Draw"
-msgstr ""
+msgstr "Trimètric Dibuix"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:221
 msgid "Oblique Select"
-msgstr ""
+msgstr "Cavallera Selecció"
 
 #: ../../magic/src/n_pt_persp.c:222
 msgid "Oblique Draw"
-msgstr ""
+msgstr "Cavallera Dibuix"
 
+# La icona ja informa de dreta/esquerra. Pere gener 2024
 #: ../../magic/src/n_pt_persp.c:224
 msgid "Oblique Draw Left"
-msgstr ""
+msgstr "Cavallera Dibuix"
 
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:230
 msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
-msgstr ""
+msgstr "Feu clic al dibuix per situar un punt de fuga."
 
 #: ../../magic/src/n_pt_persp.c:231
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
-msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+msgstr "Feu clic i arrossegueu per dibuixar línies amb un punt de fuga."
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:234
 msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
-msgstr ""
+msgstr "Feu clic i arrossegueu per situar els dos punts de fuga de l'eina corresponent."
 
 #: ../../magic/src/n_pt_persp.c:235
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
-msgstr "Feu clic i arrossegueu el ratolí per fer desplaçar la imatge."
+msgstr "Feu clic i arrossegueu per dibuixar línies amb dos punts de fuga."
 
 #. 3-point perspective
 #: ../../magic/src/n_pt_persp.c:238
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
-msgstr ""
+msgstr "Feu clic i arrossegueu per situar els 3 punts de fuga de l'eina corresponent."
 
 #: ../../magic/src/n_pt_persp.c:239
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
-msgstr "Feu clic i arrossegueu el ratolí per fer desplaçar la imatge."
+msgstr "Feu clic i arrossegueu per dibuxar línies amb tres punts de fuga."
 
 #: ../../magic/src/n_pt_persp.c:241
-#, fuzzy
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
-msgstr "Feu clic i arrossegueu el ratolí per fer desplaçar la imatge."
+msgstr "Feu clic i arrossegueu per dibuixar línies amb tres punts de fuga en vista de dalt."
 
 #: ../../magic/src/n_pt_persp.c:245
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
-msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+msgstr "Feu clic i arrossegueu per dibuxar línies en una projecció isomètrica."
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:248
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
-msgstr ""
+msgstr "Feu clic i arrossegueu per ajustar l'angle de la projecció dimètrica."
 
 #: ../../magic/src/n_pt_persp.c:249
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
-msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+msgstr "Feu clic i arrossegueu per dibuixar línies en una projecció dimètrica."
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:252
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
-msgstr ""
+msgstr "Feu clic en les línies inclinades i arrossegueu-les per establir els angles de la projecció trimètrica."
 
 #: ../../magic/src/n_pt_persp.c:253
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
-msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+msgstr "Feu clic i arrossegueu per dibuixar línies en una projecció trimètrica."
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:256
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
-msgstr ""
+msgstr "Feu clic i arrossegueu per establir l'angle emprat en la perspectiva cavallera."
 
 #: ../../magic/src/n_pt_persp.c:257
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
-msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+msgstr "Feu clic i arrossegueu per dibuixar línies en perspectiva cavallera."
 
+# La icona ja mostra en quin sentit es dibuixaran les línies obliques.  Pere gener 2024
 #: ../../magic/src/n_pt_persp.c:259
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
-msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+msgstr "Feu clic i arrossegueu per dibuixar línies en perspectiva cavallera."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
@@ -2893,35 +2854,35 @@ msgstr "Feu clic i arrossegueu per dibuixar un tornado."
 
 #: ../../magic/src/trochoids.c:109
 msgid "Epitrochoid"
-msgstr ""
+msgstr "Epitrocoide"
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid Inside"
-msgstr ""
+msgstr "Epitrocoide Interior"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Edge"
-msgstr ""
+msgstr "Epitrocoide Vora"
 
 #: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Outside"
-msgstr ""
+msgstr "Epitrocoide Exterior"
 
 #: ../../magic/src/trochoids.c:113
 msgid "Hypotrochoid"
-msgstr ""
+msgstr "Hipotrocoide"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid Inside"
-msgstr ""
+msgstr "Hipotrocoide Interior"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Edge"
-msgstr ""
+msgstr "Hipotrocoide Vora"
 
 #: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Outside"
-msgstr ""
+msgstr "Hypotrocoide Exterior"
 
 #. Epitrochoids
 #: ../../magic/src/trochoids.c:122
@@ -2929,28 +2890,28 @@ msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un epitrocoide, arrossegueu en horitzontal per canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu voltant. Feu servir la opció de mida per situar el llàpis."
 
 #: ../../magic/src/trochoids.c:123
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un epitrocoide, arrossegueu en horitzontal per canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu voltant. El llàpis és dins del cercle que roda."
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un epitrocoide, arrossegueu en horitzontal per canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu voltant. El llàpis é en la vora del cercle que roda."
 
 #: ../../magic/src/trochoids.c:125
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un epitrocoide, arrossegueu en horitzontal per canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu voltant. El llàpis és fora del cercle que roda."
 
 #. Hypotrochoids
 #: ../../magic/src/trochoids.c:127
@@ -2958,28 +2919,28 @@ msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un hipotrocoide, arrossegueu en horitzontal fer canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu interior. Feu servir la opció de mida per situar el llàpis."
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un hipotrocoide, arrossegueu en horitzontal fer canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu interior. El llàpis és dins del cercle que roda."
 
 #: ../../magic/src/trochoids.c:129
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un hipotrocoide, arrossegueu en horitzontal fer canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu interior. El llàpis és a la vora del cercle que roda."
 
 #: ../../magic/src/trochoids.c:130
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
-msgstr ""
+msgstr "Feu clic per començar a dibuixar un hipotrocoide, arrossegueu en horitzontal fer canviar la mida del cercle fix, i en vertical per la mida del cercle que roda al seu interior. El llàpis és a l'exterior del cercle que roda."
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
@@ -3034,16 +2995,12 @@ msgid "Xor Colors"
 msgstr "Xor"
 
 #: ../../magic/src/xor.c:116
-#, fuzzy
-#| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr ""
 "Feu clic i arrossegueu per aplicar un patró de disjunció exclusiva dels "
 "colors."
 
 #: ../../magic/src/xor.c:118
-#, fuzzy
-#| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Feu clic per aplicar un patró de disjunció exclusiva dels colors."
 
