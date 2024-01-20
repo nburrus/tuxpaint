@@ -382,7 +382,6 @@ void trochoids_work(magic_api * api, int which,
 
   /* Erase old before drawing new */
 
-  /* FIXME */
   update_rect->x = 0;
   update_rect->y = 0;
   update_rect->w = canvas->w;
@@ -393,6 +392,7 @@ void trochoids_work(magic_api * api, int which,
 
   /* Draw the lines */
   LCM = calc_lcm(r, R);
+
   for (a = 0; a < 360.0 * (float) (LCM / R); a++) {
     float a2 = (a + 1);
 
@@ -417,12 +417,19 @@ void trochoids_work(magic_api * api, int which,
   }
 
   if (guides) {
+    int guide_spacing;
+
     /* When still dragging (before release), draw some "guides",
        showing the mechanism that would be used to generate the pattern */
     rotator_anim_a = (int) (atan2(y - trochoids_y, x - trochoids_x) / M_PI * 180.0);
 
     /* Stator (fixed circle) */
-    for (a = 0; a < 360; a = a + 360 / R) {
+    guide_spacing = 360 / R;
+    if (guide_spacing < 2) {
+      guide_spacing = 2;
+    }
+
+    for (a = 0; a < 360; a = a + guide_spacing) {
       px = (int) ((float) trochoids_x + ((float) R * deg_cos(a)));
       py = (int) ((float) trochoids_y - ((float) R * deg_sin(a)));
       api->putpixel(canvas, px, py, 0);
@@ -432,7 +439,12 @@ void trochoids_work(magic_api * api, int which,
     }
 
     /* Rotator (rolling circle) */
-    for (a = 0; a < 360; a = a + 360 / r) {
+    guide_spacing = 360 / r;
+    if (guide_spacing < 2) {
+      guide_spacing = 2;
+    }
+
+    for (a = 0; a < 360; a = a + guide_spacing) {
       if (which == TOOL_HYPOTROCHOID_SIZES ||
           which == TOOL_HYPOTROCHOID_NOSIZES_1 ||
           which == TOOL_HYPOTROCHOID_NOSIZES_2 ||
