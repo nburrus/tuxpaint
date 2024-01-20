@@ -672,6 +672,7 @@ void n_pt_persp_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
         }
       }
     }
+    n_pt_persp_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
   } else {
     /* Not a SELECT; must be a DRAW! */
     int i;
