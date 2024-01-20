@@ -15,8 +15,9 @@
    axon. & oblique drawing modes.
 
    by Bill Kendrick <bill@newbreedsoftware.com>
+   with help from Pere Pujal Carabantes
 
-   December 12, 2023 - January 16, 2024
+   December 12, 2023 - January 20, 2024
 */
 
 #include <stdio.h>
@@ -1527,31 +1528,37 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
         x2 = 0;
       }
 
-      slope = ((float) a1_pt_y - (float) y1) / ((float) a1_pt_x - (float) x1);
-      y2 = y1 + (x2 - x1) * slope;
+      if (a1_pt_x != x1) {
+        slope = ((float) a1_pt_y - (float) y1) / ((float) a1_pt_x - (float) x1);
+        y2 = y1 + (x2 - x1) * slope;
 
-      api->line((void *) api, tool, canvas, NULL,
-                x1, y1, x2, y2, 6,
-                n_pt_persp_line_xor_callback);
+        api->line((void *) api, tool, canvas, NULL,
+                  x1, y1, x2, y2, 6,
+                  n_pt_persp_line_xor_callback);
 
-      /* Some vertical lines between the diagonals */
-      if (l == 0) {
-        for (m = 0; m < 8; m++) {
-          int xx, yy1, yy2;
-          int m_scale[8] = {-8,-4,-2,-1,1,2,4,8};
+        /* Some vertical lines between the diagonals */
+        if (l == 0) {
+          for (m = 0; m < 8; m++) {
+            int xx, yy1, yy2;
+            int m_scale[8] = {-8,-4,-2,-1,1,2,4,8};
 
-          xx = a1_pt_x + ((float) (canvas->w / 10) * (float) m_scale[m]);
-          yy1 = a1_pt_y + (a1_pt_x - xx) * slope;
-          yy2 = a1_pt_y + (xx - a1_pt_x) * slope;
+            xx = a1_pt_x + ((float) (canvas->w / 10) * (float) m_scale[m]);
+            yy1 = a1_pt_y + (a1_pt_x - xx) * slope;
+            yy2 = a1_pt_y + (xx - a1_pt_x) * slope;
 
-          api->line((void *) api, tool, canvas, NULL,
-                    xx, yy1, xx, yy2, 3,
-                    n_pt_persp_line_xor_callback);
+            api->line((void *) api, tool, canvas, NULL,
+                      xx, yy1, xx, yy2, 3,
+                      n_pt_persp_line_xor_callback);
+          }
         }
       }
     }
   } else if (tool == TOOL_2PT_SELECT) {
     /* 2-point perspective */
+
+    if (abs(a2_pt_x[0] - a2_pt_x[1]) < SNAP) {
+      a2_pt_x[1] = a2_pt_x[0] + SNAP;
+    }
 
     for (i = 0; i < 2; i++) {
       n_pt_persp_draw_one_point(api, canvas, a2_pt_x[i], a2_pt_y[i], i);
@@ -1571,7 +1578,7 @@ void n_pt_persp_draw_points(magic_api * api, int tool, SDL_Surface * canvas) {
     x = (a2_pt_x[0] + a2_pt_x[1]) / 2;
 
     /* Perpendicular-to-horizon line */
-    if (slope == 0.0 || slope == M_PI) {
+    if (slope == 0.0 || slope == M_PI) { // FIXME: M_PI, really? -bjk 2024.01.20
       x1 = x;
       y1 = 0;
       x2 = x;

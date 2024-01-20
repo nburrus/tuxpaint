@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.January.16 (0.9.32)
+2024.January.20 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Magic tool plugin API updates
@@ -66,6 +66,7 @@ https://tuxpaint.org/
         - Two "Oblqiue Draw" tools are provided, offering recedings axes
           to both the right and the left.
       + Code: Bill Kendrick <bill@newbreedsoftware.com>
+        (with help from Pere Pujal i Carabantes <perepujal@gmail.com>)
       + Sounds:
         - Select: "Gummibandloop_121.wav"
           (https://freesound.org/people/von_Gardener/sounds/473829/)
