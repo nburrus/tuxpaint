@@ -336,6 +336,7 @@ void trochoids_work(magic_api * api, int which,
   int R, r, d, LCM;
   int px, py, px2, py2;
   float a, r_ratio, size;
+  int xx, yy;
 
   which = which_to_tool[which];
 
@@ -486,8 +487,8 @@ void trochoids_work(magic_api * api, int which,
 
     api->line((void *)api, which, canvas, snapshot, px, py, px2, py2, 2, trochoids_line_callback);
 
-    for (int yy = -2; yy <= 2; yy++) {
-      for (int xx = -2; xx <= 2; xx++) {
+    for (yy = -2; yy <= 2; yy++) {
+      for (xx = -2; xx <= 2; xx++) {
         api->putpixel(canvas, px + xx, py + yy, trochoids_color);
       }
     }
