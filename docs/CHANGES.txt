@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.January.20 (0.9.32)
+2024.January.21 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
     * Magic tool plugin API updates
@@ -160,6 +160,9 @@ https://tuxpaint.org/
       Jacques Chion <jacques.chion@orange.fr>
 
     * Japanese translation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+    * Japanese documentation
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Portuguese (Portugal) translation
