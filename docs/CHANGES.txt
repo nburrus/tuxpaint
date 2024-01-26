@@ -148,6 +148,9 @@ https://tuxpaint.org/
     * Albanian translation
       Besnik Bleta <besnik@programeshqip.org>
 
+    * Albanian documentation (partial; NEW!)
+      Besnik Bleta <besnik@programeshqip.org>
+
     * Bulgarian translation
       Note: Does an overhaul of most of the translations to replace more
       polite, plural verb forms, with singular, spoken forms.
