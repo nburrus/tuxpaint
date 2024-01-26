@@ -131,15 +131,17 @@ Epitrochoid and Hypotrochoid Magic tools
 
 Rregullim i ri “kompleksitet” (complexity)
 
-A new setting that allows certain Magic tools to behave differently (or remove
-    their availability altogether) based on the expertise-level of the user.
-    The new "N-point Perspective" tools and "Clone" tool are affected by this
-    setting.
+    A new setting that allows certain Magic tools to behave differently (or
+    remove their availability altogether) based on the expertise-level of the
+    user. The new "N-point Perspective" tools and "Clone" tool are affected by
+    this setting.
+
 Magic tools reorganized
 
-Each group of Magic tools has been reorganized to keep related tools next to
-    each other, rather than being sorted alphabetically by their (localized)
+    Each group of Magic tools has been reorganized to keep related tools next
+    to each other, rather than being sorted alphabetically by their (localized)
     names.
+
 Hollësi shkronjash shfaqur kur përzgjidhen
     Emri dhe madhësia e shkronjave të përzgjedhura shfaqen kur përdoren mjetet
     Tekst dhe Etiketë.
