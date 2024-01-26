@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年1月13日
+                                 2024年1月26日
 
 +--------------------------------------------------+
 |                       目次                       |

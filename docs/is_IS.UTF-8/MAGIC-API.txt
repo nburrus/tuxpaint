@@ -6,7 +6,7 @@
    Höfundarréttur © 2007-2024 eftir various contributors; sjá AUTHORS-skrá.
                              https://tuxpaint.org/
 
-                                1. janúar 2024
+                                26. janúar 2024
 
 +--------------------------------------------------+
 |                   Efnisyfirlit                   |
@@ -747,7 +747,7 @@ clamp(lo, value, hi)
 
 
 
-Constant Defintions in "tp_magic_api.h"
+Constant Definitions in "tp_magic_api.h"
 
 The following is a summary of constant values that are set (via "#define")
 within the 'Magic' tool API header file.
