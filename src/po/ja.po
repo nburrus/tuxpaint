@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-16 22:42-0800\n"
-"PO-Revision-Date: 2024-01-17 11:17+0900\n"
+"PO-Revision-Date: 2024-01-27 10:46+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -355,7 +355,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:25
 msgid "Bill Kendrick, et al."
-msgstr ""
+msgstr "Bill Kendrick, et al."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:35
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
@@ -410,6 +410,8 @@ msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
 msgstr ""
+"「まほう」ツールの並びを変更（これまでは、翻訳後のツール名の順に表示されてい"
+"ました）"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
@@ -3051,14 +3053,10 @@ msgid "Xor Colors"
 msgstr "ちゃくしょく"
 
 #: ../../magic/src/xor.c:116
-#, fuzzy
-#| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "クリックしたまま マウスをうごかして カラフルなもようを かこう"
 
 #: ../../magic/src/xor.c:118
-#, fuzzy
-#| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "えを くりっくして ぜんたいの いろを はんてんさせよう"
 
