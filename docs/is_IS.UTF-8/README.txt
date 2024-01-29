@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janúar 27, 2024
+                                janúar 29, 2024
 
 +-------------------------------------------------+
 |                Table of Contents                |
