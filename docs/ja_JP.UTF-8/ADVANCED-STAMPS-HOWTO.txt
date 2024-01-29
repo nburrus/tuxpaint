@@ -141,11 +141,11 @@
     (generally at the edge of the object) you should grow, shrink, and invert
     the selection.
 
-    Fill the 100% opaque areas with white, and the 0% opaque areas with black.
-    This is most easily done by drag-and-drop from the foreground/background
-    color indicator. You should not see anything happen, because you are
-    viewing the unmodified image layer while editing the mask of the WIP layer.
-    Large changes might be noticable in the thumbnail.
+    不透明な部分を白で、透明な部分を黒で塗りつぶします。この作業は、前景／背景
+    色のインジケータからドラッグ＆ドロップするのが最も簡単です。作業用レイヤー
+    のマスクを編集しながら、変更されていない画像レイヤーを見ているので、見た目
+    には何も起こらないはずですが、サムネイル画像では大きな変更が見えるかもしれ
+    ません。
 
     次に、画像を拡大します。
 
@@ -211,11 +211,11 @@
     択、白を選択」）この作業を行う際、選択範囲を少し広げて、選択領域を示す線を
     隠したくなるかもしれません。
 
-    ここではクローンツールとブラシツールを使います。必要に応じて不透明度を変え
-    て下さい。3x3か5x5の小さな円形のブラシを主に使います。ぼかし筆かどうかは問
-    いません。（ぼかし筆は不透明度100&percnt;、ぼかしではないブラシは不透明度70
-    &percnt;程度で組み合わせると良いでしょう）。あまり一般的ではない使い方です
-    が、半透明のオブジェクトの場合には有効です。
+    Use the clone tool and the brush tool. Vary the opacity as needed. Use
+    small round brushes mostly, perhaps 3x3 or 5x5, fuzzy or not. (It is
+    generally nice to pair up fuzzy brushes with 100% opacity and non-fuzzy
+    brushes with about 70% opacity.) Unusual drawing modes can be helpful with
+    semi-transparent objects.
 
     最終目標は、オブジェクトの内側と外側の両方の縁取りを除去することです。内側
     の縁取りは、マゼンタやグリーンの上にオブジェクトを合成したときに見えるもの
