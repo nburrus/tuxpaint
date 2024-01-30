@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 22:42-0800\n"
+"POT-Creation-Date: 2024-01-29 20:26-0800\n"
 "PO-Revision-Date: 2024-01-26 19:44+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -1709,11 +1709,11 @@ msgstr ""
 msgid "Click to change the colors in your entire picture."
 msgstr "Klikoni që të ndryshohen ngjyrat në krejt vizatimin tuaj."
 
-#: ../../magic/src/blind.c:126
+#: ../../magic/src/blind.c:127
 msgid "Blind"
 msgstr "Grila"
 
-#: ../../magic/src/blind.c:138
+#: ../../magic/src/blind.c:144
 msgid ""
 "Click towards the edge of your picture to pull window blinds over it. Move "
 "perpendicularly to open or close the blinds."
@@ -1761,18 +1761,18 @@ msgstr "Klikoni dhe tërhiqeni miun përreth që të prodhohet efekti i pikimit.
 msgid "Click to make the entire picture drip."
 msgstr "Klikoni që të prodhohet efekti i pikimit në krejt vizatimin."
 
-#: ../../magic/src/bloom.c:107
+#: ../../magic/src/bloom.c:108
 msgid "Bloom"
 msgstr "Çelje"
 
-#: ../../magic/src/bloom.c:119
+#: ../../magic/src/bloom.c:125
 msgid ""
 "Click and drag to apply a glowing \"bloom\" effect to parts of your image."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të shtohet një efekt rrezatues “çeljeje” në "
 "pjesë të vizatimit tuaj."
 
-#: ../../magic/src/bloom.c:123
+#: ../../magic/src/bloom.c:129
 msgid "Click to apply a glowing \"bloom\" effect to your entire image."
 msgstr ""
 "Klikoni që të aplikohet një efekt rrezatues “çeljeje” në tërë figurën tuaj."
@@ -1790,27 +1790,27 @@ msgid "Click to blur the entire image."
 msgstr "Klikoni që të turbullohet krejt figura."
 
 #. Both are named "Bricks", at the moment:
-#: ../../magic/src/bricks.c:135
+#: ../../magic/src/bricks.c:136
 msgid "Bricks"
 msgstr "Tulla"
 
-#: ../../magic/src/bricks.c:150
+#: ../../magic/src/bricks.c:157
 msgid "Click and drag to draw large bricks."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen tulla të mëdha."
 
-#: ../../magic/src/bricks.c:152
+#: ../../magic/src/bricks.c:159
 msgid "Click and drag to draw small bricks."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen tulla të vogla."
 
-#: ../../magic/src/bricks.c:156
+#: ../../magic/src/bricks.c:163
 msgid "Click and drag to draw bricks."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen tulla."
 
-#: ../../magic/src/calligraphy.c:131
+#: ../../magic/src/calligraphy.c:132
 msgid "Calligraphy"
 msgstr "Bukurshkrim"
 
-#: ../../magic/src/calligraphy.c:144
+#: ../../magic/src/calligraphy.c:151
 msgid "Click and drag the mouse around to draw in calligraphy."
 msgstr "Klikoni dhe tërhiqeni miun përreth që të vizatohet me bukurshkrim."
 
@@ -1827,11 +1827,11 @@ msgstr ""
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Klikoni për ta kthyer tërë vizatimin në një karikaturë."
 
-#: ../../magic/src/checkerboard.c:114
+#: ../../magic/src/checkerboard.c:115
 msgid "Checkerboard"
 msgstr "Fushë shahu"
 
-#: ../../magic/src/checkerboard.c:125
+#: ../../magic/src/checkerboard.c:131
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "Klikoni dhe tërhiqeni që kanavaca të mbushet me katrorë shahu."
 
@@ -1877,11 +1877,11 @@ msgstr ""
 msgid "Click and drag to simulate double vision."
 msgstr "Klikoni dhe tërhiqeni që të simulohet pamje e dyfishtë."
 
-#: ../../magic/src/confetti.c:101
+#: ../../magic/src/confetti.c:102
 msgid "Confetti"
 msgstr "Bonbone"
 
-#: ../../magic/src/confetti.c:111
+#: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Klikoni që të hidhen sheqerka!"
 
@@ -2020,11 +2020,11 @@ msgstr ""
 "Klikoni dhe tërhiqeni që të vizatohet kërcelli i një luleje. Mandej lëreni, "
 "që të përfundohet lulja."
 
-#: ../../magic/src/foam.c:131
+#: ../../magic/src/foam.c:132
 msgid "Foam"
 msgstr "Shkumë"
 
-#: ../../magic/src/foam.c:143
+#: ../../magic/src/foam.c:150
 msgid "Click and drag the mouse to cover an area with foamy bubbles."
 msgstr "Klikoni dhe tërhiqeni miun që një pjesë të mbulohet me flluska shkume."
 
@@ -2037,15 +2037,15 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Zgjidhni një ngjyrë sfondi dhe klikoni që të kthehet cepi i fletës."
 
-#: ../../magic/src/fretwork.c:212
+#: ../../magic/src/fretwork.c:218
 msgid "Fretwork"
 msgstr "Gdhendje"
 
-#: ../../magic/src/fretwork.c:218
+#: ../../magic/src/fretwork.c:224
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen rregullsi të përsëritura."
 
-#: ../../magic/src/fretwork.c:220
+#: ../../magic/src/fretwork.c:226
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Klikoni që vizatimi juaj të rrethohet me rregullsi të përsëritura."
 
@@ -2091,11 +2091,11 @@ msgstr ""
 "Klikoni që të vendosen një palë sy të zgurdulluar, mandej tërhiqeni dhe "
 "lëreni për t’i bërë të shohin në atë drejtim."
 
-#: ../../magic/src/grass.c:111
+#: ../../magic/src/grass.c:112
 msgid "Grass"
 msgstr "Bar"
 
-#: ../../magic/src/grass.c:123
+#: ../../magic/src/grass.c:130
 msgid "Click and drag to draw grass. Don’t forget the dirt!"
 msgstr "Klikoni dhe tërhiqeni që të vizatohet bar. Mos harroni dheun!"
 
@@ -2188,11 +2188,11 @@ msgid ""
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të vizatohet me penela simetrikë (kaleidoskop)."
 
-#: ../../magic/src/light.c:112
+#: ../../magic/src/light.c:113
 msgid "Light"
 msgstr "Dritë"
 
-#: ../../magic/src/light.c:124
+#: ../../magic/src/light.c:131
 msgid "Click and drag to draw a beam of light on your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që të vizatohet një tufë drite në vizatimin tuaj."
@@ -2207,23 +2207,23 @@ msgstr ""
 "Klikoni, tërhiqeni dhe lëshojeni miun që të vizatohet një rrufe mes dy "
 "pikash."
 
-#: ../../magic/src/maze.c:110
+#: ../../magic/src/maze.c:111
 msgid "Maze"
 msgstr "Labirint"
 
-#: ../../magic/src/maze.c:121
+#: ../../magic/src/maze.c:127
 msgid "Click and drag to paint a maze on your picture."
 msgstr "Klikoni dhe tërhiqeni që në vizatimit tuaj të vizatohet një labirint."
 
-#: ../../magic/src/maze.c:123
+#: ../../magic/src/maze.c:129
 msgid "Click to turn your entire picture into a maze."
 msgstr "Klikoni për ta kthyer tërë vizatimin në një labirint."
 
-#: ../../magic/src/metalpaint.c:104
+#: ../../magic/src/metalpaint.c:105
 msgid "Metal Paint"
 msgstr "Bojë Metalike"
 
-#: ../../magic/src/metalpaint.c:117
+#: ../../magic/src/metalpaint.c:124
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Klikoni dhe tërhiqeni miun që të vizatohet me ngjyrë metalike."
 
@@ -2353,73 +2353,73 @@ msgid "Click to add noise to your entire picture."
 msgstr "Klikoni që të shtohet zhurmë te krejt vizatimi juaj."
 
 #. 1-point perspective
-#: ../../magic/src/n_pt_persp.c:195
+#: ../../magic/src/n_pt_persp.c:196
 msgid "1-Point Select"
 msgstr "Përzgjedhje e 1 Qendre"
 
-#: ../../magic/src/n_pt_persp.c:196
+#: ../../magic/src/n_pt_persp.c:197
 msgid "1-Point Draw"
 msgstr "Vizatim me 1 Qendër"
 
 #. 2-point perspective
-#: ../../magic/src/n_pt_persp.c:199
+#: ../../magic/src/n_pt_persp.c:200
 msgid "2-Point Select"
 msgstr "Përzgjedhje e 2 Qendrash"
 
-#: ../../magic/src/n_pt_persp.c:200
+#: ../../magic/src/n_pt_persp.c:201
 msgid "2-Point Draw"
 msgstr "Vizatim me 2 Qendra"
 
 #. 3-point perspective
-#: ../../magic/src/n_pt_persp.c:203
+#: ../../magic/src/n_pt_persp.c:204
 msgid "3-Point Select"
 msgstr "Përzgjedhje e 3 Qendrash"
 
-#: ../../magic/src/n_pt_persp.c:204
+#: ../../magic/src/n_pt_persp.c:205
 msgid "3-Point Draw"
 msgstr "Vizatim me 3 Qendra"
 
-#: ../../magic/src/n_pt_persp.c:206
+#: ../../magic/src/n_pt_persp.c:207
 msgid "3-Point Draw Down"
 msgstr "Vizatim Për Poshtë me 3 Qendra"
 
-#: ../../magic/src/n_pt_persp.c:210
+#: ../../magic/src/n_pt_persp.c:211
 msgid "Isometric Lines"
 msgstr "Vija Izometrike"
 
 #. Dimetric
-#: ../../magic/src/n_pt_persp.c:213
+#: ../../magic/src/n_pt_persp.c:214
 msgid "Dimetric Select"
 msgstr "Përzgjedhje Dimetrike"
 
-#: ../../magic/src/n_pt_persp.c:214
+#: ../../magic/src/n_pt_persp.c:215
 msgid "Dimetric Draw"
 msgstr "Vizatim Dimetrik"
 
 #. Trimetric
-#: ../../magic/src/n_pt_persp.c:217
+#: ../../magic/src/n_pt_persp.c:218
 msgid "Trimetric Select"
 msgstr "Përzgjedhje Trimetrike"
 
-#: ../../magic/src/n_pt_persp.c:218
+#: ../../magic/src/n_pt_persp.c:219
 msgid "Trimetric Draw"
 msgstr "Vizatim Trimetrik"
 
 #. Oblique
-#: ../../magic/src/n_pt_persp.c:221
+#: ../../magic/src/n_pt_persp.c:222
 msgid "Oblique Select"
 msgstr "Përzgjidhni të Pjerrët"
 
-#: ../../magic/src/n_pt_persp.c:222
+#: ../../magic/src/n_pt_persp.c:223
 msgid "Oblique Draw"
 msgstr "Vizatoni të Pjerrët"
 
-#: ../../magic/src/n_pt_persp.c:224
+#: ../../magic/src/n_pt_persp.c:225
 msgid "Oblique Draw Left"
 msgstr "Vizatoni të Pjerrët Majtas"
 
 #. 1-point perspective
-#: ../../magic/src/n_pt_persp.c:230
+#: ../../magic/src/n_pt_persp.c:231
 msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
@@ -2427,7 +2427,7 @@ msgstr ""
 "Klikoni mbi vizatimin tuaj, që të zgjidhni një qendër projeksioni për mjetin "
 "vizatim perspektive me 1 qendër."
 
-#: ../../magic/src/n_pt_persp.c:231
+#: ../../magic/src/n_pt_persp.c:232
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
 msgstr ""
@@ -2435,7 +2435,7 @@ msgstr ""
 "në perspektivë me 1 qendër projeksioni."
 
 #. 2-point perspective
-#: ../../magic/src/n_pt_persp.c:234
+#: ../../magic/src/n_pt_persp.c:235
 msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
@@ -2443,7 +2443,7 @@ msgstr ""
 "Klikoni në vizatimin tuaj mbi dy vende, që të zgjidhni qendra projeksioni "
 "për mjetin vizatim perspektive me 2 qendra."
 
-#: ../../magic/src/n_pt_persp.c:235
+#: ../../magic/src/n_pt_persp.c:236
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr ""
@@ -2451,7 +2451,7 @@ msgstr ""
 "të perspektivës me 2 qendra."
 
 #. 3-point perspective
-#: ../../magic/src/n_pt_persp.c:238
+#: ../../magic/src/n_pt_persp.c:239
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
@@ -2459,14 +2459,14 @@ msgstr ""
 "Klikoni në vizatimin tuaj mbi tre vende, që të zgjidhni qendra projeksioni "
 "për mjetin vizatim perspektive me 3 qendra."
 
-#: ../../magic/src/n_pt_persp.c:239
+#: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr ""
 "Klikoni dhe tërhiqeni, që të vizatohen vija me qendrat tuaja të projeksionit "
 "të perspektivës me 3 qendra."
 
-#: ../../magic/src/n_pt_persp.c:241
+#: ../../magic/src/n_pt_persp.c:242
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
@@ -2474,12 +2474,12 @@ msgstr ""
 "Klikoni dhe tërhiqeni, që të vizatohen vija me qendrat tuaja të projeksionit "
 "të perspektivës me 3 qendra (perspektivë për poshtë)."
 
-#: ../../magic/src/n_pt_persp.c:245
+#: ../../magic/src/n_pt_persp.c:246
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen vija në projeksion izometrik."
 
 #. Dimetric
-#: ../../magic/src/n_pt_persp.c:248
+#: ../../magic/src/n_pt_persp.c:249
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
@@ -2487,12 +2487,12 @@ msgstr ""
 "Klikoni mbi vizatimin tuaj, që të përimtoni këndin e përdorur nga mjeti i "
 "vizatimit të projeksionit dimetrik."
 
-#: ../../magic/src/n_pt_persp.c:249
+#: ../../magic/src/n_pt_persp.c:250
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen vija me projeksion dimetrik."
 
 #. Trimetric
-#: ../../magic/src/n_pt_persp.c:252
+#: ../../magic/src/n_pt_persp.c:253
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
@@ -2500,12 +2500,12 @@ msgstr ""
 "Klikoni mbi vizatimin tuaj, që të përimtoni këndet e përdorur nga mjeti i "
 "vizatimit të projeksioneve trimetrike."
 
-#: ../../magic/src/n_pt_persp.c:253
+#: ../../magic/src/n_pt_persp.c:254
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen vija me projeksion trimetrik."
 
 #. Oblique
-#: ../../magic/src/n_pt_persp.c:256
+#: ../../magic/src/n_pt_persp.c:257
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
@@ -2513,11 +2513,11 @@ msgstr ""
 "Klikoni mbi vizatimin tuaj, që të përimtoni këndet e përdorur nga mjeti i "
 "vizatimeve të projeksioneve të pjerrëta."
 
-#: ../../magic/src/n_pt_persp.c:257
+#: ../../magic/src/n_pt_persp.c:258
 msgid "Click and drag to draw lines with oblique projection."
 msgstr "Klikoni dhe tërhiqeni, që të vizatohen vija me projeksion të pjerrët."
 
-#: ../../magic/src/n_pt_persp.c:259
+#: ../../magic/src/n_pt_persp.c:260
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr ""
 "Klikoni dhe tërhiqeni, që të vizatohen vija me projeksion të pjerrët (të "
@@ -2571,11 +2571,11 @@ msgstr ""
 "Klikoni dhe tërhiqeni sipër për efekt ngutjeje për brenda, ose tërhiqeni "
 "poshtë për efekt ngutjeje për jashtë."
 
-#: ../../magic/src/pixels.c:114
+#: ../../magic/src/pixels.c:117
 msgid "Pixels"
 msgstr "Piksel"
 
-#: ../../magic/src/pixels.c:126
+#: ../../magic/src/pixels.c:135
 msgid "Click and drag to draw large pixels."
 msgstr "Klikoni dhe tërhiqeni që të vizatohet piksel të mëdhenj."
 
@@ -2591,27 +2591,27 @@ msgstr "Klikoni te pjesa e vizatimit tuaj ku do të donit një “puzzle”."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Klikoni për ta parë puzzle-in në madhësi sa krejt ekrani."
 
-#: ../../magic/src/rails.c:167
+#: ../../magic/src/rails.c:168
 msgid "Rails"
 msgstr "Shina"
 
-#: ../../magic/src/rails.c:177
+#: ../../magic/src/rails.c:183
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Klikoni dhe tërhiqeni që të vizatohen shina te vizatimi juaj."
 
-#: ../../magic/src/rainbow.c:154
+#: ../../magic/src/rainbow.c:155
 msgid "Rainbow"
 msgstr "Ylber"
 
-#: ../../magic/src/rainbow.c:158
+#: ../../magic/src/rainbow.c:159
 msgid "Smooth Rainbow"
 msgstr "Ylber i Butë"
 
-#: ../../magic/src/rainbow.c:162
+#: ../../magic/src/rainbow.c:163
 msgid "Rainbow Cycle"
 msgstr "Cikël Ylberi"
 
-#: ../../magic/src/rainbow.c:175
+#: ../../magic/src/rainbow.c:182
 msgid "You can draw in rainbow colors!"
 msgstr "Mund të vizatoni me ngjyrat e ylberit!"
 
@@ -2619,11 +2619,11 @@ msgstr "Mund të vizatoni me ngjyrat e ylberit!"
 msgid "Rain"
 msgstr "Shi"
 
-#: ../../magic/src/rain.c:75
+#: ../../magic/src/rain.c:79
 msgid "Click to place a rain drop onto your picture."
 msgstr "Klikoni që në vizatimin tuaj të vendoset një pikë shiu."
 
-#: ../../magic/src/rain.c:76
+#: ../../magic/src/rain.c:80
 msgid "Click to cover your picture with rain drops."
 msgstr "Klikoni që vizatimi juaj të mbulohet me pika shiu."
 
@@ -2652,11 +2652,11 @@ msgid "Click and drag the mouse around to add a reflection to your picture."
 msgstr ""
 "Klikoni dhe tërhiqeni miun që te vizatimi juaj të shtohet një pasqyrim."
 
-#: ../../magic/src/ribbon.c:117
+#: ../../magic/src/ribbon.c:118
 msgid "Ribbon"
 msgstr "Shirit"
 
-#: ../../magic/src/ribbon.c:129
+#: ../../magic/src/ribbon.c:136
 msgid "Add a flowing ribbon to your picture."
 msgstr "Shtoni te postimi juaj një shirit fluturues."
 
@@ -2909,7 +2909,7 @@ msgstr ""
 msgid "Toothpaste"
 msgstr "Pastë dhëmbësh"
 
-#: ../../magic/src/toothpaste.c:75
+#: ../../magic/src/toothpaste.c:79
 msgid "Click and drag to squirt toothpaste onto your picture."
 msgstr "Klikoni dhe tërhiqeni që mbi vizatimin tuaj të shtihet pastë dhëmbësh."
 
