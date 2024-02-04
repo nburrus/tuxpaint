@@ -102,7 +102,7 @@ function build-universal() {
     && find "$OUTBUNDLE" -name '*.dylib' -print0 | xargs -0 rm -f \
     || return 1
 
-    # Create the universal binary for each binary and library
+    # Create the universal version of each binary and library
     for (( i=0; i < ${#BUNDLES[@]}; i++ )); do
         local filelist=()
         local file

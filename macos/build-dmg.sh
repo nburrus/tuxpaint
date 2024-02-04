@@ -9,13 +9,26 @@
 #
 
 BUNDLE=TuxPaint.app
+
+if [[ ! -d "$BUNDLE" ]]; then
+    ARCHBUNDLE=TuxPaint-$(uname -m).app
+
+    if [[ -d "$ARCHBUNDLE" ]]; then
+        echo "  $BUNDLE missing.  Did you forget to either run 'macos/build-universal.sh' first,"
+        echo "  or rename $ARCHBUNDLE to $BUNDLE first?"
+    else
+        echo "  Did you forget to 'make' $ARCHBUNDLE first?"
+    fi 1>&2
+
+    exit 1
+fi
+
 TEMP_DMG=temp.dmg
 TEMP_DMG_SIZE=`expr \`du -sm "$BUNDLE" | cut -f1\` \* 15 / 10`m
 FINAL_DMG=TuxPaint.dmg
 VOLNAME="Tux Paint"
 ICON="macos/tuxpaint.icns"
 BACKGROUND="macos/background.png"
-
 
 echo "   * Creating the temporary image..."
 hdiutil create "$TEMP_DMG" -ov -fs HFS+ -size "$TEMP_DMG_SIZE" -volname "$VOLNAME" \

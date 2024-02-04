@@ -12,6 +12,11 @@ https://tuxpaint.org/
     * Make screen refresh more snappy on macOS.
       Mark Kim <markuskimius@gmail.com>
 
+    * Simplify the process of building the universal bundle on the macOS by
+      automatically adding the machine suffix (-arm64 or -x86_64) when building
+      the macOS bundle.  Previously this renaming step was required to be done
+      manually to build the universal bundle.
+
 2024.January.29 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------

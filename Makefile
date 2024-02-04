@@ -162,7 +162,7 @@ LIBMINGW:=$($(OS)_LIBMINGW)
 windows_EXE_EXT:=.exe
 EXE_EXT:=$($(OS)_EXE_EXT)
 
-macos_BUNDLE:=./TuxPaint.app
+macos_BUNDLE:=./TuxPaint-$(ARCHS).app
 ios_BUNDLE:=./TuxPaint-$(SDK).app
 BUNDLE:=$($(OS)_BUNDLE)
 

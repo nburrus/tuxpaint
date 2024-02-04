@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-BUNDLE=TuxPaint.app
+BUNDLE=TuxPaint-$(uname -m).app
 BINARY="$BUNDLE/Contents/MacOS/tuxpaint"
 LIBS=`find $BUNDLE/Contents/Resources/lib -type f`
 LIBDIR="$BUNDLE/Contents/lib"
