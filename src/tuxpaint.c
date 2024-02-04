@@ -403,17 +403,17 @@ int iswprint(wchar_t wc)
 
 #endif /* WIN32 */
 
-#if defined(__MACOS__)
-#include "macos.h"
-#elif defined(__IOS__)
-#include "ios.h"
-#endif
-
 #include <errno.h>
 #include <sys/stat.h>
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_thread.h"
+
+#if defined(__MACOS__)
+#include "macos.h"
+#elif defined(__IOS__)
+#include "ios.h"
+#endif
 
 #if !defined(_SDL_H) && !defined(SDL_h_)
 #error "---------------------------------------------------"
