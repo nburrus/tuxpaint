@@ -168,10 +168,11 @@
     <control>keyboard</control>
     <control>pointing</control>
     <control>touch</control>
-    <display_length compare="ge">medium</display_length>
+    <display_length compare="ge">768</display_length>
   </recommends>
   <requires>
-    <display_length compare="ge">small</display_length>
+    <display_length compare="ge">500</display_length>
+    <display_length compare="le">32000</display_length>
   </requires>
   <translation type="gettext">tuxpaint</translation>
   <launchable type="desktop-id">tuxpaint.desktop</launchable>
