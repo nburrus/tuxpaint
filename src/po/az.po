@@ -335,7 +335,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:9 ../tuxpaint.desktop.in:3
 msgid "Tux Paint"
-msgstr "Tuks ilə şəkil çək."
+msgstr "Tuks ilə şəkil çək"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:10 ../tuxpaint.desktop.in:10
 #: ../tuxpaint-fullscreen.desktop.in:10
