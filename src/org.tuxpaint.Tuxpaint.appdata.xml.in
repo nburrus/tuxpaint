@@ -173,6 +173,7 @@
   <requires>
     <display_length compare="ge">500</display_length>
     <display_length compare="le">32000</display_length>
+    <internet>offline-only</internet>
   </requires>
   <translation type="gettext">tuxpaint</translation>
   <launchable type="desktop-id">tuxpaint.desktop</launchable>
