@@ -23,6 +23,9 @@
     </p>
   </description>
   <developer_name>Bill Kendrick, et al.</developer_name>
+  <developer id="newbreedsoftware.com">
+    <name>Bill Kendrick, et al.</name>
+  </developer>
   <url type="homepage">https://tuxpaint.org/</url>
   <url type="bugtracker">https://sourceforge.net/p/tuxpaint/_list/tickets</url>
   <url type="faq">https://tuxpaint.org/docs/en/html/FAQ.html</url>
