@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.February.4 (0.9.33)
+2024.February.18 (0.9.33)
   * Other Improvements:
     -------------------
     * Make screen refresh more snappy on macOS.
@@ -19,6 +19,10 @@ https://tuxpaint.org/
       the macOS bundle.  Previously this renaming step was required to be done
       manually to build the universal bundle.
       Mark Kim <markuskimius@gmail.com>
+
+    * Updates to appdata metadata file for Appstream 1.0
+      (https://sourceforge.net/p/tuxpaint/tuxpaint/merge-requests/19/)
+      Will Thompson <https://sourceforge.net/u/wjjjjt/profile/>
 
 2024.January.29 (0.9.32)
   * Improvements to Magic tools:
