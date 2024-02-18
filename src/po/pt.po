@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-29 20:26-0800\n"
-"PO-Revision-Date: 2024-01-02 15:52+0000\n"
+"PO-Revision-Date: 2024-02-18 17:11+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -361,7 +361,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:25
 msgid "Bill Kendrick, et al."
-msgstr ""
+msgstr "Bill Kendrick, et al."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:35
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
@@ -381,37 +381,40 @@ msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr "A ferramenta Carimbo é como um conjunto de carimbos ou autocolantes"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:49
-#, fuzzy
-#| msgid ""
-#| "New Magic tool: 1-point Perspective (vanishing point) line drawing tool."
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
 msgstr ""
-"Nova ferramenta de magia: Ferramenta de desenho de linha perspetiva de 1 "
-"ponto (ponto de fuga)."
+"Novas ferramentas de Magia: ferramentas de desenho de linhas em perspetiva "
+"de 1, 2 e 3 pontos (e editores de pontos de fuga correspondentes)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:50
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
+"Novas ferramentas de Magia: ferramentas de desenho de linhas Isométricas, "
+"Dimétricas, Trimétricas e Oblíquas (e editores de ângulos correspondentes)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:51
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
-msgstr ""
+msgstr "Novas ferramentas de Magia: geradores de epitrocóides e hipotrocóides."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
 msgstr ""
+"Nova opção de configuração, \"complexidade\", que afeta o comportamento (ou "
+"a disponibilidade) de algumas ferramentas de magia."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
 msgstr ""
+"Ferramentas de magia reorganizadas (anteriormente ordenadas alfabeticamente "
+"por nome localizado)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
@@ -421,7 +424,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "Bug-fixes and localization updates."
-msgstr ""
+msgstr "Correções de erros e atualizações de localização."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
@@ -513,10 +516,10 @@ msgstr ""
 "(biselado)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
-#, fuzzy
-#| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
-msgstr "Um modo de Borracha rápida é acedido através de tecla de atalho."
+msgstr ""
+"É possível aceder a um modo de Borracha rápida através de uma tecla de "
+"atalho."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
 msgid ""
@@ -2355,51 +2358,43 @@ msgid "3-Point Draw"
 msgstr "Desenho de 3 pontos"
 
 #: ../../magic/src/n_pt_persp.c:207
-#, fuzzy
-#| msgid "3-Point Draw"
 msgid "3-Point Draw Down"
-msgstr "Desenho de 3 pontos"
+msgstr "Desenho de 3 pontos para baixo"
 
 #: ../../magic/src/n_pt_persp.c:211
 msgid "Isometric Lines"
-msgstr ""
+msgstr "Linhas isométricas"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:214
-#, fuzzy
-#| msgid "1-Point Select"
 msgid "Dimetric Select"
-msgstr "Seleção de 1 ponto"
+msgstr "Seleção dimétrica"
 
 #: ../../magic/src/n_pt_persp.c:215
-#, fuzzy
-#| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
-msgstr "Cima/Baixo simétrico"
+msgstr "Desenho dimétrico"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:218
-#, fuzzy
-#| msgid "1-Point Select"
 msgid "Trimetric Select"
-msgstr "Seleção de 1 ponto"
+msgstr "Seleção trimétrica"
 
 #: ../../magic/src/n_pt_persp.c:219
 msgid "Trimetric Draw"
-msgstr ""
+msgstr "Desenho trimétrico"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:222
 msgid "Oblique Select"
-msgstr ""
+msgstr "Seleção oblíqua"
 
 #: ../../magic/src/n_pt_persp.c:223
 msgid "Oblique Draw"
-msgstr ""
+msgstr "Desenho oblíquo"
 
 #: ../../magic/src/n_pt_persp.c:225
 msgid "Oblique Draw Left"
-msgstr ""
+msgstr "Desenho oblíquo à esquerda"
 
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:231
@@ -2423,7 +2418,7 @@ msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
 msgstr ""
-"Clica em dois locais no seu desenho para escolher pontos de fuga para a "
+"Clica em dois locais no teu desenho para escolher pontos de fuga para a "
 "ferramenta de pintura de perspetiva de 2 pontos."
 
 #: ../../magic/src/n_pt_persp.c:236
@@ -2439,7 +2434,7 @@ msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
-"Clica em três locais no seu desenho para escolher pontos de fuga para a "
+"Clica em três locais no teu desenho para escolher pontos de fuga para a "
 "ferramenta de pintura de perspetiva de 3 pontos."
 
 #: ../../magic/src/n_pt_persp.c:240
@@ -2450,105 +2445,61 @@ msgstr ""
 "2 pontos."
 
 #: ../../magic/src/n_pt_persp.c:242
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 3-point perspective vanishing "
-#| "points."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
 msgstr ""
 "Clica e arrasta para desenhar linhas com os pontos de fuga da perspetiva de "
-"2 pontos."
+"3 pontos (perspetiva descendente)."
 
 #: ../../magic/src/n_pt_persp.c:246
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with an isometric projection."
-msgstr ""
-"Clica e arrasta para desenhar linhas com o seu ponto de fuga de perspetiva "
-"de 1 ponto."
+msgstr "Clica e arrasta para desenhar linhas com uma projeção isométrica."
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:249
-#, fuzzy
-#| msgid ""
-#| "Click in your drawing to pick a vanishing point for the 1-point "
-#| "perspective painting tool."
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
-"Clica no teu desenho para escolher um ponto de fuga para a ferramenta de "
-"pintura de perspetiva de 1 ponto."
+"Clica no teu desenho para ajustar o ângulo usado pela ferramenta de pintura "
+"de projeção dimétrica."
 
 #: ../../magic/src/n_pt_persp.c:250
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with dimetric projection."
-msgstr ""
-"Clica e arrasta para desenhar linhas com o seu ponto de fuga de perspetiva "
-"de 1 ponto."
+msgstr "Clica e arrasta para desenhar linhas com projeção dimétrica."
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:253
-#, fuzzy
-#| msgid ""
-#| "Click in your drawing to pick a vanishing point for the 1-point "
-#| "perspective painting tool."
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
-"Clica no teu desenho para escolher um ponto de fuga para a ferramenta de "
-"pintura de perspetiva de 1 ponto."
+"Clica no teu desenho para ajustar os ângulos usados pela ferramenta de "
+"pintura de projeção trimétrica."
 
 #: ../../magic/src/n_pt_persp.c:254
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with trimetric projection."
-msgstr ""
-"Clica e arrasta para desenhar linhas com o seu ponto de fuga de perspetiva "
-"de 1 ponto."
+msgstr "Clica e arrasta para desenhar linhas com projeção trimétrica."
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:257
-#, fuzzy
-#| msgid ""
-#| "Click in your drawing to pick a vanishing point for the 1-point "
-#| "perspective painting tool."
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
-"Clica no teu desenho para escolher um ponto de fuga para a ferramenta de "
-"pintura de perspetiva de 1 ponto."
+"Clica no teu desenho para ajustar o ângulo usado pela ferramenta de pintura "
+"de projeção oblíqua."
 
 #: ../../magic/src/n_pt_persp.c:258
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with oblique projection."
-msgstr ""
-"Clica e arrasta para desenhar linhas com o seu ponto de fuga de perspetiva "
-"de 1 ponto."
+msgstr "Clica e arrasta para desenhar linhas com projeção oblíqua."
 
 #: ../../magic/src/n_pt_persp.c:260
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr ""
-"Clica e arrasta para desenhar linhas com o seu ponto de fuga de perspetiva "
-"de 1 ponto."
+"Clica e arrasta para desenhar linhas com projeção oblíqua (virada para a "
+"direita)."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
@@ -2599,11 +2550,11 @@ msgstr ""
 
 #: ../../magic/src/pixels.c:117
 msgid "Pixels"
-msgstr "Píxeis"
+msgstr "Pixéis"
 
 #: ../../magic/src/pixels.c:135
 msgid "Click and drag to draw large pixels."
-msgstr "Clica e arrasta para desenhares píxeis grandes."
+msgstr "Clica e arrasta para desenhares pixéis grandes."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2615,7 +2566,7 @@ msgstr "Clica no local do desenho em que queres criar o puzzle."
 
 #: ../../magic/src/puzzle.c:131
 msgid "Click to make a puzzle in fullscreen mode."
-msgstr "Clica para criar um puzzle em ecrã completo."
+msgstr "Clica para criar um puzzle em ecrã inteiro."
 
 #: ../../magic/src/rails.c:168
 msgid "Rails"
@@ -2941,35 +2892,35 @@ msgstr "Clica e arrasta para desenhar um tornado no desenho."
 
 #: ../../magic/src/trochoids.c:109
 msgid "Epitrochoid"
-msgstr ""
+msgstr "Epitrocóide"
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid Inside"
-msgstr ""
+msgstr "Epitrocóide interior"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Edge"
-msgstr ""
+msgstr "Epitrocóide margem"
 
 #: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Outside"
-msgstr ""
+msgstr "Epitrocóide exterior"
 
 #: ../../magic/src/trochoids.c:113
 msgid "Hypotrochoid"
-msgstr ""
+msgstr "Hipotrocóide"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid Inside"
-msgstr ""
+msgstr "Hipotrocóide interior"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Edge"
-msgstr ""
+msgstr "Hipotrocóide margem"
 
 #: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Outside"
-msgstr ""
+msgstr "Hipotrocóide exterior"
 
 #. Epitrochoids
 #: ../../magic/src/trochoids.c:122
@@ -2978,6 +2929,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
 msgstr ""
+"Clica para começar a desenhar um epitrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho do círculo fixo e para cima/baixo para "
+"alterar o tamanho do círculo que rola para fora dele. Utilize a opção de "
+"tamanho para alterar a posição da caneta."
 
 #: ../../magic/src/trochoids.c:123
 msgid ""
@@ -2985,6 +2940,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
 msgstr ""
+"Clica para começar a desenhar um epitrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho do círculo fixo e para cima/baixo para "
+"alterar o tamanho do círculo que se desenrola fora dele. Depois, a caneta "
+"está dentro do círculo rolante."
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
@@ -2992,6 +2951,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"Clica para começar a desenhar um epitrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho da circunferência fixa e para cima/baixo para "
+"alterar o tamanho da circunferência que se desenrola fora dela. Depois, a "
+"caneta está na margem do círculo rolante."
 
 #: ../../magic/src/trochoids.c:125
 msgid ""
@@ -2999,6 +2962,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
+"Clica para começar a desenhar um epitrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho do círculo fixo e para cima/baixo para "
+"alterar o tamanho do círculo que rola para fora dele. Depois, a caneta fica "
+"fora do círculo rolante."
 
 #. Hypotrochoids
 #: ../../magic/src/trochoids.c:127
@@ -3007,6 +2974,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
+"Clica para começar a desenhar uma hipotrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho do círculo fixo e para cima/baixo para "
+"alterar o tamanho do círculo que rola dentro dele. Usa a opção de tamanho "
+"para alterar a posição da caneta."
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
@@ -3014,6 +2985,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
+"Clica para começar a desenhar uma hipotrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho da circunferência fixa e para cima/baixo para "
+"alterar o tamanho da circunferência que rola dentro dela. Depois, a caneta "
+"está dentro do círculo rolante."
 
 #: ../../magic/src/trochoids.c:129
 msgid ""
@@ -3021,6 +2996,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"Clica para começar a desenhar uma hipotrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho da circunferência fixa e para cima/baixo para "
+"alterar o tamanho da circunferência que rola dentro dela. Depois, a caneta "
+"está na margem do círculo rolante."
 
 #: ../../magic/src/trochoids.c:130
 msgid ""
@@ -3028,6 +3007,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
 msgstr ""
+"Clica para começar a desenhar uma hipotrocóide. Arrasta para a esquerda/"
+"direita para alterar o tamanho da circunferência fixa e para cima/baixo para "
+"alterar o tamanho da circunferência que rola dentro dela. Depois, a caneta "
+"fica fora do círculo rolante."
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
@@ -3082,16 +3065,12 @@ msgid "Xor Colors"
 msgstr "Cores Xor"
 
 #: ../../magic/src/xor.c:116
-#, fuzzy
-#| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
-msgstr "Clica e arrasta para desenhar um efeito XOR"
+msgstr "Clica e arrasta para desenhar um efeito \"Exclusive Or\" (XOR)"
 
 #: ../../magic/src/xor.c:118
-#, fuzzy
-#| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
-msgstr "Clica e arrasta para desenhar um efeito XOR em todo o desenho"
+msgstr "Clica para aplicar um efeito \"Exclusive Or\" (XOR) a toda a imagem"
 
 #~ msgid "New Breed Software et al."
 #~ msgstr "New Breed Software et al."

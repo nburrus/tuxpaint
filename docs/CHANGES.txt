@@ -24,6 +24,11 @@ https://tuxpaint.org/
       (https://sourceforge.net/p/tuxpaint/tuxpaint/merge-requests/19/)
       Will Thompson <https://sourceforge.net/u/wjjjjt/profile/>
 
+  * Localization Updates:
+    ---------------------
+    * Portuguese (Portugal) translation
+      Hugo Carvalho <hugokarvalho@hotmail.com>
+
 2024.January.29 (0.9.32)
   * Improvements to Magic tools:
     ----------------------------
