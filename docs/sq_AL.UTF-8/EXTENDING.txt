@@ -523,7 +523,7 @@ Përdorues Windows-i
 
     Që të përpunoni/krijoni këto kartela, përdorni NotePad ose WordPad.
     Sigurohuni t’i ruani si tekst të thjeshtë dhe garantoni të kenë një zgjatim
-    “.txt” në fund të emrit të kartelës.
+    “.dat” në fund të emrit të kartelës.
 
 
 
@@ -556,9 +556,9 @@ Shkronja
 
 Shkronjat e përdorur nga Tux Paint janë TrueType Fonts (TTF).
 
-Thjesht vendosini te drejtoria “fonts”. Tux Paint-i do ta ngarkojë llojin e
-shkronjave dhe do të japë katër madhësi të ndryshme te përzgjedhësi i
-“Shkronjave”, kur përdoren mjetet “Tekst” dhe “Etiketë”.
+Simply place them in the "fonts" directory. When using the 'Text' and 'Label'
+tools, Tux Paint will present the font in the 'Letters' selector at the right,
+along with options to enable bold and/or italics, and change the size.
 
 “Fillesa”
 

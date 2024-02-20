@@ -518,7 +518,7 @@ Tamaño inicial do selo
 Usuarios de Windows
 
     Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese de
-    gardalos como texto simple e asegúrese de que teñen unha extensión «.txt»
+    gardalos como texto simple e asegúrese de que teñen unha extensión «.dat»
     ao final do nome do ficheiro.
 
 
@@ -553,9 +553,9 @@ Tipos de letra
 
 Os tipos de letra empregados por Tux Paint son TrueType Fonts (TTF).
 
-Simplemente colóqueas no directorio «fonts». Tux Paint cargará o tipo de letra
-e fornecerá catro tamaños diferentes no selector de «Letras» cando empregue as
-ferramentas «Texto» e «Etiqueta».
+Simply place them in the "fonts" directory. When using the 'Text' and 'Label'
+tools, Tux Paint will present the font in the 'Letters' selector at the right,
+along with options to enable bold and/or italics, and change the size.
 
 «Imaxes de comezo»
 

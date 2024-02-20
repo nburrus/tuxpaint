@@ -534,7 +534,7 @@ Utilisateurs de Windows
 
     Utilisez NotePad ou WordPad pour modifier / créer ces fichiers.
     Assurez-vous de les enregistrer en texte brut et assurez-vous qu'ils ont
-    une extension ".txt" à la fin du nom de fichier.
+    une extension ".dat" à la fin du nom de fichier.
 
 
 
@@ -568,9 +568,9 @@ Polices
 
 Les fontes utilisées par Tux Paint sont des fontes True Type Fonts (TTF).
 
-Placez-les simplement dans répertoire "fonts". Tux Paint chargera la police et
-fournira quatre tailles différentes dans le sélecteur «Lettres» lors de
-l'utilisation des outils "Texte" ou "Étiquette".
+Simply place them in the "fonts" directory. When using the 'Text' and 'Label'
+tools, Tux Paint will present the font in the 'Letters' selector at the right,
+along with options to enable bold and/or italics, and change the size.
 
 'Images de démarrage'
 

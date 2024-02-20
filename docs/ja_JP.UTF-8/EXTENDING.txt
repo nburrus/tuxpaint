@@ -505,7 +505,7 @@ Unalterable Stamps
 Windows のユーザー
 
     Use NotePad or WordPad to edit/create these files. Be sure to save them as
-    plain-text, and make sure they have a ".txt" extension at the end of the
+    plain-text, and make sure they have a ".dat" extension at the end of the
     filename.
 
 
@@ -538,9 +538,9 @@ mirrored or flipped, respectively.
 
 The fonts used by Tux Paint are TrueType Fonts (TTF).
 
-Simply place them in the "fonts" directory. Tux Paint will load the font and
-provide four different sizes in the 'Letters' selector when using the 'Text'
-and 'Label' tools.
+Simply place them in the "fonts" directory. When using the 'Text' and 'Label'
+tools, Tux Paint will present the font in the 'Letters' selector at the right,
+along with options to enable bold and/or italics, and change the size.
 
 'Starters'
 
