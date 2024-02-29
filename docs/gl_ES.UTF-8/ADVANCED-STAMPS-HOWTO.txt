@@ -1,10 +1,10 @@
                                    Tux Paint
                 versión 0.9.32 «Como facer» os selos avanzados
 
-      Copyright © 2006-2022 by Albert Cahalan e outros; see AUTHORS.txt.
+      Copyright © 2006-2024 by Albert Cahalan e outros; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               4 de Xuño de 2022
+                            28 de Febreiro de 2024
 
 -------------------------------------------------------------------------------
 +-------------------------------------------+
