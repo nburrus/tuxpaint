@@ -7,6 +7,16 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2024.February.28 (0.9.33)
+  * New Magic Tools:
+    ----------------
+    * WIP Specular Reflection: Draws a slightly blurred, wavy, and
+      faded reflection of the opposite half of the drawing.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      + WIP Needs docs
+      + WIP Add to new features lists
+      + WIP Needs icon
+      + WIP Needs sound effect
+
   * Other Improvements:
     -------------------
     * Make screen refresh more snappy on macOS.
