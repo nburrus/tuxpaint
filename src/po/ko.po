@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2022-09-10 06:06-0400\n"
 "Last-Translator: Mark K. Kim <markuskimius@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -1713,6 +1713,24 @@ msgstr "찌그리기"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "마우스를 누르고 끌면 그림을 찌그를 수 있어요."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr "마우스를 누르고 끌면 그림의 부분이 텔레비젼에 나온 것 같이돼요."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "마우스를 누르면 그림에 비를 그릴 수 있어요."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "양각"
@@ -2598,6 +2616,19 @@ msgstr "눈덩이를 그려보세요."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "눈을 그려보세요."
+
+#: ../../magic/src/specular.c:75
+#, fuzzy
+#| msgid "Reflection"
+msgid "Specular Reflection"
+msgstr "거을"
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

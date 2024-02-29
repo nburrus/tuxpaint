@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2011-10-30 15:34+0530\n"
 "Last-Translator: Chandrakant Dhutadmal\n"
 "Language-Team: Urdu\n"
@@ -1805,6 +1805,26 @@ msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "آپ كی تصویر  میں ڈسٹارشن لانے كے لئے ماؤس كو اطراف میں كلك اور موو كریں۔"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"آپ كے تصویر كے حصوں كو ٹیلی ویژن پر ہے ایسے پیش كرنے كے لئے كلك اور ڈریگ "
+"كریں۔"
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "آپ كی تصویر كو برسات كی بوندوں سے ڈھكنے كے لئے كلك كریں۔"
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "ایمبوس"
@@ -2801,6 +2821,17 @@ msgstr "تصویر میں برف كی گیندوں كو شامل كرنے كے �
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "آپ كی تصویر میں برف كے فلیكس شامل كرنے كے لئے كلك كریں۔"
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

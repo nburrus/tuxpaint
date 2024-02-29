@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2024-01-27 10:46+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -1856,6 +1856,25 @@ msgstr "ゆがめる"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "クリックしたまま マウスをうごかして えを ゆがめよう。"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"クリックしたまま マウスを うごかして テレビに うつったみたいに しよう。"
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "えを クリックして ぜんたいに あめを ふらせよう。"
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "うきぼり"
@@ -2751,6 +2770,19 @@ msgstr "えを クリックして ぜんたいに ゆきだまを かこう。"
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "えを クリックして ぜんたいに ゆきを ふらせよう。"
+
+#: ../../magic/src/specular.c:75
+#, fuzzy
+#| msgid "Reflection"
+msgid "Specular Reflection"
+msgstr "はんしゃ"
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

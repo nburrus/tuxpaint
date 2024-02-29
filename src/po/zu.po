@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2011-02-07 12:30+0200\n"
 "Last-Translator: sipho <sipho@translate.org.za>\n"
 "Language-Team: SIpho\n"
@@ -1821,6 +1821,26 @@ msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Chofoza bese donsa igundane ukuze wenze inhlanekezela esithombeni sakho."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Chofoza bese uyadonsa ukwenza izingxenye zesithombe sakho zibukeke engathi "
+"zikumabonakude."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Chofoza ukugwuma isithombe sakho ngamaconsi emvula."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "i-emboss"
@@ -2860,6 +2880,17 @@ msgstr "Chofoza ukuwe wongeze amabhola weqhwa esithombeni sakho."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Chofoza ukuze wongeze amathonsi weqhwa esithombeni sakho."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

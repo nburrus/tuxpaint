@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2023-03-30 14:41+0200\n"
 "Last-Translator: Willem Heppe <heppew@yahoo.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -1854,6 +1854,25 @@ msgstr "Vervorming"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik en sleep de muis om vervormingen te maken in je tekening."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Klik en sleep om delen van de tekening op een televisiebeeld te laten lijken."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Klik en bedek je tekening met regendruppels."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Reliëf"
@@ -2733,6 +2752,19 @@ msgstr "Klik en zet sneeuwballen op je tekening."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Klik en laat sneeuwvlokken vallen op je tekening."
+
+#: ../../magic/src/specular.c:75
+#, fuzzy
+#| msgid "Reflection"
+msgid "Specular Reflection"
+msgstr "Weerspiegeling"
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

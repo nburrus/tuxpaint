@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2011-09-14 13:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: Bodo\n"
@@ -1796,6 +1796,25 @@ msgstr "गाज्रि महर"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "नोंथांनि सावगारिआव गाज्रि महर खालामनो थाखाय माउसखौ क्लिक खालाम आरो बोबो।"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"सावगारिनि बाहागोफोरखौ टिभिआव थानाय बादि खालामनो थाखाय क्लिक खालाम आरो बोबो।"
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "नोंथांनि सावगारिखौ अखानि थरथिंजों खोबनो क्लिक खालाम।"
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "एरखांहो"
@@ -2785,6 +2804,17 @@ msgstr "नोंथांनि सावगारिआव बरफ गथा
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "नोंथांनि सावगारिआव बरफ थुख्रा दाजाबदेरनो क्लिक खालाम।"
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

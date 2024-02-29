@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2023-04-07 09:13+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
@@ -1772,6 +1772,24 @@ msgstr "变形"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "单击然后移动鼠标将图片变形。"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr "点击拖动鼠标，使你的作品看起来像在电视里一样。"
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "单击在画面上布满雨滴。"
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "凸起"
@@ -2611,6 +2629,19 @@ msgstr "单击在图片中添加雪球。"
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "单击在图片中添加雪片。"
+
+#: ../../magic/src/specular.c:75
+#, fuzzy
+#| msgid "Reflection"
+msgid "Specular Reflection"
+msgstr "反射"
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

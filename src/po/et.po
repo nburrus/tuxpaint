@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2015-03-07 13:09+0000\n"
 "Last-Translator: Sven Ollino <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/doudoulinux/"
@@ -1775,6 +1775,25 @@ msgstr "Moonutus"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Hoia hiirenuppu all ja liiguta, et luua pildile moonutusi."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Hoia hiirenuppu all ja liiguta, et muuta pilti vana telekapildi taoliseks."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Klõpsa pildil, et katta see vihmapiiskadega."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Kohruta"
@@ -2734,6 +2753,17 @@ msgstr "Klõpsa, et lisada pildile lumepalle."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Klõpsa, et lisada pildile lumehelbeid."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2017-12-30 18:24+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Bengali\n"
@@ -1792,6 +1792,24 @@ msgstr "বিকৃতি"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "আপনার ছবিতে বিকৃতি আনতে মাউস ক্লিক করুন ও টানুন."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr "আপনার ছবিটির কিছু অংশ টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন ও টানুন."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "আপনার ছবিতে বৃষ্টির ফোঁটা দিয়ে ভরতে ক্লিক করুন."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "এমবস"
@@ -2762,6 +2780,17 @@ msgstr "আপনার ছবিতে বরফের বল যোগ কর�
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "আপনার ছবিতে বরফের পরত যোগ করতে ক্লিক করুন."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

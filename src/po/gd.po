@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2021-09-02 12:18-0700\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -1809,6 +1809,26 @@ msgstr "Mì-dhealbhadh"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Briog is gluais an luchag gus mì-dhealbhadh a chur air an dealbh agad."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Briog is slaod gus coltas a thoirt air pàirt dhen dealbh agad nam b’ ann air "
+"an tbh a bhiodh iad."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Briog gus an dealbh agad a chòmhdachadh le druthagan uisge."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Copanaich"
@@ -2793,6 +2813,17 @@ msgstr "Briog gus bàlaichean sneachda a chur ris an dealbh agad."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Briog gus bleideagan sneachda a chur ris an dealbh agad."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

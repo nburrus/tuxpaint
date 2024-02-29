@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2017-12-23 23:11+0100\n"
 "Last-Translator: Yacine Bouklif <yacine_tizi2003@yahoo.fr>\n"
 "Language-Team: \n"
@@ -1792,6 +1792,29 @@ msgstr "Azlag"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Ssed u selḥu taɣerdayt iwakken ad tgeḍ izlagen di tugna."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Ssed u selḥu taɣerdayt iwakken ad terreḍ kra n imukan n tugna am tugna n "
+"tiliẓri."
+
+#
+#
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Ssed iwakken ad taččareḍ tugna s tmiqwa n ugfur."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Azerzay"
@@ -2784,6 +2807,17 @@ msgstr "Ssed iwakken ad ternuḍ takurin n wedfel i tugna."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Ssed iwakken ad ternuḍ iḥeḍḍufen n wedfel i tugna."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.21c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2013-03-28 12:11+0530\n"
 "Last-Translator: Santosh Jankiram Kshetre <quicklearning@rediffmail.com>\n"
 "Language-Team: Marathi\n"
@@ -1811,6 +1811,26 @@ msgstr "विकृति"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "चित्र में विकृति लाने के लिए क्लिक करें और स्थानांतरित करें"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+" तस्वीर के कुछ हिस्सों को ऐसे बदलने के लिए जैसे वह टीवी पर हैं,इस तरह दिखाने के लिए क्लिक "
+"करें और माउस को स्थानांतरित करें|"
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "बारिश के बूंदों के साथ अपनी तस्वीर कवर पर क्लिक करें|"
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "उभारदार नकक्षी "
@@ -2781,6 +2801,17 @@ msgstr "तस्वीर में बर्फ की गेंदों क�
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "तस्वीर में बर्फ के गुचे जोड़ने के लिए क्लिक्क करें|"
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2011-01-07 15:08+0530\n"
 "Last-Translator: saikumar <ramukiashc@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -1789,6 +1789,24 @@ msgstr "వంకర"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "చిత్రాని చదరగోట్టుటకు క్లిక్ చేసి దాని చుట్టూ జరపండి"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr "చిత్రములో మీకు కావలిసిన ప్రాంతాలు  టివి లోని చిత్రమువలె కనిపించుటకు క్లిక్ చేసీ లాగండి."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "మీ చిత్రాన్ని నీటి చుక్కలతో నింపడానికి క్లిక్ చేయండి."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "గుబకలుగల"
@@ -2758,6 +2776,17 @@ msgstr "మంచు బంతులు అమద్చడానికి క్
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "మంచు బంతునకలు అమద్చడానికి క్లిక్ చేయండి."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

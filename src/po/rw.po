@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1764,6 +1764,20 @@ msgstr ""
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Kuri Ubwoko a Ishusho"
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr ""
@@ -2667,6 +2681,17 @@ msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 #, fuzzy
 msgid "Click to add snow flakes to your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

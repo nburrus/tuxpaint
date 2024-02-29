@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2017-12-05 12:38+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -1792,6 +1792,26 @@ msgstr "Forvrængning"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik og bevæg musen rundt, for at skabe forvrængning i dit billede."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Klik og bevæg musen rundt for at få dit billede til at se ud som om, det er "
+"i fjernsynet."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Klik for at dække dit billede med regndråber."
+
 # Engelsk forklaring af ordet emboss: to raise or represent (surface designs) in relief. 
 # Kunne også være præget, drevet, presset (præg, driv, pres), fremhæv.
 #: ../../magic/src/emboss.c:108
@@ -2753,6 +2773,17 @@ msgstr "Klik for at tilføje snebolde i dit billede."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Klik for at tilføje snefnug i dit billede."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

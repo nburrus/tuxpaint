@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.15rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2010-12-12 00:00+0100\n"
 "Last-Translator: Ivana <reci.ne.silvesteru@gmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -1929,6 +1929,26 @@ msgstr "Искривљавање"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Кликни и мрдај мишем да замрњаш слику."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr "Кликни и учини да део слике изгледа као да је на телевизији."
+
+#
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Кликни да би слика била прекривена капљицама кише."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Рељефно"
@@ -2995,6 +3015,17 @@ msgstr "Кликни и мрдај мишем за додавање грудви
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Кликни и мрдај мишем за додавање снежних пахуљица на твоју слику."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2023-06-29 21:03+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -1858,6 +1858,26 @@ msgstr "Forstyrr"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Hald inne knappen og flytt rundt for å forstyrra teikninga."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Hald inne knappen og flytt rundt for å få teikninga til å sjå ut som ho vert "
+"vist på TV."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Trykk for å dekkja teikninga med regndropar."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Relieff"
@@ -2746,6 +2766,20 @@ msgstr "Trykk for å kasta snøballar på teikninga."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Trykk for å dryssa snøflak på teikninga."
+
+# «Spegelbilete» er oppteken av «spegel»-effekten, som fungerer litt annleis. Kallar derfor dette «refleksjon».
+#: ../../magic/src/specular.c:75
+#, fuzzy
+#| msgid "Reflection"
+msgid "Specular Reflection"
+msgstr "Refleksjon"
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

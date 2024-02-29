@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2023-05-19 16:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1907,6 +1907,26 @@ msgstr "Искажение"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы исказить её части."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#  msgid "Click to make your picture look like it's on television."
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"Щёлкните и ведите мышью по картинке, чтобы она выглядела, как телевизионная."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "Щёлкните, чтобы покрыть картинку дождевыми каплями."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "Рельеф"
@@ -2824,6 +2844,19 @@ msgstr "Щёлкните, чтобы добавить снежки на карт
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Щёлкните, чтобы добавить снежинки на картинку."
+
+#: ../../magic/src/specular.c:75
+#, fuzzy
+#| msgid "Reflection"
+msgid "Specular Reflection"
+msgstr "Отражение"
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"

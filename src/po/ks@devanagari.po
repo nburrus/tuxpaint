@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-18 10:39-0800\n"
+"POT-Creation-Date: 2024-02-29 01:13-0800\n"
 "PO-Revision-Date: 2012-12-21 11:04+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-DV\n"
@@ -1801,6 +1801,26 @@ msgstr "खरॊबी"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "पननॊ तसविर मंज़ खरॊबी करनॊ बापत कॊरीव कोलोक तॊ डरिग मावुस."
 
+#: ../../magic/src/dither.c:80
+msgid "Dither"
+msgstr ""
+
+#: ../../magic/src/dither.c:99
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid "Click and drag to replace parts of your image with dithered dots."
+msgstr ""
+"कोलोक कॊरीव तॊ डरिग कॊरीव पननॊ तसविर हॊंद होसो तॊथ बासनावनॊ बापत ज़न तॊ तॊम "
+"टोलो वीजनस पयॊठ आसन."
+
+#: ../../magic/src/dither.c:101
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid "Click to replace your entire image with dithered dots."
+msgstr "पननॊन तसविर रुद फीरीव सॊत बरनो बापत कॊरीव कोलोक."
+
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
 msgstr "ईमबास"
@@ -2787,6 +2807,17 @@ msgstr "पननॊ तसविर पयॊठ अख शोनो बाल 
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "पननॊ तसविर पयॊठ अख शोनो थुस हूररावनो बापत कॊरीव कोलोक."
+
+#: ../../magic/src/specular.c:75
+msgid "Specular Reflection"
+msgstr ""
+
+#: ../../magic/src/specular.c:93
+msgid ""
+"Click and drag on the bottom half of your picture to draw a specular "
+"reflection — like a puddle, pond, or lake — that mirrors the top half of "
+"your picture."
+msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
