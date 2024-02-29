@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   16. janúar 2024
+   28. febrúar 2024
 */
 
 
@@ -551,7 +551,7 @@ that as well.
 The size comes in as an unsigned integer (Uint8) between 1 and the value
 returned by our example_accepted_sizes() function during setup.
 */
-void example_set_size(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * skjámynd, Uint8 stærð, SDL_Rect * update_rect)
+void example_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * skjámynd, Uint8 stærð, SDL_Rect * update_rect)
 {
   /*
   Store the new size into the global variable we declared at the top of
