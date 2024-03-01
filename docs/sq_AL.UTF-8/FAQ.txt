@@ -1,5 +1,5 @@
                                    Tux Paint
-                     version 0.9.32 Pyetje të Bëra Rëndom
+                     version 0.9.33 Pyetje të Bëra Rëndom
 
  Të drejta kopjimi © 2002-2023 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/

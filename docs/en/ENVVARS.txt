@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.32
+                                version 0.9.33
                       Environment Variables Documentation
 
         Copyright © 2021-2023 by various contributors; see AUTHORS.txt.

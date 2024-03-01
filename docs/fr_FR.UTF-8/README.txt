@@ -1,12 +1,12 @@
                                    Tux Paint
-                                version 0.9.32
+                                version 0.9.33
 
                      Un programme simple pour les enfants
 
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               janvier 29, 2024
+                               février 29, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -102,54 +102,13 @@ logiciel sous GPL.)
 
 Voir COPYING.txt pour le texte complet de la licence GPL.
 
-D. Qu'y a-t-il de neuf dans la version 0.9.32 de Tux Paint ?
+D. Qu'y a-t-il de neuf dans la version 0.9.33 de Tux Paint ?
 
-Outil Magie avec une perspective à 1 point de fuite
-    Des outils qui permettent de créer un point de fuite, et de dessiner
-    ensuite des lignes avec une perspective à 1 point.
+Dither magic tools
+    Transform parts of an image into a dithered pattern of dots.
 
-Outil de Magie avec une perspective à 2 points de fuite
-    Des outils qui permettent de créer deux points de fuite, et de dessiner
-    ensuite des lignes avec une perspective à 2 points.
-
-Outil de Magie Perspective 3-point (point de fuite)
-    Un ensemble d'outils qui vous permet d'avoir trois points de fuite, et
-    pouvoir ainsi tracer des lignes avec une perspective à 3 points.
-
-Isometric Magic tool
-    A tool that draws lines in an isometric projection.
-
-Dimetric Magic tool
-    A pair of tools that allow you to set an angle, and then draw lines in a
-    dimetric projection.
-
-Trimetric Magic tool
-    A pair of tools that allow you to set two angles, and then draw lines in a
-    trimetric projection.
-
-Oblique Magic tool
-    A pair of tools that allow you to set an angles, and then draw lines in an
-    oblique projection.
-
-Epitrochoid and Hypotrochoid Magic tools
-    Tools that create centered trochoid curved patterns.
-
-Réglage du nouveau "complexité" (complexity)
-
-    Un nouveau réglage qui permet à certains outils Magie de se comporter
-    différemment (ou bien d'être supprimés) en se basant sur le niveau
-    d'expertise de l'utilisateur. Les nouveaux outils "Perspective N-point" et
-    "Clone" sont affectés via ce réglage.
-
-Magic tools reorganized
-
-    Each group of Magic tools has been reorganized to keep related tools next
-    to each other, rather than being sorted alphabetically by their (localized)
-    names.
-
-Les détails de la police sont affichés lors du choix
-    Le nom et la taille de la police choisie sont montrés quand on utilise les
-    outils Texte et Étiquette.
+Specular magic tool
+    Paint reflections of the opposite side of the drawing.
 
 
 Voir CHANGES.txt pour la liste complète des changements.

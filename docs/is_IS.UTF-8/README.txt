@@ -1,12 +1,12 @@
                                    Tux Paint
-                                version 0.9.32
+                                version 0.9.33
 
                      A simple drawing program for children
 
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janúar 29, 2024
+                               febrúar 29, 2024
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -97,54 +97,13 @@ parts of the program in their own GPL'd software.)
 
 See COPYING.txt for the full text of the GPL license.
 
-D. What's New in Tux Paint version 0.9.32?
+D. What's New in Tux Paint version 0.9.33?
 
-1-point Perspective (vanishing point) Magic tool
-    A pair of tools that allow you to set a vanishing point, and then draw
-    lines in 1-point perspective.
+Dither magic tools
+    Transform parts of an image into a dithered pattern of dots.
 
-2-point Perspective (vanishing point) Magic tool
-    A pair of tools that allow you to set two vanishing points, and then draw
-    lines in 2-point perspective.
-
-3-point Perspective (vanishing point) Magic tool
-    A pair of tools that allow you to set three vanishing points, and then draw
-    lines in 3-point perspective.
-
-Isometric Magic tool
-    A tool that draws lines in an isometric projection.
-
-Dimetric Magic tool
-    A pair of tools that allow you to set an angle, and then draw lines in a
-    dimetric projection.
-
-Trimetric Magic tool
-    A pair of tools that allow you to set two angles, and then draw lines in a
-    trimetric projection.
-
-Oblique Magic tool
-    A pair of tools that allow you to set an angles, and then draw lines in an
-    oblique projection.
-
-Epitrochoid and Hypotrochoid Magic tools
-    Tools that create centered trochoid curved patterns.
-
-New "complexity" setting (complexity)
-
-    A new setting that allows certain Magic tools to behave differently (or
-    remove their availability altogether) based on the expertise-level of the
-    user. The new "N-point Perspective" tools and "Clone" tool are affected by
-    this setting.
-
-Magic tools reorganized
-
-    Each group of Magic tools has been reorganized to keep related tools next
-    to each other, rather than being sorted alphabetically by their (localized)
-    names.
-
-Font details shown when selected
-    The name and size of the selected font are shown when using the Text and
-    Label tools.
+Specular magic tool
+    Paint reflections of the opposite side of the drawing.
 
 
 See CHANGES.txt for the complete list of changes.

@@ -47,6 +47,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.9.33" date="2024-02-29">
+      <description>
+        <p>New Magic tools: Dither, Specular.</p>
+        <p>Localization updates.</p>
+      </description>
+    </release>
     <release version="0.9.32" date="2024-01-28">
       <description>
         <p>New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and corresponding vanishing point editors).</p>
