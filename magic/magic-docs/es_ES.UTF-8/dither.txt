@@ -1,11 +1,11 @@
-                    Tux Paint "Magic" Tool: Color and White
+                        Tux Paint "Magic" Tool: Dither
 
                              Group: Color Filters
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
 
 This makes parts of your picture two colors: white, and the color chosen in the
-palette. (i.e., if you choose black, you'll get a black and white picture).
+palette, but using a dithered pattern of dots.
 
 This tool offers both freehand and one-click operation.
 
@@ -13,7 +13,7 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: Dither & Dither (Keep Colors).
+See also: Color and White & Dither (Keep Colors).
 
 -------------------------------------------------------------------------------
 

@@ -37,6 +37,8 @@ Filtres couleurs
   * Couleur et blanc
   * Couleurs Xor
   * Désaturer
+  * Dither
+  * Dither (Keep Colors)
   * Éclaircir
   * Enlever une couleur
   * Fleurir

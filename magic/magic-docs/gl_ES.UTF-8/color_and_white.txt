@@ -13,6 +13,8 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
+See also: Dither & Dither (Keep Colors).
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.33

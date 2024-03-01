@@ -38,6 +38,8 @@ Color Filters
   * Color and White
   * Darken
   * Desaturate
+  * Dither
+  * Dither (Keep Colors)
   * Double Vision
   * Keep Color
   * Lighten

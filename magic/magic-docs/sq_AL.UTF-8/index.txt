@@ -32,6 +32,8 @@ Filtra Ngjyrash
 
   * Çelje
   * Çngope
+  * Dither
+  * Dither (Keep Colors)
   * E kundërta
   * Errësoje
   * Hiqe Ngjyrën

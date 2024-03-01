@@ -22,8 +22,6 @@ https://tuxpaint.org/
       or the currently-selected color; with "Dither (Keep Color)", X is
       a muted version of the original color.
       Bill Kendrick <bill@newbreedsoftware.com>
-      + WIP Needs docs
-      + WIP Add to new features lists
       + WIP Needs icon
       + WIP Needs sound effect
 

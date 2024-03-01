@@ -1,12 +1,11 @@
-                 Outil 'Magie' de Tux Paint : Couleur et blanc
+                      Outil 'Magie' de Tux Paint : Dither
 
                            Groupe: Filtres couleurs
 
-                Auteur : Andrew Corcoran <akanewbie@gmail.com>
+              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
 
-Cela fait que votre image aura en partie deux couleurs : blanc, et une couleur
-choisie dans la palette. (c.à.d. que si vous choisissez noir, vous obtiendrez
-une image noir et blanc).
+This makes parts of your picture two colors: white, and the color chosen in the
+palette, but using a dithered pattern of dots.
 
 Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
@@ -14,7 +13,7 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Dither & Dither (Keep Colors).
+Voir aussi : Couleur et blanc & Dither (Keep Colors).
 
 -------------------------------------------------------------------------------
 
