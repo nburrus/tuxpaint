@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2017-12-30 18:21+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: none\n"
@@ -1783,24 +1783,54 @@ msgstr "Zniekształć"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Kliknij i przeciągnij myszką by spowodować zniekształcenie rysunku."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Kolory"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Kliknij i przesuń myszką dookoła, aby części rysunku wyglądały jak w "
 "telewizorze."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Kliknij, aby pokryć obrazek kroplami deszczu."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Kliknij i przesuń myszką dookoła, aby części rysunku wyglądały jak w "
+"telewizorze."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Kliknij, aby pokryć obrazek kroplami deszczu."
 
 #: ../../magic/src/emboss.c:108

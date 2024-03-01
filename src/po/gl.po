@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2021-03-03 10:01+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
@@ -1785,24 +1785,54 @@ msgstr "Distorsión"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Preme e arrastra o rato para provocar unha distorsión no debuxo."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Cores"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Preme e arrastra o rato para facer que algunha parte do debuxo se vexa coma "
 "nun televisor."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Preme para cubrir todo o debuxo con gotas de choiva."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Preme e arrastra o rato para facer que algunha parte do debuxo se vexa coma "
+"nun televisor."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Preme para cubrir todo o debuxo con gotas de choiva."
 
 #: ../../magic/src/emboss.c:108

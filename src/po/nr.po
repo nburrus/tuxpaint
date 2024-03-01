@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2006-10-09 20:32+0200\n"
 "Last-Translator: Vincent Mahlangu <vmahlangu@parliament.gov.za>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1802,20 +1802,46 @@ msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Qhwarhaza bewudose njalo iKhondlwana ujikeleze ukuze ufiphaze isithombe."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
 #, fuzzy
-msgid "Click and drag to replace parts of your image with dithered dots."
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Imibala"
+
+#: ../../magic/src/dither.c:38
+#, fuzzy
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
 "weithombe. "
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Qhwarhaza udose njalo iKhondlwana uzungeleze ukuze utjhugulule umbala "
+"weithombe. "
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Qhwarhaza wenze umfanekiso osasiboniboni."
 
 #: ../../magic/src/emboss.c:108

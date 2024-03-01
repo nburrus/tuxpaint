@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2010-11-04 23:59+0200\n"
 "Last-Translator: Emanuel Feruzi <emanuel.feruzi@trilabs.co.tz>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1790,24 +1790,54 @@ msgstr "Badili umbo"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Bofya na kokota kipanya kubadili umbo kwenye picha yako."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Rangi"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Bofya na kokota kufanya sehemu za picha yako zionekane kama ziko kwenye "
 "luninga."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Bofya kufunika picha yako na manyunyu ya mvua."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Bofya na kokota kufanya sehemu za picha yako zionekane kama ziko kwenye "
+"luninga."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Bofya kufunika picha yako na manyunyu ya mvua."
 
 #: ../../magic/src/emboss.c:108

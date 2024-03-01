@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2014-11-09 21:17+0330\n"
 "Last-Translator: snima <unix.nima@gmail.com>\n"
 "Language-Team: farsi <farinaz.hedayat@gmail.com>\n"
@@ -1809,20 +1809,46 @@ msgstr "اعوجاج"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "برای ایجاد اعوجاج در تصویر روی محل مورد نظر کلیک کن و موس را بکش."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "رنگ ها"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقاشی جابجا شود."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Pick a color or picture with which to start a new drawing."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr ".ک رنگ یا عکس بردار و شروع کن به کشیدن نقاشی "
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid "Click and drag to shift your picture around on the canvas."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr "کلیک کن و موس را بکش تا تصویر در صفحه نقاشی جابجا شود."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Pick a color or picture with which to start a new drawing."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr ".ک رنگ یا عکس بردار و شروع کن به کشیدن نقاشی "
 
 #: ../../magic/src/emboss.c:108

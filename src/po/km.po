@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1777,18 +1777,42 @@ msgstr "បង្ខូច​ទ្រង់ទ្រាយ"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "ចុច ហើយ​អូស​កណ្ដុរ ដើម្បី​បង្ខូច​ទ្រង់ទ្រាយ​ក្នុង​រូបភាព​របស់​អ្នក ។"
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
 #, fuzzy
-msgid "Click and drag to replace parts of your image with dithered dots."
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "ពណ៌"
+
+#: ../../magic/src/dither.c:38
+#, fuzzy
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "ចុច ដើម្បី​ចាំង​ឆ្លុះ​រូបភាព ។"
 
 #: ../../magic/src/emboss.c:108

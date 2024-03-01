@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2010-09-04 17:25+0200\n"
 "Last-Translator: Fasokan <konate20032001@yahoo.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1795,23 +1795,52 @@ msgstr "Ja cogoya yɛlɛmali."
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka cogoya dɔw yɛlɛma i ka ja la. "
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr " ɲɛw "
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Kilike i ka ɲinɛnin cɛɛnɛ k'i ka ja fan dɔw kɛ i ko u bɛ ka bɔ telewisɔn na. "
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Kilike, i ka ja fan bɛɛ kɛ sanji toni toni ye."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Kilike i ka ɲinɛnin cɛɛnɛ k'i ka ja fan dɔw kɛ i ko u bɛ ka bɔ telewisɔn na. "
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Kilike, i ka ja fan bɛɛ kɛ sanji toni toni ye."
 
 #: ../../magic/src/emboss.c:108

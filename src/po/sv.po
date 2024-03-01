@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2017-12-17 22:48+0100\n"
 "Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
@@ -1781,23 +1781,52 @@ msgstr "Rör till"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klicka och dra med musen för att göra din bild rörig."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Färger"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Klicka och dra för att få delar av din bild att se ut som om de är på TV."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Klicka för att täcka din bild med regndroppar."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Klicka och dra för att få delar av din bild att se ut som om de är på TV."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Klicka för att täcka din bild med regndroppar."
 
 #: ../../magic/src/emboss.c:108

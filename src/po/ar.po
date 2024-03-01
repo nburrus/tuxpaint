@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2008-10-07 14:54+0200\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -1803,20 +1803,46 @@ msgstr "تشويه"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "انقر واسحب الفأره لتتسبب في تشويه صورتك"
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "ألوان"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid "Click to make your picture look like it's on television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr "انقر لجعل صورتك تبدو انها على شاشة التلفزيون"
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "انقر تغطى قطرات من المطر كل الصوره"
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr "انقر لجعل صورتك تبدو انها على شاشة التلفزيون"
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "انقر تغطى قطرات من المطر كل الصوره"
 
 #: ../../magic/src/emboss.c:108

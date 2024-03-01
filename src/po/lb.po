@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2010-02-16 21:10+0100\n"
 "Last-Translator: René Brandenburger <rene@brandenburger.lu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1771,23 +1771,52 @@ msgstr "Verzerren"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klick a beweeg D'Maus fir d'Bild ze verzerren."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Faarwen"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Klick a beweeg d'Maus fir Deeler vun déngem Bild wei op der Telé ze maachen."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Klick fir et op däi Bild reenen ze loossen."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Klick a beweeg d'Maus fir Deeler vun déngem Bild wei op der Telé ze maachen."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Klick fir et op däi Bild reenen ze loossen."
 
 #: ../../magic/src/emboss.c:108

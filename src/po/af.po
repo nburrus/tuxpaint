@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: af\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2017-12-19 06:38+0000\n"
 "Last-Translator: OdettePretorius <odettepret@gmail.com>\n"
 "Language-Team: translate-discuss-af@lists.sourceforge.net\n"
@@ -1781,23 +1781,52 @@ msgstr "Distorsie"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Klik en sleep die muis om 'n distorsie in die prent te veroorsaak."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "Kleure"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 "Klik en sleep die muis dele van die prent te laat lyk asof dit op TV is."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "Klik om die prent vol reëndruppels te maak."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+"Klik en sleep die muis dele van die prent te laat lyk asof dit op TV is."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "Klik om die prent vol reëndruppels te maak."
 
 #: ../../magic/src/emboss.c:108

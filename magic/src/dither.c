@@ -20,16 +20,49 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-/* Our global variables: */
-/* ---------------------------------------------------------------------- */
+enum {
+  /* Use the chosen color for the non-white pixels */
+  TOOL_DITHER_VIA_COLOR,
+  /* Use the image's color (hue/saturation w/ low value) for the non-white pixels */
+  TOOL_DITHER_KEEP_COLOR,
+  NUM_TOOLS
+};
 
-/* Sound effects: */
-Mix_Chunk *snd_effect;
+char * dither_names[NUM_TOOLS] = {
+  gettext_noop("Dither"),
+  gettext_noop("Dither (Keep Color)"),
+};
 
-/* The size the user has selected in Tux Paint: */
-Uint8 dither_size = 16;
+char * dither_descr[NUM_TOOLS][2] = {
+  {
+    gettext_noop("Click and drag to replace parts of your image with a dithered pattern of dots in your chosen color."),
+    gettext_noop("Click to replace your entire image with a dithered pattern of dots in your chosen color."),
+  },
+  {
+    gettext_noop("Click and drag to replace parts of your image with a dithered pattern of dots using the picture's original colors."),
+    gettext_noop("Click to replace your entire image with a dithered pattern of dots using the picture's original colors."),
+  },
+};
 
-Uint32 dither_white, dither_color;
+char * dither_icon_filenames[NUM_TOOLS] = {
+  "reflection.png", // FIXME
+  "reflection.png", // FIXME
+};
+
+char * dither_snd_filenames[NUM_TOOLS] = {
+  "reflection.ogg", // FIXME
+  "reflection.ogg", // FIXME
+};
+
+Mix_Chunk *snd_effects[NUM_TOOLS];
+
+#define DITHER_SIZE_COUNT 4
+#define DITHER_SIZE_DEFAULT 2
+#define DITHER_SIZE_SCALE 8
+
+Uint8 dither_sizes[NUM_TOOLS];
+
+Uint32 dither_white, dither_black, dither_color;
 Uint8 * dither_touched;
 float * dither_vals;
 
@@ -51,9 +84,16 @@ int dither_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level
   int i;
   char filename[1024];
 
-  snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory,
-           "reflection.ogg"); // FIXME
-  snd_effect = Mix_LoadWAV(filename);
+  for (i = 0; i < NUM_TOOLS; i++) {
+    snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory,
+             dither_snd_filenames[i]);
+    snd_effects[i] = Mix_LoadWAV(filename);
+  }
+
+  for (i = 0; i < NUM_TOOLS; i++)
+  {
+    dither_sizes[i] = DITHER_SIZE_DEFAULT * DITHER_SIZE_SCALE;
+  }
 
   return (1);
 }
@@ -61,7 +101,7 @@ int dither_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level
 
 int dither_get_tool_count(magic_api * api)
 {
-  return (1);
+  return NUM_TOOLS;
 }
 
 SDL_Surface *dither_get_icon(magic_api * api, int which)
@@ -69,7 +109,7 @@ SDL_Surface *dither_get_icon(magic_api * api, int which)
   char filename[1024];
 
   snprintf(filename, sizeof(filename), "%simages/magic/%s",
-           api->data_directory, "reflection.png"); // FIXME
+           api->data_directory, dither_icon_filenames[which]);
 
   return (IMG_Load(filename));
 }
@@ -77,7 +117,7 @@ SDL_Surface *dither_get_icon(magic_api * api, int which)
 
 char *dither_get_name(magic_api * api, int which)
 {
-  return strdup(gettext("Dither"));
+  return strdup(gettext(dither_names[which]));
 }
 
 
@@ -89,23 +129,26 @@ int dither_get_group(magic_api * api, int which)
 
 int dither_get_order(int which)
 {
-  return 610;
+  return 610 + which;
 }
 
 
 char *dither_get_description(magic_api * api, int which, int mode)
 {
   if (mode == MODE_PAINT) {
-    return strdup(gettext("Click and drag to replace parts of your image with dithered dots."));
+    return strdup(gettext(dither_descr[which][0]));
   } else if (mode == MODE_FULLSCREEN) {
-    return strdup(gettext("Click to replace your entire image with dithered dots."));
+    return strdup(gettext(dither_descr[which][1]));
   }
 }
 
 
 int dither_requires_colors(magic_api * api, int which)
 {
-  return 1;
+  if (which == TOOL_DITHER_VIA_COLOR)
+    return 1;
+  else
+    return 0;
 }
 
 
@@ -117,21 +160,26 @@ int dither_modes(magic_api * api, int which)
 
 Uint8 dither_accepted_sizes(magic_api * api, int which, int mode)
 {
-  return 4;
+  return DITHER_SIZE_COUNT;
 }
 
 
 Uint8 dither_default_size(magic_api * api, int which, int mode)
 {
-  return 2;
+  return DITHER_SIZE_DEFAULT;
 }
 
 
 void dither_shutdown(magic_api * api)
 {
-  if (snd_effect != NULL)
+  int i;
+
+  for (i = 0; i < NUM_TOOLS; i++)
   {
-    Mix_FreeChunk(snd_effect);
+    if (snd_effects[i] != NULL)
+    {
+      Mix_FreeChunk(snd_effects[i]);
+    }
   }
 
   if (dither_touched == NULL)
@@ -194,6 +242,8 @@ dither_drag(magic_api * api, int which,
              int old_x, int old_y, int x, int y,
              SDL_Rect * update_rect)
 {
+  int dither_size;
+
   SDL_LockSurface(snapshot);
   SDL_LockSurface(canvas);
 
@@ -219,12 +269,14 @@ dither_drag(magic_api * api, int which,
     y = temp;
   }
 
+  dither_size = dither_sizes[which];
+
   update_rect->x = old_x - dither_size;
   update_rect->y = old_y - dither_size;
   update_rect->w = (x + dither_size) - update_rect->x + 1;
   update_rect->h = (y + dither_size) - update_rect->y + 1;
 
-  api->playsound(snd_effect, (x * 255) / canvas->w, 255);
+  api->playsound(snd_effects[which], (x * 255) / canvas->w, 255);
 }
 
 /*
@@ -241,7 +293,7 @@ dither_release(magic_api * api, int which,
                 SDL_Rect * update_rect)
 {
   Uint8 r, g, b;
-  float val, err;
+  float val, err, h, s, v;
   int i, nx, ny;
 
   for (y = 0; y < canvas->h; y++)
@@ -257,7 +309,24 @@ dither_release(magic_api * api, int which,
         }
         else
         {
-          api->putpixel(canvas, x, y, dither_color);
+          if (which == TOOL_DITHER_VIA_COLOR)
+          {
+            api->putpixel(canvas, x, y, dither_color);
+          }
+          else if (which == TOOL_DITHER_KEEP_COLOR)
+          {
+            SDL_GetRGB(api->getpixel(snapshot, x, y), snapshot->format, &r, &g, &b);
+            if (r <= 32 && g <= 32 && b <= 32)
+            {
+              api->putpixel(canvas, x, y, dither_black);
+            }
+            else
+            {
+              api->rgbtohsv(r, g, b, &h, &s, &v);
+              api->hsvtorgb(floor(h / 2.0) * 2.0, min(s + 0.5, 1.0), v / 2.0, &r, &g, &b);
+              api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
+            }
+          }
           err = val;
         }
 
@@ -299,7 +368,7 @@ void dither_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surf
 
 void dither_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 size, SDL_Rect * update_rect)
 {
-  dither_size = size * 8;
+  dither_sizes[which] = size * DITHER_SIZE_SCALE;
 }
 
 
@@ -307,9 +376,11 @@ void dither_line_callback(void *pointer, int which, SDL_Surface * canvas,
   SDL_Surface * snapshot, int x, int y)
 {
   magic_api *api = (magic_api *) pointer;
-  int xx, yy;
+  int xx, yy, dither_size;
   Uint8 r, g, b;
   float val;
+
+  dither_size = dither_sizes[which];
 
   if (dither_touched == NULL)
     return;
@@ -331,12 +402,6 @@ void dither_line_callback(void *pointer, int which, SDL_Surface * canvas,
             val = (api->sRGB_to_linear(r) + api->sRGB_to_linear(g) + api->sRGB_to_linear(b)) / 3.0;
             dither_vals[(y + yy) * canvas->w + (x + xx)] = val;
 
-            /*
-            if (val >= 0.5)
-              api->putpixel(canvas, x + xx, y + yy, dither_white);
-            else
-              api->putpixel(canvas, x + xx, y + yy, dither_color);
-            */
             api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, val * 255, val * 255, val * 255));
           }
         }
@@ -359,6 +424,7 @@ void dither_switchin(magic_api * api, int which, int mode,
   }
 
   dither_white = SDL_MapRGB(canvas->format, 255, 255, 255);
+  dither_black = SDL_MapRGB(canvas->format, 0, 0, 0);
 }
 
 void dither_switchout(magic_api * api, int which, int mode,

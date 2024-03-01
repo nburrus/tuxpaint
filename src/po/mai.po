@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2013-02-18 09:21+0530\n"
 "Last-Translator: sk <sk>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -1788,24 +1788,54 @@ msgstr "विकृति"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "चित्र मे विकृति लाबै क' लेल क्लिक करू आओर स्थानांतरित करू."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "रंग"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr ""
 " तस्वीरक किछु हीस केँ एहिन बदलबा क' लेल जहिना ओ टीवी पर अछि, ई तरह देखाबै क' लेल "
 "क्लिक करू आओर माउस केँ स्थानांतरित करू."
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "बारिशक बूंदक संग अपन तस्वीर कवर पर क्लिक करू."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+" तस्वीरक किछु हीस केँ एहिन बदलबा क' लेल जहिना ओ टीवी पर अछि, ई तरह देखाबै क' लेल "
+"क्लिक करू आओर माउस केँ स्थानांतरित करू."
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "बारिशक बूंदक संग अपन तस्वीर कवर पर क्लिक करू."
 
 #: ../../magic/src/emboss.c:108

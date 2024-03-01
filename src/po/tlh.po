@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2004-08-16 23:14-0800\n"
 "Last-Translator: Bill Kendrick <bill@newbreedsoftware.com>\n"
 "Language-Team: Bill Kendrick <nbs@sonic.net>\n"
@@ -1698,16 +1698,36 @@ msgstr ""
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
-msgid "Click and drag to replace parts of your image with dithered dots."
+#: ../../magic/src/dither.c:33
+msgid "Dither (Keep Color)"
 msgstr ""
 
-#: ../../magic/src/dither.c:101
-msgid "Click to replace your entire image with dithered dots."
+#: ../../magic/src/dither.c:38
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
+msgstr ""
+
+#: ../../magic/src/dither.c:39
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr ""
+
+#: ../../magic/src/dither.c:42
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr ""
+
+#: ../../magic/src/dither.c:43
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr ""
 
 #: ../../magic/src/emboss.c:108

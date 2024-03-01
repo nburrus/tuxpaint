@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 01:13-0800\n"
+"POT-Creation-Date: 2024-02-29 21:40-0800\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -1793,20 +1793,46 @@ msgstr "உருக்குலை"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "சொடுக்கி இழுத்தால், படத்தை உருக்குலைக்கலாம்."
 
-#: ../../magic/src/dither.c:80
+#: ../../magic/src/dither.c:32
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:99
+#: ../../magic/src/dither.c:33
+#, fuzzy
+#| msgid "Colors"
+msgid "Dither (Keep Color)"
+msgstr "வண்ணங்கள்"
+
+#: ../../magic/src/dither.c:38
 #, fuzzy
 #| msgid "Click to make your picture look like it's on television."
-msgid "Click and drag to replace parts of your image with dithered dots."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots in your chosen color."
 msgstr "சொடுக்கினால், உங்கள் படம் தொலைக்காட்சியில் உள்ளது போல் தெரியும். "
 
-#: ../../magic/src/dither.c:101
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
-msgid "Click to replace your entire image with dithered dots."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots in your "
+"chosen color."
+msgstr "சொடுக்கினால், படம் முழுக்க மழைத்துளிகளைச் சேர்க்கலாம்."
+
+#: ../../magic/src/dither.c:42
+#, fuzzy
+#| msgid "Click to make your picture look like it's on television."
+msgid ""
+"Click and drag to replace parts of your image with a dithered pattern of "
+"dots using the picture's original colors."
+msgstr "சொடுக்கினால், உங்கள் படம் தொலைக்காட்சியில் உள்ளது போல் தெரியும். "
+
+#: ../../magic/src/dither.c:43
+#, fuzzy
+#| msgid "Click to cover your picture with rain drops."
+msgid ""
+"Click to replace your entire image with a dithered pattern of dots using the "
+"picture's original colors."
 msgstr "சொடுக்கினால், படம் முழுக்க மழைத்துளிகளைச் சேர்க்கலாம்."
 
 #: ../../magic/src/emboss.c:108
