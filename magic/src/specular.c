@@ -3,7 +3,7 @@
    A specular reflection Magic tool for Tux Paint
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   Last updated: February 28, 2024
+   Last updated: March 2, 2024
 */
 
 
@@ -195,17 +195,19 @@ void specular_line_callback(void *pointer, int which, SDL_Surface * canvas,
   SDL_Surface * snapshot, int x, int y)
 {
   magic_api *api = (magic_api *) pointer;
-  int xx, yy;
+  int xx, yy, ysrc;
   Uint8 r, g, b, r1, g1, b1, r2, g2, b2, fade;
 
   for (yy = -specular_size / 16; yy < specular_size / 16; yy++)
   {
+    ysrc = (snapshot->h - y - yy) + sin(y - yy) * 4;
+
     for (xx = -specular_size; xx < specular_size; xx++)
     {
       if (api->in_circle(xx, yy * 16, specular_size))
       {
-        SDL_GetRGB(api->getpixel(snapshot, x + xx + sin((y + yy) / 4) * 4, snapshot->h - y - yy), snapshot->format, &r1, &g1, &b1);
-        SDL_GetRGB(api->getpixel(snapshot, x + xx + sin((y + yy) / 4) * 4 + 1, snapshot->h - y - yy), snapshot->format, &r2, &g2, &b2);
+        SDL_GetRGB(api->getpixel(snapshot, x + xx + sin((y + yy) / 4) * 4, ysrc), snapshot->format, &r1, &g1, &b1);
+        SDL_GetRGB(api->getpixel(snapshot, x + xx + sin((y + yy) / 4) * 4 + 1, ysrc), snapshot->format, &r2, &g2, &b2);
 
         fade = (((y + yy) * 255) / canvas->h);
         r = (((r1 + r2) * 2) + fade) / 5;
