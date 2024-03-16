@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                            29 de Febreiro de 2024
+                              15 de Marzo de 2024
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -99,6 +99,9 @@ corrixir erros e usar partes do programa no seu propio software GPL).
 Consulte o texto completo da licenza GPL en COPYING.txt.
 
 D. What's New in Tux Paint version 0.9.33?
+
+Transparent Erasers
+    Erasers that lightly expose more and more of the background.
 
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
@@ -646,15 +649,26 @@ g.Ferramenta «Maxia» (efectos especiais)
 
 h.Ferramenta de «Goma» (de borrar)
 
-    Esta ferramenta é similar ao pincel. Onde queira que prema (ou prema e
-    arrastre), a imaxe borrarase. (Pode ser branco, doutra cor ou a unha imaxe
-    de fondo, dependendo da imaxe.)
+    This tool works similarly to the Paint Brush. Wherever you click (or click
+    and drag), things you've added to your drawing will be erased, exposing the
+    background that you chose when you started the drawing, be it a solid
+    color, the background of a 'Starter' image, or a 'Template' image. (See
+    Ferramentas dispoñíbeis > Outros controis > Orde «Novo».)
 
-    A number of eraser sizes are available, with both square and round shapes.
-    Fuzzy-edged round shapes are also available.
+    A number of eraser types are available, each offering multiple sizes are
+    available:
+      + Square — Square-shaped erasers that completely remove parts of your
+        drawing.
+      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+        your drawing.
+      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+        with the background.
+      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+        the background. Release and click again to expose more and more of the
+        background.
 
-    Ao mover o rato, un contorno cadrado segue o punteiro, amosando que parte
-    da imaxe se borrará a branco.
+    As you move the mouse around, an outline follows the pointer, showing what
+    part of the picture will be erased.
 
     Ao borralo, reprodúcese un son de borrado «rechiante».
 
@@ -692,6 +706,11 @@ b.Orde «Novo»
     usando unha imaxe «de Inicio» ou «modelo» (ver máis abaixo). Primeiro
     preguntaráselle se realmente quere facelo.
 
+    When you use the 'Eraser' tool things you've added to your drawing will be
+    removed, exposing the background you chose when starting a new drawing.
+    (See Ferramentas dispoñíbeis > Ferramentas de debuxo > Ferramenta de «Goma»
+    (de borrar).)
+
     ⌨ Nota: Tamén pode premer [Control / ⌘] + [N] no teclado para iniciar un
     novo debuxo.
 
@@ -699,8 +718,8 @@ b.Orde «Novo»
         Along with the preset solid colors, you can also choose colors using a
         rainbow palette or a "color mixer". These operate identically to the
         options found in the color palette shown below the canvas when drawing
-        a picture. See Main Screen > Lower: Colors > Special color options for
-        details.
+        a picture. See Pantalla principal > Máis abaixo: Cores > Special color
+        options for details.
 
     Imaxes «de comezo» e de «modelo»
           o As «imaxes de inicio» poden comportarse como unha páxina dun libro

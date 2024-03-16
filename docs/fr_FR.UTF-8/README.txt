@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               février 29, 2024
+                                 mars 15, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -103,6 +103,9 @@ logiciel sous GPL.)
 Voir COPYING.txt pour le texte complet de la licence GPL.
 
 D. Qu'y a-t-il de neuf dans la version 0.9.33 de Tux Paint ?
+
+Transparent Erasers
+    Erasers that lightly expose more and more of the background.
 
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
@@ -674,15 +677,26 @@ g.Outil "Magie" (Effets spéciaux)
 
 h.Outil "Gomme"
 
-    Cet outil est similaire au pinceau. Partout où vous cliquez (ou cliquez et
-    faites glisser), l'image sera effacée. (Cela peut être du blanc, une autre
-    couleur ou une image d'arrière-plan, selon l'image.)
+    This tool works similarly to the Paint Brush. Wherever you click (or click
+    and drag), things you've added to your drawing will be erased, exposing the
+    background that you chose when you started the drawing, be it a solid
+    color, the background of a 'Starter' image, or a 'Template' image. (See
+    Outils disponibles > Autres contrôles > Commande "Nouveau".)
 
-    Un certain nombre de tailles de gommes sont disponibles, soit rondes soit
-    carrées. Des formes rondes avec contour flou sont aussi disponibles.
+    A number of eraser types are available, each offering multiple sizes are
+    available:
+      + Square — Square-shaped erasers that completely remove parts of your
+        drawing.
+      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+        your drawing.
+      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+        with the background.
+      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+        the background. Release and click again to expose more and more of the
+        background.
 
-    Lorsque vous déplacez la souris, un contour carré suit le pointeur,
-    indiquant quelle partie de l'image sera effacée en blanc.
+    As you move the mouse around, an outline follows the pointer, showing what
+    part of the picture will be erased.
 
     Au fur et à mesure que vous effacez, un grincement est émis.
 
@@ -724,16 +738,19 @@ b.Commande "Nouveau"
     utilisant une image 'Starter' ou 'Template' (voir ci-dessous). On vous
     demandera d'abord si vous voulez vraiment faire cela.
 
+    When you use the 'Eraser' tool things you've added to your drawing will be
+    removed, exposing the background you chose when starting a new drawing.
+    (See Outils disponibles > Outils de dessin > Outil "Gomme".)
+
     ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [N] sur le
     clavier pour commencer un nouveau dessin.
 
     Choix de couleurs unies en arrière plan
-        En plus des couleurs unies prédéfinies, vous pouvez aussi choisir des
-        couleurs grâce à une palette arc-en-ciel ou un "mélangeur de couleurs".
-        Ceux-ci opèrent de manière identique avec les options de la palette de
-        couleur en-dessous du canevas quand on dessine une image. Voir Écran
-        principal > En Bas : Couleurs > Options Spéciales de couleur options
-        pour les détails.
+        Along with the preset solid colors, you can also choose colors using a
+        rainbow palette or a "color mixer". These operate identically to the
+        options found in the color palette shown below the canvas when drawing
+        a picture. See Écran principal > En bas : couleurs > Special color
+        options for details.
 
     Images de "Démarrage" et images "Modèle"
           o Les "Images de démarrage" se comportent comme une page d'un livre

@@ -102,7 +102,7 @@
           </p>
 
           <p>
-            2024年2月29日          </p>
+            2024年3月15日          </p>
         </center>
       </header>
       <table border="2"
@@ -228,6 +228,9 @@
     </header>
 
     <dl>
+  <dt>Transparent Erasers</dt>
+  <dd>Erasers that lightly expose more and more of the background.</dd>
+
   <dt>Dither magic tools</dt>
   <dd>Transform parts of an image into a dithered pattern of dots.</dd>
 
@@ -975,13 +978,28 @@
       alt=""
       align="right">
   <p>
-    このツールは「ふで」ツールに似ています。クリック（または、クリック＋ドラッグ）をした部分が消されます。（消した部分は、白あるいはその他の色、また、レイヤーキャンバスなど、絵によって異なる状態に戻ります。）  </p>
+    This tool works similarly to the Paint Brush. Wherever you click (or click and drag), things you've added to your drawing will be erased, exposing the background that you chose when you started the drawing, be it a solid color, the background of a 'Starter' image, or a 'Template' image. (See <a href="#using_tools_other_new">各種のツール &gt; そのほかの操作 &gt; 「さいしょから」</a>.)  </p>
 
   <p>
-    いくつもの大きさの正方形と円形の消しゴムがあります。端がぼやけた円形の消しゴムも用意されています。  </p>
+    <img src="../../html/images/tool_eraser_erasers.png"
+        width="411"
+        height="192"
+        alt=""
+        align="right" />
+    A number of eraser types are available, each offering multiple sizes are available:    <ul>
+      <li>
+        Square &mdash; Square-shaped erasers that completely remove parts of your drawing.      </li>
+      <li>
+        Circle (solid) &mdash; Circle-shaped erasers that completely remove parts of your drawing.      </li>
+      <li>
+        Fuzzy-edged Circle &mdash; Circle-shaped erasers with soft edges that blend with the background.      </li>
+      <li>
+        Transparent Circle &mdash; Circle-shaped erasers that blend your drawing with the background. Release and click again to expose more and more of the background.      </li>
+    </ul>
+  </p>
 
   <p>
-    正方形の輪郭がマウスカーソルの位置に表示され、絵のどの部分が消されるかを示します。  </p>
+    As you move the mouse around, an outline follows the pointer, showing what part of the picture will be erased.  </p>
 
   <p>
     消している間、「キュッキュッ」と擦って消す効果音が流れます。  </p>
@@ -1046,13 +1064,15 @@
   <p>
     「さいしょから」のボタンを押すと、新規に絵を描き始めることができます。ダイアログ画面が表示され、キャンバスの背景色やレイヤー画像（後述）を選べます。  </p>
 
+  <p>
+    When you use the 'Eraser' tool things you've added to your drawing will be removed, exposing the background you chose when starting a new drawing. (See <a href="#using_tools_drawing_eraser">各種のツール &gt; 描画ツール &gt; けしゴム</a>.)
   <p class="note">
     <span title="Keyboard shortcut">&#9000;</span>    <strong>注:</strong> キーボードで <b><code>[Control / &#8984;]</code></b> + <code><b>[N]</b></code> を押しても新規作成ができます。  </p>
 
   <dl>
     <dt><strong>単色のキャンバス</strong></dt>
     <dd>
-      あらかじめ用意されている背景色のほか、レインボーパレットやカラーミキサーで色を選択することができます。これらは、絵を描くときにキャンバスの下に表示されるカラーパレットにあるオプションと同じように操作します。詳細は <a href="#special_color_options">メインの画面 &gt; 下部: カラーパレット「いろ」 &gt; 色に関する特別なオプション</a> を参照。    </dd>
+      Along with the preset solid colors, you can also choose colors using a rainbow palette or a "color mixer". These operate identically to the options found in the color palette shown below the canvas when drawing a picture. See <a href="#special_color_options">メインの画面 &gt; 下部: カラーパレット「いろ」 &gt; Special color options</a> for details.    </dd>
 
     <dt><strong>レイヤー画像</strong></dt>
     <dd>

@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年2月29日
+                                 2024年3月15日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -96,6 +96,9 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 ライセンスの全文は、COPYING.txtをお読みください。
 
 D. Tux Paint バージョン 0.9.33 での変更点
+
+Transparent Erasers
+    Erasers that lightly expose more and more of the background.
 
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
@@ -581,15 +584,26 @@ g.「まほう」ツール（特殊効果）
 
 h.けしゴム
 
-    このツールは「ふで」ツールに似ています。クリック（または、クリック＋ドラッ
-    グ）をした部分が消されます。（消した部分は、白あるいはその他の色、また、レ
-    イヤーキャンバスなど、絵によって異なる状態に戻ります。）
+    This tool works similarly to the Paint Brush. Wherever you click (or click
+    and drag), things you've added to your drawing will be erased, exposing the
+    background that you chose when you started the drawing, be it a solid
+    color, the background of a 'Starter' image, or a 'Template' image. (See 各
+    種のツール > そのほかの操作 > 「さいしょから」.)
 
-    いくつもの大きさの正方形と円形の消しゴムがあります。端がぼやけた円形の消し
-    ゴムも用意されています。
+    A number of eraser types are available, each offering multiple sizes are
+    available:
+      + Square — Square-shaped erasers that completely remove parts of your
+        drawing.
+      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+        your drawing.
+      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+        with the background.
+      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+        the background. Release and click again to expose more and more of the
+        background.
 
-    正方形の輪郭がマウスカーソルの位置に表示され、絵のどの部分が消されるかを示
-    します。
+    As you move the mouse around, an outline follows the pointer, showing what
+    part of the picture will be erased.
 
     消している間、「キュッキュッ」と擦って消す効果音が流れます。
 
@@ -625,14 +639,18 @@ b.「さいしょから」
     「さいしょから」のボタンを押すと、新規に絵を描き始めることができます。ダイ
     アログ画面が表示され、キャンバスの背景色やレイヤー画像（後述）を選べます。
 
+    When you use the 'Eraser' tool things you've added to your drawing will be
+    removed, exposing the background you chose when starting a new drawing.
+    (See 各種のツール > 描画ツール > けしゴム.)
+
     ⌨ 注: キーボードで [Control / ⌘] + [N] を押しても新規作成ができます。
 
     単色のキャンバス
-        あらかじめ用意されている背景色のほか、レインボーパレットやカラーミキ
-        サーで色を選択することができます。これらは、絵を描くときにキャンバスの
-        下に表示されるカラーパレットにあるオプションと同じように操作します。詳
-        細はメインの画面 > 下部: カラーパレット「いろ」 > 色に関する特別なオプ
-        ションを参照。
+        Along with the preset solid colors, you can also choose colors using a
+        rainbow palette or a "color mixer". These operate identically to the
+        options found in the color palette shown below the canvas when drawing
+        a picture. See メインの画面 > 下部: カラーパレット「いろ」 > Special
+        color options for details.
 
     レイヤー画像
           o レイヤー画像には、塗り絵のページのようなもの（白黒の線で描かれ、色

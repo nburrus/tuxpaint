@@ -27,10 +27,8 @@ https://tuxpaint.org/
 
   * Improvements to Eraser tool:
     ----------------------------
-    * WIP Transparent eraser
+    * Transparent erasers
       Bill Kendrick <bill@newbreedsoftware.com>
-      + WIP Needs docs
-      + WIP Add to new features lists
 
   * Other Improvements:
     -------------------

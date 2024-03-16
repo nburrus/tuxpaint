@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                29 shkurt 2024
+                                 15 mars 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -98,6 +98,9 @@ parts of the program in their own GPL'd software.)
 See COPYING.txt for the full text of the GPL license.
 
 D. What's New in Tux Paint version 0.9.33?
+
+Transparent Erasers
+    Erasers that lightly expose more and more of the background.
 
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
@@ -635,15 +638,26 @@ g.Mjeti “Magjik” (Efekte Speciale)
 
 h.Mjeti “Gomë”
 
-    This tool is similar to the Paint Brush. Wherever you click (or click and
-    drag), the picture will be erased. (This may be white, some other color, or
-    to a background picture, depending on the picture.)
+    This tool works similarly to the Paint Brush. Wherever you click (or click
+    and drag), things you've added to your drawing will be erased, exposing the
+    background that you chose when you started the drawing, be it a solid
+    color, the background of a 'Starter' image, or a 'Template' image. (See
+    Mjete të Mundshme > Kontrolle të Tjera > Urdhri “I ri”.)
 
-    A number of eraser sizes are available, with both square and round shapes.
-    Fuzzy-edged round shapes are also available.
+    A number of eraser types are available, each offering multiple sizes are
+    available:
+      + Square — Square-shaped erasers that completely remove parts of your
+        drawing.
+      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+        your drawing.
+      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+        with the background.
+      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+        the background. Release and click again to expose more and more of the
+        background.
 
-    As you move the mouse around, a square outline follows the pointer, showing
-    what part of the picture will be erased to white.
+    As you move the mouse around, an outline follows the pointer, showing what
+    part of the picture will be erased.
 
     As you erase, a 'squeaky clean' eraser wiping sound is played.
 
@@ -684,6 +698,10 @@ b.Urdhri “I ri”
     or using a 'Starter' or 'Template' image (see below). You will first be
     asked whether you really want to do this.
 
+    When you use the 'Eraser' tool things you've added to your drawing will be
+    removed, exposing the background you chose when starting a new drawing.
+    (See Mjete të Mundshme > Mjete Vizatimi > Mjeti “Gomë”.)
+
     ⌨ Note: You can also press [Tasti Kontroll / ⌘] + [N] on the keyboard to
     filloni një vizatim i ri.
 
@@ -691,8 +709,8 @@ b.Urdhri “I ri”
         Along with the preset solid colors, you can also choose colors using a
         rainbow palette or a "color mixer". These operate identically to the
         options found in the color palette shown below the canvas when drawing
-        a picture. See Main Screen > Lower: Colors > Special color options for
-        details.
+        a picture. See Skena Kryesore > Më Poshtë: Ngjyra > Special color
+        options for details.
 
     Figura “Fillesë” & Gjedhe
           o 'Starters' can behave like a page from a coloring book — a

@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               febrero 29, 2024
+                                marzo 15, 2024
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -98,6 +98,9 @@ parts of the program in their own GPL'd software.)
 See COPYING.txt for the full text of the GPL license.
 
 D. What's New in Tux Paint version 0.9.33?
+
+Transparent Erasers
+    Erasers that lightly expose more and more of the background.
 
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
@@ -634,15 +637,26 @@ g."Magic" Tool (Special Effects)
 
 h."Eraser" Tool
 
-    This tool is similar to the Paint Brush. Wherever you click (or click and
-    drag), the picture will be erased. (This may be white, some other color, or
-    to a background picture, depending on the picture.)
+    This tool works similarly to the Paint Brush. Wherever you click (or click
+    and drag), things you've added to your drawing will be erased, exposing the
+    background that you chose when you started the drawing, be it a solid
+    color, the background of a 'Starter' image, or a 'Template' image. (See
+    Available Tools > Other Controls > "New" Command.)
 
-    A number of eraser sizes are available, with both square and round shapes.
-    Fuzzy-edged round shapes are also available.
+    A number of eraser types are available, each offering multiple sizes are
+    available:
+      + Square — Square-shaped erasers that completely remove parts of your
+        drawing.
+      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+        your drawing.
+      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+        with the background.
+      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+        the background. Release and click again to expose more and more of the
+        background.
 
-    As you move the mouse around, a square outline follows the pointer, showing
-    what part of the picture will be erased to white.
+    As you move the mouse around, an outline follows the pointer, showing what
+    part of the picture will be erased.
 
     As you erase, a 'squeaky clean' eraser wiping sound is played.
 
@@ -680,6 +694,10 @@ b."New" Command
     where you may choose to start a new picture using a solid background color,
     or using a 'Starter' or 'Template' image (see below). You will first be
     asked whether you really want to do this.
+
+    When you use the 'Eraser' tool things you've added to your drawing will be
+    removed, exposing the background you chose when starting a new drawing.
+    (See Available Tools > Drawing Tools > "Eraser" Tool.)
 
     ⌨ Note: You can also press [Control / ⌘] + [N] on the keyboard to start a
     new drawing.
