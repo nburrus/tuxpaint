@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.February.29 (0.9.33)
+2024.March.15 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
@@ -24,6 +24,13 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
       + WIP Needs icon
       + WIP Needs sound effect
+
+  * Improvements to Eraser tool:
+    ----------------------------
+    * WIP Transparent eraser
+      Bill Kendrick <bill@newbreedsoftware.com>
+      + WIP Needs docs
+      + WIP Add to new features lists
 
   * Other Improvements:
     -------------------

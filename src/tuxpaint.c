@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - January 16, 2024
+  June 14, 2002 - March 15, 2024
 */
 
 #include "platform.h"
@@ -1968,12 +1968,18 @@ static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
   img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_rotate, img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
-#define NUM_ERASERS 24          /* How many sizes of erasers
-                                   (from ERASER_MIN to _MAX as squares, then again
-                                   from ERASER_MIN to _MAX as circles;
-                                   must be a multiple of 2;
-                                   best if a multiple of 4, since selector is 2 buttons across) */
-#define NUM_ERASER_SIZES (NUM_ERASERS / 3)
+enum {
+  ERASER_TYPE_SQUARE,
+  ERASER_TYPE_CIRCLE,
+  ERASER_TYPE_CIRCLE_FUZZY,
+  ERASER_TYPE_CIRCLE_TRANSPARENT,
+  NUM_ERASER_TYPES
+};
+
+#define NUM_ERASER_SIZES 8
+#define NUM_ERASERS (NUM_ERASER_SIZES * NUM_ERASER_TYPES)
+
+/* Min to max sizes of the erasers */
 #define ERASER_MIN 5            /* Smaller than 5 will not render as a circle! */
 #define ERASER_MAX 128
 
@@ -6651,22 +6657,24 @@ static void mainloop(void)
           }
           else if (cur_tool == TOOL_ERASER)
           {
-            int sz;
+            int sz, eraser_type;
 
             /* Still pushing, and moving - Erase! */
 
             eraser_draw(old_x, old_y, new_x, new_y);
 
             sz = calc_eraser_size(cur_eraser);
-            if (cur_eraser >= NUM_ERASER_SIZES)
-            {
-              /* Circle eraser (sharp & fuzzy) */
-              circle_xor(new_x, new_y, sz / 2);
-            }
-            else
+            eraser_type = cur_eraser / NUM_ERASER_SIZES;
+
+            if (eraser_type == ERASER_TYPE_SQUARE)
             {
               /* Square eraser */
               rect_xor(new_x - sz / 2, new_y - sz / 2, new_x + sz / 2, new_y + sz / 2);
+            }
+            else
+            {
+              /* Circle eraser */
+              circle_xor(new_x, new_y, sz / 2);
             }
           }
           else if (cur_tool == TOOL_FILL && cur_fill == FILL_GRADIENT_LINEAR && fill_drag_started)
@@ -6698,10 +6706,10 @@ static void mainloop(void)
               angle = 0.0;
             else
               angle = 180.0;
-            
+
             if (angle < 0.0)
               angle += 360.0;
-            
+
             snprintf(angle_tool_text, sizeof(angle_tool_text), gettext(TIP_FILL_LINEAR_MOVING), floor(angle));
             draw_tux_text(TUX_GREAT, angle_tool_text, 1);
           }
@@ -6813,15 +6821,19 @@ static void mainloop(void)
             }
             else
             {
-              if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASER_SIZES)
+              int eraser_type;
+
+              eraser_type = cur_eraser / NUM_ERASER_SIZES;
+
+              if (eraser_type == ERASER_TYPE_SQUARE)
               {
-                /* Circle eraser (sharp & fuzzy) */
-                circle_xor(old_x, old_y, calc_eraser_size(cur_eraser) / 2);
+                /* Square eraser */
+                rect_xor(old_x - w / 2, old_y - h / 2, old_x + w / 2, old_y + h / 2);
               }
               else
               {
-                /* Otherwise (square eraser) */
-                rect_xor(old_x - w / 2, old_y - h / 2, old_x + w / 2, old_y + h / 2);
+                /* Circle eraser */
+                circle_xor(old_x, old_y, calc_eraser_size(cur_eraser) / 2);
               }
 
               update_screen(old_x - w / 2 + r_canvas.x,
@@ -6842,17 +6854,21 @@ static void mainloop(void)
                             old_y - (CUR_STAMP_H + 1) / 2 + r_canvas.y,
                             old_x + (CUR_STAMP_W + 1) / 2 + r_canvas.x, old_y + (CUR_STAMP_H + 1) / 2 + r_canvas.y);
             }
-            else
+            else if (cur_tool == TOOL_ERASER)
             {
-              if (cur_tool == TOOL_ERASER && cur_eraser >= NUM_ERASER_SIZES)
+              int eraser_type;
+
+              eraser_type = cur_eraser / NUM_ERASER_SIZES;
+
+              if (eraser_type == ERASER_TYPE_SQUARE)
               {
-                /* Circle eraser (sharp & fuzzy) */
-                circle_xor(new_x, new_y, calc_eraser_size(cur_eraser) / 2);
+                /* Square eraser */
+                rect_xor(new_x - w / 2, new_y - h / 2, new_x + w / 2, new_y + h / 2);
               }
               else
               {
-                /* Otherwise (square eraser) */
-                rect_xor(new_x - w / 2, new_y - h / 2, new_x + w / 2, new_y + h / 2);
+                /* Circle eraser */
+                circle_xor(new_x, new_y, calc_eraser_size(cur_eraser) / 2);
               }
 
               update_screen(new_x - w / 2 + r_canvas.x,
@@ -8170,15 +8186,15 @@ void show_fonts(void) {
   char * * family_names;
   char locale_fontdir[MAX_PATH];
   FcBool fontAddStatus;
-  
+
   snprintf(locale_fontdir, sizeof(locale_fontdir), "%s/fonts", DATA_PREFIX);
-  
+
   fontAddStatus = FcConfigAppFontAddDir(FcConfigGetCurrent(), (const FcChar8 *) locale_fontdir);
   if (fontAddStatus == FcFalse)
     {
       fprintf(stderr, "Unable to add font dir %s\n", locale_fontdir);
     }
-  
+
   FcDirCacheRead((const FcChar8 *) locale_fontdir, FcTrue /* force */, FcConfigGetCurrent());
   FcDirCacheRescan((const FcChar8 *) locale_fontdir, FcConfigGetCurrent());
 
@@ -11281,23 +11297,22 @@ static void draw_shapes(void)
 static void draw_erasers(void)
 {
   int i, j, x, y, sz;
-  int xx, yy, n;
   void (*putpixel)(SDL_Surface *, int, int, Uint32);
   SDL_Rect dest;
   int most, off_y;
+  int eraser_type, fuzzy, trans;
 
   putpixel = putpixels[screen->format->BytesPerPixel];
 
   draw_image_title(TITLE_ERASERS, r_ttoolopt);
 
-  /* Space for buttons, was 14 */
+  /* Space for buttons */
   most = (buttons_tall * gd_toolopt.cols) - TOOLOFFSET;
 
   /* Do we need scrollbars? */
-
   if (NUM_ERASERS > most + TOOLOFFSET)
   {
-    most = most - gd_toolopt.cols;      /* was 12 */
+    most = most - gd_toolopt.cols;
     off_y = img_scroll_up->h;
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w;
@@ -11352,71 +11367,85 @@ static void draw_erasers(void)
 
     if (i < NUM_ERASERS)
     {
-      if (i < NUM_ERASER_SIZES)
+      eraser_type = i / NUM_ERASER_SIZES;
+
+      sz = (2 + ((NUM_ERASER_SIZES - 1 - (i % NUM_ERASER_SIZES)) * (38 / (NUM_ERASER_SIZES - 1)))) * button_scale;
+      if (sz < 4)
+        sz = 4;
+
+      x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
+      y = ((j / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2 + off_y;
+
+      fuzzy = (eraser_type == ERASER_TYPE_CIRCLE_FUZZY);
+      trans = (eraser_type == ERASER_TYPE_CIRCLE_TRANSPARENT);
+
+      if (eraser_type == ERASER_TYPE_SQUARE)
       {
         /* Square */
 
-        sz = (2 + ((NUM_ERASER_SIZES - 1 - i) * (38 / (NUM_ERASER_SIZES - 1)))) * button_scale;
-
-        x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
-        y = ((j / 2) * button_h) + r_ttoolopt.h + 24 * button_scale - sz / 2 + off_y;
-
         dest.x = x;
         dest.y = y;
         dest.w = sz;
-        dest.h = 2;
-
-        SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
-
-        dest.x = x;
-        dest.y = y + sz - 2;
-        dest.w = sz;
-        dest.h = 2;
-
-        SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
-
-        dest.x = x;
-        dest.y = y;
-        dest.w = 2;
-        dest.h = sz;
-
-        SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
-
-        dest.x = x + sz - 2;
-        dest.y = y;
-        dest.w = 2;
         dest.h = sz;
 
         SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
       }
       else
       {
-        int fuzzy;
-
         /* Circle */
 
-        fuzzy = (i >= NUM_ERASER_SIZES * 2);
+        int rad, rad_sqr;
+        int yy, w, sx, sy;
 
-        sz = (2 + ((NUM_ERASER_SIZES - 1 - (i % NUM_ERASER_SIZES)) * (38 / (NUM_ERASER_SIZES - 1)))) * button_scale;
+        if (fuzzy || trans) {
+          /* Fuzzy or transparent; draw dithered circle */
+          rad = sz / 2;
+          rad_sqr = (rad * rad);
 
-        x = ((i % 2) * button_w) + WINDOW_WIDTH - r_ttoolopt.w + 24 * button_scale - sz / 2;
-        y = ((j / 2) * button_h) + 40 * button_scale + 24 * button_scale - sz / 2 + off_y;
-
-        for (yy = 0; yy <= sz; yy += (fuzzy + 1))
-        {
-          for (xx = (yy % (fuzzy + 1)); xx <= sz; xx += (fuzzy + 1))
+          for (yy = -rad; yy <= rad; yy++)
           {
-            n = (xx * xx) + (yy * yy) - ((sz / 2) * (sz / 2));
+            w = sqrt(rad_sqr - (yy * yy));
+            sx = x + rad - w;
+            sy = y + rad + yy;
 
-            if (n >= -sz && n <= sz)
+            if (fuzzy || trans) {
+              int xxx;
+
+              for (xxx = 0; xxx < w * 2; xxx++) {
+                if ((sx + xxx) % 2 == sy % 2) {
+                  putpixel(screen, sx + xxx, sy, SDL_MapRGB(screen->format, 0, 0, 0));
+                }
+              }
+            }
+          }
+        }
+
+        if (fuzzy || !trans) {
+          /* Solid or fuzzy, draw solid circle */
+
+          if (fuzzy) {
+            /* Fuzzy's solid circle is within the dithered circle drawn above */
+            sz -= 2;
+            x++;
+            y++;
+          }
+
+          if (sz > 0) {
+            rad = sz / 2;
+            rad_sqr = (rad * rad);
+
+            for (yy = -rad; yy <= rad; yy++)
             {
-              putpixel(screen, (x + sz / 2) + xx, (y + sz / 2) + yy, SDL_MapRGB(screen->format, 0, 0, 0));
+              w = sqrt(rad_sqr - (yy * yy));
+              sx = x + rad - w;
+              sy = y + rad + yy;
 
-              putpixel(screen, (x + sz / 2) - xx, (y + sz / 2) + yy, SDL_MapRGB(screen->format, 0, 0, 0));
+              dest.x = sx;
+              dest.y = sy;
+              dest.w = w * 2;
+              dest.h = 1;
 
-              putpixel(screen, (x + sz / 2) + xx, (y + sz / 2) - yy, SDL_MapRGB(screen->format, 0, 0, 0));
-
-              putpixel(screen, (x + sz / 2) - xx, (y + sz / 2) - yy, SDL_MapRGB(screen->format, 0, 0, 0));
+              SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, 0, 0, 0));
             }
           }
         }
@@ -12335,10 +12364,22 @@ static void do_eraser(int x, int y, int update)
   SDL_Rect dest;
   int sz;
   int xx, yy, n, hit;
+  int eraser_type;
+  int undo_ctr;
+  SDL_Surface * last;
+
+  if (cur_undo > 0)
+    undo_ctr = cur_undo - 1;
+  else
+    undo_ctr = NUM_UNDO_BUFS - 1;
+
+  last = undo_bufs[undo_ctr];
+
 
   sz = calc_eraser_size(cur_eraser);
+  eraser_type = cur_eraser / NUM_ERASER_SIZES;
 
-  if (cur_eraser < NUM_ERASER_SIZES)
+  if (eraser_type == ERASER_TYPE_SQUARE)
   {
     /* Square eraser: */
 
@@ -12352,7 +12393,7 @@ static void do_eraser(int x, int y, int update)
     else
       SDL_BlitSurface(img_starter_bkgd, &dest, canvas, &dest);
   }
-  else if (cur_eraser < NUM_ERASER_SIZES * 2)
+  else if (eraser_type == ERASER_TYPE_CIRCLE)
   {
     /* Round sharp eraser: */
 
@@ -12392,7 +12433,8 @@ static void do_eraser(int x, int y, int update)
       }
     }
   }
-  else
+  else if (eraser_type == ERASER_TYPE_CIRCLE_FUZZY ||
+           eraser_type == ERASER_TYPE_CIRCLE_TRANSPARENT)
   {
     Uint8 r_erase, g_erase, b_erase;
     Uint8 r_canvas, g_canvas, b_canvas;
@@ -12401,7 +12443,7 @@ static void do_eraser(int x, int y, int update)
     void (*putpixel) (SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
     float sq, erase_pct, canvas_pct, r, g, b;
 
-    /* Round fuzzy eraser: */
+    /* Round fuzzy eraser & round transparent erasers: */
 
     r_erase = canvas_color_r;
     g_erase = canvas_color_g;
@@ -12421,10 +12463,23 @@ static void do_eraser(int x, int y, int update)
           if (img_starter_bkgd != NULL)
             SDL_GetRGB(getpixel_bkgd(img_starter_bkgd, x + xx, y + yy), img_starter_bkgd->format, &r_erase, &g_erase, &b_erase);
 
-          SDL_GetRGB(getpixel_canvas(canvas, x + xx, y + yy), canvas->format, &r_canvas, &g_canvas, &b_canvas);
+          if (eraser_type == ERASER_TYPE_CIRCLE_FUZZY)
+          {
+            /* Fuzzy */
+            SDL_GetRGB(getpixel_canvas(canvas, x + xx, y + yy), canvas->format, &r_canvas, &g_canvas, &b_canvas);
 
-          canvas_pct = (float) sq / (sz / 2);
-          erase_pct = 1.0 - canvas_pct;
+            canvas_pct = (float) sq / (sz / 2);
+            erase_pct = 1.0 - canvas_pct;
+          } else {
+            /* Transparent */
+            SDL_GetRGB(
+              getpixels[last->format->BytesPerPixel](last, x + xx, y + yy),
+              last->format, &r_canvas, &g_canvas, &b_canvas
+            );
+
+            canvas_pct = 0.75;
+            erase_pct = 0.25;
+          }
 
           r = (((float) r_erase * erase_pct) + ((float) r_canvas) * canvas_pct);
           g = (((float) g_erase * erase_pct) + ((float) g_canvas) * canvas_pct);
@@ -12445,6 +12500,7 @@ static void do_eraser(int x, int y, int update)
       eraser_sound = (eraser_sound + 1) % 2;
 
       playsound(screen, 0, SND_ERASER1 + eraser_sound, 0, x, SNDDIST_NEAR);
+      // FIXME: Would be fun to play half-volume when using transparent erasers
     }
   }
 #endif
@@ -13090,7 +13146,7 @@ static void strip_quotes(char *buf)
     if (buf[0] == '"')
     {
       for (k = 0; k < (int) i - 2; k++)
-      { 
+      {
         buf[k] = buf[k+1];
       }
       buf[i-2] = '\0';
@@ -17243,7 +17299,7 @@ static int do_open(void)
 
           if (!disable_template_export) {
             /* "Template" (make template) button: */
-  
+
             num_left_buttons = 3;
 
             dest.x = r_ttools.w + button_w * 2;
@@ -17252,11 +17308,11 @@ static int do_open(void)
               SDL_BlitSurface(img_btn_up, NULL, screen, &dest);
             else
               SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-  
+
             dest.x = r_ttools.w + button_w * 2;
             dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
             SDL_BlitSurface(img_template, NULL, screen, &dest);
-  
+
             dest.x = r_ttools.w + button_w * 2 + (button_w - img_openlabels_template->w) / 2;
             dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_template->h;
             SDL_BlitSurface(img_openlabels_template, NULL, screen, &dest);
@@ -17303,12 +17359,12 @@ static int do_open(void)
           {
             dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w;
             dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
-  
+
             if (d_places[which] != PLACE_STARTERS_DIR && d_places[which] != PLACE_PERSONAL_STARTERS_DIR)
               SDL_BlitSurface(img_erase, NULL, screen, &dest);
             else
               SDL_BlitSurface(img_btn_off, NULL, screen, &dest);
-  
+
             dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w - button_w + (button_w - img_openlabels_erase->w) / 2;
             dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_erase->h;
             SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
@@ -22742,12 +22798,12 @@ static int do_new_dialog(void)
       SDL_BlitSurface(img_openlabels_open, NULL, screen, &dest);
 
       /* "Erase" button: */
-      if (erasable) 
+      if (erasable)
       {
         dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w * 2;
         dest.y = (button_h * buttons_tall + r_ttools.h) - button_h;
         SDL_BlitSurface(img_erase, NULL, screen, &dest);
-  
+
         dest.x = WINDOW_WIDTH - r_ttoolopt.w - button_w * 2 + (button_w - img_openlabels_back->w) / 2;
         dest.y = (button_h * buttons_tall + r_ttools.h) - img_openlabels_back->h;
         SDL_BlitSurface(img_openlabels_erase, NULL, screen, &dest);
@@ -28266,7 +28322,7 @@ static void setup_config(char *argv[])
     }
 
     if (tmp_str != NULL)
-    {   
+    {
       printf("Actual UI font will be \"%s\"\n", tmp_str);
       free(tmp_str);
     }
@@ -31847,12 +31903,12 @@ static int export_pict(char *fname, int where, char * orig_fname)
       if (any_identical)
       {
         fclose(fi);
-        return EXPORT_ERR_ALREADY_EXPORTED; 
+        return EXPORT_ERR_ALREADY_EXPORTED;
       }
 
       /* Create a unique filename, within that dir */
-      t = time(NULL); 
-      strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t)); 
+      t = time(NULL);
+      strftime(timestamp, sizeof(timestamp), "%Y%m%d%H%M%S", localtime(&t));
       pict_fname = (char *) malloc(sizeof(char) * len);
       snprintf(pict_fname, len, "%s/%s-%s-%s.png", dir, EXPORTED_TEMPLATE_PREFIX, orig_fname, timestamp);
     }
