@@ -4,9 +4,9 @@
 
                 Auteur : Andrew Corcoran <akanewbie@gmail.com>
 
-Cela fait que votre image aura en partie deux couleurs : blanc, et une couleur
-choisie dans la palette. (c.à.d. que si vous choisissez noir, vous obtiendrez
-une image noir et blanc).
+This makes parts of your picture two colors: white, and the color chosen in the
+palette — i.e., if you choose black, you'll get a black and white picture; no
+shades or dithering are used. (This is also known as a "threshold" effect.)
 
 Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
