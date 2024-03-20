@@ -50,8 +50,8 @@ char * dither_icon_filenames[NUM_TOOLS] = {
 };
 
 char * dither_snd_filenames[NUM_TOOLS] = {
-  "reflection.ogg", // FIXME
-  "reflection.ogg", // FIXME
+  "dither.ogg",
+  "dither_keep_color.ogg",
 };
 
 Mix_Chunk *snd_effects[NUM_TOOLS];
@@ -65,6 +65,8 @@ Uint8 dither_sizes[NUM_TOOLS];
 Uint32 dither_white, dither_black, dither_color;
 Uint8 * dither_touched;
 float * dither_vals;
+int dither_click_mode;
+
 
 void dither_drag(magic_api * api, int which, SDL_Surface * canvas,
   SDL_Surface * snapshot, int old_x, int old_y, int x, int y,
@@ -137,7 +139,7 @@ char *dither_get_description(magic_api * api, int which, int mode)
 {
   if (mode == MODE_PAINT) {
     return strdup(gettext(dither_descr[which][0]));
-  } else if (mode == MODE_FULLSCREEN) {
+  } else /* if (mode == MODE_FULLSCREEN) */ {
     return strdup(gettext(dither_descr[which][1]));
   }
 }
@@ -193,7 +195,6 @@ void dither_shutdown(magic_api * api)
   }
 }
 
-
 void
 dither_click(magic_api * api, int which, int mode,
               SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y,
@@ -201,6 +202,8 @@ dither_click(magic_api * api, int which, int mode,
 {
   int xx, yy;
   Uint8 r, g, b;
+
+  dither_click_mode = mode;
 
   for (yy = 0; yy < canvas->h; yy++)
   {
@@ -231,6 +234,7 @@ dither_click(magic_api * api, int which, int mode,
   }
   else
   {
+    api->playsound(snd_effects[which], 128, 255);
     dither_release(api, which, canvas, snapshot, x, y, update_rect);
   }
 }
@@ -351,6 +355,10 @@ dither_release(magic_api * api, int which,
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
+
+  if (dither_click_mode == MODE_PAINT) {
+    api->stopsound();
+  }
 }
 
 void dither_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)

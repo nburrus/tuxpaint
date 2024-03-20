@@ -17,12 +17,13 @@ https://tuxpaint.org/
       + WIP Needs icon
       + WIP Needs sound effect
 
-    * WIP Dither & Dither (Keep Color): Replaces all or part of a drawing
+    * Dither & Dither (Keep Color): Replaces all or part of a drawing
       with dithered X-and-white pixels.  With "Dither", X is always black,
       or the currently-selected color; with "Dither (Keep Color)", X is
       a muted version of the original color.
       Bill Kendrick <bill@newbreedsoftware.com>
-      + WIP Needs sound effect
+      - Sound effects based on "Orion FIll.wav", Creative Commons 0
+        by KatHakaku <https://freesound.org/people/KatHakaku/>
 
   * Improvements to Eraser tool:
     ----------------------------

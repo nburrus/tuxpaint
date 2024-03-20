@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 13, 2024
+June 17, 2002 - March 19, 2024
 
 * Design and Coding:
 
@@ -140,6 +140,13 @@ June 17, 2002 - January 13, 2024
   Fur sound effect based on "Petting Long, Coarse Fur.wav"
   (https://freesound.org/people/Kawgrim/sounds/584865/)
   Creative Commons 0 by Kawgrim <https://freesound.org/people/Kawgrim/>
+
+  Dither & Dither (Keep Color) magic tools and artwork
+  by Bill Kendrick <bill@newbreedsoftware.com>
+
+  Dither & Dither (Keep Color) sound effects based on "Orion FIll.wav"
+  (https://freesound.org/people/KatHakaku/sounds/54112/)
+  Creative Commons 0 by KatHakaku <https://freesound.org/people/KatHakaku/>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
