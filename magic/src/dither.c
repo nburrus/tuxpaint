@@ -5,7 +5,7 @@
    (Using Atkinso dithering: https://en.wikipedia.org/wiki/Atkinson_dithering)
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   Last updated: February 29, 2024
+   Last updated: March 19, 2024
 */
 
 
@@ -45,8 +45,8 @@ char * dither_descr[NUM_TOOLS][2] = {
 };
 
 char * dither_icon_filenames[NUM_TOOLS] = {
-  "reflection.png", // FIXME
-  "reflection.png", // FIXME
+  "dither.png",
+  "dither_keep_color.png",
 };
 
 char * dither_snd_filenames[NUM_TOOLS] = {
@@ -323,7 +323,7 @@ dither_release(magic_api * api, int which,
             else
             {
               api->rgbtohsv(r, g, b, &h, &s, &v);
-              api->hsvtorgb(floor(h / 2.0) * 2.0, min(s + 0.5, 1.0), v / 2.0, &r, &g, &b);
+              api->hsvtorgb(floor(h / 2.0) * 2.0, min(s + 0.5, 1.0), v * 0.66, &r, &g, &b);
               api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
             }
           }

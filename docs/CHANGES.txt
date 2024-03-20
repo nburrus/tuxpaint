@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.March.15 (0.9.33)
+2024.March.19 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
@@ -22,7 +22,6 @@ https://tuxpaint.org/
       or the currently-selected color; with "Dither (Keep Color)", X is
       a muted version of the original color.
       Bill Kendrick <bill@newbreedsoftware.com>
-      + WIP Needs icon
       + WIP Needs sound effect
 
   * Improvements to Eraser tool:
