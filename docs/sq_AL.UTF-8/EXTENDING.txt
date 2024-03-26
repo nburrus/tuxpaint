@@ -14,6 +14,7 @@
 |       + Kartela Standarde                                              |
 |       + Kartela Personale                                              |
 |   * Penela                                                             |
+|       + Brush Descriptive Text                                         |
 |       + Mundësi Penelash                                               |
 |   * Stampa                                                             |
 |       + Figura stampash                                                |
@@ -157,8 +158,8 @@ te “~/.tuxpaint/brushes/”, nën Linux ose Unix.)
 
 Penela
 
-Penelat e përdorur për të vizatuar me mjetet “Penel” dhe “Vija” në Tux Paint
-janë thjesht kartela figurë PNG.
+The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint
+are simply PNG image files.
 
 Alfa (tejdukshmëria) e figurës PNG përdoret për të përcaktuar formën e penelit,
 që do të thotë se forma mund të jetë e llojit “anti-aliased” dhe pjesërisht e
@@ -167,6 +168,45 @@ tejdukshme!
 Pikselat shkallë të grisë te PNG-ja e penelit do të vizatohen duke përdorur
 ngjyrën aktualisht të përzgjedhur në Tux Paint. Pikselat me ngjyrë do të
 ngjyrosen.
+
+Brush Descriptive Text
+
+Tux Paint will display descriptive text when a brush is selected. These are
+placed in plain text files with the same name as the PNG, but with a ".txt"
+filename extension. (e.g., "brush.png"'s description is stored in "brush.txt"
+in the same directory.)
+
+The first line of the text file will be used as the US English description of
+the brush's image. It must be encoded in UTF-8.
+
+Mbulim Përkthimesh
+
+    Te kartela tekst mund të shtohen rreshta shtesë për të dhënë përkthime të
+    përshkrimit, që të shfaqen kur Tux Paint-i xhiron në një gjuhë tjetër
+    (fjala vjen, shqip ose frëngjisht).
+
+    Fillimi i rreshtit duhet t’i përgjigjet kodit të gjuhës për gjuhën në fjalë
+    (p.sh., “fr” për frëngjishten dhe “zh_TW” për kineze tradicionale), pasuar
+    nga “.utf8=” dhe përshkrimi i përkthyer (Unikod, koduar si UTF-8).
+
+    Për zhvillues Tux Paint-i: Te drejtoria “brushes-po” ka programthe për
+    shndërrim kartelash tekst në format PO (dhe anasjelltas), për përkthim të
+    kollajtë në gjuhë të ndryshme. Ndaj s’duhet të shtoni ose ndryshoni kurrë
+    përkthime drejt e te kartelat “.txt”.
+
+    Nëse s’ka përkthim për gjuhën në të cilën po xhirohet Tux Paint-i, përdoret
+    teksti prej anglishtes amerikane.
+
+
+
+Përdorues Windows-i
+
+    Që të përpunoni/krijoni këto kartela, përdorni NotePad ose WordPad.
+    Sigurohuni t’i ruani si tekst të thjeshtë dhe garantoni të kenë një zgjatim
+    “.txt” në fund të emrit të kartelës.
+
+
+
 
 Mundësi Penelash
 

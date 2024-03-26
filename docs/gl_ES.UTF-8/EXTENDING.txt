@@ -14,6 +14,7 @@
 |       + Ficheiros estándar                                  |
 |       + Ficheiros persoais                                  |
 |   * Pinceis                                                 |
+|       + Brush Descriptive Text                              |
 |       + Opcións de pinceis                                  |
 |   * Selos                                                   |
 |       + Imaxes de selos                                     |
@@ -159,8 +160,8 @@ brushes/» en Linux ou Unix.)
 
 Pinceis
 
-Os pinceis empregados para debuxar coas ferramentas «Pincel» e «Liñas» en Tux
-Paint son simplemente ficheiros de imaxe PNG.
+The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint
+are simply PNG image files.
 
 A alfa (transparencia) da imaxe PNG úsase para determinar a forma do pincel, o
 que significa que a forma pode ser «alisado» e incluso parcialmente
@@ -168,6 +169,47 @@ transparente.
 
 Os píxeles de escala de grises no pincel PNG debuxaranse empregando a cor
 seleccionada actualmente en Tux Paint. Os píxeles de cor tinguiranse.
+
+Brush Descriptive Text
+
+Tux Paint will display descriptive text when a brush is selected. These are
+placed in plain text files with the same name as the PNG, but with a ".txt"
+filename extension. (e.g., "brush.png"'s description is stored in "brush.txt"
+in the same directory.)
+
+The first line of the text file will be used as the US English description of
+the brush's image. It must be encoded in UTF-8.
+
+Compatibilidade da localización
+
+    Pódense engadir liñas adicionais ao ficheiro de texto para fornecer
+    traducións da descrición, que se amosarán cando Tux Paint estea a
+    executarse nun idioma diferente (como o francés ou o español).
+
+    O comezo da liña debería corresponder ao código de idioma do idioma en
+    cuestión (por exemplo, «fr» para o francés e «zh_TW» para o chinés
+    tradicional), seguido de «.utf8=» e a descrición traducida (Unicode,
+    codificado en UTF-8).
+
+    Para os desenvolvedores de Tux Paint: Hai scripts no directorio
+    «brushes-po» para converter os ficheiros de texto ao formato PO (e
+    posterior) para facilitar a tradución a diferentes idiomas. Polo tanto,
+    nunca debería engadir nin cambiar traducións directamente nos ficheiros
+    «.txt».
+
+    Se non hai tradución dispoñíbel para o idioma en que se está a executar Tux
+    Paint, utilízase o texto en inglés dos EUA.
+
+
+
+Usuarios de Windows
+
+    Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese de
+    gardalos como texto simple e asegúrese de que teñen unha extensión «.txt»
+    ao final do nome do ficheiro.
+
+
+
 
 Opcións de pinceis
 

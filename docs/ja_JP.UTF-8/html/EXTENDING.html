@@ -121,7 +121,7 @@
                   <li><a href="#standard_files">Standard Files</a></li>                  <li><a href="#personal_files">Personal Files</a></li>                </ul>
               </li>
               <li><a href="#brushes">Brushes</a>                <ul>
-                  <li><a href="#brush_options">Brush Options</a></li>                </ul>
+                  <li><a href="#brush_description_text">Brush Descriptive Text</a></li>                  <li><a href="#brush_options">Brush Options</a></li>                </ul>
               </li>
               <li><a href="#stamps">はんこ</a>                <ul>
                   <li><a href="#stamps_images">Stamp Images</a></li>                  <li><a href="#description_text">Stamp Descriptive Text</a></li>                  <li><a href="#sound_effects">Stamp Sound Effects</a></li>                  <li><a href="#descriptive_sound">Stamp Descriptive Sound</a></li>                  <li><a href="#stamp_options">Stamp Options</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Pre-Mirrored and Flipped Stamps</a></li>                </ul>
@@ -277,7 +277,7 @@
       </header>
 
       <p>
-        The brushes used for drawing with the 'Brush' and 'Lines' tools in Tux Paint are simply PNG image files.      </p>
+        The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint are simply PNG image files.      </p>
       <img src="../../html/images/brush_edit.png"
                   width="123"
                   height="147"
@@ -288,6 +288,41 @@
 
       <p>
         Greyscale pixels in the brush PNG will be drawn using the currently-selected color in Tux Paint. Color pixels will be tinted.      </p>
+
+      <section><!-- H2: Brush Descriptive Text -->
+        <header>
+          <h2>
+            <a name="brush_bescription_text"
+                id="brush_description_text">Brush Descriptive Text</a>
+          </h2>
+        </header>
+
+        <p>
+          Tux Paint will display descriptive text when a brush is selected. These are placed in plain text files with the same name as the PNG, but with a "<code>.txt</code>" filename extension. (e.g., "<code>brush.png</code>"'s description is stored in "<code>brush.txt</code>" in the same directory.)        </p>
+
+        <p>
+          The first line of the text file will be used as the US English description of the brush's image. It must be encoded in UTF-8.        </p>
+
+        <dl>
+          <dt><strong>Localization Support</strong></dt>
+          <dd>
+            <p>
+              Additional lines can be added to the text file to provide translations of the description, to be displayed when Tux Paint is running in a different locale (like French or Spanish).            </p>
+            <p>
+              The beginning of the line should correspond to the language code of the language in question (e.g., "<code>fr</code>" for French, and "<code>zh_TW</code>" for Traditional Chinese), followed by "<code>.utf8=</code>" and the translated description (Unicode, encoded in UTF-8).            </p>
+            <p>
+              <b>For Tux Paint developers:</b> There are scripts in the "<code>brushes-po</code>" directory for converting the text files to PO format (and back) for easy translation to different languages. Therefore you should never add or change translations in the "<code>.txt</code>" files directly.            </p>
+            <p>
+              If no translation is available for the language Tux Paint is currently running in, the US English text is used.            </p>
+          </dd>
+
+          <dt><strong>Windows のユーザー</strong></dt>
+          <dd>
+            <p>
+              Use <cite>NotePad</cite> or <cite>WordPad</cite> to edit/create these files. Be sure to save them as plain-text, and make sure they have a "<code>.txt</code>" extension at the end of the filename.            </p>
+          </dd>
+        </dl>
+      </section><!-- H2: Stamp Descriptive Text -->
 
       <section><!-- H2: Brush Options -->
         <header>

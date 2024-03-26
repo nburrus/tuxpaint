@@ -14,6 +14,7 @@
 |       + Fichiers standards                                  |
 |       + Fichiers personnels                                 |
 |   * Pinceaux                                                |
+|       + Brush Descriptive Text                              |
 |       + Options de pinceau                                  |
 |   * Tampons                                                 |
 |       + Images des tampons                                  |
@@ -163,8 +164,8 @@ dans "~/.tuxpaint/brushes/" sous Linux ou Unix.)
 
 Pinceaux
 
-Les pinceaux utilisés pour dessiner avec les outils "Pinceau" et "Lignes" dans
-Tux Paint sont tout simplement des fichiers image PNG.
+The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint
+are simply PNG image files.
 
 L'alpha (transparence) de l'image PNG est utilisée pour déterminer la forme du
 pinceau, ce qui signifie que la forme peut être «anti-crénelée» et même
@@ -173,6 +174,47 @@ partiellement transparente !
 Les pixels en niveaux de gris dans le pinceau PNG seront dessinés en utilisant
 la couleur actuellement sélectionnée dans Tux Paint . Les pixels de couleur
 seront teintés.
+
+Brush Descriptive Text
+
+Tux Paint will display descriptive text when a brush is selected. These are
+placed in plain text files with the same name as the PNG, but with a ".txt"
+filename extension. (e.g., "brush.png"'s description is stored in "brush.txt"
+in the same directory.)
+
+The first line of the text file will be used as the US English description of
+the brush's image. It must be encoded in UTF-8.
+
+Support pour la régionalisation
+
+    Des lignes supplémentaires peuvent être ajoutées au fichier texte pour
+    fournir des traductions de la description, à afficher lorsque Tux Paint
+    s'exécute dans une langue différente (comme le français ou l'espagnol).
+
+    Le début de la ligne doit correspondre au code de langue de la langue en
+    question (par exemple, "fr" pour le français et "zh_TW" pour le chinois
+    traditionnel), suivi de ".utf8=" et de la description traduite (codée en
+    UTF-8).
+
+    Pour les développeurs de Tux Paint : Il y a des scripts dans le répertoire
+    "brushes-po" pour convertir les fichiers texte au format PO (et
+    inversement) pour une traduction facile vers différentes langues. Par
+    conséquent, vous ne devez jamais ajouter ni modifier directement les
+    traductions dans les fichiers ".txt".
+
+    Si aucune traduction n'est disponible pour la langue dans laquelle Tux
+    Paint est en cours d'exécution, le texte anglais américain sera utilisé.
+
+
+
+Utilisateurs de Windows
+
+    Utilisez NotePad ou WordPad pour modifier / créer ces fichiers.
+    Assurez-vous de les enregistrer en texte brut et assurez-vous qu'ils ont
+    une extension ".txt" à la fin du nom de fichier.
+
+
+
 
 Options de pinceau
 

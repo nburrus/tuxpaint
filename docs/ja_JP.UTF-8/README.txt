@@ -100,6 +100,10 @@ D. Tux Paint バージョン 0.9.33 での変更点
 Transparent Erasers
     Erasers that lightly expose more and more of the background.
 
+Brush descriptions
+    Brushes (used by Paint and Line tools) can now include descriptions that
+    appear when the brush is selected.
+
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
 

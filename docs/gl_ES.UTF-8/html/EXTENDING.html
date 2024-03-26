@@ -121,7 +121,7 @@
                   <li><a href="#standard_files">Ficheiros estándar</a></li>                  <li><a href="#personal_files">Ficheiros persoais</a></li>                </ul>
               </li>
               <li><a href="#brushes">Pinceis</a>                <ul>
-                  <li><a href="#brush_options">Opcións de pinceis</a></li>                </ul>
+                  <li><a href="#brush_description_text">Brush Descriptive Text</a></li>                  <li><a href="#brush_options">Opcións de pinceis</a></li>                </ul>
               </li>
               <li><a href="#stamps">Selos</a>                <ul>
                   <li><a href="#stamps_images">Imaxes de selos</a></li>                  <li><a href="#description_text">Texto descritivo do selo</a></li>                  <li><a href="#sound_effects">Efectos de son dos selos</a></li>                  <li><a href="#descriptive_sound">Son descritivo do selo</a></li>                  <li><a href="#stamp_options">Opcións de selos</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Selos prereflectidos e invertidos</a></li>                </ul>
@@ -277,7 +277,7 @@
       </header>
 
       <p>
-        Os pinceis empregados para debuxar coas ferramentas «Pincel» e «Liñas» en Tux Paint son simplemente ficheiros de imaxe PNG.      </p>
+        The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint are simply PNG image files.      </p>
       <img src="../../html/images/brush_edit.png"
                   width="123"
                   height="147"
@@ -288,6 +288,41 @@
 
       <p>
         Os píxeles de escala de grises no pincel PNG debuxaranse empregando a cor seleccionada actualmente en Tux Paint. Os píxeles de cor tinguiranse.      </p>
+
+      <section><!-- H2: Brush Descriptive Text -->
+        <header>
+          <h2>
+            <a name="brush_bescription_text"
+                id="brush_description_text">Brush Descriptive Text</a>
+          </h2>
+        </header>
+
+        <p>
+          Tux Paint will display descriptive text when a brush is selected. These are placed in plain text files with the same name as the PNG, but with a "<code>.txt</code>" filename extension. (e.g., "<code>brush.png</code>"'s description is stored in "<code>brush.txt</code>" in the same directory.)        </p>
+
+        <p>
+          The first line of the text file will be used as the US English description of the brush's image. It must be encoded in UTF-8.        </p>
+
+        <dl>
+          <dt><strong>Compatibilidade da localización</strong></dt>
+          <dd>
+            <p>
+              Pódense engadir liñas adicionais ao ficheiro de texto para fornecer traducións da descrición, que se amosarán cando Tux Paint estea a executarse nun idioma diferente (como o francés ou o español).            </p>
+            <p>
+              O comezo da liña debería corresponder ao código de idioma do idioma en cuestión (por exemplo, «<code>fr</code>» para o francés e «<code>zh_TW</code>» para o chinés tradicional), seguido de «<code>.utf8=</code>» e a descrición traducida (Unicode, codificado en UTF-8).            </p>
+            <p>
+              <b>Para os desenvolvedores de Tux Paint:</b> Hai scripts no directorio «<code>brushes-po</code>» para converter os ficheiros de texto ao formato PO (e posterior) para facilitar a tradución a diferentes idiomas. Polo tanto, nunca debería engadir nin cambiar traducións directamente nos ficheiros «<code>.txt</code>».            </p>
+            <p>
+              Se non hai tradución dispoñíbel para o idioma en que se está a executar Tux Paint, utilízase o texto en inglés dos EUA.            </p>
+          </dd>
+
+          <dt><strong>Usuarios de Windows</strong></dt>
+          <dd>
+            <p>
+              Use <cite>NotePad</cite> ou <cite>WordPad</cite> para editar/crear estes ficheiros. Asegúrese de gardalos como texto simple e asegúrese de que teñen unha extensión «<code>.txt</code>» ao final do nome do ficheiro.            </p>
+          </dd>
+        </dl>
+      </section><!-- H2: Stamp Descriptive Text -->
 
       <section><!-- H2: Brush Options -->
         <header>

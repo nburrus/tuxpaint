@@ -14,6 +14,7 @@
 |       + Standard Files                  |
 |       + Personal Files                  |
 |   * Brushes                             |
+|       + Brush Descriptive Text          |
 |       + Brush Options                   |
 |   * はんこ                              |
 |       + Stamp Images                    |
@@ -153,7 +154,7 @@ subdirectories under your personal Tux Paint directory named "brushes", "stamps
 
 Brushes
 
-The brushes used for drawing with the 'Brush' and 'Lines' tools in Tux Paint
+The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint
 are simply PNG image files.
 
 The alpha (transparency) of the PNG image is used to determine the shape of the
@@ -162,6 +163,46 @@ partially-transparent!
 
 Greyscale pixels in the brush PNG will be drawn using the currently-selected
 color in Tux Paint. Color pixels will be tinted.
+
+Brush Descriptive Text
+
+Tux Paint will display descriptive text when a brush is selected. These are
+placed in plain text files with the same name as the PNG, but with a ".txt"
+filename extension. (e.g., "brush.png"'s description is stored in "brush.txt"
+in the same directory.)
+
+The first line of the text file will be used as the US English description of
+the brush's image. It must be encoded in UTF-8.
+
+Localization Support
+
+    Additional lines can be added to the text file to provide translations of
+    the description, to be displayed when Tux Paint is running in a different
+    locale (like French or Spanish).
+
+    The beginning of the line should correspond to the language code of the
+    language in question (e.g., "fr" for French, and "zh_TW" for Traditional
+    Chinese), followed by ".utf8=" and the translated description (Unicode,
+    encoded in UTF-8).
+
+    For Tux Paint developers: There are scripts in the "brushes-po" directory
+    for converting the text files to PO format (and back) for easy translation
+    to different languages. Therefore you should never add or change
+    translations in the ".txt" files directly.
+
+    If no translation is available for the language Tux Paint is currently
+    running in, the US English text is used.
+
+
+
+Windows のユーザー
+
+    Use NotePad or WordPad to edit/create these files. Be sure to save them as
+    plain-text, and make sure they have a ".txt" extension at the end of the
+    filename.
+
+
+
 
 Brush Options
 

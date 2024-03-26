@@ -121,7 +121,7 @@
                   <li><a href="#standard_files">Fichiers standards</a></li>                  <li><a href="#personal_files">Fichiers personnels</a></li>                </ul>
               </li>
               <li><a href="#brushes">Pinceaux</a>                <ul>
-                  <li><a href="#brush_options">Options de pinceau</a></li>                </ul>
+                  <li><a href="#brush_description_text">Brush Descriptive Text</a></li>                  <li><a href="#brush_options">Options de pinceau</a></li>                </ul>
               </li>
               <li><a href="#stamps">Tampons</a>                <ul>
                   <li><a href="#stamps_images">Images des tampons</a></li>                  <li><a href="#description_text">Texte de description des tampons</a></li>                  <li><a href="#sound_effects">Effets sonores des tampons</a></li>                  <li><a href="#descriptive_sound">Son descriptif du tampon</a></li>                  <li><a href="#stamp_options">Options des tampons</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Mise en miroir et retournement</a></li>                </ul>
@@ -277,7 +277,7 @@
       </header>
 
       <p>
-        Les pinceaux utilisés pour dessiner avec les outils "Pinceau" et "Lignes" dans Tux Paint sont tout simplement des fichiers image PNG.      </p>
+        The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint are simply PNG image files.      </p>
       <img src="../../html/images/brush_edit.png"
                   width="123"
                   height="147"
@@ -288,6 +288,41 @@
 
       <p>
         Les pixels en niveaux de gris dans le pinceau PNG seront dessinés en utilisant la couleur actuellement sélectionnée dans Tux Paint . Les pixels de couleur seront teintés.      </p>
+
+      <section><!-- H2: Brush Descriptive Text -->
+        <header>
+          <h2>
+            <a name="brush_bescription_text"
+                id="brush_description_text">Brush Descriptive Text</a>
+          </h2>
+        </header>
+
+        <p>
+          Tux Paint will display descriptive text when a brush is selected. These are placed in plain text files with the same name as the PNG, but with a "<code>.txt</code>" filename extension. (e.g., "<code>brush.png</code>"'s description is stored in "<code>brush.txt</code>" in the same directory.)        </p>
+
+        <p>
+          The first line of the text file will be used as the US English description of the brush's image. It must be encoded in UTF-8.        </p>
+
+        <dl>
+          <dt><strong>Support pour la régionalisation</strong></dt>
+          <dd>
+            <p>
+              Des lignes supplémentaires peuvent être ajoutées au fichier texte pour fournir des traductions de la description, à afficher lorsque Tux Paint s'exécute dans une langue différente (comme le français ou l'espagnol).            </p>
+            <p>
+              Le début de la ligne doit correspondre au code de langue de la langue en question (par exemple, "<code>fr</code>" pour le français et "<code>zh_TW</code>" pour le chinois traditionnel), suivi de "<code>.utf8=</code>" et de la description traduite (codée en UTF-8).            </p>
+            <p>
+              <b>Pour les développeurs de Tux Paint :</b> Il y a des scripts dans le répertoire "<code>brushes-po</code>" pour convertir les fichiers texte au format PO (et inversement) pour une traduction facile vers différentes langues. Par conséquent, vous ne devez jamais ajouter ni modifier directement les traductions dans les fichiers "<code>.txt</code>".            </p>
+            <p>
+              Si aucune traduction n'est disponible pour la langue dans laquelle Tux Paint est en cours d'exécution, le texte anglais américain sera utilisé.            </p>
+          </dd>
+
+          <dt><strong>Utilisateurs de Windows</strong></dt>
+          <dd>
+            <p>
+              Utilisez <cite>NotePad</cite> ou <cite>WordPad</cite> pour modifier / créer ces fichiers. Assurez-vous de les enregistrer en texte brut et assurez-vous qu'ils ont une extension "<code>.txt</code>" à la fin du nom de fichier.            </p>
+          </dd>
+        </dl>
+      </section><!-- H2: Stamp Descriptive Text -->
 
       <section><!-- H2: Brush Options -->
         <header>

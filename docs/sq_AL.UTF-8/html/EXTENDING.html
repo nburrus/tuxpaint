@@ -121,7 +121,7 @@
                   <li><a href="#standard_files">Kartela Standarde</a></li>                  <li><a href="#personal_files">Kartela Personale</a></li>                </ul>
               </li>
               <li><a href="#brushes">Penela</a>                <ul>
-                  <li><a href="#brush_options">Mundësi Penelash</a></li>                </ul>
+                  <li><a href="#brush_description_text">Brush Descriptive Text</a></li>                  <li><a href="#brush_options">Mundësi Penelash</a></li>                </ul>
               </li>
               <li><a href="#stamps">Stampa</a>                <ul>
                   <li><a href="#stamps_images">Figura stampash</a></li>                  <li><a href="#description_text">Tekst Përshkrues për Stampat</a></li>                  <li><a href="#sound_effects">Efekte Zanore Stampash</a></li>                  <li><a href="#descriptive_sound">Tingull Përshkrues Stampash</a></li>                  <li><a href="#stamp_options">Mundësi Stampash</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Stampa të kthyera në anë tjetër dhe të pasqyruara paraprakisht</a></li>                </ul>
@@ -277,7 +277,7 @@
       </header>
 
       <p>
-        Penelat e përdorur për të vizatuar me mjetet “Penel” dhe “Vija” në Tux Paint janë thjesht kartela figurë PNG.      </p>
+        The brushes used for drawing with the 'Paint' and 'Lines' tools in Tux Paint are simply PNG image files.      </p>
       <img src="../../html/images/brush_edit.png"
                   width="123"
                   height="147"
@@ -288,6 +288,41 @@
 
       <p>
         Pikselat shkallë të grisë te PNG-ja e penelit do të vizatohen duke përdorur ngjyrën aktualisht të përzgjedhur në Tux Paint. Pikselat me ngjyrë do të ngjyrosen.      </p>
+
+      <section><!-- H2: Brush Descriptive Text -->
+        <header>
+          <h2>
+            <a name="brush_bescription_text"
+                id="brush_description_text">Brush Descriptive Text</a>
+          </h2>
+        </header>
+
+        <p>
+          Tux Paint will display descriptive text when a brush is selected. These are placed in plain text files with the same name as the PNG, but with a "<code>.txt</code>" filename extension. (e.g., "<code>brush.png</code>"'s description is stored in "<code>brush.txt</code>" in the same directory.)        </p>
+
+        <p>
+          The first line of the text file will be used as the US English description of the brush's image. It must be encoded in UTF-8.        </p>
+
+        <dl>
+          <dt><strong>Mbulim Përkthimesh</strong></dt>
+          <dd>
+            <p>
+              Te kartela tekst mund të shtohen rreshta shtesë për të dhënë përkthime të përshkrimit, që të shfaqen kur Tux Paint-i xhiron në një gjuhë tjetër (fjala vjen, shqip ose frëngjisht).            </p>
+            <p>
+              Fillimi i rreshtit duhet t’i përgjigjet kodit të gjuhës për gjuhën në fjalë (p.sh., “<code>fr</code>” për frëngjishten dhe “<code>zh_TW</code>” për kineze tradicionale), pasuar nga “<code>.utf8=</code>” dhe përshkrimi i përkthyer (Unikod, koduar si UTF-8).            </p>
+            <p>
+              <b>Për zhvillues Tux Paint-i:</b> Te drejtoria “<code>brushes-po</code>” ka programthe për shndërrim kartelash tekst në format PO (dhe anasjelltas), për përkthim të kollajtë në gjuhë të ndryshme. Ndaj s’duhet të shtoni ose ndryshoni kurrë përkthime drejt e te kartelat “<code>.txt</code>”.            </p>
+            <p>
+              Nëse s’ka përkthim për gjuhën në të cilën po xhirohet Tux Paint-i, përdoret teksti prej anglishtes amerikane.            </p>
+          </dd>
+
+          <dt><strong>Përdorues Windows-i</strong></dt>
+          <dd>
+            <p>
+              Që të përpunoni/krijoni këto kartela, përdorni <cite>NotePad</cite> ose <cite>WordPad</cite>. Sigurohuni t’i ruani si tekst të thjeshtë dhe garantoni të kenë një zgjatim “<code>.txt</code>” në fund të emrit të kartelës.            </p>
+          </dd>
+        </dl>
+      </section><!-- H2: Stamp Descriptive Text -->
 
       <section><!-- H2: Brush Options -->
         <header>
