@@ -32,9 +32,9 @@ https://tuxpaint.org/
 
   * Other Improvements:
     -------------------
-    * WIP Support for brush descriptions, including localization.
+    * Support for brush descriptions, including localization.
       (Adds a new "tuxpaint-brushes.pot" & PO files.)
-      Management scripts based on those found in `tuxpaint-stamps`.)
+      (Management scripts based on those found in `tuxpaint-stamps`.)
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Make screen refresh more snappy on macOS.
