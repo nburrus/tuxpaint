@@ -1,0 +1,1 @@
+Hash marks that draw perpendicular to the direction your painting.
