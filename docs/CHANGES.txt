@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.March.19 (0.9.33)
+2024.March.25 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
@@ -32,6 +32,11 @@ https://tuxpaint.org/
 
   * Other Improvements:
     -------------------
+    * WIP Support for brush descriptions, including localization.
+      (Adds a new "tuxpaint-brushes.pot" & PO files.)
+      Management scripts based on those found in `tuxpaint-stamps`.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Make screen refresh more snappy on macOS.
       Mark Kim <markuskimius@gmail.com>
 

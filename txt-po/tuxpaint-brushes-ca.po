@@ -1,0 +1,3 @@
+#: ../data/brushes/vine.txt
+msgid "Draw with leafy vines."
+msgstr "Dibuixa amb ceps de fulla."
