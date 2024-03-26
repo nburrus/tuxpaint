@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 15, 2024
+  June 14, 2002 - March 25, 2024
 */
 
 #include "platform.h"
@@ -1934,6 +1934,8 @@ static int *brushes_spacing = NULL;
 static int *brushes_spacing_default = NULL;
 static short *brushes_directional = NULL;
 static short *brushes_rotate = NULL;
+static char **brushes_descr = NULL;
+static Uint8 *brushes_descr_localized = NULL;
 
 static SDL_Surface *img_shapes[NUM_SHAPES], *img_shape_names[NUM_SHAPES];
 static SDL_Surface *img_fills[NUM_FILLS], *img_fill_names[NUM_FILLS];
@@ -8308,8 +8310,14 @@ static void loadbrush_callback(SDL_Surface * screen,
         brushes_rotate = realloc(brushes_rotate, num_brushes_max * sizeof(short));
         brushes_spacing = realloc(brushes_spacing, num_brushes_max * sizeof(int));
         brushes_spacing_default = realloc(brushes_spacing_default, num_brushes_max * sizeof(int));
+        brushes_descr = realloc(brushes_descr, num_brushes_max * sizeof *brushes_descr);
+        brushes_descr_localized = realloc(brushes_descr_localized, num_brushes_max * sizeof(Uint8));
       }
       img_brushes[num_brushes] = loadimage(fname);
+
+      /* Load brush description, if any: */
+      brushes_descr[num_brushes] = loaddesc(fname, &(brushes_descr_localized[num_brushes]));
+      DEBUG_PRINTF("%s: %s (%d)\n", fname, (brushes_descr[num_brushes] != NULL ? brushes_descr[num_brushes] : "NULL"), brushes_descr_localized[num_brushes]);
 
       /* Load brush metadata, if any: */
 
@@ -12177,24 +12185,33 @@ static void render_brush(void)
  */
 static void show_brush_tip(void)
 {
-  if (img_cur_brush_rotate || img_cur_brush_directional)
+  if (brushes_descr[cur_brush] != NULL )
   {
-    if (abs(img_cur_brush_frames) > 1)
-    {
-      draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM_DIR, 1);
-    }
-    else
-    {
-      draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_DIR, 1);
-    }
-  }
-  else if (abs(img_cur_brush_frames) > 1)
-  {
-    draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM, 1);
+    draw_tux_text_ex(TUX_GREAT, brushes_descr[cur_brush],
+                     1, brushes_descr_localized[cur_brush]);
+
   }
   else
   {
-    draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+    if (img_cur_brush_rotate || img_cur_brush_directional)
+    {
+      if (abs(img_cur_brush_frames) > 1)
+      {
+        draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM_DIR, 1);
+      }
+      else
+      {
+        draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_DIR, 1);
+      }
+    }
+    else if (abs(img_cur_brush_frames) > 1)
+    {
+      draw_tux_text(TUX_GREAT, TIP_BRUSH_CHOICE_ANM, 1);
+    }
+    else
+    {
+      draw_tux_text(TUX_GREAT, tool_tips[cur_tool], 1);
+    }
   }
 }
 
@@ -15124,6 +15141,13 @@ static void cleanup(void)
   free(brushes_rotate);
   free(brushes_spacing);
   free(brushes_spacing_default);
+  for (i = 0; i < num_brushes; i++) {
+    if (brushes_descr[i] != NULL) {
+      free(brushes_descr[i]);
+    }
+  }
+  free(brushes_descr);
+
   free_surface_array(img_tools, NUM_TOOLS);
   free_surface_array(img_tool_names, NUM_TOOLS);
   free_surface_array(img_title_names, NUM_TITLES);
