@@ -1,1 +1,2 @@
 Paint barefoot footsteps on your picture.
+pt.utf8=Pintar passos de pés descalços no teu desenho.

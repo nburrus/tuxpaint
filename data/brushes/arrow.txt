@@ -1,1 +1,2 @@
 The arrow points the direction you draw.
+pt.utf8=A seta indica a direção em que desenhas.

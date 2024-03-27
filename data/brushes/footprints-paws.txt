@@ -1,1 +1,2 @@
 Paint pawprints on your picture.
+pt.utf8=Pintar impressões de patas no teu desenho.

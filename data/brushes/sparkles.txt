@@ -1,1 +1,2 @@
 Paint with sparkles!
+pt.utf8=Pintar com brilhantes!

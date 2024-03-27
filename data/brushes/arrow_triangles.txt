@@ -1,1 +1,2 @@
 The triangle points the direction you draw.
+pt.utf8=O triângulo aponta a direção que desenhaste.

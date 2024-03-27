@@ -1,1 +1,2 @@
 Paint random ink splats on your picture.
+pt.utf8=Pintar manchas de tinta aleatórias no teu desenho.

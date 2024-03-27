@@ -1,1 +1,2 @@
 Paint with a random spray effect.
+pt.utf8=Pintar com um efeito de spray aleatório.

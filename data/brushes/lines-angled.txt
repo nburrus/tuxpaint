@@ -1,1 +1,2 @@
 Hash marks that draw perpendicular to the direction your painting.
+pt.utf8=Marcas de traço que desenham perpendicularmente à direção em que está a pintar.

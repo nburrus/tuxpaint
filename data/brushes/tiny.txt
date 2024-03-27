@@ -1,1 +1,2 @@
 A tiny, 1-by-1 pixel brush.
+pt.utf8=Um pincel minúsculo, de 1 por 1 pixel.

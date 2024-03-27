@@ -1,1 +1,2 @@
 The dog chases where you draw.
+pt.utf8=O cão persegue onde desenhas.

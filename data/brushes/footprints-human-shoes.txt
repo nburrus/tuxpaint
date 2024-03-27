@@ -1,1 +1,2 @@
 Paint footsteps with shoes on your picture.
+pt.utf8=Pintar passos com sapatos no teu desenho.

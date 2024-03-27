@@ -1,1 +1,2 @@
 Paint with a rotating spiral.
+pt.utf8=Pintar com uma espiral rotativa.
