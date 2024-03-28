@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - March 19, 2024
+June 17, 2002 - March 28, 2024
 
 * Design and Coding:
 
@@ -147,6 +147,11 @@ June 17, 2002 - March 19, 2024
   Dither & Dither (Keep Color) sound effects based on "Orion FIll.wav"
   (https://freesound.org/people/KatHakaku/sounds/54112/)
   Creative Commons 0 by KatHakaku <https://freesound.org/people/KatHakaku/>
+
+  Filled Polygon
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  Scanline polygon fill routine based on public-domain code
+  by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>

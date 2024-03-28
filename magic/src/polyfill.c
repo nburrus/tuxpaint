@@ -3,7 +3,10 @@
    A Magic tool for Tux Paint that creates a filled polygon.
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   Last updated: March 27, 2024
+   Scanline polygon fill routine based on public-domain code
+   by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
+
+   Last updated: March 28, 2024
 */
 
 
@@ -60,6 +63,7 @@ void polyfill_line_callback(void *pointer, int which, SDL_Surface * canvas,
   SDL_Surface * snapshot, int x, int y);
 
 void polyfill_draw_preview(magic_api * api, SDL_Surface * canvas, int show_handles);
+void polyfill_draw_final(magic_api * api, SDL_Surface * canvas);
 
 
 Uint32 polyfill_api_version(void)
@@ -234,6 +238,7 @@ void polyfill_draw_preview(magic_api * api, SDL_Surface * canvas, int show_handl
     return;
 
   SDL_BlitSurface(polyfill_snapshot, NULL, canvas, NULL);
+
   for (i = 0; i < polyfill_num_pts - 1; i++) {
     api->line((void *) api, 0 /* which */, canvas, NULL /* snapshot */,
               polyfill_pt_x[i], polyfill_pt_y[i],
@@ -284,10 +289,9 @@ polyfill_release(magic_api * api, int which,
 
   printf("Release while editing %d\n", polyfill_editing);
 
-//  if (polyfill_editing == polyfill_num_pts) {
-//    printf("Finalizing it...\n");
-//    polyfill_num_pts++;
-//  }
+  /* FIXME: If they simply clicked the first point (without
+     drawing to move it), and there are enough points, consider
+     it a final placement of a new point! */
 
   /* Moved (or placed) the final spot at the beginning? */
   if (polyfill_num_pts > 2 &&
@@ -311,8 +315,7 @@ polyfill_release(magic_api * api, int which,
       polyfill_pt_y[polyfill_num_pts - 1] = polyfill_pt_y[0];
     }
 
-    // FIXME
-    polyfill_draw_preview(api, canvas, 0);
+    polyfill_draw_final(api, canvas);
 
     polyfill_num_pts = 0;
     polyfill_editing = MAX_PTS;
@@ -358,6 +361,7 @@ polyfill_release(magic_api * api, int which,
 void polyfill_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   polyfill_color = SDL_MapRGB(canvas->format, r, g, b);
+  polyfill_draw_preview(api, canvas, 1);
 }
 
 void polyfill_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 size, SDL_Rect * update_rect)
@@ -401,7 +405,82 @@ void polyfill_switchin(magic_api * api, int which, int mode,
 void polyfill_switchout(magic_api * api, int which, int mode,
                        SDL_Surface * canvas)
 {
-  /* FIXME: Do we want to do this? */
-  // polyfill_num_pts = 0;
-  // polyfill_editing = MAX_PTS;
+  polyfill_num_pts = 0;
+  polyfill_editing = MAX_PTS;
+}
+
+/* Based on public-domain code by Darel Rex Finley, 2007
+   https://alienryderflex.com/polygon_fill/
+*/
+void polyfill_draw_final(magic_api * api, SDL_Surface * canvas) {
+  int i, j, ymin, ymax, y, nodes, swap;
+  int nodeX[256];
+  SDL_Rect rect;
+
+  SDL_BlitSurface(polyfill_snapshot, NULL, canvas, NULL);
+
+  ymin = canvas->w;
+  ymax = 0;
+  for (i = 0; i < polyfill_num_pts; i++) {
+    if (polyfill_pt_y[i] < ymin) {
+      ymin = polyfill_pt_y[i];
+    }
+    if (polyfill_pt_y[i] > ymax) {
+      ymax = polyfill_pt_y[i];
+    }
+  }
+  printf("ymin %d -> ymax %d\n", ymin, ymax);
+
+  for (y = ymin; y <= ymax; y++) {
+    nodes = 0;
+    j = polyfill_num_pts - 2;
+
+    for (i = 0; i < polyfill_num_pts - 1; i++) {
+      if ((polyfill_pt_y[i] < y && polyfill_pt_y[j] >= y) ||
+          (polyfill_pt_y[j] < y && polyfill_pt_y[i] >= y)) {
+        nodeX[nodes++] = (int)
+          (
+           (double) polyfill_pt_x[i] +
+           (double) (y - polyfill_pt_y[i]) /
+           (double) (polyfill_pt_y[j] - polyfill_pt_y[i]) *
+           (double) (polyfill_pt_x[j] - polyfill_pt_x[i])
+          );
+      }
+
+      j = i;
+    }
+
+    // Sort the nodes, via a simple “Bubble” sort.
+    i = 0;
+    while (i < nodes - 1) {
+      if (nodeX[i] > nodeX[i+1]) {
+        swap = nodeX[i];
+        nodeX[i] = nodeX[i + 1];
+        nodeX[i + 1] = swap;
+        if (i)
+          i--;
+      } else {
+        i++;
+      }
+    }
+
+    // Fill the pixels between node pairs.
+    for (i = 0; i < nodes; i += 2) {
+      if (nodeX[i] >= canvas->w)
+        break;
+
+      if (nodeX[i + 1] > 0) {
+        if (nodeX[i] < 0)
+          nodeX[i] = 0;
+        if (nodeX[i + 1] > canvas->w - 1)
+          nodeX[i + 1] = canvas->w - 1;
+
+        rect.x = nodeX[i];
+        rect.y = y;
+        rect.w = nodeX[i + 1] - nodeX[i] + 1;
+        rect.h = 1;
+        SDL_FillRect(canvas, &rect, polyfill_color);
+      }
+    }
+  }
 }
