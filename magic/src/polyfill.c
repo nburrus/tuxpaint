@@ -48,6 +48,7 @@ int polyfill_pt_x[MAX_PTS];
 int polyfill_pt_y[MAX_PTS];
 int polyfill_num_pts = 0;
 int polyfill_editing = MAX_PTS;
+int polyfill_dragged = 0;
 
 
 Mix_Chunk *snd_effects[NUM_TOOLS];
@@ -175,6 +176,8 @@ polyfill_click(magic_api * api, int which, int mode,
 {
   int i;
 
+  polyfill_dragged = 0;
+
   printf("Click.  num_pts = %d\n", polyfill_num_pts);
 
   /* See if we're clicking a pre-existing point, to edit it? */
@@ -216,6 +219,8 @@ polyfill_drag(magic_api * api, int which,
              int old_x, int old_y, int x, int y,
              SDL_Rect * update_rect)
 {
+  polyfill_dragged = 1;
+
   if (polyfill_editing >= MAX_PTS)
     return;
 
@@ -256,11 +261,13 @@ void polyfill_draw_preview(magic_api * api, SDL_Surface * canvas, int show_handl
       }
     }
 
-    dest.x = polyfill_pt_x[0] - SNAP_SIZE;
-    dest.y = polyfill_pt_y[0] - SNAP_SIZE;
-    dest.w = SNAP_SIZE * 2;
-    dest.h = SNAP_SIZE * 2;
-    SDL_FillRect(canvas, &dest, polyfill_color_green);
+    if (polyfill_num_pts > 0) {
+      dest.x = polyfill_pt_x[0] - SNAP_SIZE;
+      dest.y = polyfill_pt_y[0] - SNAP_SIZE;
+      dest.w = SNAP_SIZE * 2;
+      dest.h = SNAP_SIZE * 2;
+      SDL_FillRect(canvas, &dest, polyfill_color_green);
+    }
 
     if (polyfill_num_pts > 1) {
       dest.x = polyfill_pt_x[polyfill_num_pts - 1] - SNAP_SIZE;
@@ -289,9 +296,16 @@ polyfill_release(magic_api * api, int which,
 
   printf("Release while editing %d\n", polyfill_editing);
 
-  /* FIXME: If they simply clicked the first point (without
+  /* If they simply clicked the first point (without
      drawing to move it), and there are enough points, consider
      it a final placement of a new point! */
+  if (polyfill_editing == 0 && polyfill_dragged == 0 && polyfill_num_pts > 2 && polyfill_num_pts < MAX_PTS) {
+    printf("Clicked first point to end polygon!\n");
+    polyfill_pt_x[polyfill_num_pts] = polyfill_pt_x[0];
+    polyfill_pt_y[polyfill_num_pts] = polyfill_pt_y[0];
+    polyfill_editing = polyfill_num_pts;
+    polyfill_num_pts++;
+  }
 
   /* Moved (or placed) the final spot at the beginning? */
   if (polyfill_num_pts > 2 &&
