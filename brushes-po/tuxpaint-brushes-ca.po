@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2024-03-26 06:14:50+0000\n"
-"PO-Revision-Date: 2024-03-26 05:19:40+0000\n"
+"PO-Revision-Date: 2024-04-06 11:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -13,60 +13,60 @@ msgstr ""
 
 #: ../data/brushes/arrow.txt
 msgid "The arrow points the direction you draw."
-msgstr ""
+msgstr "La fletxa apunta en la direcció en que dibuixeu."
 
 #: ../data/brushes/arrow_triangles.txt
 msgid "The triangle points the direction you draw."
-msgstr ""
+msgstr "El triangle apunta en la direcció en que dibuixeu."
 
 #: ../data/brushes/critter_dog.txt
 msgid "The dog chases where you draw."
-msgstr ""
+msgstr "El gos va cap a on dibuixeu."
 
 #: ../data/brushes/critter_kuroneko.txt
 msgid "The cat chases where you draw."
-msgstr ""
+msgstr "El gat persegueix el ratolí."
 
 #: ../data/brushes/critter_squirrel.txt
 msgid "The squirrel runs where you draw."
-msgstr ""
+msgstr "L'esquirol corre cap a on dibuixeu."
 
 #: ../data/brushes/footprints-human-shoes.txt
 msgid "Paint footsteps with shoes on your picture."
-msgstr ""
+msgstr "Pinta petjades de sabates en el dibuix."
 
 #: ../data/brushes/footprints-human.txt
 msgid "Paint barefoot footsteps on your picture."
-msgstr ""
+msgstr "Pinta traces de peus en el dibuix."
 
 #: ../data/brushes/footprints-paws.txt
 msgid "Paint pawprints on your picture."
-msgstr ""
+msgstr "Pinta un rastre d'animals en el dibuix."
 
 #: ../data/brushes/inksplat.txt
 msgid "Paint random ink splats on your picture."
-msgstr ""
+msgstr "Pinta esquitxos de tinta aleatoris en el dibuix."
 
 #: ../data/brushes/lines-angled.txt
 msgid "Hash marks that draw perpendicular to the direction your painting."
-msgstr ""
+msgstr "Pinta ratlles fines perpendiculars a la direcció del traç."
 
 #: ../data/brushes/sparkles.txt
 msgid "Paint with sparkles!"
-msgstr ""
+msgstr "Pinta amb guspires!."
 
 #: ../data/brushes/spiral.txt
 msgid "Paint with a rotating spiral."
-msgstr ""
+msgstr "Pinta amb una espiral que roda."
 
 #: ../data/brushes/spray.txt
 msgid "Paint with a random spray effect."
-msgstr ""
+msgstr "Pinta amb un efecte d'esprai aleatori."
 
 #: ../data/brushes/tiny.txt
 msgid "A tiny, 1-by-1 pixel brush."
-msgstr ""
+msgstr "Un pinzell petit d'un sol píxel."
 
 #: ../data/brushes/vine.txt
 msgid "Draw with leafy vines."
-msgstr "Dibuixa amb ceps de fulla."
+msgstr "Dibuixa amb fulles de vinya."
