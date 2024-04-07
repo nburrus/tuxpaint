@@ -97,12 +97,12 @@
             Options Documentation          </h2>
 
           <p>
-            Copyright &copy; 2002-2023 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2002-2024 by various contributors; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
           <p>
-            December 29, 2023          </p>
+            April  7, 2024          </p>
         </center>
       </header>
 
@@ -343,7 +343,7 @@
 
     <dd>
       <p>
-        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. Note: This requires version 1.2.12 or higher of the SDL library. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
+        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>allowscreensaver=no</code>" or "<code>disablescreensaver=yes</code>". In both cases, may be overridden by the command-line option "<code>--disablescreensaver</code>".      </p>
     </dd>
@@ -2380,11 +2380,12 @@
         Options may also be issued on the command-line when you go to launch Tux Paint.      </p>
       <dl>
         <dt>
-          <code><b>--fullscreen<br>
+          <code><b>--fullscreen=yes<br>
+          --fullscreen=native<br>
           --<i>WIDTH</i>x<i>HEIGHT</i><br>
+          --orient=portrait<br>
           --buttonsize=<i>SIZE</i><br>
           --colorsrows=<i>ROWS</i><br>
-          --orient=portrait<br>
           --native<br>
           --allowscreensaver<br>
           --startblank<br>

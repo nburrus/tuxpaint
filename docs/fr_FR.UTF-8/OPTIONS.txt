@@ -3,10 +3,10 @@
 
                          Documentation sur les options
 
-       Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
+       Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               décembre 29, 2023
+                                 avril 7, 2024
 
 +--------------------------------------------------------------------+
 |                         Table des matières                         |
@@ -171,12 +171,10 @@ native=yes
 
 allowscreensaver=yes
 
-    Par défaut, Tux Paint empêche l'économiseur d'écran de votre système de
-    démarrer. Vous pouvez remplacer cela en utilisant l'option
-    "allowscreensaver". Remarque : Cela nécessite la version 1.2.12 ou
-    supérieure de la bibliothèque SDL. (Vous pouvez également le faire en
-    définissant la variable d'environnement "SDL_VIDEO_ALLOW_SCREENSAVER" de
-    votre système égale à "1".)
+    By default, Tux Paint prevents your system's screensaver from starting up.
+    You can override this by using the "allowscreensaver" option. (You can also
+    do this by setting the "SDL_VIDEO_ALLOW_SCREENSAVER" environment variable
+    on your system to "1".)
 
     ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
     peut être remplacé par le fichier de configuration de l'utilisateur en
@@ -1710,11 +1708,12 @@ Boutons pour raccourcis
     Des options peuvent également être émises sur la ligne de commande lorsque
     vous démarrez Tux Paint.
 
-    --fullscreen
+    --fullscreen=yes
+        --fullscreen=native
         --WIDTHxHEIGHT
+        --orient=portrait
         --buttonsize=SIZE
         --colorsrows=ROWS
-        --orient=portrait
         --native
         --allowscreensaver
         --startblank

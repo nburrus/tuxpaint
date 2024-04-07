@@ -97,12 +97,12 @@
             Documentation sur les options          </h2>
 
           <p>
-            Copyright &copy; 2002-2023 by divers contributeurs; voir <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2002-2024 by divers contributeurs; voir <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
           <p>
-            décembre 29, 2023          </p>
+            avril  7, 2024          </p>
         </center>
       </header>
 
@@ -343,7 +343,7 @@
 
     <dd>
       <p>
-        Par défaut, Tux Paint empêche l'économiseur d'écran de votre système de démarrer. Vous pouvez remplacer cela en utilisant l'option "<code>allowscreensaver</code>". Remarque : Cela nécessite la version 1.2.12 ou supérieure de la bibliothèque SDL. (Vous pouvez également le faire en définissant la variable d'environnement "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" de votre système égale à "<code>1</code>".)      </p>
+        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note : </strong>si utilisé dans un fichier de configuration pour tout le monde, il peut être remplacé par le fichier de configuration de l'utilisateur en utilisant "<code>allowscreensaver=no</code>" ou "<code>disablescreensaver=yes</code>". Dans les deux cas, il peut être remplacé avec l'option en ligne de commande "<code>--disablescreensaver</code>".      </p>
     </dd>
@@ -2380,11 +2380,12 @@
         Des options peuvent également être émises sur la ligne de commande lorsque vous démarrez Tux Paint.      </p>
       <dl>
         <dt>
-          <code><b>--fullscreen<br>
+          <code><b>--fullscreen=yes<br>
+          --fullscreen=native<br>
           --<i>WIDTH</i>x<i>HEIGHT</i><br>
+          --orient=portrait<br>
           --buttonsize=<i>SIZE</i><br>
           --colorsrows=<i>ROWS</i><br>
-          --orient=portrait<br>
           --native<br>
           --allowscreensaver<br>
           --startblank<br>

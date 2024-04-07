@@ -3,10 +3,10 @@
 
                                各種設定について
 
-       Copyright © 2002-2023 by various contributors; AUTHORS.txt 参照.
+       Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                2023年12月29日
+                                 2024年4月 7日
 
 +------------------------------------------------------+
 |                         目次                         |
@@ -165,11 +165,10 @@ native=yes
 
 allowscreensaver=yes
 
-    標準では、Tux Paint の起動中はスクリーンセーバーが起動しない設定になってい
-    ますが、"allowscreensaver" オプションを指定すると、スクリーンセーバーが有効
-    になります。これはSDLライブラリのバージョンが 1.2.12 以降の場合に有効なオプ
-    ションであることに注意して下さい。（環境変数 "SDL_VIDEO_ALLOW_SCREENSAVER"
-    の値を "1" に設定しても、同様のことができます）
+    By default, Tux Paint prevents your system's screensaver from starting up.
+    You can override this by using the "allowscreensaver" option. (You can also
+    do this by setting the "SDL_VIDEO_ALLOW_SCREENSAVER" environment variable
+    on your system to "1".)
 
     ⚙ 注: システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファ
     イルで "allowscreensaver=no" または "disablescreensaver=yes" を設定すると上
@@ -1607,11 +1606,12 @@ altprint=mod
     各種オプションは、Tux Paint を起動する際のコマンドラインで指定することもで
     きます。
 
-    --fullscreen
+    --fullscreen=yes
+        --fullscreen=native
         --WIDTHxHEIGHT
+        --orient=portrait
         --buttonsize=SIZE
         --colorsrows=ROWS
-        --orient=portrait
         --native
         --allowscreensaver
         --startblank

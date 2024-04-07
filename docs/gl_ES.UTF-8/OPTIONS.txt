@@ -3,10 +3,10 @@
 
                            Documentación de opcións
 
-        Copyright © 2002-2023 by varios colaboradores; see AUTHORS.txt.
+        Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                            29 de Decembro de 2023
+                              7 de Abril de 2024
 
 +----------------------------------------------------+
 |                       Índice                       |
@@ -167,11 +167,10 @@ native=yes
 
 allowscreensaver=yes
 
-    De xeito predeterminado, Tux Paint impide que o protector de pantalla do
-    seu sistema se inicie. Pode anular isto empregando a opción
-    «allowscreensaver». Nota: Isto require a versión 1.2.12 ou superior da
-    biblioteca SDL. (Tamén pode facelo configurando a variábel de contorno
-    «SDL_VIDEO_ALLOW_SCREENSAVER» do seu sistema en «1».)
+    By default, Tux Paint prevents your system's screensaver from starting up.
+    You can override this by using the "allowscreensaver" option. (You can also
+    do this by setting the "SDL_VIDEO_ALLOW_SCREENSAVER" environment variable
+    on your system to "1".)
 
     ⚙ Note: If used in a system-wide configuration file, may be overridden by
     the user's configuration file using "allowscreensaver=no" or
@@ -1645,11 +1644,12 @@ Button Shortcuts
     Options may also be issued on the command-line when you go to launch Tux
     Paint.
 
-    --fullscreen
+    --fullscreen=yes
+        --fullscreen=native
         --LARGOxALTO
+        --orient=portrait
         --buttonsize=TAMAÑO
         --colorsrows=FILAS
-        --orient=portrait
         --native
         --allowscreensaver
         --startblank

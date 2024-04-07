@@ -97,12 +97,12 @@
             各種設定について          </h2>
 
           <p>
-            Copyright &copy; 2002-2023 by various contributors; <a href="../../AUTHORS.txt">AUTHORS.txt</a> 参照.<br>
+            Copyright &copy; 2002-2024 by various contributors; <a href="../../AUTHORS.txt">AUTHORS.txt</a> 参照.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
           <p>
-            2023年12月29日          </p>
+            2024年4月 7日          </p>
         </center>
       </header>
 
@@ -343,7 +343,7 @@
 
     <dd>
       <p>
-        標準では、Tux Paint の起動中は スクリーンセーバーが起動しない設定になっていますが、"<code>allowscreensaver</code>" オプションを指定すると、スクリーンセーバーが有効になります。これはSDLライブラリのバージョンが 1.2.12 以降の場合に有効なオプションであることに注意して下さい。（環境変数 "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" の値を "<code>1</code>" に設定しても、同様のことができます）      </p>
+        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>注:</strong> システム全体の設定ファイルで設定されている場合は、ユーザーの設定ファイルで "<code>allowscreensaver=no</code>" または "<code>disablescreensaver=yes</code>" を設定すると上書きされることがあります。また、どちらの設定も、コマンドラインオプションの "<code>--disablescreensaver</code>" で変更できます。      </p>
     </dd>
@@ -2380,11 +2380,12 @@
         各種オプションは、Tux Paint を起動する際のコマンドラインで指定することもできます。      </p>
       <dl>
         <dt>
-          <code><b>--fullscreen<br>
+          <code><b>--fullscreen=yes<br>
+          --fullscreen=native<br>
           --<i>WIDTH</i>x<i>HEIGHT</i><br>
+          --orient=portrait<br>
           --buttonsize=<i>SIZE</i><br>
           --colorsrows=<i>ROWS</i><br>
-          --orient=portrait<br>
           --native<br>
           --allowscreensaver<br>
           --startblank<br>

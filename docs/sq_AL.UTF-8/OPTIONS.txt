@@ -3,10 +3,10 @@
 
                              Dokumentim Mundësish
 
- Të drejta kopjimi © 2002-2023 nga kontribues të ndryshëm; shihni AUTHORS.txt.
+ Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                29 dhjetor 2023
+                                 7 prill 2024
 
 +-----------------------------------------------------+
 |                  Pasqyrë e Lëndës                   |
@@ -164,10 +164,9 @@ native=yes
 allowscreensaver=yes
 
     By default, Tux Paint prevents your system's screensaver from starting up.
-    You can override this by using the "allowscreensaver" option. Note: This
-    requires version 1.2.12 or higher of the SDL library. (You can also do this
-    by setting the "SDL_VIDEO_ALLOW_SCREENSAVER" environment variable on your
-    system to "1".)
+    You can override this by using the "allowscreensaver" option. (You can also
+    do this by setting the "SDL_VIDEO_ALLOW_SCREENSAVER" environment variable
+    on your system to "1".)
 
     ⚙ Note: If used in a system-wide configuration file, may be overridden by
     the user's configuration file using "allowscreensaver=no" or
@@ -1617,11 +1616,12 @@ Shkurtore butonash
     Options may also be issued on the command-line when you go to launch Tux
     Paint.
 
-    --fullscreen
+    --fullscreen=yes
+        --fullscreen=native
         --GJERËSIxLARTËSI
+        --orient=portrait
         --buttonsize=MADHËSI
         --colorsrows=RRESHTA
-        --orient=portrait
         --native
         --allowscreensaver
         --startblank

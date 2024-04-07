@@ -97,12 +97,12 @@
             Documentación de opcións          </h2>
 
           <p>
-            Copyright &copy; 2002-2023 by varios colaboradores; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright &copy; 2002-2024 by varios colaboradores; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
           <p>
-            29 de Decembro de 2023          </p>
+             7 de Abril de 2024          </p>
         </center>
       </header>
 
@@ -343,7 +343,7 @@
 
     <dd>
       <p>
-        De xeito predeterminado, Tux Paint impide que o protector de pantalla do seu sistema se inicie. Pode anular isto empregando a opción «<code>allowscreensaver</code>». Nota: Isto require a versión 1.2.12 ou superior da biblioteca SDL. (Tamén pode facelo configurando a variábel de contorno «<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>» do seu sistema en «<code>1</code>».)      </p>
+        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>allowscreensaver=no</code>" or "<code>disablescreensaver=yes</code>". In both cases, may be overridden by the command-line option "<code>--disablescreensaver</code>".      </p>
     </dd>
@@ -2380,11 +2380,12 @@
         Options may also be issued on the command-line when you go to launch Tux Paint.      </p>
       <dl>
         <dt>
-          <code><b>--fullscreen<br>
+          <code><b>--fullscreen=yes<br>
+          --fullscreen=native<br>
           --<i>LARGO</i>x<i>ALTO</i><br>
+          --orient=portrait<br>
           --buttonsize=<i>TAMAÑO</i><br>
           --colorsrows=<i>FILAS</i><br>
-          --orient=portrait<br>
           --native<br>
           --allowscreensaver<br>
           --startblank<br>
