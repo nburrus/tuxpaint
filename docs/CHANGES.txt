@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.March.28 (0.9.33)
+2024.April.8 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
@@ -46,6 +46,12 @@ https://tuxpaint.org/
     * Support for brush descriptions, including localization.
       (Adds a new "tuxpaint-brushes.pot" & PO files.)
       (Management scripts based on those found in `tuxpaint-stamps`.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * WIP New option, --ungroupmagictools, to ungroup Magic tools
+      (one big long list, rather than paginating; grouping was
+      added in Tux Paint 0.9.27)
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/229/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Make screen refresh more snappy on macOS.

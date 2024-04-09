@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - March 25, 2024
+  June 14, 2002 - April 8, 2024
 */
 
 #include "platform.h"
@@ -1427,6 +1427,7 @@ static int only_uppercase;
 static int disable_magic_controls;
 static int disable_magic_sizes;
 static int disable_shape_controls;
+static int no_magic_groups = 0;
 
 static int shape_mode = SHAPEMODE_CENTER;
 static int stamp_rotation_ctrl = 0;
@@ -4334,6 +4335,9 @@ static void mainloop(void)
 
                 grp = magic_group;
                 cur = cur_magic[grp];
+
+                if (no_magic_groups)
+                  which += 2;
 
                 if (which == 0 || which == 1)
                 {
@@ -10042,10 +10046,14 @@ static void draw_magic(void)
   /* How many can we show? */
 
   most = (buttons_tall * gd_toolopt.cols) - (gd_toolopt.cols * 2) - TOOLOFFSET - 2;
+  if (no_magic_groups)
+    most = most + gd_toolopt.cols;
   if (disable_magic_controls)
     most = most + gd_toolopt.cols;
   if (disable_magic_sizes)
     most = most + gd_toolopt.cols;
+
+  /* Draw scroll bars, if we need them */
 
   if (num_magics[magic_group] > most + TOOLOFFSET)
   {
@@ -10082,6 +10090,8 @@ static void draw_magic(void)
     max = most + TOOLOFFSET;
   }
 
+
+  /* Draw the magic tool buttons */
 
   for (magic = magic_scroll[magic_group]; magic < magic_scroll[magic_group] + max; magic++)
   {
@@ -10124,38 +10134,40 @@ static void draw_magic(void)
 
   /* Draw group pagination buttons: */
 
-  /* Show prev button: */
+  if (!no_magic_groups)
+  {
+    /* Show prev button: */
 
-  button_color = img_black;
-  button_body = img_btn_nav;
+    button_color = img_black;
+    button_body = img_btn_nav;
 
-  dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-  dest.y = r_ttoolopt.h + (((most + TOOLOFFSET) / 2) * button_h);
+    dest.x = WINDOW_WIDTH - r_ttoolopt.w;
+    dest.y = r_ttoolopt.h + (((most + TOOLOFFSET) / 2) * button_h);
 
-  SDL_BlitSurface(button_body, NULL, screen, &dest);
+    SDL_BlitSurface(button_body, NULL, screen, &dest);
 
-  dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_prev->w) / 2;
-  dest.y = (r_ttoolopt.h + (((most + TOOLOFFSET) / 2) * button_h) + (button_h - img_prev->h) / 2);
+    dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_prev->w) / 2;
+    dest.y = (r_ttoolopt.h + (((most + TOOLOFFSET) / 2) * button_h) + (button_h - img_prev->h) / 2);
 
-  SDL_BlitSurface(button_color, NULL, img_prev, NULL);
-  SDL_BlitSurface(img_prev, NULL, screen, &dest);
+    SDL_BlitSurface(button_color, NULL, img_prev, NULL);
+    SDL_BlitSurface(img_prev, NULL, screen, &dest);
 
-  /* Show next button: */
+    /* Show next button: */
 
-  button_color = img_black;
-  button_body = img_btn_nav;
+    button_color = img_black;
+    button_body = img_btn_nav;
 
-  dest.x = WINDOW_WIDTH - button_w;
-  dest.y = r_ttoolopt.h + (((most + TOOLOFFSET) / gd_toolopt.cols) * button_h);
+    dest.x = WINDOW_WIDTH - button_w;
+    dest.y = r_ttoolopt.h + (((most + TOOLOFFSET) / gd_toolopt.cols) * button_h);
 
-  SDL_BlitSurface(button_body, NULL, screen, &dest);
+    SDL_BlitSurface(button_body, NULL, screen, &dest);
 
-  dest.x = WINDOW_WIDTH - button_w + (button_w - img_next->w) / 2;
-  dest.y = (r_ttoolopt.h + (((most + TOOLOFFSET) / gd_toolopt.cols) * button_h) + (button_h - img_next->h) / 2);
+    dest.x = WINDOW_WIDTH - button_w + (button_w - img_next->w) / 2;
+    dest.y = (r_ttoolopt.h + (((most + TOOLOFFSET) / gd_toolopt.cols) * button_h) + (button_h - img_next->h) / 2);
 
-  SDL_BlitSurface(button_color, NULL, img_next, NULL);
-  SDL_BlitSurface(img_next, NULL, screen, &dest);
-
+    SDL_BlitSurface(button_color, NULL, img_next, NULL);
+    SDL_BlitSurface(img_next, NULL, screen, &dest);
+  }
 
   /* Draw magic controls: */
 
@@ -10180,15 +10192,18 @@ static void draw_magic(void)
       button_color = img_btn_off;       /* Unavailable */
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w;
-    dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h);
+    // dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h);
+    dest.y = (button_h * buttons_tall + r_ttools.h) - button_h * (disable_magic_sizes ? 1 : 2);
 
     SDL_BlitSurface(button_color, NULL, screen, &dest);
 
     dest.x = WINDOW_WIDTH - r_ttoolopt.w + (button_w - img_magic_paint->w) / 2;
-    dest.y =
-      (r_ttoolopt.h +
-       ((most / gd_toolopt.cols +
-         (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h) + (button_h - img_magic_paint->h) / 2);
+    //dest.y =
+    //  (r_ttoolopt.h +
+    //   ((most / gd_toolopt.cols +
+    //     (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h) + (button_h - img_magic_paint->h) / 2);
+    dest.y = (button_h * buttons_tall + r_ttools.h) - button_h * (disable_magic_sizes ? 1 : 2) +
+      ((button_h - img_magic_paint->h) / 2);
 
     SDL_BlitSurface(img_magic_paint, NULL, screen, &dest);
 
@@ -10203,18 +10218,20 @@ static void draw_magic(void)
       button_color = img_btn_off;       /* Unavailable */
 
     dest.x = WINDOW_WIDTH - button_w;
-    dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h);
+    // dest.y = r_ttoolopt.h + ((most / gd_toolopt.cols + (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h);
+    dest.y = (button_h * buttons_tall + r_ttools.h) - button_h * (disable_magic_sizes ? 1 : 2);
 
     SDL_BlitSurface(button_color, NULL, screen, &dest);
 
     dest.x = WINDOW_WIDTH - button_w + (button_w - img_magic_fullscreen->w) / 2;
-    dest.y =
-      (r_ttoolopt.h +
-       ((most / gd_toolopt.cols +
-         (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h) + (button_h - img_magic_fullscreen->h) / 2);
+    //dest.y =
+    //  (r_ttoolopt.h +
+    //   ((most / gd_toolopt.cols +
+    //     (TOOLOFFSET + 2) / gd_toolopt.cols) * button_h) + (button_h - img_magic_fullscreen->h) / 2);
+    dest.y = (button_h * buttons_tall + r_ttools.h) - button_h * (disable_magic_sizes ? 1 : 2) +
+      ((button_h - img_magic_fullscreen->h) / 2);
 
     SDL_BlitSurface(img_magic_fullscreen, NULL, screen, &dest);
-
   }
 
 
@@ -21781,12 +21798,17 @@ static void load_magic_plugins(void)
                 }
                 else
                 {
-                  int j, group, idx;
+                  int j, group, idx, want_group, want_order;
                   SDL_Surface *icon_tmp;
 
                   for (i = 0; i < n; i++)
                   {
-                    group = magic_funcs[num_plugin_files].get_group(magic_api_struct, i);
+                    want_group = magic_funcs[num_plugin_files].get_group(magic_api_struct, i);
+                    if (!no_magic_groups)
+                      group = want_group;
+                    else
+                      group = 0;
+
                     if (group < MAX_MAGIC_GROUPS)
                     {
                       idx = num_magics[group];
@@ -21796,7 +21818,11 @@ static void load_magic_plugins(void)
                       magics[group][idx].handle_idx = num_plugin_files;
                       magics[group][idx].group = group;
                       magics[group][idx].name = magic_funcs[num_plugin_files].get_name(magic_api_struct, i);
-                      magics[group][idx].order = magic_funcs[num_plugin_files].get_order(i);
+                      want_order = magic_funcs[num_plugin_files].get_order(i);
+                      if (!no_magic_groups)
+                        magics[group][idx].order = want_order;
+                      else
+                        magics[group][idx].order = (want_group * 1000000) + want_order;
 
                       magics[group][idx].avail_modes = magic_funcs[num_plugin_files].modes(magic_api_struct, i);
 
@@ -21896,6 +21922,12 @@ static void load_magic_plugins(void)
 
                         num_magics[group]++;
                         num_magics_total++;
+
+                        if (num_magics[group] >= MAX_MAGICS_PER_GROUP) {
+                          fprintf(stderr, "Error: exceeded maximum number of Magic tools (%d) in group %d!\n",
+                            MAX_MAGICS_PER_GROUP, group);
+                          num_magics[group]--; // FIXME: Do something better than just this! -bjk 2024.04.08
+                        }
                       }
                       else
                       {
@@ -32367,8 +32399,11 @@ int calc_magic_control_rows(void)
 {
   int r;
 
-  /* Start with group changing (left/right) buttons */
-  r = 1;
+  r = 0;
+
+  /* Add group changing (left/right) buttons */
+  if (!no_magic_groups)
+    r++;
 
   /* Add magic controls (paint vs fullscreen) */
   if (!disable_magic_controls)
