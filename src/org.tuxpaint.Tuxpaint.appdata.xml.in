@@ -47,11 +47,12 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.33" date="2024-03-25">
+    <release version="0.9.33" date="2024-04-08">
       <description>
         <p>Transparent Erasers.</p>
         <p>Brushes support descriptions.</p>
-        <p>New Magic tools: Dither, Specular.</p>
+        <p>New Magic tools: Dither, Specular, Filled Polygon.</p>
+        <p>Magic tools may be ungrouped ("ungroupmagictools").</p>
         <p>Localization updates.</p>
       </description>
     </release>
