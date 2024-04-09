@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              19 de Marzo de 2024
+                              8 de Abril de 2024
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -103,15 +103,22 @@ D. What's New in Tux Paint version 0.9.33?
 Transparent Erasers
     Erasers that lightly expose more and more of the background.
 
-Brush descriptions
-    Brushes (used by Paint and Line tools) can now include descriptions that
-    appear when the brush is selected.
-
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
 
 Specular magic tool
     Paint reflections of the opposite side of the drawing.
+
+Filled Polygon magic tool
+    Create polygons by placing three or more connected points on the canvas.
+
+Magic tool ungrouping option
+    The numerous Magic tools can be presented as a single long list (as in Tux
+    Paint prior to 0.9.27), rather than paged groups.
+
+Brush descriptions
+    Brushes (used by Paint and Line tools) can now include descriptions that
+    appear when the brush is selected.
 
 
 See CHANGES.txt for the complete list of changes.
