@@ -2,11 +2,12 @@
 
    A Magic tool for Tux Paint that creates a filled polygon.
    by Bill Kendrick <bill@newbreedsoftware.com>
+   with help from Pere Pujal Carabantes
 
    Scanline polygon fill routine based on public-domain code
    by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-   Last updated: March 28, 2024
+   Last updated: April 8, 2024
 */
 
 
@@ -49,7 +50,7 @@ int polyfill_pt_y[MAX_PTS];
 int polyfill_num_pts = 0;
 int polyfill_editing = MAX_PTS;
 int polyfill_dragged = 0;
-
+int polyfill_active = 0;
 
 Mix_Chunk *snd_effects[NUM_TOOLS];
 
@@ -375,7 +376,10 @@ polyfill_release(magic_api * api, int which,
 void polyfill_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   polyfill_color = SDL_MapRGB(canvas->format, r, g, b);
-  polyfill_draw_preview(api, canvas, 1);
+
+  if (polyfill_active) {
+    polyfill_draw_preview(api, canvas, 1);
+  }
 }
 
 void polyfill_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * snapshot, Uint8 size, SDL_Rect * update_rect)
@@ -414,6 +418,8 @@ void polyfill_switchin(magic_api * api, int which, int mode,
   if (polyfill_snapshot != NULL) {
     SDL_BlitSurface(canvas, NULL, polyfill_snapshot, NULL);
   }
+
+  polyfill_active = 1;
 }
 
 void polyfill_switchout(magic_api * api, int which, int mode,
@@ -421,6 +427,11 @@ void polyfill_switchout(magic_api * api, int which, int mode,
 {
   polyfill_num_pts = 0;
   polyfill_editing = MAX_PTS;
+  polyfill_active = 0;
+
+  if (polyfill_snapshot != NULL) {
+    SDL_BlitSurface(polyfill_snapshot, NULL, canvas, NULL);
+  }
 }
 
 /* Based on public-domain code by Darel Rex Finley, 2007
