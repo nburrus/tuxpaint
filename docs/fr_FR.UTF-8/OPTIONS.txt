@@ -510,6 +510,24 @@ nomagicsizes=yes
 
 
 
+ungroupmagictools=yes
+
+    By default, the Magic tools in Tux Paint are organized into groups of
+    similar tools (e.g., all of the color, saturation, darken/lighten tools
+    together). This option removes the grouping, and places all of the tools in
+    one long list.
+
+    📜 Note: Magic tool groups were added in Tux Paint 0.9.27. The option to
+    disable grouping was added to Tux Paint in version 0.9.33.
+
+    ⚙ Note : si utilisé dans un fichier de configuration pour tout le monde, il
+    peut être remplacé par le fichier de configuration de l'utilisateur en
+    utilisant "ungroupmagictools=no" ou "groupmagictools=yes". Dans les deux
+    cas, il peut être remplacé avec l'option en ligne de commande
+    "--groupmagictools".
+
+
+
 noshapecontrols=yes
 
     Désactive les boutons de contrôle affichés lors de l'utilisation de l'
