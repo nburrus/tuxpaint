@@ -556,6 +556,12 @@ g.「まほう」ツール（特殊効果）
     「まほう」の効果を選択することができます。効果を適用する方法は、クリック＋
     ドラッグ、単なるクリックなど、ツールごとに様々です。
 
+    The Magic Tools
+
+
+        「magic-docs」フォルダ内のドキュメント「まほう」ツールの一覧もお読みく
+        ださい。
+
     「まほう」効果の制御
 
 
@@ -588,8 +594,9 @@ g.「まほう」ツール（特殊効果）
 
         📜 このオプションは、バージョン 0.9.30 以降で追加されました。
 
-    「magic-docs」フォルダ内のドキュメント「まほう」ツールの一覧もお読みくださ
-    い。
+    ⚙ Note: If the "ungroupmagictools" option is set, Tux Paint won't split
+    Magic tools into groups of related tools, and instead present them all as
+    one large list. See the "Options" documentation.
 
 
 

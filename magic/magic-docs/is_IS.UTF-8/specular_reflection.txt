@@ -1,0 +1,17 @@
+                  Tux Paint "Magic" Tool: Specular Reflection
+
+                                Group: Painting
+
+               Author: Bill Kendrick <bill@newbreedsoftware.com>
+
+Draw a specular reflection of the other half of your drawing, like a pond or
+lake.
+
+This tool is operated in a freehand fashion.
+
+See also: Reflection.
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.33
+

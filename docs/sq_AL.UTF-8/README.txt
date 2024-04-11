@@ -610,6 +610,11 @@ g.Mjeti “Magjik” (Efekte Speciale)
     tool, you can either click and drag around the picture, and/or simply click
     the picture once, to apply the effect.
 
+    The Magic Tools
+
+
+        See the instructions for each Magic tool (in the 'magic-docs' folder).
+
     Kontrolle &Magjiku
 
 
@@ -643,7 +648,9 @@ g.Mjeti “Magjik” (Efekte Speciale)
 
         📜 This option was added starting with Tux Paint version 0.9.30.
 
-    See the instructions for each Magic tool (in the 'magic-docs' folder).
+    ⚙ Note: If the "ungroupmagictools" option is set, Tux Paint won't split
+    Magic tools into groups of related tools, and instead present them all as
+    one large list. See the "Options" documentation.
 
 
 

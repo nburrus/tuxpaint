@@ -9,6 +9,8 @@ figura juaj një pasqyrim.
 
 Ky mjet përdoret si të ishte mjet vizatimi me dorë të lirë.
 
+Shihni edhe: Specular Reflection.
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.33

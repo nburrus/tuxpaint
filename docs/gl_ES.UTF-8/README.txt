@@ -620,6 +620,12 @@ g.Ferramenta «Maxia» (efectos especiais)
     dependendo da ferramenta, pode premer e arrastrar arredor da imaxe e/ou
     simplemente premer na imaxe unha vez para aplicar o efecto.
 
+    The Magic Tools
+
+
+        Consulte as instrucións de cada ferramenta Máxica (no cartafol
+        «magic-docs»).
+
     Magic Controls
 
 
@@ -653,8 +659,9 @@ g.Ferramenta «Maxia» (efectos especiais)
 
         📜 This option was added starting with Tux Paint version 0.9.30.
 
-    Consulte as instrucións de cada ferramenta Máxica (no cartafol
-    «magic-docs»).
+    ⚙ Note: If the "ungroupmagictools" option is set, Tux Paint won't split
+    Magic tools into groups of related tools, and instead present them all as
+    one large list. See the "Options" documentation.
 
 
 

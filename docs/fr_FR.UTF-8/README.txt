@@ -644,6 +644,12 @@ g.Outil "Magie" (Effets spéciaux)
     l'outil, vous pouvez soit cliquer et faire glisser dans l'image, et / ou
     simplement cliquer une fois sur l'image pour appliquer l'effet.
 
+    The Magic Tools
+
+
+        Voir les instructions pour chaque outil 'Magie' (dans le dossier
+        'magic-docs').
+
     Contrôles des outils Magie
 
 
@@ -681,8 +687,9 @@ g.Outil "Magie" (Effets spéciaux)
         📜 Cette option a été ajoutée en démarrant la version 0.9.30 de Tux
         Paint.
 
-    Voir les instructions pour chaque outil 'Magie' (dans le dossier
-    'magic-docs').
+    ⚙ Note: If the "ungroupmagictools" option is set, Tux Paint won't split
+    Magic tools into groups of related tools, and instead present them all as
+    one large list. See the "Options" documentation.
 
 
 
