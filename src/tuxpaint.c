@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 8, 2024
+  June 14, 2002 - April 10, 2024
 */
 
 #include "platform.h"
@@ -8113,6 +8113,7 @@ void show_usage(int exitcode)
           "  [--nostampcontrols | --stampcontrols]\n"
           "  [--nomagiccontrols | --magiccontrols]\n"
           "  [--nomagicsizes | --magicsizes]\n"
+          "  [--ungroupmagictools | --groupmagictools]\n"
           "  [--noshapecontrols | --shapecontrols]\n"
           "  [--nolabel | --label]\n"
           "  [--nobrushspacing | --brushspacing]\n"
@@ -28404,6 +28405,7 @@ static void setup_config(char *argv[])
   SETBOOL(disable_brushspacing);
   SETBOOL(disable_magic_controls);
   SETBOOL(disable_magic_sizes);
+  SETBOOL(no_magic_groups);
   SETBOOL(disable_shape_controls);
   SETBOOL(disable_print);
   SETBOOL(disable_quit);

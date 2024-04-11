@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.April.8 (0.9.33)
+2024.April.10 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
