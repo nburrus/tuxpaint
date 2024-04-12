@@ -29,8 +29,6 @@ https://tuxpaint.org/
       Scanline polygon fill routine based on public-domain code
       by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/251/
-      + WIP Needs screenshot (for docs)
-      + WIP Needs icon
       + WIP Needs sound effect
       + WIP Needs testing & tweaking
 

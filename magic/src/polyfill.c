@@ -7,7 +7,7 @@
    Scanline polygon fill routine based on public-domain code
    by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-   Last updated: April 8, 2024
+   Last updated: April 12, 2024
 */
 
 
@@ -29,11 +29,11 @@ char * polyfill_names[NUM_TOOLS] = {
 };
 
 char * polyfill_descr[NUM_TOOLS] = {
-  gettext_noop("Click multiple times in your picture to create a filled polygon. Click your starting position to complete the shape."),
+  gettext_noop("Click multiple times in your picture to create a filled polygon. You may drag control points to alter the shape. Click the first point to complete the shape."),
 };
 
 char * polyfill_icon_filenames[NUM_TOOLS] = {
-  "dither.png", // FIXME
+  "polyfill.png",
 };
 
 char * polyfill_snd_filenames[NUM_TOOLS] = {
