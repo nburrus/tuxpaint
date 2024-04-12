@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.April.11 (0.9.33)
+2024.April.12 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
@@ -89,7 +89,7 @@ https://tuxpaint.org/
       + Magic tools can provide a value that allows them to be
         sorted and grouped together (rather than always relying on the
         localized name of the tool).
-        - WIP Updated many magic tools to take advantage of this.
+        - Updated many magic tools to take advantage of this.
       + Note: `TP_MAGIC_API_VERSION` bumped to 0x00000009.
       Bill Kendrick <bill@newbreedsoftware.com>
 
