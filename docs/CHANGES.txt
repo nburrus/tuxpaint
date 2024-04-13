@@ -37,6 +37,12 @@ https://tuxpaint.org/
     * Transparent erasers
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * New Brushes:
+    ------------
+    * Pencil & Acrylic
+      Based on brushes included with GIMP <https://www.gimp.org/>
+      Created for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * Support for brush descriptions, including localization.

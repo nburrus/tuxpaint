@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-26 06:14:50+0000\n"
+"POT-Creation-Date: 2024-04-13 03:02:21+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: \n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
+
+#: ../data/brushes/acrylic.txt
+msgid "Paint with a blotty brush that looks like acrylic paint."
+msgstr ""
 
 #: ../data/brushes/arrow.txt
 msgid "The arrow points the direction you draw."
@@ -56,6 +60,10 @@ msgstr "Pintar manchas de tinta aleatórias no teu desenho."
 #: ../data/brushes/lines-angled.txt
 msgid "Hash marks that draw perpendicular to the direction your painting."
 msgstr "Marcas de traço que desenham perpendicularmente à direção em que está a pintar."
+
+#: ../data/brushes/pencil.txt
+msgid "This draws a pencil effect that follows the direction of your strokes."
+msgstr ""
 
 #: ../data/brushes/sparkles.txt
 msgid "Paint with sparkles!"
