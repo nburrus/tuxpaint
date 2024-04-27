@@ -154,8 +154,9 @@ the 'Tux Paint Installer,' but chose not to have shortcuts installed, you'll
 need to double-click the "tuxpaint.exe" icon in the "Tux Paint" folder on your
 computer.
 
-By default, the 'Tux Paint Installer' will put Tux Paint's folder in "C:\
-Program Files\", though you may have changed this when you ran the installer.
+By default, the 'Tux Paint Installer' will put Tux Paint's folder in 
+"C:\Program Files\TuxPaint\", though you may have changed this when you ran the
+installer.
 
 If you used the 'ZIP-file' download, Tux Paint's folder will be wherever you
 extracted the contents of the ZIP file.
@@ -1155,21 +1156,21 @@ You can simply convert the picture to the format Tux Paint uses — PNG (Portabl
 Network Graphic) — and place it in Tux Paint's "saved" directory/folder. Here
 is where to find it (by default):
 
-Windows 10, 8, 7, Vista
-    Inside the user's "AppData" folder, e.g.: "C:\Users\username\AppData\
-    Roaming\TuxPaint\saved\".
-
-Windows 2000, XP
-    Inside the user's "Application Data" folder, e.g.: "C:\Documents and
-    Settings\username\Application Data\TuxPaint\saved\".
+Windows Vista, Windows 8, Windows 10, Windows 11
+    In the user's "AppData" folder:
+    e.g., "C:\Users\username\AppData\Roaming\TuxPaint\saved\"
 
 macOS
-    Inside the user's "Library" folder, e.g.: "/Users/username/Library/
-    Application Support/Tux Paint/saved/".
+    In the user's "Application Support" folder:
+    e.g., "/Users/username/Library/Application Support/TuxPaint/saved/"
 
-Linux/Unix
-    Inside a hidden ".tuxpaint" directory, in the user's home directory
-    ("$HOME"), e.g. "/home/username/.tuxpaint/saved/".
+Linux / Unix
+    In the user's "home directory" folder:
+    e.g., "/home/username/.tuxpaint/saved/"
+
+Haiku
+    In the user's "settings" folder:
+    e.g., "/boot/home/config/settings/TuxPaint/saved/"
 
 
 💡 Note: It is also from this folder that you can copy or open pictures drawn in

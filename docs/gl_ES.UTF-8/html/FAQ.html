@@ -312,27 +312,34 @@
           A non ser que lle solicite a Tux Paint que garde nun lugar específico (usando a opción «savedir»), Tux Paint garda nun lugar estándar na súa unidade local:        </p>
 
         <dl>
-          <dt>
-            <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
-          </dt>
+  <dt>
+    <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
+  </dt>
 
-          <dd>
-            No cartafol «AppData» do usuario:<br> p. ex.: <code>C:\Users\<i>nome de usuario</i>\AppData\Roaming\TuxPaint\saved</code>          </dd>
+  <dd>
+    In the user's "AppData" folder:<br> e.g., <nobr>"<code>C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\</code>"</nobr>  </dd>
 
-          <dt>
-            <cite>macOS</cite>
-          </dt>
+  <dt>
+    <cite>macOS</cite>
+  </dt>
 
-          <dd>
-            No cartafol «Asistencia de aplicacións» do usuario::<br> e.g., <code>/Users/<i>nome de usuario</i>/Library/Applicaton Support/TuxPaint/saved/</code>          </dd>
+  <dd>
+    In the user's "Application Support" folder:<br> e.g., <nobr>"<code>/Users/nome de usuario/Library/Application Support/TuxPaint/saved/</code>"</nobr>  </dd>
 
-          <dt>
-            <cite>Linux / Unix</cite>
-          </dt>
+  <dt>
+    <cite>Linux / Unix</cite>
+  </dt>
 
-          <dd>
-            No directorio persoal do usuario («<code>$HOME</code>»), baixo un subcartafol «.tuxpaint»:<br> e.g., <code>/home/<i>nome de usuario</i>/.tuxpaint/saved/</code>          </dd>
-        </dl>
+  <dd>
+    In the user's "home directory" folder:<br> e.g., <nobr>"<code>/home/nome de usuario/.tuxpaint/saved/</code>"</nobr>  </dd>
+
+  <dt>
+    <cite>Haiku</cite>
+  </dt>
+
+  <dd>
+    In the user's "settings" folder:<br> e.g., <nobr>"<code>/boot/home/config/settings/TuxPaint/saved/</code>"</nobr>  </dd>
+</dl>
 
         <p>
           As imaxes almacénanse como mapas de bits PNG, que a maioría dos programas modernos deberían poder cargar (editores de imaxes, procesadores de texto, navegadores web, etc.)        </p>
@@ -610,10 +617,10 @@
 
       <dd>
         <p>
-          Se Tux Paint se interrómpe coa mensaxe: «You're already running a copy of Tux Paint!», significa que foi iniciado nos últimos 30 segundos. (En Unix/Linux, esta mensaxe aparecería nunha consola de terminal se executase Tux Paint desde unha liña de ordes. En Windows, esta mensaxe aparecería nun ficheiro chamado «<code>stdout.txt</code>» no mesmo cartafol onde  reside<code>TuxPaint. exe</code> (p. ex.: en «<code>C:\Program Files\TuxPaint</code>»).        </p>
+          If Tux Paint aborts with the message: "You're already running a copy of Tux Paint!", this means it has been launched in the last 30 seconds. (On Unix/Linux, this message would appear in a terminal console if you ran Tux Paint from a command-line. On Windows, this message would appear in a file named "<code>stdout.txt</code>" in the same folder where <code>TuxPaint.exe</code> resides (e.g., in <nobr>"<code>C:\Program Files\TuxPaint\</code>"</nobr>).        </p>
 
         <p>
-          Un ficheiro de bloqueo («~/.tuxpaint/lockfile.dat» en Linux e Unix, «userdata\lockfile.dat» en Windows) úsase para asegurarse de que Tux Paint non se executa demasiadas veces á vez (por exemplo, porque un cativo preme impaciente na súa icona máis dunha vez) .        </p>
+          A lockfile (e.g., <nobr>"<code>/home/nome de usuario/.tuxpaint/lockfile.dat</code>"</nobr> on Linux and Unix, <nobr>"<code>userdata\lockfile.dat</code>"</nobr> on Windows) is used to make sure Tux Paint isn't run too many times at once (e.g., due to a child impatiently clicking its icon more than once).        </p>
 
         <p>
           Mesmo se o ficheiro de bloqueo existe, contén a «hora» na que se executou Tux Paint por última vez. Se pasaron máis de 30 segundos, Tux Paint debería funcionar ben e simplemente actualiza o ficheiro de bloqueo coa hora actual.        </p>
@@ -694,12 +701,19 @@
           <li>
             <cite>Windows</cite>
             <p>
-              Under Windows, Tux Paint first examines the configuration file:            </p>
+              Under Windows, it first examines the system-wide configuration file, located here:            </p>
 
             <blockquote>
               <p>
-                <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
-              </p>
+                <nobr><code>C:\Program Files\TuxPaint\tuxpaint.cfg</code></nobr>              </p>
+            </blockquote>
+
+            <p>
+              A continuación, examina o ficheiro de configuración persoal do usuario:            </p>
+
+            <blockquote>
+              <p>
+                <nobr><code>C:\Users\nome de usuario\AppData\Roaming\TuxPaint\tuxpaint.cfg</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -713,8 +727,7 @@
 
             <blockquote>
               <p>
-                <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
-              </p>
+                <nobr><code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -722,8 +735,7 @@
 
             <blockquote>
               <p>
-                <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
-              </p>
+                <nobr><code>/Users/nome de usuario/Library/Application Support/TuxPaint/tuxpaint.cfg</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -737,8 +749,7 @@
 
             <blockquote>
               <p>
-                <code>/etc/tuxpaint/tuxpaint.conf</code>
-              </p>
+                <nobr><code>/etc/tuxpaint/tuxpaint.conf</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -746,8 +757,7 @@
 
             <blockquote>
               <p>
-                <code>/home/nome de usuario/.tuxpaintrc</code>
-              </p>
+                <nobr><code>/home/nome de usuario/.tuxpaintrc</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -761,8 +771,7 @@
 
             <blockquote>
               <p>
-                <code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code>
-              </p>
+                <nobr><code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -774,7 +783,7 @@
           Isto significa que se estabelece algo nun ficheiro de configuración que non quere estabelecer, terá que cambiar o ficheiro de configuración (se pode) ou anular a opción na liña de ordes.        </p>
 
         <p>
-          Por exemplo, en Linux e Unix, se «<code>/etc/tuxpaint/tuxpaint.conf</code>» inclúe esta opción para desactivar o son...        </p>
+          For example, on Linux and Unix, if <nobr>"<code>/etc/tuxpaint/tuxpaint.conf</code>"</nobr> includes this option to disable sound...        </p>
 
         <blockquote>
           <p>
@@ -783,7 +792,7 @@
         </blockquote>
 
         <p>
-          ...entón pode volver activar o son engadindo esta opción ao seu propio ficheiro «<code>/home/nome de usuario/.tuxpaintrc</code>»:        </p>
+          ...then you can reenable sound by either adding this option to your own <nobr>"<code>/home/nome de usuario/.tuxpaintrc</code>"</nobr> file:        </p>
 
         <blockquote>
           <p>

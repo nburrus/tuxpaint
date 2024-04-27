@@ -1196,17 +1196,19 @@ Sauvegarder la configuration d'impression
 
         Si vous ne le changez pas, l' emplacement par défaut est :
 
-          o Linux & Unix - Sous un répertoire caché nommé ".tuxpaint" dans
-            votre répertoire personnel (aka "~" ou "$HOME")
-            Exemple: /home/username/.tuxpaint/saved/
-          o Windows - Dans un dossier nommé "TuxPaint" dans votre dossier
-            "Application Data".
-            Exemple: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\saved\
-          o macOS - Dans un dossier nommé "TuxPaint" dans votre dossier
-            "Application Support".
-            Exemple: /Users/Username/Library/Application Support/TuxPaint/saved
-            /
+        Linux / Unix
+            Under a hidden directory in your home directory:
+            /home/nom d'utilisateur/.tuxpaint/saved/
+
+        Windows
+            C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\
+
+        macOS
+            /Users/nom d'utilisateur/Library/Application Support/TuxPaint/saved/
+
+        Haiku
+            /boot/home/config/settings/TuxPaint/saved/
+
 
         💡 Note : Si vous spécifiez un lecteur Windows (pzr ex. "H:\"), vous
         devez spécifiez également un sous-répertoire.

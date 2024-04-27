@@ -1786,17 +1786,24 @@
       <p>
         Se non o anula, a ubicación <b><i>predeterminada</i></b> é:      </p>
 
-      <ul>
-        <li>Linux e Unix: baixo un directorio agochado chamado «<code>.tuxpaint</code>» no seu directorio persoal (tamén coñecido como «<code>~</code>» ou «<code>$HOME</code>»)<br>
-            Exemplo: <code>/home/<i>username</i>/.tuxpaint/saved/</code>        </li>
+      <dl>
+        <dt>Linux / Unix</dt>
+        <dd>
+          Under a hidden directory in your home directory:<br/>
+          <nobr><code>/home/nome de usuario/.tuxpaint/saved/</code></nobr>        </dd>
 
-        <li>Windows: Dentro un cartafol chamado «<code>TuxPaint</code>» no seu cartafol «<code>Application Data</code>».<br>
-            Exemplo: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\saved\</code>          <br>
-        </li>
+        <dt>Windows</dt>
+        <dd>
+          <nobr><code>C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\</code></nobr>        </dd>
 
-        <li>macOS: Dentro un cartafol chamado «<code>TuxPaint</code>» no seu cartafol «<code>Application Support</code>».<br>
-            Exemplo: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/saved/</code>        </li>
-      </ul>
+        <dt>macOS</dt>
+        <dd>
+          <nobr><code>/Users/nome de usuario/Library/Application Support/TuxPaint/saved/</code></nobr>        </dd>
+
+        <dt>Haiku</dt>
+        <dd>
+          <nobr><code>/boot/home/config/settings/TuxPaint/saved/</code></nobr>        </dd>
+      </dl>
 
       <p class="note">
         <span title="Information">&#128161;</span>        <strong>Note:</strong> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>

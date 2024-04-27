@@ -161,9 +161,9 @@ si vous avez utilisé 'Tux Paint Installer', mais que vous avez choisi de ne pas
 installer de raccourcis, vous devrez double-cliquer sur l'icône "tuxpaint.exe"
 dans le dossier "Tux Paint" de votre ordinateur.
 
-Par défaut, le 'Tux Paint Installer' mettra le dossier de Tux Paint dans "C:\
-Program Files\",ou bien vous avez pu changer cela lors de l'exécution du
-programme d'installation.
+By default, the 'Tux Paint Installer' will put Tux Paint's folder in 
+"C:\Program Files\TuxPaint\", though you may have changed this when you ran the
+installer.
 
 Si vous avez utilisé le téléchargement de 'ZIP-file', le dossier de Tux Paint
 sera là où vous l'avez placé lorsque vous avez décompressé le fichier ZIP.
@@ -1236,22 +1236,22 @@ Pour ce faire, il vous suffit de convertir l'image dans le format utilisé par
 Tux Paint, qui est —PNG (Portable Network Graphic), et de la placer dans le
 répertoire "saved" de Tux Paint. C'est là où on les trouve (par défaut) :
 
-Windows 10, 8, 7, Vista
-    Dans le dossier utilisateurs "AppData", par ex. "C:\Users\nom d'utilisateur
-    \AppData\Roaming\TuxPaint\saved\".
-
-Windows 2000, XP
-    Dans le dossier utilisateurs "Application Data", par ex. "C:\Documents and
-    Settings\nom d'utilisateur\Application Data\TuxPaint\saved\".
+Windows Vista, Windows 8, Windows 10, Windows 11
+    In the user's "AppData" folder:
+    e.g., "C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\"
 
 macOS
-    Dans le dossier utilisateurs "Library", par ex. "/Users/nom d'utilisateur/
-    Library/Application Support/Tux Paint/saved/".
+    In the user's "Application Support" folder:
+    e.g., 
+    "/Users/nom d'utilisateur/Library/Application Support/TuxPaint/saved/"
 
-Linux/Unix
-    Dans un répertoire caché ".tuxpaint" qui est dans le répertoire personnel
-    de l'utilisateur ("$HOME"), par ex. "/home/nom d'utilisateur/.tuxpaint/
-    saved/".
+Linux / Unix
+    In the user's "home directory" folder:
+    e.g., "/home/nom d'utilisateur/.tuxpaint/saved/"
+
+Haiku
+    In the user's "settings" folder:
+    e.g., "/boot/home/config/settings/TuxPaint/saved/"
 
 
 💡 Remarque : C'est également à partir de ce dossier que vous pouvez copier ou

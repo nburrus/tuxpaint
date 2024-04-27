@@ -2,10 +2,10 @@
                                 version 0.9.33
                        Documentation sur l'installation
 
-       Copyright © 2002-2023 by divers contributeurs; voir AUTHORS.txt.
+       Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 mai 13, 2023
+                                avril 27, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -481,11 +481,11 @@ Quand vous avez fini, appuyez sur "OK".
 
 Si quelque chose ne va pas
 
-Si, lorsque vous double-cliquez sur le raccourci pour lancer le jeu, rien ne se
-passe, c'est probablement parce que certaines des options en lignes de commande
-sont erronées. Ouvrez un explorateuet recherchez un fichier appelé "stderr.txt"
-dans votre dossier personnel de sauvegarde de TuxPaint, qui est normalement "C:
-\Users\utilisateur\AppData\Roaming\TuxPaint".
+If, when you double-click on the shortcut to run Tux Paint, nothing happens, it
+is probably because some of these command-line options are wrong. Open an
+Explorer, and look for a file called "stderr.txt" in your personal saving
+folder for TuxPaint which is normaly 
+"C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\".
 
 Il contiendra une description de ce qui n'allait pas. Habituellement, ce sera
 simplement dû à une casse de caractère incorrecte (majuscule 'Z' à la place de

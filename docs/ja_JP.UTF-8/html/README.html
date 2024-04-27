@@ -318,7 +318,7 @@
       ポータブル版（ZIPファイル版）をダウンロードして Tux Paint をインストールした場合や、インストーラーでショートカットを作成しなかった場合は、"<code>Tux Paint</code>"のフォルダにある "<code>tuxpaint.exe</code>" のアイコンをダブルクリックします。    </p>
 
     <p>
-      インストーラーを用いた場合、「Tux Paint」のフォルダは、通常、"C:\Program Files\" に配置されます。（インストール時に、これを変更することもできます）    </p>
+      By default, the 'Tux Paint Installer' will put Tux Paint's folder in <nobr>"<code>C:\Program Files\TuxPaint\</code>"</nobr>, though you may have changed this when you ran the installer.    </p>
 
     <p>
       ZIP ファイルを用いた場合、「Tux Paint」のフォルダは、任意の場所に配置できます。    </p>
@@ -1669,36 +1669,36 @@
   
     <p>
       そのための方法は簡単で、画像ファイルを PNG (Portable Network Graphic) 形式に変換して、Tux Paint で作成した画像が保存されている "<code>saved</code>" フォルダにコピーします。（標準では以下のフォルダ）:    </p>
-  
+
     <dl>
-      <dt>
-        <strong>Windows 10, 8, 7, Vista</strong>
-      </dt>
-  
-      <dd>
-        各ユーザーの "<code>AppData</code>" フォルダ。例: "<code>C:\Users\<em>username</em>\AppData\Roaming\TuxPaint\saved\</code>"。      </dd>
-  
-      <dt>
-        <strong>Windows 2000, XP</strong>
-      </dt>
-  
-      <dd>
-        各ユーザーの "<code>Application Data</code>" フォルダ。例: "<code>C:\Documents and Settings\<em>username</em>\Application Data\TuxPaint\saved\</code>"。      </dd>
-  
-      <dt>
-        <strong>macOS</strong>
-      </dt>
-  
-      <dd>
-        各ユーザーの "<code>Library</code>" フォルダ。例: "<code>/Users/<em>username</em>/Library/Application Support/Tux Paint/saved/</code>"。      </dd>
-  
-      <dt>
-        <strong>Linux/Unix</strong>
-      </dt>
-  
-      <dd>
-        各ユーザーのホームディレクトリ("<code>$HOME</code>")の隠しディレクトリ "<code>.tuxpaint</code>" 以下 ― 例: "<code>/home/<em>username</em>/.tuxpaint/saved/</code>"。      </dd>
-    </dl>
+  <dt>
+    <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
+  </dt>
+
+  <dd>
+    In the user's "AppData" folder:<br> e.g., <nobr>"<code>C:\Users\username\AppData\Roaming\TuxPaint\saved\</code>"</nobr>  </dd>
+
+  <dt>
+    <cite>macOS</cite>
+  </dt>
+
+  <dd>
+    In the user's "Application Support" folder:<br> e.g., <nobr>"<code>/Users/username/Library/Application Support/TuxPaint/saved/</code>"</nobr>  </dd>
+
+  <dt>
+    <cite>Linux / Unix</cite>
+  </dt>
+
+  <dd>
+    In the user's "home directory" folder:<br> e.g., <nobr>"<code>/home/username/.tuxpaint/saved/</code>"</nobr>  </dd>
+
+  <dt>
+    <cite>Haiku</cite>
+  </dt>
+
+  <dd>
+    In the user's "settings" folder:<br> e.g., <nobr>"<code>/boot/home/config/settings/TuxPaint/saved/</code>"</nobr>  </dd>
+</dl>
   
     <p class="note">
       <span title="Information">&#128161;</span>      <strong>注:</strong> Tux Paint で作成した画像を<em>他のアプリケーションを使って</em>開く場合も、これらのフォルダからになります。しかしながら、「ひらく」ダイアログの「かきだす」の機能を使えば、Tux Paint で作成した画像を、もっと簡単で安全にアクセスできるフォルダにコピーすることができます。    </p>

@@ -1136,17 +1136,19 @@ Ruaje Formësimin e Shtypësit
 
         If you do not override it, the default location is:
 
-          o Linux & Unix — Under a hidden directory named ".tuxpaint" in your
-            home directory (aka "~" or "$HOME")
-            Shembull: /home/username/.tuxpaint/saved/
-          o Windows — Inside a folder named "TuxPaint" in your "Application
-            Data" folder.
-            Shembull: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\saved\
-          o macOS — Inside a folder named "TuxPaint" in your "Application
-            Support" folder.
-            Shembull: /Users/Username/Library/Application Support/TuxPaint/
-            saved/
+        Linux / Unix
+            Under a hidden directory in your home directory:
+            /home/emër përdoruesi/.tuxpaint/saved/
+
+        Windows
+            C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\saved\
+
+        macOS
+            /Users/emër përdoruesi/Library/Application Support/TuxPaint/saved/
+
+        Haiku
+            /boot/home/config/settings/TuxPaint/saved/
+
 
         💡 Note: When specifying a Windows drive (e.g., "H:\"), you must also
         specify a subdirectory.

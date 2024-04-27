@@ -1136,17 +1136,19 @@ Save Printer Configuration
 
         If you do not override it, the default location is:
 
-          o Linux & Unix — Under a hidden directory named ".tuxpaint" in your
-            home directory (aka "~" or "$HOME")
-            Example: /home/username/.tuxpaint/saved/
-          o Windows — Inside a folder named "TuxPaint" in your "Application
-            Data" folder.
-            Example: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\saved\
-          o macOS — Inside a folder named "TuxPaint" in your "Application
-            Support" folder.
-            Example: /Users/Username/Library/Application Support/TuxPaint/saved
-            /
+        Linux / Unix
+            Under a hidden directory in your home directory:
+            /home/username/.tuxpaint/saved/
+
+        Windows
+            C:\Users\username\AppData\Roaming\TuxPaint\saved\
+
+        macOS
+            /Users/username/Library/Application Support/TuxPaint/saved/
+
+        Haiku
+            /boot/home/config/settings/TuxPaint/saved/
+
 
         💡 Note: When specifying a Windows drive (e.g., "H:\"), you must also
         specify a subdirectory.

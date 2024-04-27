@@ -312,27 +312,34 @@
           Sauf si vous avez demandé à Tux Paint d'enregistrer dans un emplacement spécifique (en utilisant l'option 'savedir'), Tux Paint enregistre dans un emplacement standard sur votre disque local :        </p>
 
         <dl>
-          <dt>
-            <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
-          </dt>
+  <dt>
+    <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
+  </dt>
 
-          <dd>
-            Dans le dossier "AppData" de l'utilisateur :<br> par ex.., <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\saved</code>          </dd>
+  <dd>
+    In the user's "AppData" folder:<br> e.g., <nobr>"<code>C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\</code>"</nobr>  </dd>
 
-          <dt>
-            <cite>macOS</cite>
-          </dt>
+  <dt>
+    <cite>macOS</cite>
+  </dt>
 
-          <dd>
-            Dans le dossier "Application Support"  de l'utilisateur :<br> par ex., <code>/Users/<i>Username</i>/Library/Applicaton Support/TuxPaint/saved/</code>          </dd>
+  <dd>
+    In the user's "Application Support" folder:<br> e.g., <nobr>"<code>/Users/nom d'utilisateur/Library/Application Support/TuxPaint/saved/</code>"</nobr>  </dd>
 
-          <dt>
-            <cite>Linux / Unix</cite>
-          </dt>
+  <dt>
+    <cite>Linux / Unix</cite>
+  </dt>
 
-          <dd>
-            Dans le dossier personnel de l'utilisateur ("<code>$HOME</code>"), dans un sous-dossier ".tuxpaint"), par ex., <code>/home/<i>username</i>/.tuxpaint/saved/</code>          </dd>
-        </dl>
+  <dd>
+    In the user's "home directory" folder:<br> e.g., <nobr>"<code>/home/nom d'utilisateur/.tuxpaint/saved/</code>"</nobr>  </dd>
+
+  <dt>
+    <cite>Haiku</cite>
+  </dt>
+
+  <dd>
+    In the user's "settings" folder:<br> e.g., <nobr>"<code>/boot/home/config/settings/TuxPaint/saved/</code>"</nobr>  </dd>
+</dl>
 
         <p>
           Les images sont stockées sous forme de bitmaps PNG, que la plupart des programmes récents savent lire (éditeurs d'image, éditeurs de texte, navigateurs, etc ...)        </p>
@@ -611,10 +618,10 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
       <dd>
         <p>
-          Si Tux Paint échoue avec le message: "You're already running a copy of Tux Paint!", cela signifie qu'il a déjà été lancé dans les 30 dernières secondes. (Sous Unix / Linux, ce message devrait apparaîtrr dans une console de terminal si vous exécutiez Tux Paint en ligne de commande. Sous Windows, ce message apparaîtrait dans un fichier nommé "<code>stdout.txt</code>" dans le même dossier où <code>TuxPaint.exe</code> réside (par exemple, dans "<code>C:\Program Files\TuxPaint</code>").        </p>
+          If Tux Paint aborts with the message: "You're already running a copy of Tux Paint!", this means it has been launched in the last 30 seconds. (On Unix/Linux, this message would appear in a terminal console if you ran Tux Paint from a command-line. On Windows, this message would appear in a file named "<code>stdout.txt</code>" in the same folder where <code>TuxPaint.exe</code> resides (e.g., in <nobr>"<code>C:\Program Files\TuxPaint\</code>"</nobr>).        </p>
 
         <p>
-          Un fichier de verrouillage ("~/.tuxpaint/lockfile.dat" sous Linux et Unix, "userdata\lockfile.dat" sous Windows) est utilisé pour s'assurer que Tux Paint n'est pas exécuté trop de fois en même temps (par exemple, en à cause d'un enfant impatient qui clique plusieurs fois sur son icône).        </p>
+          A lockfile (e.g., <nobr>"<code>/home/nom d'utilisateur/.tuxpaint/lockfile.dat</code>"</nobr> on Linux and Unix, <nobr>"<code>userdata\lockfile.dat</code>"</nobr> on Windows) is used to make sure Tux Paint isn't run too many times at once (e.g., due to a child impatiently clicking its icon more than once).        </p>
 
         <p>
           Même si le fichier de verrouillage existe, il contient l'heure de la dernière exécution de Tux Paint. Si cela fait plus de 30 secondes, Tux Paint devrait fonctionner correctement et simplement mettre à jour le fichier de verrouillage avec l'heure courante.        </p>
@@ -695,12 +702,19 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
           <li>
             <cite>Windows</cite>
             <p>
-              Under Windows, Tux Paint first examines the configuration file:            </p>
+              Under Windows, it first examines the system-wide configuration file, located here:            </p>
 
             <blockquote>
               <p>
-                <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
-              </p>
+                <nobr><code>C:\Program Files\TuxPaint\tuxpaint.cfg</code></nobr>              </p>
+            </blockquote>
+
+            <p>
+              Il examine ensuite le fichier de configuration personnel de l'utilisateur :            </p>
+
+            <blockquote>
+              <p>
+                <nobr><code>C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\tuxpaint.cfg</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -714,8 +728,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
             <blockquote>
               <p>
-                <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
-              </p>
+                <nobr><code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -723,8 +736,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
             <blockquote>
               <p>
-                <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
-              </p>
+                <nobr><code>/Users/nom d'utilisateur/Library/Application Support/TuxPaint/tuxpaint.cfg</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -738,8 +750,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
             <blockquote>
               <p>
-                <code>/etc/tuxpaint/tuxpaint.conf</code>
-              </p>
+                <nobr><code>/etc/tuxpaint/tuxpaint.conf</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -747,8 +758,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
             <blockquote>
               <p>
-                <code>/home/nom d'utilisateur/.tuxpaintrc</code>
-              </p>
+                <nobr><code>/home/nom d'utilisateur/.tuxpaintrc</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -762,8 +772,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
             <blockquote>
               <p>
-                <code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code>
-              </p>
+                <nobr><code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code></nobr>              </p>
             </blockquote>
 
             <p>
@@ -775,7 +784,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
           Cela signifie que si quelque chose est défini dans un fichier de configuration que vous ne souhaitez pas activer, vous devrez soit modifier le fichier config. fichier (si vous le pouvez), ou changer l'option par le biais de la ligne de commande.        </p>
 
         <p>
-          Par exemple, si "<code>/etc/tuxpaint/tuxpaint.conf</code>" inclut une option pour désactiver le son ...        </p>
+          For example, on Linux and Unix, if <nobr>"<code>/etc/tuxpaint/tuxpaint.conf</code>"</nobr> includes this option to disable sound...        </p>
 
         <blockquote>
           <p>
@@ -784,7 +793,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
         </blockquote>
 
         <p>
-          ... Alors vous pouvez réactiver le son en ajoutant cette option à votre propre fichier "<code>/home/nom d'utilisateur/.tuxpaintrc</code>" :        </p>
+          ...then you can reenable sound by either adding this option to your own <nobr>"<code>/home/nom d'utilisateur/.tuxpaintrc</code>"</nobr> file:        </p>
 
         <blockquote>
           <p>

@@ -78,6 +78,11 @@ https://tuxpaint.org/
       + Haiku (h/t Luc Schrijvers)
       + Linux (Bill K.)
 
+    * Improved consistency file and directory paths around the docs;
+      attempting to also ensure all major OSes Tux Paint supports
+      are covered appropriately & accurately in respect to paths.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Bulgarian translation

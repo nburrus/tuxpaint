@@ -148,8 +148,9 @@ KDE あるいは GNOME のメニューの「グラフィックス」以下に、
 合や、インストーラーでショートカットを作成しなかった場合は、"Tux Paint"のフォル
 ダにある "tuxpaint.exe" のアイコンをダブルクリックします。
 
-インストーラーを用いた場合、「Tux Paint」のフォルダは、通常、"C:\Program Files\
-" に配置されます。（インストール時に、これを変更することもできます）
+By default, the 'Tux Paint Installer' will put Tux Paint's folder in 
+"C:\Program Files\TuxPaint\", though you may have changed this when you ran the
+installer.
 
 ZIP ファイルを用いた場合、「Tux Paint」のフォルダは、任意の場所に配置できます。
 
@@ -1077,21 +1078,21 @@ Tux Paint の「ひらく」ダイアログでは、Tux Paint で作成した画
 換して、Tux Paint で作成した画像が保存されている "saved" フォルダにコピーしま
 す。（標準では以下のフォルダ）:
 
-Windows 10, 8, 7, Vista
-    各ユーザーの "AppData" フォルダ。例: "C:\Users\username\AppData\Roaming\
-    TuxPaint\saved\"。
-
-Windows 2000, XP
-    各ユーザーの "Application Data" フォルダ。例: "C:\Documents and Settings\
-    username\Application Data\TuxPaint\saved\"。
+Windows Vista, Windows 8, Windows 10, Windows 11
+    In the user's "AppData" folder:
+    e.g., "C:\Users\username\AppData\Roaming\TuxPaint\saved\"
 
 macOS
-    各ユーザーの "Library" フォルダ。例: "/Users/username/Library/Application
-    Support/Tux Paint/saved/"。
+    In the user's "Application Support" folder:
+    e.g., "/Users/username/Library/Application Support/TuxPaint/saved/"
 
-Linux/Unix
-    各ユーザーのホームディレクトリ("$HOME")の隠しディレクトリ ".tuxpaint" 以下
-    ― 例: "/home/username/.tuxpaint/saved/"。
+Linux / Unix
+    In the user's "home directory" folder:
+    e.g., "/home/username/.tuxpaint/saved/"
+
+Haiku
+    In the user's "settings" folder:
+    e.g., "/boot/home/config/settings/TuxPaint/saved/"
 
 
 💡 注: Tux Paint で作成した画像を他のアプリケーションを使って開く場合も、これら

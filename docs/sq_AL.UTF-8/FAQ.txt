@@ -239,17 +239,21 @@ Ku i ruan Tux Paint-i vizatimet e mia?
     vendndodhje standarde në diskun tuaj vendor:
 
     Windows Vista, Windows 8, Windows 10, Windows 11
-        Te dosja “AppData” e përdoruesit:
-        p.sh., C:\Users\Emërpërdoruesi\AppData\Roaming\TuxPaint\saved
+        In the user's "AppData" folder:
+        e.g., "C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\saved\"
 
     macOS
-        Te dosja “Application Support” e përdoruesit:
-        p.sh., /Users/Emërpërdoruesi/Library/Applicaton Support/TuxPaint/saved/
+        In the user's "Application Support" folder:
+        e.g., 
+        "/Users/emër përdoruesi/Library/Application Support/TuxPaint/saved/"
 
     Linux / Unix
-        Te drejtoria shtëpi e përdoruesit (“$HOME”), nën një nëndosje
-        “.tuxpaint”:
-        p.sh., /home/emërpërdoruesi/.tuxpaint/saved/
+        In the user's "home directory" folder:
+        e.g., "/home/emër përdoruesi/.tuxpaint/saved/"
+
+    Haiku
+        In the user's "settings" folder:
+        e.g., "/boot/home/config/settings/TuxPaint/saved/"
 
 
     Figurat depozitohen si bitmap-e PNG, të cilat, shumica e programeve modernë
@@ -500,13 +504,13 @@ Tux Paint-i nuk xhiron
     Paint!", this means it has been launched in the last 30 seconds. (On Unix/
     Linux, this message would appear in a terminal console if you ran Tux Paint
     from a command-line. On Windows, this message would appear in a file named
-    "stdout.txt" in the same folder where TuxPaint.exe resides (e.g., in "C:\
-    Program Files\TuxPaint").
+    "stdout.txt" in the same folder where TuxPaint.exe resides (e.g., in 
+    "C:\Program Files\TuxPaint\").
 
-    A lockfile ("~/.tuxpaint/lockfile.dat" on Linux and Unix, "userdata\
-    lockfile.dat" on Windows) is used to make sure Tux Paint isn't run too many
-    times at once (e.g., due to a child impatiently clicking its icon more than
-    once).
+    A lockfile (e.g., "/home/emër përdoruesi/.tuxpaint/lockfile.dat" on Linux
+    and Unix, "userdata\lockfile.dat" on Windows) is used to make sure Tux
+    Paint isn't run too many times at once (e.g., due to a child impatiently
+    clicking its icon more than once).
 
     Even if the lockfile exists, it contains the 'time' Tux Paint was last run.
     If it's been more than 30 seconds, Tux Paint should run fine, and simply
@@ -582,9 +586,14 @@ Tux Paint is using options I didn't specify!
 
       + Windows
 
-        Under Windows, Tux Paint first examines the configuration file:
+        Under Windows, it first examines the system-wide configuration file,
+        located here:
 
-            C:\Users\Username\AppData\Roaming\TuxPaint\tuxpaint.cfg
+            C:\Program Files\TuxPaint\tuxpaint.cfg
+
+        Mandej ekzaminon kartelën e formësimit personal të përdoruesit:
+
+            C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
         Finally, any options sent as command-line arguments are used.
 
@@ -597,7 +606,7 @@ Tux Paint is using options I didn't specify!
 
         Mandej ekzaminon kartelën e formësimit personal të përdoruesit:
 
-            /Users/Username/Library/Application Support/TuxPaint/tuxpaint.cfg
+            /Users/emër përdoruesi/Library/Application Support/TuxPaint/tuxpaint.cfg
 
         Finally, any options sent as command-line arguments are used.
 
@@ -631,8 +640,8 @@ Tux Paint is using options I didn't specify!
 
         nosound=yes
 
-    ...then you can reenable sound by either adding this option to your own "/
-    home/emër përdoruesi/.tuxpaintrc" file:
+    ...then you can reenable sound by either adding this option to your own 
+    "/home/emër përdoruesi/.tuxpaintrc" file:
 
         sound=yes
 

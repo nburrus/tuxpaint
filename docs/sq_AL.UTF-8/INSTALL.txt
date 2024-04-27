@@ -2,10 +2,10 @@
                                 version 0.9.33
                              Dokumentim Instalimi
 
- Të drejta kopjimi © 2002-2023 nga kontribues të ndryshëm; shihni AUTHORS.txt.
+ Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  13 maj 2023
+                                 27 prill 2024
 
 +------------------------------------------------------+
 |                   Pasqyrë e Lëndës                   |
@@ -466,8 +466,8 @@ Nëse Diçka Shkon Ters
 If, when you double-click on the shortcut to run Tux Paint, nothing happens, it
 is probably because some of these command-line options are wrong. Open an
 Explorer, and look for a file called "stderr.txt" in your personal saving
-folder for TuxPaint which is normaly "C:\Users\username\AppData\Roaming\
-TuxPaint".
+folder for TuxPaint which is normaly 
+"C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\".
 
 It will contain a description of what was wrong. Usually it will just be due to
 incorrect character-case (capital 'Z' instead of lowercase 'z') or a missing

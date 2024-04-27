@@ -1148,17 +1148,19 @@ Save Printer Configuration
 
         Se non o anula, a ubicación predeterminada é:
 
-          o Linux e Unix: baixo un directorio agochado chamado «.tuxpaint» no
-            seu directorio persoal (tamén coñecido como «~» ou «$HOME»)
-            Exemplo: /home/username/.tuxpaint/saved/
-          o Windows: Dentro un cartafol chamado «TuxPaint» no seu cartafol
-            «Application Data».
-            Exemplo: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\saved\
-          o macOS: Dentro un cartafol chamado «TuxPaint» no seu cartafol
-            «Application Support».
-            Exemplo: /Users/Username/Library/Application Support/TuxPaint/saved
-            /
+        Linux / Unix
+            Under a hidden directory in your home directory:
+            /home/nome de usuario/.tuxpaint/saved/
+
+        Windows
+            C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\
+
+        macOS
+            /Users/nome de usuario/Library/Application Support/TuxPaint/saved/
+
+        Haiku
+            /boot/home/config/settings/TuxPaint/saved/
+
 
         💡 Note: When specifying a Windows drive (e.g., "H:\"), you must also
         specify a subdirectory.

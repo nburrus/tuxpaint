@@ -155,9 +155,9 @@ Se está a usar a versión «portátil» (ficheiro ZIP) de Tux Paint ou se usou 
 facer dobre clic na icona «tuxpaint.exe» no cartafol «Tux Paint» do seu
 computador.
 
-De xeito predeterminado, o «Instalador de Tux Paint» colocará o cartafol de Tux
-Paint en «C:\Program Files\», aínda que é posíbel que o teña cambiado vostede
-cando executou o instalador.
+By default, the 'Tux Paint Installer' will put Tux Paint's folder in 
+"C:\Program Files\TuxPaint\", though you may have changed this when you ran the
+installer.
 
 Se usou a descarga de «ficheiro ZIP», o cartafol de Tux Paint estará onde teña
 extraído o contido do ficheiro ZIP.
@@ -1182,21 +1182,21 @@ Pode simplemente converter a imaxe ao formato que usa Tux Paint –PNG (Portable
 Network Graphics – Gráficos de Rede Portátiles)– e colocala no directorio/
 cartafol «saved» de Tux Paint. Aquí é onde se atopa (de xeito predeterminado:
 
-Windows 10, 8, 7, Vista
-    Dentro do cartafol «AppData» do usuario, p. : «C:\Users\nome de usuario\
-    AppData\Roaming\TuxPaint\saved\».
-
-Windows 2000, XP
-    Dentro do cartafol «Application Data» do usuario, p. : «C:\Documents and
-    Settings\nome de usuario\Application Data\TuxPaint\saved\».
+Windows Vista, Windows 8, Windows 10, Windows 11
+    In the user's "AppData" folder:
+    e.g., "C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\"
 
 macOS
-    Dentro do cartafol «Library» do usuario, p. : «/Users/nome de usuario/
-    Library/Application Support/Tux Paint/saved/».
+    In the user's "Application Support" folder:
+    e.g., "/Users/nome de usuario/Library/Application Support/TuxPaint/saved/"
 
-Linux/Unix
-    Dentro dun directorio agochado «.tuxpaint», no seu directorio persoal
-    («$HOME»), p. ex.: «/home/nome de usuario/.tuxpaint/saved/».
+Linux / Unix
+    In the user's "home directory" folder:
+    e.g., "/home/nome de usuario/.tuxpaint/saved/"
+
+Haiku
+    In the user's "settings" folder:
+    e.g., "/boot/home/config/settings/TuxPaint/saved/"
 
 
 💡 Nota: É tamén dende este cartafol dende onde pode copiar ou abrir imaxes

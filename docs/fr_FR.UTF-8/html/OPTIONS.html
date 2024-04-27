@@ -1786,17 +1786,24 @@
       <p>
         Si vous ne le changez pas, l' emplacement par défaut est :      </p>
 
-      <ul>
-        <li>Linux &amp; Unix - Sous un répertoire caché nommé "<code>.tuxpaint</code>" dans votre répertoire personnel (aka "<code>~</code>" ou "<code>$HOME</code>")<br>
-            Exemple: <code>/home/<i>username</i>/.tuxpaint/saved/</code>        </li>
+      <dl>
+        <dt>Linux / Unix</dt>
+        <dd>
+          Under a hidden directory in your home directory:<br/>
+          <nobr><code>/home/nom d'utilisateur/.tuxpaint/saved/</code></nobr>        </dd>
 
-        <li>Windows - Dans un dossier nommé "<code>TuxPaint</code>" dans votre dossier "<code>Application Data</code>".<br>
-            Exemple: <code>C:\Documents and Settings\<i>Username</i>\Application Data\TuxPaint\saved\</code>          <br>
-        </li>
+        <dt>Windows</dt>
+        <dd>
+          <nobr><code>C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\</code></nobr>        </dd>
 
-        <li>macOS - Dans un dossier nommé "<code>TuxPaint</code>" dans votre dossier "<code>Application Support</code>".<br>
-            Exemple: <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/saved/</code>        </li>
-      </ul>
+        <dt>macOS</dt>
+        <dd>
+          <nobr><code>/Users/nom d'utilisateur/Library/Application Support/TuxPaint/saved/</code></nobr>        </dd>
+
+        <dt>Haiku</dt>
+        <dd>
+          <nobr><code>/boot/home/config/settings/TuxPaint/saved/</code></nobr>        </dd>
+      </dl>
 
       <p class="note">
         <span title="Information">&#128161;</span>        <strong>Note : </strong><b> Si vous spécifiez un lecteur Windows (pzr ex. "<code>H:\</code>"), vous devez spécifiez également un sous-répertoire.      </p>

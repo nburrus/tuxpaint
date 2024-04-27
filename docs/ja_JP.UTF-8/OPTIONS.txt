@@ -1129,16 +1129,19 @@ altprint=mod
 
         特に設定していなければ、標準のディレクトリは次の場所にあります:
 
-          o Linux および Unix — ユーザーのホームディレクトリ（"~" または
-            "$HOME"）にある隠しディレクトリ ".tuxpaint" 以下
-            例: /home/username/.tuxpaint/saved/
-          o Windows — ユーザーごとの "Application Data" フォルダーにある
-            "TuxPaint" フォルダー以下
-            例: C:\Documents and Settings\Username\Application Data\TuxPaint\
-            saved\
-          o macOS — ユーザーごとの "Application Support" フォルダーにある
-            "TuxPaint" フォルダー以下
-            例: /Users/Username/Library/Application Support/TuxPaint/saved/
+        Linux / Unix
+            Under a hidden directory in your home directory:
+            /home/username/.tuxpaint/saved/
+
+        Windows
+            C:\Users\username\AppData\Roaming\TuxPaint\saved\
+
+        macOS
+            /Users/username/Library/Application Support/TuxPaint/saved/
+
+        Haiku
+            /boot/home/config/settings/TuxPaint/saved/
+
 
         💡 注: Windowsのドライブ（例: "H:\"）を指定する際は、サブディレクトリも
         指定する必要があります。
