@@ -54,10 +54,23 @@ Linux
  * The Linux distro and version (e.g., Ubuntu 22.04, RHEL 9, etc.)
  * The version of Tux Paint (e.g., "0.9.28-3")
  * The source of Tux Paint -- built from source code, installed
-   from distro's software repository, direct package file download
-   (.rpm), Flatpak, etc.
- * Send a copy of the config file, e.g. ".tuxpaintrc" in $HOME
+   from your distro's software repository, installed via Flatpak,
+   installed using a direct package file download (.rpm), etc.
+ * Send a copy of the config file(s)
+   - $HOME/.tuxpaintrc
+   - [/usr/local]/etc/tuxpaint/tuxpaint.conf
  * Any output seen on a terminal when running "tuxpaint" from
-   a command-line
- * FIXME -- Anything else?
+   a command-line (the output of stdout and/or stderr)
+
+Haiku
+-----
+ * The Haiku version and CPU version (e.g., R1B4/nightly, 32bit/64bit)
+ * The version of Tux Paint (e.g., "0.9.28-3")
+ * The source of Tux Paint -- built from source code, installed
+   from distro's software repository (pkgman/HaikuDepot), direct
+   package file download (.hpkg), etc.
+ * Send a copy of the config file, e.g. ".tuxpaint.conf" in
+   /boot/home/config/settings/TuxPaint
+ * Any output seen on a terminal when running
+   "/boot/system/apps/TuxPaint/TuxPaint" from a command-line
 
