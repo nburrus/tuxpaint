@@ -614,7 +614,7 @@ Tux Paint está a usar opcións que non especifiquei.
 
         A continuación, examina o ficheiro de configuración persoal do usuario:
 
-            ~/.tuxpaintrc
+            /home/nome de usuario/.tuxpaintrc
 
         Finalmente, úsanse as opcións enviadas como argumentos da liña de
         ordes.
@@ -638,7 +638,7 @@ Tux Paint está a usar opcións que non especifiquei.
         nosound=yes
 
     ...entón pode volver activar o son engadindo esta opción ao seu propio
-    ficheiro «.tuxpaintrc»:
+    ficheiro «/home/nome de usuario/.tuxpaintrc»:
 
         sound=yes
 
@@ -646,14 +646,12 @@ Tux Paint está a usar opcións que non especifiquei.
 
         --sound
 
-    Os usuarios de Linux e Unix tamén poden desactivar o ficheiro de
-    configuración de todo o sistema incluíndo o seguinte argumento da liña de
-    ordes:
+    On platforms where Tux Paint offers a system-wide configuration file, the
+    settings in that file may be skipped (so only the user configuration file
+    and other command-line arguments will be used) by including the following
+    command-line argument:
 
         --nosysconfig
-
-    Tux Paint só ollará «~/.tuxpaintrc» e os argumentos da liña de ordes para
-    determinar que opcións se deben estabelecer.
 
 
 

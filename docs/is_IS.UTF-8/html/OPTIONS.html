@@ -169,7 +169,8 @@
           </header>
 
           <p>
-            The file you should create is called "<code><b>.tuxpaintrc</b></code>" and it should be placed in your home directory. (a.k.a. "<code>~/.tuxpaintrc</code>" or "<code>$HOME/.tuxpaintrc</code>")          </p>
+            <code>/home/username/.tuxpaintrc</code>
+          </p>
         </div>
 
         <section class="indent"><!-- H3: System-Wide Configuration File -->
@@ -218,7 +219,8 @@
         </header>
 
         <p>
-          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in in your personal AppData folder: <code>C:\Users\username\AppData\Roaming\TuxPaint\</code>        </p>
+          <code>C:\Users\username\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
+        </p>
 
         <p>
           You can use NotePad or WordPad to create this file. Be sure to save it as Plain Text, and make sure the filename doesn't have ".txt" at the end...        </p>
@@ -232,10 +234,8 @@
           <p>
             Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
 
-          <blockquote>
-            <code>C:\Program Files\Tuxpaint</code>
-          </blockquote>
-
+          <p>
+            <code>C:\Program Files\TuxPaint\tuxpaint.cfg</code>
           </p>
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: Windows Users -->
@@ -2374,10 +2374,10 @@
       </p>
 
       <p>
-        If any of the above options are set in "<code>/etc/tuxpaint/tuxpaint.config</code>", you can override them in your own "<code>~/.tuxpaintrc</code>" file.      </p>
+        If any of the above options are set in "<code>/etc/tuxpaint/tuxpaint.conf</code>", you can override them in your own "<code>/home/username/.tuxpaintrc</code>" file.      </p>
 
       <p>
-        For true/false options, like "<code>noprint</code>" and "<code>grab</code>", you can simply say they equal 'no' in your "<code>~/.tuxpaintrc</code>" file:      </p>
+        For true/false options, like "<code>noprint</code>" and "<code>grab</code>", you can simply say they equal 'no' in your "<code>/home/username/.tuxpaintrc</code>" file:      </p>
 
       <blockquote>
         <code>noprint=no<br>
@@ -2551,7 +2551,7 @@
             Under Linux and Unix, this prevents the system-wide configuration file, "<code>/etc/tuxpaint/tuxpaint.conf</code>", from being read.          </p>
 
           <p>
-            Only your own configuration file, "<code>~/.tuxpaintrc</code>", if it exists, will be used.          </p>
+            Only your own configuration file, "<code>/home/username/.tuxpaintrc</code>", if it exists, will be used.          </p>
         </dd>
       </dl>
 

@@ -47,8 +47,7 @@ The file is simply a plain text file containing the options you want enabled:
 
 Linux and Unix Users
 
-The file you should create is called ".tuxpaintrc" and it should be placed in
-your home directory. (a.k.a. "~/.tuxpaintrc" or "$HOME/.tuxpaintrc")
+/home/username/.tuxpaintrc
 
 System-Wide Configuration File
 
@@ -73,8 +72,7 @@ at:
 
 Windows Users
 
-The file you should create is called "tuxpaint.cfg" and it should be placed in
-in your personal AppData folder: C:\Users\username\AppData\Roaming\TuxPaint\
+C:\Users\username\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
 You can use NotePad or WordPad to create this file. Be sure to save it as Plain
 Text, and make sure the filename doesn't have ".txt" at the end...
@@ -85,7 +83,7 @@ Before this file is read, a system-wide configuration file is read. (By
 default, this configuration has no settings enabled.) It is normally located
 at:
 
-    C:\Program Files\Tuxpaint
+C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
@@ -1616,11 +1614,11 @@ Button Shortcuts
 
     (For Linux and Unix users)
 
-    If any of the above options are set in "/etc/tuxpaint/tuxpaint.config", you
-    can override them in your own "~/.tuxpaintrc" file.
+    If any of the above options are set in "/etc/tuxpaint/tuxpaint.conf", you
+    can override them in your own "/home/username/.tuxpaintrc" file.
 
     For true/false options, like "noprint" and "grab", you can simply say they
-    equal 'no' in your "~/.tuxpaintrc" file:
+    equal 'no' in your "/home/username/.tuxpaintrc" file:
 
         noprint=no
         uppercase=no
@@ -1777,8 +1775,8 @@ Button Shortcuts
         Under Linux and Unix, this prevents the system-wide configuration file,
         "/etc/tuxpaint/tuxpaint.conf", from being read.
 
-        Only your own configuration file, "~/.tuxpaintrc", if it exists, will
-        be used.
+        Only your own configuration file, "/home/username/.tuxpaintrc", if it
+        exists, will be used.
 
 
 

@@ -49,8 +49,7 @@ souhaitez activer :
 
 Utilisateurs de Linux et Unix
 
-Le fichier que vous devez créer s'appelle ".tuxpaintrc" et il doit être placé
-dans votre répertoire personnel. (aka "~/.tuxpaintrc" ou "$HOME/.tuxpaintrc")
+/home/nom d'utilisateur/.tuxpaintrc
 
 Fichier de configuration pour l'ensemble du système
 
@@ -76,9 +75,7 @@ activés.) Il se trouve normalement ici :
 
 Utilisateurs de Windows
 
-Le fichier que vous devez créer s'appelle "tuxpaint.cfg" et doit être placé
-dans votre dossier personnel AppData : C:\Users\nom d'utilisateur\AppData\
-Roaming\TuxPaint\
+C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
 Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier. Assurez-vous de
 l'enregistrer en tant que texte brut et assurez-vous que le nom de fichier ne
@@ -90,7 +87,7 @@ Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
 système est lu. (Par défaut, cette configuration n'a pas de paramètres
 activés.) Il se trouve normalement ici :
 
-    C:\Program Files\Tuxpaint
+C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
@@ -1710,12 +1707,12 @@ Boutons pour raccourcis
     (Pour les utilisateurs Linux et Unix)
 
     Si l'une des options ci-dessus est définie dans " /etc/tuxpaint/
-    tuxpaint.config", vous pouvez la remplacer dans votre propre fichier "~
-    /.tuxpaintrc ".
+    tuxpaint.conf", vous pouvez la remplacer dans votre propre fichier "/home/
+    nom d'utilisateur/.tuxpaintrc ".
 
     Pour les options vrai / faux, comme "noprint" et "grab", vous pouvez
-    simplement dire qu'elles sont égales à "no" dans votre fichier "~
-    /.tuxpaintrc" :
+    simplement dire qu'elles sont égales à "no" dans votre fichier "/home/nom
+    d'utilisateur/.tuxpaintrc" :
 
         noprint=no
         uppercase=no
@@ -1873,8 +1870,8 @@ Boutons pour raccourcis
         Sous Linux et Unix, cela empêche la lecture du fichier de configuration
         système "/etc/tuxpaint/tuxpaint.conf".
 
-        Seul votre propre fichier de configuration, "~/.tuxpaintrc", s'il
-        existe, sera utilisé.
+        Seul votre propre fichier de configuration, "/home/nom d'utilisateur
+        /.tuxpaintrc", s'il existe, sera utilisé.
 
 
 

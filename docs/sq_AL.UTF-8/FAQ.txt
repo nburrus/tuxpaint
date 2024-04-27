@@ -610,7 +610,7 @@ Tux Paint is using options I didn't specify!
 
         Mandej ekzaminon kartelën e formësimit personal të përdoruesit:
 
-            ~/.tuxpaintrc
+            /home/emër përdoruesi/.tuxpaintrc
 
         Finally, any options sent as command-line arguments are used.
 
@@ -631,8 +631,8 @@ Tux Paint is using options I didn't specify!
 
         nosound=yes
 
-    ...then you can reenable sound by either adding this option to your own
-    ".tuxpaintrc" file:
+    ...then you can reenable sound by either adding this option to your own "/
+    home/emër përdoruesi/.tuxpaintrc" file:
 
         sound=yes
 
@@ -640,13 +640,12 @@ Tux Paint is using options I didn't specify!
 
         --sound
 
-    Linux and Unix users can also disable the system-wide configuration file by
-    including the following command-line argument:
+    On platforms where Tux Paint offers a system-wide configuration file, the
+    settings in that file may be skipped (so only the user configuration file
+    and other command-line arguments will be used) by including the following
+    command-line argument:
 
         --nosysconfig
-
-    Tux Paint will then only look at "~/.tuxpaintrc" and command-line arguments
-    to determine what options should be set.
 
 
 

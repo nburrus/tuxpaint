@@ -169,7 +169,8 @@
           </header>
 
           <p>
-            O ficheiro que debe crear chámase «<code><b>.tuxpaintrc</b></code>» e debería colocarse no seu directorio persoal. (tamén coñecido como «<code>~/.tuxpaintrc</code>» ou «<code>$HOME/.tuxpaintrc</code>»)          </p>
+            <code>/home/nome de usuario/.tuxpaintrc</code>
+          </p>
         </div>
 
         <section class="indent"><!-- H3: System-Wide Configuration File -->
@@ -218,7 +219,8 @@
         </header>
 
         <p>
-          The file you should create is called "<code><b>tuxpaint.cfg</b></code>" and it should be placed in in your personal AppData folder: <code>C:\Users\nome de usuario\AppData\Roaming\TuxPaint\</code>        </p>
+          <code>C:\Users\nome de usuario\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
+        </p>
 
         <p>
           Pode usar NotePad ou WordPad para crear este ficheiro. Asegúrese de gardalo como texto simple e asegúrese de que o nome do ficheiro non teña «.txt» ao final...        </p>
@@ -232,10 +234,8 @@
           <p>
             Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
 
-          <blockquote>
-            <code>C:\Program Files\Tuxpaint</code>
-          </blockquote>
-
+          <p>
+            <code>C:\Program Files\TuxPaint\tuxpaint.cfg</code>
           </p>
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: Windows Users -->
@@ -2374,10 +2374,10 @@
       </p>
 
       <p>
-        Se algunha das opcións anteriores está estabelecida en «<code>/etc/tuxpaint/tuxpaint.config</code>», pode anulala no seu propio ficheiro «<code>~/.tuxpaintrc</code>».      </p>
+        Se algunha das opcións anteriores está estabelecida en «<code>/etc/tuxpaint/tuxpaint.conf</code>», pode anulala no seu propio ficheiro «<code>/home/nome de usuario/.tuxpaintrc</code>».      </p>
 
       <p>
-        Para opcións verdadeiro/falso, como «<code>noprint</code>» e «<code>grab</code>», pode simplemente dicir que son iguais a «no» no seu ficheiro «<code>~/.tuxpaintrc</code>»:      </p>
+        Para opcións verdadeiro/falso, como «<code>noprint</code>» e «<code>grab</code>», pode simplemente dicir que son iguais a «no» no seu ficheiro «<code>/home/nome de usuario/.tuxpaintrc</code>»:      </p>
 
       <blockquote>
         <code>noprint=no<br>
@@ -2551,7 +2551,7 @@
             En Linux e Unix, isto evita ler o ficheiro de configuración de todo o sistema, «<code>/etc/tuxpaint/tuxpaint.conf</code>».          </p>
 
           <p>
-            Só se empregará o seu propio ficheiro de configuración, «<code>~/.tuxpaintrc</code>», se existe.          </p>
+            Só se empregará o seu propio ficheiro de configuración, «<code>/home/nome de usuario/.tuxpaintrc</code>», se existe.          </p>
         </dd>
       </dl>
 

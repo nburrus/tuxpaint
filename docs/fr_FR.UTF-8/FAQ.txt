@@ -638,7 +638,7 @@ Tux Paint utilise des options que je n'ai pas spécifiées !
         Il examine ensuite le fichier de configuration personnel de
         l'utilisateur :
 
-            ~/.tuxpaintrc
+            /home/nom d'utilisateur/.tuxpaintrc
 
         Et finalement, toutes les options envoyées en tant qu'arguments de
         ligne de commande sont utilisées.
@@ -663,7 +663,7 @@ Tux Paint utilise des options que je n'ai pas spécifiées !
         nosound=yes
 
     ... Alors vous pouvez réactiver le son en ajoutant cette option à votre
-    propre fichier ".tuxpaintrc" :
+    propre fichier "/home/nom d'utilisateur/.tuxpaintrc" :
 
         sound=yes
 
@@ -671,14 +671,12 @@ Tux Paint utilise des options que je n'ai pas spécifiées !
 
         --sound
 
-    Les utilisateurs Linux et Unix peuvent également désactiver le fichier de
-    configuration à l'échelle du système en incluant l'argument de ligne de
-    commande suivant :
+    On platforms where Tux Paint offers a system-wide configuration file, the
+    settings in that file may be skipped (so only the user configuration file
+    and other command-line arguments will be used) by including the following
+    command-line argument:
 
         --nosysconfig
-
-    Tux Paint examinera alors uniquement "~/.tuxpaintrc" et les arguments en
-    ligne de commande pour déterminer les options à activer.
 
 
 

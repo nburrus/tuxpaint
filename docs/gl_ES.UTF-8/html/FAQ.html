@@ -746,7 +746,7 @@
 
             <blockquote>
               <p>
-                <code>~/.tuxpaintrc</code>
+                <code>/home/nome de usuario/.tuxpaintrc</code>
               </p>
             </blockquote>
 
@@ -774,7 +774,7 @@
           Isto significa que se estabelece algo nun ficheiro de configuración que non quere estabelecer, terá que cambiar o ficheiro de configuración (se pode) ou anular a opción na liña de ordes.        </p>
 
         <p>
-          Por exemplo, en Linux e Unix, se «/etc/tuxpaint/tuxpaint.conf» inclúe esta opción para desactivar o son...        </p>
+          Por exemplo, en Linux e Unix, se «<code>/etc/tuxpaint/tuxpaint.conf</code>» inclúe esta opción para desactivar o son...        </p>
 
         <blockquote>
           <p>
@@ -783,7 +783,7 @@
         </blockquote>
 
         <p>
-          ...entón pode volver activar o son engadindo esta opción ao seu propio ficheiro «.tuxpaintrc»:        </p>
+          ...entón pode volver activar o son engadindo esta opción ao seu propio ficheiro «<code>/home/nome de usuario/.tuxpaintrc</code>»:        </p>
 
         <blockquote>
           <p>
@@ -801,16 +801,13 @@
         </blockquote>
 
         <p>
-          Os usuarios de Linux e Unix tamén poden desactivar o ficheiro de configuración de todo o sistema incluíndo o seguinte argumento da liña de ordes:                  </p>
+          On platforms where Tux Paint offers a system-wide configuration file, the settings in that file may be skipped (so only the user configuration file and other command-line arguments will be used) by including the following command-line argument:        </p>
 
         <blockquote>
           <p>
             <code>--nosysconfig</code>
           </p>
         </blockquote>
-
-        <p>
-          Tux Paint só ollará «~/.tuxpaintrc» e os argumentos da liña de ordes para determinar que opcións se deben estabelecer.        </p>
       </dd>
     </dl>
 

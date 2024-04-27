@@ -47,8 +47,7 @@ The file is simply a plain text file containing the options you want enabled:
 
 Përdorues Linux-esh dhe Unix-esh
 
-The file you should create is called ".tuxpaintrc" and it should be placed in
-your home directory. (a.k.a. "~/.tuxpaintrc" or "$HOME/.tuxpaintrc")
+/home/emër përdoruesi/.tuxpaintrc
 
 Kartelë Formësimi Për Mbarë Sistemin
 
@@ -73,9 +72,7 @@ at:
 
 Përdorues Windows-i
 
-The file you should create is called "tuxpaint.cfg" and it should be placed in
-in your personal AppData folder: C:\Users\emër përdoruesi\AppData\Roaming\
-TuxPaint\
+C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
 You can use NotePad or WordPad to create this file. Be sure to save it as Plain
 Text, and make sure the filename doesn't have ".txt" at the end...
@@ -86,7 +83,7 @@ Before this file is read, a system-wide configuration file is read. (By
 default, this configuration has no settings enabled.) It is normally located
 at:
 
-    C:\Program Files\Tuxpaint
+C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
@@ -1618,11 +1615,11 @@ Shkurtore butonash
 
     (Për përdorues Linux-esh dhe Unix-esh)
 
-    If any of the above options are set in "/etc/tuxpaint/tuxpaint.config", you
-    can override them in your own "~/.tuxpaintrc" file.
+    If any of the above options are set in "/etc/tuxpaint/tuxpaint.conf", you
+    can override them in your own "/home/emër përdoruesi/.tuxpaintrc" file.
 
     For true/false options, like "noprint" and "grab", you can simply say they
-    equal 'no' in your "~/.tuxpaintrc" file:
+    equal 'no' in your "/home/emër përdoruesi/.tuxpaintrc" file:
 
         noprint=no
         uppercase=no
@@ -1779,8 +1776,8 @@ Shkurtore butonash
         Under Linux and Unix, this prevents the system-wide configuration file,
         "/etc/tuxpaint/tuxpaint.conf", from being read.
 
-        Only your own configuration file, "~/.tuxpaintrc", if it exists, will
-        be used.
+        Only your own configuration file, "/home/emër përdoruesi/.tuxpaintrc",
+        if it exists, will be used.
 
 
 

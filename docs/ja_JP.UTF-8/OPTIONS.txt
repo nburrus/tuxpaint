@@ -48,8 +48,7 @@ Tux Paint の動作をカスタマイズするには、グラフィカルな操�
 
 Linux 及び Unix のユーザー
 
-ユーザー毎の設定ファイルは、ホームディレクトリに ".tuxpaintrc" というファイル名
-で作成します。（"~/.tuxpaintrc" あるいは "$HOME/.tuxpaintrc"）
+/home/username/.tuxpaintrc
 
 システム全体の設定ファイル
 
@@ -74,8 +73,7 @@ Application Support/TuxPaint 内に "tuxpaint.cfg" というファイル名で�
 
 Windows のユーザー
 
-ユーザー毎の設定ファイルは、個人用データのフォルダ C:\Users\username\AppData\
-Roaming\TuxPaint\ 内に "tuxpaint.cfg" というファイル名で作成します。
+C:\Users\username\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
 設定ファイルはメモ帳やワードパッドで作成できますが、必ずテキストファイルとして
 保存するよう注意して下さい。また、ファイル名に ".txt" という拡張子をつけないよ
@@ -87,7 +85,7 @@ Roaming\TuxPaint\ 内に "tuxpaint.cfg" というファイル名で作成しま�
 ザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にさ
 れています）
 
-    C:\Program Files\Tuxpaint
+C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
@@ -1607,12 +1605,12 @@ altprint=mod
 
     （Linux および Unix ユーザー向け）
 
-    "/etc/tuxpaint/tuxpaint.config" でオプションが設定されている場合でも、ユー
-    ザー各自の "~/.tuxpaintrc" ファイルの設定が優先されます。
+    "/etc/tuxpaint/tuxpaint.conf" でオプションが設定されている場合でも、ユー
+    ザー各自の "/home/username/.tuxpaintrc" ファイルの設定が優先されます。
 
     "noprint" や "grab" のように、真か偽で設定するオプションでは、ユーザー毎の
-    "~/.tuxpaintrc" ファイルで、例えば次のように、単純に「'no' に等しい」と設定
-    することができます:
+    "/home/username/.tuxpaintrc" ファイルで、例えば次のように、単純に「'no' に
+    等しい」と設定することができます:
 
         noprint=no
         uppercase=no
@@ -1769,8 +1767,8 @@ altprint=mod
         Linux および Unix において、システム全体の設定ファイル "/etc/tuxpaint/
         tuxpaint.conf" から設定を読み込まないようにします。
 
-        ユーザーごとの設定ファイル "~/.tuxpaintrc" が存在すれば、このファイルの
-        みから設定を読み込みます。
+        ユーザーごとの設定ファイル "/home/username/.tuxpaintrc" が存在すれば、
+        このファイルのみから設定を読み込みます。
 
 
 

@@ -747,7 +747,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
 
             <blockquote>
               <p>
-                <code>~/.tuxpaintrc</code>
+                <code>/home/nom d'utilisateur/.tuxpaintrc</code>
               </p>
             </blockquote>
 
@@ -775,7 +775,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
           Cela signifie que si quelque chose est défini dans un fichier de configuration que vous ne souhaitez pas activer, vous devrez soit modifier le fichier config. fichier (si vous le pouvez), ou changer l'option par le biais de la ligne de commande.        </p>
 
         <p>
-          Par exemple, si "/etc/tuxpaint/tuxpaint.conf" inclut une option pour désactiver le son ...        </p>
+          Par exemple, si "<code>/etc/tuxpaint/tuxpaint.conf</code>" inclut une option pour désactiver le son ...        </p>
 
         <blockquote>
           <p>
@@ -784,7 +784,7 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
         </blockquote>
 
         <p>
-          ... Alors vous pouvez réactiver le son en ajoutant cette option à votre propre fichier ".tuxpaintrc" :        </p>
+          ... Alors vous pouvez réactiver le son en ajoutant cette option à votre propre fichier "<code>/home/nom d'utilisateur/.tuxpaintrc</code>" :        </p>
 
         <blockquote>
           <p>
@@ -802,16 +802,13 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
         </blockquote>
 
         <p>
-          Les utilisateurs Linux et Unix peuvent également désactiver le fichier de configuration à l'échelle du système en incluant l'argument de ligne de commande suivant :                  </p>
+          On platforms where Tux Paint offers a system-wide configuration file, the settings in that file may be skipped (so only the user configuration file and other command-line arguments will be used) by including the following command-line argument:        </p>
 
         <blockquote>
           <p>
             <code>--nosysconfig</code>
           </p>
         </blockquote>
-
-        <p>
-          Tux Paint examinera alors uniquement "~/.tuxpaintrc" et les arguments en ligne de commande pour déterminer les options à activer.        </p>
       </dd>
     </dl>
 

@@ -169,7 +169,8 @@
           </header>
 
           <p>
-            ユーザー毎の設定ファイルは、ホームディレクトリに "<code><b>.tuxpaintrc</b></code>" というファイル名で作成します。（"<code>~/.tuxpaintrc</code>" あるいは "<code>$HOME/.tuxpaintrc</code>"）          </p>
+            <code>/home/username/.tuxpaintrc</code>
+          </p>
         </div>
 
         <section class="indent"><!-- H3: System-Wide Configuration File -->
@@ -218,7 +219,8 @@
         </header>
 
         <p>
-          ユーザー毎の設定ファイルは、個人用データのフォルダ <code>C:\Users\username\AppData\Roaming\TuxPaint\</code> 内に "<code><b>tuxpaint.cfg</b></code>" というファイル名で作成します。        </p>
+          <code>C:\Users\username\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
+        </p>
 
         <p>
           設定ファイルはメモ帳やワードパッドで作成できますが、必ずテキストファイルとして保存するよう注意して下さい。また、ファイル名に ".txt" という拡張子をつけないようにします。        </p>
@@ -232,10 +234,8 @@
           <p>
             ユーザー毎の設定ファイルが読み込まれる前に、以下の場所にある、システムの全ユーザーに適用される設定ファイルが読み込まれます。（標準では、全ての変更が無効にされています）          </p>
 
-          <blockquote>
-            <code>C:\Program Files\Tuxpaint</code>
-          </blockquote>
-
+          <p>
+            <code>C:\Program Files\TuxPaint\tuxpaint.cfg</code>
           </p>
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: Windows Users -->
@@ -2374,10 +2374,10 @@
       </p>
 
       <p>
-        "<code>/etc/tuxpaint/tuxpaint.config</code>" でオプションが設定されている場合でも、ユーザー各自の "<code>~/.tuxpaintrc</code>" ファイルの設定が優先されます。      </p>
+        "<code>/etc/tuxpaint/tuxpaint.conf</code>" でオプションが設定されている場合でも、ユーザー各自の "<code>/home/username/.tuxpaintrc</code>" ファイルの設定が優先されます。      </p>
 
       <p>
-        "<code>noprint</code>" や "<code>grab</code>" のように、真か偽で設定するオプションでは、ユーザー毎の "<code>~/.tuxpaintrc</code>" ファイルで、例えば次のように、単純に 「'no' に等しい」と設定することができます:      </p>
+        "<code>noprint</code>" や "<code>grab</code>" のように、真か偽で設定するオプションでは、ユーザー毎の "<code>/home/username/.tuxpaintrc</code>" ファイルで、例えば次のように、単純に 「'no' に等しい」と設定することができます:      </p>
 
       <blockquote>
         <code>noprint=no<br>
@@ -2551,7 +2551,7 @@
             Linux および Unix において、システム全体の設定ファイル "<code>/etc/tuxpaint/tuxpaint.conf</code>" から設定を読み込まないようにします。          </p>
 
           <p>
-            ユーザーごとの設定ファイル "<code>~/.tuxpaintrc</code>" が存在すれば、このファイルのみから設定を読み込みます。          </p>
+            ユーザーごとの設定ファイル "<code>/home/username/.tuxpaintrc</code>" が存在すれば、このファイルのみから設定を読み込みます。          </p>
         </dd>
       </dl>
 

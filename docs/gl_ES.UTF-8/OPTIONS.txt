@@ -48,9 +48,7 @@ quere activar habilitar:
 
 Usuarios de Linux e Unix
 
-O ficheiro que debe crear chámase «.tuxpaintrc» e debería colocarse no seu
-directorio persoal. (tamén coñecido como «~/.tuxpaintrc» ou «$HOME
-/.tuxpaintrc»)
+/home/nome de usuario/.tuxpaintrc
 
 Ficheiro de configuración de todo o sistema
 
@@ -75,9 +73,7 @@ at:
 
 Usuarios de Windows
 
-The file you should create is called "tuxpaint.cfg" and it should be placed in
-in your personal AppData folder: C:\Users\nome de usuario\AppData\Roaming\
-TuxPaint\
+C:\Users\nome de usuario\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
 Pode usar NotePad ou WordPad para crear este ficheiro. Asegúrese de gardalo
 como texto simple e asegúrese de que o nome do ficheiro non teña «.txt» ao
@@ -89,7 +85,7 @@ Before this file is read, a system-wide configuration file is read. (By
 default, this configuration has no settings enabled.) It is normally located
 at:
 
-    C:\Program Files\Tuxpaint
+C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
@@ -1647,10 +1643,12 @@ Button Shortcuts
     (Para usuarios de Linux e Unix)
 
     Se algunha das opcións anteriores está estabelecida en «/etc/tuxpaint/
-    tuxpaint.config», pode anulala no seu propio ficheiro «~/.tuxpaintrc».
+    tuxpaint.conf», pode anulala no seu propio ficheiro «/home/nome de usuario
+    /.tuxpaintrc».
 
     Para opcións verdadeiro/falso, como «noprint» e «grab», pode simplemente
-    dicir que son iguais a «no» no seu ficheiro «~/.tuxpaintrc»:
+    dicir que son iguais a «no» no seu ficheiro «/home/nome de usuario
+    /.tuxpaintrc»:
 
         noprint=no
         uppercase=no
@@ -1808,8 +1806,8 @@ Button Shortcuts
         En Linux e Unix, isto evita ler o ficheiro de configuración de todo o
         sistema, «/etc/tuxpaint/tuxpaint.conf».
 
-        Só se empregará o seu propio ficheiro de configuración, «~
-        /.tuxpaintrc», se existe.
+        Só se empregará o seu propio ficheiro de configuración, «/home/nome de
+        usuario/.tuxpaintrc», se existe.
 
 
 
