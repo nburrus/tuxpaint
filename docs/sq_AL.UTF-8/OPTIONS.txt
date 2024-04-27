@@ -59,8 +59,7 @@ at:
 
 Përdorues të MacOS-it
 
-The file you should create is called "tuxpaint.cfg" and it should be placed in
-your home folder, under the sub-folder: Library/Application Support/TuxPaint
+/Users/emër përdoruesi/Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Kartelë Formësimi Për Mbarë Sistemin
 
@@ -87,8 +86,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
-The file you should create is called "tuxpaint.conf" and it should be placed in
-/boot/home/config/settings/TuxPaint
+/boot/home/config/settings/TuxPaint/tuxpaint.conf
 
 ⚙ You can disable reading of this file altogether, leaving the settings as
 defaults (which can then be overridden by your personal config. file and/or
@@ -1174,29 +1172,29 @@ Ruaje Formësimin e Shtypësit
             Group) configuration. (Try running the command-line "xdg-user-dir
             PICTURES" to find out.)
             Typically (in an English locale), this will be a "Foto"
-            subdirectory in your home directory (i.e., "$HOME/Foto" aka "~/
-            Foto").
-            Tux Paint will fall back to using that typical directory, of no XDG
+            subdirectory in your home directory (i.e., 
+            "/home/emër përdoruesi/Foto").
+            Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "Fotot e Mia" directory for each user (normaly "c:\Users\
-            EMËR PËRDORUESI\Pictures").
+          o Windows - "Fotot e Mia" directory for each user (normaly 
+            "C:\Users\emër përdoruesi\My Pictures")
             You can directly open the folder as follows:
               # Shtypni “[Windows]+[R]”" që të hapet dialogu “Xhironi …”.
               # Enter "Shell:My Pictures" in the text box and push [OK].
           o macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
-        be created and used. (e.g., "~/Foto/TuxPaint") When the "--exportdir"
-        option is used, the exact path specified will be used (no "TuxPaint"
-        subdirectory is created).
+        be created and used. (e.g., "/home/emër përdoruesi/Foto/TuxPaint") When
+        the "--exportdir" option is used, the exact path specified will be used
+        (no "TuxPaint" subdirectory is created).
 
-        The directory itself (e.g., "~/Foto/TuxPaint") will be created, if it
-        doesn't exist.
+        The directory itself (e.g., "/home/emër përdoruesi/Foto/TuxPaint") will
+        be created, if it doesn't exist.
 
-        If the parent directory (e.g., "~/Foto/TuxPaint") also does not exist,
-        Tux Paint will attempt to create it as well (but not any directories
-        higher than that).
+        If the parent directory (e.g., "/home/emër përdoruesi/Foto") also does
+        not exist, Tux Paint will attempt to create it as well (but not any
+        directories higher than that).
 
         Shembull: exportdir=/home/penguin/TuxPaintExports
 
@@ -1284,17 +1282,15 @@ Ruaje Formësimin e Shtypësit
 
         If you do not override it, the default location is:
 
-          o Linux & Unix — Under a hidden directory named ".tuxpaint" in your
-            home directory (aka "~" or "$HOME")
-            Shembull: /home/username/.tuxpaint/brushes/
-          o Windows — Inside a folder named "TuxPaint" in your "Application
-            Data" folder.
-            Shembull: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\brushes\
-          o macOS — Inside a folder named "TuxPaint" in your "Application
-            Support" folder.
-            Shembull: /Users/Username/Library/Application Support/TuxPaint/
-            brushes/
+        Linux / Unix
+            /home/emër përdoruesi/.tuxpaint/
+
+        Windows
+            C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\
+
+        macoS
+            /Users/emër përdoruesi/Library/Application Support/TuxPaint/
+
 
         📜 Note: Prior to version 0.9.18, Tux Paint would use the same setting
         or default as for "savedir" to search for data files. As of version
@@ -1615,13 +1611,13 @@ Shkurtore butonash
 
     Anashkalim Mundësish të Formësimit të Ssistemit
 
-    (Për përdorues Linux-esh dhe Unix-esh)
-
-    If any of the above options are set in "/etc/tuxpaint/tuxpaint.conf", you
-    can override them in your own "/home/emër përdoruesi/.tuxpaintrc" file.
+    If any of the above options are set in a system-wide configuration file
+    (e.g. "/etc/tuxpaint/tuxpaint.conf" on Linux), you may override them in
+    your own personal configuration file (e.g. 
+    "/home/emër përdoruesi/.tuxpaintrc")
 
     For true/false options, like "noprint" and "grab", you can simply say they
-    equal 'no' in your "/home/emër përdoruesi/.tuxpaintrc" file:
+    equal 'no' in your personal configuration file:
 
         noprint=no
         uppercase=no
@@ -1775,11 +1771,12 @@ Shkurtore butonash
 
     --nosysconfig
 
-        Under Linux and Unix, this prevents the system-wide configuration file,
-        "/etc/tuxpaint/tuxpaint.conf", from being read.
+        This prevents the system-wide configuration file (e.g. 
+        "/etc/tuxpaint/tuxpaint.conf" on Linux), from being read.
 
-        Only your own configuration file, "/home/emër përdoruesi/.tuxpaintrc",
-        if it exists, will be used.
+        Only your own configuration file (e.g. 
+        "/home/emër përdoruesi/.tuxpaintrc" on Linux) — if it exists — will be
+        used.
 
 
 

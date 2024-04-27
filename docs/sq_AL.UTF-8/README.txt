@@ -1271,6 +1271,9 @@ Përdorim i Tux Paint-it:
         Tux Paint's configuration.
       + Dokumentim i Mjetit “Magjik” (“magic-docs”)
         Documentation for each of the currently-installed 'Magic' tools.
+      + Frequently Asked Questions ("FAQs") about Tux Paint
+        Answers to, and solutions for, some common questions about, and
+        problems with, using Tux Paint.
 
 
 Si të zgjerohet Tux Paint-i:

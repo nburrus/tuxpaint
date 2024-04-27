@@ -59,8 +59,7 @@ at:
 
 macOS Users
 
-The file you should create is called "tuxpaint.cfg" and it should be placed in
-your home folder, under the sub-folder: Library/Application Support/TuxPaint
+/Users/username/Library/Application Support/TuxPaint/tuxpaint.cfg
 
 System-Wide Configuration File
 
@@ -87,8 +86,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
-The file you should create is called "tuxpaint.conf" and it should be placed in
-/boot/home/config/settings/TuxPaint
+/boot/home/config/settings/TuxPaint/tuxpaint.conf
 
 ⚙ You can disable reading of this file altogether, leaving the settings as
 defaults (which can then be overridden by your personal config. file and/or
@@ -1174,27 +1172,27 @@ Save Printer Configuration
             Group) configuration. (Try running the command-line "xdg-user-dir
             PICTURES" to find out.)
             Typically (in an English locale), this will be a "Pictures"
-            subdirectory in your home directory (i.e., "$HOME/Pictures" aka "~/
-            Pictures").
-            Tux Paint will fall back to using that typical directory, of no XDG
+            subdirectory in your home directory (i.e., 
+            "/home/username/Pictures").
+            Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "My Pictures" directory for each user (normaly "c:\Users\
-            USERNAME\Pictures").
+          o Windows - "My Pictures" directory for each user (normaly 
+            "C:\Users\username\My Pictures")
             You can directly open the folder as follows:
               # Press "[Windows]+[R]" key to open "Run ..." dialogue.
               # Enter "Shell:My Pictures" in the text box and push [OK].
           o macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
-        be created and used. (e.g., "~/Pictures/TuxPaint") When the
-        "--exportdir" option is used, the exact path specified will be used (no
-        "TuxPaint" subdirectory is created).
+        be created and used. (e.g., "/home/username/Pictures/TuxPaint") When
+        the "--exportdir" option is used, the exact path specified will be used
+        (no "TuxPaint" subdirectory is created).
 
-        The directory itself (e.g., "~/Pictures/TuxPaint") will be created, if
-        it doesn't exist.
+        The directory itself (e.g., "/home/username/Pictures/TuxPaint") will be
+        created, if it doesn't exist.
 
-        If the parent directory (e.g., "~/Pictures/TuxPaint") also does not
+        If the parent directory (e.g., "/home/username/Pictures") also does not
         exist, Tux Paint will attempt to create it as well (but not any
         directories higher than that).
 
@@ -1284,17 +1282,15 @@ Save Printer Configuration
 
         If you do not override it, the default location is:
 
-          o Linux & Unix — Under a hidden directory named ".tuxpaint" in your
-            home directory (aka "~" or "$HOME")
-            Example: /home/username/.tuxpaint/brushes/
-          o Windows — Inside a folder named "TuxPaint" in your "Application
-            Data" folder.
-            Example: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\brushes\
-          o macOS — Inside a folder named "TuxPaint" in your "Application
-            Support" folder.
-            Example: /Users/Username/Library/Application Support/TuxPaint/
-            brushes/
+        Linux / Unix
+            /home/username/.tuxpaint/
+
+        Windows
+            C:\Users\username\AppData\Roaming\TuxPaint\
+
+        macoS
+            /Users/username/Library/Application Support/TuxPaint/
+
 
         📜 Note: Prior to version 0.9.18, Tux Paint would use the same setting
         or default as for "savedir" to search for data files. As of version
@@ -1614,13 +1610,12 @@ Button Shortcuts
 
     Overriding System Config. Options
 
-    (For Linux and Unix users)
-
-    If any of the above options are set in "/etc/tuxpaint/tuxpaint.conf", you
-    can override them in your own "/home/username/.tuxpaintrc" file.
+    If any of the above options are set in a system-wide configuration file
+    (e.g. "/etc/tuxpaint/tuxpaint.conf" on Linux), you may override them in
+    your own personal configuration file (e.g. "/home/username/.tuxpaintrc")
 
     For true/false options, like "noprint" and "grab", you can simply say they
-    equal 'no' in your "/home/username/.tuxpaintrc" file:
+    equal 'no' in your personal configuration file:
 
         noprint=no
         uppercase=no
@@ -1774,11 +1769,11 @@ Button Shortcuts
 
     --nosysconfig
 
-        Under Linux and Unix, this prevents the system-wide configuration file,
-        "/etc/tuxpaint/tuxpaint.conf", from being read.
+        This prevents the system-wide configuration file (e.g. 
+        "/etc/tuxpaint/tuxpaint.conf" on Linux), from being read.
 
-        Only your own configuration file, "/home/username/.tuxpaintrc", if it
-        exists, will be used.
+        Only your own configuration file (e.g. "/home/username/.tuxpaintrc" on
+        Linux) — if it exists — will be used.
 
 
 

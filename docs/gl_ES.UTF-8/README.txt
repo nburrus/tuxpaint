@@ -1293,6 +1293,9 @@ Using Tux Paint:
       + Documentación da ferramenta «Maxia» («magic-docs»)
         Documentación para cada unha das ferramentas de «Maxia» instaladas
         actualmente.
+      + Frequently Asked Questions ("FAQs") about Tux Paint
+        Answers to, and solutions for, some common questions about, and
+        problems with, using Tux Paint.
 
 
 How to extend Tux Paint:

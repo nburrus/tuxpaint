@@ -102,7 +102,7 @@ macOS
     mund ta vendosni te dosja “Application Support” e sistemit (gjendet nën
     "Library", në rrënjë të sistemit tuaj të kartelave):
 
-        /Library/Application Support/TuxPaint/
+        /Library/Application Support/TuxPaint/data/
 
     Kur e përditësoni Tux Paint-in me një version të ri, lënda e kësaj dosjeje
     “TuxPaint” do të mbesë e njëjtë dhe do të mbesë e përdorshme nga krejt
@@ -121,8 +121,7 @@ Windows
     Dosja juaj personale Tux Paint gjedenet te “Application Data” juaj
     personale. Për shembull, në Windows-e më të rinj:
 
-        C:\Dokumente dhe Rregullime\(emër përdoruesi)\Të dhëna Aplikacioni\
-        TuxPaint\
+        C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\
 
 
 
@@ -131,18 +130,14 @@ macOS
     Dosja juaj personale Tux Paint gjendet në dosjen tuaj personale
     “Application Support”:
 
-        /Users/(emër përdoruesi)/Library/Application Support/TuxPaint/
+        /Users/emër përdoruesi/Library/Application Support/TuxPaint/
 
 
 
 Linux dhe Unix
 
-    Kartelat tuaja personale Tux Paint shkojnë te një “drejtori e fshehur” që
-    gjendet në drejtorinë shtëpi të llogarisë tuaj: “$(HOME)/.tuxpaint/” (e
-    njohur edhe si “~/.tuxpaint/”).
-
-    Pra, nëse drejtoria juaj shtëpi është “/home/tux”, atëherë kartelat tuaja
-    personale Tux Paint shkojnë te “/home/tux/.tuxpaint/”.
+    Your personal Tux Paint files go into a 'hidden directory' found in your
+    account's home directory: "/home/emër përdoruesi/.tuxpaint/".
 
     Mos harroni pikën (“.”) para “tuxpaint”!
 
@@ -153,8 +148,8 @@ Që të shoni penelat, stampat, “fillesat”, gjedhet dhe shkronjat tuaja, kri
 nëndrejtori nën drejtorinë tuaj personale Tux Paint të quajtuara “brushes”, “
 stamps”, “starters”, “templates”, “fonts”, përkatësisht.
 
-(Për shembull, nëse krijoni një penel të quajtur “flower.png”, do ta vendosnit
-te “~/.tuxpaint/brushes/”, nën Linux ose Unix.)
+(For example, if you created a brush named "flower.png", you would put it in 
+"/home/emër përdoruesi/.tuxpaint/brushes/" under Linux or Unix.)
 
 Penela
 

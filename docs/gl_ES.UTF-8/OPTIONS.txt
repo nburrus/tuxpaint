@@ -60,8 +60,7 @@ at:
 
 Usuarios de macOS
 
-O ficheiro que debe crear chámase «tuxpaint.cfg» e debería colocalo no seu
-cartafol persoal, baixo o subcartafol: Library/Application Support/TuxPaint
+/Users/nome de usuario/Library/Application Support/TuxPaint/tuxpaint.cfg
 
 Ficheiro de configuración de todo o sistema
 
@@ -89,8 +88,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 Haiku Users
 
-The file you should create is called "tuxpaint.conf" and it should be placed in
-/boot/home/config/settings/TuxPaint
+/boot/home/config/settings/TuxPaint/tuxpaint.conf
 
 ⚙ You can disable reading of this file altogether, leaving the settings as
 defaults (which can then be overridden by your personal config. file and/or
@@ -1185,14 +1183,15 @@ Save Printer Configuration
             escritorio estea configurado para que se almacenen imaxes, en
             función da configuración XDG (X Desktop Group). (Probe a executar a
             liña de ordes «xdg-user-dir PICTURES» para descubrilo.)
-            Normalmente (na configuración local inglesa), este será un
-            subdirectorio «Imaxes» no seu directorio persoal (é dicir, «$HOME/
-            Imaxes» tamén coñecido como «~/Imaxes»).
-            Tux Paint volverá usar ese directorio habitual, se non se pode ler
-            a configuración XDG, ou non se estabelece nada «XDG_PICTURES_DIR».
-          o Windows: Directorio «As miñas imaxes» para cada usuario
-            (normalmente «c:\Users\NOME_DE_USUARIO\Pictures»).
-            Pode abrir directamente o cartafol do seguinte xeito:
+            Typically (in an English locale), this will be a "Imaxes"
+            subdirectory in your home directory (i.e., 
+            "/home/nome de usuario/Imaxes").
+            Tux Paint will fall back to using that typical directory, if no XDG
+            configuration can be read, or nothing is set for
+            "XDG_PICTURES_DIR".
+          o Windows - "As miñas imaxes" directory for each user (normaly 
+            "C:\Users\nome de usuario\My Pictures")
+            You can directly open the folder as follows:
               # Prema a tecla «[Windows]+[R]» para abrir o diálogo
                 «Executar...».
               # Escriba «Shell: As miñas imaxes« na caixa de texto e prema en
@@ -1200,16 +1199,16 @@ Save Printer Configuration
           o macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
-        be created and used. (e.g., "~/Imaxes/TuxPaint") When the "--exportdir"
-        option is used, the exact path specified will be used (no "TuxPaint"
-        subdirectory is created).
+        be created and used. (e.g., "/home/nome de usuario/Imaxes/TuxPaint")
+        When the "--exportdir" option is used, the exact path specified will be
+        used (no "TuxPaint" subdirectory is created).
 
-        O directorio en si (p. ex.: «~/Imaxes/TuxPaint») crearase, se non
-        existe.
+        The directory itself (e.g., "/home/nome de usuario/Imaxes/TuxPaint")
+        will be created, if it doesn't exist.
 
-        Se o directorio pai (por exemplo, «~/Imaxes/TuxPaint») tampouco existe,
-        Tux Paint tentará crealo tamén (pero non ningún directorio superior a
-        ese).
+        If the parent directory (e.g., "/home/nome de usuario/Imaxes") also
+        does not exist, Tux Paint will attempt to create it as well (but not
+        any directories higher than that).
 
         Exemplo: exportdir=/home/penguin/TuxPaintExports
 
@@ -1298,17 +1297,15 @@ Save Printer Configuration
 
         Se non o anula, a ubicación predeterminada é:
 
-          o Linux e Unix: baixo un directorio agochado chamado «.tuxpaint» no
-            seu directorio persoal (tamén coñecido como «~» ou «$HOME»)
-            Exemplo: /home/username/.tuxpaint/brushes/
-          o Windows: Dentro un cartafol chamado «TuxPaint» no seu cartafol
-            «Application Data».
-            Exemplo: C:\Documents and Settings\Username\Application Data\
-            TuxPaint\brushes\
-          o macOS: Dentro un cartafol chamado «TuxPaint» no seu cartafol
-            «Application Support».
-            Exemplo: /Users/Username/Library/Application Support/TuxPaint/
-            brushes/
+        Linux / Unix
+            /home/nome de usuario/.tuxpaint/
+
+        Windows
+            C:\Users\nome de usuario\AppData\Roaming\TuxPaint\
+
+        macoS
+            /Users/nome de usuario/Library/Application Support/TuxPaint/
+
 
         📜 Note: Prior to version 0.9.18, Tux Paint would use the same setting
         or default as for "savedir" to search for data files. As of version
@@ -1642,15 +1639,13 @@ Button Shortcuts
 
     Anulación da configuración do sistema. Opcións
 
-    (Para usuarios de Linux e Unix)
+    If any of the above options are set in a system-wide configuration file
+    (e.g. "/etc/tuxpaint/tuxpaint.conf" on Linux), you may override them in
+    your own personal configuration file (e.g. 
+    "/home/nome de usuario/.tuxpaintrc")
 
-    Se algunha das opcións anteriores está estabelecida en «/etc/tuxpaint/
-    tuxpaint.conf», pode anulala no seu propio ficheiro «/home/nome de usuario
-    /.tuxpaintrc».
-
-    Para opcións verdadeiro/falso, como «noprint» e «grab», pode simplemente
-    dicir que son iguais a «no» no seu ficheiro «/home/nome de usuario
-    /.tuxpaintrc»:
+    For true/false options, like "noprint" and "grab", you can simply say they
+    equal 'no' in your personal configuration file:
 
         noprint=no
         uppercase=no
@@ -1805,11 +1800,12 @@ Button Shortcuts
 
     --nosysconfig
 
-        En Linux e Unix, isto evita ler o ficheiro de configuración de todo o
-        sistema, «/etc/tuxpaint/tuxpaint.conf».
+        This prevents the system-wide configuration file (e.g. 
+        "/etc/tuxpaint/tuxpaint.conf" on Linux), from being read.
 
-        Só se empregará o seu propio ficheiro de configuración, «/home/nome de
-        usuario/.tuxpaintrc», se existe.
+        Only your own configuration file (e.g. 
+        "/home/nome de usuario/.tuxpaintrc" on Linux) — if it exists — will be
+        used.
 
 
 
@@ -1822,10 +1818,9 @@ Button Shortcuts
     --version
         --verbose-version
 
-        Amosa o número de versión e a data da copia de Tux Paint que está a
-        executar. O «--verbose-version» tamén lista as opcións de tempo de
-        compilación definidas. (Vexa INSTALL [INSTALAR] e FAQ [Preguntas
-        frecuentes] ).
+        Display the version number and date of the copy of Tux Paint you are
+        running. The "--verbose-version" also lists what compile-time options
+        were set. (See INSTALL and FAQ).
 
 
 

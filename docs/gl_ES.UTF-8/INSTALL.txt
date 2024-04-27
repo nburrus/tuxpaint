@@ -896,9 +896,10 @@ Eliminar programas do Panel de control.
 macOS
 
 Delete "TuxPaint.app" from the "Applications" folder. Data files, including the
-configuration files, stamps, and saved pictures, may be found in "/Library/
-Application Support/TuxPaint" (all users) and "/Users/USERNAME/Library/
-Application Support/TuxPaint" (individual users).
+configuration files, stamps, and saved pictures, may be found in 
+"/Library/Application Support/TuxPaint/" (all users) and 
+"/Users/nome de usuario/Library/Application Support/TuxPaint/" (individual
+users).
 
 Linux
 

@@ -1354,6 +1354,9 @@ Utiliser Tux Paint :
         l'outil Tux Paint Config.
       + Documentation sur l'outil 'Magie' ("magic-docs")
         Documentation pour chacun des outils "Magic" actuellement installés.
+      + Frequently Asked Questions ("FAQs") about Tux Paint
+        Answers to, and solutions for, some common questions about, and
+        problems with, using Tux Paint.
 
 
 Extensions pour Tux Paint :

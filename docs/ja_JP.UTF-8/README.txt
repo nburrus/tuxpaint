@@ -1182,6 +1182,9 @@ Tux Paint の使用:
         Config を使用したくない人向け。
       + 「まほう」ツールに関するドキュメント ("magic-docs")
         インストールされている、それぞれの「まほう」ツールに関する説明。
+      + Frequently Asked Questions ("FAQs") about Tux Paint
+        Answers to, and solutions for, some common questions about, and
+        problems with, using Tux Paint.
 
 
 Tux Paint の拡張:

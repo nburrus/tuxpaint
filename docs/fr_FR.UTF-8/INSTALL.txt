@@ -923,11 +923,11 @@ dans la Section Ajout / Suppression de programmes du Panneau de configuration.
 
 macOS
 
-Enlevez "TuxPaint.app" du dossier "Applications". Les fichiers de données les
-fichiers de configuration, les tampons et les images sauvegardées peuvent être
-trouvées dans "/Bibliothèque/Support d'Application/Tux Paint" (pour tous les
-utilisateurs) et "/Users/USERNAME/Library/Application Support/TuxPaint" pour
-les utilisateurs individuels.
+Delete "TuxPaint.app" from the "Applications" folder. Data files, including the
+configuration files, stamps, and saved pictures, may be found in 
+"/Library/Application Support/TuxPaint/" (all users) and 
+"/Users/nom d'utilisateur/Library/Application Support/TuxPaint/" (individual
+users).
 
 Linux
 

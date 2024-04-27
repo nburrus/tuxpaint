@@ -107,7 +107,7 @@ macOS
     vous pouvez placer dans votre dossier système "Application Support" (situé
     sous "Library" à la racine de votre système de fichiers) :
 
-        /Library/Application Support/TuxPaint/
+        /Library/Application Support/TuxPaint/data/
 
     Lorsque vous passez à une version plus récente de Tux Paint , le contenu de
     ce dossier "TuxPaint" restera à la même place et restera accessible à tous
@@ -126,8 +126,7 @@ Windows
     Votre dossier personnel Tux Paint est stocké dans votre dossier
     "Application Data". Par exemple, sur un Windows plus récent :
 
-        C:\Documents and Settings\(nom d'utilisateur)\Application Data\TuxPaint
-        \
+        C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\
 
 
 
@@ -136,18 +135,14 @@ macOS
     Votre dossier personnel Tux Paint est stocké dans votre dossier
     «Application Support» :
 
-        /Users/(nom d'utilisateur)/Library/Application Support/TuxPaint/
+        /Users/nom d'utilisateur/Library/Application Support/TuxPaint/
 
 
 
 Linux et Unix
 
-    Vos fichiers personnels Tux Paint vont dans un 'répertoire caché' que l'on
-    trouve dans votre répertoire personnel "$(HOME)/.tuxpaint/" (également
-    appelé "~/.tuxpaint/".
-
-    Autrement dit, si votre répertoire personnel est "/home/tux", alors votre
-    répertoire Tux Paint est "/home/tux/.tuxpaint/".
+    Your personal Tux Paint files go into a 'hidden directory' found in your
+    account's home directory: "/home/nom d'utilisateur/.tuxpaint/".
 
     N'oubliez pas le point (" .") avant le "tuxpaint" !
 
@@ -159,8 +154,8 @@ et des polices créez des sous-répertoires dans votre répertoire personnel Tux
 Paint nommés respectivement "brushes", "stamps", "starters", "templates", "
 fonts".
 
-(Par exemple, si vous avez créé un pinceau nommé "flower.png", vous le mettrez
-dans "~/.tuxpaint/brushes/" sous Linux ou Unix.)
+(For example, if you created a brush named "flower.png", you would put it in 
+"/home/nom d'utilisateur/.tuxpaint/brushes/" under Linux or Unix.)
 
 Pinceaux
 

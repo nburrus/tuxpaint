@@ -103,7 +103,7 @@ macOS
     seu sistema no cartafol «Application Support» (atópase en «Library» na raíz
     do seu sistema de ficheiros):
 
-        /Library/Application Support/TuxPaint/
+        /Library/Application Support/TuxPaint/data/
 
     Cando actualice a unha versión máis recente de Tux Paint, o contido deste
     cartafol «TuxPaint» seguirá sendo o mesmo e permanecerá accesíbel por todos
@@ -123,7 +123,7 @@ Windows
     O seu cartafol persoal de Tux Paint almacénase nos seus «Datos da
     aplicación» persoais. Por exemplo, nos Windows máis recentes:
 
-        C:\Documentos e axustes\(nome de usuario)\Datos da aplicación\TuxPaint\
+        C:\Users\nome de usuario\AppData\Roaming\TuxPaint\
 
 
 
@@ -132,18 +132,14 @@ macOS
     O seu cartafol persoal de Tux Paint almacénase no cartafol persoal
     «Application Support»:
 
-        /Users/(nome de usuario)/Library/Application Support/TuxPaint/
+        /Users/nome de usuario/Library/Application Support/TuxPaint/
 
 
 
 Linux e Unix
 
-    Os seus ficheiros persoais de Tux Paint van a un «directorio agochado» que
-    se atopa no directorio persoal da súa conta: «$(HOME)/.tuxpaint/» (tamén
-    coñecido como «~/.tuxpaint/»).
-
-    É dicir, se o seu directorio persoal é «/home/tux», entón os ficheiros
-    persoais de Tux Paint entrarán en «/home/tux/.tuxpaint/».
+    Your personal Tux Paint files go into a 'hidden directory' found in your
+    account's home directory: "/home/nome de usuario/.tuxpaint/".
 
     Non esqueza o punto («.») antes de «tuxpaint»!
 
@@ -155,8 +151,8 @@ tipos de letra, cree subdirectorios no seu directorio persoal de Tux Paint
 chamados «brushes», «stamps», «starters», «templates», «fonts», ,
 respectivamente.
 
-(Por exemplo, se creou un pincel chamado «flor.png», poñeríao en «~/.tuxpaint/
-brushes/» en Linux ou Unix.)
+(For example, if you created a brush named "flor.png", you would put it in 
+"/home/nome de usuario/.tuxpaint/brushes/" under Linux or Unix.)
 
 Pinceis
 

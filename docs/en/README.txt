@@ -1266,6 +1266,9 @@ Using Tux Paint:
         Tux Paint's configuration.
       + 'Magic' Tool Documentation ("magic-docs")
         Documentation for each of the currently-installed 'Magic' tools.
+      + Frequently Asked Questions ("FAQs") about Tux Paint
+        Answers to, and solutions for, some common questions about, and
+        problems with, using Tux Paint.
 
 
 How to extend Tux Paint:

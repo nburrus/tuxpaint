@@ -99,7 +99,7 @@ macOS
     your system's "Application Support" folder (found under "Library" at the
     root of your filesystem):
 
-        /Library/Application Support/TuxPaint/
+        /Library/Application Support/TuxPaint/data/
 
     When you upgrade to a newer version of Tux Paint, the contents of this
     "TuxPaint" folder will stay the same, and remain accessible by all users of
@@ -118,7 +118,7 @@ Windows
     Your personal Tux Paint folder is stored in your personal "Application
     Data". For example, on newer Windows:
 
-        C:\Documents and Settings\(username)\Application Data\TuxPaint\
+        C:\Users\username\AppData\Roaming\TuxPaint\
 
 
 
@@ -127,18 +127,14 @@ macOS
     Your personal Tux Paint folder is stored in your personal "Application
     Support" folder:
 
-        /Users/(username)/Library/Application Support/TuxPaint/
+        /Users/username/Library/Application Support/TuxPaint/
 
 
 
 Linux and Unix
 
     Your personal Tux Paint files go into a 'hidden directory' found in your
-    account's home directory: "$(HOME)/.tuxpaint/" (also known as "~/.tuxpaint/
-    ").
-
-    That is, if your home directory is "/home/tux", then your personal Tux
-    Paint files go in "/home/tux/.tuxpaint/".
+    account's home directory: "/home/username/.tuxpaint/".
 
     Don't forget the period (".") before the "tuxpaint"!
 
@@ -149,8 +145,8 @@ To add your own brushes, stamps, 'starters,' templates, and fonts, create
 subdirectories under your personal Tux Paint directory named "brushes", "stamps
 ", "starters", "templates", "fonts", respectively.
 
-(For example, if you created a brush named "flower.png", you would put it in "~
-/.tuxpaint/brushes/" under Linux or Unix.)
+(For example, if you created a brush named "flower.png", you would put it in 
+"/home/username/.tuxpaint/brushes/" under Linux or Unix.)
 
 Brushes
 
