@@ -25,7 +25,7 @@
       </p>
 
       <p>
-        avril  7, 2024      </p>
+        avril 27, 2024      </p>
     </center>
 
     <hr size="2"
@@ -313,21 +313,21 @@
 
         <dl>
           <dt>
-            Windows Vista, Windows 8, Windows 10, Windows 11
+            <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
           </dt>
 
           <dd>
             Dans le dossier "AppData" de l'utilisateur :<br> par ex.., <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\saved</code>          </dd>
 
           <dt>
-            macOS
+            <cite>macOS</cite>
           </dt>
 
           <dd>
             Dans le dossier "Application Support"  de l'utilisateur :<br> par ex., <code>/Users/<i>Username</i>/Library/Applicaton Support/TuxPaint/saved/</code>          </dd>
 
           <dt>
-            Linux / Unix
+            <cite>Linux / Unix</cite>
           </dt>
 
           <dd>
@@ -693,13 +693,13 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
         <ul>
 
           <li>
-            <i>Windows</i>
+            <cite>Windows</cite>
             <p>
-              Sous Windows, Tux Paint examine d'abord le fichier de configuration :            </p>
+              Under Windows, Tux Paint first examines the configuration file:            </p>
 
             <blockquote>
               <p>
-                <code>tuxpaint.cfg</code>
+                <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
               </p>
             </blockquote>
 
@@ -708,13 +708,31 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
           </li>
 
           <li>
-            <i>macOS</i>
+            <cite>macOS</cite>
             <p>
-                          </p>
+              Under macOS, it first examines the system-wide configuration file, located here:            </p>
+
+            <blockquote>
+              <p>
+                <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Il examine ensuite le fichier de configuration personnel de l'utilisateur :            </p>
+
+            <blockquote>
+              <p>
+                <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Et finalement, toutes les options envoyées en tant qu'arguments de ligne de commande sont utilisées.            </p>
           </li>
 
           <li>
-            <i>Unix et Linux</i>
+            <cite>Linux / Unix</cite>
             <p>
               Sous Unix et Linux, il examine d'abord le fichier de configuration à l'échelle du système, situé ici :            </p>
 
@@ -738,9 +756,18 @@ cible "nosound". (c'est-à-dire, ne lancez pas "<code>make nosound</code>") Assu
           </li>
 
           <li>
-            <i>Haiku</i>
+            <cite>Haiku</cite>
             <p>
-                          </p>
+              Under Haiku, Tux Paint first examines the configuration file:            </p>
+
+            <blockquote>
+              <p>
+                <code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Et finalement, toutes les options envoyées en tant qu'arguments de ligne de commande sont utilisées.            </p>
           </li>
         </ul>
 

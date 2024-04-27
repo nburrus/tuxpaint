@@ -4,7 +4,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年4月 7日
+                                 2024年4月27日
 
 -------------------------------------------------------------------------------
 +------------------------------+
@@ -559,13 +559,24 @@ Tux Paint is using options I didn't specify!
 
         Under Windows, Tux Paint first examines the configuration file:
 
-            tuxpaint.cfg
+            C:\Users\Username\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
         Finally, any options sent as command-line arguments are used.
 
       + macOS
 
-      + Unix and Linux
+        Under macOS, it first examines the system-wide configuration file,
+        located here:
+
+            /Library/Application Support/TuxPaint/tuxpaint.cfg
+
+        It then examines the user's personal configuration file:
+
+            /Users/Username/Library/Application Support/TuxPaint/tuxpaint.cfg
+
+        Finally, any options sent as command-line arguments are used.
+
+      + Linux / Unix
 
         Under Unix and Linux, it first examines the system-wide configuration
         file, located here:
@@ -579,6 +590,12 @@ Tux Paint is using options I didn't specify!
         Finally, any options sent as command-line arguments are used.
 
       + Haiku
+
+        Under Haiku, Tux Paint first examines the configuration file:
+
+            /boot/home/config/settings/TuxPaint/tuxpaint.conf
+
+        Finally, any options sent as command-line arguments are used.
 
     This means that if anything is set in a configuration file that you don't
     want set, you'll need to either change the config. file (if you can), or

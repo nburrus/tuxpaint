@@ -25,7 +25,7 @@
       </p>
 
       <p>
-         7 de Abril de 2024      </p>
+        27 de Abril de 2024      </p>
     </center>
 
     <hr size="2"
@@ -313,21 +313,21 @@
 
         <dl>
           <dt>
-            Windows Vista, Windows 8, Windows 10, Windows 11
+            <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
           </dt>
 
           <dd>
             No cartafol «AppData» do usuario:<br> p. ex.: <code>C:\Users\<i>nome de usuario</i>\AppData\Roaming\TuxPaint\saved</code>          </dd>
 
           <dt>
-            macOS
+            <cite>macOS</cite>
           </dt>
 
           <dd>
             No cartafol «Asistencia de aplicacións» do usuario::<br> e.g., <code>/Users/<i>nome de usuario</i>/Library/Applicaton Support/TuxPaint/saved/</code>          </dd>
 
           <dt>
-            Linux / Unix
+            <cite>Linux / Unix</cite>
           </dt>
 
           <dd>
@@ -692,13 +692,13 @@
         <ul>
 
           <li>
-            <i>Windows</i>
+            <cite>Windows</cite>
             <p>
-              En Windows, Tux Paint examina primeiro o ficheiro de configuración:            </p>
+              Under Windows, Tux Paint first examines the configuration file:            </p>
 
             <blockquote>
               <p>
-                <code>tuxpaint.cfg</code>
+                <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
               </p>
             </blockquote>
 
@@ -707,13 +707,31 @@
           </li>
 
           <li>
-            <i>macOS</i>
+            <cite>macOS</cite>
             <p>
-                          </p>
+              Under macOS, it first examines the system-wide configuration file, located here:            </p>
+
+            <blockquote>
+              <p>
+                <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
+              </p>
+            </blockquote>
+
+            <p>
+              A continuación, examina o ficheiro de configuración persoal do usuario:            </p>
+
+            <blockquote>
+              <p>
+                <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Finalmente, úsanse as opcións enviadas como argumentos da liña de ordes.            </p>
           </li>
 
           <li>
-            <i>Unix e Linux</i>
+            <cite>Linux / Unix</cite>
             <p>
               En Unix e Linux, primeiro examine o ficheiro de configuración de todo o sistema, que se atopa aquí:            </p>
 
@@ -737,9 +755,18 @@
           </li>
 
           <li>
-            <i>Haiku</i>
+            <cite>Haiku</cite>
             <p>
-                          </p>
+              Under Haiku, Tux Paint first examines the configuration file:            </p>
+
+            <blockquote>
+              <p>
+                <code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Finalmente, úsanse as opcións enviadas como argumentos da liña de ordes.            </p>
           </li>
         </ul>
 

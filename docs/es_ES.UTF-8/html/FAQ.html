@@ -25,7 +25,7 @@
       </p>
 
       <p>
-        abril  7, 2024      </p>
+        abril 27, 2024      </p>
     </center>
 
     <hr size="2"
@@ -313,21 +313,21 @@
 
         <dl>
           <dt>
-            Windows Vista, Windows 8, Windows 10, Windows 11
+            <cite>Windows Vista, Windows 8, Windows 10, Windows 11</cite>
           </dt>
 
           <dd>
             In the user's "AppData" folder:<br> e.g., <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\saved</code>          </dd>
 
           <dt>
-            macOS
+            <cite>macOS</cite>
           </dt>
 
           <dd>
             In the user's "Application Support" folder:<br> e.g., <code>/Users/<i>Username</i>/Library/Applicaton Support/TuxPaint/saved/</code>          </dd>
 
           <dt>
-            Linux / Unix
+            <cite>Linux / Unix</cite>
           </dt>
 
           <dd>
@@ -692,13 +692,13 @@
         <ul>
 
           <li>
-            <i>Windows</i>
+            <cite>Windows</cite>
             <p>
               Under Windows, Tux Paint first examines the configuration file:            </p>
 
             <blockquote>
               <p>
-                <code>tuxpaint.cfg</code>
+                <code>C:\Users\<i>Username</i>\AppData\Roaming\TuxPaint\tuxpaint.cfg</code>
               </p>
             </blockquote>
 
@@ -707,13 +707,31 @@
           </li>
 
           <li>
-            <i>macOS</i>
+            <cite>macOS</cite>
             <p>
-                          </p>
+              Under macOS, it first examines the system-wide configuration file, located here:            </p>
+
+            <blockquote>
+              <p>
+                <code>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
+              </p>
+            </blockquote>
+
+            <p>
+              It then examines the user's personal configuration file:            </p>
+
+            <blockquote>
+              <p>
+                <code>/Users/<i>Username</i>/Library/Application Support/TuxPaint/tuxpaint.cfg</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Finally, any options sent as command-line arguments are used.            </p>
           </li>
 
           <li>
-            <i>Unix and Linux</i>
+            <cite>Linux / Unix</cite>
             <p>
               Under Unix and Linux, it first examines the system-wide configuration file, located here:            </p>
 
@@ -737,9 +755,18 @@
           </li>
 
           <li>
-            <i>Haiku</i>
+            <cite>Haiku</cite>
             <p>
-                          </p>
+              Under Haiku, Tux Paint first examines the configuration file:            </p>
+
+            <blockquote>
+              <p>
+                <code>/boot/home/config/settings/TuxPaint/tuxpaint.conf</code>
+              </p>
+            </blockquote>
+
+            <p>
+              Finally, any options sent as command-line arguments are used.            </p>
           </li>
         </ul>
 

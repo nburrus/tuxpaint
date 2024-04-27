@@ -89,6 +89,11 @@ Roaming\TuxPaint\ 内に "tuxpaint.cfg" というファイル名で作成しま�
 
     C:\Program Files\Tuxpaint
 
+Haiku Users
+
+The file you should create is called "tuxpaint.conf" and it should be placed in
+/boot/home/config/settings/TuxPaint
+
 ⚙ コマンドラインオプション "--nosysconfig" 用いると、システム全体の設定ファイル
 は無視され、ユーザー毎の設定ファイルやコマンドラインオプションによる変更のみが
 反映されます。

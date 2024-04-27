@@ -4,7 +4,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              7 de Abril de 2024
+                              27 de Abril de 2024
 
 -------------------------------------------------------------------------------
 +--------------------------------------------+
@@ -584,16 +584,28 @@ Tux Paint está a usar opcións que non especifiquei.
 
       + Windows
 
-        En Windows, Tux Paint examina primeiro o ficheiro de configuración:
+        Under Windows, Tux Paint first examines the configuration file:
 
-            tuxpaint.cfg
+            C:\Users\Username\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
         Finalmente, úsanse as opcións enviadas como argumentos da liña de
         ordes.
 
       + macOS
 
-      + Unix e Linux
+        Under macOS, it first examines the system-wide configuration file,
+        located here:
+
+            /Library/Application Support/TuxPaint/tuxpaint.cfg
+
+        A continuación, examina o ficheiro de configuración persoal do usuario:
+
+            /Users/Username/Library/Application Support/TuxPaint/tuxpaint.cfg
+
+        Finalmente, úsanse as opcións enviadas como argumentos da liña de
+        ordes.
+
+      + Linux / Unix
 
         En Unix e Linux, primeiro examine o ficheiro de configuración de todo o
         sistema, que se atopa aquí:
@@ -608,6 +620,13 @@ Tux Paint está a usar opcións que non especifiquei.
         ordes.
 
       + Haiku
+
+        Under Haiku, Tux Paint first examines the configuration file:
+
+            /boot/home/config/settings/TuxPaint/tuxpaint.conf
+
+        Finalmente, úsanse as opcións enviadas como argumentos da liña de
+        ordes.
 
     Isto significa que se estabelece algo nun ficheiro de configuración que non
     quere estabelecer, terá que cambiar o ficheiro de configuración (se pode)

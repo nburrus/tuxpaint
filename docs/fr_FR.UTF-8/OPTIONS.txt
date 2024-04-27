@@ -92,6 +92,11 @@ activés.) Il se trouve normalement ici :
 
     C:\Program Files\Tuxpaint
 
+Haiku Users
+
+The file you should create is called "tuxpaint.conf" and it should be placed in
+/boot/home/config/settings/TuxPaint
+
 ⚙ Vous pouvez désactiver complètement la lecture de ce fichier, en laissant les
 paramètres par défaut (qui peuvent ensuite être remplacés par votre fichier
 config personnel et / ou vos arguments de ligne de commande) en utilisant

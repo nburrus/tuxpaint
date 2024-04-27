@@ -87,6 +87,11 @@ at:
 
     C:\Program Files\Tuxpaint
 
+Haiku Users
+
+The file you should create is called "tuxpaint.conf" and it should be placed in
+/boot/home/config/settings/TuxPaint
+
 ⚙ You can disable reading of this file altogether, leaving the settings as
 defaults (which can then be overridden by your personal config. file and/or
 command-line arguments) by using the command-line option "--nosysconfig".
