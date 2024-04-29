@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年4月 8日
+                                 2024年4月28日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -108,6 +108,10 @@ Specular magic tool
 
 Filled Polygon magic tool
     Create polygons by placing three or more connected points on the canvas.
+
+3D Glasses magic tool updated
+    Different anaglyphic color separations now offered (via the 'size'
+    controls), unless running Tux Paint in 'Novice' complexity level.
 
 Magic tool ungrouping option
     The numerous Magic tools can be presented as a single long list (as in Tux
