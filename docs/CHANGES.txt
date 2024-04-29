@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.April.27 (0.9.33)
+2024.April.28 (0.9.33)
   * New Magic Tools:
     ----------------
     * WIP Specular Reflection: Draws a slightly blurred, wavy, and
@@ -31,6 +31,15 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/251/
       + WIP Needs sound effect
       + WIP Needs testing & tweaking
+
+  * Magic Tool Improvements:
+    ------------------------
+    * 3D Glasses - Now offers different color separation variations
+      (via the size option): Red/Cyan, Red/Blue, Red/Green, and Magenta/Cyan.
+      (If Tux Paint is running in "Novice" complexity mode, no choices will
+      be available; it will use Red/Cyan, as before.)
+      + Idea O'Hare The Rabbit
+      + Coding Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Eraser tool:
     ----------------------------
