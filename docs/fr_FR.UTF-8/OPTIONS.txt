@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                avril 27, 2024
+                                avril 29, 2024
 
 +--------------------------------------------------------------------+
 |                         Table des matières                         |
@@ -1239,13 +1239,12 @@ Sauvegarder la configuration d'impression
             Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "Mes images" directory for each user (normaly 
+          o Windows - "My Pictures" directory for each user (normaly 
             "C:\Users\nom d'utilisateur\My Pictures")
             You can directly open the folder as follows:
               # Pressez la touche "[Windows]+[R]" pour ouvrir la boîte de
                 dialogue "Exécuter ...".
-              # Tapez "Shell:My Pictures" dans la zone de saisie et cliquez sur
-                OK.
+              # Enter "Shell:My Pictures" in the text box and push [OK].
           o macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will

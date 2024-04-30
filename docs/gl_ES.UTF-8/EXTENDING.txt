@@ -5,7 +5,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              27 de Abril de 2024
+                              29 de Abril de 2024
 
 +-------------------------------------------------------------+
 |                           Índice                            |
@@ -99,9 +99,9 @@ macOS
     anteriores, así que garde as copias de seguridade do seu novo contido
     (selos, pinceis, etc.) .
 
-    Tux Paint tamén busca ficheiros nun cartafol «TuxPaint» que pode colocar no
-    seu sistema no cartafol «Application Support» (atópase en «Library» na raíz
-    do seu sistema de ficheiros):
+    Tux Paint also looks for files in a "TuxPaint" folder that you can place in
+    your system's "Application Support" folder (found under "Library" at the
+    root of your filesystem):
 
         /Library/Application Support/TuxPaint/data/
 
@@ -129,8 +129,8 @@ Windows
 
 macOS
 
-    O seu cartafol persoal de Tux Paint almacénase no cartafol persoal
-    «Application Support»:
+    Your personal Tux Paint folder is stored in your personal 
+    "Application Support" folder:
 
         /Users/nome de usuario/Library/Application Support/TuxPaint/
 

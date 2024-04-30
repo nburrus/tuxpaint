@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年4月27日
+                                 2024年4月29日
 
 +------------------------------------------------------+
 |                         目次                         |
@@ -1171,12 +1171,12 @@ altprint=mod
             Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "ピクチャ" directory for each user (normaly 
+          o Windows - "My Pictures" directory for each user (normaly 
             "C:\Users\username\My Pictures")
             You can directly open the folder as follows:
               # "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイア
                 ログを開く。
-              # テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
+              # Enter "Shell:My Pictures" in the text box and push [OK].
           o macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will

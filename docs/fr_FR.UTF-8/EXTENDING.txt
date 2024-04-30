@@ -5,7 +5,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                avril 27, 2024
+                                avril 29, 2024
 
 +-------------------------------------------------------------+
 |                     Table des matières                      |
@@ -103,9 +103,9 @@ macOS
     apportées avec les instructions ci-dessus, faites donc des sauvegardes de
     votre nouveau contenu (tampons,pinceaux, etc.).
 
-    Tux Paint recherche également les fichiers dans un dossier "Tux Paint" que
-    vous pouvez placer dans votre dossier système "Application Support" (situé
-    sous "Library" à la racine de votre système de fichiers) :
+    Tux Paint also looks for files in a "TuxPaint" folder that you can place in
+    your system's "Application Support" folder (found under "Library" at the
+    root of your filesystem):
 
         /Library/Application Support/TuxPaint/data/
 
@@ -132,8 +132,8 @@ Windows
 
 macOS
 
-    Votre dossier personnel Tux Paint est stocké dans votre dossier
-    «Application Support» :
+    Your personal Tux Paint folder is stored in your personal 
+    "Application Support" folder:
 
         /Users/nom d'utilisateur/Library/Application Support/TuxPaint/
 

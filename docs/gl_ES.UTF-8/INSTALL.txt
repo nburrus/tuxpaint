@@ -5,7 +5,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              27 de Abril de 2024
+                              29 de Abril de 2024
 
 +---------------------------------------------------+
 |                      Índice                       |
@@ -895,8 +895,8 @@ Eliminar programas do Panel de control.
 
 macOS
 
-Delete "TuxPaint.app" from the "Applications" folder. Data files, including the
-configuration files, stamps, and saved pictures, may be found in 
+Delete "TuxPaint.app" from the "/Applications" folder. Data files, including
+the configuration files, stamps, and saved pictures, may be found in 
 "/Library/Application Support/TuxPaint/" (all users) and 
 "/Users/nome de usuario/Library/Application Support/TuxPaint/" (individual
 users).

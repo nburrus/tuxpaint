@@ -5,7 +5,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年4月27日
+                                 2024年4月29日
 
 +-----------------------------------------+
 |                  目次                   |
@@ -124,8 +124,8 @@ Windows
 
 macOS
 
-    Your personal Tux Paint folder is stored in your personal "Application
-    Support" folder:
+    Your personal Tux Paint folder is stored in your personal 
+    "Application Support" folder:
 
         /Users/username/Library/Application Support/TuxPaint/
 
