@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   28. febrúar 2024
+   10. maí 2024
 */
 
 
@@ -87,7 +87,7 @@ selected in Tux Paint (for tool 1): */
 Uint8 example_r, example_g, example_b;
 
 /* The size the user has selected in Tux Paint (for tool 2): */
-Uint8 example_stærð;
+Uint8 example_staerd;
 
 
 /* Our local function prototypes: */
@@ -101,11 +101,11 @@ _before_ them.
 */
 
 void example_drag(magic_api * api, int which, SDL_Surface * canvas,
-  SDL_Surface * skjámynd, int old_x, int old_y, int x, int y,
+  SDL_Surface * skjamynd, int old_x, int old_y, int x, int y,
   SDL_Rect * update_rect);
 
 void example_line_callback(void *pointer, int which, SDL_Surface * canvas,
-  SDL_Surface * skjámynd, int x, int y);
+  SDL_Surface * skjamynd, int x, int y);
 
 
 /* Setup Functions: */
@@ -400,7 +400,7 @@ void example_shutdown(magic_api * api)
 
 void
 example_click(magic_api * api, int which, int hamur,
-              SDL_Surface * canvas, SDL_Surface * skjámynd, int x, int y,
+              SDL_Surface * canvas, SDL_Surface * skjamynd, int x, int y,
               SDL_Rect * update_rect)
 {
   /*
@@ -412,14 +412,14 @@ example_click(magic_api * api, int which, int hamur,
   both the beginning and end points of a line.
   */
 
-  example_drag(api, which, canvas, skjámynd, x, y, x, y, update_rect);
+  example_drag(api, which, canvas, skjamynd, x, y, x, y, update_rect);
 }
 
 
 /* Affect the canvas on drag: */
 void
 example_drag(magic_api * api, int which,
-             SDL_Surface * canvas, SDL_Surface * skjámynd,
+             SDL_Surface * canvas, SDL_Surface * skjamynd,
              int old_x, int old_y, int x, int y,
              SDL_Rect * update_rect)
 {
@@ -432,15 +432,15 @@ example_drag(magic_api * api, int which,
   coordinates along the line, as well as other useful things (which of our
   'Magic' tools is being used and the current and snapshot canvases).
   */
-  SDL_LockSurface(skjámynd);
+  SDL_LockSurface(skjamynd);
   SDL_LockSurface(canvas);
 
-  api->line((void *) api, which, canvas, skjámynd,
+  api->line((void *) api, which, canvas, skjamynd,
             old_x, old_y, x, y, 1,
             example_line_callback);
 
   SDL_UnlockSurface(canvas);
-  SDL_UnlockSurface(skjámynd);
+  SDL_UnlockSurface(skjamynd);
 
   /*
   If we need to, swap the X and/or Y values, so that the coordinates
@@ -451,17 +451,17 @@ example_drag(magic_api * api, int which,
 
   if (old_x > x)
   {
-    int bráðabirgða = old_x;
+    int bradabirgda = old_x;
 
     old_x = x;
-    x = bráðabirgða;
+    x = bradabirgda;
   }
   if (old_y > y)
   {
-    int bráðabirgða = old_y;
+    int bradabirgda = old_y;
 
     old_y = y;
-    y = bráðabirgða;
+    y = bradabirgda;
   }
 
 
@@ -477,10 +477,10 @@ example_drag(magic_api * api, int which,
     update_rect->w = (x - old_x) + 1;
     update_rect->h = (y - old_y) + 1;
   } else {
-    update_rect->x = old_x - example_stærð;
-    update_rect->y = old_y - example_stærð;
-    update_rect->w = (x + example_stærð) - update_rect->x + 1;
-    update_rect->h = (y + example_stærð) - update_rect->y + 1;
+    update_rect->x = old_x - example_staerd;
+    update_rect->y = old_y - example_staerd;
+    update_rect->w = (x + example_staerd) - update_rect->x + 1;
+    update_rect->h = (y + example_staerd) - update_rect->y + 1;
   }
 
   /*
@@ -504,7 +504,7 @@ example_drag(magic_api * api, int which,
 
 void
 example_release(magic_api * api, int which,
-                SDL_Surface * canvas, SDL_Surface * skjámynd, int x, int y,
+                SDL_Surface * canvas, SDL_Surface * skjamynd, int x, int y,
                 SDL_Rect * update_rect)
 {
   /*
@@ -526,7 +526,7 @@ changes their chosen, we'll be informed of that as well.
 The color comes in as RGB (red, green, and blue) values from 0 (darkest) to
 255 (brightest).
 */
-void example_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * skjámynd, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
+void example_set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface * skjamynd, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   /*
   We simply store the RGB values in the global variables we declared at
@@ -551,14 +551,14 @@ that as well.
 The size comes in as an unsigned integer (Uint8) between 1 and the value
 returned by our example_accepted_sizes() function during setup.
 */
-void example_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * skjámynd, Uint8 stærð, SDL_Rect * update_rect)
+void example_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * skjamynd, Uint8 staerd, SDL_Rect * update_rect)
 {
   /*
   Store the new size into the global variable we declared at the top of
   this file.
   */
 
-  example_stærð = stærð * 4;
+  example_staerd = staerd * 4;
 }
 
 
@@ -580,7 +580,7 @@ Our callback pays attention to 'which' to determine which of our plugin's
 tools is currently selected.
 */
 void example_line_callback(void *pointer, int which, SDL_Surface * canvas,
-  SDL_Surface * skjámynd, int x, int y)
+  SDL_Surface * skjamynd, int x, int y)
 {
   /*
   For technical reasons, we can't accept a pointer to the Tux Paint API's
@@ -626,14 +626,14 @@ void example_line_callback(void *pointer, int which, SDL_Surface * canvas,
     from the opposite side of the canvas and puts it under the cursor.
     */
 
-    for (yy = -example_stærð; yy < example_stærð; yy++)
+    for (yy = -example_staerd; yy < example_staerd; yy++)
     {
-      for (xx = -example_stærð; xx < example_stærð; xx++)
+      for (xx = -example_staerd; xx < example_staerd; xx++)
       {
         api->putpixel(canvas, x + xx, y + yy,
-                      api->getpixel(skjámynd,
-                                    skjámynd->w - x - xx,
-                                    skjámynd->h - y - yy));
+                      api->getpixel(skjamynd,
+                                    skjamynd->w - x - xx,
+                                    skjamynd->h - y - yy));
 
         /*
         Here we have simply use Tux Paint's "getpixel()" routine to pull pixel
@@ -681,7 +681,7 @@ tool (e.g., Brush or Text).
 image-changing tools such as New and Open.)
 
 (And in that case, our example_switchin() function will be called moments
-later.
+later.)
 
 It also happens when a Magic tool's mode changes (we will then receive a
 call to 'example_switchin()', above, for the new mode).

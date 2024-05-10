@@ -1,7 +1,7 @@
 /* tp_magic_example.c
 
    An example of a "Magic" tool plugin for Tux Paint
-   shkurt 28, 2024
+   maj 10, 2024
 */
 
 
@@ -681,7 +681,7 @@ tool (e.g., Brush or Text).
 image-changing tools such as New and Open.)
 
 (And in that case, our example_switchin() function will be called moments
-later.
+later.)
 
 It also happens when a Magic tool's mode changes (we will then receive a
 call to 'example_switchin()', above, for the new mode).
