@@ -52,7 +52,7 @@ char *colorsep_descrs[NUM_TOOLS] = {
 
 char *colorsep_descr_anaglyph_simple =
   gettext_noop
-    ("Click and drag left and right to separate your picture's red and cyan, to make anaglyphs you can view with 3D glasses!");
+  ("Click and drag left and right to separate your picture's red and cyan, to make anaglyphs you can view with 3D glasses!");
 
 Mix_Chunk *snd_effects[NUM_TOOLS];
 int colorsep_click_x, colorsep_click_y;
@@ -62,8 +62,9 @@ int colorsep_complexity;
 /* 3D Glasses mode (except in Novice complexity setting)
    offers different variations
    (Suggested by O'Hare The Rabbit) */
-enum {
-  COLORSEP_3DGLASS_VARIATION_RED_CYAN, // default; and the only option in Novice complexity
+enum
+{
+  COLORSEP_3DGLASS_VARIATION_RED_CYAN,  // default; and the only option in Novice complexity
   COLORSEP_3DGLASS_VARIATION_RED_BLUE,
   // COLORSEP_3DGLASS_VARIATION_ANACHROME, // dark red / dark blue
   COLORSEP_3DGLASS_VARIATION_RED_GREEN,
@@ -155,9 +156,12 @@ int colorsep_get_order(int which)
 
 char *colorsep_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
-  if (which == COLORSEP_TOOL_3DGLASSES && colorsep_complexity == MAGIC_COMPLEXITY_NOVICE) {
+  if (which == COLORSEP_TOOL_3DGLASSES && colorsep_complexity == MAGIC_COMPLEXITY_NOVICE)
+  {
     return strdup(colorsep_descr_anaglyph_simple);
-  } else {
+  }
+  else
+  {
     return strdup(gettext(colorsep_descrs[which]));
   }
 }
@@ -254,7 +258,8 @@ void colorsep_apply(magic_api * api, int which, SDL_Surface * canvas,
       {
         r = g = b = 128;
 
-        if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_RED_CYAN) {
+        if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_RED_CYAN)
+        {
           /* Split red apart from green & blue (cyan) */
           /* RR GG BB */
           /* 1   2  2 */
@@ -265,7 +270,9 @@ void colorsep_apply(magic_api * api, int which, SDL_Surface * canvas,
           // cyan
           g = g2;
           b = b2;
-        } else if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_RED_BLUE) {
+        }
+        else if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_RED_BLUE)
+        {
           /* Split red apart blue */
           /* RR GG BB */
           /* 1  12  2 */
@@ -286,7 +293,9 @@ void colorsep_apply(magic_api * api, int which, SDL_Surface * canvas,
 //        r = r1 / 2;
 //        g = (g1 + g2 + r1 + b2) / 4;
 //        b = b1 / 2;
-        } else if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_RED_GREEN) {
+        }
+        else if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_RED_GREEN)
+        {
           /* Split red apart green */
           /* RR GG BB */
           /* 1   2 12 */
@@ -299,7 +308,9 @@ void colorsep_apply(magic_api * api, int which, SDL_Surface * canvas,
 
           // blue shared
           b = (b1 + b2) / 2;
-        } else if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_MAGENTA_CYAN) {
+        }
+        else if (colorsep_3dglass_variation == COLORSEP_3DGLASS_VARIATION_MAGENTA_CYAN)
+        {
           /* Split magenta apart from cyan */
           /* RR GG BB */
           /* 1   2 12 */
@@ -394,11 +405,14 @@ void colorsep_switchout(magic_api * api ATTRIBUTE_UNUSED,
 
 Uint8 colorsep_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
-  if (which == COLORSEP_TOOL_3DGLASSES && colorsep_complexity > MAGIC_COMPLEXITY_NOVICE) {
+  if (which == COLORSEP_TOOL_3DGLASSES && colorsep_complexity > MAGIC_COMPLEXITY_NOVICE)
+  {
     /* 3D Glasses mode (in all complexity levels except novice)
        uses (abuses) the size option to change styles */
     return NUM_COLORSEP_3DGLASS_VARIATIONS;
-  } else {
+  }
+  else
+  {
     /* All other tools (and 3D Glasses in novice complexity)
        do not use the size option */
     return 0;
