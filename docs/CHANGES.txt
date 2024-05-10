@@ -92,6 +92,12 @@ https://tuxpaint.org/
       are covered appropriately & accurately in respect to paths.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * tp_magic_example.c - Running `indent` to keep consistent
+      formatting, and ensuring any localized variable names are
+      Transliterated to ASCII (e.g., "size" in Icelandic appears
+      as "staerd", rather than "stærð").
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Bulgarian translation
