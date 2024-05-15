@@ -208,9 +208,9 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
 
   polyfill_dragged = 0;
 
-  #ifdef DEBUG
+#ifdef DEBUG
   printf("Click.  num_pts = %d\n", polyfill_num_pts);
-  #endif
+#endif
 
   /* See if we're clicking a pre-existing point, to edit it? */
   polyfill_editing = MAX_PTS;
@@ -224,9 +224,9 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
 
   if (polyfill_editing != MAX_PTS)
   {
-    #ifdef DEBUG
+#ifdef DEBUG
     printf("Clicked %d to edit it\n", polyfill_editing);
-    #endif
+#endif
 
     polyfill_draw_preview(api, canvas, 1);
     return;
@@ -235,9 +235,9 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
   /* Trying to add a new point? */
   if (polyfill_num_pts < MAX_PTS)
   {
-    #ifdef DEBUG
+#ifdef DEBUG
     printf("Adding new point %d\n", polyfill_num_pts);
-    #endif
+#endif
 
     polyfill_pt_x[polyfill_num_pts] = x;
     polyfill_pt_y[polyfill_num_pts] = y;
@@ -250,16 +250,17 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
   else
   {
     /* Out of points! */
-    #ifdef DEBUG
+#ifdef DEBUG
     printf("Out of space for new points!\n");
-    #endif
+#endif
   }
 }
 
 
 void
 polyfill_drag(magic_api * api, int which ATTRIBUTE_UNUSED,
-              SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int old_x ATTRIBUTE_UNUSED, int old_y ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
+              SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int old_x ATTRIBUTE_UNUSED,
+              int old_y ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   polyfill_dragged = 1;
 
@@ -331,7 +332,8 @@ void polyfill_draw_preview(magic_api * api, SDL_Surface * canvas, int show_handl
 
 void
 polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                 SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y,
+                 SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
   int i;
 
@@ -341,18 +343,18 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   if (polyfill_editing >= MAX_PTS)
     return;
 
-  #ifdef DEBUG
+#ifdef DEBUG
   printf("Release while editing %d\n", polyfill_editing);
-  #endif
+#endif
 
   /* If they simply clicked the first point (without
      drawing to move it), and there are enough points, consider
      it a final placement of a new point! */
   if (polyfill_editing == 0 && polyfill_dragged == 0 && polyfill_num_pts > 2 && polyfill_num_pts < MAX_PTS)
   {
-    #ifdef DEBUG
+#ifdef DEBUG
     printf("Clicked first point to end polygon!\n");
-    #endif
+#endif
 
     polyfill_pt_x[polyfill_num_pts] = polyfill_pt_x[0];
     polyfill_pt_y[polyfill_num_pts] = polyfill_pt_y[0];
@@ -369,9 +371,9 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
         abs(x - polyfill_pt_x[polyfill_num_pts - 1]) <= SNAP_SIZE &&
         abs(y - polyfill_pt_y[polyfill_num_pts - 1]) <= SNAP_SIZE)))
   {
-    #ifdef DEBUG
+#ifdef DEBUG
     printf("Ending the polygon!\n");
-    #endif
+#endif
 
     /* Snap the points */
     if (polyfill_editing == 0)
@@ -409,9 +411,9 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
           if (abs(polyfill_pt_x[i] - polyfill_pt_x[i + 1]) <= SNAP_SIZE &&
               abs(polyfill_pt_y[i] - polyfill_pt_y[i + 1]) <= SNAP_SIZE)
           {
-            #ifdef DEBUG
+#ifdef DEBUG
             printf("%d & %d can be merged\n", i, i + 1);
-            #endif
+#endif
 
             to_merge = i;
           }
@@ -420,9 +422,9 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
 
       if (to_merge != MAX_PTS)
       {
-        #ifdef DEBUG
+#ifdef DEBUG
         printf("Merging %d with %d\n", to_merge, to_merge + 1);
-        #endif
+#endif
 
         for (i = to_merge; i < polyfill_num_pts - 1; i++)
         {
@@ -442,8 +444,8 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   update_rect->h = canvas->h;
 }
 
-void polyfill_set_color(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
-                        Uint8 b, SDL_Rect * update_rect)
+void polyfill_set_color(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
+                        SDL_Surface * snapshot ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
 {
   polyfill_color = SDL_MapRGB(canvas->format, r, g, b);
 
@@ -457,13 +459,15 @@ void polyfill_set_color(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface
   }
 }
 
-void polyfill_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * snapshot ATTRIBUTE_UNUSED, Uint8 size ATTRIBUTE_UNUSED,
-                       SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void polyfill_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                       SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * snapshot ATTRIBUTE_UNUSED,
+                       Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
 }
 
 
-void polyfill_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
+void polyfill_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
+                            SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   SDL_Rect dest;
 
@@ -476,7 +480,8 @@ void polyfill_line_callback(void *pointer ATTRIBUTE_UNUSED, int which ATTRIBUTE_
 }
 
 
-void polyfill_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
+void polyfill_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                       SDL_Surface * canvas)
 {
   polyfill_color_red = SDL_MapRGB(canvas->format, 255, 0, 0);
   polyfill_color_green = SDL_MapRGB(canvas->format, 0, 255, 0);
@@ -496,7 +501,8 @@ void polyfill_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
   polyfill_active = 1;
 }
 
-void polyfill_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
+void polyfill_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                        SDL_Surface * canvas)
 {
   polyfill_num_pts = 0;
   polyfill_editing = MAX_PTS;
@@ -533,9 +539,9 @@ void polyfill_draw_final(SDL_Surface * canvas)
     }
   }
 
-  #ifdef DEBUG
+#ifdef DEBUG
   printf("ymin %d -> ymax %d\n", ymin, ymax);
-  #endif
+#endif
 
   for (y = ymin; y <= ymax; y++)
   {

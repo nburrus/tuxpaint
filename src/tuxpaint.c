@@ -21851,10 +21851,12 @@ static void load_magic_plugins(void)
                       else
                         magics[group][idx].order = (want_group * 1000000) + want_order;
 
-                      for (j = 0; j < num_magics[group]; j++) {
-                        if (magics[group][j].order == magics[group][idx].order) {
+                      for (j = 0; j < num_magics[group]; j++)
+                      {
+                        if (magics[group][j].order == magics[group][idx].order)
+                        {
                           fprintf(stderr, "Warning: In group %d, tool %d has the same order (%d) as tool %d\n",
-                            group, idx, magics[group][j].order, j);
+                                  group, idx, magics[group][j].order, j);
                         }
                       }
 
