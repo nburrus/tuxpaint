@@ -1,12 +1,12 @@
                                    Tux Paint
-                 バージョン 0.9.33 Frequently Asked Questions
+                               バージョン 0.9.33
+                          Frequently Asked Questions
 
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年4月27日
+                                 2024年5月14日
 
--------------------------------------------------------------------------------
 +------------------------------+
 |             目次             |
 |------------------------------|

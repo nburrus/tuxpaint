@@ -1,12 +1,12 @@
                                    Tux Paint
-                   version 0.9.33 Frequently Asked Questions
+                                version 0.9.33
+                          Frequently Asked Questions
 
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                April 27, 2024
+                                 May 14, 2024
 
--------------------------------------------------------------------------------
 +------------------------------+
 |      Table of Contents       |
 |------------------------------|

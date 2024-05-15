@@ -1,12 +1,12 @@
                                    Tux Paint
-                    versión 0.9.33 Advanced Stamps 'How-To'
+                                versión 0.9.33
+                           Advanced Stamps 'How-To'
 
      Copyright © 2006-2024 by Albert Cahalan and others; see AUTHORS.txt.
                              https://tuxpaint.org/
 
                                febrero 28, 2024
 
--------------------------------------------------------------------------------
 +----------------------------------------+
 |           Table of Contents            |
 |----------------------------------------|
