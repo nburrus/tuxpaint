@@ -21213,7 +21213,7 @@ static SDL_Surface *_load_svg(const char *file)
   if (image == NULL)
   {
     fprintf(stderr, "Unable to allocate image buffer for %s\n", file);
-    rsvg_handle_close(rsvg_handle, &gerr);
+    // rsvg_handle_close(rsvg_handle, &gerr); Not needed
     return (NULL);
   }
 
@@ -21227,7 +21227,7 @@ static SDL_Surface *_load_svg(const char *file)
 #ifdef DEBUG
     fprintf(stderr, "cairo_image_surface_create() failed\n");
 #endif
-    rsvg_handle_close(rsvg_handle, &gerr);
+    // rsvg_handle_close(rsvg_handle, &gerr); Not needed
     free(image);
     return (NULL);
   }
@@ -21241,7 +21241,7 @@ static SDL_Surface *_load_svg(const char *file)
 #ifdef DEBUG
     fprintf(stderr, "cairo_create() failed\n");
 #endif
-    rsvg_handle_close(rsvg_handle, &gerr);
+    // rsvg_handle_close(rsvg_handle, &gerr); Not needed
     cairo_surface_destroy(cairo_surf);
     free(image);
     return (NULL);
@@ -21288,7 +21288,7 @@ static SDL_Surface *_load_svg(const char *file)
 #ifdef DEBUG
     fprintf(stderr, "SDL_CreateRGBSurfaceFrom() failed\n");
 #endif
-    rsvg_handle_close(rsvg_handle, &gerr);
+    // rsvg_handle_close(rsvg_handle, &gerr); Not needed
     cairo_surface_destroy(cairo_surf);
     free(image);
     cairo_destroy(cr);
@@ -21304,7 +21304,7 @@ static SDL_Surface *_load_svg(const char *file)
 #ifdef DEBUG
     fprintf(stderr, "SDL_DisplayFormatAlpha() failed\n");
 #endif
-    rsvg_handle_close(rsvg_handle, &gerr);
+    // rsvg_handle_close(rsvg_handle, &gerr); Not needed
     cairo_surface_destroy(cairo_surf);
     free(image);
     cairo_destroy(cr);
@@ -21317,7 +21317,7 @@ static SDL_Surface *_load_svg(const char *file)
 
   /* Clean up: */
 
-  rsvg_handle_close(rsvg_handle, &gerr);
+  // rsvg_handle_close(rsvg_handle, &gerr); Not needed
   cairo_surface_destroy(cairo_surf);
   free(image);
   cairo_destroy(cr);

@@ -80,6 +80,11 @@ https://tuxpaint.org/
       (https://sourceforge.net/p/tuxpaint/tuxpaint/merge-requests/19/)
       Will Thompson <https://sourceforge.net/u/wjjjjt/profile/>
 
+    * Don't call rsvg_handle_close(); it's deprecated, and not necessary;
+      (see https://gnome.pages.gitlab.gnome.org/librsvg/Rsvg-2.0/method.Handle.close.html;
+      h/t https://github.com/xfce-mirror/xfce4-xkb-plugin/commit/825fa1c
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Documentation updates:
     ----------------------
     * Troubleshooting Guide (TROUBLESHOOTING.txt) updated regarding
