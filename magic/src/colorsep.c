@@ -5,7 +5,7 @@
 
    Different 3D Glasses variations suggested by O'Hare The Rabbit
 
-   Last updated: February 28, 2024
+   Last updated: May 14, 2024
 */
 
 #include <stdio.h>
@@ -421,7 +421,7 @@ Uint8 colorsep_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which, int m
 
 Uint8 colorsep_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return COLORSEP_3DGLASS_VARIATION_RED_CYAN;
+  return COLORSEP_3DGLASS_VARIATION_RED_CYAN + 1;
 }
 
 
