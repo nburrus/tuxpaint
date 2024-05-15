@@ -5,7 +5,7 @@
      Copyright © 2006-2024 by Albert Cahalan and others; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               febrero 28, 2024
+                                 mayo 14, 2024
 
 +----------------------------------------+
 |           Table of Contents            |
@@ -16,7 +16,6 @@
 |   * Replace the fringe and junk pixels |
 |   * Save the image for Tux Paint       |
 +----------------------------------------+
--------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
 About this 'How-To'

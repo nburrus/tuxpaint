@@ -5,7 +5,7 @@
       Copyright © 2006-2024 by Albert Cahalan e outros; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                            28 de Febreiro de 2024
+                              14 de Maio de 2024
 
 +-------------------------------------------+
 |                  Índice                   |
@@ -16,7 +16,6 @@
 |   * Substituír a franxa e os píxeles lixo |
 |   * Gardar a imaxe para Tux Paint         |
 +-------------------------------------------+
--------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
 Sobre este «Como facelo»

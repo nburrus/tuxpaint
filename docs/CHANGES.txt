@@ -92,7 +92,7 @@ https://tuxpaint.org/
       + Haiku (h/t Luc Schrijvers)
       + Linux (Bill K.)
 
-    * Improved consistency file and directory paths around the docs;
+    * Improved consistency of file and directory paths around the docs;
       attempting to also ensure all major OSes Tux Paint supports
       are covered appropriately & accurately in respect to paths.
       Bill Kendrick <bill@newbreedsoftware.com>
@@ -101,6 +101,10 @@ https://tuxpaint.org/
       formatting, and ensuring any localized variable names are
       Transliterated to ASCII (e.g., "size" in Icelandic appears
       as "staerd", rather than "stærð").
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Standardize style in FAQ, Env. Vars. docs, and
+      Advanced Stamps Howto, as well.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Localization Updates:
