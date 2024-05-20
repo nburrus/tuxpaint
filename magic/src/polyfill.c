@@ -7,7 +7,7 @@
    Scanline polygon fill routine based on public-domain code
    by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-   Last updated: May 14, 2024
+   Last updated: May 19, 2024
 */
 
 
@@ -288,13 +288,6 @@ void polyfill_draw_preview(magic_api * api, SDL_Surface * canvas, int show_handl
 
   SDL_BlitSurface(polyfill_snapshot, NULL, canvas, NULL);
 
-  for (i = 0; i < polyfill_num_pts - 1; i++)
-  {
-    api->line((void *)api, 0 /* which */ , canvas, NULL /* snapshot */ ,
-              polyfill_pt_x[i], polyfill_pt_y[i],
-              polyfill_pt_x[i + 1], polyfill_pt_y[i + 1], 1, polyfill_line_callback);
-  }
-
   if (show_handles)
   {
     for (i = 1; i < polyfill_num_pts - 1; i++)
@@ -325,6 +318,13 @@ void polyfill_draw_preview(magic_api * api, SDL_Surface * canvas, int show_handl
       dest.h = SNAP_SIZE * 2;
       SDL_FillRect(canvas, &dest, polyfill_color_red);
     }
+  }
+
+  for (i = 0; i < polyfill_num_pts - 1; i++)
+  {
+    api->line((void *)api, 0 /* which */ , canvas, NULL /* snapshot */ ,
+              polyfill_pt_x[i], polyfill_pt_y[i],
+              polyfill_pt_x[i + 1], polyfill_pt_y[i + 1], 1, polyfill_line_callback);
   }
 
   //SDL_UpdateRect(canvas, 0, 0, canvas->w, canvas->h);
