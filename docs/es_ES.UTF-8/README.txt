@@ -105,9 +105,6 @@ Transparent Erasers
 Dither magic tools
     Transform parts of an image into a dithered pattern of dots.
 
-Specular magic tool
-    Paint reflections of the opposite side of the drawing.
-
 Filled Polygon magic tool
     Create polygons by placing three or more connected points on the canvas.
 
