@@ -82,7 +82,6 @@ Peindre
   * Pluie
   * Mousse
   * Herbe
-  * Specular Reflection
   * Fourrure
   * Pixels
   * Labyrinthe

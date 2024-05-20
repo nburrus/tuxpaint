@@ -9,8 +9,6 @@ effet de réflexion à votre dessin.
 
 Cet outil permet de travailler en mode à main levée.
 
-Voir aussi : Specular Reflection.
-
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.33

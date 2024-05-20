@@ -82,7 +82,6 @@ Vizatim
   * Shi
   * Shkumë
   * Bar
-  * Specular Reflection
   * Gëzof
   * Pikselë
   * Labirint
