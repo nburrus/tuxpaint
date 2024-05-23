@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2024-04-13 03:02:21+0000\n"
-"PO-Revision-Date: 2024-04-06 11:20+0200\n"
+"PO-Revision-Date: 2024-05-24 00:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../data/brushes/acrylic.txt
 msgid "Paint with a blotty brush that looks like acrylic paint."
-msgstr ""
+msgstr "Pinta amb un pinzell que sembla pintura acrílica."
 
 #: ../data/brushes/arrow.txt
 msgid "The arrow points the direction you draw."
@@ -57,7 +57,7 @@ msgstr "Pinta ratlles fines perpendiculars a la direcció del traç."
 
 #: ../data/brushes/pencil.txt
 msgid "This draws a pencil effect that follows the direction of your strokes."
-msgstr ""
+msgstr "Dibuixa un efecte que canvia amb la direcció del traç."
 
 #: ../data/brushes/sparkles.txt
 msgid "Paint with sparkles!"
