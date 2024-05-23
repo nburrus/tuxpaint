@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 01:00-0700\n"
-"PO-Revision-Date: 2024-01-21 00:09+0100\n"
+"PO-Revision-Date: 2024-05-23 01:57+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -415,31 +415,29 @@ msgstr "L'eina Estampa serveix per inserir imatges al dibuix"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Transparent Erasers."
-msgstr ""
+msgstr "Gomes transparents."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Brushes support descriptions."
-msgstr ""
+msgstr "Descripcions de característiques dels pinzells."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Specular, Filled Polygon."
-msgstr ""
+msgstr "Noves eines màgiques: Tramat, Reflexió especular, Polígon."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
-msgstr ""
+msgstr "Actualització d'eines màgiques: Ulleres 3D (ara ofereixen diferentes combinacions d'anaglifs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
-msgstr ""
+msgstr "Es pot desagrupar les eines màguiques («ungroupmagictools»)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
-#, fuzzy
-#| msgid "Bug-fixes and localization updates."
 msgid "Localization updates."
-msgstr "Correccions d'errors i actualitzacions de localitzacions."
+msgstr "Actualitzacions de localitzacions."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -1888,17 +1886,11 @@ msgid "Double Vision"
 msgstr "Visió doble"
 
 #: ../../magic/src/colorsep.c:48
-#, fuzzy
-#| msgid ""
-#| "Click and drag left and right to separate your picture's red and cyan, to "
-#| "make anaglyphs you can view with 3D glasses!"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
-msgstr ""
-"Feu clic i arrossegueu a dreta o esquerra per separar el vermell i el cian, "
-"per fer anaglifs que podeu mirar amb ulleres 3D de dos colors!"
+msgstr "Feu clic i arrossegueu a dreta o esquerra per separar el vermell i el cian, per fer anaglifs que podeu mirar amb ulleres 3D de dos colors! Feu servir el control de mida per triar efectes diferents."
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -1935,53 +1927,35 @@ msgstr ""
 
 #: ../../magic/src/dither.c:32
 msgid "Dither"
-msgstr ""
+msgstr "Tramat"
 
 #: ../../magic/src/dither.c:33
-#, fuzzy
-#| msgid "Keep Color"
 msgid "Dither (Keep Color)"
-msgstr "Guarda color"
+msgstr "Tramat colors"
 
 #: ../../magic/src/dither.c:38
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
-msgstr ""
-"Feu clic i arrossegueu per pintar parts de la imatge com si estès en el "
-"televisor."
+msgstr "Feu clic i arrossegueu per convertir parts de la imatge amb una trama de punts del color que trieu."
 
 #: ../../magic/src/dither.c:39
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
-msgstr "Feu clic per cobrir de pluja la imatge."
+msgstr "Feu clic per convertir la imatge a trama de punts del color triat."
 
 #: ../../magic/src/dither.c:42
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
-msgstr ""
-"Feu clic i arrossegueu per pintar parts de la imatge com si estès en el "
-"televisor."
+msgstr "Feu clic i arrossegueu per convertir parts de la imatge en una trama de punts respectant els colors originals del dibuix."
 
 #: ../../magic/src/dither.c:43
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
-msgstr "Feu clic per cobrir de pluja la imatge."
+msgstr "Feu clic per convertir la imatge en una trama de punts respectant els colors originals del dibuix."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2644,14 +2618,14 @@ msgstr "Feu clic i arrossegueu per dibuixar píxels grans."
 
 #: ../../magic/src/polyfill.c:28
 msgid "Filled Polygon"
-msgstr ""
+msgstr "Polígon"
 
 #: ../../magic/src/polyfill.c:32
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag control points to alter the shape. Click the first point to complete "
 "the shape."
-msgstr ""
+msgstr "Feu clic vàries vegades en el dibuix per crear un polígon ple. Podeu arrossegar els punts de control per alterar-ne la forma. Feu clic en el primer punt per completar-lo."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2870,17 +2844,15 @@ msgid "Click to add snow flakes to your picture."
 msgstr "Feu clic per afegir flocs de neu al dibuix."
 
 #: ../../magic/src/specular.c:75
-#, fuzzy
-#| msgid "Reflection"
 msgid "Specular Reflection"
-msgstr "Reflexió"
+msgstr "Especular"
 
 #: ../../magic/src/specular.c:93
 msgid ""
 "Click and drag on the bottom half of your picture to draw a specular "
 "reflection — like a puddle, pond, or lake — that mirrors the top half of "
 "your picture."
-msgstr ""
+msgstr "Feu clic i arrossegueu en la part baixa del dibuix per crear una reflexió de la part alta, com un toll, estany o llac."
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
