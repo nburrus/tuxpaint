@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 14, 2024
+  June 14, 2002 - May 25, 2024
 */
 
 #include "platform.h"
@@ -1371,6 +1371,7 @@ static int joystick_buttons_ignore[256];
 static Uint32 old_hat_ticks = 0;
 static int oldpos_x;
 static int oldpos_y;
+static int motion_since_click = 0;
 static int disable_screensaver;
 
 #ifdef NOKIA_770
@@ -2105,7 +2106,7 @@ static void circle_xor(int x, int y, int sz);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
 
-static void reset_brush_counter(void);
+static void reset_brush_counter(int force);
 
 #ifdef LOW_QUALITY_STAMP_OUTLINE
 #define stamp_xor(x,y) rect_xor( \
@@ -5261,6 +5262,8 @@ static void mainloop(void)
         {
           const Uint8 *kbd_state;
 
+          motion_since_click = 0;
+
           kbd_state = SDL_GetKeyboardState(NULL);
 
           if ((kbd_state[SDL_SCANCODE_LCTRL] || kbd_state[SDL_SCANCODE_RCTRL]) && colors_are_selectable)
@@ -5347,7 +5350,7 @@ static void mainloop(void)
                 rec_undo_buffer();
 
               /* (Arbitrarily large, so we draw once now) */
-              reset_brush_counter();
+              reset_brush_counter(FALSE);
 
               /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes SF #1934883? */
               playsound(screen, 0, paintsound(img_cur_brush_w), 1, event.button.x, SNDDIST_NEAR);
@@ -5367,7 +5370,7 @@ static void mainloop(void)
                 line_start_y = old_y;
 
                 /* (Arbitrarily large, so we draw once now) */
-                reset_brush_counter();
+                reset_brush_counter(FALSE);
 
                 /* brush_draw(old_x, old_y, old_x, old_y, 1); fixes sf #1934883? */
 
@@ -5406,7 +5409,7 @@ static void mainloop(void)
                 if (mouseaccessibility)
                 {
                   /* (Arbitrarily large...) */
-                  reset_brush_counter();
+                  reset_brush_counter(FALSE);
 
                   playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
                   do_shape(shape_start_x, shape_start_y, shape_current_x,
@@ -6047,6 +6050,15 @@ static void mainloop(void)
           if (cur_tool == TOOL_BRUSH)
           {
             /* (Drawing on mouse release to fix single click issue) */
+
+            if (motion_since_click == 0)
+            {
+              /* Click and release with no drag?
+                 Insist on blitting the brush, even if
+                 the spacing is large */
+              reset_brush_counter(TRUE);
+            }
+
             brush_draw(old_x, old_y, old_x, old_y, 1);
           }
           else if (cur_tool == TOOL_STAMP)
@@ -6136,7 +6148,7 @@ static void mainloop(void)
             if (!mouseaccessibility || (mouseaccessibility && !emulate_button_pressed))
             {
               /* (Arbitrarily large, so we draw once now) */
-              reset_brush_counter();
+              reset_brush_counter(FALSE);
 
               brush_draw(line_start_x, line_start_y, event.button.x - r_canvas.x, event.button.y - r_canvas.y, 1);
               brush_draw(event.button.x - r_canvas.x,
@@ -6204,8 +6216,7 @@ static void mainloop(void)
                 }
                 else
                 {
-                  reset_brush_counter();
-
+                  reset_brush_counter(FALSE);
 
                   playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
                   do_shape(shape_start_x, shape_start_y, shape_current_x, shape_current_y, 0, 1);
@@ -6219,7 +6230,7 @@ static void mainloop(void)
               }
               else if (shape_tool_mode == SHAPE_TOOL_MODE_ROTATE)
               {
-                reset_brush_counter();
+                reset_brush_counter(FALSE);
 
                 playsound(screen, 1, SND_LINE_END, 1, event.button.x, SNDDIST_NEAR);
                 do_shape(shape_start_x, shape_start_y, shape_current_x,
@@ -6315,6 +6326,8 @@ static void mainloop(void)
 
         oldpos_x = event.motion.x;
         oldpos_y = event.motion.y;
+
+        motion_since_click = 1;
 
 
         /* FIXME: Is doing this every event too intensive? */
@@ -7126,7 +7139,17 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
     }
     else
     {
-      r = 270.0 - r;
+      if (x1 != x2 || y1 != y2)
+      {
+        r = 270.0 - r;
+      }
+      else
+      {
+        /* Point "up" if there was no motion
+           (brush will appear as it does in the selector;
+           it's "natural" direction) */
+        r = 360.0;
+      }
     }
   }
 
@@ -7205,11 +7228,14 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
  * is either (a) guaranteed to do so, regardless of the brush's spacing
  * (for non-rotational brushes), or (b) requires the user to have moved
  * far enough to get a good idea of the angle they're drawing
- * (for rotational brushes).
+ * (for rotational brushes) -- unless "force" is true (which will happen
+ * if the user clicks and releases with no motion whatsoever).
+ *
+ * @param force if true, resets counter even if a rotating brush
  */
-void reset_brush_counter(void)
+void reset_brush_counter(int force)
 {
-  if (img_cur_brush_rotate)
+  if (img_cur_brush_rotate && !force)
     brush_counter = 0;
   else
     brush_counter = 999;
@@ -15050,6 +15076,8 @@ static int do_prompt_image_flash_snd(const char *const text,
         }
         oldpos_x = event.button.x;
         oldpos_y = event.button.y;
+
+        motion_since_click = 1;
       }
 
       else if (event.type == SDL_JOYAXISMOTION)
@@ -24226,6 +24254,8 @@ static void do_quick_eraser(void)
 
         oldpos_x = event.motion.x;
         oldpos_y = event.motion.y;
+
+        motion_since_click = 1;
       }
       else if (event.type == SDL_JOYAXISMOTION)
         handle_joyaxismotion(event, &motioner, &val_x, &val_y);

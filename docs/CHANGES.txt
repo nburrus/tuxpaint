@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.May.22 (0.9.33)
+2024.May.25 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -41,6 +41,15 @@ https://tuxpaint.org/
   * Improvements to Eraser tool:
     ----------------------------
     * Transparent erasers
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Improvements to Paint tool:
+    ---------------------------
+    * Rotating brushes would not draw anything if you simply
+      click and release with no motion in between (unless brush
+      spacing was set to the minimum).  It will now draw the
+      default "up" direction of the brush in that situation.
+      (h/t Pere for reporting)
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * New Brushes:
