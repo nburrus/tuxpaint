@@ -153,13 +153,19 @@ June 17, 2002 - May 28, 2024
   Scanline polygon fill routine based on public-domain code
   by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-  Filled Polygon sound effects (place, move, finish) based on
+  Filled Polygon "place", "move", and "finish" sound effects based on
   "success_02.wav" (https://freesound.org/people/Kenneth_Cooney/sounds/463067/),
   "success.wav" (https://freesound.org/people/Kenneth_Cooney/sounds/457547/), &
   "Completed.wav" (https://freesound.org/people/Kenneth_Cooney/sounds/609336/)
   respectively.
   Creative Commons 0 by Kenneth Cooney <https://www.kennethcooney.com/>
 
+  Filled Polygon "nearby" sound effect based on "JacobsLadderSingle2.flac"
+  <https://freesound.org/people/Halleck/sounds/19487/>.
+  Creative Commons Attribution 4.0 by Eliot Lash
+  <https://freesound.org/people/Halleck/>
+  <https://www.eliotlash.com/>
+ 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
   Googly Eyes sound effect: "Torch Crackle.wav"

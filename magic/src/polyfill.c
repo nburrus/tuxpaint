@@ -41,6 +41,7 @@ char *polyfill_icon_filenames[NUM_TOOLS] = {
 enum {
   SND_PLACE,
   SND_MOVE,
+  SND_NEARBY,
   SND_FINISH,
   NUM_SOUNDS
 };
@@ -48,6 +49,7 @@ enum {
 char *polyfill_snd_filenames[NUM_SOUNDS] = {
   "polyfill_place.ogg",
   "polyfill_move.ogg",
+  "polyfill_nearby.ogg",
   "polyfill_finish.ogg",
 };
 
@@ -281,7 +283,29 @@ polyfill_drag(magic_api * api, int which ATTRIBUTE_UNUSED,
   polyfill_pt_y[polyfill_editing] = y;
 
   polyfill_draw_preview(api, canvas, 1);
-  api->playsound(snd_effects[SND_MOVE], (x * 255) / canvas->w, 255);
+
+  if (polyfill_editing == polyfill_num_pts - 1 &&
+      polyfill_num_pts >= 3 &&
+      x >= polyfill_pt_x[0] - SNAP_SIZE &&
+      x <= polyfill_pt_x[0] + SNAP_SIZE &&
+      y >= polyfill_pt_y[0] - SNAP_SIZE &&
+      y <= polyfill_pt_y[0] + SNAP_SIZE) {
+    /* If placing/moving the final (red) point, and it's
+       near the initial (green) point, play an electrostatic sound */
+    api->playsound(snd_effects[SND_NEARBY], (x * 255) / canvas->w, 255);
+  } else if (polyfill_editing == 0 && 
+      polyfill_num_pts >= 3 &&
+      x >= polyfill_pt_x[polyfill_num_pts - 1] - SNAP_SIZE &&
+      x <= polyfill_pt_x[polyfill_num_pts - 1] + SNAP_SIZE &&
+      y >= polyfill_pt_y[polyfill_num_pts - 1] - SNAP_SIZE &&
+      y <= polyfill_pt_y[polyfill_num_pts - 1] + SNAP_SIZE) {
+    /* If moving the initial (green) point, and it's
+       near the final (red) point, also play an electrostatic sound */
+    api->playsound(snd_effects[SND_NEARBY], (x * 255) / canvas->w, 255);
+  } else {
+    /* Otherwise, play the normal "moving a point" sound */
+    api->playsound(snd_effects[SND_MOVE], (x * 255) / canvas->w, 255);
+  }
 
   update_rect->x = 0;
   update_rect->y = 0;
