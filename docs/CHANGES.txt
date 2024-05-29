@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.May.25 (0.9.33)
+2024.May.28 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -24,10 +24,6 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/251/
       + WIP Needs sound effect
       + WIP Needs testing & tweaking
-
-    * WIP Specular Reflection: Draws a slightly blurred, wavy, and
-      faded reflection of the opposite half of the drawing.
-      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Magic Tool Improvements:
     ------------------------
