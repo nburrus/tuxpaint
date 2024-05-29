@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 01:00-0700\n"
-"PO-Revision-Date: 2023-12-23 15:43+0100\n"
+"PO-Revision-Date: 2024-05-29 19:24+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.3\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -358,7 +358,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:25
 msgid "Bill Kendrick, et al."
-msgstr ""
+msgstr "Bill Kendrick, et autres."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
@@ -380,29 +380,33 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Transparent Erasers."
-msgstr ""
+msgstr "Gommes transparentes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
+#, fuzzy
 msgid "Brushes support descriptions."
-msgstr ""
+msgstr "Descriptions des pinceaux."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Specular, Filled Polygon."
-msgstr ""
+msgstr "Nouveaux outils Magie : Tramage, Reflet, Polygone plein."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
 msgstr ""
+"Mise à jour d'outils Magie : Lunettes 3D (avec maintenant différentes "
+"combinaisons de couleurs pour les anaglyphes)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
+#, fuzzy
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
-msgstr ""
+msgstr "Les outils Magie peuvent être séparés"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "Localization updates."
-msgstr ""
+msgstr "Mises à jour concernant des localisations."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 #, fuzzy
@@ -684,9 +688,9 @@ msgstr ""
 "Six nouveaux outils de \"Magie\" ont été ajoutés. 'Panneaux\" contracte le "
 "dessin et le reproduit ensuite sur une grille de 2x2, ce qui est utile pour "
 "concevoir des B.D. sur quatre panneaux. \"Complément\" donne la couleur "
-"complémentaire. \"Éclair\" dessine un éclair de manière interactive. "
-"\"Reflet\" crée un reflet du dessin comme sur un lac. \"Étirer\" pour étirer "
-"et déformer l'image comme un miroir de foire. Et enfin, \"Arc-en-ciel doux\" "
+"complémentaire. \"Éclair\" dessine un éclair de manière interactive. \"Reflet"
+"\" crée un reflet du dessin comme sur un lac. \"Étirer\" pour étirer et "
+"déformer l'image comme un miroir de foire. Et enfin, \"Arc-en-ciel doux\" "
 "fournit une variation plus douce que l'outil arc-en-ciel classique."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
@@ -783,10 +787,10 @@ msgid ""
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
-"Le clavier virtuel, disponible sur option quand on utilise les outils "
-"\"Texte\" et \"Étiquette\" , apparaît plus grand sur des écrans plus grand; "
-"c'est utile avec des des dispositifs d'entrée moins précis, tels que "
-"systèmes pilotés avec les yeux."
+"Le clavier virtuel, disponible sur option quand on utilise les outils \"Texte"
+"\" et \"Étiquette\" , apparaît plus grand sur des écrans plus grand; c'est "
+"utile avec des des dispositifs d'entrée moins précis, tels que systèmes "
+"pilotés avec les yeux."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:132
 msgid ""
@@ -1614,9 +1618,9 @@ msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
 msgstr ""
-"Choisissez une image puis cliquez sur \"Ouvrir\", \"Exporter\", ou "
-"\"Effacer\". Cliquez sur \"Diapos\" pour créer une animation diapo, ou bien "
-"sur \"Retour\" pour revenir à l'image en cours."
+"Choisissez une image puis cliquez sur \"Ouvrir\", \"Exporter\", ou \"Effacer"
+"\". Cliquez sur \"Diapos\" pour créer une animation diapo, ou bien sur "
+"\"Retour\" pour revenir à l'image en cours."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
@@ -1945,7 +1949,7 @@ msgstr "Clique et déplace la souris pour créer des déformations."
 
 #: ../../magic/src/dither.c:32
 msgid "Dither"
-msgstr ""
+msgstr "Tramage"
 
 #: ../../magic/src/dither.c:33
 #, fuzzy
@@ -2521,7 +2525,7 @@ msgstr "3-Point Dessiner"
 
 #: ../../magic/src/n_pt_persp.c:211
 msgid "Isometric Lines"
-msgstr ""
+msgstr "Lignes isométriques"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:214
@@ -2545,7 +2549,7 @@ msgstr "1-Point Choisir"
 
 #: ../../magic/src/n_pt_persp.c:219
 msgid "Trimetric Draw"
-msgstr ""
+msgstr "Dessin trimétrique"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:222
@@ -2554,7 +2558,7 @@ msgstr ""
 
 #: ../../magic/src/n_pt_persp.c:223
 msgid "Oblique Draw"
-msgstr ""
+msgstr "Dessin oblique"
 
 #: ../../magic/src/n_pt_persp.c:225
 msgid "Oblique Draw Left"
@@ -2769,7 +2773,7 @@ msgstr "Clique et déplace la souris pour dessiner de grands pixels."
 
 #: ../../magic/src/polyfill.c:28
 msgid "Filled Polygon"
-msgstr ""
+msgstr "Polygone plein"
 
 #: ../../magic/src/polyfill.c:32
 msgid ""
@@ -3010,10 +3014,8 @@ msgid "Click to add snow flakes to your picture."
 msgstr "Clique pour ajouter des flocons de neige."
 
 #: ../../magic/src/specular.c:75
-#, fuzzy
-#| msgid "Reflection"
 msgid "Specular Reflection"
-msgstr "Reflet"
+msgstr "Reflet dans un miroir"
 
 #: ../../magic/src/specular.c:93
 msgid ""
@@ -3159,35 +3161,35 @@ msgstr "Clique et déplace la souris pour dessiner une tornade."
 
 #: ../../magic/src/trochoids.c:109
 msgid "Epitrochoid"
-msgstr ""
+msgstr "Épitrochoïde"
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid Inside"
-msgstr ""
+msgstr "Épitrochoïde interne"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Edge"
-msgstr ""
+msgstr "Épitrochoïde de bord"
 
 #: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Outside"
-msgstr ""
+msgstr "Épitrochoïde externe"
 
 #: ../../magic/src/trochoids.c:113
 msgid "Hypotrochoid"
-msgstr ""
+msgstr "Hypotrochoïde"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid Inside"
-msgstr ""
+msgstr "Hypotrochoïde interne"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Edge"
-msgstr ""
+msgstr "Hypotrochoïde de bord"
 
 #: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Outside"
-msgstr ""
+msgstr "Hypotrochoïde externe"
 
 #. Epitrochoids
 #: ../../magic/src/trochoids.c:122
@@ -3304,17 +3306,15 @@ msgid "Xor Colors"
 msgstr "Xor"
 
 #: ../../magic/src/xor.c:116
-#, fuzzy
-#| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
-msgstr "Clique et promène la souris pour dessiner un effet Xor"
+msgstr ""
+"Clique et promène la souris pour dessiner un effet \"Ou exclusif\" (XOR)"
 
 #
 #: ../../magic/src/xor.c:118
-#, fuzzy
-#| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
-msgstr "Clique pour avoir un effet Xor sur l'ensemble de l'image"
+msgstr ""
+"Clique pour avoir un effet \"Ou exclusif\" (XOR) sur l'ensemble de l'image"
 
 #~ msgid "New Breed Software et al."
 #~ msgstr "New Breed Software et autres."
