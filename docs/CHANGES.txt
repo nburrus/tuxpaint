@@ -26,10 +26,11 @@ https://tuxpaint.org/
           Creative Commons 0 by Kenneth Cooney
           <https://freesound.org/people/Kenneth_Cooney>
           <https://www.kennethcooney.com/>
-        - "JacobsLadderSingle2.flac",
-          Creative Commons Attribution 4.0 by Eliot Lash
-          <https://freesound.org/people/Halleck/>
+        - "JacobsLadderSingle2.flac", Creative Commons Attribution 4.0
+          by Eliot Lash <https://freesound.org/people/Halleck/>
           <https://www.eliotlash.com/>
+        - "Ruler Twangs.wav", Creative Commons Attribution 3.0
+          by stinkhorn <https://freesound.org/people/stinkhorn/>
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/251/
 
   * Magic Tool Improvements:

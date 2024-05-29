@@ -166,6 +166,11 @@ June 17, 2002 - May 28, 2024
   <https://freesound.org/people/Halleck/>
   <https://www.eliotlash.com/>
  
+  Filled Polygon "remove" sound effect based on "Ruler Twangs.wav"
+  <https://freesound.org/people/stinkhorn/sounds/20199/>.
+  Creative Commons Attribution 3.0 by stinkhorn
+  <https://freesound.org/people/stinkhorn/>
+
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
   Googly Eyes sound effect: "Torch Crackle.wav"

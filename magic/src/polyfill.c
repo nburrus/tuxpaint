@@ -41,6 +41,7 @@ char *polyfill_icon_filenames[NUM_TOOLS] = {
 enum {
   SND_PLACE,
   SND_MOVE,
+  SND_REMOVE,
   SND_NEARBY,
   SND_FINISH,
   NUM_SOUNDS
@@ -49,6 +50,7 @@ enum {
 char *polyfill_snd_filenames[NUM_SOUNDS] = {
   "polyfill_place.ogg",
   "polyfill_move.ogg",
+  "polyfill_remove.ogg",
   "polyfill_nearby.ogg",
   "polyfill_finish.ogg",
 };
@@ -471,6 +473,9 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
           polyfill_pt_y[i] = polyfill_pt_y[i + 1];
         }
         polyfill_num_pts--;
+
+        /* Play "remove" sound effect */ 
+        api->playsound(snd_effects[SND_REMOVE], (x * 255) / canvas->w, 255);
       }
     }
 
