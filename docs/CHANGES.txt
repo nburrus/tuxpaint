@@ -13,17 +13,19 @@ https://tuxpaint.org/
       with dithered X-and-white pixels.  With "Dither", X is always black,
       or the currently-selected color; with "Dither (Keep Color)", X is
       a muted version of the original color.
-      Bill Kendrick <bill@newbreedsoftware.com>
-      - Sound effects based on "Orion FIll.wav", Creative Commons 0
+      + Code & icon Bill Kendrick <bill@newbreedsoftware.com>
+      + Sound effects based on "Orion FIll.wav", Creative Commons 0
         by KatHakaku <https://freesound.org/people/KatHakaku/>
 
-    * WIP Filled Polygon - Draw points to form a polygon which is filled
-      Bill Kendrick <bill@newbreedsoftware.com>
-      Scanline polygon fill routine based on public-domain code
-      by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/
+    * Filled Polygon + Draw points to form a polygon which is filled
+      + Code & icon by Bill Kendrick <bill@newbreedsoftware.com>
+      + Scanline polygon fill routine based on public-domain code
+        by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/
+      + Sound effects based on "success.wav", "success_02.wav", and
+        "Completed.wav", Creative Commons 0 by Kenneth Cooney
+        <https://freesound.org/people/Kenneth_Cooney>
+        <https://www.kennethcooney.com/>
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/251/
-      + WIP Needs sound effect
-      + WIP Needs testing & tweaking
 
   * Magic Tool Improvements:
     ------------------------
@@ -31,8 +33,8 @@ https://tuxpaint.org/
       (via the size option): Red/Cyan, Red/Blue, Red/Green, and Magenta/Cyan.
       (If Tux Paint is running in "Novice" complexity mode, no choices will
       be available; it will use Red/Cyan, as before.)
-      + Idea O'Hare The Rabbit
-      + Coding Bill Kendrick <bill@newbreedsoftware.com>
+      + Idea from O'Hare The Rabbit
+      + Coding by Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Eraser tool:
     ----------------------------

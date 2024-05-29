@@ -7,7 +7,7 @@
    Scanline polygon fill routine based on public-domain code
    by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-   Last updated: May 19, 2024
+   Last updated: May 28, 2024
 */
 
 
@@ -38,8 +38,17 @@ char *polyfill_icon_filenames[NUM_TOOLS] = {
   "polyfill.png",
 };
 
-char *polyfill_snd_filenames[NUM_TOOLS] = {
-  "dither.ogg",                 // FIXME
+enum {
+  SND_PLACE,
+  SND_MOVE,
+  SND_FINISH,
+  NUM_SOUNDS
+};
+
+char *polyfill_snd_filenames[NUM_SOUNDS] = {
+  "polyfill_place.ogg",
+  "polyfill_move.ogg",
+  "polyfill_finish.ogg",
 };
 
 #define SNAP_SIZE 16
@@ -54,7 +63,7 @@ int polyfill_editing = MAX_PTS;
 int polyfill_dragged = 0;
 int polyfill_active = 0;
 
-Mix_Chunk *snd_effects[NUM_TOOLS];
+Mix_Chunk *snd_effects[NUM_SOUNDS];
 
 Uint32 polyfill_color, polyfill_color_red, polyfill_color_green;
 
@@ -108,7 +117,7 @@ int polyfill_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uin
   int i;
   char filename[1024];
 
-  for (i = 0; i < NUM_TOOLS; i++)
+  for (i = 0; i < NUM_SOUNDS; i++)
   {
     snprintf(filename, sizeof(filename), "%ssounds/magic/%s", api->data_directory, polyfill_snd_filenames[i]);
     snd_effects[i] = Mix_LoadWAV(filename);
@@ -185,7 +194,7 @@ void polyfill_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   int i;
 
-  for (i = 0; i < NUM_TOOLS; i++)
+  for (i = 0; i < NUM_SOUNDS; i++)
   {
     if (snd_effects[i] != NULL)
     {
@@ -246,6 +255,7 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
 
     /* Add the new point */
     polyfill_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
+    api->playsound(snd_effects[SND_PLACE], (x * 255) / canvas->w, 255);
   }
   else
   {
@@ -271,6 +281,7 @@ polyfill_drag(magic_api * api, int which ATTRIBUTE_UNUSED,
   polyfill_pt_y[polyfill_editing] = y;
 
   polyfill_draw_preview(api, canvas, 1);
+  api->playsound(snd_effects[SND_MOVE], (x * 255) / canvas->w, 255);
 
   update_rect->x = 0;
   update_rect->y = 0;
@@ -389,11 +400,15 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
 
     polyfill_draw_final(canvas);
 
+    /* Reset points */
     polyfill_num_pts = 0;
     polyfill_editing = MAX_PTS;
 
     /* Update snapshot ahead of next polygon */
     SDL_BlitSurface(canvas, NULL, polyfill_snapshot, NULL);
+ 
+    /* Play "finish" sound effect */ 
+    api->playsound(snd_effects[SND_FINISH], 128 /* TODO could be clever and determine midpoint of polygon */, 255);
   }
   else
   {
