@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 01:00-0700\n"
-"PO-Revision-Date: 2024-05-29 19:24+0200\n"
+"PO-Revision-Date: 2024-05-30 06:23+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -400,9 +400,8 @@ msgstr ""
 "combinaisons de couleurs pour les anaglyphes)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
-#, fuzzy
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
-msgstr "Les outils Magie peuvent être séparés"
+msgstr "Les outils Magie peuvent être dégroupés (\"ungroupmagictools\")."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "Localization updates."
@@ -424,22 +423,29 @@ msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
+"Nouveaux outils Magie : Outils de dessin isométrique, dimétrique, "
+"trimétrique et oblique (et les éditeurs d'angles correspondants)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
 msgstr ""
+"Nouveaux outils Magie : générateurs d'Épitrochoïdes et d'Hypotrochoïdes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
 msgstr ""
+"Nouvelle option de configuration, \"complexité\", qui affecte le "
+"comportement (ou la disponibilité) de certains outils Magie."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
 msgstr ""
+"Réorganisation des outils magiques (auparavant classés par ordre "
+"alphabétique du nom localisé)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
@@ -449,7 +455,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Bug-fixes and localization updates."
-msgstr ""
+msgstr "Correction de bogues et mises à jour de localisations."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
@@ -543,8 +549,6 @@ msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr "L'outil 'Remplir' possède maintenant un mode de remplissage en biseau."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
-#, fuzzy
-#| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr ""
 "Un mode d'effacement rapide peut être effectué via un raccourci clavier."
@@ -1952,10 +1956,8 @@ msgid "Dither"
 msgstr "Tramage"
 
 #: ../../magic/src/dither.c:33
-#, fuzzy
-#| msgid "Keep Color"
 msgid "Dither (Keep Color)"
-msgstr "Garder une couleur"
+msgstr "Tramage (couleur inchangée)"
 
 #
 #: ../../magic/src/dither.c:38
@@ -2529,23 +2531,17 @@ msgstr "Lignes isométriques"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:214
-#, fuzzy
-#| msgid "1-Point Select"
 msgid "Dimetric Select"
-msgstr "1-Point Choisir"
+msgstr "Choisir perspective dimétrique"
 
 #: ../../magic/src/n_pt_persp.c:215
-#, fuzzy
-#| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
-msgstr "Symétrie H/B"
+msgstr "Dessiner avec perspective dimétrique"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:218
-#, fuzzy
-#| msgid "1-Point Select"
 msgid "Trimetric Select"
-msgstr "1-Point Choisir"
+msgstr "Choisir perspective trimétrique"
 
 #: ../../magic/src/n_pt_persp.c:219
 msgid "Trimetric Draw"
@@ -2554,7 +2550,7 @@ msgstr "Dessin trimétrique"
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:222
 msgid "Oblique Select"
-msgstr ""
+msgstr "Sélection oblique"
 
 #: ../../magic/src/n_pt_persp.c:223
 msgid "Oblique Draw"
@@ -2562,7 +2558,7 @@ msgstr "Dessin oblique"
 
 #: ../../magic/src/n_pt_persp.c:225
 msgid "Oblique Draw Left"
-msgstr ""
+msgstr "Tirage oblique à gauche"
 
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:231
