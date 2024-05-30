@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 01:00-0700\n"
-"PO-Revision-Date: 2024-05-30 06:23+0200\n"
+"PO-Revision-Date: 2024-05-30 08:37+0200\n"
 "Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -383,7 +383,6 @@ msgid "Transparent Erasers."
 msgstr "Gommes transparentes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-#, fuzzy
 msgid "Brushes support descriptions."
 msgstr "Descriptions des pinceaux."
 
@@ -1359,8 +1358,8 @@ msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"La police a une taille de \"%1$s (%2$s)\", %3$d. Cliquez sur votre dessin et "
-"commencez à écrire. Pressez [Entrée] ou [Tab] quand aurez fini."
+"La police a une taille de \"%1$s (%2$s)\", %3$d. Clique sur ton dessin et "
+"commence à écrire. Presse [Entrée] ou [Tab] quand tu auras fini."
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
@@ -1371,10 +1370,10 @@ msgid ""
 "selector button and clicking an existing label, you can move it, edit it, "
 "and change its text style."
 msgstr ""
-"La police a une taille de \"%1$s (%2$s)\", %3$d. Cliquez sur votre dessin et "
-"commencez à écrire. Pressez [Entrée] ou [Tab] quand aurez fini. En utilisant "
-"le bouton de sélection et en cliquant une étiquette existante, vous pouvez "
-"la déplacer et changer le style du texte."
+"La police a une taille de \"%1$s (%2$s)\", %3$d. Clique sur ton dessin et "
+"commence à écrire. Presse [Entrée] ou [Tab] quand tu auras fini. En "
+"utilisant le bouton de sélection et en cliquant une étiquette existante, tu "
+"peux la déplacer et changer le style du texte."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2461
@@ -1503,8 +1502,8 @@ msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
-"Vous avez déjà mis cette image comme modèle. Voyez la bôite de dialogue "
-"\"Nouveau\" !"
+"Tu as déjà mis cette image comme modèle. Vois la boîte de dialogue \"Nouveau"
+"\" !"
 
 #: ../tuxpaint.c:2533
 msgid "Sorry! Your picture could not turned into a template!"
@@ -1613,18 +1612,18 @@ msgid ""
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
-"Choisissez une image puis cliquez sur \"Ouvrir\", \"Exporter\", \"Modèle\" "
-"ou \"Effacer\". Cliquez sur \"Diapos\" pour créer une animation diapo, ou "
-"bien sur \"Retour\" pour revenir à l'image en cours."
+"Choisis une image puis clique sur \"Ouvrir\", \"Exporter\", \"Modèle\" ou "
+"\"Effacer\". Clique sur \"Diapos\" pour créer une animation diapo, ou bien "
+"sur \"Retour\" pour revenir à l'image en cours."
 
 #: ../tuxpaint.c:17227
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
 msgstr ""
-"Choisissez une image puis cliquez sur \"Ouvrir\", \"Exporter\", ou \"Effacer"
-"\". Cliquez sur \"Diapos\" pour créer une animation diapo, ou bien sur "
-"\"Retour\" pour revenir à l'image en cours."
+"Choisis une image puis cliquez sur \"Ouvrir\", \"Exporter\", ou \"Effacer\". "
+"Clique sur \"Diapos\" pour créer une animation diapo, ou bien sur \"Retour\" "
+"pour revenir à l'image en cours."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
@@ -1903,10 +1902,6 @@ msgid "Double Vision"
 msgstr "Vision double"
 
 #: ../../magic/src/colorsep.c:48
-#, fuzzy
-#| msgid ""
-#| "Click and drag left and right to separate your picture's red and cyan, to "
-#| "make anaglyphs you can view with 3D glasses!"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
@@ -1914,7 +1909,8 @@ msgid ""
 msgstr ""
 "Clique et déplace la souris pour pouvoir séparer les couleurs rouge et cyan "
 "de ton dessin, en vue de réaliser des anaglyphes que tu pourras voir avec "
-"des lunettes 3D !"
+"des lunettes 3D ! Utilise l'option taille pour choisir entre les différents "
+"types."
 
 #
 #: ../../magic/src/colorsep.c:49
@@ -2777,6 +2773,9 @@ msgid ""
 "drag control points to alter the shape. Click the first point to complete "
 "the shape."
 msgstr ""
+"Clique plusieurs fois sur ton dessin pour créer un polygone plein. Tu peux "
+"faire glisser les points de contrôle pour modifier la forme. Clique sur le "
+"premier point pour terminer."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -3019,6 +3018,9 @@ msgid ""
 "reflection — like a puddle, pond, or lake — that mirrors the top half of "
 "your picture."
 msgstr ""
+"Clique et déplace la souris sur la moitié inférieure du dessin pour obtenir "
+"un reflet - tout comme une flaque, un mare ou un lac - qui réfléchira la "
+"moitié supérieure de ton dessin."
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
@@ -3194,6 +3196,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
 msgstr ""
+"Clique pour démarrer le dessin d'une épitrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Utilise l'option taille pour la "
+"changer à l'endroit du crayon."
 
 #: ../../magic/src/trochoids.c:123
 msgid ""
@@ -3201,6 +3207,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
 msgstr ""
+"Clique pour démarrer le dessin d'une épitrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Le crayon est alors à l'intérieur "
+"du cercle mobile."
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
@@ -3208,6 +3218,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"Clique pour démarrer le dessin d'une épitrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Le crayon est sur le bord du cercle "
+"mobile."
 
 #: ../../magic/src/trochoids.c:125
 msgid ""
@@ -3215,6 +3229,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
+"Clique pour démarrer le dessin d'une épitrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Le crayon est en dehors du cercle "
+"mobile."
 
 #. Hypotrochoids
 #: ../../magic/src/trochoids.c:127
@@ -3223,6 +3241,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
+"Clique pour démarrer le dessin d'une hypotrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Utilise l'option taille pour la "
+"changer à l'endroit du crayon."
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
@@ -3230,6 +3252,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
+"Clique pour démarrer le dessin d'une hypotrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Le crayon est à l'intérieur du "
+"cercle mobile."
 
 #: ../../magic/src/trochoids.c:129
 msgid ""
@@ -3237,6 +3263,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"Clique pour démarrer le dessin d'une hypotrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Le crayon est sur le bord du cercle "
+"mobile."
 
 #: ../../magic/src/trochoids.c:130
 msgid ""
@@ -3244,6 +3274,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
 msgstr ""
+"Clique pour démarrer le dessin d'une hypotrochoïde. Promène la souris de "
+"droite à gauche pour ajuster la taille du cercle fixe, puis de haut en bas "
+"pour changer la taille du cercle mobile. Le crayon est en dehors du cercle "
+"mobile."
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
