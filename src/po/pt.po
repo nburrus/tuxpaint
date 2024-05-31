@@ -1,5 +1,5 @@
 # Translation of tuxpaint to Portuguese.
-# Copyright (C) 2002-2023 The Tuxpaint Team.
+# Copyright (C) 2002-2024 The Tuxpaint Team.
 # This file is distributed under the same license as the tuxpaint package.
 # Ricardo Cruz <rick2@aeiou.pt>, 2003.
 # Helder Correia <helder.pereira.correia@gmail.com>, 2005, 2006, 2007.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 01:00-0700\n"
-"PO-Revision-Date: 2024-02-18 17:11+0000\n"
+"PO-Revision-Date: 2024-05-30 20:21+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -382,31 +382,32 @@ msgstr "A ferramenta Carimbo é como um conjunto de carimbos ou autocolantes"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Transparent Erasers."
-msgstr ""
+msgstr "Borrachas transparentes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Brushes support descriptions."
-msgstr ""
+msgstr "Os pincéis suportam descrições."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Specular, Filled Polygon."
-msgstr ""
+msgstr "Novas ferramentas de magia: Dither, Specular, Filled Polygon."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
 msgstr ""
+"Ferramentas de magia atualizadas: óculos 3D (agora oferece diferentes "
+"combinações de cores anáglifas)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
 msgstr ""
+"As ferramentas de magia podem ser desagrupadas (\"ungroupmagictools\")."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
-#, fuzzy
-#| msgid "Bug-fixes and localization updates."
 msgid "Localization updates."
-msgstr "Correções de erros e atualizações de localização."
+msgstr "Atualizações de localização."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -1887,17 +1888,14 @@ msgid "Double Vision"
 msgstr "Visão dupla"
 
 #: ../../magic/src/colorsep.c:48
-#, fuzzy
-#| msgid ""
-#| "Click and drag left and right to separate your picture's red and cyan, to "
-#| "make anaglyphs you can view with 3D glasses!"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
 msgstr ""
-"Clique e arraste à esquerda e à direita para separar o vermelho e o ciano do "
-"teu desenho, para fazer anáglifos que pode ver com óculos 3D!"
+"Clica e arrasta à esquerda e à direita para separar o vermelho e o ciano do "
+"teu desenho, para criar anáglifos que pode ver com óculos 3D! Usa a opção de "
+"tamanho para escolheres diferentes tipos."
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -1933,53 +1931,43 @@ msgstr "Clica e arrasta o rato para distorcer o desenho."
 
 #: ../../magic/src/dither.c:32
 msgid "Dither"
-msgstr ""
+msgstr "Pontilhado"
 
 #: ../../magic/src/dither.c:33
-#, fuzzy
-#| msgid "Keep Color"
 msgid "Dither (Keep Color)"
-msgstr "Manter cor"
+msgstr "Pontilhado (manter a cor)"
 
 #: ../../magic/src/dither.c:38
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
 msgstr ""
-"Clica e arrasta para fazer com que algumas partes do desenho apareçam como "
-"se estivessem na televisão."
+"Clica e arrasta para substituir partes do teu desenho por um padrão de "
+"pontos na cor escolhida."
 
 #: ../../magic/src/dither.c:39
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
-msgstr "Clica para cobrir o desenho com gotas de chuva."
+msgstr ""
+"Clica para substituir todo o teu desenho por um padrão de pontos na cor "
+"escolhida."
 
 #: ../../magic/src/dither.c:42
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
 msgstr ""
-"Clica e arrasta para fazer com que algumas partes do desenho apareçam como "
-"se estivessem na televisão."
+"Clica e arrasta para substituir partes do teu desenho por um padrão de "
+"pontos com as cores originais do desenho."
 
 #: ../../magic/src/dither.c:43
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
-msgstr "Clica para cobrir o desenho com gotas de chuva."
+msgstr ""
+"Clica para substituir todo o teu desenho por um padrão de pontos com as "
+"cores originais do desenho."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2649,7 +2637,7 @@ msgstr "Clica e arrasta para desenhares pixéis grandes."
 
 #: ../../magic/src/polyfill.c:28
 msgid "Filled Polygon"
-msgstr ""
+msgstr "Polígono preenchido"
 
 #: ../../magic/src/polyfill.c:32
 msgid ""
@@ -2657,6 +2645,9 @@ msgid ""
 "drag control points to alter the shape. Click the first point to complete "
 "the shape."
 msgstr ""
+"Clica várias vezes no teu desenho para criar um polígono preenchido. Podes "
+"arrastar pontos de controlo para alterar a forma. Clica no primeiro ponto "
+"para completar a forma."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2872,10 +2863,8 @@ msgid "Click to add snow flakes to your picture."
 msgstr "Clica para adicionar flocos de neve ao desenho."
 
 #: ../../magic/src/specular.c:75
-#, fuzzy
-#| msgid "Reflection"
 msgid "Specular Reflection"
-msgstr "Reflexão"
+msgstr "Reflexão especular"
 
 #: ../../magic/src/specular.c:93
 msgid ""
@@ -2883,6 +2872,9 @@ msgid ""
 "reflection — like a puddle, pond, or lake — that mirrors the top half of "
 "your picture."
 msgstr ""
+"Clica e arrasta na metade inferior da imagem para desenhar um reflexo "
+"especular - como uma poça, lagoa ou lago - que espelhe a metade superior da "
+"imagem."
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
