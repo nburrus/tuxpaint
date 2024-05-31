@@ -1,15 +1,15 @@
 # translation of fr.po to 
 # Tux Paint french messages.
 # Copyright (C) 2017.
-# Jacques Chion <Jacques.Chion_at_orange.fr>, 2008-2017.
+# Jacques Chion <Jacques.Chion_at_orange.fr>, 2008-2024.
 # Charles Vidal <vidalc@club-internet.fr>, 2002.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 23:51-0700\n"
-"PO-Revision-Date: 2024-05-31 10:30+0200\n"
-"Last-Translator: Chion Jacques <jacques.chion@orange.fr>\n"
+"PO-Revision-Date: 2024-05-31 17:10+0200\n"
+"Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -230,8 +230,8 @@ msgid ""
 "Click to fill an area with a shaped gradient (from the chosen color to "
 "transparent)."
 msgstr ""
-"Clique pour remplir une surface avec un dégradé radial (depuis la couleur "
-"choisie jusqu'à la transparence)."
+"Clique pour remplir une surface avec un dégradé mis en forme (depuis la "
+"couleur choisie jusqu'à la transparence)."
 
 #: ../fill_tools.h:75
 #, c-format
@@ -342,7 +342,7 @@ msgid ""
 "program."
 msgstr ""
 "Tux Paint est un programme de dessin libre, conçu pour les jeunes enfants "
-"âgés de 3 à 12 ans, ayant teçu de nombreuses récompenses. Tux Paint est "
+"âgés de 3 à 12 ans, ayant reçu de nombreuses récompenses. Tux Paint est "
 "utilisé dans des écoles partout dans le monde comme activité d'apprentissage "
 "de dessin par ordinateur. Il possède une interface simple à utiliser, des "
 "effets sonores amusants, et une mascotte qui encourage et aide les enfants "
@@ -363,7 +363,7 @@ msgstr "Bill Kendrick, et autres."
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
 msgstr ""
-"Tux Paint est livré avec de nombreuses images prédessinées du style 'livre "
+"Tux Paint est livré avec de nombreuses images pré-dessinées du style 'livre "
 "de coloriage'"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:42
@@ -404,7 +404,7 @@ msgstr "Les outils Magie peuvent être dégroupés (\"ungroupmagictools\")."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "Localization updates."
-msgstr "Mises à jour concernant des localisations."
+msgstr "Mises à jour des localisations."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -412,7 +412,7 @@ msgid ""
 "corresponding vanishing point editors)."
 msgstr ""
 "Nouveaux outils de Magie : outil de dessin de ligne avec perspective (1-, -2 "
-"et -3 points de fuite)."
+"et -3 points de fuite avec les éditeurs correspondants)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
@@ -447,7 +447,7 @@ msgstr ""
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
 "Le nom et la taille de la police sont indiqués lors du choix d'une police "
-"dans les outils Texte et Étiquette. "
+"dans les outils Texte et Étiquette."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Bug-fixes and localization updates."
@@ -478,7 +478,7 @@ msgid ""
 "option."
 msgstr ""
 "L'option \"Effacer\" pour supprimer des dessins sauvegardés avec la boîte "
-"Ouvrir et des modèles exportés avec la boîte Nouveau peut être désactivé "
+"Ouvrir et des modèles exportés avec la boîte Nouveau peut être désactivée "
 "avec l'option \"noerase\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
@@ -503,7 +503,7 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"De petites améliorations ont été apportées pour les couleurs "
+"Des améliorations mineures ont été apportées pour les couleurs "
 "'spéciales' (pipette, sélecteur HSV et mélangeur de couleurs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:84
@@ -763,10 +763,10 @@ msgid ""
 "be helpful to users of coarse input devices, such as eye-gaze tracking "
 "systems."
 msgstr ""
-"Pour finir, de nouvelles options concernant l'accessibilité ont été ajoutées "
-"Toute l'interface utilisateur a été agrandie pour les utilisateurs qui ont "
-"des problèmes de vision,  et le programme a été modifié pour avoir un "
-"affichage à très haute densité. Cette possibilité, en parallèle avec "
+"Pour finir, de nouvelles options concernant l'accessibilité ont été "
+"ajoutées. Toute l'interface utilisateur a été agrandie pour les utilisateurs "
+"qui ont des problèmes de vision,  et le programme a été modifié pour avoir "
+"un affichage à très haute densité. Cette possibilité, en parallèle avec "
 "l'option pour réorganiser la palette de couleurs, peut être utile aux "
 "utilisateurs ayant un dispositif de pointage imprécis, comme les systèmes "
 "avec suivi oculaire."
@@ -1190,8 +1190,7 @@ msgstr "Effacer !"
 #. Response to 'start a new image' action
 #: ../tools.h:149
 msgid "Pick a color or picture with which to start a new drawing."
-msgstr ""
-"Choisis une image ou une couleur pour l'insérer dans un nouveau dessin."
+msgstr "Choisis une image ou une couleur pour ldémarrer un nouveau dessin."
 
 #. Response to 'open' action (while file dialog is being constructed)
 #: ../tools.h:152
@@ -1237,7 +1236,7 @@ msgstr "Maintiens le bouton pour étirer cette forme."
 msgid ""
 "Hold the button to stretch the shape. (It has an aspect ratio of \"%.2g:1\".)"
 msgstr ""
-"Maintiens le bouton pour étirer cette forme.Il a un ratio d'aspect de  "
+"Maintiens le bouton pour étirer cette forme.(Le ratio d'aspect est de  "
 "\"%.2g:1\".)"
 
 #. Instruction while finishing Shape tool (after release, during rotation step before second click)
@@ -1320,7 +1319,7 @@ msgstr ""
 
 #: ../tools.h:195
 msgid "This brush's spacing is now about the size of the brush shape."
-msgstr "Le pas du pinceau est égal à la taille du pinceau."
+msgstr "Le pas du pinceau est presque égal à la taille du pinceau."
 
 #: ../tools.h:196
 #, c-format
@@ -1345,7 +1344,7 @@ msgid ""
 "Drag the mouse to rotate the stamp. Click to draw it. (It is rotated %d "
 "degrees.)"
 msgstr ""
-"Bouge la souris pour faire tourner ce tampon. Clique pour le figer.'La "
+"Bouge la souris pour faire tourner ce tampon. Clique pour le figer. (La "
 "rotation est de %d degrés.)"
 
 #. Text tool instructions after changing font
@@ -1767,33 +1766,30 @@ msgstr "Goutte"
 
 #: ../../magic/src/blocks_etc.c:179
 msgid "Click and drag the mouse around to make the picture blocky."
-msgstr ""
-"Clique et déplace la souris pour transformer l'image en un ensemble de "
-"petits blocs."
+msgstr "Clique et déplace la souris pour fabriquer des petits blocs."
 
 #
 #: ../../magic/src/blocks_etc.c:183
 msgid "Click to make the entire picture blocky."
-msgstr "Clique pour transformer l'image en un ensemble de petits blocs."
+msgstr "Clique pour transformer toute l'image en un ensemble de petits blocs."
 
 #: ../../magic/src/blocks_etc.c:190
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
-msgstr ""
-"Clique et déplace la souris pour transformer l'image en dessin à la craie."
+msgstr "Clique et déplace la souris pour fabriquer un dessin à la craie."
 
 #: ../../magic/src/blocks_etc.c:194
 msgid "Click to turn the entire picture into a chalk drawing."
-msgstr "Clique pour transformer l'image en dessin à la craie."
+msgstr "Clique pour transformer toute l'image en dessin à la craie."
 
 #: ../../magic/src/blocks_etc.c:201
 msgid "Click and drag the mouse around to make the picture drip."
-msgstr "Clique et déplace la souris pour rendre l'image dégoulinante."
+msgstr "Clique et déplace la souris pour donner un aspect dégoulinant."
 
 #
 #: ../../magic/src/blocks_etc.c:205
 msgid "Click to make the entire picture drip."
-msgstr "Clique pour que le dessin soit entièrement avec des gouttes."
+msgstr "Clique pour que le dessin soit entièrement dégoulinant."
 
 #: ../../magic/src/bloom.c:108
 msgid "Bloom"
@@ -1863,7 +1859,7 @@ msgstr ""
 
 #: ../../magic/src/cartoon.c:136
 msgid "Click to turn the entire picture into a cartoon."
-msgstr "Clique pour que ton dessin ressemble à une bande dessinée."
+msgstr "Clique pour que tout le dessin ressemble à une bande dessinée."
 
 #: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
@@ -1904,10 +1900,10 @@ msgid ""
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
 msgstr ""
-"Clique et déplace la souris pour pouvoir séparer les couleurs rouge et cyan "
-"de ton dessin, en vue de réaliser des anaglyphes que tu pourras voir avec "
-"des lunettes 3D ! Utilise l'option taille pour choisir entre les différents "
-"types."
+"Clique et déplace la souris à gauche et à  droite pour séparer les couleurs "
+"rouge et cyan de ton dessin, en vue de réaliser des anaglyphes que tu "
+"pourras voir avec des lunettes 3D ! Utilise l'option taille pour choisir "
+"entre les différents types."
 
 #
 #: ../../magic/src/colorsep.c:49
@@ -1924,9 +1920,9 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
-"Clique et déplace la souris pour pouvoir séparer les couleurs rouge et cyan "
-"de ton dessin, en vue de réaliser des anaglyphes que tu pourras voir avec "
-"des lunettes 3D !"
+"Clique et déplace la souris à gauche et à droite  pour pouvoir séparer les "
+"couleurs rouge et cyan de ton dessin, en vue de réaliser des anaglyphes que "
+"tu pourras voir avec des lunettes 3D !"
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"
@@ -1954,49 +1950,41 @@ msgstr "Tramage (couleur inchangée)"
 
 #
 #: ../../magic/src/dither.c:39
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
 msgstr ""
-"Clique, et promène ta souris : tu verras des morceaux de ton dessin avec des "
-"lignes horizontales, comme à la télévision."
+"Clique pour remplacer une partie du dessin par une trame de points utilisant "
+"la couleur que tu as choisie."
 
 #
 #
 #: ../../magic/src/dither.c:40
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
-msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
+msgstr ""
+"Clique pour remplir entièrement le dessin avec une trame de points utilisant "
+"la couleur que tu as choisie."
 
 #
 #: ../../magic/src/dither.c:44
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
 msgstr ""
-"Clique, et promène ta souris : tu verras des morceaux de ton dessin avec des "
-"lignes horizontales, comme à la télévision."
+"Clique et déplace la souris pour remplacer une partie du dessin par une "
+"trame de points utilisant les couleurs d'origine du dessin."
 
 #
 #
 #: ../../magic/src/dither.c:46
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
-msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
+msgstr ""
+"Clique pour remplir entièrement le dessin avec une trame de points utilisant "
+"les couleurs d'origine du dessin."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2009,7 +1997,7 @@ msgstr "Clique et déplace la souris pour donner du relief à l'image."
 #
 #: ../../magic/src/emboss.c:129
 msgid "Click to emboss the entire picture."
-msgstr "Clique pour donner du relief à l'image."
+msgstr "Clique pour donner du relief à toute l'image."
 
 #: ../../magic/src/fade_darken.c:47
 msgid "Lighten"
@@ -2084,7 +2072,7 @@ msgid ""
 "Click and drag the mouse to entirely desaturate parts of your picture that "
 "match the chosen color."
 msgstr ""
-"Clique et déplace la souris pour complètement atténuer, sur une partie du "
+"Clique et déplace la souris pour atténuer complètement , sur une partie du "
 "dessin,  une couleur que tu as choisie."
 
 #: ../../magic/src/fade_darken.c:79
@@ -2117,7 +2105,7 @@ msgstr "Grand angle"
 
 #: ../../magic/src/fisheye.c:127
 msgid "Click on part of your picture to create a fisheye effect."
-msgstr "Choisis une partie de l'image pour créer un effet \"fisheye\"."
+msgstr "Choisis une partie de l'image pour créer un effet \"œil de poisson\"."
 
 #: ../../magic/src/flower.c:201
 msgid "Flower"
@@ -2169,7 +2157,7 @@ msgstr "Carreaux"
 #: ../../magic/src/glasstile.c:132
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
-"Clique et déplace la souris pour mettre des carreaux de verre par endroits."
+"Clique et déplace la souris pour mettre des carreaux de verre sur ton dessin."
 
 #
 #: ../../magic/src/glasstile.c:134
@@ -2181,7 +2169,7 @@ msgid ""
 "Click to place a large googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
-"Clique pour placer un gros oeil, déplace la souris et relâche pour qu'il "
+"Clique pour placer un gros œil, déplace la souris et relâche pour qu'il "
 "regarde dans cette direction."
 
 #: ../../magic/src/googlyeyes.c:25
@@ -2189,7 +2177,7 @@ msgid ""
 "Click to place a small googly eye, then drag and release to make it look "
 "that direction."
 msgstr ""
-"Clique pour placer un petit oeil, déplace la souris et relâche pour qu'il "
+"Clique pour placer un petit œil, déplace la souris et relâche pour qu'il "
 "regarde dans cette direction."
 
 #: ../../magic/src/googlyeyes.c:206
@@ -2201,7 +2189,7 @@ msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
 msgstr ""
-"Clique pour placer un oeil, déplace la souris et relâche pour qu'il regarde "
+"Clique pour placer un œil, déplace la souris et relâche pour qu'il regarde "
 "dans cette direction."
 
 #: ../../magic/src/grass.c:112
@@ -2228,7 +2216,7 @@ msgstr ""
 #
 #: ../../magic/src/halftone.c:55
 msgid "Click to turn your drawing into a newspaper."
-msgstr "Clique pour que ton image ressemble à celle d'un journal."
+msgstr "Clique pour que toute ton image ressemble à un journal."
 
 #: ../../magic/src/kaleidox.c:40
 msgid "Kaleido-4"
@@ -2249,7 +2237,7 @@ msgid ""
 "Click and drag around your picture to look through it with a kaleidoscope!"
 msgstr ""
 "Clique, et promène ta souris sur ton dessin pour le voir comme si c'était "
-"avec un kaléidoscope !"
+"dans un  kaléidoscope !"
 
 #: ../../magic/src/kalidescope.c:128
 msgid "Symmetric Left/Right"
@@ -2270,7 +2258,7 @@ msgstr "Tuiles"
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
-msgstr "Symétrie"
+msgstr "Kaléidoscope"
 
 #: ../../magic/src/kalidescope.c:168
 msgid ""
@@ -2340,7 +2328,7 @@ msgstr "Clique pour transformer tout tout ton dessin en labyrinthe."
 
 #: ../../magic/src/metalpaint.c:105
 msgid "Metal Paint"
-msgstr "Métal"
+msgstr "Peinture métal"
 
 #: ../../magic/src/metalpaint.c:124
 msgid "Click and drag the mouse to paint with a metallic color."
@@ -2397,14 +2385,14 @@ msgstr "Mosaïque"
 msgid ""
 "Click and drag the mouse to add a square mosaic to parts of your picture."
 msgstr ""
-"Clique et déplace la souris pour ajouter, localement, un effet de mosaïque."
+"Clique et déplace la souris pour ajouter, localement, un effet de mosaïque "
+"carrée."
 
 #
 #: ../../magic/src/mosaic_shaped.c:154
 msgid "Click to add a square mosaic to your entire picture."
 msgstr ""
-"Clique pour avoir un effet de mosaïque, avec des carreaux , sur l'ensemble "
-"de l'image."
+"Clique pour avoir un effet de mosaïque carrée sur l'ensemble de l'image."
 
 #
 #: ../../magic/src/mosaic_shaped.c:158
@@ -2513,10 +2501,8 @@ msgid "3-Point Draw"
 msgstr "3-Point Dessiner"
 
 #: ../../magic/src/n_pt_persp.c:207
-#, fuzzy
-#| msgid "3-Point Draw"
 msgid "3-Point Draw Down"
-msgstr "3-Point Dessiner"
+msgstr "3-Point Dessiner vers le bas"
 
 #: ../../magic/src/n_pt_persp.c:211
 msgid "Isometric Lines"
@@ -2525,33 +2511,33 @@ msgstr "Lignes isométriques"
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:214
 msgid "Dimetric Select"
-msgstr "Choisir perspective dimétrique"
+msgstr "Dimétrique Choisir"
 
 #: ../../magic/src/n_pt_persp.c:215
 msgid "Dimetric Draw"
-msgstr "Dessiner avec perspective dimétrique"
+msgstr "Dimétrique Dessin"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:218
 msgid "Trimetric Select"
-msgstr "Choisir perspective trimétrique"
+msgstr "Trimétrique Choisir"
 
 #: ../../magic/src/n_pt_persp.c:219
 msgid "Trimetric Draw"
-msgstr "Dessin trimétrique"
+msgstr "Trimétrique Dessin"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:222
 msgid "Oblique Select"
-msgstr "Sélection oblique"
+msgstr "Oblique Choisir"
 
 #: ../../magic/src/n_pt_persp.c:223
 msgid "Oblique Draw"
-msgstr "Dessin oblique"
+msgstr "Oblique Dessin"
 
 #: ../../magic/src/n_pt_persp.c:225
 msgid "Oblique Draw Left"
-msgstr "Tirage oblique à gauche"
+msgstr "Oblique Dessin gauche"
 
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:231
@@ -2560,7 +2546,7 @@ msgid ""
 "painting tool."
 msgstr ""
 "Clique sur le dessin pour placer un point de fuite pour l'outil de dessin "
-"avec une perspective à 1 point."
+"'perspective à 1 point'."
 
 #: ../../magic/src/n_pt_persp.c:232
 msgid ""
@@ -2576,7 +2562,7 @@ msgid ""
 "perspective painting tool."
 msgstr ""
 "Clique sur le dessin en deux endroits pour placer des points de fuite pour "
-"l'outil de dessin avec une perspective à 2 points."
+"l'outil de dessin 'perspective à 2 points'."
 
 #: ../../magic/src/n_pt_persp.c:236
 msgid ""
@@ -2591,7 +2577,7 @@ msgid ""
 "perspective painting tool."
 msgstr ""
 "Clique sur le dessin en trois endroits pour placer des points de fuite pour "
-"l'outil de dessin avec une perspective à 3 points."
+"l'outil de dessin 'perspective à 3 points'."
 
 #: ../../magic/src/n_pt_persp.c:241
 msgid ""
@@ -2601,105 +2587,69 @@ msgstr ""
 "3 points de fuite."
 
 #: ../../magic/src/n_pt_persp.c:243
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 3-point perspective vanishing "
-#| "points."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
 msgstr ""
 "Clique et promène la souris pour dessiner des lignes avec une perspective à "
-"3 points de fuite."
+"3 points de fuite (perspective vers le bas)."
 
 #: ../../magic/src/n_pt_persp.c:247
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr ""
-"Clique et promène la souris pour dessiner des lignes avec une perspective à "
-"1 point de fuite."
+"Clique et promène la souris pour dessiner des lignes avec une projection "
+"isométrique."
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:250
-#, fuzzy
-#| msgid ""
-#| "Click in your drawing to pick a vanishing point for the 1-point "
-#| "perspective painting tool."
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
-"Clique sur le dessin pour placer un point de fuite pour l'outil de dessin "
-"avec une perspective à 1 point."
+"Clique sur le dessin pour ajuster l'angle utilisé par l'outil de peinture "
+"pour la projection dimétrique."
 
 #: ../../magic/src/n_pt_persp.c:251
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr ""
-"Clique et promène la souris pour dessiner des lignes avec une perspective à "
-"1 point de fuite."
+"Clique et promène la souris pour dessiner des lignes avec une projection "
+"dimétrique."
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:254
-#, fuzzy
-#| msgid ""
-#| "Click in your drawing to pick a vanishing point for the 1-point "
-#| "perspective painting tool."
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
-"Clique sur le dessin pour placer un point de fuite pour l'outil de dessin "
-"avec une perspective à 1 point."
+"Clique sur le dessin pour ajuster les angles utilisés par l'outil de "
+"peinture pour la projection trimétrique."
 
 #: ../../magic/src/n_pt_persp.c:255
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr ""
-"Clique et promène la souris pour dessiner des lignes avec une perspective à "
-"1 point de fuite."
+"Clique et promène la souris pour dessiner des lignes avec une projection "
+"trimétrique.."
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:258
-#, fuzzy
-#| msgid ""
-#| "Click in your drawing to pick a vanishing point for the 1-point "
-#| "perspective painting tool."
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
-"Clique sur le dessin pour placer un point de fuite pour l'outil de dessin "
-"avec une perspective à 1 point."
+"Clique sur le dessin pour ajuster l'angle utilisé par l'outil de peinture "
+"pour la projection oblique."
 
 #: ../../magic/src/n_pt_persp.c:259
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with oblique projection."
 msgstr ""
-"Clique et promène la souris pour dessiner des lignes avec une perspective à "
-"1 point de fuite."
+"Clique et promène la souris pour dessiner des lignes avec une projection "
+"oblique."
 
 #: ../../magic/src/n_pt_persp.c:261
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw lines with your 1-point perspective vanishing "
-#| "point."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr ""
-"Clique et promène la souris pour dessiner des lignes avec une perspective à "
-"1 point de fuite."
+"Clique et promène la souris pour dessiner des lignes avec une projection "
+"oblique (face à droite)."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
@@ -2764,11 +2714,6 @@ msgid "Filled Polygon"
 msgstr "Polygone plein"
 
 #: ../../magic/src/polyfill.c:34
-#, fuzzy
-#| msgid ""
-#| "Click multiple times in your picture to create a filled polygon. You may "
-#| "drag control points to alter the shape. Click the first point to complete "
-#| "the shape."
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag points to alter the shape. Drag adjacent points together to merge them. "
@@ -2776,7 +2721,8 @@ msgid ""
 msgstr ""
 "Clique plusieurs fois sur ton dessin pour créer un polygone plein. Tu peux "
 "faire glisser les points de contrôle pour modifier la forme. Clique sur le "
-"premier point pour terminer."
+"premier point pour terminer. Connecte le premier et le dernier point pour "
+"compléter la forme."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2865,7 +2811,7 @@ msgstr "Ruban"
 
 #: ../../magic/src/ribbon.c:136
 msgid "Add a flowing ribbon to your picture."
-msgstr "Clique pour ajouter un rubal flottant dans ton dessin."
+msgstr "Clique pour ajouter un ruban flottant sur ton dessin."
 
 #: ../../magic/src/ripples.c:108
 msgid "Ripples"
@@ -2914,7 +2860,7 @@ msgstr ""
 #
 #: ../../magic/src/sharpen.c:88
 msgid "Click to trace edges in your entire picture."
-msgstr "Clique pour obtenir le contour de tous les objets."
+msgstr "Clique pour obtenir le contour de tous les objets de ton dessin."
 
 #: ../../magic/src/sharpen.c:89
 msgid "Click and drag the mouse to sharpen parts of your picture."
@@ -2929,12 +2875,14 @@ msgstr "Clique pour affiner tout le dessin."
 #: ../../magic/src/sharpen.c:91
 msgid "Click and drag the mouse to create a black and white silhouette."
 msgstr ""
-"Clique et déplace la souris pour avoir localement le dessin en noir et blanc."
+"Clique et déplace la souris pour avoir localement une slhouette en noir et "
+"blanc."
 
 #
 #: ../../magic/src/sharpen.c:92
 msgid "Click to create a black and white silhouette of your entire picture."
-msgstr "Clique pour avoir tout le dessin en noir et blanc."
+msgstr ""
+"Clique pour avoir une silhouette en noir et blanc sur l'ensemble du dessin."
 
 #: ../../magic/src/shift.c:113
 msgid "Shift"
@@ -3023,15 +2971,15 @@ msgstr ""
 
 #: ../../magic/src/string.c:137
 msgid "String edges"
-msgstr "Ficelles (3)"
+msgstr "Ficelles-3"
 
 #: ../../magic/src/string.c:140
 msgid "String corner"
-msgstr "Ficelles (2)"
+msgstr "Ficelles-2"
 
 #: ../../magic/src/string.c:143
 msgid "String 'V'"
-msgstr "Ficelles (1)"
+msgstr "Ficelles-1"
 
 #: ../../magic/src/string.c:175
 msgid ""
