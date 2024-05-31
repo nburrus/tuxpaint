@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-29 01:00-0700\n"
-"PO-Revision-Date: 2024-01-27 10:46+0900\n"
+"PO-Revision-Date: 2024-05-31 15:08+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -376,31 +376,31 @@ msgstr "「はんこ」ツールは、スタンプやシールのセットのよ
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Transparent Erasers."
-msgstr ""
+msgstr "透明な消しゴムを追加しました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Brushes support descriptions."
-msgstr ""
+msgstr "いくつかのブラシについて、特徴の説明を表示するようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Specular, Filled Polygon."
-msgstr ""
+msgstr "「まほう」ツールの追加: 「ディザ」「みなも」「たかっけい」"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
 msgstr ""
+"「まほう」ツールの「りったいめがね」で、色の組み合わせを選べるようになりまし"
+"た。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
-msgstr ""
+msgstr "「まほう」ツールをグループ化しないオプションを追加しました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
-#, fuzzy
-#| msgid "Bug-fixes and localization updates."
 msgid "Localization updates."
-msgstr "バグ修正と翻訳の更新。"
+msgstr "翻訳の更新。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
@@ -1851,17 +1851,14 @@ msgid "Double Vision"
 msgstr "ふくし"
 
 #: ../../magic/src/colorsep.c:48
-#, fuzzy
-#| msgid ""
-#| "Click and drag left and right to separate your picture's red and cyan, to "
-#| "make anaglyphs you can view with 3D glasses!"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
 msgstr ""
 "くりっくしてから みぎひだりに ドラッグして、いろを あかとあおに わけよう。あ"
-"かあおメガネで りったいてきに みえるよ！"
+"かあおメガネで りったいてきに みえるよ！サイズボタンで いろの くみあわせを か"
+"えられます。"
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -1899,51 +1896,43 @@ msgstr "クリックしたまま マウスをうごかして えを ゆがめよ
 
 #: ../../magic/src/dither.c:32
 msgid "Dither"
-msgstr ""
+msgstr "ざらざら"
 
 #: ../../magic/src/dither.c:33
-#, fuzzy
-#| msgid "Keep Color"
 msgid "Dither (Keep Color)"
-msgstr "いろのこし"
+msgstr "ざらざら（カラー）"
 
 #: ../../magic/src/dither.c:38
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
 msgstr ""
-"クリックしたまま マウスを うごかして テレビに うつったみたいに しよう。"
+"クリックしたまま マウスを うごかして むかしの しろくろの ぱそこん みたいな ざ"
+"らざらとした えに しよう。"
 
 #: ../../magic/src/dither.c:39
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
-msgstr "えを クリックして ぜんたいに あめを ふらせよう。"
+msgstr ""
+"クリックして えの ぜんたいを むかしの しろくろの ぱそこん みたいな ざらざらと"
+"した えに しよう。"
 
 #: ../../magic/src/dither.c:42
-#, fuzzy
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
 msgstr ""
-"クリックしたまま マウスを うごかして テレビに うつったみたいに しよう。"
+"クリックしたまま マウスを うごかして むかしの カラーの ぱそこん みたいな ざら"
+"ざらとした えに しよう。"
 
 #: ../../magic/src/dither.c:43
-#, fuzzy
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
-msgstr "えを クリックして ぜんたいに あめを ふらせよう。"
+msgstr ""
+"クリックして えの ぜんたいを むかしの カラーの ぱそこん みたいな ざらざらとし"
+"た えに しよう。"
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2629,7 +2618,7 @@ msgstr "おおきなドットのふでで せんを かこう。"
 
 #: ../../magic/src/polyfill.c:28
 msgid "Filled Polygon"
-msgstr ""
+msgstr "たかっけい"
 
 #: ../../magic/src/polyfill.c:32
 msgid ""
@@ -2637,6 +2626,8 @@ msgid ""
 "drag control points to alter the shape. Click the first point to complete "
 "the shape."
 msgstr ""
+"じゅんばんに くりっくして たかっけいを かこう。とちゅうの てんは マウスで う"
+"ごかせます。さいしょの てんを くりっくすると かたちが きまります。"
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2853,10 +2844,8 @@ msgid "Click to add snow flakes to your picture."
 msgstr "えを クリックして ぜんたいに ゆきを ふらせよう。"
 
 #: ../../magic/src/specular.c:75
-#, fuzzy
-#| msgid "Reflection"
 msgid "Specular Reflection"
-msgstr "はんしゃ"
+msgstr "みなも"
 
 #: ../../magic/src/specular.c:93
 msgid ""
@@ -2864,6 +2853,9 @@ msgid ""
 "reflection — like a puddle, pond, or lake — that mirrors the top half of "
 "your picture."
 msgstr ""
+"えの はんぶんより したのところで クリックしたままマウスをうごかすと はんぶん"
+"より うえのところが みずたまりや いけや みずうみに ゆらゆらと うつったように "
+"できます。"
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
