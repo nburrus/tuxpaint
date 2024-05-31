@@ -7,7 +7,7 @@
    Scanline polygon fill routine based on public-domain code
    by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-   Last updated: May 28, 2024
+   Last updated: May 30, 2024
 */
 
 
@@ -31,7 +31,7 @@ char *polyfill_names[NUM_TOOLS] = {
 
 char *polyfill_descr[NUM_TOOLS] = {
   gettext_noop
-    ("Click multiple times in your picture to create a filled polygon. You may drag control points to alter the shape. Click the first point to complete the shape."),
+    ("Click multiple times in your picture to create a filled polygon. You may drag points to alter the shape. Drag adjacent points together to merge them. Connect the first and last points to complete the shape."),
 };
 
 char *polyfill_icon_filenames[NUM_TOOLS] = {
@@ -263,7 +263,14 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
   }
   else
   {
-    /* Out of points! */
+    /* Out of points! Move the last one to the new position */
+    polyfill_pt_x[polyfill_num_pts - 1] = x;
+    polyfill_pt_y[polyfill_num_pts - 1] = y;
+    polyfill_editing = polyfill_num_pts - 1;
+
+    polyfill_drag(api, which, canvas, snapshot, x, y, x, y, update_rect);
+    api->playsound(snd_effects[SND_PLACE], (x * 255) / canvas->w, 255);
+
 #ifdef DEBUG
     printf("Out of space for new points!\n");
 #endif
