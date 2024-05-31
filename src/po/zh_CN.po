@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 01:00-0700\n"
+"POT-Creation-Date: 2024-05-30 23:44-0700\n"
 "PO-Revision-Date: 2023-04-07 09:13+0800\n"
 "Last-Translator: hackergene <hackergene@gmail.com>\n"
 "Language-Team: hackergene <hackergene@gmail.com>\n"
@@ -158,12 +158,12 @@ msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:241
+#: ../dirwalk.c:240
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:247
+#: ../dirwalk.c:244
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -173,19 +173,19 @@ msgstr "1Il|"
 #.
 #. You can use two different weight for scoring, 1 or 9, according
 #. to the importance.
-#: ../dirwalk.c:259
+#: ../dirwalk.c:255
 msgid "<1>spare-1a"
 msgstr "<1>备用-1a"
 
-#: ../dirwalk.c:260
+#: ../dirwalk.c:256
 msgid "<1>spare-1b"
 msgstr "<1>备用-1b"
 
-#: ../dirwalk.c:261
+#: ../dirwalk.c:257
 msgid "<9>spare-9a"
 msgstr "<9>备用-9a"
 
-#: ../dirwalk.c:262
+#: ../dirwalk.c:258
 msgid "<9>spare-9b"
 msgstr "<9>备用-9b"
 
@@ -379,7 +379,7 @@ msgid "Brushes support descriptions."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New Magic tools: Dither, Specular, Filled Polygon."
+msgid "New Magic tools: Dither, Filled Polygon."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -1020,7 +1020,7 @@ msgstr "新建"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9698
+#: ../tools.h:97 ../tuxpaint.c:9733
 msgid "Open"
 msgstr "打开"
 
@@ -1267,244 +1267,244 @@ msgid ""
 msgstr "选择文字的样式。在绘制的图片上单击就可以开始输入文字。"
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2461
+#: ../tuxpaint.c:2466
 msgid "Do you really want to quit?"
 msgstr "你真的要退出吗？"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2464
+#: ../tuxpaint.c:2469
 msgid "Yes, I’m done!"
 msgstr "OK！画完了！"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2467 ../tuxpaint.c:2494
+#: ../tuxpaint.c:2472 ../tuxpaint.c:2499
 msgid "No, take me back!"
 msgstr "不，我要返回！"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2476
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "如果你退出了，你会丢掉你的图片！保存起来吗？"
 
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477
+#: ../tuxpaint.c:2477 ../tuxpaint.c:2482
 msgid "Yes, save it!"
 msgstr "是的，保存它！"
 
-#: ../tuxpaint.c:2473 ../tuxpaint.c:2478
+#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
 msgid "No, don’t bother saving!"
 msgstr "不，现在不保存！"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2481
 msgid "Save your picture first?"
 msgstr "先保存你的图片？"
 
 #. Error opening picture
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2486
 msgid "Can’t open that picture!"
 msgstr "打不开那个图片！"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2484 ../tuxpaint.c:2489 ../tuxpaint.c:2498 ../tuxpaint.c:2505
-#: ../tuxpaint.c:2516 ../tuxpaint.c:2521 ../tuxpaint.c:2529
+#: ../tuxpaint.c:2489 ../tuxpaint.c:2494 ../tuxpaint.c:2503 ../tuxpaint.c:2510
+#: ../tuxpaint.c:2521 ../tuxpaint.c:2526 ../tuxpaint.c:2534
 msgid "OK"
 msgstr "好的"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2488
+#: ../tuxpaint.c:2493
 msgid "There are no saved files!"
 msgstr "没有保存过的文件！"
 
 #. Verification of print action
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2497
 msgid "Print your picture now?"
 msgstr "现在打印你的图片吗？"
 
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2498
 msgid "Yes, print it!"
 msgstr "是的，打印！"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2502
 msgid "Your picture has been printed!"
 msgstr "你的图片被打印出来了！"
 
 #. We got an error printing
-#: ../tuxpaint.c:2501
+#: ../tuxpaint.c:2506
 msgid "Sorry! Your picture could not be printed!"
 msgstr "抱歉！您的图片无法保存！"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2504
+#: ../tuxpaint.c:2509
 msgid "You can’t print yet!"
 msgstr "你还不能打印耶！"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2514
 msgid "Erase this picture?"
 msgstr "删除这个图片吗？"
 
-#: ../tuxpaint.c:2510
+#: ../tuxpaint.c:2515
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "删除这个图片吗？"
 
-#: ../tuxpaint.c:2511
+#: ../tuxpaint.c:2516
 msgid "Yes, erase it!"
 msgstr "是的，擦掉！"
 
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2517
 msgid "No, don’t erase it!"
 msgstr "不，不要擦掉！"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2515
+#: ../tuxpaint.c:2520
 msgid "Remember to use the left mouse button!"
 msgstr "记住使用鼠标左键!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2524
 msgid "Your picture has been exported!"
 msgstr "你的图片被打印出来了！"
 
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2525
 msgid "Your slideshow GIF has been exported!"
 msgstr "你的图片被打印出来了！"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2529
 msgid "Sorry! Your picture could not be exported!"
 msgstr "抱歉！您的图片无法保存！"
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2530
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "抱歉！您的图片无法保存！"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2528
+#: ../tuxpaint.c:2533
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2532
+#: ../tuxpaint.c:2537
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2538
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "抱歉！您的图片无法保存！"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2536
+#: ../tuxpaint.c:2541
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "选择你要打开的图片，然后点击“打开”。"
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2845
+#: ../tuxpaint.c:2850
 msgid "Sound muted."
 msgstr "静音。"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2850
+#: ../tuxpaint.c:2855
 msgid "Sound unmuted."
 msgstr "取消静音。"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3699
+#: ../tuxpaint.c:3704
 msgid "Please wait…"
 msgstr "请等待…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9701
+#: ../tuxpaint.c:9736
 msgid "Erase"
 msgstr "擦出"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9704
+#: ../tuxpaint.c:9739
 msgid "Slides"
 msgstr "幻灯片"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9707
+#: ../tuxpaint.c:9742
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9710
+#: ../tuxpaint.c:9745
 msgid "Export"
 msgstr "导出"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9713
+#: ../tuxpaint.c:9748
 msgid "Back"
 msgstr "返回"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9716
+#: ../tuxpaint.c:9751
 msgid "Play"
 msgstr "播放"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9719
+#: ../tuxpaint.c:9754
 msgid "GIF Export"
 msgstr "GIF 导出"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9722
+#: ../tuxpaint.c:9757
 msgid "Next"
 msgstr "下一个"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9725
+#: ../tuxpaint.c:9760
 msgid "Clear"
 msgstr "清除"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10660 ../tuxpaint.c:10663 ../tuxpaint.c:10664
+#: ../tuxpaint.c:10695 ../tuxpaint.c:10698 ../tuxpaint.c:10699
 msgid "Aa"
 msgstr "文字"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14673
+#: ../tuxpaint.c:14715
 msgid "Yes"
 msgstr "是的"
 
-#: ../tuxpaint.c:14677
+#: ../tuxpaint.c:14719
 msgid "No"
 msgstr "不要"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15949
+#: ../tuxpaint.c:15995
 msgid "Replace the picture with your changes?"
 msgstr "确定要替换图片？"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15953
+#: ../tuxpaint.c:15999
 msgid "Yes, replace the old one!"
 msgstr "是的，替换原来的图片！"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15957
+#: ../tuxpaint.c:16003
 msgid "No, save a new file!"
 msgstr "不，保存到新文件！"
 
-#: ../tuxpaint.c:17225
+#: ../tuxpaint.c:17276
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17227
+#: ../tuxpaint.c:17282
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1513,64 +1513,64 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18896
+#: ../tuxpaint.c:18950
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "选择2个或多个图形以转换为动画GIF。"
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25113
+#: ../tuxpaint.c:25184
 msgid "red"
 msgstr "红色"
 
-#: ../tuxpaint.c:25114
+#: ../tuxpaint.c:25185
 msgid "yellow"
 msgstr "黄色"
 
-#: ../tuxpaint.c:25115
+#: ../tuxpaint.c:25186
 msgid "blue"
 msgstr "天蓝色"
 
-#: ../tuxpaint.c:25116
+#: ../tuxpaint.c:25187
 msgid "white"
 msgstr "白色"
 
-#: ../tuxpaint.c:25117
+#: ../tuxpaint.c:25188
 msgid "grey"
 msgstr "灰色"
 
-#: ../tuxpaint.c:25118
+#: ../tuxpaint.c:25189
 msgid "black"
 msgstr "黑色"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25123
+#: ../tuxpaint.c:25194
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "你的颜色是 %1$s %2$s 。"
 
-#: ../tuxpaint.c:25124
+#: ../tuxpaint.c:25195
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "你的颜色是 %1$s %2$s 和 %3$s %4$s。"
 
-#: ../tuxpaint.c:25125
+#: ../tuxpaint.c:25196
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "你的颜色是 %1$s %2$s, %3$s %4$s，和 %5$s %6$s。"
 
-#: ../tuxpaint.c:25126
+#: ../tuxpaint.c:25197
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "你的颜色是 %1$s %2$s, %3$s %4$s, %5$s %6$s， 和 %7$s %8$s。"
 
-#: ../tuxpaint.c:25127
+#: ../tuxpaint.c:25198
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "你的颜色是 %1$s %2$s， %3$s %4$s， %5$s %6$s， %7$s %8$s， 和 %9$s %10$s。"
 
-#: ../tuxpaint.c:25128
+#: ../tuxpaint.c:25199
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1580,16 +1580,16 @@ msgstr ""
 "%11$s %12$s。"
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25908 ../tuxpaint.c:25913
+#: ../tuxpaint.c:25979 ../tuxpaint.c:25984
 msgid "entirely"
 msgstr "完全"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29089
+#: ../tuxpaint.c:29185
 msgid "Select a color from your drawing."
 msgstr "从绘画中选择一种颜色。"
 
-#: ../tuxpaint.c:29100
+#: ../tuxpaint.c:29196
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1597,7 +1597,7 @@ msgstr ""
 "选择一种颜色。色调从上到下。饱和度/强度从左（淡）向右（纯）。值（亮度/暗"
 "度）：灰色条。"
 
-#: ../tuxpaint.c:29114
+#: ../tuxpaint.c:29210
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1647,28 +1647,28 @@ msgstr "粉笔"
 msgid "Drip"
 msgstr "水滴"
 
-#: ../../magic/src/blocks_etc.c:178
+#: ../../magic/src/blocks_etc.c:179
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "单击然后移动鼠标将图片变成驳裂的效果。"
 
-#: ../../magic/src/blocks_etc.c:182
+#: ../../magic/src/blocks_etc.c:183
 msgid "Click to make the entire picture blocky."
 msgstr "单击锐化整个画面。"
 
-#: ../../magic/src/blocks_etc.c:189
+#: ../../magic/src/blocks_etc.c:190
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
-#: ../../magic/src/blocks_etc.c:193
+#: ../../magic/src/blocks_etc.c:194
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "单击可将整个图片变成粉笔画。"
 
-#: ../../magic/src/blocks_etc.c:200
+#: ../../magic/src/blocks_etc.c:201
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "单击然后移动鼠标将图片变成水滴图。"
 
-#: ../../magic/src/blocks_etc.c:204
+#: ../../magic/src/blocks_etc.c:205
 msgid "Click to make the entire picture drip."
 msgstr "单击锐化整个画面。"
 
@@ -1736,19 +1736,19 @@ msgstr "单击然后移动鼠标将图片变成粉笔画。"
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "单击然后移动鼠标将图片变成粉笔画。"
 
-#: ../../magic/src/checkerboard.c:115
+#: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
 msgstr "棋盘"
 
-#: ../../magic/src/checkerboard.c:131
+#: ../../magic/src/checkerboard.c:132
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "点击和拖拽来重复图样。"
 
-#: ../../magic/src/clone.c:144
+#: ../../magic/src/clone.c:145
 msgid "Clone"
 msgstr "克隆"
 
-#: ../../magic/src/clone.c:164
+#: ../../magic/src/clone.c:165
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
@@ -1811,17 +1811,17 @@ msgstr "变形"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "单击然后移动鼠标将图片变形。"
 
-#: ../../magic/src/dither.c:32
+#: ../../magic/src/dither.c:33
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:33
+#: ../../magic/src/dither.c:34
 #, fuzzy
 #| msgid "Keep Color"
 msgid "Dither (Keep Color)"
 msgstr "颜色"
 
-#: ../../magic/src/dither.c:38
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1831,7 +1831,7 @@ msgid ""
 "dots in your chosen color."
 msgstr "点击拖动鼠标，使你的作品看起来像在电视里一样。"
 
-#: ../../magic/src/dither.c:39
+#: ../../magic/src/dither.c:40
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
@@ -1839,7 +1839,7 @@ msgid ""
 "chosen color."
 msgstr "单击在画面上布满雨滴。"
 
-#: ../../magic/src/dither.c:42
+#: ../../magic/src/dither.c:44
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1849,7 +1849,7 @@ msgid ""
 "dots using the picture's original colors."
 msgstr "点击拖动鼠标，使你的作品看起来像在电视里一样。"
 
-#: ../../magic/src/dither.c:43
+#: ../../magic/src/dither.c:46
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
@@ -1982,27 +1982,27 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "选择背景颜色，点击将画面对角折叠。"
 
-#: ../../magic/src/fretwork.c:218
+#: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
 msgstr "浮雕效果"
 
-#: ../../magic/src/fretwork.c:224
+#: ../../magic/src/fretwork.c:228
 msgid "Click and drag to draw repetitive patterns."
 msgstr "点击和拖拽来重复图样。"
 
-#: ../../magic/src/fretwork.c:226
+#: ../../magic/src/fretwork.c:230
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "点击让这些重复图样围绕你的画。"
 
-#: ../../magic/src/glasstile.c:112
+#: ../../magic/src/glasstile.c:113
 msgid "Glass Tile"
 msgstr "玻璃瓦"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:132
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "单击然后移动鼠标在你的图片上放玻璃瓦。"
 
-#: ../../magic/src/glasstile.c:133
+#: ../../magic/src/glasstile.c:134
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "单击将整幅图片覆盖玻璃瓦。"
 
@@ -2355,21 +2355,20 @@ msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr "单击并拖动可以在画布上移动图片。"
 
-#. 3-point perspective
-#: ../../magic/src/n_pt_persp.c:239
+#: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:240
+#: ../../magic/src/n_pt_persp.c:241
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr "单击并拖动可以在画布上移动图片。"
 
-#: ../../magic/src/n_pt_persp.c:242
+#: ../../magic/src/n_pt_persp.c:243
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
@@ -2377,52 +2376,52 @@ msgid ""
 "(downward perspective)."
 msgstr "单击并拖动可以在画布上移动图片。"
 
-#: ../../magic/src/n_pt_persp.c:246
+#: ../../magic/src/n_pt_persp.c:247
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr "点击和拖拽来重复图样。"
 
 #. Dimetric
-#: ../../magic/src/n_pt_persp.c:249
+#: ../../magic/src/n_pt_persp.c:250
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:250
+#: ../../magic/src/n_pt_persp.c:251
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr "点击和拖拽来重复图样。"
 
 #. Trimetric
-#: ../../magic/src/n_pt_persp.c:253
+#: ../../magic/src/n_pt_persp.c:254
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:254
+#: ../../magic/src/n_pt_persp.c:255
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr "点击和拖拽来重复图样。"
 
 #. Oblique
-#: ../../magic/src/n_pt_persp.c:257
+#: ../../magic/src/n_pt_persp.c:258
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:258
+#: ../../magic/src/n_pt_persp.c:259
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
 msgstr "点击和拖拽来重复图样。"
 
-#: ../../magic/src/n_pt_persp.c:260
+#: ../../magic/src/n_pt_persp.c:261
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
@@ -2478,11 +2477,11 @@ msgstr "像素"
 msgid "Click and drag to draw large pixels."
 msgstr "单击并拖动以绘制大像素。"
 
-#: ../../magic/src/polyfill.c:28
+#: ../../magic/src/polyfill.c:29
 msgid "Filled Polygon"
 msgstr ""
 
-#: ../../magic/src/polyfill.c:32
+#: ../../magic/src/polyfill.c:34
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag control points to alter the shape. Click the first point to complete "
@@ -2501,29 +2500,29 @@ msgstr "单击你想要画面变为拼图部位。"
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "单击进入制作拼图全屏模式。"
 
-#: ../../magic/src/rails.c:168
+#: ../../magic/src/rails.c:172
 msgid "Rails"
 msgstr "铁路"
 
-#: ../../magic/src/rails.c:183
+#: ../../magic/src/rails.c:187
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "单击然后移动鼠标在画面上画出火车铁路。"
 
-#: ../../magic/src/rainbow.c:155
+#: ../../magic/src/rainbow.c:156
 msgid "Rainbow"
 msgstr "彩虹"
 
-#: ../../magic/src/rainbow.c:159
+#: ../../magic/src/rainbow.c:160
 msgid "Smooth Rainbow"
 msgstr "光滑的彩虹"
 
-#: ../../magic/src/rainbow.c:163
+#: ../../magic/src/rainbow.c:164
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Rainbow Cycle"
 msgstr "彩虹"
 
-#: ../../magic/src/rainbow.c:182
+#: ../../magic/src/rainbow.c:183
 msgid "You can draw in rainbow colors!"
 msgstr "你可以用彩虹的颜色画图哦！"
 
@@ -2640,21 +2639,21 @@ msgstr "移动"
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "单击并拖动可以在画布上移动图片。"
 
-#: ../../magic/src/smooth.c:62
+#: ../../magic/src/smooth.c:63
 #, fuzzy
 #| msgid "Smooth Rainbow"
 msgid "Smooth"
 msgstr "光滑的彩虹"
 
-#: ../../magic/src/smooth.c:63
+#: ../../magic/src/smooth.c:64
 msgid "Squiggles"
 msgstr ""
 
-#: ../../magic/src/smooth.c:64
+#: ../../magic/src/smooth.c:65
 msgid "Loops"
 msgstr ""
 
-#: ../../magic/src/smooth.c:68
+#: ../../magic/src/smooth.c:69
 #, fuzzy
 #| msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgid ""
@@ -2662,13 +2661,13 @@ msgid ""
 "when you let go."
 msgstr "单击然后移动鼠标使托有潮湿、烟熏效果。"
 
-#: ../../magic/src/smooth.c:69
+#: ../../magic/src/smooth.c:70
 #, fuzzy
 #| msgid "Click and drag the mouse around to blur the image."
 msgid "Click and drag the mouse around to draw squiggles."
 msgstr "单击然后移动鼠标，将图片变模糊。"
 
-#: ../../magic/src/smooth.c:70
+#: ../../magic/src/smooth.c:71
 #, fuzzy
 #| msgid "Click and drag the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw loop-the-loops."
@@ -2707,19 +2706,6 @@ msgstr "单击在图片中添加雪球。"
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "单击在图片中添加雪片。"
-
-#: ../../magic/src/specular.c:75
-#, fuzzy
-#| msgid "Reflection"
-msgid "Specular Reflection"
-msgstr "反射"
-
-#: ../../magic/src/specular.c:93
-msgid ""
-"Click and drag on the bottom half of your picture to draw a specular "
-"reflection — like a puddle, pond, or lake — that mirrors the top half of "
-"your picture."
-msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
@@ -2833,90 +2819,88 @@ msgstr "龙卷风"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "单击和拖动鼠标画龙卷风。"
 
-#: ../../magic/src/trochoids.c:109
+#: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:110
+#: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:111
+#: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Edge"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:112
+#: ../../magic/src/trochoids.c:113
 msgid "Epitrochoid Outside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:113
+#: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:114
+#: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:115
+#: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Edge"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:116
+#: ../../magic/src/trochoids.c:117
 msgid "Hypotrochoid Outside"
-msgstr ""
-
-#. Epitrochoids
-#: ../../magic/src/trochoids.c:122
-msgid ""
-"Click to start drawing an epitrochoid. Drag left/right to change the size of "
-"the fixed circle, and up/down to change the size of the circle rolling "
-"outside of it. Use the size option to change where the pen is."
-msgstr ""
-
-#: ../../magic/src/trochoids.c:123
-msgid ""
-"Click to start drawing an epitrochoid. Drag left/right to change the size of "
-"the fixed circle, and up/down to change the size of the circle rolling "
-"outside of it. Then pen is within the rolling circle."
 msgstr ""
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Use the size option to change where the pen is."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:126
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Then pen is within the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:128
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:125
+#: ../../magic/src/trochoids.c:130
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
 
-#. Hypotrochoids
-#: ../../magic/src/trochoids.c:127
+#: ../../magic/src/trochoids.c:133
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:128
+#: ../../magic/src/trochoids.c:135
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:129
+#: ../../magic/src/trochoids.c:137
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:130
+#: ../../magic/src/trochoids.c:139
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -2982,6 +2966,11 @@ msgstr "单击然后拖动鼠标以绘制随机色效果"
 #| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "单击然后拖动鼠标使整个画面填充随机色效果"
+
+#, fuzzy
+#~| msgid "Reflection"
+#~ msgid "Specular Reflection"
+#~ msgstr "反射"
 
 #~ msgid "New Breed Software et al."
 #~ msgstr "New Breed Software et al."

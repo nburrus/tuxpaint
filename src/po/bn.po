@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 01:00-0700\n"
+"POT-Creation-Date: 2024-05-30 23:44-0700\n"
 "PO-Revision-Date: 2017-12-30 18:24+0000\n"
 "Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: Bengali\n"
@@ -152,12 +152,12 @@ msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:241
+#: ../dirwalk.c:240
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:247
+#: ../dirwalk.c:244
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -167,19 +167,19 @@ msgstr "1Il|"
 #.
 #. You can use two different weight for scoring, 1 or 9, according
 #. to the importance.
-#: ../dirwalk.c:259
+#: ../dirwalk.c:255
 msgid "<1>spare-1a"
 msgstr ""
 
-#: ../dirwalk.c:260
+#: ../dirwalk.c:256
 msgid "<1>spare-1b"
 msgstr ""
 
-#: ../dirwalk.c:261
+#: ../dirwalk.c:257
 msgid "<9>spare-9a"
 msgstr ""
 
-#: ../dirwalk.c:262
+#: ../dirwalk.c:258
 msgid "<9>spare-9b"
 msgstr ""
 
@@ -386,7 +386,7 @@ msgid "Brushes support descriptions."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New Magic tools: Dither, Specular, Filled Polygon."
+msgid "New Magic tools: Dither, Filled Polygon."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -980,7 +980,7 @@ msgstr "নতুন"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9698
+#: ../tools.h:97 ../tuxpaint.c:9733
 msgid "Open"
 msgstr "খুলুন"
 
@@ -1233,252 +1233,252 @@ msgstr ""
 "পাঠ্যাংশ শৈলীতে পরিবর্তন করুন."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2461
+#: ../tuxpaint.c:2466
 msgid "Do you really want to quit?"
 msgstr "আপনি কি সত্যিই ত্যাগ করতে চান?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2464
+#: ../tuxpaint.c:2469
 msgid "Yes, I’m done!"
 msgstr "হ্যাঁ, আমি করেছি!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2467 ../tuxpaint.c:2494
+#: ../tuxpaint.c:2472 ../tuxpaint.c:2499
 msgid "No, take me back!"
 msgstr "না, আমাকে ফিরিয়ে নিয়ে যান!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2476
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "ত্যাগ করলে, আপনার ছবিটি হারিয়ে যাবে! বাঁচাবেন কি?"
 
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477
+#: ../tuxpaint.c:2477 ../tuxpaint.c:2482
 msgid "Yes, save it!"
 msgstr "হ্যাঁ, এটি বাঁচান!"
 
-#: ../tuxpaint.c:2473 ../tuxpaint.c:2478
+#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
 msgid "No, don’t bother saving!"
 msgstr "না, বাঁচাতে কষ্ট করবেন না!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2481
 msgid "Save your picture first?"
 msgstr "প্রথমে আপনার ছবি বাঁচাবেন?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2486
 msgid "Can’t open that picture!"
 msgstr "ছবিটি খুলতে পারে না!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2484 ../tuxpaint.c:2489 ../tuxpaint.c:2498 ../tuxpaint.c:2505
-#: ../tuxpaint.c:2516 ../tuxpaint.c:2521 ../tuxpaint.c:2529
+#: ../tuxpaint.c:2489 ../tuxpaint.c:2494 ../tuxpaint.c:2503 ../tuxpaint.c:2510
+#: ../tuxpaint.c:2521 ../tuxpaint.c:2526 ../tuxpaint.c:2534
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2488
+#: ../tuxpaint.c:2493
 msgid "There are no saved files!"
 msgstr "এখানে বাঁচানো কোনো ফাইল নেই!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2497
 msgid "Print your picture now?"
 msgstr "এখন আপনার ছবি প্রিন্ট করবেন?"
 
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2498
 msgid "Yes, print it!"
 msgstr "হ্যাঁ, এটি প্রিন্ট করুন!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2502
 msgid "Your picture has been printed!"
 msgstr "আপনার ছবি প্রিন্ট হয়েছে!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2501
+#: ../tuxpaint.c:2506
 msgid "Sorry! Your picture could not be printed!"
 msgstr "দুঃখিত! আপনার ছবি প্রিন্ট করা গেল না!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2504
+#: ../tuxpaint.c:2509
 msgid "You can’t print yet!"
 msgstr "আপনি এখন পর্যন্ত প্রিন্ট করতে পারেন না!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2514
 msgid "Erase this picture?"
 msgstr "এই ছবিটি মুছবেন কি?"
 
-#: ../tuxpaint.c:2510
+#: ../tuxpaint.c:2515
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "এই ছবিটি মুছবেন কি?"
 
-#: ../tuxpaint.c:2511
+#: ../tuxpaint.c:2516
 msgid "Yes, erase it!"
 msgstr "হ্যাঁ, এটি মুছুন!"
 
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2517
 msgid "No, don’t erase it!"
 msgstr "না, এটি মুছবেন না!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2515
+#: ../tuxpaint.c:2520
 msgid "Remember to use the left mouse button!"
 msgstr "মাউসের বাঁদিকের বোতাম ব্যবহার করতে মনে রাখুন!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2524
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "আপনার ছবি প্রিন্ট হয়েছে!"
 
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2525
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "আপনার ছবি প্রিন্ট হয়েছে!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2529
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "দুঃখিত! আপনার ছবি প্রিন্ট করা গেল না!"
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2530
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "দুঃখিত! আপনার ছবি প্রিন্ট করা গেল না!"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2528
+#: ../tuxpaint.c:2533
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2532
+#: ../tuxpaint.c:2537
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2538
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "দুঃখিত! আপনার ছবি প্রিন্ট করা গেল না!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2536
+#: ../tuxpaint.c:2541
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "আপনি যে ছবিটি চান বাছাই করুন, পরে “বাজান”-এ ক্লিক করুন."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2845
+#: ../tuxpaint.c:2850
 msgid "Sound muted."
 msgstr "শব্দ বন্ধ করা."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2850
+#: ../tuxpaint.c:2855
 msgid "Sound unmuted."
 msgstr "শব্দ চালু করা."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3699
+#: ../tuxpaint.c:3704
 msgid "Please wait…"
 msgstr "অপেক্ষা করুন…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9701
+#: ../tuxpaint.c:9736
 msgid "Erase"
 msgstr "মুছুন"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9704
+#: ../tuxpaint.c:9739
 msgid "Slides"
 msgstr "স্লাইড"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9707
+#: ../tuxpaint.c:9742
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9710
+#: ../tuxpaint.c:9745
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9713
+#: ../tuxpaint.c:9748
 msgid "Back"
 msgstr "পিছনে"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9716
+#: ../tuxpaint.c:9751
 msgid "Play"
 msgstr "চালান"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9719
+#: ../tuxpaint.c:9754
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9722
+#: ../tuxpaint.c:9757
 msgid "Next"
 msgstr "পরে"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9725
+#: ../tuxpaint.c:9760
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10660 ../tuxpaint.c:10663 ../tuxpaint.c:10664
+#: ../tuxpaint.c:10695 ../tuxpaint.c:10698 ../tuxpaint.c:10699
 msgid "Aa"
 msgstr "আ"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14673
+#: ../tuxpaint.c:14715
 msgid "Yes"
 msgstr "হ্যাঁ"
 
-#: ../tuxpaint.c:14677
+#: ../tuxpaint.c:14719
 msgid "No"
 msgstr "না"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15949
+#: ../tuxpaint.c:15995
 msgid "Replace the picture with your changes?"
 msgstr "আপনার বদলগুলির সঙ্গে ছবি প্রতিস্থাপন করুন?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15953
+#: ../tuxpaint.c:15999
 msgid "Yes, replace the old one!"
 msgstr "হ্যাঁ, পুরোনোটি প্রতিস্থাপন করুন!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15957
+#: ../tuxpaint.c:16003
 msgid "No, save a new file!"
 msgstr "না, একটি নতুন ফাইল বাঁচান!"
 
-#: ../tuxpaint.c:17225
+#: ../tuxpaint.c:17276
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17227
+#: ../tuxpaint.c:17282
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1487,71 +1487,71 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18896
+#: ../tuxpaint.c:18950
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25113
+#: ../tuxpaint.c:25184
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25114
+#: ../tuxpaint.c:25185
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "হলুদ!"
 
-#: ../tuxpaint.c:25115
+#: ../tuxpaint.c:25186
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "আকাশী নীল!"
 
-#: ../tuxpaint.c:25116
+#: ../tuxpaint.c:25187
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "সাদা!"
 
-#: ../tuxpaint.c:25117
+#: ../tuxpaint.c:25188
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25118
+#: ../tuxpaint.c:25189
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "কালো!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25123
+#: ../tuxpaint.c:25194
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25124
+#: ../tuxpaint.c:25195
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25125
+#: ../tuxpaint.c:25196
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25126
+#: ../tuxpaint.c:25197
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25127
+#: ../tuxpaint.c:25198
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25128
+#: ../tuxpaint.c:25199
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1559,22 +1559,22 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25908 ../tuxpaint.c:25913
+#: ../tuxpaint.c:25979 ../tuxpaint.c:25984
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29089
+#: ../tuxpaint.c:29185
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:29100
+#: ../tuxpaint.c:29196
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29114
+#: ../tuxpaint.c:29210
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1627,19 +1627,19 @@ msgstr "চক"
 msgid "Drip"
 msgstr "ঝরা"
 
-#: ../../magic/src/blocks_etc.c:178
+#: ../../magic/src/blocks_etc.c:179
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture blocky."
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "ছবিটি খন্ড খন্ড করতে মাউস ক্লিক করুন এবং চারপাশে ঘোরান."
 
-#: ../../magic/src/blocks_etc.c:182
+#: ../../magic/src/blocks_etc.c:183
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture blocky."
 msgstr "সমগ্র ছবিটি ধারালো করতে ক্লিক করুন."
 
-#: ../../magic/src/blocks_etc.c:189
+#: ../../magic/src/blocks_etc.c:190
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1647,20 +1647,20 @@ msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "ছবিটি একটি চক অঙ্কনে পরিণত করতে মাউস ক্লিক করুন এবং ঘোরান."
 
-#: ../../magic/src/blocks_etc.c:193
+#: ../../magic/src/blocks_etc.c:194
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "ছবিটি একটি চক অঙ্কনে পরিণত করতে মাউস ক্লিক করুন এবং ঘোরান."
 
-#: ../../magic/src/blocks_etc.c:200
+#: ../../magic/src/blocks_etc.c:201
 #, fuzzy
 #| msgid "Click and move the mouse around to make the picture drip."
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "ছবিটি ঝরানো করতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/blocks_etc.c:204
+#: ../../magic/src/blocks_etc.c:205
 #, fuzzy
 #| msgid "Click to sharpen the entire picture."
 msgid "Click to make the entire picture drip."
@@ -1748,21 +1748,21 @@ msgstr "ছবিটি একটি কার্টুনে পরিণত �
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "ছবিটি একটি চক অঙ্কনে পরিণত করতে মাউস ক্লিক করুন এবং ঘোরান."
 
-#: ../../magic/src/checkerboard.c:115
+#: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:131
+#: ../../magic/src/checkerboard.c:132
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/clone.c:144
+#: ../../magic/src/clone.c:145
 msgid "Clone"
 msgstr ""
 
-#: ../../magic/src/clone.c:164
+#: ../../magic/src/clone.c:165
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
@@ -1825,17 +1825,17 @@ msgstr "বিকৃতি"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "আপনার ছবিতে বিকৃতি আনতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/dither.c:32
+#: ../../magic/src/dither.c:33
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:33
+#: ../../magic/src/dither.c:34
 #, fuzzy
 #| msgid "Colors"
 msgid "Dither (Keep Color)"
 msgstr "রঙ"
 
-#: ../../magic/src/dither.c:38
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1845,7 +1845,7 @@ msgid ""
 "dots in your chosen color."
 msgstr "আপনার ছবিটির কিছু অংশ টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/dither.c:39
+#: ../../magic/src/dither.c:40
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
@@ -1853,7 +1853,7 @@ msgid ""
 "chosen color."
 msgstr "আপনার ছবিতে বৃষ্টির ফোঁটা দিয়ে ভরতে ক্লিক করুন."
 
-#: ../../magic/src/dither.c:42
+#: ../../magic/src/dither.c:44
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1863,7 +1863,7 @@ msgid ""
 "dots using the picture's original colors."
 msgstr "আপনার ছবিটির কিছু অংশ টেলিভিশনের মধ্যে আছে এমন দেখাতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/dither.c:43
+#: ../../magic/src/dither.c:46
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
@@ -2034,31 +2034,31 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "একটি পশ্চাদ্‌ভূমি রঙ বাছাই করুন এবং পাতার কোনায় পরিবর্তন আনতে ক্লিক করুন."
 
-#: ../../magic/src/fretwork.c:218
+#: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
 msgstr ""
 
-#: ../../magic/src/fretwork.c:224
+#: ../../magic/src/fretwork.c:228
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw repetitive patterns."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/fretwork.c:226
+#: ../../magic/src/fretwork.c:230
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "আপনার ছবিতে বৃষ্টির ফোঁটা দিয়ে ভরতে ক্লিক করুন."
 
-#: ../../magic/src/glasstile.c:112
+#: ../../magic/src/glasstile.c:113
 msgid "Glass Tile"
 msgstr "কাচের টাইল"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:132
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "আপনার ছবিতে কাচের টাইল রাখতে মাউস ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/glasstile.c:133
+#: ../../magic/src/glasstile.c:134
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "আপনার সমগ্র ছবিটি কাচের টাইলে ঢাকতে ক্লিক করুন."
 
@@ -2471,21 +2471,20 @@ msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr "আপনার ছবির ক্যানভাসের চারপাশে পরিবর্তন করতে ক্লিক করুন ও টানুন."
 
-#. 3-point perspective
-#: ../../magic/src/n_pt_persp.c:239
+#: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:240
+#: ../../magic/src/n_pt_persp.c:241
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr "আপনার ছবির ক্যানভাসের চারপাশে পরিবর্তন করতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/n_pt_persp.c:242
+#: ../../magic/src/n_pt_persp.c:243
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
@@ -2493,52 +2492,52 @@ msgid ""
 "(downward perspective)."
 msgstr "আপনার ছবির ক্যানভাসের চারপাশে পরিবর্তন করতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/n_pt_persp.c:246
+#: ../../magic/src/n_pt_persp.c:247
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
 #. Dimetric
-#: ../../magic/src/n_pt_persp.c:249
+#: ../../magic/src/n_pt_persp.c:250
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:250
+#: ../../magic/src/n_pt_persp.c:251
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
 #. Trimetric
-#: ../../magic/src/n_pt_persp.c:253
+#: ../../magic/src/n_pt_persp.c:254
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:254
+#: ../../magic/src/n_pt_persp.c:255
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
 #. Oblique
-#: ../../magic/src/n_pt_persp.c:257
+#: ../../magic/src/n_pt_persp.c:258
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:258
+#: ../../magic/src/n_pt_persp.c:259
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw lines with oblique projection."
 msgstr "স্ট্রিং আর্টের তৈরি তীর আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/n_pt_persp.c:260
+#: ../../magic/src/n_pt_persp.c:261
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns. "
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
@@ -2607,11 +2606,11 @@ msgstr ""
 msgid "Click and drag to draw large pixels."
 msgstr "বড় ইট আঁকতে ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/polyfill.c:28
+#: ../../magic/src/polyfill.c:29
 msgid "Filled Polygon"
 msgstr ""
 
-#: ../../magic/src/polyfill.c:32
+#: ../../magic/src/polyfill.c:34
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag control points to alter the shape. Click the first point to complete "
@@ -2630,31 +2629,31 @@ msgstr "আপনার ছবির যে অংশে ধাঁধার ম�
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "একটি ধাঁধা পূর্ণপর্দা প্রণালীতে করতে ক্লিক করুন."
 
-#: ../../magic/src/rails.c:168
+#: ../../magic/src/rails.c:172
 msgid "Rails"
 msgstr "রেল"
 
-#: ../../magic/src/rails.c:183
+#: ../../magic/src/rails.c:187
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "আপনার ছবিতে ট্রেন ট্র্যাক রেল আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/rainbow.c:155
+#: ../../magic/src/rainbow.c:156
 msgid "Rainbow"
 msgstr "রামধনু"
 
-#: ../../magic/src/rainbow.c:159
+#: ../../magic/src/rainbow.c:160
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Smooth Rainbow"
 msgstr "রামধনু"
 
-#: ../../magic/src/rainbow.c:163
+#: ../../magic/src/rainbow.c:164
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Rainbow Cycle"
 msgstr "রামধনু"
 
-#: ../../magic/src/rainbow.c:182
+#: ../../magic/src/rainbow.c:183
 msgid "You can draw in rainbow colors!"
 msgstr "আপনি রামধনু রঙেও আঁকতে পারেন!"
 
@@ -2781,21 +2780,21 @@ msgstr "পরিবর্তন"
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "আপনার ছবির ক্যানভাসের চারপাশে পরিবর্তন করতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/smooth.c:62
+#: ../../magic/src/smooth.c:63
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Smooth"
 msgstr "রামধনু"
 
-#: ../../magic/src/smooth.c:63
+#: ../../magic/src/smooth.c:64
 msgid "Squiggles"
 msgstr ""
 
-#: ../../magic/src/smooth.c:64
+#: ../../magic/src/smooth.c:65
 msgid "Loops"
 msgstr ""
 
-#: ../../magic/src/smooth.c:68
+#: ../../magic/src/smooth.c:69
 #, fuzzy
 #| msgid "Click and move the mouse around to draw with wet, smudgy paint."
 msgid ""
@@ -2803,13 +2802,13 @@ msgid ""
 "when you let go."
 msgstr "নোংরা দাগযুক্ত পেন্ট ও ভেজা ভেজা আঁকতে মাউস ক্লিক করুন ও চারপাশে ঘোরান."
 
-#: ../../magic/src/smooth.c:69
+#: ../../magic/src/smooth.c:70
 #, fuzzy
 #| msgid "Click and move the mouse around to blur the image."
 msgid "Click and drag the mouse around to draw squiggles."
 msgstr "ইমেজ অস্পষ্ট করতে চারপাশে মাউস ক্লিক করুন ও ঘোরান."
 
-#: ../../magic/src/smooth.c:70
+#: ../../magic/src/smooth.c:71
 #, fuzzy
 #| msgid "Click and move the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw loop-the-loops."
@@ -2852,17 +2851,6 @@ msgstr "আপনার ছবিতে বরফের বল যোগ কর�
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "আপনার ছবিতে বরফের পরত যোগ করতে ক্লিক করুন."
-
-#: ../../magic/src/specular.c:75
-msgid "Specular Reflection"
-msgstr ""
-
-#: ../../magic/src/specular.c:93
-msgid ""
-"Click and drag on the bottom half of your picture to draw a specular "
-"reflection — like a puddle, pond, or lake — that mirrors the top half of "
-"your picture."
-msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
@@ -3009,90 +2997,88 @@ msgstr "টর্নেডো"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "আপনার ছবিতে একটি টর্নেডো ফানেল আঁকতে ক্লিক করুন ও টানুন."
 
-#: ../../magic/src/trochoids.c:109
+#: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:110
+#: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:111
+#: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Edge"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:112
+#: ../../magic/src/trochoids.c:113
 msgid "Epitrochoid Outside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:113
+#: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:114
+#: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:115
+#: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Edge"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:116
+#: ../../magic/src/trochoids.c:117
 msgid "Hypotrochoid Outside"
-msgstr ""
-
-#. Epitrochoids
-#: ../../magic/src/trochoids.c:122
-msgid ""
-"Click to start drawing an epitrochoid. Drag left/right to change the size of "
-"the fixed circle, and up/down to change the size of the circle rolling "
-"outside of it. Use the size option to change where the pen is."
-msgstr ""
-
-#: ../../magic/src/trochoids.c:123
-msgid ""
-"Click to start drawing an epitrochoid. Drag left/right to change the size of "
-"the fixed circle, and up/down to change the size of the circle rolling "
-"outside of it. Then pen is within the rolling circle."
 msgstr ""
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Use the size option to change where the pen is."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:126
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Then pen is within the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:128
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:125
+#: ../../magic/src/trochoids.c:130
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
 
-#. Hypotrochoids
-#: ../../magic/src/trochoids.c:127
+#: ../../magic/src/trochoids.c:133
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:128
+#: ../../magic/src/trochoids.c:135
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:129
+#: ../../magic/src/trochoids.c:137
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:130
+#: ../../magic/src/trochoids.c:139
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "

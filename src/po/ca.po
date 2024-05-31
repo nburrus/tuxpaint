@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 01:00-0700\n"
+"POT-Creation-Date: 2024-05-30 23:44-0700\n"
 "PO-Revision-Date: 2024-05-23 01:57+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -186,12 +186,12 @@ msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:241
+#: ../dirwalk.c:240
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:247
+#: ../dirwalk.c:244
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -204,20 +204,20 @@ msgstr "1Il|"
 #.
 #. You can use two different weight for scoring, 1 or 9, according
 #. to the importance.
-#: ../dirwalk.c:259
+#: ../dirwalk.c:255
 msgid "<1>spare-1a"
 msgstr "aa"
 
-#: ../dirwalk.c:260
+#: ../dirwalk.c:256
 msgid "<1>spare-1b"
 msgstr "aa"
 
 # Aquest dos compten 9 punts.
-#: ../dirwalk.c:261
+#: ../dirwalk.c:257
 msgid "<9>spare-9a"
 msgstr "eèéëcç"
 
-#: ../dirwalk.c:262
+#: ../dirwalk.c:258
 msgid "<9>spare-9b"
 msgstr "EÉÈËCÇ"
 
@@ -422,14 +422,18 @@ msgid "Brushes support descriptions."
 msgstr "Descripcions de característiques dels pinzells."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New Magic tools: Dither, Specular, Filled Polygon."
+#, fuzzy
+#| msgid "New Magic tools: Dither, Specular, Filled Polygon."
+msgid "New Magic tools: Dither, Filled Polygon."
 msgstr "Noves eines màgiques: Tramat, Reflexió especular, Polígon."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
-msgstr "Actualització d'eines màgiques: Ulleres 3D (ara ofereixen diferentes combinacions d'anaglifs)."
+msgstr ""
+"Actualització d'eines màgiques: Ulleres 3D (ara ofereixen diferentes "
+"combinacions d'anaglifs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
@@ -1113,7 +1117,7 @@ msgstr "Nou"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9698
+#: ../tools.h:97 ../tuxpaint.c:9733
 msgid "Open"
 msgstr "Obre"
 
@@ -1370,128 +1374,128 @@ msgstr ""
 "etiquetes, editar-les, esborrar-les i canviar-ne el tipus de lletra."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2461
+#: ../tuxpaint.c:2466
 msgid "Do you really want to quit?"
 msgstr "De veres voleu sortir?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2464
+#: ../tuxpaint.c:2469
 msgid "Yes, I’m done!"
 msgstr "Sí, ja he acabat!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2467 ../tuxpaint.c:2494
+#: ../tuxpaint.c:2472 ../tuxpaint.c:2499
 msgid "No, take me back!"
 msgstr "No, tornem-hi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2476
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Si sortiu, perdreu el vostre dibuix! El voleu desar?"
 
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477
+#: ../tuxpaint.c:2477 ../tuxpaint.c:2482
 msgid "Yes, save it!"
 msgstr "Sí, desa'l!"
 
-#: ../tuxpaint.c:2473 ../tuxpaint.c:2478
+#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
 msgid "No, don’t bother saving!"
 msgstr "No, no cal que el desis!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2481
 msgid "Save your picture first?"
 msgstr "Deso el vostre dibuix abans?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2486
 msgid "Can’t open that picture!"
 msgstr "No puc obrir aquest dibuix!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2484 ../tuxpaint.c:2489 ../tuxpaint.c:2498 ../tuxpaint.c:2505
-#: ../tuxpaint.c:2516 ../tuxpaint.c:2521 ../tuxpaint.c:2529
+#: ../tuxpaint.c:2489 ../tuxpaint.c:2494 ../tuxpaint.c:2503 ../tuxpaint.c:2510
+#: ../tuxpaint.c:2521 ../tuxpaint.c:2526 ../tuxpaint.c:2534
 msgid "OK"
 msgstr "D'acord"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2488
+#: ../tuxpaint.c:2493
 msgid "There are no saved files!"
 msgstr "No hi ha fitxers desats!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2497
 msgid "Print your picture now?"
 msgstr "Imprimeixo ara el vostre dibuix?"
 
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2498
 msgid "Yes, print it!"
 msgstr "Sí, imprimeix-lo!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2502
 msgid "Your picture has been printed!"
 msgstr "El vostre dibuix s'ha imprès!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2501
+#: ../tuxpaint.c:2506
 msgid "Sorry! Your picture could not be printed!"
 msgstr "El vostre dibuix no s'ha pogut imprimir!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2504
+#: ../tuxpaint.c:2509
 msgid "You can’t print yet!"
 msgstr "Encara no podeu imprimir!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2514
 msgid "Erase this picture?"
 msgstr "Esborro aquest dibuix?"
 
-#: ../tuxpaint.c:2510
+#: ../tuxpaint.c:2515
 msgid "Erase this template?"
 msgstr "Esborro aquesta plantilla de fons?"
 
-#: ../tuxpaint.c:2511
+#: ../tuxpaint.c:2516
 msgid "Yes, erase it!"
 msgstr "Sí, esborra'l!"
 
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2517
 msgid "No, don’t erase it!"
 msgstr "No, no l'esborris!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2515
+#: ../tuxpaint.c:2520
 msgid "Remember to use the left mouse button!"
 msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2524
 msgid "Your picture has been exported!"
 msgstr "S'ha exportat el vostre dibuix!"
 
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2525
 msgid "Your slideshow GIF has been exported!"
 msgstr "S'ha exportat la vostra animació en un fitxer GIF!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2529
 msgid "Sorry! Your picture could not be exported!"
 msgstr "El vostre dibuix no s'ha pogut exportar!"
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2530
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "La vostra animació no s'ha pogut exportar!"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2528
+#: ../tuxpaint.c:2533
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 "El dibuix ja hauria d'estar disponible com a plantilla de fons en el diàleg "
 "de «Nou» dibuix."
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2532
+#: ../tuxpaint.c:2537
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
@@ -1499,108 +1503,108 @@ msgstr ""
 "Ja heu convertit aquest dibuix en una plantilla de fons. Busqueu-la en el "
 "diàleg de «Nou» dibuix."
 
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2538
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "El vostre dibuix no s'ha pogut convertir en plantilla de fons!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2536
+#: ../tuxpaint.c:2541
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Trieu els dibuixos que voleu, llavors feu clic a «Reproduir»."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2845
+#: ../tuxpaint.c:2850
 msgid "Sound muted."
 msgstr "S'ha desactivat el so."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2850
+#: ../tuxpaint.c:2855
 msgid "Sound unmuted."
 msgstr "S'ha activat el so."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3699
+#: ../tuxpaint.c:3704
 msgid "Please wait…"
 msgstr "Espereu, si us plau…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9701
+#: ../tuxpaint.c:9736
 msgid "Erase"
 msgstr "Esborra"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9704
+#: ../tuxpaint.c:9739
 msgid "Slides"
 msgstr "Diapositives"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9707
+#: ../tuxpaint.c:9742
 msgid "Template"
 msgstr "Plantilla de fons"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9710
+#: ../tuxpaint.c:9745
 msgid "Export"
 msgstr "Exporta"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9713
+#: ../tuxpaint.c:9748
 msgid "Back"
 msgstr "Endarrere"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9716
+#: ../tuxpaint.c:9751
 msgid "Play"
 msgstr "Reprodueix"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9719
+#: ../tuxpaint.c:9754
 msgid "GIF Export"
 msgstr "Exporta a GIF"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9722
+#: ../tuxpaint.c:9757
 msgid "Next"
 msgstr "Següent"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9725
+#: ../tuxpaint.c:9760
 msgid "Clear"
 msgstr "Re-comença"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10660 ../tuxpaint.c:10663 ../tuxpaint.c:10664
+#: ../tuxpaint.c:10695 ../tuxpaint.c:10698 ../tuxpaint.c:10699
 msgid "Aa"
 msgstr "Aà"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14673
+#: ../tuxpaint.c:14715
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:14677
+#: ../tuxpaint.c:14719
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15949
+#: ../tuxpaint.c:15995
 msgid "Replace the picture with your changes?"
 msgstr "Substitueixo el dibuix amb els vostres canvis?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15953
+#: ../tuxpaint.c:15999
 msgid "Yes, replace the old one!"
 msgstr "Sí, substitueix l'antic!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15957
+#: ../tuxpaint.c:16003
 msgid "No, save a new file!"
 msgstr "No, desa en un fitxer nou!"
 
-#: ../tuxpaint.c:17225
+#: ../tuxpaint.c:17276
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
@@ -1611,7 +1615,7 @@ msgstr ""
 "Feu clic a «Diapositives» per crear una presentació o «Endarrere» per tornar "
 "al dibuix actual."
 
-#: ../tuxpaint.c:17227
+#: ../tuxpaint.c:17282
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1623,64 +1627,64 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18896
+#: ../tuxpaint.c:18950
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Seleccioneu 2 o més dibuixos per exportar-los a GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25113
+#: ../tuxpaint.c:25184
 msgid "red"
 msgstr "magenta"
 
-#: ../tuxpaint.c:25114
+#: ../tuxpaint.c:25185
 msgid "yellow"
 msgstr "groc"
 
-#: ../tuxpaint.c:25115
+#: ../tuxpaint.c:25186
 msgid "blue"
 msgstr "cian"
 
-#: ../tuxpaint.c:25116
+#: ../tuxpaint.c:25187
 msgid "white"
 msgstr "blanc"
 
-#: ../tuxpaint.c:25117
+#: ../tuxpaint.c:25188
 msgid "grey"
 msgstr "gris"
 
-#: ../tuxpaint.c:25118
+#: ../tuxpaint.c:25189
 msgid "black"
 msgstr "negre"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25123
+#: ../tuxpaint.c:25194
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "El vostre color és %1$s %2$s."
 
-#: ../tuxpaint.c:25124
+#: ../tuxpaint.c:25195
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "El vostre color és %1$s %2$s i %3$s %4$s."
 
-#: ../tuxpaint.c:25125
+#: ../tuxpaint.c:25196
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "El vostre color és %1$s %2$s, %3$s %4$s i %5$s %6$s."
 
-#: ../tuxpaint.c:25126
+#: ../tuxpaint.c:25197
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s i %7$s %8$s."
 
-#: ../tuxpaint.c:25127
+#: ../tuxpaint.c:25198
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "El vostre color és %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s i %9$s %10$s."
 
-#: ../tuxpaint.c:25128
+#: ../tuxpaint.c:25199
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1690,16 +1694,16 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25908 ../tuxpaint.c:25913
+#: ../tuxpaint.c:25979 ../tuxpaint.c:25984
 msgid "entirely"
 msgstr "totalment"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29089
+#: ../tuxpaint.c:29185
 msgid "Select a color from your drawing."
 msgstr "Seleccioneu un color del vostre dibuix."
 
-#: ../tuxpaint.c:29100
+#: ../tuxpaint.c:29196
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1708,7 +1712,7 @@ msgstr ""
 "saturació o intensitat, d'esquerra(pàlid) a dreta(pur), trieu el valor "
 "(lluminositat/foscor) a la barra de grisos."
 
-#: ../tuxpaint.c:29114
+#: ../tuxpaint.c:29210
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1761,30 +1765,30 @@ msgstr "Guix"
 msgid "Drip"
 msgstr "Goteja"
 
-#: ../../magic/src/blocks_etc.c:178
+#: ../../magic/src/blocks_etc.c:179
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "Feu clic i arrossegueu el ratolí per fer-ne quadrets de la imatge."
 
-#: ../../magic/src/blocks_etc.c:182
+#: ../../magic/src/blocks_etc.c:183
 msgid "Click to make the entire picture blocky."
 msgstr "Feu clic per fer-ne quadrets del dibuix."
 
-#: ../../magic/src/blocks_etc.c:189
+#: ../../magic/src/blocks_etc.c:190
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per convertir la imatge en un dibuix fet "
 "amb guix."
 
-#: ../../magic/src/blocks_etc.c:193
+#: ../../magic/src/blocks_etc.c:194
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "Feu clic per convertir la imatge en un dibuix fet amb guix."
 
-#: ../../magic/src/blocks_etc.c:200
+#: ../../magic/src/blocks_etc.c:201
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "Feu clic i arrossegueu el ratolí per fer gotejar la imatge."
 
-#: ../../magic/src/blocks_etc.c:204
+#: ../../magic/src/blocks_etc.c:205
 msgid "Click to make the entire picture drip."
 msgstr "Feu clic per fer gotejar el dibuix."
 
@@ -1853,19 +1857,19 @@ msgstr ""
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "Feu clic per convertir la imatge a colors sòlids."
 
-#: ../../magic/src/checkerboard.c:115
+#: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
 msgstr "Escacs"
 
-#: ../../magic/src/checkerboard.c:131
+#: ../../magic/src/checkerboard.c:132
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "Feu clic i arrossegueu per dibuixar un tauler d'escacs."
 
-#: ../../magic/src/clone.c:144
+#: ../../magic/src/clone.c:145
 msgid "Clone"
 msgstr "Clona"
 
-#: ../../magic/src/clone.c:164
+#: ../../magic/src/clone.c:165
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
@@ -1890,7 +1894,10 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
-msgstr "Feu clic i arrossegueu a dreta o esquerra per separar el vermell i el cian, per fer anaglifs que podeu mirar amb ulleres 3D de dos colors! Feu servir el control de mida per triar efectes diferents."
+msgstr ""
+"Feu clic i arrossegueu a dreta o esquerra per separar el vermell i el cian, "
+"per fer anaglifs que podeu mirar amb ulleres 3D de dos colors! Feu servir el "
+"control de mida per triar efectes diferents."
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -1925,37 +1932,43 @@ msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per provocar una distorsió en el dibuix."
 
-#: ../../magic/src/dither.c:32
+#: ../../magic/src/dither.c:33
 msgid "Dither"
 msgstr "Tramat"
 
-#: ../../magic/src/dither.c:33
+#: ../../magic/src/dither.c:34
 msgid "Dither (Keep Color)"
 msgstr "Tramat colors"
 
-#: ../../magic/src/dither.c:38
+#: ../../magic/src/dither.c:39
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
-msgstr "Feu clic i arrossegueu per convertir parts de la imatge amb una trama de punts del color que trieu."
+msgstr ""
+"Feu clic i arrossegueu per convertir parts de la imatge amb una trama de "
+"punts del color que trieu."
 
-#: ../../magic/src/dither.c:39
+#: ../../magic/src/dither.c:40
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
 msgstr "Feu clic per convertir la imatge a trama de punts del color triat."
 
-#: ../../magic/src/dither.c:42
+#: ../../magic/src/dither.c:44
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
-msgstr "Feu clic i arrossegueu per convertir parts de la imatge en una trama de punts respectant els colors originals del dibuix."
+msgstr ""
+"Feu clic i arrossegueu per convertir parts de la imatge en una trama de "
+"punts respectant els colors originals del dibuix."
 
-#: ../../magic/src/dither.c:43
+#: ../../magic/src/dither.c:46
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
-msgstr "Feu clic per convertir la imatge en una trama de punts respectant els colors originals del dibuix."
+msgstr ""
+"Feu clic per convertir la imatge en una trama de punts respectant els colors "
+"originals del dibuix."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2092,28 +2105,28 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "Trieu un color de fons i feu clic per aixecar la cantonada."
 
-#: ../../magic/src/fretwork.c:218
+#: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
 msgstr "Sanefa"
 
-#: ../../magic/src/fretwork.c:224
+#: ../../magic/src/fretwork.c:228
 msgid "Click and drag to draw repetitive patterns."
 msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
 
-#: ../../magic/src/fretwork.c:226
+#: ../../magic/src/fretwork.c:230
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "Feu clic per envoltar la imatge amb una sanefa."
 
-#: ../../magic/src/glasstile.c:112
+#: ../../magic/src/glasstile.c:113
 msgid "Glass Tile"
 msgstr "Blocs de vidre"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:132
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per posar blocs de vidre en la imatge."
 
-#: ../../magic/src/glasstile.c:133
+#: ../../magic/src/glasstile.c:134
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "Feu clic per omplir la imatge amb blocs de vidre."
 
@@ -2492,20 +2505,19 @@ msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr "Feu clic i arrossegueu per dibuixar línies amb dos punts de fuga."
 
-#. 3-point perspective
-#: ../../magic/src/n_pt_persp.c:239
+#: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
 "Feu clic i arrossegueu per situar els 3 punts de fuga de l'eina corresponent."
 
-#: ../../magic/src/n_pt_persp.c:240
+#: ../../magic/src/n_pt_persp.c:241
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr "Feu clic i arrossegueu per dibuxar línies amb tres punts de fuga."
 
-#: ../../magic/src/n_pt_persp.c:242
+#: ../../magic/src/n_pt_persp.c:243
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
@@ -2513,23 +2525,23 @@ msgstr ""
 "Feu clic i arrossegueu per dibuixar línies amb tres punts de fuga en vista "
 "de dalt."
 
-#: ../../magic/src/n_pt_persp.c:246
+#: ../../magic/src/n_pt_persp.c:247
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr "Feu clic i arrossegueu per dibuxar línies en una projecció isomètrica."
 
 #. Dimetric
-#: ../../magic/src/n_pt_persp.c:249
+#: ../../magic/src/n_pt_persp.c:250
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr "Feu clic i arrossegueu per ajustar l'angle de la projecció dimètrica."
 
-#: ../../magic/src/n_pt_persp.c:250
+#: ../../magic/src/n_pt_persp.c:251
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr "Feu clic i arrossegueu per dibuixar línies en una projecció dimètrica."
 
 #. Trimetric
-#: ../../magic/src/n_pt_persp.c:253
+#: ../../magic/src/n_pt_persp.c:254
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
@@ -2537,13 +2549,13 @@ msgstr ""
 "Feu clic en les línies inclinades i arrossegueu-les per establir els angles "
 "de la projecció trimètrica."
 
-#: ../../magic/src/n_pt_persp.c:254
+#: ../../magic/src/n_pt_persp.c:255
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr ""
 "Feu clic i arrossegueu per dibuixar línies en una projecció trimètrica."
 
 #. Oblique
-#: ../../magic/src/n_pt_persp.c:257
+#: ../../magic/src/n_pt_persp.c:258
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
@@ -2551,12 +2563,12 @@ msgstr ""
 "Feu clic i arrossegueu per establir l'angle emprat en la perspectiva "
 "cavallera."
 
-#: ../../magic/src/n_pt_persp.c:258
+#: ../../magic/src/n_pt_persp.c:259
 msgid "Click and drag to draw lines with oblique projection."
 msgstr "Feu clic i arrossegueu per dibuixar línies en perspectiva cavallera."
 
 # La icona ja mostra en quin sentit es dibuixaran les línies obliques.  Pere gener 2024
-#: ../../magic/src/n_pt_persp.c:260
+#: ../../magic/src/n_pt_persp.c:261
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr "Feu clic i arrossegueu per dibuixar línies en perspectiva cavallera."
 
@@ -2616,16 +2628,19 @@ msgstr "Píxels"
 msgid "Click and drag to draw large pixels."
 msgstr "Feu clic i arrossegueu per dibuixar píxels grans."
 
-#: ../../magic/src/polyfill.c:28
+#: ../../magic/src/polyfill.c:29
 msgid "Filled Polygon"
 msgstr "Polígon"
 
-#: ../../magic/src/polyfill.c:32
+#: ../../magic/src/polyfill.c:34
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag control points to alter the shape. Click the first point to complete "
 "the shape."
-msgstr "Feu clic vàries vegades en el dibuix per crear un polígon ple. Podeu arrossegar els punts de control per alterar-ne la forma. Feu clic en el primer punt per completar-lo."
+msgstr ""
+"Feu clic vàries vegades en el dibuix per crear un polígon ple. Podeu "
+"arrossegar els punts de control per alterar-ne la forma. Feu clic en el "
+"primer punt per completar-lo."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2639,27 +2654,27 @@ msgstr "Feu clic en la part del dibuix que vulgueu barrejar."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "Feu clic per barrejar la imatge."
 
-#: ../../magic/src/rails.c:168
+#: ../../magic/src/rails.c:172
 msgid "Rails"
 msgstr "Rails"
 
-#: ../../magic/src/rails.c:183
+#: ../../magic/src/rails.c:187
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
 
-#: ../../magic/src/rainbow.c:155
+#: ../../magic/src/rainbow.c:156
 msgid "Rainbow"
 msgstr "Colors de l'arc"
 
-#: ../../magic/src/rainbow.c:159
+#: ../../magic/src/rainbow.c:160
 msgid "Smooth Rainbow"
 msgstr "Colors suaus"
 
-#: ../../magic/src/rainbow.c:163
+#: ../../magic/src/rainbow.c:164
 msgid "Rainbow Cycle"
 msgstr "Cicle de colors"
 
-#: ../../magic/src/rainbow.c:182
+#: ../../magic/src/rainbow.c:183
 msgid "You can draw in rainbow colors!"
 msgstr "Podeu pintar amb els colors de l'arc de Sant Martí!"
 
@@ -2778,19 +2793,19 @@ msgstr "Desplaça"
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "Feu clic i arrossegueu el ratolí per fer desplaçar la imatge."
 
-#: ../../magic/src/smooth.c:62
+#: ../../magic/src/smooth.c:63
 msgid "Smooth"
 msgstr "Traç suau"
 
-#: ../../magic/src/smooth.c:63
+#: ../../magic/src/smooth.c:64
 msgid "Squiggles"
 msgstr "Espires gargot"
 
-#: ../../magic/src/smooth.c:64
+#: ../../magic/src/smooth.c:65
 msgid "Loops"
 msgstr "Espires"
 
-#: ../../magic/src/smooth.c:68
+#: ../../magic/src/smooth.c:69
 msgid ""
 "Click and drag the mouse around to draw in freehand; it will be smoothed "
 "when you let go."
@@ -2798,12 +2813,12 @@ msgstr ""
 "Feu clic i arrossegueu el ratolí per dibuixar lliurement, quan deixeu anar "
 "el ratolí s'arrodonirà el traç."
 
-#: ../../magic/src/smooth.c:69
+#: ../../magic/src/smooth.c:70
 msgid "Click and drag the mouse around to draw squiggles."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per dibuixar espires amb traç irregular."
 
-#: ../../magic/src/smooth.c:70
+#: ../../magic/src/smooth.c:71
 msgid "Click and drag the mouse around to draw loop-the-loops."
 msgstr ""
 "Feu clic i arrossegueu el ratolí per dibuixar espires com les de les "
@@ -2842,17 +2857,6 @@ msgstr "Feu clic per afegir boles de neu al dibuix."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Feu clic per afegir flocs de neu al dibuix."
-
-#: ../../magic/src/specular.c:75
-msgid "Specular Reflection"
-msgstr "Especular"
-
-#: ../../magic/src/specular.c:93
-msgid ""
-"Click and drag on the bottom half of your picture to draw a specular "
-"reflection — like a puddle, pond, or lake — that mirrors the top half of "
-"your picture."
-msgstr "Feu clic i arrossegueu en la part baixa del dibuix per crear una reflexió de la part alta, com un toll, estany o llac."
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
@@ -2978,40 +2982,39 @@ msgstr "Tornado"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "Feu clic i arrossegueu per dibuixar un tornado."
 
-#: ../../magic/src/trochoids.c:109
+#: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
 msgstr "Epitrocoide"
 
-#: ../../magic/src/trochoids.c:110
+#: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
 msgstr "Epitrocoide Interior"
 
-#: ../../magic/src/trochoids.c:111
+#: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Edge"
 msgstr "Epitrocoide Vora"
 
-#: ../../magic/src/trochoids.c:112
+#: ../../magic/src/trochoids.c:113
 msgid "Epitrochoid Outside"
 msgstr "Epitrocoide Exterior"
 
-#: ../../magic/src/trochoids.c:113
+#: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
 msgstr "Hipotrocoide"
 
-#: ../../magic/src/trochoids.c:114
+#: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
 msgstr "Hipotrocoide Interior"
 
-#: ../../magic/src/trochoids.c:115
+#: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Edge"
 msgstr "Hipotrocoide Vora"
 
-#: ../../magic/src/trochoids.c:116
+#: ../../magic/src/trochoids.c:117
 msgid "Hypotrochoid Outside"
 msgstr "Hypotrocoide Exterior"
 
-#. Epitrochoids
-#: ../../magic/src/trochoids.c:122
+#: ../../magic/src/trochoids.c:124
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3021,7 +3024,7 @@ msgstr ""
 "per canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu voltant. Feu servir la opció de mida per situar el llàpis."
 
-#: ../../magic/src/trochoids.c:123
+#: ../../magic/src/trochoids.c:126
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3031,7 +3034,7 @@ msgstr ""
 "per canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu voltant. El llàpis és dins del cercle que roda."
 
-#: ../../magic/src/trochoids.c:124
+#: ../../magic/src/trochoids.c:128
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3041,7 +3044,7 @@ msgstr ""
 "per canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu voltant. El llàpis é en la vora del cercle que roda."
 
-#: ../../magic/src/trochoids.c:125
+#: ../../magic/src/trochoids.c:130
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3051,8 +3054,7 @@ msgstr ""
 "per canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu voltant. El llàpis és fora del cercle que roda."
 
-#. Hypotrochoids
-#: ../../magic/src/trochoids.c:127
+#: ../../magic/src/trochoids.c:133
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3062,7 +3064,7 @@ msgstr ""
 "fer canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu interior. Feu servir la opció de mida per situar el llàpis."
 
-#: ../../magic/src/trochoids.c:128
+#: ../../magic/src/trochoids.c:135
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3072,7 +3074,7 @@ msgstr ""
 "fer canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu interior. El llàpis és dins del cercle que roda."
 
-#: ../../magic/src/trochoids.c:129
+#: ../../magic/src/trochoids.c:137
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3082,7 +3084,7 @@ msgstr ""
 "fer canviar la mida del cercle fix, i en vertical per la mida del cercle que "
 "roda al seu interior. El llàpis és a la vora del cercle que roda."
 
-#: ../../magic/src/trochoids.c:130
+#: ../../magic/src/trochoids.c:139
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -3153,6 +3155,17 @@ msgstr ""
 #: ../../magic/src/xor.c:118
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Feu clic per aplicar un patró de disjunció exclusiva dels colors."
+
+#~ msgid "Specular Reflection"
+#~ msgstr "Especular"
+
+#~ msgid ""
+#~ "Click and drag on the bottom half of your picture to draw a specular "
+#~ "reflection — like a puddle, pond, or lake — that mirrors the top half of "
+#~ "your picture."
+#~ msgstr ""
+#~ "Feu clic i arrossegueu en la part baixa del dibuix per crear una reflexió "
+#~ "de la part alta, com un toll, estany o llac."
 
 #~ msgid "New Breed Software et al."
 #~ msgstr "New Breed Software et al."

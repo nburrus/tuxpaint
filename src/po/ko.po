@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-29 01:00-0700\n"
+"POT-Creation-Date: 2024-05-30 23:44-0700\n"
 "PO-Revision-Date: 2022-09-10 06:06-0400\n"
 "Last-Translator: Mark K. Kim <markuskimius@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -150,12 +150,12 @@ msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:241
+#: ../dirwalk.c:240
 msgid "O0"
 msgstr "O0ㅇ"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:247
+#: ../dirwalk.c:244
 msgid "1Il|"
 msgstr "1Il|ㅣ"
 
@@ -165,19 +165,19 @@ msgstr "1Il|ㅣ"
 #.
 #. You can use two different weight for scoring, 1 or 9, according
 #. to the importance.
-#: ../dirwalk.c:259
+#: ../dirwalk.c:255
 msgid "<1>spare-1a"
 msgstr ""
 
-#: ../dirwalk.c:260
+#: ../dirwalk.c:256
 msgid "<1>spare-1b"
 msgstr ""
 
-#: ../dirwalk.c:261
+#: ../dirwalk.c:257
 msgid "<9>spare-9a"
 msgstr ""
 
-#: ../dirwalk.c:262
+#: ../dirwalk.c:258
 msgid "<9>spare-9b"
 msgstr ""
 
@@ -374,7 +374,7 @@ msgid "Brushes support descriptions."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New Magic tools: Dither, Specular, Filled Polygon."
+msgid "New Magic tools: Dither, Filled Polygon."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -949,7 +949,7 @@ msgstr "새 그림"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9698
+#: ../tools.h:97 ../tuxpaint.c:9733
 msgid "Open"
 msgstr "열기"
 
@@ -1199,244 +1199,244 @@ msgstr ""
 "면 있는 라벨을 움직이거나 글을 바꾸실 수 있습니다."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2461
+#: ../tuxpaint.c:2466
 msgid "Do you really want to quit?"
 msgstr "프로그램을 끝 마칠까요?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2464
+#: ../tuxpaint.c:2469
 msgid "Yes, I’m done!"
 msgstr "네, 끝마쳐요!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2467 ../tuxpaint.c:2494
+#: ../tuxpaint.c:2472 ../tuxpaint.c:2499
 msgid "No, take me back!"
 msgstr "아니요, 전 화면으로 돌아가요!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2471
+#: ../tuxpaint.c:2476
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "그림을 저장않하고 종료 하면 그림이 없어져요! 저장할까요?"
 
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2477
+#: ../tuxpaint.c:2477 ../tuxpaint.c:2482
 msgid "Yes, save it!"
 msgstr "네, 저장하세요!"
 
-#: ../tuxpaint.c:2473 ../tuxpaint.c:2478
+#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
 msgid "No, don’t bother saving!"
 msgstr "아니요, 저장하지 마세요!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2481
 msgid "Save your picture first?"
 msgstr "먼저, 그림을 저장할까요?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2486
 msgid "Can’t open that picture!"
 msgstr "그 그림은 열지 못합니다!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2484 ../tuxpaint.c:2489 ../tuxpaint.c:2498 ../tuxpaint.c:2505
-#: ../tuxpaint.c:2516 ../tuxpaint.c:2521 ../tuxpaint.c:2529
+#: ../tuxpaint.c:2489 ../tuxpaint.c:2494 ../tuxpaint.c:2503 ../tuxpaint.c:2510
+#: ../tuxpaint.c:2521 ../tuxpaint.c:2526 ../tuxpaint.c:2534
 msgid "OK"
 msgstr "네"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2488
+#: ../tuxpaint.c:2493
 msgid "There are no saved files!"
 msgstr "저장된 파일이 없네요!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2492
+#: ../tuxpaint.c:2497
 msgid "Print your picture now?"
 msgstr "그림을 인쇄 할까요?"
 
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2498
 msgid "Yes, print it!"
 msgstr "네, 인쇄하세요!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2502
 msgid "Your picture has been printed!"
 msgstr "그림을 인쇄 했습니다!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2501
+#: ../tuxpaint.c:2506
 msgid "Sorry! Your picture could not be printed!"
 msgstr "어쩌죠? 인쇄하지 못했네요..."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2504
+#: ../tuxpaint.c:2509
 msgid "You can’t print yet!"
 msgstr "아직 인쇄 하지 못합니다!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2514
 msgid "Erase this picture?"
 msgstr "이 그림을 지울까요?"
 
-#: ../tuxpaint.c:2510
+#: ../tuxpaint.c:2515
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "이 그림을 지울까요?"
 
-#: ../tuxpaint.c:2511
+#: ../tuxpaint.c:2516
 msgid "Yes, erase it!"
 msgstr "네, 지우세요!"
 
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2517
 msgid "No, don’t erase it!"
 msgstr "아니요, 지우지 마세요!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2515
+#: ../tuxpaint.c:2520
 msgid "Remember to use the left mouse button!"
 msgstr "왼쪽 마우스버튼을 사용하는걸 잊지 마세요!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2524
 msgid "Your picture has been exported!"
 msgstr "그림을 수출 했습니다!"
 
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2525
 msgid "Your slideshow GIF has been exported!"
 msgstr "슬라이드가 지프로 수출이 됐습니다!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2529
 msgid "Sorry! Your picture could not be exported!"
 msgstr "죄송하지만 수출이 실패됐습니다"
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2530
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "죄송하지만 지프 수출이 실패됐습니다"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2528
+#: ../tuxpaint.c:2533
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2532
+#: ../tuxpaint.c:2537
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2538
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "어쩌죠? 인쇄하지 못했네요..."
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2536
+#: ../tuxpaint.c:2541
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "원하는 그림을 고른후 「시작」버튼을 눌러주세요."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2845
+#: ../tuxpaint.c:2850
 msgid "Sound muted."
 msgstr "음향제거"
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2850
+#: ../tuxpaint.c:2855
 msgid "Sound unmuted."
 msgstr "음향복구"
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3699
+#: ../tuxpaint.c:3704
 msgid "Please wait…"
 msgstr "잠깐만 기다려 주세요..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9701
+#: ../tuxpaint.c:9736
 msgid "Erase"
 msgstr "지우기"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9704
+#: ../tuxpaint.c:9739
 msgid "Slides"
 msgstr "슬라이드"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9707
+#: ../tuxpaint.c:9742
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9710
+#: ../tuxpaint.c:9745
 msgid "Export"
 msgstr "수출"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9713
+#: ../tuxpaint.c:9748
 msgid "Back"
 msgstr "되 돌아가기"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9716
+#: ../tuxpaint.c:9751
 msgid "Play"
 msgstr "시작"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9719
+#: ../tuxpaint.c:9754
 msgid "GIF Export"
 msgstr "지프 수츨"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9722
+#: ../tuxpaint.c:9757
 msgid "Next"
 msgstr "다음"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9725
+#: ../tuxpaint.c:9760
 msgid "Clear"
 msgstr "해재"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10660 ../tuxpaint.c:10663 ../tuxpaint.c:10664
+#: ../tuxpaint.c:10695 ../tuxpaint.c:10698 ../tuxpaint.c:10699
 msgid "Aa"
 msgstr "A가"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14673
+#: ../tuxpaint.c:14715
 msgid "Yes"
 msgstr "네"
 
-#: ../tuxpaint.c:14677
+#: ../tuxpaint.c:14719
 msgid "No"
 msgstr "아니요"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15949
+#: ../tuxpaint.c:15995
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15953
+#: ../tuxpaint.c:15999
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:15957
+#: ../tuxpaint.c:16003
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: ../tuxpaint.c:17225
+#: ../tuxpaint.c:17276
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17227
+#: ../tuxpaint.c:17282
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1445,64 +1445,64 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18896
+#: ../tuxpaint.c:18950
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "지프로 만들 두가지 이상의 그림을 고르세요."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25113
+#: ../tuxpaint.c:25184
 msgid "red"
 msgstr "빨간색"
 
-#: ../tuxpaint.c:25114
+#: ../tuxpaint.c:25185
 msgid "yellow"
 msgstr "노란색"
 
-#: ../tuxpaint.c:25115
+#: ../tuxpaint.c:25186
 msgid "blue"
 msgstr "파란색"
 
-#: ../tuxpaint.c:25116
+#: ../tuxpaint.c:25187
 msgid "white"
 msgstr "흰색"
 
-#: ../tuxpaint.c:25117
+#: ../tuxpaint.c:25188
 msgid "grey"
 msgstr "회색"
 
-#: ../tuxpaint.c:25118
+#: ../tuxpaint.c:25189
 msgid "black"
 msgstr "검정색"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25123
+#: ../tuxpaint.c:25194
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "당신의 색갈은 %1$s %2$s."
 
-#: ../tuxpaint.c:25124
+#: ../tuxpaint.c:25195
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "당신의 색갈은 %1$s %2$s 와 %3$s %4$s."
 
-#: ../tuxpaint.c:25125
+#: ../tuxpaint.c:25196
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "당신의 색갈은 %1$s %2$s, %3$s %4$s, 그리고 %5$s %6$s."
 
-#: ../tuxpaint.c:25126
+#: ../tuxpaint.c:25197
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "당신의 색갈은 %1$s %2$s, %3$s %4$s, %5$s %6$s, 그리고 %7$s %8$s."
 
-#: ../tuxpaint.c:25127
+#: ../tuxpaint.c:25198
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "당신의 색갈은 %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, 그리고%9$s %10$s."
 
-#: ../tuxpaint.c:25128
+#: ../tuxpaint.c:25199
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1512,22 +1512,22 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25908 ../tuxpaint.c:25913
+#: ../tuxpaint.c:25979 ../tuxpaint.c:25984
 msgid "entirely"
 msgstr "전채"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29089
+#: ../tuxpaint.c:29185
 msgid "Select a color from your drawing."
 msgstr "그림에서 색갈을 고르세요."
 
-#: ../tuxpaint.c:29100
+#: ../tuxpaint.c:29196
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29114
+#: ../tuxpaint.c:29210
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1577,28 +1577,28 @@ msgstr "분필"
 msgid "Drip"
 msgstr "흘리게"
 
-#: ../../magic/src/blocks_etc.c:178
+#: ../../magic/src/blocks_etc.c:179
 msgid "Click and drag the mouse around to make the picture blocky."
 msgstr "마우스를 누르고 끌면 그림이 네모나게 되어요."
 
-#: ../../magic/src/blocks_etc.c:182
+#: ../../magic/src/blocks_etc.c:183
 msgid "Click to make the entire picture blocky."
 msgstr "마우스를 누르면 그림이 전채가 뭉툭해져요."
 
-#: ../../magic/src/blocks_etc.c:189
+#: ../../magic/src/blocks_etc.c:190
 msgid ""
 "Click and drag the mouse around to turn the picture into a chalk drawing."
 msgstr "마우스를 누르고 끌면 그림이 분필로 만든 것 같이 되어요."
 
-#: ../../magic/src/blocks_etc.c:193
+#: ../../magic/src/blocks_etc.c:194
 msgid "Click to turn the entire picture into a chalk drawing."
 msgstr "마우스를 누르면 그림이 분필로 만든 것 같이 되어요."
 
-#: ../../magic/src/blocks_etc.c:200
+#: ../../magic/src/blocks_etc.c:201
 msgid "Click and drag the mouse around to make the picture drip."
 msgstr "마우스를 누르고 끌면 그림이 흐르는 것 같이 되어요."
 
-#: ../../magic/src/blocks_etc.c:204
+#: ../../magic/src/blocks_etc.c:205
 msgid "Click to make the entire picture drip."
 msgstr "마우스를 누르면 그림이 전채가 흐르게 변해요."
 
@@ -1671,19 +1671,19 @@ msgstr "마우스를 누르고 끌면 그림이 만화 같이 변화돼요."
 msgid "Click to turn the entire picture into a cartoon."
 msgstr "마우스를 누르면 그림이 만화형이 되어요."
 
-#: ../../magic/src/checkerboard.c:115
+#: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
 msgstr "체커 보드"
 
-#: ../../magic/src/checkerboard.c:131
+#: ../../magic/src/checkerboard.c:132
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
 msgstr "마우스를 누르고 끌면 그림이 체커보드형이 됩니다."
 
-#: ../../magic/src/clone.c:144
+#: ../../magic/src/clone.c:145
 msgid "Clone"
 msgstr "복사"
 
-#: ../../magic/src/clone.c:164
+#: ../../magic/src/clone.c:165
 msgid ""
 "Click once to pick a spot to begin cloning. Click again and drag to clone "
 "that part of the picture."
@@ -1746,17 +1746,17 @@ msgstr "찌그리기"
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "마우스를 누르고 끌면 그림을 찌그를 수 있어요."
 
-#: ../../magic/src/dither.c:32
+#: ../../magic/src/dither.c:33
 msgid "Dither"
 msgstr ""
 
-#: ../../magic/src/dither.c:33
+#: ../../magic/src/dither.c:34
 #, fuzzy
 #| msgid "Colors"
 msgid "Dither (Keep Color)"
 msgstr "색"
 
-#: ../../magic/src/dither.c:38
+#: ../../magic/src/dither.c:39
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1766,7 +1766,7 @@ msgid ""
 "dots in your chosen color."
 msgstr "마우스를 누르고 끌면 그림의 부분이 텔레비젼에 나온 것 같이돼요."
 
-#: ../../magic/src/dither.c:39
+#: ../../magic/src/dither.c:40
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
@@ -1774,7 +1774,7 @@ msgid ""
 "chosen color."
 msgstr "마우스를 누르면 그림에 비를 그릴 수 있어요."
 
-#: ../../magic/src/dither.c:42
+#: ../../magic/src/dither.c:44
 #, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1784,7 +1784,7 @@ msgid ""
 "dots using the picture's original colors."
 msgstr "마우스를 누르고 끌면 그림의 부분이 텔레비젼에 나온 것 같이돼요."
 
-#: ../../magic/src/dither.c:43
+#: ../../magic/src/dither.c:46
 #, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
@@ -1945,27 +1945,27 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "배경의 색을 고른 후 퍼이지의 모퉁이를 클릭하면 다음 페이지로 넘어가요."
 
-#: ../../magic/src/fretwork.c:218
+#: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
 msgstr "뇌문"
 
-#: ../../magic/src/fretwork.c:224
+#: ../../magic/src/fretwork.c:228
 msgid "Click and drag to draw repetitive patterns."
 msgstr "마우스를 누르고 끌면 무늬를 그릴 수 있습니다."
 
-#: ../../magic/src/fretwork.c:226
+#: ../../magic/src/fretwork.c:230
 msgid "Click to surround your picture with repetitive patterns."
 msgstr "마우스를 누르면 그림이 무늬로 둘러 쌓아 져요."
 
-#: ../../magic/src/glasstile.c:112
+#: ../../magic/src/glasstile.c:113
 msgid "Glass Tile"
 msgstr "유리 타일"
 
-#: ../../magic/src/glasstile.c:131
+#: ../../magic/src/glasstile.c:132
 msgid "Click and drag the mouse to put glass tile over your picture."
 msgstr "마우스를 누르고 끌면 그림에 유리타일이 깔려요."
 
-#: ../../magic/src/glasstile.c:133
+#: ../../magic/src/glasstile.c:134
 msgid "Click to cover your entire picture in glass tiles."
 msgstr "마우스를 누르면 그림 전채가 유리타일로 깔려요."
 
@@ -2333,21 +2333,20 @@ msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr "마우스를 누르고 끌면 그림을 움직일 수 있어요."
 
-#. 3-point perspective
-#: ../../magic/src/n_pt_persp.c:239
+#: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:240
+#: ../../magic/src/n_pt_persp.c:241
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr "마우스를 누르고 끌면 그림을 움직일 수 있어요."
 
-#: ../../magic/src/n_pt_persp.c:242
+#: ../../magic/src/n_pt_persp.c:243
 #, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
@@ -2355,52 +2354,52 @@ msgid ""
 "(downward perspective)."
 msgstr "마우스를 누르고 끌면 그림을 움직일 수 있어요."
 
-#: ../../magic/src/n_pt_persp.c:246
+#: ../../magic/src/n_pt_persp.c:247
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr "마우스를 누르고 끌면 무늬를 그릴 수 있습니다."
 
 #. Dimetric
-#: ../../magic/src/n_pt_persp.c:249
+#: ../../magic/src/n_pt_persp.c:250
 msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:250
+#: ../../magic/src/n_pt_persp.c:251
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr "마우스를 누르고 끌면 무늬를 그릴 수 있습니다."
 
 #. Trimetric
-#: ../../magic/src/n_pt_persp.c:253
+#: ../../magic/src/n_pt_persp.c:254
 msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:254
+#: ../../magic/src/n_pt_persp.c:255
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr "마우스를 누르고 끌면 무늬를 그릴 수 있습니다."
 
 #. Oblique
-#: ../../magic/src/n_pt_persp.c:257
+#: ../../magic/src/n_pt_persp.c:258
 msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
 
-#: ../../magic/src/n_pt_persp.c:258
+#: ../../magic/src/n_pt_persp.c:259
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
 msgstr "마우스를 누르고 끌면 무늬를 그릴 수 있습니다."
 
-#: ../../magic/src/n_pt_persp.c:260
+#: ../../magic/src/n_pt_persp.c:261
 #, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
@@ -2456,11 +2455,11 @@ msgstr "화소"
 msgid "Click and drag to draw large pixels."
 msgstr "마우스를 누르고 끌면 큰 화소가 그려져요!"
 
-#: ../../magic/src/polyfill.c:28
+#: ../../magic/src/polyfill.c:29
 msgid "Filled Polygon"
 msgstr ""
 
-#: ../../magic/src/polyfill.c:32
+#: ../../magic/src/polyfill.c:34
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag control points to alter the shape. Click the first point to complete "
@@ -2479,29 +2478,29 @@ msgstr "마우스를 누르면 그림을 퍼즐로 만들 수 있어요."
 msgid "Click to make a puzzle in fullscreen mode."
 msgstr "마우스를 누르면 퍼즐을 화면 전체에 깔립니다."
 
-#: ../../magic/src/rails.c:168
+#: ../../magic/src/rails.c:172
 msgid "Rails"
 msgstr "레일"
 
-#: ../../magic/src/rails.c:183
+#: ../../magic/src/rails.c:187
 msgid "Click and drag to draw train track rails on your picture."
 msgstr "마우스를 누르고 끌면 레일을 그릴 수 있어요."
 
-#: ../../magic/src/rainbow.c:155
+#: ../../magic/src/rainbow.c:156
 msgid "Rainbow"
 msgstr "무지개"
 
-#: ../../magic/src/rainbow.c:159
+#: ../../magic/src/rainbow.c:160
 msgid "Smooth Rainbow"
 msgstr "브드러운 무지개"
 
-#: ../../magic/src/rainbow.c:163
+#: ../../magic/src/rainbow.c:164
 #, fuzzy
 #| msgid "Rainbow"
 msgid "Rainbow Cycle"
 msgstr "무지개"
 
-#: ../../magic/src/rainbow.c:182
+#: ../../magic/src/rainbow.c:183
 msgid "You can draw in rainbow colors!"
 msgstr "여러가지의 색으로 그림을 그려 보세요."
 
@@ -2621,21 +2620,21 @@ msgstr "움직이기"
 msgid "Click and drag to shift your picture around on the canvas."
 msgstr "마우스를 누르고 끌면 그림을 움직일 수 있어요."
 
-#: ../../magic/src/smooth.c:62
+#: ../../magic/src/smooth.c:63
 #, fuzzy
 #| msgid "Smooth Rainbow"
 msgid "Smooth"
 msgstr "브드러운 무지개"
 
-#: ../../magic/src/smooth.c:63
+#: ../../magic/src/smooth.c:64
 msgid "Squiggles"
 msgstr ""
 
-#: ../../magic/src/smooth.c:64
+#: ../../magic/src/smooth.c:65
 msgid "Loops"
 msgstr ""
 
-#: ../../magic/src/smooth.c:68
+#: ../../magic/src/smooth.c:69
 #, fuzzy
 #| msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgid ""
@@ -2643,13 +2642,13 @@ msgid ""
 "when you let go."
 msgstr "마우스를 누르고 끌면 그림을 젖은 얼룩한 봇으로 그릴 수 있어요."
 
-#: ../../magic/src/smooth.c:69
+#: ../../magic/src/smooth.c:70
 #, fuzzy
 #| msgid "Click and drag the mouse around to blur the image."
 msgid "Click and drag the mouse around to draw squiggles."
 msgstr "마우스를 누르고 끌면 그림을 흐리게 만들 수 있어요."
 
-#: ../../magic/src/smooth.c:70
+#: ../../magic/src/smooth.c:71
 #, fuzzy
 #| msgid "Click and drag the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw loop-the-loops."
@@ -2688,19 +2687,6 @@ msgstr "눈덩이를 그려보세요."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "눈을 그려보세요."
-
-#: ../../magic/src/specular.c:75
-#, fuzzy
-#| msgid "Reflection"
-msgid "Specular Reflection"
-msgstr "거을"
-
-#: ../../magic/src/specular.c:93
-msgid ""
-"Click and drag on the bottom half of your picture to draw a specular "
-"reflection — like a puddle, pond, or lake — that mirrors the top half of "
-"your picture."
-msgstr ""
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
@@ -2829,90 +2815,88 @@ msgstr "회오리바람"
 msgid "Click and drag to draw a tornado funnel on your picture."
 msgstr "마우스를 누르고 끌면 깔때기 회오리바람 을 그릴 수 있어요."
 
-#: ../../magic/src/trochoids.c:109
+#: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:110
+#: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:111
+#: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Edge"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:112
+#: ../../magic/src/trochoids.c:113
 msgid "Epitrochoid Outside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:113
+#: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:114
+#: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:115
+#: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Edge"
 msgstr ""
 
-#: ../../magic/src/trochoids.c:116
+#: ../../magic/src/trochoids.c:117
 msgid "Hypotrochoid Outside"
-msgstr ""
-
-#. Epitrochoids
-#: ../../magic/src/trochoids.c:122
-msgid ""
-"Click to start drawing an epitrochoid. Drag left/right to change the size of "
-"the fixed circle, and up/down to change the size of the circle rolling "
-"outside of it. Use the size option to change where the pen is."
-msgstr ""
-
-#: ../../magic/src/trochoids.c:123
-msgid ""
-"Click to start drawing an epitrochoid. Drag left/right to change the size of "
-"the fixed circle, and up/down to change the size of the circle rolling "
-"outside of it. Then pen is within the rolling circle."
 msgstr ""
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Use the size option to change where the pen is."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:126
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
+"outside of it. Then pen is within the rolling circle."
+msgstr ""
+
+#: ../../magic/src/trochoids.c:128
+msgid ""
+"Click to start drawing an epitrochoid. Drag left/right to change the size of "
+"the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:125
+#: ../../magic/src/trochoids.c:130
 msgid ""
 "Click to start drawing an epitrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
 
-#. Hypotrochoids
-#: ../../magic/src/trochoids.c:127
+#: ../../magic/src/trochoids.c:133
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:128
+#: ../../magic/src/trochoids.c:135
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:129
+#: ../../magic/src/trochoids.c:137
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
 
-#: ../../magic/src/trochoids.c:130
+#: ../../magic/src/trochoids.c:139
 msgid ""
 "Click to start drawing a hypotrochoid. Drag left/right to change the size of "
 "the fixed circle, and up/down to change the size of the circle rolling "
@@ -2980,6 +2964,11 @@ msgstr "마우스를 누르고 끌면 그림이 배타적 노리합의 색이 �
 #| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "마우스를 누르면 그림 전채가 배타적 노리합의 색이 됩니다."
+
+#, fuzzy
+#~| msgid "Reflection"
+#~ msgid "Specular Reflection"
+#~ msgstr "거을"
 
 #~ msgid "Choose the picture you want, then click “Open”."
 #~ msgstr "원하는 그림을 고른후 「열기」버튼을 눌러주세요."
