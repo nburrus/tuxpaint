@@ -23769,7 +23769,8 @@ static Uint8 magic_touched(int x, int y)
 /**
  * Removes the latest undo recorded
  */
-void magic_retract_undo(void) {
+void magic_retract_undo(void)
+{
   if (cur_undo > 0)
     cur_undo--;
   else

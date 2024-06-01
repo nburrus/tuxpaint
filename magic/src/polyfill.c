@@ -41,7 +41,8 @@ char *polyfill_icon_filenames[NUM_TOOLS] = {
   "polyfill.png",
 };
 
-enum {
+enum
+{
   SND_PLACE,
   SND_MOVE,
   SND_REMOVE,
@@ -300,22 +301,24 @@ polyfill_drag(magic_api * api, int which ATTRIBUTE_UNUSED,
   if (polyfill_editing == polyfill_num_pts - 1 &&
       polyfill_num_pts >= 3 &&
       x >= polyfill_pt_x[0] - SNAP_SIZE &&
-      x <= polyfill_pt_x[0] + SNAP_SIZE &&
-      y >= polyfill_pt_y[0] - SNAP_SIZE &&
-      y <= polyfill_pt_y[0] + SNAP_SIZE) {
+      x <= polyfill_pt_x[0] + SNAP_SIZE && y >= polyfill_pt_y[0] - SNAP_SIZE && y <= polyfill_pt_y[0] + SNAP_SIZE)
+  {
     /* If placing/moving the final (red) point, and it's
        near the initial (green) point, play an electrostatic sound */
     api->playsound(snd_effects[SND_NEARBY], (x * 255) / canvas->w, 255);
-  } else if (polyfill_editing == 0 && 
-      polyfill_num_pts >= 3 &&
-      x >= polyfill_pt_x[polyfill_num_pts - 1] - SNAP_SIZE &&
-      x <= polyfill_pt_x[polyfill_num_pts - 1] + SNAP_SIZE &&
-      y >= polyfill_pt_y[polyfill_num_pts - 1] - SNAP_SIZE &&
-      y <= polyfill_pt_y[polyfill_num_pts - 1] + SNAP_SIZE) {
+  }
+  else if (polyfill_editing == 0 &&
+           polyfill_num_pts >= 3 &&
+           x >= polyfill_pt_x[polyfill_num_pts - 1] - SNAP_SIZE &&
+           x <= polyfill_pt_x[polyfill_num_pts - 1] + SNAP_SIZE &&
+           y >= polyfill_pt_y[polyfill_num_pts - 1] - SNAP_SIZE && y <= polyfill_pt_y[polyfill_num_pts - 1] + SNAP_SIZE)
+  {
     /* If moving the initial (green) point, and it's
        near the final (red) point, also play an electrostatic sound */
     api->playsound(snd_effects[SND_NEARBY], (x * 255) / canvas->w, 255);
-  } else {
+  }
+  else
+  {
     /* Otherwise, play the normal "moving a point" sound */
     api->playsound(snd_effects[SND_MOVE], (x * 255) / canvas->w, 255);
   }
@@ -443,9 +446,9 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
 
     /* Update snapshot ahead of next polygon */
     SDL_BlitSurface(canvas, NULL, polyfill_snapshot, NULL);
- 
-    /* Play "finish" sound effect */ 
-    api->playsound(snd_effects[SND_FINISH], 128 /* TODO could be clever and determine midpoint of polygon */, 255);
+
+    /* Play "finish" sound effect */
+    api->playsound(snd_effects[SND_FINISH], 128 /* TODO could be clever and determine midpoint of polygon */ , 255);
 
 #ifdef DEBUG
     printf("Retract the undo we just took (ahead of finishing polygon)!\n");
@@ -491,7 +494,7 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
         }
         polyfill_num_pts--;
 
-        /* Play "remove" sound effect */ 
+        /* Play "remove" sound effect */
         api->playsound(snd_effects[SND_REMOVE], (x * 255) / canvas->w, 255);
       }
     }
