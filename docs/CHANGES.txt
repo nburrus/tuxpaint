@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.May.30 (0.9.33)
+2024.June.1 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -41,6 +41,12 @@ https://tuxpaint.org/
       be available; it will use Red/Cyan, as before.)
       + Idea from O'Hare The Rabbit
       + Coding by Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Ability for Magic tools to retract an undo buffer snapshot
+      (`api->retract_undo()`).
+      + Used by new Filled Polygon magic tool.
+      + Note: `TP_MAGIC_API_VERSION` bumped to 0x0000000A.
+      + Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Eraser tool:
     ----------------------------

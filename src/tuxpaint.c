@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 25, 2024
+  June 14, 2002 - June 1, 2024
 */
 
 #include "platform.h"
@@ -1573,6 +1573,7 @@ typedef struct magic_funcs_s
   void (*release)(magic_api *, int, SDL_Surface *, SDL_Surface *, int, int, SDL_Rect *);
   void (*switchin)(magic_api *, int, int, SDL_Surface *, SDL_Surface *);
   void (*switchout)(magic_api *, int, int, SDL_Surface *, SDL_Surface *);
+  void (*retract_undo)(void);
 } magic_funcs_t;
 
 
@@ -2304,6 +2305,7 @@ static SDL_Surface *magic_scale(SDL_Surface * surf, int w, int h, int aspect);
 static SDL_Surface *magic_rotate_scale(SDL_Surface * surf, int r, int w);
 static void reset_touched(void);
 static Uint8 magic_touched(int x, int y);
+static void magic_retract_undo(void);
 
 static void magic_switchin(SDL_Surface * last);
 static void magic_switchout(SDL_Surface * last);
@@ -5442,18 +5444,7 @@ static void mainloop(void)
 
                 /* Start doing magic! */
 
-                /* These switchout/in are here for Magic tools that abuse the canvas
-                   by drawing widgets on them; you don't want the widgets recorded as part
-                   of the canvas in the undo buffer!
-                   HOWEVER, as Pere noted in 2010.March, this causes many 'normal' Magic
-                   tools to not work right, because they lose their record of the 'original'
-                   canvas, before the user started using the tool (e.g., Rails, Perspective, Zoom).
-                   FIXME: Some in-between solution is needed (a 'clean up the canvas'/'dirty the canvas'
-                   pair of functions for the widgety abusers?) -bjk 2010.03.22 */
-
-                /* magic_switchout(canvas); *//* <-- FIXME: I dislike this -bjk 2009.10.13 */
                 rec_undo_buffer();
-                /* magic_switchin(canvas); *//* <-- FIXME: I dislike this -bjk 2009.10.13 */
 
                 if (cur_undo > 0)
                   undo_ctr = cur_undo - 1;
@@ -21600,7 +21591,7 @@ static void load_magic_plugins(void)
       magic_api_struct->scale = magic_scale;
       magic_api_struct->rotate_scale = magic_rotate_scale;
       magic_api_struct->touched = magic_touched;
-
+      magic_api_struct->retract_undo = magic_retract_undo;
 
       do
       {
@@ -23774,6 +23765,19 @@ static Uint8 magic_touched(int x, int y)
 
   return (res);
 }
+
+/**
+ * Removes the latest undo recorded
+ */
+void magic_retract_undo(void) {
+  if (cur_undo > 0)
+    cur_undo--;
+  else
+    cur_undo = NUM_UNDO_BUFS - 1;
+
+  newest_undo = cur_undo;
+}
+
 
 /**
  * Allow the user to select a color from one of the

@@ -7,7 +7,7 @@
    Scanline polygon fill routine based on public-domain code
    by Darel Rex Finley, 2007 <https://alienryderflex.com/polygon_fill/>
 
-   Last updated: May 30, 2024
+   Last updated: June 1, 2024
 */
 
 
@@ -18,6 +18,9 @@
 #include "tp_magic_api.h"
 #include "SDL_image.h"
 #include "SDL_mixer.h"
+
+// #define DEBUG
+
 
 enum
 {
@@ -222,7 +225,7 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
   polyfill_dragged = 0;
 
 #ifdef DEBUG
-  printf("Click.  num_pts = %d\n", polyfill_num_pts);
+  printf("\nClick.  num_pts = %d\n", polyfill_num_pts);
 #endif
 
   /* See if we're clicking a pre-existing point, to edit it? */
@@ -242,6 +245,7 @@ polyfill_click(magic_api * api, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_U
 #endif
 
     polyfill_draw_preview(api, canvas, 1);
+
     return;
   }
 
@@ -407,7 +411,7 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   }
 
   /* Moved (or placed) the final spot at the beginning? */
-  if (polyfill_num_pts > 2 &&
+  if (polyfill_num_pts > 3 &&
       ((polyfill_editing == polyfill_num_pts - 1 &&
         abs(x - polyfill_pt_x[0]) <= SNAP_SIZE &&
         abs(y - polyfill_pt_y[0]) <= SNAP_SIZE) ||
@@ -442,6 +446,12 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
  
     /* Play "finish" sound effect */ 
     api->playsound(snd_effects[SND_FINISH], 128 /* TODO could be clever and determine midpoint of polygon */, 255);
+
+#ifdef DEBUG
+    printf("Retract the undo we just took (ahead of finishing polygon)!\n");
+#endif
+    api->retract_undo();
+    SDL_BlitSurface(canvas, NULL, snapshot, NULL);
   }
   else
   {
@@ -493,6 +503,16 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
+
+  /* Unless we just started a new polygon, don't let
+     Tux Paint take more undo snapshots */
+  if (polyfill_num_pts > 1)
+  {
+#ifdef DEBUG
+    printf("Retract the undo we just took!\n");
+#endif
+    api->retract_undo();
+  }
 }
 
 void polyfill_set_color(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
@@ -555,6 +575,14 @@ void polyfill_switchin(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 void polyfill_switchout(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
                         SDL_Surface * canvas)
 {
+  if (polyfill_num_pts > 0)
+  {
+#ifdef DEBUG
+    printf("Retract the undo we just took (on our way out)!\n");
+#endif
+    api->retract_undo();
+  }
+
   polyfill_num_pts = 0;
   polyfill_editing = MAX_PTS;
   polyfill_active = 0;
