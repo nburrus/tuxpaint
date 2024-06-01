@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 23:51-0700\n"
-"PO-Revision-Date: 2024-06-01 14:14+0900\n"
+"PO-Revision-Date: 2024-06-01 14:18+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -384,7 +384,7 @@ msgstr "いくつかのブラシについて、特徴の説明を表示するよ
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Filled Polygon."
-msgstr "「まほう」ツールの追加: 「ディザ」「みなも」「たかっけい」"
+msgstr "「まほう」ツールの追加: 「ディザ」「たかっけい」"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
