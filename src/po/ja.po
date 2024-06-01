@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 23:51-0700\n"
-"PO-Revision-Date: 2024-05-31 15:08+0900\n"
+"PO-Revision-Date: 2024-06-01 14:14+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -383,8 +383,6 @@ msgid "Brushes support descriptions."
 msgstr "いくつかのブラシについて、特徴の説明を表示するようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-#, fuzzy
-#| msgid "New Magic tools: Dither, Specular, Filled Polygon."
 msgid "New Magic tools: Dither, Filled Polygon."
 msgstr "「まほう」ツールの追加: 「ディザ」「みなも」「たかっけい」"
 
@@ -2622,18 +2620,14 @@ msgid "Filled Polygon"
 msgstr "たかっけい"
 
 #: ../../magic/src/polyfill.c:34
-#, fuzzy
-#| msgid ""
-#| "Click multiple times in your picture to create a filled polygon. You may "
-#| "drag control points to alter the shape. Click the first point to complete "
-#| "the shape."
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag points to alter the shape. Drag adjacent points together to merge them. "
 "Connect the first and last points to complete the shape."
 msgstr ""
-"じゅんばんに くりっくして たかっけいを かこう。とちゅうの てんは マウスで う"
-"ごかせます。さいしょの てんを くりっくすると かたちが きまります。"
+"じゅんばんに くりっくして たかっけいを かこう。とちゅうの てんを マウスで う"
+"ごかして かたちを かえたり ２つの てんを くっつけたり できます。さいしょの て"
+"んを くりっくすると かたちが きまります。"
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
