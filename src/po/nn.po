@@ -1,19 +1,19 @@
 # Translation of Tux Paint to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2014, 2015, 2017, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2014, 2015, 2017, 2020, 2021, 2022, 2023, 2024 Karl Ove Hufthammer <karl@huftis.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 23:51-0700\n"
-"PO-Revision-Date: 2023-06-29 21:03+0200\n"
+"PO-Revision-Date: 2024-06-01 12:38+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Response to Black (0, 0, 0) color selected
@@ -234,7 +234,7 @@ msgstr ""
 "gjennomsiktig) som følgjer forma."
 
 #: ../fill_tools.h:75
-#, fuzzy, c-format
+#, c-format
 #| msgid ""
 #| "Click and drag to fill an area with a linear gradient (from the chosen "
 #| "color to transparent)."
@@ -243,7 +243,7 @@ msgid ""
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
 msgstr ""
 "Trykk for å fylla området med ein lineær fargeovergang (frå den valde fargen "
-"til gjennomsiktig)."
+"til gjennomsiktig). (Overgangen har no vinkel på %.0f gradar.)"
 
 #. Congratulations #1
 #: ../great.h:37
@@ -359,7 +359,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:25
 msgid "Bill Kendrick, et al."
-msgstr ""
+msgstr "Bill Kendrick m.fl."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:38
 msgid "Tux Paint comes with numerous pre-drawn coloring-book style images"
@@ -376,65 +376,74 @@ msgstr "Stempelverktøyet fungerer som gummi­stempel eller klistremerke."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Transparent Erasers."
-msgstr ""
+msgstr "Gjennomsiktige viskelêr."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Brushes support descriptions."
-msgstr ""
+msgstr "Penslar har no tekstskildringar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Filled Polygon."
-msgstr ""
+msgstr "Nye magiske verktøy: mønsterspreiing, fylte mangekantar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
 msgstr ""
+"Oppdaterte magiske verktøy: 3D-briller (støttar no ulike anaglyf­fargar)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
-msgstr ""
+msgstr "Magiske verktøy kan no avgrupperast («ungroupmagictools»)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "Localization updates."
-msgstr ""
+msgstr "Oppdaterte omsetjingar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
 msgstr ""
+"Nye magiske verktøy: 1-, 2- og 3-punkts perspektiv­teikning for linjer (med"
+" tilhøyrande verktøy for å justera forsvinnings­punkt)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
+"Nye magiske verktøy: isometrisk, dimetrisk, trimetrisk og skeiv projeksjon"
+" for linjeteikning (med tilhøyrande verktøy for å justera vinklar)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
-msgstr ""
+msgstr "Nye magiske verktøy: epitrokoide- og hypotrokoide-generatorar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
 msgstr ""
+"Nytt oppsettval «complexity», som påverkar korleis nokre magiske verktøy"
+" verkar (eller om dei vert synlege)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
-msgstr ""
+msgstr "Ny sortering av magiske verktøy (var før sorterte alfabetisk)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
+"Skriftnamn og -storleik vert no vist når du vel ei skrift i tekst- og"
+" merkelapp-verktøya."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Bug-fixes and localization updates."
-msgstr ""
+msgstr "Feilrettingar og oppdaterte omsetjingar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
@@ -505,7 +514,7 @@ msgid ""
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
 "Femten nye magiske verktøy er lagde til: labyrint, stireauge, pels, sirklar, "
-"strålar, 3D-brillar, skil fargar, gråare, meir fargerik, fjern farge, behald "
+"strålar, 3D-briller, skil fargar, gråare, meir fargerik, fjern farge, behald "
 "farge, kaleido-4, kaleido-6, kaleido-8 og glød."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
@@ -523,7 +532,6 @@ msgstr ""
 "følgjer former."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
-#, fuzzy
 #| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr "Mellombels viskelêrmodus er no tilgjengeleg via tastaturet."
@@ -1304,7 +1312,7 @@ msgstr ""
 
 #. Text tool instructions after changing font
 #: ../tools.h:203
-#, fuzzy, c-format
+#, c-format
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Press [Enter] or [Tab] to complete the text."
@@ -1312,12 +1320,13 @@ msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Vel tekststil. Trykk så på teikninga og skriv i veg. Trykk «Enter» "
+"Skrifta er «%1$s (%2$s)», %3$d pikslar høg. Trykk på teikninga og skriv i"
+" veg. Trykk «Enter» "
 "eller «Tab» for å festa teksten til teikninga."
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
-#, fuzzy, c-format
+#, c-format
 #| msgid ""
 #| "Choose a style of text. Click on your drawing and you can start typing. "
 #| "Press [Enter] or [Tab] to complete the text. By using the selector button "
@@ -1329,7 +1338,8 @@ msgid ""
 "selector button and clicking an existing label, you can move it, edit it, "
 "and change its text style."
 msgstr ""
-"Vel tekststil. Trykk så på teikninga og skriv i veg. Trykk «Enter» "
+"Skrifta er «%1$s (%2$s)», %3$d pikslar høg. Trykk på teikninga og skriv i"
+" veg. Trykk «Enter» "
 "eller «Tab» for å festa teksten til teikninga. Du kan bruka objekt­veljaren "
 "og trykkja på ein merkelapp for å flytta eller redigera han, eller endra "
 "tekststilen."
@@ -1853,7 +1863,6 @@ msgid "Double Vision"
 msgstr "Dobbeltsyn"
 
 #: ../../magic/src/colorsep.c:48
-#, fuzzy
 #| msgid ""
 #| "Click and drag left and right to separate your picture's red and cyan, to "
 #| "make anaglyphs you can view with 3D glasses!"
@@ -1863,7 +1872,8 @@ msgid ""
 "different types."
 msgstr ""
 "Hald inne knappen og flytt til venstre og høgre for å skilja raud- og "
-"cyanfargane, for å laga ei 3D-teikning du kan sjå med 3D-briller!"
+"cyanfargane, for å laga ei 3D-teikning du kan sjå med 3D-briller! Bruk"
+" storleiks­knappane for å velja ulike typar."
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -1899,16 +1909,14 @@ msgstr "Hald inne knappen og flytt rundt for å forstyrra teikninga."
 
 #: ../../magic/src/dither.c:33
 msgid "Dither"
-msgstr ""
+msgstr "Mønster­spreiing"
 
 #: ../../magic/src/dither.c:34
-#, fuzzy
 #| msgid "Keep Color"
 msgid "Dither (Keep Color)"
-msgstr "Behald farge"
+msgstr "Mønster­spreiing (behald fargane)"
 
 #: ../../magic/src/dither.c:39
-#, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
@@ -1916,19 +1924,18 @@ msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
 msgstr ""
-"Hald inne knappen og flytt rundt for å få teikninga til å sjå ut som ho vert "
-"vist på TV."
+"Hald inne knappen og flytt rundt for å byte ut delar av teikninga med eit"
+" prikke­mønster i sjølvvald farge."
 
 #: ../../magic/src/dither.c:40
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
-msgstr "Trykk for å dekkja teikninga med regndropar."
+msgstr ""
+"Trykk for å byta ut heile teikninga med eit prikke­mønster i sjølvvald farge."
 
 #: ../../magic/src/dither.c:44
-#, fuzzy
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
 #| "television."
@@ -1936,16 +1943,17 @@ msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
 msgstr ""
-"Hald inne knappen og flytt rundt for å få teikninga til å sjå ut som ho vert "
-"vist på TV."
+"Hald inne knappen og flytt rundt for å byte ut delar av teikninga med eit"
+" prikke­mønster i fargane som er alt er i teikninga."
 
 #: ../../magic/src/dither.c:46
-#, fuzzy
 #| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
-msgstr "Trykk for å dekkja teikninga med regndropar."
+msgstr ""
+"Trykk for å byta ut heile teikninga med eit prikke­mønster i fargane som alt"
+" er i teikninga."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2400,70 +2408,69 @@ msgstr "Trykk for å leggja støy på heile teikninga."
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:196
 msgid "1-Point Select"
-msgstr ""
+msgstr "1-punkts – juster"
 
 #: ../../magic/src/n_pt_persp.c:197
 msgid "1-Point Draw"
-msgstr ""
+msgstr "1-punkts – teikn"
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:200
 msgid "2-Point Select"
-msgstr ""
+msgstr "2-punkts – juster"
 
 #: ../../magic/src/n_pt_persp.c:201
 msgid "2-Point Draw"
-msgstr ""
+msgstr "2-punkts – teikn"
 
 #. 3-point perspective
 #: ../../magic/src/n_pt_persp.c:204
 msgid "3-Point Select"
-msgstr ""
+msgstr "3-punkts – juster"
 
 #: ../../magic/src/n_pt_persp.c:205
 msgid "3-Point Draw"
-msgstr ""
+msgstr "2-punkts – teikn"
 
 #: ../../magic/src/n_pt_persp.c:207
 msgid "3-Point Draw Down"
-msgstr ""
+msgstr "3-punkts – teikn ned"
 
 #: ../../magic/src/n_pt_persp.c:211
 msgid "Isometric Lines"
-msgstr ""
+msgstr "Isometriske linjer"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:214
 msgid "Dimetric Select"
-msgstr ""
+msgstr "Dimetrisk – juster"
 
 #: ../../magic/src/n_pt_persp.c:215
-#, fuzzy
 #| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
-msgstr "Symmetrisk opp/ned"
+msgstr "Dimetrisk – teikn"
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:218
 msgid "Trimetric Select"
-msgstr ""
+msgstr "Trimetrisk – juster"
 
 #: ../../magic/src/n_pt_persp.c:219
 msgid "Trimetric Draw"
-msgstr ""
+msgstr "Trimetrisk – teikn"
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:222
 msgid "Oblique Select"
-msgstr ""
+msgstr "Skeiv – juster"
 
 #: ../../magic/src/n_pt_persp.c:223
 msgid "Oblique Draw"
-msgstr ""
+msgstr "Skeiv – teikn"
 
 #: ../../magic/src/n_pt_persp.c:225
 msgid "Oblique Draw Left"
-msgstr ""
+msgstr "Skeiv – teikn venstre"
 
 #. 1-point perspective
 #: ../../magic/src/n_pt_persp.c:231
@@ -2471,13 +2478,16 @@ msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
 msgstr ""
+"Trykk på teikninga for å velja forvinnings­punkt for 1-punkts"
+" perspektivteikning."
 
 #: ../../magic/src/n_pt_persp.c:232
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
-msgstr "Hald inne knappen og flytt rundt for å teikna mønster."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
+" 1-punkts forvinningspunkt."
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:235
@@ -2485,40 +2495,48 @@ msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
 msgstr ""
+"Trykk to stadar på teikninga for å velja forvinnings­punkt for 2-punkts"
+" perspektivteikning."
 
 #: ../../magic/src/n_pt_persp.c:236
-#, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
-msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
+" 2-punkts forvinningspunkt."
 
 #: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
+"Trykk tre stadar på teikninga for å velja forvinnings­punkt for 3-punkts"
+" perspektivteikning."
 
 #: ../../magic/src/n_pt_persp.c:241
-#, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
-msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
+" 3-punkts forvinningspunkt."
 
 #: ../../magic/src/n_pt_persp.c:243
-#, fuzzy
 #| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
-msgstr "Hald inne knappen og flytt rundt for å flytta på teikninga."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
+" 3-punkts forvinningspunkt (nedover-perspektiv)."
 
 #: ../../magic/src/n_pt_persp.c:247
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
-msgstr "Hald inne knappen og flytt rundt for å teikna mønster."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer med isometrisk"
+" projeksjon."
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:250
@@ -2526,12 +2544,14 @@ msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
+"Trykk på teikninga for å justera vinkelen brukt til teikning med dimetrisk"
+" projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:251
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
-msgstr "Hald inne knappen og flytt rundt for å teikna mønster."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer med dimetrisk projeksjon."
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:254
@@ -2539,12 +2559,15 @@ msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
+"Trykk på teikninga for å justera vinklane brukte til teikning med trimetrisk"
+" projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:255
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
-msgstr "Hald inne knappen og flytt rundt for å teikna mønster."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer med trimetrisk"
+" projeksjon."
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:258
@@ -2552,18 +2575,21 @@ msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
+"Trykk på teikninga for å justera vinkelen brukt til teikning med skeiv"
+" projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:259
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
-msgstr "Hald inne knappen og flytt rundt for å teikna mønster."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer med skeiv projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:261
-#, fuzzy
 #| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
-msgstr "Hald inne knappen og flytt rundt for å teikna mønster."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna linjer med dimetrisk projeksjon"
+" (mot høgre)."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
@@ -2623,7 +2649,7 @@ msgstr "Hald inne knappen og flytt rundt for å teikna store pikslar."
 
 #: ../../magic/src/polyfill.c:29
 msgid "Filled Polygon"
-msgstr ""
+msgstr "Fylt mangekant"
 
 #: ../../magic/src/polyfill.c:34
 msgid ""
@@ -2631,6 +2657,9 @@ msgid ""
 "drag points to alter the shape. Drag adjacent points together to merge them. "
 "Connect the first and last points to complete the shape."
 msgstr ""
+"Trykk fleire gongar på teikninga for å laga ein fylt mangekant. Du kan flytta"
+" på punkta for å endra forma. Flytt nabopunkt oppå kvarandre for å slå dei"
+" saman. Kopla saman det første og siste punktet for å fullføra mangekanten."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2662,7 +2691,7 @@ msgstr "Jamn regnboge"
 
 #: ../../magic/src/rainbow.c:164
 msgid "Rainbow Cycle"
-msgstr "Regnbogesyklus"
+msgstr "Regnboge­syklus"
 
 #: ../../magic/src/rainbow.c:183
 msgid "You can draw in rainbow colors!"
@@ -2708,7 +2737,7 @@ msgstr ""
 
 #: ../../magic/src/ribbon.c:118
 msgid "Ribbon"
-msgstr "Sløyfeband"
+msgstr "Sløyfe­band"
 
 #: ../../magic/src/ribbon.c:136
 msgid "Add a flowing ribbon to your picture."
@@ -2790,7 +2819,7 @@ msgstr "Utglatta"
 
 #: ../../magic/src/smooth.c:64
 msgid "Squiggles"
-msgstr "Krusedullar"
+msgstr "Kruse­dullar"
 
 #: ../../magic/src/smooth.c:65
 msgid "Loops"
@@ -2971,35 +3000,35 @@ msgstr "Hald inne knappen og flytt rundt for å teikna ein tornado."
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
-msgstr ""
+msgstr "Epitrokoide"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
-msgstr ""
+msgstr "Epitrokoide – inni"
 
 #: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Edge"
-msgstr ""
+msgstr "Epitrokoide – kant"
 
 #: ../../magic/src/trochoids.c:113
 msgid "Epitrochoid Outside"
-msgstr ""
+msgstr "Epitrokoide – utanfor"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
-msgstr ""
+msgstr "Hypotrokoide"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
-msgstr ""
+msgstr "Hypotrokoide – inni"
 
 #: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Edge"
-msgstr ""
+msgstr "Hypotrokoide – kant"
 
 #: ../../magic/src/trochoids.c:117
 msgid "Hypotrochoid Outside"
-msgstr ""
+msgstr "Hypotrokoide – utanfor"
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
@@ -3007,6 +3036,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
 msgstr ""
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar utanpå. Bruk storleiks­knappane for å endra plasseringa av pennen."
 
 #: ../../magic/src/trochoids.c:126
 msgid ""
@@ -3014,6 +3046,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
 msgstr ""
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar utanpå. Pennen er inni sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
@@ -3021,6 +3056,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar utanpå. Pennen er på kanten av sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:130
 msgid ""
@@ -3028,6 +3066,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar utanpå. Pennen er utanfor sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:133
 msgid ""
@@ -3035,6 +3076,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar inni. Bruk storleiks­knappane for å endra plasseringa av pennen."
 
 #: ../../magic/src/trochoids.c:135
 msgid ""
@@ -3042,6 +3086,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar inni. Pennen er inni sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:137
 msgid ""
@@ -3049,6 +3096,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar inni. Pennen er på kanten av sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:139
 msgid ""
@@ -3056,6 +3106,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
 msgstr ""
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
+" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
+" som rullar inni. Pennen er utanfor sirkelen som rullar."
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
@@ -3110,16 +3163,17 @@ msgid "Xor Colors"
 msgstr "XELLER-fargar"
 
 #: ../../magic/src/xor.c:116
-#, fuzzy
 #| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
-msgstr "Hald inne knappen og flytt rundt for å teikna med ein XELLER-effekt."
+msgstr ""
+"Hald inne knappen og flytt rundt for å teikna med ein «eksklusiv"
+" eller»-effekt («XELLER»)."
 
 #: ../../magic/src/xor.c:118
-#, fuzzy
 #| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
-msgstr "Trykk for å leggja ein XELLER-effekt på heile teikninga."
+msgstr ""
+"Trykk for å leggja ein «eksklusiv eller»-effekt («XELLER») på heile teikninga."
 
 # «Spegelbilete» er oppteken av «spegel»-effekten, som fungerer litt annleis. Kallar derfor dette «refleksjon».
 #, fuzzy
@@ -3286,3 +3340,4 @@ msgstr "Trykk for å leggja ein XELLER-effekt på heile teikninga."
 
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
+
