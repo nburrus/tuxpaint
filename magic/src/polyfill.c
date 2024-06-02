@@ -64,8 +64,8 @@ char *polyfill_snd_filenames[NUM_SOUNDS] = {
 #define MAX_PTS 100
 
 SDL_Surface *polyfill_snapshot = NULL;
-int polyfill_pt_x[MAX_PTS];
-int polyfill_pt_y[MAX_PTS];
+int polyfill_pt_x[MAX_PTS + 1];
+int polyfill_pt_y[MAX_PTS + 1];
 int polyfill_num_pts = 0;
 int polyfill_editing = MAX_PTS;
 int polyfill_dragged = 0;
@@ -401,7 +401,7 @@ polyfill_release(magic_api * api, int which ATTRIBUTE_UNUSED,
   /* If they simply clicked the first point (without
      drawing to move it), and there are enough points, consider
      it a final placement of a new point! */
-  if (polyfill_editing == 0 && polyfill_dragged == 0 && polyfill_num_pts > 2 && polyfill_num_pts < MAX_PTS)
+  if (polyfill_editing == 0 && polyfill_dragged == 0 && polyfill_num_pts > 2 && polyfill_num_pts <= MAX_PTS)
   {
 #ifdef DEBUG
     printf("Clicked first point to end polygon!\n");
