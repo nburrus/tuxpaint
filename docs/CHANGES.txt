@@ -133,6 +133,13 @@ https://tuxpaint.org/
       Advanced Stamps Howto, as well.
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Correct places where we still said `--fullscreen`
+      (stand-alone, with no "yes", "no", or "native" argument)
+      was allowed.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/289/
+      (h/t Karl Ove Hufthammer for reporting)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Bulgarian translation
