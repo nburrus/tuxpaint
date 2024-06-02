@@ -81,6 +81,12 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/229/
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Button labels word-wrap on hyphens/dashes ("-") now too.
+      TODO And on soft-hyphens.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/288/
+      (h/t Karl Ove Hufthammer for suggesting)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Make screen refresh more snappy on macOS.
       Mark Kim <markuskimius@gmail.com>
 
