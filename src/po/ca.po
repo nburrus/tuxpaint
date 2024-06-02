@@ -2,7 +2,7 @@
 # Traducció al català del Tuxpaint.
 # Copyright (C) 2002-2009
 # This file is distributed under the same license as the Tuxpaint package.
-# Pere Pujal i Carabantes <pere@fornol.no-ip.org>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2015, 2020, 2021, 2022.
+# Pere Pujal i Carabantes <perepujal@gmail.com>, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2015, 2020, 2021, 2022, 2023, 2024.
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017-2018.
 # Aquest fitxer és distribueix amb la mateixa llicència que el Tuxpaint.
 #
@@ -13,12 +13,16 @@
 # Aixó impicava que quan el programa s'adreça a l'usuari, l'havia de tractar de vos.
 # Ara (2008) ja és opcional el tracte de tu pels programes adreçats als nens.
 #
+# 2024, Tux Paint pot separar paraules per espai, guionet o «guionet tou o guionet condicional»(soft hyphen, U+002D).
+# Vegeu https://sourceforge.net/p/tuxpaint/bugs/288/ i https://en.wikipedia.org/wiki/Soft_hyphen
+# S'ha afegit uns quants d'aquest guionets condicionals en les paraules més llargues que els costava encabir-se en els botons.
+# Segons la relació entre la mida del text i la del botó, la paraula es mostrarà sencera sense guió o hi haurà un salt de línia en la paraula i s'hi afegirà un guionet visible.
 msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-01 21:40-0700\n"
-"PO-Revision-Date: 2024-05-31 22:30+0200\n"
+"PO-Revision-Date: 2024-06-02 22:50+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -1537,7 +1541,7 @@ msgstr "Esborra"
 #. Open dialog: 'Slides' button, to switch to slide show mode
 #: ../tuxpaint.c:9835
 msgid "Slides"
-msgstr "Diapositives"
+msgstr "Diapo­sitives"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
 #: ../tuxpaint.c:9838
@@ -1557,7 +1561,7 @@ msgstr "Endarrere"
 #. Slideshow: 'Play' button, to begin a slideshow sequence
 #: ../tuxpaint.c:9847
 msgid "Play"
-msgstr "Reprodueix"
+msgstr "Repro­dueix"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
 #: ../tuxpaint.c:9850
@@ -1840,7 +1844,7 @@ msgstr "Feu clic i arrossegueu per dibuixar rajoles."
 
 #: ../../magic/src/calligraphy.c:132
 msgid "Calligraphy"
-msgstr "Cal·ligrafia"
+msgstr "Cal·li­grafia"
 
 #: ../../magic/src/calligraphy.c:151
 msgid "Click and drag the mouse around to draw in calligraphy."
@@ -1990,7 +1994,7 @@ msgstr "Aclareix"
 
 #: ../../magic/src/fade_darken.c:48
 msgid "Darken"
-msgstr "Enfosqueix"
+msgstr "Enfos­queix"
 
 #: ../../magic/src/fade_darken.c:49
 msgid "Desaturate"
@@ -2183,15 +2187,15 @@ msgstr "Feu clic per transformar el dibuix com si fos un diari."
 
 #: ../../magic/src/kaleidox.c:40
 msgid "Kaleido-4"
-msgstr "Calidoscopi-4"
+msgstr "Cali­doscopi-4"
 
 #: ../../magic/src/kaleidox.c:41
 msgid "Kaleido-6"
-msgstr "Calidoscopi-6"
+msgstr "Cali­doscopi-6"
 
 #: ../../magic/src/kaleidox.c:42
 msgid "Kaleido-8"
-msgstr "Calidoscopi-8"
+msgstr "Cali­doscopi-8"
 
 #: ../../magic/src/kaleidox.c:46 ../../magic/src/kaleidox.c:47
 #: ../../magic/src/kaleidox.c:48
@@ -2220,7 +2224,7 @@ msgstr "Motius"
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
-msgstr "Calidoscopi"
+msgstr "Cali­doscopi"
 
 #: ../../magic/src/kalidescope.c:168
 msgid ""
@@ -2447,7 +2451,7 @@ msgstr "Vista d'ocell"
 
 #: ../../magic/src/n_pt_persp.c:211
 msgid "Isometric Lines"
-msgstr "Línies isomètriques"
+msgstr "Línies iso­mètriques"
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:214
@@ -2576,7 +2580,7 @@ msgstr "Feu clic i arrossegueu per dibuixar línies en perspectiva cavallera."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
-msgstr "Perspectiva"
+msgstr "Perspec­tiva"
 
 #: ../../magic/src/perspective.c:175
 msgid "Panels"
@@ -2727,7 +2731,7 @@ msgstr "Feu clic per afegir una cinta al dibuix."
 
 #: ../../magic/src/ripples.c:108
 msgid "Ripples"
-msgstr "Ondulacions"
+msgstr "Ondu­lacions"
 
 #: ../../magic/src/ripples.c:126
 msgid "Click to make ripples appear over your picture."
@@ -2987,7 +2991,7 @@ msgstr "Feu clic i arrossegueu per dibuixar un tornado."
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
-msgstr "Epitrocoide"
+msgstr "Epi­trocoide"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
@@ -3003,7 +3007,7 @@ msgstr "Epitrocoide Exterior"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
-msgstr "Hipotrocoide"
+msgstr "Hipo­trocoide"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
