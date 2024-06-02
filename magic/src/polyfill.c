@@ -61,7 +61,7 @@ char *polyfill_snd_filenames[NUM_SOUNDS] = {
 
 #define SNAP_SIZE 16
 
-#define MAX_PTS 17
+#define MAX_PTS 100
 
 SDL_Surface *polyfill_snapshot = NULL;
 int polyfill_pt_x[MAX_PTS];
