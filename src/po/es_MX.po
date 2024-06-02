@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-30 23:51-0700\n"
+"POT-Creation-Date: 2024-06-01 21:40-0700\n"
 "PO-Revision-Date: 2007-08-05 19:22-0400\n"
 "Last-Translator: Ignacio Tike <itike17@yahoo.com>\n"
 "Language-Team: Español <ggabriel@internet.com.uy>\n"
@@ -398,134 +398,138 @@ msgstr ""
 msgid "Localization updates."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
+msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid "Bug-fixes and localization updates."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
 msgid ""
 "Turn saved drawings into Templates (found in the New dialog) from within Tux "
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
 "the New dialog.)"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "\"Erase\" option to remove saved drawings from the Open dialog and exported "
 "templates from the New dialog may be disabled, via \"noerase\" configuration "
 "option."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "Different (default) user interface fonts are once again used for under "
 "different locales."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:84
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid "Many Magic tools now offer size settings."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid "Button labels word-wrap when possible (improves legibility)."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
 "Color, Kaleido-4, Kaleido-6, Kaleido-8, and Bloom."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:99
 msgid "A quick start guide has been added."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:104
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -533,7 +537,7 @@ msgid ""
 "mixing paints."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:104
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -541,21 +545,21 @@ msgid ""
 "colors."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
 "drawing."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
 "have been given better default spacing values, as well."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -563,7 +567,7 @@ msgid ""
 "background color. The Rush tool blurs the results."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -572,7 +576,7 @@ msgid ""
 "has also been expanded."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:110
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -580,7 +584,7 @@ msgid ""
 "The look and feel of the user documentation has been improved."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:114
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:115
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -589,7 +593,7 @@ msgid ""
 "painting mode for interactively coloring within a confined area."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:115
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -600,7 +604,7 @@ msgid ""
 "of Tux Paint's classic Rainbow tool."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:117
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -609,7 +613,7 @@ msgid ""
 "Chalk, and Emboss, now offer the ability to alter the entire image at once!"
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:117
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:118
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -617,7 +621,7 @@ msgid ""
 "need."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:122
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:123
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -625,7 +629,7 @@ msgid ""
 "of gradients at different angles and sizes."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:123
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:124
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -633,14 +637,14 @@ msgid ""
 "picture via brush strokes."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:124
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:125
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
 "contact the Tux Paint team."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:125
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:126
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -650,34 +654,34 @@ msgid ""
 "systems."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:130
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:131
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
 "making it easier to use in any situation."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:131
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:132
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:132
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:133
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:133
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:134
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
 "with others."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:138
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:139
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -687,21 +691,21 @@ msgid ""
 "images."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:139
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:140
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
 "speaker is available."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:144
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:145
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
 "pointed star shapes."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:145
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:146
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
@@ -978,7 +982,7 @@ msgstr "Nuevo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9733
+#: ../tools.h:97 ../tuxpaint.c:9829
 msgid "Open"
 msgstr "Abrir"
 
@@ -1220,262 +1224,262 @@ msgstr ""
 "Elige un estilo de texto. Haz clic en tu dibujo y podrás empezar a escribir."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2466
+#: ../tuxpaint.c:2468
 msgid "Do you really want to quit?"
 msgstr "¿Realmente quieres salir?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2469
+#: ../tuxpaint.c:2471
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "¡Sí, he terminado!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2499
+#: ../tuxpaint.c:2474 ../tuxpaint.c:2501
 msgid "No, take me back!"
 msgstr "¡No, llévame a la pantalla anterior!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2478
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr ""
 "¡Si sales perderás tu pintura!!\n"
 "¿Quieres guardarla?"
 
-#: ../tuxpaint.c:2477 ../tuxpaint.c:2482
+#: ../tuxpaint.c:2479 ../tuxpaint.c:2484
 msgid "Yes, save it!"
 msgstr "¡Sí, guárdalo!"
 
-#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
+#: ../tuxpaint.c:2480 ../tuxpaint.c:2485
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "¡No, no lo guardes!."
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2483
 msgid "Save your picture first?"
 msgstr "¿Guardar tu imagen primero?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2486
+#: ../tuxpaint.c:2488
 msgid "Can’t open that picture!"
 msgstr "¡No se puede abrir esa imagen!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2489 ../tuxpaint.c:2494 ../tuxpaint.c:2503 ../tuxpaint.c:2510
-#: ../tuxpaint.c:2521 ../tuxpaint.c:2526 ../tuxpaint.c:2534
+#: ../tuxpaint.c:2491 ../tuxpaint.c:2496 ../tuxpaint.c:2505 ../tuxpaint.c:2512
+#: ../tuxpaint.c:2523 ../tuxpaint.c:2528 ../tuxpaint.c:2536
 msgid "OK"
 msgstr "Aceptar"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2495
 msgid "There are no saved files!"
 msgstr "¡No hay archivos guardados!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2499
 msgid "Print your picture now?"
 msgstr "¿Imprimir tu imagen ahora?"
 
-#: ../tuxpaint.c:2498
+#: ../tuxpaint.c:2500
 msgid "Yes, print it!"
 msgstr "¡Sí, imprímelo!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2502
+#: ../tuxpaint.c:2504
 msgid "Your picture has been printed!"
 msgstr "¡Tu imagen ha sido impresa!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2506
+#: ../tuxpaint.c:2508
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "¡Tu imagen ha sido impresa!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2511
 msgid "You can’t print yet!"
 msgstr "¡Aún no puedes imprimir!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2514
+#: ../tuxpaint.c:2516
 msgid "Erase this picture?"
 msgstr "¿Borrar esta imagen?"
 
-#: ../tuxpaint.c:2515
+#: ../tuxpaint.c:2517
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "¿Borrar esta imagen?"
 
-#: ../tuxpaint.c:2516
+#: ../tuxpaint.c:2518
 msgid "Yes, erase it!"
 msgstr "¡Sí, bórralo!"
 
-#: ../tuxpaint.c:2517
+#: ../tuxpaint.c:2519
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "¡No, no lo borres!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2522
 msgid "Remember to use the left mouse button!"
 msgstr "¡Recuerda usar el botón izquierdo del ratón!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2526
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported!"
 msgstr "¡Tu imagen ha sido impresa!"
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2527
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported!"
 msgstr "¡Tu imagen ha sido impresa!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2529
+#: ../tuxpaint.c:2531
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "¡Tu imagen ha sido impresa!"
 
-#: ../tuxpaint.c:2530
+#: ../tuxpaint.c:2532
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "¡Tu imagen ha sido impresa!"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2535
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2537
+#: ../tuxpaint.c:2539
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2538
+#: ../tuxpaint.c:2540
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "¡Tu imagen ha sido impresa!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2541
+#: ../tuxpaint.c:2543
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Elige la imagen que quieras, luego haz clic en \"Reproducir\"."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2850
+#: ../tuxpaint.c:2852
 msgid "Sound muted."
 msgstr "Sonido deshabilitado."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2855
+#: ../tuxpaint.c:2857
 msgid "Sound unmuted."
 msgstr "Sonido habilitado."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3704
+#: ../tuxpaint.c:3706
 msgid "Please wait…"
 msgstr "Espera, por favor..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9736
+#: ../tuxpaint.c:9832
 msgid "Erase"
 msgstr "Borrar"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9739
+#: ../tuxpaint.c:9835
 msgid "Slides"
 msgstr "Diapositivas"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9742
+#: ../tuxpaint.c:9838
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9745
+#: ../tuxpaint.c:9841
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9748
+#: ../tuxpaint.c:9844
 msgid "Back"
 msgstr "Atrás"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9751
+#: ../tuxpaint.c:9847
 msgid "Play"
 msgstr "Reproducir"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9754
+#: ../tuxpaint.c:9850
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9757
+#: ../tuxpaint.c:9853
 msgid "Next"
 msgstr "Siguiente"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9760
+#: ../tuxpaint.c:9856
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10695 ../tuxpaint.c:10698 ../tuxpaint.c:10699
+#: ../tuxpaint.c:10791 ../tuxpaint.c:10794 ../tuxpaint.c:10795
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14715
+#: ../tuxpaint.c:14811
 msgid "Yes"
 msgstr "Sí"
 
-#: ../tuxpaint.c:14719
+#: ../tuxpaint.c:14815
 msgid "No"
 msgstr "No"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15995
+#: ../tuxpaint.c:16091
 msgid "Replace the picture with your changes?"
 msgstr "¿Reemplazar la imagen con tus cambios?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15999
+#: ../tuxpaint.c:16095
 msgid "Yes, replace the old one!"
 msgstr "¡Sí, reemplaza la anterior!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16003
+#: ../tuxpaint.c:16099
 msgid "No, save a new file!"
 msgstr "¡No, guardar en un nuevo archivo!"
 
-#: ../tuxpaint.c:17276
+#: ../tuxpaint.c:17372
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17282
+#: ../tuxpaint.c:17378
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1484,71 +1488,71 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18950
+#: ../tuxpaint.c:19046
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25184
+#: ../tuxpaint.c:25294
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25185
+#: ../tuxpaint.c:25295
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "¡Amarillo!"
 
-#: ../tuxpaint.c:25186
+#: ../tuxpaint.c:25296
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "¡Azul Cielo!"
 
-#: ../tuxpaint.c:25187
+#: ../tuxpaint.c:25297
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "¡Blanco!"
 
-#: ../tuxpaint.c:25188
+#: ../tuxpaint.c:25298
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25189
+#: ../tuxpaint.c:25299
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "¡Negro!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25194
+#: ../tuxpaint.c:25304
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25195
+#: ../tuxpaint.c:25305
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25196
+#: ../tuxpaint.c:25306
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25197
+#: ../tuxpaint.c:25307
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25198
+#: ../tuxpaint.c:25308
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25199
+#: ../tuxpaint.c:25309
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1556,22 +1560,22 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25979 ../tuxpaint.c:25984
+#: ../tuxpaint.c:26089 ../tuxpaint.c:26094
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29185
+#: ../tuxpaint.c:29295
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:29196
+#: ../tuxpaint.c:29306
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29210
+#: ../tuxpaint.c:29320
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -2591,11 +2595,11 @@ msgstr ""
 msgid "Click and drag to draw large pixels."
 msgstr "Haz clic y arrastra para dibujar ladrillos grandes."
 
-#: ../../magic/src/polyfill.c:29
+#: ../../magic/src/polyfill.c:32
 msgid "Filled Polygon"
 msgstr ""
 
-#: ../../magic/src/polyfill.c:34
+#: ../../magic/src/polyfill.c:37
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag points to alter the shape. Drag adjacent points together to merge them. "

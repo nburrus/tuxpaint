@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-30 23:51-0700\n"
+"POT-Creation-Date: 2024-06-01 21:40-0700\n"
 "PO-Revision-Date: 2024-06-01 12:38+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -235,9 +235,6 @@ msgstr ""
 
 #: ../fill_tools.h:75
 #, c-format
-#| msgid ""
-#| "Click and drag to fill an area with a linear gradient (from the chosen "
-#| "color to transparent)."
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
@@ -401,59 +398,63 @@ msgstr "Magiske verktøy kan no avgrupperast («ungroupmagictools»)."
 msgid "Localization updates."
 msgstr "Oppdaterte omsetjingar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
+msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
 msgstr ""
-"Nye magiske verktøy: 1-, 2- og 3-punkts perspektiv­teikning for linjer (med"
-" tilhøyrande verktøy for å justera forsvinnings­punkt)."
+"Nye magiske verktøy: 1-, 2- og 3-punkts perspektiv­teikning for linjer (med "
+"tilhøyrande verktøy for å justera forsvinnings­punkt)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
-"Nye magiske verktøy: isometrisk, dimetrisk, trimetrisk og skeiv projeksjon"
-" for linjeteikning (med tilhøyrande verktøy for å justera vinklar)."
+"Nye magiske verktøy: isometrisk, dimetrisk, trimetrisk og skeiv projeksjon "
+"for linjeteikning (med tilhøyrande verktøy for å justera vinklar)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
 msgstr "Nye magiske verktøy: epitrokoide- og hypotrokoide-generatorar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
 msgstr ""
-"Nytt oppsettval «complexity», som påverkar korleis nokre magiske verktøy"
-" verkar (eller om dei vert synlege)."
+"Nytt oppsettval «complexity», som påverkar korleis nokre magiske verktøy "
+"verkar (eller om dei vert synlege)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
 msgstr "Ny sortering av magiske verktøy (var før sorterte alfabetisk)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
-"Skriftnamn og -storleik vert no vist når du vel ei skrift i tekst- og"
-" merkelapp-verktøya."
+"Skriftnamn og -storleik vert no vist når du vel ei skrift i tekst- og "
+"merkelapp-verktøya."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid "Bug-fixes and localization updates."
 msgstr "Feilrettingar og oppdaterte omsetjingar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
 msgstr "Nye magiske verktøy: ringar, sløyfeband, utglatta og krusedullar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
 msgstr "Viskelêrverktøyet har no viskelêr med mjuke kantar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
 msgid ""
 "Turn saved drawings into Templates (found in the New dialog) from within Tux "
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
@@ -463,7 +464,7 @@ msgstr ""
 "Paint (via «Opna»-vindauget). Du kan seinare sletta malane frå «Ny»-"
 "vindauget."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid ""
 "\"Erase\" option to remove saved drawings from the Open dialog and exported "
 "templates from the New dialog may be disabled, via \"noerase\" configuration "
@@ -472,7 +473,7 @@ msgstr ""
 "Knappane for å sletta lagra teikningar frå «Opna»-vindauget og eksporterte "
 "malar frå «Ny»-vindauget kan fjernast med innstillinga «noerase»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
@@ -481,7 +482,7 @@ msgstr ""
 "oversikt over tilgjengelege skrifter med kommandolinje-argumentet «--"
 "listfonts».)"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "Different (default) user interface fonts are once again used for under "
 "different locales."
@@ -489,7 +490,7 @@ msgstr ""
 "Forskjellige skrifter vert igjen (som standard) brukte for forskjellige "
 "språk."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
@@ -497,17 +498,17 @@ msgstr ""
 "Mindre forbetringar i knappane for «spesialfargar» (pipetten, HSV-"
 "fargeveljaren og fargeblandaren)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:84
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
 msgid "Many Magic tools now offer size settings."
 msgstr "Mange magiske verktøy kjem no i ulike storleikar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid "Button labels word-wrap when possible (improves legibility)."
 msgstr ""
 "Tekst på knappar vert no viste over fleire linjer viss mogleg (vert lettare "
 "å lesa)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
@@ -517,26 +518,25 @@ msgstr ""
 "strålar, 3D-briller, skil fargar, gråare, meir fargerik, fjern farge, behald "
 "farge, kaleido-4, kaleido-6, kaleido-8 og glød."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr "Du kan dreia på stempla før du stemplar dei på teikninga."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr "Dra-frå-hjørna-funksjonen i figurverktøyet er forbetra."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:93
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 "Bøtteverktøyet har no ein modus der du kan teikna fargeovergangar som "
 "følgjer former."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:94
-#| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr "Mellombels viskelêrmodus er no tilgjengeleg via tastaturet."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
@@ -544,7 +544,7 @@ msgstr ""
 "Regnbogepaletten (HSV-fargeveljaren) kan no henta inn fargar frå pipetten "
 "eller fargeblandaren."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
@@ -553,16 +553,16 @@ msgstr ""
 "utsmørjing når breidd/høgd-forholdet til vindauget ikkje stemmer med det til "
 "malen."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 "Innstillinga «buttonsize» (knappstorleik) har no eit «auto»-alternativ."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:99
 msgid "A quick start guide has been added."
 msgstr "Ei «kom i gang»-rettleiing er lagd til."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:104
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -573,7 +573,7 @@ msgstr ""
 "(magenta, gul og cyanblå) og skugge­fargar (kvit, grå og svart) for å laga ny "
 "fargar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:104
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -584,7 +584,7 @@ msgstr ""
 "sekstifem tusen fargar, kan du no velja fargenyanse, fargemetting og "
 "lysstyrke direkte, noko som gjev tilgang til over seksten millionar fargar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
@@ -593,7 +593,7 @@ msgstr ""
 "Det finst no ein snøggtast for tilgang til «pipetten» som lèt deg henta "
 "fargar frå teikninga."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
@@ -603,7 +603,7 @@ msgstr ""
 "for å laga prikka linjer eller utgniings­effektar. Mange av penslane har òg "
 "fått betre standardavstand."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -616,7 +616,7 @@ msgstr ""
 "fylla den ledige plassen med ein farge. Hastverk-verktøyet gjer biletet "
 "uklart (rørslesløring)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -629,7 +629,7 @@ msgstr ""
 "forholdet vist i tekstfeltet. Tekst­informasjonen for nokre andre verktøy har "
 "òg blitt utvida."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:110
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -640,7 +640,7 @@ msgstr ""
 "den meir tradisjonelle «⌘»-tasten (kommando­tasten) på macOS. Storleiken på "
 "det innebygde skjerm­tastaturet er òg forbetra, og det same er hjelpefilene."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:114
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:115
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -653,7 +653,7 @@ msgstr ""
 "markerte med eigne ikon i hjørnet. Bøtteverktøyet (fargefyll-verktøyet) har "
 "no òg fått ein frihands­pensel, der du kan fylla delar av avgrensa område."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:115
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -670,7 +670,7 @@ msgstr ""
 "som i eit spegelhus på tivoli. «Jamn regnboge» er ein jamnare variant av det "
 "klassiske regnboge­verktøyet."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:117
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -684,7 +684,7 @@ msgstr ""
 "fjernsyns­skjerm. Det er òg no mogleg å køyra «Forsterk», «Raster» og "
 "«Blokk», «Krit» og «Relieff» på heile teikninga på ein gong."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:117
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:118
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -695,7 +695,7 @@ msgstr ""
 "målingar, forvrenging, fargefilter, heilteikning-forvrenging, mønster­måling, "
 "kunst og pynt – slik at det vert lettare å finna verktøyet du treng."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:122
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:123
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -706,7 +706,7 @@ msgstr ""
 "fargar. Radiell­varianten lagar sirkelforma overgangar, mens den lineære "
 "overgangen lèt deg sjølv velja storleik og retning på overgangen."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:123
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:124
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -718,7 +718,7 @@ msgstr ""
 "sjakkbrett­mønster og «Klon» lèt deg kopiera delar av teikninga med ein "
 "pensel."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:124
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:125
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
@@ -728,7 +728,7 @@ msgstr ""
 "til nye språk. Er du interessert i å hjelpa til, ta kontakt med Tux Paint-"
 "utviklarane."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:125
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:126
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -744,7 +744,7 @@ msgstr ""
 "paletten, kan òg vera nyttig for brukarar med unøyaktige styre­einingar, for "
 "eksempel dei som brukar augestyring."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:130
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:131
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
@@ -753,7 +753,7 @@ msgstr ""
 "Det er gjort ei stor forbetring i figurverktøyet, der du no kan velja å "
 "teikna figurane frå midten eller frå eit hjørne."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:131
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:132
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
@@ -764,7 +764,7 @@ msgstr ""
 "brukarar med unøyaktige styre­einingar, for eksempel dei som brukar "
 "augestyring."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:132
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:133
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
@@ -772,7 +772,7 @@ msgstr ""
 "Viskelêrverktøyet har no nokre nye og mindre storleikar, som gjev jamnare "
 "strøk når du flyttar penselen raskt."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:133
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:134
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
@@ -782,7 +782,7 @@ msgstr ""
 "animasjonar, slik at du lett kan dela både teikningar og lysbilete­"
 "framvisingar med andre."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:138
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:139
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -797,7 +797,7 @@ msgstr ""
 "teikning»-vindauget. Dei einsfarga bakgrunnane kan òg plasserast på slutten "
 "av dette vindauget, for å gje meir fokus til teikningsmalane."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:139
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:140
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
@@ -807,7 +807,7 @@ msgstr ""
 "brukarar med høyrsle­hemmingar eller i situasjonar der berre éin høgtalar er "
 "tilgjengeleg."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:144
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:145
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
@@ -816,7 +816,7 @@ msgstr ""
 "Nytt i denne versjonen er ein «fargeplukkar», som du kan bruka for å henta "
 "fargar frå teikninga, og eit sett med tre-, fire- og femtagga stjernefigurar."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:145
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:146
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
@@ -1075,7 +1075,7 @@ msgstr "Ny"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9733
+#: ../tools.h:97 ../tuxpaint.c:9829
 msgid "Open"
 msgstr "Opna"
 
@@ -1313,159 +1313,149 @@ msgstr ""
 #. Text tool instructions after changing font
 #: ../tools.h:203
 #, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text."
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Skrifta er «%1$s (%2$s)», %3$d pikslar høg. Trykk på teikninga og skriv i"
-" veg. Trykk «Enter» "
-"eller «Tab» for å festa teksten til teikninga."
+"Skrifta er «%1$s (%2$s)», %3$d pikslar høg. Trykk på teikninga og skriv i "
+"veg. Trykk «Enter» eller «Tab» for å festa teksten til teikninga."
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
 #, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it, and change its "
-#| "text style."
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text. By using the "
 "selector button and clicking an existing label, you can move it, edit it, "
 "and change its text style."
 msgstr ""
-"Skrifta er «%1$s (%2$s)», %3$d pikslar høg. Trykk på teikninga og skriv i"
-" veg. Trykk «Enter» "
-"eller «Tab» for å festa teksten til teikninga. Du kan bruka objekt­veljaren "
-"og trykkja på ein merkelapp for å flytta eller redigera han, eller endra "
-"tekststilen."
+"Skrifta er «%1$s (%2$s)», %3$d pikslar høg. Trykk på teikninga og skriv i "
+"veg. Trykk «Enter» eller «Tab» for å festa teksten til teikninga. Du kan "
+"bruka objekt­veljaren og trykkja på ein merkelapp for å flytta eller redigera "
+"han, eller endra tekststilen."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2466
+#: ../tuxpaint.c:2468
 msgid "Do you really want to quit?"
 msgstr "Er du sikker på at du vil avslutta?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2469
+#: ../tuxpaint.c:2471
 msgid "Yes, I’m done!"
 msgstr "Ja, eg er ferdig!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2472 ../tuxpaint.c:2499
+#: ../tuxpaint.c:2474 ../tuxpaint.c:2501
 msgid "No, take me back!"
 msgstr "Nei, eg vil teikna meir!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2478
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Du mistar teikninga viss du avsluttar. Vil du lagra ho først?"
 
-#: ../tuxpaint.c:2477 ../tuxpaint.c:2482
+#: ../tuxpaint.c:2479 ../tuxpaint.c:2484
 msgid "Yes, save it!"
 msgstr "Ja, lagra ho!"
 
-#: ../tuxpaint.c:2478 ../tuxpaint.c:2483
+#: ../tuxpaint.c:2480 ../tuxpaint.c:2485
 msgid "No, don’t bother saving!"
 msgstr "Nei, ikkje lagra ho!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2481
+#: ../tuxpaint.c:2483
 msgid "Save your picture first?"
 msgstr "Vil du lagra teikninga først?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2486
+#: ../tuxpaint.c:2488
 msgid "Can’t open that picture!"
 msgstr "Klarte ikkje opna teikninga."
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2489 ../tuxpaint.c:2494 ../tuxpaint.c:2503 ../tuxpaint.c:2510
-#: ../tuxpaint.c:2521 ../tuxpaint.c:2526 ../tuxpaint.c:2534
+#: ../tuxpaint.c:2491 ../tuxpaint.c:2496 ../tuxpaint.c:2505 ../tuxpaint.c:2512
+#: ../tuxpaint.c:2523 ../tuxpaint.c:2528 ../tuxpaint.c:2536
 msgid "OK"
 msgstr "OK"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2493
+#: ../tuxpaint.c:2495
 msgid "There are no saved files!"
 msgstr "Det finst ingen lagra teikningar."
 
 #. Verification of print action
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2499
 msgid "Print your picture now?"
 msgstr "Er du sikker på at du vil skriva ut teikninga?"
 
-#: ../tuxpaint.c:2498
+#: ../tuxpaint.c:2500
 msgid "Yes, print it!"
 msgstr "Ja, skriv ho ut!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2502
+#: ../tuxpaint.c:2504
 msgid "Your picture has been printed!"
 msgstr "Teikninga er no skriven ut."
 
 #. We got an error printing
-#: ../tuxpaint.c:2506
+#: ../tuxpaint.c:2508
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Klarte ikkje skriva ut teikninga."
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2509
+#: ../tuxpaint.c:2511
 msgid "You can’t print yet!"
 msgstr "Du kan ikkje skriva ut enno."
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2514
+#: ../tuxpaint.c:2516
 msgid "Erase this picture?"
 msgstr "Vil du verkeleg sletta teikninga?"
 
-#: ../tuxpaint.c:2515
+#: ../tuxpaint.c:2517
 msgid "Erase this template?"
 msgstr "Vil du verkeleg sletta denne malen?"
 
-#: ../tuxpaint.c:2516
+#: ../tuxpaint.c:2518
 msgid "Yes, erase it!"
 msgstr "Ja, slett ho!"
 
-#: ../tuxpaint.c:2517
+#: ../tuxpaint.c:2519
 msgid "No, don’t erase it!"
 msgstr "Nei, ikkje slett ho!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2522
 msgid "Remember to use the left mouse button!"
 msgstr "Hugs å bruka venstre museknapp!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2526
 msgid "Your picture has been exported!"
 msgstr "Teikninga er no eksportert."
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2527
 msgid "Your slideshow GIF has been exported!"
 msgstr "GIF-animasjonen er no eksportert."
 
 #. We got an error exporting
-#: ../tuxpaint.c:2529
+#: ../tuxpaint.c:2531
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Klarte ikkje eksportera teikninga."
 
-#: ../tuxpaint.c:2530
+#: ../tuxpaint.c:2532
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Klarte ikkje eksportera GIF-animasjonen."
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2535
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 "Teikninga er no tilgjengeleg som ein mal når du trykker på «Ny»-knappen!"
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2537
+#: ../tuxpaint.c:2539
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
@@ -1473,108 +1463,108 @@ msgstr ""
 "Du har alt gjort teikninga di om til ein mal. Du finn han når du trykkjer på "
 "«Ny»-knappen."
 
-#: ../tuxpaint.c:2538
+#: ../tuxpaint.c:2540
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "Orsak! Klarte ikkje gjera teikninga om til ein mal."
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2541
+#: ../tuxpaint.c:2543
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Vel teikningane du vil ha, og trykk så på «Køyr»."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2850
+#: ../tuxpaint.c:2852
 msgid "Sound muted."
 msgstr "Lyd slått av."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2855
+#: ../tuxpaint.c:2857
 msgid "Sound unmuted."
 msgstr "Lyd slått på."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3704
+#: ../tuxpaint.c:3706
 msgid "Please wait…"
 msgstr "Vent litt …"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9736
+#: ../tuxpaint.c:9832
 msgid "Erase"
 msgstr "Slett"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9739
+#: ../tuxpaint.c:9835
 msgid "Slides"
 msgstr "Lysbilete"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9742
+#: ../tuxpaint.c:9838
 msgid "Template"
 msgstr "Mal"
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9745
+#: ../tuxpaint.c:9841
 msgid "Export"
 msgstr "Eksporter"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9748
+#: ../tuxpaint.c:9844
 msgid "Back"
 msgstr "Tilbake"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9751
+#: ../tuxpaint.c:9847
 msgid "Play"
 msgstr "Køyr"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9754
+#: ../tuxpaint.c:9850
 msgid "GIF Export"
 msgstr "GIF-eksport"
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9757
+#: ../tuxpaint.c:9853
 msgid "Next"
 msgstr "Neste"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9760
+#: ../tuxpaint.c:9856
 msgid "Clear"
 msgstr "Tøm"
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10695 ../tuxpaint.c:10698 ../tuxpaint.c:10699
+#: ../tuxpaint.c:10791 ../tuxpaint.c:10794 ../tuxpaint.c:10795
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14715
+#: ../tuxpaint.c:14811
 msgid "Yes"
 msgstr "Ja!"
 
-#: ../tuxpaint.c:14719
+#: ../tuxpaint.c:14815
 msgid "No"
 msgstr "Nei!"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:15995
+#: ../tuxpaint.c:16091
 msgid "Replace the picture with your changes?"
 msgstr "Vil du byta ut den gamle teikninga med den nye?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:15999
+#: ../tuxpaint.c:16095
 msgid "Yes, replace the old one!"
 msgstr "Ja, byt ut den gamle!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16003
+#: ../tuxpaint.c:16099
 msgid "No, save a new file!"
 msgstr "Nei, lagra som ei ny teikning!"
 
-#: ../tuxpaint.c:17276
+#: ../tuxpaint.c:17372
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
@@ -1584,7 +1574,7 @@ msgstr ""
 "Vel «Lysbilete» for å laga ein lysbilete­presentasjon» eller «Tilbake» for å "
 "gå tilbake til teikninga."
 
-#: ../tuxpaint.c:17282
+#: ../tuxpaint.c:17378
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1596,65 +1586,65 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:18950
+#: ../tuxpaint.c:19046
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 "Vel to eller fleire teikningar for å gjera dei om til ei animert GIF-"
 "biletfil."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25184
+#: ../tuxpaint.c:25294
 msgid "red"
 msgstr "raud"
 
-#: ../tuxpaint.c:25185
+#: ../tuxpaint.c:25295
 msgid "yellow"
 msgstr "gul"
 
-#: ../tuxpaint.c:25186
+#: ../tuxpaint.c:25296
 msgid "blue"
 msgstr "blå"
 
-#: ../tuxpaint.c:25187
+#: ../tuxpaint.c:25297
 msgid "white"
 msgstr "kvit"
 
-#: ../tuxpaint.c:25188
+#: ../tuxpaint.c:25298
 msgid "grey"
 msgstr "grå"
 
-#: ../tuxpaint.c:25189
+#: ../tuxpaint.c:25299
 msgid "black"
 msgstr "svart"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25194
+#: ../tuxpaint.c:25304
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Fargen er %1$s %2$s."
 
-#: ../tuxpaint.c:25195
+#: ../tuxpaint.c:25305
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Fargen er %1$s %2$s og %3$s %4$s."
 
-#: ../tuxpaint.c:25196
+#: ../tuxpaint.c:25306
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Fargen er %1$s %2$s, %3$s %4$s og %5$s %6$s."
 
-#: ../tuxpaint.c:25197
+#: ../tuxpaint.c:25307
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Fargen er %1$s %2$s, %3$s %4$s, %5$s %6$s og %7$s %8$s."
 
-#: ../tuxpaint.c:25198
+#: ../tuxpaint.c:25308
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr "Fargen er %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s og %9$s %10$s."
 
-#: ../tuxpaint.c:25199
+#: ../tuxpaint.c:25309
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1664,16 +1654,16 @@ msgstr ""
 "%12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:25979 ../tuxpaint.c:25984
+#: ../tuxpaint.c:26089 ../tuxpaint.c:26094
 msgid "entirely"
 msgstr "heilt"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29185
+#: ../tuxpaint.c:29295
 msgid "Select a color from your drawing."
 msgstr "Vel ein farge frå teikninga."
 
-#: ../tuxpaint.c:29196
+#: ../tuxpaint.c:29306
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1682,7 +1672,7 @@ msgstr ""
 "endrar seg frå bleik (til venstre) til fargesterk (til høgre). Lysstyrke "
 "(lys/mørk): grå stolpe."
 
-#: ../tuxpaint.c:29210
+#: ../tuxpaint.c:29320
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
@@ -1863,17 +1853,14 @@ msgid "Double Vision"
 msgstr "Dobbeltsyn"
 
 #: ../../magic/src/colorsep.c:48
-#| msgid ""
-#| "Click and drag left and right to separate your picture's red and cyan, to "
-#| "make anaglyphs you can view with 3D glasses!"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
 msgstr ""
 "Hald inne knappen og flytt til venstre og høgre for å skilja raud- og "
-"cyanfargane, for å laga ei 3D-teikning du kan sjå med 3D-briller! Bruk"
-" storleiks­knappane for å velja ulike typar."
+"cyanfargane, for å laga ei 3D-teikning du kan sjå med 3D-briller! Bruk "
+"storleiks­knappane for å velja ulike typar."
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -1912,23 +1899,18 @@ msgid "Dither"
 msgstr "Mønster­spreiing"
 
 #: ../../magic/src/dither.c:34
-#| msgid "Keep Color"
 msgid "Dither (Keep Color)"
 msgstr "Mønster­spreiing (behald fargane)"
 
 #: ../../magic/src/dither.c:39
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
 msgstr ""
-"Hald inne knappen og flytt rundt for å byte ut delar av teikninga med eit"
-" prikke­mønster i sjølvvald farge."
+"Hald inne knappen og flytt rundt for å byte ut delar av teikninga med eit "
+"prikke­mønster i sjølvvald farge."
 
 #: ../../magic/src/dither.c:40
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
@@ -1936,24 +1918,20 @@ msgstr ""
 "Trykk for å byta ut heile teikninga med eit prikke­mønster i sjølvvald farge."
 
 #: ../../magic/src/dither.c:44
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
 msgstr ""
-"Hald inne knappen og flytt rundt for å byte ut delar av teikninga med eit"
-" prikke­mønster i fargane som er alt er i teikninga."
+"Hald inne knappen og flytt rundt for å byte ut delar av teikninga med eit "
+"prikke­mønster i fargane som er alt er i teikninga."
 
 #: ../../magic/src/dither.c:46
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
 msgstr ""
-"Trykk for å byta ut heile teikninga med eit prikke­mønster i fargane som alt"
-" er i teikninga."
+"Trykk for å byta ut heile teikninga med eit prikke­mønster i fargane som alt "
+"er i teikninga."
 
 #: ../../magic/src/emboss.c:108
 msgid "Emboss"
@@ -2446,7 +2424,6 @@ msgid "Dimetric Select"
 msgstr "Dimetrisk – juster"
 
 #: ../../magic/src/n_pt_persp.c:215
-#| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
 msgstr "Dimetrisk – teikn"
 
@@ -2478,16 +2455,15 @@ msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
 msgstr ""
-"Trykk på teikninga for å velja forvinnings­punkt for 1-punkts"
-" perspektivteikning."
+"Trykk på teikninga for å velja forvinnings­punkt for 1-punkts "
+"perspektivteikning."
 
 #: ../../magic/src/n_pt_persp.c:232
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
-" 1-punkts forvinningspunkt."
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med 1-"
+"punkts forvinningspunkt."
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:235
@@ -2495,48 +2471,44 @@ msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
 msgstr ""
-"Trykk to stadar på teikninga for å velja forvinnings­punkt for 2-punkts"
-" perspektivteikning."
+"Trykk to stadar på teikninga for å velja forvinnings­punkt for 2-punkts "
+"perspektivteikning."
 
 #: ../../magic/src/n_pt_persp.c:236
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
-" 2-punkts forvinningspunkt."
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med 2-"
+"punkts forvinningspunkt."
 
 #: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
-"Trykk tre stadar på teikninga for å velja forvinnings­punkt for 3-punkts"
-" perspektivteikning."
+"Trykk tre stadar på teikninga for å velja forvinnings­punkt for 3-punkts "
+"perspektivteikning."
 
 #: ../../magic/src/n_pt_persp.c:241
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
-" 3-punkts forvinningspunkt."
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med 3-"
+"punkts forvinningspunkt."
 
 #: ../../magic/src/n_pt_persp.c:243
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med"
-" 3-punkts forvinningspunkt (nedover-perspektiv)."
+"Hald inne knappen og flytt rundt for å teikna linjer i perspektiv med 3-"
+"punkts forvinningspunkt (nedover-perspektiv)."
 
 #: ../../magic/src/n_pt_persp.c:247
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer med isometrisk"
-" projeksjon."
+"Hald inne knappen og flytt rundt for å teikna linjer med isometrisk "
+"projeksjon."
 
 #. Dimetric
 #: ../../magic/src/n_pt_persp.c:250
@@ -2544,14 +2516,14 @@ msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
-"Trykk på teikninga for å justera vinkelen brukt til teikning med dimetrisk"
-" projeksjon."
+"Trykk på teikninga for å justera vinkelen brukt til teikning med dimetrisk "
+"projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:251
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer med dimetrisk projeksjon."
+"Hald inne knappen og flytt rundt for å teikna linjer med dimetrisk "
+"projeksjon."
 
 #. Trimetric
 #: ../../magic/src/n_pt_persp.c:254
@@ -2559,15 +2531,14 @@ msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
-"Trykk på teikninga for å justera vinklane brukte til teikning med trimetrisk"
-" projeksjon."
+"Trykk på teikninga for å justera vinklane brukte til teikning med trimetrisk "
+"projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:255
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer med trimetrisk"
-" projeksjon."
+"Hald inne knappen og flytt rundt for å teikna linjer med trimetrisk "
+"projeksjon."
 
 #. Oblique
 #: ../../magic/src/n_pt_persp.c:258
@@ -2575,21 +2546,19 @@ msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
-"Trykk på teikninga for å justera vinkelen brukt til teikning med skeiv"
-" projeksjon."
+"Trykk på teikninga for å justera vinkelen brukt til teikning med skeiv "
+"projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:259
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
 msgstr ""
 "Hald inne knappen og flytt rundt for å teikna linjer med skeiv projeksjon."
 
 #: ../../magic/src/n_pt_persp.c:261
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna linjer med dimetrisk projeksjon"
-" (mot høgre)."
+"Hald inne knappen og flytt rundt for å teikna linjer med dimetrisk "
+"projeksjon (mot høgre)."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
@@ -2647,19 +2616,20 @@ msgstr "Pikslar"
 msgid "Click and drag to draw large pixels."
 msgstr "Hald inne knappen og flytt rundt for å teikna store pikslar."
 
-#: ../../magic/src/polyfill.c:29
+#: ../../magic/src/polyfill.c:32
 msgid "Filled Polygon"
 msgstr "Fylt mangekant"
 
-#: ../../magic/src/polyfill.c:34
+#: ../../magic/src/polyfill.c:37
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag points to alter the shape. Drag adjacent points together to merge them. "
 "Connect the first and last points to complete the shape."
 msgstr ""
-"Trykk fleire gongar på teikninga for å laga ein fylt mangekant. Du kan flytta"
-" på punkta for å endra forma. Flytt nabopunkt oppå kvarandre for å slå dei"
-" saman. Kopla saman det første og siste punktet for å fullføra mangekanten."
+"Trykk fleire gongar på teikninga for å laga ein fylt mangekant. Du kan "
+"flytta på punkta for å endra forma. Flytt nabopunkt oppå kvarandre for å slå "
+"dei saman. Kopla saman det første og siste punktet for å fullføra "
+"mangekanten."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -3036,9 +3006,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
 msgstr ""
-"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar utanpå. Bruk storleiks­knappane for å endra plasseringa av pennen."
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar utanpå. Bruk storleiks­knappane for å endra plasseringa av pennen."
 
 #: ../../magic/src/trochoids.c:126
 msgid ""
@@ -3046,9 +3016,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
 msgstr ""
-"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar utanpå. Pennen er inni sirkelen som rullar."
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar utanpå. Pennen er inni sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
@@ -3056,9 +3026,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
-"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar utanpå. Pennen er på kanten av sirkelen som rullar."
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar utanpå. Pennen er på kanten av sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:130
 msgid ""
@@ -3066,9 +3036,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
-"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar utanpå. Pennen er utanfor sirkelen som rullar."
+"Trykk for å starta på epitrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar utanpå. Pennen er utanfor sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:133
 msgid ""
@@ -3076,9 +3046,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
-"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar inni. Bruk storleiks­knappane for å endra plasseringa av pennen."
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar inni. Bruk storleiks­knappane for å endra plasseringa av pennen."
 
 #: ../../magic/src/trochoids.c:135
 msgid ""
@@ -3086,9 +3056,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
-"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar inni. Pennen er inni sirkelen som rullar."
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar inni. Pennen er inni sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:137
 msgid ""
@@ -3096,9 +3066,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
-"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar inni. Pennen er på kanten av sirkelen som rullar."
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar inni. Pennen er på kanten av sirkelen som rullar."
 
 #: ../../magic/src/trochoids.c:139
 msgid ""
@@ -3106,9 +3076,9 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
 msgstr ""
-"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra"
-" storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen"
-" som rullar inni. Pennen er utanfor sirkelen som rullar."
+"Trykk for å starta på hypotrokoiden. Dra til venstre/høgre for å endra "
+"storleiken på storsirkelen, og opp/ned for å endra storleiken på sirkelen "
+"som rullar inni. Pennen er utanfor sirkelen som rullar."
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
@@ -3163,17 +3133,16 @@ msgid "Xor Colors"
 msgstr "XELLER-fargar"
 
 #: ../../magic/src/xor.c:116
-#| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr ""
-"Hald inne knappen og flytt rundt for å teikna med ein «eksklusiv"
-" eller»-effekt («XELLER»)."
+"Hald inne knappen og flytt rundt for å teikna med ein «eksklusiv eller»-"
+"effekt («XELLER»)."
 
 #: ../../magic/src/xor.c:118
-#| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr ""
-"Trykk for å leggja ein «eksklusiv eller»-effekt («XELLER») på heile teikninga."
+"Trykk for å leggja ein «eksklusiv eller»-effekt («XELLER») på heile "
+"teikninga."
 
 # «Spegelbilete» er oppteken av «spegel»-effekten, som fungerer litt annleis. Kallar derfor dette «refleksjon».
 #, fuzzy
@@ -3340,4 +3309,3 @@ msgstr ""
 
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
-
