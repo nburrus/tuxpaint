@@ -87,6 +87,10 @@ https://tuxpaint.org/
       (h/t Karl Ove Hufthammer for suggesting)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Removed unnecessary (and now unhelpful) button label text
+      vertical position nudging (had only been used by Khmer locale).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Make screen refresh more snappy on macOS.
       Mark Kim <markuskimius@gmail.com>
 

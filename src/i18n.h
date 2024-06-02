@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 30, 2023
+  June 14, 2002 - June 2, 2024
 */
 
 
@@ -204,7 +204,7 @@ extern w_langs wished_langs[255];
 /* Function prototypes: */
 
 int get_current_language(void);
-int setup_i18n(const char *restrict lang, const char *restrict locale, int *ptr_num_wished_languages) MUST_CHECK;
-     void mysetenv(const char *name, const char *value);
+void setup_i18n(const char *restrict lang, const char *restrict locale, int *ptr_num_wished_languages);
+void mysetenv(const char *name, const char *value);
 
 #endif
