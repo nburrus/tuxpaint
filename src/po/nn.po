@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-01 21:40-0700\n"
-"PO-Revision-Date: 2024-06-01 12:38+0200\n"
+"PO-Revision-Date: 2024-06-02 13:17+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -381,7 +381,7 @@ msgstr "Penslar har no tekstskildringar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New Magic tools: Dither, Filled Polygon."
-msgstr "Nye magiske verktøy: mønsterspreiing, fylte mangekantar."
+msgstr "Nye magiske verktøy: prikkemønster, fylte mangekantar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
@@ -401,6 +401,7 @@ msgstr "Oppdaterte omsetjingar."
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
 msgstr ""
+"Forbetra tekstbryting på knappar (med bindestrekar og mjuke bindestrekar)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
@@ -1822,7 +1823,7 @@ msgstr ""
 
 #: ../../magic/src/checkerboard.c:116
 msgid "Checkerboard"
-msgstr "Sjakkbrett"
+msgstr "Sjakk­brett"
 
 #: ../../magic/src/checkerboard.c:132
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
@@ -1850,7 +1851,7 @@ msgstr "Skil fargar"
 
 #: ../../magic/src/colorsep.c:43
 msgid "Double Vision"
-msgstr "Dobbeltsyn"
+msgstr "Dobbelt­syn"
 
 #: ../../magic/src/colorsep.c:48
 msgid ""
@@ -1896,11 +1897,11 @@ msgstr "Hald inne knappen og flytt rundt for å forstyrra teikninga."
 
 #: ../../magic/src/dither.c:33
 msgid "Dither"
-msgstr "Mønster­spreiing"
+msgstr "Prikke­mønster"
 
 #: ../../magic/src/dither.c:34
 msgid "Dither (Keep Color)"
-msgstr "Mønster­spreiing (behald fargane)"
+msgstr "Prikke­mønster (behald fargane)"
 
 #: ../../magic/src/dither.c:39
 msgid ""
@@ -2037,7 +2038,7 @@ msgstr ""
 
 #: ../../magic/src/fisheye.c:112
 msgid "Fisheye"
-msgstr "Fiskeauge"
+msgstr "Fiske­auge"
 
 #: ../../magic/src/fisheye.c:127
 msgid "Click on part of your picture to create a fisheye effect."
@@ -2074,7 +2075,7 @@ msgstr ""
 
 #: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
-msgstr "Pinneverk"
+msgstr "Pinne­verk"
 
 #: ../../magic/src/fretwork.c:228
 msgid "Click and drag to draw repetitive patterns."
@@ -2186,7 +2187,7 @@ msgstr "Fliser"
 #. KAL_BOTH
 #: ../../magic/src/kalidescope.c:144
 msgid "Kaleidoscope"
-msgstr "Kaleidoskop"
+msgstr "Kaleido­skop"
 
 #: ../../magic/src/kalidescope.c:168
 msgid ""
@@ -2257,7 +2258,7 @@ msgstr "Trykk for å gjera heile teikninga om til ein labyrint."
 
 #: ../../magic/src/metalpaint.c:105
 msgid "Metal Paint"
-msgstr "Metallmåling"
+msgstr "Metall­måling"
 
 #: ../../magic/src/metalpaint.c:124
 msgid "Click and drag the mouse to paint with a metallic color."
@@ -2633,7 +2634,7 @@ msgstr ""
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
-msgstr "Puslespel"
+msgstr "Pusle­spel"
 
 #: ../../magic/src/puzzle.c:130
 msgid "Click the part of your picture where would you like a puzzle."
@@ -2645,7 +2646,7 @@ msgstr "Trykk for å gjera heile teikninga om til eit puslespel."
 
 #: ../../magic/src/rails.c:172
 msgid "Rails"
-msgstr "Jernbane"
+msgstr "Jern­bane"
 
 #: ../../magic/src/rails.c:187
 msgid "Click and drag to draw train track rails on your picture."
@@ -2715,7 +2716,7 @@ msgstr "Hald inne knappen og flytt rundt for å teikna sløyfeband på teikninga
 
 #: ../../magic/src/ripples.c:108
 msgid "Ripples"
-msgstr "Vassringar"
+msgstr "Vass­ringar"
 
 #: ../../magic/src/ripples.c:126
 msgid "Click to make ripples appear over your picture."
@@ -2858,11 +2859,11 @@ msgstr ""
 
 #: ../../magic/src/string.c:137
 msgid "String edges"
-msgstr "Trådkantar"
+msgstr "Tråd­kantar"
 
 #: ../../magic/src/string.c:140
 msgid "String corner"
-msgstr "Trådhjørne"
+msgstr "Tråd­hjørne"
 
 #: ../../magic/src/string.c:143
 msgid "String 'V'"
@@ -2970,35 +2971,35 @@ msgstr "Hald inne knappen og flytt rundt for å teikna ein tornado."
 
 #: ../../magic/src/trochoids.c:110
 msgid "Epitrochoid"
-msgstr "Epitrokoide"
+msgstr "Epi­trokoide"
 
 #: ../../magic/src/trochoids.c:111
 msgid "Epitrochoid Inside"
-msgstr "Epitrokoide – inni"
+msgstr "Epi­trokoide – inni"
 
 #: ../../magic/src/trochoids.c:112
 msgid "Epitrochoid Edge"
-msgstr "Epitrokoide – kant"
+msgstr "Epi­trokoide – kant"
 
 #: ../../magic/src/trochoids.c:113
 msgid "Epitrochoid Outside"
-msgstr "Epitrokoide – utanfor"
+msgstr "Epi­trokoide – utanfor"
 
 #: ../../magic/src/trochoids.c:114
 msgid "Hypotrochoid"
-msgstr "Hypotrokoide"
+msgstr "Hypo­trokoide"
 
 #: ../../magic/src/trochoids.c:115
 msgid "Hypotrochoid Inside"
-msgstr "Hypotrokoide – inni"
+msgstr "Hypo­trokoide – inni"
 
 #: ../../magic/src/trochoids.c:116
 msgid "Hypotrochoid Edge"
-msgstr "Hypotrokoide – kant"
+msgstr "Hypo­trokoide – kant"
 
 #: ../../magic/src/trochoids.c:117
 msgid "Hypotrochoid Outside"
-msgstr "Hypotrokoide – utanfor"
+msgstr "Hypo­trokoide – utanfor"
 
 #: ../../magic/src/trochoids.c:124
 msgid ""
@@ -3082,7 +3083,7 @@ msgstr ""
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
-msgstr "Fjernsyn"
+msgstr "TV"
 
 #: ../../magic/src/tv.c:125
 msgid "TV (Bright)"
@@ -3309,3 +3310,4 @@ msgstr ""
 
 #~ msgid "Click and move to darken the colors."
 #~ msgstr "Hald inne knappen og flytt rundt for å gjera fargane mørkare."
+
