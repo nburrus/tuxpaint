@@ -137,6 +137,9 @@ https://tuxpaint.org/
     * Japanese translation
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
+    * Norwegian Nynorsk translation
+      Karl Ove Hufthammer <karl@huftis.org>
+
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
 
