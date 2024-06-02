@@ -9568,16 +9568,15 @@ static SDL_Surface *do_render_button_label(const char *const label)
 
   height_mult = 1.0;
 
+  /* If very wide, try to wrap on a space (near the end) */
   if (tmp_surf1->w >= button_w * 1.5)
   {
-    int i, found = -1;
-    char * broken_str;
-
+    int i, found = -1, wrapped = 0;
 
     DEBUG_PRINTF("'%s' is very wide (%d) compared to button size (%d)\n", upstr, tmp_surf1->w, button_w);
+
     if (strstr(upstr, " ") != NULL)
     {
-      /* Try to wrap on a space */
       for (i = (strlen(upstr) * 3 / 4); i >= 0 && found == -1; i--)
       {
         if (upstr[i] == ' ')
@@ -9589,16 +9588,30 @@ static SDL_Surface *do_render_button_label(const char *const label)
       if (found != -1)
       {
         upstr[found] = '\n';
+        wrapped = 1;
+      }
 
+      if (wrapped)
+      {
         SDL_FreeSurface(tmp_surf1);
         tmp_surf1 = render_text(myfont, upstr, black);
 
         height_mult = 1.5;
       }
     }
-    else if (strstr(upstr, "-") != NULL)
+  }
+
+  /* If STILL very wide, try to wrap on visible hyphen/dash */
+  if (tmp_surf1->w >= button_w * 1.5)
+  {
+    int i, found = -1, wrapped = 0;
+    char *broken_str;
+
+    DEBUG_PRINTF("'%s' is STILL very wide (%d) compared to button size (%d)\n", upstr, tmp_surf1->w, button_w);
+
+    /* Try to wrap on a visible hyphen/dash */
+    if (strstr(upstr, "-") != NULL)
     {
-      /* Try to wrap on a visible hyphen/dash */
       for (i = (strlen(upstr) - 1); i >= 0 && found == -1; i--)
       {
         if (upstr[i] == '-')
@@ -9609,23 +9622,78 @@ static SDL_Surface *do_render_button_label(const char *const label)
 
       if (found != -1)
       {
-        SDL_FreeSurface(tmp_surf1);
-
         broken_str = alloca(sizeof(wchar_t) * strlen(upstr) + 2);
-        if (broken_str != NULL) {
-          for (i = 0; i <= found; i++) {
+        if (broken_str != NULL)
+        {
+          for (i = 0; i <= found; i++)
+          {
             broken_str[i] = upstr[i];
           }
           broken_str[i] = '\n';
-          for (i = found + 1; i < (int) strlen(upstr); i++) {
+          for (i = found + 1; i < (int)strlen(upstr); i++)
+          {
             broken_str[i + 1] = upstr[i];
           }
           broken_str[i + 1] = '\0';
 
-          tmp_surf1 = render_text(myfont, broken_str, black);
-        } else {
-          tmp_surf1 = render_text(myfont, upstr, black);
+          wrapped = 1;
+          free(upstr);
+          upstr = strdup(broken_str);
         }
+      }
+
+      if (wrapped)
+      {
+        SDL_FreeSurface(tmp_surf1);
+        tmp_surf1 = render_text(myfont, upstr, black);
+
+        height_mult = 1.5;
+      }
+    }
+  }
+
+  /* If STILL very wide, try to wrap on invisible soft hyphen */
+  if (tmp_surf1->w >= button_w * 1.5)
+  {
+    int i, found = -1, wrapped = 0;
+    char *broken_str;
+
+    DEBUG_PRINTF("'%s' is STILL very wide (%d) compared to button size (%d)\n", upstr, tmp_surf1->w, button_w);
+
+    /* Try to wrap on an invisible soft hyphen */
+    if (strstr(upstr, "\302\255") != NULL)
+    {
+      /* (This also _introduces_ a visible hyphen;
+         basically we replace the two-byte UTF-8 sequence
+         with ASCII '-' and '\n') */
+      found = (int)(strstr(upstr, "\302\255") - upstr);
+
+      DEBUG_PRINTF("\"%s\" has a soft hypen at %d\n", upstr, found);
+
+      broken_str = alloca(sizeof(wchar_t) * strlen(upstr) + 3);
+      if (broken_str != NULL)
+      {
+        for (i = 0; i < found; i++)
+        {
+          broken_str[i] = upstr[i];
+        }
+        broken_str[found] = '-';
+        broken_str[found + 1] = '\n';
+        for (i = found + 2; i < (int)strlen(upstr); i++)
+        {
+          broken_str[i] = upstr[i];
+        }
+        broken_str[i] = '\0';
+
+        wrapped = 1;
+        free(upstr);
+        upstr = strdup(broken_str);
+      }
+
+      if (wrapped)
+      {
+        SDL_FreeSurface(tmp_surf1);
+        tmp_surf1 = render_text(myfont, upstr, black);
 
         height_mult = 1.5;
       }

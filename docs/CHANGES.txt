@@ -81,8 +81,8 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/229/
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Button labels word-wrap on hyphens/dashes ("-") now too.
-      TODO And on soft-hyphens.
+    * Button labels word-wrap on hyphens/dashes ("-"), and
+      can word-wrap (and add a hyphen) when soft-hyphens are used.
       Closes https://sourceforge.net/p/tuxpaint/bugs/288/
       (h/t Karl Ove Hufthammer for suggesting)
       Bill Kendrick <bill@newbreedsoftware.com>
