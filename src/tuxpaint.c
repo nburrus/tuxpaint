@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 1, 2024
+  June 14, 2002 - June 2, 2024
 */
 
 #include "platform.h"
@@ -9520,6 +9520,16 @@ static void signal_handler(int sig)
 }
 #endif
 
+
+/* If the label text is greater than or equal to (>=) the button's
+   width times this multiplier, we'll attempt to word-wrap the text */
+#define BUTTON_LABEL_WRAP_THRESHOLD_MULT 1.3
+
+/* If the label text got word-wrapped (ends up on more than
+   1 line, via introduction of '\n'), we'll give it slightly
+   more height */
+#define BUTTON_LABEL_MULTILINE_HEIGHT_MULT 1.2
+
 /**
  * FIXME
  */
@@ -9569,7 +9579,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
   height_mult = 1.0;
 
   /* If very wide, try to wrap on a space (near the end) */
-  if (tmp_surf1->w >= button_w * 1.5)
+  if (tmp_surf1->w >= button_w * BUTTON_LABEL_WRAP_THRESHOLD_MULT)
   {
     int i, found = -1, wrapped = 0;
 
@@ -9596,13 +9606,13 @@ static SDL_Surface *do_render_button_label(const char *const label)
         SDL_FreeSurface(tmp_surf1);
         tmp_surf1 = render_text(myfont, upstr, black);
 
-        height_mult = 1.5;
+        height_mult = BUTTON_LABEL_MULTILINE_HEIGHT_MULT;
       }
     }
   }
 
   /* If STILL very wide, try to wrap on visible hyphen/dash */
-  if (tmp_surf1->w >= button_w * 1.5)
+  if (tmp_surf1->w >= button_w * BUTTON_LABEL_WRAP_THRESHOLD_MULT)
   {
     int i, found = -1, wrapped = 0;
     char *broken_str;
@@ -9647,13 +9657,13 @@ static SDL_Surface *do_render_button_label(const char *const label)
         SDL_FreeSurface(tmp_surf1);
         tmp_surf1 = render_text(myfont, upstr, black);
 
-        height_mult = 1.5;
+        height_mult = BUTTON_LABEL_MULTILINE_HEIGHT_MULT;
       }
     }
   }
 
   /* If STILL very wide, try to wrap on invisible soft hyphen */
-  if (tmp_surf1->w >= button_w * 1.5)
+  if (tmp_surf1->w >= button_w * BUTTON_LABEL_WRAP_THRESHOLD_MULT)
   {
     int i, found = -1, wrapped = 0;
     char *broken_str;
@@ -9695,7 +9705,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
         SDL_FreeSurface(tmp_surf1);
         tmp_surf1 = render_text(myfont, upstr, black);
 
-        height_mult = 1.5;
+        height_mult = BUTTON_LABEL_MULTILINE_HEIGHT_MULT;
       }
     }
   }
@@ -10149,7 +10159,7 @@ static void draw_toolbar(void)
       dest.y =
         ((i / 2) * button_h) + r_ttools.h +
         (2 * button_w) / ORIGINAL_BUTTON_SIZE +
-        (((44 + button_label_y_nudge) * button_w) / ORIGINAL_BUTTON_SIZE - img_tool_names[tool]->h) + off_y;
+        (((46 + button_label_y_nudge) * button_w) / ORIGINAL_BUTTON_SIZE - img_tool_names[tool]->h) + off_y;
 
       SDL_BlitSurface(img_tool_names[tool], NULL, screen, &dest);
     }
