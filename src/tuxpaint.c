@@ -9725,7 +9725,7 @@ static SDL_Surface *do_render_button_label(const char *const label)
 
   DEBUG_PRINTF("Rendered as: %d x %d\n", tmp_surf->w, tmp_surf->h);
 
-  want_h = (int)(18 * button_scale + button_label_y_nudge) * height_mult;
+  want_h = (int)(18 * button_scale) * height_mult;
 
   DEBUG_PRINTF("  button_w = %d -- min w = %d\n", button_w, min(button_w, tmp_surf->w));
   DEBUG_PRINTF("  want_h   = %d -- min h = %d\n", want_h, min(want_h, tmp_surf->h));
@@ -10159,7 +10159,7 @@ static void draw_toolbar(void)
       dest.y =
         ((i / 2) * button_h) + r_ttools.h +
         (2 * button_w) / ORIGINAL_BUTTON_SIZE +
-        (((46 + button_label_y_nudge) * button_w) / ORIGINAL_BUTTON_SIZE - img_tool_names[tool]->h) + off_y;
+        ((46 * button_w) / ORIGINAL_BUTTON_SIZE - img_tool_names[tool]->h) + off_y;
 
       SDL_BlitSurface(img_tool_names[tool], NULL, screen, &dest);
     }
@@ -28493,7 +28493,8 @@ static void setup_config(char *argv[])
     tmpcfg.parsertmp_lang = NULL;
   if (tmpcfg.parsertmp_locale == PARSE_CLOBBER)
     tmpcfg.parsertmp_locale = NULL;
-  button_label_y_nudge = setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &num_wished_langs);
+
+  setup_i18n(tmpcfg.parsertmp_lang, tmpcfg.parsertmp_locale, &num_wished_langs);
 
   /* Determine the referred font for the current locale */
   PANGO_DEFAULT_FONT_FALLBACK = NULL;
