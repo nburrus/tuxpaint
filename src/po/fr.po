@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-02 23:07-0700\n"
-"PO-Revision-Date: 2024-06-02 07:20+0200\n"
+"PO-Revision-Date: 2024-06-03 08:28+0200\n"
 "Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -411,6 +411,8 @@ msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
 msgstr ""
+"Le nom des fichiers créés par Ouvrir&gt;Export et Ouvrir&gt;Diapos&gt;Export "
+"GIF sont maintenant affichés et placés dans le presse-papier copier/coller."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Localization updates."
@@ -1485,16 +1487,14 @@ msgstr "N'oublie pas d'utiliser le bouton gauche de la souris !"
 
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2525
-#, fuzzy, c-format
-#| msgid "Your picture has been exported!"
+#, c-format
 msgid "Your picture has been exported to \"%s\"!"
-msgstr "Ton image a été exportée !"
+msgstr "Ton image a été exportée vers \"%s\" !"
 
 #: ../tuxpaint.c:2526
-#, fuzzy, c-format
-#| msgid "Your slideshow GIF has been exported!"
+#, c-format
 msgid "Your slideshow GIF has been exported to \"%s\"!"
-msgstr "Ton image GIF a été exportée !"
+msgstr "Ton image GIF a été exportée  vers \"%s\" !"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2530
@@ -1966,7 +1966,7 @@ msgstr "Tramage"
 
 #: ../../magic/src/dither.c:34
 msgid "Dither (Keep Color)"
-msgstr "Tramage (couleur inchangée)"
+msgstr "Tramage"
 
 #
 #: ../../magic/src/dither.c:39
@@ -2800,11 +2800,11 @@ msgstr "Clique pour remplir le dessin avec des gouttes de pluie."
 
 #: ../../magic/src/realrainbow.c:106
 msgid "Real Rainbow"
-msgstr "Arc-en-ciel réel"
+msgstr "Arc-en-ciel 1"
 
 #: ../../magic/src/realrainbow.c:108
 msgid "ROYGBIV Rainbow"
-msgstr "Arc-en-ciel simple"
+msgstr "Arc-en-ciel 2"
 
 #: ../../magic/src/realrainbow.c:126
 msgid ""
