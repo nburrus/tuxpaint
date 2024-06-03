@@ -68,6 +68,9 @@ https://tuxpaint.org/
       Based on brushes included with GIMP <https://www.gimp.org/>
       Created for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Fluff
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     * Support for brush descriptions, including localization.

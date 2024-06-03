@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-04-13 03:02:21+0000\n"
+"POT-Creation-Date: 2024-06-03 05:11:08+0000\n"
 "PO-Revision-Date: 2024-05-31 15:23+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -35,6 +35,10 @@ msgstr "うごかしたほうに ネコが はしります"
 #: ../data/brushes/critter_squirrel.txt
 msgid "The squirrel runs where you draw."
 msgstr "うごかした ほうに リスが はしります"
+
+#: ../data/brushes/fluff.txt
+msgid "Fluffy circles, great for drawing clouds."
+msgstr ""
 
 #: ../data/brushes/footprints-human-shoes.txt
 msgid "Paint footsteps with shoes on your picture."

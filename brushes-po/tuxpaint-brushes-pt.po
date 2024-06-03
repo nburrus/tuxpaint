@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-04-13 03:02:21+0000\n"
+"POT-Creation-Date: 2024-06-03 05:11:08+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: \n"
@@ -40,6 +40,10 @@ msgstr "O gato persegue onde desenhas."
 #: ../data/brushes/critter_squirrel.txt
 msgid "The squirrel runs where you draw."
 msgstr "O esquilo corre para onde tu desenhas."
+
+#: ../data/brushes/fluff.txt
+msgid "Fluffy circles, great for drawing clouds."
+msgstr ""
 
 #: ../data/brushes/footprints-human-shoes.txt
 msgid "Paint footsteps with shoes on your picture."
