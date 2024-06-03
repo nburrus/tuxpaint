@@ -123,6 +123,10 @@ Brush descriptions
 New brushes
     New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
     brushes.
+Exported filenames shown
+    When exporting a drawing (Open>Export) or a slideshow (Open>Slideshow>
+    Export GIF), the name of the file is displayed and also placed in the copy/
+    paste clipboard.
 
 See CHANGES.txt for the complete list of changes.
 

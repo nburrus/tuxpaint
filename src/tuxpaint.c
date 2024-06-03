@@ -2220,7 +2220,7 @@ static int do_slideshow(void);
 static void play_slideshow(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
 static void draw_selection_digits(int right, int bottom, int n);
 
-static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed);
+static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed, char **dest_fname);
 int export_gif_monitor_events(void);
 
 /* Locations where export_pict() can save */
@@ -2241,7 +2241,7 @@ enum
   EXPORT_ERR_ALREADY_EXPORTED   /* Exported template appears to already exist */
 };
 
-static int export_pict(char *fname, int where, char *orig_fname);
+static int export_pict(char *fname, int where, char *orig_fname, char **dest_fname);
 static char *get_export_filepath(const char *ext);
 void get_img_dimensions(char *fpath, int *widht, int *height);
 uLong get_img_crc(char *fpath);
@@ -2522,8 +2522,8 @@ static void do_wait(int counter)
 #define PROMPT_TIP_LEFTCLICK_YES gettext_noop("OK")
 
 /* Confirmation of successful (we hope) image export */
-#define PROMPT_PICT_EXPORT_TXT gettext_noop("Your picture has been exported!")
-#define PROMPT_GIF_EXPORT_TXT gettext_noop("Your slideshow GIF has been exported!")
+#define PROMPT_PICT_EXPORT_TXT gettext_noop("Your picture has been exported to \"%s\"!")
+#define PROMPT_GIF_EXPORT_TXT gettext_noop("Your slideshow GIF has been exported to \"%s\"!")
 #define PROMPT_EXPORT_YES gettext_noop("OK")
 
 /* We got an error exporting */
@@ -18131,18 +18131,44 @@ static int do_open(void)
         if (want_export)
         {
           int res;
+          char * dest_fname;
 
           want_export = 0;
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          res = export_pict(rfname, EXPORT_LOC_PICTURES, NULL);
+          res = export_pict(rfname, EXPORT_LOC_PICTURES, NULL, &dest_fname);
 
           if (res == EXPORT_SUCCESS)
-            do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+          {
+            int n;
+            char * msg;
+
+            if (dest_fname != NULL)
+            {
+              n = asprintf(&msg, PROMPT_PICT_EXPORT_TXT, dest_fname);
+              free(dest_fname);
+            }
+            else
+            {
+              n = asprintf(&msg, PROMPT_PICT_EXPORT_TXT, "???");
+            }
+
+            if (n != -1)
+            {
+              do_prompt_snd(msg, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+              free(msg);
+            }
+            else
+            {
+              do_prompt_snd(PROMPT_PICT_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+            }
+          }
           else
+          {
             do_prompt_snd(PROMPT_PICT_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES,
                           "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
+          }
 
           draw_tux_text(TUX_BORED, instructions, 1);
           update_list = 1;
@@ -18156,7 +18182,7 @@ static int do_open(void)
 
           safe_snprintf(fname, sizeof(fname), "saved/%s%s", d_names[which], d_exts[which]);
           rfname = get_fname(fname, DIR_SAVE);
-          res = export_pict(rfname, EXPORT_LOC_TEMPLATES, d_names[which]);
+          res = export_pict(rfname, EXPORT_LOC_TEMPLATES, d_names[which], NULL);
 
           if (res == EXPORT_SUCCESS)
             do_prompt_snd(PROMPT_PICT_TEMPLATE_TXT, PROMPT_TEMPLATE_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
@@ -19051,7 +19077,9 @@ static int do_slideshow(void)
           }
           else
           {
-            export_successful = export_gif(selected, num_selected, dirname, d_names, d_exts, speed);
+            char * dest_fname;
+
+            export_successful = export_gif(selected, num_selected, dirname, d_names, d_exts, speed, &dest_fname);
 
             /* Redraw entire screen, after export: */
             SDL_FillRect(screen, NULL, SDL_MapRGB(canvas->format, 255, 255, 255));
@@ -19061,7 +19089,30 @@ static int do_slideshow(void)
 
             /* Show a message depending on success */
             if (export_successful)
-              do_prompt_snd(PROMPT_GIF_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+            {
+              int n;
+              char * msg;
+
+              if (dest_fname != NULL)
+              {
+                n = asprintf(&msg, PROMPT_GIF_EXPORT_TXT, dest_fname);
+                free(dest_fname);
+              }
+              else
+              {
+                n = asprintf(&msg, PROMPT_GIF_EXPORT_TXT, "???");
+              }
+
+              if (n != -1)
+              {
+                do_prompt_snd(msg, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+                free(msg);
+              }
+              else
+              {
+                do_prompt_snd(PROMPT_GIF_EXPORT_TXT, PROMPT_EXPORT_YES, "", SND_TUXOK, screen->w / 2, screen->h / 2);
+              }
+            }
             else
               do_prompt_snd(PROMPT_GIF_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES,
                             "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
@@ -31660,7 +31711,7 @@ char *get_xdg_user_dir(const char *dir_type, const char *fallback)
  * @param int speed -- how fast to play the slideshow (0 and 1 both = slowest, 10 = fasted)
  * @return int -- 0 if export failed or was aborted, 1 if successful
  */
-static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed)
+static int export_gif(int *selected, int num_selected, char *dirname, char **d_names, char **d_exts, int speed, char **dest_fname)
 {
   char *tmp_starter_id, *tmp_template_id, *tmp_file_id;
   int tmp_starter_mirrored, tmp_starter_flipped, tmp_starter_personal;
@@ -31677,6 +31728,8 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   liq_attr *liq_handle;
   liq_image *input_image;
   liq_result *quantization_result;
+
+  *dest_fname = NULL;
 
 #if LIQ_VERSION >= 20800
   liq_error qtiz_status;
@@ -31702,6 +31755,8 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
     /* Can't create export dir! Abort! */
     return SDL_FALSE;
   }
+
+  *dest_fname = strdup(gif_fname);
 
   /* For now, always saving GIF using the size of Tux Paint's window,
      which is how images appear in the slide show */
@@ -31875,6 +31930,11 @@ static int export_gif(int *selected, int num_selected, char *dirname, char **d_n
   free(gif_fname);
 
   /* Success if we didn't have an error, and user didn't abort */
+  if (!done && *dest_fname != NULL)
+  {
+    SDL_SetClipboardText(*dest_fname);
+  }
+
   return (!done);
 }
 
@@ -31933,7 +31993,7 @@ int export_gif_monitor_events(void)
  *  + unused by EXPORT_LOC_PICTURES (just send NULL)
  * @return EXPORT_SUCCESS on success, or one of the EXPORT_ERR_... values on failure
  */
-static int export_pict(char *fname, int where, char *orig_fname)
+static int export_pict(char *fname, int where, char *orig_fname, char ** dest_fname)
 {
   FILE *fi, *fo;
   size_t len;
@@ -32112,6 +32172,11 @@ static int export_pict(char *fname, int where, char *orig_fname)
     free(dir);
   }
 
+  if (dest_fname != NULL)
+  {
+    *dest_fname = NULL;
+  }
+
   if (pict_fname == NULL)
   {
     fclose(fi);
@@ -32141,6 +32206,12 @@ static int export_pict(char *fname, int where, char *orig_fname)
 
   fclose(fi);
   fclose(fo);
+
+  if (dest_fname != NULL)
+  {
+    *dest_fname = strdup(pict_fname);
+    SDL_SetClipboardText(pict_fname);
+  }
 
   free(pict_fname);
 

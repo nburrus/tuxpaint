@@ -90,6 +90,11 @@ https://tuxpaint.org/
       (h/t Karl Ove Hufthammer for suggesting)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Name of exported picture is shown, and placed in clipboard
+      (copy/paste buffer) after exporting a drawing (via Open dialog)
+      or animated GIF (via Open->Slideshow).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
     * Removed unnecessary (and now unhelpful) button label text
       vertical position nudging (had only been used by Khmer locale).
       Bill Kendrick <bill@newbreedsoftware.com>

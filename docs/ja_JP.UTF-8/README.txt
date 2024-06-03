@@ -121,6 +121,10 @@ D. Tux Paint バージョン 0.9.33 での変更点
 New brushes
     New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
     brushes.
+Exported filenames shown
+    When exporting a drawing (Open>Export) or a slideshow (Open>Slideshow>
+    Export GIF), the name of the file is displayed and also placed in the copy/
+    paste clipboard.
 
 全ての変更点については、CHANGES.txt をお読みください。
 
