@@ -13414,7 +13414,6 @@ static char *loaddesc(const char *const fname, Uint8 * locale_text)
 
                 need_own_font = wished_langs[i].need_own_font;
                 need_right_to_left = wished_langs[i].need_right_to_left;
-                need_right_to_left_word = wished_langs[i].need_right_to_left_word;
 
                 found = 1;
 
@@ -20369,57 +20368,12 @@ static wchar_t *uppercase_w(const wchar_t *restrict const str)
 static char *textdir(const char *const str)
 {
   unsigned char *dstr;
-  unsigned i, j;
-  unsigned char c1, c2, c3, c4;
 
   DEBUG_PRINTF("ORIG_DIR: %s\n", str);
 
   dstr = malloc(strlen(str) + 5);
 
-  if (need_right_to_left_word)
-  {
-    dstr[strlen(str)] = '\0';
-
-    for (i = 0; i < strlen(str); i++)
-    {
-      j = (strlen(str) - i - 1);
-
-      c1 = (unsigned char)str[i + 0];
-      c2 = (unsigned char)str[i + 1];
-      c3 = (unsigned char)str[i + 2];
-      c4 = (unsigned char)str[i + 3];
-
-      if (c1 < 128)             /* 0xxx xxxx - 1 byte */
-      {
-        dstr[j] = str[i];
-      }
-      else if ((c1 & 0xE0) == 0xC0)     /* 110x xxxx - 2 bytes */
-      {
-        dstr[j - 1] = c1;
-        dstr[j - 0] = c2;
-        i = i + 1;
-      }
-      else if ((c1 & 0xF0) == 0xE0)     /* 1110 xxxx - 3 bytes */
-      {
-        dstr[j - 2] = c1;
-        dstr[j - 1] = c2;
-        dstr[j - 0] = c3;
-        i = i + 2;
-      }
-      else                      /* 1111 0xxx - 4 bytes */
-      {
-        dstr[j - 3] = c1;
-        dstr[j - 2] = c2;
-        dstr[j - 1] = c3;
-        dstr[j - 0] = c4;
-        i = i + 3;
-      }
-    }
-  }
-  else
-  {
-    strcpy((char *)dstr, str);  /* safe; malloc'd to a sufficient size */
-  }
+  strcpy((char *)dstr, str);  /* safe; malloc'd to a sufficient size */
 
   DEBUG_PRINTF("L2R_DIR: %s\n", dstr);
 

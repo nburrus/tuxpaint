@@ -254,14 +254,8 @@ static int lang_use_right_to_left[] = {
   -1
 };
 
-/* FIXME: Remove! (We now require SDL_Pango all the time, so this is unnecessary -bjk 2023.04.30) */
-static int lang_use_right_to_left_word[] = {
-  -1
-};
-
 int need_own_font;
 int need_right_to_left;
-int need_right_to_left_word;
 const char *lang_prefix, *short_lang_prefix;
 
 w_langs wished_langs[255];
@@ -1227,7 +1221,6 @@ static void set_current_language(const char *restrict loc, int *ptr_num_wished_l
       wished_langs[j].lang_prefix = lang_prefixes[langint];
       wished_langs[j].need_own_font = search_int_array(langint, lang_use_own_font);
       wished_langs[j].need_right_to_left = search_int_array(langint, lang_use_right_to_left);
-      wished_langs[j].need_right_to_left_word = search_int_array(langint, lang_use_right_to_left_word);
 
       j++;
       env_language_lang = strtok(NULL, ":");
@@ -1247,11 +1240,10 @@ static void set_current_language(const char *restrict loc, int *ptr_num_wished_l
 
   need_own_font = wished_langs[0].need_own_font;
   need_right_to_left = wished_langs[0].need_right_to_left;
-  need_right_to_left_word = wished_langs[0].need_right_to_left_word;
 
 #ifdef DEBUG
-  fprintf(stderr, "DEBUG: Language is %s (%d) %s/%s\n",
-          lang_prefix, langint, need_right_to_left ? "(RTL)" : "", need_right_to_left_word ? "(RTL words)" : "");
+  fprintf(stderr, "DEBUG: Language is %s (%d) %s\n",
+          lang_prefix, langint, need_right_to_left ? "(RTL)" : "");
   fflush(stderr);
 #endif
 

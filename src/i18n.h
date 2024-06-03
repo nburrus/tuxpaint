@@ -185,7 +185,6 @@ typedef struct language_to_locale_struct
 extern const char *lang_prefixes[NUM_LANGS];
 extern int need_own_font;
 extern int need_right_to_left;  // Right-justify
-extern int need_right_to_left_word;     // Words need to be reversed, too! (e.g., Hebrew, but not Arabic)
 extern const char *lang_prefix, *short_lang_prefix;
 
 typedef struct w_langs
@@ -193,7 +192,6 @@ typedef struct w_langs
   int langint;
   int need_own_font;
   int need_right_to_left;
-  int need_right_to_left_word;
   int lang_y_nudge;
   const char *lang_prefix;
   const char *short_lang_prefix;
