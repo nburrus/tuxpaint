@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-02 23:07-0700\n"
-"PO-Revision-Date: 2024-06-02 22:50+0200\n"
+"PO-Revision-Date: 2024-06-04 00:14+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -427,7 +427,7 @@ msgstr "Descripcions de característiques dels pinzells."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brushes: Pencil, Acrylic, Fluff."
-msgstr ""
+msgstr "Nous pinzells: Làpis, Acrílic, Globus."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "New Magic tools: Dither, Filled Polygon."
@@ -449,7 +449,7 @@ msgstr "Es pot desagrupar les eines màguiques («ungroupmagictools»)."
 msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
-msgstr ""
+msgstr "Es mostra els noms dels fitxers creats amb Obre>Exporta i Obre>Diapositives>exporta a GIF i es copia al porta-retalls."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Localization updates."
@@ -457,7 +457,7 @@ msgstr "Actualitzacions de localitzacions."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
-msgstr ""
+msgstr "Millora en la separació de paraules per encabir-les als botons (via guionets i guionets condicionals o tous)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
@@ -1487,16 +1487,14 @@ msgstr "Recordeu de fer servir el botó esquerre!"
 
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2525
-#, fuzzy, c-format
-#| msgid "Your picture has been exported!"
+#, c-format
 msgid "Your picture has been exported to \"%s\"!"
-msgstr "S'ha exportat el vostre dibuix!"
+msgstr "S'ha exportat el vostre dibuix a «%s»!"
 
 #: ../tuxpaint.c:2526
-#, fuzzy, c-format
-#| msgid "Your slideshow GIF has been exported!"
+#, c-format
 msgid "Your slideshow GIF has been exported to \"%s\"!"
-msgstr "S'ha exportat la vostra animació en un fitxer GIF!"
+msgstr "S'ha exportat la vostra animació en un fitxer GIF a «%s»!"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2530
