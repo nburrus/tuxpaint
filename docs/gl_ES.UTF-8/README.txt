@@ -1183,7 +1183,7 @@ Pode simplemente converter a imaxe ao formato que usa Tux Paint –PNG (Portable
 Network Graphics – Gráficos de Rede Portátiles)– e colocala no directorio/
 cartafol «saved» de Tux Paint. Aquí é onde se atopa (de xeito predeterminado:
 
-Windows Vista, Windows 8, Windows 10, Windows 11
+Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
     In the user's "AppData" folder:
     e.g., "C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\"
 

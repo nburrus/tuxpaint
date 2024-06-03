@@ -1157,7 +1157,7 @@ You can simply convert the picture to the format Tux Paint uses — PNG (Portabl
 Network Graphic) — and place it in Tux Paint's "saved" directory/folder. Here
 is where to find it (by default):
 
-Windows Vista, Windows 8, Windows 10, Windows 11
+Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
     In the user's "AppData" folder:
     e.g., "C:\Users\username\AppData\Roaming\TuxPaint\saved\"
 
