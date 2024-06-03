@@ -114,7 +114,7 @@ https://tuxpaint.org/
       h/t https://github.com/xfce-mirror/xfce4-xkb-plugin/commit/825fa1c
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Removed unused `need_right_to_left_word` internal flags and [WIP] `textdir()`.
+    * Removed unused `need_right_to_left_word` internal flags and `textdir()`.
       Closes https://sourceforge.net/p/tuxpaint/tasks/33/
       Bill Kendrick <bill@newbreedsoftware.com>
 

@@ -2260,7 +2260,6 @@ static void strip_quotes(char *buf);
 static void do_render_cur_text(int do_blit);
 static char *uppercase(const char *restrict const str);
 static wchar_t *uppercase_w(const wchar_t *restrict const str);
-static char *textdir(const char *const str);
 static SDL_Surface *do_render_button_label(const char *const label);
 
 #if 0
@@ -9542,10 +9541,9 @@ static SDL_Surface *do_render_button_label(const char *const label)
   TuxPaint_Font *myfont;
   int want_h;
   float height_mult;
-  char *td_str = textdir(gettext(label));
-  char *upstr = uppercase(td_str);
+  char *upstr;
 
-  free(td_str);
+  upstr = uppercase(gettext(label));
 
   DEBUG_PRINTF("do_render_button_label(\"%s\")\n", label);
   if (button_w <= ORIGINAL_BUTTON_SIZE)
@@ -14783,7 +14781,7 @@ static int do_prompt_image_flash_snd(const char *const text,
   SDL_Color black = { 0, 0, 0, 0 };
   SDLKey key;
   SDLKey key_y, key_n;
-  char *keystr;
+  const char *keystr;
   SDL_Surface *backup;
 
 #ifndef NO_PROMPT_SHADOWS
@@ -14818,13 +14816,11 @@ static int do_prompt_image_flash_snd(const char *const text,
 
   /* Admittedly stupid way of determining which keys can be used for
      positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English) */
-  keystr = textdir(gettext("Yes"));
+  keystr = gettext("Yes");
   key_y = tolower(keystr[0]);
-  free(keystr);
 
-  keystr = textdir(gettext("No"));
+  keystr = gettext("No");
   key_n = tolower(keystr[0]);
-  free(keystr);
 
 
   do_setcursor(cursor_arrow);
@@ -17372,20 +17368,20 @@ static int do_open(void)
       /* Let user choose an image: */
 
       /* Instructions for 'Open' file dialog */
-      char *instructions;
+      const char *instructions;
       int num_left_buttons;
 
       if (!disable_template_export)
       {
         instructions =
-          textdir(gettext_noop
-                  ("Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
+          gettext_noop
+                  ("Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture.");
       }
       else
       {
         instructions =
-          textdir(gettext_noop
-                  ("Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture."));
+          gettext_noop
+                  ("Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” to create a slideshow animation or “Back“ to return to your current picture.");
       }
 
       draw_tux_text(TUX_BORED, instructions, 1);
@@ -18299,8 +18295,6 @@ static int do_open(void)
 
 
       update_canvas(0, 0, WINDOW_WIDTH - r_ttoolopt.w - r_ttools.w, button_h * buttons_tall + r_ttools.h);
-
-      free(instructions);
     }
 
 
@@ -18360,7 +18354,7 @@ static int do_slideshow(void)
   SDL_Rect dest;
   SDL_Event event;
   SDLKey key;
-  char *freeme, *instructions;
+  char *instructions;
   int speeds;
   float x_per, y_per;
   int xx, yy;
@@ -18612,7 +18606,7 @@ static int do_slideshow(void)
   /* Let user choose images: */
 
   /* Instructions for Slideshow file dialog */
-  instructions = textdir(TUX_TIP_SLIDESHOW);
+  instructions = strdup(TUX_TIP_SLIDESHOW);
   draw_tux_text(TUX_BORED, instructions, 1);
 
   /* Focus us around the newest images, as it's highly likely the
@@ -19000,9 +18994,7 @@ static int do_slideshow(void)
           draw_none();
 
           /* Instructions for Slideshow file dialog */
-          freeme = textdir(TUX_TIP_SLIDESHOW);
-          draw_tux_text(TUX_BORED, freeme, 1);
-          free(freeme);
+          draw_tux_text(TUX_BORED, TUX_TIP_SLIDESHOW, 1);
 
           SDL_Flip(screen);
 
@@ -19053,9 +19045,7 @@ static int do_slideshow(void)
             /* None selected? Too dangerous to automatically select all (like we do for slideshow playback).
                Only 1 selected?  No point in saving as GIF.
              */
-            freeme = textdir(gettext_noop("Select 2 or more drawings to turn into an animated GIF."));
-            draw_tux_text(TUX_BORED, freeme, 1);
-            free(freeme);
+            draw_tux_text(TUX_BORED, gettext_noop("Select 2 or more drawings to turn into an animated GIF."), 1);
 
             control_drawtext_timer(2000, instructions, 0);      /* N.B. It will draw instructions, regardless */
           }
@@ -19076,9 +19066,7 @@ static int do_slideshow(void)
               do_prompt_snd(PROMPT_GIF_EXPORT_FAILED_TXT, PROMPT_EXPORT_YES,
                             "", SND_YOUCANNOT, screen->w / 2, screen->h / 2);
 
-            freeme = textdir(TUX_TIP_SLIDESHOW);
-            draw_tux_text(TUX_BORED, freeme, 1);
-            free(freeme);
+            draw_tux_text(TUX_BORED, TUX_TIP_SLIDESHOW, 1);
 
             SDL_Flip(screen);
 
@@ -20358,26 +20346,6 @@ static wchar_t *uppercase_w(const wchar_t *restrict const str)
   }
 
   return ustr;
-}
-
-
-/**
- * FIXME
- */
-/* Return string in right-to-left mode, if necessary: */
-static char *textdir(const char *const str)
-{
-  unsigned char *dstr;
-
-  DEBUG_PRINTF("ORIG_DIR: %s\n", str);
-
-  dstr = malloc(strlen(str) + 5);
-
-  strcpy((char *)dstr, str);  /* safe; malloc'd to a sufficient size */
-
-  DEBUG_PRINTF("L2R_DIR: %s\n", dstr);
-
-  return ((char *)dstr);
 }
 
 
@@ -30451,12 +30419,11 @@ static void setup(void)
     if (strlen(title_names[i]) > 0)
     {
       TuxPaint_Font *myfont = large_font;
-      char *td_str = textdir(gettext(title_names[i]));
+      char *loc_str = gettext(title_names[i]);
 
       if (need_own_font && strcmp(gettext(title_names[i]), title_names[i]))
         myfont = locale_font;
-      upstr = uppercase(td_str);
-      free(td_str);
+      upstr = uppercase(loc_str);
       tmp_surf = render_text(myfont, upstr, black);
       free(upstr);
       img_title_names[i] = thumbnail(tmp_surf, min((int)(84 * button_scale), tmp_surf->w), tmp_surf->h, 0);
