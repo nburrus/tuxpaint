@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                avril 29, 2024
+                                 juin 2, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -125,6 +125,9 @@ Brush descriptions
     Brushes (used by Paint and Line tools) can now include descriptions that
     appear when the brush is selected.
 
+New brushes
+    New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
+    brushes.
 
 Voir CHANGES.txt pour la liste complète des changements.
 

@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 29 prill 2024
+                                2 qershor 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -120,6 +120,9 @@ Brush descriptions
     Brushes (used by Paint and Line tools) can now include descriptions that
     appear when the brush is selected.
 
+New brushes
+    New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
+    brushes.
 
 Për listën e plotë të ndryshimeve, shihni CHANGES.txt.
 

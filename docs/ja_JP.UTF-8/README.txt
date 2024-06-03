@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年4月29日
+                                 2024年6月 2日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -118,6 +118,9 @@ D. Tux Paint バージョン 0.9.33 での変更点
     個々のブラシ（「ふで」ツールと「せん」ツールで使用）を選択したときに説明を
     表示させることができるようになりました。
 
+New brushes
+    New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
+    brushes.
 
 全ての変更点については、CHANGES.txt をお読みください。
 
