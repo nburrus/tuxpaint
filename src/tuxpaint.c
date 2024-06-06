@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 2, 2024
+  June 14, 2002 - June 6, 2024
 */
 
 #include "platform.h"
@@ -652,7 +652,7 @@ int TP_EventFilter(void *data, EVENT_FILTER_EVENT_TYPE * event);
 /* #define fmemopen_alternative *//* Uncomment this to test the fmemopen alternative in systems were fmemopen exists */
 /* *INDENT-ON* */
 
-#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
+#if defined (WIN32) || defined (__APPLE__) || defined(__NetBSD__) || defined(__sun) || defined(__OS2__) || defined(__ANDROID__)     /* MINGW/MSYS, NetBSD, and MacOSX need it, at least for now */
 #define fmemopen_alternative
 #endif
 
@@ -8029,6 +8029,8 @@ void show_version(int details)
   printf("  Built for Maemo  (NOKIA_770)\n");
 #elif OLPC_XO
   printf("  Built for XO  (OLPC_XO)\n");
+#elif OS2
+  printf("  Built for OS2  (OS2)\n");
 #elif __ANDROID__
   printf("  Built for Android  (__ANDROID__)\n");
 #else

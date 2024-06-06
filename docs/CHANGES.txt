@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.June.4 (0.9.33)
+2024.June.6 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -109,6 +109,19 @@ https://tuxpaint.org/
       the macOS bundle.  Previously this renaming step was required to be done
       manually to build the universal bundle.
       Mark Kim <markuskimius@gmail.com>
+
+    * WIP Changes to support building for OS/2
+      + WIP Makefile updates to support building for OS/2
+        - TODO: Makefile needs SYSNAME test to detect OS/2 (Bill has asked Elbert)
+      + Added "__declspec(dllexport)" (via new "TX_EXTERN" #define'd in
+        `tp_magic_api.h`) to public function definitions in Magic tools
+        - WIP: So far just "Mirror/Flip" plugin
+        - TODO: Add "TX_EXTERN" prefix to all other public Magic tool functions
+      + Renamed long Magic tool source files to have shorter filenames
+        - WIP: So far just "Mirror/Flip" (`mirror_flip.c` -> `mirror_f.c`)
+        - TODO: Rename all other magic tool source files.
+      Elbert Pol <tellie@elbertpol.nl>
+      (with support from Bill Kendrick)
 
     * Updates to appdata metadata file for Appstream 1.0
       (https://sourceforge.net/p/tuxpaint/tuxpaint/merge-requests/19/)
