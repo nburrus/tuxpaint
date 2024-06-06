@@ -246,7 +246,7 @@ Où Tux Paint enregistre-t-il mes dessins ?
     spécifique (en utilisant l'option 'savedir'), Tux Paint enregistre dans un
     emplacement standard sur votre disque local :
 
-    Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+    Windows Windows 7, Windows 8, Windows 10, Windows 11
         In the user's "AppData" folder:
         e.g., "C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\"
 

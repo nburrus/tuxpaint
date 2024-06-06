@@ -224,7 +224,7 @@ Where does Tux Paint save my drawings?
     "savedir" option), Tux Paint saves into a standard location on your local
     drive:
 
-    Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+    Windows Windows 7, Windows 8, Windows 10, Windows 11
         In the user's "AppData" folder:
         e.g., "C:\Users\ユーザー名\AppData\Roaming\TuxPaint\saved\"
 

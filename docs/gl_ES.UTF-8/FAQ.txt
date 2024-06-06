@@ -236,7 +236,7 @@ Onde garda Tux Paint os meus debuxos?
     (usando a opción «savedir»), Tux Paint garda nun lugar estándar na súa
     unidade local:
 
-    Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+    Windows Windows 7, Windows 8, Windows 10, Windows 11
         In the user's "AppData" folder:
         e.g., "C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\"
 

@@ -238,7 +238,7 @@ Ku i ruan Tux Paint-i vizatimet e mia?
     caktuar (duke përdorur mundësinë “savedir”), Tux Paint-i i ruan te një
     vendndodhje standarde në diskun tuaj vendor:
 
-    Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+    Windows Windows 7, Windows 8, Windows 10, Windows 11
         In the user's "AppData" folder:
         e.g., "C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\saved\"
 

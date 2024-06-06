@@ -1080,7 +1080,7 @@ Tux Paint の「ひらく」ダイアログでは、Tux Paint で作成した画
 換して、Tux Paint で作成した画像が保存されている "saved" フォルダにコピーしま
 す。（標準では以下のフォルダ）:
 
-Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+Windows Windows 7, Windows 8, Windows 10, Windows 11
     In the user's "AppData" folder:
     e.g., "C:\Users\ユーザー名\AppData\Roaming\TuxPaint\saved\"
 
