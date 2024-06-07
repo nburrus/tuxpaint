@@ -52,7 +52,9 @@
 #include <storage/Path.h>
 #include <support/TypeConstants.h>
 
-status_t haiku_trash(const char *f)
+static const char *kAttrOriginalPath = "_trk/original_path";
+
+extern "C" status_t haiku_trash(const char *f)
 {
   status_t err;
   attr_info ai;

@@ -331,7 +331,7 @@ typedef struct safer_dirent
   char d_name[FILENAME_MAX];
 } safer_dirent;
 
-extern "C" status_t haiku_trash(const char *f);
+extern status_t haiku_trash(const char *f);
 
 #define dirent safer_dirent
 
