@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 6, 2024
+  June 14, 2002 - June 7, 2024
 */
 
 #include "platform.h"
@@ -331,7 +331,7 @@ typedef struct safer_dirent
   char d_name[FILENAME_MAX];
 } safer_dirent;
 
-extern status_t haiku_trash(const char *f);
+extern "C" status_t haiku_trash(const char *f);
 
 #define dirent safer_dirent
 
