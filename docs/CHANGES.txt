@@ -95,6 +95,13 @@ https://tuxpaint.org/
       or animated GIF (via Open->Slideshow).
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * WIP Add Trash support when using Erase option in Open dialog
+      on Haiku.
+      h/t Jérôme Duval <https://github.com/korli> for pointing us to this
+      (see https://github.com/haikuports/haikuports/issues/10568)
+      Code used is copyright (c) 2004, Francois Revol <revol@free.fr>,
+      provided under the MIT licence.
+
     * Removed unnecessary (and now unhelpful) button label text
       vertical position nudging (had only been used by Khmer locale).
       Bill Kendrick <bill@newbreedsoftware.com>
