@@ -1366,11 +1366,11 @@ obj/BeOS_print.o:	src/BeOS_print.cpp src/BeOS_print.h
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
 
-obj/haiku_trash.o:	src/haiku_trash.c src/debug.h
+obj/haiku_trash.o:	src/haiku_trash.cpp src/debug.h
 	@echo
 	@echo "...Compiling Haiku trash support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
-		-c src/haiku_trash.c -o obj/haiku_trash.o
+		-c src/haiku_trash.cpp -o obj/haiku_trash.o
 
 obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo
