@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - June 1, 2024
+# June 14, 2002 - June 7, 2024
 
 
 # The version number, for release:
@@ -172,7 +172,7 @@ windows_ARCH_LIBS:=obj/win32_print.o obj/resource.o obj/win32_trash.o obj/win32_
 os2_ARCH_LIBS:=obj/postscript_print.o
 macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
 ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
-beos_ARCH_LIBS:=obj/BeOS_print.o
+beos_ARCH_LIBS:=obj/BeOS_print.o obj/haiku_trash.o
 linux_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
@@ -1365,6 +1365,12 @@ obj/BeOS_print.o:	src/BeOS_print.cpp src/BeOS_print.h
 	@echo "...Compiling BeOS print support..."
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/BeOS_print.cpp -o obj/BeOS_print.o
+
+obj/haiku_trash.o:	src/haiku_trash.c src/debug.h
+	@echo
+	@echo "...Compiling Haiku trash support..."
+	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+		-c src/haiku_trash.c -o obj/haiku_trash.o
 
 obj/win32_print.o:	src/win32_print.c src/win32_print.h src/debug.h
 	@echo
