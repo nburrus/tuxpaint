@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 juin 2, 2024
+                                 juin 7, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -132,6 +132,9 @@ Exported filenames shown
     When exporting a drawing (Open>Export) or a slideshow (Open>Slideshow>
     Export GIF), the name of the file is displayed and also placed in the copy/
     paste clipboard.
+Trash can support in Haiku
+    The Haiku port of Tux Paint now also places erased drawings (Open>Erase)
+    into the desktop trash can, rather than deleting the files completely.
 
 Voir CHANGES.txt pour la liste complète des changements.
 
