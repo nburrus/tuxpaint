@@ -60,8 +60,12 @@ else
             STDC_LIB:=-lstdc++.r4
           endif
         else
-          OS:=linux
-          GPERF:=/usr/bin/gperf
+          ifeq ($(SYSNAME),OS/2)
+            OS:=os2
+          else
+            OS:=linux
+            GPERF:=/usr/bin/gperf
+          endif
         endif
       endif
     endif
