@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-07 00:41-0700\n"
-"PO-Revision-Date: 2024-06-01 14:18+0900\n"
+"PO-Revision-Date: 2024-06-15 21:26+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -384,7 +384,7 @@ msgstr "いくつかのブラシについて、特徴の説明を表示するよ
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brushes: Pencil, Acrylic, Fluff."
-msgstr ""
+msgstr "ブラシの追加: 鉛筆、アクリル絵の具、毛羽だったブラシ"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid "New Magic tools: Dither, Filled Polygon."
@@ -407,6 +407,9 @@ msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
 msgstr ""
+"「ひらく」&gt;「かきだす」や「ひらく」&gt;「スライド」&gt;「かきだす」で書き"
+"出される作品のファイル名が表示され、また、クリップボードにコピーされるように"
+"なりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Localization updates."
@@ -414,13 +417,15 @@ msgstr "翻訳の更新。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
-msgstr ""
+msgstr "ボタンの文字列の折り返しを改良しました（ハイフンやソフト・ハイフン）"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
 msgstr ""
+"Haiki 版でも「ひらく」ダイアログの「けす」で削除した作品がデスクトップのごみ"
+"箱に移動するようになりました。"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
@@ -1454,16 +1459,14 @@ msgstr "マウスの ひだりのボタンを つかってね！"
 
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2528
-#, fuzzy, c-format
-#| msgid "Your picture has been exported!"
+#, c-format
 msgid "Your picture has been exported to \"%s\"!"
-msgstr "えを かきだしたよ！"
+msgstr "えを \"%s\" に かきだしたよ！"
 
 #: ../tuxpaint.c:2529
-#, fuzzy, c-format
-#| msgid "Your slideshow GIF has been exported!"
+#, c-format
 msgid "Your slideshow GIF has been exported to \"%s\"!"
-msgstr "スライドショーを GIF アニメに かきだしたよ！"
+msgstr "スライドショーの GIF アニメを \"%s\" に かきだしたよ！"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2533
