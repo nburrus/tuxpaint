@@ -118,16 +118,15 @@ D. Tux Paint バージョン 0.9.33 での変更点
     個々のブラシ（「ふで」ツールと「せん」ツールで使用）を選択したときに説明を
     表示させることができるようになりました。
 
-New brushes
-    New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
-    brushes.
-Exported filenames shown
-    When exporting a drawing (Open>Export) or a slideshow (Open>Slideshow>
-    Export GIF), the name of the file is displayed and also placed in the copy/
-    paste clipboard.
-Trash can support in Haiku
-    The Haiku port of Tux Paint now also places erased drawings (Open>Erase)
-    into the desktop trash can, rather than deleting the files completely.
+ブラシの追加
+    アクリル絵の具、鉛筆、毛羽立ったブラシ
+書き出し先ファイル名
+    作品(「ひらく」>「かきだす」)、またはスライドショー(「ひらく」>「スライド」
+    >「かきだす」)を書き出すと、ファイル名が表示され、クリップボードに入りま
+    す。
+Haikuでゴミ箱に対応
+    Haiku 版 Tux Paint では、ファイルを完全に削除するのではなく、削除した作品
+    （「ひらく」>「けす」）をデスクトップのゴミ箱に入れるようになりました。
 
 全ての変更点については、CHANGES.txt をお読みください。
 
