@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - June 7, 2024
+# June 14, 2002 - June 15, 2024
 
 
 # The version number, for release:
@@ -62,6 +62,7 @@ else
         else
           ifeq ($(SYSNAME),OS/2)
             OS:=os2
+            GPERF:=/@unixroot/usr/bin/gperf.exe
           else
             OS:=linux
             GPERF:=/usr/bin/gperf
