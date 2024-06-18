@@ -123,8 +123,7 @@ https://tuxpaint.org/
       Mark Kim <markuskimius@gmail.com>
 
     * WIP Changes to support building for OS/2
-      + WIP Makefile updates to support building for OS/2
-        - TODO: Makefile needs SYSNAME test to detect OS/2 (Bill has asked Elbert)
+      + Makefile updates to support building for OS/2
       + Added "__declspec(dllexport)" (via new "TX_EXTERN" #define'd in
         `tp_magic_api.h`) to public function definitions in Magic tools
         - WIP: So far just "Mirror/Flip" plugin
