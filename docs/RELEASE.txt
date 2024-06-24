@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2023-05-29 -bjk
+Last updated 2024-06-23 -bjk
 
 During development
 ------------------
@@ -73,6 +73,8 @@ a .tar.gz source tarball, and making the tarball available for download.
      * man/tuxpaint.1
 
  * Rebuild 'tuxpaint.desktop' by running "update-po.sh" in "src/po/"
+
+ * Rebuild "data/brushes/*.txt" by running "createtxt.sh" in "brushes-po/"
 
  * Don't forget to commit the changes!  (git add ... / git commit / git push)
 
