@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.June.11 (0.9.33)
+2024.July.4 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -198,6 +198,10 @@ https://tuxpaint.org/
 
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
+
+    * Russian translation
+      Alevtina Karashokova
+      https://sourceforge.net/u/alev-karash/profile/
 
   * Bug Fixes:
     ----------
