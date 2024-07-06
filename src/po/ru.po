@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-07 00:41-0700\n"
+"POT-Creation-Date: 2024-07-06 11:46-0700\n"
 "PO-Revision-Date: 2024-06-27 16:04+0300\n"
 "Last-Translator: Alevtina <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.08.4\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 # При выборе чёрного (0, 0, 0) цвета
 #. Response to Black (0, 0, 0) color selected
@@ -261,16 +261,13 @@ msgstr ""
 
 #: ../fill_tools.h:75
 #, c-format
-#| msgid ""
-#| "Click and drag to fill an area with a linear gradient (from the chosen "
-#| "color to transparent)."
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent). (Your gradient’s angle is %.0f degrees.)"
 msgstr ""
 "Щёлкните и ведите мышью по картинке, чтобы заполнить область линейным "
-"градиентом (от выбранного цвета к прозрачному). (Угол градиента равен %.0f"
-" град.)"
+"градиентом (от выбранного цвета к прозрачному). (Угол градиента равен %.0f "
+"град.)"
 
 # Поздравление №1
 #. Congratulations #1
@@ -435,9 +432,8 @@ msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
 msgstr ""
-"Обновлённые магические инструменты: 3D-очки (теперь предлагаются различные"
-" комбинации "
-"цветов анаглифа)"
+"Обновлённые магические инструменты: 3D-очки (теперь предлагаются различные "
+"комбинации цветов анаглифа)"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
@@ -449,10 +445,9 @@ msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
 msgstr ""
-"Имена файлов, созданных с помощью Открыть&gt;Экспортировать и "
-"открыть&gt;Слайд-шоу&gt;Экспорт GIF теперь отображаются, а также помещаются в"
-" буфер обмена для"
-" копирования/вставки."
+"Имена файлов, созданных с помощью Открыть&gt;Экспортировать и открыть&gt;"
+"Слайд-шоу&gt;Экспорт GIF теперь отображаются, а также помещаются в буфер "
+"обмена для копирования/вставки."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Localization updates."
@@ -467,27 +462,24 @@ msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
 msgstr ""
-"Рисунки, удалённые с помощью опции «Удалить» в диалоговом окне «Открыть»,"
-" теперь также "
-"перемещаются в корзину рабочего стола в Haiku."
+"Рисунки, удалённые с помощью опции «Удалить» в диалоговом окне «Открыть», "
+"теперь также перемещаются в корзину рабочего стола в Haiku."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
 msgstr ""
-"Новые магические инструменты: инструменты для рисования 1-, 2- и 3-точечных"
-" перспектив (и "
-"соответствующие редакторы точек схода)."
+"Новые магические инструменты: инструменты для рисования 1-, 2- и 3-точечных "
+"перспектив (и соответствующие редакторы точек схода)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
 msgstr ""
-"Новые магические инструменты: инструменты для рисования изометрических,"
-" диметрических и "
-"косых проекций (и соответствующие редакторы углов)."
+"Новые магические инструменты: инструменты для рисования изометрических, "
+"диметрических и косых проекций (и соответствующие редакторы углов)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
@@ -506,15 +498,14 @@ msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
 msgstr ""
-"Магические инструменты реорганизованы (ранее они располагались в алфавитном"
-" порядке по "
-"локализованному названию)."
+"Магические инструменты реорганизованы (ранее они располагались в алфавитном "
+"порядке по локализованному названию)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:71
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
-"Название и размер шрифта отображаются при выборе шрифтов в инструментах"
-" «Текст» и «Метка»."
+"Название и размер шрифта отображаются при выборе шрифтов в инструментах "
+"«Текст» и «Метка»."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:72
 msgid "Bug-fixes and localization updates."
@@ -536,10 +527,9 @@ msgid ""
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
 "the New dialog.)"
 msgstr ""
-"Превращайте сохранённые рисунки в шаблоны (находятся в диалоговом окне"
-" «Создать») в самом Tux "
-"Paint (через диалоговое окно «Открыть»). (Впоследствии их можно удалить из "
-"диалогового окна «Создать»)."
+"Превращайте сохранённые рисунки в шаблоны (находятся в диалоговом окне "
+"«Создать») в самом Tux Paint (через диалоговое окно «Открыть»). "
+"(Впоследствии их можно удалить из диалогового окна «Создать»)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid ""
@@ -547,20 +537,18 @@ msgid ""
 "templates from the New dialog may be disabled, via \"noerase\" configuration "
 "option."
 msgstr ""
-"Опция «Удалить» для удаления сохранённых рисунков из диалогового окна"
-" «Открыть» и экспортированных "
-"шаблонов из диалога «Создать» может быть отключена с помощью параметра"
-" конфигурации "
-"«noerase»."
+"Опция «Удалить» для удаления сохранённых рисунков из диалогового окна "
+"«Открыть» и экспортированных шаблонов из диалога «Создать» может быть "
+"отключена с помощью параметра конфигурации «noerase»."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
 msgstr ""
-"Укажите шрифт пользовательского интерфейса с помощью параметра конфигурации"
-" «uifont». (Список "
-"доступных шрифтов с помощью параметра «--listfonts» в командной строке)."
+"Укажите шрифт пользовательского интерфейса с помощью параметра конфигурации "
+"«uifont». (Список доступных шрифтов с помощью параметра «--listfonts» в "
+"командной строке)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
 msgid ""
@@ -575,8 +563,8 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"Незначительные улучшения кнопок выбора «специальных» цветов "
-"(пипетка, средство выбора цветов HSV и инструмент смешивания цветов)."
+"Незначительные улучшения кнопок выбора «специальных» цветов (пипетка, "
+"средство выбора цветов HSV и инструмент смешивания цветов)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
 msgid "Many Magic tools now offer size settings."
@@ -613,7 +601,6 @@ msgstr ""
 "Инструмент «Заливка» теперь предоставляет режим фигурного градиента (скос)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
-#| msgid "A quick Eraser mode is be accessed via keyboard shortcut."
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr ""
 "Доступ к режиму стирания можно получить путём нажатия соответствующей "
@@ -1417,35 +1404,26 @@ msgstr ""
 #. Text tool instructions after changing font
 #: ../tools.h:203
 #, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text."
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text."
 msgstr ""
-"Шрифт «%1$s (%2$s)», высота %3$d пикс. Щёлкните по рисунку и печатайте."
-" Нажмите  [Enter] или "
-"[Tab] для завершения."
+"Шрифт «%1$s (%2$s)», высота %3$d пикс. Щёлкните по рисунку и печатайте. "
+"Нажмите  [Enter] или [Tab] для завершения."
 
 #. Label tool instructions after changing font
 #: ../tools.h:206
 #, c-format
-#| msgid ""
-#| "Choose a style of text. Click on your drawing and you can start typing. "
-#| "Press [Enter] or [Tab] to complete the text. By using the selector button "
-#| "and clicking an existing label, you can move it, edit it, and change its "
-#| "text style."
 msgid ""
 "The font is \"%1$s (%2$s)\", %3$d pixels tall. Click on your drawing and you "
 "can start typing. Press [Enter] or [Tab] to complete the text. By using the "
 "selector button and clicking an existing label, you can move it, edit it, "
 "and change its text style."
 msgstr ""
-"Шрифт «%1$s (%2$s)», высота %3$d пикс. Щёлкните по рисунку и печатайте."
-" Нажмите [Enter] или "
-"[Tab] для завершения. Используя кнопку выбора и нажимая на существующие "
-"метки, можно перемещать и редактировать их, а также изменять их стиль текста."
+"Шрифт «%1$s (%2$s)», высота %3$d пикс. Щёлкните по рисунку и печатайте. "
+"Нажмите [Enter] или [Tab] для завершения. Используя кнопку выбора и нажимая "
+"на существующие метки, можно перемещать и редактировать их, а также изменять "
+"их стиль текста."
 
 #. Prompt to confirm user wishes to quit
 #: ../tuxpaint.c:2470
@@ -1527,7 +1505,6 @@ msgid "Erase this picture?"
 msgstr "Удалить эту картинку?"
 
 #: ../tuxpaint.c:2519
-#| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "Удалить этот шаблон?"
 
@@ -1547,13 +1524,11 @@ msgstr "Используйте только левую кнопку мыши!"
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2528
 #, c-format
-#| msgid "Your picture has been exported!"
 msgid "Your picture has been exported to \"%s\"!"
 msgstr "Картинка экспортирована в «%s»."
 
 #: ../tuxpaint.c:2529
 #, c-format
-#| msgid "Your slideshow GIF has been exported!"
 msgid "Your slideshow GIF has been exported to \"%s\"!"
 msgstr "Ваш слайд-шоу GIF экспортирован в «%s»."
 
@@ -1578,11 +1553,10 @@ msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
-"Вы уже превратили эту картинку в шаблон. Найдите его в диалоговом "
-"окне «Создать»."
+"Вы уже превратили эту картинку в шаблон. Найдите его в диалоговом окне "
+"«Создать»."
 
 #: ../tuxpaint.c:2542
-#| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "Не удалось превратить картинку в шаблон."
 
@@ -1691,11 +1665,9 @@ msgid ""
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
-"Выберите картинку, а затем нажмите «Открыть», «Экспорт», «Шаблон» или"
-" «Удалить». "
-"Нажмите «Слайды», чтобы создать анимационное слайд-шоу, или «Назад», чтобы"
-" вернуться к "
-"текущему изображению."
+"Выберите картинку, а затем нажмите «Открыть», «Экспорт», «Шаблон» или "
+"«Удалить». Нажмите «Слайды», чтобы создать анимационное слайд-шоу, или "
+"«Назад», чтобы вернуться к текущему изображению."
 
 #: ../tuxpaint.c:17389
 msgid ""
@@ -1703,9 +1675,8 @@ msgid ""
 "to create a slideshow animation or “Back“ to return to your current picture."
 msgstr ""
 "Выберите картинку, а затем нажмите «Открыть», «Экспорт» или «Удалить». "
-"Нажмите «Слайды», чтобы создать анимационное слайд-шоу, или «Назад», чтобы"
-" вернуться к "
-"текущему изображению."
+"Нажмите «Слайды», чтобы создать анимационное слайд-шоу, или «Назад», чтобы "
+"вернуться к текущему изображению."
 
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
@@ -1981,18 +1952,14 @@ msgid "Double Vision"
 msgstr "Двоение в глазах"
 
 #: ../../magic/src/colorsep.c:48
-#| msgid ""
-#| "Click and drag left and right to separate your picture's red and cyan, to "
-#| "make anaglyphs you can view with 3D glasses!"
 msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses! Use the size option to choose "
 "different types."
 msgstr ""
 "Щёлкните и ведите мышью влево и вправо по картинке, чтобы разделить красный "
-"и синий и создать анаглифы, которые можно будет просматривать в 3D-очках."
-" Используйте параметр размера, "
-"чтобы выбрать разные типы."
+"и синий и создать анаглифы, которые можно будет просматривать в 3D-очках. "
+"Используйте параметр размера, чтобы выбрать разные типы."
 
 #: ../../magic/src/colorsep.c:49
 msgid "Click and drag to separate your picture's colors."
@@ -2032,24 +1999,19 @@ msgid "Dither"
 msgstr "Узор из точек"
 
 #: ../../magic/src/dither.c:34
-#| msgid "Keep Color"
 msgid "Dither (Keep Color)"
 msgstr "Узор из точек (сохранение цвета)"
 
 #  msgid "Click to make your picture look like it's on television."
 #: ../../magic/src/dither.c:39
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots in your chosen color."
 msgstr ""
-"Щёлкните и перетащите, чтобы заменить части изображения узором из "
-"точек выбранного цвета."
+"Щёлкните и перетащите, чтобы заменить части изображения узором из точек "
+"выбранного цвета."
 
 #: ../../magic/src/dither.c:40
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots in your "
 "chosen color."
@@ -2058,19 +2020,14 @@ msgstr ""
 
 #  msgid "Click to make your picture look like it's on television."
 #: ../../magic/src/dither.c:44
-#| msgid ""
-#| "Click and drag to make parts of your picture look like they are on "
-#| "television."
 msgid ""
 "Click and drag to replace parts of your image with a dithered pattern of "
 "dots using the picture's original colors."
 msgstr ""
-"Щёлкните и перетащите мышью, чтобы заменить части изображения узором из"
-" точек, "
-"используя исходные цвета."
+"Щёлкните и перетащите мышью, чтобы заменить части изображения узором из "
+"точек, используя исходные цвета."
 
 #: ../../magic/src/dither.c:46
-#| msgid "Click to cover your picture with rain drops."
 msgid ""
 "Click to replace your entire image with a dithered pattern of dots using the "
 "picture's original colors."
@@ -2571,7 +2528,6 @@ msgid "Dimetric Select"
 msgstr "Выбор пары углов для рисования диметрической проекции"
 
 #: ../../magic/src/n_pt_persp.c:215
-#| msgid "Symmetric Up/Down"
 msgid "Dimetric Draw"
 msgstr "Рисование диметрической проекции"
 
@@ -2603,17 +2559,15 @@ msgid ""
 "Click in your drawing to pick a vanishing point for the 1-point perspective "
 "painting tool."
 msgstr ""
-"Щёлкните на своём рисунке, чтобы выбрать точку схода для инструмента"
-" рисования одноточечной "
-"перспективы."
+"Щёлкните на своём рисунке, чтобы выбрать точку схода для инструмента "
+"рисования одноточечной перспективы."
 
 #: ../../magic/src/n_pt_persp.c:232
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw lines with your 1-point perspective vanishing point."
 msgstr ""
-"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точки схода"
-" одноточечной перспективы."
+"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точки схода "
+"одноточечной перспективы."
 
 #. 2-point perspective
 #: ../../magic/src/n_pt_persp.c:235
@@ -2621,47 +2575,40 @@ msgid ""
 "Click two places in your drawing to pick vanishing points for the 2-point "
 "perspective painting tool."
 msgstr ""
-"Щёлкните в двух местах на своём рисунке, чтобы выбрать точки схода для"
-" инструмента рисования "
-"двухточечной перспективы."
+"Щёлкните в двух местах на своём рисунке, чтобы выбрать точки схода для "
+"инструмента рисования двухточечной перспективы."
 
 #: ../../magic/src/n_pt_persp.c:236
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 2-point perspective vanishing points."
 msgstr ""
-"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точек схода"
-" двухточечной перспективы."
+"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точек схода "
+"двухточечной перспективы."
 
 #: ../../magic/src/n_pt_persp.c:240
 msgid ""
 "Click three places in your drawing to pick vanishing points for the 3-point "
 "perspective painting tool."
 msgstr ""
-"Щёлкните в трёх местах на своём рисунке, чтобы выбрать точки схода для"
-" инструмента рисования "
-"трёхточечной перспективы."
+"Щёлкните в трёх местах на своём рисунке, чтобы выбрать точки схода для "
+"инструмента рисования трёхточечной перспективы."
 
 #: ../../magic/src/n_pt_persp.c:241
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points."
 msgstr ""
-"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точек схода"
-" трёхточечной перспективы."
+"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точек схода "
+"трёхточечной перспективы."
 
 #: ../../magic/src/n_pt_persp.c:243
-#| msgid "Click and drag to shift your picture around on the canvas."
 msgid ""
 "Click and drag to draw lines with your 3-point perspective vanishing points "
 "(downward perspective)."
 msgstr ""
-"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точек схода"
-" трёхточечной "
-"перспективы (нисходящая перспектива)."
+"Щёлкните и перетащите мышью, чтобы нарисовать линии с помощью точек схода "
+"трёхточечной перспективы (нисходящая перспектива)."
 
 #: ../../magic/src/n_pt_persp.c:247
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with an isometric projection."
 msgstr ""
 "Щёлкните и перетащите, чтобы нарисовать линии в изометрической проекции."
@@ -2672,12 +2619,10 @@ msgid ""
 "Click in your drawing to adjust the angle used by the dimetric projection "
 "painting tool."
 msgstr ""
-"Щёлкните на своём рисунке, чтобы настроить угол, используемый инструментом"
-" рисования диметрической "
-"проекции."
+"Щёлкните на своём рисунке, чтобы настроить угол, используемый инструментом "
+"рисования диметрической проекции."
 
 #: ../../magic/src/n_pt_persp.c:251
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with dimetric projection."
 msgstr ""
 "Щёлкните и перетащите, чтобы нарисовать линии в диметрической проекции."
@@ -2688,12 +2633,10 @@ msgid ""
 "Click in your drawing to adjust the angles used by the trimetric projection "
 "painting tool."
 msgstr ""
-"Щёлкните на своём рисунке, чтобы настроить углы, используемые инструментом"
-" рисования триметрической "
-"проекции."
+"Щёлкните на своём рисунке, чтобы настроить углы, используемые инструментом "
+"рисования триметрической проекции."
 
 #: ../../magic/src/n_pt_persp.c:255
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with trimetric projection."
 msgstr ""
 "Щёлкните и перетащите, чтобы нарисовать линии в триметрической проекции."
@@ -2704,21 +2647,18 @@ msgid ""
 "Click in your drawing to adjust the angle used by the oblique projection "
 "painting tool."
 msgstr ""
-"Щёлкните на своём рисунке, чтобы настроить угол, используемый инструментом"
-" рисования косой "
-"проекции."
+"Щёлкните на своём рисунке, чтобы настроить угол, используемый инструментом "
+"рисования косой проекции."
 
 #: ../../magic/src/n_pt_persp.c:259
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection."
 msgstr "Щёлкните и перетащите, чтобы нарисовать линии в косой проекции."
 
 #: ../../magic/src/n_pt_persp.c:261
-#| msgid "Click and drag to draw repetitive patterns."
 msgid "Click and drag to draw lines with oblique projection (right-facing)."
 msgstr ""
-"Щёлкните и перетащите, чтобы нарисовать линии в косой проекции (направленные"
-" вправо)."
+"Щёлкните и перетащите, чтобы нарисовать линии в косой проекции (направленные "
+"вправо)."
 
 #: ../../magic/src/perspective.c:174
 msgid "Perspective"
@@ -2788,11 +2728,10 @@ msgid ""
 "drag points to alter the shape. Drag adjacent points together to merge them. "
 "Connect the first and last points to complete the shape."
 msgstr ""
-"Щёлкните несколько раз на изображении, чтобы создать закрашенный"
-" многоугольник. Вы можете "
-"перетаскивать точки, чтобы изменить форму. Перетащите соседние точки вместе,"
-" чтобы объединить их. "
-"Соедините первую и последнюю точки, чтобы завершить форму."
+"Щёлкните несколько раз на изображении, чтобы создать закрашенный "
+"многоугольник. Вы можете перетаскивать точки, чтобы изменить форму. "
+"Перетащите соседние точки вместе, чтобы объединить их. Соедините первую и "
+"последнюю точки, чтобы завершить форму."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2872,7 +2811,6 @@ msgid "Ribbon"
 msgstr "Лента"
 
 #: ../../magic/src/ribbon.c:136
-#| msgid "Click to add snow balls to your picture."
 msgid "Add a flowing ribbon to your picture."
 msgstr "Добавьте струящуюся ленту на картинку."
 
@@ -2948,7 +2886,6 @@ msgstr ""
 "холста."
 
 #: ../../magic/src/smooth.c:63
-#| msgid "Smooth Rainbow"
 msgid "Smooth"
 msgstr "Сглаживание"
 
@@ -2961,22 +2898,18 @@ msgid "Loops"
 msgstr "Петли"
 
 #: ../../magic/src/smooth.c:69
-#| msgid "Click and drag the mouse around to draw with wet, smudgy paint."
 msgid ""
 "Click and drag the mouse around to draw in freehand; it will be smoothed "
 "when you let go."
 msgstr ""
-"Щёлкните и перемещайте мышь, чтобы нарисовать произвольную линию; она будет"
-" сглажена, "
-"когда вы отпустите мышь."
+"Щёлкните и перемещайте мышь, чтобы нарисовать произвольную линию; она будет "
+"сглажена, когда вы отпустите мышь."
 
 #: ../../magic/src/smooth.c:70
-#| msgid "Click and drag the mouse around to blur the image."
 msgid "Click and drag the mouse around to draw squiggles."
 msgstr "Щёлкните и перемещайте мышь, чтобы нарисовать волнистые завитки."
 
 #: ../../magic/src/smooth.c:71
-#| msgid "Click and drag the mouse around to draw in calligraphy."
 msgid "Click and drag the mouse around to draw loop-the-loops."
 msgstr "Щёлкните и перемещайте мышь, чтобы нарисовать петли."
 
@@ -3181,10 +3114,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Use the size option to change where the pen is."
 msgstr ""
-"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"за его пределами. Используйте параметр размера, чтобы изменить положение пера."
+"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося за его пределами. Используйте параметр размера, "
+"чтобы изменить положение пера."
 
 #: ../../magic/src/trochoids.c:126
 msgid ""
@@ -3192,10 +3125,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is within the rolling circle."
 msgstr ""
-"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"за его пределами. Таким образом перо окажется внутри движущегося круга."
+"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося за его пределами. Таким образом перо окажется "
+"внутри движущегося круга."
 
 #: ../../magic/src/trochoids.c:128
 msgid ""
@@ -3203,11 +3136,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is on the edge of the rolling circle."
 msgstr ""
-"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"за его пределами. Таким образом перо будет находиться на краю движущегося"
-" круга."
+"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося за его пределами. Таким образом перо будет "
+"находиться на краю движущегося круга."
 
 #: ../../magic/src/trochoids.c:130
 msgid ""
@@ -3215,10 +3147,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "outside of it. Then pen is outside the rolling circle."
 msgstr ""
-"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"за его пределами. Таким образом перо окажется снаружи движущегося круга."
+"Нажмите, чтобы начать рисовать эпитрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося за его пределами. Таким образом перо окажется "
+"снаружи движущегося круга."
 
 #: ../../magic/src/trochoids.c:133
 msgid ""
@@ -3226,10 +3158,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Use the size option to change where the pen is."
 msgstr ""
-"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"внутри него. Используйте параметр размера, чтобы изменить положение пера."
+"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося внутри него. Используйте параметр размера, чтобы "
+"изменить положение пера."
 
 #: ../../magic/src/trochoids.c:135
 msgid ""
@@ -3237,10 +3169,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is within the rolling circle."
 msgstr ""
-"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"внутри него. Таким образом перо окажется внутри движущегося круга."
+"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося внутри него. Таким образом перо окажется внутри "
+"движущегося круга."
 
 #: ../../magic/src/trochoids.c:137
 msgid ""
@@ -3248,10 +3180,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is on the edge of the rolling circle."
 msgstr ""
-"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"внутри него. Таким образом перо окажется на краю движущегося круга."
+"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося внутри него. Таким образом перо окажется на краю "
+"движущегося круга."
 
 #: ../../magic/src/trochoids.c:139
 msgid ""
@@ -3259,10 +3191,10 @@ msgid ""
 "the fixed circle, and up/down to change the size of the circle rolling "
 "inside it. Then pen is outside the rolling circle."
 msgstr ""
-"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо,"
-" чтобы изменить размер "
-"фиксированного круга, и вверх/вниз, чтобы изменить размер круга, движущегося "
-"внутри него. Таким образом перо окажется снаружи движущегося круга."
+"Нажмите, чтобы начать рисовать гипотрохоиду. Перетаскивайте влево/вправо, "
+"чтобы изменить размер фиксированного круга, и вверх/вниз, чтобы изменить "
+"размер круга, движущегося внутри него. Таким образом перо окажется снаружи "
+"движущегося круга."
 
 #: ../../magic/src/tv.c:123
 msgid "TV"
@@ -3317,12 +3249,10 @@ msgid "Xor Colors"
 msgstr "Цвета XOR"
 
 #: ../../magic/src/xor.c:116
-#| msgid "Click and drag to draw a XOR effect"
 msgid "Click and drag to draw an \"Exclusive Or\" (XOR) effect"
 msgstr "Щёлкните и перетащите, чтобы добавить эффект XOR"
 
 #: ../../magic/src/xor.c:118
-#| msgid "Click to draw a XOR effect on the whole picture"
 msgid "Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture"
 msgstr "Щёлкните, чтобы добавить эффект XOR ко всей картинке"
 
@@ -3536,5 +3466,3 @@ msgstr "Щёлкните, чтобы добавить эффект XOR ко вс
 
 #~ msgid "A diamond is a square, turned around slightly."
 #~ msgstr "Ромб похож на квадрат, но с другими углами."
-
-
