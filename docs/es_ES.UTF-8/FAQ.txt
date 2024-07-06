@@ -5,7 +5,7 @@
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 junio 4, 2024
+                                 julio 6, 2024
 
 +------------------------------+
 |      Table of Contents       |

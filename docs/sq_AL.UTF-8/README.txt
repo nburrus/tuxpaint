@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                7 qershor 2024
+                                 6 korrik 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
