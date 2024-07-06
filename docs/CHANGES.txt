@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.July.5 (0.9.33)
+2024.July.6 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -95,7 +95,7 @@ https://tuxpaint.org/
       or animated GIF (via Open->Slideshow).
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * WIP Add Trash support when using Erase option in Open dialog
+    * Add Trash support when using Erase option in Open dialog
       on Haiku.
       h/t Jérôme Duval <https://github.com/korli> for pointing us to this
       (see https://github.com/haikuports/haikuports/issues/10568)
@@ -126,17 +126,16 @@ https://tuxpaint.org/
       manually to build the universal bundle.
       Mark Kim <markuskimius@gmail.com>
 
-    * WIP Changes to support building for OS/2
+    * Changes to support building for OS/2
       + Makefile updates to support building for OS/2
       + Added "__declspec(dllexport)" (via new "TX_EXTERN" #define'd in
         `tp_magic_api.h`) to public function definitions in Magic tools
-        - WIP: So far just "Mirror/Flip" plugin
-        - TODO: Add "TX_EXTERN" prefix to all other public Magic tool functions
-      + Renamed long Magic tool source files to have shorter filenames
-        - WIP: So far just "Mirror/Flip" (`mirror_flip.c` -> `mirror_f.c`)
-        - TODO: Rename all other magic tool source files.
+      + Renamed "Mirror/Flip" Magic tool source file to have shorter filename
+        (`mirror_flip.c` -> `mirror_f.c`)
+      + TODO: Other Magic tools need these modifications.
+        https://sourceforge.net/p/tuxpaint/feature-requests/233/
       Elbert Pol <tellie@elbertpol.nl>
-      (with support from Bill Kendrick)
+      with support from Bill Kendrick
 
     * Updates to appdata metadata file for Appstream 1.0
       (https://sourceforge.net/p/tuxpaint/tuxpaint/merge-requests/19/)
@@ -145,6 +144,7 @@ https://tuxpaint.org/
     * Don't call rsvg_handle_close(); it's deprecated, and not necessary;
       (see https://gnome.pages.gitlab.gnome.org/librsvg/Rsvg-2.0/method.Handle.close.html;
       h/t https://github.com/xfce-mirror/xfce4-xkb-plugin/commit/825fa1c
+      Closes https://sourceforge.net/p/tuxpaint/bugs/278/
       Bill Kendrick <bill@newbreedsoftware.com>
 
     * Removed unused `need_right_to_left_word` internal flags and `textdir()`.
