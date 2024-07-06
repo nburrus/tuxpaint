@@ -773,6 +773,7 @@ uninstall:	uninstall-i18n
 	-rm $(MAN_PREFIX)/*/man1/tp-magic-config.1.gz
 	-rm -f -r $(CONFDIR)
 	-rm $(COMPLETIONDIR)/tuxpaint-completion.bash
+	-rm $(COMPLETIONDIR)/010_tuxpaint-completion.bash
 	-rm -r $(MAGIC_PREFIX)
 	-rm -r $(INCLUDE_PREFIX)/tuxpaint
 	-rm $(BIN_PREFIX)/tp-magic-config
@@ -815,13 +816,18 @@ install-default-config:
 	@chmod 644 $(CONFDIR)/tuxpaint.conf
 
 # Install BASH completion file:
+# (Per https://sourceforge.net/p/tuxpaint/bugs/290/ naming
+# in such a way that buggy bash-completion won't end up
+# looking at our file before "000_bash_completion_compat.bash"
+# under certain locales, due to different sorting / LC_COLLATE,
+# and hence `have` being unavailable.)
 .PHONY: install-bash-completion
 install-bash-completion:
 	@echo
 	@echo "...Installing BASH completion file..."
 	@install -d $(COMPLETIONDIR)
-	@cp src/tuxpaint-completion.bash $(COMPLETIONDIR)
-	@chmod 644 $(COMPLETIONDIR)/tuxpaint-completion.bash
+	@cp src/tuxpaint-completion.bash $(COMPLETIONDIR)/010_tuxpaint-completion.bash
+	@chmod 644 $(COMPLETIONDIR)/010_tuxpaint-completion.bash
 
 
 # Install example stamps

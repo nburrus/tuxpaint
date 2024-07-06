@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.July.4 (0.9.33)
+2024.July.5 (0.9.33)
   * New Magic Tools:
     ----------------
     * Dither & Dither (Keep Color): Replaces all or part of a drawing
@@ -109,7 +109,11 @@ https://tuxpaint.org/
     * Make screen refresh more snappy on macOS.
       Mark Kim <markuskimius@gmail.com>
 
-    * Replace `have` with `_have` in Tux Paint's BASH completion script.
+    * Replace `have` with `_have` in Tux Paint's BASH completion script,
+      and rename as `010_tuxpaint-completion.bash` when installing, to
+      ensure `have` exists via `000_bash_completion_compat.bash`; under
+      some locales (LC_COLLATE), that could get ran _after_ Tux Paint's,
+      due to this bug: https://github.com/scop/bash-completion/issues/1207)
       Closes https://sourceforge.net/p/tuxpaint/bugs/290/
       (h/t Jozef Riha for reporting)
       Bill Kendrick <bill@newbreedsoftware.com>
