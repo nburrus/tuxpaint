@@ -1,5 +1,5 @@
 Release checklist for Tux Paint
-Last updated 2024-06-23 -bjk
+Last updated 2024-07-06 -bjk
 
 During development
 ------------------
@@ -57,14 +57,25 @@ a .tar.gz source tarball, and making the tarball available for download.
      * Update What's New section in doc-src/README/README-whatsnew.php
        (things worth mentioning in the press release on the website)
 
-     Here, be sure to run "make" in "docs/", to produce plaintext
-     alternatives of the HTML files.
+     There, run "make" to generate the HTML (and some other) files based
+     on the PHP sources.  Then run "./copy-html-to-tuxpaint.sh" to copy
+     the resulting files to the directory containing a checkout of the
+     "tuxpaint" repo.
 
-     * docs/en/html/README.html
-     * docs/en/html/FAQ.html
-     * docs/en/html/OPTIONS.html
-     * docs/en/html/EXTENDING.html
+     Here, be sure to run "make" in "docs/", to produce plaintext
+     alternatives of the docs that are available as HTML.
+     e.g. (for English):
+
      * docs/en/html/ADVANCED-STAMPS-HOWTO.html
+     * docs/en/html/ENVARS.html
+     * docs/en/html/EXTENDING.html
+     * docs/en/html/FAQ.html
+     * docs/en/html/INSTALL.html
+     * docs/en/html/OPTIONS.html
+     * docs/en/html/PNG.html
+     * docs/en/html/README.html
+     * docs/en/html/SIGNALS.html
+     * docs/en/html/SVG.html
 
    * Manual page (manpage)
 
