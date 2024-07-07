@@ -308,7 +308,7 @@ begin
   InstalledVersion := GetInstalledVersionString();
   if InstalledVersion <> '' then
   begin
-    if CompareText(InstalledVersion, '0.9.28') < 0 then
+    if CompareText(InstalledVersion, '0.9.33') < 0 then
     begin
       UninstallCmd := GetUninstallString();
       if CmdLineParamExists('/VERYSILENT') = False then
