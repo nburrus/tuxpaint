@@ -11,7 +11,7 @@
 # (append "-rc#", e.g. "-rc1", when making release candidates
 # for beta testing)
 
-VER_VERSION:=0.9.33-rc1
+VER_VERSION:=0.9.33
 
 # We are always SDL2 now, so don't need "-sdl2"
 VER_FLAVOR:=""
