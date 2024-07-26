@@ -1,5 +1,5 @@
                                    Tux Paint
-                                versión 0.9.33
+                                versión 0.9.34
 
                   Un sinxelo programa de debuxo para cativos
 
@@ -98,7 +98,7 @@ corrixir erros e usar partes do programa no seu propio software GPL).
 
 Consulte o texto completo da licenza GPL en COPYING.txt.
 
-D. What's New in Tux Paint version 0.9.33?
+D. What's New in Tux Paint version 0.9.34?
 
 Transparent Erasers
     Erasers that lightly expose more and more of the background.

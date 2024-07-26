@@ -20,5 +20,5 @@ Voir aussi : Sép des couleurs. & Vision double.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.33
+                               Tux Paint 0.9.34
 

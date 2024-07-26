@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.33
+                                version 0.9.34
 
                   Një program i thjeshtë vizatimi për fëmijë
 
@@ -97,7 +97,7 @@ parts of the program in their own GPL'd software.)
 
 See COPYING.txt for the full text of the GPL license.
 
-D. What's New in Tux Paint version 0.9.33?
+D. What's New in Tux Paint version 0.9.34?
 
 Transparent Erasers
     Erasers that lightly expose more and more of the background.

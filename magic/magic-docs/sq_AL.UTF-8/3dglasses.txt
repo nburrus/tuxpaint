@@ -20,5 +20,5 @@ Shihni edhe: Ndarje Ngjyrash & Pamje e Dyfishtë.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.33
+                               Tux Paint 0.9.34
 

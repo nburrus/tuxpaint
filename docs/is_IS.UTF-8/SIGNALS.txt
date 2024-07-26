@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.33
+                                version 0.9.34
                              Signals Documentation
 
         Copyright © 2019-2022 by various contributors; see AUTHORS.txt.

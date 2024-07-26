@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.33
+                                version 0.9.34
                           Installation Documentation
 
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
