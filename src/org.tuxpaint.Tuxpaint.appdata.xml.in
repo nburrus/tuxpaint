@@ -47,6 +47,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.9.34" date="2024-07-26">
+      <description>
+        <p>TBD.</p>
+      </description>
+    </release>
     <release version="0.9.33" date="2024-07-17">
       <description>
         <p>Transparent Erasers.</p>
