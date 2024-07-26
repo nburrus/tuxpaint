@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - July 4, 2024
+June 17, 2002 - July 26, 2024
 
 * Design and Coding:
 
@@ -1230,6 +1230,7 @@ June 17, 2002 - July 4, 2024
   * Vietnamese
     Le Quang Phan
     Clytie Siddall
+    Cas Pascal <casboi86@gmail.com>
 
   * Walloon
     Pablo Saratxaga

@@ -7,7 +7,10 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2024.July.26 (0.9.34)
-  * TBD
+  * Localization Updates:
+    ---------------------
+    * Vietnamese translation
+      Cas Pascal <casboi86@gmail.com>
 
 2024.July.17 (0.9.33)
   * New Magic Tools:
