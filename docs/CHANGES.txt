@@ -6,7 +6,15 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.July.26 (0.9.34)
+2024.September.15 (0.9.34)
+  * Ports & Building:
+    -----------------
+    * On Android, quitting Tux Paint while it's in the background and the
+      current image has been autosaved would invoke the "Are you sure?"
+      prompt (and corresponding sound effect), which could not be interacted
+      with by the user.  Avoiding this.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
   * Localization Updates:
     ---------------------
     * Vietnamese translation
