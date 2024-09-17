@@ -7,6 +7,13 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2024.September.16 (0.9.34)
+  * Improvements to Fill tool:
+    --------------------------
+    * New "Eraser" flood fill mode, to expose the background
+      (solid color, or template or starter background).
+      Bill Kendrick <bill@newbreedsoftware.com>
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/258/
+
   * New Brushes:
     ------------
     * Fluff (gradient variation)

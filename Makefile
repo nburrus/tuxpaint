@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - July 26, 2024
+# June 14, 2002 - September 16, 2024
 
 
 # The version number, for release:
@@ -1345,7 +1345,7 @@ obj/playsound.o:	src/playsound.c src/playsound.h \
 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/playsound.c -o obj/playsound.o
 
-obj/fill.o:	src/fill.c src/fill.h \
+obj/fill.o:	src/fill.c src/fill.h src/fill_tools.h \
 		src/rgblinear.h src/playsound.h src/pixels.h
 	@echo
 	@echo "...Compiling flood fill tool..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-26 01:09-0700\n"
+"POT-Creation-Date: 2024-09-16 20:52-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -183,57 +183,31 @@ msgstr ""
 msgid "<9>spare-9b"
 msgstr ""
 
-#: ../fill_tools.h:52
-msgid "Solid"
-msgstr ""
-
-#: ../fill_tools.h:53
-#, fuzzy
-#| msgid "Brushes"
-msgid "Brush"
-msgstr "Mmorɔhye"
-
-#: ../fill_tools.h:54
-#, fuzzy
-#| msgid "Lines"
-msgid "Linear"
-msgstr "Nsensan"
-
-#: ../fill_tools.h:55
-msgid "Radial"
-msgstr ""
-
-#: ../fill_tools.h:56
-#, fuzzy
-#| msgid "Shapes"
-msgid "Shaped"
-msgstr "Tebea"
-
-#: ../fill_tools.h:60
+#: ../fill_tools.h:62
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click to fill an area with a solid color."
 msgstr "Mia mfoni no so na ma no fa ahosuo."
 
-#: ../fill_tools.h:61
+#: ../fill_tools.h:63
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid "Click and drag to fill an area by hand, using a brush."
 msgstr "Mia mfoni no so na ma no fa ahosuo."
 
-#: ../fill_tools.h:62
+#: ../fill_tools.h:64
 msgid ""
 "Click and drag to fill an area with a linear gradient (from the chosen color "
 "to transparent)."
 msgstr ""
 
-#: ../fill_tools.h:63
+#: ../fill_tools.h:65
 msgid ""
 "Click to fill an area with a radial gradient (from the chosen color to "
 "transparent)."
 msgstr ""
 
-#: ../fill_tools.h:64
+#: ../fill_tools.h:66
 #, fuzzy
 #| msgid "Click in the picture to fill that area with color."
 msgid ""
@@ -241,7 +215,43 @@ msgid ""
 "transparent)."
 msgstr "Mia mfoni no so na ma no fa ahosuo."
 
-#: ../fill_tools.h:75
+#: ../fill_tools.h:67
+#, fuzzy
+msgid "Click to erase an area, filling it with the background color or image."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#: ../fill_tools.h:80
+msgid "Solid"
+msgstr ""
+
+#: ../fill_tools.h:81
+#, fuzzy
+#| msgid "Brushes"
+msgid "Brush"
+msgstr "Mmorɔhye"
+
+#: ../fill_tools.h:82
+#, fuzzy
+#| msgid "Lines"
+msgid "Linear"
+msgstr "Nsensan"
+
+#: ../fill_tools.h:83
+msgid "Radial"
+msgstr ""
+
+#: ../fill_tools.h:84
+#, fuzzy
+#| msgid "Shapes"
+msgid "Shaped"
+msgstr "Tebea"
+
+#. Eraser tool
+#: ../fill_tools.h:85 ../tools.h:91
+msgid "Eraser"
+msgstr "Apepade"
+
+#: ../fill_tools.h:88
 #, fuzzy, c-format
 #| msgid "Click in the picture to fill that area with color."
 msgid ""
@@ -378,7 +388,7 @@ msgid "The Stamp tool is like a set of rubber stamps or stickers"
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
-msgid "TBD."
+msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:57
@@ -992,11 +1002,6 @@ msgstr "Pepa"
 msgid "Redo"
 msgstr "San yɛ"
 
-#. Eraser tool
-#: ../tools.h:91
-msgid "Eraser"
-msgstr "Apepade"
-
 #. Start a new picture
 #: ../tools.h:94
 msgid "New"
@@ -1005,7 +1010,7 @@ msgstr "Foforo"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9843
+#: ../tools.h:97 ../tuxpaint.c:9890
 msgid "Open"
 msgstr "Bue"
 
@@ -1247,260 +1252,260 @@ msgstr ""
 "Atwerɛdeɛ su biara a wopɛ sɛ wotwerɛ gu mfoni ho no, wotumi fa de twerɛ."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2470
+#: ../tuxpaint.c:2471
 msgid "Do you really want to quit?"
 msgstr "Wopɛ sɛ wofi ha?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2473
+#: ../tuxpaint.c:2474
 #, fuzzy
 #| msgid "Yes, I'm done!"
 msgid "Yes, I’m done!"
 msgstr "Yiw, mawie!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2476 ../tuxpaint.c:2503
+#: ../tuxpaint.c:2477 ../tuxpaint.c:2504
 msgid "No, take me back!"
 msgstr "Daabi, fa me kɔ akyi!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2480
+#: ../tuxpaint.c:2481
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "Sɛ wofi ha a, wo mfoni no bɛyera! Wode besie?"
 
-#: ../tuxpaint.c:2481 ../tuxpaint.c:2486
+#: ../tuxpaint.c:2482 ../tuxpaint.c:2487
 msgid "Yes, save it!"
 msgstr "Yiw, fa sie!"
 
-#: ../tuxpaint.c:2482 ../tuxpaint.c:2487
+#: ../tuxpaint.c:2483 ../tuxpaint.c:2488
 #, fuzzy
 #| msgid "No, don't bother saving!"
 msgid "No, don’t bother saving!"
 msgstr "Daabi, mfa nsie!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2485
+#: ../tuxpaint.c:2486
 msgid "Save your picture first?"
 msgstr "Wobedi kan de wo mfoni no asie?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2490
+#: ../tuxpaint.c:2491
 msgid "Can’t open that picture!"
 msgstr "Worentumi mmue saa mfoni no!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2493 ../tuxpaint.c:2498 ../tuxpaint.c:2507 ../tuxpaint.c:2514
-#: ../tuxpaint.c:2525 ../tuxpaint.c:2530 ../tuxpaint.c:2538
+#: ../tuxpaint.c:2494 ../tuxpaint.c:2499 ../tuxpaint.c:2508 ../tuxpaint.c:2515
+#: ../tuxpaint.c:2526 ../tuxpaint.c:2531 ../tuxpaint.c:2539
 msgid "OK"
 msgstr "Eye"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2497
+#: ../tuxpaint.c:2498
 msgid "There are no saved files!"
 msgstr "Womfaa biribi nsieɛ!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2501
+#: ../tuxpaint.c:2502
 msgid "Print your picture now?"
 msgstr "Afei wopɛ sɛ wode mfoni no to krataa so?"
 
-#: ../tuxpaint.c:2502
+#: ../tuxpaint.c:2503
 msgid "Yes, print it!"
 msgstr "Aane, tintim!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2506
+#: ../tuxpaint.c:2507
 msgid "Your picture has been printed!"
 msgstr "Woatim wo mfoni no!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2510
+#: ../tuxpaint.c:2511
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Woatim wo mfoni no!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2513
+#: ../tuxpaint.c:2514
 msgid "You can’t print yet!"
 msgstr "Wontumi ntintim seesie!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2518
+#: ../tuxpaint.c:2519
 msgid "Erase this picture?"
 msgstr "Wopɛ sɛ wo saa mfoni yi?"
 
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2520
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "Wopɛ sɛ wo saa mfoni yi?"
 
-#: ../tuxpaint.c:2520
+#: ../tuxpaint.c:2521
 msgid "Yes, erase it!"
 msgstr "Aane, pepa no!"
 
-#: ../tuxpaint.c:2521
+#: ../tuxpaint.c:2522
 #, fuzzy
 #| msgid "No, don't erase it!"
 msgid "No, don’t erase it!"
 msgstr "Daabi, mpepa no!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2525
 msgid "Remember to use the left mouse button!"
 msgstr "Kae na mia akura no benkum so!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2528
+#: ../tuxpaint.c:2529
 #, fuzzy, c-format
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported to \"%s\"!"
 msgstr "Woatim wo mfoni no!"
 
-#: ../tuxpaint.c:2529
+#: ../tuxpaint.c:2530
 #, fuzzy, c-format
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported to \"%s\"!"
 msgstr "Woatim wo mfoni no!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2533
+#: ../tuxpaint.c:2534
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Woatim wo mfoni no!"
 
-#: ../tuxpaint.c:2534
+#: ../tuxpaint.c:2535
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Woatim wo mfoni no!"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2537
+#: ../tuxpaint.c:2538
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2541
+#: ../tuxpaint.c:2542
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2542
+#: ../tuxpaint.c:2543
 #, fuzzy
 #| msgid "Your picture has been printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "Woatim wo mfoni no!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2545
+#: ../tuxpaint.c:2546
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "Fa mfoni a wopɛ, na mia di so ma no nyi."
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2854
+#: ../tuxpaint.c:2857
 msgid "Sound muted."
 msgstr ""
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2859
+#: ../tuxpaint.c:2862
 msgid "Sound unmuted."
 msgstr ""
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3708
+#: ../tuxpaint.c:3711
 msgid "Please wait…"
 msgstr "Mepawokyɛw twɛn..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9846
+#: ../tuxpaint.c:9893
 msgid "Erase"
 msgstr "Pepa"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9849
+#: ../tuxpaint.c:9896
 msgid "Slides"
 msgstr "Mfoni a edi hɔ"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9852
+#: ../tuxpaint.c:9899
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9855
+#: ../tuxpaint.c:9902
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9858
+#: ../tuxpaint.c:9905
 msgid "Back"
 msgstr "Kɔ wakyi"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9861
+#: ../tuxpaint.c:9908
 msgid "Play"
 msgstr "Di agorɔ"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9864
+#: ../tuxpaint.c:9911
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9867
+#: ../tuxpaint.c:9914
 msgid "Next"
 msgstr "Deɛ edi hɔ"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9870
+#: ../tuxpaint.c:9917
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10805 ../tuxpaint.c:10808 ../tuxpaint.c:10809
+#: ../tuxpaint.c:10852 ../tuxpaint.c:10855 ../tuxpaint.c:10856
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14824
+#: ../tuxpaint.c:14878
 msgid "Yes"
 msgstr "Aane"
 
-#: ../tuxpaint.c:14827
+#: ../tuxpaint.c:14881
 msgid "No"
 msgstr "Daabi"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16102
+#: ../tuxpaint.c:16156
 msgid "Replace the picture with your changes?"
 msgstr "Wopɛ sɛ wosesa mfoni no?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16106
+#: ../tuxpaint.c:16160
 msgid "Yes, replace the old one!"
 msgstr "Aane, sesa dada no!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16110
+#: ../tuxpaint.c:16164
 msgid "No, save a new file!"
 msgstr "Daabi, fa foforɔ no sie!"
 
-#: ../tuxpaint.c:17383
+#: ../tuxpaint.c:17437
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17389
+#: ../tuxpaint.c:17443
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1509,72 +1514,72 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:19079
+#: ../tuxpaint.c:19133
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25283
+#: ../tuxpaint.c:25337
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25284
+#: ../tuxpaint.c:25338
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Akokɔ sradeɛ!"
 
-#: ../tuxpaint.c:25285
+#: ../tuxpaint.c:25339
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Ewiem!"
 
-#: ../tuxpaint.c:25286
+#: ../tuxpaint.c:25340
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Fitaa!"
 
-#: ../tuxpaint.c:25287
+#: ../tuxpaint.c:25341
 msgid "grey"
 msgstr ""
 
 # san fa bra
-#: ../tuxpaint.c:25288
+#: ../tuxpaint.c:25342
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Tuntum!"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25293
+#: ../tuxpaint.c:25347
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25294
+#: ../tuxpaint.c:25348
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25295
+#: ../tuxpaint.c:25349
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25296
+#: ../tuxpaint.c:25350
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25297
+#: ../tuxpaint.c:25351
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25298
+#: ../tuxpaint.c:25352
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1582,22 +1587,22 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26078 ../tuxpaint.c:26083
+#: ../tuxpaint.c:26132 ../tuxpaint.c:26137
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29285
+#: ../tuxpaint.c:29339
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:29296
+#: ../tuxpaint.c:29350
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29310
+#: ../tuxpaint.c:29364
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."

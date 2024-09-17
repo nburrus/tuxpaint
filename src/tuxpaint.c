@@ -3660,7 +3660,7 @@ static void mainloop(void)
                 num_things = NUM_FILLS;
                 thing_scroll = &fill_scroll;
                 draw_fills();
-                draw_colors(COLORSEL_ENABLE);
+                draw_colors(fill_color[cur_fill]);
               }
               else if (cur_tool == TOOL_SHAPES)
               {
@@ -4973,7 +4973,10 @@ static void mainloop(void)
               draw_tux_text(TUX_GREAT, fill_tips[cur_fill], 1);
 
               if (do_draw)
+              {
                 draw_fills();
+                draw_colors(fill_color[cur_fill]);
+              }
             }
             else if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
             {
@@ -5495,17 +5498,31 @@ static void mainloop(void)
             else if (cur_tool == TOOL_FILL)
             {
               Uint32 draw_color, canv_color;
+              int would_fill = 0;
 
               /* Fill */
-
-              draw_color = SDL_MapRGB(canvas->format,
-                                      color_hexes[cur_color][0], color_hexes[cur_color][1], color_hexes[cur_color][2]);
-              canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
 
               fill_x = old_x;
               fill_y = old_y;
 
-              if (would_flood_fill(canvas, draw_color, canv_color))
+              canv_color = getpixels[canvas->format->BytesPerPixel] (canvas, old_x, old_y);
+
+              if (cur_fill == FILL_ERASER)
+              {
+                if (img_starter_bkgd != NULL)
+                  draw_color = getpixels[img_starter_bkgd->format->BytesPerPixel] (img_starter_bkgd, old_x, old_y);
+                else
+                  draw_color = SDL_MapRGB(canvas->format, canvas_color_r, canvas_color_g, canvas_color_b);
+              }
+              else
+              {
+                draw_color = SDL_MapRGB(canvas->format,
+                                        color_hexes[cur_color][0], color_hexes[cur_color][1], color_hexes[cur_color][2]);
+              }
+
+              would_fill = would_flood_fill(canvas, draw_color, canv_color);
+
+              if (would_fill)
               {
                 int x1, y1, x2, y2;
                 SDL_Surface *last;
@@ -5534,9 +5551,13 @@ static void mainloop(void)
                   }
                 }
 
-                if (cur_fill == FILL_FLOOD)
+                if (cur_fill == FILL_FLOOD ||
+                    (cur_fill == FILL_ERASER && img_starter_bkgd == NULL))
                 {
                   /* Flood fill a solid color */
+
+                  /* (both standard flood fill, and "erase fill", when the
+                     current drawing's background is a solid color) */
                   do_flood_fill(screen, texture, renderer, last, canvas,
                                 old_x, old_y, draw_color, canv_color, &x1, &y1, &x2, &y2, sim_flood_touched);
 
@@ -5589,6 +5610,29 @@ static void mainloop(void)
                     draw_brush_fill(canvas, sim_flood_x1, sim_flood_y1,
                                     sim_flood_x2, sim_flood_y2, fill_x,
                                     fill_y, old_x, old_y, draw_color, sim_flood_touched, &x1, &y1, &x2, &y2);
+                  }
+                  else if (cur_fill == FILL_ERASER)
+                  {
+                    void (*putpixel)(SDL_Surface *, int, int, Uint32) = putpixels[canvas->format->BytesPerPixel];
+                    Uint32(*getpixel) (SDL_Surface *, int, int) = getpixels[img_starter_bkgd->format->BytesPerPixel];
+
+                    int x, y;
+
+                    /* Replace the flooded area with the background image */
+                    /* (solid color background is handled above, in FILL_FLOOD mode) */
+
+//printf("checking (%d,%d)->(%d,%d) for matches\n", sim_flood_x1, sim_flood_xy, sim_flood_x2, sim_flood_y2);
+
+                    for (y = sim_flood_y1; y <= sim_flood_y2; y++)
+                    {
+                      for (x = sim_flood_x1; x <= sim_flood_x2; x++) 
+                      {
+                        if (sim_flood_touched[y * canvas->w + x])
+                        {
+                          putpixel(canvas, x, y, getpixel(img_starter_bkgd, x, y));
+                        }
+                      }
+                    }
                   }
 
                   update_canvas(x1, y1, x2, y2);
@@ -11744,7 +11788,6 @@ static void draw_fills(void)
       SDL_BlitSurface(img_fill_names[i], NULL, screen, &dest);
     }
   }
-
 }
 
 /**
