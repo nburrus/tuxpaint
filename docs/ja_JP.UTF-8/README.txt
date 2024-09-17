@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年7月17日
+                                 2024年9月16日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -97,36 +97,12 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 
 D. Tux Paint バージョン 0.9.34 での変更点
 
-透明な消しゴム
-    徐々に背景が表れてくる消しゴム
-
-「まほう」ツール：「ディザ」
-    画像の一部をドットのディザパターンに変換する。
-
-「まほう」ツール：「たかっけい」
-    キャンバス上に3つ以上の点をつないで多角形を作成します。
-
-「りったいめがね」ツールの機能追加
-    「サイズ」コントロールで、アナグリフの色の組み合わせを選べるようになりまし
-    た。（「初心者」モードを除く）
-
-「まほう」ツールをグループ化しないオプション
-    多数の「まほう」ツールを（バージョン 0.9.27 までと同様に）グループに分けず
-    に1つの長いリストとして表示されるようにできます。
-
-ブラシの説明文
-    個々のブラシ（「ふで」ツールと「せん」ツールで使用）を選択したときに説明を
-    表示させることができるようになりました。
+"Eraser" Fill mode
+    A flood fill option that fills the canvas with the background color, or
+    template or starter background, upon which the drawing was based.
 
 ブラシの追加
-    アクリル絵の具、鉛筆、毛羽立ったブラシ
-書き出し先ファイル名
-    作品(「ひらく」>「かきだす」)、またはスライドショー(「ひらく」>「スライド」
-    >「かきだす」)を書き出すと、ファイル名が表示され、クリップボードに入りま
-    す。
-Haikuでゴミ箱に対応
-    Haiku 版 Tux Paint では、ファイルを完全に削除するのではなく、削除した作品
-    （「ひらく」>「けす」）をデスクトップのゴミ箱に入れるようになりました。
+    New brushes for the Paint and Lines tools: Fluff (gradient).
 
 全ての変更点については、CHANGES.txt をお読みください。
 
@@ -552,6 +528,10 @@ f.「ぬる」ツール
         うにグラデーションをつけて塗りつぶします。
       + あわせる — クリックした領域の輪郭に合わせて色が薄くなるようにグラデー
         ションをつけて塗りつぶします。
+      + Eraser — click once to erase an area, exposing the solid color
+        background, or starter or template background image, upon which the
+        drawing was based. (See 各種のツール > 描画ツール > けしゴム and そのほ
+        かの操作 > レイヤー画像.)
 
     📜 注: Tux Paint 0.9.24 より前のバージョンでは、このツールは「まほう」ツール
     のひとつでした。（「まほう」ツールについては、以下をご覧ください） Tux
@@ -660,8 +640,10 @@ a.「とりけし」と「やりなおし」
 
 b.「さいしょから」
 
-    「さいしょから」のボタンを押すと、新規に絵を描き始めることができます。ダイ
-    アログ画面が表示され、キャンバスの背景色やレイヤー画像（後述）を選べます。
+    Clicking the 'New' button will start a new drawing. A dialog will appear
+    where you may choose to start a new picture using a solid background color,
+    or using a 'Starter' or 'Template' image (see below). You will first be
+    asked whether you really want to do this.
 
     「けしゴム」ツールを使うと、描画した部分が消去され、最初に選択した背景が露
     出します。 (各種のツール > 描画ツール > けしゴムもご確認ください。)
@@ -681,9 +663,13 @@ b.「さいしょから」
             絵を描ける３Ｄ画像のようなものがあります。
           o また、このほかに、背景レイヤーだけの画像も用意されています。
 
-        「消しゴム」ツールを使用すると、元のレイヤー画像が消されずに残ります。
-        また、マジックツールの「反転」と「ミラー」は、レイヤー画像も反転させま
-        す。
+        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool,
+        the original image from the 'Starter' or 'Template' will reappear. (See
+        各種のツール > 描画ツール > けしゴム and 「ぬる」ツール.)
+
+        The 'Flip' and 'Mirror' Magic tools affect the orientation of the
+        'Starter' or 'Template', as well. (See 各種のツール > 「まほう」ツール
+        （特殊効果） > Flip and Mirror.)
 
         レイヤー画像は、その上に絵を描いて保存すると新しい絵として保存され、
         元々のレイヤー画像自体は上書きされないので、後で（「さいしょから」ダイ

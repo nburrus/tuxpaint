@@ -102,7 +102,7 @@
           </p>
 
           <p>
-            2024年7月17日          </p>
+            2024年9月16日          </p>
         </center>
       </header>
       <table border="2"
@@ -228,32 +228,11 @@
     </header>
 
     <dl>
-  <dt>透明な消しゴム</dt>
-  <dd>徐々に背景が表れてくる消しゴム</dd>
-
-  <dt>「まほう」ツール：「ディザ」</dt>
-  <dd>画像の一部をドットのディザパターンに変換する。</dd>
-
-  <dt>「まほう」ツール：「たかっけい」</dt>
-  <dd>キャンバス上に3つ以上の点をつないで多角形を作成します。</dd>
-
-  <dt>「りったいめがね」ツールの機能追加</dt>
-  <dd>「サイズ」コントロールで、アナグリフの色の組み合わせを選べるようになりました。（「初心者」モードを除く）</dd>
-
-  <dt>「まほう」ツールをグループ化しないオプション</dt>
-  <dd>多数の「まほう」ツールを（バージョン 0.9.27 までと同様に）グループに分けずに1つの長いリストとして表示されるようにできます。</dd>
-
-  <dt>ブラシの説明文</dt>
-  <dd>個々のブラシ（「ふで」ツールと「せん」ツールで使用）を選択したときに説明を表示させることができるようになりました。</dd>
+  <dt>"Eraser" Fill mode</dt>
+  <dd>A flood fill option that fills the canvas with the background color, or template or starter background, upon which the drawing was based.</dd>
 
   <dt>ブラシの追加</dt>
-  <dd>アクリル絵の具、鉛筆、毛羽立ったブラシ</dt>
-
-  <dt>書き出し先ファイル名</dt>
-  <dd>作品(「ひらく」&gt;「かきだす」)、またはスライドショー(「ひらく」&gt;「スライド」&gt;「かきだす」)を書き出すと、ファイル名が表示され、クリップボードに入ります。</dt>
-
-  <dt>Haikuでゴミ箱に対応</dt>
-  <dd>Haiku 版 Tux Paint では、ファイルを完全に削除するのではなく、削除した作品（「ひらく」&gt;「けす」）をデスクトップのゴミ箱に入れるようになりました。</dt>
+  <dd>New brushes for the Paint and Lines tools: Fluff (gradient).</dt>
 </dl>
 
     <p>
@@ -926,6 +905,7 @@
       <li><strong>せんけい</strong> &mdash; 領域をクリックしてからドラッグすると、ドラッグした方向に向かって色が薄くなるようにグラデーションをつけて塗りつぶします。</li>
       <li><strong>ほうしゃ</strong> &mdash; クリックした場所を中心に周りに向かって放射状に色が薄くなるようにグラデーションをつけて塗りつぶします。</li>
       <li><strong>あわせる</strong> &mdash; クリックした領域の輪郭に合わせて色が薄くなるようにグラデーションをつけて塗りつぶします。</li>
+      <li><strong>Eraser</strong> &mdash; click once to erase an area, exposing the solid color background, or starter or template background image, upon which the drawing was based. (See <a href="#using_tools_drawing_eraser">各種のツール &gt; 描画ツール &gt; けしゴム</a> and <a href="#new-starter-template">そのほかの操作 &gt; レイヤー画像</a>.)</li>
     </ul>
   </p>
 
@@ -1086,7 +1066,7 @@
       alt=""
       align="right">
   <p>
-    「さいしょから」のボタンを押すと、新規に絵を描き始めることができます。ダイアログ画面が表示され、キャンバスの背景色やレイヤー画像（後述）を選べます。  </p>
+    Clicking the 'New' button will start a new drawing. A dialog will appear where you may choose to start a new picture using a solid background color, or using a 'Starter' or 'Template' image (<a href="#new-starter-template">see below</a>). You will first be asked whether you really want to do this.  </p>
 
   <p>
     「けしゴム」ツールを使うと、描画した部分が消去され、最初に選択した背景が露出します。 (<a href="#using_tools_drawing_eraser">各種のツール &gt; 描画ツール &gt; けしゴム</a>もご確認ください。)
@@ -1098,7 +1078,7 @@
     <dd>
       あらかじめ用意されている背景色のほか、レインボーパレットやカラーミキサーで色を選択することができます。これらは、絵を描くときにキャンバスの下に表示されるカラーパレットにあるオプションと同じように操作します。詳細は <a href="#special_color_options">メインの画面 &gt; 下部: カラーパレット「いろ」 &gt; 色に関する特別なオプション</a> を参照。    </dd>
 
-    <dt><strong>レイヤー画像</strong></dt>
+    <dt id="new-starter-template"><strong>レイヤー画像</strong></dt>
     <dd>
       <ul>
         <li>レイヤー画像には、塗り絵のページのようなもの（白黒の線で描かれ、色を塗ることができる）や、前景レイヤーと背景レイヤーに挟まれた部分に絵を描ける３Ｄ画像のようなものがあります。</li>
@@ -1106,7 +1086,10 @@
       </ul>
 
       <p>
-        「消しゴム」ツールを使用すると、元のレイヤー画像が消されずに残ります。また、マジックツールの「反転」と「ミラー」は、レイヤー画像も反転させます。      </p>
+        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool, the original image from the 'Starter' or 'Template' will reappear.  (See <a href="#using_tools_drawing_eraser">各種のツール &gt; 描画ツール &gt; けしゴム</a> and <a href="#using_tools_drawing_fill">「ぬる」ツール</a>.)      </p>
+
+      <p>
+        The 'Flip' and 'Mirror' Magic tools affect the orientation of the 'Starter' or 'Template', as well. (See <a href="../magic-docs/html/flip.html">各種のツール &gt; 「まほう」ツール（特殊効果） &gt; Flip</a> and <a href="../magic-docs/html/mirror.html">Mirror</a>.)      </p>
 
       <p>
         レイヤー画像は、その上に絵を描いて保存すると新しい絵として保存され、元々のレイヤー画像自体は上書きされないので、後で（「さいしょから」ダイアログからアクセスして）何度でも使うことができます。      </p>

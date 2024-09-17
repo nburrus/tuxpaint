@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              17 de Xullo de 2024
+                            16 de Setembro de 2024
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -100,37 +100,12 @@ Consulte o texto completo da licenza GPL en COPYING.txt.
 
 D. What's New in Tux Paint version 0.9.34?
 
-Transparent Erasers
-    Erasers that lightly expose more and more of the background.
-
-Dither magic tools
-    Transform parts of an image into a dithered pattern of dots.
-
-Filled Polygon magic tool
-    Create polygons by placing three or more connected points on the canvas.
-
-3D Glasses magic tool updated
-    Different anaglyphic color separations now offered (via the 'size'
-    controls), unless running Tux Paint in 'Novice' complexity level.
-
-Magic tool ungrouping option
-    The numerous Magic tools can be presented as a single long list (as in Tux
-    Paint prior to 0.9.27), rather than paged groups.
-
-Brush descriptions
-    Brushes (used by Paint and Line tools) can now include descriptions that
-    appear when the brush is selected.
+"Eraser" Fill mode
+    A flood fill option that fills the canvas with the background color, or
+    template or starter background, upon which the drawing was based.
 
 New brushes
-    New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
-    brushes.
-Exported filenames shown
-    When exporting a drawing (Open>Export) or a slideshow (Open>Slideshow>
-    Export GIF), the name of the file is displayed and also placed in the copy/
-    paste clipboard.
-Trash can support in Haiku
-    The Haiku port of Tux Paint now also places erased drawings (Open>Erase)
-    into the desktop trash can, rather than deleting the files completely.
+    New brushes for the Paint and Lines tools: Fluff (gradient).
 
 See CHANGES.txt for the complete list of changes.
 
@@ -617,6 +592,11 @@ f.Ferramenta «Encher»
         gradiente) radialmente, centrado no lugar onde premeu.
       + Shaped — click once to fill an area with a color that fades away (a
         gradient), following the contours of the shape you're filling.
+      + Eraser — click once to erase an area, exposing the solid color
+        background, or starter or template background image, upon which the
+        drawing was based. (See Ferramentas dispoñíbeis > Ferramentas de debuxo
+        > Ferramenta de «Goma» (de borrar) and Outros controis > Imaxes «de
+        comezo» e de «modelo».)
 
     📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see below).
     Prior to Tux Paint 0.9.26, the "Fill" tool only offered the 'Solid' method
@@ -730,10 +710,10 @@ a."Undo" and "Redo" Commands
 
 b.Orde «Novo»
 
-    Ao premer no botón «Novo» iniciarase un novo debuxo. Aparecerá un diálogo
-    no que pode escoller comezar unha nova imaxe cunha cor de fondo sólida ou
-    usando unha imaxe «de Inicio» ou «modelo» (ver máis abaixo). Primeiro
-    preguntaráselle se realmente quere facelo.
+    Clicking the 'New' button will start a new drawing. A dialog will appear
+    where you may choose to start a new picture using a solid background color,
+    or using a 'Starter' or 'Template' image (see below). You will first be
+    asked whether you really want to do this.
 
     When you use the 'Eraser' tool things you've added to your drawing will be
     removed, exposing the background you chose when starting a new drawing.
@@ -761,10 +741,14 @@ b.Orde «Novo»
             hai ningunha capa que permaneza no primeiro plano de nada que
             debuxe na imaxe.
 
-        Cando se usa a ferramenta «Borrador», reaparecerá a imaxe orixinal da
-        «imaxe de inicio» ou do «modelo». As ferramentas máxicas «Inverter» e
-        «Espello» tamén afectan á orientación da «imaxe de inicio» ou do
-        «modelo».
+        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool,
+        the original image from the 'Starter' or 'Template' will reappear. (See
+        Ferramentas dispoñíbeis > Ferramentas de debuxo > Ferramenta de «Goma»
+        (de borrar) and Ferramenta «Encher».)
+
+        The 'Flip' and 'Mirror' Magic tools affect the orientation of the
+        'Starter' or 'Template', as well. (See Ferramentas dispoñíbeis >
+        Ferramenta «Maxia» (efectos especiais) > Flip and Mirror.)
 
         Cando carga unha «imaxe de inicio» ou un «modelo», debuxa nel(a) e logo
         preme en «Gardar», crea un novo ficheiro de imaxe; non sobrescribe o

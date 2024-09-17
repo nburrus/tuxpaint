@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                17 korrik 2024
+                                16 shtator 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -99,37 +99,12 @@ See COPYING.txt for the full text of the GPL license.
 
 D. What's New in Tux Paint version 0.9.34?
 
-Transparent Erasers
-    Erasers that lightly expose more and more of the background.
-
-Dither magic tools
-    Transform parts of an image into a dithered pattern of dots.
-
-Filled Polygon magic tool
-    Create polygons by placing three or more connected points on the canvas.
-
-3D Glasses magic tool updated
-    Different anaglyphic color separations now offered (via the 'size'
-    controls), unless running Tux Paint in 'Novice' complexity level.
-
-Magic tool ungrouping option
-    The numerous Magic tools can be presented as a single long list (as in Tux
-    Paint prior to 0.9.27), rather than paged groups.
-
-Brush descriptions
-    Brushes (used by Paint and Line tools) can now include descriptions that
-    appear when the brush is selected.
+"Eraser" Fill mode
+    A flood fill option that fills the canvas with the background color, or
+    template or starter background, upon which the drawing was based.
 
 New brushes
-    New brushes for the Paint and Lines tools: Acrylic, Pencil, and Fluff
-    brushes.
-Exported filenames shown
-    When exporting a drawing (Open>Export) or a slideshow (Open>Slideshow>
-    Export GIF), the name of the file is displayed and also placed in the copy/
-    paste clipboard.
-Trash can support in Haiku
-    The Haiku port of Tux Paint now also places erased drawings (Open>Erase)
-    into the desktop trash can, rather than deleting the files completely.
+    New brushes for the Paint and Lines tools: Fluff (gradient).
 
 Për listën e plotë të ndryshimeve, shihni CHANGES.txt.
 
@@ -608,6 +583,10 @@ f.Mjeti “Mbushje”
         gradient) radially, centered on where you clicked.
       + Shaped — click once to fill an area with a color that fades away (a
         gradient), following the contours of the shape you're filling.
+      + Eraser — click once to erase an area, exposing the solid color
+        background, or starter or template background image, upon which the
+        drawing was based. (See Mjete të Mundshme > Mjete Vizatimi > Mjeti
+        “Gomë” and Kontrolle të Tjera > Figura “Fillesë” & Gjedhe.)
 
     📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see below).
     Prior to Tux Paint 0.9.26, the "Fill" tool only offered the 'Solid' method
@@ -751,9 +730,13 @@ b.Urdhri “I ri”
             work off of. Unlike 'Starters', there is no layer that remains in
             the foreground of anything you draw in the picture.
 
-        When using the 'Eraser' tool, the original image from the 'Starter' or
-        'Template' will reappear. The 'Flip' and 'Mirror' Magic tools affect
-        the orientation of the 'Starter' or 'Template', as well.
+        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool,
+        the original image from the 'Starter' or 'Template' will reappear. (See
+        Mjete të Mundshme > Mjete Vizatimi > Mjeti “Gomë” and Mjeti “Mbushje”.)
+
+        The 'Flip' and 'Mirror' Magic tools affect the orientation of the
+        'Starter' or 'Template', as well. (See Mjete të Mundshme > Mjeti
+        “Magjik” (Efekte Speciale) > Ktheje në anë tjetër and Pasqyroje.)
 
         When you load a 'Starter' or 'Template', draw on it, and then click
         'Save,' it creates a new picture file — it doesn't overwrite the
