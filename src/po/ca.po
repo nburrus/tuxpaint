@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2024-06-04 00:14+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -1952,6 +1952,22 @@ msgid ""
 msgstr ""
 "Feu clic i arrossegueu a dreta o esquerra per separar el vermell i el cian, "
 "per fer anaglifs que podeu mirar amb ulleres 3D de dos colors!"
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Feu clic per saturar el dibuix."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

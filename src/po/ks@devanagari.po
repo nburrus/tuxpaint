@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2012-12-21 11:04+0530\n"
 "Last-Translator: \n"
 "Language-Team: Kashmiri-DV\n"
@@ -1847,6 +1847,22 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "कोलोक कॊरीव तॊ डरिग कॊरीव पननॊ तसविर पयॊठ अख गाछोच लय डरा करनो बापत."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to darken your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "पनॊन तमाम तसविर डारीकबनावनो बापत कॊरीव कोलोक."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

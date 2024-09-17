@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2024-02-28 21:39+0200\n"
 "Last-Translator: Vankata453\n"
 "Language-Team: \n"
@@ -1936,6 +1936,23 @@ msgstr ""
 "Кликни и движи мишката наляво или надясно, за да разделиш червеното и синьо-"
 "зеленото на твоята картина. За да правиш анаглифи, може да гледаш през 3D "
 "очила!"
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr ""
+"Кликни и движи мишката, за да нарисуваш лъч светлина на твоята рисунка."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Кликни, за да наситиш цялата рисунка."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

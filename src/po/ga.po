@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2015-10-09 17:38+0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1793,6 +1793,22 @@ msgid ""
 msgstr ""
 "Cliceáil agus tarraing an luch ar chlé agus ar dheis chun dearg agus cian a "
 "scaradh sa bpictiúr sa chaoi gur féidir leat breathnú air trí ghloiní 3T."
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Cliceáil agus tarraing chun léas solais a dhearadh ar an bpictiúr."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Cliceáil chun an pictiúr iomlán a sháithiú."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

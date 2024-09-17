@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2024-07-07 08:05+0200\n"
 "Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
@@ -1963,6 +1963,23 @@ msgstr ""
 "Clique et déplace la souris à gauche et à droite  pour pouvoir séparer les "
 "couleurs rouge et cyan de ton dessin, en vue de réaliser des anaglyphes que "
 "tu pourras voir avec des lunettes 3D !"
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Clique et déplace la souris pour dessiner un rayon de lumière."
+
+#
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Clique pour aviver les couleurs sur la totalité du dessin."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

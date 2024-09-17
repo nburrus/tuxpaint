@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1808,6 +1808,20 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Na Kwimura i Imbeba Kuri Ubwoko i() y'Ishusho"
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

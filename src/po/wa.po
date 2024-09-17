@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -1851,6 +1851,21 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr ""
+"Clitchîz et s' bodjîz l' sori po mete des bokets d' l' imådje pus féns."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Clitchîz et s' bodjîz l' sori po candjî les coleurs di l' imådje."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

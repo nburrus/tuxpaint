@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2024-06-15 21:26+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -1914,6 +1914,23 @@ msgid ""
 msgstr ""
 "くりっくしてから みぎひだりに ドラッグして、いろを あかとあおに わけよう。あ"
 "かあおメガネで りったいてきに みえるよ！"
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr ""
+"クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう。"
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "えを クリックして ぜんたいを あざやかな いろに しよう。"
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

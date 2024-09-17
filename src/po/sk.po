@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.28\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2023-04-10 13:48+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -1915,6 +1915,22 @@ msgid ""
 msgstr ""
 "Kliknutím a ťahaním myši doľava a doprava oddeľte červenú a azúrovú farbu a "
 "vytvorte tak anaglyfy, ktoré si môžete prezerať pomocou 3D okuliarov!"
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Kliknutím a ťahaním myši nakreslíš na obrázok lúče svetla."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Kliknutím myši pridáš sýtosť celému obrázku."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

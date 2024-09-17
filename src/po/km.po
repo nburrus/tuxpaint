@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2008-05-30 15:41+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1821,6 +1821,21 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "ចុច ហើយ​អូស ដើម្បី​គូរ​​ភ្លើងហ្វា​នៅលើ​រូបភាព​របស់​អ្នក ។"
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "ចុច ហើយ​ផ្លាស់ទី​កណ្ដុរ ដើម្បី​ផ្លាស់ប្ដូរ​ពណ៌​រូបភាព ។"
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.23 uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2023-03-29 19:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1955,6 +1955,22 @@ msgstr ""
 "Клацніть і перетягніть вказівник миші, щоб відокремити червоний і блакитний "
 "кольори на вашому зображенні для створення анагліфів, які можна буде "
 "переглядати у 3D-окулярах!"
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Клацніть та поводіть пучком світла по Вашому малюнку."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to saturate your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Клацніть, щоб зробити насиченішими кольори усього малюнка."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

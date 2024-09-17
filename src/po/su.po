@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2011-05-27 06:24+0200\n"
 "Last-Translator: kumincir <ia.adnan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1785,6 +1785,20 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"

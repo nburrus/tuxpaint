@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 20:52-0700\n"
+"POT-Creation-Date: 2024-09-16 23:55-0700\n"
 "PO-Revision-Date: 2017-12-05 12:38+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -1837,6 +1837,22 @@ msgid ""
 "Click and drag left and right to separate your picture's red and cyan, to "
 "make anaglyphs you can view with 3D glasses!"
 msgstr ""
+
+#: ../../magic/src/comicdot.c:134
+msgid "Comic Dots"
+msgstr ""
+
+#: ../../magic/src/comicdot.c:150
+#, fuzzy
+#| msgid "Click and drag to draw a beam of light on your picture."
+msgid "Click and drag to draw an a dot pattern on your picture"
+msgstr "Klik og bevæg musen rundt, for at tegne en lysstråle på dit billede."
+
+#: ../../magic/src/comicdot.c:152
+#, fuzzy
+#| msgid "Click to darken your entire picture."
+msgid "Click to apply a dot pattern on your entire picture"
+msgstr "Klik for at formørke hele dit billede."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"
