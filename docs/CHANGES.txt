@@ -6,7 +6,12 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.September.15 (0.9.34)
+2024.September.16 (0.9.34)
+  * New Brushes:
+    ------------
+    * Fluff (gradient variation)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Ports & Building:
     -----------------
     * On Android, quitting Tux Paint while it's in the background and the

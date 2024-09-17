@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-07-27 04:54:23+0000\n"
+"POT-Creation-Date: 2024-09-17 00:22:51+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Cas Pascal <casboi86@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -40,7 +40,7 @@ msgstr "Con mèo sẽ chạy theo đường em vẽ."
 msgid "The squirrel runs where you draw."
 msgstr "Con sóc sẽ chạy theo đường em vẽ."
 
-#: ../data/brushes/fluff.txt
+#: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
 msgid "Fluffy circles, great for drawing clouds."
 msgstr "Vẽ các hình tròn bồng bềnh, dùng để vẽ mây."
 

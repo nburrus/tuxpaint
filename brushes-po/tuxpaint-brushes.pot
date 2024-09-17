@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "MIME-Version: 1.0\n"
-"POT-Creation-Date: 2024-08-01 15:08:18+0000\n"
+"POT-Creation-Date: 2024-09-17 00:22:51+0000\n"
 "PO-Revision-Date: \n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "The squirrel runs where you draw."
 msgstr ""
 
-#: ../data/brushes/fluff.txt
+#: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
 msgid "Fluffy circles, great for drawing clouds."
 msgstr ""
 
