@@ -83,7 +83,7 @@ int comicdot_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uin
   char fname[1024];
   int i;
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%ssounds/magic/comic_dots.ogg", api->data_directory);
   comicdot_snd = Mix_LoadWAV(fname);
 
   /* Load base pattern image */
@@ -222,7 +222,7 @@ void comicdot_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->w = (x + comicdot_radius) - update_rect->x;
   update_rect->h = (y + comicdot_radius) - update_rect->y;
 
-  api->playsound(comicdot_snd, (x * 255) / canvas->w, 255);
+  api->playsound(comicdot_snd, 64 + ((x * 127) / canvas->w), 255);
 }
 
 void comicdot_click(magic_api * api, int which, int mode,
@@ -251,6 +251,12 @@ void comicdot_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
                  SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
                  int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  /* FIXME: Would be nice to be able to ask Tux Paint to pause
+     the sound (`Mix_Pause()`), and then resume (`Mix_Resume()`)
+     (or start new (`Mix_PlayChannel()`) if nothing is currently playing)
+     on click/drag.  That way the sound won't start over every time
+     you make small stroke. */
+  api->stopsound();
 }
 
 void comicdot_shutdown(magic_api * api ATTRIBUTE_UNUSED)

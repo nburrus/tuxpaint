@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - July 26, 2024
+June 17, 2002 - September 17, 2024
 
 * Design and Coding:
 
@@ -171,9 +171,19 @@ June 17, 2002 - July 26, 2024
   Creative Commons Attribution 3.0 by stinkhorn
   <https://freesound.org/people/stinkhorn/>
 
+  Comic Dots magic tool
+  by Bill Kendrick <bill@newbreedsoftware.com>
+
+  Comic Dots sound effect
+  Based on "superhero theme"
+  <https://freesound.org/people/humanoide9000/sounds/569062/>
+  Creative Commons Attribution 4.0 by Luis Humanoide
+  <https://freesound.org/people/humanoide9000/>
+
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
-  Googly Eyes sound effect: "Torch Crackle.wav"
+
+  Bloom sound effect: "Torch Crackle.wav"
   (https://freesound.org/people/kentnelson64/sounds/647221/)
   Creative Commons 0 license by "kentnelson64"
 

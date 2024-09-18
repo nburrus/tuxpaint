@@ -11,9 +11,11 @@ https://tuxpaint.org/
     ----------------
     * WIP "Comic Dots", draws repeating dots (using a multiply blend)
       to simulate the "Ben Day process" of coloring/shading.
-      Bill Kendrick <bill@newbreedsoftware.com>
-      - TODO needs icons
-      - TODO needs sound effects
+      + Code & icon Bill Kendrick <bill@newbreedsoftware.com>
+      + Sound effect based on "superhero theme",
+        Creative Commons Attribution 4.0 by Luis Humanoide
+        <https://freesound.org/people/humanoide9000/>
+      - TODO needs icon
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
 
   * Improvements to Fill tool:
