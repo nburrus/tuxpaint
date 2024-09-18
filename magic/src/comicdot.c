@@ -124,7 +124,7 @@ SDL_Surface *comicdot_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory); // FIXME [which]
+  snprintf(fname, sizeof(fname), "%simages/magic/comic_dots_%d.png", api->data_directory, which);
 
   return (IMG_Load(fname));
 }

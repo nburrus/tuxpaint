@@ -9,13 +9,12 @@ https://tuxpaint.org/
 2024.September.17 (0.9.34)
   * New Magic Tools:
     ----------------
-    * WIP "Comic Dots", draws repeating dots (using a multiply blend)
+    * "Comic Dots", draws repeating dots (using a multiply blend)
       to simulate the "Ben Day process" of coloring/shading.
       + Code & icon Bill Kendrick <bill@newbreedsoftware.com>
       + Sound effect based on "superhero theme",
         Creative Commons Attribution 4.0 by Luis Humanoide
         <https://freesound.org/people/humanoide9000/>
-      - TODO needs icon
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
 
   * Magic Tool Improvements:
