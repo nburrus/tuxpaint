@@ -2295,6 +2295,9 @@ static int magic_sort(const void *a, const void *b);
 
 Mix_Chunk *magic_current_snd_ptr;
 static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down);
+static int magic_playingsound(void);
+static void magic_pausesound(void);
+static void magic_unpausesound(void);
 static void magic_stopsound(void);
 static void magic_line_func(void *mapi,
                             int which, SDL_Surface * canvas,
@@ -21729,6 +21732,9 @@ static void load_magic_plugins(void)
       magic_api_struct->xorpixel = magic_xorpixel;
       magic_api_struct->line = magic_line_func;
       magic_api_struct->playsound = magic_playsound;
+      magic_api_struct->playingsound = magic_playingsound;
+      magic_api_struct->pausesound = magic_pausesound;
+      magic_api_struct->unpausesound = magic_unpausesound;
       magic_api_struct->stopsound = magic_stopsound;
       magic_api_struct->special_notify = special_notify;
       magic_api_struct->button_down = magic_button_down;
@@ -22400,6 +22406,29 @@ static void magic_playsound(Mix_Chunk * snd, int left_right, int up_down)
   }
 
   Mix_SetPanning(0, left, (255 - dist) - left);
+#endif
+}
+
+static int magic_playingsound(void)
+{
+#ifndef NOSOUND
+  int is_playing;
+  is_playing = Mix_Playing(0);
+  return is_playing;
+#endif
+}
+
+static void magic_pausesound(void)
+{
+#ifndef NOSOUND
+  return Mix_Pause(0);
+#endif
+}
+
+static void magic_unpausesound(void)
+{
+#ifndef NOSOUND
+  return Mix_Resume(0);
 #endif
 }
 

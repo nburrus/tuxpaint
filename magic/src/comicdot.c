@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 16, 2024
+  Last updated: September 17, 2024
 */
 
 #include <stdio.h>
@@ -222,7 +222,10 @@ void comicdot_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->w = (x + comicdot_radius) - update_rect->x;
   update_rect->h = (y + comicdot_radius) - update_rect->y;
 
-  api->playsound(comicdot_snd, 64 + ((x * 127) / canvas->w), 255);
+  if (api->playingsound())
+    api->unpausesound();
+  else
+    api->playsound(comicdot_snd, 64 + ((x * 127) / canvas->w), 255);
 }
 
 void comicdot_click(magic_api * api, int which, int mode,
@@ -251,17 +254,14 @@ void comicdot_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
                  SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
                  int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
-  /* FIXME: Would be nice to be able to ask Tux Paint to pause
-     the sound (`Mix_Pause()`), and then resume (`Mix_Resume()`)
-     (or start new (`Mix_PlayChannel()`) if nothing is currently playing)
-     on click/drag.  That way the sound won't start over every time
-     you make small stroke. */
-  api->stopsound();
+  api->pausesound();
 }
 
 void comicdot_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   int i;
+
+  api->stopsound();
 
   if (comicdot_snd != NULL)
     Mix_FreeChunk(comicdot_snd);
@@ -298,6 +298,7 @@ void comicdot_switchin(magic_api * api ATTRIBUTE_UNUSED,
 void comicdot_switchout(magic_api * api ATTRIBUTE_UNUSED,
                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
+  api->stopsound();
 }
 
 int comicdot_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

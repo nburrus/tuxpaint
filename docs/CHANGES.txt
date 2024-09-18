@@ -18,6 +18,14 @@ https://tuxpaint.org/
       - TODO needs icon
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
 
+  * Magic Tool Improvements:
+    ------------------------
+    * Sound pause/resume functions added to API
+      (`playingsound()`, `pausesound()`, and `unpausesound()`).
+      + Used by new "Comic Docs" magic tool.
+      + Note: `TP_MAGIC_API_VERSION` bumped to 0x0000000B.
+      + Bill Kendrick <bill@newbreedsoftware.com>
+
   * Improvements to Fill tool:
     --------------------------
     * New "Eraser" flood fill mode, to expose the background

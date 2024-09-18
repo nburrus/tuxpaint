@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年9月16日
+                                 2024年9月17日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -103,6 +103,12 @@ D. Tux Paint バージョン 0.9.34 での変更点
 
 ブラシの追加
     New brushes for the Paint and Lines tools: Fluff (gradient).
+New Magic tool: Comic dots
+    Draws a repeating dot pattern, simulating the "Ben Day process" used in
+    early comic books.
+
+Magic API Updates
+    Sound pause and resume functions added.
 
 全ての変更点については、CHANGES.txt をお読みください。
 

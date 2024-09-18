@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              septembre 16, 2024
+                              septembre 17, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -110,6 +110,12 @@ D. Qu'y a-t-il de neuf dans la version 0.9.34 de Tux Paint ?
 
 New brushes
     New brushes for the Paint and Lines tools: Fluff (gradient).
+New Magic tool: Comic dots
+    Draws a repeating dot pattern, simulating the "Ben Day process" used in
+    early comic books.
+
+Magic API Updates
+    Sound pause and resume functions added.
 
 Voir CHANGES.txt pour la liste complète des changements.
 

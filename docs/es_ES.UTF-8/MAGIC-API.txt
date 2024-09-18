@@ -6,7 +6,7 @@
         Copyright © 2007-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 junio 1, 2024
+                              septiembre 17, 2024
 
 +--------------------------------------------------+
 |                Table of Contents                 |
@@ -22,6 +22,7 @@
 |           o Pixel Manipulations                  |
 |           o Helper Functions                     |
 |           o Informational                        |
+|           o Sound Functions                      |
 |           o Tux Paint System Calls               |
 |           o Color Conversions                    |
 |       + Helper Macros in "tp_magic_api.h"        |
@@ -640,12 +641,7 @@ char * data_directory
 
 
 
-Tux Paint System Calls
-
-void update_progress_bar(void)
-    Asks Tux Paint to animate and draw one frame of its progress bar (at the
-    bottom of the screen). Useful for routines that may take a long time, to
-    provide feedback to the user that Tux Paint has not crashed or frozen.
+Sound Functions
 
 void playsound(Mix_Chunk * snd, int pan, int dist)
 
@@ -669,6 +665,46 @@ void stopsound(void)
     This function stops playing a sound played by playsound(). It is useful to
     silence effects when the user stops using the tool (in your 'release'
     function).
+
+int playingsound(void)
+
+    Call this function to determine whether a magic tool sound effect is still
+    currently playing. Can be used by magic tools that pause and unpause their
+    sounds (see below) to determine whether it's time to start a new sound —
+    call playsound() instead of unpausesound(). A '1' is returned if a sound is
+    playing; '0' otherwise.
+
+    Note: Added to Tux Paint 0.9.34; Magic API version 0x0000000B.
+
+
+
+void pausesound(void)
+
+    Pauses the magic tool sound effect; it may be unpaused to resume playing.
+    Useful when a magic tool sound is very long; avoid repeatedly playing just
+    a short clip of the beginning when the user draws small strokes by starting
+    (playsound()) and stopping (stopsound()) the sound. Use playingsound() to
+    determine whether you can unpause or must play from the start.
+
+    Note: Added to Tux Paint 0.9.34; Magic API version 0x0000000B.
+
+
+
+void unpausesound(void)
+
+    Resumes a paused magic tool sound effect, if one was playing.
+
+    Note: Added to Tux Paint 0.9.34; Magic API version 0x0000000B.
+
+
+
+
+Tux Paint System Calls
+
+void update_progress_bar(void)
+    Asks Tux Paint to animate and draw one frame of its progress bar (at the
+    bottom of the screen). Useful for routines that may take a long time, to
+    provide feedback to the user that Tux Paint has not crashed or frozen.
 
 void special_notify(int flag)
     This function notifies Tux Paint of special events. Various values defined
