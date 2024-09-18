@@ -261,8 +261,6 @@ void comicdot_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
   int i;
 
-  api->stopsound();
-
   if (comicdot_snd != NULL)
     Mix_FreeChunk(comicdot_snd);
 
