@@ -84,6 +84,7 @@ Painting
   * Grass
   * Fur
   * Pixels
+  * Comic Dots
   * Maze
   * Fretwork
   * Rails

@@ -9,6 +9,8 @@ magenta, yellow, and black "ink" will appear in place of your picture.
 
 Ky mjet ofron si veprim vizatimi me dorë të lirë, ashtu edhe me një klikim.
 
+Shihni edhe: Comic Dots.
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.34

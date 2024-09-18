@@ -84,6 +84,7 @@ Peindre
   * Herbe
   * Fourrure
   * Pixels
+  * Comic Dots
   * Labyrinthe
   * Frise
   * Rails

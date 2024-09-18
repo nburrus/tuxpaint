@@ -9,6 +9,8 @@ magenta, yellow, and black "ink" will appear in place of your picture.
 
 This tool offers both freehand and one-click operation.
 
+See also: Comic Dots.
+
 -------------------------------------------------------------------------------
 
                                Tux Paint 0.9.34

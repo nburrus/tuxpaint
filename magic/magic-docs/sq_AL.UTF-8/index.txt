@@ -84,6 +84,7 @@ Vizatim
   * Bar
   * Gëzof
   * Pikselë
+  * Comic Dots
   * Labirint
   * Gdhendje
   * Shina
