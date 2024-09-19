@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.September.17 (0.9.34)
+2024.September.19 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -15,7 +15,11 @@ https://tuxpaint.org/
       + Sound effect based on "superhero theme",
         Creative Commons Attribution 4.0 by Luis Humanoide
         <https://freesound.org/people/humanoide9000/>
-      Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
+      + Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
+
+    * WIP "Fractal"
+      + Bill Kendrick <bill@newbreedsoftware.com>
+      + Closes https://sourceforge.net/p/tuxpaint/feature-requests/260/
 
   * Magic Tool Improvements:
     ------------------------
