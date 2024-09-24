@@ -34,7 +34,7 @@
 #define NUM_TOOLS 4
 
 typedef struct fract_opt_s {
-  float angle;
+  int angle;
   float scale;
 } fract_opt_t;
 
@@ -115,7 +115,7 @@ int fractal_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
   return (NUM_TOOLS);
 }
 
-SDL_Surface *fractal_get_icon(magic_api * api, int which)
+SDL_Surface *fractal_get_icon(magic_api * api, int ATTRIBUTE_UNUSED which)
 {
   char fname[1024];
 
@@ -126,7 +126,10 @@ SDL_Surface *fractal_get_icon(magic_api * api, int which)
 
 char *fractal_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext_noop("Fractals")));
+  char tmp[128];
+
+  snprintf(tmp, sizeof(tmp), gettext_noop("Fractal #%d"), which + 1);
+  return strdup(tmp);
 }
 
 int fractal_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -141,7 +144,25 @@ int fractal_get_order(int which)
 
 char *fractal_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag to draw an \"Exclusive Or\" (XOR) effect"))); // FIXME
+  char tmp[512];
+
+  if (fract_opt[which].scale != 1.0)
+  {
+    if (fract_opt[which].angle != 0)
+    {
+      snprintf(tmp, sizeof(tmp), gettext_noop("Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating %3$d degrees."), (fract_opt[which].scale > 1.0 ? gettext_noop("scaling up") : gettext_noop("scaling down")), (int) (fract_opt[which].scale * 100), fract_opt[which].angle);
+    }
+    else
+    {
+      snprintf(tmp, sizeof(tmp), gettext_noop("Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."),  (fract_opt[which].scale > 1.0 ? gettext_noop("scaling up") : gettext_noop("scaling down")), (int) (fract_opt[which].scale * 100));
+    }
+  }
+  else
+  {
+    snprintf(tmp, sizeof(tmp), gettext_noop("Click and drag to sketch a shape. It will repeat, rotating %d degrees."), fract_opt[which].angle);
+  }
+
+  return (strdup(tmp));
 }
 
 static void do_fractal_circle(void *ptr, int which ATTRIBUTE_UNUSED,
@@ -226,7 +247,7 @@ void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, floa
 
     if (final && ((i % ((num_pts / 3) + 1)) == 1) && (iter > 1))
     {
-      do_fractal(api, which, canvas, iter - 1, x2, y2, angle + (fract_opt[which].angle / 180.0 * M_PI), scale * fract_opt[which].scale, opacity * 0.5, final);
+      do_fractal(api, which, canvas, iter - 1, x2, y2, angle + ((float) fract_opt[which].angle / 180.0 * M_PI), scale * fract_opt[which].scale, opacity * 0.5, final);
     }
   }
 }
