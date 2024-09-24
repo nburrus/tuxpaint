@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 7, 2024
+  June 14, 2002 - September 23, 2024
 */
 
 #include "platform.h"
@@ -22028,8 +22028,8 @@ static void load_magic_plugins(void)
                       {
                         if (magics[group][j].order == magics[group][idx].order)
                         {
-                          fprintf(stderr, "Warning: In group %d, tool %d has the same order (%d) as tool %d\n",
-                                  group, idx, magics[group][j].order, j);
+                          fprintf(stderr, "Warning: In group %d, tool %d (%s) has the same order (%d) as tool %d (%s)\n",
+                                  group, idx, magics[group][idx].name, magics[group][j].order, j, magics[group][j].name);
                         }
                       }
 
