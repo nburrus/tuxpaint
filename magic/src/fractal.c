@@ -31,6 +31,8 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+#define NUM_TOOLS 4
+
 typedef struct pt_s {
   int x, y;
 } pt_t;
@@ -97,7 +99,7 @@ int fractal_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
 
 int fractal_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return (1);
+  return (NUM_TOOLS);
 }
 
 SDL_Surface *fractal_get_icon(magic_api * api, int which)
@@ -121,7 +123,7 @@ int fractal_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
 
 int fractal_get_order(int which)
 {
-  return 801;
+  return 10001 + which;
 }
 
 char *fractal_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
@@ -220,7 +222,7 @@ void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, floa
 }
 
 void fractal_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+              SDL_Surface * last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   if (num_pts < MAX_PTS) {
     pts[num_pts].x = x;
@@ -240,19 +242,22 @@ void fractal_drag(magic_api * api, int which, SDL_Surface * canvas,
   api->playsound(fractal_snd, (x * 255) / canvas->w, 255);
 }
 
-void fractal_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
+void fractal_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
+               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
-  num_pts = 0;
+  pts[0].x = x;
+  pts[0].y = y;
+  num_pts = 1;
+
   fractal_click_x = (float) x;
   fractal_click_y = (float) y;
   fractal_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
-void fractal_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                 SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
-                 int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void fractal_release(magic_api * api, int which,
+                 SDL_Surface * canvas,
+                 SDL_Surface * last, int x ATTRIBUTE_UNUSED,
+                 int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect)
 {
   SDL_BlitSurface(last, NULL, canvas, NULL);
 
@@ -301,7 +306,7 @@ int fractal_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 }
 
 
-Uint8 fractal_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+Uint8 fractal_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 4;
 }
