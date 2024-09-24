@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 17, 2024
+  Last updated: September 23, 2024
 */
 
 #include <stdio.h>
@@ -139,9 +139,9 @@ int comicdot_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
   return MAGIC_TYPE_PAINTING;
 }
 
-int comicdot_get_order(int which ATTRIBUTE_UNUSED)
+int comicdot_get_order(int which)
 {
-  return 1910;
+  return 1910 + which;
 }
 
 char *comicdot_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
