@@ -33,6 +33,19 @@
 
 #define NUM_TOOLS 4
 
+typedef struct fract_opt_s {
+  float angle;
+  float scale;
+} fract_opt_t;
+
+fract_opt_t fract_opt[NUM_TOOLS] = {
+  {0, 0.5},
+  {0, 1.5},
+  {15, 1.1},
+  {90, 0.75},
+};
+
+
 typedef struct pt_s {
   int x, y;
 } pt_t;
@@ -211,12 +224,9 @@ void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, floa
     fractal_opacity_cur = opacity;
     api->line((void *)api, which, canvas, NULL, (int) x1, (int) y1, (int) x2, (int) y2, (final ? 1 : 10), do_fractal_circle);
 
-    if ((i % ((num_pts / 3) + 1)) == 1)
+    if (final && ((i % ((num_pts / 3) + 1)) == 1) && (iter > 1))
     {
-      if (iter > 1)
-      {
-        do_fractal(api, which, canvas, iter / 2, x2, y2, angle + (45.0 / 180.0 * M_PI), scale * 0.66, opacity * 0.66, final);
-      }
+      do_fractal(api, which, canvas, iter - 1, x2, y2, angle + (fract_opt[which].angle / 180.0 * M_PI), scale * fract_opt[which].scale, opacity * 0.5, final);
     }
   }
 }
