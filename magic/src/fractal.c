@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 19, 2024
+  Last updated: September 23, 2024
 */
 
 #include <stdio.h>
@@ -35,14 +35,19 @@ typedef struct pt_s {
   int x, y;
 } pt_t;
 
-#define MAX_PTS 1000
+#define MAX_PTS 512
 pt_t pts[MAX_PTS];
 int num_pts = 0;
 
+float fractal_click_x, fractal_click_y;
+
 static Mix_Chunk *fractal_snd;
 static int fractal_radius = 16;
+Uint8 fractal_r, fractal_g, fractal_b;
+
+/* These change during each recursive iteration */
 int fractal_radius_cur;
-Uint32 fractal_color;
+float fractal_opacity_cur;
 
 Uint32 fractal_api_version(void);
 int fractal_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -73,7 +78,7 @@ Uint8 fractal_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 fractal_default_size(magic_api * api, int which, int mode);
 void fractal_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
                   SDL_Rect * update_rect);
-void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, int cx, int cy, float angle, float scale);
+void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, float cx, float cy, float angle, float scale, float opacity, int final);
 
 Uint32 fractal_api_version(void)
 {
@@ -129,51 +134,88 @@ static void do_fractal_circle(void *ptr, int which ATTRIBUTE_UNUSED,
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
+  Uint8 r, g, b;
+  Uint32 pix;
+
   for (yy = -fractal_radius_cur; yy < fractal_radius_cur; yy++)
   {
     for (xx = -fractal_radius_cur; xx < fractal_radius_cur; xx++)
     {
-      if (api->in_circle(xx, yy, fractal_radius_cur))
+      if (fractal_opacity_cur < 1.0)
       {
-        if (!api->touched(xx + x, yy + y))
-          api->putpixel(canvas, xx + x, yy + y, fractal_color);
+        SDL_GetRGB(api->getpixel(canvas, xx + x, yy + y), canvas->format, &r, &g, &b);
+        r = (Uint8) (((float) r * (1.0 - fractal_opacity_cur)) + ((float) fractal_r * fractal_opacity_cur));
+        g = (Uint8) (((float) g * (1.0 - fractal_opacity_cur)) + ((float) fractal_g * fractal_opacity_cur));
+        b = (Uint8) (((float) b * (1.0 - fractal_opacity_cur)) + ((float) fractal_b * fractal_opacity_cur));
       }
+      else
+      {
+        r = fractal_r;
+        g = fractal_g;
+        b = fractal_b;
+      }
+
+      pix = SDL_MapRGB(canvas->format, r, g, b);
+      api->putpixel(canvas, xx + x, yy + y, pix);
     }
   }
 }
 
-void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, int cx, int cy, float angle, float scale)
+void do_fractal(magic_api * api, int which, SDL_Surface * canvas, int iter, float cx, float cy, float angle, float scale, float opacity, int final)
 {
-  int i, x1, y1, x2, y2;
+  int i;
+  float x1, y1, x2, y2, nx, ny;
+  float co, si;
+
+  co = cosf(angle);
+  si = sinf(angle);
 
   for (i = 0; i < num_pts - 1; i++) {
-    x1 = pts[i].x - cx;
-    y1 = pts[i].y - cy;
-    x2 = pts[i + 1].x - cx;
-    y2 = pts[i + 1].y - cy;
+    x1 = (float) (pts[i].x);
+    y1 = (float) (pts[i].y);
+    x2 = (float) (pts[i + 1].x);
+    y2 = (float) (pts[i + 1].y);
 
-    x1 = x1 * scale;
-    y1 = y1 * scale;
-    x2 = x2 * scale;
-    y2 = y2 * scale;
+    /* Translate point relative to (0,0) origin */
+    x1 -= cx;
+    y1 -= cy;
+    x2 -= cx;
+    y2 -= cy;
 
-    x1 = (cos(angle * M_PI / 180.0) * x1) - (sin(angle * M_PI / 180.0) * y1);
-    y1 = (cos(angle * M_PI / 180.0) * y1) + (sin(angle * M_PI / 180.0) * x1);
-    x2 = (cos(angle * M_PI / 180.0) * x2) - (sin(angle * M_PI / 180.0) * y2);
-    y2 = (cos(angle * M_PI / 180.0) * y2) + (sin(angle * M_PI / 180.0) * x2);
+    /* Rotate point */
+    nx = (co * x1) - (si * y1);
+    ny = (si * x1) + (co * y1);
+    x1 = nx;
+    y1 = ny;
 
+    nx = (co * x2) - (si * y2);
+    ny = (si * x2) + (co * y2);
+    x2 = nx;
+    y2 = ny;
+
+    /* Scale point */
+    x1 *= scale;
+    y1 *= scale;
+    x2 *= scale;
+    y2 *= scale;
+
+    /* Translate point back to starting position */
     x1 += cx;
     y1 += cy;
     x2 += cx;
     y2 += cy;
 
-    fractal_radius_cur = iter;
-    api->line((void *)api, which, canvas, NULL, x1, y1, x2, y2, 1, do_fractal_circle);
-  }
+    fractal_radius_cur = (iter / 2) + 1;
+    fractal_opacity_cur = opacity;
+    api->line((void *)api, which, canvas, NULL, (int) x1, (int) y1, (int) x2, (int) y2, (final ? 1 : 10), do_fractal_circle);
 
-  if (iter > 1) {
-    angle += 15.0;
-    do_fractal(api, which, canvas, iter - 1, x1, y1, angle, scale * 1.1);
+    if ((i % ((num_pts / 3) + 1)) == 1)
+    {
+      if (iter > 1)
+      {
+        do_fractal(api, which, canvas, iter / 2, x2, y2, angle + (45.0 / 180.0 * M_PI), scale * 0.66, opacity * 0.66, final);
+      }
+    }
   }
 }
 
@@ -186,9 +228,9 @@ void fractal_drag(magic_api * api, int which, SDL_Surface * canvas,
     num_pts++;
   }
 
-//  SDL_BlitSurface(last, NULL, canvas, NULL);
+  SDL_BlitSurface(last, NULL, canvas, NULL);
 
-  do_fractal(api, which, canvas, fractal_radius, x, y, 0.0, 1.0);
+  do_fractal(api, which, canvas, fractal_radius, fractal_click_x, fractal_click_y, 0.0, 1.0, 1.0, 0);
 
   update_rect->x = 0;
   update_rect->y = 0;
@@ -202,6 +244,8 @@ void fractal_click(magic_api * api, int which, int mode,
                SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   num_pts = 0;
+  fractal_click_x = (float) x;
+  fractal_click_y = (float) y;
   fractal_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
@@ -210,6 +254,16 @@ void fractal_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
                  SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
                  int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  SDL_BlitSurface(last, NULL, canvas, NULL);
+
+  do_fractal(api, which, canvas, fractal_radius, fractal_click_x, fractal_click_y, 0.0, 1.0, 1.0, 1);
+
+  update_rect->x = 0;
+  update_rect->y = 0;
+  update_rect->w = canvas->w;
+  update_rect->h = canvas->h;
+
+  api->playsound(fractal_snd, (x * 255) / canvas->w, 255);
 }
 
 void fractal_shutdown(magic_api * api ATTRIBUTE_UNUSED)
@@ -221,7 +275,9 @@ void fractal_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 void fractal_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
                    SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
-  fractal_color = SDL_MapRGB(canvas->format, r, g, b);
+  fractal_r = r;
+  fractal_g = g;
+  fractal_b = b;
 }
 
 int fractal_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -247,15 +303,12 @@ int fractal_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 
 Uint8 fractal_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
-  if (mode == MODE_PAINT)
-    return 8;
-  else
-    return 0;
+  return 4;
 }
 
 Uint8 fractal_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return 4;
+  return 2;
 }
 
 void fractal_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
