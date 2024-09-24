@@ -104,7 +104,7 @@ int fractal_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%ssounds/magic/fractals.ogg", api->data_directory);
   fractal_snd = Mix_LoadWAV(fname);
 
   return (1);
@@ -119,7 +119,7 @@ SDL_Surface *fractal_get_icon(magic_api * api, int ATTRIBUTE_UNUSED which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%simages/magic/fractals.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
@@ -299,7 +299,7 @@ void fractal_release(magic_api * api, int which,
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
-  api->playsound(fractal_snd, (x * 255) / canvas->w, 255);
+  api->stopsound();
 }
 
 void fractal_shutdown(magic_api * api ATTRIBUTE_UNUSED)

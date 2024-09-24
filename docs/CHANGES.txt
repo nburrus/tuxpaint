@@ -17,12 +17,14 @@ https://tuxpaint.org/
         <https://freesound.org/people/humanoide9000/>
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
 
-    * WIP "Fractal", a set of freehand drawing tools that
+    * "Fractal", a set of freehand drawing tools that
       recursively draw variations of the strokes
       + Bill Kendrick <bill@newbreedsoftware.com>
+      + Sound effect "100_Glitch808"
+        Creative Commons 0 by DigitalUnderglow
+        <https://freesound.org/people/DigitalUnderglow/>
+      + TODO - Document
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/260/
-      + TODO: Icon
-      + TODO: Sound effect
 
   * Magic Tool Improvements:
     ------------------------
