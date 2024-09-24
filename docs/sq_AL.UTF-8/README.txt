@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                17 shtator 2024
+                                23 shtator 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -108,6 +108,10 @@ New brushes
 New Magic tool: Comic dots
     Draws a repeating dot pattern, simulating the "Ben Day process" used in
     early comic books.
+
+New Magic tool: Fractal
+    A set of tools that recursively repeat what you draw, scaling and/or
+    rotating it as they repeat.
 
 Magic API Updates
     Sound pause and resume functions added.

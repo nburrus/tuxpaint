@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2024年9月17日
+                                 2024年9月23日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -106,6 +106,10 @@ D. Tux Paint バージョン 0.9.34 での変更点
 New Magic tool: Comic dots
     Draws a repeating dot pattern, simulating the "Ben Day process" used in
     early comic books.
+
+New Magic tool: Fractal
+    A set of tools that recursively repeat what you draw, scaling and/or
+    rotating it as they repeat.
 
 Magic API Updates
     Sound pause and resume functions added.

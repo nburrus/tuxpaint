@@ -92,6 +92,7 @@ Vizatim
   * Pastë dhëmbësh
   * Bojë e Njomë
   * E çelët
+  * Fractal
 
 Vizatim Rregullsish
 

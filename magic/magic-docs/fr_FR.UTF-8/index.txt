@@ -92,6 +92,7 @@ Peindre
   * Dentifrice
   * Effet mouillé
   * Lumière
+  * Fractal
 
 Peindre un motif
 

@@ -92,6 +92,7 @@ Painting
   * Toothpaste
   * Wet Paint
   * Light
+  * Fractal
 
 Pattern Painting
 
