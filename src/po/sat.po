@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2014-06-16 16:55+0530\n"
 "Last-Translator: Ganesh Murmu <murmu.ganesh@gmail.com>\n"
 "Language-Team: none\n"
@@ -393,7 +393,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2822,6 +2822,16 @@ msgstr "ओताय मे आर आमाक् फिता़ ते ते
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "आम गेल बार टुडा़क् छापा लेका गार तेयार दाड़ेयाक् आ!"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click and drag to rotate your drawing."
+msgstr "मित् खोबोर कागोज रे आमाक् गार चिता़र आ़चुर ला़गित् ओता आर ओर."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

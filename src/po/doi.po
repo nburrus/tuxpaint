@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2013-09-04 10:23+0530\n"
 "Last-Translator:  <b>\n"
 "Language-Team: Dogri\n"
@@ -393,7 +393,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2820,6 +2820,16 @@ msgstr "क्लिक करो ते अपना रोज़ेट चि�
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "तुस पिकासो आह्‌ला लेखा चित्रकारी करी सकदे ओ!"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click and drag to rotate your drawing."
+msgstr "अपनी पेंटिङ गी इसदे नैगटिव च बदलने आस्तै क्लिक करो."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

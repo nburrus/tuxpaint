@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2007-08-30 18:24+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -392,7 +392,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2799,6 +2799,15 @@ msgstr ""
 #, fuzzy
 msgid "You can draw just like Picasso!"
 msgstr "Vos ploz dessiner avou les coleurs di l' airdiè!"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+msgid "Click and drag to rotate your drawing."
+msgstr "Clitchîz po mete l' imådje come dins on muroe."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

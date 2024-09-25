@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2024-02-28 21:39+0200\n"
 "Last-Translator: Vankata453\n"
 "Language-Team: \n"
@@ -397,7 +397,7 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 #, fuzzy
 #| msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 "Нови инструменти за \"магия\": Епитрохоидни и Хипотрохоидни генератори."
 
@@ -2846,6 +2846,16 @@ msgstr "Кликни и започни да рисуваш розички."
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Ти рисуваш точно като Пикасо!"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click and drag to rotate your drawing."
+msgstr "Кликни и движи мишката, за да превърнеш рисунката във вестник."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

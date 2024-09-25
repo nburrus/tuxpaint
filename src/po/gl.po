@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2021-03-03 10:01+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
@@ -404,7 +404,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2798,6 +2798,16 @@ msgstr "Preme e comeza a debuxar a túa roseta."
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Podes pintar igual que Picasso!"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click and drag to rotate your drawing."
+msgstr "Preme e arrastra o rato para que o debuxo semelle seren un periodico."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

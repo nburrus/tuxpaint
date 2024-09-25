@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2014-08-03 16:29+0530\n"
 "Last-Translator: Akhil Krishnan S <akhilkrishnans@gmail.com>\n"
 "Language-Team: Malayalam\n"
@@ -403,7 +403,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2815,6 +2815,16 @@ msgstr "മൗസ് അമര്‍ത്തി റോസെറ്റെ വര
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "നിങ്ങള്‍ക്ക് പിക്കാസോയെ പോലെ വരയ്ക്കാം"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click and drag to rotate your drawing."
+msgstr "നിങ്ങളുടെ ചിത്രം പത്രം പോലെയാക്കാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക"
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

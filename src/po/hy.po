@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2014-03-22 11:39+0400\n"
 "Last-Translator: Aram Palyan <ararat.info@gmail.com>\n"
 "Language-Team: Armenian <ararat.info@gmail.com>\n"
@@ -398,7 +398,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2847,6 +2847,16 @@ msgstr "Սեղմիր` վարդաքանդակներ նկարելու համար"
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Դու կարող ես նկարել ինչպես Պիկասոն"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click and drag to rotate your drawing."
+msgstr "Սեղմիր և քաշիր նկարդ թերթի նման դարձնելու համար:"
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

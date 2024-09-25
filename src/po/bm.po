@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2010-09-04 17:25+0200\n"
 "Last-Translator: Fasokan <konate20032001@yahoo.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -392,7 +392,7 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2827,6 +2827,16 @@ msgstr "Kilike, i k'i ka rozasi ɲɛgɛnni daminɛ."
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "I bɛ se ka ɲɛgɛn kɛ i ko pikaso b'a kɛ cogo min na."
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click to turn your painting into its negative."
+msgid "Click and drag to rotate your drawing."
+msgstr "Kilike, i ka ja fan bɛɛ kɛ negatifu ye."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"

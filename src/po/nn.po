@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-23 22:59-0700\n"
+"POT-Creation-Date: 2024-09-25 00:09-0700\n"
 "PO-Revision-Date: 2024-06-02 13:17+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -389,7 +389,7 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 #, fuzzy
 #| msgid "New Magic tools: Dither, Filled Polygon."
-msgid "New Magic tools: \"Comic dots\" and various \"Fractals\"."
+msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
 msgstr "Nye magiske verktøy: prikkemønster, fylte mangekantar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2824,6 +2824,16 @@ msgstr "Trykk for å starta å teikna ein rosett."
 #: ../../magic/src/rosette.c:149
 msgid "You can draw just like Picasso!"
 msgstr "Du kan måla slik Picasso gjorde!"
+
+#: ../../magic/src/rotate.c:108
+msgid "Rotate"
+msgstr ""
+
+#: ../../magic/src/rotate.c:123
+#, fuzzy
+#| msgid "Click and drag to turn your drawing into a newspaper."
+msgid "Click and drag to rotate your drawing."
+msgstr "Hald inne knappen og flytt rundt for å gjera teikninga om til ei avis."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"
