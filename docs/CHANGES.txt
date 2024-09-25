@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.September.23 (0.9.34)
+2024.September.24 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -16,6 +16,12 @@ https://tuxpaint.org/
         Creative Commons Attribution 4.0 by Luis Humanoide
         <https://freesound.org/people/humanoide9000/>
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
+
+    * "Rotate", rotate's the entire image on the canvas.
+      + Bill Kendrick <bill@newbreedsoftware.com>
+      + TODO Sound effect
+      + TODO Icon
+      + TODO Documentation
 
     * "Fractal", a set of freehand drawing tools that
       recursively draw variations of the strokes
@@ -1696,7 +1702,7 @@ https://tuxpaint.org/
       + Note: This adds a dependency on "SDL_gfx" library
         (Homepage: https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/
         SourceForge project page: https://sourceforge.net/projects/sdlgfx/)
-        as this feature use it's "rotozoomSurface()" and "SDL_gfxBlitRGBA()".
+        as this feature use its "rotozoomSurface()" and "SDL_gfxBlitRGBA()".
       (Closes https://sourceforge.net/p/tuxpaint/feature-requests/122/)
 
     * Replaced the "arrow_compass_points" brush with a single
