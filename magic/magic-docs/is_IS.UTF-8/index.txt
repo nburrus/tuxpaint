@@ -66,6 +66,7 @@ Picture Warps
   * Wavelets
   * Fold
   * Kaleido-4, Kaleido-6, and Kaleido-8
+  * Rotate
 
 Painting
 

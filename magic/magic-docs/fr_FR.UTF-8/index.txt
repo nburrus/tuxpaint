@@ -66,6 +66,7 @@ Déformations de l'image
   * Vaguelettes
   * Plier
   * Kaleido-4, Kaleido-6, et Kaleido-8
+  * Rotate
 
 Peindre
 

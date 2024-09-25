@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                            23 de Setembro de 2024
+                            25 de Setembro de 2024
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -109,6 +109,9 @@ New brushes
 New Magic tool: Comic dots
     Draws a repeating dot pattern, simulating the "Ben Day process" used in
     early comic books.
+
+New Magic tool: Rotate
+    Rotates the drawing.
 
 New Magic tool: Fractal
     A set of tools that recursively repeat what you draw, scaling and/or

@@ -22,7 +22,6 @@ https://tuxpaint.org/
       + Sound effects based on "Rotating tank turret planetary electric motor"
         Creative Commons 0 by lorefold
         <https://freesound.org/people/lorefold/>
-      + TODO Documentation
 
     * "Fractal", a set of freehand drawing tools that
       recursively draw variations of the strokes
