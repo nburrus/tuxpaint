@@ -68,6 +68,7 @@ Uint8 rotate_default_size(magic_api * api, int which, int mode);
 void rotate_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
                   SDL_Rect * update_rect);
 float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag);
+void rotate_xorline_callback(void *pointer, int tool, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
 
 
 Uint32 rotate_api_version(void)
@@ -157,12 +158,34 @@ float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag)
   return angle_rad;
 }
 
+void rotate_xorline_callback(void *pointer ATTRIBUTE_UNUSED, int tool ATTRIBUTE_UNUSED,
+                             SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
+{
+  magic_api *api = (magic_api *) pointer;
+
+  api->xorpixel(canvas, x, y);
+}
+
 void rotate_drag(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
-              SDL_Surface * last ATTRIBUTE_UNUSED, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
+              SDL_Surface * last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
               int x, int y, SDL_Rect * update_rect)
 {
+  float ang;
+  int xx, yy;
+
   /* Rotate interactively based on the X/Y position of the mouse */
-  do_rotate(canvas, x, y, SMOOTHING_OFF);
+  ang = do_rotate(canvas, x, y, SMOOTHING_OFF);
+
+  /* Draw indicator lines */
+  xx = (canvas->w / 2) + ((int) (cos(ang) * 100));
+  yy = (canvas->h / 2) - ((int) (sin(ang) * 100));
+  api->line((void *)api, which, canvas, last, canvas->w / 2, canvas->h / 2, xx, yy, 1,
+            rotate_xorline_callback);
+
+  xx = (canvas->w / 2) + ((int) (cos(ang + (M_PI / 2)) * 200));
+  yy = (canvas->h / 2) - ((int) (sin(ang + (M_PI / 2)) * 200));
+  api->line((void *)api, which, canvas, last, canvas->w / 2, canvas->h / 2, xx, yy, 1,
+            rotate_xorline_callback);
 
   update_rect->x = 0;
   update_rect->y = 0;
