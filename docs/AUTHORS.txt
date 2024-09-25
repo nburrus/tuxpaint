@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - September 17, 2024
+June 17, 2002 - September 24, 2024
 
 * Design and Coding:
 
@@ -188,6 +188,14 @@ June 17, 2002 - September 17, 2024
   <https://freesound.org/people/DigitalUnderglow/sounds/742975/>
   Creative Commons 0 by DigitalUnderglow
   <https://freesound.org/people/DigitalUnderglow/>
+
+  Rotate magic tool
+  by Bill Kendrick <bill@newbreedsoftware.com>
+
+  Rotate sound effects
+  Sound effects based on "Rotating tank turret planetary electric motor"
+  <https://freesound.org/people/lorefold/sounds/607310/>
+  Creative Commons 0 by lorefold <https://freesound.org/people/lorefold/>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>

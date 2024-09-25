@@ -18,8 +18,10 @@ https://tuxpaint.org/
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/257/
 
     * "Rotate", rotate's the entire image on the canvas.
-      + Bill Kendrick <bill@newbreedsoftware.com>
-      + TODO Sound effect
+      + Code Bill Kendrick <bill@newbreedsoftware.com>
+      + Sound effects based on "Rotating tank turret planetary electric motor"
+        Creative Commons 0 by lorefold
+        <https://freesound.org/people/lorefold/>
       + TODO Icon
       + TODO Documentation
 

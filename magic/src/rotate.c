@@ -32,7 +32,7 @@
 #include "SDL_mixer.h"
 #include "SDL2_rotozoom.h"
 
-static Mix_Chunk *rotate_snd;
+static Mix_Chunk *rotate_snd_drag, *rotate_snd_release;
 SDL_Surface * rotate_snapshot = NULL;
 Uint32 rotate_color;
 float rotate_last_angle = 0.0;
@@ -79,8 +79,11 @@ int rotate_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory); // FIXME
-  rotate_snd = Mix_LoadWAV(fname);
+  snprintf(fname, sizeof(fname), "%ssounds/magic/rotate-drag.ogg", api->data_directory);
+  rotate_snd_drag = Mix_LoadWAV(fname);
+
+  snprintf(fname, sizeof(fname), "%ssounds/magic/rotate-release.ogg", api->data_directory);
+  rotate_snd_release = Mix_LoadWAV(fname);
 
   return (1);
 }
@@ -166,7 +169,7 @@ void rotate_drag(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canv
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
-  api->playsound(rotate_snd, 128, 255);
+  api->playsound(rotate_snd_drag, 128, 255);
 }
 
 void rotate_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
@@ -180,6 +183,10 @@ void rotate_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   /* Record the fact that we've clicked at least once since
    * switching [back] to thsi tool */
   rotate_clicked_since_switchin = 1;
+
+  /* Stop any sound (in case "release" version is playing),
+     so we can play the main "drag" sound immediately */
+  api->stopsound();
 
   /* Call the drag function to do the work
    * (it will add the click positions angle, making it a net
@@ -202,12 +209,19 @@ void rotate_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
   update_rect->y = 0;
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
+
+  /* Stop any "drag" sound, and play "release" immediately */
+  api->stopsound();
+  api->playsound(rotate_snd_release, 128, 255);
 }
 
 void rotate_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
-  if (rotate_snd != NULL)
-    Mix_FreeChunk(rotate_snd);
+  if (rotate_snd_drag != NULL)
+    Mix_FreeChunk(rotate_snd_drag);
+
+  if (rotate_snd_release != NULL)
+    Mix_FreeChunk(rotate_snd_release);
 
   if (rotate_snapshot != NULL)
   {
