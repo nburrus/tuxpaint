@@ -153,7 +153,7 @@ float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag)
   dest.w = new_surf->w;
   dest.h = new_surf->h;
   SDL_BlitSurface(new_surf, NULL, canvas, &dest);
-
+  SDL_FreeSurface(new_surf);
   /* Return the angle we ended up at */
   return angle_rad;
 }
