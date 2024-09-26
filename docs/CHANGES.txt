@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.September.24 (0.9.34)
+2024.September.25 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -63,6 +63,12 @@ https://tuxpaint.org/
     ---------------------
     * Vietnamese translation
       Cas Pascal <casboi86@gmail.com>
+
+  * Bug Fixes:
+    ----------
+    * Eraser choices turned from black to white when a prompt appeared.
+      h/t Pere for reporting
+      Closes https://sourceforge.net/p/tuxpaint/bugs/292/
 
 2024.July.17 (0.9.33)
   * New Magic Tools:
