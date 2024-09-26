@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 00:09-0700\n"
+"POT-Creation-Date: 2024-09-26 00:36-0700\n"
 "PO-Revision-Date: 2014-06-08 23:43+0630\n"
 "Last-Translator: Savitha <savithasprasad@yahoo.com>\n"
 "Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
@@ -394,7 +394,9 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
+msgid ""
+"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
+"Typewriter\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1650,6 +1652,39 @@ msgstr "ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗಗಳನ್ನು ಬಣ್
 #: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "ಸಂಪೂರ್ಣ ಚಿತ್ರದ ಬಣ್ಣಗಳನ್ನು ಬದಲಾಯಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
+
+#: ../../magic/src/ascii.c:49
+msgid "Typewriter"
+msgstr ""
+
+#: ../../magic/src/ascii.c:50
+msgid "Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:292
+#, c-format
+msgid "ASCII %s"
+msgstr ""
+
+#: ../../magic/src/ascii.c:311
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to transform parts of your drawing to ASCII art (%s style)."
+msgstr ""
+"ನಿಮ್ಮ ಚಿತ್ರದ ಭಾಗವು ದೂರದರ್ಶನದಲ್ಲಿರುವ ರೀತಿಯಲ್ಲಿ ಕಾಣಿಸುವಂತೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
+"ಎಳೆಯಿರಿ."
+
+#: ../../magic/src/ascii.c:313
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to transform your entire drawing to ASCII art (%s style)."
+msgstr ""
+"ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಸೀಮೆಸುಣ್ಣದಲ್ಲಿ ರಚಿಸಲಾಗಿರುವಂತೆ ಬದಲಾಯಿಸಲು ಮೌಸ್‌ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಹಾಗು "
+"ಸುತ್ತಲೂ ಜರುಗಿಸಿ."
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 00:09-0700\n"
+"POT-Creation-Date: 2024-09-26 00:36-0700\n"
 "PO-Revision-Date: 2009-05-25 12:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
@@ -392,7 +392,9 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
+msgid ""
+"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
+"Typewriter\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1641,6 +1643,34 @@ msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 #, fuzzy
 msgid "Click to change the colors in your entire picture."
 msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
+
+#: ../../magic/src/ascii.c:49
+msgid "Typewriter"
+msgstr ""
+
+#: ../../magic/src/ascii.c:50
+msgid "Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:292
+#, c-format
+msgid "ASCII %s"
+msgstr ""
+
+#: ../../magic/src/ascii.c:311
+#, fuzzy, c-format
+msgid ""
+"Click and drag to transform parts of your drawing to ASCII art (%s style)."
+msgstr "Ji bo guherandina rengê wêneyê bitikîne mişkî li dorê bigerîne."
+
+#: ../../magic/src/ascii.c:313
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and move the mouse around to turn the picture into a chalk drawing."
+msgid "Click to transform your entire drawing to ASCII art (%s style)."
+msgstr ""
+"Ji bo ku wêne wekî xêzkirineke bi tebeşîrê xuya bibe, bitikîne û mi,şkî li "
+"dorê bigerîne bigerîne."
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"

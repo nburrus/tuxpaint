@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 00:09-0700\n"
+"POT-Creation-Date: 2024-09-26 00:36-0700\n"
 "PO-Revision-Date: 2017-12-03 10:35+0200\n"
 "Last-Translator: Ibrahima SARR <ibrahima.sarr@pulaagu.com>\n"
 "Language-Team: FULAH LOCALIZATION\n"
@@ -391,7 +391,9 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
+msgid ""
+"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
+"Typewriter\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1635,6 +1637,35 @@ msgstr "Dobo, ndaasaa doombel ngel ngam waylude goobi bannge e natal maa."
 #: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "Dobo ngam waylude goobi e natal ngal fof."
+
+#: ../../magic/src/ascii.c:49
+msgid "Typewriter"
+msgstr ""
+
+#: ../../magic/src/ascii.c:50
+msgid "Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:292
+#, c-format
+msgid "ASCII %s"
+msgstr ""
+
+#: ../../magic/src/ascii.c:311
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and drag to make parts of your picture look like they are on "
+#| "television."
+msgid ""
+"Click and drag to transform parts of your drawing to ASCII art (%s style)."
+msgstr "Dobo, ndaasaa ngam nanndidne bannge e natal maa e yaynirde tele."
+
+#: ../../magic/src/ascii.c:313
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and drag the mouse around to turn the picture into a chalk drawing."
+msgid "Click to transform your entire drawing to ASCII art (%s style)."
+msgstr "Dobo, ndaasaa doombel ngam waɗtude natal ngal natgno kereewo."
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"

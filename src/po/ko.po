@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 00:09-0700\n"
+"POT-Creation-Date: 2024-09-26 00:36-0700\n"
 "PO-Revision-Date: 2022-09-10 06:06-0400\n"
 "Last-Translator: Mark K. Kim <markuskimius@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -381,7 +381,9 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-msgid "New Magic tools: \"Comic dots\", \"Rotate\", and various \"Fractals\"."
+msgid ""
+"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
+"Typewriter\", and various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1594,6 +1596,33 @@ msgstr "마우스를 누르고 끌면 그림의 색갈을 바꿀 수 있어요."
 #: ../../magic/src/alien.c:80
 msgid "Click to change the colors in your entire picture."
 msgstr "마우스를 누르면 그림의 전채 색갈을 바꿀 수 있어요."
+
+#: ../../magic/src/ascii.c:49
+msgid "Typewriter"
+msgstr ""
+
+#: ../../magic/src/ascii.c:50
+msgid "Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:292
+#, c-format
+msgid "ASCII %s"
+msgstr ""
+
+#: ../../magic/src/ascii.c:311
+#, fuzzy, c-format
+#| msgid ""
+#| "Click and drag to stretch part of your picture vertically or horizontally."
+msgid ""
+"Click and drag to transform parts of your drawing to ASCII art (%s style)."
+msgstr "마우스를 누르고 끌면 그림의 부분을 늘릴수가 있습니다."
+
+#: ../../magic/src/ascii.c:313
+#, fuzzy, c-format
+#| msgid "Click to turn the entire picture into a cartoon."
+msgid "Click to transform your entire drawing to ASCII art (%s style)."
+msgstr "마우스를 누르면 그림이 만화형이 되어요."
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"
