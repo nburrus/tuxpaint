@@ -22,8 +22,16 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 25, 2024
+  Last updated: September 26, 2024
 */
+
+//#define DEBUG
+
+#if defined(DEBUG)
+#define DEBUG_PRINTF(...) printf(__VA_ARGS__)
+#else
+#define DEBUG_PRINTF(...)
+#endif
 
 #include <stdio.h>
 #include <string.h>
@@ -38,8 +46,8 @@ enum {
 };
 
 char * ascii_tool_names[NUM_TOOLS] = {
-  "Typewriter",
-  "Computer",
+  gettext_noop("Typewriter"),
+  gettext_noop("Computer"),
 };
 
 char * ascii_tool_filenames[NUM_TOOLS] = {
@@ -91,6 +99,8 @@ Uint8 ascii_default_size(magic_api * api, int which, int mode);
 void ascii_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
                   SDL_Rect * update_rect);
 void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
+int get_best_char(int which, int brightness);
+int get_bright(magic_api * api, int r, int g, int b);
 
 
 Uint32 ascii_api_version(void)
@@ -101,9 +111,11 @@ Uint32 ascii_api_version(void)
 int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
-  int i, j, x, y, xx, w, num_chars, all_clear, area, bright;
+  int i, j, x, y, xx, w, num_chars, all_clear, area, bright, clear_brightness;
+  int min_bright, max_bright;
   Uint32 clear_pixel, pixel;
   Uint8 r, g, b;
+  Uint8 clear_r, clear_g, clear_b;
 
   for (i = 0; i < NUM_TOOLS; i++)
   {
@@ -129,12 +141,14 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     }
 
     clear_pixel = api->getpixel(ascii_bitmap[i], 0, 0);
-//    printf("%s; clear pixel %d\n", fname, clear_pixel);
+    SDL_GetRGB(clear_pixel, ascii_bitmap[i]->format, &clear_r, &clear_g, &clear_b);
+    DEBUG_PRINTF("%s; clear pixel %d (%d,%d,%d)\n", fname, clear_pixel, clear_r, clear_g, clear_b);
+    clear_brightness = (clear_r + clear_g + clear_b) / 3;
+
     num_chars = 0;
     for (x = 0; x < ascii_bitmap[i]->w; x++)
     {
-      ascii_char_x[i][num_chars] = x;
-
+      /* Skip whitespace between characters */
       do
       {
         all_clear = 1;
@@ -148,6 +162,9 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
       }
       while (all_clear && x < ascii_bitmap[i]->w);
 
+      ascii_char_x[i][num_chars] = x;
+
+      /* Capture the extent of the character */
       all_clear = 0;
       for (xx = x; xx < ascii_bitmap[i]->w && !all_clear; xx++)
       {
@@ -164,26 +181,26 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
               /* Magenta counts as a connecting pixel, but we
                * want it to appear as the clear color */
               api->putpixel(ascii_bitmap[i], xx, y, clear_pixel);
-//              printf("x");
+              DEBUG_PRINTF("x");
             }
             else
             {
-//              printf("#");
+              DEBUG_PRINTF("#");
             }
           }
           else
           {
-//            printf("-");
+            DEBUG_PRINTF("-");
           }
         }
-//        printf("\n");
+        DEBUG_PRINTF("\n");
       }
-      x = xx;
+      x = xx - 1;
       num_chars++;
-//      printf(".......................................\n");
+      DEBUG_PRINTF(".......................................\n");
     }
     ascii_num_chars[i] = num_chars;
-    printf("%s has %d characters\n", fname, num_chars);
+    DEBUG_PRINTF("%s has %d characters\n", fname, num_chars);
 
     /* Determine the max. width of any character */
     ascii_char_x[i][num_chars] = x;
@@ -191,7 +208,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     for (j = 0; j < num_chars; j++)
     {
       w = ascii_char_x[i][j + 1] - ascii_char_x[i][j];
-//      printf("%d->%d = %d\n", j, j + 1, w);
+      DEBUG_PRINTF("%d->%d = %d\n", j, j + 1, w);
       if (w > ascii_char_maxwidth[i])
       {
         ascii_char_maxwidth[i] = w;
@@ -201,7 +218,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     /* Calculate the intensity of each character */
     area = ascii_char_maxwidth[i] * ascii_bitmap[i]->h;
 
-//    printf("%s max char width is %d -- * %d = area %d\n", fname, ascii_char_maxwidth[i], ascii_bitmap[i]->h, area);
+    DEBUG_PRINTF("%s max char width is %d -- * %d = area %d\n", fname, ascii_char_maxwidth[i], ascii_bitmap[i]->h, area);
 
     for (j = 0; j < num_chars; j++)
     {
@@ -213,13 +230,39 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
           pixel = api->getpixel(ascii_bitmap[i], x, y);
           SDL_GetRGB(pixel, ascii_bitmap[i]->format, &r, &g, &b);
 
-//          printf("%3d ", (r + g + b) / 3);
-          bright += ((r + g + b) / 3);
+          DEBUG_PRINTF("%3d (%3d) ", (r + g + b) / 3, get_bright(api, r, g, b));
+          bright += get_bright(api, r, g, b);
         }
-//        printf("\n");
+        DEBUG_PRINTF("\n");
       }
-//      printf("char %d brightness = %d\n", j, bright / area);
+      DEBUG_PRINTF("char %3d brightness = %3d before padding -- ", j, bright / area);
+      w = ascii_char_maxwidth[i] - (ascii_char_x[i][j + 1] - ascii_char_x[i][j]) - 2; /* don't let padding affect _too_ much */
+      if (w >= 1)
+        bright += (clear_brightness * ascii_bitmap[i]->h * w);
+      DEBUG_PRINTF("%3d after padding %d width\n", bright / area, w);
       ascii_char_brightness[i][j] = bright / area;
+    }
+
+    /* Stretch the brightnesses, so we cover more of 0->255 */
+    min_bright = 255;
+    max_bright = 0;
+    for (j = 0; j < num_chars; j++)
+    {
+      if (ascii_char_brightness[i][j] > max_bright)
+        max_bright = ascii_char_brightness[i][j];
+      if (ascii_char_brightness[i][j] < max_bright)
+        min_bright = ascii_char_brightness[i][j];
+    }
+    DEBUG_PRINTF("brightnesses between %d and %d\n", min_bright, max_bright);
+
+    /* https://rosettacode.org/wiki/Map_range#C */
+#define map_range(a1,a2,b1,b2,s) (b1 + (s-a1)*(b2-b1)/(a2-a1))
+
+    for (j = 0; j < num_chars; j++)
+    {
+      DEBUG_PRINTF("mapping %3d -> ", ascii_char_brightness[i][j]);
+      ascii_char_brightness[i][j] = map_range(min_bright, max_bright, 0, 255, ascii_char_brightness[i][j]);
+      DEBUG_PRINTF("%3d\n", ascii_char_brightness[i][j]);
     }
   }
 
@@ -246,7 +289,7 @@ char *ascii_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   char tmp[1024];
 
-  snprintf(tmp, sizeof(tmp), gettext("ASCII %s"), ascii_tool_names[which]);
+  snprintf(tmp, sizeof(tmp), gettext("ASCII %s"), gettext(ascii_tool_names[which]));
   return(strdup(tmp));
 }
 
@@ -373,8 +416,10 @@ void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
-  int w, h, n;
+  int w, h, n, xx, yy, brightness;
+  Uint8 r, g, b;
   Uint32 clear_pixel;
+  Uint8 clear_brightness;
   SDL_Rect src, dest;
 
   w = ascii_char_maxwidth[which];
@@ -386,6 +431,8 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
   if (!api->touched(x, y))
   {
     clear_pixel = api->getpixel(ascii_bitmap[which], 0, 0);
+    SDL_GetRGB(clear_pixel, ascii_bitmap[which]->format, &r, &g, &b);
+    clear_brightness = ((r + g + b) / 3.0);
 
     dest.x = x;
     dest.y = y;
@@ -394,15 +441,79 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
 
     SDL_FillRect(canvas, &dest, clear_pixel);
 
-    n = rand() % ascii_num_chars[which];
-    src.x = ascii_char_x[which][n];
-    src.y = 0;
-    src.w = ascii_char_x[which][n + 1] - ascii_char_x[which][n];
-    src.h = h;
+    brightness = 0;
+    for (yy = y; yy < y + h; yy++)
+    {
+      for (xx = x; xx < x + w; xx++)
+      {
+        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+        brightness += get_bright(api, r, g, b);
+      }
+    }
+    brightness = brightness / (w * h);
 
-    dest.x = x + (w - src.w) / 2;
-    dest.y = y;
+    /* FIXME: Increase contrast */
 
-    SDL_BlitSurface(ascii_bitmap[which], &src, canvas, &dest);
+    if (brightness != clear_brightness)
+    {
+      n = get_best_char(which, brightness);
+      src.x = ascii_char_x[which][n];
+      src.y = 0;
+      src.w = ascii_char_x[which][n + 1] - ascii_char_x[which][n];
+      src.h = h;
+
+      dest.x = x + (w - src.w) / 2;
+      dest.y = y;
+
+      SDL_BlitSurface(ascii_bitmap[which], &src, canvas, &dest);
+    }
   }
+}
+
+int get_best_char(int which, int brightness)
+{
+  int i, diff, best_idx, best_diff;
+
+  best_idx = -1;
+  best_diff = 255;
+  for (i = 0; i < ascii_num_chars[which]; i++)
+  {
+    diff = abs(ascii_char_brightness[which][i] - brightness);
+
+    if (diff == best_diff)
+    {
+      if (rand() % 10 <= 3)
+        best_idx = 1;
+    }
+    else if (diff < best_diff)
+    {
+      best_diff = diff;
+      best_idx = i;
+    }
+  }
+
+  if (best_idx == -1)
+  {
+    /* Shouldn't happen, but just in case */
+    best_idx = rand() % ascii_num_chars[which];
+    printf("!?\n");
+  }
+
+  DEBUG_PRINTF("best for brightness %d is %d (brightness %d)\n",
+         brightness, best_idx, ascii_char_brightness[which][best_idx]);
+
+  return best_idx;
+}
+
+int get_bright(magic_api * api, int r, int g, int b)
+{
+  float fr, fg, fb, y;
+
+  fr = api->sRGB_to_linear(r);
+  fg = api->sRGB_to_linear(g);
+  fb = api->sRGB_to_linear(b);
+
+  y = (0.2126 * fr) + (0.7152 * fg) + (0.0722 * fb);
+
+  return (int) (y * 255);
 }

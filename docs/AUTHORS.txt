@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - September 24, 2024
+June 17, 2002 - September 26, 2024
 
 * Design and Coding:
 
@@ -196,6 +196,22 @@ June 17, 2002 - September 24, 2024
   Sound effects based on "Rotating tank turret planetary electric motor"
   <https://freesound.org/people/lorefold/sounds/607310/>
   Creative Commons 0 by lorefold <https://freesound.org/people/lorefold/>
+
+  "ASCII Typewriter" & "ASCII Computer" magic tools
+   by Bill Kendrick <bill@newbreedsoftware.com>
+
+  "ASCII Computer" font: IBM CGA Adapter
+  taken from "Typography in 16-bits: System fonts" by Damien Guard
+  <https://damieng.com/blog/2011/03/27/typography-in-16-bits-system-fonts/>
+
+  "ASCII Typewriter" font based on: "Patrician"
+  <https://site.xavier.edu/polt/typewriters/patrician.html>
+  Creative Commons CC0 1.0 Universal
+  by Richard Polt (based on a 1959 Royal FP typewriter)
+  And using a subset of characters taken from
+  "Character representation of grey scale images"
+  <https://paulbourke.net/dataformats/asciiart/>
+  by Paul Bourke
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>

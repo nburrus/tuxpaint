@@ -11918,7 +11918,7 @@ static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep
           SDL_GetRGBA(getpixel(src, src_x, src_y), src->format, &r, &g, &b, &a);
 
 #ifdef GAMMA_CORRECTED_THUMBNAILS
-          /* per: http://www.4p8.com/eric.brasseur/gamma.html */
+          /* per: http://www.ericbrasseur.org/gamma.html?i=1 */
 
           tr = tr + sRGB_to_linear_table[r];
           tg = tg + sRGB_to_linear_table[g];
