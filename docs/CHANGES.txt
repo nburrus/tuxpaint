@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.September.26 (0.9.34)
+2024.September.27 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -70,14 +70,6 @@ https://tuxpaint.org/
     * Fluff (gradient variation)
       Bill Kendrick <bill@newbreedsoftware.com>
 
-  * Ports & Building:
-    -----------------
-    * On Android, quitting Tux Paint while it's in the background and the
-      current image has been autosaved would invoke the "Are you sure?"
-      prompt (and corresponding sound effect), which could not be interacted
-      with by the user.  Avoiding this.
-      Pere Pujal i Carabantes <perepujal@gmail.com>
-
   * Localization Updates:
     ---------------------
     * Vietnamese translation
@@ -88,6 +80,12 @@ https://tuxpaint.org/
     * Eraser choices turned from black to white when a prompt appeared.
       h/t Pere for reporting
       Closes https://sourceforge.net/p/tuxpaint/bugs/292/
+
+    * On Android, quitting Tux Paint while it's in the background and the
+      current image has been autosaved would invoke the "Are you sure?"
+      prompt (and corresponding sound effect), which could not be interacted
+      with by the user.  Avoiding this.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
 
 2024.July.17 (0.9.33)
   * New Magic Tools:
