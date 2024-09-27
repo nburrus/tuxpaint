@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 26, 2024
+  Last updated: September 27, 2024
 */
 
 //#define DEBUG
@@ -300,7 +300,7 @@ int ascii_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 
 int ascii_get_order(int which)
 {
-  return 800 + which; // FIXME
+  return 2050 + which;
 }
 
 char *ascii_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
