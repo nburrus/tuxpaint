@@ -45,9 +45,12 @@ enum {
   NUM_TOOLS
 };
 
-char * ascii_tool_names[NUM_TOOLS] = {
+#define TOOL_COMPUTER_COLOR NUM_TOOLS
+
+char * ascii_tool_names[NUM_TOOLS + 1] = {
   gettext_noop("Typewriter"),
   gettext_noop("Computer"),
+  gettext_noop("Color Computer"), // special version of "computer"
 };
 
 char * ascii_tool_filenames[NUM_TOOLS] = {
@@ -56,6 +59,29 @@ char * ascii_tool_filenames[NUM_TOOLS] = {
 };
 
 static Mix_Chunk *ascii_snd[NUM_TOOLS];
+
+float ascii_computer_colors_hsv[16][3] = {
+  /* Based on CGA color palette
+   * <https://en.wikipedia.org/wiki/Color_Graphics_Adapter#Color_palette> */
+  {  -1, 0.00, 0.00 }, // #000000 - Black
+  {  -1, 0.00, 0.33 }, // #555555 - Dark gray
+  { 240, 1.00, 0.67 }, // #0000AA - Blue
+  { 240, 0.67, 1.00 }, // #5555FF - Light blue
+  { 120, 1.00, 0.67 }, // #00AA00 - Green
+  { 120, 0.67, 1.00 }, // #55FF55 - Light green
+  { 180, 1.00, 0.67 }, // #00AAAA - Cyan
+  { 180, 0.67, 1.00 }, // #55FFFF - Light cyan
+  {   0, 1.00, 0.67 }, // #AA0000 - Red
+  {   0, 0.67, 1.00 }, // #FF5555 - Light red
+  { 300, 1.00, 0.67 }, // #AA00AA - Magenta
+  { 300, 0.67, 1.00 }, // #FF55FF - Light magenta
+  {  30, 1.00, 0.67 }, // #AA5500 - Brown
+  {  60, 0.67, 1.00 }, // #FFFF55 - Yellow
+  { - 1, 0.00, 0.67 }, // #AAAAAA - Light gray
+  {  -1, 0.00, 1.00 }, // #FFFFFF - White
+};
+
+float ascii_computer_colors_hsv[16][3];
 
 /* For each variation, we'll have a bitmap with an arbitrary number
  * of potentially-proportionally-spaced characters (which we'll treat
@@ -70,6 +96,7 @@ int ascii_char_maxwidth[NUM_TOOLS];
 int ascii_char_brightness[NUM_TOOLS][MAX_CHARS];
 SDL_Surface * ascii_snapshot = NULL;
 int ascii_size;
+Uint8 ascii_r,ascii_g, ascii_b;
 
 
 Uint32 ascii_api_version(void);
@@ -274,7 +301,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
 
 int ascii_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return (NUM_TOOLS);
+  return (NUM_TOOLS + 1);
 }
 
 SDL_Surface *ascii_get_icon(magic_api * api, int which)
@@ -380,13 +407,18 @@ void ascii_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 }
 
 void ascii_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r ATTRIBUTE_UNUSED, Uint8 g ATTRIBUTE_UNUSED,
-                   Uint8 b ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  ascii_r = r;
+  ascii_g = g;
+  ascii_b = b;
 }
 
 int ascii_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
+  if (which == TOOL_TYPEWRITER || which == TOOL_COMPUTER)
+    return 1;
+
   return 0;
 }
 
@@ -429,7 +461,7 @@ Uint8 ascii_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
   if (mode == MODE_PAINT)
     return 3;
 
-  return 0;
+  return 1;
 }
 
 void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
@@ -442,11 +474,18 @@ void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
-  int w, h, n, sx, sy, xx, yy, brightness;
+  int w, h, n, sx, sy, xx, yy, ww, brightness, rr, gg, bb;
   Uint8 r, g, b;
   Uint32 clear_pixel;
   Uint8 clear_brightness;
   SDL_Rect src, dest;
+  int computer_color = 0;
+
+  if (which == TOOL_COMPUTER_COLOR)
+  {
+    which = TOOL_COMPUTER;
+    computer_color = 1;
+  }
 
   w = ascii_char_maxwidth[which];
   h = ascii_bitmap[which]->h;
@@ -464,6 +503,29 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
         SDL_GetRGB(clear_pixel, ascii_bitmap[which]->format, &r, &g, &b);
         clear_brightness = ((r + g + b) / 3.0);
 
+        brightness = 0;
+        rr = 0;
+        gg = 0;
+        bb = 0;
+        for (yy = sy; yy < sy + h; yy++)
+        {
+          for (xx = sx; xx < sx + w; xx++)
+          {
+            SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), ascii_snapshot->format, &r, &g, &b);
+            brightness += get_bright(api, r, g, b);
+
+            if (computer_color)
+            {
+              rr += r;
+              gg += g;
+              bb += b;
+            }
+          }
+        }
+        brightness = brightness / (w * h);
+
+
+        /* Background (and also, all we draw, if "Space") */
         dest.x = sx;
         dest.y = sy;
         dest.w = w;
@@ -471,23 +533,45 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
 
         SDL_FillRect(canvas, &dest, clear_pixel);
 
-        brightness = 0;
-        for (yy = sy; yy < sy + h; yy++)
-        {
-          for (xx = sx; xx < sx + w; xx++)
-          {
-            SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), ascii_snapshot->format, &r, &g, &b);
-            brightness += get_bright(api, r, g, b);
-          }
-        }
-        brightness = brightness / (w * h);
 
         if (brightness != clear_brightness)
         {
+          /* A visible character */
+
+          if (computer_color)
+          {
+            /* Find the best color, based on the avg. of the
+               pixels we're replacing */
+
+            rr /= (w * h);
+            gg /= (w * h);
+            bb /= (w * h);
+  
+            /* FIXME: Map to computer color */
+          }
+          else
+          {
+            /* Use the user-chosen color */
+            rr = ascii_r;
+            gg = ascii_b;
+            bb = ascii_g;
+          }
+
+
+          /* Blit the glyph */
           n = get_best_char(which, brightness);
+
+          ww = ascii_char_x[which][n + 1] - ascii_char_x[which][n];
+
+          dest.x = sx + (w - ww) / 2;
+          dest.y = sy;
+          dest.w = ww;
+          dest.h = h;
+          SDL_FillRect(canvas, &dest, SDL_MapRGB(canvas->format, rr, gg, bb));
+
           src.x = ascii_char_x[which][n];
           src.y = 0;
-          src.w = ascii_char_x[which][n + 1] - ascii_char_x[which][n];
+          src.w = ww;
           src.h = h;
 
           dest.x = sx + (w - src.w) / 2;
