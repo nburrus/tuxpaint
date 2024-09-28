@@ -153,12 +153,11 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
 
   for (i = 0; i < NUM_TOOLS; i++)
   {
-    /* FIXME */
+    /* Load our sound */
     snprintf(fname, sizeof(fname), "%ssounds/magic/ascii-%s.ogg", api->data_directory, ascii_tool_filenames[i]);
-    snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory);
-
     ascii_snd[i] = Mix_LoadWAV(fname);
 
+    /* Load and process our bitmap "font" */
     snprintf(fname, sizeof(fname), "%simages/magic/ascii-%s.png", api->data_directory, ascii_tool_filenames[i]);
     ascii_bitmap[i] = IMG_Load(fname);
 
@@ -357,6 +356,9 @@ void ascii_drag(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
+  if (which == TOOL_COMPUTER_COLOR)
+    which = TOOL_COMPUTER;
+
   api->playsound(ascii_snd[which], (x * 255) / canvas->w, 255);
 }
 
@@ -369,7 +371,10 @@ void ascii_click(magic_api * api, int which, int mode,
   {
     int xx, yy;
 
-    api->playsound(ascii_snd[which], (x * 255) / canvas->w, 255);
+    if (which == TOOL_COMPUTER_COLOR)
+      api->playsound(ascii_snd[TOOL_COMPUTER], (x * 255) / canvas->w, 255);
+    else
+      api->playsound(ascii_snd[which], (x * 255) / canvas->w, 255);
 
     for (yy = 0; yy < canvas->h; yy++)
     {
@@ -393,6 +398,7 @@ void ascii_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
                  SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
                  int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  api->stopsound();
 }
 
 void ascii_shutdown(magic_api * api ATTRIBUTE_UNUSED)

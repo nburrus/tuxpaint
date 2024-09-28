@@ -213,6 +213,16 @@ June 17, 2002 - September 27, 2024
   <https://paulbourke.net/dataformats/asciiart/>
   by Paul Bourke
 
+  "ASCII Typewriter" sound effect: "Typewriter snippet 03"
+  <https://freesound.org/people/cabled_mess/sounds/360601/>
+  Creative Commons CC0 1.0 Universal by Sebastian
+  <https://freesound.org/people/cabled_mess/>
+
+  "ASCII [Color] Computer" sound effect based on: "modem_dial.wav"
+  <https://freesound.org/people/0ktober/sounds/188828/>
+  Creative Commons CC0 1.0 Universal by 0ktober
+  <https://freesound.org/people/0ktober/>
+
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
 

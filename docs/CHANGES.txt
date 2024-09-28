@@ -33,7 +33,6 @@ https://tuxpaint.org/
 
     * WIP "ASCII Typewriter", "ASCII Computer", & "ASCII Color Computer":
       turn your drawing into ASCII art.
-      + TODO Sound effects
       + TODO Icons
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
       + Computer font: IBM CGA Adapter
@@ -48,6 +47,14 @@ https://tuxpaint.org/
         "Character representation of grey scale images"
         <https://paulbourke.net/dataformats/asciiart/>
         by Paul Bourke
+      + Typewriter sound effect "Typewriter snippet 03"
+        <https://freesound.org/people/cabled_mess/sounds/360601/>
+        Creative Commons CC0 1.0 Universal by Sebastian
+        <https://freesound.org/people/cabled_mess/>
+      + Computer sound effect based on "modem_dial.wav"
+        <https://freesound.org/people/0ktober/sounds/188828/>
+        Creative Commons CC0 1.0 Universal by 0ktober
+        <https://freesound.org/people/0ktober/>
 
   * Magic Tool Improvements:
     ------------------------
