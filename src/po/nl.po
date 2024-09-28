@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 00:36-0700\n"
+"POT-Creation-Date: 2024-09-27 22:41-0700\n"
 "PO-Revision-Date: 2023-03-30 14:41+0200\n"
 "Last-Translator: Willem Heppe <heppew@yahoo.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -394,8 +394,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
-"Typewriter\", and various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
+"various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1742,20 +1742,24 @@ msgstr "Klik en sleep de muis om daar de kleur van je tekening te veranderen."
 msgid "Click to change the colors in your entire picture."
 msgstr "Klik en verander de kleur van je hele tekening."
 
-#: ../../magic/src/ascii.c:49
+#: ../../magic/src/ascii.c:51
 msgid "Typewriter"
 msgstr ""
 
-#: ../../magic/src/ascii.c:50
+#: ../../magic/src/ascii.c:52
 msgid "Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:292
+#: ../../magic/src/ascii.c:53
+msgid "Color Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:323
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:311
+#: ../../magic/src/ascii.c:342
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to transform parts of your picture to circular "
@@ -1766,7 +1770,7 @@ msgstr ""
 "Klik en sleep om delen van de tekening naar rondlopende penseelstreken te "
 "veranderen."
 
-#: ../../magic/src/ascii.c:313
+#: ../../magic/src/ascii.c:344
 #, fuzzy, c-format
 #| msgid "Click to turn your entire picture into a maze."
 msgid "Click to transform your entire drawing to ASCII art (%s style)."

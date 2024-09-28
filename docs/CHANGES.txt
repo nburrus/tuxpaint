@@ -35,8 +35,6 @@ https://tuxpaint.org/
       turn your drawing into ASCII art.
       + TODO Sound effects
       + TODO Icons
-      + TODO Documentation
-      + TODO "Color Computer" color support
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
       + Computer font: IBM CGA Adapter
         taken from "Typography in 16-bits: System fonts"

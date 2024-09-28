@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 00:36-0700\n"
+"POT-Creation-Date: 2024-09-27 22:41-0700\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "Language: ro\n"
@@ -400,8 +400,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
-"Typewriter\", and various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
+"various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1670,20 +1670,24 @@ msgstr "Click şi mişcă mouse-ul pentru a schimba culorile picturii tale."
 msgid "Click to change the colors in your entire picture."
 msgstr "Click pentru a schimba culorile în toată pictura."
 
-#: ../../magic/src/ascii.c:49
+#: ../../magic/src/ascii.c:51
 msgid "Typewriter"
 msgstr ""
 
-#: ../../magic/src/ascii.c:50
+#: ../../magic/src/ascii.c:52
 msgid "Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:292
+#: ../../magic/src/ascii.c:53
+msgid "Color Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:323
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:311
+#: ../../magic/src/ascii.c:342
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1694,7 +1698,7 @@ msgstr ""
 "Click şi trage mouse-ul pentru a face unele părţi din pictură să arate ca la "
 "televizor."
 
-#: ../../magic/src/ascii.c:313
+#: ../../magic/src/ascii.c:344
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."

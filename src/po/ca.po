@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 00:36-0700\n"
+"POT-Creation-Date: 2024-09-27 22:41-0700\n"
 "PO-Revision-Date: 2024-06-04 00:14+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -436,8 +436,8 @@ msgstr ""
 #, fuzzy
 #| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
-"Typewriter\", and various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
+"various \"Fractals\"."
 msgstr "Noves eines màgiques: Tramat, Polígon."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1791,20 +1791,24 @@ msgstr ""
 msgid "Click to change the colors in your entire picture."
 msgstr "Feu clic per alterar el color del dibuix."
 
-#: ../../magic/src/ascii.c:49
+#: ../../magic/src/ascii.c:51
 msgid "Typewriter"
 msgstr ""
 
-#: ../../magic/src/ascii.c:50
+#: ../../magic/src/ascii.c:52
 msgid "Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:292
+#: ../../magic/src/ascii.c:53
+msgid "Color Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:323
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:311
+#: ../../magic/src/ascii.c:342
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to transform parts of your picture to circular "
@@ -1814,7 +1818,7 @@ msgid ""
 msgstr ""
 "Feu clic i arrossegueu per transformar parts del dibuix en traços circulars."
 
-#: ../../magic/src/ascii.c:313
+#: ../../magic/src/ascii.c:344
 #, fuzzy, c-format
 #| msgid "Click to turn your entire picture into a maze."
 msgid "Click to transform your entire drawing to ASCII art (%s style)."

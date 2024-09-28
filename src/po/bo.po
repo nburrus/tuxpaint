@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 00:36-0700\n"
+"POT-Creation-Date: 2024-09-27 22:41-0700\n"
 "PO-Revision-Date: 2006-01-01 17:43+0900\n"
 "Last-Translator: none\n"
 "Language-Team: none\n"
@@ -380,8 +380,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
-"Typewriter\", and various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
+"various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1572,26 +1572,30 @@ msgstr ""
 msgid "Click to change the colors in your entire picture."
 msgstr ""
 
-#: ../../magic/src/ascii.c:49
+#: ../../magic/src/ascii.c:51
 msgid "Typewriter"
 msgstr ""
 
-#: ../../magic/src/ascii.c:50
+#: ../../magic/src/ascii.c:52
 msgid "Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:292
+#: ../../magic/src/ascii.c:53
+msgid "Color Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:323
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:311
+#: ../../magic/src/ascii.c:342
 #, c-format
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr ""
 
-#: ../../magic/src/ascii.c:313
+#: ../../magic/src/ascii.c:344
 #, c-format
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
 msgstr ""

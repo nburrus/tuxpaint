@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 00:36-0700\n"
+"POT-Creation-Date: 2024-09-27 22:41-0700\n"
 "PO-Revision-Date: 2011-01-07 15:08+0530\n"
 "Last-Translator: saikumar <ramukiashc@gmail.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -392,8 +392,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", \"ASCII Computer\", \"ASCII "
-"Typewriter\", and various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
+"various \"Fractals\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1639,20 +1639,24 @@ msgstr "చిత్రములో మేకు కవలేసేన చోట
 msgid "Click to change the colors in your entire picture."
 msgstr "మొత్తం చిత్రం యొక్క రంగు మార్చుటకు క్లిక్ చేసి దాని చుట్టూ జరపండి."
 
-#: ../../magic/src/ascii.c:49
+#: ../../magic/src/ascii.c:51
 msgid "Typewriter"
 msgstr ""
 
-#: ../../magic/src/ascii.c:50
+#: ../../magic/src/ascii.c:52
 msgid "Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:292
+#: ../../magic/src/ascii.c:53
+msgid "Color Computer"
+msgstr ""
+
+#: ../../magic/src/ascii.c:323
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:311
+#: ../../magic/src/ascii.c:342
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1661,7 +1665,7 @@ msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr "చిత్రములో మీకు కావలిసిన ప్రాంతాలు  టివి లోని చిత్రమువలె కనిపించుటకు క్లిక్ చేసీ లాగండి."
 
-#: ../../magic/src/ascii.c:313
+#: ../../magic/src/ascii.c:344
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."

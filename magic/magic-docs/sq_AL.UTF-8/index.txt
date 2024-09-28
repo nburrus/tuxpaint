@@ -25,6 +25,9 @@ Shformime
   * Mozaik
   * TV
   * TV (I ndriçuar)
+  * ASCII Typewriter
+  * ASCII Computer
+  * ASCII Color Computer
   * Zhurmë
   * Gjysmë-ton
 

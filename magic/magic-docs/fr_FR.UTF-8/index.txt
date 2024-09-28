@@ -25,6 +25,9 @@ Distorsions
   * Mosaïque
   * TV
   * TV (brillant)
+  * ASCII Typewriter
+  * ASCII Computer
+  * ASCII Color Computer
   * Parasites
   * Demi-teinte
 

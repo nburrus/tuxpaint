@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                            25 de Setembro de 2024
+                            27 de Setembro de 2024
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -117,6 +117,12 @@ New Magic tool: Fractal
     A set of tools that recursively repeat what you draw, scaling and/or
     rotating it as they repeat.
 
+New Magic tool: ASCII Typewriter
+    Transform your picture into "ASCII art", typewriter-style.
+New Magic tool: ASCII Computer
+    Transform your picture into "ASCII art", computer-style.
+New Magic tool: ASCII Color Computer
+    Transform your picture into colored computer "ASCII art".
 Magic API Updates
     Sound pause and resume functions added.
 

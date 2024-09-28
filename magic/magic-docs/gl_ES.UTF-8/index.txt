@@ -25,6 +25,9 @@ Distorts
   * Mosaic
   * TV
   * TV (Bright)
+  * ASCII Typewriter
+  * ASCII Computer
+  * ASCII Color Computer
   * Noise
   * Halftone
 
