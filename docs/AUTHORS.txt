@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - September 26, 2024
+June 17, 2002 - September 27, 2024
 
 * Design and Coding:
 
@@ -197,10 +197,10 @@ June 17, 2002 - September 26, 2024
   <https://freesound.org/people/lorefold/sounds/607310/>
   Creative Commons 0 by lorefold <https://freesound.org/people/lorefold/>
 
-  "ASCII Typewriter" & "ASCII Computer" magic tools
+  "ASCII Typewriter" & "ASCII Computer" & "ASCII Color Computer" magic tools
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-  "ASCII Computer" font: IBM CGA Adapter
+  "ASCII Computer" & "ASCII Color Computer" font: IBM CGA Adapter
   taken from "Typography in 16-bits: System fonts" by Damien Guard
   <https://damieng.com/blog/2011/03/27/typography-in-16-bits-system-fonts/>
 

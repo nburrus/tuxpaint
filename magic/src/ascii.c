@@ -96,7 +96,7 @@ int ascii_char_maxwidth[NUM_TOOLS];
 int ascii_char_brightness[NUM_TOOLS][MAX_CHARS];
 SDL_Surface * ascii_snapshot = NULL;
 int ascii_size;
-Uint8 ascii_r,ascii_g, ascii_b;
+Uint8 ascii_r, ascii_g, ascii_b;
 
 
 Uint32 ascii_api_version(void);
@@ -368,15 +368,22 @@ void ascii_click(magic_api * api, int which, int mode,
   {
     int xx, yy;
 
+    api->playsound(ascii_snd[which], (x * 255) / canvas->w, 255);
+
     for (yy = 0; yy < canvas->h; yy++)
+    {
       for (xx = 0; xx < canvas->w; xx++)
+      {
         do_ascii_effect(api, which, canvas, last, xx, yy);
+      }
+      if (yy % 10 == 0)
+        api->update_progress_bar();
+    }
 
     update_rect->x = 0;
     update_rect->y = 0;
     update_rect->w = canvas->w;
     update_rect->h = canvas->h;
-    api->playsound(ascii_snd[which], (x * 255) / canvas->w, 255);
   }
 }
 
@@ -453,15 +460,18 @@ int ascii_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 
 Uint8 ascii_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return 6;
+  if (mode == MODE_PAINT)
+    return 6;
+  else
+    return 0;
 }
 
 Uint8 ascii_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
     return 3;
-
-  return 1;
+  else
+    return 0;
 }
 
 void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
@@ -547,14 +557,14 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
             gg /= (w * h);
             bb /= (w * h);
   
-            /* FIXME: Map to computer color */
+            /* FIXME: Map to the best computer color */
           }
           else
           {
             /* Use the user-chosen color */
             rr = ascii_r;
-            gg = ascii_b;
-            bb = ascii_g;
+            gg = ascii_g;
+            bb = ascii_b;
           }
 
 
