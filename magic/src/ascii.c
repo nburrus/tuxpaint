@@ -69,6 +69,8 @@ int ascii_num_chars[NUM_TOOLS];
 int ascii_char_maxwidth[NUM_TOOLS];
 int ascii_char_brightness[NUM_TOOLS][MAX_CHARS];
 SDL_Surface * ascii_snapshot = NULL;
+int ascii_size;
+
 
 Uint32 ascii_api_version(void);
 int ascii_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -398,6 +400,10 @@ void ascii_switchin(magic_api * api ATTRIBUTE_UNUSED,
 
   if (ascii_snapshot != NULL)
   {
+    /* FIXME: When switching from PAINT to FULLSCREEN mode,
+     * we switch out & back in, which means we take a fresh
+     * snapshot even though we didn't leave the overall tool,
+     * which is less than ideal. -bjk 2024.09.27 */
     SDL_BlitSurface(canvas, NULL, ascii_snapshot, NULL);
   }
 }
@@ -415,24 +421,28 @@ int ascii_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 
 Uint8 ascii_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return 0;
+  return 6;
 }
 
-Uint8 ascii_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 ascii_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
+  if (mode == MODE_PAINT)
+    return 3;
+
   return 0;
 }
 
 void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
                   SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
-                  Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+                  Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  ascii_size = size;
 }
 
 void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
-  int w, h, n, xx, yy, brightness;
+  int w, h, n, sx, sy, xx, yy, brightness;
   Uint8 r, g, b;
   Uint32 clear_pixel;
   Uint8 clear_brightness;
@@ -444,44 +454,48 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
   x = (x / w) * w;
   y = (y / h) * h;
 
-  if (!api->touched(x, y))
+  for (sy = y - (h * (ascii_size - 1)); sy <= y + (h * (ascii_size - 1)); sy += h)
   {
-    clear_pixel = api->getpixel(ascii_bitmap[which], 0, 0);
-    SDL_GetRGB(clear_pixel, ascii_bitmap[which]->format, &r, &g, &b);
-    clear_brightness = ((r + g + b) / 3.0);
-
-    dest.x = x;
-    dest.y = y;
-    dest.w = w;
-    dest.h = h;
-
-    SDL_FillRect(canvas, &dest, clear_pixel);
-
-    brightness = 0;
-    for (yy = y; yy < y + h; yy++)
+    for (sx = x - (w * (ascii_size - 1)); sx <= x + (w * (ascii_size - 1)); sx += w)
     {
-      for (xx = x; xx < x + w; xx++)
+      if (!api->touched(sx, sy))
       {
-        SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), ascii_snapshot->format, &r, &g, &b);
-        brightness += get_bright(api, r, g, b);
+        clear_pixel = api->getpixel(ascii_bitmap[which], 0, 0);
+        SDL_GetRGB(clear_pixel, ascii_bitmap[which]->format, &r, &g, &b);
+        clear_brightness = ((r + g + b) / 3.0);
+
+        dest.x = sx;
+        dest.y = sy;
+        dest.w = w;
+        dest.h = h;
+
+        SDL_FillRect(canvas, &dest, clear_pixel);
+
+        brightness = 0;
+        for (yy = sy; yy < sy + h; yy++)
+        {
+          for (xx = sx; xx < sx + w; xx++)
+          {
+            SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), ascii_snapshot->format, &r, &g, &b);
+            brightness += get_bright(api, r, g, b);
+          }
+        }
+        brightness = brightness / (w * h);
+
+        if (brightness != clear_brightness)
+        {
+          n = get_best_char(which, brightness);
+          src.x = ascii_char_x[which][n];
+          src.y = 0;
+          src.w = ascii_char_x[which][n + 1] - ascii_char_x[which][n];
+          src.h = h;
+
+          dest.x = sx + (w - src.w) / 2;
+          dest.y = sy;
+
+          SDL_BlitSurface(ascii_bitmap[which], &src, canvas, &dest);
+        }
       }
-    }
-    brightness = brightness / (w * h);
-
-    /* FIXME: Increase contrast */
-
-    if (brightness != clear_brightness)
-    {
-      n = get_best_char(which, brightness);
-      src.x = ascii_char_x[which][n];
-      src.y = 0;
-      src.w = ascii_char_x[which][n + 1] - ascii_char_x[which][n];
-      src.h = h;
-
-      dest.x = x + (w - src.w) / 2;
-      dest.y = y;
-
-      SDL_BlitSurface(ascii_bitmap[which], &src, canvas, &dest);
     }
   }
 }
