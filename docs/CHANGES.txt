@@ -31,10 +31,9 @@ https://tuxpaint.org/
         <https://freesound.org/people/DigitalUnderglow/>
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/260/
 
-    * WIP "ASCII Typewriter", "ASCII Computer", & "ASCII Color Computer":
+    * "ASCII Typewriter", "ASCII Computer", & "ASCII Color Computer":
       turn your drawing into ASCII art.
-      + TODO Icons
-      + Code by Bill Kendrick <bill@newbreedsoftware.com>
+      + Code & icons by Bill Kendrick <bill@newbreedsoftware.com>
       + Computer font: IBM CGA Adapter
         taken from "Typography in 16-bits: System fonts"
         <https://damieng.com/blog/2011/03/27/typography-in-16-bits-system-fonts/>

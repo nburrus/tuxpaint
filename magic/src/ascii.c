@@ -53,9 +53,10 @@ char * ascii_tool_names[NUM_TOOLS + 1] = {
   gettext_noop("Color Computer"), // special version of "computer"
 };
 
-char * ascii_tool_filenames[NUM_TOOLS] = {
+char * ascii_tool_filenames[NUM_TOOLS + 1] = {
   "typewriter",
   "computer",
+  "color_computer",
 };
 
 static Mix_Chunk *ascii_snd[NUM_TOOLS];
@@ -151,6 +152,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     ascii_bitmap[i] = NULL;
   }
 
+  /* (N.B. Computer & Color Computer share sound & bitmap) */
   for (i = 0; i < NUM_TOOLS; i++)
   {
     /* Load our sound */
@@ -308,9 +310,7 @@ SDL_Surface *ascii_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  /* FIXME */
-  snprintf(fname, sizeof(fname), "%ssounds/magic/ascii-icon-%s.ogg", api->data_directory, ascii_tool_filenames[which]);
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/ascii_%s.png", api->data_directory, ascii_tool_filenames[which]);
 
   return (IMG_Load(fname));
 }
