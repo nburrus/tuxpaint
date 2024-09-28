@@ -68,6 +68,7 @@ int ascii_char_x[NUM_TOOLS][MAX_CHARS];
 int ascii_num_chars[NUM_TOOLS];
 int ascii_char_maxwidth[NUM_TOOLS];
 int ascii_char_brightness[NUM_TOOLS][MAX_CHARS];
+SDL_Surface * ascii_snapshot = NULL;
 
 Uint32 ascii_api_version(void);
 int ascii_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -368,6 +369,12 @@ void ascii_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     if (ascii_bitmap[i] != NULL)
       SDL_FreeSurface(ascii_bitmap[i]);
   }
+
+  if (ascii_snapshot != NULL)
+  {
+    SDL_FreeSurface(ascii_snapshot);
+    ascii_snapshot = NULL;
+  }
 }
 
 void ascii_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
@@ -384,6 +391,15 @@ int ascii_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
 void ascii_switchin(magic_api * api ATTRIBUTE_UNUSED,
                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
 {
+  if (ascii_snapshot == NULL)
+    ascii_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
+                                          canvas->format->BitsPerPixel, canvas->format->Rmask,
+                                          canvas->format->Gmask, canvas->format->Bmask, canvas->format->Amask);
+
+  if (ascii_snapshot != NULL)
+  {
+    SDL_BlitSurface(canvas, NULL, ascii_snapshot, NULL);
+  }
 }
 
 void ascii_switchout(magic_api * api ATTRIBUTE_UNUSED,
@@ -413,7 +429,7 @@ void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
 {
 }
 
-void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y)
+void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int w, h, n, xx, yy, brightness;
@@ -446,7 +462,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
     {
       for (xx = x; xx < x + w; xx++)
       {
-        SDL_GetRGB(api->getpixel(last, xx, yy), last->format, &r, &g, &b);
+        SDL_GetRGB(api->getpixel(ascii_snapshot, xx, yy), ascii_snapshot->format, &r, &g, &b);
         brightness += get_bright(api, r, g, b);
       }
     }
