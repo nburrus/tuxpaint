@@ -60,29 +60,6 @@ char * ascii_tool_filenames[NUM_TOOLS] = {
 
 static Mix_Chunk *ascii_snd[NUM_TOOLS];
 
-float ascii_computer_colors_hsv[16][3] = {
-  /* Based on CGA color palette
-   * <https://en.wikipedia.org/wiki/Color_Graphics_Adapter#Color_palette> */
-  {  -1, 0.00, 0.00 }, // #000000 - Black
-  {  -1, 0.00, 0.33 }, // #555555 - Dark gray
-  { 240, 1.00, 0.67 }, // #0000AA - Blue
-  { 240, 0.67, 1.00 }, // #5555FF - Light blue
-  { 120, 1.00, 0.67 }, // #00AA00 - Green
-  { 120, 0.67, 1.00 }, // #55FF55 - Light green
-  { 180, 1.00, 0.67 }, // #00AAAA - Cyan
-  { 180, 0.67, 1.00 }, // #55FFFF - Light cyan
-  {   0, 1.00, 0.67 }, // #AA0000 - Red
-  {   0, 0.67, 1.00 }, // #FF5555 - Light red
-  { 300, 1.00, 0.67 }, // #AA00AA - Magenta
-  { 300, 0.67, 1.00 }, // #FF55FF - Light magenta
-  {  30, 1.00, 0.67 }, // #AA5500 - Brown
-  {  60, 0.67, 1.00 }, // #FFFF55 - Yellow
-  { - 1, 0.00, 0.67 }, // #AAAAAA - Light gray
-  {  -1, 0.00, 1.00 }, // #FFFFFF - White
-};
-
-float ascii_computer_colors_hsv[16][3];
-
 /* For each variation, we'll have a bitmap with an arbitrary number
  * of potentially-proportionally-spaced characters (which we'll treat
  * as fixed-width), so we need to keep track of each character's X
@@ -97,7 +74,28 @@ int ascii_char_brightness[NUM_TOOLS][MAX_CHARS];
 SDL_Surface * ascii_snapshot = NULL;
 int ascii_size;
 Uint8 ascii_r, ascii_g, ascii_b;
+Uint8 ascii_clear_r[NUM_TOOLS], ascii_clear_g[NUM_TOOLS], ascii_clear_b[NUM_TOOLS];
 
+/* Based on CGA color palette
+   <https://en.wikipedia.org/wiki/Color_Graphics_Adapter#Color_palette> */
+const Uint8 ascii_computer_colors[16][3] = {
+  { 0x00, 0x00, 0x00 }, // Black
+  { 0x55, 0x55, 0x55 }, // Dark gray
+  { 0xAA, 0xAA, 0xAA }, // Light gray
+  { 0xFF, 0xFF, 0xFF }, // White
+  { 0x00, 0x00, 0xAA }, // Blue
+  { 0x55, 0x55, 0xFF }, // Light blue
+  { 0x00, 0xAA, 0x00 }, // Green
+  { 0x55, 0xFF, 0x55 }, // Light green
+  { 0x00, 0xAA, 0xAA }, // Cyan
+  { 0x55, 0xFF, 0xFF }, // Light cyan
+  { 0xAA, 0x00, 0x00 }, // Red
+  { 0xFF, 0x55, 0x55 }, // Light red
+  { 0xAA, 0x00, 0xAA }, // Magenta
+  { 0xFF, 0x55, 0xFF }, // Light magenta
+  { 0xAA, 0x55, 0x00 }, // Brown
+  { 0xFF, 0xFF, 0x55 }, // Yellow
+};
 
 Uint32 ascii_api_version(void);
 int ascii_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -174,6 +172,9 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     SDL_GetRGB(clear_pixel, ascii_bitmap[i]->format, &clear_r, &clear_g, &clear_b);
     DEBUG_PRINTF("%s; clear pixel %d (%d,%d,%d)\n", fname, clear_pixel, clear_r, clear_g, clear_b);
     clear_brightness = (clear_r + clear_g + clear_b) / 3;
+    ascii_clear_r[i] = clear_r;
+    ascii_clear_g[i] = clear_g;
+    ascii_clear_b[i] = clear_b;
 
     num_chars = 0;
     for (x = 0; x < ascii_bitmap[i]->w; x++)
@@ -416,6 +417,16 @@ void ascii_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 void ascii_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
                    SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
 {
+  /* If the bitmap's "clear" color, choose the opposite! */
+  if (abs(r - ascii_clear_r[which]) < 8 &&
+      abs(g - ascii_clear_g[which]) < 8 &&
+      abs(b - ascii_clear_b[which]) < 8)
+  {
+    r = 255 - r;
+    g = 255 - g;
+    b = 255 - b;
+  }
+
   ascii_r = r;
   ascii_g = g;
   ascii_b = b;
@@ -550,14 +561,104 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
 
           if (computer_color)
           {
+            int i, best;
+
             /* Find the best color, based on the avg. of the
                pixels we're replacing */
-
             rr /= (w * h);
             gg /= (w * h);
             bb /= (w * h);
-  
-            /* FIXME: Map to the best computer color */
+
+            DEBUG_PRINTF("avg is %02x%02x%02x; ", rr, gg, bb);
+
+            /* Map each RGB component to _plausible_ values (0x00, 0x55, 0xAA, 0xFF) */
+            if (rr < 0x40)
+              rr = 0x00;
+            else if (rr <= 0x80)
+              rr = 0x55;
+            else if (rr <= 0xC0)
+              rr = 0xAA;
+            else
+              rr = 0xFF;
+
+            if (gg < 0x40)
+              gg = 0x00;
+            else if (gg <= 0x80)
+              gg = 0x55;
+            else if (gg <= 0xC0)
+              gg = 0xAA;
+            else
+              gg = 0xFF;
+
+
+            if (bb < 0x40)
+              bb = 0x00;
+            else if (bb <= 0x80)
+              bb = 0x55;
+            else if (bb <= 0xC0)
+              bb = 0xAA;
+            else
+              bb = 0xFF;
+
+            best = -1;
+            for (i = 0; i < 16; i++)
+            {
+              if (rr == ascii_computer_colors[i][0] &&
+                  gg == ascii_computer_colors[i][1] &&
+                  bb == ascii_computer_colors[i][2])
+              {
+                /* Exact match */
+                best = i;
+              }
+            }
+
+            if (best == -1)
+            {
+              for (i = 0; i < 16; i++)
+              {
+                if ((rr == ascii_computer_colors[i][0] &&
+                     gg == ascii_computer_colors[i][1] &&
+                     abs(bb - ascii_computer_colors[i][2]) <= 0x55) ||
+                    (gg == ascii_computer_colors[i][1] &&
+                     bb == ascii_computer_colors[i][2] &&
+                     abs(rr - ascii_computer_colors[i][0]) <= 0x55) ||
+                    (bb == ascii_computer_colors[i][2] &&
+                     rr == ascii_computer_colors[i][0] &&
+                     abs(gg - ascii_computer_colors[i][1]) <= 0x55))
+                {
+                  /* Very close match */
+                  best = i;
+                }
+              }
+            }
+
+            if (best == -1)
+            {
+              for (i = 0; i < 16; i++)
+              {
+                if ((rr == ascii_computer_colors[i][0] &&
+                     abs(gg - ascii_computer_colors[i][1]) <= 0x55 &&
+                     abs(bb - ascii_computer_colors[i][2]) <= 0x55) ||
+                    (gg == ascii_computer_colors[i][1] &&
+                     abs(bb - ascii_computer_colors[i][2]) <= 0x55 &&
+                     abs(rr - ascii_computer_colors[i][0]) <= 0x55) ||
+                    (bb == ascii_computer_colors[i][2] &&
+                     abs(rr - ascii_computer_colors[i][0]) <= 0x55 &&
+                     abs(gg - ascii_computer_colors[i][1]) <= 0x55))
+                {
+                  /* Pretty close match */
+                  best = i;
+                }
+              }
+            }
+
+            DEBUG_PRINTF("best for %02x%02x%02x = %d: ", rr, gg, bb, best);
+            if (best == -1)
+              best = 0; // oops!
+            rr = ascii_computer_colors[best][0];
+            gg = ascii_computer_colors[best][1];
+            bb = ascii_computer_colors[best][2];
+            DEBUG_PRINTF("%02x%02x%02x\n", rr, gg, bb);
           }
           else
           {
