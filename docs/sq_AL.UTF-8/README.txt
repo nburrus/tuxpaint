@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                27 shtator 2024
+                                28 shtator 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -122,6 +122,8 @@ New Magic tool: ASCII Computer
     Transform your picture into "ASCII art", computer-style.
 New Magic tool: ASCII Color Computer
     Transform your picture into colored computer "ASCII art".
+New Magic tool: Crescent
+    Draw one of various crescent shapes at a chosen angle.
 Magic API Updates
     Sound pause and resume functions added.
 

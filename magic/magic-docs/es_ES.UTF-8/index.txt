@@ -79,6 +79,7 @@ Painting
   * Rainbow Cycle
   * Calligraphy
   * Ribbon
+  * Crescent
   * Smooth
   * Squiggles
   * Loops

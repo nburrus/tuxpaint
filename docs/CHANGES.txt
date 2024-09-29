@@ -55,13 +55,12 @@ https://tuxpaint.org/
         Creative Commons CC0 1.0 Universal by 0ktober
         <https://freesound.org/people/0ktober/>
 
-    * WIP "Crescent": Draw various sorts of crescent shapes
+    * "Crescent": Draw various sorts of crescent shapes
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
       + Sound effect based on "Barred Owl Calling"
         <https://freesound.org/people/danielmcadams/sounds/486390/>
         Creative Commons CC0 1.0 Universal by Daniel McAdams
         <https://freesound.org/people/danielmcadams/>
-      + TODO Documentation
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/262/
 
   * Magic Tool Improvements:

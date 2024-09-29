@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              September 27, 2024
+                              September 28, 2024
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -122,6 +122,8 @@ New Magic tool: ASCII Computer
     Transform your picture into "ASCII art", computer-style.
 New Magic tool: ASCII Color Computer
     Transform your picture into colored computer "ASCII art".
+New Magic tool: Crescent
+    Draw one of various crescent shapes at a chosen angle.
 Magic API Updates
     Sound pause and resume functions added.
 

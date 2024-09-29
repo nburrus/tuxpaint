@@ -79,6 +79,7 @@ Peindre
   * Arc-en-ciel
   * Calligraphie
   * Ruban
+  * Crescent
   * Doux
   * Gribouillis
   * Boucles
