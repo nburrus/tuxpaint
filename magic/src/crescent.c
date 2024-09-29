@@ -97,7 +97,7 @@ SDL_Surface *crescent_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%simages/magic/crescent.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
