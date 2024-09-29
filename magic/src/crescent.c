@@ -82,7 +82,7 @@ int crescent_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uin
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%ssounds/magic/crescent.ogg", api->data_directory);
   crescent_snd = Mix_LoadWAV(fname);
 
   return (1);

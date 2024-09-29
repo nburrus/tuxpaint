@@ -226,6 +226,11 @@ June 17, 2002 - September 28, 2024
   "Crescent" magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
 
+  "Crescent" sound effect based on "Barred Owl Calling"
+  <https://freesound.org/people/danielmcadams/sounds/486390/>
+  Creative Commons CC0 1.0 Universal by Daniel McAdams
+  <https://freesound.org/people/danielmcadams/>
+
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
 
