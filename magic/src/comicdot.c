@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 23, 2024
+  Last updated: September 29, 2024
 */
 
 #include <stdio.h>
@@ -156,7 +156,8 @@ static void do_comicdot(void *ptr, int which,
                    SDL_Surface * canvas, SDL_Surface * last, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
-  Uint8 r1, g1, b1, r, g, b, n, _, nr, ng, nb;
+  Uint8 r1, g1, b1, r, g, b, n, _;
+  // Uint8 nr, ng, nb;
   Uint32 pixel;
   int offx, offy;
   SDL_Surface * pat;
@@ -171,10 +172,16 @@ static void do_comicdot(void *ptr, int which,
   r = ((r1 * n) + (comicdot_r * (255 - n))) / 255;
   g = ((g1 * n) + (comicdot_g * (255 - n))) / 255;
   b = ((b1 * n) + (comicdot_b * (255 - n))) / 255;
-  nr = (r1 * r) / 255;
-  ng = (g1 * g) / 255;
-  nb = (b1 * b) / 255;
-  pixel = SDL_MapRGB(canvas->format, nr, ng, nb);
+
+  /* N.B. This caused an unwanted outline around the effect
+     when drawing on a non-white background */
+  //nr = (r1 * r) / 255;
+  //ng = (g1 * g) / 255;
+  //nb = (b1 * b) / 255;
+  //pixel = SDL_MapRGB(canvas->format, nr, ng, nb);
+
+  pixel = SDL_MapRGB(canvas->format, r, g, b);
+
   api->putpixel(canvas, x, y, pixel);
 }
 
