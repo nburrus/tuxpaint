@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2010-07-08 13:33+0100\n"
 "Last-Translator: Zdeněk Chalupský <chalzd@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -395,8 +395,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1660,12 +1660,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1676,7 +1676,7 @@ msgstr ""
 "Kliknutím a tažením, docílíš vzhledu obrazu v televizi s viditelným "
 "řádkováním."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1915,6 +1915,17 @@ msgstr "Konfety"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Klikni pro házení konfet!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3372,11 +3383,6 @@ msgstr "Kliknutím přidáš mozaiku na celý obrázek."
 
 #~ msgid "QY"
 #~ msgstr "QY"
-
-#, fuzzy
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 
 #, fuzzy
 #~ msgid ""

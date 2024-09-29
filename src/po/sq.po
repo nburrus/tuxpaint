@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2024-01-26 19:44+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: none\n"
@@ -400,8 +400,8 @@ msgstr ""
 #, fuzzy
 #| msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr "Mjeti i ri Magjik: Prodhues vizatimesh Epitrohoide dhe Hipotrohoide."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1795,12 +1795,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to transform parts of your picture to circular "
@@ -1811,7 +1811,7 @@ msgstr ""
 "Klikoni dhe tërhiqeni për të shndërruar pjesë të figurës tuaj në penelata "
 "rrethore."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid "Click to turn your entire picture into a maze."
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
@@ -2022,6 +2022,20 @@ msgstr "Bonbone"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Klikoni që të hidhen sheqerka!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr ""
+"Klikoni dhe tërhiqeni që të vizatohet kërcelli i një luleje. Mandej lëreni, "
+"që të përfundohet lulja."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2009-05-10 21:45+0200\n"
 "Last-Translator: Jorge Mariano <jmariano@ymail.com>\n"
 "Language-Team: Hebrew <mdk-hebrew@iglu.org.il>\n"
@@ -402,8 +402,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1648,19 +1648,19 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr "לחצי לכיסוי כל התמונה באריחי זכוכית."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1898,6 +1898,18 @@ msgstr "קונפטי"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "לחצי לזריקת קונפטי!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr "לחצי וגררי כדי לצייר פרח. הפסיקי ללחוץ לסיום."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3348,12 +3360,6 @@ msgstr "לחצי להוספת מראה פסיפס לכל התמונה."
 #~ msgstr ""
 #~ "צייר מחרוזת אמנות עם חופשי זווית  לחץ וגרור \"V:\"  גרור את קדקוד, לגרור "
 #~ "אחורה קצת על התחל, ולאחר מכן גרור עד הסוף "
-
-#, fuzzy
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "לחצי וגררי כדי לצייר פרח. הפסיקי ללחוץ לסיום."
 
 #, fuzzy
 #~ msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint 0.9.2pre\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2003-01-03 21:32-0500\n"
 "Language-Team: Romanian <ro@li.org>\n"
 "Language: ro\n"
@@ -400,8 +400,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1682,12 +1682,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1698,7 +1698,7 @@ msgstr ""
 "Click şi trage mouse-ul pentru a face unele părţi din pictură să arate ca la "
 "televizor."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1942,6 +1942,21 @@ msgstr "Confetti"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Click pentru a împrăştia confetti!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr ""
+"Click și trage pentru a desena tulpina unei flori. Dă drumulpentru a "
+"finaliza floarea"
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3419,13 +3434,6 @@ msgstr "Click pentru a adăuga efect de mozaic întregii picturi."
 
 #~ msgid "Click to add a mosaic hexagonal effect to your entire picture."
 #~ msgstr "Click pentru a adăuga efect de mozaic întregii picturi!"
-
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr ""
-#~ "Click și trage pentru a desena tulpina unei flori. Dă drumulpentru a "
-#~ "finaliza floarea"
 
 #~ msgid "Openâ"
 #~ msgstr "Deschide..."

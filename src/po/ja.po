@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2024-06-15 21:26+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -393,8 +393,8 @@ msgstr ""
 #, fuzzy
 #| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr "「まほう」ツールの追加: 「ディザ」「たかっけい」"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1761,12 +1761,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to transform parts of your picture to circular "
@@ -1777,7 +1777,7 @@ msgstr ""
 "クリックしたまま マウスを うごかして なぞったところを まるく けばけばに しよ"
 "う"
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid "Click to turn your entire picture into a maze."
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
@@ -1985,6 +1985,21 @@ msgstr "かみふぶき"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "クリックして かみふぶきを とばそう！"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr ""
+"クリックしたままマウスをうごかして くきを かこう。 マウスを はなせば はなの "
+"できあがり"
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3389,13 +3404,6 @@ msgstr "えを くりっくして ぜんたいの いろを はんてんさせ�
 #~ msgstr ""
 #~ "クリックしたまま マウスをうごかして いとめ もようを かこう。 「V」の かた"
 #~ "ちの いとめだよ。"
-
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr ""
-#~ "クリックしたままマウスをうごかして くきを かこう。 マウスを はなせば はな"
-#~ "の できあがり"
 
 #, fuzzy
 #~ msgid ""

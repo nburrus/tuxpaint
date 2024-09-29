@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2017-12-31 11:57+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -377,8 +377,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1617,12 +1617,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1631,7 +1631,7 @@ msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr "તમારા ચિત્રનાં ભાગને વર્તુળાકાર પીંછીના ટપકાંમાં ફેરવવા માટે ક્લિક કરો અને ખેંચો."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid "Click to turn your entire picture into a maze."
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
@@ -1847,6 +1847,19 @@ msgstr "કોનફેટ્ટી"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "કોનફેટ્ટી ફેંકવા માટે ક્લિક કરો!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr "ફૂલ દાંડી દોરવા માટે ક્લિક કરો અને ખસેડો. ચાલો ફ્લને પૂર્ણ કરીએ."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3202,11 +3215,6 @@ msgstr "સમગ્ર ચિત્રમાં XOR અસર ઉમેરવ�
 #~ msgstr ""
 #~ "મુક્ત ખૂણાઓ સાથે દોરી કળા બનાવો. V: પર ક્લિક કરીને ખેંચો અને તેને ખૂણા સુધી લઇ જાવ, "
 #~ "થોડું પાછું ખેંચો અને અંત સુધી ખેંચો."
-
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "ફૂલ દાંડી દોરવા માટે ક્લિક કરો અને ખસેડો. ચાલો ફ્લને પૂર્ણ કરીએ."
 
 #, fuzzy
 #~ msgid ""

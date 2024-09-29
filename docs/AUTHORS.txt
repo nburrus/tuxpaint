@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - September 27, 2024
+June 17, 2002 - September 28, 2024
 
 * Design and Coding:
 
@@ -222,6 +222,9 @@ June 17, 2002 - September 27, 2024
   <https://freesound.org/people/0ktober/sounds/188828/>
   Creative Commons CC0 1.0 Universal by 0ktober
   <https://freesound.org/people/0ktober/>
+
+  "Crescent" magic tool
+  by Bill Kendrick <bill@newbreedsoftware.com>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>

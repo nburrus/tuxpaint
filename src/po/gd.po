@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2021-09-02 12:18-0700\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
@@ -401,8 +401,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1669,12 +1669,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1685,7 +1685,7 @@ msgstr ""
 "Briog is slaod gus coltas a thoirt air pàirt dhen dealbh agad nam b’ ann air "
 "an tbh a bhiodh iad."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1931,6 +1931,20 @@ msgstr "Coinfeataidh"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Briog gus coinfeataidh a thilgeil!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr ""
+"Briog is slaod gus cuiseag flùir a pheantadh. Leig às gus am flùr a "
+"choileanadh."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"

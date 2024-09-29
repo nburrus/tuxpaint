@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2017-12-23 23:11+0100\n"
 "Last-Translator: Yacine Bouklif <yacine_tizi2003@yahoo.fr>\n"
 "Language-Team: \n"
@@ -393,8 +393,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1664,13 +1664,13 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
 #
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1681,7 +1681,7 @@ msgstr ""
 "Ssed u selḥu taɣerdayt iwakken ad terreḍ kra n imukan n tugna am tugna n "
 "tiliẓri."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1910,6 +1910,20 @@ msgstr "Tubbiyin n lkaɣeḍ isebɣen"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Ssed iwakken ad tḍeqreḍ tubbiyin n lkaɣeḍ isebɣen!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr ""
+"Ssed u selḥu taɣerdayt iwakken ad tsuneɣeḍ tajeǧǧigt. Serreḥ i teqfalt "
+"iwakken ad tfakkeḍ tajeǧǧigt."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"

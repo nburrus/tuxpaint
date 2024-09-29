@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2020-03-29 23:40+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: LliureX\n"
@@ -392,8 +392,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1661,12 +1661,12 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1677,7 +1677,7 @@ msgstr ""
 "Feu clic i arrossegueu per a fer que parts de la imatge semblen com si "
 "estigueren en un televisor."
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag the mouse around to turn the picture into a chalk drawing."
@@ -1913,6 +1913,21 @@ msgstr "Paperets"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "Feu clic per a llançar paperets!"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid ""
+#| "Click and drag to draw a tornado stalk. Let go to finish the tornado."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr ""
+"Haz clic y arrastra para dibujar el tallo de una flor. Suelta para finalizar "
+"la flor."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3462,9 +3477,3 @@ msgstr "Feu clic per a aplicar un patró de mescla de colors a tota la imatge"
 
 #~ msgid "JQ"
 #~ msgstr "JQ"
-
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr ""
-#~ "Haz clic y arrastra para dibujar el tallo de una flor. Suelta para "
-#~ "finalizar la flor."

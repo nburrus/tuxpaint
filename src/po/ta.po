@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint 0.9.13\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 22:41-0700\n"
+"POT-Creation-Date: 2024-09-28 17:48-0700\n"
 "PO-Revision-Date: 2009-01-18 00:06+0530\n"
 "Last-Translator: ravishankar <ravidreams@gmail.com>\n"
 "Language-Team: A. Ravishankar <ravishankar.ayyakkannu@gmail.com>\n"
@@ -390,8 +390,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
-"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, and "
-"various \"Fractals\"."
+"New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
+"\"Fractals\", and \"Crescent\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -1652,19 +1652,19 @@ msgstr ""
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:323
+#: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:342
+#: ../../magic/src/ascii.c:341
 #, fuzzy, c-format
 #| msgid "Click to make your picture look like it's on television."
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr "சொடுக்கினால், உங்கள் படம் தொலைக்காட்சியில் உள்ளது போல் தெரியும். "
 
-#: ../../magic/src/ascii.c:344
+#: ../../magic/src/ascii.c:343
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1906,6 +1906,18 @@ msgstr "வண்ணக் காகிதத் துண்டுகள்"
 #: ../../magic/src/confetti.c:117
 msgid "Click to throw confetti!"
 msgstr "சொடுக்கினால், வண்ணக் காகிதத் துண்டுகளை எறியலாம்"
+
+#: ../../magic/src/crescent.c:107
+msgid "Crescent"
+msgstr ""
+
+#: ../../magic/src/crescent.c:122
+#, fuzzy
+#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
+msgid ""
+"Click and drag to draw a crescent shape. Use the size option to change the "
+"shape."
+msgstr "பூச்செண்டை வரைய சொடுக்கி இழுங்க. இழுத்து விட்டபின் பூ மலரும்."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -3354,12 +3366,6 @@ msgstr "சொடுக்கினால், முழுப்படத்த�
 
 #~ msgid "QY"
 #~ msgstr "QY"
-
-#, fuzzy
-#~| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
-#~ msgid ""
-#~ "Click and drag to draw a tornado stalk. Let go to finish the tornado."
-#~ msgstr "பூச்செண்டை வரைய சொடுக்கி இழுங்க. இழுத்து விட்டபின் பூ மலரும்."
 
 #, fuzzy
 #~ msgid ""
