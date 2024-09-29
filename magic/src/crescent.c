@@ -114,7 +114,7 @@ int crescent_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
 
 int crescent_get_order(int which ATTRIBUTE_UNUSED)
 {
-  return 800; // FIXME
+  return 1250;
 }
 
 char *crescent_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
@@ -179,7 +179,9 @@ void do_crescent(magic_api * api, SDL_Surface * canvas, int x, int y, SDL_Rect *
     }
   }
 
-  /* FIXME */
+  /* FIXME: Want to encompass both the new area we just drew,
+     and (if dragging) the old area being removed, if it
+     was bigger (i.e., the radius just shrunk) */
   /*
   update_rect->x = crescent_cx - radius - 1;
   update_rect->y = crescent_cy - radius - 1;
