@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ../data/brushes/acrylic.txt
 msgid "Paint with a blotty brush that looks like acrylic paint."
@@ -43,7 +43,7 @@ msgstr "O esquilo corre para onde tu desenhas."
 
 #: ../data/brushes/fluff.txt ../data/brushes/fluff_gradient.txt
 msgid "Fluffy circles, great for drawing clouds."
-msgstr ""
+msgstr "Círculos fofos, óptimos para desenhar nuvens."
 
 #: ../data/brushes/footprints-human-shoes.txt
 msgid "Paint footsteps with shoes on your picture."

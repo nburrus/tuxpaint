@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-09-28 17:48-0700\n"
-"PO-Revision-Date: 2024-05-30 20:21+0100\n"
+"PO-Revision-Date: 2024-09-29 22:43+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -218,10 +218,9 @@ msgstr ""
 "escolhida até ao transparente)."
 
 #: ../fill_tools.h:67
-#, fuzzy
-#| msgid "Click and drag the mouse around to blur the image."
 msgid "Click to erase an area, filling it with the background color or image."
-msgstr "Clica e arrasta o rato à volta para borrar o desenho."
+msgstr ""
+"Clica para apagar uma área, preenchendo-a com a cor ou imagem de fundo."
 
 #: ../fill_tools.h:80
 msgid "Solid"
@@ -393,19 +392,19 @@ msgstr "A ferramenta Carimbo é como um conjunto de carimbos ou autocolantes"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "New Fill mode: \"Eraser\" flood fill."
-msgstr ""
+msgstr "Novo modo de preenchimento: preenchimento com \"Borracha\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-#, fuzzy
-#| msgid "New Magic tools: Dither, Specular, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", and \"Crescent\"."
-msgstr "Novas ferramentas de magia: Dither, Specular, Filled Polygon."
+msgstr ""
+"Novas ferramentas de magia: “Pontos de banda desenhada”, \"Rodar\", várias "
+"artes \"ASCII\", vários \"Fractais\" e \"Crescente\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brush: Fluff (gradient)."
-msgstr ""
+msgstr "Novo pincel: Penugem (gradiente)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Transparent Erasers."
@@ -417,13 +416,11 @@ msgstr "Os pincéis suportam descrições."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "New brushes: Pencil, Acrylic, Fluff."
-msgstr ""
+msgstr "Novos pincéis: Lápis, Acrílico, Penugem."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
-#, fuzzy
-#| msgid "New Magic tools: Dither, Specular, Filled Polygon."
 msgid "New Magic tools: Dither, Filled Polygon."
-msgstr "Novas ferramentas de magia: Dither, Specular, Filled Polygon."
+msgstr "Novas ferramentas de magia: Pontilhado, Polígono preenchido."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid ""
@@ -443,6 +440,9 @@ msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
 msgstr ""
+"Os nomes dos ficheiros criados por Abrir&gt;Exportar e Abrir&gt;Apresentação "
+"de diapositivos&gt;Exportar GIF são agora apresentados e colocados na área "
+"de transferência copiar/colar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid "Localization updates."
@@ -451,12 +451,16 @@ msgstr "Atualizações de localização."
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
 msgstr ""
+"Melhoria da quebra de palavras nos botões (através de hífenes e hífenes "
+"suaves)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
 msgstr ""
+"Agora, os desenhos removidos pela opção “Apagar” na caixa de diálogo Abrir "
+"também são movidos para o Lixo da área de trabalho no Haiku."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
 msgid ""
@@ -555,8 +559,8 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"Pequenos melhoramentos nos botões de seleção para as cores "
-"\"especiais\" (pipeta, seletor HSV e misturador de cores)."
+"Pequenos melhoramentos nos botões de seleção para as cores \"especiais\" "
+"(pipeta, seletor HSV e misturador de cores)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid "Many Magic tools now offer size settings."
@@ -1514,16 +1518,14 @@ msgstr "Lembra-te de usar o botão esquerdo do rato!"
 
 #. Confirmation of successful (we hope) image export
 #: ../tuxpaint.c:2532
-#, fuzzy, c-format
-#| msgid "Your picture has been exported!"
+#, c-format
 msgid "Your picture has been exported to \"%s\"!"
-msgstr "O teu desenho foi exportado!"
+msgstr "O teu desenho foi exportado para \"%s\"!"
 
 #: ../tuxpaint.c:2533
-#, fuzzy, c-format
-#| msgid "Your slideshow GIF has been exported!"
+#, c-format
 msgid "Your slideshow GIF has been exported to \"%s\"!"
-msgstr "O GIF da tua apresentação de diapositivos foi exportado!"
+msgstr "O GIF da tua apresentação de diapositivos foi exportado para \"%s\"!"
 
 #. We got an error exporting
 #: ../tuxpaint.c:2537
@@ -1790,37 +1792,33 @@ msgstr "Clica para alterar as cores de todo o desenho."
 
 #: ../../magic/src/ascii.c:51
 msgid "Typewriter"
-msgstr ""
+msgstr "Máquina de escrever"
 
 #: ../../magic/src/ascii.c:52
 msgid "Computer"
-msgstr ""
+msgstr "Computador"
 
 #: ../../magic/src/ascii.c:53
 msgid "Color Computer"
-msgstr ""
+msgstr "Computador a cores"
 
 #: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
-msgstr ""
+msgstr "ASCII %s"
 
 #: ../../magic/src/ascii.c:341
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to transform parts of your picture to circular "
-#| "brushstrokes."
+#, c-format
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr ""
-"Clica e arrasta para transformar partes do teu desenho em pinceladas "
-"circulares."
+"Clica e arrasta para transformar partes do teu desenho em arte ASCII (estilo "
+"%s)."
 
 #: ../../magic/src/ascii.c:343
-#, fuzzy, c-format
-#| msgid "Click to turn your entire picture into a maze."
+#, c-format
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
-msgstr "Clica para transformar o desenho inteiro num labirinto."
+msgstr "Clica para transformar o desenho inteiro em arte ASCII (estilo %s)."
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"
@@ -1997,19 +1995,15 @@ msgstr ""
 
 #: ../../magic/src/comicdot.c:134
 msgid "Comic Dots"
-msgstr ""
+msgstr "Pontos em quadrinhos"
 
 #: ../../magic/src/comicdot.c:150
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw an a dot pattern on your picture"
-msgstr "Clica e arrasta para desenhar um feixe de luz no desenho."
+msgstr "Clica e arrasta para desenhar um padrão de pontos no teu desenho"
 
 #: ../../magic/src/comicdot.c:152
-#, fuzzy
-#| msgid "Click to saturate your entire picture."
 msgid "Click to apply a dot pattern on your entire picture"
-msgstr "Clica para saturar o desenho inteiro."
+msgstr "Clica para aplicar um padrão de pontos em todo o teu desenho"
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"
@@ -2021,15 +2015,15 @@ msgstr "Clica para criar serpentinas!"
 
 #: ../../magic/src/crescent.c:107
 msgid "Crescent"
-msgstr ""
+msgstr "Crescente"
 
 #: ../../magic/src/crescent.c:122
-#, fuzzy
-#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgid ""
 "Click and drag to draw a crescent shape. Use the size option to change the "
 "shape."
-msgstr "Clica e arrasta para desenhar uma flor. Larga para acabar a flor."
+msgstr ""
+"Clica e arrasta para desenhar uma forma crescente. Utiliza a opção de "
+"tamanho para alterar a forma."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -2216,7 +2210,7 @@ msgstr ""
 #: ../../magic/src/fractal.c:131
 #, c-format
 msgid "Fractal #%d"
-msgstr ""
+msgstr "Fractal #%d"
 
 #: ../../magic/src/fractal.c:153
 #, c-format
@@ -2224,24 +2218,29 @@ msgid ""
 "Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating "
 "%3$d degrees."
 msgstr ""
+"Clica e arrasta para desenhar uma forma. Irá repetir, %1$s %2$d%% e rodando "
+"%3$d graus."
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling up"
-msgstr ""
+msgstr "aumento de escala"
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling down"
-msgstr ""
+msgstr "redução de escala"
 
 #: ../../magic/src/fractal.c:157
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."
 msgstr ""
+"Clica e arrasta para esboçar uma forma. Esta irá repetir-se, %1$s %2$d%%."
 
 #: ../../magic/src/fractal.c:162
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, rotating %d degrees."
 msgstr ""
+"Clica e arrasta para esboçar uma forma. Esta irá repetir-se, rodando %d "
+"graus."
 
 #: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
@@ -2779,19 +2778,14 @@ msgid "Filled Polygon"
 msgstr "Polígono preenchido"
 
 #: ../../magic/src/polyfill.c:37
-#, fuzzy
-#| msgid ""
-#| "Click multiple times in your picture to create a filled polygon. You may "
-#| "drag control points to alter the shape. Click the first point to complete "
-#| "the shape."
 msgid ""
 "Click multiple times in your picture to create a filled polygon. You may "
 "drag points to alter the shape. Drag adjacent points together to merge them. "
 "Connect the first and last points to complete the shape."
 msgstr ""
 "Clica várias vezes no teu desenho para criar um polígono preenchido. Podes "
-"arrastar pontos de controlo para alterar a forma. Clica no primeiro ponto "
-"para completar a forma."
+"arrastar pontos para alterar a forma. Arrasta os pontos adjacentes para os "
+"unir. Liga o primeiro e o último ponto para completar a forma."
 
 #: ../../magic/src/puzzle.c:112
 msgid "Puzzle"
@@ -2899,13 +2893,11 @@ msgstr "Podes desenhar como o Picasso!"
 
 #: ../../magic/src/rotate.c:108
 msgid "Rotate"
-msgstr ""
+msgstr "Rodar"
 
 #: ../../magic/src/rotate.c:123
-#, fuzzy
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click and drag to rotate your drawing."
-msgstr "Clica para converter o desenho num jornal."
+msgstr "Clica e arrasta para rodar o teu desenho."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"
