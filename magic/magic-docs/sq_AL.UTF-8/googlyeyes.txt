@@ -5,7 +5,8 @@
                Autor: Bill Kendrick <bill@newbreedsoftware.com>
 
 Draws a googly eye where you click. Drag to position the pupil. (If the Magic
-size feature is disabled, multiple "Googly Eyes" tools will be made available.)
+size feature is disabled, multiple "Sy të Zgurdulluar" tools will be made
+available.)
 
 Ky mjet përdoret si të ishte mjet vizatimi me dorë të lirë.
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 22:28-0700\n"
+"POT-Creation-Date: 2024-10-02 23:33-0700\n"
 "PO-Revision-Date: 2015-10-09 18:00+0200\n"
 "Last-Translator: inactive\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -402,7 +402,7 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", and \"Crescent\"."
+"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54

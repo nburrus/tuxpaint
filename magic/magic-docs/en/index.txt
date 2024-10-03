@@ -74,6 +74,7 @@ Picture Warps
 Painting
 
   * Bricks
+  * Spray Paint
   * Rainbow
   * Smooth Rainbow
   * Rainbow Cycle

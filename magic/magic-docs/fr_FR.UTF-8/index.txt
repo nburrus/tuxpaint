@@ -74,6 +74,7 @@ Déformations de l'image
 Peindre
 
   * Briques
+  * Spray Paint
   * Arc-en-ciel
   * Arc-en-ciel doux
   * Arc-en-ciel
