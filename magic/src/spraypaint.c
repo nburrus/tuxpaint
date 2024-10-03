@@ -114,7 +114,7 @@ int spraypaint_get_order(int which ATTRIBUTE_UNUSED)
   return 800;
 }
 
-char *spraypaint_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+char *spraypaint_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext_noop("Click and drag to add a random spray of color onto your image.")));
 }
@@ -188,7 +188,7 @@ void spraypaint_drag(magic_api * api, int which, SDL_Surface * canvas,
   api->playsound(spraypaint_snd_spray, (x * 255) / canvas->w, 255);
 }
 
-void spraypaint_click(magic_api * api, int which, int mode,
+void spraypaint_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   spraypaint_drag(api, which, canvas, last, x, y, x, y, update_rect);
@@ -246,7 +246,7 @@ int spraypaint_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
 }
 
 
-Uint8 spraypaint_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+Uint8 spraypaint_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 12;
 }
