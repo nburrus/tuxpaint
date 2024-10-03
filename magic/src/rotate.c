@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 24, 2024
+  Last updated: September 30, 2024
 */
 
 #include <stdio.h>
@@ -305,6 +305,7 @@ void rotate_switchout(magic_api * api ATTRIBUTE_UNUSED,
    * draw the rotated canvas again, THEN take a new snapshot,
    * and hence undo anything that was done while we were away
    * from this tool! */
+  /* (See https://sourceforge.net/p/tuxpaint/bugs/286/) */
   rotate_clicked_since_switchin = 0;
 }
 
