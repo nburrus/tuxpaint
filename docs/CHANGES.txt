@@ -63,6 +63,21 @@ https://tuxpaint.org/
         <https://freesound.org/people/danielmcadams/>
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/262/
 
+    * "Spray Paint": Draws a fine spray of pixels, simulating
+      spray paint or an airbrush
+      + Code by Bill Kendrick <bill@newbreedsoftware.com>
+      + Icon based on "Hand Spray Paint - Red"
+        <https://openclipart.org/detail/324451/hand-spray-paint-red>
+        Creative Commons Zero 1.0 Public Domain License by "j4p4n"
+        <https://openclipart.org/artist/j4p4n>
+      + Can shake sound effected by Leng Siakkhasone
+        (from "Mad Bomber" GPLv2)
+      + Spray sound effect based on "spray can.WAV"
+        <https://freesound.org/people/rpew1/sounds/108483/>
+        Creative Commons CC0 1.0 Universal by "rpew1"
+        <https://freesound.org/people/rpew1/>
+      + TODO Needs documentation
+
   * Magic Tool Improvements:
     ------------------------
     * Sound pause/resume functions added to API
