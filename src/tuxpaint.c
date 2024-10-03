@@ -2580,6 +2580,7 @@ int brushflag, xnew, ynew, eraflag, lineflag, magicflag, keybd_flag,
 int cur_thing;
 SDL_TimerID scrolltimer_dialog = TIMERID_NONE;  /* Used by Open, Open->Slideshow, and New dialogs */
 Uint32 TP_SDL_MOUSEBUTTONSCROLL;
+Uint32 TP_USEREVENT_PLAYDESCSOUND;
 
 /**
  * --- MAIN LOOP! ---
@@ -2618,6 +2619,7 @@ static void mainloop(void)
 #endif
 
   TP_SDL_MOUSEBUTTONSCROLL = SDL_RegisterEvents(1);
+  TP_USEREVENT_PLAYDESCSOUND = SDL_RegisterEvents(1);
   SDL_TimerID scrolltimer_selector = TIMERID_NONE, scrolltimer_tool = TIMERID_NONE;
   SDL_Event event;
   SDLKey key;
@@ -6026,28 +6028,28 @@ static void mainloop(void)
           else
             draw_tux_text(TUX_GREAT, "", 1);
         }
-        else if (event.user.code == USEREVENT_PLAYDESCSOUND)
-        {
-          /* Play a stamp's spoken description (because the sound effect just finished) */
-          /* (This event is pushed into the queue by playstampdesc(), which
-             is a callback from Mix_ChannelFinished() when playing a stamp SFX) */
+      }
+      else if (event.type == TP_USEREVENT_PLAYDESCSOUND)
+      {
+        /* Play a stamp's spoken description (because the sound effect just finished) */
+        /* (This event is pushed into the queue by playstampdesc(), which
+           is a callback from Mix_ChannelFinished() when playing a stamp SFX) */
 
-          debug("Playing description sound...");
+        debug("Playing description sound...");
 
 #ifndef NOSOUND
-          Mix_ChannelFinished(NULL);    /* Kill the callback, so we don't get stuck in a loop! */
+        Mix_ChannelFinished(NULL);    /* Kill the callback, so we don't get stuck in a loop! */
 
-          if (event.user.data1 != NULL)
+        if (event.user.data1 != NULL)
+        {
+          if ((int)(intptr_t) event.user.data1 == cur_stamp[stamp_group])     /* Don't play old stamp's sound... *///EP added (intptr_t) to avoid warning on x64
           {
-            if ((int)(intptr_t) event.user.data1 == cur_stamp[stamp_group])     /* Don't play old stamp's sound... *///EP added (intptr_t) to avoid warning on x64
-            {
-              if (!mute && stamp_data[stamp_group][(int)(intptr_t) event.user.data1]->sdesc != NULL)    //EP added (intptr_t) to avoid warning on x64
-                Mix_PlayChannel(2, stamp_data[stamp_group][(int)(intptr_t) event.user.data1]->sdesc,    //EP added (intptr_t) to avoid warning on x64
-                                0);
-            }
+            if (!mute && stamp_data[stamp_group][(int)(intptr_t) event.user.data1]->sdesc != NULL)    //EP added (intptr_t) to avoid warning on x64
+              Mix_PlayChannel(2, stamp_data[stamp_group][(int)(intptr_t) event.user.data1]->sdesc,    //EP added (intptr_t) to avoid warning on x64
+                              0);
           }
-#endif
         }
+#endif
       }
       else if (event.type == SDL_MOUSEBUTTONUP)
       {
@@ -13212,7 +13214,7 @@ static void playstampdesc(int chan)
   {
     debug("Stamp SFX ended. Pushing event to play description sound...");
 
-    playsound_event.type = SDL_USEREVENT;
+    playsound_event.type = TP_USEREVENT_PLAYDESCSOUND;
     playsound_event.user.code = USEREVENT_PLAYDESCSOUND;
     playsound_event.user.data1 = (void *)(intptr_t) cur_stamp[stamp_group];     //EP added (intptr_t) to avoid warning on x64
 
@@ -29507,7 +29509,9 @@ int TP_EventFilter( __attribute__((unused))
       event->type == SDL_TEXTINPUT ||
       event->type == SDL_APP_WILLENTERBACKGROUND ||
       event->type == SDL_APP_WILLENTERFOREGROUND ||
-      event->type == SDL_APP_DIDENTERBACKGROUND || event->type == SDL_APP_DIDENTERFOREGROUND)
+      event->type == SDL_APP_DIDENTERBACKGROUND ||
+      event->type == SDL_APP_DIDENTERFOREGROUND ||
+      event->type == TP_USEREVENT_PLAYDESCSOUND)
     return 1;
 
   return 0;
