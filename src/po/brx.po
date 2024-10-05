@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2011-09-14 13:51+0530\n"
 "Last-Translator: \n"
 "Language-Team: Bodo\n"
@@ -395,7 +395,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3018,6 +3019,28 @@ msgstr "नोंथांनि सावगारिआव बरफ गथा
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "नोंथांनि सावगारिआव बरफ थुख्रा दाजाबदेरनो क्लिक खालाम।"
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "बर्ग दब्लाइ"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create a spiral."
+msgstr "गेदेर इटा आखिनो क्लिक खालाम आरो लोरिहो।"
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create a square spiral."
+msgstr "गेदेर इटा आखिनो क्लिक खालाम आरो लोरिहो।"
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

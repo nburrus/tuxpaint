@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2021-06-06 18:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
@@ -383,7 +383,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2712,6 +2713,24 @@ msgstr ""
 
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
+msgstr ""
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Carrat"
+
+#: ../../magic/src/spiral.c:46
+msgid "Click and drag to create a spiral."
+msgstr ""
+
+#: ../../magic/src/spiral.c:47
+msgid "Click and drag to create a square spiral."
 msgstr ""
 
 #: ../../magic/src/spraypaint.c:104

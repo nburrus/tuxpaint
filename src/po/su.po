@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2011-05-27 06:24+0200\n"
 "Last-Translator: kumincir <ia.adnan@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -386,7 +386,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2805,6 +2806,26 @@ msgstr ""
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr ""
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Pasagi"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+msgid "Click and drag to create a spiral."
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+msgid "Click and drag to create a square spiral."
+msgstr "Klik pikeun ngarobah warna dina sakabéh gambarna."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

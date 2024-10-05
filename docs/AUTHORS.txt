@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - October 2, 2024
+June 17, 2002 - October 4, 2024
 
 * Design and Coding:
 
@@ -246,6 +246,9 @@ June 17, 2002 - October 2, 2024
   <https://openclipart.org/detail/324451/hand-spray-paint-red>
   Creative Commons Zero 1.0 Public Domain License by "j4p4n"
   <https://openclipart.org/artist/j4p4n>
+
+  "Spiral" & "Spiral Square" magic tools
+  by Bill Kendrick <bill@newbreedsoftware.com>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>

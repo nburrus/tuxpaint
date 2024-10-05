@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.October.2 (0.9.34)
+2024.October.4 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -76,7 +76,14 @@ https://tuxpaint.org/
         <https://freesound.org/people/rpew1/sounds/108483/>
         Creative Commons CC0 1.0 Universal by "rpew1"
         <https://freesound.org/people/rpew1/>
-      + TODO Needs documentation
+
+    * "Spiral" and "Square Spiral": Draw spiral shapes.
+      + Code by Bill Kendrick <bill@newbreedsoftware.com>
+      + TODO Correct location
+      + TODO Icons
+      + TODO Sound effects
+      + TODO Documentation
+      + Closes https://sourceforge.net/p/tuxpaint/feature-requests/261/
 
   * Magic Tool Improvements:
     ------------------------

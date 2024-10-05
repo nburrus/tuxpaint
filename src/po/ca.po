@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2024-06-04 00:14+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -437,7 +437,8 @@ msgstr ""
 #| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr "Noves eines màgiques: Tramat, Polígon."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3011,6 +3012,28 @@ msgstr "Feu clic per afegir boles de neu al dibuix."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Feu clic per afegir flocs de neu al dibuix."
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Quadrat"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a spiral."
+msgstr "Feu clic i arrossegueu per dibuixar píxels grans."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a square spiral."
+msgstr "Feu clic i arrossegueu per dibuixar píxels grans."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

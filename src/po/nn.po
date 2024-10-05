@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2024-06-02 13:17+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -391,7 +391,8 @@ msgstr ""
 #| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr "Nye magiske verktøy: prikkemønster, fylte mangekantar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2991,6 +2992,28 @@ msgstr "Trykk for å kasta snøballar på teikninga."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Trykk for å dryssa snøflak på teikninga."
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Kvadrat"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a spiral."
+msgstr "Hald inne knappen og flytt rundt for å teikna store pikslar."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a square spiral."
+msgstr "Hald inne knappen og flytt rundt for å teikna store pikslar."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

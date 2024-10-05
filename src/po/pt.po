@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2024-09-29 22:43+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -401,7 +401,8 @@ msgstr "Novo modo de preenchimento: preenchimento com \"Borracha\"."
 #| "various \"Fractals\", and \"Crescent\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 "Novas ferramentas de magia: “Pontos de banda desenhada”, \"Rodar\", várias "
 "artes \"ASCII\", vários \"Fractais\" e \"Crescente\"."
@@ -3011,6 +3012,28 @@ msgstr "Clica para adicionar bolas de neve ao desenho."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Clica para adicionar flocos de neve ao desenho."
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Quadrado"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a spiral."
+msgstr "Clica e arrasta para desenhares pixéis grandes."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a square spiral."
+msgstr "Clica e arrasta para desenhares pixéis grandes."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

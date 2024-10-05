@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2017-12-26 10:53+0100\n"
 "Last-Translator: Paulo Pavačić <pavacic.p@gmail.com>\n"
 "Language-Team: none\n"
@@ -393,7 +393,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2934,6 +2935,28 @@ msgstr "Klikni da dodaš grude snijega na sliku."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Klikni da dodaš pahuljice na sliu.."
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Kvadrat"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and drag to draw large bricks."
+msgid "Click and drag to create a spiral."
+msgstr "Klikni i pomakni miš za crtanje velikih cigla."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and drag to draw large bricks."
+msgid "Click and drag to create a square spiral."
+msgstr "Klikni i pomakni miš za crtanje velikih cigla."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

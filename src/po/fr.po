@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2024-09-30 07:37+0200\n"
 "Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
@@ -401,7 +401,8 @@ msgstr "Nouveau mode de remplissage : \"Gomme\" avec remplissage."
 #| "various \"Fractals\", and \"Crescent\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 "Nouveaux outils Magie : \"Points Comiques\", \"Rotation\", divers arts "
 "\"ASCII\", divers \"Fractales\" et \"Croissant\".."
@@ -3114,6 +3115,28 @@ msgstr "Clique pour ajouter des boules de neige."
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "Clique pour ajouter des flocons de neige."
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "Carré"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a spiral."
+msgstr "Clique et déplace la souris pour dessiner de grands pixels."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create a square spiral."
+msgstr "Clique et déplace la souris pour dessiner de grands pixels."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

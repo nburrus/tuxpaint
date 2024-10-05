@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2014-08-09 02:17+1000\n"
 "Last-Translator: Ashish Arora <ashish.arora13@gmail.com>\n"
 "Language-Team: Hindi\n"
@@ -396,7 +396,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2997,6 +2998,28 @@ msgstr "तस्वीर में बर्फ की गेंदों क�
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "तस्वीर में बर्फ के गुचे जोड़ने के लिए क्लिक्क करें|"
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "चोकार १"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create a spiral."
+msgstr "बड़ी इटें बनाने के लिए क्लिक करें और स्थानांतरित करें|"
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create a square spiral."
+msgstr "बड़ी इटें बनाने के लिए क्लिक करें और स्थानांतरित करें|"
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy

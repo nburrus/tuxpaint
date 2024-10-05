@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: en_gb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 23:33-0700\n"
+"POT-Creation-Date: 2024-10-04 21:06-0700\n"
 "PO-Revision-Date: 2014-05-19 23:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -397,7 +397,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", and \"Spray Paint\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
+"Spiral\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2995,6 +2996,28 @@ msgstr "तुमच्या पिंतुराक झेलाचे बॉ
 #: ../../magic/src/snow.c:82
 msgid "Click to add snow flakes to your picture."
 msgstr "तुमच्या पिंतुराक झेलाचे पातळ कुडके जोडूंक क्लिक करचें."
+
+#: ../../magic/src/spiral.c:41
+msgid "Spiral"
+msgstr ""
+
+#: ../../magic/src/spiral.c:42
+#, fuzzy
+#| msgid "Square"
+msgid "Square Spiral"
+msgstr "चवकोन"
+
+#: ../../magic/src/spiral.c:46
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create a spiral."
+msgstr "व्हड इटे पिंतरांवक क्लिक करून दुसरे कडेन व्हरचो."
+
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create a square spiral."
+msgstr "व्हड इटे पिंतरांवक क्लिक करून दुसरे कडेन व्हरचो."
 
 #: ../../magic/src/spraypaint.c:104
 #, fuzzy
