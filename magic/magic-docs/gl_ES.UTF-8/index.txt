@@ -82,6 +82,8 @@ Painting
   * Ribbon
   * Crescent
   * Smooth
+  * Spiral
+  * Square Spiral
   * Squiggles
   * Loops
   * Confetti

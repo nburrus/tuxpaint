@@ -83,7 +83,6 @@ https://tuxpaint.org/
         <https://freesound.org/people/LukeSharples/sounds/145631>
         Creative Commons Attribution 4.0 (CC BY 4.0) by Luke Sharples
         <https://freesound.org/people/LukeSharples/>
-      + TODO Documentation
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/261/
 
   * Magic Tool Improvements:

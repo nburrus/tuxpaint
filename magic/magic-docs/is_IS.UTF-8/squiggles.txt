@@ -13,7 +13,7 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: Smooth & Loops.
+See also: Smooth, Loops, Spiral, & Square Spiral.
 
 -------------------------------------------------------------------------------
 

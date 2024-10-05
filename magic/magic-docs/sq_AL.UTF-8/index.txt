@@ -82,6 +82,8 @@ Vizatim
   * Shirit
   * Crescent
   * Lëmim
+  * Spiral
+  * Square Spiral
   * Shkarravina
   * Qerthuj
   * Bonbone

@@ -82,6 +82,8 @@ Peindre
   * Ruban
   * Crescent
   * Doux
+  * Spiral
+  * Square Spiral
   * Gribouillis
   * Boucles
   * Confettis
