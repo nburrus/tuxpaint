@@ -3,6 +3,9 @@
 
   Draws a spiral shape centered around the mouse click point.
 
+  FIXME: This tool could be altered to draw concentric
+  circles and squares. -bjk 2024.10.04
+
   Tux Paint - A simple drawing program for children.
 
   Copyright (c) 2024 by Bill Kendrick
@@ -47,7 +50,17 @@ const char * spiral_descrs[NUM_TOOLS] = {
   gettext_noop("Click and drag to create a square spiral."),
 };
 
-static Mix_Chunk *spiral_snd;
+const char * spiral_sounds[NUM_TOOLS] = {
+  "spiral-circle.ogg",
+  "spiral-square.ogg",
+};
+
+const char * spiral_icons[NUM_TOOLS] = {
+  "spiral-circle.png",
+  "spiral-square.png",
+};
+
+static Mix_Chunk *spiral_snd[NUM_TOOLS];
 static int spiral_thickness = 2;
 Uint32 spiral_color;
 int spiral_cx, spiral_cy, spiral_has_dragged;
@@ -92,6 +105,9 @@ Uint8 spiral_default_size(magic_api * api, int which, int mode);
 void spiral_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
                   SDL_Rect * update_rect);
 
+void do_spiral(magic_api * api, int which, SDL_Surface * canvas,
+               SDL_Surface * last, int x, int y, SDL_Rect * update_rect,
+               int final);
 
 Uint32 spiral_api_version(void)
 {
@@ -101,9 +117,13 @@ Uint32 spiral_api_version(void)
 int spiral_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
+  int i;
 
-  snprintf(fname, sizeof(fname), "%ssounds/magic/xor.ogg", api->data_directory);
-  spiral_snd = Mix_LoadWAV(fname);
+  for (i = 0; i < NUM_TOOLS; i++)
+  {
+    snprintf(fname, sizeof(fname), "%ssounds/magic/%s", api->data_directory, spiral_sounds[i]);
+    spiral_snd[i] = Mix_LoadWAV(fname);
+  }
 
   return (1);
 }
@@ -113,11 +133,11 @@ int spiral_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
   return (NUM_TOOLS);
 }
 
-SDL_Surface *spiral_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *spiral_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory);
+  snprintf(fname, sizeof(fname), "%simages/magic/%s", api->data_directory, spiral_icons[which]);
 
   return (IMG_Load(fname));
 }
@@ -129,15 +149,15 @@ char *spiral_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
 
 int spiral_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return MAGIC_TYPE_COLOR_FILTERS;
+  return MAGIC_TYPE_PAINTING;
 }
 
-int spiral_get_order(int which ATTRIBUTE_UNUSED)
+int spiral_get_order(int which)
 {
-  return 800;
+  return 1310 + which;
 }
 
-char *spiral_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
+char *spiral_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext(spiral_descrs[which])));
 }
@@ -175,7 +195,8 @@ void do_spiral(magic_api * api, int which, SDL_Surface * canvas,
                SDL_Surface * last, int x, int y, SDL_Rect * update_rect,
                int final)
 {
-  float radius, i, xx, yy, xsgn, ysgn, ox, oy, stp, oxx, oyy;
+  float radius = 0, i, xx, yy, xsgn, ysgn, stp, oxx, oyy;
+  int vol;
 
   SDL_BlitSurface(last, NULL, canvas, NULL);
 
@@ -222,7 +243,7 @@ void do_spiral(magic_api * api, int which, SDL_Surface * canvas,
   }
   else if (which == TOOL_SPIRAL_SQUARE)
   {
-    int dir, oi, ooi, ix, iy;
+    int dir, oi, ooi;
 
     radius = max(abs(x - spiral_cx), abs(y - spiral_cy));
 
@@ -265,22 +286,29 @@ void do_spiral(magic_api * api, int which, SDL_Surface * canvas,
   update_rect->w = canvas->w;
   update_rect->h = canvas->h;
 
-  api->playsound(spiral_snd, (x * 255) / canvas->w, 255);
+  vol = (radius * 255) / max(canvas->w, canvas->h);
+  if (vol > 255)
+    vol = 255;
+  else if (vol < 32)
+    vol = 32;
+
+  api->playsound(spiral_snd[which], (spiral_cx * 255) / canvas->w, vol);
 }
 
 void spiral_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+              SDL_Surface * last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
 {
   spiral_has_dragged = 1;
   do_spiral(api, which, canvas, last, x, y, update_rect, 0);
 }
 
-void spiral_click(magic_api * api, int which, int mode,
+void spiral_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
                SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   spiral_cx = x;
   spiral_cy = y;
 
+  api->stopsound();
   spiral_drag(api, which, canvas, last, x, y, x + (spiral_thickness * MIN_RADIUS), y, update_rect);
 
   spiral_has_dragged = 0;
@@ -302,8 +330,11 @@ void spiral_release(magic_api * api, int which,
 
 void spiral_shutdown(magic_api * api ATTRIBUTE_UNUSED)
 {
-  if (spiral_snd != NULL)
-    Mix_FreeChunk(spiral_snd);
+  int i;
+
+  for (i = 0; i < NUM_TOOLS; i++)
+    if (spiral_snd[i] != NULL)
+      Mix_FreeChunk(spiral_snd[i]);
 }
 
 void spiral_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
@@ -333,7 +364,7 @@ int spiral_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 }
 
 
-Uint8 spiral_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+Uint8 spiral_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 8;
 }

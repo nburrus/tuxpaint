@@ -250,6 +250,11 @@ June 17, 2002 - October 4, 2024
   "Spiral" & "Spiral Square" magic tools
   by Bill Kendrick <bill@newbreedsoftware.com>
 
+  "Spiral" & "Spiral Square" sound effects based on "Wobble Slicer E3.wav"
+  <https://freesound.org/people/LukeSharples/sounds/145631>
+  Creative Commons Attribution 4.0 (CC BY 4.0) by Luke Sharples
+  <https://freesound.org/people/LukeSharples/>
+
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
 

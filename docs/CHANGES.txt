@@ -79,9 +79,10 @@ https://tuxpaint.org/
 
     * "Spiral" and "Square Spiral": Draw spiral shapes.
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
-      + TODO Correct location
-      + TODO Icons
-      + TODO Sound effects
+      + Sound effects based on "Wobble Slicer E3.wav"
+        <https://freesound.org/people/LukeSharples/sounds/145631>
+        Creative Commons Attribution 4.0 (CC BY 4.0) by Luke Sharples
+        <https://freesound.org/people/LukeSharples/>
       + TODO Documentation
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/261/
 
