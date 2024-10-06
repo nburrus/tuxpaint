@@ -1,5 +1,5 @@
-# Translation of tuxpaint to Portuguese.
-# Copyright (C) 2002-2024 The Tuxpaint Team.
+# Tuxpaint portuguese translation.
+# Copyright (C) 2002-2024 The Tux Paint Team.
 # This file is distributed under the same license as the tuxpaint package.
 # Ricardo Cruz <rick2@aeiou.pt>, 2003.
 # Helder Correia <helder.pereira.correia@gmail.com>, 2005, 2006, 2007.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-04 21:06-0700\n"
-"PO-Revision-Date: 2024-09-29 22:43+0100\n"
+"PO-Revision-Date: 2024-10-06 17:17+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
 "Language: pt\n"
@@ -395,17 +395,14 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr "Novo modo de preenchimento: preenchimento com \"Borracha\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-#, fuzzy
-#| msgid ""
-#| "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, "
-#| "various \"Fractals\", and \"Crescent\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
 "Spiral\"."
 msgstr ""
-"Novas ferramentas de magia: “Pontos de banda desenhada”, \"Rodar\", várias "
-"artes \"ASCII\", vários \"Fractais\" e \"Crescente\"."
+"Novas ferramentas de magia: “Pontos de banda desenhada”, \"Rodar\", arte "
+"\"ASCII\" diversa, diversos \"Fractais\", \"Crescente\", \"Pintura em "
+"spray\", \"Espiral\" e \"Espiral quadrada\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brush: Fluff (gradient)."
@@ -564,8 +561,8 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"Pequenos melhoramentos nos botões de seleção para as cores "
-"\"especiais\" (pipeta, seletor HSV e misturador de cores)."
+"Pequenos melhoramentos nos botões de seleção para as cores \"especiais\" "
+"(pipeta, seletor HSV e misturador de cores)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid "Many Magic tools now offer size settings."
@@ -798,9 +795,9 @@ msgid ""
 "picture via brush strokes."
 msgstr ""
 "Novas ferramentas de Magia foram adicionadas ao Tux Paint: \"Pixéis\" "
-"facilita a criação de arte pixel de estilo retro-jogo, \"Xadrez\" preenche "
-"toda a tela com um padrão de verificação, e \"Clonar\" permite duplicar "
-"partes do desenho através de pinceladas."
+"facilita a criação de arte pixel de estilo de jogos retro, \"Xadrez\" "
+"preenche toda a tela com um padrão de verificação, e \"Clonar\" permite "
+"duplicar partes do desenho através de pinceladas."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:135
 msgid ""
@@ -3015,37 +3012,28 @@ msgstr "Clica para adicionar flocos de neve ao desenho."
 
 #: ../../magic/src/spiral.c:41
 msgid "Spiral"
-msgstr ""
+msgstr "Espiral"
 
 #: ../../magic/src/spiral.c:42
-#, fuzzy
-#| msgid "Square"
 msgid "Square Spiral"
-msgstr "Quadrado"
+msgstr "Espiral quadrada"
 
 #: ../../magic/src/spiral.c:46
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a spiral."
-msgstr "Clica e arrasta para desenhares pixéis grandes."
+msgstr "Clica e arrasta para criar uma espiral."
 
 #: ../../magic/src/spiral.c:47
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a square spiral."
-msgstr "Clica e arrasta para desenhares pixéis grandes."
+msgstr "Clica e arrasta para criar uma espiral quadrada."
 
 #: ../../magic/src/spraypaint.c:104
-#, fuzzy
-#| msgid "Metal Paint"
 msgid "Spray Paint"
-msgstr "Pintura metalizada"
+msgstr "Pintura em spray"
 
 #: ../../magic/src/spraypaint.c:119
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to add a random spray of color onto your image."
-msgstr "Clica e arrasta para desenhar um feixe de luz no desenho."
+msgstr ""
+"Clica e arrasta para adicionar um spray de cor aleatório ao teu desenho."
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
