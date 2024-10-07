@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-04 21:06-0700\n"
-"PO-Revision-Date: 2024-06-04 00:14+0200\n"
+"PO-Revision-Date: 2024-10-08 01:03+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -258,10 +258,8 @@ msgstr ""
 "color triat fins el transparent)."
 
 #: ../fill_tools.h:67
-#, fuzzy
-#| msgid "Click and drag the mouse around to blur the image."
 msgid "Click to erase an area, filling it with the background color or image."
-msgstr "Feu clic i arrossegueu el ratolí per difuminar parts del dibuix."
+msgstr "Feu clic per esborrar una àrea omplint-la amb el color o motiu del fons."
 
 #: ../fill_tools.h:80
 msgid "Solid"
@@ -430,20 +428,18 @@ msgstr "L'eina Estampa serveix per inserir imatges al dibuix"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "New Fill mode: \"Eraser\" flood fill."
-msgstr ""
+msgstr "Nou mode d'omplir: Esborra."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-#, fuzzy
-#| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
 "Spiral\"."
-msgstr "Noves eines màgiques: Tramat, Polígon."
+msgstr "Noves eines màgiques: «Ben-Day», «Gira», varis ASCII art, varis Fractals, «Creixent», «Esprai», «Espiral» i «Espiraal Quadrada»"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brush: Fluff (gradient)."
-msgstr ""
+msgstr "Nou pinzell: Fluff (gradient)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Transparent Erasers."
@@ -495,7 +491,7 @@ msgstr ""
 msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
-msgstr ""
+msgstr "Els dibuixos esborrats en el diàleg de «Obre» ara també es mouen a la paperera en Haiku."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
 msgid ""
@@ -534,9 +530,7 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
-msgstr ""
-"Es mostra el nom del tipus de lletra i la seva mida en les eines Texte i "
-"Etiquetes."
+msgstr "Es mostra el nom del tipus de lletra i la seva mida en les eines Text i Etiquetes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid "Bug-fixes and localization updates."
@@ -1794,36 +1788,31 @@ msgstr "Feu clic per alterar el color del dibuix."
 
 #: ../../magic/src/ascii.c:51
 msgid "Typewriter"
-msgstr ""
+msgstr "Màquina d'escriure"
 
 #: ../../magic/src/ascii.c:52
 msgid "Computer"
-msgstr ""
+msgstr "Ordinador"
 
 #: ../../magic/src/ascii.c:53
 msgid "Color Computer"
-msgstr ""
+msgstr "Ordinador Color"
 
 #: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
-msgstr ""
+msgstr "ASCII %s"
 
 #: ../../magic/src/ascii.c:341
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to transform parts of your picture to circular "
-#| "brushstrokes."
+#, c-format
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
-msgstr ""
-"Feu clic i arrossegueu per transformar parts del dibuix en traços circulars."
+msgstr "Feu clic i arrossegueu per transformar parts del dibuix en text ACII (estil %s)."
 
 #: ../../magic/src/ascii.c:343
-#, fuzzy, c-format
-#| msgid "Click to turn your entire picture into a maze."
+#, c-format
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
-msgstr "Feu clic per dibuixar un laberint."
+msgstr "Feu clic per transformar el dibuix en text ASCII. (estil %s)."
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"
@@ -2001,19 +1990,15 @@ msgstr ""
 
 #: ../../magic/src/comicdot.c:134
 msgid "Comic Dots"
-msgstr ""
+msgstr "Ben-Day"
 
 #: ../../magic/src/comicdot.c:150
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw an a dot pattern on your picture"
-msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+msgstr "Feu clic i arrossegueu per dibuixar un patró de punts en la imatge."
 
 #: ../../magic/src/comicdot.c:152
-#, fuzzy
-#| msgid "Click to saturate your entire picture."
 msgid "Click to apply a dot pattern on your entire picture"
-msgstr "Feu clic per saturar el dibuix."
+msgstr "Feu clic per aplicar un patró de punts al dibuix."
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"
@@ -2025,17 +2010,13 @@ msgstr "Feu clic per llançar paperets!"
 
 #: ../../magic/src/crescent.c:107
 msgid "Crescent"
-msgstr ""
+msgstr "Creixent"
 
 #: ../../magic/src/crescent.c:122
-#, fuzzy
-#| msgid "Click and drag to draw a flower stalk. Let go to finish the flower."
 msgid ""
 "Click and drag to draw a crescent shape. Use the size option to change the "
 "shape."
-msgstr ""
-"Feu clic i arrossegueu per dibuixar el tall de la flor. Deixeu anar per "
-"acabar-la."
+msgstr "Feu clic i arrossegueu per dibuixar la forma d'un creixent de lluna. Feu servir el selector de mida per canviar-ne la forma."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -2222,32 +2203,32 @@ msgstr "Trieu un color de fons i feu clic per aixecar la cantonada."
 #: ../../magic/src/fractal.c:131
 #, c-format
 msgid "Fractal #%d"
-msgstr ""
+msgstr "Fractal %d"
 
 #: ../../magic/src/fractal.c:153
 #, c-format
 msgid ""
 "Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating "
 "%3$d degrees."
-msgstr ""
+msgstr "Feu clic i arrossegueu per dibuixar una forma, es repetirà, %1$s %2$d%% girant %3$d graus."
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling up"
-msgstr ""
+msgstr "augmentant"
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling down"
-msgstr ""
+msgstr "disminuint"
 
 #: ../../magic/src/fractal.c:157
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."
-msgstr ""
+msgstr "Feu clic i arrossegueu per dibuixar una forma, es repetirà , %1$s %2$d%%."
 
 #: ../../magic/src/fractal.c:162
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, rotating %d degrees."
-msgstr ""
+msgstr "Feu clic i arrossegueu per dibuixar una forma, es repetirà girada %d graus."
 
 #: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
@@ -2895,13 +2876,11 @@ msgstr "Podeu dibuixar com en Picasso!"
 
 #: ../../magic/src/rotate.c:108
 msgid "Rotate"
-msgstr ""
+msgstr "Gira"
 
 #: ../../magic/src/rotate.c:123
-#, fuzzy
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click and drag to rotate your drawing."
-msgstr "Feu clic i arrossegueu per transformar el dibuix com si fos un diari."
+msgstr "Feu clic i arrossegueu per girar el dibuix."
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"
@@ -3015,37 +2994,27 @@ msgstr "Feu clic per afegir flocs de neu al dibuix."
 
 #: ../../magic/src/spiral.c:41
 msgid "Spiral"
-msgstr ""
+msgstr "Espiral"
 
 #: ../../magic/src/spiral.c:42
-#, fuzzy
-#| msgid "Square"
 msgid "Square Spiral"
-msgstr "Quadrat"
+msgstr "Espiral Quadrada"
 
 #: ../../magic/src/spiral.c:46
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a spiral."
-msgstr "Feu clic i arrossegueu per dibuixar píxels grans."
+msgstr "Feu clic i arrossegueu per crear una espiral."
 
 #: ../../magic/src/spiral.c:47
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a square spiral."
-msgstr "Feu clic i arrossegueu per dibuixar píxels grans."
+msgstr "Feu clic i arrossegueu per dibuixar una espiral quadrada."
 
 #: ../../magic/src/spraypaint.c:104
-#, fuzzy
-#| msgid "Metal Paint"
 msgid "Spray Paint"
-msgstr "Metall pintat"
+msgstr "Esprai"
 
 #: ../../magic/src/spraypaint.c:119
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to add a random spray of color onto your image."
-msgstr "Feu clic i arrossegueu per dibuixar un camí de llum en la imatge."
+msgstr "Feu clic i arrossegueu per pintar amb un esprai."
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
