@@ -338,9 +338,9 @@ char *ascii_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mod
   char tmp[1024];
 
   if (mode == MODE_PAINT)
-    snprintf(tmp, sizeof(tmp), gettext("Click and drag to transform parts of your drawing to ASCII art (%s style)."), ascii_tool_names[which]);
+    snprintf(tmp, sizeof(tmp), gettext("Click and drag to transform parts of your drawing to ASCII art (%s style)."), gettext(ascii_tool_names[which]));
   else
-    snprintf(tmp, sizeof(tmp), gettext("Click to transform your entire drawing to ASCII art (%s style)."), ascii_tool_names[which]);
+    snprintf(tmp, sizeof(tmp), gettext("Click to transform your entire drawing to ASCII art (%s style)."), gettext(ascii_tool_names[which]));
 
   return(strdup(tmp));
 }
