@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -122,9 +122,9 @@ int waves_get_order(int which)
 char *waves_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (!which)
-    return (strdup(gettext_noop("Waves")));
+    return (strdup(gettext("Waves")));
   else
-    return strdup(gettext_noop("Wavelets"));
+    return strdup(gettext("Wavelets"));
 }
 
 // Return our descriptions, localized:
@@ -132,10 +132,10 @@ char *waves_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mod
 {
   if (!which)
     return (strdup
-            (gettext_noop
+            (gettext
              ("Click to make the picture horizontally wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves.")));
   return
-    strdup(gettext_noop
+    strdup(gettext
            ("Click to make the picture vertically wavy. Click toward the top for shorter waves, the bottom for taller waves, the left for small waves, and the right for long waves."));
 }
 

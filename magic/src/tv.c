@@ -26,7 +26,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include "tp_magic_api.h"
@@ -120,9 +120,9 @@ SDL_Surface *tv_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 char *tv_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TV_TOOL_TV_CLASSIC)
-    return strdup(gettext_noop("TV"));
+    return strdup(gettext("TV"));
   else
-    return strdup(gettext_noop("TV (Bright)"));
+    return strdup(gettext("TV (Bright)"));
 }
 
 int tv_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -138,9 +138,9 @@ int tv_get_order(int which)
 char *tv_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
-    return strdup(gettext_noop("Click and drag to make parts of your picture look like they are on television."));
+    return strdup(gettext("Click and drag to make parts of your picture look like they are on television."));
   else
-    return strdup(gettext_noop("Click to make your picture look like it's on television."));
+    return strdup(gettext("Click to make your picture look like it's on television."));
 }
 
 int tv_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

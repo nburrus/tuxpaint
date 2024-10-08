@@ -1,7 +1,7 @@
 /*
   Strings -- draws string art.
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -134,13 +134,13 @@ char *string_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
   switch (which)
   {
   case STRING_TOOL_FULL_BY_OFFSET:
-    return strdup(gettext_noop("String edges"));
+    return strdup(gettext("String edges"));
     break;
   case STRING_TOOL_TRIANGLE:
-    return strdup(gettext_noop("String corner"));
+    return strdup(gettext("String corner"));
     break;
   default:
-    return strdup(gettext_noop("String 'V'"));
+    return strdup(gettext("String 'V'"));
   }
 }
 
@@ -171,14 +171,14 @@ char *string_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mo
   {
   case STRING_TOOL_FULL_BY_OFFSET:
     return
-      strdup(gettext_noop
+      strdup(gettext
              ("Click and drag to draw string art. Drag top-bottom to draw less or more lines, left or right to make a bigger hole."));
     break;
   case STRING_TOOL_TRIANGLE:
-    return strdup(gettext_noop("Click and drag to draw arrows made of string art."));
+    return strdup(gettext("Click and drag to draw arrows made of string art."));
     break;
   default:
-    return strdup(gettext_noop("Draw string art arrows with free angles."));
+    return strdup(gettext("Draw string art arrows with free angles."));
   }
 }
 

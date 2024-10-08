@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 
   TODO:
   * Support sizing options
@@ -110,7 +110,7 @@ SDL_Surface *glasstile_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *glasstile_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Glass Tile")));
+  return (strdup(gettext("Glass Tile")));
 }
 
 // Return our groups
@@ -129,9 +129,9 @@ int glasstile_get_order(int which ATTRIBUTE_UNUSED)
 char *glasstile_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
-    return (strdup(gettext_noop("Click and drag the mouse to put glass tile over your picture.")));
+    return (strdup(gettext("Click and drag the mouse to put glass tile over your picture.")));
   else
-    return (strdup(gettext_noop("Click to cover your entire picture in glass tiles.")));
+    return (strdup(gettext("Click to cover your entire picture in glass tiles.")));
 }
 
 // Do the effect:

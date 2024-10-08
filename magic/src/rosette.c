@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 // sound only plays on release
@@ -126,9 +126,9 @@ SDL_Surface *rosette_get_icon(magic_api * api, int which)
 char *rosette_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (!which)
-    return strdup(gettext_noop("Rosette"));
+    return strdup(gettext("Rosette"));
   else
-    return strdup(gettext_noop("Picasso"));
+    return strdup(gettext("Picasso"));
 }
 
 int rosette_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -144,9 +144,9 @@ int rosette_get_order(int which)
 char *rosette_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (!which)
-    return strdup(gettext_noop("Click and start drawing your rosette."));       //just k'scope with 3 bits?  
+    return strdup(gettext("Click and start drawing your rosette."));       //just k'scope with 3 bits?  
   else
-    return strdup(gettext_noop("You can draw just like Picasso!"));     //what is this actually doing?
+    return strdup(gettext("You can draw just like Picasso!"));     //what is this actually doing?
 }
 
 int rosette_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

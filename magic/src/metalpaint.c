@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -102,7 +102,7 @@ SDL_Surface *metalpaint_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *metalpaint_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Metal Paint")));
+  return (strdup(gettext("Metal Paint")));
 }
 
 // Return our groups:
@@ -121,7 +121,7 @@ int metalpaint_get_order(int which ATTRIBUTE_UNUSED)
 char *metalpaint_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag the mouse to paint with a metallic color.")));
+  return (strdup(gettext("Click and drag the mouse to paint with a metallic color.")));
 }
 
 #define METALPAINT_CYCLE 32

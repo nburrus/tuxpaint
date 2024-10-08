@@ -1,7 +1,7 @@
 /*
   Draws fretwork
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include "tp_magic_api.h"
@@ -219,15 +219,15 @@ int fretwork_get_order(int which ATTRIBUTE_UNUSED)
 
 char *fretwork_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Fretwork"));
+  return strdup(gettext("Fretwork"));
 }
 
 char *fretwork_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
-    return strdup(gettext_noop("Click and drag to draw repetitive patterns."));
+    return strdup(gettext("Click and drag to draw repetitive patterns."));
   else
-    return strdup(gettext_noop("Click to surround your picture with repetitive patterns."));
+    return strdup(gettext("Click to surround your picture with repetitive patterns."));
 }
 
 int fretwork_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

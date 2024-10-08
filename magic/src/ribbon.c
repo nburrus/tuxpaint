@@ -115,7 +115,7 @@ SDL_Surface *ribbon_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *ribbon_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Ribbon")));
+  return (strdup(gettext("Ribbon")));
 }
 
 // Return our group:
@@ -133,7 +133,7 @@ int ribbon_get_order(int which ATTRIBUTE_UNUSED)
 // Return our descriptions, localized:
 char *ribbon_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Add a flowing ribbon to your picture.")));
+  return (strdup(gettext("Add a flowing ribbon to your picture.")));
 }
 
 // Do the effect:

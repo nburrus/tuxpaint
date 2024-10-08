@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 
@@ -109,7 +109,7 @@ SDL_Surface *puzzle_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *puzzle_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Puzzle")));
+  return (strdup(gettext("Puzzle")));
 }
 
 int puzzle_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -127,8 +127,8 @@ int puzzle_get_order(int which ATTRIBUTE_UNUSED)
 char *puzzle_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
-    return strdup(gettext_noop("Click the part of your picture where would you like a puzzle."));
-  return strdup(gettext_noop("Click to make a puzzle in fullscreen mode."));
+    return strdup(gettext("Click the part of your picture where would you like a puzzle."));
+  return strdup(gettext("Click to make a puzzle in fullscreen mode."));
 }
 
 void puzzle_release(magic_api * api ATTRIBUTE_UNUSED,

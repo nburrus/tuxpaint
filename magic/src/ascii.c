@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 27, 2024
+  Last updated: October 7, 2024
 */
 
 //#define DEBUG

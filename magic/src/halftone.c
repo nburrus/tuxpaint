@@ -1,6 +1,6 @@
 /* halftone.c
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 
@@ -136,7 +136,7 @@ char *halftone_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
   const char *our_name_localized;
 
   our_name_english = names[which];
-  our_name_localized = gettext_noop(our_name_english);
+  our_name_localized = gettext(our_name_english);
 
   return (strdup(our_name_localized));
 }

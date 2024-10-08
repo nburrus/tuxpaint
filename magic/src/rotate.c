@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 30, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -105,7 +105,7 @@ SDL_Surface *rotate_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *rotate_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Rotate")));
+  return (strdup(gettext("Rotate")));
 }
 
 int rotate_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -120,7 +120,7 @@ int rotate_get_order(int which ATTRIBUTE_UNUSED)
 
 char *rotate_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag to rotate your drawing.")));
+  return (strdup(gettext("Click and drag to rotate your drawing.")));
 }
 
 float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag)

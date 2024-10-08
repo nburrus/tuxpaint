@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -164,26 +164,26 @@ char *kalidescope_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, i
   if (which == KAL_LR)
   {
     return (strdup
-            (gettext_noop
+            (gettext
              ("Click and drag the mouse to draw with two brushes that are symmetric across the left and right of your picture.")));
   }
   else if (which == KAL_UD)
   {
     return (strdup
-            (gettext_noop
+            (gettext
              ("Click and drag the mouse to draw with two brushes that are symmetric across the top and bottom of your picture.")));
   }
   else if (which == KAL_PATTERN)
   {
-    return (strdup(gettext_noop("Click and drag the mouse to draw a pattern across the picture.")));
+    return (strdup(gettext("Click and drag the mouse to draw a pattern across the picture.")));
   }
   else if (which == KAL_TILES)
   {
-    return (strdup(gettext_noop("Click and drag the mouse to draw a pattern that is symmetric across the picture.")));
+    return (strdup(gettext("Click and drag the mouse to draw a pattern that is symmetric across the picture.")));
   }
   else
   {                             /* KAL_BOTH */
-    return (strdup(gettext_noop("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
+    return (strdup(gettext("Click and drag the mouse to draw with symmetric brushes (a kaleidoscope).")));
   }
 }
 

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -129,7 +129,7 @@ SDL_Surface *foam_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *foam_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Foam")));
+  return (strdup(gettext("Foam")));
 }
 
 // Return our groups
@@ -147,7 +147,7 @@ int foam_get_order(int which ATTRIBUTE_UNUSED)
 // Return our descriptions, localized:
 char *foam_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag the mouse to cover an area with foamy bubbles.")));
+  return (strdup(gettext("Click and drag the mouse to cover an area with foamy bubbles.")));
 }
 
 // Do the effect:

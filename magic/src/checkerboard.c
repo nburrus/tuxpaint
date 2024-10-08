@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include "tp_magic_api.h"
@@ -113,7 +113,7 @@ SDL_Surface *checkerboard_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *checkerboard_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Checkerboard"));
+  return strdup(gettext("Checkerboard"));
 }
 
 int checkerboard_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -129,7 +129,7 @@ int checkerboard_get_order(int which ATTRIBUTE_UNUSED)
 char *checkerboard_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Click and drag to fill the canvas with a checkerboard pattern."));
+  return strdup(gettext("Click and drag to fill the canvas with a checkerboard pattern."));
 }
 
 int checkerboard_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

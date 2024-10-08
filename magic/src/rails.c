@@ -3,7 +3,7 @@
 
   Draw train tracks.
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 #include "tp_magic_api.h"
 #include "SDL_image.h"
@@ -169,7 +169,7 @@ SDL_Surface *rails_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *rails_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Rails"));
+  return strdup(gettext("Rails"));
 }
 
 int rails_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -184,7 +184,7 @@ int rails_get_order(int which ATTRIBUTE_UNUSED)
 
 char *rails_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Click and drag to draw train track rails on your picture."));
+  return strdup(gettext("Click and drag to draw train track rails on your picture."));
 }
 
 int rails_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

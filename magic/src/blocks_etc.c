@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -134,11 +134,11 @@ SDL_Surface *blocks_etc_get_icon(magic_api * api, int which)
 char *blocks_etc_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_BLOCKS)
-    return (strdup(gettext_noop("Blocks")));
+    return (strdup(gettext("Blocks")));
   else if (which == TOOL_CHALK)
-    return (strdup(gettext_noop("Chalk")));
+    return (strdup(gettext("Chalk")));
   else if (which == TOOL_DRIP)
-    return (strdup(gettext_noop("Drip")));
+    return (strdup(gettext("Drip")));
 
   return (NULL);
 }
@@ -176,33 +176,33 @@ char *blocks_etc_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, in
   {
     if (mode == MODE_PAINT)
     {
-      return (strdup(gettext_noop("Click and drag the mouse around to make the picture blocky.")));
+      return (strdup(gettext("Click and drag the mouse around to make the picture blocky.")));
     }
     else
     {
-      return (strdup(gettext_noop("Click to make the entire picture blocky.")));
+      return (strdup(gettext("Click to make the entire picture blocky.")));
     }
   }
   else if (which == TOOL_CHALK)
   {
     if (mode == MODE_PAINT)
     {
-      return (strdup(gettext_noop("Click and drag the mouse around to turn the picture into a chalk drawing.")));
+      return (strdup(gettext("Click and drag the mouse around to turn the picture into a chalk drawing.")));
     }
     else
     {
-      return (strdup(gettext_noop("Click to turn the entire picture into a chalk drawing.")));
+      return (strdup(gettext("Click to turn the entire picture into a chalk drawing.")));
     }
   }
   else if (which == TOOL_DRIP)
   {
     if (mode == MODE_PAINT)
     {
-      return (strdup(gettext_noop("Click and drag the mouse around to make the picture drip.")));
+      return (strdup(gettext("Click and drag the mouse around to make the picture drip.")));
     }
     else
     {
-      return (strdup(gettext_noop("Click to make the entire picture drip.")));
+      return (strdup(gettext("Click to make the entire picture drip.")));
     }
   }
 

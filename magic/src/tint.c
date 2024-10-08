@@ -29,7 +29,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -153,7 +153,7 @@ SDL_Surface *tint_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char *tint_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext_noop(tint_names[which])));
+  return (strdup(gettext(tint_names[which])));
 }
 
 // Return our group (both the same):
@@ -171,7 +171,7 @@ int tint_get_order(int which)
 // Return our descriptions, localized:
 char *tint_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
-  return (strdup(gettext_noop(tint_descs[which][mode - 1])));
+  return (strdup(gettext(tint_descs[which][mode - 1])));
 }
 
 //Calculates the grey scale value for a rgb pixel

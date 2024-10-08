@@ -1,5 +1,5 @@
 /*
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <time.h>               //For time()
@@ -99,7 +99,7 @@ SDL_Surface *confetti_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *confetti_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Confetti"));
+  return strdup(gettext("Confetti"));
 }
 
 int confetti_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -114,7 +114,7 @@ int confetti_get_order(int which ATTRIBUTE_UNUSED)
 
 char *confetti_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Click to throw confetti!"));
+  return strdup(gettext("Click to throw confetti!"));
 }
 
 int confetti_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

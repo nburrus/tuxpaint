@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -114,9 +114,9 @@ TX_EXTERN SDL_Surface *mirror_f_get_icon(magic_api * api, int which)
 TX_EXTERN char *mirror_f_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == TOOL_MIRROR)
-    return (strdup(gettext_noop("Mirror")));
+    return (strdup(gettext("Mirror")));
   else if (which == TOOL_FLIP)
-    return (strdup(gettext_noop("Flip")));
+    return (strdup(gettext("Flip")));
 
   return (NULL);
 }
@@ -137,9 +137,9 @@ int mirror_f_get_order(int which)
 TX_EXTERN char *mirror_f_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
   if (which == TOOL_MIRROR)
-    return (strdup(gettext_noop("Click to make a mirror image.")));
+    return (strdup(gettext("Click to make a mirror image.")));
   else
-    return (strdup(gettext_noop("Click to flip the picture upside-down.")));
+    return (strdup(gettext("Click to flip the picture upside-down.")));
 
   return (NULL);
 }

@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -97,7 +97,7 @@ SDL_Surface *xor_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *xor_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Xor Colors")));
+  return (strdup(gettext("Xor Colors")));
 }
 
 int xor_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -113,9 +113,9 @@ int xor_get_order(int which ATTRIBUTE_UNUSED)
 char *xor_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
-    return (strdup(gettext_noop("Click and drag to draw an \"Exclusive Or\" (XOR) effect")));
+    return (strdup(gettext("Click and drag to draw an \"Exclusive Or\" (XOR) effect")));
   else
-    return (strdup(gettext_noop("Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture")));
+    return (strdup(gettext("Click to apply an \"Exclusive Or\" (XOR) effect on the whole picture")));
 }
 
 static void do_xor(void *ptr, int which ATTRIBUTE_UNUSED,

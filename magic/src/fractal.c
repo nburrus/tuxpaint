@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 23, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -128,7 +128,7 @@ char *fractal_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   char tmp[128];
 
-  snprintf(tmp, sizeof(tmp), gettext_noop("Fractal #%d"), which + 1);
+  snprintf(tmp, sizeof(tmp), gettext("Fractal #%d"), which + 1);
   return strdup(tmp);
 }
 
@@ -150,16 +150,16 @@ char *fractal_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int m
   {
     if (fract_opt[which].angle != 0)
     {
-      snprintf(tmp, sizeof(tmp), gettext_noop("Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating %3$d degrees."), (fract_opt[which].scale > 1.0 ? gettext_noop("scaling up") : gettext_noop("scaling down")), (int) (fract_opt[which].scale * 100), fract_opt[which].angle);
+      snprintf(tmp, sizeof(tmp), gettext("Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating %3$d degrees."), (fract_opt[which].scale > 1.0 ? gettext("scaling up") : gettext("scaling down")), (int) (fract_opt[which].scale * 100), fract_opt[which].angle);
     }
     else
     {
-      snprintf(tmp, sizeof(tmp), gettext_noop("Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."),  (fract_opt[which].scale > 1.0 ? gettext_noop("scaling up") : gettext_noop("scaling down")), (int) (fract_opt[which].scale * 100));
+      snprintf(tmp, sizeof(tmp), gettext("Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."),  (fract_opt[which].scale > 1.0 ? gettext("scaling up") : gettext("scaling down")), (int) (fract_opt[which].scale * 100));
     }
   }
   else
   {
-    snprintf(tmp, sizeof(tmp), gettext_noop("Click and drag to sketch a shape. It will repeat, rotating %d degrees."), fract_opt[which].angle);
+    snprintf(tmp, sizeof(tmp), gettext("Click and drag to sketch a shape. It will repeat, rotating %d degrees."), fract_opt[which].angle);
   }
 
   return (strdup(tmp));

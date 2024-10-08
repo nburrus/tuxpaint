@@ -24,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -109,7 +109,7 @@ SDL_Surface *grass_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *grass_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Grass")));
+  return (strdup(gettext("Grass")));
 }
 
 // Return our groups:
@@ -127,7 +127,7 @@ int grass_get_order(int which ATTRIBUTE_UNUSED)
 // Return our descriptions, localized:
 char *grass_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag to draw grass. Don’t forget the dirt!")));
+  return (strdup(gettext("Click and drag to draw grass. Don’t forget the dirt!")));
 }
 
 

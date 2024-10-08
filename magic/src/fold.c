@@ -1,7 +1,7 @@
 /*
   Folds the picture down from the corners.
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 //optimized version soon :)
@@ -113,7 +113,7 @@ SDL_Surface *fold_get_icon(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
 
 char *fold_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (gettext_noop("Fold"));
+  return (gettext("Fold"));
 }
 
 int fold_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -128,7 +128,7 @@ int fold_get_order(int which ATTRIBUTE_UNUSED)
 
 char *fold_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return strdup(gettext_noop("Choose a background color and click to turn the corner of the page over."));
+  return strdup(gettext("Choose a background color and click to turn the corner of the page over."));
 }
 
 int fold_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)

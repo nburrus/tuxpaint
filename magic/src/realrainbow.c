@@ -7,7 +7,7 @@
   Math assistance by Jeff Newmiller <jdnewmil@dcn.davis.ca.us>
 
   First created: 2009.04.02
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 
 FIXME:
 * Color/alpha art needs improvement.
@@ -103,9 +103,9 @@ SDL_Surface *realrainbow_get_icon(magic_api * api, int which)
 char *realrainbow_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
   if (which == 0)
-    return (strdup(gettext_noop("Real Rainbow")));
+    return (strdup(gettext("Real Rainbow")));
   else
-    return (strdup(gettext_noop("ROYGBIV Rainbow")));
+    return (strdup(gettext("ROYGBIV Rainbow")));
 }
 
 int realrainbow_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -122,7 +122,7 @@ char *realrainbow_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup
-          (gettext_noop
+          (gettext
            ("Click where you want your rainbow to start, drag to where you want it to end, and then let go to draw a rainbow.")));
 }
 

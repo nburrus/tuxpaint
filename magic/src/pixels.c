@@ -25,7 +25,7 @@
 
   FIXME: If --nomagicsizes set, offer at least a couple size variations. -bjk 2024.01.16
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -114,7 +114,7 @@ SDL_Surface *pixels_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *pixels_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Pixels")));
+  return (strdup(gettext("Pixels")));
 }
 
 // Return our group (both the same):
@@ -132,7 +132,7 @@ int pixels_get_order(int which ATTRIBUTE_UNUSED)
 // Return our descriptions, localized:
 char *pixels_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag to draw large pixels.")));
+  return (strdup(gettext("Click and drag to draw large pixels.")));
 
   return (NULL);
 }

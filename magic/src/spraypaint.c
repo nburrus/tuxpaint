@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: October 2, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -101,7 +101,7 @@ SDL_Surface *spraypaint_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *spraypaint_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Spray Paint")));
+  return (strdup(gettext("Spray Paint")));
 }
 
 int spraypaint_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -116,7 +116,7 @@ int spraypaint_get_order(int which ATTRIBUTE_UNUSED)
 
 char *spraypaint_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag to add a random spray of color onto your image.")));
+  return (strdup(gettext("Click and drag to add a random spray of color onto your image.")));
 }
 
 static void do_spraypaint(magic_api * api, SDL_Surface * canvas, int x, int y, int max_intensity)

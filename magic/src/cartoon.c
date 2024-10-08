@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 29, 2023
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -109,7 +109,7 @@ SDL_Surface *cartoon_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 // Return our names, localized:
 char *cartoon_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Cartoon")));
+  return (strdup(gettext("Cartoon")));
 }
 
 // Return our groups
@@ -129,11 +129,11 @@ char *cartoon_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIB
 {
   if (mode == MODE_PAINT)
   {
-    return (strdup(gettext_noop("Click and drag the mouse around to turn the picture into a cartoon.")));
+    return (strdup(gettext("Click and drag the mouse around to turn the picture into a cartoon.")));
   }
   else
   {
-    return (strdup(gettext_noop("Click to turn the entire picture into a cartoon.")));
+    return (strdup(gettext("Click to turn the entire picture into a cartoon.")));
   }
 }
 

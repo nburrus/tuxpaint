@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -133,7 +133,7 @@ char *bricks_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
 {
   /* Both are named "Bricks", at the moment: */
 
-  return (strdup(gettext_noop("Bricks")));
+  return (strdup(gettext("Bricks")));
 }
 
 // Return our group (both the same):
@@ -154,13 +154,13 @@ char *bricks_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mo
   if (brick_two_tools)
   {
     if (which == TOOL_LARGEBRICKS)
-      return (strdup(gettext_noop("Click and drag to draw large bricks.")));
+      return (strdup(gettext("Click and drag to draw large bricks.")));
     else if (which == TOOL_SMALLBRICKS)
-      return (strdup(gettext_noop("Click and drag to draw small bricks.")));
+      return (strdup(gettext("Click and drag to draw small bricks.")));
   }
   else
   {
-    return (strdup(gettext_noop("Click and drag to draw bricks.")));
+    return (strdup(gettext("Click and drag to draw bricks.")));
   }
 
   return (NULL);

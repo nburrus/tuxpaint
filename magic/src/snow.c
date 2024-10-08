@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 
   TODO:
    * Support sizes (for snowflakes, we'll need a new set of bitmap PNGs!) -bjk 2023.04.22
@@ -164,7 +164,7 @@ SDL_Surface *snow_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char *snow_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext_noop(snow_names[which])));
+  return (strdup(gettext(snow_names[which])));
 }
 
 int snow_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -180,7 +180,7 @@ int snow_get_order(int which)
 // Return our descriptions, localized:
 char *snow_get_description(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext_noop(snow_descs[which])));
+  return (strdup(gettext(snow_descs[which])));
 }
 
 // Do the effect:

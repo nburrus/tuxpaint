@@ -25,7 +25,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -166,7 +166,7 @@ SDL_Surface *sharpen_get_icon(magic_api * api, int which)
 // Return our names, localized:
 char *sharpen_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext_noop(sharpen_names[which])));
+  return (strdup(gettext(sharpen_names[which])));
 }
 
 // Return our group (all the same):
@@ -184,7 +184,7 @@ int sharpen_get_order(int which)
 // Return our descriptions, localized:
 char *sharpen_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
 {
-  return (strdup(gettext_noop(sharpen_descs[which][mode - 1])));
+  return (strdup(gettext(sharpen_descs[which][mode - 1])));
 }
 
 //Calculates the grey scale value for a rgb pixel

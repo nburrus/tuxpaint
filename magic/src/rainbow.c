@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -153,15 +153,15 @@ char *rainbow_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNU
   /* FIXME: Place these in an array */
   if (which == TOOL_RAINBOW)
   {
-    return (strdup(gettext_noop("Rainbow")));
+    return (strdup(gettext("Rainbow")));
   }
   else if (which == TOOL_SMOOTH_RAINBOW)
   {
-    return (strdup(gettext_noop("Smooth Rainbow")));
+    return (strdup(gettext("Smooth Rainbow")));
   }
   else                          /* TOOL_RAINBOW_CYCLE */
   {
-    return (strdup(gettext_noop("Rainbow Cycle")));
+    return (strdup(gettext("Rainbow Cycle")));
   }
 }
 
@@ -180,7 +180,7 @@ int rainbow_get_order(int which)
 // Return our descriptions, localized:
 char *rainbow_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("You can draw in rainbow colors!")));
+  return (strdup(gettext("You can draw in rainbow colors!")));
 }
 
 // Do the effect:

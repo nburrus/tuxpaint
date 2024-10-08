@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 /* Inclusion of header files: */
@@ -139,7 +139,7 @@ SDL_Surface *distortion_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *distortion_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Distortion")));
+  return (strdup(gettext("Distortion")));
 }
 
 
@@ -164,7 +164,7 @@ int distortion_get_order(int which ATTRIBUTE_UNUSED)
 char *distortion_get_description(magic_api * api ATTRIBUTE_UNUSED,
                                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag the mouse to cause distortion in your picture.")));
+  return (strdup(gettext("Click and drag the mouse to cause distortion in your picture.")));
 }
 
 // Report whether we accept colors

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: September 28, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -104,7 +104,7 @@ SDL_Surface *crescent_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
 
 char *crescent_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Crescent")));
+  return (strdup(gettext("Crescent")));
 }
 
 int crescent_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
@@ -119,7 +119,7 @@ int crescent_get_order(int which ATTRIBUTE_UNUSED)
 
 char *crescent_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext_noop("Click and drag to draw a crescent shape. Use the size option to change the shape.")));
+  return (strdup(gettext("Click and drag to draw a crescent shape. Use the size option to change the shape.")));
 }
 
 void do_crescent(magic_api * api, SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect, int final)

@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.October.6 (0.9.34)
+2024.October.7 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -107,6 +107,9 @@ https://tuxpaint.org/
 
   * Localization Updates:
     ---------------------
+    * Catalan translation
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
 
@@ -132,6 +135,10 @@ https://tuxpaint.org/
       after sound effects finished.
       Closes https://sourceforge.net/p/tuxpaint/bugs/293
       Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * Being more consistent with use of `gettext()` vs `gettext_noop()`
+      in Magic tools (for names & descriptions / tool-tips).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
 2024.July.17 (0.9.33)
   * New Magic Tools:

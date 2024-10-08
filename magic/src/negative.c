@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: January 16, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -123,7 +123,7 @@ SDL_Surface *negative_get_icon(magic_api * api, int which)
 // Return our name, localized:
 char *negative_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext_noop(negative_names[which])));
+  return (strdup(gettext(negative_names[which])));
 }
 
 // Return our group (both the same):
@@ -156,7 +156,7 @@ char *negative_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int 
     return NULL;
   }
 
-  return (strdup(gettext_noop(negative_descs[which][mode_idx])));
+  return (strdup(gettext(negative_descs[which][mode_idx])));
 }
 
 static void negative_calc(void *ptr, int which, Uint8 r, Uint8 g, Uint8 b, Uint8 * new_r, Uint8 * new_g, Uint8 * new_b)
