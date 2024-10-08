@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                octobre 4, 2024
+                                octobre 7, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -133,6 +133,10 @@ New Magic tool: Spiral
     Draw spirals.
 New Magic tool: Spiral Square
     Draw square spirals.
+New Magic tool: Concentric Circle
+    Draw concentric circles.
+New Magic tool: Concentric Square
+    Draw concentric squares.
 Magic API Updates
     Sound pause and resume functions added.
 

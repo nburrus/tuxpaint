@@ -84,6 +84,8 @@ Peindre
   * Doux
   * Spiral
   * Square Spiral
+  * Concentric Circle
+  * Concentric Square
   * Gribouillis
   * Boucles
   * Confettis

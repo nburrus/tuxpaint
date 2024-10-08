@@ -12,7 +12,8 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: Loops, Squiggles, & Square Spiral.
+See also: Loops, Squiggles, Square Spiral, Concentric Circle, & Concentric
+Square.
 
 -------------------------------------------------------------------------------
 

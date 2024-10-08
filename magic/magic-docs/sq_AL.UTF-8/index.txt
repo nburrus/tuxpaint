@@ -84,6 +84,8 @@ Vizatim
   * Lëmim
   * Spiral
   * Square Spiral
+  * Concentric Circle
+  * Concentric Square
   * Shkarravina
   * Qerthuj
   * Bonbone

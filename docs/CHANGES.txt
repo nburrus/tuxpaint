@@ -89,7 +89,6 @@ https://tuxpaint.org/
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
       + TODO Icons
       + TODO Sound effects
-      + TODO Documentation
 
   * Magic Tool Improvements:
     ------------------------

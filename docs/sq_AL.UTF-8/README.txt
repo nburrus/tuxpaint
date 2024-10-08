@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 4 tetor 2024
+                                 7 tetor 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -128,6 +128,10 @@ New Magic tool: Spiral
     Draw spirals.
 New Magic tool: Spiral Square
     Draw square spirals.
+New Magic tool: Concentric Circle
+    Draw concentric circles.
+New Magic tool: Concentric Square
+    Draw concentric squares.
 Magic API Updates
     Sound pause and resume functions added.
 

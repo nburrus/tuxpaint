@@ -84,6 +84,8 @@ Painting
   * Smooth
   * Spiral
   * Square Spiral
+  * Concentric Circle
+  * Concentric Square
   * Squiggles
   * Loops
   * Confetti
