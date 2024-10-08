@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2014-06-24 14:46+0800\n"
 "Last-Translator: Song Huang <song@song.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -459,8 +459,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3178,27 +3178,47 @@ msgstr "按下會讓你的圖出現雪球。"
 msgid "Click to add snow flakes to your picture."
 msgstr "按下會讓你的圖出現雪花。"
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
 #  Square shape tool (4 equally-lengthed sides at right angles)
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "正方形"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+msgid "Concentric Circles"
+msgstr ""
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a spiral."
 msgstr "按著並移動滑鼠來畫出大的磚塊。"
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a square spiral."
+msgstr "按著並移動滑鼠來畫出大的磚塊。"
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric circles."
+msgstr "按著並移動滑鼠來畫出大的磚塊。"
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric squares."
 msgstr "按著並移動滑鼠來畫出大的磚塊。"
 
 #: ../../magic/src/spraypaint.c:104

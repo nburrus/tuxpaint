@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2024-06-15 21:26+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
@@ -394,8 +394,8 @@ msgstr ""
 #| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr "「まほう」ツールの追加: 「ディザ」「たかっけい」"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2999,26 +2999,48 @@ msgstr "えを クリックして ぜんたいに ゆきだまを かこう。"
 msgid "Click to add snow flakes to your picture."
 msgstr "えを クリックして ぜんたいに ゆきを ふらせよう。"
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "ましかく"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Isometric Lines"
+msgid "Concentric Circles"
+msgstr "とうかく びょうが"
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a spiral."
 msgstr "おおきなドットのふでで せんを かこう。"
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a square spiral."
+msgstr "おおきなドットのふでで せんを かこう。"
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create concentric circles."
+msgstr "おおきなドットのふでで せんを かこう。"
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create concentric squares."
 msgstr "おおきなドットのふでで せんを かこう。"
 
 #: ../../magic/src/spraypaint.c:104

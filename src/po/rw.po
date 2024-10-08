@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2005-04-04 10:55-0700\n"
 "Last-Translator: Steven Michael Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -405,8 +405,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2881,24 +2881,42 @@ msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 msgid "Click to add snow flakes to your picture."
 msgstr "Na Kwimura i Imbeba Kuri kinanutse i() y'Ishusho"
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "kare"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+msgid "Concentric Circles"
+msgstr ""
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 msgid "Click and drag to create a spiral."
 msgstr "Na Kwimura Kuri Gushushanya"
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 msgid "Click and drag to create a square spiral."
+msgstr "Na Kwimura Kuri Gushushanya"
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+msgid "Click and drag to create concentric circles."
+msgstr "Na Kwimura Kuri Gushushanya"
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+msgid "Click and drag to create concentric squares."
 msgstr "Na Kwimura Kuri Gushushanya"
 
 #: ../../magic/src/spraypaint.c:104

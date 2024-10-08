@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2013-01-09 14:39+0530\n"
 "Last-Translator: Chandrakant Dhutadmal\n"
 "Language-Team: Sindhi-PA\n"
@@ -395,8 +395,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3001,26 +3001,46 @@ msgstr "پنهنجي تصوير ۾ برف جا گولا شامل ڪرڻ لاءِ
 msgid "Click to add snow flakes to your picture."
 msgstr "پنهنجي تصوير ۾ برف جون پرتون شامل ڪرڻ لاءِ ڪلڪ ڪريو۔"
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "چوُرس"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+msgid "Concentric Circles"
+msgstr ""
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a spiral."
 msgstr "وڏيون سرون رچڻ لاءِ ڪلڪ ڪريو ۽ هلايو۔"
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a square spiral."
+msgstr "وڏيون سرون رچڻ لاءِ ڪلڪ ڪريو ۽ هلايو۔"
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric circles."
+msgstr "وڏيون سرون رچڻ لاءِ ڪلڪ ڪريو ۽ هلايو۔"
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric squares."
 msgstr "وڏيون سرون رچڻ لاءِ ڪلڪ ڪريو ۽ هلايو۔"
 
 #: ../../magic/src/spraypaint.c:104

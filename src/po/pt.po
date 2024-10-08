@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2024-10-06 17:17+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -395,10 +395,15 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr "Novo modo de preenchimento: preenchimento com \"Borracha\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
+#, fuzzy
+#| msgid ""
+#| "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, "
+#| "various \"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and "
+#| "\"Square Spiral\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 "Novas ferramentas de magia: “Pontos de banda desenhada”, \"Rodar\", arte "
 "\"ASCII\" diversa, diversos \"Fractais\", \"Crescente\", \"Pintura em "
@@ -561,8 +566,8 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"Pequenos melhoramentos nos botões de seleção para as cores \"especiais\" "
-"(pipeta, seletor HSV e misturador de cores)."
+"Pequenos melhoramentos nos botões de seleção para as cores "
+"\"especiais\" (pipeta, seletor HSV e misturador de cores)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid "Many Magic tools now offer size settings."
@@ -3010,20 +3015,42 @@ msgstr "Clica para adicionar bolas de neve ao desenho."
 msgid "Click to add snow flakes to your picture."
 msgstr "Clica para adicionar flocos de neve ao desenho."
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr "Espiral"
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 msgid "Square Spiral"
 msgstr "Espiral quadrada"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Isometric Lines"
+msgid "Concentric Circles"
+msgstr "Linhas isométricas"
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 msgid "Click and drag to create a spiral."
 msgstr "Clica e arrasta para criar uma espiral."
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 msgid "Click and drag to create a square spiral."
+msgstr "Clica e arrasta para criar uma espiral quadrada."
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and drag to create a spiral."
+msgid "Click and drag to create concentric circles."
+msgstr "Clica e arrasta para criar uma espiral."
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and drag to create a square spiral."
+msgid "Click and drag to create concentric squares."
 msgstr "Clica e arrasta para criar uma espiral quadrada."
 
 #: ../../magic/src/spraypaint.c:104

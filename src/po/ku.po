@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2009-05-25 12:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
@@ -394,8 +394,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2947,26 +2947,46 @@ msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 msgid "Click to add snow flakes to your picture."
 msgstr "Mişkî li dora reşahiya wêneyê bitikîne û rake."
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "Çargoşe"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+msgid "Concentric Circles"
+msgstr ""
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a spiral."
 msgstr "Ji bo blokên mezin ên xêzkirinê bitikîne û mişkî bigerîne."
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a square spiral."
+msgstr "Ji bo blokên mezin ên xêzkirinê bitikîne û mişkî bigerîne."
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric circles."
+msgstr "Ji bo blokên mezin ên xêzkirinê bitikîne û mişkî bigerîne."
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric squares."
 msgstr "Ji bo blokên mezin ên xêzkirinê bitikîne û mişkî bigerîne."
 
 #: ../../magic/src/spraypaint.c:104

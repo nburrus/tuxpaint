@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2008-10-20 09:16-0700\n"
 "Last-Translator: Neskie Manuel <neskiem@gmail.com>\n"
 "Language-Team: Ubuntu Secwepemc Translators <ubuntu-l10n-shs@lists.ubuntu."
@@ -375,8 +375,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2699,20 +2699,36 @@ msgstr ""
 msgid "Click to add snow flakes to your picture."
 msgstr ""
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 msgid "Square Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+msgid "Concentric Circles"
+msgstr ""
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 msgid "Click and drag to create a spiral."
 msgstr ""
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 msgid "Click and drag to create a square spiral."
+msgstr ""
+
+#: ../../magic/src/spiral.c:54
+msgid "Click and drag to create concentric circles."
+msgstr ""
+
+#: ../../magic/src/spiral.c:55
+msgid "Click and drag to create concentric squares."
 msgstr ""
 
 #: ../../magic/src/spraypaint.c:104

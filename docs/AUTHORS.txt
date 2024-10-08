@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - October 4, 2024
+June 17, 2002 - October 7, 2024
 
 * Design and Coding:
 
@@ -254,6 +254,9 @@ June 17, 2002 - October 4, 2024
   <https://freesound.org/people/LukeSharples/sounds/145631>
   Creative Commons Attribution 4.0 (CC BY 4.0) by Luke Sharples
   <https://freesound.org/people/LukeSharples/>
+
+  "Concentric Circle" & "Concentric Square" magic tools
+  by Bill Kendrick <bill@newbreedsoftware.com>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>

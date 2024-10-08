@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2010-05-14 11:37-0000\n"
 "Last-Translator: Menik Prasantha <manikprasantha@gmail.com>\n"
 "Language-Team: none\n"
@@ -399,8 +399,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3013,26 +3013,46 @@ msgstr "හිම බෝල ඔබගේ පින්තුරයට එකත�
 msgid "Click to add snow flakes to your picture."
 msgstr "හිම පතුරු ඔබගේ පින්තුරයට එකතු කිරීමට තද කරන්න."
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "සමචතුරස්‍රය"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+msgid "Concentric Circles"
+msgstr ""
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a spiral."
 msgstr "විශාල ගඩොල් ඇඳීමට මූසික ක්ලිකය කර චලනය කරන්න."
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a square spiral."
+msgstr "විශාල ගඩොල් ඇඳීමට මූසික ක්ලිකය කර චලනය කරන්න."
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric circles."
+msgstr "විශාල ගඩොල් ඇඳීමට මූසික ක්ලිකය කර චලනය කරන්න."
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and move to draw large bricks."
+msgid "Click and drag to create concentric squares."
 msgstr "විශාල ගඩොල් ඇඳීමට මූසික ක්ලිකය කර චලනය කරන්න."
 
 #: ../../magic/src/spraypaint.c:104

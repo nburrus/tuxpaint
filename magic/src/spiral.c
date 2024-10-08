@@ -1,10 +1,9 @@
 /*
   spiral.c
 
-  Draws a spiral shape centered around the mouse click point.
-
-  FIXME: This tool could be altered to draw concentric
-  circles and squares. -bjk 2024.10.04
+  Draws a spiral shape, or a concentric shape -- circular or square --
+  centered around the mouse click point.  Size setting changes thickness
+  and spacing.
 
   Tux Paint - A simple drawing program for children.
 
@@ -25,7 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: October 3, 2024
+  Last updated: October 7, 2024
 */
 
 #include <stdio.h>
@@ -37,27 +36,37 @@
 enum {
   TOOL_SPIRAL_CIRCLE,
   TOOL_SPIRAL_SQUARE,
+  TOOL_CONCENTRIC_CIRCLE,
+  TOOL_CONCENTRIC_SQUARE,
   NUM_TOOLS
 };
 
 const char * spiral_names[NUM_TOOLS] = {
   gettext_noop("Spiral"),
   gettext_noop("Square Spiral"),
+  gettext_noop("Concentric Circles"),
+  gettext_noop("Concentric Squares"),
 };
 
 const char * spiral_descrs[NUM_TOOLS] = {
   gettext_noop("Click and drag to create a spiral."),
   gettext_noop("Click and drag to create a square spiral."),
+  gettext_noop("Click and drag to create concentric circles."),
+  gettext_noop("Click and drag to create concentric squares."),
 };
 
 const char * spiral_sounds[NUM_TOOLS] = {
   "spiral-circle.ogg",
   "spiral-square.ogg",
+  "spiral-circle.ogg", // FIXME
+  "spiral-square.ogg", // FIXME
 };
 
 const char * spiral_icons[NUM_TOOLS] = {
   "spiral-circle.png",
   "spiral-square.png",
+  "spiral-circle.png", // FIXME
+  "spiral-square.png", // FIXME
 };
 
 static Mix_Chunk *spiral_snd[NUM_TOOLS];
@@ -171,7 +180,7 @@ static void do_spiral_render(void *ptr, int which,
 
   thick = spiral_thickness * 4;
 
-  if (which == TOOL_SPIRAL_CIRCLE)
+  if (which == TOOL_SPIRAL_CIRCLE || which == TOOL_CONCENTRIC_CIRCLE)
   {
     int xx, yy;
 
@@ -180,7 +189,7 @@ static void do_spiral_render(void *ptr, int which,
         if (api->in_circle(xx, yy, thick / 2))
           api->putpixel(canvas, x + xx, y + yy, spiral_color);
   }
-  else if (which == TOOL_SPIRAL_SQUARE)
+  else if (which == TOOL_SPIRAL_SQUARE || which == TOOL_CONCENTRIC_SQUARE)
   {
     dest.x = x - thick / 2;
     dest.y = y - thick / 2;
@@ -210,13 +219,13 @@ void do_spiral(magic_api * api, int which, SDL_Surface * canvas,
   else
     ysgn = 1;
 
-  if (final)
-    stp = 0.1;
-  else
-    stp = 0.5;
-
   if (which == TOOL_SPIRAL_CIRCLE)
   {
+    if (final)
+      stp = 0.1;
+    else
+      stp = 0.5;
+
     radius = sqrt(pow((x - spiral_cx), 2) + pow((y - spiral_cy), 2));
 
     oxx = 0;
@@ -277,6 +286,65 @@ void do_spiral(magic_api * api, int which, SDL_Surface * canvas,
 
       ooi = oi;
       oi = i;
+    }
+  }
+  else if (which == TOOL_CONCENTRIC_CIRCLE)
+  {
+    float ang, ang_stp;
+
+    radius = sqrt(pow((x - spiral_cx), 2) + pow((y - spiral_cy), 2));
+
+    if (final)
+      ang_stp = 1;
+    else
+      ang_stp = 5;
+
+    for (i = 0; i < radius; i += spiral_thickness * 8)
+    {
+      oxx = (i * cos(0));
+      oyy = (i * sin(0));
+      for (ang = 0; ang < 360; ang += ang_stp)
+      {
+        xx = (i * cos(ang / 180.0 * M_PI));
+        yy = (i * sin(ang / 180.0 * M_PI));
+        if (final)
+        {
+          api->line((void *) api, which, canvas, NULL,
+                    ((int) oxx) + spiral_cx, ((int) oyy) + spiral_cy,
+                    ((int) xx) + spiral_cx, ((int) yy) + spiral_cy,
+                    1, do_spiral_render);
+          oxx = xx;
+          oyy = yy;
+        }
+        else
+        {
+          do_spiral_render(api, which, canvas, NULL, ((int) xx) + spiral_cx, ((int) yy) + spiral_cy);
+        }
+      }
+    }
+  }
+  else if (which == TOOL_CONCENTRIC_SQUARE)
+  {
+    radius = max(abs(x - spiral_cx), abs(y - spiral_cy));
+
+    for (i = spiral_thickness; i < radius; i += spiral_thickness * 8)
+    {
+      api->line((void *) api, which, canvas, NULL,
+                spiral_cx - i, spiral_cy - i,
+                spiral_cx + i, spiral_cy - i,
+                1, do_spiral_render);
+      api->line((void *) api, which, canvas, NULL,
+                spiral_cx + i, spiral_cy - i,
+                spiral_cx + i, spiral_cy + i,
+                1, do_spiral_render);
+      api->line((void *) api, which, canvas, NULL,
+                spiral_cx + i, spiral_cy + i,
+                spiral_cx - i, spiral_cy + i,
+                1, do_spiral_render);
+      api->line((void *) api, which, canvas, NULL,
+                spiral_cx - i, spiral_cy + i,
+                spiral_cx - i, spiral_cy - i,
+                1, do_spiral_render);
     }
   }
 

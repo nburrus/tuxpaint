@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2024-10-08 01:03+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -259,7 +259,8 @@ msgstr ""
 
 #: ../fill_tools.h:67
 msgid "Click to erase an area, filling it with the background color or image."
-msgstr "Feu clic per esborrar una àrea omplint-la amb el color o motiu del fons."
+msgstr ""
+"Feu clic per esborrar una àrea omplint-la amb el color o motiu del fons."
 
 #: ../fill_tools.h:80
 msgid "Solid"
@@ -431,11 +432,18 @@ msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr "Nou mode d'omplir: Esborra."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
+#, fuzzy
+#| msgid ""
+#| "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, "
+#| "various \"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and "
+#| "\"Square Spiral\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
-msgstr "Noves eines màgiques: «Ben-Day», «Gira», varis ASCII art, varis Fractals, «Creixent», «Esprai», «Espiral» i «Espiraal Quadrada»"
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
+msgstr ""
+"Noves eines màgiques: «Ben-Day», «Gira», varis ASCII art, varis Fractals, "
+"«Creixent», «Esprai», «Espiral» i «Espiraal Quadrada»"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brush: Fluff (gradient)."
@@ -491,7 +499,9 @@ msgstr ""
 msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
-msgstr "Els dibuixos esborrats en el diàleg de «Obre» ara també es mouen a la paperera en Haiku."
+msgstr ""
+"Els dibuixos esborrats en el diàleg de «Obre» ara també es mouen a la "
+"paperera en Haiku."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:73
 msgid ""
@@ -530,7 +540,9 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
-msgstr "Es mostra el nom del tipus de lletra i la seva mida en les eines Text i Etiquetes."
+msgstr ""
+"Es mostra el nom del tipus de lletra i la seva mida en les eines Text i "
+"Etiquetes."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid "Bug-fixes and localization updates."
@@ -1807,7 +1819,9 @@ msgstr "ASCII %s"
 #, c-format
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
-msgstr "Feu clic i arrossegueu per transformar parts del dibuix en text ACII (estil %s)."
+msgstr ""
+"Feu clic i arrossegueu per transformar parts del dibuix en text ACII (estil "
+"%s)."
 
 #: ../../magic/src/ascii.c:343
 #, c-format
@@ -2016,7 +2030,9 @@ msgstr "Creixent"
 msgid ""
 "Click and drag to draw a crescent shape. Use the size option to change the "
 "shape."
-msgstr "Feu clic i arrossegueu per dibuixar la forma d'un creixent de lluna. Feu servir el selector de mida per canviar-ne la forma."
+msgstr ""
+"Feu clic i arrossegueu per dibuixar la forma d'un creixent de lluna. Feu "
+"servir el selector de mida per canviar-ne la forma."
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -2210,7 +2226,9 @@ msgstr "Fractal %d"
 msgid ""
 "Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating "
 "%3$d degrees."
-msgstr "Feu clic i arrossegueu per dibuixar una forma, es repetirà, %1$s %2$d%% girant %3$d graus."
+msgstr ""
+"Feu clic i arrossegueu per dibuixar una forma, es repetirà, %1$s %2$d%% "
+"girant %3$d graus."
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling up"
@@ -2223,12 +2241,14 @@ msgstr "disminuint"
 #: ../../magic/src/fractal.c:157
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."
-msgstr "Feu clic i arrossegueu per dibuixar una forma, es repetirà , %1$s %2$d%%."
+msgstr ""
+"Feu clic i arrossegueu per dibuixar una forma, es repetirà , %1$s %2$d%%."
 
 #: ../../magic/src/fractal.c:162
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, rotating %d degrees."
-msgstr "Feu clic i arrossegueu per dibuixar una forma, es repetirà girada %d graus."
+msgstr ""
+"Feu clic i arrossegueu per dibuixar una forma, es repetirà girada %d graus."
 
 #: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
@@ -2992,20 +3012,42 @@ msgstr "Feu clic per afegir boles de neu al dibuix."
 msgid "Click to add snow flakes to your picture."
 msgstr "Feu clic per afegir flocs de neu al dibuix."
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr "Espiral"
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 msgid "Square Spiral"
 msgstr "Espiral Quadrada"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Isometric Lines"
+msgid "Concentric Circles"
+msgstr "Línies iso­mètriques"
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 msgid "Click and drag to create a spiral."
 msgstr "Feu clic i arrossegueu per crear una espiral."
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 msgid "Click and drag to create a square spiral."
+msgstr "Feu clic i arrossegueu per dibuixar una espiral quadrada."
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and drag to create a spiral."
+msgid "Click and drag to create concentric circles."
+msgstr "Feu clic i arrossegueu per crear una espiral."
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and drag to create a square spiral."
+msgid "Click and drag to create concentric squares."
 msgstr "Feu clic i arrossegueu per dibuixar una espiral quadrada."
 
 #: ../../magic/src/spraypaint.c:104

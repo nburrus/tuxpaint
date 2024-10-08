@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2024-06-27 16:04+0300\n"
 "Last-Translator: Alevtina <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -430,8 +430,8 @@ msgstr ""
 #| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 "Новые магические инструменты: Узор из точек, Закрашенный многоугольник."
 
@@ -3079,26 +3079,48 @@ msgstr "Щёлкните, чтобы добавить снежки на карт
 msgid "Click to add snow flakes to your picture."
 msgstr "Щёлкните, чтобы добавить снежинки на картинку."
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "Квадрат"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Isometric Lines"
+msgid "Concentric Circles"
+msgstr "Изометрические линии"
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a spiral."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать большие пикселы."
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a square spiral."
+msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать большие пикселы."
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create concentric circles."
+msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать большие пикселы."
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create concentric squares."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы нарисовать большие пикселы."
 
 #: ../../magic/src/spraypaint.c:104

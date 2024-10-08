@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 21:06-0700\n"
+"POT-Creation-Date: 2024-10-07 22:44-0700\n"
 "PO-Revision-Date: 2024-07-26 00:51-0700\n"
 "Last-Translator: Cas Pascal <casboi86@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -393,8 +393,8 @@ msgstr ""
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
-"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and \"Square "
-"Spiral\"."
+"\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
+"\"Concentric Circle\", and \"Concentric Square\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -2787,26 +2787,48 @@ msgstr "Nhấn để thêm các hòn tuyết vào tranh."
 msgid "Click to add snow flakes to your picture."
 msgstr "Nhấn để thêm các bông tuyết vào tranh."
 
-#: ../../magic/src/spiral.c:41
+#: ../../magic/src/spiral.c:45
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:42
+#: ../../magic/src/spiral.c:46
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "Vuông"
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
+#, fuzzy
+#| msgid "Isometric Lines"
+msgid "Concentric Circles"
+msgstr "Đường Đẳng Cự"
+
+#: ../../magic/src/spiral.c:48
+msgid "Concentric Squares"
+msgstr ""
+
+#: ../../magic/src/spiral.c:52
 #, fuzzy
 #| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a spiral."
 msgstr "Nhấn và kéo chuột để vẽ các điểm ảnh lớn."
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a square spiral."
+msgstr "Nhấn và kéo chuột để vẽ các điểm ảnh lớn."
+
+#: ../../magic/src/spiral.c:54
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create concentric circles."
+msgstr "Nhấn và kéo chuột để vẽ các điểm ảnh lớn."
+
+#: ../../magic/src/spiral.c:55
+#, fuzzy
+#| msgid "Click and drag to draw large pixels."
+msgid "Click and drag to create concentric squares."
 msgstr "Nhấn và kéo chuột để vẽ các điểm ảnh lớn."
 
 #: ../../magic/src/spraypaint.c:104

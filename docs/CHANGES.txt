@@ -85,6 +85,12 @@ https://tuxpaint.org/
         <https://freesound.org/people/LukeSharples/>
       + Closes https://sourceforge.net/p/tuxpaint/feature-requests/261/
 
+    * WIP "Concentric Circle" and "Concentric Square": Draw concentric shapes.
+      + Code by Bill Kendrick <bill@newbreedsoftware.com>
+      + TODO Icons
+      + TODO Sound effects
+      + TODO Documentation
+
   * Magic Tool Improvements:
     ------------------------
     * Sound pause/resume functions added to API
