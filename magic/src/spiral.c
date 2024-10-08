@@ -58,7 +58,7 @@ const char * spiral_descrs[NUM_TOOLS] = {
 const char * spiral_sounds[NUM_TOOLS] = {
   "spiral-circle.ogg",
   "spiral-square.ogg",
-  "spiral-circle.ogg", // FIXME
+  "concentric-circle.ogg",
   "concentric-square.ogg",
 };
 
