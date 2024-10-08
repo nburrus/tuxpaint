@@ -65,8 +65,8 @@ const char * spiral_sounds[NUM_TOOLS] = {
 const char * spiral_icons[NUM_TOOLS] = {
   "spiral-circle.png",
   "spiral-square.png",
-  "spiral-circle.png", // FIXME
-  "spiral-square.png", // FIXME
+  "concentric-circle.png",
+  "concentric-square.png",
 };
 
 static Mix_Chunk *spiral_snd[NUM_TOOLS];
