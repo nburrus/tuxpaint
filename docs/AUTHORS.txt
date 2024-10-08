@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - October 7, 2024
+June 17, 2002 - October 8, 2024
 
 * Design and Coding:
 
@@ -267,6 +267,9 @@ June 17, 2002 - October 7, 2024
   <https://freesound.org/people/THE_bizniss/sounds/39453/>
   Creative Commons Attribution 3.0 (CC BY 3.0) by "THE_bizniss"
   <https://freesound.org/people/THE_bizniss/>
+
+  "Tessellation" magic tool
+  by Bill Kendrick <bill@newbreedsoftware.com>
 
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
