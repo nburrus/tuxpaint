@@ -59,7 +59,7 @@ const char * spiral_sounds[NUM_TOOLS] = {
   "spiral-circle.ogg",
   "spiral-square.ogg",
   "spiral-circle.ogg", // FIXME
-  "spiral-square.ogg", // FIXME
+  "concentric-square.ogg",
 };
 
 const char * spiral_icons[NUM_TOOLS] = {

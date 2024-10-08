@@ -258,6 +258,11 @@ June 17, 2002 - October 7, 2024
   "Concentric Circle" & "Concentric Square" magic tools
   by Bill Kendrick <bill@newbreedsoftware.com>
 
+  "Concentric Square" sound effected based on "Brush_Baião12.wav"
+  <https://freesound.org/people/justinrobert/sounds/74371/>
+  Creative Commons CC0 1.0 Universal by Justin Robert
+  <https://freesound.org/people/justinrobert/>
+
   Bloom magic tool
   by Bill Kendrick <bill@newbreedsoftware.com>
 
