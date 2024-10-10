@@ -1252,12 +1252,12 @@ fjölvi
     code would literally expand to "c = ((1) + (2));", or more simply, "c = 1 +
     2;".
 
-fleytitala
+float
+    See "floating point"
+
+floating point
     Definition not yet presented.
     See also: "integer"
-
-float
-    See "fleytitala"
 
 format
     An SDL_Surface element (a pointer to an SDL_PixelFormat structure) that
@@ -1328,7 +1328,7 @@ int
 
 integer
     Definition not yet presented.
-    See also: "fleytitala"
+    See also: "floating point"
 
 Krita
     An Open Source image manipulation and paint program.

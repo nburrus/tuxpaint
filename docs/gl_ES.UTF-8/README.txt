@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                             7 de Outubro de 2024
+                             9 de Outubro de 2024
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -133,6 +133,10 @@ New Magic tool: Concentric Circle
     Draw concentric circles.
 New Magic tool: Concentric Square
     Draw concentric squares.
+New Magic tool: Tessellation Pointy
+    Draw repeating tessellation patterns with pointy-topped hexagons.
+New Magic tool: Tessellation Flat
+    Draw repeating tessellation patterns with flat-topped hexagons.
 Magic API Updates
     Sound pause and resume functions added.
 

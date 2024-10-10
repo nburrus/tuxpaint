@@ -103,7 +103,6 @@ https://tuxpaint.org/
         <https://freesound.org/people/GrowingUp/sounds/350128/>
         Creative Commons CC0 1.0 Universal by Chris B. "Growing Up"
         <https://freesound.org/people/GrowingUp/>
-      + TODO Documentation
 
   * Magic Tool Improvements:
     ------------------------

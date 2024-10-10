@@ -113,6 +113,8 @@ Vizatim Rregullsish
   * Kuadrate
   * Rozetë
   * Pikaso
+  * Tessellation Pointy
+  * Tessellation Flat
 
 Zbukurime Fotoje
 

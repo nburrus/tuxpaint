@@ -113,6 +113,8 @@ Peindre un motif
   * Tuiles
   * Rosace
   * Picasso
+  * Tessellation Pointy
+  * Tessellation Flat
 
 Décorations des images
 

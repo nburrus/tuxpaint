@@ -12,7 +12,7 @@ Ky mjet ofron rregullime të shumta madhësie.
 
 Ky mjet ofron zgjedhje ngjyrash.
 
-Shihni edhe: Mostër.
+Shihni edhe: Mostër, Tessellation Pointy, & Tessellation Flat.
 
 -------------------------------------------------------------------------------
 

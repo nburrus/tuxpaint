@@ -12,7 +12,7 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: Tiles.
+See also: Tiles, Tessellation Pointy, & Tessellation Flat.
 
 -------------------------------------------------------------------------------
 

@@ -113,6 +113,8 @@ Pattern Painting
   * Tiles
   * Rosette
   * Picasso
+  * Tessellation Pointy
+  * Tessellation Flat
 
 Picture Decorations
 
