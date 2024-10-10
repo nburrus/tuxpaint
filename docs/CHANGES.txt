@@ -99,7 +99,10 @@ https://tuxpaint.org/
     * "Tessellation Pointy" & "Tessellation Flat", a pair of tools
       to draw a repeating hexagon tessellation pattern
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
-      + TODO Add sound effect
+      + "Tessellation" sound effect based on "TIME_Vocal Harmony.mp3"
+        <https://freesound.org/people/GrowingUp/sounds/350128/>
+        Creative Commons CC0 1.0 Universal by Chris B. "Growing Up"
+        <https://freesound.org/people/GrowingUp/>
       + TODO Documentation
 
   * Magic Tool Improvements:
