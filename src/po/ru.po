@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2024-06-27 16:04+0300\n"
 "Last-Translator: Alevtina <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -431,7 +431,8 @@ msgstr ""
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 "Новые магические инструменты: Узор из точек, Закрашенный многоугольник."
 
@@ -3215,6 +3216,34 @@ msgstr "Щёлкните, чтобы превратить всю картинк�
 #: ../../magic/src/swirls.c:50
 msgid "Click and drag to add fur to your picture."
 msgstr "Щёлкните и ведите мышью по картинке, чтобы добавить на неё шерсть."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr ""
+"Щёлкните и ведите мышью по картинке, чтобы нарисовать повторяющиеся узоры."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
+msgstr ""
+"Щёлкните и ведите мышью по картинке, чтобы нарисовать повторяющиеся узоры."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"

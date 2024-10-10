@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2024-10-08 01:03+0200\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
@@ -440,7 +440,8 @@ msgstr "Nou mode d'omplir: Esborra."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 "Noves eines màgiques: «Ben-Day», «Gira», varis ASCII art, varis Fractals, "
 "«Creixent», «Esprai», «Espiral» i «Espiraal Quadrada»"
@@ -3135,6 +3136,32 @@ msgstr "Feu clic per transformar el dibuix en traços radials."
 #: ../../magic/src/swirls.c:50
 msgid "Click and drag to add fur to your picture."
 msgstr "Feu clic i arrossegueu per dibuixar pelatge."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
+msgstr "Feu clic i arrossegueu per dibuixar una sanefa."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"

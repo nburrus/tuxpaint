@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2007-04-26 15:45+0200\n"
 "Last-Translator: Joana Portia Antwi-Danso <portnass2003@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -395,7 +395,8 @@ msgstr ""
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3050,6 +3051,30 @@ msgstr "Fa akura no fa mfoni no so ma no nyɛ sɛ hyirew."
 #: ../../magic/src/swirls.c:50
 #, fuzzy
 msgid "Click and drag to add fur to your picture."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
 msgstr "Mia so na fa akura no to mfoni no so ma no nyɛ wisiwisi."
 
 #: ../../magic/src/tint.c:73

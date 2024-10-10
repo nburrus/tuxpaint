@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.October.8 (0.9.34)
+2024.October.9 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -96,10 +96,9 @@ https://tuxpaint.org/
         Creative Commons Attribution 3.0 (CC BY 3.0) by "THE_bizniss"
         <https://freesound.org/people/THE_bizniss/>
 
-    * WIP "Tessellation": Draw a repeating tessellation pattern
+    * "Tessellation Pointy" & "Tessellation Flat", a pair of tools
+      to draw a repeating hexagon tessellation pattern
       + Code by Bill Kendrick <bill@newbreedsoftware.com>
-      + TODO Move to proper section
-      + TODO Add icon
       + TODO Add sound effect
       + TODO Documentation
 

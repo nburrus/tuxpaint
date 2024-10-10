@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2021-06-28 19:40+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -404,7 +404,8 @@ msgstr ""
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3128,6 +3129,32 @@ msgstr ""
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to add fur to your picture."
 msgstr "Hold inne knappen og flytt rundt for å tegne jernbanelinjer."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns. "
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr "Hold inne knappen og flytt rundt for å tegne mønster."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns. "
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
+msgstr "Hold inne knappen og flytt rundt for å tegne mønster."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"

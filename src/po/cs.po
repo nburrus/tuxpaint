@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2010-07-08 13:33+0100\n"
 "Last-Translator: Zdeněk Chalupský <chalzd@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -397,7 +397,8 @@ msgstr ""
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3165,6 +3166,30 @@ msgstr "Pohybem myši po čáře získáš vzhled čáry od křídy."
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to add fur to your picture."
 msgstr "Kliknutím, nebo tažením nakresli vlakové koleje."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
+msgstr "Klepni a pohybuj myší - rozostříš obrázek."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"

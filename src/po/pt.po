@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2024-10-06 17:17+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -403,7 +403,8 @@ msgstr "Novo modo de preenchimento: preenchimento com \"Borracha\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 "Novas ferramentas de magia: “Pontos de banda desenhada”, \"Rodar\", arte "
 "\"ASCII\" diversa, diversos \"Fractais\", \"Crescente\", \"Pintura em "
@@ -3136,6 +3137,32 @@ msgstr "Clica para transformar o desenho inteiro em raios de pincelada."
 #: ../../magic/src/swirls.c:50
 msgid "Click and drag to add fur to your picture."
 msgstr "Clica e arrasta para adicionar pelagem ao teu desenho."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr "Clica e arrasta para desenhar padrões repetitivos."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+#| msgid "Click and drag to draw repetitive patterns."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
+msgstr "Clica e arrasta para desenhar padrões repetitivos."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 22:44-0700\n"
+"POT-Creation-Date: 2024-10-09 19:25-0700\n"
 "PO-Revision-Date: 2011-10-07 15:05+0530\n"
 "Last-Translator: Hidam Dolen <dolenhi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -395,7 +395,8 @@ msgstr ""
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
-"\"Concentric Circle\", and \"Concentric Square\"."
+"\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
+"tools."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
@@ -3129,6 +3130,32 @@ msgstr "ꯂꯥꯏ ꯑꯗꯨ ꯆꯣꯛ ꯗ꯭ꯔꯣꯏꯡ ꯑꯃꯗ ꯑꯣꯟꯊ�
 #| msgid "Click and drag to draw train track rails on your picture."
 msgid "Click and drag to add fur to your picture."
 msgstr "ꯑꯗꯣꯝꯒꯤ ꯂꯥꯏꯗ ꯇ꯭ꯔꯦꯏꯟ ꯇ꯭ꯔꯦꯛ  ꯔꯦꯜ ꯌꯦꯛꯅꯕ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ ꯑꯃꯁꯨꯡ ꯆꯤꯡꯉꯣ."
+
+#: ../../magic/src/tessell.c:114
+msgid "Tessellation Pointy"
+msgstr ""
+
+#. which == TOOL_TESSELL_TOP_TOP
+#: ../../magic/src/tessell.c:116
+msgid "Tessellation Flat"
+msgstr ""
+
+#: ../../magic/src/tessell.c:132
+#, fuzzy
+#| msgid "Click and drag to draw arrows made of string art."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of pointy-topped "
+"hexagons."
+msgstr "ꯁ꯭ꯇ꯭ꯔꯤꯡ ꯑꯥꯔ꯭ꯠꯅ ꯁꯦꯝꯕ ꯇꯦꯟꯖꯩꯁꯤꯡ ꯌꯦꯛꯅꯕ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ ꯑꯃꯁꯨꯡ ꯆꯤꯡꯉꯣ."
+
+#. which == TOOL_TESSELL_FLAT_TOP
+#: ../../magic/src/tessell.c:134
+#, fuzzy
+#| msgid "Click and drag to draw arrows made of string art."
+msgid ""
+"Click and drag to draw a repeating tessellating pattern of flat-topped "
+"hexagons."
+msgstr "ꯁ꯭ꯇ꯭ꯔꯤꯡ ꯑꯥꯔ꯭ꯠꯅ ꯁꯦꯝꯕ ꯇꯦꯟꯖꯩꯁꯤꯡ ꯌꯦꯛꯅꯕ ꯀ꯭ꯂꯤꯛ ꯇꯧꯔꯣ ꯑꯃꯁꯨꯡ ꯆꯤꯡꯉꯣ."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"

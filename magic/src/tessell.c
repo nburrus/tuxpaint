@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: October 8, 2024
+  Last updated: October 9, 2024
 */
 
 #include <stdio.h>
@@ -34,6 +34,12 @@
 
 #define REPEAT_CNT 3
 #define SIN_60DEG 0.866025403784439
+
+enum {
+  TOOL_TESSELL_POINTY_TOP,
+  TOOL_TESSELL_FLAT_TOP,
+  NUM_TOOLS
+};
 
 static Mix_Chunk *tessell_snd;
 static int tessell_radius = 16, tessell_width, tessell_height;
@@ -87,39 +93,48 @@ int tessell_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint
 
 int tessell_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
 {
-  return (1);
+  return (NUM_TOOLS);
 }
 
-SDL_Surface *tessell_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *tessell_get_icon(magic_api * api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/xor.png", api->data_directory); // FIXME
+  if (which == TOOL_TESSELL_POINTY_TOP)
+    snprintf(fname, sizeof(fname), "%simages/magic/tessellation-pointy.png", api->data_directory);
+  else // which == TOOL_TESSELL_FLAT_TOP
+    snprintf(fname, sizeof(fname), "%simages/magic/tessellation-flat.png", api->data_directory);
 
   return (IMG_Load(fname));
 }
 
-char *tessell_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+char *tessell_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
 {
-  return (strdup(gettext("Tessellation")));
+  if (which == TOOL_TESSELL_POINTY_TOP)
+    return (strdup(gettext("Tessellation Pointy")));
+  else // which == TOOL_TESSELL_TOP_TOP
+    return (strdup(gettext("Tessellation Flat")));
 }
 
 int tessell_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
-  return MAGIC_TYPE_PAINTING;
+  return MAGIC_TYPE_PATTERN_PAINTING;
 }
 
-int tessell_get_order(int which ATTRIBUTE_UNUSED)
+int tessell_get_order(int which)
 {
-  return 800;
+  return 300 + which;
 }
 
-char *tessell_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+char *tessell_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode ATTRIBUTE_UNUSED)
 {
-  return (strdup(gettext("Click and drag to draw a repeating tessellating pattern.")));
+  if (which == TOOL_TESSELL_POINTY_TOP)
+    return (strdup(gettext("Click and drag to draw a repeating tessellating pattern of pointy-topped hexagons.")));
+  else // which == TOOL_TESSELL_FLAT_TOP
+    return (strdup(gettext("Click and drag to draw a repeating tessellating pattern of flat-topped hexagons.")));
 }
 
-static void do_tessell_circle(void *ptr, int which ATTRIBUTE_UNUSED,
+static void do_tessell_circle(void *ptr, int which,
                           SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
 {
   int xx, yy, rx, ry, sx, sy;
@@ -135,10 +150,20 @@ static void do_tessell_circle(void *ptr, int which ATTRIBUTE_UNUSED,
         {
           for (rx = -REPEAT_CNT; rx <= REPEAT_CNT; rx++)
           {
-            sx = rx * tessell_width;
-            if (abs(ry) % 2 == 1)
-              sx += tessell_width / 2;
-            sy = ry * tessell_height;
+            if (which == TOOL_TESSELL_POINTY_TOP)
+            {
+              sx = rx * tessell_width;
+              if (abs(ry) % 2 == 1)
+                sx += tessell_width / 2;
+              sy = ry * tessell_height;
+            }
+            else // which == TOOL_TESSELL_FLAT_TOP
+            {
+              sx = rx * tessell_width;
+              sy = ry * tessell_height;
+              if (abs(rx) % 2 == 1)
+                sy += tessell_height / 2;
+            }
 
             api->putpixel(canvas, x + xx + sx, y + yy + sy, tessell_color);
           }
@@ -149,7 +174,7 @@ static void do_tessell_circle(void *ptr, int which ATTRIBUTE_UNUSED,
 }
 
 void tessell_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
 {
   api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_tessell_circle);
 
@@ -161,8 +186,8 @@ void tessell_drag(magic_api * api, int which, SDL_Surface * canvas,
   api->playsound(tessell_snd, (x * 255) / canvas->w, 255);
 }
 
-void tessell_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
+void tessell_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
+               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
 {
   tessell_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
@@ -193,7 +218,7 @@ int tessell_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUT
 }
 
 void tessell_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+                  int which, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
 {
   int tessell_mult;
 
@@ -202,8 +227,16 @@ void tessell_switchin(magic_api * api ATTRIBUTE_UNUSED,
   else
     tessell_mult = canvas->h / (REPEAT_CNT + 1);
 
-  tessell_width = tessell_mult;
-  tessell_height = tessell_mult * SIN_60DEG;
+  if (which == TOOL_TESSELL_POINTY_TOP)
+  {
+    tessell_width = tessell_mult;
+    tessell_height = tessell_mult * SIN_60DEG;
+  }
+  else // which == TOOL_TESSELL_FLAT_TOP
+  {
+    tessell_width = tessell_mult * SIN_60DEG;
+    tessell_height = tessell_mult;
+  }
 }
 
 void tessell_switchout(magic_api * api ATTRIBUTE_UNUSED,
@@ -217,7 +250,7 @@ int tessell_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 }
 
 
-Uint8 tessell_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+Uint8 tessell_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 8;
 }
