@@ -7395,6 +7395,10 @@ static void blit_brush(int x, int y, int direction, double rotation, int *w, int
 
         if (brush_frame_surf != NULL)
         {
+          /* Ensure any semi-transparent areas or edges match the same color as we're painting
+             (and not cause a black halo; see https://sourceforge.net/p/tuxpaint/bugs/259/ -bjk 2024.10.11) */
+          SDL_FillRect(brush_frame_surf, NULL, SDL_MapRGBA(brush_frame_surf->format, color_hexes[cur_color][0], color_hexes[cur_color][1], color_hexes[cur_color][2], 0));
+
           /* 2021/09/28 SDL(2)_gfxBlitRGBA() is not available in the SDL2_gfx library, using plain SDL_BlitSurface() instead. Pere
              SDL_gfxBlitRGBA(img_cur_brush, &src, brush_frame_surf, NULL); */
           SDL_BlitSurface(img_cur_brush, &src, brush_frame_surf, NULL);
