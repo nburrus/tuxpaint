@@ -6,7 +6,7 @@
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                október 9, 2024
+                               október 10, 2024
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -104,7 +104,11 @@ D. What's New in Tux Paint version 0.9.34?
     template or starter background, upon which the drawing was based.
 
 New brushes
-    New brushes for the Paint and Lines tools: Fluff (gradient).
+    New brushes for the Paint and Lines tools: Fluff (gradient) and Watercolor
+    splotches.
+New brush option
+    Brushes may be given a "chaotic" setting, causing them to rotate
+    continuously while drawing with them.
 New Magic tool: Comic dots
     Draws a repeating dot pattern, simulating the "Ben Day process" used in
     early comic books.

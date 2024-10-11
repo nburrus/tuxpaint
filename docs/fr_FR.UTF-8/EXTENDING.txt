@@ -5,7 +5,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                avril 29, 2024
+                               octobre 10, 2024
 
 +-------------------------------------------------------------+
 |                     Table des matières                      |
@@ -281,11 +281,21 @@ Pinceaux tournants
 
 
 
-Pinceaux animés orientables ou tournants
+Chaotic Brushes
 
-    Vous pouvez mélanger animation et orientation (ou rotation) dans un même
-    pinceau. Utilisez les deux options ("frames=N" et "directional" ou "rotate)
-    en deux lignes séparées dans le fichier ".dat" qui concerne le pinceau.
+    As of Tux Paint version 0.9.34, brushes can be configured to continuously
+    pick random directions as you draw with them.
+
+    Ajoute une ligne contenant le mot "chaotic" au fichier de données brosse.
+
+
+
+Animated Directional, Rotating, or Chaotic Brushes
+
+    You may mix both animated and either directional, rotating, or chaotic
+    features into one brush. Use both options desired ("frames=N" and "
+    directional", "rotate", or "chaotic"), in separate lines in the brush's
+    ".dat" file.
 
     Pour les pinceaux directionnels, disposez le pinceau de manière à ce que
     chaque ensemble 3x3 de formes orientables soit disposé sur une grande image

@@ -5,7 +5,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              29 de Abril de 2024
+                             10 de Outubro de 2024
 
 +-------------------------------------------------------------+
 |                           Índice                            |
@@ -275,11 +275,22 @@ Rotating Brushes
 
 
 
-Animated Directional or Rotating Brushes
+Chaotic Brushes
 
-    You may mix both animated and either directional or rotating features into
-    one brush. Use both options desired ("frames=N" and "directional" or "
-    rotate"), in separate lines in the brush's ".dat" file.
+    As of Tux Paint version 0.9.34, brushes can be configured to continuously
+    pick random directions as you draw with them.
+
+    Engada unha liña que conteña a palabra «chaotic» ao ficheiro de datos
+    debrush's.
+
+
+
+Animated Directional, Rotating, or Chaotic Brushes
+
+    You may mix both animated and either directional, rotating, or chaotic
+    features into one brush. Use both options desired ("frames=N" and "
+    directional", "rotate", or "chaotic"), in separate lines in the brush's
+    ".dat" file.
 
     For directional brushes, lay the brush out so that each 3x3 set of
     directional shapes are laid out across a wide PNG image. For example, if
