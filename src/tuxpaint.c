@@ -7403,13 +7403,13 @@ static void blit_brush(int x, int y, int direction, double rotation, int *w, int
           /* 2021/09/28 SDL(2)_gfxBlitRGBA() is not available in the SDL2_gfx library, using plain SDL_BlitSurface() instead. Pere
              SDL_gfxBlitRGBA(img_cur_brush, &src, brush_frame_surf, NULL); */
           SDL_BlitSurface(img_cur_brush, &src, brush_frame_surf, NULL);
-          rotated_brush = rotozoomSurface(brush_frame_surf, rotation, 2.0, SMOOTHING_ON);
+          rotated_brush = rotozoomSurface(brush_frame_surf, rotation, 1.0, SMOOTHING_ON);
           SDL_FreeSurface(brush_frame_surf);
         }
       }
       else
       {
-        rotated_brush = rotozoomSurface(img_cur_brush, rotation, 2.0, SMOOTHING_ON);
+        rotated_brush = rotozoomSurface(img_cur_brush, rotation, 1.0, SMOOTHING_ON);
       }
 
       if (rotated_brush != NULL)
