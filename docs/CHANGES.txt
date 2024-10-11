@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.October.9 (0.9.34)
+2024.October.10 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -131,6 +131,9 @@ https://tuxpaint.org/
 
     * French translation
       Jacques Chion <jacques.chion@orange.fr>
+
+    * Japanese translation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
     * Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
