@@ -7391,13 +7391,8 @@ static void blit_brush(int x, int y, int direction, double rotation, int *w, int
         SDL_Surface *brush_frame_surf;
 
         brush_frame_surf =
-          SDL_CreateRGBSurface(img_cur_brush->flags,
-                               src.w,
-                               src.h,
-                               img_cur_brush->format->BitsPerPixel,
-                               img_cur_brush->format->Rmask,
-                               img_cur_brush->format->Gmask,
-                               img_cur_brush->format->Bmask, img_cur_brush->format->Amask);
+          SDL_CreateRGBSurface(0, src.w, src.h, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+
         if (brush_frame_surf != NULL)
         {
           /* 2021/09/28 SDL(2)_gfxBlitRGBA() is not available in the SDL2_gfx library, using plain SDL_BlitSurface() instead. Pere
