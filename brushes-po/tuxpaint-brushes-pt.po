@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-09-17 00:22:51+0000\n"
+"POT-Creation-Date: 2024-10-11 06:37:02+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: \n"
@@ -88,3 +88,7 @@ msgstr "Um pincel minúsculo, de 1 por 1 pixel."
 #: ../data/brushes/vine.txt
 msgid "Draw with leafy vines."
 msgstr "Desenhar com trepadeiras."
+
+#: ../data/brushes/watercolor-texture.txt
+msgid "Watercolor splotches."
+msgstr ""

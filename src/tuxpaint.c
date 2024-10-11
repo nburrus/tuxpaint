@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 25, 2024
+  June 14, 2002 - October 10, 2024
 */
 
 #include "platform.h"
@@ -1941,6 +1941,7 @@ static int *brushes_spacing = NULL;
 static int *brushes_spacing_default = NULL;
 static short *brushes_directional = NULL;
 static short *brushes_rotate = NULL;
+static short *brushes_chaotic = NULL;
 static char **brushes_descr = NULL;
 static Uint8 *brushes_descr_localized = NULL;
 
@@ -1974,7 +1975,8 @@ enum
 
 static SDL_Surface *img_cur_brush;
 static int img_cur_brush_frame_w, img_cur_brush_w, img_cur_brush_h,
-  img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_rotate, img_cur_brush_spacing;
+  img_cur_brush_frames, img_cur_brush_directional, img_cur_brush_rotate,
+  img_cur_brush_chaotic, img_cur_brush_spacing;
 static int brush_counter, brush_frame;
 
 enum
@@ -7198,6 +7200,10 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
     }
   }
 
+  if (brushes_chaotic[cur_brush])
+  {
+    r = (float) (rand() % 36) * 10.0;
+  }
 
   dx = x2 - x1;
   dy = y2 - y1;
@@ -7372,7 +7378,7 @@ static void blit_brush(int x, int y, int direction, double rotation, int *w, int
     src.w = img_cur_brush_w;
     src.h = img_cur_brush_h;
 
-    if (img_cur_brush_rotate && rotation != -1.0 /* only if we're moving */ )
+    if ((img_cur_brush_rotate || img_cur_brush_chaotic) && rotation != -1.0 /* only if we're moving */ )
     {
       SDL_Surface *rotated_brush;
 
@@ -7397,13 +7403,13 @@ static void blit_brush(int x, int y, int direction, double rotation, int *w, int
           /* 2021/09/28 SDL(2)_gfxBlitRGBA() is not available in the SDL2_gfx library, using plain SDL_BlitSurface() instead. Pere
              SDL_gfxBlitRGBA(img_cur_brush, &src, brush_frame_surf, NULL); */
           SDL_BlitSurface(img_cur_brush, &src, brush_frame_surf, NULL);
-          rotated_brush = rotozoomSurface(brush_frame_surf, rotation, 1.0, SMOOTHING_ON);
+          rotated_brush = rotozoomSurface(brush_frame_surf, rotation, 2.0, SMOOTHING_ON);
           SDL_FreeSurface(brush_frame_surf);
         }
       }
       else
       {
-        rotated_brush = rotozoomSurface(img_cur_brush, rotation, 1.0, SMOOTHING_ON);
+        rotated_brush = rotozoomSurface(img_cur_brush, rotation, 2.0, SMOOTHING_ON);
       }
 
       if (rotated_brush != NULL)
@@ -7413,8 +7419,11 @@ static void blit_brush(int x, int y, int direction, double rotation, int *w, int
         src.w = rotated_brush->w;
         src.h = rotated_brush->h;
 
-        dest.x = dest.x - (img_cur_brush_w >> 1) + (rotated_brush->w >> 1);
-        dest.y = dest.y - (img_cur_brush_h >> 1) + (rotated_brush->h >> 1);
+        /* Incoming x,y is based on center of an _unrotated_ brush,
+           so undo that (back to mouse position), then offset so
+           the rotated version is centered around the mouse. */
+        dest.x = dest.x + (img_cur_brush_w >> 1) - (rotated_brush->w >> 1);
+        dest.y = dest.y + (img_cur_brush_h >> 1) - (rotated_brush->h >> 1);
         dest.w = rotated_brush->w;
         dest.h = rotated_brush->h;
 
@@ -8395,6 +8404,7 @@ static void loadbrush_callback(SDL_Surface * screen,
         brushes_frames = realloc(brushes_frames, num_brushes_max * sizeof(int));
         brushes_directional = realloc(brushes_directional, num_brushes_max * sizeof(short));
         brushes_rotate = realloc(brushes_rotate, num_brushes_max * sizeof(short));
+        brushes_chaotic = realloc(brushes_chaotic, num_brushes_max * sizeof(short));
         brushes_spacing = realloc(brushes_spacing, num_brushes_max * sizeof(int));
         brushes_spacing_default = realloc(brushes_spacing_default, num_brushes_max * sizeof(int));
         brushes_descr = realloc(brushes_descr, num_brushes_max * sizeof *brushes_descr);
@@ -8413,6 +8423,7 @@ static void loadbrush_callback(SDL_Surface * screen,
       brushes_frames[num_brushes] = 1;
       brushes_directional[num_brushes] = 0;
       brushes_rotate[num_brushes] = 0;
+      brushes_chaotic[num_brushes] = 0;
       spacing = img_brushes[num_brushes]->h / 4;
 
       strcpy(strcasestr(fname, ".png"), ".dat");        /* FIXME: Use strncpy (ugh, complicated) */
@@ -8441,6 +8452,10 @@ static void loadbrush_callback(SDL_Surface * screen,
             else if (strstr(buf, "rotate") != NULL)
             {
               brushes_rotate[num_brushes] = 1;
+            }
+            else if (strstr(buf, "chaotic") != NULL)
+            {
+              brushes_chaotic[num_brushes] = 1;
             }
             else if (strstr(buf, "random") != NULL)
             {
@@ -10675,7 +10690,7 @@ static void draw_brushes(void)
 
       SDL_BlitSurface(img_brushes_thumbs[brush], &src, screen, &dest);
 
-      if (brushes_directional[brush] || brushes_rotate[brush])
+      if (brushes_directional[brush] || brushes_rotate[brush] || brushes_chaotic[brush])
       {
         dest.x = ui_btn_x + button_w - img_brush_dir->w;
         dest.y = ui_btn_y + button_h - img_brush_dir->h;
@@ -12395,6 +12410,7 @@ static void render_brush(void)
   img_cur_brush_frames = brushes_frames[cur_brush];
   img_cur_brush_directional = brushes_directional[cur_brush];
   img_cur_brush_rotate = brushes_rotate[cur_brush];
+  img_cur_brush_chaotic = brushes_chaotic[cur_brush];
   img_cur_brush_spacing = brushes_spacing[cur_brush];
 
   brush_counter = 0;
@@ -15367,6 +15383,7 @@ static void cleanup(void)
   free(brushes_frames);
   free(brushes_directional);
   free(brushes_rotate);
+  free(brushes_chaotic);
   free(brushes_spacing);
   free(brushes_spacing_default);
   for (i = 0; i < num_brushes; i++)

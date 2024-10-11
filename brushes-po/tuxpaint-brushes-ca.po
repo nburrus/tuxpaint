@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tuxpaint\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-09-17 00:22:51+0000\n"
+"POT-Creation-Date: 2024-10-11 06:37:02+0000\n"
 "PO-Revision-Date: 2024-06-04 00:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -82,3 +82,7 @@ msgstr "Un pinzell petit d'un sol píxel."
 #: ../data/brushes/vine.txt
 msgid "Draw with leafy vines."
 msgstr "Dibuixa amb fulles de vinya."
+
+#: ../data/brushes/watercolor-texture.txt
+msgid "Watercolor splotches."
+msgstr ""

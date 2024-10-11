@@ -124,6 +124,17 @@ https://tuxpaint.org/
     * Fluff (gradient variation)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Watercolor splotches
+      Based on "Watercolor Texture" from Krita <https://krita.org/>
+      Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Improvements to Paint and Line tools:
+    -------------------------------------
+    * Support for a new "chaotic" style of brush; a random direction
+      is chosen each time it is blitted. (Used by "Watercolor splotches"
+      for example.)
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Catalan translation
@@ -160,6 +171,9 @@ https://tuxpaint.org/
 
     * Being more consistent with use of `gettext()` vs `gettext_noop()`
       in Magic tools (for names & descriptions / tool-tips).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Rotated brushes were positioned incorrectly. Mended.
       Bill Kendrick <bill@newbreedsoftware.com>
 
 2024.July.17 (0.9.33)
