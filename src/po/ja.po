@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-09 19:25-0700\n"
-"PO-Revision-Date: 2024-06-15 21:26+0900\n"
+"PO-Revision-Date: 2024-10-11 13:17+0900\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -213,10 +213,9 @@ msgstr ""
 "クリックしたところの かたちにあわせてグラデーションをつけて ぬりつぶします。"
 
 #: ../fill_tools.h:67
-#, fuzzy
-#| msgid "Click and drag the mouse around to blur the image."
 msgid "Click to erase an area, filling it with the background color or image."
-msgstr "クリックしたまま マウスをうごかして えを ぼかそう。"
+msgstr ""
+"クリックしたところと おなじ いろで つながったところが ぜんぶ きえます。"
 
 #: ../fill_tools.h:80
 msgid "Solid"
@@ -387,21 +386,21 @@ msgstr "「はんこ」ツールは、スタンプやシールのセットのよ
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "New Fill mode: \"Eraser\" flood fill."
-msgstr ""
+msgstr "塗りつぶしの新しい機能: \"けしゴム\" モード"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
-#, fuzzy
-#| msgid "New Magic tools: Dither, Filled Polygon."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
 "\"Concentric Circle\", \"Concentric Square\", and a pair of \"Tessellation\" "
 "tools."
-msgstr "「まほう」ツールの追加: 「ディザ」「たかっけい」"
+msgstr ""
+"「まほう」ツールの追加: みずたま、かいてん、アスキーアート、フラクタル、みか"
+"づき、スプレー、うずまき、どうしんえん、どうしんのしかく、くりかえしもよう"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "New brush: Fluff (gradient)."
-msgstr ""
+msgstr "「ふで」ツールの追加: 毛ブラシ（階調）"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:59
 msgid "Transparent Erasers."
@@ -1753,37 +1752,33 @@ msgstr "えを クリックして ぜんたいの いろをかえよう。"
 
 #: ../../magic/src/ascii.c:51
 msgid "Typewriter"
-msgstr ""
+msgstr "タイプライター"
 
 #: ../../magic/src/ascii.c:52
 msgid "Computer"
-msgstr ""
+msgstr "しろくろ"
 
 #: ../../magic/src/ascii.c:53
 msgid "Color Computer"
-msgstr ""
+msgstr "カラー"
 
 #: ../../magic/src/ascii.c:322
 #, c-format
 msgid "ASCII %s"
-msgstr ""
+msgstr "アスキーアート"
 
 #: ../../magic/src/ascii.c:341
-#, fuzzy, c-format
-#| msgid ""
-#| "Click and drag to transform parts of your picture to circular "
-#| "brushstrokes."
+#, c-format
 msgid ""
 "Click and drag to transform parts of your drawing to ASCII art (%s style)."
 msgstr ""
-"クリックしたまま マウスを うごかして なぞったところを まるく けばけばに しよ"
-"う"
+"クリックしたまま マウスを うごかして なぞったところを アスキーアートに しよ"
+"う。（%s スタイル）"
 
 #: ../../magic/src/ascii.c:343
-#, fuzzy, c-format
-#| msgid "Click to turn your entire picture into a maze."
+#, c-format
 msgid "Click to transform your entire drawing to ASCII art (%s style)."
-msgstr "えを クリックして ぜんたいを めいろに しよう。"
+msgstr "えを クリックして ぜんたいを アスキーアートに しよう。（%s スタイル）"
 
 #: ../../magic/src/blind.c:127
 msgid "Blind"
@@ -1965,20 +1960,15 @@ msgstr ""
 
 #: ../../magic/src/comicdot.c:134
 msgid "Comic Dots"
-msgstr ""
+msgstr "みずたま"
 
 #: ../../magic/src/comicdot.c:150
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to draw an a dot pattern on your picture"
-msgstr ""
-"クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう。"
+msgstr "クリックしたまま マウスをうごかして みずたま もようを かこう。"
 
 #: ../../magic/src/comicdot.c:152
-#, fuzzy
-#| msgid "Click to saturate your entire picture."
 msgid "Click to apply a dot pattern on your entire picture"
-msgstr "えを クリックして ぜんたいを あざやかな いろに しよう。"
+msgstr "えを クリックして ぜんたいを みずたま もようで うめよう。"
 
 #: ../../magic/src/confetti.c:102
 msgid "Confetti"
@@ -1990,18 +1980,15 @@ msgstr "クリックして かみふぶきを とばそう！"
 
 #: ../../magic/src/crescent.c:107
 msgid "Crescent"
-msgstr ""
+msgstr "みかづき"
 
 #: ../../magic/src/crescent.c:122
-#, fuzzy
-#| msgid ""
-#| "Click and drag to draw a tornado stalk. Let go to finish the tornado."
 msgid ""
 "Click and drag to draw a crescent shape. Use the size option to change the "
 "shape."
 msgstr ""
-"クリックしたままマウスをうごかして くきを かこう。 マウスを はなせば はなの "
-"できあがり"
+"クリックしたままマウスをうごかして みかづきを かこう。サイズセレクタで つき"
+"の かたちを かえられるよ。"
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
@@ -2189,7 +2176,7 @@ msgstr "うらのいろを えらんでから、かどのちかくを クリッ�
 #: ../../magic/src/fractal.c:131
 #, c-format
 msgid "Fractal #%d"
-msgstr ""
+msgstr "フラクタル"
 
 #: ../../magic/src/fractal.c:153
 #, c-format
@@ -2197,24 +2184,28 @@ msgid ""
 "Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating "
 "%3$d degrees."
 msgstr ""
+"クリックしたまま マウスを うごかして かいた かたちが %2$d%% %1$s、%3$d° かい"
+"てん して くりかえされます。"
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling up"
-msgstr ""
+msgstr "かくだい"
 
 #: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
 msgid "scaling down"
-msgstr ""
+msgstr "しゅくしょう"
 
 #: ../../magic/src/fractal.c:157
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."
 msgstr ""
+"クリックしたまま マウスを うごかして かいた かたちが %2$d%% %1$s して くりか"
+"えされます。"
 
 #: ../../magic/src/fractal.c:162
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, rotating %d degrees."
-msgstr ""
+msgstr "クリックしたまま マウスを うごかして すきな かたちを かこう。"
 
 #: ../../magic/src/fretwork.c:222
 msgid "Fretwork"
@@ -2885,13 +2876,11 @@ msgstr "ピカソみたいな えが かけるよ！"
 
 #: ../../magic/src/rotate.c:108
 msgid "Rotate"
-msgstr ""
+msgstr "かいてん"
 
 #: ../../magic/src/rotate.c:123
-#, fuzzy
-#| msgid "Click and drag to turn your drawing into a newspaper."
 msgid "Click and drag to rotate your drawing."
-msgstr "クリックしたまま マウスをうごかして しんぶん みたいに しよう。"
+msgstr "クリックしたまま マウスをうごかして えを かいてん させよう。"
 
 #: ../../magic/src/sharpen.c:81
 msgid "Edges"
@@ -3002,60 +2991,47 @@ msgstr "えを クリックして ぜんたいに ゆきを ふらせよう。"
 
 #: ../../magic/src/spiral.c:45
 msgid "Spiral"
-msgstr ""
+msgstr "うずまき"
 
 #: ../../magic/src/spiral.c:46
-#, fuzzy
-#| msgid "Square"
 msgid "Square Spiral"
-msgstr "ましかく"
+msgstr "うずまき"
 
 #: ../../magic/src/spiral.c:47
-#, fuzzy
-#| msgid "Isometric Lines"
 msgid "Concentric Circles"
-msgstr "とうかく びょうが"
+msgstr "どうしんえん"
 
 #: ../../magic/src/spiral.c:48
 msgid "Concentric Squares"
-msgstr ""
+msgstr "どうしんの しかく"
 
 #: ../../magic/src/spiral.c:52
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a spiral."
-msgstr "おおきなドットのふでで せんを かこう。"
+msgstr "クリックしたまま マウスをうごかして うずまきを かこう。"
 
 #: ../../magic/src/spiral.c:53
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create a square spiral."
-msgstr "おおきなドットのふでで せんを かこう。"
+msgstr "クリックしたまま マウスをうごかして しかくい うずまきを かこう。"
 
 #: ../../magic/src/spiral.c:54
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create concentric circles."
-msgstr "おおきなドットのふでで せんを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして おなじ ちゅうしんの たくさんの えんを か"
+"こう。"
 
 #: ../../magic/src/spiral.c:55
-#, fuzzy
-#| msgid "Click and drag to draw large pixels."
 msgid "Click and drag to create concentric squares."
-msgstr "おおきなドットのふでで せんを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして おなじ ちゅうしんの たくさんの せいほうけ"
+"いを かこう。"
 
 #: ../../magic/src/spraypaint.c:104
-#, fuzzy
-#| msgid "Metal Paint"
 msgid "Spray Paint"
-msgstr "かなもの"
+msgstr "スプレー"
 
 #: ../../magic/src/spraypaint.c:119
-#, fuzzy
-#| msgid "Click and drag to draw a beam of light on your picture."
 msgid "Click and drag to add a random spray of color onto your image."
-msgstr ""
-"クリックしたまま マウスをうごかして かいちゅうでんとうの あかりで てらそう。"
+msgstr "クリックしたまま マウスをうごかして えに スプレーを かけよう。"
 
 #: ../../magic/src/stretch.c:119
 msgid "Stretch"
@@ -3135,31 +3111,31 @@ msgstr "クリックしたまま マウスをうごかして けがわを かこ
 
 #: ../../magic/src/tessell.c:114
 msgid "Tessellation Pointy"
-msgstr ""
+msgstr "くりかえしもよう"
 
 #. which == TOOL_TESSELL_TOP_TOP
 #: ../../magic/src/tessell.c:116
 msgid "Tessellation Flat"
-msgstr ""
+msgstr "くりかえしもよう"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #: ../../magic/src/tessell.c:132
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw a repeating tessellating pattern of pointy-topped "
 "hexagons."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして ちょうてんが うえの ろっかっけいの くりか"
+"えしもようを かこう。"
 
 #  msgid "Click and drag to draw train track rails on your picture."
 #. which == TOOL_TESSELL_FLAT_TOP
 #: ../../magic/src/tessell.c:134
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw a repeating tessellating pattern of flat-topped "
 "hexagons."
-msgstr "クリックしたまま マウスをうごかして くりかえしもようを かこう。"
+msgstr ""
+"クリックしたまま マウスをうごかして へんが うえの ろっかっけいの くりかえしも"
+"ようを かこう。"
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"
