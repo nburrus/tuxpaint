@@ -108,6 +108,8 @@ D. Tux Paint バージョン 0.9.34 での変更点
 New brush option
     Brushes may be given a "chaotic" setting, causing them to rotate
     continuously while drawing with them.
+New templates
+    "Clouds from an airplane" and "Lough Leane".
 New Magic tool: Comic dots
     Draws a repeating dot pattern, simulating the "Ben Day process" used in
     early comic books.
