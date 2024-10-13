@@ -155,6 +155,14 @@ https://tuxpaint.org/
       for example.)
       Bill Kendrick <bill@newbreedsoftware.com>
 
+  * New Templates:
+    --------------
+    * Clouds from an airplane
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Lough Leane
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Localization Updates:
     ---------------------
     * Catalan translation

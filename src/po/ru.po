@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 21:05-0700\n"
+"POT-Creation-Date: 2024-10-12 21:58-0700\n"
 "PO-Revision-Date: 2024-06-27 16:04+0300\n"
 "Last-Translator: Alevtina <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -446,24 +446,28 @@ msgstr ""
 msgid "New brush option: \"Chaotic\" (random direction)."
 msgstr ""
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:56
+msgid "New templates: \"Clouds from an airplane\" and \"Lough Leane\"."
+msgstr ""
+
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid "Transparent Erasers."
 msgstr "Прозрачные ластики."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
 msgid "Brushes support descriptions."
 msgstr "Описание поддержки кистей."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid "New brushes: Pencil, Acrylic, Fluff."
 msgstr "Новые кисти: Карандаш, Акриловая, Пуховая."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid "New Magic tools: Dither, Filled Polygon."
 msgstr ""
 "Новые магические инструменты: Узор из точек, Закрашенный многоугольник."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
 msgid ""
 "Updated Magic tools: 3D Glasses (now offers different anaglyph color "
 "combinations)."
@@ -471,12 +475,12 @@ msgstr ""
 "Обновлённые магические инструменты: 3D-очки (теперь предлагаются различные "
 "комбинации цветов анаглифа)"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:65
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid "Magic tools may be ungrouped (\"ungroupmagictools\")."
 msgstr ""
 "Магические инструменты могут быть разгруппированы («ungroupmagictools»)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
 msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
@@ -485,15 +489,15 @@ msgstr ""
 "Слайд-шоу&gt;Экспорт GIF теперь отображаются, а также помещаются в буфер "
 "обмена для копирования/вставки."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:67
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
 msgid "Localization updates."
 msgstr "Обновления локализации."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:68
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid "Improved word wrapping in buttons (via hyphens and soft hyphens)."
 msgstr "Улучшен перенос слов на кнопках (с помощью дефисов и мягких дефисов)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
@@ -501,7 +505,7 @@ msgstr ""
 "Рисунки, удалённые с помощью опции «Удалить» в диалоговом окне «Открыть», "
 "теперь также перемещаются в корзину рабочего стола в Haiku."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:74
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
 msgid ""
 "New Magic tools: 1-, 2-, and 3-Point Perspective line-drawing tools (and "
 "corresponding vanishing point editors)."
@@ -509,7 +513,7 @@ msgstr ""
 "Новые магические инструменты: инструменты для рисования 1-, 2- и 3-точечных "
 "перспектив (и соответствующие редакторы точек схода)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:75
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
 msgid ""
 "New Magic tools: Isometric, Dimetric, Trimetric, and Oblique line-drawing "
 "tools (and corresponding angle editors)."
@@ -517,11 +521,11 @@ msgstr ""
 "Новые магические инструменты: инструменты для рисования изометрических, "
 "диметрических и косых проекций (и соответствующие редакторы углов)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:76
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
 msgid "New Magic tools: Epitrochoid and Hypotrochoid generators."
 msgstr "Новые магические инструменты: генераторы эпитрохоид и гипотрохоид"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:77
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
 msgid ""
 "New configuration option, \"complexity\", which affects the behavior (or "
 "availability) of some Magic tools."
@@ -529,7 +533,7 @@ msgstr ""
 "Новый параметр конфигурации, «complexity», который влияет на поведение (или "
 "доступность) некоторых магических инструментов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:78
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
 msgid ""
 "Magic tools reorganized (previously ordered alphabetically by localized "
 "name)."
@@ -537,27 +541,27 @@ msgstr ""
 "Магические инструменты реорганизованы (ранее они располагались в алфавитном "
 "порядке по локализованному названию)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:79
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
 "Название и размер шрифта отображаются при выборе шрифтов в инструментах "
 "«Текст» и «Метка»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:80
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:81
 msgid "Bug-fixes and localization updates."
 msgstr "Исправление ошибок и обновление локализации."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:85
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
 msgid "New Magic tools: Loops, Ribbon, Smooth, and Squiggles."
 msgstr ""
 "Новые магические инструменты: Петли, Лента, Сглаживание и Волнистые завитки."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:86
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:87
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
 msgstr ""
 "Инструмент «Ластик» теперь предлагает нечёткие (с мягкими краями) ластики."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:87
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
 msgid ""
 "Turn saved drawings into Templates (found in the New dialog) from within Tux "
 "Paint itself (via the Open dialog). (They may subsequently be deleted from "
@@ -567,7 +571,7 @@ msgstr ""
 "«Создать») в самом Tux Paint (через диалоговое окно «Открыть»). "
 "(Впоследствии их можно удалить из диалогового окна «Создать»)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:88
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
 msgid ""
 "\"Erase\" option to remove saved drawings from the Open dialog and exported "
 "templates from the New dialog may be disabled, via \"noerase\" configuration "
@@ -577,7 +581,7 @@ msgstr ""
 "«Открыть» и экспортированных шаблонов из диалога «Создать» может быть "
 "отключена с помощью параметра конфигурации «noerase»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
 msgid ""
 "Specify the user interface font, via \"uifont\" configuration option. (List "
 "available fonts with \"--listfonts\" on the command-line.)"
@@ -586,7 +590,7 @@ msgstr ""
 "«uifont». (Список доступных шрифтов с помощью параметра «--listfonts» в "
 "командной строке)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:90
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
 msgid ""
 "Different (default) user interface fonts are once again used for under "
 "different locales."
@@ -594,7 +598,7 @@ msgstr ""
 "Для разных языков снова используются разные (по умолчанию) шрифты "
 "пользовательского интерфейса."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:91
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:92
 msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
@@ -602,17 +606,17 @@ msgstr ""
 "Незначительные улучшения кнопок выбора «специальных» цветов (пипетка, "
 "средство выбора цветов HSV и инструмент смешивания цветов)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
 msgid "Many Magic tools now offer size settings."
 msgstr "Многие магические инструменты теперь предоставляют параметры размера."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:97
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:98
 msgid "Button labels word-wrap when possible (improves legibility)."
 msgstr ""
 "Метки кнопок переносятся на новую строку, когда это возможно (так их проще "
 "читать)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:102
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
 msgid ""
 "Fifteen new magic tools have been added: Maze, Googly Eyes, Fur, Circles, "
 "Rays, 3D Glasses, Color Sep., Saturate, Desaturate, Remove Color, Keep "
@@ -623,26 +627,26 @@ msgstr ""
 "«Обесцвечивание», «Удаление цвета», «Сохранение цвета», «Калейдоскоп-4», "
 "«Калейдоскоп-6», «Калейдоскоп-8» и «Свечение»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:103
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:104
 msgid "Stamps may be rotated before being applied to the canvas."
 msgstr "Штампы можно повернуть перед нанесением на холст."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:104
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
 msgid "Shapes tool, in drag-from-corner mode, has been improved."
 msgstr "Улучшена работа инструмента «Формы» в режиме перетаскивания из угла."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:105
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
 msgid "Fill tool now offers a shaped gradient (bevel) mode."
 msgstr ""
 "Инструмент «Заливка» теперь предоставляет режим фигурного градиента (скос)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
 msgstr ""
 "Доступ к режиму стирания можно получить путём нажатия соответствующей "
 "комбинации клавиш."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:107
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
 msgid ""
 "The rainbow palette (HSV color picker) can now load the built-in color, or "
 "the colors from the pipette tool or color mixer."
@@ -651,7 +655,7 @@ msgstr ""
 "встроенный цвет или цвета из инструмента пипетки или инструмента смешивания "
 "цветов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:108
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
 msgid ""
 "Starter and Template images can specify how they should stretch, to avoid "
 "smearing when the canvas aspect ratio differs from that of the image."
@@ -660,16 +664,16 @@ msgstr ""
 "(чтобы они не смазывались, когда соотношение сторон холста отличается от "
 "соотношения сторон изображения)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:109
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:110
 msgid "The \"buttonsize\" configuration option now offers an \"auto\" setting."
 msgstr ""
 "Для параметра конфигурации «buttonsize» теперь предусмотрен вариант «auto»."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:110
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:111
 msgid "A quick start guide has been added."
 msgstr "Добавлено краткое руководство по началу работы."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:115
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
 msgid ""
 "Tux Paint's Color palette includes a new Color Mixer option, which allows "
 "users to combine different proportions of primary colors (red, yellow, and "
@@ -681,7 +685,7 @@ msgstr ""
 "(красный, жёлтый и синий) и оттенки (белый, серый и чёрный) для создания "
 "новых цветов; это похоже на смешивание красок на палитре."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:117
 msgid ""
 "The Color Picker option, which previously offered a static palette of around "
 "sixty-five thousand color choices, now supports separate hue, saturation, "
@@ -693,7 +697,7 @@ msgstr ""
 "оттенка, насыщенности и значения, что позволяет пользователям выбирать из "
 "более чем шестнадцати миллионов цветов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:117
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:118
 msgid ""
 "Also, a keyboard shortcut is now available for quick access to the Color "
 "Selector — the \"pipette\" tool used for picking colors from the current "
@@ -703,7 +707,7 @@ msgstr ""
 "цвета — инструменту «пипетки», который используется для выбора цветов из "
 "текущего рисунка."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:118
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:119
 msgid ""
 "The Paint and Lines tools now provide a way to adjust the spacing of "
 "brushes, allowing dotted lines or smearing effects to be made. Many brushes "
@@ -713,7 +717,7 @@ msgstr ""
 "для кистей, что позволяет создавать пунктирные линии или эффекты смазывания. "
 "Кроме того, для многих кистей были улучшены стандартные значения интервалов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:119
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:120
 msgid ""
 "Two new variations of the Zoom Magic Tool, Tile Zoom and Rush, have been "
 "added. When shrinking a drawing with Tile Zoom, it replicates the drawing "
@@ -726,7 +730,7 @@ msgstr ""
 "происходит заполнения холста сплошным фоновым цветом). После использования "
 "инструмента «Рывок» рисунок смазывается."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:120
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:121
 msgid ""
 "Tux Paint's Shapes tool now offers hexagon (6-sided) and heptagon (7-sided) "
 "polygons. For shapes which can be stretched (rectangle, oval, etc.), the "
@@ -740,7 +744,7 @@ msgstr ""
 "перечень сведений, которые показываются при использовании некоторых других "
 "инструментов."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:121
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:122
 msgid ""
 "Keyboard shortcuts, such as [Control]+[S] to save a drawing, are now "
 "accessed with the more traditional [⌘ Command] key when using Tux Paint on "
@@ -753,7 +757,7 @@ msgstr ""
 "клавиатуры Tux Paint. Выполнена работа по усовершенствованию документации "
 "пользователя."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:126
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:127
 msgid ""
 "Tux Paint's Paint and Line tools now support brushes that rotate based on "
 "the angle of the stroke. This new rotation feature, as well as the older "
@@ -768,7 +772,7 @@ msgstr ""
 "инструмент «Заливка» теперь предоставляет режим рисования от руки для "
 "интерактивного раскрашивания в пределах ограниченной области."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:127
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:128
 msgid ""
 "Six new Magic tools have been added to Tux Paint. Panels shrinks and "
 "duplicates the drawing into a 2-by-2 grid, which is useful for making four-"
@@ -787,7 +791,7 @@ msgstr ""
 "«Плавные 7 цветов» предоставляет вариант классического инструмента «7 "
 "цветов» Tux Paint, обеспечивая более плавные переходы."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:128
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:129
 msgid ""
 "A number of existing Magic tools have been updated, as well. Improvements "
 "were made to Halftone, which simulates photographs on newsprint; Cartoon, "
@@ -802,7 +806,7 @@ msgstr ""
 "«Мультфильм» и «Полутоновый оттиск», а также «Мозаика», «Мел» и «Рельеф» "
 "теперь позволяют изменять всё изображение целиком!"
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:129
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:130
 msgid ""
 "Finally, Magic tools are now grouped into collections of similar effects — "
 "painting, distorts, color filters, picture warps, pattern painting, "
@@ -814,7 +818,7 @@ msgstr ""
 "картинки, рисование по образцу, художественные эффекты и декорирование "
 "рисунков. Благодаря этому становится проще найти нужный инструмент."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:134
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:135
 msgid ""
 "Tux Paint's Fill tool now offers options to fill an area with color "
 "gradients. The \"Radial\" fill creates a circular gradient centered around "
@@ -827,7 +831,7 @@ msgstr ""
 "интерактивном режиме создавать градиенты под разными углами и разных "
 "размеров."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:135
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:136
 msgid ""
 "New Magic tools have been added to Tux Paint: \"Pixels\" makes it easier to "
 "create retro-gaming style pixel art, \"Checkerboard\" fills the entire "
@@ -839,7 +843,7 @@ msgstr ""
 "заполняет весь холст шахматным узором, а «Клонирование» позволяет "
 "дублировать части рисунка с помощью мазков кистью."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:136
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:137
 msgid ""
 "Tux Paint's user documentation has been overhauled, making localization "
 "easier. Parties interested in helping with localization are encouraged to "
@@ -849,7 +853,7 @@ msgstr ""
 "локализацию. Тем, кто готов помочь с локализацией, рекомендуется обратиться "
 "к команде Tux Paint."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:137
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:138
 msgid ""
 "Finally, a new pair of accessibility options have been added. The entire "
 "user interface can now be enlarged benefiting users with impaired vision, "
@@ -865,7 +869,7 @@ msgstr ""
 "палитры, также может быть полезна пользователям более грубых устройств ввода "
 "(например, систем отслеживания движений глаз)."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:142
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:143
 msgid ""
 "A major improvement has been made to the Shapes tool, which now provides "
 "options to choose whether shapes are drawn from the center or a corner, "
@@ -875,7 +879,7 @@ msgstr ""
 "следует ли рисовать формы из центра или из угла, что упрощает работу с этим "
 "инструментом во всех ситуациях."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:143
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:144
 msgid ""
 "The on-screen keyboard, an accessibility feature optionally available when "
 "using the Text and Label tools, now appears larger on bigger displays; "
@@ -886,7 +890,7 @@ msgstr ""
 "больших экранах; это удобно для пользователей более грубых устройств ввода, "
 "таких как системы отслеживания движений глаз."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:144
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:145
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
@@ -895,7 +899,7 @@ msgstr ""
 "реализованы плавные, непрерывные мазки при быстром перемещении указателя "
 "мыши."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:145
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:146
 msgid ""
 "Finally, this newest version adds options to export individual drawings and "
 "GIF animations, making it easy to share pictures, cartoons, and slideshows "
@@ -905,7 +909,7 @@ msgstr ""
 "рисунков и GIF-анимаций, что позволяет с лёгкостью делиться картинками, "
 "мультфильмами и слайдшоу с другими пользователями."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:150
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:151
 msgid ""
 "The latest version has promoted the \"Fill\" tool, previously found under "
 "the \"Magic\" section of Tux Paint, to the main toolbar, where it's easier "
@@ -921,7 +925,7 @@ msgstr ""
 "можно расположить в конце этого диалога, что позволяет сосредоточить "
 "внимание на шаблонных изображениях."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:151
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:152
 msgid ""
 "Tux Paint also now makes it possible to disable stereo sound, which can "
 "benefit users with a hearing impairment, or in situations where only one "
@@ -931,7 +935,7 @@ msgstr ""
 "пользователям с нарушениями слуха или в тех случаях, когда доступен только "
 "один динамик."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:156
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:157
 msgid ""
 "New in this version are a \"color picker\", which allows any color within a "
 "drawing to be chosen using the pointer, and a set of three-, four-, and five-"
@@ -941,7 +945,7 @@ msgstr ""
 "на рисунке с помощью указателя мыши, а также возможность создавать трёх-, "
 "четырёх- и пятиконечные формы звёзд."
 
-#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:157
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:158
 msgid ""
 "The latest version also incorporates a number of new translations, bringing "
 "the number of supported languages up to nearly 130: Bengali, Bodo, Dogri, "
