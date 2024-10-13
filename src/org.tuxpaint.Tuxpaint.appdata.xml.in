@@ -47,11 +47,11 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.34" date="2024-10-10">
+    <release version="0.9.34" date="2024-10-12">
       <description>
         <p>New Fill mode: "Eraser" flood fill.</p>
         <p>New Magic tools: "Comic dots", "Rotate", various "ASCII" art, various "Fractals", "Crescent", "Spray Paint", "Spiral", "Square Spiral", "Concentric Circle", "Concentric Square", and a pair of "Tessellation" tools.</p>
-        <p>New brush: Fluff (gradient).</p>
+        <p>New brushes: Fluff (gradient), Watercolor splotches, Spines.</p>
         <p>New brush option: "Chaotic" (random direction).</p>
       </description>
     </release>

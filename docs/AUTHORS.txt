@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - October 9, 2024
+June 17, 2002 - October 12, 2024
 
 * Design and Coding:
 

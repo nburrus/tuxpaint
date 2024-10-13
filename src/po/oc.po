@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-10 23:38-0700\n"
+"POT-Creation-Date: 2024-10-12 20:21-0700\n"
 "PO-Revision-Date: 2021-06-06 18:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan (post 1500) <oc@li.org>\n"
@@ -389,7 +389,7 @@ msgid ""
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New brush: Fluff (gradient)."
+msgid "New brushes: Fluff (gradient), Watercolor splotches, Spines."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -1000,7 +1000,7 @@ msgstr "Nòu"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9910
+#: ../tools.h:97 ../tuxpaint.c:9909
 msgid "Open"
 msgstr "Dubrir"
 
@@ -1379,90 +1379,90 @@ msgid "Please wait…"
 msgstr "Esperatz…"
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9913
+#: ../tuxpaint.c:9912
 msgid "Erase"
 msgstr ""
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9916
+#: ../tuxpaint.c:9915
 msgid "Slides"
 msgstr ""
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9919
+#: ../tuxpaint.c:9918
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9922
+#: ../tuxpaint.c:9921
 msgid "Export"
 msgstr "Exportar"
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9925
+#: ../tuxpaint.c:9924
 msgid "Back"
 msgstr "Tornar"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9928
+#: ../tuxpaint.c:9927
 msgid "Play"
 msgstr "Lectura"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9931
+#: ../tuxpaint.c:9930
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9934
+#: ../tuxpaint.c:9933
 msgid "Next"
 msgstr "Seguent"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9937
+#: ../tuxpaint.c:9936
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10872 ../tuxpaint.c:10875 ../tuxpaint.c:10876
+#: ../tuxpaint.c:10871 ../tuxpaint.c:10874 ../tuxpaint.c:10875
 msgid "Aa"
 msgstr ""
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14899
+#: ../tuxpaint.c:14898
 msgid "Yes"
 msgstr "Òc"
 
-#: ../tuxpaint.c:14902
+#: ../tuxpaint.c:14901
 msgid "No"
 msgstr "Non"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16178
+#: ../tuxpaint.c:16177
 msgid "Replace the picture with your changes?"
 msgstr ""
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16182
+#: ../tuxpaint.c:16181
 msgid "Yes, replace the old one!"
 msgstr ""
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16186
+#: ../tuxpaint.c:16185
 msgid "No, save a new file!"
 msgstr ""
 
-#: ../tuxpaint.c:17459
+#: ../tuxpaint.c:17458
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17465
+#: ../tuxpaint.c:17464
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1471,71 +1471,71 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:19155
+#: ../tuxpaint.c:19154
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25385
+#: ../tuxpaint.c:25384
 msgid "red"
 msgstr ""
 
-#: ../tuxpaint.c:25386
+#: ../tuxpaint.c:25385
 #, fuzzy
 #| msgid "Yellow!"
 msgid "yellow"
 msgstr "Jaune !"
 
-#: ../tuxpaint.c:25387
+#: ../tuxpaint.c:25386
 #, fuzzy
 #| msgid "Sky blue!"
 msgid "blue"
 msgstr "Blau cèl !"
 
-#: ../tuxpaint.c:25388
+#: ../tuxpaint.c:25387
 #, fuzzy
 #| msgid "White!"
 msgid "white"
 msgstr "Blanc !"
 
-#: ../tuxpaint.c:25389
+#: ../tuxpaint.c:25388
 msgid "grey"
 msgstr ""
 
-#: ../tuxpaint.c:25390
+#: ../tuxpaint.c:25389
 #, fuzzy
 #| msgid "Black!"
 msgid "black"
 msgstr "Negre !"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25395
+#: ../tuxpaint.c:25394
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr ""
 
-#: ../tuxpaint.c:25396
+#: ../tuxpaint.c:25395
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr ""
 
-#: ../tuxpaint.c:25397
+#: ../tuxpaint.c:25396
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr ""
 
-#: ../tuxpaint.c:25398
+#: ../tuxpaint.c:25397
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr ""
 
-#: ../tuxpaint.c:25399
+#: ../tuxpaint.c:25398
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 
-#: ../tuxpaint.c:25400
+#: ../tuxpaint.c:25399
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1543,22 +1543,22 @@ msgid ""
 msgstr ""
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26180 ../tuxpaint.c:26185
+#: ../tuxpaint.c:26179 ../tuxpaint.c:26184
 msgid "entirely"
 msgstr ""
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29387
+#: ../tuxpaint.c:29386
 msgid "Select a color from your drawing."
 msgstr ""
 
-#: ../tuxpaint.c:29398
+#: ../tuxpaint.c:29397
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29412
+#: ../tuxpaint.c:29411
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."
