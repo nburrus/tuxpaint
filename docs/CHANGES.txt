@@ -132,6 +132,10 @@ https://tuxpaint.org/
       Based on "Paint Splats" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
+    * Smoke
+      Based on "Smoke" from Krita <https://krita.org/>
+      Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+
     * Spines
       Based on "Spines" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
