@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 20:42-0700\n"
+"POT-Creation-Date: 2024-10-12 20:55-0700\n"
 "PO-Revision-Date: 2021-03-03 10:01+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Proxecto Trasno <proxecto@trasno.net>\n"
@@ -413,8 +413,8 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
-"New brushes: Fluff (gradient), Paint splats, Spines, Water (still), and "
-"Watercolor splotches."
+"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Paint splats\", "
+"\"Spines\", \"Water (still)\", and \"Watercolor splotches\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55

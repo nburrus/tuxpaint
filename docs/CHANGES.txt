@@ -124,8 +124,12 @@ https://tuxpaint.org/
     * Fluff (gradient variation)
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Watercolor splotches
-      Based on "Watercolor Texture" from Krita <https://krita.org/>
+    * Graphite
+      Based on "Graphite Grain" from Krita <https://krita.org/>
+      Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Paint Splats
+      Based on "Paint Splats" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
     * Spines
@@ -136,8 +140,8 @@ https://tuxpaint.org/
       Based on "Water Still" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
-    * Paint Splats
-      Based on "Paint Splats" from Krita <https://krita.org/>
+    * Watercolor splotches
+      Based on "Watercolor Texture" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Paint and Line tools:
