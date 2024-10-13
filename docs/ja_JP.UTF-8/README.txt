@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                2024年10月10日
+                                2024年10月12日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -102,8 +102,9 @@ D. Tux Paint バージョン 0.9.34 での変更点
     template or starter background, upon which the drawing was based.
 
 ブラシの追加
-    New brushes for the Paint and Lines tools: Fluff (gradient) and Watercolor
-    splotches.
+    New brushes for the Paint and Lines tools: "Fluff (gradient)", "Graphite",
+    "Paint splats", "Smoke", "Spines", "Water (still)", and "Watercolor
+    splotches".
 New brush option
     Brushes may be given a "chaotic" setting, causing them to rotate
     continuously while drawing with them.

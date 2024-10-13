@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 10 tetor 2024
+                                 12 tetor 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -104,8 +104,9 @@ D. What's New in Tux Paint version 0.9.34?
     template or starter background, upon which the drawing was based.
 
 New brushes
-    New brushes for the Paint and Lines tools: Fluff (gradient) and Watercolor
-    splotches.
+    New brushes for the Paint and Lines tools: "Fluff (gradient)", "Graphite",
+    "Paint splats", "Smoke", "Spines", "Water (still)", and "Watercolor
+    splotches".
 New brush option
     Brushes may be given a "chaotic" setting, causing them to rotate
     continuously while drawing with them.
