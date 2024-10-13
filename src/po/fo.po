@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tux Paint 0.9.18\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 20:21-0700\n"
+"POT-Creation-Date: 2024-10-12 20:35-0700\n"
 "PO-Revision-Date: 2008-01-18 12:40-0000\n"
 "Last-Translator: Lis Gøthe í Jákupsstovu <morshus@morshus.com>\n"
 "Language-Team: Faroese <morshus@morshus.com>\n"
@@ -400,7 +400,8 @@ msgid ""
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New brushes: Fluff (gradient), Watercolor splotches, Spines."
+msgid ""
+"New brushes: Fluff (gradient), Watercolor splotches, Spines, Water (still)."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55

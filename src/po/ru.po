@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TuxPaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 20:21-0700\n"
+"POT-Creation-Date: 2024-10-12 20:35-0700\n"
 "PO-Revision-Date: 2024-06-27 16:04+0300\n"
 "Last-Translator: Alevtina <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -437,7 +437,8 @@ msgstr ""
 "Новые магические инструменты: Узор из точек, Закрашенный многоугольник."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New brushes: Fluff (gradient), Watercolor splotches, Spines."
+msgid ""
+"New brushes: Fluff (gradient), Watercolor splotches, Spines, Water (still)."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 20:21-0700\n"
+"POT-Creation-Date: 2024-10-12 20:35-0700\n"
 "PO-Revision-Date: 2015-10-09 18:00+0200\n"
 "Last-Translator: inactive\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -408,7 +408,8 @@ msgid ""
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New brushes: Fluff (gradient), Watercolor splotches, Spines."
+msgid ""
+"New brushes: Fluff (gradient), Watercolor splotches, Spines, Water (still)."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55

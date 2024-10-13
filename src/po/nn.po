@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 20:21-0700\n"
+"POT-Creation-Date: 2024-10-12 20:35-0700\n"
 "PO-Revision-Date: 2024-06-02 13:17+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -397,7 +397,8 @@ msgid ""
 msgstr "Nye magiske verktøy: prikkemønster, fylte mangekantar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
-msgid "New brushes: Fluff (gradient), Watercolor splotches, Spines."
+msgid ""
+"New brushes: Fluff (gradient), Watercolor splotches, Spines, Water (still)."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55

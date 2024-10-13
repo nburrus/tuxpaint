@@ -51,7 +51,7 @@
       <description>
         <p>New Fill mode: "Eraser" flood fill.</p>
         <p>New Magic tools: "Comic dots", "Rotate", various "ASCII" art, various "Fractals", "Crescent", "Spray Paint", "Spiral", "Square Spiral", "Concentric Circle", "Concentric Square", and a pair of "Tessellation" tools.</p>
-        <p>New brushes: Fluff (gradient), Watercolor splotches, Spines.</p>
+        <p>New brushes: Fluff (gradient), Watercolor splotches, Spines, Water (still).</p>
         <p>New brush option: "Chaotic" (random direction).</p>
       </description>
     </release>

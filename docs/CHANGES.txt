@@ -129,7 +129,11 @@ https://tuxpaint.org/
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
     * Spines
-      Based on "Watercolor Texture" from Krita <https://krita.org/>
+      Based on "Spines" from Krita <https://krita.org/>
+      Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Water (still)
+      Based on "Water Still" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
   * Improvements to Paint and Line tools:
