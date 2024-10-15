@@ -1,8 +1,8 @@
               Mjeti “Magjik” i Tux Paint-it: ASCII Color Computer
 
-                                Grup: Shformime
+                            ### Grup: Shformime ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Transform your picture into colored computer "ASCII art".
 

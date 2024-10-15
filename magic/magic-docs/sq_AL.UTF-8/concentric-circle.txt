@@ -1,8 +1,8 @@
                Mjeti “Magjik” i Tux Paint-it: Concentric Circle
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw concentric circles.
 

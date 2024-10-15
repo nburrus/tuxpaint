@@ -1,8 +1,8 @@
                  Mjeti “Magjik” i Tux Paint-it: Pastë dhëmbësh
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-                 Autor: Andrew Corcoran <akanewbie@gmail.com>
+              ## Autor: Andrew Corcoran <akanewbie@gmail.com> ##
 
 Vizatoni copa të trasha ngjyre në vizatimin tuaj, që duken si pastë dhëmbësh.
 

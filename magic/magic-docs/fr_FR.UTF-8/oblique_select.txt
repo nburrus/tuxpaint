@@ -1,8 +1,8 @@
                   Outil 'Magie' de Tux Paint : Oblique Select
 
-                              Groupe: Projections
+                          ### Groupe: Projections ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Click (and drag) to position the angle that will be used with the "Oblique
 Draw" tool.

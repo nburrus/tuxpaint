@@ -1,8 +1,8 @@
                   Mjeti “Magjik” i Tux Paint-it: Kaleidoskop
 
-                           Grup: Vizatim Rregullsish
+                       ### Grup: Vizatim Rregullsish ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Ky penel vizaton në katër vende në të njëjtën kohë, duke pasqyruar
 simetrikisht, si horizontalisht, ashtu edhe vertikalisht. Përdor ngjyrën

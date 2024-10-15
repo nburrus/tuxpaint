@@ -1,8 +1,8 @@
                    Tux Paint "Magic" Tool: Tessellation Flat
 
-                            Group: Pattern Painting
+                        ### Group: Pattern Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw repeating tessellation patterns with flat-topped hexagons.
 

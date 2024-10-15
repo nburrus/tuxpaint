@@ -45,11 +45,11 @@ busque Tux Paint.
 
 Onde van os ficheiros
 
-Ficheiros estándar
+                          ### Ficheiros estándar ###
 
 Tux Paint busca os seus diferentes ficheiros de datos no directorio «data».
 
-Linux e Unix
+→ Linux e Unix ←
 
     Onde vai este directorio depende do valor estabelecido para «DATA_PREFIX»
     cando se construíu Tux Paint. Vexa a «Documentación de instalación» para
@@ -64,8 +64,8 @@ Linux e Unix
         /usr/share/tuxpaint/
 
 
-
-Windows
+     
+→ Windows ←
 
     Tux Paint busca un directorio chamado «data» no mesmo directorio que o
     executábel. Este é o directorio que utilizou o instalador ao instalar Tux
@@ -74,8 +74,8 @@ Windows
         C:\Program Files\TuxPaint\data
 
 
-
-macOS
+     
+→ macOS ←
 
     Tux Paint almacena os seus ficheiros de datos dentro da icona da aplicación
     «Tux Paint» (que en realidade é un tipo de cartafol especial en macOS e Mac
@@ -110,15 +110,15 @@ macOS
     os usuarios de Tux Paint.
 
 
+     
 
-
-Ficheiros persoais
+                          ### Ficheiros persoais ###
 
 Tamén pode crear pinceis, selos, «imaxes de comezo», modelos e tipos de letra
 no directorio da súa propia conta de usuario (cartafol) para que Tux Paint
 poida atopalos.
 
-Windows
+→ Windows ←
 
     O seu cartafol persoal de Tux Paint almacénase nos seus «Datos da
     aplicación» persoais. Por exemplo, nos Windows máis recentes:
@@ -126,8 +126,8 @@ Windows
         C:\Users\nome de usuario\AppData\Roaming\TuxPaint\
 
 
-
-macOS
+     
+→ macOS ←
 
     Your personal Tux Paint folder is stored in your personal 
     "Application Support" folder:
@@ -135,8 +135,8 @@ macOS
         /Users/nome de usuario/Library/Application Support/TuxPaint/
 
 
-
-Linux e Unix
+     
+→ Linux e Unix ←
 
     Your personal Tux Paint files go into a 'hidden directory' found in your
     account's home directory: "/home/nome de usuario/.tuxpaint/".
@@ -144,7 +144,7 @@ Linux e Unix
     Non esqueza o punto («.») antes de «tuxpaint»!
 
 
-
+     
 
 Para engadir os seus propios pinceis, selos, «imaxes de comezo», modelos e
 tipos de letra, cree subdirectorios no seu directorio persoal de Tux Paint
@@ -166,7 +166,7 @@ transparente.
 Os píxeles de escala de grises no pincel PNG debuxaranse empregando a cor
 seleccionada actualmente en Tux Paint. Os píxeles de cor tinguiranse.
 
-Brush Descriptive Text
+                        ### Brush Descriptive Text ###
 
 Tux Paint will display descriptive text when a brush is selected. These are
 placed in plain text files with the same name as the PNG, but with a ".txt"
@@ -176,7 +176,7 @@ in the same directory.)
 The first line of the text file will be used as the US English description of
 the brush's image. It must be encoded in UTF-8.
 
-Compatibilidade da localización
+→ Compatibilidade da localización ←
 
     Pódense engadir liñas adicionais ao ficheiro de texto para fornecer
     traducións da descrición, que se amosarán cando Tux Paint estea a
@@ -197,17 +197,17 @@ Compatibilidade da localización
     Paint, utilízase o texto en inglés dos EUA.
 
 
-
-Usuarios de Windows
+     
+→ Usuarios de Windows ←
 
     Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese de
     gardalos como texto simple e asegúrese de que teñen unha extensión «.txt»
     ao final do nome do ficheiro.
 
 
+     
 
-
-Opcións de pinceis
+                          ### Opcións de pinceis ###
 
 Ademais de a graphical shape, a brushes tamén se lle poden dar outros
 atributos. Para facelo, cómpre crear un «ficheiro de datos» para brush.
@@ -219,7 +219,7 @@ O ficheiro ten o mesmo nome que a imaxe PNG, pero unha extensión «.dat». (p.
 ex.: o ficheiro de datos de «pincel.png» é o ficheiro de texto «pincel.dat»,
 que se atopa no mesmo directorio.)
 
-Espazado do pincel
+→ Espazado do pincel ←
 
     A partir da versión 0.9.16 de Tux Paint, agora pode especificar o espazado
     para os pinceis (é dicir, a frecuencia coa que se debuxan). De xeito
@@ -230,8 +230,8 @@ Espazado do pincel
     número, máis veces se debuxa o pincel.)
 
 
-
-Pinceis animados
+     
+→ Pinceis animados ←
 
     A partir da versión 0.9.16 de Tux Paint, pode crear pinceis animados. A
     medida que se usa o pincel, debúxase cada cadro da animación.
@@ -246,8 +246,8 @@ Pinceis animados
     sequentially, also add a line containing "random" to the brush's data file.
 
 
-
-Pinceis direccionais
+     
+→ Pinceis direccionais ←
 
     A partir da versión 0.9.16 de Tux Paint, pode crear pinceis direccionais. A
     medida que se usa o pincel, debúxanse diferentes formas, dependendo da
@@ -263,8 +263,8 @@ Pinceis direccionais
     debrush's.
 
 
-
-Rotating Brushes
+     
+→ Rotating Brushes ←
 
     As of Tux Paint version 0.9.27, you may now create rotating brushes. As the
     brush is used, it is rotated 360 degrees, depending on the direction the
@@ -274,8 +274,8 @@ Rotating Brushes
     debrush's.
 
 
-
-Chaotic Brushes
+     
+→ Chaotic Brushes ←
 
     As of Tux Paint version 0.9.34, brushes can be configured to continuously
     pick random directions as you draw with them.
@@ -284,8 +284,8 @@ Chaotic Brushes
     debrush's.
 
 
-
-Animated Directional, Rotating, or Chaotic Brushes
+     
+→ Animated Directional, Rotating, or Chaotic Brushes ←
 
     You may mix both animated and either directional, rotating, or chaotic
     features into one brush. Use both options desired ("frames=N" and "
@@ -299,7 +299,7 @@ Animated Directional, Rotating, or Chaotic Brushes
     the first frame, for example.)
 
 
-
+     
 
 Coloque os ficheiros PNG de pincel (e calquera ficheiro de texto de datos) no
 directorio «brushes».
@@ -315,7 +315,7 @@ crear alí subdirectorios e subsubdirectorios para organizar os selos. (Por
 exemplo, pode ter un cartafol «vacacións» con subcartafoles «samaín» e
 «nadal»).
 
-Imaxes de selos
+                            ### Imaxes de selos ###
 
 Os selos de caucho en Tux Paint poden estar formados por varios ficheiros
 separados. O único ficheiro necesario é, por suposto, a imaxe en si.
@@ -345,7 +345,7 @@ the 'SVG documentation' in Tux Paint for more information and tips.
 detalladamente como facer imaxes PNG que se adaptarán perfectamente cando se
 usen como selos en Tux Paint.
 
-Texto descritivo do selo
+                       ### Texto descritivo do selo ###
 
 Tux Paint amosará texto descritivo cando se seleccione un selo. Estes colócanse
 en ficheiros de texto sinxelo co mesmo nome que PNG ou SVG, pero cunha
@@ -355,7 +355,7 @@ almacénase en «selo.txt» no mesmo directorio.)
 A primeira liña do ficheiro de texto usarase como a descrición da imaxe do selo
 en inglés dos EUA. Debe estar codificado en UTF-8.
 
-Compatibilidade da localización
+→ Compatibilidade da localización ←
 
     Pódense engadir liñas adicionais ao ficheiro de texto para fornecer
     traducións da descrición, que se amosarán cando Tux Paint estea a
@@ -375,17 +375,17 @@ Compatibilidade da localización
     Paint, utilízase o texto en inglés dos EUA.
 
 
-
-Usuarios de Windows
+     
+→ Usuarios de Windows ←
 
     Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese de
     gardalos como texto simple e asegúrese de que teñen unha extensión «.txt»
     ao final do nome do ficheiro.
 
 
+     
 
-
-Efectos de son dos selos
+                       ### Efectos de son dos selos ###
 
 Tux Paint pode reproducir un efecto de son cando se selecciona un selo. Por
 exemplo, o son dun pato tremendo cando se selecciona un pato ou unha breve peza
@@ -394,7 +394,7 @@ formatos «WAVE (".wav")» ou «OGG Vorbis (".ogg")» e reciben o mesmo nome que
 imaxe PNG ou SVG. (p. ex.: o efecto de son de «selo.svg» é o ficheiro de son
 «selo.ogg» no mesmo directorio.)
 
-Compatibilidade da localización
+→ Compatibilidade da localización ←
 
     Para sons para distintos idiomas (p. ex.: se o son é alguén que di unha
     palabra e quere versións traducidas da palabra dita), cree tamén ficheiros
@@ -411,12 +411,12 @@ Compatibilidade da localización
     ficheiro de son «predeterminado». (por exemplo, «selo.wav»)
 
 
-
+     
 
 💡 Note: Also consider using descriptive sounds; see 'Son descritivo do selo',
 below.
 
-Son descritivo do selo
+                        ### Son descritivo do selo ###
 
 Tux Paint tamén pode reproducir un son descritivo cando se selecciona un selo.
 Por exemplo, o son de alguén que di a palabra «pato» cando selecciona un pato
@@ -425,7 +425,7 @@ en formatos «WAVE (".wav")» ou «OGG Vorbis (".ogg")» e reciben o mesmo nome 
 a imaxe PNG ou SVG, con «_desc» ao final. (p. ex.: o son descritivo de
 «selo.svg» é o ficheiro de son «selo_desc.ogg» no mesmo directorio.)
 
-Compatibilidade da localización
+→ Compatibilidade da localización ←
 
     Para sons descritivos de diferentes idiomas, cree tamén ficheiros WAV ou
     OGG con ambos «_desc» e a etiqueta local no nome do ficheiro, na forma:
@@ -441,9 +441,9 @@ Compatibilidade da localización
     ficheiro de son «predeterminado». (por exemplo, «selo_desc.wav»)
 
 
+     
 
-
-Opcións de selos
+                           ### Opcións de selos ###
 
 Ademais de a graphical shape, a textual description, a sound effect, and a
 descriptive sound, a stamps tamén se lle poden dar outros atributos. Para
@@ -456,11 +456,11 @@ O ficheiro ten o mesmo nome que a imaxe PNG or SVG, pero unha extensión «.dat�
 (p. ex.: o ficheiro de datos de «selo.png» é o ficheiro de texto «selo.dat»,
 que se atopa no mesmo directorio.)
 
-Selos de cores
+→ Selos de cores ←
 
     Os selos pódense facer «colorábeis» ou «tinguíbeis».
 
-    Colorábel
+    → Colorábel ←
 
         Os selos «colorábeis» funcionan como os pinceis: escolla o selo para
         obter a forma e logo escolla a cor que quere que sexa. (Os selos de
@@ -473,8 +473,8 @@ Selos de cores
         destamp's.
 
 
-
-    Tinguido
+         
+    → Tinguido ←
 
         Os selos «tinguidos» son semellantes aos «colorábeis», agás que se
         conservan os detalles da imaxe orixinal. (Para dicilo tecnicamente,
@@ -485,14 +485,14 @@ Selos de cores
         destamp's.
 
 
-
-    Opcións de tintura:
+         
+    → Opcións de tintura: ←
 
         Dependendo do contido do seu selo, é posíbel que queira que Tux Paint
         use un dos varios métodos para tinguilo. Engada unha das seguintes
         liñas ao ficheiro de datos do selo:
 
-        Tinguido normal — "tinter=normal" (o predeterminado)
+        → Tinguido normal — "tinter=normal" (o predeterminado) ←
             This is the normal tinting mode. First, the primary hue of the
             stamp is determined. (For example, a picture of a flower with a
             stem will have the petal color seen as the primary hue of the
@@ -503,29 +503,29 @@ Selos de cores
             the image is tinted. Anything falling within 50% of the range
             (e.g., ±27°) is altered to have the hue of the color chosen by the
             user.
-
-        Tinguido estreito — "tinter=narrow"
+             
+        → Tinguido estreito — "tinter=narrow" ←
             This like the "normal" option described above, but starts a
             narrower hue range of ±6°. Anything found within 50% of the range
             (e.g. ±9°) is tinted. If too much of your stamp is being tinted,
             try this option.
-
-        Tinguir de «calquera tonalidade» — "tinter=anyhue"
+             
+        → Tinguir de «calquera tonalidade» — "tinter=anyhue" ←
             This remaps all hues in the stamp. It works similarly to the
             "anyhue" and "narrow" options described above, but the hue range is
             ±180°.
-
-        Tinguido vectorial — "tinter=vector"
+             
+        → Tinguido vectorial — "tinter=vector" ←
             Isto asigna de «negro a través branco» a «negro a través do
             destino».
+             
 
 
+         
 
 
-
-
-
-Selos inalterábeis
+     
+→ Selos inalterábeis ←
 
     De xeito predeterminado, un selo pode inverter (poñer do revés), amosarse
     como unha imaxe reflectida ou ámbalas dúas cousas. Isto faise usando os
@@ -543,8 +543,8 @@ Selos inalterábeis
     opción «nomirror» no ficheiro de datos do selo.
 
 
-
-Tamaño inicial do selo
+     
+→ Tamaño inicial do selo ←
 
     De xeito predeterminado, Tux Paint asume que o seu selo ten o tamaño
     axeitado para ser visto sen escala nun lenzo de 608x472. Este era o tamaño
@@ -563,17 +563,17 @@ Tamaño inicial do selo
       + "scale 2.5"
       + "scale 2:5"
 
-
-Usuarios de Windows
+     
+→ Usuarios de Windows ←
 
     Use NotePad ou WordPad para editar/crear estes ficheiros. Asegúrese de
     gardalos como texto simple e asegúrese de que teñen unha extensión «.dat»
     ao final do nome do ficheiro.
 
 
+     
 
-
-Selos prereflectidos e invertidos
+                   ### Selos prereflectidos e invertidos ###
 
 Nalgúns casos, pode que queira fornecer unha versión deseñada previamente da
 imaxe reflectida, da imaxe invertida ou incluso de ámbalas dúas. Por exemplo,
@@ -615,7 +615,7 @@ Cando usa unha imaxe «de inicio», fai modificacións e a garda, a imaxe «de
 inicio» orixinal non se sobreescribe. Ademais, ao editar a súa nova imaxe, o
 contido da imaxe «de inicio» orixinal pode afectala.
 
-Imaxes «de comezo» ao estilo dun libro para colorar
+          ### Imaxes «de comezo» ao estilo dun libro para colorar ###
 
 O tipo máis básico de imaxe «de inicio» é semellante a unha imaxe dun libro
 para colorar. É un esquema dunha forma que logo pode colorar e engadir
@@ -629,7 +629,7 @@ ou SVG vectorial. Se o garda como PNG, opcionalmente pode renderizar a imaxe en
 negro e transparente no canto de en branco e negro, mais (a partir do Tux Paint
 0.9.21) isto non é necesario.
 
-Imaxes «de comezo» ao estilo dunha escena
+               ### Imaxes «de comezo» ao estilo dunha escena ###
 
 Xunto coa superposición de estilo «libro para colorar», tamén pode fornecer
 unha imaxe de fondo separada como parte dunha imaxe «de inicio». A
@@ -670,7 +670,7 @@ Paint has been quit, or another picture is loaded or a new image is created.
 (In other words, if you base a drawing on a imaxe «de comezo», it will always
 be affected by it.)
 
-Starter Options
+                            ### Starter Options ###
 
 Ademais de an image, a starters tamén se lle poden dar outros atributos. Para
 facelo, cómpre crear un «ficheiro de datos» para starter. (Note: Tux Paint
@@ -683,7 +683,7 @@ O ficheiro ten o mesmo nome que a imaxe , pero unha extensión «.dat». (p. ex.
 o ficheiro de datos de «starter.png» é o ficheiro de texto «starter.dat», que
 se atopa no mesmo directorio.)
 
-allowscale
+→ allowscale ←
 
     When a starter image is a different aspect ratio (width-to-height
     proportions) than Tux Paint's canvas, by default it will be scaled to fit
@@ -722,8 +722,8 @@ allowscale
       + The default behavior is to not allow cropping. This may be specified
         explicitly with "allowscale=none".
 
-
-background
+     
+→ background ←
 
     This option allows you to specify how Tux Paint should fill the rest of the
     canvas, when the starter does not fit in one or the other direction. By
@@ -742,8 +742,8 @@ background
     details.
 
 
-
-gravity
+     
+→ gravity ←
 
     This option allows you to specify how Tux Paint should position a starter,
     when it is being cropped in one or the other direction. By default, Tux
@@ -767,6 +767,7 @@ gravity
 
     [ Landscape-shaped image of a horizon with the sun in the middle and a
     building on the right. ]
+     
 
     Focusing on the center of a starter image stretched to fit the width of the
     canvas.
@@ -774,6 +775,7 @@ gravity
 
     [ Portrait-shaped image of a horizon with the sun in the middle and the
     left side of building on the right. ]
+     
 
     Focusing on the center of a starter image stretched to fit the height of
     the canvas.
@@ -781,12 +783,14 @@ gravity
 
     [ Landscape-shaped image of the sky with the sun at the bottom and the top
     of building on the right. ]
+     
 
     Focusing on the top of a starter image stretched to fit the width of the
     canvas.
 
 
     [ Landscape-shaped image of the ground with the sun at the top. ]
+     
 
     Focusing on the bottom of a starter image stretched to fit the width of the
     canvas.
@@ -794,13 +798,14 @@ gravity
 
     [ Portrait-shaped image of a horizon with the sun on the left and a
     building in the center. ]
+     
 
     Focusing on the right of a starter image stretched to fit the height of the
     canvas.
 
 
 
-
+     
 
 💡 Note: Templates (described below) may also have options files, and currently
 support all of the same options as starters.
@@ -842,7 +847,7 @@ or another picture is loaded or a new image is created. (In other words, if you
 base a drawing on a imaxe «modelo», it will always be affected by it.)
 
 
-Template Options
+                           ### Template Options ###
 
 Like 'Starters', a configuration file may be specified that defines how Tux
 Paint should behave when applying 'template' images to the canvas when they do
@@ -988,7 +993,7 @@ diferentes deseños).
 
 Usaremos o teclado QWERTY como exemplo:
 
-Ficheiro de visión xeral da disposición («qwerty.layout»)
+       ### Ficheiro de visión xeral da disposición («qwerty.layout») ###
 
 Este é un ficheiro de texto que especifica os outros ficheiros empregados para
 describir a disposición e as asignacións de teclas.
@@ -1006,7 +1011,7 @@ seen in the example above.
 A liña «keyboardlist» describe a que esquemas cambiar, cando o usuario preme
 nos botóns esquerdo e dereito do teclado. (Ver máis abaixo.)
 
-Ficheiro de disposición do teclado («qwerty.h_layout»)
+        ### Ficheiro de disposición do teclado («qwerty.h_layout») ###
 
 Isto describe o tamaño do teclado (como unha reixa de «largo × alto») e lista
 cada tecla co seu código numérico (ver o ficheiro «keymap», máis abaixo), o
@@ -1073,7 +1078,7 @@ actualmente descríbense a continuación.
   * 2 — disposición anterior (segundo o axuste «keyboardlist» do ficheiro de
     disposición)
 
-Ficheiro do mapa do teclado («us-intl-altgr-dead-keys.keymap»)
+    ### Ficheiro do mapa do teclado («us-intl-altgr-dead-keys.keymap») ###
 
 Este ficheiro define que códigos das teclas numéricas (vistos nos ficheiros de
 disposición de teclado, como «qwerty.h_layout» descrito anteriormente) deben
@@ -1113,7 +1118,7 @@ dispoñíbel a ferramenta de liña de ordes «xmodmap», pode executala coa opci
     keycode 62 = Shift_R NoSymbol Shift_R Shift_R
     ...
 
-Ficheiro do mapa de composición («en_US.UTF-8_Compose»)
+        ### Ficheiro do mapa de composición («en_US.UTF-8_Compose») ###
 
 Este ficheiro describe caracteres individuais que poden ser compostos por
 varias entradas. Por exemplo, pódese usar «[Composición]» seguido de «[A]» e «
@@ -1124,7 +1129,7 @@ O ficheiro que vén con Tux Paint está baseado no mapa de composición UTF-8
 actual da biblioteca Xlib dispón dunha páxina en https://www.x.org/releases/
 current/doc/libX11/i18n/compose/en_US.UTF-8.html.
 
-Ficheiro de definición Keysym («keysymdef.h»)
+             ### Ficheiro de definición Keysym («keysymdef.h») ###
 
 Este ficheiro (que é un ficheiro de cabeceira da linguaxe de programación C)
 tamén é do Sistema X Window. Define os valores Unicode de cada tecla (p. ex.:

@@ -1,8 +1,8 @@
                  Mjeti “Magjik” i Tux Paint-it: Mozaik Katror
 
-                                Grup: Shformime
+                            ### Grup: Shformime ###
 
-            Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Shndërron pjesë të fotos tuaj në një një mozaik kutish katrore.
 

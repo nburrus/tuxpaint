@@ -1,8 +1,8 @@
                         Tux Paint "Magic" Tool: Ripples
 
-                                Group: Distorts
+                            ### Group: Distorts ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Click in your picture to make water ripple distortions appear over it.
 

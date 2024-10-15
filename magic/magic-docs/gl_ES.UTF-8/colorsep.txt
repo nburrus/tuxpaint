@@ -1,8 +1,8 @@
                       Tux Paint "Magic" Tool: Color Sep.
 
-                             Group: Color Filters
+                         ### Group: Color Filters ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 This tool separates one color out of your entire picture, shifting colors away
 from each other (similar to '3D Glasses', but you may choose the any color to

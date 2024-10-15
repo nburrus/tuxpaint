@@ -1,8 +1,8 @@
                       Tux Paint "Magic" Tool: Toothpaste
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
 
 Paint thick blobs of color on your picture that look like toothpaste.
 

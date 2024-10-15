@@ -1,9 +1,10 @@
                       Outil 'Magie' de Tux Paint : Blocs
 
-                              Groupe: Distorsions
+                          ### Groupe: Distorsions ###
 
-              Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
+            ## Auteurs : Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
+                                      ##
 
 Ceci transforme l'image comme si elle était formée de blocs ("pixelisée"), là
 où vous balayez avec la souris.

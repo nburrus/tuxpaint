@@ -1,8 +1,8 @@
                  Outil 'Magie' de Tux Paint : Arc-en-ciel réel
 
-                              Groupe: Artistique
+                          ### Groupe: Artistique ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Dessine un arc transparent qui ressemble à un véritable arc-en-ciel.
 

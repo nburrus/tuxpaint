@@ -1,8 +1,8 @@
                    Outil 'Magie' de Tux Paint : Demi-teinte
 
-                              Groupe: Distorsions
+                          ### Groupe: Distorsions ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Ceci fait que votre image ressemble à du papier journal. Différentes "encres"
 cyan, magenta, jaune et noir apparaîtront sur ton dessin.

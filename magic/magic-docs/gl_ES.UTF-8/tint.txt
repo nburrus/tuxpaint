@@ -1,8 +1,8 @@
                          Tux Paint "Magic" Tool: Tint
 
-                             Group: Color Filters
+                         ### Group: Color Filters ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 This changes the color (or hue) of the parts of the picture to the selected
 color.

@@ -1,8 +1,8 @@
                         Tux Paint "Magic" Tool: Fractal
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 A set of tools that recursively repeat what you draw, scaling and/or rotating
 it as they repeat.

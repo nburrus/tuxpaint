@@ -1,8 +1,8 @@
                      Tux Paint "Magic" Tool: Kaleidoscope
 
-                            Group: Pattern Painting
+                        ### Group: Pattern Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 This paint brush draws in four places at the same time, mirroring
 symmetrically, both horizontally and vertically. It uses the currently selected

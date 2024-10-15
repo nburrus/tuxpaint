@@ -1,8 +1,8 @@
 Guide de démarrage rapide 0.9.34 pour Tux Paint
 
-Outils (dessin)
+                            ### Outils (dessin) ###
 
-🖌Peindre
+## 🖌Peindre ##
 
   * Choisissez un pinceau sur la droite.
   * Certains pinceaux sont animés 🎞, d'autres directionnels ✲, certains ont les
@@ -12,7 +12,7 @@ Outils (dessin)
   * Choisir une couleur (voir "Couleurs").
   * Cliquez/tapez et promenez-vous sur le canevas pour peindre.
 
-⌧Tampons
+## ⌧Tampons ##
 
   * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
   * Choisisez un tampon sur la droite.
@@ -30,12 +30,12 @@ Outils (dessin)
   * Quelques tampons ont des sons descriptifs; pressez sur le bouton des
     écouteurs 🎧 pour réentendre.
 
-⚟Lignes
+## ⚟Lignes ##
 
   * (Voir Peindre)
   * Cliquez/tapez puis balayez pour tracer une ligne.
 
-⭓Formes
+## ⭓Formes ##
 
   * Choisissez une forme sur la droite.
   * Choisissez si vous voulez étendre la forme à partir du centre ⧈, ou à
@@ -44,7 +44,7 @@ Outils (dessin)
     forme.
   * Balayez pour tourner, puis cliquez/tapez pur l'ajouter au dessin.
 
-🄰Texte
+## 🄰Texte ##
 
   * Choisissez une fonte sur la droite.
   * Choisissez si vous voulez que le texte soit en gras 𝗔 et/ou en italique 𝘈,
@@ -66,7 +66,7 @@ Outils (dessin)
       + Les flèches gauche/droite permet la bascule entre des dispositions de
         clavier (par ex."QWERTY" vs. "ABC")
 
-🅰Étiquette
+## 🅰Étiquette ##
 
   * (Voir texte)
   * Les étiquettes flottent 'au dessus' du dessin; vous ne pouvez pas peindre
@@ -81,7 +81,7 @@ Outils (dessin)
     en l'appliquant sur le canevas; on ne pourra plus l'éditer avec l'outil
     étiquette.
 
-🪣Remplir
+## 🪣Remplir ##
 
   * Choisissez un mode de remplissage sur la droite.
   * Choisir une couleur (voir "Couleurs").
@@ -97,7 +97,7 @@ Outils (dessin)
       + Mis en forme - Remplit la surface avec une gradation qui suit les
         contours de la surface à remplir
 
-🪄Magie
+## 🪄Magie ##
 
   * Choisissez un outil magique sur la droite.
   * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
@@ -108,26 +108,26 @@ Outils (dessin)
     📶 en bas à droite.
   * Certains outils magiques vous permettent de choisir leur couleur.
 
-🖓Défaire
+## 🖓Défaire ##
 
   * Utilisez pour annuler les actions récentes (peut être répété).
   * Shortcut: [Control]+[Z]
 
-🖒Refaire
+## 🖒Refaire ##
 
   * Utilisez pour refaire des actions annulées (peut être répété).
   * Shortcut: [Control]+[R]
 
-◪Gomme
+## ◪Gomme ##
 
   * Choisissez la taille et la forme de la gomme sur la droite.
   * Cliquez/tapez et balayez pour effacer des parties de l'image (couleur unie,
     ou image de démarrage ou modèle).
   * Raccourci : [X] et cliquez/tapez sur le dessin (pas toujours disponible)
 
-Outils (Contrôles)
+                          ### Outils (Contrôles) ###
 
-🗏Nouveau
+## 🗏Nouveau ##
 
   * Choisissez une couleur unie, une image de démarrage ou une image modèle
     pour commencer.
@@ -141,7 +141,7 @@ Outils (Contrôles)
   * Cliquez/tapez "⤺Back" pour annuler et revenir à votre dessin en cours.
   * Shortcut: [Control]+[N]
 
-🕮⮫Ouvrir
+## 🕮⮫Ouvrir ##
 
   * Choisissez un dessin déjà sauvegardé pour l'ouvrir (ou pour l'exporter ou
     l'effacer).
@@ -166,7 +166,7 @@ Outils (Contrôles)
     modèle.
   * Shortcut: [Control]+[O]
 
-🕮⮪Sauvegarder
+## 🕮⮪Sauvegarder ##
 
   * Cliquez/Tapez pour sauvegarder votre dessin.
   * Si vous aviez déjà sauvegardé, on vous demandera si on écrase la précédente
@@ -174,19 +174,19 @@ Outils (Contrôles)
     sauvegarde (avec "Fichier - Sauvegarder comme ..")
   * Shortcut: [Control]+[S]
 
-🖶Imprimer
+## 🖶Imprimer ##
 
   * Cliquez/tapez pour imprimer votre dessin.
   * Hold [Alt] or [Option] while clicking/tapping to bring up printer dialog,
     if available.
   * Shortcut: [Control]+[P]
 
-🗙Quitter
+## 🗙Quitter ##
 
   * Cliquer/Taper pour quitter Tux Paint.
   * Shortcut: [Escape]
 
-Couleurs
+                               ### Couleurs ###
 
   * Cliquez/tapez pour choisir une couleur à utiliser pour les outils Peindre,
     Lignes et Formes, et les Tampons et outils Magie qui fonctionnent avec des
@@ -214,7 +214,7 @@ Couleurs
       + Cliquez/tapez sur "⤺Back" pour annuler et abandonner le mélangeur de
         couleur.
 
-Raccourcit quand on dessine :
+                     ### Raccourcit quand on dessine : ###
 
   * [Control]+Click/tap - Quick pipette / color picker 💉 access
   * [X]+Cliquez/tapez - accès rapide à la gomme ◪

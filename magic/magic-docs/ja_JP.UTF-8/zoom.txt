@@ -1,8 +1,8 @@
                          Tux Paint "Magic" Tool: Zoom
 
-                             Group: Picture Warps
+                         ### Group: Picture Warps ###
 
-            Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Click and drag up to zoom in, or down to zoom out. (When scaling down, your
 chosen color will be used as a background color.)

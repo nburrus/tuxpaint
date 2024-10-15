@@ -1,8 +1,8 @@
                     Mjeti “Magjik” i Tux Paint-it: Fractal
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 A set of tools that recursively repeat what you draw, scaling and/or rotating
 it as they repeat.

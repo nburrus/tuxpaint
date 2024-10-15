@@ -24,12 +24,12 @@ Inkscape, a high-quality Open Source interactive drawing program available for
 Windows, macOS, and Linux. There are also other applications that can produce
 SVGs, both free/open source, and commerical/proprietary.
 
-Open Source
+→ Open Source ←
       + Inkscape — http://www.inkscape.org/
       + Karbon — https://calligra.org/karbon/
 
-
-Proprietary
+     
+→ Proprietary ←
       + CorelDRAW (Corel) — https://www.coreldraw.com/en/
       + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
       + Boxy SVG — https://boxy-svg.com/

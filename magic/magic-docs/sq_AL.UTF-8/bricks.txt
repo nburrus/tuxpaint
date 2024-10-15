@@ -1,8 +1,8 @@
                      Mjeti “Magjik” i Tux Paint-it: Tulla
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-                  Autor: Albert Cahalan <albert@users.sf.net>
+               ## Autor: Albert Cahalan <albert@users.sf.net> ##
 
 This tool intelligently paints brick patterns on the canvas. The bricks can be
 tinted various redish hues by selecting different colors in the color palette.

@@ -1,8 +1,8 @@
                       Tux Paint "Magic" Tool: Color Shift
 
-                             Group: Color Filters
+                         ### Group: Color Filters ###
 
-                 Author: Andrew Corcoran <akanewbie@gmail.com>
+              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
 
 This shifts the colors in your picture.
 

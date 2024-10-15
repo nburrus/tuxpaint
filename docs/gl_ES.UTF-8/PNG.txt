@@ -27,12 +27,12 @@ A compatibilidade con moitas cores permite utilizar imaxes de «selo de caucho»
 de calidade fotográfica en Tux Paint e a transparencia alfa permite pinceis de
 alta calidade.
 
-Como facer imaxes PNG
+                         ### Como facer imaxes PNG ###
 
 A continuación amosarase unha lista moi breve de xeitos de crear PNG ou
 converter as imaxes existentes a PNG.
 
-GIMP & Krita
+→ GIMP & Krita ←
 
     GIMP e Krita son dúas excelentes ferramentas coas que crear imaxes PNG para
     usar en Tux Paint , ambos son programas de debuxo interactivo e edición de
@@ -44,10 +44,10 @@ GIMP & Krita
     www.gimp.org/ e http://www.krita.org/ respectivamente.
 
 
+     
+→ Ferramentas da liña de ordes ←
 
-Ferramentas da liña de ordes
-
-    NetPBM
+    → NetPBM ←
 
         As ferramentas de Mapas de bits Portátil –Portable Bitmap– (coñecidas
         colectivamente como «NetPBM») son unha colección de ferramentas de liña
@@ -59,8 +59,8 @@ Ferramentas da liña de ordes
         non é así, ou para saber máis, visite http://netpbm.sourceforge.net/.
 
 
-
-    cjpeg/djpeg
+         
+    → cjpeg/djpeg ←
 
         Os programas de liña de ordes «cjpeg» e «djpeg» converten entre o
         formato NetPBM Calquera mapa portátil –Portable Any Map– (PNM) e os
@@ -69,11 +69,11 @@ Ferramentas da liña de ordes
         non é así, ou para saber máis, visite https://jpegclub.org/.
 
 
+         
 
 
-
-
-Proprietary Software for Windows
+     
+→ Proprietary Software for Windows ←
       + CorelDRAW (Corel) — http://www.corel.com/
       + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
       + Paint Shop Pro (Corel) — https://www.paintshoppro.com/
@@ -81,13 +81,13 @@ Proprietary Software for Windows
       + PIXresizer (Bluefive software) — http://bluefive.pair.com/
         pixresizer.htm
 
-
-Usuarios de Macintosh
+     
+→ Usuarios de Macintosh ←
       + CorelDRAW (Corel) — http://www.corel.com/
       + GraphicConverter (Lemke Software) — https://www.lemkesoft.de/
         mac-fotobearbeitung-mac-diashow-mac-grafikprogramm-mac-bildbetrachter/
       + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
       + Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
 
-
+     
 

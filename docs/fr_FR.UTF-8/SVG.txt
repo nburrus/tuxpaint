@@ -26,12 +26,12 @@ et disponible sous Windows, macOS et Linux. Il y a également d'autres
 programmes pour faire du SVG, à la fois gratuits/open source et commerciaux/
 propriétaires.
 
-Logiciel libre
+→ Logiciel libre ←
       + Inkscape — http://www.inkscape.org/
       + Karbon — https://calligra.org/karbon/
 
-
-Propriétaire
+     
+→ Propriétaire ←
       + CorelDRAW (Corel) — https://www.coreldraw.com/en/
       + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
       + Boxy SVG — https://boxy-svg.com/

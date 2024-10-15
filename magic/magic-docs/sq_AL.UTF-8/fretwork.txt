@@ -1,8 +1,8 @@
                     Mjeti “Magjik” i Tux Paint-it: Gdhendje
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-            Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Vizatoni një skemë zbukuruese me ndërthurje që duket si një gdhendje në dru.
 

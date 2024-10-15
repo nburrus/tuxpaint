@@ -1,8 +1,8 @@
                    Tux Paint "Magic" Tool: ASCII Typewriter
 
-                                Group: Distorts
+                            ### Group: Distorts ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Transform your picture into "ASCII art", typewriter-style.
 

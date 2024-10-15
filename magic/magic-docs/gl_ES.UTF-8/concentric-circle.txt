@@ -1,8 +1,8 @@
                    Tux Paint "Magic" Tool: Concentric Circle
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw concentric circles.
 

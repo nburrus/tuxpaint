@@ -1,8 +1,8 @@
                      Mjeti “Magjik” i Tux Paint-it: Zhurmë
 
-                                Grup: Shformime
+                            ### Grup: Shformime ###
 
-                 Autor: Andrew Corcoran <akanewbie@gmail.com>
+              ## Autor: Andrew Corcoran <akanewbie@gmail.com> ##
 
 Shtoni te vizatimi juaj zhurmë kuturu dhe statike.
 

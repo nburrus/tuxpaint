@@ -1,8 +1,8 @@
                     Mjeti “Magjik” i Tux Paint-it: Shtjellë
 
-                                Grup: Artistike
+                            ### Grup: Artistike ###
 
-            Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Vizaton në figurë një efekt shtjelle.
 

@@ -44,11 +44,11 @@ changing, or removing files where Tux Paint looks for them.
 
 Where Files Go
 
-Standard Files
+                            ### Standard Files ###
 
 Tux Paint looks for its various data files in its 'data' directory.
 
-Linux and Unix
+→ Linux and Unix ←
 
     Where this directory goes depends on what value was set for "DATA_PREFIX"
     when Tux Paint was built. See 'Install documentation' for details.
@@ -62,8 +62,8 @@ Linux and Unix
         /usr/share/tuxpaint/
 
 
-
-Windows
+     
+→ Windows ←
 
     Tux Paint looks for a directory called 'data' in the same directory as the
     executable. This is the directory that the installer used when installing
@@ -72,8 +72,8 @@ Windows
         C:\Program Files\TuxPaint\data
 
 
-
-macOS
+     
+→ macOS ←
 
     Tux Paint stores its data files inside the "Tux Paint" application icon
     (which is actually a special kind of folder on macOS & Mac OS X before it).
@@ -106,14 +106,14 @@ macOS
     Tux Paint.
 
 
+     
 
-
-Personal Files
+                            ### Personal Files ###
 
 You can also create brushes, stamps, 'starters', templates, and fonts in your
 own user account directory (folder) for Tux Paint to find.
 
-Windows
+→ Windows ←
 
     Your personal Tux Paint folder is stored in your personal "Application
     Data". For example, on newer Windows:
@@ -121,8 +121,8 @@ Windows
         C:\Users\username\AppData\Roaming\TuxPaint\
 
 
-
-macOS
+     
+→ macOS ←
 
     Your personal Tux Paint folder is stored in your personal 
     "Application Support" folder:
@@ -130,8 +130,8 @@ macOS
         /Users/username/Library/Application Support/TuxPaint/
 
 
-
-Linux and Unix
+     
+→ Linux and Unix ←
 
     Your personal Tux Paint files go into a 'hidden directory' found in your
     account's home directory: "/home/username/.tuxpaint/".
@@ -139,7 +139,7 @@ Linux and Unix
     Don't forget the period (".") before the "tuxpaint"!
 
 
-
+     
 
 To add your own brushes, stamps, 'starters,' templates, and fonts, create
 subdirectories under your personal Tux Paint directory named "brushes", "stamps
@@ -160,7 +160,7 @@ partially-transparent!
 Greyscale pixels in the brush PNG will be drawn using the currently-selected
 color in Tux Paint. Color pixels will be tinted.
 
-Brush Descriptive Text
+                        ### Brush Descriptive Text ###
 
 Tux Paint will display descriptive text when a brush is selected. These are
 placed in plain text files with the same name as the PNG, but with a ".txt"
@@ -170,7 +170,7 @@ in the same directory.)
 The first line of the text file will be used as the US English description of
 the brush's image. It must be encoded in UTF-8.
 
-Localization Support
+→ Localization Support ←
 
     Additional lines can be added to the text file to provide translations of
     the description, to be displayed when Tux Paint is running in a different
@@ -190,17 +190,17 @@ Localization Support
     running in, the US English text is used.
 
 
-
-Windows Users
+     
+→ Windows Users ←
 
     Use NotePad or WordPad to edit/create these files. Be sure to save them as
     plain-text, and make sure they have a ".txt" extension at the end of the
     filename.
 
 
+     
 
-
-Brush Options
+                             ### Brush Options ###
 
 Aside from a graphical shape, brushes can also be given other attributes. To do
 this, you need to create a 'data file' for the brush.
@@ -212,7 +212,7 @@ The file has the same name as the PNG image, but a ".dat" extension. (e.g.,
 "brush.png"'s data file is the text file "brush.dat", found in the same
 directory.)
 
-Brush Spacing
+→ Brush Spacing ←
 
     As of Tux Paint version 0.9.16, you can now specify the spacing for brushes
     (that is, how often they are drawn). By default, the spacing will be the
@@ -223,8 +223,8 @@ Brush Spacing
     often the brush is drawn.)
 
 
-
-Animated Brushes
+     
+→ Animated Brushes ←
 
     As of Tux Paint version 0.9.16, you may now create animated brushes. As the
     brush is used, each frame of the animation is drawn.
@@ -239,8 +239,8 @@ Animated Brushes
     sequentially, also add a line containing "random" to the brush's data file.
 
 
-
-Directional Brushes
+     
+→ Directional Brushes ←
 
     As of Tux Paint version 0.9.16, you may now create directional brushes. As
     the brush is used, different shapes are drawn, depending on the direction
@@ -255,8 +255,8 @@ Directional Brushes
     Add a line containing the word "directional" to the brush's data file.
 
 
-
-Rotating Brushes
+     
+→ Rotating Brushes ←
 
     As of Tux Paint version 0.9.27, you may now create rotating brushes. As the
     brush is used, it is rotated 360 degrees, depending on the direction the
@@ -265,8 +265,8 @@ Rotating Brushes
     Add a line containing the word "rotate" to the brush's data file.
 
 
-
-Chaotic Brushes
+     
+→ Chaotic Brushes ←
 
     As of Tux Paint version 0.9.34, brushes can be configured to continuously
     pick random directions as you draw with them.
@@ -274,8 +274,8 @@ Chaotic Brushes
     Add a line containing the word "chaotic" to the brush's data file.
 
 
-
-Animated Directional, Rotating, or Chaotic Brushes
+     
+→ Animated Directional, Rotating, or Chaotic Brushes ←
 
     You may mix both animated and either directional, rotating, or chaotic
     features into one brush. Use both options desired ("frames=N" and "
@@ -289,7 +289,7 @@ Animated Directional, Rotating, or Chaotic Brushes
     the first frame, for example.)
 
 
-
+     
 
 Place the brush image PNGs (and any data text files) in the "brushes"
 directory.
@@ -305,7 +305,7 @@ subdirectories and sub-subdirectories there to organize the stamps. (For
 example, you can have a "holidays" folder with "halloween" and "christmas"
 sub-folders.)
 
-Stamp Images
+                             ### Stamp Images ###
 
 Rubber Stamps in Tux Paint can be made up of a number of separate files. The
 one file that is required is, of course, the picture itself.
@@ -334,7 +334,7 @@ the 'SVG documentation' in Tux Paint for more information and tips.
 how to make PNG images which will scale perfectly when used as stamps in Tux
 Paint.
 
-Stamp Descriptive Text
+                        ### Stamp Descriptive Text ###
 
 Tux Paint will display descriptive text when a stamp is selected. These are
 placed in plain text files with the same name as the PNG or SVG, but with a
@@ -344,7 +344,7 @@ placed in plain text files with the same name as the PNG or SVG, but with a
 The first line of the text file will be used as the US English description of
 the stamp's image. It must be encoded in UTF-8.
 
-Localization Support
+→ Localization Support ←
 
     Additional lines can be added to the text file to provide translations of
     the description, to be displayed when Tux Paint is running in a different
@@ -364,17 +364,17 @@ Localization Support
     running in, the US English text is used.
 
 
-
-Windows Users
+     
+→ Windows Users ←
 
     Use NotePad or WordPad to edit/create these files. Be sure to save them as
     plain-text, and make sure they have a ".txt" extension at the end of the
     filename.
 
 
+     
 
-
-Stamp Sound Effects
+                          ### Stamp Sound Effects ###
 
 Tux Paint can play a sound effect when a stamp is selected. For example, the
 sound of a duck quaking when selecting a duck, or a brief piece of music when a
@@ -383,7 +383,7 @@ musical instrument is chosen. Files may be in "WAVE (".wav")" or "OGG Vorbis
 "stamp.svg"'s sound effect is the sound file "stamp.ogg" in the same
 directory.)
 
-Localization Support
+→ Localization Support ←
 
     For sounds for different locales (e.g., if the sound is someone saying a
     word, and you want translated versions of the word said), also create WAV
@@ -400,12 +400,12 @@ Localization Support
     the 'default' sound file. (e.g., "stamp.wav")
 
 
-
+     
 
 💡 Note: Also consider using descriptive sounds; see 'Stamp Descriptive Sound',
 below.
 
-Stamp Descriptive Sound
+                        ### Stamp Descriptive Sound ###
 
 Tux Paint can also play a descriptive sound when a stamp is selected. For
 example, the sound of someone saying the word "duck" when selecting a duck, or
@@ -414,7 +414,7 @@ the name of a musical instrument when one is chosen. Files may be in "WAVE
 or SVG image, with "_desc" at the end. (e.g., "stamp.svg"'s descriptive sound
 is the sound file "stamp_desc.ogg" in the same directory.)
 
-Localization Support
+→ Localization Support ←
 
     For descriptive sounds for different locales, also create WAV or OGG files
     with both "_desc" and the locale's label in the filename, in the form:
@@ -430,9 +430,9 @@ Localization Support
     load the 'default' sound file. (e.g., "stamp_desc.wav")
 
 
+     
 
-
-Stamp Options
+                             ### Stamp Options ###
 
 Aside from a graphical shape, a textual description, a sound effect, and a
 descriptive sound, stamps can also be given other attributes. To do this, you
@@ -445,11 +445,11 @@ The file has the same name as the PNG or SVG image, but a ".dat" extension.
 (e.g., "stamp.png"'s data file is the text file "stamp.dat", found in the same
 directory.)
 
-Colored Stamps
+→ Colored Stamps ←
 
     Stamps can be made to be either "colorable" or "tintable."
 
-    Colorable
+    → Colorable ←
 
         "Colorable" stamps they work much like brushes - you pick the stamp to
         get the shape, and then pick the color you want it to be. (Symbol
@@ -461,8 +461,8 @@ Colored Stamps
         Add a line containing the word "colorable" to the stamp's data file.
 
 
-
-    Tinted
+         
+    → Tinted ←
 
         "Tinted" stamps are similar to "colorable" ones, except the details of
         the original image are kept. (To put it technically, the original image
@@ -472,14 +472,14 @@ Colored Stamps
         Add a line containing the word "tintable" to the stamp's data file.
 
 
-
-    Tinting Options:
+         
+    → Tinting Options: ←
 
         Depending on the contents of your stamp, you might want to have Tux
         Paint use one of a number of methods when tinting it. Add one of the
         following lines to the stamp's data file:
 
-        Normal tinter — "tinter=normal" (the default)
+        → Normal tinter — "tinter=normal" (the default) ←
             This is the normal tinting mode. First, the primary hue of the
             stamp is determined. (For example, a picture of a flower with a
             stem will have the petal color seen as the primary hue of the
@@ -490,28 +490,28 @@ Colored Stamps
             the image is tinted. Anything falling within 50% of the range
             (e.g., ±27°) is altered to have the hue of the color chosen by the
             user.
-
-        Narrow tinter — "tinter=narrow"
+             
+        → Narrow tinter — "tinter=narrow" ←
             This like the "normal" option described above, but starts a
             narrower hue range of ±6°. Anything found within 50% of the range
             (e.g. ±9°) is tinted. If too much of your stamp is being tinted,
             try this option.
-
-        'Any hue' tinter — "tinter=anyhue"
+             
+        → 'Any hue' tinter — "tinter=anyhue" ←
             This remaps all hues in the stamp. It works similarly to the
             "anyhue" and "narrow" options described above, but the hue range is
             ±180°.
-
-        Vector tinter — "tinter=vector"
+             
+        → Vector tinter — "tinter=vector" ←
             This maps 'black through white' to 'black through destination'.
+             
 
 
+         
 
 
-
-
-
-Unalterable Stamps
+     
+→ Unalterable Stamps ←
 
     By default, a stamp can be flipped upside down, shown as a mirror image, or
     both. This is done using the control buttons below the stamp selector, at
@@ -528,8 +528,8 @@ Unalterable Stamps
     nomirror" to the stamp's data file.
 
 
-
-Initial Stamp Size
+     
+→ Initial Stamp Size ←
 
     By default, Tux Paint assumes that your stamp is sized appropriately for
     unscaled display on a 608x472 canvas. This was the original Tux Paint
@@ -548,17 +548,17 @@ Initial Stamp Size
       + "scale 2.5"
       + "scale 2:5"
 
-
-Windows Users
+     
+→ Windows Users ←
 
     Use NotePad or WordPad to edit/create these files. Be sure to save them as
     plain-text, and make sure they have a ".dat" extension at the end of the
     filename.
 
 
+     
 
-
-Pre-Mirrored and Flipped Stamps
+                    ### Pre-Mirrored and Flipped Stamps ###
 
 In some cases, you may wish to provide a pre-drawn version of a stamp's
 mirror-image, flipped image, or even both. For example, imagine a picture of a
@@ -598,7 +598,7 @@ When you use a 'starter' image, make modifications, and save it, the original
 'starter' image is not overwritten. Additionally, as you edit your new picture,
 the contents of the original 'starter' can affect it.
 
-Coloring-Book Style Starters
+                     ### Coloring-Book Style Starters ###
 
 The most basic kind of 'starter' is similar to a picture in a coloring book.
 It's an outline of a shape which you can then color in and add details to. In
@@ -612,7 +612,7 @@ SVG. If saving as a PNG, you may optionally render the image as
 black-and-transparent, rather than black-and-white, but (as of Tux Paint
 0.9.21) this is not required.
 
-Scene-Style Starters
+                         ### Scene-Style Starters ###
 
 Along with the 'coloring-book' style overlay, you can also provide a separate
 background image as part of a 'starter' picture. The overlay acts the same: it
@@ -651,7 +651,7 @@ allows it to continue to affect the drawing even after Tux Paint has been quit,
 or another picture is loaded or a new image is created. (In other words, if you
 base a drawing on a 'starter' image, it will always be affected by it.)
 
-Starter Options
+                            ### Starter Options ###
 
 Aside from an image, starters can also be given other attributes. To do this,
 you need to create a 'data file' for the starter. (Note: Tux Paint prior to
@@ -664,7 +664,7 @@ The file has the same name as the image, but a ".dat" extension. (e.g.,
 "starter.png"'s data file is the text file "starter.dat", found in the same
 directory.)
 
-allowscale
+→ allowscale ←
 
     When a starter image is a different aspect ratio (width-to-height
     proportions) than Tux Paint's canvas, by default it will be scaled to fit
@@ -703,8 +703,8 @@ allowscale
       + The default behavior is to not allow cropping. This may be specified
         explicitly with "allowscale=none".
 
-
-background
+     
+→ background ←
 
     This option allows you to specify how Tux Paint should fill the rest of the
     canvas, when the starter does not fit in one or the other direction. By
@@ -722,8 +722,8 @@ background
     details.
 
 
-
-gravity
+     
+→ gravity ←
 
     This option allows you to specify how Tux Paint should position a starter,
     when it is being cropped in one or the other direction. By default, Tux
@@ -747,6 +747,7 @@ gravity
 
     [ Landscape-shaped image of a horizon with the sun in the middle and a
     building on the right. ]
+     
 
     Focusing on the center of a starter image stretched to fit the width of the
     canvas.
@@ -754,6 +755,7 @@ gravity
 
     [ Portrait-shaped image of a horizon with the sun in the middle and the
     left side of building on the right. ]
+     
 
     Focusing on the center of a starter image stretched to fit the height of
     the canvas.
@@ -761,12 +763,14 @@ gravity
 
     [ Landscape-shaped image of the sky with the sun at the bottom and the top
     of building on the right. ]
+     
 
     Focusing on the top of a starter image stretched to fit the width of the
     canvas.
 
 
     [ Landscape-shaped image of the ground with the sun at the top. ]
+     
 
     Focusing on the bottom of a starter image stretched to fit the width of the
     canvas.
@@ -774,13 +778,14 @@ gravity
 
     [ Portrait-shaped image of a horizon with the sun on the left and a
     building in the center. ]
+     
 
     Focusing on the right of a starter image stretched to fit the height of the
     canvas.
 
 
 
-
+     
 
 💡 Note: Templates (described below) may also have options files, and currently
 support all of the same options as starters.
@@ -822,7 +827,7 @@ quit, or another picture is loaded or a new image is created. (In other words,
 if you base a drawing on a 'template' image, it will always be affected by it.)
 
 
-Template Options
+                           ### Template Options ###
 
 Like 'Starters', a configuration file may be specified that defines how Tux
 Paint should behave when applying 'template' images to the canvas when they do
@@ -963,7 +968,7 @@ layouts).
 
 We'll use the QWERTY keyboard as an example:
 
-Layout overview file ("qwerty.layout")
+                ### Layout overview file ("qwerty.layout") ###
 
 This is a text file that specifies the other files used to describe the layout
 and key mappings.
@@ -981,7 +986,7 @@ seen in the example above.
 The "keyboardlist" line describes which layouts to switch to, when the user
 clicks the left and right buttons on the keyboard. (See below.)
 
-Keyboard layout file ("qwerty.h_layout")
+               ### Keyboard layout file ("qwerty.h_layout") ###
 
 This describes how big the keyboard is (as a "width × height" grid), and lists
 each key with its numeric keycode (see the "keymap" file, below), the width it
@@ -1045,7 +1050,7 @@ described below.
   * 1 — next layout (per the layout file's "keyboardlist" setting)
   * 2 — previous layout (per the layout file's "keyboardlist" setting)
 
-Keymap file ("us-intl-altgr-dead-keys.keymap")
+            ### Keymap file ("us-intl-altgr-dead-keys.keymap") ###
 
 This file defines which numeric keycodes (seen in the keyboard layout files,
 such as "qwerty.h_layout" described above) should be mapped to which actual
@@ -1085,7 +1090,7 @@ keymap expressions" option, "-pke", to generate a keymap file.
     keycode 62 = Shift_R NoSymbol Shift_R Shift_R
     ...
 
-Composemap file ("en_US.UTF-8_Compose")
+                ### Composemap file ("en_US.UTF-8_Compose") ###
 
 This file describes single characters that can be composed by multiple inputs.
 For example, "[Compose]" followed by "[A]" and "[E]" can be used to create the
@@ -1096,7 +1101,7 @@ composemap that comes with X.Org's X Window system. The current version from
 the Xlib library has a web located page at https://www.x.org/releases/current/
 doc/libX11/i18n/compose/en_US.UTF-8.html.
 
-Keysym definitions file ("keysymdef.h")
+                ### Keysym definitions file ("keysymdef.h") ###
 
 This file (which is a C programming language header file) is also from the X
 Window System. It defines the Unicode values of each keycap (e.g., "XK_equal"

@@ -1,7 +1,7 @@
                                    Tux Paint
                                 version 0.9.34
 
-                         Documentation sur les options
+                     ### Documentation sur les options ###
 
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
@@ -47,11 +47,11 @@ Vous pouvez créer un fichier de configuration simple pour Tux Paint, qu'il lira
 Le fichier est simplement un fichier texte contenant les options que vous
 souhaitez activer :
 
-Utilisateurs de Linux et Unix
+                     ### Utilisateurs de Linux et Unix ###
 
 /home/nom d'utilisateur/.tuxpaintrc
 
-Fichier de configuration pour l'ensemble du système
+## Fichier de configuration pour l'ensemble du système ##
 
 Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
 système est lu. (Par défaut, cette configuration n'a pas de paramètres
@@ -59,11 +59,11 @@ activés.) Il se trouve normalement ici :
 
     /etc/tuxpaint/tuxpaint.conf
 
-Utilisateurs de macOS
+                         ### Utilisateurs de macOS ###
 
 /Users/nom d'utilisateur/Library/Application Support/TuxPaint/tuxpaint.cfg
 
-Fichier de configuration pour l'ensemble du système
+## Fichier de configuration pour l'ensemble du système ##
 
 Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
 système est lu. (Par défaut, cette configuration n'a pas de paramètres
@@ -71,7 +71,7 @@ activés.) Il se trouve normalement ici :
 
     /Library/Application Support/TuxPaint/tuxpaint.cfg
 
-Utilisateurs de Windows
+                        ### Utilisateurs de Windows ###
 
 C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
@@ -79,7 +79,7 @@ Vous pouvez utiliser NotePad ou WordPad pour créer ce fichier. Assurez-vous de
 l'enregistrer en tant que texte brut et assurez-vous que le nom de fichier ne
 contient pas ".txt" à la fin ...
 
-Fichier de configuration pour l'ensemble du système
+## Fichier de configuration pour l'ensemble du système ##
 
 Avant la lecture de ce fichier, un fichier de configuration à l'échelle du
 système est lu. (Par défaut, cette configuration n'a pas de paramètres
@@ -87,7 +87,7 @@ activés.) Il se trouve normalement ici :
 
 C:\Program Files\TuxPaint\tuxpaint.cfg
 
-Haiku Users
+                              ### Haiku Users ###
 
 /boot/home/config/settings/TuxPaint/tuxpaint.conf
 
@@ -102,11 +102,11 @@ Les paramètres suivants peuvent être définis dans le fichier de configuration
 (Les paramètres de ligne de commande les remplaceront. Reportez-vous à la
 section "Options de ligne de commande " ci-dessous.)
 
-Vidéo/Son
+                               ### Vidéo/Son ###
 
-Video
+## Video ##
 
-fullscreen=yes
+→ fullscreen=yes ←
 
     Le programme tourne en plein écran plutôt que dans une fenêtre.
 
@@ -116,15 +116,15 @@ fullscreen=yes
     l'option en ligne de commande "--windowed".
 
 
-
-fullscreen=native
+     
+→ fullscreen=native ←
 
     Le programme tourne plein écran, en adoptant la résolution actuelle de
     l'écran (définie par le système d'exploitation).
 
 
-
-windowsize=SIZE
+     
+→ windowsize=SIZE ←
 
     Exécute le programme à une taille différente (en mode fenêtré) ou à une
     résolution d'écran différente (en mode plein écran), plutôt que la valeur
@@ -146,8 +146,8 @@ windowsize=SIZE
     possibilités de l'écran, Tux Paint resdescendra aux dimensions de l'écran.
 
 
-
-orient=portrait
+     
+→ orient=portrait ←
 
     Permute les options de largeur / hauteur données à Tux Paint, utile pour
     faire pivoter la fenêtre pour les affichages de portait, comme un écran PC
@@ -159,16 +159,16 @@ orient=portrait
     l'option en ligne de commande "--orient=landscape".
 
 
-
-native=yes
+     
+→ native=yes ←
 
     Lorsque vous exécutez Tux Paint en mode plein écran, cela suppose la
     résolution actuelle de l'écran (remplaçant toute option "windowsize"), est
     celle définie par le système d'exploitation.
 
 
-
-allowscreensaver=yes
+     
+→ allowscreensaver=yes ←
 
     By default, Tux Paint prevents your system's screensaver from starting up.
     You can override this by using the "allowscreensaver" option. (You can also
@@ -182,11 +182,11 @@ allowscreensaver=yes
     "--disablescreensaver".
 
 
+     
 
+## Son ##
 
-Son
-
-nosound=yes
+→ nosound=yes ←
 
     Désactive les effets sonores. (Remarque: le fait d'appuyer sur [Alt] + [S]
     ne peut pas être utilisé pour réactiver les sons s'ils ont été désactivés à
@@ -198,8 +198,8 @@ nosound=yes
     remplacé avec l'option en ligne de commande "--sound".
 
 
-
-nostereo=yes
+     
+→ nostereo=yes ←
 
     Désactive la prise en charge de la stéréo. (Utile pour les utilisateurs
     ayant une déficience auditive avec une oreille ou dans les endroits où un
@@ -211,11 +211,11 @@ nostereo=yes
     remplacé avec l'option en ligne de commande "--stereo".
 
 
+     
 
+## Taille de l'interface ##
 
-Taille de l'interface
-
-buttonsize=SIZE
+→ buttonsize=SIZE ←
 
     Règle la taille en pixel des boutons de l'interface de Tux Paint
     (remplaçant la valeur de "48" par défaut). Utile quand on utilise des
@@ -236,8 +236,8 @@ buttonsize=SIZE
     (Une remarque apparaîtra sur le terminal en stderr.)
 
 
-
-colorsrows=ROWS
+     
+→ colorsrows=ROWS ←
 
     Combien de rangées de boutons pour les couleurs peuvent être montrées;
     utile quand on a une grande palette (voir "colorfile ci-dessus), et/ou pour
@@ -245,13 +245,13 @@ colorsrows=ROWS
     oculomètres). "ROWS" peut être entre "1" (par défaut) et "3".
 
 
+     
 
+                            ### Souris/Clavier ###
 
-Souris/Clavier
+## Curseur ##
 
-Curseur
-
-nofancycursors=yes
+→ nofancycursors=yes ←
 
     Cela désactive les formes fantaisistes de pointeur de souris dans Tux Paint
     et utilise le pointeur de souris normal de votre environnement.
@@ -265,8 +265,8 @@ nofancycursors=yes
     peut être remplacé avec l'option en ligne de commande "--fancycursors".
 
 
-
-hidecursor=yes
+     
+→ hidecursor=yes ←
 
     Cela masque complètement les formes du pointeur de la souris dans Tux
     Paint.
@@ -280,11 +280,11 @@ hidecursor=yes
     être remplacé avec l'option en ligne de commande "--showcursor".
 
 
+     
 
+## Clavier ##
 
-Clavier
-
-noshortcuts=yes
+→ noshortcuts=yes ←
 
     Cela désactive les raccourcis clavier (par exemple [Ctrl]-[S] pour
     enregistrer, [Ctrl]-[N] pour une nouvelle image, etc.)
@@ -298,11 +298,11 @@ noshortcuts=yes
     être remplacé avec l'option en ligne de commande "--shortcuts".
 
 
+     
 
+## Souris ##
 
-Souris
-
-grab=yes
+→ grab=yes ←
 
     Tux Paint essaiera de «saisir» la souris et le clavier, en sorte que la
     souris reste confinée dans la fenêtre de Tux Paint et que presque toutes
@@ -319,8 +319,8 @@ grab=yes
     remplacé avec l'option en ligne de commande "--dontgrab".
 
 
-
-nowheelmouse=yes
+     
+→ nowheelmouse=yes ←
 
     Cela désactive la prise en charge de la molette pour les souris qui en ont.
     (Normalement, la molette fait défiler le menu du sélecteur sur la droite.)
@@ -331,8 +331,8 @@ nowheelmouse=yes
     être remplacé avec l'option en ligne de commande "--wheelmouse".
 
 
-
-nobuttondistinction=yes
+     
+→ nobuttondistinction=yes ←
 
     Avant Tux Paint 0.9.15, les boutons du milieu et de droite d'une souris
     pouvaient également être utilisés pour cliquer. Dans la version 0.9.15,
@@ -351,13 +351,13 @@ nobuttondistinction=yes
     "--buttondistinction".
 
 
+     
 
+                            ### Simplification ###
 
-Simplification
+## Simplification de l'interface ##
 
-Simplification de l'interface
-
-simpleshapes=yes
+→ simpleshapes=yes ←
 
     Désactive la possibilité de rotation avec l'outil «Forme». Cliquer, faire
     glisser et relâcher, voilà tout ce qui sera possible pour dessiner une
@@ -369,8 +369,8 @@ simpleshapes=yes
     peut être remplacé avec l'option en ligne de commande "--complexshapes".
 
 
-
-nooutlines=yes
+     
+→ nooutlines=yes ←
 
     Dans ce mode, des contours beaucoup plus simples et des lignes «élastiques»
     sont affichés lors de l'utilisation des outils Ligne , Forme , Tampon et
@@ -385,8 +385,8 @@ nooutlines=yes
     être remplacé avec l'option en ligne de commande "--outlines".
 
 
-
-uppercase=yes
+     
+→ uppercase=yes ←
 
     Tout le texte sera rendu uniquement en majuscules (par exemple, "Boule"
     deviendra "BOULE"). Utile pour les enfants qui savent lire, mais qui n'ont
@@ -398,11 +398,11 @@ uppercase=yes
     être remplacé avec l'option en ligne de commande "--mixedcase".
 
 
+     
 
+## Taille initiale du tampon ##
 
-Taille initiale du tampon
-
-stampsize=SIZE
+→ stampsize=SIZE ←
 
     Utilisez cette option pour forcer Tux Paint à définir la taille de départ
     de tous les tampons. La valeur SIZE doit être comprise entre 0 (le plus
@@ -414,11 +414,11 @@ stampsize=SIZE
     standard).
 
 
+     
 
+## Simplification du contrôle ##
 
-Simplification du contrôle
-
-noquit=yes
+→ noquit=yes ←
 
     Désactive le bouton "Quitter" à l'écran et empêche la touche [Escape] de
     quitter Tux Paint .
@@ -436,8 +436,8 @@ noquit=yes
     remplacé avec l'option en ligne de commande "--quit".
 
 
-
-nostamps=yes
+     
+→ nostamps=yes ←
 
     Cette option indique à Tux Paint de ne charger aucune image de tampon en
     caoutchouc, ce qui entraîne la désactivation de l' outil Tampons .
@@ -452,8 +452,8 @@ nostamps=yes
     remplacé avec l'option en ligne de commande "--stamps".
 
 
-
-nostampcontrols=yes
+     
+→ nostampcontrols=yes ←
 
     Certaines images de l' outil Tampon peuvent être mises en miroir, inversées
     et / ou voir leur taille modifiée. Cette option désactive ces contrôles et
@@ -465,8 +465,8 @@ nostampcontrols=yes
     il peut être remplacé avec l'option en ligne de commande "--stampcontrols".
 
 
-
-nostamprotation=yes
+     
+→ nostamprotation=yes ←
 
     Cela désactive la rotation des Tampons mettant immédiatement le tampon dans
     son orientation normale (le retournement ou la réflection peuvent être
@@ -481,8 +481,8 @@ nostamprotation=yes
     il peut être remplacé avec l'option en ligne de commande "--stamprotation".
 
 
-
-nomagiccontrols=yes
+     
+→ nomagiccontrols=yes ←
 
     Certains outils Magie ont la possibilité d'agir comme un pinceau ou
     d'affecter le canevas en entier. Cette option désactive les contrôles et ne
@@ -494,8 +494,8 @@ nomagiccontrols=yes
     il peut être remplacé avec l'option en ligne de commande "--magiccontrols".
 
 
-
-nomagicsizes=yes
+     
+→ nomagicsizes=yes ←
 
     Certaibs outils Magie peuvent avoir plusieurs réglages de taille. Cette
     option annule cette possibilité et ne permet que la taille par défaut.
@@ -508,8 +508,8 @@ nomagicsizes=yes
     être remplacé avec l'option en ligne de commande "--magicsizes".
 
 
-
-ungroupmagictools=yes
+     
+→ ungroupmagictools=yes ←
 
     By default, the Magic tools in Tux Paint are organized into groups of
     similar tools (e.g., all of the color, saturation, darken/lighten tools
@@ -526,8 +526,8 @@ ungroupmagictools=yes
     "--groupmagictools".
 
 
-
-noshapecontrols=yes
+     
+→ noshapecontrols=yes ←
 
     Désactive les boutons de contrôle affichés lors de l'utilisation de l'
     outil Formes qui permettent de modifier la façon dont les formes sont
@@ -540,8 +540,8 @@ noshapecontrols=yes
     il peut être remplacé avec l'option en ligne de commande "--shapecontrols".
 
 
-
-nolabel=yes
+     
+→ nolabel=yes ←
 
     Désactive l'outil Étiquette : l'outil qui permet la saisie de texte pouvant
     être édité plus tard.
@@ -552,8 +552,8 @@ nolabel=yes
     remplacé avec l'option en ligne de commande "--label".
 
 
-
-nobrushspacing=yes
+     
+→ nobrushspacing=yes ←
 
     Désactive l'option brush spacingespacement des coups de pinceaux pour les
     outils Peindre et Lignes . L'espacement par défaut sera utilisé.
@@ -568,8 +568,8 @@ nobrushspacing=yes
     peut être remplacé avec l'option en ligne de commande "--brushspacing".
 
 
-
-complexity=COMPLEXITÉ
+     
+→ complexity=COMPLEXITÉ ←
 
     Règle le niveau de complexité (expertise) de Tux Paint, qui permet soit de
     déactiver certains outils de Magie, ou de changer leur comportement. (Par
@@ -579,19 +579,19 @@ complexity=COMPLEXITÉ
 
     La valeur COMPLEXITÉ peut l'une de celles-ci :
 
-    advanced (par défaut)
+    → advanced (par défaut) ←
         "Avancé" — Pour les utilisateurs familiers avec Tux Paint et qui
         peuvent œuvrer avec de outils plus complexes.
-
-    beginner
+         
+    → beginner ←
         "Débutant" — Pour les utilisateurs habitués à Tux Paint, mais les
         outils complexes peuvent leur causer confusion ou frustration.
-
-    novice
+         
+    → novice ←
         "Novice" — Pour les utilisateurs qui débutent avec Tux Paint, ou bien
         qui ont peu d'expérience des ordinateurs, ou bien encore ceux qui ont
         besoin d'outils spéciaux pour l'accessibilité
-
+         
 
     📜 Note : Ll'option de complexité a été ajoutée dans la version 0.9.32 de
     Tux Paint. Consultez la documentation individuelle des outils Magiei.
@@ -602,8 +602,8 @@ complexity=COMPLEXITÉ
     avec l'option en ligne de commande "--complexity=advanced".
 
 
-
-notemplateexport=yes
+     
+→ notemplateexport=yes ←
 
     Désactive la possibilité de créer de nouvelles images Modèle (basées sur
     des images sauvegardées) à partir de la boîte de dialogue Ouvrir .
@@ -618,8 +618,8 @@ notemplateexport=yes
     "--templateexport".
 
 
-
-noerase=yes
+     
+→ noerase=yes ←
 
     Désactive la possibilité d'effacer des images sauvegardées via le bouton
     "Effacer" de la boîte de dialogue Ouvrir , ou bien d'images Modèle
@@ -636,13 +636,13 @@ noerase=yes
     remplacé avec l'option en ligne de commande "--erase".
 
 
+     
 
+                                ### Langues ###
 
-Langues
+## Langue ##
 
-Langue
-
-lang=LANGUAGE
+→ lang=LANGUAGE ←
 
     Exécutez Tux Paint dans l'une des langues prises en charge. Les choix
     possibles pour la LANGUE comprennent actuellement :
@@ -904,8 +904,8 @@ lang=LANGUAGE
         +-----------------------------------------------------------------+
 
 
-
---locale LOCALE
+     
+→ --locale LOCALE ←
 
     Exécutez Tux Paint dans l'une des langues supportées. Consultez la section
     Choisir une autre langue" ci-dessous pour les chaînes de paramètres
@@ -916,8 +916,8 @@ lang=LANGUAGE
     respecte les paramètres de votre environnement, si possible.)
 
 
-
-mirrorstamps=yes
+     
+→ mirrorstamps=yes ←
 
     Pour les tampons qui peuvent être mis en miroir, cette option les définit
     par défaut sur leur forme en miroir.
@@ -932,11 +932,11 @@ mirrorstamps=yes
     "--dontmirrorstamps".
 
 
+     
 
+## Polices ##
 
-Polices
-
-sysfonts=yes
+→ sysfonts=yes ←
 
     Cette option oblige Tux Paint à essayer de charger des polices (à utiliser
     dans l'outil Texte ) à partir de votre système d'exploitation. Normalement,
@@ -948,8 +948,8 @@ sysfonts=yes
     être remplacé avec l'option en ligne de commande "--nosysfonts".
 
 
-
-alllocalefonts=yes
+     
+→ alllocalefonts=yes ←
 
     Avant la version 0.9.21, Tux Paint chargeait toutes les polices depuis son
     propre répertoire de polices, y compris celles spécifiques à la locale (par
@@ -968,8 +968,8 @@ alllocalefonts=yes
     "--currentlocalefont".
 
 
-
-uifont=FONT NAME
+     
+→ uifont=FONT NAME ←
 
     Cette option oblige Tux Paint à essayer de charger des polices (à utiliser
     dans l'outil Texte ) à partir de votre système d'exploitation. Normalement,
@@ -979,19 +979,19 @@ uifont=FONT NAME
     Sans" (c'est un comportement standard).
 
 
+     
 
+                              ### Impression ###
 
-Impression
+## Permissions pour l'impression ##
 
-Permissions pour l'impression
-
-noprint=yes
+→ noprint=yes ←
 
     Désactive la fonction d'impression.
 
 
-
-printdelay=SECONDES
+     
+→ printdelay=SECONDES ←
 
     Limite l'impression afin que l'impression ne puisse avoir lieu qu'une fois
     toutes les SECONDES secondes.
@@ -1002,11 +1002,11 @@ printdelay=SECONDES
     l'option en ligne de commande "--printdelay=0".
 
 
+     
 
+## Montrer le menu pour l'impression ##
 
-Montrer le menu pour l'impression
-
-altprint=always
+→ altprint=always ←
 
     Cela fait que Tux Paint affiche toujours la boîte de dialogue de
     l'imprimante (ou, sous Linux / Unix, lance la "commande altprint") lorsque
@@ -1015,8 +1015,8 @@ altprint=always
     de maintenir [Alt] à chaque fois.
 
 
-
-altprint=never
+     
+→ altprint=never ←
 
     Cela empêche Tux Paint de ne jamais montrer la boîte de dialogue de l'
     imprimante (ou, sous Linux / Unix, exécuter « altprintcommand ») lorsque le
@@ -1024,8 +1024,8 @@ altprint=never
     [Alt] sans effet lorsque vous cliquez sur le bouton «Imprimer».
 
 
-
-altprint=mod
+     
+→ altprint=mod ←
 
     C'est le comportement par défaut. Tux Paint affiche une boîte de dialogue
     d'imprimante (ou, sous Linux / Unix, exécute la commande "altprint"),
@@ -1034,11 +1034,11 @@ altprint=mod
     de boîte de dialogue.
 
 
+     
 
+## Sauvegarder la configuration d'impression ##
 
-Sauvegarder la configuration d'impression
-
-    printcfg=yes
+    → printcfg=yes ←
 
         (Windows et macOS uniquement)
 
@@ -1061,11 +1061,11 @@ Sauvegarder la configuration d'impression
         "--noprintcfg".
 
 
+         
 
+    ## Commandes d'impression ##
 
-    Commandes d'impression
-
-    printcommand=COMMAND
+    → printcommand=COMMAND ←
 
         (Linux et Unix uniquement)
 
@@ -1083,8 +1083,8 @@ Sauvegarder la configuration d'impression
         configuration avant la version 0.9.15, vous devrez la modifier.
 
 
-
-    altprintcommand=COMMAND
+         
+    → altprintcommand=COMMAND ←
 
         (Linux et Unix uniquement)
 
@@ -1100,11 +1100,11 @@ Sauvegarder la configuration d'impression
             kprinter
 
 
+         
 
+    ## Format du papier ##
 
-    Format du papier
-
-    papersize=PAPERSIZE
+    → papersize=PAPERSIZE ←
 
         (Plates-formes qui utilisent le générateur PostScript interne de Tux
         Paint - pas Windows, macOS, BeOS ou Haiku.)
@@ -1121,21 +1121,21 @@ Sauvegarder la configuration d'impression
         dsheet, esheet.
 
 
+         
 
+                                ### Sauvegarde ###
 
-    Sauvegarde
+    ## Écraser le travail précédent ##
 
-    Écraser le travail précédent
-
-    saveover=yes
+    → saveover=yes ←
 
         Ceci élimine le message "Écraser l'ancienne version ...? quand on
         voulait sauvegarder un fichier déjà existant. Avec cette option,
         l'ancienne version sera écrasée par la nouvelle, automatiquement.
 
 
-
-    saveover=new
+         
+    → saveover=new ←
 
         Ceci aussi élimine le message "Écraser l'ancienne version ...? quand on
         sauvegarde un fichier déjà existant. Cette option, cependant,
@@ -1143,19 +1143,19 @@ Sauvegarder la configuration d'impression
         version.
 
 
-
-    saveover=ask
+         
+    → saveover=ask ←
 
         (Cette option est redondante puisque c'est celle par défaut.) Quand
         vous sauvegardez un dessin déjà existant, on vous demandera d'abord si
         vous voulez écraser l'ancienne version ou non.
 
 
+         
 
+    ## Démarrer ##
 
-    Démarrer
-
-    startblank=yes
+    → startblank=yes ←
 
         Ceci oblige Tux Paint à afficher un canevas vide au démarrage, plutôt
         que la dernière image qui a été éditée.
@@ -1167,8 +1167,8 @@ Sauvegarder la configuration d'impression
         "--startlast".
 
 
-
-    newcolorslast=yes
+         
+    → newcolorslast=yes ←
 
         Place les options de couleur dans la boîte de dialogue Nouveau en
         dernier, ainsi tous les démarreurs et / ou modèles seront affichés en
@@ -1181,11 +1181,11 @@ Sauvegarder la configuration d'impression
         commande "--newcolorsfirst".
 
 
+         
 
+    ## Répertoires de sauvegarde et d'export ##
 
-    Répertoires de sauvegarde et d'export
-
-    savedir=DIRECTORY
+    → savedir=DIRECTORY ←
 
         Utilisez cette option pour changer l'emplacement du répertoire /
         dossier "saved" de Tux Paint , qui est l'endroit où Tux Paint
@@ -1193,19 +1193,19 @@ Sauvegarder la configuration d'impression
 
         Si vous ne le changez pas, l' emplacement par défaut est :
 
-        Linux / Unix
+        → Linux / Unix ←
             Under a hidden directory in your home directory:
             /home/nom d'utilisateur/.tuxpaint/saved/
-
-        Windows
+             
+        → Windows ←
             C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\
-
-        macOS
+             
+        → macOS ←
             /Users/nom d'utilisateur/Library/Application Support/TuxPaint/saved/
-
-        Haiku
+             
+        → Haiku ←
             /boot/home/config/settings/TuxPaint/saved/
-
+             
 
         💡 Note : Si vous spécifiez un lecteur Windows (pzr ex. "H:\"), vous
         devez spécifiez également un sous-répertoire.
@@ -1219,8 +1219,8 @@ Sauvegarder la configuration d'impression
         Exemple: savedir=Z:\tuxpaint\
 
 
-
-    exportdir=DIRECTORY
+         
+    → exportdir=DIRECTORY ←
 
         Utilisez cette option pour modifier l'endroit où Tux Paint exporte les
         fichiers - images uniques ou diaporamas GIF animés - en vue d'un usage
@@ -1262,11 +1262,11 @@ Sauvegarder la configuration d'impression
         Exemple: exportdir=/home/penguin/TuxPaintExports
 
 
+         
 
+    ## Plus d'options de sauvegarde ##
 
-    Plus d'options de sauvegarde
-
-    nosave=yes
+    → nosave=yes ←
 
         Ceci désactive la possibilité de sauvegarder les fichiers par Tux Paint
         (et par conséquent ôte le bouton "Sauvegarder" sur l'écran). On peut
@@ -1279,8 +1279,8 @@ Sauvegarder la configuration d'impression
         cas, il peut être remplacé avec l'option en ligne de commande "--save".
 
 
-
-    autosave=yes
+         
+    → autosave=yes ←
 
         Ceci empêche Tux Paint de vous demander si vous voulez sauvegarder
         l'image quand vous quittez, et suppose que vous le faites.
@@ -1292,8 +1292,8 @@ Sauvegarder la configuration d'impression
         "--noautosave".
 
 
-
-    reversesort=yes
+         
+    → reversesort=yes ←
 
         Ceci inverse le tri des fichiers dans les dialogues Ouvrir et
         Diaporama; plaçant les nouvelles images en tête de liste.
@@ -1305,13 +1305,13 @@ Sauvegarder la configuration d'impression
         commande "--noreversesort".
 
 
+         
 
+                                  ### Données ###
 
-    Données
+    ## Fichier de verouillage ##
 
-    Fichier de verouillage
-
-    nolockfile=yes
+    → nolockfile=yes ←
 
         Par défaut, Tux Paint utilise ce qu'on appelle un «fichier de
         verrouillage» pour éviter qu'il ne soit lancé plus d'une fois toutes
@@ -1335,11 +1335,11 @@ Sauvegarder la configuration d'impression
         "--lockfile".
 
 
+         
 
+    ## Répertoire de données ##
 
-    Répertoire de données
-
-    datadir=DIRECTORY
+    → datadir=DIRECTORY ←
 
         Utilisez cette option pour changer l'endroit où Tux Paint ira
         rechercher les fichiers de données personnelles (pinceaux, tampons,
@@ -1351,15 +1351,15 @@ Sauvegarder la configuration d'impression
 
         Si vous ne le changez pas, l' emplacement par défaut est :
 
-        Linux / Unix
+        → Linux / Unix ←
             /home/nom d'utilisateur/.tuxpaint/
-
-        Windows
+             
+        → Windows ←
             C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\
-
-        macoS
+             
+        → macoS ←
             /Users/nom d'utilisateur/Library/Application Support/TuxPaint/
-
+             
 
         📜 Note : Avant la version 0.9.18, Tux Paint utlisait les mêmes réglages
         que "savedir" pour chercher les fichiers de données. Depuis la version
@@ -1371,11 +1371,11 @@ Sauvegarder la configuration d'impression
         Exemple: datadir=/home/johnny/tuxpaint-data/
 
 
+         
 
+    ## Fichier de palette de couleur ##
 
-    Fichier de palette de couleur
-
-    colorfile=FILENAME
+    → colorfile=FILENAME ←
 
         Vous pouvez remplacer la palette de couleurs par défaut de Tux Paint en
         créant un fichier texte ASCII simple qui décrit les couleurs souhaitées
@@ -1405,24 +1405,24 @@ Sauvegarder la configuration d'impression
         identique à " #FFFFFF", mais pas à "#F0F0F0".
 
 
+         
 
+                               ### Accessibilité ###
 
-    Accessibilité
+    ## Souris ##
 
-    Souris
-
-    mouse-accessibility=yes
+    → mouse-accessibility=yes ←
 
         Dans ce mode, au lieu de cliquer, de faire glisser et de relâcher (par
         exemple, pour dessiner), vous cliquez, déplacez et cliquez à nouveau
         pour terminer le mouvement.
 
 
+         
 
+    ## Clavier ##
 
-    Clavier
-
-    keyboard=yes
+    → keyboard=yes ←
 
         Cela permet d'utiliser les touches fléchées du clavier pour contrôler
         le pointeur de la souris. (Par exemple, pour les environnements sans
@@ -1468,18 +1468,18 @@ Sauvegarder la configuration d'impression
         "--mouse".
 
 
+         
 
+    ## Clavier virtuel sur écran ##
 
-    Clavier virtuel sur écran
-
-    onscreen-keyboard=yes
+    → onscreen-keyboard=yes ←
 
         Présente un clavier à l'écran cliquable lors de l'utilisation des
         outils Texte et Étiquette .
 
 
-
-    onscreen-keyboard-layout=LAYOUTNAME
+         
+    → onscreen-keyboard-layout=LAYOUTNAME ←
 
         Choisit une disposition initiale pour le clavier virtuel quand on
         utilise les outils Texte et Étiquette .
@@ -1487,8 +1487,8 @@ Sauvegarder la configuration d'impression
         onscreen-keyboard=yes , la configuration des deux est donc redondante.
 
 
-
-    onscreen-keyboard-disable-change=yes
+         
+    → onscreen-keyboard-disable-change=yes ←
 
         Désactive la possibilité de modifier la disposition du clavier à
         l'écran lors de l'utilisation des outils Texte et Étiquette , utile
@@ -1503,54 +1503,54 @@ Sauvegarder la configuration d'impression
         "--onscreen-keyboard-disable-change=no".
 
 
+         
 
+                                 ### Joystick ###
 
-    Joystick
+    ## Écran principal ##
 
-    Écran principal
-
-    joystick-dev=N
+    → joystick-dev=N ←
 
         Spécifie quel périphérique joystick doit être utilisé par Tux Paint. La
         valeur par défaut est 0 (le premier joystick).
 
 
-
-    joystick-slowness=SPEED
+         
+    → joystick-slowness=SPEED ←
 
         Définit un retard à chaque mouvement d'axe, permettant de ralentir le
         joystick. Les valeurs autorisées sont comprises entre 0 et 500. La
         valeur par défaut est 15.
 
 
-
-    joystick-threshold=THRESHOLD
+         
+    → joystick-threshold=THRESHOLD ←
 
         Définit le niveau minimum de mouvement de l'axe pour commencer à
         déplacer le pointeur. Les valeurs autorisées sont comprises entre 0 et
         32766. La valeur par défaut est 3200.
 
 
-
-    joystick-maxsteps=STEPS
+         
+    → joystick-maxsteps=STEPS ←
 
         Définit le nombre de pixels maximums que le pointeur déplacera à la
         fois. Les valeurs autorisées vont de 1 à 7. La valeur par défaut est 7.
 
 
+         
 
+    ## Chapeau ##
 
-    Chapeau
-
-    joystick-hat-slowness=SPEED
+    → joystick-hat-slowness=SPEED ←
 
         Définit un délai à chaque mouvement automatique, permettant de ralentir
         la vitesse du chapeau. Les valeurs autorisées sont comprises entre 0 et
         500. La valeur par défaut est 15.
 
 
-
-    joystick-hat-timeout=MILLISECONDS
+         
+    → joystick-hat-timeout=MILLISECONDS ←
 
         Définit le délai après lequel le pointeur commencera à se déplacer
         automatiquement si le chapeau est maintenu enfoncé. Les valeurs
@@ -1558,11 +1558,11 @@ Sauvegarder la configuration d'impression
         000.
 
 
+         
 
+    ## Boutons à désactiver ##
 
-    Boutons à désactiver
-
-    joystick-buttons-ignore=BUTTON1,BUTTON2,...
+    → joystick-buttons-ignore=BUTTON1,BUTTON2,... ←
 
         Un ensemble de numéros de boutons du joystick, comme vu par SDL, qui
         doit être ignoré. Sinon, à moins qu'ils ne soient utilisés par l'une
@@ -1570,133 +1570,133 @@ Sauvegarder la configuration d'impression
         comme un clic gauche de la souris.
 
 
+         
 
+## Boutons pour raccourcis ##
 
-Boutons pour raccourcis
-
-    joystick-btn-escape=BUTTON NUMBER
+    → joystick-btn-escape=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, tel que vu par SDL, qui
         sera utilisé pour générer un événement d'échappement. Utile pour fermer
         les dialogues et quitter.
 
 
-
-    joystick-btn-brush=BUTTON NUMBER
+         
+    → joystick-btn-brush=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Pinceau.
 
 
-
-    joystick-btn-stamp=BUTTON NUMBER
+         
+    → joystick-btn-stamp=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Tampon.
 
 
-
-    joystick-btn-lines=BUTTON NUMBER
+         
+    → joystick-btn-lines=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Lignes.
 
 
-
-    joystick-btn-shapes=BUTTON NUMBER
+         
+    → joystick-btn-shapes=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Formes.
 
 
-
-    joystick-btn-text=BUTTON NUMBER
+         
+    → joystick-btn-text=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Texte.
 
 
-
-    joystick-btn-label=BUTTON NUMBER
+         
+    → joystick-btn-label=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Étiquette.
 
 
-
-    joystick-btn-fill=BUTTON NUMBER
+         
+    → joystick-btn-fill=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil de remplissage.
 
 
-
-    joystick-btn-magic=BUTTON NUMBER
+         
+    → joystick-btn-magic=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sélectionne l'outil Magie.
 
 
-
-    joystick-btn-undo=BUTTON NUMBER
+         
+    → joystick-btn-undo=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner invoque l'outil Défaire.
 
 
-
-    joystick-btn-redo=BUTTON NUMBER
+         
+    → joystick-btn-redo=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner outil Refaire.
 
 
-
-    joystick-btn-eraser=BUTTON NUMBER
+         
+    → joystick-btn-eraser=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner outil Gomme.
 
 
-
-    joystick-btn-new=BUTTON NUMBER
+         
+    → joystick-btn-new=BUTTON NUMBER ←
 
         Sélectionne le numéro de bouton du joysticke, comme vu par SDL, qui
         sera un raccourci pour lancer la boîte dialogue pour créer un nouveau
         dessin.
 
 
-
-    joystick-btn-open=BUTTON NUMBER
+         
+    → joystick-btn-open=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, tel que vu par SDL, qui
         sera un raccourci pour lancer la boîte de dialogue pour ouvrir un
         dessin existant.
 
 
-
-    joystick-btn-save=BUTTON NUMBER
+         
+    → joystick-btn-save=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner sauvegarder le dessin.
 
 
-
-    joystick-btn-pgsetup=BUTTON NUMBER
+         
+    → joystick-btn-pgsetup=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner lancer la boîte de dialogue pour le
         réglage de l'imprssion.
 
 
-
-    joystick-btn-print=BUTTON NUMBER
+         
+    → joystick-btn-print=BUTTON NUMBER ←
 
         Sélectionne le numéro du bouton du joystick, comme vu par SDL, qui sera
         un raccourci pour sélectionner print.
 
 
-
+         
 
     Écraser des options de System Config
 
@@ -1722,7 +1722,7 @@ Boutons pour raccourcis
     Des options peuvent également être émises sur la ligne de commande lorsque
     vous démarrez Tux Paint.
 
-    --fullscreen=yes
+    → --fullscreen=yes
         --fullscreen=native
         --WIDTHxHEIGHT
         --orient=portrait
@@ -1804,13 +1804,14 @@ Boutons pour raccourcis
         --reversesort
         --lang LANGUAGE
         --colorfile FILE
+        ←
 
         Celles-ci activent ou correspondent aux options du fichier de
         configuration décrites ci-dessus.
 
 
-
-    --windowed
+         
+    → --windowed
         --800x600
         --orient=landscape
         --disablescreensaver
@@ -1851,6 +1852,7 @@ Boutons pour raccourcis
         --save
         --noautosave
         --noreversesort
+        ←
 
         Ces options peuvent être utilisées pour remplacer les paramètres
         définis dans le fichier de configuration. (Si l'option n'est pas
@@ -1858,8 +1860,8 @@ Boutons pour raccourcis
         remplacement n'est nécessaire.)
 
 
-
-    --nosysconfig
+         
+    → --nosysconfig ←
 
         This prevents the system-wide configuration file (e.g. 
         "/etc/tuxpaint/tuxpaint.conf" on Linux), from being read.
@@ -1869,54 +1871,54 @@ Boutons pour raccourcis
         be used.
 
 
+         
 
-
-    Options d'information en ligne de commande
+                ### Options d'information en ligne de commande ###
 
     Les options suivantes affichent des informations sur l'écran. Cependant,
     Tux Paint ne démarrera pas et ne s'exécutera pas.
 
-    --version
-        --verbose-version
+    → --version
+        --verbose-version ←
 
         Display the version number and date of the copy of Tux Paint you are
         running. The "--verbose-version" also lists what compile-time options
         were set. (See INSTALL and FAQ).
 
 
-
-    --copying
+         
+    → --copying ←
 
         Afficher de brèves informations de licence au sujet de la copie de Tux
         Paint.
 
 
-
-    --usage
+         
+    → --usage ←
 
         Affiche la liste des options disponibles en ligne de commande.
 
 
-
-    --help
+         
+    → --help ←
 
         Affiche une aide sommaire sur l'utilisation de Tux Paint.
 
 
-
-    --lang help
+         
+    → --lang help ←
 
         Affiche une liste des langues disponibles dans Tux Paint.
 
 
-
-    --joystick-dev list
+         
+    → --joystick-dev list ←
 
         Afficher la liste des joysticks branchés qui sont disponibles pour Tux
         Paint.
 
 
-
+         
 
     Choisir une autre langue
 
@@ -1932,7 +1934,7 @@ Boutons pour raccourcis
     Utilisez l'option "--lang help" pour lister les options de langues
     disponibles.
 
-    Langues disponibles
+                            ### Langues disponibles ###
 
     +-------------------------------------------------------------------------+
     |  Code ISO 639-1  |      Langue      |     Langue     |  Combinaison de  |
@@ -2232,7 +2234,7 @@ Boutons pour raccourcis
     combinaisons de touches répertoriées peuvent être utilisées pour parcourir
     les méthodes de saisie prises en charge lorsque l' outil Texte est actif.
 
-    Définition des paramètres régionaux de votre environnement
+        ### Définition des paramètres régionaux de votre environnement ###
 
     La modification de vos paramètres régionaux affectera une grande partie de
     votre environnement.
@@ -2245,7 +2247,7 @@ Boutons pour raccourcis
     Si vous n'avez pas encore défini les paramètres régionaux de votre
     environnement, ce qui suit explique brièvement comment :
 
-    Utilisateurs de Linux/Unix
+    ## Utilisateurs de Linux/Unix ##
 
     Tout d'abord, assurez-vous que les paramètres régionaux que vous souhaitez
     utiliser sont activés en éditant le fichier "/etc/locale.gen" sur votre
@@ -2277,7 +2279,7 @@ Boutons pour raccourcis
         setenv LANG es_ES ; \
         tuxpaint
 
-    Utilisateurs de Windows
+    ## Utilisateurs de Windows ##
 
     Tux Paint reconnaîtra les paramètres régionaux en cours et utilisera les
     fichiers appropriés par défaut. Cette section est donc réservée aux
@@ -2303,7 +2305,7 @@ Boutons pour raccourcis
       + Cliquez sur le bouton "Variables d'environnement ...".
       + Édite la valeur du paramètre "LANG" (le crée s'il n'existe pas).
 
-    Polices spéciales
+                             ### Polices spéciales ###
 
     Certaines langues nécessitent l'installation de polices spéciales. Ces
     fichiers de polices (qui sont au format TrueType (TTF)), sont beaucoup trop

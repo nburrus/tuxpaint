@@ -1,8 +1,8 @@
                   Tux Paint "Magic" Tool: Tessellation Pointy
 
-                            Group: Pattern Painting
+                        ### Group: Pattern Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw repeating tessellation patterns with pointy-topped hexagons.
 

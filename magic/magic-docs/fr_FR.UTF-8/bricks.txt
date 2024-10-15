@@ -1,8 +1,8 @@
                      Outil 'Magie' de Tux Paint : Briques
 
-                                Groupe: Peindre
+                            ### Groupe: Peindre ###
 
-                 Auteur : Albert Cahalan <albert@users.sf.net>
+              ## Auteur : Albert Cahalan <albert@users.sf.net> ##
 
 This tool intelligently paints brick patterns on the canvas. The bricks can be
 tinted various redish hues by selecting different colors in the color palette.

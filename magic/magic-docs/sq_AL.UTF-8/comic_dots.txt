@@ -1,8 +1,8 @@
                    Mjeti “Magjik” i Tux Paint-it: Comic Dots
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draws a repeating dot pattern, simulating the "Ben Day process" used in early
 comic books.

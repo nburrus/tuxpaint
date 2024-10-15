@@ -1,9 +1,10 @@
                      Mjeti “Magjik” i Tux Paint-it: Blloqe
 
-                                Grup: Shformime
+                            ### Grup: Shformime ###
 
-               Autorë: Bill Kendrick <bill@newbreedsoftware.com>
+             ## Autorë: Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
+                                      ##
 
 This makes the picture blocky looking ("pixelated") wherever you drag the
 mouse.

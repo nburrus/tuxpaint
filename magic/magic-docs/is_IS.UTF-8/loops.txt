@@ -1,8 +1,8 @@
                          Tux Paint "Magic" Tool: Loops
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw loop-the-loops on the canvas, in the currently-selected color.
 

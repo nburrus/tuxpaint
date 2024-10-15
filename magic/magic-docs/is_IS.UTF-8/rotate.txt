@@ -1,8 +1,8 @@
                         Tux Paint "Magic" Tool: Rotate
 
-                             Group: Picture Warps
+                         ### Group: Picture Warps ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Click and drag to rotate the drawing. (Your chosen color will be used as a
 background color.)

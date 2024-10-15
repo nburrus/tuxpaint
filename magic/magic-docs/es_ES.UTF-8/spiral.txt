@@ -1,8 +1,8 @@
                         Tux Paint "Magic" Tool: Spiral
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw spirals.
 

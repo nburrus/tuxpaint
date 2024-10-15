@@ -1,8 +1,8 @@
                     Outil 'Magie' de Tux Paint : Comic Dots
 
-                                Groupe: Peindre
+                            ### Groupe: Peindre ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draws a repeating dot pattern, simulating the "Ben Day process" used in early
 comic books.

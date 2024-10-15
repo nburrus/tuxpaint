@@ -1,8 +1,8 @@
                     Mjeti “Magjik” i Tux Paint-it: Kuadrate
 
-                           Grup: Vizatim Rregullsish
+                       ### Grup: Vizatim Rregullsish ###
 
-            Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Vizaton një rregullsi simetrike përqark anëve të vizatimit.
 

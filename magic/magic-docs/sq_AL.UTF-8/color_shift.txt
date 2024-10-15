@@ -1,8 +1,8 @@
                 Mjeti “Magjik” i Tux Paint-it: Këmbim Ngjyrash
 
-                             Grup: Filtra Ngjyrash
+                         ### Grup: Filtra Ngjyrash ###
 
-                 Autor: Andrew Corcoran <akanewbie@gmail.com>
+              ## Autor: Andrew Corcoran <akanewbie@gmail.com> ##
 
 Kjo ndërron ngjyrat në foton tuaj.
 

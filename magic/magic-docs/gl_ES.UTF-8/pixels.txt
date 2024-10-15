@@ -1,8 +1,8 @@
                         Tux Paint "Magic" Tool: Pixels
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw large square "pixels" on the canvas.
 

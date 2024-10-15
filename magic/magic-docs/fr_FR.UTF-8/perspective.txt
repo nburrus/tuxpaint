@@ -1,8 +1,8 @@
                    Outil 'Magie' de Tux Paint : Perspective
 
-                        Groupe: Déformations de l'image
+                    ### Groupe: Déformations de l'image ###
 
-           Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+        ## Auteur : Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Cliquez et balayez à partir d'un coin pour changer la paerspective de votre
 dessin.

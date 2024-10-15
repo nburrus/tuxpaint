@@ -1,8 +1,8 @@
                    Outil 'Magie' de Tux Paint : Kaléidoscope
 
-                           Groupe: Peindre un motif
+                       ### Groupe: Peindre un motif ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Ce pinceau peint à quatre endroits à la fois, avec effet de miroir symétrique à
 la fois horizontal et vertical. Il utilise la couleur sélectionnée.

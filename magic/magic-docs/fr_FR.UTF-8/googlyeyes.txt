@@ -1,8 +1,8 @@
                  Outil 'Magie' de Tux Paint : Yeux écarquillés
 
-                              Groupe: Artistique
+                          ### Groupe: Artistique ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draws a googly eye where you click. Drag to position the pupil. (If the Magic
 size feature is disabled, multiple "Yeux écarquillés" tools will be made

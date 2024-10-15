@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.October.12 (0.9.34)
+2024.October.14 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -179,6 +179,11 @@ https://tuxpaint.org/
 
     * Vietnamese translation
       Cas Pascal <casboi86@gmail.com>
+
+  * Documentation updates:
+    ----------------------
+    * Nicer formatting of the plain text variation of documentation.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Bug Fixes:
     ----------

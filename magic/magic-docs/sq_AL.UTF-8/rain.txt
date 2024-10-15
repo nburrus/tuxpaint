@@ -1,8 +1,8 @@
                       Mjeti “Magjik” i Tux Paint-it: Shi
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-                 Autor: Andrew Corcoran <akanewbie@gmail.com>
+              ## Autor: Andrew Corcoran <akanewbie@gmail.com> ##
 
 Shhtoni pika shiu te vizatimi juaj.
 

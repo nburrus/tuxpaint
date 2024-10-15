@@ -1,8 +1,8 @@
                      Outil 'Magie' de Tux Paint : Fleurir
 
-                           Groupe: Filtres couleurs
+                       ### Groupe: Filtres couleurs ###
 
-              Auteur : Bill Kendrick <bill@newbreedsoftware.com>
+           ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Ajoute un effet de "floraison" éclatante aux images.
 

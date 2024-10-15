@@ -1,8 +1,8 @@
                   Mjeti “Magjik” i Tux Paint-it: Perspektivë
 
-                           Grup: Shformime Vizatimi
+                       ### Grup: Shformime Vizatimi ###
 
-            Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Klikoni dhe tërhiqeni prej cepash për të ndryshuar perspektivën e figurës tuaj.
 

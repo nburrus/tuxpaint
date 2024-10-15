@@ -1,8 +1,8 @@
                   Mjeti “Magjik” i Tux Paint-it: V me Thurje
 
-                                Grup: Artistike
+                            ### Grup: Artistike ###
 
-            Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+         ## Autor: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
 Vizatoni art në formë V-je me thurje në çfarëdo këndi.
 

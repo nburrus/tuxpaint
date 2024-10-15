@@ -1,6 +1,6 @@
            Mjeti “Magjik” i Tux Paint-it: Listë e Mjeteve “Magjike”
 
-Shformime
+                               ### Shformime ###
 
   * Turbulloje
   * Mprehe
@@ -31,7 +31,7 @@ Shformime
   * Zhurmë
   * Gjysmë-ton
 
-Filtra Ngjyrash
+                            ### Filtra Ngjyrash ###
 
   * Negativ
   * E kundërta
@@ -53,7 +53,7 @@ Filtra Ngjyrash
   * Ngjyra Xor
   * Çelje
 
-Shformime Vizatimi
+                          ### Shformime Vizatimi ###
 
   * Pasqyroje
   * Ktheje në anë tjetër
@@ -71,7 +71,7 @@ Shformime Vizatimi
   * Kaleido-4, Kaleido-6 dhe Kaleido-8
   * Rotate
 
-Vizatim
+                                ### Vizatim ###
 
   * Tulla
   * Spray Paint
@@ -104,7 +104,7 @@ Vizatim
   * E çelët
   * Fractal
 
-Vizatim Rregullsish
+                          ### Vizatim Rregullsish ###
 
   * Simetri Majtas/Djathtas
   * Simetri Sipër/Poshtë
@@ -116,14 +116,14 @@ Vizatim Rregullsish
   * Tessellation Pointy
   * Tessellation Flat
 
-Zbukurime Fotoje
+                           ### Zbukurime Fotoje ###
 
   * Grila
   * Fushë shahu
   * Top Dëbore
   * Flokë Bore
 
-Projections
+                              ### Projections ###
 
   * Vizatim me 1 Qendër
   * Përzgjedhje e 1 Qendre
@@ -139,7 +139,7 @@ Projections
   * Oblique Draw
   * Oblique Select
 
-Artistike
+                               ### Artistike ###
 
   * Lule
   * Sy të Zgurdulluar

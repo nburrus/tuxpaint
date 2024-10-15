@@ -1,8 +1,8 @@
                    Mjeti “Magjik” i Tux Paint-it: Gjysmë-ton
 
-                                Grup: Shformime
+                            ### Grup: Shformime ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 This makes parts of your picture look like newsprint. Different sizes of cyan,
 magenta, yellow, and black "ink" will appear in place of your picture.

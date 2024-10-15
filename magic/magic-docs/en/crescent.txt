@@ -1,8 +1,8 @@
                        Tux Paint "Magic" Tool: Crescent
 
-                                Group: Painting
+                            ### Group: Painting ###
 
-               Author: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Draw one of various crescent shapes at a chosen angle.
 

@@ -1,8 +1,8 @@
                       Tux Paint "Magic" Tool: Xor Colors
 
-                             Group: Color Filters
+                         ### Group: Color Filters ###
 
-            Author: Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com>
+         ## Author: Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com> ##
 
 Colors based on the position drawn on the picture.
 

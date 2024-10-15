@@ -1,8 +1,8 @@
                   Mjeti “Magjik” i Tux Paint-it: Spray Paint
 
-                                 Grup: Vizatim
+                             ### Grup: Vizatim ###
 
-               Autor: Bill Kendrick <bill@newbreedsoftware.com>
+            ## Autor: Bill Kendrick <bill@newbreedsoftware.com> ##
 
 Simulates paint from a spray can or airbrush.
 

@@ -1,8 +1,8 @@
                     Outil 'Magie' de Tux Paint : Dentifrice
 
-                                Groupe: Peindre
+                            ### Groupe: Peindre ###
 
-                Auteur : Andrew Corcoran <akanewbie@gmail.com>
+             ## Auteur : Andrew Corcoran <akanewbie@gmail.com> ##
 
 Dessine des pâtés épais sur l'image qui ressemblent à de la pâte dentifrice.
 
