@@ -1,5 +1,7 @@
 Release checklist for Tux Paint
-Last updated 2024-07-06 -bjk
+
+Last updated 2024-10-16
+Bill Kendrick <bill@newbreedsoftware.com>
 
 During development
 ------------------
@@ -18,6 +20,9 @@ Make sure new features are recorded in "docs/CHANGES.txt", the
 docs (now maintained in the "tuxpaint-docs" repository), and
 in Tux Paint's appdata file (which is generated, with translated
 text from PO files, based on "org.tuxpaint.Tuxpaint.appdata.xml.in").
+
+When appropriate, they can be added to the "Features" page of
+the website (maintained in the "tuxpaint-website" repository).
 
 
 Preparing
@@ -76,6 +81,9 @@ a .tar.gz source tarball, and making the tarball available for download.
      * docs/en/html/README.html
      * docs/en/html/SIGNALS.html
      * docs/en/html/SVG.html
+
+     And also run "make" in "magic/magic-docs/", to produce plaintext
+     alternatives for the various magic tools.
 
    * Manual page (manpage)
 
