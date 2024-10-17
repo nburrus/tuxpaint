@@ -109,6 +109,21 @@ Time to release:
    $ git push origin tuxpaint-0_9_25-2020-12-27 # or --tags
    $ make release
 
+   * About release candidates (beta versions):
+
+     Prior to a final release, we typically make
+     "release candidates" (rc) for the purpose of both
+     (a) having port maintainers exercise their build development,
+     and report back any problems -- once mended, additional "rc"s
+     can be rolled; and (b) providing beta builds for end-users
+     to try out (with the understanding that things may be
+     unstable).
+
+     Set the `VER_VERSION` in the Makefile to denote the release
+     candidate (e.g., "0.9.34-rc1").  Commit, and follow the steps
+     above for making a release.  Use a tag includes mentions the
+     release candidate, e.g. "tuxpaint-0_9_34-rc1-2024-10-16".
+
  * Upload each project's ".tar.gz" file from their "build/" subdirs
    to ftp.tuxpaint.org.
 
