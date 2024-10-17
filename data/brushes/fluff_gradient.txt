@@ -1,4 +1,5 @@
 Fluffy circles, great for drawing clouds.
 ca.utf8=Cercles inflats, per dibuixar núvols...
 ja.utf8=もこもこの まるいブラシ。くもを かくのに さいこう
+pt.utf8=Círculos fofos, óptimos para desenhar nuvens.
 vi.utf8=Vẽ các hình tròn bồng bềnh, dùng để vẽ mây.
