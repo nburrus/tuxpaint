@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.October.14 (0.9.34)
+2024.October.19 (0.9.34)
   * New Magic Tools:
     ----------------
     * "Comic Dots", draws repeating dots (using a multiply blend)
@@ -212,6 +212,14 @@ https://tuxpaint.org/
     * Rotated multi-frame brushes would bleed black in any
       transparent areas (e.g., soft edges would be black halos). Mended.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Other Improvements:
+    -------------------
+    * The macOS build now links against SDL2_gfx. Previously SDL2_gfx was
+      required to install SDL2_image but Tux Paint did not require linking
+      against it. The transaparent rotation feature added to 0.9.34 requires
+      linking against SDL2_gfx.
+      Mark Kim <markuskimius@gmail.com>
 
 2024.July.17 (0.9.33)
   * New Magic Tools:
