@@ -1,6 +1,6 @@
 Release checklist for Tux Paint
 
-Last updated 2024-10-16
+Last updated 2024-10-18
 Bill Kendrick <bill@newbreedsoftware.com>
 
 During development
@@ -166,6 +166,18 @@ Time to release:
 
 Website updates
 ---------------
+ * Link to the downloads on the various pages under
+   https://tuxpaint.org/download/
+   + If a release candidate, post to the "beta" pages and
+     link to them, and activate the main
+     https://tuxpaint.org/beta/ page, too
+   + If a final release, shut off the "beta" pages, if any
+     are active
+   + For some 3rd party software repositories
+     (e.g. Flathub for Linux Flatpak, Haiku Depot, etc.),
+     you will need to pay attention to when the new release
+     lands, over the coming days/weeks.
+
  * List new features on https://tuxpaint.org/features/
 
  * Add any new requirements to https://tuxpaint.org/requirements/
