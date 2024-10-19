@@ -143,6 +143,7 @@ Time to release:
  * At SourceForge, go to "Files" and use "Add Folder" under each project
    to create new release file subdirectories.  (e.g., "0.9.25" under
    https://sourceforge.net/projects/tuxpaint/files/tuxpaint/)
+   [Or, you can just use `mkdir` command in the `sftp` client, below.]
 
  * Upload the files!  Either from local copies, via a web browser,
    or by SCP, Rsync, or SFTP (see
@@ -183,6 +184,10 @@ Website updates
  * Add any new requirements to https://tuxpaint.org/requirements/
 
  * Create a press release under https://tuxpaint.org/latest/
+
+ * Copy the docs from the release (README, FAQ, etc.) onto the
+   website so users can find it online at https://tuxpaint.org/docs/
+   (use the `sync_docs.sh` script)
 
 Announcements
 -------------
