@@ -35,13 +35,14 @@ static Mix_Chunk *comicdot_snd;
 static int comicdot_radius = 16;
 static int comicdot_r, comicdot_g, comicdot_b;
 
-enum {
+enum
+{
   COMICDOT_LG,
   COMICDOT_SM,
   NUM_COMICDOT_SIZES
 };
 
-SDL_Surface * comicdot_pattern[NUM_COMICDOT_SIZES];
+SDL_Surface *comicdot_pattern[NUM_COMICDOT_SIZES];
 
 Uint32 comicdot_api_version(void);
 int comicdot_init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level);
@@ -53,17 +54,17 @@ int comicdot_get_order(int which);
 char *comicdot_get_description(magic_api * api, int which, int mode);
 
 void comicdot_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+                   SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 
 void comicdot_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                    SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void comicdot_release(magic_api * api, int which,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                      SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void comicdot_shutdown(magic_api * api);
 void comicdot_set_color(magic_api * api, int which, SDL_Surface * canvas,
-                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+                        SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int comicdot_requires_colors(magic_api * api, int which);
 void comicdot_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void comicdot_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
@@ -71,14 +72,14 @@ int comicdot_modes(magic_api * api, int which);
 Uint8 comicdot_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 comicdot_default_size(magic_api * api, int which, int mode);
 void comicdot_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
-                  SDL_Rect * update_rect);
+                       SDL_Rect * update_rect);
 
 Uint32 comicdot_api_version(void)
 {
   return (TP_MAGIC_API_VERSION);
 }
 
-int comicdot_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
+int comicdot_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   int i;
@@ -103,8 +104,7 @@ int comicdot_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uin
     size = (100 * (NUM_COMICDOT_SIZES - i)) / NUM_COMICDOT_SIZES;
 
     comicdot_pattern[i] = api->scale(comicdot_pattern[0],
-                                     (comicdot_pattern[0]->w * size) / 100,
-                                     (comicdot_pattern[0]->h * size) / 100, 1);
+                                     (comicdot_pattern[0]->w * size) / 100, (comicdot_pattern[0]->h * size) / 100, 1);
     if (comicdot_pattern[i] == NULL)
     {
       fprintf(stderr, "Can't scale %s (%d%%)\n", fname, size);
@@ -115,12 +115,12 @@ int comicdot_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uin
   return (1);
 }
 
-int comicdot_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
+int comicdot_get_tool_count(magic_api *api ATTRIBUTE_UNUSED)
 {
   return (NUM_COMICDOT_SIZES);
 }
 
-SDL_Surface *comicdot_get_icon(magic_api * api, int which)
+SDL_Surface *comicdot_get_icon(magic_api *api, int which)
 {
   char fname[1024];
 
@@ -129,12 +129,12 @@ SDL_Surface *comicdot_get_icon(magic_api * api, int which)
   return (IMG_Load(fname));
 }
 
-char *comicdot_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+char *comicdot_get_name(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext("Comic Dots")));
 }
 
-int comicdot_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int comicdot_get_group(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
 }
@@ -144,7 +144,7 @@ int comicdot_get_order(int which)
   return 1910 + which;
 }
 
-char *comicdot_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+char *comicdot_get_description(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
     return (strdup(gettext("Click and drag to draw an a dot pattern on your picture")));
@@ -152,15 +152,15 @@ char *comicdot_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRI
     return (strdup(gettext("Click to apply a dot pattern on your entire picture")));
 }
 
-static void do_comicdot(void *ptr, int which,
-                   SDL_Surface * canvas, SDL_Surface * last, int x, int y)
+static void do_comicdot(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *last, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   Uint8 r1, g1, b1, r, g, b, n, _;
+
   // Uint8 nr, ng, nb;
   Uint32 pixel;
   int offx, offy;
-  SDL_Surface * pat;
+  SDL_Surface *pat;
 
   pat = comicdot_pattern[which];
 
@@ -186,7 +186,7 @@ static void do_comicdot(void *ptr, int which,
 }
 
 static void do_comicdot_circle(void *ptr, int which ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
+                               SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy;
@@ -204,8 +204,8 @@ static void do_comicdot_circle(void *ptr, int which ATTRIBUTE_UNUSED,
   }
 }
 
-void comicdot_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+void comicdot_drag(magic_api *api, int which, SDL_Surface *canvas,
+                   SDL_Surface *last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect *update_rect)
 {
   api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_comicdot_circle);
 
@@ -235,8 +235,8 @@ void comicdot_drag(magic_api * api, int which, SDL_Surface * canvas,
     api->playsound(comicdot_snd, 64 + ((x * 127) / canvas->w), 255);
 }
 
-void comicdot_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
+void comicdot_click(magic_api *api, int which, int mode,
+                    SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect *update_rect)
 {
   if (mode == MODE_PAINT)
     comicdot_drag(api, which, canvas, last, x, y, x, y, update_rect);
@@ -256,15 +256,15 @@ void comicdot_click(magic_api * api, int which, int mode,
   }
 }
 
-void comicdot_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                 SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
-                 int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void comicdot_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                      SDL_Surface *canvas ATTRIBUTE_UNUSED,
+                      SDL_Surface *last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
+                      int y ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   api->pausesound();
 }
 
-void comicdot_shutdown(magic_api * api ATTRIBUTE_UNUSED)
+void comicdot_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   int i;
 
@@ -281,38 +281,38 @@ void comicdot_shutdown(magic_api * api ATTRIBUTE_UNUSED)
   }
 }
 
-void comicdot_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b,
-                   SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void comicdot_set_color(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                        SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
+                        Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   comicdot_r = r;
   comicdot_g = g;
   comicdot_b = b;
 }
 
-int comicdot_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int comicdot_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
-void comicdot_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void comicdot_switchin(magic_api *api ATTRIBUTE_UNUSED,
+                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
 }
 
-void comicdot_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void comicdot_switchout(magic_api *api ATTRIBUTE_UNUSED,
+                        int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
   api->stopsound();
 }
 
-int comicdot_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int comicdot_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
 }
 
 
-Uint8 comicdot_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+Uint8 comicdot_accepted_sizes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
     return 8;
@@ -320,14 +320,14 @@ Uint8 comicdot_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIB
     return 0;
 }
 
-Uint8 comicdot_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 comicdot_default_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 4;
 }
 
-void comicdot_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
-                  Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void comicdot_set_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                       SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED,
+                       Uint8 size ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   comicdot_radius = size * 4;
 }

@@ -50,12 +50,12 @@ enum
 };
 
 static int fill_color[NUM_FILLS] = {
-  1, /* Flood */
-  1, /* Brush */
-  1, /* Linear gradient */
-  1, /* Radial gradient */
-  1, /* Shaped gradient */
-  0, /* Eraser */
+  1,                            /* Flood */
+  1,                            /* Brush */
+  1,                            /* Linear gradient */
+  1,                            /* Radial gradient */
+  1,                            /* Shaped gradient */
+  0,                            /* Eraser */
 };
 
 const char *const fill_tips[NUM_FILLS] = {

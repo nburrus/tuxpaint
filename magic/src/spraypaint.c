@@ -46,17 +46,17 @@ int spraypaint_get_order(int which);
 char *spraypaint_get_description(magic_api * api, int which, int mode);
 
 void spraypaint_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+                     SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 
 void spraypaint_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                      SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void spraypaint_release(magic_api * api, int which,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                        SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void spraypaint_shutdown(magic_api * api);
 void spraypaint_set_color(magic_api * api, int which, SDL_Surface * canvas,
-                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+                          SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int spraypaint_requires_colors(magic_api * api, int which);
 void spraypaint_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void spraypaint_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
@@ -64,7 +64,7 @@ int spraypaint_modes(magic_api * api, int which);
 Uint8 spraypaint_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 spraypaint_default_size(magic_api * api, int which, int mode);
 void spraypaint_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
-                  SDL_Rect * update_rect);
+                         SDL_Rect * update_rect);
 
 
 Uint32 spraypaint_api_version(void)
@@ -72,7 +72,7 @@ Uint32 spraypaint_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int spraypaint_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
+int spraypaint_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -85,12 +85,12 @@ int spraypaint_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, U
   return (1);
 }
 
-int spraypaint_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
+int spraypaint_get_tool_count(magic_api *api ATTRIBUTE_UNUSED)
 {
   return (1);
 }
 
-SDL_Surface *spraypaint_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *spraypaint_get_icon(magic_api *api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -99,12 +99,12 @@ SDL_Surface *spraypaint_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
   return (IMG_Load(fname));
 }
 
-char *spraypaint_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+char *spraypaint_get_name(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext("Spray Paint")));
 }
 
-int spraypaint_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int spraypaint_get_group(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PAINTING;
 }
@@ -114,12 +114,12 @@ int spraypaint_get_order(int which ATTRIBUTE_UNUSED)
   return 800;
 }
 
-char *spraypaint_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+char *spraypaint_get_description(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext("Click and drag to add a random spray of color onto your image.")));
 }
 
-static void do_spraypaint(magic_api * api, SDL_Surface * canvas, int x, int y, int max_intensity)
+static void do_spraypaint(magic_api *api, SDL_Surface *canvas, int x, int y, int max_intensity)
 {
   Uint8 r, g, b, intensity;
   Uint32 pixel;
@@ -135,7 +135,7 @@ static void do_spraypaint(magic_api * api, SDL_Surface * canvas, int x, int y, i
 }
 
 static void do_spraypaint_circle(void *ptr, int which ATTRIBUTE_UNUSED,
-                          SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
+                                 SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int xx, yy, dist;
@@ -160,8 +160,8 @@ static void do_spraypaint_circle(void *ptr, int which ATTRIBUTE_UNUSED,
   spraypaint_cnt++;
 }
 
-void spraypaint_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+void spraypaint_drag(magic_api *api, int which, SDL_Surface *canvas,
+                     SDL_Surface *last ATTRIBUTE_UNUSED, int ox, int oy, int x, int y, SDL_Rect *update_rect)
 {
   api->line((void *)api, which, canvas, last, ox, oy, x, y, (spraypaint_radius / 8) + 1, do_spraypaint_circle);
 
@@ -188,16 +188,16 @@ void spraypaint_drag(magic_api * api, int which, SDL_Surface * canvas,
   api->playsound(spraypaint_snd_spray, (x * 255) / canvas->w, 255);
 }
 
-void spraypaint_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
-               SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
+void spraypaint_click(magic_api *api, int which, int mode ATTRIBUTE_UNUSED,
+                      SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect *update_rect)
 {
   spraypaint_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
-void spraypaint_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                 SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
-                 int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void spraypaint_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                        SDL_Surface *canvas ATTRIBUTE_UNUSED,
+                        SDL_Surface *last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
+                        int y ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   api->stopsound();
   if (spraypaint_cnt >= 1000)
@@ -207,7 +207,7 @@ void spraypaint_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UN
   }
 }
 
-void spraypaint_shutdown(magic_api * api ATTRIBUTE_UNUSED)
+void spraypaint_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (spraypaint_snd_spray != NULL)
     Mix_FreeChunk(spraypaint_snd_spray);
@@ -215,50 +215,50 @@ void spraypaint_shutdown(magic_api * api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(spraypaint_snd_shake);
 }
 
-void spraypaint_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
-                   Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void spraypaint_set_color(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                          SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
+                          Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   spraypaint_r = r;
   spraypaint_g = g;
   spraypaint_b = b;
 }
 
-int spraypaint_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int spraypaint_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
-void spraypaint_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void spraypaint_switchin(magic_api *api ATTRIBUTE_UNUSED,
+                         int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
   spraypaint_cnt = 0;
 }
 
-void spraypaint_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void spraypaint_switchout(magic_api *api ATTRIBUTE_UNUSED,
+                          int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int spraypaint_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int spraypaint_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MODE_PAINT;
 }
 
 
-Uint8 spraypaint_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 spraypaint_accepted_sizes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 12;
 }
 
-Uint8 spraypaint_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 spraypaint_default_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 4;
 }
 
-void spraypaint_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
-                  Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void spraypaint_set_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                         SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED,
+                         Uint8 size ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   spraypaint_radius = size * 8;
 }

@@ -33,7 +33,7 @@
 #include "SDL2_rotozoom.h"
 
 static Mix_Chunk *rotate_snd_drag, *rotate_snd_release;
-SDL_Surface * rotate_snapshot = NULL;
+SDL_Surface *rotate_snapshot = NULL;
 Uint32 rotate_color;
 float rotate_last_angle = 0.0;
 int rotate_clicked_since_switchin = 0;
@@ -48,17 +48,17 @@ int rotate_get_order(int which);
 char *rotate_get_description(magic_api * api, int which, int mode);
 
 void rotate_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+                 SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 
 void rotate_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                  SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void rotate_release(magic_api * api, int which,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                    SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void rotate_shutdown(magic_api * api);
 void rotate_set_color(magic_api * api, int which, SDL_Surface * canvas,
-                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+                      SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int rotate_requires_colors(magic_api * api, int which);
 void rotate_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void rotate_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
@@ -66,7 +66,7 @@ int rotate_modes(magic_api * api, int which);
 Uint8 rotate_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 rotate_default_size(magic_api * api, int which, int mode);
 void rotate_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
-                  SDL_Rect * update_rect);
+                     SDL_Rect * update_rect);
 float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag);
 void rotate_xorline_callback(void *pointer, int tool, SDL_Surface * canvas, SDL_Surface * snapshot, int x, int y);
 
@@ -76,7 +76,7 @@ Uint32 rotate_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int rotate_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
+int rotate_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -89,12 +89,12 @@ int rotate_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
   return (1);
 }
 
-int rotate_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
+int rotate_get_tool_count(magic_api *api ATTRIBUTE_UNUSED)
 {
   return (1);
 }
 
-SDL_Surface *rotate_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *rotate_get_icon(magic_api *api, int which ATTRIBUTE_UNUSED)
 {
   char fname[1024];
 
@@ -103,12 +103,12 @@ SDL_Surface *rotate_get_icon(magic_api * api, int which ATTRIBUTE_UNUSED)
   return (IMG_Load(fname));
 }
 
-char *rotate_get_name(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+char *rotate_get_name(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext("Rotate")));
 }
 
-int rotate_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int rotate_get_group(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_PICTURE_WARPS;
 }
@@ -118,19 +118,19 @@ int rotate_get_order(int which ATTRIBUTE_UNUSED)
   return 900;
 }
 
-char *rotate_get_description(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+char *rotate_get_description(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return (strdup(gettext("Click and drag to rotate your drawing.")));
 }
 
-float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag)
+float do_rotate(SDL_Surface *canvas, int x, int y, int smoothing_flag)
 {
-  SDL_Surface * new_surf;
+  SDL_Surface *new_surf;
   float angle_rad;
   SDL_Rect dest;
 
   if (rotate_snapshot == NULL)
-    return 0.0; /* abort! */
+    return 0.0;                 /* abort! */
 
   /* Render a rotated version of the snapshot */
   /* ---------------------------------------- */
@@ -140,7 +140,7 @@ float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag)
      (allows you to click a spot, and while rotating it remains
      under the pointer; versus always re-rotating) */
   angle_rad += rotate_last_angle;
-  new_surf = rotozoomSurface(rotate_snapshot, (angle_rad * 180.0 / M_PI), 1.0 /* no zoom */, smoothing_flag);
+  new_surf = rotozoomSurface(rotate_snapshot, (angle_rad * 180.0 / M_PI), 1.0 /* no zoom */ , smoothing_flag);
 
   /* Draw background color on canvas */
   /* ------------------------------- */
@@ -159,16 +159,16 @@ float do_rotate(SDL_Surface * canvas, int x, int y, int smoothing_flag)
 }
 
 void rotate_xorline_callback(void *pointer ATTRIBUTE_UNUSED, int tool ATTRIBUTE_UNUSED,
-                             SDL_Surface * canvas, SDL_Surface * snapshot ATTRIBUTE_UNUSED, int x, int y)
+                             SDL_Surface *canvas, SDL_Surface *snapshot ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) pointer;
 
   api->xorpixel(canvas, x, y);
 }
 
-void rotate_drag(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
-              SDL_Surface * last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
-              int x, int y, SDL_Rect * update_rect)
+void rotate_drag(magic_api *api, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas,
+                 SDL_Surface *last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED,
+                 int x, int y, SDL_Rect *update_rect)
 {
   float ang;
   int xx, yy;
@@ -177,15 +177,13 @@ void rotate_drag(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canv
   ang = do_rotate(canvas, x, y, SMOOTHING_OFF);
 
   /* Draw indicator lines */
-  xx = (canvas->w / 2) + ((int) (cos(ang) * 100));
-  yy = (canvas->h / 2) - ((int) (sin(ang) * 100));
-  api->line((void *)api, which, canvas, last, canvas->w / 2, canvas->h / 2, xx, yy, 1,
-            rotate_xorline_callback);
+  xx = (canvas->w / 2) + ((int)(cos(ang) * 100));
+  yy = (canvas->h / 2) - ((int)(sin(ang) * 100));
+  api->line((void *)api, which, canvas, last, canvas->w / 2, canvas->h / 2, xx, yy, 1, rotate_xorline_callback);
 
-  xx = (canvas->w / 2) + ((int) (cos(ang + (M_PI / 2)) * 200));
-  yy = (canvas->h / 2) - ((int) (sin(ang + (M_PI / 2)) * 200));
-  api->line((void *)api, which, canvas, last, canvas->w / 2, canvas->h / 2, xx, yy, 1,
-            rotate_xorline_callback);
+  xx = (canvas->w / 2) + ((int)(cos(ang + (M_PI / 2)) * 200));
+  yy = (canvas->h / 2) - ((int)(sin(ang + (M_PI / 2)) * 200));
+  api->line((void *)api, which, canvas, last, canvas->w / 2, canvas->h / 2, xx, yy, 1, rotate_xorline_callback);
 
   update_rect->x = 0;
   update_rect->y = 0;
@@ -195,8 +193,8 @@ void rotate_drag(magic_api * api, int which ATTRIBUTE_UNUSED, SDL_Surface * canv
   api->playsound(rotate_snd_drag, 128, 255);
 }
 
-void rotate_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
+void rotate_click(magic_api *api, int which, int mode ATTRIBUTE_UNUSED,
+                  SDL_Surface *canvas, SDL_Surface *last, int x, int y, SDL_Rect *update_rect)
 {
   /* Calculate the starting angle as the OPPOSITE of
    * where you clicked (so that `rotate_drag()` ends up
@@ -217,9 +215,8 @@ void rotate_click(magic_api * api, int which, int mode ATTRIBUTE_UNUSED,
   rotate_drag(api, which, canvas, last, x, y, x, y, update_rect);
 }
 
-void rotate_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas,
-                 SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect * update_rect)
+void rotate_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                    SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y, SDL_Rect *update_rect)
 {
   /* Final rotation work; and now, record the final angle
    * we landed at, so we can reuse it -- both for stacking up
@@ -238,7 +235,7 @@ void rotate_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED
   api->playsound(rotate_snd_release, 128, 255);
 }
 
-void rotate_shutdown(magic_api * api ATTRIBUTE_UNUSED)
+void rotate_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   if (rotate_snd_drag != NULL)
     Mix_FreeChunk(rotate_snd_drag);
@@ -253,8 +250,8 @@ void rotate_shutdown(magic_api * api ATTRIBUTE_UNUSED)
   }
 }
 
-void rotate_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas,
-                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect)
+void rotate_set_color(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas,
+                      SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect *update_rect)
 {
   /* Record the new color */
   rotate_color = SDL_MapRGB(canvas->format, r, g, b);
@@ -273,13 +270,13 @@ void rotate_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUS
   }
 }
 
-int rotate_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int rotate_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return 1;
 }
 
-void rotate_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas)
+void rotate_switchin(magic_api *api ATTRIBUTE_UNUSED,
+                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas)
 {
   if (rotate_snapshot == NULL)
     rotate_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
@@ -297,8 +294,8 @@ void rotate_switchin(magic_api * api ATTRIBUTE_UNUSED,
   rotate_last_angle = 0.0;
 }
 
-void rotate_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void rotate_switchout(magic_api *api ATTRIBUTE_UNUSED,
+                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
   /* Since `set_color()` gets called _before_ `switchin()`
    * we need to clear this flag on our way out, so we don't
@@ -309,24 +306,24 @@ void rotate_switchout(magic_api * api ATTRIBUTE_UNUSED,
   rotate_clicked_since_switchin = 0;
 }
 
-int rotate_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int rotate_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MODE_PAINT;
 }
 
 
-Uint8 rotate_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 rotate_accepted_sizes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
-Uint8 rotate_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 rotate_default_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   return 0;
 }
 
-void rotate_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
-                  Uint8 size ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void rotate_set_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                     SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED,
+                     Uint8 size ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
 }

@@ -39,7 +39,8 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
-enum {
+enum
+{
   TOOL_TYPEWRITER,
   TOOL_COMPUTER,
   NUM_TOOLS
@@ -47,13 +48,13 @@ enum {
 
 #define TOOL_COMPUTER_COLOR NUM_TOOLS
 
-char * ascii_tool_names[NUM_TOOLS + 1] = {
+char *ascii_tool_names[NUM_TOOLS + 1] = {
   gettext_noop("Typewriter"),
   gettext_noop("Computer"),
-  gettext_noop("Color Computer"), // special version of "computer"
+  gettext_noop("Color Computer"),       // special version of "computer"
 };
 
-char * ascii_tool_filenames[NUM_TOOLS + 1] = {
+char *ascii_tool_filenames[NUM_TOOLS + 1] = {
   "typewriter",
   "computer",
   "color_computer",
@@ -67,12 +68,12 @@ static Mix_Chunk *ascii_snd[NUM_TOOLS];
  * poistion, how many characters there are, and the maximum width.
  */
 #define MAX_CHARS 256
-SDL_Surface * ascii_bitmap[NUM_TOOLS];
+SDL_Surface *ascii_bitmap[NUM_TOOLS];
 int ascii_char_x[NUM_TOOLS][MAX_CHARS];
 int ascii_num_chars[NUM_TOOLS];
 int ascii_char_maxwidth[NUM_TOOLS];
 int ascii_char_brightness[NUM_TOOLS][MAX_CHARS];
-SDL_Surface * ascii_snapshot = NULL;
+SDL_Surface *ascii_snapshot = NULL;
 int ascii_size;
 Uint8 ascii_r, ascii_g, ascii_b;
 Uint8 ascii_clear_r[NUM_TOOLS], ascii_clear_g[NUM_TOOLS], ascii_clear_b[NUM_TOOLS];
@@ -80,22 +81,22 @@ Uint8 ascii_clear_r[NUM_TOOLS], ascii_clear_g[NUM_TOOLS], ascii_clear_b[NUM_TOOL
 /* Based on CGA color palette
    <https://en.wikipedia.org/wiki/Color_Graphics_Adapter#Color_palette> */
 const Uint8 ascii_computer_colors[16][3] = {
-  { 0x00, 0x00, 0x00 }, // Black
-  { 0x55, 0x55, 0x55 }, // Dark gray
-  { 0xAA, 0xAA, 0xAA }, // Light gray
-  { 0xFF, 0xFF, 0xFF }, // White
-  { 0x00, 0x00, 0xAA }, // Blue
-  { 0x55, 0x55, 0xFF }, // Light blue
-  { 0x00, 0xAA, 0x00 }, // Green
-  { 0x55, 0xFF, 0x55 }, // Light green
-  { 0x00, 0xAA, 0xAA }, // Cyan
-  { 0x55, 0xFF, 0xFF }, // Light cyan
-  { 0xAA, 0x00, 0x00 }, // Red
-  { 0xFF, 0x55, 0x55 }, // Light red
-  { 0xAA, 0x00, 0xAA }, // Magenta
-  { 0xFF, 0x55, 0xFF }, // Light magenta
-  { 0xAA, 0x55, 0x00 }, // Brown
-  { 0xFF, 0xFF, 0x55 }, // Yellow
+  {0x00, 0x00, 0x00},           // Black
+  {0x55, 0x55, 0x55},           // Dark gray
+  {0xAA, 0xAA, 0xAA},           // Light gray
+  {0xFF, 0xFF, 0xFF},           // White
+  {0x00, 0x00, 0xAA},           // Blue
+  {0x55, 0x55, 0xFF},           // Light blue
+  {0x00, 0xAA, 0x00},           // Green
+  {0x55, 0xFF, 0x55},           // Light green
+  {0x00, 0xAA, 0xAA},           // Cyan
+  {0x55, 0xFF, 0xFF},           // Light cyan
+  {0xAA, 0x00, 0x00},           // Red
+  {0xFF, 0x55, 0x55},           // Light red
+  {0xAA, 0x00, 0xAA},           // Magenta
+  {0xFF, 0x55, 0xFF},           // Light magenta
+  {0xAA, 0x55, 0x00},           // Brown
+  {0xFF, 0xFF, 0x55},           // Yellow
 };
 
 Uint32 ascii_api_version(void);
@@ -108,17 +109,17 @@ int ascii_get_order(int which);
 char *ascii_get_description(magic_api * api, int which, int mode);
 
 void ascii_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 
 void ascii_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void ascii_release(magic_api * api, int which,
-                 SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+                   SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 
 void ascii_shutdown(magic_api * api);
 void ascii_set_color(magic_api * api, int which, SDL_Surface * canvas,
-                   SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int ascii_requires_colors(magic_api * api, int which);
 void ascii_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void ascii_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
@@ -126,7 +127,7 @@ int ascii_modes(magic_api * api, int which);
 Uint8 ascii_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 ascii_default_size(magic_api * api, int which, int mode);
 void ascii_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
-                  SDL_Rect * update_rect);
+                    SDL_Rect * update_rect);
 void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last, int x, int y);
 int get_best_char(int which, int brightness);
 int get_bright(magic_api * api, int r, int g, int b);
@@ -137,7 +138,7 @@ Uint32 ascii_api_version(void)
   return (TP_MAGIC_API_VERSION);
 }
 
-int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
+int ascii_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
   char fname[1024];
   int i, j, x, y, xx, w, num_chars, all_clear, area, bright, clear_brightness;
@@ -166,7 +167,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     if (ascii_bitmap[i] == NULL)
     {
       fprintf(stderr, "Cannot load %s\n", fname);
-      return(0);
+      return (0);
     }
 
     clear_pixel = api->getpixel(ascii_bitmap[i], 0, 0);
@@ -184,7 +185,8 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
       do
       {
         all_clear = 1;
-        for (y = 0; y < ascii_bitmap[i]->h /* && all_clear */; y++) {
+        for (y = 0; y < ascii_bitmap[i]->h /* && all_clear */ ; y++)
+        {
           pixel = api->getpixel(ascii_bitmap[i], x, y);
           if (pixel != clear_pixel)
             all_clear = 0;
@@ -201,7 +203,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
       for (xx = x; xx < ascii_bitmap[i]->w && !all_clear; xx++)
       {
         all_clear = 1;
-        for (y = 0; y < ascii_bitmap[i]->h /* && all_clear */; y++)
+        for (y = 0; y < ascii_bitmap[i]->h /* && all_clear */ ; y++)
         {
           pixel = api->getpixel(ascii_bitmap[i], xx, y);
           if (pixel != clear_pixel)
@@ -250,7 +252,8 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
     /* Calculate the intensity of each character */
     area = ascii_char_maxwidth[i] * ascii_bitmap[i]->h;
 
-    DEBUG_PRINTF("%s max char width is %d -- * %d = area %d\n", fname, ascii_char_maxwidth[i], ascii_bitmap[i]->h, area);
+    DEBUG_PRINTF("%s max char width is %d -- * %d = area %d\n", fname, ascii_char_maxwidth[i], ascii_bitmap[i]->h,
+                 area);
 
     for (j = 0; j < num_chars; j++)
     {
@@ -268,7 +271,7 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
         DEBUG_PRINTF("\n");
       }
       DEBUG_PRINTF("char %3d brightness = %3d before padding -- ", j, bright / area);
-      w = ascii_char_maxwidth[i] - (ascii_char_x[i][j + 1] - ascii_char_x[i][j]) - 2; /* don't let padding affect _too_ much */
+      w = ascii_char_maxwidth[i] - (ascii_char_x[i][j + 1] - ascii_char_x[i][j]) - 2;   /* don't let padding affect _too_ much */
       if (w >= 1)
         bright += (clear_brightness * ascii_bitmap[i]->h * w);
       DEBUG_PRINTF("%3d after padding %d width\n", bright / area, w);
@@ -301,12 +304,12 @@ int ascii_init(magic_api * api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 
   return (1);
 }
 
-int ascii_get_tool_count(magic_api * api ATTRIBUTE_UNUSED)
+int ascii_get_tool_count(magic_api *api ATTRIBUTE_UNUSED)
 {
   return (NUM_TOOLS + 1);
 }
 
-SDL_Surface *ascii_get_icon(magic_api * api, int which)
+SDL_Surface *ascii_get_icon(magic_api *api, int which)
 {
   char fname[1024];
 
@@ -315,15 +318,15 @@ SDL_Surface *ascii_get_icon(magic_api * api, int which)
   return (IMG_Load(fname));
 }
 
-char *ascii_get_name(magic_api * api ATTRIBUTE_UNUSED, int which)
+char *ascii_get_name(magic_api *api ATTRIBUTE_UNUSED, int which)
 {
   char tmp[1024];
 
   snprintf(tmp, sizeof(tmp), gettext("ASCII %s"), gettext(ascii_tool_names[which]));
-  return(strdup(tmp));
+  return (strdup(tmp));
 }
 
-int ascii_get_group(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int ascii_get_group(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return MAGIC_TYPE_DISTORTS;
 }
@@ -333,20 +336,22 @@ int ascii_get_order(int which)
   return 2050 + which;
 }
 
-char *ascii_get_description(magic_api * api ATTRIBUTE_UNUSED, int which, int mode)
+char *ascii_get_description(magic_api *api ATTRIBUTE_UNUSED, int which, int mode)
 {
   char tmp[1024];
 
   if (mode == MODE_PAINT)
-    snprintf(tmp, sizeof(tmp), gettext("Click and drag to transform parts of your drawing to ASCII art (%s style)."), gettext(ascii_tool_names[which]));
+    snprintf(tmp, sizeof(tmp), gettext("Click and drag to transform parts of your drawing to ASCII art (%s style)."),
+             gettext(ascii_tool_names[which]));
   else
-    snprintf(tmp, sizeof(tmp), gettext("Click to transform your entire drawing to ASCII art (%s style)."), gettext(ascii_tool_names[which]));
+    snprintf(tmp, sizeof(tmp), gettext("Click to transform your entire drawing to ASCII art (%s style)."),
+             gettext(ascii_tool_names[which]));
 
-  return(strdup(tmp));
+  return (strdup(tmp));
 }
 
-void ascii_drag(magic_api * api, int which, SDL_Surface * canvas,
-              SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect)
+void ascii_drag(magic_api *api, int which, SDL_Surface *canvas,
+                SDL_Surface *last, int ox, int oy, int x, int y, SDL_Rect *update_rect)
 {
   api->line((void *)api, which, canvas, last, ox, oy, x, y, 1, do_ascii_effect);
 
@@ -362,8 +367,8 @@ void ascii_drag(magic_api * api, int which, SDL_Surface * canvas,
   api->playsound(ascii_snd[which], (x * 255) / canvas->w, 255);
 }
 
-void ascii_click(magic_api * api, int which, int mode,
-               SDL_Surface * canvas, SDL_Surface * last, int x, int y, SDL_Rect * update_rect)
+void ascii_click(magic_api *api, int which, int mode,
+                 SDL_Surface *canvas, SDL_Surface *last, int x, int y, SDL_Rect *update_rect)
 {
   if (mode == MODE_PAINT)
     ascii_drag(api, which, canvas, last, x, y, x, y, update_rect);
@@ -393,15 +398,15 @@ void ascii_click(magic_api * api, int which, int mode,
   }
 }
 
-void ascii_release(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
-                 SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                 SDL_Surface * last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
-                 int y ATTRIBUTE_UNUSED, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void ascii_release(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED,
+                   SDL_Surface *canvas ATTRIBUTE_UNUSED,
+                   SDL_Surface *last ATTRIBUTE_UNUSED, int x ATTRIBUTE_UNUSED,
+                   int y ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   api->stopsound();
 }
 
-void ascii_shutdown(magic_api * api ATTRIBUTE_UNUSED)
+void ascii_shutdown(magic_api *api ATTRIBUTE_UNUSED)
 {
   int i;
 
@@ -420,13 +425,12 @@ void ascii_shutdown(magic_api * api ATTRIBUTE_UNUSED)
   }
 }
 
-void ascii_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED,
-                   SDL_Surface * last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void ascii_set_color(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED,
+                     SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b,
+                     SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   /* If the bitmap's "clear" color, choose the opposite! */
-  if (abs(r - ascii_clear_r[which]) < 8 &&
-      abs(g - ascii_clear_g[which]) < 8 &&
-      abs(b - ascii_clear_b[which]) < 8)
+  if (abs(r - ascii_clear_r[which]) < 8 && abs(g - ascii_clear_g[which]) < 8 && abs(b - ascii_clear_b[which]) < 8)
   {
     r = 255 - r;
     g = 255 - g;
@@ -438,7 +442,7 @@ void ascii_set_color(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSE
   ascii_b = b;
 }
 
-int ascii_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int ascii_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   if (which == TOOL_TYPEWRITER || which == TOOL_COMPUTER)
     return 1;
@@ -446,8 +450,8 @@ int ascii_requires_colors(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
   return 0;
 }
 
-void ascii_switchin(magic_api * api ATTRIBUTE_UNUSED,
-                  int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void ascii_switchin(magic_api *api ATTRIBUTE_UNUSED,
+                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
   if (ascii_snapshot == NULL)
     ascii_snapshot = SDL_CreateRGBSurface(SDL_SWSURFACE, canvas->w, canvas->h,
@@ -464,18 +468,18 @@ void ascii_switchin(magic_api * api ATTRIBUTE_UNUSED,
   }
 }
 
-void ascii_switchout(magic_api * api ATTRIBUTE_UNUSED,
-                   int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface * canvas ATTRIBUTE_UNUSED)
+void ascii_switchout(magic_api *api ATTRIBUTE_UNUSED,
+                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
 }
 
-int ascii_modes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
+int ascii_modes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED)
 {
   return (MODE_PAINT | MODE_FULLSCREEN);
 }
 
 
-Uint8 ascii_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
+Uint8 ascii_accepted_sizes(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED)
 {
   if (mode == MODE_PAINT)
     return 6;
@@ -483,7 +487,7 @@ Uint8 ascii_accepted_sizes(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE
     return 0;
 }
 
-Uint8 ascii_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
+Uint8 ascii_default_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode)
 {
   if (mode == MODE_PAINT)
     return 3;
@@ -491,14 +495,14 @@ Uint8 ascii_default_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_U
     return 0;
 }
 
-void ascii_set_size(magic_api * api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                  SDL_Surface * canvas ATTRIBUTE_UNUSED, SDL_Surface * last ATTRIBUTE_UNUSED,
-                  Uint8 size, SDL_Rect * update_rect ATTRIBUTE_UNUSED)
+void ascii_set_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                    SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED,
+                    Uint8 size, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   ascii_size = size;
 }
 
-void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * last ATTRIBUTE_UNUSED, int x, int y)
+void do_ascii_effect(void *ptr, int which, SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED, int x, int y)
 {
   magic_api *api = (magic_api *) ptr;
   int w, h, n, sx, sy, xx, yy, ww, brightness, rr, gg, bb;
@@ -610,8 +614,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
             for (i = 0; i < 16; i++)
             {
               if (rr == ascii_computer_colors[i][0] &&
-                  gg == ascii_computer_colors[i][1] &&
-                  bb == ascii_computer_colors[i][2])
+                  gg == ascii_computer_colors[i][1] && bb == ascii_computer_colors[i][2])
               {
                 /* Exact match */
                 best = i;
@@ -629,8 +632,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
                      bb == ascii_computer_colors[i][2] &&
                      abs(rr - ascii_computer_colors[i][0]) <= 0x55) ||
                     (bb == ascii_computer_colors[i][2] &&
-                     rr == ascii_computer_colors[i][0] &&
-                     abs(gg - ascii_computer_colors[i][1]) <= 0x55))
+                     rr == ascii_computer_colors[i][0] && abs(gg - ascii_computer_colors[i][1]) <= 0x55))
                 {
                   /* Very close match */
                   best = i;
@@ -649,8 +651,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
                      abs(bb - ascii_computer_colors[i][2]) <= 0x55 &&
                      abs(rr - ascii_computer_colors[i][0]) <= 0x55) ||
                     (bb == ascii_computer_colors[i][2] &&
-                     abs(rr - ascii_computer_colors[i][0]) <= 0x55 &&
-                     abs(gg - ascii_computer_colors[i][1]) <= 0x55))
+                     abs(rr - ascii_computer_colors[i][0]) <= 0x55 && abs(gg - ascii_computer_colors[i][1]) <= 0x55))
                 {
                   /* Pretty close match */
                   best = i;
@@ -660,7 +661,7 @@ void do_ascii_effect(void *ptr, int which, SDL_Surface * canvas, SDL_Surface * l
 
             DEBUG_PRINTF("best for %02x%02x%02x = %d: ", rr, gg, bb, best);
             if (best == -1)
-              best = 0; // oops!
+              best = 0;         // oops!
             rr = ascii_computer_colors[best][0];
             gg = ascii_computer_colors[best][1];
             bb = ascii_computer_colors[best][2];
@@ -731,12 +732,12 @@ int get_best_char(int which, int brightness)
   }
 
   DEBUG_PRINTF("best for brightness %d is %d (brightness %d)\n",
-         brightness, best_idx, ascii_char_brightness[which][best_idx]);
+               brightness, best_idx, ascii_char_brightness[which][best_idx]);
 
   return best_idx;
 }
 
-int get_bright(magic_api * api, int r, int g, int b)
+int get_bright(magic_api *api, int r, int g, int b)
 {
   float fr, fg, fb, y;
 
@@ -746,5 +747,5 @@ int get_bright(magic_api * api, int r, int g, int b)
 
   y = (0.2126 * fr) + (0.7152 * fg) + (0.0722 * fb);
 
-  return (int) (y * 255);
+  return (int)(y * 255);
 }
