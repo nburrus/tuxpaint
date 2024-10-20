@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-12 21:58-0700\n"
+"POT-Creation-Date: 2024-10-20 11:26-0700\n"
 "PO-Revision-Date: 2010-09-04 17:25+0200\n"
 "Last-Translator: Fasokan <konate20032001@yahoo.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -371,6 +371,7 @@ msgid ""
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:25
+#: ../org.tuxpaint.Tuxpaint.appdata.xml.in:27
 msgid "Bill Kendrick, et al."
 msgstr ""
 
@@ -1033,7 +1034,7 @@ msgstr "Kura"
 #. Open a saved picture
 #. Buttons for the file open dialog
 #. Open dialog: 'Open' button, to load the selected picture
-#: ../tools.h:97 ../tuxpaint.c:9909
+#: ../tools.h:97 ../tuxpaint.c:9908
 msgid "Open"
 msgstr "A dayɛlɛ"
 
@@ -1286,252 +1287,252 @@ msgstr ""
 "cogoya yɛlɛma."
 
 #. Prompt to confirm user wishes to quit
-#: ../tuxpaint.c:2476
+#: ../tuxpaint.c:2475
 msgid "Do you really want to quit?"
 msgstr "I bɛ fɛ ka bɔ tiɲɛ yɛrɛ la?"
 
 #. Quit prompt positive response (quit)
-#: ../tuxpaint.c:2479
+#: ../tuxpaint.c:2478
 msgid "Yes, I’m done!"
 msgstr "Ɔwɔ, n tilala!"
 
 #. Quit prompt negative response (don't quit)
-#: ../tuxpaint.c:2482 ../tuxpaint.c:2509
+#: ../tuxpaint.c:2481 ../tuxpaint.c:2508
 msgid "No, take me back!"
 msgstr "Ayi, n lasgin kɔfɛ!"
 
 #. Current picture is not saved; user is quitting
-#: ../tuxpaint.c:2486
+#: ../tuxpaint.c:2485
 msgid "If you quit, you’ll lose your picture! Save it?"
 msgstr "N'i bɔra, i ka ja bɛ tunun. K'a mara?"
 
-#: ../tuxpaint.c:2487 ../tuxpaint.c:2492
+#: ../tuxpaint.c:2486 ../tuxpaint.c:2491
 msgid "Yes, save it!"
 msgstr "Ɔwɔ, a mara!"
 
-#: ../tuxpaint.c:2488 ../tuxpaint.c:2493
+#: ../tuxpaint.c:2487 ../tuxpaint.c:2492
 msgid "No, don’t bother saving!"
 msgstr "Ayi, kan'a mara!"
 
 #. Current picture is not saved; user is opening another picture
-#: ../tuxpaint.c:2491
+#: ../tuxpaint.c:2490
 msgid "Save your picture first?"
 msgstr "K'ia ka ja mara fɔlɔ?"
 
 #. Error opening picture
-#: ../tuxpaint.c:2496
+#: ../tuxpaint.c:2495
 msgid "Can’t open that picture!"
 msgstr "N ma se ka nin ja in dayɛlɛ!"
 
 #. Generic dialog dismissal
-#: ../tuxpaint.c:2499 ../tuxpaint.c:2504 ../tuxpaint.c:2513 ../tuxpaint.c:2520
-#: ../tuxpaint.c:2531 ../tuxpaint.c:2536 ../tuxpaint.c:2544
+#: ../tuxpaint.c:2498 ../tuxpaint.c:2503 ../tuxpaint.c:2512 ../tuxpaint.c:2519
+#: ../tuxpaint.c:2530 ../tuxpaint.c:2535 ../tuxpaint.c:2543
 msgid "OK"
 msgstr "N sɔnna"
 
 #. Notification that 'Open' dialog has nothing to show
-#: ../tuxpaint.c:2503
+#: ../tuxpaint.c:2502
 msgid "There are no saved files!"
 msgstr "Fisiye foyi maralen tɛ yan!"
 
 #. Verification of print action
-#: ../tuxpaint.c:2507
+#: ../tuxpaint.c:2506
 msgid "Print your picture now?"
 msgstr "K'i ka ja papiyema bɔ sisan?"
 
-#: ../tuxpaint.c:2508
+#: ../tuxpaint.c:2507
 msgid "Yes, print it!"
 msgstr "Ɔwɔ, a papiyema bɔ!"
 
 #. Confirmation of successful (we hope) printing
-#: ../tuxpaint.c:2512
+#: ../tuxpaint.c:2511
 msgid "Your picture has been printed!"
 msgstr "I ka ja papiyema bɔra!"
 
 #. We got an error printing
-#: ../tuxpaint.c:2516
+#: ../tuxpaint.c:2515
 msgid "Sorry! Your picture could not be printed!"
 msgstr "Hakɛto! I ka ja papiyema ma se ka bɔ!"
 
 #. Notification that it's too soon to print again (--printdelay option is in effect)
-#: ../tuxpaint.c:2519
+#: ../tuxpaint.c:2518
 msgid "You can’t print yet!"
 msgstr "I tɛ se ka ja papiyema bɔ fɔlɔ!"
 
 #. Prompt to confirm erasing a picture in the Open dialog,
 #. or exported template from the New dialog
-#: ../tuxpaint.c:2524
+#: ../tuxpaint.c:2523
 msgid "Erase this picture?"
 msgstr "Ka nin ja in jɔsi?"
 
-#: ../tuxpaint.c:2525
+#: ../tuxpaint.c:2524
 #, fuzzy
 #| msgid "Erase this picture?"
 msgid "Erase this template?"
 msgstr "Ka nin ja in jɔsi?"
 
-#: ../tuxpaint.c:2526
+#: ../tuxpaint.c:2525
 msgid "Yes, erase it!"
 msgstr "Ɔwɔ, a jɔsi!"
 
-#: ../tuxpaint.c:2527
+#: ../tuxpaint.c:2526
 msgid "No, don’t erase it!"
 msgstr "Ayi, kan'a jɔsi!"
 
 #. Reminder that Mouse Button 1 is the button to use in Tux Paint
-#: ../tuxpaint.c:2530
+#: ../tuxpaint.c:2529
 msgid "Remember to use the left mouse button!"
 msgstr "Kana ɲinɛ ka baara kɛ nin ɲinɛnin numanyanfanfɛ kɛrɛ ye!"
 
 #. Confirmation of successful (we hope) image export
-#: ../tuxpaint.c:2534
+#: ../tuxpaint.c:2533
 #, fuzzy, c-format
 #| msgid "Your picture has been printed!"
 msgid "Your picture has been exported to \"%s\"!"
 msgstr "I ka ja papiyema bɔra!"
 
-#: ../tuxpaint.c:2535
+#: ../tuxpaint.c:2534
 #, fuzzy, c-format
 #| msgid "Your picture has been printed!"
 msgid "Your slideshow GIF has been exported to \"%s\"!"
 msgstr "I ka ja papiyema bɔra!"
 
 #. We got an error exporting
-#: ../tuxpaint.c:2539
+#: ../tuxpaint.c:2538
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not be exported!"
 msgstr "Hakɛto! I ka ja papiyema ma se ka bɔ!"
 
-#: ../tuxpaint.c:2540
+#: ../tuxpaint.c:2539
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your slideshow GIF could not be exported!"
 msgstr "Hakɛto! I ka ja papiyema ma se ka bɔ!"
 
 #. Confirmation of successful (we hope) image-to-template conversion
-#: ../tuxpaint.c:2543
+#: ../tuxpaint.c:2542
 msgid "Your picture is now available as a template in the “New“ dialog!"
 msgstr ""
 
 #. We got an error doing image-to-template conversion
-#: ../tuxpaint.c:2547
+#: ../tuxpaint.c:2546
 msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
 
-#: ../tuxpaint.c:2548
+#: ../tuxpaint.c:2547
 #, fuzzy
 #| msgid "Sorry! Your picture could not be printed!"
 msgid "Sorry! Your picture could not turned into a template!"
 msgstr "Hakɛto! I ka ja papiyema ma se ka bɔ!"
 
 #. Slideshow instructions
-#: ../tuxpaint.c:2551
+#: ../tuxpaint.c:2550
 msgid "Choose the pictures you want, then click “Play”."
 msgstr "I sagola jaw suganti, kilike i k'a bil'a la. "
 
 #. Sound has been muted (silenced) via keyboard shortcut
-#: ../tuxpaint.c:2864
+#: ../tuxpaint.c:2863
 msgid "Sound muted."
 msgstr "Mankan datugura."
 
 #. Sound has been unmuted (unsilenced) via keyboard shortcut
-#: ../tuxpaint.c:2869
+#: ../tuxpaint.c:2868
 msgid "Sound unmuted."
 msgstr "Mankan dayɛlɛla."
 
 #. Wait while Text tool finishes loading fonts
-#: ../tuxpaint.c:3718
+#: ../tuxpaint.c:3717
 msgid "Please wait…"
 msgstr "Hakɛto i k'a kɔnɔ..."
 
 #. Open dialog: 'Erase' button, to erase/deleted the selected picture
-#: ../tuxpaint.c:9912
+#: ../tuxpaint.c:9911
 msgid "Erase"
 msgstr "A jɔsi"
 
 #. Open dialog: 'Slides' button, to switch to slide show mode
-#: ../tuxpaint.c:9915
+#: ../tuxpaint.c:9914
 msgid "Slides"
 msgstr "Jaw tɛmɛ tɛmɛ ɲɔgɔn kɔ"
 
 #. Open dialog: 'Template' button, to make a template out of a drawing
-#: ../tuxpaint.c:9918
+#: ../tuxpaint.c:9917
 msgid "Template"
 msgstr ""
 
 #. Open dialog: 'Export' button, to copy an image to an easily-accessible location
-#: ../tuxpaint.c:9921
+#: ../tuxpaint.c:9920
 msgid "Export"
 msgstr ""
 
 #. Open dialog: 'Back' button, to dismiss Open dialog without opening a picture
-#: ../tuxpaint.c:9924
+#: ../tuxpaint.c:9923
 msgid "Back"
 msgstr "Seginkɔ"
 
 #. Slideshow: 'Play' button, to begin a slideshow sequence
-#: ../tuxpaint.c:9927
+#: ../tuxpaint.c:9926
 msgid "Play"
 msgstr "A bil'a la"
 
 #. Slideshow: 'GIF Export' button, to create an animated GIF
-#: ../tuxpaint.c:9930
+#: ../tuxpaint.c:9929
 msgid "GIF Export"
 msgstr ""
 
 #. Slideshow: 'Next' button, to load next slide (image)
-#: ../tuxpaint.c:9933
+#: ../tuxpaint.c:9932
 msgid "Next"
 msgstr "ɲɛfɛta"
 
 #. Color mixer dialog: 'Clear' button, to reset the mixed color
-#: ../tuxpaint.c:9936
+#: ../tuxpaint.c:9935
 msgid "Clear"
 msgstr ""
 
 #. Use the localized label string (e.g., "あぁ" in Japanese)
-#: ../tuxpaint.c:10871 ../tuxpaint.c:10874 ../tuxpaint.c:10875
+#: ../tuxpaint.c:10870 ../tuxpaint.c:10873 ../tuxpaint.c:10874
 msgid "Aa"
 msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14898
+#: ../tuxpaint.c:14896
 msgid "Yes"
 msgstr "Ɔwɔ"
 
-#: ../tuxpaint.c:14901
+#: ../tuxpaint.c:14899
 msgid "No"
 msgstr "Ayi"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16177
+#: ../tuxpaint.c:16175
 msgid "Replace the picture with your changes?"
 msgstr "Ka ja mara n'i ka yɛlɛmaw tali ye ba la wa?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16181
+#: ../tuxpaint.c:16179
 msgid "Yes, replace the old one!"
 msgstr "Ɔwɔ, kɔrɔlen yɛlɛma!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16185
+#: ../tuxpaint.c:16183
 msgid "No, save a new file!"
 msgstr "Ayi, kura mara!"
 
-#: ../tuxpaint.c:17458
+#: ../tuxpaint.c:17456
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17464
+#: ../tuxpaint.c:17462
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1540,7 +1541,7 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:19154
+#: ../tuxpaint.c:19152
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr ""
 
@@ -1656,24 +1657,24 @@ msgstr "Kilike i ka ɲinɛnin cɛɛnɛ walasa ka ja fan dɔw ɲɛ yɛlɛma."
 msgid "Click to change the colors in your entire picture."
 msgstr "Kilike walasa ka ja fan bɛɛ ɲɛ yɛlɛma."
 
-#: ../../magic/src/ascii.c:51
+#: ../../magic/src/ascii.c:52
 msgid "Typewriter"
 msgstr ""
 
-#: ../../magic/src/ascii.c:52
+#: ../../magic/src/ascii.c:53
 msgid "Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:53
+#: ../../magic/src/ascii.c:54
 msgid "Color Computer"
 msgstr ""
 
-#: ../../magic/src/ascii.c:322
+#: ../../magic/src/ascii.c:325
 #, c-format
 msgid "ASCII %s"
 msgstr ""
 
-#: ../../magic/src/ascii.c:341
+#: ../../magic/src/ascii.c:344
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and drag to make parts of your picture look like they are on "
@@ -1683,7 +1684,7 @@ msgid ""
 msgstr ""
 "Kilike i ka ɲinɛnin cɛɛnɛ k'i ka ja fan dɔw kɛ i ko u bɛ ka bɔ telewisɔn na. "
 
-#: ../../magic/src/ascii.c:343
+#: ../../magic/src/ascii.c:347
 #, fuzzy, c-format
 #| msgid ""
 #| "Click and move the mouse around to turn the picture into a chalk drawing."
@@ -1838,11 +1839,11 @@ msgid "Click to turn the entire picture into a cartoon."
 msgstr ""
 "Kilike, i ka ɲinɛnin cɛɛnɛ ka ja yɛlɛma k’a kɛ i ko a ɲɛgɛnna ni lakɛrɛ ye."
 
-#: ../../magic/src/checkerboard.c:116
+#: ../../magic/src/checkerboard.c:115
 msgid "Checkerboard"
 msgstr ""
 
-#: ../../magic/src/checkerboard.c:132
+#: ../../magic/src/checkerboard.c:131
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid "Click and drag to fill the canvas with a checkerboard pattern."
@@ -1940,7 +1941,7 @@ msgstr ""
 msgid "Distortion"
 msgstr "Ja cogoya yɛlɛmali."
 
-#: ../../magic/src/distortion.c:167
+#: ../../magic/src/distortion.c:166
 msgid "Click and drag the mouse to cause distortion in your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ ka cogoya dɔw yɛlɛma i ka ja la. "
 
@@ -2156,32 +2157,32 @@ msgid ""
 "Choose a background color and click to turn the corner of the page over."
 msgstr "ɲɛ dɔ suganti, ka kilike dogodogonin dɔ kan, walasa k’a kuru."
 
-#: ../../magic/src/fractal.c:131
+#: ../../magic/src/fractal.c:134
 #, c-format
 msgid "Fractal #%d"
 msgstr ""
 
-#: ../../magic/src/fractal.c:153
+#: ../../magic/src/fractal.c:157
 #, c-format
 msgid ""
 "Click and drag to sketch a shape. It will repeat, %1$s %2$d%% and rotating "
 "%3$d degrees."
 msgstr ""
 
-#: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
+#: ../../magic/src/fractal.c:158 ../../magic/src/fractal.c:164
 msgid "scaling up"
 msgstr ""
 
-#: ../../magic/src/fractal.c:153 ../../magic/src/fractal.c:157
+#: ../../magic/src/fractal.c:158 ../../magic/src/fractal.c:164
 msgid "scaling down"
 msgstr ""
 
-#: ../../magic/src/fractal.c:157
+#: ../../magic/src/fractal.c:163
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, %1$s %2$d%%."
 msgstr ""
 
-#: ../../magic/src/fractal.c:162
+#: ../../magic/src/fractal.c:170
 #, c-format
 msgid "Click and drag to sketch a shape. It will repeat, rotating %d degrees."
 msgstr ""
@@ -2230,7 +2231,7 @@ msgstr ""
 msgid "Googly Eyes"
 msgstr ""
 
-#: ../../magic/src/googlyeyes.c:228
+#: ../../magic/src/googlyeyes.c:227
 msgid ""
 "Click to place a googly eye, then drag and release to make it look that "
 "direction."
@@ -2396,7 +2397,7 @@ msgstr ""
 msgid "Metal Paint"
 msgstr "Nɛgɛji"
 
-#: ../../magic/src/metalpaint.c:124
+#: ../../magic/src/metalpaint.c:123
 msgid "Click and drag the mouse to paint with a metallic color."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ i ka pɛntiri kɛ ni nɛgɛji ye."
 
@@ -2849,7 +2850,7 @@ msgstr ""
 msgid "Reflection"
 msgstr ""
 
-#: ../../magic/src/reflection.c:131
+#: ../../magic/src/reflection.c:130
 #, fuzzy
 #| msgid ""
 #| "Click and move the mouse to add a mosaic effect to parts of your picture."
@@ -3022,43 +3023,43 @@ msgstr "Kilike I ka sanbɛlɛnin ɲɛgɛn k’i ka ja la."
 msgid "Click to add snow flakes to your picture."
 msgstr "Kilike, i ka sanbɛlɛninkulu k’i ka ja la."
 
-#: ../../magic/src/spiral.c:45
+#: ../../magic/src/spiral.c:46
 msgid "Spiral"
 msgstr ""
 
-#: ../../magic/src/spiral.c:46
+#: ../../magic/src/spiral.c:47
 #, fuzzy
 #| msgid "Square"
 msgid "Square Spiral"
 msgstr "Kare"
 
-#: ../../magic/src/spiral.c:47
+#: ../../magic/src/spiral.c:48
 msgid "Concentric Circles"
 msgstr ""
 
-#: ../../magic/src/spiral.c:48
+#: ../../magic/src/spiral.c:49
 msgid "Concentric Squares"
 msgstr ""
 
-#: ../../magic/src/spiral.c:52
+#: ../../magic/src/spiral.c:53
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a spiral."
 msgstr "Kilike i ka ɲinɛnin cɛɛnɛ ka birikiden kunba dɔw ɲɛgɛn."
 
-#: ../../magic/src/spiral.c:53
+#: ../../magic/src/spiral.c:54
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create a square spiral."
 msgstr "Kilike i ka ɲinɛnin cɛɛnɛ ka birikiden kunba dɔw ɲɛgɛn."
 
-#: ../../magic/src/spiral.c:54
+#: ../../magic/src/spiral.c:55
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create concentric circles."
 msgstr "Kilike i ka ɲinɛnin cɛɛnɛ ka birikiden kunba dɔw ɲɛgɛn."
 
-#: ../../magic/src/spiral.c:55
+#: ../../magic/src/spiral.c:56
 #, fuzzy
 #| msgid "Click and move to draw large bricks."
 msgid "Click and drag to create concentric squares."
@@ -3174,16 +3175,16 @@ msgstr ""
 msgid "Click and drag to add fur to your picture."
 msgstr "Kilike, i ka ɲinɛnin cɛɛnɛ walasa ka arayew ɲɛgɛn i ka ja kan."
 
-#: ../../magic/src/tessell.c:114
+#: ../../magic/src/tessell.c:115
 msgid "Tessellation Pointy"
 msgstr ""
 
 #. which == TOOL_TESSELL_TOP_TOP
-#: ../../magic/src/tessell.c:116
+#: ../../magic/src/tessell.c:117
 msgid "Tessellation Flat"
 msgstr ""
 
-#: ../../magic/src/tessell.c:132
+#: ../../magic/src/tessell.c:133
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid ""
@@ -3192,7 +3193,7 @@ msgid ""
 msgstr "Kilike, i ka ɲinɛnin layaala ya ka dogodogonin tilennenw ci."
 
 #. which == TOOL_TESSELL_FLAT_TOP
-#: ../../magic/src/tessell.c:134
+#: ../../magic/src/tessell.c:135
 #, fuzzy
 #| msgid "Click and drag to draw arrows made of string art."
 msgid ""
