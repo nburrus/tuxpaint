@@ -136,10 +136,10 @@ section "Options de ligne de commande " ci-dessous.)
 
     Quelques exemples :
 
-      + 640x480
-      + 1024x768
-      + 768x1024
-      + 1600x1200
+      o 640x480
+      o 1024x768
+      o 768x1024
+      o 1600x1200
 
     💡 Si un seul écran est disponible, et que Tux Paint tourne en mode fenêtré
     (pas en plein écran), et que la taille de fenêtre choisie excède les
@@ -578,7 +578,6 @@ section "Options de ligne de commande " ci-dessous.)
     débutant.
 
     La valeur COMPLEXITÉ peut l'une de celles-ci :
-
     → advanced (par défaut) ←
         "Avancé" — Pour les utilisateurs familiers avec Tux Paint et qui
         peuvent œuvrer avec de outils plus complexes.
@@ -1062,7 +1061,7 @@ section "Options de ligne de commande " ci-dessous.)
 
 
          
-
+   
     ## Commandes d'impression ##
 
     → printcommand=COMMAND ←
@@ -1101,7 +1100,7 @@ section "Options de ligne de commande " ci-dessous.)
 
 
          
-
+   
     ## Format du papier ##
 
     → papersize=PAPERSIZE ←
@@ -1122,7 +1121,7 @@ section "Options de ligne de commande " ci-dessous.)
 
 
          
-
+   
                                 ### Sauvegarde ###
 
     ## Écraser le travail précédent ##
@@ -1152,7 +1151,7 @@ section "Options de ligne de commande " ci-dessous.)
 
 
          
-
+   
     ## Démarrer ##
 
     → startblank=yes ←
@@ -1182,7 +1181,7 @@ section "Options de ligne de commande " ci-dessous.)
 
 
          
-
+   
     ## Répertoires de sauvegarde et d'export ##
 
     → savedir=DIRECTORY ←
@@ -1228,7 +1227,7 @@ section "Options de ligne de commande " ci-dessous.)
 
         Si vous ne le changez pas, l' emplacement par défaut est :
 
-          o Linux et Unix - Si disponible, quel que soit l'endroit où votre
+          # Linux et Unix - Si disponible, quel que soit l'endroit où votre
             environnement de bureau est configuré pour le stockage des images,
             en fonction de votre configuration XDG (X Desktop Group). (Essayez
             d'exécuter en ligne de commande "xdg-user-dir PICTURES" pour le
@@ -1239,13 +1238,13 @@ section "Options de ligne de commande " ci-dessous.)
             Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "My Pictures" directory for each user (normaly 
+          # Windows - "My Pictures" directory for each user (normaly 
             "C:\Users\nom d'utilisateur\My Pictures")
             You can directly open the folder as follows:
-              # Pressez la touche "[Windows]+[R]" pour ouvrir la boîte de
+              @ Pressez la touche "[Windows]+[R]" pour ouvrir la boîte de
                 dialogue "Exécuter ...".
-              # Enter "Shell:My Pictures" in the text box and push [OK].
-          o macOS — TBD!
+              @ Enter "Shell:My Pictures" in the text box and push [OK].
+          # macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
         be created and used. (e.g., "/home/nom d'utilisateur/Images/TuxPaint")
@@ -1430,23 +1429,23 @@ section "Options de ligne de commande " ci-dessous.)
 
         Caractéristiques :
 
-          o Mouvement fin sur le canevas, ou rapide si Shift est maintenu.
-          o Mouvement rapide dans la zone des boutons d'outils.
-          o Touches de contrôle :
-              # [Left]/[Right]/[Up]/[Down], pavé numérique [1] jusqu'à [9] :
+          # Mouvement fin sur le canevas, ou rapide si Shift est maintenu.
+          # Mouvement rapide dans la zone des boutons d'outils.
+          # Touches de contrôle :
+              @ [Left]/[Right]/[Up]/[Down], pavé numérique [1] jusqu'à [9] :
                 déplace la souris
-              # [Space]/[5] : Clic de la souris (sauf quand on utilise les
+              @ [Space]/[5] : Clic de la souris (sauf quand on utilise les
                 outils "Texte" ou "Étiquette")
-              # [Insert]/[F5]: Clic de la souris (toujours)
-              # [F4] fait naviguer la souris entre "Outils", "Couleurs" et les
+              @ [Insert]/[F5]: Clic de la souris (toujours)
+              @ [F4] fait naviguer la souris entre "Outils", "Couleurs" et les
                 zones de dessin
-              # Si la souris se trouve dans la section "Outils" à gauche ou
+              @ Si la souris se trouve dans la section "Outils" à gauche ou
                 dans la section "Couleurs" en bas :
-                  @ [F7],[F8] : déplacer respectivement vers le bas / le haut
+                  - [F7],[F8] : déplacer respectivement vers le bas / le haut
                     entre les boutons (section Outils, uniquement)
-                  @ [F11],[F12] : passer respectivement au bouton précédent /
+                  - [F11],[F12] : passer respectivement au bouton précédent /
                     suivant
-          o Pour cliquer et faire glisser, maintenez l'une des touches «clic»
+          # Pour cliquer et faire glisser, maintenez l'une des touches «clic»
             (par exemple [Insert]), et utilisez les touches de déplacement (par
             exemple [Left]).
 
@@ -1457,7 +1456,7 @@ section "Options de ligne de commande " ci-dessous.)
             cliquer, des touches de mouvement pour se déplacer (qui dessinera)
             et une autre touche "clic" pour terminer le clic (arrêt du dessin).
 
-          o Une souris et/ou un joystick standard peuvent toujours être
+          # Une souris et/ou un joystick standard peuvent toujours être
             utilisés (vous pouvez donc, par exemple, vous déplacer avec la
             souris et cliquer avec le clavier, ou vice-versa)
 
@@ -1723,88 +1722,88 @@ section "Options de ligne de commande " ci-dessous.)
     vous démarrez Tux Paint.
 
     → --fullscreen=yes
-        --fullscreen=native
-        --WIDTHxHEIGHT
-        --orient=portrait
-        --buttonsize=SIZE
-        --colorsrows=ROWS
-        --native
-        --allowscreensaver
-        --startblank
-        --nosound
-        --nostereo
-        --noquit
-        --noprint
-        --printdelay=SECONDES
-        --printcfg
-        --altprintnever
-        --altprintalways
-        --papersize=PAPERSIZE
-        --printcommand=COMMAND
-        --altprintcommand=COMMAND
-        --nolockfile
-        --simpleshapes
-        --uppercase
-        --grab
-        --noshortcuts
-        --nowheelmouse
-        --nobuttondistinction
-        --nofancycursors
-        --hidecursor
-        --nooutlines
-        --nostamps
-        --nostampcontrols
-        --nostamprotation
-        --nomagiccontrols
-        --nomagicsizes
-        --noshapecontrols
-        --nolabel
-        --nobrushspacing
-        --newcolorslast
-        --mouse-accessibility
-        --onscreen-keyboard
-        --onscreen-keyboard-layout
-        --onscreen-keyboard-disable-change
-        --joystick-dev
-        --joystick-slowness
-        --joystick-threshold
-        --joystick-maxsteps
-        --joystick-hat-slowness
-        --joystick-hat-timeout
-        --joystick-btn-escape
-        --joystick-btn-brush
-        --joystick-btn-stamp
-        --joystick-btn-lines
-        --joystick-btn-shapes
-        --joystick-btn-text
-        --joystick-btn-label
-        --joystick-btn-magic
-        --joystick-btn-undo
-        --joystick-btn-redo
-        --joystick-btn-eraser
-        --joystick-btn-new
-        --joystick-btn-open
-        --joystick-btn-save
-        --joystick-btn-pgsetup
-        --joystick-btn-print
-        --joystick-buttons-ignore
-        --sysfonts
-        --uifont=FONT NAME
-        --alllocalefonts
-        --mirrorstamps
-        --stampsize=SIZE
-        --keyboard
-        --savedir DIRECTORY
-        --datadir DIRECTORY
-        --exportdir DIRECTORY
-        --saveover
-        --saveovernew
-        --nosave
-        --autosave
-        --reversesort
-        --lang LANGUAGE
-        --colorfile FILE
-        ←
+    --fullscreen=native
+    --WIDTHxHEIGHT
+    --orient=portrait
+    --buttonsize=SIZE
+    --colorsrows=ROWS
+    --native
+    --allowscreensaver
+    --startblank
+    --nosound
+    --nostereo
+    --noquit
+    --noprint
+    --printdelay=SECONDES
+    --printcfg
+    --altprintnever
+    --altprintalways
+    --papersize=PAPERSIZE
+    --printcommand=COMMAND
+    --altprintcommand=COMMAND
+    --nolockfile
+    --simpleshapes
+    --uppercase
+    --grab
+    --noshortcuts
+    --nowheelmouse
+    --nobuttondistinction
+    --nofancycursors
+    --hidecursor
+    --nooutlines
+    --nostamps
+    --nostampcontrols
+    --nostamprotation
+    --nomagiccontrols
+    --nomagicsizes
+    --noshapecontrols
+    --nolabel
+    --nobrushspacing
+    --newcolorslast
+    --mouse-accessibility
+    --onscreen-keyboard
+    --onscreen-keyboard-layout
+    --onscreen-keyboard-disable-change
+    --joystick-dev
+    --joystick-slowness
+    --joystick-threshold
+    --joystick-maxsteps
+    --joystick-hat-slowness
+    --joystick-hat-timeout
+    --joystick-btn-escape
+    --joystick-btn-brush
+    --joystick-btn-stamp
+    --joystick-btn-lines
+    --joystick-btn-shapes
+    --joystick-btn-text
+    --joystick-btn-label
+    --joystick-btn-magic
+    --joystick-btn-undo
+    --joystick-btn-redo
+    --joystick-btn-eraser
+    --joystick-btn-new
+    --joystick-btn-open
+    --joystick-btn-save
+    --joystick-btn-pgsetup
+    --joystick-btn-print
+    --joystick-buttons-ignore
+    --sysfonts
+    --uifont=FONT NAME
+    --alllocalefonts
+    --mirrorstamps
+    --stampsize=SIZE
+    --keyboard
+    --savedir DIRECTORY
+    --datadir DIRECTORY
+    --exportdir DIRECTORY
+    --saveover
+    --saveovernew
+    --nosave
+    --autosave
+    --reversesort
+    --lang LANGUAGE
+    --colorfile FILE
+    ←
 
         Celles-ci activent ou correspondent aux options du fichier de
         configuration décrites ci-dessus.
@@ -1812,47 +1811,47 @@ section "Options de ligne de commande " ci-dessous.)
 
          
     → --windowed
-        --800x600
-        --orient=landscape
-        --disablescreensaver
-        --startlast
-        --sound
-        --stereo
-        --quit
-        --print
-        --printdelay=0
-        --noprintcfg
-        --altprintmod
-        --lockfile
-        --complexshapes
-        --mixedcase
-        --dontgrab
-        --shortcuts
-        --wheelmouse
-        --buttondistinction
-        --fancycursors
-        --showcursor
-        --outlines
-        --stamps
-        --stampcontrols
-        --stamprotation
-        --magiccontrols
-        --magicsizes
-        --shapecontrols
-        --label
-        --brushspacing
-        --newcolorsfirst
-        --nosysfonts
-        --currentlocalefont
-        --uifont=default
-        --dontmirrorstamps
-        --stampsize=default
-        --mouse
-        --saveoverask
-        --save
-        --noautosave
-        --noreversesort
-        ←
+    --800x600
+    --orient=landscape
+    --disablescreensaver
+    --startlast
+    --sound
+    --stereo
+    --quit
+    --print
+    --printdelay=0
+    --noprintcfg
+    --altprintmod
+    --lockfile
+    --complexshapes
+    --mixedcase
+    --dontgrab
+    --shortcuts
+    --wheelmouse
+    --buttondistinction
+    --fancycursors
+    --showcursor
+    --outlines
+    --stamps
+    --stampcontrols
+    --stamprotation
+    --magiccontrols
+    --magicsizes
+    --shapecontrols
+    --label
+    --brushspacing
+    --newcolorsfirst
+    --nosysfonts
+    --currentlocalefont
+    --uifont=default
+    --dontmirrorstamps
+    --stampsize=default
+    --mouse
+    --saveoverask
+    --save
+    --noautosave
+    --noreversesort
+    ←
 
         Ces options peuvent être utilisées pour remplacer les paramètres
         définis dans le fichier de configuration. (Si l'option n'est pas
@@ -1879,7 +1878,7 @@ section "Options de ligne de commande " ci-dessous.)
     Tux Paint ne démarrera pas et ne s'exécutera pas.
 
     → --version
-        --verbose-version ←
+    --verbose-version ←
 
         Display the version number and date of the copy of Tux Paint you are
         running. The "--verbose-version" also lists what compile-time options

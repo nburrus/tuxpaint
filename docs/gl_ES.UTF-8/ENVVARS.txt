@@ -26,9 +26,9 @@ indirectamente polas bibliotecas que emprega.
 
     Algúns exemplos de onde se usa «$HOME» inclúen:
 
-      + A localización do ficheiro de configuración de Tux Paint
-      + A base de onde Tux Paint garda e carga os debuxos dos usuarios
-      + A localización da colección privada de ficheiros de datos dun usuario —
+      o A localización do ficheiro de configuración de Tux Paint
+      o A base de onde Tux Paint garda e carga os debuxos dos usuarios
+      o A localización da colección privada de ficheiros de datos dun usuario —
         selos, pinceis, etc. — (fronte aos dispoñíbeis no sistema)
 
      
@@ -83,7 +83,6 @@ A seguir amósanse algunhas das variábeis de contorno compatíbeis con Simple
 DirectMedia Layer (libSDL) — que Tux Paint utiliza para amosar gráficos,
 reproducir sons e recibir entrada do rato, teclado e joystick — e que poden ser
 útiles para os usuarios de Tux Paint.
-
 → SDL_VIDEO_ALLOW_SCREENSAVER ←
 
     Especifica se Tux Paint debería permitir a execución dun protector de
@@ -103,4 +102,3 @@ reproducir sons e recibir entrada do rato, teclado e joystick — e que poden se
 
 
      
-

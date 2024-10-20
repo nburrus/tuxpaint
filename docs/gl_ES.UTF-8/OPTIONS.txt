@@ -133,10 +133,10 @@ liña de ordes», a continuación.)
 
     Algúns exemplos:
 
-      + 640x480
-      + 1024x768
-      + 768x1024
-      + 1600x1200
+      o 640x480
+      o 1024x768
+      o 768x1024
+      o 1600x1200
 
     💡 If only one display is available, and Tux Paint is being run in windowed
     (not fullscreen) mode, and the chosen window size exceeds the capabilities
@@ -550,7 +550,6 @@ liña de ordes», a continuación.)
     beginner mode.)
 
     The COMPLEXITY value may be one of:
-
     → advanced (o predeterminado) ←
         "Advanced" — For users familiar with Tux Paint and who can operate more
         complex tools.
@@ -1020,7 +1019,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Print Commands ##
 
     → printcommand=ORDE ←
@@ -1059,7 +1058,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Paper Size ##
 
     → papersize=TAMAÑO_DO_PAPEL ←
@@ -1080,7 +1079,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
                                   ### Gardar ###
 
     ## Save Over Earlier Work ##
@@ -1109,7 +1108,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Starting Out ##
 
     → startblank=yes ←
@@ -1136,7 +1135,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Save and Export Directories ##
 
     → savedir=DIRECTORIO ←
@@ -1179,7 +1178,7 @@ liña de ordes», a continuación.)
 
         Se non o anula, a ubicación predeterminada é:
 
-          o Linux e Unix: se está dispoñíbel, onde queira que o seu contorno de
+          # Linux e Unix: se está dispoñíbel, onde queira que o seu contorno de
             escritorio estea configurado para que se almacenen imaxes, en
             función da configuración XDG (X Desktop Group). (Probe a executar a
             liña de ordes «xdg-user-dir PICTURES» para descubrilo.)
@@ -1189,13 +1188,13 @@ liña de ordes», a continuación.)
             Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "My Pictures" directory for each user (normaly 
+          # Windows - "My Pictures" directory for each user (normaly 
             "C:\Users\nome de usuario\My Pictures")
             You can directly open the folder as follows:
-              # Prema a tecla «[Windows]+[R]» para abrir o diálogo
+              @ Prema a tecla «[Windows]+[R]» para abrir o diálogo
                 «Executar...».
-              # Enter "Shell:My Pictures" in the text box and push [OK].
-          o macOS — TBD!
+              @ Enter "Shell:My Pictures" in the text box and push [OK].
+          # macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
         be created and used. (e.g., "/home/nome de usuario/Imaxes/TuxPaint")
@@ -1213,7 +1212,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## More Saving Options ##
 
     → nosave=yes ←
@@ -1253,7 +1252,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
                                    ### Data ###
 
     ## Lockfile ##
@@ -1281,7 +1280,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Data Directory ##
 
     → datadir=DIRECTORIO ←
@@ -1317,7 +1316,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Color Palette File ##
 
     → colorfile=NOME_DE_FICHEIRO ←
@@ -1350,7 +1349,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
                                ### Accessibility ###
 
     ## Mouse ##
@@ -1362,7 +1361,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Keyboard ##
 
     → keyboard=yes ←
@@ -1373,24 +1372,24 @@ liña de ordes», a continuación.)
 
         Funcionalidades:
 
-          o Movemento fino dentro do lenzo ou movemento groseiro se se mantén
+          # Movemento fino dentro do lenzo ou movemento groseiro se se mantén
             premida Shift.
-          o Movemento groseiro dentro das áreas dos botóns da ferramenta.
-          o Principais controis:
-              # [Left]/[Right]/[Up]/[Down], teclado numérico [1] ata [9]: mover
+          # Movemento groseiro dentro das áreas dos botóns da ferramenta.
+          # Principais controis:
+              @ [Left]/[Right]/[Up]/[Down], teclado numérico [1] ata [9]: mover
                 o rato
-              # [Space]/[5]: premer co rato (agás cando se empregan as
+              @ [Space]/[5]: premer co rato (agás cando se empregan as
                 ferramentas de «Texto» ou de «Etiqueta»)
-              # [Insert]/[F5]: premer co rato (sempre)
-              # [F4] fai saltar o rato entre as «Ferramentas», «Cores» e as
+              @ [Insert]/[F5]: premer co rato (sempre)
+              @ [F4] fai saltar o rato entre as «Ferramentas», «Cores» e as
                 áreas do lenzo
-              # Se o rato está dentro da sección «Ferramentas» á esquerda ou na
+              @ Se o rato está dentro da sección «Ferramentas» á esquerda ou na
                 sección «Cores» na parte inferior:
-                  @ [F7]/[F8]: mover cara abaixo/arriba entre os botóns,
+                  - [F7]/[F8]: mover cara abaixo/arriba entre os botóns,
                     respectivamente (só sección de ferramentas)
-                  @ [F11]/[F12]: mover ao botón anterior/seguinte,
+                  - [F11]/[F12]: mover ao botón anterior/seguinte,
                     respectivamente
-          o Para premer e arrastrar, manteña premida unha das teclas de «clic»
+          # Para premer e arrastrar, manteña premida unha das teclas de «clic»
             (p. ex.: [Insert]) e use as teclas de movemento (p. ex.: [Left]).
 
             💡 Note: The "mouse accessibility" feature works with the keyboard
@@ -1399,7 +1398,7 @@ liña de ordes», a continuación.)
             keys to move around (which will draw), and another 'click' key to
             end the click (stop drawing).
 
-          o Aínda se pode usar un rato e/ou unha panca de mando (joystick)
+          # Aínda se pode usar un rato e/ou unha panca de mando (joystick)
             normais (para que poida, por exemplo, moverse co rato e premer co
             teclado ou viceversa)
 
@@ -1409,7 +1408,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Onscreen Keyboard ##
 
     → onscreen-keyboard=yes ←
@@ -1443,7 +1442,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
                                  ### Joystick ###
 
     ## Main Device ##
@@ -1478,7 +1477,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Hat ##
 
     → joystick-hat-slowness=VELOCIDADE ←
@@ -1497,7 +1496,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     ## Buttons to Disable ##
 
     → joystick-buttons-ignore=BOTÓN1,BOTÓN2,... ←
@@ -1635,7 +1634,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     Anulación da configuración do sistema. Opcións
 
     If any of the above options are set in a system-wide configuration file
@@ -1661,88 +1660,88 @@ liña de ordes», a continuación.)
     Paint.
 
     → --fullscreen=yes
-        --fullscreen=native
-        --LARGOxALTO
-        --orient=portrait
-        --buttonsize=TAMAÑO
-        --colorsrows=FILAS
-        --native
-        --allowscreensaver
-        --startblank
-        --nosound
-        --nostereo
-        --noquit
-        --noprint
-        --printdelay=SEGUNDOS
-        --printcfg
-        --altprintnever
-        --altprintalways
-        --papersize=TAMAÑO_DO_PAPEL
-        --printcommand=ORDE
-        --altprintcommand=ORDE
-        --nolockfile
-        --simpleshapes
-        --uppercase
-        --grab
-        --noshortcuts
-        --nowheelmouse
-        --nobuttondistinction
-        --nofancycursors
-        --hidecursor
-        --nooutlines
-        --nostamps
-        --nostampcontrols
-        --nostamprotation
-        --nomagiccontrols
-        --nomagicsizes
-        --noshapecontrols
-        --nolabel
-        --nobrushspacing
-        --newcolorslast
-        --mouse-accessibility
-        --onscreen-keyboard
-        --onscreen-keyboard-layout
-        --onscreen-keyboard-disable-change
-        --joystick-dev
-        --joystick-slowness
-        --joystick-threshold
-        --joystick-maxsteps
-        --joystick-hat-slowness
-        --joystick-hat-timeout
-        --joystick-btn-escape
-        --joystick-btn-brush
-        --joystick-btn-stamp
-        --joystick-btn-lines
-        --joystick-btn-shapes
-        --joystick-btn-text
-        --joystick-btn-label
-        --joystick-btn-magic
-        --joystick-btn-undo
-        --joystick-btn-redo
-        --joystick-btn-eraser
-        --joystick-btn-new
-        --joystick-btn-open
-        --joystick-btn-save
-        --joystick-btn-pgsetup
-        --joystick-btn-print
-        --joystick-buttons-ignore
-        --sysfonts
-        --uifont=FONT NAME
-        --alllocalefonts
-        --mirrorstamps
-        --stampsize=TAMAÑO
-        --keyboard
-        --savedir DIRECTORIO
-        --datadir DIRECTORIO
-        --exportdir DIRECTORIO
-        --saveover
-        --saveovernew
-        --nosave
-        --autosave
-        --reversesort
-        --lang IDIOMA
-        --colorfile FICHEIRO
-        ←
+    --fullscreen=native
+    --LARGOxALTO
+    --orient=portrait
+    --buttonsize=TAMAÑO
+    --colorsrows=FILAS
+    --native
+    --allowscreensaver
+    --startblank
+    --nosound
+    --nostereo
+    --noquit
+    --noprint
+    --printdelay=SEGUNDOS
+    --printcfg
+    --altprintnever
+    --altprintalways
+    --papersize=TAMAÑO_DO_PAPEL
+    --printcommand=ORDE
+    --altprintcommand=ORDE
+    --nolockfile
+    --simpleshapes
+    --uppercase
+    --grab
+    --noshortcuts
+    --nowheelmouse
+    --nobuttondistinction
+    --nofancycursors
+    --hidecursor
+    --nooutlines
+    --nostamps
+    --nostampcontrols
+    --nostamprotation
+    --nomagiccontrols
+    --nomagicsizes
+    --noshapecontrols
+    --nolabel
+    --nobrushspacing
+    --newcolorslast
+    --mouse-accessibility
+    --onscreen-keyboard
+    --onscreen-keyboard-layout
+    --onscreen-keyboard-disable-change
+    --joystick-dev
+    --joystick-slowness
+    --joystick-threshold
+    --joystick-maxsteps
+    --joystick-hat-slowness
+    --joystick-hat-timeout
+    --joystick-btn-escape
+    --joystick-btn-brush
+    --joystick-btn-stamp
+    --joystick-btn-lines
+    --joystick-btn-shapes
+    --joystick-btn-text
+    --joystick-btn-label
+    --joystick-btn-magic
+    --joystick-btn-undo
+    --joystick-btn-redo
+    --joystick-btn-eraser
+    --joystick-btn-new
+    --joystick-btn-open
+    --joystick-btn-save
+    --joystick-btn-pgsetup
+    --joystick-btn-print
+    --joystick-buttons-ignore
+    --sysfonts
+    --uifont=FONT NAME
+    --alllocalefonts
+    --mirrorstamps
+    --stampsize=TAMAÑO
+    --keyboard
+    --savedir DIRECTORIO
+    --datadir DIRECTORIO
+    --exportdir DIRECTORIO
+    --saveover
+    --saveovernew
+    --nosave
+    --autosave
+    --reversesort
+    --lang IDIOMA
+    --colorfile FICHEIRO
+    ←
 
         Estas activan ou corresponden ás opcións do ficheiro de configuración
         descritas anteriormente.
@@ -1750,47 +1749,47 @@ liña de ordes», a continuación.)
 
          
     → --windowed
-        --800x600
-        --orient=landscape
-        --disablescreensaver
-        --startlast
-        --sound
-        --stereo
-        --quit
-        --print
-        --printdelay=0
-        --noprintcfg
-        --altprintmod
-        --lockfile
-        --complexshapes
-        --mixedcase
-        --dontgrab
-        --shortcuts
-        --wheelmouse
-        --buttondistinction
-        --fancycursors
-        --showcursor
-        --outlines
-        --stamps
-        --stampcontrols
-        --stamprotation
-        --magiccontrols
-        --magicsizes
-        --shapecontrols
-        --label
-        --brushspacing
-        --newcolorsfirst
-        --nosysfonts
-        --currentlocalefont
-        --uifont=default
-        --dontmirrorstamps
-        --stampsize=default
-        --mouse
-        --saveoverask
-        --save
-        --noautosave
-        --noreversesort
-        ←
+    --800x600
+    --orient=landscape
+    --disablescreensaver
+    --startlast
+    --sound
+    --stereo
+    --quit
+    --print
+    --printdelay=0
+    --noprintcfg
+    --altprintmod
+    --lockfile
+    --complexshapes
+    --mixedcase
+    --dontgrab
+    --shortcuts
+    --wheelmouse
+    --buttondistinction
+    --fancycursors
+    --showcursor
+    --outlines
+    --stamps
+    --stampcontrols
+    --stamprotation
+    --magiccontrols
+    --magicsizes
+    --shapecontrols
+    --label
+    --brushspacing
+    --newcolorsfirst
+    --nosysfonts
+    --currentlocalefont
+    --uifont=default
+    --dontmirrorstamps
+    --stampsize=default
+    --mouse
+    --saveoverask
+    --save
+    --noautosave
+    --noreversesort
+    ←
 
         Estas opcións pódense usar para anular calquera axuste feito no
         ficheiro de configuración. (Se a opción non está configurada no(s)
@@ -1810,14 +1809,14 @@ liña de ordes», a continuación.)
 
 
          
-
+   
                    ### Opcións informativas da liña de ordes ###
 
     As seguintes opcións amosan un texto informativo na pantalla. Non obstante,
     Tux Paint non se inicia nin se executa despois.
 
     → --version
-        --verbose-version ←
+    --verbose-version ←
 
         Display the version number and date of the copy of Tux Paint you are
         running. The "--verbose-version" also lists what compile-time options
@@ -1856,7 +1855,7 @@ liña de ordes», a continuación.)
 
 
          
-
+   
     Escoller un idioma diferente
 
     Tux Paint foi traducido a varios idiomas. Para acceder ás traducións, pode

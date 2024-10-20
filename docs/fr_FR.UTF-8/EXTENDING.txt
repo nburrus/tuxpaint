@@ -532,9 +532,7 @@ Le fichier porte le même nom que l'image PNG ou SVG , mais une extension
             Cela mappe «noir à blanc» à «noir à destination».
              
 
-
          
-
 
      
 → Tampons inaltérables ←
@@ -571,10 +569,10 @@ Le fichier porte le même nom que l'image PNG ou SVG , mais une extension
     réglage, à votre fichier de données du tampon.(Un signe égal,"=", peut être
     ajouté après le mot "scale".)
 
-      + "scale 40%"
-      + "scale 5/2"
-      + "scale 2.5"
-      + "scale 2:5"
+      o "scale 40%"
+      o "scale 5/2"
+      o "scale 2.5"
+      o "scale 2:5"
 
      
 → Utilisateurs de Windows ←
@@ -716,33 +714,33 @@ qui se trouve dans le même répertoire.)
     allowscale" peut être utilisé pour dire à Tux Paint quel comportement est
     permis :
 
-      + Pour les images pour lesquelles c'est d'accord pour rogner les bords
+      o Pour les images pour lesquelles c'est d'accord pour rogner les bords
         gauche et droite, mais les bords haut et bas doivent être conservés,
         utilisez "allowscale=horizontal".
-          o Si le ratio d'aspect de l'image de démarrage est plus large que
+          # Si le ratio d'aspect de l'image de démarrage est plus large que
             celui du canevas, elle sera mise à l'échelle pour avoir la même
             hauteur que le canevas et gauche et droite seront rognés.
-          o Si le ratio d'aspect de l'image de démarrage est plus haut que
+          # Si le ratio d'aspect de l'image de démarrage est plus haut que
             celui du canevas, elle sera mise à l'échelle pour avoir la même
             hauteur que le canevas et il n'y aura pas de rognage, et les bords
             de gauche et droite seront barbouillés.
 
-      + Pour les images pour lesquelles c'est d'accord pour rogner les bords
+      o Pour les images pour lesquelles c'est d'accord pour rogner les bords
         haut et bas, mais les bords gauche et droite doivent être conservés,
         utilisez "allowscale=vertical".
-          o Si le ratio d'aspect de l'image de démarrage est plus haut que
+          # Si le ratio d'aspect de l'image de démarrage est plus haut que
             celui du canevas, elle sera mise à l'échelle pour avoir la même
             largeur que le canevas et haut et bas seront rognés.
-          o Si le ratio d'aspect de l'image de démarrage est plus large que
+          # Si le ratio d'aspect de l'image de démarrage est plus large que
             celui du canevas, elle sera mise à l'échelle pour avoir la même
             largeur que le canevas et il n'y aura pas de rognage, et les bords
             de haut et bas seront barbouillés.
 
-      + Si on accepte de rogner soit le haut et le bas, soit la droite et la
+      o Si on accepte de rogner soit le haut et le bas, soit la droite et la
         gauche, utilisez "allowscale=both". Le contenu de l'image de démarrage
         sera toujours en accord avec la canevas, indépendamment de son ratio
         d'aspect par rapport à celui du canevas.
-      + Le comportement par défaut est de ne pas faire de rognage. Ceci peut
+      o Le comportement par défaut est de ne pas faire de rognage. Ceci peut
         être spécifié explicitement avec "allowscale=none".
 
      
@@ -780,15 +778,15 @@ qui se trouve dans le même répertoire.)
     plus important, spécifiez "gravity=bottom-right".
 
     Options disponibles :
-      + center — formes à partir du centre (par défaut)
-      + top — formes à partir du centre en haut
-      + bottom — formes à partir du centre en bas
-      + left — préférer le centre gauche
-      + right — préférer le centre droit
-      + top-left — préférer en haut à gauche
-      + top-right — préférer en haut à droite
-      + bottom-left — préférer en bas à gauche
-      + bottom-right — préférer en bas à droite
+      o center — formes à partir du centre (par défaut)
+      o top — formes à partir du centre en haut
+      o bottom — formes à partir du centre en bas
+      o left — préférer le centre gauche
+      o right — préférer le centre droit
+      o top-left — préférer en haut à gauche
+      o top-right — préférer en haut à droite
+      o bottom-left — préférer en bas à gauche
+      o bottom-right — préférer en bas à droite
 
     [ Une image au format paysage avec un horizon où le soleil est au milieu et
     une construction sur le côté droit. ]

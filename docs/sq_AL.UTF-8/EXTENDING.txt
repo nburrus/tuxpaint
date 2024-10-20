@@ -518,9 +518,7 @@ gjendet në të njëjtën drejtori.)
             This maps 'black through white' to 'black through destination'.
              
 
-
          
-
 
      
 → Stampa të Pandryshueshme ←
@@ -558,10 +556,10 @@ gjendet në të njëjtën drejtori.)
     përfaqësojnë të njëjtin përimtim, te kartela e të dhënave të staPas fjalës
     “scale” mund të përfshihet një shenjë barazimi, “=”.)
 
-      + "scale 40%"
-      + "scale 5/2"
-      + "scale 2.5"
-      + "scale 2:5"
+      o "scale 40%"
+      o "scale 5/2"
+      o "scale 2.5"
+      o "scale 2:5"
 
      
 → Përdorues Windows-i ←
@@ -697,32 +695,32 @@ të njëjtën drejtori.)
     dyja përmasat, “allowscale” mund të përdoret për t’i treguar Tux Paint-it
     cilën sjellje të lejojë:
 
-      + For starters where it's alright to crop the majtas dhe djathtas edges,
+      o For starters where it's alright to crop the majtas dhe djathtas edges,
         but the në krye dhe në fund edges must be retained, use "allowscale=
         horizontal".
-          o Nëse përpjesëtimi i fillesës është më e gjerë se sa ai i kanavacës,
+          # Nëse përpjesëtimi i fillesës është më e gjerë se sa ai i kanavacës,
             do të ripërmasohet për ta nxënë lartësia e kanavacës dhe majtas dhe
             djathtas do të qethet.
-          o If the starter's aspect ratio is taller than that of the canvas, it
+          # If the starter's aspect ratio is taller than that of the canvas, it
             will be scaled to fit the lartësia of the canvas, and no cropping
             will occur, and the majtas dhe djathtas edges will be smeared.
 
-      + For starters where it's alright to crop the në krye dhe në fund edges,
+      o For starters where it's alright to crop the në krye dhe në fund edges,
         but the majtas dhe djathtas edges must be retained, use "allowscale=
         vertical".
-          o Nëse përpjesëtimi i fillesës është taller se sa ai i kanavacës, do
+          # Nëse përpjesëtimi i fillesës është taller se sa ai i kanavacës, do
             të ripërmasohet për ta nxënë gjerësia e kanavacës dhe në krye dhe
             në fund do të qethet.
-          o If the starter's aspect ratio is më e gjerë than that of the
+          # If the starter's aspect ratio is më e gjerë than that of the
             canvas, it will be scaled to fit the gjerësia of the canvas, and no
             cropping will occur, and the në krye dhe në fund edges will be
             smeared.
 
-      + Nëse është e pranueshme të qethet te pjesa sipër dhe poshtë, ose majtas
+      o Nëse është e pranueshme të qethet te pjesa sipër dhe poshtë, ose majtas
         dhe djathtas, përdorni ”allowscale=both”. Lëndë prej fillesës do të
         mbushë përherë kanavacën, pavarësisht krahasimit të përpjesëtimit të
         saj me atë të kanavacës.
-      + Sjella parazgjedhje është të mos lejohet qethje. Kjo mund të
+      o Sjella parazgjedhje është të mos lejohet qethje. Kjo mund të
         përcaktohet shprehimisht me “allowscale=none”.
 
      
@@ -757,15 +755,15 @@ të njëjtën drejtori.)
     djathtas është e rëndësishme, jepni “gravity=bottom-right”.
 
     Mundësitë e gatshme janë:
-      + center — parapëlqe në qendër (parazgjedhja)
-      + top — parapëlqe në qendër sipër
-      + bottom — parapëlqe në qendër poshtë
-      + left — parapëlqe në qendër majtas
-      + right — parapëlqe në qendër djathtas
-      + top-left — parapëlqe majtas sipër
-      + top-right — parapëlqe djathtas sipër
-      + bottom-left — parapëlqe majtas poshtë
-      + bottom-right — parapëlqe djathtas poshtë
+      o center — parapëlqe në qendër (parazgjedhja)
+      o top — parapëlqe në qendër sipër
+      o bottom — parapëlqe në qendër poshtë
+      o left — parapëlqe në qendër majtas
+      o right — parapëlqe në qendër djathtas
+      o top-left — parapëlqe majtas sipër
+      o top-right — parapëlqe djathtas sipër
+      o bottom-left — parapëlqe majtas poshtë
+      o bottom-right — parapëlqe djathtas poshtë
 
     [ Figurë e formuar si peizazh i një horizonti me diellin në mes dhe një
     ndërtesë në të djathtë. ]

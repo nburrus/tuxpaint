@@ -229,16 +229,16 @@ automatiquement.)
 L'écran principal est divisé en plusieurs sections :
 
 [Outils : Peindre, Tampon, Lignes, Formes, Texte, Magie, Étiquette, Défaire,
-    Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder, Imprimer, Quitter]
-     
+Refaire, Gomme, Nouveau, Ouvrir, Sauvegarder, Imprimer, Quitter]
+ 
 → Côté gauche : la barre d'outils ←
 
     La barre d'outils contient les commandes pour dessiner et éditer.
 
 
      
-    [Toile]
-     
+[Toile]
+ 
 → Milieu : Toile pour Dessiner ←
 
     La plus grande partie de l'écran, au centre, est le canevas pour dessiner.
@@ -251,8 +251,8 @@ L'écran principal est divisé en plusieurs sections :
 
 
      
-    [Sélecteurs - Pinceaux, Lettres, Formes, Tampons]
-     
+[Sélecteurs - Pinceaux, Lettres, Formes, Tampons]
+ 
 → Côté droit : sélecteur ←
 
     En fonction de l'outil en cours d'utilisation, le sélecteur affiche
@@ -263,9 +263,9 @@ L'écran principal est divisé en plusieurs sections :
 
 
      
-    [Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan, Bleu,
-    Pourpre, Brun, Gris]
-     
+[Couleurs - Noir, Blanc, Rouge, Rose, Orange, Jaune, Vert, Cyan, Bleu, Pourpre,
+Brun, Gris]
+ 
 → En bas : couleurs ←
 
     Quand l'outil en cours utilise des couleurs, une palette pour choisir des
@@ -277,12 +277,12 @@ L'écran principal est divisé en plusieurs sections :
 
     Tout à fait à droite se trouvent trois options spéciales pour les couleurs
     :
-      + Sélecteur de couleur
+      o Sélecteur de couleur
         Le "sélecteur de couleurs" (qui ressemble à un compte-gouttes) vous
         permet de choisir une couleur trouvée dans votre dessin.
         (Un raccourci clavier est disponible pour accéder à cet effet
         rapidement; voir ci-dessous)
-      + Palette de l'Arc-en-ciel
+      o Palette de l'Arc-en-ciel
         La palette de l'arc-en-ciel vous permet de prendre n'importe quelle
         couleur en choisissant la teinte, la saturation et la valeur de la
         couleur désirée. Une boîte sur le côté gauche montre des centaines de
@@ -294,10 +294,10 @@ L'écran principal est divisé en plusieurs sections :
         bouton "Retour" pour abandonner sans prendre de nouvelle couleur.
         Vous pouvez aussi régler la couleur de cet outil avec une autre que
         l'on choisit :
-          o Peu importe la couleur intégrée choisie, si il y an a une
-          o Couleur actuelle du Sélecteur de couleur
-          o Couleur actuelle du mélangeur de couleurs
-      + Mélangeur de couleurs
+          # Peu importe la couleur intégrée choisie, si il y an a une
+          # Couleur actuelle du Sélecteur de couleur
+          # Couleur actuelle du mélangeur de couleurs
+      o Mélangeur de couleurs
         Le "mélangeur de couleur" (qui ressemble à une palette de peintre) vous
         permet de créer des couleurs en mélangeant des couleurs primaires —
         rouge, jaune et bleu — en même temps que du blanc (pour "tinter"), gris
@@ -328,10 +328,10 @@ L'écran principal est divisé en plusieurs sections :
 
 
      
-    (Par exemple : Choisis une forme. Clique pour démarrer le dessin , fais
-    glisser et continue jusqu'à la taille désirée. Déplace-toi pour la faire
-    tourner, et clique pour dessiner.)
-     
+(Par exemple : Choisis une forme. Clique pour démarrer le dessin , fais glisser
+et continue jusqu'à la taille désirée. Déplace-toi pour la faire tourner, et
+clique pour dessiner.)
+ 
 → En bas : zone d'aide ←
 
     Tout en bas de l'écran, Tux, le pingouin Linux, fournit des conseils et
@@ -432,15 +432,15 @@ b.Outil "Tampon" (tampon de caoutchouc) ←
         Avant de `` tamponner '' une image sur votre dessin, différents effets
         peuvent parfois être appliqués (en fonction du tampon) :
 
-          o Certains tampons peuvent être colorés ou teintés. Si la palette de
+          @ Certains tampons peuvent être colorés ou teintés. Si la palette de
             couleurs sous le canevas est activée, vous pouvez cliquer sur les
             couleurs pour changer la teinte ou la couleur du tampon avant de le
             placer dans le dessin.
-          o Les tampons peuvent être rétrécis et agrandis, en cliquant dans
+          @ Les tampons peuvent être rétrécis et agrandis, en cliquant dans
             l'ensemble de barres (de forme triangulaire) en bas à droite; plus
             la barre est grande, plus le tampon apparaîtra grand sur votre
             dessin.
-          o De nombreux tampons peuvent être retournés verticalement ou
+          @ De nombreux tampons peuvent être retournés verticalement ou
             affichés sous forme d'image miroir à l'aide des boutons de commande
             en bas à droite.
 
@@ -459,7 +459,6 @@ b.Outil "Tampon" (tampon de caoutchouc) ←
 
 
          
-
 
      
 c.Outil "Lignes" ←
@@ -558,7 +557,6 @@ d.Outil "Formes" ←
 
          
 
-
      
 e.Outils "Texte" et "Étiquette" ←
 
@@ -635,11 +633,11 @@ e.Outils "Texte" et "Étiquette" ←
         Les locales supportées, les méthodes d'entrée disponibles et la touche
         pour basculer de mode sont listées ci-dessous.
 
-          o Japonais -- Hiragana et Katakana romanisés — touche [Alt] droite ou
+          @ Japonais -- Hiragana et Katakana romanisés — touche [Alt] droite ou
             touche [Alt] gauche
-          o Korean — Hangul 2-Bul — touche [Alt] droite or touche [Alt] gauche
-          o Chinois traditionnel — touche [Alt] droite or touche [Alt] gauche
-          o Thai — touche [Alt] droite
+          @ Korean — Hangul 2-Bul — touche [Alt] droite or touche [Alt] gauche
+          @ Chinois traditionnel — touche [Alt] droite or touche [Alt] gauche
+          @ Thai — touche [Alt] droite
 
         💡 Note : de nombreuses polices n'incluent pas tous les caractères pour
         toutes les langues, vous devriez donc parfois changer de police pour
@@ -659,23 +657,22 @@ e.Outils "Texte" et "Étiquette" ←
 
          
 
-
      
 f.Outil "Remplir" ←
 
     L'outil «Remplir» «remplit» une zone contiguë de votre dessin avec une
     couleur unie de votre choix. Trois options de remplissage sont offertes :
-      + Uni — cliquez une fois pour remplir une zone avec une couleur unie.
-      + Pinceau — cliquez et glissez pour remplir une zone avec une couleur
+      o Uni — cliquez une fois pour remplir une zone avec une couleur unie.
+      o Pinceau — cliquez et glissez pour remplir une zone avec une couleur
         unie, lorsque l'on fait de la peinture à main levée.
-      + Linéaire—cliquez et faites glisser pour remplir une zone avec une
+      o Linéaire—cliquez et faites glisser pour remplir une zone avec une
         couleur qui s'atténue au fur et à mesure dans la direction où vous
         déplacez la souris.
-      + Radial—cliquez une fois pour remplir une zone avec une couleur qui
+      o Radial—cliquez une fois pour remplir une zone avec une couleur qui
         s'atténue graduellement, à partir de l'endroit où vous avez cliqué.
-      + Radial—cliquez une fois pour remplir une zone avec une couleur qui
+      o Radial—cliquez une fois pour remplir une zone avec une couleur qui
         s'atténue graduellement, à partir de l'endroit où vous avez cliqué.
-      + Eraser — click once to erase an area, exposing the solid color
+      o Eraser — click once to erase an area, exposing the solid color
         background, or starter or template background image, upon which the
         drawing was based. (See Outils disponibles > Outils de dessin > Outil
         "Gomme" and Autres contrôles > Images de "Démarrage" et images "Modèle"
@@ -754,13 +751,13 @@ h.Outil "Gomme" ←
 
     A number of eraser types are available, each offering multiple sizes are
     available:
-      + Square — Square-shaped erasers that completely remove parts of your
+      o Square — Square-shaped erasers that completely remove parts of your
         drawing.
-      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+      o Circle (solid) — Circle-shaped erasers that completely remove parts of
         your drawing.
-      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+      o Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
         with the background.
-      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+      o Transparent Circle — Circle-shaped erasers that blend your drawing with
         the background. Release and click again to expose more and more of the
         background.
 
@@ -821,12 +818,12 @@ b.Commande "Nouveau" ←
         options for details.
          
     Images de "Démarrage" et images "Modèle" ←
-          o Les "Images de démarrage" se comportent comme une page d'un livre
+          @ Les "Images de démarrage" se comportent comme une page d'un livre
             de coloriage - un contour noir et blanc d'une image, que vous
             pouvez ensuite colorier, et le contour noir reste intact - ou comme
             une photographie 3D, où vous dessinez entre une couche de premier
             plan et une d'arrière-plan.
-          o Les "Images modèle" sont semblables, mais fournissent simplement un
+          @ Les "Images modèle" sont semblables, mais fournissent simplement un
             dessin d'arrière-plan sur lequel travailler. Contrairement aux
             «Images de démarrage», rien de ce que vous dessinerez ne restera au
             premier plan.
@@ -889,7 +886,7 @@ c.Commande "Ouvrir" ←
     des images.
 
     Cliquez sur une image pour la sélectionner, puis ...
-      + Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la liste pour
+      o Cliquez sur le bouton vert "Ouvrir" en bas à gauche de la liste pour
         charger l'image sélectionnée. Vous pourrez alors l'éditer.
 
         (Vous pouvez également double-cliquer sur l'icône d'une image pour la
@@ -899,7 +896,7 @@ c.Commande "Ouvrir" ←
         n'a pas été enregistré, il vous sera demandé si vous souhaitez
         l'enregistrer ou non. (Voir "Sauvegarder," ci-dessous.)
 
-      + Cliquez sur le bouton marron "Effacer" (poubelle) en bas à droite de la
+      o Cliquez sur le bouton marron "Effacer" (poubelle) en bas à droite de la
         liste pour effacer l'image sélectionnée. (Il vous sera demandé de
         confirmer.)
 
@@ -911,16 +908,16 @@ c.Commande "Ouvrir" ←
         ⚙ Note :: Le bouton 'Effacer' peut être désactivé via l'option
         "noerase".
 
-      + Cliquez sur le bouton 'Exporter' près du coin inférieur droit pour
+      o Cliquez sur le bouton 'Exporter' près du coin inférieur droit pour
         exporter l'image vers votre dossier d'exportation. (par ex. "~/Pictures
         /TuxPaint/")
 
     Depuis l'écran "Ouvrir" vous pouvez aussi :
-      + Cliquez sur le bouton bleu "Diapositives" (projecteur de diapositives)
+      o Cliquez sur le bouton bleu "Diapositives" (projecteur de diapositives)
         en bas à gauche pour passer en mode diaporama. Voir "Diaporama",
         ci-dessous, pour les détails.
 
-      + Cliquez sur le bouton bleu 'Modèle' en bas à gauche pour convertir
+      o Cliquez sur le bouton bleu 'Modèle' en bas à gauche pour convertir
         l'image sélectionnée en nouveau Modèle, qui pourra vous servir de base
         pour de nouveaux dessins.
 
@@ -932,7 +929,7 @@ c.Commande "Ouvrir" ←
         choisissant "Désactiver 'Fabriquer un Modèle' dans Tux Paint Config. ou
         en lançant em>Tux Paint avec l'option "notemplateexport").
 
-      + Ou cliquez sur le bouton fléché rouge «Retour» en bas à droite de la
+      o Ou cliquez sur le bouton fléché rouge «Retour» en bas à droite de la
         liste pour annuler et revenir à l'image que vous étiez en train de
         dessiner.
 
@@ -1066,7 +1063,6 @@ e.Commande "Imprimer" ←
 
 
          
-
 
      
 f.Commande "Diapos" (sous "Ouvrir") ←
@@ -1402,45 +1398,45 @@ Les autres documents inclus avec Tux Paint (dans le répertoire "docs") incluent
 :
 
 → Utiliser Tux Paint : ←
-      + OPTIONS.html
+      o OPTIONS.html
         Instructions détaillées sur les options en ligne de commande et les
         fichiers de configuration, pour ceux qui ne veulent pas utiliser
         l'outil Tux Paint Config.
-      + Documentation sur l'outil 'Magie' ("magic-docs")
+      o Documentation sur l'outil 'Magie' ("magic-docs")
         Documentation pour chacun des outils "Magic" actuellement installés.
-      + Frequently Asked Questions ("FAQs") about Tux Paint
+      o Frequently Asked Questions ("FAQs") about Tux Paint
         Answers to, and solutions for, some common questions about, and
         problems with, using Tux Paint.
 
      
 → Extensions pour Tux Paint : ←
-      + EXTENDING.html
+      o EXTENDING.html
         Des instructions détaillées sur la création de pinceaux, de tampons,
         d'images de démarrage et de modèles; et l'ajout de polices; et créer un
         nouveau clavier virtuel et des méthodes de saisie.
-      + PNG.html
+      o PNG.html
         Remarques sur la création d'images bitmap au format PNG à utiliser dans
         Tux Paint.
-      + SVG.html
+      o SVG.html
         Remarques sur la création d'images vectorielles au format SVG à
         utiliser dans Tux Paint.
 
      
 → Information technique : ←
-      + INSTALL.html
+      o INSTALL.html
         Instructions pour compiler et installer Tux Paint, le cas échéant.
-      + SIGNALS.html
+      o SIGNALS.html
         Informations sur les signaux POSIX auxquels répond Tux Paint.
-      + MAGIC-API.html
+      o MAGIC-API.html
         Créer de nouveaux outils Magie avec le plugin API de Tux Paint.
 
      
 → Historique du développement et licence : ←
-      + AUTHORS.txt
+      o AUTHORS.txt
         Liste des auteurs et contributeurs.
-      + CHANGES.txt
+      o CHANGES.txt
         Résumé des changements entre chaque version de Tux Paint.
-      + COPYING.txt
+      o COPYING.txt
         Licence du programme Tux Paint, la GNU General Public License (GPL)
 
      

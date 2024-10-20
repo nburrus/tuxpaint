@@ -133,10 +133,10 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
     例:
 
-      + 640x480
-      + 1024x768
-      + 768x1024
-      + 1600x1200
+      o 640x480
+      o 1024x768
+      o 768x1024
+      o 1600x1200
 
     💡 利用可能なディスプレイが１つのみで Tux Paint が（フルスクリーンではなく）
     ウィンドウモードで実行されており、ウィンドウサイズの設定がディスプレイサイ
@@ -549,7 +549,6 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
     点、3点透視図法ツールは中級者モードでは消失点の編集ができません)。
 
     COMPLEXITY は以下の３とおりから選択できます。
-
     → advanced (the default) ←
         「上級者」 — Tux Paint に精通していて、複雑な操作が可能なユーザー向け。
          
@@ -1007,7 +1006,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## 印刷コマンド ##
 
     → printcommand=COMMAND ←
@@ -1043,7 +1042,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## 用紙サイズ ##
 
     → papersize=PAPERSIZE ←
@@ -1063,7 +1062,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
                                    ### 保存 ###
 
     ## 上書き保存 ##
@@ -1091,7 +1090,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## 起動時の設定 ##
 
     → startblank=yes ←
@@ -1118,7 +1117,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## 保存・書き出し先のディレクトリ ##
 
     → savedir=DIRECTORY ←
@@ -1162,7 +1161,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
         特に設定していなければ、標準のディレクトリは次の場所にあります:
 
-          o Linux および Unix — XDG (X Desktop Group) 標準に基づく設定が利用可
+          # Linux および Unix — XDG (X Desktop Group) 標準に基づく設定が利用可
             能な場合、個々のデスクトップ環境において画像保存用として設定されて
             いるディレクトリ（"xdg-user-dir PICTURES" コマンドで確認できます）
             英語環境では一般的にユーザーのホームディレクトリ以下の "Pictures" 
@@ -1170,13 +1169,13 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
             では "画像"）
             XDGの設定が読み取れない場合や、"XDG_PICTURES_DIR "に何も設定されて
             いない場合は、上記の一般的なディレクトリを使用します。
-          o Windows — 各ユーザーの ""My Pictures"" ディレクトリ（通常は 
+          # Windows — 各ユーザーの ""My Pictures"" ディレクトリ（通常は 
             "C:\Users\ユーザー名\My Pictures"）。
             また、次のようにして、フォルダを直接開くこともできます:
-              # "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイア
+              @ "[Windows]+[R]" キーを押して "ファイル名を指定して実行" ダイア
                 ログを開く。
-              # テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
-          o macOS — TBD!
+              @ テキストボックスに "Shell:My Pictures" と入力して [OK] を押す。
+          # macOS — TBD!
 
         💡 注: 標準では、サブディレクトリ "TuxPaint" が作成されます。（例: "
         "/home/ユーザー名/Pictures/TuxPaint""）一方、"--exportdir" オプションを
@@ -1194,7 +1193,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## 保存関連の追加オプション ##
 
     → nosave=yes ←
@@ -1233,7 +1232,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
                                   ### データ ###
 
     ## ロックファイル ##
@@ -1259,7 +1258,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## データ・ディレクトリ ##
 
     → datadir=DIRECTORY ←
@@ -1294,7 +1293,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## カラーパレットファイル ##
 
     → colorfile=ファイル名 ←
@@ -1324,7 +1323,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
                                  ### 操作方法 ###
 
     ## マウス ##
@@ -1338,7 +1337,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## キーボード ##
 
     → keyboard=yes ←
@@ -1348,22 +1347,22 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
         使用方法:
 
-          o キャンバスエリアでは、通常はなめらかに、Shift キーを押しながらでは
+          # キャンバスエリアでは、通常はなめらかに、Shift キーを押しながらでは
             飛び飛びにカーソルが動きます。
-          o ツールボタンのエリアでは、飛び飛びにカーソルが動きます。
-          o 各キーの動作:
-              # [Left]/[Right]/[Up]/[Down], テンキーの [1] から [9]: マウスカー
+          # ツールボタンのエリアでは、飛び飛びにカーソルが動きます。
+          # 各キーの動作:
+              @ [Left]/[Right]/[Up]/[Down], テンキーの [1] から [9]: マウスカー
                 ソルの移動
-              # [Space]/[5]: マウスクリック（テキストツールまたはラベルツールを
+              @ [Space]/[5]: マウスクリック（テキストツールまたはラベルツールを
                 使っている場合を除く)
-              # [Insert]/[F5]: マウスクリック
-              # [F4]: 「どうぐ」、「いろ」、キャンバスの間を順にジャンプ
-              # マウスカーソルが左側の「どうぐ」または下部の「いろ」のエリアに
+              @ [Insert]/[F5]: マウスクリック
+              @ [F4]: 「どうぐ」、「いろ」、キャンバスの間を順にジャンプ
+              @ マウスカーソルが左側の「どうぐ」または下部の「いろ」のエリアに
                 ある場合:
-                  @ [F7]（[F8]）: 上のボタン（下のボタン）に移動（「どうぐ」エ
+                  - [F7]（[F8]）: 上のボタン（下のボタン）に移動（「どうぐ」エ
                     リアのみ）
-                  @ [F11]（[F12]）: 前のボタン（次のボタン）に移動
-          o クリック＆ドラッグの操作は、クリックキーのどちらか（例えば [Insert]
+                  - [F11]（[F12]）: 前のボタン（次のボタン）に移動
+          # クリック＆ドラッグの操作は、クリックキーのどちらか（例えば [Insert]
             ）を押しながら、マウス移動のキー（例えば [Left]）を押します。
 
             💡 注: "mouse-accessibility" オプションの機能は、キーボードの操作に
@@ -1371,7 +1370,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
             は、「クリック」のキーを一度押してから「移動」のキーで描画し、最後
             にもう一度「クリック」キーを押して描画を完了します。
 
-          o 通常のマウスやジョイスティックも同時に使用することができます（例え
+          # 通常のマウスやジョイスティックも同時に使用することができます（例え
             ば、マウスで移動してキーボードでクリックしたり、その逆も可能で
             す）。
 
@@ -1382,7 +1381,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## 画面キーボード ##
 
     → onscreen-keyboard=yes ←
@@ -1414,7 +1413,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
                              ### ジョイスティック ###
 
     ## デバイスの設定 ##
@@ -1448,7 +1447,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## ハットスイッチ ##
 
     → joystick-hat-slowness=SPEED ←
@@ -1466,7 +1465,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     ## ボタンの無効化 ##
 
     → joystick-buttons-ignore=BUTTON1,BUTTON2,... ←
@@ -1599,7 +1598,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     システム全体の設定を上書きする
 
     上記のオプションがシステム全体の設定ファイル（例: Linuxの場合 
@@ -1624,88 +1623,88 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
     きます。
 
     → --fullscreen=yes
-        --fullscreen=native
-        --WIDTHxHEIGHT
-        --orient=portrait
-        --buttonsize=SIZE
-        --colorsrows=ROWS
-        --native
-        --allowscreensaver
-        --startblank
-        --nosound
-        --nostereo
-        --noquit
-        --noprint
-        --printdelay=SECONDS
-        --printcfg
-        --altprintnever
-        --altprintalways
-        --papersize=PAPERSIZE
-        --printcommand=COMMAND
-        --altprintcommand=COMMAND
-        --nolockfile
-        --simpleshapes
-        --uppercase
-        --grab
-        --noshortcuts
-        --nowheelmouse
-        --nobuttondistinction
-        --nofancycursors
-        --hidecursor
-        --nooutlines
-        --nostamps
-        --nostampcontrols
-        --nostamprotation
-        --nomagiccontrols
-        --nomagicsizes
-        --noshapecontrols
-        --nolabel
-        --nobrushspacing
-        --newcolorslast
-        --mouse-accessibility
-        --onscreen-keyboard
-        --onscreen-keyboard-layout
-        --onscreen-keyboard-disable-change
-        --joystick-dev
-        --joystick-slowness
-        --joystick-threshold
-        --joystick-maxsteps
-        --joystick-hat-slowness
-        --joystick-hat-timeout
-        --joystick-btn-escape
-        --joystick-btn-brush
-        --joystick-btn-stamp
-        --joystick-btn-lines
-        --joystick-btn-shapes
-        --joystick-btn-text
-        --joystick-btn-label
-        --joystick-btn-magic
-        --joystick-btn-undo
-        --joystick-btn-redo
-        --joystick-btn-eraser
-        --joystick-btn-new
-        --joystick-btn-open
-        --joystick-btn-save
-        --joystick-btn-pgsetup
-        --joystick-btn-print
-        --joystick-buttons-ignore
-        --sysfonts
-        --uifont=FONT NAME
-        --alllocalefonts
-        --mirrorstamps
-        --stampsize=SIZE
-        --keyboard
-        --savedir DIRECTORY
-        --datadir DIRECTORY
-        --exportdir DIRECTORY
-        --saveover
-        --saveovernew
-        --nosave
-        --autosave
-        --reversesort
-        --lang LANGUAGE
-        --colorfile FILE
-        ←
+    --fullscreen=native
+    --WIDTHxHEIGHT
+    --orient=portrait
+    --buttonsize=SIZE
+    --colorsrows=ROWS
+    --native
+    --allowscreensaver
+    --startblank
+    --nosound
+    --nostereo
+    --noquit
+    --noprint
+    --printdelay=SECONDS
+    --printcfg
+    --altprintnever
+    --altprintalways
+    --papersize=PAPERSIZE
+    --printcommand=COMMAND
+    --altprintcommand=COMMAND
+    --nolockfile
+    --simpleshapes
+    --uppercase
+    --grab
+    --noshortcuts
+    --nowheelmouse
+    --nobuttondistinction
+    --nofancycursors
+    --hidecursor
+    --nooutlines
+    --nostamps
+    --nostampcontrols
+    --nostamprotation
+    --nomagiccontrols
+    --nomagicsizes
+    --noshapecontrols
+    --nolabel
+    --nobrushspacing
+    --newcolorslast
+    --mouse-accessibility
+    --onscreen-keyboard
+    --onscreen-keyboard-layout
+    --onscreen-keyboard-disable-change
+    --joystick-dev
+    --joystick-slowness
+    --joystick-threshold
+    --joystick-maxsteps
+    --joystick-hat-slowness
+    --joystick-hat-timeout
+    --joystick-btn-escape
+    --joystick-btn-brush
+    --joystick-btn-stamp
+    --joystick-btn-lines
+    --joystick-btn-shapes
+    --joystick-btn-text
+    --joystick-btn-label
+    --joystick-btn-magic
+    --joystick-btn-undo
+    --joystick-btn-redo
+    --joystick-btn-eraser
+    --joystick-btn-new
+    --joystick-btn-open
+    --joystick-btn-save
+    --joystick-btn-pgsetup
+    --joystick-btn-print
+    --joystick-buttons-ignore
+    --sysfonts
+    --uifont=FONT NAME
+    --alllocalefonts
+    --mirrorstamps
+    --stampsize=SIZE
+    --keyboard
+    --savedir DIRECTORY
+    --datadir DIRECTORY
+    --exportdir DIRECTORY
+    --saveover
+    --saveovernew
+    --nosave
+    --autosave
+    --reversesort
+    --lang LANGUAGE
+    --colorfile FILE
+    ←
 
         以上のオプションは、上記で説明した設定ファイルでの各種オプションと関連
         しています。
@@ -1713,47 +1712,47 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
          
     → --windowed
-        --800x600
-        --orient=landscape
-        --disablescreensaver
-        --startlast
-        --sound
-        --stereo
-        --quit
-        --print
-        --printdelay=0
-        --noprintcfg
-        --altprintmod
-        --lockfile
-        --complexshapes
-        --mixedcase
-        --dontgrab
-        --shortcuts
-        --wheelmouse
-        --buttondistinction
-        --fancycursors
-        --showcursor
-        --outlines
-        --stamps
-        --stampcontrols
-        --stamprotation
-        --magiccontrols
-        --magicsizes
-        --shapecontrols
-        --label
-        --brushspacing
-        --newcolorsfirst
-        --nosysfonts
-        --currentlocalefont
-        --uifont=default
-        --dontmirrorstamps
-        --stampsize=default
-        --mouse
-        --saveoverask
-        --save
-        --noautosave
-        --noreversesort
-        ←
+    --800x600
+    --orient=landscape
+    --disablescreensaver
+    --startlast
+    --sound
+    --stereo
+    --quit
+    --print
+    --printdelay=0
+    --noprintcfg
+    --altprintmod
+    --lockfile
+    --complexshapes
+    --mixedcase
+    --dontgrab
+    --shortcuts
+    --wheelmouse
+    --buttondistinction
+    --fancycursors
+    --showcursor
+    --outlines
+    --stamps
+    --stampcontrols
+    --stamprotation
+    --magiccontrols
+    --magicsizes
+    --shapecontrols
+    --label
+    --brushspacing
+    --newcolorsfirst
+    --nosysfonts
+    --currentlocalefont
+    --uifont=default
+    --dontmirrorstamps
+    --stampsize=default
+    --mouse
+    --saveoverask
+    --save
+    --noautosave
+    --noreversesort
+    ←
 
         以上のオプションは、設定ファイルでの設定を上書きするために用いられま
         す。（オプションが設定ファイルで指定されていない場合、設定を上書きしな
@@ -1772,14 +1771,14 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
                ### 情報を表示するためのコマンドラインオプション ###
 
     以下の各オプションは、Tux Paint を起動せず、情報をテキスト画面に表示して終
     了します。
 
     → --version
-        --verbose-version ←
+    --verbose-version ←
 
         プログラムのバージョンとリリース日を表示します。"--verbose-version" オ
         プションでは、コンパイル時のオプションも追加で表示します。（ドキュメン
@@ -1818,7 +1817,7 @@ C:\Program Files\TuxPaint\tuxpaint.cfg
 
 
          
-
+   
     使用する言語の選択
 
     Tux Paint は非常に多くの言語に翻訳されています。翻訳された言語で Tux Paint

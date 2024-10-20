@@ -107,7 +107,7 @@
     language", below.
      
 → Tux Paint won't switch to my language ←
-      + Linux and Unix users: Make sure the locale is available
+      o Linux and Unix users: Make sure the locale is available
 
         Make sure the locale you want is available. Check your "/etc/
         locale.gen" file. See the "Options Documentation" for the locales Tux
@@ -116,21 +116,21 @@
         Note: Debian and derivative (e.g., Ubuntu) users can simply run
         "dpkg-reconfigure locales" if the locales are managed by "dpkg".
 
-      + If you're using the "--lang" command-line option
+      o If you're using the "--lang" command-line option
 
         Try using the "--locale" command-line option, or your operating
         system's locale settings (e.g., the "$LANG" environment variable), and
         please e-mail us regarding your trouble.
 
-      + If you're using the "--locale" command-line option
+      o If you're using the "--locale" command-line option
 
         If this doesn't work, please e-mail us regarding your trouble.
 
-      + If you're trying to use your Operating System's locale
+      o If you're trying to use your Operating System's locale
 
         If this doesn't work, please e-mail us regarding your trouble.
 
-      + Make sure you have the necessary font
+      o Make sure you have the necessary font
 
         Some translations require their own font. Chinese and Korean, for
         example, need Chinese and Korean TrueType Fonts installed and placed in
@@ -304,20 +304,20 @@
                             ### Audio Problems ###
 
 → There's no sound! ←
-      + First, check the obvious:
-          o Are your speakers connected and turned on?
-          o Is the volume turned up on your speakers?
-          o Is the volume turned up in your Operating System's "mixer?"
-          o Are you certain you're using a computer with a sound card?
-          o Are any other programs running that use sound? (They may be
+      o First, check the obvious:
+          # Are your speakers connected and turned on?
+          # Is the volume turned up on your speakers?
+          # Is the volume turned up in your Operating System's "mixer?"
+          # Are you certain you're using a computer with a sound card?
+          # Are any other programs running that use sound? (They may be
             'blocking' Tux Paint from accessing your sound device)
-          o (Unix/Linux) Are you using a sound system, such as aRts, ESD or
+          # (Unix/Linux) Are you using a sound system, such as aRts, ESD or
             GStreamer? If so, try setting the "SDL_AUDIODRIVER" environment
             variable before running Tux Paint (e.g., "export SDL_AUDIODRIVER=
             arts"). Or, run Tux Paint through the system's rerouter (e.g., run
             "artsdsp tuxpaint" or "esddsp tuxpaint", instead of simply
             "tuxpaint").
-      + Is sound disabled in Tux Paint?
+      o Is sound disabled in Tux Paint?
 
         If sound seems to work otherwise (and you're sure no other program is
         "blocking" the sound device), then Tux Paint may be running with a "no
@@ -342,13 +342,13 @@
         setting, and allow unlimited printing. (You won't have to wait between
         prints.)
 
-      + Were sounds temporarily disabled?
+      o Were sounds temporarily disabled?
 
         Even if sounds are enabled in Tux Paint, it is possible to disable and
         re-enable them temporarily using the [Alt] + [S] key sequence. Try
         pressing those keys to see if sounds begin working again.
 
-      + Was Tux Paint built without sound support?
+      o Was Tux Paint built without sound support?
 
         Tux Paint may have been compiled with sound support disabled. To test
         whether sound support was enabled when Tux Paint was compiled, run Tux
@@ -368,29 +368,29 @@
 
     Yes, there are a number of ways to disable sounds in Tux Paint:
 
-      + Press [Alt] + [S] while in Tux Paint to temporarily disable sounds.
+      o Press [Alt] + [S] while in Tux Paint to temporarily disable sounds.
         (Press that key sequence again to re-enable sounds.)
-      + Run Tux Paint with the "no sound" option:
-          o Run "tuxpaint --nosound" from the command line or shortcut or
+      o Run Tux Paint with the "no sound" option:
+          # Run "tuxpaint --nosound" from the command line or shortcut or
             desktop icon.
-          o Edit Tux Paint's configuration file (see "Options Documentation"
+          # Edit Tux Paint's configuration file (see "Options Documentation"
             for details) and add a line containing "nosound=yes".
-          o Or use Tux Paint Config. and make sure "Enable Sound Effects"
+          # Or use Tux Paint Config. and make sure "Enable Sound Effects"
             (under "Video & Sound") is not checked.
-          o Alternatively, recompile Tux Paint with sound support disabled.
+          # Alternatively, recompile Tux Paint with sound support disabled.
             (See above, and the 'Install' documentation.
 
      
 → The stereo panning of sound effects is bothersome; can sound effects be
-    monophonic? ←
+monophonic? ←
 
     Run Tux Paint with the "no stereo" option:
 
-      + Run "tuxpaint --nostereo" from the command line or shortcut or desktop
+      o Run "tuxpaint --nostereo" from the command line or shortcut or desktop
         icon.
-      + Edit Tux Paint's configuration file (see "Options Documentation" for
+      o Edit Tux Paint's configuration file (see "Options Documentation" for
         details) and add a line containing "nostereo=yes".
-      + Or use Tux Paint Config. and make sure "Enable Stereo Effects" (under
+      o Or use Tux Paint Config. and make sure "Enable Stereo Effects" (under
         "Video & Sound") is not checked.
 
      
@@ -411,7 +411,7 @@
                        ### Fullscreen Mode Problems ###
 
 → When I run Tux Paint full-screen and [Alt] + [Tab] out, the window turns
-    black! ←
+black! ←
     This is apparently a bug in the SDL library. Sorry.
      
 → When I run Tux Paint full-screen, it has large borders around it ←
@@ -467,10 +467,10 @@
 
      
 → How do I access other applications when Tux Paint is running in Full Screen?
-    ←
-      + Windows and Linux users, try the [Alt] + [Tab] key combination to
+←
+      o Windows and Linux users, try the [Alt] + [Tab] key combination to
         switch between applications.
-      + macOS users, switch to other applications using [Control] + [Left
+      o macOS users, switch to other applications using [Control] + [Left
         Arrow], then back to Tux Paint using [Control] + [Right Arrow].
 
      
@@ -585,7 +585,7 @@
 
     By default, Tux Paint first looks at configuration files for options.
 
-      + Windows
+      o Windows
 
         Under Windows, it first examines the system-wide configuration file,
         located here:
@@ -598,7 +598,7 @@
 
         Finally, any options sent as command-line arguments are used.
 
-      + macOS
+      o macOS
 
         Under macOS, it first examines the system-wide configuration file,
         located here:
@@ -611,7 +611,7 @@
 
         Finally, any options sent as command-line arguments are used.
 
-      + Linux / Unix
+      o Linux / Unix
 
         Under Unix and Linux, it first examines the system-wide configuration
         file, located here:
@@ -624,7 +624,7 @@
 
         Finally, any options sent as command-line arguments are used.
 
-      + Haiku
+      o Haiku
 
         Under Haiku, Tux Paint first examines the configuration file:
 

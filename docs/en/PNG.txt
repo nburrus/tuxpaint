@@ -45,7 +45,6 @@ images into PNGs.
 
      
 → Command-line Tools ←
-
     → NetPBM ←
 
         The Portable Bitmap tools (collectively known as "NetPBM") is a
@@ -70,23 +69,22 @@ images into PNGs.
 
          
 
-
      
 → Proprietary Software for Windows ←
-      + CorelDRAW (Corel) — http://www.corel.com/
-      + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
-      + Paint Shop Pro (Corel) — https://www.paintshoppro.com/
-      + Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
-      + PIXresizer (Bluefive software) — http://bluefive.pair.com/
+      o CorelDRAW (Corel) — http://www.corel.com/
+      o Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
+      o Paint Shop Pro (Corel) — https://www.paintshoppro.com/
+      o Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
+      o PIXresizer (Bluefive software) — http://bluefive.pair.com/
         pixresizer.htm
 
      
 → Macintosh Users ←
-      + CorelDRAW (Corel) — http://www.corel.com/
-      + GraphicConverter (Lemke Software) — https://www.lemkesoft.de/
+      o CorelDRAW (Corel) — http://www.corel.com/
+      o GraphicConverter (Lemke Software) — https://www.lemkesoft.de/
         mac-fotobearbeitung-mac-diashow-mac-grafikprogramm-mac-bildbetrachter/
-      + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
-      + Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
+      o Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
+      o Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
 
      
 

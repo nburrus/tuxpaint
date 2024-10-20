@@ -130,10 +130,10 @@ settings will override these. See the "Command-Line Options" section, below.)
 
     Disa shembuj:
 
-      + 640x480
-      + 1024x768
-      + 768x1024
-      + 1600x1200
+      o 640x480
+      o 1024x768
+      o 768x1024
+      o 1600x1200
 
     💡 If only one display is available, and Tux Paint is being run in windowed
     (not fullscreen) mode, and the chosen window size exceeds the capabilities
@@ -543,7 +543,6 @@ settings will override these. See the "Command-Line Options" section, below.)
     beginner mode.)
 
     Vlera e KOMPLEKSITET mund të jetë një nga:
-
     → advanced (parazgjedhja) ←
         "Advanced" — For users familiar with Tux Paint and who can operate more
         complex tools.
@@ -1010,7 +1009,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Urdhra Shtypjeje ##
 
     → printcommand=URDHËR ←
@@ -1047,7 +1046,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Madhësi Letre ##
 
     → papersize=MADHËSI LETRE ←
@@ -1068,7 +1067,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
                                   ### Ruajtje ###
 
     ## Ruaje Përsipër Punës së Mëparshme ##
@@ -1097,7 +1096,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Fillimi ##
 
     → startblank=yes ←
@@ -1124,7 +1123,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Drejtori Ruajtjesh dhe Eksportimesh ##
 
     → savedir=DREJTORI ←
@@ -1167,7 +1166,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
         If you do not override it, the default location is:
 
-          o Linux & Unix — If available, wherever your desktop environment is
+          # Linux & Unix — If available, wherever your desktop environment is
             configured for pictures to be stored, based on your XDG (X Desktop
             Group) configuration. (Try running the command-line "xdg-user-dir
             PICTURES" to find out.)
@@ -1177,12 +1176,12 @@ settings will override these. See the "Command-Line Options" section, below.)
             Tux Paint will fall back to using that typical directory, if no XDG
             configuration can be read, or nothing is set for
             "XDG_PICTURES_DIR".
-          o Windows - "My Pictures" directory for each user (normaly 
+          # Windows - "My Pictures" directory for each user (normaly 
             "C:\Users\emër përdoruesi\My Pictures")
             You can directly open the folder as follows:
-              # Shtypni “[Windows]+[R]”" që të hapet dialogu “Xhironi …”.
-              # Enter "Shell:My Pictures" in the text box and push [OK].
-          o macOS — TBD!
+              @ Shtypni “[Windows]+[R]”" që të hapet dialogu “Xhironi …”.
+              @ Enter "Shell:My Pictures" in the text box and push [OK].
+          # macOS — TBD!
 
         💡 Note: When the defaults are used, a new "TuxPaint" subdirectory will
         be created and used. (e.g., "/home/emër përdoruesi/Foto/TuxPaint") When
@@ -1200,7 +1199,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Më Tepër Mundësi Ruajtjesh ##
 
     → nosave=yes ←
@@ -1239,7 +1238,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
                                  ### Të dhëna ###
 
     ## Lockfile ##
@@ -1267,7 +1266,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Drejtori të Dhënash ##
 
     → datadir=DREJTORI ←
@@ -1303,7 +1302,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Kartelë Palete Ngjyrash ##
 
     → colorfile=EMËR KARTELE ←
@@ -1334,7 +1333,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
                 ### Përdorim Nga Persona Me Aftësi të Kufizuara ###
 
     ## Mi ##
@@ -1347,7 +1346,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Tastierë ##
 
     → keyboard=yes ←
@@ -1358,20 +1357,20 @@ settings will override these. See the "Command-Line Options" section, below.)
 
         Veçori:
 
-          o Fine movement within canvas, or coarse movement if Shift is held.
-          o Coarse movement within tool button areas.
-          o Kontrolle me taste:
-              # [Left]/[Right]/[Up]/[Down], numpad [1] thru [9]: Move mouse
-              # [Space]/[5]: Click mouse (except when using "Text" or "Label"
+          # Fine movement within canvas, or coarse movement if Shift is held.
+          # Coarse movement within tool button areas.
+          # Kontrolle me taste:
+              @ [Left]/[Right]/[Up]/[Down], numpad [1] thru [9]: Move mouse
+              @ [Space]/[5]: Click mouse (except when using "Text" or "Label"
                 tools)
-              # [Insert]/[F5]: Klikoni me mi (përherë)
-              # [F4] jump mouse between "Tools", "Colors" and canvas areas
-              # If mouse is within "Tools" section on the left, or "Colors"
+              @ [Insert]/[F5]: Klikoni me mi (përherë)
+              @ [F4] jump mouse between "Tools", "Colors" and canvas areas
+              @ If mouse is within "Tools" section on the left, or "Colors"
                 section at the bottom:
-                  @ [F7], [F8]: Move down/up between buttons, respectively
+                  - [F7], [F8]: Move down/up between buttons, respectively
                     (Tools section, only)
-                  @ [F11], [F12]: Move to previous/next button, respectively
-          o To click-and-drag, hold one of the 'click' keys (e.g., [Insert]),
+                  - [F11], [F12]: Move to previous/next button, respectively
+          # To click-and-drag, hold one of the 'click' keys (e.g., [Insert]),
             and use the movement keys (e.g., [Left]).
 
             💡 Note: The "mouse accessibility" feature works with the keyboard
@@ -1380,7 +1379,7 @@ settings will override these. See the "Command-Line Options" section, below.)
             keys to move around (which will draw), and another 'click' key to
             end the click (stop drawing).
 
-          o A regular mouse and/or joystick may still be used (so you can,
+          # A regular mouse and/or joystick may still be used (so you can,
             e.g., move with the mouse, and click with the keyboard, or
             vice-versa)
 
@@ -1390,7 +1389,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Tastierë Në Ekran ##
 
     → onscreen-keyboard=yes ←
@@ -1424,7 +1423,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
                                  ### Joystick ###
 
     ## Pajisja Kryesore ##
@@ -1457,7 +1456,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Kapë ##
 
     → joystick-hat-slowness=SHPEJTËSI ←
@@ -1475,7 +1474,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     ## Butona për T’u Çaktivizuar ##
 
     → joystick-buttons-ignore=BUTTON1,BUTTON2,... ←
@@ -1608,7 +1607,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     Anashkalim Mundësish të Formësimit të Ssistemit
 
     If any of the above options are set in a system-wide configuration file
@@ -1634,88 +1633,88 @@ settings will override these. See the "Command-Line Options" section, below.)
     Paint.
 
     → --fullscreen=yes
-        --fullscreen=native
-        --GJERËSIxLARTËSI
-        --orient=portrait
-        --buttonsize=MADHËSI
-        --colorsrows=RRESHTA
-        --native
-        --allowscreensaver
-        --startblank
-        --nosound
-        --nostereo
-        --noquit
-        --noprint
-        --printdelay=SEKONDA
-        --printcfg
-        --altprintnever
-        --altprintalways
-        --papersize=MADHËSI LETRE
-        --printcommand=URDHËR
-        --altprintcommand=URDHËR
-        --nolockfile
-        --simpleshapes
-        --uppercase
-        --grab
-        --noshortcuts
-        --nowheelmouse
-        --nobuttondistinction
-        --nofancycursors
-        --hidecursor
-        --nooutlines
-        --nostamps
-        --nostampcontrols
-        --nostamprotation
-        --nomagiccontrols
-        --nomagicsizes
-        --noshapecontrols
-        --nolabel
-        --nobrushspacing
-        --newcolorslast
-        --mouse-accessibility
-        --onscreen-keyboard
-        --onscreen-keyboard-layout
-        --onscreen-keyboard-disable-change
-        --joystick-dev
-        --joystick-slowness
-        --joystick-threshold
-        --joystick-maxsteps
-        --joystick-hat-slowness
-        --joystick-hat-timeout
-        --joystick-btn-escape
-        --joystick-btn-brush
-        --joystick-btn-stamp
-        --joystick-btn-lines
-        --joystick-btn-shapes
-        --joystick-btn-text
-        --joystick-btn-label
-        --joystick-btn-magic
-        --joystick-btn-undo
-        --joystick-btn-redo
-        --joystick-btn-eraser
-        --joystick-btn-new
-        --joystick-btn-open
-        --joystick-btn-save
-        --joystick-btn-pgsetup
-        --joystick-btn-print
-        --joystick-buttons-ignore
-        --sysfonts
-        --uifont=EMËR LLOJI SHKRONJASH
-        --alllocalefonts
-        --mirrorstamps
-        --stampsize=MADHËSI
-        --keyboard
-        --savedir DREJTORI
-        --datadir DREJTORI
-        --exportdir DREJTORI
-        --saveover
-        --saveovernew
-        --nosave
-        --autosave
-        --reversesort
-        --lang GJUHË
-        --colorfile KARTELË
-        ←
+    --fullscreen=native
+    --GJERËSIxLARTËSI
+    --orient=portrait
+    --buttonsize=MADHËSI
+    --colorsrows=RRESHTA
+    --native
+    --allowscreensaver
+    --startblank
+    --nosound
+    --nostereo
+    --noquit
+    --noprint
+    --printdelay=SEKONDA
+    --printcfg
+    --altprintnever
+    --altprintalways
+    --papersize=MADHËSI LETRE
+    --printcommand=URDHËR
+    --altprintcommand=URDHËR
+    --nolockfile
+    --simpleshapes
+    --uppercase
+    --grab
+    --noshortcuts
+    --nowheelmouse
+    --nobuttondistinction
+    --nofancycursors
+    --hidecursor
+    --nooutlines
+    --nostamps
+    --nostampcontrols
+    --nostamprotation
+    --nomagiccontrols
+    --nomagicsizes
+    --noshapecontrols
+    --nolabel
+    --nobrushspacing
+    --newcolorslast
+    --mouse-accessibility
+    --onscreen-keyboard
+    --onscreen-keyboard-layout
+    --onscreen-keyboard-disable-change
+    --joystick-dev
+    --joystick-slowness
+    --joystick-threshold
+    --joystick-maxsteps
+    --joystick-hat-slowness
+    --joystick-hat-timeout
+    --joystick-btn-escape
+    --joystick-btn-brush
+    --joystick-btn-stamp
+    --joystick-btn-lines
+    --joystick-btn-shapes
+    --joystick-btn-text
+    --joystick-btn-label
+    --joystick-btn-magic
+    --joystick-btn-undo
+    --joystick-btn-redo
+    --joystick-btn-eraser
+    --joystick-btn-new
+    --joystick-btn-open
+    --joystick-btn-save
+    --joystick-btn-pgsetup
+    --joystick-btn-print
+    --joystick-buttons-ignore
+    --sysfonts
+    --uifont=EMËR LLOJI SHKRONJASH
+    --alllocalefonts
+    --mirrorstamps
+    --stampsize=MADHËSI
+    --keyboard
+    --savedir DREJTORI
+    --datadir DREJTORI
+    --exportdir DREJTORI
+    --saveover
+    --saveovernew
+    --nosave
+    --autosave
+    --reversesort
+    --lang GJUHË
+    --colorfile KARTELË
+    ←
 
         These enable or correspond to the configuration file options described
         above.
@@ -1723,47 +1722,47 @@ settings will override these. See the "Command-Line Options" section, below.)
 
          
     → --windowed
-        --800x600
-        --orient=landscape
-        --disablescreensaver
-        --startlast
-        --sound
-        --stereo
-        --quit
-        --print
-        --printdelay=0
-        --noprintcfg
-        --altprintmod
-        --lockfile
-        --complexshapes
-        --mixedcase
-        --dontgrab
-        --shortcuts
-        --wheelmouse
-        --buttondistinction
-        --fancycursors
-        --showcursor
-        --outlines
-        --stamps
-        --stampcontrols
-        --stamprotation
-        --magiccontrols
-        --magicsizes
-        --shapecontrols
-        --label
-        --brushspacing
-        --newcolorsfirst
-        --nosysfonts
-        --currentlocalefont
-        --uifont=default
-        --dontmirrorstamps
-        --stampsize=default
-        --mouse
-        --saveoverask
-        --save
-        --noautosave
-        --noreversesort
-        ←
+    --800x600
+    --orient=landscape
+    --disablescreensaver
+    --startlast
+    --sound
+    --stereo
+    --quit
+    --print
+    --printdelay=0
+    --noprintcfg
+    --altprintmod
+    --lockfile
+    --complexshapes
+    --mixedcase
+    --dontgrab
+    --shortcuts
+    --wheelmouse
+    --buttondistinction
+    --fancycursors
+    --showcursor
+    --outlines
+    --stamps
+    --stampcontrols
+    --stamprotation
+    --magiccontrols
+    --magicsizes
+    --shapecontrols
+    --label
+    --brushspacing
+    --newcolorsfirst
+    --nosysfonts
+    --currentlocalefont
+    --uifont=default
+    --dontmirrorstamps
+    --stampsize=default
+    --mouse
+    --saveoverask
+    --save
+    --noautosave
+    --noreversesort
+    ←
 
         These options can be used to override any settings made in the
         configuration file. (If the option isn't set in the configuration file
@@ -1782,14 +1781,14 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
                   ### Mundësi Informative Për Rresht Urdhrash ###
 
     The following options display some informative text on the screen. Tux
     Paint doesn't actually start up and run afterwards, however.
 
     → --version
-        --verbose-version ←
+    --verbose-version ←
 
         Display the version number and date of the copy of Tux Paint you are
         running. The "--verbose-version" also lists what compile-time options
@@ -1827,7 +1826,7 @@ settings will override these. See the "Command-Line Options" section, below.)
 
 
          
-
+   
     Zgjedhja e një Gjuhe Tjetër
 
     Tux Paint has been translated into a number of languages. To access the

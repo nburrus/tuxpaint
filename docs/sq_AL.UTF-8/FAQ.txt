@@ -110,7 +110,7 @@
     s’kalon në gjuhën time”, më poshtë.
      
 → Tux Paint-i s’kalon në gjuhën time ←
-      + Përdorues të Linux-it dhe Unix-it: Sigurohuni se vendorja gjendet në
+      o Përdorues të Linux-it dhe Unix-it: Sigurohuni se vendorja gjendet në
         kompjuter
 
         Sigurohuni se vendorja që dëshironi është gati. Kontrolloni kartelën
@@ -121,23 +121,23 @@
         munden thjesht të xhirojnë “dpkg-reconfigure locales”, nëse vendoret
         administrohen nga “dpkg”.
 
-      + Nëse përdorni mundësinë “--lang” te rreshti i urdhrave
+      o Nëse përdorni mundësinë “--lang” te rreshti i urdhrave
 
         Try using the "--locale" command-line option, or your operating
         system's locale settings (e.g., the "$LANG" environment variable), and
         please e-mail us regarding your trouble.
 
-      + Nëse përdorni mundësinë “--locale” te rreshti i urdhrave
+      o Nëse përdorni mundësinë “--locale” te rreshti i urdhrave
 
         Nëse kjo nuk bën punë, ju lutemi, na dërgoni një email lidhur me
         problemin tuaj.
 
-      + Nëse po provoni të përdorni vendoren e Sistemit tuaj Operativ
+      o Nëse po provoni të përdorni vendoren e Sistemit tuaj Operativ
 
         Nëse kjo nuk bën punë, ju lutemi, na dërgoni një email lidhur me
         problemin tuaj.
 
-      + Sigurohuni se keni shkronjat e nevojshme
+      o Sigurohuni se keni shkronjat e nevojshme
 
         Disa gjuhë përkthimesh lypin shkronjat e tyre. Kinezçja dhe koreançja,
         për shembull, lypin të jenë të instaluara TrueType Fonts për kinezçen
@@ -156,7 +156,7 @@
                                 ### Shtypje ###
 
 → Tux Paint-i nuk bën shtypje, shfaq një gabim, ose shtyp shkarravina (Unix/
-    Linux) ←
+Linux) ←
 
     Tux Paint-i shtyp duke krijuar një figurë PostScript të figurës dhe duke e
     dërguar te një urdhër i jashtëm shtypjeje. Si parazgjedhje, ky urdhër është
@@ -322,20 +322,20 @@
                             ### Probleme Audio ###
 
 → S’ka tingull! ←
-      + Së pari, kontrolloni të thjeshtat:
-          o A janë të lidhur dhe të ndezur altoparlantët tuaj?
-          o A është i ngritur volumi te altoparlantët tuaj?
-          o A është hapur volumi, te “përzierësi” i Sistemit tuaj Operativ?
-          o Jeni i sigurt se po përdorni një kompjuter me kartë zanore?
-          o A po xhirojnë programe të tjera që përdorin zërin? (Mund të jenë
+      o Së pari, kontrolloni të thjeshtat:
+          # A janë të lidhur dhe të ndezur altoparlantët tuaj?
+          # A është i ngritur volumi te altoparlantët tuaj?
+          # A është hapur volumi, te “përzierësi” i Sistemit tuaj Operativ?
+          # Jeni i sigurt se po përdorni një kompjuter me kartë zanore?
+          # A po xhirojnë programe të tjera që përdorin zërin? (Mund të jenë
             duke e “bllokuar” Tux Paint-in të përdorë pajisjen tuaj të zërit)
-          o (Unix/Linux) Are you using a sound system, such as aRts, ESD or
+          # (Unix/Linux) Are you using a sound system, such as aRts, ESD or
             GStreamer? If so, try setting the "SDL_AUDIODRIVER" environment
             variable before running Tux Paint (e.g., "export SDL_AUDIODRIVER=
             arts"). Or, run Tux Paint through the system's rerouter (e.g., run
             "artsdsp tuxpaint" or "esddsp tuxpaint", instead of simply
             "tuxpaint").
-      + A është i çaktivizuar zëri në Tux Paint?
+      o A është i çaktivizuar zëri në Tux Paint?
 
         If sound seems to work otherwise (and you're sure no other program is
         "blocking" the sound device), then Tux Paint may be running with a "no
@@ -361,13 +361,13 @@
         rregullimet e kartelës së formësimit dhe do të lejojë shtypje të
         pakufizuar. (Pra, s’do t’ju duhet të prisni mes shtypjesh.)
 
-      + Qenë përkohësisht të çaktivizuar tingujt?
+      o Qenë përkohësisht të çaktivizuar tingujt?
 
         Even if sounds are enabled in Tux Paint, it is possible to disable and
         re-enable them temporarily using the [Alt] + [S] key sequence. Try
         pressing those keys to see if sounds begin working again.
 
-      + A qe montuar Tux Paint-i me mbulim zërash?
+      o A qe montuar Tux Paint-i me mbulim zërash?
 
         Tux Paint-i mund të jetë përpiluar me çaktivizim mbulimi zërash. Për të
         provuar nëse mbulimi i zërave qe aktivizuar kur u përpilua Tux Paint-i,
@@ -387,29 +387,29 @@
 
     Po, ka një numër rrugësh për të çaktivizuar tingujt në Tux Paint:
 
-      + Press [Alt] + [S] while in Tux Paint to temporarily disable sounds.
+      o Press [Alt] + [S] while in Tux Paint to temporarily disable sounds.
         (Press that key sequence again to re-enable sounds.)
-      + Xhirojeni Tux Paint-in me mundësinë “no sound”:
-          o Run "tuxpaint --nosound" from the command line or shortcut or
+      o Xhirojeni Tux Paint-in me mundësinë “no sound”:
+          # Run "tuxpaint --nosound" from the command line or shortcut or
             desktop icon.
-          o Edit Tux Paint's configuration file (see "Options Documentation"
+          # Edit Tux Paint's configuration file (see "Options Documentation"
             for details) and add a line containing "nosound=yes".
-          o Ose përdorni Tux Paint Config. dhe sigurohuni se “Aktivizoni Efekte
+          # Ose përdorni Tux Paint Config. dhe sigurohuni se “Aktivizoni Efekte
             Zanore” (nën “Video & Tingull”) s’ka shenjë.
-          o Alternatively, recompile Tux Paint with sound support disabled.
+          # Alternatively, recompile Tux Paint with sound support disabled.
             (See above, and the 'Install' documentation.
 
      
 → The stereo panning of sound effects is bothersome; can sound effects be
-    monophonic? ←
+monophonic? ←
 
     Xhirojeni Tux Paint-in me mundësinë “no stereo”:
 
-      + Run "tuxpaint --nostereo" from the command line or shortcut or desktop
+      o Run "tuxpaint --nostereo" from the command line or shortcut or desktop
         icon.
-      + Edit Tux Paint's configuration file (see "Options Documentation" for
+      o Edit Tux Paint's configuration file (see "Options Documentation" for
         details) and add a line containing "nostereo=yes".
-      + Ose përdorni Tux Paint Config. dhe sigurohuni se “Aktivizo Efekte
+      o Ose përdorni Tux Paint Config. dhe sigurohuni se “Aktivizo Efekte
         Stereo” (nën “Video & Tingull”) s’ka shenjë.
 
      
@@ -430,7 +430,7 @@
                  ### Probleme me Mënyrën “Sa Krejt Ekrani” ###
 
 → When I run Tux Paint full-screen and [Alt] + [Tasti Tab] out, the window
-    turns black! ←
+turns black! ←
     This is apparently a bug in the SDL library. Sorry.
      
 → When I run Tux Paint full-screen, it has large borders around it ←
@@ -486,10 +486,10 @@
 
      
 → How do I access other applications when Tux Paint is running in Full Screen?
-    ←
-      + Windows and Linux users, try the [Alt] + [Tasti Tab] key combination to
+←
+      o Windows and Linux users, try the [Alt] + [Tasti Tab] key combination to
         switch between applications.
-      + macOS users, switch to other applications using [Tasti Kontroll] +
+      o macOS users, switch to other applications using [Tasti Kontroll] +
         [Left Arrow], then back to Tux Paint using [Tasti Kontroll] + [Right
         Arrow].
 
@@ -608,7 +608,7 @@
 
     By default, Tux Paint first looks at configuration files for options.
 
-      + Windows
+      o Windows
 
         Under Windows, it first examines the system-wide configuration file,
         located here:
@@ -621,7 +621,7 @@
 
         Finally, any options sent as command-line arguments are used.
 
-      + macOS
+      o macOS
 
         Under macOS, it first examines the system-wide configuration file,
         located here:
@@ -634,7 +634,7 @@
 
         Finally, any options sent as command-line arguments are used.
 
-      + Linux / Unix
+      o Linux / Unix
 
         Under Unix and Linux, it first examines the system-wide configuration
         file, located here:
@@ -647,7 +647,7 @@
 
         Finally, any options sent as command-line arguments are used.
 
-      + Haiku
+      o Haiku
 
         Under Haiku, Tux Paint first examines the configuration file:
 

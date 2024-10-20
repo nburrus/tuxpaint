@@ -25,9 +25,9 @@ tërthorazi nga bibliotekat që përdor.
 
     Në pak shembuj se ku përdoret “$HOME” përfshihen:
 
-      + Vendndodhja e kartelës së formësimit të Tux Paint-it
-      + Baza se ku ruan dhe ngarkon Tux Paint-i vizatimet e përdoruesve
-      + Vendndodhja e një koleksioni privat të përdoruesit të kartelave të të
+      o Vendndodhja e kartelës së formësimit të Tux Paint-it
+      o Baza se ku ruan dhe ngarkon Tux Paint-i vizatimet e përdoruesve
+      o Vendndodhja e një koleksioni privat të përdoruesit të kartelave të të
         dhënave — stampave, penelave, etj. — (kundrejt atyre që mund të
         përdoren nga krejt sistemi)
 
@@ -84,7 +84,6 @@ Layer (libSDL) — të cilat Tux Paint-i i përdorr për të shfaqur elementë
 grafikë, për të luajtur tinguj dhe për të marrë sinjale për miun, tastierën dhe
 joystick-un — dhe që mund të jenë të dobishme për për përdorues të Tux
 Paint-it.
-
 → SDL_VIDEO_ALLOW_SCREENSAVER ←
 
     Përcakton nëse Tux Paint-i duhet të lejojë xhirimin e një kursyesi ekrani.
@@ -105,4 +104,3 @@ Paint-it.
 
 
      
-

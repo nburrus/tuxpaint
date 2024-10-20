@@ -223,16 +223,16 @@ título desaparecerá automaticamente.)
 A pantalla principal divídese nas seguintes seccións:
 
 [Ferramentas: Pintar, Selo, Liñas, Formas, Texto, Maxia, Etiqueta, Desfacer,
-    Refacer, Borrador, Novo, Abrir, Gardar, Imprimir, Saír]
-     
+Refacer, Borrador, Novo, Abrir, Gardar, Imprimir, Saír]
+ 
 → Lado esquerdo: Barra de Ferramentas ←
 
     A barra de ferramentas contén os controis de debuxo e edición.
 
 
      
-    [Lenzo]
-     
+[Lenzo]
+ 
 → Medio: Lenzo de debuxo ←
 
     A parte máis grande da pantalla, no centro, é o lenzo de debuxo. Aquí é,
@@ -245,8 +245,8 @@ A pantalla principal divídese nas seguintes seccións:
 
 
      
-    [Selectores: pinceis, letras, formas, selos]
-     
+[Selectores: pinceis, letras, formas, selos]
+ 
 → Lado dereito: Selector ←
 
     Dependendo da ferramenta actual, o selector amosa cousas diferentes. p.
@@ -257,9 +257,9 @@ A pantalla principal divídese nas seguintes seccións:
 
 
      
-    [Cores: negro, branco, vermello, rosa, laranxa, amarelo, verde, cian, azul,
-    roxo, marrón, gris]
-     
+[Cores: negro, branco, vermello, rosa, laranxa, amarelo, verde, cian, azul,
+roxo, marrón, gris]
+ 
 → Máis abaixo: Cores ←
 
     When the active tool supports colors, a palette of colors choices will be
@@ -269,12 +269,12 @@ A pantalla principal divídese nas seguintes seccións:
     as the color to use when flood-filling an area of the picture.)
 
     On the far right are three special color options:
-      + Color Picker
+      o Color Picker
         The "color picker" (which has an outline of an eye-dropper) allows you
         to pick a color found within your drawing.
         (A shortcut key is available to access this feature quickly; see
         below.)
-      + Rainbow Palette
+      o Rainbow Palette
         The rainbow palette allows you to pick any color by choosing the hue,
         saturation, and value of the color you want. A box on the left displays
         hundreds of hues — from red at the top through to violet at the bottom
@@ -285,10 +285,10 @@ A pantalla principal divídese nas seguintes seccións:
         Click the green checkbox button to select the color, or the "Back"
         button to dismiss the pop-up without picking a new color.
         You may also set this tool's color to that of other color choices:
-          o Whichever built-in color is selected, if any
-          o The Color Picker's current color
-          o The Color Mixer's current color
-      + Color Mixer
+          # Whichever built-in color is selected, if any
+          # The Color Picker's current color
+          # The Color Mixer's current color
+      o Color Mixer
         The "color mixer" (which has silhouette of a paint palette) allows you
         to create colors by blending primary additive colors — red, yellow, and
         blue — along with white (to "tint"), grey (to "tone"), and black (to
@@ -317,10 +317,10 @@ A pantalla principal divídese nas seguintes seccións:
 
 
      
-    (Consello de exemplo: «Escolle unha figura. Preme para marcar o centro,
-    arrastra e solta cando teña o tamaño que queiras. Move arredor para
-    invertela, e preme para debuxala.»)
-     
+(Consello de exemplo: «Escolle unha figura. Preme para marcar o centro,
+arrastra e solta cando teña o tamaño que queiras. Move arredor para invertela,
+e preme para debuxala.»)
+ 
 → Abaixo de todo: Área de axuda ←
 
     Na parte inferior da pantalla, Tux, o pingüín de Linux, ofrece consellos e
@@ -415,13 +415,13 @@ b.Ferramenta «Selo» (selos de caucho) ←
         Antes de «estampar» unha imaxe no seu debuxo, ás veces pódense aplicar
         varios efectos (dependendo do selo):
 
-          o Algúns selos pódense colorea ou matizar. Se a paleta de cores baixo
+          @ Algúns selos pódense colorea ou matizar. Se a paleta de cores baixo
             o lenzo está activada, pode premer nas cores para cambiar o ton ou
             a cor do selo antes de colocalo na imaxe.
-          o Os selos poden reducirse e expandirse premendo dentro da serie de
+          @ Os selos poden reducirse e expandirse premendo dentro da serie de
             barras de forma triangular na parte inferior dereita; canto maior
             sexa a barra, máis grande aparecerá o selo na súa imaxe.
-          o Moitos selos poden inverterse verticalmente ou amosarse como unha
+          @ Moitos selos poden inverterse verticalmente ou amosarse como unha
             imaxe reflectida, usando os botóns de control na parte inferior
             dereita.
 
@@ -441,7 +441,6 @@ b.Ferramenta «Selo» (selos de caucho) ←
 
 
          
-
 
      
 c.Ferramenta «Liñas» ←
@@ -536,7 +535,6 @@ d.Ferramenta «Formas» ←
 
          
 
-
      
 e.Ferramentas «Texto» e «Etiquetas» ←
 
@@ -611,13 +609,13 @@ e.Ferramentas «Texto» e «Etiquetas» ←
         Currently supported locales, the input methods available, and the key
         to toggle or cycle modes, are listed below.
 
-          o Japanese — Romanized Hiragana and Romanized Katakana — tecla [Alt]
+          @ Japanese — Romanized Hiragana and Romanized Katakana — tecla [Alt]
             da dereita or tecla [Alt] da esquerda
-          o Coreano — Hangul 2-Bul — tecla [Alt] da dereita or tecla [Alt] da
+          @ Coreano — Hangul 2-Bul — tecla [Alt] da dereita or tecla [Alt] da
             esquerda
-          o Chinés tradicional — tecla [Alt] da dereita ou tecla [Alt] da
+          @ Chinés tradicional — tecla [Alt] da dereita ou tecla [Alt] da
             esquerda
-          o Tailandés — tecla [Alt] da dereita
+          @ Tailandés — tecla [Alt] da dereita
 
         💡 Note: Many fonts do not include all characters for all languages, so
         sometimes you'll need to change fonts to see the characters you're
@@ -637,22 +635,21 @@ e.Ferramentas «Texto» e «Etiquetas» ←
 
          
 
-
      
 f.Ferramenta «Encher» ←
 
     A ferramenta «Encher» inunda unha área contigua do seu debuxo cunha cor da
     súa escolla. Ofrécense tres opcións de recheo:
-      + Sólida: prema unha vez para encher unha área cunha cor sólida.
-      + Brush — click and drag to fill an area with a solid color using
+      o Sólida: prema unha vez para encher unha área cunha cor sólida.
+      o Brush — click and drag to fill an area with a solid color using
         freehand painting.
-      + Lineal: prema e arrastra para encher a área cunha cor que se esvae (un
+      o Lineal: prema e arrastra para encher a área cunha cor que se esvae (un
         gradiente) cara a onde arrastra o rato.
-      + Radial: prema unha vez para encher unha área cunha cor que se esvae (un
+      o Radial: prema unha vez para encher unha área cunha cor que se esvae (un
         gradiente) radialmente, centrado no lugar onde premeu.
-      + Shaped — click once to fill an area with a color that fades away (a
+      o Shaped — click once to fill an area with a color that fades away (a
         gradient), following the contours of the shape you're filling.
-      + Eraser — click once to erase an area, exposing the solid color
+      o Eraser — click once to erase an area, exposing the solid color
         background, or starter or template background image, upon which the
         drawing was based. (See Ferramentas dispoñíbeis > Ferramentas de debuxo
         > Ferramenta de «Goma» (de borrar) and Outros controis > Imaxes «de
@@ -726,13 +723,13 @@ h.Ferramenta de «Goma» (de borrar) ←
 
     A number of eraser types are available, each offering multiple sizes are
     available:
-      + Square — Square-shaped erasers that completely remove parts of your
+      o Square — Square-shaped erasers that completely remove parts of your
         drawing.
-      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+      o Circle (solid) — Circle-shaped erasers that completely remove parts of
         your drawing.
-      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+      o Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
         with the background.
-      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+      o Transparent Circle — Circle-shaped erasers that blend your drawing with
         the background. Release and click again to expose more and more of the
         background.
 
@@ -791,12 +788,12 @@ b.Orde «Novo» ←
         options for details.
          
     Imaxes «de comezo» e de «modelo» ←
-          o As «imaxes de inicio» poden comportarse como unha páxina dun libro
+          @ As «imaxes de inicio» poden comportarse como unha páxina dun libro
             para colorar: un contorno en branco e negro dunha imaxe, que logo
             pode colorar e o contorno negro permanecerá intacto, ou como unha
             fotografía en 3D, onde debuxa entre primeiro plano e a capa de
             fondo.
-          o Os «modelos» son similares, pero simplemente fornecen un debuxo de
+          @ Os «modelos» son similares, pero simplemente fornecen un debuxo de
             fondo para poder traballar. A diferenza das «imaxes de inicio», non
             hai ningunha capa que permaneza no primeiro plano de nada que
             debuxe na imaxe.
@@ -854,7 +851,7 @@ c.Orde «Abrir» ←
     inferior da lista para desprazarse pola lista de imaxes.
 
     Prema nunha imaxe para seleccionala e logo...
-      + Click the green 'Open' button at the lower left of the list to load the
+      o Click the green 'Open' button at the lower left of the list to load the
         selected picture. You will then be able to edit it.
 
         (Como alternativa, pode facer dobre clic na icona dunha imaxe para
@@ -864,7 +861,7 @@ c.Orde «Abrir» ←
         saved, you will be prompted as to whether you want to save it or not.
         (See "Save," below.)
 
-      + Prema no botón marrón «Borrar» (cesta do lixo) na parte inferior
+      o Prema no botón marrón «Borrar» (cesta do lixo) na parte inferior
         dereita da lista para borrar a imaxe seleccionada. (Pediráselle que o
         confirme).
 
@@ -875,14 +872,14 @@ c.Orde «Abrir» ←
 
         ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
 
-      + Click the 'Export' button near the lower right to export the selected
+      o Click the 'Export' button near the lower right to export the selected
         picture to your export folder. (e.g., "~/Pictures/TuxPaint/")
 
     From the "Open" screen you can also:
-      + Click the blue 'Slides' (slide projector) button at the lower left to
+      o Click the blue 'Slides' (slide projector) button at the lower left to
         go to slideshow mode. See "Slides", below, for details.
 
-      + Click the blue 'Template' button at the lower left to go to convert the
+      o Click the blue 'Template' button at the lower left to go to convert the
         selected picture into a new template, which can be used as the basis
         for new drawings.
 
@@ -894,7 +891,7 @@ c.Orde «Abrir» ←
         "Disable 'Make Template'" in Tux Paint Config. or running Tux Paint
         with the "notemplateexport" option).
 
-      + Prema no botón de frecha vermello «Atrás» situado na parte inferior
+      o Prema no botón de frecha vermello «Atrás» situado na parte inferior
         dereita da lista para cancelar e volver á imaxe que debuxaba.
 
     ⌨ Nota: Tamén pode premer [Control / ⌘] + [O] no teclado para activar o
@@ -1022,7 +1019,6 @@ e.Orde «Imprimir» ←
 
 
          
-
 
      
 f.Orde «Diapositivas» (en «Abrir») ←
@@ -1341,46 +1337,46 @@ Outra documentación incluída con Tux Paint (que se atopa no cartafol/directori
 «docs») inclúe:
 
 → Using Tux Paint: ←
-      + OPTIONS.html
+      o OPTIONS.html
         Instrucións detalladas sobre a liña de ordes e as opcións do ficheiro
         de configuración para aqueles que non queiran usar a ferramenta Tux
         Paint Config. para xestionar a configuración de Tux Paint.
-      + Documentación da ferramenta «Maxia» («magic-docs»)
+      o Documentación da ferramenta «Maxia» («magic-docs»)
         Documentación para cada unha das ferramentas de «Maxia» instaladas
         actualmente.
-      + Frequently Asked Questions ("FAQs") about Tux Paint
+      o Frequently Asked Questions ("FAQs") about Tux Paint
         Answers to, and solutions for, some common questions about, and
         problems with, using Tux Paint.
 
      
 → How to extend Tux Paint: ←
-      + EXTENDING.html
+      o EXTENDING.html
         Instrucións detalladas sobre a ampliación de Tux Paint: creación de
         pinceis, selos, imaxes de inicio e modelos; engadir fontes; e crear
         novos deseños de teclado en pantalla e métodos de entrada.
-      + PNG.html
+      o PNG.html
         Notas sobre a creación de imaxes de mapa de bits (ráster) en formato
         PNG para usar en Tux Paint.
-      + SVG.html
+      o SVG.html
         Notas sobre a creación de imaxes vectoriais en formato SVG para usar en
         Tux Paint.
 
      
 → Technical information: ←
-      + INSTALL.html
+      o INSTALL.html
         Instrucións para compilar e instalar Tux Paint, cando proceda.
-      + SIGNALS.html
+      o SIGNALS.html
         Información sobre os sinais POSIX aos que responde Tux Paint.
-      + MAGIC-API.html
+      o MAGIC-API.html
         Creating new Magic tools using Tux Paint's plugin API.
 
      
 → Development history and license: ←
-      + AUTHORS.txt
+      o AUTHORS.txt
         Lista de autores e colaboradores.
-      + CHANGES.txt
+      o CHANGES.txt
         Resumo do que cambiou entre as versións de Tux Paint.
-      + COPYING.txt
+      o COPYING.txt
         Tux Paint's software license, the GNU General Public License (GPL)
 
      

@@ -25,13 +25,12 @@ Windows, macOS, and Linux. There are also other applications that can produce
 SVGs, both free/open source, and commerical/proprietary.
 
 → Open Source ←
-      + Inkscape — http://www.inkscape.org/
-      + Karbon — https://calligra.org/karbon/
+      o Inkscape — http://www.inkscape.org/
+      o Karbon — https://calligra.org/karbon/
 
      
 → Proprietary ←
-      + CorelDRAW (Corel) — https://www.coreldraw.com/en/
-      + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
-      + Boxy SVG — https://boxy-svg.com/
-      + Sketch (Sketch B.V.) — https://boxy-svg.com/
-
+      o CorelDRAW (Corel) — https://www.coreldraw.com/en/
+      o Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
+      o Boxy SVG — https://boxy-svg.com/
+      o Sketch (Sketch B.V.) — https://boxy-svg.com/

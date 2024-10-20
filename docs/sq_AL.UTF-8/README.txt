@@ -221,16 +221,16 @@ automatically.)
 The main screen is divided into the following sections:
 
 [Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo, Eraser,
-    New, Open, Save, Print, Quit]
-     
+New, Open, Save, Print, Quit]
+ 
 → Në Anën e Majtë: Panle ←
 
     The toolbar contains the drawing and editing controls.
 
 
      
-    [Kanavacë]
-     
+[Kanavacë]
+ 
 → Në Mes: Kanavacë Vizatimi ←
 
     The largest part of the screen, in the center, is the drawing canvas. This
@@ -243,8 +243,8 @@ The main screen is divided into the following sections:
 
 
      
-    [Selectors - Brushes, Letters, Shapes, Stamps]
-     
+[Selectors - Brushes, Letters, Shapes, Stamps]
+ 
 → Në Anën e Djathtë: Përzgjedhës ←
 
     Depending on the current tool, the selector shows different things. e.g.,
@@ -255,9 +255,9 @@ The main screen is divided into the following sections:
 
 
      
-    [Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue,
-    Purple, Brown, Grey]
-     
+[Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
+Brown, Grey]
+ 
 → Më Poshtë: Ngjyra ←
 
     When the active tool supports colors, a palette of colors choices will be
@@ -267,12 +267,12 @@ The main screen is divided into the following sections:
     as the color to use when flood-filling an area of the picture.)
 
     On the far right are three special color options:
-      + Zgjedhës Ngjyrash
+      o Zgjedhës Ngjyrash
         The "color picker" (which has an outline of an eye-dropper) allows you
         to pick a color found within your drawing.
         (A shortcut key is available to access this feature quickly; see
         below.)
-      + Paletë Ylberi
+      o Paletë Ylberi
         The rainbow palette allows you to pick any color by choosing the hue,
         saturation, and value of the color you want. A box on the left displays
         hundreds of hues — from red at the top through to violet at the bottom
@@ -283,10 +283,10 @@ The main screen is divided into the following sections:
         Click the green checkbox button to select the color, or the "Back"
         button to dismiss the pop-up without picking a new color.
         You may also set this tool's color to that of other color choices:
-          o Whichever built-in color is selected, if any
-          o Ngjyra e tanishme e Zgjedhësit të Ngjyrave
-          o Ngjyra e tanishme e Përzierësit të Ngjyrave
-      + Përzierës Ngjyrash
+          # Whichever built-in color is selected, if any
+          # Ngjyra e tanishme e Zgjedhësit të Ngjyrave
+          # Ngjyra e tanishme e Përzierësit të Ngjyrave
+      o Përzierës Ngjyrash
         The "color mixer" (which has silhouette of a paint palette) allows you
         to create colors by blending primary additive colors — red, yellow, and
         blue — along with white (to "tint"), grey (to "tone"), and black (to
@@ -315,10 +315,10 @@ The main screen is divided into the following sections:
 
 
      
-    (Shembull ndihmëze: “Zgjidhni një formë. Klikoni që të zgjidhni qendrën,
-    tërhiqeni, mandej lëreni, kur të ketë madhësinë që doni. Lëvizni përreth që
-    ta rrotulloni dhe klikoni që të vizatohet.”)
-     
+(Shembull ndihmëze: “Zgjidhni një formë. Klikoni që të zgjidhni qendrën,
+tërhiqeni, mandej lëreni, kur të ketë madhësinë që doni. Lëvizni përreth që ta
+rrotulloni dhe klikoni që të vizatohet.”)
+ 
 → Në Fund: Zonë Ndihme ←
 
     At the very bottom of the screen, Tux, the Linux Penguin, provides tips and
@@ -412,13 +412,13 @@ b.Mjeti “Stampë” (Vula Gome) ←
         Prior to 'stamping' an image onto your drawing, various effects can
         sometimes be applied (depending on the stamp):
 
-          o Some stamps can be colored or tinted. If the color palette below
+          @ Some stamps can be colored or tinted. If the color palette below
             the canvas is activated, you can click the colors to change the
             tint or color of the stamp before placing it in the picture.
-          o Stamps can be shrunk and expanded, by clicking within the
+          @ Stamps can be shrunk and expanded, by clicking within the
             triangular-shaped series of bars at the bottom right; the larger
             the bar, the larger the stamp will appear in your picture.
-          o Many stamps may be flipped vertically, or displayed as a
+          @ Many stamps may be flipped vertically, or displayed as a
             mirror-image, using the control buttons at the bottom right.
 
         ⚙ Note: If the "nostampcontrols" option is set, Tux Paint won't display
@@ -436,7 +436,6 @@ b.Mjeti “Stampë” (Vula Gome) ←
 
 
          
-
 
      
 c.Mjeti “Vija” ←
@@ -529,7 +528,6 @@ d.Mjeti “Forma” ←
 
          
 
-
      
 e.Mjete “Tekst” dhe “Etiketa” ←
 
@@ -603,12 +601,12 @@ e.Mjete “Tekst” dhe “Etiketa” ←
         Currently supported locales, the input methods available, and the key
         to toggle or cycle modes, are listed below.
 
-          o Japonisht — Hiragana të romanizuara dhe Katakana të romanizuara —
+          @ Japonisht — Hiragana të romanizuara dhe Katakana të romanizuara —
             tasti [Alt] i djathtë or tasti [Alt] i majtë
-          o Korean — Hangul 2-Bul — tasti [Alt] i djathtë or tasti [Alt] i
+          @ Korean — Hangul 2-Bul — tasti [Alt] i djathtë or tasti [Alt] i
             majtë
-          o Traditional Chinese — tasti [Alt] i djathtë ose tasti [Alt] i majtë
-          o Tajlandeze — tasti [Alt] i djathtë
+          @ Traditional Chinese — tasti [Alt] i djathtë ose tasti [Alt] i majtë
+          @ Tajlandeze — tasti [Alt] i djathtë
 
         💡 Note: Many fonts do not include all characters for all languages, so
         sometimes you'll need to change fonts to see the characters you're
@@ -628,22 +626,21 @@ e.Mjete “Tekst” dhe “Etiketa” ←
 
          
 
-
      
 f.Mjeti “Mbushje” ←
 
     The 'Fill' tool 'flood-fills' a contiguous area of your drawing with a
     color of your choice. Three fill options are offered:
-      + Solid — click once to fill an area with a solid color.
-      + Brush — click and drag to fill an area with a solid color using
+      o Solid — click once to fill an area with a solid color.
+      o Brush — click and drag to fill an area with a solid color using
         freehand painting.
-      + Linear — click and then drag to fill the area with color that fades
+      o Linear — click and then drag to fill the area with color that fades
         away (a gradient) towards where you drag the mouse.
-      + Radial — click once to fill an area with a color that fades away (a
+      o Radial — click once to fill an area with a color that fades away (a
         gradient) radially, centered on where you clicked.
-      + Shaped — click once to fill an area with a color that fades away (a
+      o Shaped — click once to fill an area with a color that fades away (a
         gradient), following the contours of the shape you're filling.
-      + Eraser — click once to erase an area, exposing the solid color
+      o Eraser — click once to erase an area, exposing the solid color
         background, or starter or template background image, upon which the
         drawing was based. (See Mjete të Mundshme > Mjete Vizatimi > Mjeti
         “Gomë” and Kontrolle të Tjera > Figura “Fillesë” & Gjedhe.)
@@ -715,13 +712,13 @@ h.Mjeti “Gomë” ←
 
     A number of eraser types are available, each offering multiple sizes are
     available:
-      + Square — Square-shaped erasers that completely remove parts of your
+      o Square — Square-shaped erasers that completely remove parts of your
         drawing.
-      + Circle (solid) — Circle-shaped erasers that completely remove parts of
+      o Circle (solid) — Circle-shaped erasers that completely remove parts of
         your drawing.
-      + Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
+      o Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
         with the background.
-      + Transparent Circle — Circle-shaped erasers that blend your drawing with
+      o Transparent Circle — Circle-shaped erasers that blend your drawing with
         the background. Release and click again to expose more and more of the
         background.
 
@@ -782,11 +779,11 @@ b.Urdhri “I ri” ←
         options for details.
          
     Figura “Fillesë” & Gjedhe ←
-          o 'Starters' can behave like a page from a coloring book — a
+          @ 'Starters' can behave like a page from a coloring book — a
             black-and-white outline of a picture, which you can then color in,
             and the black outline remains intact — or like a 3D photograph,
             where you draw in between a foreground and background layer.
-          o 'Templates' are similar, but simply provide a background drawing to
+          @ 'Templates' are similar, but simply provide a background drawing to
             work off of. Unlike 'Starters', there is no layer that remains in
             the foreground of anything you draw in the picture.
 
@@ -842,7 +839,7 @@ c.Urdhri “Hape” ←
     bottom of the list to scroll through the list of pictures.
 
     Klikoni mbi një foto për ta përzgjedhur dhe mandej…
-      + Click the green 'Open' button at the lower left of the list to load the
+      o Click the green 'Open' button at the lower left of the list to load the
         selected picture. You will then be able to edit it.
 
         (Alternatively, you can double-click a picture's icon to load it.)
@@ -851,7 +848,7 @@ c.Urdhri “Hape” ←
         saved, you will be prompted as to whether you want to save it or not.
         (See "Save," below.)
 
-      + Click the brown 'Erase' (trash can) button at the lower right of the
+      o Click the brown 'Erase' (trash can) button at the lower right of the
         list to erase the selected picture. (You will be asked to confirm.)
 
         📜 Note: On Linux (as of version 0.9.22), Windows (as of version
@@ -861,15 +858,15 @@ c.Urdhri “Hape” ←
 
         ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
 
-      + Click the 'Export' button near the lower right to export the selected
+      o Click the 'Export' button near the lower right to export the selected
         picture to your export folder. (e.g., "~/Pictures/TuxPaint/")
 
     Prej skenës “Hap” mundeni edhe të:
-      + Klikon butonin blu “Diapozitiva” (projektor diapozitivash) poshtë
+      o Klikon butonin blu “Diapozitiva” (projektor diapozitivash) poshtë
         majtas, për të kaluar nën mënyrën “shfaqje diapozitivash”. Për hollësi,
         shihni “Diapozitiva”,.
 
-      + Klikoni butonin blu “Gjedhe” poshtë majtas, për ta shndërruar në një
+      o Klikoni butonin blu “Gjedhe” poshtë majtas, për ta shndërruar në një
         gjedhe të re figurën e përzgjedhur, e cila mund të përdoret si bazë për
         vizatime të reja.
 
@@ -881,7 +878,7 @@ c.Urdhri “Hape” ←
         "Disable 'Make Template'" in Tux Paint Config. or running Tux Paint
         with the "notemplateexport" option).
 
-      + Click the red 'Back' arrow button at the lower right of the list to
+      o Click the red 'Back' arrow button at the lower right of the list to
         cancel and return to the picture you were drawing.
 
     ⌨ Note: You can also press [Tasti Kontroll / ⌘] + [O] on the keyboard to
@@ -1007,7 +1004,6 @@ e.Urdhri “Shtype” ←
 
 
          
-
 
      
 f.Urdhri “Diapozitiva” (nën “Hape”) ←
@@ -1319,44 +1315,44 @@ Other documentation included with Tux Paint (found in the "docs" folder/
 directory) includes:
 
 → Përdorim i Tux Paint-it: ←
-      + OPTIONS.html
+      o OPTIONS.html
         Detailed instructions on command-line and configuration-file options,
         for those who don't want to use the Tux Paint Config. tool to manage
         Tux Paint's configuration.
-      + Dokumentim i Mjetit “Magjik” (“magic-docs”)
+      o Dokumentim i Mjetit “Magjik” (“magic-docs”)
         Documentation for each of the currently-installed 'Magic' tools.
-      + Frequently Asked Questions ("FAQs") about Tux Paint
+      o Frequently Asked Questions ("FAQs") about Tux Paint
         Answers to, and solutions for, some common questions about, and
         problems with, using Tux Paint.
 
      
 → Si të zgjerohet Tux Paint-i: ←
-      + EXTENDING.html
+      o EXTENDING.html
         Detailed instructions on extending Tux Paint: creating brushes, stamps,
         starters, and templates; adding fonts; and creating new on-screen
         keyboard layouts and input methods.
-      + PNG.html
+      o PNG.html
         Notes on creating PNG format bitmapped (raster) images for use in Tux
         Paint.
-      + SVG.html
+      o SVG.html
         Notes on creating SVG format vector images for use in Tux Paint.
 
      
 → Hollësi teknike: ←
-      + INSTALL.html
+      o INSTALL.html
         Instructions for compiling and installing Tux Paint, when applicable.
-      + SIGNALS.html
+      o SIGNALS.html
         Information about the POSIX signals that Tux Paint responds to.
-      + MAGIC-API.html
+      o MAGIC-API.html
         Creating new Magic tools using Tux Paint's plugin API.
 
      
 → Historik zhvillimi dhe licencë: ←
-      + AUTHORS.txt
+      o AUTHORS.txt
         Listë e autorëve dhe kontribuesve.
-      + CHANGES.txt
+      o CHANGES.txt
         Summary of what has changed between releases of Tux Paint.
-      + COPYING.txt
+      o COPYING.txt
         Tux Paint's software license, the GNU General Public License (GPL)
 
      

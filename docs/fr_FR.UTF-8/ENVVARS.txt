@@ -26,9 +26,9 @@ soit indirectement par le biais des bibliothèques qu'il utilise.
 
     Quelques exemples où "$HOME" est utilisé incluent :
 
-      + L'emplacement du fichier de configuration de Tux Paint
-      + La base où Tux Paint sauvegarde et lit les dessins des utilisateurs
-      + L'endroit où se situent les fichiers privés d'un utilisateur (—
+      o L'emplacement du fichier de configuration de Tux Paint
+      o La base où Tux Paint sauvegarde et lit les dessins des utilisateurs
+      o L'endroit où se situent les fichiers privés d'un utilisateur (—
         tampons, pinceaux, etc, —) (par opposition aux fichiers accessibles à
         tout le monde)
 
@@ -87,7 +87,6 @@ Ce qui suit donne quelques variables d'environnement supportées par Simple
 DirectMedia Layer (libSDL) — que Tux Paint utilise pour l'affichage des
 dessins, pour jouer des sons et traiter les saisies de la souris, du clavier et
 du joystick — et qui peuvent être utiles aux utilisateurs de Tux Paint.
-
 → SDL_VIDEO_ALLOW_SCREENSAVER ←
 
     Spécifie si Tux Paint autorise l'utilisation d'un économiseur d'écran. Peut
@@ -107,4 +106,3 @@ du joystick — et qui peuvent être utiles aux utilisateurs de Tux Paint.
 
 
      
-

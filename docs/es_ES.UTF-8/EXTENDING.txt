@@ -506,9 +506,7 @@ directory.)
             This maps 'black through white' to 'black through destination'.
              
 
-
          
-
 
      
 → Unalterable Stamps ←
@@ -543,10 +541,10 @@ directory.)
     the stamp's data file. (An equals sign, "=", may be included after the word
     "scale".)
 
-      + "scale 40%"
-      + "scale 5/2"
-      + "scale 2.5"
-      + "scale 2:5"
+      o "scale 40%"
+      o "scale 5/2"
+      o "scale 2.5"
+      o "scale 2:5"
 
      
 → Windows Users ←
@@ -678,29 +676,29 @@ directory.)
     directions, the "allowscale" may be used to tell Tux Paint which behavior
     to allow:
 
-      + For starters where it's alright to crop the left and right edges, but
+      o For starters where it's alright to crop the left and right edges, but
         the top and bottom edges must be retained, use "allowscale=horizontal".
-          o If the starter's aspect ratio is wider than that of the canvas, it
+          # If the starter's aspect ratio is wider than that of the canvas, it
             will be scaled to fit the height of the canvas, and the left and
             right will be cropped.
-          o If the starter's aspect ratio is taller than that of the canvas, it
+          # If the starter's aspect ratio is taller than that of the canvas, it
             will be scaled to fit the height of the canvas, and no cropping
             will occur, and the left and right edges will be smeared.
 
-      + For starters where it's alright to crop the top and bottom edges, but
+      o For starters where it's alright to crop the top and bottom edges, but
         the left and right edges must be retained, use "allowscale=vertical".
-          o If the starter's aspect ratio is taller than that of the canvas, it
+          # If the starter's aspect ratio is taller than that of the canvas, it
             will be scaled to fit the width of the canvas, and the top and
             bottom will be cropped.
-          o If the starter's aspect ratio is wider than that of the canvas, it
+          # If the starter's aspect ratio is wider than that of the canvas, it
             will be scaled to fit the width of the canvas, and no cropping will
             occur, and the top and bottom edges will be smeared.
 
-      + If it's acceptable to crop either the top and bottom or the left and
+      o If it's acceptable to crop either the top and bottom or the left and
         right, use "allowscale=both". Contents from starter will always fill
         the canvas, regardless of how its aspect ratio compares to that of the
         canvas.
-      + The default behavior is to not allow cropping. This may be specified
+      o The default behavior is to not allow cropping. This may be specified
         explicitly with "allowscale=none".
 
      
@@ -735,15 +733,15 @@ directory.)
     important, specify "gravity=bottom-right".
 
     The available options are:
-      + center — prefer the center (the default)
-      + top — prefer the top center
-      + bottom — prefer the bottom center
-      + left — prefer the left center
-      + right — prefer the right center
-      + top-left — prefer the top left
-      + top-right — prefer the top right
-      + bottom-left — prefer the bottom left
-      + bottom-right — prefer the bottom right
+      o center — prefer the center (the default)
+      o top — prefer the top center
+      o bottom — prefer the bottom center
+      o left — prefer the left center
+      o right — prefer the right center
+      o top-left — prefer the top left
+      o top-right — prefer the top right
+      o bottom-left — prefer the bottom left
+      o bottom-right — prefer the bottom right
 
     [ Landscape-shaped image of a horizon with the sun in the middle and a
     building on the right. ]

@@ -113,20 +113,19 @@ installées, soit facilement disponibles avec votre distribution Linux.
     désactivé (via "make SVG_LIB:==")
 
     → librsvg-2 & libCairo2 (nouvelles bibliothèques) ←
-          o libRSVG 2: http://librsvg.sourceforge.net/
-          o Cairo 2: http://www.cairographics.org/
-          o Celles-ci dépendent aussi de :
-              # GdkPixbuf & GLib: http://www.gtk.org/
-              # Pango: http://www.pango.org/
+          @ libRSVG 2: http://librsvg.sourceforge.net/
+          @ Cairo 2: http://www.cairographics.org/
+          @ Celles-ci dépendent aussi de :
+              - GdkPixbuf & GLib: http://www.gtk.org/
+              - Pango: http://www.pango.org/
 
          
     → Anciennes bibliothèques ←
-          o libcairo1, libsvg1, & libsvg-cairo1: http://www.cairographics.org/
-          o Celles-ci dépendent aussi de :
-              # libxml2: https://gitlab.gnome.org/GNOME/libxml2
+          @ libcairo1, libsvg1, & libsvg-cairo1: http://www.cairographics.org/
+          @ Celles-ci dépendent aussi de :
+              - libxml2: https://gitlab.gnome.org/GNOME/libxml2
 
          
-
 
      
 → Fonction d'exportation de GIF animés ←
@@ -885,7 +884,7 @@ Installez les paquets de développement requis via un terminal :
     libpng16_devel librsvg_devel libsdl2_devel sdl2_image_devel sdl2_gfx_devel
     sdl2_mixer_devel sdl2_pango_devel sdl2_ttf_devel zlib_devel
      
-    ←
+←
 
 Pour 32-bit vous devez basculer vers le nouveau compilateur (actuellement gcc
 11.2.0) vers setarch x86

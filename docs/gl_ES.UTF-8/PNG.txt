@@ -46,7 +46,6 @@ converter as imaxes existentes a PNG.
 
      
 → Ferramentas da liña de ordes ←
-
     → NetPBM ←
 
         As ferramentas de Mapas de bits Portátil –Portable Bitmap– (coñecidas
@@ -71,23 +70,22 @@ converter as imaxes existentes a PNG.
 
          
 
-
      
 → Proprietary Software for Windows ←
-      + CorelDRAW (Corel) — http://www.corel.com/
-      + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
-      + Paint Shop Pro (Corel) — https://www.paintshoppro.com/
-      + Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
-      + PIXresizer (Bluefive software) — http://bluefive.pair.com/
+      o CorelDRAW (Corel) — http://www.corel.com/
+      o Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
+      o Paint Shop Pro (Corel) — https://www.paintshoppro.com/
+      o Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
+      o PIXresizer (Bluefive software) — http://bluefive.pair.com/
         pixresizer.htm
 
      
 → Usuarios de Macintosh ←
-      + CorelDRAW (Corel) — http://www.corel.com/
-      + GraphicConverter (Lemke Software) — https://www.lemkesoft.de/
+      o CorelDRAW (Corel) — http://www.corel.com/
+      o GraphicConverter (Lemke Software) — https://www.lemkesoft.de/
         mac-fotobearbeitung-mac-diashow-mac-grafikprogramm-mac-bildbetrachter/
-      + Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
-      + Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
+      o Illustrator (Adobe) — http://www.adobe.com/products/illustrator.html
+      o Photoshop (Adobe) — http://www.adobe.com/products/photoshop.html
 
      
 
