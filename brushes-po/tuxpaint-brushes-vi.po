@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-10-11 06:37:02+0000\n"
+"POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Cas Pascal <casboi86@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -55,6 +55,10 @@ msgstr "Vẽ các bước chân lên tranh."
 #: ../data/brushes/footprints-paws.txt
 msgid "Paint pawprints on your picture."
 msgstr "Vẽ các vết chân thú cưng lên tranh."
+
+#: ../data/brushes/impasto.txt
+msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
+msgstr ""
 
 #: ../data/brushes/inksplat.txt
 msgid "Paint random ink splats on your picture."

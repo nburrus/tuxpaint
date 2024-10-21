@@ -128,6 +128,14 @@ https://tuxpaint.org/
       Based on "Graphite Grain" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
 
+    * "Impasto"
+      Based on "memileo_360light-PHOTO-E_03-random"
+      from the "Memileo Impasto Brushes" bundle for Krita
+      <https://krita-artists.org/t/memileo-impasto-brushes/92952>
+      Creative Commons Attribution-Sharealike 4.0 International (CC-BY-SA)
+      by Emil Maselli <https://krita-artists.org/u/emilm/>.
+      Prepated for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>
+
     * Paint Splats
       Based on "Paint Splats" from Krita <https://krita.org/>
       Prepared for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>

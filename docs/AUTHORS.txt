@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - October 12, 2024
+June 17, 2002 - October 20, 2024
 
 * Design and Coding:
 
@@ -463,6 +463,13 @@ June 17, 2002 - October 12, 2024
   * Neko cat brushes based on XNeko by Masayuki Koba
 
   * Dog brushes based on Oneko by Tatsuya Kato
+
+  * "Impasto" brush based on "memileo_360light-PHOTO-E_03-random"
+    from the "Memileo Impasto Brushes" bundle for Krita
+    <https://krita-artists.org/t/memileo-impasto-brushes/92952>
+    Creative Commons Attribution-Sharealike 4.0 International (CC-BY-SA)
+    by Emil Maselli <https://krita-artists.org/u/emilm/>.
+    Prepated for Tux Paint by Bill Kendrick <bill@newbreedsoftware.com>.
 
   * Real Rainbow colors/alpha based on:
     http://www.flickr.com/photos/nicholas_t/281820290/

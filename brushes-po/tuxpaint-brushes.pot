@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint-brushes\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "MIME-Version: 1.0\n"
-"POT-Creation-Date: 2024-10-11 06:37:02+0000\n"
+"POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
 "PO-Revision-Date: \n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,6 +51,10 @@ msgstr ""
 
 #: ../data/brushes/footprints-paws.txt
 msgid "Paint pawprints on your picture."
+msgstr ""
+
+#: ../data/brushes/impasto.txt
+msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
 msgstr ""
 
 #: ../data/brushes/inksplat.txt

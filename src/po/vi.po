@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint-0.9.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-20 11:26-0700\n"
+"POT-Creation-Date: 2024-10-20 23:46-0700\n"
 "PO-Revision-Date: 2024-07-26 00:51-0700\n"
 "Last-Translator: Cas Pascal <casboi86@gmail.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -401,8 +401,9 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
-"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Paint splats\", "
-"\"Smoke\", \"Spines\", \"Water (still)\", and \"Watercolor splotches\"."
+"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Impasto\", \"Paint "
+"splats\", \"Smoke\", \"Spines\", \"Water (still)\", and \"Watercolor "
+"splotches\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -1472,32 +1473,32 @@ msgstr "Aa"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14896
+#: ../tuxpaint.c:14900
 msgid "Yes"
 msgstr "Có"
 
-#: ../tuxpaint.c:14899
+#: ../tuxpaint.c:14903
 msgid "No"
 msgstr "Không"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16175
+#: ../tuxpaint.c:16179
 msgid "Replace the picture with your changes?"
 msgstr "Thay tranh bằng các thay đổi của em không?"
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16179
+#: ../tuxpaint.c:16183
 msgid "Yes, replace the old one!"
 msgstr "Có, hãy thay thế cái cũ!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16183
+#: ../tuxpaint.c:16187
 msgid "No, save a new file!"
 msgstr "Không, hãy lưu một tập tin mới!"
 
-#: ../tuxpaint.c:17456
+#: ../tuxpaint.c:17460
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
@@ -1506,7 +1507,7 @@ msgstr ""
 "Chọn một tranh và nhấn “Mở”, “Xuất”, “Mẫu“, hoặc “Xóa”. Chọn “Trình chiếu” "
 "để tạo một trình chiếu hoặc “Lùi” để trở về tranh hiện tại của em."
 
-#: ../tuxpaint.c:17462
+#: ../tuxpaint.c:17466
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1517,64 +1518,64 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:19152
+#: ../tuxpaint.c:19156
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "Chọn từ 2 tranh trở lên để tạo một ảnh GIF."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25384
+#: ../tuxpaint.c:25388
 msgid "red"
 msgstr "đỏ"
 
-#: ../tuxpaint.c:25385
+#: ../tuxpaint.c:25389
 msgid "yellow"
 msgstr "vàng"
 
-#: ../tuxpaint.c:25386
+#: ../tuxpaint.c:25390
 msgid "blue"
 msgstr "xanh da trời"
 
-#: ../tuxpaint.c:25387
+#: ../tuxpaint.c:25391
 msgid "white"
 msgstr "trắng"
 
-#: ../tuxpaint.c:25388
+#: ../tuxpaint.c:25392
 msgid "grey"
 msgstr "xám"
 
-#: ../tuxpaint.c:25389
+#: ../tuxpaint.c:25393
 msgid "black"
 msgstr "đen"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25394
+#: ../tuxpaint.c:25398
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "Màu của em là %1$s %2$s."
 
-#: ../tuxpaint.c:25395
+#: ../tuxpaint.c:25399
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "Màu của em là %1$s %2$s và %3$s %4$s."
 
-#: ../tuxpaint.c:25396
+#: ../tuxpaint.c:25400
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "Màu của em là %1$s %2$s, %3$s %4$s và %5$s %6$s."
 
-#: ../tuxpaint.c:25397
+#: ../tuxpaint.c:25401
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "Màu của em là %1$s %2$s, %3$s %4$s, %5$s %6$s, và %7$s %8$s."
 
-#: ../tuxpaint.c:25398
+#: ../tuxpaint.c:25402
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "Màu của em là %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, và %9$s %10$s."
 
-#: ../tuxpaint.c:25399
+#: ../tuxpaint.c:25403
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1584,16 +1585,16 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26179 ../tuxpaint.c:26184
+#: ../tuxpaint.c:26183 ../tuxpaint.c:26188
 msgid "entirely"
 msgstr "toàn là"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29386
+#: ../tuxpaint.c:29390
 msgid "Select a color from your drawing."
 msgstr "Chọn một màu từ tranh của em."
 
-#: ../tuxpaint.c:29397
+#: ../tuxpaint.c:29401
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
@@ -1601,7 +1602,7 @@ msgstr ""
 "Chọn một màu. Sắc đi từ trên xuống. Độ nhạt/đậm đi từ trái (nhạt) sang phải "
 "(đậm). Độ sáng (sáng/tối): thanh xám."
 
-#: ../tuxpaint.c:29411
+#: ../tuxpaint.c:29415
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."

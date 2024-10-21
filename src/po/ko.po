@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-20 11:26-0700\n"
+"POT-Creation-Date: 2024-10-20 23:46-0700\n"
 "PO-Revision-Date: 2022-09-10 06:06-0400\n"
 "Last-Translator: Mark K. Kim <markuskimius@gmail.com>\n"
 "Language-Team: N/A\n"
@@ -391,8 +391,9 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid ""
-"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Paint splats\", "
-"\"Smoke\", \"Spines\", \"Water (still)\", and \"Watercolor splotches\"."
+"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Impasto\", \"Paint "
+"splats\", \"Smoke\", \"Spines\", \"Water (still)\", and \"Watercolor "
+"splotches\"."
 msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -1461,39 +1462,39 @@ msgstr "A가"
 
 #. Admittedly stupid way of determining which keys can be used for
 #. positive and negative responses in dialogs (e.g., [Y] (for 'yes') in English)
-#: ../tuxpaint.c:14896
+#: ../tuxpaint.c:14900
 msgid "Yes"
 msgstr "네"
 
-#: ../tuxpaint.c:14899
+#: ../tuxpaint.c:14903
 msgid "No"
 msgstr "아니요"
 
 #. Prompt to ask whether user wishes to save over old version of their file
-#: ../tuxpaint.c:16175
+#: ../tuxpaint.c:16179
 msgid "Replace the picture with your changes?"
 msgstr "전그림에 덮어쓸까요? 전그림은 없어집니다."
 
 #. Positive response to saving over old version
 #. (like a 'File:Save' action in other applications)
-#: ../tuxpaint.c:16179
+#: ../tuxpaint.c:16183
 msgid "Yes, replace the old one!"
 msgstr "네, 전그림을 덮어쓰세요!"
 
 #. Negative response to saving over old version (saves a new image)
 #. (like a 'File:Save As...' action in other applications)
-#: ../tuxpaint.c:16183
+#: ../tuxpaint.c:16187
 msgid "No, save a new file!"
 msgstr "아니요, 새로운 파일로 저장하죠"
 
-#: ../tuxpaint.c:17456
+#: ../tuxpaint.c:17460
 msgid ""
 "Choose a picture and then click “Open”, “Export”, “Template“, or “Erase”. "
 "Click “Slides” to create a slideshow animation or “Back“ to return to your "
 "current picture."
 msgstr ""
 
-#: ../tuxpaint.c:17462
+#: ../tuxpaint.c:17466
 msgid ""
 "Choose a picture and then click “Open”, “Export”, or “Erase”. Click “Slides” "
 "to create a slideshow animation or “Back“ to return to your current picture."
@@ -1502,64 +1503,64 @@ msgstr ""
 #. None selected? Too dangerous to automatically select all (like we do for slideshow playback).
 #. Only 1 selected?  No point in saving as GIF.
 #.
-#: ../tuxpaint.c:19152
+#: ../tuxpaint.c:19156
 msgid "Select 2 or more drawings to turn into an animated GIF."
 msgstr "지프로 만들 두가지 이상의 그림을 고르세요."
 
 #. Descriptions (names) of the color mixer tool's primary colors and shades
-#: ../tuxpaint.c:25384
+#: ../tuxpaint.c:25388
 msgid "red"
 msgstr "빨간색"
 
-#: ../tuxpaint.c:25385
+#: ../tuxpaint.c:25389
 msgid "yellow"
 msgstr "노란색"
 
-#: ../tuxpaint.c:25386
+#: ../tuxpaint.c:25390
 msgid "blue"
 msgstr "파란색"
 
-#: ../tuxpaint.c:25387
+#: ../tuxpaint.c:25391
 msgid "white"
 msgstr "흰색"
 
-#: ../tuxpaint.c:25388
+#: ../tuxpaint.c:25392
 msgid "grey"
 msgstr "회색"
 
-#: ../tuxpaint.c:25389
+#: ../tuxpaint.c:25393
 msgid "black"
 msgstr "검정색"
 
 #. Tool tip text describing a mixed color (e.g., "1/3 red and 1/2 yellow", or "1/3 blue and 2/3 white", etc.)
-#: ../tuxpaint.c:25394
+#: ../tuxpaint.c:25398
 #, c-format
 msgid "Your color is %1$s %2$s."
 msgstr "당신의 색갈은 %1$s %2$s."
 
-#: ../tuxpaint.c:25395
+#: ../tuxpaint.c:25399
 #, c-format
 msgid "Your color is %1$s %2$s and %3$s %4$s."
 msgstr "당신의 색갈은 %1$s %2$s 와 %3$s %4$s."
 
-#: ../tuxpaint.c:25396
+#: ../tuxpaint.c:25400
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, and %5$s %6$s."
 msgstr "당신의 색갈은 %1$s %2$s, %3$s %4$s, 그리고 %5$s %6$s."
 
-#: ../tuxpaint.c:25397
+#: ../tuxpaint.c:25401
 #, c-format
 msgid "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, and %7$s %8$s."
 msgstr "당신의 색갈은 %1$s %2$s, %3$s %4$s, %5$s %6$s, 그리고 %7$s %8$s."
 
-#: ../tuxpaint.c:25398
+#: ../tuxpaint.c:25402
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, and %9$s %10$s."
 msgstr ""
 "당신의 색갈은 %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, 그리고%9$s %10$s."
 
-#: ../tuxpaint.c:25399
+#: ../tuxpaint.c:25403
 #, c-format
 msgid ""
 "Your color is %1$s %2$s, %3$s %4$s, %5$s %6$s, %7$s %8$s, %9$s %10$s, and "
@@ -1569,22 +1570,22 @@ msgstr ""
 "%11$s %12$s."
 
 #. Color mixer; e.g., "Your color is entirely grey."
-#: ../tuxpaint.c:26179 ../tuxpaint.c:26184
+#: ../tuxpaint.c:26183 ../tuxpaint.c:26188
 msgid "entirely"
 msgstr "전채"
 
 #. Add "Color Select" color:
-#: ../tuxpaint.c:29386
+#: ../tuxpaint.c:29390
 msgid "Select a color from your drawing."
 msgstr "그림에서 색갈을 고르세요."
 
-#: ../tuxpaint.c:29397
+#: ../tuxpaint.c:29401
 msgid ""
 "Pick a color. Hues go top to bottom. Saturation/intensity goes left (pale) "
 "to right (pure). Value (lightness/darkness): grey bar."
 msgstr ""
 
-#: ../tuxpaint.c:29411
+#: ../tuxpaint.c:29415
 msgid ""
 "Click the primary colors (red, yellow, and blue), white (to tint), grey (to "
 "tone), and black (to shade), to mix together a new color."

@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 10, 2024
+  June 14, 2002 - October 20, 2024
 */
 
 #include "platform.h"
@@ -12385,6 +12385,10 @@ static void render_brush(void)
 
       if (r == g && g == b)
       {
+        /* FIXME: This doesn't seem necessary, since B&W brushes work fine
+           using the `else` codepath below.  Brushes like `impasto.png`
+           do not work properly without having a slight non-greyscale tint
+           applied. -bjk 2024.10.20 */
         putpixel_brush(img_cur_brush, x, y,
                        SDL_MapRGBA(img_cur_brush->format,
                                    color_hexes[cur_color][0], color_hexes[cur_color][1], color_hexes[cur_color][2], a));
