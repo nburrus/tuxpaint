@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                2024年10月14日
+                                2024年10月21日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -103,8 +103,8 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
      
 → ブラシの追加 ←
     New brushes for the Paint and Lines tools: "Fluff (gradient)", "Graphite",
-    "Paint splats", "Smoke", "Spines", "Water (still)", and "Watercolor
-    splotches".
+    "Impasto", "Paint splats", "Smoke", "Spines", "Water (still)", and
+    "Watercolor splotches".
      
 → New brush option ←
     Brushes may be given a "chaotic" setting, causing them to rotate

@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               octobre 14, 2024
+                               octobre 21, 2024
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -110,8 +110,8 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
      
 → New brushes ←
     New brushes for the Paint and Lines tools: "Fluff (gradient)", "Graphite",
-    "Paint splats", "Smoke", "Spines", "Water (still)", and "Watercolor
-    splotches".
+    "Impasto", "Paint splats", "Smoke", "Spines", "Water (still)", and
+    "Watercolor splotches".
      
 → New brush option ←
     Brushes may be given a "chaotic" setting, causing them to rotate
