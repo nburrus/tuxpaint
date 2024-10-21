@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint\n"
 "Report-Msgid-Bugs-To: tuxpaint-i18n@lists.sourceforge.net\n"
 "POT-Creation-Date: 2024-10-21 06:46:00+0000\n"
-"PO-Revision-Date: 2024-06-04 00:18+0200\n"
+"PO-Revision-Date: 2024-10-22 00:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -53,7 +53,7 @@ msgstr "Pinta un rastre d'animals en el dibuix."
 
 #: ../data/brushes/impasto.txt
 msgid "Impasto (\"mixture\"), a technique that involves applying thick layers of paint, making brush strokes visible."
-msgstr ""
+msgstr "Impasto, una tècnica que aplica capes gruixudes de pintura, fent visibles les pinzellades."
 
 #: ../data/brushes/inksplat.txt
 msgid "Paint random ink splats on your picture."
@@ -89,4 +89,4 @@ msgstr "Dibuixa amb fulles de vinya."
 
 #: ../data/brushes/watercolor-texture.txt
 msgid "Watercolor splotches."
-msgstr ""
+msgstr "Taques de aquarel·la."
