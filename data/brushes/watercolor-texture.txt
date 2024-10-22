@@ -1,1 +1,2 @@
 Watercolor splotches.
+ca.utf8=Taques de aquarel·la.
