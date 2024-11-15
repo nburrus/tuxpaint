@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.34
+                                version 0.9.35
 
                ## Një program i thjeshtë vizatimi për fëmijë ##
 
@@ -97,67 +97,10 @@ parts of the program in their own GPL'd software.)
 
 See COPYING.txt for the full text of the GPL license.
 
-              ### D. What's New in Tux Paint version 0.9.34? ###
+              ### D. What's New in Tux Paint version 0.9.35? ###
 
-→ "Eraser" Fill mode ←
-    A flood fill option that fills the canvas with the background color, or
-    template or starter background, upon which the drawing was based.
-     
-→ New brushes ←
-    New brushes for the Paint and Lines tools: "Fluff (gradient)", "Graphite",
-    "Impasto", "Paint splats", "Smoke", "Spines", "Water (still)", and
-    "Watercolor splotches".
-     
-→ New brush option ←
-    Brushes may be given a "chaotic" setting, causing them to rotate
-    continuously while drawing with them.
-     
-→ New templates ←
-    "Clouds from an airplane" and "Lough Leane".
-     
-→ New Magic tool: Comic dots ←
-    Draws a repeating dot pattern, simulating the "Ben Day process" used in
-    early comic books.
-     
-→ New Magic tool: Rotate ←
-    Rotates the drawing.
-     
-→ New Magic tool: Fractal ←
-    A set of tools that recursively repeat what you draw, scaling and/or
-    rotating it as they repeat.
-     
-→ New Magic tool: ASCII Typewriter ←
-    Transform your picture into "ASCII art", typewriter-style.
-     
-→ New Magic tool: ASCII Computer ←
-    Transform your picture into "ASCII art", computer-style.
-     
-→ New Magic tool: ASCII Color Computer ←
-    Transform your picture into colored computer "ASCII art".
-     
-→ New Magic tool: Crescent ←
-    Draw one of various crescent shapes at a chosen angle.
-     
-→ New Magic tool: Spiral ←
-    Draw spirals.
-     
-→ New Magic tool: Spiral Square ←
-    Draw square spirals.
-     
-→ New Magic tool: Concentric Circle ←
-    Draw concentric circles.
-     
-→ New Magic tool: Concentric Square ←
-    Draw concentric squares.
-     
-→ New Magic tool: Tessellation Pointy ←
-    Draw repeating tessellation patterns with pointy-topped hexagons.
-     
-→ New Magic tool: Tessellation Flat ←
-    Draw repeating tessellation patterns with flat-topped hexagons.
-     
-→ Magic API Updates ←
-    Sound pause and resume functions added.
+→ TBD ←
+    TBD
      
 
 Për listën e plotë të ndryshimeve, shihni CHANGES.txt.
