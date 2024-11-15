@@ -97,8 +97,9 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 
                ### D. Tux Paint バージョン 0.9.35 での変更点 ###
 
-→ TBD ←
-    TBD
+→ Improved color picker ←
+    Better behavior when clicking/tapping and dragging hue/saturation box and
+    value slider.
      
 
 全ての変更点については、CHANGES.txt をお読みください。

@@ -100,8 +100,9 @@ Consulte o texto completo da licenza GPL en COPYING.txt.
 
               ### D. What's New in Tux Paint version 0.9.35? ###
 
-→ TBD ←
-    TBD
+→ Improved color picker ←
+    Better behavior when clicking/tapping and dragging hue/saturation box and
+    value slider.
      
 
 See CHANGES.txt for the complete list of changes.

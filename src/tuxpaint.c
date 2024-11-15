@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - October 23, 2024
+  June 14, 2002 - November 15, 2024
 */
 
 #include "platform.h"
@@ -24808,7 +24808,7 @@ static int do_color_picker(int prev_color)
           done = 1;
         }
       }
-      else if (event.type == SDL_MOUSEBUTTONUP && valid_click(event.button.button))
+      else if ((event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN) && valid_click(event.button.button))
       {
         if (event.button.x >= color_picker_left &&
             event.button.x < color_picker_left + img_color_picker->w &&
@@ -24966,7 +24966,17 @@ static int do_color_picker(int prev_color)
 
           /* Re-render the palette with the new value */
           render_color_picker_palette();
-          color_picker_v = tmp_color_picker_v;
+          if (valid_click(event.button.button))
+          {
+            /* Click+dragging in value picker? */
+            /* Redraw hue/sat palette, and val slider, and redraw crosshairs */
+            draw_color_picker_palette_and_values(color_picker_left,
+                                                 color_picker_top, color_picker_val_left, color_picker_val_top);
+          }
+          else
+          {
+            color_picker_v = tmp_color_picker_v;
+          }
 
           /* Show a big solid example of the color: */
 
@@ -24976,14 +24986,22 @@ static int do_color_picker(int prev_color)
           SDL_GetRGB(getpixel_img_color_picker
                      (img_color_picker, color_picker_x, color_picker_y), img_color_picker->format, &r, &g, &b);
 
-          dest.x = color_example_dest.x + color_example_dest.w / 4;
-          dest.y = color_example_dest.y + color_example_dest.h / 4;
-          dest.w = color_example_dest.w / 2;
-          dest.h = color_example_dest.h / 2;
-
-          SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
-
-          SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+          if (valid_click(event.button.button))
+          {
+            /* Click+drag? Fill whole box */
+            SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, r, g, b));
+            SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+          }
+          else
+          {
+            /* Just hovering? Fill interior box */
+            dest.x = color_example_dest.x + color_example_dest.w / 4;
+            dest.y = color_example_dest.y + color_example_dest.h / 4;
+            dest.w = color_example_dest.w / 2;
+            dest.h = color_example_dest.h / 2;
+            SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
+            SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+          }
 
 
           /* Redraw hue/sat palette, and val slider, and redraw crosshairs */
@@ -25018,14 +25036,43 @@ static int do_color_picker(int prev_color)
 
             SDL_GetRGB(getpixel_img_color_picker(img_color_picker, x, y), img_color_picker->format, &r, &g, &b);
 
-            dest.x = color_example_dest.x + color_example_dest.w / 4;
-            dest.y = color_example_dest.y + color_example_dest.h / 4;
-            dest.w = color_example_dest.w / 2;
-            dest.h = color_example_dest.h / 2;
+            if (valid_click(event.button.button))
+            {
+              /* Click+drag? Fill whole box */
+              SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, r, g, b));
+              SDL_UpdateRect(screen, color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
+            }
+            else
+            {
+              /* Just hovering? Fill interior box */
+              dest.x = color_example_dest.x + color_example_dest.w / 4;
+              dest.y = color_example_dest.y + color_example_dest.h / 4;
+              dest.w = color_example_dest.w / 2;
+              dest.h = color_example_dest.h / 2;
+              SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
+              SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+            }
 
-            SDL_FillRect(screen, &dest, SDL_MapRGB(screen->format, r, g, b));
+            if (valid_click(event.button.button))
+            {
+              /* Click+dragging in the color picker? Pick the color and move the crosshair */
+              x = event.button.x - color_picker_left;
+              y = event.button.y - color_picker_top;
+    
+              color_picker_x = x;
+              color_picker_y = y;
 
-            SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+              dest.x = color_picker_left;
+              dest.y = color_picker_top;
+              SDL_BlitSurface(img_color_picker, NULL, screen, &dest);
+
+              draw_color_picker_crosshairs(color_picker_left, color_picker_top, color_picker_val_left, color_picker_val_top);
+              dest.x = color_picker_left;
+              dest.y = color_picker_top;
+              dest.w = img_color_picker->w;
+              dest.h = img_color_picker->w;
+              SDL_UpdateRect(screen, dest.x, dest.y, dest.w, dest.h);
+            }
           }
           else
           {
