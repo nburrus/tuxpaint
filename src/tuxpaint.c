@@ -1700,7 +1700,7 @@ static SDL_Surface *img_title_on, *img_title_off, *img_title_large_on, *img_titl
 static SDL_Surface *img_title_names[NUM_TITLES];
 static SDL_Surface *img_tools[NUM_TOOLS], *img_tool_names[NUM_TOOLS];
 
-static SDL_Surface *img_oskdel, *img_osktab, *img_oskenter, *img_oskcapslock, *img_oskshift;
+static SDL_Surface *img_oskdel, *img_osktab, *img_oskenter, *img_oskcapslock, *img_oskshift, *img_oskpaste;
 static SDL_Surface *thumbnail(SDL_Surface * src, int max_x, int max_y, int keep_aspect);
 static SDL_Surface *thumbnail2(SDL_Surface * src, int max_x, int max_y, int keep_aspect, int keep_alpha);
 
@@ -2823,7 +2823,6 @@ static void mainloop(void)
         /* handle_keymouse_buttons will move one button at a time */
         handle_keymouse_buttons(key, &whicht, &whichc, real_r_tools);
 
-
         if ((key == SDLK_ESCAPE || key == SDLK_AC_BACK) && !disable_quit)
         {
           magic_switchout(canvas);
@@ -3718,14 +3717,16 @@ static void mainloop(void)
                                    img_btn_up, img_btn_down, img_btn_off,
                                    img_btn_nav, img_btn_hold,
                                    img_oskdel, img_osktab, img_oskenter,
-                                   img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
+                                   img_oskcapslock, img_oskshift, img_oskpaste,
+                                   onscreen_keyboard_disable_change);
                     else
                       kbd =
                         osk_create(strdup("default.layout"), canvas,
                                    img_btn_up, img_btn_down, img_btn_off,
                                    img_btn_nav, img_btn_hold,
                                    img_oskdel, img_osktab, img_oskenter,
-                                   img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
+                                   img_oskcapslock, img_oskshift, img_oskpaste,
+                                   onscreen_keyboard_disable_change);
                   }
 
                   if (kbd == NULL)
@@ -15552,6 +15553,7 @@ static void cleanup(void)
     free_surface(&img_oskenter);
     free_surface(&img_oskcapslock);
     free_surface(&img_oskshift);
+    free_surface(&img_oskpaste);
 
     if (kbd)
       osk_free(kbd);
@@ -30525,6 +30527,7 @@ static void setup(void)
     img_oskenter = loadimagerb(DATA_PREFIX "images/ui/osk_enter.png");
     img_oskcapslock = loadimagerb(DATA_PREFIX "images/ui/osk_capslock.png");
     img_oskshift = loadimagerb(DATA_PREFIX "images/ui/osk_shift.png");
+    img_oskpaste = loadimagerb(DATA_PREFIX "images/ui/osk_shift.png"); // FIXME
 
     if (onscreen_keyboard_layout)
     {
@@ -30537,7 +30540,8 @@ static void setup(void)
                      img_btn_up, img_btn_down, img_btn_off,
                      img_btn_nav, img_btn_hold,
                      img_oskdel, img_osktab, img_oskenter,
-                     img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
+                     img_oskcapslock, img_oskshift, img_oskpaste,
+                     onscreen_keyboard_disable_change);
     }
     else
     {
@@ -30546,7 +30550,8 @@ static void setup(void)
                    img_btn_up, img_btn_down, img_btn_off,
                    img_btn_nav, img_btn_hold,
                    img_oskdel, img_osktab, img_oskenter,
-                   img_oskcapslock, img_oskshift, onscreen_keyboard_disable_change);
+                   img_oskcapslock, img_oskshift, img_oskpaste,
+                   onscreen_keyboard_disable_change);
     }
   }
 
