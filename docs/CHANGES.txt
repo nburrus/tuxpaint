@@ -6,11 +6,16 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.December.19 (0.9.35)
+2024.December.20 (0.9.35)
   * Other Improvements:
     -------------------
     + Improved color picker: better behavior when clicking/tapping and
       dragging hue/saturation box and value slider.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    + Less warning noise to stdout (e.g., don't complain about inability
+      to load SVGs that don't exist; check whether they exist, first).
+      h/t Thomas Klausner for mentioning it.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:

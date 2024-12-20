@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 15, 2024
+  June 14, 2002 - December 20, 2024
 */
 
 #include "platform.h"
@@ -863,7 +863,7 @@ static void set_max_buttonscale(void)
   max_h = (float)WINDOW_HEIGHT / (40 + (6 * 48) + (gd_colors.rows * 48) + 56);
 
   button_scale = min(max_w, max_h);
-  fprintf(stderr, "Will use a button size of %d (scale = %f)\n", (int)(button_scale * ORIGINAL_BUTTON_SIZE),
+  fprintf(stderr, "Info: Will use a button size of %d (scale = %f)\n", (int)(button_scale * ORIGINAL_BUTTON_SIZE),
           button_scale);
 }
 
@@ -920,7 +920,7 @@ static void setup_normal_screen_layout(void)
   if (buttons_tall < 5)
   {
     fprintf(stderr,
-            "Button size '%d' with window size '%dx%d' is not reasonable (not tall enough).\n",
+            "Warning: Button size '%d' with window size '%dx%d' is not reasonable (not tall enough).\n",
             button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
     set_max_buttonscale();
     setup_normal_screen_layout();
@@ -929,7 +929,7 @@ static void setup_normal_screen_layout(void)
   if (r_canvas.w < button_w * 9)
   {
     fprintf(stderr,
-            "Button size '%d' with window size '%dx%d' is not reasonable (not wide enough).\n",
+            "Warning: Button size '%d' with window size '%dx%d' is not reasonable (not wide enough).\n",
             button_w, WINDOW_WIDTH, WINDOW_HEIGHT);
     set_max_buttonscale();
     setup_normal_screen_layout();
@@ -1725,7 +1725,7 @@ static SDL_Surface *render_text(TuxPaint_Font *restrict font, const char *restri
 
   if (font == NULL)
   {
-    fprintf(stderr, "render_text() received a NULL font!\n");
+    fprintf(stderr, "Warning: render_text() received a NULL font!\n");
     fflush(stdout);
     return NULL;
   }
@@ -3701,7 +3701,7 @@ static void mainloop(void)
                   }
 
                   if (kbd == NULL)
-                    fprintf(stderr, "kbd = NULL\n");
+                    fprintf(stderr, "Warning: kbd = NULL\n");
                   else
                     reposition_onscreen_keyboard(0);
                 }
@@ -14282,9 +14282,16 @@ static SDL_Surface *load_starter_helper(char *path_and_basename,
   char fname[256];
   SDL_Surface *surf;
   unsigned int i;
+  struct stat stat_buf;
 
   ext = strdup(extension);
   safe_snprintf(fname, sizeof(fname), "%s.%s", path_and_basename, ext);
+
+  if (stat(fname, &stat_buf) != 0)
+  {
+    /* File by that name doesn't exist; give up now */
+    return NULL;
+  }
 
   surf = (*load_func) (fname);
 
@@ -21353,9 +21360,11 @@ static SDL_Surface *_load_svg(const char *file)
   rsvg_handle = rsvg_handle_new_from_file(file, &gerr);
   if (rsvg_handle == NULL)
   {
-    fprintf(stderr, "rsvg_handle_new_from_file(%s) failed\n", file);
+    fprintf(stderr, "rsvg_handle_new_from_file(%s) failed: %s\n", file, gerr->message);
+    free(gerr);
     return (NULL);
   }
+  free(gerr);
 
 /* rsvg_handle_get_dimensions() is deprecated since since version 2.52,
    but we currently support some platforms where it's not yet available
@@ -21632,6 +21641,13 @@ static SDL_Surface *myIMG_Load_RWops(const char *file)
    otherwise call SDL_Image lib's IMG_Load() (for PNGs, JPEGs, BMPs, etc.) */
 static SDL_Surface *myIMG_Load(const char *file)
 {
+  struct stat stat_buf;
+  if (stat(file, &stat_buf) != 0)
+  {
+    /* File by that name doesn't exist; give up now */
+    return NULL;
+  }
+
   if (strlen(file) > 4 && strcasecmp(file + strlen(file) - 4, ".kpx") == 0)
   {
     return (load_kpx(file));
@@ -28648,7 +28664,7 @@ static void setup_config(char *argv[])
   {
     if (strcmp(tmpcfg.tp_ui_font, "default") == 0)
     {
-      printf /*DEBUG_PRINTF */ ("Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
+      printf /*DEBUG_PRINTF */ ("Info: Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
       tp_ui_font = strdup(PANGO_DEFAULT_FONT);
       if (PANGO_DEFAULT_FONT_FALLBACK != NULL)
       {
@@ -28658,12 +28674,12 @@ static void setup_config(char *argv[])
     else
     {
       tp_ui_font = strdup(tmpcfg.tp_ui_font);
-      printf /*DEBUG_PRINTF */ ("Requested UI font described by \"%s\"\n", tp_ui_font);
+      printf /*DEBUG_PRINTF */ ("Info: Requested UI font described by \"%s\"\n", tp_ui_font);
     }
   }
   else
   {
-    printf /*DEBUG_PRINTF */ ("Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
+    printf /*DEBUG_PRINTF */ ("Info: Requested default UI font, \"%s\"\n", PANGO_DEFAULT_FONT);
     tp_ui_font = strdup(PANGO_DEFAULT_FONT);
     if (PANGO_DEFAULT_FONT_FALLBACK != NULL)
     {
@@ -28713,19 +28729,19 @@ static void setup_config(char *argv[])
       tp_ui_font = strdup(tp_ui_font_fallback);
       tp_ui_font_fallback = NULL;
 
-      printf /*DEBUG_PRINTF */ ("Requested fallback default UI font, \"%s\"\n", tp_ui_font);
+      printf /*DEBUG_PRINTF */ ("Info: Requested fallback default UI font, \"%s\"\n", tp_ui_font);
       tmp_str = ask_pango_for_font(tp_ui_font);
     }
   }
 
   if (tmp_str != NULL)
   {
-    printf("Actual UI font will be \"%s\"\n", tmp_str);
+    printf("Info: Actual UI font will be \"%s\"\n", tmp_str);
     free(tmp_str);
   }
   else
   {
-    printf("Error asking pango for actual font!\n");
+    printf("Error: Problem asking pango for actual font!\n");
   }
 
   /* FIXME: most of this is not required before starting the font scanner */
@@ -29708,7 +29724,7 @@ static void setup(void)
   joystick = SDL_JoystickOpen(joystick_dev);
   if (joystick == NULL)
   {
-    fprintf(stderr, "Could not open joystick device %d: %s\n", joystick_dev, SDL_GetError());
+    fprintf(stderr, "Info: Could not open joystick device %d: %s\n", joystick_dev, SDL_GetError());
   }
   else
   {
@@ -29853,13 +29869,15 @@ static void setup(void)
       SDL_CreateWindow("Tux Paint", win_x, win_y,
                        WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_HWSURFACE);
     if (window_screen == NULL)
-      printf("window_screen = NULL 1\n");
+      printf("Warning: Cannot open fullscreen with hardware surface\n");
 
 #else
     window_screen = SDL_CreateWindow(NULL, win_x, win_y, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
     if (window_screen == NULL)
-      printf("window_screen = NULL 2\n");
+      printf("Warning: Cannot open fullscreen with software surface\n");
 #endif
+
+    /* FIXME: Check window_screen for being NULL, and abort?! (Also see below) -bjk 2024.12.20 */
 
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
@@ -29987,6 +30005,8 @@ static void setup(void)
           if (mode.w >= WINDOW_WIDTH && mode.h >= WINDOW_HEIGHT)
           {
             /* Found a display capable of the chosen window size */
+            max_scrn_w = mode.w;
+            max_scrn_h = mode.h;
           }
           else
           {
@@ -30008,13 +30028,13 @@ static void setup(void)
       /* Only found one display, and window size is larger? Use that window size */
       if (WINDOW_WIDTH > max_scrn_w)
       {
-        fprintf(stderr, "Asked for window width (%d) larger than max screen width (%d)\n", WINDOW_WIDTH, max_scrn_w);
+        fprintf(stderr, "Warning: Asked for window width (%d) larger than max screen width (%d)\n", WINDOW_WIDTH, max_scrn_w);
         WINDOW_WIDTH = max_scrn_w;
       }
 
       if (WINDOW_HEIGHT > max_scrn_h)
       {
-        fprintf(stderr, "Asked for window height (%d) larger than max screen height (%d)\n", WINDOW_HEIGHT, max_scrn_h);
+        fprintf(stderr, "Warning: Asked for window height (%d) larger than max screen height (%d)\n", WINDOW_HEIGHT, max_scrn_h);
         WINDOW_HEIGHT = max_scrn_h;
       }
     }
@@ -30024,13 +30044,14 @@ static void setup(void)
 #ifdef USE_HWSURFACE
     window_screen = SDL_CreateWindow("Tux Paint", win_x, win_y, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_HWSURFACE);
     if (window_screen == NULL)
-      printf("window_screen = NULL 3\n");
+      printf("Warning: Could not create a window with a hardware surface\n");
 #else
     window_screen = SDL_CreateWindow("Tux Paint", win_x, win_y, WINDOW_WIDTH, WINDOW_HEIGHT, 0 /* no flags */ );
     if (window_screen == NULL)
-      printf("window_screen = NULL 4\n");
+      printf("Warning: Could not create a window with a software surface\n");
 #endif
 
+    /* FIXME: Check window_screen for being NULL, and abort?! (Also see above) -bjk 2024.12.20 */
 
     /* Note: Seems that this depends on the compliance by the window manager.
        Currently this doesn't work under Fvwm */
