@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - November 15, 2024
+# June 14, 2002 - December 19, 2024
 
 
 # The version number, for release:
@@ -1004,7 +1004,8 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tux
 	cp -a data/images/icon96x96.png $(NEWICON_PREFIX)/96x96/apps/tuxpaint.png
 	cp -a data/images/icon128x128.png $(NEWICON_PREFIX)/128x128/apps/tuxpaint.png
 	cp -a data/images/icon192x192.png $(NEWICON_PREFIX)/192x192/apps/tuxpaint.png
-	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
+	cp -a src/org.tuxpaint.Tuxpaint.appdata.xml $(METAINFO_PREFIX)
+	# ^ Instead of: install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
 
 .PHONY: install-xdg
 install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
@@ -1039,7 +1040,9 @@ install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpai
 	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 	  update-desktop-database ; \
 	fi
-	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
+	mkdir -p $(METAINFO_PREFIX)
+	cp -a src/org.tuxpaint.Tuxpaint.appdata.xml $(METAINFO_PREFIX)
+	# ^ Instead of: install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
 #do package path related stuff, ie use destdir
 
 # Install the PNG icon (for KDE desktop, etc.)

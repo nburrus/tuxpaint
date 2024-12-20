@@ -6,11 +6,17 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.November.15 (0.9.35)
- * Improved color picker
-   Better behavior when clicking/tapping and dragging hue/saturation
-   box and value slider.
-   Bill Kendrick <bill@newbreedsoftware.com>
+2024.December.19 (0.9.35)
+  * Other Improvements:
+    -------------------
+    + Improved color picker: better behavior when clicking/tapping and
+      dragging hue/saturation box and value slider.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Ports & Building:
+    -----------------
+    + Don't use Linux-specific invocation of "install"; use "mkdir" & "cp"
+      Thomas Klausner <wiz@netbsd.org>
 
 2024.October.23 (0.9.34)
   * New Magic Tools:
