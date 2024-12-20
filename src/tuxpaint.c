@@ -2110,6 +2110,7 @@ static void rect_xor(int x1, int y1, int x2, int y2);
 static void circle_xor(int x, int y, int sz);
 static void draw_blinking_cursor(void);
 static void hide_blinking_cursor(void);
+static int text_label_tool_enter(int font_height);
 
 static void reset_brush_counter(int force);
 
@@ -2262,7 +2263,7 @@ static void print_image(void);
 static void do_print(void);
 static void strip_trailing_whitespace(char *buf);
 static void strip_quotes(char *buf);
-static void do_render_cur_text(int do_blit);
+static int do_render_cur_text(int do_blit);
 static char *uppercase(const char *restrict const str);
 static wchar_t *uppercase_w(const wchar_t *restrict const str);
 static SDL_Surface *do_render_button_label(const char *const label);
@@ -3155,6 +3156,64 @@ static void mainloop(void)
             update_screen_rect(&r_tools);
           }
         }
+        else if ((key == SDLK_v && (mod & KMOD_CTRL)) && !noshortcuts)
+        {
+          /* Ctrl-V - Paste */
+          if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
+          {
+            char * pasted_txt;
+
+            if (SDL_HasClipboardText())
+            {
+              pasted_txt = SDL_GetClipboardText();
+              if (pasted_txt != NULL /* it shouldn't be */)
+              {
+                if (pasted_txt[0] != '\0')
+                {
+                  int n;
+                  wchar_t *tmp;
+
+                  DEBUG_PRINTF("Pasting: %s\n", pasted_txt);
+
+                  n = strlen(pasted_txt) + 1;
+                  tmp = alloca(sizeof(wchar_t) * n);
+
+                  if (tmp != NULL)
+                  {
+                    int exceeded;
+
+                    mbstowcs(tmp, pasted_txt, n);     /* at most n wchar_t written */
+                    exceeded = 0;
+                    for (int i = 0; tmp[i] != '\0' && !exceeded; i++)
+                    {
+                      if (tmp[i] == '\n')
+                      {
+                        exceeded = text_label_tool_enter(TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
+                      }
+                      else
+                      {
+                        int txt_width;
+
+                        texttool_str[texttool_len++] = tmp[i];
+                        playsound(screen, 0, SND_KEYCLICK, 0, SNDPOS_CENTER, SNDDIST_NEAR);
+                        txt_width = do_render_cur_text(0);
+                        if (cursor_x + txt_width > canvas->w && texttool_len > 1)
+                        {
+                          texttool_str[texttool_len - 1] = '\0';
+                          txt_width = do_render_cur_text(0);
+                          exceeded = text_label_tool_enter(TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
+                          i--;
+                        }
+                        SDL_Delay(10);
+                      }
+                    }
+                  }
+                }
+                SDL_free(pasted_txt);
+              }
+            }
+          }
+        }
         else if (event.type == SDL_TEXTINPUT ||
                  (event.type == SDL_KEYDOWN &&
                   (event.key.keysym.sym == SDLK_BACKSPACE ||
@@ -3263,38 +3322,7 @@ static void mainloop(void)
                 {
                   /* [Enter] to finish entering text */
 
-                  rec_undo_buffer();
-                  do_render_cur_text(1);
-                  label_node_to_edit = NULL;
-                  texttool_len = 0;
-                  cursor_textwidth = 0;
-                  if (cur_tool == TOOL_LABEL)
-                  {
-                    draw_fonts();
-                    update_screen_rect(&r_toolopt);
-                  }
-
-                  if (been_saved)
-                  {
-                    been_saved = 0;
-
-                    if (!disable_save)
-                      tool_avail[TOOL_SAVE] = 1;
-
-                    draw_toolbar();
-                    update_screen_rect(&r_tools);
-                  }
-
-
-                  cursor_x = cursor_left;
-                  cursor_y = min(cursor_y + font_height, canvas->h - font_height);
-
-                  /* Reposition the on-screen keyboard if we begin typing over it */
-                  update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w, kbd_rect.y + kbd_rect.h, 0);
-                  update_screen_rect(&kbd_rect);
-                  reposition_onscreen_keyboard(cursor_y);
-
-                  playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+                  text_label_tool_enter(font_height);
                 }
                 else if (cur_tool == TOOL_LABEL && label_node_to_edit)
                 {
@@ -20207,9 +20235,9 @@ void do_print(void)
 /**
  * FIXME
  */
-static void do_render_cur_text(int do_blit)
+static int do_render_cur_text(int do_blit)
 {
-  int w, h;
+  int w, h, txt_width;
 
   SDL_Color color = { color_hexes[cur_color][0],
     color_hexes[cur_color][1],
@@ -20302,8 +20330,7 @@ static void do_render_cur_text(int do_blit)
     }
     /* FIXME: Is this SDL_Flip() still needed? Pere 2011.06.28 */
     SDL_Flip(screen);
-    return;
-
+    return 0;
   }
 
 
@@ -20423,11 +20450,14 @@ static void do_render_cur_text(int do_blit)
   free(str);
 
   if (tmp_surf != NULL)
+  {
+    txt_width = tmp_surf->w;
     SDL_FreeSurface(tmp_surf);
-/*   if (tmp_label != NULL) */
-  /*    SDL_FreeSurface(tmp_label); */
-  // SDL_Delay(5000);
+  }
+  else
+    txt_width = 0;
 
+  return txt_width;
 }
 
 
@@ -32873,4 +32903,59 @@ void maybe_redraw_eraser_xor(void)
                     mx + sz / 2 + r_canvas.x, my + sz / 2 + r_canvas.y);
     }
   }
+}
+
+/**
+ * Record an undo buffer snapshot, blit the current line of Text or Label
+ * tool text onto the * canvas, play the "carriage return" sound effect,
+ * and mark the image as unsaved.
+ *
+ * This happens when the user presses the [Enter]/[Return] key on
+ * a physical keyboard, clicks it in the on-screen keyboard, or
+ * a carriage return is part of some pasted clipboard text.
+ *
+ * FIXME: Params
+ */
+static int text_label_tool_enter(int font_height)
+{
+  int exceeded;
+
+  rec_undo_buffer();
+  do_render_cur_text(1);
+  label_node_to_edit = NULL;
+  texttool_len = 0;
+  cursor_textwidth = 0;
+  if (cur_tool == TOOL_LABEL)
+  {
+    draw_fonts();
+    update_screen_rect(&r_toolopt);
+  }
+
+  if (been_saved)
+  {
+    been_saved = 0;
+
+    if (!disable_save)
+      tool_avail[TOOL_SAVE] = 1;
+
+    draw_toolbar();
+    update_screen_rect(&r_tools);
+  }
+
+
+  cursor_x = cursor_left;
+
+  exceeded = 0;
+  if (cursor_y + font_height >= canvas->h)
+    exceeded = 1;
+  cursor_y = min(cursor_y + font_height, canvas->h - font_height);
+
+  /* Reposition the on-screen keyboard if we begin typing over it */
+  update_canvas_ex(kbd_rect.x, kbd_rect.y, kbd_rect.x + kbd_rect.w, kbd_rect.y + kbd_rect.h, 0);
+  update_screen_rect(&kbd_rect);
+  reposition_onscreen_keyboard(cursor_y);
+
+  playsound(screen, 0, SND_RETURN, 1, SNDPOS_RIGHT, SNDDIST_NEAR);
+
+  return exceeded;
 }

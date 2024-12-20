@@ -7,6 +7,18 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2024.December.20 (0.9.35)
+  * Text & Label Tool Improvements:
+    -------------------------------
+    + WIP It is now possible to paste text from the copy/paste clipboard
+      into Tux Paint.  If text goes beyond the right of the canvas,
+      a new line is created.  If text goes beyond the bottom of the
+      canvas, the text is truncated there.
+      - TODO: Add a "paste" button to the On Screen Keyboards
+      - TODO: Improve word-wrapping (word-based, not character)
+      - TODO: Mention the feature in documentation
+      Closes https://sourceforge.net/p/tuxpaint/feature-requests/95/
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Other Improvements:
     -------------------
     + Improved color picker: better behavior when clicking/tapping and
