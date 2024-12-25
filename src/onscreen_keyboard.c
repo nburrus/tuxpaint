@@ -1479,7 +1479,6 @@ static osk_key *find_key(on_screen_keyboard *keyboard, int x, int y)
             keyboard->layout->keys[j][i].x + keyboard->layout->keys[j][i].width * keyboard->button_up->w > x)
         {
           key = &keyboard->layout->keys[j][i];
-printf("find_key() -> key.keycode = %d\n", key->keycode);
           return key;
         }
   }
@@ -1600,8 +1599,6 @@ static char *find_keysym(osk_key key, on_screen_keyboard *keyboard)
     else
       keysym = keysyms.caps;
   }
-
-printf("find_keysym() -> keysym = %s\n", keysym); // XF86Paste
 
   return (keysym);
 }
