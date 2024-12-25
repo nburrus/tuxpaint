@@ -450,8 +450,9 @@ e.「もじ」ツール、「ラベル」ツール ←
     Text from the clipboard (copy/paste buffer) can be inserted with the "Text"
     and "Label" tools by pressing the [Control] + [V] key combination on a
     physical keyboard, or clicking the "Paste" button in Tux Paint's on-screen
-    keyboard. The text will wrap to the next line if it hits the right edge of
-    the canvas. If the text hits the bottom of the canvas, the pasting will
+    keyboard. If the text would exceed the right edge of the canvas, it will
+    wrap to a new line of text (going back to the previous space or dash ('-')
+    if possible). If the text hits the bottom of the canvas, the pasting will
     abort, truncating the text.
 
     文字の入力中に別の場所をクリックすると、入力内容を維持したまま、文字を貼り

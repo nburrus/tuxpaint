@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 20, 2024
+  June 14, 2002 - December 25, 2024
 */
 
 #include "platform.h"
@@ -3198,10 +3198,28 @@ static void mainloop(void)
                         txt_width = do_render_cur_text(0);
                         if (cursor_x + txt_width > canvas->w && texttool_len > 1)
                         {
-                          texttool_str[texttool_len - 1] = '\0';
+                          int best, j, rewind;
+
+                          best = -1;
+
+                          for (j = texttool_len - 1; j >= 0 && best == -1; j--) {
+                            if (texttool_str[j] == ' ') {
+                              best = j + 1; /* +1 to eat the space */
+                            } else if (texttool_str[j] == '-') { /* FIXME: Also en-dash, em-dash, others? -bjk 2024.12.25 */
+                              best = j;
+                            }
+                          }
+
+                          if (best == -1) {
+                            best = texttool_len - 1;
+                          }
+
+                          rewind = texttool_len - best;
+
+                          texttool_str[best] = '\0';
                           txt_width = do_render_cur_text(0);
                           exceeded = text_label_tool_enter(TuxPaint_Font_FontHeight(getfonthandle(cur_font)));
-                          i--;
+                          i = i - rewind;
                         }
                         SDL_Delay(10);
                       }

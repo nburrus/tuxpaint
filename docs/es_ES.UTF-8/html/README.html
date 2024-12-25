@@ -823,7 +823,7 @@
     Alternatively, press <strong><code>[Tab]</code></strong> and the text will be drawn onto the picture, but the cursor will move to the right of the text, rather than down a line, and to the left. (This can be useful to create a line of text with mixed colors, fonts, styles and sizes.)  </p>
 
   <p>
-    Text from the clipboard (copy/paste buffer) can be inserted with the "Text" and "Label" tools by pressing the <strong><code>[Control]</code> + <code>[V]</code></strong> key combination on a physical keyboard, or clicking the "<strong>Paste</strong>" button in Tux Paint's on-screen keyboard.  The text will wrap to the next line if it hits the right edge of the canvas.  If the text hits the bottom of the canvas, the pasting will abort, truncating the text.  </p>
+    Text from the clipboard (copy/paste buffer) can be inserted with the "Text" and "Label" tools by pressing the <strong><code>[Control]</code> + <code>[V]</code></strong> key combination on a physical keyboard, or clicking the "<strong>Paste</strong>" button in Tux Paint's on-screen keyboard.  If the text would exceed the right edge of the canvas, it will wrap to a new line of text (going back to the previous space or dash ('-') if possible).  If the text hits the bottom of the canvas, the pasting will abort, truncating the text.  </p>
 
   <p>
     Clicking elsewhere in the picture while the text entry is still active causes the current line of text to move to that location (where you can continue editing it).  </p>
