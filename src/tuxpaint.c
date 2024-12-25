@@ -3155,7 +3155,7 @@ static void mainloop(void)
             update_screen_rect(&r_tools);
           }
         }
-        else if ((key == SDLK_v && (mod & KMOD_CTRL)) && !noshortcuts)
+        else if (((key == SDLK_v && (mod & KMOD_CTRL)) && !noshortcuts) || key == SDLK_PASTE)
         {
           /* Ctrl-V - Paste */
           if (cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
@@ -3220,7 +3220,7 @@ static void mainloop(void)
                    || event.key.keysym.sym == SDLK_TAB
                    || event.key.keysym.sym == SDLK_LALT || event.key.keysym.sym == SDLK_RALT)))
         {
-          /* Handle key in text tool: */
+          /* Handle special keys key in text tool: */
 
           if (((cur_tool == TOOL_TEXT || cur_tool == TOOL_LABEL)
                && cursor_x != -1 && cursor_y != -1) || (cur_tool == TOOL_LABEL

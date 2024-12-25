@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: December 19, 2024
+  Last modified: December 25, 2024
 */
 
 #include "debug.h"
@@ -1899,6 +1899,11 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard *keyboard, int x, int y)
         event.key.keysym.sym = SDLK_BACKSPACE;
         event.text.text[0] = '\b';
         event.text.text[1] = '\0';
+      }
+      else if (wcsncmp(L"XF86Paste", ks, 9) == 0)
+      {
+        event.key.keysym.sym = SDLK_PASTE;
+        event.text.text[0] = '\0'; // FIXME: Is this okay? -bjk 2024.12.25
       }
       else if (wcsncmp(L"NoSymbol", ks, 8) == 0)
       {
