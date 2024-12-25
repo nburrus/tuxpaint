@@ -5,7 +5,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 10 tetor 2024
+                                25 dhjetor 2024
 
 +------------------------------------------------------------------------+
 |                            Pasqyrë e Lëndës                            |
@@ -985,12 +985,12 @@ kartelat “.im” janë të gatshme për përdorim gjatë xhirimit.
 
 Tastierë Në Ekran
 
-Që me versionin 0.9.22, mjetet “Tekst” dhe “Etiketë” të Tux Paint-tit mund të
-paraqesin një tastierë në ekran që lejon treguesin e kursorit (përmes një miu,
-sistemesh ndjekjeje vështrimi, etj.) të përdoret për të futur shenja. Kartelat
-që përshkruajnë skemën dhe tastet e gatshme depozitohen te drejtoria “osk” e
-Tux Paint-it. Çdo skemë tastiere përcaktohet nga një numër kartelash (disa prej
-të cilave mund të jenë të përbashkëta për skema të ndryshme).
+As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an
+on-screen keyboard that allows the pointer (via a mouse, touch screen,
+eye-tracking systems, etc.) to be used to input characters. Files that describe
+the layout and available keys are stored in Tux Paint "osk" directory. Each
+keyboard layout is defined by a number of files (some of which may be shared by
+different layouts).
 
 Si shembull, do të përdorim një tastierë QWERTY:
 
@@ -1005,9 +1005,9 @@ përshkruar skemën dhe përshoqërimet e tasteve.
     keysymdefs keysymdef.h
     keyboardlist qwerty.layout default.layout
 
-⚙ Shënim: Rreshta të zbrazët brenda kartelës “.layout” do të shpërfillen, siç
-do të ndodhë edhe me çfarëdo teksti në vijim të një shenje “#” (sterlinë/hash)
-— mund të përdoret për të terguar komente, siç shihet në shembullin më sipër.
+⚙ Note: Blank lines within the ".layout" file will be ignored, as will any text
+following a "#" (pound/hash) character — it can be used to denote comments, as
+seen in the example below.
 
 Rreshti “keyboardlist” përshkruan te cila skema të kalohet, kur përdoruesi
 klikon butonat majtas dhe djathtas te tastiera. (Shihni më poshtë.)
@@ -1023,6 +1023,9 @@ cilët taste ndryshues janë shtypur (një nga : pa ndryshues, [Tasti Shift],
 [Tasti AltGr] dhe [Tasti Shift] + [Tasti AltGr]) dhe, së fundi, nëse preken apo
 jo tastet nga tasti [Tasti Capslock] (përdorni “1”) ose tasti [Tasti AltGr]
 (grafika alternative) (përdorni “2”), ose fare (përdorni “0”).
+
+The "NEWLINE" keyword is used to indicate the end of one row of the keyboard,
+and thus subsequent key layout descriptions will be beginning on a new row.
 
     WIDTH 15
     HEIGHT 5
@@ -1059,9 +1062,13 @@ jo tastet nga tasti [Tasti Capslock] (përdorni “1”) ose tasti [Tasti AltGr]
     KEY 64 2.0 Alt Alt Alt Alt 0
 
     # Tasti Hapësirë
-    KEY 65 7.0 SPACE SPACE SPACE SPACE 0
+    KEY 65 5.0 SPACE SPACE SPACE SPACE 0
 
+    # AltGr
     KEY 108 2.0 AltGr AltGr AltGr AltGr 0
+
+    # Paste
+    KEY 143 2.0 Paste Paste Paste Paste 0
 
     # Shigjeta për majtas do ta kthejë te tastiera pasuese
     KEY 1 1.0 -> -> -> -> 0
@@ -1076,6 +1083,11 @@ aktualisht përshkruhen më poshtë.
   * 0 — buton i zbrazët
   * 1 — skema pasuese (per the layout file's "keyboardlist" setting)
   * 2 — skema e mëparshme (per the layout file's "keyboardlist" setting)
+
+📜 Starting with Tux Paint 0.9.35, the XF86Paste keysym (value 143) can be used
+to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in
+the keyboard layout files. (Pasting via a physical keyboard is initiated using
+the [Control] + [V] key combination.
 
        ### Kartelë skeme tastiere (“us-intl-altgr-dead-keys.keymap”) ###
 

@@ -5,7 +5,7 @@
         Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               October 10, 2024
+                               December 25, 2024
 
 +-----------------------------------------+
 |            Table of Contents            |
@@ -958,11 +958,11 @@ source code ("/src/im.c"), and requires updates to the Makefile, to ensure the
 On-screen Keyboard
 
 As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an
-on-screen keyboard that allows the pointer (via a mouse, eye-tracking systems,
-etc.) to be used to input characters. Files that describe the layout and
-available keys are stored in Tux Paint "osk" directory. Each keyboard layout is
-defined by a number of files (some of which may be shared by different
-layouts).
+on-screen keyboard that allows the pointer (via a mouse, touch screen,
+eye-tracking systems, etc.) to be used to input characters. Files that describe
+the layout and available keys are stored in Tux Paint "osk" directory. Each
+keyboard layout is defined by a number of files (some of which may be shared by
+different layouts).
 
 We'll use the QWERTY keyboard as an example:
 
@@ -979,7 +979,7 @@ and key mappings.
 
 ⚙ Note: Blank lines within the ".layout" file will be ignored, as will any text
 following a "#" (pound/hash) character — it can be used to denote comments, as
-seen in the example above.
+seen in the example below.
 
 The "keyboardlist" line describes which layouts to switch to, when the user
 clicks the left and right buttons on the keyboard. (See below.)
@@ -995,6 +995,9 @@ been pressed (one each for: no modifiers, [Shift], [AltGr], and [Shift] +
 [AltGr]), and finally whether or not the key is affected by the [CapsLock] key
 (use "1") or [AltGr] (alternate graphics) key (use "2"), or not at all (use
 "0").
+
+The "NEWLINE" keyword is used to indicate the end of one row of the keyboard,
+and thus subsequent key layout descriptions will be beginning on a new row.
 
     WIDTH 15
     HEIGHT 5
@@ -1031,9 +1034,13 @@ been pressed (one each for: no modifiers, [Shift], [AltGr], and [Shift] +
     KEY 64 2.0 Alt Alt Alt Alt 0
 
     # Space
-    KEY 65 7.0 SPACE SPACE SPACE SPACE 0
+    KEY 65 5.0 SPACE SPACE SPACE SPACE 0
 
+    # AltGr
     KEY 108 2.0 AltGr AltGr AltGr AltGr 0
+
+    # Paste
+    KEY 143 2.0 Paste Paste Paste Paste 0
 
     # Arrow to right will change to the next keyboard
     KEY 1 1.0 -> -> -> -> 0
@@ -1047,6 +1054,11 @@ described below.
   * 0 — empty button
   * 1 — next layout (per the layout file's "keyboardlist" setting)
   * 2 — previous layout (per the layout file's "keyboardlist" setting)
+
+📜 Starting with Tux Paint 0.9.35, the XF86Paste keysym (value 143) can be used
+to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in
+the keyboard layout files. (Pasting via a physical keyboard is initiated using
+the [Control] + [V] key combination.
 
             ### Keymap file ("us-intl-altgr-dead-keys.keymap") ###
 

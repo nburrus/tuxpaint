@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 25 tetor 2024
+                                25 dhjetor 2024
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -102,6 +102,9 @@ See COPYING.txt for the full text of the GPL license.
 → Improved color picker ←
     Better behavior when clicking/tapping and dragging hue/saturation box and
     value slider.
+     
+→ Text clipboard paste support ←
+    The "Text" and "Label" tools support pasting the copy/paste clipboard.
      
 
 Për listën e plotë të ndryshimeve, shihni CHANGES.txt.
@@ -490,6 +493,13 @@ e.Mjete “Tekst” dhe “Etiketa” ←
     down a line, and to the left. (This can be useful to create a line of text
     with mixed colors, fonts, styles and sizes.)
 
+    Text from the clipboard (copy/paste buffer) can be inserted with the "Text"
+    and "Label" tools by pressing the [Control] + [V] key combination on a
+    physical keyboard, or clicking the "Paste" button in Tux Paint's on-screen
+    keyboard. The text will wrap to the next line if it hits the right edge of
+    the canvas. If the text hits the bottom of the canvas, the pasting will
+    abort, truncating the text.
+
     Clicking elsewhere in the picture while the text entry is still active
     causes the current line of text to move to that location (where you can
     continue editing it).
@@ -528,6 +538,9 @@ e.Mjete “Tekst” dhe “Etiketa” ←
         Tool" in Tux Paint Config. or running Tux Paint with the "nolabel"
         option).
 
+        📜 The ability to paste text from the clipboard was added in Tux Paint
+        0.9.35
+
 
          
     → Futje Shenjash Ndërkombëtare ←
@@ -562,7 +575,37 @@ e.Mjete “Tekst” dhe “Etiketa” ←
 
         An optional on-screen keyboard is available for the Text and Label
         tools, which can provide a variety of layouts and character composition
-        (e.g., composing "a" and "e" into "æ").
+        (e.g., composing "a" and "e" into "æ"). Run Tux Paint with the
+        "--onscreen-keyboard" option, or enable that setting in Tux Paint's
+        configuration file, to enable it. Multiple layouts are offered
+        (currently "QWERTY" and "ABC"), which the user can switch between.
+        Additional configuration options allow specifying a default layout, as
+        well as preventing the layout from being changed.
+
+        The on-screen keyboard appears at the bottom or top of the Tux Paint
+        window, obscuring part of the canvas, depending on where the text
+        insertion cursor is placed. Along with alphabetic, numeric, and some
+        punctuation keys, the keyboard provides:
+          @ A "Backspace" key (⇐) to remove the previous character
+          @ A "Carriage Return" ("Return"/"Enter") key (⏎) to end the current
+            input and begin a new one on the following line (below and to the
+            left)
+          @ A "Tab" key (⇔) to end the current input and begin a new one at the
+            current cursor position
+          @ A "Shift" key (⇑) to shift alphabetic keys from lowercase to
+            uppercase, access more punctuation, etc.
+          @ A "Caps Lock" key (⤒) to toggle permanent shifting of alphabetic
+            keys from lowercase to uppercase (click it again to disable caps
+            lock)
+          @ A "Compose" key ("Cmp"), to initiate character composition (e.g.,
+            click "Cmp", "a", "e" to produce an "æ" character)
+          @ An "Alternate Graphics" key ("AltGr") to access additional
+            characters (e.g., "¿", "ß", etc.)
+          @ An "Alternate" key ("Alt")
+          @ A "Paste" key to paste the current clipboard's text into the Text
+            or Label tool
+          @ Left and right arrows (← & →) to access different on-screen
+            keyboard layouts
 
         ⚙ See the "Options" and "Extending Tux Paint" documentation for more
         information.

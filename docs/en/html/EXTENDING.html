@@ -100,7 +100,7 @@
           </p>
     
           <p>
-            October 10, 2024          </p>
+            December 25, 2024          </p>
         </center>
       </header>
 
@@ -1118,7 +1118,7 @@
       </header>
 
       <p>
-        As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an on-screen keyboard that allows the pointer (via a mouse, eye-tracking systems, etc.) to be used to input characters. Files that describe the layout and available keys are stored in Tux Paint "<code>osk</code>" directory. Each keyboard layout is defined by a number of files (some of which may be shared by different layouts).      </p>
+        As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an on-screen keyboard that allows the pointer (via a mouse, touch screen, eye-tracking systems, etc.) to be used to input characters. Files that describe the layout and available keys are stored in Tux Paint "<code>osk</code>" directory. Each keyboard layout is defined by a number of files (some of which may be shared by different layouts).      </p>
       <p>
         We'll use the QWERTY keyboard as an example:      </p>
       
@@ -1142,7 +1142,7 @@
         </blockquote>
 
         <p class="note">
-          <span title="Configuration option">&#9881;</span>          <strong>Note:</strong> Blank lines within the "<code>.layout</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example above.        </p>
+          <span title="Configuration option">&#9881;</span>          <strong>Note:</strong> Blank lines within the "<code>.layout</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example below.        </p>
 
         <p>
           The "<code>keyboardlist</code>" line describes which layouts to switch to, when the user clicks the left and right buttons on the keyboard. (See below.)        </p>
@@ -1156,6 +1156,9 @@
 
         <p>
           This describes how big the keyboard is (as a "width × height" grid), and lists each key with its numeric keycode (see the "<code>keymap</code>" file, below), the width it should be drawn at (typically "<code>1.0</code>", to take one space on the keyboard, but in the example below, notice the "<code>TAB</code>" and "<code>SPACE</code>" keys are much wider), the character or text to display on the key, depending on which modifier keys have been pressed (one each for: no modifiers, <b><code>[Shift]</code></b>, <b><code>[AltGr]</code></b>, and <b><code>[Shift]</code></b> + <b><code>[AltGr]</code></b>), and finally whether or not the key is affected by the <b><code>[CapsLock]</code></b> key (use "<code>1</code>") or <b><code>[AltGr]</code></b> (alternate graphics) key (use "<code>2</code>"), or not at all (use "<code>0</code>").        </p>
+
+        <p>
+          The "<code>NEWLINE</code>" keyword is used to indicate the end of one row of the keyboard, and thus subsequent key layout descriptions will be beginning on a new row.        </p>
 
         <blockquote>
           <p>
@@ -1193,9 +1196,13 @@
             KEY 64 2.0 Alt Alt Alt Alt 0<br>
             <br>
             # Space<br>
-            KEY 65 7.0 SPACE SPACE SPACE SPACE 0<br>
+            KEY 65 5.0 SPACE SPACE SPACE SPACE 0<br>
             <br>
+            # AltGr<br>
             KEY 108 2.0 AltGr AltGr AltGr AltGr 0<br>
+            <br>
+            # Paste<br>
+            KEY 143 2.0 Paste Paste Paste Paste 0<br>
             <br>
             # Arrow to right will change to the next keyboard<br>
             KEY 1 1.0 -&gt; -&gt; -&gt; -&gt; 0</code>
@@ -1221,6 +1228,10 @@
             <code>2</code> —
                 previous layout (per the layout file's "<code>keyboardlist</code>" setting)          </li>
         </ul>
+
+        <p class="note">
+          <span title="Version variation">&#128220;</span>          Starting with Tux Paint 0.9.35, the <code>XF86Paste</code> keysym (value 143) can be used to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in the keyboard layout files. (Pasting via a physical keyboard is initiated using the <code>[Control]</code> + <code>[V]</code> key combination.        </p>
+
       </section><!-- H2: Keyboard layout file ("qwerty.h_layout") -->
 
       <section><!-- H2: Keymap file ("us-intl-altgr-dead-keys.keymap") -->

@@ -5,7 +5,7 @@
        Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               octobre 10, 2024
+                               décembre 25, 2024
 
 +-------------------------------------------------------------+
 |                     Table des matières                      |
@@ -1015,13 +1015,12 @@ jour de Makefile, pour s'assurer que les fichiers ".im" sont disponibles pour
 
 Clavier virtuel sur écran
 
-Depuis la version 0.9.22, les outils «Texte» et «Étiquette» de Tux Paint
-peuvent présenter un clavier à l'écran qui permet d'utiliser le pointeur (via
-une souris, des systèmes de suivi oculaire, etc.) pour saisir des caractères.
-Les fichiers qui décrivent la mise en page et les clés disponibles sont stockés
-dans le répertoire "osk" de Tux Paint . Chaque disposition de clavier est
-définie par un certain nombre de fichiers (dont certains peuvent être partagés
-par différentes dispositions).
+As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an
+on-screen keyboard that allows the pointer (via a mouse, touch screen,
+eye-tracking systems, etc.) to be used to input characters. Files that describe
+the layout and available keys are stored in Tux Paint "osk" directory. Each
+keyboard layout is defined by a number of files (some of which may be shared by
+different layouts).
 
 Nous utiliserons le clavier QWERTY comme exemple :
 
@@ -1036,9 +1035,9 @@ décrire l'agencement et la disposition des touches.
     keysymdefs keysymdef.h
     keyboardlist qwerty.layout default.layout
 
-⚙ RemarqueLes lignes vides du fichier ".layout" sont ignorées, aussi bien que
-les lignes commençant par le caractère "#" ( livre/dièse)-- on peut l'utiliser
-pour ajouter des commentaires, comme dans l'exemple ci-dessus.
+⚙ Note: Blank lines within the ".layout" file will be ignored, as will any text
+following a "#" (pound/hash) character — it can be used to denote comments, as
+seen in the example below.
 
 La ligne "keyboardlist" décrit les dispositions vers lesquelles on bascule
 lorsque l'utilisateur clique sur les boutons gauche et droit du clavier. (Voir
@@ -1056,6 +1055,9 @@ afficher sur la touche, selon les touches de modification qui ont été enfoncé
 [AltGr] ), et enfin si la touche est affectée ou non par la touche [CapsLock]
 (utilisez "1") ou [AltGr] (alt graphiques alternatifs) (utilisez "2"), ou pas
 du tout (utilisez "0").
+
+The "NEWLINE" keyword is used to indicate the end of one row of the keyboard,
+and thus subsequent key layout descriptions will be beginning on a new row.
 
     WIDTH 15
     HEIGHT 5
@@ -1092,9 +1094,13 @@ du tout (utilisez "0").
     KEY 64 2.0 Alt Alt Alt Alt 0
 
     # Espace
-    KEY 65 7.0 SPACE SPACE SPACE SPACE 0
+    KEY 65 5.0 SPACE SPACE SPACE SPACE 0
 
+    # AltGr
     KEY 108 2.0 AltGr AltGr AltGr AltGr 0
+
+    # Paste
+    KEY 143 2.0 Paste Paste Paste Paste 0
 
     # Flèche droite pour aller au clavier suivant
     KEY 1 1.0 -> -> -> -> 0
@@ -1111,6 +1117,11 @@ utilisés sont décrits ci-dessous.
     d'agencement)
   * 2 — disposition précédente (pour le réglage "keyboardlist" du fichier
     d'agencement)
+
+📜 Starting with Tux Paint 0.9.35, the XF86Paste keysym (value 143) can be used
+to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in
+the keyboard layout files. (Pasting via a physical keyboard is initiated using
+the [Control] + [V] key combination.
 
            ### Fichier keymap ("us-intl-altgr-dead-keys.keymap") ###
 

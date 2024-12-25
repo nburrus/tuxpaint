@@ -102,7 +102,7 @@
           </p>
 
           <p>
-            október 25, 2024          </p>
+            desember 25, 2024          </p>
         </center>
       </header>
       <table border="2"
@@ -230,6 +230,9 @@
     <dl>
   <dt>Improved color picker</dt>
   <dd>Better behavior when clicking/tapping and dragging hue/saturation box and value slider.</dd>
+
+  <dt>Text clipboard paste support</dt>
+  <dd>The "Text" and "Label" tools support pasting the copy/paste clipboard.</dd>
 </dl>
 
     <p>
@@ -820,6 +823,9 @@
     Alternatively, press <strong><code>[Tab]</code></strong> and the text will be drawn onto the picture, but the cursor will move to the right of the text, rather than down a line, and to the left. (This can be useful to create a line of text with mixed colors, fonts, styles and sizes.)  </p>
 
   <p>
+    Text from the clipboard (copy/paste buffer) can be inserted with the "Text" and "Label" tools by pressing the <strong><code>[Control]</code> + <code>[V]</code></strong> key combination on a physical keyboard, or clicking the "<strong>Paste</strong>" button in Tux Paint's on-screen keyboard.  The text will wrap to the next line if it hits the right edge of the canvas.  If the text hits the bottom of the canvas, the pasting will abort, truncating the text.  </p>
+
+  <p>
     Clicking elsewhere in the picture while the text entry is still active causes the current line of text to move to that location (where you can continue editing it).  </p>
 
   <div class="screenshot-center">
@@ -849,6 +855,9 @@
 
       <p class="note">
         <span title="Configuration option">&#9881;</span>        The <strong>Label</strong> tool can be disabled (e.g., by selecting "Disable 'Label' Tool" in <em>Tux Paint Config.</em> or running <em>Tux Paint</em> with the "<code>nolabel</code>" option).      </p>
+
+      <p class="note">
+        <span title="Version variation">&#128220;</span>        The ability to paste text from the clipboard was added in Tux Paint 0.9.35      </p>
     </dd>
 
     <dt>
@@ -886,7 +895,23 @@
 
     <dd>
       <p>
-        An optional on-screen keyboard is available for the Text and Label tools, which can provide a variety of layouts and character composition (e.g., composing "a" and "e" into "æ").      </p>
+        An optional on-screen keyboard is available for the Text and Label tools, which can provide a variety of layouts and character composition (e.g., composing "a" and "e" into "æ").  Run Tux Paint with the "<code>--onscreen-keyboard</code>" option, or enable that setting in Tux Paint's configuration file, to enable it.  Multiple layouts are offered (currently "QWERTY" and "ABC"), which the user can switch between.  Additional configuration options allow specifying a default layout, as well as preventing the layout from being changed.      </p>
+
+      <p>
+        The on-screen keyboard appears at the bottom or top of the Tux Paint window, obscuring part of the canvas, depending on where the text insertion cursor is placed.  Along with alphabetic, numeric, and some punctuation keys, the keyboard provides:        <ul>
+          <li>A "Backspace" key (&#8656;) to remove the previous character</li>
+          <li>A "Carriage Return" ("Return"/"Enter") key (&#9166;) to end the current input and begin a new one on the following line (below and to the left)</li>
+          <li>A "Tab" key (&#8660;) to end the current input and begin a new one at the current cursor position</li>
+          <li>A "Shift" key (&#8657;) to shift alphabetic keys from lowercase to uppercase, access more punctuation, etc.</li>
+          <li>A "Caps Lock" key (&#10514;) to toggle permanent shifting of alphabetic keys from lowercase to uppercase (click it again to disable caps lock)</li>
+          <li>A "Compose" key ("Cmp"), to initiate character composition (e.g., click "Cmp", "a", "e" to produce an "æ" character)</li>
+          <li>An "Alternate Graphics" key ("AltGr") to access additional characters (e.g., "¿", "ß", etc.)</li>
+          <li>An "Alternate" key ("Alt")</li>
+          <li>A "Paste" key to paste the current clipboard's text into the Text or Label tool</li>
+          <li>Left and right arrows (&larr; &amp; &rarr;) to access different on-screen keyboard layouts</li>
+        </ul>
+      </p>
+
       <p class="note">
         <span title="Configuration option">&#9881;</span>        See the "<a href="OPTIONS.html"><em>Options</em></a>" and "<a href="EXTENDING.html"><em>Extending Tux Paint</em></a>" documentation for more information.      </p>
     </dd>

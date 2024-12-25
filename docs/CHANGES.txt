@@ -14,7 +14,6 @@ https://tuxpaint.org/
       a new line is created.  If text goes beyond the bottom of the
       canvas, the text is truncated there.
       - TODO: Improve word-wrapping (word-based, not character)
-      - TODO: Mention the feature in documentation
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/95/
       Bill Kendrick <bill@newbreedsoftware.com>
 
@@ -27,6 +26,12 @@ https://tuxpaint.org/
     + Less warning noise to stdout (e.g., don't complain about inability
       to load SVGs that don't exist; check whether they exist, first).
       h/t Thomas Klausner for mentioning it.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Documentation updates:
+    ----------------------
+    * More complete description of Text & Label tools' on-screen keyboard
+      in README documentation.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:

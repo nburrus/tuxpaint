@@ -6,7 +6,7 @@
        Copyright © 2002-2024 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                2024年10月25日
+                                2024年12月25日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -100,6 +100,9 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 → Improved color picker ←
     Better behavior when clicking/tapping and dragging hue/saturation box and
     value slider.
+     
+→ Text clipboard paste support ←
+    The "Text" and "Label" tools support pasting the copy/paste clipboard.
      
 
 全ての変更点については、CHANGES.txt をお読みください。
@@ -444,6 +447,13 @@ e.「もじ」ツール、「ラベル」ツール ←
     側に移動します。これは、１行の中で異なったフォント、字体、フォントサイズ、
     色などを混在させたい場合に便利な方法です。
 
+    Text from the clipboard (copy/paste buffer) can be inserted with the "Text"
+    and "Label" tools by pressing the [Control] + [V] key combination on a
+    physical keyboard, or clicking the "Paste" button in Tux Paint's on-screen
+    keyboard. The text will wrap to the next line if it hits the right edge of
+    the canvas. If the text hits the bottom of the canvas, the pasting will
+    abort, truncating the text.
+
     文字の入力中に別の場所をクリックすると、入力内容を維持したまま、文字を貼り
     付ける位置をクリックした位置に移動させ、文字入力を続けることができます。
 
@@ -477,6 +487,9 @@ e.「もじ」ツール、「ラベル」ツール ←
         ⚙ 「ラベル」ツールは、Tux Paint 設定ツールや、"nolabel"オプションによ
         り、無効にすることができます。
 
+        📜 The ability to paste text from the clipboard was added in Tux Paint
+        0.9.35
+
 
          
     → 多言語文字入力 ←
@@ -506,9 +519,39 @@ e.「もじ」ツール、「ラベル」ツール ←
          
     → 画面キーボード ←
 
-        「もじ」ツールや「ラベル」ツールで使える、オプションの「スクリーンキー
-        ボード」では、キーボードレイアウトを変えたり、文字の合成（例: "a "と "e
-        "を "æ "に合成）を行うことができます。
+        An optional on-screen keyboard is available for the Text and Label
+        tools, which can provide a variety of layouts and character composition
+        (e.g., composing "a" and "e" into "æ"). Run Tux Paint with the
+        "--onscreen-keyboard" option, or enable that setting in Tux Paint's
+        configuration file, to enable it. Multiple layouts are offered
+        (currently "QWERTY" and "ABC"), which the user can switch between.
+        Additional configuration options allow specifying a default layout, as
+        well as preventing the layout from being changed.
+
+        The on-screen keyboard appears at the bottom or top of the Tux Paint
+        window, obscuring part of the canvas, depending on where the text
+        insertion cursor is placed. Along with alphabetic, numeric, and some
+        punctuation keys, the keyboard provides:
+          @ A "Backspace" key (⇐) to remove the previous character
+          @ A "Carriage Return" ("Return"/"Enter") key (⏎) to end the current
+            input and begin a new one on the following line (below and to the
+            left)
+          @ A "Tab" key (⇔) to end the current input and begin a new one at the
+            current cursor position
+          @ A "Shift" key (⇑) to shift alphabetic keys from lowercase to
+            uppercase, access more punctuation, etc.
+          @ A "Caps Lock" key (⤒) to toggle permanent shifting of alphabetic
+            keys from lowercase to uppercase (click it again to disable caps
+            lock)
+          @ A "Compose" key ("Cmp"), to initiate character composition (e.g.,
+            click "Cmp", "a", "e" to produce an "æ" character)
+          @ An "Alternate Graphics" key ("AltGr") to access additional
+            characters (e.g., "¿", "ß", etc.)
+          @ An "Alternate" key ("Alt")
+          @ A "Paste" key to paste the current clipboard's text into the Text
+            or Label tool
+          @ Left and right arrows (← & →) to access different on-screen
+            keyboard layouts
 
         ⚙ 詳細については "各種設定について" と "Tux Paintの拡張" のドキュメント
         を参照してください。

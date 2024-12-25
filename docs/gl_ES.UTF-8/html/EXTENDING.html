@@ -100,7 +100,7 @@
           </p>
     
           <p>
-            10 de Outubro de 2024          </p>
+            25 de Decembro de 2024          </p>
         </center>
       </header>
 
@@ -1118,7 +1118,7 @@
       </header>
 
       <p>
-        A partir da versión 0.9.22, as ferramentas «Texto» e «Etiqueta» de Tux Paint poden presentar un teclado en pantalla que permite utilizar o punteiro (mediante un rato, sistemas de seguimento de ollos, etc.) para introducir caracteres. Os ficheiros que describen o deseño e as claves dispoñíbeis almacénanse no directorio «<code>osk</code>» de Tux Paint. Cada deseño de teclado está definido por varios ficheiros (algúns dos cales poden ser compartidos por diferentes deseños).      </p>
+        As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an on-screen keyboard that allows the pointer (via a mouse, touch screen, eye-tracking systems, etc.) to be used to input characters. Files that describe the layout and available keys are stored in Tux Paint "<code>osk</code>" directory. Each keyboard layout is defined by a number of files (some of which may be shared by different layouts).      </p>
       <p>
         Usaremos o teclado QWERTY como exemplo:      </p>
       
@@ -1142,7 +1142,7 @@
         </blockquote>
 
         <p class="note">
-          <span title="Configuration option">&#9881;</span>          <strong>Note:</strong> Blank lines within the "<code>.layout</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example above.        </p>
+          <span title="Configuration option">&#9881;</span>          <strong>Note:</strong> Blank lines within the "<code>.layout</code>" file will be ignored, as will any text following a "<code>#</code>" (pound/hash) character — it can be used to denote comments, as seen in the example below.        </p>
 
         <p>
           A liña «<code>keyboardlist</code>» describe a que esquemas cambiar, cando o usuario preme nos botóns esquerdo e dereito do teclado. (Ver máis abaixo.)        </p>
@@ -1156,6 +1156,9 @@
 
         <p>
           Isto describe o tamaño do teclado (como unha reixa de «largo × alto») e lista cada tecla co seu código numérico (ver o ficheiro «<code>keymap</code>», máis abaixo), o largo no que debería debuxarse ​​(normalmente «<code>1.0</code>», para ocupar un espazo no teclado, pero no seguinte exemplo, teña en conta que as teclas «<code>TAB</code>» e «<code>SPACE</code>» son moito máis largas), o carácter ou o texto que se amosará na tecla, dependendo das teclas modificadoras premido (unha para cada unha: sen modificadores,<b><code>[Maiúsculas]</code></b>,<b><code>[AltGr]</code></b> e <b><code>[Maiúsculas]</code></b> + <b><code>[AltGr]</code></b>) e, finalmente, se a tecla está afectada ou non pola tecla <b><code>[BloqMaiús]</code></b> (use «<code>1</code>») ou a tecla <b><code>[AltGr]</code></b> (gráficos alternativos) ( use «<code>2</code>»), ou non (use «<code>0</code>»).        </p>
+
+        <p>
+          The "<code>NEWLINE</code>" keyword is used to indicate the end of one row of the keyboard, and thus subsequent key layout descriptions will be beginning on a new row.        </p>
 
         <blockquote>
           <p>
@@ -1193,9 +1196,13 @@
             KEY 64 2.0 Alt Alt Alt Alt 0<br>
             <br>
             # Espazo<br>
-            KEY 65 7.0 SPACE SPACE SPACE SPACE 0<br>
+            KEY 65 5.0 SPACE SPACE SPACE SPACE 0<br>
             <br>
+            # AltGr<br>
             KEY 108 2.0 AltGr AltGr AltGr AltGr 0<br>
+            <br>
+            # Paste<br>
+            KEY 143 2.0 Paste Paste Paste Paste 0<br>
             <br>
             # A frecha cara á dereita cambiará ao seguinte teclado<br>
             KEY 1 1.0 -&gt; -&gt; -&gt; -&gt; 0</code>
@@ -1221,6 +1228,10 @@
             <code>2</code> —
                 disposición anterior (segundo o axuste «<code>keyboardlist</code>» do ficheiro de disposición)          </li>
         </ul>
+
+        <p class="note">
+          <span title="Version variation">&#128220;</span>          Starting with Tux Paint 0.9.35, the <code>XF86Paste</code> keysym (value 143) can be used to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in the keyboard layout files. (Pasting via a physical keyboard is initiated using the <code>[Control]</code> + <code>[V]</code> key combination.        </p>
+
       </section><!-- H2: Keyboard layout file ("qwerty.h_layout") -->
 
       <section><!-- H2: Keymap file ("us-intl-altgr-dead-keys.keymap") -->

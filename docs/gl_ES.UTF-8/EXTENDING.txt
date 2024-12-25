@@ -5,7 +5,7 @@
         Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                             10 de Outubro de 2024
+                            25 de Decembro de 2024
 
 +-------------------------------------------------------------+
 |                           Índice                            |
@@ -981,13 +981,12 @@ de execución.
 
 Teclado en pantalla
 
-A partir da versión 0.9.22, as ferramentas «Texto» e «Etiqueta» de Tux Paint
-poden presentar un teclado en pantalla que permite utilizar o punteiro
-(mediante un rato, sistemas de seguimento de ollos, etc.) para introducir
-caracteres. Os ficheiros que describen o deseño e as claves dispoñíbeis
-almacénanse no directorio «osk» de Tux Paint. Cada deseño de teclado está
-definido por varios ficheiros (algúns dos cales poden ser compartidos por
-diferentes deseños).
+As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an
+on-screen keyboard that allows the pointer (via a mouse, touch screen,
+eye-tracking systems, etc.) to be used to input characters. Files that describe
+the layout and available keys are stored in Tux Paint "osk" directory. Each
+keyboard layout is defined by a number of files (some of which may be shared by
+different layouts).
 
 Usaremos o teclado QWERTY como exemplo:
 
@@ -1004,7 +1003,7 @@ describir a disposición e as asignacións de teclas.
 
 ⚙ Note: Blank lines within the ".layout" file will be ignored, as will any text
 following a "#" (pound/hash) character — it can be used to denote comments, as
-seen in the example above.
+seen in the example below.
 
 A liña «keyboardlist» describe a que esquemas cambiar, cando o usuario preme
 nos botóns esquerdo e dereito do teclado. (Ver máis abaixo.)
@@ -1020,6 +1019,9 @@ dependendo das teclas modificadoras premido (unha para cada unha: sen
 modificadores,[Maiúsculas],[AltGr] e [Maiúsculas] + [AltGr]) e, finalmente, se
 a tecla está afectada ou non pola tecla [BloqMaiús] (use «1») ou a tecla
 [AltGr] (gráficos alternativos) ( use «2»), ou non (use «0»).
+
+The "NEWLINE" keyword is used to indicate the end of one row of the keyboard,
+and thus subsequent key layout descriptions will be beginning on a new row.
 
     WIDTH 15
     HEIGHT 5
@@ -1056,9 +1058,13 @@ a tecla está afectada ou non pola tecla [BloqMaiús] (use «1») ou a tecla
     KEY 64 2.0 Alt Alt Alt Alt 0
 
     # Espazo
-    KEY 65 7.0 SPACE SPACE SPACE SPACE 0
+    KEY 65 5.0 SPACE SPACE SPACE SPACE 0
 
+    # AltGr
     KEY 108 2.0 AltGr AltGr AltGr AltGr 0
+
+    # Paste
+    KEY 143 2.0 Paste Paste Paste Paste 0
 
     # A frecha cara á dereita cambiará ao seguinte teclado
     KEY 1 1.0 -> -> -> -> 0
@@ -1075,6 +1081,11 @@ actualmente descríbense a continuación.
     disposición)
   * 2 — disposición anterior (segundo o axuste «keyboardlist» do ficheiro de
     disposición)
+
+📜 Starting with Tux Paint 0.9.35, the XF86Paste keysym (value 143) can be used
+to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in
+the keyboard layout files. (Pasting via a physical keyboard is initiated using
+the [Control] + [V] key combination.
 
     ### Ficheiro do mapa do teclado («us-intl-altgr-dead-keys.keymap») ###
 
