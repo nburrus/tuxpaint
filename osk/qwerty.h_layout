@@ -132,7 +132,7 @@ KEY 65 5.0 SPACE SPACE SPACE SPACE 0
 KEY 108 2.0 AltGr AltGr AltGr AltGr 0
 
 # Paste
-KEY 143 2.0 Paste Paste Paste 0
+KEY 143 2.0 Paste Paste Paste Paste 0
 
 # Arrow to right will change to the next keyboard
 KEY 1 1.0 -> -> -> -> 0
