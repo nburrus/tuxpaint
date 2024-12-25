@@ -47,9 +47,10 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.35" date="2024-11-15">
+    <release version="0.9.35" date="2024-12-25">
       <description>
         <p>Improved color picker behavior</p>
+        <p>Text and Label tools support pasting text from the copy/paste clipboard</p>
       </description>
     </release>
     <release version="0.9.34" date="2024-10-20">
