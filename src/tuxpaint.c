@@ -32912,14 +32912,23 @@ void maybe_redraw_eraser_xor(void)
 
 /**
  * Record an undo buffer snapshot, blit the current line of Text or Label
- * tool text onto the * canvas, play the "carriage return" sound effect,
- * and mark the image as unsaved.
+ * tool text onto the canvas, play the "carriage return" sound effect,
+ * position the cursor down a line (or to the very bottom of the canvas),
+ * and mark the current drawing as "unsaved".
  *
  * This happens when the user presses the [Enter]/[Return] key on
  * a physical keyboard, clicks it in the on-screen keyboard, or
  * a carriage return is part of some pasted clipboard text.
  *
- * FIXME: Params
+ * If the cursor would surpass the bottom of the screen
+ * (based on `font_height`), then this function returns true/1,
+ * indicating the situation; this is used when the carriage return
+ * occurs due to clipboard text being pasted, so that process can
+ * be aborted.
+ *
+ * @param int font_height -- [line] height of the current font
+ * @return int -- whether or not the cursor would be too far
+ *   down the canvas' height
  */
 static int text_label_tool_enter(int font_height)
 {
