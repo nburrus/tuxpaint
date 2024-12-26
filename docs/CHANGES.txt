@@ -11,8 +11,7 @@ https://tuxpaint.org/
     ----------------
     + WIP: Heart, Sparkle, and Star emitters
       Click and drag to leave a short trail of shapes.
-      - TODO: Hearts
-      - TODO: Sparkles
+      - TODO: Color support
       - TODO: Icons
       - TODO: Sound effects
       - TODO: Documentation

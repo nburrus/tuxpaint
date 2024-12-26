@@ -60,6 +60,20 @@ char * emitter_descs[NUM_EMITTERS] = {
   gettext_noop("stars"),
 };
 
+/* How many frames the image contains */
+int emitter_frames[NUM_EMITTERS] = {
+  1,
+  4,
+  1,
+};
+
+/* Max angle (clockwise or counter-clockwise) to rotate, if at all */
+int emitter_rotate[NUM_EMITTERS] = {
+  45,
+  0,
+  180,
+};
+
 /* Our globals: */
 
 static Mix_Chunk *emitter_snds[NUM_EMITTERS];
@@ -68,7 +82,7 @@ Uint8 emitter_r, emitter_g, emitter_b;
 int emitter_max_trail_length;
 int emitter_cur_trail_length;
 int emitter_queue_x[EMITTER_QUEUE_SIZE], emitter_queue_y[EMITTER_QUEUE_SIZE];
-SDL_Surface * emitter_images[NUM_EMITTERS][EMITTER_QUEUE_SIZE];
+SDL_Surface * * emitter_images[NUM_EMITTERS][EMITTER_QUEUE_SIZE];
 
 /* Function prototypes: */
 
@@ -108,8 +122,11 @@ Uint32 emitter_api_version(void)
 // No setup required:
 int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8 complexity_level ATTRIBUTE_UNUSED)
 {
-  int i, j;
+  int i, j, k;
   char fname[1024];
+  SDL_Surface * surf;
+  SDL_Rect src;
+  Uint32 amask;
 
   for (i = 0; i < NUM_EMITTERS; i++)
   {
@@ -119,29 +136,77 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
 
   for (i = 0; i < NUM_EMITTERS; i++)
   {
-    snprintf(fname, sizeof(fname), "%simages/magic/emitter%d.png", api->data_directory, 1 /* FIXME */);
-    emitter_images[i][0] = IMG_Load(fname);
+    emitter_images[i][0] = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
     if (emitter_images[i][0] == NULL)
+    {
+      fprintf(stderr, "Cannot allocate %s (%d) emitter's surface #0\n", emitter_names[i], i);
+      return(0);
+    }
+
+    snprintf(fname, sizeof(fname), "%simages/magic/emitter%d.png", api->data_directory, i);
+    surf = IMG_Load(fname);
+    if (surf == NULL)
     {
       fprintf(stderr, "Cannot load %s (%d) emitter's image: '%s'\n", emitter_names[i], i, fname);
       return(0);
     }
+
+    if (emitter_frames[i] == 1)
+    {
+      emitter_images[i][0][0] = surf;
+    }
+    else
+    {
+      for (j = 0; j < emitter_frames[i]; j++)
+      {
+        amask = ~(surf->format->Rmask | surf->format->Gmask | surf->format->Bmask);
+
+        emitter_images[i][0][j] =
+          SDL_CreateRGBSurface(SDL_SWSURFACE,
+                               surf->w / emitter_frames[i],
+                               surf->h,
+                               surf->format->BitsPerPixel,
+                               surf->format->Rmask,
+                               surf->format->Gmask,
+                               surf->format->Bmask,
+                               amask);
+
+        src.x = (surf->w / emitter_frames[i]) * j;
+        src.y = 0;
+        src.w = (surf->w / emitter_frames[i]);
+        src.h = surf->h;
+
+        SDL_BlitSurface(surf, &src, emitter_images[i][0][j], NULL);
+      }
+      SDL_FreeSurface(surf);
+    }
+
     for (j = 1; j < EMITTER_QUEUE_SIZE; j++)
     {
       int w, h;
       float w_scale, h_scale;
 
-      w = emitter_images[i][0]->w - (emitter_images[i][0]->w * j / EMITTER_QUEUE_SIZE);
-      h = emitter_images[i][0]->h - (emitter_images[i][0]->h * j / EMITTER_QUEUE_SIZE);
-      w_scale = (float) w / (float) emitter_images[i][0]->w;
-      h_scale = (float) h / (float) emitter_images[i][0]->h;
-
-      emitter_images[i][j] = zoomSurface(emitter_images[i][0], w_scale, h_scale, 1 /* smooth */);
-
+      emitter_images[i][j] = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
       if (emitter_images[i][j] == NULL)
       {
-        fprintf(stderr, "Cannot scale %s (%d) emitter's image ('%s') to %d's size: %d x %d\n", emitter_names[i], i, fname, j, w, h);
+        fprintf(stderr, "Cannot allocate %s (%d) emitter's surface #%d\n", emitter_names[i], i, j);
         return(0);
+      }
+
+      for (k = 0; k < emitter_frames[i]; k++)
+      {
+        w = emitter_images[i][0][k]->w - (emitter_images[i][0][k]->w * j / EMITTER_QUEUE_SIZE);
+        h = emitter_images[i][0][k]->h - (emitter_images[i][0][k]->h * j / EMITTER_QUEUE_SIZE);
+        w_scale = (float) w / (float) emitter_images[i][0][k]->w;
+        h_scale = (float) h / (float) emitter_images[i][0][k]->h;
+
+        emitter_images[i][j][k] = zoomSurface(emitter_images[i][0][k], w_scale, h_scale, 1 /* smooth */);
+
+        if (emitter_images[i][j][k] == NULL)
+        {
+          fprintf(stderr, "Cannot scale %s (%d) emitter's image ('%s') (frame %d) to %d's size: %d x %d\n", emitter_names[i], i, fname, k, j, w, h);
+          return(0);
+        }
       }
     }
   }
@@ -193,7 +258,9 @@ char *emitter_get_description(magic_api *api ATTRIBUTE_UNUSED, int which, int mo
 void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
                 SDL_Surface *last, int ox, int oy, int x, int y, SDL_Rect *update_rect)
 {
-  int i;
+  int i, img;
+  SDL_Surface * tmpSurf, * srcSurf;
+  SDL_Rect dest;
 
   SDL_BlitSurface(last, NULL, canvas, NULL);
 
@@ -221,9 +288,6 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
 
   for (i = 0; i < emitter_cur_trail_length + 1; i++)
   {
-    int img;
-    SDL_Rect dest;
-
     img = (emitter_cur_trail_length - i);
 
     img = img + (rand() % 4) - 2;
@@ -232,15 +296,42 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
     else if (img >= EMITTER_QUEUE_SIZE)
       img = EMITTER_QUEUE_SIZE - 1;
 
-    dest.x = emitter_queue_x[i] - emitter_images[which][img]->w / 2;
-    dest.y = emitter_queue_y[i] - emitter_images[which][img]->h / 2;
-    dest.w = emitter_images[which][img]->w;
-    dest.h = emitter_images[which][img]->h;
+    if (emitter_frames[which] == 1)
+    {
+      srcSurf = emitter_images[which][img][0];
+    }
+    else
+    {
+      srcSurf = emitter_images[which][img][rand() % emitter_frames[which]];
+    }
 
-    dest.x += (rand() % 4) - 2;
-    dest.y += (rand() % 4) - 2;
+    if (emitter_rotate[which] != 0)
+    {
+      tmpSurf = rotozoomSurface(srcSurf, (rand() % emitter_rotate[which] * 2) - emitter_rotate[which], 1.0 /* no scale */, 1 /* smoothing */);
+    }
+    else
+    {
+      tmpSurf = srcSurf;
+    }
 
-    SDL_BlitSurface(emitter_images[which][img], NULL, canvas, &dest);
+    if (tmpSurf != NULL)
+    {
+      dest.x = emitter_queue_x[i] - tmpSurf->w / 2;
+      dest.y = emitter_queue_y[i] - tmpSurf->h / 2;
+      dest.w = tmpSurf->w;
+      dest.h = tmpSurf->h;
+
+      dest.x += (rand() % 4) - 2;
+      dest.y += (rand() % 4) - 2;
+
+      SDL_BlitSurface(tmpSurf, NULL, canvas, &dest);
+
+    }
+
+    if (emitter_rotate[which] && tmpSurf != NULL)
+    {
+      SDL_FreeSurface(tmpSurf);
+    }
   }
 
   update_rect->x = 0;
