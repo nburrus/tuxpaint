@@ -23,7 +23,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last updated: December 25, 2024
+  Last updated: December 26, 2024
 */
 
 #include <stdio.h>
@@ -308,6 +308,8 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
     if (emitter_rotate[which] != 0)
     {
       tmpSurf = rotozoomSurface(srcSurf, (rand() % emitter_rotate[which] * 2) - emitter_rotate[which], 1.0 /* no scale */, 1 /* smoothing */);
+      if (tmpSurf == NULL)
+        return; // Abort!
     }
     else
     {
@@ -316,6 +318,11 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
 
     if (tmpSurf != NULL)
     {
+      int xx, yy;
+      Uint32 amask;
+      SDL_Surface * tmpSurf2;
+      Uint8 r, g, b, a;
+
       dest.x = emitter_queue_x[i] - tmpSurf->w / 2;
       dest.y = emitter_queue_y[i] - tmpSurf->h / 2;
       dest.w = tmpSurf->w;
@@ -324,11 +331,41 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
       dest.x += (rand() % 4) - 2;
       dest.y += (rand() % 4) - 2;
 
-      SDL_BlitSurface(tmpSurf, NULL, canvas, &dest);
+      amask = ~(tmpSurf->format->Rmask | tmpSurf->format->Gmask | tmpSurf->format->Bmask);
 
+      tmpSurf2 =
+        SDL_CreateRGBSurface(SDL_SWSURFACE,
+                             tmpSurf->w,
+                             tmpSurf->h,
+                             tmpSurf->format->BitsPerPixel,
+                             tmpSurf->format->Rmask,
+                             tmpSurf->format->Gmask,
+                             tmpSurf->format->Bmask,
+                             amask);
+
+      if (tmpSurf2 != NULL)
+      {
+        SDL_LockSurface(tmpSurf);
+        SDL_LockSurface(tmpSurf2);
+
+        for (y = 0; y < tmpSurf->h; y++)
+        {
+          for (x = 0; x < tmpSurf->w; x++)
+          {
+            SDL_GetRGBA(api->getpixel(tmpSurf, x, y), tmpSurf->format, &r, &g, &b, &a);
+            api->putpixel(tmpSurf2, x, y,
+                          SDL_MapRGBA(tmpSurf2->format, (r + emitter_r) >> 1, (g + emitter_g) >> 1, (b + emitter_b) >> 1, a));
+          }
+        }
+        SDL_UnlockSurface(tmpSurf2);
+        SDL_UnlockSurface(tmpSurf);
+
+        SDL_BlitSurface(tmpSurf2, NULL, canvas, &dest);
+        SDL_FreeSurface(tmpSurf2);
+      }
     }
 
-    if (emitter_rotate[which] && tmpSurf != NULL)
+    if (emitter_rotate[which] != 0 && tmpSurf != NULL)
     {
       SDL_FreeSurface(tmpSurf);
     }

@@ -6,12 +6,11 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.December.25 (0.9.35)
+2024.December.26 (0.9.35)
   * New Magic Tools:
     ----------------
     + WIP: Heart, Sparkle, and Star emitters
       Click and drag to leave a short trail of shapes.
-      - TODO: Color support
       - TODO: Icons
       - TODO: Sound effects
       - TODO: Documentation
