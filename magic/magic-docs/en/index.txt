@@ -102,6 +102,9 @@
   * Toothpaste
   * Wet Paint
   * Light
+  * Hearts
+  * Sparkles
+  * Stars
   * Fractal
 
                            ### Pattern Painting ###

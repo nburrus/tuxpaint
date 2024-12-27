@@ -9,9 +9,8 @@ https://tuxpaint.org/
 2024.December.26 (0.9.35)
   * New Magic Tools:
     ----------------
-    + WIP: Heart, Sparkle, and Star emitters
+    + Heart, Sparkle, and Star emitters
       Click and drag to leave a short trail of shapes.
-      - TODO: Documentation
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/266/
       - Code: Bill Kendrick <bill@newbreedsoftware.com>
       - Heart sound effect: "Happy Retro Upwards Jingle", CC0 by
