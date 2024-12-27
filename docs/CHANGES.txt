@@ -18,8 +18,11 @@ https://tuxpaint.org/
       - Code: Bill Kendrick <bill@newbreedsoftware.com>
       - Heart sound effect: TBD
       - Sparkles sound effect: based on "PluckArp", CC0 by gmortizwavs
-        <https://freesound.org/people/gmortizwavs/sounds/657368/>
-      - Stars sound effect: TBD
+        <https://freesound.org/people/gmortizwavs/>
+      - Stars sound effect: based on "space-chimes-2-04.wav",
+        Creative Commons Attribution 4.0 by gamebalance
+        <https://freesound.org/people/gamebalance/>
+        
 
   * Text & Label Tool Improvements:
     -------------------------------
