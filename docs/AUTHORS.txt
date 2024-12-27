@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - October 20, 2024
+June 17, 2002 - December 26, 2024
 
 * Design and Coding:
 
@@ -373,6 +373,12 @@ June 17, 2002 - October 20, 2024
   (https://freesound.org/people/CosmicEmbers/sounds/161415/)
   Creative Commons Attribution 3.0 Unported (CC BY 3.0)
   by https://freesound.org/people/CosmicEmbers/
+
+  "Hearts", "Sparkles", and "Stars" ('emitter') Magic tools
+  by Bill Kendrick <bill@newbreedsoftware.com>
+  + Stars sound effect based on "PluckArp"
+    (https://freesound.org/people/gmortizwavs/sounds/657368/)
+    Creative Commons 0 by https://freesound.org/people/gmortizwavs/
 
   Mouse accessibility code and keyboard access
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,

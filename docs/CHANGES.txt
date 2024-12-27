@@ -15,7 +15,11 @@ https://tuxpaint.org/
       - TODO: Sound effects
       - TODO: Documentation
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/266/
-      Bill Kendrick <bill@newbreedsoftware.com>
+      - Code: Bill Kendrick <bill@newbreedsoftware.com>
+      - Heart sound effect: TBD
+      - Sparkles sound effect: based on "PluckArp", CC0 by gmortizwavs
+        <https://freesound.org/people/gmortizwavs/sounds/657368/>
+      - Stars sound effect: TBD
 
   * Text & Label Tool Improvements:
     -------------------------------
