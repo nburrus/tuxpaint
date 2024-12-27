@@ -34,8 +34,8 @@
 #include "SDL_mixer.h"
 #include "SDL2_rotozoom.h"
 
-#define EMITTER_QUEUE_SIZE 32
-#define EMITTER_QUEUE_SIZE_SCALE 4
+#define EMITTER_QUEUE_SIZE 64
+#define EMITTER_QUEUE_SIZE_SCALE 8
 
 #define EMITTER_DRAW_THRESHOLD 16
 
@@ -74,6 +74,30 @@ int emitter_rotate[NUM_EMITTERS] = {
   180,
 };
 
+/* Scale of emitter xm/ym speeds */
+#define EMITTER_SPEED 64
+
+/* Max random-direction speed for each emitter type */
+int emitter_speed[NUM_EMITTERS] = {
+  16,
+  8,
+  4,
+};
+
+/* Gravity (if any) of the emitter */
+int emitter_gravity[NUM_EMITTERS] = {
+  -2,
+  2,
+  0,
+};
+
+/* Whether emitter duplicates itself */
+int emitter_duplicate[NUM_EMITTERS] = {
+  0,
+  1,
+  0,
+};
+
 /* Our globals: */
 
 static Mix_Chunk *emitter_snds[NUM_EMITTERS];
@@ -82,6 +106,7 @@ Uint8 emitter_r, emitter_g, emitter_b;
 int emitter_max_trail_length;
 int emitter_cur_trail_length;
 int emitter_queue_x[EMITTER_QUEUE_SIZE], emitter_queue_y[EMITTER_QUEUE_SIZE];
+int emitter_queue_xm[EMITTER_QUEUE_SIZE], emitter_queue_ym[EMITTER_QUEUE_SIZE];
 SDL_Surface * * emitter_images[NUM_EMITTERS][EMITTER_QUEUE_SIZE];
 
 /* Function prototypes: */
@@ -264,28 +289,58 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
 
   SDL_BlitSurface(last, NULL, canvas, NULL);
 
+  /* Move all of the objects */
+  for (i = 0; i < emitter_cur_trail_length; i++)
+  {
+    emitter_queue_x[i] += emitter_queue_xm[i] / EMITTER_SPEED;
+    emitter_queue_y[i] += emitter_queue_ym[i] / EMITTER_SPEED;
+
+    emitter_queue_ym[i] += emitter_gravity[which];
+
+    if (emitter_duplicate[which] && (rand() % 16) == 0)
+    {
+      int d;
+
+      d = (rand() % (i + 1));
+
+      emitter_queue_x[d] = emitter_queue_x[i];
+      emitter_queue_y[d] = emitter_queue_y[i];
+      emitter_queue_xm[d] = emitter_queue_xm[i];
+      emitter_queue_ym[d] = emitter_queue_ym[i] * 2;
+    }
+  }
+
+  /* If we've moved a significant distance, emit another object */
   if (abs(x - last_x) > EMITTER_DRAW_THRESHOLD || abs(y - last_y) > EMITTER_DRAW_THRESHOLD)
   {
     if (emitter_cur_trail_length < emitter_max_trail_length - 1)
     {
+      /* Trail not full, add another */
       emitter_cur_trail_length++;
     }
     else
     {
+      /* Trail is full, rotate queue */
       for (i = 0; i < emitter_cur_trail_length; i++)
       {
         emitter_queue_x[i] = emitter_queue_x[i + 1];
         emitter_queue_y[i] = emitter_queue_y[i + 1];
+        emitter_queue_xm[i] = emitter_queue_xm[i + 1];
+        emitter_queue_ym[i] = emitter_queue_ym[i + 1];
       }
     }
 
+    /* Add the new object */
     emitter_queue_x[emitter_cur_trail_length] = x;
     emitter_queue_y[emitter_cur_trail_length] = y;
+    emitter_queue_xm[emitter_cur_trail_length] = (rand() % emitter_speed[which] * 2) - emitter_speed[which];
+    emitter_queue_ym[emitter_cur_trail_length] = (rand() % emitter_speed[which] * 2) - emitter_speed[which];
 
     last_x = x;
     last_y = y;
   }
 
+  /* Draw all of them */
   for (i = 0; i < emitter_cur_trail_length + 1; i++)
   {
     img = (emitter_cur_trail_length - i);
@@ -384,6 +439,8 @@ void emitter_click(magic_api *api, int which, int mode ATTRIBUTE_UNUSED,
 {
   emitter_queue_x[0] = x;
   emitter_queue_y[0] = y;
+  emitter_queue_xm[0] = (rand() % emitter_speed[which] * 2) - emitter_speed[which];
+  emitter_queue_ym[0] = (rand() % emitter_speed[which] * 2) - emitter_speed[which];
   emitter_cur_trail_length = 0;
   last_x = -100;
   last_y = -100;
