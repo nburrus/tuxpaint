@@ -246,11 +246,11 @@ int emitter_get_tool_count(magic_api *api ATTRIBUTE_UNUSED)
 }
 
 // Load our icons:
-SDL_Surface *emitter_get_icon(magic_api *api, int which ATTRIBUTE_UNUSED)
+SDL_Surface *emitter_get_icon(magic_api *api, int which)
 {
   char fname[1024];
 
-  snprintf(fname, sizeof(fname), "%simages/magic/light.png", api->data_directory); // FIXME
+  snprintf(fname, sizeof(fname), "%simages/magic/emitter%d_icon.png", api->data_directory, which);
 
   return (IMG_Load(fname));
 }
