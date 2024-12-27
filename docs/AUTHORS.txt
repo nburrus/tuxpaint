@@ -376,6 +376,10 @@ June 17, 2002 - December 26, 2024
 
   "Hearts", "Sparkles", and "Stars" ('emitter') Magic tools
   by Bill Kendrick <bill@newbreedsoftware.com>
+  + Hearts sound effect: "Happy Retro Upwards Jingle"
+    (https://freesound.org/people/IndyTheCringeMaster/sounds/756358/)
+    Creative Commons 0 by
+    https://freesound.org/people/IndyTheCringeMaster/
   + Sparkles sound effect based on "PluckArp"
     (https://freesound.org/people/gmortizwavs/sounds/657368/)
     Creative Commons 0 by https://freesound.org/people/gmortizwavs/

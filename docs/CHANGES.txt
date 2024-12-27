@@ -12,11 +12,11 @@ https://tuxpaint.org/
     + WIP: Heart, Sparkle, and Star emitters
       Click and drag to leave a short trail of shapes.
       - TODO: Icons
-      - TODO: Sound effects
       - TODO: Documentation
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/266/
       - Code: Bill Kendrick <bill@newbreedsoftware.com>
-      - Heart sound effect: TBD
+      - Heart sound effect: "Happy Retro Upwards Jingle", CC0 by
+        IndyTheCringeMaster <https://freesound.org/people/IndyTheCringeMaster/>
       - Sparkles sound effect: based on "PluckArp", CC0 by gmortizwavs
         <https://freesound.org/people/gmortizwavs/>
       - Stars sound effect: based on "space-chimes-2-04.wav",
