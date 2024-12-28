@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.December.26 (0.9.35)
+2024.December.28 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -20,7 +20,6 @@ https://tuxpaint.org/
       - Stars sound effect: based on "space-chimes-2-04.wav",
         Creative Commons Attribution 4.0 by gamebalance
         <https://freesound.org/people/gamebalance/>
-        
 
   * Text & Label Tool Improvements:
     -------------------------------
@@ -53,6 +52,10 @@ https://tuxpaint.org/
     -----------------
     + Don't use Linux-specific invocation of "install"; use "mkdir" & "cp"
       Thomas Klausner <wiz@netbsd.org>
+
+    + WIP Specific build settings for NetBSD
+      Bill Kendrick <bill@newbreedsoftware.com>
+      & Thomas Klausner <wiz@netbsd.org>
 
 2024.October.23 (0.9.34)
   * New Magic Tools:

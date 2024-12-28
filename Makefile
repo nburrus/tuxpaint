@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - December 19, 2024
+# June 14, 2002 - December 28, 2024
 
 
 # The version number, for release:
@@ -74,6 +74,9 @@ else
     endif
   endif
 endif
+
+# FIXME: ^ Support NetBSD a recognized OS
+
 
 # CROSS COMPILATION OVERRIDES
 #
@@ -162,6 +165,7 @@ macos_SO_TYPE:=dylib
 ios_SO_TYPE:=dylib
 beos_SO_TYPE:=so
 linux_SO_TYPE:=so
+netbsd_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
 
 windows_LIBMINGW:=-L/usr/local/lib -lmingw32
@@ -181,6 +185,7 @@ macos_ARCH_LIBS:=src/macos_print.m obj/macos.o
 ios_ARCH_LIBS:=src/ios_print.m obj/ios.o
 beos_ARCH_LIBS:=obj/BeOS_print.o obj/haiku_trash.o
 linux_ARCH_LIBS:=obj/postscript_print.o
+netbsd_ARCH_LIBS:=obj/postscript_print.o
 ARCH_LIBS:=$($(OS)_ARCH_LIBS)
 
 windows_ARCH_CFLAGS:=
@@ -189,6 +194,7 @@ macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/i
 ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
 beos_ARCH_CFLAGS:=
 linux_ARCH_CFLAGS:=
+netbsd_ARCH_CFLAGS:=-DHAVE_STRCASESTR
 ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
 
 windows_ARCH_LDFLAGS:=
@@ -197,7 +203,9 @@ macos_ARCH_LDFLAGS:=-isysroot $(SDKROOT) -L$(HOSTROOT)/lib -mmacosx-version-min=
 ios_ARCH_LDFLAGS:=-isysroot $(SDKROOT) -L$(HOSTROOT)/lib $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS))
 beos_ARCH_LDFLAGS:=
 linux_ARCH_LDFLAGS:=
+netbsd_ARCH_LDFLAGS:=
 ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
+
 LDFLAGS:=$(ARCH_LDFLAGS)
 
 ifeq ($(OS), os2)
@@ -217,6 +225,7 @@ macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -W
 ios_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
 beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
 linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
+netbsd_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
 windows_ARCH_HEADERS:=src/win32_print.h
@@ -224,6 +233,7 @@ os2_ARCH_HEADERS:=
 macos_ARCH_HEADERS:=src/macos.h
 beos_ARCH_HEADERS:=src/BeOS_print.h
 linux_ARCH_HEADERS:=
+netbsd_ARCH_HEADERS:=
 ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
 
 # Where things will go when ultimately installed:
@@ -233,6 +243,7 @@ os2_PREFIX:=c:/extras/tuxpaint
 macos_PREFIX:=Resources
 ios_PREFIX:=.
 linux_PREFIX:=/usr/local
+netbsd_PREFIX:=/usr/local
 PREFIX:=$($(OS)_PREFIX)
 
 # Root directory to place files when creating packages.
@@ -1472,6 +1483,7 @@ macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --lib
 ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
 beos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
 linux_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
+netbsd_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
 MAGIC_SDL_LIBS:=$($(OS)_MAGIC_SDL_LIBS)
 
 windows_MAGIC_ARCH_LINKS=-lintl $(PNG)
@@ -1480,6 +1492,7 @@ macos_MAGIC_ARCH_LINKS=-lintl $(PNG)
 ios_MAGIC_ARCH_LINKS=-lintl -ljpeg $(PNG) $(shell $(PKG_CONFIG) --libs libtiff-4 libwebp libmpg123 ogg vorbisenc vorbisidec)
 beos_MAGIC_ARCH_LINKS:=-lintl $(PNG)
 linux_MAGIC_ARCH_LINKS:=-lintl $(PNG)
+netbsd_MAGIC_ARCH_LINKS:=-lintl $(PNG)
 MAGIC_ARCH_LINKS:=$($(OS)_MAGIC_ARCH_LINKS)
 
 windows_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
@@ -1488,6 +1501,7 @@ macos_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 ios_PLUGIN_LIBS:=$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS)
 beos_PLUGIN_LIBS:="$(MAGIC_SDL_LIBS) $(MAGIC_ARCH_LINKS) $(MAGIC_SDL_CPPFLAGS)"
 linux_PLUGIN_LIBS:=
+netbsd_PLUGIN_LIBS:=
 PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
 
 MAGIC_CFLAGS:=-g3 -O2 $(FASTMATH) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
