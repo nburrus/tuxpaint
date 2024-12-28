@@ -21201,7 +21201,12 @@ static void flip_starter(void)
 
 
 /**
- * FIXME
+ * Returns whether a button click is valid, based on the
+ * "no button distinction" setting.
+ *
+ * @param Uint8 button -- the button clicked (we check for 1, 2, or 3)
+ * @return int -- 1/true if the button is recognized, else 0/false
+ *   (2 & 3 are only valid if "no button distiction" is enabled)
  */
 static int valid_click(Uint8 button)
 {
@@ -21213,10 +21218,17 @@ static int valid_click(Uint8 button)
 
 
 /**
- * FIXME
+ * Returns whether a point is within a circle.
+ *
+ * @param int x -- x position relative to center of circle
+ * @param int y -- y position [ditto]
+ * @param int rad -- radius of circle
+ * @return int -- 1/true if (x,y) is within the circle, else 0/false
  */
 static int in_circle_rad(int x, int y, int rad)
 {
+  if (abs(x) > rad || abs(y) > rad) // short circuit to avoid unnecessary math
+    return (0);
   if ((x * x) + (y * y) - (rad * rad) < 0)
     return (1);
   else
