@@ -59,6 +59,8 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
     dessin et commencer à entrée plus de texte une ligne au-dessous.
   * Ou bien, pressez [Tab] ou cliquez/tapez ou ⟷ pour ajouter du texte au
     dessin et continuer un texte immédiatement à sa droite.
+  * Press [Control]+[V] or click/tap "Paste" to paste clipboard text into your
+    input
   * Utiliser clavier virtuel sur écran :
       + "Cmp" peut être utilisé pour composer des caractères, par ex. "Cmp ' a"
         donne á.
@@ -229,5 +231,5 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
   * [Alt]+[S] - Toggle sound effects on/off
   * [Escape] - ⤺Back or 🗙Quit
 
-Dernière mise à jour : octobre 25, 2024
+Dernière mise à jour : décembre 29, 2024
 
