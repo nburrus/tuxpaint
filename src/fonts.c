@@ -185,9 +185,13 @@ unsigned text_size = 4;         // initial text size
 
 int button_label_y_nudge;
 
+/* Local function prototypes: */
+
+char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_mallocd);
 #ifdef FORKED_FONTS
 static void reliable_read(int fd, void *buf, size_t count);
 #endif
+
 
 const char *PANGO_DEFAULT_FONT = "DejaVu Sans";
 const char *PANGO_DEFAULT_FONT_FALLBACK = NULL;
@@ -996,11 +1000,37 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 
 #define NUM_FONTCONFIG_CONFIG_PATHS 2 /* system-wide, and local/homedir */
 
+/**
+ * Attempts to allocate space for a char * array to hold
+ * a set of fontconfig config file paths for load_user_fonts() to
+ * iterate over.
+ *
+ * If unsuccessful, returns NULL and sets num_actually_mallocd to 0.
+ *
+ * @param int num_to_malloc -- how big the char * array should be
+ * @param int * num_actually_mallocd -- pointer that will hold how many got
+ *   allocated; either the same value as num_to_malloc, or 0 if failure
+ * @return char * * | NULL -- pointer to the char * array, or NULL if malloc failed
+ */
+char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_mallocd)
+{
+  char * * buf;
+
+  buf = (char * *) malloc(sizeof(char *) * num_to_malloc);
+  if (buf == NULL)
+    *num_actually_mallocd = 0;
+  else
+    *num_actually_mallocd = num_to_malloc;
+
+  return buf;
+}
+
 /* static */ int load_user_fonts(SDL_Surface *screen, SDL_Texture *texture,
                                  SDL_Renderer *renderer, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
-  char * fontconfig_config_paths[NUM_FONTCONFIG_CONFIG_PATHS];
+  char * * fontconfig_config_paths;
+  int num_fontconfig_config_paths = 0;
   int i;
 
   (void)vp;                     // junk passed by threading library
@@ -1058,11 +1088,25 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
     /* See what dirs fontconfig configuration files point to,
        and try loading fonts from them */
 
-    fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
-    fontconfig_config_paths[1] = malloc(1024);
-    snprintf(fontconfig_config_paths[1], 1024, "%s/.config/fontconfig/fonts.conf", getenv("HOME"));
 
-    for (i = 0; i < NUM_FONTCONFIG_CONFIG_PATHS; i++)
+#if defined(__APPLE__)
+    fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
+    if (fontconfig_config_paths != NULL)
+    {
+      fontconfig_config_paths[0] = malloc(1024);
+      snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
+    }
+#else
+    fontconfig_config_paths = malloc_fontconfig_config_paths(2, &num_fontconfig_config_paths);
+    if (fontconfig_config_paths != NULL)
+    {
+      fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
+      fontconfig_config_paths[1] = malloc(1024);
+      snprintf(fontconfig_config_paths[1], 1024, "%s/.config/fontconfig/fonts.conf", getenv("HOME"));
+    }
+#endif
+
+    for (i = 0; i < num_fontconfig_config_paths; i++)
     {
       xmlDocPtr doc;
 
@@ -1114,7 +1158,7 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
                   }
                   else
                   {
-                    printf("wordexp result.we_wordv of '%s' was '%s'\n", path_str, result.we_wordv[0]);
+                    DEBUG_PRINTF("wordexp result.we_wordv of '%s' was '%s'\n", path_str, result.we_wordv[0]);
                     free(path_str);
                     path_str = strdup(result.we_wordv[0]);
                     wordfree(&result);
@@ -1137,6 +1181,9 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 
       free(fontconfig_config_paths[i]);
     }
+
+    if (fontconfig_config_paths != NULL)
+      free(fontconfig_config_paths);
   }
 
   homedirdir = get_fname("fonts", DIR_DATA);
