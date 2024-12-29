@@ -47,11 +47,12 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.35" date="2024-12-26">
+    <release version="0.9.35" date="2024-12-29">
       <description>
         <p>New Magic tools: "Hearts", "Sparkles", and "Stars".</p>
         <p>Improved color picker behavior</p>
         <p>Text and Label tools support pasting text from the copy/paste clipboard</p>
+        <p>Text and Label tools attempt to load fonts in locations specified in FontConfig &lt;dir&gt; entries now, too</p>
       </description>
     </release>
     <release version="0.9.34" date="2024-10-20">

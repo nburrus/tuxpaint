@@ -6,7 +6,7 @@ Copyright (c) 2002-2024
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2024.December.28 (0.9.35)
+2024.December.29 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -30,6 +30,14 @@ https://tuxpaint.org/
       of the canvas, the text is truncated there.
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/95/
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    + WIP Checking for fonts in any locations specified by "<dir>"
+      entries found in system-wide and user-level FontConfig config files.
+      This allows more fonts, and user-specific fonts, to be found & loaded.
+      - TODO - Looking in Un*x-specific `/etc/fonts/fonts.conf` and
+        `~/.config/fontconfig/fonts.conf`, and should look in the
+        correct places on other platforms.
+      - Note: This adds a build dependency on `libxml-2.0`.
 
   * Other Improvements:
     -------------------

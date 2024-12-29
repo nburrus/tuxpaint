@@ -1,7 +1,7 @@
 /*
   fonts.c
 
-  Copyright (c) 2009-2023
+  Copyright (c) 2009-2024
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: June 6, 2024
+  Last modified: December 29, 2024
 */
 
 #include <stdio.h>
@@ -36,6 +36,21 @@
 #ifndef gettext_noop
 #define gettext_noop(String) String
 #endif
+
+#include <libxml/xmlmemory.h>
+#include <libxml/parser.h>
+
+/* On Linux, we can use 'wordexp()' to expand env. vars. in settings
+   pulled from config. files */
+#ifdef __linux__
+
+/* However, Android has __linux__ macro but does not support 'wordexp()'*/
+#ifndef __ANDROID__
+#include <wordexp.h>
+#endif
+
+#endif
+
 
 /*
 	The following section renames global variables defined in SDL2_Pango.h to avoid errors during linking.
@@ -979,10 +994,14 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 }
 
 
+#define NUM_FONTCONFIG_CONFIG_PATHS 2 /* system-wide, and local/homedir */
+
 /* static */ int load_user_fonts(SDL_Surface *screen, SDL_Texture *texture,
                                  SDL_Renderer *renderer, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
+  char * fontconfig_config_paths[NUM_FONTCONFIG_CONFIG_PATHS];
+  int i;
 
   (void)vp;                     // junk passed by threading library
 
@@ -1035,6 +1054,89 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
     loadfonts(screen, texture, renderer, "/usr/share/vlc/skins2/fonts");
     loadfonts(screen, texture, renderer, "/usr/share/xplanet/fonts");
 #endif
+  
+    /* See what dirs fontconfig configuration files point to,
+       and try loading fonts from them */
+
+    fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
+    fontconfig_config_paths[1] = malloc(1024);
+    snprintf(fontconfig_config_paths[1], 1024, "%s/.config/fontconfig/fonts.conf", getenv("HOME"));
+
+    for (i = 0; i < NUM_FONTCONFIG_CONFIG_PATHS; i++)
+    {
+      xmlDocPtr doc;
+
+      doc = xmlReadFile(fontconfig_config_paths[i], NULL, 0);
+      if (doc == NULL)
+      {
+        fprintf(stderr, "Error: Failed to parse fontconfig configuration file '%s'\n", fontconfig_config_paths[i]);
+      }
+      else
+      {
+        xmlNodePtr cur;
+
+        cur = xmlDocGetRootElement(doc);
+        if (cur == NULL)
+        {
+          fprintf(stderr, "Error: Failed to parse empty fontconfig configuration file '%s'\n", fontconfig_config_paths[i]);
+        }
+        else
+        {
+          if (xmlStrcmp(cur->name, (const xmlChar *) "fontconfig"))
+          {
+            fprintf(stderr, "Error: Not a fontconfig configuration file: '%s'\n", fontconfig_config_paths[i]);
+          }
+          else
+          {
+            cur = cur->xmlChildrenNode;
+            while (cur != NULL)
+            {
+              if (xmlStrcmp(cur->name, (const xmlChar *) "dir") == 0)
+              {
+                xmlChar * path;
+                char * path_str;
+
+                path = xmlNodeGetContent(cur);
+
+                if (path != NULL)
+                {
+                  path_str = strdup((char *) path /* FIXME: is this cast safe? -bjk 2024.12.29 */);
+#ifdef __linux__
+#ifndef __ANDROID__
+                  wordexp_t result;
+                
+                  wordexp(path_str, &result, 0);
+                  if (result.we_wordv == NULL)
+                  {
+                    fprintf(stderr,
+                            "Error: Shell expansion of '%s' on line %d of '%s' failed!\n",
+                            path_str, cur->line, fontconfig_config_paths[i]);
+                  }
+                  else
+                  {
+                    printf("wordexp result.we_wordv of '%s' was '%s'\n", path_str, result.we_wordv[0]);
+                    free(path_str);
+                    path_str = strdup(result.we_wordv[0]);
+                    wordfree(&result);
+                  }
+#endif
+#endif
+                
+                  loadfonts(screen, texture, renderer, (char *) path_str);
+                  free(path_str);
+                  xmlFree(path);
+                }
+              }
+              cur = cur->next;
+            }
+          }
+        }
+
+        xmlFreeDoc(doc);
+      }
+
+      free(fontconfig_config_paths[i]);
+    }
   }
 
   homedirdir = get_fname("fonts", DIR_DATA);

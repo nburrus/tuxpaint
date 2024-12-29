@@ -4,7 +4,7 @@
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - December 28, 2024
+# June 14, 2002 - December 29, 2024
 
 
 # The version number, for release:
@@ -219,13 +219,16 @@ PNG:=$(if $(PNG),$(PNG),$(call linktest,,-lpng12,))
 FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
 FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
 
-windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) -liconv -limagequant -mwindows
-os2_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
-macos_ARCH_LINKS:=$(FRIBIDI_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -Wl,-framework,Cocoa $(shell $(PKG_CONFIG) --libs pangoft2)
-ios_ARCH_LINKS=$(FRIBIDI_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
-beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
-linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
-netbsd_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) -limagequant
+LIBXML_LIB:=$(shell $(PKG_CONFIG) --libs libxml-2.0)
+LIBXML_CFLAGS:=$(shell $(PKG_CONFIG) --cflags libxml-2.0)
+
+windows_ARCH_LINKS:=-lgdi32 -lcomdlg32 $(PNG) -lz -lwinspool -lshlwapi $(FRIBIDI_LIB) $(LIBXML_LIB) -liconv -limagequant -mwindows
+os2_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) $(LIBXML_LIB) -limagequant
+macos_ARCH_LINKS:=$(FRIBIDI_LIB) $(LIBXML_LIB) -limagequant -lSDLmain -Wl,-framework,AppKit -Wl,-framework,Cocoa $(shell $(PKG_CONFIG) --libs pangoft2)
+ios_ARCH_LINKS=$(FRIBIDI_LIB) $(LIBXML_LIB) -limagequant -ljpeg -lbz2 $(shell $(PKG_CONFIG) --libs freetype2 libtiff-4 libwebp libffi harfbuzz libmpg123 ogg vorbisenc vorbisidec libxml-2.0 pangoft2 libpcre)
+beos_ARCH_LINKS:=-lintl $(PNG) -lz -lbe -lnetwork -liconv $(FRIBIDI_LIB) $(LIBXML_LIB) $(PAPER_LIB) $(STDC_LIB) -limagequant
+linux_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) $(LIBXML_LIB) -limagequant
+netbsd_ARCH_LINKS:=$(PAPER_LIB) $(FRIBIDI_LIB) $(LIBXML_LIB) -limagequant
 ARCH_LINKS:=$($(OS)_ARCH_LINKS)
 
 windows_ARCH_HEADERS:=src/win32_print.h
@@ -1241,7 +1244,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/cursor.o obj/pixels.o \
 		$(ARCH_LIBS)
 	@echo
 	@echo "...Linking Tux Paint..."
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(LIBXML_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-o tuxpaint $^ \
 		$(SDL_LIBS) $(SVG_LIB) $(ARCH_LINKS) -lm
 	@$(RAD_CMD)
@@ -1277,7 +1280,7 @@ obj/tuxpaint.o:	src/tuxpaint.c \
 		$(ARCH_HEADERS)
 	@echo
 	@echo "...Compiling Tux Paint from source..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(LIBXML_CFLAGS) $(SVG_CFLAGS) $(MOUSE_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/tuxpaint.c -o obj/tuxpaint.o
 
 # Broke gperf|sed up into two steps so that it will fail properly if gperf is not installed; there's probably a more elegant solution -bjk 2009.11.20
@@ -1324,7 +1327,7 @@ obj/fonts.o:	src/fonts.c src/fonts.h src/dirwalk.h src/progressbar.h \
 		src/get_fname.h src/debug.h
 	@echo
 	@echo "...Compiling font support..."
-	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
+	$(CC) $(CFLAGS) $(LIBXML_CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) $(ARCH_DEFS) \
 		-c src/fonts.c -o obj/fonts.o
 
 obj/dirwalk.o:	src/dirwalk.c src/dirwalk.h src/progressbar.h src/fonts.h \
