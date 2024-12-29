@@ -211,5 +211,7 @@ Udhërrëfyes Fillimi të Shpejtë për Tux Paint 0.9.35
   * [Alt]+[S] - Toggle sound effects on/off
   * [Escape] - ⤺Back or 🗙Quit
 
+Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
+
 Përditësuar së fundi më: 29 dhjetor 2024
 

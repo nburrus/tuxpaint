@@ -217,5 +217,7 @@ Tux Paint 0.9.35 クイックスタートガイド
   * [Alt]+[S] - サウンドのオン/オフを切り替え
   * [Escape] - ⤺もどるまたは 🗙やめる
 
+Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
+
 最終更新日: 2024年12月29日
 

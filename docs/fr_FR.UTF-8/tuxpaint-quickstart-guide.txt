@@ -231,5 +231,7 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
   * [Alt]+[S] - Toggle sound effects on/off
   * [Escape] - ⤺Back or 🗙Quit
 
+Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
+
 Dernière mise à jour : décembre 29, 2024
 

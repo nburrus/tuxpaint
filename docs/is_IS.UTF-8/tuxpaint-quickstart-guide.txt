@@ -211,5 +211,7 @@ Tux Paint 0.9.35 Quickstart Guide
   * [Alt]+[S] - Toggle sound effects on/off
   * [Escape] - ⤺Back or 🗙Quit
 
+Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
+
 Last updated: desember 29, 2024
 
