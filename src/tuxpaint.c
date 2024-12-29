@@ -31100,11 +31100,17 @@ int main(int argc, char *argv[])
 #endif
 
 #if defined(__MACOS__)
-  /* Pango uses Fontconfig which requires /opt/local/etc/fonts/fonts.conf. This
-   * file may not exist on the runtime system, however, so we copy the file
-   * into our app bundle at compile time, and tell Fontconfig here to look for
-   * the file within the app bundle. */
+  /* Pango uses Fontconfig which requires fonts.conf.  By default, Fontconfig
+   * searches for this file in a global path (e.g., /opt/local/etc/fonts if
+   * using the MacPorts port of Fontconfig) which does not exist on a vanilla
+   * macOS install.  As a workaround, the macOS port of Tux Paint provides its
+   * own copy, and tells Fontconfig to look inside the Tux Paint app bundle for
+   * this file by setting the FONTCONFIG_PATH environment variable here.
+   */
   putenv((char *)"FONTCONFIG_PATH=Resources/etc");
+#elif defined(__IOS__)
+  /* Same with iOS */
+  putenv((char *)"FONTCONFIG_PATH=etc");
 #endif
 
   chdir_to_binary(argv[0]);

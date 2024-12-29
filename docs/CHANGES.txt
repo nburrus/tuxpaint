@@ -34,7 +34,7 @@ https://tuxpaint.org/
     + WIP Checking for fonts in any locations specified by "<dir>"
       entries found in system-wide and user-level FontConfig config files.
       This allows more fonts, and user-specific fonts, to be found & loaded.
-      - TODO - Looks in $FONTCONFIG/fonts.conf on macOS, otherwise
+      - TODO - Looks in $FONTCONFIG_PATH/fonts.conf on macOS/iOS, otherwise
         Un*x-specific `/etc/fonts/fonts.conf` and
         `~/.config/fontconfig/fonts.conf`.  Should look in the correct
         places on other platforms.
