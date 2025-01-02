@@ -1042,6 +1042,10 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
 #ifdef WIN32
     homedirdir = GetSystemFontDir();
     loadfonts(screen, texture, renderer, homedirdir);
+    homedirdir = GetUserFontDir();
+    if (homedirdir != NULL){
+      loadfonts(screen, texture, renderer, homedirdir);
+    }
     free(homedirdir);
 #elif defined(__BEOS__)
     loadfonts(screen, texture, renderer, "/boot/home/config/font/ttffonts");
