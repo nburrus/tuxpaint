@@ -1,10 +1,10 @@
 # Tux Paint - A simple drawing program for children.
 
-# Copyright (c) 2002-2024
+# Copyright (c) 2002-2025
 # Various contributors (see AUTHORS.txt)
 # https://tuxpaint.org/
 
-# June 14, 2002 - December 29, 2024
+# June 14, 2002 - January 3, 2025
 
 
 # The version number, for release:
@@ -66,8 +66,13 @@ else
             OS:=os2
             GPERF:=/@unixroot/usr/bin/gperf.exe
           else
-            OS:=linux
-            GPERF:=/usr/bin/gperf
+            ifeq ($(SYSNAME),NetBSD)
+              OS:=netbsd
+              GPERF:=/usr/bin/gperf
+            else
+              OS:=linux
+              GPERF:=/usr/bin/gperf
+            endif
           endif
         endif
       endif

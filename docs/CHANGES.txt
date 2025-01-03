@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.January.2 (0.9.35)
+2025.January.3 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -67,7 +67,7 @@ https://tuxpaint.org/
     + Don't use Linux-specific invocation of "install"; use "mkdir" & "cp"
       Thomas Klausner <wiz@netbsd.org>
 
-    + WIP Specific build settings for NetBSD
+    + Specific build settings for NetBSD
       Bill Kendrick <bill@newbreedsoftware.com>
       & Thomas Klausner <wiz@netbsd.org>
 
