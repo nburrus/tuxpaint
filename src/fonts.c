@@ -1,7 +1,7 @@
 /*
   fonts.c
 
-  Copyright (c) 2009-2024
+  Copyright (c) 2009-2025
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: December 29, 2024
+  Last modified: January 3, 2025
 */
 
 #include <stdio.h>
@@ -1099,6 +1099,13 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
     {
       fontconfig_config_paths[0] = malloc(1024);
       snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
+    }
+#elif defined(__HAIKU__)
+    fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
+    if (fontconfig_config_paths != NULL)
+    {
+      fontconfig_config_paths[0] = malloc(1024);
+      snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
     }
 #else
     fontconfig_config_paths = malloc_fontconfig_config_paths(2, &num_fontconfig_config_paths);

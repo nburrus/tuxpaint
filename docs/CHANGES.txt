@@ -34,13 +34,14 @@ https://tuxpaint.org/
     + WIP Checking for fonts in any locations specified by "<dir>"
       entries found in system-wide and user-level FontConfig config files.
       This allows more fonts, and user-specific fonts, to be found & loaded.
-      - TODO - Looks in $FONTCONFIG_PATH/fonts.conf on macOS/iOS, otherwise
-        Un*x-specific `/etc/fonts/fonts.conf` and
+      - TODO - Looks in $FONTCONFIG_PATH/fonts.conf on macOS/iOS,
+        `/boot/system/settings/fonts/fonts.conf` on Haiku, otherwise
+        the Un*x-specific `/etc/fonts/fonts.conf` and
         `~/.config/fontconfig/fonts.conf`.  Should look in the correct
         places on other platforms.
       - Note: This adds a build dependency on `libxml-2.0`.
       Bill Kendrick <bill@newbreedsoftware.com>
-      h/t Mark Kim
+      h/t Mark Kim & Luc Schrijvers
 
     + Tux Paint on Windows loads user fonts.
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
