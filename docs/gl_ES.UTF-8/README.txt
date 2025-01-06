@@ -1284,7 +1284,7 @@ Consulte o texto completo da licenza GPL en COPYING.txt.
         no directorio/cartafol «saved» de Tux Paint. Aquí é onde se atopa (de
         xeito predeterminado:
 
-        → Windows Windows 7, Windows 8, Windows 10, Windows 11 ←
+        → Windows Windows 8, Windows 10, Windows 11 ←
             In the user's "AppData" folder:
             e.g., "C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\"
              

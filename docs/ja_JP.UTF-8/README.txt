@@ -1173,7 +1173,7 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
         形式に変換して、Tux Paint で作成した画像が保存されている "saved" フォル
         ダにコピーします。（標準では以下のフォルダ）:
 
-        → Windows Windows 7, Windows 8, Windows 10, Windows 11 ←
+        → Windows Windows 8, Windows 10, Windows 11 ←
             In the user's "AppData" folder:
             e.g., "C:\Users\ユーザー名\AppData\Roaming\TuxPaint\saved\"
              

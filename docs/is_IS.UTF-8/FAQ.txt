@@ -2,10 +2,10 @@
                                 version 0.9.35
                           Frequently Asked Questions
 
-        Copyright © 2002-2024 by various contributors; see AUTHORS.txt.
+        Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 júlí 17, 2024
+                                janúar 6, 2025
 
 +------------------------------+
 |      Table of Contents       |
@@ -224,7 +224,7 @@
     "savedir" option), Tux Paint saves into a standard location on your local
     drive:
 
-    → Windows Windows 7, Windows 8, Windows 10, Windows 11 ←
+    → Windows Windows 8, Windows 10, Windows 11 ←
         In the user's "AppData" folder:
         e.g., "C:\Users\username\AppData\Roaming\TuxPaint\saved\"
          

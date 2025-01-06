@@ -1269,7 +1269,7 @@ See COPYING.txt for the full text of the GPL license.
         (Portable Network Graphic) — and place it in Tux Paint's "saved"
         directory/folder. Here is where to find it (by default):
 
-        → Windows Windows 7, Windows 8, Windows 10, Windows 11 ←
+        → Windows Windows 8, Windows 10, Windows 11 ←
             In the user's "AppData" folder:
             e.g., "C:\Users\emër përdoruesi\AppData\Roaming\TuxPaint\saved\"
              
