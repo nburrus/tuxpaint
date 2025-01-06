@@ -3,10 +3,10 @@
 
                ## Një program i thjeshtë vizatimi për fëmijë ##
 
- Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
+ Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                26 dhjetor 2024
+                                 6 janar 2025
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |

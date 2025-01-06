@@ -3,10 +3,10 @@
 
                ## Un sinxelo programa de debuxo para cativos ##
 
-        Copyright © 2002-2024 by varios colaboradores; see AUTHORS.txt.
+        Copyright © 2002-2025 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                            26 de Decembro de 2024
+                             6 de Xaneiro de 2025
 
 +--------------------------------------------------------+
 |                         Índice                         |
