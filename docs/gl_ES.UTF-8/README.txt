@@ -6,7 +6,7 @@
         Copyright © 2002-2025 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                             6 de Xaneiro de 2025
+                             9 de Xaneiro de 2025
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -1287,6 +1287,17 @@ Consulte o texto completo da licenza GPL en COPYING.txt.
         → Windows Windows 8, Windows 10, Windows 11 ←
             In the user's "AppData" folder:
             e.g., "C:\Users\nome de usuario\AppData\Roaming\TuxPaint\saved\"
+
+            (Note: The "AppData" folder is hidden (not visible) by default. You
+            can enter the path manually in the location bar of your file
+            browser (e.g., File Explorer).)
+
+            You can use the %APPDATA% variable as a shorthand, i.e. 
+            "%APPDATA%\Tuxpaint\Saved".
+
+            You can use the [⊞ (Windows)] + [R] key combination to bring up the
+            Run command window, and then type the path and hit [Enter / Return]
+            .
              
         → macOS ←
             In the user's "Application Support" folder:
@@ -1296,6 +1307,13 @@ Consulte o texto completo da licenza GPL en COPYING.txt.
         → Linux / Unix ←
             In the user's "home directory" folder:
             e.g., "/home/nome de usuario/.tuxpaint/saved/"
+
+            (Note: The ".tuxpaint" folder is hidden (not visible) by default.
+            You can enter the path manually in the location bar of your file
+            browser (e.g., GNOME Files or Dolphin).)
+
+            You can use the $HOME variable as a shorthand, i.e. 
+            "$HOME/.tuxpaint/saved".
              
         → Haiku ←
             In the user's "settings" folder:
