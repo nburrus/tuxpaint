@@ -367,7 +367,11 @@ OLDSVGFLAG:=$(if $(filter -lsvg-cairo,$(SVG_LIB)),-DOLD_SVG,)
 
 PNG_CFLAGS:=$(shell $(PKG_CONFIG) libpng --cflags)
 
-CONVERT:=./convert-wrapper.sh
+ifeq ($(findstring MINGW, $(SYSNAME)),MINGW)
+  CONVERT:=magick convert
+else
+  CONVERT:=./convert-wrapper.sh
+endif
 
 ifeq ($(hack),1)
 hack:
