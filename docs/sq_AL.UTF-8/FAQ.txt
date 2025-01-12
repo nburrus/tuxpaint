@@ -5,7 +5,7 @@
  Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 9 janar 2025
+                                 12 janar 2025
 
 +-------------------------------------------+
 |             Pasqyrë e Lëndës              |
@@ -34,11 +34,10 @@
     Kjo do të thotë se Tux Paint-i ose s’gjeti ndonjë figurë stampë, ose iu
     kërkua të mos i ngarkojë.
 
-    Nëse e instaluat Tux Paint-in, por nuk instaluat koleksionin më vete,
-    opsional, të “Stampave”, mbylleni Tux Paint-in dhe instalojeni tani. Duhet
-    të gjendet te i njëjti vend ku morët programin kryesor Tux Paint. (Shënim:
-    Që me versionin 0.9.14, Tux Paint-i vjen me një koleksion të vockël
-    stampash shembuj.)
+    If you installed Tux Paint, but did not install the separate, optional
+    "Stamps" collection, quit Tux Paint and install it now. It should be
+    available from the same place you got the main Tux Paint program. (Note:
+    Tux Paint ships with a very small collection of example stamps.)
 
     Nëse s’doni të instaloni koleksionin parazgjedhje të stampave, mund të
     krijoni tuajin. Shihni dokumentimin “Zgjerim i Tux Paint-it”, për më tepër
@@ -167,13 +166,6 @@ Linux) ←
     të specifikoni një urdhër të përshtatshëm duke përdorur te kartela e
     formësimit të Tux Paint-it mundësinë “printcommand”. (Shihni “Dokumentim
     Mundësish”.)
-
-    Shënim: Versione të Tux Paint-it para 0.9.15-s përdornin për shtypjen një
-    tjetër urdhër parazgjedhje, “pngtopnm | pnmtops | lpr”, ngaqë Tux Paint-it
-    prodhonte format PNG, në vend se PostScript.
-
-    Nëse e keni ndryshuar “printcommand” tuaj para Tux Paint 0.9.15-s, do t’ju
-    duhet të riktheheni dhe ta ndryshoni që të pranojë PostScript.
 
 
      

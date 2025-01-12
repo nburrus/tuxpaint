@@ -3,10 +3,10 @@
 
                   ### Magic Tool Plugin API Documentation ###
 
-   Höfundarréttur © 2007-2024 eftir various contributors; sjá AUTHORS-skrá.
+   Höfundarréttur © 2007-2025 eftir various contributors; sjá AUTHORS-skrá.
                              https://tuxpaint.org/
 
-                              17. september 2024
+                                12. janúar 2025
 
 +--------------------------------------------------+
 |                   Efnisyfirlit                   |
@@ -43,9 +43,8 @@
 
 Yfirlit
 
-Beginning with version 0.9.18, Tux Paint's 'Magic' tools were converted from
-routines that lived within the application itself, to a set of 'plugins' that
-are loaded when Tux Paint starts up.
+Tux Paint's 'Magic' tools come as a set of 'plugins' which are loaded when Tux
+Paint starts up.
 
 This division allows more rapid development of 'Magic' tools, and allows
 programmers to create and test new tools without needing to integrate them

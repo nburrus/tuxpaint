@@ -5,7 +5,7 @@
         Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janúar 9, 2025
+                                janúar 12, 2025
 
 +------------------------------+
 |      Table of Contents       |
@@ -36,9 +36,8 @@
 
     If you installed Tux Paint, but did not install the separate, optional
     "Stamps" collection, quit Tux Paint and install it now. It should be
-    available from the same place you got the main Tux Paint program. (Note: As
-    of version 0.9.14, Tux Paint comes with a small collection of example
-    stamps.)
+    available from the same place you got the main Tux Paint program. (Note:
+    Tux Paint ships with a very small collection of example stamps.)
 
     If you don't want to install the default collection of stamps, you can just
     create your own. See the "Extending Tux Paint" documentation for more on
@@ -158,13 +157,6 @@
     Common Unix Printing System, and do not have "cups-lpr" installed), you
     will need to specify an appropriate command using the "printcommand" option
     in Tux Paint's configuration file. (See the "Options Documentation".)
-
-    Note: Versions of Tux Paint prior to 0.9.15 used a different default
-    command for printing, "pngtopnm | pnmtops | lpr", as Tux Paint output PNG
-    format, rather than PostScript.
-
-    If you had changed your "printcommand" option prior to Tux Paint 0.9.15,
-    you will need to go back and alter it to accept PostScript.
 
 
      

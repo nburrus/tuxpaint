@@ -5,7 +5,7 @@
         Copyright © 2002-2025 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                             9 de Xaneiro de 2025
+                             12 de Xaneiro de 2025
 
 +--------------------------------------------+
 |                   Índice                   |
@@ -35,11 +35,10 @@
     Isto significa que Tux Paint non atopou ningunha imaxe de selo ou se lle
     pediu que non as cargase.
 
-    Se instalou Tux Paint, pero non instalou a colección opcional separada de
-    «Selos», saia de Tux Paint e instálea agora. Debe estar dispoñíbel no mesmo
-    lugar no que obtivo o programa principal de Tux Paint. (Nota: A partir da
-    versión 0.9.14, Tux Paint inclúe unha pequena colección de selos de
-    exemplo.)
+    If you installed Tux Paint, but did not install the separate, optional
+    "Stamps" collection, quit Tux Paint and install it now. It should be
+    available from the same place you got the main Tux Paint program. (Note:
+    Tux Paint ships with a very small collection of example stamps.)
 
     Se non quere instalar a colección predeterminada de selos, pode crear os
     seu.s Vexa a documentación «Ampliar Tux Paint» para obter máis información
@@ -167,13 +166,6 @@
     Sistema Común de Impresión Unix e non ten instalado «cups-lpr»), terá que
     especificar unha orde apropiada usando a opción «printcommand» no ficheiro
     de configuración de Tux Paint. (Vexa a «Documentación de opcións».)
-
-    Nota: As versións de Tux Paint anteriores ao 0.9.15 usaban unha orde
-    predeterminada diferente para imprimir, «pngtopnm | pnmtops | lpr», como
-    formato PNG de saída de Tux PaintNG, no canto de PostScript.
-
-    Se xa cambiara a súa opción «printcommand» antes de Tux Paint 0.9.15, terá
-    que volver atras e modificala para que acepte PostScript.
 
 
      

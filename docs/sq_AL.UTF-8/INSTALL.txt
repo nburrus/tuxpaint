@@ -2,10 +2,10 @@
                                 version 0.9.35
                              Dokumentim Instalimi
 
- Të drejta kopjimi © 2002-2024 nga kontribues të ndryshëm; shihni AUTHORS.txt.
+ Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 29 prill 2024
+                                 12 janar 2025
 
 +------------------------------------------------------+
 |                   Pasqyrë e Lëndës                   |
@@ -85,9 +85,9 @@ readily available for installation as part of your Linux distribution.
      
 → libpaper (vetëm për Linux/Unix) ←
 
-    As of Tux Paint 0.9.17, Tux Paint can determine your system's default paper
-    size (e.g., A4 or Letter), or can be told to use a particular paper size,
-    thanks to "libpaper".
+    Tux Paint can determine your system's default paper size (e.g., A4 or
+    Letter), or can be told to use a particular paper size, thanks to
+    "libpaper".
 
     https://github.com/naota/libpaper
 
@@ -104,9 +104,9 @@ readily available for installation as part of your Linux distribution.
      
 → Mbulim SVG-sh ←
 
-    As of Tux Paint 0.9.17, Tux Paint can load SVG (Scalable Vector Graphics)
-    images as stamps. Two sets of libraries are supported, and SVG support can
-    be completely disabled (via "make SVG_LIB:=")
+    Tux Paint can load SVG (Scalable Vector Graphics) images as stamps. Two
+    sets of libraries are supported, and SVG support can be completely disabled
+    (via "make SVG_LIB:=")
 
     → librsvg-2 & libCairo2 (biblioteka më të reja) ←
           @ libRSVG 2: http://librsvg.sourceforge.net/
@@ -159,9 +159,8 @@ available freely.
 
 ## Ujdisje e Përpilimit ##
 
-As of February 2005 (starting with Tux Paint 0.9.15), the "Makefile" includes
-support for building on a Windows system using MinGW/MSYS (https://
-sourceforge.net/projects/msys2/).
+The "Makefile" includes support for building on a Windows system using MinGW/
+MSYS (https://sourceforge.net/projects/msys2/).
 
 Many tools and libraries are required to build Tux Paint. The package
 management system "pacman" helps you install them automatically solving

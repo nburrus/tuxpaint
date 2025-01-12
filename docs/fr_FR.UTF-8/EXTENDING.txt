@@ -2,10 +2,10 @@
                                    Tux Paint
                                 version 0.9.35
 
-       Copyright © 2002-2024 by divers contributeurs; voir AUTHORS.txt.
+       Copyright © 2002-2025 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               décembre 25, 2024
+                               janvier 12, 2025
 
 +-------------------------------------------------------------+
 |                     Table des matières                      |
@@ -225,10 +225,9 @@ qui se trouve dans le même répertoire.)
 
 → Espacement des pinceaux ←
 
-    Depuis la version 0.9.16 de Tux Paint , vous pouvez désormais spécifier
-    l'espacement des coups de pinceaux (c'est-à-dire la fréquence à laquelle
-    ils sont dessinés). Par défaut, l'espacement correspond à la hauteur du
-    pinceau, divisée par 4.
+    You may specify the spacing for brushes — that is, how frequently they are
+    drawn across the length of a line or stroke. By default, the spacing will
+    be the brush's height, divided by 4.
 
     Ajoutez une ligne contenant la ligne "spacing=N" au fichier de données du
     pinceau, où "N" est l'espacement souhaité pour les coups de pinceau. (Plus
@@ -238,12 +237,11 @@ qui se trouve dans le même répertoire.)
      
 → Pinceaux animés ←
 
-    Depuis la version 0.9.16 de Tux Paint , vous pouvez désormais créer des
-    pinceaux animés. Au fur et à mesure que le pinceau est utilisé, chaque
-    image de l'animation est dessinée.
+    Brushes may be animated. As the brush is used, each frame of the animation
+    is drawn in sequence.
 
-    Disposez chaque trame sur une grande image PNG. Par exemple, si votre
-    pinceau mesure 30x30 et que vous avez 5 trames, l'image doit être 150x30.
+    Lay each frame out across a wide PNG image. For example, if the brush is
+    30x30 and there are 5 frames, the image should be 150x30.
 
     Ajoutez une ligne contenant la ligne "frames=N" au fichier de données du
     pinceau, où"N" est le nombre d'images dans le pinceau.
@@ -256,15 +254,16 @@ qui se trouve dans le même répertoire.)
      
 → Pinceaux directionnels ←
 
-    Depuis la version 0.9.16 de Tux Paint , vous pouvez désormais créer des
-    pinceaux orientables. Au fur et à mesure que le pinceau est utilisé,
-    différentes formes sont dessinées, en fonction de la direction du pinceau.
+    Brushes may be configured to draw a different shape based on the direction
+    of the line or brush stroke. Different shapes will be drawn depending on
+    which of the eight compass directions the brush is moving — up (aka North),
+    up/right (aka Northeast), right (aka East), down/right (aka Southeast),
+    etc.). A ninth "center" shape is used when there's no motion (e.g., simply
+    clicking/tapping and releasing the "Paint" tool, without dragging).
 
-    Les formes orientables sont divisées en carrés de 3x3 dans une image PNG.
-    Par exemple, si votre pinceau fait 30x30, l'image doit être de 90x90 et
-    chacune des formes orientables est placée dans une grille de 3x3. La région
-    centrale n'est pas orientable. Le haut à droite est utilisé pour le
-    mouvement vers le haut, et vers la droite. Etc ...
+    The directional shapes are divided into a 3x3 square in a PNG image. For
+    example, if your brush is 30x30, the image should be 90x90, and each of the
+    direction's shapes placed in a 3x3 grid.
 
     Ajoute une ligne contenant le mot "directional" au fichier de données
     brosse.
@@ -273,9 +272,9 @@ qui se trouve dans le même répertoire.)
      
 → Pinceaux tournants ←
 
-    Depuis la version 0.9.27 de Tux Paint , vous pouvez désormais créer des
-    pinceaux tournants. Au fur et à mesure que le pinceau est utilisé, il
-    tourne sur 360 degrés, en fonction de la direction du pinceau.
+    Brushes may be configured to rotate based on the angle of the line or brush
+    stroke. (Unlike Directional Brushes, described above, only a single brush
+    shape may be provided.
 
     Ajoute une ligne contenant le mot "rotate" au fichier de données brosse.
 
@@ -283,8 +282,8 @@ qui se trouve dans le même répertoire.)
      
 → Chaotic Brushes ←
 
-    As of Tux Paint version 0.9.34, brushes can be configured to continuously
-    pick random directions as you draw with them.
+    Brushes may be configured to continuously choose a random direction as you
+    draw with them.
 
     Ajoute une ligne contenant le mot "chaotic" au fichier de données brosse.
 
@@ -327,11 +326,10 @@ Les tampons en caoutchouc dans Tux Paint peuvent être constitués d'un certain
 nombre de fichiers séparés. Le seul fichier requis est, bien entendu, l'image
 elle-même.
 
-Depuis la version 0.9.17 de Tux Paint , les tampons peuvent être des images
-bitmap PNG ou bien des images vectorielles SVG. Ils peuvent être en couleur ou
-en niveaux de gris. Le canal alpha (transparence) des PNG est utilisé pour
-déterminer la forme réelle de l'image (sinon vous obtiendriez un grand
-rectangle sur vos dessins).
+Stamps may be either PNG bitmap images or SVG vector images. They can be
+full-color or greyscale. The alpha (transparency) channel of PNGs is used to
+determine the actual shape of the picture (otherwise you'll stamp a large
+rectangle on your drawings).
 
 Les fichiers PNG peuvent être de n'importe quelle taille, et Tux Paint (par
 défaut) fournit un ensemble de boutons de redimensionnement pour permettre à
@@ -601,9 +599,8 @@ Par exemple, pour le tampon "stamp.png", vous créeriez un autre fichier nommé
 "stamp_mirror.png", qui sera utilisé lorsque le tampon est mis en miroir
 (plutôt que d'utiliser une version à l'envers de "stamp.png").
 
-Depuis Tux Paint 0.9.18, vous pouvez également fournir une image pré-retournée
-avec "_flip" dans le nom, et / ou une image qui est à la fois en miroir et
-retournée, en la nommant " _mirror_flip".
+You may also provide a pre-flipped image with "_flip" in the name, and/or an
+image that is both mirrored and flipped, by naming it "_mirror_flip".
 
 💡 Remarque : Si l'utilisateur retourne et reflète une image, et qu'un
 "_mirror_flip" pré-dessiné n'existe pas, mais que "_flip" ou "_mirror" existe ,
@@ -636,11 +633,11 @@ dessinez, tapez du texte ou des tampons, le contour reste «au-dessus» de ce qu
 vous dessinez. Vous pouvez effacer des parties du dessin que vous avez faites,
 mais vous ne pouvez pas effacer le contour.
 
-Pour créer ce type "d'image de départ", dessinez simplement une image noir et
-blanc avec contour dans un programme de dessin, et sauvegardez la en tant
-fichier PNG ou SVG. Si vous sauvegardez en PNG, vous pouvez optionellement
-rendre l'image noire et transparente, plutôt que noire et blanche, mais ceci
-(depuis Tux Paint 0.9.21) n'est pas requis.
+To create this kind of 'starter' image, simply create an outlined black and
+white picture in a paint program, and save it as a raster PNG file, or vector
+SVG. If saving as a PNG, you may optionally render the image as
+black-and-transparent, rather than black-and-white, although this is not
+required.
 
                ### Images de démarrage avec 'style scénique' ###
 
@@ -836,10 +833,8 @@ options, et ont les mêmes options que les images de démarrage.
 
 'Modèles'
 
-Les images «Modèle» apparaissent également dans la boîte de dialogue «Nouveau»,
-avec les choix d'arrière-plan de couleur unie et les «Images de démarrage».
-(Remarque: Tux Paint avant la version 0.9.22 ne disposait pas de la
-fonctionnalité 'Template'.)
+'Template' images also appear in the 'New' dialog, along with solid color
+background choices and 'Starters'.
 
 À la différence des images dessinées dans Tux Paint par les utilisateurs puis
 réouvertes plus tard, l'ouverture d'un «modèle» crée un nouveau dessin. Lorsque
@@ -1015,12 +1010,11 @@ jour de Makefile, pour s'assurer que les fichiers ".im" sont disponibles pour
 
 Clavier virtuel sur écran
 
-As of version 0.9.22, Tux Paint's 'Text' and 'Label' tools can present an
-on-screen keyboard that allows the pointer (via a mouse, touch screen,
-eye-tracking systems, etc.) to be used to input characters. Files that describe
-the layout and available keys are stored in Tux Paint "osk" directory. Each
-keyboard layout is defined by a number of files (some of which may be shared by
-different layouts).
+Tux Paint's 'Text' and 'Label' tools can present an on-screen keyboard that
+allows the pointer (via a mouse, touch screen, eye-tracking systems, etc.) to
+be used to input characters. Files that describe the layout and available keys
+are stored in Tux Paint "osk" directory. Each keyboard layout is defined by a
+number of files (some of which may be shared by different layouts).
 
 Nous utiliserons le clavier QWERTY comme exemple :
 

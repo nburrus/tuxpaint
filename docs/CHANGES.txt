@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.January.6 (0.9.35)
+2025.January.12 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -61,6 +61,10 @@ https://tuxpaint.org/
     ----------------------
     * More complete description of Text & Label tools' on-screen keyboard
       in README documentation.
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Cleaned up docs a bit, by removing notes about differences in
+      some very old versions of Tux Paint.
       Bill Kendrick <bill@newbreedsoftware.com>
 
   * Ports & Building:

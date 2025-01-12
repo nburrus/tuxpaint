@@ -5,7 +5,7 @@
        Copyright © 2002-2025 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                janvier 9, 2025
+                               janvier 12, 2025
 
 +-----------------------------------+
 |        Table des matières         |
@@ -35,12 +35,10 @@
     Cela signifie que Tux Paint n'a pas pu trouver d'images de tampons ou a été
     invité à ne pas les charger.
 
-    Si vous avez installé Tux Paint, mais que vous n'avez pas installé la
-    collection optionnelle "Stamps" séparée, quittez Tux Paint et installez-le
-    maintenant. Il devrait être disponible à partir du même endroit où vous
-    avez obtenu le programme principal de Tux Paint. (Remarque: à partir de la
-    version 0.9.14, Tux Paint est livré avec une petite collection d'exemples
-    de tampons.)
+    If you installed Tux Paint, but did not install the separate, optional
+    "Stamps" collection, quit Tux Paint and install it now. It should be
+    available from the same place you got the main Tux Paint program. (Note:
+    Tux Paint ships with a very small collection of example stamps.)
 
     Si vous ne souhaitez pas installer la collection de tampons par défaut,
     vous pouvez simplement créer la vôtre. Consultez la documentation
@@ -172,14 +170,6 @@ Linux)\ ←
     devrez spécifier une commande appropriée en utilisant l'option
     "printcommand" dans le fichier de configuration de Tux Paint. (Voir la
     documentation OPTIONS .)
-
-    Remarque : les versions de Tux Paint antérieures à 0.9.15 utilisaient une
-    commande par défaut différente pour l'impression, "pngtopnm | pnmtops |
-    lpr", avec le format de sortie PNG, plutôt que PostScript.
-
-    Si vous avez changé votre option "printcommand" avant Tux Paint 0.9.15,
-    vous devrez revenir en arrière et la modifier pour pouvoir accepter
-    PostScript.
 
 
      
