@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.January.12 (0.9.35)
+2025.January.23 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -66,6 +66,11 @@ https://tuxpaint.org/
     * Cleaned up docs a bit, by removing notes about differences in
       some very old versions of Tux Paint.
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    * Mentioned Windows installer EXE "/SILENT" and "/VERYSILENT"
+      in INSTALL and FAQ docs.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t TOYAMA Shin-ichi & Jannie E.
 
   * Ports & Building:
     -----------------

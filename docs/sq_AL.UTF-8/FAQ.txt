@@ -5,7 +5,7 @@
  Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 12 janar 2025
+                                 23 janar 2025
 
 +-------------------------------------------+
 |             Pasqyrë e Lëndës              |
@@ -690,6 +690,15 @@ turns black! ←
         --nosysconfig
 
 
+     
+→ I need to deploy Tux Paint on many Windows systems at once ←
+    The installer executable version of Tux Paint
+    (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) accepts command-line options "/
+    SILENT" ("silent") and "/VERYSILENT" ("very silent") which can be used to
+    install and uninstall Tux Paint without use of an interactive set-up
+    window. This can be useful for automating installation on a collection of
+    PCs, for example using Microsoft Intune cloud-based endpoint management
+    solution (see https://learn.microsoft.com/mem/intune/).
      
 
 -------------------------------------------------------------------------------

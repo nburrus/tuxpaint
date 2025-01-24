@@ -5,7 +5,7 @@
  Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 12 janar 2025
+                                 23 janar 2025
 
 +------------------------------------------------------+
 |                   Pasqyrë e Lëndës                   |
@@ -431,6 +431,14 @@ location.
 
 At this point, you can click 'Install' to install Tux Paint!
 
+💡 The installer executable version of Tux Paint
+(tuxpaint-X.Y.Z-windows-ARCH-installer.exe) accepts command-line options "/
+SILENT" ("silent") and "/VERYSILENT" ("very silent") which can be used to
+install and uninstall Tux Paint without use of an interactive set-up window.
+This can be useful for automating installation on a collection of PCs, for
+example using Microsoft Intune cloud-based endpoint management solution (see
+https://learn.microsoft.com/mem/intune/).
+
 ## Ndryshim Rregullimesh Duke Përdorur Shkurtoren ##
 
 To change program settings, right-click on the TuxPaint shortcut and select
@@ -648,6 +656,8 @@ installed from the source code as follows. It should be installed to /opt/local
 
     $ git clone https://github.com/markuskimius/SDL2_Pango.git
     $ cd SDL2_Pango
+    $ export MACOSX_DEPLOYMENT_TARGET=11.0 # on Apple Silicon CPU; use "10.10"
+    on Intel CPU
     $ ./configure --prefix=/opt/local && make && sudo make install
 
 WARNING: Having any UNIX-like toolset installed on your Mac besides MacPorts
