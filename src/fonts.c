@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: January 3, 2025
+  Last modified: February 22, 2025
 */
 
 #include <stdio.h>
@@ -1040,18 +1040,23 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
   if (!no_system_fonts)
   {
 #ifdef WIN32
+    /* Windows: Look for fonts in the system font dir (as defined by Windows registry) */
     homedirdir = GetSystemFontDir();
     loadfonts(screen, texture, renderer, homedirdir);
+
+    /* Windows: Look for fonts in the user font dir (as defined by Windows registry) */
     homedirdir = GetUserFontDir();
     if (homedirdir != NULL){
       loadfonts(screen, texture, renderer, homedirdir);
     }
     free(homedirdir);
 #elif defined(__BEOS__)
+    /* BeOS: Look for fonts in various places */
     loadfonts(screen, texture, renderer, "/boot/home/config/font/ttffonts");
     loadfonts(screen, texture, renderer, "/usr/share/fonts");
     loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #elif defined(__HAIKU__)
+    /* Haiku: Look for fonts in various places, via "find_directory()" */
     dev_t volume = dev_for_path("/boot");
     char buffer[B_PATH_NAME_LENGTH + B_FILE_NAME_LENGTH];
     status_t result;
@@ -1065,19 +1070,24 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
     result = find_directory(B_USER_NONPACKAGED_FONTS_DIRECTORY, volume, false, buffer, sizeof(buffer));
     loadfonts(screen, texture, renderer, buffer);
 #elif defined(__APPLE__)
+    /* Apple: Look for fonts in various system locations and HOME */
     loadfonts(screen, texture, renderer, "/System/Library/Fonts");
     loadfonts(screen, texture, renderer, "/Library/Fonts");
     loadfonts(screen, texture, renderer, apple_fontsPath());
     loadfonts(screen, texture, renderer, "/usr/share/fonts");
     loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #elif defined(__ANDROID__)
+    /* Android: Look for fonts inside Tux Paint */
     loadfonts(screen, texture, renderer, "data/fonts");
+    /* Android: Look for fonts in a system folder */
     loadfonts(screen, texture, renderer, "/system/fonts");
 #elif defined(__sun__)
+    /* SunOS: Look for fonts in various system folders */
     loadfonts(screen, texture, renderer, "/usr/openwin/lib/X11/fonts");
     loadfonts(screen, texture, renderer, "/usr/share/fonts");
     loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
 #else
+    /* Others [e.g. Linux]: Look for fonts in various system folders */
     loadfonts(screen, texture, renderer, "/usr/share/feh/fonts");
     loadfonts(screen, texture, renderer, "/usr/share/fonts");
     loadfonts(screen, texture, renderer, "/usr/X11R6/lib/X11/fonts");
@@ -1088,12 +1098,15 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
     loadfonts(screen, texture, renderer, "/usr/share/vlc/skins2/fonts");
     loadfonts(screen, texture, renderer, "/usr/share/xplanet/fonts");
 #endif
-  
-    /* See what dirs fontconfig configuration files point to,
-       and try loading fonts from them */
 
+
+    /* See what dirs fontconfig configuration files point to,
+       and try loading fonts from those locations */
+
+    /* FIXME: We do not currently understand "<dir prefix=...>" -bjk 2025.02.22 */
 
 #if defined(__APPLE__)
+    /* Apple: Look for fonts.conf in $FONTCONFIG_PATH */
     fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
@@ -1101,6 +1114,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
       snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
     }
 #elif defined(__HAIKU__)
+    /* Haiku: Look for fonts.conf in a known system directory */
     fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
@@ -1108,14 +1122,64 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
       snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
     }
 #else
+    /* Others [e.g. Linux]: Look for fonts.conf in $FONTCONFIG_PATH (fallback to "/etc/fonts")
+       and $XDG_CONFIG_HOME (fallback to "$HOME/.config") */
     fontconfig_config_paths = malloc_fontconfig_config_paths(2, &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
-      fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
-      fontconfig_config_paths[1] = malloc(1024);
-      snprintf(fontconfig_config_paths[1], 1024, "%s/.config/fontconfig/fonts.conf", getenv("HOME"));
+      char * config_home;
+
+      /* System-wide fonts.conf */
+      if (getenv("FONTCONFIG_PATH") != NULL)
+      {
+        fontconfig_config_paths[0] = malloc(1024);
+        snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
+      }
+      else
+      {
+        fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
+      }
+
+      /* User font.conf */
+      config_home = NULL;
+      if (getenv("XDG_CONFIG_HOME") != NULL)
+      {
+        config_home = strdup(getenv("XDG_CONFIG_HOME"));
+      }
+      else
+      {
+#ifdef DEBUG
+        fprintf(stderr, "XDG_CONFIG_HOME not set, checking $HOME/.config/\n");
+#endif
+        if (getenv("HOME") != NULL)
+        {
+          config_home = malloc(1024);
+          snprintf(config_home, 1024, "%s/.config", getenv("HOME"));
+        }
+        else
+        {
+#ifdef DEBUG
+          fprintf(stderr, "No HOME, either?! Returing fallback in current directory\n");
+#endif
+        }
+      }
+
+      if (config_home != NULL)
+      {
+        fontconfig_config_paths[1] = malloc(1024);
+        snprintf(fontconfig_config_paths[1], 1024, "%s/.config/fontconfig/fonts.conf", config_home);
+        free(config_home);
+      }
+      else
+      {
+        fontconfig_config_paths[1] = NULL;
+        num_fontconfig_config_paths--;
+      }
     }
 #endif
+
+
+    /* Read and parse each fonts.conf file... */
 
     for (i = 0; i < num_fontconfig_config_paths; i++)
     {
@@ -1176,7 +1240,8 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                   }
 #endif
 #endif
-                
+
+                  /* Try to load fonts from the location found in the fonts.conf's <dir> tag */                
                   loadfonts(screen, texture, renderer, (char *) path_str);
                   free(path_str);
                   xmlFree(path);
@@ -1197,6 +1262,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
       free(fontconfig_config_paths);
   }
 
+  /* Load fonts that came packaged with Tux Paint */
   homedirdir = get_fname("fonts", DIR_DATA);
   loadfonts(screen, texture, renderer, homedirdir);
   free(homedirdir);
@@ -1216,6 +1282,9 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
     free(homedirdir);
   }
 #endif
+
+
+  /* Group the fonts... */
 
 #ifdef DEBUG
   printf("%s:%d - Grouping %d fonts...\n", __FILE__, __LINE__, num_font_styles);
