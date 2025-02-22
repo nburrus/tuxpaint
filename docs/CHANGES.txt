@@ -35,7 +35,6 @@ https://tuxpaint.org/
       entries found in system-wide and user-level FontConfig config files.
       This allows more fonts, and user-specific fonts, to be found & loaded.
       - It looks for:
-        - FIXME: <system fonts.conf> (Windows)
         - `./etc/fonts/fonts.conf` (ships with Tux Paint) (Windows)
         - `$FONTCONFIG_PATH/fonts.conf` (macOS/iOS, Linux/Unix)
           - or `/etc/fonts/fonts.conf` (Linux/Unix)
@@ -45,7 +44,7 @@ https://tuxpaint.org/
         - FIXME: ??? (ships with Tux Paint) (macOS)
       - Note: This adds a build dependency on `libxml-2.0`.
       Bill Kendrick <bill@newbreedsoftware.com>
-      h/t Mark Kim & Luc Schrijvers
+      h/t Mark Kim, Luc Schrijvers, & Shin-ichi TOYAMA
 
     + Tux Paint on Windows loads user fonts.
       (from e.g., `C:\Users\<username>\AppData\Local\Microsoft\Windows\Fonts`)

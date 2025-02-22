@@ -52,6 +52,15 @@
 #endif
 
 
+/* Enums representing the "prefix" attributes Tux Paint understands
+   in "fonts.conf" `<dir>` tags */
+enum {
+  FC_PREFIX_NONE, /* if none, "default", or "cwd" */
+  FC_PREFIX_XDG, /* if "xdg", use $XDG_DATA_HOME */
+  FC_PREFIX_RELATIVE, /* if "relative", relative to the "fonts.conf" where the `<dir>` tag exists */
+};
+
+
 /*
 	The following section renames global variables defined in SDL2_Pango.h to avoid errors during linking.
 	It is okay to rename these variables because they are constants.
@@ -998,8 +1007,6 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 }
 
 
-#define NUM_FONTCONFIG_CONFIG_PATHS 2 /* system-wide, and local/homedir */
-
 /**
  * Attempts to allocate space for a char * array to hold
  * a set of fontconfig config file paths for load_user_fonts() to
@@ -1222,12 +1229,23 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
             {
               if (xmlStrcmp(cur->name, (const xmlChar *) "dir") == 0)
               {
-                xmlChar * path;
+                xmlChar * path, * prefix;
                 char * path_str;
+                char prefix_path[1024];
+                int fontconfig_prefix = FC_PREFIX_NONE;
 
-                /* FIXME: We do not currently understand "<dir prefix=...>" -bjk 2025.02.22
-                   (prefix may be one of "cwd"/"default", "xdg", or "relative";
-                   see https://www.freedesktop.org/software/fontconfig/fontconfig-user.html */
+                /* Check for a "<dir prefix...>" attribute
+                   (see https://www.freedesktop.org/software/fontconfig/fontconfig-user.html) */
+                prefix = xmlGetProp(cur, (const xmlChar *) "prefix");
+                if (prefix != NULL)
+                {
+                  if (xmlStrcmp(prefix, (const xmlChar *) "xdg") == 0)
+                    fontconfig_prefix = FC_PREFIX_XDG;
+                  else if (xmlStrcmp(prefix, (const xmlChar *) "relative") == 0)
+                    fontconfig_prefix = FC_PREFIX_RELATIVE;
+
+                  xmlFree(prefix); 
+                }
 
                 /* Note: As we already look for both system and user fonts on Windows,
                    we'll just ignore "WINDOWSUSERFONTDIR" and "WINDOWSFONTDIR" magic paths;
@@ -1235,7 +1253,6 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                    See https://gitlab.freedesktop.org/fontconfig/fontconfig/-/blob/main/src/fcxml.c */
 
                 path = xmlNodeGetContent(cur);
-
                 if (path != NULL)
                 {
                   path_str = strdup((char *) path /* FIXME: is this cast safe? -bjk 2024.12.29 */);
@@ -1260,7 +1277,43 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
 #endif
 #endif
 
-                  /* Try to load fonts from the location found in the fonts.conf's <dir> tag */                
+                  /* Apply any "prefix" attribute of the <dir> tag: */
+
+                  prefix_path[0] = '\0';
+                  if (fontconfig_prefix == FC_PREFIX_XDG)
+                  {
+                    /* FIXME: Use xdg function */
+                    if (getenv("XDG_DATA_HOME") != NULL)
+                    {
+                      snprintf(prefix_path, sizeof(prefix_path), "%s/", getenv("XDG_DATA_HOME"));
+                    }
+                    else if (getenv("HOME") != NULL)
+                    {
+                      snprintf(prefix_path, sizeof(prefix_path), "%s/.local/share/", getenv("HOME"));
+                    }
+                  }
+                  else if (fontconfig_prefix == FC_PREFIX_RELATIVE)
+                  {
+                    /* FIXME */
+                    printf("fonts.conf <dir prefix=\"relative\"> not supported yet!\n");
+                  }
+
+                  if (prefix_path[0] != '\0')
+                  {
+                    char * tmp_str;
+                    size_t len;
+
+                    len = strlen(path_str) + strlen(prefix_path);
+                    tmp_str = (char *) malloc(sizeof(char *) * (len + 1));
+                    if (tmp_str != NULL)
+                    {
+                      snprintf(tmp_str, len, "%s%s", prefix_path, path_str);
+                      free(path_str);
+                      path_str = tmp_str;
+                    }
+                  }
+
+                  /* Try to load fonts from the location found in the fonts.conf's <dir> tag */
                   loadfonts(screen, texture, renderer, (char *) path_str);
                   free(path_str);
                   xmlFree(path);
