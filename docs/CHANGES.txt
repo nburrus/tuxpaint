@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.January.23 (0.9.35)
+2025.February.22 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -44,6 +44,7 @@ https://tuxpaint.org/
       h/t Mark Kim & Luc Schrijvers
 
     + Tux Paint on Windows loads user fonts.
+      (from e.g., `C:\Users\<username>\AppData\Local\Microsoft\Windows\Fonts`)
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
   * Other Improvements:
