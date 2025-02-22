@@ -30,6 +30,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
+#include <libgen.h>             /* for dirname() */
+
 #include <errno.h>
 
 #include <libintl.h>
@@ -64,7 +66,7 @@ enum {
 /*
 	The following section renames global variables defined in SDL2_Pango.h to avoid errors during linking.
 	It is okay to rename these variables because they are constants.
-	SDL2_Pango.h is included by fonts.h.  
+	SDL2_Pango.h is included by fonts.h.
 */
 #define _MATRIX_WHITE_BACK _MATRIX_WHITE_BACK2
 #define MATRIX_WHITE_BACK MATRIX_WHITE_BACK2
@@ -1244,7 +1246,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                   else if (xmlStrcmp(prefix, (const xmlChar *) "relative") == 0)
                     fontconfig_prefix = FC_PREFIX_RELATIVE;
 
-                  xmlFree(prefix); 
+                  xmlFree(prefix);
                 }
 
                 /* Note: As we already look for both system and user fonts on Windows,
@@ -1259,7 +1261,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
 #ifdef __linux__
 #ifndef __ANDROID__
                   wordexp_t result;
-                
+
                   wordexp(path_str, &result, 0);
                   if (result.we_wordv == NULL)
                   {
@@ -1294,8 +1296,21 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                   }
                   else if (fontconfig_prefix == FC_PREFIX_RELATIVE)
                   {
-                    /* FIXME */
-                    printf("fonts.conf <dir prefix=\"relative\"> not supported yet!\n");
+                    char *fc_cfg_path_copy, *dname;
+
+                    fc_cfg_path_copy = strdup(fontconfig_config_paths[i]);
+                    dname = dirname(fc_cfg_path_copy);
+                    snprintf(prefix_path, sizeof(prefix_path), "%s/", dname);
+                    free(fc_cfg_path_copy);
+                    /* Per dirname(3):
+                       These functions may return pointers to statically
+                       allocated memory which may be overwritten by
+                       subsequent calls. Alternatively, they may return a
+                       pointer to some part of path, so that the string
+                       referred to by path should not be modified or
+                       freed until the pointer returned by the function
+                       is no longer required.
+                    */
                   }
 
                   if (prefix_path[0] != '\0')
@@ -1303,8 +1318,8 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                     char * tmp_str;
                     size_t len;
 
-                    len = strlen(path_str) + strlen(prefix_path);
-                    tmp_str = (char *) malloc(sizeof(char *) * (len + 1));
+                    len = strlen(path_str) + strlen(prefix_path) + 1;
+                    tmp_str = (char *) malloc(sizeof(char *) * len);
                     if (tmp_str != NULL)
                     {
                       snprintf(tmp_str, len, "%s%s", prefix_path, path_str);
