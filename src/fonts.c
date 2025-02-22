@@ -1103,23 +1103,33 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
     /* See what dirs fontconfig configuration files point to,
        and try loading fonts from those locations */
 
-    /* FIXME: We do not currently understand "<dir prefix=...>" -bjk 2025.02.22 */
-
 #if defined(__APPLE__)
-    /* Apple: Look for fonts.conf in $FONTCONFIG_PATH */
     fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
+      /* Apple: Look for fonts.conf in $FONTCONFIG_PATH */
       fontconfig_config_paths[0] = malloc(1024);
       snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
+
+      /* FIXME: Apple: Look for the fonts.conf that we ship with Tux Paint for macOS */
     }
 #elif defined(__HAIKU__)
-    /* Haiku: Look for fonts.conf in a known system directory */
     fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
+      /* Haiku: Look for fonts.conf in a known system directory */
       fontconfig_config_paths[0] = malloc(1024);
       snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
+    }
+#elif defined(WIN32)
+    fontconfig_config_paths = malloc_fontconfig_config_paths(1 /* FIXME */, &num_fontconfig_config_paths);
+    if (fontconfig_config_paths != NULL)
+    {
+      /* FIXME: Windows: Look for fonts.conf ??? in some system directory/ies ??? */
+
+      /* Windows: Look for the fonts.conf that we ship with Tux Paint for Windows */
+      fontconfig_config_paths[0 /* FIXME */] = malloc(1024);
+      snprintf(fontconfig_config_paths[0 /* FIXME */], 1024, "etc/fonts/fonts.conf");
     }
 #else
     /* Others [e.g. Linux]: Look for fonts.conf in $FONTCONFIG_PATH (fallback to "/etc/fonts")
@@ -1167,7 +1177,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
       if (config_home != NULL)
       {
         fontconfig_config_paths[1] = malloc(1024);
-        snprintf(fontconfig_config_paths[1], 1024, "%s/.config/fontconfig/fonts.conf", config_home);
+        snprintf(fontconfig_config_paths[1], 1024, "%s/fontconfig/fonts.conf", config_home);
         free(config_home);
       }
       else
@@ -1214,6 +1224,15 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
               {
                 xmlChar * path;
                 char * path_str;
+
+                /* FIXME: We do not currently understand "<dir prefix=...>" -bjk 2025.02.22
+                   (prefix may be one of "cwd"/"default", "xdg", or "relative";
+                   see https://www.freedesktop.org/software/fontconfig/fontconfig-user.html */
+
+                /* Note: As we already look for both system and user fonts on Windows,
+                   we'll just ignore "WINDOWSUSERFONTDIR" and "WINDOWSFONTDIR" magic paths;
+                   also ignoring "APPSHAREFONTDIR" and "CUSTOMFONTDIR".
+                   See https://gitlab.freedesktop.org/fontconfig/fontconfig/-/blob/main/src/fcxml.c */
 
                 path = xmlNodeGetContent(cur);
 
