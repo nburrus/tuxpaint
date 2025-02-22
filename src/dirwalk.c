@@ -1,7 +1,7 @@
 /*
   dirwalk.c
 
-  Copyright (c) 2009-2023
+  Copyright (c) 2009-2025
   https://tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
@@ -19,8 +19,10 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: April 30, 2023
+  Last modified: February 22, 2025
 */
+
+/* #define DIRWALK_DEBUG */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -354,6 +356,7 @@ void tp_ftw(SDL_Surface *screen, SDL_Texture *texture,
 
   /* Open the directory: */
   d = opendir(dir);
+
 #ifdef __ANDROID__
   char *di;
   AAssetDir *adir;
@@ -365,11 +368,21 @@ void tp_ftw(SDL_Surface *screen, SDL_Texture *texture,
     di = strndup(dir, dlen);
     adir = open_asset_dir(di);
     if (!adir)
+    {
+#ifdef DIRWALK_DEBUG
+      printf("tp_ftw() can't opendir(%s)\n", dir);
+#endif
       return;
+    }
   }
 #else
   if (!d)
+  {
+#ifdef DIRWALK_DEBUG
+    printf("tp_ftw() can't opendir(%s)\n", dir);
+#endif
     return;
+  }
 #endif
 
   for (;;)
