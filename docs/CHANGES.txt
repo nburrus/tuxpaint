@@ -31,7 +31,7 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/feature-requests/95/
       Bill Kendrick <bill@newbreedsoftware.com>
 
-    + WIP Checking for fonts in any locations specified by "<dir>"
+    + Checking for fonts in any locations specified by "<dir>"
       entries found in system-wide and user-level FontConfig config files.
       This allows more fonts, and user-specific fonts, to be found & loaded.
       - It looks for:
@@ -41,7 +41,6 @@ https://tuxpaint.org/
         - `$XDG_CONFIG_HOME/fontconfig/fonts.conf` (Linux/Unix)
           - or `$HOME/.config/fontconfig/fonts.conf`
         - `/boot/system/settings/fonts/fonts.conf` (Haiku)
-        - FIXME: ??? (ships with Tux Paint) (macOS)
       - Note: This adds a build dependency on `libxml-2.0`.
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t Mark Kim, Luc Schrijvers, & Shin-ichi TOYAMA
