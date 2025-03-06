@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-29 02:14-0800\n"
+"POT-Creation-Date: 2025-03-06 01:18-0800\n"
 "PO-Revision-Date: 2006-06-17 23:07+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <mk@li.org>\n"
@@ -122,43 +122,43 @@ msgstr "Беж!"
 #. impossible for a user to type ASCII letters.
 #.
 #. Most translators should use scoring instead.
-#: ../dirwalk.c:198
+#: ../dirwalk.c:200
 msgid "qx"
 msgstr ""
 
-#: ../dirwalk.c:198
+#: ../dirwalk.c:200
 msgid "QX"
 msgstr ""
 
 #. distinct uppercase and lowercase (e.g., 'o' vs. 'O')
-#: ../dirwalk.c:223
+#: ../dirwalk.c:225
 msgid "oO"
 msgstr "oO"
 
 #. common punctuation (e.g., '?', '!', '.', ',', etc.)
-#: ../dirwalk.c:228
+#: ../dirwalk.c:230
 msgid ",.?!"
 msgstr ",.?!"
 
 #. uncommon punctuation (e.g., '@', '#', '*', etc.)
-#: ../dirwalk.c:232
+#: ../dirwalk.c:234
 #, fuzzy
 #| msgid "`\\%_@$~#{}<>^&*"
 msgid "`%_@$~#{<(^&*"
 msgstr "`\\%_@$~#{}<>^&*"
 
 #. digits (e.g., '0', '1' and '7')
-#: ../dirwalk.c:236
+#: ../dirwalk.c:238
 msgid "017"
 msgstr "017"
 
 #. distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero))
-#: ../dirwalk.c:240
+#: ../dirwalk.c:242
 msgid "O0"
 msgstr "O0"
 
 #. distinct line-like characters (e.g., 'l' (lowercase elle) vs. '1' (one) vs. 'I' (capital aye))
-#: ../dirwalk.c:244
+#: ../dirwalk.c:246
 msgid "1Il|"
 msgstr "1Il|"
 
@@ -168,19 +168,19 @@ msgstr "1Il|"
 #.
 #. You can use two different weight for scoring, 1 or 9, according
 #. to the importance.
-#: ../dirwalk.c:255
+#: ../dirwalk.c:257
 msgid "<1>spare-1a"
 msgstr ""
 
-#: ../dirwalk.c:256
+#: ../dirwalk.c:258
 msgid "<1>spare-1b"
 msgstr ""
 
-#: ../dirwalk.c:257
+#: ../dirwalk.c:259
 msgid "<9>spare-9a"
 msgstr ""
 
-#: ../dirwalk.c:258
+#: ../dirwalk.c:260
 msgid "<9>spare-9b"
 msgstr ""
 

@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.February.22 (0.9.35)
+2025.March.5 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -74,6 +74,12 @@ https://tuxpaint.org/
       in INSTALL and FAQ docs.
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t TOYAMA Shin-ichi & Jannie E.
+
+  * Localization Updates:
+    ---------------------
+    * German translation
+      Holger Wansing <hwansing@mailbox.org>
+      (via bugs.debian.org; h/t Jonathan Carter for pointing them out)
 
   * Ports & Building:
     -----------------

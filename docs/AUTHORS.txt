@@ -2,11 +2,11 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2024
+Copyright (c) 2002-2025
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - December 26, 2024
+June 17, 2002 - March 5, 2025
 
 * Design and Coding:
 
@@ -976,7 +976,7 @@ June 17, 2002 - December 26, 2024
     Roland Illig <roland.illig@gmx.de>
     Patrick <nc-spechtpa3 {At} netcologne [Dot] de>
     Burkhard Lück <lueck@hube-lueck.de>
-    Holger Wansing
+    Holger Wansing <hwansing@mailbox.org>
     Pfannenstein Erik (website)
 
   * Gronings
