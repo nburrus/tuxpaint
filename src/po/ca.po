@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: Tuxpaint cvs 2009-06-21\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 01:18-0800\n"
-"PO-Revision-Date: 2024-10-22 00:09+0200\n"
+"PO-Revision-Date: 2025-03-19 23:05+0100\n"
 "Last-Translator: Pere Pujal i Carabantes <perepujal@gmail.com>\n"
 "Language-Team: Català <linux-ca@chanae.alphanet.ch>\n"
 "Language: ca\n"
@@ -430,21 +430,21 @@ msgstr "L'eina Estampa serveix per inserir imatges al dibuix"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "New Magic tools: \"Hearts\", \"Sparkles\", and \"Stars\"."
-msgstr ""
+msgstr "Noves eines màgiques: «Cors», «Guspires» i «Estrelles»."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Improved color picker behavior"
-msgstr ""
+msgstr "Millora del selector de color"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Text and Label tools support pasting text from the copy/paste clipboard"
-msgstr ""
+msgstr "Text i Etiquetes poden rebre text del porta-retalls"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Text and Label tools attempt to load fonts in locations specified in "
 "FontConfig &lt;dir&gt; entries now, too"
-msgstr ""
+msgstr "Text i Etiquetes proven de carregar lletres especificades en els &lt;directoris&gt; de FontConfig"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "New Fill mode: \"Eraser\" flood fill."
@@ -2124,35 +2124,32 @@ msgstr "Feu clic per fer el relleu del dibuix."
 
 #: ../../magic/src/emitter.c:51
 msgid "Hearts"
-msgstr ""
+msgstr "Cors"
 
 #: ../../magic/src/emitter.c:52
 msgid "Sparkles"
-msgstr ""
+msgstr "Guspires"
 
 #: ../../magic/src/emitter.c:53
-#, fuzzy
-#| msgid "Star"
 msgid "Stars"
-msgstr "Estrella"
+msgstr "Estrelles"
 
 #: ../../magic/src/emitter.c:58
 msgid "hearts"
-msgstr ""
+msgstr "cors"
 
 #: ../../magic/src/emitter.c:59
 msgid "sparkles"
-msgstr ""
+msgstr "guspires"
 
 #: ../../magic/src/emitter.c:60
 msgid "stars"
-msgstr ""
+msgstr "estrelles"
 
 #: ../../magic/src/emitter.c:279
-#, fuzzy, c-format
-#| msgid "Click and drag to draw train track rails on your picture."
+#, c-format
 msgid "Click and drag to draw a trail of %s on your picture."
-msgstr "Feu clic i arrossegueu per dibuixar una via de tren."
+msgstr "Feu clic i arrossegueu per dibuixar un rastre de %s al dibuix."
 
 #: ../../magic/src/fade_darken.c:47
 msgid "Lighten"
