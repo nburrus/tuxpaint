@@ -221,22 +221,21 @@ void loadfont_callback(SDL_Surface *screen, SDL_Texture *texture,
           // especially important for users who have scroll buttons disabled.
           // Translators should do whatever is needed to put crummy fonts last.
 
-          user_font_styles[num_font_styles]->score +=
-            charset_works(font, /* distinct uppercase and lowercase (e.g., 'o' vs. 'O') */ gettext("oO")
-            );
+          user_font_styles[num_font_styles]->score += charset_works(font,
+                                                                    /* distinct uppercase and lowercase (e.g., 'o' vs. 'O') */
+                                                                    gettext("oO"));
 
           // common punctuation (e.g., '?', '!', '.', ',', etc.)
-          user_font_styles[num_font_styles]->score +=
-            charset_works(font, /* common punctuation (e.g., '?', '!', '.', ',', etc.) */ gettext(",.?!")
-            );
+          user_font_styles[num_font_styles]->score += charset_works(font,
+                                                                    /* common punctuation (e.g., '?', '!', '.', ',', etc.) */
+                                                                    gettext(",.?!"));
 
-          user_font_styles[num_font_styles]->score +=
-            charset_works(font, /* uncommon punctuation (e.g., '@', '#', '*', etc.) */ gettext("`\%_@$~#{<(^&*")
-            );
+          user_font_styles[num_font_styles]->score += charset_works(font,
+                                                                    /* uncommon punctuation (e.g., '@', '#', '*', etc.) */
+                                                                    gettext("`\%_@$~#{<(^&*"));
 
-          user_font_styles[num_font_styles]->score +=
-            charset_works(font, /* digits (e.g., '0', '1' and '7') */ gettext("017")
-            );
+          user_font_styles[num_font_styles]->score += charset_works(font,       /* digits (e.g., '0', '1' and '7') */
+                                                                    gettext("017"));
 
           user_font_styles[num_font_styles]->score += charset_works(font,       /* distinct circle-like characters (e.g., 'O' (capital oh) vs. '0' (zero)) */
                                                                     gettext("O0"));

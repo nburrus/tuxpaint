@@ -163,8 +163,8 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface * canvas,
                                 SDL_Surface * BLANK_oskdel,
                                 SDL_Surface * BLANK_osktab,
                                 SDL_Surface * BLANK_oskenter,
-                                SDL_Surface * BLANK_oskcapslock, SDL_Surface * BLANK_oskshift,
-                                SDL_Surface * BLANK_oskpaste, int disable_change);
+                                SDL_Surface * BLANK_oskcapslock,
+                                SDL_Surface * BLANK_oskshift, SDL_Surface * BLANK_oskpaste, int disable_change);
 
 struct osk_layout *osk_load_layout(char *layout_name);
 

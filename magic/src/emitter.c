@@ -39,7 +39,8 @@
 
 #define EMITTER_DRAW_THRESHOLD 16
 
-enum {
+enum
+{
   EMITTER_HEARTS,
   EMITTER_SPARKLES,
   EMITTER_STARS,
@@ -47,14 +48,14 @@ enum {
 };
 
 /* Names of the tools (for button labels) */
-char * emitter_names[NUM_EMITTERS] = {
+char *emitter_names[NUM_EMITTERS] = {
   gettext_noop("Hearts"),
   gettext_noop("Sparkles"),
   gettext_noop("Stars"),
 };
 
 /* For the "Draw a trail of %s ..." descriptions */
-char * emitter_descs[NUM_EMITTERS] = {
+char *emitter_descs[NUM_EMITTERS] = {
   gettext_noop("hearts"),
   gettext_noop("sparkles"),
   gettext_noop("stars"),
@@ -107,7 +108,7 @@ int emitter_max_trail_length;
 int emitter_cur_trail_length;
 int emitter_queue_x[EMITTER_QUEUE_SIZE], emitter_queue_y[EMITTER_QUEUE_SIZE];
 int emitter_queue_xm[EMITTER_QUEUE_SIZE], emitter_queue_ym[EMITTER_QUEUE_SIZE];
-SDL_Surface * * emitter_images[NUM_EMITTERS][EMITTER_QUEUE_SIZE];
+SDL_Surface **emitter_images[NUM_EMITTERS][EMITTER_QUEUE_SIZE];
 
 /* Function prototypes: */
 
@@ -120,22 +121,22 @@ int emitter_get_group(magic_api * api, int which);
 int emitter_get_order(int which);
 char *emitter_get_description(magic_api * api, int which, int mode);
 void emitter_drag(magic_api * api, int which, SDL_Surface * canvas,
-                SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
+                  SDL_Surface * last, int ox, int oy, int x, int y, SDL_Rect * update_rect);
 void emitter_click(magic_api * api, int which, int mode, SDL_Surface * canvas,
-                 SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
-void emitter_release(magic_api * api, int which, SDL_Surface * canvas,
                    SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
+void emitter_release(magic_api * api, int which, SDL_Surface * canvas,
+                     SDL_Surface * last, int x, int y, SDL_Rect * update_rect);
 void emitter_shutdown(magic_api * api);
 void emitter_set_color(magic_api * api, int which, SDL_Surface * canvas,
-                     SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
+                       SDL_Surface * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect);
 int emitter_requires_colors(magic_api * api, int which);
 void emitter_switchin(magic_api * api, int which, int mode, SDL_Surface * canvas);
 void emitter_switchout(magic_api * api, int which, int mode, SDL_Surface * canvas);
 int emitter_modes(magic_api * api, int which);
 Uint8 emitter_accepted_sizes(magic_api * api, int which, int mode);
 Uint8 emitter_default_size(magic_api * api, int which, int mode);
-void emitter_set_size(magic_api * api, int which, int mode, SDL_Surface * canvas, SDL_Surface * last, Uint8 size,
-                    SDL_Rect * update_rect);
+void emitter_set_size(magic_api * api, int which, int mode,
+                      SDL_Surface * canvas, SDL_Surface * last, Uint8 size, SDL_Rect * update_rect);
 
 
 Uint32 emitter_api_version(void)
@@ -149,7 +150,7 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
 {
   int i, j, k;
   char fname[1024];
-  SDL_Surface * surf;
+  SDL_Surface *surf;
   SDL_Rect src;
   Uint32 amask;
 
@@ -161,11 +162,11 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
 
   for (i = 0; i < NUM_EMITTERS; i++)
   {
-    emitter_images[i][0] = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
+    emitter_images[i][0] = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
     if (emitter_images[i][0] == NULL)
     {
       fprintf(stderr, "Cannot allocate %s (%d) emitter's surface #0\n", emitter_names[i], i);
-      return(0);
+      return (0);
     }
 
     snprintf(fname, sizeof(fname), "%simages/magic/emitter%d.png", api->data_directory, i);
@@ -173,7 +174,7 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
     if (surf == NULL)
     {
       fprintf(stderr, "Cannot load %s (%d) emitter's image: '%s'\n", emitter_names[i], i, fname);
-      return(0);
+      return (0);
     }
 
     if (emitter_frames[i] == 1)
@@ -191,10 +192,7 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
                                surf->w / emitter_frames[i],
                                surf->h,
                                surf->format->BitsPerPixel,
-                               surf->format->Rmask,
-                               surf->format->Gmask,
-                               surf->format->Bmask,
-                               amask);
+                               surf->format->Rmask, surf->format->Gmask, surf->format->Bmask, amask);
 
         src.x = (surf->w / emitter_frames[i]) * j;
         src.y = 0;
@@ -211,26 +209,28 @@ int emitter_init(magic_api *api, Uint8 disabled_features ATTRIBUTE_UNUSED, Uint8
       int w, h;
       float w_scale, h_scale;
 
-      emitter_images[i][j] = (SDL_Surface * *) malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
+      emitter_images[i][j] = (SDL_Surface * *)malloc(sizeof(SDL_Surface *) * emitter_frames[i]);
       if (emitter_images[i][j] == NULL)
       {
         fprintf(stderr, "Cannot allocate %s (%d) emitter's surface #%d\n", emitter_names[i], i, j);
-        return(0);
+        return (0);
       }
 
       for (k = 0; k < emitter_frames[i]; k++)
       {
         w = emitter_images[i][0][k]->w - (emitter_images[i][0][k]->w * j / EMITTER_QUEUE_SIZE);
         h = emitter_images[i][0][k]->h - (emitter_images[i][0][k]->h * j / EMITTER_QUEUE_SIZE);
-        w_scale = (float) w / (float) emitter_images[i][0][k]->w;
-        h_scale = (float) h / (float) emitter_images[i][0][k]->h;
+        w_scale = (float)w / (float)emitter_images[i][0][k]->w;
+        h_scale = (float)h / (float)emitter_images[i][0][k]->h;
 
-        emitter_images[i][j][k] = zoomSurface(emitter_images[i][0][k], w_scale, h_scale, 1 /* smooth */);
+        emitter_images[i][j][k] = zoomSurface(emitter_images[i][0][k], w_scale, h_scale, 1 /* smooth */ );
 
         if (emitter_images[i][j][k] == NULL)
         {
-          fprintf(stderr, "Cannot scale %s (%d) emitter's image ('%s') (frame %d) to %d's size: %d x %d\n", emitter_names[i], i, fname, k, j, w, h);
-          return(0);
+          fprintf(stderr,
+                  "Cannot scale %s (%d) emitter's image ('%s') (frame %d) to %d's size: %d x %d\n",
+                  emitter_names[i], i, fname, k, j, w, h);
+          return (0);
         }
       }
     }
@@ -276,15 +276,16 @@ char *emitter_get_description(magic_api *api ATTRIBUTE_UNUSED, int which, int mo
 {
   char desc[1024];
 
-  snprintf(desc, sizeof(desc), gettext("Click and drag to draw a trail of %s on your picture."), gettext(emitter_descs[which]));
+  snprintf(desc, sizeof(desc),
+           gettext("Click and drag to draw a trail of %s on your picture."), gettext(emitter_descs[which]));
   return (strdup(desc));
 }
 
 void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
-                SDL_Surface *last, int ox, int oy, int x, int y, SDL_Rect *update_rect)
+                  SDL_Surface *last, int ox, int oy, int x, int y, SDL_Rect *update_rect)
 {
   int i, img;
-  SDL_Surface * tmpSurf, * srcSurf;
+  SDL_Surface *tmpSurf, *srcSurf;
   SDL_Rect dest;
 
   SDL_BlitSurface(last, NULL, canvas, NULL);
@@ -362,9 +363,11 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
 
     if (emitter_rotate[which] != 0)
     {
-      tmpSurf = rotozoomSurface(srcSurf, (rand() % emitter_rotate[which] * 2) - emitter_rotate[which], 1.0 /* no scale */, 1 /* smoothing */);
+      tmpSurf =
+        rotozoomSurface(srcSurf, (rand() % emitter_rotate[which] * 2) - emitter_rotate[which], 1.0 /* no scale */ ,
+                        1 /* smoothing */ );
       if (tmpSurf == NULL)
-        return; // Abort!
+        return;                 // Abort!
     }
     else
     {
@@ -375,7 +378,7 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
     {
       int xx, yy;
       Uint32 amask;
-      SDL_Surface * tmpSurf2;
+      SDL_Surface *tmpSurf2;
       Uint8 r, g, b, a;
 
       dest.x = emitter_queue_x[i] - tmpSurf->w / 2;
@@ -393,10 +396,7 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
                              tmpSurf->w,
                              tmpSurf->h,
                              tmpSurf->format->BitsPerPixel,
-                             tmpSurf->format->Rmask,
-                             tmpSurf->format->Gmask,
-                             tmpSurf->format->Bmask,
-                             amask);
+                             tmpSurf->format->Rmask, tmpSurf->format->Gmask, tmpSurf->format->Bmask, amask);
 
       if (tmpSurf2 != NULL)
       {
@@ -409,7 +409,8 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
           {
             SDL_GetRGBA(api->getpixel(tmpSurf, x, y), tmpSurf->format, &r, &g, &b, &a);
             api->putpixel(tmpSurf2, x, y,
-                          SDL_MapRGBA(tmpSurf2->format, (r + emitter_r) >> 1, (g + emitter_g) >> 1, (b + emitter_b) >> 1, a));
+                          SDL_MapRGBA(tmpSurf2->format, (r + emitter_r) >> 1,
+                                      (g + emitter_g) >> 1, (b + emitter_b) >> 1, a));
           }
         }
         SDL_UnlockSurface(tmpSurf2);
@@ -435,7 +436,7 @@ void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
 }
 
 void emitter_click(magic_api *api, int which, int mode ATTRIBUTE_UNUSED,
-                 SDL_Surface *canvas, SDL_Surface *last, int x, int y, SDL_Rect *update_rect)
+                   SDL_Surface *canvas, SDL_Surface *last, int x, int y, SDL_Rect *update_rect)
 {
   emitter_queue_x[0] = x;
   emitter_queue_y[0] = y;
@@ -449,8 +450,8 @@ void emitter_click(magic_api *api, int which, int mode ATTRIBUTE_UNUSED,
 }
 
 void emitter_release(magic_api *api, int which,
-                   SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED,
-                   int x, int y ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
+                     SDL_Surface *canvas, SDL_Surface *last ATTRIBUTE_UNUSED,
+                     int x, int y ATTRIBUTE_UNUSED, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
 }
 
@@ -462,9 +463,10 @@ void emitter_shutdown(magic_api *api ATTRIBUTE_UNUSED)
     Mix_FreeChunk(emitter_snds[i]);
 }
 
-void emitter_set_color(magic_api *api, int which ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED,
-                     SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g, Uint8 b,
-                     SDL_Rect *update_rect ATTRIBUTE_UNUSED)
+void emitter_set_color(magic_api *api, int which ATTRIBUTE_UNUSED,
+                       SDL_Surface *canvas ATTRIBUTE_UNUSED,
+                       SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 r, Uint8 g,
+                       Uint8 b, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   emitter_r = r;
   emitter_g = g;
@@ -477,12 +479,12 @@ int emitter_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE
 }
 
 void emitter_switchin(magic_api *api ATTRIBUTE_UNUSED,
-                    int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
+                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
 }
 
 void emitter_switchout(magic_api *api ATTRIBUTE_UNUSED,
-                     int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
+                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
 }
 
@@ -502,9 +504,10 @@ Uint8 emitter_default_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_
   return (EMITTER_QUEUE_SIZE / EMITTER_QUEUE_SIZE_SCALE) / 2;
 }
 
-void emitter_set_size(magic_api *api ATTRIBUTE_UNUSED, int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
-                    SDL_Surface *canvas ATTRIBUTE_UNUSED, SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 size,
-                    SDL_Rect *update_rect ATTRIBUTE_UNUSED)
+void emitter_set_size(magic_api *api ATTRIBUTE_UNUSED,
+                      int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED,
+                      SDL_Surface *canvas ATTRIBUTE_UNUSED,
+                      SDL_Surface *last ATTRIBUTE_UNUSED, Uint8 size, SDL_Rect *update_rect ATTRIBUTE_UNUSED)
 {
   emitter_max_trail_length = size * EMITTER_QUEUE_SIZE_SCALE;
 }

@@ -56,10 +56,11 @@
 
 /* Enums representing the "prefix" attributes Tux Paint understands
    in "fonts.conf" `<dir>` tags */
-enum {
-  FC_PREFIX_NONE, /* if none, "default", or "cwd" */
-  FC_PREFIX_XDG, /* if "xdg", use $XDG_DATA_HOME */
-  FC_PREFIX_RELATIVE, /* if "relative", relative to the "fonts.conf" where the `<dir>` tag exists */
+enum
+{
+  FC_PREFIX_NONE,               /* if none, "default", or "cwd" */
+  FC_PREFIX_XDG,                /* if "xdg", use $XDG_DATA_HOME */
+  FC_PREFIX_RELATIVE,           /* if "relative", relative to the "fonts.conf" where the `<dir>` tag exists */
 };
 
 
@@ -198,7 +199,8 @@ int button_label_y_nudge;
 
 /* Local function prototypes: */
 
-char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_mallocd);
+char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallocd);
+
 #ifdef FORKED_FONTS
 static void reliable_read(int fd, void *buf, size_t count);
 #endif
@@ -1021,11 +1023,11 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
  *   allocated; either the same value as num_to_malloc, or 0 if failure
  * @return char * * | NULL -- pointer to the char * array, or NULL if malloc failed
  */
-char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_mallocd)
+char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallocd)
 {
-  char * * buf;
+  char **buf;
 
-  buf = (char * *) malloc(sizeof(char *) * num_to_malloc);
+  buf = (char * *)malloc(sizeof(char *) * num_to_malloc);
   if (buf == NULL)
     *num_actually_mallocd = 0;
   else
@@ -1038,7 +1040,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                                  SDL_Renderer *renderer, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
-  char * * fontconfig_config_paths;
+  char **fontconfig_config_paths;
   int num_fontconfig_config_paths = 0;
   int i;
 
@@ -1055,7 +1057,8 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
 
     /* Windows: Look for fonts in the user font dir (as defined by Windows registry) */
     homedirdir = GetUserFontDir();
-    if (homedirdir != NULL){
+    if (homedirdir != NULL)
+    {
       loadfonts(screen, texture, renderer, homedirdir);
     }
     free(homedirdir);
@@ -1131,14 +1134,16 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
       snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
     }
 #elif defined(WIN32)
-    fontconfig_config_paths = malloc_fontconfig_config_paths(1 /* FIXME */, &num_fontconfig_config_paths);
+    fontconfig_config_paths = malloc_fontconfig_config_paths(1 /* FIXME */ ,
+                                                             &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
       /* FIXME: Windows: Look for fonts.conf ??? in some system directory/ies ??? */
 
       /* Windows: Look for the fonts.conf that we ship with Tux Paint for Windows */
-      fontconfig_config_paths[0 /* FIXME */] = malloc(1024);
-      snprintf(fontconfig_config_paths[0 /* FIXME */], 1024, "etc/fonts/fonts.conf");
+      fontconfig_config_paths[0 /* FIXME */ ] = malloc(1024);
+      snprintf(fontconfig_config_paths[0 /* FIXME */ ], 1024,
+               "etc/fonts/fonts.conf");
     }
 #else
     /* Others [e.g. Linux]: Look for fonts.conf in $FONTCONFIG_PATH (fallback to "/etc/fonts")
@@ -1146,7 +1151,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
     fontconfig_config_paths = malloc_fontconfig_config_paths(2, &num_fontconfig_config_paths);
     if (fontconfig_config_paths != NULL)
     {
-      char * config_home;
+      char *config_home;
 
       /* System-wide fonts.conf */
       if (getenv("FONTCONFIG_PATH") != NULL)
@@ -1216,11 +1221,12 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
         cur = xmlDocGetRootElement(doc);
         if (cur == NULL)
         {
-          fprintf(stderr, "Error: Failed to parse empty fontconfig configuration file '%s'\n", fontconfig_config_paths[i]);
+          fprintf(stderr,
+                  "Error: Failed to parse empty fontconfig configuration file '%s'\n", fontconfig_config_paths[i]);
         }
         else
         {
-          if (xmlStrcmp(cur->name, (const xmlChar *) "fontconfig"))
+          if (xmlStrcmp(cur->name, (const xmlChar *)"fontconfig"))
           {
             fprintf(stderr, "Error: Not a fontconfig configuration file: '%s'\n", fontconfig_config_paths[i]);
           }
@@ -1229,21 +1235,21 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
             cur = cur->xmlChildrenNode;
             while (cur != NULL)
             {
-              if (xmlStrcmp(cur->name, (const xmlChar *) "dir") == 0)
+              if (xmlStrcmp(cur->name, (const xmlChar *)"dir") == 0)
               {
-                xmlChar * path, * prefix;
-                char * path_str;
+                xmlChar *path, *prefix;
+                char *path_str;
                 char prefix_path[1024];
                 int fontconfig_prefix = FC_PREFIX_NONE;
 
                 /* Check for a "<dir prefix...>" attribute
                    (see https://www.freedesktop.org/software/fontconfig/fontconfig-user.html) */
-                prefix = xmlGetProp(cur, (const xmlChar *) "prefix");
+                prefix = xmlGetProp(cur, (const xmlChar *)"prefix");
                 if (prefix != NULL)
                 {
-                  if (xmlStrcmp(prefix, (const xmlChar *) "xdg") == 0)
+                  if (xmlStrcmp(prefix, (const xmlChar *)"xdg") == 0)
                     fontconfig_prefix = FC_PREFIX_XDG;
-                  else if (xmlStrcmp(prefix, (const xmlChar *) "relative") == 0)
+                  else if (xmlStrcmp(prefix, (const xmlChar *)"relative") == 0)
                     fontconfig_prefix = FC_PREFIX_RELATIVE;
 
                   xmlFree(prefix);
@@ -1257,7 +1263,8 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                 path = xmlNodeGetContent(cur);
                 if (path != NULL)
                 {
-                  path_str = strdup((char *) path /* FIXME: is this cast safe? -bjk 2024.12.29 */);
+                  path_str = strdup((char *)path
+                                    /* FIXME: is this cast safe? -bjk 2024.12.29 */ );
 #ifdef __linux__
 #ifndef __ANDROID__
                   wordexp_t result;
@@ -1310,16 +1317,16 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                        referred to by path should not be modified or
                        freed until the pointer returned by the function
                        is no longer required.
-                    */
+                     */
                   }
 
                   if (prefix_path[0] != '\0')
                   {
-                    char * tmp_str;
+                    char *tmp_str;
                     size_t len;
 
                     len = strlen(path_str) + strlen(prefix_path) + 1;
-                    tmp_str = (char *) malloc(sizeof(char *) * len);
+                    tmp_str = (char *)malloc(sizeof(char *) * len);
                     if (tmp_str != NULL)
                     {
                       snprintf(tmp_str, len, "%s%s", prefix_path, path_str);
@@ -1329,7 +1336,7 @@ char * * malloc_fontconfig_config_paths(int num_to_malloc, int * num_actually_ma
                   }
 
                   /* Try to load fonts from the location found in the fonts.conf's <dir> tag */
-                  loadfonts(screen, texture, renderer, (char *) path_str);
+                  loadfonts(screen, texture, renderer, (char *)path_str);
                   free(path_str);
                   xmlFree(path);
                 }

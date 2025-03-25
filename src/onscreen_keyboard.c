@@ -90,8 +90,8 @@ struct osk_keyboard *osk_create(char *layout_name, SDL_Surface *canvas,
                                 SDL_Surface *BLANK_oskdel,
                                 SDL_Surface *BLANK_osktab,
                                 SDL_Surface *BLANK_oskenter,
-                                SDL_Surface *BLANK_oskcapslock, SDL_Surface *BLANK_oskshift,
-                                SDL_Surface *BLANK_oskpaste, int disable_change)
+                                SDL_Surface *BLANK_oskcapslock,
+                                SDL_Surface *BLANK_oskshift, SDL_Surface *BLANK_oskpaste, int disable_change)
 {
   SDL_Surface *surface;
   SDL_Surface *button_up, *button_down;
@@ -1821,8 +1821,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard *keyboard, int x, int y)
                    keyboard->BLANK_button_hold,
                    keyboard->BLANK_oskdel, keyboard->BLANK_osktab,
                    keyboard->BLANK_oskenter, keyboard->BLANK_oskcapslock,
-                   keyboard->BLANK_oskshift, keyboard->BLANK_oskshift,
-                   keyboard->disable_change);
+                   keyboard->BLANK_oskshift, keyboard->BLANK_oskshift, keyboard->disable_change);
 
       free(aux_list_ptr);
 
@@ -1900,7 +1899,7 @@ struct osk_keyboard *osk_clicked(on_screen_keyboard *keyboard, int x, int y)
       else if (wcsncmp(L"XF86Paste", ks, 9) == 0)
       {
         event.key.keysym.sym = SDLK_PASTE;
-        event.text.text[0] = '\0'; // FIXME: Is this okay? -bjk 2024.12.25
+        event.text.text[0] = '\0';      // FIXME: Is this okay? -bjk 2024.12.25
       }
       else if (wcsncmp(L"NoSymbol", ks, 8) == 0)
       {
