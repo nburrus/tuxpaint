@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
 <!-- Copyright 2019-2022 Endless OS Foundation LLC -->
-<!-- Copyright 2024 Tux Paint developers -->
+<!-- Copyright 2025 Tux Paint developers -->
 <component type="desktop">
   <id>org.tuxpaint.Tuxpaint</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -47,7 +47,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.35" date="2024-12-29">
+    <release version="0.9.35" date="2025-03-24">
       <description>
         <p>New Magic tools: "Hearts", "Sparkles", and "Stars".</p>
         <p>Improved color picker behavior</p>

@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 9 janar 2025
+                                 24 mars 2025
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
