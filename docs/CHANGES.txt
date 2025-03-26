@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.March.24 (0.9.35)
+2025.March.26 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -79,6 +79,9 @@ https://tuxpaint.org/
     ---------------------
     * Catalan translation
       Pere Pujal i Carabantes <perepujal@gmail.com>
+
+    * French translation
+      Jacques Chion <jacques.chion@orange.fr>
 
     * German translation
       Holger Wansing <hwansing@mailbox.org>
