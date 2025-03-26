@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 01:18-0800\n"
-"PO-Revision-Date: 2024-10-07 19:29+0200\n"
+"PO-Revision-Date: 2025-03-26 11:00+0100\n"
 "Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
@@ -393,32 +393,31 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "New Magic tools: \"Hearts\", \"Sparkles\", and \"Stars\"."
-msgstr ""
+msgstr "Nouveaux outils Magie : \"Coeurs\", \"Étincelles\" et \"Étoiles\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Improved color picker behavior"
-msgstr ""
+msgstr "Amélioration du comportement du sélecteur de couleur"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Text and Label tools support pasting text from the copy/paste clipboard"
 msgstr ""
+"Les outils Texte et Étiquettes permettent de copier/coller du texte à l'aide "
+"du presse-papier"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
 msgid ""
 "Text and Label tools attempt to load fonts in locations specified in "
 "FontConfig &lt;dir&gt; entries now, too"
 msgstr ""
+"Les outils Texte et Étiquettes peuvent également charger des polices "
+"spécifiées dans  FontConfig &lt;dir&gt; "
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "New Fill mode: \"Eraser\" flood fill."
 msgstr "Nouveau mode de remplissage : \"Gomme\" avec remplissage."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
-#, fuzzy
-#| msgid ""
-#| "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, "
-#| "various \"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\" and "
-#| "\"Square Spiral\"."
 msgid ""
 "New Magic tools: \"Comic dots\", \"Rotate\", various \"ASCII\" art, various "
 "\"Fractals\", \"Crescent\", \"Spray Paint\", \"Spiral\", \"Square Spiral\", "
@@ -426,25 +425,28 @@ msgid ""
 "tools."
 msgstr ""
 "Nouveaux outils Magie : \"Points Comiques\", \"Rotation\", divers arts "
-"\"ASCII\", divers \"Fractales\",\"Croissant\", \"Peinture en spray\", "
-"\"Spirale\" et \"Spirale carrée\"."
+"\"ASCII\", diverses \"Fractales\",\"Croissant\", \"Peinture en spray\", "
+"\"Spirale\", \"Spirale carrée\", Cercle concentrique\",  \"Carré concentrique"
+"\" et quelques outils \"Pavage\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:62
-#, fuzzy
-#| msgid "New brush: Fluff (gradient)."
 msgid ""
-"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Impasto\", \"Paint "
-"splats\", \"Smoke\", \"Spines\", \"Water (still)\", and \"Watercolor "
-"splotches\"."
-msgstr "Nouveau pinceau : Duvet (progressif)"
+"New brushes: \"Fluff (gradient)\", \"Graphite\", \"Impasto\", \"Paint splats"
+"\", \"Smoke\", \"Spines\", \"Water (still)\", and \"Watercolor splotches\"."
+msgstr ""
+"Nouveaux pinceaux : \"Duvet (progressif)\", \"Graphite\", \"Impasto\", "
+"\"Flocons de peinture\", \"Fumée\", \" Épines\", \"Eau (calme)\" et "
+"\"Èclaboussements\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:63
 msgid "New brush option: \"Chaotic\" (random direction)."
-msgstr ""
+msgstr "Une nouvelle option : \"Chaotique\" (direction aléatoire)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:64
 msgid "New templates: \"Clouds from an airplane\" and \"Lough Leane\"."
 msgstr ""
+"Nouveaux modèles : \"Nuages depuis un avion\" et \"Lough Leane\" (lac "
+"irlandais)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid "Transparent Erasers."
@@ -497,9 +499,9 @@ msgid ""
 "Drawings removed by the \"Erase\" option in the Open dialog are moved to the "
 "desktop Trash on Haiku now, too."
 msgstr ""
-"Les dessins effacés via l'option \"Effacer\" de la boîte de dialogue "
-"\"Ouvrir\" sont maintenant placés dans la corbeille du bureau sur les "
-"appareils fonctionnant avec HaIku."
+"Les dessins effacés via l'option \"Effacer\" de la boîte de dialogue \"Ouvrir"
+"\" sont maintenant placés dans la corbeille du bureau sur les appareils "
+"fonctionnant avec HaIku."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:83
 msgid ""
@@ -783,9 +785,9 @@ msgstr ""
 "Six nouveaux outils de \"Magie\" ont été ajoutés. 'Panneaux\" contracte le "
 "dessin et le reproduit ensuite sur une grille de 2x2, ce qui est utile pour "
 "concevoir des B.D. sur quatre panneaux. \"Complément\" donne la couleur "
-"complémentaire. \"Éclair\" dessine un éclair de manière interactive. "
-"\"Reflet\" crée un reflet du dessin comme sur un lac. \"Étirer\" pour étirer "
-"et déformer l'image comme un miroir de foire. Et enfin, \"Arc-en-ciel doux\" "
+"complémentaire. \"Éclair\" dessine un éclair de manière interactive. \"Reflet"
+"\" crée un reflet du dessin comme sur un lac. \"Étirer\" pour étirer et "
+"déformer l'image comme un miroir de foire. Et enfin, \"Arc-en-ciel doux\" "
 "fournit une variation plus douce que l'outil arc-en-ciel classique."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:137
@@ -882,10 +884,10 @@ msgid ""
 "using the Text and Label tools, now appears larger on bigger displays; "
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
-"Le clavier virtuel, disponible sur option quand on utilise les outils "
-"\"Texte\" et \"Étiquette\" , apparaît plus grand sur des écrans plus grand; "
-"c'est utile avec des des dispositifs d'entrée moins précis, tels que "
-"systèmes pilotés avec les yeux."
+"Le clavier virtuel, disponible sur option quand on utilise les outils \"Texte"
+"\" et \"Étiquette\" , apparaît plus grand sur des écrans plus grand; c'est "
+"utile avec des des dispositifs d'entrée moins précis, tels que systèmes "
+"pilotés avec les yeux."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:153
 msgid ""
@@ -1591,8 +1593,8 @@ msgid ""
 "You already turned this picture into a template. Look for it in the “New“ "
 "dialog!"
 msgstr ""
-"Tu as déjà mis cette image comme modèle. Vois la boîte de dialogue "
-"\"Nouveau\" !"
+"Tu as déjà mis cette image comme modèle. Vois la boîte de dialogue \"Nouveau"
+"\" !"
 
 #: ../tuxpaint.c:2548
 msgid "Sorry! Your picture could not turned into a template!"
@@ -2012,7 +2014,7 @@ msgstr "3D"
 
 #: ../../magic/src/colorsep.c:42
 msgid "Color Sep."
-msgstr "Sép. des couleurs"
+msgstr "Sép. des couleurs."
 
 #: ../../magic/src/colorsep.c:43
 msgid "Double Vision"
@@ -2150,36 +2152,34 @@ msgstr "Clique pour donner du relief à toute l'image."
 
 #: ../../magic/src/emitter.c:51
 msgid "Hearts"
-msgstr ""
+msgstr "Coeurs"
 
 #: ../../magic/src/emitter.c:52
 msgid "Sparkles"
-msgstr ""
+msgstr "Étincelles"
 
 #: ../../magic/src/emitter.c:53
-#, fuzzy
-#| msgid "Star"
 msgid "Stars"
-msgstr "Étoile"
+msgstr "Étoiles"
 
 #: ../../magic/src/emitter.c:58
 msgid "hearts"
-msgstr ""
+msgstr "coeurs"
 
 #: ../../magic/src/emitter.c:59
 msgid "sparkles"
-msgstr ""
+msgstr "étincelles"
 
 #: ../../magic/src/emitter.c:60
 msgid "stars"
-msgstr ""
+msgstr "étoiles"
 
 #
 #: ../../magic/src/emitter.c:279
-#, fuzzy, c-format
-#| msgid "Click and drag to draw train track rails on your picture."
+#, c-format
 msgid "Click and drag to draw a trail of %s on your picture."
-msgstr "Clique et déplace la souris pour dessiner des rails."
+msgstr ""
+"Clique et déplace la souris pour dessiner une suite de %s sur ton dessin."
 
 #: ../../magic/src/fade_darken.c:47
 msgid "Lighten"
@@ -3193,34 +3193,28 @@ msgid "Square Spiral"
 msgstr "Spirale Carrée"
 
 #: ../../magic/src/spiral.c:48
-#, fuzzy
-#| msgid "Isometric Lines"
 msgid "Concentric Circles"
-msgstr "Lignes isométriques"
+msgstr "Cercles Concentriques"
 
 #: ../../magic/src/spiral.c:49
 msgid "Concentric Squares"
-msgstr ""
+msgstr "Carrés Concentriques"
 
 #: ../../magic/src/spiral.c:53
 msgid "Click and drag to create a spiral."
-msgstr "Clique et déplace la souris pour créer une spirale"
+msgstr "Clique et déplace la souris pour créer une spirale."
 
 #: ../../magic/src/spiral.c:54
 msgid "Click and drag to create a square spiral."
-msgstr "Clique et déplace la souris pour créer une spirale carrée"
+msgstr "Clique et déplace la souris pour créer une spirale carrée."
 
 #: ../../magic/src/spiral.c:55
-#, fuzzy
-#| msgid "Click and drag to create a spiral."
 msgid "Click and drag to create concentric circles."
-msgstr "Clique et déplace la souris pour créer une spirale"
+msgstr "Clique et déplace la souris pour créer des carrés concentriques."
 
 #: ../../magic/src/spiral.c:56
-#, fuzzy
-#| msgid "Click and drag to create a square spiral."
 msgid "Click and drag to create concentric squares."
-msgstr "Clique et déplace la souris pour créer une spirale carrée"
+msgstr "Clique et déplace la souris pour créer des carrés concentriques."
 
 #: ../../magic/src/spraypaint.c:104
 msgid "Spray Paint"
@@ -3318,29 +3312,29 @@ msgstr "Clique et déplace la souris pour ajouter de la fourrure à ton dessin."
 
 #: ../../magic/src/tessell.c:115
 msgid "Tessellation Pointy"
-msgstr ""
+msgstr "Pavés pointus"
 
 #. which == TOOL_TESSELL_TOP_TOP
 #: ../../magic/src/tessell.c:117
 msgid "Tessellation Flat"
-msgstr ""
+msgstr "Pavés plats"
 
 #: ../../magic/src/tessell.c:133
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw a repeating tessellating pattern of pointy-topped "
 "hexagons."
-msgstr "Clique et promène la souris pour dessiner des motifs répétitifs."
+msgstr ""
+"Clique et promène la souris pour dessiner des motifs répétitifs de pavés "
+"hexagonaux pointus."
 
 #. which == TOOL_TESSELL_FLAT_TOP
 #: ../../magic/src/tessell.c:135
-#, fuzzy
-#| msgid "Click and drag to draw repetitive patterns."
 msgid ""
 "Click and drag to draw a repeating tessellating pattern of flat-topped "
 "hexagons."
-msgstr "Clique et promène la souris pour dessiner des motifs répétitifs."
+msgstr ""
+"Clique et promène la souris pour dessiner des motifs répétitifs de pavés "
+"hexagonaux aplatis."
 
 #: ../../magic/src/tint.c:73
 msgid "Tint"
