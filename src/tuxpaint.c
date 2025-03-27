@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2024
+  Copyright (c) 2002-2025
   by various contributors; see AUTHORS.txt
   https://tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - December 25, 2024
+  June 14, 2002 - March 27, 2025
 */
 
 #include "platform.h"
@@ -276,15 +276,15 @@ char *strcasestr(const char *haystack, const char *needle)
 #include <fs_info.h>
 #endif
 
-#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__ || defined __ANDROID__
 #include <wchar.h>
+
+#if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__ || defined __ANDROID__
 #include <stdbool.h>
 #ifndef __HAIKU__
 #define FALSE false
 #define TRUE true
 #endif
 #else
-#include <wchar.h>
 #include <wctype.h>
 #endif
 
