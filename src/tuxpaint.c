@@ -277,6 +277,7 @@ char *strcasestr(const char *haystack, const char *needle)
 #endif
 
 #include <wchar.h>
+#include <wctype.h>
 
 #if defined __BEOS__ || defined __HAIKU__ || defined __APPLE__ || defined __ANDROID__
 #include <stdbool.h>
@@ -284,8 +285,6 @@ char *strcasestr(const char *haystack, const char *needle)
 #define FALSE false
 #define TRUE true
 #endif
-#else
-#include <wctype.h>
 #endif
 
 #include <libintl.h>
