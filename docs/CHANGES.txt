@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.March.26 (0.9.35)
+2025.March.28 (0.9.35)
   * New Magic Tools:
     ----------------
     + Heart, Sparkle, and Star emitters
@@ -90,7 +90,7 @@ https://tuxpaint.org/
     * Japanese translation
       TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
 
-* Ports & Building:
+  * Ports & Building:
     -----------------
     + Don't use Linux-specific invocation of "install"; use "mkdir" & "cp"
       Thomas Klausner <wiz@netbsd.org>
