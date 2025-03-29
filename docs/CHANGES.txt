@@ -87,7 +87,10 @@ https://tuxpaint.org/
       Holger Wansing <hwansing@mailbox.org>
       (via bugs.debian.org; h/t Jonathan Carter for pointing them out)
 
-  * Ports & Building:
+    * Japanese translation
+      TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+
+* Ports & Building:
     -----------------
     + Don't use Linux-specific invocation of "install"; use "mkdir" & "cp"
       Thomas Klausner <wiz@netbsd.org>
