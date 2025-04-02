@@ -3181,10 +3181,11 @@ static void mainloop(void)
                   if (tmp != NULL)
                   {
                     int exceeded;
+		    int i;
 
                     mbstowcs(tmp, pasted_txt, n);       /* at most n wchar_t written */
                     exceeded = 0;
-                    for (int i = 0; tmp[i] != '\0' && !exceeded; i++)
+                    for (i = 0; tmp[i] != '\0' && !exceeded; i++)
                     {
                       if (tmp[i] == '\n')
                       {
