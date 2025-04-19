@@ -282,7 +282,8 @@ char *emitter_get_description(magic_api *api ATTRIBUTE_UNUSED, int which, int mo
 }
 
 void emitter_drag(magic_api *api, int which, SDL_Surface *canvas,
-                  SDL_Surface *last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED, int x, int y, SDL_Rect *update_rect)
+                  SDL_Surface *last, int ox ATTRIBUTE_UNUSED, int oy ATTRIBUTE_UNUSED, int x, int y,
+                  SDL_Rect *update_rect)
 {
   int i, img;
   SDL_Surface *tmpSurf, *srcSurf;
