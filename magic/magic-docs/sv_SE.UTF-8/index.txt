@@ -1,0 +1,169 @@
+              Tux Paint "Magic" Tool: Lista över magiska verktyg
+
+                               ### Distorts ###
+
+  * Blur
+  * Sharpen
+  * Smudge
+  * Blocks
+  * Krita
+  * Droppa
+  * Klona
+  * Distortion
+  * Puzzle
+  * Cirklar
+  * Rays
+  * Kanter
+  * Emboss
+  * Silhouette
+  * Fisheye
+  * Ripples
+  * Glass Tile
+  * Irregular Mosaic
+  * Hexagon Mosaic
+  * Square Mosaic
+  * Mosaik
+  * TV
+  * TV (Bright)
+  * ASCII Typewriter
+  * ASCII-dator
+  * ASCII-färgdator
+  * Brus
+  * Halvton
+
+                             ### Color Filters ###
+
+  * Negativ
+  * Motsats
+  * Mätta
+  * Avmätta
+  * Darken
+  * Ljusare
+  * Remove Color
+  * Behåll färg
+  * Tint
+  * Färg och vitt
+  * Cartoon
+  * Color Shift
+  * Dither
+  * Dither (Keep Colors)
+  * 3D-glasögon
+  * Color Sep.
+  * Double Vision
+  * Xor Colors
+  * Blommande
+
+                             ### Picture Warps ###
+
+  * Spegel
+  * Flip
+  * Shift
+  * Zooma
+  * Tile Zoom
+  * Panels
+  * Rush
+  * Perspektiv
+  * Reflection
+  * Stretch
+  * Waves
+  * Wavelets
+  * Fold
+  * Kaleido-4, Kaleido-6, and Kaleido-8
+  * Rotate
+
+                                ### Målning ###
+
+  * Tegelstenar
+  * Spray Paint
+  * Rainbow
+  * Mjuk regnbåge
+  * Rainbow Cycle
+  * Kalligrafi
+  * Band
+  * Crescent
+  * Smooth
+  * Spiral
+  * Fyrkantig spiral
+  * Concentric Circle
+  * Concentric Square
+  * Krumelurer
+  * Loops
+  * Confetti
+  * Rain
+  * Foam
+  * Gräs
+  * Fur
+  * Pixels
+  * Comic Dots
+  * Labyrint
+  * Fretwork
+  * Rails
+  * Metallfärg
+  * Toothpaste
+  * Wet Paint
+  * Ljus
+  * Hjärtan
+  * Gnistrande
+  * Stars
+  * Fractal
+
+                           ### Pattern Painting ###
+
+  * Symmetry Left/Right
+  * Symmetry Up/Down
+  * Kalejdoskop
+  * Pattern
+  * Tiles
+  * Rosette
+  * Picasso
+  * Tessellation Pointy
+  * Tessellation Flat
+
+                          ### Picture Decorations ###
+
+  * Blind
+  * Checkerboard
+  * Snow Ball
+  * Snow Flake
+
+                              ### Projections ###
+
+  * 1-Point Draw
+  * 1-Point Select
+  * 2-Point Draw
+  * 2-Point Select
+  * 3-Point Draw
+  * 3-Point Select
+  * Isometric Line
+  * Dimetric Draw
+  * Dimetric Select
+  * Trimetric Draw
+  * Trimetric Select
+  * Oblique Draw
+  * Oblique Select
+
+                               ### Artistic ###
+
+  * Flower
+  * Googly Eyes
+  * Real Rainbow
+  * ROYGBIV Rainbow
+  * Lightning
+  * Tornado
+  * Fylld polygon
+  * String Edges
+  * String Corner
+  * String V
+  * Epicykloid
+  * Epitrochoid Edge
+  * Epitrochoid Inside
+  * Epitrochoid Outside
+  * Hypotrochoid
+  * Hypotrochoid Edge
+  * Hypotrochoid Inside
+  * Hypotrochoid Outside
+
+-------------------------------------------------------------------------------
+
+                               Tux Paint 0.9.35
+

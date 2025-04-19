@@ -93,6 +93,9 @@ https://tuxpaint.org/
     * Swedish translation
       Daniel Nylander <po@danielnylander.se>
 
+    * Swedish documentation
+      Daniel Nylander <po@danielnylander.se>
+
   * Ports & Building:
     -----------------
     + Don't use Linux-specific invocation of "install"; use "mkdir" & "cp"
