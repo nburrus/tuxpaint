@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 01:18-0800\n"
-"PO-Revision-Date: 2025-04-19 16:21+0200\n"
+"PO-Revision-Date: 2025-04-20 13:53+0200\n"
 "Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
@@ -247,7 +247,7 @@ msgstr "Formad"
 #. Eraser tool
 #: ../fill_tools.h:85 ../tools.h:91
 msgid "Eraser"
-msgstr "Suddgummi"
+msgstr "Sudda"
 
 #: ../fill_tools.h:88
 #, c-format
@@ -402,7 +402,7 @@ msgstr "Förbättrat beteende hos färgväljaren"
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:54
 msgid "Text and Label tools support pasting text from the copy/paste clipboard"
 msgstr ""
-"Text- och etikettverktygen har stöd för att klistra in text från urklipp för "
+"Text- och rubrikverktygen har stöd för att klistra in text från urklipp för "
 "kopiera/klistra in"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:55
@@ -410,12 +410,12 @@ msgid ""
 "Text and Label tools attempt to load fonts in locations specified in "
 "FontConfig &lt;dir&gt; entries now, too"
 msgstr ""
-"Text- och etikettverktyg försöker nu också ladda teckensnitt på platser som "
+"Text- och rubrikverktyg försöker nu också ladda teckensnitt på platser som "
 "anges i FontConfig &lt;dir&gt; -poster"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:60
 msgid "New Fill mode: \"Eraser\" flood fill."
-msgstr "Nytt fyllningsläge: \"Suddgimmin\" överflödesfyllning."
+msgstr "Nytt fyllningsläge: \"Sudda\" överflödesfyllning."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:61
 msgid ""
@@ -448,7 +448,7 @@ msgstr "Nya mallar: \"Moln från ett flygplan\" och \"Lough Leane\"."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:69
 msgid "Transparent Erasers."
-msgstr "Transparenta suddgummin."
+msgstr "Genomskinliga suddgummin."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:70
 msgid "Brushes support descriptions."
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Font name and size shown when selecting fonts in Text and Label tools."
 msgstr ""
 "Teckensnittsnamn och -storlek visas när du väljer teckensnitt i text- och "
-"etikettverktygen."
+"rubrikverktygen."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:89
 msgid "Bug-fixes and localization updates."
@@ -552,7 +552,7 @@ msgstr "Nya magiska verktyg: Slingor, Band, Utjämna och Krumelur."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:95
 msgid "Eraser tool now offers fuzzy (soft-edged) erasers."
-msgstr "Suddgummi-verktyget erbjuder nu luddiga (mjuka kanter) suddgummin."
+msgstr "Sudda-verktyget erbjuder nu luddiga (mjuka kanter) suddgummin."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:96
 msgid ""
@@ -605,7 +605,7 @@ msgstr "Många magiska verktyg erbjuder nu storleksinställningar."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:106
 msgid "Button labels word-wrap when possible (improves legibility)."
-msgstr "Knappetiketter ordbryts när så är möjligt (förbättrar läsbarheten)."
+msgstr "Knapprubriker ordbryts när så är möjligt (förbättrar läsbarheten)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:111
 msgid ""
@@ -631,8 +631,7 @@ msgstr "Fyll-verktyget har nu ett läge för formad gradient (avfasning)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:115
 msgid "A quick Eraser mode can be accessed via keyboard shortcut."
-msgstr ""
-"Ett snabbt Suddgummi-läge kan nås via ett kortkommando på tangentbordet."
+msgstr "Ett snabbt Sudda-läge kan nås via ett kortkommando på tangentbordet."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:116
 msgid ""
@@ -869,17 +868,17 @@ msgid ""
 "helpful for users of coarser input devices, such as eye-tracking systems."
 msgstr ""
 "Tangentbordet på skärmen, en hjälpmedelsfunktion som är tillgänglig som "
-"tillval när du använder verktygen Text och Etikett, visas nu större på "
-"större skärmar, vilket är till hjälp för användare av avancerade "
-"inmatningsenheter, t.ex. ögonstyrningssystem."
+"tillval när du använder verktygen Text och Rubrik, visas nu större på större "
+"skärmar, vilket är till hjälp för användare av avancerade inmatningsenheter, "
+"t.ex. ögonstyrningssystem."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:153
 msgid ""
 "The Eraser tool adds new, smaller eraser sizes, and applies smoother, "
 "contiguous strokes when the pointer is moved quickly."
 msgstr ""
-"Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger "
-"mjukare, sammanhängande streck när pekaren flyttas snabbt."
+"Verktyget Sudda lägger till nya, mindre suddgummistorlekar och ger mjukare, "
+"sammanhängande streck när pekaren flyttas snabbt."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:154
 msgid ""
@@ -1107,7 +1106,7 @@ msgstr "Penslar"
 #. Title of eraser selector (buttons down the right for eraser tool)
 #: ../titles.h:66
 msgid "Erasers"
-msgstr "Suddgummin"
+msgstr "Suddan"
 
 #. Title of stamp selector (buttons down the right for stamps tool)
 #: ../titles.h:69
@@ -1237,7 +1236,7 @@ msgid ""
 msgstr ""
 "Välj en textstil. Klicka på din teckning så kan du börja skriva. Tryck på "
 "[Enter] eller [Tab] för att slutföra texten. Genom att använda väljarknappen "
-"och klicka på en befintlig etikett kan du flytta den, redigera den och ändra "
+"och klicka på en befintlig rubrik kan du flytta den, redigera den och ändra "
 "dess textstil."
 
 #. Magic tool instruction
@@ -1258,7 +1257,7 @@ msgstr "Gör om!"
 #. Eraser tool
 #: ../tools.h:146
 msgid "Eraser!"
-msgstr "Suddgummi!"
+msgstr "Sudda!"
 
 #. Response to 'start a new image' action
 #: ../tools.h:149
@@ -1336,7 +1335,7 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose). Then, you can move it, edit it, and change its text style."
 msgstr ""
-"Klicka på en befintlig etikett (eller tryck på [Tab] för att bläddra igenom "
+"Klicka på en befintlig rubrik (eller tryck på [Tab] för att bläddra igenom "
 "dem och [Enter] för att välja). Sedan kan du flytta den, redigera den och "
 "ändra dess textstil."
 
@@ -1347,7 +1346,7 @@ msgid ""
 "the text, and use the options to change its text style. Press [Enter] or "
 "[Tab] when you're finished."
 msgstr ""
-"Klicka på bilden om du vill flytta etiketten, skriv för att ändra texten och "
+"Klicka på bilden om du vill flytta rubriken, skriv för att ändra texten och "
 "använd alternativen för att ändra textstilen. Tryck på [Enter] eller [Tab] "
 "när du är klar."
 
@@ -1357,7 +1356,7 @@ msgid ""
 "Clicking an existing label (or press [Tab] to cycle through them and [Enter] "
 "to choose) to permanently apply the text to the canvas."
 msgstr ""
-"Klicka på en befintlig etikett (eller tryck på [Tab] för att bläddra igenom "
+"Klicka på en befintlig rubrik (eller tryck på [Tab] för att bläddra igenom "
 "dem och [Enter] för att välja) för att permanent lägga till texten på "
 "målarduken."
 
@@ -1440,7 +1439,7 @@ msgid ""
 msgstr ""
 "Typsnittet är \"%1$s (%2$s)\", %3$d bildpunkter högt. Klicka på din teckning "
 "så kan du börja skriva. Tryck på [Enter] eller [Tab] för att slutföra "
-"texten. Genom att använda väljarknappen och klicka på en befintlig etikett "
+"texten. Genom att använda väljarknappen och klicka på en befintlig rubrik "
 "kan du flytta den, redigera den och ändra dess textstil."
 
 #. Prompt to confirm user wishes to quit
