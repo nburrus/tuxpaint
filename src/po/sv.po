@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 01:18-0800\n"
-"PO-Revision-Date: 2025-04-20 14:29+0200\n"
+"PO-Revision-Date: 2025-04-20 19:06+0200\n"
 "Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
@@ -2467,7 +2467,7 @@ msgstr "Klicka för att förvandla hela bilden till en labyrint."
 
 #: ../../magic/src/metalpaint.c:105
 msgid "Metal Paint"
-msgstr "Metall"
+msgstr "Metallfärg"
 
 #: ../../magic/src/metalpaint.c:123
 msgid "Click and drag the mouse to paint with a metallic color."
@@ -2995,7 +2995,7 @@ msgstr "Utjämna"
 
 #: ../../magic/src/smooth.c:64
 msgid "Squiggles"
-msgstr "Krumelur"
+msgstr "Krumelurer"
 
 #: ../../magic/src/smooth.c:65
 msgid "Loops"
