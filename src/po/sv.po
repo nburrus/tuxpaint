@@ -1,6 +1,6 @@
 # Swedish translation of tuxpaint.
 # Copyright (C) 2006-2017 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2008, 2025.
+# Daniel Nylander <po@danielnylander.se>, 2008.
 # Daniel Andersson <tuxpaint@septum.org>
 # Robin Rosenberg <robin.rosenberg@dewire.com>, 2007.
 # Henrik Holst <henrik.holst@millistream.com>, 2014.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 01:18-0800\n"
-"PO-Revision-Date: 2025-04-20 13:53+0200\n"
+"PO-Revision-Date: 2025-04-20 14:29+0200\n"
 "Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
@@ -2045,11 +2045,11 @@ msgstr ""
 
 #: ../../magic/src/distortion.c:142
 msgid "Distortion"
-msgstr "Rör till"
+msgstr "Förvrängning"
 
 #: ../../magic/src/distortion.c:166
 msgid "Click and drag the mouse to cause distortion in your picture."
-msgstr "Klicka och dra med musen för att göra din bild rörig."
+msgstr "Klicka och dra med musen för att skapa förvrängning i bilden."
 
 #: ../../magic/src/dither.c:33
 msgid "Dither"
