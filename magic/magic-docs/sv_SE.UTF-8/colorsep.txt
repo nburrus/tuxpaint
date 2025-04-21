@@ -1,18 +1,18 @@
-                      Tux Paint "Magic" Tool: Color Sep.
+                    Rita med Tux "Magic" Verktyg: Färgsep.
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This tool separates one color out of your entire picture, shifting colors away
-from each other (similar to '3D Glasses', but you may choose the any color to
-separate, and may move in any direction).
+Detta verktyg separerar en färg från hela bilden och flyttar färgerna bort från
+varandra (på samma sätt som "3D-glasögon", men du kan välja vilken färg som ska
+separeras och flytta den i valfri riktning).
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: 3D-glasögon & Double Vision.
+Se även nedan:3D-glasögon & Dubbelsyn.
 
 -------------------------------------------------------------------------------
 

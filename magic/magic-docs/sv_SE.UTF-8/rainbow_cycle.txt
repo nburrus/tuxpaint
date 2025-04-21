@@ -1,18 +1,18 @@
-                     Tux Paint "Magic" Tool: Rainbow Cycle
+                 Rita med Tux "Magic" Verktyg: Regnbågscykeln
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This is similar to Rainbow and Smooth Rainbow magic tools — it cycles through a
-spectrum of bright colors, but only changes between strokes (after you release
-and click or tap again).
+Det här liknar de magiska verktygen Rainbow och Smooth Rainbow - det cyklar
+genom ett spektrum av starka färger, men ändras bara mellan slag (efter att du
+släppt och klickat eller tryckt igen).
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Rainbow & Mjuk regnbåge.
+Se även nedan:Regnbåge & Mjuk regnbåge.
 
 -------------------------------------------------------------------------------
 

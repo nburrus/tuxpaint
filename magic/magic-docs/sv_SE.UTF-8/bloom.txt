@@ -1,14 +1,14 @@
-                       Tux Paint "Magic" Tool: Blommande
+                    Rita med Tux "Magic" Verktyg: Blommande
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Add a glowing "bloom" effect to pictures.
+Lägg till en glödande "bloom"-effekt på bilder.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

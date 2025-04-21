@@ -1,16 +1,16 @@
-                         Tux Paint "Magic" Tool: Rain
+                      Rita med Tux "Magic" Verktyg: Regn
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Paint raindrops on your picture.
+Måla regndroppar på din bild.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Snow Ball & Snow Flake.
+Se även nedan:Snöboll & Snöflinga.
 
 -------------------------------------------------------------------------------
 

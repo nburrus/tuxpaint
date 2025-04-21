@@ -1,19 +1,19 @@
-                     Tux Paint "Magic" Tool: Remove Color
+                  Rita med Tux "Magic" Verktyg: Ta bort färg
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This completely desaturates (turns greyscale) parts of the image that match the
-selected color.
+Detta avmättas helt (blir gråskala) delar av bilden som matchar den valda
+färgen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Behåll färg, Mätta, Avmätta, Darken, Ljusare, & Tint.
+Se även nedan:Behåll färg, Mätta, Avmätta, Mörka, Ljusare, & Färgton.
 
 -------------------------------------------------------------------------------
 

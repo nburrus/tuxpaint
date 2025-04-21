@@ -1,14 +1,14 @@
-                       Tux Paint "Magic" Tool: Fretwork
+                    Rita med Tux "Magic" Verktyg: Fretwork
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Draw an interlaced decorative design that looks like wooden fretwork.
+Fretwork - rita en sammanflätad dekorativ design som ser ut som träflätverk
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

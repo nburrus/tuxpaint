@@ -1,16 +1,16 @@
-                      Tux Paint "Magic" Tool: Toothpaste
+                    Rita med Tux "Magic" Verktyg: Tandkräm
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Paint thick blobs of color on your picture that look like toothpaste.
+Måla tjocka färgklumpar på din bild som ser ut som tandkräm.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

@@ -1,18 +1,18 @@
-                   Tux Paint "Magic" Tool: ASCII Typewriter
+                Rita med Tux "Magic" Verktyg: ASCII skrivmaskin
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Transform your picture into "ASCII art", typewriter-style.
+Förvandla din bild till "ASCII-konst", i skrivmaskinsstil.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: ASCII-dator & ASCII-färgdator.
+Se även nedan:ASCII-dator & ASCII-färgdator.
 
 -------------------------------------------------------------------------------
 

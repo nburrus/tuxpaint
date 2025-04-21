@@ -1,22 +1,22 @@
-                      Tux Paint "Magic" Tool: 3D-glasögon
+                   Rita med Tux "Magic" Verktyg: 3D-glasögon
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This tool horizontally separates your entire picture's color channels, letting
-you create anaglyphic pictures that can be viewed with various kinds of 3D
-glasses. Options include: Red/Cyan, Red/Blue, Red/Green, and Magenta/Cyan —
-controlled by the 'size' setting — unless running with "complexity" (expertise
-level) set to 'Novice'.
+Detta verktyg separerar hela bildens färgkanaler horisontellt, vilket gör att
+du kan skapa anaglyfiska bilder som kan ses med olika typer av 3D-glasögon.
+Bland alternativen finns: Röd/cyan, röd/blå, röd/grön och magenta/cyan - styrs
+av inställningen "size" - om inte "complexity" (kunskapsnivå) är inställd på
+"Novice".
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool reacts to the "complexity" (expertise level) setting.
+Detta verktyg reagerar på inställningen "komplexitet" (expertnivå).
 
-See also: Color Sep. & Double Vision.
+Se även nedan:Färgsep. & Dubbelsyn.
 
 -------------------------------------------------------------------------------
 

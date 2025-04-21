@@ -1,14 +1,14 @@
-                        Tux Paint "Magic" Tool: Tornado
+                     Rita med Tux "Magic" Verktyg: Tornado
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Draws a tornado effect onto the picture.
+Skissar en tornadoeffekt på bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

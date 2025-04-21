@@ -1,14 +1,14 @@
-                      Tux Paint "Magic" Tool: Distortion
+                  Rita med Tux "Magic" Verktyg: Förvrängning
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This slightly distorts the picture wherever you move the mouse.
+Detta gör att bilden förvrängs något var du än flyttar musen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

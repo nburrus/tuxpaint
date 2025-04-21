@@ -1,580 +1,594 @@
                                    Tux Paint
                                 version 0.9.35
 
-                  ### Magic Tool Plugin API Documentation ###
+              ### Dokumentation av API för Magic Tool Plugin ###
 
-        Copyright © 2007-2025 by various contributors; see AUTHORS.txt.
+         Copyright © 2007-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
                                januari 12, 2025
 
-+--------------------------------------------------+
-|                Table of Contents                 |
-|--------------------------------------------------|
-|   * Förutsättningar                              |
-|   * Interfaces                                   |
-|       + 'Magic' tool plugin functions            |
-|           o Common arguments to plugin functions |
-|           o Required Plugin Functions            |
-|               # Plugin "housekeeping" functions  |
-|               # Plugin event functions           |
-|       + Tux Paint Functions and Data             |
-|           o Pixel Manipulations                  |
-|           o Helper Functions                     |
-|           o Informational                        |
-|           o Sound Functions                      |
-|           o Tux Paint System Calls               |
-|           o Color Conversions                    |
-|       + Helper Macros in "tp_magic_api.h"        |
-|       + Constant Definitions in "tp_magic_api.h" |
-|   * Compiling                                    |
-|       + Linux and other Unix-like Platforms      |
-|       + Windows                                  |
-|       + macOS                                    |
-|   * Installing                                   |
-|       + Linux and other Unix-like Platforms      |
-|       + Windows                                  |
-|       + macOS                                    |
-|   * Creating plugins with multiple effects       |
-|   * Example Code                                 |
-|   * Få hjälp                                     |
-|   * Ordlista                                     |
-+--------------------------------------------------+
++-----------------------------------------------------------------------------+
+|                                  Innehåll                                   |
+|-----------------------------------------------------------------------------|
+|   * Förutsättningar                                                         |
+|   * Gränssnitt                                                              |
+|       + plugin-funktioner för "Magic"-verktyget                             |
+|           o Vanliga argument till plugin-funktioner                         |
+|           o Nödvändiga plugin-funktioner                                    |
+|               # Plugin "hushållning" funktioner                             |
+|               # Plugin-händelsefunktioner                                   |
+|       + Rita med Tux Funktioner och data                                    |
+|           o Pixelmanipulationer                                             |
+|           o Hjälpfunktioner                                                 |
+|           o Information                                                     |
+|           o Ljudfunktioner                                                  |
+|           o Systemanrop för Rita med Tux                                    |
+|           o Färgkonverteringar                                              |
+|       + Hjälpmakron i "tp_magic_api.h"                                      |
+|       + Konstant Definitioner i "tp_magic_api.h"                            |
+|   * Kompilera                                                               |
+|       + Linux och andra Unix-liknande plattformar                           |
+|       + Fönster                                                             |
+|       + macOS                                                               |
+|   * Installerar                                                             |
+|       + Linux och andra Unix-liknande plattformar                           |
+|       + Fönster                                                             |
+|       + macOS                                                               |
+|   * Skapa plugins med flera effekter                                        |
+|   * Om det anges söker GCode-visaren efter en rad som börjar med den här    |
+|     strängen. Om det hittas hoppas alla GCode upp till den punkten över.    |
+|     Detta kan användas för att hoppa över GCode för "rensa/                 |
+|     munstyckesrensning" i tittaren. Observera att sökningen är fallkänslig. |
+|     Exempel: ; layer 1                                                      |
+|   * Få hjälp                                                                |
+|   * Ordlista                                                                |
++-----------------------------------------------------------------------------+
 
 Översikt
 
-Tux Paint's 'Magic' tools come as a set of 'plugins' which are loaded when Tux
-Paint starts up.
+Rita med Tux's "Magic"-verktyg kommer som en uppsättning "plugins" som laddas
+när Rita med Tux startar.
 
-This division allows more rapid development of 'Magic' tools, and allows
-programmers to create and test new tools without needing to integrate them
-within the main Tux Paint source code. (Users of more professional graphics
-tools, such as GIMP, should be familiar with this plugin concept.)
+Denna uppdelning möjliggör en snabbare utveckling av "magiska" verktyg och gör
+det möjligt för programmerare att skapa och testa nya verktyg utan att behöva
+integrera dem i Rita med Tuxs källkod. (Användare av mer professionella
+grafikverktyg, t.ex. GIMP, bör känna till detta plugin-koncept)
 
 Förutsättningar
 
-Tux Paint is written in the C programming language, and uses the Simple
-DirectMedia Layer library ('libSDL', or simply 'SDL'; available from https://
-www.libsdl.org/). Therefore, for the moment at least, one must understand the C
-language and how to compile C-based programs. Familiarity with the SDL API is
-highly recommended, but some basic SDL concepts will be covered in this
-document.
+Rita med Tux är skrivet i programspråket C och använder biblioteket Simple
+DirectMedia Layer ("libSDL", eller bara "SDL"; finns på https://www.libsdl.org
+/). Därför måste man, åtminstone för tillfället, förstå C-språket och hur man
+kompilerar C-baserade program. Det rekommenderas starkt att man känner till SDL
+API, men några grundläggande SDL-koncept kommer att behandlas i detta dokument.
 
-Interfaces
+Gränssnitt
 
-Those who create 'Magic' tool plugins for Tux Paint must provide some
-interfaces (C functions) that Tux Paint may invoke.
+De som skapar plugins för "magiska" verktyg för Rita med Tux måste
+tillhandahålla vissa gränssnitt (C-funktioner) som Rita med Tux kan anropa.
 
-Tux Paint utilizes SDL's "SDL_LoadObject()" and "SDL_LoadFunction()" routines
-to load plugins (shared objects files; e.g., ".so" files on Linux or ".dll"
-files on Windows) and find the functions within.
+Rita med Tux använder SDL:s rutiner "SDL_LoadObject()" och "SDL_LoadFunction()"
+för att ladda plugins (filer med delade objekt, t.ex. ".so"-filer i Linux eller
+".dll"-filer i Windows) och hitta funktionerna i dem.
 
-In turn, Tux Paint provides a number of helper functions that the plugin may
-(or sometimes is required to) use. This is exposed as a C structure (or
-"struct") which contains pointers to functions and other data inside Tux Paint.
-A pointer to this structure gets passed along to the plugin's functions as an
-argument when Tux Paint invokes them.
+Rita med Tux tillhandahåller i sin tur ett antal hjälpfunktioner som
+plugin-programmet kan (eller ibland måste) använda. Detta exponeras som en
+C-struktur (eller"struct") som innehåller pekare till funktioner och andra data
+i Rita med Tux. En pekare till denna struktur skickas vidare till
+plugin-funktionerna som ett argument när Rita med Tux anropar dem.
 
-Plugins should #include the C header file "tp_magic_api.h", which exposes the
-'Magic' tool plugin API. Also, when you run the C compiler to build a plugin,
-you should use the command-line tool "tp-magic-config" to get the appropriate
-compiler flags (such as where the compiler can find the Tux Paint plugin header
-file, as well as SDL's header files) for building a plugin. (See "Compiling",
-below.)
+Plugins bör #inkludera C-huvudfilen"tp_magic_api.h", som exponerar
+plugin-API:et för verktyget "Magic". När du kör C-kompilatorn för att bygga ett
+plugin bör du också använda kommandoradsverktyget"tp-magic-config" för att få
+lämpliga kompilatorflaggor (till exempel var kompilatorn kan hitta Rita med
+Tux-pluginhuvudfilen, liksom SDLs huvudfiler) för att bygga ett plugin. (Se
+"Kompilering" nedan.)
 
-The C header file and command-line tool mentioned above are included with Tux
-Paint — or in some cases, as part of a "Tux Paint 'Magic' Tool Plugin
+C-huvudfilen och kommandoradsverktyget som nämns ovan ingår i Rita med Tux -
+eller i vissa fall som en del av ett "Rita med Tux 'Magic' Tool Plugin
 Development package".
 
-                     ### 'Magic' tool plugin functions ###
+                ### plugin-funktioner för "Magic"-verktyget ###
 
-'Magic' tool plugins must contain the functions listed below. Note: To avoid
-'namespace' collisions, each function's name must start with the shared
-object's filename (e.g., "blur.so" or "blur.dll" would have functions whose
-names begin with "blur_"). This includes private functions (ones not used by
-Tux Paint directly), unless you declare those as 'static'.
+plugins för "Magic"-verktyg måste innehålla de funktioner som anges nedan.
+Observera: För att undvika kollisioner i namnrymden måste varje funktionsnamn
+börja med det delade objektets filnamn (t.ex. skulle "blur.so" eller "blur.dll"
+ha funktioner vars namn börjar med"blur_"). Detta inkluderar privata funktioner
+(sådana som inte används direkt av Rita med Tux), såvida du inte deklarerar dem
+som"statiska".
 
-## Common arguments to plugin functions ##
+## Vanliga argument till plugin-funktioner ##
 
-Here is a description of arguments that many of your plugin's functions will
-need to accept.
+Här följer en beskrivning av de argument som många av funktionerna i ditt
+plugin måste acceptera.
 
 → magic_api * api ←
 
-    Pointer to a C structure containing pointers to Tux Paint functions and
-    other data that the plugin can (and sometimes should) use. The contents of
-    this struct are described below.
+    Pekare till en C-struktur som innehåller pekare till Rita med
+    Tux-funktioner och andra data som insticksprogrammet kan (och ibland bör)
+    använda. Innehållet i denna struktur beskrivs nedan..
 
-    Note: The magic_api struct is defined in the C header file
-    "tp_magic_api.h", which you should include at the top of your plugin's C
-    source file:
+    Observera: Strukturen magic_api definieras i C-headerfilen"tp_magic_api.h",
+    som du bör inkludera högst upp i ditt plugins C-källfil:
 
         #include "tp_magic_api.h"
 
 
      
 → int which ←
-    An index the plugin should use to differentiate different 'Magic' tools, if
-    the plugin provides more than one. (If not, "which" will always be 0.) See
-    "Creating plugins with multiple effects", below.
+    Ett index som insticksprogrammet ska använda för att skilja mellan olika
+    "Magic"-verktyg, om insticksprogrammet tillhandahåller mer än ett. (Om
+    inte, kommer "which" alltid att vara 0.) Se "Skapa insticksprogram med
+    flera effekter" nedan.
      
 → SDL_Surface * snapshot ←
-    A snapshot of the previous Tux Paint canvas, taken when the the mouse was
-    first clicked to activate the current magic tool. If you don't continuously
-    affect the image during one hold of the mouse button, you should base your
-    effects off the contents of this canvas. (That is, read from "snapshot" and
-    write to "canvas", below.)
+    En ögonblicksbild av den föregående Rita med Tux-bilden, tagen när musen
+    först klickades för att aktivera det aktuella magiska verktyget. Om du inte
+    kontinuerligt påverkar bilden under ett musklick, bör du basera dina
+    effekter på innehållet i denna canvas. (Det vill säga, läs från"snapshot"
+    och skriv till"canvas", nedan)
      
 → SDL_Surface * canvas ←
-    The current Tux Paint drawing canvas. Your magical effects should end up
-    here!
+    Den aktuella Rita med Tux-ritningsduken. Dina magiska effekter bör hamna
+    här!
      
 → SDL_Rect * update_rect ←
-    A pointer to an SDL 'rectangle' structure that you use to tell Tux Paint
-    what part of the canvas has been updated. If your effect affects a 32x32
-    area centered around the mouse pointer, you would fill the SDL_Rect as
-    follows:
+    En pekare till en SDL-"rektangel"-struktur som du använder för att tala om
+    för Rita med Tux vilken del av duken som har uppdaterats. Om din effekt
+    påverkar ett 32x32-område centrerat runt muspekaren fyller du SDL_Rect på
+    följande sätt:
 
         update_rect->x = x - 16;
         update_rect->y = y - 16;
         update_rect->w = 32;
         update_rect->h = 32;
 
-    Or, if your effect changes the entire canvas (e.g., flips it upside-down),
-    you'd fill it as follows:
+    Om din effekt ändrar hela duken (t.ex. vänder den upp och ner) fyller du
+    den på följande sätt:
 
         update_rect->x = 0;
         update_rect->y = 0;
         update_rect->w = canvas->w;
         update_rect->h = canvas->h;
 
-    Note: "update_rect" is a C pointer (an "SDL_Rect *" rather than just an
-    "SDL_Rect") because you need to fill in its contents. Since it is a
-    pointer, you access its elements via "->" (arrow) rather than "." (dot).
+    Obs:"update_rect" är en C-pekare (en"SDL_Rect *" snarare än bara
+    en"SDL_Rect") eftersom du måste fylla i dess innehåll. Eftersom det är en
+    pekare kommer du åt dess element via"->"(pil) snarare än "." (punkt).
      
 
-## Required Plugin Functions ##
+## Nödvändiga plugin-funktioner ##
 
-Your plugin is required to contain, at the least, all of the following
-functions.
+Ditt insticksprogram måste minst innehålla alla följande funktioner.
 
-Note: Remember, your plugin's function names must be preceded by your plugin's
-filename. That is, if your plugin is called "zoom.so" (on Linux) or "zoom.dll"
-(on Windows), then the names of your functions must begin with "zoom_" (e.g.,
-"zoom_get_name(...)").
+Observera: Kom ihåg att plugin-programmets funktionsnamn måste föregås av
+plugin-programmets filnamn. Det vill säga, om ditt plugin heter"zoom.so" (på
+Linux) eller "zoom.dll" (på Windows), måste namnen på dina funktioner börja med
+"zoom_" (t.ex. "zoom_get_name(...)").
 
-# Plugin "housekeeping" functions #
+# Plugin "hushållning" funktioner #
 
 → Uint32 api_version(void) ←
 
-    The plugin should return an integer value representing the version of the
-    Tux Paint 'Magic' tool plugin API the plugin was built against. The safest
-    thing to do is return the value of TP_MAGIC_API_VERSION, which is defined
-    in "tp_magic_api.h". If Tux Paint deems your plugin to be compatible, it
-    will go ahead and use it.
+    Insticksprogrammet bör returnera ett heltalsvärde som representerar
+    versionen av Rita med Tux 'Magic' tool plugin API som insticksprogrammet
+    byggdes mot. Det säkraste är att returnera värdet av TP_MAGIC_API_VERSION,
+    som definieras i"tp_magic_api.h". Om Rita med Tux anser att ditt plugin är
+    kompatibelt kommer det att fortsätta och använda det.
 
-    Note: Called once by Tux Paint, at startup. It is called first.
+    Obs: Anropas en gång av Rita med Tux, vid uppstart. Den anropas först.
 
 
      
 → int init(magic_api * api, Uint8 disabled_features, Uint8 complexity_level) ←
 
-    The plugin should do any initialization here. Return '1' if initialization
-    was successful, or '0' if not (and Tux Paint will not present any 'Magic'
-    tools from the plugin).
+    Plugin-programmet bör göra alla initialiseringar här. Returnera '1' om
+    initieringen lyckades, eller '0' om den inte gjorde det (och Rita med Tux
+    kommer inte att presentera några 'Magic'-verktyg från insticksprogrammet).
 
-    Note: Called once by Tux Paint, at startup. It is called after "api_version
-    ()", if Tux Paint believes your plugin to be compatible.
+    Obs: Anropas en gång av Rita med Tux, vid uppstart. Det anropas
+    efter"api_version()", om Rita med Tux anser att ditt plugin är kompatibelt.
 
-    The disabled_features value contains bits set for any Tux Paint features
-    relevant to Magic tools which have been disabled in this session. Test
-    using the C bitwise 'and' operator, '&'. The features are defined in
-    tp_magic_api.h:
-      o MAGIC_FEATURE_CONTROL: Magic tool controls (paint vs fullscreen)
+    Värdet disabled_features innehåller bits som ställts in för alla Rita med
+    Tux-funktioner som är relevanta för Magic-verktyg som har inaktiverats i
+    den här sessionen. Test med hjälp av C:s bitvisa operator "och","&".
+    Funktionerna är definierade i tp_magic_api.h::
+      o MAGIC_FEATURE_CONTROL: Kontroll av magiska verktyg (färg vs helskärm)
         (--nomagiccontrols)
-      o MAGIC_FEATURE_SIZE: Magic tool size (--nomagicsizes)
-    Your Magic tool(s) may wish to react differently depending on whether one
-    or more features have been disabled. (For example, the "Brick" Magic tool
-    always offered two tool variations: large and small. With the addition of
-    the size feature, only one tool is necessary. However, with the size option
-    disabled, the plugin is able to revert back to providing two separate
-    tools.)
+      o MAGIC_FEATURE_SIZE: Storlek på magiskt verktyg (--nomagicsizes)
+    Ditt/dina magiska verktyg kan vilja reagera på olika sätt beroende på om en
+    eller flera funktioner har inaktiverats. (Till exempel har det magiska
+    verktyget "Brick" alltid erbjudit två verktygsvarianter: stort och litet.
+    Med tillägget av storleksfunktionen behövs bara ett verktyg. Men när
+    storleksalternativet är inaktiverat kan plugin-programmet återgå till att
+    tillhandahålla två separata verktyg)
 
-    The complexity_level variable contains the "complexity level" that Tux
-    Paint magic tools may offer — that is, the expertise level of the user. The
-    levels are defined in tp_magic_api.h:
-      o MAGIC_COMPLEXITY_NOVICE (0): Novice (--complexity=novice)
+    Variabeln complexity_level innehåller den "komplexitetsnivå" som Rita med
+    Tux magiska verktyg kan erbjuda - det vill säga användarens expertisnivå.
+    Nivåerna definieras i tp_magic_api.h::
+      o MAGIC_COMPLEXITY_NOVICE (0): Novis (--complexity=novice)
       o MAGIC_COMPLEXITY_BEGINNER (1): Nybörjare (--complexity=beginner)
-      o MAGIC_COMPLEXITY_ADVANCED (2): Advanced (default) (--complexity=
+      o MAGIC_COMPLEXITY_ADVANCED (2): Avancerad (standard) (--complexity=
         advanced)
-    Your Magic tool(s) may wish to react differently depending on the expertise
-    level of the user, either simplifying how each tool works, or excluding one
-    or all of them entirely. (For example, the 1-, 2-, and 3-point perspective
-    toolsets are totally inactive when in "novice" mode. In "beginner" mode,
-    the drawing tools are available, but the tools to edit the vanishing point
-    positions are disabled; the default vanishing points are used. In fact, in
-    "beginner" mode, an additional 3-point perspective drawing tool appears,
-    with alternative vanishing points.)
+    Ditt/dina Magic-verktyg kanske vill reagera olika beroende på användarens
+    kunskapsnivå, antingen genom att förenkla hur varje verktyg fungerar eller
+    genom att utesluta ett eller flera av dem helt. (Till exempel är
+    verktygsuppsättningarna för 1-, 2- och 3-punktsperspektiv helt inaktiva i
+    läget "nybörjare". I "nybörjarläget" är ritverktygen tillgängliga, men
+    verktygen för att redigera vanishing-punkternas positioner är inaktiverade;
+    standardvanishing-punkterna används. I själva verket visas i
+    "nybörjar"-läget ytterligare ett ritverktyg för 3-punktsperspektiv, med
+    alternativa vanishingpunkter)
 
-    Note: Changed most recently in Tux Paint 0.9.32; Magic API version
-    0x00000009.
+    Notera: Senast ändrad i Rita med Tux 0.9.32; Magic API version 0x00000009.
 
 
      
 → int get_tool_count(magic_api * api) ←
 
-    This should return the number of Magic tools this plugin provides to Tux
-    Paint.
+    Detta ska returnera antalet magiska verktyg som detta plugin
+    tillhandahåller till Rita med Tux.
 
-    Note: Called once by Tux Paint, at startup. It is called after your "init()
-    ", if it succeeded.
+    Obs: Anropas en gång av Rita med Tux, vid start. Den anropas efter din"init
+    ()", om den lyckades.
 
-    Note: You may wish to resond differently, based on whether certain features
-    have been disabled (e.g., 'paint' versus 'entire picture' controls, or
-    'Magic sizes' controls).
+    Obs: Du kanske vill svara på olika sätt beroende på om vissa funktioner har
+    inaktiverats (t.ex. kontroller för "paint" kontra "entire picture" eller
+    kontroller för "Magic sizes").
 
 
      
 → int modes(magic_api * api, int which) ←
 
-    This lets you tell Tux Paint what modes your tool can be used in; either as
-    a tool the user can paint with, or a tool that affects the entire drawing
-    at once.
+    Här kan du tala om för Rita med Tux vilka lägen ditt verktyg kan användas
+    i; antingen som ett verktyg som användaren kan måla med eller som ett
+    verktyg som påverkar hela ritningen på en gång.
 
-    You must return a value that's some combination of one or more of available
-    modes:
-      o MODE_PAINT - freehand paint (click and drag)
-      o MODE_FULLSCREEN - applies to full image with one click
-      o MODE_PAINT_WITH_PREVIEW - freehand paint, with preview (click and drag)
-      o MODE_ONECLICK - applies to an area around the mouse, with one click
-    e.g., if your tool is only one that the user can paint with, return
-    "MODE_PAINT". If the user can do both, return "MODE_PAINT |
-    MODE_FULLSCREEN" to tell Tux Paint it can do both.
+    Du måste returnera ett värde som är en kombination av ett eller flera av de
+    tillgängliga lägena:
+      o MODE_PAINT - måla på fri hand (klicka och dra)
+      o MODE_FULLSCREEN - gäller för hela bilden med ett klick
+      o MODE_PAINT_WITH_PREVIEW - frihandsmålning, med förhandsgranskning
+        (klicka och dra)
+      o MODE_ONECLICK - gäller för ett område runt musen, med ett klick
+    t.ex. om ditt verktyg är det enda som användaren kan måla med,
+    returnera"MODE_PAINT". Om användaren kan göra båda, returnera"MODE_PAINT |
+    MODE_FULLSCREEN" för att tala om för Rita med Tux att den kan göra båda.
 
-    Note: Called once for each Magic tool your plugin claims to contain (by
-    your "get_tool_count()").
+    Observera: Anropas en gång för varje Magic-verktyg som ditt plugin påstår
+    sig innehålla (genom ditt"get_tool_count()").
 
-    Note: Added to Tux Paint 0.9.21; Magic API version 0x00000002.
+    Obs: Tillagd till Rita med Tux 0.9.21; Magic API-version 0x00000002.
 
 
      
 → char * get_name(magic_api * api, int which) ←
 
-    This should return a string containing the name of a magic tool. This will
-    appear on the button in the 'Magic' selector within Tux Paint.
+    Detta bör returnera en sträng som innehåller namnet på ett magiskt verktyg.
+    Detta kommer att visas på knappen i "Magic"-väljaren i Rita med Tux.
 
-    Tux Paint will free() the string upon exit, so you should wrap it in a C
-    strdup() call.
+    Rita med Tux kommer att free() strängen vid avslutning, så du bör linda in
+    den i ett C strdup() -anrop.
 
-    Note: Called once for each Magic tool your plugin claims to contain (by
-    your "get_tool_count()").
+    Observera: Anropas en gång för varje Magic-verktyg som ditt plugin påstår
+    sig innehålla (genom ditt"get_tool_count()").
 
 
      
 → int get_group(magic_api * api, int which) ←
 
-    Use this to group tools together within sections of the 'Magic' selector. A
-    number of groups are pre-defined within an enum found in "tp_magic_api.h":
-      o MAGIC_TYPE_DISTORTS — Tools that distort the shape of the image, like
-        Blur, Emboss, and Ripples
-      o MAGIC_TYPE_COLOR_FILTERS — Tools that mostly affect the colors of the
-        image without distortion, like Darken, Negative, and Tint
-      o MAGIC_TYPE_PICTURE_WARPS — Tools that warp or move the entire picture,
-        like Shift, Flip, and Waves
-      o MAGIC_TYPE_PAINTING — Tools that generally paint new content at the
-        cursor position, like Grass, Bricks, and Rails
-      o MAGIC_TYPE_PATTERN_PAINTING — Tools that paint in multiple places at
-        once, like Kaleidoscope and the Symmetry tools
-      o MAGIC_TYPE_PICTURE_DECORATIONS — Tools that apply decorations to the
-        entire picture, like Blinds and Checkboard
-      o MAGIC_TYPE_ARTISTIC — Special-purpose artistic tools, like Flower, the
-        String tools, and the Rainbow-arc-drawing tools.
+    Använd detta för att gruppera verktyg tillsammans inom sektioner av
+    "Magic"-väljaren. Ett antal grupper är fördefinierade i ett enum som finns
+    i"tp_magic_api.h":
+      o MAGIC_TYPE_DISTORTS — Verktyg som förvränger bildens form, t.ex. Blur,
+        Emboss och Ripples
+      o MAGIC_TYPE_COLOR_FILTERS — Verktyg som främst påverkar bildens färger
+        utan att förvränga dem, t.ex. Darken, Negative och Tint
+      o MAGIC_TYPE_PICTURE_WARPS — Verktyg som förvränger eller flyttar hela
+        bilden, t.ex. Shift, Flip och Waves
+      o MAGIC_TYPE_PAINTING — Verktyg som i allmänhet målar nytt innehåll vid
+        markörens position, som Grass, Bricks och Rails
+      o MAGIC_TYPE_PATTERN_PAINTING — Verktyg som målar på flera ställen
+        samtidigt, t.ex. Kalejdoskop och Symmetry-verktygen
+      o MAGIC_TYPE_PICTURE_DECORATIONS — Verktyg som applicerar dekorationer på
+        hela bilden, t.ex. Blinds och Checkboard
+      o MAGIC_TYPE_ARTISTIC — Specialverktyg för konstnärliga ändamål, t.ex.
+        Flower, String-verktygen och Rainbow-arc-ritverktygen.
 
-    Note: Called once for each Magic tool your plugin claims to contain (by
-    your "get_tool_count()").
+    Observera: Anropas en gång för varje Magic-verktyg som ditt plugin påstår
+    sig innehålla (genom ditt"get_tool_count()").
 
-    Note: Added to Tux Paint 0.9.27; Magic API version 0x00000005.
+    Obs: Tillagd till Rita med Tux 0.9.27; Magic API-version 0x00000005.
 
 
      
 → SDL_Surface * get_icon(magic_api * api, int which) ←
 
-    This should return an SDL_Surface containing the icon representing the
-    tool. (A greyscale image with alpha, no larger than 40x40.) This will
-    appear on the button in the 'Magic' selector within Tux Paint.
+    Detta bör returnera en SDL_Surface som innehåller ikonen som representerar
+    verktyget. (En gråskalebild med alfa, inte större än 40x40.) Detta kommer
+    att visas på knappen i "Magic"-väljaren i Rita med Tux.
 
-    Tux Paint will free ("SDL_FreeSurface()") the surface upon exit.
+    Rita med Tux kommer att frigöra ("SDL_FreeSurface()") ytan när den
+    avslutas.
 
-    Note: Called once for each Magic tool your plugin claims to contain (by
-    your "get_tool_count()").
+    Observera: Anropas en gång för varje Magic-verktyg som ditt plugin påstår
+    sig innehålla (genom ditt"get_tool_count()").
 
 
      
 → char * get_description(magic_api * api, int which, int mode) ←
 
-    This should return a string containing the description of how to use a
-    particular magic tool. This will appear as a help tip, explained by Tux the
-    Penguin, within Tux Paint.
+    Detta bör returnera en sträng som innehåller en beskrivning av hur man
+    använder ett visst magiskt verktyg. Detta kommer att visas som ett
+    hjälptips, förklarat av pingvinen Tux, i Rita med Tux.
 
-    Tux Paint will free() the string upon exit, so you should wrap it in a C
-    strdup() call.
+    Rita med Tux kommer att free() strängen vid avslutning, så du bör linda in
+    den i ett C strdup() -anrop.
 
-    Note: For each Magic tool your plugin claims to contain (reported by your
-    "get_tool_count()" function), this function will be called for each mode
-    the tool claims to support (reported by your "modes()" function).
+    Obs: För varje Magic-verktyg som ditt plugin påstår sig innehålla
+    (rapporterat av din "get_tool_count()"-funktion), kommer denna funktion att
+    anropas för varje läge som verktyget påstår sig stödja (rapporterat av din
+    "modes()"-funktion).
 
-    In other words, if your plugin contains two tools, one which works in paint
-    mode only, and the other that works in both paint mode and full-image mode,
-    your plugin's "get_description()" will be called three times.
+    Med andra ord, om ditt plugin innehåller två verktyg, ett som bara fungerar
+    i färgläge och det andra som fungerar i både färgläge och fullbildsläge,
+    kommer ditt plugins"get_description()" att anropas tre gånger.
 
 
      
 → int requires_colors(magic_api * api, int which) ←
 
-    Return a '1' if the 'Magic' tool accepts colors (the 'Colors' palette in
-    Tux Paint will be available), or '0' if not.
+    Returnerar en "1" om "Magic"-verktyget accepterar färger (paletten "Colors"
+    i Rita med Tux kommer att vara tillgänglig), eller "0" om inte.
 
-    Note: Called once for each Magic tool your plugin claims to contain (by
-    your "get_tool_count()").
+    Observera: Anropas en gång för varje Magic-verktyg som ditt plugin påstår
+    sig innehålla (genom ditt"get_tool_count()").
 
 
      
 → Uint8 accepted_sizes(magic_api * api, int which, int mode) ←
 
-    Return how many size variations the 'Magic' tool accepts, in the given mode
-    (i.e., 'MODE_PAINT' or 'MODE_FULLSCREEN). Return a '0' if the 'Magic' tool
-    should not offer sizing options. Returning '1' is the same as returning
-    '0'.
+    Returnerar hur många storleksvariationer som 'Magic'-verktyget accepterar i
+    det angivna läget (dvs.'MODE_PAINT' eller'MODE_FULLSCREEN). Returnera '0'
+    om 'Magic'-verktyget inte ska erbjuda storleksalternativ. Att returnera '1'
+    är samma sak som att returnera '0'.
 
-    Note: For each Magic tool your plugin claims to contain (reported by your
-    "get_tool_count()" function), this function will be called for each mode
-    the tool claims to support (reported by your "modes()" function).
+    Obs: För varje Magic-verktyg som ditt plugin påstår sig innehålla
+    (rapporterat av din "get_tool_count()"-funktion), kommer denna funktion att
+    anropas för varje läge som verktyget påstår sig stödja (rapporterat av din
+    "modes()"-funktion).
 
-    Note: Added to Tux Paint 0.9.30; Magic API version 0x00000008.
+    Obs: Tillagd till Rita med Tux 0.9.30; Magic API-version 0x00000008.
 
 
      
 → Uint8 default_size(magic_api * api, int which, int mode) ←
 
-    Return the default size the 'Magic' tool should start out with, in the
-    given mode. This will be the default setting for the tool the first time it
-    is used during a Tux Paint session. If Tux Paint is being invoked with the
-    sizing option disabled, this will be the only size requested by Tux Paint.
-    Return a number between '1' and the amount you returned in accepted_sizes
-    ().
+    Returnerar den standardstorlek som verktyget "Magic" ska börja med i det
+    angivna läget. Detta kommer att vara standardinställningen för verktyget
+    första gången det används under en Rita med Tux-session. Om Rita med Tux
+    anropas med storleksalternativet avaktiverat kommer detta att vara den enda
+    storlek som Rita med Tux begär. Returnera ett tal mellan '1' och det belopp
+    som du returnerade i accepted_sizes().
 
-    Note: For each Magic tool your plugin claims to contain (reported by your
-    "get_tool_count()" function), this function will be called for each mode
-    the tool claims to support (reported by your "modes()" function).
+    Obs: För varje Magic-verktyg som ditt plugin påstår sig innehålla
+    (rapporterat av din "get_tool_count()"-funktion), kommer denna funktion att
+    anropas för varje läge som verktyget påstår sig stödja (rapporterat av din
+    "modes()"-funktion).
 
-    Note: Added to Tux Paint 0.9.30; Magic API version 0x00000008.
+    Obs: Tillagd till Rita med Tux 0.9.30; Magic API-version 0x00000008.
 
 
      
 → void shutdown(magic_api * api) ←
 
-    The plugin should do any cleanup here. If you allocated any memory or used
-    SDL_Mixer to load any sounds during init(), for example, you should free()
-    the allocated memory and Mix_FreeChunk() the sounds here.
+    Plugin-programmet bör göra all upprensning här. Om du har allokerat något
+    minne eller använt SDL_Mixer för att ladda några ljud under init(), till
+    exempel, bör du frigöra( ) det allokerade minnet och Mix_FreeChunk() ljuden
+    här.
 
-    Note: This function is called once, when Tux Paint exits.
+    Obs: Denna funktion anropas en gång när Rita med Tux avslutas.
 
 
      
 
-# Plugin event functions #
+# Plugin-händelsefunktioner #
 
 → void switchin(magic_api * api, int which, int mode, SDL_Surface * snapshot,
 SDL_Surface * canvas)
 void switchout(magic_api * api, int which, int mode, SDL_Surface * snapshot,
 SDL_Surface * canvas) ←
 
-    switchin() is called whenever one of the plugin's Magic tools becomes
-    active, and switchout() is called whenever one becomes inactive. This can
-    be because the user just clicked a specific Magic tool (the current one is
-    switched-out, and a new one is switched-in).
+    switchin() anropas när ett av plugin-programmets magiska verktyg blir
+    aktivt, och switchout() anropas när ett blir inaktivt. Detta kan bero på
+    att användaren just har klickat på ett specifikt magiskt verktyg (det
+    aktuella verktyget kopplas ut och ett nytt kopplas in).
 
-    It can also happen when user leaves/returns from the selection of "Magic"
-    tools when doing some other activity (i.e., using a different tool, such as
-    "Text" or "Brush", activating a momentary tool, such as "Undo" and "Redo",
-    or returning from a dialog — possibly with a new picture when it switches
-    back — such as "Open", "New" or "Quit"). In this case, the same Magic tool
-    is first 'switched-out', and then 'switched-back-in', usually moments
-    later.
+    Det kan också hända när användaren lämnar/återvänder från valet av
+    "magiska" verktyg när han/hon utför någon annan aktivitet (t.ex. använder
+    ett annat verktyg, som "Text" eller "Brush", aktiverar ett tillfälligt
+    verktyg, som "Undo" och "Redo", eller återvänder från en dialog -
+    eventuellt med en ny bild när den växlar tillbaka - som "Open", "New" eller
+    "Quit"). I detta fall är samma magiska verktyg först "utslaget" och sedan
+    "inslaget igen", vanligtvis några ögonblick senare.
 
-    Finally, it can also happen when the user changes the 'mode' of a tool
-    (i.e., from paint mode to full-image mode). First switchout() is called for
-    the old mode, then switchin() is called for the new mode.
+    Slutligen kan det också hända när användaren ändrar "läge" för ett verktyg
+    (t.ex. från färgläge till fullbildsläge). Först anropas switchout() för det
+    gamla läget, sedan anropas switchin() för det nya läget.
 
-    These functions allow users to interact in complicated was with Magic tools
-    (for example, a tool that lets the user draw multiple freehand strokes, and
-    then uses that as input such as handwriting — normally, the user could
-    click somewhere in the canvas to tell the Magic tool they are 'finished',
-    but if they switch to another tool, the Magic tool may want to undo any
-    temporary changes to the canvas).
+    Dessa funktioner gör det möjligt för användare att interagera på
+    komplicerade sätt med Magic-verktyg (t.ex. ett verktyg som låter användaren
+    rita flera streck på fri hand och sedan använder det som indata, t.ex.
+    handskrift - normalt kan användaren klicka någonstans i målarduken för att
+    tala om för Magic-verktyget att de är "klara", men om de byter till ett
+    annat verktyg kanske Magic-verktyget vill ångra alla tillfälliga ändringar
+    i målarduken).
 
-    These functions could also be used to streamline certain effects; a
-    behind-the-scenes copy of the entire canvas could be altered in some way
-    when the user first switches to the canvas, and then pieces of that copy
-    could be drawn on the canvas when they draw with the Magic tool.
+    Dessa funktioner skulle också kunna användas för att effektivisera vissa
+    effekter; en bakomliggande kopia av hela duken skulle kunna ändras på något
+    sätt när användaren först växlar till duken, och sedan skulle delar av den
+    kopian kunna ritas på duken när användaren ritar med Magic-verktyget.
 
-    Note: Added to Tux Paint 0.9.21; Magic API version 0x00000002.
+    Obs: Tillagd till Rita med Tux 0.9.21; Magic API-version 0x00000002.
 
 
      
 → void set_color(magic_api * api, int which, SDL_Surface * canvas, SDL_Surface
 * last, Uint8 r, Uint8 g, Uint8 b, SDL_Rect * update_rect) ←
 
-    Tux Paint will call this function to inform the plugin of the RGB values of
-    the currently-selected color in Tux Paint's 'Colors' palette. (It will be
-    called whenever one of the plugin's Magic tools that accept colors becomes
-    active, and whenever the user picks a new color while such a tool is
-    currently active.)
+    Rita med Tux anropar denna funktion för att informera insticksprogrammet om
+    RGB-värdena för den aktuella valda färgen i Rita med Tuxs palett "Colors".
+    (Funktionen anropas när ett av plugin-programmets magiska verktyg som
+    accepterar färger blir aktivt, och när användaren väljer en ny färg medan
+    ett sådant verktyg är aktivt)
 
-    Generally, Magic tools will not alter the canvas in any way when receiving
-    an updated color, but it is possible. (For example, the "Zoom" and
-    "Perspective" tools apply effects which uses the current color choice as a
-    solid background. The effects may be adjusted with subsequent click/drag
-    operations, but you may also adjust the background color, without altering
-    the zoom level or perspective, by simply picking a new color.)
+    I allmänhet kommer Magic-verktygen inte att ändra målarduken på något sätt
+    när de får en uppdaterad färg, men det är möjligt. (Till exempel använder
+    verktygen "Zoom" och "Perspective" effekter som använder det aktuella
+    färgvalet som en solid bakgrund. Effekterna kan justeras med efterföljande
+    klick/drag-operationer, men du kan också justera bakgrundsfärgen, utan att
+    ändra zoomnivån eller perspektivet, genom att helt enkelt välja en ny färg)
 
-    Note: Changed most recently in Tux Paint 0.9.29; Magic API version
-    0x00000007.
+    Notera: Senast ändrad i Rita med Tux 0.9.29; Magic API version 0x00000007.
 
 
      
 → void set_size(magic_api * api, int which, int mode, SDL_Surface * canvas,
 SDL_Surface * last, Uint8 size, SDL_Rect * update_rect) ←
 
-    Tux Paint will call this function to inform the plugin of the 'Magic' tool
-    size option chosen. (It will be called whenever one of the plugin's Magic
-    tools that accept sizes becomes active, and whenever the user picks a new
-    size while such a tool is currently active.)
+    Rita med Tux anropar denna funktion för att informera insticksprogrammet om
+    det valda storleksalternativet för "Magic"-verktyget. (Den anropas när ett
+    av plugin-programmets magiska verktyg som accepterar storlekar blir aktivt,
+    och när användaren väljer en ny storlek medan ett sådant verktyg är aktivt)
 
-    Generally, Magic tools will not alter the canvas in any way when receiving
-    an updated size, but it is possible.
+    I allmänhet kommer Magic-verktygen inte att ändra duken på något sätt när
+    de får en uppdaterad storlek, men det är möjligt.
 
-    Note: Added to Tux Paint 0.9.30; Magic API version 0x00000008.
+    Obs: Tillagd till Rita med Tux 0.9.30; Magic API-version 0x00000008.
 
 
      
 → void click(magic_api * api, int which, int mode, SDL_Surface * snapshot,
 SDL_Surface * canvas, int x, int y, SDL_Rect * update_rect) ←
 
-    The plugin should apply the appropriate 'Magic' tool on the 'canvas'
-    surface. The (x,y) coordinates are where the mouse was (within the canvas)
-    when the mouse button was clicked, and you are told which 'mode' your tool
-    is in (i.e., 'MODE_PAINT' or 'MODE_FULLSCREEN).
+    Plugin-programmet ska tillämpa lämpligt "Magic"-verktyg på"canvas"-ytan.
+    (x,y)-koordinaterna är var musen befann sig (inom canvasen) när musknappen
+    klickades, och du får veta vilket "läge" ditt verktyg är i
+    (dvs."MODE_PAINT" eller"MODE_FULLSCREEN").
 
-    The plugin should report back what part of the canvas was affected, by
-    filling in the (x,y) and (w,h) elements of 'update_rect'.
+    Plugin-programmet bör rapportera tillbaka vilken del av duken som
+    påverkades genom att fylla i elementen (x,y) och (w,h) i"update_rect".
 
-    The contents of the drawing canvas immediately prior to the mouse button
-    click is stored within the 'snapshot' canvas.
+    Innehållet i teckningsytan omedelbart före musklicket lagras
+    i"snapshot"-ytan.
 
 
      
 → void drag(magic_api * api, int which, SDL_Surface * snapshot, SDL_Surface *
 canvas, int ox, int oy, int x, int y, SDL_Rect * update_rect) ←
 
-    The plugin should apply the appropriate 'Magic' tool on the 'canvas'
-    surface. The (ox,oy) and (x,y) coordinates are the location of the mouse at
-    the beginning and end of the stroke.
+    Plugin-programmet bör tillämpa lämpligt "Magic"-verktyg på"canvas"-ytan.
+    Koordinaterna (ox,oy) och (x,y) är musens position i början och slutet av
+    strecket.
 
-    Typically, plugins that let the user "draw" effects onto the canvas utilize
-    Tux Paint's "line()" 'Magic' tool plugin helper function to calculate the
-    points of the line between (ox,oy) and (x,y), and call another function
-    within the plugin to apply the effect at each point. (See "Tux Paint
-    Functions and Data," below).
+    Plugins som låter användaren "rita" effekter på duken använder vanligtvis
+    Rita med Tux's"line()" 'Magic' tool plugin-hjälpfunktion för att beräkna
+    punkterna på linjen mellan (ox,oy) och (x,y), och anropar en annan funktion
+    inom pluginet för att tillämpa effekten vid varje punkt. (Se"Rita med
+    Tux-funktioner och data" nedan).
 
-    The plugin should report back what part of the canvas was affected, by
-    filling in the (x,y) and (w,h) elements of 'update_rect'.
+    Plugin-programmet bör rapportera tillbaka vilken del av duken som
+    påverkades genom att fylla i elementen (x,y) och (w,h) i"update_rect".
 
-    Note: The contents of the drawing canvas immediately prior to the mouse
-    button click remains as it was (when the plugin's "click()" function was
-    called), and is still available in the 'snapshot' canvas.
+    Obs: Innehållet i ritningsytan omedelbart före musklicket förblir detsamma
+    som det var (när plugin-programmets "click()"-funktion anropades) och är
+    fortfarande tillgängligt i"snapshot"-ytan.
 
 
      
 → void release(magic_api * api, int which, SDL_Surface * snapshot, SDL_Surface
 * canvas, int x, int y, SDL_Rect * update_rect) ←
 
-    The plugin should apply the appropriate 'Magic' tool on the 'canvas'
-    surface. The (x,y) coordinates are where the mouse was (within the canvas)
-    when the mouse button was released.
+    Plugin-programmet bör använda lämpligt "Magic"-verktyg på"canvas"-ytan.
+    (x,y)-koordinaterna är var musen befann sig (inom duken) när musknappen
+    släpptes.
 
-    The plugin should report back what part of the canvas was affected, by
-    filling in the (x,y) and (w,h) elements of 'update_rect'.
+    Plugin-programmet bör rapportera tillbaka vilken del av duken som
+    påverkades genom att fylla i elementen (x,y) och (w,h) i "update_rect".
 
-    Note: The contents of the drawing canvas immediately prior to the mouse
-    button click remains as it was (when the plugin's "click()" function was
-    called), and is still available in the 'snapshot' canvas.
+    Obs: Innehållet i ritningsytan omedelbart före musklicket förblir detsamma
+    som det var (när plugin-programmets "click()"-funktion anropades) och är
+    fortfarande tillgängligt i "snapshot"-ytan.
 
 
      
 
-                     ### Tux Paint Functions and Data ###
+                   ### Rita med Tux Funktioner och data ###
 
-Tux Paint provides a number of helper functions that plugins may access via the
-"magic_api" structure, sent to all of the plugin's functions. (See "Required
-Plugin Functions," above.)
+Rita med Tux tillhandahåller ett antal hjälpfunktioner som plugins kan komma åt
+via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
+"Obligatoriska plugin-funktioner" ovan.)
 
-## Pixel Manipulations ##
+## Pixelmanipulationer ##
 
 → Uint32 getpixel(SDL_Surface * surf, int x, int y) ←
-    Retreives the pixel value from the (x,y) coordinates of an SDL_Surface.
-    (You can use SDL's "SDL_GetRGB()" function to convert the Uint32 'pixel' to
-    a set of Uint8 RGB values.)
+    Hämtar pixelvärdet från (x,y)-koordinaterna för en SDL_Surface. (Du kan
+    använda SDL:s funktion "SDL_GetRGB()" för att konvertera Uint32 'pixel'
+    till en uppsättning Uint8 RGB-värden)
      
 → void putpixel(SDL_Surface * surf, int x, int y, Uint32 pixel) ←
-    Sets the pixel value at position (x,y) of an SDL_Surface. (You can use
-    SDL's "SDL_MapRGB()" function to convert a set of Uint8 RGB values to a
-    Uint32 'pixel' value appropriate to the destination surface.)
+    Ställer in pixelvärdet vid position (x,y) för en SDL_Surface. (Du kan
+    använda SDL:s funktion "SDL_MapRGB()" för att konvertera en uppsättning
+    Uint8 RGB-värden till ett Uint32 "pixel"-värde som passar för
+    destinationsytan)
      
 → Uint32 xorpixel(SDL_Surface * surf, int x, int y) ←
-    Applies an XOR (exclusive-or) operation to the pixel at coordinates (x,y)
-    of the SDL_Surface. Applying an XOR again at the same position will return
-    the pixel to the original value. Useful for displaying temporary
-    'rubberband' lines, outlines, and crosshairs, while utilizing a Magic Tool.
+    Tillämpar en XOR-operation (exklusiv-eller) på pixeln vid koordinaterna
+    (x,y) i SDL_Surface. Om du gör en XOR-operation igen på samma position
+    återställs pixeln till originalvärdet. Användbar för att visa tillfälliga
+    "gummibandslinjer", konturer och hårkors, samtidigt som du använder ett
+    magiskt verktyg.
     → SDL_Surface * scale(SDL_Surface * surf, int w, int h, int keep_aspect) ←
 
-        This accepts an existing SDL surface and creates a new one scaled to an
-        arbitrary size. (The original surface remains untouched.)
+        Detta accepterar en befintlig SDL-yta och skapar en ny som skalas till
+        en godtycklig storlek. (Den ursprungliga ytan förblir orörd.)
 
-        The "keep_aspect" flag can be set to '1' to force the new surface to
-        stay the same shape (aspect ratio) as the original, meaning it may not
-        be the same width and height you requested. (Check the "->w" and "->h"
-        elements of the output "SDL_Surface *" to determine the actual size.)
+        Flaggan"keep_aspect" kan sättas till '1' för att tvinga den nya ytan
+        att behålla samma form (bildförhållande) som originalet, vilket innebär
+        att den kanske inte har samma bredd och höjd som du begärde.
+        (Kontrollera elementen"->w" och"->h" i utdata "SDL_Surface *" för att
+        avgöra den faktiska storleken)
          
    
-    ## Helper Functions ##
+    ## Hjälpfunktioner ##
 
     → int in_circle(int x, int y, int radius) ←
-        Returns '1' if the (x,y) location is within a circle of a particular
-        radius (centered around the origin: (0,0)). Returns '0' otherwise.
-        Useful to create 'Magic' tools that affect the canvas with a circular
-        brush shape.
+        Returnerar '1' om (x,y)-positionen ligger inom en cirkel med en viss
+        radie (centrerad runt origo: (0,0)). Returnerar '0' i annat fall.
+        Användbart för att skapa "magiska" verktyg som påverkar duken med en
+        cirkulär penselform.
          
     → void line(void * api, int which, SDL_Surface * canvas, SDL_Surface *
     snapshot, int x1, int y1, int x2, int y2, int step, FUNC callback) ←
 
-        This function calculates all points on a line between the coordinates
-        (x1,y1) and (x2,y2). Every 'step' iterations, it calls the 'callback'
-        function.
+        Denna funktion beräknar alla punkter på en linje mellan koordinaterna
+        (x1,y1) och (x2,y2). Varje 'steg'-iteration anropar den funktionen
+        'callback'.
 
-        It sends the 'callback' function the (x,y) coordinates on the line, Tux
-        Paint's "magic_api" struct (as a "void *" pointer which you need to
-        send to it), a 'which' value, represening which of the plugin's 'Magic'
-        tool is being used, and the current and snapshot canvases.
+        Den skickar (x,y)-koordinaterna på linjen till "callback"-funktionen,
+        Rita med Tuxs"magic_api"-struktur (som en"void *"-pekare som du måste
+        skicka till den), ett "which"-värde som representerar vilket av
+        plugin-programmets "Magic"-verktyg som används, och de aktuella och
+        snapshot-bilderna.
 
-        Example prototype of a callback function that may be sent to Tux
-        Paint's "line()" 'Magic' tool plugin helper function:
+        Exempel på prototyp av en callback-funktion som kan skickas till Rita
+        med Tux's"line()" 'Magic' tool plugin helper-funktion:
 
             void exampleCallBack(void * ptr_to_api, int which_tool, SDL_Surface
             * canvas, SDL_Surface * snapshot, int x, int y);
 
-        Example use of the "line()" helper (e.g., within a plugin's draw()
-        function):
+        Exempel på användning av"line()"-hjälpen (t.ex. inom ett plugins draw()
+        -funktion):
 
             api->line((void *) api, which, canvas, snapshot, ox, oy, x, y, 1,
             exampleCallBack);
@@ -583,328 +597,332 @@ Plugin Functions," above.)
          
     → Uint8 touched(int x, int y) ←
 
-        This function allows you to avoid re-processing the same pixels
-        multiple times when the user drags the mouse across an area of the
-        canvas, thus increasing Tux Paint's response time, especially with
-        math-heavy effects.
+        Med den här funktionen kan du undvika att bearbeta samma pixlar flera
+        gånger när användaren drar musen över ett område på duken, vilket ökar
+        Rita med Tuxs svarstid, särskilt med matematiktunga effekter.
 
-        If your effect's "click()", "drag()" and/or "release()" functions take
-        the contents of the source surface ("snapshot") and always create the
-        same results in the desintation surface ("canvas"), you should wrap the
-        effect in a call to "api->touched()".
+        Om din effekts"click()"-,"drag()"- och/eller"release()"-funktioner tar
+        innehållet i källytan ("snapshot") och alltid skapar samma resultat i
+        målytan ("canvas"), bör du linda in effekten i ett anrop till"api->
+        touched()".
 
-        This function simply returns whether or not it had already been called
-        for the same (x,y) coordinates, since the user first clicked the mouse.
-        In other words, the first time you call it for a particular (x,y)
-        coordinate, it returns '0'. Future calls will return '1' until the user
-        releases the mouse button.
+        Denna funktion returnerar helt enkelt om den redan har anropats för
+        samma (x,y)-koordinater sedan användaren först klickade på musen. Med
+        andra ord, första gången du anropar den för en viss (x,y)-koordinat
+        returnerar den '0'. Framtida anrop kommer att returnera '1' tills
+        användaren släpper musknappen.
 
-        Note: Magic effects that continuously affect the destination surface
-        ("canvas") (ignoring the "snapshot surface) have no reason to use this
-        function. The "Blur" and "Smudge" tools that ship with Tux Paint are
-        examples of such effects.
+        Obs: Magiska effekter som kontinuerligt påverkar destinationsytan
+        ("canvas") (utan hänsyn till"snapshotytan ") har ingen anledning att
+        använda denna funktion. Verktygen "Blur" och "Smudge" som medföljer
+        Rita med Tux är exempel på sådana effekter.
 
 
          
    
-    ## Informational ##
+    ## Information ##
 
     → char * tp_version ←
-        A string containing the version of Tux Paint that's running (e.g.,
+        En sträng som innehåller den version av Rita med Tux som körs (t.ex.
         "0.9.35").
          
     → int canvas_w
     int canvas_h ←
-        Returns the width (canvas_w) and height (canvas_h) of the drawing
-        canvas (in pixels).
+        Returnerar bredden(canvas_w) och höjden (canvas_h) på teckningsytan (i
+        pixlar).
          
     → int button_down(void) ←
-        A '1' is returned if the mouse button is down; '0' otherwise.
+        En '1' returneras om musknappen är nedtryckt; '0' annars.
          
     → char * data_directory ←
 
-        This string contains the directory where Tux Paint's data files are
-        stored. For example, on Linux, this may be "/usr/share/tuxpaint/".
+        Denna sträng innehåller den katalog där Rita med Tuxs datafiler lagras.
+        På Linux kan detta till exempel vara"/usr/share/tuxpaint/".
 
-        Magic tools should include an icon (see "get_icon()", above) and are
-        encouraged to include sound effects, it's useful for plugins to know
-        where such things are located.
+        Magiska verktyg bör innehålla en ikon (se"get_icon()", ovan) och
+        uppmuntras att innehålla ljudeffekter, det är användbart för plugins
+        att veta var sådana saker finns.
 
-        When compiling and installing a plugin, the "tp-magic-config"
-        command-line tool should be used to determine where such data should be
-        placed for the installed version of Tux Paint to find them. (See "
-        Installing," below.)
+        Vid kompilering och installation av ett insticksprogram bör
+        kommandoradsverktyget"tp-magic-config" användas för att avgöra var
+        sådana data ska placeras för att den installerade versionen av Rita med
+        Tux ska hitta dem. (Se"Installera" nedan.)
 
-        Note: If your plugin is installed locally (e.g., in your "~/.tuxpaint/
-        plugins/" directory), rather than globally (system-wide), the
-        "data_directory" value will be different. (e.g., "/home/username
-        /.tuxpaint/plugins/data/").
+        Obs: Om ditt plugin är installerat lokalt (t.ex. i din katalog"~
+        /.tuxpaint/plugins/"), snarare än globalt (systemövergripande), kommer
+        värdet"data_directory" att vara annorlunda. (t.ex. "/home/användarnamn/
+        .tuxpaint/plugins/data/").
 
 
          
    
-    ## Sound Functions ##
+    ## Ljudfunktioner ##
 
     → void playsound(Mix_Chunk * snd, int pan, int dist) ←
 
-        This function plays a sound (one loaded by the SDL helper library
-        "SDL_mixer"). It uses SDL_mixer's "Mix_SetPanning()" to set the volume
-        of the sound on the left and right speakers, based on the 'pan' and
-        'dist' values sent to it.
+        Denna funktion spelar upp ett ljud (ett som laddats av
+        SDL-hjälpbiblioteket "SDL_mixer"). Den använder
+        SDL_mixers"Mix_SetPanning()" för att ställa in ljudets volym på vänster
+        och höger högtalare, baserat på värdena"pan" och"dist" som skickas till
+        den.
 
-        A 'pan' of 128 causes the sound to be played at equal volume on the
-        left and right speakers. A 'pan' of 0 causes it to be played completely
-        on the left, and 255 completely on the right.
+        En"pan" på 128 innebär att ljudet spelas upp med samma volym i vänster
+        och höger högtalare. En"pan" på 0 gör att ljudet spelas upp helt till
+        vänster och 255 helt till höger.
 
-        The 'dist' value affects overall volume. 255 is loudest, and 0 is
-        silent.
+        Värdet"dist" påverkar den totala volymen. 255 är högst och 0 är tyst.
 
-        The 'pan' and 'dist' values can be used to simulate location and
-        distance of the 'Magic' tool effect.
+        Värdena"pan" och"dist" kan användas för att simulera plats och avstånd
+        för "Magic"-verktygets effekt.
 
 
          
     → void stopsound(void) ←
-        This function stops playing a sound played by playsound(). It is useful
-        to silence effects when the user stops using the tool (in your
-        'release' function).
+        Denna funktion stoppar uppspelningen av ett ljud som spelas upp av
+        playsound(). Det är användbart för att tysta effekter när användaren
+        slutar använda verktyget (i din"release"-funktion).
          
     → int playingsound(void) ←
 
-        Call this function to determine whether a magic tool sound effect is
-        still currently playing. Can be used by magic tools that pause and
-        unpause their sounds (see below) to determine whether it's time to
-        start a new sound — call playsound() instead of unpausesound(). A '1'
-        is returned if a sound is playing; '0' otherwise.
+        Anropa denna funktion för att avgöra om en ljudeffekt från ett magiskt
+        verktyg fortfarande spelas upp. Kan användas av magiska verktyg som
+        pausar och avpausar sina ljud (se nedan) för att avgöra om det är dags
+        att starta ett nytt ljud - anropa playsound() istället för unpausesound
+        (). En "1" returneras om ett ljud spelas upp, annars en "0".
 
-        Note: Added to Tux Paint 0.9.34; Magic API version 0x0000000B.
+        Obs: Tillagd till Rita med Tux 0.9.34; Magic API-version 0x0000000B.
 
 
          
     → void pausesound(void) ←
 
-        Pauses the magic tool sound effect; it may be unpaused to resume
-        playing. Useful when a magic tool sound is very long; avoid repeatedly
-        playing just a short clip of the beginning when the user draws small
-        strokes by starting (playsound()) and stopping (stopsound()) the sound.
-        Use playingsound() to determine whether you can unpause or must play
-        from the start.
+        Pausar ljudeffekten för det magiska verktyget; den kan avpausas för att
+        återuppta uppspelningen. Användbart när ett magiskt verktygsljud är
+        mycket långt; undvik att upprepade gånger spela bara ett kort klipp av
+        början när användaren ritar små streck genom att starta (playsound())
+        och stoppa (stopsound()) ljudet. Använd playingsound() för att avgöra
+        om du kan avbryta eller måste spela upp från början.
 
-        Note: Added to Tux Paint 0.9.34; Magic API version 0x0000000B.
+        Obs: Tillagd till Rita med Tux 0.9.34; Magic API-version 0x0000000B.
 
 
          
     → void unpausesound(void) ←
 
-        Resumes a paused magic tool sound effect, if one was playing.
+        Återupptar en pausad ljudeffekt för det magiska verktyget, om en sådan
+        spelades.
 
-        Note: Added to Tux Paint 0.9.34; Magic API version 0x0000000B.
+        Obs: Tillagd till Rita med Tux 0.9.34; Magic API-version 0x0000000B.
 
 
          
    
-    ## Tux Paint System Calls ##
+    ## Systemanrop för Rita med Tux ##
 
     → void update_progress_bar(void) ←
-        Asks Tux Paint to animate and draw one frame of its progress bar (at
-        the bottom of the screen). Useful for routines that may take a long
-        time, to provide feedback to the user that Tux Paint has not crashed or
-        frozen.
+        Ber Rita med Tux att animera och rita en bildruta i förloppsindikatorn
+        (längst ned på skärmen). Användbar för rutiner som kan ta lång tid, för
+        att ge feedback till användaren om att Rita med Tux inte har kraschat
+        eller frusit.
          
     void special_notify(int flag) ←
-        This function notifies Tux Paint of special events. Various values
-        defined in "tp_magic_api.h" can be 'or'ed together (using C's boolean
-        'or': "|") and sent to this function.
+        Denna funktion meddelar Rita med Tux om speciella händelser. Olika
+        värden som definieras i"tp_magic_api.h" kan kombineras (med hjälp av
+        C:s booleska 'or':"|") och skickas till denna funktion.
         → SPECIAL_FLIP ←
 
-            The contents of the canvas has been flipped vertically.
+            Innehållet på duken har vänts vertikalt.
 
-            If a 'Starter' image was used as the basis of this image, it should
-            be flipped too, and a record of the flip should be stored as part
-            of Tux Paint's undo buffer stack. Additionally, the fact that the
-            starter has been flipped (or unflipped) should be recorded on disk
-            when the current drawing is saved.
+            Om en "Starter"-bild användes som grund för den här bilden ska den
+            också vändas, och en registrering av vändningen ska lagras som en
+            del av Rita med Tuxs buffertstapel för ångerrätt. Dessutom ska det
+            faktum att startbilden har vänts (eller inte vänts) sparas på
+            disken när den aktuella teckningen sparas.
 
 
              
         → SPECIAL_MIRROR ←
-            Similar to SPECIAL_FLIP, but for magic tools that mirror the
-            contents of the canvas horizontally.
+            Liknar SPECIAL_FLIP, men för magiska verktyg som speglar innehållet
+            i duken horisontellt.
              
 
          
     void retract_undo(void) ←
 
-        Each time the user clicks in the canvas while using your Magic tool, a
-        new snapshot of the canvas is added to the "Undo" history. This allows
-        the user to click "Undo" to return the image to the state it was in
-        just before they clicked with your Magic tool. They may click "Redo" to
-        bring the change back.
+        Varje gång användaren klickar i duken medan han eller hon använder
+        Magic-verktyget läggs en ny ögonblicksbild av duken till i
+        "Undo"-historiken. Detta gör det möjligt för användaren att klicka på
+        "Undo" för att återställa bilden till det tillstånd den befann sig i
+        precis innan de klickade med ditt Magic-verktyg. De kan klicka på
+        "Redo" för att återställa ändringen.
 
-        However, some more sophisticated Magic tools require one or more steps
-        to take place before the final "effect" is reached. For example,
-        "Filled Polygon" requires placing at least three connected points, then
-        connecting the first and last point together, to create a shape that
-        gets added to the canvas. In the meantime, an interactive preview of
-        the shape — an outline with large dots representing each point — is
-        drawn onto the canvas. (The points may be moved, or even removed, prior
-        to finishing the shape.)
+        Vissa mer sofistikerade Magic-verktyg kräver dock att ett eller flera
+        steg utförs innan den slutliga "effekten" uppnås. Till exempel kräver
+        "Filled Polygon" att du placerar minst tre sammankopplade punkter och
+        sedan kopplar ihop den första och den sista punkten för att skapa en
+        form som läggs till på duken. Under tiden ritas en interaktiv
+        förhandsgranskning av formen - en kontur med stora prickar som
+        representerar varje punkt - på duken. (Punkterna kan flyttas, eller
+        till och med tas bort, innan formen är klar)
 
-        The retract_undo() API function may be used by a Magic tool to tell it
-        to discard the "Undo" snapshot it just took, as a way to prevent
-        previews shown during multi-step actions from appearing on the canvas
-        when using the "Undo" and "Redo" commands.
+        API-funktionen retract_undo() kan användas av ett Magic-verktyg för att
+        beordra det att kasta bort den "Undo"-bild som det just tog, som ett
+        sätt att förhindra att förhandsvisningar som visas under åtgärder i
+        flera steg visas på duken när kommandona "Undo" och "Redo" används.
 
-        💡 This is an advanced feature.
+        💡 Detta är en avancerad funktion.
 
-        Note: Added to Tux Paint 0.9.33; Magic API version 0x0000000A.
+        Obs: Tillagd till Rita med Tux 0.9.33; Magic API-version 0x0000000A.
 
 
          
    
-    ## Color Conversions ##
+    ## Färgkonverteringar ##
 
     → float sRGB_to_linear(Uint8 srbg) ←
-        Converts an 8-bit sRGB value (one between 0 and 255) to a linear
-        floating point value (between 0.0 and 1.0).
+        Konverterar ett 8-bitars sRGB-värde (ett värde mellan 0 och 255) till
+        ett linjärt flyttalsvärde (mellan 0,0 och 1,0).
          
     → uint8 linear_to_sRGB(float linear) ←
-        Converts a linear floating point value (one between 0.0 and 1.0) to an
-        8-bit sRGB value (between 0 and 255).
+        Konverterar ett linjärt flyttalsvärde (ett värde mellan 0,0 och 1,0)
+        till ett 8-bitars sRGB-värde (mellan 0 och 255).
          
     → void rgbtohsv(Uint8 r, Uint8 g, Uint8 b, float * h, float * s, float * v)
     ←
-        Converts 8-bit sRGB values (between 0 and 255) to floating-point HSV
-        (Hue, Saturation and Value) values (Hue between 0.0 and 360.0, and
-        Saturation and Value between 0.0 and 1.0).
+        Konverterar 8-bitars sRGB-värden (mellan 0 och 255) till HSV-värden
+        (Hue, Saturation och Value) med flyttal (Hue mellan 0,0 och 360,0, och
+        Saturation och Value mellan 0,0 och 1,0).
          
     → void hsvtorgb(float h, float s, float v, Uint8 * r, Uint8 * g, Uint8 * b)
     ←
-        Converts floating-point HSV (Hue, Saturation and Value) values (Hue
-        between 0.0 and 360.0, and Saturation and Value between 0.0 and 1.0) to
-        8-bit sRGB values (between 0 and 255).
+        Konverterar HSV-värden (Hue, Saturation och Value) med flyttal (Hue
+        mellan 0,0 och 360,0 och Saturation och Value mellan 0,0 och 1,0) till
+        8-bitars sRGB-värden (mellan 0 och 255).
          
 
-    For more information, refer to the sRGB article at Wikipedia and the HSV
-    Color Space article at Wikipedia.
+    Mer information finns i artikeln om sRGB på Wikipedia och artikeln om
+    HSV-färgrymden på Wikipedia..
 
-                     ### Helper Macros in "tp_magic_api.h" ###
+                      ### Hjälpmakron i "tp_magic_api.h" ###
 
-    Along with the "magic_api" C structure containing functions and data
-    described above, the tp_magic_api.h C header file also contains some helper
-    macros that you may use.
+    Förutom C-strukturen"magic_api" som innehåller funktioner och data som
+    beskrivs ovan, innehåller C-huvudfilen tp_magic_api.h också några
+    hjälpmakron som du kan använda.
 
     → min(x, y)
     max(x, y) ←
-        The minimum (min) or maxinum (max) of 'x' and 'y'. For example, min()
-        will return the value of 'x' if it is less than or equal to 'y',
-        otherwise it will return 'y'.
+        Minimum(min) eller maximum(max) av 'x' och 'y'. Till exempel kommer min
+        () att returnera värdet på 'x' om det är mindre än eller lika med 'y',
+        annars kommer det att returnera 'y'.
          
     → clamp(lo, value, hi) ←
 
-        A value, clamped to be no smaller than 'lo', and no higher than 'hi'.
-        (That is, if 'value' is less than 'lo', then 'lo' will be used; if
-        'value' is greater than 'hi', then 'hi' will be used; otherwise,
-        'value' will be used.)
+        Ett värde som inte får vara mindre än "lo" och inte högre än "hi". (Det
+        vill säga, om "värde" är mindre än "lo", används "lo"; om "värde" är
+        större än "hi", används "hi"; i annat fall används "värde")
 
-        Example: red = clamp(0, n, 255); will set the variable 'red' to be the
-        value of the variable 'n', but without allowing it to become less than
-        0 or greater than 255.
+        Exempel: red = clamp(0, n, 255); kommer att sätta variabeln "red" till
+        värdet av variabeln "n", men utan att tillåta att den blir mindre än 0
+        eller större än 255.
 
-        Note: This macro is simply a #define of: "(min(max(value,lo),hi))".
+        Observera: Detta makro är helt enkelt en #definition av: "(min(max
+        (värde,lo),hi))"..
 
 
          
    
-                 ### Constant Definitions in "tp_magic_api.h" ###
+                 ### Konstant Definitioner i "tp_magic_api.h" ###
 
-    The following is a summary of constant values that are set (via "#define")
-    within the 'Magic' tool API header file.
+    Följande är en sammanfattning av de konstantvärden som ställs in (via"#
+    define") i huvudfilen för verktygs-API:et 'Magic'.
 
     → TP_MAGIC_API_VERSION ←
 
-        This integer value represents which version of the Tux Paint 'Magic'
-        tool API the header corresponds to.
+        Detta heltalsvärde representerar vilken version av Rita med Tux 'Magic'
+        tool API som rubriken motsvarar.
 
-        It should be referenced by your magic tool's "api_version()" function,
-        to inform the running copy of Tux Paint whether or not your plugin is
-        compatible.
+        Det bör refereras till av ditt magiska verktygs"api_version()
+        "-funktion, för att informera den löpande kopian av Rita med Tux om
+        ditt plugin är kompatibelt eller inte.
 
-        Note: This version number does not correspond to Tux Paint's own
-        release number (e.g., "0.9.35"). The API will not change every time a
-        new version of Tux Paint is released, which means plugins compiled for
-        earlier versions of Tux Paint will often run under newer versions.
+        Obs: Detta versionsnummer motsvarar inte Rita med Tux's eget
+        versionsnummer (t.ex. "0.9.35"). API:et kommer inte att ändras varje
+        gång en ny version av Rita med Tux släpps, vilket innebär att plugins
+        som kompilerats för tidigare versioner av Rita med Tux ofta kommer att
+        köras under nyare versioner.
 
 
          
     → SPECIAL_MIRROR
     SPECIAL_FLIP ←
-        These are flags for Tux Paint's "special_notify()" helper function.
-        They are described above.
+        Dessa är flaggor för Rita med Tuxs hjälpfunktion"special_notify()". De
+        beskrivs ovan.
          
    
-    Compiling
+    Kompilera
 
-                    ### Linux and other Unix-like Platforms ###
+                 ### Linux och andra Unix-liknande plattformar ###
 
-    Use the C compiler's "-shared" command-line option to generate a shared
-    object file (".so") based on your 'Magic' tool plugin's C source code.
+    Använd C-kompilatorns kommandoradsalternativ"-shared" för att generera en
+    fil med delade objekt (".so") baserat på C-källkoden för ditt
+    verktygsplugin 'Magic'.
 
-    Use the "tp-magic-config --cflags" command, supplied as part of Tux Paint —
-    or in some cases, as part of a "Tux Paint 'Magic' Tool Plugin Development
-    package" — to provide additional command-line flags to your C compiler that
-    will help it build your plugin.
+    Använd kommandot"tp-magic-config --cflags", som levereras som en del av
+    Rita med Tux - eller i vissa fall som en del av ett "Rita med Tux 'Magic'
+    Tool Plugin Development package" - för att tillhandahålla ytterligare
+    kommandoradsflaggor till din C-kompilator som hjälper den att bygga ditt
+    plugin.
 
-    ## Command-Line Example ##
+    ## Exempel på kommandoraden ##
 
-    As a stand-alone command, using the GNU C Compiler and BASH shell, for
-    example:
+    Som ett fristående kommando, till exempel med GNU C-kompilatorn och
+    BASH-skalet:
 
 
         $ gcc -shared -fpic `tp-magic-config --cflags` my_plugin.c -o
         my_plugin.so
 
-    Note: The characters around the "tp-magic-config" command are a grave/
-    backtick/backquote ("`"), and not an apostrophe/single-quote ("'"). They
-    tell the shell to execute the command within (in this case,
-    "tp-magic-config ..."), and use its output as an argument to the command
-    being executed (in this case, "gcc ...").
+    Observera: Tecknen runt kommandot"tp-magic-config" är en grav/backtick/
+    backquote ("`"), och inte en apostrof/enkel citationstecken ("'"). De talar
+    om för skalet att det ska utföra kommandot i kommandot (i det här
+    fallet"tp-magic-config ...") och använda resultatet som ett argument till
+    kommandot som ska utföras (i det här fallet"gcc...").
 
-    ## Makefile Example ##
+    ## Makefile Exempel ##
 
-    A snippet from a Makefile to compile a Tux Paint "Magic" tool plugin might
-    look like this:
+    Ett utdrag från en Makefile för att kompilera en Rita med Tux "Magic" tool
+    plugin kan se ut så här:
 
         CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)
 
         my_plugin.so: my_plugin.c
             gcc -shared $(CFLAGS) -o my_plugin.so my_plugin.c
 
-    The first line sets up Makefile variable ("CFLAGS") that contains flags for
-    the compiler. "-Wall" asks for all compiler warnings to be shown. "-O2"
-    asks for level 2 optimization. "($shell tp-magic-config --cflags)" runs
-    "tp-magic-config" to retrieve additional compiler flags that "Magic" tool
-    plugins require. (The "$(shell ...)" directive is similar to the `
-    ("grave") character in the BASH shell examples, above.)
+    Den första raden sätter upp Makefile-variabeln ("CFLAGS") som innehåller
+    flaggor för kompilatorn."-Wall" ber om att alla kompilatorvarningar ska
+    visas. "-O2" begär optimering på nivå 2. "($shell tp-magic-config --cflags)
+    " kör"tp-magic-config" för att hämta ytterligare kompilatorflaggor som
+    "Magic"-verktygets insticksprogram kräver. (Direktivet "$(shell ...)"
+    liknar tecknet ` ("grav") i BASH-skalexemplen ovan)
 
-    The next line defines a Makefile target, "my_plugin.so", and states that it
-    depends on the C source file "my_plugin.c". (Any time the C file changes,
-    "make" will know to recompile it and produce an updated ".so" file. If the
-    C file hadn't changed, it won't bother recompiling.)
+    På nästa rad definieras ett Makefile-mål,"my_plugin.so", och det anges att
+    det är beroende av C-källfilen"my_plugin.c". (Varje gång C-filen ändras
+    vet"make" att den ska kompileras om och producera en uppdaterad ".so"-fil.
+    Om C-filen inte hade ändrats skulle den inte bry sig om att kompilera om)
 
-    The last line defines the command "make" should run when it determines that
-    it needs to (re)compile the ".so" file. Here, we're using "gcc", with
-    "-shared and "$(CFLAGS)" command-line arguments, like above. "-o
-    my_plugin.so" tells the C compiler that the output file should be
-    "my_plugin.so". The last argument is the C file to compile, in this case
-    "my_plugin.c".
+    Den sista raden definierar det kommando som"make" ska köra när det
+    bestämmer att det behöver (om)kompilera filen ".so". Här använder vi"gcc",
+    med kommandoradsargumenten"-shared och"$(CFLAGS)", som ovan."-o
+    my_plugin.so" talar om för C-kompilatorn att utdatafilen ska
+    vara"my_plugin.so". Det sista argumentet är C-filen som ska kompileras, i
+    det här fallet"my_plugin.c".
 
-    Note: Commands listed below a Makefile target should be intented using a
-    single tab character.
+    Observera: Kommandon som listas under ett Makefile-mål ska anges med ett
+    enda tabbtecken.
 
-    ## Advanced Makefile ##
+    ## Avancerad Makefile ##
 
-    An even more generalized Makefile might look like this:
+    En ännu mer generaliserad Makefile kan se ut så här:
 
         CFLAGS=-Wall -O2 $(shell tp-magic-config --cflags)
 
@@ -914,19 +932,19 @@ Plugin Functions," above.)
         my_plugin_2.so: my_plugin_2.c
             $(CC) -shared $(CFLAGS) -o $@ $<
 
-    As before, there are lines that define the command "make" should run when
-    it determines that it needs to (re)compile the ".so" file(s). However, more
-    general terms are used...
+    Precis som tidigare finns det rader som definierar kommandot som"make" ska
+    köra när det upptäcker att det behöver (om)kompilera ".so"-filen/filerna.
+    Här används dock mer allmänna termer...
 
-    "$(CC)" gets expanded to your default C compiler (e.g., "gcc"). "-shared"
-    and "$(CFLAGS)" are command-line arguments to the compiler, like above. "-o
-    $@" tells the C compiler what the output file should be; "make" replaces
-    "$@" with the name of the target, in this case "my_plugin_1.so" or
-    "my_plugin_2.so". And finally, the last argument is the C file to compile;
-    "make" replaces "$<" with the target's dependency, in this case
-    "my_plugin_1.c" or "my_plugin_2.c".
+    "$(CC)" utökas till din standardkompilator för C (t.ex."gcc"). "-shared"
+    och"$(CFLAGS)" är kommandoradsargument till kompilatorn, som ovan."-o $@"
+    talar om för C-kompilatorn vad utdatafilen ska vara;"make" ersätter"$@" med
+    namnet på målet, i det här fallet"my_plugin_1.so" eller"my_plugin_2.so".
+    Och slutligen är det sista argumentet den C-fil som ska kompileras; "make"
+    ersätter"$<" med målets beroende, i det här fallet"my_plugin_1.c"
+    eller"my_plugin_2.c".
 
-                                  ### Windows ###
+                                  ### Fönster ###
 
     TBD
 
@@ -934,86 +952,89 @@ Plugin Functions," above.)
 
     TBD
 
-    Installing
+    Installerar
 
-                    ### Linux and other Unix-like Platforms ###
+                 ### Linux och andra Unix-liknande plattformar ###
 
-    Use the "tp-magic-config" command-line tool, supplied as part of Tux Paint
-    — or in some cases, as part of a "Tux Paint 'Magic' Tool Plugin Development
-    package" — to determine where your plugins' files should go.
+    Använd kommandoradsverktyget"tp-magic-config", som levereras som en del av
+    Rita med Tux - eller i vissa fall som en del av ett "Rita med Tux 'Magic'
+    Tool Plugin Development package" - för att bestämma var dina plugins filer
+    ska placeras.
 
     ## Delat objekt ##
 
-    Use "tp-magic-config --pluginprefix" to determine where the plugin shared
-    object (".so") files should be installed. The value returned by this
-    command will be the global location where the installed copy of Tux Paint
-    looks for plugins (e.g., "/usr/lib/tuxpaint/plugins").
+    Använd"tp-magic-config --pluginprefix" för att bestämma var plugin shared
+    object (".so")-filerna ska installeras. Det värde som returneras av detta
+    kommando är den globala plats där den installerade kopian av Rita med Tux
+    letar efter insticksprogram (t.ex. "/usr/lib/tuxpaint/plugins").
 
-    Alternatively, you may use "tp-magic-config --localpluginprefix" to find
-    out where Tux Paint expects to find local plugins for the current user
-    (e.g., "/home/username/.tuxpaint/plugins").
+    Alternativt kan du använda"tp-magic-config --localpluginprefix" för att ta
+    reda på var Rita med Tux förväntar sig att hitta lokala plugins för den
+    aktuella användaren (t.ex. "/home/username/.tuxpaint/plugins").
 
-    As stand-alone commands, using the BASH shell, for example:
+    Som fristående kommandon, t.ex. i BASH-skalet:
 
         # cp my_plugin.so `tp-magic-config --pluginprefix`
         # chmod 644 `tp-magic-config --pluginprefix`/my_plugin.so
 
-    Note: See the note above regarding the "`" (grave) character.
+    Obs: Se anmärkningen ovan angående tecknet "`"(grav)..
 
-    ## Documentation ##
+    ## Dokumentation ##
 
-    Use the "tp-magic-config --plugindocprefix" command to determine where
-    documentation for your "Magic" tools should go. The value returned by this
-    command will be the location where the documentation to the installed copy
-    of Tux Paint is stored. The main documentation includes a link to a folder
-    where "Magic" tools' documentation is expected to be installed
+    Använd kommandot"tp-magic-config --plugindocprefix" för att bestämma var
+    dokumentationen för dina "Magic"-verktyg ska placeras. Det värde som
+    returneras av detta kommando är den plats där dokumentationen till den
+    installerade kopian av Rita med Tux lagras. Huvuddokumentationen innehåller
+    en länk till en mapp där dokumentationen för "Magic"-verktygen förväntas
+    installeras
 
-    (e.g., "/usr/share/doc/tuxpaint/magic-docs").
+    (t.ex. "/usr/share/doc/tuxpaint/magic-docs").
 
-    Note: It's best to include both HTML and plain-text versions of your
-    documentation. An "html" subdirectory exists within the "magic-docs"
-    directory, and is where the HTML versions should go.
+    Observera: Det är bäst att inkludera både HTML- och klartextversioner av
+    din dokumentation. Det finns en underkatalog"html" i katalogen"magic-docs",
+    och det är där HTML-versionerna ska läggas.
 
-    As stand-alone commands, using the BASH shell, for example:
+    Som fristående kommandon, t.ex. i BASH-skalet:
 
         # cp my_plugin.html `tp-magic-config --plugindocprefix`/html
         # cp my_plugin.txt `tp-magic-config --plugindocprefix`
 
-    Note: See the note above regarding the "`" (grave) character.
+    Obs: Se anmärkningen ovan angående tecknet "`"(grav)..
 
-    Note: Currently, there is no "--localplugindocprefix" option.
+    Observera: För närvarande finns det inget
+    alternativ"--localplugindocprefix".
 
-    ## Icons, Sounds and other Data Files ##
+    ## Ikoner, ljud och andra datafiler ##
 
-    Use the "tp-magic-config --dataprefix" command, supplied as part of Tux
-    Paint, to determine where data files (PNG icon, Ogg Vorbis sound effects,
-    etc.) should be installed. The value returned by this command will be the
-    same as the value of the "data_directory" string stored within the
-    "magic_api" structure that your plugin's functions receive (e.g., "/usr/
-    share/tuxpaint/").
+    Använd kommandot"tp-magic-config --dataprefix", som ingår i Rita med Tux,
+    för att bestämma var datafiler (PNG-ikoner, Ogg Vorbis-ljudeffekter etc.)
+    ska installeras. Värdet som returneras av detta kommando kommer att vara
+    detsamma som värdet på strängen"data_directory" som lagras i
+    strukturen"magic_api" som funktionerna i ditt insticksprogram tar emot
+    (t.ex. "/usr/share/tuxpaint/").
 
-    For locally-installed plugins (for the current user only), use
-    "tp-magic-config --localdataprefix". It will return the value of
-    "data_directory" string that locally-installed plugins will see within
-    their "magic_api" structure (e.g., "/home/username/.tuxpaint/plugins/data/
-    ").
+    För lokalt installerade insticksprogram (endast för den aktuella
+    användaren) använder du"tp-magic-config --localdataprefix". Den returnerar
+    värdet på strängen"data_directory" som lokalt installerade insticksprogram
+    ser i sin"magic_api"-struktur (t.ex. "/home/username/.tuxpaint/plugins/data
+    /").
 
-    Note: Tux Paint's default Magic tool plugins install their data within
-    "magic" subdirectories of Tux Paint's "images" and "sounds" data
-    directories (e.g., "/usr/share/tuxpaint/images/magic/"). You are encouraged
-    to do the same.
+    Observera: Rita med Tuxs standardinsticksprogram för verktyget Magic
+    installerar sina data i underkatalogerna"magic" i Rita med Tuxs
+    datakataloger"images" och"sounds" (t.ex. "/usr/share/tuxpaint/images/magic/
+    "). Vi uppmuntrar dig att göra detsamma.
 
-    As stand-alone commands, using the BASH shell, for example:
+    Som fristående kommandon, t.ex. i BASH-skalet:
 
         # cp my_plugin_icon.png `tp-magic-config --dataprefix`/images/magic/
         # chmod 644 `tp-magic-config --dataprefix`/images/magic/
         my_plugin_icon.png
 
-    Note: See the note above regarding the "`" (grave) character.
+    Obs: Se anmärkningen ovan angående tecknet "`"(grav)..
 
-    ## Putting it Together in a Makefile ##
+    ## Sammanställa allt i en Makefile ##
 
-    A snippet from a more generalized Makefile might look like this:
+    Ett utdrag från en mer generell Makefile kan se ut så här:
 
         PLUGINPREFIX=$(shell tp-magic-config --pluginprefix)
         PLUGINDOCPREFIX=$(shell tp-magic-config --plugindocprefix)
@@ -1043,27 +1064,27 @@ Plugin Functions," above.)
             chmod 644 $(PLUGINDOCPREFIX)/html/*.html
             chmod 644 $(PLUGINDOCPREFIX)/*.txt
 
-    The first three lines set up Makefile variables that contain the paths
-    returned by the "tp-magic-config" command-line tool. (The "$(shell ...)"
-    directive is similar to the ` ("grave") character in the BASH shell
-    examples, above.)
+    De tre första raderna ställer in Makefile-variabler som innehåller de
+    sökvägar som returneras av kommandoradsverktyget"tp-magic-config".
+    (Direktivet"$(shell ...)" liknar tecknet ` ("grave") i BASH-skalexemplen
+    ovan)
 
-    Below that is an "install" target in the Makefile. (Invoked by, for
-    example, "$ sudo make install" or "# make install".)
+    Under det finns ett"install"-mål i Makefile. (Påkallas av till exempel"$
+    sudo make install" eller"# make install")
 
-    The "install" target uses "mkdir -p" to make sure that the plugin directory
-    exists, then uses "cp" to copy all plugin (".so") files into it, and
-    invokes "chmod" to make sure they are readable.
+    Målet"install" använder"mkdir -p" för att se till att plugin-katalogen
+    finns, använder sedan"cp" för att kopiera alla plugin (".so")-filer till
+    den och anropar"chmod" för att se till att de är läsbara.
 
-    It then does a similar series of commands to install icon files (".png"
-    images) and sound effects (".ogg" files) into subdirectories within Tux
-    Paint's data directory, and to install documentation (".html" and ".txt"
-    files) within Tux Paint's documentation directory.
+    Därefter utförs en liknande serie kommandon för att installera ikonfiler
+    (".png"-bilder) och ljudeffekter (".ogg"-filer) i underkataloger i Rita med
+    Tuxs datakatalog och för att installera dokumentation (".html"- och
+    ".txt"-filer) i Rita med Tuxs dokumentationskatalog.
 
-    Note: The above Makefile example assumes the user will have priveleges to
-    install Tux Paint plugins system-wide.
+    Obs: Makefile-exemplet ovan förutsätter att användaren har behörighet att
+    installera Rita med Tux-plugins i hela systemet.
 
-                                  ### Windows ###
+                                  ### Fönster ###
 
     TBD
 
@@ -1071,593 +1092,611 @@ Plugin Functions," above.)
 
     TBD
 
-    Creating plugins with multiple effects
+    Skapa plugins med flera effekter
 
-    Plugins for Tux Paint may contain more than one effect. If you have
-    multiple effects that are similar, it may make sense to place them in one
-    plugin file, to reduce overhead and share code.
+    Plugins för Rita med Tux kan innehålla mer än en effekt. Om du har flera
+    effekter som liknar varandra kan det vara vettigt att placera dem i en
+    plugin-fil för att minska overhead och dela kod.
 
-    These following suggestions can help you create plugins that contain
-    multiple effects:
-      o Use a C "enum" to enumerate the effects, and count them.
+    Följande förslag kan hjälpa dig att skapa plugins som innehåller flera
+    effekter:
+      o Använd C"enum" för att räkna upp effekterna och räkna dem.
 
             enum {
-                ONE_TOOL,
-                ANOTHER_TOOL,
-                AND_YET_ANOTHER_TOOL,
+                ETT_VERKTYG,
+                ANNAT_VERKTYG,
+                OCH_YTTERLIGARE_ETT_VERKTYG,
                 NUM_TOOLS };
 
-      o Return the value of "NUM_TOOLS" when "get_tool_count()" is called, and
-        compare "which" values sent to other functions with the other
-        enumerated values.
-      o Create arrays of "NUM_TOOLS" length to contain effect-specific data.
+      o Returnera värdet på"NUM_TOOLS" när"get_tool_count()" anropas, och
+        jämför"which"-värden som skickas till andra funktioner med de andra
+        uppräknade värdena.
+      o Skapa arrayer av längden"NUM_TOOLS" för att innehålla effektspecifika
+        data.
 
-            char * my_plugin_snd_filenames[NUM_TOOLS] = {
+            char * my_plugin_snd_filnamn[NUM_TOOLS] = {
                 "one.ogg", "another.ogg", "yet_another.ogg" };
-            Mix_Chunk * my_plugin_snds[NUM_TOOLS]");
+            Mix_Chunk * min_plugin_snds[NUM_TOOLS]");
 
-      o Use a C "for"-loop to load or create the effect-specific data (such as
-        loading sound effects during your "init()").
+      o Använd en C"for"-loop för att ladda eller skapa effektspecifika data
+        (t.ex. ladda ljudeffekter under din"init()").
 
             int i;
             char fname[1024];
 
             for (i = 0; i < NUM_TOOLS; i++)
             {
-                /* Becomes, for example, "/usr/share/tuxpaint/sounds/magic/
-            one.ogg" */
+                /* Blir till exempel "/usr/share/tuxpaint/sounds/magic/one.ogg"
+            */
 
                 snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",
-                    api->data_prefix, my_plugin_snd_filenames[i]);
+                    api->data_prefix, my_plugin_snd_filnamn[i]);
 
-                my_plugin_snds[i] = Mix_LoadWAV(fname);
+                min_plugin_snds[i] = Mix_LoadWAV(fname);
             }
 
-      o Similarly, do the same to free them later (such as freeing sound
-        effects during your "shutdown()").
+      o På samma sätt kan du göra för att frigöra dem senare (t.ex. frigöra
+        ljudeffekter under din"shutdown()").
 
                 int i;
 
                 for (i = 0; i < NUM_TOOLS; i++)
-                    Mix_FreeChunk(my_plugin_snds[i]);
+                    Mix_FreeChunk(min_plugin_snds[i]);
 
-      o Use "which" values sent to your functions as an index into those arrays
-        (e.g., for playing the appropriate sound effect for a tool).
+      o Använd"which"-värden som skickas till dina funktioner som ett index i
+        dessa matriser (t.ex. för att spela upp lämplig ljudeffekt för ett
+        verktyg).
 
-    Note: Even if your plugin currently contains only one effect, it may be
-    useful to follow the steps above so that you can add a new variation of an
-    effect with little effort. ("NUM_TOOLS" will simply be '1', your arrays
-    will be of length '1', etc.)
+    Observera: Även om ditt plugin för närvarande bara innehåller en effekt,
+    kan det vara bra att följa stegen ovan så att du kan lägga till en ny
+    variant av en effekt med liten ansträngning. ("NUM_TOOLS" kommer helt
+    enkelt att vara '1', dina arrayer kommer att ha längden '1', etc.)
 
-    Example Code
+    Om det anges söker GCode-visaren efter en rad som börjar med den här
+    strängen. Om det hittas hoppas alla GCode upp till den punkten över. Detta
+    kan användas för att hoppa över GCode för "rensa/munstyckesrensning" i
+    tittaren. Observera att sökningen är fallkänslig. Exempel: ; layer 1
 
     The C source file "tp_magic_example.c" contains a complete example of a
     plugin with multiple simple effects.
 
     Få hjälp
 
-    For more information, check the Tux Paint website: https://tuxpaint.org/,
-    and the Simple DirectMedia Layer library website: http://www.libsdl.org/.
+    Mer information finns på webbplatsen för Rita med Tux: https://tuxpaint.org
+    / och på webbplatsen för biblioteket Simple DirectMedia Layer: http://
+    www.libsdl.org/..
 
-    Additionally, other Tux Paint developers and users can be found on the
-    "tuxpaint-devel" and "tuxpaint-users" mailing lists: https://tuxpaint.org/
-    lists/.
+    Dessutom finns andra utvecklare och användare av Rita med Tux på
+    e-postlistorna"tuxpaint-devel" och"tuxpaint-users": https://tuxpaint.org/
+    lists/..
 
     Ordlista
 
     → & ←
-        See "ampersand"
+        Se "ampersand"
          
     → * ←
-        See "star"
+        Se "stjärna"
          
     → -> ←
-        See "pil"
+        Se "pil"
          
     → . ←
-        See "dot"
+        Se "punkt"
          
     → ` ←
-        See "grave"
+        Se "grav"
          
-    → alpha ←
-        See "RGBA"
+    → alfa ←
+        Se "RGBA"
          
-    → ampersand (bitwise operator) ←
-        "&". A symbol in C that acts as a bitwise "and" operator. Only bits set
-        in both values will be returned. For example, "11 & 6" compares the
-        binary values '1011' to '0110'. Only the bit in the 2's place is set,
-        so the result is 2 ('0010').
-        See also: "bit"
+    → ampersand (bitvis operator) ←
+        "&". En symbol i C som fungerar som en bitvis "och"-operator. Endast
+        bitar som är inställda i båda värdena returneras. Till exempel
+        jämför"11 & 6" de binära värdena '1011' med '0110'. Endast biten på
+        2:ans plats är inställd, så resultatet blir 2 ('0010').
+        Se även: "bit"
          
-    → ampersand (pointers) ←
-        "&". A symbol in C that allows you to refer to the memory address of a
-        variable; that is, a pointer. (For example, consider "int i;". Later, "
-        &i" refers to the memory where "i" is stored, not the value of "i"
-        itself; it is a 'pointer to "i"'.)
-        See also: "star"
+    → ampersand (pekare) ←
+        "&". En symbol i C som gör det möjligt att referera till minnesadressen
+        för en variabel, dvs. en pekare. (Tänk till exempel på"int i;". Senare
+        hänvisar"&i" till minnet där "i" är lagrat, inte värdet på "i" i sig;
+        det är en "pekare till"i"")
+        Se även: "stjärna"
          
     → API ←
-        Application Programming Interface. Definitionen har ännu inte
+        Gränssnitt för applikationsprogrammering. Definitionen har ännu inte
         presenterats.
          
     → argument ←
-        A value sent to a function.
+        Ett värde som skickas till en funktion.
          
     → backquote / backtick ←
-        See "grave"
+        Se "grav"
          
     → BASH ←
-        The "Bourne Again Shell", a Unix shell and command language.
+        "Bourne Again Shell", ett skal- och kommandospråk för Unix.
          
     → bit ←
-        "Binary digit." Bits are the basic storage unit in a computer's memory,
-        disk, networking, etc. They represent either 0 or 1. (Compared to a
-        decimal digit, which can be anything between 0 and 9.) Just as a series
-        of decimal digits can represent a larger number (e.g., "1" and "5" is
-        fifteen (15)), so can bits (e.g., "1" and "0", is two). In decimal, we
-        go from right to left: ones place, tens place, hundreds place,
-        thousands place, etc. In binary, it is: ones place, twos place, fours
-        place, eights place, etc.
-        See also: "byte"
+        "Binär siffra." Bitar är den grundläggande lagringsenheten i en dators
+        minne, disk, nätverk etc. De representerar antingen 0 eller 1. (Jämfört
+        med en decimalsiffra, som kan vara allt mellan 0 och 9.) Precis som en
+        serie decimalsiffror kan representera ett större tal (t.ex. "1" och "5"
+        är femton (15)), kan även bitar göra det (t.ex. "1" och "0" är två). I
+        decimal går vi från höger till vänster: ettor, tior, hundratal,
+        tusental osv. I binära tal är det: ettor, tvåor, fyror, åttor osv.
+        Se även: "byte"
          
     → blå ←
-        See "RGBA"
+        Se "RGBA"
          
-    → boolean 'or' ←
-        A mathematical operation that results in a true value if either operand
-        is true. ("1 | 0", "0 | 1" and "1 | 1" all result in "1". "0 | 0"
-        results in "0".)
-        See also: "bit"
+    → boolean 'eller' ←
+        En matematisk operation som resulterar i ett sant värde om en av
+        operanderna är sann. ("1 | 0", "0 | 1" och "1 | 1" resulterar alla i
+        "1". "0 | 0" resulterar i "0")
+        Se även: "bit"
          
     → byte ←
-        A unit of memory made up of 8 bits. As a signed value, it can represent
-        -128 through 127. As an unsigned value, it can represent 0 through 255.
-        As a series of bits, for example, the byte "00001100" represents the
-        decimal value 12.
-        See also: "bit"
+        En minnesenhet som består av 8 bitar. Som ett signerat värde kan det
+        representera -128 till 127. Som osignerat värde kan det representera 0
+        till 255. Som en serie bitar representerar t.ex. byten "00001100" det
+        decimala värdet 12.
+        Se även: "bit"
          
-    → C enumeration ←
-        A construct in C that allows you to label numeric values (usually
-        starting at 0 and incrementing by one). (e.g., "enum { ONE, TWO, THREE
+    → C-funktion / C-huvudfil ←
+        Definitionen har ännu inte presenterats.
+        Se även: "Prototyp för C-funktion"
+         
+    → C-pekare ←
+        En variabel som innehåller platsen för en del av minnet; används
+        vanligtvis för att "peka" på en annan variabel. Eftersom C-funktioner
+        bara kan returnera ett värde som resultat, skickas ofta pekare till
+        funktioner för att funktionen ska kunna ändra värdena för flera
+        variabler. (Till exempel Rita med Tuxs"rgbtohsv()" och"hsvtorgb()")
+         
+    → C-struktur ←
+        En konstruktion i C som gör att du kan deklarera en ny variabel "typ"
+        som kan innehålla andra typer. SDL:s"SDL_Rect" innehåller till exempel
+        fyra heltalsvärden, rektangelns koordinater (X,Y) och dess dimensioner
+        (bredd och höjd).
+         
+    → C-uppräkning ←
+        En konstruktion i C som gör det möjligt att märka numeriska värden (som
+        vanligtvis börjar på 0 och ökar med ett). (t.ex."enum { ONE, TWO, THREE
         };"
          
-    → C function / C function prototype / C header file ←
-        Definitionen har ännu inte presenterats.
-        See also: "C function prototype"
-         
-    → C pointer ←
-        A variable that contains the location of a piece of memory; usually
-        used to 'point' to another variable. Since C functions can only return
-        one value as a result, pointers are often sent to functions to allow
-        the function to change the values of multiple variables. (For example,
-        Tux Paint's "rgbtohsv()" and "hsvtorgb()".)
-         
-    → C structure ←
-        A construct in C that allows you to declare a new variable 'type' which
-        may contain other types within. For example, SDL's "SDL_Rect" contains
-        four integer values, the coordinates of the rectangle (X,Y), and its
-        dimensions (width and height).
-         
-    → callback / channel ←
-        Definitionen har ännu inte presenterats.
-         
-    → click ←
-        The action of pressing a button on a mouse, tapping a touchscreen, or
-        pressing a stylus to a tablet.
-        See also:
-          @ drag
-          @ release
-
-         
-    → colorspace ←
-        Definitionen har ännu inte presenterats.
-        See also:
-          @ RGBA
-          @ HSV
-
-         
     → #define ←
-        A C statement that defines a substitution that can occur later in the
-        code. Generally used for constant values (e.g., "#define RADIUS 16";
-        all instances of "RADIUS" will be replaced with "16"), but can also be
-        used to create macros. Typically placed within C header files.
+        En C-sats som definierar en substitution som kan förekomma senare i
+        koden. Används vanligen för konstanta värden (t.ex. "#define RADIUS
+        16"; alla förekomster av"RADIUS" ersätts med"16"), men kan också
+        användas för att skapa makron. Placeras vanligtvis i C-headerfiler.
          
     → delat objekt ←
-        A piece of code that's compiled separately from the main application,
-        and loaded dynamically, at runtime.
+        En del av koden som kompileras separat från huvudapplikationen och
+        laddas dynamiskt vid körning.
          
     → dimensioner ←
-        The size of an object, in terms of its width (left to right) and height
-        (top to bottom).
+        Ett objekts storlek i form av dess bredd (från vänster till höger) och
+        höjd (uppifrån och ned).
          
     → .dll ←
-        See "Shared Object"
+        Se "Shared Object"
          
-    → dot ←
-        ".". A symbol in C that references an element within a struct.
-        See also:
-          @ C structure
-          @ pil
-
-         
-    → drag ←
-        The action of moving a mouse while the button remains held, or moving a
-        finger or stylus across a screen or tablet, without removing it.
-        See also:
-          @ click
-          @ release
+    → dra ←
+        Att flytta en mus medan knappen hålls intryckt, eller att flytta ett
+        finger eller en penna över en skärm eller surfplatta utan att ta bort
+        den.
+        Se även nedan:
+          @ klick
+          @ utgåva
 
          
     → element ←
-        A variable stored within a C structure. (Example: "w" and "h" elements
-        of SDL_Surface store the surface's width and height, respectively.)
-        See also:
-          @ C structure
-          @ dot
+        En variabel som lagras inom en C-struktur. (Exempel: elementen"w"
+        och"h" i SDL_Surface lagrar ytans bredd respektive höjd)
+        Se även nedan:
+          @ C-struktur
+          @ punkt
           @ pil
 
          
     → enum ←
-        See "C enumeration"
+        Se "C-uppräkning"
          
     → float ←
-        See "floating point"
+        Se "flyttal"
          
-    → floating point ←
+    → flyttal ←
         Definitionen har ännu inte presenterats.
-        See also: "integer"
+        Se även: "heltal"
          
     → format ←
-        An SDL_Surface element (a pointer to an SDL_PixelFormat structure) that
-        contains information about a surface; for example, the number of bits
-        used to represent each pixel).
-        Refer to the "SDL_PixelFormat(3)" man page.
+        Ett SDL_Surface-element (en pekare till en SDL_PixelFormat-struktur )
+        som innehåller information om en yta, t.ex. antalet bitar som används
+        för att representera varje pixel.)
+        Se manuskriptet "SDL_PixelFormat(3)" man page.
          
     → free() ←
-        A C function that frees (deallocates) memory allocated by other C
-        functions (such as "strdup()").
-        Refer to the "malloc(3)" man page.
+        En C-funktion som frigör (deallokerar) minne som allokerats av andra
+        C-funktioner (t.ex. "strdup()").
+        Se manuskriptet "malloc(3)" man page.
          
-    → function ←
-        See "C function"
+    → funktion ←
+        Se "C-funktion"
          
-    → gcc ←
-        See "GNU C Compiler"
-         
-    → GIMP ←
-        GNU Image Manipulation Program, an Open Source image manipulation and
-        paint program.
-        See also: "Krita"
-         
-    → GNU C Compiler ←
-        The GNU C compiler, a portable Open Source package for compiling and
-        linking programs written in the C programming language.
-        Refer to the "gcc(1)" man page.
-         
-    → grave ←
-        The "`" character; used by the BASH shell to use the output of a
-        command as the command-line arguments to another.
-         
-    → grön ←
-        See "RGBA"
-         
-    → .h / header / header file ←
-        See "C header file"
-         
-    → HSV ←
-        Hue, Saturation and Value.Definitionen har ännu inte presenterats.
-        See also:
+    → färgrymd ←
+        Definitionen har ännu inte presenterats.
+        Se även nedan:
           @ RGBA
-          @ colorspace
+          @ HSV
 
          
+    → gcc ←
+        Se "GNU C-kompilator"
+         
+    → GIMP ←
+        GNU Image Manipulation Program, ett bildmanipulerings- och färgprogram
+        med öppen källkod.
+        Se även: "Krita"
+         
+    → GNU C-kompilator ←
+        GNU C-kompilatorn, ett portabelt Open Source-paket för kompilering och
+        länkning av program skrivna i programspråket C.
+        Se manuskriptet "gcc(1)" man page.
+         
+    → grav ←
+        Den "`"; används av BASH-skalet för att använda utdata från ett
+        kommando som kommandoradsargument för ett annat.
+         
+    → grön ←
+        Se "RGBA"
+         
+    → .h ←
+        Se "C-huvudfil"
+         
+    → heltal ←
+        Definitionen har ännu inte presenterats.
+        Se även: "flyttal"
+         
+    → HSV ←
+        Färgton, mättnad och värde.Definitionen har ännu inte presenterats.
+        Se även nedan:
+          @ RGBA
+          @ färgrymd
+
+         
+    → huvudfil ←
+        Se "C-huvudfil"
+         
     → IMG_Load() ←
-        An SDL_image function that loads an image file (e.g., a PNG) and
-        returns it as an "SDL_Surface *".
+        En SDL_image-funktion som laddar en bildfil (t.ex. en PNG) och
+        returnerar den som en"SDL_Surface *".
          
     → #include ←
-        A C statement that asks the compiler to read the contents of another
-        file (usually a header file).
+        En C-sats som ber kompilatorn att läsa innehållet i en annan fil
+        (vanligtvis en header-fil).
          
     → instick ←
         Definitionen har ännu inte presenterats.
          
     → int ←
-        See "integer"
+        Se "heltal"
          
-    → integer ←
+    → kanal ←
         Definitionen har ännu inte presenterats.
-        See also: "floating point"
+         
+    → klick ←
+        Att trycka på en knapp på en mus, trycka på en pekskärm eller trycka en
+        penna mot en surfplatta.
+        Se även nedan:
+          @ dra
+          @ utgåva
+
          
     → koordinater ←
-        A set of numbers corresponding to a physical position; for example, in
-        a two-dimensional (2D) image, "X" and "Y" coordinates specify the
-        position across (left-to-right) and down the image, respectively. In
-        SDL, the coordinates (0,0) is the top-leftmost pixel of a surface.
+        En uppsättning siffror som motsvarar en fysisk position; till exempel i
+        en tvådimensionell (2D) bild anger "X"- och "Y"-koordinaterna
+        positionen tvärs över (från vänster till höger) respektive nedåt i
+        bilden. I SDL är koordinaterna (0,0) den längst upp till vänster
+        belägna pixeln på en yta.
          
     → Krita ←
-        An Open Source image manipulation and paint program.
-        See also: "GIMP"
+        Ett bildmanipulerings- och färgprogram med öppen källkod.
+        Se även: "GIMP"
          
     → libSDL ←
-        See "Simple DirectMedia Layer"
+        Se "Simple DirectMedia Layer"
          
-    → linear ←
+    → linjär ←
         Definitionen har ännu inte presenterats.
          
-    → Magic tool ←
-        One of a number of effects or drawing tools in Tux Paint, made
-        available via the "Magic" tool button.
-         
     → magic_api ←
-        A C structure that is passed along to a plugin's functions that exposes
-        data and functions within the running copy of Tux Paint.
+        En C-struktur som skickas vidare till ett plugins funktioner som
+        exponerar data och funktioner i den löpande kopian av Rita med Tux.
+         
+    → Magiskt verktyg ←
+        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs
+        tillgängliga via verktygsknappen "Magic".
          
     → make ←
-        A utility that automatically determines which pieces of a larger
-        program need to be recompiled, and issues the commands to recompile
-        them.
-        See also: "Makefile"
+        Ett verktyg som automatiskt avgör vilka delar av ett större program som
+        behöver kompileras om och ger kommandon för att kompilera om dem.
+        Se även: "Makefile"
          
     → Makefile ←
-        A text file used by the "make" utility; it describes the relationships
-        among files in your program, and the commands for updating each file.
-        (For example, to compile a human-readable source-code file into a
-        computer-readable executable program file.)
+        En textfil som används av verktyget "make"; den beskriver förhållandena
+        mellan filerna i ditt program och kommandona för att uppdatera varje
+        fil. (Till exempel för att kompilera en mänskligt läsbar källkodsfil
+        till en datorläsbar körbar programfil)
          
     → makro ←
-        A C construct that looks similar to a C function, but is simply a #
-        define that is expanded 'inline'. For example, if you declared the
-        macro "#define ADD(A,B) ((A)+(B))", and then used it with "c = ADD
-        (1,2);", that line of code would literally expand to "c = ((1) + (2));
-        ", or more simply, "c = 1 + 2;".
+        En C-konstruktion som ser ut som en C-funktion, men som helt enkelt är
+        en #define som expanderas "inline". Om du till exempel deklarerade
+        makrot"#define ADD(A,B) ((A)+(B))" och sedan använde det med"c = ADD
+        (1,2);", skulle den kodraden bokstavligen expandera till"c = ((1) +
+        (2));", eller enklare uttryckt,"c = 1 + 2;".
          
     → Mix_Chunk * ←
-        (A pointer to) a C structure defined by SDL_mixer that contains a
-        sound.
+        (En pekare till) en C-struktur som definieras av SDL_mixer och som
+        innehåller ett ljud.
          
     → Mix_FreeChunk() ←
-        An SDL_mixer function that frees (deallocates) memory allocated for an
-        SDL_mixer sound 'chunk' ("Mix_Chunk *").
+        En SDL_mixer-funktion som frigör (avallokerar) minne som allokerats för
+        en SDL_mixer-ljud "chunk" ("Mix_Chunk *").
          
     → Mix_LoadWAV() ←
-        An SDL_mixer function that loads a sound file (WAV, Ogg Vorbis, etc.)
-        and returns it as a "Mix_Chunk *".
+        En SDL_mixer-funktion som laddar en ljudfil (WAV, Ogg Vorbis, etc.) och
+        returnerar den som en"Mix_Chunk *".
          
-    → namespace ←
+    → mättnad ←
+        Se "HSV"
+         
+    → namnrymd ←
         Definitionen har ännu inte presenterats.
          
     → nyans ←
-        See "HSV"
+        Se "HSV"
          
     → .ogg ←
-        See "Ogg Vorbis"
+        Se "Ogg Vorbis"
          
     → Ogg Vorbis ←
         Definitionen har ännu inte presenterats.
-        See also: "WAVE"
+        Se även: "WAVE"
+         
+    → osignerad ←
+        I C kan en variabel som kan lagra ett numeriskt värde deklareras som
+        antingen "signerad" (standard) eller "osignerad". I det förra fallet
+        används en bit av värdet för att ange värdets tecken (antingen positivt
+        eller negativt). I det senare fallet kan värdet bara vara positivt, men
+        det finns en extra lagringsbit för talet. En signerad byte (8 bitar)
+        kan t.ex. representera vilket tal som helst mellan -128 och 127. En
+        osignerad byte kan gå upp till 255, men den kan inte gå under 0. För
+        grafik i SDL bör osignerade värden användas för RGB-värden, eftersom
+        varje kanal (röd, grön och blå) kan vara mellan 0 (släckt) och 255
+        (ljusast).
+        Se även nedan:
+          @ Uint8
+          @ Uint32
+          @ integer
+
+         
+    → peka ←
+        Se "klick"
+         
+    → pekare ←
+        Se "C-pekare"
          
     → pil ←
-        "->". A symbol in C that references an element within a pointer to a
-        struct.
+        "->". En symbol i C som refererar till ett element inom en pekare till
+        en struktur.
          
     → .png ←
-        See "Portable Network Graphics"
-         
-    → pointer ←
-        See "C pointer"
+        Se "Portable Network Graphics"
          
     → Portable Network Graphics ←
-        Portable Network Graphics. An extensible file format for the lossless,
-        portable, well-compressed storage of raster images. It's the file
-        format Tux Paint uses to save images, and for its brushes and stamps.
-        It's an easy way to store 32bpp RGBA images (24bpp true color with full
-        8bpp alpha transparency), excellent for use in graphics programs like
-        Tux Paint.
-        Refer to the "png(5)" man page.
-        See also: "Scalable Vector Graphic"
+        Portable Network Graphics. Ett utbyggbart filformat för förlustfri,
+        portabel och välkomprimerad lagring av rasterbilder. Det är det
+        filformat som Rita med Tux använder för att spara bilder och för sina
+        penslar och stämplar. Det är ett enkelt sätt att lagra 32bpp
+        RGBA-bilder (24bpp äkta färg med full 8bpp alfa-genomskinlighet),
+        utmärkt för användning i grafikprogram som Rita med Tux.
+        Se manuskriptet "png(5)" man page.
+        Se även: "Scalable Vector Graphic"
          
     → prototyp ←
-        See "C function prototype"
+        Se "Prototyp för C-funktion"
          
-    → red ←
-        See "RGBA"
+    → Prototyp för C-funktion ←
+        Definitionen har ännu inte presenterats.
+        Se även: "C-funktion"
          
-    → release ←
-        The action of releasing a mouse button, or removing a finger or stylus
-        from a screen or tablet.
-        See also:
-          @ click
-          @ drag
+    → punkt ←
+        ".". En symbol i C som refererar till ett element inom en struktur.
+        Se även nedan:
+          @ C-struktur
+          @ pil
 
          
     → RGB ←
-        See "RGBA"
+        Se "RGBA"
          
     → RGBA ←
-        Red, Green, Blue, and Alpha.Definitionen har ännu inte presenterats.
-        See also:
+        Röd, grön, blå och alfa.Definitionen har ännu inte presenterats.
+        Se även nedan:
           @ HSV
-          @ colorspace
+          @ färgrymd
 
          
-    → saturation ←
-        See "HSV"
+    → röd ←
+        Se "RGBA"
          
     → SDL ←
-        See "Simple DirectMedia Layer"
+        Se "Simple DirectMedia Layer"
          
     → SDL_FreeSurface() ←
-        A libSDL function that frees (deallocates) memory allocated for an SDL
-        surface ("SDL_Surface *").
+        En libSDL-funktion som frigör (deallokerar) minne som allokerats för en
+        SDL-yta ("SDL_Surface *").
          
     → SDL_GetRGB() ←
-        A libSDL function that, given a Uint32 pixel value (e.g., one returned
-        from the Tux Paint's Magic tool API helper function "getpixel()"), the
-        format of the surface the pixel was taken from, and pointers to three
-        Uint8 variables, will place the Red, Green and Blue (RGB) values of the
-        pixel into the three Uint8 variables. (Example: "SDL_GetRGB(getpixel
-        (surf, x, y), surf->format, &r, &g, &b);".)
-        Refer to the "SDL_GetRGB(3)" man page.
-        See also:
+        En libSDL-funktion som, med tanke på ett Uint32-pixelvärde (t.ex. ett
+        som returneras från Rita med Tux's Magic tool API-hjälpfunktionen
+        "getpixel()"), formatet på ytan som pixeln togs från och pekare till
+        tre Uint8-variabler, placerar pixelns RGB-värden (rött, grönt och
+        blått) i de tre Uint8-variablerna. (Exempel:"SDL_GetRGB(getpixel(surf,
+        x, y), surf->format, &r, &g, &b);"
+        Se manuskriptet "SDL_GetRGB(3)" man page.
+        Se även nedan:
           @ SDL_MapRGB()
           @ RGBA
 
          
     → SDL_image ←
-        A library on top of libSDL that can load various kinds of image files
-        (e.g., PNG) and return them as an "SDL_Surface *".
+        Ett bibliotek ovanpå libSDL som kan ladda olika typer av bildfiler
+        (t.ex. PNG) och returnera dem som en"SDL_Surface *".
          
     → SDL_MapRGB() ←
-        A libSDL function that, given the format of a surface and Uint8 values
-        representing Red, Green and Blue values for a pixel, returns a Uint32
-        pixel value that can be placed in the surface (e.g., using Tux Paint's
-        Magic tool API helper function "putpixel()"). (Example: "putpixel(surf,
-        x, y, SDL_MapRGB(surf->format, r, g, b));".)
-        Refer to the "SDL_MapRGB(3)" man page.
-        See also:
+        En libSDL-funktion som, givet formatet på en yta och Uint8-värden som
+        representerar röda, gröna och blå värden för en pixel, returnerar ett
+        Uint32-pixelvärde som kan placeras i ytan (t.ex. med hjälp av Rita med
+        Tux's Magic tool API-hjälpfunktion"putpixel()"). (Exempel:"putpixel
+        (surf, x, y, SDL_MapRGB(surf->format, r, g, b));".)
+        Se manuskriptet "SDL_MapRGB(3)" man page.
+        Se även nedan:
           @ SDL_GetRGB()
           @ RGBA
 
          
     → SDL_mixer ←
-        A library on top of libSDL that can load various kinds of sound files
-        (WAV, Ogg Vorbis, etc.) and play back multiple sounds at once (mix
-        them).
+        Ett bibliotek ovanpå libSDL som kan läsa in olika typer av ljudfiler
+        (WAV, Ogg Vorbis, etc.) och spela upp flera ljud samtidigt (mixa dem).
          
     → SDL_Rect ←
-        A C structure defined by libSDL that represents a rectangular area. It
-        contains elements representing the coordinates of the top left corner
-        of the rectange (x,y) and the dimensions of the rectangle (w,h).
-        Refer to the "SDL_Rect(3)" man page.
+        En C-struktur som definieras av libSDL och som representerar ett
+        rektangulärt område. Den innehåller element som representerar
+        koordinaterna för rektangelns övre vänstra hörn (x,y) och rektangelns
+        dimensioner (w,h).
+        Se manuskriptet "SDL_Rect(3)" man page.
          
     → SDL_Surface * ←
-        (A pointer to) a C structure defined by libSDL that contains a drawing
-        surface.
-        Refer to the "SDL_Surface(3)" man page.
+        (En pekare till) en C-struktur som definieras av libSDL och som
+        innehåller en rityta.
+        Se manuskriptet "SDL_Surface(3)" man page.
+         
+    → sidhuvud ←
+        Se "C-huvudfil"
          
     → Simple DirectMedia Layer ←
-        The Simple DirectMedia Layer (libSDL) is a programming library that
-        provides portable low-level access to a video framebuffer, audio
-        output, and mouse and keyboard input. (See: http://www.libsdl.org/)
+        Simple DirectMedia Layer (libSDL) är ett programmeringsbibliotek som
+        ger portabel lågnivååtkomst till en videoramabuffert, ljudutgång samt
+        mus- och tangentbordsinmatning. (Se: http://www.libsdl.org/)
          
     → skal ←
-        See "BASH"
+        Se "BASH"
          
     → snprintf() ←
-        A C function, related to "printf()", which takes a 'format' string and
-        one or more additional arguments, and puts them together. "snprintf()"
-        takes the resulting output and stores it into a string, making sure not
-        to go beyond the string's buffer size (which must also be supplied).
-        For example, assume a string "char str[20];" has been declared;
-        "snprintf(str, 20, "Name: %s, Age: %d", "Bill", 32);" will store "Name:
-        Bill, Age: 32" into 'str'.
-        Refer to the "sprintf(3)" man page.
+        En C-funktion, relaterad till "printf()", som tar en "format"-sträng
+        och ett eller flera ytterligare argument och sätter ihop dem. "snprintf
+        ()" tar den resulterande utdata och lagrar den i en sträng, och ser
+        till att inte gå utöver strängens buffertstorlek (som också måste
+        anges). Anta till exempel att en sträng"char str[20];" har deklarerats;
+        "snprintf(str, 20, "Namn: %s, Ålder: %d", "Bill", 32);" lagrar "Namn:
+        Bill, Ålder: 32" i'str'.
+        Se manuskriptet "sprintf(3)" man page.
          
     → .so ←
-        See "delat objekt"
+        Se "delat objekt"
          
     → sRGB ←
-        See "RGBA"
+        Se "RGBA"
          
-    → star ←
-        "*". A symbol in C that, when used in the declaration of variables
-        (e.g., arguments to a function), denotes that the variable is a
-        pointer. (For example, "int * p;" means that "p" is a pointer to an
-        integer.) When used next to a pointer, it 'dereferences' the variable.
-        (For example, later "*p = 50;" assigns the value of 50 to the memory
-        that "p" points to; it does not change the value of "p", which is still
-        a pointer to an integer. In essence, it changed the integer that's
-        being pointed to.)
-        See also: "ampersand"
+    → stjärna ←
+        "*". En symbol i C som, när den används i deklarationen av variabler
+        (t.ex. argument till en funktion), anger att variabeln är en pekare.
+        (Till exempel"int * p;" betyder att"p" är en pekare till ett heltal.)
+        När den används bredvid en pekare "dereferencerar" den variabeln. (Till
+        exempel, senare"*p = 50;" tilldelar värdet 50 till det minne som "p"
+        pekar på; det ändrar inte värdet på "p", som fortfarande är en pekare
+        på ett heltal. I själva verket ändras det heltal som pekas ut)
+        Se även: "ampersand"
          
     → strdup() ←
-        A C function that allocates enough memory to store a copy of a string,
-        copies the string to it, and returns a "char *" pointer to the new
-        copy.
-        Refer to the "strdup(3)" man page.
+        En C-funktion som allokerar tillräckligt med minne för att lagra en
+        kopia av en sträng, kopierar strängen till det och returnerar en"char
+        *"-pekare till den nya kopian.
+        Se manuskriptet "strdup(3)" man page.
          
     → struct ←
-        See "C structure"
-         
-    → tap ←
-        See "click"
+        Se "C-struktur"
          
     → tp-magic-config ←
-        A command-line program that provides information about the installed
-        version of Tux Paint to plugin developers (such as what C compiler
-        flags they should compile with, and where plugin shared objects and
-        data files should be installed).
-        Refer to the "tp-magic-config(3)" man page.
+        Ett kommandoradsprogram som ger information om den installerade
+        versionen av Rita med Tux till plugin-utvecklare (t.ex. vilka
+        C-kompilatorflaggor de ska kompilera med och var plugin-delade objekt
+        och datafiler ska installeras).
+        Se manuskriptet "tp-magic-config(3)" man page.
          
     → tp_magic_api.h ←
-        A header file that defines Tux Paint's Magic tool API. Plugins must '#
-        include' it.
+        En header-fil som definierar Rita med Tuxs API för magiska verktyg.
+        Plugins måste'#inkludera' den.
          
     → Uint32 ←
-        A 32-bit, unsigned integer (defined by libSDL). In other words, four
-        bytes that can represent 0 through 4,294,967,295. (Typically used to
-        hold enough information to store three or four bytes representing a
-        pixel's color; i.e., RBGA value).
-        See also:
+        Ett 32-bitars, osignerat heltal (definierat av libSDL). Med andra ord,
+        fyra byte som kan representera 0 till 4 294 967 295. (Används
+        vanligtvis för att hålla tillräckligt med information för att lagra tre
+        eller fyra byte som representerar en pixels färg; dvs. RBGA-värde).
+        Se även nedan:
           @ Uint8
           @ integer
           @ unsigned
 
          
     → Uint8 ←
-        An 8-bit, unsigned integer (defined by libSDL). In other words, a byte
-        that can represent 0 through 255.
-        See also:
+        Ett 8-bitars, osignerat heltal (definierat av libSDL). Med andra ord,
+        en byte som kan representera 0 till 255.
+        Se även nedan:
           @ Uint32
           @ integer
           @ unsigned
 
          
-    → unsigned ←
-        In C, a variable that can store a numeric value can be declared as
-        either "signed" (the default), or "unsigned". In the former case, one
-        bit of the value is used to denote the sign of the value (either
-        positive or negative). In the latter case, the value can only be
-        positive, but benefits from one extra bit of storage for the number. A
-        signed byte (8 bits), for example, can represent any number between
-        -128 and 127. An unsigned byte can go up to 255, but it cannot go below
-        0. For the purposes of graphics in SDL, unsigned values should be used
-        for RGB values, since each channel (red, green and blue) may be between
-        0 (off) and 255 (brightest).
-        See also:
-          @ Uint8
-          @ Uint32
-          @ integer
+    → utgåva ←
+        Att släppa en musknapp eller att ta bort ett finger eller en pekpenna
+        från en skärm eller surfplatta.
+        Se även nedan:
+          @ klick
+          @ dra
 
          
-    → variable ←
-        A construct in computer programming that contains a value which can be
-        referenced again later by referring to the variable's name, and
-        typically changed later. For example, a variable to hold someone's age
-        could be declared as an integer: "int age;". It can be examined later —
-        e.g., "if (age >= 18) { /* they are an adult */ } else { /* they are
-        not an adult */ }" — as well as modified later — e.g., age = 32; /* set
-        age to 32 */
+    → variabel ←
+        En konstruktion i datorprogrammering som innehåller ett värde som kan
+        refereras till igen senare genom att hänvisa till variabelns namn, och
+        vanligtvis ändras senare. Till exempel kan en variabel som innehåller
+        någons ålder deklareras som ett heltal:"int age;". Den kan undersökas
+        senare - t.ex."if (age >= 18) { /* they are an adult */ } else { /*
+        they are not an adult */ } }" - och även ändras senare - t.ex. age =
+        32; /* set age to 32 */
          
     → värde ←
-        See "HSV"
+        Se "HSV"
          
     → (w,h) ←
-        See "dimensioner"
+        Se "dimensioner"
          
     → .wav ←
-        See "WAVE"
+        Se "WAVE"
          
     → WAVE ←
         Waveform Audio File Format (WAVE, or WAV). Definitionen har ännu inte
         presenterats.
-        See also: "Ogg Vorbis"
+        Se även: "Ogg Vorbis"
          
     → (x,y) ←
-        See "koordinater"
+        Se "koordinater"
          
     → | ←
-        See "boolean 'or'"
+        Se "boolean 'eller'"
+         
+    → återuppringning ←
+        Definitionen har ännu inte presenterats.
          

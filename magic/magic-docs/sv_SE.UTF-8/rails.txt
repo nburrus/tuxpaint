@@ -1,15 +1,15 @@
-                         Tux Paint "Magic" Tool: Rails
+                      Rita med Tux "Magic" Verktyg: Rails
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-                 ## Authors: Adam Rakowski <foo-script@o2.pl>
+                ## Författare: Adam Rakowski <foo-script@o2.pl>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
-Draw connecting locomotive train rails on your picture.
+Rita anslutande lokomotiv tågskenor på din bild.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
 -------------------------------------------------------------------------------
 

@@ -1,12 +1,12 @@
-                        Tux Paint "Magic" Tool: Stretch
+                    Rita med Tux "Magic" Verktyg: Sträck ut
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag around to stretch and squish parts of the picture.
+Klicka och dra runt för att sträcka ut och pressa ihop delar av bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
 -------------------------------------------------------------------------------
 

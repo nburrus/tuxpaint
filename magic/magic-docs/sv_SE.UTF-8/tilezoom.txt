@@ -1,17 +1,17 @@
-                       Tux Paint "Magic" Tool: Tile Zoom
+                    Rita med Tux "Magic" Verktyg: Kakelzoom
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-          ## Authors: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+        ## Författare: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
-Click and drag up to zoom in, or down to zoom out. When scaling down, your
-image will be tiled across the canvas.
+Klicka och dra uppåt för att zooma in, eller nedåt för att zooma ut. När du
+skalar ner kommer din bild att läggas ut över hela duken.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-See also: Panels, Rush, & Zooma.
+Se även nedan:Paneler, Rusa, & Zooma.
 
 -------------------------------------------------------------------------------
 

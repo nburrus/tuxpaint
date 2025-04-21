@@ -1,20 +1,20 @@
-                       Tux Paint "Magic" Tool: Wet Paint
+                    Rita med Tux "Magic" Verktyg: Våt färg
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-               ## Authors: Albert Cahalan <albert@users.sf.net>
+              ## Författare: Albert Cahalan <albert@users.sf.net>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
-This draws a light, smudgy coat of paint on the picture.
+Detta ger bilden ett lätt, kladdigt färgskikt.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Smudge.
+Se även nedan:Smudge.
 
 -------------------------------------------------------------------------------
 

@@ -1,15 +1,15 @@
-                        Tux Paint "Magic" Tool: Rotate
+                     Rita med Tux "Magic" Verktyg: Rotera
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag to rotate the drawing. (Your chosen color will be used as a
-background color.)
+Klicka och dra för att rotera teckningen. (Din valda färg kommer att användas
+som bakgrundsfärg)
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

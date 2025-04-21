@@ -1,24 +1,25 @@
-                     Tux Paint "Magic" Tool: 1-Point Draw
+                 Rita med Tux "Magic" Verktyg: 1-punktsritning
 
-                          ### Group: Projections ###
+                          ### Grupp Projektioner ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag to draw with 1-point perspective. Lines will only go towards
-your vanishing point, or be horizontal or vertical. Use "1-Point Select" to
-choose your vanishing point (only available in "advanced" mode).
+Klicka och dra för att rita med 1-punktsperspektiv. Linjerna går bara mot din
+försvinnande punkt, eller är horisontella eller vertikala. Använd "1-Point
+Select" för att välja din försvinnande punkt (endast tillgängligt i läget
+"advanced").
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-This tool reacts to the "complexity" (expertise level) setting.
+Detta verktyg reagerar på inställningen "komplexitet" (expertnivå).
 
-See also: 1-Point Select, 2-Point Draw, 2-Point Select, 3-Point Draw, 3-Point
-Select, Isometric Line, Dimetric Select, Dimetric Draw, Trimetric Select,
-Trimetric Draw, Oblique Select, Oblique Draw, & Perspektiv.
+Se även nedan:1-punktsval, 2-punktsritning, 2-punktsval, 3-punktsritning,
+3-punktsval, Isometrisk linje, Dimetriskt val, Dimetrisk ritning, Trimetrisk
+välj, Trimetrisk ritning, Sned välj, Snedritning, & Perspektiv.
 
 -------------------------------------------------------------------------------
 

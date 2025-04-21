@@ -1,167 +1,167 @@
-              Tux Paint "Magic" Tool: Lista över magiska verktyg
+           Rita med Tux "Magic" Verktyg: Lista över magiska verktyg
 
-                               ### Distorts ###
+                              ### Förvränger ###
 
-  * Blur
-  * Sharpen
+  * Suddighet
+  * Endast skärpa (intern upplösning)
   * Smudge
-  * Blocks
+  * Block
   * Krita
   * Droppa
   * Klona
-  * Distortion
-  * Puzzle
+  * Förvrängning
+  * Pussel
   * Cirklar
-  * Rays
+  * Strålar
   * Kanter
-  * Emboss
-  * Silhouette
+  * Punktutskrift
+  * Silhuett
   * Fisheye
-  * Ripples
-  * Glass Tile
-  * Irregular Mosaic
-  * Hexagon Mosaic
-  * Square Mosaic
+  * Ripplar
+  * Glasplattor
+  * Oregelbunden mosaik
+  * Hexagon Mosaik
+  * Kvadratisk mosaik
   * Mosaik
   * TV
-  * TV (Bright)
-  * ASCII Typewriter
+  * TV (ljus)
+  * ASCII skrivmaskin
   * ASCII-dator
   * ASCII-färgdator
   * Brus
   * Halvton
 
-                             ### Color Filters ###
+                              ### Färgfilter ###
 
   * Negativ
   * Motsats
   * Mätta
   * Avmätta
-  * Darken
+  * Mörka
   * Ljusare
-  * Remove Color
+  * Ta bort färg
   * Behåll färg
-  * Tint
+  * Färgton
   * Färg och vitt
-  * Cartoon
-  * Color Shift
+  * Använd en speciell skalare för att rita figur-sprites
+  * Färgskiftning
   * Dither
-  * Dither (Keep Colors)
+  * Dither (behåll färger)
   * 3D-glasögon
-  * Color Sep.
-  * Double Vision
-  * Xor Colors
+  * Färgsep.
+  * Dubbelsyn
+  * Xor färger
   * Blommande
 
-                             ### Picture Warps ###
+                          ### Bildförvrängningar ###
 
   * Spegel
-  * Flip
+  * Vänd
   * Shift
   * Zooma
-  * Tile Zoom
-  * Panels
-  * Rush
+  * Kakelzoom
+  * Paneler
+  * Rusa
   * Perspektiv
-  * Reflection
-  * Stretch
-  * Waves
-  * Wavelets
-  * Fold
-  * Kaleido-4, Kaleido-6, and Kaleido-8
-  * Rotate
+  * Reflektion
+  * Sträck ut
+  * Vågor
+  * Våglängder
+  * Vik samman
+  * Kaleido-4, Kaleido-6 och Kaleido-8
+  * Rotera
 
                                 ### Målning ###
 
   * Tegelstenar
-  * Spray Paint
-  * Rainbow
+  * Sprayfärg
+  * Regnbåge
   * Mjuk regnbåge
-  * Rainbow Cycle
+  * Regnbågscykeln
   * Kalligrafi
   * Band
-  * Crescent
-  * Smooth
+  * Halvmåne
+  * Utjämna
   * Spiral
   * Fyrkantig spiral
-  * Concentric Circle
-  * Concentric Square
+  * Koncentrisk cirkel
+  * Koncentrisk kvadrat
   * Krumelurer
-  * Loops
-  * Confetti
-  * Rain
-  * Foam
+  * Slingor
+  * Konfetti
+  * Regn
+  * Skum
   * Gräs
-  * Fur
-  * Pixels
-  * Comic Dots
+  * Päls
+  * Bildpunkter
+  * Serietecknade prickar
   * Labyrint
   * Fretwork
   * Rails
   * Metallfärg
-  * Toothpaste
-  * Wet Paint
+  * Tandkräm
+  * Våt färg
   * Ljus
   * Hjärtan
   * Gnistrande
-  * Stars
-  * Fractal
+  * Stjärnor
+  * Fraktal #%d
 
-                           ### Pattern Painting ###
+                            ### Mönstermålning ###
 
-  * Symmetry Left/Right
-  * Symmetry Up/Down
+  * Symmetri vänster/höger
+  * Symmetri upp/ned
   * Kalejdoskop
-  * Pattern
-  * Tiles
-  * Rosette
+  * Mönster
+  * Rutor
+  * Rosett
   * Picasso
-  * Tessellation Pointy
-  * Tessellation Flat
+  * Tessellation spetsig
+  * Tessellation platt
 
-                          ### Picture Decorations ###
+                           ### Bilddekorationer ###
 
   * Blind
-  * Checkerboard
-  * Snow Ball
-  * Snow Flake
+  * Schackbräde
+  * Snöboll
+  * Snöflinga
 
-                              ### Projections ###
+                             ### Projektioner ###
 
-  * 1-Point Draw
-  * 1-Point Select
-  * 2-Point Draw
-  * 2-Point Select
-  * 3-Point Draw
-  * 3-Point Select
-  * Isometric Line
-  * Dimetric Draw
-  * Dimetric Select
-  * Trimetric Draw
-  * Trimetric Select
-  * Oblique Draw
-  * Oblique Select
+  * 1-punktsritning
+  * 1-punktsval
+  * 2-punktsritning
+  * 2-punktsval
+  * 3-punktsritning
+  * 3-punktsval
+  * Isometrisk linje
+  * Dimetrisk ritning
+  * Dimetriskt val
+  * Trimetrisk ritning
+  * Trimetrisk välj
+  * Snedritning
+  * Sned välj
 
-                               ### Artistic ###
+                              ### Konstnärlig ###
 
-  * Flower
-  * Googly Eyes
-  * Real Rainbow
-  * ROYGBIV Rainbow
-  * Lightning
+  * Blomma
+  * Rörliga ögon
+  * Riktig regnbåge
+  * ROYGBIV Regnbåge
+  * Blixten
   * Tornado
   * Fylld polygon
-  * String Edges
-  * String Corner
+  * Strängens kanter
+  * Stringhörn
   * String V
   * Epicykloid
-  * Epitrochoid Edge
-  * Epitrochoid Inside
-  * Epitrochoid Outside
-  * Hypotrochoid
-  * Hypotrochoid Edge
-  * Hypotrochoid Inside
-  * Hypotrochoid Outside
+  * Epicykloid kant
+  * Epicykloid insida
+  * Epicykloid utsida
+  * Hypotrokoid insida
+  * Hypotrokoid kant
+  * Hypotrokoid insida
+  * Hypotrokoid utsida
 
 -------------------------------------------------------------------------------
 

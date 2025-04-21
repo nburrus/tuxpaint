@@ -1,14 +1,14 @@
-                         Tux Paint "Magic" Tool: Brus
+                      Rita med Tux "Magic" Verktyg: Brus
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Add random noise and static to your picture.
+Lägg till slumpmässigt brus och statisk elektricitet i din bild.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

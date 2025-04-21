@@ -1,18 +1,18 @@
-                     Tux Paint "Magic" Tool: String Corner
+                   Rita med Tux "Magic" Verktyg: Stringhörn
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Draw V-shaped string art at right angles.
+Rita V-formade snören i rät vinkel.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Epicykloid, Epitrochoid Inside, Epitrochoid Edge, Epitrochoid Outside
-, Hypotrochoid, Hypotrochoid Inside, Hypotrochoid Edge, Hypotrochoid Outside,
-String V, & String Edges.
+Se även nedan:Epicykloid, Epicykloid insida, Epicykloid kant, Epicykloid utsida
+, Hypotrokoid insida, Hypotrokoid insida, Hypotrokoid kant, Hypotrokoid utsida,
+String V, & Strängens kanter.
 
 -------------------------------------------------------------------------------
 

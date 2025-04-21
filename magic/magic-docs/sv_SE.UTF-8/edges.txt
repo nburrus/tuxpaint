@@ -1,16 +1,16 @@
-                        Tux Paint "Magic" Tool: Kanter
+                     Rita med Tux "Magic" Verktyg: Kanter
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Trace the edges in your picture, over a white background.
+Rita av kanterna på din bild mot en vit bakgrund.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Emboss & Silhouette.
+Se även nedan:Punktutskrift & Silhuett.
 
 -------------------------------------------------------------------------------
 

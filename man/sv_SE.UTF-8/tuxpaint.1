@@ -1,7 +1,7 @@
 .\" tuxpaint.1 - 2025.04.19
 .TH TUXPAINT 1 "april 19, 2025" "0.9.35" "Tux Paint"
 .SH NAMN
-tuxpaint -- "Tux Paint", a drawing program for young children.
+tuxpaint -- "Rita med Tux", ett ritprogram för små barn.
 
 .SH SYNOPSYS
 .B tuxpaint
@@ -13,13 +13,13 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-allowscreensaver]
 .br
-[\-\-\fIBREDD\fPx\fIHEIGHT\fP]
+[\-\-\fIBREDD\fPx\fISKÄRMHÖJD\fP]
 .br
 [\-\-native]
 .br
 [\-\-orient=portrait]
 .br
-[\-\-buttonsize \fISIZE\fP | \-\-buttonsize auto]
+[\-\-buttonsize \fISTRL\fP | \-\-buttonsize auto]
 .br
 [\-\-startblank]
 .br
@@ -31,7 +31,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-noprint]
 .br
-[\-\-printdelay=\fISECONDS\fP]
+[\-\-printdelay=\fISEKUNDER\fP]
 .br
 [\-\-printcfg]
 .br
@@ -87,7 +87,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-mirrorstamps]
 .br
-[\-\-colorsrows=\fIROWS\fP]
+[\-\-colorsrows=\fIRADER\fP]
 .br
 [\-\-mouse-accessibility]
 .br
@@ -103,7 +103,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-joystick-slowness=\fIHASTIGHET\fP]
 .br
-[\-\-joystick-threshold=\fITHRESHOLD\fP]
+[\-\-joystick-threshold=\fITRÖSKELVÄRDE\fP]
 .br
 [\-\-joystick-maxsteps=\fISTEG\fP]
 .br
@@ -143,9 +143,9 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 .br
 [\-\-joystick-btn-print=\fIKNAPP\fP]
 .br
-[\-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP]
+[\-\-joystick-buttons-ignore=\fIKNAPP1,KNAPP2,...\fP]
 .br
-[\-\-stampsize=\fISIZE\fP]
+[\-\-stampsize=\fISTRL\fP]
 .br
 [\-\-keyboard]
 .br
@@ -274,7 +274,7 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 
 .TP 9
 .B tuxpaint
-[\-\-lang \fILANGUAGE\fP | \-\-lang help]
+[\-\-lang \fISPRÅK\fP | \-\-lang help]
 
 .TP 9
 .B tuxpaint
@@ -284,352 +284,372 @@ tuxpaint -- "Tux Paint", a drawing program for young children.
 
 .SH BESKRIVNING
 .PP
-\fITux Paint\fP is a drawing program for young children.  It is meant to be
-easy and fun to use.  It provides a simple interface and fixed canvas size,
-and provides access to previous images using a thumbnail browser (i.e., no
-access to the underlying filesystem).
+\fITux Paint\fP är ett ritprogram för små barn.  Det är tänkt att vara
+enkelt och roligt att använda.  Det har ett enkelt gränssnitt och en fast
+storlek på målarduken och ger tillgång till tidigare bilder med hjälp
+av en miniatyrbildsbläddrare (dvs. ingen tillgång till det underliggande
+filsystemet).
 
-Unlike popular drawing programs like "\fIThe GIMP\fP," it has a very
-limited toolset. However, it provides a much simpler interface, and has
-entertaining, child-oriented additions such as sound effects.
+Till skillnad från populära ritprogram som "\fIThe GIMP\fP" har det en
+mycket begränsad uppsättning verktyg. Det har dock ett mycket enklare
+gränssnitt och underhållande, barnanpassade tillägg som t.ex.
+ljudeffekter.
 
-.SH OPTIONS - INFORMATIONAL
+.SH ALTERNATIV - INFORMATIV
 .l
-\fItuxpaint\fP accepts the following options to emit information about the
-program.  It then exits immediately (without opening a graphical window).
+\fItuxpaint\fP accepterar följande alternativ för att skicka ut
+information om programmet.  Det avslutas sedan omedelbart (utan att öppna
+ett grafiskt fönster).
 
 .TP 8
 .B \-\-help
-Display short, helpful information about Tux Paint.
+Visa kort, användbar information om Rita med Tux.
 .TP 8
 .B \-\-version
-Output the version info.
+Utmatning av versionsinformation.
 .TP 8
 .B \-\-verbose\-version
-Output the version info and compile-time build options.
+Utmatning av versionsinformation och kompileringsalternativ för byggtiden.
 .TP 8
 .B \-\-usage
-Display a list of all commandline options.
+Visa en lista över alla kommandoradsalternativ.
 .TP 8
 .B \-\-copying
-Show the license (GNU GPL) under which Tux Paint is released.
+Visa licensen (GNU GPL) under vilken Rita med Tux är släppt.
 .TP 8
 .B \-\-listfonts
-Display a list of fonts found by Pango (and so available to Tux Paint via --uifont).
+Visa en lista över teckensnitt som hittats av Pango (och som därmed är tillgängliga för Rita med Tux via --uifont).
 
-.SH OPTIONS - INTERFACE
+.SH ALTERNATIV - GRÄNSSNITT
 .l
-\fItuxpaint\fP accepts the following options to alter the interface.  They
-can be used along with, instead of, or to override options set in
-configuration files. (See below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra
+gränssnittet.  De kan användas tillsammans med, i stället för eller
+för att åsidosätta alternativ som anges i konfigurationsfiler. (Se
+nedan.)
 
 .SS VIDEO
 .TP 8
 .B \-\-fullscreen=yes \-\-fullscreen=native \-\-fullscreen=no \-\-windowed
-Run \fITux Paint\fP in full-screen mode at its default -- or a specified --
-screen resolution ("--fullscreen=yes"); or in full-screen mode at the
-system's native resolution ("--fullscreen=native"); or run in a window
-("--fullscreen=no" or "--windowed") (default).
+Kör \fITux Paint\fP i helskärmsläge med standard - eller en angiven -
+skärmupplösning ("--fullscreen=yes"); eller i helskärmsläge med
+systemets ursprungliga upplösning ("--fullscreen=native"); eller kör i
+ett fönster ("--fullscreen=no" eller "--windowed") (standard).
 
 .TP 8
 .B \-\-native
-When in fullscreen mode, use the system's default screen resolution.
+I helskärmsläge använder du systemets standardskärmupplösning.
 
 .TP 8
-.B \-\-\fIBREDD\fPx\fIHEIGHT\fP
-Run \fITux Paint\fP in a particularly-sized window, or at a particular
-fullscreen resolution (if \-\-native is not used).  Default is 800x600. 
-Minimum width is 640.  Minimum height is 480.  Portrait and landscape
-orientations are both supported.  (Also see \-\-orient, below.)
+.B \-\-\fIBREDD\fPx\fISKÄRMHÖJD\fP
+Kör \fITux Paint\fP i ett fönster av en viss storlek eller med en viss
+fullskärmsupplösning (om \-\-native inte används).  Standard är
+800x600.  Minsta bredd är 640.  Minsta höjd är 480.  Både stående och
+liggande orientering stöds.  (Se även \-\-orient nedan.)
 
 .TP 8
 .B \-\-orient=landscape \-\-orient=portrait
-If \-\-orient=portrait is set, asks \fITux Paint\fP to swap the WIDTH and
-HEIGHT values it uses for windowed or fullscreen mode, without having to
-actually change the WIDTH and HEIGHT values in the configuration file or on
-the command-line. (This is useful on devices where the screen can be
-rotated, e.g. tablet PCs.)
+Om \-\-orient=portrait är inställd, ber \fITux Paint\fP att byta ut
+WIDTH- och HEIGHT-värdena som används för fönster- eller
+helskärmsläge, utan att du behöver ändra WIDTH- och HEIGHT-värdena i
+konfigurationsfilen eller på kommandoraden. (Detta är användbart på
+enheter där skärmen kan roteras, t.ex. surfplattor)
 
 .TP 8
 .B \-\-allowscreensaver \-\-disablescreensaver
-Normally, \fItuxpaint\fP disables your screensaver. Use
-\-\-allowscreensaver to prevent this from happening.
+Normalt inaktiverar \fItuxpaint\fP din skärmsläckare. Använd
+\-\-allowscreensaver för att förhindra att detta sker.
 
 .SS LJUD
 .TP 8
 .B \-\-nosound \-\-sound
-Disable or enable (default) sound.
+Avaktivera eller aktivera ljud (standard).
 
 .TP 8
 .B \-\-nostereo \-\-stereo
-Disable or enable (default) stereo panning support.
+Inaktivera eller aktivera (standard) stöd för stereopanorering.
 
-.SS INTERFACE SIZE
+.SS STORLEK PÅ GRÄNSSNITTET
 .TP 8
-.B \-\-buttonsize \fISIZE\fP \-\-buttonsize auto
-Adjust the size of the buttons in \fITux Paint\fP's user interface, between
-24 and 192 pixels (48 is the default, and suitable for displays with 96 to
-120dpi pixel density). Use "auto" to have \fITux Paint\fP choose a button
-size based on \fITux Paint\fP's window/display size.
+.B \-\-buttonsize \fISTRL\fP \-\-buttonsize auto
+Justera storleken på knapparna i \fITux Paint\fP:s användargränssnitt,
+mellan 24 och 192 pixlar (48 är standard och passar för skärmar med
+96-120 dpi pixeldensitet). Använd "auto" för att låta \fITux Paint\fP
+välja en knappstorlek baserat på \fITux Paint\fP:s
+fönster-/displaystorlek.
 
 .TP 8
-.B \-\-colorsrows=\fIROWS\fP
-How many rows of color palette buttons to show; useful when using a large
-color palette, and/or for use with coarse input devices (like eyegaze
-trackers).  It can be between 1 (default) and 3.
+.B \-\-colorsrows=\fIRADER\fP
+Hur många rader med färgpalettknappar som ska visas; användbart när du
+använder en stor färgpalett och/eller för användning med grova
+inmatningsenheter (som ögonstyrningsenheter).  Värdet kan vara mellan 1
+(standard) och 3.
 
-.SS INTERFACE SIMPLIFICATION
+.SS FÖRENKLING AV GRÄNSSNITT
 .TP 8
 .B \-\-simpleshapes \-\-complexshapes
-Disable or enable (default) the rotation step when using the Shape tool
-within Tux Paint.  When disabled, shapes cannot be rotated; however, the
-interface is easier (click, drag, release), which can be useful for younger
-or disabled children.
+Inaktivera eller aktivera (standard) rotationssteget när du använder
+Shape-verktyget i Rita med Tux.  När funktionen är inaktiverad kan
+formerna inte roteras, men gränssnittet är enklare (klicka, dra, släpp),
+vilket kan vara användbart för yngre eller funktionshindrade barn.
 
 .TP 8
 .B \-\-nooutlines \-\-outlines
-With "--nooutlines" enabled, much simpler outlines and 'rubber-band' lines
-are displayed when using the Lines, Shapes, Stamps and Eraser tools. (This
-can help when Tux Paint is run on slower computers, or displayed on a
-remote terminal.)
+Med "--nooutlines" aktiverat visas mycket enklare konturer och
+"gummibandslinjer" när du använder verktygen Lines, Shapes, Stamps och
+Eraser. (Detta kan vara till hjälp när Rita med Tux körs på
+långsammare datorer eller visas på en fjärrterminal)
 
 .TP 8
 .B \-\-uppercase \-\-mixedcase
-With "--uppercase" enabled, all text prompts and the Text and Label drawing
-tools will display only uppercase letters.  This is useful for children who
-are not yet comfortable with the lowercase characterset.  Default mode is
-mixed case.
+När "--uppercase" är aktiverat kommer alla textmeddelanden och
+ritverktygen Text och Etikett endast att visa versaler.  Detta är
+användbart för barn som ännu inte är bekväma med gemener. 
+Standardläget är blandade versaler.
 
-.SS INITIAL STAMP SIZE
+.SS INITIAL STÄMPELSTORLEK
 .TP 8
-.B \-\-stampsize=\fISIZE\fP \-\-stampsize=default
-Overrides the default size of all stamps, relative to their possible sizes
-(determined by Tux Paint, based on the dimensions of both the stamps
-themselves, and the drawing canvas).  Valid values are from 0 (smallest) to
-10 (largest).  Use "--stampsize=default" to let Tux Paint choose on a
-per-stamp basis (this is the default setting).
+.B \-\-stampsize=\fISTRL\fP \-\-stampsize=default
+Åsidosätter standardstorleken för alla stämplar, i förhållande till
+deras möjliga storlekar (bestäms av Rita med Tux, baserat på
+dimensionerna för både stämplarna själva och ritduken).  Giltiga
+värden är från 0 (minst) till 10 (störst).  Använd
+"--stampsize=default" för att låta Rita med Tux välja per stämpel
+(detta är standardinställningen).
 
-.SS STARTING OUT
+.SS STARTAR UT
 .TP 8
 .B \-\-startblank \-\-startlast
-When you start Tux Paint, it loads the last image that was being worked on.
- The "\-\-startblank" option disables this, so it always starts with a
-blank canvas.  The default behavior is "\-\-startlast".
+När du startar Rita med Tux laddas den senaste bilden som du arbetade med.
+ Alternativet "\-\-startblank" inaktiverar detta, så att den alltid
+startar med en tom duk.  Standardbeteendet är "\-\-startlast".
 
 .TP 8
 .B \-\-newcolorslast \-\-newcolorsfirst
-List solid (blank) colors at the end, or beginning (default) of the options
-displayed when using the New tool to start a new picture.
+Lista fasta (tomma) färger i slutet eller början (standard) av de
+alternativ som visas när du använder verktyget New för att starta en ny
+bild.
 
-.SS CONTROL SIMPLIFICATION
+.SS FÖRENKLING AV KONTROLLEN
 .TP 8
 .B \-\-noquit \-\-quit
-Disable or enable (default) the on-screen Quit button and [Escape] key for
-quitting Tux Paint.  Instead, use the window close button in the titlebar,
-the [Alt]+[F4] key sequence, or the [Shift]+[Control]+[Escape] key
-sequence.
+Inaktivera eller aktivera (standard) Quit-knappen och [Escape]-tangenten
+på skärmen för att avsluta Rita med Tux.  Använd i stället knappen
+Stäng fönster i titelfältet, tangentsekvensen [Alt]+[F4] eller
+tangentsekvensen [Skift]+[Kontroll]+[Escape].
 
 .TP 8
 .B \-\-nostamps \-\-stamps
-With "--nostamps" set, Rubber Stamp images are not loaded, so the Stamps
-tool will not be available.  This option can be used to reduce the time Tux
-Paint takes to load, and reduce the amount of RAM it requires.
+Med inställningen "--nostamps" laddas inte stämpelbilderna, så
+stämpelverktyget kommer inte att vara tillgängligt.  Detta alternativ kan
+användas för att minska den tid det tar för Rita med Tux att ladda och
+minska mängden RAM-minne som krävs.
 
 .TP 8
 .B \-\-nostampcontrols \-\-stampcontrols
-Disable or enable (default) buttons to control stamps.  Controls include
-mirror, flip, shrink and grow.  (Note: Not all stamps will be controllable
-in all ways.)
+Inaktivera eller aktivera (standard) knappar för att styra frimärken. 
+Kontrollerna omfattar spegling, vändning, krympning och tillväxt.  (Obs:
+Alla frimärken kommer inte att kunna styras på alla sätt)
 
 .TP 8
 .B \-\-nostamprotation \-\-stamprotation
-Disable or enable (default) the rotation step when placing a stamp in the
-drawing.
+Inaktivera eller aktivera (standard) rotationssteget när du placerar en
+stämpel i ritningen.
 
 .TP 8
 .B \-\-nomagiccontrols \-\-magiccontrols
-Disable or enable (default) buttons to control Magic tools.  Controls
-include controlling whether a Magic tool is used like a paint brush, or if
-it affects the entire image at once.  (Note: Not all Magic tools will be
-controllable.)
+Inaktivera eller aktivera (standard) knappar för att styra Magic-verktyg. 
+Bland annat kan du styra om ett magiskt verktyg ska användas som en pensel
+eller om det ska påverka hela bilden på en gång.  (Obs: Alla magiska
+verktyg kommer inte att kunna styras)
 
 .TP 8
 .B \-\-nomagicsizes \-\-magicsizes
-Disable or enable (default) Magic size controls.  (Note: Not all Magic
-tools offer size controls.)
+Inaktivera eller aktivera (standard) Magic-storlekskontroller.  (Obs: Det
+är inte alla Magic-verktyg som erbjuder storlekskontroller)
 
 .TP 8
 .B \-\-ungroupmagictools \-\-groupmagictools
-Disable or enable (default) grouping of Magic tools.
+Inaktivera eller aktivera (standard) gruppering av Magic-verktyg.
 
 .TP 8
 .B \-\-noshapecontrols \-\-shapecontrols
-Disable or enable (default) buttons to change the Shape tool's behavior --
-shapes expanding from the center, or from a corner, where the mouse is
-initially clicked.
+Inaktivera eller aktivera (standard) knappar för att ändra
+Shape-verktygets beteende - former expanderar från mitten eller från ett
+hörn där musen ursprungligen klickades.
 
 .TP 8
 .B \-\-nolabel \-\-label
-Disable or enable (default) the Label tool, which lets you create text
-which can be altered or moved later.
+Inaktivera eller aktivera (standard) etikettverktyget, som gör att du kan
+skapa text som kan ändras eller flyttas senare.
 
 .TP 8
 .B \-\-nobrushspacing \-\-brushspacing
-Disable or enable (default) the brush spacing option of the Paint and Lines
-tools, which allows you to override the default spacing of a brush.
+Inaktivera eller aktivera (standard) alternativet för penselavstånd i
+verktygen Paint och Lines, vilket gör att du kan åsidosätta
+standardavståndet för en pensel.
 
 .TP 8
 .B \-\-complexity=advanced \-\-complexity=beginner \-\-complexity=novice
-Set the complexity (expertise) level, which affects whether certain Magic
-tools are available, or how they operate. (advanced is the default)
+Ställ in komplexitetsnivån (expertis), som påverkar om vissa
+Magic-verktyg är tillgängliga eller hur de fungerar. (advanced är
+standard)
 
 .TP 8
 .B \-\-notemplateexport \-\-templateexport
-Disable or enable (default) the ability to create new Templates from saved
-drawings via the Open dialog.
+Inaktivera eller aktivera (standard) möjligheten att skapa nya mallar
+från sparade ritningar via dialogrutan Öppna.
 
 .TP 8
 .B \-\-noerase \-\-erase
-The --noerase option disables Tux Paint's ability to erase files (saved
-drawings, via the Open dialog, and exported templates, via the New dialog).
-Useful to prevent a user from accidentally erasing their own work, or that
-of others (especially used in combination with --saveovernew).
+Alternativet --noerase inaktiverar Rita med Tuxs möjlighet att radera
+filer (sparade ritningar via dialogrutan Öppna och exporterade mallar via
+dialogrutan Ny). Användbart för att förhindra att en användare av
+misstag raderar sitt eget eller andras arbete (används särskilt i
+kombination med --saveovernew).
 
-.SH OPTIONS - CONTROLLING TUX PAINT
+.SH TILLVAL - KONTROLLERAD TUX-LACK
 .l
-\fItuxpaint\fP accepts the following options to alter how you control Tux
-Paint.  They can be used along with, instead of, or to override options set
-in configuration files. (See below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra hur du styr
+Rita med Tux.  De kan användas tillsammans med, i stället för eller för
+att åsidosätta alternativ som anges i konfigurationsfiler. (Se nedan.)
 
 .SS MARKÖR
 .TP 8
 .B \-\-nofancycursors \-\-fancycursors
-Disable or enable (default) the 'fancy' mouse pointer shapes in Tux Paint.
-While the shapes are larger, and context sensitive, some environments have
-trouble displaying the mouse pointer, and/or leave 'trails' on the screen.
+Inaktivera eller aktivera (standard) de "snygga" muspekarformerna i Rita
+med Tux. Även om formerna är större och kontextkänsliga har vissa
+miljöer problem med att visa muspekaren och/eller lämnar "spår" på
+skärmen.
 
 .TP 8
 .B \-\-hidecursor \-\-showcursor
-Completely hide, or enable (default) the mouse pointer in Tux Paint. This
-can be useful on touchscreen devices, such as tablet PCs.
+Döljer muspekaren helt eller aktiverar den (standard) i Rita med Tux.
+Detta kan vara användbart på enheter med pekskärm, t.ex. surfplattor.
 
-.SS KEYBOARD
+.SS Tangentbord
 .TP 8
 .B \-\-noshortcuts \-\-shortcuts
-If "--noshortcuts" mode, keyboard shortcuts (e.g., [Ctrl]+[S] for Save)
-will be disabled.  Default mode is for shortcuts to be enabled.
+I läget "--noshortcuts" inaktiveras kortkommandon (t.ex. [Ctrl]+[S] för
+Spara).  Standardläget är att kortkommandon är aktiverade.
 
-.SS MOUSE AND ACCESSIBILITY
+.SS MUS OCH TILLGÄNGLIGHET
 .TP 8
 .B \-\-grab \-\-dontgrab
-Grab the mouse and keyboard input (if possible), so that the mouse is
-confined to the Tux Paint window.  Default is to not grab.
+Ta tag i musen och tangentbordsinmatningen (om möjligt) så att musen
+begränsas till Rita med Tux-fönstret.  Standard är att inte ta tag i
+musen.
 
 .TP 8
 .B \-\-nowheelmouse \-\-wheelmouse
-By default, the wheel (jog dial) on a mouse will be used to scroll the
-'selector' on the right of the screen.  This can be disabled, and the wheel
-completely ignored, with the "--nowheelmouse" option. This is useful for
-children who aren't yet comfortable with the mouse. Default is to support
-the wheel.
+Som standard kommer hjulet (jog dial) på en mus att användas för att
+rulla "väljaren" till höger på skärmen.  Detta kan inaktiveras, och
+hjulet ignoreras helt, med alternativet "--nowheelmouse". Detta är
+användbart för barn som ännu inte är bekväma med musen.
+Standardinställningen är att stödja hjulet.
 
 .TP 8
 .B \-\-mouse-accessibility
-In this mode, instead of clicking, dragging and releasing (e.g., to draw),
-you click, move, and click again to end the motion. ("Sticky mouse
-clicks.")
+I det här läget klickar du inte bara, drar och släpper (t.ex. för att
+rita), utan du klickar, flyttar och klickar igen för att avsluta
+rörelsen. ("Klibbiga musklick.")
 
 .TP 8
 .B \-\-keyboard \-\-mouse
-The "--keyboard" option lets the mouse pointer in Tux Paint be controlled
-with the keyboard.  The [Up], [Down], [Left], and [Right] arrow keys move
-the pointer. [Spacebar] acts as the mouse button.
+Alternativet "--keyboard" gör att muspekaren i Rita med Tux kan styras med
+tangentbordet.  Piltangenterna [Upp], [Ned], [Vänster] och [Höger]
+flyttar muspekaren. [Mellanslagstangenten] fungerar som musknapp.
 
 .TP 8
 .B \-\-nobuttondistinction \-\-buttondistinction
-By default, only mouse button #1 (typically the leftmost mouse button on
-mice with more than one button) can be used for interacting with Tux Paint.
- With the "--nobuttondistinction" option, mouse buttons #2 (middle) and #3
-(right) can be used, as well. This is useful for children who aren't yet
-comfortable with the mouse. Default is to only recognize button #1.
+Som standard kan endast musknapp #1 (vanligtvis den längst till vänster
+på möss med mer än en knapp) användas för att interagera med Rita med
+Tux.  Med alternativet "--nobuttondistinction" kan även musknapparna 2
+(mitten) och 3 (höger) användas. Detta är användbart för barn som
+ännu inte är bekväma med musen. Standard är att bara känna igen knapp
+#1.
 
-.SS ONSCREEN KEYBOARD
+.SS TANGENTBORD PÅ SKÄRMEN
 .TP 8
 .B \-\-onscreen-keyboard
-Presents a clickable on-screen keyboard when using the Text and Label
-tools.
+Visar ett klickbart tangentbord på skärmen när du använder verktygen
+Text och Etikett.
 
 .TP 8
 .B \-\-onscreen-keyboard-layout \fILAYOUT\fP
-Specify the default layout for the on-screen keyboard (see above).
+Ange standardlayouten för skärmtangentbordet (se ovan).
 
 .TP 8
 .B \-\-onscreen-keyboard-disable-change
-Disables the left/right arrow buttons visible on the on-screen keyboard,
-which are used to switch between the available on-screen keyboard layouts.
+Inaktiverar vänster/höger-pilknapparna som syns på skärmtangentbordet
+och som används för att växla mellan de tillgängliga layouterna på
+skärmtangentbordet.
 
-.SS JOYSTICK
+.SS Styrspak
 .TP 8
 .B \-\-joystick-dev=\fIENHET\fP
-Specify which joystick device should be used by Tux Paint. Default value is
-0 (the first joystick).
+Ange vilken joystickenhet som ska användas av Rita med Tux.
+Standardvärdet är 0 (den första joysticken).
 
 .TP 8
 .B \-\-joystick-dev=list
-List the system's available joysticks and exit. (Does not launch Tux
-Paint.)
+Lista systemets tillgängliga joysticks och avsluta. (Startar inte Rita med
+Tux.)
 
 .TP 8
 .B \-\-joystick-slowness=\fIHASTIGHET\fP
-Sets a delay at each axis motion, allowing to slow the joystick. Allowed
-values are from 0 to 500. Default value is 15.
+Ställer in en fördröjning vid varje axelrörelse, vilket gör det
+möjligt att sakta ner joysticken. Tillåtna värden är från 0 till 500.
+Standardvärdet är 15.
 
 .TP 8
-.B \-\-joystick-threshold=\fITHRESHOLD\fP
-Sets the minimum level of axis motion to start moving the pointer. Allowed
-values are from 0 to 32766. Default value is 3200.
+.B \-\-joystick-threshold=\fITRÖSKELVÄRDE\fP
+Ställer in den lägsta nivån av axelrörelse för att börja flytta
+pekaren. Tillåtna värden är från 0 till 32766. Standardvärdet är
+3200.
 
 .TP 8
 .B \-\-joystick-maxsteps=\fISTEG\fP
-Sets the maximum pixels the pointer will move at once. Allowed values are
-from 1 to 7. Default value is 7.
+Ställer in det maximala antalet pixlar som pekaren flyttar på en gång.
+Tillåtna värden är från 1 till 7. Standardvärdet är 7.
 
 .TP 8
 .B \-\-joystick-hat-timeout=\fIMILLISEKUNDER\fP
-Sets the delay after wich the pointer will start moving automatically if
-the hat is keeped pushed. Allowed values are from 0 to 3000. Default value
-is 1000.
+Ställer in fördröjningen efter vilken pekaren börjar röra sig
+automatiskt om hatten hålls intryckt. Tillåtna värden är från 0 till
+3000. Standardvärdet är 1000.
 
 .TP 8
 .B \-\-joystick-hat-slowness=\fIHASTIGHET\fP
-Sets a delay at each automatic motion, allowing to slow the speed of the
-hat. Allowed values are from 0 to 500. Default value is 15.
+Ställer in en fördröjning vid varje automatisk rörelse, vilket gör det
+möjligt att sakta ner hattens hastighet. Tillåtna värden är från 0
+till 500. Standardvärdet är 15.
 
 .TP 8
 .B \-\-joystick-btn-escape=\fIKNAPP\fP
-Selects the joystick button number, as seen by SDL, that will be used to
-generate a escape event. Useful to dismiss dialogs and quit.
+Väljer joystickknappens nummer, sett av SDL, som ska användas för att
+generera en escape-händelse. Användbart för att avfärda dialoger och
+avsluta.
 
 .TP 8
 .B \-\-joystick-btn-\fIKOMMANDO\fP=\fIKNAPP\fP
-Selects the joystick button number, as seen by SDL, that will be a shortcut
-to various tools within Tux Paint.
+Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till
+olika verktyg i Rita med Tux.
 
 .PP
 .RS
 .PD 0
 .TP 2
 -
-brush | Paint
+brush | Annonserar Rita med Tux %s
 .TP 2
 -
-stamp | Stamp
+stamp | Stämpel
 .TP 2
 -
-lines | Lines
+lines | Rader
 .TP 2
 -
-shapes | Shapes
+shapes | Former
 .TP 2
 -
 text | Text
@@ -647,178 +667,190 @@ undo | Ångra
 redo | Gör om
 .TP 2
 -
-eraser | Eraser
+eraser | Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger mjukare, sammanhängande streck när pekaren flyttas snabbt.
 .TP 2
 -
 new | Ny
 .TP 2
 -
-open | Open
+open | Öppna
 .TP 2
 -
-save | Save
+save | Spara
 .TP 2
 -
-pgsetup | Print (dialog)
+pgsetup | Skriv ut (dialog)
 .TP 2
 -
-print | Print (immediate)
+print | Skriv ut (omedelbart)
 .RE
 .PD
 
 .TP 8
-.B \-\-joystick-buttons-ignore=\fIBUTTON1,BUTTON2,...\fP
-A set of joystick button numbers, as seen by SDL, that should be ignored.
-Otherwise, unless they are used by one of the "--joystick-btn-..." options
-above, buttons will be seen as a mouse left-click.  Comma-separated.
+.B \-\-joystick-buttons-ignore=\fIKNAPP1,KNAPP2,...\fP
+En uppsättning nummer för joystickknappar som SDL ser och som ska
+ignoreras. Om de inte används av något av alternativen
+"--joystick-btn-..." ovan, kommer knapparna att ses som ett vänsterklick
+med musen.  Kommaseparerade.
 
-.SH OPTIONS - PRINTING
+.SH ALTERNATIV - UTSKRIFT
 .l
-\fItuxpaint\fP accepts the following options to alter how Tux Paint handles
-printing.  They can be used along with, instead of, or to override options
-set in configuration files. (See below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra hur Rita med
+Tux hanterar utskrifter.  De kan användas tillsammans med, i stället för
+eller för att åsidosätta alternativ som anges i konfigurationsfiler. (Se
+nedan.)
 
-.SS PRINT PERMISSIONS
+.SS UTSKRIFTSBEHÖRIGHET
 .TP 8
 .B \-\-noprint \-\-print
-Disable or enable (default) the Print command within Tux Paint.
+Inaktivera eller aktivera (standard) kommandot Print i Rita med Tux.
 
 .TP 8
-.B \-\-printdelay=\fISECONDS\fP \-\-printdelay=0
-Only allow printing (via the Print command) once every SECONDS seconds. 
-Default is 0 (no limitation).
+.B \-\-printdelay=\fISEKUNDER\fP \-\-printdelay=0
+Tillåt endast utskrift (via kommandot Print) en gång var SECONDS:e
+sekund.  Standardvärdet är 0 (ingen begränsning).
 
-.SS SHOW PRINTER DIALOG
+.SS VISA SKRIVARDIALOG
 .TP 8
 .B \-\-altprintmod \-\-altprintnever \-\-altprintalways
-These options control whether an system printer dialog appears when the
-user clicks the Print button.  By default ("--altprintmod"), pressing [Alt]
-while clicking Print will bring up a dialog (unless you're in fullscreen
-mode).  With "--altprintalways", the dialog will always appear, even if
-[Alt] is not being held.  With "--altprintnever", the dialog will never
-appear, even if [Alt] is being held.
+Dessa alternativ styr om en dialogruta för systemskrivaren ska visas när
+användaren klickar på knappen Skriv ut.  Som standard ("--altprintmod")
+visas en dialogruta om du trycker på [Alt] samtidigt som du klickar på
+Skriv ut (såvida du inte är i helskärmsläge).  Med "--altprintalways"
+visas dialogrutan alltid, även om [Alt] inte hålls nedtryckt.  Med
+"--altprintnever" visas aldrig dialogrutan, även om [Alt] hålls
+nedtryckt.
 
-.SS SAVE PRINTER CONFIGURATION
+.SS SPARA SKRIVARENS KONFIGURATION
 .TP 8
 .B \-\-printcfg \-\-noprintcfg
-(Windows and Mac OS X only.)  Enable or disable loading and saving of
-printer settings.  By default, Tux Paint will print to the default printer
-with default settings.  Pressing [Alt] while pushing the Print button will
-cause a printer dialog to appear (as long as you're not in fullscreen mode;
-see also "--altprintalways" and "--altprintnever", below.)  Unless
-"--noprintcfg" is used, your previous settings will be loaded when Tux
-Paint starts up, and setting changes will be saved for next time.
+(Endast Windows och Mac OS X.) Aktivera eller inaktivera laddning och
+lagring av skrivarinställningar.  Som standard skriver Rita med Tux ut
+till standardskrivaren med standardinställningar.  Om du trycker på [Alt]
+samtidigt som du trycker på knappen Skriv ut visas en skrivardialogruta
+(så länge du inte är i helskärmsläge; se även "--altprintalways" och
+"--altprintnever" nedan.) Om inte "--noprintcfg" används läses dina
+tidigare inställningar in när Rita med Tux startar och
+inställningsändringar sparas till nästa gång.
 
-.SS PRINT COMMANDS
+.SS PRINT-KOMMANDON
 .TP 8
 .B \-\-printcommand \fIKOMMANDO\fP
-(Only when PostScript printing is used.) Have Tux Paint print via an
-alternate command, rather than lpr(1).
+(Endast när PostScript-utskrift används.) Låt Rita med Tux skriva ut via
+ett alternativt kommando i stället för lpr(1).
 
 .TP 8
 .B \-\-altprintcommand \fIKOMMANDO\fP
-(Only when PostScript printing is used.) Have Tux Paint print via an
-alternate command, when a dialog is expect (e.g., when holding [Alt] while
-clicking Print; see above), rather than kprinter.
+(Endast när PostScript-utskrift används.) Låt Rita med Tux skriva ut via
+ett alternativt kommando, när en dialogruta väntar (t.ex. när du håller
+[Alt] nedtryckt medan du klickar på Skriv ut; se ovan), i stället för
+via kprinter.
 
 .SS PAPPERSSTORLEK
 .TP 8
 .B \-\-papersize \fIPAPPERSSTORLEK\fP
-(Only when PostScript printing is used.) Ask Tux Paint to generate
-PostScript of a particular paper size. Valid sizes are those supported by
-libpaper.  See papersize(5).
+(Endast när PostScript-utskrift används.) Be Rita med Tux att generera
+PostScript för en viss pappersstorlek. Giltiga storlekar är de som stöds
+av libpaper.  Se papersize(5).
 
-.SH OPTIONS - SAVING
+.SH ALTERNATIV - SPARA
 .l
-\fItuxpaint\fP accepts the following options to alter how Tux Paint
-operates when saving or exporting drawings.  They can be used along with,
-instead of, or to override options set in configuration files. (See below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra hur Rita med
+Tux fungerar när du sparar eller exporterar ritningar.  De kan användas
+tillsammans med, i stället för eller för att åsidosätta alternativ som
+anges i konfigurationsfiler. (Se nedan.)
 
-.SS SAVE OVER EARLIER WORK
+.SS SPARA JÄMFÖRT MED TIDIGARE ARBETE
 .TP 8
 .B \-\-saveover \-\-saveovernew \-\-saveoverask
-If, when saving a picture, an older version of the file will be
-overwritten, Tux Paint will, by default, ask for confirmation: either save
-over the old file, or create a new file.  This prompt can be disabled with
-"--saveover" (which always saves over older versions of pictures) or
-"--saveovernew" (which always saves a new file). The default is to prompt
-("--saveoverask").
+Om en äldre version av filen kommer att skrivas över när en bild sparas,
+kommer Rita med Tux som standard att be om bekräftelse: antingen spara
+över den gamla filen eller skapa en ny fil.  Denna fråga kan avaktiveras
+med "--saveover" (vilket alltid sparar över äldre versioner av bilder)
+eller "--saveovernew" (vilket alltid sparar en ny fil).
+Standardinställningen är att fråga ("--saveoverask").
 
-.SS SAVE AND EXPORT DIRECTORIES
+.SS SPARA OCH EXPORTERA KATALOGER
 .TP 8
 .B \-\-savedir \fIDIR\fP
-Specify where Tux Paint should save and load its drawings.
+Ange var Rita med Tux ska spara och ladda sina ritningar.
 
 .TP 8
 .B \-\-exportdir \fIDIR\fP
-Specify where Tux Paint should export drawings and animations.
+Ange vart Rita med Tux ska exportera ritningar och animationer.
 
-.SS MORE SAVING OPTIONS
+.SS FLER SPARALTERNATIV
 .TP 8
 .B \-\-nosave \-\-save
-The --nosave option disables Tux Paint's ability to save files. This can be
-used in situations where the program is only being used for fun, or in a
-test environment.
+Alternativet --nosave inaktiverar Rita med Tuxs möjlighet att spara filer.
+Detta kan användas i situationer där programmet bara används för skojs
+skull eller i en testmiljö.
 
 .TP 8
 .B \-\-autosave \-\-noautosave
-The --autosave option prevents Tux Paint from asking whether you want to
-save the current picture when quitting, and assumes you do.
+Alternativet --autosave förhindrar att Rita med Tux frågar om du vill
+spara den aktuella bilden när du avslutar programmet, och förutsätter
+att du gör det.
 
 .TP 8
 .B \-\-reversesort \-\-noautosave
-The --reversesort option causes Tux Paint's Open and Slideshow dialogs to
-display the oldest images at the top of the list (normally the newest
-appear at the top, and the oldest at the bottom.
+Alternativet --reversesort gör att dialogrutorna Öppna och Bildspel i
+Rita med Tux visar de äldsta bilderna högst upp i listan (normalt visas
+de nyaste högst upp och de äldsta längst ned).
 
-.SH OPTIONS - DATA FILES
+.SH ALTERNATIV - DATAFILER
 .l
-\fItuxpaint\fP accepts the following options to alter where Tux Paint loads
-data (stamps, brushes, etc.)  They can be used along with, instead of, or
-to override options set in configuration files. (See below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra var Rita med
+Tux laddar data (stämplar, penslar etc.) De kan användas tillsammans med,
+istället för eller för att åsidosätta alternativ som anges i
+konfigurationsfiler. (Se nedan.)
 
 .TP 8
 .B \-\-datadir \fIDIR\fP
-Specify where Tux Paint should look for personal data files (brushes,
-stamps, etc.).
+Ange var Rita med Tux ska leta efter personliga datafiler (penslar,
+stämplar etc.).
 
 .TP 8
 .B \-\-colorfile \fIFIL\fP
-This option allows you to override the default color palette in Tux Paint
-and replace it with your own. The file should be a plain ASCII text file
-containing one color description per line. Colors may be in decimal or 6-
-or 3-digit hexadecimal, and followed by a description. (For example,
-"\fI#000 Black\fP" and "\fI255 192 64 Orange\fP".)
+Med det här alternativet kan du åsidosätta standardfärgpaletten i Rita
+med Tux och ersätta den med din egen. Filen ska vara en vanlig
+ASCII-textfil som innehåller en färgbeskrivning per rad. Färgerna kan
+vara decimala eller 6- eller 3-siffriga hexadecimala och följas av en
+beskrivning. (Till exempel "\fI#000 Black\fP" och "\fI255 192 64
+Orange\fP".)
 
-.SH OPTIONS - LANGUAGE
+.SH ALTERNATIV - SPRÅK
 .l
-\fItuxpaint\fP accepts the following options to alter the language used by
-Tux Paint's interface, and other related settings.  They can be used along
-with, instead of, or to override options set in configuration files. (See
-below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra det språk
+som används i Rita med Tuxs gränssnitt och andra relaterade
+inställningar.  De kan användas tillsammans med, i stället för eller
+för att åsidosätta alternativ som anges i konfigurationsfiler. (Se
+nedan.)
 
 .l
-Various parts of Tux Paint have been translated into numerous languages.
-Tux Paint will try its best to honor your locale setting (i.e., the "LANG"
-environment variable), if possible. You can also specifically set the
-language using options on the command-line or in a configuration file.
+Olika delar av Rita med Tux har översatts till ett flertal språk. Rita
+med Tux kommer att göra sitt bästa för att respektera din
+språkinställning (dvs. miljövariabeln "LANG"), om möjligt. Du kan
+också ställa in språket specifikt med hjälp av alternativ på
+kommandoraden eller i en konfigurationsfil.
 
 .TP 8
 .B \-\-locale \fILOKALANPASSNING\fP
-Specify the language to use, based on locale name (which is typically of
-the form "language[_territory][.codeset][@modifier], where "language" is an
-ISO 639 language code, "territory" is an ISO 3166 country code, and
-"codeset" is a character set or encoding identifier like "ISO-8859-1" or
-"UTF-8".)
+Ange vilket språk som ska användas, baserat på locale-namnet (som
+vanligtvis är av formen "language[_territory][.codeset][@modifier], där
+"language" är en ISO 639-språkkod, "territory" är en ISO 3166-landskod
+och "codeset" är en teckenuppsättning eller kodningsidentifierare som
+"ISO-8859-1" eller "UTF-8")
 .PP
 .RS
-For example, "de_DE@euro" for German, or "pt_BR" for Brazilian Portuguese.
+Till exempel "de_DE@euro" för tyska eller "pt_BR" för brasiliansk
+portugisiska.
 .RE
 
 .TP 8
-.B \-\-lang \fILANGUAGE\fP
-Specify the language to use, based on the language's name (as recognized by
-Tux Paint).  Choose one of the language names listed below:
+.B \-\-lang \fISPRÅK\fP
+Ange vilket språk som ska användas, baserat på språkets namn (som det
+identifieras av Rita med Tux).  Välj ett av språknamnen som listas nedan:
 .PP
 .RS
 .PD 0
@@ -1214,165 +1246,177 @@ zulu
 
 .TP 8
 .B \-\-lang help
-Display a lists of all supported languages.
+Visar en lista över alla språk som stöds.
 
 .TP 8
 .B \-\-mirrorstamps \-\-dontmirrorstamps
-With "--mirrorstamps" set, stamps which can be mirrored will appear
-mirrored by default.  This can be useful when used by people who prefer
-things right-to-left over left-to-right.
+Med "--mirrorstamps" inställt kommer frimärken som kan speglas att visas
+speglade som standard.  Detta kan vara användbart när det används av
+personer som föredrar saker från höger till vänster framför från
+vänster till höger.
 
 .SS TYPSNITT
 .TP 8
 .B \-\-nosysfonts \-\-sysfonts
-Tux Paint normally attempts to search for additional TrueType Fonts
-installed in common places on your system.  If this causes trouble, or
-you'd prefer to only make fonts installed in Tux Paint's directory
-available, use the "--nosysfonts" option to disable this feature.
+Rita med Tux försöker normalt att söka efter ytterligare
+TrueType-teckensnitt som är installerade på vanliga platser i systemet. 
+Om detta orsakar problem, eller om du föredrar att endast göra
+teckensnitt som är installerade i Rita med Tuxs katalog tillgängliga, kan
+du använda alternativet "--nosysfonts" för att inaktivera den här
+funktionen.
 
 .TP 8
 .B \-\-alllocalefonts \-\-currentlocalefont
-Tux Paint avoids loading any fonts found in its "locale" font subdirectory,
-except any that match the current locale Tux Paint is running under. Use
-the "--alllocalefonts" option to load all such fonts, for use in the Text
-and Label tools. (This was the default behavior, prior to version 0.9.21.)
+Rita med Tux undviker att ladda alla teckensnitt som finns i
+teckensnittsunderkatalogen "locale", utom de som matchar den aktuella
+locale som Rita med Tux körs under. Använd alternativet
+"--alllocalefonts" för att ladda alla sådana teckensnitt, för
+användning i verktygen Text och Etikett. (Detta var standardbeteendet
+före version 0.9.21.)
 
 .TP 8
 .B \-\-uifont=\fI"TYPSNITTSNAMN"\fP \-\-uifont=default
-Specify the name of a font for Tux Paint to attempt to use for its user
-interface (UI) -- button labels, dialog pop-up text, instructional text at
-the bottom. If left unspecified, or "default" is given, then "DejaVu Sans"
-will be used. (This was the default behavior, prior to version 0.9.31.)
+Ange namnet på ett teckensnitt som Rita med Tux ska försöka använda
+för sitt användargränssnitt (UI) - knappetiketter, popup-text för
+dialogrutor, instruktionstext längst ned. Om inget anges, eller om
+"default" anges, kommer "DejaVu Sans" att användas. (Detta var
+standardbeteendet före version 0.9.31.)
 
 .SH ALTERNATIV - DIVERSE
 .l
-\fItuxpaint\fP accepts the following options to alter its behavior. They
-can be used along with, instead of, or to override options set in
-configuration files. (See below.)
+\fItuxpaint\fP accepterar följande alternativ för att ändra dess
+beteende. De kan användas tillsammans med, i stället för eller för att
+åsidosätta alternativ som anges i konfigurationsfiler. (Se nedan.)
 
 .TP 8
 .B \-\-nosysconfig
-With this option, Tux Paint will not attempt to read the system-wide
-configuration file (typically "/etc/tuxpaint/tuxpaint.conf" or
+Med detta alternativ kommer Rita med Tux inte att försöka läsa den
+systemomfattande konfigurationsfilen (vanligtvis
+"/etc/tuxpaint/tuxpaint.conf" eller
 "/usr/local/etc/tuxpaint/tuxpaint.conf").
 
 .TP 8
 .B \-\-nolockfile
-By default, Tux Paint uses a lockfile (stored in the user's local Tux Paint directory) which prevents it from being launched more than once in 30 seconds. (Sometimes children get too eager, or user interfaces only require one click, but users think they need to double-click.) This option makes Tux Paint ignore the current lockfile.
+Som standard använder Rita med Tux en låsfil (lagrad i användarens lokala Rita med Tux-katalog) som förhindrar att programmet startas mer än en gång på 30 sekunder. (Ibland blir barn för ivriga, eller så kräver användargränssnitt bara ett klick, men användarna tror att de måste dubbelklicka) Detta alternativ gör att Rita med Tux ignorerar den aktuella låsfilen.
 
 .SH MILJÖ
 .ad l
-While Tux Paint may refer to a number of environment variables indirectly
-(e.g., via SDL(3)), it directly accesses the following: (See "FILES" below,
-as well.)
+Även om Rita med Tux kan hänvisa till ett antal miljövariabler indirekt
+(t.ex. via SDL(3)), har den direkt åtkomst till följande: (Se även
+"FILER" nedan.)
 .PP
 .TP 8
 .B HOME
-to determine where picture files go when using the Save and Open commands
-within Tux Paint, to keep track of the current image, when quitting and
-restarting Tux Paint, and to get the user's configuration file.
+för att avgöra var bildfiler hamnar när du använder kommandona Spara
+och Öppna i Rita med Tux, för att hålla reda på den aktuella bilden,
+när du avslutar och startar om Rita med Tux och för att hämta
+användarens konfigurationsfil.
 
 .TP 8
 .B LANG, LC_ALL, LANGUAGE, och LC_MESSAGES
-to determine language to use, if setlocale(3) refers to "LC_MESSAGES".
+för att bestämma vilket språk som ska användas, om setlocale(3)
+hänvisar till "LC_MESSAGES".
 
 .TP 8
 .B SDL_VIDEO_ALLOW_SCREENSAVER
-Set this environment variable to '1' to allow a screensaver to appear while
-Tux Paint is running. This can also be done via the "--allowscreensaver"
-option.
+Ställ in denna miljövariabel på '1' för att tillåta att en
+skärmsläckare visas medan Rita med Tux körs. Detta kan också göras via
+alternativet "--allowscreensaver".
 
 .TP 8
 .B SDL_VIDEO_WINDOW_POS
-If this is NOT set, Tux Paint will set it to "center", to attempt to place
-the Tux Paint window in the center of a display. If it IS set (e.g., to
-"nopref", meaning "no preference"), Tux Paint will not override it.
+Om den INTE är inställd kommer Rita med Tux att ställa in den på
+"center", för att försöka placera Rita med Tux-fönstret i mitten av
+skärmen. Om den ÄR inställd (t.ex. till "nopref", vilket betyder "ingen
+preferens"), kommer Rita med Tux inte att åsidosätta den.
 
 .SH FILER
 .TP 8
 .B [/usr/local/]/etc/tuxpaint/tuxpaint.conf
-System-wide configuration file.  It is read first (unless the
-"--nosysconfig" option was given on the command-line).
+Systemomfattande konfigurationsfil.  Den läses först (om inte
+alternativet "--nosysconfig" har angetts på kommandoraden).
 .RS
 .PP
-(Created during installation.)
+(Skapas under installationen.)
 .RE
 .TP 8
 .B $HOME/.tuxpaintrc
-User's configuration file.  It can be used to set default options (rather
-than setting them on the command-line every time), and/or to override any
-settings in the system-wide configuration file.
+Användarens konfigurationsfil.  Den kan användas för att ange
+standardalternativ (i stället för att ange dem på kommandoraden varje
+gång) och/eller för att åsidosätta inställningar i den
+systemomfattande konfigurationsfilen.
 .RS
 .PP
-(Not created or edited automatically; must be created manually. You can do
-this by hand, or use tuxpaint-config(1).)
+(Kan inte skapas eller redigeras automatiskt, utan måste skapas manuellt.
+Du kan göra detta för hand, eller använda tuxpaint-config(1)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/saved/
-A directory of previously-saved images (and thumbnails).  Only files in
-this directory will be made available using the Open command within Tux
-Paint.  Overridden via the "--savedir" option.
+En katalog med tidigare sparade bilder (och miniatyrbilder).  Endast filer
+i den här katalogen kommer att göras tillgängliga med kommandot Öppna i
+Rita med Tux.  Åsidosätts via alternativet "--savedir".
 .RS
 .PP
-(Created when Save command is used.)
+(Skapas när kommandot Spara används.)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/current_id.txt
-A reference to the image which was being edited when Tux Paint was last
-quit.  (This image is automatically loaded the next time Tux Paint is
-re-run, unless the "--startblank" option is set.)
+En referens till den bild som redigerades när Rita med Tux senast
+avslutades.  (Denna bild laddas automatiskt nästa gång Rita med Tux körs
+om, såvida inte alternativet "--startblank" har angetts)
 .RS
 .PP
-(Created when Tux Paint is Quit.)
+(Skapas när Rita med Tux avslutas.)
 .RE
 .TP 8
 .B $HOME/.tuxpaint/lockfile.dat
-A lockfile that prevents Tux Paint from being launched more than once every
-30 seconds.  Disable checking the lockfile by using the "--nolockfile"
-option.
+En låsfil som förhindrar att Rita med Tux startas mer än en gång var
+30:e sekund.  Avaktivera kontroll av låsfilen genom att använda
+alternativet "--nolockfile".
 .RS
 .PP
-(There's no reason to delete the lockfile, as it contains a timestamp
-inside which causes it to expire after 30 seconds.)
+(Det finns ingen anledning att ta bort låsfilen, eftersom den innehåller
+en tidsstämpel som gör att den upphör att gälla efter 30 sekunder)
 .RE
 .TP 8
 .B $XDG_CONFIG_HOME[XDG_PICTURES_DIR]/TuxPaint/
-A directory where images and animations should be exported (via options
-found in Tux Paint's Open dialog), if the "--exportdir" option is not used
-to override it.  If "$XDG_CONFIG_HOME" is set, a configuration file
-"user-dirs.dirs" will be scanned within the directory it points to; if not,
-Tux Paint will attempt to do so within "$HOME/.config/".  If a setting
-named "XDG_PICTURES_DIR" is found, it will be used as the location to
-export images. If all else fails, then "$HOME/Pictures/" will be used.  A
-"TuxPaint" subdirectory will be created.
+En katalog dit bilder och animationer ska exporteras (via alternativen i
+Rita med Tuxs dialogruta Öppna), om alternativet "--exportdir" inte
+används för att åsidosätta det.  Om "$XDG_CONFIG_HOME" är inställt
+kommer en konfigurationsfil "user-dirs.dirs" att skannas i den katalog som
+den pekar på; om inte, kommer Rita med Tux att försöka göra det i
+"$HOME/.config/".  Om en inställning med namnet "XDG_PICTURES_DIR" hittas
+kommer den att användas som plats för att exportera bilder. Om allt annat
+misslyckas används "$HOME/Pictures/".  En underkatalog med namnet
+"TuxPaint" kommer att skapas.
 .TP 8
 .B $XDG_DATA_HOME/Trash/ eller $HOME/.local/share/Trash/
-A directory where images are placed when the Erase option is used from the
-Open dialog.
+En katalog där bilderna placeras när alternativet Erase används i
+dialogrutan Öppna.
 
-.SH COPYRIGHT
-This program is free software; you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published by the Free
-Software Foundation; either version 2 of the License, or (at your option)
-any later version.
+.SH UPPHOVSRÄTT
+Detta program är fri programvara; du kan vidaredistribuera det och/eller
+modifiera det enligt villkoren i GNU General Public License som publiceras
+av Free Software Foundation; antingen version 2 av licensen eller (efter
+eget val) någon senare version.
 
 .SH ÖVRIG INFORMATION
-See the documentation that comes with Tux Paint for further instructions on using the program's features.
+Se dokumentationen som medföljer Rita med Tux för ytterligare instruktioner om hur du använder programmets funktioner.
 
-The canonical place to find Tux Paint information is at
+Det vanligaste stället att hitta information om Rita med Tux är på
 .nh
 https://tuxpaint.org/.
 .hy
 
-.SH AUTHORS
-Lead developer and project manager: Bill Kendrick
+.SH FÖRFATTARNA
+Huvudutvecklare och projektledare: Bill Kendrick
 .nh
 <bill@newbreedsoftware.com>.
 .hy
 
-With patches, fixes, extensions, porting, translations, documentation, and
-more from lots of people, including, but probably not limited to (see
-AUTHORS.txt and CHANGES.txt):
+Med korrigeringar, korrigeringar, tillägg, portning, översättningar,
+dokumentation och mer från många människor, inklusive, men förmodligen
+inte begränsat till (se AUTHORS.txt och CHANGES.txt):
 
 Aki,
 Ashish Arora,
@@ -1653,7 +1697,7 @@ Martin Zhekov,
 and
 Huang Zuzhen.
 
-.SH SEE ALSO
+.SH SE ÄVEN
 .BR tuxpaint-import (1),
 .BR tuxpaint-config (1),
 .BR tp-magic-config (1),
@@ -1664,4 +1708,4 @@ Huang Zuzhen.
 .BR krita (1),
 .BR gcompris (1)
 .PP
-And documentation within /usr/[local/]share/doc/tuxpaint/0.9.35/.
+Och dokumentation inom /usr/[local/]share/doc/tuxpaint/0.9.35/.

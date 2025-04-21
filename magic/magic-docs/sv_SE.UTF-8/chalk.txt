@@ -1,15 +1,15 @@
-                         Tux Paint "Magic" Tool: Krita
+                      Rita med Tux "Magic" Verktyg: Krita
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This makes parts of the picture (where you move the mouse) look like a chalk
-drawing.
+Detta gör att delar av bilden (där du flyttar musen) ser ut som en
+kritteckning.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

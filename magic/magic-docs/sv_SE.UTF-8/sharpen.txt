@@ -1,16 +1,16 @@
-                        Tux Paint "Magic" Tool: Sharpen
+        Rita med Tux "Magic" Verktyg: Endast skärpa (intern upplösning)
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Sharpen the focus of the picture.
+Skärpa bildens fokus.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Blur.
+Se även nedan:Suddighet.
 
 -------------------------------------------------------------------------------
 

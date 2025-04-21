@@ -1,15 +1,15 @@
-                     Tux Paint "Magic" Tool: Checkerboard
+                   Rita med Tux "Magic" Verktyg: Schackbräde
 
-                      ### Group: Picture Decorations ###
+                        ### Grupp Bilddekorationer ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This covers the entire canvas with a checkboard pattern using the current
-color. Drag to change the size of the squares.
+Detta täcker hela duken med ett rutmönster med den aktuella färgen. Dra för att
+ändra storleken på rutorna.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

@@ -1,15 +1,15 @@
-                         Tux Paint "Magic" Tool: Blind
+                      Rita med Tux "Magic" Verktyg: Blind
 
-                      ### Group: Picture Decorations ###
+                        ### Grupp Bilddekorationer ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Click towards the edge of your picture to pull window blinds over it. Move
-perpendicularly to open or close the blinds.
+Klicka mot kanten av bilden för att dra persienner över den. Flytta vinkelrätt
+för att öppna eller stänga persiennerna.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

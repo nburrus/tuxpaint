@@ -1,21 +1,22 @@
-                  Tux Paint "Magic" Tool: Epitrochoid Inside
+                Rita med Tux "Magic" Verktyg: Epicykloid insida
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click to place the center of an epitrochoid curve, then drag left/right to
-adjust the radius of a fixed circle, and up/down to adjust the radius of the
-circle that will roll along its outside to produce the drawing. The "pen" that
-paints the curve will be on the inside of the rolling circle.
+Klicka för att placera mitten av en epitrochoidkurva, dra sedan åt vänster/
+höger för att justera radien på en fast cirkel och uppåt/nedåt för att justera
+radien på den cirkel som kommer att rulla längs dess utsida för att producera
+ritningen. Den "penna" som målar kurvan kommer att befinna sig på insidan av
+den rullande cirkeln.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Epicykloid, Epitrochoid Edge, Epitrochoid Outside, Hypotrochoid,
-Hypotrochoid Inside, Hypotrochoid Edge, Hypotrochoid Outside, String Corner,
-String Edges, & String V.
+Se även nedan:Epicykloid, Epicykloid kant, Epicykloid utsida, Hypotrokoid
+insida, Hypotrokoid insida, Hypotrokoid kant, Hypotrokoid utsida, Stringhörn,
+Strängens kanter, & String V.
 
 -------------------------------------------------------------------------------
 

@@ -1,15 +1,14 @@
-                        Tux Paint "Magic" Tool: Cirklar
+                     Rita med Tux "Magic" Verktyg: Cirklar
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This transforms the picture into circular brush strokes around where you
-clicked.
+Detta förvandlar bilden till cirkulära penseldrag runt där du klickade.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-See also: Rays.
+Se även nedan:Strålar.
 
 -------------------------------------------------------------------------------
 

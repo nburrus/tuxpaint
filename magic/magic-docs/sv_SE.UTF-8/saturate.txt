@@ -1,16 +1,16 @@
-                         Tux Paint "Magic" Tool: Mätta
+                      Rita med Tux "Magic" Verktyg: Mätta
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This increases the saturation of colors wherever you drag the mouse.
+Detta ökar mättnaden i färgerna var du än drar musen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Avmätta, Darken, Ljusare, Tint, Remove Color, & Behåll färg.
+Se även nedan:Avmätta, Mörka, Ljusare, Färgton, Ta bort färg, & Behåll färg.
 
 -------------------------------------------------------------------------------
 

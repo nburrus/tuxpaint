@@ -1,18 +1,18 @@
-                       Tux Paint "Magic" Tool: Wavelets
+                   Rita med Tux "Magic" Verktyg: Våglängder
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-             ## Authors: Bill Kendrick <bill@newbreedsoftware.com>
+           ## Författare: Bill Kendrick <bill@newbreedsoftware.com>
                        Adam Rakowski <foo-script@o2.pl>
                                       ##
 
-Click to make the entire picture wavy, up-and-down. Drag the mouse up and down
-to change the height of the ripples, and left and right to change the width.
-Release the mouse button when it looks the way you like it.
+Klicka för att göra hela bilden vågig, upp och ner. Dra musen uppåt och nedåt
+för att ändra höjden på vågorna och åt vänster och höger för att ändra bredden.
+Släpp musknappen när det ser ut som du vill ha det.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-See also: Waves.
+Se även nedan:Vågor.
 
 -------------------------------------------------------------------------------
 

@@ -1,18 +1,18 @@
-                         Tux Paint "Magic" Tool: Klona
+                      Rita med Tux "Magic" Verktyg: Klona
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Clone (copy, via painting) part of the picture. Click ones to choose the
-source, then click and drag to clone it elsewhere in the drawing. Once you
-release, click to choose another source and start again.
+Klona (kopiera, via målning) en del av bilden. Klicka på en för att välja källa
+och klicka och dra sedan för att klona den någon annanstans i teckningen. När
+du har släppt klickar du för att välja en annan källa och börjar om igen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool reacts to the "complexity" (expertise level) setting.
+Detta verktyg reagerar på inställningen "komplexitet" (expertnivå).
 
 -------------------------------------------------------------------------------
 

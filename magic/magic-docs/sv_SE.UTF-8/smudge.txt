@@ -1,17 +1,17 @@
-                        Tux Paint "Magic" Tool: Smudge
+                     Rita med Tux "Magic" Verktyg: Smudge
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-              ## Author: Albert Cahalan <albert@users.sf.net> ##
+           ## Upphovsperson: Albert Cahalan <albert@users.sf.net> ##
 
-This pushes the colors around under the mouse, like finger painting with wet
-paint.
+Detta gör att färgerna flyttas runt under musen, som när man målar med
+fingrarna med våt färg.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Blur & Wet Paint.
+Se även nedan:Suddighet & Våt färg.
 
 -------------------------------------------------------------------------------
 

@@ -1,14 +1,14 @@
-                        Tux Paint "Magic" Tool: Droppa
+                     Rita med Tux "Magic" Verktyg: Droppa
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This makes the paint "drip" wherever you move the mouse.
+Detta gör att färgen "droppar" där du rör musen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

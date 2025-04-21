@@ -1,14 +1,14 @@
-                    Tux Paint "Magic" Tool: ROYGBIV Rainbow
+                Rita med Tux "Magic" Verktyg: ROYGBIV Regnbåge
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw a rainbow arc of red, orange, yellow, green, blue, indigo and violet.
+Rita en regnbåge av rött, orange, gult, grönt, blått, indigo och violett.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-See also: Real Rainbow.
+Se även nedan:Riktig regnbåge.
 
 -------------------------------------------------------------------------------
 

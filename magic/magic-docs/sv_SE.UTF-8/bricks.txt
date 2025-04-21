@@ -1,21 +1,21 @@
-                      Tux Paint "Magic" Tool: Tegelstenar
+                   Rita med Tux "Magic" Verktyg: Tegelstenar
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-              ## Author: Albert Cahalan <albert@users.sf.net> ##
+           ## Upphovsperson: Albert Cahalan <albert@users.sf.net> ##
 
-This tool intelligently paints brick patterns on the canvas. The bricks can be
-tinted various redish hues by selecting different colors in the color palette.
-(If the Magic size feature is disabled, multiple "Tegelstenar" tools will be
-made available.)
+Detta verktyg målar på ett intelligent sätt tegelstensmönster på duken.
+Tegelstenarna kan färgas i olika rödaktiga nyanser genom att välja olika färger
+i färgpaletten. (Om Magic size-funktionen är inaktiverad kommer flera
+"Tegelstenar"-verktyg att göras tillgängliga.)
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Pixels.
+Se även nedan:Bildpunkter.
 
 -------------------------------------------------------------------------------
 

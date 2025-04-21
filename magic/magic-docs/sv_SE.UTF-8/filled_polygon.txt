@@ -1,16 +1,16 @@
-                     Tux Paint "Magic" Tool: Fylld polygon
+                  Rita med Tux "Magic" Verktyg: Fylld polygon
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Place three or more connected points on your picture to form a polygon; it will
-be filled with the currently-chosen color. (Connect the final (red) point to
-the initial (green) point.)
+Placera tre eller fler sammankopplade punkter på din bild för att bilda en
+polygon; den kommer att fyllas med den aktuella valda färgen. (Anslut den sista
+(röda) punkten till den första (gröna) punkten)
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

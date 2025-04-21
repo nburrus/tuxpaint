@@ -1,17 +1,17 @@
-                         Tux Paint "Magic" Tool: Zooma
+                      Rita med Tux "Magic" Verktyg: Zooma
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Click and drag up to zoom in, or down to zoom out. (When scaling down, your
-chosen color will be used as a background color.)
+Klicka och dra uppåt för att zooma in, eller nedåt för att zooma ut. (Vid
+nedskalning används den valda färgen som bakgrundsfärg)
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Rush & Tile Zoom.
+Se även nedan:Rusa & Kakelzoom.
 
 -------------------------------------------------------------------------------
 

@@ -1,19 +1,19 @@
-                        Tux Paint "Magic" Tool: Smooth
+                     Rita med Tux "Magic" Verktyg: Utjämna
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw a freehand shape, which will have its curves smoothed when you release. It
-draws using the currently-selected color.
+Rita en form på fri hand, vars kurvor kommer att jämnas ut när du släpper. Den
+ritas med den färg som för tillfället är vald.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Loops & Krumelurer.
+Se även nedan:Slingor & Krumelurer.
 
 -------------------------------------------------------------------------------
 

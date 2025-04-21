@@ -1,18 +1,18 @@
-                         Tux Paint "Magic" Tool: Tiles
+                      Rita med Tux "Magic" Verktyg: Rutor
 
-                        ### Group: Pattern Painting ###
+                         ### Grupp Mönstermålning ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Draws a symettric pattern around the picture.
+Ritar ett symettriskt mönster runt bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Pattern, Tessellation Pointy, & Tessellation Flat.
+Se även nedan:Mönster, Tessellation spetsig, & Tessellation platt.
 
 -------------------------------------------------------------------------------
 

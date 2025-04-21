@@ -1,14 +1,14 @@
-                       Tux Paint "Magic" Tool: Labyrint
+                    Rita med Tux "Magic" Verktyg: Labyrint
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag to construct a maze on your picture.
+Klicka och dra för att konstruera en labyrint på din bild.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

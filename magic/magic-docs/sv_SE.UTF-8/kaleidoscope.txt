@@ -1,20 +1,19 @@
-                      Tux Paint "Magic" Tool: Kalejdoskop
+                   Rita med Tux "Magic" Verktyg: Kalejdoskop
 
-                        ### Group: Pattern Painting ###
+                         ### Grupp Mönstermålning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This paint brush draws in four places at the same time, mirroring
-symmetrically, both horizontally and vertically. It uses the currently selected
-color.
+Denna pensel ritar på fyra ställen samtidigt och speglar symmetriskt, både
+horisontellt och vertikalt. Den använder den för tillfället valda färgen.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Picasso, Rosette, & Kaleido-4, Kaleido-6, and Kaleido-8.
+Se även nedan:Picasso, Rosett, & Kaleido-4, Kaleido-6 och Kaleido-8.
 
 -------------------------------------------------------------------------------
 

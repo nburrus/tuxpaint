@@ -1,18 +1,18 @@
-                 Tux Paint "Magic" Tool: Dither (Keep Colors)
+             Rita med Tux "Magic" Verktyg: Dither (behåll färger)
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This makes parts of your picture two colors: white, and colors based on your
-original drawing, using a dithered pattern of dots that reflect the original
-picture's shades; the darker the shade, the more non-white dots are drawn.
+Detta gör delar av din bild tvåfärgade: vit och färger baserade på din
+originalteckning, med hjälp av ett diterat mönster av prickar som återspeglar
+originalbildens nyanser; ju mörkare nyans, desto fler icke-vita prickar ritas.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Färg och vitt & Dither.
+Se även nedan:Färg och vitt & Dither.
 
 -------------------------------------------------------------------------------
 

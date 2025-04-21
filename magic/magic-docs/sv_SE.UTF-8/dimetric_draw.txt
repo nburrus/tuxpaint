@@ -1,23 +1,25 @@
-                     Tux Paint "Magic" Tool: Dimetric Draw
+                Rita med Tux "Magic" Verktyg: Dimetrisk ritning
 
-                          ### Group: Projections ###
+                          ### Grupp Projektioner ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag to draw in a dimetric projection. Lines will only go vertically,
-or at a chosen angle and its mirror. Use "Dimetric Select" to adjust the angle.
+Klicka och dra för att rita i en dimetrisk projektion. Linjerna går bara
+vertikalt, eller i en vald vinkel och dess spegel. Använd "Dimetric Select" för
+att justera vinkeln.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-This tool is not available with "complexity" (expertise level) set to 'Novice'.
+Detta verktyg är inte tillgängligt när "komplexitet" (expertnivå) är inställd
+på "Nybörjare".
 
-See also: 1-Point Draw, 1-Point Select, 2-Point Draw, 2-Point Select, 3-Point
-Draw, 3-Point Select, Isometric Line, Dimetric Select, Trimetric Select,
-Trimetric Draw, Oblique Select, Oblique Draw, & Perspektiv.
+Se även nedan:1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
+3-punktsritning, 3-punktsval, Isometrisk linje, Dimetriskt val, Trimetrisk välj
+, Trimetrisk ritning, Sned välj, Snedritning, & Perspektiv.
 
 -------------------------------------------------------------------------------
 

@@ -1,142 +1,147 @@
                                    Tux Paint
                                 version 0.9.35
-                          Frequently Asked Questions
+                                Frågor och svar
 
-        Copyright © 2002-2025 by olika bidragsgivare; see AUTHORS.txt.
+         Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
                                januari 23, 2025
 
-+------------------------------+
-|      Table of Contents       |
-|------------------------------|
-|   * Drawing-related          |
-|   * Interface Problems       |
-|   * Printing                 |
-|   * Saving                   |
-|   * Ljudproblem              |
-|   * Fullscreen Mode Problems |
-|   * Other Problems           |
-|   * Hjälp / Kontakt          |
-+------------------------------+
++--------------------------------+
+|            Innehåll            |
+|--------------------------------|
+|   * Ritningsrelaterade         |
+|   * Problem med gränssnittet   |
+|   * Skriver ut                 |
+|   * Sparar                     |
+|   * Ljudproblem                |
+|   * Problem med helskärmsläget |
+|   * Andra problem              |
+|   * Hjälp / Kontakt            |
++--------------------------------+
 -------------------------------------------------------------------------------
 
-                            ### Drawing-related ###
+                          ### Ritningsrelaterade ###
 
-→ Fonts I added to Tux Paint only show squares ←
-    The TrueType Font you're using might have the wrong encoding. If it's
-    'custom' encoded, for example, you can try running it through FontForge (
-    http://fontforge.sourceforge.net/) to convert it to an ISO-8859 format.
-    (Email us if you need help with special fonts.)
+→ Typsnitt som jag lagt till i Rita med Tux visar bara rutor ←
+    TrueType-teckensnittet som du använder kan ha fel kodning. Om det till
+    exempel är "custom"-kodat kan du försöka köra det genom FontForge (http://
+    fontforge.sourceforge.net/) för att konvertera det till ett
+    ISO-8859-format. (Mejla oss om du behöver hjälp med speciella teckensnitt)
      
-→ The Rubber Stamp tool is greyed out! ←
+→ Stämpelverktyget är gråmarkerat! ←
 
-    This means that Tux Paint either couldn't find any stamp images, or was
-    asked not to load them.
+    Detta innebär att Rita med Tux antingen inte kunde hitta några
+    frimärksbilder eller ombads att inte ladda dem.
 
-    If you installed Tux Paint, but did not install the separate, optional
-    "Stamps" collection, quit Tux Paint and install it now. It should be
-    available from the same place you got the main Tux Paint program. (Note:
-    Tux Paint ships with a very small collection of example stamps.)
+    Om du har installerat Rita med Tux, men inte den separata, valfria
+    samlingen "Stamps", avsluta Rita med Tux och installera den nu. Den bör
+    finnas tillgänglig på samma ställe som du fick huvudprogrammet Rita med
+    Tux. (Obs: Rita med Tux levereras med en mycket liten samling
+    exempelfrimärken)
 
-    If you don't want to install the default collection of stamps, you can just
-    create your own. See the "Extending Tux Paint" documentation for more on
-    creating PNG and SVG image files, TXT text description files, Ogg Vorbis,
-    MP3 or WAV sound files, and DAT text data files that make up stamps.
+    Om du inte vill installera standardsamlingen av stämplar kan du bara skapa
+    dina egna. Se dokumentationen "Extending Rita med Tux" för mer information
+    om hur du skapar PNG- och SVG-bildfiler, TXT-textbeskrivningsfiler, Ogg
+    Vorbis-, MP3- eller WAV-ljudfiler och DAT-textdatafiler som utgör stämplar.
 
-    Finally, if you installed stamps, and think they should be loading, check
-    to see that the "nostamps" option isn't being set. (Either via a
-    "--nostamps" option to Tux Paint's command line, or "nostamps=yes" in the
-    configuration file.)
+    Slutligen, om du har installerat frimärken och tycker att de borde laddas,
+    kontrollera att alternativet "nostamps" inte är inställt. (Antingen via ett
+    "--nostamps"-alternativ på Rita med Tuxs kommandorad eller "nostamps=yes" i
+    konfigurationsfilen)
 
-    Either change/remove the "nostamps" option, or you can override it with
-    "--stamps" on the command line or either "nostamps=no" or "stamps=yes" in a
-    configuration file.
+    Antingen kan du ändra/ta bort alternativet "nostamps", eller så kan du
+    åsidosätta det med "--stamps" på kommandoraden eller antingen "nostamps=no"
+    eller "stamps=yes" i en konfigurationsfil.
 
 
      
-→ Stamp outlines are always rectangles ←
+→ Frimärkets konturer är alltid rektanglar ←
 
-    Tux Paint was built with low-quality (but faster) stamp outlines.
+    Rita med Tux byggdes med lågkvalitativa (men snabbare) frimärksskisser.
 
-    To change this, you must rebuild Tux Paint from source. Be sure to remove
-    or comment out any line that says:
+    För att ändra detta måste du bygga om Rita med Tux från källan. Var noga
+    med att ta bort eller kommentera alla rader som säger:
 
         #define LOW_QUALITY_STAMP_OUTLINE
 
-    in the "tuxpaint.c" file in the "src" directory.
+    i filen "tuxpaint.c" i katalogen "src".
 
 
      
 
 -------------------------------------------------------------------------------
 
-                          ### Interface Problems ###
+                       ### Problem med gränssnittet ###
 
-→ Stamp thumbnails in the Stamp Selector look bad ←
+→ Miniatyrbilder av frimärken i frimärksväljaren ser dåliga ut ←
 
-    Tux Paint was probably compiled with the faster, lower quality thumbnail
-    code enabled. Run the command: "tuxpaint --verbose-version" from a command
-    line. If, amongst the other output, you see the text: "Low Quality
-    Thumbnails enabled", then this is what's happening.
+    Rita med Tux kompilerades förmodligen med den snabbare, lägre
+    kvalitetskoden för miniatyrbilder aktiverad. Kör kommandot: "tuxpaint
+    --verbose-version" från en kommandorad. Om du bland de andra utdata ser
+    texten: "Low Quality Thumbnails enabled", då är det detta som händer.
 
-    To change this, you must rebuild Tux Paint from source. Be sure to remove
-    or comment out any line that says:
+    För att ändra detta måste du bygga om Rita med Tux från källan. Var noga
+    med att ta bort eller kommentera alla rader som säger:
 
         #define LOW_QUALITY_THUMBNAILS
 
-    in the "tuxpaint.c" file in the "src" directory.
+    i filen "tuxpaint.c" i katalogen "src".
 
 
      
-→ Pictures in the 'Open' dialog look bad ←
-    "Low Quality Thumbnails" is probably enabled. See: "Stamp thumbnails in the
-    Stamp Selector look bad", above.
+→ Bilder i dialogrutan "Öppna" ser dåliga ut ←
+    "Miniatyrbilder av låg kvalitet" är förmodligen aktiverat. Se vidare:
+    "Miniatyrbilderna i frimärksväljaren ser dåliga ut", ovan.
      
 → All text är skriven med versaler! ←
 
-    The "uppercase" option is on.
+    Alternativet "versaler" är aktiverat.
 
-    Either change/remove the "uppercase" option, or you can override it with
-    "--mixedcase" on the command line or either "uppercase=no" or "mixedcase=
-    yes" in a configuration file.
+    Antingen kan du ändra/ta bort alternativet "uppercase", eller så kan du
+    åsidosätta det med "--mixedcase" på kommandoraden eller antingen "uppercase
+    =no" eller "mixedcase=yes" i en konfigurationsfil.
      
-→ Tux Paint is in a different language ←
-    Make sure your locale setting is correct. See "Tux Paint won't switch to my
-    language", below.
+→ Rita med Tux är på ett annat språk ←
+    Kontrollera att din språkinställning är korrekt. Se "Rita med Tux vill inte
+    byta till mitt språk" nedan.
      
-→ Tux Paint won't switch to my language ←
-      o Linux and Unix users: Make sure the locale is available
+→ Rita med Tux vill inte byta till mitt språk ←
+      o Linux- och Unix-användare: Kontrollera att språkversionen är
+        tillgänglig
 
-        Make sure the locale you want is available. Check your "/etc/
-        locale.gen" file. See the "Options Documentation" for the locales Tux
-        Paint uses (especially when using the "--lang" option).
+        Kontrollera att det önskade språket finns tillgängligt. Kontrollera din
+        "/etc/locale.gen"-fil. Se "Options Documentation" för de lokala språk
+        som Rita med Tux använder (särskilt när du använder alternativet
+        "--lang").
 
-        Note: Debian and derivative (e.g., Ubuntu) users can simply run
-        "dpkg-reconfigure locales" if the locales are managed by "dpkg".
+        Observera: Användare av Debian och dess derivat (t.ex. Ubuntu) kan helt
+        enkelt köra "dpkg-reconfigure locales" om locales hanteras av "dpkg".
 
-      o If you're using the "--lang" command-line option
+      o Om du använder kommandoradsalternativet "--lang"
 
-        Try using the "--locale" command-line option, or your operating
-        system's locale settings (e.g., the "$LANG" environment variable), and
-        please e-mail us regarding your trouble.
+        Försök att använda kommandoradsalternativet "--locale" eller ditt
+        operativsystems lokala inställningar (t.ex. miljövariabeln "$LANG") och
+        skicka ett e-postmeddelande till oss om dina problem.
 
-      o If you're using the "--locale" command-line option
+      o Om du använder kommandoradsalternativet "--locale"
 
-        If this doesn't work, please e-mail us regarding your trouble.
+        Om detta inte fungerar, vänligen skicka ett e-postmeddelande till oss
+        om ditt problem.
 
-      o If you're trying to use your Operating System's locale
+      o Om du försöker använda ditt operativsystems locale
 
-        If this doesn't work, please e-mail us regarding your trouble.
+        Om detta inte fungerar, vänligen skicka ett e-postmeddelande till oss
+        om ditt problem.
 
-      o Make sure you have the necessary font
+      o Se till att du har det nödvändiga teckensnittet
 
-        Some translations require their own font. Chinese and Korean, for
-        example, need Chinese and Korean TrueType Fonts installed and placed in
-        the proper location, respectively.
+        Vissa översättningar kräver ett eget teckensnitt. Kinesiska och
+        koreanska, till exempel, kräver att TrueType-teckensnitt för kinesiska
+        respektive koreanska installeras och placeras på rätt plats.
 
-        The appropriate fonts for such locales can be downloaded from the Tux
-        Paint website:
+        Lämpliga teckensnitt för sådana platser kan laddas ner från Rita med
+        Tux-webbplatsen:
 
             https://tuxpaint.org/download/fonts/
 
@@ -145,166 +150,180 @@
 
 -------------------------------------------------------------------------------
 
-                               ### Printing ###
+                              ### Skriver ut ###
 
-→ Tux Paint won't print, gives an error, or prints garbage (Unix/Linux) ←
+→ Rita med Tux skriver inte ut, ger ett felmeddelande eller skriver ut skräp
+(Unix/Linux) ←
 
-    Tux Paint prints by creating a PostScript rendition of the picture and
-    sending it to an external command. By default, this command is the "lpr"
-    printing tool.
+    Rita med Tux skriver ut genom att skapa en PostScript-återgivning av bilden
+    och skicka den till ett externt kommando. Som standard är detta kommando
+    utskriftsverktyget "lpr".
 
-    If that program is not available (for example, you're using CUPS, the
-    Common Unix Printing System, and do not have "cups-lpr" installed), you
-    will need to specify an appropriate command using the "printcommand" option
-    in Tux Paint's configuration file. (See the "Options Documentation".)
-
-
-     
-→ I get the message "You can't print yet!" when I go to print ←
-
-    The "print delay" option is on. You can only print once every X seconds.
-
-    If you're running Tux Paint from a command-line, make sure you're not
-    giving it a "--printdelay=..." option.
-
-    If you're running Tux Paint by double-clicking an icon, check the
-    properties of the icon to see if "--printdelay=..." is listed as a
-    command-line argument.
-
-    If a "--printdelay=..." option isn't being sent on the command line, check
-    Tux Paint's configuration file for a line reading: "printdelay=...".
-
-    Either remove that line, set the delay value to 0 (no delay), or decrease
-    the delay to a value you prefer. (See the "Options Documentation".)
-
-    Or, you can simply run Tux Paint with the command-line argument:
-    "--printdelay=0", which will override the configuration file's setting, and
-    allow unlimited printing. (You won't have to wait between prints.)
+    Om det programmet inte är tillgängligt (t.ex. om du använder CUPS, Common
+    Unix Printing System, och inte har "cups-lpr" installerat) måste du ange
+    ett lämpligt kommando med hjälp av alternativet "printcommand" i Rita med
+    Tuxs konfigurationsfil. (Se "Dokumentation av alternativ")
 
 
      
-→ I simply can't print! The button is greyed out! ←
+→ Jag får meddelandet "Du kan inte skriva ut än!" när jag går för att skriva ut
+←
 
-    The "no print" option is on.
+    Alternativet "utskriftsfördröjning" är aktiverat. Du kan bara skriva ut en
+    gång var X:e sekund.
 
-    If you're running Tux Paint from a command-line, make sure you're not
-    giving it a "--noprint" option.
+    Om du kör Rita med Tux från en kommandorad, se till att du inte ger den ett
+    "--printdelay=..."-alternativ.
 
-    If you're running Tux Paint by double-clicking an icon, check the
-    properties of the icon to see if "--noprint" is listed as a command-line
-    argument.
+    Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du kontrollera
+    ikonens egenskaper för att se om "--printdelay=..." anges som ett
+    kommandoradsargument.
 
-    If a "--noprint" option isn't being sent on the command line, check Tux
-    Paint's configuration file for a line reading: "noprint=yes".
+    Om ett "--printdelay=..."-alternativ inte skickas på kommandoraden,
+    kontrollera Rita med Tuxs konfigurationsfil för en rad som läser:
+    "printdelay=...".
 
-    Either remove that line, or simply run Tux Paint with the command-line
-    argument: "--print", which will override the configuration file's setting.
+    Ta antingen bort raden, sätt fördröjningsvärdet till 0 (ingen fördröjning)
+    eller minska fördröjningen till ett värde som du föredrar. (Se
+    "Dokumentation av alternativ")
 
-    Or use Tux Paint Config. and make sure "Allow Printing" (under "Printing")
-    is checked.
+    Eller så kan du helt enkelt köra Rita med Tux med kommandoradsargumentet:
+    "--printdelay=0", vilket åsidosätter konfigurationsfilens inställning och
+    tillåter obegränsad utskrift. (Du behöver inte vänta mellan utskrifterna.)
+
+
+     
+→ Jag kan helt enkelt inte skriva ut! Knappen är gråtonad! ←
+
+    Alternativet "ingen utskrift" är aktiverat.
+
+    Om du kör Rita med Tux från en kommandorad, se till att du inte ger den ett
+    "--noprint"-alternativ.
+
+    Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du kontrollera
+    ikonens egenskaper för att se om "--noprint" anges som ett
+    kommandoradsargument.
+
+    Om ett "--noprint"-alternativ inte skickas på kommandoraden, kontrollera
+    Rita med Tuxs konfigurationsfil för en rad som läser: "noprint=yes".
+
+    Ta antingen bort den raden, eller kör helt enkelt Rita med Tux med
+    kommandoradsargumentet: "--print", vilket kommer att åsidosätta
+    konfigurationsfilens inställning.
+
+    Eller använd Rita med Tux Config. och se till att "Tillåt utskrift" (under
+    "Skriver ut") Om detta är markerat kommer OctoPrint att försöka skicka en
+    M112 innan en frånkoppling på grund av ett (fatalt) fel för att inaktivera
+    värmare och motorer..
 
 
      
 
 -------------------------------------------------------------------------------
 
-                                ### Saving ###
+                                ### Sparar ###
 
-→ Where does Tux Paint save my drawings? ←
+→ Var sparar Rita med Tux mina ritningar? ←
 
-    Unless you asked Tux Paint to save into a specific location (using the
-    "savedir" option), Tux Paint saves into a standard location on your local
-    drive:
+    Om du inte har bett Rita med Tux att spara på en viss plats (med
+    alternativet "savedir"), sparar Rita med Tux på en standardplats på din
+    lokala enhet:
 
     → Windows Windows 8, Windows 10, Windows 11 ←
-        In the user's "AppData" folder:
-        e.g., "C:\Users\användarnamn\AppData\Roaming\TuxPaint\saved\"
+        I användarens mapp "AppData":
+        t.ex, "C:\Users\användarnamn\AppData\Roaming\TuxPaint\saved\"
 
-        (Note: The "AppData" folder is hidden (not visible) by default. You can
-        enter the path manually in the location bar of your file browser (e.g.,
-        File Explorer).)
+        (Obs: Mappen "AppData" är dold (inte synlig) som standard. Du kan ange
+        sökvägen manuellt i platsfältet i din filbläddrare (t.ex. File
+        Explorer)
 
-        You can use the %APPDATA% variable as a shorthand, i.e. 
+        Du kan använda variabeln %APPDATA% som en förkortning, dvs. 
         "%APPDATA%\Tuxpaint\Saved".
 
-        You can use the [⊞ (Windows)] + [R] key combination to bring up the Run
-        command window, and then type the path and hit [Enter / Return].
+        Du kan använda tangentkombinationen [⊞ (Windows)] + [R] för att få fram
+        kommandofönstret Kör och sedan skriva in sökvägen och trycka på [Enter
+        / Return].
          
     → macOS ←
-        In the user's "Application Support" folder:
-        e.g., 
-        "/Användare/användarnamn/Bibliotek/Application Support/TuxPaint/saved/"
+        I användarens mapp "Application Support":
+        t.ex, 
+        "/Användare/användarnamn/Bibliotek/Applikationsstöd/TuxPaint/saved/"
          
     → Linux / Unix ←
-        In the user's "home directory" folder:
-        e.g., "/home/användarnamn/.tuxpaint/saved/"
+        I användarens mapp "hemkatalog":
+        t.ex, "/home/användarnamn/.tuxpaint/saved/"
 
-        (Note: The ".tuxpaint" folder is hidden (not visible) by default. You
-        can enter the path manually in the location bar of your file browser
-        (e.g., GNOME-filer eller Dolphin).)
+        (Obs: Mappen ".tuxpaint" är dold (inte synlig) som standard. Du kan
+        ange sökvägen manuellt i platsfältet i din filbläddrare (t.ex.
+        GNOME-filer eller Dolphin)
 
-        You can use the $HOME variable as a shorthand, i.e. 
+        Du kan använda variabeln $HOME som en förkortning, dvs. 
         "$HOME/.tuxpaint/saved".
          
     → Haiku ←
-        In the user's "settings" folder:
-        e.g., "/boot/home/config/settings/TuxPaint/saved/"
+        I användarens mapp "settings":
+        t.ex, "/boot/home/config/settings/TuxPaint/saved/"
          
 
-    The images are stored as PNG bitmaps, which most modern programs should be
-    able to load (image editors, word processors, web browsers, etc.)
+    Bilderna lagras som PNG-bitmappar, som de flesta moderna program bör kunna
+    läsa in (bildredigerare, ordbehandlare, webbläsare etc.)
 
 
      
-→ Tux Paint always saves over my old picture ←
+→ Rita med Tux sparar alltid över min gamla bild ←
 
-    The "save over" option is enabled. (This disables the prompt that would
-    appear when you click 'Save.')
+    Alternativet "save over" är aktiverat. (Detta inaktiverar prompten som
+    visas när du klickar på "Spara")
 
-    If you're running Tux Paint from a command-line, make sure you're not
-    giving it a "--saveover" option.
+    Om du kör Rita med Tux från en kommandorad, se till att du inte ger den ett
+    "--saveover"-alternativ.
 
-    If you're running Tux Paint by double-clicking an icon, check the
-    properties of the icon to see if "--saveover" is listed as a command-line
-    argument.
+    Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du kontrollera
+    ikonens egenskaper för att se om "--saveover" anges som ett
+    kommandoradsargument.
 
-    If a "--saveover" option isn't being sent on the command line, check Tux
-    Paint's configuration file for a line reading: "saveover=yes".
+    Om ett "--saveover"-alternativ inte skickas på kommandoraden, kontrollera
+    Rita med Tuxs konfigurationsfil för en rad som läser: "saveover=yes".
 
-    Either remove that line, or simply run Tux Paint with the command-line
-    argument: "--saveoverask", which will override the configuration file's
-    setting.
+    Ta antingen bort den raden, eller kör helt enkelt Rita med Tux med
+    kommandoradsargumentet: "--saveoverask", vilket kommer att åsidosätta
+    konfigurationsfilens inställning.
 
-    Or use Tux Paint Config. and make sure "Ask Before Overwriting" (under
-    "Saving") is checked.
+    Eller använd Rita med Tux Config. och se till att "Fråga innan du skriver
+    över" (under "Sparar") Om detta är markerat kommer OctoPrint att försöka
+    skicka en M112 innan en frånkoppling på grund av ett (fatalt) fel för att
+    inaktivera värmare och motorer..
 
-    Also, see "Tux Paint always saves a new picture!", below.
+    Se även "Rita med Tux sparar alltid en ny bild!" nedan.
 
 
      
-→ Tux Paint always saves a new picture! ←
+→ Rita med Tux sparar alltid en ny bild! ←
 
-    The "never save over" option is enabled. (This disables the prompt that
-    would appear when you click 'Save.')
+    Alternativet "never save over" är aktiverat. (Detta inaktiverar prompten
+    som visas när du klickar på "Spara")
 
-    If you're running Tux Paint from a command-line, make sure you're not
-    giving it a "--saveovernew" option.
+    Om du kör Rita med Tux från en kommandorad, se till att du inte ger den ett
+    "--saveovernew"-alternativ.
 
-    If you're running Tux Paint by double-clicking an icon, check the
-    properties of the icon to see if "--saveovernew" is listed as a
-    command-line argument.
+    Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du kontrollera
+    ikonens egenskaper för att se om "--saveovernew" anges som ett
+    kommandoradsargument.
 
-    If a "--saveovernew" option isn't being sent on the command line, check Tux
-    Paint's configuration file for a line reading: "saveover=new".
+    Om ett "--saveovernew"-alternativ inte skickas på kommandoraden,
+    kontrollera Rita med Tuxs konfigurationsfil för en rad som läser: "saveover
+    =new".
 
-    Either remove that line, or simply run Tux Paint with the command-line
-    argument: "--saveoverask", which will override the configuration file's
-    setting.
+    Ta antingen bort den raden, eller kör helt enkelt Rita med Tux med
+    kommandoradsargumentet: "--saveoverask", vilket kommer att åsidosätta
+    konfigurationsfilens inställning.
 
-    Or use Tux Paint Config. and make sure "Ask Before Overwriting" (under
-    "Saving") is checked.
+    Eller använd Rita med Tux Config. och se till att "Fråga innan du skriver
+    över" (under "Sparar") Om detta är markerat kommer OctoPrint att försöka
+    skicka en M112 innan en frånkoppling på grund av ett (fatalt) fel för att
+    inaktivera värmare och motorer..
 
-    Also, see "Tux Paint always saves over my old picture!", above.
+    Se även "Rita med Tux sparar alltid över min gamla bild!", ovan.
 
 
      
@@ -313,383 +332,400 @@
 
                               ### Ljudproblem ###
 
-→ There's no sound! ←
-      o First, check the obvious:
-          # Are your speakers connected and turned on?
-          # Is the volume turned up on your speakers?
-          # Is the volume turned up in your Operating System's "mixer?"
-          # Are you certain you're using a computer with a sound card?
-          # Are any other programs running that use sound? (They may be
-            'blocking' Tux Paint from accessing your sound device)
-          # (Unix/Linux) Are you using a sound system, such as aRts, ESD or
-            GStreamer? If so, try setting the "SDL_AUDIODRIVER" environment
-            variable before running Tux Paint (e.g., "export SDL_AUDIODRIVER=
-            arts"). Or, run Tux Paint through the system's rerouter (e.g., run
-            "artsdsp tuxpaint" or "esddsp tuxpaint", instead of simply
-            "tuxpaint").
-      o Is sound disabled in Tux Paint?
+→ Det finns inget ljud! ←
+      o Kontrollera först det uppenbara:
+          # Är dina högtalare anslutna och påslagna?
+          # Är volymen uppskruvad på högtalarna?
+          # Är volymen uppskruvad i operativsystemets "mixerbord"?
+          # Är du säker på att du använder en dator med ett ljudkort?
+          # Körs några andra program som använder ljud? (De kan "blockera" Rita
+            med Tux från att få tillgång till din ljudenhet)
+          # (Unix/Linux) Använder du ett ljudsystem som t.ex. aRts, ESD eller
+            GStreamer? Om så är fallet kan du försöka ställa in miljövariabeln
+            "SDL_AUDIODRIVER" innan du kör Rita med Tux (t.ex. "export
+            SDL_AUDIODRIVER=arts"). Du kan också köra Rita med Tux via
+            systemets router (t.ex. köra "artsdsp tuxpaint" eller "esddsp
+            tuxpaint" i stället för bara "tuxpaint").
+      o Är ljudet inaktiverat i Rita med Tux?
 
-        If sound seems to work otherwise (and you're sure no other program is
-        "blocking" the sound device), then Tux Paint may be running with a "no
-        sound" option.
+        Om ljudet verkar fungera på annat sätt (och du är säker på att inget
+        annat program "blockerar" ljudenheten), kan det hända att Rita med Tux
+        körs med alternativet "inget ljud".
 
-        If you're running Tux Paint from a command-line, make sure you're not
-        giving it a "--nosound" option.
+        Om du kör Rita med Tux från en kommandorad, se till att du inte ger den
+        ett "--nosound"-alternativ.
 
-        If you're running Tux Paint by double-clicking an icon, check the
-        properties of the icon to see if "--nosound" is listed as a
-        command-line argument.
+        Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du
+        kontrollera ikonens egenskaper för att se om "--nosound" anges som ett
+        kommandoradsargument.
 
-        If a "--nosound" option isn't being sent on the command line, check Tux
-        Paint's configuration file for a line reading: "nosound=yes".
+        Om ett "--nosound"-alternativ inte skickas på kommandoraden,
+        kontrollera Rita med Tuxs konfigurationsfil för en rad som läser:
+        "nosound=yes".
 
-        Either remove that line, or simply run Tux Paint with the command-line
-        argument: "--sound", which will override the configuration file's
-        setting.
+        Ta antingen bort den raden, eller kör helt enkelt Rita med Tux med
+        kommandoradsargumentet: "--sound", vilket kommer att åsidosätta
+        konfigurationsfilens inställning.
 
-        Or, you can simply run Tux Paint with the command-line argument:
-        "Aktivera ljudeffekter", which will override the configuration file's
-        setting, and allow unlimited printing. (You won't have to wait between
-        prints.)
+        Eller så kan du helt enkelt köra Rita med Tux med
+        kommandoradsargumentet: "Aktivera ljudeffekter", vilket åsidosätter
+        konfigurationsfilens inställning och tillåter obegränsad utskrift. (Du
+        behöver inte vänta mellan utskrifterna.)
 
-      o Were sounds temporarily disabled?
+      o Var ljud tillfälligt funktionshindrade?
 
-        Even if sounds are enabled in Tux Paint, it is possible to disable and
-        re-enable them temporarily using the [Alt] + [S] key sequence. Try
-        pressing those keys to see if sounds begin working again.
+        Även om ljuden är aktiverade i Rita med Tux går det att tillfälligt
+        inaktivera och återaktivera dem med hjälp av tangentsekvensen [Alt] +
+        [S]. Prova att trycka på dessa tangenter för att se om ljuden börjar
+        fungera igen.
 
-      o Was Tux Paint built without sound support?
+      o Byggdes Rita med Tux utan ljudstöd?
 
-        Tux Paint may have been compiled with sound support disabled. To test
-        whether sound support was enabled when Tux Paint was compiled, run Tux
-        Paint from a command line, like so:
+        Rita med Tux kan ha kompilerats med ljudstödet inaktiverat. För att
+        testa om ljudstöd var aktiverat när Rita med Tux kompilerades, kör Rita
+        med Tux från en kommandorad, så här:
 
             tuxpaint --verbose-version
 
-        If, amongst the other information, you see "Sound disabled", then the
-        version of Tux Paint you're running has sound disabled. Recompile Tux
-        Paint, and be sure NOT to build the "nosound" target. (i.e., don't run
-        "make nosound") Be sure the SDL_mixer library and its development
-        headers are available!
+        Om du bland den övriga informationen ser "Sound disabled", så har den
+        version av Rita med Tux som du kör ljudet inaktiverat. Kompilera om
+        Rita med Tux och se till att INTE bygga "nosound"-målet. (dvs. kör inte
+        "make nosound") Se till att SDL_mixer-biblioteket och dess
+        utvecklingsheaders finns tillgängliga!
 
 
      
-→ Tux Paint makes too much noise! Can I turn them off? ←
+→ Rita med Tux gör för mycket ljud! Kan jag stänga av dem? ←
 
-    Yes, there are a number of ways to disable sounds in Tux Paint:
+    Ja, det finns ett antal sätt att inaktivera ljud i Rita med Tux:
 
-      o Press [Alt] + [S] while in Tux Paint to temporarily disable sounds.
-        (Press that key sequence again to re-enable sounds.)
-      o Run Tux Paint with the "no sound" option:
-          # Run "tuxpaint --nosound" from the command line or shortcut or
-            desktop icon.
-          # Edit Tux Paint's configuration file (see "Options Documentation"
-            for details) and add a line containing "nosound=yes".
-          # Or use Tux Paint Config. and make sure "Aktivera ljudeffekter"
-            (under "Video & Sound") is not checked.
-          # Alternatively, recompile Tux Paint with sound support disabled.
-            (See above, and the 'Install' documentation.)
-
-     
-→ The stereo panning of sound effects is bothersome; can sound effects be
-monophonic? ←
-
-    Run Tux Paint with the "no stereo" option:
-
-      o Run "tuxpaint --nostereo" from the command line or shortcut or desktop
-        icon.
-      o Edit Tux Paint's configuration file (see "Options Documentation" for
-        details) and add a line containing "nostereo=yes".
-      o Or use Tux Paint Config. and make sure "Aktivera stereoeffekter" (under
-        "Video & Sound") is not checked.
+      o Tryck på [Alt] + [S] i Rita med Tux för att tillfälligt avaktivera
+        ljud. (Tryck på samma tangentsekvens igen för att aktivera ljudet igen)
+      o Kör Rita med Tux med alternativet "inget ljud":
+          # Kör "tuxpaint --nosound" från kommandoraden, en genväg eller en
+            skrivbordsikon.
+          # Redigera Rita med Tuxs konfigurationsfil (se "Dokumentation av
+            alternativ" för mer information) och lägg till en rad som
+            innehåller "nosound=yes".
+          # Eller använd Rita med Tux Config. och se till att "Aktivera
+            ljudeffekter" (under "Video & Ljud") Om detta är markerat kommer
+            OctoPrint att försöka skicka en M112 innan en frånkoppling på grund
+            av ett (fatalt) fel för att inaktivera värmare och motorer..
+          # Alternativt kan du kompilera Rita med Tux på nytt med ljudstödet
+            inaktiverat. (Se ovan och "Install"-dokumentationen)
 
      
-→ The sound effects sound strange ←
+→ Stereopaneringen av ljudeffekter är besvärande; kan ljudeffekter vara
+monofoniska? ←
 
-    This could have to do with how SDL and SDL_mixer were initialized. (The
-    buffer size chosen.)
+    Kör Rita med Tux med alternativet "ingen stereo":
 
-    Please e-mail us with details about your computer system. (Operating system
-    and version, sound card, which version of Tux Paint you're running (run
-    "tuxpaint --version" to verify), and so on.)
+      o Kör "tuxpaint --nostereo" från kommandoraden, en genväg eller en
+        skrivbordsikon.
+      o Redigera Rita med Tuxs konfigurationsfil (se "Dokumentation av
+        alternativ" för mer information) och lägg till en rad som innehåller
+        "nostereo=yes".
+      o Eller använd Rita med Tux Config. och se till att "Aktivera
+        stereoeffekter" (under "Video & Ljud") Om detta är markerat kommer
+        OctoPrint att försöka skicka en M112 innan en frånkoppling på grund av
+        ett (fatalt) fel för att inaktivera värmare och motorer..
+
+     
+→ Ljudeffekterna låter konstiga ←
+
+    Detta kan ha att göra med hur SDL och SDL_mixer initialiserades. (Den valda
+    buffertstorleken.)
+
+    Skicka oss ett e-postmeddelande med information om ditt datorsystem.
+    (Operativsystem och version, ljudkort, vilken version av Rita med Tux du
+    kör (kör "tuxpaint --version" för att verifiera), och så vidare)
 
 
      
 
 -------------------------------------------------------------------------------
 
-                       ### Fullscreen Mode Problems ###
+                      ### Problem med helskärmsläget ###
 
-→ When I run Tux Paint full-screen and [Alt] + [Tab] out, the window turns
-black! ←
-    This is apparently a bug in the SDL library. Sorry.
+→ När jag kör Rita med Tux i helskärm och [Alt] + [Flik] ut, blir fönstret
+svart! ←
+    Detta är tydligen en bugg i SDL-biblioteket. Jag ber om ursäkt för detta.
      
-→ When I run Tux Paint full-screen, it has large borders around it ←
+→ När jag kör Rita med Tux i helskärm har den stora ramar runt sig ←
 
-    Linux users - Your X-Window server is probably not set with the ability to
-    switch to the desired resolution: 800×600. (or whatever resolution you have
-    Tux Paint set to run at.) (This is typically done manually under the
-    X-Window server by pressing [Kontroll] + [Alt] + [Keypad Plus (+)] and 
-    [Kontroll] + [Alt] + [Keypad Minus (-)].)
+    Linux-användare - Din X-Window-server är förmodligen inte inställd med
+    möjlighet att växla till önskad upplösning: 800 × 600. (eller vilken
+    upplösning du än har ställt in Rita med Tux att köra på.) (Detta görs
+    vanligtvis manuellt under X-Window-servern genom att trycka på [Kontroll] +
+    [Alt] + [Keypad Plus (+)] och [Kontroll] + [Alt] + [Keypad Minus (-)])
 
-    For this to work, your monitor must support that resolution, and you need
-    to have it listed in your X server configuration.
+    För att detta ska fungera måste din bildskärm stödja den upplösningen och
+    du måste ha den listad i din X-serverkonfiguration.
 
-    Check the "Display" subsection of the "Screen" section of your XFree86 or
-    X.org configuration file (typically "/etc/X11/XF86Config-4" or "/etc/X11/
-    XF86Config", depending on the version of XFree86 you're using; 3.x or 4.x,
-    respectively, or "/etc/X11/xorg.conf" for X.org).
+    Kontrollera underavsnittet "Display" i avsnittet "Screen" i
+    konfigurationsfilen för XFree86 eller X.org (vanligtvis "/etc/X11/
+    XF86Config-4" eller "/etc/X11/XF86Config", beroende på vilken version av
+    XFree86 du använder; 3.x respektive 4.x, eller "/etc/X11/xorg.conf" för
+    X.org).
 
-    Add "800x600" (or whatever resolution(s) you want) to the appropriate
-    "Modes" line. (e.g., in the "Display" subsection that contains 24-bit color
-    depth ("Depth 24"), which is what Tux Paint tries to use.)
+    Lägg till"800x600" (eller den eller de upplösningar du vill ha) på lämplig
+    rad i "Modes". (t.ex. i underavsnittet "Display" som innehåller 24-bitars
+    färgdjup ("Depth 24"), vilket är vad Rita med Tux försöker använda)
 
         Modes "1280x1024" "1024x768" "800x600" "640x480"
 
-    Note that some Linux distributions have tools that can make these changes
-    for you. Debian users can run the command "dpkg-reconfigure
-    xserver-xfree86" as root, for example.
+    Observera att vissa Linux-distributioner har verktyg som kan göra dessa
+    ändringar åt dig. Debian-användare kan t.ex. köra kommandot
+    "dpkg-reconfigure xserver-xfree86" som root.
 
 
      
-→ Tux Paint keeps running in Full Screen mode - I want it windowed! ←
-
-    The "fullscreen" option is set.
-
-    If you're running Tux Paint from a command-line, make sure you're not
-    giving it a "--fullscreen=..." option.
-
-    If you're running Tux Paint by double-clicking an icon, check the
-    properties of the icon to see if "--fullscreen=yes" or "--fullscreen=
-    native" is listed as a command-line argument.
-
-    If "--fullscreen=yes" or "--fullscreen=native" options aren't being sent on
-    the command line, check Tux Paint's configuration file for a line reading:
-    "fullscreen=yes" or "fullscreen=native".
-
-    Either remove that line, or simply run Tux Paint with the command-line
-    argument: "--windowed" or "--fullscreen=no", which will override the
-    configuration file's setting.
-
-    Or use Tux Paint Config. and make sure "Helskärm" (under "Video & Sound")
-    is not checked.
-
-
-     
-→ How do I access other applications when Tux Paint is running in Full Screen?
+→ Rita med Tux körs hela tiden i helskärmsläge - jag vill ha det i fönsterläge!
 ←
-      o Windows and Linux users, try the [Alt] + [Tab] key combination to
-        switch between applications.
-      o macOS users, switch to other applications using [Kontroll] + [Left
-        Arrow], then back to Tux Paint using [Kontroll] + [Pil höger].
+
+    Alternativet "fullskärm" är inställt.
+
+    Om du kör Rita med Tux från en kommandorad, se till att du inte ger den ett
+    "--fullscreen=..."-alternativ.
+
+    Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du kontrollera
+    ikonens egenskaper för att se om "--fullscreen=yes" eller "--fullscreen=
+    native" anges som ett kommandoradsargument.
+
+    Om alternativen "--fullscreen=yes" eller "--fullscreen=native" inte skickas
+    på kommandoraden, kontrollera Rita med Tuxs konfigurationsfil för en rad
+    som läser: "fullscreen=yes" eller "fullscreen=native".
+
+    Ta antingen bort den raden, eller kör helt enkelt Rita med Tux med
+    kommandoradsargumentet: "--windowed" eller "--fullscreen=no", vilket kommer
+    att åsidosätta konfigurationsfilens inställning.
+
+    Eller använd Rita med Tux Config. och se till att "Helskärm" (under "Video
+    & Ljud") Om detta är markerat kommer OctoPrint att försöka skicka en M112
+    innan en frånkoppling på grund av ett (fatalt) fel för att inaktivera
+    värmare och motorer..
+
+
+     
+→ Hur kommer jag åt andra program när Rita med Tux körs i helskärm? ←
+      o Windows- och Linux-användare kan använda tangentkombinationen [Alt] +
+        [Flik] för att växla mellan olika program.
+      o macOS-användare, växla till andra program med [Kontroll] + [Vänsterpil]
+        och sedan tillbaka till Rita med Tux med [Kontroll] + [Pil höger].
 
      
 
 -------------------------------------------------------------------------------
 
-                            ### Other Problems ###
+                             ### Andra problem ###
 
-→ Tux Paint won't run ←
+→ Rita med Tux går inte att köra ←
 
-    If Tux Paint aborts with the message: "You're already running a copy of Tux
-    Paint!", this means it has been launched in the last 30 seconds. (On Unix/
-    Linux, this message would appear in a terminal console if you ran Tux Paint
-    from a command-line. On Windows, this message would appear in a file named
-    "stdout.txt" in the same folder where TuxPaint.exe resides (e.g., in 
-    "C:\Program Files\TuxPaint\").
+    Om Rita med Tux avbryts med meddelandet: "You're already running a copy of
+    Tux Paint!", betyder det att programmet har startats under de senaste 30
+    sekunderna. (På Unix/Linux skulle detta meddelande visas i en
+    terminalkonsol om du körde Rita med Tux från en kommandorad. I Windows
+    visas meddelandet i en fil med namnet "stdout.txt" i samma mapp där
+    TuxPaint.exe finns (t.ex. i "C:\Programfiler\TuxPaint\").
 
-    A lockfile (e.g., "/home/användarnamn/.tuxpaint/lockfile.dat" on Linux and
-    Unix, "userdata\lockfile.dat" on Windows) is used to make sure Tux Paint
-    isn't run too many times at once (e.g., due to a child impatiently clicking
-    its icon more than once).
+    En lockfile (t.ex. "/home/användarnamn/.tuxpaint/lockfile.dat" på Linux och
+    Unix, "userdata\lockfile.dat" på Windows) används för att se till att Rita
+    med Tux inte körs för många gånger samtidigt (t.ex. på grund av att ett
+    barn otåligt klickar på dess ikon mer än en gång).
 
-    Even if the lockfile exists, it contains the 'time' Tux Paint was last run.
-    If it's been more than 30 seconds, Tux Paint should run fine, and simply
-    update the lockfile with the current time.
+    Även om lockfilen finns innehåller den den "tid" då Rita med Tux senast
+    kördes. Om det har gått mer än 30 sekunder bör Rita med Tux fungera bra och
+    helt enkelt uppdatera lockfilen med aktuell tid.
 
-    If multiple users are sharing the directory where this file is stored
-    (e.g., on a shared network drive), then you'll need to disable this
-    feature.
+    Om flera användare delar katalogen där den här filen lagras (t.ex. på en
+    delad nätverksenhet) måste du inaktivera den här funktionen.
 
-    To disable the lockfile, add the "--nolockfile" argument to Tux Paint's
-    command-line, or "nolockfile=yes" to the configuration file.
+    Om du vill inaktivera låsfilen lägger du till argumentet "--nolockfile" på
+    Rita med Tuxs kommandorad eller "nolockfile=yes" i konfigurationsfilen.
 
 
      
-→ Tux Paint launches very slowly ←
+→ Rita med Tux startar mycket långsamt ←
 
-    The first time Tux Paint is launched (for a particular user), it may take a
-    minute or more to respond. The font system used by Tux Paint (FontConfig,
-    via Pango) is creating a 'cache' of information about the fonts on your
-    system. Subsequent launches of Tux Paint should be fast.
+    Första gången Rita med Tux startas (för en viss användare) kan det ta en
+    minut eller mer att svara. Det teckensnittssystem som används av Rita med
+    Tux (FontConfig, via Pango) skapar en "cache" med information om
+    teckensnitten på ditt system. Efterföljande starter av Rita med Tux bör
+    vara snabba.
 
-    While the font cache is generated behind the scenes, Tux Paint should
-    remain interactive (showing an animated 'please wait' animation) as this
-    process runs.
+    Medan teckensnittscachen genereras bakom kulisserna bör Rita med Tux förbli
+    interaktiv (visa en animerad "vänta"-animering) medan denna process körs.
 
-    If this delay persists or reoccurs, it could be that the cache is being
-    deleted — for example, in an environment (such as a school computer lab)
-    where a system is returned into a default state when a user finishes using
-    the program. Some versions of Tux Paint ship with a file, "fonts.conf" (
-    documented at freedesktop.org), which can be modified to have FontConfig
-    store the file elsewhere, e.g.:
+    Om denna fördröjning kvarstår eller återkommer kan det bero på att
+    cacheminnet raderas - t.ex. i en miljö (t.ex. en datorsal i en skola) där
+    systemet återställs till standardläget när användaren slutar använda
+    programmet. Vissa versioner av Rita med Tux levereras med en fil, 
+    "fonts.conf" (dokumenterad på freedesktop.org), som kan modifieras så att
+    FontConfig lagrar filen någon annanstans, t.ex:
 
         <cachedir>C:\Documents and Settings\All Users\Application Data\
         fontconfig\cache</cachedir>
 
 
      
-→ I can't quit Tux Paint ←
+→ Jag kan inte sluta med Rita med Tux ←
 
-    The "no quit" option is set. This disables the "Quit" button in Tux Paint's
-    toolbar (greying it out), and prevents Tux Paint from being exited via the
-    [Escape] key.
+    Alternativet "no quit" är inställt. Detta inaktiverar "Avsluta"-knappen i
+    Rita med Tuxs verktygsfält (den blir grå) och förhindrar att Rita med Tux
+    avslutas med tangenten [Avsluta meny].
 
-    If Tux Paint is not in fullscreen mode, simply click the window close
-    button on Tux Paint's title bar. (i.e., the "ⓧ" at the upper right.)
+    Om Rita med Tux inte är i helskärmsläge klickar du bara på knappen för att
+    stänga fönstret i Rita med Tuxs titelrad (dvs. "ⓧ" längst upp till höger)
 
-    If Tux Paint is in fullscreen mode, you will need to use the [Shift] +
-    [Kontroll] + [Escape] sequence on the keyboard to quit Tux Paint.
+    Om Rita med Tux är i fullskärmsläge måste du använda [Skift] + [Kontroll] +
+    [Avsluta meny]-sekvensen på tangentbordet för att avsluta Rita med Tux.
 
-    (Note: with or without "no quit" set, you can always use the [Alt] + [F4]
-    combination on your keyboard to quit Tux Paint.)
-
-
-     
-→ I don't want "no quit" mode enabled! ←
-
-    If you're running Tux Paint from a command-line, make sure you're not
-    giving it a "--noquit" option.
-
-    If you're running Tux Paint by double-clicking an icon, check the
-    properties of the icon to see if "--noquit" is listed as a command-line
-    argument.
-
-    If a "--noquit" option isn't being sent on the command line, check Tux
-    Paint's configuration file for a line reading: "noquit=yes".
-
-    Either remove that line, or simply run Tux Paint with the command-line
-    argument: "--quit", which will override the configuration file's setting.
-
-    Or use Tux Paint Config. and make sure "Disable Quit Button and [Escape]
-    Key" (under "Simplification") is not checked.
+    (Obs: med eller utan "no quit" inställt kan du alltid använda [Alt] + [F4]
+    -kombinationen på tangentbordet för att avsluta Rita med Tux)
 
 
      
-→ Tux Paint keeps writing weird messages to the screen / to a text file ←
+→ Jag vill inte att "no quit"-läget ska vara aktiverat! ←
 
-    A few messages are normal, but if Tux Paint is being extremely verbose
-    (like listing the name of every rubber-stamp image it finds while loading
-    them), then it was probably compiled with debugging output turned on.
+    Om du kör Rita med Tux från en kommandorad, se till att du inte ger den ett
+    "--noquit"-alternativ.
 
-    To change this, you must rebuild Tux Paint from source. Be sure to remove
-    or comment out any line that says:
+    Om du kör Rita med Tux genom att dubbelklicka på en ikon ska du kontrollera
+    ikonens egenskaper för att se om "--noquit" anges som ett
+    kommandoradsargument.
+
+    Om ett "--noquit"-alternativ inte skickas på kommandoraden, kontrollera
+    Rita med Tuxs konfigurationsfil för en rad som läser: "noquit=yes".
+
+    Ta antingen bort den raden, eller kör helt enkelt Rita med Tux med
+    kommandoradsargumentet: "--quit", vilket kommer att åsidosätta
+    konfigurationsfilens inställning.
+
+    Eller använd Rita med Tux Config. och se till att "Inaktivera Quit-knappen
+    och [Escape]-tangenten" (under "Förenkling") Om detta är markerat kommer
+    OctoPrint att försöka skicka en M112 innan en frånkoppling på grund av ett
+    (fatalt) fel för att inaktivera värmare och motorer..
+
+
+     
+→ Rita med Tux fortsätter att skriva konstiga meddelanden till skärmen / till
+en textfil ←
+
+    Några få meddelanden är normalt, men om Rita med Tux är extremt utförlig
+    (som att lista namnet på varje stämpelbild som den hittar när den laddar
+    dem), så har den förmodligen kompilerats med felsökningsutmatning
+    aktiverad.
+
+    För att ändra detta måste du bygga om Rita med Tux från källan. Var noga
+    med att ta bort eller kommentera alla rader som säger:
 
         #define DEBUG
 
-    in the "tuxpaint.c" file in the "src" directory.
+    i filen "tuxpaint.c" i katalogen "src".
 
 
      
-→ Tux Paint is using options I didn't specify! ←
+→ Rita med Tux använder alternativ som jag inte angav! ←
 
-    By default, Tux Paint first looks at configuration files for options.
+    Som standard tittar Rita med Tux först i konfigurationsfilerna efter
+    alternativ.
 
       o Windows
 
-        Under Windows, it first examines the system-wide configuration file,
-        located here:
+        Under Windows undersöks först den systemomfattande konfigurationsfilen,
+        som finns här:
 
-            C:\Program Files\TuxPaint\tuxpaint.cfg
+            C:\Programfiler\TuxPaint\tuxpaint.cfg
 
-        It then examines the user's personal configuration file:
+        Därefter undersöks användarens personliga konfigurationsfil:
 
             C:\Users\användarnamn\AppData\Roaming\TuxPaint\tuxpaint.cfg
 
-        Finally, any options sent as command-line arguments are used.
+        Slutligen används alla alternativ som skickas som kommandoradsargument.
 
       o macOS
 
-        Under macOS, it first examines the system-wide configuration file,
-        located here:
+        Under macOS undersöks först den systemomfattande konfigurationsfilen,
+        som finns här:
 
-            /Bibliotek/Application Support/TuxPaint/tuxpaint.cfg
+            /Bibliotek/Applikationsstöd/TuxPaint/tuxpaint.cfg
 
-        It then examines the user's personal configuration file:
+        Därefter undersöks användarens personliga konfigurationsfil:
 
-            /Användare/användarnamn/Bibliotek/Application Support/TuxPaint/tuxpaint.cfg
+            /Användare/användarnamn/Bibliotek/Applikationsstöd/TuxPaint/tuxpaint.cfg
 
-        Finally, any options sent as command-line arguments are used.
+        Slutligen används alla alternativ som skickas som kommandoradsargument.
 
       o Linux / Unix
 
-        Under Unix and Linux, it first examines the system-wide configuration
-        file, located here:
+        Under Unix och Linux undersöker den först den systemomfattande
+        konfigurationsfilen, som finns här:
 
             /etc/tuxpaint/tuxpaint.conf
 
-        It then examines the user's personal configuration file:
+        Därefter undersöks användarens personliga konfigurationsfil:
 
             /home/användarnamn/.tuxpaintrc
 
-        Finally, any options sent as command-line arguments are used.
+        Slutligen används alla alternativ som skickas som kommandoradsargument.
 
       o Haiku
 
-        Under Haiku, Tux Paint first examines the configuration file:
+        Under Haiku undersöker Rita med Tux först konfigurationsfilen:
 
             /boot/home/config/settings/TuxPaint/tuxpaint.conf
 
-        Finally, any options sent as command-line arguments are used.
+        Slutligen används alla alternativ som skickas som kommandoradsargument.
 
-    This means that if anything is set in a configuration file that you don't
-    want set, you'll need to either change the config. file (if you can), or
-    override the option on the command-line.
+    Det innebär att om något är inställt i en konfigurationsfil som du inte
+    vill ska vara inställt, måste du antingen ändra konfigurationsfilen (om du
+    kan) eller åsidosätta alternativet på kommandoraden.
 
-    For example, on Linux and Unix, if "/etc/tuxpaint/tuxpaint.conf" includes
-    this option to disable sound...
+    Till exempel, på Linux och Unix, om "/etc/tuxpaint/tuxpaint.conf"
+    innehåller detta alternativ för att inaktivera ljud ...
 
         nosound=yes
 
-    ...then you can reenable sound by either adding this option to your own 
-    "/home/användarnamn/.tuxpaintrc" file:
+    ...då kan du återaktivera ljudet genom att antingen lägga till detta
+    alternativ i din egen "/home/användarnamn/.tuxpaintrc"-fil:
 
         sound=yes
 
-    ...or by using this command-line argument:
+    ...eller genom att använda detta kommandoradsargument:
 
         --sound
 
-    On platforms where Tux Paint offers a system-wide configuration file, the
-    settings in that file may be skipped (so only the user configuration file
-    and other command-line arguments will be used) by including the following
-    command-line argument:
+    På plattformar där Rita med Tux erbjuder en systemomfattande
+    konfigurationsfil kan inställningarna i den filen hoppas över (så att
+    endast användarkonfigurationsfilen och andra kommandoradsargument används)
+    genom att inkludera följande kommandoradsargument:
 
         --nosysconfig
 
 
      
-→ I need to deploy Tux Paint on many Windows systems at once ←
-    The installers for both Tux Paint (plus Tux Paint Config.)
-    (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) and Tux Paint Stamps
-    (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accept the command-line
-    options "/SILENT" ("silent") or "/VERYSILENT" ("very silent") which can be
-    used to install and uninstall their component without use of an interactive
-    set-up window. This can be useful for automating installation on a
-    collection of PCs, for example using Microsoft Intune cloud-based endpoint
-    management solution (see https://learn.microsoft.com/mem/intune/).
+→ Jag behöver distribuera Rita med Tux på många Windows-system samtidigt ←
+    Installationsprogrammen för både Rita med Tux (plus Rita med Tux Config.)
+    (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) och Rita med Tux Stamps
+    (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accepterar
+    kommandoradsalternativen "/SILENT" ("tyst") eller "/VERYSILENT" ("mycket
+    tyst") som kan användas för att installera och avinstallera deras
+    komponenter utan att använda ett interaktivt installationsfönster. Detta
+    kan vara användbart för att automatisera installationen på en samling
+    datorer, t.ex. med hjälp av Microsoft Intune molnbaserad lösning för
+    slutpunktshantering (se https://learn.microsoft.com/mem/intune/).
      
 
 -------------------------------------------------------------------------------
 
                             ### Hjälp / Kontakt ###
 
-Any questions you don't see answered? Please let us know! You can subscribe and
-post to our "tuxpaint-users" mailing list:
+Några frågor som du inte ser besvarade? Vänligen låt oss veta! Du kan
+prenumerera och posta till vår "tuxpaint-users"-mailinglista:
 
     https://tuxpaint.org/lists/
 
-Or, contact lead developer Bill Kendrick directly:
+Eller så kan du kontakta huvudutvecklaren Bill Kendrick direkt:
 
     bill@newbreedsoftware.com
 

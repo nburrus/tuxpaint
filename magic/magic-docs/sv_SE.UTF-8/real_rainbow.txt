@@ -1,14 +1,14 @@
-                     Tux Paint "Magic" Tool: Real Rainbow
+                 Rita med Tux "Magic" Verktyg: Riktig regnbåge
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw a transparent arc that looks like a real rainbow.
+Rita en genomskinlig båge som ser ut som en riktig regnbåge.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-See also: ROYGBIV Rainbow.
+Se även nedan:ROYGBIV Regnbåge.
 
 -------------------------------------------------------------------------------
 

@@ -1,14 +1,14 @@
-                       Tux Paint "Magic" Tool: Lightning
+                     Rita med Tux "Magic" Verktyg: Blixten
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draws a lightning bolt between two points on the picture.
+Ritar en blixt mellan två punkter på bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

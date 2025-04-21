@@ -1,18 +1,18 @@
-                        Tux Paint "Magic" Tool: Motsats
+                     Rita med Tux "Magic" Verktyg: Motsats
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This converts the colors wherever you drag the mouse into their complementary
-(opposite) colors. (e.g., blue becomes orange, and vice versa.) It changes the
-Hue compoment of the pixels, without affecting the Saturation or Lightness.
+Detta omvandlar färgerna där du drar musen till deras komplementära (motsatta)
+färger. (t.ex. blå blir orange och vice versa.) Det ändrar pixlarnas färgton
+(Hue) utan att påverka mättnad eller ljushet (Lightness).
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Negativ.
+Se även nedan:Negativ.
 
 -------------------------------------------------------------------------------
 

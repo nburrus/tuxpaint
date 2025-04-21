@@ -1,19 +1,18 @@
-                         Tux Paint "Magic" Tool: Tint
+                     Rita med Tux "Magic" Verktyg: Färgton
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This changes the color (or hue) of the parts of the picture to the selected
-color.
+Detta ändrar färgen (eller nyansen) på delarna av bilden till den valda färgen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Ljusare & Darken.
+Se även nedan:Ljusare & Mörka.
 
 -------------------------------------------------------------------------------
 

@@ -1,18 +1,18 @@
-                         Tux Paint "Magic" Tool: Fold
+                   Rita med Tux "Magic" Verktyg: Vik samman
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-                 ## Authors: Adam Rakowski <foo-script@o2.pl>
+                ## Författare: Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                                       ##
 
-Click a corner of your picture and drag towards the center to fold it up like a
-piece of paper.
+Klicka på ett hörn av bilden och dra mot mitten för att vika upp den som ett
+papper.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

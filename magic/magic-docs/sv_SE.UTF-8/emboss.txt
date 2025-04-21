@@ -1,18 +1,17 @@
-                        Tux Paint "Magic" Tool: Emboss
+                  Rita med Tux "Magic" Verktyg: Punktutskrift
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This makes parts of your picture look "embossed." Wherever there are sharp
-edges in your picture, the picture will look raised like it was stamped in
-metal.
+Detta gör att delar av din bild ser "präglad" ut Där det finns skarpa kanter i
+bilden kommer bilden att se upphöjd ut som om den vore stämplad i metall.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Kanter & Silhouette.
+Se även nedan:Kanter & Silhuett.
 
 -------------------------------------------------------------------------------
 

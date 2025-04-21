@@ -1,16 +1,16 @@
-                    Tux Paint "Magic" Tool: Hexagon Mosaic
+                 Rita med Tux "Magic" Verktyg: Hexagon Mosaik
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Converts parts of your picture into a mosaic of hexagon cells.
+Omvandlar delar av din bild till en mosaik av hexagonceller.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Irregular Mosaic, Square Mosaic, & Mosaik.
+Se även nedan:Oregelbunden mosaik, Kvadratisk mosaik, & Mosaik.
 
 -------------------------------------------------------------------------------
 

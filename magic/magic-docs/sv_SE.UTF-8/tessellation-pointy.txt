@@ -1,18 +1,18 @@
-                  Tux Paint "Magic" Tool: Tessellation Pointy
+              Rita med Tux "Magic" Verktyg: Tessellation spetsig
 
-                        ### Group: Pattern Painting ###
+                         ### Grupp Mönstermålning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw repeating tessellation patterns with pointy-topped hexagons.
+Rita upprepade tesselationsmönster med hexagoner med spetsiga toppar.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Tiles, Pattern, & Tessellation Flat.
+Se även nedan:Rutor, Mönster, & Tessellation platt.
 
 -------------------------------------------------------------------------------
 

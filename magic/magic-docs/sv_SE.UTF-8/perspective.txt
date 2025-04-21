@@ -1,17 +1,17 @@
-                      Tux Paint "Magic" Tool: Perspektiv
+                   Rita med Tux "Magic" Verktyg: Perspektiv
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Click and drag from the corners to change the perspective of your picture.
+Klicka och dra från hörnen för att ändra perspektivet på bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: 1-Point Draw, 1-Point Select, 2-Point Draw, 2-Point Select, 3-Point
-Draw, & 3-Point Select.
+Se även nedan:1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
+3-punktsritning, & 3-punktsval.
 
 -------------------------------------------------------------------------------
 

@@ -1,14 +1,14 @@
-                         Tux Paint "Magic" Tool: Foam
+                      Rita med Tux "Magic" Verktyg: Skum
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag the mouse to draw foamy bubbles. The more you drag the mouse in
-a particular spot, the more likely small bubbles will combine to form bigger
-bubbles.
+Klicka och dra med musen för att rita skummande bubblor. Ju mer du drar musen
+på en viss plats, desto mer sannolikt är det att små bubblor kombineras för att
+bilda större bubblor.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
 -------------------------------------------------------------------------------
 

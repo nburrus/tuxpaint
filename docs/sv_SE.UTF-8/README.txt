@@ -1,396 +1,402 @@
                                    Tux Paint
                                 version 0.9.35
 
-                  ## A simple drawing program for children ##
+                     ## Ett enkelt ritprogram för barn ##
 
-        Copyright © 2002-2025 by olika bidragsgivare; see AUTHORS.txt.
+         Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
                                 april 19, 2025
 
-+-----------------------------------------------------+
-|                  Table of Contents                  |
-|-----------------------------------------------------|
-|  I. Om Rita med Tux                                 |
-| II. Använda Rita med Tux                            |
-|      A. Launching Tux Paint                         |
-|      B. Title Screen                                |
-|      C. Huvudskärm                                  |
-|      D. Available Tools                             |
-|          1. Drawing Tools                           |
-|              a. "Paint" Tool (Brush)                |
-|              b. "Stamp" Tool (Rubber Stamps)        |
-|              c. "Linjer"-verktyget                  |
-|              d. "Shapes" Tool                       |
-|              e. "Text" and "Label" Tools            |
-|              f. "Fill" Tool                         |
-|              g. "Magiskt" verktyg (specialeffekter) |
-|              h. "Eraser" Tool                       |
-|          2. Övriga kontroller                       |
-|              a. "Undo" and "Redo" Commands          |
-|              b. "New" Command                       |
-|              c. "Open" Command                      |
-|              d. "Save" Command                      |
-|              e. "Print" Command                     |
-|              f. "Slides" Command (under "Open")     |
-|              g. "Quit" Command                      |
-|              h. Sound Muting                        |
-|      E. Kontrollera Rita med Tux                    |
-| III. Loading Other Pictures into Tux Paint          |
-| IV. Further Reading                                 |
-|  V. Hur du kan få hjälp                             |
-| VI. Hur man deltar                                  |
-+-----------------------------------------------------+
++-----------------------------------------------------------------------------+
+|                                  Innehåll                                   |
+|-----------------------------------------------------------------------------|
+|  I. Om Rita med Tux                                                         |
+| II. Använda Rita med Tux                                                    |
+|      A. Lansering av Rita med Tux                                           |
+|      B. Titelskärm                                                          |
+|      C. Huvudskärm                                                          |
+|      D. Tillgängliga verktyg                                                |
+|          1. Verktyg för ritning                                             |
+|              a. "Färg"-verktyg (pensel)                                     |
+|              b. verktyg "Stämpel" (gummistämplar)                           |
+|              c. "Linjer"-verktyget                                          |
+|              d. verktyget "Shapes"                                          |
+|              e. verktyg för "text" och "etikett"                            |
+|              f. "Fyll"-verktyget                                            |
+|              g. "Magiskt" verktyg (specialeffekter)                         |
+|              h. Verktyget Suddgummi lägger till nya, mindre                 |
+|                 suddgummistorlekar och ger mjukare, sammanhängande streck   |
+|                 när pekaren flyttas snabbt.                                 |
+|          2. Övriga kontroller                                               |
+|              a. kommandona "Ångra" och "Gör om"                             |
+|              b. "Nytt" kommando                                             |
+|              c. kommando "Öppna"                                            |
+|              d. kommando "Spara"                                            |
+|              e. kommando "Skriv ut"                                         |
+|              f. kommando "Slides" (under "Open")                            |
+|              g. kommando "Avsluta"                                          |
+|              h. Ljuddämpning                                                |
+|      E. Kontrollera Rita med Tux                                            |
+| III. Ladda andra bilder i Rita med Tux                                      |
+| IV. Ytterligare läsning                                                     |
+|  V. Hur du kan få hjälp                                                     |
+| VI. Hur man deltar                                                          |
++-----------------------------------------------------------------------------+
 
 I. Om Rita med Tux
 
-                        ### A. What Is "Tux Paint"? ###
+                       ### A. Vad är "Rita med Tux"? ###
 
-Tux Paint is a free drawing program designed for young children (kids ages 3
-and up). It has a simple, easy-to-use interface, fun sound effects, and an
-encouraging cartoon mascot who helps guide children as they use the program. It
-provides a blank canvas and a variety of drawing tools to help your child be
-creative.
+Rita med Tux är ett gratis ritprogram som är utformat för små barn (från 3 år
+och uppåt). Det har ett enkelt och lättanvänt gränssnitt, roliga ljudeffekter
+och en uppmuntrande tecknad maskot som hjälper barnen att använda programmet.
+Det ger en tom duk och en mängd olika ritverktyg för att hjälpa ditt barn att
+vara kreativt.
 
-                             ### B. Objectives ###
+                           ### B. Målsättningar ###
 
 → Enkelt och roligt ←
-    Tux Paint is meant to be a simple drawing program for young children. It is
-    not meant as a general-purpose drawing tool. It is meant to be fun and easy
-    to use. Sound effects and a cartoon character help let the user know what's
-    going on, and keeps them entertained. There are also extra-large
-    cartoon-style mouse pointer shapes.
+    Rita med Tux är tänkt att vara ett enkelt ritprogram för små barn. Det är
+    inte avsett som ett allmänt ritverktyg. Det är tänkt att vara roligt och
+    lätt att använda. Ljudeffekter och en tecknad karaktär hjälper till att
+    låta användaren veta vad som händer och håller dem underhållna. Det finns
+    också extra stora muspekarformer i tecknad stil.
      
-→ Extensibility ←
-    Tux Paint is extensible. Brushes and 'rubber stamp' shapes can be dropped
-    in and pulled out. For example, a teacher can drop in a collection of
-    animal shapes and ask their students to draw an ecosystem. Each shape can
-    have a sound which is played, and textual facts which are displayed, when
-    the child selects the shape.
+→ Utökad tillgänglighet ←
+    Rita med Tux är utbyggbart. Penslar och "gummistämpel"-former kan läggas in
+    och dras ut. En lärare kan t.ex. lägga in en samling djurformer och be
+    eleverna rita ett ekosystem. Varje form kan ha ett ljud som spelas upp och
+    textfakta som visas när barnet väljer formen.
      
-→ Portability ←
-    Tux Paint is portable among various computer platforms: Windows, Macintosh,
-    Linux, etc. The interface looks the same among them all. Tux Paint runs
-    suitably well on older systems, and can be built to run better on slow
-    systems.
+→ Bärbarhet ←
+    Rita med Tux är portabelt mellan olika datorplattformar: Windows,
+    Macintosh, Linux, etc. Gränssnittet ser likadant ut för alla. Rita med Tux
+    fungerar bra på äldre system och kan byggas för att fungera bättre på
+    långsamma system.
      
 → Enkelhet ←
-    There is no direct access to the computer's underlying intricacies. The
-    current image is kept when the program quits, and reappears when it is
-    restarted. Saving images requires no need to create filenames or use the
-    keyboard. Opening an image is done by selecting it from a collection of
-    thumbnails. Access to other files on the computer is restricted.
+    Det finns ingen direkt åtkomst till datorns underliggande krångligheter.
+    Den aktuella bilden sparas när programmet avslutas och visas igen när det
+    startas om. För att spara bilder behöver man inte skapa filnamn eller
+    använda tangentbordet. En bild öppnas genom att man väljer den från en
+    samling miniatyrbilder. Åtkomsten till andra filer på datorn är begränsad.
      
 → Hjälpmedel ←
-    Tux Paint offers a number of accessibility options, including increasing
-    the size of control buttons, changing the UI font, options to control the
-    cursor (mouse pointer) using the keyboard or other input devices (joystick,
-    gamepad, etc.), an on-screen keyboard, and "stick" mouse clicks.
+    Rita med Tux erbjuder ett antal tillgänglighetsalternativ, inklusive att
+    öka storleken på kontrollknapparna, ändra UI-typsnitt, alternativ för att
+    styra markören (muspekaren) med hjälp av tangentbordet eller andra
+    inmatningsenheter (joystick, gamepad etc.), ett skärmtangentbord och
+    "stick" musklick.
      
 
                                ### C. Licens ###
 
-Tux Paint is an Open Source project, Free Software released under the GNU
-General Public License (GPL). It is free, and the 'source code' behind the
-program is available. (This allows others to add features, fix bugs, and use
-parts of the program in their own GPL'd software.)
+Rita med Tux är ett Open Source-projekt, fri programvara som släpps under GNU
+General Public License (GPL). Det är gratis, och "källkoden" bakom programmet
+är tillgänglig. (Detta gör att andra kan lägga till funktioner, fixa buggar och
+använda delar av programmet i sin egen GPL-programvara)
 
-See COPYING.txt for the full text of the GPL license.
+Se COPYING.txt för den fullständiga texten till GPL-licensen.
 
-              ### D. What's New in Tux Paint version 0.9.35? ###
+             ### D. Vad är nytt i Rita med Tux version 0.9.35? ###
 
-→ Improved color picker ←
-    Better behavior when clicking/tapping and dragging hue/saturation box and
-    value slider.
+→ Förbättrad färgväljare ←
+    Bättre beteende när du klickar/tappar och drar i rutan för nyans/mättnad
+    och värde-reglaget.
      
-→ Text clipboard paste support ←
-    The "Text" and "Label" tools support pasting the copy/paste clipboard.
+→ Stöd för att klistra in text i urklipp ←
+    Verktygen "Text" och "Etikett" har stöd för att klistra in i klippbordet
+    för copy/paste.
      
 → "Hjärtan" Magiskt verktyg ←
-    Draw a trail of floating hearts.
+    Rita ett spår av svävande hjärtan.
      
-→ "Sparkles" Magic tool ←
-    Draw a trail of falling sparkles.
+→ "Sparkles" Magiskt verktyg ←
+    Rita ett spår av fallande gnistrar.
      
 → "Stjärnor" Magiskt verktyg ←
-    Draw a trail of stars.
+    Rita ett spår av stjärnor.
      
 → Documentation translated to Swedish ←
 
      
 
-See CHANGES.txt for the complete list of changes.
+Se CHANGES.txt för en fullständig lista över ändringar.
 
 II. Använda Rita med Tux
 
-                        ### A. Launching Tux Paint ###
+                     ### A. Lansering av Rita med Tux ###
 
-## 1. Linux/Unix Users ##
+## 1. Linux/Unix-användare ##
 
-Tux Paint should have placed a launcher icon in your KDE and/or GNOME menus,
-under 'Graphics.'
+Rita med Tux borde ha placerat en startikon i dina KDE- och/eller GNOME-menyer,
+under "Graphics"
 
-Alternatively, you can run the following command at a shell prompt (e.g., "$"):
+Alternativt kan du köra följande kommando i en shell-prompt (t.ex."$"):
 
     $ tuxpaint
 
-If any errors occur, they will be displayed on the terminal (to STDERR).
+Om något fel uppstår visas det på terminalen (till STDERR).
 
-## 2. Windows Users ##
+## 2. Windows-användare ##
 
-[Tux Paint Icon]
-   Tux Paint
+[Rita med Tux-ikon]
+     Tux Paint
 
-If you installed Tux Paint on your computer using the 'Tux Paint Installer,' it
-will have asked you whether you wanted a 'Start' menu short-cut, and/or a
-desktop shortcut. If you agreed, you can simply run Tux Paint from the 'Tux
-Paint' section of your 'Start' menu (e.g., under 'All Programs'), or by
-double-clicking the 'Tux Paint' icon on your desktop, if you had the installer
-place one there.
+Om du har installerat Rita med Tux på din dator med hjälp av "Rita med Tux
+Installer", har du fått frågan om du vill ha en genväg till Start-menyn och/
+eller en genväg till skrivbordet. Om du samtyckte kan du helt enkelt köra Rita
+med Tux från avsnittet "Rita med Tux" i Start-menyn (t.ex. under "Alla
+program") eller genom att dubbelklicka på ikonen "Rita med Tux" på skrivbordet,
+om du fick installationsprogrammet att placera en ikon där.
 
-If you're using the 'portable' (ZIP-file) version of Tux Paint, or if you used
-the 'Tux Paint Installer,' but chose not to have shortcuts installed, you'll
-need to double-click the "tuxpaint.exe" icon in the "Tux Paint" folder on your
-computer.
+Om du använder den "bärbara" (ZIP-fil) versionen av Rita med Tux, eller om du
+använde "Rita med Tux Installer" men valde att inte ha genvägar installerade,
+måste du dubbelklicka på ikonen "tuxpaint.exe" i mappen "Tux Paint" på din
+dator.
 
-By default, the 'Tux Paint Installer' will put Tux Paint's folder in 
-"C:\Program Files\TuxPaint\", though you may have changed this when you ran the
-installer.
+Som standard kommer "Rita med Tux Installer" att placera Rita med Tuxs mapp i 
+"C:\Programfiler\TuxPaint\", men du kan ha ändrat detta när du körde
+installationsprogrammet.
 
-If you used the 'ZIP-file' download, Tux Paint's folder will be wherever you
-extracted the contents of the ZIP file.
+Om du använde nedladdningen av ZIP-filen kommer Rita med Tux-mappen att finnas
+där du extraherade innehållet i ZIP-filen.
 
-## 3. macOS Users ##
+## 3. macOS-användare ##
 
-Simply double-click the "Tux Paint" icon.
+Dubbelklicka bara på ikonen "Tux Paint".
 
-[Title screen]
+[Titelskärm]
  
 
-                            ### B. Title Screen ###
+                             ### B. Titelskärm ###
 
-When Tux Paint first loads, a title/credits screen will appear.
+När Rita med Tux laddas första gången visas en titel- och kreditskärm.
 
-Once loading is complete, press a key or click or tap in the Tux Paint window
-to continue. (Or, after about 5 seconds, the title screen will go away
-automatically.)
+När laddningen är klar trycker du på en tangent eller klickar eller trycker på
+i Rita med Tux-fönstret för att fortsätta. (Eller så försvinner titelskärmen
+automatiskt efter ca 5 sekunder)
 
                              ### C. Huvudskärm ###
 
-The main screen is divided into the following sections:
+Huvudskärmen är indelad i följande avsnitt:
 
-[Tools: Paint, Stamp, Lines, Shapes, Text, Magic, Label, Undo, Redo, Eraser,
-New, Open, Save, Print, Quit]
+[Verktyg: Färg, Stämpel, Linjer, Former, Text, Magi, Etikett, Ångra, Gör om,
+Suddgummi, Ny, Öppna, Spara, Skriv ut, Avsluta]
  
-→ Left Side: Toolbar ←
+→ Vänster sida: Verktygsfält ←
 
-    The toolbar contains the drawing and editing controls.
+    Verktygsfältet innehåller rit- och redigeringskontroller.
 
 
      
 [Målarduk]
  
-→ Middle: Drawing Canvas ←
+→ Mellan: Ritning Canvas ←
 
-    The largest part of the screen, in the center, is the drawing canvas. This
-    is, obviously, where you draw!
+    Den största delen av skärmen, i mitten, är teckningsytan. Det är
+    naturligtvis här du ritar!
 
-    💡 Note: The size of the drawing canvas depends on the size of Tux Paint.
-    You can change the size of Tux Paint using the Tux Paint Config.
-    configuration tool, or by other means. See the Options documentation for
-    more details.
-
-
-     
-[Selectors - Brushes, Letters, Shapes, Stamps]
- 
-→ Right Side: Selector ←
-
-    Depending on the current tool, the selector shows different things. e.g.,
-    when the Paint Brush or Line tool is selected, it shows the various brushes
-    available. When the Rubber Stamp tool is selected, it shows the different
-    shapes you can use. When the Text or Label tool is selected, it shows
-    various fonts.
+    💡 Observera: Storleken på ritytan beror på storleken på Rita med Tux. Du
+    kan ändra storleken på Rita med Tux med hjälp av konfigurationsverktyget
+    Rita med Tux Config. eller på annat sätt. Se avsnittet Alternativ
+    dokumentationen för mer information.
 
 
      
-[Colors - Black, White, Red, Pink, Orange, Yellow, Green, Cyan, Blue, Purple,
-Brown, Grey]
+[Väljare - penslar, bokstäver, former, stämplar]
  
-→ Lower: Colors ←
+→ Höger sida: Väljare ←
 
-    When the active tool supports colors, a palette of colors choices will be
-    shown near the bottom of the screen. Click one to choose a color, and it
-    will be used by the active tool. (For example, the "Paint" tool will use it
-    as the color to draw with the chosen brush, and the "Fill" tool will use it
-    as the color to use when flood-filling an area of the picture.)
+    Väljaren visar olika saker beroende på vilket verktyg som används. När du
+    t.ex. väljer verktyget Paint Brush eller Line visas de olika penslar som
+    finns tillgängliga. När verktyget Rubber Stamp är markerat visas de olika
+    formerna som du kan använda. När text- eller etikettverktyget är markerat
+    visas olika teckensnitt.
 
-    On the far right are three special color options:
-      o Color Picker
-        The "color picker" (which has an outline of an eye-dropper) allows you
-        to pick a color found within your drawing.
-        (A shortcut key is available to access this feature quickly; see
-        below.)
-      o Rainbow Palette
-        The rainbow palette allows you to pick any color by choosing the hue,
-        saturation, and value of the color you want. A box on the left displays
-        hundreds of hues — from red at the top through to violet at the bottom
-        — at hundreds of saturation/intensity levels — from pale & washed-out
-        on the left through to pure on the right. A grey vertical bar provides
-        access to hundreds of value levels — from lighest at the top through to
-        darkest at the bottom.
-        Click the green checkbox button to select the color, or the "Back"
-        button to dismiss the pop-up without picking a new color.
-        You may also set this tool's color to that of other color choices:
-          # Whichever built-in color is selected, if any
-          # The Color Picker's current color
-          # The Color Mixer's current color
+
+     
+[Färger - Svart, vit, röd, rosa, orange, gul, grön, cyan, blå, lila, brun, grå]
+ 
+→ Lägre Färger ←
+
+    När det aktiva verktyget har stöd för färger visas en palett med färgval
+    längst ned på skärmen. Klicka på en färg för att välja den, så kommer den
+    att användas av det aktiva verktyget. (Till exempel kommer verktyget
+    "Paint" att använda den som färg för att rita med den valda penseln, och
+    verktyget "Fill" kommer att använda den som färg för att fylla ut ett
+    område i bilden)
+
+    Längst till höger finns tre speciella färgalternativ:
+      o Färgväljare
+        Med "färgväljaren" (som har en kontur av en pipett) kan du välja en
+        färg som finns i din ritning.
+        (Det finns en genvägsknapp för att snabbt komma åt denna funktion, se
+        nedan)
+      o Regnbågspalett
+        Med regnbågspaletten kan du välja vilken färg du vill genom att välja
+        nyans, mättnad och värde för den färg du vill ha. En ruta till vänster
+        visar hundratals nyanser - från rött längst upp till violett längst ner
+        - med hundratals mättnads-/intensitetsnivåer - från blek & urtvättad
+        till vänster till ren till höger. En grå vertikal stapel ger tillgång
+        till hundratals värdenivåer - från ljusast upptill till mörkast
+        nedtill.
+        Klicka på den gröna kryssrutan för att välja färg eller på knappen
+        "Tillbaka" för att stänga av popup-fönstret utan att välja en ny färg.
+        Du kan också ställa in verktygets färg så att den motsvarar andra
+        färgval:
+          # Oavsett vilken inbyggd färg som väljs, om någon
+          # Färgväljarens aktuella färg
+          # Färgmixerns aktuella färg
       o Färgblandare
-        The "color mixer" (which has silhouette of a paint palette) allows you
-        to create colors by blending primary additive colors — red, yellow, and
-        blue — along with white (to "tint"), grey (to "tone"), and black (to
-        "shade").
-        You may click any button multiple times (for example, red + red +
-        yellow results in a red-orange color). The ratios of colors added are
-        shown at the bottom.
-        You can start over (reset to no colors in your picture) by clicking the
-        "Clear" button. You can also undo or redo multiple steps of mixing, in
-        case you made a mistake (without having to start over).
-        Click the green checkbox button to select the color, or the "Back"
-        button to dismiss the pop-up without picking a new color.
+        Med "färgblandaren" (som har en silhuett av en färgpalett) kan du skapa
+        färger genom att blanda primära additiva färger - rött, gult och blått
+        - tillsammans med vitt (för att "tona"), grått (för att "tona") och
+        svart (för att "skugga").
+        Du kan klicka på en knapp flera gånger (t.ex. röd + röd + gul ger en
+        röd-orange färg). Förhållandet mellan de färger som läggs till visas
+        längst ned.
+        Du kan börja om (återställa till inga färger i din bild) genom att
+        klicka på knappen "Clear". Du kan också ångra eller göra om flera steg
+        i mixningen om du har gjort ett misstag (utan att behöva börja om från
+        början).
+        Klicka på den gröna kryssrutan för att välja färg eller på knappen
+        "Tillbaka" för att stänga av popup-fönstret utan att välja en ny färg.
 
-    ⌨ When the active tool supports colors, a shortcut may be used for quick
-    access to the "color picker" option. Hold the [Kontroll] key while
-    clicking, and the color under the mouse cursor will be shown at the bottom.
-    You may drag around to canvas to find the color you want. When you release
-    the mouse button, the color under the cursor will be selected. If you
-    release the mouse outside of the canvas (e.g., over the "Tools" area), the
-    color selection will be left unchanged. (This is similar to clicking the
-    "Back" button that's available when bringing up the "color picker" option
-    via its button the color palette.)
+    ⌨ När det aktiva verktyget har stöd för färger kan en genväg användas för
+    snabb åtkomst till alternativet "färgväljare". Håll ned [Kontroll]
+    -tangenten medan du klickar, så visas färgen under muspekaren längst ned.
+    Du kan dra runt på duken för att hitta den färg du vill ha. När du släpper
+    musknappen kommer färgen under markören att väljas. Om du släpper musen
+    utanför målarduken (t.ex. över området "Tools") kommer färgvalet att lämnas
+    oförändrat. (Detta liknar att klicka på "Tillbaka"-knappen som finns
+    tillgänglig när man tar fram alternativet "färgväljare" via dess knapp i
+    färgpaletten)
 
-    ⚙ Note: You can define your own colors for Tux Paint. See the "Options"
-    documentation.
+    ⚙ Obs: Du kan definiera dina egna färger för Rita med Tux. Se avsnittet "
+    Alternativ" dokumentation.
 
 
      
-(Example tip: 'Pick a shape. Click to pick the center, drag, then let go when
-it is the size you want. Move around to rotate it, and click to draw it.')
+(Exempel på tips:
  
-→ Bottom: Help Area ←
+→ Botten Hjälpområde ←
 
-    At the very bottom of the screen, Tux, the Linux Penguin, provides tips and
-    other information while you use Tux Paint.
-
-
-     
-
-                          ### D. Available Tools ###
-
-## 1. Drawing Tools ##
-
-a. "Paint" Tool (Brush) ←
-
-    The Paint Brush tool lets you draw freehand, using various brushes (chosen
-    in the Selector on the right) and colors (chosen in the Color palette
-    towards the bottom).
-
-    If you hold the mouse button down, and move the mouse, it will draw as you
-    move.
-
-    Some brushes are animated — they change their shape as you draw them. A
-    good example of this is the vines brush that ships with Tux Paint. These
-    brushes will have a small "filmstrip" icon drawn on their Selector buttons.
-
-    Other brushes are directional — they will draw a different shape depending
-    on what direction you are painting with them. An example of this is the
-    arrow brush that ships with Tux Paint. These brushes have a small 8-way
-    arrow icon drawn on their Selector buttons.
-
-    Finally, some brushes can be both direction and animated. Examples of this
-    are the cat and squirrel brushes that ship with Tux Paint. These brushes
-    will have both the "filmstrip" and 8-way arrow icons.
-
-    As you draw, a sound is played. The bigger the brush, the lower the pitch.
-
-    Brush Spacing
-
-
-        The space between each position where a brush is applied to the canvas
-        can vary. Some brushes (such as the footprints and flower) are spaced,
-        by default, far enough apart that they don't overlap. Other brushes
-        (such as the basic circular ones) are spaced closely, so they make a
-        continuous stroke.
-
-        The default spacing of brushes may be overridden using by clicking
-        within the triangular-shaped series of bars at the bottom right; the
-        larger the bar, the wider the spacing. Brush spacing affects both tools
-        that use the brushes: the "Paint" tool and the "Lines" tool.
-
-        ⚙ Note: If the "nobrushspacing" option is set, Tux Paint won't display
-        the brush spacing controls. See the "Options" documentation.
+    Längst ned på skärmen ger Tux, Linux-pingvinen, tips och annan information
+    medan du använder Rita med Tux.
 
 
      
-b."Stamp" Tool (Rubber Stamps) ←
 
-    The Stamp tool is like a set of rubber stamps or stickers. It lets you
-    paste pre-drawn or photographic images (like a picture of a horse, or a
-    tree, or the moon) in your picture.
+                        ### D. Tillgängliga verktyg ###
 
-    As you move the mouse around the canvas, an outline follows the mouse,
-    showing where the stamp will be placed, and how big it will be. Click on
-    the canvas where you wish to place the stamp.
+## 1. Verktyg för ritning ##
 
-    → Stamp Categories ←
-        There can be numerous categories of stamps (e.g., animals, plants,
-        outer space, vehicles, people, etc.). Use the Left and Right arrows
-        near the bottom of the Selector to cycle through the collections.
+a. "Färg"-verktyg (pensel) ←
+
+    Med verktyget Paint Brush kan du rita på fri hand med hjälp av olika
+    penslar (väljs i väljaren till höger) och färger (väljs i färgpaletten
+    längst ned).
+
+    Om du håller musknappen nedtryckt och rör musen, kommer den att rita när du
+    rör dig.
+
+    Vissa penslar är animerade - de ändrar form när du ritar dem. Ett bra
+    exempel på detta är vinranksborsten som medföljer Rita med Tux. Dessa
+    penslar har en liten "filmstrip"-ikon ritad på sina Selector-knappar.
+
+    Andra penslar är riktade - de ritar en annan form beroende på i vilken
+    riktning du målar med dem. Ett exempel på detta är pilborsten som medföljer
+    Rita med Tux. Dessa penslar har en liten 8-vägs pilikon ritad på sina
+    Selector-knappar.
+
+    Slutligen kan vissa penslar vara både riktade och animerade. Exempel på
+    detta är katt- och ekorrborstarna som medföljer Rita med Tux. Dessa penslar
+    har både ikonerna "filmstrip" och 8-vägspil.
+
+    När du ritar spelas ett ljud upp. Ju större pensel, desto lägre tonläge.
+
+    Den här penselns avstånd är nu 1 bildpunkt!
+
+
+        Avståndet mellan varje position där en pensel appliceras på målarduken
+        kan variera. Vissa penslar (t.ex. fotavtryck och blommor) är som
+        standard placerade tillräckligt långt ifrån varandra för att inte
+        överlappa varandra. Andra penslar (t.ex. de grundläggande cirkelformade
+        penslarna) ligger nära varandra så att de bildar ett sammanhängande
+        streck.
+
+        Standardavståndet mellan penslarna kan ändras genom att klicka i den
+        triangelformade serien av staplar längst ned till höger; ju större
+        stapel, desto större avstånd. Penselavståndet påverkar båda verktygen
+        som använder penslarna: "Paint"-verktyget och "Lines"-verktyget.
+
+        ⚙ Obs: Om alternativet "nobrushspacing" är inställt kommer Rita med Tux
+        inte att visa kontrollerna för penselavstånd. Se avsnittet "Alternativ"
+        dokumentationen.
+
+
+     
+b.verktyg "Stämpel" (gummistämplar) ←
+
+    Stämpelverktyget är som en uppsättning gummistämplar eller klistermärken.
+    Med det kan du klistra in förritade eller fotografiska bilder (t.ex. en
+    bild av en häst, ett träd eller månen) i din bild.
+
+    När du flyttar musen runt på duken följer en kontur musen och visar var
+    stämpeln kommer att placeras och hur stor den kommer att bli. Klicka på den
+    yta där du vill placera stämpeln.
+
+    → Stämpelkategorier ←
+        Det kan finnas många olika kategorier av frimärken (t.ex. djur, växter,
+        rymden, fordon, människor etc.). Använd vänster- och högerpilarna
+        längst ned på väljaren för att bläddra igenom samlingarna.
          
-    → Stamp Rotation ←
+    → Rotation av stämpel ←
 
-        Using the rotation toggle button near the bottom right, you can enable
-        a rotation step when placing stamps. Once you've placed the stamp,
-        choose the angle to rotate it by moving the mouse around the canvas.
-        Click the mouse button again and the stamp will be added to the
-        drawing.
+        Med hjälp av växlingsknappen för rotation längst ned till höger kan du
+        aktivera ett rotationssteg när du placerar ut stämplar. När du har
+        placerat stämpeln väljer du vinkeln för att rotera den genom att flytta
+        musen runt på duken. Klicka på musknappen igen så läggs stämpeln till i
+        ritningen.
 
-        ⚙ Note: If "stamp rotation" option is disabled, the stamp will be drawn
-        on the canvas when you let go of the mouse button. (There's no rotation
-        step.) See the "Options" documentation to learn about the "stamp
-        rotation" ("stamprotation") option.
+        ⚙ Obs: Om alternativet "stämpelrotation" är inaktiverat kommer stämpeln
+        att ritas på duken när du släpper musknappen. (Det finns inget
+        rotationssteg.) Se avsnittet "Alternativ" om du vill veta mer om
+        alternativet "stämpelrotation" ("stamprotation").
 
-        📜 Note: The stamp rotation feature was added to Tux Paint in version
-        0.9.29.
-
-
-         
-    → Stamp Controls ←
-
-        Prior to 'stamping' an image onto your drawing, various effects can
-        sometimes be applied (depending on the stamp):
-
-          @ Some stamps can be colored or tinted. If the color palette below
-            the canvas is activated, you can click the colors to change the
-            tint or color of the stamp before placing it in the picture.
-          @ Stamps can be shrunk and expanded, by clicking within the
-            triangular-shaped series of bars at the bottom right; the larger
-            the bar, the larger the stamp will appear in your picture.
-          @ Many stamps may be flipped vertically, or displayed as a
-            mirror-image, using the control buttons at the bottom right.
-
-        ⚙ Note: If the "nostampcontrols" option is set, Tux Paint won't display
-        the Rotation, Mirror, Flip, or sizing controls for stamps. See the "
-        Options" documentation.
+        📜 Obs: Funktionen för frimärksrotation lades till i Rita med Tux i
+        version 0.9.29.
 
 
          
-    → Stamp Sounds ←
+    → Stämpelkontroller ←
 
-        Different stamps can have different sound effects and/or descriptive
-        (spoken) sounds. Buttons in the Help Area at the lower left (near Tux,
-        the Linux penguin) allow you to re-play the sound effects and
-        descriptive sounds for the currently-selected stamp.
+        Innan du "stämplar" en bild på din ritning kan du ibland använda olika
+        effekter (beroende på stämpel):
+
+          @ Vissa frimärken kan vara färgade eller tonade. Om färgpaletten
+            under duken är aktiverad kan du klicka på färgerna för att ändra
+            stämpelns nyans eller färg innan du placerar den i bilden.
+          @ Frimärken kan förminskas och förstoras genom att klicka i den
+            triangelformade serien av staplar längst ned till höger; ju större
+            stapel, desto större frimärke kommer att visas i din bild.
+          @ Många frimärken kan vändas vertikalt eller visas som en spegelbild
+            med hjälp av kontrollknapparna längst ned till höger.
+
+        ⚙ Obs: Om alternativet "nostampcontrols" är inställt kommer Rita med
+        Tux inte att visa kontrollerna för rotation, spegling, vändning eller
+        storlek för stämplar. Se avsnittet "Alternativ" dokumentationen.
+
+
+         
+    → Stämpel ljud ←
+
+        Olika stämplar kan ha olika ljudeffekter och/eller beskrivande (talade)
+        ljud. Med hjälp av knapparna i hjälpområdet längst ned till vänster
+        (nära Linux-pingvinen Tux) kan du spela upp ljudeffekterna och de
+        beskrivande ljuden för den aktuella stämpeln.
 
 
          
@@ -398,720 +404,744 @@ b."Stamp" Tool (Rubber Stamps) ←
      
 c."Linjer"-verktyget ←
 
-    This tool lets you draw straight lines using the various brushes and colors
-    you normally use with the Paint Brush.
+    Med detta verktyg kan du rita raka linjer med hjälp av de olika penslar och
+    färger som du normalt använder med Paint Brush.
 
-    Click the mouse and hold it to choose the starting point of the line. As
-    you move the mouse around, a thin 'rubber-band' line will show where the
-    line will be drawn. At the bottom, you'll see the angle of your line, in
-    degrees. A line going straight to the right is 0°, a line going straight up
-    is 90°, a line going straight left is 180°, a line going straight down is
-    270°, and so on.
+    Klicka på musen och håll den intryckt för att välja linjens startpunkt. När
+    du flyttar runt musen kommer en tunn "gummibandslinje" att visa var linjen
+    ska dras. Längst ned ser du linjens vinkel i grader. En linje som går rakt
+    åt höger är 0°, en linje som går rakt uppåt är 90°, en linje som går rakt
+    åt vänster är 180°, en linje som går rakt nedåt är 270°, och så vidare.
 
-    Let go of the mouse to complete the line. A "sproing!" sound will play.
+    Släpp musen för att slutföra linjen. Ett "sproing!"-ljud spelas upp.
 
-    Some brushes are animated, and will show a pattern of shapes along the
-    line. Others are directional, and will show a different shape depending on
-    the angle of the brush. And finally some are both animated and directional.
-    See "Paint", above, to learn more.
+    Vissa penslar är animerade och visar ett mönster av former längs linjen.
+    Andra är riktade och visar en annan form beroende på vinkeln på penseln.
+    Och slutligen finns det några som är både animerade och riktade. Se "Måla"
+    ovan om du vill veta mer.
 
-    Different brushes have different spacing, leaving either a series of
-    individual shapes, or a continuous stroke of the brush shape. Brush spacing
-    may be adjusted. See the brush spacing section of the "Paint" tool, above,
-    to learn more.
+    Olika penslar har olika avstånd, vilket ger antingen en serie enskilda
+    former eller ett kontinuerligt streck av penselformen. Penselavståndet kan
+    justeras. Se avsnittet om penselavstånd i verktyget "Paint" ovan för mer
+    information.
 
 
      
-d."Shapes" Tool ←
+d.verktyget "Shapes" ←
 
-    This tool lets you draw some simple filled, and un-filled shapes.
+    Med detta verktyg kan du rita några enkla fyllda och ofyllda former.
 
-    Select a shape from the selector on the right (circle, square, oval, etc.).
+    Välj en form i väljaren till höger (cirkel, kvadrat, oval etc.).
 
-    Use the options at the bottom right to choose the shape tool's behavior:
+    Använd alternativen längst ned till höger för att välja hur formverktyget
+    ska fungera:
 
-    → Shapes from center ←
-        The shape will expand from where you initially clicked, and will be
-        centered around that position.
+    → Former från mitten ←
+        Formen expanderar från den plats där du ursprungligen klickade och
+        centreras runt den positionen.
 
-        📜 This was Tux Paint's only behavior through version 0.9.24.)
-
-
-         
-    → Shapes from corner ←
-        The shape will extend with one corner starting from where you initially
-        clicked. This is the default method of most other traditional drawing
-        software.
-
-        📜 This option was added starting with Tux Paint version 0.9.25.
+        📜 Detta var det enda beteendet hos Rita med Tux i version 0.9.24)
 
 
          
+    → Former från hörn ←
+        Formen kommer att förlängas med ett hörn som börjar där du
+        ursprungligen klickade. Detta är standardmetoden i de flesta andra
+        traditionella ritprogram.
 
-    ⚙ Note: If shape controls are disabled (e.g., with the "noshapecontrols"
-    option), the controls will not be presented, and the "shapes from center"
-    method will be used.
-
-    In the canvas, click the mouse and hold it to stretch the shape out from
-    where you clicked. Some shapes can change proportion (e.g., rectangle and
-    oval may be wider than tall, or taller than wide), others cannot (e.g.,
-    square and circle).
-
-    For shapes that can change proportion, the aspect ratio of the shape will
-    be shown at the bottom. For example: "1:1" will be shown if it is "square"
-    (as tall as it is wide); "2:1" if it is either twice as wide as it is tall,
-    or twice as tall as it is wide; and so on.
-
-    Let go of the mouse when you're done stretching.
-
-    → Normal Shapes Mode ←
-
-        Now you can move the mouse around the canvas to rotate the shape. The
-        angle your shape is rotated will be shown at the bottom, in degrees
-        (similar to the "Lines" tool, described above).
-
-        Click the mouse button again and the shape will be drawn in the current
-        color.
+        📜 Detta alternativ lades till från och med Rita med Tux version 0.9.25.
 
 
          
-    → Simple Shapes Mode ←
-        If the "simple shapes" option is enabled, the shape will be drawn on
-        the canvas when you let go of the mouse button. (There's no rotation
-        step.)
 
-        ⚙ See the "Options" documentation to learn about the "simple shapes"
-        ("simpleshapes") option.
+    ⚙ Obs: Om formkontrollerna är inaktiverade (t.ex. med alternativet
+    "noshapecontrols") visas inte kontrollerna och metoden "former från mitten"
+    används.
+
+    Klicka på musen i målarduken och håll den intryckt för att sträcka ut
+    formen från den plats där du klickade. Vissa former kan ändra proportion
+    (t.ex. rektangel och oval kan vara bredare än höga eller högre än breda),
+    andra kan inte det (t.ex. kvadrat och cirkel).
+
+    För former som kan ändra proportion visas formens bildförhållande längst
+    ned. Till exempel: "1:1" visas om den är "kvadratisk" (lika lång som bred);
+    "2:1" om den antingen är dubbelt så bred som den är lång eller dubbelt så
+    lång som den är bred; och så vidare.
+
+    Släpp musen när du har stretchat färdigt.
+
+    → Läge för normala former ←
+
+        Nu kan du flytta musen runt på duken för att rotera formen. Den vinkel
+        som formen roteras i visas längst ned i grader (på samma sätt som med
+        verktyget "Lines", som beskrivs ovan).
+
+        Klicka på musknappen igen så ritas formen i den aktuella färgen.
+
+
+         
+    → Läget för enkla former ←
+        Om alternativet "enkla former" är aktiverat kommer formen att ritas på
+        duken när du släpper musknappen. (Det finns inget rotationssteg.)
+
+        ⚙ Se avsnittet "Alternativ" om du vill veta mer om alternativet "enkla
+        former" ("simpleshapes").
 
 
          
 
      
-e."Text" and "Label" Tools ←
+e.verktyg för "text" och "etikett" ←
 
-    Choose a font (from the 'Letters' available on the right) and a color (from
-    the color palette near the bottom). You may also apply a bold, and/or an
-    italic styling effect to the text. Click on the screen and a cursor will
-    appear. Type text and it will show up on the screen. (You can change the
-    font, color, and styling while entering the text, before it is applied to
-    the canvas.)
+    Välj ett teckensnitt (från "Letters" som finns till höger) och en färg
+    (från färgpaletten längst ned). Du kan också lägga till en fet och/eller
+    kursiv stil på texten. Klicka på skärmen så kommer en markör att visas.
+    Skriv in text så visas den på skärmen. (Du kan ändra teckensnitt, färg och
+    styling medan du skriver in texten, innan den appliceras på duken)
 
-    Press [Enter] or [Return] and the text will be drawn onto the picture and
-    the cursor will move down one line.
+    Tryck på [Enter] eller [Återgå] så ritas texten på bilden och markören
+    flyttas en rad nedåt.
 
-    Alternatively, press [Tab] and the text will be drawn onto the picture, but
-    the cursor will move to the right of the text, rather than down a line, and
-    to the left. (This can be useful to create a line of text with mixed
-    colors, fonts, styles and sizes.)
+    Alternativt kan du trycka på [Flik] så ritas texten på bilden, men markören
+    flyttas till höger om texten, i stället för nedåt på en rad, och till
+    vänster. (Detta kan vara användbart för att skapa en textrad med blandade
+    färger, typsnitt, stilar och storlekar)
 
-    Text from the clipboard (copy/paste buffer) can be inserted with the "Text"
-    and "Label" tools by pressing the [Control] + [V] key combination on a
-    physical keyboard, or clicking the "Paste" button in Tux Paint's on-screen
-    keyboard. If the text would exceed the right edge of the canvas, it will
-    wrap to a new line of text (going back to the previous space or dash ('-')
-    if possible). If the text hits the bottom of the canvas, the pasting will
-    abort, truncating the text.
+    Text från urklipp (copy/paste-buffert) kan infogas med verktygen "Text" och
+    "Etikett" genom att trycka på tangentkombinationen [Control] + [V] på ett
+    fysiskt tangentbord eller klicka på knappen "Paste" i Rita med Tuxs
+    skärmtangentbord. Om texten överskrider den högra kanten på målarduken
+    bryts den till en ny textrad (och går tillbaka till föregående mellanslag
+    eller bindestreck ('-') om möjligt). Om texten når botten av duken avbryts
+    klistringen och texten trunkeras.
 
-    Clicking elsewhere in the picture while the text entry is still active
-    causes the current line of text to move to that location (where you can
-    continue editing it).
+    Om du klickar någon annanstans i bilden medan textinmatningen fortfarande
+    är aktiv flyttas den aktuella textraden till den platsen (där du kan
+    fortsätta att redigera den).
 
     → "Text" kontra "Etikett" ←
 
-        The Text tool is the original text-entry tool in Tux Paint. Text
-        entered using this tool can't be modified or moved later, since it
-        becomes part of the drawing. However, because the text becomes part of
-        the picture, it can be drawn over or modified using Magic tool effects
-        (e.g., smudged, tinted, embossed, etc.)
+        Textverktyget är det ursprungliga verktyget för textinmatning i Rita
+        med Tux. Text som skrivs in med detta verktyg kan inte ändras eller
+        flyttas senare, eftersom den blir en del av teckningen. Men eftersom
+        texten blir en del av bilden kan den ritas över eller ändras med hjälp
+        av Magic Tool-effekter (t.ex. kladdig, tonad, präglad etc.)
 
-        When using the Label tool (which was added to Tux Paint in version
-        0.9.22), the text 'floats' over the image, and the details of the label
-        (the text, the position of the label, the font choice and the color)
-        get stored separately. This allows the label to be repositioned or
-        edited later.
+        När du använder verktyget Label (som lades till i Rita med Tux i
+        version 0.9.22) "flyter" texten över bilden och detaljerna i etiketten
+        (texten, etikettens position, teckensnitt och färg) lagras separat.
+        Detta gör att etiketten kan flyttas eller redigeras senare.
 
-        To edit a label, click the label selection button. All labels in the
-        drawing will appear highlighted. Click one — or use the [Tab] key to
-        cycle through all the labels, and the [Enter] or [Return] key to select
-        one — and you may then edit the label. (Use they [Backsteg] key to
-        erase characters, and other keys to add text to the label; click in the
-        canvas to reposition the label; click in the palette to change the
-        color of the text in the label; etc.)
+        Om du vill redigera en etikett klickar du på knappen för etikettval.
+        Alla etiketter i ritningen visas markerade. Klicka på en - eller använd
+        tangenten [Flik] för att bläddra igenom alla etiketter och tangenten
+        [Enter] eller [Återgå] för att välja en - så kan du redigera etiketten.
+        (Använd [Backsteg]-tangenten för att radera tecken och andra tangenter
+        för att lägga till text i etiketten; klicka i målarduken för att flytta
+        etiketten; klicka i paletten för att ändra färg på texten i etiketten;
+        etc.)
 
-        You may "apply" a label to the canvas, painting the text into the
-        picture as if it had been added using the Text tool, by clicking the
-        label application button. (This feature was added in Tux Paint version
-        0.9.28.) All labels in the drawing will appear highlighted, and you
-        select one just as you do when selecting a label to edit. The chosen
-        label will be removed, and the text will be added directly to the
-        canvas.
+        Du kan "applicera" en etikett på duken och måla in texten i bilden som
+        om den hade lagts till med hjälp av textverktyget genom att klicka på
+        knappen för etikettapplicering. (Denna funktion lades till i Rita med
+        Tux version 0.9.28.) Alla etiketter i bilden markeras och du väljer en
+        etikett på samma sätt som när du väljer en etikett att redigera. Den
+        valda etiketten tas bort och texten läggs till direkt på duken.
 
-        ⚙ The Label tool can be disabled (e.g., by selecting "Disable 'Label'
-        Tool" in Tux Paint Config. or running Tux Paint with the "nolabel"
-        option).
+        ⚙ Etikettverktyget kan inaktiveras (t.ex. genom att välja "Disable
+        'Label' Tool" i Rita med Tux Config. eller köra Rita med Tux med
+        alternativet "nolabel").
 
-        📜 The ability to paste text from the clipboard was added in Tux Paint
-        0.9.35
-
-
-         
-    → International Character Input ←
-
-        Tux Paint allows inputting characters in different languages. Most
-        Latin characters (A-Z, ñ, è, etc.) can by entered directly. Some
-        languages require that Tux Paint be switched into an alternate input
-        mode before entering, and some characters must be composed using
-        numerous keypresses.
-
-        When Tux Paint's locale is set to one of the languages that provide
-        alternate input modes, a key is used to cycle through normal (Latin
-        character) and locale-specific mode or modes.
-
-        Currently supported locales, the input methods available, and the key
-        to toggle or cycle modes, are listed below.
-
-          @ Japanese — Romanized Hiragana and Romanized Katakana — höger [Alt]
-            -knapp or left [Alt] key
-          @ Korean — Hangul 2-Bul — höger [Alt]-knapp or left [Alt] key
-          @ Traditional Chinese — höger [Alt]-knapp or left [Alt] key
-          @ Thai — höger [Alt]-knapp
-
-        💡 Note: Many fonts do not include all characters for all languages, so
-        sometimes you'll need to change fonts to see the characters you're
-        trying to type.
+        📜 Möjligheten att klistra in text från urklippet lades till i Rita med
+        Tux 0.9.35
 
 
          
-    → On-screen Keyboard ←
+    → Inmatning av internationella tecken ←
 
-        An optional on-screen keyboard is available for the Text and Label
-        tools, which can provide a variety of layouts and character composition
-        (e.g., composing "a" and "e" into "æ"). Run Tux Paint with the
-        "--onscreen-keyboard" option, or enable that setting in Tux Paint's
-        configuration file, to enable it. Multiple layouts are offered
-        (currently "QWERTY" and "ABC"), which the user can switch between.
-        Additional configuration options allow specifying a default layout, as
-        well as preventing the layout from being changed.
+        Rita med Tux tillåter inmatning av tecken på olika språk. De flesta
+        latinska tecken(A-Z, ñ, è, etc.) kan skrivas in direkt. Vissa språk
+        kräver att Rita med Tux växlas till ett alternativt inmatningsläge
+        innan inmatning, och vissa tecken måste komponeras med hjälp av flera
+        tangenttryckningar.
 
-        The on-screen keyboard appears at the bottom or top of the Tux Paint
-        window, obscuring part of the canvas, depending on where the text
-        insertion cursor is placed. Along with alphabetic, numeric, and some
-        punctuation keys, the keyboard provides:
-          @ A "Backspace" key (⇐) to remove the previous character
-          @ A "Carriage Return" ("Return"/"Enter") key (⏎) to end the current
-            input and begin a new one on the following line (below and to the
-            left)
-          @ A "Tab" key (⇔) to end the current input and begin a new one at the
-            current cursor position
-          @ A "Shift" key (⇑) to shift alphabetic keys from lowercase to
-            uppercase, access more punctuation, etc.
-          @ A "Caps Lock" key (⤒) to toggle permanent shifting of alphabetic
-            keys from lowercase to uppercase (click it again to disable caps
-            lock)
-          @ A "Compose" key ("Cmp"), to initiate character composition (e.g.,
-            click "Cmp", "a", "e" to produce an "æ" character)
-          @ An "Alternate Graphics" key ("AltGr") to access additional
-            characters (e.g., "¿", "ß", etc.)
-          @ An "Alternate" key ("Alt")
-          @ A "Paste" key to paste the current clipboard's text into the Text
-            or Label tool
-          @ Left and right arrows (← & →) to access different on-screen
-            keyboard layouts
+        När Rita med Tux är inställt på ett av de språk som har alternativa
+        inmatningslägen används en tangent för att växla mellan normala
+        (latinska tecken) och lokalspecifika lägen.
 
-        ⚙ See the "Options" and "Extending Tux Paint" documentation for more
+        Nedan visas de lokala språk som stöds för närvarande, tillgängliga
+        inmatningsmetoder och tangenter för att växla eller växla mellan olika
+        lägen.
+
+          @ Japanska - Romaniserad Hiragana och Romaniserad Katakana - höger
+            [Alt]-knapp eller vänster [Alt]-knapp
+          @ Koreanska - Hangul 2-Bul - höger [Alt]-knapp eller vänster [Alt]
+            -knapp
+          @ Traditionell kinesiska - höger [Alt]-knapp eller vänster [Alt]
+            -knapp
+          @ Thailändsk - höger [Alt]-knapp
+
+        💡 Observera: Många teckensnitt innehåller inte alla tecken för alla
+        språk, så ibland måste du byta teckensnitt för att se de tecken du
+        försöker skriva.
+
+
+         
+    → Tangentbord på skärmen ←
+
+        Ett valfritt skärmtangentbord finns tillgängligt för verktygen Text och
+        Etikett, vilket kan ge en mängd olika layouter och
+        teckensammansättningar (t.ex. sammansättning av "a" och "e" till "æ").
+        Kör Rita med Tux med alternativet "--onscreen-keyboard", eller aktivera
+        den inställningen i Rita med Tux's konfigurationsfil, för att aktivera
+        det. Flera layouter erbjuds (för närvarande "QWERTY" och "ABC"), som
+        användaren kan växla mellan. Ytterligare konfigurationsalternativ gör
+        det möjligt att ange en standardlayout samt att förhindra att layouten
+        ändras.
+
+        Skärmtangentbordet visas längst ner eller längst upp i Rita med
+        Tux-fönstret och skymmer en del av arbetsytan, beroende på var markören
+        för textinmatning är placerad. Förutom alfabetiska och numeriska
+        tangenter samt vissa skiljetecken har tangentbordet följande
+        funktioner:
+          @ En "Backspace"-knapp (⇐) för att ta bort föregående tecken
+          @ En "Carriage Return"-tangent ("Return"/"Enter") (⏎) för att avsluta
+            den aktuella inmatningen och påbörja en ny på följande rad (under
+            och till vänster)
+          @ En "Tab"-knapp (⇔) för att avsluta den aktuella inmatningen och
+            påbörja en ny vid markörens aktuella position
+          @ En "Shift"-knapp (⇑) för att flytta alfabetiska knappar från
+            gemener till versaler, få tillgång till fler skiljetecken etc.
+          @ En "Caps Lock"-knapp (⤒) för att växla permanent växling av
+            alfabetiska tangenter från gemener till versaler (klicka på den
+            igen för att avaktivera Caps Lock)
+          @ En "Compose"-knapp ("Cmp") för att starta teckenkomposition (t.ex.
+            klicka på "Cmp", "a", "e" för att skapa ett "æ"-tecken)
+          @ En "Alternate Graphics"-knapp ("AltGr") för att komma åt
+            ytterligare tecken (t.ex. "¿", "ß" etc.)
+          @ En "alternativ" tangent ("Alt")
+          @ En "Klistra in"-knapp för att klistra in texten i det aktuella
+            urklippet i text- eller etikettverktyget
+          @ Vänster- och högerpilar (← & →) för att komma åt olika
+            tangentbordslayouter på skärmen
+
+        ⚙ Se avsnittet "Alternativ" och "Utökning av Rita med Tux" för mer
         information.
 
 
          
 
      
-f."Fill" Tool ←
+f."Fyll"-verktyget ←
 
-    The 'Fill' tool 'flood-fills' a contiguous area of your drawing with a
-    color of your choice. Three fill options are offered:
-      o Solid — click once to fill an area with a solid color.
-      o Brush — click and drag to fill an area with a solid color using
-        freehand painting.
-      o Linear — click and then drag to fill the area with color that fades
-        away (a gradient) towards where you drag the mouse.
-      o Radial — click once to fill an area with a color that fades away (a
-        gradient) radially, centered on where you clicked.
-      o Shaped — click once to fill an area with a color that fades away (a
-        gradient), following the contours of the shape you're filling.
-      o Eraser — click once to erase an area, exposing the solid color
-        background, or starter or template background image, upon which the
-        drawing was based. (See Available Tools > Drawing Tools > "Eraser" Tool
-        and Övriga kontroller > 'Startbilder' & Mallbilder.)
+    Verktyget "Fill" fyller ett sammanhängande område i din ritning med en
+    valfri färg. Tre fyllningsalternativ erbjuds:
+      o Solid - klicka en gång för att fylla ett område med en solid färg.
+      o Brush - klicka och dra för att fylla ett område med en solid färg genom
+        att måla på fri hand.
+      o Linjär - klicka och dra sedan för att fylla området med en färg som
+        tonas ut (en gradient) mot den plats där du drar musen.
+      o Radial - klicka en gång för att fylla ett område med en färg som tonas
+        ut (en gradient) radiellt, centrerat på den plats där du klickade.
+      o Shaped - klicka en gång för att fylla ett område med en färg som tonas
+        ut (en gradient) och följer konturerna av den form du fyller.
+      o Eraser - klicka en gång för att radera ett område, vilket exponerar den
+        enfärgade bakgrunden, eller bakgrundsbilden för start eller mall, som
+        teckningen baserades på. (Se Tillgängliga verktyg > Verktyg för ritning
+        > Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och
+        ger mjukare, sammanhängande streck när pekaren flyttas snabbt. och
+        Övriga kontroller > 'Startbilder' & Mallbilder.)
 
-    📜 Note: Prior to Tux Paint 0.9.24, "Fill" was a Magic tool (see below).
-    Prior to Tux Paint 0.9.26, the "Fill" tool only offered the 'Solid' method
-    of filling. 'Shaped' fill was introduced in Tux Paint 0.9.29.
+    📜 Obs: Före Rita med Tux 0.9.24 var "Fill" ett magiskt verktyg (se nedan).
+    Före Rita med Tux 0.9.26 erbjöd verktyget "Fill" endast fyllningsmetoden
+    "Solid". "Shaped" fill introducerades i Rita med Tux 0.9.29.
 
 
      
 g."Magiskt" verktyg (specialeffekter) ←
 
-    The Magic tool is actually a set of special tools. Select one of the
-    'magic' effects from the selector on the right. Then, depending on the
-    tool, you can either click and drag around the picture, and/or simply click
-    the picture once, to apply the effect.
+    Det magiska verktyget är egentligen en uppsättning specialverktyg. Välj en
+    av de "magiska" effekterna i väljaren till höger. Sedan kan du, beroende på
+    verktyget, antingen klicka och dra runt bilden och/eller bara klicka på
+    bilden en gång för att tillämpa effekten.
 
-    The Magic Tools
+    Magiverktyg
 
 
-        See the instructions for each Magic tool (in the 'magic-docs' folder).
+        Se instruktionerna för varje Magic-verktyg (i mappen "magic-docs").
 
     Magiska kontroller
 
 
-        If the tool can be used by clicking and dragging, a 'painting' button
-        will be available on the left, below the list of Magic tools on the
-        right side of the screen. If the tool can affect the entire picture at
-        once, an 'entire picture' button will be available on the right.
+        Om verktyget kan användas genom att klicka och dra kommer en
+        "painting"-knapp att finnas till vänster, under listan med
+        Magic-verktyg på höger sida av skärmen. Om verktyget kan påverka hela
+        bilden på en gång finns en "hela bilden"-knapp till höger.
 
-        ⚙ Note: If the "nomagiccontrols" option is set, Tux Paint won't display
-        the painting or entire picture controls. See the "Options"
-        documentation.
+        ⚙ Obs: Om alternativet "nomagiccontrols" är inställt kommer Rita med
+        Tux inte att visa målningen eller hela bildkontrollerna. Se avsnittet "
+        Alternativ" dokumentationen.
 
-        💡 If the magic controls are disabled, the Magic plugin may make
-        separate tools available, one for painting and one that affects the
-        entire pictre.
+        💡 Om de magiska kontrollerna är inaktiverade kan Magic plugin göra
+        separata verktyg tillgängliga, ett för målning och ett som påverkar
+        hela bilden.
 
-    Magic Sizing
+    Magisk storlek
 
 
-        Some tools offer different sizing options. If so, a slider will appear
-        at the bottom right side of the screen. This may affect the radius of a
-        special effect (e.g., Darken) or painted object (e.g., Patterns), or
-        other attributes (e.g., large versus small Brick shapes).
+        Vissa verktyg erbjuder olika storleksalternativ. Om så är fallet visas
+        ett reglage längst ned till höger på skärmen. Detta kan påverka radien
+        för en specialeffekt (t.ex. Darken) eller ett målat objekt (t.ex.
+        Patterns), eller andra attribut (t.ex. stora kontra små tegelstenar).
 
-        ⚙ Note: If the "nomagicsizes" option is set, Tux Paint won't display
-        the sizing controls. See the "Options" documentation.
+        ⚙ Obs: Om alternativet "nomagicsizes" är inställt kommer Rita med Tux
+        inte att visa storlekskontrollerna. Se avsnittet "Alternativ"
+        dokumentationen.
 
-        💡 If the sizing option is disabled, the Magic plugin may simply offer a
-        default size (e.g., Patterns), or it may make separate tools available
-        with different pre-set sizes (e.g., Bricks and Googly Eyes).
+        💡 Om storleksalternativet är inaktiverat kan Magic-pluginet helt enkelt
+        erbjuda en standardstorlek (t.ex. Patterns), eller så kan det göra
+        separata verktyg tillgängliga med olika förinställda storlekar (t.ex.
+        Bricks och Googly Eyes).
 
-        📜 This option was added starting with Tux Paint version 0.9.30.
+        📜 Detta alternativ lades till från och med Rita med Tux version 0.9.30.
 
-    ⚙ Note: If the "ungroupmagictools" option is set, Tux Paint won't split
-    Magic tools into groups of related tools, and instead present them all as
-    one large list. See the "Options" documentation.
+    ⚙ Obs: Om alternativet "ungroupmagictools" är inställt kommer Rita med Tux
+    inte att dela upp Magic-verktygen i grupper av relaterade verktyg, utan
+    istället presentera dem alla som en enda stor lista. Se avsnittet "
+    Alternativ" dokumentationen.
 
 
      
-h."Eraser" Tool ←
+h.Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger
+mjukare, sammanhängande streck när pekaren flyttas snabbt. ←
 
-    This tool works similarly to the Paint Brush. Wherever you click (or click
-    and drag), things you've added to your drawing will be erased, exposing the
-    background that you chose when you started the drawing, be it a solid
-    color, the background of a 'Starter' image, or a 'Template' image. (See
-    Available Tools > Övriga kontroller > "New" Command.)
+    Detta verktyg fungerar på samma sätt som en målarpensel. Var du än klickar
+    (eller klickar och drar) raderas det som du har lagt till i din ritning, så
+    att du får fram den bakgrund som du valde när du började rita, oavsett om
+    det är en enfärgad bild, bakgrunden till en "Starter"-bild eller en
+    "Template"-bild. (Se Tillgängliga verktyg > Övriga kontroller > "Nytt"
+    kommando.)
 
-    A number of eraser types are available, each offering multiple sizes are
-    available:
-      o Square — Square-shaped erasers that completely remove parts of your
-        drawing.
-      o Circle (solid) — Circle-shaped erasers that completely remove parts of
-        your drawing.
-      o Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
-        with the background.
-      o Transparent Circle — Circle-shaped erasers that blend your drawing with
-        the background. Release and click again to expose more and more of the
-        background.
+    Ett antal olika typer av suddgummin finns tillgängliga, var och en med
+    flera storlekar:
+      o Square - Kvadratformade suddgummin som helt tar bort delar av din
+        teckning.
+      o Circle (solid) - Cirkelformade suddgummin som helt tar bort delar av
+        din teckning.
+      o Fuzzy-edged Circle - Cirkelformade suddgummin med mjuka kanter som
+        smälter in i bakgrunden.
+      o Transparent Circle - Cirkelformade suddgummin som gör att din teckning
+        smälter samman med bakgrunden. Släpp och klicka igen för att exponera
+        mer och mer av bakgrunden.
 
-    As you move the mouse around, an outline follows the pointer, showing what
-    part of the picture will be erased.
+    När du flyttar musen följer en kontur pekaren och visar vilken del av
+    bilden som ska raderas.
 
-    As you erase, a 'squeaky clean' eraser wiping sound is played.
+    När du raderar spelas ett "pipigt rent" radergummitorkningsljud upp.
 
-    ⌨ Hold the [X] key while clicking for quick access to a small sharp round
-    eraser (not available when the Text or Label tools are selected, when
-    you're in the process of rotating a stamp or shape, or when using an
-    interactive magic tool). Release the mouse to return to your
-    currently-selected tool.
+    ⌨ Håll ned [X]-tangenten medan du klickar för att snabbt få tillgång till
+    ett litet, vasst, runt suddgummi (inte tillgängligt när verktygen Text
+    eller Etikett är valda, när du håller på att rotera en stämpel eller form
+    eller när du använder ett interaktivt magiskt verktyg). Släpp musen för att
+    återgå till det aktuella verktyget.
 
 
      
 
 ## 2. Övriga kontroller ##
 
-a."Undo" and "Redo" Commands ←
+a.kommandona "Ångra" och "Gör om" ←
 
-    Clicking the "Undo" button will undo (revert) the last drawing action. You
-    can even undo more than once!
+    Genom att klicka på knappen "Undo" ångrar (återställer) du den senaste
+    ritningen. Du kan till och med ångra mer än en gång!
 
-    ⌨ Note: You can also press [Kontroll / ⌘] + [Z] on the keyboard to Ångra.
+    ⌨ Du kan också trycka på [Kontroll / ⌘] + [Z] på tangentbordet för att
+    komma till Ångra.
 
-    Clicking the "Redo" button will redo the drawing action you just un-did via
-    the "Undo" command.
+    Om du klickar på knappen "Redo" görs den ritningsåtgärd om som du just
+    avbröt med kommandot "Undo".
 
-    As long as you don't draw again, you can redo as many times as you had
-    undone!
+    Så länge du inte drar igen kan du göra om lika många gånger som du hade
+    ogjort!
 
-    ⌨ Note: You can also press [Kontroll / ⌘] + [R] on the keyboard to Gör om.
+    ⌨ Du kan också trycka på [Kontroll / ⌘] + [R] på tangentbordet för att
+    komma till Gör om.
 
 
      
-b."New" Command ←
+b."Nytt" kommando ←
 
-    Clicking the 'New' button will start a new drawing. A dialog will appear
-    where you may choose to start a new picture using a solid background color,
-    or using a 'Starter' or 'Template' image (see below). You will first be
-    asked whether you really want to do this.
+    Genom att klicka på knappen "New" startar du en ny teckning. En dialogruta
+    visas där du kan välja att starta en ny bild med en enfärgad bakgrundsfärg
+    eller med en "Starter"- eller "Template"-bild(se nedan). Du kommer först
+    att få frågan om du verkligen vill göra detta.
 
-    When you use the 'Eraser' tool things you've added to your drawing will be
-    removed, exposing the background you chose when starting a new drawing.
-    (See Available Tools > Drawing Tools > "Eraser" Tool.)
+    När du använder verktyget "Eraser" tas det som du har lagt till i din
+    teckning bort, så att den bakgrund du valde när du började rita en ny
+    teckning framträder. (Se Tillgängliga verktyg > Verktyg för ritning >
+    Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger
+    mjukare, sammanhängande streck när pekaren flyttas snabbt..)
 
-    ⌨ Note: You can also press [Kontroll / ⌘] + [N] on the keyboard to start a
-    new drawing.
+    ⌨ Du kan också trycka på [Kontroll / ⌘] + [N] på tangentbordet för att
+    komma till starta en ny ritning.
 
-    → Special Solid Background Color Choices ←
-        Along with the preset solid colors, you can also choose colors using a
-        rainbow palette or a "color mixer". These operate identically to the
-        options found in the color palette shown below the canvas when drawing
-        a picture. See Huvudskärm > Lower: Colors > Special color options for
-        details.
+    → Särskilda val av solid bakgrundsfärg ←
+        Förutom de förinställda solida färgerna kan du också välja färger med
+        hjälp av en regnbågspalett eller en "färgmixer". Dessa fungerar på
+        samma sätt som de alternativ som finns i färgpaletten som visas under
+        duken när du ritar en bild. Se Huvudskärm > Lägre Färger > Särskilda
+        färgalternativ för mer information.
          
     'Startbilder' & Mallbilder ←
-          @ 'Starters' can behave like a page from a coloring book — a
-            black-and-white outline of a picture, which you can then color in,
-            and the black outline remains intact — or like a 3D photograph,
-            where you draw in between a foreground and background layer.
-          @ 'Templates' are similar, but simply provide a background drawing to
-            work off of. Unlike 'Starters', there is no layer that remains in
-            the foreground of anything you draw in the picture.
+          @ "Starters" kan bete sig som en sida i en målarbok - en svartvit
+            kontur av en bild som du sedan kan färglägga, och den svarta
+            konturen förblir intakt - eller som ett 3D-fotografi, där du ritar
+            mellan ett förgrunds- och ett bakgrundslager.
+          @ "Templates" är snarlika, men ger helt enkelt en bakgrundsritning
+            att arbeta utifrån. Till skillnad från "Starters" finns det inget
+            lager som ligger kvar i förgrunden för allt du ritar i bilden.
 
-        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool,
-        the original image from the 'Starter' or 'Template' will reappear. (See
-        Available Tools > Drawing Tools > "Eraser" Tool and "Fill" Tool.)
+        När du använder verktyget "Eraser" eller "Eraser"-läget i verktyget
+        "Fill" kommer originalbilden från "Starter" eller "Template" att visas
+        igen. (Se Tillgängliga verktyg > Verktyg för ritning > Verktyget
+        Suddgummi lägger till nya, mindre suddgummistorlekar och ger mjukare,
+        sammanhängande streck när pekaren flyttas snabbt. och "Fyll"-verktyget
+        .)
 
-        The 'Flip' and 'Mirror' Magic tools affect the orientation of the
-        'Starter' or 'Template', as well. (See Available Tools > "Magiskt"
-        verktyg (specialeffekter) > Flip and Spegel.)
+        De magiska verktygen "Flip" och "Mirror" påverkar också orienteringen
+        av "Starter" eller "Template". (Se Tillgängliga verktyg > "Magiskt"
+        verktyg (specialeffekter) > Vänd och Spegel.)
 
-        When you load a 'Starter' or 'Template', draw on it, and then click
-        'Save,' it creates a new picture file — it doesn't overwrite the
-        original, so you can use it again later (by accessing it from the 'New'
-        dialog).
+        När du laddar en "Starter" eller "Template", ritar på den och sedan
+        klickar på "Save" skapas en ny bildfil - originalet skrivs inte över,
+        så du kan använda den igen senare (genom att öppna den från dialogrutan
+        "New").
 
-        ⚙ You can create your own 'Starter' and Template images. See the
-        Extending Tux Paint documentation's sections on 'Starters' and
-        Templates.
+        ⚙ Du kan skapa dina egna "Starter"- och mallbilder. Se avsnitten om "
+        Starter " och " Templates" i dokumentationen Extending Rita med Tux.
 
-        💡 You can also convert your saved drawings into Templates directly
-        within Tux Paint, from the 'Open' dialog. See "Open", below.
-
-
-         
-    → Erasing Exported Template Images ←
-
-        If you've selected a Template in your personal templates folder, and it
-        was created from within Tux Paint (using the "Template" button in the
-        "Open" dialog), you may remove it from within Tux Paint, too. An
-        'Erase' (trash can) button will appear at the lower right of the list.
-        Click it to erase the selected template. (You will be asked to
-        confirm.)
-
-        💡 Note: On Linux, Windows, and macOS, the picture will be placed in
-        your desktop's trash can / recycle bin (where you may recover and
-        restore it, if you change your mind).
-
-        ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
+        💡 Du kan också konvertera dina sparade ritningar till mallar direkt i
+        Rita med Tux, från dialogrutan "Öppna". Se "Öppna" nedan.
 
 
          
+    → Radering av exporterade mallbilder ←
 
-    ⚙ Note: The solid colors can be placed at the end of the 'New' dialog
-    (below the Starters and Templates), via the "newcolorslast" option.
+        Om du har valt en mall i din personliga mallmapp och den skapades i
+        Rita med Tux (med hjälp av knappen "Mall" i dialogrutan " Öppna" ), kan
+        du ta bort den från Rita med Tux också. En "Erase"-knapp (papperskorg)
+        visas längst ned till höger i listan. Klicka på den för att radera den
+        valda mallen. (Du kommer att bli ombedd att bekräfta)
+
+        💡 Obs: På Linux, Windows och macOS kommer bilden att placeras i
+        skrivbordets papperskorg (där du kan återställa den om du ändrar dig).
+
+        ⚙ Obs: " Erase"-knappen kan avaktiveras via alternativet "noerase".
 
 
-     
-c."Open" Command ←
+         
 
-    This shows you a list of all of the pictures you've saved. If there are
-    more than can fit on the screen, use the up and down arrows at the top and
-    bottom of the list to scroll through the list of pictures.
-
-    Click a picture to select it, and then...
-      o Click the green 'Open' button at the lower left of the list to load the
-        selected picture. You will then be able to edit it.
-
-        (Alternatively, you can double-click a picture's icon to load it.)
-
-        💡 If choose to open a picture, and your current drawing hasn't been
-        saved, you will be prompted as to whether you want to save it or not.
-        (See "Save," below.)
-
-      o Click the brown 'Erase' (trash can) button at the lower right of the
-        list to erase the selected picture. (You will be asked to confirm.)
-
-        📜 Note: On Linux (as of version 0.9.22), Windows (as of version
-        0.9.27), and macOS (as of version 0.9.29), the picture will be placed
-        in your desktop's trash can / recycle bin (where you may recover and
-        restore it, if you change your mind).
-
-        ⚙ Note: The 'Erase' button may be disabled, via the "noerase" option.
-
-      o Click the 'Export' button near the lower right to export the selected
-        picture to your export folder. (e.g., "~/Pictures/TuxPaint/")
-
-    From the "Open" screen you can also:
-      o Click the blue 'Slides' (slide projector) button at the lower left to
-        go to slideshow mode. See "Slides", below, for details.
-
-      o Click the blue 'Template' button at the lower left to go to convert the
-        selected picture into a new template, which can be used as the basis
-        for new drawings.
-
-        📜 Note: The Template creation feature was added to Tux Paint in version
-        0.9.31. To learn how to create Templates outside of Tux Paint, see
-        Extending Tux Paint
-
-        ⚙ The Template creation feature can be disabled (e.g., by selecting
-        "Disable 'Make Template'" in Tux Paint Config. or running Tux Paint
-        with the "notemplateexport" option).
-
-      o Click the red 'Back' arrow button at the lower right of the list to
-        cancel and return to the picture you were drawing.
-
-    ⌨ Note: You can also press [Kontroll / ⌘] + [O] on the keyboard to bring up
-    the 'Open' dialog.
+    ⚙ Obs: De solida färgerna kan placeras i slutet av dialogrutan "Ny" (under
+    Start och Mallar) med hjälp av alternativet "newcolorslast".
 
 
      
-d."Save" Command ←
+c.kommando "Öppna" ←
 
-    This saves your current picture.
+    Här visas en lista över alla bilder som du har sparat. Om det finns fler
+    bilder än vad som ryms på skärmen kan du använda upp- och nedpilarna längst
+    upp och längst ned i listan för att bläddra igenom listan med bilder.
 
-    If you haven't saved it before, it will create a new entry in the list of
-    saved images. (i.e., it will create a new file)
+    Klicka på en bild för att markera den, och sedan...
+      o Klicka på den gröna "Öppna"-knappen längst ned till vänster i listan
+        för att ladda den valda bilden. Du kommer sedan att kunna redigera den.
 
-    💡 Note: It won't ask you anything (e.g., for a filename). It will simply
-    save the picture, and play a "camera shutter" sound effect.
+        (Alternativt kan du dubbelklicka på ikonen för en bild för att ladda
+        den)
 
-    If you have saved the picture before, or this is a picture you just loaded
-    using the "Open" command, you will first be asked whether you want to save
-    over the old version, or create a new entry (a new file).
+        💡 Om du väljer att öppna en bild och din nuvarande teckning inte har
+        sparats, kommer du att få frågan om du vill spara den eller inte. (Se "
+        Spara" nedan.)
 
-    ⚙ Note: If either the "saveover" or "saveovernew" options are set, it won't
-    ask before saving over. See the "Options" documentation.
+      o Klicka på den bruna "Erase"-knappen (papperskorgen) längst ned till
+        höger i listan för att radera den valda bilden. (Du kommer att bli
+        ombedd att bekräfta.)
 
-    ⌨ Note: You can also press [Kontroll / ⌘] + [S] on the keyboard to save.
+        📜 Obs: På Linux (från och med version 0.9.22), Windows (från och med
+        version 0.9.27) och macOS (från och med version 0.9.29) placeras bilden
+        i skrivbordets papperskorg (där du kan återställa den om du ändrar
+        dig).
+
+        ⚙ Obs: " Erase"-knappen kan avaktiveras via alternativet "noerase".
+
+      o Klicka på "Export"-knappen längst ned till höger för att exportera den
+        valda bilden till din exportmapp. (t.ex. "~/Pictures/TuxPaint/")
+
+    Från skärmen "Öppna" kan du också:
+      o Klicka på den blå knappen "Slides" (bildprojektor) längst ned till
+        vänster för att gå till bildspelsläge. Se "Diabilder" nedan för mer
+        information.
+
+      o Klicka på den blå "Template"-knappen längst ned till vänster för att
+        konvertera den valda bilden till en ny mall, som kan användas som
+        underlag för nya ritningar.
+
+        📜 Obs: Funktionen för att skapa mallar lades till i Rita med Tux i
+        version 0.9.31. För att lära dig hur du skapar mallar utanför Rita med
+        Tux, se Utöka Rita med Tux
+
+        ⚙ Funktionen för att skapa mallar kan avaktiveras (t.ex. genom att
+        välja "Disable 'Make Template'" i Rita med Tux Config. eller köra Rita
+        med Tux med alternativet "notemplateexport").
+
+      o Klicka på den röda "Tillbaka"-pilen längst ned till höger i listan för
+        att avbryta och återgå till den bild du höll på att rita.
+
+    ⌨ Du kan också trycka på [Kontroll / ⌘] + [O] på tangentbordet för att
+    komma till ta fram dialogrutan "Öppna.
 
 
      
-e."Print" Command ←
+d.kommando "Spara" ←
 
-    Click this button and your picture will be printed!
+    Detta sparar din aktuella bild.
 
-    On most platforms, you can also hold the [Alt] key (called [Option] on
-    Macs) while clicking the 'Print' button to get a printer dialog. Note that
-    this may not work if you're running Tux Paint in fullscreen mode. See
-    below.
+    Om du inte har sparat den tidigare skapas en ny post i listan över sparade
+    bilder. (d.v.s. det kommer att skapas en ny fil)
+
+    💡 Observera: Du kommer inte att bli tillfrågad om något (t.ex. ett
+    filnamn). Bilden sparas helt enkelt och en ljudeffekt av typen
+    "kameraslutare" spelas upp.
+
+    Om du har sparat bilden tidigare, eller om det är en bild som du just har
+    laddat med kommandot "Open", får du först frågan om du vill spara över den
+    gamla versionen eller skapa en ny post (en ny fil).
+
+    ⚙ Obs: Om alternativen "saveover" eller "saveovernew" är inställda kommer
+    det inte att fråga innan du sparar över. Se avsnittet "Alternativ"
+    dokumentationen.
+
+    ⌨ Du kan också trycka på [Kontroll / ⌘] + [S] på tangentbordet för att
+    komma till sparat.
+
+
+     
+e.kommando "Skriv ut" ←
+
+    Klicka på den här knappen så kommer din bild att skrivas ut!
+
+    På de flesta plattformar kan du också hålla ned [Alt]-tangenten (kallas
+    [Alternativ] på Mac-datorer) medan du klickar på knappen "Skriv ut" för att
+    få en skrivardialog. Observera att detta kanske inte fungerar om du kör
+    Rita med Tux i helskärmsläge. Se nedan.
 
     → Inaktivera utskrifter ←
 
-        The "noprint" option can be set, which will disable Tux Paint's 'Print'
-        button.
+        Alternativet "noprint" kan ställas in, vilket kommer att inaktivera
+        Rita med Tux's "Print" -knapp.
 
-        ⚙ See the "Options" documentation.
-
-
-         
-    → Restricting Printing ←
-
-        The "printdelay" option can be set, which will only allow occasional
-        printing — once every so many seconds, as configured by you.
-
-        For example, with "printdelay=60" in Tux Paint's configuration file,
-        printing can only occur once per minute (60 seconds).
-
-        ⚙ See the "Options" documentation.
+        ⚙ Se avsnittet "Alternativ" dokumentation.
 
 
          
-    → Printing Commands ←
+    → Begränsning av utskrift ←
 
-        (Linux and Unix only)
+        Alternativet "printdelay" kan ställas in, vilket endast tillåter
+        enstaka utskrifter - en gång varannan sekund, enligt din konfiguration.
 
-        Tux Paint prints by generating a PostScript representation of the
-        drawing and sending it to an external program. By default, the program
-        is:
+        Med "printdelay=60" i Rita med Tuxs konfigurationsfil kan utskriften
+        t.ex. bara ske en gång per minut (60 sekunder).
+
+        ⚙ Se avsnittet "Alternativ" dokumentation.
+
+
+         
+    → Kommandon för utskrift ←
+
+        (endast Linux och Unix)
+
+        Rita med Tux skriver ut genom att generera en PostScript-representation
+        av teckningen och skicka den till ett externt program. Som standard är
+        programmet:
 
             lpr
 
-        This command can be changed by setting a "printcommand" option in Tux
-        Paint's configuration file.
+        Detta kommando kan ändras genom att ställa in ett
+        "printcommand"-alternativ i Rita med Tuxs konfigurationsfil.
 
-        An alternative print command can be invoked by holding the "[Alt]" key
-        on the keyboard while clicking clicking the 'Print' button, as long as
-        you're not in fullscreen mode, an alternative program is run. By
-        default, the program is KDE's graphical print dialog:
+        Ett alternativt utskriftskommando kan aktiveras genom att hålla ned
+        tangenten "[Alt]" på tangentbordet samtidigt som du klickar på knappen
+        "Skriv ut", så länge du inte är i helskärmsläge körs ett alternativt
+        program. Som standard är programmet KDE:s grafiska utskriftsdialog:
 
             kprinter
 
-        This command can be changed by setting a "altprintcommand" option in
-        Tux Paint's configuration file.
+        Detta kommando kan ändras genom att ställa in ett
+        "altprintcommand"-alternativ i Rita med Tuxs konfigurationsfil.
 
-        ⚙ See the "Options" documentation.
+        ⚙ Se avsnittet "Alternativ" dokumentation.
 
 
          
-    → Printer Settings ←
+    → Inställningar för skrivare ←
 
         (Windows och macOS)
 
-        By default, Tux Paint simply prints to the default printer with default
-        settings when the 'Print' button is pushed.
+        Som standard skriver Rita med Tux helt enkelt ut till standardskrivaren
+        med standardinställningar när du trycker på knappen "Skriv ut".
 
-        However, if you hold the [Alt] (or [Option]) key on the keyboard while
-        clicking the 'Print' button, as long as you're not in fullscreen mode,
-        your operating system's printer dialog will appear, where you can
-        change the settings.
+        Men om du håller ned tangenten [Alt] (eller [Alternativ]) på
+        tangentbordet medan du klickar på knappen "Skriv ut", så länge du inte
+        är i helskärmsläge, visas operativsystemets skrivardialog där du kan
+        ändra inställningarna.
 
-        You can have the printer configuration changes stored between Tux Paint
-        sessions by setting the "printcfg" option.
+        Du kan lagra ändringarna i skrivarens konfiguration mellan Rita med
+        Tux-sessionerna genom att ställa in alternativet "printcfg".
 
-        If the "printcfg" option is used, printer settings will be loaded from
-        the file "printcfg.cfg" in your personal folder (see below). Any
-        changes will be saved there as well.
+        Om alternativet "printcfg" används kommer skrivarinställningarna att
+        hämtas från filen "printcfg.cfg" i din personliga mapp (se nedan).
+        Eventuella ändringar sparas även där.
 
-        ⚙ See the "Options" documentation.
+        ⚙ Se avsnittet "Alternativ" dokumentation.
 
 
          
-    → Printer Dialog Options ←
+    → Alternativ för skrivardialog ←
 
-        By default, Tux Paint only shows the printer dialog (or, on Linux/Unix,
-        runs the "altprintcommand"; e.g., "kprinter" instead of "lpr") if the
-        [Alt] (or [Option]) key is held while clicking the 'Print' button.
+        Som standard visar Rita med Tux bara skrivardialogen (eller, under
+        Linux/Unix, kör "altprintcommand"; t.ex. "kprinter" i stället för
+        "lpr") om tangenten [Alt] (eller [Alternativ]) hålls nedtryckt medan du
+        klickar på knappen "Skriv ut".
 
-        However, this behavior can be changed. You can have the printer dialog
-        always appear by using "--altprintalways" on the command-line, or
-        "altprint=always" in Tux Paint's configuration file. Conversely, you
-        can prevent the [Alt]/[Option] key from having any effect by using
-        "--altprintnever", or "altprint=never".
+        Detta beteende kan dock ändras. Du kan få skrivardialogen att alltid
+        visas genom att använda "--altprintalways" på kommandoraden eller
+        "altprint=always" i Rita med Tuxs konfigurationsfil. Omvänt kan du
+        förhindra att tangenterna [Alt]/[Alternativ] har någon effekt genom att
+        använda "--altprintnever" eller "altprint=never".
 
-        ⚙ See the "Options" documentation.
+        ⚙ Se avsnittet "Alternativ" dokumentation.
 
 
          
 
      
-f."Slides" Command (under "Open") ←
+f.kommando "Slides" (under "Open") ←
 
-    The 'Slides' button is available in the 'Open' dialog. It can be used to
-    play a simple animation within Tux Paint, or a slideshow of pictures. It
-    can also export an animated GIF based on the chosen images.
+    Knappen "Slides" finns tillgänglig i dialogrutan "Open". Den kan användas
+    för att spela upp en enkel animation i Rita med Tux eller ett bildspel med
+    bilder. Den kan också exportera en animerad GIF baserad på de valda
+    bilderna.
 
-    → Chosing pictures ←
+    → Välja bilder ←
 
-        When you enter the 'Slides' section of Tux Paint, it displays a list of
-        your saved files, just like the 'Open' dialog.
+        När du går in i avsnittet "Slides" i Rita med Tux visas en lista över
+        dina sparade filer, precis som i dialogrutan "Öppna".
 
-        Click each of the images you wish to display in a slideshow-style
-        presentation, one by one. A digit will appear over each image, letting
-        you know in which order they will be displayed.
+        Klicka på de bilder som du vill visa i en bildspelsliknande
+        presentation, en efter en. En siffra visas över varje bild, så att du
+        vet i vilken ordning de kommer att visas.
 
-        You can click a selected image to unselect it (take it out of your
-        slideshow). Click it again if you wish to add it to the end of the
-        list.
-
-
-         
-    → Set playback speed ←
-
-        A sliding scale at the lower left of the screen (next to the 'Play'
-        button) can be used to adjust the speed of the slideshow or animated
-        GIF, from slowest to fastest. Choose the leftmost setting to disable
-        automatic advancement during playback within Tux Paint — you will need
-        to press a key or click to go to the next slide (see below).
-
-        💡 Note: The slowest setting does not automatically advance through the
-        slides. Use it for when you want to step through them manually. (This
-        does not apply to an exported animated GIF.)
+        Du kan klicka på en markerad bild för att avmarkera den (ta bort den
+        från bildspelet). Klicka på den igen om du vill lägga till den i slutet
+        av listan.
 
 
          
-    → Playback in Tux Paint ←
+    → Ställ in uppspelningshastighet ←
 
-        To play a slideshow within Tux Paint, click the 'Play' button.
+        En glidande skala längst ner till vänster på skärmen (bredvid knappen
+        "Spela upp") kan användas för att justera hastigheten på bildspelet
+        eller den animerade GIF:en, från långsammast till snabbast. Välj
+        inställningen längst till vänster för att inaktivera automatisk
+        framflyttning under uppspelning i Rita med Tux - du måste trycka på en
+        tangent eller klicka för att gå till nästa bild (se nedan).
 
-        💡 Note: If you hadn't selected any images, then all of your saved
-        images will be played in the slideshow!
-
-        During the slideshow, press [Space], [Enter] or [Return], or the [Pil
-        höger] — or click the 'Next' button at the lower left — to manually
-        advance to the next slide. Press [Left arrow] to go back to the
-        previous slide.
-
-        Press [Escape], or click the 'Back' button at the lower right, to exit
-        the slideshow and return to the slideshow image selection screen.
+        💡 Obs: Den långsammaste inställningen gör att du inte automatiskt
+        avancerar genom bilderna. Använd den när du vill gå igenom dem
+        manuellt. (Detta gäller inte för en exporterad animerad GIF)
 
 
          
-    → Exporting an animated GIF ←
+    → Uppspelning i Rita med Tux ←
 
-        Click the 'GIF Export' button near the lower right to have Tux Paint
-        generate an animated GIF file based on the selected images.
+        Om du vill spela upp ett bildspel i Rita med Tux klickar du på knappen
+        "Spela upp".
 
-        💡 Note: At least two images must be selected. (To export a single
-        image, use the 'Export' option from the main 'Open' dialog.) If no
-        images are selected, Tux Paint will not attempt to generate a GIF based
-        on all saved images.
+        💡 Obs: Om du inte har valt några bilder kommer alla dina sparade bilder
+        att spelas upp i bildspelet!
 
-        Pressing [Escape] during the export process will abort the process, and
-        return you to the 'Slideshow' dialog.
+        Under bildspelet kan du trycka på [Mellanslag], [Enter], [Återgå] eller
+        [Pil höger] - eller klicka på knappen "Nästa" längst ned till vänster -
+        för att manuellt gå vidare till nästa bild. Tryck på [Vänster pil] för
+        att gå tillbaka till föregående bild.
+
+        Tryck på [Avsluta meny] eller klicka på "Tillbaka"-knappen längst ned
+        till höger för att avsluta bildspelet och återgå till skärmen för val
+        av bild i bildspelet.
+
+
+         
+    → Exportera en animerad GIF ←
+
+        Klicka på knappen "GIF Export" längst ned till höger för att låta Rita
+        med Tux generera en animerad GIF-fil baserat på de valda bilderna.
+
+        💡 Obs: Minst två bilder måste väljas. (Om du vill exportera en enda
+        bild använder du alternativet "Exportera" i huvuddialogen "Öppna") Om
+        inga bilder väljs kommer Rita med Tux inte att försöka generera en GIF
+        baserad på alla sparade bilder.
+
+        Om du trycker på [Avsluta meny] under exportprocessen avbryts processen
+        och du kommer tillbaka till dialogrutan "Bildspel".
 
 
          
 
-    Click 'Back' in the slideshow image selection screen to return to the
-    'Open' dialog.
+    Klicka på "Tillbaka" på skärmen för val av bild i bildspelet för att återgå
+    till dialogrutan "Öppna".
 
 
      
-g."Quit" Command ←
+g.kommando "Avsluta" ←
 
-    Clicking the 'Quit' button, closing the Tux Paint window, or pushing the
-    [Escape] key will quit Tux Paint.
+    Klicka på knappen "Avsluta", stäng fönstret Rita med Tux eller tryck på
+    tangenten [Avsluta meny] för att avsluta Rita med Tux.
 
-    You will first be prompted as to whether you really want to quit.
+    Du kommer först att få frågan om du verkligen vill sluta.
 
-    If you choose to quit, and you haven't saved the current picture, you will
-    first be asked if wish to save it. If it's not a new image, you will then
-    be asked if you want to save over the old version, or create a new entry.
-    (See "Save" above.)
+    Om du väljer att avsluta och inte har sparat den aktuella bilden, får du
+    först frågan om du vill spara den. Om det inte är en ny bild kommer du att
+    få frågan om du vill spara över den gamla versionen eller skapa en ny post.
+    (Se "Spara" ovan.)
 
-    ⚙ Note: If the image is saved, it will be reloaded automatically the next
-    time you run Tux Paint -- unless the "startblank" option is set.
+    ⚙ Obs: Om bilden sparas kommer den att laddas om automatiskt nästa gång du
+    kör Rita med Tux - om inte alternativet "startblank" är inställt.
 
-    ⚙ Note: The 'Quit' button within Tux Paint, and quitting via the [Escape]
-    key, may be disabled, via the "noquit" option.
+    ⚙ Obs: Knappen "Avsluta" i Rita med Tux och avslutning via [Avsluta meny]
+    kan inaktiveras via alternativet "noquit".
 
-    In that case, the "window close" button on Tux Paint's title bar (if not in
-    fullscreen mode) or the [Alt] + [F4] key sequence may be used to quit.
+    I så fall kan knappen "Stäng fönster" på Rita med Tuxs titelrad (om den
+    inte är i helskärmsläge) eller tangentsekvensen [Alt] + [F4] användas för
+    att avsluta.
 
-    If neither of those are possible, the key sequence of [Shift] + [Kontroll /
-    ⌘] + [Escape] may be used to quit.
+    Om inget av detta är möjligt kan tangentsekvensen [Skift] + [Kontroll / ⌘]
+    + [Avsluta meny] användas för att avsluta.
 
-    ⚙ See the "Options" documentation.
+    ⚙ Se avsnittet "Alternativ" dokumentation.
 
 
      
-h.Sound Muting ←
+h.Ljuddämpning ←
 
-    There is no on-screen control button at this time, but by using the [Alt] +
-    [S] keyboard sequence, sound effects can be disabled and re-enabled (muted
-    and unmuted) while the program is running.
+    För närvarande finns det ingen kontrollknapp på skärmen, men med hjälp av
+    tangentbordssekvensen [Alt] + [S] kan ljudeffekterna stängas av och
+    aktiveras igen (dämpas och återställas) medan programmet körs.
 
-    Note that if sounds are completely disabled via the "nosound" option, the
-    [Alt] + [S] key combination has no effect. (i.e., it cannot be used to turn
-    on sounds when the parent/teacher wants them disabled.)
+    Observera att om ljudet är helt avaktiverat med alternativet "nosound" har
+    tangentkombinationen [Alt] + [S] ingen effekt. (dvs. den kan inte användas
+    för att sätta på ljud när föräldern/läraren vill att de ska vara avstängda)
 
-    ⚙ See the "Options" documentation.
+    ⚙ Se avsnittet "Alternativ" dokumentation.
 
 
      
@@ -1120,149 +1150,150 @@ h.Sound Muting ←
 
 ## 1. Använda en mus eller styrkula ##
 
-Tux Paint's main mode of operation is via any device that appears to your
-operating system as a mouse, including standard mice, trackballs, and
-trackpads, as well as drawing tablets (usually operated with a stylus) and
-touch screens (operated with a finger and/or a stylus) (see "Using a Tablet or
-Touchscreen" below for more information).
+Rita med Tux fungerar huvudsakligen via en enhet som i ditt operativsystem ser
+ut som en mus, inklusive vanliga möss, styrkulor och trackpads, samt ritplattor
+(som vanligtvis används med en penna) och pekskärmar (som används med ett
+finger och/eller en penna) (se "Använda en surfplatta eller pekskärm" nedan för
+mer information).
 
-For drawing and controlling Tux Paint, only a single mouse button is used —
-typically, on multi-button mice, this will the left mouse button, but this can
-usually be configured at the operating system level. By default, Tux Paint will
-ignore input from the other button(s). If a user attempts to use the other
-button(s), a pop-up dialog will eventually appear reminding them that only one
-button is recognized Tux Paint. However, you may configure Tux Paint to accept
-any button as input (see the Options documentation).
+För att rita och styra Rita med Tux används endast en enda musknapp - på möss
+med flera knappar är det vanligtvis den vänstra musknappen, men detta kan
+vanligtvis konfigureras på operativsystemnivå. Som standard ignorerar Rita med
+Tux indata från den eller de andra knapparna. Om en användare försöker använda
+de andra knapparna visas en popup-dialogruta som påminner om att Rita med Tux
+bara känner igen en knapp. Du kan dock konfigurera Rita med Tux så att alla
+knappar accepteras som indata (se dokumentationen Options ).
 
 # a. Rullning #
 
-Many input devices offer a way to quickly scroll within applications — many
-mice have a scroll wheel, trackballs have scroll rings, and trackpads recognize
-certain "scroll" gestures (e.g., two-finger vertical motion, or vertical motion
-on the edge of the trackpad). Tux Paint supports scrolling input to allow quick
-scrolling through certain lists (e.g., Stamps, Magic tools, and the New and
-Open dialogs).
+Många inmatningsenheter erbjuder ett sätt att snabbt skrolla inom program -
+många möss har ett skrollhjul, styrkulor har skrollringar och styrplattor
+känner igen vissa "skroll"-gester (t.ex. vertikal rörelse med två fingrar eller
+vertikal rörelse på kanten av styrplattan). Rita med Tux stöder
+rullningsinmatning för att möjliggöra snabb rullning genom vissa listor (t.ex.
+stämplar, magiska verktyg och dialogrutorna Ny och Öppna).
 
-Tux Paint will also automatically scroll if you click and hold the mouse down
-on an scroll button — the "up" and "down" arrow buttons that appear above and
-below scrolling lists.
+Rita med Tux rullar också automatiskt om du klickar och håller musen nere på en
+rullningsknapp - pilknapparna "upp" och "ner" som visas ovanför och under
+rullningslistor.
 
-# b. Mouse Accessibility #
+# b. Tillgänglighet för mus #
 
-Other devices that appear as a mouse can be used to control Tux Paint. For
-example:
+Andra enheter som ser ut som en mus kan användas för att styra Rita med Tux.
+Till exempel:
 
-  * Head pointing/tracking devices
-  * Eye gaze trackers
-  * Foot mice
+  * Huvudpekare/spårningsanordningar
+  * Spårare för ögonstyrning
+  * Fotmöss
 
-Tux Paint offers a "sticky mouse click" accessibility setting, where a single
-click begins a click-and-drag operation, and a subsequent click ends it. (See
-the Options documentation.)
+Rita med Tux erbjuder en tillgänglighetsinställning för "klibbigt musklick",
+där ett enda klick påbörjar en klick- och dragoperation och ett efterföljande
+klick avslutar den. (Se dokumentationen för Alternativ.)
 
 ## 2. Använda en ritplatta eller pekskärm ##
 
-As noted above, Tux Paint recognizes any device that appears as a mouse. This
-means drawing tablets and touchscreens may be used. However, these devices
-often support other features beyond X/Y motion, button clicks, and scroll-wheel
-motion. Currently, those additional features are not supported by Tux Paint.
-Some examples:
+Som nämnts ovan känner Rita med Tux igen alla enheter som ser ut som en mus.
+Detta innebär att ritplattor och pekskärmar kan användas. Dessa enheter har
+dock ofta stöd för andra funktioner än X/Y-rörelser, knappklick och
+rullhjulsrörelser. För närvarande stöds inte dessa ytterligare funktioner av
+Rita med Tux. Några exempel:
 
-  * Pressure and angle
-  * Eraser tip
-  * Multi-touch gestures
+  * Tryck och vinkel
+  * Spets för suddgummi
+  * Multi-touch-gester
 
 ## 3. Använda en styrspaksliknande enhet ##
 
-Tux Paint may be configured to recognize input from any game controller that
-appears to your operating system as a joystick. That even includes modern game
-console controllers connected via USB or Bluetooth (e.g., Nintendo Switch or
-Microsoft Xbox game pads)!
+Rita med Tux kan konfigureras för att känna igen indata från alla
+spelkontroller som visas för operativsystemet som en joystick. Det inkluderar
+till och med moderna spelkonsolkontroller som är anslutna via USB eller
+Bluetooth (t.ex. Nintendo Switch eller Microsoft Xbox game pads)!
 
-Numerous configuration options are available to best suit the device being
-used, and the user's needs. Analog input will be used for coarse movement, and
-digital "hat" input for fine movement. Buttons on the controller can be mapped
-to different Tux Paint controls (e.g., acting as the [Escape] key, switching to
-the Paint tool, invoking Undo and Redo operations, etc.). See the Options
-documentation for more details.
+Många konfigurationsalternativ finns tillgängliga för att bäst passa den enhet
+som används och användarens behov. Analog ingång kommer att användas för grova
+rörelser och digital "hatt"-ingång för fina rörelser. Knapparna på styrenheten
+kan mappas till olika Rita med Tux-kontroller (t.ex. fungera som [Avsluta meny]
+-tangenten, växla till Paint-verktyget, ångra och göra om osv.) Se
+dokumentationen för Options för mer information.
 
 ## 4. Använda tangentbordet ##
 
-Tux Paint offers an option to allow the keyboard to be used to control the
-mouse pointer. This includes motion and clicking, as well as shortcuts to
-navigate between and within certain parts of the interface. See the Options
-documentation for more details.
+Rita med Tux erbjuder ett alternativ som gör att tangentbordet kan användas för
+att styra muspekaren. Detta inkluderar rörelse och klickning, samt genvägar för
+att navigera mellan och inom vissa delar av gränssnittet. Se dokumentationen
+Options för mer information.
 
-III. Loading Other Pictures into Tux Paint
+III. Ladda andra bilder i Rita med Tux
 
                               ### A. Översikt ###
 
-Tux Paint's 'Open' dialog only displays pictures you created with Tux Paint. So
-what do you do if you want to load some other drawinng or even a photograph
-into Tux Paint, so you can edit or draw on it?
+Rita med Tux's "Öppna"-dialog visar bara bilder som du har skapat med Rita med
+Tux. Så vad gör man om man vill ladda in en annan teckning eller till och med
+ett fotografi i Rita med Tux, så att man kan redigera eller rita på det?
 
-You can simply convert the picture to the format Tux Paint uses — PNG (Portable
-Network Graphic) — and place it in Tux Paint's "saved" directory/folder. Here
-is where to find it (by default):
+Du kan helt enkelt konvertera bilden till det format som Rita med Tux använder
+- PNG (Portable Network Graphic) - och placera den i Rita med Tuxs
+"saved"-katalog/mapp. Här är var du hittar den (som standard):
 
 → Windows Windows 8, Windows 10, Windows 11 ←
-    In the user's "AppData" folder:
-    e.g., "C:\Users\användarnamn\AppData\Roaming\TuxPaint\saved\"
+    I användarens mapp "AppData":
+    t.ex, "C:\Users\användarnamn\AppData\Roaming\TuxPaint\saved\"
 
-    (Note: The "AppData" folder is hidden (not visible) by default. You can
-    enter the path manually in the location bar of your file browser (e.g.,
-    File Explorer).)
+    (Obs: Mappen "AppData" är dold (inte synlig) som standard. Du kan ange
+    sökvägen manuellt i platsfältet i din filbläddrare (t.ex. File Explorer)
 
-    You can use the %APPDATA% variable as a shorthand, i.e. 
+    Du kan använda variabeln %APPDATA% som en förkortning, dvs. 
     "%APPDATA%\Tuxpaint\Saved".
 
-    You can use the [⊞ (Windows)] + [R] key combination to bring up the Run
-    command window, and then type the path and hit [Enter / Return].
+    Du kan använda tangentkombinationen [⊞ (Windows)] + [R] för att få fram
+    kommandofönstret Kör och sedan skriva in sökvägen och trycka på [Enter /
+    Return].
      
 → macOS ←
-    In the user's "Application Support" folder:
-    e.g., 
-    "/Användare/användarnamn/Bibliotek/Application Support/TuxPaint/saved/"
+    I användarens mapp "Application Support":
+    t.ex, "/Användare/användarnamn/Bibliotek/Applikationsstöd/TuxPaint/saved/"
      
 → Linux / Unix ←
-    In the user's "home directory" folder:
-    e.g., "/home/användarnamn/.tuxpaint/saved/"
+    I användarens mapp "hemkatalog":
+    t.ex, "/home/användarnamn/.tuxpaint/saved/"
 
-    (Note: The ".tuxpaint" folder is hidden (not visible) by default. You can
-    enter the path manually in the location bar of your file browser (e.g.,
-    GNOME-filer eller Dolphin).)
+    (Obs: Mappen ".tuxpaint" är dold (inte synlig) som standard. Du kan ange
+    sökvägen manuellt i platsfältet i din filbläddrare (t.ex. GNOME-filer eller
+    Dolphin)
 
-    You can use the $HOME variable as a shorthand, i.e. "$HOME/.tuxpaint/saved"
-    .
+    Du kan använda variabeln $HOME som en förkortning, dvs. 
+    "$HOME/.tuxpaint/saved".
      
 → Haiku ←
-    In the user's "settings" folder:
-    e.g., "/boot/home/config/settings/TuxPaint/saved/"
+    I användarens mapp "settings":
+    t.ex, "/boot/home/config/settings/TuxPaint/saved/"
      
 
-💡 Note: It is also from this folder that you can copy or open pictures drawn in
-Tux Paint using other applications, though the 'Export' option from Tux Paint's
-'Open' dialog can be used to copy them to a location that's easier and safer to
-access.
+💡 Det är också från den här mappen som du kan kopiera eller öppna bilder som
+ritats i Rita med Tux med andra program, även om alternativet "Export" i Rita
+med Tuxs "Öppna"-dialog kan användas för att kopiera dem till en plats som är
+lättare och säkrare att komma åt.
 
-             ### B. Using the import script, "tuxpaint-import" ###
+           ### B. Med hjälp av importskriptet, "tuxpaint-import" ###
 
-Linux and Unix users can use the "tuxpaint-import" shell script which gets
-installed when you install Tux Paint. It uses some NetPBM tools to convert the
-image ("anytopnm"), resize it so that it will fit in Tux Paint's canvas
-("pnmscale"), and convert it to a PNG ("pnmtopng").
+Linux- och Unix-användare kan använda skalskriptet "tuxpaint-import" som
+installeras när du installerar Rita med Tux. Det använder några NetPBM-verktyg
+för att konvertera bilden ("anytopnm"), ändra storlek på den så att den får
+plats i Rita med Tuxs canvas ("pnmscale") och konvertera den till en PNG
+("pnmtopng").
 
-It also uses the "date" command to get the current time and date, which is the
-file-naming convention Tux Paint uses for saved files. (Remember, you are never
-asked for a 'filename' when you go to save or open pictures!)
+Det använder också kommandot "date" för att få aktuell tid och datum, vilket är
+den filnamnskonvention som Rita med Tux använder för sparade filer. (Kom ihåg
+att du aldrig blir ombedd att ange ett "filnamn" när du ska spara eller öppna
+bilder!)
 
-To use this script, simply run it from a command-line prompt, and provide it
-the name(s) of the file(s) you wish to convert.
+Om du vill använda det här skriptet kör du det bara från en kommandorad och
+anger namnet på den eller de filer som du vill konvertera.
 
-They will be converted and placed in your Tux Paint "saved" directory.
+De kommer att konverteras och placeras i din Rita med Tux "saved"-katalog.
 
-💡 Note: If you're doing this for a different user (e.g., your child) you'll
-need to make sure to run the command under their account.)
+💡 Obs: Om du gör detta för en annan användare (t.ex. ditt barn) måste du se
+till att köra kommandot under deras konto)
 
 Exempel:
 
@@ -1270,156 +1301,161 @@ Exempel:
     farmor.jpg -> /home/username/.tuxpaint/saved/20211231012359.png
     jpegtopnm: WRITING A PPM FILE
 
-The first line ("tuxpaint-import farmor.jpg") is the command to run. The
-following two lines are output from the program while it's working.
+Den första raden ("tuxpaint-import farmor.jpg") är kommandot som ska köras. De
+följande två raderna är utdata från programmet medan det arbetar.
 
-Now you can load Tux Paint, and a version of that original picture will be
-available under the 'Open' dialog. Just double-click its icon!
+Nu kan du ladda Rita med Tux, och en version av originalbilden kommer att
+finnas tillgänglig under dialogrutan "Öppna". Dubbelklicka bara på dess ikon!
 
-                    ### C. Importing Pictures Manually ###
+                     ### C. Importera bilder manuellt ###
 
-Windows, macOS, and Haiku users who wish to import arbitrary images into Tux
-Paint must do so via a manual process.
+Windows-, macOS- och Haiku-användare som vill importera godtyckliga bilder till
+Rita med Tux måste göra det via en manuell process.
 
-Load a graphics program that is capable of both loading your picture and saving
-a PNG format file. (See the documentation file "PNG.html" for a list of
-suggested software, and other references.)
+Ladda ett grafikprogram som både kan ladda din bild och spara en fil i
+PNG-format. (Se dokumentationsfilen"PNG.html" för en lista över föreslagna
+program och andra referenser)
 
-When Tux Paint loads an image that's not the same size as its drawing canvas,
-it scales (and sometimes smears the edges of) the image so that it fits within
-the canvas.
+När Rita med Tux laddar en bild som inte är lika stor som dess målarduk, skalar
+den (och ibland smetar den ut kanterna på) bilden så att den passar in i
+målarduken.
 
-To avoid having the image stretched or smeared, you can resize it to Tux
-Paint's canvas size. This size depends on the size of the Tux Paint window, or
-resolution at which Tux Paint is run, if in fullscreen. (Note: The default
-resolution is 800x600.) See "Calculating Image Dimensions", below.
+För att undvika att bilden blir utsträckt eller utsmetad kan du ändra storleken
+på den till Rita med Tuxs canvasstorlek. Denna storlek beror på storleken på
+Rita med Tux-fönstret eller den upplösning som Rita med Tux körs med, om det är
+i helskärm.(Obs: Standardupplösningen är 800x600.) Se "Beräkning av
+bilddimensioner" nedan.
 
-## 1. Naming the File ##
+## 1. Namnge filen ##
 
-Save the picture in PNG format. It is highly recommended that you name the
-filename using the current date and time, since that's the convention Tux Paint
-uses:
+Spara bilden i PNG-format. Det rekommenderas starkt att du namnger filnamnet
+med aktuellt datum och tid, eftersom det är den konvention som Rita med Tux
+använder:
 
-    ÅÅÅÅMMDDhhmmss.png
+    ÅÅÅÅMMDDyyyy-MM-dd HH:mmmmss.png
 
   * ÅÅÅÅ = År
-  * MM = Month (two digits, "01"-"12")
-  * DD = Day of month (two digits, "01"-"31")
-  * HH = Hour (two digits, in 24-hour format, "00"-"23")
-  * mm = Minute (two digits, "00"-"59")
-  * ss = Seconds (two digits, "00"-"59")
+  * MM = Månad (två siffror, "01"-"12")
+  * DD = Dag i månaden (två siffror, "01"-"31")
+  * TT = Timme (två siffror, i 24-timmarsformat, "00"-"23")
+  * mm = Minut (två siffror, "00"-"59")
+  * ss = Sekunder (två siffror, "00"-"59")
 
-Example: "20210731110500.png", for July 31, 2021 at 11:05am.
+Exempel:"20210731110500.png", för 31 juli 2021 kl. 11:05.
 
-Place this PNG file in your Tux Paint "saved" directory/folder. (See above.)
+Placera denna PNG-fil i din Rita med Tux "saved"-katalog/mapp. (Se ovan.)
 
-## 2. Calculating Image Dimensions ##
+## 2. Beräkning av bilddimensioner ##
 
-This part of the documentation needs to be rewritten, since the new
-"buttonsize" option was added. For now, try drawing and saving an image within
-Tux Paint, then determine what size (pixel width and height) it came out to,
-and try to match that when scaling the picture(s) you're importing into Tux
-Paint.
+Den här delen av dokumentationen behöver skrivas om, eftersom det nya
+alternativet "buttonsize" har lagts till. För tillfället kan du prova att rita
+och spara en bild i Rita med Tux, sedan avgöra vilken storlek (pixelbredd och
+höjd) den fick och försöka matcha den när du skalar bilden/bilderna som du
+importerar till Rita med Tux.
 
-IV.Further Reading
+IV.Ytterligare läsning
 
-Other documentation included with Tux Paint (found in the "docs" folder/
-directory) includes:
+Annan dokumentation som ingår i Rita med Tux (finns i mappen "docs")
+inkluderar:
 
 → Använda Rita med Tux: ←
       o OPTIONS.html
-        Detailed instructions on command-line and configuration-file options,
-        for those who don't want to use the Tux Paint Config. tool to manage
-        Tux Paint's configuration.
-      o 'Magic' Tool Documentation ("magic-docs")
-        Documentation for each of the currently-installed 'Magic' tools.
-      o Frequently Asked Questions ("FAQs") about Tux Paint
-        Answers to, and solutions for, some common questions about, and
-        problems with, using Tux Paint.
+        Detaljerade instruktioner om kommandorads- och
+        konfigurationsfilsalternativ, för dem som inte vill använda verktyget
+        Rita med Tux Config. för att hantera Rita med Tuxs konfiguration.
+      o dokumentation av "Magic"-verktyget ("magic-docs")
+        Dokumentation för vart och ett av de för närvarande installerade
+        "Magic"-verktygen.
+      o Vanliga frågor ("Vanliga frågor") om Rita med Tux
+        Svar på och lösningar för några vanliga frågor om och problem med att
+        använda Rita med Tux.
 
      
 → Hur man utökar Rita med Tux: ←
       o EXTENDING.html
-        Detailed instructions on extending Tux Paint: creating brushes, stamps,
-        starters, and templates; adding fonts; and creating new on-screen
-        keyboard layouts and input methods.
+        Detaljerade instruktioner om hur du utökar Rita med Tux: skapa penslar,
+        stämplar, förrätter och mallar, lägga till teckensnitt och skapa nya
+        tangentbordslayouter och inmatningsmetoder på skärmen.
       o PNG.html
-        Notes on creating PNG format bitmapped (raster) images for use in Tux
-        Paint.
+        Anvisningar om hur du skapar bitmappade (raster-) bilder i PNG-format
+        för användning i Rita med Tux.
       o SVG.html
-        Notes on creating SVG format vector images for use in Tux Paint.
+        Anvisningar om hur du skapar vektorbilder i SVG-format för användning i
+        Rita med Tux.
 
      
-→ Technical information: ←
+→ Teknisk information: ←
       o INSTALL.html
-        Instructions for compiling and installing Tux Paint, when applicable.
+        Instruktioner för kompilering och installation av Rita med Tux, om
+        tillämpligt.
       o SIGNALS.html
-        Information about the POSIX signals that Tux Paint responds to.
+        Information om de POSIX-signaler som Rita med Tux reagerar på.
       o MAGIC-API.html
-        Creating new Magic tools using Tux Paint's plugin API.
+        Skapa nya magiska verktyg med hjälp av Rita med Tuxs plugin-API.
 
      
-→ Development history and license: ←
+→ Utvecklingshistoria och licens: ←
       o AUTHORS.txt
-        List of authors and contributors.
+        Förteckning över författare och bidragsgivare.
       o CHANGES.txt
-        Summary of what has changed between releases of Tux Paint.
+        Sammanfattning av vad som har ändrats mellan utgåvorna av Rita med Tux.
       o COPYING.txt
-        Tux Paint's software license, the GNU General Public License (GPL)
+        Rita med Tuxs programvarulicens, GNU General Public License (GPL)
 
      
 
 V.Hur du kan få hjälp
 
-If you need help, there are numerous ways to interact with Tux Paint developers
-and other users:
+Om du behöver hjälp finns det många sätt att interagera med Rita med
+Tux-utvecklare och andra användare:
 
-  * Report bugs or request new features via the project's bug-tracking system
-  * Participate in the various project mailing lists
-  * Contact the developers directly
+  * Rapportera buggar eller begära nya funktioner via projektets
+    buggspårningssystem
+  * Delta i projektets olika e-postlistor
+  * Kontakta utvecklarna direkt
 
-To learn more, visit the "Kontakt" page of the official Tux Paint website:
-https://tuxpaint.org/contact/
+Mer information finns på sidan "Kontakt" på den officiella webbplatsen för Rita
+med Tux: https://tuxpaint.org/contact/
 
 VI.Hur man deltar
 
-Tux Paint is a volunteer-driven project, and we're happy to accept your help in
-a variety of ways:
+Rita med Tux är ett volontärdrivet projekt, och vi tar gärna emot din hjälp på
+olika sätt:
 
-  * Translate Tux Paint to another language
-  * Improve existing translations
-  * Create artwork (stamps, starters, templates, brushes)
-  * Add or improve features or magic tools
-  * Create classroom curriculum
-  * Promote or help support others using Tux Paint
+  * Översätt Rita med Tux till ett annat språk
+  * Förbättra befintliga översättningar
+  * Skapa konstverk (stämplar, starters, mallar, penslar)
+  * Lägga till eller förbättra funktioner eller magiska verktyg
+  * Skapa läroplan för klassrummet
+  * Marknadsför eller hjälp till att stödja andra som använder Rita med Tux
 
-To learn more, visit the "Hjälp oss" page of the official Tux Paint website:
-https://tuxpaint.org/help/
+Mer information finns på sidan "Hjälp oss" på den officiella webbplatsen för
+Rita med Tux: https://tuxpaint.org/help/
 
-VII.Follow the Tux Paint project on social media
+VII.Följ Rita med Tux-projektet på sociala medier
 
-Tux Paint maintains a presence on a variety of social media networks, where we
-post updates and artwork.
+Rita med Tux har en närvaro på en mängd olika sociala medier, där vi publicerar
+uppdateringar och konstverk.
 
-  * Follow @tuxpaint.bsky.social on Bluesky
-  * Join the Tux Paint page on Facebook
-  * Follow @TuxPaintDevs on Instagram
-  * Follow @tuxpaint@floss.social on Mastodon
-  * Follow u/TuxPaintDevs on Reddit
-  * Follow @TuxPaintDevs on Threads
-  * Follow @TuxPaintDevs on TikTok
-  * Follow Tux Paint on Tumblr
-  * Subscribe to @TuxPaintOfficial on YouTube
+  * Följ @tuxpaint.bsky.social på Bluesky
+  * Gå med i Rita med Tux-sidan på Facebook
+  * Följ @TuxPaintDevs på Instagram
+  * Följ @tuxpaint@floss.social på Mastodon
+  * Följ u/TuxPaintDevs på Reddit
+  * Följ @TuxPaintDevs på Trådar
+  * Följ @TuxPaintDevs på TikTok
+  * Följ Rita med Tux på Tumblr
+  * Prenumerera på @TuxPaintOfficial på YouTube
 
-VIII. Trademark notices
+VIII. Meddelanden om varumärken
 
   * "Linux" är ett registrerat varumärke som tillhör Linus Torvalds.
   * "Microsoft" och "Windows" är registrerade varumärken som tillhör Microsoft
     Corp.
-  * "Apple" and "macOS" are registered trademarks of Apple Inc.
+  * "Apple" och "macOS" är registrerade varumärken som tillhör Apple Inc.
   * "Haiku" är ett registrerat varumärke som tillhör Haiku, Inc.
-  * "Facebook", "Instagram", and "Threads" are registered trademarks of Meta
-    Platforms, Inc.
+  * "Facebook", "Instagram" och "Threads" är registrerade varumärken som
+    tillhör Meta Platforms, Inc.
   * "Mastodon" är ett registrerat varumärke som tillhör Mastodon gGmbH.
   * "Reddit" är ett registrerat varumärke som tillhör Reddit, Inc.
   * "TIK TOK" är ett varumärke som tillhör Bytedance Ltd.

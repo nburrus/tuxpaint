@@ -1,18 +1,18 @@
-                   Tux Paint "Magic" Tool: Symmetry Up/Down
+                Rita med Tux "Magic" Verktyg: Symmetri upp/ned
 
-                        ### Group: Pattern Painting ###
+                         ### Grupp Mönstermålning ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Paint with reflective symmetry across the vertical center of the image.
+Måla med reflekterande symmetri över bildens vertikala mittpunkt.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Kalejdoskop, Pattern, Symmetry Left/Right, & Tiles.
+Se även nedan:Kalejdoskop, Mönster, Symmetri vänster/höger, & Rutor.
 
 -------------------------------------------------------------------------------
 

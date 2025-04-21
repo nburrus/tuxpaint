@@ -1,13 +1,13 @@
-                      Tux Paint "Magic" Tool: Glass Tile
+                   Rita med Tux "Magic" Verktyg: Glasplattor
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag over your picture to make it look like it's being seen through
-glass tiles.
+Klicka och dra över din bild så att det ser ut som om den ses genom
+glasplattor.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 -------------------------------------------------------------------------------
 

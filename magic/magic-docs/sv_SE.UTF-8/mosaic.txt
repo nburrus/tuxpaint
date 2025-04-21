@@ -1,18 +1,18 @@
-                        Tux Paint "Magic" Tool: Mosaik
+                     Rita med Tux "Magic" Verktyg: Mosaik
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-                 ## Authors: Adam Rakowski <foo-script@o2.pl>
+                ## Författare: Adam Rakowski <foo-script@o2.pl>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                                       ##
 
-Adds a glass mosaic effect to your picture.
+Ger din bild en glasmosaikliknande effekt.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Hexagon Mosaic, Irregular Mosaic, & Square Mosaic.
+Se även nedan:Hexagon Mosaik, Oregelbunden mosaik, & Kvadratisk mosaik.
 
 -------------------------------------------------------------------------------
 

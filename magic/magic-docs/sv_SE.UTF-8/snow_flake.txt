@@ -1,14 +1,14 @@
-                      Tux Paint "Magic" Tool: Snow Flake
+                    Rita med Tux "Magic" Verktyg: Snöflinga
 
-                      ### Group: Picture Decorations ###
+                        ### Grupp Bilddekorationer ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Fill the picture with snowflakes.
+Fyll bilden med snöflingor.
 
-This tool is operated with a single click.
+Detta verktyg manövreras med ett enda klick.
 
-See also: Rain & Snow Ball.
+Se även nedan:Regn & Snöboll.
 
 -------------------------------------------------------------------------------
 

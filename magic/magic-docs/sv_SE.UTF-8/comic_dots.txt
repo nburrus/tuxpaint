@@ -1,19 +1,19 @@
-                      Tux Paint "Magic" Tool: Comic Dots
+              Rita med Tux "Magic" Verktyg: Serietecknade prickar
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draws a repeating dot pattern, simulating the "Ben Day process" used in early
-comic books.
+Tecknar ett repetitivt punktmönster som simulerar "Ben Day-processen" som
+användes i tidiga serietidningar.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Halvton.
+Se även nedan:Halvton.
 
 -------------------------------------------------------------------------------
 

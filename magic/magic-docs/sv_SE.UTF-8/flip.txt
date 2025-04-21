@@ -1,14 +1,15 @@
-                         Tux Paint "Magic" Tool: Flip
+                      Rita med Tux "Magic" Verktyg: Vänd
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Similar to "Mirror." Click and the entire image will be turned upside-down.
+På samma sätt som "Mirror" Klicka och hela bilden kommer att vändas upp och
+ner.
 
-This tool is operated with a single click.
+Detta verktyg manövreras med ett enda klick.
 
-See also: Spegel.
+Se även nedan:Spegel.
 
 -------------------------------------------------------------------------------
 

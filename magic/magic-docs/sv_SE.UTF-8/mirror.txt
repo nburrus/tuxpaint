@@ -1,15 +1,15 @@
-                        Tux Paint "Magic" Tool: Spegel
+                     Rita med Tux "Magic" Verktyg: Spegel
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-When you click the mouse in your picture with the "Mirror" magic effect
-selected, the entire image will be reversed, turning it into a mirror image.
+När du klickar med musen på din bild med den magiska effekten "Spegel"
+markerad, kommer hela bilden att vändas och förvandlas till en spegelbild.
 
-This tool is operated with a single click.
+Detta verktyg manövreras med ett enda klick.
 
-See also: Flip.
+Se även nedan:Vänd.
 
 -------------------------------------------------------------------------------
 

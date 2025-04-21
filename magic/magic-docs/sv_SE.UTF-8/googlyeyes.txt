@@ -1,15 +1,16 @@
-                      Tux Paint "Magic" Tool: Googly Eyes
+                  Rita med Tux "Magic" Verktyg: Rörliga ögon
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draws a googly eye where you click. Drag to position the pupil. (If the Magic
-size feature is disabled, multiple "Googly Eyes" tools will be made available.)
+Ritar ett klumpigt öga där du klickar. Dra för att placera pupillen. (Om Magic
+size-funktionen är inaktiverad kommer flera "Rörliga ögon"-verktyg att göras
+tillgängliga.)
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

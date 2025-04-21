@@ -1,16 +1,16 @@
-                        Tux Paint "Magic" Tool: Fisheye
+                     Rita med Tux "Magic" Verktyg: Fisheye
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-                ## Author: Adam Rakowski <foo-script@o2.pl> ##
+             ## Upphovsperson: Adam Rakowski <foo-script@o2.pl> ##
 
-Warp parts of your picture like it's being seen through a fisheye lens.
+Förvränga delar av din bild som om den ses genom en fisheye-lins.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Ripples.
+Se även nedan:Ripplar.
 
 -------------------------------------------------------------------------------
 

@@ -1,14 +1,14 @@
-                      Tux Paint "Magic" Tool: Xor Colors
+                   Rita med Tux "Magic" Verktyg: Xor färger
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-         ## Author: Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com> ##
+     ## Upphovsperson: Lukasz Dmitrowski <lukasz.dmitrowski@gmail.com> ##
 
-Colors based on the position drawn on the picture.
+Färgerna baseras på den position som ritats på bilden.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

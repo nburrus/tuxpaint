@@ -1,18 +1,18 @@
-                         Tux Paint "Magic" Tool: Gräs
+                      Rita med Tux "Magic" Verktyg: Gräs
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-              ## Author: Albert Cahalan <albert@users.sf.net> ##
+           ## Upphovsperson: Albert Cahalan <albert@users.sf.net> ##
 
-This paints grass on the image. The higher up the canvas, the smaller the grass
-is drawn, giving an illusion of perspective. The grass can be tinted various
-greenish hues by selecting different colors in the color palette.
+Detta målar gräs på bilden. Ju högre upp på duken, desto mindre blir gräset,
+vilket ger en illusion av perspektiv. Gräset kan färgas i olika grönaktiga
+nyanser genom att välja olika färger i färgpaletten.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Flower.
+Se även nedan:Blomma.
 
 -------------------------------------------------------------------------------
 

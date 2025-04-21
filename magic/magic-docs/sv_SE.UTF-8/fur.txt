@@ -1,14 +1,14 @@
-                          Tux Paint "Magic" Tool: Fur
+                      Rita med Tux "Magic" Verktyg: Päls
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Add fur to your drawing.
+Lägg till päls på din teckning.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

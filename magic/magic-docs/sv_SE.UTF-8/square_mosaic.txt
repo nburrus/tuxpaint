@@ -1,16 +1,16 @@
-                     Tux Paint "Magic" Tool: Square Mosaic
+                Rita med Tux "Magic" Verktyg: Kvadratisk mosaik
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Converts parts of your picture into a mosaic of square cells.
+Omvandlar delar av din bild till en mosaik av kvadratiska celler.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Hexagon Mosaic, Irregular Mosaic, & Mosaik.
+Se även nedan:Hexagon Mosaik, Oregelbunden mosaik, & Mosaik.
 
 -------------------------------------------------------------------------------
 

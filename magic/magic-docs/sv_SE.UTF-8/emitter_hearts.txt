@@ -1,19 +1,19 @@
-                        Tux Paint "Magic" Tool: Hjärtan
+                     Rita med Tux "Magic" Verktyg: Hjärtan
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw a trail of floating hearts. Adjust the length of the trail using the size
-option.
+Rita ett spår av svävande hjärtan. Justera längden på spåret med hjälp av
+storleksalternativet.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Gnistrande & Stars.
+Se även nedan:Gnistrande & Stjärnor.
 
 -------------------------------------------------------------------------------
 

@@ -1,18 +1,18 @@
-                        Tux Paint "Magic" Tool: Pattern
+                     Rita med Tux "Magic" Verktyg: Mönster
 
-                        ### Group: Pattern Painting ###
+                         ### Grupp Mönstermålning ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Draws a tiled pattern around the picture.
+Ritar ett kaklat mönster runt bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Tiles, Tessellation Pointy, & Tessellation Flat.
+Se även nedan:Rutor, Tessellation spetsig, & Tessellation platt.
 
 -------------------------------------------------------------------------------
 

@@ -1,14 +1,14 @@
-                     Tux Paint "Magic" Tool: Double Vision
+                    Rita med Tux "Magic" Verktyg: Dubbelsyn
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This blends the image with itself, to simulate double vision.
+Detta gör att bilden blandas med sig själv för att simulera dubbelseende.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-See also: 3D-glasögon & Color Sep..
+Se även nedan:3D-glasögon & Färgsep..
 
 -------------------------------------------------------------------------------
 

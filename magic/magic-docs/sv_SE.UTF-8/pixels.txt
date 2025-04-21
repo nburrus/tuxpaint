@@ -1,18 +1,18 @@
-                        Tux Paint "Magic" Tool: Pixels
+                   Rita med Tux "Magic" Verktyg: Bildpunkter
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw large square "pixels" on the canvas.
+Rita stora fyrkantiga "pixlar" på målarduken.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Tegelstenar.
+Se även nedan:Tegelstenar.
 
 -------------------------------------------------------------------------------
 

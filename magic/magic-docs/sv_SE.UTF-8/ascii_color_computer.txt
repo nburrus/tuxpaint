@@ -1,16 +1,16 @@
-                    Tux Paint "Magic" Tool: ASCII-färgdator
+                 Rita med Tux "Magic" Verktyg: ASCII-färgdator
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Transform your picture into colored computer "ASCII art".
+ASCII färgdator - förvandla din bild till färgdator "ASCII-konst"
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: ASCII-dator & ASCII Typewriter.
+Se även nedan:ASCII-dator & ASCII skrivmaskin.
 
 -------------------------------------------------------------------------------
 

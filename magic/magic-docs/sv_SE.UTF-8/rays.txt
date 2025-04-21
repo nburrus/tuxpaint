@@ -1,15 +1,15 @@
-                         Tux Paint "Magic" Tool: Rays
+                     Rita med Tux "Magic" Verktyg: Strålar
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This transforms the picture into brush strokes that point towards where you
-clicked.
+På så sätt förvandlas bilden till penseldrag som pekar mot det ställe där du
+klickade.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-See also: Cirklar.
+Se även nedan:Cirklar.
 
 -------------------------------------------------------------------------------
 

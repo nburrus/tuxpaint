@@ -1,20 +1,20 @@
-                    Tux Paint "Magic" Tool: Oblique Select
+                    Rita med Tux "Magic" Verktyg: Sned välj
 
-                          ### Group: Projections ###
+                          ### Grupp Projektioner ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click (and drag) to position the angle that will be used with the "Oblique
-Draw" tool.
+Klicka (och dra) för att positionera den vinkel som ska användas med verktyget
+"Oblique Draw".
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool is only available with "complexity" (expertise level) set to
-'Advanced'.
+Detta verktyg är endast tillgängligt när "komplexitet" (expertnivå) är inställd
+på "Avancerad".
 
-See also: 1-Point Draw, 1-Point Select, 2-Point Draw, 2-Point Select, 3-Point
-Draw, 3-Point Select, Isometric Line, Dimetric Select, Dimetric Draw, Trimetric
-Select, Trimetric Draw, Oblique Draw, & Perspektiv.
+Se även nedan:1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
+3-punktsritning, 3-punktsval, Isometrisk linje, Dimetriskt val, Dimetrisk
+ritning, Trimetrisk välj, Trimetrisk ritning, Snedritning, & Perspektiv.
 
 -------------------------------------------------------------------------------
 

@@ -1,18 +1,18 @@
-                        Tux Paint "Magic" Tool: Picasso
+                     Rita med Tux "Magic" Verktyg: Picasso
 
-                        ### Group: Pattern Painting ###
+                         ### Grupp Mönstermålning ###
 
-                ## Author: Adam Rakowski <foo-script@o2.pl> ##
+             ## Upphovsperson: Adam Rakowski <foo-script@o2.pl> ##
 
-Draw three swirling brushes at once, in a Picasso style.
+Rita tre virvlande penslar på en gång, i Picasso-stil.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Rosette & Kalejdoskop.
+Se även nedan:Rosett & Kalejdoskop.
 
 -------------------------------------------------------------------------------
 

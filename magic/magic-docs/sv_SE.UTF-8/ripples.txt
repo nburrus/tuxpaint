@@ -1,16 +1,16 @@
-                        Tux Paint "Magic" Tool: Ripples
+                     Rita med Tux "Magic" Verktyg: Ripplar
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click in your picture to make water ripple distortions appear over it.
+Klicka på din bild för att få vattenkrusningar att dyka upp över den.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Fisheye.
+Se även nedan:Fisheye.
 
 -------------------------------------------------------------------------------
 

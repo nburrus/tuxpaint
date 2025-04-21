@@ -1,17 +1,17 @@
-                         Tux Paint "Magic" Tool: Rush
+                      Rita med Tux "Magic" Verktyg: Rusa
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-          ## Authors: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+        ## Författare: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
-Click and drag up to zoom in, or down to zoom out. The results will be blurred/
-smeared.
+Klicka och dra uppåt för att zooma in, eller nedåt för att zooma ut. Resultatet
+blir oskarpt/utsmetat.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-See also: Tile Zoom & Zooma.
+Se även nedan:Kakelzoom & Zooma.
 
 -------------------------------------------------------------------------------
 

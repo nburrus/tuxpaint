@@ -1,22 +1,22 @@
-                        Tux Paint "Magic" Tool: Flower
+                     Rita med Tux "Magic" Verktyg: Blomma
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This tool draws small flowers, with leafy bases and stalks. Click to set the
-base, then drag the mouse upwards to draw the stalk, and finally release the
-mouse button to finish the flower. It will be drawn in the currently-selected
-color. The shape and length of the stalk depends on how you move the mouse
-while you drag.
+Detta verktyg ritar små blommor med bladförsedda baser och stjälkar. Klicka för
+att sätta basen, dra sedan musen uppåt för att rita stjälken och släpp
+slutligen musknappen för att avsluta blomman. Den ritas i den färg som för
+tillfället är vald. Stjälkens form och längd beror på hur du flyttar musen
+medan du drar.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Gräs.
+Se även nedan:Gräs.
 
 -------------------------------------------------------------------------------
 

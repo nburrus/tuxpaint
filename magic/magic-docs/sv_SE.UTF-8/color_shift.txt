@@ -1,14 +1,14 @@
-                      Tux Paint "Magic" Tool: Color Shift
+                  Rita med Tux "Magic" Verktyg: Färgskiftning
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-This shifts the colors in your picture.
+Detta ändrar färgerna i din bild.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

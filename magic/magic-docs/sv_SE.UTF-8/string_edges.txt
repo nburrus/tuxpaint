@@ -1,18 +1,18 @@
-                     Tux Paint "Magic" Tool: String Edges
+                Rita med Tux "Magic" Verktyg: Strängens kanter
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-         ## Author: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
+     ## Upphovsperson: Pere Pujal i Carabantes <pere@fornol.no-ip.org> ##
 
-Draw string art around the edges of your picture.
+Rita string art runt kanterna på din bild.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Epicykloid, Epitrochoid Inside, Epitrochoid Edge, Epitrochoid Outside
-, Hypotrochoid, Hypotrochoid Inside, Hypotrochoid Edge, Hypotrochoid Outside,
-String Corner, & String V.
+Se även nedan:Epicykloid, Epicykloid insida, Epicykloid kant, Epicykloid utsida
+, Hypotrokoid insida, Hypotrokoid insida, Hypotrokoid kant, Hypotrokoid utsida,
+Stringhörn, & String V.
 
 -------------------------------------------------------------------------------
 

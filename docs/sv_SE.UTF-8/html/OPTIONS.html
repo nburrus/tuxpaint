@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Tux Paint Options Documentation    </title>
+      Dokumentation av Tux färgalternativ    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
     <style>
@@ -94,10 +94,10 @@
             version 0.9.35          </h1>
 
           <h2>
-            Options Documentation          </h2>
+            Dokumentation av optioner          </h2>
 
           <p>
-            Copyright &copy; 2002-2025 by olika bidragsgivare; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+            Copyright © 2002-2025 av olika bidragsgivare; se <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
             <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
           </p>
 
@@ -109,25 +109,25 @@
       <table border="2"
              cellspacing="0"
              cellpadding="2"
-             summary="Table of Contents"
+             summary="Innehåll"
              align="center"
              style="page-break-inside: avoid;">
         <tr>
           <th>
-            Table of Contents          </th>
+            Innehåll          </th>
         </tr>
 
         <tr>
           <td>
             <ul>
-              <li><a href="#tpc">Tux Paint Config.</a></li>              <li><a href="#cfg-file">Configuration File</a></li>              <li><a href="#available">Available Options</a>                <ul>
-                  <li><a href="#video_sound">Video/Sound</a></li>                  <li><a href="#mouse_keyboard">Mouse/Keyboard</a></li>                  <li><a href="#simplification">Simplification</a></li>                  <li><a href="#languages">Languages</a></li>                  <li><a href="#printing">Printing</a></li>                  <li><a href="#saving">Saving</a></li>                  <li><a href="#data">Data</a></li>                  <li><a href="#accessibility">Hjälpmedel</a></li>                  <li><a href="#joystick">Joystick</a></li>                </ul>
+              <li><a href="#tpc">Tux Färgkonfiguration.</a></li>              <li><a href="#cfg-file">Konfigurationsfil för KVIrc</a></li>              <li><a href="#available">Tillgängliga alternativ</a>                <ul>
+                  <li><a href="#video_sound">Video/ljud</a></li>                  <li><a href="#mouse_keyboard">Mus/tangentbord</a></li>                  <li><a href="#simplification">Förenkling</a></li>                  <li><a href="#languages">Språk</a></li>                  <li><a href="#printing">Skriver ut</a></li>                  <li><a href="#saving">Sparar</a></li>                  <li><a href="#data">Data</a></li>                  <li><a href="#accessibility">Hjälpmedel</a></li>                  <li><a href="#joystick">Styrspak</a></li>                </ul>
               </li>
-              <li><a href="#overriding">Overriding System Config. Options</a></li>              <li><a href="#command_line">Command-Line Options</a>                <ul>
-                  <li><a href="#info-cmd">Command-Line Informational Options</a></li>                </ul>
+              <li><a href="#overriding">Åsidosättande av System Config. Alternativ</a></li>              <li><a href="#command_line">Alternativ för kommandoraden</a>                <ul>
+                  <li><a href="#info-cmd">Alternativ för information på kommandoraden</a></li>                </ul>
               </li>
-              <li><a href="#different_language">Choosing a Different Language</a>                <ul>
-                  <li><a href="#available_languages">Available Languages</a></li>                  <li><a href="#env_locale">Setting Your Environment's Locale</a></li>                  <li><a href="#special_fonts">Special Fonts</a></li>                </ul>
+              <li><a href="#different_language">Att välja ett annat språk</a>                <ul>
+                  <li><a href="#available_languages">Tillgängliga språk</a></li>                  <li><a href="#env_locale">Ställa in lokal språkdräkt för din miljö</a></li>                  <li><a href="#special_fonts">Särskilda teckensnitt</a></li>                </ul>
               </li>
             </ul>
           </td>
@@ -139,11 +139,11 @@
       <div class="keeptogether">
         <header>
           <h1 id="tpc">
-            Tux Paint Config.          </h1>
+            Tux Färgkonfiguration.          </h1>
         </header>
 
         <p>
-          A graphical tool is available that allows you to change Tux Paint's behavior. However, if you'd rather not install and use this tool, or want a better understanding of the available options, please continue reading.        </p>
+          Det finns ett grafiskt verktyg som gör att du kan ändra Rita med Tuxs beteende. Om du inte vill installera och använda det här verktyget, eller om du vill ha en bättre förståelse för de tillgängliga alternativen, kan du fortsätta läsa.        </p>
       </div>
     </section><!-- H1: Tux Paint Config. -->
 
@@ -151,15 +151,15 @@
       <div class="keeptogether">
         <header>
           <h1 id="cfg-file">
-            Configuration File          </h1>
+            Konfigurationsfil för KVIrc          </h1>
         </header>
 
         <p>
-          You can create a simple configuration file for Tux Paint, which it will read each time you start it up.        </p>
+          Du kan skapa en enkel konfigurationsfil för Rita med Tux, som den kommer att läsa varje gång du startar den.        </p>
       </div>
 
       <p>
-        The file is simply a plain text file containing the options you want enabled:      </p>
+        Filen är helt enkelt en ren textfil som innehåller de alternativ som du vill aktivera:      </p>
 
       <section class="indent"><!-- H2: Linux and Unix Users -->
         <div class="keeptogether">
@@ -175,11 +175,11 @@
         <section class="indent"><!-- H3: System-Wide Configuration File -->
           <header>
             <h3>
-              System-Wide Configuration File            </h3>
+              Systemomfattande konfigurationsfil            </h3>
           </header>
 
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+            Innan denna fil läses, läses en systemomfattande konfigurationsfil. (Som standard har denna konfiguration inga inställningar aktiverade.) Den finns normalt på:          </p>
 
           <blockquote>
             <nobr><code style='background: #EEE;'>/etc/tuxpaint/tuxpaint.conf</code></nobr>          </blockquote>
@@ -189,49 +189,49 @@
       <section class="indent"><!-- H2: macOS Users -->
         <header>
           <h2>
-            macOS Users          </h2>
+            macOS-användare          </h2>
         </header>
 
         <p>
-          <nobr><code style='background: #EEE;'>/Användare/<i>användarnamn</i>/Bibliotek/Application Support/TuxPaint/tuxpaint.cfg</code></nobr>        </p>
+          <nobr><code style='background: #EEE;'>/Användare/<i>användarnamn</i>/Bibliotek/Applikationsstöd/TuxPaint/tuxpaint.cfg</code></nobr>        </p>
 
         <section class="indent"><!-- H3: System-Wide Configuration File -->
           <header>
             <h3>
-              System-Wide Configuration File            </h3>
+              Systemomfattande konfigurationsfil            </h3>
           </header>
 
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+            Innan denna fil läses, läses en systemomfattande konfigurationsfil. (Som standard har denna konfiguration inga inställningar aktiverade.) Den finns normalt på:          </p>
 
           <blockquote>
-            <nobr><code style='background: #EEE;'>/Bibliotek/Application Support/TuxPaint/tuxpaint.cfg</code></nobr>          </blockquote>
+            <nobr><code style='background: #EEE;'>/Bibliotek/Applikationsstöd/TuxPaint/tuxpaint.cfg</code></nobr>          </blockquote>
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: macOS Users -->
 
       <section class="indent"><!-- H2: Windows Users -->
         <header>
           <h2>
-            Windows Users          </h2>
+            Windows-användare          </h2>
         </header>
 
         <p>
           <nobr><code style='background: #EEE;'>C:\Users\<i>användarnamn</i>\AppData\Roaming\TuxPaint\tuxpaint.cfg</code></nobr>        </p>
 
         <p>
-          You can use NotePad or WordPad to create this file. Be sure to save it as Plain Text, and make sure the filename doesn't have ".txt" at the end...        </p>
+          Du kan använda NotePad eller WordPad för att skapa denna fil. Var noga med att spara den som vanlig text och se till att filnamnet inte har ".txt" i slutet ...        </p>
 
         <section class="indent"><!-- H3: System-Wide Configuration File -->
           <header>
             <h3>
-              System-Wide Configuration File            </h3>
+              Systemomfattande konfigurationsfil            </h3>
           </header>
 
           <p>
-            Before this file is read, a system-wide configuration file is read. (By default, this configuration has no settings enabled.) It is normally located at:          </p>
+            Innan denna fil läses, läses en systemomfattande konfigurationsfil. (Som standard har denna konfiguration inga inställningar aktiverade.) Den finns normalt på:          </p>
 
           <p>
-            <nobr><code style='background: #EEE;'>C:\Program Files\TuxPaint\tuxpaint.cfg</code></nobr>          </p>
+            <nobr><code style='background: #EEE;'>C:\Programfiler\TuxPaint\tuxpaint.cfg</code></nobr>          </p>
         </section><!-- H3: System-Wide Configuration File -->
       </section><!-- H2: Windows Users -->
 
@@ -246,22 +246,22 @@
       </section><!-- H2: Haiku Users -->
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        You can disable reading of this file altogether, leaving the settings as defaults (which can then be overridden by your personal config. file and/or command-line arguments) by using the command-line option "<code>--nosysconfig</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        Du kan avaktivera läsning av den här filen helt och hållet och låta inställningarna vara standardinställningar (som sedan kan åsidosättas av din personliga konfigurationsfil och/eller kommandoradsargument) genom att använda kommandoradsalternativet "<code>--nosysconfig</code>".      </p>
     </section><!-- H1: Configuration File -->
 
     <section class="outer"><!-- H1: Available Options -->
       <div class="keeptogether">
         <header>
           <h1 id="available">
-            Available Options          </h1>
+            Tillgängliga alternativ          </h1>
         </header>
 
         <p>
-          The following settings can be set in the configuration file. (Command-line settings will override these. See the "<a href="#command_line"><i>Command-Line Options</i></a>" section, below.)        </p>
+          Följande inställningar kan göras i konfigurationsfilen. (Inställningar på kommandoraden åsidosätter dessa. Se avsnittet "<a href="#command_line"><i>Alternativ för kommandoraden</i></a>" nedan)        </p>
       </div>
 
         <header>
-    <h2 id="video_sound">Video/Sound</h2>
+    <h2 id="video_sound">Video/ljud</h2>
   </header>
   <section class="indent">
     <section>
@@ -276,9 +276,9 @@
 
     <dd>
       <p>
-        Run the program in full screen mode, rather than in a window.      </p>
+        Kör programmet i helskärmsläge i stället för i ett fönster.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>fullscreen=no</code>". In both cases, may be overridden by the command-line option "<code>--windowed</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med "<code>fullscreen=no</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--windowed</code>".      </p>
     </dd>
 
     <dt>
@@ -287,19 +287,19 @@
 
     <dd>
       <p>
-        Run the program in full screen mode. Additionally, assume the screen's current resolution (set by the operating system).      </p>
+        Kör programmet i helskärmsläge. Utgå dessutom från skärmens aktuella upplösning (som ställs in av operativsystemet).      </p>
     </dd>
 
     <dt>
-      <code><b>windowsize=<i>SIZE</i></b></code>
+      <code><b>windowsize=<i>STRL</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Run the program at a different size (in windowed mode) or at a different screen resolution (in fullscreen mode), rather than the default (usually 800x600).      </p>
+        Kör programmet i en annan storlek (i fönsterläge) eller med en annan skärmupplösning (i helskärmsläge) än standardinställningen (vanligtvis 800x600).      </p>
 
       <p>
-        The <i>SIZE</i> value should be presented in pixels, in 'width-by-height' format, with an "x" (lowercase X) between the values. The size can be anything that's at least 640 wide, and at least 480 tall.      </p>
+        Värdet <i>STRL</i> ska anges i pixlar, i formatet "bredd-för-höjd", med ett "x" (litet X) mellan värdena. Storleken kan vara vad som helst som är minst 640 brett och minst 480 högt.      </p>
 
       <p>
         Några exempel:      </p>
@@ -319,7 +319,7 @@
       </ul>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        If only one display is available, and Tux Paint is being run in windowed (not fullscreen) mode, and the chosen window size exceeds the capabilities of the display, Tux Paint will fall back to the display's dimensions.      </p>
+        <span title="Information">&#128161;</span>        Om endast en bildskärm är tillgänglig och Rita med Tux körs i fönsterläge (inte fullskärm) och den valda fönsterstorleken överskrider bildskärmens kapacitet, kommer Rita med Tux att falla tillbaka till bildskärmens dimensioner.      </p>
     </dd>
 
     <dt>
@@ -328,9 +328,9 @@
 
     <dd>
       <p>
-        Swaps the width/height options given to Tux Paint, useful for rotating the window on portait displays, such as a tablet PC that's in tablet orientation.      </p>
+        Byter ut bredd- och höjdalternativen som ges till Rita med Tux, vilket är användbart för att rotera fönstret på porträttskärmar, t.ex. en surfplatta som är i surfplatteorientering.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>orient=landscape</code>". In both cases, may be overridden by the command-line option "<code>--orient=landscape</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med "<code>orient=landscape</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--orient=landscape</code>".      </p>
     </dd>
 
     <dt>
@@ -339,7 +339,7 @@
 
     <dd>
       <p>
-        When running Tux Paint in fullscreen mode, this assumes the screen's current resolution (overriding any "<code>windowsize</code>" option), as set by the operating system.      </p>
+        När Rita med Tux körs i helskärmsläge antas skärmens aktuella upplösning (vilket åsidosätter eventuella "<code>windowsize</code>"-alternativ), som den har ställts in av operativsystemet.      </p>
     </dd>
 
     <dt>
@@ -348,9 +348,9 @@
 
     <dd>
       <p>
-        By default, Tux Paint prevents your system's screensaver from starting up. You can override this by using the "<code>allowscreensaver</code>" option. (You can also do this by setting the "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" environment variable on your system to "<code>1</code>".)      </p>
+        Som standard hindrar Rita med Tux systemets skärmsläckare från att starta. Du kan åsidosätta detta genom att använda alternativet "<code>allowscreensaver</code>". (Du kan också göra det genom att ställa in miljövariabeln "<code>SDL_VIDEO_ALLOW_SCREENSAVER</code>" på ditt system till "<code>1</code>")      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>allowscreensaver=no</code>" or "<code>disablescreensaver=yes</code>". In both cases, may be overridden by the command-line option "<code>--disablescreensaver</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>allowscreensaver=no</code>" eller "<code>disablescreensaver=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--disablescreensaver</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -367,9 +367,9 @@
 
     <dd>
       <p>
-        Disable sound effects. (Note: Pressing <code><b>[Alt]</b></code> + <b>[S]</b> cannot be used to reenable sounds if they were disabled using this option.)      </p>
+        Avaktivera ljudeffekter. (Obs: Om du trycker på <code><b>[Alt]</b></code> + <b>[S]</b> kan du inte aktivera ljud igen om de har inaktiverats med detta alternativ)      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosound=no</code>" or "<code>sound=yes</code>". In both cases, may be overridden by the command-line option "<code>--sound</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nosound=no</code>" eller "<code>sound=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--sound</code>".      </p>
     </dd>
 
     <dt>
@@ -378,50 +378,50 @@
 
     <dd>
       <p>
-        Disable stereo panning support. (Useful for users with hearing impairment in one ear, or places where a single speaker or headphone is being used.)      </p>
+        Avaktivera stöd för stereopanorering. (Användbart för användare med hörselnedsättning på ett öra eller på platser där en enda högtalare eller hörlur används)      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostereo=no</code>" or "<code>stereo=yes</code>". In both cases, may be overridden by the command-line option "<code>--stereo</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nostereo=no</code>" eller "<code>stereo=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--stereo</code>".      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Interface Size</h3>
+    <h3>Gränssnittets storlek</h3>
   </header>
 
   <dl>
     <dt>
-      <code><b>buttonsize=<i>SIZE</i></b></code>
+      <code><b>buttonsize=<i>STRL</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Set the pixel size of buttons in Tux Paint's user interface (overriding the default of "48"). Useful when using very high-density displays or coarse input devices, such as eye gaze trackers.      </p>
+        Ställ in pixelstorleken på knapparna i Rita med Tuxs användargränssnitt (åsidosätter standardvärdet "48"). Användbart vid användning av skärmar med mycket hög densitet eller grova inmatningsenheter, t.ex. ögonstyrningsenheter.      </p>
 
       <p>
-        The <i>SIZE</i> value should be presented in pixels, and can be anything between 24 and 192, inclusive. Most buttons are square, and this will affect their width and height.      </p>
+        Värdet <i>STRL</i> ska anges i pixlar och kan vara allt mellan 24 och 192, inklusive. De flesta knappar är kvadratiska och detta påverkar deras bredd och höjd.      </p>
 
       <p>
-        A value of "<code>auto</code>" may be provided, and Tux Paint will choose a suitable button size based on the size of Tux Paint's window (or fullscreen display).  (For the default screen size of 800x600, it will be the default button size: "48".)      </p>
+        Ett värde på "<code>auto</code>" kan anges, och Rita med Tux väljer en lämplig knappstorlek baserat på storleken på Rita med Tuxs fönster (eller fullskärmsvisning).  (För standardskärmstorleken 800x600 kommer det att vara standardknappstorleken: "48".)      </p>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Note:</strong> If the chosen button size would cause the buttons to be too large for all required UI elements to appear under Tux Paint's chosen window size, the largest possible button size will be used. (A note will appear in <code>stderr</code>.)      </p>
+        <span title="Information">&#128161;</span>        <strong>Obs:</strong> Om den valda knappstorleken gör att knapparna blir för stora för att alla nödvändiga användargränssnittselement ska visas i den fönsterstorlek som Rita med Tux har valt, används den största möjliga knappstorleken. (En anteckning visas i <code>stderr</code>.)      </p>
     </dd>
 
     <dt>
-      <code><b>colorsrows=<i>ROWS</i></b></code>
+      <code><b>colorsrows=<i>RADER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        How many rows of color palette buttons to show; useful when using a large color palette (see "<code>colorfile</code>", above), and/or for use with coarse input devices (like eyegaze trackers).  "<code>ROWS</code>" may be between "1" (the default) and "3".      </p>
+        Hur många rader med färgpalettknappar som ska visas; användbart vid användning av en stor färgpalett (se "<code>colorfile</code>" ovan) och/eller för användning med grova inmatningsenheter (t.ex. eyegaze-trackers).  "<code>RADER</code>" kan vara mellan "1" (standard) och "3".      </p>
     </dd>
   </dl>
 </section>
   </section>
     <header>
-    <h2 id="mouse_keyboard">Mouse/Keyboard</h2>
+    <h2 id="mouse_keyboard">Mus/tangentbord</h2>
   </header>
   <section class="indent">
     <section>
@@ -436,12 +436,12 @@
 
     <dd>
       <p>
-        This disables the fancy mouse pointer shapes in Tux Paint, and uses your environment's normal mouse pointer.      </p>
+        Detta inaktiverar de snygga muspekarformerna i Rita med Tux och använder din miljös normala muspekare.      </p>
 
       <p>
-        In some enviornments, the fancy cursors cause problems. Use this option to avoid them.      </p>
+        I vissa miljöer orsakar de snygga markörerna problem. Använd det här alternativet för att undvika dem.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nofancycursors=no</code>" or "<code>fancycursors=yes</code>". In both cases, may be overridden by the command-line option "<code>--fancycursors</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nofancycursors=no</code>" eller "<code>fancycursors=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--fancycursors</code>".      </p>
     </dd>
 
     <dt>
@@ -450,19 +450,19 @@
 
     <dd>
       <p>
-        This completely hides the mouse pointer shapes in Tux Paint.      </p>
+        Detta döljer helt muspekarformerna i Rita med Tux.      </p>
 
       <p>
-        This is useful for touchscreen devices, such as tablet PCs.      </p>
+        Detta är användbart för enheter med pekskärm, t.ex. surfplattor.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>hidecursor=no</code>" or "<code>showcursor=yes</code>". In both cases, may be overridden by the command-line option "<code>--showcursor</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>hidecursor=no</code>" eller "<code>showcursor=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--showcursor</code>".      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Keyboard</h3>
+    <h3>Tangentbord</h3>
   </header>
 
   <dl>
@@ -472,12 +472,12 @@
 
     <dd>
       <p>
-        This disable keyboard shortcuts (e.g., <b>[Ctrl]-[S]</b> for save, <b>[Ctrl]-[N]</b> for a new image, etc.)      </p>
+        Detta inaktiverar kortkommandon (t.ex. <b>[Ctrl]-[S]</b> för spara, <b>[Ctrl]-[N]</b> för en ny bild etc.)      </p>
 
       <p>
-        This is useful to prevent unwanted commands from being activated by children who aren't experienced with keyboards.      </p>
+        Detta är användbart för att förhindra att oönskade kommandon aktiveras av barn som inte är vana vid tangentbord.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshortcuts=no</code>" or "<code>shortcuts=yes</code>". In both cases, may be overridden by the command-line option "<code>--shortcuts</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>noshortcuts=no</code>" eller "<code>shortcuts=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--shortcuts</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -494,12 +494,12 @@
 
     <dd>
       <p>
-        Tux Paint will attempt to 'grab' the mouse and keyboard, so that the mouse is confined to Tux Paint's window, and nearly all keyboard input is passed directly to it.      </p>
+        Rita med Tux kommer att försöka "ta tag i" musen och tangentbordet så att musen begränsas till Rita med Tux-fönstret och nästan all tangentbordsinmatning skickas direkt till den.      </p>
 
       <p>
-        This is useful to disable operating system actions that could get the user out of Tux Paint <b>[Alt]-[Tab]</b> window cycling, <b>[Ctrl]-[Escape]</b>, etc. This is especially useful in fullscreen mode.      </p>
+        Detta är användbart för att inaktivera åtgärder i operativsystemet som kan få användaren att lämna Rita med Tux <b>[Alt]-[Tab]</b> fönstercykling, <b>[Ctrl]-[Escape]</b>, etc. Detta är särskilt användbart i helskärmsläge.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>grab=no</code>" or "<code>dontgrab=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontgrab</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>grab=no</code>" eller "<code>dontgrab=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--dontgrab</code>".      </p>
     </dd>
 
     <dt>
@@ -508,9 +508,9 @@
 
     <dd>
       <p>
-        This disables support for the wheel on mice that have it. (Normally, the wheel will scroll the selector menu on the right.)      </p>
+        Detta inaktiverar stöd för hjulet på möss som har det. (Normalt kommer hjulet att rulla väljaren menyn till höger)      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nowheelmouse=no</code>" or "<code>wheelmouse=yes</code>". In both cases, may be overridden by the command-line option "<code>--wheelmouse</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nowheelmouse=no</code>" eller "<code>wheelmouse=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--wheelmouse</code>".      </p>
     </dd>
 
     <dt>
@@ -519,20 +519,20 @@
 
     <dd>
       <p>
-        For children who have trouble with the mouse, this distinction between the two or three buttons on a mouse may be disabled by using this option.      </p>
+        För barn som har problem med musen kan denna skillnad mellan de två eller tre knapparna på en mus inaktiveras med hjälp av detta alternativ.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nobuttondistinction=no</code>" or "<code>buttondistinction=yes</code>". In both cases, may be overridden by the command-line option "<code>--buttondistinction</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nobuttondistinction=no</code>" eller "<code>buttondistinction=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--buttondistinction</code>".      </p>
     </dd>
   </dl>
 </section>
   </section>
     <header>
-    <h2 id="simplification">Simplification</h2>
+    <h2 id="simplification">Förenkling</h2>
   </header>
   <section class="indent">
     <section>
   <header>
-    <h3>Interface Simplification</h3>
+    <h3>Förenkling av gränssnitt</h3>
   </header>
 
   <dl>
@@ -542,9 +542,9 @@
 
     <dd>
       <p>
-        Disable the rotation step of the 'Shape' tool. Click, drag and release is all that will be needed to draw a shape.      </p>
+        Inaktivera rotationssteget i verktyget "Shape". Klicka, dra och släpp - det är allt som behövs för att rita en form.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>simpleshapes=no</code>" or "<code>complexshapes=yes</code>". In both cases, may be overridden by the command-line option "<code>--complexshapes</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>simpleshapes=no</code>" eller "<code>complexshapes=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--complexshapes</code>".      </p>
     </dd>
 
     <dt>
@@ -553,12 +553,12 @@
 
     <dd>
       <p>
-        In this mode, much simpler outlines and 'rubber-band' lines are displayed when using the <b>Lines</b>, <b>Shapes</b>, <b>Stamps</b> and <b>Eraser</b> tools.      </p>
+        I det här läget visas mycket enklare konturer och "gummibandslinjer" när du använder verktygen <b>Lines</b>, <b>Shapes</b>, <b>Stamps</b> och <b>Eraser</b>.      </p>
 
       <p>
-        This can help when Tux Paint is run on very slow computers, or displayed on a remote X-Window display.      </p>
+        Detta kan vara till hjälp när Rita med Tux körs på mycket långsamma datorer eller visas på en fjärrskärm i X-Window.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nooutlines=no</code>" or "<code>outlines=yes</code>". In both cases, may be overridden by the command-line option "<code>--outlines</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nooutlines=no</code>" eller "<code>outlines=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--outlines</code>".      </p>
     </dd>
 
     <dt>
@@ -567,36 +567,36 @@
 
     <dd>
       <p>
-        All text will be rendered only in uppercase (e.g., "Brush" will be "BRUSH"). Useful for children who can read, but who have only learned uppercase letters so far.      </p>
+        All text återges endast med versaler (t.ex. "Brush" blir "BRUSH"). Användbart för barn som kan läsa, men som hittills bara har lärt sig versaler.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>uppercase=no</code>" or "<code>mixedcase=yes</code>". In both cases, may be overridden by the command-line option "<code>--mixedcase</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>uppercase=no</code>" eller "<code>mixedcase=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--mixedcase</code>".      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Initial Stamp Size</h3>
+    <h3>Initial stämpelstorlek</h3>
   </header>
 
   <dl>
     <dt>
-      <code><b>stampsize=<i>SIZE</i></b></code>
+      <code><b>stampsize=<i>STRL</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Use this option to force Tux Paint to set the starting size of all stamps. The <code>SIZE</code> value should be between 0 (smallest) and 10 (largest). The size is relative to the available sizes of the stamp, which depends on the stamp itself, and Tux Paint's current canvas size.      </p>
+        Använd detta alternativ för att tvinga Rita med Tux att ställa in startstorleken för alla frimärken. Värdet <code>STRL</code> bör ligga mellan 0 (minst) och 10 (störst). Storleken är relativ till de tillgängliga storlekarna på stämpeln, vilket beror på själva stämpeln och Rita med Tuxs aktuella canvasstorlek.      </p>
 
       <p>
-        Specify "<code>default</code>" to let Tux Paint decide (its standard behavior).      </p>
+        Ange "<code>default</code>" för att låta Rita med Tux bestämma (standardbeteende).      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Control Simplification</h3>
+    <h3>Förenkling av styrning</h3>
   </header>
 
   <dl>
@@ -606,16 +606,16 @@
 
     <dd>
       <p>
-        Disable the on-screen "Quit" button and prevent the <b>[Escape]</b> key from quitting Tux Paint.      </p>
+        Inaktivera "Avsluta"-knappen på skärmen och förhindra att <b>[Avsluta meny]</b>-tangenten avslutar Rita med Tux.      </p>
 
       <p>
-        Using the <code><b>[Alt]</b></code> + <code><b>[F4]</b></code> keyboard combination or clicking the window's close button (assuming you're not in fullscreen mode) still works to quit Tux Paint.      </p>
+        Att använda tangentbordskombinationen <code><b>[Alt]</b></code> + <code><b>[F4]</b></code> eller klicka på fönstrets stängknapp (förutsatt att du inte är i helskärmsläge) fungerar fortfarande för att avsluta Rita med Tux.      </p>
 
       <p>
-        You can also use the following keyboard combination to quit: <b>[Shift]</b> + <b>[Kontroll]</b> + <b>[Escape]</b>.      </p>
+        Du kan också använda följande tangentbordskombination för att avsluta: <b>[Skift]</b> + <b>[Kontroll]</b> + <b>[Avsluta meny]</b>.      </p>
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noquit=no</code>" or "<code>quit=yes</code>". In both cases, may be overridden by the command-line option "<code>--quit</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>noquit=no</code>" eller "<code>quit=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--quit</code>".      </p>
     </dd>
 
     <dt>
@@ -624,12 +624,12 @@
 
     <dd>
       <p>
-        This option tells Tux Paint to not load any rubber stamp images, which in turn ends up disabling the <b>Stamps</b> tool.      </p>
+        Detta alternativ talar om för Rita med Tux att inte ladda några stämpelbilder, vilket i sin tur slutar inaktivera <b>stämpelverktyget</b>.      </p>
 
       <p>
-        This can speed up Tux Paint when it first loads up, and reduce memory usage while it's running. Of course, no stamps will be available at all.      </p>
+        Detta kan snabba upp Rita med Tux när det först laddas upp och minska minnesanvändningen medan det körs. Naturligtvis kommer inga stämplar att vara tillgängliga alls.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostamps=no</code>" or "<code>stamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--stamps</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nostamps=no</code>" eller "<code>stamps=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--stamps</code>".      </p>
     </dd>
 
     <dt>
@@ -638,9 +638,9 @@
 
     <dd>
       <p>
-        Some images in the <b>Stamps</b> tool can be mirrored, flipped, and/or have their size changed. This option disables the controls, and only provides the basic stamps.      </p>
+        Vissa bilder i verktyget <b>Stämplar</b> kan speglas, vändas och/eller få ändrad storlek. Detta alternativ inaktiverar kontrollerna och ger endast de grundläggande stämplarna.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostampcontrols=no</code>" or "<code>stampcontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--stampcontrols</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nostampcontrols=no</code>" eller "<code>stampcontrols=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--stampcontrols</code>".      </p>
     </dd>
 
     <dt>
@@ -649,11 +649,11 @@
 
     <dd>
       <p>
-        This disables the rotation step of the <b>Stamps</b> tool, immediately placing the stamp in its regular orientation (with any flipping or mirroring applied) on the first click.      </p>
+        Detta inaktiverar rotationssteget i verktyget <b>Stamps</b> och placerar omedelbart stämpeln i dess vanliga orientering (med eventuell vändning eller spegling) vid första klicket.      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The stamp rotation feature was added to Tux Paint in version 0.9.29.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Funktionen för frimärksrotation lades till i Rita med Tux i version 0.9.29.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nostamprotation=no</code>" or "<code>stamprotation=yes</code>". In both cases, may be overridden by the command-line option "<code>--stamprotation</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nostamprotation=no</code>" eller "<code>stamprotation=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--stamprotation</code>".      </p>
     </dd>
 
     <dt>
@@ -662,9 +662,9 @@
 
     <dd>
       <p>
-        Some <b>Magic</b> tools have the option of acting like a paintbrush, or affecting the entire canvas at once. This option disables the controls, and only provides the default functionality (usually paint-mode).      </p>
+        Vissa <b>Magic-verktyg</b> har möjlighet att fungera som en pensel eller påverka hela duken på en gång. Detta alternativ inaktiverar kontrollerna och ger endast standardfunktionen (vanligtvis färgläge).      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nomagiccontrols=no</code>" or "<code>magiccontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--magiccontrols</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nomagiccontrols=no</code>" eller "<code>magiccontrols=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--magiccontrols</code>".      </p>
     </dd>
 
     <dt>
@@ -673,9 +673,9 @@
 
     <dd>
       <p>
-        Some <b>Magic</b> tools offer various size settings. This option disables the sizing control, and only provides the tools' default sizes. (Some plugins may offer additional variations of a Magic tool, to make a few sizes possible, e.g. "Bricks" and "Googly Eyes".)      </p>
+        Vissa <b>Magic-verktyg</b> erbjuder olika storleksinställningar. Det här alternativet inaktiverar storlekskontrollen och ger endast verktygens standardstorlekar. (Vissa plugins kan erbjuda ytterligare varianter av ett magiskt verktyg för att göra några storlekar möjliga, t.ex. "tegelstenar" och "googly Eyes")      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nomagicsizes=no</code>" or "<code>magicsizes=yes</code>". In both cases, may be overridden by the command-line option "<code>--magicsizes</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nomagicsizes=no</code>" eller "<code>magicsizes=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--magicsizes</code>".      </p>
     </dd>
 
     <dt>
@@ -684,11 +684,11 @@
 
     <dd>
       <p>
-        By default, the <b>Magic</b> tools in Tux Paint are organized into groups of similar tools (e.g., all of the color, saturation, darken/lighten tools together).  This option removes the grouping, and places all of the tools in one long list.      </p>
+        Som standard är de <b>magiska</b> verktygen i Rita med Tux organiserade i grupper med liknande verktyg (t.ex. alla verktyg för färg, mättnad och mörkare/ljusare tillsammans).  Detta alternativ tar bort gruppindelningen och placerar alla verktyg i en lång lista.      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> Magic tool groups were added in Tux Paint 0.9.27.  The option to disable grouping was added to Tux Paint in version 0.9.33.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Grupper för magiska verktyg lades till i Rita med Tux 0.9.27.  Möjligheten att inaktivera gruppering lades till i Rita med Tux i version 0.9.33.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>ungroupmagictools=no</code>" or "<code>groupmagictools=yes</code>". In both cases, may be overridden by the command-line option "<code>--groupmagictools</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>ungroupmagictools=no</code>" eller "<code>groupmagictools=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--groupmagictools</code>".      </p>
     </dd>
 
     <dt>
@@ -697,9 +697,9 @@
 
     <dd>
       <p>
-        Disable the control buttons shown when using the <b>Shapes</b> tool that allow changing how shapes are drawn — centered around the initial mouse click, or with a corner at the initial mouse click.      </p>
+        Inaktivera de kontrollknappar som visas när du använder verktyget <b>Shapes</b> och som gör det möjligt att ändra hur former ritas - centrerade runt det första musklicket eller med ett hörn vid det första musklicket.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noshapecontrols=no</code>" or "<code>shapecontrols=yes</code>". In both cases, may be overridden by the command-line option "<code>--shapecontrols</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>noshapecontrols=no</code>" eller "<code>shapecontrols=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--shapecontrols</code>".      </p>
     </dd>
 
     <dt>
@@ -708,9 +708,9 @@
 
     <dd>
       <p>
-        Disables the <b>Label</b> tool: the tool that allows text entry which can be edited later.      </p>
+        Inaktiverar <b>etikettverktyget</b>: det verktyg som gör det möjligt att skriva in text som kan redigeras senare.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolabel=no</code>" or "<code>label=yes</code>". In both cases, may be overridden by the command-line option "<code>--label</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nolabel=no</code>" eller "<code>label=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--label</code>".      </p>
     </dd>
 
     <dt>
@@ -719,34 +719,34 @@
 
     <dd>
       <p>
-        Disables the <a href="README.html#brush_spacing">brush spacing</a> option of the <a href="README.html#using_tools_drawing_paint"><b>Paint</b></a> and <a href="using_tools_drawing_lines"><b>Lines</b></a> tools. The brushes' default spacings will be used.      </p>
+        Inaktiverar alternativet för <a href="README.html#brush_spacing">penselavstånd</a> i <a href="README.html#using_tools_drawing_paint"><b>Måla</b></a> och <a href="using_tools_drawing_lines"><b>Linjer</b></a> verktygen. Penslarnas standardavstånd kommer att användas.      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The brush spacing option was added to Tux Paint's user interface in version 0.9.28. For more information on brush spacing, see <a href="EXTENDING.html">EXTENDING.html</a>      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Alternativet för penselavstånd lades till i Rita med Tuxs användargränssnitt i version 0.9.28. För mer information om penselavstånd, se <a href="EXTENDING.html">EXTENDING.html</a>      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nobrushspacing=no</code>" or "<code>brushspacing=yes</code>". In both cases, may be overridden by the command-line option "<code>--brushspacing</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nobrushspacing=no</code>" eller "<code>brushspacing=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--brushspacing</code>".      </p>
     </dd>
 
     <dt>
-      <code><b>complexity=<i>COMPLEXITY</i></b></code>
+      <code><b>complexity=<i>Komplexitet:</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Sets the complexity (expertise) level of Tux Paint, which can either disable some Magic tools, or cause them to operate differently. (For example, the "Clone" tool is not available in <em>novice</em> mode, and the 1-, 2-, and 3-point perspective tools do not allow vanishing points to be edited in <em>beginner</em> mode.)      </p>
+        Ställer in komplexitetsnivån (expertisnivån) för Rita med Tux, vilket antingen kan inaktivera vissa Magic-verktyg eller få dem att fungera annorlunda. (Verktyget "Clone" är t.ex. inte tillgängligt i <em>nybörjarläget</em>, och verktygen för 1-, 2- och 3-punktsperspektiv gör det inte möjligt att redigera försvinnande punkter i <em>nybörjarläget</em> )      </p>
       <p>
-        The <code>COMPLEXITY</code> value may be one of:        <dl>
-          <dt><code>advanced</code> (the default)</dt>
-          <dd>"Advanced" &mdash; For users familiar with Tux Paint and who can operate more complex tools.</dd>
+        Värdet <code>Komplexitet:</code> kan vara ett av följande:        <dl>
+          <dt><code>advanced</code> NEJ (STANDARD)</dt>
+          <dd>"Advanced" - För användare som är bekanta med Rita med Tux och som kan använda mer komplexa verktyg.</dd>
           <dt><code>beginner</code></dt>
-          <dd>"Beginner" &mdash; For users comfortable with Tux Paint, but where complex tools may cause confusion or frustration.</dd>
+          <dd>"Nybörjare" - För användare som är bekväma med Rita med Tux, men där komplexa verktyg kan orsaka förvirring eller frustration.</dd>
           <dt><code>novice</code></dt>
-          <dd>"Novice" &mdash; For first-time Tux Paint users, users inexperienced with computers, or those with special accessibility needs.</dd>
+          <dd>"Novice" - För förstagångsanvändare av Rita med Tux, användare utan datorvana eller användare med särskilda tillgänglighetsbehov.</dd>
         </dl>
       </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The complexity option was added to Tux Paint in version 0.9.32. Consult the <a href="magic-docs/html/index.html">individual Magic tools' documentation</a>.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Alternativet komplexitet lades till i Rita med Tux i version 0.9.32. Se <a href="magic-docs/html/index.html">dokumentationen för de enskilda Magic-verktygen</a>.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>complexity=advanced</code>". In both cases, may be overridden by the command-line option "<code>--complexity=advanced</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med "<code>complexity=advanced</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--complexity=advanced</code>".      </p>
     </dd>
 
     <dt>
@@ -755,11 +755,11 @@
 
     <dd>
       <p>
-        Disables the ability to create a new <a href="README.html#using_tools_other_new">Template</a> image (based on a saved drawing) from within the <a href="README.html#using_tools_other_open"><strong>Open</strong></a> dialog.      </p>
+        Inaktiverar möjligheten att skapa en ny <a href="README.html#using_tools_other_new">mallbild</a> (baserad på en sparad ritning) från <a href="README.html#using_tools_other_open"><strong>Öppna</strong></a> dialogrutan.      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> The Template creation feature was added to Tux Paint in version 0.9.31.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Funktionen för att skapa mallar lades till i Rita med Tux i version 0.9.31.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>notemplateexport=no</code>" or "<code>templateexport=yes</code>". In both cases, may be overridden by the command-line option "<code>--templateexport</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>notemplateexport=no</code>" eller "<code>templateexport=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--templateexport</code>".      </p>
     </dd>
 
     <dt>
@@ -768,39 +768,39 @@
 
     <dd>
       <p>
-        Disables the ability to erase saved drawings via the "Erase" button on the <a href="README.html#using_tools_other_open"><strong>Open</strong></a> dialog, or exported <a href="README.html#using_tools_other_new">Template</a> images (based on a saved drawing) via the "Erase" button on the <a href="README.html#using_tools_other_new">New</a> dialog. Useful to prevent users from erasing work, especially combined with the <a href="#saving"><code>--saveovernew</code></a> option.      </p>
+        Inaktiverar möjligheten att radera sparade ritningar via knappen "Erase" på <a href="README.html#using_tools_other_open"><strong>Öppna</strong></a> eller exporterade <a href="README.html#using_tools_other_new">mallbilder</a> (baserade på en sparad ritning) via knappen "Erase" i dialogrutan <a href="README.html#using_tools_other_new">New.</a> Användbart för att hindra användare från att radera arbete, särskilt i kombination med <a href="#saving"><code>--sparapånytt</code></a> alternativet.      </p>
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> This option was added to Tux Paint in version 0.9.31.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Detta alternativ lades till i Rita med Tux i version 0.9.31.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>noerase=no</code>" or "<code>erase=yes</code>". In both cases, may be overridden by the command-line option "<code>--erase</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>noerase=no</code>" eller "<code>erase=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--erase</code>".      </p>
     </dd>
   </dl>
 </section>
   </section>
     <header>
-    <h2 id="languages">Languages</h2>
+    <h2 id="languages">Språk</h2>
   </header>
   <section class="indent">
     <section>
   <header>
-    <h3>Language</h3>
+    <h3>Språk</h3>
   </header>
 
   <dl>
     <dt>
-      <code><b>lang=<i>LANGUAGE</i></b></code>
+      <code><b>lang=<i>SPRÅK</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Run Tux Paint in one of the supported languages. Possible choices for <i>LANGUAGE</i> currently include:      </p>
+        Kör Rita med Tux på ett av de språk som stöds. Möjliga val för <i>LANGUAGE</i> inkluderar för närvarande:      </p>
 
       <blockquote>
         <table border="1"
                cellspacing="0"
                cellpadding="2"
                summary=
-               "Possible values for 'lang' language setting">
+               "Möjliga värden för 'lang' språkinställning">
             <tr>
     <td><!-- lang_arg --><code>english</code></td>
     <td><!-- lang_arg --><code>american-english</code></td>
@@ -1447,10 +1447,10 @@
 
     <dd>
       <p>
-        Run Tux Paint in one of the support languages. See the "<i><a href="#different_language">Choosing a Different Language</a></i>" section below for the locale strings (e.g., "<code>de_DE</code>" for German) to use.      </p>
+        Kör Rita med Tux på ett av de språk som stöds. Se avsnittet "<i><a href="#different_language">Välja ett annat språk</a></i>" nedan för de lokala strängarna (t.ex. "<code>de_DE</code>" för tyska) som ska användas.      </p>
 
       <p>
-        (If your locale is already set, e.g. with the "<code>$LANG</code>" environment variable, this option is not necessary, since Tux Paint honors your environment's setting, if possible.)      </p>
+        (Om din locale redan är inställd, t.ex. med miljövariabeln "<code>$LANG</code>", är det här alternativet inte nödvändigt eftersom Rita med Tux om möjligt följer din miljöinställning)      </p>
     </dd>
 
     <dt>
@@ -1459,19 +1459,19 @@
 
     <dd>
       <p>
-        For stamps that can be mirrored, this option sets them to their mirrored shape by default.      </p>
+        För stämplar som kan speglas innebär det här alternativet att de som standard får den spegelvända formen.      </p>
 
       <p>
-        This can be useful for people who prefer things right-to-left, rather than left-to-right.      </p>
+        Detta kan vara användbart för personer som föredrar saker från höger till vänster snarare än från vänster till höger.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>mirrorstamps=no</code>" or "<code>dontmirrorstamps=yes</code>". In both cases, may be overridden by the command-line option "<code>--dontmirrorstamps</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>mirrorstamps=no</code>" eller "<code>dontmirrorstamps=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--dontmirrorstamps</code>".      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3 id="fonts">Fonts</h3>
+    <h3 id="fonts">Typsnitt</h3>
   </header>
 
   <dl>
@@ -1481,9 +1481,9 @@
 
     <dd>
       <p>
-        This option causes Tux Paint to attempt to load fonts (for use in the <b>Text</b> tool) from your operating system. Normally, Tux Paint will only load the ones that came bundled with Tux Paint.      </p>
+        Detta alternativ gör att Rita med Tux försöker ladda in teckensnitt (för användning i <b>textverktyget</b> ) från operativsystemet. Normalt laddar Rita med Tux bara de teckensnitt som medföljer Rita med Tux.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>sysfonts=no</code>" or "<code>nosysfonts=yes</code>". In both cases, may be overridden by the command-line option "<code>--nosysfonts</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>sysfonts=no</code>" eller "<code>nosysfonts=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--nosysfonts</code>".      </p>
     </dd>
 
     <dt>
@@ -1492,12 +1492,12 @@
 
     <dd>
       <p>
-        Prior to version 0.9.21, Tux Paint loaded all fonts in its own fonts directory, including locale-specific ones (e.g., the one for Tibetan, which had no latin characters). As of 0.9.21, the only font loaded from the locale-specific subdirectory, if any, is one matching the locale Tux Paint is running on.      </p>
+        Före version 0.9.21 laddade Rita med Tux alla teckensnitt i sin egen teckensnittskatalog, inklusive lokalspecifika (t.ex. den för tibetanska, som inte hade några latinska tecken). Från och med 0.9.21 är det enda teckensnittet som laddas från den lokalspecifika underkatalogen, om det finns något, ett som matchar den lokal som Rita med Tux körs på.      </p>
 
       <p>
-        To load all locale-specific fonts (the old behavior), set this option.      </p>
+        Om du vill ladda alla lokalspecifika teckensnitt (det gamla beteendet) anger du detta alternativ.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>alllocalefonts=no</code>" or "<code>currentlocalefont=yes</code>". In both cases, may be overridden by the command-line option "<code>--currentlocalefont</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>alllocalefonts=no</code>" eller "<code>currentlocalefont=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--currentlocalefont</code>".      </p>
     </dd>
 
     <dt>
@@ -1506,21 +1506,21 @@
 
     <dd>
       <p>
-        This option causes Tux Paint to attempt to load fonts (for use in the <b>Text</b> tool) from your operating system. Normally, Tux Paint will only load the ones that came bundled with Tux Paint.      </p>
+        Detta alternativ gör att Rita med Tux försöker ladda in teckensnitt (för användning i <b>textverktyget</b> ) från operativsystemet. Normalt laddar Rita med Tux bara de teckensnitt som medföljer Rita med Tux.      </p>
 
       <p>
-        Specify "<code>default</code>" to let Tux Paint use its default font, "DejaVu Sans" (its standard behavior).      </p>
+        Ange "<code>default</code>" för att låta Rita med Tux använda sitt standardteckensnitt, "DejaVu Sans" (standardbeteende).      </p>
     </dd>
   </dl>
 </section>
   </section>
     <header>
-    <h2 id="printing">Printing</h2>
+    <h2 id="printing">Skriver ut</h2>
   </header>
   <section class="indent">
     <section>
   <header>
-    <h3>Print Permissions</h3>
+    <h3>Skriv ut behörigheter</h3>
   </header>
 
   <dl>
@@ -1530,26 +1530,26 @@
 
     <dd>
       <p>
-        Disable the printing feature.      </p>
+        Inaktivera utskriftsfunktionen.      </p>
     </dd>
 
     <dt>
-        <code><b>printdelay=<i>SECONDS</i></b></code>
+        <code><b>printdelay=<i>SEKUNDER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Restrict printing so that printing can occur only once every <i>SECONDS</i> seconds.      </p>
+        Begränsa utskriften så att den endast kan ske en gång var <i>SEKUNDER</i> sekund.      </p>
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printdelay=0</code>". In both cases, may be overridden by the command-line option "<code>--printdelay=0</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med "<code>printdelay=0</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--printdelay=0</code>".      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Show Printer Dialog</h3>
+    <h3>Visa dialogruta för skrivare</h3>
   </header>
 
   <dl>
@@ -1559,7 +1559,7 @@
 
     <dd>
       <p>
-        This causes Tux Paint to always show the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it's like clicking 'Print' while holding <code><b>[Alt]</b></code>, except you don't need to hold <code><b>[Alt]</b></code> every time.      </p>
+        Detta gör att Rita med Tux alltid visar skrivardialogen (eller, på Linux/Unix, kör "altprintcommand") när man klickar på "Print"-knappen. Med andra ord, det är som att klicka på "Print" medan du håller in <code><b>[Alt]</b></code>, förutom att du inte behöver hålla in <code><b>[Alt]</b></code> varje gång.      </p>
     </dd>
 
     <dt>
@@ -1568,7 +1568,7 @@
 
     <dd>
       <p>
-        This prevents Tux Paint from <i>ever</i> showing the printer dialog (or, on Linux/Unix, run the "altprintcommand") when the 'Print' button is clicked. In other words, it makes the <code><b>[Alt]</b></code> key have no effect when clicking the 'Print' button.      </p>
+        Detta förhindrar Rita med Tux från att <i>någonsin</i> visa skrivardialogen (eller, på Linux/Unix, köra "altprintcommand") när man klickar på "Print"-knappen. Med andra ord får tangenten <code><b>[Alt]</b></code> ingen effekt när man klickar på "Print"-knappen.      </p>
     </dd>
 
     <dt>
@@ -1577,14 +1577,14 @@
 
     <dd>
       <p>
-        This is the normal, default behavior. Tux Paint shows a printer dialog (or, on Linux/Unix, runs the "altprintcommand"), when the <code><b>[Alt]</b></code> key is pressed while the 'Print' button is clicked. Clicking 'Print' without holding <code><b>[Alt]</b></code> prints without showing a dialog.      </p>
+        Detta är det normala standardbeteendet. Rita med Tux visar en skrivardialog (eller, under Linux/Unix, kör "altprintcommand") när tangenten <code><b>[Alt]</b></code> hålls nedtryckt samtidigt som man klickar på knappen "Print". Om du klickar på "Print" utan att hålla in <code><b>[Alt]</b></code> skrivs ut utan att en dialogruta visas.      </p>
     </dd>
 
   </dl>
 </blockquote>
 
 <h3>
-  Save Printer Configuration</h3>
+  Spara skrivarens konfiguration</h3>
 
 <blockquote>
   <dl>
@@ -1598,16 +1598,16 @@
       </p>
 
       <p>
-        Tux Paint will use a printer configuration file when printing. Push the <code><b>[Alt]</b></code> key while clicking the 'Print' button in Tux Paint to cause a Windows print dialog window to appear.      </p>
+        Rita med Tux använder en konfigurationsfil för skrivaren vid utskrift. Tryck på tangenten <code><b>[Alt]</b></code> samtidigt som du klickar på knappen "Skriv ut" i Rita med Tux för att få fram ett dialogfönster för utskrift i Windows.      </p>
 
       <p>
-        Any configuration changes made in this dialog will be saved to the file "<code>userdata/print.cfg</code>" , and used again, as long as the "printcfg" option is set.      </p>
+        Alla konfigurationsändringar som görs i denna dialog sparas i filen "<code>userdata/print.cfg</code>" och kan användas igen så länge alternativet "printcfg" är inställt.      </p>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Note:</strong> This only works when not running Tux Paint in fullscreen mode.      </p>
+        <span title="Information">&#128161;</span>        <strong>Obs:</strong> Detta fungerar bara när du inte kör Rita med Tux i helskärmsläge.      </p>
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>printcfg=no</code>" or "<code>noprintcfg=yes</code>". In both cases, may be overridden by the command-line option "<code>--noprintcfg</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>printcfg=no</code>" eller "<code>noprintcfg=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--noprintcfg</code>".      </p>
     </dd>
 
   </dl>
@@ -1615,7 +1615,7 @@
 
 <section>
   <header>
-    <h3>Print Commands</h3>
+    <h3>Kommandon för utskrift</h3>
   </header>
 
   <dl>
@@ -1625,11 +1625,11 @@
 
     <dd>
       <p>
-        <i>(Linux and Unix only)</i>
+        <i>(endast Linux och Unix)</i>
       </p>
 
       <p>
-        Use the command <i>KOMMANDO</i> to print a PostScript format file when the 'Print' button is clicked. If this option is not specifically not set, the default command is:      </p>
+        Använd kommandot <i>KOMMANDO</i> för att skriva ut en fil i PostScript-format när du klickar på knappen "Skriv ut". Om det här alternativet inte är specifikt inställt är standardkommandot:      </p>
 
       <blockquote>
         <code>lpr</code>
@@ -1642,14 +1642,14 @@
 
     <dd>
       <p>
-        <i>(Linux and Unix only)</i>
+        <i>(endast Linux och Unix)</i>
       </p>
 
       <p>
-        Use the command <i>KOMMANDO</i> to print a PostScript format file when the 'Print' button is clicked while the <code><b>[Alt]</b></code> modifier key is being held. (This is typically used for providing a print dialog, similar to when pressing <code><b>[Alt]</b></code>+'Print' in Windows and macOS.)      </p>
+        Använd kommandot <i>KOMMANDO</i> för att skriva ut en fil i PostScript-format när du klickar på knappen "Skriv ut" samtidigt som du håller in modifieringstangenten <code><b>[Alt]</b></code>. (Detta används vanligtvis för att skapa en utskriftsdialog, på samma sätt som när du trycker på <code><b>[Alt]</b></code>+'Print' i Windows och macOS)      </p>
 
       <p>
-        If this option is not specifically not set, the default command is KDE's graphical print dialog:      </p>
+        Om det här alternativet inte är specifikt inställt, är standardkommandot KDE:s grafiska utskriftsdialog:      </p>
 
       <blockquote>
         <code>kprinter</code>
@@ -1671,26 +1671,26 @@
 
     <dd>
       <p>
-        <i>(Platforms that use Tux Paint's internal PostScript generator — not Windows, macOS, BeOS, or Haiku.)</i>
+        <i>(Plattformar som använder Rita med Tuxs interna PostScript-generator - inte Windows, macOS, BeOS eller Haiku)</i>
       </p>
 
       <p>
-        Tell Tux Paint what size PostScript to generate. If none is specified, Tux Paint first checks your <code>$PAPER</code> environment variable, then the file <code>/etc/papersize</code>, then uses the the 'libpaper' library's default paper size.      </p>
+        Tala om för Rita med Tux vilken storlek på PostScript som ska genereras. Om ingen anges kontrollerar Rita med Tux först miljövariabeln <code>$PAPER</code>, sedan filen <code>/etc/papersize</code> och använder sedan standardpappersstorleken i biblioteket 'libpaper'.      </p>
 
       <p>
-        Valid paper sizes include: letter, legal, tabloid, executive, note, statement, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive, halfnote, folio, quarto, ledger, archA, archB, archC, archD, archE, flsa, flse, csheet, dsheet, esheet.      </p>
+        Giltiga pappersstorlekar inkluderar: letter, legal, tabloid, executive, note, statement, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, b0, b1, b2 b3, b4, 10x14, 11x17, halfletter, halfexecutive, halfnote, folio, quarto, ledger, archA, archB, archC, archD, archE, flsa, flse, csheet, dsheet, esheet.      </p>
     </dd>
 
   </dl>
 </section>
   </section>
     <header>
-    <h2 id="saving">Saving</h2>
+    <h2 id="saving">Sparar</h2>
   </header>
   <section class="indent">
     <section>
   <header>
-    <h3>Save Over Earlier Work</h3>
+    <h3>Spara över tidigare arbete</h3>
   </header>
 
   <dl>
@@ -1700,7 +1700,7 @@
 
     <dd>
       <p>
-        This disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. With this option, the older version will always be replaced by the new version, automatically.      </p>
+        Detta inaktiverar frågan<i>"Spara över den gamla versionen...?</i>" när en befintlig fil sparas. Med detta alternativ kommer den äldre versionen alltid att ersättas av den nya versionen automatiskt.      </p>
     </dd>
 
     <dt>
@@ -1709,7 +1709,7 @@
 
     <dd>
       <p>
-        This also disables the "<i>Save over the old version...?</i>" prompt when saving an existing file. This option, however, will always save a new file, rather than overwrite the older version.      </p>
+        Detta inaktiverar också frågan<i>"Spara över den gamla versionen...?</i>" när du sparar en befintlig fil. Detta alternativ kommer dock alltid att spara en ny fil i stället för att skriva över den äldre versionen.      </p>
     </dd>
 
     <dt>
@@ -1718,15 +1718,15 @@
 
     <dd>
       <p>
-        <i>(This option is redundant, since this is the default.)</i>
-      When saving an existing drawing, you will be first asked whether to save over the older version or not.      </p>
+        <i>(Detta alternativ är överflödigt eftersom det är standardinställningen)</i>
+      När du sparar en befintlig ritning får du först frågan om du vill spara över den äldre versionen eller inte.      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Starting Out</h3>
+    <h3>Börja om</h3>
   </header>
 
   <dl>
@@ -1736,9 +1736,9 @@
 
     <dd>
       <p>
-        This causes Tux Paint to display a blank canvas when it first starts up, rather than loading the last image that was being edited.      </p>
+        Detta gör att Rita med Tux visar en tom bild när den startas första gången, i stället för att ladda den senaste bilden som redigerades.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>startblank=no</code>" or "<code>startlast=yes</code>". In both cases, may be overridden by the command-line option "<code>--startlast</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>startblank=no</code>" eller "<code>startlast=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--startlast</code>".      </p>
     </dd>
 
     <dt>
@@ -1747,9 +1747,9 @@
 
     <dd>
       <p>
-        Places the blank color options in the <b>New</b> dialog at the end, so that any Starters and/or Templates are shown first.      </p>
+        Placerar de tomma färgalternativen i dialogrutan <b>Ny</b> i slutet, så att eventuella starters och/eller mallar visas först.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>newcolorslast=no</code>" or "<code>newcolorsfirst=yes</code>". In both cases, may be overridden by the command-line option "<code>--newcolorsfirst</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>newcolorslast=no</code>" eller "<code>newcolorsfirst=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--newcolorsfirst</code>".      </p>
     </dd>
 
   </dl>
@@ -1757,7 +1757,7 @@
 
 <section>
   <header>
-    <h3>Save and Export Directories</h3>
+    <h3>Spara och exportera kataloger</h3>
   </header>
 
   <dl>
@@ -1767,15 +1767,15 @@
 
     <dd>
       <p>
-        Use this option to change where Tux Paint's "<code>saved</code>" directory/folder is located, which is where Tux Paint saves and opens pictures.      </p>
+        Använd det här alternativet för att ändra var Rita med Tuxs katalog/mapp "<code>saved</code>" finns, där Rita med Tux sparar och öppnar bilder.      </p>
 
       <p>
-        If you do not override it, the <b><i>default</i></b> location is:      </p>
+        Om du inte åsidosätter den, kommer <b><i>standard</i></b> plats:      </p>
 
       <dl>
         <dt>Linux / Unix</dt>
         <dd>
-          Under a hidden directory in your home directory:<br/>
+          Under en dold katalog i din hemkatalog:<br/>
           <nobr><code style='background: #EEE;'>/home/<i>användarnamn</i>/.tuxpaint/saved/</code></nobr>        </dd>
 
         <dt>Windows</dt>
@@ -1784,7 +1784,7 @@
 
         <dt>macOS</dt>
         <dd>
-          <nobr><code style='background: #EEE;'>/Användare/<i>användarnamn</i>/Bibliotek/Application Support/TuxPaint/saved/</code></nobr>        </dd>
+          <nobr><code style='background: #EEE;'>/Användare/<i>användarnamn</i>/Bibliotek/Applikationsstöd/TuxPaint/saved/</code></nobr>        </dd>
 
         <dt>Haiku</dt>
         <dd>
@@ -1792,10 +1792,10 @@
       </dl>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Note:</strong> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>
+        <span title="Information">&#128161;</span>        <strong>Obs:</strong> När du anger en Windows-enhet (t.ex. "<code>H:\</code>") måste du också ange en underkatalog.      </p>
 
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> Prior to version 0.9.18, Tux Paint would also use the setting or default for "<code>savedir</code>" as the place to search for personal data files (brushes, stamps, starters and fonts). As of version 0.9.18, they may be specified separately (see the "<code>datadir</code>" option, below).      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Före version 0.9.18 använde Rita med Tux även inställningen eller standardinställningen för "<code>savedir</code>" som plats för att söka efter filer med personuppgifter (penslar, stämplar, starters och teckensnitt). Från och med version 0.9.18 kan de specificeras separat (se alternativet "<code>datadir</code>" nedan).      </p>
 
       <p>
         Exempel: <code>savedir=Z:\tuxpaint\</code>      </p>
@@ -1807,18 +1807,18 @@
 
     <dd>
       <p>
-        Use this option to change where Tux Paint exports files — single images, or animated GIF slideshows — for external use.      </p>
+        Använd det här alternativet för att ändra var Rita med Tux exporterar filer - enstaka bilder eller animerade GIF-bildspel - för extern användning.      </p>
 
       <p>
-        If you do not override it, the <b><i>default</i></b> location is:      </p>
+        Om du inte åsidosätter den, kommer <b><i>standard</i></b> plats:      </p>
 
       <ul>
-        <li>Linux &amp; Unix — If available, wherever your desktop environment is configured for pictures to be stored, based on your XDG (X Desktop Group) configuration. (Try running the command-line "<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>" to find out.)<br>
-          Typically (in an English locale), this will be a "<code>Bilder</code>" subdirectory in your home directory (i.e., <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder</code>"</nobr>).<br>
-          Tux Paint will fall back to using that typical directory, if no XDG configuration can be read, or nothing is set for "<code>XDG_PICTURES_DIR</code>".        </li>
-        <li>Windows - <nobr>"<code style='background: #EEE;'>My Pictures</code>"</nobr> directory for each user (normaly <nobr>"<code style='background: #EEE;'>C:\Users\användarnamn\My Pictures</code>"</nobr>)<br>You can directly open the folder as follows:          <ul>
-            <li>Press "[Windows]+[R]" key to open "Kör ..." dialogue.</li>
-            <li>Enter "Shell:My Pictures" in the text box and push [OK].</li>
+        <li>Linux &amp; Unix - Om tillgängligt, där din skrivbordsmiljö är konfigurerad för att bilder ska lagras, baserat på din XDG (X Desktop Group)-konfiguration. (Prova att köra kommandoraden "<code style="white-space: nowrap;">xdg-user-dir PICTURES</code>" för att ta reda på det)<br>
+          Vanligtvis (i en engelsk lokal) kommer detta att vara en "<code>Bilder</code>"-underkatalog i din hemkatalog (dvs. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder</code>"</nobr>).<br>
+          Rita med Tux kommer att återgå till att använda den typiska katalogen om ingen XDG-konfiguration kan läsas eller om inget har angetts för "<code>XDG_PICTURES_DIR</code>".        </li>
+        <li>Windows - <nobr>"<code style='background: #EEE;'>My Pictures</code>"</nobr> katalog för varje användare (normalt <nobr>"<code style='background: #EEE;'>C:\Users\användarnamn\My Pictures</code>"</nobr>)<br>Du kan öppna mappen direkt på följande sätt:          <ul>
+            <li>Tryck på tangenten "[Windows]+[R]" för att öppna dialogen "Kör ...".</li>
+            <li>Ange "Shell:My Pictures" i textrutan och tryck på [OK].</li>
           </ul>
         </li>
 
@@ -1827,11 +1827,11 @@
       </ul>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Note:</strong> When the defaults are used, a new "<code>TuxPaint</code>" subdirectory will be created and used. (e.g., <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder/TuxPaint</code>"</nobr>) When the "<code>--exportdir</code>" option is used, the exact path specified will be used (no "<code>TuxPaint</code>" subdirectory is created).      </p>
+        <span title="Information">&#128161;</span>        <strong>Obs:</strong> När standardinställningarna används kommer en ny underkatalog "<code>TuxPaint</code>" att skapas och användas. (t.ex. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder/TuxPaint</code>"</nobr>) När alternativet "<code>--exportdir</code>" används, kommer den exakta sökvägen som anges att användas (ingen "<code>TuxPaint</code>" underkatalog skapas).      </p>
       <p>
-        The directory itself (e.g., <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder/TuxPaint</code>"</nobr>) will be created, if it doesn't exist.      </p>
+        Själva katalogen (t.ex. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder/TuxPaint</code>"</nobr>) kommer att skapas om den inte redan finns.      </p>
       <p>
-        If the <em>parent</em> directory (e.g., <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder</code>"</nobr>) also does not exist, Tux Paint will attempt to create it as well (but not any directories higher than that).      </p>
+        Om den <em>överordnade</em> katalogen (t.ex. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/Bilder</code>"</nobr>) inte heller finns, kommer Rita med Tux att försöka skapa den också (men inte några högre kataloger än så).      </p>
 
       <p>
         Exempel: <code>exportdir=/home/penguin/TuxPaintExports</code>      </p>
@@ -1842,7 +1842,7 @@
 
 <section>
   <header>
-    <h3>More Saving Options</h3>
+    <h3>Fler alternativ för sparande</h3>
   </header>
 
   <dl>
@@ -1852,9 +1852,9 @@
 
     <dd>
       <p>
-        This disables Tux Paint's ability to save files (and therefore disables the on-screen "Save" button). It can be used in situations where the program is only being used for fun, or in a test environment.      </p>
+        Detta inaktiverar Rita med Tuxs förmåga att spara filer (och inaktiverar därför "Spara"-knappen på skärmen). Det kan användas i situationer där programmet bara används för skojs skull eller i en testmiljö.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nosave=no</code>" or "<code>save=yes</code>". In both cases, may be overridden by the command-line option "<code>--save</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nosave=no</code>" eller "<code>save=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--save</code>".      </p>
     </dd>
 
     <dt>
@@ -1863,9 +1863,9 @@
 
     <dd>
       <p>
-        This prevents Tux Paint from asking whether you want to save the current picture when quitting, and assumes you do.      </p>
+        Detta förhindrar att Rita med Tux frågar om du vill spara den aktuella bilden när du avslutar, och förutsätter att du gör det.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>autosave=no</code>" or "<code>noautosave=yes</code>". In both cases, may be overridden by the command-line option "<code>--noautosave</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>autosave=no</code>" eller "<code>noautosave=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--noautosave</code>".      </p>
     </dd>
 
     <dt>
@@ -1874,9 +1874,9 @@
 
     <dd>
       <p>
-        This reverses the sorting of the Open and Slideshow dialogs, placing the newest images at the top of the list.      </p>
+        Detta ändrar sorteringen i dialogrutorna Öppna och Bildspel, så att de nyaste bilderna hamnar överst i listan.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>reversesort=no</code>" or "<code>noreversesort=yes</code>". In both cases, may be overridden by the command-line option "<code>--noreversesort</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>reversesort=no</code>" eller "<code>noreversesort=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--noreversesort</code>".      </p>
     </dd>
 
   </dl>
@@ -1898,16 +1898,16 @@
 
     <dd>
       <p>
-        By default, Tux Paint uses what's known as a 'lockfile' to prevent it from being launched more than once in 30 seconds. (This is to avoid accidentally running multiple copies; for example, by double-clicking a single-click launcher, or simply impatiently clicking the icon multiple times.)      </p>
+        Som standard använder Rita med Tux en s.k. "lockfile" för att förhindra att programmet startas mer än en gång på 30 sekunder. (Detta för att undvika att flera kopior körs av misstag, t.ex. genom att dubbelklicka på en enkelklicksstartare eller helt enkelt otåligt klicka på ikonen flera gånger)      </p>
 
       <p>
-        To make Tux Paint ignore the lockfile, allowing it to run again, even if it was just launched less than 30 seconds ago, enable this setting in the configuration file, or run Tux Paint with the <code>--nolockfile</code> option on the command-line.      </p>
+        Om du vill att Rita med Tux ska ignorera låsfilen och köra programmet igen, även om det startades för mindre än 30 sekunder sedan, ska du aktivera den här inställningen i konfigurationsfilen eller köra Rita med Tux med alternativet <code>--nolockfile</code> på kommandoraden.      </p>
 
       <p>
-        By default, the lockfile is stored in "<code>~/.tuxpaint/</code>" under Linux and Unix, and "<code>userdata\</code>" under Windows.      </p>
+        Som standard lagras låsfilen i "<code>~/.tuxpaint/</code>" under Linux och Unix, och "<code>userdata\</code>" under Windows.      </p>
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>nolockfile=no</code>" or "<code>lockfile=yes</code>". In both cases, may be overridden by the command-line option "<code>--lockfile</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>nolockfile=no</code>" eller "<code>lockfile=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--lockfile</code>".      </p>
     </dd>
 
   </dl>
@@ -1915,7 +1915,7 @@
 
 <section>
   <header>
-    <h3>Data Directory</h3>
+    <h3>Katalog för användardata</h3>
   </header>
 
   <dl>
@@ -1925,13 +1925,13 @@
 
     <dd>
       <p>
-        Use this option to change where Tux Paint looks for personal data files (brushes, stamps, starters, templates, and fonts specific to the current user).      </p>
+        Använd det här alternativet för att ändra var Rita med Tux letar efter personliga datafiler (penslar, stämplar, starters, mallar och teckensnitt som är specifika för den aktuella användaren).      </p>
 
       <p>
-        Tux Paint will search for subdirectories/subfolders named "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>", and "<code>fonts</code>" under the specified data directory.      </p>
+        Rita med Tux söker efter underkataloger/undermappar med namnen "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>" och "<code>fonts</code>" under den angivna datakatalogen.      </p>
 
       <p>
-        If you do not override it, the <b><i>default</i></b> location is:      </p>
+        Om du inte åsidosätter den, kommer <b><i>standard</i></b> plats:      </p>
 
       <dl>
         <dt>Linux / Unix</dt>
@@ -1941,15 +1941,15 @@
         <dd><nobr><code style='background: #EEE;'>C:\Users\<i>användarnamn</i>\AppData\Roaming\TuxPaint\</code></nobr></dd>
 
         <dt>macoS</dt>
-        <dd><nobr><code style='background: #EEE;'>/Användare/<i>användarnamn</i>/Bibliotek/Application Support/TuxPaint/</code></nobr></dd>
+        <dd><nobr><code style='background: #EEE;'>/Användare/<i>användarnamn</i>/Bibliotek/Applikationsstöd/TuxPaint/</code></nobr></dd>
 
               </dl>
 
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Note:</strong> Prior to version 0.9.18, Tux Paint would use the same setting or default as for "<code>savedir</code>" to search for data files. As of version 0.9.18, they may be specified separately.      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Före version 0.9.18 använde Rita med Tux samma inställning eller standard som för "<code>savedir</code>" för att söka efter datafiler. Från och med version 0.9.18 kan de specificeras separat.      </p>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Note:</strong> When specifying a Windows drive (e.g., "<code>H:\</code>"), you must also specify a subdirectory.      </p>
+        <span title="Information">&#128161;</span>        <strong>Obs:</strong> När du anger en Windows-enhet (t.ex. "<code>H:\</code>") måste du också ange en underkatalog.      </p>
 
       <p>
         Exempel: <code>datadir=/home/johnny/tuxpaint-data/</code>      </p>
@@ -1960,7 +1960,7 @@
 
 <section>
   <header>
-    <h3 id="colorfile">Color Palette File</h3>
+    <h3 id="colorfile">Färgpalettfil</h3>
   </header>
 
   <dl>
@@ -1970,22 +1970,22 @@
 
     <dd>
       <p>
-        You may override Tux Paint's default color palette by creating a plain ASCII text file that describes the colors you want, and pointing to that file using the "<code>colorfile</code>" option.      </p>
+        Du kan åsidosätta Rita med Tuxs standardfärgpalett genom att skapa en ren ASCII-textfil som beskriver de färger du vill ha och peka på den filen med alternativet "<code>colorfile</code>".      </p>
 
       <p>
-        The file should list one color per line. Colors are defined in terms of their Red, Green and Blue values, each from 0 (off) to 255 (brightest). (For more information, try Wikipedia's "<a href="http://en.wikipedia.org/wiki/Rgb">RGB color model</a>" article.)      </p>
+        Filen ska innehålla en färg per rad. Färger definieras med hjälp av värdena för rött, grönt och blått, var och en från 0 (släckt) till 255 (ljusast). (Mer information finns i Wikipedias artikel<a href="http://en.wikipedia.org/wiki/Rgb">"RGB-färgmodell</a>")      </p>
 
       <p>
-        Colors may be listed using three decimal numbers (e.g., "<code>255 68 136</code>") or a 6- or 3-digit-long hexadecimal 'triplet' (e.g., "<code>#ff4488</code>" or "<code>#F48</code>").      </p>
+        Färgerna kan anges med tre decimala siffror (t.ex. "<code>255 68 136</code>") eller en sex- eller tresiffrig hexadecimal "triplett" (t.ex. "<code>#ff4488</code>" eller "<code>#F48</code>").      </p>
 
       <p>
-        After the color definition (on the same line) you may enter text to describe the color. Tux will display this text when the color is clicked. (For example, "<code>#FFF White as snow.</code>")      </p>
+        Efter färgdefinitionen (på samma rad) kan du ange en text för att beskriva färgen. Tux kommer att visa denna text när färgen klickas på (till exempel "<code>#FFF Vit som snö.</code>")      </p>
 
       <p>
-        As an example, you can see the default colors currently used in Tux Paint in: "<a href="../../default_colors.txt"><code>default_colors.txt</code></a>".      </p>
+        Som ett exempel kan du se de standardfärger som för närvarande används i Rita med Tux i: "<a href="../../default_colors.txt"><code>default_colors.txt</code></a>".      </p>
 
       <p>
-        NOTES: You must separate decimal values with spaces, and begin hexadecimal values with a pound/number-sign character ("<code>#</code>"). In 3-digit hexadecimal, each digit is used for both the high and low halves of the byte, so "<code>#FFF</code>" is the same as "<code>#FFFFFF</code>", not "<code>#F0F0F0</code>".      </p>
+        OBSERVERA: Du måste separera decimala värden med mellanslag och inleda hexadecimala värden med ett pund-/nummertecken ("<code>#</code>"). I 3-siffrig hexadecimal används varje siffra för både den höga och den låga halvan av byten, så "<code>#FFF</code>" är samma sak som "<code>#FFFFFF</code>", inte "<code>#F0F0F0</code>".      </p>
     </dd>
   </dl>
 </section>
@@ -2006,14 +2006,14 @@
 
     <dd>
       <p>
-        In this mode, instead of clicking, dragging and releasing (e.g., to draw), you click, move, and click again to end the motion.      </p>
+        I det här läget klickar du inte, drar och släpper (t.ex. för att rita), utan du klickar, flyttar och klickar igen för att avsluta rörelsen.      </p>
           </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Keyboard</h3>
+    <h3>Tangentbord</h3>
   </header>
 
   <dl>
@@ -2023,50 +2023,50 @@
 
     <dd>
       <p>
-        This allows the keyboard arrow keys to be used to control the mouse pointer. (e.g., for mouseless environments, or handicapped/accessibility purposes)      </p>
+        Detta gör att tangentbordets piltangenter kan användas för att styra muspekaren. (t.ex. för muslösa miljöer eller för funktionshindrade/tillgänglighet)      </p>
 
       <p>
-        Features:      </p>
+        Funktioner:      </p>
 
       <ul>
-        <li>Fine movement within canvas, or coarse movement if <code>Shift</code> is held.        </li>
+        <li>Fin rörelse inom bildytan, eller grov rörelse om <code>Shift</code> hålls intryckt.        </li>
 
-        <li>Coarse movement within tool button areas.        </li>
+        <li>Grov rörelse inom verktygsknapparnas områden.        </li>
 
-        <li>Key controls:          <ul>
-            <li>[Left]/[Right]/[Up]/[Down], numpad <b>[1]</b> thru <b>[9]</b>: Move mouse            </li>
+        <li>Nyckelkontroller:          <ul>
+            <li>[Left]/[Right]/[Up]/[Down], numpad <b>[1]</b> till <b>[9]</b>: Flytta musen            </li>
 
-            <li>[Space]/<b>[5]</b>: Click mouse (except when using "Text" or "Label" tools)            </li>
+            <li>[Space]/<b>[5]</b>: Klicka på musen (utom när du använder verktygen "Text" eller "Etikett")            </li>
 
-            <li>[Insert]/<b>[F5]</b>: Click mouse (always)            </li>
+            <li>[Insert]/<b>[F5]</b>: Klicka på musen (alltid)            </li>
 
-            <li><b>[F4]</b> jump mouse between "Tools", "Colors" and canvas areas            </li>
+            <li><b>[F4]</b> flytta musen mellan "Verktyg", "Färger" och dukytorna            </li>
 
-            <li>If mouse is within "Tools" section on the left, or "Colors" section at the bottom:              <ul>
-                <li><b>[F7]</b>, <b>[F8]</b>: Move down/up between buttons, respectively (Tools section, only)                </li>
+            <li>Om musen befinner sig i avsnittet "Verktyg" till vänster eller i avsnittet "Färger" längst ned:              <ul>
+                <li><b>[F7]</b>, <b>[F8]</b>: Flytta nedåt/uppåt mellan knapparna (endast avsnittet Verktyg)                </li>
 
-                <li><b>[F11]</b>, <b>[F12]</b>: Move to previous/next button, respectively                </li>
+                <li><b>[F11]</b>, <b>[F12]</b>: Flytta till föregående respektive nästa knapp                </li>
               </ul>
             </li>
           </ul>
         </li>
 
-        <li>To click-and-drag, hold one of the 'click' keys (e.g., [Insert]), and use the movement keys (e.g., [Left]).          <p class="note">
-            <span title="Information">&#128161;</span>            <strong>Note:</strong> The "mouse accessibility" feature works with the keyboard mouse controls. With both options enabled, painting tools can be used to draw by pressing a 'click' key to start clicking, movement keys to move around (which will draw), and another 'click' key to end the click (stop drawing).          </p>
+        <li>För att klicka och dra håller du ned en av "klick"-knapparna (t.ex. [Insert]) och använder förflyttningsknapparna (t.ex. [Left]).          <p class="note">
+            <span title="Information">&#128161;</span>            <strong>Obs:</strong> Funktionen "mustillgänglighet" fungerar med tangentbordets muskontroller. När båda alternativen är aktiverade kan du använda målarverktygen för att rita genom att trycka på en "klick"-tangent för att börja klicka, förflyttningstangenter för att flytta runt (vilket ritar) och en annan "klick"-tangent för att avsluta klicket (sluta rita).          </p>
         </li>
 
-        <li>A regular mouse and/or joystick may still be used (so you can, e.g., move with the mouse, and click with the keyboard, or vice-versa)        </li>
+        <li>En vanlig mus och/eller joystick kan fortfarande användas (så att du t.ex. kan flytta med musen och klicka med tangentbordet, eller vice versa)        </li>
       </ul>
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>keyboard=no</code>" or "<code>mouse=yes</code>". In both cases, may be overridden by the command-line option "<code>--mouse</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>keyboard=no</code>" eller "<code>mouse=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--mouse</code>".      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Onscreen Keyboard</h3>
+    <h3>Tangentbord på skärmen</h3>
   </header>
 
   <dl>
@@ -2076,7 +2076,7 @@
 
     <dd>
       <p>
-        Presents a clickable on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.      </p>
+        Visar ett klickbart tangentbord på skärmen när du använder verktygen <b>Text</b> och <b>Etikett</b>.      </p>
           </dd>
 
     <dt>
@@ -2085,8 +2085,8 @@
 
     <dd>
       <p>
-        Selects the initial layout for the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools.<br/>
-        Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.      </p>
+        Väljer den ursprungliga layouten för tangentbordet på skärmen när du använder verktygen <b>Text</b> och <b>Etikett</b>.<br/>
+        Obs: Om du använder detta alternativ innebär det automatiskt <b>onscreen-keyboard=yes</b>, så det är överflödigt att ställa in båda.      </p>
     </dd>
 
     <dt>
@@ -2095,16 +2095,16 @@
 
     <dd>
       <p>
-        Disables the possibility for changing the layout of the on-screen keyboard when using the <b>Text</b> and <b>Label</b> tools, useful for simplifying things for the small children.<br/>
-        Note: Using this option implies automatically <b>onscreen-keyboard=yes</b>, so setting both is redundant.      </p>
+        Inaktiverar möjligheten att ändra layout på skärmtangentbordet när du använder verktygen <b>Text</b> och <b>Etikett</b>, vilket är användbart för att förenkla för små barn.<br/>
+        Obs: Om du använder detta alternativ innebär det automatiskt <b>onscreen-keyboard=yes</b>, så det är överflödigt att ställa in båda.      </p>
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note:</strong> If used in a system-wide configuration file, may be overridden by the user's configuration file using "<code>onscreen-keyboard-disable-change=no</code>". In both cases, may be overridden by the command-line option "<code>--onscreen-keyboard-disable-change=no</code>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med "<code>onscreen-keyboard-disable-change=no</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--onscreen-keyboard-disable-change=no</code>".      </p>
     </dd>
   </dl>
 </section>
   </section>
     <header>
-    <h2 id="joystick">Joystick</h2>
+    <h2 id="joystick">Styrspak</h2>
   </header>
   <section class="indent">
     <section>
@@ -2119,7 +2119,7 @@
 
     <dd>
       <p>
-        Specify which joystick device should be used by Tux Paint. Default value is 0 (the first joystick).      </p>
+        Ange vilken joystickenhet som ska användas av Rita med Tux. Standardvärdet är 0 (den första joysticken).      </p>
     </dd>
 
     <dt>
@@ -2128,16 +2128,16 @@
 
     <dd>
       <p>
-        Sets a delay at each axis motion, allowing to slow the joystick. Allowed values are from 0 to 500. Default value is 15.      </p>
+        Ställer in en fördröjning vid varje axelrörelse, vilket gör det möjligt att sakta ner joysticken. Tillåtna värden är från 0 till 500. Standardvärdet är 15.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-threshold=<i>THRESHOLD</i></b></code>
+      <code><b>joystick-threshold=<i>TRÖSKELVÄRDE</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Sets the minimum level of axis motion to start moving the pointer. Allowed values are from 0 to 32766. Default value is 3200.      </p>
+        Ställer in den lägsta nivån av axelrörelse för att börja flytta pekaren. Tillåtna värden är från 0 till 32766. Standardvärdet är 3200.      </p>
     </dd>
 
     <dt>
@@ -2146,7 +2146,7 @@
 
     <dd>
       <p>
-      Sets the maximum pixels the pointer will move at once. Allowed values are from 1 to 7. Default value is 7.      </p>
+      Ställer in det maximala antalet pixlar som pekaren flyttar på en gång. Tillåtna värden är från 1 till 7. Standardvärdet är 7.      </p>
     </dd>
 
   </dl>
@@ -2154,7 +2154,7 @@
 
 <section>
   <header>
-    <h3>Hat</h3>
+    <h3>Hatt</h3>
   </header>
 
   <dl>
@@ -2164,7 +2164,7 @@
 
     <dd>
       <p>
-        Sets a delay at each automatic motion, allowing to slow the speed of the hat. Allowed values are from 0 to 500. Default value is 15.      </p>
+        Ställer in en fördröjning vid varje automatisk rörelse, vilket gör det möjligt att sakta ner hattens hastighet. Tillåtna värden är från 0 till 500. Standardvärdet är 15.      </p>
     </dd>
 
     <dt>
@@ -2173,184 +2173,184 @@
 
     <dd>
       <p>
-        Sets the delay after wich the pointer will start moving automatically if the hat is keeped pushed. Allowed values are from 0 to 3000. Default value is 1000.      </p>
+        Ställer in fördröjningen efter vilken pekaren börjar röra sig automatiskt om hatten hålls intryckt. Tillåtna värden är från 0 till 3000. Standardvärdet är 1000.      </p>
     </dd>
   </dl>
 </section>
 
 <section>
   <header>
-    <h3>Buttons to Disable</h3>
+    <h3>Knappar som ska inaktiveras</h3>
   </header>
 
   <dl>
     <dt>
-      <code><b>joystick-buttons-ignore=<i>BUTTON1,BUTTON2,...</i></b></code>
+      <code><b>joystick-buttons-ignore=<i>KNAPP1,KNAPP2,...</i></b></code>
     </dt>
 
     <dd>
       <p>
-        A set of joystick button numbers, as seen by SDL, that should be ignored. Otherwise, unless they are used by one of the "<code>joystick-btn-</code>" options above, buttons will be seen as a mouse left-click.      </p>
+        En uppsättning nummer för joystickknappar som SDL ser och som ska ignoreras. Om de inte används av något av alternativen "<code>joystick-btn-</code>" ovan kommer knapparna att uppfattas som ett vänsterklick med musen.      </p>
     </dd>
   </dl>
 </blockquote>
 
 <h3>
-  Button Shortcuts</h3>
+  Kortkommandon för knappar</h3>
 
 <blockquote>
   <dl>
     <dt>
-      <code><b>joystick-btn-escape=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-escape=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be used to generate a escape event. Useful to dismiss dialogs and quit.      </p>
+        Väljer joystickknappens nummer, sett av SDL, som ska användas för att generera en escape-händelse. Användbart för att avfärda dialoger och avsluta.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-brush=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-brush=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the brush tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj penselverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-stamp=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-stamp=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the stamp tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj stämpelverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-lines=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-lines=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the lines tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj linjeverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-shapes=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-shapes=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the shapes tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj formverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-text=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-text=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the text tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj textverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-label=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-label=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the label tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj etikettverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-fill=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-fill=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the fill tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj fyllningsverktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-magic=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-magic=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select the magic tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till välj det magiska verktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-undo=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-undo=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to invoke the undo tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till anropa ångra-verktyget.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-redo=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-redo=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select redo tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som kommer att vara en genväg för att välja återställningsverktyg.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-eraser=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-eraser=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to select eraser tool.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som kommer att vara en genväg för att välja Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger mjukare, sammanhängande streck när pekaren flyttas snabbt..      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-new=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-new=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the dialog for creating a new drawing.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg för att starta dialogrutan för att skapa en ny ritning.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-open=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-open=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the dialog for opening an existing drawing.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg för att starta dialogrutan för att öppna en befintlig ritning.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-save=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-save=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-      Selects the joystick button number, as seen by SDL, that will be a shortcut to save the drawing.      </p>
+      Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till spara ritningen.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-pgsetup=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-pgsetup=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to launch the page setup dialog for printing.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till starta dialogrutan för sidinställning för utskrift.      </p>
     </dd>
 
     <dt>
-      <code><b>joystick-btn-print=<i>BUTTON NUMBER</i></b></code>
+      <code><b>joystick-btn-print=<i>KNAPP NUMMER</i></b></code>
     </dt>
 
     <dd>
       <p>
-        Selects the joystick button number, as seen by SDL, that will be a shortcut to print.      </p>
+        Väljer joystickknappens nummer, enligt SDL, som ska vara en genväg till skriv ut.      </p>
     </dd>
   </dl>
 </section>
@@ -2360,14 +2360,14 @@
     <section class="outer"><!-- H1: Overriding System Config. Options -->
       <header>
         <h1 id="overriding">
-          Overriding System Config. Options        </h1>
+          Åsidosättande av System Config. Alternativ        </h1>
       </header>
 
       <p>
-        If any of the above options are set in a system-wide configuration file (e.g. <nobr>"<code style='background: #EEE;'>/etc/tuxpaint/tuxpaint.conf</code>"</nobr> on Linux), you may override them in your own personal configuration file (e.g. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/.tuxpaintrc</code>"</nobr>)      </p>
+        Om något av ovanstående alternativ är inställt i en systemomfattande konfigurationsfil (t.ex. <nobr>"<code style='background: #EEE;'>/etc/tuxpaint/tuxpaint.conf</code>"</nobr> på Linux) kan du åsidosätta dem i din egen personliga konfigurationsfil (t.ex. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/.tuxpaintrc</code>"</nobr>)      </p>
 
       <p>
-        For true/false options, like "<code>noprint</code>" and "<code>grab</code>", you can simply say they equal 'no' in your personal configuration file:      </p>
+        För true/false-alternativ, som "<code>noprint</code>" och "<code>grab</code>", kan du helt enkelt säga att de är lika med "no" i din personliga konfigurationsfil:      </p>
 
       <blockquote>
         <code>noprint=no<br>
@@ -2375,7 +2375,7 @@
       </blockquote>
 
       <p>
-        Or, you can use options similar to the command-line override options described below. For example:      </p>
+        Du kan också använda alternativ som liknar de alternativ för kommandoradsöverstyrning som beskrivs nedan. Till exempel      </p>
 
       <blockquote>
         <code>print=yes<br>
@@ -2386,19 +2386,19 @@
     <section class="outer"><!-- H1: Command-Line Options -->
       <header>
         <h1 id="command_line">
-          Command-Line Options        </h1>
+          Alternativ för kommandoraden        </h1>
       </header>
 
       <p>
-        Options may also be issued on the command-line when you go to launch Tux Paint.      </p>
+        Alternativ kan också anges på kommandoraden när du startar Rita med Tux.      </p>
       <dl>
         <dt>
           <code><b>--fullscreen=yes<br>
           --fullscreen=native<br>
-          --<i>BREDD</i>x<i>HEIGHT</i><br>
+          --<i>BREDD</i>x<i>SKÄRMHÖJD</i><br>
           --orient=portrait<br>
-          --buttonsize=<i>SIZE</i><br>
-          --colorsrows=<i>ROWS</i><br>
+          --buttonsize=<i>STRL</i><br>
+          --colorsrows=<i>RADER</i><br>
           --native<br>
           --allowscreensaver<br>
           --startblank<br>
@@ -2406,7 +2406,7 @@
           --nostereo<br>
           --noquit<br>
           --noprint<br>
-          --printdelay=<i>SECONDS</i><br>
+          --printdelay=<i>SEKUNDER</i><br>
           --printcfg<br>
           --altprintnever<br>
           --altprintalways<br>
@@ -2463,7 +2463,7 @@
           --uifont=<i>TYPSNITTSNAMN</i><br>
           --alllocalefonts<br>
           --mirrorstamps<br>
-          --stampsize=<i>SIZE</i><br>
+          --stampsize=<i>STRL</i><br>
           --keyboard<br>
           --savedir <i>KATALOG</i><br>
           --datadir <i>KATALOG</i><br>
@@ -2473,13 +2473,13 @@
           --nosave<br>
           --autosave<br>
           --reversesort<br>
-          --lang <i>LANGUAGE</i><br>
+          --lang <i>SPRÅK</i><br>
           --colorfile <i>FIL</i><br></b></code>
         </dt>
 
         <dd>
           <p>
-            These enable or correspond to the configuration file options described above.          </p>
+            Dessa aktiverar eller motsvarar de konfigurationsfilalternativ som beskrivs ovan.          </p>
         </dd>
 
         <dt>
@@ -2529,7 +2529,7 @@
 
         <dd>
           <p>
-            These options can be used to override any settings made in the configuration file. (If the option isn't set in the configuration file(s), no overriding option is necessary.)          </p>
+            Dessa alternativ kan användas för att åsidosätta alla inställningar som gjorts i konfigurationsfilen. (Om alternativet inte har angetts i konfigurationsfilen/filerna behövs inget åsidosättandealternativ)          </p>
         </dd>
 
         <dt>
@@ -2538,21 +2538,21 @@
 
         <dd>
           <p>
-            This prevents the system-wide configuration file (e.g. <nobr>"<code style='background: #EEE;'>/etc/tuxpaint/tuxpaint.conf</code>"</nobr> on Linux), from being read.          </p>
+            Detta förhindrar att den systemomfattande konfigurationsfilen (t.ex. <nobr>"<code style='background: #EEE;'>/etc/tuxpaint/tuxpaint.conf</code>"</nobr> på Linux) läses.          </p>
 
           <p>
-            Only your own configuration file (e.g. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/.tuxpaintrc</code>"</nobr> on Linux) &mdash; if it exists &mdash; will be used.          </p>
+            Endast din egen konfigurationsfil (t.ex. <nobr>"<code style='background: #EEE;'>/home/<i>användarnamn</i>/.tuxpaintrc</code>"</nobr> på Linux) - om den finns - kommer att användas.          </p>
         </dd>
       </dl>
 
       <section class="indent"><!-- H2: Command-Line Informational Options -->
         <header>
           <h2 id="info-cmd">
-            Command-Line Informational Options          </h2>
+            Alternativ för information på kommandoraden          </h2>
         </header>
 
         <p>
-          The following options display some informative text on the screen. Tux Paint doesn't actually start up and run afterwards, however.        </p>
+          Följande alternativ visar lite informativ text på skärmen. Rita med Tux startar dock inte upp och körs efteråt.        </p>
 
         <dl>
           <dt>
@@ -2562,7 +2562,7 @@
 
           <dd>
             <p>
-              Display the version number and date of the copy of Tux Paint you are running. The "<code>--verbose-version</code>" also lists what compile-time options were set. (See <a href="INSTALL.html">INSTALL</a> and <a href="FAQ.html">FAQ</a>).            </p>
+              Visar versionsnummer och datum för den kopia av Rita med Tux som du kör. "<code>--verbose-version</code>" visar också vilka kompileringstidsalternativ som ställdes in. (Se <a href="INSTALL.html">INSTALL</a> och <a href="FAQ.html">FAQ</a>).            </p>
           </dd>
 
           <dt>
@@ -2571,7 +2571,7 @@
 
           <dd>
             <p>
-              Show brief license information about copying Tux Paint.            </p>
+              Visa kortfattad licensinformation om kopiering av Rita med Tux.            </p>
           </dd>
 
           <dt>
@@ -2580,7 +2580,7 @@
 
           <dd>
             <p>
-              Display the list of available command-line options.            </p>
+              Visa listan över tillgängliga kommandoradsalternativ.            </p>
           </dd>
 
           <dt>
@@ -2589,7 +2589,7 @@
 
           <dd>
             <p>
-              Display brief help on using Tux Paint.            </p>
+              Visa kortfattad hjälp med att använda Rita med Tux.            </p>
           </dd>
 
           <dt>
@@ -2598,7 +2598,7 @@
 
           <dd>
             <p>
-              Display a list of available languages in Tux Paint.            </p>
+              Visa en lista över tillgängliga språk i Rita med Tux.            </p>
           </dd>
 
           <dt>
@@ -2607,7 +2607,7 @@
 
           <dd>
             <p>
-              Display list of attached joysticks available to Tux Paint.            </p>
+              Visa lista över anslutna joysticks som är tillgängliga för Rita med Tux.            </p>
           </dd>
         </dl>
       </section><!-- H2: Command-Line Informational Options -->
@@ -2616,34 +2616,34 @@
     <section class="outer"><!-- H1: Choosing a Different Language -->
       <header>
         <h1 id="different_language">
-          Choosing a Different Language        </h1>
+          Att välja ett annat språk        </h1>
       </header>
 
       <p>
-        Tux Paint has been translated into a number of languages. To access the translations, you can use the "<code>--lang</code>" option on the command-line to set the language (e.g. "<code>--lang spanish</code>") or use the "<code>lang=</code>" setting in the configuration file (e.g., "<code>lang=spanish</code>").      </p>
+        Rita med Tux har översatts till ett antal olika språk. För att få tillgång till översättningarna kan du använda alternativet "<code>--lang</code>" på kommandoraden för att ställa in språket (t.ex. "<code>--lang spanish</code>") eller använda inställningen "<code>lang=</code>" i konfigurationsfilen (t.ex. "<code>lang=spanish</code>").      </p>
 
       <p>
-        Tux Paint also honors your environment's current locale. (You can override it on the command-line using the "<code>--locale</code>" option; see <a href="#locale">above</a>.)      </p>
+        Rita med Tux tar också hänsyn till din miljös aktuella locale. (Du kan åsidosätta det på kommandoraden med hjälp av alternativet "<code>--locale</code>"; se <a href="#locale">ovan</a>)      </p>
 
       <p>
-        Use the option "<code>--lang help</code>" to list the language options available.      </p>
+        Använd alternativet "<code>--lang help</code>" för att lista de tillgängliga språkalternativen.      </p>
 
       <section class="indent"><!-- H2: Available Languages -->
         <header>
           <h2 id="available_languages">
-            Available Languages          </h2>
+            Tillgängliga språk          </h2>
         </header>
 
         <table border="1"
                cellspacing="0"
                cellpadding="2"
                summary=
-               "Locale values and the languages they represent.">
+               "Locale-värden och de språk de representerar.">
           <tr>
             <th>Lokalanpassningskod</th>
-            <th>Language<br>(native name)</th>
-            <th>Language<br>(English name)</th>
-            <th>Input Method Cycle Key Combination</th>
+            <th>Språk<br>(modersmål)</th>
+            <th>Språk<br>(engelskt namn)</th>
+            <th>Inmatningsmetod Cykel Nyckelkombination</th>
           </tr>
 
             <tr>
@@ -2980,7 +2980,7 @@
     <td><!-- locale_code --><code>ja_JP (*)</code></td>
     <td></td>
     <td>Japanese</td>
-    <td>right [Alt] or left [Alt]</td>
+    <td>höger [Alt] eller vänster [Alt]</td>
   </tr>
     <tr>
     <td><!-- locale_code --><code>ka_GE</code></td>
@@ -3010,7 +3010,7 @@
     <td><!-- locale_code --><code>ko_KR (*)</code></td>
     <td></td>
     <td>Korean</td>
-    <td>right [Alt] or left [Alt]</td>
+    <td>höger [Alt] eller vänster [Alt]</td>
   </tr>
     <tr>
     <td><!-- locale_code --><code>kok_IN</code></td>
@@ -3423,43 +3423,43 @@
           </table>
 
         <p>
-          <b>(*)</b> - These languages require their own fonts, since they are not represented using a Latin character set, like the others. See the "<a href="#special_fonts"><i>Special Fonts</i></a>" section, below.        </p>
+          <b>(*)</b> - Dessa språk kräver sina egna teckensnitt, eftersom de inte representeras med en latinsk teckenuppsättning, som de andra. Se avsnittet "<a href="#special_fonts"><i>Särskilda teckensnitt</i></a>" avsnittet nedan.        </p>
 
         <p class="note">
-          <span title="Information">&#128161;</span>          <strong>Note:</strong> Tux Paint provides an alternative input method for entering characters with the <b>Text</b> tool in some locales. The key comibation(s) listed can be used to cycle through the supported input methods while the <b>Text</b> tool is active.        </p>
+          <span title="Information">&#128161;</span>          <strong>Obs:</strong> Rita med Tux tillhandahåller en alternativ inmatningsmetod för att mata in tecken med <b>textverktyget</b> på vissa platser. Den eller de tangentkombinationer som anges kan användas för att växla mellan de inmatningsmetoder som stöds medan <b>textverktyget</b> är aktivt.        </p>
       </section><!-- H2: Available Languages -->
 
       <section><!-- H2: Setting Your Environment's Locale -->
         <header>
           <h2 id="env_locale">
-            Setting Your Environment's Locale          </h2>
+            Ställa in lokal språkdräkt för din miljö          </h2>
         </header>
 
         <p>
-          Changing your locale will affect much of your environment.        </p>
+          Om du byter lokal påverkas mycket av din miljö.        </p>
 
         <p>
-          As stated above, along with letting you choose the language at runtime using command-line options ("<code>--lang</code>" and "<code>--locale</code>"), Tux Paint honors the global locale setting in your environment.        </p>
+          Som nämnts ovan låter Rita med Tux dig inte bara välja språk under körning med hjälp av kommandoradsalternativ ("<code>--lang</code>" och "<code>--locale</code>"), utan Rita med Tux tar också hänsyn till den globala locale-inställningen i din miljö.        </p>
 
         <p>
-          If you haven't already set your environment's locale, the following will briefly explain how:        </p>
+          Om du inte redan har ställt in din miljös locale, följer här en kort beskrivning av hur du gör:        </p>
 
         <section class="indent"><!-- H3: Linux/Unix Users -->
           <header>
-            <h3>Linux/Unix Users</h3>
+            <h3>Linux/Unix-användare</h3>
           </header>
 
           <p>
-            First, be sure the locale you want to use is enabled by editing the file "<code>/etc/locale.gen</code>" on your system and then running the program "<code>locale-gen</code>" as root.          </p>
+            Kontrollera först att det språk du vill använda är aktiverat genom att redigera filen "<code>/etc/locale.gen</code>" på ditt system och sedan köra programmet "<code>locale-gen</code>" som root.          </p>
 
           <p class="note">
-            <span title="Information">&#128161;</span>            <strong>Note:</strong> Debian users may be able to simply run the command "<code>dpkg-reconfigure locales</code>" as root to bring up a configuration dialog. Ubuntu users may be able to run "<code>sudo dpkg-reconfigure localeconf</code>" (the "localeconf" package may need to be installed first), or you may need to edit the file "<code>/var/lib/locales/supported.d/local</code>" first, and add locales they want, from the list found in "<code>/usr/share/i18n/SUPPORTED</code>".          </p>
+            <span title="Information">&#128161;</span>            <strong>Obs:</strong> Debian-användare kanske helt enkelt kan köra kommandot "<code>dpkg-reconfigure locales</code>" som root för att få upp en konfigurationsdialog. Ubuntu-användare kan köra "<code>sudo dpkg-reconfigure localeconf</code>" (paketet "localeconf" kan behöva installeras först), eller så kan du behöva redigera filen "<code>/var/lib/locales/supported.d/local</code>" först och lägga till önskade lokaliteter från listan som finns i "<code>/usr/share/i18n/SUPPORTED</code>".          </p>
 
           <p>
-            Then, before running Tux Paint, set your "<code>$LANG</code>" environment variable to one of the locales listed above. (If you want all programs that can be translated to be, you may wish to place the following in your login script; e.g. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc.)          </p>
+            Innan du kör Rita med Tux ska du sedan ställa in miljövariabeln "<code>$LANG</code>" till en av de lokala språkversioner som anges ovan. (Om du vill att alla program som kan översättas ska översättas, kan du placera följande i ditt inloggningsskript; t.ex. "<code>~/.profile</code>", "<code>~/.bashrc</code>", "<code>~/.cshrc</code>", etc.)          </p>
 
           <p>
-            For example, in a Bourne Shell (like BASH):          </p>
+            Till exempel i ett Bourne Shell (som BASH):          </p>
 
           <blockquote>
             <code>export LANG=es_ES ; \<br>
@@ -3467,7 +3467,7 @@
           </blockquote>
 
           <p>
-            And in a C Shell (like TCSH):          </p>
+            Och i ett C Shell (som TCSH):          </p>
 
           <blockquote>
             <code>setenv LANG es_ES ; \<br>
@@ -3478,30 +3478,30 @@
         <section class="indent"><!-- H3: Windows Users -->
           <header>
             <h3>
-              Windows Users            </h3>
+              Windows-användare            </h3>
           </header>
 
           <p>
-            Tux Paint will recognize the current locale and use the appropriate files by default. So this section is only for people trying different languages.          </p>
+            Rita med Tux känner igen det aktuella språket och använder lämpliga filer som standard. Så det här avsnittet är bara för personer som provar olika språk.          </p>
 
           <p>
-            The simplest thing to do is to use the "<code>--lang</code>" switch in the shortcut (see "INSTALL"). However, by using an MSDOS Prompt window, it is also possible to issue a command like this:          </p>
+            Det enklaste är att använda "<code>--lang</code>"-omkopplaren i genvägen (se "INSTALL"). Men genom att använda ett MSDOS Prompt-fönster är det också möjligt att ge ett kommando som detta:          </p>
 
           <blockquote>
             <code>set LANG=es_ES</code>
           </blockquote>
 
           <p>
-            ...which will set the language for the lifetime of that DOS window.          </p>
+            ...som kommer att bestämma språket för hela DOS-fönstrets livslängd.          </p>
 
           <p>
-            For something more permanent, you can set an 'environment variable' using the "System properties" dialogue as follows:          </p>
+            Om du vill ha något mer permanent kan du ställa in en "miljövariabel" med hjälp av dialogen "Systemets egenskaper" på följande sätt:          </p>
           <ul>
-            <li>Press the "<b>[Windows]+[R]</b>" key combination to open the "Kör ..." dialogue.</li>
-            <li>Enter "<code>sysdm.cpl</code>" in the text box and click the "<b>[OK]</b>" button to open the "System properties" dialogue.</li>
-            <li>Select the "Avancerat" tab.</li>
-            <li>Click the "Miljövariabler..." button.</li>
-            <li>Edit the value of the parameter "<code>LANG</code>" (create it, if it doesn't exists).</li>
+            <li>Tryck på tangentkombinationen "<b>[Windows]+[R]</b>" för att öppna dialogen "Kör ...".</li>
+            <li>Skriv in "<code>sysdm.cpl</code>" i textrutan och klicka på knappen "<b>[OK]</b>" för att öppna dialogen "Systemets egenskaper".</li>
+            <li>Välj fliken "Avancerat".</li>
+            <li>Klicka på knappen "Miljövariabler...".</li>
+            <li>Redigera värdet för parametern "<code>LANG</code>" (skapa den om den inte finns).</li>
           </ul>
         </section><!-- H3: Windows Users -->
       </section><!-- H2: Setting Your Environment's Locale -->
@@ -3509,20 +3509,20 @@
       <section class="indent"><!-- H2: Special Fonts -->
         <header>
           <h2 id="special_fonts">
-            Special Fonts          </h2>
+            Särskilda teckensnitt          </h2>
         </header>
 
         <p>
-          Some languages require special fonts be installed. These font files (which are in TrueType format (TTF)), are much too large to include with the Tux Paint download, and are available separately. (See the table above, under the "<a href="#different_language"><i>Choosing a Different Language</i></a>" section.)        </p>
+          Vissa språk kräver att särskilda teckensnitt installeras. Dessa teckensnittsfiler (som är i TrueType-format (TTF)) är alldeles för stora för att inkluderas i nedladdningen av Rita med Tux, och finns tillgängliga separat. (Se tabellen ovan, under rubriken "<a href="#different_language"><i>Välja ett annat språk</i></a>" avsnitt.)        </p>
 
         <p class="note">
-          <span title="Version variation">&#128220;</span>          <strong>Note:</strong> As of version 0.9.18, Tux Paint uses the "SDL_Pango" library, which utilizes the "Pango" library to render text in the user interface, rather than using "SDL_ttf" directly. Unless your copy of Tux Paint was built without Pango support, special fonts should <b><i>no longer be necessary</i></b>.        </p>
+          <span title="Version variation">&#128220;</span>          <strong>Observera:</strong> Från och med version 0.9.18 använder Rita med Tux biblioteket "SDL_Pango", som använder biblioteket "Pango" för att rendera text i användargränssnittet, i stället för att använda "SDL_ttf" direkt. Om inte din kopia av Rita med Tux byggdes utan stöd för Pango, bör speciella teckensnitt <b><i>inte längre vara nödvändiga</i></b>.        </p>
 
         <p>
-          When running Tux Paint in a language that requires its own font, Tux Paint will try to load the font file from its system-wide "<code><b>fonts</b></code>" directory (under a "<code><b>locale</b></code>" subdirectory). The name of the file corresponds to the first two letters in the 'locale' code of the language (e.g., "ko" for Korean, "ja" for Japanese, "zh_tw" for Traditional Chinese).        </p>
+          När Rita med Tux körs på ett språk som kräver ett eget teckensnitt försöker Rita med Tux läsa in teckensnittsfilen från den systemomfattande katalogen "<code><b>fonts</b></code>" (under en underkatalog "<code><b>locale</b></code>"). Filens namn motsvarar de två första bokstäverna i språkets "locale"-kod (t.ex. "ko" för koreanska, "ja" för japanska, "zh_tw" för traditionell kinesiska).        </p>
 
         <p>
-          For example, under Linux or Unix, when Tux Paint is run in Korean (e.g., with the option "<code>--lang korean</code>"), Tux Paint will attempt to load the following font file:        </p>
+          Till exempel, under Linux eller Unix, när Rita med Tux körs på koreanska (t.ex. med alternativet "<code>--lang korean</code>"), kommer Rita med Tux att försöka ladda följande teckensnittsfil:        </p>
 
         <blockquote>
           <p>
@@ -3531,10 +3531,10 @@
         </blockquote>
 
         <p>
-          You can download fonts for supported languages from Tux Paint's website, <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>. (Look in the 'Fonts' section under 'Download.')        </p>
+          Du kan ladda ner teckensnitt för språk som stöds från Rita med Tuxs webbplats, <a href="https://tuxpaint.org/">https://tuxpaint.org/.</a>(Titta i avsnittet "Fonts" under "Download.")        </p>
 
         <p>
-          Under Unix and Linux, you can use the <code>Makefile</code> that comes with the font to install the font in the appropriate location.        </p>
+          Under Unix och Linux kan du använda <code>Makefile</code> som medföljer teckensnittet för att installera teckensnittet på rätt plats.        </p>
       </section><!-- H2: Special Fonts -->
     </section><!-- H1: Choosing a Different Language -->
   </body>

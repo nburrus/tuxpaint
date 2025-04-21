@@ -1,19 +1,19 @@
-                      Tux Paint "Magic" Tool: TV (Bright)
+                    Rita med Tux "Magic" Verktyg: TV (ljus)
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-                 ## Authors: Adam Rakowski <foo-script@o2.pl>
+                ## Författare: Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
-Distort your picture so it looks like it's on a television (TV). (Brighter
-version of "TV".)
+Förvräng bilden så att det ser ut som om den visas på en TV (TV). (Ljusare
+version av "TV".)
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: TV.
+Se även nedan:TV.
 
 -------------------------------------------------------------------------------
 

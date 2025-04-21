@@ -1,12 +1,13 @@
-                      Tux Paint "Magic" Tool: Reflection
+                   Rita med Tux "Magic" Verktyg: Reflektion
 
-                         ### Group: Picture Warps ###
+                       ### Grupp Bildförvrängningar ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click and drag down, up, left, or right, to add a reflection to you picture.
+Klicka och dra nedåt, uppåt, åt vänster eller höger för att lägga till en
+reflektion i bilden.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
 -------------------------------------------------------------------------------
 

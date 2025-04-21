@@ -1,17 +1,17 @@
-                         Tux Paint "Magic" Tool: Ljus
+                      Rita med Tux "Magic" Verktyg: Ljus
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This draws a glowing beam on the canvas, in the currently-selected color. The
-more you use it on one spot, the more white it becomes.
+Detta ritar en glödande stråle på duken, i den för tillfället valda färgen. Ju
+mer du använder den på en punkt, desto vitare blir den.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

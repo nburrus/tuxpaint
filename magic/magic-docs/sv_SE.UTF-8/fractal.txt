@@ -1,17 +1,17 @@
-                        Tux Paint "Magic" Tool: Fractal
+                   Rita med Tux "Magic" Verktyg: Fraktal #%d
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-A set of tools that recursively repeat what you draw, scaling and/or rotating
-it as they repeat.
+En uppsättning verktyg som rekursivt upprepar det du ritar och skalar och/eller
+roterar det när de upprepas.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

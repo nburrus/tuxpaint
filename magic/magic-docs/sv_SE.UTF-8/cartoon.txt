@@ -1,15 +1,16 @@
-                        Tux Paint "Magic" Tool: Cartoon
+     Rita med Tux "Magic" Verktyg: Använd en speciell skalare för att rita
+                                 figur-sprites
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This makes the picture look like a cartoon — with thick outlines and bright,
-solid colors — wherever you move the mouse.
+Detta gör att bilden ser ut som en tecknad film - med tjocka konturer och
+ljusa, solida färger - var du än flyttar musen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

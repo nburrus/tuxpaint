@@ -1,18 +1,18 @@
-                        Tux Paint "Magic" Tool: Negativ
+                     Rita med Tux "Magic" Verktyg: Negativ
 
-                         ### Group: Color Filters ###
+                           ### Grupp Färgfilter ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This inverts the colors wherever you drag the mouse. (e.g., white becomes
-black, and vice versa.) It inverts the values of the Red, Green, and Blue
-components of the pixels.
+Detta inverterar färgerna överallt där du drar musen (t.ex. blir vitt svart och
+vice versa). Det inverterar värdena för de röda, gröna och blå komponenterna i
+pixlarna.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Motsats.
+Se även nedan:Motsats.
 
 -------------------------------------------------------------------------------
 

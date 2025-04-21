@@ -1,14 +1,14 @@
-                        Tux Paint "Magic" Tool: Puzzle
+                     Rita med Tux "Magic" Verktyg: Pussel
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-                ## Author: Adam Rakowski <foo-script@o2.pl> ##
+             ## Upphovsperson: Adam Rakowski <foo-script@o2.pl> ##
 
-Slide parts of your picture around like a sliding puzzle.
+Skjut runt delar av din bild som ett skjutbart pussel.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

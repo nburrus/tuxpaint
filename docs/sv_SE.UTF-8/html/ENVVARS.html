@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Tux Paint Environment Variables Documentation    </title>
+      Dokumentation av miljövariabler för Rita med Tux    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
     <style>
@@ -88,10 +88,10 @@
             height="210"
             alt="Tux Paint"><br>
         version 0.9.35<br/>
-        Environment Variables Documentation      </h1>
+        Dokumentation om miljövariabler      </h1>
 
       <p>
-        Copyright &copy; 2021-2024 by olika bidragsgivare; see <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
+        Copyright © 2021-2024 av olika bidragsgivare; se <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
         <a href="https://tuxpaint.org/">https://tuxpaint.org/</a>
       </p>
 
@@ -102,10 +102,10 @@
     <hr>
 
     <p>
-      Tux Paint understands a number of environment variables, either directly, or indirectly by the libraries that it utilizes.    </p>
+      Rita med Tux förstår ett antal miljövariabler, antingen direkt eller indirekt genom de bibliotek som den använder.    </p>
 
     <h2>
-      Storage-related environment variables    </h2>
+      Lagringsrelaterade miljövariabler    </h2>
     <dl>
       <dt>
         <code>HOME</code>
@@ -113,15 +113,15 @@
 
       <dd>
         <p>
-          Specifies the user's "home directory", which is used to locate numerous other files or directories. In some cases, it is utilized as part of a fall-back location, when other environment variables (elsewhere in this documentation) are not set. Sometimes, the location to use can be overridden by options provided on the command-line or via Tux Paint's configuration file. See the "OPTIONS" documentation for details.        </p>
+          Anger användarens "hemkatalog", som används för att hitta många andra filer eller kataloger. I vissa fall används den som en del av en reservplats, när andra miljövariabler (på andra ställen i den här dokumentationen) inte är inställda. Ibland kan den plats som ska användas åsidosättas genom alternativ som anges på kommandoraden eller via Rita med Tuxs konfigurationsfil. Se dokumentationen "OPTIONS" för mer information.        </p>
 
         <p>
-          A few examples of where "<code>$HOME</code>" is used include:        </p>
+          Några exempel på när "<code>$HOME</code>" används är bl.a:        </p>
 
         <ul>
-          <li>The location of Tux Paint's configuration file</li>
-          <li>The basis of where Tux Paint saves and loads users' drawings</li>
-          <li>The location of a user's private collection of data files &mdash; stamps, brushes, etc. &mdash; (versus those available system wide)</li>
+          <li>Platsen för Rita med Tuxs konfigurationsfil</li>
+          <li>Grunden för var Rita med Tux sparar och laddar användarnas ritningar</li>
+          <li>Platsen för en användares privata samling av datafiler - stämplar, penslar etc. - (jämfört med de som finns tillgängliga i hela systemet)</li>
         </ul>
       </dd>
 
@@ -131,7 +131,7 @@
 
       <dd>
         <p>
-          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. Specifically, where to find "<code>user-dirs.dirs</code>", where the "<code>XDG_PICTURES_DIR</code>" might be defined. It is used for exporting drawings and animated GIFs. Generally it's set to something like "<code>$HOME/Pictures/</code>". If not specified, Tux Paint checks in the directory "<code>$HOME/.config/</code>". If the configuration cannot be found, Tux Paint simply exports drawings and GIFs to "<code>$HOME</code>".        </p>
+          På Linux och andra plattformar där X Desktop Group-standarderna används, platsen för användarens konfigurationsfiler. Specifikt var man hittar "<code>user-dirs.dirs</code>", var "<code>XDG_PICTURES_DIR</code>" kan definieras. Den används för att exportera ritningar och animerade GIF-filer. I allmänhet är den inställd på något i stil med "<code>$HOME/Pictures/</code>". Om inget anges kontrollerar Rita med Tux i katalogen "<code>$HOME/.config/</code>". Om konfigurationen inte kan hittas exporterar Rita med Tux helt enkelt ritningar och GIF-filer till "<code>$HOME</code>".        </p>
       </dd>
 
       <dt>
@@ -140,7 +140,7 @@
 
       <dd>
         <p>
-          On Linux and other platforms where the X Desktop Group standards are used, the location of the user's data directories. Specifically, where to find the "<code>Trash</code>" directory. It is used when deleting images from Tux Paint's "Open" dialog. If not set, the location "<code>$HOME/.local/share/Trash/</code>" is used, if available. If not, images are simply deleted, rather than moved anywhere.        </p>
+          På Linux och andra plattformar där X Desktop Group-standarderna används, platsen för användarens datakataloger. Specifikt var du hittar katalogen "<code>Trash</code>". Den används när man tar bort bilder från Rita med Tuxs "Öppna"-dialog. Om den inte anges används platsen "<code>$HOME/.local/share/Trash/</code>", om den finns tillgänglig. Om inte, raderas bilderna helt enkelt, snarare än att flyttas någonstans.        </p>
       </dd>
 
       <dt>
@@ -149,12 +149,12 @@
 
       <dd>
         <p>
-          Specifies the location where temporary files may be created. Only used by Tux Paint on Microsoft Windows OSes. Uses "<code>userdata</code>" if not set.        </p>
+          Anger den plats där tillfälliga filer kan skapas. Används endast av Rita med Tux på Microsoft Windows operativsystem. Använder "<code>userdata</code>" om den inte anges.        </p>
     </dl>
 
 
     <h2>
-      Language-related environment variables    </h2>
+      Språkrelaterade miljövariabler    </h2>
     <dl>
       <dt>
         <code>LANG</code>
@@ -171,30 +171,30 @@
 
       <dd>
         <p>
-          Specify the language Tux Paint should utilize in its user interface. Overridden by the "<code>--lang</code>" and "<code>--locale</code>" command-line options or their configuration file counterparts. The "<code>LANGUAGE</code>" environment variable is used, if set. If not, "<code>LC_ALL</code>" is used as a fallback. Then "<code>LC_MESSAGES</code>", and finally "<code>LANG</code>".        </p>
+          Ange vilket språk som Rita med Tux ska använda i sitt användargränssnitt. Åsidosätts av kommandoradsalternativen "<code>--lang</code>" och "<code>--locale</code>" eller deras motsvarigheter i konfigurationsfilen. Miljövariabeln "<code>LANGUAGE</code>" används om den är inställd. Om så inte är fallet används "<code>LC_ALL</code>" som reserv. Sedan "<code>LC_MESSAGES</code>" och slutligen "<code>LANG</code>".        </p>
       </dd>
 
     </dl>
 
     <h2>
-      Display-related environment variables    </h2>
+      Displayrelaterade miljövariabler    </h2>
 
     <p>
-      The following are a few of the environment variables supported by Simple DirectMedia Layer (libSDL) &mdash; which Tux Paint utilizes for displaying graphics, playing sounds, and receiving mouse, keyboard, and joystick input &mdash; and which may be useful to users of Tux Paint.
+      Här följer några av de miljövariabler som stöds av Simple DirectMedia Layer (libSDL) - som Rita med Tux använder för att visa grafik, spela upp ljud och ta emot mus-, tangentbords- och joystickinmatning - och som kan vara användbara för användare av Rita med Tux.
     <dl>
       <dt>
         <code>SDL_VIDEO_ALLOW_SCREENSAVER</code>
       </dt>
       <dd>
         <p>
-          Specifies whether Tux Paint should allow a screensaver to run. Can be set to '1' (true) by Tux Paint itself by issuing the command-line option "<code>--allowscreensaver</code>" or its configuration file counterpart.        </p>
+          Anger om Rita med Tux ska tillåta att en skärmsläckare körs. Kan sättas till '1' (true) av Rita med Tux själv genom att ange kommandoradsalternativet "<code>--allowscreensaver</code>" eller dess motsvarighet i konfigurationsfilen.        </p>
       </dd>
       <dt>
         <code>SDL_VIDEO_WINDOW_POS</code>
       </dt>
       <dd>
         <p>
-          Requests where to position Tux Paint's window, and can be used to specify what display to place a fullscreen Tux Paint in a multi-monitor configuration. If not set, or set to "<code>nopref</code>" (meaning "no preference"), Simple DirectMedia Layer (libSDL) decides. Can be set to an <code>X,Y</code> coordinate (e.g. <code>200,100</code>), or "<code>center</code>" (meaning "center").        </p>
+          Begär var Rita med Tux-fönstret ska placeras och kan användas för att ange vilken skärm som ska användas för att placera Rita med Tux i fullskärm i en konfiguration med flera skärmar. Om den inte är inställd, eller är inställd på "<code>nopref</code>" (vilket betyder "ingen preferens"), bestämmer Simple DirectMedia Layer (libSDL). Kan ställas in på en <code>X,Y</code>-koordinat (t.ex. <code>200,100</code>) eller "<code>center</code>" (vilket betyder "mitt").        </p>
       </dd>
 
     </dl>

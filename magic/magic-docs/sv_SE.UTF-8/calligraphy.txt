@@ -1,17 +1,17 @@
-                      Tux Paint "Magic" Tool: Kalligrafi
+                   Rita med Tux "Magic" Verktyg: Kalligrafi
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This paints on the canvas with a calligraphy pen. The quicker you move, the
-thinner the lines.
+Detta målar på duken med en kalligrafipenna. Ju snabbare du rör dig, desto
+tunnare blir linjerna.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
 -------------------------------------------------------------------------------
 

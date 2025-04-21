@@ -1,20 +1,20 @@
-                    Tux Paint "Magic" Tool: 2-Point Select
+                   Rita med Tux "Magic" Verktyg: 2-punktsval
 
-                          ### Group: Projections ###
+                          ### Grupp Projektioner ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click (and drag) to position the two vanishing points that will be used with
-the "2-Point Draw" tool.
+Klicka (och dra) för att placera de två försvinnande punkterna som ska användas
+med verktyget "2-Point Draw".
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool is only available with "complexity" (expertise level) set to
-'Advanced'.
+Detta verktyg är endast tillgängligt när "komplexitet" (expertnivå) är inställd
+på "Avancerad".
 
-See also: 1-Point Draw, 1-Point Select, 2-Point Draw, 3-Point Draw, 3-Point
-Select, Isometric Line, Dimetric Select, Dimetric Draw, Trimetric Select,
-Trimetric Draw, Oblique Select, Oblique Draw, & Perspektiv.
+Se även nedan:1-punktsritning, 1-punktsval, 2-punktsritning, 3-punktsritning,
+3-punktsval, Isometrisk linje, Dimetriskt val, Dimetrisk ritning, Trimetrisk
+välj, Trimetrisk ritning, Sned välj, Snedritning, & Perspektiv.
 
 -------------------------------------------------------------------------------
 

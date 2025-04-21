@@ -1,17 +1,16 @@
-                        Tux Paint "Magic" Tool: Blocks
+                      Rita med Tux "Magic" Verktyg: Block
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-             ## Authors: Bill Kendrick <bill@newbreedsoftware.com>
+           ## Författare: Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
                                       ##
 
-This makes the picture blocky looking ("pixelated") wherever you drag the
-mouse.
+Detta gör att bilden ser blockig ut ("pixlig") var du än drar musen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 

@@ -1,18 +1,18 @@
-                         Tux Paint "Magic" Tool: Blur
+                    Rita med Tux "Magic" Verktyg: Suddighet
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-             ## Authors: Bill Kendrick <bill@newbreedsoftware.com>
+           ## Författare: Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
                                       ##
 
-This makes the picture fuzzy wherever you drag the mouse.
+Detta gör att bilden blir suddig var du än drar musen.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-See also: Sharpen & Smudge.
+Se även nedan:Endast skärpa (intern upplösning) & Smudge.
 
 -------------------------------------------------------------------------------
 

@@ -1,19 +1,19 @@
-                      Tux Paint "Magic" Tool: Krumelurer
+                   Rita med Tux "Magic" Verktyg: Krumelurer
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This draws random squiggly loops, using the currently-selected color, as you
-move the mouse around.
+Den här funktionen ritar slumpmässiga slingor med den valda färgen när du
+flyttar muspekaren.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Smooth, Loops, Spiral, & Fyrkantig spiral.
+Se även nedan:Utjämna, Slingor, Spiral, & Fyrkantig spiral.
 
 -------------------------------------------------------------------------------
 

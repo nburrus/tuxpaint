@@ -1,14 +1,14 @@
-                       Tux Paint "Magic" Tool: Snow Ball
+                     Rita med Tux "Magic" Verktyg: Snöboll
 
-                      ### Group: Picture Decorations ###
+                        ### Grupp Bilddekorationer ###
 
-              ## Author: Andrew Corcoran <akanewbie@gmail.com> ##
+          ## Upphovsperson: Andrew Corcoran <akanewbie@gmail.com> ##
 
-Fill the picture with snowballs.
+Fyll bilden med snöbollar.
 
-This tool is operated with a single click.
+Detta verktyg manövreras med ett enda klick.
 
-See also: Rain & Snow Flake.
+Se även nedan:Regn & Snöflinga.
 
 -------------------------------------------------------------------------------
 

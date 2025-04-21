@@ -1,25 +1,26 @@
-                     Tux Paint "Magic" Tool: Hypotrochoid
+               Rita med Tux "Magic" Verktyg: Hypotrokoid insida
 
-                            ### Group: Artistic ###
+                           ### Grupp Konstnärlig ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Click to place the center of a hypotrochoid curve, then drag left/right to
-adjust the radius of a fixed circle, and up/down to adjust the radius of the
-circle that will roll along its interior to produce the drawing. The size
-options allow positioning the "pen" that paints the curve relative to the
-rolling circle. (If the Magic size feature is disabled, multiple "Hypotrochoid"
-tools will be made available.)
+Klicka för att placera mitten av en hypotrochoidkurva och dra sedan åt vänster/
+höger för att justera radien för en fast cirkel och uppåt/nedåt för att justera
+radien för den cirkel som kommer att rulla längs dess insida för att producera
+ritningen. Storleksalternativen gör det möjligt att positionera "pennan" som
+målar kurvan i förhållande till den rullande cirkeln. (Om Magic size-funktionen
+är inaktiverad kommer flera "Hypotrokoid insida"-verktyg att göras
+tillgängliga.)
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Epicykloid, Epitrochoid Inside, Epitrochoid Edge, Epitrochoid Outside
-, Hypotrochoid Inside, Hypotrochoid Edge, Hypotrochoid Outside, String Corner,
-String Edges, & String V.
+Se även nedan:Epicykloid, Epicykloid insida, Epicykloid kant, Epicykloid utsida
+, Hypotrokoid insida, Hypotrokoid kant, Hypotrokoid utsida, Stringhörn,
+Strängens kanter, & String V.
 
 -------------------------------------------------------------------------------
 

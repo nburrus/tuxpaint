@@ -1,15 +1,15 @@
-                        Tux Paint "Magic" Tool: Halvton
+                     Rita med Tux "Magic" Verktyg: Halvton
 
-                            ### Group: Distorts ###
+                           ### Grupp Förvränger ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-This makes parts of your picture look like newsprint. Different sizes of cyan,
-magenta, yellow, and black "ink" will appear in place of your picture.
+Detta gör att delar av din bild ser ut som tidningspapper. Olika storlekar av
+cyan, magenta, gult och svart "bläck" kommer att visas i stället för din bild.
 
-This tool offers both freehand and one-click operation.
+Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-See also: Comic Dots.
+Se även nedan:Serietecknade prickar.
 
 -------------------------------------------------------------------------------
 

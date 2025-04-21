@@ -1,19 +1,19 @@
-                        Tux Paint "Magic" Tool: Spiral
+                     Rita med Tux "Magic" Verktyg: Spiral
 
-                            ### Group: Målning ###
+                             ### Grupp Målning ###
 
-            ## Author: Bill Kendrick <bill@newbreedsoftware.com> ##
+        ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw spirals.
+Rita spiraler.
 
-This tool is operated in a freehand fashion.
+Detta verktyg används på fri hand.
 
-This tool offers multiple size settings.
+Detta verktyg erbjuder flera storleksinställningar.
 
-This tool offers color choices.
+Detta verktyg erbjuder färgval.
 
-See also: Loops, Krumelurer, Fyrkantig spiral, Concentric Circle, & Concentric
-Square.
+Se även nedan:Slingor, Krumelurer, Fyrkantig spiral, Koncentrisk cirkel, &
+Koncentrisk kvadrat.
 
 -------------------------------------------------------------------------------
 
