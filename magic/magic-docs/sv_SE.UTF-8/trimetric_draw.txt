@@ -17,7 +17,7 @@ Detta verktyg erbjuder färgval.
 Detta verktyg är inte tillgängligt när "komplexitet" (expertnivå) är inställd
 på "Nybörjare".
 
-Se även nedan:1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
+Se även: 1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
 3-punktsritning, 3-punktsval, Isometrisk linje, Dimetriskt val, Dimetrisk
 ritning, Trimetrisk välj, Sned välj, Snedritning, & Perspektiv.
 

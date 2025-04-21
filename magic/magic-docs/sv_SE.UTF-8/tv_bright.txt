@@ -2,7 +2,7 @@
 
                            ### Grupp Förvränger ###
 
-                ## Författare: Adam Rakowski <foo-script@o2.pl>
+             ## Upphovspersoner: Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
@@ -13,7 +13,7 @@ Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 Detta verktyg erbjuder flera storleksinställningar.
 
-Se även nedan:TV.
+Se även: TV.
 
 -------------------------------------------------------------------------------
 

@@ -12,7 +12,7 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg erbjuder färgval.
 
-Se även nedan:Rutor, Mönster, & Tessellation platt.
+Se även: Rutor, Mönster, & Tessellation platt.
 
 -------------------------------------------------------------------------------
 

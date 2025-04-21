@@ -4,13 +4,13 @@
 
         ## Upphovsperson: Bill Kendrick <bill@newbreedsoftware.com> ##
 
-ASCII färgdator - förvandla din bild till färgdator "ASCII-konst"
+Förvandla din bild till färgdator "ASCII-konst".
 
 Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 Detta verktyg erbjuder flera storleksinställningar.
 
-Se även nedan:ASCII-dator & ASCII skrivmaskin.
+Se även: ASCII-dator & ASCII skrivmaskin.
 
 -------------------------------------------------------------------------------
 

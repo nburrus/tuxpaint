@@ -2,7 +2,7 @@
 
                              ### Grupp Målning ###
 
-              ## Författare: Albert Cahalan <albert@users.sf.net>
+           ## Upphovspersoner: Albert Cahalan <albert@users.sf.net>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
@@ -14,7 +14,7 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg erbjuder färgval.
 
-Se även nedan:Smudge.
+Se även: Smudge.
 
 -------------------------------------------------------------------------------
 

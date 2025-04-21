@@ -2,7 +2,7 @@
 
                            ### Grupp Förvränger ###
 
-           ## Författare: Bill Kendrick <bill@newbreedsoftware.com>
+         ## Upphovspersoner: Bill Kendrick <bill@newbreedsoftware.com>
                      Albert Cahalan <albert@users.sf.net>
                                       ##
 
@@ -12,7 +12,7 @@ Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 Detta verktyg erbjuder flera storleksinställningar.
 
-Se även nedan:Endast skärpa (intern upplösning) & Smudge.
+Se även: Endast skärpa (intern upplösning) & Smudge.
 
 -------------------------------------------------------------------------------
 

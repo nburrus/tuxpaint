@@ -13,21 +13,21 @@ Rita med Tux 0.9.35 Snabbstartsguide
 ## ⌧Stämplar ##
 
   * Byt kategori med pilknapparna ⇦⇨ längst ned till höger.
-  * Välj ett frimärke till höger.
-  * Vissa frimärken kan speglas 🪞 och/eller vändas ↕ med hjälp av kontrollerna
+  * Välj ett stämpel till höger.
+  * Vissa stämplar kan speglas 🪞 och/eller vändas ↕ med hjälp av kontrollerna
     längst ned till höger.
-  * Vissa frimärken kan du välja färg på (se "Färger").
+  * Vissa stämplar kan du välja färg på (se "Färger").
   * Ändra stämpelstorlek med staplarna 📶 längst ned till höger.
   * Rotation ⟳ kan aktiveras om så önskas.
   * Klicka/knacka på duken för att placera en stämpel.
       + Om rotationen är aktiverad kan du dra för att rotera den och klicka/
         knacka igen för att lägga till den i ritningen.
-  * Vissa frimärken spelar upp ljudeffekter; tryck på högtalarknappen 🕪 för att
+  * Vissa stämplar spelar upp ljudeffekter; tryck på högtalarknappen 🕪 för att
     höra dem igen.
-  * Vissa frimärken spelar upp beskrivande ljud; tryck på hörlursknappen 🎧 för
+  * Vissa stämplar spelar upp beskrivande ljud; tryck på hörlursknappen 🎧 för
     att höra det igen.
 
-## ⚟Rader ##
+## ⚟Linjer ##
 
   * (Se färg)
   * Klicka/tryck och dra för att rita en linje.
@@ -98,7 +98,7 @@ Rita med Tux 0.9.35 Snabbstartsguide
       + Shaped - Fyller området med en gradient som följer konturerna av det
         område som fylls i
       + Eraser - Ersätter ett område med bakgrundsfärgen eller bakgrundsbilden
-        för Starter eller Template
+        för Startbild eller Template
 
 ## 🪄Magisk ##
 
@@ -122,8 +122,7 @@ Rita med Tux 0.9.35 Snabbstartsguide
     tillgängliga).
   * Genväg: [Control]+[R]
 
-## ◪Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger
-mjukare, sammanhängande streck när pekaren flyttas snabbt. ##
+## ◪Sudda ##
 
   * Välj storlek och form på suddgummit till höger.
   * Klicka/tryck och dra för att radera delar av bilden (enfärgad, startbild
@@ -135,10 +134,10 @@ mjukare, sammanhängande streck när pekaren flyttas snabbt. ##
 ## 🗏Ny ##
 
   * Välj en enfärgad bild, en startbild eller en mallbild att börja med.
-      + Starters gör det möjligt att rita "under" en bild (t.ex. en
+      + Startbilder gör det möjligt att rita "under" en bild (t.ex. en
         målarboksskiss), ibland även med ett bakgrundslager.
       + Mallarna är bilder att börja med (endast bakgrund).
-      + Suddgummi ◪ avslöjar den solida färgen eller start-/mallbakgrunden.
+      + Sudda ◪ avslöjar den solida färgen eller start-/mallbakgrunden.
   * Klicka/tryck på "🕮⮫Öppna" för att påbörja en ny ritning.
   * Klicka/tryck på "⤺Tillbaka" för att avbryta och återgå till den aktuella
     ritningen.

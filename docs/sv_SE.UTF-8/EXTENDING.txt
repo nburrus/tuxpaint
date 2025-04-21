@@ -7,36 +7,36 @@
 
                                januari 12, 2025
 
-+-------------------------------------------+
-|                 Innehåll                  |
-|-------------------------------------------|
-|   * Vart filerna tar vägen                |
-|       + Standardfiler                     |
-|       + Personliga filer                  |
-|   * Penslar                               |
-|       + Borste Beskrivande text           |
-|       + Alternativ för pensel             |
-|   * Stämplar                              |
-|       + Stämpelbilder                     |
-|       + Stämpel Beskrivande text          |
-|       + Stämpel ljudeffekter              |
-|       + Stämpel Beskrivande ljud          |
-|       + Alternativ för stämplar           |
-|       + Förspeglade och omvända frimärken |
-|   * Typsnitt                              |
-|   * "Startbilder"                         |
-|       + Startbok i målarboksstil          |
-|       + Förrätter i scenformat            |
-|       + Startalternativ                   |
-|   * Inga mallar                           |
-|       + Mallalternativ                    |
-|   * Översättningar                        |
-|   * Alternativa metoder för inmatning     |
-|   * Tangentbord på skärmen                |
-|   * Magiverktyg                           |
-+-------------------------------------------+
++------------------------------------------+
+|                 Innehåll                 |
+|------------------------------------------|
+|   * Vart filerna tar vägen               |
+|       + Standardfiler                    |
+|       + Personliga filer                 |
+|   * Penslar                              |
+|       + Borste Beskrivande text          |
+|       + Alternativ för pensel            |
+|   * Stämplar                             |
+|       + Stämpelbilder                    |
+|       + Stämpel Beskrivande text         |
+|       + Stämpel ljudeffekter             |
+|       + Stämpel Beskrivande ljud         |
+|       + Alternativ för stämplar          |
+|       + Förspeglade och omvända stämplar |
+|   * Typsnitt                             |
+|   * "Startbilder"                        |
+|       + Startbok i målarboksstil         |
+|       + Startbilder i scenformat         |
+|       + Startalternativ                  |
+|   * "Mallar"                             |
+|       + Mallalternativ                   |
+|   * Översättningar                       |
+|   * Alternativa metoder för inmatning    |
+|   * Tangentbord på skärmen               |
+|   * Magiverktyg                          |
++------------------------------------------+
 
-Om du vill lägga till eller ändra saker som Brushes, Starters, Rubber Stamps
+Om du vill lägga till eller ändra saker som Brushes, Startbilder, Rubber Stamps
 och annat innehåll som används av Rita med Tux kan du göra det ganska enkelt
 genom att helt enkelt lägga till, ändra eller ta bort filer där Rita med Tux
 letar efter dem.
@@ -87,10 +87,10 @@ Rita med Tux letar efter sina olika datafiler i katalogen"data".
      2. Välj "Visa innehåll" i menyn som visas. Ett nytt Finder-fönster visas
         med en mapp inuti som heter "Innehåll".
      3. Öppna mappen "Contents" och öppna mappen "Resources" som finns i den.
-     4. Där hittar du olika undermappar, t.ex. "starters", "stamps", "brushes"
-        osv. Om du lägger till nytt innehåll i dessa mappar blir innehållet
-        tillgängligt för alla användare som startar den här kopian (ikonen) av
-        Rita med Tux.
+     4. Där hittar du olika undermappar, t.ex. "startbilder", "stamps",
+        "brushes" osv. Om du lägger till nytt innehåll i dessa mappar blir
+        innehållet tillgängligt för alla användare som startar den här kopian
+        (ikonen) av Rita med Tux.
 
     💡 Obs: Om du installerar en nyare version av Rita med Tux och ersätter
     eller kasserar den gamla versionen kommer du att förlora ändringar som
@@ -112,8 +112,8 @@ Rita med Tux letar efter sina olika datafiler i katalogen"data".
 
                            ### Personliga filer ###
 
-Du kan också skapa penslar, stämplar, "starters", mallar och teckensnitt i din
-egen användarkontokatalog (mapp) som Rita med Tux kan hitta.
+Du kan också skapa penslar, stämplar, "startbilder", mallar och teckensnitt i
+din egen användarkontokatalog (mapp) som Rita med Tux kan hitta.
 
 → Windows ←
 
@@ -143,7 +143,7 @@ egen användarkontokatalog (mapp) som Rita med Tux kan hitta.
 
      
 
-Om du vill lägga till egna penslar, stämplar, "starters", mallar och
+Om du vill lägga till egna penslar, stämplar, "startbilder", mallar och
 teckensnitt skapar du underkataloger i din personliga Rita med Tux-katalog med
 namnen "brushes", "stamps", "starters", "templates" respektive "fonts".
 
@@ -204,8 +204,7 @@ beskrivningen av penselns bild. Den måste vara kodad i UTF-8.
                          ### Alternativ för pensel ###
 
 Förutom en grafisk form kan penslar också ges andra attribut. För att göra
-detta måste du skapa en "datafil" för Den här penselns avstånd är nu 1
-bildpunkt!.
+detta måste du skapa en "datafil" för pensel.
 
 En brush's-datafil är helt enkelt en vanlig ASCII-textfil som innehåller
 alternativen för brush.
@@ -213,7 +212,7 @@ alternativen för brush.
 Filen har samma namn som PNG-bilden, men har tillägget ".dat". (t.ex. är
 datafilen för "borste.png" textfilen "borste.dat", som finns i samma katalog)
 
-→ Den här penselns avstånd är nu 1 bildpunkt! ←
+→ Penselavstånd ←
 
     Du kan ange avståndet mellan penslarna, det vill säga hur ofta de dras över
     en linje eller ett streck. Som standard är avståndet penselns höjd
@@ -255,8 +254,7 @@ datafilen för "borste.png" textfilen "borste.dat", som finns i samma katalog)
     t.ex. är 30x30 ska bilden vara 90x90 och varje riktningsform placeras i ett
     3x3 rutnät.
 
-    Lägg till en rad som innehåller ordet "directional" i datafilen Den här
-    penselns avstånd är nu 1 bildpunkt!.
+    Lägg till en rad som innehåller ordet "directional" i datafilen penselns.
 
 
      
@@ -266,8 +264,7 @@ datafilen för "borste.png" textfilen "borste.dat", som finns i samma katalog)
     eller penseldraget. (Till skillnad från Directional Brushes, som beskrivs
     ovan, kan endast en enda penselform tillhandahållas.
 
-    Lägg till en rad som innehåller ordet "rotate" i datafilen Den här penselns
-    avstånd är nu 1 bildpunkt!.
+    Lägg till en rad som innehåller ordet "rotate" i datafilen penselns.
 
 
      
@@ -276,8 +273,7 @@ datafilen för "borste.png" textfilen "borste.dat", som finns i samma katalog)
     Penslar kan konfigureras så att de kontinuerligt väljer en slumpmässig
     riktning när du ritar med dem.
 
-    Lägg till en rad som innehåller ordet "chaotic" i datafilen Den här
-    penselns avstånd är nu 1 bildpunkt!.
+    Lägg till en rad som innehåller ordet "chaotic" i datafilen penselns.
 
 
      
@@ -347,7 +343,7 @@ vanliga textfiler med samma namn som PNG- eller SVG-filen, men med
 filnamnstillägget ".txt". (t.ex. lagras beskrivningen av "stämpel.png" i
 "stämpel.txt" i samma katalog)
 
-Den första raden i textfilen kommer att användas som beskrivning av frimärkets
+Den första raden i textfilen kommer att användas som beskrivning av stämpelts
 bild på US-engelska. Den måste vara kodad i UTF-8.
 
 → Stöd för lokalisering ←
@@ -412,7 +408,7 @@ nedan.
 
                        ### Stämpel Beskrivande ljud ###
 
-Rita med Tux kan också spela upp ett beskrivande ljud när ett frimärke väljs.
+Rita med Tux kan också spela upp ett beskrivande ljud när ett stämpel väljs.
 Till exempel ljudet av någon som säger ordet "anka" när man väljer en anka,
 eller namnet på ett musikinstrument när ett sådant väljs. Filerna kan vara i
 formaten "WAVE (".wav")" eller "OGG Vorbis (".ogg")" och ges samma namn som
@@ -469,7 +465,7 @@ katalog)
          
     → Tonad ←
 
-        "Tinted" stämplar liknar "färgbara" frimärken, förutom att detaljerna i
+        "Tinted" stämplar liknar "färgbara" stämplar, förutom att detaljerna i
         originalbilden behålls. (För att uttrycka det tekniskt används
         originalbilden, men dess nyans ändras, baserat på den aktuella valda
         färgen)
@@ -480,12 +476,12 @@ katalog)
          
     → Alternativ för toning: ←
 
-        Beroende på innehållet i ditt frimärke kan du låta Rita med Tux använda
+        Beroende på innehållet i ditt stämpel kan du låta Rita med Tux använda
         en av flera olika metoder för att färglägga det. Lägg till en av
         följande rader i stämpelns datafil:
 
         → Normal tinter — "tinter=normal" NEJ (STANDARD) ←
-            Detta är det normala färgläggningsläget. Först bestäms frimärkets
+            Detta är det normala färgläggningsläget. Först bestäms stämpelts
             primära nyans. (Om du t.ex. tar en bild av en blomma med stjälk
             kommer kronbladets färg att ses som den primära nyansen i hela
             bilden) Därefter hittas den mest mättade delen av bilden. Med
@@ -522,7 +518,7 @@ katalog)
     frimärksväljaren, längst ned till höger på skärmen i Rita med Tux.
 
     Ibland är det inte meningsfullt att en stämpel ska kunna vändas eller
-    speglas, t.ex. stämplar med bokstäver eller siffror. Ibland är frimärken
+    speglas, t.ex. stämplar med bokstäver eller siffror. Ibland är stämplar
     symmetriska, och då är det inte meningsfullt att låta användaren vända
     eller spegla dem.
 
@@ -563,10 +559,10 @@ katalog)
 
      
 
-                   ### Förspeglade och omvända frimärken ###
+                   ### Förspeglade och omvända stämplar ###
 
 I vissa fall kanske du vill tillhandahålla en färdigritad version av ett
-frimärkes spegelbild, vändade bild eller till och med båda. Tänk dig till
+stämpels spegelbild, vändade bild eller till och med båda. Tänk dig till
 exempel en bild av en brandbil med orden"Fire Department" skrivna tvärs över
 sidan. Du vill förmodligen inte att den texten ska visas baklänges när bilden
 vänds!
@@ -619,7 +615,7 @@ som en SVG-vektor. Om du sparar som en PNG-fil kan du välja att göra bilden
 svart och genomskinlig i stället för svartvit, även om detta inte är
 nödvändigt.
 
-                        ### Förrätter i scenformat ###
+                       ### Startbilder i scenformat ###
 
 Tillsammans med överlägget i "målarboksstil" kan du också tillhandahålla en
 separat bakgrundsbild som en del av en "startbild". Överlägget fungerar på
@@ -660,9 +656,9 @@ den)
 
                             ### Startalternativ ###
 
-Förutom Uppstartsbild kan förrätter också ges andra attribut. För att göra
-detta måste du skapa en "datafil" för startmotor. (Obs: Rita med Tux före
-version 0.9.29 hade inte stöd för startalternativ)
+Förutom en bild kan startbilder också ges andra attribut. För att göra detta
+måste du skapa en "datafil" för startmotor. (Obs: Rita med Tux före version
+0.9.29 hade inte stöd för startalternativ)
 
 En starter's-datafil är helt enkelt en vanlig ASCII-textfil som innehåller
 alternativen för starter.
@@ -684,25 +680,25 @@ för "start.png" textfilen "start.dat", som finns i samma katalog)
     kan "tillåta skala" användas för att tala om för Rita med Tux vilket
     beteende som ska tillåtas:
 
-      o För att börja med där det är okej att beskära Vänster till höger
-        -kanterna, men Topp-till-botten -kanterna måste behållas, använd "
+      o För att börja med där det är okej att beskära vänster och höger
+        -kanterna, men topp och botten -kanterna måste behållas, använd "
         allowcale=horizontal".
           # Om startbildens bildförhållande är bredare större än bildytans,
-            skalas den så att den passar in i bildytans höjd och Vänster till
+            skalas den så att den passar in i bildytans höjd och vänster och
             höger beskärs.
           # Om startbildens bildförhållande är längre större än bildytans,
             skalas den så att den passar bildytans höjd, ingen beskärning sker
-            och Vänster till höger kanterna blir utsmetade.
+            och vänster och höger kanterna blir utsmetade.
 
-      o För att börja med där det är okej att beskära Topp-till-botten
-        -kanterna, men Vänster till höger -kanterna måste behållas, använd "
-        allowcale=vertical".
+      o För att börja med där det är okej att beskära topp och botten -kanterna
+        , men vänster och höger -kanterna måste behållas, använd "allowcale=
+        vertical".
           # Om startbildens bildförhållande är längre större än bildytans,
-            skalas den så att den passar in i bildytans bredd och
-            Topp-till-botten beskärs.
+            skalas den så att den passar in i bildytans bredd och topp och
+            botten beskärs.
           # Om startbildens bildförhållande är bredare större än bildytans,
             skalas den så att den passar bildytans bredd, ingen beskärning sker
-            och Topp-till-botten kanterna blir utsmetade.
+            och topp och botten kanterna blir utsmetade.
 
       o Om det är acceptabelt att beskära antingen toppen och botten eller
         vänster och höger, använd "tillåt skala=båda". Innehåll från startsidan
@@ -797,19 +793,19 @@ för "start.png" textfilen "start.dat", som finns i samma katalog)
      
 
 💡 Observera: Mallar (beskrivs nedan) kan också ha alternativfiler och stöder
-för närvarande alla samma alternativ som starters.
+för närvarande alla samma alternativ som startbilder.
 
 
-Inga mallar
+"Mallar"
 
 "Mall"-bilder visas också i "Ny"-dialogen, tillsammans med val av enfärgad
 bakgrund och "Startare".
 
 Till skillnad från bilder som ritats i Rita med Tux av användare och sedan
 öppnats senare, skapas en ny teckning när du öppnar en "mall". När du sparar
-skrivs inte "mall"-bilden över. Till skillnad från "starters" finns det inget
-oföränderligt "lager" ovanför duken. Du kan rita över vilken del som helst av
-den.
+skrivs inte "mall"-bilden över. Till skillnad från "startbilder" finns det
+inget oföränderligt "lager" ovanför duken. Du kan rita över vilken del som
+helst av den.
 
 När verktyget "Eraser" används på en bild som bygger på den här typen av
 "mall"-bild, återgår den delen av duken till den ursprungliga bakgrundsbilden
@@ -828,7 +824,7 @@ Placera dem i katalogen "templates". När dialogrutan "New" öppnas i Rita med
 Tux kommer "mall"-bilder att visas i den skärm som visas, efter de olika
 valmöjligheterna för enfärg.
 
-💡 Obs: Inga mallar "bifogas" till sparade bilder via en liten textfil som har
+💡 Obs: "Mallar" "bifogas" till sparade bilder via en liten textfil som har
 samma namn som den sparade filen, men med ".dat" som tillägg. Detta gör att den
 kan fortsätta att påverka teckningen även efter att Rita med Tux har avslutats,
 eller en annan bild har laddats eller en ny bild har skapats. (Med andra ord,
@@ -838,7 +834,7 @@ den)
 
                             ### Mallalternativ ###
 
-Precis som för "Starters" kan en konfigurationsfil anges som definierar hur
+Precis som för "Startbilder" kan en konfigurationsfil anges som definierar hur
 Rita med Tux ska bete sig när "mallbilder" appliceras på duken när de inte har
 identiska proportioner (bildförhållande). Se"Startalternativ" ovan. (Obs: Rita
 med Tux före version 0.9.29 hade inte stöd för startalternativ)
@@ -902,10 +898,10 @@ Alternativt, om du har ett konto hos SourceForge.net, kan du begära att bli
 tillagd till "tuxpaint"-projektet och få skrivåtkomst till Git-källkodsarkivet
 så att du kan göra dina ändringar direkt.
 
-💡 Obs: Stöd för nya platser kräver tillägg till Rita med Tuxs källkod (/src/
-i18n.h; uppdaterad /src/i18n.c), och kräver uppdateringar av Makefile, för att
-säkerställa att ".po"-filerna kompileras till ".mo"-filer och är tillgängliga
-för användning vid körning.
+💡 Obs: Stöd för nya lokalanpassningar kräver tillägg till Rita med Tuxs källkod
+(/src/i18n.h; uppdaterad /src/i18n.c), och kräver uppdateringar av Makefile,
+för att säkerställa att ".po"-filerna kompileras till ".mo"-filer och är
+tillgängliga för användning vid körning.
 
 Alternativa metoder för inmatning
 

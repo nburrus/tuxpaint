@@ -38,14 +38,14 @@
     samlingen "Stamps", avsluta Rita med Tux och installera den nu. Den bör
     finnas tillgänglig på samma ställe som du fick huvudprogrammet Rita med
     Tux. (Obs: Rita med Tux levereras med en mycket liten samling
-    exempelfrimärken)
+    exempelstämplar)
 
     Om du inte vill installera standardsamlingen av stämplar kan du bara skapa
     dina egna. Se dokumentationen "Extending Rita med Tux" för mer information
     om hur du skapar PNG- och SVG-bildfiler, TXT-textbeskrivningsfiler, Ogg
     Vorbis-, MP3- eller WAV-ljudfiler och DAT-textdatafiler som utgör stämplar.
 
-    Slutligen, om du har installerat frimärken och tycker att de borde laddas,
+    Slutligen, om du har installerat stämplar och tycker att de borde laddas,
     kontrollera att alternativet "nostamps" inte är inställt. (Antingen via ett
     "--nostamps"-alternativ på Rita med Tuxs kommandorad eller "nostamps=yes" i
     konfigurationsfilen)
@@ -74,7 +74,7 @@
 
                        ### Problem med gränssnittet ###
 
-→ Miniatyrbilder av frimärken i frimärksväljaren ser dåliga ut ←
+→ Miniatyrbilder av stämplar i frimärksväljaren ser dåliga ut ←
 
     Rita med Tux kompilerades förmodligen med den snabbare, lägre
     kvalitetskoden för miniatyrbilder aktiverad. Kör kommandot: "tuxpaint
@@ -211,10 +211,8 @@
     kommandoradsargumentet: "--print", vilket kommer att åsidosätta
     konfigurationsfilens inställning.
 
-    Eller använd Rita med Tux Config. och se till att "Tillåt utskrift" (under
-    "Skriver ut") Om detta är markerat kommer OctoPrint att försöka skicka en
-    M112 innan en frånkoppling på grund av ett (fatalt) fel för att inaktivera
-    värmare och motorer..
+    Eller använd Konfigurera Rita med Tux och se till att "Tillåt utskrift"
+    (under "Skriver ut") är markerad.
 
 
      
@@ -289,10 +287,8 @@
     kommandoradsargumentet: "--saveoverask", vilket kommer att åsidosätta
     konfigurationsfilens inställning.
 
-    Eller använd Rita med Tux Config. och se till att "Fråga innan du skriver
-    över" (under "Sparar") Om detta är markerat kommer OctoPrint att försöka
-    skicka en M112 innan en frånkoppling på grund av ett (fatalt) fel för att
-    inaktivera värmare och motorer..
+    Eller använd Konfigurera Rita med Tux och se till att "Fråga innan du
+    skriver över" (under "Sparar") är markerad.
 
     Se även "Rita med Tux sparar alltid en ny bild!" nedan.
 
@@ -318,10 +314,8 @@
     kommandoradsargumentet: "--saveoverask", vilket kommer att åsidosätta
     konfigurationsfilens inställning.
 
-    Eller använd Rita med Tux Config. och se till att "Fråga innan du skriver
-    över" (under "Sparar") Om detta är markerat kommer OctoPrint att försöka
-    skicka en M112 innan en frånkoppling på grund av ett (fatalt) fel för att
-    inaktivera värmare och motorer..
+    Eller använd Konfigurera Rita med Tux och se till att "Fråga innan du
+    skriver över" (under "Sparar") är markerad.
 
     Se även "Rita med Tux sparar alltid över min gamla bild!", ovan.
 
@@ -407,10 +401,8 @@
           # Redigera Rita med Tuxs konfigurationsfil (se "Dokumentation av
             alternativ" för mer information) och lägg till en rad som
             innehåller "nosound=yes".
-          # Eller använd Rita med Tux Config. och se till att "Aktivera
-            ljudeffekter" (under "Video & Ljud") Om detta är markerat kommer
-            OctoPrint att försöka skicka en M112 innan en frånkoppling på grund
-            av ett (fatalt) fel för att inaktivera värmare och motorer..
+          # Eller använd Konfigurera Rita med Tux och se till att "Aktivera
+            ljudeffekter" (under "Video & Ljud") är inte markerad.
           # Alternativt kan du kompilera Rita med Tux på nytt med ljudstödet
             inaktiverat. (Se ovan och "Install"-dokumentationen)
 
@@ -425,10 +417,8 @@ monofoniska? ←
       o Redigera Rita med Tuxs konfigurationsfil (se "Dokumentation av
         alternativ" för mer information) och lägg till en rad som innehåller
         "nostereo=yes".
-      o Eller använd Rita med Tux Config. och se till att "Aktivera
-        stereoeffekter" (under "Video & Ljud") Om detta är markerat kommer
-        OctoPrint att försöka skicka en M112 innan en frånkoppling på grund av
-        ett (fatalt) fel för att inaktivera värmare och motorer..
+      o Eller använd Konfigurera Rita med Tux och se till att "Aktivera
+        stereoeffekter" (under "Video & Ljud") är inte markerad.
 
      
 → Ljudeffekterna låter konstiga ←
@@ -500,10 +490,8 @@ svart! ←
     kommandoradsargumentet: "--windowed" eller "--fullscreen=no", vilket kommer
     att åsidosätta konfigurationsfilens inställning.
 
-    Eller använd Rita med Tux Config. och se till att "Helskärm" (under "Video
-    & Ljud") Om detta är markerat kommer OctoPrint att försöka skicka en M112
-    innan en frånkoppling på grund av ett (fatalt) fel för att inaktivera
-    värmare och motorer..
+    Eller använd Konfigurera Rita med Tux och se till att "Helskärm" (under
+    "Video & Ljud") är inte markerad.
 
 
      
@@ -601,10 +589,8 @@ svart! ←
     kommandoradsargumentet: "--quit", vilket kommer att åsidosätta
     konfigurationsfilens inställning.
 
-    Eller använd Rita med Tux Config. och se till att "Inaktivera Quit-knappen
-    och [Escape]-tangenten" (under "Förenkling") Om detta är markerat kommer
-    OctoPrint att försöka skicka en M112 innan en frånkoppling på grund av ett
-    (fatalt) fel för att inaktivera värmare och motorer..
+    Eller använd Konfigurera Rita med Tux och se till att "Inaktivera
+    Quit-knappen och [Escape]-tangenten" (under "Förenkling") är inte markerad.
 
 
      
@@ -705,8 +691,8 @@ en textfil ←
 
      
 → Jag behöver distribuera Rita med Tux på många Windows-system samtidigt ←
-    Installationsprogrammen för både Rita med Tux (plus Rita med Tux Config.)
-    (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) och Rita med Tux Stamps
+    Installationsprogrammen för både Rita med Tux (plus Konfigurera Rita med
+    Tux) (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) och Rita med Tux Stamps
     (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accepterar
     kommandoradsalternativen "/SILENT" ("tyst") eller "/VERYSILENT" ("mycket
     tyst") som kan användas för att installera och avinstallera deras

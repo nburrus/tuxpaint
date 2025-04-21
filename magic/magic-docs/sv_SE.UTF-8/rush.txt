@@ -2,7 +2,7 @@
 
                        ### Grupp Bildförvrängningar ###
 
-        ## Författare: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+      ## Upphovspersoner: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
@@ -11,7 +11,7 @@ blir oskarpt/utsmetat.
 
 Detta verktyg används på fri hand.
 
-Se även nedan:Kakelzoom & Zooma.
+Se även: Kakelzoom & Zooma.
 
 -------------------------------------------------------------------------------
 

@@ -14,7 +14,7 @@
   * Cirklar
   * Strålar
   * Kanter
-  * Punktutskrift
+  * Relief
   * Silhuett
   * Fisheye
   * Ripplar
@@ -97,7 +97,7 @@
   * Serietecknade prickar
   * Labyrint
   * Fretwork
-  * Rails
+  * Räls
   * Metallfärg
   * Tandkräm
   * Våt färg

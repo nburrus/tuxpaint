@@ -9,7 +9,7 @@ ner.
 
 Detta verktyg manövreras med ett enda klick.
 
-Se även nedan:Spegel.
+Se även: Spegel.
 
 -------------------------------------------------------------------------------
 

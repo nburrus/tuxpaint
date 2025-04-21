@@ -2,7 +2,7 @@
 
                            ### Grupp Förvränger ###
 
-                ## Författare: Adam Rakowski <foo-script@o2.pl>
+             ## Upphovspersoner: Adam Rakowski <foo-script@o2.pl>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                                       ##
 
@@ -12,7 +12,7 @@ Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 Detta verktyg erbjuder flera storleksinställningar.
 
-Se även nedan:Hexagon Mosaik, Oregelbunden mosaik, & Kvadratisk mosaik.
+Se även: Hexagon Mosaik, Oregelbunden mosaik, & Kvadratisk mosaik.
 
 -------------------------------------------------------------------------------
 

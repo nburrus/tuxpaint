@@ -8,41 +8,39 @@
 
                                 april 19, 2025
 
-+-----------------------------------------------------------------------------+
-|                                  Innehåll                                   |
-|-----------------------------------------------------------------------------|
-|  I. Om Rita med Tux                                                         |
-| II. Använda Rita med Tux                                                    |
-|      A. Lansering av Rita med Tux                                           |
-|      B. Titelskärm                                                          |
-|      C. Huvudskärm                                                          |
-|      D. Tillgängliga verktyg                                                |
-|          1. Verktyg för ritning                                             |
-|              a. "Färg"-verktyg (pensel)                                     |
-|              b. verktyg "Stämpel" (gummistämplar)                           |
-|              c. "Linjer"-verktyget                                          |
-|              d. verktyget "Shapes"                                          |
-|              e. verktyg för "text" och "etikett"                            |
-|              f. "Fyll"-verktyget                                            |
-|              g. "Magiskt" verktyg (specialeffekter)                         |
-|              h. Verktyget Suddgummi lägger till nya, mindre                 |
-|                 suddgummistorlekar och ger mjukare, sammanhängande streck   |
-|                 när pekaren flyttas snabbt.                                 |
-|          2. Övriga kontroller                                               |
-|              a. kommandona "Ångra" och "Gör om"                             |
-|              b. "Nytt" kommando                                             |
-|              c. kommando "Öppna"                                            |
-|              d. kommando "Spara"                                            |
-|              e. kommando "Skriv ut"                                         |
-|              f. kommando "Slides" (under "Open")                            |
-|              g. kommando "Avsluta"                                          |
-|              h. Ljuddämpning                                                |
-|      E. Kontrollera Rita med Tux                                            |
-| III. Ladda andra bilder i Rita med Tux                                      |
-| IV. Ytterligare läsning                                                     |
-|  V. Hur du kan få hjälp                                                     |
-| VI. Hur man deltar                                                          |
-+-----------------------------------------------------------------------------+
++-----------------------------------------------------+
+|                      Innehåll                       |
+|-----------------------------------------------------|
+|  I. Om Rita med Tux                                 |
+| II. Använda Rita med Tux                            |
+|      A. Lansering av Rita med Tux                   |
+|      B. Titelskärm                                  |
+|      C. Huvudskärm                                  |
+|      D. Tillgängliga verktyg                        |
+|          1. Verktyg för ritning                     |
+|              a. "Färg"-verktyg (pensel)             |
+|              b. verktyg "Stämpel" (gummistämplar)   |
+|              c. "Linjer"-verktyget                  |
+|              d. verktyget "Shapes"                  |
+|              e. verktyg för "text" och "etikett"    |
+|              f. "Fyll"-verktyget                    |
+|              g. "Magiskt" verktyg (specialeffekter) |
+|              h. Verktyget "Sudda"                   |
+|          2. Övriga kontroller                       |
+|              a. kommandona "Ångra" och "Gör om"     |
+|              b. "Nytt" kommando                     |
+|              c. kommando "Öppna"                    |
+|              d. kommando "Spara"                    |
+|              e. kommando "Skriv ut"                 |
+|              f. kommando "Slides" (under "Open")    |
+|              g. kommando "Avsluta"                  |
+|              h. Ljuddämpning                        |
+|      E. Kontrollera Rita med Tux                    |
+| III. Ladda andra bilder i Rita med Tux              |
+| IV. Ytterligare läsning                             |
+|  V. Hur du kan få hjälp                             |
+| VI. Hur man deltar                                  |
++-----------------------------------------------------+
 
 I. Om Rita med Tux
 
@@ -183,7 +181,7 @@ automatiskt efter ca 5 sekunder)
 Huvudskärmen är indelad i följande avsnitt:
 
 [Verktyg: Färg, Stämpel, Linjer, Former, Text, Magi, Etikett, Ångra, Gör om,
-Suddgummi, Ny, Öppna, Spara, Skriv ut, Avsluta]
+Sudda, Ny, Öppna, Spara, Skriv ut, Avsluta]
  
 → Vänster sida: Verktygsfält ←
 
@@ -200,7 +198,7 @@ Suddgummi, Ny, Öppna, Spara, Skriv ut, Avsluta]
 
     💡 Observera: Storleken på ritytan beror på storleken på Rita med Tux. Du
     kan ändra storleken på Rita med Tux med hjälp av konfigurationsverktyget
-    Rita med Tux Config. eller på annat sätt. Se avsnittet Alternativ
+    Konfigurera Rita med Tux. eller på annat sätt. Se avsnittet Alternativ
     dokumentationen för mer information.
 
 
@@ -317,7 +315,7 @@ a. "Färg"-verktyg (pensel) ←
 
     När du ritar spelas ett ljud upp. Ju större pensel, desto lägre tonläge.
 
-    Den här penselns avstånd är nu 1 bildpunkt!
+    Penselavstånd
 
 
         Avståndet mellan varje position där en pensel appliceras på målarduken
@@ -349,7 +347,7 @@ b.verktyg "Stämpel" (gummistämplar) ←
     yta där du vill placera stämpeln.
 
     → Stämpelkategorier ←
-        Det kan finnas många olika kategorier av frimärken (t.ex. djur, växter,
+        Det kan finnas många olika kategorier av stämplar (t.ex. djur, växter,
         rymden, fordon, människor etc.). Använd vänster- och högerpilarna
         längst ned på väljaren för att bläddra igenom samlingarna.
          
@@ -376,13 +374,13 @@ b.verktyg "Stämpel" (gummistämplar) ←
         Innan du "stämplar" en bild på din ritning kan du ibland använda olika
         effekter (beroende på stämpel):
 
-          @ Vissa frimärken kan vara färgade eller tonade. Om färgpaletten
-            under duken är aktiverad kan du klicka på färgerna för att ändra
+          @ Vissa stämplar kan vara färgade eller tonade. Om färgpaletten under
+            duken är aktiverad kan du klicka på färgerna för att ändra
             stämpelns nyans eller färg innan du placerar den i bilden.
           @ Frimärken kan förminskas och förstoras genom att klicka i den
             triangelformade serien av staplar längst ned till höger; ju större
-            stapel, desto större frimärke kommer att visas i din bild.
-          @ Många frimärken kan vändas vertikalt eller visas som en spegelbild
+            stapel, desto större stämpel kommer att visas i din bild.
+          @ Många stämplar kan vändas vertikalt eller visas som en spegelbild
             med hjälp av kontrollknapparna längst ned till höger.
 
         ⚙ Obs: Om alternativet "nostampcontrols" är inställt kommer Rita med
@@ -549,7 +547,7 @@ e.verktyg för "text" och "etikett" ←
         valda etiketten tas bort och texten läggs till direkt på duken.
 
         ⚙ Etikettverktyget kan inaktiveras (t.ex. genom att välja "Disable
-        'Label' Tool" i Rita med Tux Config. eller köra Rita med Tux med
+        'Label' Tool" i Konfigurera Rita med Tux. eller köra Rita med Tux med
         alternativet "nolabel").
 
         📜 Möjligheten att klistra in text från urklippet lades till i Rita med
@@ -648,9 +646,8 @@ f."Fyll"-verktyget ←
       o Eraser - klicka en gång för att radera ett område, vilket exponerar den
         enfärgade bakgrunden, eller bakgrundsbilden för start eller mall, som
         teckningen baserades på. (Se Tillgängliga verktyg > Verktyg för ritning
-        > Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och
-        ger mjukare, sammanhängande streck när pekaren flyttas snabbt. och
-        Övriga kontroller > 'Startbilder' & Mallbilder.)
+        > Verktyget "Sudda" och Övriga kontroller > 'Startbilder' & Mallbilder
+        .)
 
     📜 Obs: Före Rita med Tux 0.9.24 var "Fill" ett magiskt verktyg (se nedan).
     Före Rita med Tux 0.9.26 erbjöd verktyget "Fill" endast fyllningsmetoden
@@ -712,13 +709,12 @@ g."Magiskt" verktyg (specialeffekter) ←
 
 
      
-h.Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger
-mjukare, sammanhängande streck när pekaren flyttas snabbt. ←
+h.Verktyget "Sudda" ←
 
     Detta verktyg fungerar på samma sätt som en målarpensel. Var du än klickar
     (eller klickar och drar) raderas det som du har lagt till i din ritning, så
     att du får fram den bakgrund som du valde när du började rita, oavsett om
-    det är en enfärgad bild, bakgrunden till en "Starter"-bild eller en
+    det är en enfärgad bild, bakgrunden till en "Startbild"-bild eller en
     "Template"-bild. (Se Tillgängliga verktyg > Övriga kontroller > "Nytt"
     kommando.)
 
@@ -773,14 +769,13 @@ b."Nytt" kommando ←
 
     Genom att klicka på knappen "New" startar du en ny teckning. En dialogruta
     visas där du kan välja att starta en ny bild med en enfärgad bakgrundsfärg
-    eller med en "Starter"- eller "Template"-bild(se nedan). Du kommer först
+    eller med en "Startbild"- eller "Template"-bild(se nedan). Du kommer först
     att få frågan om du verkligen vill göra detta.
 
     När du använder verktyget "Eraser" tas det som du har lagt till i din
     teckning bort, så att den bakgrund du valde när du började rita en ny
     teckning framträder. (Se Tillgängliga verktyg > Verktyg för ritning >
-    Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger
-    mjukare, sammanhängande streck när pekaren flyttas snabbt..)
+    Verktyget "Sudda".)
 
     ⌨ Du kan också trycka på [Kontroll / ⌘] + [N] på tangentbordet för att
     komma till starta en ny ritning.
@@ -793,32 +788,31 @@ b."Nytt" kommando ←
         färgalternativ för mer information.
          
     'Startbilder' & Mallbilder ←
-          @ "Starters" kan bete sig som en sida i en målarbok - en svartvit
+          @ "Startbilder" kan bete sig som en sida i en målarbok - en svartvit
             kontur av en bild som du sedan kan färglägga, och den svarta
             konturen förblir intakt - eller som ett 3D-fotografi, där du ritar
             mellan ett förgrunds- och ett bakgrundslager.
           @ "Templates" är snarlika, men ger helt enkelt en bakgrundsritning
-            att arbeta utifrån. Till skillnad från "Starters" finns det inget
-            lager som ligger kvar i förgrunden för allt du ritar i bilden.
+            att arbeta utifrån. Till skillnad från "Startbilder" finns det
+            inget lager som ligger kvar i förgrunden för allt du ritar i
+            bilden.
 
         När du använder verktyget "Eraser" eller "Eraser"-läget i verktyget
-        "Fill" kommer originalbilden från "Starter" eller "Template" att visas
-        igen. (Se Tillgängliga verktyg > Verktyg för ritning > Verktyget
-        Suddgummi lägger till nya, mindre suddgummistorlekar och ger mjukare,
-        sammanhängande streck när pekaren flyttas snabbt. och "Fyll"-verktyget
-        .)
+        "Fill" kommer originalbilden från "Startbild" eller "Template" att
+        visas igen. (Se Tillgängliga verktyg > Verktyg för ritning > Verktyget
+        "Sudda" och "Fyll"-verktyget.)
 
         De magiska verktygen "Flip" och "Mirror" påverkar också orienteringen
-        av "Starter" eller "Template". (Se Tillgängliga verktyg > "Magiskt"
+        av "Startbild" eller "Template". (Se Tillgängliga verktyg > "Magiskt"
         verktyg (specialeffekter) > Vänd och Spegel.)
 
-        När du laddar en "Starter" eller "Template", ritar på den och sedan
+        När du laddar en "Startbild" eller "Template", ritar på den och sedan
         klickar på "Save" skapas en ny bildfil - originalet skrivs inte över,
         så du kan använda den igen senare (genom att öppna den från dialogrutan
         "New").
 
-        ⚙ Du kan skapa dina egna "Starter"- och mallbilder. Se avsnitten om "
-        Starter " och " Templates" i dokumentationen Extending Rita med Tux.
+        ⚙ Du kan skapa dina egna "Startbild"- och mallbilder. Se avsnitten om "
+        Startbild " och " Templates" i dokumentationen Extending Rita med Tux.
 
         💡 Du kan också konvertera dina sparade ritningar till mallar direkt i
         Rita med Tux, från dialogrutan "Öppna". Se "Öppna" nedan.
@@ -891,8 +885,8 @@ c.kommando "Öppna" ←
         Tux, se Utöka Rita med Tux
 
         ⚙ Funktionen för att skapa mallar kan avaktiveras (t.ex. genom att
-        välja "Disable 'Make Template'" i Rita med Tux Config. eller köra Rita
-        med Tux med alternativet "notemplateexport").
+        välja "Disable 'Make Template'" i Konfigurera Rita med Tux. eller köra
+        Rita med Tux med alternativet "notemplateexport").
 
       o Klicka på den röda "Tillbaka"-pilen längst ned till höger i listan för
         att avbryta och återgå till den bild du höll på att rita.
@@ -1362,7 +1356,7 @@ inkluderar:
       o OPTIONS.html
         Detaljerade instruktioner om kommandorads- och
         konfigurationsfilsalternativ, för dem som inte vill använda verktyget
-        Rita med Tux Config. för att hantera Rita med Tuxs konfiguration.
+        Konfigurera Rita med Tux för att hantera Rita med Tuxs konfiguration.
       o dokumentation av "Magic"-verktyget ("magic-docs")
         Dokumentation för vart och ett av de för närvarande installerade
         "Magic"-verktygen.
@@ -1424,7 +1418,7 @@ olika sätt:
 
   * Översätt Rita med Tux till ett annat språk
   * Förbättra befintliga översättningar
-  * Skapa konstverk (stämplar, starters, mallar, penslar)
+  * Skapa konstverk (stämplar, startbilder, mallar, penslar)
   * Lägga till eller förbättra funktioner eller magiska verktyg
   * Skapa läroplan för klassrummet
   * Marknadsför eller hjälp till att stödja andra som använder Rita med Tux

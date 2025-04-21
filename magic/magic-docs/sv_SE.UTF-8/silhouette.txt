@@ -10,7 +10,7 @@ Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 Detta verktyg erbjuder flera storleksinställningar.
 
-Se även nedan:Kanter & Punktutskrift.
+Se även: Kanter & Relief.
 
 -------------------------------------------------------------------------------
 

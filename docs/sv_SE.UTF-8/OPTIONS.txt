@@ -390,7 +390,7 @@ nedan)
 → stampsize=STRL ←
 
     Använd detta alternativ för att tvinga Rita med Tux att ställa in
-    startstorleken för alla frimärken. Värdet STRL bör ligga mellan 0 (minst)
+    startstorleken för alla stämplar. Värdet STRL bör ligga mellan 0 (minst)
     och 10 (störst). Storleken är relativ till de tillgängliga storlekarna på
     stämpeln, vilket beror på själva stämpeln och Rita med Tuxs aktuella
     canvasstorlek.
@@ -553,7 +553,7 @@ nedan)
 
 
      
-→ complexity=Komplexitet: ←
+→ complexity=KOMPLEXITET ←
 
     Ställer in komplexitetsnivån (expertisnivån) för Rita med Tux, vilket
     antingen kan inaktivera vissa Magic-verktyg eller få dem att fungera
@@ -561,9 +561,9 @@ nedan)
     och verktygen för 1-, 2- och 3-punktsperspektiv gör det inte möjligt att
     redigera försvinnande punkter i nybörjarläget )
 
-    Värdet Komplexitet: kan vara ett av följande:
+    Värdet KOMPLEXITET kan vara ett av följande:
     → advanced NEJ (STANDARD) ←
-        "Advanced" - För användare som är bekanta med Rita med Tux och som kan
+        "Avancerat" - För användare som är bekanta med Rita med Tux och som kan
         använda mer komplexa verktyg.
          
     → beginner ←
@@ -571,7 +571,7 @@ nedan)
         komplexa verktyg kan orsaka förvirring eller frustration.
          
     → novice ←
-        "Novice" - För förstagångsanvändare av Rita med Tux, användare utan
+        "Novis" - För förstagångsanvändare av Rita med Tux, användare utan
         datorvana eller användare med särskilda tillgänglighetsbehov.
          
 
@@ -1133,7 +1133,7 @@ nedan)
     → newcolorslast=yes ←
 
         Placerar de tomma färgalternativen i dialogrutan Ny i slutet, så att
-        eventuella starters och/eller mallar visas först.
+        eventuella startbilder och/eller mallar visas först.
 
         ⚙ Obs: Om den används i en systemomfattande konfigurationsfil kan den
         åsidosättas av användarens konfigurationsfil med hjälp av
@@ -1171,7 +1171,7 @@ nedan)
 
         📜 Obs: Före version 0.9.18 använde Rita med Tux även inställningen
         eller standardinställningen för "savedir" som plats för att söka efter
-        filer med personuppgifter (penslar, stämplar, starters och
+        filer med personuppgifter (penslar, stämplar, startbilder och
         teckensnitt). Från och med version 0.9.18 kan de specificeras separat
         (se alternativet "datadir" nedan).
 
@@ -1297,7 +1297,7 @@ nedan)
     → datadir=KATALOG ←
 
         Använd det här alternativet för att ändra var Rita med Tux letar efter
-        personliga datafiler (penslar, stämplar, starters, mallar och
+        personliga datafiler (penslar, stämplar, startbilder, mallar och
         teckensnitt som är specifika för den aktuella användaren).
 
         Rita med Tux söker efter underkataloger/undermappar med namnen
@@ -1599,9 +1599,7 @@ nedan)
     → joystick-btn-eraser=KNAPP NUMMER ←
 
         Väljer joystickknappens nummer, enligt SDL, som kommer att vara en
-        genväg för att välja Verktyget Suddgummi lägger till nya, mindre
-        suddgummistorlekar och ger mjukare, sammanhängande streck när pekaren
-        flyttas snabbt..
+        genväg för att välja sudda-verktyget.
 
 
          
@@ -1655,7 +1653,7 @@ nedan)
         uppercase=no
 
     Du kan också använda alternativ som liknar de alternativ för
-    kommandoradsöverstyrning som beskrivs nedan. Till exempel
+    kommandoradsöverstyrning som beskrivs nedan. Till exempel:
 
         print=yes
         mixedcase=yes

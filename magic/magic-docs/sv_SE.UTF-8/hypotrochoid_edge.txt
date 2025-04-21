@@ -16,8 +16,8 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg erbjuder färgval.
 
-Se även nedan:Epicykloid, Epicykloid insida, Epicykloid kant, Epicykloid utsida
-, Hypotrokoid insida, Hypotrokoid insida, Hypotrokoid utsida, Stringhörn,
+Se även: Epicykloid, Epicykloid insida, Epicykloid kant, Epicykloid utsida,
+Hypotrokoid insida, Hypotrokoid insida, Hypotrokoid utsida, Stringhörn,
 Strängens kanter, & String V.
 
 -------------------------------------------------------------------------------

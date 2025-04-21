@@ -1,6 +1,6 @@
                                    Tux Paint
                                 version 0.9.35
-                         Avancerade frimärken "How-To
+                          Avancerade stämplar "How-To
 
       Copyright © 2006-2024 av Albert Cahalan med flera; se AUTHORS.txt.
                              https://tuxpaint.org/
@@ -204,7 +204,7 @@
       + sammansatt över grön (mask aktiverad)
       + sammansatt över magenta (mask aktiverad)
       + original (det översta eller nedersta lagret)
-      + sammansatt över Ursprunglig (mask aktiverad)
+      + sammansatt över originalet (mask aktiverad)
       + obearbetat WIP-lager (mask inaktiverad)
 
     För att minska risken för olyckor kan du välja att bara markera de pixlar

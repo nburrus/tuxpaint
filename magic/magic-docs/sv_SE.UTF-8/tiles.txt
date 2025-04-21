@@ -12,7 +12,7 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg erbjuder färgval.
 
-Se även nedan:Mönster, Tessellation spetsig, & Tessellation platt.
+Se även: Mönster, Tessellation spetsig, & Tessellation platt.
 
 -------------------------------------------------------------------------------
 

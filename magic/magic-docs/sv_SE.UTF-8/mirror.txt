@@ -9,7 +9,7 @@ markerad, kommer hela bilden att vändas och förvandlas till en spegelbild.
 
 Detta verktyg manövreras med ett enda klick.
 
-Se även nedan:Vänd.
+Se även: Vänd.
 
 -------------------------------------------------------------------------------
 

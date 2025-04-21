@@ -204,14 +204,16 @@ Dynamic Link Library (.dll)-filer som de är beroende av. Rita med Tux's
 paketeringsprocess för binär distribution använder det för att hitta nödvändiga
 .dll-filer.
 
-# 64bit (x86_64) beroendebibliotek för Rita med Tux och Rita med Tux Config #
+# 64bit (x86_64) beroendebibliotek för Rita med Tux och Konfigurera Rita med
+Tux #
 
 Du kan installera verktyg och bibliotek som krävs för att kompilera Rita med
-Tux och Rita med Tux Config på MSYS2/MINGW med hjälp av "pacman" förutom
+Tux och Konfigurera Rita med Tux på MSYS2/MINGW med hjälp av "pacman" förutom
 SDL2_Pango och libunibreak.
 
-FLTK är en plattformsoberoende GUI-verktygslåda som används av "Rita med Tux
-Config". Du kan hoppa över att installera det om du bara bygger "Rita med Tux".
+FLTK är en plattformsoberoende GUI-verktygslåda som används av "Konfigurera
+Rita med Tux". Du kan hoppa över att installera det om du bara bygger "Rita med
+Tux".
 
     $ pacman -S mingw-w64-x86_64-SDL_{image,ttf,gfx}
     $ pacman -S mingw-w64-x86_64-{librsvg,fribidi,libimagequant,fltk}
@@ -236,8 +238,8 @@ installera den enligt följande.
 
 libunibreak
 
-libunibreak krävs för att kompilera Rita med Tux Config. Du kan hoppa över att
-installera det om du bara bygger "Rita med Tux".
+libunibreak krävs för att kompilera Konfigurera Rita med Tux Du kan hoppa över
+att installera det om du bara bygger "Rita med Tux".
 
 Du kan hämta källkoden från git repositry och kompilera den enligt följande.
 
@@ -262,14 +264,16 @@ Dynamic Link Library (.dll)-filer som de är beroende av. Rita med Tux's
 paketeringsprocess för binär distribution använder det för att hitta nödvändiga
 .dll-filer.
 
-# 32bit (i686) beroendebibliotek för Rita med Tux och Rita med Tux Config #
+# 32bit (i686) beroendebibliotek för Rita med Tux och Konfigurera Rita med Tux
+#
 
 Du kan installera verktyg och bibliotek som krävs för att kompilera Rita med
-Tux och Rita med Tux Config på MSYS2/MINGW med hjälp av "pacman" förutom
+Tux och Konfigurera Rita med Tux på MSYS2/MINGW med hjälp av "pacman" förutom
 SDL2_Pango och libunibreak.
 
-FLTK är en plattformsoberoende GUI-verktygslåda som används av "Rita med Tux
-Config". Du kan hoppa över att installera det om du bara bygger "Rita med Tux".
+FLTK är en plattformsoberoende GUI-verktygslåda som används av "Konfigurera
+Rita med Tux". Du kan hoppa över att installera det om du bara bygger "Rita med
+Tux".
 
     $ pacman -S mingw-w64-i686-SDL_{image,ttf,gfx}
     $ pacman -S mingw-w64-i686-{librsvg,fribidi,libimagequant,fltk}
@@ -294,8 +298,8 @@ installera den enligt följande.
 
 libunibreak
 
-libunibreak krävs för att kompilera Rita med Tux Config. Du kan hoppa över att
-installera det om du bara bygger "Rita med Tux".
+libunibreak krävs för att kompilera Konfigurera Rita med Tux Du kan hoppa över
+att installera det om du bara bygger "Rita med Tux".
 
 Du kan hämta källkoden från git repositry och kompilera den enligt följande.
 
@@ -337,9 +341,9 @@ respektive 32-bitars binära filer med hjälp av skalet "MSYS2 32bit".
 
 # Tux Paint Config. #
 
-"Rita med Tux Config" är ett användbart grafiskt verktyg för att justera Rita
-med Tux's beteende. Du måste bygga den här komponenten innan du kompilerar Rita
-med Tux om du vill att den ska ingå i ditt paket.
+"Konfigurera Rita med Tux" är ett användbart grafiskt verktyg för att justera
+Rita med Tux's beteende. Du måste bygga den här komponenten innan du kompilerar
+Rita med Tux om du vill att den ska ingå i ditt paket.
 
 Du kan använda antingen (a) en stabil tar-ball-version eller (b) källkodsträdet
 under utveckling.
@@ -386,9 +390,9 @@ Nu kan du bygga Tux Paint på följande sätt:
     $ cd tuxpaint
     $ make bdist-win32
 
-Alla filer som behövs för att starta Rita med Tux (och Rita med Tux Config.)
-finns samlade i katalogen för binär distribution "bdist" under "win32". Du kan
-starta dem genom att dubbelklicka på deras körbara (.exe) filer i katalogen
+Alla filer som behövs för att starta Rita med Tux (och Konfigurera Rita med
+Tux) finns samlade i katalogen för binär distribution "bdist" under "win32". Du
+kan starta dem genom att dubbelklicka på deras körbara (.exe) filer i katalogen
 "bdist".
 
 ## Bygga installationsprogrammet för Rita med Tux Windows ##
@@ -431,7 +435,7 @@ Annars väljer du en annan plats.
 
 Vid denna punkt kan du klicka på "Installera" för att installera Rita med Tux!
 
-💡 Installationsprogrammen för både Rita med Tux (plus Rita med Tux Config.)
+💡 Installationsprogrammen för både Rita med Tux (plus Konfigurera Rita med Tux)
 (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) och Rita med Tux Stamps
 (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accepterar
 kommandoradsalternativen "/SILENT" ("tyst") eller "/VERYSILENT" ("mycket tyst")

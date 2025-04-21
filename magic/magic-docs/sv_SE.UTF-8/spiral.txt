@@ -12,7 +12,7 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg erbjuder färgval.
 
-Se även nedan:Slingor, Krumelurer, Fyrkantig spiral, Koncentrisk cirkel, &
+Se även: Slingor, Krumelurer, Fyrkantig spiral, Koncentrisk cirkel, &
 Koncentrisk kvadrat.
 
 -------------------------------------------------------------------------------

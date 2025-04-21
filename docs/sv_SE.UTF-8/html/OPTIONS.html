@@ -586,7 +586,7 @@
 
     <dd>
       <p>
-        Använd detta alternativ för att tvinga Rita med Tux att ställa in startstorleken för alla frimärken. Värdet <code>STRL</code> bör ligga mellan 0 (minst) och 10 (störst). Storleken är relativ till de tillgängliga storlekarna på stämpeln, vilket beror på själva stämpeln och Rita med Tuxs aktuella canvasstorlek.      </p>
+        Använd detta alternativ för att tvinga Rita med Tux att ställa in startstorleken för alla stämplar. Värdet <code>STRL</code> bör ligga mellan 0 (minst) och 10 (störst). Storleken är relativ till de tillgängliga storlekarna på stämpeln, vilket beror på själva stämpeln och Rita med Tuxs aktuella canvasstorlek.      </p>
 
       <p>
         Ange "<code>default</code>" för att låta Rita med Tux bestämma (standardbeteende).      </p>
@@ -727,20 +727,20 @@
     </dd>
 
     <dt>
-      <code><b>complexity=<i>Komplexitet:</i></b></code>
+      <code><b>complexity=<i>KOMPLEXITET</i></b></code>
     </dt>
 
     <dd>
       <p>
         Ställer in komplexitetsnivån (expertisnivån) för Rita med Tux, vilket antingen kan inaktivera vissa Magic-verktyg eller få dem att fungera annorlunda. (Verktyget "Clone" är t.ex. inte tillgängligt i <em>nybörjarläget</em>, och verktygen för 1-, 2- och 3-punktsperspektiv gör det inte möjligt att redigera försvinnande punkter i <em>nybörjarläget</em> )      </p>
       <p>
-        Värdet <code>Komplexitet:</code> kan vara ett av följande:        <dl>
+        Värdet <code>KOMPLEXITET</code> kan vara ett av följande:        <dl>
           <dt><code>advanced</code> NEJ (STANDARD)</dt>
-          <dd>"Advanced" - För användare som är bekanta med Rita med Tux och som kan använda mer komplexa verktyg.</dd>
+          <dd>"Avancerat" - För användare som är bekanta med Rita med Tux och som kan använda mer komplexa verktyg.</dd>
           <dt><code>beginner</code></dt>
           <dd>"Nybörjare" - För användare som är bekväma med Rita med Tux, men där komplexa verktyg kan orsaka förvirring eller frustration.</dd>
           <dt><code>novice</code></dt>
-          <dd>"Novice" - För förstagångsanvändare av Rita med Tux, användare utan datorvana eller användare med särskilda tillgänglighetsbehov.</dd>
+          <dd>"Novis" - För förstagångsanvändare av Rita med Tux, användare utan datorvana eller användare med särskilda tillgänglighetsbehov.</dd>
         </dl>
       </p>
       <p class="note">
@@ -1747,7 +1747,7 @@
 
     <dd>
       <p>
-        Placerar de tomma färgalternativen i dialogrutan <b>Ny</b> i slutet, så att eventuella starters och/eller mallar visas först.      </p>
+        Placerar de tomma färgalternativen i dialogrutan <b>Ny</b> i slutet, så att eventuella startbilder och/eller mallar visas först.      </p>
       <p class="note">
         <span title="Configuration option">&#9881;</span>        <strong>Obs:</strong> Om den används i en systemomfattande konfigurationsfil kan den åsidosättas av användarens konfigurationsfil med hjälp av "<code>newcolorslast=no</code>" eller "<code>newcolorsfirst=yes</code>". I båda fallen kan det åsidosättas med kommandoradsalternativet "<code>--newcolorsfirst</code>".      </p>
     </dd>
@@ -1795,7 +1795,7 @@
         <span title="Information">&#128161;</span>        <strong>Obs:</strong> När du anger en Windows-enhet (t.ex. "<code>H:\</code>") måste du också ange en underkatalog.      </p>
 
       <p class="note">
-        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Före version 0.9.18 använde Rita med Tux även inställningen eller standardinställningen för "<code>savedir</code>" som plats för att söka efter filer med personuppgifter (penslar, stämplar, starters och teckensnitt). Från och med version 0.9.18 kan de specificeras separat (se alternativet "<code>datadir</code>" nedan).      </p>
+        <span title="Version variation">&#128220;</span>        <strong>Obs:</strong> Före version 0.9.18 använde Rita med Tux även inställningen eller standardinställningen för "<code>savedir</code>" som plats för att söka efter filer med personuppgifter (penslar, stämplar, startbilder och teckensnitt). Från och med version 0.9.18 kan de specificeras separat (se alternativet "<code>datadir</code>" nedan).      </p>
 
       <p>
         Exempel: <code>savedir=Z:\tuxpaint\</code>      </p>
@@ -1925,7 +1925,7 @@
 
     <dd>
       <p>
-        Använd det här alternativet för att ändra var Rita med Tux letar efter personliga datafiler (penslar, stämplar, starters, mallar och teckensnitt som är specifika för den aktuella användaren).      </p>
+        Använd det här alternativet för att ändra var Rita med Tux letar efter personliga datafiler (penslar, stämplar, startbilder, mallar och teckensnitt som är specifika för den aktuella användaren).      </p>
 
       <p>
         Rita med Tux söker efter underkataloger/undermappar med namnen "<code>brushes</code>", "<code>stamps</code>", "<code>starters</code>", "<code>templates</code>" och "<code>fonts</code>" under den angivna datakatalogen.      </p>
@@ -2305,7 +2305,7 @@
 
     <dd>
       <p>
-        Väljer joystickknappens nummer, enligt SDL, som kommer att vara en genväg för att välja Verktyget Suddgummi lägger till nya, mindre suddgummistorlekar och ger mjukare, sammanhängande streck när pekaren flyttas snabbt..      </p>
+        Väljer joystickknappens nummer, enligt SDL, som kommer att vara en genväg för att välja sudda-verktyget.      </p>
     </dd>
 
     <dt>
@@ -2375,7 +2375,7 @@
       </blockquote>
 
       <p>
-        Du kan också använda alternativ som liknar de alternativ för kommandoradsöverstyrning som beskrivs nedan. Till exempel      </p>
+        Du kan också använda alternativ som liknar de alternativ för kommandoradsöverstyrning som beskrivs nedan. Till exempel:      </p>
 
       <blockquote>
         <code>print=yes<br>

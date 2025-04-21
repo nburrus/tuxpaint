@@ -8,7 +8,7 @@ Detta förvandlar bilden till cirkulära penseldrag runt där du klickade.
 
 Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
-Se även nedan:Strålar.
+Se även: Strålar.
 
 -------------------------------------------------------------------------------
 

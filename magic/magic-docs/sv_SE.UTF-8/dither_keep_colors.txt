@@ -12,7 +12,7 @@ Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 Detta verktyg erbjuder flera storleksinställningar.
 
-Se även nedan:Färg och vitt & Dither.
+Se även: Färg och vitt & Dither.
 
 -------------------------------------------------------------------------------
 

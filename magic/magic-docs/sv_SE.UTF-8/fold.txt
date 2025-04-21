@@ -2,7 +2,7 @@
 
                        ### Grupp Bildförvrängningar ###
 
-                ## Författare: Adam Rakowski <foo-script@o2.pl>
+             ## Upphovspersoner: Adam Rakowski <foo-script@o2.pl>
                    Bill Kendrick <bill@newbreedsoftware.com>
                 Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                                       ##

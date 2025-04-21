@@ -2,7 +2,7 @@
 
                        ### Grupp Bildförvrängningar ###
 
-        ## Författare: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
+      ## Upphovspersoner: Pere Pujal i Carabantes <pere@fornol.no-ip.org>
                    Bill Kendrick <bill@newbreedsoftware.com>
                                       ##
 
@@ -11,7 +11,7 @@ skalar ner kommer din bild att läggas ut över hela duken.
 
 Detta verktyg används på fri hand.
 
-Se även nedan:Paneler, Rusa, & Zooma.
+Se även: Paneler, Rusa, & Zooma.
 
 -------------------------------------------------------------------------------
 

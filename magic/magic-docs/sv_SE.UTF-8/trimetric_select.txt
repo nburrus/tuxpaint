@@ -12,7 +12,7 @@ Detta verktyg används på fri hand.
 Detta verktyg är endast tillgängligt när "komplexitet" (expertnivå) är inställd
 på "Avancerad".
 
-Se även nedan:1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
+Se även: 1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
 3-punktsritning, 3-punktsval, Isometrisk linje, Dimetriskt val, Dimetrisk
 ritning, Trimetrisk ritning, Sned välj, Snedritning, & Perspektiv.
 

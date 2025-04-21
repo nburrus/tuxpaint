@@ -16,7 +16,7 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg reagerar på inställningen "komplexitet" (expertnivå).
 
-Se även nedan:Färgsep. & Dubbelsyn.
+Se även: Färgsep. & Dubbelsyn.
 
 -------------------------------------------------------------------------------
 
