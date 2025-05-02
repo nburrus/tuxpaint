@@ -6,7 +6,7 @@
        Copyright © 2002-2025 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                avril 19, 2025
+                                  mai 2, 2025
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -104,23 +104,23 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
 
      ### D. Qu'y a-t-il de neuf dans la version 0.9.35 de Tux Paint ? ###
 
-→ Improved color picker ←
+→ Sélecteur de couleur amélioré ←
     Better behavior when clicking/tapping and dragging hue/saturation box and
     value slider.
      
 → Text clipboard paste support ←
     The "Text" and "Label" tools support pasting the copy/paste clipboard.
      
-→ "Hearts" Magic tool ←
-    Draw a trail of floating hearts.
+→ Outil Magie "Coeurs" ←
+    Dessine une suite de coeurs flottants
      
-→ "Sparkles" Magic tool ←
-    Draw a trail of falling sparkles.
+→ Outil Magie "Étincelles" ←
+    Dessine une suite d'étincelles tombantes.
      
-→ "Stars" Magic tool ←
-    Draw a trail of stars.
+→ Outil Magie "Étoiles" ←
+    Dessine une suite d'étoiles
      
-→ Documentation translated to Swedish ←
+→ Documentation traduite en Suédois ←
 
      
 
@@ -160,9 +160,9 @@ si vous avez utilisé 'Tux Paint Installer', mais que vous avez choisi de ne pas
 installer de raccourcis, vous devrez double-cliquer sur l'icône "tuxpaint.exe"
 dans le dossier "Tux Paint" de votre ordinateur.
 
-By default, the 'Tux Paint Installer' will put Tux Paint's folder in 
-"C:\Program Files\TuxPaint\", though you may have changed this when you ran the
-installer.
+Par défaut, le 'Tux Paint Installer' mettra le dossier de Tux Paint dans 
+"C:\Fichiers programmes\TuxPaint\", bien que vous puissiez le changer lors de
+l'exécution du programme d'installation.
 
 Si vous avez utilisé le téléchargement de 'ZIP-file', le dossier de Tux Paint
 sera là où vous l'avez placé lorsque vous avez décompressé le fichier ZIP.
@@ -692,7 +692,7 @@ g.Outil "Magie" (Effets spéciaux) ←
     l'outil, vous pouvez soit cliquer et faire glisser dans l'image, et / ou
     simplement cliquer une fois sur l'image pour appliquer l'effet.
 
-    The Magic Tools
+    Les outils 'Magie'
 
 
         Voir les instructions pour chaque outil 'Magie' (dans le dossier
@@ -735,9 +735,9 @@ g.Outil "Magie" (Effets spéciaux) ←
         📜 Cette option a été ajoutée en démarrant la version 0.9.30 de Tux
         Paint.
 
-    ⚙ Note: If the "ungroupmagictools" option is set, Tux Paint won't split
-    Magic tools into groups of related tools, and instead present them all as
-    one large list. See the "Options" documentation.
+    ⚙ Note: Si l'option "ungroupmagictools" est définie, Tux Paint ne scindera
+    pas les outils 'Magie' en groupes, et les présentera sous forme d'une
+    longue liste. Voir la " documention Options".
 
 
      
@@ -749,8 +749,8 @@ h.Outil "Gomme" ←
     color, the background of a 'Starter' image, or a 'Template' image. (See
     Outils disponibles > Autres contrôles > Commande "Nouveau".)
 
-    A number of eraser types are available, each offering multiple sizes are
-    available:
+    Un certain nombre de types de gommes sont disponibles, chacune pouvant
+    avoir des tailles différentes.
       o Square — Square-shaped erasers that completely remove parts of your
         drawing.
       o Circle (solid) — Circle-shaped erasers that completely remove parts of
@@ -761,8 +761,8 @@ h.Outil "Gomme" ←
         the background. Release and click again to expose more and more of the
         background.
 
-    As you move the mouse around, an outline follows the pointer, showing what
-    part of the picture will be erased.
+    Lorsque vous déplacez la souris, un contour suit le pointeur, indiquant
+    quelle partie de l'image sera effacée.
 
     Au fur et à mesure que vous effacez, un grincement est émis.
 
@@ -798,10 +798,11 @@ a.Commandes "Défaire" et "Refaire" ←
      
 b.Commande "Nouveau" ←
 
-    Clicking the 'New' button will start a new drawing. A dialog will appear
-    where you may choose to start a new picture using a solid background color,
-    or using a 'Starter' or 'Template' image (see below). You will first be
-    asked whether you really want to do this.
+    Cliquez sur le bouton "Nouveau" pour démarrer un nouveau dessin. Une boîte
+    de dialogue apparaîtra, avec laquelle vous pouvez choisir de commencer une
+    nouvelle image en utilisant une couleur d'arrière-plan unie, ou en
+    utilisant une image 'Starter' ou 'Template' (voir ci-dessous). On vous
+    demandera d'abord si vous voulez vraiment le faire.
 
     When you use the 'Eraser' tool things you've added to your drawing will be
     removed, exposing the background you chose when starting a new drawing.
@@ -811,11 +812,12 @@ b.Commande "Nouveau" ←
     clavier pour commencer un nouveau dessin.
 
     → Choix de couleurs unies en arrière plan ←
-        Along with the preset solid colors, you can also choose colors using a
-        rainbow palette or a "color mixer". These operate identically to the
-        options found in the color palette shown below the canvas when drawing
-        a picture. See Écran principal > En bas : couleurs > Special color
-        options for details.
+        En plus des couleurs unies prédéfinies, vous pouvez aussi choisir des
+        couleurs grâce à une palette arc-en-ciel ou un "mélangeur de couleurs".
+        Ceux-ci opèrent de manière identique avec les options de la palette de
+        couleur en-dessous du canevas quand on dessine une image. Voir Écran
+        principal > En bas : couleurs > Options de couleur spéciale pour les
+        détails.
          
     Images de "Démarrage" et images "Modèle" ←
           @ Les "Images de démarrage" se comportent comme une page d'un livre
@@ -1287,8 +1289,8 @@ Tux Paint, qui est —PNG (Portable Network Graphic), et de la placer dans le
 répertoire "saved" de Tux Paint. C'est là où on les trouve (par défaut) :
 
 → Windows Windows 8, Windows 10, Windows 11 ←
-    In the user's "AppData" folder:
-    e.g., "C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\"
+    Dans le dossier utilisateurs "AppData"; par ex. 
+    "C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\"
 
     (Note: The "AppData" folder is hidden (not visible) by default. You can
     enter the path manually in the location bar of your file browser (e.g.,
@@ -1301,13 +1303,12 @@ répertoire "saved" de Tux Paint. C'est là où on les trouve (par défaut) :
     command window, and then type the path and hit [Enter / Return].
      
 → macOS ←
-    In the user's "Application Support" folder:
-    e.g., 
-    "/Users/nom d'utilisateur/Library/Application Support/TuxPaint/saved/"
+    Dans le dossier utilisateurs "Application Support"; par ex. 
+    "/Utilisateurs/nom d'utilisateur/Bibliothèque/Support de l'application/TuxPaint/saved/"
      
 → Linux / Unix ←
-    In the user's "home directory" folder:
-    e.g., "/home/nom d'utilisateur/.tuxpaint/saved/"
+    Dans le dossier utilisateurs "Répertoire utilisateur"; par ex. 
+    "/home/nom d'utilisateur/.tuxpaint/saved/"
 
     (Note: The ".tuxpaint" folder is hidden (not visible) by default. You can
     enter the path manually in the location bar of your file browser (e.g.,
@@ -1317,8 +1318,8 @@ répertoire "saved" de Tux Paint. C'est là où on les trouve (par défaut) :
     .
      
 → Haiku ←
-    In the user's "settings" folder:
-    e.g., "/boot/home/config/settings/TuxPaint/saved/"
+    Dans le dossier utilisateurs "settings"; par ex. 
+    "/boot/home/config/settings/TuxPaint/saved/"
      
 
 💡 Remarque : C'est également à partir de ce dossier que vous pouvez copier ou

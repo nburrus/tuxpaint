@@ -1,4 +1,4 @@
-                  Outil 'Magie' de Tux Paint : Dimetric Draw
+                Outil 'Magie' de Tux Paint : Dessin dimétrique
 
                           ### Groupe: Projections ###
 
@@ -16,7 +16,7 @@ Cet outil permet de choisir des couleurs.
 This tool is not available with "complexity" (expertise level) set to 'Novice'.
 
 Voir aussi : Dessin 1 point, Choix 1 point, Dessin 2 points, Choix 2 points,
-Dessin à 3-Point, Choix 3-Point, Isometric Line, Dimetric Select, Trimetric
+Dessin à 3-Point, Choix 3-Point, Ligne isométrique, Dimetric Select, Trimetric
 Select, Trimetric Draw, Oblique Select, Oblique Draw, & Perspective.
 
 -------------------------------------------------------------------------------

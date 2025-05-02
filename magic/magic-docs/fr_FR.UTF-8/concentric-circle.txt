@@ -12,7 +12,7 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Boucles, Gribouillis, Spiral, Square Spiral, & Concentric Square.
+Voir aussi : Boucles, Gribouillis, Spirale, Square Spiral, & Concentric Square.
 
 -------------------------------------------------------------------------------
 

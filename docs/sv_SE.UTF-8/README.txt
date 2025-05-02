@@ -6,7 +6,7 @@
          Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                april 19, 2025
+                                  maj 2, 2025
 
 +-----------------------------------------------------+
 |                      Innehåll                       |

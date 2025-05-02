@@ -18,8 +18,8 @@ Cet outil permet de choisir des couleurs.
 This tool is not available with "complexity" (expertise level) set to 'Novice'.
 
 Voir aussi : Dessin 1 point, Choix 1 point, Dessin 2 points, Choix 2 points,
-Dessin à 3-Point, Choix 3-Point, Isometric Line, Dimetric Select, Dimetric Draw
-, Trimetric Select, Trimetric Draw, Oblique Select, & Perspective.
+Dessin à 3-Point, Choix 3-Point, Ligne isométrique, Dimetric Select, Dessin
+dimétrique, Trimetric Select, Trimetric Draw, Oblique Select, & Perspective.
 
 -------------------------------------------------------------------------------
 

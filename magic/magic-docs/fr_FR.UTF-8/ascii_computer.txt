@@ -1,4 +1,4 @@
-                  Outil 'Magie' de Tux Paint : ASCII Computer
+                Outil 'Magie' de Tux Paint : Calculateur ASCII
 
                           ### Groupe: Distorsions ###
 

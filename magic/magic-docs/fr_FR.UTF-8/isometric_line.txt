@@ -1,4 +1,4 @@
-                  Outil 'Magie' de Tux Paint : Isometric Line
+                Outil 'Magie' de Tux Paint : Ligne isométrique
 
                           ### Groupe: Projections ###
 
@@ -17,7 +17,7 @@ Cet outil permet de choisir des couleurs.
 This tool is not available with "complexity" (expertise level) set to 'Novice'.
 
 Voir aussi : Dessin 1 point, Choix 1 point, Dessin 2 points, Choix 2 points,
-Dessin à 3-Point, Choix 3-Point, Dimetric Select, Dimetric Draw, Trimetric
+Dessin à 3-Point, Choix 3-Point, Dimetric Select, Dessin dimétrique, Trimetric
 Select, Trimetric Draw, Oblique Select, Oblique Draw, & Perspective.
 
 -------------------------------------------------------------------------------

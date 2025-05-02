@@ -1,4 +1,4 @@
-                      Outil 'Magie' de Tux Paint : Stars
+                      Outil 'Magie' de Tux Paint : Étoile
 
                             ### Groupe: Peindre ###
 

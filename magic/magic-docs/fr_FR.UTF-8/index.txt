@@ -26,7 +26,7 @@
   * TV
   * TV (brillant)
   * ASCII Typewriter
-  * ASCII Computer
+  * Calculateur ASCII
   * ASCII Color Computer
   * Parasites
   * Demi-teinte
@@ -69,7 +69,7 @@
   * Vaguelettes
   * Plier
   * Kaleido-4, Kaleido-6, et Kaleido-8
-  * Rotate
+  * Tourner
 
                                 ### Peindre ###
 
@@ -82,7 +82,7 @@
   * Ruban
   * Crescent
   * Doux
-  * Spiral
+  * Spirale
   * Square Spiral
   * Concentric Circle
   * Concentric Square
@@ -104,8 +104,8 @@
   * Lumière
   * Hearts
   * Sparkles
-  * Stars
-  * Fractal
+  * Étoile
+  * Fractale
 
                            ### Peindre un motif ###
 
@@ -134,8 +134,8 @@
   * Choix 2 points
   * Dessin à 3-Point
   * Choix 3-Point
-  * Isometric Line
-  * Dimetric Draw
+  * Ligne isométrique
+  * Dessin dimétrique
   * Dimetric Select
   * Trimetric Draw
   * Trimetric Select
@@ -154,7 +154,7 @@
   * Ficelles sur les bords
   * Ficelles dans les coins
   * Ficelles V
-  * Epitrochoid
+  * Épitrochoide
   * Epitrochoid Edge
   * Epitrochoid Inside
   * Epitrochoid Outside

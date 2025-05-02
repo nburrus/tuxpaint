@@ -228,5 +228,5 @@ Rita med Tux 0.9.35 Snabbstartsguide
 
 Obs: På macOS ska du använda [⌘ (Command)] istället för [Control].
 
-Senast uppdaterad: december 29, 2024
+Senast uppdaterad: maj 2, 2025
 

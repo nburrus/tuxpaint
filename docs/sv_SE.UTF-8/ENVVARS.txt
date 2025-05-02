@@ -2,10 +2,10 @@
                                 version 0.9.35
                         Dokumentation om miljövariabler
 
-         Copyright © 2021-2024 av olika bidragsgivare; se AUTHORS.txt.
+         Copyright © 2021-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 maj 14, 2024
+                                  maj 2, 2025
 
 -------------------------------------------------------------------------------
 

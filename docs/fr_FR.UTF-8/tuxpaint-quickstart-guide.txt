@@ -98,8 +98,8 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
         l'endroit où vous avez cliqué/tapé
       + Mis en forme - Remplit la surface avec une gradation qui suit les
         contours de la surface à remplir
-      + Eraser - Replaces an area with the background color, or Starter or
-        Template background image
+      + Gomme - Remplace une aire par la couleur de fond, ou bien l'image
+        d'arrière-plan de 'Démarrage' ou 'Modèle'.
 
 ## 🪄Magie ##
 
@@ -115,12 +115,12 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
 ## 🖓Défaire ##
 
   * Utilisez pour annuler les actions récentes (peut être répété).
-  * Shortcut: [Control]+[Z]
+  * Raccourci : [Control]+[Z]
 
 ## 🖒Refaire ##
 
   * Utilisez pour refaire des actions annulées (peut être répété).
-  * Shortcut: [Control]+[R]
+  * Raccourci : [Control]+[R]
 
 ## ◪Gomme ##
 
@@ -143,7 +143,7 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
         image modèle.
   * Cliquez/tapez "🕮⮫Open" pour commencer un nouveau dessin.
   * Cliquez/tapez "⤺Back" pour annuler et revenir à votre dessin en cours.
-  * Shortcut: [Control]+[N]
+  * Raccourci : [Control]+[N]
 
 ## 🕮⮫Ouvrir ##
 
@@ -168,7 +168,7 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
         "Ouvrir".
   * Cliquez/Tapze sur "🖻⮫🗏Modèle" pour changer de dessin avec un nouveau
     modèle.
-  * Shortcut: [Control]+[O]
+  * Raccourci : [Control]+[O]
 
 ## 🕮⮪Sauvegarder ##
 
@@ -176,19 +176,19 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
   * Si vous aviez déjà sauvegardé, on vous demandera si on écrase la précédente
     sauvegarde (faite avec "Fichier -> sauvegarder") ou bien créer une nouvelle
     sauvegarde (avec "Fichier - Sauvegarder comme ..")
-  * Shortcut: [Control]+[S]
+  * Raccourci : [Control]+[S]
 
 ## 🖶Imprimer ##
 
   * Cliquez/tapez pour imprimer votre dessin.
-  * Hold [Alt] or [Option] while clicking/tapping to bring up printer dialog,
-    if available.
-  * Shortcut: [Control]+[P]
+  * Maintenez appuyé [Alt] ou [Option] tout en cliquant/tapant pour obtenir une
+    boîte de dialogue pour l'impression, si c'est disponible.
+  * Raccourci : [Control]+[P]
 
 ## 🗙Quitter ##
 
   * Cliquer/Taper pour quitter Tux Paint.
-  * Shortcut: [Escape]
+  * Raccourci : [Escape]
 
                                ### Couleurs ###
 
@@ -197,8 +197,9 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
     couleurs.
   * Utilisez le bouton pipette/sélecteur de couleur 💉 pour choisir une couleur
     provenant d'un pixel de votre dessin en cours.
-      + Shortcut: When colors are available, press [Control] and click/tap in
-        your drawing, to quickly pick a color from your drawing.
+      + Raccourci : Quand les couleurs sont disponibles, pressez [Control] et
+        cliquez/tapez sur votre dessin, pour extraire rapidement une couleur de
+        votre dessin.
   * Cliquez/tapez le bouton arc-en-ciel 🌈 pour choisir une couleur arbitraire.
       + Cliquez/tapez dans le carré de l'arc-en-ciel pour extraire une couleur
         (teinte et saturation).
@@ -220,18 +221,18 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
 
                      ### Raccourcit quand on dessine : ###
 
-  * [Control]+Click/tap - Quick pipette / color picker 💉 access
+  * [Control+Cliquez/tapez - accès rapide à la pipette/sélecteur de couleur 💉
   * [X]+Cliquez/tapez - accès rapide à la gomme ◪
-  * [Control]+[Z] - 🖓Undo
-  * [Control]+[R] - 🖒Redo
-  * [Control]+[N] - 🗏New
-  * [Control]+[O] - 🕮⮫Open
-  * [Control]+[S] - 🕮⮪Save
-  * [Control]+[P] - 🖶Print
-  * [Alt]+[S] - Toggle sound effects on/off
-  * [Escape] - ⤺Back or 🗙Quit
+  * [Control]+[Z] - 🖓Défaire
+  * [Control]+[R] - 🖒Refaire
+  * [Control]+[N] - 🗏Nouveau
+  * [Control]+[O] - 🕮⮫Ouvrir
+  * [Control]+[S] - 🕮⮪Sauvegarder
+  * [Control]+[P] - 🖶Imprimer
+  * [Alt]+[S] - Basculer effets sonores on/off
+  * [Escape] - ⤺Arrière ou 🗙Quitter
 
 Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
 
-Dernière mise à jour : décembre 29, 2024
+Dernière mise à jour : mai 2, 2025
 

@@ -1,4 +1,4 @@
-                   Outil 'Magie' de Tux Paint : Epitrochoid
+                   Outil 'Magie' de Tux Paint : Épitrochoide
 
                           ### Groupe: Artistique ###
 
@@ -8,7 +8,7 @@ Click to place the center of an epitrochoid curve, then drag left/right to
 adjust the radius of a fixed circle, and up/down to adjust the radius of the
 circle that will roll along its outside to produce the drawing. The size
 options allow positioning the "pen" that paints the curve relative to the
-rolling circle. (If the Magic size feature is disabled, multiple "Epitrochoid"
+rolling circle. (If the Magic size feature is disabled, multiple "Épitrochoide"
 tools will be made available.)
 
 Cet outil permet de travailler en mode à main levée.

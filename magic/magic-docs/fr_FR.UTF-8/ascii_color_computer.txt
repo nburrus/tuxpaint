@@ -10,7 +10,7 @@ Cet outil permet à la fois de travailler avec un simple clic et à main levée.
 
 Cet outil permet de travailler avec plusieurs tailles.
 
-Voir aussi : ASCII Computer & ASCII Typewriter.
+Voir aussi : Calculateur ASCII & ASCII Typewriter.
 
 -------------------------------------------------------------------------------
 

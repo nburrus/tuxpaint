@@ -1,4 +1,4 @@
-                      Outil 'Magie' de Tux Paint : Rotate
+                     Outil 'Magie' de Tux Paint : Tourner
 
                     ### Groupe: Déformations de l'image ###
 

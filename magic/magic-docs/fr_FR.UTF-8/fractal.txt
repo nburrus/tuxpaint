@@ -1,4 +1,4 @@
-                     Outil 'Magie' de Tux Paint : Fractal
+                     Outil 'Magie' de Tux Paint : Fractale
 
                             ### Groupe: Peindre ###
 
