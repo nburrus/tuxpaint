@@ -112,13 +112,13 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
     The "Text" and "Label" tools support pasting the copy/paste clipboard.
      
 → Outil Magie "Coeurs" ←
-    Dessine une suite de coeurs flottants
+    Dessine une suite de coeurs flottants.
      
 → Outil Magie "Étincelles" ←
     Dessine une suite d'étincelles tombantes.
      
 → Outil Magie "Étoiles" ←
-    Dessine une suite d'étoiles
+    Dessine une suite d'étoiles.
      
 → Documentation traduite en Suédois ←
 
@@ -582,8 +582,8 @@ e.Outils "Texte" et "Étiquette" ←
         "Désactiver l'outil 'Label'" dans Tux Paint Config ou bien en exécutant
         Tux Paint en ligne de commande avec l'option "nolabel").
 
-        📜 The ability to paste text from the clipboard was added in Tux Paint
-        0.9.35
+        📜 La possibilité de coller du texte à partir du presse-papiers a été
+        ajoutée dans la version 0.9.35 de Tux Paint
 
 
          
@@ -630,24 +630,26 @@ e.Outils "Texte" et "Étiquette" ←
         window, obscuring part of the canvas, depending on where the text
         insertion cursor is placed. Along with alphabetic, numeric, and some
         punctuation keys, the keyboard provides:
-          @ A "Backspace" key (⇐) to remove the previous character
-          @ A "Carriage Return" ("Return"/"Enter") key (⏎) to end the current
-            input and begin a new one on the following line (below and to the
-            left)
-          @ A "Tab" key (⇔) to end the current input and begin a new one at the
-            current cursor position
-          @ A "Shift" key (⇑) to shift alphabetic keys from lowercase to
-            uppercase, access more punctuation, etc.
-          @ A "Caps Lock" key (⤒) to toggle permanent shifting of alphabetic
-            keys from lowercase to uppercase (click it again to disable caps
-            lock)
-          @ A "Compose" key ("Cmp"), to initiate character composition (e.g.,
-            click "Cmp", "a", "e" to produce an "æ" character)
-          @ An "Alternate Graphics" key ("AltGr") to access additional
-            characters (e.g., "¿", "ß", etc.)
-          @ An "Alternate" key ("Alt")
-          @ A "Paste" key to paste the current clipboard's text into the Text
-            or Label tool
+          @ Une touche "Retour arrière" (⇐) pour enlever le caractère qui
+            précède
+          @ Une touche "Retour charriot" ("Return"/"Enter") (⏎) pour terminer
+            l'entrée actuelle et en commencer une nouvelle sur la ligne
+            suivante (en dessous et à gauche)
+          @ Une touche "tab" (⇔) pour terminer la saisie actuelle et en
+            commencer une nouvelle à la position actuelle du curseur
+          @ Une touche "Shift" (⇑) pour que les touches alphabétiques passent
+            de minuscule à majuscule, ou pour avoir accès à plus de
+            ponctuation, etc ...
+          @ Une touche "Verrouillage Majuscule" (⤒) pour avoir de manière
+            permanente les touches alphabétiques en majuscules (cliquer de
+            nouveau pour désactiver)
+          @ Une "touche de composition" ("Cmp") pour avoir une composition de
+            caractères (par ex, cliquez sur "Cmp", "a", "e" pour générer le
+            caractère "æ")
+          @ Une touche "
+          @ Une touche "Alternatif" ("Alt")
+          @ Une touche "Coller" pour coller le presse-paiers en cours dans
+            l'outil Texte ou Étiquette
           @ Left and right arrows (← & →) to access different on-screen
             keyboard layouts
 
@@ -750,7 +752,7 @@ h.Outil "Gomme" ←
     Outils disponibles > Autres contrôles > Commande "Nouveau".)
 
     Un certain nombre de types de gommes sont disponibles, chacune pouvant
-    avoir des tailles différentes.
+    avoir des tailles différentes :
       o Square — Square-shaped erasers that completely remove parts of your
         drawing.
       o Circle (solid) — Circle-shaped erasers that completely remove parts of
@@ -1292,30 +1294,31 @@ répertoire "saved" de Tux Paint. C'est là où on les trouve (par défaut) :
     Dans le dossier utilisateurs "AppData"; par ex. 
     "C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\"
 
-    (Note: The "AppData" folder is hidden (not visible) by default. You can
-    enter the path manually in the location bar of your file browser (e.g.,
-    File Explorer).)
+    (Remarque : le dossier "AppData" est caché (non visible) par défaut. Vous
+    pouvez saisir le chemin manuellement dans la barre d'emplacement de votre
+    navigateur de fichiers (par exemple, File Explorer)
 
-    You can use the %APPDATA% variable as a shorthand, i.e. 
+    Vous pouvez utiliser la variable %APPDATA% comme raccourci, c'est à dire 
     "%APPDATA%\Tuxpaint\Saved".
 
-    You can use the [⊞ (Windows)] + [R] key combination to bring up the Run
-    command window, and then type the path and hit [Enter / Return].
+    Vous pouvez utiliser la combinaison de touches [⊞ (Windows)] + [R] pour
+    ouvrir la fenêtre de commande Exécuter, puis taper le chemin d'accès et
+    appuyer sur [Enter / Return].
      
 → macOS ←
     Dans le dossier utilisateurs "Application Support"; par ex. 
     "/Utilisateurs/nom d'utilisateur/Bibliothèque/Support de l'application/TuxPaint/saved/"
      
 → Linux / Unix ←
-    Dans le dossier utilisateurs "Répertoire utilisateur"; par ex. 
+    Dans le dossier utilisateurs "répertoire utilisateur"; par ex. 
     "/home/nom d'utilisateur/.tuxpaint/saved/"
 
-    (Note: The ".tuxpaint" folder is hidden (not visible) by default. You can
-    enter the path manually in the location bar of your file browser (e.g.,
-    GNOME Files or Dolphin).)
+    (Remarque : le dossier ".tuxpaint" est caché (non visible) par défaut. Vous
+    pouvez saisir le chemin manuellement dans la barre d'emplacement de votre
+    navigateur de fichiers (par exemple, GNOME Files ou Dolphin)
 
-    You can use the $HOME variable as a shorthand, i.e. "$HOME/.tuxpaint/saved"
-    .
+    Vous pouvez utiliser la variable $HOME comme raccourci, c'est à dire 
+    "$HOME/.tuxpaint/saved".
      
 → Haiku ←
     Dans le dossier utilisateurs "settings"; par ex. 
@@ -1422,7 +1425,7 @@ Les autres documents inclus avec Tux Paint (dans le répertoire "docs") incluent
         l'outil Tux Paint Config.
       o Documentation sur l'outil 'Magie' ("magic-docs")
         Documentation pour chacun des outils "Magic" actuellement installés.
-      o Frequently Asked Questions ("FAQs") about Tux Paint
+      o Questions fréquemment posées (FAQ) sur Tux Paint
         Answers to, and solutions for, some common questions about, and
         problems with, using Tux Paint.
 

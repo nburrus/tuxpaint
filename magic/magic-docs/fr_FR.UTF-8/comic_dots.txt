@@ -1,4 +1,4 @@
-                    Outil 'Magie' de Tux Paint : Comic Dots
+                 Outil 'Magie' de Tux Paint : Points comiques
 
                             ### Groupe: Peindre ###
 

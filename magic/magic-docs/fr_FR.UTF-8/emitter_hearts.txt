@@ -1,4 +1,4 @@
-                      Outil 'Magie' de Tux Paint : Hearts
+                      Outil 'Magie' de Tux Paint : Coeurs
 
                             ### Groupe: Peindre ###
 
@@ -13,7 +13,7 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Sparkles & Étoile.
+Voir aussi : Étincelles & Étoile.
 
 -------------------------------------------------------------------------------
 

@@ -99,7 +99,7 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
       + Mis en forme - Remplit la surface avec une gradation qui suit les
         contours de la surface à remplir
       + Gomme - Remplace une aire par la couleur de fond, ou bien l'image
-        d'arrière-plan de 'Démarrage' ou 'Modèle'.
+        d'arrière-plan de 'Démarrage' ou 'Modèle'
 
 ## 🪄Magie ##
 
@@ -232,7 +232,8 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
   * [Alt]+[S] - Basculer effets sonores on/off
   * [Escape] - ⤺Arrière ou 🗙Quitter
 
-Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
+Note : Sur macOS utilisez la touche [⌘ (Command)] à la place de la touche
+[Control].
 
 Dernière mise à jour : mai 2, 2025
 

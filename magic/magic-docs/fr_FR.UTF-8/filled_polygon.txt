@@ -1,4 +1,4 @@
-                  Outil 'Magie' de Tux Paint : Filled Polygon
+                 Outil 'Magie' de Tux Paint : Polygone rempli
 
                           ### Groupe: Artistique ###
 

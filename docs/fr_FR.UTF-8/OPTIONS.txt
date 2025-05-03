@@ -584,7 +584,7 @@ section "Options de ligne de commande " ci-dessous.)
     → novice ←
         "Novice" — Pour les utilisateurs qui débutent avec Tux Paint, ou bien
         qui ont peu d'expérience des ordinateurs, ou bien encore ceux qui ont
-        besoin d'outils spéciaux pour l'accessibilité
+        besoin d'outils spéciaux pour l'accessibilité.
          
 
     📜 Note : Ll'option de complexité a été ajoutée dans la version 0.9.32 de

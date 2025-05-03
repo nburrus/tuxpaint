@@ -241,29 +241,30 @@ imprimer ←
         Dans le dossier utilisateurs "AppData"; par ex. 
         "C:\Users\nom d'utilisateur\AppData\Roaming\TuxPaint\saved\"
 
-        (Note: The "AppData" folder is hidden (not visible) by default. You can
-        enter the path manually in the location bar of your file browser (e.g.,
-        File Explorer).)
+        (Remarque : le dossier "AppData" est caché (non visible) par défaut.
+        Vous pouvez saisir le chemin manuellement dans la barre d'emplacement
+        de votre navigateur de fichiers (par exemple, File Explorer)
 
-        You can use the %APPDATA% variable as a shorthand, i.e. 
-        "%APPDATA%\Tuxpaint\Saved".
+        Vous pouvez utiliser la variable %APPDATA% comme raccourci, c'est à
+        dire "%APPDATA%\Tuxpaint\Saved".
 
-        You can use the [⊞ (Windows)] + [R] key combination to bring up the Run
-        command window, and then type the path and hit [Enter / Return].
+        Vous pouvez utiliser la combinaison de touches [⊞ (Windows)] + [R] pour
+        ouvrir la fenêtre de commande Exécuter, puis taper le chemin d'accès et
+        appuyer sur [Enter / Return].
          
     → macOS ←
         Dans le dossier utilisateurs "Application Support"; par ex. 
         "/Utilisateurs/nom d'utilisateur/Bibliothèque/Support de l'application/TuxPaint/saved/"
          
     → Linux / Unix ←
-        Dans le dossier utilisateurs "Répertoire utilisateur"; par ex. 
+        Dans le dossier utilisateurs "répertoire utilisateur"; par ex. 
         "/home/nom d'utilisateur/.tuxpaint/saved/"
 
-        (Note: The ".tuxpaint" folder is hidden (not visible) by default. You
-        can enter the path manually in the location bar of your file browser
-        (e.g., GNOME Files or Dolphin).)
+        (Remarque : le dossier ".tuxpaint" est caché (non visible) par défaut.
+        Vous pouvez saisir le chemin manuellement dans la barre d'emplacement
+        de votre navigateur de fichiers (par exemple, GNOME Files ou Dolphin)
 
-        You can use the $HOME variable as a shorthand, i.e. 
+        Vous pouvez utiliser la variable $HOME comme raccourci, c'est à dire 
         "$HOME/.tuxpaint/saved".
          
     → Haiku ←
@@ -514,12 +515,13 @@ fenêtré ! ←
 
 
      
-→ How do I access other applications when Tux Paint is running in Full Screen?
-←
+→ Comment puis-je accéder à une autre application lorsque Tux Paint est en mode
+plein écran ? ←
       o Windows and Linux users, try the [Alt] + [Tab] key combination to
         switch between applications.
-      o macOS users, switch to other applications using [Control] + [Flèche
-        gauche], then back to Tux Paint using [Control] + [Flèche droite].
+      o Les utilisateurs de macOS passent à une autre application en utilisant
+        [Control] + [Flèche gauche], puis reviennent à Tux Paint avec [Control]
+        + [Flèche droite].
 
      
 
@@ -725,7 +727,8 @@ texte ←
 
 
      
-→ I need to deploy Tux Paint on many Windows systems at once ←
+→ J'ai besoin d'installer Tux Paint sur plusieurs systèmes Windows en une seule
+fois ←
     The installers for both Tux Paint (plus Tux Paint Config.)
     (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) and Tux Paint Stamps
     (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accept the command-line

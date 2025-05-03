@@ -1,4 +1,4 @@
-               Outil 'Magie' de Tux Paint : Tessellation Pointy
+                  Outil 'Magie' de Tux Paint : Pavés pointus
 
                        ### Groupe: Peindre un motif ###
 
@@ -12,7 +12,7 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Tuiles, Motif, & Tessellation Flat.
+Voir aussi : Tuiles, Motif, & Pavés plats.
 
 -------------------------------------------------------------------------------
 

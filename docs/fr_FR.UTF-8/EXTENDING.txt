@@ -255,12 +255,14 @@ qui se trouve dans le même répertoire.)
      
 → Pinceaux directionnels ←
 
-    Brushes may be configured to draw a different shape based on the direction
-    of the line or brush stroke. Different shapes will be drawn depending on
-    which of the eight compass directions the brush is moving — up (aka North),
-    up/right (aka Northeast), right (aka East), down/right (aka Southeast),
-    etc.). A ninth "center" shape is used when there's no motion (e.g., simply
-    clicking/tapping and releasing the "Paint" tool, without dragging).
+    Les pinceaux peuvent être configurés pour dessiner une forme différente en
+    fonction de la direction de la ligne ou du coup de pinceau. Différentes
+    formes seront dessinées en fonction de la direction du pinceau parmi les
+    huit directions de la boussole - vers le haut (Nord), vers le haut/droit
+    (Nord-Est), vers la droite (Est), vers le bas/droit (Sud-Est), etc.) Une
+    neuvième forme "centrale" est utilisée lorsqu'il n'y a pas de mouvement
+    (par exemple, lorsque l'on clique simplement sur l'outil "Peinture" et
+    qu'on le relâche, sans le faire glisser).
 
     Les formes orientables sont divisées en carrés de 3x3 dans une image PNG.
     Par exemple, si votre pinceau fait 30x30, l'image doit être de 90x90 et
@@ -283,8 +285,8 @@ qui se trouve dans le même répertoire.)
      
 → Pinceaux chaotiques ←
 
-    Brushes may be configured to continuously choose a random direction as you
-    draw with them.
+    Les pinceaux peuvent être configurés pour choisir une direction
+    continuellement aléatoire lorsque vous les utilisez.
 
     Ajoute une ligne contenant le mot "chaotic" au fichier de données brosse.
 

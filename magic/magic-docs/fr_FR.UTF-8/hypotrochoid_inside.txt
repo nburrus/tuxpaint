@@ -1,4 +1,4 @@
-               Outil 'Magie' de Tux Paint : Hypotrochoid Inside
+              Outil 'Magie' de Tux Paint : Hypotrochoïde interne
 
                           ### Groupe: Artistique ###
 
@@ -15,9 +15,9 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Épitrochoide, Epitrochoid Inside, Epitrochoid Edge, Epitrochoid
-Outside, Hypotrochoid, Hypotrochoid Edge, Hypotrochoid Outside, Ficelles dans
-les coins, Ficelles sur les bords, & Ficelles V.
+Voir aussi : Épitrochoide, Épitrochoïde interne, Épitrochoïde de bord,
+Épitrochoïde externe, Hypotrochoïde, Hypotrochoïde de bord, Hypotrochoïde
+externe, Ficelles dans les coins, Ficelles sur les bords, & Ficelles V.
 
 -------------------------------------------------------------------------------
 

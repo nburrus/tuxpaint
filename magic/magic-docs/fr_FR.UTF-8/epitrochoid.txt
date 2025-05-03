@@ -17,9 +17,9 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Epitrochoid Inside, Epitrochoid Edge, Epitrochoid Outside,
-Hypotrochoid, Hypotrochoid Inside, Hypotrochoid Edge, Hypotrochoid Outside,
-Ficelles dans les coins, Ficelles sur les bords, & Ficelles V.
+Voir aussi : Épitrochoïde interne, Épitrochoïde de bord, Épitrochoïde externe,
+Hypotrochoïde, Hypotrochoïde interne, Hypotrochoïde de bord, Hypotrochoïde
+externe, Ficelles dans les coins, Ficelles sur les bords, & Ficelles V.
 
 -------------------------------------------------------------------------------
 
