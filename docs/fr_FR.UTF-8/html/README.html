@@ -229,10 +229,10 @@
 
     <dl>
   <dt>Sélecteur de couleur amélioré</dt>
-  <dd>Better behavior when clicking/tapping and dragging hue/saturation box and value slider.</dd>
+  <dd>Meilleur comportement lors du clic/tapper et du déplacement de la boîte de teinte/saturation et du curseur pour choisir la valeur.</dd>
 
-  <dt>Text clipboard paste support</dt>
-  <dd>The "Text" and "Label" tools support pasting the copy/paste clipboard.</dd>
+  <dt>Support pour le presse-papier</dt>
+  <dd>Les outils "Texte" et "Étiquette" prennent en charge le copier/coller avec le presse-papiers.</dd>
 
   <dt>Outil Magie "Coeurs"</dt>
   <dd>Dessine une suite de coeurs flottants.</dd>
@@ -677,11 +677,11 @@
           Les tampons peuvent être rétrécis et agrandis, en cliquant dans l'ensemble de barres (de forme triangulaire) en bas à droite; plus la barre est grande, plus le tampon apparaîtra grand sur votre dessin.        </li>
 
         <li>
-          De nombreux tampons peuvent être retournés verticalement ou affichés sous forme d'image miroir à l'aide des boutons de commande en bas à droite.        </li>
+          De nombreux tampons peuvent être inversés verticalement ou affichés sous forme d'image miroir à l'aide des boutons de commande en bas à droite.        </li>
       </ul>
 
       <p class="note">
-        <span title="Configuration option">&#9881;</span>        <strong>Note</strong>:  Si l'option "<code>nostampcontrols</code>" est définie, Tux Paint n'affichera pas les commandes Rotation, Miroir, Retourner, Réduire et Agrandir pour les tampons. Voir la documentation "<a href="OPTIONS.html"><em>Options</em></a>".      </p>
+        <span title="Configuration option">&#9881;</span>        <strong>Note</strong>:  Si l'option "<code>nostampcontrols</code>" est définie, Tux Paint n'affichera pas les commandes Rotation, Miroir, Inverserer, Réduire et Agrandir pour les tampons. Voir la documentation "<a href="OPTIONS.html"><em>Options</em></a>".      </p>
 
     </dd>
 
@@ -835,7 +835,7 @@
     Sinon, appuyez sur <strong><code>[Tab]</code></strong> et le texte sera inclus dans l'image, mais le curseur se déplacera vers la droite du texte, plutôt que vers le bas d'une ligne et vers la gauche. (Cela peut être utile pour créer une ligne de texte avec des couleurs, des polices, des styles et des tailles variés.)  </p>
 
   <p>
-    Text from the clipboard (copy/paste buffer) can be inserted with the "Text" and "Label" tools by pressing the <strong><code>[Control]</code> + <code>[V]</code></strong> key combination on a physical keyboard, or clicking the "<strong>Paste</strong>" button in Tux Paint's on-screen keyboard.  If the text would exceed the right edge of the canvas, it will wrap to a new line of text (going back to the previous space or dash ('-') if possible).  If the text hits the bottom of the canvas, the pasting will abort, truncating the text.  </p>
+    Le texte du presse-papiers (tampon copier/coller) peut être inséré avec les outils « Texte » et « Étiquette » en appuyant sur la combinaison de touches <strong><code>[Control]</code> + <code>[V]</code></strong> d'un clavier physique ou en cliquant sur le bouton « <strong>Paste</strong> » du clavier virtuel de Tux Paint. Si le texte dépasse le bord droit de la zone de travail, il sera mis sur une nouvelle ligne (en revenant à l'espace ou au tiret (« - ») précédent si possible). Si le texte atteint le bas de la zone de travail, le collage sera interrompu et le texte sera tronqué.  </p>
 
   <p>
     Cliquer ailleurs dans l'image alors que l'entrée de texte est toujours active entraîne le déplacement de la ligne de texte actuelle vers cet emplacement (et vous pouvez continuer à la modifier).  </p>
@@ -907,10 +907,10 @@
 
     <dd>
       <p>
-        An optional on-screen keyboard is available for the Text and Label tools, which can provide a variety of layouts and character composition (e.g., composing "a" and "e" into "æ").  Run Tux Paint with the "<code>--onscreen-keyboard</code>" option, or enable that setting in Tux Paint's configuration file, to enable it.  Multiple layouts are offered (currently "QWERTY" and "ABC"), which the user can switch between.  Additional configuration options allow specifying a default layout, as well as preventing the layout from being changed.      </p>
+        Un clavier virtuel optionnel est disponible pour les outils Texte et Étiquette, offrant une variété de dispositions et de compositions de caractères (par exemple, composer « a » et « e » pour former « æ »). Pour l'activer, exécutez Tux Paint avec l'option « <code>--onscreen-keyboard</code> » ou activez ce paramètre dans le fichier de configuration de Tux Paint. Plusieurs dispositions sont proposées (actuellement « QWERTY » et « ABC »), entre lesquelles l'utilisateur peut basculer. Des options de configuration supplémentaires permettent de spécifier une disposition par défaut et d'empêcher sa modification.      </p>
 
       <p>
-        The on-screen keyboard appears at the bottom or top of the Tux Paint window, obscuring part of the canvas, depending on where the text insertion cursor is placed.  Along with alphabetic, numeric, and some punctuation keys, the keyboard provides:        <ul>
+        Le clavier virtuel apparaît en bas ou en haut de la fenêtre de Tux Paint, occultant une partie du canevas, en fonction de l'endroit où le curseur pour insérer le texte est placé. Avec les lettres, les chiffres et quelques signes de ponctuation, le clavier fournit :        <ul>
           <li>Une touche "Retour arrière" (&#8656;) pour enlever le caractère qui précède</li>
           <li>Une touche "Retour charriot" ("Return"/"Enter") (&#9166;) pour terminer l'entrée actuelle et en commencer une nouvelle sur la ligne suivante (en dessous et à gauche)</li>
           <li>Une touche "tab" (&#8660;) pour terminer la saisie actuelle et en commencer une nouvelle à la position actuelle du curseur</li>
@@ -920,7 +920,7 @@
           <li>Une touche "</li>
           <li>Une touche "Alternatif" ("Alt")</li>
           <li>Une touche "Coller" pour coller le presse-paiers en cours dans l'outil Texte ou Étiquette</li>
-          <li>Left and right arrows (&larr; &amp; &rarr;) to access different on-screen keyboard layouts</li>
+          <li>Flèches gauche et droite (&larr; &amp; &rarr;), pour accéder à différentes dispositions de clavier</li>
         </ul>
       </p>
 
@@ -946,7 +946,7 @@
       <li><strong>Linéaire</strong>&mdash;cliquez et faites glisser pour remplir une zone avec une couleur qui s'atténue au fur et à mesure dans la direction où vous déplacez la souris.</li>
       <li><strong>Radial</strong>&mdash;cliquez une fois pour remplir une zone avec une couleur qui s'atténue graduellement, à partir de l'endroit où vous avez cliqué.</li>
       <li><strong>Radial</strong>&mdash;cliquez une fois pour remplir une zone avec une couleur qui s'atténue graduellement, à partir de l'endroit où vous avez cliqué.</li>
-      <li><strong>Eraser</strong> &mdash; click once to erase an area, exposing the solid color background, or starter or template background image, upon which the drawing was based. (See <a href="#using_tools_drawing_eraser">Outils disponibles &gt; Outils de dessin &gt; Outil "Gomme"</a> and <a href="#new-starter-template">Autres contrôles &gt; Images de "Démarrage" et images "Modèle"</a>.)</li>
+      <li><strong>Gomme</strong> – cliquez une fois pour effacer une zone, dévoilant ainsi l'arrière-plan de couleur unie, ou l'image d'arrière-plan de départ ou de modèle, sur laquelle le dessin est basé. (Voir <a href="#using_tools_drawing_eraser">Outils disponibles &gt; Outils de dessin &gt; Outil "Gomme"</a> et <a href="#new-starter-template">Autres contrôles &gt; Images de "Démarrage" et images "Modèle"</a>.)</li>
     </ul>
   </p>
 
@@ -1023,7 +1023,7 @@
       alt=""
       align="right">
   <p>
-    This tool works similarly to the Paint Brush. Wherever you click (or click and drag), things you've added to your drawing will be erased, exposing the background that you chose when you started the drawing, be it a solid color, the background of a 'Starter' image, or a 'Template' image. (See <a href="#using_tools_other_new">Outils disponibles &gt; Autres contrôles &gt; Commande "Nouveau"</a>.)  </p>
+    Cet outil fonctionne de manière similaire au Pinceau. À chaque clic (ou glisser-déposer), les éléments ajoutés à votre dessin sont effacés, dévoilant l'arrière-plan choisi au début du dessin, qu'il s'agisse d'une couleur unie, de l'arrière-plan d'une image de départ ou d'une image de modèle. (Voir <a href="#using_tools_other_new">Outils disponibles &gt; Autres contrôles &gt; Commande "Nouveau"</a>.)  </p>
 
   <p>
     <img src="../../html/images/tool_eraser_erasers.png"
@@ -1033,13 +1033,13 @@
         align="right" />
     Un certain nombre de types de gommes sont disponibles, chacune pouvant avoir des tailles différentes :    <ul>
       <li>
-        Square &mdash; Square-shaped erasers that completely remove parts of your drawing.      </li>
+        Carré &mdash; Gommes de forme carrée qui suppriment complètement des parties de votre dessin.      </li>
       <li>
-        Circle (solid) &mdash; Circle-shaped erasers that completely remove parts of your drawing.      </li>
+        Cercle (plein) &mdash; Gommes de forme carrée qui suppriment complètement des parties de votre dessin.      </li>
       <li>
-        Fuzzy-edged Circle &mdash; Circle-shaped erasers with soft edges that blend with the background.      </li>
+        Cercle à bords flous &mdash; Gommes en forme de cercle avec des bords doux qui se fondent dans l'arrière-plan.      </li>
       <li>
-        Transparent Circle &mdash; Circle-shaped erasers that blend your drawing with the background. Release and click again to expose more and more of the background.      </li>
+        Cercle transparent &mdash; Gommes en forme de cercle qui mélangent votre dessin avec l'arrière-plan. Relâchez et cliquez à nouveau pour révéler une plus grande partie de l'arrière-plan.      </li>
     </ul>
   </p>
 
@@ -1110,7 +1110,7 @@
     Cliquez sur le bouton "Nouveau" pour démarrer un nouveau dessin. Une boîte de dialogue apparaîtra, avec laquelle vous pouvez choisir de commencer une nouvelle image en utilisant une couleur d'arrière-plan unie, ou en utilisant une image 'Starter' ou 'Template' (<a href="#new-starter-template">voir ci-dessous</a>). On vous demandera d'abord si vous voulez vraiment le faire.  </p>
 
   <p>
-    When you use the 'Eraser' tool things you've added to your drawing will be removed, exposing the background you chose when starting a new drawing. (See <a href="#using_tools_drawing_eraser">Outils disponibles &gt; Outils de dessin &gt; Outil "Gomme"</a>.)
+    Lorsque vous utilisez l'outil « Gomme », les éléments ajoutés à votre dessin sont supprimés, exposant ainsi l'arrière-plan choisi au début du dessin. (Voir <a href="#using_tools_drawing_eraser">Outils disponibles &gt; Outils de dessin &gt; Outil "Gomme"</a>.)
   <p class="note">
     <span title="Keyboard shortcut">&#9000;</span>    <strong>Remarque :</strong> vous pouvez également appuyer <b><code>[Control / &#8984;]</code></b> + <code><b>[N]</b></code> sur le clavier pour commencer un nouveau dessin.  </p>
 
@@ -1127,10 +1127,10 @@
       </ul>
 
       <p>
-        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool, the original image from the 'Starter' or 'Template' will reappear.  (See <a href="#using_tools_drawing_eraser">Outils disponibles &gt; Outils de dessin &gt; Outil "Gomme"</a> and <a href="#using_tools_drawing_fill">Outil "Remplir"</a>.)      </p>
+        Lorsque vous utilisez l'outil « Gomme » ou le mode « Gomme » de l'outil « Remplissage », l'image d'origine du « Démarrage » ou du « Modèle » réapparaît. (Voir <a href="#using_tools_drawing_eraser">Outils disponibles &gt; Outils de dessin &gt; Outil "Gomme"</a> et <a href="#using_tools_drawing_fill">Outil "Remplir"</a>.)      </p>
 
       <p>
-        The 'Flip' and 'Mirror' Magic tools affect the orientation of the 'Starter' or 'Template', as well. (See <a href="../magic-docs/html/flip.html">Outils disponibles &gt; Outil "Magie" (Effets spéciaux) &gt; Renverser</a> and <a href="../magic-docs/html/mirror.html">Miroir</a>.)      </p>
+        Les outils magiques « Inverser » et « Miroir » affectent également l'orientation de l'« Image de démarrage » ou du « Modèle ». (Voir <a href="../magic-docs/html/flip.html">Outils disponibles &gt; Outil "Magie" (Effets spéciaux) &gt; Inverer</a> et <a href="../magic-docs/html/mirror.html">Miroir</a>.)      </p>
 
       <p>
         Lorsque vous chargez une 'Image modèle' ou 'image modèle', dessinez dessus, puis cliquez sur 'Sauvegarder', cela crée un nouveau fichier image - il n'écrase pas l'original, vous pouvez donc l'utiliser à nouveau plus tard (en y accédant depuis la boîte de dialogue 'Nouveau').      </p>
@@ -1864,7 +1864,7 @@
 
           <li>
             <a href="FAQ.html">Questions fréquemment posées (FAQ) sur Tux Paint</a><br>
-            Answers to, and solutions for, some common questions about, and problems with, using Tux Paint.          </li>
+            Réponses et solutions à certaines questions courantes et problèmes liés à l'utilisation de Tux Paint.          </li>
         </ul>
       </dd>
 

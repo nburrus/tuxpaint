@@ -4,7 +4,7 @@
 
            ## Auteur : Bill Kendrick <bill@newbreedsoftware.com> ##
 
-Draw repeating tessellation patterns with pointy-topped hexagons.
+Dessine des motifs de pavés répétitifs avec des hexagones à sommet pointu.
 
 Cet outil permet de travailler en mode à main levée.
 

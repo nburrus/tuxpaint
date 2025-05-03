@@ -124,7 +124,7 @@
                   <li><a href="#brush_description_text">Texte de description du pinceau</a></li>                  <li><a href="#brush_options">Options de pinceau</a></li>                </ul>
               </li>
               <li><a href="#stamps">Tampons</a>                <ul>
-                  <li><a href="#stamps_images">Images des tampons</a></li>                  <li><a href="#description_text">Texte de description des tampons</a></li>                  <li><a href="#sound_effects">Effets sonores des tampons</a></li>                  <li><a href="#descriptive_sound">Son descriptif du tampon</a></li>                  <li><a href="#stamp_options">Options des tampons</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Mise en miroir et retournement</a></li>                </ul>
+                  <li><a href="#stamps_images">Images des tampons</a></li>                  <li><a href="#description_text">Texte de description des tampons</a></li>                  <li><a href="#sound_effects">Effets sonores des tampons</a></li>                  <li><a href="#descriptive_sound">Son descriptif du tampon</a></li>                  <li><a href="#stamp_options">Options des tampons</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Tampons mis en miroir et inversés</a></li>                </ul>
               </li>
               <li><a href="#fonts">Polices</a></li>              <li><a href="#starters">'Images de démarrage'</a>                <ul>
                   <li><a href="#coloring_book_style">Images de démarrage avec style 'livre de coloriage'</a></li>                  <li><a href="#scene_style">Images de démarrage avec 'style scénique'</a></li>                  <li><a href="#starter_options">Options d'image de démarrage</a></li>                </ul>
@@ -351,7 +351,7 @@
             <p>
               Ajoutez une ligne contenant la ligne "<code><b>frames=<i>N</i></b></code>" au fichier de données du pinceau, où"<i>N</i>" est le nombre d'images dans le pinceau.            </p>
             <p class="note">
-              <span title="Configuration option">&#9881;</span>              <strong>Remarque :</strong> si vous préférez que les images apparaissent de manière aléatoire plutôt que séquentielle, ajoutez en plus une ligne contenant "<code><b>random</b></code>" au fichier de données du pinceau.            </p>
+              <span title="Configuration option">&#9881;</span>              <strong>Remarque :</strong> si vous préférez que les cadres soient inversés de manière aléatoire plutôt que séquentiellement, ajoutez également une ligne contenant « <code><b>random</b></code> » au fichier de données du pinceau.            </p>
           </dd>
 
           <dt><strong>Pinceaux directionnels</strong></dt>
@@ -367,7 +367,7 @@
           <dt><strong>Pinceaux tournants</strong></dt>
           <dd>
             <p>
-              Brushes may be configured to rotate based on the angle of the line or brush stroke. (Unlike Directional Brushes, described above, only a single brush shape may be provided.            </p>
+              Les pinceaux peuvent être configurés pour tourner en fonction de l'angle de la ligne ou du coup de pinceau. Contrairement aux pinceaux directionnels décrits ci-dessus, une seule forme de pinceau peut être fournie.            </p>
             <p>
               Ajoute une ligne contenant le mot "<code><b>rotate</b></code>" au fichier de données brosse.            </p>
           </dd>
@@ -613,9 +613,9 @@
           <dt><strong>Tampons inaltérables</strong></dt>
           <dd>
             <p>
-              Par défaut, un tampon peut être retourné, affiché comme une image miroir, ou les deux. Cela se fait à l'aide des boutons de commande sous le sélecteur de tampon, en bas à droite de l'écran dans Tux Paint .            </p>
+              Par défaut, un tampon peut être inversé, affiché comme une image miroir, ou les deux. Cela se fait à l'aide des boutons de commande sous le sélecteur de tampon, en bas à droite de l'écran dans Tux Paint .            </p>
             <p>
-              Parfois, cela n'a pas de sens pour un timbre d'être retourné ou reflété; par exemple, des timbres de lettres ou de chiffres. Parfois, les tampons sont symétriques, il n'est donc pas utile de laisser l'utilisateur les retourner ou les refléter.            </p>
+              Parfois, cela n'a pas de sens pour un timbre d'être inversé ou reflété; par exemple, des timbres de lettres ou de chiffres. Parfois, les tampons sont symétriques, il n'est donc pas utile de laisser l'utilisateur les retourner ou les refléter.            </p>
             <p>
               Pour empêcher un tampon d'être qui a été inversé verticalement, ajoutez une ligne contenant le mot «<code><b>noflip</b></code>» au fichier de données du tampon.            </p>
             <p>
@@ -648,7 +648,7 @@
         <header>
           <h2>
             <a name="pre_mirroed_and_flipped_images"
-                id="pre_mirroed_and_flipped_images">Mise en miroir et retournement</a>
+                id="pre_mirroed_and_flipped_images">Tampons mis en miroir et inversés</a>
           </h2>
         </header>
 
@@ -662,10 +662,10 @@
           Par exemple, pour le tampon "<code>stamp.png</code>", vous créeriez un autre fichier nommé "<code>stamp_mirror.png</code>", qui sera utilisé lorsque le tampon est mis en miroir (plutôt que d'utiliser une version à l'envers de "<code>stamp.png</code>").        </p>
 
         <p>
-          Vous pouvez également fournir une image pré-retournée avec "<code><b>_flip</b></code>" dans le nom, et / ou une image qui est à la fois en miroir et retournée, en la nommant " <code><b>_mirror_flip</b></code>".        </p>
+          Vous pouvez également fournir une image pré-rinversée avec "<code><b>_flip</b></code>" dans le nom, et / ou une image qui est à la fois en miroir et retournée, en la nommant " <code><b>_mirror_flip</b></code>".        </p>
 
         <p class="note">
-          <span title="Information">&#128161;</span>          <strong>Remarque :</strong> Si l'utilisateur retourne et reflète une image, et qu'un "<code>_mirror_flip</code>" pré-dessiné n'existe pas, mais que "<code>_flip</code>" ou "<code>_mirror</code>" existe , il sera utilisé, et reflété ou retourné, selon le cas.        </p>
+          <span title="Information">&#128161;</span>          <strong>Remarque :</strong> Si l'utilisateur inverse et reflète une image, et qu'un "<code>_mirror_flip</code>" pré-dessiné n'existe pas, mais que "<code>_flip</code>" ou "<code>_mirror</code>" existe , il sera utilisé, et reflété ou retourné, selon le cas.        </p>
       </section><!-- H2: Pre-Mirrored and Flipped Stamps -->
     </section><!-- H1: Stamps -->
 
@@ -686,7 +686,7 @@
         Les fontes utilisées par Tux Paint sont des fontes True Type Fonts (TTF).      </p>
 
       <p>
-        Simply place them in the "<code><b>fonts</b></code>" directory. When using the 'Text' and 'Label' tools, Tux Paint will present the font in the 'Letters' selector at the right, along with options to enable bold and/or italics, and change the size.      </p>
+        Placez-les simplement dans le répertoire "<code><b>fonts</b></code>". Quand on utilise les outils 'Texte' et 'Étiquettes', Tux Paint affichera la police dans le sélecteur de 'Lettres' sur la droite, en même temps que les options pour afficher en gras ou en italique, et pour changer la taille.      </p>
     </section><!-- H1: Fonts -->
 
     <section class="indent outer"><!-- H1: Starters -->
@@ -1158,7 +1158,7 @@
           Ceci décrit la taille du clavier (sous forme de grille L × H), et répertorie chaque touche avec son code numérique (voir le fichier "<code>keymap</code>", ci-dessous), la largeur à laquelle il doit être dessiné (généralement "<code>1.0</code>", pour en prendre un espace sur le clavier, mais dans l'exemple ci-dessous, notez que les touches "<code>TAB</code>" et "<code>SPACE</code>" sont beaucoup plus larges), le caractère ou le texte à afficher sur la touche, selon les touches de modification qui ont été enfoncées (une pour chacune : pas de modificateurs, <b><code>[Shift]</code></b> , <b><code>[AltGr]</code></b> et <b><code>[Shift]</code></b> + <b><code>[AltGr]</code></b> ), et enfin si la touche est affectée ou non par la touche <b><code>[CapsLock]</code></b> (utilisez "<code>1</code>") ou <b><code>[AltGr]</code></b> (alt graphiques alternatifs) (utilisez "<code>2</code>"), ou pas du tout (utilisez "<code>0</code>").        </p>
 
         <p>
-          The "<code>NEWLINE</code>" keyword is used to indicate the end of one row of the keyboard, and thus subsequent key layout descriptions will be beginning on a new row.        </p>
+          Le mot-clé « <code>NEWLINE</code> » est utilisé pour indiquer la fin d'une ligne du clavier, dès lors les descriptions suivantes de disposition des touches commenceront sur une nouvelle ligne.        </p>
 
         <blockquote>
           <p>
@@ -1230,7 +1230,7 @@
         </ul>
 
         <p class="note">
-          <span title="Version variation">&#128220;</span>          Starting with Tux Paint 0.9.35, the <code>XF86Paste</code> keysym (value 143) can be used to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in the keyboard layout files. (Pasting via a physical keyboard is initiated using the <code>[Control]</code> + <code>[V]</code> key combination.        </p>
+          <span title="Version variation">&#128220;</span>          À partir de Tux Paint 0.9.35, la touche <code>XF86Paste</code> (valeur 143) peut être utilisée pour lancer un copier-coller dans le tampon du presse-papiers. Voir la touche « Paste » dans les fichiers de disposition du clavier. (Le collage via un clavier physique est lancé avec la combinaison de touches <code>[Control]</code> + <code>[V]</code>.)        </p>
 
       </section><!-- H2: Keyboard layout file ("qwerty.h_layout") -->
 

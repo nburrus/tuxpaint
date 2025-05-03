@@ -105,11 +105,12 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
      ### D. Qu'y a-t-il de neuf dans la version 0.9.35 de Tux Paint ? ###
 
 → Sélecteur de couleur amélioré ←
-    Better behavior when clicking/tapping and dragging hue/saturation box and
-    value slider.
+    Meilleur comportement lors du clic/tapper et du déplacement de la boîte de
+    teinte/saturation et du curseur pour choisir la valeur.
      
-→ Text clipboard paste support ←
-    The "Text" and "Label" tools support pasting the copy/paste clipboard.
+→ Support pour le presse-papier ←
+    Les outils "Texte" et "Étiquette" prennent en charge le copier/coller avec
+    le presse-papiers.
      
 → Outil Magie "Coeurs" ←
     Dessine une suite de coeurs flottants.
@@ -399,12 +400,12 @@ b.Outil "Tampon" (tampon de caoutchouc) ←
             l'ensemble de barres (de forme triangulaire) en bas à droite; plus
             la barre est grande, plus le tampon apparaîtra grand sur votre
             dessin.
-          @ De nombreux tampons peuvent être retournés verticalement ou
-            affichés sous forme d'image miroir à l'aide des boutons de commande
-            en bas à droite.
+          @ De nombreux tampons peuvent être inversés verticalement ou affichés
+            sous forme d'image miroir à l'aide des boutons de commande en bas à
+            droite.
 
         ⚙ Note: Si l'option "nostampcontrols" est définie, Tux Paint
-        n'affichera pas les commandes Rotation, Miroir, Retourner, Réduire et
+        n'affichera pas les commandes Rotation, Miroir, Inverserer, Réduire et
         Agrandir pour les tampons. Voir la documentation "Options".
 
 
@@ -534,13 +535,13 @@ e.Outils "Texte" et "Étiquette" ←
     ligne et vers la gauche. (Cela peut être utile pour créer une ligne de
     texte avec des couleurs, des polices, des styles et des tailles variés.)
 
-    Text from the clipboard (copy/paste buffer) can be inserted with the "Text"
-    and "Label" tools by pressing the [Control] + [V] key combination on a
-    physical keyboard, or clicking the "Paste" button in Tux Paint's on-screen
-    keyboard. If the text would exceed the right edge of the canvas, it will
-    wrap to a new line of text (going back to the previous space or dash ('-')
-    if possible). If the text hits the bottom of the canvas, the pasting will
-    abort, truncating the text.
+    Le texte du presse-papiers (tampon copier/coller) peut être inséré avec les
+    outils « Texte » et « Étiquette » en appuyant sur la combinaison de touches
+    [Control] + [V] d'un clavier physique ou en cliquant sur le bouton « Paste
+     » du clavier virtuel de Tux Paint. Si le texte dépasse le bord droit de la
+    zone de travail, il sera mis sur une nouvelle ligne (en revenant à l'espace
+    ou au tiret (« - ») précédent si possible). Si le texte atteint le bas de
+    la zone de travail, le collage sera interrompu et le texte sera tronqué.
 
     Cliquer ailleurs dans l'image alors que l'entrée de texte est toujours
     active entraîne le déplacement de la ligne de texte actuelle vers cet
@@ -617,19 +618,20 @@ e.Outils "Texte" et "Étiquette" ←
          
     → Clavier virtuel sur écran ←
 
-        An optional on-screen keyboard is available for the Text and Label
-        tools, which can provide a variety of layouts and character composition
-        (e.g., composing "a" and "e" into "æ"). Run Tux Paint with the
-        "--onscreen-keyboard" option, or enable that setting in Tux Paint's
-        configuration file, to enable it. Multiple layouts are offered
-        (currently "QWERTY" and "ABC"), which the user can switch between.
-        Additional configuration options allow specifying a default layout, as
-        well as preventing the layout from being changed.
+        Un clavier virtuel optionnel est disponible pour les outils Texte et
+        Étiquette, offrant une variété de dispositions et de compositions de
+        caractères (par exemple, composer « a » et « e » pour former « æ »).
+        Pour l'activer, exécutez Tux Paint avec l'option
+        « --onscreen-keyboard » ou activez ce paramètre dans le fichier de
+        configuration de Tux Paint. Plusieurs dispositions sont proposées
+        (actuellement « QWERTY » et « ABC »), entre lesquelles l'utilisateur
+        peut basculer. Des options de configuration supplémentaires permettent
+        de spécifier une disposition par défaut et d'empêcher sa modification.
 
-        The on-screen keyboard appears at the bottom or top of the Tux Paint
-        window, obscuring part of the canvas, depending on where the text
-        insertion cursor is placed. Along with alphabetic, numeric, and some
-        punctuation keys, the keyboard provides:
+        Le clavier virtuel apparaît en bas ou en haut de la fenêtre de Tux
+        Paint, occultant une partie du canevas, en fonction de l'endroit où le
+        curseur pour insérer le texte est placé. Avec les lettres, les chiffres
+        et quelques signes de ponctuation, le clavier fournit :
           @ Une touche "Retour arrière" (⇐) pour enlever le caractère qui
             précède
           @ Une touche "Retour charriot" ("Return"/"Enter") (⏎) pour terminer
@@ -650,8 +652,8 @@ e.Outils "Texte" et "Étiquette" ←
           @ Une touche "Alternatif" ("Alt")
           @ Une touche "Coller" pour coller le presse-paiers en cours dans
             l'outil Texte ou Étiquette
-          @ Left and right arrows (← & →) to access different on-screen
-            keyboard layouts
+          @ Flèches gauche et droite (← & →), pour accéder à différentes
+            dispositions de clavier
 
         ⚙ Voir les documents "Options" et "Extension de Tux Paint" pour plus
         d'informations.
@@ -674,11 +676,11 @@ f.Outil "Remplir" ←
         s'atténue graduellement, à partir de l'endroit où vous avez cliqué.
       o Radial—cliquez une fois pour remplir une zone avec une couleur qui
         s'atténue graduellement, à partir de l'endroit où vous avez cliqué.
-      o Eraser — click once to erase an area, exposing the solid color
-        background, or starter or template background image, upon which the
-        drawing was based. (See Outils disponibles > Outils de dessin > Outil
-        "Gomme" and Autres contrôles > Images de "Démarrage" et images "Modèle"
-        .)
+      o Gomme – cliquez une fois pour effacer une zone, dévoilant ainsi
+        l'arrière-plan de couleur unie, ou l'image d'arrière-plan de départ ou
+        de modèle, sur laquelle le dessin est basé. (Voir Outils disponibles >
+        Outils de dessin > Outil "Gomme" et Autres contrôles > Images de
+        "Démarrage" et images "Modèle".)
 
     📜 Note : Avant Tux Paint 0.9.24, "Remplir" était un outil "magique" (voir
     ci-dessous). Avant Tux Paint 0.9.26, l'outil "Remplir" n'offrait que la
@@ -745,23 +747,23 @@ g.Outil "Magie" (Effets spéciaux) ←
      
 h.Outil "Gomme" ←
 
-    This tool works similarly to the Paint Brush. Wherever you click (or click
-    and drag), things you've added to your drawing will be erased, exposing the
-    background that you chose when you started the drawing, be it a solid
-    color, the background of a 'Starter' image, or a 'Template' image. (See
-    Outils disponibles > Autres contrôles > Commande "Nouveau".)
+    Cet outil fonctionne de manière similaire au Pinceau. À chaque clic (ou
+    glisser-déposer), les éléments ajoutés à votre dessin sont effacés,
+    dévoilant l'arrière-plan choisi au début du dessin, qu'il s'agisse d'une
+    couleur unie, de l'arrière-plan d'une image de départ ou d'une image de
+    modèle. (Voir Outils disponibles > Autres contrôles > Commande "Nouveau".)
 
     Un certain nombre de types de gommes sont disponibles, chacune pouvant
     avoir des tailles différentes :
-      o Square — Square-shaped erasers that completely remove parts of your
-        drawing.
-      o Circle (solid) — Circle-shaped erasers that completely remove parts of
-        your drawing.
-      o Fuzzy-edged Circle — Circle-shaped erasers with soft edges that blend
-        with the background.
-      o Transparent Circle — Circle-shaped erasers that blend your drawing with
-        the background. Release and click again to expose more and more of the
-        background.
+      o Carré — Gommes de forme carrée qui suppriment complètement des parties
+        de votre dessin.
+      o Cercle (plein) — Gommes de forme carrée qui suppriment complètement des
+        parties de votre dessin.
+      o Cercle à bords flous — Gommes en forme de cercle avec des bords doux
+        qui se fondent dans l'arrière-plan.
+      o Cercle transparent — Gommes en forme de cercle qui mélangent votre
+        dessin avec l'arrière-plan. Relâchez et cliquez à nouveau pour révéler
+        une plus grande partie de l'arrière-plan.
 
     Lorsque vous déplacez la souris, un contour suit le pointeur, indiquant
     quelle partie de l'image sera effacée.
@@ -806,9 +808,9 @@ b.Commande "Nouveau" ←
     utilisant une image 'Starter' ou 'Template' (voir ci-dessous). On vous
     demandera d'abord si vous voulez vraiment le faire.
 
-    When you use the 'Eraser' tool things you've added to your drawing will be
-    removed, exposing the background you chose when starting a new drawing.
-    (See Outils disponibles > Outils de dessin > Outil "Gomme".)
+    Lorsque vous utilisez l'outil « Gomme », les éléments ajoutés à votre
+    dessin sont supprimés, exposant ainsi l'arrière-plan choisi au début du
+    dessin. (Voir Outils disponibles > Outils de dessin > Outil "Gomme".)
 
     ⌨ Remarque : vous pouvez également appuyer [Control / ⌘] + [N] sur le
     clavier pour commencer un nouveau dessin.
@@ -832,14 +834,15 @@ b.Commande "Nouveau" ←
             «Images de démarrage», rien de ce que vous dessinerez ne restera au
             premier plan.
 
-        When using the 'Eraser' tool or the 'Eraser' mode of the 'Fill' tool,
-        the original image from the 'Starter' or 'Template' will reappear. (See
-        Outils disponibles > Outils de dessin > Outil "Gomme" and Outil
-        "Remplir".)
+        Lorsque vous utilisez l'outil « Gomme » ou le mode « Gomme » de l'outil
+        « Remplissage », l'image d'origine du « Démarrage » ou du « Modèle »
+        réapparaît. (Voir Outils disponibles > Outils de dessin > Outil "Gomme"
+        et Outil "Remplir".)
 
-        The 'Flip' and 'Mirror' Magic tools affect the orientation of the
-        'Starter' or 'Template', as well. (See Outils disponibles > Outil
-        "Magie" (Effets spéciaux) > Renverser and Miroir.)
+        Les outils magiques « Inverser » et « Miroir » affectent également
+        l'orientation de l'« Image de démarrage » ou du « Modèle ». (Voir
+        Outils disponibles > Outil "Magie" (Effets spéciaux) > Inverer et
+        Miroir.)
 
         Lorsque vous chargez une 'Image modèle' ou 'image modèle', dessinez
         dessus, puis cliquez sur 'Sauvegarder', cela crée un nouveau fichier
@@ -1426,8 +1429,8 @@ Les autres documents inclus avec Tux Paint (dans le répertoire "docs") incluent
       o Documentation sur l'outil 'Magie' ("magic-docs")
         Documentation pour chacun des outils "Magic" actuellement installés.
       o Questions fréquemment posées (FAQ) sur Tux Paint
-        Answers to, and solutions for, some common questions about, and
-        problems with, using Tux Paint.
+        Réponses et solutions à certaines questions courantes et problèmes liés
+        à l'utilisation de Tux Paint.
 
      
 → Extensions pour Tux Paint : ←

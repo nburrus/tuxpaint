@@ -448,14 +448,15 @@ choisissez un autre emplacement.
 
 À ce stade, vous pouvez cliquer sur «Installer» pour installer Tux Paint !
 
-💡 The installers for both Tux Paint (plus Tux Paint Config.)
-(tuxpaint-X.Y.Z-windows-ARCH-installer.exe) and Tux Paint Stamps
-(tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accept the command-line
-options "/SILENT" ("silent") or "/VERYSILENT" ("very silent") which can be used
-to install and uninstall their component without use of an interactive set-up
-window. This can be useful for automating installation on a collection of PCs,
-for example using Microsoft Intune cloud-based endpoint management solution
-(see https://learn.microsoft.com/mem/intune/).
+💡 Les programmes d'installation de Tux Paint (et Tux Paint Config.)
+(tuxpaint-X.Y.Z-windows-ARCH-installer.exe) et de Tux Paint Stamps
+(tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) acceptent les options de
+ligne de commande « /SILENT » (« silencieux ») ou « /VERYSILENT » (« très
+silencieux ») qui permettent d'installer et de désinstaller leur composant sans
+utiliser de fenêtre de configuration interactive. Cela peut être utile pour
+automatiser l'installation sur plusieurs PC, par exemple avec la solution de
+gestion des terminaux cloud Microsoft Intune (voir https://learn.microsoft.com/
+mem/intune/).
 
 ## Modification des paramètres à l'aide du raccourci ##
 

@@ -56,7 +56,7 @@
                         ### Déformations de l'image ###
 
   * Miroir
-  * Renverser
+  * Inverer
   * Déplace
   * Zoom
   * Zoom avec carreau

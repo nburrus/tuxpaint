@@ -517,8 +517,8 @@ fenêtré ! ←
      
 → Comment puis-je accéder à une autre application lorsque Tux Paint est en mode
 plein écran ? ←
-      o Windows and Linux users, try the [Alt] + [Tab] key combination to
-        switch between applications.
+      o Pour les utilisateurs de Windows et Linux, essayez la combinaison de
+        touche [Alt] + [Tab] pour naviguer entre les applications.
       o Les utilisateurs de macOS passent à une autre application en utilisant
         [Control] + [Flèche gauche], puis reviennent à Tux Paint avec [Control]
         + [Flèche droite].
@@ -562,21 +562,23 @@ plein écran ? ←
      
 → Tux Paint se lance vraiment très lentement ←
 
-    The first time Tux Paint is launched (for a particular user), it may take a
-    minute or more to respond. The font system used by Tux Paint (FontConfig,
-    via Pango) is creating a 'cache' of information about the fonts on your
-    system. Subsequent launches of Tux Paint should be fast.
+    Lors du premier lancement de Tux Paint (pour un utilisateur particulier),
+    le temps de réponse peut être d'une minute ou plus. Le système de polices
+    utilisé par Tux Paint (FontConfig, via Pango) crée un « cache »
+    d'informations sur les polices de votre système. Les lancements suivants de
+    Tux Paint devraient être rapides.
 
-    While the font cache is generated behind the scenes, Tux Paint should
-    remain interactive (showing an animated 'please wait' animation) as this
-    process runs.
+    Pendant que le cache de polices est généré en arrière-plan, Tux Paint
+    devrait rester interactif (affichant une présentation animée « veuillez
+    patienter ») pendant l'exécution de ce processus.
 
-    If this delay persists or reoccurs, it could be that the cache is being
-    deleted — for example, in an environment (such as a school computer lab)
-    where a system is returned into a default state when a user finishes using
-    the program. Some versions of Tux Paint ship with a file, "fonts.conf" (
-    documented at freedesktop.org), which can be modified to have FontConfig
-    store the file elsewhere, e.g.:
+    Si ce délai persiste ou se reproduit, il est possible que le cache soit en
+    cours de suppression —, par exemple dans un environnement (comme un
+    laboratoire informatique scolaire) où le système revient à son état par
+    défaut lorsqu'un utilisateur finit d'utiliser le programme. Certaines
+    versions de Tux Paint sont livrées avec un fichier, "fonts.conf" (documenté
+    sur freedesktop.org), qui peut être modifié pour que FontConfig stocke le
+    fichier ailleurs, par exemple :
 
         <cachedir>C:\Documents and Settings\All Users\Application Data\
         fontconfig\cache</cachedir>
@@ -718,10 +720,11 @@ texte ←
 
         --sound
 
-    On platforms where Tux Paint offers a system-wide configuration file, the
-    settings in that file may be skipped (so only the user configuration file
-    and other command-line arguments will be used) by including the following
-    command-line argument:
+    Sur les plateformes où Tux Paint propose un fichier de configuration pour
+    l'ensemble du système, les paramètres de ce fichier peuvent être ignorés
+    (de sorte que seul le fichier de configuration utilisateur et les arguments
+    en ligne de commande seront utilisés) en incluant l'argument de ligne de
+    commande suivant :
 
         --nosysconfig
 
@@ -729,14 +732,15 @@ texte ←
      
 → J'ai besoin d'installer Tux Paint sur plusieurs systèmes Windows en une seule
 fois ←
-    The installers for both Tux Paint (plus Tux Paint Config.)
-    (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) and Tux Paint Stamps
-    (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) accept the command-line
-    options "/SILENT" ("silent") or "/VERYSILENT" ("very silent") which can be
-    used to install and uninstall their component without use of an interactive
-    set-up window. This can be useful for automating installation on a
-    collection of PCs, for example using Microsoft Intune cloud-based endpoint
-    management solution (see https://learn.microsoft.com/mem/intune/).
+    Les programmes d'installation de Tux Paint (et Tux Paint Config.)
+    (tuxpaint-X.Y.Z-windows-ARCH-installer.exe) et de Tux Paint Stamps
+    (tuxpaint-stamps-YYYY.MM.DD-windows-installer.exe) acceptent les options de
+    ligne de commande « /SILENT » (« silencieux ») ou « /VERYSILENT » (« très
+    silencieux ») qui permettent d'installer et de désinstaller leur composant
+    sans utiliser de fenêtre de configuration interactive. Cela peut être utile
+    pour automatiser l'installation sur plusieurs PC, par exemple avec la
+    solution de gestion des terminaux cloud Microsoft Intune (voir https://
+    learn.microsoft.com/mem/intune/).
      
 
 -------------------------------------------------------------------------------

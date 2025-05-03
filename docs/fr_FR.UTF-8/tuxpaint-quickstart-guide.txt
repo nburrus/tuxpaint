@@ -17,7 +17,7 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
   * Changez de catégories avec les flèches ⇦⇨ en bas à droite..
   * Choisisez un tampon sur la droite.
   * De nombreux tampons peuvent être affichés sous forme d'image miroir 🪞, et/
-    ou retournés verticalement ↕ à l'aide des boutons de commande en bas à
+    ou inversés verticalement ↕ à l'aide des boutons de commande en bas à
     droite.
   * On peut choisir la couleur de certains tampons (voir "Couleurs").
   * Change la taille du tampon avec les barres 📶 en bas à droite.
@@ -59,8 +59,7 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
     dessin et commencer à entrée plus de texte une ligne au-dessous.
   * Ou bien, pressez [Tab] ou cliquez/tapez ou ⟷ pour ajouter du texte au
     dessin et continuer un texte immédiatement à sa droite.
-  * Press [Control]+[V] or click/tap "Paste" to paste clipboard text into your
-    input
+  * Pressez [Control]+[V] ou cliquer/taper "Paste" pour copier le presse-papier
   * Utiliser clavier virtuel sur écran :
       + "Cmp" peut être utilisé pour composer des caractères, par ex. "Cmp ' a"
         donne á.

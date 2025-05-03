@@ -22,7 +22,7 @@
 |       + Effets sonores des tampons                          |
 |       + Son descriptif du tampon                            |
 |       + Options des tampons                                 |
-|       + Mise en miroir et retournement                      |
+|       + Tampons mis en miroir et inversés                   |
 |   * Polices                                                 |
 |   * 'Images de démarrage'                                   |
 |       + Images de démarrage avec style 'livre de coloriage' |
@@ -247,9 +247,9 @@ qui se trouve dans le même répertoire.)
     Ajoutez une ligne contenant la ligne "frames=N" au fichier de données du
     pinceau, où"N" est le nombre d'images dans le pinceau.
 
-    ⚙ Remarque : si vous préférez que les images apparaissent de manière
-    aléatoire plutôt que séquentielle, ajoutez en plus une ligne contenant "
-    random" au fichier de données du pinceau.
+    ⚙ Remarque : si vous préférez que les cadres soient inversés de manière
+    aléatoire plutôt que séquentiellement, ajoutez également une ligne
+    contenant « random » au fichier de données du pinceau.
 
 
      
@@ -275,9 +275,9 @@ qui se trouve dans le même répertoire.)
      
 → Pinceaux tournants ←
 
-    Brushes may be configured to rotate based on the angle of the line or brush
-    stroke. (Unlike Directional Brushes, described above, only a single brush
-    shape may be provided.
+    Les pinceaux peuvent être configurés pour tourner en fonction de l'angle de
+    la ligne ou du coup de pinceau. Contrairement aux pinceaux directionnels
+    décrits ci-dessus, une seule forme de pinceau peut être fournie.
 
     Ajoute une ligne contenant le mot "rotate" au fichier de données brosse.
 
@@ -538,14 +538,14 @@ Le fichier porte le même nom que l'image PNG ou SVG , mais une extension
      
 → Tampons inaltérables ←
 
-    Par défaut, un tampon peut être retourné, affiché comme une image miroir,
-    ou les deux. Cela se fait à l'aide des boutons de commande sous le
-    sélecteur de tampon, en bas à droite de l'écran dans Tux Paint .
+    Par défaut, un tampon peut être inversé, affiché comme une image miroir, ou
+    les deux. Cela se fait à l'aide des boutons de commande sous le sélecteur
+    de tampon, en bas à droite de l'écran dans Tux Paint .
 
-    Parfois, cela n'a pas de sens pour un timbre d'être retourné ou reflété;
-    par exemple, des timbres de lettres ou de chiffres. Parfois, les tampons
-    sont symétriques, il n'est donc pas utile de laisser l'utilisateur les
-    retourner ou les refléter.
+    Parfois, cela n'a pas de sens pour un timbre d'être inversé ou reflété; par
+    exemple, des timbres de lettres ou de chiffres. Parfois, les tampons sont
+    symétriques, il n'est donc pas utile de laisser l'utilisateur les retourner
+    ou les refléter.
 
     Pour empêcher un tampon d'être qui a été inversé verticalement, ajoutez une
     ligne contenant le mot «noflip» au fichier de données du tampon.
@@ -585,7 +585,7 @@ Le fichier porte le même nom que l'image PNG ou SVG , mais une extension
 
      
 
-                    ### Mise en miroir et retournement ###
+                   ### Tampons mis en miroir et inversés ###
 
 Dans certains cas, vous souhaiterez peut-être fournir une version pré-dessinée
 de l'image miroir, de l'image inversée ou même des deux d'un tampon. Par
@@ -602,11 +602,11 @@ Par exemple, pour le tampon "stamp.png", vous créeriez un autre fichier nommé
 "stamp_mirror.png", qui sera utilisé lorsque le tampon est mis en miroir
 (plutôt que d'utiliser une version à l'envers de "stamp.png").
 
-Vous pouvez également fournir une image pré-retournée avec "_flip" dans le nom,
+Vous pouvez également fournir une image pré-rinversée avec "_flip" dans le nom,
 et / ou une image qui est à la fois en miroir et retournée, en la nommant "
 _mirror_flip".
 
-💡 Remarque : Si l'utilisateur retourne et reflète une image, et qu'un
+💡 Remarque : Si l'utilisateur inverse et reflète une image, et qu'un
 "_mirror_flip" pré-dessiné n'existe pas, mais que "_flip" ou "_mirror" existe ,
 il sera utilisé, et reflété ou retourné, selon le cas.
 
@@ -614,9 +614,10 @@ Polices
 
 Les fontes utilisées par Tux Paint sont des fontes True Type Fonts (TTF).
 
-Simply place them in the "fonts" directory. When using the 'Text' and 'Label'
-tools, Tux Paint will present the font in the 'Letters' selector at the right,
-along with options to enable bold and/or italics, and change the size.
+Placez-les simplement dans le répertoire "fonts". Quand on utilise les outils
+'Texte' et 'Étiquettes', Tux Paint affichera la police dans le sélecteur de
+'Lettres' sur la droite, en même temps que les options pour afficher en gras ou
+en italique, et pour changer la taille.
 
 'Images de démarrage'
 
@@ -1055,8 +1056,9 @@ afficher sur la touche, selon les touches de modification qui ont été enfoncé
 (utilisez "1") ou [AltGr] (alt graphiques alternatifs) (utilisez "2"), ou pas
 du tout (utilisez "0").
 
-The "NEWLINE" keyword is used to indicate the end of one row of the keyboard,
-and thus subsequent key layout descriptions will be beginning on a new row.
+Le mot-clé « NEWLINE » est utilisé pour indiquer la fin d'une ligne du clavier,
+dès lors les descriptions suivantes de disposition des touches commenceront sur
+une nouvelle ligne.
 
     WIDTH 15
     HEIGHT 5
@@ -1117,10 +1119,10 @@ utilisés sont décrits ci-dessous.
   * 2 — disposition précédente (pour le réglage "keyboardlist" du fichier
     d'agencement)
 
-📜 Starting with Tux Paint 0.9.35, the XF86Paste keysym (value 143) can be used
-to initiate a copy/paste clipboard buffer "paste" event. See the "Paste" key in
-the keyboard layout files. (Pasting via a physical keyboard is initiated using
-the [Control] + [V] key combination.
+📜 À partir de Tux Paint 0.9.35, la touche XF86Paste (valeur 143) peut être
+utilisée pour lancer un copier-coller dans le tampon du presse-papiers. Voir la
+touche « Paste » dans les fichiers de disposition du clavier. (Le collage via
+un clavier physique est lancé avec la combinaison de touches [Control] + [V].)
 
            ### Fichier keymap ("us-intl-altgr-dead-keys.keymap") ###
 
