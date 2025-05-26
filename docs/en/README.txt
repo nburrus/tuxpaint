@@ -6,7 +6,7 @@
         Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  May 2, 2025
+                                 May 26, 2025
 
 +-------------------------------------------------+
 |                Table of Contents                |

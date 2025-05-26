@@ -234,5 +234,5 @@ Guide de démarrage rapide 0.9.35 pour Tux Paint
 Note : Sur macOS utilisez la touche [⌘ (Command)] à la place de la touche
 [Control].
 
-Dernière mise à jour : mai 2, 2025
+Dernière mise à jour : mai 26, 2025
 

@@ -213,5 +213,5 @@ Tux Paint 0.9.35 Quickstart Guide
 
 Note: On macOS, use the [⌘ (Command)] key in place of the [Control] key.
 
-Last updated: 2 de Maio de 2025
+Last updated: 26 de Maio de 2025
 
