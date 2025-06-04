@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
 
                      ## Ett enkelt ritprogram för barn ##
 
@@ -97,26 +97,9 @@ använda delar av programmet i sin egen GPL-programvara)
 
 Se COPYING.txt för den fullständiga texten till GPL-licensen.
 
-             ### D. Vad är nytt i Rita med Tux version 0.9.35? ###
+             ### D. Vad är nytt i Rita med Tux version 0.9.36? ###
 
-→ Förbättrad färgväljare ←
-    Bättre beteende när du klickar/tappar och drar i rutan för nyans/mättnad
-    och värde-reglaget.
-     
-→ Stöd för att klistra in text i urklipp ←
-    Verktygen "Text" och "Etikett" har stöd för att klistra in i klippbordet
-    för copy/paste.
-     
-→ "Hjärtan" Magiskt verktyg ←
-    Rita ett spår av svävande hjärtan.
-     
-→ "Sparkles" Magiskt verktyg ←
-    Rita ett spår av fallande gnistrar.
-     
-→ "Stjärnor" Magiskt verktyg ←
-    Rita ett spår av stjärnor.
-     
-→ Documentation translated to Swedish ←
+→ ←
 
      
 

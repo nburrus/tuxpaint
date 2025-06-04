@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      Rita med Tux Magic Tool Plugin API-dokumentation    </title>
+      Tux Paint Magic Tool Plugin API Documentation    </title>
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8">
     <style>
@@ -91,10 +91,10 @@
                 width="205"
                 height="210"
                 alt="Tux Paint"><br>
-            version 0.9.35          </h1>
+            version 0.9.36          </h1>
 
           <h2>
-            Dokumentation av API för Magic Tool Plugin          </h2>
+            Magic Tool Plugin API Documentation          </h2>
 
           <p>
             Copyright © 2007-2025 av olika bidragsgivare; se <a href="../../AUTHORS.txt">AUTHORS.txt</a>.<br>
@@ -120,25 +120,25 @@
         <tr>
           <td>
             <ul>
-              <li><a href="#prereqs">Förutsättningar</a></li>              <li><a href="#interfaces">Gränssnitt</a>                <ul>
+              <li><a href="#prereqs">Förutsättningar</a></li>              <li><a href="#interfaces">Interfaces</a>                <ul>
                   <li><a href="#magic_plugin_funcs">plugin-funktioner för "Magic"-verktyget</a>                    <ul>
                       <li><a href="#common_args">Vanliga argument till plugin-funktioner</a></li>                      <li><a href="#toolfuncs">Nödvändiga plugin-funktioner</a>                        <ul>
                           <li><a href="#housekeeping">Plugin "hushållning" funktioner</a></li>                          <li><a href="#eventfuncs">Plugin-händelsefunktioner</a></li>                        </ul>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#tpfuncs">Rita med Tux Funktioner och data</a>                    <ul>
-                      <li><a href="#pixel_manip">Pixelmanipulationer</a></li>                      <li><a href="#helper_funcs">Hjälpfunktioner</a></li>                      <li><a href="#informational">Information</a></li>                      <li><a href="#sound">Ljudfunktioner</a></li>                      <li><a href="#syscalls">Systemanrop för Rita med Tux</a></li>                      <li><a href="#color_convs">Färgkonverteringar</a></li>                    </ul>
+                  <li><a href="#tpfuncs">Tux Paint Functions and Data</a>                    <ul>
+                      <li><a href="#pixel_manip">Pixelmanipulationer</a></li>                      <li><a href="#helper_funcs">Hjälpfunktioner</a></li>                      <li><a href="#informational">Information</a></li>                      <li><a href="#sound">Sound Functions</a></li>                      <li><a href="#syscalls">Tux Paint System Calls</a></li>                      <li><a href="#color_convs">Färgkonverteringar</a></li>                    </ul>
                   </li>
-                  <li><a href="#macros">Hjälpmakron i "tp_magic_api.h"</a></li>                  <li><a href="#consts">Konstant Definitioner i "tp_magic_api.h"</a></li>                </ul>
+                  <li><a href="#macros">Hjälpmakron i "tp_magic_api.h"</a></li>                  <li><a href="#consts">Constant Definitions in "tp_magic_api.h"</a></li>                </ul>
               </li>
-              <li><a href="#compiling">Kompilera</a>                <ul>
-                  <li><a href="#compiling-linux">Linux och andra Unix-liknande plattformar</a></li>                  <li><a href="#compiling-windows">Fönster</a></li>                  <li><a href="#compiling-macos">macOS</a></li>                </ul>
+              <li><a href="#compiling">Compiling</a>                <ul>
+                  <li><a href="#compiling-linux">Linux and other Unix-like Platforms</a></li>                  <li><a href="#compiling-windows">Fönster</a></li>                  <li><a href="#compiling-macos">macOS</a></li>                </ul>
               </li>
-              <li><a href="#installing">Installerar</a>                <ul>
-                  <li><a href="#installing-linux">Linux och andra Unix-liknande plattformar</a></li>                  <li><a href="#installing-windows">Fönster</a></li>                  <li><a href="#installing-macos">macOS</a></li>                </ul>
+              <li><a href="#installing">Installing</a>                <ul>
+                  <li><a href="#installing-linux">Linux and other Unix-like Platforms</a></li>                  <li><a href="#installing-windows">Fönster</a></li>                  <li><a href="#installing-macos">macOS</a></li>                </ul>
               </li>
-              <li><a href="#multiple">Skapa plugins med flera effekter</a></li>              <li><a href="#examples">Om det anges söker GCode-visaren efter en rad som börjar med den här strängen. Om det hittas hoppas alla GCode upp till den punkten över. Detta kan användas för att hoppa över GCode för "rensa/munstyckesrensning" i tittaren. Observera att sökningen är fallkänslig. Exempel: <code>; layer 1</code></a></li>              <li><a href="#help">Få hjälp</a></li>              <li><a href="#glossary">Ordlista</a></li>            </ul>
+              <li><a href="#multiple">Skapa plugins med flera effekter</a></li>              <li><a href="#examples">Example Code</a></li>              <li><a href="#help">Få hjälp</a></li>              <li><a href="#glossary">Ordlista</a></li>            </ul>
           </td>
         </tr>
       </table>
@@ -176,7 +176,7 @@
     <section class="outer"><!-- H1: Interfaces -->
       <header>
         <h1 id="interfaces">
-          Gränssnitt        </h1>
+          Interfaces        </h1>
       </header>
 
       <p>
@@ -302,7 +302,7 @@
                     <li>
                       <code>MAGIC_COMPLEXITY_BEGINNER</code> (1): Nybörjare (<code>--complexity=beginner</code>)                    </li>
                     <li>
-                      <code>MAGIC_COMPLEXITY_ADVANCED</code> (2): Avancerad (standard) (<code>--complexity=advanced</code>)                    </li>
+                      <code>MAGIC_COMPLEXITY_ADVANCED</code> (2): Advanced (default) (<code>--complexity=advanced</code>)                    </li>
                   </ul>
                   Ditt/dina Magic-verktyg kanske vill reagera olika beroende på användarens kunskapsnivå, antingen genom att förenkla hur varje verktyg fungerar eller genom att utesluta ett eller flera av dem helt. (Till exempel är verktygsuppsättningarna för 1-, 2- och 3-punktsperspektiv helt inaktiva i läget "nybörjare". I "nybörjarläget" är ritverktygen tillgängliga, men verktygen för att redigera vanishing-punkternas positioner är inaktiverade; standardvanishing-punkterna används. I själva verket visas i "nybörjar"-läget ytterligare ett ritverktyg för 3-punktsperspektiv, med alternativa vanishingpunkter)                </p>
                 <p>
@@ -328,7 +328,7 @@
                     <li>
                       <code>MODE_PAINT</code> - måla på fri hand (klicka och dra)                    </li>
                     <li>
-                      <code>MODE_FULLSCREEN</code> - gäller för hela bilden med ett klick                    </li>
+                      <code>MODE_FULLSCREEN</code> - applies to full image with one click                    </li>
                     <li>
                       <code>MODE_PAINT_WITH_PREVIEW</code> - frihandsmålning, med förhandsgranskning (klicka och dra)                    </li>
                     <li>
@@ -432,7 +432,7 @@
                 <p>
                   Plugin-programmet bör göra all upprensning här.  Om du har allokerat något minne eller använt SDL_Mixer för att ladda några ljud under <code>init()</code>, till exempel, bör du <code>frigöra(</code> ) det allokerade minnet och <code>Mix_FreeChunk()</code> ljuden här.                </p>
                 <p>
-                  <b>Obs:</b> Denna funktion anropas en gång när Rita med Tux avslutas.                </p>
+                  <b>Note:</b> This function is called once, when Tux Paint exits.                </p>
               </dd>
             </dl>
           </section><!-- H4: Plugin "housekeeping" functions -->
@@ -522,7 +522,7 @@
       <section class="indent"><!-- H2: Tux Paint Functions and Data -->
         <header>
           <h2 id="tpfuncs">
-            Rita med Tux Funktioner och data          </h2>
+            Tux Paint Functions and Data          </h2>
         </header>
 
         <p>
@@ -609,7 +609,7 @@
           <dl>
             <dt><code><b>char * tp_version</b></code></dt>
             <dd>
-              En sträng som innehåller den version av Rita med Tux som körs (t.ex. "0.9.35").            </dd>
+              En sträng som innehåller den version av Rita med Tux som körs (t.ex. "0.9.36").            </dd>
 
             <dt>
               <code><b>int canvas_w</b></code><br/>
@@ -639,7 +639,7 @@
         <section class="indent"><!-- H3: Sound Functions -->
           <header>
             <h3 id="sound">
-              Ljudfunktioner            </h3>
+              Sound Functions            </h3>
           </header>
 
           <dl>
@@ -688,7 +688,7 @@
         <section class="indent"><!-- H3: Tux Paint System Calls -->
           <header>
             <h3 id="syscalls">
-              Systemanrop för Rita med Tux            </h3>
+              Tux Paint System Calls            </h3>
           </header>
 
           <dl>
@@ -789,7 +789,7 @@
       <section class="indent"><!-- H2: Constant Definitions in tp_magic_api.h -->
         <header>
           <h2 id="consts">
-            Konstant Definitioner i "<code>tp_magic_api.h</code>"          </h2>
+            Constant Definitions in "<code>tp_magic_api.h</code>"          </h2>
         </header>
 
         <p>
@@ -803,7 +803,7 @@
             <p>
               Det bör refereras till av ditt magiska verktygs<code>"api_version()"</code>-funktion, för att informera den löpande kopian av Rita med Tux om ditt plugin är kompatibelt eller inte.            </p>
             <p>
-              <b>Obs:</b> Detta versionsnummer motsvarar inte Rita med Tux's eget versionsnummer (t.ex. "0.9.35").  API:et kommer inte att ändras varje gång en ny version av Rita med Tux släpps, vilket innebär att plugins som kompilerats för tidigare versioner av Rita med Tux ofta kommer att köras under nyare versioner.            </p>
+              <b>Obs:</b> Detta versionsnummer motsvarar inte Rita med Tux's eget versionsnummer (t.ex. "0.9.36").  API:et kommer inte att ändras varje gång en ny version av Rita med Tux släpps, vilket innebär att plugins som kompilerats för tidigare versioner av Rita med Tux ofta kommer att köras under nyare versioner.            </p>
           </dd>
 
           <dt>
@@ -820,13 +820,13 @@
     <section class="outer"><!-- H1: Compiling -->
       <header>
         <h1 id="compiling">
-          Kompilera        </h1>
+          Compiling        </h1>
       </header>
 
       <section class="indent"><!-- H2: Linux and other Unix-like Platforms -->
         <header>
           <h2 id="compiling-linux">
-            Linux och andra Unix-liknande plattformar          </h2>
+            Linux and other Unix-like Platforms          </h2>
         </header>
 
         <p>
@@ -837,7 +837,7 @@
         <section class="indent"><!-- H3: Command-Line Example -->
           <header>
             <h3>
-              Exempel på kommandoraden            </h3>
+              Command-Line Example            </h3>
           </header>
 
           <p>
@@ -885,7 +885,7 @@
         <section class="indent"><!-- H3: Advanced Makefile -->
           <header>
             <h3>
-              Avancerad Makefile            </h3>
+              Advanced Makefile            </h3>
           </header>
 
           <p>
@@ -931,13 +931,13 @@
     <section class="outer"><!-- H1: Installing -->
       <header>
         <h1 id="installing">
-          Installerar        </h1>
+          Installing        </h1>
       </header>
 
       <section class="indent"><!-- H2: Linux and other Unix-like Platforms -->
         <header>
           <h2 id="installing-linux">
-            Linux och andra Unix-liknande plattformar          </h2>
+            Linux and other Unix-like Platforms          </h2>
         </header>
 
         <p>
@@ -970,7 +970,7 @@
         <section class="indent"><!-- H3: Documentation -->
           <header>
             <h3>
-              Dokumentation            </h3>
+              Documentation            </h3>
           </header>
 
           <p>
@@ -1134,7 +1134,7 @@
               <br>
               for (i = 0; i &lt; NUM_TOOLS; i++)<br>
               {<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;/* Blir till exempel "/usr/share/tuxpaint/sounds/magic/one.ogg" */<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;/* Becomes, for example, "/usr/share/tuxpaint/sounds/magic/one.ogg" */<br>
               <br>
               &nbsp;&nbsp;&nbsp;&nbsp;snprintf(fname, sizeof(fname), "%s/sounds/magic/%<!-- -->s",<br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;api-&gt;data_prefix, my_plugin_snd_filnamn[i]);<br>
@@ -1167,7 +1167,7 @@
     <section class="outer"><!-- H1: Example Code -->
       <header>
         <h1 id="examples">
-          Om det anges söker GCode-visaren efter en rad som börjar med den här strängen. Om det hittas hoppas alla GCode upp till den punkten över. Detta kan användas för att hoppa över GCode för "rensa/munstyckesrensning" i tittaren. Observera att sökningen är fallkänslig. Exempel: <code>; layer 1</code>        </h1>
+          Example Code        </h1>
       </header>
 
       <p>
@@ -1203,7 +1203,7 @@
         Se "ampersand"              </dd>
             <dt><code>*</code></dt>
       <dd>
-        Se "stjärna"              </dd>
+        Se "star"              </dd>
             <dt><code>-&gt;</code></dt>
       <dd>
         Se "pil"              </dd>
@@ -1212,7 +1212,7 @@
         Se "punkt"              </dd>
             <dt><code>`</code></dt>
       <dd>
-        Se "grav"              </dd>
+        Se "grave"              </dd>
             <dt>alfa</dt>
       <dd>
         Se "RGBA"              </dd>
@@ -1223,7 +1223,7 @@ Se även: "bit"      </dd>
             <dt>ampersand (pekare)</dt>
       <dd>
         <code>"&amp;"</code>. En symbol i C som gör det möjligt att referera till minnesadressen för en variabel, dvs. en pekare. (Tänk till exempel på<code>"int i;</code>". Senare hänvisar<code>"&amp;i</code>" till minnet där "<code>i</code>" är lagrat, inte värdet på "<code>i</code>" i sig; det är en "pekare till<code>"i</code>"")        <br/>
-Se även: "stjärna"      </dd>
+Se även: "star"      </dd>
             <dt>API</dt>
       <dd>
         Gränssnitt för applikationsprogrammering. <i>Definitionen har ännu inte presenterats.</i>              </dd>
@@ -1232,7 +1232,7 @@ Se även: "stjärna"      </dd>
         Ett värde som skickas till en funktion.              </dd>
             <dt>backquote / backtick</dt>
       <dd>
-        Se "grav"              </dd>
+        Se "grave"              </dd>
             <dt>BASH</dt>
       <dd>
         "Bourne Again Shell", ett skal- och kommandospråk för Unix.              </dd>
@@ -1264,6 +1264,13 @@ Se även: "Prototyp för C-funktion"      </dd>
             <dt>C-uppräkning</dt>
       <dd>
         En konstruktion i C som gör det möjligt att märka numeriska värden (som vanligtvis börjar på 0 och ökar med ett). (t.ex.<code>"enum { ONE, TWO, THREE };</code>"              </dd>
+            <dt>colorspace</dt>
+      <dd>
+        <i>Definitionen har ännu inte presenterats.</i>        <br/>
+See also:
+<ul>
+<li>RGBA</li><li>HSV</li></ul>
+      </dd>
             <dt><code>#define</code></dt>
       <dd>
         En C-sats som definierar en substitution som kan förekomma senare i koden. Används vanligen för konstanta värden (t.ex. "<code>#define RADIUS 16</code>"; alla förekomster av<code>"RADIUS</code>" ersätts med<code>"16</code>"), men kan också användas för att skapa makron. Placeras vanligtvis i C-headerfiler.              </dd>
@@ -1279,14 +1286,14 @@ Se även: "Prototyp för C-funktion"      </dd>
             <dt>dra</dt>
       <dd>
         Att flytta en mus medan knappen hålls intryckt, eller att flytta ett finger eller en penna över en skärm eller surfplatta utan att ta bort den.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>klick</li><li>utgåva</li></ul>
       </dd>
             <dt>element</dt>
       <dd>
         En variabel som lagras inom en C-struktur. (Exempel: elementen<code>"w</code>" och<code>"h</code>" i SDL_Surface lagrar ytans bredd respektive höjd)        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>C-struktur</li><li>punkt</li><li>pil</li></ul>
       </dd>
@@ -1295,8 +1302,8 @@ Se även nedan:
         Se "C-uppräkning"              </dd>
             <dt><code>float</code></dt>
       <dd>
-        Se "flyttal"              </dd>
-            <dt>flyttal</dt>
+        Se "floating point"              </dd>
+            <dt>floating point</dt>
       <dd>
         <i>Definitionen har ännu inte presenterats.</i>        <br/>
 Se även: "heltal"      </dd>
@@ -1306,16 +1313,9 @@ Se även: "heltal"      </dd>
             <dt><code>free()</code></dt>
       <dd>
         En C-funktion som frigör (deallokerar) minne som allokerats av andra C-funktioner (t.ex. "<code>strdup(</code>)").<br/>Se manuskriptet "<code>malloc(3)</code>" <i>man page</i>.              </dd>
-            <dt>funktion</dt>
+            <dt>function</dt>
       <dd>
         Se "C-funktion"              </dd>
-            <dt>färgrymd</dt>
-      <dd>
-        <i>Definitionen har ännu inte presenterats.</i>        <br/>
-Se även nedan:
-<ul>
-<li>RGBA</li><li>HSV</li></ul>
-      </dd>
             <dt><code>gcc</code></dt>
       <dd>
         Se "GNU C-kompilator"              </dd>
@@ -1326,7 +1326,7 @@ Se även: "Krita"      </dd>
             <dt>GNU C-kompilator</dt>
       <dd>
         GNU C-kompilatorn, ett portabelt Open Source-paket för kompilering och länkning av program skrivna i programspråket C.<br/>Se manuskriptet "<code>gcc(1)</code>" <i>man page</i>.              </dd>
-            <dt>grav</dt>
+            <dt>grave</dt>
       <dd>
         Den "<code><font size=+1>`</font></code>"; används av BASH-skalet för att använda utdata från ett kommando som kommandoradsargument för ett annat.              </dd>
             <dt>grön</dt>
@@ -1338,13 +1338,13 @@ Se även: "Krita"      </dd>
             <dt>heltal</dt>
       <dd>
         <i>Definitionen har ännu inte presenterats.</i>        <br/>
-Se även: "flyttal"      </dd>
+Se även: "floating point"      </dd>
             <dt>HSV</dt>
       <dd>
         Färgton, mättnad och värde.<i>Definitionen har ännu inte presenterats.</i>        <br/>
-Se även nedan:
+See also:
 <ul>
-<li>RGBA</li><li>färgrymd</li></ul>
+<li>RGBA</li><li>colorspace</li></ul>
       </dd>
             <dt>huvudfil</dt>
       <dd>
@@ -1367,7 +1367,7 @@ Se även nedan:
             <dt>klick</dt>
       <dd>
         Att trycka på en knapp på en mus, trycka på en pekskärm eller trycka en penna mot en surfplatta.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>dra</li><li>utgåva</li></ul>
       </dd>
@@ -1384,12 +1384,12 @@ Se även: "GIMP"      </dd>
             <dt>linjär</dt>
       <dd>
         <i>Definitionen har ännu inte presenterats.</i>              </dd>
+            <dt>Magic tool</dt>
+      <dd>
+        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs tillgängliga via verktygsknappen "Magic".              </dd>
             <dt><code>magic_api</code></dt>
       <dd>
         En C-struktur som skickas vidare till ett plugins funktioner som exponerar data och funktioner i den löpande kopian av Rita med Tux.              </dd>
-            <dt>Magiskt verktyg</dt>
-      <dd>
-        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs tillgängliga via verktygsknappen "Magic".              </dd>
             <dt><code>make</code></dt>
       <dd>
         Ett verktyg som automatiskt avgör vilka delar av ett större program som behöver kompileras om och ger kommandon för att kompilera om dem.        <br/>
@@ -1409,10 +1409,7 @@ Se även: "Makefile"      </dd>
             <dt><code>Mix_LoadWAV()</code></dt>
       <dd>
         En SDL_mixer-funktion som laddar en ljudfil (WAV, Ogg Vorbis, etc.) och returnerar den som en<code>"Mix_Chunk *</code>".              </dd>
-            <dt>mättnad</dt>
-      <dd>
-        Se "HSV"              </dd>
-            <dt>namnrymd</dt>
+            <dt>namespace</dt>
       <dd>
         <i>Definitionen har ännu inte presenterats.</i>              </dd>
             <dt>nyans</dt>
@@ -1428,22 +1425,19 @@ Se även: "WAVE"      </dd>
             <dt>osignerad</dt>
       <dd>
         I C kan en variabel som kan lagra ett numeriskt värde deklareras som antingen "signerad" (standard) eller "osignerad". I det förra fallet används en bit av värdet för att ange värdets tecken (antingen positivt eller negativt). I det senare fallet kan värdet bara vara positivt, men det finns en extra lagringsbit för talet. En signerad byte (8 bitar) kan t.ex. representera vilket tal som helst mellan -128 och 127. En osignerad byte kan gå upp till 255, men den kan inte gå under 0. För grafik i SDL bör osignerade värden användas för RGB-värden, eftersom varje kanal (röd, grön och blå) kan vara mellan 0 (släckt) och 255 (ljusast).        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>Uint8</li><li>Uint32</li><li>integer</li></ul>
       </dd>
-            <dt>peka</dt>
-      <dd>
-        Se "klick"              </dd>
-            <dt>pekare</dt>
-      <dd>
-        Se "C-pekare"              </dd>
             <dt>pil</dt>
       <dd>
         <code>"-&gt;"</code>. En symbol i C som refererar till ett element inom en pekare till en struktur.              </dd>
             <dt><code>.png</code></dt>
       <dd>
         Se "Portable Network Graphics"              </dd>
+            <dt>pointer</dt>
+      <dd>
+        Se "C-pekare"              </dd>
             <dt>Portable Network Graphics</dt>
       <dd>
         Portable Network Graphics. Ett utbyggbart filformat för förlustfri, portabel och välkomprimerad lagring av rasterbilder. Det är det filformat som Rita med Tux använder för att spara bilder och för sina penslar och stämplar. Det är ett enkelt sätt att lagra 32bpp RGBA-bilder (24bpp äkta färg med full 8bpp alfa-genomskinlighet), utmärkt för användning i grafikprogram som Rita med Tux.<br/>Se manuskriptet "<code>png(5)</code>" <i>man page</i>.        <br/>
@@ -1458,7 +1452,7 @@ Se även: "C-funktion"      </dd>
             <dt>punkt</dt>
       <dd>
         "<code>.</code>". En symbol i C som refererar till ett element inom en struktur.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>C-struktur</li><li>pil</li></ul>
       </dd>
@@ -1468,13 +1462,16 @@ Se även nedan:
             <dt>RGBA</dt>
       <dd>
         Röd, grön, blå och alfa.<i>Definitionen har ännu inte presenterats.</i>        <br/>
-Se även nedan:
+See also:
 <ul>
-<li>HSV</li><li>färgrymd</li></ul>
+<li>HSV</li><li>colorspace</li></ul>
       </dd>
             <dt>röd</dt>
       <dd>
         Se "RGBA"              </dd>
+            <dt>saturation</dt>
+      <dd>
+        Se "HSV"              </dd>
             <dt>SDL</dt>
       <dd>
         Se "Simple DirectMedia Layer"              </dd>
@@ -1484,7 +1481,7 @@ Se även nedan:
             <dt><code>SDL_GetRGB()</code></dt>
       <dd>
         En libSDL-funktion som, med tanke på ett <code>Uint32-pixelvärde</code> (t.ex. ett som returneras från Rita med Tux's Magic tool API-hjälpfunktionen "getpixel<code>()</code>"), formatet på ytan som pixeln togs från och pekare till tre <code>Uint8-variabler</code>, placerar pixelns RGB-värden (rött, grönt och blått) i de tre <code>Uint8-variablerna</code>. (Exempel:<code>"SDL_GetRGB(getpixel(surf, x, y), surf-&gt;format, &amp;r, &amp;g, &amp;b);</code>"<br/>Se manuskriptet "<code>SDL_GetRGB(3)</code>" <i>man page</i>.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>SDL_MapRGB()</li><li>RGBA</li></ul>
       </dd>
@@ -1494,7 +1491,7 @@ Se även nedan:
             <dt><code>SDL_MapRGB()</code></dt>
       <dd>
         En libSDL-funktion som, givet formatet på en yta och <code>Uint8-värden</code> som representerar röda, gröna och blå värden för en pixel, returnerar ett <code>Uint32-pixelvärde</code> som kan placeras i ytan (t.ex. med hjälp av Rita med Tux's Magic tool API-hjälpfunktion<code>"putpixel()")</code>. (Exempel:<code>"putpixel(surf, x, y, SDL_MapRGB(surf-&gt;format, r, g, b));</code>".)<br/>Se manuskriptet "<code>SDL_MapRGB(3)</code>" <i>man page</i>.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>SDL_GetRGB()</li><li>RGBA</li></ul>
       </dd>
@@ -1525,7 +1522,7 @@ Se även nedan:
             <dt>sRGB</dt>
       <dd>
         Se "RGBA"              </dd>
-            <dt>stjärna</dt>
+            <dt>star</dt>
       <dd>
         <code>"*</code>". En symbol i C som, när den används i deklarationen av variabler (t.ex. argument till en funktion), anger att variabeln är en pekare. (Till exempel<code>"int * p;</code>" betyder att<code>"p</code>" är en <i>pekare</i> till ett heltal.) När den används bredvid en pekare "dereferencerar" den variabeln. (Till exempel, senare<code>"*p = 50;</code>" tilldelar värdet 50 till det minne som "<code>p</code>" pekar på; det ändrar inte värdet på "<code>p</code>", som fortfarande är en pekare på ett heltal. I själva verket ändras det heltal som pekas ut)        <br/>
 Se även: "ampersand"      </dd>
@@ -1535,6 +1532,9 @@ Se även: "ampersand"      </dd>
             <dt><code>struct</code></dt>
       <dd>
         Se "C-struktur"              </dd>
+            <dt>tap</dt>
+      <dd>
+        Se "klick"              </dd>
             <dt><code>tp-magic-config</code></dt>
       <dd>
         Ett kommandoradsprogram som ger information om den installerade versionen av Rita med Tux till plugin-utvecklare (t.ex. vilka C-kompilatorflaggor de ska kompilera med och var plugin-delade objekt och datafiler ska installeras).<br/>Se manuskriptet "<code>tp-magic-config(3)</code>" <i>man page</i>.              </dd>
@@ -1544,25 +1544,25 @@ Se även: "ampersand"      </dd>
             <dt><code>Uint32</code></dt>
       <dd>
         Ett 32-bitars, osignerat heltal (definierat av libSDL). Med andra ord, fyra byte som kan representera 0 till 4 294 967 295. (Används vanligtvis för att hålla tillräckligt med information för att lagra tre eller fyra byte som representerar en pixels färg; dvs. RBGA-värde).        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>Uint8</li><li>integer</li><li>unsigned</li></ul>
       </dd>
             <dt><code>Uint8</code></dt>
       <dd>
         Ett 8-bitars, osignerat heltal (definierat av libSDL). Med andra ord, en byte som kan representera 0 till 255.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>Uint32</li><li>integer</li><li>unsigned</li></ul>
       </dd>
             <dt>utgåva</dt>
       <dd>
         Att släppa en musknapp eller att ta bort ett finger eller en pekpenna från en skärm eller surfplatta.        <br/>
-Se även nedan:
+See also:
 <ul>
 <li>klick</li><li>dra</li></ul>
       </dd>
-            <dt>variabel</dt>
+            <dt>variable</dt>
       <dd>
         En konstruktion i datorprogrammering som innehåller ett värde som kan refereras till igen senare genom att hänvisa till variabelns namn, och vanligtvis ändras senare. Till exempel kan en variabel som innehåller någons ålder deklareras som ett heltal:<code>"int age</code>;". Den kan undersökas senare - t.ex.<code>"if (age &gt;= 18) { /* they are an adult */ } else { /* they are not an adult */ } }</code>" - och även ändras senare - t.ex. <code>age = 32; /* set age to 32 */</code>              </dd>
             <dt>värde</dt>

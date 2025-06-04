@@ -17,5 +17,5 @@ Se även: Picasso, Rosett, & Kaleido-4, Kaleido-6 och Kaleido-8.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

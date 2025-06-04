@@ -16,5 +16,5 @@ Se även: Slingor, Krumelurer, Spiral, Fyrkantig spiral, & Koncentrisk kvadrat.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

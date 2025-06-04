@@ -16,5 +16,5 @@ bord, Hypotrochoïde externe, Ficelles dans les coins, & Ficelles V.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

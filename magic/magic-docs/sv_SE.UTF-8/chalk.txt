@@ -13,5 +13,5 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

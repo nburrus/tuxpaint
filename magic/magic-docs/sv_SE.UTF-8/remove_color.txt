@@ -17,5 +17,5 @@ Se även: Behåll färg, Mätta, Avmätta, Mörka, Ljusare, & Färgton.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

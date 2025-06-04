@@ -16,5 +16,5 @@ Se även: Utjämna, Krumelurer, Spiral, & Fyrkantig spiral.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

@@ -11,5 +11,5 @@ Detta verktyg erbjuder både frihands- och enklicksoperationer.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

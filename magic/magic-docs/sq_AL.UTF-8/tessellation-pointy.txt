@@ -16,5 +16,5 @@ Shihni edhe: Kuadrate, Mostër, & Tessellation Flat.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

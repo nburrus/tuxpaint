@@ -23,5 +23,5 @@ ritning, Trimetrisk välj, Sned välj, Snedritning, & Perspektiv.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

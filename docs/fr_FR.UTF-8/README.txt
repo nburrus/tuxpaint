@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
 
                   ## Un programme simple pour les enfants ##
 
@@ -102,26 +102,9 @@ logiciel sous GPL.)
 
 Voir COPYING.txt pour le texte complet de la licence GPL.
 
-     ### D. Qu'y a-t-il de neuf dans la version 0.9.35 de Tux Paint ? ###
+     ### D. Qu'y a-t-il de neuf dans la version 0.9.36 de Tux Paint ? ###
 
-→ Sélecteur de couleur amélioré ←
-    Meilleur comportement lors du clic/tapper et du déplacement de la boîte de
-    teinte/saturation et du curseur pour choisir la valeur.
-     
-→ Support pour le presse-papier ←
-    Les outils "Texte" et "Étiquette" prennent en charge le copier/coller avec
-    le presse-papiers.
-     
-→ Outil Magie "Coeurs" ←
-    Dessine une suite de coeurs flottants.
-     
-→ Outil Magie "Étincelles" ←
-    Dessine une suite d'étincelles tombantes.
-     
-→ Outil Magie "Étoiles" ←
-    Dessine une suite d'étoiles.
-     
-→ Documentation traduite en Suédois ←
+→ ←
 
      
 

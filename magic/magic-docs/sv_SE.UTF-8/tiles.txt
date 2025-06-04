@@ -16,5 +16,5 @@ Se även: Mönster, Tessellation spetsig, & Tessellation platt.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

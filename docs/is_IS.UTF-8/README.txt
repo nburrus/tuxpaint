@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
 
                   ## A simple drawing program for children ##
 
@@ -97,25 +97,9 @@ parts of the program in their own GPL'd software.)
 
 See COPYING.txt for the full text of the GPL license.
 
-              ### D. What's New in Tux Paint version 0.9.35? ###
+              ### D. What's New in Tux Paint version 0.9.36? ###
 
-→ Improved color picker ←
-    Better behavior when clicking/tapping and dragging hue/saturation box and
-    value slider.
-     
-→ Text clipboard paste support ←
-    The "Text" and "Label" tools support pasting the copy/paste clipboard.
-     
-→ "Hearts" Magic tool ←
-    Draw a trail of floating hearts.
-     
-→ "Sparkles" Magic tool ←
-    Draw a trail of falling sparkles.
-     
-→ "Stars" Magic tool ←
-    Draw a trail of stars.
-     
-→ Documentation translated to Swedish ←
+→ ←
 
      
 

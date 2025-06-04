@@ -16,5 +16,5 @@ Se även: Kalejdoskop, Mönster, Symmetri vänster/höger, & Rutor.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

@@ -1,5 +1,5 @@
                                    Tux Paint
-                               バージョン 0.9.35
+                               バージョン 0.9.36
 
                  ## 子供向けのシンプルなお絵かきプログラム ##
 
@@ -95,25 +95,9 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 
 ライセンスの全文は、COPYING.txtをお読みください。
 
-               ### D. Tux Paint バージョン 0.9.35 での変更点 ###
+               ### D. Tux Paint バージョン 0.9.36 での変更点 ###
 
-→ Improved color picker ←
-    Better behavior when clicking/tapping and dragging hue/saturation box and
-    value slider.
-     
-→ Text clipboard paste support ←
-    The "Text" and "Label" tools support pasting the copy/paste clipboard.
-     
-→ "Hearts" Magic tool ←
-    Draw a trail of floating hearts.
-     
-→ "Sparkles" Magic tool ←
-    Draw a trail of falling sparkles.
-     
-→ "Stars" Magic tool ←
-    Draw a trail of stars.
-     
-→ Documentation translated to Swedish ←
+→ ←
 
      
 

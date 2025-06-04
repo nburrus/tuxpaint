@@ -16,5 +16,5 @@ Voir aussi : Doux, Gribouillis, Spirale, & Spirale carrée.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

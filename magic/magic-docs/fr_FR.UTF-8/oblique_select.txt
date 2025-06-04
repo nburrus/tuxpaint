@@ -19,5 +19,5 @@ dimétrique, Choisir perspective trimétrique, Dessin trimétrique, Dessin obliq
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

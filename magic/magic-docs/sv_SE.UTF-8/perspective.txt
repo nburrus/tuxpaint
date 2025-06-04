@@ -15,5 +15,5 @@ Se även: 1-punktsritning, 1-punktsval, 2-punktsritning, 2-punktsval,
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

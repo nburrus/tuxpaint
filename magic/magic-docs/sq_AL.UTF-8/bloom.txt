@@ -12,5 +12,5 @@ Ky mjet ofron rregullime të shumta madhësie.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 

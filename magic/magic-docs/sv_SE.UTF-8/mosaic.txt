@@ -16,5 +16,5 @@ Se även: Hexagon Mosaik, Oregelbunden mosaik, & Kvadratisk mosaik.
 
 -------------------------------------------------------------------------------
 
-                               Tux Paint 0.9.35
+                               Tux Paint 0.9.36
 
