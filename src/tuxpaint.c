@@ -1599,8 +1599,9 @@ typedef struct magic_s
 } magic_t;
 
 
+/* FIXME: Really both of these should be dynamically allocated -bjk 2025.06.03 */
 #define MAX_MAGIC_GROUPS 16
-#define MAX_MAGICS_PER_GROUP 128
+#define MAX_MAGICS_PER_GROUP 256
 
 static int num_plugin_files;    /* How many shared object files we went through */
 static void *magic_handle[MAX_MAGIC_GROUPS * MAX_MAGICS_PER_GROUP];     /* Handle to shared object (to be unloaded later) *//* FIXME: Unload them! */
