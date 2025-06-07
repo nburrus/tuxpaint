@@ -14,6 +14,11 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/299/
       h/t Billy A.
 
+    + Mended bug where EOL-less descriptive text at the end
+      of a file (e.g., a stamp description) would get ignored.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/298/
+      h/t Laura
+
 2025.May.26 (0.9.35)
   * New Magic Tools:
     ----------------

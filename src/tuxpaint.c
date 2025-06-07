@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - April 19, 2025
+  June 14, 2002 - June 6, 2025
 */
 
 #include "platform.h"
@@ -13520,44 +13520,41 @@ static char *loaddesc(const char *const fname, Uint8 *locale_text)
       {
         if (fgets(buf, sizeof(buf), fi))
         {
-          if (!feof(fi))
+          strip_trailing_whitespace(buf);
+
+          if (!got_first)
           {
-            strip_trailing_whitespace(buf);
+            /* First one is the default: */
 
-            if (!got_first)
+            strcpy(def_buf, buf);     /* safe; both the same size */
+            got_first = 1;
+          }
+
+          debug(buf);
+
+
+          //      lang_prefix = lang_prefixes[langint];
+          /* See if it's the one for this locale... */
+
+          if ((char *)strcasestr(buf, wished_langs[i].lang_prefix) == buf)
+          {
+
+            debug(buf + strlen(wished_langs[i].lang_prefix));
+            if ((char *)strcasestr(buf + strlen(wished_langs[i].lang_prefix),
+                                   ".utf8=") == buf + strlen(wished_langs[i].lang_prefix))
             {
-              /* First one is the default: */
+              lang_prefix = wished_langs[i].lang_prefix;
+              short_lang_prefix = strdup(lang_prefix);
+              /* When in doubt, cut off country code */
+              if (strchr(short_lang_prefix, '_'))
+                *strchr(short_lang_prefix, '_') = '\0';
 
-              strcpy(def_buf, buf);     /* safe; both the same size */
-              got_first = 1;
-            }
+              need_own_font = wished_langs[i].need_own_font;
+              need_right_to_left = wished_langs[i].need_right_to_left;
 
-            debug(buf);
+              found = 1;
 
-
-            //      lang_prefix = lang_prefixes[langint];
-            /* See if it's the one for this locale... */
-
-            if ((char *)strcasestr(buf, wished_langs[i].lang_prefix) == buf)
-            {
-
-              debug(buf + strlen(wished_langs[i].lang_prefix));
-              if ((char *)strcasestr(buf + strlen(wished_langs[i].lang_prefix),
-                                     ".utf8=") == buf + strlen(wished_langs[i].lang_prefix))
-              {
-                lang_prefix = wished_langs[i].lang_prefix;
-                short_lang_prefix = strdup(lang_prefix);
-                /* When in doubt, cut off country code */
-                if (strchr(short_lang_prefix, '_'))
-                  *strchr(short_lang_prefix, '_') = '\0';
-
-                need_own_font = wished_langs[i].need_own_font;
-                need_right_to_left = wished_langs[i].need_right_to_left;
-
-                found = 1;
-
-                debug("...FOUND!");
-              }
+              debug("...FOUND!");
             }
           }
         }
