@@ -100,7 +100,7 @@
           </p>
     
           <p>
-            mai  2, 2025          </p>
+            juin  8, 2025          </p>
         </center>
       </header>
 
@@ -126,7 +126,10 @@
               <li><a href="#stamps">Tampons</a>                <ul>
                   <li><a href="#stamps_images">Images des tampons</a></li>                  <li><a href="#description_text">Texte de description des tampons</a></li>                  <li><a href="#sound_effects">Effets sonores des tampons</a></li>                  <li><a href="#descriptive_sound">Son descriptif du tampon</a></li>                  <li><a href="#stamp_options">Options des tampons</a></li>                  <li><a href="#pre_mirroed_and_flipped_images">Tampons mis en miroir et inversés</a></li>                </ul>
               </li>
-              <li><a href="#fonts">Polices</a></li>              <li><a href="#starters">'Images de démarrage'</a>                <ul>
+              <li><a href="#fonts">Polices</a>                <ul>
+                  <li><a href="#systemfonts">System Fonts</a></li>                  <li><a href="#fontconfig">FontConfig</a></li>                </ul>
+              </li>
+              <li><a href="#starters">'Images de démarrage'</a>                <ul>
                   <li><a href="#coloring_book_style">Images de démarrage avec style 'livre de coloriage'</a></li>                  <li><a href="#scene_style">Images de démarrage avec 'style scénique'</a></li>                  <li><a href="#starter_options">Options d'image de démarrage</a></li>                </ul>
               </li>
               <li><a href="#templates">'Modèles'</a>                <ul>
@@ -687,6 +690,87 @@
 
       <p>
         Placez-les simplement dans le répertoire "<code><b>fonts</b></code>". Quand on utilise les outils 'Texte' et 'Étiquettes', Tux Paint affichera la police dans le sélecteur de 'Lettres' sur la droite, en même temps que les options pour afficher en gras ou en italique, et pour changer la taille.      </p>
+
+      <section><!-- H2: System Fonts -->
+        <header>
+          <h2>
+            <a name="systemfonts"
+              id="systemfonts">System Fonts</a>
+          </h2>
+        </header>
+
+        <p>
+          
+          Tux Paint checks a number of standard Operating System locations for fonts that the 'Text' and 'Label' tools might be able to use (unless the "<code>--nosysfonts</code>" option is set). The locations vary, depending on operating system.        </p>
+
+        <ul>
+          <li>
+            <strong>Windows</strong>
+            <ul>
+              <li>
+                The location specified by the "<code>Fonts</code>" option of the "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows Registry key.               </li>
+              <li>
+                If the above fails, then "C:\WINDOWS\FONTS".              </li>
+              <li>
+                The location specified by the "<code>Local AppData</code>" option of the "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows Registry key. The path "<code>\Microsoft\Windows\Fonts</code>" is appended to that location.              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>macOS</strong>
+            <ul>
+              <li><code>/System/Library/Fonts</code></li>
+              <li><code>/Library/Fonts</code></li>
+              <li><code>/usr/share/fonts</code></li>
+              <li><code>/usr/X11R6/lib/X11/fonts</code></li>
+              <li>The "<code>Library/Fonts</code>" folder in the user's home folder.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Android</strong>
+            <ul>
+              <li><code>/system/fonts</code></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Haiku</strong>
+            <p>
+              The locations found by asking Haiku's "Storage Kit" to find the directories on the "<code>/boot</code>" volume for:              <ul>
+                <li><code>B_SYSTEM_FONTS_DIRECTORY</code></li>
+                <li><code>B_SYSTEM_NONPACKAGED_FONTS_DIRECTORY</code></li>
+                <li><code>B_USER_FONTS_DIRECTORY</code></li>
+                <li><code>B_USER_NONPACKAGED_FONTS_DIRECTORY</code></li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <strong>Linux</strong>
+            <ul>
+              <li><code>/usr/share/feh/fonts</code></li>
+              <li><code>/usr/share/fonts</code></li>
+              <li><code>/usr/X11R6/lib/X11/fonts</code></li>
+              <li><code>/usr/share/texmf/fonts</code></li>
+              <li><code>/usr/share/grace/fonts/type1</code></li>
+              <li><code>/usr/share/hatman/fonts</code></li>
+              <li><code>/usr/share/icewm/themes/jim-mac</code></li>
+              <li><code>/usr/share/vlc/skins2/fonts</code></li>
+              <li><code>/usr/share/xplanet/fonts</code></li>
+            </ul>
+          </li>
+        </ul>
+
+      </section><!-- H2: System Fonts -->
+
+      <section><!-- H2: FontConfig -->
+        <header>
+          <h2>
+            <a name="fontconfig"
+              id="fontconfig"><cite>FontConfig</cite></a>
+          </h2>
+        </header>
+
+        <p>...</p>
+      </section><!-- H2: FontConfig -->
+
     </section><!-- H1: Fonts -->
 
     <section class="indent outer"><!-- H1: Starters -->

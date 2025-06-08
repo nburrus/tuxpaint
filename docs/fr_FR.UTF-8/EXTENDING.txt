@@ -5,7 +5,7 @@
        Copyright © 2002-2025 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  mai 2, 2025
+                                 juin 8, 2025
 
 +-------------------------------------------------------------+
 |                     Table des matières                      |
@@ -24,6 +24,8 @@
 |       + Options des tampons                                 |
 |       + Tampons mis en miroir et inversés                   |
 |   * Polices                                                 |
+|       + System Fonts                                        |
+|       + FontConfig                                          |
 |   * 'Images de démarrage'                                   |
 |       + Images de démarrage avec style 'livre de coloriage' |
 |       + Images de démarrage avec 'style scénique'           |
@@ -618,6 +620,52 @@ Placez-les simplement dans le répertoire "fonts". Quand on utilise les outils
 'Texte' et 'Étiquettes', Tux Paint affichera la police dans le sélecteur de
 'Lettres' sur la droite, en même temps que les options pour afficher en gras ou
 en italique, et pour changer la taille.
+
+                             ### System Fonts ###
+
+Tux Paint checks a number of standard Operating System locations for fonts that
+the 'Text' and 'Label' tools might be able to use (unless the "--nosysfonts"
+option is set). The locations vary, depending on operating system.
+
+  * Windows
+      + The location specified by the "Fonts" option of the "Software\Microsoft
+        \Windows\CurrentVersion\Explorer\Shell Folders" Windows Registry key.
+      + If the above fails, then "C:\WINDOWS\FONTS".
+      + The location specified by the "Local AppData" option of the "Software\
+        Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" Windows
+        Registry key. The path "\Microsoft\Windows\Fonts" is appended to that
+        location.
+  * macOS
+      + /System/Library/Fonts
+      + /Library/Fonts
+      + /usr/share/fonts
+      + /usr/X11R6/lib/X11/fonts
+      + The "Library/Fonts" folder in the user's home folder.
+  * Android
+      + /system/fonts
+  * Haiku
+
+    The locations found by asking Haiku's "Storage Kit" to find the directories
+    on the "/boot" volume for:
+      + B_SYSTEM_FONTS_DIRECTORY
+      + B_SYSTEM_NONPACKAGED_FONTS_DIRECTORY
+      + B_USER_FONTS_DIRECTORY
+      + B_USER_NONPACKAGED_FONTS_DIRECTORY
+
+  * Linux
+      + /usr/share/feh/fonts
+      + /usr/share/fonts
+      + /usr/X11R6/lib/X11/fonts
+      + /usr/share/texmf/fonts
+      + /usr/share/grace/fonts/type1
+      + /usr/share/hatman/fonts
+      + /usr/share/icewm/themes/jim-mac
+      + /usr/share/vlc/skins2/fonts
+      + /usr/share/xplanet/fonts
+
+                              ### FontConfig ###
+
+...
 
 'Images de démarrage'
 
