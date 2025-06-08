@@ -7,8 +7,6 @@
 
                                 8 qershor 2025
 
--------------------------------------------------------------------------------
-
 Tux Paint-i njeh një numër ndryshoresh mjedisi, qoftë drejtpërsëdrejti, qoftë
 tërthorazi nga bibliotekat që përdor.
 

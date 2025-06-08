@@ -7,8 +7,6 @@
 
                                  juin 8, 2025
 
--------------------------------------------------------------------------------
-
 Tux Paint interprète plusieurs variables d'environnement, soit directement,
 soit indirectement par le biais des bibliothèques qu'il utilise.
 

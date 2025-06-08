@@ -7,8 +7,6 @@
 
                                  2025年6月 8日
 
--------------------------------------------------------------------------------
-
 Tux Paint understands a number of environment variables, either directly, or
 indirectly by the libraries that it utilizes.
 

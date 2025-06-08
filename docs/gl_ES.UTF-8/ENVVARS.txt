@@ -7,8 +7,6 @@
 
                                8 de Xuño de 2025
 
--------------------------------------------------------------------------------
-
 Tux Paint comprende unha serie de variábeis de contorno, ben directamente ou
 indirectamente polas bibliotecas que emprega.
 

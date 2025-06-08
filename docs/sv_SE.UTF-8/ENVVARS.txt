@@ -7,8 +7,6 @@
 
                                  juni 8, 2025
 
--------------------------------------------------------------------------------
-
 Rita med Tux förstår ett antal miljövariabler, antingen direkt eller indirekt
 genom de bibliotek som den använder.
 
