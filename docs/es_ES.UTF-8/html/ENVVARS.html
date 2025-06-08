@@ -96,7 +96,7 @@
       </p>
 
       <p>
-        mayo  2, 2025      </p>
+        junio  8, 2025      </p>
     </center>
 
     <hr>
@@ -132,6 +132,9 @@
       <dd>
         <p>
           On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. Specifically, where to find "<code>user-dirs.dirs</code>", where the "<code>XDG_PICTURES_DIR</code>" might be defined. It is used for exporting drawings and animated GIFs. Generally it's set to something like "<code>$HOME/Pictures/</code>". If not specified, Tux Paint checks in the directory "<code>$HOME/.config/</code>". If the configuration cannot be found, Tux Paint simply exports drawings and GIFs to "<code>$HOME</code>".        </p>
+
+        <p>
+          Tux Paint also uses this to find FontConfig configuration files; see below.        </p>
       </dd>
 
       <dt>
@@ -180,7 +183,8 @@
       Display-related environment variables    </h2>
 
     <p>
-      The following are a few of the environment variables supported by Simple DirectMedia Layer (libSDL) &mdash; which Tux Paint utilizes for displaying graphics, playing sounds, and receiving mouse, keyboard, and joystick input &mdash; and which may be useful to users of Tux Paint.
+      The following are a few of the environment variables supported by Simple DirectMedia Layer (libSDL) &mdash; which Tux Paint utilizes for displaying graphics, playing sounds, and receiving mouse, keyboard, and joystick input &mdash; and which may be useful to users of Tux Paint.    </p>
+
     <dl>
       <dt>
         <code>SDL_VIDEO_ALLOW_SCREENSAVER</code>
@@ -197,6 +201,34 @@
           Requests where to position Tux Paint's window, and can be used to specify what display to place a fullscreen Tux Paint in a multi-monitor configuration. If not set, or set to "<code>nopref</code>" (meaning "no preference"), Simple DirectMedia Layer (libSDL) decides. Can be set to an <code>X,Y</code> coordinate (e.g. <code>200,100</code>), or "<code>center</code>" (meaning "center").        </p>
       </dd>
 
+    </dl>
+
+    <h2>
+      Font-related environment variables    </h2>
+
+    <p>
+      Tux Paint uses <cite>FontConfig</cite> (via <cite>Pango</cite>, in turn via <cite>SDL_Pango</cite>) to find fonts that may be used by the "Text" and "Label" tools.    </p>
+
+    <dl>
+      <dt>
+        <code>FONTCONFIG_PATH</code>
+      </dt>
+      <dd>
+        <p>
+          Specifies where <cite>FontConfig</cite> should look for a "<code>fonts.conf</cite>" configuration file which Tux Paint examines for any "<code>&lt;dir&gt;</code>" tags, which it then uses to search for fonts that could be used by the tools.        </p>
+
+        <ul>
+          <li>
+            Note: On Apple macOS, this is forced to be the "<code>Resources/etc</code>" folder, inside the Tux Paint application itself.          </li>
+          <li>
+            Note: On Apple iOS, this is forced to be the "<code>etc</code>" folder, inside the Tux Paint application itself.          </li>
+        </ul>
+      </dd>
+      <dt>
+        <code>XDG_CONFIG_HOME</code>
+      </dt>
+      <dd>
+        On Linux and other platforms where the X Desktop Group standards are used, the location of the user's configuration files. It is used to find a user-specific "<code>fonts.conf</code>" configuration file.      </dd>
     </dl>
 
   </body>

@@ -1,11 +1,11 @@
                                    Tux Paint
-                                versión 0.9.35
+                                versión 0.9.36
                     Documentación de variábeis de contorno
 
         Copyright © 2021-2025 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               2 de Maio de 2025
+                               8 de Xuño de 2025
 
 -------------------------------------------------------------------------------
 
@@ -41,6 +41,8 @@ indirectamente polas bibliotecas que emprega.
     like "$HOME/Pictures/". If not specified, Tux Paint checks in the directory
     "$HOME/.config/". If the configuration cannot be found, Tux Paint simply
     exports drawings and GIFs to "$HOME".
+
+    Tux Paint also uses this to find FontConfig configuration files; see below.
 
 
      
@@ -83,6 +85,7 @@ A seguir amósanse algunhas das variábeis de contorno compatíbeis con Simple
 DirectMedia Layer (libSDL) — que Tux Paint utiliza para amosar gráficos,
 reproducir sons e recibir entrada do rato, teclado e joystick — e que poden ser
 útiles para os usuarios de Tux Paint.
+
 → SDL_VIDEO_ALLOW_SCREENSAVER ←
 
     Especifica se Tux Paint debería permitir a execución dun protector de
@@ -101,4 +104,27 @@ reproducir sons e recibir entrada do rato, teclado e joystick — e que poden se
     (e.g. 200,100), or "center" (meaning "center").
 
 
+     
+
+                  ### Font-related environment variables ###
+
+Tux Paint uses FontConfig (via Pango, in turn via SDL_Pango) to find fonts that
+may be used by the "Text" and "Label" tools.
+
+→ FONTCONFIG_PATH ←
+
+    Specifies where FontConfig should look for a "fonts.conf" configuration
+    file which Tux Paint examines for any "<dir>" tags, which it then uses to
+    search for fonts that could be used by the tools.
+
+      # Note: On Apple macOS, this is forced to be the "Resources/etc" folder,
+        inside the Tux Paint application itself.
+      # Note: On Apple iOS, this is forced to be the "etc" folder, inside the
+        Tux Paint application itself.
+
+     
+→ XDG_CONFIG_HOME ←
+    On Linux and other platforms where the X Desktop Group standards are used,
+    the location of the user's configuration files. It is used to find a
+    user-specific "fonts.conf" configuration file.
      

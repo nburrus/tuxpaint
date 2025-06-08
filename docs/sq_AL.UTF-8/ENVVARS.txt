@@ -1,11 +1,11 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
                       Dokumentim Ndryshoresh të Mjedisit
 
  Të drejta kopjimi © 2021-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  2 maj 2025
+                                8 qershor 2025
 
 -------------------------------------------------------------------------------
 
@@ -41,6 +41,8 @@ tërthorazi nga bibliotekat që përdor.
     diçka e ngjashme me “$HOME/Pictures/”. Në mos u përcaktoftë, Tux Paint
     kontrollon te drejtoria “$HOME/.config/”. Nëse s’gjendet dot formësimi, Tux
     Paint-i thjesht eksporton vizatime dhe GIF-e te “$HOME”.
+
+    Tux Paint also uses this to find FontConfig configuration files; see below.
 
 
      
@@ -84,6 +86,7 @@ Layer (libSDL) — të cilat Tux Paint-i i përdorr për të shfaqur elementë
 grafikë, për të luajtur tinguj dhe për të marrë sinjale për miun, tastierën dhe
 joystick-un — dhe që mund të jenë të dobishme për për përdorues të Tux
 Paint-it.
+
 → SDL_VIDEO_ALLOW_SCREENSAVER ←
 
     Përcakton nëse Tux Paint-i duhet të lejojë xhirimin e një kursyesi ekrani.
@@ -103,4 +106,27 @@ Paint-it.
     “center” (që do të thotë “qendër”).
 
 
+     
+
+                  ### Font-related environment variables ###
+
+Tux Paint uses FontConfig (via Pango, in turn via SDL_Pango) to find fonts that
+may be used by the "Text" and "Label" tools.
+
+→ FONTCONFIG_PATH ←
+
+    Specifies where FontConfig should look for a "fonts.conf" configuration
+    file which Tux Paint examines for any "<dir>" tags, which it then uses to
+    search for fonts that could be used by the tools.
+
+      # Note: On Apple macOS, this is forced to be the "Resources/etc" folder,
+        inside the Tux Paint application itself.
+      # Note: On Apple iOS, this is forced to be the "etc" folder, inside the
+        Tux Paint application itself.
+
+     
+→ XDG_CONFIG_HOME ←
+    On Linux and other platforms where the X Desktop Group standards are used,
+    the location of the user's configuration files. It is used to find a
+    user-specific "fonts.conf" configuration file.
      
