@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
                          Documentation sur les signaux
 
        Copyright © 2019-2022 by divers contributeurs; voir AUTHORS.txt.

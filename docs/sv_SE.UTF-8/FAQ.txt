@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
                                 Frågor och svar
 
          Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.

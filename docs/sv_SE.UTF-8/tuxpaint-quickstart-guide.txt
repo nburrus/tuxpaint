@@ -1,4 +1,4 @@
-Rita med Tux 0.9.35 Snabbstartsguide
+Rita med Tux 0.9.36 Snabbstartsguide
 
                            ### Verktyg (ritning) ###
 

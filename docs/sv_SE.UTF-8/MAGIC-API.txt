@@ -1,49 +1,45 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
 
-              ### Dokumentation av API för Magic Tool Plugin ###
+                  ### Magic Tool Plugin API Documentation ###
 
          Copyright © 2007-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
                                januari 12, 2025
 
-+-----------------------------------------------------------------------------+
-|                                  Innehåll                                   |
-|-----------------------------------------------------------------------------|
-|   * Förutsättningar                                                         |
-|   * Gränssnitt                                                              |
-|       + plugin-funktioner för "Magic"-verktyget                             |
-|           o Vanliga argument till plugin-funktioner                         |
-|           o Nödvändiga plugin-funktioner                                    |
-|               # Plugin "hushållning" funktioner                             |
-|               # Plugin-händelsefunktioner                                   |
-|       + Rita med Tux Funktioner och data                                    |
-|           o Pixelmanipulationer                                             |
-|           o Hjälpfunktioner                                                 |
-|           o Information                                                     |
-|           o Ljudfunktioner                                                  |
-|           o Systemanrop för Rita med Tux                                    |
-|           o Färgkonverteringar                                              |
-|       + Hjälpmakron i "tp_magic_api.h"                                      |
-|       + Konstant Definitioner i "tp_magic_api.h"                            |
-|   * Kompilera                                                               |
-|       + Linux och andra Unix-liknande plattformar                           |
-|       + Fönster                                                             |
-|       + macOS                                                               |
-|   * Installerar                                                             |
-|       + Linux och andra Unix-liknande plattformar                           |
-|       + Fönster                                                             |
-|       + macOS                                                               |
-|   * Skapa plugins med flera effekter                                        |
-|   * Om det anges söker GCode-visaren efter en rad som börjar med den här    |
-|     strängen. Om det hittas hoppas alla GCode upp till den punkten över.    |
-|     Detta kan användas för att hoppa över GCode för "rensa/                 |
-|     munstyckesrensning" i tittaren. Observera att sökningen är fallkänslig. |
-|     Exempel: ; layer 1                                                      |
-|   * Få hjälp                                                                |
-|   * Ordlista                                                                |
-+-----------------------------------------------------------------------------+
++-----------------------------------------------------+
+|                      Innehåll                       |
+|-----------------------------------------------------|
+|   * Förutsättningar                                 |
+|   * Interfaces                                      |
+|       + plugin-funktioner för "Magic"-verktyget     |
+|           o Vanliga argument till plugin-funktioner |
+|           o Nödvändiga plugin-funktioner            |
+|               # Plugin "hushållning" funktioner     |
+|               # Plugin-händelsefunktioner           |
+|       + Tux Paint Functions and Data                |
+|           o Pixelmanipulationer                     |
+|           o Hjälpfunktioner                         |
+|           o Information                             |
+|           o Sound Functions                         |
+|           o Tux Paint System Calls                  |
+|           o Färgkonverteringar                      |
+|       + Hjälpmakron i "tp_magic_api.h"              |
+|       + Constant Definitions in "tp_magic_api.h"    |
+|   * Compiling                                       |
+|       + Linux and other Unix-like Platforms         |
+|       + Fönster                                     |
+|       + macOS                                       |
+|   * Installing                                      |
+|       + Linux and other Unix-like Platforms         |
+|       + Fönster                                     |
+|       + macOS                                       |
+|   * Skapa plugins med flera effekter                |
+|   * Example Code                                    |
+|   * Få hjälp                                        |
+|   * Ordlista                                        |
++-----------------------------------------------------+
 
 Översikt
 
@@ -63,7 +59,7 @@ DirectMedia Layer ("libSDL", eller bara "SDL"; finns på https://www.libsdl.org
 kompilerar C-baserade program. Det rekommenderas starkt att man känner till SDL
 API, men några grundläggande SDL-koncept kommer att behandlas i detta dokument.
 
-Gränssnitt
+Interfaces
 
 De som skapar plugins för "magiska" verktyg för Rita med Tux måste
 tillhandahålla vissa gränssnitt (C-funktioner) som Rita med Tux kan anropa.
@@ -208,7 +204,7 @@ Linux) eller "zoom.dll" (på Windows), måste namnen på dina funktioner börja 
     Nivåerna definieras i tp_magic_api.h::
       o MAGIC_COMPLEXITY_NOVICE (0): Novis (--complexity=novice)
       o MAGIC_COMPLEXITY_BEGINNER (1): Nybörjare (--complexity=beginner)
-      o MAGIC_COMPLEXITY_ADVANCED (2): Avancerad (standard) (--complexity=
+      o MAGIC_COMPLEXITY_ADVANCED (2): Advanced (default) (--complexity=
         advanced)
     Ditt/dina Magic-verktyg kanske vill reagera olika beroende på användarens
     kunskapsnivå, antingen genom att förenkla hur varje verktyg fungerar eller
@@ -247,7 +243,7 @@ Linux) eller "zoom.dll" (på Windows), måste namnen på dina funktioner börja 
     Du måste returnera ett värde som är en kombination av ett eller flera av de
     tillgängliga lägena:
       o MODE_PAINT - måla på fri hand (klicka och dra)
-      o MODE_FULLSCREEN - gäller för hela bilden med ett klick
+      o MODE_FULLSCREEN - applies to full image with one click
       o MODE_PAINT_WITH_PREVIEW - frihandsmålning, med förhandsgranskning
         (klicka och dra)
       o MODE_ONECLICK - gäller för ett område runt musen, med ett klick
@@ -387,7 +383,7 @@ Linux) eller "zoom.dll" (på Windows), måste namnen på dina funktioner börja 
     exempel, bör du frigöra( ) det allokerade minnet och Mix_FreeChunk() ljuden
     här.
 
-    Obs: Denna funktion anropas en gång när Rita med Tux avslutas.
+    Note: This function is called once, when Tux Paint exits.
 
 
      
@@ -523,7 +519,7 @@ canvas, int ox, int oy, int x, int y, SDL_Rect * update_rect) ←
 
      
 
-                   ### Rita med Tux Funktioner och data ###
+                     ### Tux Paint Functions and Data ###
 
 Rita med Tux tillhandahåller ett antal hjälpfunktioner som plugins kan komma åt
 via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
@@ -624,7 +620,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
     → char * tp_version ←
         En sträng som innehåller den version av Rita med Tux som körs (t.ex.
-        "0.9.35").
+        "0.9.36").
          
     → int canvas_w
     int canvas_h ←
@@ -656,7 +652,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
          
    
-    ## Ljudfunktioner ##
+    ## Sound Functions ##
 
     → void playsound(Mix_Chunk * snd, int pan, int dist) ←
 
@@ -717,7 +713,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
          
    
-    ## Systemanrop för Rita med Tux ##
+    ## Tux Paint System Calls ##
 
     → void update_progress_bar(void) ←
         Ber Rita med Tux att animera och rita en bildruta i förloppsindikatorn
@@ -831,7 +827,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
          
    
-                 ### Konstant Definitioner i "tp_magic_api.h" ###
+                 ### Constant Definitions in "tp_magic_api.h" ###
 
     Följande är en sammanfattning av de konstantvärden som ställs in (via"#
     define") i huvudfilen för verktygs-API:et 'Magic'.
@@ -846,7 +842,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         ditt plugin är kompatibelt eller inte.
 
         Obs: Detta versionsnummer motsvarar inte Rita med Tux's eget
-        versionsnummer (t.ex. "0.9.35"). API:et kommer inte att ändras varje
+        versionsnummer (t.ex. "0.9.36"). API:et kommer inte att ändras varje
         gång en ny version av Rita med Tux släpps, vilket innebär att plugins
         som kompilerats för tidigare versioner av Rita med Tux ofta kommer att
         köras under nyare versioner.
@@ -859,9 +855,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         beskrivs ovan.
          
    
-    Kompilera
+    Compiling
 
-                 ### Linux och andra Unix-liknande plattformar ###
+                    ### Linux and other Unix-like Platforms ###
 
     Använd C-kompilatorns kommandoradsalternativ"-shared" för att generera en
     fil med delade objekt (".so") baserat på C-källkoden för ditt
@@ -873,7 +869,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     kommandoradsflaggor till din C-kompilator som hjälper den att bygga ditt
     plugin.
 
-    ## Exempel på kommandoraden ##
+    ## Command-Line Example ##
 
     Som ett fristående kommando, till exempel med GNU C-kompilatorn och
     BASH-skalet:
@@ -920,7 +916,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     Observera: Kommandon som listas under ett Makefile-mål ska anges med ett
     enda tabbtecken.
 
-    ## Avancerad Makefile ##
+    ## Advanced Makefile ##
 
     En ännu mer generaliserad Makefile kan se ut så här:
 
@@ -952,9 +948,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
     TBD
 
-    Installerar
+    Installing
 
-                 ### Linux och andra Unix-liknande plattformar ###
+                    ### Linux and other Unix-like Platforms ###
 
     Använd kommandoradsverktyget"tp-magic-config", som levereras som en del av
     Rita med Tux - eller i vissa fall som en del av ett "Rita med Tux 'Magic'
@@ -979,7 +975,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
     Obs: Se anmärkningen ovan angående tecknet "`"(grav)..
 
-    ## Dokumentation ##
+    ## Documentation ##
 
     Använd kommandot"tp-magic-config --plugindocprefix" för att bestämma var
     dokumentationen för dina "Magic"-verktyg ska placeras. Det värde som
@@ -1126,8 +1122,8 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
             for (i = 0; i < NUM_TOOLS; i++)
             {
-                /* Blir till exempel "/usr/share/tuxpaint/sounds/magic/one.ogg"
-            */
+                /* Becomes, for example, "/usr/share/tuxpaint/sounds/magic/
+            one.ogg" */
 
                 snprintf(fname, sizeof(fname), "%s/sounds/magic/%s",
                     api->data_prefix, my_plugin_snd_filnamn[i]);
@@ -1152,10 +1148,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     variant av en effekt med liten ansträngning. ("NUM_TOOLS" kommer helt
     enkelt att vara '1', dina arrayer kommer att ha längden '1', etc.)
 
-    Om det anges söker GCode-visaren efter en rad som börjar med den här
-    strängen. Om det hittas hoppas alla GCode upp till den punkten över. Detta
-    kan användas för att hoppa över GCode för "rensa/munstyckesrensning" i
-    tittaren. Observera att sökningen är fallkänslig. Exempel: ; layer 1
+    Example Code
 
     The C source file "tp_magic_example.c" contains a complete example of a
     plugin with multiple simple effects.
@@ -1176,7 +1169,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Se "ampersand"
          
     → * ←
-        Se "stjärna"
+        Se "star"
          
     → -> ←
         Se "pil"
@@ -1185,7 +1178,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Se "punkt"
          
     → ` ←
-        Se "grav"
+        Se "grave"
          
     → alfa ←
         Se "RGBA"
@@ -1202,7 +1195,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         för en variabel, dvs. en pekare. (Tänk till exempel på"int i;". Senare
         hänvisar"&i" till minnet där "i" är lagrat, inte värdet på "i" i sig;
         det är en "pekare till"i"")
-        Se även: "stjärna"
+        Se även: "star"
          
     → API ←
         Gränssnitt för applikationsprogrammering. Definitionen har ännu inte
@@ -1212,7 +1205,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Ett värde som skickas till en funktion.
          
     → backquote / backtick ←
-        Se "grav"
+        Se "grave"
          
     → BASH ←
         "Bourne Again Shell", ett skal- och kommandospråk för Unix.
@@ -1265,6 +1258,13 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         vanligtvis börjar på 0 och ökar med ett). (t.ex."enum { ONE, TWO, THREE
         };"
          
+    → colorspace ←
+        Definitionen har ännu inte presenterats.
+        See also:
+          @ RGBA
+          @ HSV
+
+         
     → #define ←
         En C-sats som definierar en substitution som kan förekomma senare i
         koden. Används vanligen för konstanta värden (t.ex. "#define RADIUS
@@ -1286,7 +1286,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Att flytta en mus medan knappen hålls intryckt, eller att flytta ett
         finger eller en penna över en skärm eller surfplatta utan att ta bort
         den.
-        Se även nedan:
+        See also:
           @ klick
           @ utgåva
 
@@ -1294,7 +1294,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → element ←
         En variabel som lagras inom en C-struktur. (Exempel: elementen"w"
         och"h" i SDL_Surface lagrar ytans bredd respektive höjd)
-        Se även nedan:
+        See also:
           @ C-struktur
           @ punkt
           @ pil
@@ -1304,9 +1304,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Se "C-uppräkning"
          
     → float ←
-        Se "flyttal"
+        Se "floating point"
          
-    → flyttal ←
+    → floating point ←
         Definitionen har ännu inte presenterats.
         Se även: "heltal"
          
@@ -1321,15 +1321,8 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         C-funktioner (t.ex. "strdup()").
         Se manuskriptet "malloc(3)" man page.
          
-    → funktion ←
+    → function ←
         Se "C-funktion"
-         
-    → färgrymd ←
-        Definitionen har ännu inte presenterats.
-        Se även nedan:
-          @ RGBA
-          @ HSV
-
          
     → gcc ←
         Se "GNU C-kompilator"
@@ -1344,7 +1337,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         länkning av program skrivna i programspråket C.
         Se manuskriptet "gcc(1)" man page.
          
-    → grav ←
+    → grave ←
         Den "`"; används av BASH-skalet för att använda utdata från ett
         kommando som kommandoradsargument för ett annat.
          
@@ -1356,13 +1349,13 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → heltal ←
         Definitionen har ännu inte presenterats.
-        Se även: "flyttal"
+        Se även: "floating point"
          
     → HSV ←
         Färgton, mättnad och värde.Definitionen har ännu inte presenterats.
-        Se även nedan:
+        See also:
           @ RGBA
-          @ färgrymd
+          @ colorspace
 
          
     → huvudfil ←
@@ -1388,7 +1381,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → klick ←
         Att trycka på en knapp på en mus, trycka på en pekskärm eller trycka en
         penna mot en surfplatta.
-        Se även nedan:
+        See also:
           @ dra
           @ utgåva
 
@@ -1410,13 +1403,13 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → linjär ←
         Definitionen har ännu inte presenterats.
          
+    → Magic tool ←
+        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs
+        tillgängliga via verktygsknappen "Magic".
+         
     → magic_api ←
         En C-struktur som skickas vidare till ett plugins funktioner som
         exponerar data och funktioner i den löpande kopian av Rita med Tux.
-         
-    → Magiskt verktyg ←
-        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs
-        tillgängliga via verktygsknappen "Magic".
          
     → make ←
         Ett verktyg som automatiskt avgör vilka delar av ett större program som
@@ -1448,10 +1441,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         En SDL_mixer-funktion som laddar en ljudfil (WAV, Ogg Vorbis, etc.) och
         returnerar den som en"Mix_Chunk *".
          
-    → mättnad ←
-        Se "HSV"
-         
-    → namnrymd ←
+    → namespace ←
         Definitionen har ännu inte presenterats.
          
     → nyans ←
@@ -1475,17 +1465,11 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         grafik i SDL bör osignerade värden användas för RGB-värden, eftersom
         varje kanal (röd, grön och blå) kan vara mellan 0 (släckt) och 255
         (ljusast).
-        Se även nedan:
+        See also:
           @ Uint8
           @ Uint32
           @ integer
 
-         
-    → peka ←
-        Se "klick"
-         
-    → pekare ←
-        Se "C-pekare"
          
     → pil ←
         "->". En symbol i C som refererar till ett element inom en pekare till
@@ -1493,6 +1477,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → .png ←
         Se "Portable Network Graphics"
+         
+    → pointer ←
+        Se "C-pekare"
          
     → Portable Network Graphics ←
         Portable Network Graphics. Ett utbyggbart filformat för förlustfri,
@@ -1513,7 +1500,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → punkt ←
         ".". En symbol i C som refererar till ett element inom en struktur.
-        Se även nedan:
+        See also:
           @ C-struktur
           @ pil
 
@@ -1523,13 +1510,16 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → RGBA ←
         Röd, grön, blå och alfa.Definitionen har ännu inte presenterats.
-        Se även nedan:
+        See also:
           @ HSV
-          @ färgrymd
+          @ colorspace
 
          
     → röd ←
         Se "RGBA"
+         
+    → saturation ←
+        Se "HSV"
          
     → SDL ←
         Se "Simple DirectMedia Layer"
@@ -1546,7 +1536,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         blått) i de tre Uint8-variablerna. (Exempel:"SDL_GetRGB(getpixel(surf,
         x, y), surf->format, &r, &g, &b);"
         Se manuskriptet "SDL_GetRGB(3)" man page.
-        Se även nedan:
+        See also:
           @ SDL_MapRGB()
           @ RGBA
 
@@ -1562,7 +1552,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Tux's Magic tool API-hjälpfunktion"putpixel()"). (Exempel:"putpixel
         (surf, x, y, SDL_MapRGB(surf->format, r, g, b));".)
         Se manuskriptet "SDL_MapRGB(3)" man page.
-        Se även nedan:
+        See also:
           @ SDL_GetRGB()
           @ RGBA
 
@@ -1610,7 +1600,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → sRGB ←
         Se "RGBA"
          
-    → stjärna ←
+    → star ←
         "*". En symbol i C som, när den används i deklarationen av variabler
         (t.ex. argument till en funktion), anger att variabeln är en pekare.
         (Till exempel"int * p;" betyder att"p" är en pekare till ett heltal.)
@@ -1629,6 +1619,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → struct ←
         Se "C-struktur"
          
+    → tap ←
+        Se "klick"
+         
     → tp-magic-config ←
         Ett kommandoradsprogram som ger information om den installerade
         versionen av Rita med Tux till plugin-utvecklare (t.ex. vilka
@@ -1645,7 +1638,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         fyra byte som kan representera 0 till 4 294 967 295. (Används
         vanligtvis för att hålla tillräckligt med information för att lagra tre
         eller fyra byte som representerar en pixels färg; dvs. RBGA-värde).
-        Se även nedan:
+        See also:
           @ Uint8
           @ integer
           @ unsigned
@@ -1654,7 +1647,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → Uint8 ←
         Ett 8-bitars, osignerat heltal (definierat av libSDL). Med andra ord,
         en byte som kan representera 0 till 255.
-        Se även nedan:
+        See also:
           @ Uint32
           @ integer
           @ unsigned
@@ -1663,12 +1656,12 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → utgåva ←
         Att släppa en musknapp eller att ta bort ett finger eller en pekpenna
         från en skärm eller surfplatta.
-        Se även nedan:
+        See also:
           @ klick
           @ dra
 
          
-    → variabel ←
+    → variable ←
         En konstruktion i datorprogrammering som innehåller ett värde som kan
         refereras till igen senare genom att hänvisa till variabelns namn, och
         vanligtvis ändras senare. Till exempel kan en variabel som innehåller

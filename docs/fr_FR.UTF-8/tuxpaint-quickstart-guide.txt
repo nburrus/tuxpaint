@@ -1,4 +1,4 @@
-Guide de démarrage rapide 0.9.35 pour Tux Paint
+Guide de démarrage rapide 0.9.36 pour Tux Paint
 
                             ### Outils (dessin) ###
 

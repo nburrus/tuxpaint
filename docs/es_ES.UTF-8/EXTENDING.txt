@@ -1,6 +1,6 @@
                                    Extending
                                    Tux Paint
-                                versión 0.9.35
+                                versión 0.9.36
 
         Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/

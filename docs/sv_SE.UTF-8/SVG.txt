@@ -1,5 +1,5 @@
                                    Tux Paint
-                                version 0.9.35
+                                version 0.9.36
                                SVG-dokumentation
 
          Copyright © 2007-2022 av olika bidragsgivare; se AUTHORS.txt.
