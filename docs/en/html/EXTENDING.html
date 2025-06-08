@@ -710,7 +710,7 @@
               <li>
                 The location specified by the "<code>Fonts</code>" option of the "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows Registry key.               </li>
               <li>
-                If the above fails, then "C:\WINDOWS\FONTS".              </li>
+                If the above fails, then "<code>C:\WINDOWS\FONTS</code>".              </li>
               <li>
                 The location specified by the "<code>Local AppData</code>" option of the "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows Registry key. The path "<code>\Microsoft\Windows\Fonts</code>" is appended to that location.              </li>
             </ul>
@@ -743,7 +743,7 @@
             </p>
           </li>
           <li>
-            <strong>Linux</strong>
+            <strong>Linux/etc.</strong>
             <ul>
               <li><code>/usr/share/feh/fonts</code></li>
               <li><code>/usr/share/fonts</code></li>
@@ -768,7 +768,60 @@
           </h2>
         </header>
 
-        <p>...</p>
+        <p>
+          
+          Tux Paint utilizes <cite>FontConfig</cite> to find additional system-wide and user-specific fonts that the 'Text' and 'Label' tools might be able to use (unless the "<code>--nosysfonts</code>" option is set).  It does this by looking for <cite>FontConfig</cite> configuration files ("<code>fonts.conf</code>") in various locations.        </p>
+
+        <ul>
+          <li>
+            <strong>Windows</strong>
+            <ul>
+              <li>
+                The "<code>etc/fonts/fonts.conf</code>" file included with Tux Paint.              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>macOS</strong>
+            <ul>
+              <li>
+                The path specified by the "<code>FONTCONFIG_PATH</code>" environment variable, if set.               </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Haiku</strong>
+            <ul>
+              <li><code>/boot/system/settings/fonts/fonts.conf</code></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Linux/etc.</strong>
+            <ul>
+              <li>
+                The path specified by the "<code>FONTCONFIG_PATH</code>" environment variable, if set.               </li>
+              <li>
+                If the above fails, then "<code>/etc/fonts/fonts.conf</code>".              </li>
+              <li>
+                The path specified by the "<code>XDG_CONFIG_HOME</code>" environment variable, if set. There, it looks for the file "<code>fontconfig/fonts.conf</code>".              </li>
+              <li>
+                If the above fails, then "<code>$HOME/.config/fontconfig/fonts.conf</code>".              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          Each FontConfig configuration file ("<code>fonts.conf</code>") is examined for "<code>&lt;dir&gt;</code>" tags that specify directory (folder) paths where fonts might be found, and Tux Paint scans them and loads the fonts.  If a "<code>prefix</code>" attribute is included in the tag, Tux Paint prefixes the path accordingly.          <dl>
+            <dt><code>xdg</code></dt>
+            <dd>
+              The directory path specified is considered to be relative to the user's local data path, specified by the "<code>XDG_DATA_HOME</code>" environment variable. If not set, then "<code>.local/share</code>" under the path specified by the "<code>HOME</code>" environment variable will be used, if it exists.            </dd>
+            <dt><code>relative</code></dt>
+            <dd>
+              The directory path specified is considered to be relative to the configuration file itself.            </dd>
+            <dt>
+              <code>default</code>, <code>cwd</code>, or no "<code>prefix</code>" attribute specified            </dt>
+            <dd>
+              The directory path specified is considered to be relative to the current working directory (where Tux Paint is running), unless a root path is included at the start (e.g., "/", "C:\\", etc.)            </dd>
+          </ul>
+        </p>
       </section><!-- H2: FontConfig -->
 
     </section><!-- H1: Fonts -->
