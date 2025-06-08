@@ -6,16 +6,25 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.June.3 (0.9.36)
+2025.June.8 (0.9.36)
+  * Documentation updates:
+    ----------------------
+    + Describe where Tux Paint searches for system fonts,
+      and how it uses FontConfig "fonts.conf" files to find fonts,
+      for the 'Text' and 'Label' tools (EXTENDING and ENVVARS).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
   * Bug Fixes:
     ----------
     + When Magic tools are not grouped ("ungroupmagictools"),
       the array to hold tools did not have enough capacity.
+      Bill Kendrick <bill@newbreedsoftware.com>
       Closes https://sourceforge.net/p/tuxpaint/bugs/299/
       h/t Billy A.
 
     + Mended bug where EOL-less descriptive text at the end
       of a file (e.g., a stamp description) would get ignored.
+      Bill Kendrick <bill@newbreedsoftware.com>
       Closes https://sourceforge.net/p/tuxpaint/bugs/298/
       h/t Laura
 
