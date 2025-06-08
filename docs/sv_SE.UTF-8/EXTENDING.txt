@@ -625,7 +625,7 @@ option is set). The locations vary, depending on operating system.
       + B_USER_FONTS_DIRECTORY
       + B_USER_NONPACKAGED_FONTS_DIRECTORY
 
-  * Linux
+  * Linux/etc.
       + /usr/share/feh/fonts
       + /usr/share/fonts
       + /usr/X11R6/lib/X11/fonts
@@ -638,7 +638,46 @@ option is set). The locations vary, depending on operating system.
 
                               ### FontConfig ###
 
-...
+Tux Paint utilizes FontConfig to find additional system-wide and user-specific
+fonts that the 'Text' and 'Label' tools might be able to use (unless the
+"--nosysfonts" option is set). It does this by looking for FontConfig
+configuration files ("fonts.conf") in various locations.
+
+  * Windows
+      + The "etc/fonts/fonts.conf" file included with Tux Paint.
+  * macOS
+      + The path specified by the "FONTCONFIG_PATH" environment variable, if
+        set.
+  * Haiku
+      + /boot/system/settings/fonts/fonts.conf
+  * Linux/etc.
+      + The path specified by the "FONTCONFIG_PATH" environment variable, if
+        set.
+      + If the above fails, then "/etc/fonts/fonts.conf".
+      + The path specified by the "XDG_CONFIG_HOME" environment variable, if
+        set. There, it looks for the file "fontconfig/fonts.conf".
+      + If the above fails, then "$HOME/.config/fontconfig/fonts.conf".
+
+Each FontConfig configuration file ("fonts.conf") is examined for "<dir>" tags
+that specify directory (folder) paths where fonts might be found, and Tux Paint
+scans them and loads the fonts. If a "prefix" attribute is included in the tag,
+Tux Paint prefixes the path accordingly.
+
+→ xdg ←
+    The directory path specified is considered to be relative to the user's
+    local data path, specified by the "XDG_DATA_HOME" environment variable. If
+    not set, then ".local/share" under the path specified by the "HOME"
+    environment variable will be used, if it exists.
+     
+→ relative ←
+    The directory path specified is considered to be relative to the
+    configuration file itself.
+     
+→ default, cwd, or no "prefix" attribute specified ←
+    The directory path specified is considered to be relative to the current
+    working directory (where Tux Paint is running), unless a root path is
+    included at the start (e.g., "/", "C:\\", etc.)
+     
 
 "Startbilder"
 

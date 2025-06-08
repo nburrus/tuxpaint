@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  26 maj 2025
+                                8 qershor 2025
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -480,6 +480,9 @@ e.Mjete “Tekst” dhe “Etiketa” ←
     appear. Type text and it will show up on the screen. (You can change the
     font, color, and styling while entering the text, before it is applied to
     the canvas.)
+
+    ⚙ See the "Extending Tux Paint" documentation for information on where Tux
+    Paint searches for fonts.
 
     Press [Tasti Enter] or [Tasti Return] and the text will be drawn onto the
     picture and the cursor will move down one line.

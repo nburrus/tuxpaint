@@ -6,7 +6,7 @@
         Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 May 26, 2025
+                                 June 8, 2025
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -479,6 +479,9 @@ e."Text" and "Label" Tools ←
     appear. Type text and it will show up on the screen. (You can change the
     font, color, and styling while entering the text, before it is applied to
     the canvas.)
+
+    ⚙ See the "Extending Tux Paint" documentation for information on where Tux
+    Paint searches for fonts.
 
     Press [Enter] or [Return] and the text will be drawn onto the picture and
     the cursor will move down one line.

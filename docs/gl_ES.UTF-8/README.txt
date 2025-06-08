@@ -6,7 +6,7 @@
         Copyright © 2002-2025 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                              26 de Maio de 2025
+                               8 de Xuño de 2025
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -487,6 +487,9 @@ e.Ferramentas «Texto» e «Etiquetas» ←
     appear. Type text and it will show up on the screen. (You can change the
     font, color, and styling while entering the text, before it is applied to
     the canvas.)
+
+    ⚙ See the "Extending Tux Paint" documentation for information on where Tux
+    Paint searches for fonts.
 
     Prema [Intro] ou [Retorno] e o texto será debuxado na imaxe e o cursor
     moverase cara abaixo unha liña.

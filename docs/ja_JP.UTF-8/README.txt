@@ -6,7 +6,7 @@
        Copyright © 2002-2025 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2025年5月26日
+                                 2025年6月 8日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -435,6 +435,9 @@ e.「もじ」ツール、「ラベル」ツール ←
     に、テキストに太字や斜体のスタイルを適用することもできます。画面をクリック
     するとカーソルが表示され、文字を入力することができます。(入力した文字がキャ
     ンバスに反映される前に、フォント、色、スタイルを変更することができます)
+
+    ⚙ See the "Extending Tux Paint" documentation for information on where Tux
+    Paint searches for fonts.
 
     [Enter]キー、または[Return]キーを押すと文字が描画され、カーソルが次の行に下
     がります。

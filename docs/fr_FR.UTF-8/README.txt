@@ -6,7 +6,7 @@
        Copyright © 2002-2025 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 mai 26, 2025
+                                 juin 8, 2025
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -509,6 +509,9 @@ e.Outils "Texte" et "Étiquette" ←
     l'écran et un curseur apparaîtra. Tapez un texte et il apparaîtra à
     l'écran. (Vous pouvez changer la police, la couleur et le style en entrant
     le texte, avant de l'appliquer sur le canevas).
+
+    ⚙ See the "Extending Tux Paint" documentation for information on where Tux
+    Paint searches for fonts.
 
     Appuyez sur [Entrée] ou [Retour] et le texte sera inclus dans l'image et le
     curseur se déplacera d'une ligne vers le bas.

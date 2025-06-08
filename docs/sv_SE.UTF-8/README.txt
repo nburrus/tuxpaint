@@ -6,7 +6,7 @@
          Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 maj 26, 2025
+                                 juni 8, 2025
 
 +-----------------------------------------------------+
 |                      Innehåll                       |
@@ -479,6 +479,9 @@ e.verktyg för "text" och "etikett" ←
     kursiv stil på texten. Klicka på skärmen så kommer en markör att visas.
     Skriv in text så visas den på skärmen. (Du kan ändra teckensnitt, färg och
     styling medan du skriver in texten, innan den appliceras på duken)
+
+    ⚙ See the "Extending Tux Paint" documentation for information on where Tux
+    Paint searches for fonts.
 
     Tryck på [Enter] eller [Återgå] så ritas texten på bilden och markören
     flyttas en rad nedåt.

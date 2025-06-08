@@ -129,3 +129,7 @@ may be used by the "Text" and "Label" tools.
     the location of the user's configuration files. It is used to find a
     user-specific "fonts.conf" configuration file.
      
+
+⚙ See the "Extending Tux Paint" documentation for information on where Tux
+Paint searches for fonts.
+
