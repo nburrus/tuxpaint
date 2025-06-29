@@ -28,6 +28,12 @@ https://tuxpaint.org/
       Closes https://sourceforge.net/p/tuxpaint/bugs/298/
       h/t Laura
 
+  * Other Improvements:
+    -------------------
+    + macOS build updated to remove dependency on libSDLmain.a no longer
+      required, a holderover from SDL 1.2.
+      Mark Kim <markuskimius@gmail.com>
+
 2025.May.26 (0.9.35)
   * New Magic Tools:
     ----------------
