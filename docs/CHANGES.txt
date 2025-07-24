@@ -6,13 +6,21 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.July.18 (0.9.36)
+2025.July.24 (0.9.36)
   * Documentation updates:
     ----------------------
     + Describe where Tux Paint searches for system fonts,
       and how it uses FontConfig "fonts.conf" files to find fonts,
       for the 'Text' and 'Label' tools (EXTENDING and ENVVARS).
       Bill Kendrick <bill@newbreedsoftware.com>
+
+  * Text & Label Tool Improvements:
+    -------------------------------
+    + When parsing FontConfig "fonts.conf" files, supporting
+      (via homegrown code) "<include>" directives, to include
+      another conf file, or a directory of conf files.
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t Will Thompson for pointing this out
 
   * Bug Fixes:
     ----------

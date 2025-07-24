@@ -19,7 +19,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  Last modified: February 22, 2025
+  Last modified: July 24, 2025
 */
 
 #include <stdio.h>
@@ -31,6 +31,9 @@
 #include <locale.h>
 
 #include <libgen.h>             /* for dirname() */
+
+#include <sys/types.h>
+#include <dirent.h>
 
 #include <errno.h>
 
@@ -199,12 +202,11 @@ int button_label_y_nudge;
 
 /* Local function prototypes: */
 
-char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallocd);
-
 #ifdef FORKED_FONTS
 static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
+int compare_fontconfig_includes(const void * a, const void * b);
 
 const char *PANGO_DEFAULT_FONT = "DejaVu Sans";
 const char *PANGO_DEFAULT_FONT_FALLBACK = NULL;
@@ -1011,36 +1013,21 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 }
 
 
-/**
- * Attempts to allocate space for a char * array to hold
- * a set of fontconfig config file paths for load_user_fonts() to
- * iterate over.
- *
- * If unsuccessful, returns NULL and sets num_actually_mallocd to 0.
- *
- * @param int num_to_malloc -- how big the char * array should be
- * @param int * num_actually_mallocd -- pointer that will hold how many got
- *   allocated; either the same value as num_to_malloc, or 0 if failure
- * @return char * * | NULL -- pointer to the char * array, or NULL if malloc failed
- */
-char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallocd)
-{
-  char **buf;
+#define MAX_FONCCONF_CONF_PATHS 256
+#define MAX_FONTCONF_INCLUDE_PATHS 100
 
-  buf = (char * *)malloc(sizeof(char *) * num_to_malloc);
-  if (buf == NULL)
-    *num_actually_mallocd = 0;
-  else
-    *num_actually_mallocd = num_to_malloc;
-
-  return buf;
+int compare_fontconfig_includes(const void * a, const void * b) {
+  const char* aa = *(const char**)a;
+  const char* bb = *(const char**)b;
+  return strcmp(aa,bb);
 }
+
 
 /* static */ int load_user_fonts(SDL_Surface *screen, SDL_Texture *texture,
                                  SDL_Renderer *renderer, void *vp, const char *restrict const locale)
 {
   char *homedirdir;
-  char **fontconfig_config_paths;
+  char *fontconfig_config_paths[MAX_FONCCONF_CONF_PATHS];
   int num_fontconfig_config_paths = 0;
   int i;
 
@@ -1116,92 +1103,79 @@ char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallo
        and try loading fonts from those locations */
 
 #if defined(__APPLE__)
-    fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
-    if (fontconfig_config_paths != NULL)
-    {
-      /* Apple: Look for fonts.conf in $FONTCONFIG_PATH */
-      fontconfig_config_paths[0] = malloc(1024);
-      snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
+    /* Apple: Look for fonts.conf in $FONTCONFIG_PATH */
+    num_fontconfig_config_paths = 1;
+    fontconfig_config_paths[0] = malloc(1024);
+    snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
 
-      /* FIXME: Apple: Look for the fonts.conf that we ship with Tux Paint for macOS */
-    }
+    /* FIXME: Apple: Look for the fonts.conf that we ship with Tux Paint for macOS */
 #elif defined(__HAIKU__)
-    fontconfig_config_paths = malloc_fontconfig_config_paths(1, &num_fontconfig_config_paths);
-    if (fontconfig_config_paths != NULL)
-    {
-      /* Haiku: Look for fonts.conf in a known system directory */
-      fontconfig_config_paths[0] = malloc(1024);
-      snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
-    }
+    /* Haiku: Look for fonts.conf in a known system directory */
+    num_fontconfig_config_paths = 1;
+    fontconfig_config_paths[0] = malloc(1024);
+    snprintf(fontconfig_config_paths[0], 1024, "/boot/system/settings/fonts/fonts.conf");
 #elif defined(WIN32)
-    fontconfig_config_paths = malloc_fontconfig_config_paths(1 /* FIXME */ ,
-                                                             &num_fontconfig_config_paths);
-    if (fontconfig_config_paths != NULL)
-    {
-      /* FIXME: Windows: Look for fonts.conf ??? in some system directory/ies ??? */
+    num_fontconfig_config_paths = 1;
 
-      /* Windows: Look for the fonts.conf that we ship with Tux Paint for Windows */
-      fontconfig_config_paths[0 /* FIXME */ ] = malloc(1024);
-      snprintf(fontconfig_config_paths[0 /* FIXME */ ], 1024,
-               "etc/fonts/fonts.conf");
-    }
+    /* FIXME: Windows: Look for fonts.conf ??? in some system directory/ies ??? */
+    /* Windows: Look for the fonts.conf that we ship with Tux Paint for Windows */
+    fontconfig_config_paths[0 /* FIXME */ ] = malloc(1024);
+    snprintf(fontconfig_config_paths[0 /* FIXME */ ], 1024,
+             "etc/fonts/fonts.conf");
 #else
+    char *config_home;
+
     /* Others [e.g. Linux]: Look for fonts.conf in $FONTCONFIG_PATH (fallback to "/etc/fonts")
        and $XDG_CONFIG_HOME (fallback to "$HOME/.config") */
-    fontconfig_config_paths = malloc_fontconfig_config_paths(2, &num_fontconfig_config_paths);
-    if (fontconfig_config_paths != NULL)
+    num_fontconfig_config_paths = 2;
+
+    /* System-wide fonts.conf */
+    if (getenv("FONTCONFIG_PATH") != NULL)
     {
-      char *config_home;
+      fontconfig_config_paths[0] = malloc(1024);
+      snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
+    }
+    else
+    {
+      fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
+    }
 
-      /* System-wide fonts.conf */
-      if (getenv("FONTCONFIG_PATH") != NULL)
+    /* User font.conf */
+    config_home = NULL;
+    if (getenv("XDG_CONFIG_HOME") != NULL)
+    {
+      config_home = strdup(getenv("XDG_CONFIG_HOME"));
+    }
+    else
+    {
+#ifdef DEBUG
+      fprintf(stderr, "XDG_CONFIG_HOME not set, checking $HOME/.config/\n");
+#endif
+      if (getenv("HOME") != NULL)
       {
-        fontconfig_config_paths[0] = malloc(1024);
-        snprintf(fontconfig_config_paths[0], 1024, "%s/fonts.conf", getenv("FONTCONFIG_PATH"));
-      }
-      else
-      {
-        fontconfig_config_paths[0] = strdup("/etc/fonts/fonts.conf");
-      }
-
-      /* User font.conf */
-      config_home = NULL;
-      if (getenv("XDG_CONFIG_HOME") != NULL)
-      {
-        config_home = strdup(getenv("XDG_CONFIG_HOME"));
+        config_home = malloc(1024);
+        snprintf(config_home, 1024, "%s/.config", getenv("HOME"));
       }
       else
       {
 #ifdef DEBUG
-        fprintf(stderr, "XDG_CONFIG_HOME not set, checking $HOME/.config/\n");
+        fprintf(stderr, "No HOME, either?! Returing fallback in current directory\n");
 #endif
-        if (getenv("HOME") != NULL)
-        {
-          config_home = malloc(1024);
-          snprintf(config_home, 1024, "%s/.config", getenv("HOME"));
-        }
-        else
-        {
-#ifdef DEBUG
-          fprintf(stderr, "No HOME, either?! Returing fallback in current directory\n");
-#endif
-        }
-      }
-
-      if (config_home != NULL)
-      {
-        fontconfig_config_paths[1] = malloc(1024);
-        snprintf(fontconfig_config_paths[1], 1024, "%s/fontconfig/fonts.conf", config_home);
-        free(config_home);
-      }
-      else
-      {
-        fontconfig_config_paths[1] = NULL;
-        num_fontconfig_config_paths--;
       }
     }
-#endif
 
+    if (config_home != NULL)
+    {
+      fontconfig_config_paths[1] = malloc(1024);
+      snprintf(fontconfig_config_paths[1], 1024, "%s/fontconfig/fonts.conf", config_home);
+      free(config_home);
+    }
+    else
+    {
+      fontconfig_config_paths[1] = NULL;
+      num_fontconfig_config_paths--;
+    }
+#endif
 
     /* Read and parse each fonts.conf file... */
 
@@ -1235,14 +1209,15 @@ char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallo
             cur = cur->xmlChildrenNode;
             while (cur != NULL)
             {
-              if (xmlStrcmp(cur->name, (const xmlChar *)"dir") == 0)
+              if (xmlStrcmp(cur->name, (const xmlChar *)"dir") == 0 ||
+                  xmlStrcmp(cur->name, (const xmlChar *)"include") == 0)
               {
                 xmlChar *path, *prefix;
                 char *path_str;
                 char prefix_path[1024];
                 int fontconfig_prefix = FC_PREFIX_NONE;
 
-                /* Check for a "<dir prefix...>" attribute
+                /* Check for a "prefix" attribute
                    (see https://www.freedesktop.org/software/fontconfig/fontconfig-user.html) */
                 prefix = xmlGetProp(cur, (const xmlChar *)"prefix");
                 if (prefix != NULL)
@@ -1286,7 +1261,7 @@ char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallo
 #endif
 #endif
 
-                  /* Apply any "prefix" attribute of the <dir> tag: */
+                  /* Apply any "prefix" attribute of the <dir> or <include> tag: */
 
                   prefix_path[0] = '\0';
                   if (fontconfig_prefix == FC_PREFIX_XDG)
@@ -1335,8 +1310,101 @@ char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallo
                     }
                   }
 
-                  /* Try to load fonts from the location found in the fonts.conf's <dir> tag */
-                  loadfonts(screen, texture, renderer, (char *)path_str);
+                  if (xmlStrcmp(cur->name, (const xmlChar *)"dir") == 0)
+                  {
+                    /* It was a "<dir>" tag... */
+
+                    /* Try to load fonts from the location found in the fonts.conf's <dir> tag */
+                    loadfonts(screen, texture, renderer, (char *)path_str);
+                  } else {
+                    /* It was an "<include>" tag... */
+                    int res, ign_missing;
+                    xmlChar *ignore_missing;
+                    struct stat sbuf;
+
+                    ign_missing = 0;
+                    ignore_missing = xmlGetProp(cur, (const xmlChar *)"ignore_missing");
+                    if (ignore_missing != NULL)
+                    {
+                      if (xmlStrcmp(ignore_missing, (const xmlChar *)"yes") == 0)
+                        ign_missing = 1;
+                    }
+
+                    res = stat(path_str, &sbuf);
+                    if (res)
+                    {
+                      if (!ign_missing)
+                        fprintf(stderr, "Warning: FontConfig file '%s' tried to <include> '%s', which cannot be accessed: %s\n",
+                          fontconfig_config_paths[i], path_str, strerror(errno));
+                    }
+                    else
+                    {
+                      char * include_paths[MAX_FONTCONF_INCLUDE_PATHS];
+                      int num_include_paths, j, k, skip;
+                      DIR * dir;
+                      struct dirent * f;
+
+                      if ((sbuf.st_mode & S_IFMT) == S_IFDIR)
+                      {
+                        /* A dir, look for all "#*.conf" files: */
+                        num_include_paths = 0;
+
+                        dir = opendir(path_str);
+                        if (!dir) {
+                          fprintf(stderr, "Warning: Cannot open dir %s to look for FontConfig files: %s\n", path_str, strerror(errno));
+                        } else {
+                          while ((f = readdir(dir))) {
+                            if (f->d_name[0] >= '0' && f->d_name[0] <= '9') {
+                              /* Starts with a digit */
+                              if (strstr(f->d_name, ".conf") ==
+                                  (f->d_name + strlen(f->d_name) - 5)) {
+                                /* Ends in ".conf" */
+                                if (num_include_paths == MAX_FONTCONF_INCLUDE_PATHS) {
+                                  fprintf(stderr, "Warning: FontConfig config file <include> limit reached in %s: %d\n", path_str, MAX_FONTCONF_INCLUDE_PATHS);
+                                } else {
+                                  include_paths[num_include_paths] = (char *) malloc(1024);
+                                  snprintf(include_paths[num_include_paths], 1024, "%s/%s", path_str, f->d_name);
+                                  num_include_paths++;
+                                }
+                              }
+                            }
+                          }
+                        }
+                        closedir(dir);
+
+                        /* Sort them, so they get read in order */
+                        qsort(include_paths, num_include_paths, sizeof(include_paths[0]), compare_fontconfig_includes);
+                      }
+                      else
+                      {
+                        /* Not a dir, just add the path */
+                        include_paths[0] = strdup(path_str);
+                        num_include_paths = 1;
+                      }
+
+                      /* Make sure we don't get stuck in a recursive loop! */
+                      for (j = 0; j < num_include_paths; j++) {
+                        skip = 0;
+                        for (k = 0; k < num_fontconfig_config_paths && skip == 0; k++) {
+                          if (strcmp(fontconfig_config_paths[k], include_paths[j]) == 0) {
+                            fprintf(stderr, "Warning: FontConfig file '%s' tried to <include> '%s', which we've already seen; skipping!\n",
+                              fontconfig_config_paths[i], include_paths[j]);
+                            skip = 1;
+                          }
+                        }
+
+                        if (!skip) {
+                          if (num_fontconfig_config_paths == MAX_FONCCONF_CONF_PATHS) {
+                            fprintf(stderr, "Warning: Reached limit of FontConfig config files we can parse (%d)\n", MAX_FONCCONF_CONF_PATHS);
+                          } else {
+                            fontconfig_config_paths[num_fontconfig_config_paths] = strdup(include_paths[j]);
+                            num_fontconfig_config_paths++;
+                          }
+                        }
+                      }
+                    }
+                  }
+
                   free(path_str);
                   xmlFree(path);
                 }
@@ -1348,12 +1416,10 @@ char **malloc_fontconfig_config_paths(int num_to_malloc, int *num_actually_mallo
 
         xmlFreeDoc(doc);
       }
-
-      free(fontconfig_config_paths[i]);
     }
 
-    if (fontconfig_config_paths != NULL)
-      free(fontconfig_config_paths);
+    for (i = 0; i < num_fontconfig_config_paths; i++)
+      free(fontconfig_config_paths[i]);
   }
 
   /* Load fonts that came packaged with Tux Paint */
