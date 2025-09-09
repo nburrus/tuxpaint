@@ -1,3 +1,4 @@
 Watercolor splotches.
 ca.utf8=Taques de aquarel·la.
+pt.utf8=Manchas de aguarela.
 sv.utf8=Vattenfärgsfläckar.
