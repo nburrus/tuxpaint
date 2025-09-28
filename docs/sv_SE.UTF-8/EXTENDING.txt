@@ -596,30 +596,30 @@ och/eller kursiv stil och ändra storleken.
 
                              ### System Fonts ###
 
-Tux Paint checks a number of standard Operating System locations for fonts that
-the 'Text' and 'Label' tools might be able to use (unless the "--nosysfonts"
-option is set). The locations vary, depending on operating system.
+Rita med Tux kontrollerar ett antal standardplatser i operativsystemet för
+teckensnitt som verktygen "Text" och "Label" kan använda (om inte alternativet
+"--nosysfonts" är inställt). Platserna varierar beroende på operativsystem.
 
   * Windows
-      + The location specified by the "Fonts" option of the "Software\Microsoft
-        \Windows\CurrentVersion\Explorer\Shell Folders" Windows Registry key.
+      + Den plats som anges av alternativet "Fonts" i "Software\Microsoft\
+        Windows\CurrentVersion\Explorer\Shell Folders" Windows registernyckel.
       + If the above fails, then "C:\WINDOWS\FONTS".
-      + The location specified by the "Local AppData" option of the "Software\
+      + Den plats som anges av alternativet "Local AppData" i "Software\
         Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" Windows
-        Registry key. The path "\Microsoft\Windows\Fonts" is appended to that
-        location.
+        registernyckel. Sökvägen "\Microsoft\Windows\Fonts" läggs till den
+        platsen.
   * macOS
       + /System/Library/Fonts
       + /Library/Fonts
       + /usr/share/fonts
       + /usr/X11R6/lib/X11/fonts
-      + The "Library/Fonts" folder in the user's home folder.
+      + Mappen "Library/Fonts" i användarens hemmapp.
   * Android
       + /system/fonts
   * Haiku
 
-    The locations found by asking Haiku's "Storage Kit" to find the directories
-    on the "/boot" volume for:
+    De platser som hittades genom att be Haikus "Storage Kit" att hitta
+    katalogerna på volymen"/boot" för:
       + B_SYSTEM_FONTS_DIRECTORY
       + B_SYSTEM_NONPACKAGED_FONTS_DIRECTORY
       + B_USER_FONTS_DIRECTORY
@@ -638,24 +638,24 @@ option is set). The locations vary, depending on operating system.
 
                               ### FontConfig ###
 
-Tux Paint utilizes FontConfig to find additional system-wide and user-specific
-fonts that the 'Text' and 'Label' tools might be able to use (unless the
-"--nosysfonts" option is set). It does this by looking for FontConfig
-configuration files ("fonts.conf") in various locations.
+Rita med Tux använder FontConfig för att hitta ytterligare systemomfattande och
+användarspecifika teckensnitt som verktygen 'Text' och 'Etikett' kan använda
+(om inte alternativet "--nosysfonts" är inställt). Detta görs genom att leta
+efter FontConfig konfigurationsfiler ("fonts.conf") på olika platser.
 
   * Windows
-      + The "etc/fonts/fonts.conf" file included with Tux Paint.
+      + Filen "etc/fonts/fonts.conf" som medföljer Rita med Tux.
   * macOS
-      + The path specified by the "FONTCONFIG_PATH" environment variable, if
-        set.
+      + Den sökväg som anges av miljövariabeln "FONTCONFIG_PATH", om den är
+        inställd.
   * Haiku
       + /boot/system/settings/fonts/fonts.conf
   * Linux/etc.
-      + The path specified by the "FONTCONFIG_PATH" environment variable, if
-        set.
+      + Den sökväg som anges av miljövariabeln "FONTCONFIG_PATH", om den är
+        inställd.
       + If the above fails, then "/etc/fonts/fonts.conf".
-      + The path specified by the "XDG_CONFIG_HOME" environment variable, if
-        set. There, it looks for the file "fontconfig/fonts.conf".
+      + Den sökväg som anges av miljövariabeln "XDG_CONFIG_HOME", om den är
+        inställd. Där letar den efter filen "fontconfig/fonts.conf".
       + If the above fails, then "$HOME/.config/fontconfig/fonts.conf".
 
 Each FontConfig configuration file ("fonts.conf") is examined for "<dir>" tags
@@ -664,19 +664,19 @@ scans them and loads the fonts. If a "prefix" attribute is included in the tag,
 Tux Paint prefixes the path accordingly.
 
 → xdg ←
-    The directory path specified is considered to be relative to the user's
-    local data path, specified by the "XDG_DATA_HOME" environment variable. If
-    not set, then ".local/share" under the path specified by the "HOME"
-    environment variable will be used, if it exists.
+    Den angivna katalogsökvägen anses vara relativ i förhållande till
+    användarens lokala datasökväg, som anges av miljövariabeln "XDG_DATA_HOME".
+    Om den inte anges kommer ".local/share" under den sökväg som anges av
+    miljövariabeln "HOME" att användas, om den finns.
      
 → relative ←
-    The directory path specified is considered to be relative to the
-    configuration file itself.
+    Den angivna katalogsökvägen anses vara relativ i förhållande till själva
+    konfigurationsfilen.
      
 → default, cwd, or no "prefix" attribute specified ←
-    The directory path specified is considered to be relative to the current
-    working directory (where Tux Paint is running), unless a root path is
-    included at the start (e.g., "/", "C:\\", etc.)
+    Den angivna katalogsökvägen anses vara relativ till den aktuella
+    arbetskatalogen (där Rita med Tux körs), såvida inte en rotsökväg anges i
+    början (t.ex. "/", "C:\\" etc.)
      
 
 "Startbilder"
@@ -709,9 +709,9 @@ separat bakgrundsbild som en del av en "startbild". Överlägget fungerar på
 samma sätt: det kan inte ritas över, raderas eller påverkas av
 "Magic"-verktygen. Det kan däremot bakgrunden!
 
-När verktyget "Eraser" används på en bild som bygger på den här typen av bild
-"start, återgår den delen av duken till den ursprungliga bakgrundsbilden från
-bild "start i stället för att bli enfärgad, t.ex. vit.
+När verktyget "Eraser" används på en bild som bygger på den här typen av
+"start"-bild, återgår den delen av duken till den ursprungliga bakgrundsbilden
+från "start"-bild i stället för att bli enfärgad, t.ex. vit.
 
 Genom att skapa både ett överlägg och en bakgrund kan du skapa en "starter" som
 simulerar djup. Tänk dig en bakgrund som visar havet och en overlay som är en
@@ -724,21 +724,21 @@ transparens) och spara den med samma filnamn, men med "-back" (förkortning för
 "bakgrund") som tillägg till namnet. (t.ex. "start-back.png" skulle vara den
 bakgrundsbild som motsvarar överlägget eller förgrunden)
 
-För bästa resultat bör "start" bilder vara minst lika stor som Rita med Tuxs
+För bästa resultat bör "start"-bilder vara minst lika stor som Rita med Tuxs
 ritduk. (Se avsnittet "Ladda andra bilder i Rita med Tux" i Rita med Tuxs
 huvuddokumentation (README) för detaljer om storlek) Om de inte är det kommer
 de att sträckas ut eller skalas. Detta görs utan att påverka formen
 ("bildförhållandet"), men kan dock ge upphov till viss utslätning av kanterna.
 
 Placera dem i katalogen "starters". När dialogrutan "New" öppnas i Rita med Tux
-kommer "start" bilder att visas i den skärm som visas, efter de olika
+kommer "start"-bilder att visas i den skärm som visas, efter de olika
 valmöjligheterna för enfärg.
 
 💡 Obs: "Startbilder" "bifogas" till sparade bilder via en liten textfil som har
 samma namn som den sparade filen, men med ".dat" som tillägg. Detta gör att den
 kan fortsätta att påverka teckningen även efter att Rita med Tux har avslutats,
 eller en annan bild har laddats eller en ny bild har skapats. (Med andra ord,
-om du baserar en teckning på en bild "start, kommer den alltid att påverkas av
+om du baserar en teckning på en "start"-bild, kommer den alltid att påverkas av
 den)
 
                             ### Startalternativ ###

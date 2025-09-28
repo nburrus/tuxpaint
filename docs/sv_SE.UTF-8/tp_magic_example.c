@@ -1,6 +1,6 @@
 /* tp_magic_example.c
 
-   Ett exempel på ett "Magic"-verktygsplugin för Rita med Tux
+   Ett exempel på ett "Magi"-verktygstillägg för Rita med Tux
    maj 10, 2024
 */
 
@@ -12,7 +12,7 @@
 #include <string.h>             // För "strdup()"
 #include <libintl.h>            // För "gettext()"
 
-#include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
+#include "tp_magic_api.h"       // Tux Paint "Magic" verktyg API-huvud
 #include "SDL_image.h"          // För IMG_Load(), för att ladda vår PNG-ikon
 #include "SDL_mixer.h"          // För Mix_LoadWAV(), för att ladda våra ljudeffekter
 
@@ -55,8 +55,8 @@ andra språk.
 /* En lista med namn för verktygen */
 
 const char *verktygsnamn[NUM_TOOLS] = {
-  gettext_noop("A tool"),
-  gettext_noop("Another tool")
+  gettext_noop("Ett verktyg"),
+  gettext_noop("Ett annat verktyg")
 };
 
 
@@ -77,10 +77,10 @@ const char *tool_descriptions[NUM_TOOLS] = {
 
 
 
-/* Our global variables: */
+/* Våra globala variabler: */
 /* ---------------------------------------------------------------------- */
 
-/* Sound effects: */
+/* Ljudeffekter: */
 Mix_Chunk *sound_effects[NUM_TOOLS];
 
 /* Den aktuella färgen (ett "RGB"-värde (röd, grön, blå) som användaren
@@ -95,17 +95,17 @@ Uint8 example_storlek;
 /* ---------------------------------------------------------------------- */
 
 /*
-Dessa funktioner anropas av andra funktioner inom vårt plugin, så vi
+Dessa funktioner anropas av andra funktioner inom vårt tillägg, så vi
 tillhandahåller en "prototyp" av dem, så att kompilatorn vet vad de
 accepterar och returnerar.  Detta gör att vi kan använda dem i andra
 funktioner som deklareras _före_ dem.
 */
 
-void example_drag(magic_api * api, int som, SDL_Surface * canvas,
+void example_drag(magic_api * api, int som, SDL_Surface * malarduk,
                   SDL_Surface * ogonblicksbild, int gammal_x, int gammal_y,
                   int x, int y, SDL_Rect * uppdatering_rect);
 
-void example_line_callback(void *pointer, int som, SDL_Surface * canvas,
+void example_line_callback(void *pekare, int som, SDL_Surface * malarduk,
                            SDL_Surface * ogonblicksbild, int x, int y);
 
 
@@ -116,8 +116,8 @@ void example_line_callback(void *pointer, int som, SDL_Surface * canvas,
 Kontroll av API-version
 
 Den löpande kopian av Rita med Tux som har laddat oss frågar oss först
-vilken version av Rita med Tux 'Magic' tool plugin API vi byggdes mot.  Om
-det anser att vi är kompatibla kommer vi att användas!
+vilken version av Rita med Tux 'Magi' verktygstilläggs-API vi byggdes mot.
+ Om det anser att vi är kompatibla kommer vi att användas!
 
 Allt vi behöver göra här är att returnera "TP_MAGIC_API_VERSION", som
 definieras (#define) i headerfilen "tp_magic_api.h".
@@ -132,7 +132,7 @@ Uint32 example_api_version(void)
 /*
 Initiering av Samhain
 
-Detta händer en gång, när Rita med Tux startar och laddar alla plugins
+Detta händer en gång, när Rita med Tux startar och laddar alla tillägg
 för "Magic"-verktyget.  (Förutsatt att det vi fick tillbaka från
 api_version var acceptabelt!)
 
@@ -159,7 +159,7 @@ int example_init(magic_api *api, Uint8 inaktiverade_funktioner,
 
        Använd "api->data_directory" för att ta reda på var våra ljud ska vara.
        (Kommandot "tp-magic-config --dataprefix" skulle ha berättat för oss när
-       vi installerade vårt plugin och dess data)
+       vi installerade vårt tillägg och dess data)
      */
     snprintf(filnamn, sizeof(filnamn), "%ssounds/magic/%s",
              api->data_directory, ljud_filnamn[i]);
@@ -195,8 +195,8 @@ int example_get_tool_count(magic_api *api)
 /*
 Ladda våra ikoner
 
-När Rita med Tux startar upp och laddar in plugins ber den oss att
-tillhandahålla ikoner för verktygsknapparna "Magic".
+När Rita med Tux startar upp och laddar in tillägg ber den oss att
+tillhandahålla ikoner för verktygsknapparna "Magi".
 */
 SDL_Surface *example_get_icon(magic_api *api, int som)
 {
@@ -208,7 +208,7 @@ SDL_Surface *example_get_icon(magic_api *api, int som)
 
      Använd "api->data_directory" för att räkna ut var våra ljud ska vara.
      (Kommandot "tp-magic-config --dataprefix" skulle ha berättat för oss när
-     vi installerade vårt plugin och dess data)
+     vi installerade vårt tillägg och dess data)
 
      Vi använder "som" (vilket av våra verktyg som Rita med Tux frågar om)
      som ett index i matrisen.
@@ -227,7 +227,7 @@ SDL_Surface *example_get_icon(magic_api *api, int som)
 /*
 Rapportera våra namn på "Magic"-verktyg
 
-När Rita med Tux startar upp och laddar in plugins ber den oss att ange
+När Rita med Tux startar upp och laddar in tillägg ber den oss att ange
 namn (etiketter) för verktygsknapparna "Magic".
 */
 char *example_get_name(magic_api *api, int som)
@@ -265,7 +265,7 @@ char *example_get_name(magic_api *api, int som)
 /*
 Rapportera våra "magiska" verktygsgrupper
 
-När Rita med Tux startar upp och laddar in plugins ber den oss att ange
+När Rita med Tux startar upp och laddar in tillägg ber den oss att ange
 var verktyget ska grupperas.
 */
 int example_get_group(magic_api *api, int som)
@@ -298,10 +298,10 @@ int *example_get_order(int som)
 /*
 Rapportera våra beskrivningar av "Magic"-verktyget
 
-När Rita med Tux startar upp och laddar in plugins ber den oss att ge
-beskrivningar av varje "Magic"-verktyg.
+När Rita med Tux startar upp och laddar in tillägg ber den oss att ge
+beskrivningar av varje "Magi"-verktyg.
 */
-char *example_get_description(magic_api *api, int som, int lage)
+char *example_get_description(magic_api *api, int som, int mode)
 {
   const char *var_desc_engelska;
   const char *var_beskrivning_lokaliserad;
@@ -361,7 +361,7 @@ int example_modes(magic_api *api, int som)
 
 // Rapportera om verktygen erbjuder storleksalternativ
 
-Uint8 example_accepted_sizes(magic_api *api, int som, int lage)
+Uint8 example_accepted_sizes(magic_api *api, int som, int mode)
 {
   if (som == VERKTYG_ONE)
     return 1;
@@ -372,7 +372,7 @@ Uint8 example_accepted_sizes(magic_api *api, int som, int lage)
 
 // Återgå till vårt standardstorleksalternativ
 
-Uint8 example_default_size(magic_api *api, int som, int lage)
+Uint8 example_default_size(magic_api *api, int som, int mode)
 {
   return 1;
 }
@@ -382,7 +382,7 @@ Uint8 example_default_size(magic_api *api, int som, int lage)
 Stäng av
 
 Rita med Tux håller på att avslutas.  När programmet avslutas ber det
-alla plugins att "städa upp" efter sig själva.  Vi laddade till exempel
+alla tillägg att "städa upp" efter sig själva.  Vi laddade till exempel
 några ljudeffekter vid start (i vår funktion example_init()), så vi bör
 frigöra det minne som används av dem nu.
 */
@@ -405,9 +405,9 @@ void example_shutdown(magic_api *api)
 /* Påverkar duken vid klick: */
 
 void
-example_click(magic_api *api, int som, int lage,
-              SDL_Surface *canvas, SDL_Surface *ogonblicksbild, int x, int y,
-              SDL_Rect *uppdatering_rect)
+example_click(magic_api *api, int som, int mode,
+              SDL_Surface *malarduk, SDL_Surface *ogonblicksbild, int x,
+              int y, SDL_Rect *uppdatering_rect)
 {
   /*
      I vårt fall är ett enda klick (som också är början på en dragning!)
@@ -418,7 +418,7 @@ example_click(magic_api *api, int som, int lage,
      med (x,y) för både start- och slutpunkterna för en linje.
    */
 
-  example_drag(api, som, canvas, ogonblicksbild, x, y, x, y,
+  example_drag(api, som, malarduk, ogonblicksbild, x, y, x, y,
                uppdatering_rect);
 }
 
@@ -426,7 +426,7 @@ example_click(magic_api *api, int som, int lage,
 /* Påverkar duken vid dragning: */
 void
 example_drag(magic_api *api, int som,
-             SDL_Surface *canvas, SDL_Surface *ogonblicksbild,
+             SDL_Surface *malarduk, SDL_Surface *ogonblicksbild,
              int gammal_x, int gammal_y, int x, int y,
              SDL_Rect *uppdatering_rect)
 {
@@ -441,12 +441,12 @@ example_drag(magic_api *api, int som,
      ögonblicksbildsdukarna).
    */
   SDL_LockSurface(ogonblicksbild);
-  SDL_LockSurface(canvas);
+  SDL_LockSurface(malarduk);
 
-  api->line((void *) api, som, canvas, ogonblicksbild,
+  api->line((void *) api, som, malarduk, ogonblicksbild,
             gammal_x, gammal_y, x, y, 1, example_line_callback);
 
-  SDL_UnlockSurface(canvas);
+  SDL_UnlockSurface(malarduk);
   SDL_UnlockSurface(ogonblicksbild);
 
   /*
@@ -505,7 +505,7 @@ example_drag(magic_api *api, int som,
      kommer att panorera från högtalare till högtalare när du drar musen
      runt på duken!)
    */
-  api->playsound(sound_effects[som], (x * 255) / canvas->w,     /* Vänster/höger panorering */
+  api->playsound(sound_effects[som], (x * 255) / malarduk->w,   /* Vänster/höger panorering */
                  255 /* Nära/långt avstånd (loudness) */ );
 }
 
@@ -514,7 +514,7 @@ example_drag(magic_api *api, int som,
 
 void
 example_release(magic_api *api, int som,
-                SDL_Surface *canvas, SDL_Surface *ogonblicksbild, int x,
+                SDL_Surface *malarduk, SDL_Surface *ogonblicksbild, int x,
                 int y, SDL_Rect *uppdatering_rect)
 {
   /*
@@ -525,7 +525,7 @@ example_release(magic_api *api, int som,
 
 
 /*
-Accept colors
+Acceptera färger
 
 När något av våra "Magic"-verktyg aktiveras av användaren, om verktyget
 accepterar färger, skickas det aktuella färgvalet till oss.
@@ -536,7 +536,7 @@ Om något av våra färgaccepterande verktyg är aktivt när användaren
 Färgen anges som RGB-värden (rött, grönt och blått) från 0 (mörkast)
 till 255 (ljusast).
 */
-void example_set_color(magic_api *api, int which, SDL_Surface *canvas,
+void example_set_color(magic_api *api, int which, SDL_Surface *malarduk,
                        SDL_Surface *ogonblicksbild, Uint8 r, Uint8 g, Uint8 b,
                        SDL_Rect *uppdatering_rect)
 {
@@ -565,7 +565,7 @@ värde som returneras av vår example_accepted_sizes()-funktion under
 installationen.
 */
 void example_set_size(magic_api *api, int which, int mode,
-                      SDL_Surface *canvas, SDL_Surface *ogonblicksbild,
+                      SDL_Surface *malarduk, SDL_Surface *ogonblicksbild,
                       Uint8 storlek, SDL_Rect *uppdatering_rect)
 {
   /*
@@ -583,18 +583,18 @@ void example_set_size(magic_api *api, int which, int mode,
 /*
 Vår "callback"-funktion
 
-Vi gör "arbetet" i denna återuppringning.  Vår plugin-fil har bara en.
-Vissa plugins för "magiska" verktyg kan ha fler, beroende på vilka
+Vi gör "arbetet" i denna återuppringning.  Vår tilläggsfil har bara en.
+Vissa tillägg för "magiska" verktyg kan ha fler, beroende på vilka
 verktyg de tillhandahåller.  Vissa har inga (eftersom de inte är
 klick-och-drag-verktyg i målningsstil).
 
 Vår callback-funktion anropas en gång för varje punkt längs en linje
 mellan musens föregående och nuvarande position, när den dras.
 
-Vår callback uppmärksammar 'som' för att avgöra vilket av pluginets
-verktyg som för närvarande är valt.
+Vår callback uppmärksammar 'som' för att avgöra vilket av
+tilläggsverktyg som för närvarande är valt.
 */
-void example_line_callback(void *pointer, int som, SDL_Surface *canvas,
+void example_line_callback(void *pekare, int som, SDL_Surface *malarduk,
                            SDL_Surface *ogonblicksbild, int x, int y)
 {
   /*
@@ -608,7 +608,7 @@ void example_line_callback(void *pointer, int som, SDL_Surface *canvas,
      "(magic_api *)" nedan kastar den generiska "void *"-pekaren till den
      "typ" av pekare vi vill ha, en pekare till en "magic_api"-struktur)
    */
-  magic_api *api = (magic_api *) pointer;
+  magic_api *api = (magic_api *) pekare;
   int xx, yy;
 
   /*
@@ -624,8 +624,8 @@ void example_line_callback(void *pointer, int som, SDL_Surface *canvas,
        fungerar som en 1x1 pixel-pensel.
      */
 
-    api->putpixel(canvas, x, y,
-                  SDL_MapRGB(canvas->format,
+    api->putpixel(malarduk, x, y,
+                  SDL_MapRGB(malarduk->format,
                              example_r, example_g, example_b));
 
     /*
@@ -647,7 +647,7 @@ void example_line_callback(void *pointer, int som, SDL_Surface *canvas,
     {
       for (xx = -example_storlek; xx < example_storlek; xx++)
       {
-        api->putpixel(canvas, x + xx, y + yy,
+        api->putpixel(malarduk, x + xx, y + yy,
                       api->getpixel(ogonblicksbild,
                                     ogonblicksbild->w - x - xx,
                                     ogonblicksbild->h - y - yy));
@@ -684,7 +684,8 @@ läget).
 Vårt exempel gör ingenting när vi byter till, eller från, våra
 Magic-verktyg, så vi gör ingenting här.
 */
-void example_switchin(magic_api *api, int som, int lage, SDL_Surface *canvas)
+void example_switchin(magic_api *api, int som, int mode,
+                      SDL_Surface *malarduk)
 {
 }
 
@@ -707,6 +708,7 @@ anrop till 'example_switchin()', ovan, för det nya läget).
 Vårt exempel gör ingenting när vi byter till, eller från, våra
 Magic-verktyg, så vi gör ingenting här.
 */
-void example_switchout(magic_api *api, int som, int lage, SDL_Surface *canvas)
+void example_switchout(magic_api *api, int som, int mode,
+                       SDL_Surface *malarduk)
 {
 }

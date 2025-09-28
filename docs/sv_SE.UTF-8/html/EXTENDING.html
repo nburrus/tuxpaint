@@ -701,18 +701,18 @@
 
         <p>
           
-          Tux Paint checks a number of standard Operating System locations for fonts that the 'Text' and 'Label' tools might be able to use (unless the "<code>--nosysfonts</code>" option is set). The locations vary, depending on operating system.        </p>
+          Rita med Tux kontrollerar ett antal standardplatser i operativsystemet för teckensnitt som verktygen "Text" och "Label" kan använda (om inte alternativet "<code>--nosysfonts</code>" är inställt). Platserna varierar beroende på operativsystem.        </p>
 
         <ul>
           <li>
             <strong>Windows</strong>
             <ul>
               <li>
-                The location specified by the "<code>Fonts</code>" option of the "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows Registry key.               </li>
+                Den plats som anges av alternativet "<code>Fonts</code>" i "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows registernyckel.               </li>
               <li>
                 If the above fails, then "<code>C:\WINDOWS\FONTS</code>".              </li>
               <li>
-                The location specified by the "<code>Local AppData</code>" option of the "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows Registry key. The path "<code>\Microsoft\Windows\Fonts</code>" is appended to that location.              </li>
+                Den plats som anges av alternativet "<code>Local AppData</code>" i "<code>Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders</code>" Windows registernyckel. Sökvägen "<code>\Microsoft\Windows\Fonts</code>" läggs till den platsen.              </li>
             </ul>
           </li>
           <li>
@@ -722,7 +722,7 @@
               <li><code>/Library/Fonts</code></li>
               <li><code>/usr/share/fonts</code></li>
               <li><code>/usr/X11R6/lib/X11/fonts</code></li>
-              <li>The "<code>Library/Fonts</code>" folder in the user's home folder.</li>
+              <li>Mappen "<code>Library/Fonts</code>" i användarens hemmapp.</li>
             </ul>
           </li>
           <li>
@@ -734,7 +734,7 @@
           <li>
             <strong>Haiku</strong>
             <p>
-              The locations found by asking Haiku's "Storage Kit" to find the directories on the "<code>/boot</code>" volume for:              <ul>
+              De platser som hittades genom att be Haikus "Storage Kit" att hitta katalogerna på volymen<code>"/boot</code>" för:              <ul>
                 <li><code>B_SYSTEM_FONTS_DIRECTORY</code></li>
                 <li><code>B_SYSTEM_NONPACKAGED_FONTS_DIRECTORY</code></li>
                 <li><code>B_USER_FONTS_DIRECTORY</code></li>
@@ -770,21 +770,21 @@
 
         <p>
           
-          Tux Paint utilizes <cite>FontConfig</cite> to find additional system-wide and user-specific fonts that the 'Text' and 'Label' tools might be able to use (unless the "<code>--nosysfonts</code>" option is set).  It does this by looking for <cite>FontConfig</cite> configuration files ("<code>fonts.conf</code>") in various locations.        </p>
+          Rita med Tux använder <cite>FontConfig</cite> för att hitta ytterligare systemomfattande och användarspecifika teckensnitt som verktygen 'Text' och 'Etikett' kan använda (om inte alternativet "<code>--nosysfonts</code>" är inställt).  Detta görs genom att leta efter <cite>FontConfig</cite> konfigurationsfiler ("<code>fonts.conf</code>") på olika platser.        </p>
 
         <ul>
           <li>
             <strong>Windows</strong>
             <ul>
               <li>
-                The "<code>etc/fonts/fonts.conf</code>" file included with Tux Paint.              </li>
+                Filen "<code>etc/fonts/fonts.conf</code>" som medföljer Rita med Tux.              </li>
             </ul>
           </li>
           <li>
             <strong>macOS</strong>
             <ul>
               <li>
-                The path specified by the "<code>FONTCONFIG_PATH</code>" environment variable, if set.               </li>
+                Den sökväg som anges av miljövariabeln "<code>FONTCONFIG_PATH</code>", om den är inställd.               </li>
             </ul>
           </li>
           <li>
@@ -797,11 +797,11 @@
             <strong>Linux/etc.</strong>
             <ul>
               <li>
-                The path specified by the "<code>FONTCONFIG_PATH</code>" environment variable, if set.               </li>
+                Den sökväg som anges av miljövariabeln "<code>FONTCONFIG_PATH</code>", om den är inställd.               </li>
               <li>
                 If the above fails, then "<code>/etc/fonts/fonts.conf</code>".              </li>
               <li>
-                The path specified by the "<code>XDG_CONFIG_HOME</code>" environment variable, if set. There, it looks for the file "<code>fontconfig/fonts.conf</code>".              </li>
+                Den sökväg som anges av miljövariabeln "<code>XDG_CONFIG_HOME</code>", om den är inställd. Där letar den efter filen "<code>fontconfig/fonts.conf</code>".              </li>
               <li>
                 If the above fails, then "<code>$HOME/.config/fontconfig/fonts.conf</code>".              </li>
             </ul>
@@ -812,14 +812,14 @@
           Each FontConfig configuration file ("<code>fonts.conf</code>") is examined for "<code>&lt;dir&gt;</code>" tags that specify directory (folder) paths where fonts might be found, and Tux Paint scans them and loads the fonts.  If a "<code>prefix</code>" attribute is included in the tag, Tux Paint prefixes the path accordingly.          <dl>
             <dt><code>xdg</code></dt>
             <dd>
-              The directory path specified is considered to be relative to the user's local data path, specified by the "<code>XDG_DATA_HOME</code>" environment variable. If not set, then "<code>.local/share</code>" under the path specified by the "<code>HOME</code>" environment variable will be used, if it exists.            </dd>
+              Den angivna katalogsökvägen anses vara relativ i förhållande till användarens lokala datasökväg, som anges av miljövariabeln "<code>XDG_DATA_HOME</code>". Om den inte anges kommer "<code>.local/share</code>" under den sökväg som anges av miljövariabeln "<code>HOME</code>" att användas, om den finns.            </dd>
             <dt><code>relative</code></dt>
             <dd>
-              The directory path specified is considered to be relative to the configuration file itself.            </dd>
+              Den angivna katalogsökvägen anses vara relativ i förhållande till själva konfigurationsfilen.            </dd>
             <dt>
               <code>default</code>, <code>cwd</code>, or no "<code>prefix</code>" attribute specified            </dt>
             <dd>
-              The directory path specified is considered to be relative to the current working directory (where Tux Paint is running), unless a root path is included at the start (e.g., "/", "C:\\", etc.)            </dd>
+              Den angivna katalogsökvägen anses vara relativ till den aktuella arbetskatalogen (där Rita med Tux körs), såvida inte en rotsökväg anges i början (t.ex. "/", "C:\\" etc.)            </dd>
           </ul>
         </p>
       </section><!-- H2: FontConfig -->
@@ -872,7 +872,7 @@
           Tillsammans med överlägget i "målarboksstil" kan du också tillhandahålla en separat bakgrundsbild som en del av en "startbild". Överlägget fungerar på samma sätt: det kan inte ritas över, raderas eller påverkas av "Magic"-verktygen. Det kan däremot bakgrunden!        </p>
 
         <p>
-          När verktyget "Eraser" används på en bild som bygger på den här typen av bild "start, återgår den delen av duken till den ursprungliga bakgrundsbilden från bild "start i stället för att bli enfärgad, t.ex. vit.        </p>
+          När verktyget "Eraser" används på en bild som bygger på den här typen av "start"-bild, återgår den delen av duken till den ursprungliga bakgrundsbilden från "start"-bild i stället för att bli enfärgad, t.ex. vit.        </p>
 
         <p>
           Genom att skapa både ett överlägg och en bakgrund kan du skapa en "starter" som simulerar djup. Tänk dig en bakgrund som visar havet och en overlay som är en bild av ett rev. Du kan sedan rita (eller stämpla) fiskar i bilden. De kommer att dyka upp i havet, men aldrig "framför" revet.        </p>
@@ -882,13 +882,13 @@
       </section><!-- H2: Scene-Style Starters -->
 
       <p>
-        För bästa resultat bör "start" bilder vara minst lika stor som Rita med Tuxs ritduk. (Se avsnittet "Ladda andra bilder i Rita med Tux" i Rita med Tuxs huvuddokumentation (README) för detaljer om storlek) Om de inte är det kommer de att sträckas ut eller skalas.  Detta görs utan att påverka formen ("bildförhållandet"), men kan dock ge upphov till viss utslätning av kanterna.      </p>
+        För bästa resultat bör "start"-bilder vara minst lika stor som Rita med Tuxs ritduk. (Se avsnittet "Ladda andra bilder i Rita med Tux" i Rita med Tuxs huvuddokumentation (README) för detaljer om storlek) Om de inte är det kommer de att sträckas ut eller skalas.  Detta görs utan att påverka formen ("bildförhållandet"), men kan dock ge upphov till viss utslätning av kanterna.      </p>
 
       <p>
-        Placera dem i katalogen "<code><b>starters</b></code>". När dialogrutan "New" öppnas i Rita med Tux kommer "start" bilder att visas i den skärm som visas, efter de olika valmöjligheterna för enfärg.      </p>
+        Placera dem i katalogen "<code><b>starters</b></code>". När dialogrutan "New" öppnas i Rita med Tux kommer "start"-bilder att visas i den skärm som visas, efter de olika valmöjligheterna för enfärg.      </p>
 
       <p class="note">
-        <span title="Information">&#128161;</span>        <strong>Obs:</strong> "Startbilder" "bifogas" till sparade bilder via en liten textfil som har samma namn som den sparade filen, men med "<code>.dat</code>" som tillägg. Detta gör att den kan fortsätta att påverka teckningen även efter att Rita med Tux har avslutats, eller en annan bild har laddats eller en ny bild har skapats. (Med andra ord, om du baserar en teckning på en bild "start, kommer den alltid att påverkas av den)      </p>
+        <span title="Information">&#128161;</span>        <strong>Obs:</strong> "Startbilder" "bifogas" till sparade bilder via en liten textfil som har samma namn som den sparade filen, men med "<code>.dat</code>" som tillägg. Detta gör att den kan fortsätta att påverka teckningen även efter att Rita med Tux har avslutats, eller en annan bild har laddats eller en ny bild har skapats. (Med andra ord, om du baserar en teckning på en "start"-bild, kommer den alltid att påverkas av den)      </p>
 
       <section><!-- H2: Starter Options -->
         <header>

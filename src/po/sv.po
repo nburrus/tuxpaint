@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tuxpaint\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-08 11:15-0700\n"
-"PO-Revision-Date: 2025-04-20 19:06+0200\n"
+"PO-Revision-Date: 2025-09-28 10:52+0200\n"
 "Last-Translator: Daniel Nylander <github@danielnylander.se>\n"
 "Language-Team: Svenska <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -393,11 +393,11 @@ msgstr ""
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:52
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Dokumentationsförbättringar"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:53
 msgid "Bug fixes"
-msgstr ""
+msgstr "Buggfixar"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:58
 msgid "New Magic tools: \"Hearts\", \"Sparkles\", and \"Stars\"."
@@ -487,8 +487,9 @@ msgid ""
 "Name of files created by Open&gt;Export and Open&gt;Slideshow&gt;Export GIF "
 "are now displayed as well as placed in copy/paste clipboard."
 msgstr ""
-"Namnet på filer som skapats av Öppna&gt;Exportera och Öppna&gt;Bildspel&gt;"
-"Exportera GIF visas nu och placeras i urklipp för kopiera/klistra in."
+"Namnet på filer som skapats av Öppna&gt;Exportera och "
+"Öppna&gt;Bildspel&gt;Exportera GIF visas nu och placeras i urklipp för "
+"kopiera/klistra in."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:82
 msgid "Localization updates."

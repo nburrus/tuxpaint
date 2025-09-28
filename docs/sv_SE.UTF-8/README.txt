@@ -1343,7 +1343,7 @@ inkluderar:
         Detaljerade instruktioner om kommandorads- och
         konfigurationsfilsalternativ, för dem som inte vill använda verktyget
         Konfigurera Rita med Tux för att hantera Rita med Tuxs konfiguration.
-      o dokumentation av "Magic"-verktyget ("magic-docs")
+      o Dokumentation för "Magi"-verktyget ("magic-docs")
         Dokumentation för vart och ett av de för närvarande installerade
         "Magic"-verktygen.
       o Vanliga frågor ("Vanliga frågor") om Rita med Tux

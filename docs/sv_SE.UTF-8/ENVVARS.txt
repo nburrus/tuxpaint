@@ -40,7 +40,8 @@ genom de bibliotek som den använder.
     hittas exporterar Rita med Tux helt enkelt ritningar och GIF-filer till
     "$HOME".
 
-    Tux Paint also uses this to find FontConfig configuration files; see below.
+    Rita med Tux använder också detta för att hitta
+    FontConfig-konfigurationsfiler; se nedan.
 
 
      
@@ -107,8 +108,8 @@ för användare av Rita med Tux.
 
                   ### Font-related environment variables ###
 
-Tux Paint uses FontConfig (via Pango, in turn via SDL_Pango) to find fonts that
-may be used by the "Text" and "Label" tools.
+Rita med Tux använder FontConfig (via Pango, i sin tur via SDL_Pango) för att
+hitta teckensnitt som kan användas av verktygen "Text" och "Etikett".
 
 → FONTCONFIG_PATH ←
 

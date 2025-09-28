@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.September.9 (0.9.36)
+2025.September.28 (0.9.36)
   * Documentation updates:
     ----------------------
     + Describe where Tux Paint searches for system fonts,
@@ -53,6 +53,12 @@ https://tuxpaint.org/
 
     + Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
+
+    * Swedish translation
+      Daniel Nylander <po@danielnylander.se>
+
+    * Swedish documentation translation
+      Daniel Nylander <po@danielnylander.se>
 
   * Ports & Building:
     -----------------
