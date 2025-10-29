@@ -358,6 +358,7 @@ extern status_t haiku_trash(const char *f);
 #define AUTOSAVE_GOING_BACKGROUND
 #include "android_print.h"
 #include "android_assets.h"
+#include "SDL_mouse_c.h"
 int entered_background = 0;
 
 #else
@@ -31869,7 +31870,7 @@ static void convert_motion_to_wheel(SDL_Event event)
   {
     while (motion_dy - high > 0)
     {
-      SDL_SendMouseWheel(NULL, event.motion.which, 0, 1);
+      SDL_SendMouseWheel(NULL, event.motion.which, 0.0f, 1.0f, SDL_MOUSEWHEEL_NORMAL);
       motion_dy -= high;
     }
   }
@@ -31877,7 +31878,7 @@ static void convert_motion_to_wheel(SDL_Event event)
   {
     while (motion_dy + high < 0)
     {
-      SDL_SendMouseWheel(NULL, event.motion.which, 0, -1);
+      SDL_SendMouseWheel(NULL, event.motion.which, 0.0f, -1.0f, SDL_MOUSEWHEEL_NORMAL);
       motion_dy += high;
     }
   }
