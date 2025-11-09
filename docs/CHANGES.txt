@@ -6,7 +6,7 @@ Copyright (c) 2002-2025
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2025.September.28 (0.9.36)
+2025.November.9 (0.9.36)
   * Documentation updates:
     ----------------------
     + Describe where Tux Paint searches for system fonts,
@@ -21,6 +21,17 @@ https://tuxpaint.org/
       another conf file, or a directory of conf files.
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t Will Thompson for pointing this out
+
+  * Other Improvements:
+    -------------------
+    + Expose SDL2_gfx to Magic Tool plugins
+      Will Thompson <https://sourceforge.net/u/wjjjjt/profile/>
+
+    + Tux Paint discards sub-pixel mouse motion (which can cause
+      slow-down when using an input device with very high DPI and
+      polling rate, e.g. a gaming mouse).
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      h/t Sadie for reporting
 
   * Bug Fixes:
     ----------
@@ -40,12 +51,6 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t Wisdom Lupus
 
-  * Other Improvements:
-    -------------------
-    + macOS build updated to remove dependency on libSDLmain.a no longer
-      required, a holderover from SDL 1.2.
-      Mark Kim <markuskimius@gmail.com>
-
   * Localization Updates:
     ---------------------
     + French translation
@@ -62,8 +67,9 @@ https://tuxpaint.org/
 
   * Ports & Building:
     -----------------
-    + Expose SDL2_gfx to Magic Tool plugins
-      Will Thompson <https://sourceforge.net/u/wjjjjt/profile/>
+    + macOS build updated to remove dependency on libSDLmain.a no longer
+      required, a holderover from SDL 1.2.
+      Mark Kim <markuskimius@gmail.com>
 
 2025.May.26 (0.9.35)
   * New Magic Tools:
