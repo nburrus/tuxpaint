@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 9, 2025
+  June 14, 2002 - November 11, 2025
 */
 
 #include "platform.h"
@@ -2693,7 +2693,8 @@ static void mainloop(void)
     {
       if (event.type == SDL_MOUSEMOTION && oldpos_x == (int)event.motion.x && oldpos_y == (int)event.motion.y)
         {
-          DEBUG_PRINTF("Discarding mouse motion event\n");
+          /* FIXME: Switch back to DEBUG_PRINTF before release! -bjk 2025.11.11 */
+          /*DEBUG_PRINTF*/printf("Discarding mouse motion event @ %d,%d\n", oldpos_x, oldpos_y);
           break;
         }
 
