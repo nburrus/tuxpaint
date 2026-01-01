@@ -2,11 +2,11 @@ AUTHORS.txt for Tux Paint
 
 Tux Paint - A simple drawing program for children.
 
-Copyright (c) 2002-2025
+Copyright (c) 2002-2026
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - April 19, 2025
+June 17, 2002 - January 1, 2026
 
 * Design and Coding:
 
@@ -23,7 +23,7 @@ June 17, 2002 - April 19, 2025
   by Richard Mitton
 
   800x600 resolution support patch by:
-  TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+  TOYAMA Shin-ichi <shin1@z1r.org>
 
   Arbitrary resolution support, smudge magic tool, grass magic tool,
   brick magic tools, improved stamp tinter, and other fixes by:
@@ -1032,11 +1032,11 @@ June 17, 2002 - April 19, 2025
     Flavio Pastor
 
   * Japanese
-    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <shin1@z1r.org>
 
   * Japanese Input Method
     Mark K. Kim <markuskimius@gmail.com>
-    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <shin1@z1r.org>
 
   * Kabyle translation
     Yacine Bouklif <yacine_tizi2003@yahoo.fr>
@@ -1379,7 +1379,7 @@ June 17, 2002 - April 19, 2025
 * Ports and Packaging
 
   * Windows 32-bit coding and builds
-    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <shin1@z1r.org>
     John Popplewell <john@johnnypops.demon.co.uk>
 
   * Tweaks to help Windows cross-compiling under Linux
@@ -1413,7 +1413,7 @@ June 17, 2002 - April 19, 2025
     Ben Armstrong <synrg@sanctuary.nslug.ns.ca>
 
   * RedHat Linux / Fedora Core packages and RPM spec file
-    TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>
+    TOYAMA Shin-ichi <shin1@z1r.org>
     Richard June <rjune@bravegnuworld.com>  [backup]
 
   * Slackware Linux packages
