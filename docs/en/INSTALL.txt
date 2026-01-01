@@ -2,10 +2,10 @@
                                 version 0.9.36
                           Installation Documentation
 
-        Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
+        Copyright © 2002-2026 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  May 2, 2025
+                                January 1, 2026
 
 +---------------------------------------------------+
 |                 Table of Contents                 |
@@ -155,7 +155,7 @@ available freely.
 
                                 ### Windows ###
 
-July 10, 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
+July 10, 2022 Shin-ichi TOYAMA <shin1@z1r.org>
 
 ## Compiling Set-Up ##
 

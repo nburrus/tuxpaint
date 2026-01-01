@@ -2,10 +2,10 @@
                                 version 0.9.36
                         Dokumentation för installation
 
-         Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.
+         Copyright © 2002-2026 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  maj 2, 2025
+                                januari 1, 2026
 
 +-------------------------------------------------------+
 |                       Innehåll                        |
@@ -154,7 +154,7 @@ för detaljer), och därför är "källkoden" till programmet fritt tillgänglig
 
                                 ### Fönster ###
 
-juli 10, 2022 Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>
+juli 10, 2022 Shin-ichi TOYAMA <shin1@z1r.org>
 
 ## Uppsättning av kompilering ##
 
