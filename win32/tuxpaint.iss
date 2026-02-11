@@ -53,8 +53,8 @@ SolidCompression=yes
 PrivilegesRequired=admin
 
 #if BuildTarget =="x86_64"
-  ArchitecturesInstallIn64BitMode=x64
-  ArchitecturesAllowed=x64
+  ArchitecturesInstallIn64BitMode=x64compatible
+  ArchitecturesAllowed=x64compatible arm64
 #else
   ArchitecturesAllowed=x86
 #endif
