@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.January.1 (0.9.36)
+2026.February.11 (0.9.36)
   * Documentation updates:
     ----------------------
     + Describe where Tux Paint searches for system fonts,
@@ -59,10 +59,10 @@ https://tuxpaint.org/
     + Portuguese (Portugal) translation
       Hugo Carvalho <hugokarvalho@hotmail.com>
 
-    * Swedish translation
+    + Swedish translation
       Daniel Nylander <po@danielnylander.se>
 
-    * Swedish documentation translation
+    + Swedish documentation translation
       Daniel Nylander <po@danielnylander.se>
 
   * Ports & Building:
@@ -70,6 +70,11 @@ https://tuxpaint.org/
     + macOS build updated to remove dependency on libSDLmain.a no longer
       required, a holderover from SDL 1.2.
       Mark Kim <markuskimius@gmail.com>
+
+    + Windows build now generates for `x64compatible` and `arm64`
+      architectures (previously was only `x64`)
+      TOYAMA Shin-ichi <shin1@z1r.org>
+      (h/t Abdullah T. for testing on a Microsoft Surface)
 
 2025.May.26 (0.9.35)
   * New Magic Tools:
