@@ -3,10 +3,10 @@
 
                ## Një program i thjeshtë vizatimi për fëmijë ##
 
- Të drejta kopjimi © 2002-2025 nga kontribues të ndryshëm; shihni AUTHORS.txt.
+ Të drejta kopjimi © 2002-2026 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                8 qershor 2025
+                                  5 mars 2026
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -1215,6 +1215,10 @@ is where to find it (by default):
 → macOS ←
     In the user's "Application Support" folder:
     e.g., "/Users/emër përdoruesi/Library/Application Support/TuxPaint/saved/"
+
+    The "Library" folder is hidden by default. Bring up the macOS Finder's "Go"
+    → "Go to Folder..." command (you can use the [Shift] + [⌘ (Command)] + [G]
+    shortcut key combination), and then type the path and hit [Enter / Return].
      
 → Linux / Unix ←
     In the user's "home directory" folder:

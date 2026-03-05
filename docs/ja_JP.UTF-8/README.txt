@@ -3,10 +3,10 @@
 
                  ## 子供向けのシンプルなお絵かきプログラム ##
 
-       Copyright © 2002-2025 by various contributors; AUTHORS.txt 参照.
+       Copyright © 2002-2026 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2025年6月 8日
+                                 2026年3月 5日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -1128,6 +1128,10 @@ Tux Paint の「ひらく」ダイアログでは、Tux Paint で作成した画
 → macOS ←
     In the user's "Application Support" folder:
     e.g., "/Users/ユーザー名/Library/Application Support/TuxPaint/saved/"
+
+    The "Library" folder is hidden by default. Bring up the macOS Finder's "Go"
+    → "Go to Folder..." command (you can use the [Shift] + [⌘ (Command)] + [G]
+    shortcut key combination), and then type the path and hit [Enter / Return].
      
 → Linux / Unix ←
     In the user's "home directory" folder:

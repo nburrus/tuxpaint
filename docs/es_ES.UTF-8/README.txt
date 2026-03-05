@@ -3,10 +3,10 @@
 
                   ## A simple drawing program for children ##
 
-        Copyright © 2002-2025 by various contributors; see AUTHORS.txt.
+        Copyright © 2002-2026 by various contributors; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 junio 8, 2025
+                                 marzo 5, 2026
 
 +-------------------------------------------------+
 |                Table of Contents                |
@@ -1209,6 +1209,10 @@ is where to find it (by default):
 → macOS ←
     In the user's "Application Support" folder:
     e.g., "/Users/username/Library/Application Support/TuxPaint/saved/"
+
+    The "Library" folder is hidden by default. Bring up the macOS Finder's "Go"
+    → "Go to Folder..." command (you can use the [Shift] + [⌘ (Command)] + [G]
+    shortcut key combination), and then type the path and hit [Enter / Return].
      
 → Linux / Unix ←
     In the user's "home directory" folder:

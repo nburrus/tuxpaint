@@ -3,10 +3,10 @@
 
                      ## Ett enkelt ritprogram för barn ##
 
-         Copyright © 2002-2025 av olika bidragsgivare; se AUTHORS.txt.
+         Copyright © 2002-2026 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 juni 8, 2025
+                                 mars 5, 2026
 
 +-----------------------------------------------------+
 |                      Innehåll                       |
@@ -1232,6 +1232,10 @@ Du kan helt enkelt konvertera bilden till det format som Rita med Tux använder
 → macOS ←
     I användarens mapp "Application Support":
     t.ex, "/Användare/användarnamn/Bibliotek/Applikationsstöd/TuxPaint/saved/"
+
+    The "Library" folder is hidden by default. Bring up the macOS Finder's "Go"
+    → "Go to Folder..." command (you can use the [Shift] + [⌘ (Command)] + [G]
+    shortcut key combination), and then type the path and hit [Enter / Return].
      
 → Linux / Unix ←
     I användarens mapp "hemkatalog":

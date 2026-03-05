@@ -3,10 +3,10 @@
 
                   ## Un programme simple pour les enfants ##
 
-       Copyright © 2002-2025 by divers contributeurs; voir AUTHORS.txt.
+       Copyright © 2002-2026 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 juin 8, 2025
+                                 mars 5, 2026
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -1297,6 +1297,10 @@ répertoire "saved" de Tux Paint. C'est là où on les trouve (par défaut) :
 → macOS ←
     Dans le dossier utilisateurs "Application Support"; par ex. 
     "/Utilisateurs/nom d'utilisateur/Bibliothèque/Support de l'application/TuxPaint/saved/"
+
+    The "Library" folder is hidden by default. Bring up the macOS Finder's "Go"
+    → "Go to Folder..." command (you can use the [Shift] + [⌘ (Command)] + [G]
+    shortcut key combination), and then type the path and hit [Enter / Return].
      
 → Linux / Unix ←
     Dans le dossier utilisateurs "répertoire utilisateur"; par ex. 

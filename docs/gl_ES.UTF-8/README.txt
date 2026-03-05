@@ -3,10 +3,10 @@
 
                ## Un sinxelo programa de debuxo para cativos ##
 
-        Copyright © 2002-2025 by varios colaboradores; see AUTHORS.txt.
+        Copyright © 2002-2026 by varios colaboradores; see AUTHORS.txt.
                              https://tuxpaint.org/
 
-                               8 de Xuño de 2025
+                              5 de Marzo de 2026
 
 +--------------------------------------------------------+
 |                         Índice                         |
@@ -1237,6 +1237,10 @@ cartafol «saved» de Tux Paint. Aquí é onde se atopa (de xeito predeterminado
 → macOS ←
     In the user's "Application Support" folder:
     e.g., "/Users/nome de usuario/Library/Application Support/TuxPaint/saved/"
+
+    The "Library" folder is hidden by default. Bring up the macOS Finder's "Go"
+    → "Go to Folder..." command (you can use the [Shift] + [⌘ (Command)] + [G]
+    shortcut key combination), and then type the path and hit [Enter / Return].
      
 → Linux / Unix ←
     In the user's "home directory" folder:

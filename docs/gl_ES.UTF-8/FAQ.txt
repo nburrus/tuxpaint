@@ -246,6 +246,11 @@
         In the user's "Application Support" folder:
         e.g., 
         "/Users/nome de usuario/Library/Application Support/TuxPaint/saved/"
+
+        The "Library" folder is hidden by default. Bring up the macOS Finder's 
+        "Go" → "Go to Folder..." command (you can use the [Shift] + [⌘
+        (Command)] + [G] shortcut key combination), and then type the path and
+        hit [Enter / Return].
          
     → Linux / Unix ←
         In the user's "home directory" folder:

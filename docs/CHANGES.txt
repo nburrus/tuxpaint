@@ -6,13 +6,17 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.February.11 (0.9.36)
+2026.March.5 (0.9.36)
   * Documentation updates:
     ----------------------
     + Describe where Tux Paint searches for system fonts,
       and how it uses FontConfig "fonts.conf" files to find fonts,
       for the 'Text' and 'Label' tools (EXTENDING and ENVVARS).
       Bill Kendrick <bill@newbreedsoftware.com>
+
+    + Added note on using macOS Finder's "Go to Folder..." to
+      get to one's Tux Paint save folder.
+      h/t Duncan & Amy
 
   * Text & Label Tool Improvements:
     -------------------------------
