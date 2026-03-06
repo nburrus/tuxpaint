@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-08 11:15-0700\n"
-"PO-Revision-Date: 2025-07-01 15:57+0200\n"
+"PO-Revision-Date: 2026-03-06 10:17+0100\n"
 "Last-Translator: jacques.chion@orange.fr\n"
 "Language-Team: <fr@li.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Response to Black (0, 0, 0) color selected
 #: ../colors.h:86
@@ -25,12 +25,12 @@ msgstr "Noir !"
 #. Response to Dark grey (128, 128, 128) color selected
 #: ../colors.h:89
 msgid "Dark grey! Some people spell it “dark gray”."
-msgstr "Gris foncé !"
+msgstr "Gris foncé."
 
 #. Response to Light grey (192, 192, 192) color selected
 #: ../colors.h:92
 msgid "Light grey! Some people spell it “light gray”."
-msgstr "Gris clair !"
+msgstr "Gris clair."
 
 #. Response to White (255, 255, 255) color selected
 #: ../colors.h:95
@@ -419,7 +419,7 @@ msgid ""
 "FontConfig &lt;dir&gt; entries now, too"
 msgstr ""
 "Les outils Texte et Étiquettes peuvent également charger des polices "
-"spécifiées dans  FontConfig &lt;dir&gt; "
+"spécifiées dans  FontConfig &lt;dir&gt;"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:66
 msgid "New Fill mode: \"Eraser\" flood fill."
@@ -609,8 +609,8 @@ msgid ""
 "Minor improvements to the selection buttons for the 'special' colors "
 "(pipette, HSV picker, and color mixer)."
 msgstr ""
-"Des améliorations mineures ont été apportées pour les couleurs "
-"'spéciales' (pipette, sélecteur HSV et mélangeur de couleurs)."
+"Des améliorations mineures ont été apportées pour les couleurs 'spéciales' "
+"(pipette, sélecteur HSV et mélangeur de couleurs)."
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:111
 msgid "Many Magic tools now offer size settings."
@@ -810,9 +810,9 @@ msgstr ""
 "Un certain nombre d'outils \"Magie\" ont été mis à jour. Des améliorations "
 "ont été apportées à \"Photogravure\" qui simule des photographies sur un "
 "journal; \"B.D.\" qui fait que l'image ressemble  à une bande dessinée et "
-"\"TV' qui fait que l'image ressemble à une télévision ancienne. De plus, \"B."
-"D.\" et \"Photogravure\", tout comme \"Blocs\", \"Craie\" et \"Relief\" ont "
-"maintenant la possibilité de traiter l'image entière d'un seul coup !"
+"\"TV' qui fait que l'image ressemble à une télévision ancienne. De plus, "
+"\"B.D.\" et \"Photogravure\", tout comme \"Blocs\", \"Craie\" et \"Relief\" "
+"ont maintenant la possibilité de traiter l'image entière d'un seul coup !"
 
 #: ../org.tuxpaint.Tuxpaint.appdata.xml.in:144
 msgid ""
