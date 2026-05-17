@@ -134,3 +134,12 @@
 #define FALL_THROUGH ((void)0)
 #endif /* __GNUC__ >= 7 */
 #endif
+
+// Used to, e.g, prevent warnings from -Wunterminated-string-initialization
+#ifndef NONSTRING
+#if defined(__GNUC__) && __GNUC__ >= 8
+#define NONSTRING __attribute__ ((nonstring))
+#else
+#define NONSTRING
+#endif
+#endif

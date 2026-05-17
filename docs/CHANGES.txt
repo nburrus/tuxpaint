@@ -84,6 +84,11 @@ https://tuxpaint.org/
       TOYAMA Shin-ichi <shin1@z1r.org>
       (h/t Abdullah T. for testing on a Microsoft Surface)
 
+    + Add nonstring attribute to linear_to_sRGB_table to remove warnings
+      emitted by -Wunterminated-string-initialization
+      Philipp Rösner <rndxelement@protonmail.com>
+      (h/t James Le Cuirot <chewi@gentoo.org> for suggesting)
+
 2025.May.26 (0.9.35)
   * New Magic Tools:
     ----------------
