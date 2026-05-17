@@ -185,7 +185,8 @@ typedef struct language_to_locale_struct
 extern const char *lang_prefixes[NUM_LANGS];
 extern int need_own_font;
 extern int need_right_to_left;  // Right-justify
-extern const char *lang_prefix, *short_lang_prefix;
+extern const char *lang_prefix;
+extern char *short_lang_prefix;
 
 typedef struct w_langs
 {

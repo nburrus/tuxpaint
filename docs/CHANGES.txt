@@ -55,6 +55,10 @@ https://tuxpaint.org/
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t Wisdom Lupus
 
+    + Make short_lang_prefix non-const because it may be modified,
+      adding support for glibc-2.43.
+      Philipp Rösner <rndxelement@protonmail.com>
+
   * Localization Updates:
     ---------------------
     + French translation

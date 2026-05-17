@@ -257,7 +257,8 @@ static int lang_use_right_to_left[] = {
 
 int need_own_font;
 int need_right_to_left;
-const char *lang_prefix, *short_lang_prefix;
+const char *lang_prefix;
+char *short_lang_prefix;
 
 w_langs wished_langs[255];
 
