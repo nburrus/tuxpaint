@@ -5,9 +5,9 @@
   for Tux Paint
 
   Mostly by Albert Cahalan <albert@users.sf.net>
-  Copyright (c) 2002-2019
+  Copyright (c) 2002-2026
 
-  http://www.newbreedsoftware.com/tuxpaint/
+  https://www.tuxpaint.org/
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -24,8 +24,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - September 12, 2019
-  $Id$
+  June 14, 2002 - May 18, 2026
 */
 
 #ifdef __GNUC__
