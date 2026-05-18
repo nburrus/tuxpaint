@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - January 1, 2026
+June 17, 2002 - May 18, 2026
 
 * Design and Coding:
 
@@ -1385,7 +1385,7 @@ June 17, 2002 - January 1, 2026
   * Tweaks to help Windows cross-compiling under Linux
     Volker Grabsch <vog@notjusthosting.com>
 
-  * Corrections to allow "make --shuffle" (GNU Make feature) work
+  * Various compliation improvements
     Philipp Rösner <rndxelement@protonmail.com>
 
   * macOS (previously Mac OS X / OS X) coding and builds
