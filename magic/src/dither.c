@@ -2,10 +2,14 @@
 
    A Magic tool for Tux Paint that turns (parts of) an image into
    a black-and-white dithered representation.
-   (Using Atkinso dithering: https://en.wikipedia.org/wiki/Atkinson_dithering)
+
+   Different dithering variations:
+    * Atkinson: https://en.wikipedia.org/wiki/Atkinson_dithering
+    * Bayer Ordered 4x4: https://en.wikipedia.org/wiki/Ordered_dithering
+
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   Last updated: May 10, 2024
+   February 29, 2024 - May 20, 2026
 */
 
 
@@ -20,21 +24,35 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 
+/* Each tool comes in two varieties:
+ * + Use the chosen color for the non-white pixels
+ * + Use the image's color (hue/saturation w/ low value) for the non-white pixels
+*/
 enum
 {
-  /* Use the chosen color for the non-white pixels */
-  TOOL_DITHER_VIA_COLOR,
-  /* Use the image's color (hue/saturation w/ low value) for the non-white pixels */
-  TOOL_DITHER_KEEP_COLOR,
+  /* Atkinson */
+  TOOL_DITHER_ATK_VIA_COLOR,
+  TOOL_DITHER_ATK_KEEP_COLOR,
+
+  /* Bayer 4x4 */
+  TOOL_DITHER_B4X4_VIA_COLOR,
+  TOOL_DITHER_B4X4_KEEP_COLOR,
+
   NUM_TOOLS
 };
 
 char *dither_names[NUM_TOOLS] = {
+  /* Atkinson */
   gettext_noop("Dither"),
   gettext_noop("Dither (Keep Color)"),
+
+  /* Bayer 4x4 */
+  gettext_noop("Ordered Dither"),
+  gettext_noop("Ordered Dither (Keep Color)"),
 };
 
 char *dither_descr[NUM_TOOLS][2] = {
+  /* Atkinson */
   {
    gettext_noop("Click and drag to replace parts of your image with a dithered pattern of dots in your chosen color."),
    gettext_noop("Click to replace your entire image with a dithered pattern of dots in your chosen color."),
@@ -45,14 +63,40 @@ char *dither_descr[NUM_TOOLS][2] = {
    gettext_noop
    ("Click to replace your entire image with a dithered pattern of dots using the picture's original colors."),
    },
+
+  /* Bayer 4x4 */
+  {
+   /* FIXME */
+   gettext_noop("Click and drag to replace parts of your image with a dithered pattern of dots in your chosen color."),
+   gettext_noop("Click to replace your entire image with a dithered pattern of dots in your chosen color."),
+   },
+  {
+   /* FIXME */
+   gettext_noop
+   ("Click and drag to replace parts of your image with a dithered pattern of dots using the picture's original colors."),
+   gettext_noop
+   ("Click to replace your entire image with a dithered pattern of dots using the picture's original colors."),
+   },
 };
 
 char *dither_icon_filenames[NUM_TOOLS] = {
+  /* Atkinson */
+  "dither.png",
+  "dither_keep_color.png",
+
+  /* Bayer 4x4 */
+  /* FIXME */
   "dither.png",
   "dither_keep_color.png",
 };
 
 char *dither_snd_filenames[NUM_TOOLS] = {
+  /* Atkinson */
+  "dither.ogg",
+  "dither_keep_color.ogg",
+
+  /* Bayer 4x4 */
+  /* FIXME */
   "dither.ogg",
   "dither_keep_color.ogg",
 };
@@ -174,7 +218,7 @@ char *dither_get_description(magic_api *api ATTRIBUTE_UNUSED, int which, int mod
 
 int dither_requires_colors(magic_api *api ATTRIBUTE_UNUSED, int which)
 {
-  if (which == TOOL_DITHER_VIA_COLOR)
+  if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_B4X4_VIA_COLOR)
     return 1;
   else
     return 0;
@@ -307,18 +351,27 @@ dither_drag(magic_api *api, int which,
 }
 
 /*
+ * Atkinson examination positions (relative to P):
  * [ . P 0 1 ]
  * [ 2 3 4 . ]
  * [ . 5 . . ]
 */
-int dither_x_pos[6] = { 1, 2, -1, 0, 1, 0 };
-int dither_y_pos[6] = { 0, 0, 1, 1, 1, 2 };
+int atk_dither_x_pos[6] = { 1, 2, -1, 0, 1, 0 };
+int atk_dither_y_pos[6] = { 0, 0, 1, 1, 1, 2 };
+
+/* Bayer 4x4 ordered dithering pattern */
+int bayer[] = {
+   1,  9,  3, 11,
+  13,  5, 15,  7,
+   4, 12,  2, 10,
+  16,  8, 14,  6
+};
 
 void dither_release(magic_api *api, int which,
                     SDL_Surface *canvas, SDL_Surface *snapshot, int x, int y, SDL_Rect *update_rect)
 {
   Uint8 r, g, b;
-  float val, err, h, s, v;
+  float val, atk_err, h, s, v;
   int i, nx, ny;
 
   for (y = 0; y < canvas->h; y++)
@@ -328,18 +381,30 @@ void dither_release(magic_api *api, int which,
       if (dither_touched[y * canvas->w + x])
       {
         val = dither_vals[y * canvas->w + x];
+
+        if (which == TOOL_DITHER_B4X4_VIA_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR) {
+          /* Bayer 4x4 -- Use the ordered dither look-up */
+          int bay;
+
+          bay = bayer[((y % 4) * 4) + (x % 4)];
+
+          val = val / 8.0;
+          val = val * bay;
+        }
+
         if (val >= 0.5)
         {
           api->putpixel(canvas, x, y, dither_white);
-          err = val - 1.0;
+
+          atk_err = val - 1.0;
         }
         else
         {
-          if (which == TOOL_DITHER_VIA_COLOR)
+          if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_B4X4_VIA_COLOR)
           {
             api->putpixel(canvas, x, y, dither_color);
           }
-          else if (which == TOOL_DITHER_KEEP_COLOR)
+          else if (which == TOOL_DITHER_ATK_KEEP_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR)
           {
             SDL_GetRGB(api->getpixel(snapshot, x, y), snapshot->format, &r, &g, &b);
             if (r <= 32 && g <= 32 && b <= 32)
@@ -353,26 +418,30 @@ void dither_release(magic_api *api, int which,
               api->putpixel(canvas, x, y, SDL_MapRGB(canvas->format, r, g, b));
             }
           }
-          err = val;
+
+          atk_err = val;
         }
 
-        /* Diffuse */
-        for (i = 0; i < 6; i++)
-        {
-          nx = x + dither_x_pos[i];
-          ny = y + dither_y_pos[i];
-
-          if (nx >= 0 && nx < canvas->w && ny >= 0 && ny < canvas->h)
+        if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_ATK_KEEP_COLOR) {
+          /* Atkinson -- Diffuse */
+          for (i = 0; i < 6; i++)
           {
-            if (dither_touched[ny * canvas->w + nx])
+            nx = x + atk_dither_x_pos[i];
+            ny = y + atk_dither_y_pos[i];
+
+            if (nx >= 0 && nx < canvas->w && ny >= 0 && ny < canvas->h)
             {
-              dither_vals[ny * canvas->w + nx] += (err / 8.0);
+              if (dither_touched[ny * canvas->w + nx])
+              {
+                dither_vals[ny * canvas->w + nx] += (atk_err / 8.0);
+              }
             }
           }
         }
       }
     }
   }
+
   update_rect->x = 0;
   update_rect->y = 0;
   update_rect->w = canvas->w;
@@ -395,7 +464,7 @@ void dither_set_color(magic_api *api ATTRIBUTE_UNUSED,
   }
   else
   {
-    /* If the chosen color is very bright or white, fall back to black */
+    /* If the chosen color is very bright or white, fall back to black/grey/white */
     dither_color = SDL_MapRGB(canvas->format, 0, 0, 0);
   }
 }
@@ -435,6 +504,8 @@ void dither_line_callback(void *pointer, int which, SDL_Surface *canvas, SDL_Sur
             dither_touched[(y + yy) * canvas->w + (x + xx)] = 1;
 
             SDL_GetRGB(api->getpixel(snapshot, x + xx, y + yy), snapshot->format, &r, &g, &b);
+
+            /* Just do a simple threshold effect while interacting */
             val = (api->sRGB_to_linear(r) + api->sRGB_to_linear(g) + api->sRGB_to_linear(b)) / 3.0;
             dither_vals[(y + yy) * canvas->w + (x + xx)] = val;
 

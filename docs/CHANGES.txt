@@ -7,16 +7,15 @@ Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
 2026.May.20 (0.9.36)
-  * Documentation updates:
-    ----------------------
-    + Describe where Tux Paint searches for system fonts,
-      and how it uses FontConfig "fonts.conf" files to find fonts,
-      for the 'Text' and 'Label' tools (EXTENDING and ENVVARS).
-      Bill Kendrick <bill@newbreedsoftware.com>
-
-    + Added note on using macOS Finder's "Go to Folder..." to
-      get to one's Tux Paint save folder.
-      h/t Duncan & Amy
+  * New Magic Tools:
+    ----------------
+    + WIP - Ordered Dither tools
+      Bayer 4x4 ordered dithering effect (black-and-white, and
+      keep-color variations; similar to the original tools),
+      as an alternative to Atkinson error diffusion-based dithering. 
+      - TODO - Update descriptions to make the tools distinct
+      - TODO - Icons for Ordered Dither
+      - TODO - Sound effects for Ordered Dither
 
   * Color Palette Improvements:
     ---------------------------
@@ -34,6 +33,17 @@ https://tuxpaint.org/
       another conf file, or a directory of conf files.
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t Will Thompson for pointing this out
+
+  * Documentation updates:
+    ----------------------
+    + Describe where Tux Paint searches for system fonts,
+      and how it uses FontConfig "fonts.conf" files to find fonts,
+      for the 'Text' and 'Label' tools (EXTENDING and ENVVARS).
+      Bill Kendrick <bill@newbreedsoftware.com>
+
+    + Added note on using macOS Finder's "Go to Folder..." to
+      get to one's Tux Paint save folder.
+      h/t Duncan & Amy
 
   * Other Improvements:
     -------------------
