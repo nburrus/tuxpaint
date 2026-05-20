@@ -3,7 +3,7 @@
 
   Tux Paint - A simple drawing program for children.
 
-  Copyright (c) 2002-2025
+  Copyright (c) 2002-2026
   by various contributors; see AUTHORS.txt
   https://tuxpaint.org/
 
@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - November 11, 2025
+  June 14, 2002 - May 20, 2026
 */
 
 #include "platform.h"
@@ -2210,7 +2210,7 @@ static void draw_color_picker_palette_and_values(int color_picker_left,
                                                  int color_picker_top,
                                                  int color_picker_val_left, int color_picker_val_top);
 static void render_color_picker_palette(void);
-static int do_color_sel(int temp_mode);
+static int do_color_sel(int temp_mode, int prev_color);
 static int do_color_mix(void);
 static void draw_color_mixer_blank_example(void);
 static void calc_color_mixer_average(float *out_h, float *out_s, float *out_v);
@@ -5258,7 +5258,7 @@ static void mainloop(void)
                 if (cur_color == (unsigned)COLOR_PICKER)
                   chose_color = do_color_picker(old_color);
                 else if (cur_color == (unsigned)COLOR_SELECTOR)
-                  chose_color = do_color_sel(0);
+                  chose_color = do_color_sel(0, old_color);
                 else if (cur_color == (unsigned)COLOR_MIXER)
                 {
                   chose_color = do_color_mix();
@@ -5351,7 +5351,7 @@ static void mainloop(void)
             int chose_color;
 
             /* Holding [Ctrl] while clicking; switch to temp-mode color selector! */
-            chose_color = do_color_sel(1);
+            chose_color = do_color_sel(1, cur_color);
 
             draw_cur_tool_tip();
 
@@ -24121,8 +24121,9 @@ void magic_retract_undo(void)
  *   center, the UI will show a "Back" button, and wait
  *   for a color to be clicked in the canvas, or the "Back"
  *   button to be clicked)
+ * @param Uint8 r, g, b - previous color (prior to choosing color selector)
  */
-static int do_color_sel(int temp_mode)
+static int do_color_sel(int temp_mode, int prev_color)
 {
 #ifndef NO_PROMPT_SHADOWS
   SDL_Surface *alpha_surf;
@@ -24139,11 +24140,11 @@ static int do_color_sel(int temp_mode)
   int back_left, back_top;
   int color_sel_x = 0, color_sel_y = 0;
   int want_animated_popups;
-  Uint8 r, g, b;
+  Uint8 r, g, b, old_r, old_g, old_b;
   SDL_Event event;
   SDLKey key;
   SDL_Rect r_color_sel;
-  SDL_Rect color_example_dest;
+  SDL_Rect color_example_dest, color_example_dest_interior;
   SDL_Surface *backup;
   SDL_Rect r_color_picker;
 
@@ -24254,7 +24255,7 @@ static int do_color_sel(int temp_mode)
 
   color_example_dest.x = r_color_sel.x + 2;
   color_example_dest.y = r_color_sel.y + 2;
-  color_example_dest.w = r_color_sel.w - button_w - 8;
+  color_example_dest.w = r_color_sel.w - ((button_w + 4) * !temp_mode) - 4;
   color_example_dest.h = r_color_sel.h - 4;
 
   SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, 0, 0, 0));
@@ -24271,13 +24272,23 @@ static int do_color_sel(int temp_mode)
   color_example_dest.w -= 4;
   color_example_dest.h -= 4;
 
+  color_example_dest_interior.x = color_example_dest.x + (button_w / 4);
+  color_example_dest_interior.y = color_example_dest.y + (button_w / 8);
+  color_example_dest_interior.w = color_example_dest.w - (button_w / 2);
+  color_example_dest_interior.h = color_example_dest.h - (button_w / 4);
 
+  old_r = color_hexes[prev_color][0];
+  old_g = color_hexes[prev_color][1];
+  old_b = color_hexes[prev_color][2];
 
   if (!temp_mode)
   {
-    /* Draw current color picker color: */
+    /* Draw previous color (outline) and current color picker color (interior): */
 
     SDL_FillRect(screen, &color_example_dest,
+                 SDL_MapRGB(screen->format, old_r, old_g, old_b));
+
+    SDL_FillRect(screen, &color_example_dest_interior,
                  SDL_MapRGB(screen->format,
                             color_hexes[COLOR_SELECTOR][0],
                             color_hexes[COLOR_SELECTOR][1], color_hexes[COLOR_SELECTOR][2]));
@@ -24429,7 +24440,10 @@ static int do_color_sel(int temp_mode)
           getpixel_img_color_picker = getpixels[canvas->format->BytesPerPixel];
           SDL_GetRGB(getpixel_img_color_picker(canvas, x, y), canvas->format, &r, &g, &b);
 
-          SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, r, g, b));
+          SDL_FillRect(screen, &color_example_dest,
+                       SDL_MapRGB(screen->format, old_r, old_g, old_b));
+
+          SDL_FillRect(screen, &color_example_dest_interior, SDL_MapRGB(screen->format, r, g, b));
 
           SDL_UpdateRect(screen,
                          color_example_dest.x, color_example_dest.y, color_example_dest.w, color_example_dest.h);
@@ -24444,6 +24458,9 @@ static int do_color_sel(int temp_mode)
                and what we'll get if we go Back: */
 
             SDL_FillRect(screen, &color_example_dest,
+                         SDL_MapRGB(screen->format, old_r, old_g, old_b));
+
+            SDL_FillRect(screen, &color_example_dest_interior,
                          SDL_MapRGB(screen->format,
                                     color_hexes[COLOR_SELECTOR][0],
                                     color_hexes[COLOR_SELECTOR][1], color_hexes[COLOR_SELECTOR][2]));
