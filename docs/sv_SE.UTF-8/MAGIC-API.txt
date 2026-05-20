@@ -12,7 +12,7 @@
 |                       Innehåll                       |
 |------------------------------------------------------|
 |   * Förutsättningar                                  |
-|   * Gränssnitt                                       |
+|   * Interfaces                                       |
 |       + tilläggsfunktioner för "Magi"-verktyget      |
 |           o Vanliga argument till tilläggsfunktioner |
 |           o Nödvändiga tilläggsfunktioner            |
@@ -23,16 +23,16 @@
 |           o Hjälpfunktioner                          |
 |           o Information                              |
 |           o Ljudfunktioner                           |
-|           o Systemanrop för Tux Paint                |
+|           o Tux Paint System Calls                   |
 |           o Färgkonverteringar                       |
 |       + Hjälpmakron i "tp_magic_api.h"               |
-|       + Konstantdefinitioner i "tp_magic_api.h"      |
-|   * Kompilering                                      |
-|       + Linux och andra Unix-liknande plattformar    |
+|       + Constant Definitions in "tp_magic_api.h"     |
+|   * Compiling                                        |
+|       + Linux and other Unix-like Platforms          |
 |       + Fönster                                      |
 |       + macOS                                        |
-|   * Installering                                     |
-|       + Linux och andra Unix-liknande plattformar    |
+|   * Installing                                       |
+|       + Linux and other Unix-like Platforms          |
 |       + Fönster                                      |
 |       + macOS                                        |
 |   * Skapa tillägg med flera effekter                 |
@@ -59,7 +59,7 @@ DirectMedia Layer ("libSDL", eller bara "SDL"; finns på https://www.libsdl.org
 kompilerar C-baserade program. Det rekommenderas starkt att man känner till SDL
 API, men några grundläggande SDL-koncept kommer att behandlas i detta dokument.
 
-Gränssnitt
+Interfaces
 
 De som skapar tillägg för "magiska" verktyg för Rita med Tux måste
 tillhandahålla vissa gränssnitt (C-funktioner) som Rita med Tux kan anropa.
@@ -385,7 +385,7 @@ Linux) eller "zoom.dll" (på Windows), måste namnen på dina funktioner börja 
     exempel, bör du frigöra( ) det allokerade minnet och Mix_FreeChunk() ljuden
     här.
 
-    Observera: Denna funktion anropas en gång när Rita med Tux avslutas.
+    Note: This function is called once, when Tux Paint exits.
 
 
      
@@ -716,7 +716,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
          
    
-    ## Systemanrop för Tux Paint ##
+    ## Tux Paint System Calls ##
 
     → void update_progress_bar(void) ←
         Ber Rita med Tux att animera och rita en bildruta i förloppsindikatorn
@@ -830,7 +830,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
          
    
-                  ### Konstantdefinitioner i "tp_magic_api.h" ###
+                 ### Constant Definitions in "tp_magic_api.h" ###
 
     Följande är en sammanfattning av de konstantvärden som ställs in (via"#
     define") i huvudfilen för verktygs-API:et 'Magic'.
@@ -858,9 +858,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         beskrivs ovan.
          
    
-    Kompilering
+    Compiling
 
-                 ### Linux och andra Unix-liknande plattformar ###
+                    ### Linux and other Unix-like Platforms ###
 
     Använd C-kompilatorns kommandoradsalternativ"-shared" för att generera en
     fil med delade objekt (".so") baserat på C-källkoden för ditt
@@ -951,9 +951,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
 
     TBD
 
-    Installering
+    Installing
 
-                 ### Linux och andra Unix-liknande plattformar ###
+                    ### Linux and other Unix-like Platforms ###
 
     Använd kommandoradsverktyget"tp-magic-config", som levereras som en del av
     Rita med Tux - eller i vissa fall som en del av ett "Rita med Tux 'Magic'
@@ -1181,7 +1181,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Se "punkt"
          
     → ` ←
-        Se "grav"
+        Se "grave"
          
     → alfa ←
         Se "RGBA"
@@ -1208,7 +1208,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Ett värde som skickas till en funktion.
          
     → backquote / backtick ←
-        Se "grav"
+        Se "grave"
          
     → BASH ←
         "Bourne Again Shell", ett skal- och kommandospråk för Unix.
@@ -1282,7 +1282,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Att flytta en mus medan knappen hålls intryckt, eller att flytta ett
         finger eller en penna över en skärm eller surfplatta utan att ta bort
         den.
-        Se även:
+        See also:
           @ klick
           @ utgåva
 
@@ -1290,7 +1290,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → element ←
         En variabel som lagras inom en C-struktur. (Exempel: elementen"w"
         och"h" i SDL_Surface lagrar ytans bredd respektive höjd)
-        Se även:
+        See also:
           @ C-struktur
           @ punkt
           @ pil
@@ -1300,9 +1300,9 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Se "C-uppräkning"
          
     → float ←
-        Se "flyttal"
+        Se "floating point"
          
-    → flyttal ←
+    → floating point ←
         Definitionen har ännu inte presenterats.
         Se även: "heltal"
          
@@ -1322,7 +1322,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → färgrymd ←
         Definitionen har ännu inte presenterats.
-        Se även:
+        See also:
           @ RGBA
           @ HSV
 
@@ -1340,7 +1340,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         länkning av program skrivna i programspråket C.
         Se manuskriptet "gcc(1)" man page.
          
-    → grav ←
+    → grave ←
         Den "`"; används av BASH-skalet för att använda utdata från ett
         kommando som kommandoradsargument för ett annat.
          
@@ -1352,11 +1352,11 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → heltal ←
         Definitionen har ännu inte presenterats.
-        Se även: "flyttal"
+        Se även: "floating point"
          
     → HSV ←
         Färgton, mättnad och värde.Definitionen har ännu inte presenterats.
-        Se även:
+        See also:
           @ RGBA
           @ färgrymd
 
@@ -1384,7 +1384,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → klick ←
         Att trycka på en knapp på en mus, trycka på en pekskärm eller trycka en
         penna mot en surfplatta.
-        Se även:
+        See also:
           @ dra
           @ utgåva
 
@@ -1406,13 +1406,13 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → linjär ←
         Definitionen har ännu inte presenterats.
          
+    → Magic tool ←
+        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs
+        tillgängliga via verktygsknappen "Magic".
+         
     → magic_api ←
         En C-struktur som skickas vidare till ett tilläggs funktioner som
         exponerar data och funktioner i den löpande kopian av Rita med Tux.
-         
-    → Magiverktyg ←
-        En av ett antal effekter eller ritverktyg i Rita med Tux, som görs
-        tillgängliga via verktygsknappen "Magic".
          
     → make ←
         Ett verktyg som automatiskt avgör vilka delar av ett större program som
@@ -1447,7 +1447,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → mättnad ←
         Se "HSV"
          
-    → namnrymd ←
+    → namespace ←
         Definitionen har ännu inte presenterats.
          
     → nyans ←
@@ -1471,7 +1471,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         grafik i SDL bör osignerade värden användas för RGB-värden, eftersom
         varje kanal (röd, grön och blå) kan vara mellan 0 (släckt) och 255
         (ljusast).
-        Se även:
+        See also:
           @ Uint8
           @ Uint32
           @ integer
@@ -1509,7 +1509,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → punkt ←
         ".". En symbol i C som refererar till ett element inom en struktur.
-        Se även:
+        See also:
           @ C-struktur
           @ pil
 
@@ -1519,7 +1519,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
          
     → RGBA ←
         Röd, grön, blå och alfa.Definitionen har ännu inte presenterats.
-        Se även:
+        See also:
           @ HSV
           @ färgrymd
 
@@ -1542,7 +1542,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         blått) i de tre Uint8-variablerna. (Exempel:"SDL_GetRGB(getpixel(surf,
         x, y), surf->format, &r, &g, &b);"
         Se manuskriptet "SDL_GetRGB(3)" man page.
-        Se även:
+        See also:
           @ SDL_MapRGB()
           @ RGBA
 
@@ -1558,7 +1558,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         Tux's Magic tool API-hjälpfunktion"putpixel()"). (Exempel:"putpixel
         (surf, x, y, SDL_MapRGB(surf->format, r, g, b));".)
         Se manuskriptet "SDL_MapRGB(3)" man page.
-        Se även:
+        See also:
           @ SDL_GetRGB()
           @ RGBA
 
@@ -1641,7 +1641,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
         fyra byte som kan representera 0 till 4 294 967 295. (Används
         vanligtvis för att hålla tillräckligt med information för att lagra tre
         eller fyra byte som representerar en pixels färg; dvs. RBGA-värde).
-        Se även:
+        See also:
           @ Uint8
           @ integer
           @ unsigned
@@ -1650,7 +1650,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → Uint8 ←
         Ett 8-bitars, osignerat heltal (definierat av libSDL). Med andra ord,
         en byte som kan representera 0 till 255.
-        Se även:
+        See also:
           @ Uint32
           @ integer
           @ unsigned
@@ -1659,7 +1659,7 @@ via strukturen"magic_api", som skickas till alla plugins funktioner. (Se
     → utgåva ←
         Att släppa en musknapp eller att ta bort ett finger eller en pekpenna
         från en skärm eller surfplatta.
-        Se även:
+        See also:
           @ klick
           @ dra
 

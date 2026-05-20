@@ -6,7 +6,7 @@
        Copyright © 2002-2026 by divers contributeurs; voir AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 mars 5, 2026
+                                 mai 20, 2026
 
 +-------------------------------------------------------+
 |                  Table des matières                   |
@@ -104,8 +104,10 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
 
      ### D. Qu'y a-t-il de neuf dans la version 0.9.36 de Tux Paint ? ###
 
-→ ←
-
+→ Color picker (pipette) shows current color ←
+    When selecting a color from the canvas, the currently-selected color is
+    shown as a border around the selected color, to allow for visual
+    comparison.
      
 
 Voir CHANGES.txt pour la liste complète des changements.

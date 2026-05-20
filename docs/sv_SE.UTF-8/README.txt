@@ -6,7 +6,7 @@
          Copyright © 2002-2026 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 mars 5, 2026
+                                 maj 20, 2026
 
 +-----------------------------------------------------+
 |                      Innehåll                       |
@@ -99,8 +99,10 @@ Se COPYING.txt för den fullständiga texten till GPL-licensen.
 
              ### D. Vad är nytt i Rita med Tux version 0.9.36? ###
 
-→ ←
-
+→ Color picker (pipette) shows current color ←
+    When selecting a color from the canvas, the currently-selected color is
+    shown as a border around the selected color, to allow for visual
+    comparison.
      
 
 Se CHANGES.txt för en fullständig lista över ändringar.

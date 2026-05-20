@@ -12,7 +12,7 @@
 #include <string.h>             // För "strdup()"
 #include <libintl.h>            // För "gettext()"
 
-#include "tp_magic_api.h"       // Tux Paint "Magic" verktyg API-huvud
+#include "tp_magic_api.h"       // Tux Paint "Magic" tool API header
 #include "SDL_image.h"          // För IMG_Load(), för att ladda vår PNG-ikon
 #include "SDL_mixer.h"          // För Mix_LoadWAV(), för att ladda våra ljudeffekter
 
@@ -101,11 +101,11 @@ accepterar och returnerar.  Detta gör att vi kan använda dem i andra
 funktioner som deklareras _före_ dem.
 */
 
-void example_drag(magic_api * api, int som, SDL_Surface * malarduk,
+void example_drag(magic_api * api, int som, SDL_Surface * canvas,
                   SDL_Surface * ogonblicksbild, int gammal_x, int gammal_y,
                   int x, int y, SDL_Rect * uppdatering_rect);
 
-void example_line_callback(void *pekare, int som, SDL_Surface * malarduk,
+void example_line_callback(void *pekare, int som, SDL_Surface * canvas,
                            SDL_Surface * ogonblicksbild, int x, int y);
 
 
@@ -406,8 +406,8 @@ void example_shutdown(magic_api *api)
 
 void
 example_click(magic_api *api, int som, int mode,
-              SDL_Surface *malarduk, SDL_Surface *ogonblicksbild, int x,
-              int y, SDL_Rect *uppdatering_rect)
+              SDL_Surface *canvas, SDL_Surface *ogonblicksbild, int x, int y,
+              SDL_Rect *uppdatering_rect)
 {
   /*
      I vårt fall är ett enda klick (som också är början på en dragning!)
@@ -418,7 +418,7 @@ example_click(magic_api *api, int som, int mode,
      med (x,y) för både start- och slutpunkterna för en linje.
    */
 
-  example_drag(api, som, malarduk, ogonblicksbild, x, y, x, y,
+  example_drag(api, som, canvas, ogonblicksbild, x, y, x, y,
                uppdatering_rect);
 }
 
@@ -426,7 +426,7 @@ example_click(magic_api *api, int som, int mode,
 /* Påverkar duken vid dragning: */
 void
 example_drag(magic_api *api, int som,
-             SDL_Surface *malarduk, SDL_Surface *ogonblicksbild,
+             SDL_Surface *canvas, SDL_Surface *ogonblicksbild,
              int gammal_x, int gammal_y, int x, int y,
              SDL_Rect *uppdatering_rect)
 {
@@ -441,12 +441,12 @@ example_drag(magic_api *api, int som,
      ögonblicksbildsdukarna).
    */
   SDL_LockSurface(ogonblicksbild);
-  SDL_LockSurface(malarduk);
+  SDL_LockSurface(canvas);
 
-  api->line((void *) api, som, malarduk, ogonblicksbild,
+  api->line((void *) api, som, canvas, ogonblicksbild,
             gammal_x, gammal_y, x, y, 1, example_line_callback);
 
-  SDL_UnlockSurface(malarduk);
+  SDL_UnlockSurface(canvas);
   SDL_UnlockSurface(ogonblicksbild);
 
   /*
@@ -505,7 +505,7 @@ example_drag(magic_api *api, int som,
      kommer att panorera från högtalare till högtalare när du drar musen
      runt på duken!)
    */
-  api->playsound(sound_effects[som], (x * 255) / malarduk->w,   /* Vänster/höger panorering */
+  api->playsound(sound_effects[som], (x * 255) / canvas->w,     /* Vänster/höger panorering */
                  255 /* Nära/långt avstånd (loudness) */ );
 }
 
@@ -514,7 +514,7 @@ example_drag(magic_api *api, int som,
 
 void
 example_release(magic_api *api, int som,
-                SDL_Surface *malarduk, SDL_Surface *ogonblicksbild, int x,
+                SDL_Surface *canvas, SDL_Surface *ogonblicksbild, int x,
                 int y, SDL_Rect *uppdatering_rect)
 {
   /*
@@ -536,7 +536,7 @@ Om något av våra färgaccepterande verktyg är aktivt när användaren
 Färgen anges som RGB-värden (rött, grönt och blått) från 0 (mörkast)
 till 255 (ljusast).
 */
-void example_set_color(magic_api *api, int which, SDL_Surface *malarduk,
+void example_set_color(magic_api *api, int which, SDL_Surface *canvas,
                        SDL_Surface *ogonblicksbild, Uint8 r, Uint8 g, Uint8 b,
                        SDL_Rect *uppdatering_rect)
 {
@@ -565,7 +565,7 @@ värde som returneras av vår example_accepted_sizes()-funktion under
 installationen.
 */
 void example_set_size(magic_api *api, int which, int mode,
-                      SDL_Surface *malarduk, SDL_Surface *ogonblicksbild,
+                      SDL_Surface *canvas, SDL_Surface *ogonblicksbild,
                       Uint8 storlek, SDL_Rect *uppdatering_rect)
 {
   /*
@@ -594,7 +594,7 @@ mellan musens föregående och nuvarande position, när den dras.
 Vår callback uppmärksammar 'som' för att avgöra vilket av
 tilläggsverktyg som för närvarande är valt.
 */
-void example_line_callback(void *pekare, int som, SDL_Surface *malarduk,
+void example_line_callback(void *pekare, int som, SDL_Surface *canvas,
                            SDL_Surface *ogonblicksbild, int x, int y)
 {
   /*
@@ -624,8 +624,8 @@ void example_line_callback(void *pekare, int som, SDL_Surface *malarduk,
        fungerar som en 1x1 pixel-pensel.
      */
 
-    api->putpixel(malarduk, x, y,
-                  SDL_MapRGB(malarduk->format,
+    api->putpixel(canvas, x, y,
+                  SDL_MapRGB(canvas->format,
                              example_r, example_g, example_b));
 
     /*
@@ -647,7 +647,7 @@ void example_line_callback(void *pekare, int som, SDL_Surface *malarduk,
     {
       for (xx = -example_storlek; xx < example_storlek; xx++)
       {
-        api->putpixel(malarduk, x + xx, y + yy,
+        api->putpixel(canvas, x + xx, y + yy,
                       api->getpixel(ogonblicksbild,
                                     ogonblicksbild->w - x - xx,
                                     ogonblicksbild->h - y - yy));
@@ -684,8 +684,7 @@ läget).
 Vårt exempel gör ingenting när vi byter till, eller från, våra
 Magic-verktyg, så vi gör ingenting här.
 */
-void example_switchin(magic_api *api, int som, int mode,
-                      SDL_Surface *malarduk)
+void example_switchin(magic_api *api, int som, int mode, SDL_Surface *canvas)
 {
 }
 
@@ -708,7 +707,6 @@ anrop till 'example_switchin()', ovan, för det nya läget).
 Vårt exempel gör ingenting när vi byter till, eller från, våra
 Magic-verktyg, så vi gör ingenting här.
 */
-void example_switchout(magic_api *api, int som, int mode,
-                       SDL_Surface *malarduk)
+void example_switchout(magic_api *api, int som, int mode, SDL_Surface *canvas)
 {
 }

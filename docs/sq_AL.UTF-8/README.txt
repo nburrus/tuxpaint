@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2026 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  5 mars 2026
+                                  20 maj 2026
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -99,8 +99,10 @@ See COPYING.txt for the full text of the GPL license.
 
               ### D. What's New in Tux Paint version 0.9.36? ###
 
-→ ←
-
+→ Color picker (pipette) shows current color ←
+    When selecting a color from the canvas, the currently-selected color is
+    shown as a border around the selected color, to allow for visual
+    comparison.
      
 
 Për listën e plotë të ndryshimeve, shihni CHANGES.txt.

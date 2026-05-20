@@ -6,7 +6,7 @@
        Copyright © 2002-2026 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2026年3月 5日
+                                 2026年5月20日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -97,8 +97,10 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
 
                ### D. Tux Paint バージョン 0.9.36 での変更点 ###
 
-→ ←
-
+→ Color picker (pipette) shows current color ←
+    When selecting a color from the canvas, the currently-selected color is
+    shown as a border around the selected color, to allow for visual
+    comparison.
      
 
 全ての変更点については、CHANGES.txt をお読みください。
