@@ -104,6 +104,9 @@ Voir COPYING.txt pour le texte complet de la licence GPL.
 
      ### D. Qu'y a-t-il de neuf dans la version 0.9.36 de Tux Paint ? ###
 
+→ New 'Ordered Dither' magic tools ←
+    Tools that transform the drawing into an ordered dither pattern.
+     
 → Color picker (pipette) shows current color ←
     When selecting a color from the canvas, the currently-selected color is
     shown as a border around the selected color, to allow for visual

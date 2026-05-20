@@ -14,7 +14,8 @@ Detta verktyg erbjuder flera storleksinställningar.
 
 Detta verktyg erbjuder färgval.
 
-Se även: Dither & Dither (behåll färger).
+Se även: Dither, Dither (behåll färger), Ordered Dither, & Ordered Dither (Keep
+Colors).
 
 -------------------------------------------------------------------------------
 

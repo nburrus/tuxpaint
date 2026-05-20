@@ -47,6 +47,8 @@
   * Färgskiftning
   * Dither
   * Dither (behåll färger)
+  * Ordered Dither
+  * Ordered Dither (Keep Colors)
   * 3D-glasögon
   * Färgsep.
   * Dubbelsyn

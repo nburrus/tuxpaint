@@ -14,7 +14,8 @@ Ky mjet ofron rregullime të shumta madhësie.
 
 Ky mjet ofron zgjedhje ngjyrash.
 
-Shihni edhe: Dither & Dither (Keep Colors).
+Shihni edhe: Dither, Dither (Keep Colors), Ordered Dither, & Ordered Dither
+(Keep Colors).
 
 -------------------------------------------------------------------------------
 

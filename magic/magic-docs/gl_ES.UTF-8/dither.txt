@@ -14,7 +14,8 @@ This tool offers multiple size settings.
 
 This tool offers color choices.
 
-See also: Color and White & Dither (Keep Colors).
+See also: Color and White, Dither (Keep Colors), Ordered Dither, & Ordered
+Dither (Keep Colors).
 
 -------------------------------------------------------------------------------
 

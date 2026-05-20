@@ -47,6 +47,8 @@
   * Color Shift
   * Dither
   * Dither (Keep Colors)
+  * Ordered Dither
+  * Ordered Dither (Keep Colors)
   * 3D Glasses
   * Color Sep.
   * Double Vision

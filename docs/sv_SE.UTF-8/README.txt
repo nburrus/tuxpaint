@@ -99,6 +99,9 @@ Se COPYING.txt för den fullständiga texten till GPL-licensen.
 
              ### D. Vad är nytt i Rita med Tux version 0.9.36? ###
 
+→ New 'Ordered Dither' magic tools ←
+    Tools that transform the drawing into an ordered dither pattern.
+     
 → Color picker (pipette) shows current color ←
     When selecting a color from the canvas, the currently-selected color is
     shown as a border around the selected color, to allow for visual

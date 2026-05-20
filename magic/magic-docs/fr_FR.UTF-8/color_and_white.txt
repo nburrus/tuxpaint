@@ -15,7 +15,8 @@ Cet outil permet de travailler avec plusieurs tailles.
 
 Cet outil permet de choisir des couleurs.
 
-Voir aussi : Tramage & Tramage (garder la couleur).
+Voir aussi : Tramage, Tramage (garder la couleur), Ordered Dither, & Ordered
+Dither (Keep Colors).
 
 -------------------------------------------------------------------------------
 

@@ -47,6 +47,8 @@
   * Këmbim Ngjyrash
   * Dither
   * Dither (Keep Colors)
+  * Ordered Dither
+  * Ordered Dither (Keep Colors)
   * Syze 3D
   * Ndarje Ngjyrash
   * Pamje e Dyfishtë
