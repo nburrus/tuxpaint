@@ -21113,15 +21113,14 @@ static void mirror_starter(void)
 
 
   /* Mirror overlay: */
-
-  orig = img_starter;
-  img_starter = SDL_CreateRGBSurface(orig->flags,
+  if (img_starter != NULL)
+  {
+    orig = img_starter;
+    img_starter = SDL_CreateRGBSurface(orig->flags,
                                      orig->w, orig->h, orig->format->BitsPerPixel,
                                      orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
                                      orig->format->Amask);
 
-  if (img_starter != NULL)
-  {
     for (x = 0; x < orig->w; x++)
     {
       src.x = x;
@@ -21186,15 +21185,13 @@ static void flip_starter(void)
 
 
   /* Flip overlay: */
-
-  orig = img_starter;
-  img_starter = SDL_CreateRGBSurface(orig->flags,
+  if (img_starter != NULL)
+  {
+    orig = img_starter;
+    img_starter = SDL_CreateRGBSurface(orig->flags,
                                      orig->w, orig->h, orig->format->BitsPerPixel,
                                      orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
                                      orig->format->Amask);
-
-  if (img_starter != NULL)
-  {
     for (y = 0; y < orig->h; y++)
     {
       src.x = 0;
@@ -22475,8 +22472,7 @@ static void special_notify(int flags)
     /* Mirror starter, too! */
 
     starter_mirrored = !starter_mirrored;
-
-    if (img_starter != NULL)
+    if (img_starter != NULL || img_starter_bkgd != NULL)
       mirror_starter();
 
     undo_starters[tmp_int] = UNDO_STARTER_MIRRORED;
@@ -22487,8 +22483,7 @@ static void special_notify(int flags)
     /* Flip starter, too! */
 
     starter_flipped = !starter_flipped;
-
-    if (img_starter != NULL)
+    if (img_starter != NULL || img_starter_bkgd != NULL)
       flip_starter();
 
     undo_starters[tmp_int] = UNDO_STARTER_FLIPPED;
@@ -28115,6 +28110,10 @@ void load_embedded_data(char *fname, SDL_Surface *org_surf)
             else if (template_id[0] != '\0')
             {
               load_template(template_id);
+              if (starter_mirrored && img_starter_bkgd)
+                mirror_starter();
+              if (starter_flipped && img_starter_bkgd)
+                flip_starter();
             }
           }
         }
