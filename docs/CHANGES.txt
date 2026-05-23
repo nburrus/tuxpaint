@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.May.20 (0.9.36)
+2026.May.23 (0.9.36)
   * New Magic Tools:
     ----------------
     + WIP - Ordered Dither tools
@@ -77,6 +77,13 @@ https://tuxpaint.org/
     + Make short_lang_prefix non-const because it may be modified,
       adding support for glibc-2.43.
       Philipp Rösner <rndxelement@protonmail.com>
+
+    + When using the Flip or Mirror magic tools (which notify
+      Tux Paint of their activity), the foregrounds of starter images
+      would render incorrectly, and contain both orientations.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/300/
+      Bill Kendrick <bill@newbreedsoftware.com>
+      h/t Rieley H. for the reminder
 
   * Localization Updates:
     ---------------------

@@ -21115,7 +21115,10 @@ static void mirror_starter(void)
   /* Mirror overlay: */
 
   orig = img_starter;
-  img_starter = duplicate_surface(orig);
+  img_starter = SDL_CreateRGBSurface(orig->flags,
+                                     orig->w, orig->h, orig->format->BitsPerPixel,
+                                     orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
+                                     orig->format->Amask);
 
   if (img_starter != NULL)
   {
@@ -21185,7 +21188,10 @@ static void flip_starter(void)
   /* Flip overlay: */
 
   orig = img_starter;
-  img_starter = duplicate_surface(orig);
+  img_starter = SDL_CreateRGBSurface(orig->flags,
+                                     orig->w, orig->h, orig->format->BitsPerPixel,
+                                     orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
+                                     orig->format->Amask);
 
   if (img_starter != NULL)
   {
