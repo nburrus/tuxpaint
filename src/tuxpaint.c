@@ -21121,26 +21121,28 @@ static void mirror_starter(void)
                                      orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
                                      orig->format->Amask);
 
-    for (x = 0; x < orig->w; x++)
+    if (img_starter != NULL)
     {
-      src.x = x;
-      src.y = 0;
-      src.w = 1;
-      src.h = orig->h;
+      for (x = 0; x < orig->w; x++)
+      {
+        src.x = x;
+        src.y = 0;
+        src.w = 1;
+        src.h = orig->h;
 
-      dest.x = orig->w - x - 1;
-      dest.y = 0;
+        dest.x = orig->w - x - 1;
+        dest.y = 0;
 
-      SDL_BlitSurface(orig, &src, img_starter, &dest);
+        SDL_BlitSurface(orig, &src, img_starter, &dest);
+      }
+
+      SDL_FreeSurface(orig);
     }
-
-    SDL_FreeSurface(orig);
+    else
+    {
+      img_starter = orig;
+    }
   }
-  else
-  {
-    img_starter = orig;
-  }
-
 
   /* Mirror background: */
 
@@ -21192,26 +21194,28 @@ static void flip_starter(void)
                                      orig->w, orig->h, orig->format->BitsPerPixel,
                                      orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
                                      orig->format->Amask);
-    for (y = 0; y < orig->h; y++)
+    if (img_starter != NULL)
     {
-      src.x = 0;
-      src.y = y;
-      src.w = orig->w;
-      src.h = 1;
+      for (y = 0; y < orig->h; y++)
+      {
+        src.x = 0;
+        src.y = y;
+        src.w = orig->w;
+        src.h = 1;
 
-      dest.x = 0;
-      dest.y = orig->h - y - 1;
+        dest.x = 0;
+        dest.y = orig->h - y - 1;
 
-      SDL_BlitSurface(orig, &src, img_starter, &dest);
+        SDL_BlitSurface(orig, &src, img_starter, &dest);
+      }
+
+      SDL_FreeSurface(orig);
     }
-
-    SDL_FreeSurface(orig);
+    else
+    {
+      img_starter = orig;
+    }
   }
-  else
-  {
-    img_starter = orig;
-  }
-
 
   /* Flip background: */
 
