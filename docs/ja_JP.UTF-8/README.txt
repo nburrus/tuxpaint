@@ -6,7 +6,7 @@
        Copyright © 2002-2026 by various contributors; AUTHORS.txt 参照.
                              https://tuxpaint.org/
 
-                                 2026年5月20日
+                                 2026年5月23日
 
 +--------------------------------------------------+
 |                       目次                       |
@@ -104,6 +104,10 @@ Tux Paint は、オープンソースのプロジェクトで、GNUの一般公�
     When selecting a color from the canvas, the currently-selected color is
     shown as a border around the selected color, to allow for visual
     comparison.
+     
+→ Fixed bug when using Mirror and Flip tool with Starters ←
+    The foreground layer of a Starter image would become duplicated when using
+    the Mirror or Flip magic tools.
      
 
 全ての変更点については、CHANGES.txt をお読みください。

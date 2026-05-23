@@ -6,7 +6,7 @@
  Të drejta kopjimi © 2002-2026 nga kontribues të ndryshëm; shihni AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                  20 maj 2026
+                                  23 maj 2026
 
 +---------------------------------------------------+
 |                 Pasqyrë e Lëndës                  |
@@ -106,6 +106,10 @@ See COPYING.txt for the full text of the GPL license.
     When selecting a color from the canvas, the currently-selected color is
     shown as a border around the selected color, to allow for visual
     comparison.
+     
+→ Fixed bug when using Mirror and Flip tool with Starters ←
+    The foreground layer of a Starter image would become duplicated when using
+    the Mirror or Flip magic tools.
      
 
 Për listën e plotë të ndryshimeve, shihni CHANGES.txt.
