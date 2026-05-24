@@ -9,20 +9,25 @@ https://tuxpaint.org/
 2026.May.24 (0.9.36)
   * New Magic Tools:
     ----------------
-    + WIP - Ordered Dither tools
+    + Ordered Dither tools
       Bayer 4x4 ordered dithering effect (black-and-white, and
       keep-color variations; similar to the original tools),
       as an alternative to Atkinson error diffusion-based dithering. 
-      - TODO - Sound effects for Ordered Dither
+      Bill Kendrick <bill@newbreedsoftware.com>
+      + Sound effects based on "Public Domain Beep Sound"
+        Creative Commons 0 by qubodup
+        <https://freesound.org/people/qubodup/sounds/443026/>
 
   * Color Palette Improvements:
     ---------------------------
     + Color picker (pipette) tool shows the currently-chosen
       color as an outline around the selected color, for comparison
       (similar to the rainbow palette color chooser).
+      Bill Kendrick <bill@newbreedsoftware.com>
 
     + When using the [Ctrl]+click shortcut to invoke a temporary
       color picker (pipette), now using the full width of the pop-up.
+      Bill Kendrick <bill@newbreedsoftware.com>
 
   * Text & Label Tool Improvements:
     -------------------------------
@@ -41,6 +46,7 @@ https://tuxpaint.org/
 
     + Added note on using macOS Finder's "Go to Folder..." to
       get to one's Tux Paint save folder.
+      Bill Kendrick <bill@newbreedsoftware.com>
       h/t Duncan & Amy
 
   * Other Improvements:

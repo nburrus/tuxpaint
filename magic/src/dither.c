@@ -93,9 +93,8 @@ char *dither_snd_filenames[NUM_TOOLS] = {
   "dither_keep_color.ogg",
 
   /* Bayer 4x4 */
-  /* FIXME */
-  "dither.ogg",
-  "dither_keep_color.ogg",
+  "ordered_dither.ogg",
+  "ordered_dither_keep_color.ogg",
 };
 
 Mix_Chunk *snd_effects[NUM_TOOLS];
