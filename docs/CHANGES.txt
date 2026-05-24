@@ -82,12 +82,15 @@ https://tuxpaint.org/
       adding support for glibc-2.43.
       Philipp Rösner <rndxelement@protonmail.com>
 
-    + When using the Flip or Mirror magic tools (which notify
+    + When using the Mirror or Flip magic tools (which notify
       Tux Paint of their activity), the foregrounds of starter images
       would render incorrectly, and contain both orientations.
       Closes https://sourceforge.net/p/tuxpaint/bugs/300/
       Bill Kendrick <bill@newbreedsoftware.com>
       h/t Rieley H. for the reminder
+
+    + Mirror and Flip magic tools would not flip Templates.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
 
   * Localization Updates:
     ---------------------
