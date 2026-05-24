@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
 <!-- Copyright 2019-2022 Endless OS Foundation LLC -->
-<!-- Copyright 2025 Tux Paint developers -->
+<!-- Copyright 2026 Tux Paint developers -->
 <component type="desktop">
   <id>org.tuxpaint.Tuxpaint</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -47,9 +47,14 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.9.36" date="2025-06-08">
+    <release version="0.9.36" date="2026-05-24">
       <description>
+        <p>New Magic tools: "Ordered Dither"</p>
+        <p>Color picker shows current color, for comparison</p>
+        <p>Support for FontConfig &lt;include&gt; directives</p>
+        <p>Discarding sub-pixel mouse motion, for improved performance with gaming mice</p>
         <p>Documentation improvements</p>
+        <p>Localization updates</p>
         <p>Bug fixes</p>
       </description>
     </release>

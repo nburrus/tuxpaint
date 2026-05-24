@@ -79,11 +79,13 @@ a .tar.gz source tarball, and making the tarball available for download.
      * docs/en/html/EXTENDING.html
      * docs/en/html/FAQ.html
      * docs/en/html/INSTALL.html
+     * docs/en/html/MAGIC-API.html
      * docs/en/html/OPTIONS.html
      * docs/en/html/PNG.html
      * docs/en/html/README.html
      * docs/en/html/SIGNALS.html
      * docs/en/html/SVG.html
+     * docs/en/html/tuxpaint-quickstart-guide.html
 
      And also run "make" in "magic/magic-docs/", to produce plaintext
      alternatives for the various magic tools.
