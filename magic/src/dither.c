@@ -9,7 +9,7 @@
 
    by Bill Kendrick <bill@newbreedsoftware.com>
 
-   February 29, 2024 - May 20, 2026
+   February 29, 2024 - May 24, 2026
 */
 
 
@@ -143,6 +143,7 @@ void dither_shutdown(magic_api * api);
 Uint8 dither_default_size(magic_api * api, int which, int mode);
 Uint8 dither_accepted_sizes(magic_api * api, int which, int mode);
 int dither_modes(magic_api * api, int which);
+float rgb_to_thresh(magic_api * api, Uint8 r, Uint8 g, Uint8 b);
 
 
 Uint32 dither_api_version(void)
@@ -288,8 +289,7 @@ dither_click(magic_api *api, int which, int mode,
         dither_touched[yy * canvas->w + xx] = 1;
 
         SDL_GetRGB(api->getpixel(snapshot, xx, yy), snapshot->format, &r, &g, &b);
-        dither_vals[yy * canvas->w + xx] =
-          (api->sRGB_to_linear(r) + api->sRGB_to_linear(g) + api->sRGB_to_linear(b)) / 3.0;
+        dither_vals[yy * canvas->w + xx] = rgb_to_thresh(api, r, g, b);
 
         if (xx == 0)
         {
@@ -384,12 +384,7 @@ void dither_release(magic_api *api, int which,
 
         if (which == TOOL_DITHER_B4X4_VIA_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR) {
           /* Bayer 4x4 -- Use the ordered dither look-up */
-          int bay;
-
-          bay = bayer[((y % 4) * 4) + (x % 4)];
-
-          val = val / 8.0;
-          val = val * bay;
+          val = val * bayer[((y % 4) * 4) + (x % 4)];
         }
 
         if (val >= 0.5)
@@ -482,7 +477,7 @@ void dither_line_callback(void *pointer, int which, SDL_Surface *canvas, SDL_Sur
 {
   magic_api *api = (magic_api *) pointer;
   int xx, yy, dither_size;
-  Uint8 r, g, b;
+  Uint8 r, g, b, thresh;
   float val;
 
   dither_size = dither_sizes[which];
@@ -504,12 +499,12 @@ void dither_line_callback(void *pointer, int which, SDL_Surface *canvas, SDL_Sur
             dither_touched[(y + yy) * canvas->w + (x + xx)] = 1;
 
             SDL_GetRGB(api->getpixel(snapshot, x + xx, y + yy), snapshot->format, &r, &g, &b);
-
-            /* Just do a simple threshold effect while interacting */
-            val = (api->sRGB_to_linear(r) + api->sRGB_to_linear(g) + api->sRGB_to_linear(b)) / 3.0;
+            val = rgb_to_thresh(api, r, g, b);
             dither_vals[(y + yy) * canvas->w + (x + xx)] = val;
 
-            api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, val * 255, val * 255, val * 255));
+            /* Just draw a simple B/W threshold effect while interacting */
+            thresh = (val < 0.5 ? 0 : 255);
+            api->putpixel(canvas, x + xx, y + yy, SDL_MapRGB(canvas->format, thresh, thresh, thresh));
           }
         }
       }
@@ -537,4 +532,13 @@ void dither_switchin(magic_api *api ATTRIBUTE_UNUSED,
 void dither_switchout(magic_api *api ATTRIBUTE_UNUSED,
                       int which ATTRIBUTE_UNUSED, int mode ATTRIBUTE_UNUSED, SDL_Surface *canvas ATTRIBUTE_UNUSED)
 {
+}
+
+float rgb_to_thresh(magic_api * api, Uint8 r, Uint8 g, Uint8 b) {
+    float fr, fg, fb;
+
+    fr = api->sRGB_to_linear(r);
+    fg = api->sRGB_to_linear(g);
+    fb = api->sRGB_to_linear(b);
+    return (0.2126 * fr + 0.7152 * fg + 0.0722 * fb);
 }
