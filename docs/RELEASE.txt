@@ -1,6 +1,6 @@
 Release checklist for Tux Paint
 
-Last updated 2025-02-16
+Last updated 2026-05-24
 Bill Kendrick <bill@newbreedsoftware.com>
 
 During development
@@ -47,6 +47,9 @@ a .tar.gz source tarball, and making the tarball available for download.
 
    * Metainfo file: (add entry for new version's changes)
      * src/org.tuxpaint.Tuxpaint.appdata.xml.in
+
+   * Copyright year on title splash screen
+     * src/tuxpaint.c
 
    * Other Documentation
 
