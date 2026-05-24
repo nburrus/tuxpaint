@@ -6,15 +6,13 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.May.23 (0.9.36)
+2026.May.24 (0.9.36)
   * New Magic Tools:
     ----------------
     + WIP - Ordered Dither tools
       Bayer 4x4 ordered dithering effect (black-and-white, and
       keep-color variations; similar to the original tools),
       as an alternative to Atkinson error diffusion-based dithering. 
-      - TODO - Update descriptions to make the tools distinct
-      - TODO - Icons for Ordered Dither
       - TODO - Sound effects for Ordered Dither
 
   * Color Palette Improvements:

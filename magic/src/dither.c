@@ -66,16 +66,14 @@ char *dither_descr[NUM_TOOLS][2] = {
 
   /* Bayer 4x4 */
   {
-   /* FIXME */
-   gettext_noop("Click and drag to replace parts of your image with a dithered pattern of dots in your chosen color."),
-   gettext_noop("Click to replace your entire image with a dithered pattern of dots in your chosen color."),
+   gettext_noop("Click and drag to replace parts of your image with an ordered dithered pattern of dots in your chosen color."),
+   gettext_noop("Click to replace your entire image with an ordered dithered pattern of dots in your chosen color."),
    },
   {
-   /* FIXME */
    gettext_noop
-   ("Click and drag to replace parts of your image with a dithered pattern of dots using the picture's original colors."),
+   ("Click and drag to replace parts of your image with an ordered dithered pattern of dots using the picture's original colors."),
    gettext_noop
-   ("Click to replace your entire image with a dithered pattern of dots using the picture's original colors."),
+   ("Click to replace your entire image with an ordered dithered pattern of dots using the picture's original colors."),
    },
 };
 
@@ -85,9 +83,8 @@ char *dither_icon_filenames[NUM_TOOLS] = {
   "dither_keep_color.png",
 
   /* Bayer 4x4 */
-  /* FIXME */
-  "dither.png",
-  "dither_keep_color.png",
+  "ordered_dither.png",
+  "ordered_dither_keep_color.png",
 };
 
 char *dither_snd_filenames[NUM_TOOLS] = {
