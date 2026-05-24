@@ -6,7 +6,7 @@
          Copyright © 2002-2026 av olika bidragsgivare; se AUTHORS.txt.
                              https://tuxpaint.org/
 
-                                 maj 23, 2026
+                                 maj 24, 2026
 
 +-----------------------------------------------------+
 |                      Innehåll                       |
@@ -111,6 +111,15 @@ Se COPYING.txt för den fullständiga texten till GPL-licensen.
     The foreground layer of a Starter image would become duplicated when using
     the Mirror or Flip magic tools.
      
+→ Ignoring sub-pixel cursor motion ←
+→ Attempting to improve performance when using a high-DPI input device, such as
+a gaming mouse.
+ 
+
+→ Support for FontConfig <include> directives ←
+→ When searching for fonts to use with Text and Label tools, traversing into
+any included config files.
+ 
 
 Se CHANGES.txt för en fullständig lista över ändringar.
 
