@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.May.24 (0.9.36)
+2026.June.5 (0.9.36)
   * New Magic Tools:
     ----------------
     + Ordered Dither tools
@@ -59,6 +59,14 @@ https://tuxpaint.org/
       polling rate, e.g. a gaming mouse).
       Pere Pujal i Carabantes <perepujal@gmail.com>
       h/t Sadie for reporting
+
+    + Tux Paint can delay window/screen refreshes to avoid slow-downs
+      in situations where SDL waits for VSYNC every time.
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+      (gated by `#define VSYNC_WORKAROUND` in `src/tuxpaint.c`
+      by Bill Kendrick)
+      For https://sourceforge.net/p/tuxpaint/bugs/302/
+      h/t Chong Kai Xiong
 
   * Bug Fixes:
     ----------

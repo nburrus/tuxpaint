@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - May 24, 2026
+  June 14, 2002 - June 5, 2026
 */
 
 #include "platform.h"
@@ -67,6 +67,17 @@
 /* Compile-time options: */
 
 #include "debug.h"
+
+/* VSync-related stuff; See https://sourceforge.net/p/tuxpaint/bugs/302/ */
+/* #define VSYNC_ENABLE */ /* Enable to test how Tux Paint behaves when SDL_RENDERER_PRESENTVSYNC is used */
+
+#define VSYNC_WORKAROUND /* Don't update rects, always flip entire window, but only once in a while */
+
+#ifdef VSYNC_WORKAROUND
+#define VSYNC_WORKAROUND_WAIT 10 /* How many clock ticks must go by until we want to refresh on motion */
+#define VSYNC_WORKAROUND_CYCLES 3 /* How many iterations before we stop ignoring refreshes & let SDL_Flip() do some work */
+#define ATTRIBUTE_UNUSED __attribute__ ((__unused__))
+#endif
 
 #ifdef NOKIA_770
 #define LOW_QUALITY_THUMBNAILS
@@ -1078,8 +1089,17 @@ static SDL_Surface *SDL_DisplayFormatAlpha(SDL_Surface *surface)
   return (tmp);
 }
 
+#ifdef VSYNC_WORKAROUND
+int ignoring_refresh;
+#endif
+
 static void SDL_Flip(SDL_Surface *screen)
 {
+#ifdef VSYNC_WORKAROUND
+  if (ignoring_refresh)
+    return;
+#endif
+
   //SDL_UpdateWindowSurface(window_screen);
   SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
   SDL_RenderClear(renderer);
@@ -1087,8 +1107,20 @@ static void SDL_Flip(SDL_Surface *screen)
   SDL_RenderPresent(renderer);
 }
 
+#ifdef VSYNC_WORKAROUND
+static void SDL_UpdateRect(
+  SDL_Surface *screen,
+  Sint32 x ATTRIBUTE_UNUSED, Sint32 y ATTRIBUTE_UNUSED,
+  Sint32 w ATTRIBUTE_UNUSED, Sint32 h ATTRIBUTE_UNUSED
+)
+#else
 static void SDL_UpdateRect(SDL_Surface *screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
+#endif
 {
+#ifdef VSYNC_WORKAROUND
+  SDL_Flip(screen);
+  return;
+#else
   SDL_Rect r;
 
   r.x = x;
@@ -1103,6 +1135,7 @@ static void SDL_UpdateRect(SDL_Surface *screen, Sint32 x, Sint32 y, Sint32 w, Si
   SDL_RenderCopy(renderer, texture, NULL, NULL);
 
   SDL_RenderPresent(renderer);
+#endif
 }
 
 static void show_progress_bar(SDL_Surface *screen)
@@ -2610,6 +2643,9 @@ static void mainloop(void)
   int stamp_place_x = 0;
   int stamp_place_y = 0;
   int stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
+#ifdef VSYNC_WORKAROUND
+  Uint64 last_refresh_time;
+#endif
 
 #ifdef EXPERIMENT_STAMP_ROTATION_LINE
   int stamp_xor_line_old_x = STAMP_XOR_LINE_UNSET;
@@ -2685,7 +2721,10 @@ static void mainloop(void)
   do
   {
     ignoring_motion = 0;
-
+#ifdef VSYNC_WORKAROUND
+    ignoring_refresh = 0;
+    last_refresh_time = SDL_GetTicks();
+#endif
     pre_event_time = SDL_GetTicks();
 
 
@@ -2721,6 +2760,13 @@ static void mainloop(void)
         else
           ignoring_motion = (ignoring_motion + 1) % 3;  /* Ignore every couple of motion events, to keep things moving quickly (but avoid, e.g., attempts to draw "O" from looking like "D") */
       }
+
+
+#ifdef VSYNC_WORKAROUND
+     if (current_event_time > last_refresh_time + VSYNC_WORKAROUND_WAIT && event.type == SDL_MOUSEMOTION)
+       ignoring_refresh = (ignoring_refresh + 1) % VSYNC_WORKAROUND_CYCLES;
+     last_refresh_time = current_event_time;
+#endif
 
       if (event.type == SDL_QUIT)
       {
@@ -30028,7 +30074,11 @@ static void setup(void)
 
     /* FIXME: Check window_screen for being NULL, and abort?! (Also see below) -bjk 2024.12.20 */
 
+#ifdef VSYNC_ENABLE
+    renderer = SDL_CreateRenderer(window_screen, -1, SDL_RENDERER_PRESENTVSYNC);
+#else
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
+#endif
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
     if (native_screensize)
@@ -30211,7 +30261,11 @@ static void setup(void)
     SDL_SetWindowMaximumSize(window_screen, WINDOW_WIDTH, WINDOW_HEIGHT);
 
 
+#ifdef VSYNC_ENABLE
+    renderer = SDL_CreateRenderer(window_screen, -1, SDL_RENDERER_PRESENTVSYNC);
+#else
     renderer = SDL_CreateRenderer(window_screen, -1, 0);
+#endif
     SDL_GL_GetDrawableSize(window_screen, &ww, &hh);
     texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_STATIC, ww, hh);
 
