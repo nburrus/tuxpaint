@@ -206,7 +206,7 @@ int button_label_y_nudge;
 static void reliable_read(int fd, void *buf, size_t count);
 #endif
 
-int compare_fontconfig_includes(const void * a, const void * b);
+int compare_fontconfig_includes(const void *a, const void *b);
 
 const char *PANGO_DEFAULT_FONT = "DejaVu Sans";
 const char *PANGO_DEFAULT_FONT_FALLBACK = NULL;
@@ -1016,10 +1016,12 @@ static void loadfonts(SDL_Surface *screen, SDL_Texture *texture, SDL_Renderer *r
 #define MAX_FONCCONF_CONF_PATHS 256
 #define MAX_FONTCONF_INCLUDE_PATHS 100
 
-int compare_fontconfig_includes(const void * a, const void * b) {
-  const char* aa = *(const char**)a;
-  const char* bb = *(const char**)b;
-  return strcmp(aa,bb);
+int compare_fontconfig_includes(const void *a, const void *b)
+{
+  const char *aa = *(const char **)a;
+  const char *bb = *(const char **)b;
+
+  return strcmp(aa, bb);
 }
 
 
@@ -1316,7 +1318,9 @@ int compare_fontconfig_includes(const void * a, const void * b) {
 
                     /* Try to load fonts from the location found in the fonts.conf's <dir> tag */
                     loadfonts(screen, texture, renderer, (char *)path_str);
-                  } else {
+                  }
+                  else
+                  {
                     /* It was an "<include>" tag... */
                     int res, ign_missing;
                     xmlChar *ignore_missing;
@@ -1334,15 +1338,16 @@ int compare_fontconfig_includes(const void * a, const void * b) {
                     if (res)
                     {
                       if (!ign_missing)
-                        fprintf(stderr, "Warning: FontConfig file '%s' tried to <include> '%s', which cannot be accessed: %s\n",
-                          fontconfig_config_paths[i], path_str, strerror(errno));
+                        fprintf(stderr,
+                                "Warning: FontConfig file '%s' tried to <include> '%s', which cannot be accessed: %s\n",
+                                fontconfig_config_paths[i], path_str, strerror(errno));
                     }
                     else
                     {
-                      char * include_paths[MAX_FONTCONF_INCLUDE_PATHS];
+                      char *include_paths[MAX_FONTCONF_INCLUDE_PATHS];
                       int num_include_paths, j, k, skip;
-                      DIR * dir;
-                      struct dirent * f;
+                      DIR *dir;
+                      struct dirent *f;
 
                       if ((sbuf.st_mode & S_IFMT) == S_IFDIR)
                       {
@@ -1350,19 +1355,29 @@ int compare_fontconfig_includes(const void * a, const void * b) {
                         num_include_paths = 0;
 
                         dir = opendir(path_str);
-                        if (!dir) {
-                          fprintf(stderr, "Warning: Cannot open dir %s to look for FontConfig files: %s\n", path_str, strerror(errno));
-                        } else {
-                          while ((f = readdir(dir))) {
-                            if (f->d_name[0] >= '0' && f->d_name[0] <= '9') {
+                        if (!dir)
+                        {
+                          fprintf(stderr, "Warning: Cannot open dir %s to look for FontConfig files: %s\n", path_str,
+                                  strerror(errno));
+                        }
+                        else
+                        {
+                          while ((f = readdir(dir)))
+                          {
+                            if (f->d_name[0] >= '0' && f->d_name[0] <= '9')
+                            {
                               /* Starts with a digit */
-                              if (strstr(f->d_name, ".conf") ==
-                                  (f->d_name + strlen(f->d_name) - 5)) {
+                              if (strstr(f->d_name, ".conf") == (f->d_name + strlen(f->d_name) - 5))
+                              {
                                 /* Ends in ".conf" */
-                                if (num_include_paths == MAX_FONTCONF_INCLUDE_PATHS) {
-                                  fprintf(stderr, "Warning: FontConfig config file <include> limit reached in %s: %d\n", path_str, MAX_FONTCONF_INCLUDE_PATHS);
-                                } else {
-                                  include_paths[num_include_paths] = (char *) malloc(1024);
+                                if (num_include_paths == MAX_FONTCONF_INCLUDE_PATHS)
+                                {
+                                  fprintf(stderr, "Warning: FontConfig config file <include> limit reached in %s: %d\n",
+                                          path_str, MAX_FONTCONF_INCLUDE_PATHS);
+                                }
+                                else
+                                {
+                                  include_paths[num_include_paths] = (char *)malloc(1024);
                                   snprintf(include_paths[num_include_paths], 1024, "%s/%s", path_str, f->d_name);
                                   num_include_paths++;
                                 }
@@ -1383,20 +1398,29 @@ int compare_fontconfig_includes(const void * a, const void * b) {
                       }
 
                       /* Make sure we don't get stuck in a recursive loop! */
-                      for (j = 0; j < num_include_paths; j++) {
+                      for (j = 0; j < num_include_paths; j++)
+                      {
                         skip = 0;
-                        for (k = 0; k < num_fontconfig_config_paths && skip == 0; k++) {
-                          if (strcmp(fontconfig_config_paths[k], include_paths[j]) == 0) {
-                            fprintf(stderr, "Warning: FontConfig file '%s' tried to <include> '%s', which we've already seen; skipping!\n",
-                              fontconfig_config_paths[i], include_paths[j]);
+                        for (k = 0; k < num_fontconfig_config_paths && skip == 0; k++)
+                        {
+                          if (strcmp(fontconfig_config_paths[k], include_paths[j]) == 0)
+                          {
+                            fprintf(stderr,
+                                    "Warning: FontConfig file '%s' tried to <include> '%s', which we've already seen; skipping!\n",
+                                    fontconfig_config_paths[i], include_paths[j]);
                             skip = 1;
                           }
                         }
 
-                        if (!skip) {
-                          if (num_fontconfig_config_paths == MAX_FONCCONF_CONF_PATHS) {
-                            fprintf(stderr, "Warning: Reached limit of FontConfig config files we can parse (%d)\n", MAX_FONCCONF_CONF_PATHS);
-                          } else {
+                        if (!skip)
+                        {
+                          if (num_fontconfig_config_paths == MAX_FONCCONF_CONF_PATHS)
+                          {
+                            fprintf(stderr, "Warning: Reached limit of FontConfig config files we can parse (%d)\n",
+                                    MAX_FONCCONF_CONF_PATHS);
+                          }
+                          else
+                          {
                             fontconfig_config_paths[num_fontconfig_config_paths] = strdup(include_paths[j]);
                             num_fontconfig_config_paths++;
                           }

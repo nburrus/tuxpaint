@@ -1108,11 +1108,9 @@ static void SDL_Flip(SDL_Surface *screen)
 }
 
 #ifdef VSYNC_WORKAROUND
-static void SDL_UpdateRect(
-  SDL_Surface *screen,
-  Sint32 x ATTRIBUTE_UNUSED, Sint32 y ATTRIBUTE_UNUSED,
-  Sint32 w ATTRIBUTE_UNUSED, Sint32 h ATTRIBUTE_UNUSED
-)
+static void SDL_UpdateRect(SDL_Surface *screen,
+                           Sint32 x ATTRIBUTE_UNUSED, Sint32 y ATTRIBUTE_UNUSED,
+                           Sint32 w ATTRIBUTE_UNUSED, Sint32 h ATTRIBUTE_UNUSED)
 #else
 static void SDL_UpdateRect(SDL_Surface *screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
 #endif
@@ -2643,6 +2641,7 @@ static void mainloop(void)
   int stamp_place_x = 0;
   int stamp_place_y = 0;
   int stamp_tool_mode = STAMP_TOOL_MODE_PLACE;
+
 #ifdef VSYNC_WORKAROUND
   Uint64 last_refresh_time;
 #endif
@@ -2731,11 +2730,11 @@ static void mainloop(void)
     while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_MOUSEMOTION && oldpos_x == (int)event.motion.x && oldpos_y == (int)event.motion.y)
-        {
-          /* FIXME: Switch back to DEBUG_PRINTF before release! -bjk 2025.11.11 */
-          /*DEBUG_PRINTF*/printf("Discarding mouse motion event @ %d,%d\n", oldpos_x, oldpos_y);
-          break;
-        }
+      {
+        /* FIXME: Switch back to DEBUG_PRINTF before release! -bjk 2025.11.11 */
+        /*DEBUG_PRINTF */ printf("Discarding mouse motion event @ %d,%d\n", oldpos_x, oldpos_y);
+        break;
+      }
 
       current_event_time = SDL_GetTicks();
 
@@ -2763,9 +2762,9 @@ static void mainloop(void)
 
 
 #ifdef VSYNC_WORKAROUND
-     if (current_event_time > last_refresh_time + VSYNC_WORKAROUND_WAIT && event.type == SDL_MOUSEMOTION)
-       ignoring_refresh = (ignoring_refresh + 1) % VSYNC_WORKAROUND_CYCLES;
-     last_refresh_time = current_event_time;
+      if (current_event_time > last_refresh_time + VSYNC_WORKAROUND_WAIT && event.type == SDL_MOUSEMOTION)
+        ignoring_refresh = (ignoring_refresh + 1) % VSYNC_WORKAROUND_CYCLES;
+      last_refresh_time = current_event_time;
 #endif
 
       if (event.type == SDL_QUIT)
@@ -13580,7 +13579,7 @@ static char *loaddesc(const char *const fname, Uint8 *locale_text)
           {
             /* First one is the default: */
 
-            strcpy(def_buf, buf);     /* safe; both the same size */
+            strcpy(def_buf, buf);       /* safe; both the same size */
             got_first = 1;
           }
 
@@ -21163,9 +21162,9 @@ static void mirror_starter(void)
   {
     orig = img_starter;
     img_starter = SDL_CreateRGBSurface(orig->flags,
-                                     orig->w, orig->h, orig->format->BitsPerPixel,
-                                     orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
-                                     orig->format->Amask);
+                                       orig->w, orig->h, orig->format->BitsPerPixel,
+                                       orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
+                                       orig->format->Amask);
 
     if (img_starter != NULL)
     {
@@ -21237,9 +21236,9 @@ static void flip_starter(void)
   {
     orig = img_starter;
     img_starter = SDL_CreateRGBSurface(orig->flags,
-                                     orig->w, orig->h, orig->format->BitsPerPixel,
-                                     orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
-                                     orig->format->Amask);
+                                       orig->w, orig->h, orig->format->BitsPerPixel,
+                                       orig->format->Rmask, orig->format->Gmask, orig->format->Bmask,
+                                       orig->format->Amask);
     if (img_starter != NULL)
     {
       for (y = 0; y < orig->h; y++)
@@ -24336,8 +24335,7 @@ static int do_color_sel(int temp_mode, int prev_color)
   {
     /* Draw previous color (outline) and current color picker color (interior): */
 
-    SDL_FillRect(screen, &color_example_dest,
-                 SDL_MapRGB(screen->format, old_r, old_g, old_b));
+    SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, old_r, old_g, old_b));
 
     SDL_FillRect(screen, &color_example_dest_interior,
                  SDL_MapRGB(screen->format,
@@ -24491,8 +24489,7 @@ static int do_color_sel(int temp_mode, int prev_color)
           getpixel_img_color_picker = getpixels[canvas->format->BytesPerPixel];
           SDL_GetRGB(getpixel_img_color_picker(canvas, x, y), canvas->format, &r, &g, &b);
 
-          SDL_FillRect(screen, &color_example_dest,
-                       SDL_MapRGB(screen->format, old_r, old_g, old_b));
+          SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, old_r, old_g, old_b));
 
           SDL_FillRect(screen, &color_example_dest_interior, SDL_MapRGB(screen->format, r, g, b));
 
@@ -24508,8 +24505,7 @@ static int do_color_sel(int temp_mode, int prev_color)
             /* Revert to current color picker color, so we know what it was,
                and what we'll get if we go Back: */
 
-            SDL_FillRect(screen, &color_example_dest,
-                         SDL_MapRGB(screen->format, old_r, old_g, old_b));
+            SDL_FillRect(screen, &color_example_dest, SDL_MapRGB(screen->format, old_r, old_g, old_b));
 
             SDL_FillRect(screen, &color_example_dest_interior,
                          SDL_MapRGB(screen->format,

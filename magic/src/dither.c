@@ -66,7 +66,8 @@ char *dither_descr[NUM_TOOLS][2] = {
 
   /* Bayer 4x4 */
   {
-   gettext_noop("Click and drag to replace parts of your image with an ordered dithered pattern of dots in your chosen color."),
+   gettext_noop
+   ("Click and drag to replace parts of your image with an ordered dithered pattern of dots in your chosen color."),
    gettext_noop("Click to replace your entire image with an ordered dithered pattern of dots in your chosen color."),
    },
   {
@@ -357,10 +358,10 @@ int atk_dither_y_pos[6] = { 0, 0, 1, 1, 1, 2 };
 
 /* Bayer 4x4 ordered dithering pattern */
 int bayer[] = {
-   1,  9,  3, 11,
-  13,  5, 15,  7,
-   4, 12,  2, 10,
-  16,  8, 14,  6
+  1, 9, 3, 11,
+  13, 5, 15, 7,
+  4, 12, 2, 10,
+  16, 8, 14, 6
 };
 
 void dither_release(magic_api *api, int which,
@@ -378,7 +379,8 @@ void dither_release(magic_api *api, int which,
       {
         val = dither_vals[y * canvas->w + x];
 
-        if (which == TOOL_DITHER_B4X4_VIA_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR) {
+        if (which == TOOL_DITHER_B4X4_VIA_COLOR || which == TOOL_DITHER_B4X4_KEEP_COLOR)
+        {
           /* Bayer 4x4 -- Use the ordered dither look-up */
           val = val * bayer[((y % 4) * 4) + (x % 4)];
         }
@@ -413,7 +415,8 @@ void dither_release(magic_api *api, int which,
           atk_err = val;
         }
 
-        if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_ATK_KEEP_COLOR) {
+        if (which == TOOL_DITHER_ATK_VIA_COLOR || which == TOOL_DITHER_ATK_KEEP_COLOR)
+        {
           /* Atkinson -- Diffuse */
           for (i = 0; i < 6; i++)
           {
@@ -530,11 +533,12 @@ void dither_switchout(magic_api *api ATTRIBUTE_UNUSED,
 {
 }
 
-float rgb_to_thresh(magic_api * api, Uint8 r, Uint8 g, Uint8 b) {
-    float fr, fg, fb;
+float rgb_to_thresh(magic_api *api, Uint8 r, Uint8 g, Uint8 b)
+{
+  float fr, fg, fb;
 
-    fr = api->sRGB_to_linear(r);
-    fg = api->sRGB_to_linear(g);
-    fb = api->sRGB_to_linear(b);
-    return (0.2126 * fr + 0.7152 * fg + 0.0722 * fb);
+  fr = api->sRGB_to_linear(r);
+  fg = api->sRGB_to_linear(g);
+  fb = api->sRGB_to_linear(b);
+  return (0.2126 * fr + 0.7152 * fg + 0.0722 * fb);
 }
