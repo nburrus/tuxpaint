@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 5, 2026
+  June 14, 2002 - June 28, 2026
 */
 
 #include "platform.h"
@@ -68,16 +68,33 @@
 
 #include "debug.h"
 
-/* VSync-related stuff; See https://sourceforge.net/p/tuxpaint/bugs/302/ */
-/* #define VSYNC_ENABLE */ /* Enable to test how Tux Paint behaves when SDL_RENDERER_PRESENTVSYNC is used */
+#define ATTRIBUTE_UNUSED __attribute__ ((__unused__))
 
-#define VSYNC_WORKAROUND /* Don't update rects, always flip entire window, but only once in a while */
+/* VSync-related stuff; See https://sourceforge.net/p/tuxpaint/bugs/302/ */
+// #define VSYNC_ENABLE  /* Enable to test how Tux Paint behaves when SDL_RENDERER_PRESENTVSYNC is used */
+
+//#define VSYNC_WORKAROUND /* Don't update rects, always flip entire window, but only once in a while */
 
 #ifdef VSYNC_WORKAROUND
 #define VSYNC_WORKAROUND_WAIT 10 /* How many clock ticks must go by until we want to refresh on motion */
 #define VSYNC_WORKAROUND_CYCLES 3 /* How many iterations before we stop ignoring refreshes & let SDL_Flip() do some work */
-#define ATTRIBUTE_UNUSED __attribute__ ((__unused__))
 #endif
+
+/* Run the main loop in its own thread, allowing Tux Paint
+   to collect update rectangles and refresh the window
+   in batches, to prevent input lag.  (Alternative to
+   the "VSYNC_WORKAROUND", above).
+   See https://sourceforge.net/p/tuxpaint/bugs/302/
+*/
+#define MAINLOOP_THREAD
+
+/* Whether or not to report to STDOUT when we end up SDL_Delay()'ing */
+// #define MAINLOOP_THREAD_DEBUG_OUTPUT
+
+/* Allow Tux Paint to accept a window size that's larger
+   than the reported physical display (screen) size.
+   Really only useful for testing. */
+// #define BIGGER_SCREENS
 
 #ifdef NOKIA_770
 #define LOW_QUALITY_THUMBNAILS
@@ -422,6 +439,12 @@ int iswprint(wchar_t wc)
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_thread.h"
+
+#ifdef MAINLOOP_THREAD
+static SDL_Rect refresh_display_rect;
+static int refreshing_display_now = 0;
+static int should_refresh_display = 0;
+#endif
 
 #if defined(__MACOS__)
 #include "macos.h"
@@ -1098,8 +1121,22 @@ static void SDL_Flip(SDL_Surface *screen)
 #ifdef VSYNC_WORKAROUND
   if (ignoring_refresh)
     return;
-#endif
 
+#elif defined MAINLOOP_THREAD
+  /* A lame wait to avoid race conditions with the display refresher */
+  if (refreshing_display_now) {
+#ifdef MAINLOOP_THREAD_DEBUG_OUTPUT
+    fprintf(stder,r "SDL_Flip() waiting...\n");
+#endif
+    SDL_Delay(20);
+  }
+
+  refresh_display_rect.x = 0;
+  refresh_display_rect.y = 0;
+  refresh_display_rect.w = screen->w;
+  refresh_display_rect.h = screen->h;
+  should_refresh_display = 1;
+#endif
   //SDL_UpdateWindowSurface(window_screen);
   SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
   SDL_RenderClear(renderer);
@@ -1112,12 +1149,38 @@ static void SDL_UpdateRect(SDL_Surface *screen,
                            Sint32 x ATTRIBUTE_UNUSED, Sint32 y ATTRIBUTE_UNUSED,
                            Sint32 w ATTRIBUTE_UNUSED, Sint32 h ATTRIBUTE_UNUSED)
 #else
-static void SDL_UpdateRect(SDL_Surface *screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
+static void SDL_UpdateRect(SDL_Surface *screen ATTRIBUTE_UNUSED, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
 #endif
 {
 #ifdef VSYNC_WORKAROUND
   SDL_Flip(screen);
   return;
+#elif defined MAINLOOP_THREAD
+  /* If should_refresh_display still true, that means we should merge the previous and current rectangles */
+  if(should_refresh_display)
+  {
+    /* A lame wait to avoid race conditions with the display refresher */
+    if (refreshing_display_now) {
+#ifdef MAINLOOP_THREAD_DEBUG_OUTPUT
+      fprintf(stderr, "SDL_UpdateRect() waiting...\n");
+#endif
+      SDL_Delay(20);
+    }
+
+    /* Merging the rectangles */
+    refresh_display_rect.w = max(refresh_display_rect.x + refresh_display_rect.w, x + w) - min(refresh_display_rect.x, x);
+    refresh_display_rect.h = max(refresh_display_rect.y + refresh_display_rect.h, y + h) - min(refresh_display_rect.y, y);
+    refresh_display_rect.x = min(refresh_display_rect.x, x);
+    refresh_display_rect.y = min(refresh_display_rect.y, y);
+  }
+  else
+  {
+    refresh_display_rect.x = x;
+    refresh_display_rect.y = y;
+    refresh_display_rect.w = w;
+    refresh_display_rect.h = h;
+  }
+  should_refresh_display = 1;
 #else
   SDL_Rect r;
 
@@ -2065,6 +2128,11 @@ static Uint32 cur_toggle_count;
 
 static int num_wished_langs;
 
+#ifdef MAINLOOP_THREAD
+static int mainloop_done = 0;
+SDL_Thread *mainloop_thread;
+#endif
+
 typedef struct edge_type
 {
   int y_upper;
@@ -2104,6 +2172,10 @@ SDL_Joystick *joystick;
 /* Local function prototypes: */
 
 static void mainloop(void);
+#ifdef MAINLOOP_THREAD
+static int mainloop_wrapper(__attribute__((unused))
+                                     void *vp);
+#endif
 static void brush_draw(int x1, int y1, int x2, int y2, int update);
 static void blit_brush(int x, int y, int direction, double rotation, int *w, int *h);
 static void stamp_draw(int x, int y, int stamp_angle_rotation);
@@ -7217,6 +7289,10 @@ static void mainloop(void)
   if (!font_thread_done)
     font_thread_aborted = 1;
 #endif
+#ifdef MAINLOOP_THREAD
+  mainloop_done = 1;
+  return;
+#endif
 }
 
 /**
@@ -7383,7 +7459,7 @@ static void brush_draw(int x1, int y1, int x2, int y2, int update)
   if (update)
   {
     sz = max(w, h);
-    update_canvas(orig_x1 - sz, orig_y1 - sz, orig_x2 + sz, orig_y2 + sz);
+    update_canvas_ex_r(orig_x1 - sz, orig_y1 - sz, orig_x2 + sz, orig_y2 + sz, 1);
   }
 }
 
@@ -8225,6 +8301,27 @@ void show_version(int details)
 #endif
   printf("  Using %dbpp video  (VIDEO_BPP=%d)\n", VIDEO_BPP, VIDEO_BPP);
 
+#ifdef BIGGER_SCREENS
+  printf("  Allowing windows larger than physical screen  (BIGGER_SCREENS)\n");
+#else
+  printf("  Windows cannot be larger than physical screen  (no BIGGER_SCREENS)\n");
+#endif
+
+#ifdef VSYNC_ENABLE
+  printf("  Vertical sync enabled  (VSYNC_ENABLE)\n");
+
+#ifdef VSYNC_WORKAROUND
+  printf("  Vertical sync workaround enabled  (VSYNC_WORKAROUND;\n");
+  printf("    VSYNC_WORKAROUND_WAIT=%d, VSYNC_WORKAROUND_CYCLES=%d)\n",
+    VSYNC_WORKAROUND_WAIT, VSYNC_WORKAROUND_CYCLES);
+#else
+  printf("  Vertical sync workaround not enabled  (no VSYNC_WORKAROUND)\n");
+#endif
+
+#else
+  printf("  Vertical not sync enabled  (no VSYNC_ENABLE)\n");
+#endif
+
 
   /* Print method */
 
@@ -8243,6 +8340,12 @@ void show_version(int details)
   printf("  Threaded font loader enabled  (FORKED_FONTS)\n");
 #else
   printf("  Threaded font loader disabled  (no FORKED_FONTS)\n");
+#endif
+
+#ifdef MAINLOOP_THREAD
+  printf("  Main loop in a separate thread  (MAINLOOP_THREAD)\n");
+#else
+  printf("  Main loop in the main thread  (no MAINLOOP_THREAD)\n");
 #endif
 
 
@@ -9682,6 +9785,14 @@ static int generate_fontconfig_cache( __attribute__((unused))
   return generate_fontconfig_cache_real();
 }
 
+#ifdef MAINLOOP_THREAD
+static int mainloop_wrapper(__attribute__((unused))
+                                     void *vp)
+{
+  mainloop();
+  return 1;
+}
+#endif
 
 #define hex2dec(c) (((c) >= '0' && (c) <= '9') ? ((c) - '0') : \
   ((c) >= 'A' && (c) <= 'F') ? ((c) - 'A' + 10) : \
@@ -12883,7 +12994,7 @@ static void do_eraser(int x, int y, int update)
 
   if (update)
   {
-    update_canvas(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2);
+    update_canvas_ex_r(x - sz / 2, y - sz / 2, x + sz / 2, y + sz / 2, 1);
 
     if (cur_eraser >= NUM_ERASER_SIZES)
     {
@@ -12986,7 +13097,7 @@ static void eraser_draw(int x1, int y1, int x2, int y2)
   }
 
   length = (calc_eraser_size(cur_eraser) >> 1) + 1;
-  update_canvas(orig_x1 - length, orig_y1 - length, orig_x2 + length, orig_y2 + length);
+  update_canvas_ex_r(orig_x1 - length, orig_y1 - length, orig_x2 + length, orig_y2 + length, 1);
 }
 
 /**
@@ -30218,6 +30329,7 @@ static void setup(void)
     {
       fprintf(stderr, "Warning: Could not query any display modes!?\n");
     }
+#ifndef BIGGER_SCREENS
     else if (num_displays == 1)
     {
       /* Only found one display, and window size is larger? Use that window size */
@@ -30236,6 +30348,7 @@ static void setup(void)
         WINDOW_HEIGHT = max_scrn_h;
       }
     }
+#endif
 
 
     /* Finally, ready to create a window! */
@@ -31114,6 +31227,13 @@ static void claim_to_be_ready(void)
   dest.w = WINDOW_WIDTH;        /* SDL mangles this! So, do repairs. */
   update_screen_rect(&dest);
 
+#ifdef MAINLOOP_THREAD
+  SDL_UpdateTexture(texture, NULL, screen->pixels, screen->pitch);
+  SDL_RenderClear(renderer);
+  SDL_RenderCopy(renderer, texture, NULL, NULL);
+  SDL_RenderPresent(renderer);
+#endif
+
   do_setcursor(cursor_arrow);
   playsound(screen, 0, SND_HARP, 1, SNDPOS_CENTER, SNDDIST_NEAR);
 #if !defined (__ANDROID__)
@@ -31323,8 +31443,35 @@ int main(int argc, char *argv[])
 
   claim_to_be_ready();
 
-  mainloop();
+#ifdef MAINLOOP_THREAD
+  mainloop_thread = SDL_CreateThread(mainloop_wrapper, "mainloop", NULL);
 
+  /* Display update moved here */
+  while (!mainloop_done)
+  {
+    if(should_refresh_display)
+    {
+      /* Notify we start a refresh */
+      refreshing_display_now = 1;
+      SDL_UpdateTexture(texture, &refresh_display_rect, screen->pixels + (refresh_display_rect.y * screen->pitch + refresh_display_rect.x *  4), screen->pitch);
+
+      /* Done with the part that can conflict with the mainloop thread */
+      refreshing_display_now = 0;
+
+      should_refresh_display = 0;
+    }
+
+    SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, texture, NULL, NULL);
+    SDL_RenderPresent(renderer);
+
+    SDL_Delay(20);
+  }
+
+  SDL_WaitThread(mainloop_thread, NULL);
+#else
+  mainloop();
+#endif
   /* Close and quit! */
   save_current();
   wait_for_sfx();

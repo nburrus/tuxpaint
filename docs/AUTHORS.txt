@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and CHANGES.txt)
 https://tuxpaint.org/
 
-June 17, 2002 - May 18, 2026
+June 17, 2002 - July 15, 2026
 
 * Design and Coding:
 
@@ -437,12 +437,11 @@ June 17, 2002 - May 18, 2026
 
     Pere Pujal i Carabantes <perepujal@gmail.com> for gluing all toghether
 
-
   Joystick control
   Ankit Choudary <ankit.goaldecided@gmail.com>, as part of GSOC 2010,
   with integration and fixes by Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
-  Various other improvements and clean-ups by
+  Main loop thread, plus many other improvements and clean-ups by
   Pere Pujal i Carabantes <pere@fornol.no-ip.org>
 
   Cleanup of warnings in magic tools by many students as part of GCI 2011

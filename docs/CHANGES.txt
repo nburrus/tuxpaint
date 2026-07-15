@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.June.5 (0.9.36)
+2026.July.15 (0.9.36)
   * New Magic Tools:
     ----------------
     + Ordered Dither tools
@@ -60,13 +60,26 @@ https://tuxpaint.org/
       Pere Pujal i Carabantes <perepujal@gmail.com>
       h/t Sadie for reporting
 
-    + Tux Paint can delay window/screen refreshes to avoid slow-downs
-      in situations where SDL waits for VSYNC every time.
+    + Tux Paint now delays window/screen refreshes to avoid slow-downs
+      in situations where SDL waits for VSYNC every time (though Tux Paint
+      does not explicitly request this).
+      - Two compile-time options (currently only configurable by editing
+        #defines in src/tuxpaint.c) now exist:
+        = MAINLOOP_THREAD (enabled by default) moves the main Tux Paint
+          event loop into a separate thread, and collects window rectangles
+          that need updating, doing them in batches.
+        = VSYNC_WORKAROUND (earlier attempt) avoids updating small
+          rectangles, but instead flips the entire surface (via SDL_Flip()),
+          but only on occasion, per its _WAIT and _CYCLES setting #defines
+      - Also, for testing, these options exist (also via #defines):
+        = VSYNC_ENABLE asks libSDL to sync with screen refresh
+          ("SDL_RENDERER_PRESENTVSYNC" render flag)
+        = BIGGER_SCREENS allows Tux Paint to open a window larger than
+          the physical screen size
       Pere Pujal i Carabantes <perepujal@gmail.com>
-      (gated by `#define VSYNC_WORKAROUND` in `src/tuxpaint.c`
-      by Bill Kendrick)
       For https://sourceforge.net/p/tuxpaint/bugs/302/
-      h/t Chong Kai Xiong
+      h/t Chong Kai Xiong for reporting issues with input lag
+      under GNOME Wayland when running Tux Paint in fullscreen mode.
 
   * Bug Fixes:
     ----------
