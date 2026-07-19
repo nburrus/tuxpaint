@@ -86,7 +86,10 @@
    the "VSYNC_WORKAROUND", above).
    See https://sourceforge.net/p/tuxpaint/bugs/302/
 */
-#define MAINLOOP_THREAD
+// #define MAINLOOP_THREAD
+#ifdef MAINLOOP_THREAD
+#warning "MAINLOOP_THREAD doesn't work right now!"
+#endif
 
 /* Whether or not to report to STDOUT when we end up SDL_Delay()'ing */
 // #define MAINLOOP_THREAD_DEBUG_OUTPUT
