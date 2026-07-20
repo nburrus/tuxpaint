@@ -22,7 +22,7 @@
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   (See COPYING.txt)
 
-  June 14, 2002 - June 28, 2026
+  June 14, 2002 - July 20, 2026
 */
 
 #include "platform.h"
@@ -6127,10 +6127,7 @@ static void mainloop(void)
             }
             gd_items.rows = r_items.h / button_h;
 
-            if (0)
-            {
-            }
-            else
+            if (event.wheel.y != 0) /* See https://sourceforge.net/p/tuxpaint/bugs/291/ */
             {
               /* scroll button */
               int is_upper = (event.wheel.y > (Sint32) 0);

@@ -115,6 +115,11 @@ https://tuxpaint.org/
     + Mirror and Flip magic tools would not flip Templates.
       Pere Pujal i Carabantes <perepujal@gmail.com>
 
+    + Avoid glitchy response to scroll wheel (style events)
+      in some situations.
+      Closes https://sourceforge.net/p/tuxpaint/bugs/291/
+      Pere Pujal i Carabantes <perepujal@gmail.com>
+
   * Localization Updates:
     ---------------------
     + French translation
