@@ -1,14 +1,14 @@
 # Tuxpaint japanese translation.
-# Copyright (C) 2017 - 2022 the Tux Paint team
+# Copyright (C) 2017 - 2026 the Tux Paint team
 # This file is distributed under the same license as the Tuxpaint package.
-# TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>, 2005-2022.
+# TOYAMA Shin-ichi <dolphin6k@wmail.plala.or.jp>, 2005-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tuxpaint 0.9.29\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-24 11:49+0100\n"
-"PO-Revision-Date: 2025-03-29 11:37+0900\n"
+"PO-Revision-Date: 2026-09-02T12:54:25+01:00\n"
 "Last-Translator: Shin-ichi TOYAMA <dolphin6k@wmail.plala.or.jp>\n"
 "Language-Team: japanese <dolphin6k@wmail.plala.or.jp>\n"
 "Language: ja\n"
@@ -95,7 +95,7 @@ msgstr "ちゃいろ！"
 #. Response to Tan (226, 189, 166) color selected
 #: ../colors.h:131
 msgid "Tan!"
-msgstr "はだいろ！"
+msgstr "うすだいだい！"
 
 #. Response to Beige (247, 228, 219) color selected
 #: ../colors.h:134
