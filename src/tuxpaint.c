@@ -1,3 +1,6 @@
+#if defined(_WIN32) && defined(TUXPAINT_SOURCE_RUNTIME)
+#include "win32_source-runtime.h"
+#endif
 /*
   tuxpaint.c
 
@@ -31369,6 +31372,9 @@ int main(int argc, char *argv[])
   putenv((char *)"FONTCONFIG_PATH=etc");
 #endif
 
+#if defined(_WIN32) && defined(TUXPAINT_SOURCE_RUNTIME)
+  source_runtime_init();
+#endif
   chdir_to_binary(argv[0]);
   setup_config(argv);
 

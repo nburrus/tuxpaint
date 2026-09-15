@@ -140,6 +140,10 @@ ifdef PKG_CONFIG_LIBDIR
   PKG_CONFIG:=PKG_CONFIG_LIBDIR=$(PKG_CONFIG_LIBDIR) $(PKG_CONFIG)
 endif
 
+ifeq ($(OS),windows)
+include win32/source-profile.mk
+endif
+
 # test if a pkg-config library exists or can be linked manually
 linktest = $(shell [ -n "$(1)" ] \
     && $(PKG_CONFIG) --exists $(1) \
@@ -173,7 +177,7 @@ linux_SO_TYPE:=so
 netbsd_SO_TYPE:=so
 SO_TYPE:=$($(OS)_SO_TYPE)
 
-windows_LIBMINGW:=-L/usr/local/lib -lmingw32
+windows_LIBMINGW:=$(WIN32_SOURCE_LIBDIR) -lmingw32
 LIBMINGW:=$($(OS)_LIBMINGW)
 
 windows_EXE_EXT:=.exe
@@ -714,7 +718,7 @@ install-magic-plugin-dev:	src/tp_magic_api.h install-bin
 bdist-win32:
 	@-rm -f tuxpaint.exe
 	@-rm -f obj/*.o
-	make \
+	$(MAKE) \
 		PREFIX:=./win32/bdist \
 		DATA_PREFIX:=data \
 		DOC_PREFIX:=docs \
@@ -725,7 +729,7 @@ bdist-win32:
 		MAGIC_PREFIX:=plugins \
 		ARCH_DEFS:=-DBDIST_WIN32
 	strip -s tuxpaint.exe
-	make install \
+	$(MAKE) install \
 		PREFIX:=./win32/bdist \
 		BIN_PREFIX:=./win32/bdist \
 		DATA_PREFIX:=./win32/bdist/data \
@@ -1095,6 +1099,11 @@ install-bin:
 	@chmod a+rx,g-w,o-w $(BIN_PREFIX)/tuxpaint$(EXE_EXT)
 
 # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
+ifeq ($(OS):$(WIN32_SOURCE_BUILD),windows:1)
+.PHONY: install-dlls
+install-dlls: install-bin install-data install-magic-plugins
+	@python win32/install-source-runtime.py --dest "$(BIN_PREFIX)" --prefix "$(SOURCE_NATIVE)" --mingw C:/msys64a/mingw64 --config "$(TPCONF_PATH)/tuxpaint-config.exe"
+else
 .PHONY: install-dlls
 install-dlls:
 	@echo
@@ -1111,6 +1120,8 @@ install-dlls:
 	@mkdir -p $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@cp $(MINGW_DIR)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders
 	@strip -s $(BIN_PREFIX)/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.dll
+
+endif
 
 # Install symlink:
 .PHONY: install-haiku
@@ -1489,7 +1500,7 @@ obj:
 MAGIC_SDL_CPPFLAGS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) SDL2_gfx --cflags)
 
 # FIXME: Expose SDL_rotozoom to Magic API? -bjk 2021.09.06
-windows_MAGIC_SDL_LIBS:=-L/usr/local/lib $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
+windows_MAGIC_SDL_LIBS:=$(WIN32_SOURCE_LIBDIR) $(LIBMINGW) $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
 os2_MAGIC_SDL_LIBS:=-L/@unixroot/usr/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB)
 macos_MAGIC_SDL_LIBS:=-L/usr/local/lib $(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
 ios_MAGIC_SDL_LIBS:=$(shell $(PKG_CONFIG) $(SDL_PCNAME) --libs) -lSDL2_image -lSDL2_ttf $(SDL_MIXER_LIB) -lSDL2_gfx
@@ -1533,3 +1544,11 @@ magic-plugins:	src/tp_magic_api.h $(MAGIC_SO)
 test-png:	src/test-png.c
 	$(CC) $(PNG_CFLAGS) src/test-png.c -o test-png $(PNG)
 
+
+
+ifeq ($(OS):$(WIN32_SOURCE_BUILD),windows:1)
+.PHONY: win32-source-clean-magic
+bdist-win32: win32-source-clean-magic
+win32-source-clean-magic:
+	@rm -f magic/*.dll
+endif
