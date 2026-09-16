@@ -6,7 +6,7 @@ Copyright (c) 2002-2026
 Various contributors (see below, and AUTHORS.txt)
 https://tuxpaint.org/
 
-2026.September.2 (0.9.36)
+2026.September.16 (0.9.36)
   * New Magic Tools:
     ----------------
     + Ordered Dither tools
@@ -147,6 +147,10 @@ https://tuxpaint.org/
       architectures (previously was only `x64`)
       TOYAMA Shin-ichi <shin1@z1r.org>
       (h/t Abdullah T. for testing on a Microsoft Surface)
+
+    + Added support for Windows build using source-built libs in /usr/local.
+      The previous build environment with official MinGW packages is still supported.
+      TOYAMA Shin-ichi <shin1@z1r.org>
 
     + Add nonstring attribute to linear_to_sRGB_table to remove warnings
       emitted by -Wunterminated-string-initialization
