@@ -1102,7 +1102,7 @@ install-bin:
 ifeq ($(OS):$(WIN32_SOURCE_BUILD),windows:1)
 .PHONY: install-dlls
 install-dlls: install-bin install-data install-magic-plugins
-	@python win32/install-source-runtime.py --dest "$(BIN_PREFIX)" --prefix "$(SOURCE_NATIVE)" --mingw C:/msys64a/mingw64 --config "$(TPCONF_PATH)/tuxpaint-config.exe"
+	@python win32/install-source-runtime.py --dest "$(BIN_PREFIX)" --prefix "$(SOURCE_NATIVE)" --mingw "$(shell cygpath -m '$(MINGW_DIR)')" --config "$(TPCONF_PATH)/tuxpaint-config.exe"
 else
 .PHONY: install-dlls
 install-dlls:
